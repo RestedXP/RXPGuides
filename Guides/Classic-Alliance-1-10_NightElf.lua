@@ -425,34 +425,13 @@ step
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .accept 488 >> Accept Zenn's Bidding
-step << Hunter
-    #season 2
-    #completewith FlankingStrike
-    #sticky
-    >>While questing kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for |T134025:0|t|cRXP_LOOT_Teldrassil Bird Meat|r
-    .collect 208608,1 -- Teldrassil Bird Meat 1/1
-step << Warrior
-    #season 2
-    #completewith zenn
-    >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
-    >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
-    .collect 208611,1 -- Severed Tiger Head (1)
-    .collect 208610,1 -- Severed Owl Head (1)
-    .collect 208612,1 -- Severed Spider Head (1)
-    .mob Nightsaber
-    .mob Nightsaber Stalker
-    .mob Strigid Owl
-    .mob Strigid Screecher
-    .mob Webwood Lurker
-    .mob Webwood Venomfang
-    .train 403475,1
 step
     #sticky
-    #completewith zenn
+    #completewith DenlansEarth
     >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
     >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
+    >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .complete 488,2 --Collect Strigid Owl Feather (x3)
     .complete 488,3 --Collect Webwood Spider Silk (x3)
@@ -461,13 +440,14 @@ step
     .mob Webwood Lurker
 step
     #sticky
-	#completewith SoDSpiderLegs
+	#completewith DenlansEarth
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
     >>|cRXP_WARN_You need these for a later quest|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob Webwood Lurker
     .mob Webwood Venomfang
 step
+    #label DenlansEarth
     .goto Teldrassil,56.08,57.72
     .target Syral Bladeleaf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
@@ -517,12 +497,6 @@ step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
-    .target Jeena Featherbow
-step << Hunter
-    #season 2
-    .goto Teldrassil,55.890,59.205
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until you have 2 silver left or you have 3 stacks|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -589,13 +563,6 @@ step
     .turnin 2159 >> Turn in Dolanaar Delivery << !Hunter
     .vendor >>|cRXP_BUY_Buy 10 |T132815:0|t|cRXP_LOOT_Ice Cold Milk|r or as much as you can afford << Priest
     .home >> Set your Hearthstone to Dolanaar
-step << Warrior
-    #season 2
-    .goto Teldrassil,54.8,66.0,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
-    >>|cRXP_WARN_You will most likely be unable to solo him at this level, skip this step if there's no one around to help you, you can come back after you get your hamstring + thrown at lvl 10 and check if he's still there|r
-    .unitscan Wandering Swordsman
-    .train 412507,1
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
@@ -615,6 +582,27 @@ step
     .turnin 928 >> Turn in Crown of the Earth
     .target Corithras Moonrage
     .accept 929 >> Accept Crown of the Earth
+step
+    #sticky
+    #completewith DenlanStart
+    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
+    >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
+    >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
+    .complete 488,1 --Collect Nightsaber Fang (x3)
+    .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .complete 488,3 --Collect Webwood Spider Silk (x3)
+    .mob Nightsaber
+    .mob Strigid Owl
+    .mob Webwood Lurker
+step
+    #sticky
+	#completewith DenlanStart
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_You need these for a later quest|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
 step << Druid
     #ah
     #season 0
@@ -658,61 +646,13 @@ step << Priest
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
+    #label DenlanStart
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
-    >>|cRXP_WARN_Don't take the sprouts quest|r << !sod/Warrior/Rogue
     .turnin 997 >> Turn in Denalan's Earth
     .target Denalan
     .accept 918 >> Accept Timberling Seeds
-    .accept 919 >> Accept Timberling Sprouts << !sod/Warrior/Rogue
-step << Rogue
-    #season 2
-    #completewith next
-    >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
-    .collect 208601,1 -- Top-Right Map Piece (1)
-    .mob Timberling
-    .mob Timberling Bark Ripper
-    .mob Timberling Trampler
-    .train 398196,1
-step << Druid
-    #season 2
-    #completewith next
-    >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for their |cRXP_LOOT_Seeds|r
-    >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground
-    .complete 918,1 --Collect Timberling Seed (x8)
-    .complete 919,1 << !sod --Collect Timberling Sprout (x12)
-    .mob Timberling
-step << Druid
-    #season 2
-    #completewith next
-    .goto Teldrassil,52.831,78.731,100 >> Travel to the giant tree branch
-step << Druid
-    #season 2
-    .goto Teldrassil,52.831,78.731,20,0
-    .goto Teldrassil,52.988,80.086,15,0
-    .goto Teldrassil,52.831,78.731
-    >>|cRXP_WARN_On the massive tree branch you will see 3|r |cRXP_ENEMY_Lunar Stones|r
-    >>|cRXP_WARN_Cast|r |T136096:0|t[Moonfire] |cRXP_WARN_on all 3|r |cRXP_ENEMY_Lunar Stones|r |cRXP_WARN_on the branch, then loot the chest at the arrow location which spawns after|r
-    .collect 206989,1 -- Rune of the Sun (1)
-    .mob Lunar Stone
-    .train 416044,1
-step << Druid
-    #season 2
-    .train 416044 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] |cRXP_WARN_to train|r |T236216:0|t[Sunfire]
-    .use 206989
-    .itemcount 206989,1
-step << Druid
-    #completewith next
-    #season 2
-    #softcore
-    .deathskip >>Die and respawn at Dolanaar
-step << Druid
-    #season 2
-    #softcore
-    .goto Teldrassil,56.2,60.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r
-    .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
-    .target Brannol Eaglemoon
+    .accept 919 >> Accept Timberling Sprouts
 step
     .goto Teldrassil,61.63,68.89,55,0
     .goto Teldrassil,60.52,70.47,55,0
@@ -724,36 +664,38 @@ step
     >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for their |cRXP_LOOT_Seeds|r
     >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground << !sod
     .complete 918,1 --Collect Timberling Seed (x8)
-    .complete 919,1 << !sod/Warrior/Rogue --Collect Timberling Sprout (x12)
+    .complete 919,1 --Collect Timberling Sprout (x12)
     .mob Timberling
-step << Rogue
-    #season 2
-    .goto Teldrassil,61.2,67.0
-    >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
-    .collect 208601,1 -- Top-Right Map Piece (1)
-    .mob Timberling
-    .mob Timberling Bark Ripper
-    .mob Timberling Trampler
-    .train 398196,1
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 918 >> Turn in Timberling Seeds
     .target Denalan
     .accept 922 >> Accept Rellian Greenspyre
-    .turnin 919 >> Turn in Timberling Sprouts << !sod/Warrior/Rogue
+    .turnin 919 >> Turn in Timberling Sprouts
 step
-    #season 2 << Hunter/Druid/Priest
-    #season 1 << Warrior/Rogue
-	.abandon 919 >> Abandon The Timberling Sprouts quest, it's not worth doing
-step << Warrior
-    #season 2
-    .goto Teldrassil,62.6,71.8,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
-    >>|cRXP_WARN_You will most likely be unable to solo him at this level, skip this step if there's no one around to help you, you can come back after you get your hamstring + thrown at lvl 10 and check if he's still there|r
-    .unitscan Wandering Swordsman
-    .train 412507,1
+    #sticky
+    #completewith Starbreeze
+    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
+    >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
+    >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
+    .complete 488,1 --Collect Nightsaber Fang (x3)
+    .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .complete 488,3 --Collect Webwood Spider Silk (x3)
+    .mob Nightsaber
+    .mob Strigid Owl
+    .mob Webwood Lurker
 step
+    #sticky
+	#completewith Starbreeze
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_You need these for a later quest|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+step
+    #label Starbreeze
     #completewith next
     .goto Teldrassil,68.02,59.66,120 >> Travel to Starbreeze Village
 step
@@ -772,28 +714,19 @@ step
     .goto Teldrassil,63.38,58.10
     >>|cRXP_WARN_Use the|r |T134721:0|t[Jade Phial] |cRXP_WARN_at the Starbreeze Village Moonwell|r
     .complete 929,1 --Collect Filled Jade Phial (x1)
-step << Warrior
-    #season 2
-    #completewith TeldrassilEnd
+step
     #sticky
-    >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
-    >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
-    .collect 208611,1 -- Severed Tiger Head (1)
-    .collect 208610,1 -- Severed Owl Head (1)
-    .collect 208612,1 -- Severed Spider Head (1)
-    .mob Nightsaber
-    .mob Nightsaber Stalker
-    .mob Strigid Owl
-    .mob Strigid Screecher
+	#completewith SeekRedemption
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_You need these for a later quest|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob Webwood Lurker
     .mob Webwood Venomfang
-    .train 403475,1
 step
     >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
     >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
-    >>|cRXP_WARN_Save any|r |T132832:0|t[Small Eggs] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T132832:0|t[Small Eggs] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .goto Teldrassil,66.10,52.43,60,0
     .goto Teldrassil,61.95,61.07,50,0
@@ -822,6 +755,7 @@ step
     #xprate >1.49
     .xp 7+2350 >> Grind to level 7 +2350xp
 step
+    #label SeekRedemption
 	.goto Teldrassil,56.078,57.723
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
     .accept 489 >> Accept Seek Redemption!
@@ -942,6 +876,14 @@ step << Druid
 	.trainer >> Train your class spells
     .target Kal
 step
+    #sticky
+	#completewith jewel
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_You need these for a later quest|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+step
     #loop
     .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
     .goto 1438/1,822.200,9948.500,6 >>On the small hill
@@ -973,7 +915,7 @@ step
     .mob Gnarlpine Mystic
 step
 	.goto Teldrassil,69.37,53.41
-	>>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r. Loot him for the |T133288:0|t[|cRXP_LOOT_Gnarlpine Necklace|r]
+	>>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r. Loot him for the |T133288:0|t[|cRXP_LOOT_Gnarlpine Necklace|r]. |cRXP_WARN_Be careful as he can|r |T132152:0|t[Thrash] |cRXP_WARN_hitting you up to three times at once|r
     .use 8049 >>|cRXP_WARN_Use the |T133288:0|t[|cRXP_LOOT_Gnarlpine Necklace|r] to loot|r |cRXP_LOOT_Tallonkai's Jewel|r
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
     .mob Ferocitas the Dream Eater
@@ -1015,9 +957,8 @@ step
     .turnin 489 >> Turn in Seek Redemption!
     .isOnQuest 489
 step
-    #season 0
     #sticky
-	#completewith spiderLegs
+	#completewith next
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
     >>|cRXP_WARN_You need these for a later quest|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
@@ -1050,6 +991,14 @@ step
     .target Corithras Moonrage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .accept 933 >> Accept Crown of the Earth
+step
+    #sticky
+	#completewith spiderLegs
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_You need these for a later quest|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
 step
 	#xprate <1.5
     #completewith next
@@ -1097,6 +1046,7 @@ step
     .accept 7383 >> Accept Crown of the Earth
 step
 	#xprate <1.5
+    #label SpiderLegsEnd
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
     .train 2550 >>Train Cooking
@@ -1104,7 +1054,6 @@ step
     .turnin 4161 >> Turn in Recipe of the Kaldorei
     .target Zarrin
 step << Warrior/Rogue
-    #season 0
     .goto Teldrassil,55.29,56.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .train 3273 >> Train |T135966:0|t[First Aid]
@@ -1195,7 +1144,8 @@ step << Warrior
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .accept 1684 >> Accept Elanaria
     .accept 487 >> Accept The Road to Darnassus
     .target Moon Priestess Amara
@@ -1210,8 +1160,9 @@ step
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
+    .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
     .accept 487 >> Accept The Road to Darnassus
     .target Moon Priestess Amara
 step
@@ -1275,6 +1226,7 @@ step << Hunter
     .goto Teldrassil,38.32,34.36
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 10 minutes of accepting|r
     .turnin 938 >> Turn in Mist
 step << Hunter
 	#xprate <1.5
@@ -1297,6 +1249,7 @@ step << !Hunter
 	#xprate <1.5
     .goto Teldrassil,38.32,34.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    >>|cRXP_WARN_Keep in mind Mist is a timed quest, you need to turn it in within 10 minutes of accepting|r
     .turnin 937 >> Turn in The Enchanted Glade
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
@@ -1315,37 +1268,6 @@ step << !Hunter !Druid
 	#xprate <1.5
     #label xp10
     .xp 10-3110
-step << Rogue
-	#xprate <1.5
-    #season 2
-    .goto Teldrassil,37.8,43.0,60,0
-    .goto Teldrassil,36.0,34.4,60,0
-    .goto Teldrassil,34.6,28.8,60,0
-    .goto Teldrassil,37.8,43.0
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208603,1 -- Bottom-Right Map Piece (1)
-    .mob Bloodfeather Harpy
-    .mob Bloodfeather Rogue
-    .mob Bloodfeather Sorceress
-    .mob Bloodfeather Fury
-    .mob Bloodfeather Wind Witch
-    .mob Bloodfeather Matriarch
-    .train 398196,1
-step << Rogue
-	#xprate < 1.5
-    #season 2
-    .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
-    .collect 208605,1
-    .itemcount 208604,1
-    .itemcount 208601,1
-    .itemcount 208602,1
-    .itemcount 208603,1
-    .use 208604
-    .use 208601
-    .use 208602
-    .use 208603
-    .train 398196,1
 step
 	#xprate 1.49-1.99
    .goto Teldrassil,38.6,58.0
@@ -1369,6 +1291,18 @@ step << !Rogue
     >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run all the way out of the den and then die if you're not sure about it|r << sod Priest
     >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run to the west side of the river if you're not sure about it|r << sod Hunter/sod Warrior/sod Druid
     .target Spirit Healer
+step << !Rogue
+    #hardcore
+	#xprate < 1.5
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r on the way to Darnassus. Loot them for their |cRXP_LOOT_Belts|r. |cRXP_WARN_You don't have to complete this objective now|r
+    .complete 937,1 --Collect Bloodfeather Belt (x6)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
 step << !Rogue
     #hardcore
     #requires xp10
@@ -1689,10 +1623,10 @@ step << Hunter
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.unitscan Strigid Hunter
 step
-    .goto Teldrassil,43.2,42.8,55,0
-    .goto Teldrassil,43.2,32.8,55,0
-    .goto Teldrassil,43.6,26.0,55,0
-    .goto Teldrassil,43.2,42.8
+    #sticky
+    #completewith Spinnerets
+    .goto Teldrassil,41.7,41.8,0
+    .goto Teldrassil,43.80,26.03,0
 	>>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for their |cRXP_LOOT_Tumors|r
     .complete 923,1 --Collect Mossy Tumor (x5)
     .mob Elder Timberling
@@ -1700,13 +1634,16 @@ step
     .mob Timberling Mire Beast
 step
     #label Spinnerets
-	.goto Teldrassil,47.3,26.0,0
-    .goto Teldrassil,37.9,25.1,0
-    .goto Teldrassil,47.3,26.0,30,0
-    .goto Teldrassil,37.9,25.1,30,0
-    .goto Teldrassil,40.7,25.4
-    >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot it for its |cRXP_LOOT_Spinnerets|r
-    >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
+    #loop
+    .goto Teldrassil,41.7,41.8,0
+    .goto Teldrassil,48.0,25.2,0
+    .goto Teldrassil,42.0,25.6,0
+    .goto Teldrassil,39.6,25.6,0
+    .line Teldrassil,41.70,41.82,41.97,39.03,42.20,35.71,43.33,33.27,43.79,30.65,44.18,27.80,46.09,26.55,47.72,25.57,46.25,25.62,44.42,26.09,42.83,26.15,42.0,25.6,39.6,25.6
+    >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot her for her |cRXP_LOOT_Spinnerets|r
+    >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations, check your map for a recomended path to take|r
+    >>|cRXP_WARN_Head north along the river and check the easternmost spawn point first. Work on the|r |T134339:0|t[Tumors] |cRXP_WARN_quest as you go|r
+    >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors] |cRXP_WARN_quest before heading west|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
@@ -1747,6 +1684,7 @@ step
     .goto Teldrassil,38.3,34.4
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 10 minutes of accepting|r
     .turnin 938 >> Turn in Mist
     .isOnQuest 938
 step
@@ -1846,6 +1784,8 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
     .turnin 6103 >> Turn in Training the Beast
 step << Hunter
+    >>|cRXP_WARN_Go up the ramp to the right of|r |cRXP_FRIENDLY_Jocaste|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silvaria|r
     .goto Darnassus,42.2,8.8
     .trainer >>Train pet spells
     .target Silvaria
@@ -1904,6 +1844,7 @@ step
     .target Auctioneer Golothas
 step << Hunter
     .goto Darnassus,64.2,63.0
+    .line Darnassus,60.65,66.47,61.68,63.73,62.36,58.91,62.32,55.22,65.77,55.75,67.88,57.48,68.35,59.98,65.14,68.14,64.34,71.36,62.28,68.79,60.65,66.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
     >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her.
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
