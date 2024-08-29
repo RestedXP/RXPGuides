@@ -662,13 +662,13 @@ step
     .timer 20,RP
 step
     .goto 2213,57.09,91.01
-    >>Wait for the roleplay.
-    .complete 79230,3 --1/1 First Ascended's Prison investigated
-step
-    .goto 2213,57.09,91.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Y'tekhi|r
     .turnin 79233 >>Turn in Lab Access
     .target Y'tekhi
+step
+    .goto 2213,57.09,91.01
+    >>Wait for the roleplay.
+    .complete 79230,3 --1/1 First Ascended's Prison investigated
 step
     .goto 2213,56.68,90.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r
@@ -676,6 +676,7 @@ step
     .target Lilian Voss
     .accept 79237 >>Accept Making of a Monster
 step
+    .goto 2213,56.99,89.14,10,0
     .goto 2213,62.18,77.06
     >>Click on the |cRXP_PICK_Air Duct|r
     .complete 79237,1 --1/1 Air Duct accessed
@@ -736,6 +737,7 @@ step
 step
     .goto 2213,56.74,92.62
     >>|cRXP_WARN_Follow the Arrow|r
+    *|cRXP_WARN_Relog if you don't get teleported.|r
     .complete 79239,8 --1/1 Neferess Freed
 step
     .goto 2213,78.76,57.36
@@ -802,8 +804,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r
     .turnin 79243 >>Turn in Manufactured Mutiny
     .target Lilian Voss
-    .accept 79244 >>Accept News From Below
     .turnin 79241 >>Turn in Go Loud
+    .accept 79244 >>Accept News From Below
 step
     .goto 2255,55.74,43.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Widow Arak'nai|r
@@ -938,6 +940,9 @@ step
     .target High Speaker Brinthe
     .accept 79324 >>Accept To the Waterworks
 step
+    .isOnQuest 79027
+    .goto 2214,47.11,33.86,10 >>Leave the House
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dagran Thaurissan II|r and |cRXP_FRIENDLY_"Zee-Zee"|r
     .turnin 79324 >>Turn in To the Waterworks
     .accept 79026 >>Accept Putting the Works in Waterworks
@@ -1050,22 +1055,8 @@ step
     .scenario 6801,1
     .mob Waxface
 step
-    .isInScenario 2387
-    -- .isOnQuest 79026
-    .goto 2251,46.08,83.06
-    .cast 441550 >>Click on the |cRXP_PICK_Obstruction Drain.|r
-step
-    .isInScenario 2387
-    >>Pull on the kelp to unclog the drain! Kill |cRXP_ENEMY_Enraged Kelp.|r
-    .complete 79026,3 --1/1 Main Drain Restored
-    .mob Enraged Kelp
-step
-    .goto 2251,46.89,90.56
-    .isInScenario 2387 >>Collect Rewards then click on the |cRXP_PICK_Leave-O-Bot 7000|r
-    .target Leave-O-Bot 7000
-step
     .isInScenario 2355
-    .goto 2251,46.67,16.04
+    .goto 2251,50.44,24.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r
     .scenario 6776,1
     .skipgossipid 120081
@@ -1075,6 +1066,80 @@ step
     .goto 2251,46.76,17.32
     >>Click on the |cRXP_PICK_Air Totem|r
     .scenario 6776,2
+step
+    .isInScenario 2355
+    .goto 2251,50.28,23.73,10 >>|cRXP_WARN_Follow the Arrow|r
+step
+    .isInScenario 2355
+    .goto 2251,50.28,23.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
+    .skipgossipid 120082
+    .scenario 6777,1,1
+    .mob Kobold Skullface
+    .mob Kobold Mystic
+    .target Pagsly
+step
+    .isInScenario 2355
+    .goto 2251,46.73,24.17,20,0
+    .goto 2251,49.6,28.99,20,0
+    .goto 2251,49.78,34.5,20 >> |cRXP_WARN_Follow the Arrow|r
+step
+    .goto 2251,48.72,40.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
+    .skipgossipid 120082
+    .scenario 6777,1,2
+    .target Pagsly
+    .mob Kobold Thwacker
+step
+    .isInScenario 2355
+    .goto 2251,46.78,44.65,20,0
+    .goto 2251,47.72,56.7,20,0
+    .goto 2251,46.36,61.56,10 >>|cRXP_WARN_Follow the Arrow|r
+step
+    .goto 2251,46.36,61.56
+    .isInScenario 2355
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
+    .skipgossipid 120082
+    .scenario 6777,1,3
+    .mob Kobold Skullface
+    .mob Kobold Mystic
+    .mob Kobold Thwacker
+step
+    .isInScenario 2355
+    .goto 2251,47.76,64.32,20,0
+    .goto 2251,48.15,68.73,10 >>|cRXP_WARN_Follow the Arrow|r
+step
+    .isInScenario 2355
+    .goto 2251,48.12,68.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
+    .skipgossipid 120082
+    .scenario 6777,1,4
+    .mob Kobold Skullface
+    .mob Kobold Mystic
+    .mob Kobold Thwacker
+    .mob Kobold Fusetender
+step
+    .goto 2251,46.84,70.35,10,0
+    .goto 2251,46.85,81.67
+    .isInScenario 2355
+    .isOnQuest 79026
+    #label Waxface
+    >>Kill |cRXP_ENEMY_Waxface|r
+    .scenario 6801,1
+    .mob Waxface
+step
+    -- .isOnQuest 79026
+    .goto 2251,46.08,83.06
+    .cast 441550 >>Click on the |cRXP_PICK_Obstruction Drain.|r
+step
+    .goto 2251,46.75,83.5
+    >>Pull on the kelp to unclog the drain! Kill |cRXP_ENEMY_Enraged Kelp.|r
+    .complete 79026,3 --1/1 Main Drain Restored
+    .mob Enraged Kelp
+step
+    #completewith next
+    +Collect Rewards then click on your player frame and select "leave delve"
+    .target Leave-O-Bot 7000
 step
     .goto 2214,47.24,42.36
     >>Click on the |cRXP_PICK_Waterworks Primary Activation.|r
@@ -1181,7 +1246,7 @@ step
     .accept 80517 >>Accept Back to Where it Began
 step
     .goto 2214,58.7,33.55
-    .deathskip >> Die in the Lava
+    .deathskip >> Die in the Lava and respawn at the Spirit Healer
 step
     .goto 2214,56.27,74.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
@@ -1196,7 +1261,7 @@ step
     .goto 2214,58.95,79.47,30,0
     .goto 2214,58.17,78.71,30,0
     .goto 2214,57.48,77.93,30,0
-    >>Click on |cRXP_PICK_Goblin Battery,|r Kegs and Derelict Golem. Kill the incoming |cRXP_ENEMY_enemies.|r
+    >>Click on |cRXP_PICK_Goblin Battery,|r |cRXP_PICK_Kegs|r, |cRXP_PICK_Derelict Golem|r and |cRXP_PICK_Grill Racks.|r Kill the incoming |cRXP_ENEMY_enemies.|r
     .complete 79029,1 --Mayhem Caused (100%)
     .mob Irritated Salvager
     .mob Vindictive Technician
@@ -1211,8 +1276,8 @@ step
     .target Brinthe
     .skipgossipid 121606
 step
-    .goto 2214,56.21,77.50
-    >>Kill |cRXP_ENEMY_Supervisor Radlock|r
+    .goto 2214,56.28,78.02
+    >>Kill |cRXP_ENEMY_Supervisor Radlock|r for additional damage move him into the fire laser.
     .complete 79029,3 --1/1 Facility Activated and Secured
     .mob Supervisor Radlock
 step
