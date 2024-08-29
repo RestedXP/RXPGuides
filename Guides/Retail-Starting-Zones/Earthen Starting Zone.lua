@@ -1,10 +1,9 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Starting Zones
+#group RestedXP The War Within
 #name 1) Earthen Questline
 #displayname Earthen Questline
-#subgroup Earthen Starting Zones
 
 step
     .goto 2322,89.47,48.04
