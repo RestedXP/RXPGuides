@@ -35,7 +35,9 @@ local loadedProfileKey
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
-addon.settings.enabledBetaFeatures = {}
+addon.settings.enabledBetaFeatures = {
+    [L("Cleanup Orphaned Quests")] = L("Cleanup obsolete or leftover quests")
+}
 
 if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
@@ -1420,13 +1422,13 @@ function addon.settings:CreateAceOptionsPanel()
                                        RXPCData.guideMetaData.enabledDungeons[addon.player
                                            .faction])
                         end
-                    }
-                    --[[
+                    },
                     questCleanupHeader = {
                         name = L("Quest Cleanup"),
                         type = "header",
                         width = "full",
-                        order = 10.0
+                        order = 10.0,
+                        hidden = isNotAdvanced
                     },
                     abandonOrphanedQuests = {
                         name = L("Cleanup Orphaned Quests"), -- TODO locale
@@ -1451,7 +1453,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function()
                             return #settingsCache.orphans == 0
-                        end
+                        end,
+                        hidden = isNotAdvanced
                     },
                     orphanedQuestBox = {
                         order = 10.2,
@@ -1469,9 +1472,9 @@ function addon.settings:CreateAceOptionsPanel()
 
                             return result
                         end,
-                        width = optionsWidth
+                        width = optionsWidth,
+                        hidden = isNotAdvanced
                     }
-                    ]]
                 }
             },
             targeting = {
