@@ -14,6 +14,7 @@ local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
+local GetSpellCooldown = C_Spell and C_Spell.GetSpellCooldown or _G.GetSpellCooldown
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo

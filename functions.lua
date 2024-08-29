@@ -6,6 +6,7 @@ local fmt, tinsert = string.format,tinsert
 local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
 local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local GetSpellCooldown = C_Spell and C_Spell.GetSpellCooldown or _G.GetSpellCooldown
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
