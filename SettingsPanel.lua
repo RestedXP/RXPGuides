@@ -1424,7 +1424,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     questCleanupHeader = {
-                        name = L("Quest Cleanup"),
+                        name = L("Quest Cleanup") .. " (Beta)",
                         type = "header",
                         width = "full",
                         order = 10.0,
@@ -1460,6 +1460,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 10.2,
                         type = 'description',
                         name = function()
+                            -- TODO prevent double call on settings frame load, optimization
                             local result = ""
                             local orphans = addon.GetOrphanedQuests()
                             for _, d in ipairs(orphans) do
