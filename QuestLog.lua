@@ -376,23 +376,20 @@ local function getQuestData(questLogIndex)
 end
 
 function addon.GetOrphanedQuests()
+    if not addon.currentGuide or not addon.currentGuide.key then
+        return {}
+    end
     local orphans = {}
 
-    if not addon.currentGuide or not addon.currentGuide.key then
-        return orphans
-    end
-
-    local greyBuffer = UnitLevel("player") - 7
+    local guideQuests, futureTurnIns = addon.GetExpectedQuestLog()
 
     local questData, orphanData
-    local isTooLow, isPartOfGuide
-    local normalFrequency = C_QuestLog.GetInfo and 0 or 1
+    local isPartOfGuide
 
     for i = 1, GetNumQuests() do
         questData = getQuestData(i)
 
-        if not questData.isHeader and questData.questID > 0 and
-            questData.frequency == normalFrequency then -- Normal quest, not daily/weekly
+        if not questData.isHeader and questData.questID > 0 then
             orphanData = {
                 ["questLogTitleText"] = questData.questLogTitleText,
                 ["level"] = questData.level,
@@ -400,24 +397,9 @@ function addon.GetOrphanedQuests()
                 ["questLogIndex"] = i
             }
 
-            isTooLow = questData.level < greyBuffer
-            isPartOfGuide = false
+            isPartOfGuide = guideQuests[questData.questID] or futureTurnIns[questData.questID]
 
-            for _, data in pairs(addon.turnInList[questData.questID] or {}) do
-                if data.guide.key == addon.currentGuide.key then
-                    isPartOfGuide = true
-                    break
-                end
-            end
-
-            for _, data in pairs(addon.pickUpList[questData.questID] or {}) do
-                if data.guide.key == addon.currentGuide.key then
-                    isPartOfGuide = true
-                    break
-                end
-            end
-
-            if (isTooLow or not isPartOfGuide) and not questData.isComplete then
+            if not isPartOfGuide and not questData.isComplete then
                 if addon.settings.profile.debug then
                     addon.comms.PrettyPrint("Orphaned quest found, %s",
                                             questData.questLogTitleText)
