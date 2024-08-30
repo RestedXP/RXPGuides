@@ -19,6 +19,14 @@ local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 --local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
+-- start, duration, enabled, modRate = GetSpellCooldown(spell)
+local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
+    if C_Spell and C_Spell.GetSpellCooldown then
+        local info = C_Spell.GetSpellCooldown(spellIdentifier)
+        return info.startTime, info.start, info.duration, info.enabled, info.modRate
+    end
+end
+
 local GetItemCooldown = (C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown) or function(searchItemID)
 	local searchItemName = GetItemInfo(searchItemID);
 	if not searchItemName then return end
