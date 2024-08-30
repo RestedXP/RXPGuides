@@ -376,11 +376,13 @@ local function getQuestData(questLogIndex)
 end
 
 function addon.GetOrphanedQuests()
+    if not addon.currentGuide or not addon.currentGuide.key then
+        return {}
+    end
+
     local orphans = {}
 
-    if not addon.currentGuide or not addon.currentGuide.key then
-        return orphans
-    end
+    local qLog, futureTurnIns = GetExpectedQuestLog()
 
     local greyBuffer = UnitLevel("player") - 7
 
