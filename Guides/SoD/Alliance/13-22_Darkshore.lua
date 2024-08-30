@@ -4279,18 +4279,18 @@ step << Druid
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
 step << Druid
-#season 
+#season 2
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
 step << Druid
-#season 
+#season 2
     #completewith towersod
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
 step << Druid
-#season 
+#season 2
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
@@ -4298,14 +4298,14 @@ step << Druid
     .complete 5321,2
     .isOnQuest 5321
 step << Druid
-#season 
+#season 2
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
 step << Druid
-#season 
+#season 2
     #label towersod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
