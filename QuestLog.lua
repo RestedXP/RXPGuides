@@ -400,10 +400,6 @@ function addon.GetOrphanedQuests()
             isPartOfGuide = guideQuests[questData.questID] or futureTurnIns[questData.questID]
 
             if not isPartOfGuide and not questData.isComplete then
-                if addon.settings.profile.debug then
-                    addon.comms.PrettyPrint("Orphaned quest found, %s",
-                                            questData.questLogTitleText)
-                end
                 table.insert(orphans, 1, orphanData)
             end
         end
