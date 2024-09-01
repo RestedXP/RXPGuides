@@ -30,6 +30,7 @@ local importCache = {
 local incompatibleAddons = {}
 local settingsDB
 local loadedProfileKey
+local ProcessBuffer
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -466,6 +467,80 @@ function addon.settings:UpdateImportStatusHistory(data, ...)
     AceConfigRegistry:NotifyChange(addon.title .. "/Import")
 end
 
+--importCache.widget.obj.button:GetScript("OnClick")
+function importCache.validate(self)
+    local status, errorMsg = addon.settings.ProcessImportBox(self)
+    importCache.bufferString = ""
+    importCache.bufferData = {}
+    -- Gets disabled on paste, re-enable after processing completes
+    importCache.widget.obj.editBox:Enable()
+    if errorMsg then
+        self:UpdateImportStatusHistory(errorMsg)
+        return errorMsg
+    end
+    return status
+end
+
+--/run StaticPopup_Show("RXP_Import")
+function addon.settings.ImportSplicedString()
+    return StaticPopup_Show("RXP_Import")
+end
+local strbuffer = {}
+_G.StaticPopupDialogs["RXP_Import"] = {
+    text = "",
+    hasEditBox = 1,
+    button1 = _G.OKAY,
+    OnShow = function(self)
+        local text = getglobal(self:GetName() .. "Text")
+        local n = #strbuffer
+        text:SetText(fmt("Press Ctrl+V to paste a piece of the string (%d)\nPress ESC to cancel\n\nThis process is slow and should only be used if your operating system have clipboard length restrictions",n))
+    end,
+    EditBoxOnEscapePressed = function(self)
+        self:GetParent():Hide()
+        importCache.bufferString = ""
+        strbuffer = {}
+        importCache.bufferData = {}
+        addon.settings.OpenSettings('Import')
+    end,
+    OnAccept = function(self,...)
+        local text = getglobal(self:GetName() .. "EditBox"):GetText()
+        --text = text:gsub("||","|")
+        local n = #strbuffer
+        local header = text:find("^%d+[|]+%d+:")
+        if n > 0 or header then
+            table.insert(strbuffer,text)
+        else
+            print('RXPGuides: Import Error - Invalid String Header')
+            addon.settings.OpenSettings('Import')
+            return
+        end
+        if text:find("%%[|]+%d+$") then
+            addon.settings.OpenSettings('Import')
+            --[[
+            local status, errorMsg = addon.settings:ProcessImportBox()
+            print(status, errorMsg, importCache.bufferString:len())
+            ]]
+            _G.RunNextFrame(function()
+                importCache.bufferData = strbuffer
+                ProcessBuffer(importCache.widget.obj.editBox)
+                local button = importCache.widget.obj.button
+                button:Enable()
+                importCache.widget.obj.editBox:SetText(importCache.bufferString:sub(1, 500))
+                button:GetScript("OnClick")(button)
+                strbuffer = {}
+                importCache.bufferData = {}
+                importCache.bufferString = ""
+            end)
+        else
+            _G.RunNextFrame(function() StaticPopup_Show("RXP_Import") end)
+        end
+    end,
+    timeout = 0,
+    whileDead = 1,
+    hideOnEscape = 1
+}
+
+
 function addon.settings:CreateImportOptionsPanel()
     local function notOnline()
         if not RXPData.cache and GetTime() - importCache.lastBNetQuery > 5 then
@@ -501,19 +576,7 @@ function addon.settings:CreateImportOptionsPanel()
                     -- Prevent auto clearing on NotifyChange
                     return importCache.bufferString:sub(1, 500)
                 end,
-                validate = function()
-                    local status, errorMsg = self:ProcessImportBox()
-                    importCache.bufferString = ""
-                    importCache.bufferData = {}
-
-                    -- Gets disabled on paste, re-enable after processing completes
-                    importCache.widget.obj.editBox:Enable()
-                    if errorMsg then
-                        self:UpdateImportStatusHistory(errorMsg)
-                        return errorMsg
-                    end
-                    return status
-                end,
+                validate = importCache.validate,
                 disabled = function() return notOnline() end
             },
             currentGuides = {
@@ -584,6 +647,20 @@ function addon.settings:CreateImportOptionsPanel()
                 type = 'execute',
                 func = function() _G.ReloadUI() end
             },
+            ImportSplicedString = {
+                order = 15,
+                name = L("Import Spliced String"),
+                type = 'execute',
+                func = function()
+                    _G.RunNextFrame(function()
+                        _G.SettingsPanel:Hide()
+                        AceConfigDialog:CloseAll()
+                        addon.settings.ImportSplicedString()
+                    end)
+                end,
+                hidden = not self.profile.enableBetaFeatures,
+            },
+
             loadStatusBox = {
                 order = 90,
                 name = _G.HISTORY,
@@ -664,10 +741,8 @@ function addon.settings:CreateImportOptionsPanel()
         end
     end
 
-    local function ProcessBuffer(this)
-        this:SetScript('OnUpdate', nil)
+    function ProcessBuffer(this)
         importCache.bufferString = table.concat(importCache.bufferData)
-        this:SetMaxBytes(0)
         if #importCache.bufferString > 500 then
             addon.settings:UpdateImportStatusHistory(L(
                                                          "Loaded %d characters into import buffer, %d shown"),
@@ -678,7 +753,11 @@ function addon.settings:CreateImportOptionsPanel()
                                                          "Loaded %d characters into import buffer"),
                                                      #importCache.bufferString)
         end
-        this:ClearFocus()
+        if this then
+            this:SetMaxBytes(0)
+            this:SetScript('OnUpdate', nil)
+            this:ClearFocus()
+        end
         importCache.bufferData = {}
     end
 
