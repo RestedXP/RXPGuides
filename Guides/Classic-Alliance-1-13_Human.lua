@@ -6193,7 +6193,7 @@ step << Warlock/Priest
     +|cRXP_WARN_Equip the|r |T135468:0|t[Smoldering Wand]
     .use 5208
     .itemcount 5208,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp <15,1
 step << Warlock/Priest
     #xprate <1.5
@@ -6202,7 +6202,7 @@ step << Warlock/Priest
     +|cRXP_WARN_Remember to equip the|r |T135468:0|t[Smoldering Wand] |cRXP_WARN_later when you reach level 15|r
     .use 5208
     .itemcount 5208,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp >15,1
 step << Warlock
     #xprate <1.5
@@ -6513,7 +6513,7 @@ step << Priest/Warlock
     +|cRXP_WARN_Equip the|r |T135468:0|t[Smoldering Wand]
     .use 5208
     .itemcount 5208,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp <15,1
 step << Priest/Warlock
     #xprate >1.49
@@ -6522,7 +6522,7 @@ step << Priest/Warlock
     +|cRXP_WARN_Remember to equip the|r |T135468:0|t[Smoldering Wand] |cRXP_WARN_later when you reach level 15|r
     .use 5208
     .itemcount 5208,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .xp >15,1
 step
     #xprate >1.49
