@@ -86,16 +86,46 @@ step << Horde
     .target Moira Thaurissan
 step << Alliance
     .goto 2339,30.33,56.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dornogal Steward|r
     .complete 82153,1 --1/1 Alliance Embassy steward found in Dornogal
+    .skipgossipid 122277
+    .target Dornogal Steward
 step << Alliance
-    .goto 2339,30.65,55.71
-    .complete 82153,2 --2/2 Alliance banners placed
+    .goto 2339,30.14,56.49
+    >>Click on the |cRXP_PICK_Alliance banner|r
+    .complete 82153,2,1 --2/2 Alliance banners placed
 step << Alliance
-    .goto 2339,26.53,51.64
-    .complete 82153,3 --5/5 Decorations placed inside
+    .goto 2339,30.66,55.72
+    >>Click on the |cRXP_PICK_Alliance banner|r
+    .complete 82153,2,2 --2/2 Alliance banners placed
+step << Alliance
+    .goto 2339,28.93,53.53,10,0
+    .goto 2339,28.86,51.07
+    >>Click on the |cRXP_PICK_Small Alliance banner|r
+    .complete 82153,3,1 --5/5 Decorations placed inside
+step << Alliance
+    .goto 2339,27.86,49.89
+    >>Click on the |cRXP_PICK_Supplies|r
+    .complete 82153,3,2 --5/5 Decorations placed inside
+step << Alliance
+    .goto 2339,27.6,49.86
+    >>Click on the |cRXP_PICK_Alliance Weapon Rack|r
+    .complete 82153,3,3 --5/5 Decorations placed inside
+step << Alliance
+    .goto 2339,27.39,50.01
+    >>Click on the |cRXP_PICK_Large Alliance Banner|r
+    .complete 82153,3,4 --5/5 Decorations placed inside
+step << Alliance
+    .goto 2339,26.34,51.58
+    >>Click on the |cRXP_PICK_Large Alliance Banner|r
+    .complete 82153,3,5 --5/5 Decorations placed inside
 step << Alliance
     .goto 2339,28.35,53.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dornogal Steward|r
     .complete 82153,4 --1/1 Document signed
+    .skipgossipid 121721
+    .skipgossipid 122278
+    .target Dornogal Steward
 step << Alliance
     .goto 2339,31.79,59.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r
@@ -178,7 +208,7 @@ step
     .goto 2339,39.29,24.1
 step
     #completewith next
-    .goto 2339,40.72,22.36 
+    .goto 2339,40.72,22.36
     .cast 431519 >>Click on the |cRXP_PICK_Earthen Teleporter|r
 step
     .goto 2339,31.78,59.36
@@ -275,7 +305,7 @@ step
     .goto 2248,27.73,59.93,5,0
     .goto 2248,27.73,59.58,5,0
     .goto 2248,27.77,59.69
-    >>|cRXP_WARN_Descend the Tower by carefullj jumping off the stairs|r 
+    >>|cRXP_WARN_Descend the Tower by carefullj jumping off the stairs|r
     *Click on |cRXP_PICK_Click on the Chest.|r
     .complete 79124,2 --1/1 Conduit of the Southern Storm
     .skipgossipid 122158
@@ -590,7 +620,7 @@ step
     .accept 79227 >>Accept A Spider's-Eye View
 step
     .goto 2213,49.73,20.22
-    >>Click on |cRXP_PICK_Vizier's Scouting Shadecaster|r 
+    >>Click on |cRXP_PICK_Vizier's Scouting Shadecaster|r
     .complete 79227,1 --1/1 Umbral Bazaar scouted
 step
     .goto 2213,78.72,41.78
@@ -631,7 +661,7 @@ step
 step
     #label Central Warehouse investigated
     .goto 2213,61.88,89.53
-    >>Click on |cRXP_PICK_Suspicious Shipping Container.|r  
+    >>Click on |cRXP_PICK_Suspicious Shipping Container.|r
     *Kill |cRXP_ENEMY_Ascension-Crazed Soldier|r
     .complete 79230,2 --1/1 Central Warehouse investigated
     .mob Ascension-Crazed Soldier
@@ -1304,5 +1334,5 @@ RXPGuides.RegisterGuide([[
 #displayname |cRXP_WARN_Chapter 5|r - The Machines to War
 
 
-    
+
 ]])
