@@ -864,7 +864,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 80 Max Level Campaign
 #name d) The Machines to War
 #displayname |cRXP_WARN_Chapter 4|r - The Machines to War
-#next e) NYI
+#next e) A Light in the Dark
 
 
 step
@@ -1360,9 +1360,175 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP The War Within
 #subgroup 80 Max Level Campaign
-#name e) NYI
-#displayname |cRXP_WARN_Chapter 5|r - The Machines to War
+#name e) A Light in the Dark
+#displayname |cRXP_WARN_Chapter 5|r - A Light in the Dark
 
 
+step
+    .goto 2339,31.56,59.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
+    .accept 78941 >>Accept A Tide Needing Turned
+    .target Alleria Windrunner
+step
+    .goto 2215,71.64,59.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Steelstrike|r
+    .turnin 78941 >>Turn in A Tide Needing Turned
+    .target General Steelstrike
+    .accept 78942 >>Accept The Might of Khaz Algar
+    .accept 78943 >>Accept Steel and Flames
+step
+    #hidewindow
+    #completewith Algari forces rallied
+    #loop
+    .goto 2215,72.53,60.03,30,0
+    .goto 2215,72.07,60.63,30,0
+    .goto 2215,71.53,59.54,30,0
+    .goto 2215,71.06,60.23,30,0
+    .goto 2215,71.39,60.99,30,0
+    .goto 2215,71.71,61.38,30,0
+    .goto 2215,72.16,61.81,30,0
+    .goto 2215,72.06,62.39,30,0
+    .goto 2215,72.21,63.56,30,0
+    .goto 2215,71.71,63.92,30,0
+    .goto 2215,71.16,61.93,30,0
+    .goto 2215,70.74,61.85,30,0
+    +1
+step
+    #completewith next
+    >>Use the |T134229:0|t[Arathi Warhorn] near as many |cRXP_FRIENDLY_Algari forces|r as possible at the same time for maximum impact.
+    .complete 78943,1 --20/20 Algari forces rallied
+    .use 217309
+    .target Unbound Stormrider
+    .target Unbound Fighter
+    .target Hallowfall Lightblade
+    .target Veteran Flamecaller
+step
+    >>Kill |cRXP_ENEMY_Nerubians|r
+    .complete 78942,1 --Stem the Nerubian Tide (100%)
+    .mob Maddened Hierophant
+    .mob Chitin Ravager
+    .mob Agitated Chitterer
+    .mob Loyal Shadeweaver
+    .mob Nerubian Crypt Lord
+    .mob Nerubian Hulk
+step
+    #label Algari forces rallied
+    >>Use the |T134229:0|t[Arathi Warhorn] near as many |cRXP_FRIENDLY_Algari forces|r as possible at the same time for maximum impact.
+    .complete 78943,1 --20/20 Algari forces rallied
+    .use 217309
+    .target Unbound Stormrider
+    .target Unbound Fighter
+    .target Hallowfall Lightblade
+    .target Veteran Flamecaller
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 78943 >>Turn in Steel and Flames
+    .goto 2215,68.56,64.21
+    .target +Thrall
+    .accept 78950 >>Accept Cutting Off the Legs
+    .goto 2215,68.55,64.16
+    .target +Lady Jaina Proudmoore
+step
+    .goto 2215,66.72,64.89
+    >>Kill |cRXP_ENEMY_Nix'k the Wicked|r
+    .complete 78950,1 --1/1 Nix'k the Wicked slain
+    .mob Nix'k the Wicked
+step
+    .goto 2215,67.82,67.58
+    >>Kill |cRXP_ENEMY_Kaz'vik|r
+    .complete 78950,2 --1/1 Kaz'vik slain
+    .mob Kaz'vik
+step
+    .goto 2215,64.74,68.40
+    >>Kill |cRXP_ENEMY_Anub'ata|r
+    .complete 78950,3 --1/1 Anub'ata slain
+    .mob Anub'ata
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r and |cRXP_FRIENDLY_Anduin Wrynn|r
+    .turnin 78942 >>Turn in The Might of Khaz Algar
+    .goto 2215,64.58,61.79
+    .target +Faerin Lothar
+    .turnin 78950 >>Turn in Cutting Off the Legs
+    .accept 78948 >>Accept A Light in the Dark
+    .goto 2215,64.53,61.79
+    .target +Anduin Wrynn
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .complete 78948,1 --1/1 Speak with Anduin to chase down Xal'atath
+    .skipgossipid 122377
+    .target Anduin Wrynn
+-- step
+--     #completewith ScenarioXalatah
+--     .isOnQuest 78948
+--     .complete 78948,2 --Defeat Xal'atath
+step
+    .goto 2330,78.19,47.28,15,0
+    .goto 2330,76.41,38.32,15,0
+    .goto 2330,70.21,31.48,15,0
+    .goto 2330,64.81,32.97
+    .scenario 7008,2 >>Click on the |cRXP_PICK_North Brazier|r and kill the enemies that emerge.
+    .isOnQuest 78948
+    .mob Forming Whispers
+    .mob Writhing Shade
+    .mob Hazzk the Ascended
+step
+    .isOnQuest 78948
+    .goto 2330,71.32,32.52,15,0
+    .goto 2330,76.58,39.5,15,0
+    .goto 2330,78.22,56.55,15,0
+    .goto 2330,70.22,69.8,15,0
+    .goto 2330,62.88,74.36
+    .scenario 7008,1 >>Click on the |cRXP_PICK_South Brazier|r and kill the enemies that emerge.
+    .mob Forming Whispers
+    .mob Nightcaller Velys
+    .mob Writhing Shade
+step
+    .isOnQuest 78948
+    .goto 2330,71.4,69.61,20,0
+    .goto 2330,74.29,63.9,20,0
+    .goto 2330,78.88,54.94,20,0
+    .goto 2330,67.14,50.03,20,0
+    .goto 2330,60.3,50.65,15,0
+    .goto 2330,56.57,51.21
+    .scenario 7009,1 >>Kill |cRXP_ENEMY_Shadesworn Crusher|r and click on the |cRXP_PICK_fountain|r in the middle
+    .mob Shadesworn Crusher
+    .mob Forming Whispers
+    .mob Writhing Shade
+    .mob Whispering Monstrosity
+step
+    .goto 2330,56.57,51.21
+    .isOnQuest 78948
+    .scenario 7010,1 >>Click on |cRXP_PICK_Oil Brazier|r
+step
+    .goto 2330,47.9,61.65,10,0
+    .goto 2330,38.03,54.21,10,0
+    .goto 2330,27.49,55.87
+    .isOnQuest 78948
+    .scenario 7012,1 >>Kill |cRXP_ENEMY_Broken Queen|r
+    .mob The Broken Queen
+step
+    -- #label ScenarioXalatah
+    .isOnQuest 78948
+    .goto 2330,27.49,55.87
+    #title |cFFFCDC00Follow the Arrow|r
+    .scenario 7013,1
+    .complete 78948,2 --Defeat Xal'atath
+step
+    .goto 2215,35.93,35.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
+    .turnin 78948 >>Turn in A Light in the Dark
+    .target Alleria Windrunner
+    .accept 83503 >>Accept Return to Dornogal
+step
+    .goto 2339,39.86,26.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r
+    .complete 83503,1 --1/1 Report back to Merrix in Dornogal
+    .target Merrix
+    .skipgossipid 123407
+step
+    .goto 2339,25.33,66.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .turnin 83503 >>Turn in Return to Dornogal
+    .target Anduin Wrynn
 
 ]])
