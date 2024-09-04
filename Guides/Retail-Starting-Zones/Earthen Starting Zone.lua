@@ -4,7 +4,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP The War Within
 #name 1) Earthen Questline
 #displayname Earthen Questline
-
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) <<Alliance
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
 step
     .goto 2322,89.47,48.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
@@ -84,10 +85,12 @@ step
     .goto 2322,42.74,39.91,10,0
     .goto 2322,41.86,42.16,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Awakened Stormhands|r and |cRXP_FRIENDLY_Awakened Machinist|r and defeat them.
+    *|cRXP_WARN_only speak to one at a time.|r
     .complete 79202,1 --6/6 Earthen defeated in combat
     .mob Awakened Stormhand
     .mob Awakened Machinist
-    .mob
+    .target Awakened Machinist
+    .target Awakened Stormhand
     .skipgossip
 step
     .goto 2322,36.05,49.9,10,0
@@ -115,7 +118,7 @@ step
     .accept 79204 >>Accept Whoever You Want to Be
 step
     .goto 2322,8.62,49.68
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79204,1 --1/1 Meet Dawn in the Awakening Vestibule
 step
     .goto 2322,8.63,49.71
