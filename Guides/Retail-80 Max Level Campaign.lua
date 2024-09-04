@@ -147,7 +147,7 @@ step
     .complete 83271,2 --1/1 Waygate activated
     .skipgossipid 122852
 step
-    .goto 2339,43.90,86.34
+    .goto 2339,29.75,59.67
     >>Click on the |cRXP_PICK_Waygate|r
     .complete 83271,3 --1/1 Waygate used
 step
@@ -667,20 +667,11 @@ step
     .mob Ascension-Crazed Soldier
 step
     #loop
-    .goto 2213,61.87,82.54,20,0
-    .goto 2213,58.9,83.95,20,0
-    .goto 2213,57.27,82.62,20,0
-    .goto 2213,57.37,78.3,20,0
-    .goto 2213,54.66,77.86,20,0
-    .goto 2213,52.81,80.88,20,0
-    .goto 2213,54.96,84.32,20,0
-    .goto 2213,58.7,87.57,20,0
-    .goto 2213,63.62,86.81,20,0
-    .goto 2213,67.89,79.33,20,0
-    .goto 2213,71.48,76.58,20,0
-    .goto 2213,68.04,64.79,20,0
-    .goto 2213,59.54,63.51,20,0
-    .goto 2213,55.31,71.54,20,0
+    .goto 2213,54.52,84.64,40,0
+    .goto 2213,63.96,87.09,40,0
+    .goto 2213,72.17,78.49,40,0
+    .goto 2213,68.07,63.29,40,0
+    .goto 2213,57.86,62.09,40,0
     >>Kill |cRXP_ENEMY_Loyalist Mutagenician|r and |cRXP_ENEMY_Loyalist Bio-smith.|r Loot them for |cRXP_LOOT_|T1391773:0|tLoyalist Secretions|r
     *Use your |cRXP_WARN_ExtraActionButton|r to distract nearby patrolling guards if they are in the way.
     .complete 79233,1 --6/6 Loyalist Secretions
@@ -688,7 +679,7 @@ step
     .mob Loyalist Bio-smith
 step
     #completewith next
-    .goto 2213,57.01,92.89,10 >> Enter the House
+    .goto 2213,56.89,89.48,10 >> Enter the House
     .timer 20,RP
 step
     .goto 2213,57.09,91.01
@@ -800,7 +791,7 @@ step
     >>Click on the |cRXP_PICK_Repurposed Nerubian Charge|r
     .complete 79241,1,2 --6/6 Charges planted
 step
-    .goto 2255,60.88,73.38
+    .goto 2255,61.16,73.49
     >>Use your |cRXP_WARN_ExtraActionButton|r on |cRXP_ENEMY_Siege Marshal Tekhzok|r and kill it.
     .complete 79243,1 --1/1 Siege Marshal Tekhzok slain
     .mob Siege Marshal Tekhzok
@@ -817,7 +808,7 @@ step
     >>Click on the |cRXP_PICK_Repurposed Nerubian Charge|r
     .complete 79241,1,5 --6/6 Charges planted
 step
-    .goto 2255,66.82,69.83
+    .goto 2255,66.72,69.38
     >>Use your |cRXP_WARN_ExtraActionButton|r on |cRXP_ENEMY_Royal Quartermaster Ze'erik|r and kill it.
     .complete 79243,2 --1/1 Royal Quartermaster Ze'erik slain
     .mob Royal Quartermaster Ze'erik
@@ -872,10 +863,28 @@ step
     .target Alleria Windrunner
     .accept 79022 >>Accept A Mysterious Signal
 step
-    #completewith next
+    #completewith TravelToRingingDeepsMysteriousSignal
+    #label AMysteriousSignalA
+    .goto 2214,56.27,74.92,0,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
+    .turnin 79022 >>Turn in A Mysterious Signal
+    .target High Speaker Brinthe
+    .accept 79023 >>Accept Small Friend, Big Plans
+step
+    .isOnQuest 79022
+    #label TakePortalAzjkahetMysteriousSignal
+    #completewith TravelToRingingDeepsMysteriousSignal
     .goto 2339,63.6,52.7
     .zone 2255 >>Take the Portal to Azj-Kahet
 step
+    .isOnQuest 79022
+    #requires TakePortalAzjkahetMysteriousSignal
+    #label TravelToRingingDeepsMysteriousSignal
+    .goto 2255,65.65,20.88,80,0
+    .goto 2214,50.15,67.61
+    .zone 2214 >>Travel to The Ringing Deeps
+step
+    #requires AMysteriousSignalA
     .goto 2214,56.27,74.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79022 >>Turn in A Mysterious Signal
@@ -927,7 +936,7 @@ step
     >>Use |T135788:0|t[Turbo Boost] and click on the |cRXP_PICK_Pipe Grate|r
     .complete 79024,7 --1/1 Exit back through the Pipe
 step
-    >>Press Exit
+    >>|cRXP_WARN_Leave the vehicle|r
     .complete 79024,8 --Return to Brinthe
 step
     .goto 2214,56.27,74.92
@@ -1050,7 +1059,7 @@ step
     .isInScenario 2371
     .isOnQuest 79026
     #hidewindow
-    #completewith Waxface
+    #completewith next
     #loop
     .goto 2251,50.23,21.52,40,0
     .goto 2251,44.1,21.26,40,0
@@ -1080,7 +1089,7 @@ step
 step
     .isInScenario 2371
     .isOnQuest 79026
-    #label Waxface
+    .goto 2251,46.88,81.45
     >>Kill |cRXP_ENEMY_Waxface|r
     .scenario 6801,1
     .mob Waxface
@@ -1114,6 +1123,7 @@ step
     .goto 2251,49.6,28.99,20,0
     .goto 2251,49.78,34.5,20 >> |cRXP_WARN_Follow the Arrow|r
 step
+    .isInScenario 2355
     .goto 2251,48.72,40.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
     .skipgossipid 120082
@@ -1153,12 +1163,11 @@ step
     .goto 2251,46.85,81.67
     .isInScenario 2355
     .isOnQuest 79026
-    #label Waxface
     >>Kill |cRXP_ENEMY_Waxface|r
     .scenario 6801,1
     .mob Waxface
 step
-    -- .isOnQuest 79026
+    .isOnQuest 79026
     .goto 2251,46.08,83.06
     .cast 441550 >>Click on the |cRXP_PICK_Obstruction Drain.|r
 step
@@ -1168,7 +1177,7 @@ step
     .mob Enraged Kelp
 step
     #completewith next
-    +Collect Rewards then click on your player frame and select "leave delve"
+    .zone 2214 >>Collect Rewards then click on your player frame and select "leave delve"
     .target Leave-O-Bot 7000
 step
     .goto 2214,47.24,42.36
@@ -1193,14 +1202,16 @@ step
     >>Wait for the Roleplay.
     .complete 79028,1 --1/1 Listen to Dagran's Report
 step
+    .isOnQuest 79028
     .goto 2214,56.42,36.99
     .cast 451809 >>Click on the |cRXP_PICK_Power Substation Console|r
     .timer 20,RP
 step
+    .isOnQuest 79028
     .goto 2214,56.09,37.23
     .countdown 20 >>Wait infront of the Pipe Room
 step
-    >>Enter the Pipe Room and wait for the roleplay.
+    >>|cRXP_WARN_Enter the Pipe Room and wait for the roleplay.|r
     .complete 79028,3 --1/1 Pipe Room Located
     .goto 2214,55.67,37.28
 step
@@ -1217,6 +1228,7 @@ step
     >>Click on the |cRXP_PICK_Power Substation Console|r
     .complete 79028,5 --1/1 Power Substation Restarted
 step
+    .isOnQuest 79028
     .goto 2214,56.35,38.79,10 >>Leave the House
 step
     .goto 2214,55.98,39.28
@@ -1253,6 +1265,7 @@ step
     .target ZZ-01-47
     .accept 80145 >>Accept The Motherlode
 step
+    .isOnQuest 80145
     .goto 2214,58.55,35.9,10 >> Enter the Mine
 step
     .goto 2214,58.57,33.91
@@ -1298,6 +1311,7 @@ step
     .mob Foreman-in-Training
     .target Derelict Golem
 step
+    .isOnQuest 79029
     .goto 2214,56.88,77.62,10 >>Enter the House
 step
     .goto 2214,56.06,77.62
@@ -1317,6 +1331,7 @@ step
     .target High Speaker Brinthe
     .accept 79030 >>Accept The Voice of the Speakers
 step
+    .isOnQuest 79030
     .zone 2339 >>Go to Dornogal
 step
     .goto 2339,31.54,59.65
