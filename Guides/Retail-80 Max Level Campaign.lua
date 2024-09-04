@@ -8,6 +8,10 @@ RXPGuides.RegisterGuide([[
 #next b) Ties That Bird
 
 step
+    #completewith next
+    .goto 2339,47.61,44.40,0
+    +|cRXP_WARN_You have to skip the Campaign on alt character at |cRXP_FRIENDLY_Brann Bronzebeard|r
+step
     .goto 2339,36.12,80.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r
     .accept 79333 >>Accept The Fleet Arrives
@@ -78,6 +82,7 @@ step << Horde
     .target Dornogal Steward
 step << Horde
     #completewith next
+    #title Leave House
     .goto 2339,30.58,62.84,10 >> Leave the House
 step << Horde
     .goto 2339,31.79,59.35
@@ -192,6 +197,7 @@ step
     .target Brann Bronzebeard
 step
     #completewith next
+    #title Enter House
     .goto 2339,51.44,42.19,10 >> Enter the House
 step
     .goto 2339,52.08,42.23
@@ -200,6 +206,7 @@ step
     .target Vaskarn
 step
     #completewith next
+    #title Leave House
     .goto 2339,51.09,41.43,10 >>Leave the House
 step
     .goto 2339,39.08,24.14
@@ -650,6 +657,7 @@ step
     .mob Loyalist Bio-smith
 step
     #completewith next
+    #title Enter House
     .goto 2213,68.31,80.63,10 >> Enter the House
 step
     .goto 2213,68.63,81.57
@@ -657,6 +665,7 @@ step
     .complete 79230,1 --1/1 Eastern Stockpile investigated
 step
     #completewith next
+    #title Leave House
     .goto 2213,67.69,79.65,10 >> Leave the House
 step
     #label Central Warehouse investigated
@@ -679,6 +688,7 @@ step
     .mob Loyalist Bio-smith
 step
     #completewith next
+    #title Enter House
     .goto 2213,56.89,89.48,10 >> Enter the House
     .timer 20,RP
 step
@@ -946,6 +956,7 @@ step
     .accept 79217 >>Accept Back to Base
 step
     #completewith next
+    #title Enter House
     .goto 2214,47.12,33.83,10 >>Enter the House
 step
     .goto 2214,47.10,34.23
@@ -971,6 +982,7 @@ step
     .complete 79025,3 --1/1 Point out the Shadowvein Extraction Site
 step
     #completewith next
+    #title Leave House
     .goto 2214,47.12,33.9,15 >>Leave the House
 step
     .goto 2214,47.10,34.23
@@ -1054,7 +1066,7 @@ step
     .isInScenario 2371
     .isOnQuest 79026
     #completewith Waxface
-    >>if the aura gets dimmer or fades use your |cRXP_WARN_ExtraActionButton|r next to |cRXP_FRIENDLY_Air Purifier|r to refresh it.
+    >>If the aura gets dimmer or fades use your |cRXP_WARN_ExtraActionButton|r next to |cRXP_FRIENDLY_Air Purifier|r to refresh it.
 step
     .isInScenario 2371
     .isOnQuest 79026
@@ -1229,6 +1241,7 @@ step
     .complete 79028,5 --1/1 Power Substation Restarted
 step
     .isOnQuest 79028
+    #title Leave House
     .goto 2214,56.35,38.79,10 >>Leave the House
 step
     .goto 2214,55.98,39.28
@@ -1266,6 +1279,7 @@ step
     .accept 80145 >>Accept The Motherlode
 step
     .isOnQuest 80145
+    #title Enter Mine
     .goto 2214,58.55,35.9,10 >> Enter the Mine
 step
     .goto 2214,58.57,33.91
@@ -1312,6 +1326,7 @@ step
     .target Derelict Golem
 step
     .isOnQuest 79029
+    #title Enter House
     .goto 2214,56.88,77.62,10 >>Enter the House
 step
     .goto 2214,56.06,77.62
