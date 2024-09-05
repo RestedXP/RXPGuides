@@ -833,7 +833,7 @@ step << Mage
 step << Mage
     .goto StormwindClassic,39.68,79.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larimaine|r
-    .train 48464 >> Train |T135763:0|t[Teleport: Stormwind]
+    .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
 step << Druid
