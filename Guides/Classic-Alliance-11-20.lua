@@ -10896,11 +10896,12 @@ step
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garryeth|r
     .goto Darnassus,40.0,42.2
-    .bankdeposit 5996,1468,2251 >> Deposit the following items into your bank
+    .bankdeposit 5996,1468,2251,1015 >> Deposit the following items into your bank
     .target Garryeth
     >>|T134797:0|t[Elixir of Water Breathing] --5996
     >>|T134304:0|t[Murloc Fins] --1468
     >>|T134321:0|t[Gooey Spider Legs] --2251
+    >>|T133970:0|t[Lean Wolf Flanks] --1015
 step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
