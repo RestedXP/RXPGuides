@@ -3259,14 +3259,10 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-<< !sod/Warrior/Rogue/Hunter/Druid/Paladin/Mage/Warlock/!NightElf Priest
 #group RestedXP Alliance 1-20
 #name 16-19 Darkshore
-#displayname 20-22 Darkshore << sod !Warrior
-#displayname 20-22 Darkshore/Ashenvale << sod Warrior
 #next 19-20 Redridge;20-21 Darkshore/Ashenvale << !Hunter
-#next 19-21 Darkshore/Ashenvale << !sod Hunter
-#next 22-24 Wetlands SoD << sod
+#next 19-21 Darkshore/Ashenvale << Hunter
 
 step << NightElf !Druid
     #optional
@@ -10809,7 +10805,7 @@ step
 step
     #sticky
     #completewith GlowingGem
-    >>Keep the |T13430:0|t[Murloc Fins] you might loot. You will need 8 for a quest later
+    >>Keep any |T134304:0|t[Murloc Fins] you might loot. You will need 8 for a quest later
     .collect 1468,8 --Murloc Fin(8)
 step
     #label GlowingGem
@@ -10819,7 +10815,6 @@ step
     .goto Ashenvale,21.01,41.61,50,0
     .goto Ashenvale,20.31,42.33
     >>Kill |cRXP_ENEMY_Saltspittle Murlocs|r. Loot them for the |cRXP_LOOT_Glowing Gem|r
-    >>|cRXP_WARN_Save |cRXP_LOOT_Murloc Fins|r for later|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Oracles|r can heal, and have a 90 damage instant-cast shock spell every few seconds|r
 	.mob Saltspittle Warrior
 	.mob Saltspittle Muckdweller
@@ -10891,6 +10886,21 @@ step
     #completewith next
     .goto Teldrassil,55.889,89.456
     .zone Darnassus >> Take the purple portal into Darnassus
+step << Hunter
+    .goto Darnassus,40.377,8.545
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .trainer >> Train your class spells
+    .xp <22,1
+step
+    #xprate <1.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garryeth|r
+    .goto Darnassus,40.0,42.2
+    .bankdeposit 5996,1468,2251 >> Deposit the following items into your bank
+    .target Garryeth
+    >>|T134797:0|t[Elixir of Water Breathing] --5996
+    >>|T134304:0|t[Murloc Fins] --1468
+    >>|T134321:0|t[Gooey Spider Legs] --2251
 step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
