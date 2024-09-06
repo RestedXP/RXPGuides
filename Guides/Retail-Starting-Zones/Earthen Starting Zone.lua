@@ -1,11 +1,14 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP The War Within
-#name 1) Earthen Questline
-#displayname Earthen Questline
+#group RestedXP Starting Zones
+#name 1) Earthen Intro
+#displayname Earthen Intro
 #next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) <<Alliance
 #next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
+
+<<EarthenDwarf
+
 step
     .goto 2322,89.47,48.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
