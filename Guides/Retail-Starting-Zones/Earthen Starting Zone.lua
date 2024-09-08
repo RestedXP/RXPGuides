@@ -172,5 +172,4 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brunhold|r
     .turnin 81889 >>Turn in Stranger in a Strange Land
     .target Brunhold
-
 ]])
