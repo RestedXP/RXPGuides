@@ -1471,8 +1471,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Heritage Armor
 #subgroup Races
-#name 5) Draenei
-#displayname Draenei
+#name 5) Draenei Heritage Armor
+#displayname Draenei Heritage Armor
 
 << Alliance
 
