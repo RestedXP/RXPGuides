@@ -419,7 +419,9 @@ function addon.settings:ProcessImportBox()
     local guidesLoaded, errorMsg = addon.ImportString(importCache.bufferString,
                                                       importCache.workerFrame)
     if guidesLoaded and not errorMsg then
-        self.gui.selectedDeleteGuide = ""
+        if self.gui then
+            self.gui.selectedDeleteGuide = ""
+        end
         return true
     else
         local relog = ""
