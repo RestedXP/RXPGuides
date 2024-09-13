@@ -598,7 +598,7 @@ step
     .complete 60,1 --Collect Kobold Candle (x8)
     .mob Kobold Tunneler
     .mob Kobold Miner
-step
+step << skip
     #completewith next
     .goto Elwynn Forest,41.29,79.85,-1
     .goto Elwynn Forest,41.75,78.49,-1
@@ -611,6 +611,9 @@ step
     >>|cRXP_WARN_Alternatively, run back to Goldshire|r
     >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload macro you can click when/if that happens|r
     .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLICK HERE to learn how to logout skip|r
+step
+    #completewith next
+    .subzone 87 >> Return to Goldshire
 step
     .goto Elwynn Forest,42.14,67.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy|r
@@ -1143,10 +1146,14 @@ step
     >>|T133024:0|t[Bronze Tube]
     >>|T132763:0|t[Osric's Crate]
     .target Bailey Stonemantle
-step
+step << skip
     .goto Ironforge,36.35,57.88
     .goto Dun Morogh,53.03,35.71,10 >>|cRXP_WARN_Jump on top of the sides of the vault. Logout skip to Dun Morogh|r
     .isQuestAvailable 314
+step
+    .goto Ironforge,15.16,85.70,20,0
+    .goto Dun Morogh,59.84,49.56
+    .zone Dun Morogh >> Exit Ironforge
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1395,16 +1402,19 @@ step
     >>Talk to |cRXP_FRIENDLY_Rugelfuss|r
     .accept 267 >> Accept The Trogg Threat
     .target Captain Rugelfuss
-step
+step << skip
     #completewith next
     .goto Loch Modan,21.49,68.14,20,0
     .goto Loch Modan,20.86,64.46,20,0
     .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
-step
+step << skip
     .goto Loch Modan,18.84,61.48
     .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_CLICK HERE If you're struggling|r
     .goto Loch Modan,32.19,46.95,30 >>|cRXP_WARN_Jumping Logout Skip from the Brazier inside the tunnel to Thelsamar|r
     .isOnQuest 267
+step
+    #completewith next
+    .subzone 144 >> Travel to Thelsamar
 step
     .goto Loch Modan,32.93,49.51,40,0
     .goto Loch Modan,34.49,47.44,40,0
@@ -1426,12 +1436,12 @@ step
 step
     .zone Ironforge >> Travel to Ironforge
     .isOnQuest 416
-step
+step << skip
     #completewith next
     .goto Ironforge,43.83,59.58,20,0
     .goto Ironforge,38.27,71.43,20,0
     .goto Ironforge,33.70,76.24,10 >>|cRXP_WARN_Travel toward the Logout Skip spot|r
-step
+step << skip
     .goto Ironforge,33.70,76.24
     .zone Dun Morogh >>|cRXP_WARN_Position your character until it looks like they're floating on the edge of the metal railing. Logout skip to Dun Morogh|r
     .isOnQuest 416
@@ -1677,11 +1687,11 @@ step
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r en route back to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .complete 182,1--Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
-step
+step << skip
     #completewith next
     +|cRXP_WARN_If you don't know how to logout skip, watch this video first|r
     .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLICK HERE to learn how to logout skip|r
-step
+step << skip
     >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r and |cRXP_FRIENDLY_Nori Pridedrift|r
     >>|cRXP_WARN_Be Aware that "Scalding Mornbrew Delivery" has a 5-minute timer|r
     >>|cRXP_WARN_Make sure you have 3 inventory slots for these turnins/accepts|r
@@ -1692,6 +1702,13 @@ step
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .goto Dun Morogh,24.98,75.96,-1
     .target +Nori Pridedrift
+step
+    >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    >>|cRXP_WARN_Make sure you have 3 inventory slots for these turnins/accepts|r
+    .turnin 182,4 >> Turn in The Troll Cave
+    .accept 218 >> Accept The Stolen Journal
+    .goto Dun Morogh,25.076,75.713
+    .target +Grelin Whitebeard
 step
     .goto Dun Morogh,26.73,79.72,40,0
     .goto Dun Morogh,29.34,79.09,30,0
@@ -1704,26 +1721,35 @@ step
     >>|cRXP_WARN_Be careful as he casts|r |T135849:0|t[Frost Shock] |cRXP_WARN_(Range Instant: Deals 10 Frost damage and slows movespeed by 50% for 8 seconds)|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
-step
+step << skip
     #completewith Rybrad
     #label LogoutSkip1
     .goto Dun Morogh,29.63,79.50
     .goto Dun Morogh,29.76,69.66,30 >>|cRXP_WARN_Position your character until it looks like they're floating on the edge of the cliff above the Frozen Lake, then logout skip back to Anvilmar|r
     .isOnQuest 218
 step
+    >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r and |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .goto Dun Morogh,25.076,75.713,-1
+    .target +Grelin Whitebeard
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .goto Dun Morogh,24.98,75.96,-1
+    .target +Nori Pridedrift
+step
     #completewith Rybrad
     #requires LogoutSkip1
     #label LogoutSkip2
     .goto Dun Morogh,28.79,69.04,20,0
     .goto Dun Morogh,28.63,68.43,10 >>Enter Anvilmar
-    .isOnQuest 218
+    .isOnQuest 218,3364
 step
     #label Rybrad
     .goto Dun Morogh,28.66,67.74
     >>Talk to |cRXP_FRIENDLY_Rybrad Coldbank|r
     .vendor >> Vendor Trash
     .target Rybrad Coldbank
-    .isOnQuest 218
+    .isOnQuest 218,3364
 step
     >>Talk to |cRXP_FRIENDLY_Durnan Furcutter|r and |cRXP_FRIENDLY_Marryk Nurribit|r
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
@@ -1766,11 +1792,12 @@ step
     .isOnQuest 170
 step
     #label StolenJ
-    >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r and |cRXP_FRIENDLY_Nori Pridedrift|r
-    .turnin 218,2 >> Turn in The Stolen Journal
-    .accept 282 >> Accept Senir's Observations
-    .goto Dun Morogh,25.076,75.713
-    .target +Grelin Whitebeard
+    >>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    -- >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r and |cRXP_FRIENDLY_Nori Pridedrift|r
+    -- .turnin 218,2 >> Turn in The Stolen Journal
+    -- .accept 282 >> Accept Senir's Observations
+    -- .goto Dun Morogh,25.076,75.713
+    -- .target +Grelin Whitebeard
     .turnin 3365 >> Turn in Bring Back the Mug
     .goto Dun Morogh,24.98,75.96
     .target +Nori Pridedrift
@@ -1949,8 +1976,9 @@ step
     .mob Crag Boar
 step
     #completewith InnLS1
-    +|cRXP_WARN_Remember the Inn Logout Skip soon. Unequip your current|r |T135148:0|t[Staff]
-    >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload command you can click when/if that happens|r
+    +|cRXP_WARN_Unequip your current|r |T135148:0|t[Staff]
+    -- +|cRXP_WARN_Remember the Inn Logout Skip soon. Unequip your current|r |T135148:0|t[Staff]
+    -- >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload command you can click when/if that happens|r
 step
     #completewith Tannok
     .cast 1459 >> Rebuff |T135932:0|t[Arcane Intellect]
@@ -2079,7 +2107,7 @@ step
     .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0107
-step
+step << skip
     #completewith SenirO
     .goto Dun Morogh,47.46,52.60,-1
     .goto Dun Morogh,47.13,54.91,35 >>|cRXP_WARN_Jump up on top of the barrels on the wall behind |cRXP_FRIENDLY_Belm|r. Logout Skip to Kharanos|r
@@ -2265,11 +2293,11 @@ step
     .mob Elder Crag Boar
     .mob Snow Leopard
     .isQuestTurnedIn 384
-step
+step << skip
     #completewith next
     .goto Dun Morogh,38.00,42.77,30 >> Go inside the Cave
     .isOnQuest 319
-step
+step << skip
     #label CaveLS
     .goto Dun Morogh,38.32,43.36
     .goto Dun Morogh,47.13,54.91,30 >> |cRXP_WARN_Perform a Logout Skip inside the cave to teleport back to Kharanos|r
@@ -2853,12 +2881,12 @@ step
     >>Talk to |cRXP_FRIENDLY_Rugelfuss|r
     .accept 267 >> Accept The Trogg Threat
     .target Captain Rugelfuss
-step
+step << skip
     #completewith next
     .goto Loch Modan,21.49,68.14,20,0
     .goto Loch Modan,20.86,64.46,20,0
     .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
-step
+step << skip
     .goto Loch Modan,18.84,61.48
     .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_CLICK HERE If you're struggling|r
     .goto Loch Modan,32.19,46.95,30 >>|cRXP_WARN_Jumping Logout Skip from the Brazier inside the tunnel to Thelsamar|r
@@ -2954,14 +2982,14 @@ step
     >>Total Cost: 15s
     >>Remember you may want money for Healing Potions (3s each), Bronze Tube (8s each), and level 5 food (20c per 5)
     .target Dink
-step
+step << skip
     #completewith IFHS
     +|cRXP_WARN_Remember to Logout Skip on the Candles after setting your|r |T134414:0|t[Hearthstone]
 step
     #completewith next
-    .goto Ironforge,27.25,12.79,20,0
-    .goto Ironforge,22.59,38.13,20,0
-    .goto Ironforge,20.40,53.19,20,0
+    --.goto Ironforge,27.25,12.79,20,0
+    --.goto Ironforge,22.59,38.13,20,0
+    --.goto Ironforge,20.40,53.19,20,0
     >>Go inside the building
     .goto Ironforge,18.14,51.45,10 >>Travel toward |cRXP_FRIENDLY_Firebrew|r
 step
@@ -2970,7 +2998,7 @@ step
     >>Talk to |cRXP_FRIENDLY_Firebrew|r
     .home >> Set your Hearthstone to Ironforge
     .target Innkeeper Firebrew
-step
+step << skip
     .goto Ironforge,19.11,52.80
     .zone Dun Morogh >>|cRXP_WARN_Jump on top of the Candles on the table. Logout skip to Dun Morogh|r
     .isOnQuest 416
@@ -2986,11 +3014,17 @@ RXPGuides.RegisterGuide([[
 #next 12-14 ADV Loch Modan Mage AoE
 
 step
+    #completewith DeathlessSkip
+    .goto Ironforge,15.16,85.70,20,0
+    .goto Dun Morogh,59.84,49.56
+    .zone Dun Morogh >> Exit Ironforge
+step
     #completewith next
     .goto Dun Morogh,53.48,37.50,30,0
     .goto Dun Morogh,54.04,38.60,30,0
     .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot. Hug the left side of the mountain en route
 step
+    #label DeathlessSkip
     .goto Dun Morogh,60.18,43.01,12,0
     .goto Dun Morogh,60.42,43.75,12,0
     .goto Dun Morogh,60.71,44.18,4,0
@@ -3261,7 +3295,7 @@ step
     .isOnQuest 958
 step
     .goto Darkshore,45.75,53.08
-    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Moonkin Oracle|r inside the cave, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
+    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Moonkin Oracle|r inside the cave --, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
     >>|cRXP_WARN_Be careful as it casts|r |T136006:0|t[Wrath] |cRXP_WARN_(Ranged Cast: Deals 30-45 Nature damage),|r |T136096:0|t[Moonfire] |cRXP_WARN_(Ranged Instant: Deals 20-30 Nature damage, then 44 Nature damage over 12 seconds), and|r |T136085:0|t[Regrowth] |cRXP_WARN_(Self Cast: Heals for about 150 damage. Rare, but run if this happens)|r
     >>|cRXP_WARN_You can LoS his|r |T136006:0|t[Wrath] |cRXP_WARN_behind the rocks inside the mouth of the cave|r
     .mob Moonkin Oracle
@@ -3517,7 +3551,7 @@ step
     >>Total Cost: 12s
     >>Remember you may want money for a |T133024:0|t[Bronze Tube] (8s each) and Thelsamar flying (1s 10c)
     .target Dink
-step
+step << skip
     .goto Ironforge,27.22,8.58,-1
     .goto Ironforge,67.83,42.47,-1
     .vendor 5175 >> Logout skip on the pillar above |cRXP_FRIENDLY_Dink|r to check |cRXP_FRIENDLY_Cogspinner|r for a |T133024:0|t[Bronze Tube] if you wish
@@ -3957,7 +3991,7 @@ step
     .isOnQuest 958
 step
     .goto Darkshore,45.75,53.08
-    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Moonkin Oracle|r inside the cave, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
+    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Moonkin Oracle|r inside the cave --, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
     >>|cRXP_WARN_Be careful as it casts|r |T136006:0|t[Wrath] |cRXP_WARN_(Ranged Cast: Deals 30-45 Nature damage),|r |T136096:0|t[Moonfire] |cRXP_WARN_(Ranged Instant: Deals 20-30 Nature damage, then 44 Nature damage over 12 seconds), and|r |T136085:0|t[Regrowth] |cRXP_WARN_(Self Cast: Heals for about 150 damage. Rare, but run if this happens)|r
     >>|cRXP_WARN_You can LoS his|r |T136006:0|t[Wrath] |cRXP_WARN_behind the rocks inside the mouth of the cave|r
     .mob Moonkin Oracle
@@ -4084,7 +4118,7 @@ step
     >>Total Cost: 12s
     >>Remember you may want money for a |T133024:0|t[Bronze Tube] (8s each) and Thelsamar flying (1s 10c)
     .target Dink
-step
+step << skip
     .goto Ironforge,27.22,8.58,-1
     .goto Ironforge,67.83,42.47,-1
     .vendor 5175 >> Logout skip on the pillar above |cRXP_FRIENDLY_Dink|r to check |cRXP_FRIENDLY_Cogspinner|r for a |T133024:0|t[Bronze Tube] if you wish
@@ -4173,12 +4207,12 @@ step
     >>Talk to |cRXP_FRIENDLY_Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
     .target Captain Rugelfuss
-step
+step << skip
     #completewith next
     .goto Loch Modan,21.49,68.14,20,0
     .goto Loch Modan,20.86,64.46,20,0
     .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
-step
+step << skip
     .goto Loch Modan,18.84,61.48
     .goto Loch Modan,32.19,46.95,30 >>Jumping Logout Skip from the Brazier inside the tunnel to Thelsamar
     .isOnQuest 1339
@@ -4630,7 +4664,7 @@ step << Gnome
     .turnin 301 >> Turn in Report to Ironforge
     .target Prospector Stormpike
     .isOnQuest 301
-step
+step << skip
     #completewith Monty
     .goto Ironforge,74.82,8.69,-1
     .goto Ironforge,56.21,46.86,-1
@@ -5439,7 +5473,7 @@ step
     #label CapCave
     #completewith CapCave1
     .goto Darkshore,55.00,33.42,30 >>Go inside the Cave
-step
+step << skip
     #requires CapCave
     #completewith CapCave1
     +|cRXP_WARN_Remember the Cave Logout Skip soon|r
@@ -5469,9 +5503,13 @@ step
     >>Loot the first |cRXP_LOOT_Scaber Stalks|r at the mouth of the cave after looting the |cRXP_LOOT_Death Cap|r
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 947,1 --Scaber Stalk (5)
-step
+step << skip
     .goto Darkshore,54.96,34.52
     .goto Darkshore,41.70,36.51,30 >> |cRXP_WARN_Perform a Logout Skip inside the cave|r
+    .isOnQuest 4763
+step
+    #completewith next
+    .subzone 442 >> Travel to Auberdine
     .isOnQuest 4763
 step
     .goto Darkshore,44.18,36.29
@@ -7816,7 +7854,7 @@ step
 	.goto Redridge Mountains,18.95,24.50,20,0
     .xp 21+15715 >> Grind to 15715+/25200xp
     .isQuestTurnedIn 92
-step
+step << skip
     #completewith next
     .goto Redridge Mountains,18.79,13.84,-1
     .goto Redridge Mountains,22.04,17.14,-1
@@ -7824,6 +7862,9 @@ step
     .goto Redridge Mountains,21.29,24.06,-1
     .goto Redridge Mountains,16.58,20.97,-1
     .goto Redridge Mountains,33.82,48.07,30 >>Logout Skip out of the cave (on the EAST side) back to Lakeshire
+step
+    #completewith next
+    .subzone 69 >> Return to Lakeshire
 step
     >>Talk to |cRXP_FRIENDLY_Marris|r and |cRXP_FRIENDLY_Oslow|r
     .turnin 20 >>Turn in Blackrock Menace
