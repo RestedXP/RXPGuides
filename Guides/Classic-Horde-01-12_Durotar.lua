@@ -424,6 +424,7 @@ step << Warlock
     .money >0.01
 step << Warlock
     #season 2
+    #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
@@ -432,6 +433,7 @@ step << Warlock
     .target Nartok
 step << Warlock
     #season 0
+    #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
@@ -1152,13 +1154,6 @@ step << Priest
     #season 0
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-    .train 589 >> Train your class spells
-    .money <0.021
-    .target Ken'jai
-step << Priest
-    #season 0
-    .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
     .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
     .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
     .money <0.011
@@ -1269,20 +1264,8 @@ step
     .mob Vile Familiar
     .isOnQuest 4402
 step
-    .goto Durotar,44.67,64.92,25,0
-    .goto Durotar,43.45,62.96,25,0
-    .goto Durotar,43.82,62.72,25,0
-    .goto Durotar,44.85,61.54,25,0
-    .goto Durotar,44.88,59.66,25,0
-    .goto Durotar,44.61,58.20,25,0
-    .goto Durotar,45.46,58.49,25,0
-    .goto Durotar,45.93,60.62,25,0
-    .goto Durotar,46.87,60.36,25,0
-    .goto Durotar,47.28,62.80,25,0
-    .goto Durotar,46.08,62.98,25,0
-#loop
-	.line Durotar,44.67,64.92,43.45,62.96,43.82,62.72,44.85,61.54,44.88,59.66,44.61,58.20,45.46,58.49,45.93,60.62,46.87,60.36,47.28,62.80,46.08,62.98,44.67,64.92
-	.goto Durotar,44.67,64.92,25,0
+    #loop
+	.goto Durotar,44.67,64.92,0
 	.goto Durotar,43.45,62.96,25,0
 	.goto Durotar,43.82,62.72,25,0
 	.goto Durotar,44.85,61.54,25,0
@@ -1521,7 +1504,7 @@ step
     #softcore
     #completewith next
     .goto Durotar,44.70,52.47
-    .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
+    .deathskip >> |cRXP_WARN_Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
     .subzoneskip 362
 step
@@ -1742,7 +1725,7 @@ step << Warlock
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
 step << Warlock
-    #season
+    #season 0
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 695 >> Train |T136197:0|t[Shadow Bolt]
@@ -1750,7 +1733,7 @@ step << Warlock
     .target Nartok
     .money <0.02
 step << Warlock
-    #season
+    #season 0
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 695 >> Train |T136197:0|t[Shadow Bolt]
@@ -7448,6 +7431,7 @@ step << Warlock
     .money >0.01
 step << Warlock
     #season 2
+    #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
@@ -7456,6 +7440,7 @@ step << Warlock
     .target Nartok
 step << Warlock
     #season 0
+    #label Nartok2
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
@@ -8413,7 +8398,7 @@ step
     #softcore
     #completewith next
     .goto Durotar,44.70,52.47
-    .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
+    .deathskip >> |cRXP_WARN_Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
     .subzoneskip 362
 step
@@ -8635,7 +8620,7 @@ step << Warlock
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
 step << Warlock
-    #season
+    #season 0
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 695 >> Train |T136197:0|t[Shadow Bolt]
@@ -8643,7 +8628,7 @@ step << Warlock
     .target Nartok
     .money <0.02
 step << Warlock
-    #season
+    #season 0
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 695 >> Train |T136197:0|t[Shadow Bolt]
