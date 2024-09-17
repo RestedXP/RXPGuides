@@ -3889,7 +3889,7 @@ function addon.functions.link(self, ...)
                            ": Invalid text/url\n" .. self)
         end
         element.textOnly = true
-        element.url = url
+        element.url = url:gsub("\\?\\%-","-")
         element.hideTooltip = true
         element.tooltip = L("Click to view the link")
         element.text = text
