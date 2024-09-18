@@ -2,7 +2,6 @@
 ..\FrameXML\UI.xsd">
   <Script file="compatibility.lua"/>
   <Script file="LibStub\LibStub.lua"/>
-  <Include file="mainline\LibUIDropDownMenu\LibUIDropDownMenu.xml"/>
   <Script file="CallbackHandler-1.0\CallbackHandler-1.0.lua"/>
   <Include file="AceEvent-3.0\AceEvent-3.0.xml"/>
   <Script file="AceDB-3.0\AceDB-3.0.lua"/>
