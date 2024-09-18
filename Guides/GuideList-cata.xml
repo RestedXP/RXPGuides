@@ -41,4 +41,5 @@
     <Script file="Guides/Dailies/Argent Tournament Grounds.lua"/>
 
 	<Script file="Guides/Dailies/Cataclysm/Tol Barad Daily Quests.lua"/>
+	<Script file="Guides/Dailies/Cataclysm/Molten Front.lua"/>
 </Ui>
