@@ -93,10 +93,13 @@ step
     .target Matoclaw
     .daily 29123,29149,29127,29163,29166 >>Accept whichever random daily quest is offered
 step
-    .goto 198/1,-2079.800,4439.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r 
+    #loop
+    .goto 198,27.108,62.009,5,0
+    .goto 198,27.170,62.563,5,0
+    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r and accept whichever daily quest is available
+    .questcount <1,29125,29147,29164,29101,29161
+    .target Matoclaw
     .target Mylune
-    .daily 29125,29147,29164,29101,29161 >>Accept whichever random daily quest is offered
 step
     .isOnQuest 29166
     #completewith KillNemesis
@@ -209,6 +212,7 @@ step
     .target Hyjal Bear Cub
     .isOnQuest 29161
 step
+    .isOnQuest 29161
     .goto 198,14.310,33.203
     *|cRXP_WARN_Cast|r |T450907:0|t[Climb Up] (1) |cRXP_WARN_until you're at the top, aim the arrow at the trampoline beside |cRXP_FRIENDLY_Keeper Taldros|r, then cast|r |T446127:0|t[Chuck-a-bear] (4)|cRXP_WARN_. Cast|r |T450905:0|t[Climb Down] (2) |cRXP_WARN_and repeat the process|r
     .complete 29161,1 --6/6 Hyjal Bear Cubs Rescued
@@ -439,15 +443,15 @@ step
     .dailyturnin 29122 >>Turn in Echoes of Nemesis
 step
     .isQuestComplete 29126
-    .goto 198/1,-2080.000,4439.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r
-    .target Mylune
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
     .dailyturnin 29126 >>Turn in The Power of Malorne
 step
     .isQuestComplete 29165
-    .goto 198/1,-2080.000,4439.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r
-    .target Mylune
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
     .dailyturnin 29165 >>Turn in The Call of the Pack
 step
     .isQuestComplete 29148
@@ -509,7 +513,7 @@ step
 step
     #completewith GatesofHell
     .goto 198,27.484,56.394
-    .subzone 5738 >> Go through the Portal to the Firelands
+    .zone 338 >> Go through the Portal to the Firelands
 step
     >>Kill the |cRXP_ENEMY_Obsidian Slaglord|r
     .complete 29201,1 --|Secure a foothold in the Firelands: 1/1
@@ -535,7 +539,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith WispAway
     .goto 198,27.484,56.394
-    .subzone 5738 >> Go through the Portal to the Firelands
+    .zone 338 >> Go through the Portal to the Firelands
 step
     .goto 338,48.513,86.257
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
@@ -554,6 +558,8 @@ step
     .target General Taldris Moonfall
 step -- 29138 Burn Victims
     .isOnQuest 29138
+    #sticky
+    #label BurnVictims
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -565,6 +571,8 @@ step -- 29138 Burn Victims
     .target Wounded Hyjal Defender
 step -- 29179 Hostile Elements
     .isOnQuest 29179
+    #sticky
+    #label HostileElements
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -575,8 +583,12 @@ step -- 29179 Hostile Elements
     .complete 29179,1 -- Charred Combatant slain (8)
     .mob Charred Vanquisher
     .mob Charred Soldier
+
+
 step -- 29304 The Dogs of War
     .isOnQuest 29304
+    #sticky
+    #label TheDogs
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -591,6 +603,8 @@ step -- 29304 The Dogs of War
     .mob Ancient Charhound
 step -- 29141 The Harder They Fall
     .isOnQuest 29141
+    #sticky
+    #label HarderTheyFall
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -604,6 +618,8 @@ step -- 29141 The Harder They Fall
     .mob Molten Behemoth
 step -- 29142 Traitors Return
     .isOnQuest 29142
+    #sticky
+    #label TraitorsReturn
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -615,6 +631,8 @@ step -- 29142 Traitors Return
     .mob Druid of the Flame
 step -- 29137 Breach in the Defenses
     .isOnQuest 29137
+    #sticky
+    #label Breach
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -628,6 +646,8 @@ step -- 29137 Breach in the Defenses
     .mob Lava Burster
 step -- 29139 Aggressive Growth
     .isOnQuest 29139
+    #sticky
+    #label AggressiveGrowth
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -638,6 +658,8 @@ step -- 29139 Aggressive Growth
     .complete 29138,1 -- Smothervine planted (5)
 step -- 29143 Wisp Away
     .isOnQuest 29143
+    #sticky
+    #label WispAway
     #loop
     .goto 338,47.6,79.6,45,0
     .goto 338,43.8,74.0,45,0
@@ -647,6 +669,30 @@ step -- 29143 Wisp Away
     >>|cRXP_WARN_Take the |cRXP_FRIENDLY_Hyjal Wisp|r following you to a Fire Portal|r
     >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
     .complete 29143,1 -- Close a Fire Portal 1/1
+step
+    #optional
+    #requires BurnVictims
+step
+    #optional
+    #requires HostileElements
+step
+    #optional
+    #requires TheDogs
+step
+    #optional
+    #requires HarderTheyFall
+step
+    #optional
+    #requires TraitorsReturn
+step
+    #optional
+    #requires Breach
+step
+    #optional
+    #requires AggressiveGrowth
+step
+    #optional
+    #requires WispAway
 step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
@@ -690,7 +736,6 @@ step
     .dailyturnin 29139 >>Turn in Aggressive Growth
     .target Rayne Feathersong
 step
-    #label WispAway
     .isQuestComplete 29143
     .goto 338,48.513,86.257
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
@@ -712,17 +757,20 @@ step --accepted back at sanctuary of malorne
     .target Captain Soren Moonfall
     .daily 29128 >>Accept The Protectors of Hyjal
 step
-    .goto 198/1,-2079.800,4439.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r 
+    #loop
+    .goto 198,27.108,62.009,5,0
+    .goto 198,27.170,62.563,5,0
+    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r and accept whichever daily quest is available
+    .questcount <1,29125,29147,29164,29101,29161
+    .target Matoclaw
     .target Mylune
-    .daily 29125,29147,29164,29101,29161 >>Accept whichever random daily quest is offered
 step
     #loop
     #label HyjalQuests
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
-    +Talk to |cRXP_ENEMY_Matoclaw|r or |cRXP_ENEMY_Dorda'en Nightweaver|r and accept whichever daily quest is available
-    .questcount 1,29123,29149,29127,29163,29166,29247,29246,29248
+    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r and accept whichever daily quest is available
+    .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
     .target Dorda'en Nightweaver
 step
@@ -837,6 +885,7 @@ step
     .target Hyjal Bear Cub
     .isOnQuest 29161
 step
+    .isOnQuest 29161
     .goto 198,14.310,33.203
     *|cRXP_WARN_Cast|r |T450907:0|t[Climb Up] (1) |cRXP_WARN_until you're at the top, aim the arrow at the trampoline beside |cRXP_FRIENDLY_Keeper Taldros|r, then cast|r |T446127:0|t[Chuck-a-bear] (4)|cRXP_WARN_. Cast|r |T450905:0|t[Climb Down] (2) |cRXP_WARN_and repeat the process|r
     .complete 29161,1 --6/6 Hyjal Bear Cubs Rescued
@@ -1125,15 +1174,15 @@ step
     .dailyturnin 29122 >>Turn in Echoes of Nemesis
 step
     .isQuestComplete 29126
-    .goto 198/1,-2080.000,4439.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r
-    .target Mylune
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
     .dailyturnin 29126 >>Turn in The Power of Malorne
 step
     .isQuestComplete 29165
-    .goto 198/1,-2080.000,4439.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r
-    .target Mylune
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
     .dailyturnin 29165 >>Turn in The Call of the Pack
 step
     .isQuestComplete 29148
@@ -1193,7 +1242,7 @@ step
     #completewith next
     .isQuestComplete 29128
     .goto 198,27.484,56.394
-    .subzone 5738 >> Go through the Portal to the Firelands
+    .zone 338 >> Go through the Portal to the Firelands
 step
     .isQuestComplete 29128
     .goto 338,45.589,85.822
