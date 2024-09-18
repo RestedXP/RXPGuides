@@ -273,6 +273,7 @@ function addon.IsQuestComplete(id)
     if C_QuestLog.IsComplete then
         return C_QuestLog.IsComplete(id)
     else
+        _G.ExpandQuestHeader(0)
         for i = 1, GetNumQuests() do
             local _, _, _, _, _,
                   isComplete, _, questID = GetQuestLogTitle(i);
@@ -290,6 +291,7 @@ local function GetLogIndexForQuestID(questID)
     if C_QuestLog.GetLogIndexForQuestID then
         return C_QuestLog.GetLogIndexForQuestID(questID),C_QuestLog.IsPushableQuest(questID)
     else
+        _G.ExpandQuestHeader(0)
         for i = 1, GetNumQuests() do
             local _, _, _, _, _, _, _, id = GetQuestLogTitle(i);
             if questID == id then
@@ -488,6 +490,7 @@ function addon.GetQuestName(id)
 
     if IsOnQuest(id) then
         if GetQuestLogTitle then
+            _G.ExpandQuestHeader(0)
             for i = 1, GetNumQuests() do
                 local questLogTitleText, _, _, _, _, _, _, questID =
                     GetQuestLogTitle(i);
@@ -556,6 +559,7 @@ function addon.GetQuestObjectives(id, step, useCache)
     if IsOnQuest(id) then
         local questInfo = {}
         local questFound
+        _G.ExpandQuestHeader(0)
         for i = 1, GetNumQuests() do
             local isComplete, questID
             if GetQuestLogTitle then
@@ -626,6 +630,7 @@ function addon.GetQuestObjectives(id, step, useCache)
             end
         end
         if not questFound then
+            _G.ExpandQuestHeader(0)
             for i = 1, GetNumQuests() do
                 local isCollapsed
                 if GetQuestLogTitle then
@@ -633,10 +638,6 @@ function addon.GetQuestObjectives(id, step, useCache)
                 else
                     local qInfo = C_QuestLog.GetInfo(i) or {}
                     isCollapsed = qInfo.isCollapsed
-                end
-                if isCollapsed then
-                    ExpandQuestHeader(0)
-                    break
                 end
             end
         end
