@@ -536,9 +536,9 @@ inventoryManager.UpdateAllBags = UpdateAllBags
 local invUpdate = CreateFrame("Frame")
 invUpdate:RegisterEvent("ITEM_LOCKED")
 invUpdate:RegisterEvent("ITEM_UNLOCKED")
-pcall(function()
+if C_EventUtils and C_EventUtils.IsEventValid("BAG_CONTAINER_UPDATE") then
     invUpdate:RegisterEvent("BAG_CONTAINER_UPDATE")
-end)
+end
 invUpdate:RegisterEvent("BAG_UPDATE_DELAYED")
 invUpdate:RegisterEvent("MERCHANT_SHOW")
 invUpdate:RegisterEvent("PLAYER_MONEY")

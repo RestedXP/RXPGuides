@@ -99,14 +99,14 @@ events.train = {
 }
 events.istrained = events.train
 events.spellmissing = events.train
-events.zone = "ZONE_CHANGED_NEW_AREA"
-events.zoneskip = "ZONE_CHANGED_NEW_AREA"
+local zoneEvents = {"ZONE_CHANGED_NEW_AREA","ZONE_CHANGED","NEW_WMO_CHUNK","PLAYER_ENTERING_WORLD"}
+events.zone = zoneEvents
+events.zoneskip = zoneEvents
+events.subzone = zoneEvents
+events.subzoneskip = zoneEvents
+
 if C_EventUtils and C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
-    events.subzone = {"ZONE_CHANGED","ZONE_CHANGED_INDOORS"}
-    events.subzoneskip = events.subzone
-else
-    events.subzone = "ZONE_CHANGED"
-    events.subzoneskip = "ZONE_CHANGED"
+   tinsert(zoneEvents,"ZONE_CHANGED_INDOORS")
 end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
