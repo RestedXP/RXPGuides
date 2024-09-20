@@ -3907,6 +3907,7 @@ step << Warrior
     .target Uzzek
 step << Warrior
     #xprate >1.49
+    .goto The Barrens,61.4,21.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
@@ -5211,7 +5212,7 @@ step << Warrior/Shaman/Hunter
     .turnin 926 >>Turn in Flawed Power Stone
     .isOnQuest 924
 step << Warrior
-    #xprate <1.5 << !Hunter
+    .goto The Barrens,61.4,21.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
@@ -10453,6 +10454,7 @@ step << Warrior/Shaman
     .zoneskip The Barrens
 step << Warrior
     #xprate >2.09
+    .goto The Barrens,61.4,21.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
@@ -10978,6 +10980,7 @@ step
     .target Kargal Battlescar
 step << Warrior
     #xprate <2.1
+    .goto The Barrens,61.4,21.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
