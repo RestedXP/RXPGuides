@@ -99,14 +99,14 @@ events.train = {
 }
 events.istrained = events.train
 events.spellmissing = events.train
-events.zone = "ZONE_CHANGED_NEW_AREA"
-events.zoneskip = "ZONE_CHANGED_NEW_AREA"
+local zoneEvents = {"ZONE_CHANGED_NEW_AREA","ZONE_CHANGED","NEW_WMO_CHUNK","PLAYER_ENTERING_WORLD"}
+events.zone = zoneEvents
+events.zoneskip = zoneEvents
+events.subzone = zoneEvents
+events.subzoneskip = zoneEvents
+
 if C_EventUtils and C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
-    events.subzone = {"ZONE_CHANGED","ZONE_CHANGED_INDOORS"}
-    events.subzoneskip = events.subzone
-else
-    events.subzone = "ZONE_CHANGED"
-    events.subzoneskip = "ZONE_CHANGED"
+   tinsert(zoneEvents,"ZONE_CHANGED_INDOORS")
 end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
@@ -232,6 +232,22 @@ local GetItemCooldown = addon.GetItemCooldown
 
 addon.recentTurnIn = {}
 
+function addon.ExpandQuestHeaders()
+    for i = 1, GetNumQuests() do
+        local isCollapsed
+        if GetQuestLogTitle then
+            _, _, _, _, isCollapsed = GetQuestLogTitle(i)
+        else
+            local qInfo = C_QuestLog.GetInfo(i)
+            isCollapsed = qInfo and qInfo.isCollapsed
+        end
+        if isCollapsed then
+            _G.ExpandQuestHeader(0)
+            return
+        end
+    end
+end
+
 if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
     GossipSelectOption = function(index)
         local gossipOptions = C_GossipInfo.GetOptions()
@@ -273,6 +289,7 @@ function addon.IsQuestComplete(id)
     if C_QuestLog.IsComplete then
         return C_QuestLog.IsComplete(id)
     else
+        addon.ExpandQuestHeaders()
         for i = 1, GetNumQuests() do
             local _, _, _, _, _,
                   isComplete, _, questID = GetQuestLogTitle(i);
@@ -290,6 +307,7 @@ local function GetLogIndexForQuestID(questID)
     if C_QuestLog.GetLogIndexForQuestID then
         return C_QuestLog.GetLogIndexForQuestID(questID),C_QuestLog.IsPushableQuest(questID)
     else
+        addon.ExpandQuestHeaders()
         for i = 1, GetNumQuests() do
             local _, _, _, _, _, _, _, id = GetQuestLogTitle(i);
             if questID == id then
@@ -488,6 +506,7 @@ function addon.GetQuestName(id)
 
     if IsOnQuest(id) then
         if GetQuestLogTitle then
+            addon.ExpandQuestHeaders()
             for i = 1, GetNumQuests() do
                 local questLogTitleText, _, _, _, _, _, _, questID =
                     GetQuestLogTitle(i);
@@ -556,6 +575,7 @@ function addon.GetQuestObjectives(id, step, useCache)
     if IsOnQuest(id) then
         local questInfo = {}
         local questFound
+        addon.ExpandQuestHeaders()
         for i = 1, GetNumQuests() do
             local isComplete, questID
             if GetQuestLogTitle then
@@ -626,19 +646,7 @@ function addon.GetQuestObjectives(id, step, useCache)
             end
         end
         if not questFound then
-            for i = 1, GetNumQuests() do
-                local isCollapsed
-                if GetQuestLogTitle then
-                    _, _, _, _, isCollapsed = GetQuestLogTitle(i)
-                else
-                    local qInfo = C_QuestLog.GetInfo(i) or {}
-                    isCollapsed = qInfo.isCollapsed
-                end
-                if isCollapsed then
-                    ExpandQuestHeader(0)
-                    break
-                end
-            end
+            addon.ExpandQuestHeaders()
         end
     elseif (stepdiff > 4 or useCache) and questObjectivesCache[id] then
         return questObjectivesCache[id]
@@ -3889,7 +3897,7 @@ function addon.functions.link(self, ...)
                            ": Invalid text/url\n" .. self)
         end
         element.textOnly = true
-        element.url = url
+        element.url = url:gsub("\\?\\%-","-")
         element.hideTooltip = true
         element.tooltip = L("Click to view the link")
         element.text = text

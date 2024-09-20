@@ -22,7 +22,7 @@ inventoryManager.bagHook = _G.ContainerFrame_Update
 
 local GetContainerItemInfo
 
-if C_Container.GetContainerItemInfo then
+if C_Container and C_Container.GetContainerItemInfo then
     GetContainerItemInfo = function(...)
         local itemTable = C_Container.GetContainerItemInfo(...)
         if itemTable then
@@ -536,7 +536,9 @@ inventoryManager.UpdateAllBags = UpdateAllBags
 local invUpdate = CreateFrame("Frame")
 invUpdate:RegisterEvent("ITEM_LOCKED")
 invUpdate:RegisterEvent("ITEM_UNLOCKED")
-invUpdate:RegisterEvent("BAG_CONTAINER_UPDATE")
+if C_EventUtils and C_EventUtils.IsEventValid("BAG_CONTAINER_UPDATE") then
+    invUpdate:RegisterEvent("BAG_CONTAINER_UPDATE")
+end
 invUpdate:RegisterEvent("BAG_UPDATE_DELAYED")
 invUpdate:RegisterEvent("MERCHANT_SHOW")
 invUpdate:RegisterEvent("PLAYER_MONEY")

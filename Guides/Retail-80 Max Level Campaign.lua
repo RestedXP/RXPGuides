@@ -8,9 +8,19 @@ RXPGuides.RegisterGuide([[
 #next b) Ties That Bird
 
 step
-    #completewith next
-    .goto 2339,47.61,44.40,0
-    +|cRXP_WARN_You have to skip the Campaign on alt character at |cRXP_FRIENDLY_Brann Bronzebeard|r
+    .isOnQuest 84365
+    .goto 2339,47.40,44.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brann Bronzebeard|r
+    .turnin 84365 >>Turn in Something on the Horizon
+    .target Brann Bronzebeard
+step
+    .isQuestTurnedIn 84365
+    .goto 2339,47.40,44.39
+    .gossipoption 123770 >>Talk to Brann to skip the remaining level-up campaign.
+step
+    .isQuestTurnedIn 84365
+    .goto 2339,47.40,44.39
+    .gossipoption 123771 >>Talk to Brann to skip the remaining level-up campaign.
 step
     .goto 2339,36.12,80.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r
@@ -48,11 +58,11 @@ step << Horde
 step << Horde
     .goto 2339,30.14,62.79
     >>Click on the |cRXP_PICK_Horde Banner|r
-    .complete 79328,2,2 --2/2 Horde banners placed
+    .complete 79328,2,1 --2/2 Horde banners placed
 step << Horde
     .goto 2339,30.65,63.55
     >>Click on the |cRXP_PICK_Horde Banner|r
-    .complete 79328,2,1 --2/2 Horde banners placed
+    .complete 79328,2,2 --2/2 Horde banners placed
 step << Horde
     .goto 2339,27.35,69.22
     >>Click on the |cRXP_PICK_Large Horde Banner|r
@@ -148,12 +158,12 @@ step
     .target Dagran Thaurissan II
 step
     .goto 2339,29.75,59.67
-    >>Click on the |cRXP_PICK_Waygate|r
+    >>Click on the |cRXP_PICK_Waygate|r |cRXP_WARN_[1]|r
     .complete 83271,2 --1/1 Waygate activated
     .skipgossipid 122852
 step
     .goto 2339,29.75,59.67
-    >>Click on the |cRXP_PICK_Waygate|r
+    >>Click on the |cRXP_PICK_Waygate|r |cRXP_WARN_[2]|r
     .complete 83271,3 --1/1 Waygate used
 step
     .goto 2367,49.79,60.54
@@ -312,7 +322,7 @@ step
     .goto 2248,27.73,59.93,5,0
     .goto 2248,27.73,59.58,5,0
     .goto 2248,27.77,59.69
-    >>|cRXP_WARN_Descend the Tower by carefullj jumping off the stairs|r
+    >>|cRXP_WARN_Descend the Tower by carefully jumping off the stairs|r
     *Click on |cRXP_PICK_Click on the Chest.|r
     .complete 79124,2 --1/1 Conduit of the Southern Storm
     .skipgossipid 122158
@@ -522,12 +532,24 @@ step
     .accept 81912 >>Accept Flight Training 102
 step
     #completewith next
-    .gossipoption 121165 >>Click on |cRXP_PICK_Shraubendre|r |cRXP_WARN_If you are not mounted on him already|r
+    .gossipoption 122555 >>Click on |cRXP_PICK_Shraubendre|r |cRXP_WARN_If you are not mounted on him already|r
     .target Shraubendre
 step
-    .goto 2248,38.21,71.25,15,0
-    .goto 2248,60.52,66.77,15,0
-    >>Use |T4640498:0|t[Skwyard Ascent] from |cRXP_WARN_far and near|r to hit the |cRXP_PICK_Targets|r, |cRXP_WARN_even when they disappear; they will still count toward quest credit.|r
+    .goto 2248,38.25,71.25,120,0
+    .goto 2248,39.08,75.2,120,0
+    .goto 2248,43.22,75.82,120,0
+    .goto 2248,45.21,75.79,120,0
+    .goto 2248,44.87,73.49,120,0
+    .goto 2248,43.78,67.67,120,0
+    .goto 2248,46.53,67.46,120,0
+    .goto 2248,49.97,72.14,120,0
+    .goto 2248,50.79,66.63,120,0
+    .goto 2248,53.36,64.03,120,0
+    .goto 2248,55.47,63.17,120,0
+    .goto 2248,59.23,62.56,120,0
+    .goto 2248,61.27,62.94,120,0
+    >>Use |T4640498:0|t[Skwyard Ascent] from |cRXP_WARN_far and near|r to hit the |cRXP_PICK_Targets|r,
+    --x |cRXP_WARN_even when they disappear; they will still count toward quest credit.|r
     *For additional vigor, fly through the green orbs on your path and use |T4640489:0|t[Second Wind] whenever it's off cooldown.
     .complete 81912,1 --15/15 Targets hit
 step
@@ -626,20 +648,26 @@ step
     .target Widow Arak'nai
     .accept 79227 >>Accept A Spider's-Eye View
 step
+    .isOnQuest 79227
     .goto 2213,49.73,20.22
-    >>Click on |cRXP_PICK_Vizier's Scouting Shadecaster|r
-    .complete 79227,1 --1/1 Umbral Bazaar scouted
+    .cast 423519 >>Click on |cRXP_PICK_Vizier's Scouting Shadecaster|r |cRXP_WARN_on the hut.|r
+    .timer 2,RP
 step
+    .isOnQuest 79227
     .goto 2213,78.72,41.78
-    >>Click on |cRXP_PICK_Weaver's Scouting Shadecaster|r
-    .complete 79227,3 --1/1 Twitching Gorge scouted
+    .complete 79227,1 --1/1 Umbral Bazaar scouted
+    .cast 423519 >>Click on |cRXP_PICK_Weaver's Scouting Shadecaster|r |cRXP_WARN_on the hut.|r
+    .timer 2,RP
 step
+    .isOnQuest 79227
     .goto 2255,64.18,74.20
-    >>Click on |cRXP_PICK_General's Scouting Shadecaster|r
-    .complete 79227,2 --1/1 Eastern Span scouted
+    .complete 79227,3 --1/1 Twitching Gorge scouted
+    .cast 423519 >>Click on |cRXP_PICK_General's Scouting Shadecaster|r |cRXP_WARN_on the hut.|r
+    .timer 2,RP
 step
     .goto 2213,69.54,71.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r
+    .complete 79227,2 --1/1 Eastern Span scouted
     .turnin 79227 >>Turn in A Spider's-Eye View
     .target Lilian Voss
     .accept 79230 >>Accept Creeping Through Corridors
@@ -697,8 +725,8 @@ step
     .turnin 79233 >>Turn in Lab Access
     .target Y'tekhi
 step
-    .goto 2213,57.09,91.01
-    >>Wait for the roleplay.
+    .goto 2213,56.99,93.35
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79230,3 --1/1 First Ascended's Prison investigated
 step
     .goto 2213,56.68,90.56
@@ -783,7 +811,7 @@ step
     .mob Y'tekhi
 step
     .goto 2213,78.63,40.17
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79240,2 --1/1 Y'tekhi brought to safety
 step
     .goto 2213,78.65,39.60
@@ -848,7 +876,7 @@ step
     .zone 2339 >>Take the Tunnel to Dornogal
 step
     .goto 2339,31.54,59.66
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79244,2 --1/1 Report back to Alleria at the Coreway in Dornogal
 step
     .goto 2339,31.54,59.67
@@ -925,11 +953,13 @@ step
     .timer 3,Roleplay Duration
 step
     .goto 2214,58.02,76.92
-    >>Use |T135788:0|t[Turbo Boost] and |cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
+    >>Use |T135788:0|t[Turbo Boost]
     .complete 79024,3 --Scout the Darkfuse leader
 step
     .goto 2214,56.53,77.6
-    >>Use |T135788:0|t[Turbo Boost] and |cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
+    >>Use |T135788:0|t[Turbo Boost]
     .complete 79024,4 --Scout the Manufacturing Bay
 step
     .goto 2214,57.22,77.71,15,0
@@ -939,14 +969,14 @@ step
     .timer 3,Roleplay Duration
 step
     .goto 2214,58.13,79.78
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79024,6 --Scout the Cargo Bay
 step
     .goto 2214,58.32,76.50
     >>Use |T135788:0|t[Turbo Boost] and click on the |cRXP_PICK_Pipe Grate|r
     .complete 79024,7 --1/1 Exit back through the Pipe
 step
-    >>|cRXP_WARN_Leave the vehicle|r
+    >>|cRXP_WARN_Leave the Vehicle|r
     .complete 79024,8 --Return to Brinthe
 step
     .goto 2214,56.27,74.92
@@ -960,7 +990,7 @@ step
     .goto 2214,47.12,33.83,10 >>Enter the House
 step
     .goto 2214,47.10,34.23
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79217,1 --Meet Brinthe at her home in Gundargaz
 step
     .goto 2214,47.10,34.23
@@ -981,17 +1011,14 @@ step
     >>Click on |cRXP_PICK_Deactivated War Golem|r
     .complete 79025,3 --1/1 Point out the Shadowvein Extraction Site
 step
-    #completewith next
-    #title Leave House
-    .goto 2214,47.12,33.9,15 >>Leave the House
-step
     .goto 2214,47.10,34.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Speaker Brinthe|r
     .turnin 79025 >>Turn in A Plan Comes Together
     .target High Speaker Brinthe
     .accept 79324 >>Accept To the Waterworks
 step
-    .isOnQuest 79027
+    #completewith next
+    .isOnQuest 79324
     .goto 2214,47.11,33.86,10 >>Leave the House
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dagran Thaurissan II|r and |cRXP_FRIENDLY_"Zee-Zee"|r
@@ -1106,6 +1133,7 @@ step
     .scenario 6801,1
     .mob Waxface
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,50.44,24.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r
@@ -1113,14 +1141,17 @@ step
     .skipgossipid 120081
     .target Pagsly
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,46.76,17.32
     >>Click on the |cRXP_PICK_Air Totem|r
     .scenario 6776,2
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,50.28,23.73,10 >>|cRXP_WARN_Follow the Arrow|r
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,50.28,23.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
@@ -1130,11 +1161,13 @@ step
     .mob Kobold Mystic
     .target Pagsly
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,46.73,24.17,20,0
     .goto 2251,49.6,28.99,20,0
     .goto 2251,49.78,34.5,20 >> |cRXP_WARN_Follow the Arrow|r
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,48.72,40.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
@@ -1143,11 +1176,13 @@ step
     .target Pagsly
     .mob Kobold Thwacker
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,46.78,44.65,20,0
     .goto 2251,47.72,56.7,20,0
     .goto 2251,46.36,61.56,10 >>|cRXP_WARN_Follow the Arrow|r
 step
+    .isOnQuest 79026
     .goto 2251,46.36,61.56
     .isInScenario 2355
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
@@ -1157,10 +1192,12 @@ step
     .mob Kobold Mystic
     .mob Kobold Thwacker
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,47.76,64.32,20,0
     .goto 2251,48.15,68.73,10 >>|cRXP_WARN_Follow the Arrow|r
 step
+    .isOnQuest 79026
     .isInScenario 2355
     .goto 2251,48.12,68.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pagsly|r and defend him.
@@ -1177,6 +1214,44 @@ step
     .isOnQuest 79026
     >>Kill |cRXP_ENEMY_Waxface|r
     .scenario 6801,1
+    .mob Waxface
+step
+    .isOnQuest 79026
+    .goto 2251,46.75,17.29
+    >>Click on the |cRXP_PICK_Air Totem.|r
+    .isInScenario 2354,1
+    .scenario 6757,2
+step
+    .isOnQuest 79026
+    .goto 2251,47.13,17.98,5,0
+    .goto 2251,46.36,17.91,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Bruknar|r
+    .isInScenario 2354,2
+    .scenario 6757,1
+    .skipgossipid 120018
+    .target Foreman Bruknar
+step
+    .isOnQuest 79026
+    .goto 2251,47.99,20.68
+    .goto 2251,46.68,24.67
+    .goto 2251,49.67,29.08
+    .goto 2251,49.93,37.05
+    .goto 2251,48.6,41.8
+    .goto 2251,46.81,51.22
+    .goto 2251,47.89,57.11
+    .goto 2251,49.26,60.69
+    .goto 2251,46.94,68.97
+    >>Click on |cRXP_PICK_Captured Workers|r
+    .isInScenario 2354,2
+    .scenario 6758,1
+    .target Captured Worker
+step
+    .goto 2251,46.84,70.35,10,0
+    .goto 2251,46.85,81.67
+    .isInScenario 2354
+    .isOnQuest 79026
+    >>Kill |cRXP_ENEMY_Waxface|r
+    .scenario 6759,1
     .mob Waxface
 step
     .isOnQuest 79026
