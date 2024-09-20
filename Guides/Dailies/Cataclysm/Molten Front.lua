@@ -311,6 +311,7 @@ step
     .goto 198,41.667,56.130
     .isOnQuest 29126
     .use 68997 >> Kill |cRXP_ENEMY_Galenges|r
+    .complete 29126,1 -- Galenges slain (1)
     .mob Galenges
 step
     .isOnQuest 29148
@@ -984,6 +985,7 @@ step
     .goto 198,41.667,56.130
     .isOnQuest 29126
     .use 68997 >> Kill |cRXP_ENEMY_Galenges|r
+    .complete 29126,1 -- Galenges slain (1)
     .mob Galenges
 step
     .isOnQuest 29148
