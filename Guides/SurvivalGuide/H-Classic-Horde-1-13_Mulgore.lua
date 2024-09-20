@@ -111,7 +111,7 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak
-step << Rogue
+step << Shaman
     #completewith RitesoftheEarthmother
     +Equip the |T135139:0|t[Short Staff]
     .use 2132

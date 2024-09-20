@@ -111,7 +111,7 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak
-step << Rogue
+step << Shaman
     #completewith RitesoftheEarthmother
     +Equip the |T135139:0|t[Short Staff]
     .use 2132
@@ -397,6 +397,7 @@ step << Druid
     .aura 408828 >>|cRXP_WARN_Kill 6 mobs with|r |T136096:0|t[Moonfire] |cRXP_WARN_to unlock the Idol|r
     .isOnQuest 77648
 step
+    #season 2
     #completewith DirtyMap
     #requires FuryofStormrageRune
     .train 414799 >>|cRXP_WARN_Use the|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] |cRXP_WARN_to train|r |T237472:0|t[Fury of Stormrage]
@@ -2901,6 +2902,7 @@ step << Warrior
     .complete 1498,1 --Singed Scale (5)
     .mob Lightning Hide
 step << Warrior
+    .goto The Barrens,61.4,21.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek||r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
@@ -3021,7 +3023,7 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
     .target Marjak
-step << Rogue
+step << Shaman
     #completewith RitesoftheEarthmother
     +Equip the |T135139:0|t[Short Staff]
     .use 2132
@@ -3283,6 +3285,7 @@ step << Druid
     .aura 408828 >>|cRXP_WARN_Kill 6 mobs with|r |T136096:0|t[Moonfire] |cRXP_WARN_to unlock the Idol|r
     .isOnQuest 77648
 step
+    #season 2
     #completewith DirtyMap
     #requires FuryofStormrageRune
     .train 414799 >>|cRXP_WARN_Use the|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] |cRXP_WARN_to train|r |T237472:0|t[Fury of Stormrage]
@@ -5788,6 +5791,7 @@ step << Warrior
     .complete 1498,1 --Singed Scale (5)
     .mob Lightning Hide
 step << Warrior
+    .goto The Barrens,61.4,21.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
