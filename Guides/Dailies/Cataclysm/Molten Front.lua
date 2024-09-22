@@ -656,7 +656,7 @@ step -- 29139 Aggressive Growth
     .goto 338,52.8,64.4,45,0
     .goto 338,53.6,79.6,45,0
     >>Click the |cRXP_PICK_Ash Piles|r on the ground
-    .complete 29138,1 -- Smothervine planted (5)
+    .complete 29139,1 -- Smothervine planted (5)
 step -- 29143 Wisp Away
     .isOnQuest 29143
     #sticky
