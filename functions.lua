@@ -5544,11 +5544,42 @@ function addon.functions.dmf(self, ...)
         local text = ...
         if text and text ~= "" then element.text = text end
         element.textOnly = true
+        element.eventName = _G.CALENDAR_FILTER_DARKMOON
+        return element
+    end
+    return addon.functions.holiday(self, ...)
+end
+
+function addon.functions.nodmf(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text = ...
+        element.reverse = true
+        element.eventName = _G.CALENDAR_FILTER_DARKMOON
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    return addon.functions.holiday(self, ...)
+end
+
+function addon.functions.holiday(self, text, eventId, reverse)
+    if type(self) == "string" then
+        local element = {}
+        if text and text ~= "" then element.text = text end
+        element.eventId = tonumber(eventId)
+        if not eventId then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ': Invalid event ID\n' .. self)
+        end
+        element.reverse = reverse
+        element.textOnly = true
         return element
     end
 
     local element = self.element
-    local isDmfInTown = false
+    local eventFound = false
     local step = element.step
 
     local event
@@ -5567,29 +5598,18 @@ function addon.functions.dmf(self, ...)
     for i = 1, GetNumDayEvents(0, monthDay) do
         event = GetDayEvent(0, monthDay, i)
 
-        if event and event.title == _G.CALENDAR_FILTER_DARKMOON then
-            isDmfInTown = true
+        if event and (element.eventId and element.eventId == event.eventID or (event.title == element.eventName)) then
+            eventFound = true
             break
         end
     end
     --print('dmf',isDmfInTown,element.reverse)
-    if (not isDmfInTown == not element.reverse) and not addon.isHidden then
+    if (not eventFound == not element.reverse) and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
     end
 end
 
-function addon.functions.nodmf(self, ...)
-    if type(self) == "string" then
-        local element = {}
-        local text = ...
-        element.reverse = true
-        if text and text ~= "" then element.text = text end
-        element.textOnly = true
-        return element
-    end
-    return addon.functions.dmf(self, ...)
-end
 
 events.pvp = "WAR_MODE_STATUS_UPDATE"
 events.pve = events.pvp

@@ -1,6 +1,6 @@
 local _,addon = ...
 if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
---TODO: skip the furbolg quests if xp rate is greater than 1x    
+--TODO: skip the furbolg quests if xp rate is greater than 1x
 RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-10 Azuremyst Isle
@@ -9,9 +9,6 @@ RXPGuides.RegisterGuide([[
 #cata
 #defaultfor Draenei
 #next 10-18 Darkshore
-step
-    +1
-    .mountcount 0-150,<1
 step
     .goto Azuremyst Isle,84.19,43.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megelon|r
@@ -64,7 +61,7 @@ step
     .goto Azuremyst Isle,72.94,52.21,50,0
     .goto Azuremyst Isle,72.26,49.29,50,0
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. Loot them for their |cRXP_LOOT_Lasher Samples|r
-    >>Loot the |cRXP_LOOT_Corrupted Flowers|r on the ground 
+    >>Loot the |cRXP_LOOT_Corrupted Flowers|r on the ground
     .complete 9293,1 --Collect Lasher Sample (x10)
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .mob Mutated Root Lasher
@@ -110,7 +107,7 @@ step << Priest
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
-    .turnin 26970 >> Turn in Aiding the Injured 
+    .turnin 26970 >> Turn in Aiding the Injured
     .target Zalduun
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
@@ -828,7 +825,7 @@ step
     .use 23792
 step
     >>|cRXP_WARN_Wait out the RP|r
-    .complete 9531,1 -- The Traitor Uncovered 
+    .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_Click off the|r |T132288:0|t[Tree Disguise] |cRXP_WARN_buff|r
     .aura -30298
@@ -919,7 +916,7 @@ step
     .turnin 9602 >> Turn in Deliver Them From Evil...
     .target Exarch Menelaous
 step
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -999,7 +996,7 @@ step << Hunter
     .money <0.1402
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
-    .target Ven 
+    .target Ven
 step << Warrior/Paladin
     #optional
     #completewith end
