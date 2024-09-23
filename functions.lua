@@ -76,10 +76,10 @@ events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
-if addon.game == "CLASSIC" then
-    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP"}
-else
+if C_EventUtils and C_EventUtils.IsEventValid("STOP_MOVIE") then
     events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
+else
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP"}
 end
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW", "TAXIMAP_CLOSED"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
