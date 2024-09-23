@@ -1493,7 +1493,7 @@ function addon.functions.complete(self, ...)
         local text, id, obj, objMax, flags = ...
 
         flags = tonumber(flags) or 0
-        id = tonumber(id)
+        id = GetQuestId(tonumber(id))
         obj = tonumber(obj)
         if not (id and obj) then
             addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -3340,7 +3340,7 @@ function addon.functions.abandon(self, ...)
         local element = {}
         -- element.tag = "abandon"
         local text, id = ...
-        id = tonumber(id)
+        id = GetQuestId(tonumber(id))
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
