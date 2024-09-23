@@ -2823,7 +2823,7 @@ step
     >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
     *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Thugs|r can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
     *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Disciples|r cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
-    >>|cRXP_WARN_The dropchance of this item is extremally low. Do not go out of your way to farm it|r
+    >>|cRXP_WARN_The dropchance of this item is extremely low. Do not go out of your way to farm it|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
@@ -4264,7 +4264,7 @@ step << Druid
     #season 2
     #optional
     #completewith next
-    +|cRXP_WARN_You will now be getting your|r |T132143:0|t[|cRXP_FRIENDLY_Wild Strikes|r] |cRXP_WARN_rune. This will take you to the Stonetalon Mountains which will take a while but the rune is extremally powerful for the rest of the leveling|r
+    +|cRXP_WARN_You will now be getting your|r |T132143:0|t[|cRXP_FRIENDLY_Wild Strikes|r] |cRXP_WARN_rune. This will take you to the Stonetalon Mountains which will take a while but the rune is extremely powerful for the rest of the leveling|r
 step << Druid
     .goto 1439,43.555,76.293
     #season 2
@@ -5112,7 +5112,7 @@ step << Dwarf Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
-    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremally powerful rune later
+    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremely powerful rune later
 step << Rogue
     #xprate >1.59
     #optional
