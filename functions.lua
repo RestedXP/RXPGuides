@@ -353,6 +353,9 @@ if _G.QuestieLoader then db = _G.QuestieLoader:ImportModule("QuestieDB") end
 addon.questieDB = db
 
 function addon.FormatNumber(number, precision)
+    if type(number) ~= "number" then
+        return "-1"
+    end
     precision = precision or 0
     local integer = math.floor(number)
     local decimal = math.floor((number - integer) * 10 ^ precision + 0.5)
