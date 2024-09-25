@@ -4558,11 +4558,12 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_Feathers|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
+    .mob +Windfury Sorceress
     .complete 744,2 --Bronze Feather (6)
-    .mob Windfury Matriarch
-    .mob Windfury Sorceress
+    .mob +Windfury Matriarch
     .train 410104,1
 step << Shaman
     #season 2
@@ -4578,14 +4579,17 @@ step << Shaman
     .xp <4,1
 step << Shaman
     #season 2
-    .goto Mulgore,31.7,28.2,90,0
-    .goto Mulgore,30.2,19.5,90,0
-    .goto Mulgore,31.7,28.2
-    >>Kill |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_Feathers|r
+    #loop
+    .goto Mulgore,31.7,28.2,0
+    .goto Mulgore,30.2,19.5,0
+    .goto Mulgore,31.7,28.2,40,0
+    .goto Mulgore,30.2,19.5,40,0
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
+    .mob +Windfury Sorceress
     .complete 744,2 --Bronze Feather (6)
-    .mob Windfury Matriarch
-    .mob Windfury Sorceress
+    .mob +Windfury Matriarch
     .train 410104,1
 step << Shaman
     #season 2
