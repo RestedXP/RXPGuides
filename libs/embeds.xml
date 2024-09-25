@@ -20,5 +20,5 @@
   <Include file="LibCandyBar-3.0\lib.xml"/>
   <Script file="LibDataBroker-1.1\LibDataBroker-1.1.lua"/>
   <Include file="LibDBIcon-1.0\lib.xml"/>
-
+  <Include file="mainline\LibUIDropDownMenu\LibUIDropDownMenu.xml"/>
 </Ui>

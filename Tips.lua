@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.gameVersion > 40000 then return end
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
-local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
@@ -14,10 +14,9 @@ local UnitHealth, UnitHealthMax = UnitHealth, UnitHealthMax
 local GetInventoryItemID, IsPlayerSpell =
                                                        GetInventoryItemID,
                                                        IsPlayerSpell
-local HasAction, GetActionInfo, GetMacroSpell, GetSpellInfo = HasAction,
+local HasAction, GetActionInfo, GetMacroSpell = HasAction,
                                                               GetActionInfo,
-                                                              GetMacroSpell,
-                                                              GetSpellInfo
+                                                              GetMacroSpell
 local IsOnBarOrSpecialBar = C_ActionBar.IsOnBarOrSpecialBar
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or
                                  _G.GetContainerNumSlots
