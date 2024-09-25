@@ -11,19 +11,7 @@ local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtex
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
-
-local GetSpellInfo
-if C_Spell and C_Spell.GetSpellInfo then
-    GetSpellInfo = function(...)
-        local t = C_Spell.GetSpellInfo(...)
-        --local rank = C_Spell.GetSpellSubtext(...)
-        if t then
-            return t.name, t.rank, t.iconID, t.castTime, t.minRange, t.maxRange, t.spellID, t.originalIconID
-        end
-    end
-else
-    GetSpellInfo = _G.GetSpellInfo
-end
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 
 -- start, duration, enabled, modRate = GetSpellCooldown(spell)
 local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
