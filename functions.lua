@@ -418,7 +418,8 @@ local function CacheQuest(id,data,remove)
     local questObjectivesCache = RXPCData.questObjectivesCache
     if not id or id == 0 then
         return
-    elseif not (remove or questObjectivesCache[id]) then
+    elseif data and not (remove or questObjectivesCache[id]) then
+        data.finished = false
         questObjectivesCache[0] = questObjectivesCache[0] + 1
         questObjectivesCache[id] = data
     elseif remove and questObjectivesCache[id] then

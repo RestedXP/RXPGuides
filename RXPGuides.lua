@@ -12,6 +12,8 @@ local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAd
 local GetSpellInfo
 if C_Spell and C_Spell.GetSpellInfo then
     addon.GetSpellInfo = function(...)
+        local id = ...
+        if not id then return end
         local t = C_Spell.GetSpellInfo(...)
         --local rank = C_Spell.GetSpellSubtext(...)
         if t then
@@ -331,7 +333,7 @@ end
 
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
---local GetItemSpell = C_Container and C_Container.GetItemSpell or _G.GetItemSpell
+local GetItemSpell = C_Item and C_Item.GetItemSpell or _G.GetItemSpell
 
 function addon.GetSkillLevel(skill, useMaxValue)
     addon.UpdateSkillData()
@@ -353,7 +355,7 @@ function addon.GetSkillLevel(skill, useMaxValue)
         for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
             for slot = 1,GetContainerNumSlots(bag) do
                 local id = GetContainerItemID(bag, slot)
-                local _,spellId = GetItemSpell(id)
+                local _,spellId = GetItemSpell(id or 0)
                 level = math.max(level,finditem(spellId))
             end
         end
