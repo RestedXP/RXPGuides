@@ -1725,7 +1725,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
-    .target Sputtervalve
     .target Mebok Mizzyrix
 step
     .goto The Barrens,62.05,39.41
@@ -1923,7 +1922,7 @@ step
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>Turn in Stolen Silver
     .goto The Barrens,51.93,30.32
-    .target Mankrika
+    .target Mankrik
     .target Tonga Runetotem
     .target Sergra Darkthorn
     .target Gazrog
@@ -2262,7 +2261,7 @@ step
     .mob Venture Co. Logger
 step
 	#completewith next
-	+|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
+	.destroy 5570 >>|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
@@ -2473,6 +2472,7 @@ step << Warrior
     .target Grazlix
     .money <0.619
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
+    .equip 7,4800
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vexspindle|r
@@ -2480,6 +2480,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .target Vexspindle
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
+    .equip 9,4794
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r
