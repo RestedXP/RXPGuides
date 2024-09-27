@@ -7,6 +7,14 @@ local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
+local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
+local EasyMenu = function(...)
+    if LibDD then
+        LibDD:EasyMenu(...)
+    else
+        _G.EasyMenu(...)
+    end
+end
 
 local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 local GetNumAddOns =  C_AddOns and C_AddOns.GetNumAddOns or _G.GetNumAddOns
@@ -3276,7 +3284,7 @@ function addon.settings:UpdateMinimapButton()
         tocname = addonName,
         OnClick = function(_, button)
             if button == "RightButton" then
-                _G.EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame,
+                EasyMenu(buildMinimapMenu(), addon.settings.minimapFrame,
                             "cursor", 0, 0, "MENU")
             else
                 addon.settings.ToggleActive()
