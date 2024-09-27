@@ -376,6 +376,8 @@ function addon.FormatNumber(number, precision)
 end
 
 function addon.Round(number, precision)
+    if not number then return end
+
     precision = precision and 10 ^ precision or 1
     local integer = math.floor(number)
     return integer + math.floor((number - integer) * precision + 0.5)/precision

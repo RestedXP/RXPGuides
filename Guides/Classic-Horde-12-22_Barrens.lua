@@ -313,7 +313,7 @@ step << !Undead !Tauren
     #completewith EnterRFC
     .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
- step
+step
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
@@ -390,7 +390,7 @@ step << !Undead !Tauren
     .isOnQuest 867
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
-    #completewith KreenigSnarlsnout1
+    #completewith KreenigSnarlsnout
     .goto The Barrens,52.5,30.7,0
     .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossroads. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
 	.unitscan Lizzarik
@@ -1197,7 +1197,7 @@ step
 step << Undead Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135353:0|t[Espadon] |cRXP_BUY_from him|r
-    .collect 2024,1,895,1 --Collect Espadon (1)
+    .collect 2024,1,850,1 --Collect Espadon (1)
     .money <0.6397
     .target Ironzar
     .itemStat 16,QUALITY,<7
@@ -1279,7 +1279,7 @@ step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
-    .collect 2030,1,895,1 --Collect Gnarled Staff (1)
+    .collect 2030,1,850,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target Ironzar
     .itemStat 16,QUALITY,<7
@@ -1296,7 +1296,7 @@ step << Shaman
     #season 2
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T133052:0|t[Hammer] |cRXP_BUY_from him|r
-    .collect 2028,1,895,1 --Collect Hammer (1)
+    .collect 2028,1,850,1 --Collect Hammer (1)
     .money <0.5065
     .target Ironzar
     .itemStat 16,QUALITY,<7
@@ -2230,8 +2230,8 @@ step
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
-    .turnin 870 >> Turn in The Forgotten Pools
-    .accept 877 >> Accept The Stagnant Oasis
+    .turnin 870 >>Turn in The Forgotten Pools
+    .accept 877 >>Accept The Stagnant Oasis
     .target Tonga Runetotem
 step
     #label EcheyakeePickup
@@ -2285,8 +2285,8 @@ step << Warrior
 step
     .goto The Barrens,51.95,31.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r
-    .accept 899 >> Accept Consumed by Hatred
-    .accept 4921 >> Accept Lost in Battle
+    .accept 899 >>Accept Consumed by Hatred
+    .accept 4921 >>Accept Lost in Battle
     .target Mankrik
 step << Hunter
     .goto The Barrens,51.67,29.95
@@ -2295,10 +2295,10 @@ step << Hunter
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
-    #completewith RapHorsPickup
+    #completewith RapHornsPickup
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >> Fly to Ratchet
+    .fly Ratchet >>Fly to Ratchet
     .target Devrak
 step << Rogue
     .goto The Barrens,63.07,36.31
@@ -2352,12 +2352,11 @@ step
     .accept 1483 >> Accept Ziz Fizziks
     .target Sputtervalve
 step
-    #label RapHorsPickup
+    #label RapHornsPickup
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
-    .target Sputtervalve
     .target Mebok Mizzyrix
 step << Warrior
     #season 2
@@ -2411,6 +2410,7 @@ step
     >>Loot the |cRXP_PICK_Crate|r on the ground
     .complete 888,1 --Shipment of Boots (1)
 step << Warrior
+    #season 2
     #completewith next
     .subzone 385 >>Travel to Northwatch Hold
 step << Warrior
@@ -2550,15 +2550,15 @@ step << Mage
 step
     #loop
     .goto The Barrens,55.72,42.14,0
-    .waypoint The Barrens,55.72,42.14,30,0
-    .waypoint The Barrens,55.49,41.75,30,0
-    .waypoint The Barrens,55.09,41.58,30,0
-    .waypoint The Barrens,55.03,42.24,30,0
-    .waypoint The Barrens,55.27,43.17,30,0
-    .waypoint The Barrens,55.78,43.47,30,0
-    .waypoint The Barrens,56.15,43.28,30,0
-    .waypoint The Barrens,56.08,42.58,30,0
-    .waypoint The Barrens,55.72,42.14,30,0
+    .goto The Barrens,55.72,42.14,30,0
+    .goto The Barrens,55.49,41.75,30,0
+    .goto The Barrens,55.09,41.58,30,0
+    .goto The Barrens,55.03,42.24,30,0
+    .goto The Barrens,55.27,43.17,30,0
+    .goto The Barrens,55.78,43.47,30,0
+    .goto The Barrens,56.15,43.28,30,0
+    .goto The Barrens,56.08,42.58,30,0
+    .goto The Barrens,55.72,42.14,30,0
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
@@ -2698,7 +2698,7 @@ step
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>Turn in Stolen Silver
     .goto The Barrens,51.93,30.32
-    .target Mankrika
+    .target Mankrik
     .target Tonga Runetotem
     .target Sergra Darkthorn
     .target Gazrog
@@ -2945,23 +2945,23 @@ step
     #xprate <1.5
     #loop
     .goto The Barrens,40.28,15.49,0
-    .waypoint The Barrens,40.28,15.49,40,0
-    .waypoint The Barrens,39.50,14.68,40,0
-    .waypoint The Barrens,39.47,13.24,40,0
-    .waypoint The Barrens,38.94,12.80,40,0
-    .waypoint The Barrens,38.18,12.56,40,0
-    .waypoint The Barrens,37.96,13.52,40,0
-    .waypoint The Barrens,38.62,13.95,40,0
-    .waypoint The Barrens,38.18,14.62,40,0
-    .waypoint The Barrens,38.14,15.59,40,0
-    .waypoint The Barrens,37.29,15.68,40,0
-    .waypoint The Barrens,37.24,16.26,40,0
-    .waypoint The Barrens,37.67,16.34,40,0
-    .waypoint The Barrens,38.35,17.08,40,0
-    .waypoint The Barrens,38.83,17.71,40,0
-    .waypoint The Barrens,39.37,17.21,40,0
-    .waypoint The Barrens,39.87,16.66,40,0
-    .waypoint The Barrens,40.15,15.98,40,0
+    .goto The Barrens,40.28,15.49,40,0
+    .goto The Barrens,39.50,14.68,40,0
+    .goto The Barrens,39.47,13.24,40,0
+    .goto The Barrens,38.94,12.80,40,0
+    .goto The Barrens,38.18,12.56,40,0
+    .goto The Barrens,37.96,13.52,40,0
+    .goto The Barrens,38.62,13.95,40,0
+    .goto The Barrens,38.18,14.62,40,0
+    .goto The Barrens,38.14,15.59,40,0
+    .goto The Barrens,37.29,15.68,40,0
+    .goto The Barrens,37.24,16.26,40,0
+    .goto The Barrens,37.67,16.34,40,0
+    .goto The Barrens,38.35,17.08,40,0
+    .goto The Barrens,38.83,17.71,40,0
+    .goto The Barrens,39.37,17.21,40,0
+    .goto The Barrens,39.87,16.66,40,0
+    .goto The Barrens,40.15,15.98,40,0
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for their |cRXP_LOOT_Rings|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Witchwing Slayers|r cast|r |T135358:0|t[Execute] |cRXP_WARN_(deals a LOT of damage when you're at <20% health), and |cRXP_ENEMY_Witchwing Ambushers|r are|r |T132320:0|t[Stealthed] |cRXP_WARN_and patrol around|r
     >>|cRXP_WARN_Watch out for|r |cRXP_ENEMY_Witchwing Ambushers|r|cRXP_WARN_. They are stealthed and patrol in the area|r
@@ -3016,19 +3016,19 @@ step << Druid
 step
     #loop
     .goto Stonetalon Mountains,80.62,89.99,0
-    .waypoint Stonetalon Mountains,80.62,89.99,40,0
-    .waypoint Stonetalon Mountains,79.79,88.75,40,0
-    .waypoint Stonetalon Mountains,81.19,87.56,40,0
-    .waypoint Stonetalon Mountains,81.70,86.44,40,0
-    .waypoint Stonetalon Mountains,82.26,86.10,40,0
-    .waypoint Stonetalon Mountains,82.55,85.22,40,0
-    .waypoint Stonetalon Mountains,83.64,85.02,40,0
-    .waypoint Stonetalon Mountains,84.20,85.20,40,0
-    .waypoint Stonetalon Mountains,83.80,86.38,40,0
-    .waypoint Stonetalon Mountains,83.25,87.23,40,0
-    .waypoint Stonetalon Mountains,82.33,89.73,40,0
-    .waypoint Stonetalon Mountains,82.33,90.43,40,0
-    .waypoint Stonetalon Mountains,81.34,90.78,40,0
+    .goto Stonetalon Mountains,80.62,89.99,40,0
+    .goto Stonetalon Mountains,79.79,88.75,40,0
+    .goto Stonetalon Mountains,81.19,87.56,40,0
+    .goto Stonetalon Mountains,81.70,86.44,40,0
+    .goto Stonetalon Mountains,82.26,86.10,40,0
+    .goto Stonetalon Mountains,82.55,85.22,40,0
+    .goto Stonetalon Mountains,83.64,85.02,40,0
+    .goto Stonetalon Mountains,84.20,85.20,40,0
+    .goto Stonetalon Mountains,83.80,86.38,40,0
+    .goto Stonetalon Mountains,83.25,87.23,40,0
+    .goto Stonetalon Mountains,82.33,89.73,40,0
+    .goto Stonetalon Mountains,82.33,90.43,40,0
+    .goto Stonetalon Mountains,81.34,90.78,40,0
     >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -3208,34 +3208,29 @@ step
     .accept 1093 >> Accept Super Reaper 6000
     .target Ziz Fizziks
 step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
-    .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
-    .mob Deepmoss Venomspitter
-step
     #completewith Windshear
     >>Loot the |cRXP_PICK_Spider Eggs|r near the trees
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
     #loop
+    #loop
     .goto Stonetalon Mountains,59.25,61.55,0
-    .waypoint Stonetalon Mountains,59.25,61.55
-    .waypoint Stonetalon Mountains,60.37,60.10
-    .waypoint Stonetalon Mountains,61.34,59.15
-    .waypoint Stonetalon Mountains,61.15,57.85
-    .waypoint Stonetalon Mountains,61.41,56.77
-    .waypoint Stonetalon Mountains,62.21,58.55
-    .waypoint Stonetalon Mountains,63.12,60.02
-    .waypoint Stonetalon Mountains,64.69,60.03
-    .waypoint Stonetalon Mountains,62.76,61.69
-    .waypoint Stonetalon Mountains,62.50,62.92
-    .waypoint Stonetalon Mountains,62.48,64.15
-    .waypoint Stonetalon Mountains,61.85,66.07
-    .waypoint Stonetalon Mountains,60.71,66.12
-    .waypoint Stonetalon Mountains,60.96,63.99
-    .waypoint Stonetalon Mountains,60.25,63.21
+    .goto Stonetalon Mountains,59.25,61.55,50,0
+    .goto Stonetalon Mountains,60.37,60.10,50,0
+    .goto Stonetalon Mountains,61.34,59.15,50,0
+    .goto Stonetalon Mountains,61.15,57.85,50,0
+    .goto Stonetalon Mountains,61.41,56.77,50,0
+    .goto Stonetalon Mountains,62.21,58.55,50,0
+    .goto Stonetalon Mountains,63.12,60.02,50,0
+    .goto Stonetalon Mountains,64.69,60.03,50,0
+    .goto Stonetalon Mountains,62.76,61.69,50,0
+    .goto Stonetalon Mountains,62.50,62.92,50,0
+    .goto Stonetalon Mountains,62.48,64.15,50,0
+    .goto Stonetalon Mountains,61.85,66.07,50,0
+    .goto Stonetalon Mountains,60.71,66.12,50,0
+    .goto Stonetalon Mountains,60.96,63.99,50,0
+    .goto Stonetalon Mountains,60.25,63.21,50,0
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
     >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
@@ -3350,23 +3345,23 @@ step
 step
     #loop
     .goto Stonetalon Mountains,61.50,55.12,0
-    .waypoint Stonetalon Mountains,61.50,55.12,50,0
-    .waypoint Stonetalon Mountains,60.48,55.10,50,0
-    .waypoint Stonetalon Mountains,59.80,53.69,50,0
-    .waypoint Stonetalon Mountains,59.53,52.52,50,0
-    .waypoint Stonetalon Mountains,60.80,51.23,50,0
-    .waypoint Stonetalon Mountains,62.06,54.39,50,0
-    .waypoint Stonetalon Mountains,62.63,55.35,50,0
-    .waypoint Stonetalon Mountains,63.63,54.42,50,0
-    .waypoint Stonetalon Mountains,65.42,54.15,50,0
-    .waypoint Stonetalon Mountains,66.83,54.92,50,0
-    .waypoint Stonetalon Mountains,68.64,54.03,50,0
-    .waypoint Stonetalon Mountains,69.86,53.53,50,0
-    .waypoint Stonetalon Mountains,70.34,56.41,50,0
-    .waypoint Stonetalon Mountains,67.90,56.96,50,0
-    .waypoint Stonetalon Mountains,66.25,56.64,50,0
-    .waypoint Stonetalon Mountains,65.29,57.14,50,0
-    .waypoint Stonetalon Mountains,64.27,57.63,50,0
+    .goto Stonetalon Mountains,61.50,55.12,50,0
+    .goto Stonetalon Mountains,60.48,55.10,50,0
+    .goto Stonetalon Mountains,59.80,53.69,50,0
+    .goto Stonetalon Mountains,59.53,52.52,50,0
+    .goto Stonetalon Mountains,60.80,51.23,50,0
+    .goto Stonetalon Mountains,62.06,54.39,50,0
+    .goto Stonetalon Mountains,62.63,55.35,50,0
+    .goto Stonetalon Mountains,63.63,54.42,50,0
+    .goto Stonetalon Mountains,65.42,54.15,50,0
+    .goto Stonetalon Mountains,66.83,54.92,50,0
+    .goto Stonetalon Mountains,68.64,54.03,50,0
+    .goto Stonetalon Mountains,69.86,53.53,50,0
+    .goto Stonetalon Mountains,70.34,56.41,50,0
+    .goto Stonetalon Mountains,67.90,56.96,50,0
+    .goto Stonetalon Mountains,66.25,56.64,50,0
+    .goto Stonetalon Mountains,65.29,57.14,50,0
+    .goto Stonetalon Mountains,64.27,57.63,50,0
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
     .complete 1062,1 --Kill Venture Co. Logger (x15)
     .mob Venture Co. Logger
@@ -3569,9 +3564,12 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
 step
+    #loop
+    .goto The Barrens,57.3,53.7,0
+    .goto The Barrens,52.0,46.5,0
+    .goto The Barrens,57.3,53.7,90,0
     .goto The Barrens,52.0,46.5,90,0
-    .goto The Barrens,57.3,53.7
-    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
+    >>Finish killing |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 865,1 --Intact Raptor Horn (5)
     .mob Sunscale Scytheclaw
@@ -3717,6 +3715,7 @@ step << Warrior
     .target Grazlix
     .money <0.619
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
+    .equip 7,4800
     .isQuestTurnedIn 865
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
@@ -3725,6 +3724,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .target Vexspindle
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
+    .equip 9,4794
     .isQuestTurnedIn 865
 step << Warrior
     #completewith FlytoXroads
@@ -3753,7 +3753,7 @@ step
 step
     .goto The Barrens,63.09,37.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bigglefuzz|r
-    .accept 959 >> Accept Trouble at the Docks
+    .accept 959 >>Accept Trouble at the Docks
     .target Crane Operator Bigglefuzz
     .dungeon WC
 step
@@ -3761,7 +3761,7 @@ step
     #completewith XroadsHS2
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to The Crossroads
+    .fly Crossroads >>Fly to The Crossroads
     .target Bragok
 step << Hunter
     .goto The Barrens,51.50,30.87
@@ -4185,7 +4185,6 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
 step
-    #optional
     #completewith Thunderhawk
     .goto The Barrens,44.55,59.27,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
@@ -6723,7 +6722,7 @@ step
     .mob Fleeting Plainstrider
 step << Tauren Warrior
     #sticky
-    #completewith KreenigSnarlsnout1
+    #completewith KreenigSnarlsnout
     .goto The Barrens,52.5,30.7,0
     .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossroads. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
 	.unitscan Lizzarik
@@ -6767,7 +6766,7 @@ step << Orc Hunter/Troll Hunter
     .target Uthrok
 step << Orc Hunter/Troll Hunter
     #optional
-    #completewith KreenigSnarlsnout1
+    #completewith KreenigSnarlsnout
     +Equip the |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
@@ -6784,7 +6783,7 @@ step << Tauren Hunter
     .target Uthrok
 step << Tauren Hunter
     #optional
-    #completewith KreenigSnarlsnout1
+    #completewith KreenigSnarlsnout
     +Equip the |T135613:0|t[Hunter's Boomstick]
     .use 2511
     .itemcount 2511,1
@@ -6801,7 +6800,7 @@ step << Orc Warrior
     .target Nargal Deatheye
 step << Orc Warrior
     #optional
-    #completewith KreenigSnarlsnout1
+    #completewith KreenigSnarlsnout
     +Equip the |T132395:0|t[Tabar]
     .use 1196
     .itemcount 1196,1
@@ -6820,7 +6819,7 @@ step << Troll Rogue/Orc Rogue
 step << Troll Rogue/Orc Rogue
     #optional
     #season 2
-    #completewith KreenigSnarlsnout1
+    #completewith KreenigSnarlsnout
     +Equip the |T135640:0|t[Jambiya]
     .use 2207
     .itemcount 2207,1
@@ -7685,7 +7684,7 @@ step
 step << Undead Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135353:0|t[Espadon] |cRXP_BUY_from him|r
-    .collect 2024,1,895,1 --Collect Espadon (1)
+    .collect 2024,1,850,1 --Collect Espadon (1)
     .money <0.6397
     .target Ironzar
     .itemStat 16,QUALITY,<7
@@ -7767,7 +7766,7 @@ step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
-    .collect 2030,1,895,1 --Collect Gnarled Staff (1)
+    .collect 2030,1,850,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target Ironzar
     .itemStat 16,QUALITY,<7
@@ -7784,7 +7783,7 @@ step << Shaman
     #season 2
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T133052:0|t[Hammer] |cRXP_BUY_from him|r
-    .collect 2028,1,895,1 --Collect Hammer (1)
+    .collect 2028,1,850,1 --Collect Hammer (1)
     .money <0.5065
     .target Ironzar
     .itemStat 16,QUALITY,<7
@@ -8923,7 +8922,7 @@ step << Hunter
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
-    #completewith RapHorsPickup
+    #completewith RapHornsPickup
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Ratchet >> Fly to Ratchet
@@ -9017,20 +9016,18 @@ step
     .isQuestComplete 863
 step
     #xprate <2.1
-    #label RapHorsPickup
+    #label RapHornsPickup
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
-    .target Sputtervalve
     .target Mebok Mizzyrix
 step
     #xprate >2.09
-    #label RapHorsPickup
+    #label RapHornsPickup
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Accept Raptor Horns
-    .target Sputtervalve
     .target Mebok Mizzyrix
 step << Warrior
     #season 2
@@ -9275,15 +9272,15 @@ step << Druid
 step
     #loop
     .goto The Barrens,55.72,42.14,0
-    .waypoint The Barrens,55.72,42.14,30,0
-    .waypoint The Barrens,55.49,41.75,30,0
-    .waypoint The Barrens,55.09,41.58,30,0
-    .waypoint The Barrens,55.03,42.24,30,0
-    .waypoint The Barrens,55.27,43.17,30,0
-    .waypoint The Barrens,55.78,43.47,30,0
-    .waypoint The Barrens,56.15,43.28,30,0
-    .waypoint The Barrens,56.08,42.58,30,0
-    .waypoint The Barrens,55.72,42.14,30,0
+    .goto The Barrens,55.72,42.14,30,0
+    .goto The Barrens,55.49,41.75,30,0
+    .goto The Barrens,55.09,41.58,30,0
+    .goto The Barrens,55.03,42.24,30,0
+    .goto The Barrens,55.27,43.17,30,0
+    .goto The Barrens,55.78,43.47,30,0
+    .goto The Barrens,56.15,43.28,30,0
+    .goto The Barrens,56.08,42.58,30,0
+    .goto The Barrens,55.72,42.14,30,0
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
@@ -9423,7 +9420,7 @@ step
     .goto The Barrens,52.24,31.01
     .turnin 3281 >>Turn in Stolen Silver
     .goto The Barrens,51.93,30.32
-    .target Mankrika
+    .target Mankrik
     .target Tonga Runetotem
     .target Sergra Darkthorn
     .target Gazrog
@@ -9676,23 +9673,23 @@ step
     #xprate <2.1
     #loop
     .goto The Barrens,40.28,15.49,0
-    .waypoint The Barrens,40.28,15.49,40,0
-    .waypoint The Barrens,39.50,14.68,40,0
-    .waypoint The Barrens,39.47,13.24,40,0
-    .waypoint The Barrens,38.94,12.80,40,0
-    .waypoint The Barrens,38.18,12.56,40,0
-    .waypoint The Barrens,37.96,13.52,40,0
-    .waypoint The Barrens,38.62,13.95,40,0
-    .waypoint The Barrens,38.18,14.62,40,0
-    .waypoint The Barrens,38.14,15.59,40,0
-    .waypoint The Barrens,37.29,15.68,40,0
-    .waypoint The Barrens,37.24,16.26,40,0
-    .waypoint The Barrens,37.67,16.34,40,0
-    .waypoint The Barrens,38.35,17.08,40,0
-    .waypoint The Barrens,38.83,17.71,40,0
-    .waypoint The Barrens,39.37,17.21,40,0
-    .waypoint The Barrens,39.87,16.66,40,0
-    .waypoint The Barrens,40.15,15.98,40,0
+    .goto The Barrens,40.28,15.49,40,0
+    .goto The Barrens,39.50,14.68,40,0
+    .goto The Barrens,39.47,13.24,40,0
+    .goto The Barrens,38.94,12.80,40,0
+    .goto The Barrens,38.18,12.56,40,0
+    .goto The Barrens,37.96,13.52,40,0
+    .goto The Barrens,38.62,13.95,40,0
+    .goto The Barrens,38.18,14.62,40,0
+    .goto The Barrens,38.14,15.59,40,0
+    .goto The Barrens,37.29,15.68,40,0
+    .goto The Barrens,37.24,16.26,40,0
+    .goto The Barrens,37.67,16.34,40,0
+    .goto The Barrens,38.35,17.08,40,0
+    .goto The Barrens,38.83,17.71,40,0
+    .goto The Barrens,39.37,17.21,40,0
+    .goto The Barrens,39.87,16.66,40,0
+    .goto The Barrens,40.15,15.98,40,0
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for their |cRXP_LOOT_Rings|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Witchwing Slayers|r cast|r |T135358:0|t[Execute] |cRXP_WARN_(deals a LOT of damage when you're at <20% health), and |cRXP_ENEMY_Witchwing Ambushers|r are|r |T132320:0|t[Stealthed] |cRXP_WARN_and patrol around|r
     >>|cRXP_WARN_Watch out for|r |cRXP_ENEMY_Witchwing Ambushers|r|cRXP_WARN_. They are stealthed and patrol in the area|r
@@ -9753,19 +9750,19 @@ step
     #optional
     #loop
     .goto Stonetalon Mountains,80.62,89.99,0
-    .waypoint Stonetalon Mountains,80.62,89.99,40,0
-    .waypoint Stonetalon Mountains,79.79,88.75,40,0
-    .waypoint Stonetalon Mountains,81.19,87.56,40,0
-    .waypoint Stonetalon Mountains,81.70,86.44,40,0
-    .waypoint Stonetalon Mountains,82.26,86.10,40,0
-    .waypoint Stonetalon Mountains,82.55,85.22,40,0
-    .waypoint Stonetalon Mountains,83.64,85.02,40,0
-    .waypoint Stonetalon Mountains,84.20,85.20,40,0
-    .waypoint Stonetalon Mountains,83.80,86.38,40,0
-    .waypoint Stonetalon Mountains,83.25,87.23,40,0
-    .waypoint Stonetalon Mountains,82.33,89.73,40,0
-    .waypoint Stonetalon Mountains,82.33,90.43,40,0
-    .waypoint Stonetalon Mountains,81.34,90.78,40,0
+    .goto Stonetalon Mountains,80.62,89.99,40,0
+    .goto Stonetalon Mountains,79.79,88.75,40,0
+    .goto Stonetalon Mountains,81.19,87.56,40,0
+    .goto Stonetalon Mountains,81.70,86.44,40,0
+    .goto Stonetalon Mountains,82.26,86.10,40,0
+    .goto Stonetalon Mountains,82.55,85.22,40,0
+    .goto Stonetalon Mountains,83.64,85.02,40,0
+    .goto Stonetalon Mountains,84.20,85.20,40,0
+    .goto Stonetalon Mountains,83.80,86.38,40,0
+    .goto Stonetalon Mountains,83.25,87.23,40,0
+    .goto Stonetalon Mountains,82.33,89.73,40,0
+    .goto Stonetalon Mountains,82.33,90.43,40,0
+    .goto Stonetalon Mountains,81.34,90.78,40,0
     >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -10019,13 +10016,6 @@ step
     .target Ziz Fizziks
 step
     #xprate <2.1
-    #completewith next
-    >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
-    .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
-    .mob Deepmoss Venomspitter
-step
-    #xprate <2.1
     #completewith Windshear
     >>Loot the |cRXP_PICK_Spider Eggs|r near the trees
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
@@ -10034,21 +10024,21 @@ step
     #xprate <2.1
     #loop
     .goto Stonetalon Mountains,59.25,61.55,0
-    .waypoint Stonetalon Mountains,59.25,61.55
-    .waypoint Stonetalon Mountains,60.37,60.10
-    .waypoint Stonetalon Mountains,61.34,59.15
-    .waypoint Stonetalon Mountains,61.15,57.85
-    .waypoint Stonetalon Mountains,61.41,56.77
-    .waypoint Stonetalon Mountains,62.21,58.55
-    .waypoint Stonetalon Mountains,63.12,60.02
-    .waypoint Stonetalon Mountains,64.69,60.03
-    .waypoint Stonetalon Mountains,62.76,61.69
-    .waypoint Stonetalon Mountains,62.50,62.92
-    .waypoint Stonetalon Mountains,62.48,64.15
-    .waypoint Stonetalon Mountains,61.85,66.07
-    .waypoint Stonetalon Mountains,60.71,66.12
-    .waypoint Stonetalon Mountains,60.96,63.99
-    .waypoint Stonetalon Mountains,60.25,63.21
+    .goto Stonetalon Mountains,59.25,61.55,50,0
+    .goto Stonetalon Mountains,60.37,60.10,50,0
+    .goto Stonetalon Mountains,61.34,59.15,50,0
+    .goto Stonetalon Mountains,61.15,57.85,50,0
+    .goto Stonetalon Mountains,61.41,56.77,50,0
+    .goto Stonetalon Mountains,62.21,58.55,50,0
+    .goto Stonetalon Mountains,63.12,60.02,50,0
+    .goto Stonetalon Mountains,64.69,60.03,50,0
+    .goto Stonetalon Mountains,62.76,61.69,50,0
+    .goto Stonetalon Mountains,62.50,62.92,50,0
+    .goto Stonetalon Mountains,62.48,64.15,50,0
+    .goto Stonetalon Mountains,61.85,66.07,50,0
+    .goto Stonetalon Mountains,60.71,66.12,50,0
+    .goto Stonetalon Mountains,60.96,63.99,50,0
+    .goto Stonetalon Mountains,60.25,63.21,50,0
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
     >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
@@ -10199,23 +10189,23 @@ step
     #xprate <2.1
     #loop
     .goto Stonetalon Mountains,61.50,55.12,0
-    .waypoint Stonetalon Mountains,61.50,55.12,50,0
-    .waypoint Stonetalon Mountains,60.48,55.10,50,0
-    .waypoint Stonetalon Mountains,59.80,53.69,50,0
-    .waypoint Stonetalon Mountains,59.53,52.52,50,0
-    .waypoint Stonetalon Mountains,60.80,51.23,50,0
-    .waypoint Stonetalon Mountains,62.06,54.39,50,0
-    .waypoint Stonetalon Mountains,62.63,55.35,50,0
-    .waypoint Stonetalon Mountains,63.63,54.42,50,0
-    .waypoint Stonetalon Mountains,65.42,54.15,50,0
-    .waypoint Stonetalon Mountains,66.83,54.92,50,0
-    .waypoint Stonetalon Mountains,68.64,54.03,50,0
-    .waypoint Stonetalon Mountains,69.86,53.53,50,0
-    .waypoint Stonetalon Mountains,70.34,56.41,50,0
-    .waypoint Stonetalon Mountains,67.90,56.96,50,0
-    .waypoint Stonetalon Mountains,66.25,56.64,50,0
-    .waypoint Stonetalon Mountains,65.29,57.14,50,0
-    .waypoint Stonetalon Mountains,64.27,57.63,50,0
+    .goto Stonetalon Mountains,61.50,55.12,50,0
+    .goto Stonetalon Mountains,60.48,55.10,50,0
+    .goto Stonetalon Mountains,59.80,53.69,50,0
+    .goto Stonetalon Mountains,59.53,52.52,50,0
+    .goto Stonetalon Mountains,60.80,51.23,50,0
+    .goto Stonetalon Mountains,62.06,54.39,50,0
+    .goto Stonetalon Mountains,62.63,55.35,50,0
+    .goto Stonetalon Mountains,63.63,54.42,50,0
+    .goto Stonetalon Mountains,65.42,54.15,50,0
+    .goto Stonetalon Mountains,66.83,54.92,50,0
+    .goto Stonetalon Mountains,68.64,54.03,50,0
+    .goto Stonetalon Mountains,69.86,53.53,50,0
+    .goto Stonetalon Mountains,70.34,56.41,50,0
+    .goto Stonetalon Mountains,67.90,56.96,50,0
+    .goto Stonetalon Mountains,66.25,56.64,50,0
+    .goto Stonetalon Mountains,65.29,57.14,50,0
+    .goto Stonetalon Mountains,64.27,57.63,50,0
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
     .complete 1062,1 --Kill Venture Co. Logger (x15)
     .mob Venture Co. Logger
@@ -10476,9 +10466,12 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
 step
+    #loop
+    .goto The Barrens,57.3,53.7,0
+    .goto The Barrens,52.0,46.5,0
+    .goto The Barrens,57.3,53.7,90,0
     .goto The Barrens,52.0,46.5,90,0
-    .goto The Barrens,57.3,53.7
-    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
+    >>Finish killing |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 865,1 --Intact Raptor Horn (5)
     .mob Sunscale Scytheclaw
@@ -10647,6 +10640,7 @@ step << Warrior
     .money <0.619
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
     .isQuestTurnedIn 865
+    .equip 7,4800
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vexspindle|r
@@ -10655,6 +10649,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
     .isQuestTurnedIn 865
+    .equip 9,4794
 step << Warrior
     #completewith FlytoXroads
     +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] 
