@@ -455,13 +455,14 @@ local function TooltipSetItem(tooltip, ...)
 
     local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
+    -- This doesn't work for grey/white weapons as they have 0 weight until comparison against a slot
     if not comparisons or next(comparisons) == nil then
         if addon.settings.profile.enableTotalEP then
-            tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
-
             local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
-            if item then
+            if item and item.totalWeight and item.totalWeight > 0 then
+                tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
                 tooltip:AddLine(fmt("  Total EP: %s",
                                     addon.Round(item.totalWeight, 2)))
             end
@@ -1047,7 +1048,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     -- After parsing API data and tooltip text, add up stat weights
     for key, value in pairs(stats) do
-        -- print("Weighting stat", key, "value")
+        -- print("Weighting stat", key, "value", value)
 
         -- Weapon DPS only comes back as a single stat/key
         if key == 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' then
@@ -1085,7 +1086,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         end
     end
 
-    itemData.totalWeight = addon.Round(totalWeight, 2)
+    itemData.totalWeight = addon.Round(totalWeight, 6)
     itemData.stats = stats
 
     -- TODO validate edge cases or failures before return
@@ -1237,7 +1238,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
             tinsert(comparisons, {
                 ['Ratio'] = ratio,
                 ['TotalWeight'] = comparedData.totalWeight,
-                ['WeightIncrease'] = weightIncrease,
+                ['WeightIncrease'] = weightIncrease or 0,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
                 ['debug'] = addon.settings.profile.debug and debug
