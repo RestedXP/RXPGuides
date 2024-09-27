@@ -118,6 +118,16 @@ function addon.UpdateQuestButton(index)
                 showButton = true
             end
         end
+
+        -- TODO incredibly horribly inefficient
+        local _, orphanedList = addon.GetOrphanedQuests()
+        -- If showButton, then it's a pickUp or turnIn, without the table lookup cost
+        if not showButton and orphanedList[questID] then
+            tooltip = format("%s%s%s%s%s|r", tooltip, separator,
+                                addon.icons.error, addon.colors.tooltip,
+                                L("Quest is not part of any guide"))
+            showButton = true
+        end
         button.tooltip = tooltip
     end
 
@@ -377,9 +387,9 @@ end
 
 function addon.GetOrphanedQuests()
     if not addon.currentGuide or not addon.currentGuide.key then
-        return {}
+        return {}, {}
     end
-    local orphans = {}
+    local invertedList, orphanedList = {}, {}
 
     local guideQuests, futureTurnIns = addon.GetExpectedQuestLog()
 
@@ -400,13 +410,17 @@ function addon.GetOrphanedQuests()
             isPartOfGuide = guideQuests[questData.questID] or futureTurnIns[questData.questID]
 
             if not isPartOfGuide and not questData.isComplete then
-                table.insert(orphans, 1, orphanData)
+                table.insert(invertedList, 1, orphanData)
+
+                orphanedList[questData.questID] = orphanData
             end
         end
 
     end
 
-    return orphans
+    -- invertedList to abandon from questlog bottom, no required refresh on bulk abandon
+    -- orphanedList for quest log parsing similar to addon.turnInList
+    return invertedList, orphanedList
 end
 
 local SetAbandonQuest = C_QuestLog.SetAbandonQuest or _G.SetAbandonQuest
