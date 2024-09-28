@@ -1564,20 +1564,6 @@ step
     .dailyturnin 29296 >> Turn in Territorial Birds
     .target Arthorn Windsong
 step
-    .isOnQuest 29274
-    #loop
-    .goto 338,47.6,79.6,45,0
-    .goto 338,43.8,74.0,45,0
-    .goto 338,45.8,64.2,45,0
-    .goto 338,52.8,64.4,45,0
-    .goto 338,53.6,79.6,45,0
-    .goto 338,53.4,53.0,45,0
-    .goto 338,40.8,45.0,45,0
-    >>Kill |cRXP_ENEMY_Charhounds|r and |cRXP_ENEMY_Ancient Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
-    .complete 29274,1 -- Houndbone Ash (6)
-    .mob Charhound
-    .mob Ancient Charhound
-step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
@@ -2286,6 +2272,18 @@ step
     #optional
     #requires WispAway
 step
+    .isQuestComplete 29139
+    .goto 338,48.513,86.257
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    .dailyturnin 29139 >>Turn in Aggressive Growth
+    .target Rayne Feathersong
+step
+    .isQuestComplete 29143
+    .goto 338,48.513,86.257
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    .dailyturnin 29143 >>Turn in Wisp Away
+    .target Rayne Feathersong
+step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
@@ -2322,18 +2320,6 @@ step
     .dailyturnin 29138 >>Turn in Burn Victims
     .target Captain Irontree
 step
-    .isQuestComplete 29139
-    .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
-    .dailyturnin 29139 >>Turn in Aggressive Growth
-    .target Rayne Feathersong
-step
-    .isQuestComplete 29143
-    .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
-    .dailyturnin 29143 >>Turn in Wisp Away
-    .target Rayne Feathersong
-step
     .isQuestTurnedIn 29181
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
@@ -2349,7 +2335,8 @@ step
     .complete 29206,1 -- Druid of the Talon Windcaller protected 1/1
     .mob Flamewaker Assassin
     .mob Pyrelord
-    .target Nordrala
+    .target Windcaller Nordrala
+    .target Windcaller Voramus
     .skipgossip
 step << skip
     .goto 338,34.400,66.213
@@ -2365,6 +2352,25 @@ step
     .daily 29264 >>Accept Flamewakers of the Molten Flow
     .daily 29265 >>Accept Fire Flowers
     .target Thisalee Crow
+step
+    .isQuestTurnedIn 29272
+    .goto 338,41.772,61.475
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
+    .daily 29273,29274 >>Accept whichever random daily quest is offered
+    .target Tholo Whitehoof
+    .target Anren Shadowseeker
+step
+    .isOnQuest 29274
+    #sticky
+    #label Houndbones
+    #loop
+    .goto 338,50.15,58.80,70,0
+    .goto 338,43.39,51.11,70,0
+    .goto 338,51.48,39.68,70,0
+    .goto 338,52.74,54.06,70,0
+    >>Kill |cRXP_ENEMY_Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
+    .complete 29274,1 -- Houndbone Ash (6)
+    .mob Charhound
 step -- 29264 Flamewakers of the Molten Flow
     .isOnQuest 29264
     #sticky
@@ -2397,6 +2403,9 @@ step
     #optional
     #requires Lucifern
 step
+    #optional
+    #requires Houndbones
+step
     .isQuestComplete 29264
     .goto 338,42.541,59.713
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thisalee Crow|r
@@ -2414,13 +2423,6 @@ step
     .goto 338,33.08,67.62
     +|cRXP_WARN_Jump to return to the Molten Front surface|r
     .subzoneskip 5746,1
-step
-    .isQuestTurnedIn 29272
-    .goto 338,35.860,59.235
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
-    .daily 29273,29274 >>Accept whichever random daily quest is offered
-    .target Tholo Whitehoof
-    .target Anren Shadowseeker
 step
     .isQuestComplete 29265
     .goto 338,36.299,56.344
@@ -2567,20 +2569,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthorn Windsong|r
     .dailyturnin 29296 >> Turn in Territorial Birds
     .target Arthorn Windsong
-step
-    .isOnQuest 29274
-    #loop
-    .goto 338,47.6,79.6,45,0
-    .goto 338,43.8,74.0,45,0
-    .goto 338,45.8,64.2,45,0
-    .goto 338,52.8,64.4,45,0
-    .goto 338,53.6,79.6,45,0
-    .goto 338,53.4,53.0,45,0
-    .goto 338,40.8,45.0,45,0
-    >>Kill |cRXP_ENEMY_Charhounds|r and |cRXP_ENEMY_Ancient Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
-    .complete 29274,1 -- Houndbone Ash (6)
-    .mob Charhound
-    .mob Ancient Charhound
 step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
