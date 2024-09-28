@@ -224,6 +224,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 2: Belt & Gloves
 #next Part 3: Pants, Shoulders & Boots
 
@@ -655,6 +656,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 3: Pants, Shoulders & Boots
 #next Part 4: Helm & Chest
 
@@ -1125,6 +1127,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 4: Helm & Chest
 
 
