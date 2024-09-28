@@ -1292,13 +1292,18 @@ step
     .isOnQuest 79028
     .goto 2214,56.42,36.99
     .cast 451809 >>Click on the |cRXP_PICK_Power Substation Console|r
-    .timer 20,RP
+    .timer 19,RP
 step
-    .isOnQuest 79028
+    >>Wait infront of the Pipe Room
+    .complete 79028,2 --1/1
     .goto 2214,56.09,37.23
-    .countdown 20 >>Wait infront of the Pipe Room
 step
-    >>|cRXP_WARN_Enter the Pipe Room and wait for the roleplay.|r
+    #completewith next
+    .isOnQuest 79028
+    .goto 2214,55.67,37.29,10 >>Enter the Pipe Room
+    .timer 17,RP
+step
+    #title |cFFFCDC00Wait for the Roleplay.|r
     .complete 79028,3 --1/1 Pipe Room Located
     .goto 2214,55.67,37.28
 step
@@ -1377,6 +1382,7 @@ step
     .target ZZ-01-47
     .accept 80517 >>Accept Back to Where it Began
 step
+    #completewith next
     .goto 2214,58.7,33.55
     .deathskip >> Die in the Lava and respawn at the Spirit Healer
 step
@@ -1437,6 +1443,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 80 Max Level Campaign
 #name e) A Light in the Dark
 #displayname |cRXP_WARN_Chapter 5|r - A Light in the Dark
+#next f) Story Mode: Queen Ansurek
 
 
 step
@@ -1444,6 +1451,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 78941 >>Accept A Tide Needing Turned
     .target Alleria Windrunner
+step
+    #completewith next
+    .goto 2339,38.93,59.89,30,0
+    .goto 2339,48.18,60.84,30,0
+    .goto 2339,49.94,63.8,30,0
+    .goto 2339,49.78,71.69,30,0
+    .goto 2339,49.78,71.69,30,0
+    .goto 2339,37.7,74.39,30,0
+    .goto 2214,39.98,32.58,30,0
+    .goto 2214,39.7,31.54,30,0
+    .goto 2214,39.87,29.79,30,0
+    .goto 2214,41.5,28.33,30,0
+    .goto 2214,42.28,28.33,30,0
+    .goto 2214,40.54,24.36,30 >>Go to Hallowfall
 step
     .goto 2215,71.64,59.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Steelstrike|r
@@ -1559,13 +1580,13 @@ step
     .mob Writhing Shade
 step
     .isOnQuest 78948
-    .goto 2330,71.4,69.61,20,0
-    .goto 2330,74.29,63.9,20,0
-    .goto 2330,78.88,54.94,20,0
-    .goto 2330,67.14,50.03,20,0
-    .goto 2330,60.3,50.65,15,0
+    .goto 2330,71.4,69.61,40,0
+    .goto 2330,74.29,63.9,40,0
+    .goto 2330,78.88,54.94,40,0
+    .goto 2330,67.14,50.03,40,0
+    .goto 2330,60.3,50.65,40,0
     .goto 2330,56.57,51.21
-    .scenario 7009,1 >>Kill |cRXP_ENEMY_Shadesworn Crusher|r and click on the |cRXP_PICK_fountain|r in the middle
+    .scenario 7009,1 >>Kill |cRXP_ENEMY_Shadesworn Crusher|r and click on the |cRXP_PICK_Fountain|r in the middle.
     .mob Shadesworn Crusher
     .mob Forming Whispers
     .mob Writhing Shade
@@ -1575,8 +1596,8 @@ step
     .isOnQuest 78948
     .scenario 7010,1 >>Click on |cRXP_PICK_Oil Brazier|r
 step
-    .goto 2330,47.9,61.65,10,0
-    .goto 2330,38.03,54.21,10,0
+    .goto 2330,47.9,61.65,30,0
+    .goto 2330,38.03,54.21,30,0
     .goto 2330,27.49,55.87
     .isOnQuest 78948
     .scenario 7012,1 >>Kill |cRXP_ENEMY_Broken Queen|r
@@ -1601,9 +1622,188 @@ step
     .target Merrix
     .skipgossipid 123407
 step
+    #title Use |cFFFCDC00Earthen Teleporter|r
+    .goto 2339,40.74,22.38
+    .cast 431519 >>Click on the |cRXP_PICK_Earthen Teleporter|r
+step
     .goto 2339,25.33,66.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
     .turnin 83503 >>Turn in Return to Dornogal
     .target Anduin Wrynn
+]])
 
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup 80 Max Level Campaign
+#name f) Story Mode: Queen Ansurek
+#displayname |cRXP_WARN_Final Chapter|r - Story Mode: Queen Ansurek
+
+step
+    .goto 2339,31.62,63.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Webster|r
+    .accept 83587 >>Accept Our Chance to Strike
+    .target Webster
+step
+    #completewith next
+    .goto 2339,63.62,52.36
+    .zone 2255 >>Take the burrow to Azj-Kahet
+step
+    .goto 2213,50.22,44.84,15,0
+    .goto 2213,52.87,46.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Nizrek|r
+    .turnin 83587 >>Turn in Our Chance to Strike
+    .target Executor Nizrek
+step
+    .goto 2213,52.87,46.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Nizrek|r
+    .target Executor Nizrek
+    .accept 82124 >>Accept The Beginning of the End
+step
+    .isOnQuest 82124
+    #title Leave the House
+    #completewith next
+    .goto 2213,50.22,44.84,15 >>Leave the House
+step
+    #loop
+    .goto 2216,51.83,38.55,35,0
+    .goto 2213,50.69,34.03,35,0
+    .goto 2213,47.53,35.42,35,0
+    .goto 2213,49.58,27.56,35,0
+    .goto 2213,45.6,28.18,35,0
+    .goto 2213,41.08,28.92,35,0
+    .goto 2213,46.65,18.41,35,0
+    .goto 2213,47.3,13.92,35,0
+    .goto 2213,51.08,15.51,35,0
+    .goto 2213,54.24,20.73,35,0
+    .goto 2213,61.26,18.95,35,0
+    .goto 2213,60.43,27.59,35,0
+    .goto 2213,55.38,29.1,35,0
+    >>Kill |cRXP_ENEMY_Bazaar Guards,|r |cRXP_ENEMY_Bazaar Sentry|r and |cRXP_ENEMY_Loyalist Threadblade.|r
+    *Click on the |cRXP_PICK_Propaganda Holograms|r
+    -- *|cRXP_WARN_Ignore |cRXP_PICK_Propaganda Holograms|r as they usually waste time|r
+    .complete 82124,1 --Umbral Bazaar disrupted (100%)
+    .mob Bazaar Guard
+    .mob Bazaar Sentry
+    .mob Loyalist Threadblade
+step
+    .isOnQuest 82124
+    #title Enter the House
+    #completewith next
+    .goto 2213,50.12,44.59,15 >> Enter the House
+step
+    .goto 2213,52.88,46.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Nizrek|r
+    .turnin 82124 >>Turn in The Beginning of the End
+    .target Executor Nizrek
+    .accept 82125 >>Accept A Spy Like Us
+step
+    .isOnQuest 82125
+    #title Leave the House
+    #completewith next
+    .goto 2213,53.92,50.28,15 >> Leave the House
+step
+    .goto 2216,55,42.55,10,0
+    .goto 2216,57.30,41.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gut'usul|r |cRXP_WARN_below inside a House.|r
+    .turnin 82125 >>Turn in A Spy Like Us
+    .target Gut'usul
+    .accept 82126 >>Accept Defense of the People
+    .accept 82127 >>Accept Make Them Prey
+step
+    .isOnQuest 82127
+    #title Leave the House
+    #completewith next
+    .goto 2216,55.19,42.91,10 >> Leave the House
+step
+    #completewith Burrows Residents
+    >>Kill |cRXP_ENEMY_Abductors|r
+    .complete 82127,1 --8/8 Abductors slain
+    .mob Abductors
+step
+    .goto 2216,54,55.95
+    >>Click on |cRXP_PICK_Kah'net|r
+    .complete 82126,1,1 --5/5 Burrows Residents rescued
+    .mob Kah'net
+step
+    .goto 2216,44.26,68.11
+    >>Click on |cRXP_PICK_Tihk'ot|r
+    .complete 82126,1,2 --5/5 Burrows Residents rescued
+    .mob Tihk'ot
+step
+    .goto 2216,38.2,59.37
+    >>Click on |cRXP_PICK_Srax'run|r
+    .complete 82126,1,3 --5/5 Burrows Residents rescued
+    .mob Srax'run
+step
+    .goto 2216,36.9,57.71
+    >>Click on |cRXP_PICK_Gruthit|r
+    .complete 82126,1,4 --5/5 Burrows Residents rescued
+    .mob Gruthit
+step
+    #label Burrows Residents
+    .goto 2216,46.85,49.12,15,0
+    .goto 2216,44.63,49.17
+    >>Click on |cRXP_PICK_Mus'ten|r
+    .complete 82126,1,5 --5/5 Burrows Residents rescued
+    .mob Mus'ten
+step
+    #loop
+    .goto 2216,54,55.95,35,0
+    .goto 2216,44.26,68.11,35,0
+    .goto 2216,38.2,59.37,35,0
+    .goto 2216,36.9,57.71,35,0
+    .goto 2216,44.63,49.17,35,0
+    >>Kill |cRXP_ENEMY_Abductors|r
+    .complete 82127,1 --8/8 Abductors slain
+    .mob Abductors
+step
+    .goto 2216,55.16,42.49,10,0
+    .goto 2216,57.33,41.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gut'usul|r
+    .turnin 82126 >>Turn in Defense of the People
+    .target Gut'usul
+    .turnin 82127 >>Turn in Make Them Prey
+    .accept 82130 >>Accept A Shot at the Top
+step
+    .goto 2216,56.47,53.83,15,0
+    .goto 2216,55.17,42.87
+    >>Kill |cRXP_ENEMY_Master Abductor|r
+    .complete 82130,1 --1/1 Master Abductor slain
+    .mob Master Abductor
+step
+    .goto 2216,56.54,53.44,10,0
+    .goto 2213,53.74,50.06,10,0
+    .goto 2213,52.91,46.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Nizrek|r |cRXP_WARN_up above, inside the main house.|r
+    .turnin 82130 >>Turn in A Shot at the Top
+    .target Executor Nizrek
+    .accept 82141 >>Accept To Kill a Queen
+step
+    #completewith next
+    >>|cRXP_WARN_You can kill her solo or in a raid group (LFR, Normal, Heroic, or Mythic).|r
+    *|cRXP_WARN_The fastest and most accessible method is to kill her solo, but you might want to wait if you plan on killing her in a raid group.|r
+    *|cRXP_WARN_It all depends on how eager you are for the Heroic Tier Token reward offered by this quest.|r
+    *|cFFFF0000This guide will continue to direct you through the solo version|r.
+    .complete 82141,2 --1/1 Enter Nerub-ar Palace in Story Mode (Optional)>>Kill |cRXP_ENEMY_Queen Ansurek|r
+    .complete 82141,1 --1/1 Queen Ansurek slain
+step
+    .isOnQuest 82141
+    .goto 2213,31.47,64.05
+    .gossipoption 123174 >>Talk to |cRXP_FRIENDLY_Kriz the "Loyal"|r
+    .mob Kriz the "Loyal"
+step
+    >>Kill |cRXP_ENEMY_Queen Ansurek|r
+    .complete 82141,1 --1/1 Queen Ansurek slain
+    .mob Queen Ansurek
+step
+    #completewith next
+    +Click on your player frame and leave the instance group if you're in the solo version.
+step
+    .goto 2213,50.02,44.51,15,0
+    .goto 2213,52.70,46.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Nizrek|r
+    .turnin 82141 >>Turn in To Kill a Queen
+    .target Executor Nizrek
 ]])
