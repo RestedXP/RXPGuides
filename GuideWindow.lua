@@ -2116,8 +2116,10 @@ function RXPFrame:GenerateMenuTable(menu)
             item.subgroups = nil
             item.subtable = nil
         end
-
-        tinsert(menuList, item)
+        if #item.menuList > 0 then
+            tinsert(menuList, item)
+            --print(#item.menuList,group)
+        end
     end
 
     if #groupList > 0 then
