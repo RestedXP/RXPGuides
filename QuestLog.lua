@@ -10,6 +10,20 @@ local L = addon.locale.Get
 local maxQuests = 25
 if addon.game == "CLASSIC" then
     maxQuests = 20
+
+    -- TODO handle first load race condition with UpdateQuestButton
+    if _G.ToggleQuestLog and _G.QuestLogFrame then
+        hooksecurefunc("ToggleQuestLog", function()
+            if _G.QuestLogFrame:IsShown() then
+                -- Update before UpdateQuestButton fires
+                addon.GetOrphanedQuests()
+            else
+                -- Inventory orphaned quests on close
+                addon:ScheduleTask(addon.GetOrphanedQuests)
+            end
+        end)
+    end
+    -- TODO Cata + Retail handling
 end
 
 local lastIndex
@@ -119,10 +133,14 @@ function addon.UpdateQuestButton(index)
             end
         end
 
-        -- TODO incredibly horribly inefficient
-        local _, orphanedList = addon.GetOrphanedQuests()
+        -- Only evaluates true on first load
+        -- addon.orphanedList is updated when QuestLogFrame opens/closes
+        if not addon.orphanedList then
+            addon.GetOrphanedQuests()
+        end
+
         -- If showButton, then it's a pickUp or turnIn, without the table lookup cost
-        if not showButton and orphanedList[questID] then
+        if not showButton and addon.orphanedList[questID] then
             tooltip = format("%s%s%s%s%s|r", tooltip, separator,
                                 addon.icons.error, addon.colors.tooltip,
                                 L("Quest is not part of any guide"))
@@ -385,6 +403,8 @@ local function getQuestData(questLogIndex)
     return data
 end
 
+-- Set on first GetOrphanedQuests run, likely by UpdateQuestButton call
+addon.orphanedList = nil -- {}
 function addon.GetOrphanedQuests()
     if not addon.currentGuide or not addon.currentGuide.key then
         return {}, {}
@@ -418,15 +438,19 @@ function addon.GetOrphanedQuests()
 
     end
 
-    -- invertedList to abandon from questlog bottom, no required refresh on bulk abandon
     -- orphanedList for quest log parsing similar to addon.turnInList
-    return invertedList, orphanedList
+    addon.orphanedList = orphanedList
+
+    -- invertedList to abandon from questlog bottom, no required refresh on bulk abandon
+    return invertedList
 end
+
 
 local SetAbandonQuest = C_QuestLog.SetAbandonQuest or _G.SetAbandonQuest
 local AbandonQuest = C_QuestLog.AbandonQuest or _G.AbandonQuest
 
 function addon.AbandonOrphanedQuests(orphans)
+    -- Likely addon.orphanedList but re-create if empty
     orphans = orphans or addon.GetOrphanedQuests()
 
     local function abandonQuest(questInfo)
