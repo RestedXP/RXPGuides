@@ -126,7 +126,7 @@ function addon.UpdateQuestButton(index)
         end
 
         -- If showButton, then it's a pickUp or turnIn, without the table lookup cost
-        if not showButton and addon.orphanedList[questID] then
+        if not showButton and addon.orphanedList and addon.orphanedList[questID] then
             tooltip = format("%s%s%s%s%s|r", tooltip, separator,
                                 addon.icons.error, addon.colors.tooltip,
                                 L("Quest is not part of any guide"))
