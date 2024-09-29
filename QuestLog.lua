@@ -10,20 +10,6 @@ local L = addon.locale.Get
 local maxQuests = 25
 if addon.game == "CLASSIC" then
     maxQuests = 20
-
-    -- TODO handle first load race condition with UpdateQuestButton
-    if _G.ToggleQuestLog and _G.QuestLogFrame then
-        hooksecurefunc("ToggleQuestLog", function()
-            if _G.QuestLogFrame:IsShown() then
-                -- Update before UpdateQuestButton fires
-                addon.GetOrphanedQuests()
-            else
-                -- Inventory orphaned quests on close
-                addon:ScheduleTask(addon.GetOrphanedQuests)
-            end
-        end)
-    end
-    -- TODO Cata + Retail handling
 end
 
 local lastIndex
@@ -498,4 +484,19 @@ function addon.AbandonOrphanedQuests(orphans)
     C_Timer.After(2, function()
         LibStub("AceConfigRegistry-3.0"):NotifyChange(addon.title)
     end)
+end
+
+-- Classic / Cata
+if _G.ToggleQuestLog and _G.QuestLogFrame then
+    hooksecurefunc("ToggleQuestLog", function()
+        if _G.QuestLogFrame:IsShown() then
+            -- Update before UpdateQuestButton fires
+            addon.GetOrphanedQuests()
+        else
+            -- Inventory orphaned quests on close
+            addon:ScheduleTask(addon.GetOrphanedQuests)
+        end
+    end)
+-- else
+--     addon.game == 'RETAIL'
 end
