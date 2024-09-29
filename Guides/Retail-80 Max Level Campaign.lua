@@ -220,7 +220,7 @@ step
     .goto 2339,51.09,41.43,10 >>Leave the House
 step
     .goto 2339,39.08,24.14
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 79344,2 --1/1 Keepers of Renown found
     .goto 2339,39.29,24.1
 step
@@ -795,7 +795,7 @@ step
     .complete 79239,6 --1/1 Neferess's Right Arm Freed
 step
     .goto 2213,56.74,92.62
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     *|cRXP_WARN_Relog if you don't get teleported.|r
     .complete 79239,8 --1/1 Neferess Freed
 step
@@ -1232,15 +1232,15 @@ step
     .target Foreman Bruknar
 step
     .isOnQuest 79026
-    .goto 2251,47.99,20.68
-    .goto 2251,46.68,24.67
-    .goto 2251,49.67,29.08
-    .goto 2251,49.93,37.05
-    .goto 2251,48.6,41.8
-    .goto 2251,46.81,51.22
-    .goto 2251,47.89,57.11
-    .goto 2251,49.26,60.69
-    .goto 2251,46.94,68.97
+    .goto 2251,47.99,20.68,20,0
+    .goto 2251,46.68,24.67,20,0
+    .goto 2251,49.67,29.08,20,0
+    .goto 2251,49.93,37.05,20,0
+    .goto 2251,48.6,41.8,20,0
+    .goto 2251,46.81,51.22,20,0
+    .goto 2251,47.89,57.11,20,0
+    .goto 2251,49.26,60.69,20,0
+    .goto 2251,46.94,68.97,20,0
     >>Click on |cRXP_PICK_Captured Workers|r
     .isInScenario 2354,2
     .scenario 6758,1
