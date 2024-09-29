@@ -2353,9 +2353,11 @@ step
     .daily 29265 >>Accept Fire Flowers
     .target Thisalee Crow
 step
+    #completewith FOTMF
     .isQuestTurnedIn 29272
     .goto 338,41.772,61.475
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
+    >>|cRXP_WARN_NOTE: If they have not spawned here underground, skip this step|r
     .daily 29273,29274 >>Accept whichever random daily quest is offered
     .target Tholo Whitehoof
     .target Anren Shadowseeker
@@ -2424,6 +2426,13 @@ step
     +|cRXP_WARN_Jump to return to the Molten Front surface|r
     .subzoneskip 5746,1
 step
+    .isQuestTurnedIn 29272
+    .goto 338,35.860,59.235
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
+    .daily 29273,29274 >>Accept whichever random daily quest is offered
+    .target Tholo Whitehoof
+    .target Anren Shadowseeker
+step
     .isQuestComplete 29265
     .goto 338,36.299,56.344
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Choluna|r
@@ -2463,6 +2472,9 @@ step
 step
     .isQuestComplete 29290
     .subzone 5745 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
+    --.cast 99674 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
+    --.subzoneskip 5745
+    .subzoneskip 5748
 step
     #optional
     #sticky
