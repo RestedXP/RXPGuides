@@ -130,7 +130,12 @@ function addon.UpdateQuestButton(index)
             tooltip = format("%s%s%s%s%s|r", tooltip, separator,
                                 addon.icons.error, addon.colors.tooltip,
                                 L("Quest is not part of any guide"))
+            -- TODO change to new Brandung image
+            button:SetNormalTexture('Interface/GossipFrame/BattleMasterGossipIcon')
             showButton = true
+        else
+            -- Inefficient, but set back to default texture in case of orphans
+            button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
         end
         button.tooltip = tooltip
     end
