@@ -2293,9 +2293,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not self.profile.enableTips or
                                        UnitLevel("player") ==
-                                       GetMaxPlayerLevel() or
-                                       addon.itemUpgrades:GetSpecWeights() ==
-                                       nil
+                                       GetMaxPlayerLevel()
                         end
                     },
                     itemUpgradeSpec = {
