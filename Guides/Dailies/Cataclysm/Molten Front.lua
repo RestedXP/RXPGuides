@@ -1105,6 +1105,16 @@ step
     .mob Brimstone Hound
     .mob Scarred Acolyte
     .mob Charred Invader
+step -- 29248 Releasing the Pressure
+    .isOnQuest 29248
+    .goto 198,32.0,59.8,70,0
+    .goto 198,36.6,54.8,70,0
+    .goto 198,39.2,62.6,70,0
+    .goto 198,34.6,64.6,70,0
+    .goto 198,30.6,52.2,70,0
+    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
+    .complete 29248,1 -- Flamewaker Scale (100)
+    .mob Charred Flamewaker
 step -- 29128 The Protectors of Hyjal
     .isOnQuest 29128
     #completewith FinishProtector
@@ -1153,16 +1163,6 @@ step -- 29128 The Protectors of Hyjal
     .complete 29128,1 -- Invader slain at Sethria's Roost (6)
     .mob Fiery Behemoth
     .mob Seething Pyrelord
-step -- 29248 Releasing the Pressure
-    .isOnQuest 29248
-    .goto 198,32.0,59.8,70,0
-    .goto 198,36.6,54.8,70,0
-    .goto 198,39.2,62.6,70,0
-    .goto 198,34.6,64.6,70,0
-    .goto 198,30.6,52.2,70,0
-    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
-    .complete 29248,1 -- Flamewaker Scale (100)
-    .mob Charred Flamewaker
 step
     .isQuestComplete 29162
     .goto 198/1,-2080.000,4439.900
@@ -1304,10 +1304,12 @@ step
     .goto 338,33.83,67.40
     >>Escort and protect the |cRXP_FRIENDLY_Windcaller|r through the fire
     >>Kill the |cRXP_ENEMY_Pyrelord|r at the end
+    >>Talk to |cRXP_FRIENDLY_Skylord Omnuron|r just before the fires if a |cRXP_FRIENDLY_Windcaller|r is not present
     .complete 29206,1 -- Druid of the Talon Windcaller protected 1/1
     .mob Flamewaker Assassin
     .mob Pyrelord
     .target Nordrala
+    .skipgossip
 step
     #completewith next
     .subzone 5746 >> |cRXP_WARN_Drop down the large hole. Head toward|r |cRXP_FRIENDLY_Thisalee Crow|r
@@ -1399,7 +1401,7 @@ step
     #requires ExitUnderground
     #completewith DruidDailies
     .goto 338,33.08,67.62
-    +|cRXP_WARN_Jump to return to the Molten Frost surface|r
+    +|cRXP_WARN_Jump to return to the Molten Front surface|r
     .subzoneskip 5746,1
 step
     .isQuestComplete 29272
@@ -1442,7 +1444,6 @@ step
 step
     .isOnQuest 29290
     >>|cRXP_WARN_Cast|r |T135821:0|t[Flame Seed] (1) |cRXP_WARN_and|r |T451164:0|t[Flame Burst] (2) |cRXP_WARN_to kill |cRXP_ENEMY_Flamewakers|r, |cRXP_ENEMY_Cinderwebs|r and|r |cRXP_ENEMY_Molten Lords|r
-    >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to get back once complete|r
     .complete 29290,1 -- Amassing Flamewakers slain  (100)
     .mob +Flamewaker Centurion
     .mob +Flamewaker Cauterizer
@@ -1454,9 +1455,11 @@ step
     .complete 29290,3 -- Molten Lords slain (3)
     .mob +Molten Lord
 step
+    .isQuestComplete 29290
+    .subzone 5745 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
+step
     #optional
     #sticky
-    #completewith FireHawkHatchling
     .isOnQuest 29287,29288,29293,29296
     .subzone 5748 >> |cRXP_WARN_Use the Stepping Stones to get onto Fireplume Ridge. You should aim to use an airvent at the end of the Stepping Stones as in doing so will grant the|r |T236222:0|t[Convalescence of Winds] |cRXP_WARN_buff which Increases your attack speed and haste by 100% and allows you to jump much higher and farther than normal|r
 step
@@ -1560,20 +1563,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthorn Windsong|r
     .dailyturnin 29296 >> Turn in Territorial Birds
     .target Arthorn Windsong
-step
-    .isOnQuest 29274
-    #loop
-    .goto 338,47.6,79.6,45,0
-    .goto 338,43.8,74.0,45,0
-    .goto 338,45.8,64.2,45,0
-    .goto 338,52.8,64.4,45,0
-    .goto 338,53.6,79.6,45,0
-    .goto 338,53.4,53.0,45,0
-    .goto 338,40.8,45.0,45,0
-    >>Kill |cRXP_ENEMY_Charhounds|r and |cRXP_ENEMY_Ancient Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
-    .complete 29274,1 -- Houndbone Ash (6)
-    .mob Charhound
-    .mob Ancient Charhound
 step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
@@ -1984,6 +1973,16 @@ step
     .mob Brimstone Hound
     .mob Scarred Acolyte
     .mob Charred Invader
+step -- 29248 Releasing the Pressure
+    .isOnQuest 29248
+    .goto 198,32.0,59.8,70,0
+    .goto 198,36.6,54.8,70,0
+    .goto 198,39.2,62.6,70,0
+    .goto 198,34.6,64.6,70,0
+    .goto 198,30.6,52.2,70,0
+    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
+    .complete 29248,1 -- Flamewaker Scale (100)
+    .mob Charred Flamewaker
 step -- 29128 The Protectors of Hyjal
     .isOnQuest 29128
     #completewith FinishProtector
@@ -2032,16 +2031,6 @@ step -- 29128 The Protectors of Hyjal
     .complete 29128,1 -- Invader slain at Sethria's Roost (6)
     .mob Fiery Behemoth
     .mob Seething Pyrelord
-step -- 29248 Releasing the Pressure
-    .isOnQuest 29248
-    .goto 198,32.0,59.8,70,0
-    .goto 198,36.6,54.8,70,0
-    .goto 198,39.2,62.6,70,0
-    .goto 198,34.6,64.6,70,0
-    .goto 198,30.6,52.2,70,0
-    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
-    .complete 29248,1 -- Flamewaker Scale (100)
-    .mob Charred Flamewaker
 step
     .isQuestComplete 29162
     .goto 198/1,-2080.000,4439.900
@@ -2147,6 +2136,189 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
     .dailyturnin 29128 >>Turn in The Protectors of Hyjal
     .target General Taldris Moonfall
+step -- 29138 Burn Victims
+    .isOnQuest 29138
+    #sticky
+    #label BurnVictims
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    .use 69240 >> |cRXP_WARN_Use the|r |T463860:0|t[Enchanted Salve] |cRXP_WARN_on|r |cRXP_FRIENDLY_Wounded Hyjal Defenders|r
+    .complete 29138,1 -- Wounded Hyjal Defender saved 1/1
+    .target Wounded Hyjal Defender
+step -- 29179 Hostile Elements
+    .isOnQuest 29179
+    #sticky
+    #label HostileElements
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    >>Kill |cRXP_ENEMY_Charred Vanquishers|r and |cRXP_ENEMY_Charred Soldiers|r
+    .complete 29179,1 -- Charred Combatant slain (8)
+    .mob Charred Vanquisher
+    .mob Charred Soldier
+step -- 29304 The Dogs of War
+    .isOnQuest 29304
+    #sticky
+    #label TheDogs
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    .goto 338,53.4,53.0,45,0
+    .goto 338,40.8,45.0,45,0
+    >>Kill |cRXP_ENEMY_Charhounds|r and |cRXP_ENEMY_Ancient Charhounds|r
+    .complete 29304,1 -- Ancient Charhound slain (5)
+    .mob Charhound
+    .mob Ancient Charhound
+step -- 29141 The Harder They Fall
+    .isOnQuest 29141
+    #sticky
+    #label HarderTheyFall
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    .goto 338,53.4,53.0,45,0
+    .goto 338,40.8,45.0,45,0
+    >>Kill |cRXP_ENEMY_Molten Behemoths|r
+    .complete 29141,1 -- Molten Behemoth slain (3)
+    .mob Molten Behemoth
+step -- 29142 Traitors Return
+    .isOnQuest 29142
+    #sticky
+    #label TraitorsReturn
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,71.0,38.6,45,0
+    >>Kill |cRXP_ENEMY_Druids of the Flame|r
+    .complete 29142,1 -- Druid of the Flame slain (3)
+    .mob Druid of the Flame
+step -- 29137 Breach in the Defenses
+    .isOnQuest 29137
+    #sticky
+    #label Breach
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    .goto 338,53.4,53.0,45,0
+    .goto 338,40.8,45.0,45,0
+    >>Kill |cRXP_ENEMY_Lava Bursters|r
+    .complete 29137,1 -- Lava Burster slain (5)
+    .mob Lava Burster
+step -- 29139 Aggressive Growth
+    .isOnQuest 29139
+    #sticky
+    #label AggressiveGrowth
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    >>Click the |cRXP_PICK_Ash Piles|r on the ground
+    .complete 29139,1 -- Smothervine planted (5)
+step -- 29143 Wisp Away
+    .isOnQuest 29143
+    #sticky
+    #label WispAway
+    #loop
+    .goto 338,47.6,79.6,45,0
+    .goto 338,43.8,74.0,45,0
+    .goto 338,45.8,64.2,45,0
+    .goto 338,52.8,64.4,45,0
+    .goto 338,53.6,79.6,45,0
+    >>|cRXP_WARN_Take the |cRXP_FRIENDLY_Hyjal Wisp|r following you to a Fire Portal|r
+    >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
+    .complete 29143,1 -- Close a Fire Portal 1/1
+step
+    #optional
+    #requires BurnVictims
+step
+    #optional
+    #requires HostileElements
+step
+    #optional
+    #requires TheDogs
+step
+    #optional
+    #requires HarderTheyFall
+step
+    #optional
+    #requires TraitorsReturn
+step
+    #optional
+    #requires Breach
+step
+    #optional
+    #requires AggressiveGrowth
+step
+    #optional
+    #requires WispAway
+step
+    .isQuestComplete 29139
+    .goto 338,48.513,86.257
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    .dailyturnin 29139 >>Turn in Aggressive Growth
+    .target Rayne Feathersong
+step
+    .isQuestComplete 29143
+    .goto 338,48.513,86.257
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    .dailyturnin 29143 >>Turn in Wisp Away
+    .target Rayne Feathersong
+step
+    .isQuestComplete 29179
+    .goto 338,45.589,85.822
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    .dailyturnin 29179 >>Turn in Hostile Elements
+    .target General Taldris Moonfall
+step
+    .isQuestComplete 29304
+    .goto 338,45.589,85.822
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    .dailyturnin 29304 >> Turn in The Dogs of War
+    .target General Taldris Moonfall
+step
+    .isQuestComplete 29141
+    .goto 338,45.589,85.822
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    .dailyturnin 29141 >> Turn in The Harder They Fall
+    .target General Taldris Moonfall
+step
+    .isQuestComplete 29142
+    .goto 338,45.589,85.822
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    .dailyturnin 29142 >> Turn in Traitors Return
+    .target General Taldris Moonfall
+step
+    .isQuestComplete 29137
+    .goto 338,45.589,85.822
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    .dailyturnin 29137 >> Turn in Breach in the Defenses
+    .target General Taldris Moonfall
+step
+    .isQuestComplete 29138
+    .goto 338,45.626,86.144
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    .dailyturnin 29138 >>Turn in Burn Victims
+    .target Captain Irontree
 step
     .isQuestTurnedIn 29181
     .goto 338,45.589,85.822
@@ -2159,10 +2331,13 @@ step
     .goto 338,33.83,67.40
     >>Escort and protect the |cRXP_FRIENDLY_Windcaller|r through the fire
     >>Kill the |cRXP_ENEMY_Pyrelord|r at the end
+    >>Talk to |cRXP_FRIENDLY_Skylord Omnuron|r just before the fires if a |cRXP_FRIENDLY_Windcaller|r is not present
     .complete 29206,1 -- Druid of the Talon Windcaller protected 1/1
     .mob Flamewaker Assassin
     .mob Pyrelord
-    .target Nordrala
+    .target Windcaller Nordrala
+    .target Windcaller Voramus
+    .skipgossip
 step << skip
     .goto 338,34.400,66.213
     .subzone 5746 >> Click the |cRXP_PICK_Rappelling Rope|r to descend into the Molten Flow
@@ -2177,6 +2352,27 @@ step
     .daily 29264 >>Accept Flamewakers of the Molten Flow
     .daily 29265 >>Accept Fire Flowers
     .target Thisalee Crow
+step
+    #completewith FOTMF
+    .isQuestTurnedIn 29272
+    .goto 338,41.772,61.475
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
+    >>|cRXP_WARN_NOTE: If they have not spawned here underground, skip this step|r
+    .daily 29273,29274 >>Accept whichever random daily quest is offered
+    .target Tholo Whitehoof
+    .target Anren Shadowseeker
+step
+    .isOnQuest 29274
+    #sticky
+    #label Houndbones
+    #loop
+    .goto 338,50.15,58.80,70,0
+    .goto 338,43.39,51.11,70,0
+    .goto 338,51.48,39.68,70,0
+    .goto 338,52.74,54.06,70,0
+    >>Kill |cRXP_ENEMY_Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
+    .complete 29274,1 -- Houndbone Ash (6)
+    .mob Charhound
 step -- 29264 Flamewakers of the Molten Flow
     .isOnQuest 29264
     #sticky
@@ -2209,6 +2405,9 @@ step
     #optional
     #requires Lucifern
 step
+    #optional
+    #requires Houndbones
+step
     .isQuestComplete 29264
     .goto 338,42.541,59.713
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thisalee Crow|r
@@ -2224,7 +2423,7 @@ step
     #requires ExitUnderground
     #completewith DruidEnd
     .goto 338,33.08,67.62
-    +|cRXP_WARN_Jump to return to the Molten Frost surface|r
+    +|cRXP_WARN_Jump to return to the Molten Front surface|r
     .subzoneskip 5746,1
 step
     .isQuestTurnedIn 29272
@@ -2260,7 +2459,6 @@ step
 step
     .isOnQuest 29290
     >>|cRXP_WARN_Cast|r |T135821:0|t[Flame Seed] (1) |cRXP_WARN_and|r |T451164:0|t[Flame Burst] (2) |cRXP_WARN_to kill |cRXP_ENEMY_Flamewakers|r, |cRXP_ENEMY_Cinderwebs|r and|r |cRXP_ENEMY_Molten Lords|r
-    >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to get back once complete|r
     .complete 29290,1 -- Amassing Flamewakers slain  (100)
     .mob +Flamewaker Centurion
     .mob +Flamewaker Cauterizer
@@ -2272,10 +2470,15 @@ step
     .complete 29290,3 -- Molten Lords slain (3)
     .mob +Molten Lord
 step
+    .isQuestComplete 29290
+    .subzone 5745 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
+    --.cast 99674 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
+    --.subzoneskip 5745
+    .subzoneskip 5748
+step
     #optional
     #sticky
-    #completewith FireHawkHatchling
-    .isOnQuest 29287,29288,29293,29296
+    .isOnQuest 29287,29288,29293,29296,29273
     .subzone 5748 >> |cRXP_WARN_Use the Stepping Stones to get onto Fireplume Ridge. You should aim to use an airvent at the end of the Stepping Stones as in doing so will grant the|r |T236222:0|t[Convalescence of Winds] |cRXP_WARN_buff which Increases your attack speed and haste by 100% and allows you to jump much higher and farther than normal|r
 step
     #sticky
@@ -2378,20 +2581,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthorn Windsong|r
     .dailyturnin 29296 >> Turn in Territorial Birds
     .target Arthorn Windsong
-step
-    .isOnQuest 29274
-    #loop
-    .goto 338,47.6,79.6,45,0
-    .goto 338,43.8,74.0,45,0
-    .goto 338,45.8,64.2,45,0
-    .goto 338,52.8,64.4,45,0
-    .goto 338,53.6,79.6,45,0
-    .goto 338,53.4,53.0,45,0
-    .goto 338,40.8,45.0,45,0
-    >>Kill |cRXP_ENEMY_Charhounds|r and |cRXP_ENEMY_Ancient Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
-    .complete 29274,1 -- Houndbone Ash (6)
-    .mob Charhound
-    .mob Ancient Charhound
 step
     .isQuestComplete 29273
     .goto 338,51.245,85.865

@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 1: Bracers
 #next Part 2: Belt & Gloves
 
@@ -53,7 +54,7 @@ step
 step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
-step << Alliance 
+step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .accept 8905 >>Accept An Earnest Proposition << Druid
@@ -223,6 +224,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 2: Belt & Gloves
 #next Part 3: Pants, Shoulders & Boots
 
@@ -654,6 +656,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 3: Pants, Shoulders & Boots
 #next Part 4: Helm & Chest
 
@@ -1124,6 +1127,7 @@ RXPGuides.RegisterGuide([[
 #subgroup The Five Thunders Set Guide << Shaman
 #subgroup Deathmist Set Guide << Warlock
 #subgroup Heroism Set Guide << Warrior
+#subgroup Virtuous Set Guide << Priest
 #name Part 4: Helm & Chest
 
 
