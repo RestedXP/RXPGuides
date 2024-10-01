@@ -349,7 +349,7 @@ step
     .isOnQuest 29122
     .goto 198,24.760,55.259
     >>Kill |cRXP_ENEMY_Nemesis|r
-    >>|cRXP_WARN_Stand under |cRXP_FRIENDLY_Tooga's|r shell to protect you from|r |cRXP_ENEMY_Nemesis'|r |T135830:0|t[Molten Fury] |cRXP_WARN_cast|r
+    >>|cRXP_WARN_Stand under |cRXP_FRIENDLY_Tooga's|r shell to protect yourself from|r |cRXP_ENEMY_Nemesis'|r |T135830:0|t[Molten Fury] |cRXP_WARN_cast|r
     .complete 29122,1 -- Nemesis slain (1)
     .target Tooga
     .mob Nemesis
@@ -1024,7 +1024,7 @@ step
     .isOnQuest 29122
     .goto 198,24.760,55.259
     >>Kill |cRXP_ENEMY_Nemesis|r
-    >>|cRXP_WARN_Stand under |cRXP_FRIENDLY_Tooga's|r shell to protect you from|r |cRXP_ENEMY_Nemesis'|r |T135830:0|t[Molten Fury] |cRXP_WARN_cast|r
+    >>|cRXP_WARN_Stand under |cRXP_FRIENDLY_Tooga's|r shell to protect yourself from|r |cRXP_ENEMY_Nemesis'|r |T135830:0|t[Molten Fury] |cRXP_WARN_cast|r
     .complete 29122,1 -- Nemesis slain (1)
     .target Tooga
     .mob Nemesis
@@ -1457,6 +1457,7 @@ step
 step
     .isQuestComplete 29290
     .subzone 5745 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
+    .subzoneskip 5748
 step
     #optional
     #sticky
@@ -1892,7 +1893,7 @@ step
     .isOnQuest 29122
     .goto 198,24.760,55.259
     >>Kill |cRXP_ENEMY_Nemesis|r
-    >>|cRXP_WARN_Stand under |cRXP_FRIENDLY_Tooga's|r shell to protect you from|r |cRXP_ENEMY_Nemesis'|r |T135830:0|t[Molten Fury] |cRXP_WARN_cast|r
+    >>|cRXP_WARN_Stand under |cRXP_FRIENDLY_Tooga's|r shell to protect yourself from|r |cRXP_ENEMY_Nemesis'|r |T135830:0|t[Molten Fury] |cRXP_WARN_cast|r
     .complete 29122,1 -- Nemesis slain (1)
     .target Tooga
     .mob Nemesis
@@ -2472,8 +2473,6 @@ step
 step
     .isQuestComplete 29290
     .subzone 5745 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
-    --.cast 99674 >>|cRXP_WARN_Cast|r |T514278:0|t[Return to the Furnace] (6) |cRXP_WARN_to return|r
-    --.subzoneskip 5745
     .subzoneskip 5748
 step
     #optional
