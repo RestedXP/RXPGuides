@@ -4168,9 +4168,9 @@ step << Warrior/Shaman
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step << Warrior/Shaman
     #label ZamahTurnin2
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
 step << Warrior/Shaman

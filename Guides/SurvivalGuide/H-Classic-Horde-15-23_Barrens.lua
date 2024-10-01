@@ -2261,7 +2261,7 @@ step
     .mob Venture Co. Logger
 step
 	#completewith next
-	.destroy 5570 >>|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
+	+|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
@@ -3077,26 +3077,26 @@ step
     .accept 264 >> Until Death Do Us Part
     .target Clarice Foster
 step
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
     .accept 962 >> Accept Serpentbloom
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
     .dungeon WC
 step
     #optional
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .accept 962 >> Accept Serpentbloom
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .dungeon WC
 step
     #optional
     #label ZamahTurnin
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
 step << Priest
