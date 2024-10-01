@@ -1105,6 +1105,16 @@ step
     .mob Brimstone Hound
     .mob Scarred Acolyte
     .mob Charred Invader
+step -- 29248 Releasing the Pressure
+    .isOnQuest 29248
+    .goto 198,32.0,59.8,70,0
+    .goto 198,36.6,54.8,70,0
+    .goto 198,39.2,62.6,70,0
+    .goto 198,34.6,64.6,70,0
+    .goto 198,30.6,52.2,70,0
+    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
+    .complete 29248,1 -- Flamewaker Scale (100)
+    .mob Charred Flamewaker
 step -- 29128 The Protectors of Hyjal
     .isOnQuest 29128
     #completewith FinishProtector
@@ -1153,16 +1163,6 @@ step -- 29128 The Protectors of Hyjal
     .complete 29128,1 -- Invader slain at Sethria's Roost (6)
     .mob Fiery Behemoth
     .mob Seething Pyrelord
-step -- 29248 Releasing the Pressure
-    .isOnQuest 29248
-    .goto 198,32.0,59.8,70,0
-    .goto 198,36.6,54.8,70,0
-    .goto 198,39.2,62.6,70,0
-    .goto 198,34.6,64.6,70,0
-    .goto 198,30.6,52.2,70,0
-    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
-    .complete 29248,1 -- Flamewaker Scale (100)
-    .mob Charred Flamewaker
 step
     .isQuestComplete 29162
     .goto 198/1,-2080.000,4439.900
@@ -1973,6 +1973,16 @@ step
     .mob Brimstone Hound
     .mob Scarred Acolyte
     .mob Charred Invader
+step -- 29248 Releasing the Pressure
+    .isOnQuest 29248
+    .goto 198,32.0,59.8,70,0
+    .goto 198,36.6,54.8,70,0
+    .goto 198,39.2,62.6,70,0
+    .goto 198,34.6,64.6,70,0
+    .goto 198,30.6,52.2,70,0
+    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
+    .complete 29248,1 -- Flamewaker Scale (100)
+    .mob Charred Flamewaker
 step -- 29128 The Protectors of Hyjal
     .isOnQuest 29128
     #completewith FinishProtector
@@ -2021,16 +2031,6 @@ step -- 29128 The Protectors of Hyjal
     .complete 29128,1 -- Invader slain at Sethria's Roost (6)
     .mob Fiery Behemoth
     .mob Seething Pyrelord
-step -- 29248 Releasing the Pressure
-    .isOnQuest 29248
-    .goto 198,32.0,59.8,70,0
-    .goto 198,36.6,54.8,70,0
-    .goto 198,39.2,62.6,70,0
-    .goto 198,34.6,64.6,70,0
-    .goto 198,30.6,52.2,70,0
-    >>Kill |cRXP_ENEMY_Charred Flamewakers|r. Loot them for their |cRXP_LOOT_Flamewaker Scales|r
-    .complete 29248,1 -- Flamewaker Scale (100)
-    .mob Charred Flamewaker
 step
     .isQuestComplete 29162
     .goto 198/1,-2080.000,4439.900
@@ -2478,7 +2478,7 @@ step
 step
     #optional
     #sticky
-    .isOnQuest 29287,29288,29293,29296
+    .isOnQuest 29287,29288,29293,29296,29273
     .subzone 5748 >> |cRXP_WARN_Use the Stepping Stones to get onto Fireplume Ridge. You should aim to use an airvent at the end of the Stepping Stones as in doing so will grant the|r |T236222:0|t[Convalescence of Winds] |cRXP_WARN_buff which Increases your attack speed and haste by 100% and allows you to jump much higher and farther than normal|r
 step
     #sticky
