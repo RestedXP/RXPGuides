@@ -2115,7 +2115,7 @@ step
     .goto 198,27.484,56.394
     .zone 338 >> Go through the Portal to the Firelands
 step
-    .isQuestComplete 29294
+    .isQuestTurnedIn 29214
     .goto 338,50.7,87.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .daily 29255,29299,29257 >> Accept whichever random daily quest is offered
@@ -2167,7 +2167,7 @@ step -- 29299 Some Like it Hot
     .goto 338,54.6,59.9,45,0
     .goto 338,43.5,50.0,45,0
     >>Kill |cRXP_ENEMY_Emberspit Scorpions|r and let the Crimson Lasher following you stand in the fire it drops when it dies.
-    .complete 29299,6 -- Help the Crimson Lasher Drink from Ember Pools (6)
+    .complete 29299,1 -- Help the Crimson Lasher Drink from Ember Pools (6)
     .mob Emberspit Scorpion
 step -- 29257 Steal Magmolia
     .isOnQuest 29257
@@ -3203,7 +3203,7 @@ step
     .goto 198,27.484,56.394
     .zone 338 >> Go through the Portal to the Firelands
 step
-    .isQuestComplete 29294
+    .isQuestTurnedIn 29214
     .goto 338,50.7,87.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .daily 29255,29299,29257 >> Accept whichever random daily quest is offered
@@ -3255,7 +3255,7 @@ step -- 29299 Some Like it Hot
     .goto 338,54.6,59.9,45,0
     .goto 338,43.5,50.0,45,0
     >>Kill |cRXP_ENEMY_Emberspit Scorpions|r and let the Crimson Lasher following you stand in the fire it drops when it dies.
-    .complete 29299,6 -- Help the Crimson Lasher Drink from Ember Pools (6)
+    .complete 29299,1 -- Help the Crimson Lasher Drink from Ember Pools (6)
     .mob Emberspit Scorpion
 step -- 29257 Steal Magmolia
     .isOnQuest 29257
@@ -3560,7 +3560,7 @@ step -- 29160 Egg-stinction
     #loop
     .goto 338,65,56,70,0
     .goto 338,67,41,70,0
-    >>Climb the pillars and collect the |cRXP_LOOT_Cinderweb Eggs|r from the ground
+    >>Collect the |cRXP_LOOT_Cinderweb Eggs|r from the ground and on the pillars. You can attack the |cRXP_ENEMY_Cinderweb Spinners|r on the pillars to have them pull you towards them. If spiders get on you, jump multiple times to shake them off.
     .complete 29160,1 -- Cinderweb Egg (20)
 
 step
@@ -3607,9 +3607,12 @@ step
     .goto 338,64.9,67.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
     .dailyturnin 29192 >>Turn in The Wardens are Watching
+    .target Marin Bladewing
+step
+    .goto 338,64.9,67.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
     .daily 29210 >>Accept Enduring the Heat
     .target Marin Bladewing
-
 step
     #completewith next
     .goto 338,57.2,50.9
@@ -3620,8 +3623,8 @@ step -- Enduring the Heat
     .goto 338,61.6,52.9,10,0 -- front
     .goto 338,60.5,60.0,10,0 -- front right
     .goto 338,64.73,59.26,10,0 -- overpass
-    .goto 338,64.16,66.06,10,0 -- right
     .goto 338,68.14,66.48,10,0 -- thermal vent
+    .goto 338,64.16,66.06,10,0 -- right
     .goto 338,68.86,58.33,10,0 -- back center
     .goto 338,66.37,52.24,10,0 -- left
     .goto 338,61.42,48.47,10,0 -- front left
