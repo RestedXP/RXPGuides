@@ -2354,7 +2354,6 @@ step
     .daily 29265 >>Accept Fire Flowers
     .target Thisalee Crow
 step
-    #completewith FOTMF
     .isQuestTurnedIn 29272
     .goto 338,41.772,61.475
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
@@ -2362,18 +2361,6 @@ step
     .daily 29273,29274 >>Accept whichever random daily quest is offered
     .target Tholo Whitehoof
     .target Anren Shadowseeker
-step
-    .isOnQuest 29274
-    #sticky
-    #label Houndbones
-    #loop
-    .goto 338,50.15,58.80,70,0
-    .goto 338,43.39,51.11,70,0
-    .goto 338,51.48,39.68,70,0
-    .goto 338,52.74,54.06,70,0
-    >>Kill |cRXP_ENEMY_Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
-    .complete 29274,1 -- Houndbone Ash (6)
-    .mob Charhound
 step -- 29264 Flamewakers of the Molten Flow
     .isOnQuest 29264
     #sticky
@@ -2388,6 +2375,18 @@ step -- 29264 Flamewakers of the Molten Flow
     .mob Flamewaker Sentinel
     .mob Flamewaker Shaman
     .mob Flamewaker Hunter
+step
+    .isOnQuest 29274
+    #sticky
+    #label Houndbones
+    #loop
+    .goto 338,50.15,58.80,70,0
+    .goto 338,43.39,51.11,70,0
+    .goto 338,51.48,39.68,70,0
+    .goto 338,52.74,54.06,70,0
+    >>Kill |cRXP_ENEMY_Charhounds|r. Loot them for their |cRXP_LOOT_Houndbone Ash|r
+    .complete 29274,1 -- Houndbone Ash (6)
+    .mob Charhound
 step -- 29265 Fire Flowers
     .isOnQuest 29265
     #sticky
@@ -2593,6 +2592,47 @@ step
     .dailyturnin 29274 >> Turn in Hounds of Shannox
     .target Tholo Whitehoof
 step
+    .goto 338,47.017,91.361
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r 
+    .accept 29214 >>Accept The Shadow Wardens
+    .target Malfurion Stormrage
+step
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+step
+    .isQuestComplete 29214
+    .goto 198,26.799,62.157
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r 
+    .turnin 29214 >>Turn in The Shadow Wardens
+    .target Captain Saynna Stormrunner
+step
+    .isQuestAvailable 29214
     #label DruidEnd
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
+
+-- Beginning of Wardens questline if turned in
+
+
+
+
+
+
+--
+step << skip
+    .goto 338,44.434,88.790
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varlan Highbough|r
+    .accept 29283 >>Accept Calling the Ancients
+    .target Varlan Highbough
+step << skip
+    .goto 338,44.087,86.321
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
+    .accept 29279 >>Accept Filling the Moonwell
+    .target Ayla Shadowstorm
+step << skip
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .accept 29279 >>Accept Filling the Moonwell
+    .target Damek Bloombeard
+--
 ]])
