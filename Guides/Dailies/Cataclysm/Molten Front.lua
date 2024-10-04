@@ -2749,7 +2749,7 @@ step
     >>Click the |cRXP_FRIENDLY_Fire Hawk Hatchlings|r
     >>|cRXP_WARN_The top of Fireplume Peak has a large amount of them|r
     .complete 29288,1 --  Fire Hawk Hatchling (5)
- step
+step
     #optional
     #requires InjuredDruids
 step
@@ -3639,7 +3639,6 @@ step
     .goto 338,64.855,67.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
     .dailyturnin 29205 >>Turn in The Forlorn Spire
-    .daily 29210 >> Accept Enduring the Heat
     .daily 29211,29192 >>Accept whichever random daily quest is offered
     .target Marin Bladewing
 step
@@ -3695,8 +3694,9 @@ step -- Wicked Webs 29189
     .goto 338,69.6,49.8,40,0
     .goto 338,60.6,40.8,40,0
     .goto 338,60.8,61.0,40,0
-    >>Click the |cRXP_PICK_Cinderweb Cocoons|r
+    >>Kill the |cRXP_ENEMY_Cinderweb Cocoons|r
     .complete 29189,1 -- Victims freed  (8)
+    .mob Cinderweb Cocoon
 step -- Pyrorachnophobia 29159
     .isOnQuest 29159
     #label Pyrorachnophobia
@@ -3721,7 +3721,7 @@ step -- Egg-stinction 29160
     .complete 29160,1 -- Cinderweb Egg (20)
 step
     #optional
-    #requires SolarCore 
+    #requires SolarCore
 step
     #optional 
     #requires WardensWatching
@@ -3767,10 +3767,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
     .dailyturnin 29211 >>Turn in Solar Core Destruction
     .target Marin Bladewing
+step
+    .goto 338,64.855,67.305
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
+    .daily 29210 >> Accept Enduring the Heat
+    .target Marin Bladewing
 step -- Enduring the Heat 29210
     .isOnQuest 29210
     .goto 338,57.491,49.532
-    >>Drop down into the Igneous Depths below
+    >>|cRXP_WARN_Drop down into the Igneous Depths below|r
     .complete 29210,1 -- All Flame Runes Destroyed 1/1
 step -- Enduring the Heat 29210
     .isOnQuest 29210
@@ -3800,9 +3805,6 @@ step
     .target Anren Shadowseeker
 step
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
-
-
-
 
 --29283,29279,29281
 step << skip
