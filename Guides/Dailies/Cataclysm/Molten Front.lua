@@ -3386,6 +3386,7 @@ step -- 29138 Burn Victims
     .target Wounded Hyjal Defender
 step -- Embergris 29255
     .isOnQuest 29255
+    #label Embergris
     #sticky
     #loop
     .goto 338,47.6,79.6,45,0
@@ -3484,6 +3485,7 @@ step -- 29139 Aggressive Growth
     .complete 29139,1 -- Smothervine planted (5)
 step -- Steal Magmolias 29257
     .isOnQuest 29257
+    #label StealMagmolias
     #sticky
     #loop
     .goto 338,47.7,59.6,45,0
@@ -3493,6 +3495,7 @@ step -- Steal Magmolias 29257
     .complete 29257,1 -- Magmolia (8)
 step -- Some Like It Hot 29299
     .isOnQuest 29299
+    #label LikeItHot
     #sticky
     #loop
     .goto 338,50.6,68.6,45,0
@@ -3518,6 +3521,15 @@ step -- 29143 Wisp Away
     >>|cRXP_WARN_Take the |cRXP_FRIENDLY_Hyjal Wisp|r following you to a Fire Portal|r
     >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
     .complete 29143,1 -- Close a Fire Portal 1/1
+step
+    #optional 
+    #requires Embergris
+step
+    #optional
+    #requires StealMagmolias
+step
+    #optional
+    #requires LikeItHot
 step
     #optional
     #requires BurnVictims
