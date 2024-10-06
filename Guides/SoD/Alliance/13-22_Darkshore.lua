@@ -3822,7 +3822,7 @@ step
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
-    .accept 967 >> Accept The Tower of Althalaxx
+    .accept 967 >> Accept The Tower of Althalaxx << !Hunter
     .target Balthule Shadowstrike
 step << Priest
     #season 1 -- Skipping this rune cus its useless
