@@ -2267,7 +2267,9 @@ step -- Steal Magmolias 29257
     .goto 338,41.5,43.6,45,0
     .goto 338,54.5,45.5,45,0
     >>Loot the |cRXP_LOOT_Magmolia|r inside of the small lava pools
+    >>|cRXP_WARN_If a |cRXP_ENEMY_Lava Burster|r spawns after looting one, kill it and loot it for the|r |cRXP_LOOT_Magmolia|r
     .complete 29257,1 -- Magmolia (8)
+    .mob Lava Burster
 step -- Some Like It Hot 29299
     .isOnQuest 29299
     #label LikeItHot
@@ -2501,7 +2503,9 @@ step -- Steal Magmolias 29257
     .goto 338,41.5,43.6,45,0
     .goto 338,54.5,45.5,45,0
     >>Loot the |cRXP_LOOT_Magmolia|r inside of the small lava pools
+    >>|cRXP_WARN_If a |cRXP_ENEMY_Lava Burster|r spawns after looting one, kill it and loot it for the|r |cRXP_LOOT_Magmolia|r
     .complete 29257,1 -- Magmolia (8)
+    .mob Lava Burster
 step -- Some Like It Hot 29299
     .isOnQuest 29299
     #sticky
@@ -2795,6 +2799,28 @@ step
     .dailyturnin 29296 >> Turn in Territorial Birds
     .target Arthorn Windsong
 step
+    .isQuestTurnedIn 29284
+    .goto 338,36.299,56.344
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Choluna|r
+    .daily 29305 >>Accept Strike at the Heart
+    .target Choluna
+step
+    .isOnQuest 29305
+    .goto 338,50.30,20.58
+    >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
+    .complete 29305,1 -- Lieutenant of Flame slain
+    .mob Ancient Charscale
+    .mob Ancient Smoldering Behemoth
+    .mob Ancient Firelord
+    .mob Cinderweb Queen
+    .mob Devout Harbinger
+ step
+    .isQuestComplete 29305
+    .goto 338,43.033,80.597
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
+    .dailyturnin 29305 >>Turn in Strike at the Heart
+    .target Skylord Omnuron
+step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
@@ -2871,7 +2897,7 @@ step
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
 step
     .isQuestTurnedIn 29214
-    +|cRXP_WARN_You have now unlocked the [The Shadow Wardens] daily quests. You have the choice of either completing quests for Druids of the Talon or The Shadow Wardens. If you wish to complete quests for Druids of the Talon, reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) or (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) tomorrow if you wish to complete The Shadow Wardens quests. Both yield the same amount of|r |T513195:0|t[Marks of the World Tree]
+    +|cRXP_WARN_You have unlocked the [The Shadow Wardens] daily quests. You have the choice of either completing quests for Druids of the Talon or The Shadow Wardens. If you wish to complete quests for Druids of the Talon, reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) or (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) tomorrow if you wish to complete The Shadow Wardens quests. Both yield the same amount of|r |T513195:0|t[Marks of the World Tree]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3551,7 +3577,9 @@ step -- Steal Magmolias 29257
     .goto 338,41.5,43.6,45,0
     .goto 338,54.5,45.5,45,0
     >>Loot the |cRXP_LOOT_Magmolia|r inside of the small lava pools
+    >>|cRXP_WARN_If a |cRXP_ENEMY_Lava Burster|r spawns after looting one, kill it and loot it for the|r |cRXP_LOOT_Magmolia|r
     .complete 29257,1 -- Magmolia (8)
+    .mob Lava Burster
 step -- Some Like It Hot 29299
     .isOnQuest 29299
     #label LikeItHot
