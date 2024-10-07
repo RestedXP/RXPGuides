@@ -2807,6 +2807,65 @@ step
     .dailyturnin 29274 >> Turn in Hounds of Shannox
     .target Tholo Whitehoof
 step
+    .isQuestTurnedIn 29182 -- Druids prereq
+    .isQuestTurnedIn 29215 -- Warden prereq
+    .goto 338,44.434,88.790
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varlan Highbough|r
+    .accept 29283 >>Accept Calling the Ancients
+    .target Varlan Highbough
+step
+    #optional
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isOnQuest 29283
+    .goto 198,26.005,61.302
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elderlimb|r
+    .turnin 29283 >>Turn in Calling the Ancients
+    .target Elderlimb
+step
+    .isQuestTurnedIn 29283
+    .goto 198/1,-2082.800,4424.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
+    .accept 29284 >>Accept Aid of the Ancients
+step
+    #optional
+    #completewith WardenEnd
+    .isOnQuest 29284
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29284
+    .goto 338,43.812,88.964
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elderlimb|r
+    .turnin 29284 >>Turn in Aid of the Ancients
+    .target Elderlimb
+step
+    .isQuestTurnedIn 29284
+    .goto 338,36.299,56.344
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Choluna|r
+    .daily 29305 >>Accept Strike at the Heart
+    .target Choluna
+step
+    .isOnQuest 29305
+    .goto 338,50.30,20.58
+    >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
+    .complete 29305,1 -- Lieutenant of Flame slain
+    .mob Ancient Charscale
+    .mob Ancient Smoldering Behemoth
+    .mob Ancient Firelord
+    .mob Cinderweb Queen
+    .mob Devout Harbinger
+ step
+    .isQuestComplete 29305
+    .goto 338,43.033,80.597
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
+    .dailyturnin 29305 >>Turn in Strike at the Heart
+    .target Skylord Omnuron
+step
     .isQuestAvailable 29214
     #label DruidEnd
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
@@ -3631,10 +3690,11 @@ step
     .goto 338,54.503,70.816,10,0
     .goto 338,66.301,65.137
     >>Protect one of the |cRXP_FRIENDLY_Druids|r in taking the Forlorn Spire
-    >>Kill the |cRXP_ENEMY_Pyrelord|r at the end
+    >>Kill the |cRXP_ENEMY_Pyrelord|r and |cRXP_ENEMY_Flamewatch Sentinels|r at the end
     .complete 29205,1 -- Druid Assault Group Protected
     .target Keeper Taldros
     .mob Pyrelord
+    .mob Flamewatch Sentinel
 step
     .goto 338,64.855,67.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
@@ -3645,6 +3705,7 @@ step
     .isQuestTurnedIn 29272 -- Only offered if completed Druids questline
     .goto 338,66.259,66.141
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r
+    >>|cRXP_WARN_Skip this step if he is not offering this quest|r
     .daily 29276 >>Accept The Flame Spider Queen
     .target Tholo Whitehoof
 step
@@ -3772,11 +3833,26 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
     .daily 29210 >> Accept Enduring the Heat
     .target Marin Bladewing
+step
+    .goto 338,65.959,66.093
+    .isQuestTurnedIn 29272 -- Only offered if completed Druids questline
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
+    >>|cRXP_WARN_Skip this step if he is not offering this quest|r
+    .accept 29275 >>Accept Fandral's Methods
+    .target Anren Shadowseeker
 step -- Enduring the Heat 29210
     .isOnQuest 29210
     .goto 338,57.491,49.532
     >>|cRXP_WARN_Drop down into the Igneous Depths below|r
     .complete 29210,1 -- All Flame Runes Destroyed 1/1
+step
+    #completewith next
+    >>Loot the |cRXP_LOOT_Flame Druid Staff|r, |cRXP_LOOT_Flame Druid Spellbook|r, |cRXP_LOOT_Flame Druid Reagent Pouch|r and |cRXP_LOOT_Flame Druid Idol|r
+    >>|cRXP_WARN_These are scattered around throughout the Igneous Depths|r
+    .complete 29275,1 -- Flame Druid Staff 1/1
+    .complete 29275,2 -- Flame Druid Spellbook 1/1
+    .complete 29275,3 -- Flame Druid Reagent Pouch 1/1
+    .complete 29275,4 -- Flame Druid Idol 1/1
 step -- Enduring the Heat 29210
     .isOnQuest 29210
     #loop
@@ -3789,8 +3865,24 @@ step -- Enduring the Heat 29210
     .goto 338,64.165,66.062,8,0
     .goto 338,60.547,59.997,8,0
     >>|cRXP_WARN_Follow the arrow around and click the |cRXP_PICK_Flame Protection Runes|r on the ground|r
-    >>|cRXP_WARN_Clicking a |cRXP_PICK_Flame Protection Runes|r will kill all |cRXP_ENEMY_Unstable Flamerager|r attacking you|r
+    >>|cRXP_WARN_Clicking a |cRXP_PICK_Flame Protection Runes|r will kill all |cRXP_ENEMY_Unstable Flameragers|r attacking you|r
     .complete 29210,2 -- All Flame Runes Destroyed 1/1
+step
+    #loop
+    .goto 338,61.620,52.938,20,0
+    .goto 338,66.330,52.184,20,0
+    .goto 338,61.386,48.457,20,0
+    .goto 338,64.718,59.267,20,0
+    .goto 338,68.854,58.329,20,0
+    .goto 338,68.109,66.500,20,0
+    .goto 338,64.165,66.062,20,0
+    .goto 338,60.547,59.997,20,0
+    >>Loot the |cRXP_LOOT_Flame Druid Staff|r, |cRXP_LOOT_Flame Druid Spellbook|r, |cRXP_LOOT_Flame Druid Reagent Pouch|r and |cRXP_LOOT_Flame Druid Idol|r
+    >>|cRXP_WARN_These are scattered around throughout the Igneous Depths|r
+    .complete 29275,1 -- Flame Druid Staff 1/1
+    .complete 29275,2 -- Flame Druid Spellbook 1/1
+    .complete 29275,3 -- Flame Druid Reagent Pouch 1/1
+    .complete 29275,4 -- Flame Druid Idol 1/1
 step
     .isQuestComplete 29210
     .goto 338,57.742,49.502
@@ -3804,14 +3896,76 @@ step
     .dailyturnin 29276 >> Turn in The Flame Spider Queen
     .target Anren Shadowseeker
 step
-    +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
-
---29283,29279,29281
-step << skip
+    .isQuestComplete 29275
+    .goto 338,51.547,85.511
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r
+    .dailyturnin 29275 >> Turn in Fandral's Methods
+    .target Tholo Whitehoof
+step
+    .isQuestTurnedIn 29182 -- Druids prereq
+    .isQuestTurnedIn 29215 -- Warden prereq
     .goto 338,44.434,88.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varlan Highbough|r
     .accept 29283 >>Accept Calling the Ancients
     .target Varlan Highbough
+step
+    #optional
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isOnQuest 29283
+    .goto 198,26.005,61.302
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elderlimb|r
+    .turnin 29283 >>Turn in Calling the Ancients
+    .target Elderlimb
+step
+    .isQuestTurnedIn 29283
+    .goto 198/1,-2082.800,4424.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
+    .accept 29284 >>Accept Aid of the Ancients
+step
+    #optional
+    #completewith WardenEnd
+    .isOnQuest 29284
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29284
+    .goto 338,43.812,88.964
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elderlimb|r
+    .turnin 29284 >>Turn in Aid of the Ancients
+    .target Elderlimb
+step
+    .isQuestTurnedIn 29284
+    .goto 338,51.713,81.671
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalis Darkhunter|r
+    .daily 29243 >>Accept Strike at the Heart
+    .target Shalis Darkhunter
+step
+    .isOnQuest 29243
+    .goto 338,50.30,20.58
+    >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
+    .complete 29243,1 -- Lieutenant of Flame slain
+    .mob Ancient Charscale
+    .mob Ancient Smoldering Behemoth
+    .mob Ancient Firelord
+    .mob Cinderweb Queen
+    .mob Devout Harbinger
+ step
+    .isQuestComplete 29243
+    .goto 338,47.584,90.552
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
+    .dailyturnin 29243 >>Turn in Strike at the Heart
+    .target Captain Saynna Stormrunner
+
+step
+    #label WardenEnd
+    +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
+
+--29279,29281
 step << skip
     .goto 338,44.087,86.321
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
