@@ -2806,7 +2806,7 @@ step
     .target Choluna
 step
     .isOnQuest 29305
-    .goto 338,50.30,20.58
+    .goto 338,50.343,23.036
     >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
     .complete 29305,1 -- Lieutenant of Flame slain
     .mob Ancient Charscale
@@ -2877,7 +2877,7 @@ step
     .target Choluna
 step
     .isOnQuest 29305
-    .goto 338,50.30,20.58
+    .goto 338,50.343,23.036
     >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
     .complete 29305,1 -- Lieutenant of Flame slain
     .mob Ancient Charscale
@@ -3864,9 +3864,9 @@ step
 step
     .goto 338,65.959,66.093
     .isQuestTurnedIn 29272 -- Only offered if completed Druids questline
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
-    >>|cRXP_WARN_Skip this step if he is not offering this quest|r
-    .accept 29275 >>Accept Fandral's Methods
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
+    >>|cRXP_WARN_Skip this step if he is not here|r
+    .daily 29275 >>Accept Fandral's Methods
     .target Anren Shadowseeker
 step -- Enduring the Heat 29210
     .isOnQuest 29210
@@ -3874,6 +3874,7 @@ step -- Enduring the Heat 29210
     >>|cRXP_WARN_Drop down into the Igneous Depths below|r
     .complete 29210,1 -- All Flame Runes Destroyed 1/1
 step
+    .isOnQuest 29275
     #completewith next
     >>Loot the |cRXP_LOOT_Flame Druid Staff|r, |cRXP_LOOT_Flame Druid Spellbook|r, |cRXP_LOOT_Flame Druid Reagent Pouch|r and |cRXP_LOOT_Flame Druid Idol|r
     >>|cRXP_WARN_These are scattered around throughout the Igneous Depths|r
@@ -3896,6 +3897,7 @@ step -- Enduring the Heat 29210
     >>|cRXP_WARN_Clicking a |cRXP_PICK_Flame Protection Runes|r will kill all |cRXP_ENEMY_Unstable Flameragers|r attacking you|r
     .complete 29210,2 -- All Flame Runes Destroyed 1/1
 step
+    .isOnQuest 29275
     #loop
     .goto 338,61.620,52.938,20,0
     .goto 338,66.330,52.184,20,0
@@ -3917,6 +3919,28 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theresa Barkskin|r
     .dailyturnin 29210 >> Turn in Enduring the Heat
     .target Theresa Barkskin
+step
+    .isQuestTurnedIn 29284
+    .goto 338,57.518,49.478
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalis Darkhunter|r
+    .daily 29243 >>Accept Strike at the Heart
+    .target Shalis Darkhunter
+step
+    .isOnQuest 29243
+    .goto 338,50.343,23.036
+    >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
+    .complete 29243,1 -- Lieutenant of Flame slain
+    .mob Ancient Charscale
+    .mob Ancient Smoldering Behemoth
+    .mob Ancient Firelord
+    .mob Cinderweb Queen
+    .mob Devout Harbinger
+ step
+    .isQuestComplete 29243
+    .goto 338,47.584,90.552
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
+    .dailyturnin 29243 >>Turn in Strike at the Heart
+    .target Captain Saynna Stormrunner
 step
     .isQuestComplete 29276
     .goto 338,51.245,85.865
@@ -3974,7 +3998,7 @@ step
     .target Shalis Darkhunter
 step
     .isOnQuest 29243
-    .goto 338,50.30,20.58
+    .goto 338,50.343,23.036
     >>Kill one of the |cRXP_ENEMY_Lieutenants of Flame|r
     .complete 29243,1 -- Lieutenant of Flame slain
     .mob Ancient Charscale
