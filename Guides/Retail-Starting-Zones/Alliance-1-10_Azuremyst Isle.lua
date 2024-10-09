@@ -27,27 +27,28 @@ step
     .accept 9280 >>Accept Replenishing the Healing Crystals
 	.target Proenitus
 step
-    .goto 468,52.47,31.08,25,0
-    .goto 468,50.96,26.54,25,0
-    .goto 468,49.20,26.20,25,0
-    .goto 468,44.84,30.01,25,0
-#loop
-	.line 468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
-	.goto 468,52.47,31.08,15,0
-	.goto 468,50.96,26.54,15,0
-	.goto 468,49.20,26.20,15,0
-	.goto 468,44.84,30.01,15,0
+    #loop
+    .goto 468,49.59,30.55,40,0
+    .goto 468,53.92,27.74,40,0
+    .goto 468,53.33,21.41,40,0
+    .goto 468,45.1,22.63,40,0
+    .goto 468,44.45,26.97,40,0
+    .goto 468,46.91,34.21,40,0
+    .goto 468,41.99,33.66,40,0
+    .goto 468,37.3,28.15,40,0
     >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for |cRXP_LOOT_Vial of Moth Blood.|r
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
 step
-    .goto 468,52.7,35.9
+    .goto 468,52.7,35.9,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus.|r
     .turnin 9280 >>Turn in Replenishing the Healing Crystals
     .accept 9409 >>Accept Urgent Delivery!
 	.target Proenitus
 step
-    .goto 468,52.2,43.6
+    #loop
+    .goto 468,52.53,41.11,20,0
+    .goto 468,52.2,43.6,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun.|r
     .turnin 9409 >>Turn in Urgent Delivery!
     .accept 9283 >>Accept Rescue the Survivors!
@@ -65,28 +66,32 @@ step
     .accept 10302 >>Accept Volatile Mutations
 	.target Botanist Taerix
 step
+    #hidewindow
+    #completewith Volatile Mutation
+    #loop
+    .goto 468,49.82,25.72,40,0
+    .goto 468,43.97,27.98,40,0
+    .goto 468,48.04,31.81,40,0
+    .goto 468,45.6,33.35,40,0
+    .goto 468,43.08,37.97,40,0
+    .goto 468,40.97,38.32,40,0
+    .goto 468,36.91,38.34,40,0
+    .goto 468,36.71,47.07,40,0
+    .goto 468,34.91,50.42,40,0
+    .goto 468,40.41,45.1,40,0
+    +1
+step
     #completewith next
     >>Kill |cRXP_ENEMY_Volatile Mutations.|r
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
-    .goto 468,47.05,25.98,20,0
-    .goto 468,56.00,29.87
-    >>Target |cRXP_FRIENDLY_Draenei Survivor|r, then use |T135923:0|t[Gift of the Naaru] on them from a distance.
+    >>Use |T135923:0|t[Gift of the Naaru] on |cRXP_FRIENDLY_Draenei Survivor|r |cRXP_WARN_ideally|r from a distance.
     .complete 9283,1 --1/1 Draenei Survivors Saved
     .use 370626
     .target Draenei Survivor
 step
-    .goto 468,52.47,31.08,25,0
-	.goto 468,50.96,26.54,25,0
-	.goto 468,49.20,26.20,25,0
-	.goto 468,44.84,30.01,25,0
-#loop
-	.line 468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
-	.goto 468,52.47,31.08,15,0
-	.goto 468,50.96,26.54,15,0
-	.goto 468,49.20,26.20,15,0
-	.goto 468,44.84,30.01,15,0
+    #label Volatile Mutation
     >>Kill |cRXP_ENEMY_Volatile Mutations.|r
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
@@ -100,33 +105,26 @@ step
 	.target Botanist Taerix
     .target Apprentice Vishael
 step
+    #hidewindow
+    #completewith Corrupted Flower
+    #loop
+    .goto 468,40.02,39.98,40,0
+    .goto 468,33.42,44.36,40,0
+    .goto 468,38.59,49,40,0
+    .goto 468,40.81,41.07,40,0
+    .goto 468,37.55,52.77,40,0
+    .goto 468,33.03,48.81,40,0
+    +1
+step
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers.|r
     .complete 9799,1 --3/3 Corrupted Flower
 step
-    .goto 468,40.41,42.32,15,0
-    .goto 468,33.22,49.4,15,0
-    .goto 468,37.59,51.92,15,0
-    .goto 468,35.66,52.75,15,0
-    .goto 468,39.6,50.1,15,0
-#loop
-	.line 468,40.41,42.32,37.51,44.62,33.22,49.4,37.59,51.92,35.66,52.75,39.6,50.1
-	.goto 468,40.41,42.32,15,0
-	.goto 468,37.51,44.62,15,0
-	.goto 468,33.22,49.40,15,0
-	.goto 468,37.59,51.92,15,0
-	.goto 468,35.66,52.75,15,0
-	.goto 468,39.60,50.10,15,0
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their |cRXP_LOOT_Lasher Samples.|r
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
-#loop
-	.line 468,40.77,42.25,39,50.27,34.95,37.36,35.24,52.45
-	.goto 468,40.77,42.25,15,0
-	.goto 468,39.00,50.27,15,0
-	.goto 468,34.95,37.36,15,0
-	.goto 468,35.24,52.45,15,0
+    #label Corrupted Flower
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers.|r
     .complete 9799,1 --3/3 Corrupted Flower
 step
@@ -139,8 +137,9 @@ step
 	.target Apprentice Vishael
     .target Botanist Taerix
 step
-    .goto 468,52.68,37.05,5,0
-    .goto 468,51.97,42.21
+    #loop
+    .goto 468,52.53,41.11,20,0
+    .goto 468,52.2,43.6,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun.|r
     .turnin 9283 >>Turn in Rescue the Survivors!
 	.target Zalduun
