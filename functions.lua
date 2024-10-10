@@ -64,6 +64,11 @@ end
 
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
+local function LoremasterEnabled()
+        return addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+                     addon.game == "CATA" and addon.settings.profile.loremasterMode
+end
+
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
@@ -2720,7 +2725,7 @@ function addon.functions.xp(self, ...)
             (element.level == level and currentXP >= maxXP * xp)))) ==
         not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed and not(addon.settings.profile.northrendLM and not reverseLogic) then
+            if step.active and not step.completed and not(LoremasterEnabled() and not reverseLogic) then
                 local n = ref and guide.labels[ref]
                 if n then
                     element.tooltipText = fmt(
@@ -4852,7 +4857,7 @@ function addon.functions.maxlevel(self, ...)
     if addon.isHidden or (ref and not guide.labels[ref]) then
         return
     elseif level > element.level and addon.settings.profile.enableXpStepSkipping then
-        if step.active and not step.completed and not addon.settings.profile.northrendLM then
+        if step.active and not step.completed and not LoremasterEnabled() then
             addon.updateSteps = true
             step.completed = true
             if step.textOnly then
