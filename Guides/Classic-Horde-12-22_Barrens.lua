@@ -4189,7 +4189,7 @@ step
     .goto The Barrens,44.55,59.27,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r << Tauren/Shaman/Orc Warrior/Troll Warrior
-    +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r << !Tauren !Shaman !Orc Warrior !Troll Warrior
+    +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r << !Tauren !Shaman !Warrior/Undead
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
     .target Mangletooth
 step
@@ -4351,17 +4351,17 @@ step
     .accept 874 >>Accept Mahren Skyseer
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
-step << !Tauren !Shaman !Orc Warrior !Troll Warrior
+step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
-step << !Tauren !Shaman !Orc Warrior !Troll Warrior
+step << !Tauren !Shaman !Warrior/Undead
     #completewith next
     .goto Mulgore,68.68,60.34,120,0
     .zone Mulgore >>Travel into Mulgore
-step << !Tauren !Shaman !Orc Warrior !Troll Warrior
+step << !Tauren !Shaman !Warrior/Undead
     #completewith DeathDUPpickup
     .goto Thunder Bluff,31.78,65.92
     .zone Thunder Bluff >>Take the lift into Thunder Bluff
