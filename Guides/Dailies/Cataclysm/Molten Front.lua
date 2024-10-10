@@ -96,7 +96,9 @@ step
     #loop
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r and accept whichever daily quest is available
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r
+    .daily 29125,29147,29164,29101,29161 >> Accept whichever random daily quest is offered
+    .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
     .target Mylune
@@ -762,7 +764,9 @@ step
     #loop
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r and accept whichever daily quest is available
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r
+    .daily 29125,29147,29164,29101,29161 >> Accept whichever random daily quest is offered
+    .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
     .target Mylune
@@ -771,7 +775,9 @@ step
     #label HyjalQuests
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r and accept whichever daily quest is available
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r
+    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> Accept whichever random daily quest is offered
+    .disablecheckbox
     .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
     .target Dorda'en Nightweaver
@@ -1633,7 +1639,9 @@ step
     #loop
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r and accept whichever daily quest is available
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r
+    .daily 29125,29147,29164,29101,29161 >> Accept whichever random daily quest is offered
+    .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
     .target Mylune
@@ -1642,7 +1650,9 @@ step
     #label HyjalQuests
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r and accept whichever daily quest is available
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r
+    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> Accept whichever random daily quest is offered
+    .disablecheckbox
     .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
     .target Dorda'en Nightweaver
@@ -2943,7 +2953,9 @@ step
     #loop
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r and accept whichever daily quest is available
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Mylune|r
+    .daily 29125,29147,29164,29101,29161 >> Accept whichever random daily quest is offered
+    .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
     .target Mylune
@@ -2952,8 +2964,10 @@ step
     #label HyjalQuests
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
-    +Talk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r and accept whichever daily quest is available
-    .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r
+    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> Accept whichever random daily quest is offered
+    .disablecheckbox
+    .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248 
     .target Matoclaw
     .target Dorda'en Nightweaver
 step
@@ -3738,8 +3752,9 @@ step
     .target Tholo Whitehoof
 step
     .goto 338,66.100,63.908
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deldren Ravenelm|r
-    +Accept whichever two random daily quests are offered
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deldren Ravenelm|r
+    .daily 29189,29159,29160 >> Accept whichever two random daily quests are offered
+    .disablecheckbox
     .target Deldren Ravenelm
     .questcount <2,29189,29159,29160
 step -- Solar Core Destruction 29211
