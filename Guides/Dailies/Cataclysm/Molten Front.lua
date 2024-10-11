@@ -2842,6 +2842,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r
     .dailyturnin 29274 >> Turn in Hounds of Shannox
     .target Tholo Whitehoof
+
+--Calling the Ancients unlock
 step
     .isQuestTurnedIn 29182 -- Druids prereq
     .isQuestTurnedIn 29215 -- Warden prereq
@@ -2856,7 +2858,7 @@ step
     .zone 198 >> Take the Portal to Mount Hyjal
     .zoneskip 338,1
 step
-    .isOnQuest 29283
+    .isQuestComplete 29283
     .goto 198,26.005,61.302
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elderlimb|r
     .turnin 29283 >>Turn in Calling the Ancients
@@ -2901,6 +2903,119 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
     .dailyturnin 29305 >>Turn in Strike at the Heart
     .target Skylord Omnuron
+--Complete Calling the Ancients unlock
+
+--Additional Armaments unlock
+step
+    .isQuestTurnedIn 29182 -- Druids prereq
+    .isQuestTurnedIn 29215 -- Warden prereq
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .accept 29281 >>Accept Additional Armaments
+    .target Damek Bloombeard
+step
+    #optional
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isQuestComplete 29281
+    .goto 198/1,-2082.800,4424.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
+    .turnin 29281 >>Turn in Additional Armaments
+    .accept 29282 >>Accept Well Armed
+step
+    .isQuestTurnedIn 29281
+    .goto 198/1,-2082.800,4424.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
+    .accept 29282 >>Accept Well Armed
+step
+    #optional
+    #completewith next
+    .isOnQuest 29282
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29282
+    .goto 338,46.758,90.170
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    .target Ricket
+    .turnin 29282 >>Turn in Well Armed
+step
+    .isQuestTurnedIn 29282
+    .goto 338,46.758,90.170
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    .target Ricket
+step -- 29263 A Bitter Pill
+    .isOnQuest 29263
+    #loop
+    .goto 338,43.8,46.8,50,0
+    .goto 338,53.6,41.8,50,0
+    .goto 338,55.6,54.6,50,0
+    .goto 338,44.8,54.4,50,0
+    >>Click the |cRXP_PICK_Lava Bubbles|r inside the lava pools to summon a |cRXP_ENEMY_Subterranean Magma Worm|r
+    .use 69759 >>|cRXP_WARN_When you see the warning message: "The worm is about to bite! Place the bomb down now!" use|r |T133710:0|t[The Bitter Pill]
+    .complete 29263,1 -- Subterranean Magma Worm slain 1/1
+    .mob Subterranean Magma Worm
+step -- 29278 Living Obsidium
+    .isOnQuest 29278
+    #loop
+    .goto 338,41.5,49.8,50,0
+    .goto 338,46.6,43.1,50,0
+    .goto 338,54.6,43.8,50,0
+    .goto 338,51.5,51.2,50,0
+    >>Click the |cRXP_PICK_Magnetic Stones|r then loot the |cRXP_LOOT_Obsidium Meteorites|r which fall down
+    .complete 29278,1 -- Obsidium Meteorite (10)
+    .target Magnetic Stone
+step -- 29295 The Bigger They Are -- DRUIDS ONLY
+    .isOnQuest 29295
+    #loop
+    .goto 338,29.7,28.5,50,0
+    .goto 338,16.8,32.5,50,0
+    .goto 338,19.5,49.5,50,0
+    .goto 338,32.7,43.6,50,0
+    >>Kill |cRXP_ENEMY_Obsidium Punishers|r. Loot their |cRXP_LOOT_Living Obsidium Chip|r debris on the ground after
+    .complete 29295,1 -- Living Obsidium Chip (10)
+    .mob Obsidium Punisher
+step -- 29297 Bye Bye Burdy -- WARDENS ONLY
+    .isOnQuest 29297
+    #loop
+    .goto 338,73.03,54.88,50,0
+    .goto 338,73.82,38.28,50,0
+    .goto 338,63.73,38.76,50,0
+    .use 69832 >> |cRXP_WARN_Use the|r |T135129:0|t[Burd Sticker] |cRXP_WARN_on |cRXP_ENEMY_Druids of the Flame|r that are flying in the air|r
+    .complete 29297,1 -- Druids of the Flame in Fire Crow form slain (3)
+    .mob Druid of the Flame
+step
+    .isQuestComplete 29263
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29263 >> Turn in A Bitter Pill
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29278
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29278 >> Turn in Living Obsidium
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29295
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29295 >> Turn in The Bigger They Are
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29297
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29297 >> Turn in Bye Bye Burdy
+    .target Damek Bloombeard
+--Complete Additional Armaments unlock
+
 step
     .isQuestAvailable 29214
     #label DruidEnd
@@ -3735,6 +3850,7 @@ step
     >>Kill the |cRXP_ENEMY_Pyrelord|r and |cRXP_ENEMY_Flamewatch Sentinels|r at the end
     .complete 29205,1 -- Druid Assault Group Protected
     .target Keeper Taldros
+    .target Turak Runetotem
     .mob Pyrelord
     .mob Flamewatch Sentinel
 step
@@ -3950,6 +4066,12 @@ step
     .mob Ancient Firelord
     .mob Cinderweb Queen
     .mob Devout Harbinger
+step
+    .isQuestComplete 29276
+    .goto 338,51.245,85.865
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
+    .dailyturnin 29276 >> Turn in The Flame Spider Queen
+    .target Anren Shadowseeker
  step
     .isQuestComplete 29243
     .goto 338,47.584,90.552
@@ -3957,17 +4079,13 @@ step
     .dailyturnin 29243 >>Turn in Strike at the Heart
     .target Captain Saynna Stormrunner
 step
-    .isQuestComplete 29276
-    .goto 338,51.245,85.865
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
-    .dailyturnin 29276 >> Turn in The Flame Spider Queen
-    .target Anren Shadowseeker
-step
     .isQuestComplete 29275
     .goto 338,51.547,85.511
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r
     .dailyturnin 29275 >> Turn in Fandral's Methods
     .target Tholo Whitehoof
+
+--Calling the Ancients unlock
 step
     .isQuestTurnedIn 29182 -- Druids prereq
     .isQuestTurnedIn 29215 -- Warden prereq
@@ -3982,7 +4100,7 @@ step
     .zone 198 >> Take the Portal to Mount Hyjal
     .zoneskip 338,1
 step
-    .isOnQuest 29283
+    .isQuestComplete 29283
     .goto 198,26.005,61.302
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elderlimb|r
     .turnin 29283 >>Turn in Calling the Ancients
@@ -4027,20 +4145,141 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
     .dailyturnin 29243 >>Turn in Strike at the Heart
     .target Captain Saynna Stormrunner
+--Complete Calling the Ancients unlock
+
+--Additional Armaments unlock
+step
+    .isQuestTurnedIn 29182 -- Druids prereq
+    .isQuestTurnedIn 29215 -- Warden prereq
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .accept 29281 >>Accept Additional Armaments
+    .target Damek Bloombeard
+step
+    #optional
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isQuestComplete 29281
+    .goto 198/1,-2082.800,4424.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
+    .turnin 29281 >>Turn in Additional Armaments
+    .accept 29282 >>Accept Well Armed
+step
+    .isQuestTurnedIn 29281
+    .goto 198/1,-2082.800,4424.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .target Matoclaw
+    .accept 29282 >>Accept Well Armed
+step
+    #optional
+    #completewith next
+    .isOnQuest 29282
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29282
+    .goto 338,46.758,90.170
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    .target Ricket
+    .turnin 29282 >>Turn in Well Armed
+step
+    .isQuestTurnedIn 29282
+    .goto 338,46.758,90.170
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    .target Ricket
+step -- 29263 A Bitter Pill
+    .isOnQuest 29263
+    #loop
+    .goto 338,43.8,46.8,50,0
+    .goto 338,53.6,41.8,50,0
+    .goto 338,55.6,54.6,50,0
+    .goto 338,44.8,54.4,50,0
+    >>Click the |cRXP_PICK_Lava Bubbles|r inside the lava pools to summon a |cRXP_ENEMY_Subterranean Magma Worm|r
+    .use 69759 >>|cRXP_WARN_When you see the warning message: "The worm is about to bite! Place the bomb down now!" use|r |T133710:0|t[The Bitter Pill]
+    .complete 29263,1 -- Subterranean Magma Worm slain 1/1
+    .mob Subterranean Magma Worm
+step -- 29278 Living Obsidium
+    .isOnQuest 29278
+    #loop
+    .goto 338,41.5,49.8,50,0
+    .goto 338,46.6,43.1,50,0
+    .goto 338,54.6,43.8,50,0
+    .goto 338,51.5,51.2,50,0
+    >>Click the |cRXP_PICK_Magnetic Stones|r then loot the |cRXP_LOOT_Obsidium Meteorites|r which fall down
+    .complete 29278,1 -- Obsidium Meteorite (10)
+    .target Magnetic Stone
+step -- 29295 The Bigger They Are -- DRUIDS ONLY
+    .isOnQuest 29295
+    #loop
+    .goto 338,29.7,28.5,50,0
+    .goto 338,16.8,32.5,50,0
+    .goto 338,19.5,49.5,50,0
+    .goto 338,32.7,43.6,50,0
+    >>Kill |cRXP_ENEMY_Obsidium Punishers|r. Loot their |cRXP_LOOT_Living Obsidium Chip|r debris on the ground after
+    .complete 29295,1 -- Living Obsidium Chip (10)
+    .mob Obsidium Punisher
+step -- 29297 Bye Bye Burdy -- WARDENS ONLY
+    .isOnQuest 29297
+    #loop
+    .goto 338,73.03,54.88,50,0
+    .goto 338,73.82,38.28,50,0
+    .goto 338,63.73,38.76,50,0
+    .use 69832 >> |cRXP_WARN_Use the|r |T135129:0|t[Burd Sticker] |cRXP_WARN_on |cRXP_ENEMY_Druids of the Flame|r that are flying in the air|r
+    .complete 29297,1 -- Druids of the Flame in Fire Crow form slain (3)
+    .mob Druid of the Flame
+step
+    .isQuestComplete 29263
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29263 >> Turn in A Bitter Pill
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29278
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29278 >> Turn in Living Obsidium
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29295
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29295 >> Turn in The Bigger They Are
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29297
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29297 >> Turn in Bye Bye Burdy
+    .target Damek Bloombeard
+--Complete Additional Armaments unlock
 
 step
     #label WardenEnd
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
 
---29279,29281
+
+step << skip-- Ricket @ DRUIDS
+    .isQuestTurnedIn 29282
+    --.goto 338,xxxxx
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    >>|cRXP_WARN_Skip this step if she is not here|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    .target Ricket
+step << skip-- Ricket @ WARDENS
+    .isQuestTurnedIn 29282
+    --.goto 338,xxxxx
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    >>|cRXP_WARN_Skip this step if she is not here|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    .target Ricket
 step << skip
     .goto 338,44.087,86.321
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
     .accept 29279 >>Accept Filling the Moonwell
     .target Ayla Shadowstorm
-step << skip
-    .goto 338,46.919,89.996
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
-    .accept 29281 >>Accept Additional Armaments
-    .target Damek Bloombeard
 ]])
