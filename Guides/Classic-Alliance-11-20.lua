@@ -961,7 +961,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Thistle Bear|r |cRXP_WARN_ .It can be used from any range as long as you're targeting the bear|r
-    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r 
+    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -1714,7 +1714,7 @@ step << NightElf/Hunter/Druid/Warrior
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
-    .accept 4812 >> Accept As Water Cascades 
+    .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .xp >14,1 << Hunter/Druid
 --XX If Night Elves, Hunters, or Druids are lower than level 14, do questline
@@ -2931,7 +2931,7 @@ step
     #hardcore << NightElf !Druid
     #optional
     .hs >> Hearthstone back to Auberdine
-    .cooldown item,6948,>0,1 
+    .cooldown item,6948,>0,1
 step << skip --logout skip
     #hardcore << NightElf !Druid
     #optional
@@ -5642,7 +5642,7 @@ step << Rogue
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
     >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
     .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -5786,7 +5786,7 @@ step << Mage/Warlock/Rogue
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
     >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
     .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
     .zoneskip Teldrassil << Warrior
     .zoneskip Darnassus << Warrior
