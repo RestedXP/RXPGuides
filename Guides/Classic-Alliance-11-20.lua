@@ -89,63 +89,49 @@ step
     >>|cRXP_BUY_Buy food/water if needed|r
     .vendor >>|T133918:0|t[Longjaw Mud Snapper] |cRXP_WARN_is very cheap|r
 	.target Innkeeper Heather
-step << Human Paladin
-    #season 2
-    #completewith next
-    #label Island
-    .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
-step << Human Paladin
-    #season 2
-    #completewith next
-    .goto Duskwood,4.33,28.26
-    .gossipoption 109610 >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r to start a fight
-    .target Ada Gelhardt
-    .skipgossip 205153,1
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
---XX 109612 "As one candle is snuffed out, another is lit"
---XX 109611 "I've been sent by brother Romulus. Please, Ada, return with me to the Cathedral of Light"
---XX 109610 "I see. I'm sorry it has come to this, sister. (Fight Ada)"
-step << Human Paladin
-    #season 2
-    #requires Island
-    .goto Duskwood,4.33,28.26
-    >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
-    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
-    >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
-    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
-    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
-    .collect 205897,1 --Rune of Martyrdom (1)
-    .target Ada Gelhardt
-    .skipgossip 205153,1
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
---XX Must have had the Charred Note to unlock the dialogue
-step << Human Paladin
-    #season 2
-    #sticky
-    .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
-step << Human Paladin
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
-    .use 205897
-    .itemcount 205897,1 --Rune of Martyrdom (1)
-    .train 410015,1
-step << Human Paladin
-    #season 2
-    .goto Westfall,36.24,54.52
-    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
-    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
-    .train 410015,3
 step
 	#completewith GnollPaws
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
     >>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
     .complete 151,1 --Handful of Oats (8)
 step
-    #completewith HarvestW
+    #completewith TravelCompass
+    >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob Young Goretusk
+    .mob Goretusk
+    .mob Young Fleshripper
+    .mob Fleshripper
+step
+    #completewith TravelCompass
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob Defias Trapper
+    .mob Defias Smuggler
+step
+    #label TravelCompass
+    .isOnQuest 399
+    .goto Westfall,40.4,52.7,75 >> Travel to the Alexston's Farmstead, |cRXP_WARN_work on the other quest objectives as you move there|r
+step
+    #sticky
+    #completewith bennytime
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r located on any of the fields as you run by them
+    >>Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
+    .mob Harvest Watcher
+    .complete 9,1 --Havest Watcher slain (20)
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1 --Flask of Oil (5)
+step
+    .goto Westfall,36.24,54.52
+    >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
+    .complete 399,1 --A Simple Compass (1)
+    .isOnQuest 399
+step
+    #completewith bennytime
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
     .collect 731,3,38,1 --Goretusk Snout (3)
@@ -156,39 +142,14 @@ step
     .mob Fleshripper
 step
     #completewith bennytime
-    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |cRXP_LOOT_Red Leather Bandanas|r
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     .complete 12,1 -- Defias Trapper slain (15)
     .complete 12,2 -- Defias Smuggler slain (15)
     .complete 153,1 -- Red Leather Bandana (15)
     .mob Defias Trapper
     .mob Defias Smuggler
-step << Mage
-    #season 2
-    #completewith next
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
-    .collect 208754,1
-    .mob Defias Pillager
-    .train 401767,1
 step
-    .goto Westfall,36.24,54.52
-    >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
-    .complete 399,1 --A Simple Compass (1)
-    .isOnQuest 399
-step << Mage
-    #season 2
-    .goto Westfall,36.0,55.4,50,0
-    .goto Westfall,38.0,57.2,50,0
-    .goto Westfall,36.0,55.4
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
-    .collect 208754,1
-    .mob Defias Pillager
-    .train 401767,1
-step << Mage
-    #season 2
-    #completewith GnollPaws
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to train|r |T132871:0|t[Regeneration]
-    .use 208754
+    .goto Westfall,50.0,22.6,75 >> Travel to the Jansen Stead, |cRXP_WARN_work on the other quest objectives as you move there|r
 step
 	#label bennytime
     .goto Westfall,49.34,19.27
@@ -197,39 +158,9 @@ step
 	>>|cRXP_WARN_Be aware of |cRXP_ENEMY_Benny Blanco|r. He hits hard|r
     .complete 64,1 --Furlbrow's Pocket Watch
 step
-    #completewith FurlbrowFarm
-    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
-    .complete 9,1 --Harvest Watcher (20)
-    .collect 732,3,38,1 --Okra (3)
-    .collect 814,5,103,1 --Flask of Oil (5)
-    .isQuestAvailable 38
-    .mob Harvest Watcher
-step
-    #completewith FurlbrowFarm
-    .isQuestTurnedIn 38
-    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flasks of Oil|r
-    .complete 9,1 --Harvest Watcher (20)
-    .collect 814,5,103,1 --Flask of Oil (5)
-    .mob Harvest Watcher
-step
-    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |cRXP_LOOT_Red Leather Bandanas|r
-    .goto Westfall,48.21,46.70,60,0
-    .goto Westfall,46.74,52.87,60,0
-    .goto Westfall,50.74,40.07,60,0
-    .goto Westfall,46.21,38.26,60,0
-    .goto Westfall,41.21,40.75,60,0
-    .goto Westfall,44.57,26.09,60,0
-    .goto Westfall,48.21,46.70
-    .goto Westfall,41.21,40.75,0
-    .complete 12,1 -- Defias Trapper slain (15)
-    .complete 12,2 -- Defias Smuggler slain (15)
-    .complete 153,1 -- Red Leather Bandana (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
-step
     #xprate <1.2
     #completewith next
-    >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |cRXP_LOOT_Gnoll Paws|r
+    >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |T134297:0|t|cRXP_LOOT_Gnoll Paws|r
     .complete 102,1 --Gnoll Paw (8)
     .mob Riverpaw Gnoll
     .mob Riverpaw Scout
@@ -240,6 +171,7 @@ step
     .goto Westfall,56.40,9.40,60,0
     .goto Westfall,52.13,10.36
     .goto Westfall,56.40,9.40,0
+    >>|cRXP_WARN_Travel to the coast, kill Gnolls on the way|r for |T134297:0|t[|cRXP_LOOT_Gnoll Paws|r] if needed
     >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r. Loot them for their |cRXP_LOOT_Eyes|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .mob Murloc Raider
@@ -259,7 +191,7 @@ step
     .goto Westfall,42.82,14.70,0
     .goto Westfall,52.36,14.82,0
     .goto Westfall,56.81,13.30,0
-    >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |cRXP_LOOT_Gnoll Paws|r
+    >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |T134297:0|t|cRXP_LOOT_Gnoll Paws|r
     .complete 102,1 --Gnoll Paw (8)
     .mob Riverpaw Gnoll
     .mob Riverpaw Scout
@@ -414,24 +346,15 @@ step
     .goto Westfall,56.40,30.50
     .turnin 38 >> Turn in Westfall Stew
     .turnin 22 >> Turn in Goretusk Liver Pie
-step << Priest
-    #season 2
-    .goto Westfall,32.6,43.2,60,0
-    .goto Westfall,29.8,46.6,60,0
-    .goto Westfall,45.0,26.0,60,0
-    .goto Westfall,45.6,21.2
-    >>Kill the |cRXP_ENEMY_Undying Laborer|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
-    >>|cRXP_WARN_You must use a Holy spell in order to finish off the|r |cRXP_ENEMY_Undying Laborer|r
-    >>|cRXP_WARN_The |cRXP_ENEMY_Undying Laborer|r can spawn at the Gold Coast Quarry and Jangolode Mine|r
-    .collect 205905,1 -- Memory of a Devout Champion (1)
-    .unitscan Undying Laborer
-    .train 425215,1
-step << Priest
-    #season 2
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
-    .use 205905
-    .itemcount 205905,1
+step
+    .goto Westfall,50.0,45.4
+    >>Finish off the |cRXP_ENEMY_Defias|r quests in the area marked on your map. |cRXP_WARN_It is a dynamic respawn area meaning if you kill enough mobs they will keep respawning|r
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob Defias Trapper
+    .mob Defias Smuggler
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
@@ -959,6 +882,15 @@ step << Dwarf Hunter
     .tame 2163 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Thistle Bear|r to tame it|r
     .target Thistle Bear
 step
+    #optional
+    #completewith FirstWashed
+    .goto 1439,43.509,33.207,0
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 --Strider Meat (5)
+    .mob Foreststrider Fledgling
+    .subzoneskip 442
+step
     #sticky
     #label BuzzBox1
     #loop
@@ -1029,20 +961,11 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Thistle Bear|r |cRXP_WARN_ .It can be used from any range as long as you're targeting the bear|r
-    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r 
+    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
     .use 7586
-step
-    #optional
-    #completewith FirstWashed
-    .goto 1439,43.509,33.207,0
-    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
-    .collect 5469,5,2178,1 --Strider Meat (5)
-    .mob Foreststrider Fledgling
-    .subzoneskip 442
 step
     .goto Darkshore,38.90,53.59
     >>Run toward the edge of the Furbolg Camp
@@ -1068,10 +991,6 @@ step << NightElf
     .goto 1439,35.275,53.464,60,0
     .goto 1439,36.091,51.501,60,0
     .xp 11+7300 >> Grind to 7300+/8800xp
-step << Hunter
-    #season 2
-    #optional
-    #requires Treats3
 step
     #optional
     #requires RabidThistle
@@ -1115,12 +1034,6 @@ step
     #completewith next
     .goto 1439,36.806,44.137,8,0
     .goto 1439,35.743,43.710,12 >> Travel toward |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
-step << Priest
-    #season 2
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    .accept 6343 >> Accept Return to Nessa
-    .target Laird
 step
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
@@ -1693,16 +1606,27 @@ step << NightElf/Dwarf Hunter
     .goto 1439,45.827,36.812,50,0
     .xp 13 >> Grind to level 13
 step
+    #optional
+    #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
+    #completewith AmethStart << !NightElf !Hunter !Druid !Warrior
+    .goto 1439,43.509,33.207,0
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 --Strider Meat (5)
+    .mob Foreststrider Fledgling
+    .subzoneskip 442
+step
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
-    #completewith RedCrystal
+    #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
+    #completewith AmethStart << !NightElf !Hunter !Druid !Warrior
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
     .isQuestTurnedIn 1001
 step
     #xprate <1.5
-    #completewith AuberdineTurnin2
+    #completewith RedCrystal
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 10 later|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
@@ -1713,7 +1637,7 @@ step
     .skill cooking,10,1 --XX Shows if cooking skill is <10
 step
     #xprate <1.5
-    #completewith AuberdineTurnin2
+    #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
@@ -1790,7 +1714,7 @@ step << NightElf/Hunter/Druid/Warrior
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
-    .accept 4812 >> Accept As Water Cascades 
+    .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .xp >14,1 << Hunter/Druid
 --XX If Night Elves, Hunters, or Druids are lower than level 14, do questline
@@ -2061,7 +1985,7 @@ step << Druid
 ----End of Early Red Crystal turnin Section (NE for xp, Hunters/Druids for staff)/Druid bear q final if not done earlier----
 
 
-step
+step << Druid
     #season 0
     #optional
     #completewith AmethStart
@@ -2449,6 +2373,21 @@ step
     .mob Blackwood Windtalker
     .itemcount 5382,1 --Anaya's Pendant (1)
 step
+    #optional
+    #completewith FurbolgGrindEnd
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .mob Foreststrider Fledgling
+    .isQuestAvailable 2178
+step
+    #optional
+    #completewith FurbolgGrindEnd
+    >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .mob Moonstalker Runt
+    .isOnQuest 1002
+step
     #label FurbolgGrindEnd
     #completewith TOTH
     #optional
@@ -2680,7 +2619,7 @@ step
     #season 0
     .goto 1439,47.314,48.676
     >>Click the |cRXP_PICK_Mysterious Red Crystal|r
-    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    >>|cRXP_WARN_Be careful of the 2 groups of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
@@ -2745,7 +2684,7 @@ step
     .goto 1439,49.313,24.271,55,0
     >>Kill |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     >>|cRXP_WARN_Consider skipping some of the level 17|r |cRXP_ENEMY_Reef Crawlers|r |cRXP_WARN_if you get decent drops.|r |cRXP_WARN_You don't have to complete this quest now|r
-    >>Be careful as they can cast |T132155:0|t[Muscle Tear] an instant attack dealing moderate damage
+    >>Be careful as they can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
 step
@@ -2988,6 +2927,11 @@ step << NightElf !Druid
     #season 0
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
+step
+    #hardcore << NightElf !Druid
+    #optional
+    .hs >> Hearthstone back to Auberdine
+    .cooldown item,6948,>0,1
 step << skip --logout skip
     #hardcore << NightElf !Druid
     #optional
@@ -2996,13 +2940,14 @@ step << skip --logout skip
     #season 0
     .goto 1439,54.964,34.536
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
-step << skip --logout skip << Warrior/Rogue
-    #optional
-    #label MushroomLS
+step
+    #hardcore << NightElf !Druid
     #completewith CavetoAuber
-    #season 2
-    .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 --Strider Meat (5)
+    .mob Foreststrider Fledgling
+    .isQuestAvailable 2178
 step
     #hardcore << NightElf !Druid
     #xprate <1.5 --<< !NightElf/Hunter
@@ -3113,6 +3058,7 @@ step << NightElf !Druid
     .accept 6343 >> Accept Return to Nessa
     .target Laird
 step
+    #optional
     .goto Darkshore,36.096,44.931
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -3120,6 +3066,7 @@ step
     .target Gubber Blump
     .isQuestComplete 1138
 step
+    #optional
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     #season 0
@@ -3492,8 +3439,9 @@ step
     .isOnQuest 1002
 step
     #season 0
-    #completewith CompleteThistleBears
+    #completewith OnuGrove
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r in southern Darkshore
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step << Druid
@@ -3518,34 +3466,6 @@ step << Druid
     .complete 6123,2
     .isOnQuest 6123
 step
-    #label CompleteThistleBears
-    #season 0
-    .goto 1439,35.968,70.807
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4728 >> Accept Beached Sea Creature
-step
-    #completewith MasterG
-    #season 0
-    >>Kill |cRXP_ENEMY_Moonstalker Sires|r. Loot them for their |cRXP_LOOT_Pelts|r
-    .complete 986,1 -- Fine Moonstalker Pelt (5)
-    .unitscan Moonstalker Sire
-step
-	#xprate <1.5 --<< !NightElf/Hunter
-    #completewith MasterG
-    .goto Darkshore,38.60,80.50,0
-    >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    .complete 1003,1 -- Grizzled Scalp (4)
-    .isOnQuest 1003
-    .mob Grizzled Thistle Bear
-step
-    #season 0
-    .goto Darkshore,39.03,67.32,70,0
-    .goto Darkshore,42.54,67.76,70,0
-    .goto Darkshore,39.99,78.46
-    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r in southern Darkshore
-    .complete 2138,1 -- Rabid Thistle Bear slain (20)
-    .mob Rabid Thistle Bear
-step
     #completewith OnuGrove
     #season 0
     .goto 1439,43.555,76.293,80 >> Travel to the Grove of the Ancients
@@ -3558,6 +3478,24 @@ step
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
     .target Onu
+step
+    #completewith MasterG
+    #season 0
+    >>Kill |cRXP_ENEMY_Moonstalker Sires|r. Loot them for their |cRXP_LOOT_Pelts|r
+    >>Care as they can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
+    .complete 986,1 -- Fine Moonstalker Pelt (5)
+    .unitscan Moonstalker Sire
+    .isOnQuest 986
+step
+	#xprate <1.5 --<< !NightElf/Hunter
+    #completewith MasterG
+    #optional
+    .goto Darkshore,38.60,80.50,0
+    >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    .complete 1003,1 -- Grizzled Scalp (4)
+    .isOnQuest 1003
+    .mob Grizzled Thistle Bear
 step
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
@@ -3630,13 +3568,16 @@ step
 step
     #optional
     #season 0
-    #completewith Murk
+    #completewith TurtleSouth
     #completewith prospector << Hunter
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r. Loot them for their |cRXP_LOOT_Pelts|r
+    >>Be careful as they can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 -- Fine Moonstalker Pelt (5)
+    .isOnQuest 986
     .unitscan Moonstalker Sire
 step
 	#xprate <1.5 --<< !NightElf/Hunter
+    #optional
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -3644,6 +3585,7 @@ step
     .goto Darkshore,39.74,80.43,50,0
     .goto Darkshore,38.00,83.55
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -3663,39 +3605,6 @@ step
 --  .timer 14,Return to Onu RP
     .accept 951 >> Accept Mathystra Relics
     .target Onu
-step
-    #completewith Southcrabs
-    #season 0
---  .goto Darkshore,33.85,80.92,45,0
---  .goto Darkshore,32.17,82.92,45,0
---  .goto Darkshore,35.41,78.96,45,0
---  .goto Darkshore,35.68,75.23,45,0
---  .goto Darkshore,35.03,72.19,45,0
---  .goto Darkshore,35.68,75.23,45,0
---  .goto Darkshore,35.41,78.96,45,0
---  .goto Darkshore,32.17,82.92,45,0
---  .goto Darkshore,33.85,80.92,45,0
---  .goto Darkshore,35.03,72.19
-    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
-    >>Be careful as they can cast |T132155:0|t[Muscle Tear] an instant attack dealing moderate damage
-    .complete 1138,1 -- Fine Crab Chunks (6)
-    .mob Reef Crawler
-    .mob Encrusted Tide Crawler
-step
-    #label Murk
-    #season 0
-    .goto 1439,35.429,76.566,0
-    .goto 1439,35.429,76.566,60,0
-    .goto Darkshore,36.64,76.53
-    >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_Murkdeep|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_Greymist Hunter|r in the wave that he spawns with alive)|r
-    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the camp
-    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_Murkdeep|r encounter:|r
-    >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_Greymist Coastrunners|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_Greymist Warriors|r, and Wave 3 has a level 19 |cRXP_ENEMY_Murkdeep|r and a level 16-17 |cRXP_ENEMY_Greymist Hunter|r. You can move away from the Bonfire to avoid aggroing the next wave|r
-    .complete 4740,1 -- Murkdeep (1)
-    .unitscan Murkdeep
-    .mob Greymist Warrior
-    .mob Greymist Hunter
-    .mob Greymist Coastrunner
 step << Hunter
     #optional
     #season 0
@@ -3733,29 +3642,52 @@ step << Hunter
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+step
+    #completewith CompleteThistleBears
+    #season 0
+--  .goto Darkshore,33.85,80.92,45,0
+--  .goto Darkshore,32.17,82.92,45,0
+--  .goto Darkshore,35.41,78.96,45,0
+--  .goto Darkshore,35.68,75.23,45,0
+--  .goto Darkshore,35.03,72.19,45,0
+--  .goto Darkshore,35.68,75.23,45,0
+--  .goto Darkshore,35.41,78.96,45,0
+--  .goto Darkshore,32.17,82.92,45,0
+--  .goto Darkshore,33.85,80.92,45,0
+--  .goto Darkshore,35.03,72.19
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    >>Be careful as |cRXP_ENEMY_Reef Crawlers|r can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Reef Crawler
+    .mob Encrusted Tide Crawler
 step << Hunter
 	#xprate <1.5
     #season 0
     .goto 1439,31.229,85.564
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>Care as |cRXP_ENEMY_Greymist Tidehunters|r can cast |T136016:0|t[|cRXP_FRIENDLY_Poison|r] while in meele leaving a dot dealing 13 damage per 3 seconds for 30 seconds
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
+step
+    #label TurtleSouth
+	#xprate <1.5
+    #season 0
+    .goto 1439,31.690,83.700
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>Care as |cRXP_ENEMY_Greymist Tidehunters|r can cast |T136016:0|t[|cRXP_FRIENDLY_Poison|r] while in meele leaving a dot dealing 13 damage per 3 seconds for 30 seconds
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4731 >> Accept Beached Sea Turtle
 step << !Hunter
 	#xprate <1.5
     #season 0
     .goto 1439,32.644,80.711
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
-step
-	#xprate <1.5
-    #season 0
-    .goto 1439,31.690,83.700
-    >>Click the |cRXP_PICK_Beached Sea Turtle|r
-    .accept 4731 >> Accept Beached Sea Turtle
 step << Hunter
 	#xprate <1.5
     #season 0
-    #label Southcrabs
     .goto 1439,32.644,80.711
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
@@ -3768,11 +3700,27 @@ step << Druid
     .isOnQuest 6123
     .skill herbalism,<15,1
 --XX Add waypoints later
-step << !NightElf !Hunter !Druid
-    #label Southcrabs
+step
+    #label Murk
     #season 0
-    #completewith CleansingTharnariun
-    .hs >> Hearth to Auberdine
+    .goto 1439,35.429,76.566,0
+    .goto 1439,35.429,76.566,60,0
+    .goto Darkshore,36.64,76.53
+    >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_Murkdeep|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_Greymist Hunter|r in the wave that he spawns with alive)|r
+    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the camp
+    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_Murkdeep|r encounter:|r
+    >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_Greymist Coastrunners|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_Greymist Warriors|r, and Wave 3 has a level 19 |cRXP_ENEMY_Murkdeep|r and a level 16-17 |cRXP_ENEMY_Greymist Hunter|r. You can move away from the Bonfire to avoid aggroing the next wave|r
+    .complete 4740,1 -- Murkdeep (1)
+    .unitscan Murkdeep
+    .mob Greymist Warrior
+    .mob Greymist Hunter
+    .mob Greymist Coastrunner
+step
+    #label CompleteThistleBears
+    #season 0
+    .goto 1439,35.968,70.807
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4728 >> Accept Beached Sea Creature
 step << Druid
     #label Southcrabs
     #season 0
@@ -3949,21 +3897,11 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
-step << Druid
-    #season 2
-    .goto Darkshore,52.60,36.65,45,0
-    .goto Darkshore,51.48,38.26
-    >>Kill |cRXP_ENEMY_Den Mother|r. Loot her for the |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
-    .collect 208689,1 -- Ferocious Idol (1)
-    .mob Den Mother
-    .train 407988,1
 step
-    #season 0 << Warrior
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
     >>Kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Thistle Cubs|r can cast|r |T132152:0|t[Ravage]|cRXP_WARN_, a meele instant attack which stuns you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
 step
@@ -4156,6 +4094,7 @@ step
     .goto Darkshore,54.93,12.19
     >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunters|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage and they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>Care as |cRXP_ENEMY_Greymist Tidehunters|r can cast |T136016:0|t[|cRXP_FRIENDLY_Poison|r] while in meele leaving a dot dealing 13 damage per 3 seconds for 30 seconds
     >>|cRXP_WARN_You can LoS (Line of Sight) the |cRXP_ENEMY_Greymist Oracles|r'|r  |T136048:0|t[Lightning Bolts] |cRXP_WARN_around the sunken ship to avoid taking its damage|r
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Tidehunter
@@ -4187,6 +4126,7 @@ step
     .goto Darkshore,62.42,7.67
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -5465,9 +5405,6 @@ step << Dwarf Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
-    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremely powerful rune later
-step << Rogue
-    #xprate >1.59
     #optional
     #completewith KlavenFinish
     .goto Westfall,56.55,52.64
@@ -5705,7 +5642,7 @@ step << Rogue
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
     >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
     .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -5849,7 +5786,7 @@ step << Mage/Warlock/Rogue
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
     >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
     .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
     .zoneskip Teldrassil << Warrior
     .zoneskip Darnassus << Warrior
@@ -10342,6 +10279,7 @@ step
     .accept 4730 >> Accept Beached Sea Creature
 step
 	#xprate <1.5
+    #optional
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -10349,6 +10287,7 @@ step
     .goto Darkshore,39.74,80.43,50,0
     .goto Darkshore,38.00,83.55
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -11016,8 +10955,10 @@ step
 step
 	#xprate <1.5 --<< !NightElf/Hunter
     #completewith Murkdeep
+    #optional
     .goto Darkshore,40.23,81.28,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -11270,6 +11211,7 @@ step
     .mob Reef Crawler
 step
 	#xprate <1.5 --<< !NightElf/Hunter
+    #optional
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -11277,6 +11219,7 @@ step
     .goto Darkshore,39.74,80.43,50,0
     .goto Darkshore,38.00,83.55
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear

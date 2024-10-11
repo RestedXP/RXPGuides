@@ -1233,7 +1233,7 @@ step
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
     >>Kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Thistle Cubs|r can cast|r |T132152:0|t[Ravage]|cRXP_WARN_, a meele instant attack which stuns you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
     .mob Thistle Cub
@@ -1351,7 +1351,8 @@ step
 .group 3
     .goto Darkshore,54.93,12.19
     >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunter|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage, they can also heal with |T136052:0|t[Healing Wave]|r
+    >>Care as |cRXP_ENEMY_Greymist Tidehunters|r can cast |T136016:0|t[|cRXP_FRIENDLY_Poison|r] while in meele leaving a dot dealing 13 damage per 3 seconds for 30 seconds
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Oracle
     .mob Greymist Tidehunter
@@ -1384,6 +1385,7 @@ step
     .goto Darkshore,62.42,7.67
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Sire
@@ -1438,6 +1440,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
     >>|cRXP_WARN_If the |cRXP_ENEMY_Encrusted Tide Crawlers|r are too strong, focus on just|r |cRXP_ENEMY_Reef Crawlers|r
+    >>Be careful as |cRXP_ENEMY_Reef Crawlers|r can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -1452,6 +1455,7 @@ step
     .goto Darkshore,49.66,21.39
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
     >>|cRXP_WARN_If the |cRXP_ENEMY_Encrusted Tide Crawlers|r are too strong, focus on just|r |cRXP_ENEMY_Reef Crawlers|r
+    >>Be careful as |cRXP_ENEMY_Reef Crawlers|r can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -1696,7 +1700,7 @@ step
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
     >>Kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Thistle Cubs|r can cast|r |T132152:0|t[Ravage]|cRXP_WARN_, a meele instant attack which stuns you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
     .mob Thistle Cub
@@ -1759,6 +1763,7 @@ step
     #completewith moonstalkers
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -1766,8 +1771,10 @@ step
 step
 	#era/som
     #completewith Murkdeep
+    #optional
     .goto Darkshore,40.23,81.28,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -1839,6 +1846,7 @@ step
 	.goto Darkshore,39.3,91.8
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r can cast |T132090:0|t[Exploit Weakness] a backstab attack dealing 20-40 damage if you turn your back to them
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -1905,7 +1913,9 @@ step
     .goto Darkshore,43.59,80.02,50,0
     .goto Darkshore,39.74,80.43,50,0
     .goto Darkshore,38.00,83.55
+    #optional
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
