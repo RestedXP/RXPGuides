@@ -2140,6 +2140,13 @@ step
     .daily 29139,29143 >>Accept whichever random daily quest is offered
     .target Rayne Feathersong
 step
+    .isQuestTurnedIn 29282
+    .goto 338,46.758,90.170
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    >>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Ricket|r did not spawn here today|r
+    .target Ricket
+step
     .goto 338,45.626,86.144
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
     .daily 29138 >>Accept Burn Victims
@@ -2295,6 +2302,31 @@ step -- Some Like It Hot 29299
     >>|cRXP_WARN_The |cRXP_ENEMY_Emberspit Scorpions|r will cast|r |T135826:0|t[Ember Pools] |cRXP_WARN_which your |cRXP_FRIENDLY_Crimson Lasher|r will drink|r
     .complete 29299,1 -- Help the Crimson Lasher Drink from Ember Pools (6)
     .mob Emberspit Scorpion
+step -- 29263 A Bitter Pill
+    .isOnQuest 29263
+    #label MagmaWorm
+    #sticky
+    #loop
+    .goto 338,43.8,46.8,50,0
+    .goto 338,53.6,41.8,50,0
+    .goto 338,55.6,54.6,50,0
+    .goto 338,44.8,54.4,50,0
+    >>Click the |cRXP_PICK_Lava Bubbles|r inside the lava pools to summon a |cRXP_ENEMY_Subterranean Magma Worm|r
+    .use 69759 >>|cRXP_WARN_When you see the warning message: "The worm is about to bite! Place the bomb down now!" use|r |T133710:0|t[The Bitter Pill]
+    .complete 29263,1 -- Subterranean Magma Worm slain 1/1
+    .mob Subterranean Magma Worm
+step -- 29278 Living Obsidium
+    .isOnQuest 29278
+    #label ObsidiumMeteorite
+    #sticky
+    #loop
+    .goto 338,41.5,49.8,50,0
+    .goto 338,46.6,43.1,50,0
+    .goto 338,54.6,43.8,50,0
+    .goto 338,51.5,51.2,50,0
+    >>Click the |cRXP_PICK_Magnetic Stones|r then loot the |cRXP_LOOT_Obsidium Meteorites|r which fall down
+    .complete 29278,1 -- Obsidium Meteorite (10)
+    .target Magnetic Stone
 step -- 29143 Wisp Away
     .isOnQuest 29143
     #sticky
@@ -2308,6 +2340,12 @@ step -- 29143 Wisp Away
     >>|cRXP_WARN_Take the |cRXP_FRIENDLY_Hyjal Wisp|r following you to a Fire Portal|r
     >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
     .complete 29143,1 -- Close a Fire Portal 1/1
+step
+    #optional 
+    #requires MagmaWorm
+step
+    #optional 
+    #requires ObsidiumMeteorite
 step
     #optional 
     #requires Embergris
@@ -2371,6 +2409,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
     .dailyturnin 29143 >>Turn in Wisp Away
     .target Rayne Feathersong
+step
+    .isQuestComplete 29263
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29263 >> Turn in A Bitter Pill
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29278
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29278 >> Turn in Living Obsidium
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29295
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29295 >> Turn in The Bigger They Are
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29297
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29297 >> Turn in Bye Bye Burdy
+    .target Damek Bloombeard
 step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
@@ -3569,6 +3631,13 @@ step
     .daily 29139,29143 >>Accept whichever random daily quest is offered
     .target Rayne Feathersong
 step
+    .isQuestTurnedIn 29282
+    .goto 338,46.758,90.170
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    >>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Ricket|r did not spawn here today|r
+    .target Ricket
+step
     .goto 338,45.626,86.144
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
     .daily 29138 >>Accept Burn Victims
@@ -3724,6 +3793,31 @@ step -- Some Like It Hot 29299
     >>|cRXP_WARN_The |cRXP_ENEMY_Emberspit Scorpions|r will cast|r |T135826:0|t[Ember Pools] |cRXP_WARN_which your |cRXP_FRIENDLY_Crimson Lasher|r will drink|r
     .complete 29299,1 -- Help the Crimson Lasher Drink from Ember Pools (6)
     .mob Emberspit Scorpion
+step -- 29263 A Bitter Pill
+    .isOnQuest 29263
+    #label MagmaWorm
+    #sticky
+    #loop
+    .goto 338,43.8,46.8,50,0
+    .goto 338,53.6,41.8,50,0
+    .goto 338,55.6,54.6,50,0
+    .goto 338,44.8,54.4,50,0
+    >>Click the |cRXP_PICK_Lava Bubbles|r inside the lava pools to summon a |cRXP_ENEMY_Subterranean Magma Worm|r
+    .use 69759 >>|cRXP_WARN_When you see the warning message: "The worm is about to bite! Place the bomb down now!" use|r |T133710:0|t[The Bitter Pill]
+    .complete 29263,1 -- Subterranean Magma Worm slain 1/1
+    .mob Subterranean Magma Worm
+step -- 29278 Living Obsidium
+    .isOnQuest 29278
+    #label ObsidiumMeteorite
+    #sticky
+    #loop
+    .goto 338,41.5,49.8,50,0
+    .goto 338,46.6,43.1,50,0
+    .goto 338,54.6,43.8,50,0
+    .goto 338,51.5,51.2,50,0
+    >>Click the |cRXP_PICK_Magnetic Stones|r then loot the |cRXP_LOOT_Obsidium Meteorites|r which fall down
+    .complete 29278,1 -- Obsidium Meteorite (10)
+    .target Magnetic Stone
 step -- 29143 Wisp Away
     .isOnQuest 29143
     #sticky
@@ -3737,6 +3831,12 @@ step -- 29143 Wisp Away
     >>|cRXP_WARN_Take the |cRXP_FRIENDLY_Hyjal Wisp|r following you to a Fire Portal|r
     >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
     .complete 29143,1 -- Close a Fire Portal 1/1
+step
+    #optional 
+    #requires MagmaWorm
+step
+    #optional 
+    #requires ObsidiumMeteorite
 step
     #optional 
     #requires Embergris
@@ -3800,6 +3900,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
     .dailyturnin 29143 >>Turn in Wisp Away
     .target Rayne Feathersong
+step
+    .isQuestComplete 29263
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29263 >> Turn in A Bitter Pill
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29278
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29278 >> Turn in Living Obsidium
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29295
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29295 >> Turn in The Bigger They Are
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29297
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29297 >> Turn in Bye Bye Burdy
+    .target Damek Bloombeard
 step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
