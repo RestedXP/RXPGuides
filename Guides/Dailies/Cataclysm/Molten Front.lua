@@ -2144,7 +2144,7 @@ step
     .goto 338,46.758,90.170
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
     .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
-    >>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Ricket|r did not spawn here today|r
+    >>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Ricket|r isn't offering a quest here today|r
     .target Ricket
 step
     .goto 338,45.626,86.144
@@ -2723,6 +2723,13 @@ step
     .daily 29273,29274 >>Accept whichever random daily quest is offered
     .target Tholo Whitehoof
     .target Anren Shadowseeker
+step -- Ricket @ DRUIDS
+    .isQuestTurnedIn 29282
+    .goto 338,36.251,56.586
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    >>|cRXP_WARN_Skip this step if she is not here|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    .target Ricket
 step
     .isQuestComplete 29265
     .goto 338,36.299,56.344
@@ -2802,6 +2809,18 @@ step
     >>Click the |cRXP_FRIENDLY_Injured Druids of the Talon|r
     .complete 29293,1 -- Druids of the Talon rescued (5)
     .target Druid of the Talon
+step -- 29295 The Bigger They Are -- DRUIDS ONLY
+    .isOnQuest 29295
+    #sticky
+    #label ObsidiumChips
+    #loop
+    .goto 338,29.7,28.5,50,0
+    .goto 338,16.8,32.5,50,0
+    .goto 338,19.5,49.5,50,0
+    .goto 338,32.7,43.6,50,0
+    >>Kill |cRXP_ENEMY_Obsidium Punishers|r. Loot their |cRXP_LOOT_Living Obsidium Chip|r debris on the ground after
+    .complete 29295,1 -- Living Obsidium Chip (10)
+    .mob Obsidium Punisher
 step
     #sticky
     #label FireHawks
@@ -2840,6 +2859,9 @@ step
 step
     #optional
     #requires FireHawkHatchling
+step
+    #optional
+    #requires ObsidiumChips
 step
     .isQuestComplete 29290
     .goto 338,34.496,56.208
@@ -2892,6 +2914,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
     .dailyturnin 29305 >>Turn in Strike at the Heart
     .target Skylord Omnuron
+step
+    .isQuestComplete 29295
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29295 >> Turn in The Bigger They Are
+    .target Damek Bloombeard
 step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
@@ -3635,7 +3663,7 @@ step
     .goto 338,46.758,90.170
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
     .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
-    >>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Ricket|r did not spawn here today|r
+    >>|cRXP_WARN_Skip this step if |cRXP_FRIENDLY_Ricket|r isn't offering a quest here today|r
     .target Ricket
 step
     .goto 338,45.626,86.144
@@ -3975,6 +4003,7 @@ step
     .complete 29205,1 -- Druid Assault Group Protected
     .target Keeper Taldros
     .target Turak Runetotem
+    .target Deldren Ravenelm
     .mob Pyrelord
     .mob Flamewatch Sentinel
 step
@@ -3990,6 +4019,13 @@ step
     >>|cRXP_WARN_Skip this step if he is not offering this quest|r
     .daily 29276 >>Accept The Flame Spider Queen
     .target Tholo Whitehoof
+step -- Ricket @ WARDENS
+    .isQuestTurnedIn 29282
+    .goto 338,66.429,65.396
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
+    >>|cRXP_WARN_Skip this step if she is not here|r
+    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
+    .target Ricket
 step
     .goto 338,66.100,63.908
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deldren Ravenelm|r
@@ -4063,6 +4099,17 @@ step -- Egg-stinction 29160
     .goto 338,60.8,61.0,40,0
     >>Open the |cRXP_PICK_Cinderweb Egg Sacs|r. Loot them for the |cRXP_LOOT_Cinderweb Eggs|r
     .complete 29160,1 -- Cinderweb Egg (20)
+step -- 29297 Bye Bye Burdy -- WARDENS ONLY
+    .isOnQuest 29297
+    #label ByeByeBurdy
+    #sticky
+    #loop
+    .goto 338,73.03,54.88,50,0
+    .goto 338,73.82,38.28,50,0
+    .goto 338,63.73,38.76,50,0
+    .use 69832 >> |cRXP_WARN_Use the|r |T135129:0|t[Burd Sticker] |cRXP_WARN_on |cRXP_ENEMY_Druids of the Flame|r that are flying in the air|r
+    .complete 29297,1 -- Druids of the Flame in Fire Crow form slain (3)
+    .mob Druid of the Flame
 step
     #optional
     #requires SolarCore
@@ -4081,6 +4128,9 @@ step
 step
     #optional
     #requires Eggstinction
+step
+    #optional
+    #requires ByeByeBurdy
 step
     .isQuestComplete 29160
     .goto 338,66.100,63.908
@@ -4116,13 +4166,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Bladewing|r
     .daily 29210 >> Accept Enduring the Heat
     .target Marin Bladewing
-step
+step -- this step will autoskip if they completed 29276 earlier
     .goto 338,65.959,66.093
     .isQuestTurnedIn 29272 -- Only offered if completed Druids questline
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
     >>|cRXP_WARN_Skip this step if he is not here|r
     .daily 29275 >>Accept Fandral's Methods
+    .disablecheckbox
     .target Anren Shadowseeker
+    .questcount <1,29275,29276
 step -- Enduring the Heat 29210
     .isOnQuest 29210
     .goto 338,57.491,49.532
@@ -4196,18 +4248,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
     .dailyturnin 29276 >> Turn in The Flame Spider Queen
     .target Anren Shadowseeker
- step
-    .isQuestComplete 29243
-    .goto 338,47.584,90.552
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
-    .dailyturnin 29243 >>Turn in Strike at the Heart
-    .target Captain Saynna Stormrunner
 step
     .isQuestComplete 29275
     .goto 338,51.547,85.511
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r
     .dailyturnin 29275 >> Turn in Fandral's Methods
     .target Tholo Whitehoof
+step
+    .isQuestComplete 29297
+    .goto 338,46.919,89.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damek Bloombeard|r
+    .dailyturnin 29297 >> Turn in Bye Bye Burdy
+    .target Damek Bloombeard
+step
+    .isQuestComplete 29243
+    .goto 338,47.584,90.552
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
+    .dailyturnin 29243 >>Turn in Strike at the Heart
+    .target Captain Saynna Stormrunner
 
 --Calling the Ancients unlock
 step
@@ -4386,21 +4444,6 @@ step
     #label WardenEnd
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
 
-
-step << skip-- Ricket @ DRUIDS
-    .isQuestTurnedIn 29282
-    --.goto 338,xxxxx
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
-    >>|cRXP_WARN_Skip this step if she is not here|r
-    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
-    .target Ricket
-step << skip-- Ricket @ WARDENS
-    .isQuestTurnedIn 29282
-    --.goto 338,xxxxx
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
-    >>|cRXP_WARN_Skip this step if she is not here|r
-    .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
-    .target Ricket
 step << skip
     .goto 338,44.087,86.321
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
