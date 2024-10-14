@@ -2647,11 +2647,11 @@ step
 step
     .isQuestTurnedIn 29272
     .goto 338,41.772,61.475
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
-    >>|cRXP_WARN_NOTE: If they have not spawned here underground, skip this step|r
-    .daily 29273,29274 >>Accept whichever random daily quest is offered
-    .target Tholo Whitehoof
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anren Shadowseeker|r
+    >>|cRXP_WARN_NOTE: If |cRXP_FRIENDLY_Anren Shadowseeker|r did not spawn here underground, skip this step|r
+    .daily 29274 >>Accept Hounds of Shannox
     .target Anren Shadowseeker
+    .questcount <1,29273,29274
 step -- 29264 Flamewakers of the Molten Flow
     .isOnQuest 29264
     #sticky
@@ -2718,11 +2718,12 @@ step
     .subzoneskip 5746,1
 step
     .isQuestTurnedIn 29272
-    .goto 338,35.860,59.235
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r or |cRXP_FRIENDLY_Anren Shadowseeker|r
-    .daily 29273,29274 >>Accept whichever random daily quest is offered
+    .goto 338,35.985,58.974
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tholo Whitehoof|r
+    .daily 29273 >>Accept How Hot
+    .disablecheckbox
     .target Tholo Whitehoof
-    .target Anren Shadowseeker
+    .questcount <1,29273,29274
 step -- Ricket @ DRUIDS
     .isQuestTurnedIn 29282
     .goto 338,36.251,56.586
