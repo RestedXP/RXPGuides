@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-if addon.gameVersion > 30000 then return end
+if not (addon.game == "CLASSIC" or addon.game == "CATA") then return end
 
 local locale = GetLocale()
 
@@ -11,10 +11,12 @@ local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
     strlower
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
-local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
-    _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
-local GetItemStats = _G.GetItemStats
+local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or
+                               _G.GetItemInfoInstant
+local IsEquippedItem = C_Item and C_Item.IsEquippedItem or _G.IsEquippedItem
+local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
 local UnitLevel = _G.UnitLevel
+local GetInventoryItemLink = _G.GetInventoryItemLink
 
 local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass,
                                               Enum.ItemWeaponSubclass
@@ -51,6 +53,7 @@ local session = {
 -- TODO support spec awareness
 -- Ignoring for now since overrides are rare and specific
 local ITEM_WEIGHT_ADDITIONS = {
+    ["DEATHKNIGHT"] = {},
     ["DRUID"] = {},
     ["HUNTER"] = {},
     ["MAGE"] = {},
@@ -97,6 +100,31 @@ local CLASS_MAP = {
             [ItemArmorSubclass.Cloth] = true -- Cloaks plus cloth armor
         },
         ["WeaponType"] = {[ItemWeaponSubclass.Generic] = true}
+    },
+    ["DEATHKNIGHT"] = {
+        ["Slot"] = {
+            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
+            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+        },
+        ["ArmorType"] = {
+            [ItemArmorSubclass.Leather] = true,
+            [ItemArmorSubclass.Mail] = true,
+            [ItemArmorSubclass.Plate] = true -- DK always 55+
+        },
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Axe1H] = true,
+            [ItemWeaponSubclass.Axe2H] = true,
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Mace2H] = true,
+            [ItemWeaponSubclass.Polearm] = function()
+                return UnitLevel("player") >= 20
+            end,
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Sword2H] = true,
+            [ItemWeaponSubclass.Unarmed] = true
+        }
     },
     ["DRUID"] = {
         ["Slot"] = {},
@@ -299,6 +327,25 @@ local KEY_TO_TEXT = {
     -- ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
 }
 
+if addon.game == "CATA" then
+    KEY_TO_TEXT['ITEM_MOD_MASTERY_RATING_SHORT'] = _G.ITEM_MOD_MASTERY_RATING
+    KEY_TO_TEXT['ITEM_MOD_EXPERTISE_RATING_SHORT'] =
+        _G.ITEM_MOD_EXPERTISE_RATING
+
+    KEY_TO_TEXT['ITEM_MOD_HIT_RANGED_RATING_SHORT'] =
+        _G.ITEM_MOD_HIT_RANGED_RATING
+
+    KEY_TO_TEXT['ITEM_MOD_CRIT_RANGED_RATING_SHORT'] =
+        _G.ITEM_MOD_CRIT_RANGED_RATING
+    KEY_TO_TEXT['ITEM_MOD_SPELL_PENETRATION_SHORT'] =
+        _G.ITEM_MOD_SPELL_PENETRATION
+
+    KEY_TO_TEXT['ITEM_MOD_HEALTH_REGEN_SHORT'] = _G.ITEM_MOD_HEALTH_REGEN
+    KEY_TO_TEXT['ITEM_MOD_BLOCK_RATING_SHORT'] = _G.ITEM_MOD_BLOCK_RATING
+    KEY_TO_TEXT['ITEM_MOD_RESILIENCE_RATING_SHORT'] =
+        _G.ITEM_MOD_RESILIENCE_RATING
+end
+
 -- Keys only obtained from tooltip text parsing
 -- Explicitly set regex
 local OUT_OF_BAND_KEYS = {
@@ -380,7 +427,8 @@ local SPEC_MAP = {
     ["SHAMAN"] = {[1] = "Elemental", [2] = "Enhancement", [3] = "Restoration"},
     ["MAGE"] = {[1] = "Arcane", [2] = "Fire", [3] = "Frost"},
     ["WARLOCK"] = {[1] = "Affliction", [2] = "Demonology", [3] = "Destruction"},
-    ["DRUID"] = {[1] = "Balance", [2] = "Feral Combat", [4] = "Restoration"}
+    ["DRUID"] = {[1] = "Balance", [2] = "Feral Combat", [4] = "Restoration"},
+    ["DEATHKNIGHT"] = {[1] = "Blood", [2] = "Frost", [4] = "Unholy"}
 }
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
