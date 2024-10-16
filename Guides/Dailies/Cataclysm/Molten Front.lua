@@ -3107,13 +3107,178 @@ step
     .target Damek Bloombeard
 --Complete Additional Armaments unlock
 
+--Filling the Moonwell unlock
+step
+    .goto 338,44.087,86.321
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
+    .accept 29279 >>Accept Filling the Moonwell
+    .target Ayla Shadowstorm
+step
+    #optional
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isQuestComplete 29279
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .turnin 29279 >> Turn in Filling the Moonwell
+    .accept 29280 >> Accept Nourishing Waters
+    .target Matoclaw
+step
+    .isQuestTurnedIn 29279
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .accept 29280 >> Accept Nourishing Waters
+    .target Matoclaw
+step
+    #optional
+    #completewith next
+    .isOnQuest 29280
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29280
+    .goto 338,44.087,86.321
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
+    .target Ayla Shadowstorm
+    .turnin 29280 >>Turn in Nourishing Waters
+step
+    .isQuestTurnedIn 29280
+    .goto 338,47.022,91.368
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .target Malfurion Stormrage
+    .accept 29203 >> Accept Into the Depths
+step
+    .isOnQuest 29203
+    #completewith next
+    .goto 338,57.491,49.532,15 >>Enter the Igneous Depths
+step
+    .isOnQuest 29203
+    .goto 338,64.615,59.216
+    >>Kill |cRXP_ENEMY_Leyara|r
+    .complete 29203,1 -- Leyara slain 1/1
+    .mob Leyara
+step
+    .isQuestComplete 29203
+    #completewith next
+    .goto 338,57.491,49.532,15 >>Exit the Igneous Depths
+    .subzoneskip 5741,1
+step
+    .isQuestComplete 29203
+    .goto 338,47.022,91.368
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .target Malfurion Stormrage
+    .turnin 29203 >> Turn in Into the Depths
+step
+    .isQuestTurnedIn 29203
+    >>|cRXP_WARN_You will have now received mail from |cRXP_FRIENDLY_Theresa Barkskin|r with a|r |T514925:0|t[|cRXP_LOOT_Smoke-Stained Locket|r]
+    .use 69854 >>|cRXP_WARN_Use the|r |T514925:0|t[|cRXP_LOOT_Smoke-Stained Locket|r] |cRXP_WARN_to start the quest|r
+    .collect 69854,1,29298,1 -- Smoke-Stained Locket (1)
+    .accept 29298 >> Accept A Smoke-Stained Locket
+step
+    #optional
+    #completewith SecretsWithin
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isQuestTurnedIn 29203
+    #completewith next
+    .zone Moonglade >> Travel to Moonglade
+step
+    #label SecretsWithin
+    .isQuestTurnedIn 29203
+    .goto Moonglade,51.685,45.098
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rabine Saturna|r
+    .turnin 29298 >> Turn in A Smoke-Stained Locket
+    .accept 29302 >> Accept Unlocking the Secrets Within
+    .timer 42,Unlocking the Secrets Within RP
+    .target Rabine Saturna
+step
+    .isQuestTurnedIn 29203
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 29302,1 -- Look into Leyara's memories 1/1
+step
+    .isQuestTurnedIn 29203
+    .goto Moonglade,51.685,45.098
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rabine Saturna|r
+    .turnin 29302 >> Turn in Unlocking the Secrets Within
+    .accept 29303 >> Accept Tragedy and Family
+    .target Rabine Saturna
+step
+    .isOnQuest 29303
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .isOnQuest 29303
+    .goto Ashenvale,40.501,53.281
+    .cast 6247 >> Click the |cRXP_PICK_Night Elf Grave|r
+    .timer 48,Tragedy and Family RP
+    .skipgossip
+step
+    .isOnQuest 29203
+    .goto Ashenvale,40.501,53.281
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 29303,1 -- Look deeper into Leyara's memories 1/1
+    .skipgossip
+step
+    .isQuestTurnedIn 29203
+    >>Click the Quest Turn in Pop-Up in your Questlog.
+    .turnin 29303 >> Turn in Tragedy and Family
+    .accept 29310 >> Accept The Tipping Point
+step
+    .isOnQuest 29310
+    #completewith next
+    .zone 198 >> Travel to Mount Hyjal
+step
+    .isOnQuest 29310
+    .goto 198,7.561,34.582
+    .cast 6247 >> Click the |cRXP_PICK_Small Gravestone|r
+    .timer 59,The Tipping Point RP
+    .skipgossip
+step
+    .isOnQuest 29310
+    .goto 198,7.561,34.582
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 29310,1 -- Look deeper into Leyara's memories 1/1
+    .skipgossip
+step
+    .isQuestTurnedIn 29203
+    >>Click the Quest Turn in Pop-Up in your Questlog.
+    .turnin 29310 >> Turn in The Tipping Point
+    .accept 29311 >> Accept The Rest is History
+step
+    #optional
+    #completewith next
+    .isOnQuest 29311
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29311
+    .goto 338,47.022,91.368
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .turnin 29311 >> Turn in The Rest is History
+    .target Malfurion Stormrage
+--Complete Filling the Moonwell
+
+step
+    #optional
+    .isQuestTurnedIn 29284
+    .isQuestTurnedIn 29282
+    .isQuestTurnedIn 29311
+    .goto 338,46.932,90.984
+    +Congratulations on unlocking all of the Molten Front! Continue to complete either (|cRXP_ENEMY_2.5|r - The Molten Front + Druids) or (|cRXP_PICK_2.5|r - The Molten Front + Wardens) to earn more |T513195:0|t[Marks of the World Tree]
+    >>|cRXP_FRIENDLY_Zen'Vorka|r sells |T133654:0|t[|cRXP_FRIENDLY_Zen'Vorka's Cache|r] for 30 |T513195:0|t[Marks of the World Tree] which can contain a random green quality item or the rare companion |T294481:0|t[|cFF0070FFScorched Stone|r]
+    .target Zen'Vorka
 step
     .isQuestAvailable 29214
     #label DruidEnd
     +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
 step
     .isQuestTurnedIn 29214
-    +|cRXP_WARN_You have unlocked the [The Shadow Wardens] daily quests. You have the choice of either completing quests for Druids of the Talon or The Shadow Wardens. If you wish to complete quests for Druids of the Talon, reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) or (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) tomorrow if you wish to complete The Shadow Wardens quests. Both yield the same amount of|r |T513195:0|t[Marks of the World Tree]
+    +|cRXP_WARN_You have unlocked [The Shadow Wardens] daily quests. You have the choice of either completing quests for Druids of the Talon or The Shadow Wardens. If you wish to complete quests for Druids of the Talon, reload this same guide tomorrow (|r|cRXP_ENEMY_2.5|r - The Molten Front + Druids|cRXP_WARN_) or (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) tomorrow if you wish to complete The Shadow Wardens quests. Both yield the same amount of|r |T513195:0|t[Marks of the World Tree]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -4441,13 +4606,173 @@ step
     .target Damek Bloombeard
 --Complete Additional Armaments unlock
 
+--Filling the Moonwell unlock
 step
-    #label WardenEnd
-    +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
-
-step << skip
     .goto 338,44.087,86.321
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
     .accept 29279 >>Accept Filling the Moonwell
     .target Ayla Shadowstorm
+step
+    #optional
+    #completewith next
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isQuestComplete 29279
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .turnin 29279 >> Turn in Filling the Moonwell
+    .accept 29280 >> Accept Nourishing Waters
+    .target Matoclaw
+step
+    .isQuestTurnedIn 29279
+    .goto 198,27.170,62.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
+    .accept 29280 >> Accept Nourishing Waters
+    .target Matoclaw
+step
+    #optional
+    #completewith next
+    .isOnQuest 29280
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29280
+    .goto 338,44.087,86.321
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayla Shadowstorm|r
+    .target Ayla Shadowstorm
+    .turnin 29280 >>Turn in Nourishing Waters
+step
+    .isQuestTurnedIn 29280
+    .goto 338,47.022,91.368
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .target Malfurion Stormrage
+    .accept 29203 >> Accept Into the Depths
+step
+    .isOnQuest 29203
+    #completewith next
+    .goto 338,57.491,49.532,15 >>Enter the Igneous Depths
+step
+    .isOnQuest 29203
+    .goto 338,64.615,59.216
+    >>Kill |cRXP_ENEMY_Leyara|r
+    .complete 29203,1 -- Leyara slain 1/1
+    .mob Leyara
+step
+    .isQuestComplete 29203
+    #completewith next
+    .goto 338,57.491,49.532,15 >>Exit the Igneous Depths
+    .subzoneskip 5741,1
+step
+    .isQuestComplete 29203
+    .goto 338,47.022,91.368
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .target Malfurion Stormrage
+    .turnin 29203 >> Turn in Into the Depths
+step
+    .isQuestTurnedIn 29203
+    >>|cRXP_WARN_You will have now received mail from |cRXP_FRIENDLY_Theresa Barkskin|r with a|r |T514925:0|t[|cRXP_LOOT_Smoke-Stained Locket|r]
+    .use 69854 >>|cRXP_WARN_Use the|r |T514925:0|t[|cRXP_LOOT_Smoke-Stained Locket|r] |cRXP_WARN_to start the quest|r
+    .collect 69854,1,29298,1 -- Smoke-Stained Locket (1)
+    .accept 29298 >> Accept A Smoke-Stained Locket
+step
+    #optional
+    #completewith SecretsWithin
+    .goto 338,53.026,83.693
+    .zone 198 >> Take the Portal to Mount Hyjal
+    .zoneskip 338,1
+step
+    .isQuestTurnedIn 29203
+    #completewith next
+    .zone Moonglade >> Travel to Moonglade
+step
+    #label SecretsWithin
+    .isQuestTurnedIn 29203
+    .goto Moonglade,51.685,45.098
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rabine Saturna|r
+    .turnin 29298 >> Turn in A Smoke-Stained Locket
+    .accept 29302 >> Accept Unlocking the Secrets Within
+    .timer 42,Unlocking the Secrets Within RP
+    .target Rabine Saturna
+step
+    .isQuestTurnedIn 29203
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 29302,1 -- Look into Leyara's memories 1/1
+step
+    .isQuestTurnedIn 29203
+    .goto Moonglade,51.685,45.098
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rabine Saturna|r
+    .turnin 29302 >> Turn in Unlocking the Secrets Within
+    .accept 29303 >> Accept Tragedy and Family
+    .target Rabine Saturna
+step
+    .isOnQuest 29303
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .isOnQuest 29303
+    .goto Ashenvale,40.501,53.281
+    .cast 6247 >> Click the |cRXP_PICK_Night Elf Grave|r
+    .timer 48,Tragedy and Family RP
+    .skipgossip
+step
+    .isOnQuest 29203
+    .goto Ashenvale,40.501,53.281
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 29303,1 -- Look deeper into Leyara's memories 1/1
+    .skipgossip
+step
+    .isQuestTurnedIn 29203
+    >>Click the Quest Turn in Pop-Up in your Questlog.
+    .turnin 29303 >> Turn in Tragedy and Family
+    .accept 29310 >> Accept The Tipping Point
+step
+    .isOnQuest 29310
+    #completewith next
+    .zone 198 >> Travel to Mount Hyjal
+step
+    .isOnQuest 29310
+    .goto 198,7.561,34.582
+    .cast 6247 >> Click the |cRXP_PICK_Small Gravestone|r
+    .timer 59,The Tipping Point RP
+    .skipgossip
+step
+    .isOnQuest 29310
+    .goto 198,7.561,34.582
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 29310,1 -- Look deeper into Leyara's memories 1/1
+    .skipgossip
+step
+    .isQuestTurnedIn 29203
+    >>Click the Quest Turn in Pop-Up in your Questlog.
+    .turnin 29310 >> Turn in The Tipping Point
+    .accept 29311 >> Accept The Rest is History
+step
+    #optional
+    #completewith next
+    .isOnQuest 29311
+    .goto 198,27.484,56.394
+    .zone 338 >> Go through the Portal to the Firelands
+step
+    .isOnQuest 29311
+    .goto 338,47.022,91.368
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .turnin 29311 >> Turn in The Rest is History
+    .target Malfurion Stormrage
+--Complete Filling the Moonwell
+
+step
+    #optional
+    .isQuestTurnedIn 29284
+    .isQuestTurnedIn 29282
+    .isQuestTurnedIn 29311
+    .goto 338,46.932,90.984
+    +Congratulations on unlocking all of the Molten Front! Continue to complete either (|cRXP_ENEMY_2.5|r - The Molten Front + Druids) or (|cRXP_PICK_2.5|r - The Molten Front + Wardens) to earn more |T513195:0|t[Marks of the World Tree]
+    >>|cRXP_FRIENDLY_Zen'Vorka|r sells |T133654:0|t[|cRXP_FRIENDLY_Zen'Vorka's Cache|r] for 30 |T513195:0|t[Marks of the World Tree] which can contain a random green quality item or the rare companion |T294481:0|t[|cFF0070FFScorched Stone|r]
+    .target Zen'Vorka
+
+step
+    #label WardenEnd
+    +|cRXP_WARN_You have completed all the available daily quests for today. Reload this same guide tomorrow (|r|cRXP_PICK_2.5|r - The Molten Front + Wardens|cRXP_WARN_) to continue completing the daily quests until you have acquired enough|r |T513195:0|t[Marks of the World Tree]
 ]])
