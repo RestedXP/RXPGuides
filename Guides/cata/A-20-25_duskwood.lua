@@ -167,6 +167,9 @@ step
     .accept 26689 >>Accept The Rotting Orchard
 	.target Calor
 step
+    #optional
+    .maxlevel 25,endOfTheGuide
+step
     .goto 47,79.53,47.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori|r
     .accept 26683 >>Accept Look To The Stars
@@ -239,6 +242,9 @@ step
     .turnin 26645 >>Turn in The Night Watch
     .accept 26686 >>Accept Bones That Walk
 	.target Commander Althea Ebonlocke
+step
+    #optional
+    .maxlevel 25,endOfTheGuide
 step
 #optional
 	#completewith next
@@ -340,6 +346,9 @@ step
     .accept 26680 >>Accept Ogre Thieves
 	.target Abercrombie
 step
+    #optional
+    .maxlevel 25,endOfTheGuide
+step
     #completewith JPages
     >>Kill |cRXP_ENEMY_Nightbane Vile Fangs|r and |cRXP_ENEMY_Nightbane Tainted Ones|r
     .complete 26690,1 --8/8 Nightbane Vile Fang slain
@@ -431,6 +440,9 @@ step
     .accept 26717 >>Accept The Yorgen Worgen
     .goto 47,44.92,67.43
 	.target +Apprentice Fess
+step
+    #optional
+    .maxlevel 25,endOfTheGuide
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Corpseweeds|r. Loot them for their |cRXP_LOOT_Corpseweed|r
@@ -578,6 +590,9 @@ step
 	.target Sven Yorgen
 	.target Sister Elsington
 step
+    #optional
+    .maxlevel 25,endOfTheGuide
+step
     .goto Duskwood,21.08,56.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_John Shelby|r
     .target John Shelby
@@ -633,6 +648,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 26680 >>Turn in Ogre Thieves
 	.target Abercrombie
+step
+    #optional
+    .maxlevel 25,endOfTheGuide
 step
     .goto 47,87.43,35.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
@@ -855,6 +873,9 @@ step
     .target Sister Elsington
     .turnin 26778 >>Turn in The Cries of the Dead
     .accept 26838 >>Accept Rebels Without a Clue
+step
+    #optional
+    #label endOfTheGuide
 step
     .goto 50,51.88,12.10
     .zone 50 >> Travel to Northern Stranglethorn

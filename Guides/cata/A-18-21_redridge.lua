@@ -284,6 +284,16 @@ step
     .zone Redridge Mountains >> Travel to Redridge Mountains
     .isQuestAvailable 26504
 step
+    #optional
+    .goto Redridge Mountains,29.405,53.770
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fp Lakeshire >> Get the Lakeshire flight path
+    .target Ariena Stormfeather
+    .xp <21,1
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
+step
     .goto 49,16.032,64.633
     >>Click the |cRXP_PICK_Wanted Poster|r 
     .accept 26504 >>Accept WANTED: Redridge Gnolls
@@ -522,6 +532,9 @@ step
     .target Ariena Stormfeather
 step
     #optional
+    .maxlevel 20,endOfTheGuide
+step
+    #optional
     .goto 49,28.344,48.874
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shawn|r
     .accept 26508 >>Accept Nida's Necklace
@@ -611,6 +624,9 @@ step
     .accept 26514 >>Accept Canyon Romp
 --TODO: Quest is an auto turnin/pickup from the quest log, research how to automate it
 --XX     >>|cRXP_WARN_Click the pop-up in your questlog|r
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
 step
     #sticky
     #label DirtScroll
@@ -873,6 +889,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
     .turnin 26509 >>Turn in An Unwelcome Guest
     .target Martie Jainrose
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
 step
     #loop
     .goto 49,19.760,47.282,0
@@ -1925,4 +1944,7 @@ step
     .turnin 26726 >>Turn in Triumphant Return
 	.target Magistrate Solomon
 ------End of optional Keeshan questline
+step
+    #optional
+    #label endOfTheGuide
 ]])

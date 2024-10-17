@@ -132,6 +132,10 @@ step
     .accept 13528 >>Accept Buzzbox 723
 	.target Wizbang Cranktoggle
 step
+    #xprate >1.59
+    #optional
+    .maxlevel 18,DarkshoreEnd
+step
     .goto 62,50.90,18.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r |cFFfa9602patrolling up and down the stairs in the Inn.|r
     .turnin 13520 >>Turn in The Boon of the Seas
@@ -406,6 +410,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alinya|r
     .target Priestess Alinya
     .turnin 13601 >>Turn in In Aid of the Refugees
+step
+    #xprate >1.59
+    #optional
+    .maxlevel 18,DarkshoreEnd
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r and |cRXP_FRIENDLY_Corvine Moonrise|r
     .accept 13542 >>Accept Against the Wind
@@ -698,11 +706,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dular|r
     .trainer >> Train your class spells
     .target Dular
-
 step
     #optional
     .maxlevel 18,DarkshoreEnd
-
 step
 #requires glynda2
     .goto 62,58.912,19.448
@@ -994,7 +1000,7 @@ step << Druid
     .target Dular
 step
     #optional
-    .maxlevel 18,DarkshoreEnd
+    #label DarkshoreEnd
 
 --NORTHERN DARKSHORE END
 step
