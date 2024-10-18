@@ -454,9 +454,14 @@ step
     .mob Suffering Highborne
     .mob Anguished Highborne
 step
-    #completewith next
+    #completewith FelElemRod
     .subzone 2256 >>Travel to Darkwhisper Gorge in |cFFfa9602Winterspring|r
 step
+    #hardcore
+    #completewith next
+    +|cRXP_WARN_Be careful! You will encounter level 60 mobs on the way to|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Avoid them as much as possible|r
+step
+    #label FelElemRod
     .goto Winterspring,58.87,78.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vi'el|r
     >>|cRXP_BUY_Buy a|r |T135155:0|t[|cRXP_LOOT_Fel Elemental Rod|r] |cRXP_BUY_from him|r
@@ -513,9 +518,15 @@ step
     .target Mux Manascrambler
 step
     #optional
-    #completewith next
+    #completewith FelElemRod2
     .subzone 2256 >>Travel to Darkwhisper Gorge in |cFFfa9602Winterspring|r
 step
+    #optional
+    #hardcore
+    #completewith next
+    +|cRXP_WARN_Be careful! You will encounter level 60 mobs on the way to|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Avoid them as much as possible|r
+step
+    #label FelElemRod2
     #optional --user should already have bought this during .complete 8924,2 earlier in Winterspring
     .goto Winterspring,58.87,78.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vi'el|r
@@ -876,8 +887,16 @@ step
     .accept 8948 >>Accept Anthion's Old Friend
     .target Anthion Harmon
 step
+    #softcore
     #completewith AnthionsFriend
     .zone Feralas >>Travel to |cFFfa9602Feralas|r
+    >>|cRXP_WARN_This next section takes place in Dire Maul. It is possible to solo but grouping up is strongly recommended|r
+    .subzoneskip 2557
+step
+    #hardcore
+    #completewith AnthionsFriend
+    .zone Feralas >>Travel to |cFFfa9602Feralas|r
+    >>|cRXP_WARN_This next section takes place in Dire Maul. Make sure you have a group ready of at least 3 players|r
     .subzoneskip 2557
 step
     #completewith AnthionsFriend
@@ -933,7 +952,7 @@ step
     .itemcount 18249,<1 << !Rogue --Crescent Key
     .skill lockpicking,300,1 << Rogue
  step
-    #completewith AnthionsFriend
+    #completewith AnthionsFriend2
     .goto Kalimdor,42.98,67.73,20 >>Enter the Western entrance of Dire Maul
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
@@ -1250,7 +1269,6 @@ step
 step << Alliance
     #completewith next
     .subzone 3197 >>Travel to Chillwind Camp in |cFFfa9602Western Plaguelands|r
-
 step << Alliance
     .goto Western Plaguelands,42.84,83.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Quartermaster Lightspark|r
@@ -1701,6 +1719,7 @@ step
     .goto Dustwallow Marsh,76.56,22.15,50,0
     .goto Dustwallow Marsh,75.49,21.75,50,0
     >>Kill |cRXP_ENEMY_Strashaz Naga|r (elite). Loot them for their |cRXP_LOOT_Bloodkelp|r
+    >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8970,1 --Bloodkelp (x20)
     .mob Strashaz Warrior
     .mob Strashaz Myrmidon
