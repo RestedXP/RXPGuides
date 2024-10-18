@@ -2724,6 +2724,12 @@ step
     .disablecheckbox
     .target Tholo Whitehoof
     .questcount <1,29273,29274
+step
+    .isQuestComplete 29265
+    .goto 338,36.299,56.344
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Choluna|r
+    .dailyturnin 29265 >>Turn in Fire Flowers
+    .target Choluna
 step -- Ricket @ DRUIDS
     .isQuestTurnedIn 29282
     .goto 338,36.251,56.586
@@ -2731,12 +2737,6 @@ step -- Ricket @ DRUIDS
     >>|cRXP_WARN_Skip this step if she is not here|r
     .daily 29263,29278,29295,29297 >> Accept whichever random daily quest is offered
     .target Ricket
-step
-    .isQuestComplete 29265
-    .goto 338,36.299,56.344
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Choluna|r
-    .dailyturnin 29265 >>Turn in Fire Flowers
-    .target Choluna
 step
     .isQuestTurnedIn 29181
     .goto 338,34.496,56.208
@@ -2809,7 +2809,7 @@ step
     .goto 338,16.7,39.4,70,0
     >>Click the |cRXP_FRIENDLY_Injured Druids of the Talon|r
     .complete 29293,1 -- Druids of the Talon rescued (5)
-    .target Druid of the Talon
+    .target Injured Druid of the Talon
 step -- 29295 The Bigger They Are -- DRUIDS ONLY
     .isOnQuest 29295
     #sticky
