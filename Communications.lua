@@ -563,7 +563,7 @@ Arrow data
 %s%s
 ```
 ]], L("Describe your issue:"), L("Do not edit below this line"),
-                        character or "Error", zone or "Error", guide or "Error",
+                        character or "Error", zone or "Error", guide and guide:gsub("|","||") or "Error",
                         addon.release, addon.settings.profile.xprate,
                         GetLocale(), select(1, GetBuildInfo()), select(2,
                                                                        BNGetInfo()) ~=
