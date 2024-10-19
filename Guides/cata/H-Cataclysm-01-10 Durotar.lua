@@ -1979,6 +1979,9 @@ step
     .vendor >> Vendor trash and repair
     .target Wuark
 step
+    #optional
+    .maxlevel 9,FlyORG
+step
     #completewith next
     .goto 1411,50.86,42.26,40,0
     .goto 1411,49.58,40.51,12 >> Travel toward the watchtower
@@ -2416,6 +2419,9 @@ step
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Burok
     .xp <10,1
+step
+    #optional
+    .abandon 25227 >>Abandon Thonk
 
     --Next section if user isn't lvl 10 yet
 

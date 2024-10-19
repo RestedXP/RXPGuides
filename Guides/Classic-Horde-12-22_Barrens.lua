@@ -4188,7 +4188,8 @@ step
     #completewith Thunderhawk
     .goto The Barrens,44.55,59.27,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
-    +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
+    +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r << Tauren/Shaman/Orc Warrior/Troll Warrior
+    +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r << !Tauren !Shaman !Warrior/Undead
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
     .target Mangletooth
 step
@@ -4323,16 +4324,6 @@ step
     .use 5102
     .unitscan Owatanka
 step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Owatanka|r. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]
-    >>|cRXP_WARN_Use the |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r] to start the quest|r
-    >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
-    >>|cRXP_WARN_Skip this step for now if you can't find him|r
-    .collect 5102,1,884,1 --Collect Owatanka's Tailspike
-    .accept 884 >>Accept Owatanka
-    .use 5102
-    .unitscan Owatanka
-step
     .goto The Barrens,44.83,63.12,60,0
     .goto The Barrens,46.57,61.33,60,0
     .goto The Barrens,48.99,58.69,60,0
@@ -4360,26 +4351,28 @@ step
     .accept 874 >>Accept Mahren Skyseer
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
-step << !Tauren
+step << !Tauren !Shaman !Warrior/Undead
+    .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
-step << !Tauren
+step << !Tauren !Shaman !Warrior/Undead
     #completewith next
     .goto Mulgore,68.68,60.34,120,0
     .zone Mulgore >>Travel into Mulgore
-step << !Tauren
+step << !Tauren !Shaman !Warrior/Undead
     #completewith DeathDUPpickup
     .goto Thunder Bluff,31.78,65.92
     .zone Thunder Bluff >>Take the lift into Thunder Bluff
     >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
-step << Tauren
+step << Tauren/Shaman/Orc Warrior/Troll Warrior
     #completewith DeathDUPpickup
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Omusa Thunderhorn
+    .zoneskip Thunder Bluff
 step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
@@ -4398,7 +4391,7 @@ step << Rogue
 step << Rogue
     .goto Thunder Bluff,38.95,64.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
+    .collect 3137,200,6562,1 --Deadly Throwing Axe (200)
     .target Kuruk
 step
     .goto Thunder Bluff,47.12,57.88
@@ -4431,26 +4424,26 @@ step
     .accept 264 >> Until Death Do Us Part
     .target Clarice Foster
 step
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
     .accept 962 >> Accept Serpentbloom
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
     .dungeon WC
 step
     #optional
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .accept 962 >> Accept Serpentbloom
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .dungeon WC
 step
     #optional
     #label ZamahTurnin
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
 step << Priest
@@ -5272,7 +5265,7 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
+    .accept 1068 >>Accept Shredding Machines
     .goto The Barrens,35.26,27.88
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
     .turnin 6523 >>Turn in Protect Kaya
@@ -5289,7 +5282,7 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
+    .accept 1068 >>Accept Shredding Machines
     .goto The Barrens,35.26,27.88
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
     .goto The Barrens,35.19,27.79
@@ -5303,7 +5296,7 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
+    .accept 1068 >>Accept Shredding Machines
     .goto The Barrens,35.26,27.88
     .turnin 6523 >>Turn in Protect Kaya
     .accept 6401 >>Accept Kaya's Alive
@@ -5319,7 +5312,7 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
+    .accept 1068 >>Accept Shredding Machines
     .goto The Barrens,35.26,27.88
     .target Seereth Stonebreak
 step
@@ -11329,6 +11322,7 @@ step
     .target Jorn Skyseer
     .isQuestComplete 913
 step << !Tauren
+    .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
@@ -11380,24 +11374,24 @@ step << Rogue/Shaman
     .accept 264 >> Until Death Do Us Part
     .target Clarice Foster
 step
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
     .accept 962 >> Accept Serpentbloom
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
     .dungeon WC
 step
     #optional
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .accept 962 >> Accept Serpentbloom
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .dungeon WC
 step
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .isOnQuest 853
 step
@@ -12316,10 +12310,10 @@ step
     .target Magatha Grimtotem
 step
     #xprate <2.1
+    .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill << Rogue/Shaman
-    .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
 step << !Shaman !Rogue
     .goto Thunder Bluff,47.00,49.82

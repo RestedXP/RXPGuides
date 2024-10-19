@@ -2257,6 +2257,10 @@ step
     .target Foreman Stonebrow
     .isOnQuest 25933
 step
+    #xprate >1.59
+    #optional
+    .maxlevel 12,endOfTheGuide
+step
     .goto 27,76.314,54.672
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 432 >>Accept Those Blasted Troggs!
@@ -2386,6 +2390,10 @@ step
     .goto 27,82.854,48.409
     .target +Sergeant Bahrum
 step
+    #xprate >1.59
+    #optional
+    .maxlevel 12,endOfTheGuide
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khurgorn Singefeather|r and |cRXP_FRIENDLY_Sergeant Bahrum|r
     .accept 25979 >>Accept Dealing with the Surge
     .goto 27,82.642,48.295
@@ -2478,7 +2486,9 @@ step
     .turnin 25997 >>Turn in Dark Iron Scheming
     --.accept 25998 >>Accept Get to the Airfield << !Human
     .target Sergeant Bahrum
-
+step
+    #optional
+    .maxlevel 12,endOfTheGuide
 step
     #optional
     #completewith next
@@ -2518,6 +2528,9 @@ step
     .turnin 26855 >>Turn in A Pilot's Revenge
     .accept 13635 >>Accept South Gate Status Report
     .target Pilot Hammerfoot
+step
+    #optional
+    #label endOfTheGuide
 step
     .goto 48,16.385,58.564,30,0
     .goto 48,19.511,62.766,30,0

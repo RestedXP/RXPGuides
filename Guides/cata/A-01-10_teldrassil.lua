@@ -456,6 +456,10 @@ step
     .accept 2459 >>Accept Ferocitas the Dream Eater
 	.target Tallonkai
 step
+    #xprate >1.59
+    #optional
+    .maxlevel 10,Teldskip
+step
     #loop
     .goto 57,57.48,48.54,50,0
     .goto 57,58.21,49.79,50,0
@@ -600,6 +604,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .turnin 932 >>Turn in Twisted Hatred
 	.target Tallonkai Swiftroot
+step
+    #xprate >1.59
+    #optional
+    .maxlevel 10,Teldskip
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Athridas Bearmantle|r and |cRXP_FRIENDLY_Sentinel Kyra Starsong|r
     .accept 483 >>Accept The Relics of Wakening
