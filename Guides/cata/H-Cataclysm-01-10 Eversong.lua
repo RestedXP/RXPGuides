@@ -493,6 +493,7 @@ step << !Undead
     .turnin 8350 >>Turn in Completing the Delivery << BloodElf
     .home >>Set your Hearthstone to Falconwing Square
     .target Innkeeper Delaniel
+    .isQuestAvailable 8885
 step << !Undead
     #completewith next
     .goto Eversong Woods,47.823,47.696,8,0

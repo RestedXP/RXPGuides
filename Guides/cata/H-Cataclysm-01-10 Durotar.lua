@@ -1688,6 +1688,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grosk|r
     .home >> Set your Hearthstone to Razor Hill
     .target Innkeeper Grosk
+    .isQuestAvailable 2517
 step
     .goto 1411,52.04,43.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r on the top floor

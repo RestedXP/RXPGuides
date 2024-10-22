@@ -1198,6 +1198,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimy Greasefingers|r
     .home >> Set your hearthstone to Bilgewater Harbor
     .target Grimy Greasefingers
+    .subzoneskip 4821,1
 step << Rogue
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stinky Shapshiv|r
@@ -2150,6 +2151,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Blitz Blastospazz|r
     .fp >>Get the Bitter Reaches Flight Path
     .target Blitz Blastospazz
+    .isQuestAvailable 14261
 step
     .goto 76,66.551,20.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalec|r

@@ -955,6 +955,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimy Greasefingers|r
     .home >>Set your Hearthstone to Town-In-A-Box
     .target Grimy Greasefingers
+    .isQuestAvailable 24925
 step << Priest
     .goto 174,45.586,65.375
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Goldskimmer|r
