@@ -6166,12 +6166,14 @@ step << Rogue
     .use 8051
     .target Taskmaster Fizzule
 step << Rogue
-    #label MissionProbable
     .goto The Barrens,55.44,5.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Taskmaster Fizzule|r
     .turnin 2458 >>Turn in Deep Cover
     .accept 2478 >>Accept Mission: Possible But Not Probable
     .target Taskmaster Fizzule
+step << Rogue/Druid
+    #optional
+    #label MissionProbable
 step << Rogue
     .goto The Barrens,54.80,5.97
     >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Foreman Silixiz|r for his |cRXP_LOOT_Tower Key|r

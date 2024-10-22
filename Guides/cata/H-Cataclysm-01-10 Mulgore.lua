@@ -882,6 +882,9 @@ step << skip
     .home >>Set your hearthstone to Thunder Bluff
     .target Innkeeper Pala
 step
+    #optional
+    .maxlevel 9,MulgoreEnd
+step
     #xprate >1.19
     #completewith next
     .goto 1456/1,183.30000,-1314.09998,20 >>Take the elevator to exit Thunder Bluff
@@ -1192,6 +1195,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your hearthstone to Thunder Bluff
     .target Innkeeper Pala
+    .isQuestAvailable 24540
 step
     #xprate <1.2
     #completewith next
@@ -1223,23 +1227,44 @@ step << Tauren
     .goto 88,47.05,49.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Turn in Tal the Wind Rider Master
-    .gossipoption 111516 >> Fly to Orgrimmar
-    .target Tal
-    .zoneskip Orgrimmar
-step << !Tauren
-    #xprate <1.2
-    .goto 88,47.05,49.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .gossipoption 111516 >> Fly to Orgrimmar
     .target Tal
     .zoneskip Orgrimmar
 step
-    #xprate >1.19
+    #optional
+    #label MulgoreEnd
+step << !Tauren
+    .goto 88,47.05,49.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Orgrimmar >> Fly to Orgrimmar
+    .target Tal
+    .zoneskip Thunder Bluff,1
+step << Tauren
+    .goto 88,47.05,49.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .gossipoption 111516 >>Fly to Orgrimmar
+    .target Tal
+    .zoneskip Thunder Bluff,1
+step
     .goto 7,47.44,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tak
-    .zoneskip Orgrimmar
+    .zoneskip Mulgore,1
+step
+    #optional
+    .abandon 743 >>Abandon Dangers of the Windfury
+step
+    #optional
+    .abandon 14491 >>Abandon The Restless Earth
+step
+    #optional
+    .abandon 24456 >>Abandon Thunderhorn Cleansing
+step
+    #optional
+    .abandon 11129 >>Abandon Kyle's Gone Missing!
+step
+    #optional
+    .abandon 6364 >>Abandon Return to Varg
 step
     #xprate <1.2
     #completewith next

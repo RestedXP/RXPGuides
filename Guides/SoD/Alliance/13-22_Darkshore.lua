@@ -210,7 +210,7 @@ step << Warlock/Mage
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
     .itemcount 220792,1 << Mage --Skips if you don't have a Scroll of Spatial Mending
     .use 223148 << Warlock --Otherworldy Treasure
-    .use 220792 << Mage 
+    .use 220792 << Mage
     .train 428878,1 << Mage
     .train 427733,1 << Warlock
     .train 1120,3 << Warlock --Skips if you don't have drain soul
@@ -809,7 +809,7 @@ step << skip --logout skip !Warrior !Rogue
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Kill the Moonkin Oracle inside and jump on top of the large mushroom at the back of the cave, then perform a Logout Skip by logging out and back in|r
 
 
-----Start of SoD Druid Starsurge segment----    
+----Start of SoD Druid Starsurge segment----
 
 step << Druid
     #optional
@@ -1680,7 +1680,7 @@ step << !sod/Warrior/Rogue/Priest
     .waypoint 1439,43.104,62.563,50,0
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r 
+    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
     >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
     .complete 963,1 --Anaya's Pendant (1)
@@ -2798,10 +2798,10 @@ step << !Priest
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
-    #season 2   
+    #season 2
     #completewith OnuSoD
     .goto 1439,43.555,76.293,80 >> Travel to the Grove of the Ancients
-step    
+step
     #season 2
     #label OnuSoD
     .goto 1439,43.555,76.293
@@ -3227,7 +3227,7 @@ step << Warrior
     .collect 928,1
     .target Ariyell Skyshadow
     .money <0.9860
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.16 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.16
 step << Warrior
     #season 2
     #completewith next
@@ -3295,7 +3295,7 @@ step << Rogue
     .collect 2209,2
     .target Ariyell Skyshadow
     .money <0.9860
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .isQuestComplete 741
 step << Rogue
     #season 2
@@ -3323,7 +3323,7 @@ step << Priest
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maethra Slagheart|r
     .turnin 78192 >> Turn in Secrets of the Light
-    .accept 78193 >> Accept Secrets of the Light 
+    .accept 78193 >> Accept Secrets of the Light
     .target Maethra Slagheart
 step << !Druid !Hunter
     #season 2
@@ -3517,8 +3517,8 @@ step << Druid/Hunter
     #optional
     .hs >> Hearth to Darkshore
     .zoneskip Darkshore
-    
-    
+
+
 ----End of Druid Quest+SoD rune section----
 
 
@@ -3542,8 +3542,8 @@ step << Priest
     .zoneskip Westfall
     .dungeon !DM
 
-    
-----End of SoD 250% xp buff early southern Darkshore one loop----    
+
+----End of SoD 250% xp buff early southern Darkshore one loop----
 
 ]])
 
@@ -5229,7 +5229,7 @@ step << Rogue
     .goto StormwindClassic,39.834,54.360
     >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
     >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
     .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
     .zoneskip Teldrassil
     .zoneskip Darnassus

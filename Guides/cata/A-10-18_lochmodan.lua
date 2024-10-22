@@ -13,7 +13,9 @@ RXPGuides.RegisterGuide([[
 
 <<Alliance
 
-
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
 step
     #completewith next
     .goto 48,21.398,66.390,30,0
@@ -166,6 +168,9 @@ step
     .turnin 26176 >>Turn in Onward to Thelsamar
     .accept 26842 >>Accept Out of Gnoll-where
     .accept 13636 >>Accept Stormpike's Orders
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
 step
     .goto 48,35.536,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
@@ -384,6 +389,9 @@ step
     .turnin 26860 >>Turn in Thelsamar Blood Sausages
     .target +Vidra Hearthstove
     .goto 48,34.827,49.285
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
 step << Paladin
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
@@ -505,6 +513,9 @@ step
     .turnin 13656 >>Turn in Explorers' League Document (1 of 6)
     .turnin 13655 >>Turn in Explorers' League Document (2 of 6)
     .target Torren Squarejaw
+step
+    #optional
+    .maxlevel 20,endOfTheGuide
 step
     .isOnQuest 26868
     .use 60681 >> |cRXP_WARN_Open|r |T133639:0|t[Cannary's Cache] |cRXP_WARN_for the|r |T237425:0|t[|cRXP_LOOT_Clever Plant Disguise Kit|r] |cRXP_WARN_and|r |T134839:0|t[|cRXP_LOOT_Potent Murloc Pheromones|r]
@@ -761,6 +772,9 @@ step
     .turnin 27031 >>Turn in Wing Nut
     .accept 27032 >>Accept Bird is the Word
 step
+    #optional
+    .maxlevel 20,endOfTheGuide
+step
     #completewith next
     >>Kill |cRXP_ENEMY_Bobcats|r
     .complete 27026,1
@@ -854,6 +868,9 @@ step
     .turnin 13659 >>Turn in Explorers' League Document (6 of 6)
     .accept 13661 >>Accept Heartfelt Appreciation
     .turnin 13661 >>Turn in Heartfelt Appreciation
+step
+    #optional
+    #label endOfTheGuide
 step << Paladin
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r

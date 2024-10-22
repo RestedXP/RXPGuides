@@ -613,6 +613,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
     .home >>Set your hearthstone to Brill
     .target Innkeeper Renee
+    .isQuestAvailable 6323
 step << Undead
     .goto 18,58.84,51.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anette|r

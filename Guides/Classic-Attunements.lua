@@ -316,9 +316,19 @@ step
     >>|cRXP_WARN_If you have|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_or|r |T132917:0|t[Light Feathers]|cRXP_WARN_, you can use them to gain|r |T135992:0|t[Slow Fall] |cRXP_WARN_or|r |T135928:0|t[Levitate] |cRXP_WARN_to make the jump easier|r << Priest
     .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_Click here for video reference|r
 step
+    #softcore
     .isQuestTurnedIn 6403
     .goto Winterspring,54.54,51.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haleh|r
+    >>|cRXP_WARN_Be careful of the blue circle in front of |cRXP_FRIENDLY_Haleh|r. Stepping on it will teleport you into the cave|r
+    .turnin 6502 >>Turn in Drakefire Amulet
+    .target Haleh
+step
+    #hardcore
+    .isQuestTurnedIn 6403
+    .goto Winterspring,54.54,51.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haleh|r
+    >>|cRXP_WARN_Be careful! DO NOT step on the blue circle in front of |cRXP_FRIENDLY_Haleh|r. This will teleport you into the cave with an elite dragon and you could DIE|r
     .turnin 6502 >>Turn in Drakefire Amulet
     .target Haleh
 
@@ -506,10 +516,16 @@ step
     #completewith next
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
-    #completewith next
+    #completewith Emberstrife1
     .goto Dustwallow Marsh,54.37,84.22
     .subzone 2158 >>Enter Emberstrife's Den
 step
+    #hardcore
+    #completewith next
+    .cast 19937 >>|cRXP_WARN_Be careful! Make sure you use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_BEFORE you approach |cRXP_ENEMY_Emberstrife|r or he might KILL you|r
+    .use 16787
+step
+    #label Emberstrife1
     .goto Dustwallow Marsh,56.67,87.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r
     .use 16787 >>|cRXP_WARN_Use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_to disguise yourself|r
@@ -546,6 +562,7 @@ step
 step
     .goto Winterspring,52.91,55.77
     >>Kill |cRXP_ENEMY_Scryer|r in the back of the cave. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_WARN_Be careful of his|r |T135848:0|t[Frost Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     .complete 6582,1 --The Skull of Scryer 1/1
     .unitscan Scryer
 step
@@ -567,6 +584,7 @@ step
     .goto Swamp of Sorrows,85.42,63.68,50,0
     .goto Swamp of Sorrows,86.68,55.89,50,0
     >>Kill |cRXP_ENEMY_Somnus|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_WARN_Be careful of his|r |T136007:0|t[Corrosive Acid Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     >>|cRXP_WARN_He patrols in a small circle south/east of the lake|r
     .complete 6583,1 --The Skull of Somnus 1/1
     .unitscan Somnus
@@ -580,6 +598,7 @@ step
 step
     .goto Tanaris,64.85,50.52
     >>Kill |cRXP_ENEMY_Chronalis|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_WARN_Be careful of his|r |T135831:0|t[Sand Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     .complete 6584,1 --The Skull of Chronalis 1/1
     .unitscan Chronalis
 step
@@ -588,10 +607,17 @@ step
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
     #requires SkullofDragons
-    #completewith next
+    #completewith Emberstrife2
     .goto Dustwallow Marsh,54.37,84.22
     .subzone 2158 >>Enter Emberstrife's Den
 step
+    #requires SkullofDragons
+    #hardcore
+    #completewith next
+    .cast 19937 >>|cRXP_WARN_Be careful! Make sure you use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_BEFORE you approach |cRXP_ENEMY_Emberstrife|r or he might KILL you|r
+    .use 16787
+step
+    #label Emberstrife2
     #requires SkullofDragons
     .goto Dustwallow Marsh,56.67,87.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r
@@ -616,16 +642,23 @@ step
     .goto Wetlands,83.47,48.78,30,0
     .goto Wetlands,85.61,50.89,30,0
     >>Kill |cRXP_ENEMY_Axtroz|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_WARN_Be careful of his|r |T135831:0|t[Flame Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     .complete 6585,1 --The Skull of Axtroz 1/1
     .unitscan Axtroz
 step
     #completewith next
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
-    #completewith next
+    #completewith Emberstrife3
     .goto Dustwallow Marsh,54.37,84.22
     .subzone 2158 >>Enter Emberstrife's Den
 step
+    #hardcore
+    #completewith next
+    .cast 19937 >>|cRXP_WARN_Be careful! Make sure you use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_BEFORE you approach |cRXP_ENEMY_Emberstrife|r or he might KILL you|r
+    .use 16787
+step
+    #label Emberstrife3
     .goto Dustwallow Marsh,56.67,87.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r
     .use 16787 >>|cRXP_WARN_Use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_to disguise yourself|r
@@ -766,11 +799,16 @@ step
     .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
+    #softcore
     >>Take a right before entering the The Exyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molton Core|r instance portal
     >>|cRXP_WARN_The fastest way to get here is by doing the 'Lava skip'. This starts from the platform of|r |cRXP_ENEMY_Lord Incendius|r
     --.link >> |cRXP_WARN_Click here for video reference|r
     .complete 7848,1 --Core Fragment 1/1
     --VV TODO: Lava skip video
+step
+    #hardcore
+    >>Take a right before entering the The Exyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molton Core|r instance portal
+    .complete 7848,1 --Core Fragment 1/1
 step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
@@ -795,6 +833,18 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
+    #hardcore
+    .goto Eastern Kingdoms,48.94,63.92,10,0
+    .goto Eastern Kingdoms,49.01,64.12,10,0
+    .goto Eastern Kingdoms,49.12,64.09
+    .use 18987 >>Kill the |cRXP_ENEMY_Scarshield Quartermaster|r. Loot him for |T133473:0|t[|cRXP_LOOT_Blackhand's Command|r]. Use it to accept the quest
+    >>|cRXP_WARN_This is a strong level 55 elite. Do this with a group for safety|r
+    >>|cRXP_WARN_He is located in the hallway to the right of the Blackrock Spire instance portal|r
+    .collect 18987,1,7761 --Blackhand's Command 1/1
+    .accept 7761 >>Accept Blackhand's Command
+    .unitscan Scarshield Quartermaster
+step
+    #softcore
     .goto Eastern Kingdoms,48.94,63.92,10,0
     .goto Eastern Kingdoms,49.01,64.12,10,0
     .goto Eastern Kingdoms,49.12,64.09
@@ -866,9 +916,15 @@ step
     #completewith next
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
+    #softcore
     .goto Dustwallow Marsh,54.37,84.22
     .subzone 2158 >>Enter Emberstrife's Den
-    >>|cRXP_WARN_You will need a group of at least 3 players to complete this next section!|r
+    >>|cRXP_WARN_You will need a group of at least 3 players to complete this next section|r
+step
+    #hardcore
+    .goto Dustwallow Marsh,54.37,84.22
+    .subzone 2158 >>Enter Emberstrife's Den
+    >>|cRXP_WARN_You will need a group of at least 3 players to complete this next section, including a tank and healer for safety!|r
 step
     #completewith next
     .cast 16057 >>|cRXP_WARN_Place the|r |T133276:0|t[|cRXP_LOOT_Unforged Seal of Ascension|r] |cRXP_WARN_on the ground before pulling|r |cRXP_ENEMY_Emberstrife|r
@@ -1108,6 +1164,7 @@ step
     #completewith ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28,100 >>Travel to the center of the Ruins of Andorhal
 step
+    #softcore
     .goto Western Plaguelands,45.60,69.28
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
@@ -1116,10 +1173,28 @@ step
     .mob Araj the Summonor
     .itemcount 12650,1 --Attuned Dampener
 step
+    #softcore
     #label ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
+    .complete 5804,1 --Araj's Scarab (1x)
+    .mob Araj the Summonor
+step
+    #hardcore
+    .goto Western Plaguelands,45.60,69.28
+    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
+    .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
+    .complete 5804,1 --Araj's Scarab (1x)
+    .mob Araj the Summonor
+    .itemcount 12650,1 --Attuned Dampener
+step
+    #hardcore
+    #label ArajTheSummoner
+    .goto Western Plaguelands,45.60,69.28
+    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .complete 5804,1 --Araj's Scarab (1x)
     .mob Araj the Summonor
 step
@@ -1341,6 +1416,7 @@ step
     #completewith ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28,100 >>Travel to the center of the Ruins of Andorhal
 step
+    #softcore
     .goto Western Plaguelands,45.60,69.28
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
@@ -1349,10 +1425,28 @@ step
     .mob Araj the Summonor
     .itemcount 12650,1 --Attuned Dampener
 step
+    #softcore
     #label ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
+    .complete 5804,1 --Araj's Scarab (1x)
+    .mob Araj the Summonor
+step
+    #hardcore
+    .goto Western Plaguelands,45.60,69.28
+    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
+    .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
+    .complete 5804,1 --Araj's Scarab (1x)
+    .mob Araj the Summonor
+    .itemcount 12650,1 --Attuned Dampener
+step
+    #hardcore
+    #label ArajTheSummoner
+    .goto Western Plaguelands,45.60,69.28
+    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .complete 5804,1 --Araj's Scarab (1x)
     .mob Araj the Summonor
 step
@@ -1374,6 +1468,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Keys
 #name Blackrock Depths Key
 
+
 step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
@@ -1389,8 +1484,8 @@ step
     .accept 3802 >> Accept Dark Iron Legacy
     .target Franclorn Forgewright
 step
-    #completewith next
     #hardcoreserver
+    #completewith next
     .goto 1415,48.656,64.134
     .cast 417803 >>|cRXP_WARN_Click the|r |cRXP_PICK_Brazier of Embersight|r |cRXP_WARN_to gain the|r |T136215:0|t[Emberglow Vision] |cRXP_WARN_debuff|r
 step
@@ -1403,9 +1498,16 @@ step
     .accept 3802 >> Accept Dark Iron Legacy
     .target Franclorn Forgewright
 step
+    #softcore
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
     .subzone 1584,2 >>Ressurect at your corpse and enter Blackrock Depths
+    >>|cRXP_WARN_Make sure you have a group ready|r
+step
+    #hardcoreserver
+    #completewith next
+    .goto Eastern Kingdoms,48.07,62.42
+    .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
     >>Kill |cRXP_ENEMY_Fineous Darkvire|r. Loot him for the |cRXP_LOOT_Ironfel|r
@@ -1455,6 +1557,7 @@ RXPGuides.RegisterGuide([[
 #name Demon Fall Canyon Attunement
 #subgroup Attunements
 <<sod
+
 step
     #completewith next
     .subzone 2479 >>Travel to Emerald Sanctuary in |cFFfa9602Felwood|r
