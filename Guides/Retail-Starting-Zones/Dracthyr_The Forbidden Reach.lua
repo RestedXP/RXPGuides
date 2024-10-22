@@ -20,7 +20,7 @@ step
     +Welcome to the Drakthyr Guide of RestedXP.
 step
     #label DrakthyrIntroduction
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r or |cRXP_FRIENDLY_Dervishian|r in front of you. Wait for your Disintegrate to complete.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r. or |cRXP_FRIENDLY_Dervishian|r. in front of you. Wait for your Disintegrate to complete.
     .goto 2109,47.50,84.52,-1
     .goto 2109,46.28,79.52,-1
     .goto 2109,42.91,77.49,-1
@@ -33,14 +33,14 @@ step
     .target Dervishian
 step
     #completewith TheForbiddenReachAwakenDracthyr
-    +|cRXP_WARN_Spamming Space while moving is faster than moving normally|r
+    +|cRXP_WARN_Spamming Space while moving is faster than moving normally|r.
 step
     >>Jump down and interact with |cRXP_FRIENDLY_Tethalash|r. Wait for your Disintegrate to complete.
     .goto 2109,44.36,85.54
     .complete 64864,3 --1/1 Tethalash awakened
     .target Tethalash
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_bones|r on the bed
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_bones|r. on the bed
     .goto 2109,47.95,79.94
     .complete 64864,2 --1/1 Kethahn found
 step
@@ -53,7 +53,7 @@ step
     .target Azurathel
 step
     #label TheForbiddenReachAwakenDracthyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r after a short roleplay
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r. and |cRXP_FRIENDLY_Dervishian|r. after a short roleplay
     .turnin 64864 >>Turn in Awaken, Dracthyr
     .accept 64865 >>Accept Gear Up
     .goto 2109,32.92,81.57
@@ -64,10 +64,10 @@ step
 step
     #completewith next
     .goto 2109,35.81,73.85
-    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r and place it into the Crystal Focus next to it
+    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r. and place it into the Crystal Focus next to it
 step
     .goto 2109,38.29,74.52
-    .turnin 66010 >>Pick up the |cRXP_PICK_Mysterious Wand|r on the table
+    .turnin 66010 >>Pick up the |cRXP_PICK_Mysterious Wand|r. on the table
 step
     #sticky
     #label TheForbiddenReachArcaneGuardians
@@ -76,19 +76,19 @@ step
     .mob Ancient Guardian
     .mob Ancient Construct
 step
-    >>Pick up the |cRXP_PICK_Stack of Weapons|r
+    >>Pick up the |cRXP_PICK_Stack of Weapons|r.
     .goto 2109,38.05,65.56,6,0
     .goto 2109,43.27,63.85,6,0
     .goto 2109,45.04,66.23
     .complete 64865,1 --1/1 Stack of Weapons
 step
-    >>Pick up the |cRXP_PICK_Rations|r
+    >>Pick up the |cRXP_PICK_Rations|r.
     .goto 2109,43.54,63.77,6,0
     .goto 2109,43.54,63.77,6,0
     .goto 2109,34.25,61.10
     .complete 64865,3 --1/1 Bundle of Rations collected
 step
-    >>Pick up the |cRXP_PICK_Crate|r
+    >>Pick up the |cRXP_PICK_Crate|r.
     .goto 2109,36.45,61.32,6,0
     .goto 2109,39.54,54.9,6,0
     .goto 2109,38.78,51.35
@@ -99,7 +99,7 @@ step
     +You can skip the next cutscene (Esc -> Yes)
 step
     #requires TheForbiddenReachArcaneGuardians
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .goto 2109,39.75,54.98,6,0
     .goto 2109,43.89,59.14,6,0
     .turnin 64863 >>Turn in Arcane Guardians
@@ -123,7 +123,7 @@ step
     .complete 64866,1 --1/1 Glide into the Earth-Warder's Cauldron
     .complete 64866,2 --5/5 Dracthyr rescued or healed with Living Flame
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r. and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 64866 >>Turn in Into the Cauldron
     .goto 2109,61.98,36.25
     .accept 64871 >>Accept The Dragon at the Door
@@ -143,8 +143,8 @@ step
     .complete 64871,2 --1/1 Lapisagos slain
     .mob Lapisagos
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r
-    >>|cRXP_WARN_Cancel the "Chocking Buff" to increase movement speed|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
+    >>|cRXP_WARN_Cancel the "Chocking Buff" to increase movement speed|r.
     .turnin 64871 >>Turn in The Dragon at the Door
     .accept 64872 >>Accept The Fire Within
     .goto 2118,44.39,61.51
@@ -157,21 +157,21 @@ step
     +Check your bags for new equipment
 step
     #completewith TheForbiddenReachTheFireWithin
-    +|cRXP_WARN_You can click on the |cRXP_PICK_Fire Breath Infusers|r to reset your Fire Breath cooldown|r
+    +|cRXP_WARN_You can click on the |cRXP_PICK_Fire Breath Infusers|r. to reset your Fire Breath cooldown|r.
 step
     #label TheForbiddenReachTheFireWithin3
     >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the last empowerement section
     .goto 2118,43.78,61.29
     .complete 64872,3 --Cast an Empowered III Fire Breath
 step
-    >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the |cRXP_WARN_second|r empowerement section
+    >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the |cRXP_WARN_second|r. empowerement section
     .goto 2118,43.78,61.29
     .complete 64872,2 --Cast an Empowered II Fire Breath
 step
     #completewith next
     +You can skip the next cutscene (Esc -> Yes)
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_Beacon|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_Beacon|r.
     .goto 2118,45.42,53.71
     .complete 65615,1 --1/1 Beacon investigated
 step
@@ -180,7 +180,7 @@ step
     .goto 2118,44.41,57.63
     .complete 64872,1 --Cast an Empowered I Fire Breath
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 64872 >>Turn in The Fire Within
     .goto 2118,44.40,61.50
     .turnin 65615 >>Turn in Arcane Intrusion
@@ -190,13 +190,13 @@ step
 step
     #completewith next
     #sticky
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fusethrian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fusethrian|r.
 	.target Fusethrian
     .goto 2118,43.42,60.80
     .home >>Set your Hearthstone to The Old Weyrn Grounds
 step
     .goto 2118,44.54,61.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .accept 64873 >>Accept Stretch Your Wings
 step
@@ -204,7 +204,7 @@ step
     +Check your Bags for new Equipment
 step
     >>Use the [ExtraActionButton] to teleport right infront of the NPC
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
 	.target Dervishian
     .goto 2118,44.73,57.65
     .use 195044
@@ -216,7 +216,7 @@ step
     >>Use |T4622485:0|t[Soar]
     .complete 64873,2 --Cast Soar
 step
-    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r
+    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r.
     .goto 2118,50.53,45.29
     .complete 64873,3 --5/5 Soared through rings
 step
@@ -224,12 +224,12 @@ step
     .cast 369536 >>Cast Soar
 step
     .goto 2118,42.12,34.36
-    .turnin 65909 >> Pick up the |cRXP_PICK_Bag of Enchanted Wind|r for a Movement Speed Buff
+    .turnin 65909 >> Pick up the |cRXP_PICK_Bag of Enchanted Wind|r. for a Movement Speed Buff
 step
     #completewith next
     +Use the [ExtraActionButton] to get back
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r.
 	.target Kodethi
     .use 195044
     .goto 2118,41.42,48.21
@@ -238,11 +238,11 @@ step
     #completewith next
     .cast 369536 >> Cast Soar
 step
-    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r
+    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r.
     .goto 2118,34.59,49.58
     .complete 64873,5 --5/5 Diving through rings
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
 	.target Dervishian
     .goto 2118,44.71,57.64
     .complete 64873,6 --1/1 Learn about Advanced Flying
@@ -250,11 +250,11 @@ step
     #completewith next
     .cast 369536 >> Cast Soar
 step
-    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r
+    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r.
     .goto 2118,52.78,35.59
     .complete 64873,7 --3/3 Soar through rings
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
 	.target Dervishian
     .goto 2118,44.71,57.63
     .turnin 64873 >>Turn in Stretch Your Wings
@@ -263,7 +263,7 @@ step
     >>Use |T4622485:0|t[Soar]
     .complete 65036,1 --Practice Soar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .goto 2118,44.23,61.16
     .turnin 65036 >>Turn in Train Like We Fight
@@ -272,7 +272,7 @@ step
     #completewith next
     .cast 369536 >> Cast Soar and follow the arrow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
 	.target Scalecommander Cindrethresh
     .goto 2118,36.46,32.54
     .skipgossip 1
@@ -281,7 +281,7 @@ step
     #completewith next
     .cast 369536 >> Cast Soar and follow the arrow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .goto 2118,18.81,15.82
     .turnin 65060 >>Turn in Caldera of the Menders
     .accept 65063 >>Accept Into the Hive
@@ -291,7 +291,7 @@ step
     .goto 2110,84.91,77.00
     .complete 65063,1 --1/1 Follow Cindrethresh
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r. and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 65063 >>Turn in Into the Hive
     .accept 65073 >>Accept A Toxic Problem
     .goto 2118,20.08,19.08
@@ -307,12 +307,12 @@ step
     +Spamming Space is faster than walking normally
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Scythid|r in the Area
+    >>Kill |cRXP_ENEMY_Scythid|r. in the Area
     .complete 65074,1 --4/4 Scythid slain
     .mob Scythid Steamstalker
     .mob Deatheater Scythid
 step
-    >>Kill |cRXP_ENEMY_Scalerenders|r in the area. Loot them for the |cRXP_LOOT_glands|r
+    >>Kill |cRXP_ENEMY_Scalerenders|r. in the area. Loot them for the |cRXP_LOOT_glands|r.
 #loop
 	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
 	.goto 2118,24.77,30.11,20,0
@@ -327,7 +327,7 @@ step
     .mob Scalerender Beetle
     .mob Deatheater Scythid
 step
-    >>Kill |cRXP_ENEMY_Scythid|r in the Area
+    >>Kill |cRXP_ENEMY_Scythid|r. in the Area
     .goto 2118,35.21,24.52,30,0
     .goto 2118,31.33,24.79,30,0
 #loop
@@ -347,7 +347,7 @@ step
     .cooldown spell,369536,>0,1
     .cast 369536 >> Cast Soar and follow the arrow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Viridia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r. and |cRXP_FRIENDLY_Scalecommander Viridia|r.
     .goto 2118,20.59,17.44,30,0
     .turnin 65074 >>Turn in Easy Prey
     .goto 2118,20.23,19.01
@@ -361,7 +361,7 @@ step
     +Check your Bags for new Equipment
     *Check your Spellbook for Emerald Blossom and Fury of the Aspect(if you are 60)
 step
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r to reset your cooldown
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r. to reset your cooldown
     *Alternatively use |T4622464:0:0|t[Living Flame]
     .complete 65307,3 --1/1 Atrenosh Hailstone healed
     .goto 2118,24.90,13.59
@@ -369,7 +369,7 @@ step
     .goto 2118,24.90,13.59
     .target Injured Drakonid
 step
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Talon|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r to reset your cooldown
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Talon|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r. to reset your cooldown
     *Alternatively use |T4622464:0:0|t[Living Flame]
     .goto 2118,25.77,17.75,15,0
     .goto 2118,25.89,18.55,15,0
@@ -382,56 +382,56 @@ step
     .goto 2118,21.76,18.36,15,0
     .goto 2118,20.61,17.41,15,0
     .goto 2118,20.06,19.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r.
 	.target Scalecommander Viridia
     .turnin 65307 >>Turn in Mercy First
     .accept 66324 >>Accept Never Forgotten
 step
     #completewith TheForbiddenReachNeverForgotten3
-    +|cRXP_WARN_Use the [ExtraActionButton] almost on cooldown to reduce toxicity levels|r
+    +|cRXP_WARN_Use the [ExtraActionButton] almost on cooldown to reduce toxicity levels|r.
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_Report: Infestation|r on the Ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_Report: Infestation|r. on the Ground
     .goto 2110,66.63,67.70
     .complete 66324,2 --1/1 Clues discovered
     .use 191729
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tSearch |cRXP_FRIENDLY_Karinasa|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tSearch |cRXP_FRIENDLY_Karinasa|r.
     .goto 2110,39.43,28.74
     .complete 66324,1,1 --3/3 Horn signets collected
     .use 191729
     .target Karinasa
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tSearch |cRXP_FRIENDLY_Rethenash|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tSearch |cRXP_FRIENDLY_Rethenash|r.
     .goto 2110,34.49,38.6
     .complete 66324,1,2 --3/3 Horn signets collected
     .use 191729
     .target Rethenash
 step
     #label TheForbiddenReachNeverForgotten3
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tSearch |cRXP_FRIENDLY_Tenezeth|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tSearch |cRXP_FRIENDLY_Tenezeth|r.
     .goto 2110,18.66,50.86
     .complete 66324,1,3 --3/3 Horn signets collected
     .use 191729
     .target Tenezeth
 step
     #completewith TheForbiddenReachNeverForgotten10
-    +|cRXP_WARN_Only use the |cffffff00[ExtraActionButton]|r to stay at like 50-60%|r
+    +|cRXP_WARN_Only use the |cffffff00[ExtraActionButton]|r. to stay at like 50-60%|r.
 step
     #completewith next
     .goto 2110,27.74,45.67
-    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r on the ground
+    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r. on the ground
 step
     #label TheForbiddenReachNeverForgotten10
-    >>Place the Crystal Key in the |cRXP_PICK_Crystal Lock|r
+    >>Place the Crystal Key in the |cRXP_PICK_Crystal Lock|r.
     .goto 2110,25.6,33.76
     .complete 66324,3 --10/10 Survivors Rescued
     .use 191729
 step
     #completewith next
     .goto 2110,32.46,40.74,10,0
-    +|cRXP_WARN_Stop using the [ExtraActionButton]. Just let it happen!|r Step into a Gascloud to generate more toxicity.
+    +|cRXP_WARN_Stop using the [ExtraActionButton]. Just let it happen!|r. Step into a Gascloud to generate more toxicity.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r.
 	.target Scalecommander Viridia
     .goto 2118,20.07,19.08
     .turnin 66324 >>Turn in Never Forgotten
@@ -441,8 +441,8 @@ step
     +Check your Bags for new Equipment
     *Check your Spellbook for Hover
 step
-    >>Step into the Air Swirl to return to |cRXP_FRIENDLY_Scalecommander Emberthal|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>Step into the Air Swirl to return to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
     .goto 2118,20.4,19.6,5,0
     .goto 2118,44.24,61.17
     .turnin 65075 >>Turn in The Healing Wings
@@ -454,14 +454,14 @@ step
     .turnin 72263 >>Turn in Cavalry Has its Place
 step
     #completewith TheForbiddenReachStormsunderCrater
-    +|cRXP_WARN_Use the mount in your bags and drag a mount to your action bars|r
+    +|cRXP_WARN_Use the mount in your bags and drag a mount to your action bars|r.
 step
     #completewith next
     .cooldown spell,369536,>0,1
     .cast 369536 >>Cast Soar and follow the arrow
 step
     #label TheForbiddenReachStormsunderCrater
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r. and |cRXP_FRIENDLY_Dervishian|r.
     .turnin 65045 >>Turn in Stormsunder Crater
     .accept 65049 >>Accept Tangle with the Tarasek
     .accept 65050 >>Accept Conjured Army
@@ -476,31 +476,31 @@ step
 step
     #sticky
     #label TheForbiddenReachConjuredArmy
-    >>Kill |cRXP_ENEMY_Conjured Elementals|r
+    >>Kill |cRXP_ENEMY_Conjured Elementals|r.
     .goto 2118,76.04,66.83,0,0
     .complete 65050,1 --12/12 Conjured elementals slain
     .mob Conjured Stormling
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Taraseks|r
+    >>Kill |cRXP_ENEMY_Taraseks|r.
     .complete 65049,1 --7/7 Tarasek slain
     .mob Infused Tarasek
     .mob Tarasek Shockbringer
     .mob Tarasek Shockshaman
 step
     #label TheForbiddenReachThePrimalists1
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the floating |cRXP_PICK_stones|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the floating |cRXP_PICK_stones|r.
     .goto 2118,71.87,60.20
     .complete 65046,1 --1/1 Primalist intentions discovered
 step
     #completewith TheForbiddenReachThePrimalists
-    >>Kill |cRXP_ENEMY_Taraseks|r
+    >>Kill |cRXP_ENEMY_Taraseks|r.
     .complete 65049,1 --7/7 Tarasek slain
     .mob Infused Tarasek
     .mob Tarasek Shockbringer
     .mob Tarasek Shockshaman
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the floating |cRXP_PICK_stones|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the floating |cRXP_PICK_stones|r.
     .goto 2118,71.93,54.52
     .complete 65046,3 --1/1 Primalist leaders discovered
 step
@@ -508,11 +508,11 @@ step
     .cast 369536 >>Cast Soar and follow the arrow
 step
     #label TheForbiddenReachThePrimalists
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the floating |cRXP_PICK_stones|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the floating |cRXP_PICK_stones|r.
     .goto 2118,78.25,66.47
     .complete 65046,2 --1/1 Primalist motivations discovered
 step
-    >>Kill |cRXP_ENEMY_Taraseks|r
+    >>Kill |cRXP_ENEMY_Taraseks|r.
     .goto 2118,77.71,68.82,30,0
     .goto 2118,74.28,68.59,30,0
     .goto 2118,73.49,65.82,20,0
@@ -525,7 +525,7 @@ step
 step
     #requires TheForbiddenReachConjuredArmy
     .goto 2118,79.42,62.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 65046 >>Turn in The Primalists
     .turnin 65049 >>Turn in Tangle with the Tarasek
     .turnin 65050 >>Turn in Conjured Army
@@ -547,7 +547,7 @@ step
     #completewith next
     +Check your Bag for new Equipment
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
 	.target Scalecommander Sarkareth
     .goto 2118,81.22,53.96
     .turnin 65052 >>Turn in The Ebon Scales
@@ -556,13 +556,13 @@ step
     #completewith next
     .hs >>Hearth to The Forbidden Reach
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .goto 2118,44.22,61.17
     *You can skip the next cutscene (Esc -> Yes)
     .turnin 65057 >>Turn in Rally to Emberthal
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .goto 2118,44.83,57.69
     .accept 65701 >>Accept Preservation or Devastation
@@ -570,7 +570,7 @@ step
     >>Choose Devastation (DPS) or Preservation (Heal)
     .complete 65701,1 --1/1 Activate a Talent Spec
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .goto 2118,44.83,57.69
     .turnin 65701 >>Turn in Preservation or Devastation
@@ -583,48 +583,48 @@ step
     #completewith next
     .cast 369536 >>Cast Soar and follow the arrow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
 	.target Scalecommander Sarkareth
     .goto 2118,56.72,28.18
     .turnin 65084 >>Turn in The Froststone Vault
     .accept 65087 >>Accept The Prize Inside
 step
     >>Use Emerald Blossom and Living Flame to heal NPCs and kill enemies
-    *The best way is to find a |cRXP_FRIENDLY_Azuresworn Drakonid|r with very low HP and heal him.
+    *The best way is to find a |cRXP_FRIENDLY_Azuresworn Drakonid|r. with very low HP and heal him.
     .goto 2118,54.52,31.64
     .complete 65087,1 --Froststone Vault defended (100%)
 step
     #completewith next
     +You can skip the next cutscene (Esc -> Yes)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
 	.target Scalecommander Sarkareth
     .goto 2118,56.35,28.75
     .turnin 65087 >>Turn in The Prize Inside
 step
     .goto 2118,54.10,32.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .accept 65097 >>Accept Run!
 step
     #completewith TheForbiddenReachFinalOrders
-    +|cRXP_WARN_Reminder: Spamming Space is faster than walking normally|r
+    +|cRXP_WARN_Reminder: Spamming Space is faster than walking normally|r.
 step
-    >>Immediately start running and get to |cRXP_FRIENDLY_Wrathion|r
+    >>Immediately start running and get to |cRXP_FRIENDLY_Wrathion|r.
     .goto 2118,47.02,35.52
     .complete 65097,1 --1/1 Outrun the Avatar of the Storm
 step
-    >>Get to |cRXP_FRIENDLY_Wrathion|r
+    >>Get to |cRXP_FRIENDLY_Wrathion|r.
     .goto 2118,47.75,34.69
     .complete 65097,2 --Wrathion found
 step
-    >>Heal |cRXP_FRIENDLY_Wrathion|r with Living Flame and Emerald Blossom
+    >>Heal |cRXP_FRIENDLY_Wrathion|r. with Living Flame and Emerald Blossom
     .goto 2118,47.09,35.38
     .complete 65097,3 --1/1 Wrathion healed
     .target Wrathion
 step
     .goto 2118,47.04,35.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
 	.target Wrathion
     .turnin 65097 >>Turn in Run!
     .accept 65098 >>Accept The Consequence of Courage
@@ -633,13 +633,13 @@ step
     .goto 2118,45.96,40.26
     .complete 65098,1 --1/1 Ebyssian found
 step
-    >>Heal |cRXP_FRIENDLY_Ebyssian|r above 90% HP with Living Flame and Emerald Blossom
+    >>Heal |cRXP_FRIENDLY_Ebyssian|r. above 90% HP with Living Flame and Emerald Blossom
     .goto 2118,43.22,38.26
     .complete 65098,2 --1/1 Ebyssian healed
     .target Ebyssian
 step
     .goto 2118,41.68,44.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .turnin 65098 >>Turn in The Consequence of Courage
     .accept 65100 >>Accept Final Orders
@@ -654,19 +654,19 @@ step
     #completewith next
     +You can skip the next cutscene (Esc -> Yes)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nozdormu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nozdormu|r.
     .goto 2118,42.98,59.63,25,0
     .goto 2118,43.57,59.68
     .complete 65100,2 --1/1 Speak with Nozdormu
     .target Nozdormu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viridia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viridia|r.
 	.target Viridia
     .goto 2118,43.47,54.15
     .skipgossip 1
     .complete 65100,4 --1/1 Viridia spoken to
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarkareth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarkareth|r.
 	.target Sarkareth
     .goto 2118,47.06,55.88
     .skipgossip 1
@@ -677,7 +677,7 @@ step
 step
     --x .goto 2118,44.65,55.16 --x maybe talent choice based?
     #label TheForbiddenReachFinalOrders
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
 	.target Scalecommander Azurathel
     .goto 2118,44.64,55.16
     .turnin 65100 >>Turn in Final Orders
@@ -686,12 +686,12 @@ step << Alliance
     +Check your Bags for new Equipment
 step << Alliance
     .goto 37,32.26,49.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
 	.target Wrathion
     .accept 65286 >>Accept Draconic Connections
 step << Alliance
     .goto 37,32.26,49.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
 	.target Scalecommander Azurathel
     .turnin 65286 >>Turn in Draconic Connections
     .accept 66513 >>Accept Ground Leave
@@ -713,18 +713,18 @@ step << Alliance
     .complete 66513,3 --Visit the Embassy
 step << Alliance
     .goto 84,79.93,26.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
 	.target Scalecommander Azurathel
     .turnin 66513 >>Turn in Ground Leave
 step << Alliance
     .goto 84,79.84,27.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
 	.target Wrathion
     .accept 66577 >>Accept Aspectral Invitation
     .turnin 66577 >>Turn in Aspectral Invitation
     .accept 65101 >>Accept An Iconic, Draconic Look
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
 	.target Wrathion
     .complete 65101,1 --1/1 Speak to Wrathion
 step << Alliance
@@ -734,11 +734,11 @@ step << Alliance
     .complete 65101,3 --1/1 Assume your mortal visage
 step << Alliance
     .goto 84,82.58,23.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
 	.target Wrathion
     .turnin 65101 >>Turn in An Iconic, Draconic Look
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r. and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .accept 66237 >>Accept Spiritual Allies
     .goto 1,45.62,12.89
     .turnin 66237 >>Turn in Spiritual Allies
@@ -748,7 +748,7 @@ step << Horde
     .target Scalecommander Cindrethresh
 step << Horde
     #completewith next
-    +|cRXP_WARN_Reminder: You can mount up again!|r
+    +|cRXP_WARN_Reminder: You can mount up again!|r.
 step << Horde
     >>Follow the arrow
     .complete 66534,4 --Visit the Portal Room
@@ -769,12 +769,12 @@ step << Horde
     .cooldown spell,369536,<1,1
     .goto 85,43.70,67.46,5 >>Take the elevator
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
 	.target Scalecommander Cindrethresh
     .goto 85,44.02,38.23
     .turnin 66534 >>Turn in Ground Leave
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
     .goto 85,44.06,37.93
     .accept 65437 >>Accept Aspectral Invitation
@@ -782,25 +782,25 @@ step
     #completewith next
     +You can skip the next cutscene (Esc -> Yes)
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
     .goto 85,44.06,37.93
     .skipgossip 190239,1
     .complete 65437,1 --1/1 Speak with Ebyssian
 step << Horde
     .goto 85,44.07,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
     .turnin 65437 >>Turn in Aspectral Invitation
     .accept 65613 >>Accept An Iconic, Draconic Look
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
     .goto 85,44.07,37.96
     .skipgossip 190239,1
     .complete 65613,1 --1/1 Ask Ebyssian about Visage Form
 step << Horde
-    >>Wait for |cRXP_FRIENDLY_Ebyssian|r to finish his story
+    >>Wait for |cRXP_FRIENDLY_Ebyssian|r. to finish his story
     .goto 85,44.06,37.96
     .complete 65613,2 --1/1 Learn about Visage Form
 step
@@ -808,7 +808,7 @@ step
     .goto 85,44.06,37.96
     .complete 65613,3 --1/1 Adopt a Visage Form
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
     .goto 85,44.09,37.98
     .turnin 65613 >>Turn in An Iconic, Draconic Look

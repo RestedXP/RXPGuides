@@ -17,13 +17,13 @@ step
     .isQuestAvailable 49930
     .goto 85,53.23,90.47,10,0
     .goto 85,37.76,81.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 49930 >>Turn in The Call for Allies
     .target Ji Firepaw
 step
     .isQuestAvailable 50242
     .goto 85,37.76,81.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 50242 >>Accept A Choice of Allies
     .target Ji Firepaw
 step
@@ -37,14 +37,14 @@ step
     .complete 50242,5 -- Learn more about the Vulpera
 step
     .isQuestComplete 50242
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .goto 85,37.65,81.44
     .turnin 50242 >>Turn in A Choice of Allies
     .target Ji Firepaw
 step
     #label NightborneStartQuestline
     .goto 85,37.65,81.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 49973 >>Accept Thalyssra's Estate
     .target Ji Firepaw
 step << Mage
@@ -80,7 +80,7 @@ step
     #completewith next
     .zoneskip 110
     .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step 
+step
     .isOnQuest 49613
     .zoneskip 110
     .goto 627,55.27,23.93
@@ -114,7 +114,7 @@ step
     .goto 973,49.27,67.10
 step
     .isOnQuest 49354
-    >>Kill |cRXP_ENEMY_Void Effusions|r and |cRXP_ENEMY_Creeping Void|r
+    >>Kill |cRXP_ENEMY_Void Effusions|r. and |cRXP_ENEMY_Creeping Void|r.
     .goto 973,46.43,74.16,25,0
     .goto 973,36.95,61.32,25,0
     .goto 973,47.16,47.87,25,0
@@ -131,7 +131,7 @@ step
     .mob Void Fragment
 step
     .isOnQuest 49354
-    >>Kill |cRXP_ENEMY_Aruun the Darkener|r
+    >>Kill |cRXP_ENEMY_Aruun the Darkener|r.
     .goto 973,49.51,66.10
     .scenario 3585,1
     .mob Aruun the Darkener
@@ -143,13 +143,13 @@ step
 step
     .isOnQuest 49354
     #completewith NightborneRemembertheSunwell
-    >>Use the |cRXP_PICK_Silvermoon Translocator|r
+    >>Use the |cRXP_PICK_Silvermoon Translocator|r.
     .goto 973,62.58,66.94
     .scenario 3586,1 --1/1 Leave the Sunwell
 step
     #requires NightborneRemembertheSunwell
     .goto 110,58.44,19.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r.
     .turnin 49354 >>Turn in Remember the Sunwell
     .accept 49614 >>Accept The Nightborne
     .target Lady Liadrin
@@ -167,7 +167,7 @@ step
     .cooldown item,140192,>0,1
     .goto 680,65.88,63.71
     .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step 
+step
     .isOnQuest 49614
     .zoneskip 627,1
     .goto 627,55.27,23.93
@@ -179,15 +179,15 @@ step
     .goto 110,48.52,14.91,10,0
     .goto 110,49.80,13.85,8,0
     .goto 110,49.52,14.80
-    .zone 18 >>Use the |cRXP_PICK_Orb of Translocation|r
+    .zone 18 >>Use the |cRXP_PICK_Orb of Translocation|r.
 step
     #completewith next
     .goto 18,60.74,58.68
-    .zone 85 >>Take the Portal to Orgrimmar on top of the tower. |cRXP_WARN_You may have to talk to Zidormi (speech bubble on the map) to get to the correct phase.|r
+    .zone 85 >>Take the Portal to Orgrimmar on top of the tower. |cRXP_WARN_You may have to talk to Zidormi (speech bubble on the map) to get to the correct phase.|r.
 step
     #label NightborneTheNightborne
     .goto 85,37.76,81.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 49614 >>Turn in The Nightborne
     .target Ji Firepaw
 step

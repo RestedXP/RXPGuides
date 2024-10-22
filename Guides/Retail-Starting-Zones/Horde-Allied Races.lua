@@ -17,7 +17,7 @@ RXPGuides.RegisterGuide([[
 
 
 step << HighmountainTauren !DK
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r.
     .goto 652,54.85,63.18
     .accept 49773 >>Accept For the Horde
     .target Mayla Highmountain
@@ -26,7 +26,7 @@ step << HighmountainTauren !DK
     .goto 652,46.02,63.78
     .zone 85 >>Take to portal to Orgrimmar
 step << Nightborne !DK
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Arcanist Thalyssra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Arcanist Thalyssra|r.
     .goto 680,59.34,85.53
     .accept 49933 >>Accept For the Horde
     .target First Arcanist Thalyssra
@@ -35,7 +35,7 @@ step << Nightborne !DK
     .goto 680,58.18,87.32
     .zone 85 >>Take to portal to Orgrimmar
 step << ZandalariTroll !DK
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Talanji|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Talanji|r.
     .goto 1165,49.93,46.64
     .accept 55137 >>Accept For the Horde
     .target Queen Talanji
@@ -45,17 +45,17 @@ step << ZandalariTroll !DK
     .zone 85 >>Take the portal to Orgrimmar
 step << MagharOrc !DK
     .goto 85,70.6,44.6 --Not exact coords
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r.
     .accept 51485 >>Accept For the Horde
     .target Overlord Geya'rah
 step << Vulpera !DK
     .goto 85,64.647,46.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r.
     .accept 58122 >>Accept For the Horde
     .target Nilsa
 step << !DK
     .goto 85,39.40,79.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
     .turnin 49773 >>Turn in For the Horde << HighmountainTauren
     .turnin 49933 >>Turn in For the Horde << Nightborne
     .turnin 51485 >>Turn in For the Horde << MagharOrc
@@ -69,7 +69,7 @@ step << !DK
     .target Ambassador Blackguard
 step << !DK
     .goto 85,40.834,80.155
-    >>Talk to |cRXP_FRIENDLY_Chromie|r
+    >>Talk to |cRXP_FRIENDLY_Chromie|r.
     .complete 50319,1 << HighmountainTauren --Talk to Chromie (1)
     .complete 50303,1 << Nightborne --Talk to Chromie (1)
     .complete 53502,1 << MagharOrc --Talk to Chromie (1)
@@ -78,11 +78,11 @@ step << !DK
     .target Chromie
 step << !DK
     .goto 85,40.777,80.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halian Shlavahawk|r << HighmountainTauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melitier Vahlouran|r << Nightborne
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Limbflayer Lasha|r << MagharOrc
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Natal'hakata|r << ZandalariTroll
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r << Vulpera
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halian Shlavahawk|r. << HighmountainTauren
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melitier Vahlouran|r. << Nightborne
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Limbflayer Lasha|r. << MagharOrc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Natal'hakata|r. << ZandalariTroll
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r. << Vulpera
     .turnin 50319 >>Turn in Stranger in a Strange Land << HighmountainTauren
     .turnin 50303 >>Turn in Stranger in a Strange Land << Nightborne
     .turnin 53502 >>Turn in Stranger in a Strange Land << MagharOrc
@@ -94,12 +94,12 @@ step << !DK
     .target Natal'hakata << ZandalariTroll
     .target Nilsa << Vulpera
 step << DK
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r.
     .goto 1602,49.59,90.70
     .accept 58877 >>Accept Death's Power Grows
     .target The Lich King
 step << DK
-    >>Use the |cffffff00[ExtraActionButton]|r
+    >>Use the |cffffff00[ExtraActionButton]|r.
     .goto 1602,49.59,90.70
     .complete 58877,1 --1/1 Fealty sworn
 step << DK
@@ -109,7 +109,7 @@ step << DK
     .accept 58903 >>Accept Defender of Azeroth
     .target The Lich King
 step << DK
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
     .goto 1602,50.78,71.06
     .complete 58903,1 --1/1 Speak with Highlord Darion Mograine
     .target Highlord Darion Mograine
@@ -120,9 +120,9 @@ step << DK
     .complete 58903,2 --1/1 Death Gate used
 step << DK
     #completewith next
-    +|cfff78300Mount up|r
+    +|cfff78300Mount up|r.
 step << DK
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_PICK_Warchief's Command Board|r
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_PICK_Warchief's Command Board|r.
     .goto 85,49.67,76.46
     .complete 58903,4 --1/1 Warchief's Command Board
 step << DK
