@@ -16,7 +16,7 @@ step
     .accept 49929 >>Accept The Call for Allies
 step
     .goto 84,52.05,13.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r. |cRXP_WARN_inside the Stormwind Embassy|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .turnin 49929 >>Turn in The Call for Allies
     .accept 50239 >>Accept A Choice of Allies
     .target Aysa Cloudsinger
@@ -58,7 +58,7 @@ step
     .isOnQuest 51813
 step
     .goto 1159,55.84,31.94
-    .cast 274627 >> Click the |cRXP_PICK_Crate|r. |cRXP_WARN_on the ground|r.
+    .cast 274627 >>Click the |cRXP_PICK_Crate|r. |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,56.65,31.33
@@ -122,19 +122,19 @@ step
     .isOnQuest 51813
 step
     .goto 1159,36.79,61.65
-    .cast 3365 >> Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,39.37,55.18
-    .cast 3365 >> Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,44.33,49.55
-    .cast 3365 >> Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,49.23,44.38
-    .cast 3365 >> Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,57.11,30.41
@@ -171,7 +171,7 @@ step
     .isOnQuest 53342
 step
     .goto 1160,29.17,26.27
-    .vehicle >>Click on the |cRXP_PICK_Tank|r.
+    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tank|r.
     .target The Tank
     .isOnQuest 53342
 step
@@ -191,7 +191,7 @@ step
     .isOnQuest 53342
 step
     .goto 1160,56.48,54.86
-    >>Kill |cRXP_ENEMY_Gezzrok the Keeper|r. and then |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Orb|r. |cRXP_WARN_in the middle|r.
+    >>Kill |cRXP_ENEMY_Gezzrok the Keeper|r and then |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Orb|r. |cRXP_WARN_in the middle|r.
     .complete 53342,2 --1/1 Fragment o' the Molten Core
     .mob Gezzrok the Keeper
 step

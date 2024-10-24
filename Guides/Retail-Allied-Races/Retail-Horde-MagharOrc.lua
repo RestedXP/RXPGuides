@@ -16,7 +16,7 @@ step
     .isOnQuest 49930
     .isQuestAvailable 49930
     .goto 85,37.76,81.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r. in Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r in Orgrimmar.
     .turnin 49930 >>Turn in The Call for Allies
     .target Ji Firepaw
 step
@@ -121,7 +121,7 @@ step
     .goto 85,52.69,52.84
     .zone 50 >>Take the Zeppelin to Stranglethorn Vale
 step
-    >>Fly to the Time Rift and click on it. Kill the |cRXP_ENEMY_Echo of Gul'dan|r.
+    >>Fly to the Time Rift and |TInterface/cursor/crosshair/interact.blp:20|tClick on it. Kill the |cRXP_ENEMY_Echo of Gul'dan|r.
     >>Dodge Liquid Hellfire. Sidestep Fel Efflux. Interrupt Death Coil
     .goto 17,54.42,50.49
     .complete 53354,1 --1/1 Echo of Gul'dan slain
@@ -146,7 +146,7 @@ step
     .goto 85,57.47,92.26
     .zone 371 >>Go up. Take the Portal to Jade Forest
 step
-    >>Fly to the Time Rift and click on it. Kill the |cRXP_ENEMY_Echo of Warlord Zaela|r.
+    >>Fly to the Time Rift and |TInterface/cursor/crosshair/interact.blp:20|tClick on it. Kill the |cRXP_ENEMY_Echo of Warlord Zaela|r.
     .goto 379,68.60,46.08,15,0
     .goto 379,68.80,43.69
     .complete 53353,1 --1/1 Echo of Warlord Zaela slain
@@ -189,19 +189,19 @@ step
     .complete 53355,1 --1/1 Meet Anachronos outside Orgrimmar
     .target Anachronos
 step
-    >>(No arrow possible) Jump down. Click on the Time Rift. Kill the |cRXP_ENEMY_Echo of Garrosh Hellscream|r.
+    >>(No arrow possible) Jump down. |TInterface/cursor/crosshair/interact.blp:20|tClick on the Time Rift. Kill the |cRXP_ENEMY_Echo of Garrosh Hellscream|r.
     >>Move away during his Whirlwind. Dodge the Ironstars (Machines of War cast)
     .complete 53355,2 --1/1 Echo of Garrosh Hellscream slain
     .mob Echo of Garrosh Hellscream
 step
     #completewith next
     #title Take the Portal to Zuldazar
-    >>Leave the instance group (Right-Click your character frame)
+    >>Leave the instance group (Right-|TInterface/cursor/crosshair/interact.blp:20|tClick your character frame)
     .goto 85,53.44,90.45,10,0
     .goto 85,58.59,91.32
     .zone 1163 >>Take the Portal to Zuldazar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r. and |cRXP_FRIENDLY_Eitrigg|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r and |cRXP_FRIENDLY_Eitrigg|r.
     .turnin 53355 >>Turn in Echo of Garrosh Hellscream
     .goto 1163,72.00,65.50
     .accept 52942 >>Accept Restoring Old Bonds
@@ -226,15 +226,15 @@ step
     .accept 52943 >>Accept Calling Out the Clans
     .target Eitrigg
 step
-    >>Click on the |cRXP_PICK_Blackrock banner|r. Relog if you can't click on it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,45.17,52.64
     .complete 52943,1 --1/1 Blackrock
 step
-    >>Click on the |cRXP_PICK_Blackrock banner|r. Relog if you can't click on it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,45.48,51.94
     .complete 52943,2 --1/1 Warsong
 step
-    >>Click on the |cRXP_PICK_Blackrock banner|r. Relog if you can't click on it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,44.82,52.00
     .complete 52943,3 --1/1 Frostwolf
 step
@@ -248,7 +248,7 @@ step
     .accept 52945 >>Accept Bonds Forged Through Battle
     .target Grommash Hellscream
 step
-    >>Kill |cRXP_ENEMY_Kor'gall Defectors|r. and |cRXP_ENEMY_Kor'gall Agitators|r.
+    >>Kill |cRXP_ENEMY_Kor'gall Defectors|r and |cRXP_ENEMY_Kor'gall Agitators|r.
     .goto 1170,40.23,65.14,25,0
     .goto 1170,39.10,65.72,25,0
     .goto 1170,38.81,67.47,25,0
@@ -288,7 +288,7 @@ step
     .scenario 3973,1
 step
     .isOnQuest 52955
-    >>Destroy |cRXP_ENEMY_Lightbound Batteries|r. and kill |cRXP_ENEMY_Lighbounds|r.
+    >>Destroy |cRXP_ENEMY_Lightbound Batteries|r and kill |cRXP_ENEMY_Lighbounds|r.
     .goto 1170,44.76,75.62,15,0
     .goto 1170,45.18,76.10,15,0
     .goto 1170,45.94,74.77,15,0

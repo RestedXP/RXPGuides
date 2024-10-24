@@ -267,7 +267,7 @@ step
     .complete 24502,1 --1/1 Bilgewater Buccaneer
     .complete 24502,2 --8/8 Steamwheedle Shark Footbombed
 step
-    >>Click on the quest in your quest log, |cRXP_WARN_you may have to dismount to accept the next quest from |cRXP_FRIENDLY_Coach Crosscheck|r.|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the quest in your quest log, |cRXP_WARN_you may have to dismount to accept the next quest from |cRXP_FRIENDLY_Coach Crosscheck|r.|r.
     .goto 194,47.7,57.7
     .turnin 24502 >>Turn in Necessary Roughness by clicking onto the quest under your minimap
     .accept 24503 >>Accept Fourth and Goal << Male
@@ -298,7 +298,7 @@ step
     .goto 194,61.01,62.01,8,0
     .goto 194,57.76,71.07,15 >>Follow the arrow back to the Headquarters
 step << Female
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r. and |cRXP_FRIENDLY_Chip Endale|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Chip Endale|r.
     .goto 194,57.58,76.99,10,0
     .turnin 24520 >>Turn in Give Sassy the News
     .turnin 14070 >>Turn in Do it Yourself
@@ -309,7 +309,7 @@ step << Female
     .target Sassy Hardwrench
     .target Chip Endale
 step << Male
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r. and |cRXP_FRIENDLY_Candy Cane|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r and |cRXP_FRIENDLY_Candy Cane|r.
     .goto 194,57.58,76.99,10,0
     .turnin 24520 >>Turn in Give Sassy the News
     .turnin 14070 >>Turn in Do it Yourself
@@ -365,7 +365,7 @@ step
     .accept 14120 >>Accept A Bazillion Macaroons?!
     .target Trade Prince Gallywix
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump out of the window and talk to |cRXP_FRIENDLY_Sassy Handwrench|r., |cRXP_FRIENDLY_Megs Dreadshredder|r., and |cRXP_FRIENDLY_Foreman Dampwick|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump out of the window and talk to |cRXP_FRIENDLY_Sassy Handwrench|r,|cRXP_FRIENDLY_Megs Dreadshredder|r,and |cRXP_FRIENDLY_Foreman Dampwick|r.
     .turnin 14120 >>Turn in A Bazillion Macaroons?!
     .accept 14122 >>Accept The Great Bank Heist
     .goto 194,59.6,77.1
@@ -410,7 +410,7 @@ step
     .complete 14121,1 --12/12 Stolen Loot
     .mob Hired Looter
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_First Bank of Kezan Vault|r. and follow the instructions shown in the center of your screen
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_First Bank of Kezan Vault|r and follow the instructions shown in the center of your screen
     .goto 194,29.3,69.5
     .complete 14122,1 --1/1 First Bank of Kezan Vault
     .complete 14122,2 --1/1 Personal Riches
@@ -427,7 +427,7 @@ step
     .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]|r.
 step
     #completewith KezanWaltzRightIn
-    +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r. and |cRXP_ENEMY_Keesnout Potbellys|r. because they can detect and kill you|r.
+    +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r and |cRXP_ENEMY_Keesnout Potbellys|r. because they can detect and kill you|r.
 step
     >>Pick up the |cRXP_LOOT_bomb|r.
     .goto 194,24.20,40.67,30,0
@@ -453,7 +453,7 @@ step
     #completewith next
     .goto 194,17.65,45.94,5,0
     .goto 194,17.00,33.96
-    .deathskip >>Jump out of the window and run into hostile |cRXP_ENEMY_Villa Mooks|r. or |cRXP_ENEMY_Keesnout Potbellys|r. to die
+    .deathskip >>Jump out of the window and run into hostile |cRXP_ENEMY_Villa Mooks|r or |cRXP_ENEMY_Keesnout Potbellys|r. to die
 step
     #completewith next
     .goto 194,61.89,54.13,25,0
@@ -484,7 +484,7 @@ step
     .accept 14125 >>Accept 447
     .target Sassy Hardwrench
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tEnter the house and click on the |cRXP_PICK_Defective Generator|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tEnter the house and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defective Generator|r.
     .goto 194,56.07,76.63
     .complete 14125,1 --1/1 Overload the Defective Generator
 step
@@ -492,19 +492,19 @@ step
     .goto 194,56.05,74.67
     .complete 14125,2 --1/1 Activate the Leaky Stove
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tGo up the stairs and click the |cRXP_PICK_Flammable Bed|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tGo up the stairs and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Flammable Bed|r.
     .goto 194,55.98,77.11,5,0
     .goto 194,56.64,76.33,5,0
     .goto 194,56.61,74.85
     .complete 14125,3 --1/1 Drop a Cigar on the Flammable Bed
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tJump out of the window and click on the |cRXP_PICK_Gasbot Control Panel|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tJump out of the window and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gasbot Control Panel|r.
     >>Wait for the short roleplay
     .goto 194,56.60,76.93,8,0
     .goto 194,59.49,76.81
     .complete 14125,4 --1/1 KTC Headquarters Set Ablaze with Gasbot!
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Claims Adjuster|r. and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Claims Adjuster|r and |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .turnin 14125 >>Turn in 447
     .goto 194,59.6,76.6
     .accept 14126 >>Accept Life Savings
@@ -568,7 +568,7 @@ step << Hunter
 step
     #sticky
     #label TheLostIslesTeraMonkeys
-    >>Use |T133979:0|t[Nitro-Potassium Bananas] on |cRXP_ENEMY_Bomb Throwing Monkeys|r. and kill |cRXP_ENEMY_Teraptor Hatchlings|r.
+    >>Use |T133979:0|t[Nitro-Potassium Bananas] on |cRXP_ENEMY_Bomb Throwing Monkeys|r and kill |cRXP_ENEMY_Teraptor Hatchlings|r.
     .use 49028
     .goto 174,27.32,70.14,0,0
     .complete 14473,1 --6/6 Teraptor Hatchling slain
@@ -585,7 +585,7 @@ step
     .complete 14014,1 --8/8 Crate of Tools
 step
     #requires TheLostIslesTeraMonkeys
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r. and |cRXP_FRIENDLY_Bamm Megabomb|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r and |cRXP_FRIENDLY_Bamm Megabomb|r.
     .turnin 14473 >>Turn in It's Our Problem Now
     .goto 174,27.85,74.29
     .turnin 14019 >>Turn in Monkey Business
@@ -671,7 +671,7 @@ step
     .accept 14236 >>Accept Weed Whacker
     .target Kilag Gorefang
 step
-    >>Use the |cRXP_FRIENDLY_Weed Whacker|r. and run through the |cRXP_ENEMY_plants|r. to kill them
+    >>Use the |cRXP_FRIENDLY_Weed Whacker|r and run through the |cRXP_ENEMY_plants|r. to kill them
     .use 49108
     .goto 174,33.90,72.85,30,0
     .goto 174,32.81,76.42,20,0
@@ -714,7 +714,7 @@ step
     .accept 14241 >>Accept Get to the Gyrochoppa!
     .target Scout Brax
 step
-    >>Kill |cRXP_ENEMY_SI:7 Operatives|r. and |cRXP_ENEMY_Gyrochopper Pilots|r. Loot them for the |cRXP_LOOT_Gyrochoppa Keys|r.
+    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochopper Pilots|r. Loot them for the |cRXP_LOOT_Gyrochoppa Keys|r.
     .goto 174,23.23,67.50
     .complete 14241,1 --1/1 Gyrochoppa Keys
     .mob SI:7 Operative
@@ -799,7 +799,7 @@ step
 	.goto 174,44.67,63.90,20,0
     .complete 24671,1 --10/10 Wild Cluckers captured
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r. and |cRXP_FRIENDLY_Bamm Megabomb|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Bamm Megabomb|r.
     .turnin 24671 >>Turn in Cluster Cluck
     .goto 174,45.34,65.22
     .accept 24741 >>Accept Trading Up
@@ -821,7 +821,7 @@ step
     .goto 174,45.93,69.88
     .complete 24741,1 --5/5 Spiny Raptor Egg
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r. and |cRXP_FRIENDLY_Hobart Grapplehammer|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r and |cRXP_FRIENDLY_Hobart Grapplehammer|r.
     .turnin 24741 >>Turn in Trading Up
     .goto 174,45.25,64.85
     .accept 24744 >>Accept The Biggest Egg Ever
@@ -909,7 +909,7 @@ step
     .mob Vashj'elan Warrior
     .mob Vashj'elan Siren
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brett "Coins" McQuid|r. and |cRXP_FRIENDLY_Megs Dreadshredder|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brett "Coins" McQuid|r and |cRXP_FRIENDLY_Megs Dreadshredder|r.
     .turnin 24859 >>Turn in Naga Hide
     .goto 174,52.2,73.22
     .turnin 24858 >>Turn in Bilgewater Cartel Represent
@@ -1018,7 +1018,7 @@ step
     #completewith next
     +|cRXP_WARN_Avoid the |cRXP_ENEMY_Goblin Zombies|r. while running up the mountain|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r., |cRXP_FRIENDLY_Foreman Dampwick|r. and |cRXP_FRIENDLY_Assistant Greely|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r,|cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r.
     .turnin 24940 >>Turn in Up the Volcano
     .accept 24942 >>Accept Zombies vs. Super Booster Rocket Boots
     .goto 174,51.8,47.1
@@ -1071,7 +1071,7 @@ step
     .goto 174,56.67,44.26,15,0
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r., |cRXP_FRIENDLY_Assistant Greedy|r., and |cRXP_FRIENDLY_Coach Crosscheck|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r,|cRXP_FRIENDLY_Assistant Greedy|r,and |cRXP_FRIENDLY_Coach Crosscheck|r.
     .turnin 24945 >>Turn in Three Little Pygmies
     .goto 174,51.85,47.20
     .turnin 24946 >>Turn in Rockin' Powder
@@ -1117,7 +1117,7 @@ step
     .accept 25023 >>Accept Old Friends
     .target Sassy Hardwrench
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r., |cRXP_FRIENDLY_Sassy Hardwrench|r., and |cRXP_FRIENDLY_Aggra|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r,|cRXP_FRIENDLY_Sassy Hardwrench|r,and |cRXP_FRIENDLY_Aggra|r.
     .turnin 25023 >>Turn in Old Friends
     .accept 25024 >>Accept Repel the Paratroopers
     .goto 174,36.79,43.14
@@ -1168,7 +1168,7 @@ step
     .hs >>Hearth to Warchief's Lookout
 step
     #requires TheLostIslesLandMines
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r., |cRXP_FRIENDLY_Aggra|r., and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r,|cRXP_FRIENDLY_Aggra|r,and |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .turnin 25024 >>Turn in Repel the Paratroopers
     .goto 174,36.8,43.1
     .turnin 25093 >>Turn in The Heads of the SI:7
@@ -1238,34 +1238,34 @@ step
 step
     #sticky
     >>You need to collect a total of 9 Kaja'Colas Zero-One
-    >>Target a |cRXP_FRIENDLY_Kezan Citizen|r. and use the cola
+    >>Target a |cRXP_FRIENDLY_Kezan Citizen|r and use the cola
     .use 52484
     .collect 52484,9,25122,0xF
     .complete 25122,4 --6/6 Other goblin's minds freed
     .target Kezan Citizen
 step
     #title Free Ace
-    >>Target |cRXP_FRIENDLY_Ace|r. and use a Kaja'Cola Zero-One
+    >>Target |cRXP_FRIENDLY_Ace|r and use a Kaja'Cola Zero-One
     .goto 174,57.1,36.9
     .use 52484
     .complete 25122,1 --1/1 Ace's mind freed
     .target Ace
 step
     #title Free Izzy
-    >>Target |cRXP_FRIENDLY_Izzy|r. and use a Kaja'Cola Zero-One
+    >>Target |cRXP_FRIENDLY_Izzy|r and use a Kaja'Cola Zero-One
     .goto 174,57.01,35.02
     .use 52484
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r. and pick up the flying purple |cRXP_PICK_Soulstone|r. Target the corpse of |cRXP_ENEMY_Blastshadow the Brutemaster|r. and use |T134336:0|t[Blastshadow's Soulstone]
+    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and pick up the flying purple |cRXP_PICK_Soulstone|r. Target the corpse of |cRXP_ENEMY_Blastshadow the Brutemaster|r and use |T134336:0|t[Blastshadow's Soulstone]
     .use 52481
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed
     .mob Blastshadow the Brutemaster
 step
     #title Free Gobber
-    >>Target |cRXP_FRIENDLY_Gobber|r. and use a Kaja'Cola Zero-One
+    >>Target |cRXP_FRIENDLY_Gobber|r and use a Kaja'Cola Zero-One
     .goto 174,57.04,32.17
     .use 52484
     .complete 25122,3 --1/1 Gobber's mind freed
@@ -1422,7 +1422,7 @@ step
     .complete 25214,1 --8/8 Cages launched
     .target Captured Goblin
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r. and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .turnin 25214 >>Turn in Escape Velocity
     .goto 174,43.85,25.29
     .turnin 25244 >>Turn in What Kind of Name is Candy, Anyway? << Female
@@ -1436,7 +1436,7 @@ step
     .goto 174,43.86,25.16
     .complete 25251,1 --1/1 Ultimate Footbomb Uniform
 step
-    >>Target |cRXP_ENEMY_Trade Prince Gallywix|r. and all use your abilities on cooldown
+    >>Target |cRXP_ENEMY_Trade Prince Gallywix|r and all use your abilities on cooldown
     .goto 174,41.87,17.61,10,0
     .goto 174,43.4,19.9
     .complete 25251,2 --1/1 Trade Prince Gallywix dealt with

@@ -20,7 +20,7 @@ step
     +Welcome to the Drakthyr Guide of RestedXP.
 step
     #label DrakthyrIntroduction
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r. or |cRXP_FRIENDLY_Dervishian|r. in front of you. Wait for your Disintegrate to complete.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r or |cRXP_FRIENDLY_Dervishian|r. in front of you. Wait for your Disintegrate to complete.
     .goto 2109,47.50,84.52,-1
     .goto 2109,46.28,79.52,-1
     .goto 2109,42.91,77.49,-1
@@ -53,7 +53,7 @@ step
     .target Azurathel
 step
     #label TheForbiddenReachAwakenDracthyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r. and |cRXP_FRIENDLY_Dervishian|r. after a short roleplay
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r. after a short roleplay
     .turnin 64864 >>Turn in Awaken, Dracthyr
     .accept 64865 >>Accept Gear Up
     .goto 2109,32.92,81.57
@@ -64,7 +64,7 @@ step
 step
     #completewith next
     .goto 2109,35.81,73.85
-    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r. and place it into the Crystal Focus next to it
+    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r and place it into the Crystal Focus next to it
 step
     .goto 2109,38.29,74.52
     .turnin 66010 >>Pick up the |cRXP_PICK_Mysterious Wand|r. on the table
@@ -99,7 +99,7 @@ step
     +You can skip the next cutscene (Esc -> Yes)
 step
     #requires TheForbiddenReachArcaneGuardians
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .goto 2109,39.75,54.98,6,0
     .goto 2109,43.89,59.14,6,0
     .turnin 64863 >>Turn in Arcane Guardians
@@ -123,7 +123,7 @@ step
     .complete 64866,1 --1/1 Glide into the Earth-Warder's Cauldron
     .complete 64866,2 --5/5 Dracthyr rescued or healed with Living Flame
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r. and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 64866 >>Turn in Into the Cauldron
     .goto 2109,61.98,36.25
     .accept 64871 >>Accept The Dragon at the Door
@@ -143,7 +143,7 @@ step
     .complete 64871,2 --1/1 Lapisagos slain
     .mob Lapisagos
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     >>|cRXP_WARN_Cancel the "Chocking Buff" to increase movement speed|r.
     .turnin 64871 >>Turn in The Dragon at the Door
     .accept 64872 >>Accept The Fire Within
@@ -157,7 +157,7 @@ step
     +Check your bags for new equipment
 step
     #completewith TheForbiddenReachTheFireWithin
-    +|cRXP_WARN_You can click on the |cRXP_PICK_Fire Breath Infusers|r. to reset your Fire Breath cooldown|r.
+    +|cRXP_WARN_You can |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fire Breath Infusers|r. to reset your Fire Breath cooldown|r.
 step
     #label TheForbiddenReachTheFireWithin3
     >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the last empowerement section
@@ -180,7 +180,7 @@ step
     .goto 2118,44.41,57.63
     .complete 64872,1 --Cast an Empowered I Fire Breath
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 64872 >>Turn in The Fire Within
     .goto 2118,44.40,61.50
     .turnin 65615 >>Turn in Arcane Intrusion
@@ -291,7 +291,7 @@ step
     .goto 2110,84.91,77.00
     .complete 65063,1 --1/1 Follow Cindrethresh
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r. and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 65063 >>Turn in Into the Hive
     .accept 65073 >>Accept A Toxic Problem
     .goto 2118,20.08,19.08
@@ -347,7 +347,7 @@ step
     .cooldown spell,369536,>0,1
     .cast 369536 >> Cast Soar and follow the arrow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r. and |cRXP_FRIENDLY_Scalecommander Viridia|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Viridia|r.
     .goto 2118,20.59,17.44,30,0
     .turnin 65074 >>Turn in Easy Prey
     .goto 2118,20.23,19.01
@@ -449,7 +449,7 @@ step
     .accept 65045 >>Accept Stormsunder Crater
     .target Scalecommander Emberthal
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Treysh|r. Choose any mount of you like (Ctrl+Click for a preview)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Treysh|r. Choose any mount of you like (Ctrl+|TInterface/cursor/crosshair/interact.blp:20|tClick for a preview)
     .goto 2118,45.31,61.34
     .turnin 72263 >>Turn in Cavalry Has its Place
 step
@@ -461,7 +461,7 @@ step
     .cast 369536 >>Cast Soar and follow the arrow
 step
     #label TheForbiddenReachStormsunderCrater
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r. and |cRXP_FRIENDLY_Dervishian|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r.
     .turnin 65045 >>Turn in Stormsunder Crater
     .accept 65049 >>Accept Tangle with the Tarasek
     .accept 65050 >>Accept Conjured Army
@@ -525,7 +525,7 @@ step
 step
     #requires TheForbiddenReachConjuredArmy
     .goto 2118,79.42,62.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r. and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 65046 >>Turn in The Primalists
     .turnin 65049 >>Turn in Tangle with the Tarasek
     .turnin 65050 >>Turn in Conjured Army
@@ -738,7 +738,7 @@ step << Alliance
 	.target Wrathion
     .turnin 65101 >>Turn in An Iconic, Draconic Look
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r. and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .accept 66237 >>Accept Spiritual Allies
     .goto 1,45.62,12.89
     .turnin 66237 >>Turn in Spiritual Allies

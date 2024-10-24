@@ -23,7 +23,7 @@ step
 -- step
 --     #completewith next
 --     .goto 371,43.01,27.58,10,0
---     .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
+--     .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
 --     .skipgossip
 --     .target Lidamorrutu
 step
@@ -39,7 +39,7 @@ step
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 40223,1
-    .collect 208555,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy |T634012:0|t[Timerunner's Idol.]
+    .collect 208555,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T634012:0|t[Timerunner's Idol.]
     .skipgossip
     .buy 208555,1
     .target Lidamorrutu
@@ -47,7 +47,7 @@ step
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 20004,1
-    .collect 208487,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy |T629696:0|t[Timerunner's Ring.]
+    .collect 208487,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T629696:0|t[Timerunner's Ring.]
     .skipgossip
     .buy 208487,1
     .target Lidamorrutu
@@ -55,7 +55,7 @@ step
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 20005,1
-    .collect 208491,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy |T645143:0|t[Timerunner's Seal.]
+    .collect 208491,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T645143:0|t[Timerunner's Seal.]
     .skipgossip
     .buy 208491,1
     .target Lidamorrutu
@@ -63,7 +63,7 @@ step
     #completewith all2
     .goto 371,43.01,27.58
     .achievementComplete 20006,1
-    .collect 210523,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy |T632849:0|t[Timerunner's Amulet.]
+    .collect 210523,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T632849:0|t[Timerunner's Amulet.]
     .skipgossip
     .buy 210523,1
     .target Lidamorrutu
@@ -72,7 +72,7 @@ step
     #label All
     .goto 371,43.01,27.58
     .achievementComplete 19881,0
-    .collect 208554,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy |T971287:0|t[Timerunner's Beacon.]
+    .collect 208554,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T971287:0|t[Timerunner's Beacon.]
     .skipgossip
     .buy 208554,1
     .target Lidamorrutu
@@ -83,7 +83,7 @@ step
     .achievementComplete 20004,0
     .achievementComplete 40223,0
     .goto 371,43.01,27.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r. and buy the jewellery.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r and buy the jewellery.
     .collect 208491,1
     .collect 210523,1
     .collect 208554,1
@@ -98,7 +98,7 @@ step
     .skipgossip
     .target Lidamorrutu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r. and |cRXP_FRIENDLY_Larah Treebender|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r and |cRXP_FRIENDLY_Larah Treebender|r.
     .accept 80447 >>Accept Looking for More
     .goto 371,42.95,27.73 --x middle
     .target +Pythagorus
@@ -113,7 +113,7 @@ step
 step
     #completewith next
     .goto 371,42.5,27.32,10,0
-    .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r. and upgrade your gear |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
+    .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r and upgrade your gear |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency|r.
     .skipgossip
     .target Momentus
 step
@@ -141,7 +141,7 @@ step
     .goto 371,45.96,27.19,0
     .goto 371,45.92,27.68,0
     .goto 371,45.63,27.50,0
-    >>Kill |cRXP_ENEMY_Greenwood Thieves|r. Loot them for |cRXP_LOOT_Ripe Orange|r.
+    >>Kill |cRXP_ENEMY_Greenwood Thieves|r. Loot them for [|cRXP_LOOT_Ripe Orange|r].
     .complete 29619,1 --8/8 Ripe Orange
     .mob Greenwood Thief
 step
@@ -274,7 +274,7 @@ step
     .group
     .goto 371,41.61,28.34
     >>|cRXP_WARN_Face your |cFFFF0000character|r. away from the training grounds and aim your |cFFFF0000camera|r. towards it.|r.
-    *After the |cRXP_FRIENDLY_Tian Students|r. copy the |cFFFF0000master's action|r., use |T135906:0|t[Punch(1)] for a punch, |T132219:0|t[Kick(2)] for a stomp, and |T236169:0|t[Growl(3)] for a growl.
+    *After the |cRXP_FRIENDLY_Tian Students|r. copy the |cFFFF0000master's action|r,use |T135906:0|t[Punch(1)] for a punch, |T132219:0|t[Kick(2)] for a stomp, and |T236169:0|t[Growl(3)] for a growl.
     .complete 29623,1 --12/12 Practice Strikes completed
     .target Tian Student
 step
@@ -605,7 +605,7 @@ step
 --x step add treasure
 step
     #completewith Chipped Ritual Bowl
-    >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws|r. Loot them for the |T461804:0|t[|cRXP_LOOT_Spirit Bottles|r.].
+    >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws|r. Loot them for the |T461804:0|t[|cRXP_LOOT_Spirit Bottles|r].
     .complete 29750,1 --8/8 Spirit Bottle
     .mob Shan'ze Spiritclaw
 step
@@ -642,7 +642,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws|r. Loot them for the |T461804:0|t[|cRXP_LOOT_Spirit Bottles|r.].
+    >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws|r. Loot them for the |T461804:0|t[|cRXP_LOOT_Spirit Bottles|r].
     .complete 29750,1 --8/8 Spirit Bottle
     .mob Shan'ze Spiritclaw
 step
@@ -652,7 +652,7 @@ step
     .mob Wayward Ancestor
 step
     #label Spirit Bottle
-    >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws|r. Loot them for |cRXP_LOOT_Spirit Bottles|r.
+    >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws|r. Loot them for [|cRXP_LOOT_Spirit Bottles|r].
     .complete 29750,1 --8/8 Spirit Bottle
     .mob Shan'ze Spiritclaw
 step
@@ -802,7 +802,7 @@ step
     +1
 step
     #completewith Orchard Fires
-    >>Kill |cRXP_ENEMY_Gormali Raider|r. and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
+    >>Kill |cRXP_ENEMY_Gormali Raider|r and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
     .complete 29578,1 --8/8 Gormali Raider slain
     .complete 29578,2 --8/8 Gormali Incinerator slain
     .skipgossip
@@ -823,7 +823,7 @@ step
     .use 72578
 step
     #completewith Survivors
-    >>Kill |cRXP_ENEMY_Gormali Raider|r. and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
+    >>Kill |cRXP_ENEMY_Gormali Raider|r and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
     .complete 29578,1 --8/8 Gormali Raider slain
     .complete 29578,2 --8/8 Gormali Incinerator slain
     .skipgossip
@@ -839,7 +839,7 @@ step
     .target Nectarbreeze Farmer
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Gormali Raider|r. and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
+    >>Kill |cRXP_ENEMY_Gormali Raider|r and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
     .complete 29578,1 --8/8 Gormali Raider slain
     .complete 29578,2 --8/8 Gormali Incinerator slain
     .skipgossip
@@ -849,7 +849,7 @@ step
     .complete 29580,1 --6/6 Orchard Tool
 step
     #label Turn in Defiance
-    >>Kill |cRXP_ENEMY_Gormali Raider|r. and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
+    >>Kill |cRXP_ENEMY_Gormali Raider|r and |cRXP_ENEMY_Gormali Incinerator|r. |cRXP_WARN_Prioritize those fighting the |cRXP_FRIENDLY_Nectarbreeze Farmers|r.
     .complete 29578,1 --8/8 Gormali Raider slain
     .complete 29578,2 --8/8 Gormali Incinerator slain
     .skipgossip
@@ -899,7 +899,7 @@ step
 step
     #label FarmersSetFree
     #completewith next
-    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r. by interacting with their |cRXP_PICK_Net|r. and killing |cRXP_ENEMY_Gormali Slavers|r. chained to them.
+    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r. by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r. chained to them.
     .complete 29587,1 --10/10 Farmers Set Free
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
@@ -924,7 +924,7 @@ step
     .goto 371,39.46,74.75,0
     .goto 371,39.70,74.32,0
     .goto 371,40.18,74.77,0
-    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r. by interacting with their |cRXP_PICK_Net|r. and killing |cRXP_ENEMY_Gormali Slavers|r. chained to them.
+    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r. by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r. chained to them.
     .complete 29587,1 --10/10 Farmers Set Free
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
@@ -1156,7 +1156,7 @@ RXPGuides.RegisterGuide([[
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
 -- #subweight 11
-#displayname |cFFFCDC00How to Use & Essential Tips|r.
+#displayname |cFFFCDC00How to Use & Essential Tips|r
 
 step
     #completewith test
@@ -1165,15 +1165,15 @@ step
     #label test
     +The |T623705:0|t[Cloak of Infinite Potential] is a crucial item for this event. Here’s how it works and how you can maximize its potential:
 step
-    +|cRXP_WARN_Acquisition:|r. Obtain the |T623705:0|t[Cloak of Infinite Potential] from the initial questline.
+    +|cRXP_WARN_Acquisition:|r Obtain the |T623705:0|t[Cloak of Infinite Potential] from the initial questline.
 step
-    +|cRXP_WARN_Stat Gains:|r. The cloak gains stats through various activities:
+    +|cRXP_WARN_Stat Gains:|r The cloak gains stats through various activities:
     *|cRXP_WARN_Looting Enemies:|r. Defeat normal enemies, elites, rares, and bosses.
     *|cRXP_WARN_Opening Pandaria Treasures:|r. Find and open Treasures of Pandaria scattered throughout Pandaria.
     *|cRXP_WARN_Completing Content:|r. Participate in dungeons, scenarios, and raids.
     *|cRXP_WARN_Completing Quests:|r. Finish quests to receive |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r. open them to enhance your cloak stats further.
 step
-    +|cRXP_WARN_Stat Increase Mechanism:|r. Each stat increase gained from the various activities is random. While you may get lucky and receive a lot of your desired stats early on, rest assured that by continuously participating in these activities, you will eventually fully upgrade your cloak.
+    +|cRXP_WARN_Stat Increase Mechanism:|r Each stat increase gained from the various activities is random. While you may get lucky and receive a lot of your desired stats early on, rest assured that by continuously participating in these activities, you will eventually fully upgrade your cloak.
     *|cRXP_WARN_Stats that can be Enhanced:|r.
     *Main Stat(Intellect,Agility,Strength)
     *Stamina
@@ -1185,29 +1185,29 @@ step
     *Versatility
     *Experience Gain %
 step
-    +|cRXP_WARN_Experience Gain %:|r. This is the most important stat to level up quickly. Increasing your Experience Gain % will significantly boost your leveling speed.
+    +|cRXP_WARN_Experience Gain %:|r This is the most important stat to level up quickly. Increasing your Experience Gain % will significantly boost your leveling speed.
     *|cRXP_WARN_Additionally, some of the Experience Gain will carry over to each new toon you create during the event. This is true for every other stat as well|r.
 step
     +|cRXP_WARN_Gems in WoW Remix: Mists of Pandaria|r.
 step
-    +|cRXP_WARN_In the WoW Remix: Mists of Pandaria event,|r. gems play a crucial role in enhancing your character's abilities and customizing your gameplay experience.
+    +|cRXP_WARN_In the WoW Remix: Mists of Pandaria event,|r gems play a crucial role in enhancing your character's abilities and customizing your gameplay experience.
 step
-    +Players can obtain four types of gems by |cRXP_WARN_looting enemies|r. and opening |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r.
+    +Players can obtain four types of gems by |cRXP_WARN_looting enemies|r and opening |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r.
 step
-    +|cRXP_WARN_Meta Gems:|r. These fit into the helm equipment slot and provide unique, powerful on-use abilities with great destructive power.
+    +|cRXP_WARN_Meta Gems:|r These fit into the helm equipment slot and provide unique, powerful on-use abilities with great destructive power.
 step
-    +|cRXP_WARN_Cogwheel Gems:|r. These fit into the feet equipment slot and enhance iconic movement speed abilities, such as Sprint for rogues or Roll for monks.
+    +|cRXP_WARN_Cogwheel Gems:|r These fit into the feet equipment slot and enhance iconic movement speed abilities, such as Sprint for rogues or Roll for monks.
 step
-    +|cRXP_WARN_Tinker Gems:|r. These fit into the shoulder, belt, wrist, and gloves equipment slots, offering unique, powerful passive abilities.
+    +|cRXP_WARN_Tinker Gems:|r These fit into the shoulder, belt, wrist, and gloves equipment slots, offering unique, powerful passive abilities.
 step
-    +|cRXP_WARN_Prismatic Gems:|r. These fit into the chest, legs, necklaces, rings, and trinkets equipment slots.
+    +|cRXP_WARN_Prismatic Gems:|r These fit into the chest, legs, necklaces, rings, and trinkets equipment slots.
     *|cRXP_WARN_Prismatic Gems provide a range of stats from main stat to secondary stats|r.
 step
     +Especially useful gems during leveling are |T839974:0|t[Thundering Orb], |T236172:0|t[Trailblazer] and |T236209:0|t[Brittle].
 step
     +|cRXP_WARN_|T4638724:0|t[Bronze] in WoW Remix: Mists of Pandaria|r.
 step
-    +|cRXP_WARN_In WoW Remix: Mists of Pandaria|r. |T4638724:0|t[Bronze] is a special currency used to upgrade items and purchase cosmetics.
+    +|cRXP_WARN_In WoW Remix: Mists of Pandaria|r |T4638724:0|t[Bronze] is a special currency used to upgrade items and purchase cosmetics.
     *Here's a detailed explanation of how Bronze works and its role in the event:
 step
     +|cRXP_WARN_Acquisition of |T4638724:0|t[Bronze]|r.
@@ -1220,13 +1220,13 @@ step
     +The guide will instruct you to buy gems and upgrade your gear.
     *|cRXP_WARN_However, if you prefer to spend your |T4638724:0|t[Bronze] on cosmetics, you will need to manually skip those steps.|r.
 step
-    +During downtime, commonly referred to as roleplay or RP, the guide will instruct you to scrap, extract gems, open |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r. and equip new gear and gems.
+    +During downtime, commonly referred to as roleplay or RP, the guide will instruct you to scrap, extract gems, open |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r and equip new gear and gems.
     *|cRXP_WARN_This may occasionally be required outside of downtime as well|r.
 step
-    +|cRXP_WARN_Useful Macros:|r.
+    +|cRXP_WARN_Useful Macros:|r
     .link https://pastebin.com/DU8YgCAf >> |cRXP_WARN_Click Here|r.
 step
-    +|cRXP_WARN_Useful Weakaura:|r.
+    +|cRXP_WARN_Useful Weakaura:|r
     .link https://wago.io/DSKFme0-p >> |cRXP_WARN_Click Here|r.
 step
     +If you spot any Rares or Treasures along the route, be sure to collect and kill them.
@@ -1238,7 +1238,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Pandaria Remix
 #name 2) Pandaria Remix Introduction
-#displayname |cFFFCDC00Chapter 0|r. - Timeless Isle Introduction
+#displayname |cFFFCDC00Chapter 0|r - Timeless Isle Introduction
 #title Timeless Isle Introduction
 -- #subweight 1
 #next 3) Jade Forest Horde << Horde
@@ -1266,7 +1266,7 @@ step
     .complete 79432,2 --1/1 Archaios the Artificer slain
 step
     .goto 554,25.72,46.29
-    >>Loot him for his |cRXP_LOOT_Artifact|r.
+    >>Loot him for his [|cRXP_LOOT_Artifact|r].
     .complete 79432,3 --1/1 Archaios's artifact taken
     .mob archaios the artificer
 step
@@ -1284,7 +1284,7 @@ step
     .target Moratari
 step
     #completewith Time Rift
-    >>Kill |cRXP_ENEMY_Infinite Ravagers|r. Loot them for |cRXP_LOOT_Threads of Time|r.
+    >>Kill |cRXP_ENEMY_Infinite Ravagers|r. Loot them for [|cRXP_LOOT_Threads of Time|r].
     .complete 79434,1 --3/3 Thread of Time
     .mob Infinite Ravager
 step
@@ -1306,7 +1306,7 @@ step
     .goto 554,22.4,43.4,40,0
     .goto 554,24.0,55.4,0
     .goto 554,22.4,43.4,0
-    >>Kill |cRXP_ENEMY_Infinite Ravagers|r. Loot them for |cRXP_LOOT_Threads of Time|r.
+    >>Kill |cRXP_ENEMY_Infinite Ravagers|r. Loot them for [|cRXP_LOOT_Threads of Time|r].
     .complete 79434,1 --3/3 Thread of Time
     .mob Infinite Ravager
 step
@@ -1354,7 +1354,7 @@ step
     .goto 554,22.4,43.4,40,0
     .goto 554,24.0,55.4,0
     .goto 554,22.4,43.4,0
-    >>Kill |cRXP_ENEMY_Infinite Ravagers|r. Loot them for |cRXP_LOOT_Thread of Power|r.
+    >>Kill |cRXP_ENEMY_Infinite Ravagers|r. Loot them for [|cRXP_LOOT_Thread of Power|r].
     .complete 80380,2 --1/1 Thread of Power collected from Infinite Ravager
     .mob Infinite Ravager
 step
@@ -1398,7 +1398,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Pandaria Remix
 #name 3) Jade Forest Horde
-#displayname |cFFFCDC00Chapter 1|r. - Jade Forest
+#displayname |cFFFCDC00Chapter 1|r - Jade Forest
 #title Jade Forest
 #next 4) Valley of the Four Winds 1
 -- #subweight 9
@@ -1434,7 +1434,7 @@ step
     .goto 371,31.53,11.01
     .vehicle 66183 >>Enter the Gunship Turret
 step
-    >>Kill |cRXP_ENEMY_Thunder Hold Cannons|r. and |cRXP_ENEMY_Thunder Hold Soldiers|r.
+    >>Kill |cRXP_ENEMY_Thunder Hold Cannons|r and |cRXP_ENEMY_Thunder Hold Soldiers|r.
     >>Spam |T132385:0|t[Shredder Round] (2), use |T249177:0|t[Full Autofire] (1) on cooldown
     *|cRXP_WARN_Focus the barrels, because they kill everything around them|r.
     .goto 371,31.53,11.01
@@ -1487,7 +1487,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r., |cRXP_ENEMY_Thunder Hold Cannoneers|r., and |cRXP_ENEMY_Thunder Hold Armsmen|r.
+    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r, |cRXP_ENEMY_Thunder Hold Cannoneers|r,and |cRXP_ENEMY_Thunder Hold Armsmen|r.
     .complete 31767,1 --15/15 Thunder Hold troops slain
     .mob Thunder Hold Mender
     .mob Thunder Hold Cannoneer
@@ -1498,7 +1498,7 @@ step
     .complete 31768,1 --10/10 Thunder Hold Munitions destroyed
 step
     #label ThunderHoldTroops
-    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r., |cRXP_ENEMY_Thunder Hold Cannoneers|r., and |cRXP_ENEMY_Thunder Hold Armsmen|r.
+    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r, |cRXP_ENEMY_Thunder Hold Cannoneers|r,and |cRXP_ENEMY_Thunder Hold Armsmen|r.
     .complete 31767,1 --15/15 Thunder Hold troops slain
     .mob Thunder Hold Mender
     .mob Thunder Hold Cannoneer
@@ -1549,7 +1549,7 @@ step
     +|cRXP_WARN_To efficiently learn dragonriding talents, use the macro found under "CLICK HERE"|r.
     .link /run GenericTraitUI_LoadUI();GenericTraitFrame:SetSystemID(1);ToggleFrame(GenericTraitFrame) >> CLICK HERE
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r. and |cRXP_FRIENDLY_Taran Zhu|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r and |cRXP_FRIENDLY_Taran Zhu|r.
     .accept 29694 >>Accept Regroup!
     .accept 31770 >>Accept You're Either With Us Or...
     .goto 371,33.66,10.62
@@ -1582,7 +1582,7 @@ step
     .goto 371,33.38,12.97,0
     .goto 371,32.39,6.20,0
     .goto 371,35.25,7.67,0
-    >>Kill |cRXP_ENEMY_Sha Harbinger|r. and |cRXP_ENEMY_Sha Haunt|r.
+    >>Kill |cRXP_ENEMY_Sha Harbinger|r and |cRXP_ENEMY_Sha Haunt|r.
     .complete 31771,2 --7/7 Sha Harbinger slain
     .complete 31771,1 --20/20 Sha Haunt slain
     .mob Sha Harbinger
@@ -1673,7 +1673,7 @@ step
     .turnin 31978 >>Turn in Priorities!
     .target Ellie Honeypaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayor Honeydew|r., |cRXP_FRIENDLY_Taran Zhu|r., and |cRXP_FRIENDLY_Sergeant Gorrok|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayor Honeydew|r, |cRXP_FRIENDLY_Taran Zhu|r,and |cRXP_FRIENDLY_Sergeant Gorrok|r.
     .turnin 31770 >>Turn in You're Either With Us Or...
     .goto 371,29.18,13.79
     .target +Mayor Honeydew
@@ -1700,7 +1700,7 @@ step
     .isOnQuest 80012
     .xp >14,1
     .goto 371,28.6,14.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r. and buy |T134491:0|t[Nostwin's Voucher.]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
     .collect 217930,10
     .buy 217930,10
     .skipgossip
@@ -1710,7 +1710,7 @@ step
     .xp <14,1
     #loop
     .goto 371,28.6,14.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r. and buy |T134491:0|t[Nostwin's Voucher.]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
     .collect 217930,10
     .buy 217930,10
     .skipgossip
@@ -1863,7 +1863,7 @@ step
 step
     #completewith next
     #label Cogswing
-    >>Kill |cRXP_ENEMY_Master Engineer Cogswing|r. and |cRXP_ENEMY_Gyro-Mechanic Lavenderp|r.
+    >>Kill |cRXP_ENEMY_Master Engineer Cogswing|r and |cRXP_ENEMY_Gyro-Mechanic Lavenderp|r.
     .complete 31776,1 --1/1 Master Engineer Cogswing slain
     .complete 31776,2 --1/1 Gyro-Mechanic Lavenderp slain
     .mob Master Engineer Cogswing
@@ -1877,7 +1877,7 @@ step
 step
     #requires Grimhatchet
     #optional
-    >>Kill |cRXP_ENEMY_Master Engineer Cogswing|r. and |cRXP_ENEMY_Gyro-Mechanic Lavenderp|r.
+    >>Kill |cRXP_ENEMY_Master Engineer Cogswing|r and |cRXP_ENEMY_Gyro-Mechanic Lavenderp|r.
     .goto 371,30.32,24.38
     .complete 31776,1 --1/1 Master Engineer Cogswing slain
     .complete 31776,2 --1/1 Gyro-Mechanic Lavenderp slain
@@ -2017,7 +2017,7 @@ step
     .turnin 31999 >>Turn in Nazgrim's Command
     .target General Nazgrim
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shademaster Kiryn|r. and |cRXP_FRIENDLY_Rivett Clutchpop|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shademaster Kiryn|r and |cRXP_FRIENDLY_Rivett Clutchpop|r.
     .accept 29815 >>Accept Forensic Science
     .goto 371,28.19,24.83
     .target +Shademaster Kiryn
@@ -2053,7 +2053,7 @@ step
     .target Lurching Blossom
 step
     #label EmergencySupplies
-    >>Kill |cRXP_ENEMY_Water Sprites|r. Loot them for the |T348523:0|t[Emergency Supplies]
+    >>Kill |cRXP_ENEMY_Water Sprites|r. Loot them for the |T348523:0|t[Emergency Supplies].
     .complete 31112,1 --5/5 Emergency Supplies
     .mob Water Sprite
 step
@@ -2064,7 +2064,7 @@ step
 --     .goto 371,26.39,28.33
 --     .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r. and |cRXP_FRIENDLY_Shademaster Kiryn|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r and |cRXP_FRIENDLY_Shademaster Kiryn|r.
     .turnin 31112 >>Turn in They're So Thorny!
     .goto 371,28.11,24.69
     .target +Rivett Clutchpop
@@ -2081,7 +2081,7 @@ step
 step
     .goto 371,28.07,24.79
     >>|cRXP_WARN_Use|r. |T237521:0|t[Poison Blossom] (2) |cRXP_WARN_while above a large group of mobs|r. |cRXP_WARN_Use |r. |T135431:0|t[Throw Star] (1) |cRXP_WARN_to kill individual mobs|r.
-    >>Kill |cRXP_ENEMY_Hozen Nibstabber|r. and |cRXP_ENEMY_Hozen Gutripper|r.
+    >>Kill |cRXP_ENEMY_Hozen Nibstabber|r and |cRXP_ENEMY_Hozen Gutripper|r.
     .complete 29827,2 --25/25 Hozen Nibstabber slain
     .complete 29827,1 --25/25 Hozen Gutripper slain
     .mob Hozen Nibstabber
@@ -2160,7 +2160,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Pandaria Remix
 #name 3) Jade Forest Alliance
-#displayname |cFFFCDC00Chapter 1|r. - Jade Forest
+#displayname |cFFFCDC00Chapter 1|r - Jade Forest
 #title Jade Forest
 #next 4) Valley of the Four Winds 1
 -- #subweight 9
@@ -2187,7 +2187,7 @@ step
     +|cRXP_WARN_To efficiently learn dragonriding talents, use the macro found under "CLICK HERE"|r.
     .link /run GenericTraitUI_LoadUI();GenericTraitFrame:SetSystemID(1);ToggleFrame(GenericTraitFrame) >> CLICK HERE
 step
-    >>Use |T249177:0|t[Full Autofire(1)] then use |T249177:0|t[Torpedo Rocket(2)] on |cRXP_ENEMY_Shredders|r., |cRXP_ENEMY_Peons|r. and |cRXP_ENEMY_Grunts|r. |cRXP_WARN_Ideally, target as many as possible at once and barrels if they are in close proximity|r.
+    >>Use |T249177:0|t[Full Autofire(1)] then use |T249177:0|t[Torpedo Rocket(2)] on |cRXP_ENEMY_Shredders|r, |cRXP_ENEMY_Peons|r and |cRXP_ENEMY_Grunts|r. |cRXP_WARN_Ideally, target as many as possible at once and barrels if they are in close proximity|r.
     *|cFFFF0000Make sure to do this as often as possible.|r.|r.
     .complete 31732,2 --8/8 Garrosh'ar Shredder slain
     .complete 31732,1 --60/60 Garrosh'ar Horde slain
@@ -2235,7 +2235,7 @@ step
     .accept 31734 >>Accept Welcome Wagons
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Grunts|r. and |cRXP_ENEMY_Gear-Greasers|r.
+    >>Kill |cRXP_ENEMY_Grunts|r and |cRXP_ENEMY_Gear-Greasers|r.
     .complete 30069,1 --6/6 Garrosh'ar Grunt slain
     .mob garrosh'ar grunt
     .complete 30069,2 --4/4 Garrosh'ar Gear-Greaser slain
@@ -2303,7 +2303,7 @@ step
     .goto 371,45.4,94.35,0
     .goto 371,44.63,95.64,0
     .goto 371,44.21,95.97,0
-    >>Kill |cRXP_ENEMY_Grunts|r. and |cRXP_ENEMY_Gear-Greasers|r.
+    >>Kill |cRXP_ENEMY_Grunts|r and |cRXP_ENEMY_Gear-Greasers|r.
     .complete 30069,1 --6/6 Garrosh'ar Grunt slain
     .complete 30069,2 --4/4 Garrosh'ar Gear-Greaser slain
     .mob garrosh'ar grunt
@@ -2355,7 +2355,7 @@ step
     .goto 371,44.52,91.27,0
     .goto 371,42.94,92.81,0
     .goto 371,44.32,94.09,0
-    >>Kill |cRXP_ENEMY_Sha Haunt|r. and |cRXP_ENEMY_Sha Harbinger|r.
+    >>Kill |cRXP_ENEMY_Sha Haunt|r and |cRXP_ENEMY_Sha Harbinger|r.
     .complete 31737,1 --10/10 Sha Haunt slain
     .mob +sha haunt
     .complete 31737,2 --5/5 Sha Harbinger slain
@@ -2365,7 +2365,7 @@ step
     >>|cRXP_WARN_Follow the Arrow|r.
     .complete 31736,1 --1/1 Leader of Paw'don Village found
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taran Zhu|r., |cRXP_FRIENDLY_Sunke Khang|r., |cRXP_FRIENDLY_Teng Applebloom|r. and |cRXP_FRIENDLY_Mishka|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taran Zhu|r, |cRXP_FRIENDLY_Sunke Khang|r, |cRXP_FRIENDLY_Teng Applebloom|r and |cRXP_FRIENDLY_Mishka|r.
     .turnin 31737 >>Turn in The Cost of War
     .goto 371,46.25,84.81
     .target +Taran Zhu
@@ -2392,7 +2392,7 @@ step
     .goto 371,45.83,84.83,5,0
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r. and buy |T134491:0|t[Nostwin's Voucher.]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
     .collect 217930,10
     .buy 217930,10
     .skipgossip
@@ -2405,7 +2405,7 @@ step
     .goto 371,45.83,84.83,5,0
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r. and buy |T134491:0|t[Nostwin's Voucher.]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
     .collect 217930,10
     .buy 217930,10
     .skipgossip
@@ -2467,7 +2467,7 @@ step
     .goto 371,43.46,88.36,0
     >>Kill |cRXP_ENEMY_Twinspire Peon|r.
     *Click on |cRXP_PICK_Barrels|r.
-    *Interact with |cRXP_FRIENDLY_Wounded Pilots|r. |cRXP_WARN_Ideally use your own healing abilities if possible|r.
+    *Interact with |cRXP_FRIENDLY_Wounded Pilots|r |cRXP_WARN_Ideally use your own healing abilities if possible|r.
     .complete 31738,1 --12/12 Twinspire Peon slain
     .complete 31739,1 --6/6 Applebloom Cider
     .complete 29552,1 --6/6 Wounded Pilots revived
@@ -2511,7 +2511,7 @@ step
     .target Nostwin
 step
     #label Critical Condition
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r., |cRXP_FRIENDLY_Sunke Khang|r. and |cRXP_FRIENDLY_Rell Nightwind|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r, |cRXP_FRIENDLY_Sunke Khang|r and |cRXP_FRIENDLY_Rell Nightwind|r.
     .turnin 29552 >>Turn in Critical Condition
     .goto 371,46.12,84.57
     .target +Mishka
@@ -2580,7 +2580,7 @@ step
     .goto 371,41.78,80.31,10,0
     .goto 371,41.15,80.27,0
     .goto 371,41.78,80.31,0
-    >>Kill |cRXP_ENEMY_Dalgan|r. and |cRXP_ENEMY_Bellandra Felstorm|r. |cRXP_WARN_on the terrace|r.
+    >>Kill |cRXP_ENEMY_Dalgan|r and |cRXP_ENEMY_Bellandra Felstorm|r. |cRXP_WARN_on the terrace|r.
     .complete 31742,1 --1/1 Dalgan slain
     .mob dalgan
     .complete 31742,2 --1/1 Bellandra Felstorm slain
@@ -2639,7 +2639,7 @@ step
     .mob Twinspire Demolitionist
 step
     .goto 371,41.39,79.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r. |cRXP_WARN_infont of the temple|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r |cRXP_WARN_infont of the temple|r.
     .turnin 31741 >>Turn in Twinspire Keep
     .turnin 31742 >>Turn in Fractured Forces
     .turnin 31743 >>Turn in Smoke Before Fire
@@ -2704,7 +2704,7 @@ step
     .mob hozen
 step
     .goto 371,49.8,90.18
-    >>Interact with the |cRXP_FRIENDLY_Alliance Bodyguard|r. |cRXP_WARN_on the ship|r.
+    >>Interact with the |cRXP_FRIENDLY_Alliance Bodyguard|r |cRXP_WARN_on the ship|r.
     .complete 29555,1,1 --3/3 Clues found
     .target Alliance Bodyguard
 step
@@ -2717,7 +2717,7 @@ step
     .goto 371,50.01,90.38,10,0
     .goto 371,50.15,90.37,5,0
     .goto 371,50.27,90.83
-    >>Kill |cRXP_ENEMY_Hozen Diver|r. Loot him for |cRXP_LOOT_Encoded Captain's Log|r.
+    >>Kill |cRXP_ENEMY_Hozen Diver|r. Loot him for [|cRXP_LOOT_Encoded Captain's Log|r].
     .complete 29555,2 --1/1 Encoded Captain's Log
     .mob Hozen Diver
 step
@@ -2748,7 +2748,7 @@ step
     .accept 29553 >>Accept The Missing Admiral
     .target Nodd Codejack
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Taylor|r. and |cRXP_FRIENDLY_Bold Karasshi|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Taylor|r and |cRXP_FRIENDLY_Bold Karasshi|r.
     .turnin 29553 >>Turn in The Missing Admiral
     .goto 371,54.21,82.50
     .target +Admiral Taylor
@@ -2796,14 +2796,14 @@ step
     .complete 29560,1 --8/8 Ancient Hozen Skull
 step
     #label Prisoners freed
-    >>Click on |cRXP_PICK_Hozen Cages|r. to free |cRXP_FRIENDLY_Alliance Prisoners|r. |cRXP_WARN_Don't open empty cages|r.
+    >>Click on |cRXP_PICK_Hozen Cages|r. to free |cRXP_FRIENDLY_Alliance Prisoners|r |cRXP_WARN_Don't open empty cages|r.
     .complete 29559,1 --6/6 Prisoners freed
     .collect 74260,6,29559,0x1,-1
     .disablecheckbox
     .target Alliance Prisoner
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Slingtail Hozens|r. Loot them for |cRXP_LOOT_|T133749:0|t Bamboo Keys.|r.
+    >>Kill |cRXP_ENEMY_Slingtail Hozens|r. Loot them for [|cRXP_LOOT_|T133749:0|t Bamboo Keys|r].
     .complete 29558,1 --12/12 Slingtail hozen slain
     .disablecheckbox
     .mob Slingtail Treeleaper
@@ -2827,7 +2827,7 @@ step
     .target Bold Karasshi
 step
     .goto 371,54.65,80.12
-    >>Kill |cRXP_ENEMY_Kung Din|r. Loot him for |cRXP_LOOT_Slingtail Key|r.
+    >>Kill |cRXP_ENEMY_Kung Din|r. Loot him for [|cRXP_LOOT_Slingtail Key|r].
     .complete 29759,1 --1/1 Slingtail Key
     .mob Kung Din
 step
@@ -2909,7 +2909,7 @@ step
     .goto 371,57.01,84.36,0
     .goto 371,58.97,86.20,0
     .goto 371,60.56,84.90,0
-    >>Kill |cRXP_ENEMY_Pearly Tortoise|r. Loot them for |cRXP_LOOT_Tortoise Flank|r.
+    >>Kill |cRXP_ENEMY_Pearly Tortoise|r. Loot them for [|cRXP_LOOT_Tortoise Flank|r].
     .complete 29885,1 --6/6 Tortoise Flank
     .mob Pearly Tortoise
 step
@@ -2919,7 +2919,7 @@ step
     .target Rell Nightwind
     .turnin 29885 >>Turn in Road Rations
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pearlkeeper Fujin|r. and |cRXP_FRIENDLY_Bold Karasshi|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pearlkeeper Fujin|r and |cRXP_FRIENDLY_Bold Karasshi|r.
     .accept 29762 >>Accept Family Heirlooms
     .goto 371,58.97,81.7
     .target +Pearlkeeper Fujin
@@ -2928,7 +2928,7 @@ step
     .target +Bold Karasshi
 -- step
 --     #completewith Watersmithing
---     >>Kill |cRXP_ENEMY_Slingtail Stickypaw|r. Loot them for |cRXP_LOOT_Clothes|r.
+--     >>Kill |cRXP_ENEMY_Slingtail Stickypaw|r. Loot them for [|cRXP_LOOT_Clothes|r].
 --     .complete 29887,3 --1/1 Jade Crown
 --     .complete 29887,4 --1/1 Rosewood Beads
 --     .complete 29887,2 --1/1 Ceremonial Robes
@@ -2936,7 +2936,7 @@ step
 --     .mob Slingtail Stickypaw
 -- step
 --     #completewith Watersmithing
---     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect |cRXP_LOOT_Glassfin Heirlooms|r.
+--     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
 --     .complete 29762,1 --8/8 Glassfin Heirloom
 --     .target Pearlfin Villager
 -- step
@@ -2959,11 +2959,11 @@ step
     +1
 step
     #completewith next
-    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect |cRXP_LOOT_Glassfin Heirlooms|r.
+    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
 step
-    >>Kill |cRXP_ENEMY_Slingtail Stickypaw|r. Loot them for |cRXP_LOOT_Clothes|r.
+    >>Kill |cRXP_ENEMY_Slingtail Stickypaw|r. Loot them for [|cRXP_LOOT_Clothes|r].
     .complete 29887,3 --1/1 Jade Crown
     .complete 29887,4 --1/1 Rosewood Beads
     .complete 29887,2 --1/1 Ceremonial Robes
@@ -2971,11 +2971,11 @@ step
     .mob Slingtail Stickypaw
 step
     #label Clothes
-    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect |cRXP_LOOT_Glassfin Heirlooms|r.
+    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r. and |cRXP_FRIENDLY_Pearlkeeper Fujin|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r and |cRXP_FRIENDLY_Pearlkeeper Fujin|r.
     .turnin 29762 >>Turn in Family Heirlooms
     .goto 371,58.97,81.69
     .target +Bold Karasshi

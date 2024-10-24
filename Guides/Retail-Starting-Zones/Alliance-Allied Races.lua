@@ -51,7 +51,7 @@ step << LightforgedDraenei !DK
     #completewith next
     .goto 941,43.180,24.938
     >>Go downstairs
-    .zone 84 >>Click the |cRXP_PICK_Portal to Stormwind|r.
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Portal to Stormwind|r.
 step << Mechagnome !DK
     .goto 1573,18.67,67.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkartonque|r.
@@ -69,7 +69,7 @@ step << VoidElf !DK
 step << VoidElf !DK
     #completewith next
     .goto 971,27.99,21.50
-    .zone 84 >>Click the |cRXP_PICK_Portal to Stormwind|r.
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Portal to Stormwind|r.
 step << !DK
     .goto 84,53.059,15.259
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
@@ -256,7 +256,7 @@ step << DK
     .complete 58989,1 --1/1 Use the portal to the 2nd floor
 step << DK
     .goto 23,83.14,45.4
-    >>Visit |cRXP_WARN_the Runeforge|r., open your Spellbook, and apply the 'Fallen Crusader' enchantment to your weapon.
+    >>Visit |cRXP_WARN_the Runeforge|r,open your Spellbook, and apply the 'Fallen Crusader' enchantment to your weapon.
     .complete 58989,2 --Weapon emblazoned (1)
     .isQuestTurnedIn 58877 --x New Type of DK Check
     .use 53428

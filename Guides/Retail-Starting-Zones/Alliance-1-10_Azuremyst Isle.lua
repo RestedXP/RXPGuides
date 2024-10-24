@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     +Welcome to the |cRXP_WARN_Draenei Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r. instead.
+    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r. instead.
 step
     .goto 468,61.21,29.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megelon|r.
@@ -36,7 +36,7 @@ step
     .goto 468,46.91,34.21,40,0
     .goto 468,41.99,33.66,40,0
     .goto 468,37.3,28.15,40,0
-    >>Kill |cRXP_ENEMY_Vale Moths|r. and loot them for |cRXP_LOOT_Vial of Moth Blood|r.
+    >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for |cRXP_LOOT_Vial of Moth Blood|r.
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
 step
@@ -86,7 +86,7 @@ step
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
-    >>Use |T135923:0|t[Gift of the Naaru] on |cRXP_FRIENDLY_Draenei Survivor|r. |cRXP_WARN_ideally|r. from a distance.
+    >>Use |T135923:0|t[Gift of the Naaru] on |cRXP_FRIENDLY_Draenei Survivor|r |cRXP_WARN_ideally|r from a distance.
     .complete 9283,1 --1/1 Draenei Survivors Saved
     .use 370626
     .target Draenei Survivor
@@ -96,7 +96,7 @@ step
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r. and |cRXP_FRIENDLY_Apprentice Vishael|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r and |cRXP_FRIENDLY_Apprentice Vishael|r.
     .turnin 10302 >>Turn in Volatile Mutations
     .accept 9293 >>Accept What Must Be Done...
     .goto 468,49.87,37.34
@@ -120,7 +120,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
-    >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. and loot them for their |cRXP_LOOT_Lasher Samples|r.
+    >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their |cRXP_LOOT_Lasher Samples|r.
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
@@ -128,7 +128,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Vishael|r. and |cRXP_FRIENDLY_Botanist Taerix|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Vishael|r and |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9799 >>Turn in Botanical Legwork
     .goto 468,49.72,37.54
     .turnin 9293 >>Turn in What Must Be Done...
@@ -144,7 +144,7 @@ step
     .turnin 9283 >>Turn in Rescue the Survivors!
 	.target Zalduun
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r. and |cRXP_FRIENDLY_Vindicator Aldar|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r and |cRXP_FRIENDLY_Vindicator Aldar|r.
     .accept 37445 >>Accept Spare Parts
     .goto 468,50.52,47.93
     .accept 37444 >>Accept Inoculation
@@ -154,7 +154,7 @@ step
 step
     .isOnQuest 9294
     #completewith next
-    +|cFFFF0000[TIP]|r. To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r. press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
+    +|cFFFF0000[TIP]|r To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r. press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
 step
     .goto 468,45.85,62.9
     >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water|r.
@@ -207,7 +207,7 @@ step
     .goto 468,49.86,37.36
 	.target Botanist Taerix
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r. and |cRXP_FRIENDLY_Technician Zhanaa|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r and |cRXP_FRIENDLY_Technician Zhanaa|r.
     .turnin 37445 >>Turn in Spare Parts
     .goto 468,50.5,47.9
 	.target +Technician Zhanaa
@@ -240,7 +240,7 @@ step
 	.target Tolaan
 step
     .goto 468,27.8,80.41
-    >>Kill |cRXP_ENEMY_Surveyor Candress|r. and loot her for her |cRXP_LOOT_Blood Elf Plans|r.
+    >>Kill |cRXP_ENEMY_Surveyor Candress|r and loot her for her |cRXP_LOOT_Blood Elf Plans|r.
     .complete 9311,1 --1/1 Surveyor Candress slain
 step
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blood Elf Plans|r.
@@ -310,7 +310,7 @@ step
     +|cRXP_WARN_Only gather herbs or mine ores for experience when they are immediately nearby|r.
 step
     #completewith next
-    .vendor >>Talk to |cRXP_FRIENDLY_Otonambusi|r., buy bags if you need |cRXP_WARN_(don't sell Moongraze Stag Tenderloin)|r.
+    .vendor >>Talk to |cRXP_FRIENDLY_Otonambusi|r, buy bags if you need |cRXP_WARN_(don't sell Moongraze Stag Tenderloin)|r.
 	.target Otonambusi
 step
     .goto 97,48.39,51.78
@@ -349,7 +349,7 @@ step
 	.target Zaldaan
 step
     #completewith Root Trapper Vine
-    >>Kill |cRXP_ENEMY_Moongraze Stags|r. and |cRXP_ENEMY_Moongraze Buck|r. and loot them for |cRXP_LOOT_Moongraze Stag Tenderloin|r.
+    >>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for |cRXP_LOOT_Moongraze Stag Tenderloin|r.
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
 	.mob Moongraze Buck
@@ -362,7 +362,7 @@ step
     .goto 97,43.6,41.92,40,0
     .goto 97,43.52,45.58,40,0
     .goto 97,45.73,45.09,40,0
-    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r. and loot them for the |cRXP_LOOT_Faintly Glowing Crystal|r.
+    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r and loot them for the |cRXP_LOOT_Faintly Glowing Crystal|r.
 	.collect 23678,1,9455
     .accept 9455 >>Accept Strange Findings
     .use 23678
@@ -388,12 +388,12 @@ step
     .goto 97,59.16,56.12,40,0
     +1
 step
-    >>Kill |cRXP_ENEMY_Root Trappers|r. and loot them for |cRXP_LOOT_|T134196:0|t[Root Trapper Vine].|r.
+    >>Kill |cRXP_ENEMY_Root Trappers|r and loot them for |cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r.
     .complete 9463,1 --8/8 Root Trapper Vine
 	.mob Root Trapper
 step
     #label Root Trapper Vine
-	>>Kill |cRXP_ENEMY_Moongraze Stags|r. and |cRXP_ENEMY_Moongraze Buck|r. and loot them for |cRXP_LOOT_|T134025:0|t[Moongraze Stag Tenderloin.]|r.
+	>>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for |cRXP_LOOT_|T134025:0|t[Moongraze Stag Tenderloin.]|r.
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
 	.mob Moongraze Buck
@@ -454,16 +454,16 @@ step
     .goto 97,59.12,69.89,40,0
     .goto 97,60.64,70.09,40,0
     .goto 97,61.62,68.49,40,0
-    >>Kill |cRXP_ENEMY_Skittering Crawlers|r. and loot them for |cRXP_LOOT_|T134007:0|t[Skittering Crawler Meats.]|r.
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r and loot them for |cRXP_LOOT_|T134007:0|t[Skittering Crawler Meats.]|r.
     .complete 9512,1 --6/6 Skittering Crawler Meat
 	.mob Skittering Crawler
 step
     .goto 97,59.57,67.65
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nautical Compass|r. |cRXP_WARN_in the small camp|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nautical Compass|r |cRXP_WARN_in the small camp|r.
     .complete 9506,1 --1/1 Nautical Compass
 step
     .goto 97,58.60,66.36
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nautical Map|r. |cRXP_WARN_in the small camp|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nautical Map|r |cRXP_WARN_in the small camp|r.
     .complete 9506,2 --1/1 Nautical Map
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
@@ -472,7 +472,7 @@ step
     .goto 97,47.03,70.20
 	.target +Admiral Odesyus
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen|r. and |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen|r and |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r.
     .accept 9513 >>Accept Reclaiming the Ruins
     .goto 97,47.13,70.28
 	.target +Priestess Kyleen
@@ -493,7 +493,7 @@ step
     .goto 97,48.99,61.85,40,0
     .goto 97,49.29,63.22,40,0
     .goto 97,48.25,64.9,40,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the|cRXP_PICK_Tree Stump|r. and |cRXP_PICK_Piles of Leaves|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the|cRXP_PICK_Tree Stump|r and |cRXP_PICK_Piles of Leaves|r.
     .complete 9530,2 --5/5 Pile of Leaves
     .complete 9530,1 --1/1 Hollowed Out Tree
 step
@@ -522,7 +522,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Nagas|r. and loot them for |cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r.
+    >>Kill |cRXP_ENEMY_Nagas|r and loot them for |cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r.
     -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
 	.collect 23759,1,9514
     .accept 9514 >>Accept Rune Covered Tablet
@@ -538,7 +538,7 @@ step
     .complete 9523,1 --8/8 Ancient Relic
 step
     #label Wrathscale
-    >>Kill |cRXP_ENEMY_Nagas|r. and loot them for |cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r.
+    >>Kill |cRXP_ENEMY_Nagas|r and loot them for |cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r.
     -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
 	.collect 23759,1,9514
     .accept 9514 >>Accept Rune Covered Tablet
@@ -564,7 +564,7 @@ step
     .complete 9456,1 --8/8 Infected Nightstalker Runt slain
 	.mob Infected Nightstalker Runt
 step
-    >>Kill |cRXP_ENEMY_Moongraze Bucks|r. and loot them for|cRXP_LOOT_|T134346:0|tMoongraze Buck Hides.|r.
+    >>Kill |cRXP_ENEMY_Moongraze Bucks|r and loot them for|cRXP_LOOT_|T134346:0|tMoongraze Buck Hides|r.
     .complete 10324,1 --6/6 Moongraze Buck Hide
 	.mob Moongraze Buck
 step
@@ -581,7 +581,7 @@ step
     .use 23792
 step
     #completewith next
-    .aura -30298 >>.link /cancelaura Tree Disguise Kit >>Click here for a macro. Paste this into the chat.
+    .aura -30298 >>.link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
 step
     .goto 97,15.26,92.24
     >>|cRXP_WARN_Follow the Arrow|r.
@@ -595,7 +595,7 @@ step
 	.target Cowlen
 step
     .goto 97,14.58,90.66
-    >>Kill |cRXP_ENEMY_|r.Owlbeasts and loot them for the |cRXP_LOOT_Remain's of Cowlen's Family|r.
+    >>Kill |cRXP_ENEMY_Owlbeasts|r and loot them for the |cRXP_LOOT_Remain's of Cowlen's Family|r.
     .complete 9527,1 --1/1 Remains of Cowlen's Family
 step
     #sticky
@@ -605,7 +605,7 @@ step
 	.target Cowlen
 step
     #completewith next
-    .deathskip >> Die to the |cRXP_ENEMY_Owlbeasts|r. Respawn |cRXP_WARN_at Azure Watch|r.
+    .deathskip >> Die to the |cRXP_ENEMY_Owlbeasts|r Respawn |cRXP_WARN_at Azure Watch|r.
 step
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
@@ -630,7 +630,7 @@ step
 step
     .goto 97,48.56,71.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer "Spark" Overgrind|r.
-    >>|cRXP_WARN_Wait for the Roleplay,|r. Kill |cRXP_ENEMY_Engineer "Spark" Overgrind|r. and loot him for |cRXP_LOOT_Traitor's Communication|r.
+    >>|cRXP_WARN_Wait for the Roleplay,|r Kill |cRXP_ENEMY_Engineer "Spark" Overgrind|r and loot him for |cRXP_LOOT_Traitor's Communication|r.
     .complete 9537,1 --1/1 Traitor's Communication
     .skipgossip
     .mob Engineer "Spark" Overgrind
@@ -670,7 +670,7 @@ step
     .goto 103,66.18,33.78,20,0
     .goto 103,62.49,43.7,20,0
     .goto 103,57.03,50.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nurguni|r. |cRXP_WARN_inside The Exodar|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nurguni|r |cRXP_WARN_inside The Exodar|r.
     .turnin 9604 >>Turn in On the Wings of a Hippogryph
     .accept 9605 >> Accept Hippogryph Master Stephanos
 	.target Nurguni
@@ -715,7 +715,7 @@ step
     .goto 84,67.03,83.44,20,0
     .goto 84,69.76,84.87,20,0
     .goto 37,41.71,64.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r. |cRXP_WARN_in Goldshire|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cRXP_WARN_in Goldshire|r.
     .fp >>Get the Goldshire Flight Path
 	.target Bartlett the Brave
     .nodmf
@@ -723,7 +723,7 @@ step
     #veteran
     .goto 103,61,52.56,5,0
     .goto 103,63.23,58.75
-    +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r. You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r. If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r. However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
+    +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
     >>|cRXP_WARN_It is recommended to log in with a different character possessing at least 10,000 gold. Use this character to purchase the items and then send them over|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Auctioneer Iressa|r.
     .collect 71715,1

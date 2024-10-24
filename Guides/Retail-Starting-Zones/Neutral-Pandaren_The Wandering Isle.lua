@@ -28,7 +28,7 @@ step
 step << Hunter
     .isOnQuest 30034
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r. for the |T537025:0|t[Trainee's Crossbow].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r for the |T537025:0|t[Trainee's Crossbow].
     .collect 73211,1 --Trainee's Crossbow (1)
 step << Hunter
     .goto 378,57.22,19.22
@@ -38,7 +38,7 @@ step << Hunter
 step << Mage
     .isOnQuest 30033
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r. for the |T537771:0|t[Trainee's Spellblade] and |T654237:0|t[Trainee's Hand Fan].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r for the |T537771:0|t[Trainee's Spellblade] and |T654237:0|t[Trainee's Hand Fan].
     .collect 76390,1 --Trainee's Spellblade (1)
     .collect 76392,1, --Trainee's Hand Fan (1)
 step << Mage
@@ -51,7 +51,7 @@ step << Mage
 step << Monk/Priest
     .isOnQuest 30027
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r. for the |T537770:0|t[Trainee's Staff].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r for the |T537770:0|t[Trainee's Staff].
     .collect 73209,1 -Trainee's Staff (1)
 step << Monk/Priest
     .goto 378,56.67,18.20
@@ -61,7 +61,7 @@ step << Monk/Priest
 step << Shaman
     .isOnQuest 30037
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r. for the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r for the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
     .collect 76391,1  --Trainee's Axe (1)
     .collect 73213,1 --Trainee's Shield (1)
 step << Shaman
@@ -74,7 +74,7 @@ step << Shaman
 step << Warrior
     .isOnQuest 30038
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r. for the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r for the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
     .collect 76391,1  --Trainee's Axe (1)
     .collect 73213,1  --Trainee's Shield (1)
 step << Warrior
@@ -88,7 +88,7 @@ step << Warrior
 step << Rogue
     .isOnQuest 30036
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r. for the |T537767:0|t[Trainee's Daggers].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Weapon Rack|r for the |T537767:0|t[Trainee's Daggers].
     .collect 73208,1,30036,1,1 --Trainee's Dagger (ID 1)
     .collect 73212,1,30036,1,1 --Trainee's Dagger (ID 2)
 step << Rogue
@@ -129,7 +129,7 @@ step
     .goto 378,60.30,19.00,10,0
     .goto 378,60.13,19.77,10,0
     .goto 378,60.44,19.47
-    >>Go inside the |cRXP_WARN_building|r. and defeat |cRXP_ENEMY_Sparring Trainees|r.
+    >>Go inside the |cRXP_WARN_building|r and defeat |cRXP_ENEMY_Sparring Trainees|r.
     .complete 29524,1 --6/6 Sparring Trainees defeated
 	.mob Tushui Trainee
 	.mob Huojin Trainee
@@ -183,7 +183,7 @@ step
 	.target Merchant Lorvo
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r. and loot them for their |T132622:0|t|cRXP_LOOT_Supplies|r.
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t|cRXP_LOOT_Supplies|r.
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.mob Amberleaf Scamp
 step
@@ -197,7 +197,7 @@ step
     .goto 378,53.00,20.17,15,0
     .goto 378,54.03,20.93,15,0
     .goto 378,54.02,17.44
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r. and loot them for their |T132622:0|t|cRXP_LOOT_Supplies|r.
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t|cRXP_LOOT_Supplies|r.
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.target Amberleaf Scamp
 step
@@ -211,7 +211,7 @@ step
     .deathskip >> Die and respawn |cRXP_WARN_at the Spirit Healer|r.
 	.target Spirit Healer
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r. and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 29419,2 >>Turn in The Missing Driver
     .turnin 29424 >>Turn in Items of Utmost Importance
     .goto 378,55.11,32.40
@@ -287,11 +287,11 @@ step
 step
     .isOnQuest 29523
     #completewith Fluttering Breeze
-    +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r.
+    +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
     *[1] Press the |cRXP_WARN_Escape key|r.
     *[2] Select |cRXP_WARN_Options|r.
     *[3] Navigate to |cRXP_WARN_Keybindings|r.
-    *[4] Within |cRXP_WARN_Keybindings|r., find |cRXP_WARN_RestedXP Guides|r.
+    *[4] Within |cRXP_WARN_Keybindings|r,find |cRXP_WARN_RestedXP Guides|r.
     *[5] Select and bind the |cRXP_WARN_Active Buttons|r.
 step
     #completewith Fluttering Breeze
@@ -307,7 +307,7 @@ step
 step
     #label Fluttering Breeze
     .goto 378,46.73,30.32,10,0
-    >>Kill the |cRXP_ENEMY_Living Air|r. and loot him for the |T463565:0|t|cRXP_LOOT_Fluttering Breeze|r.
+    >>Kill the |cRXP_ENEMY_Living Air|r and loot him for the |T463565:0|t|cRXP_LOOT_Fluttering Breeze|r.
     .complete 29523,1 --1/1 Fluttering Breeze
     .use 72109
 	.mob Living Air
@@ -320,7 +320,7 @@ step
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Roots|r.
     .complete 29418,1 --5/5 Dry Dogwood Root
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r. and |cRXP_FRIENDLY_Shang Xi|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r and |cRXP_FRIENDLY_Shang Xi|r.
     .turnin 29418 >>Turn in Kindling the Fire
     .turnin 29523 >>Turn in Fanning the Flames
     .goto 378,50.24,21.26
@@ -428,7 +428,7 @@ step
     #completewith next
     +|cRXP_WARN_In this area, some water turns you into an animal, boosting your movement speed|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r. and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .accept 29662 >>Accept Stronger Than Reeds
     .goto 378,63.50,41.93
     .turnin 29521 >>Turn in The Singing Pools
@@ -445,7 +445,7 @@ step
     .isOnQuest 29663
 	#completewith Shrine
     .goto 378,63.37,45.17
-	.vehicle >> Click a |cRXP_FRIENDLY_Balance Pole|r. while you are not in the water.
+	.vehicle >> |TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_FRIENDLY_Balance Pole|r. while you are not in the water.
 step
     #completewith Shrine
 	>>Defeat the |cRXP_ENEMY_Tushui Monks|r. on the poles.
@@ -486,7 +486,7 @@ step
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r. and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 29662 >>Turn in Stronger Than Reeds
     .goto 378,63.50,41.93
     .turnin 29661 >>Turn in The Lesson of Dry Fur
@@ -542,7 +542,7 @@ step
     .use 73791
 step
     .goto 378,79.82,39.31
-    >>Click the Quest Turnin Pop-Up in your Questlog.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the Quest Turnin Pop-Up in your Questlog.
     .turnin 29678 >>Turn in Shu, the Spirit of Water
 step
     .goto 378,79.82,39.31
@@ -623,7 +623,7 @@ step
 	.goto 378,73.97,72.58,5,0
 	.goto 378,73.94,70.86,5,0
 	.goto 378,74.70,74.76,5,0
-    >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r. and loot them for their |cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tclick the |cRXP_PICK_Carrots|r. on the ground.
+    >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r and loot them for their |cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tclick the |cRXP_PICK_Carrots|r. on the ground.
     .complete 29770,2 --3/3 Stolen Carrot
 	.mob Plump Carrotcatcher
 step
@@ -643,7 +643,7 @@ step
     .complete 29769,1 --10/10 Plump Virmen slain
 	.mob Plump Virmen
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gao Summerdraft|r., |cRXP_FRIENDLY_Ji Firepaw|r., and |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gao Summerdraft|r,|cRXP_FRIENDLY_Ji Firepaw|r,and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29770 >>Turn in Still Good!
     .goto 378,68.13,66.40
     .turnin 29769 >>Turn in Rascals
@@ -675,7 +675,7 @@ step
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Wood Planks|r. |cRXP_WARN_on the floor|r.
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r. and |cRXP_FRIENDLY_Ji Firepaw|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29771 >>Turn in Stronger Than Wood
     .goto 378,69.16,66.71
     .turnin 29768 >>Turn in Missing Mallet
@@ -738,7 +738,7 @@ step
 	.target Ji Firepaw
 step
     .goto 378,30.17,39.01,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r. and |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .accept 29777 >>Accept Tools of the Enemy
     .goto 378,31.78,39.71
     .accept 29783 >>Accept Stronger Than Stone
@@ -753,7 +753,7 @@ step
     .target Shen Stonecarver
 step
     #completewith Defaced Scroll of Wisdom burned
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r. and loot them for their |cRXP_LOOT_Brushes|r.
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes|r.
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
@@ -783,7 +783,7 @@ step
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r. and loot them for their |cRXP_LOOT_Brushes|r.
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes|r.
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
@@ -811,11 +811,11 @@ step
 	.goto 378,33.99,50.90,15,0
 	.goto 378,32.16,50.53,15,0
 	.goto 378,31.32,52.22,15,0
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r. and loot them for their |cRXP_LOOT_Brushes|r.
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes|r.
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r., |cRXP_FRIENDLY_Jojo Ironbrow|r., and |cRXP_FRIENDLY_Ji Firepaw|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r,|cRXP_FRIENDLY_Jojo Ironbrow|r,and |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29777 >>Turn in Tools of the Enemy
     .goto 378,31.78,39.71
     .turnin 29783 >>Turn in Stronger Than Stone
@@ -940,7 +940,7 @@ step
     .goto 378,26.64,66.63,10 >> Run toward |cRXP_FRIENDLY_Dafeng|r. after the winds in the next room subside
 	.isOnQuest 29785
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r. and |cRXP_FRIENDLY_Aysa|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r and |cRXP_FRIENDLY_Aysa|r.
     .turnin 29785 >>Turn in Dafeng, the Spirit of Air
     .goto 378,24.65,69.80
     .accept 29786 >>Accept Battle for the Skies
@@ -996,7 +996,7 @@ step
     .goto 378,18.18,44.52,30,0
     .goto 378,24.22,45.72,30,0
     .goto 378,18.18,44.52
-	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r. and loot the |cRXP_PICK_Charms|r. hanging from the trees.
+	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r and loot the |cRXP_PICK_Charms|r. hanging from the trees.
     .complete 29788,1 --8/8 Thornbranch Scamp slain
     .complete 29789,1 --8/8 Kun-Pai Ritual Charm
 	.target Thornbranch Scamp
@@ -1053,7 +1053,7 @@ step
     >>Run to the gate to open it. Wait out the RP
     .complete 29792,2 --1/1 Open the Pei-Wu Forest Gate
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei|r. and |cRXP_FRIENDLY_Korga|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei|r and |cRXP_FRIENDLY_Korga|r.
     .turnin 29792 >>Turn in Bidden to Greatness
     .accept 30591 >>Accept Preying on the Predators
     .goto 378,50.07,76.63
@@ -1080,7 +1080,7 @@ step
     .complete 29795,1 --10/10 Broken Bamboo Stalk
 	.mob Pei-Wu Tiger
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei|r. and |cRXP_FRIENDLY_Korga|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei|r and |cRXP_FRIENDLY_Korga|r.
     .turnin 30591 >>Turn in Preying on the Predators
     .goto 378,50.07,76.63
     .turnin 29795 >>Turn in Stocking Stalks
@@ -1089,7 +1089,7 @@ step
 	.target Wei Palerage
 	.target Korga Strongmane
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael|r. and |cRXP_FRIENDLY_Ji|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael|r and |cRXP_FRIENDLY_Ji|r.
     .turnin 30589 >>Turn in Wrecking the Wreck
     .accept 30590 >>Accept Handle With Care
     .goto 378,36.32,72.36
@@ -1106,14 +1106,14 @@ step
     .goto 378,35.41,79.00,40,0
     .goto 378,40.14,78.79,40,0
     .goto 378,38.29,74.01
-    >>Kill |cRXP_ENEMY_Darkened Horrors|r. and |cRXP_ENEMY_Terrors|r. |cRXP_WARN_Be careful of the Horrors' Shadow Geysers|r.
+    >>Kill |cRXP_ENEMY_Darkened Horrors|r and |cRXP_ENEMY_Terrors|r. |cRXP_WARN_Be careful of the Horrors' Shadow Geysers|r.
 	>>Loot the Explosion Charges on the ground
     .complete 29793,1 --8/8 Darkened Horrors or Darkened Terrors slain
     .complete 30590,1 --6/6 Packed Explosion Charge
 	.mob Darkened Horror
 	.mob Darkened Terror
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael Bay|r. and |cRXP_FRIENDLY_Ji Firepaw|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael Bay|r and |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 30590 >>Turn in Handle With Care
     .goto 378,36.32,72.36
     .turnin 29793 >>Turn in Evil from the Seas
@@ -1122,7 +1122,7 @@ step
 	.target Makael Bay
 	.target Ji Firepaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r. and |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29796 >>Turn in Urgent News
     .accept 29794 >>Accept None Left Behind
     .accept 29797 >>Accept Medical Supplies
@@ -1204,7 +1204,7 @@ step
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r. back to |cRXP_FRIENDLY_Delora Lionheart|r.'s Camp
     .complete 29794,1 --3/3 Injured Sailors rescued
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r. and |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29794 >>Turn in None Left Behind
     .turnin 29797 >>Turn in Medical Supplies
     .goto 378,42.21,86.54
@@ -1256,7 +1256,7 @@ step
     .goto 378,40.26,83.35,5,0
     .goto 378,40.12,84.37,5,0
     .goto 378,38.44,86.07
-    >>Free |cRXP_FRIENDLY_Alliance Priests|r. and |cRXP_FRIENDLY_Horde Druids|r. from the Wreckages, then talk to them. Kill |cRXP_ENEMY_Dampscale Fleshrippers|r. if they're attacking them
+    >>Free |cRXP_FRIENDLY_Alliance Priests|r and |cRXP_FRIENDLY_Horde Druids|r. from the Wreckages, then talk to them. Kill |cRXP_ENEMY_Dampscale Fleshrippers|r. if they're attacking them
     .complete 29799,1 --1/1 Protect the healers
 	.target Alliance Priest
 	.target Horde Druid
@@ -1305,7 +1305,7 @@ step << Alliance
 step << Alliance
     #veteran
 	>>Unlearn your professions by copying then pasting the link below into chat
-    .link /run AbandonSkill(186); AbandonSkill(182);>> CLICK HERE
+    .link /run AbandonSkill(186); AbandonSkill(182);>> |TInterface/cursor/crosshair/interact.blp:20|tClick HERE
 	.train 2366,1 >>Unlearn Herbalism
 	.train 2575,1 >>Unlearn Mining
     .dmf
@@ -1347,7 +1347,7 @@ step << Alliance
 step << Horde
     .dmf
 	>>Unlearn your professions by copying then pasting the link below into chat
-    .link /run AbandonSkill(186); AbandonSkill(182);>> CLICK HERE
+    .link /run AbandonSkill(186); AbandonSkill(182);>> |TInterface/cursor/crosshair/interact.blp:20|tClick HERE
 	.train 2366,1 >>Unlearn Herbalism
 	.train 2575,1 >>Unlearn Mining
 step << Horde

@@ -126,7 +126,7 @@ step << DK
     .goto 85,49.67,76.46
     .complete 58903,4 --1/1 Warchief's Command Board
 step << DK
-    >>Click on the quest in your quest log
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the quest in your quest log
     .goto 85,49.67,76.46
     .turnin 58903 >>Turn in Defender of Azeroth
 ]])

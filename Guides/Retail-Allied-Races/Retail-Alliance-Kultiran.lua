@@ -16,7 +16,7 @@ step
     .accept 49929 >>Accept The Call for Allies
 step
     .goto 84,52.05,13.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r. |cRXP_WARN_inside the Stormwind Embassy|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .turnin 49929 >>Turn in The Call for Allies
     .accept 50239 >>Accept A Choice of Allies
     .target Aysa Cloudsinger
@@ -94,7 +94,7 @@ step
     .goto 1161,67.09,23.33,5 >> Leave |cRXP_WARN_the Office|r.
 step
     .goto 942,59.39,70.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Crestfall|r. |cRXP_WARN_inside the Brennadam|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Crestfall|r |cRXP_WARN_inside the Brennadam|r.
     .turnin 55039 >>Turn in The Master Shipwright
     .accept 55043 >>Accept Fish Tales and Distant Sails
     .target Cyrus Crestfall
@@ -140,7 +140,7 @@ step
     .isOnQuest 55043
 step
     .goto 942,58.66,70.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Crestfall|r. |cRXP_WARN_inside the Hut|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyrus Crestfall|r |cRXP_WARN_inside the Hut|r.
     .turnin 55043 >>Turn in Fish Tales and Distant Sails
     .accept 54708 >>Accept Home, Home On the Range
     .target Cyrus Crestfall
@@ -150,7 +150,7 @@ step
     .complete 54708,1 --1/1 Find the homestead
 step
     .goto 942,49.94,50.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sal Atwater|r. |cRXP_WARN_infront of the House|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sal Atwater|r |cRXP_WARN_infront of the House|r.
     .skipgossip
     .complete 54708,2 --1/1 Meet the shipwright
     .target Sal Atwater
@@ -162,13 +162,13 @@ step
 step
     .goto 942,50.41,49.87,5,0
     .goto 942,50.38,50.47
-    .cast 291980 >>Click on |cRXP_FRIENDLY_Hurricane|r. |cRXP_WARN_[1]|r.
+    .cast 291980 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Hurricane|r |cRXP_WARN_[1]|r.
     .isOnQuest 54721
 step
     #loop
     .goto 942,50.39,50.71,5,0
     .goto 942,50.34,50.29,5,0
-    >>Click on |cRXP_FRIENDLY_Hurricane|r. |cRXP_WARN_[2]|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Hurricane|r |cRXP_WARN_[2]|r.
     .complete 54721,1 --1/1 Hurricane saddled
     .isOnQuest 54721
 step
@@ -180,7 +180,7 @@ step
     .target Dorian Atwater
 step
     #completewith Ward
-    >>Kill |cRXP_ENEMY_Drowned Harbinger|r. and |cRXP_ENEMY_Drowned Convert|r.
+    >>Kill |cRXP_ENEMY_Drowned Harbinger|r and |cRXP_ENEMY_Drowned Convert|r.
     .complete 54725,1 --12/12 Drowned forces slain
     .mob Drowned Harbinger
     .mob Drowned Convert
@@ -206,7 +206,7 @@ step
     .goto 942,67.33,42.09,40,0
     .goto 942,66.52,40.17,40,0
     .goto 942,65.92,42.94,40,0
-    >>Kill |cRXP_ENEMY_Drowned Harbinger|r. and |cRXP_ENEMY_Drowned Convert|r.
+    >>Kill |cRXP_ENEMY_Drowned Harbinger|r and |cRXP_ENEMY_Drowned Convert|r.
     .complete 54725,1 --12/12 Drowned forces slain
     .mob Drowned Harbinger
     .mob Drowned Convert
@@ -220,7 +220,7 @@ step
     .target Dorian Atwater
 step
     .goto 895,68.95,20.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorian Atwater|r. |cRXP_WARN_on the bottom floor inside of the house|r. |cRXP_WARN_Be aware that there may be a brief roleplay sequence before you are able to turn in the quest|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorian Atwater|r |cRXP_WARN_on the bottom floor inside of the house|r. |cRXP_WARN_Be aware that there may be a brief roleplay sequence before you are able to turn in the quest|r.
     .turnin 54726 >>Turn in Frame Work
     .accept 54727 >>Accept Team Carr
     .target Dorian Atwater
@@ -242,7 +242,7 @@ step
     .complete 54727,1,4 --1/1 Follow Dorian to the drop point
 step
     .goto 895,67.22,12.52
-    >>|cRXP_WARN_Follow |cRXP_FRIENDLY_Dorian|r. and use|r. |T236188:0|t[Call for Help](1) |cRXP_WARN_to instruct him to kill|r. |cRXP_ENEMY_the attackers|r.
+    >>|cRXP_WARN_Follow |cRXP_FRIENDLY_Dorian|r and use |T236188:0|t[Call for Help](1) |cRXP_WARN_to instruct him to kill|r |cRXP_ENEMY_the attackers|r.
     .complete 54727,2 --1/1 Follow Dorian to the drop point
     .timer 10,Short Roleplay
     .target Dorian Atwater
@@ -318,7 +318,7 @@ step
     .goto 896,59.11,65.05,40,0
     .goto 896,62.43,63.31,40,0
     .goto 896,60.11,69.55,40,0
-    >>Kill |cRXP_ENEMY_Vengeful Bones|r. and |cRXP_ENEMY_Awoken Guardian|r. |cRXP_WARN_In addition, clicking on the stones near them will help you further fill your Drust Vessel|r.
+    >>Kill |cRXP_ENEMY_Vengeful Bones|r and |cRXP_ENEMY_Awoken Guardian|r. |cRXP_WARN_In addition, clicking on the stones near them will help you further fill your Drust Vessel|r.
     .complete 54730,1 --1/1 Drust Vessel filled
     .mob Awoken Guardian
     .mob Vengeful Bones
@@ -410,12 +410,12 @@ step
     .accept 54851 >>Accept Blessing of the Tides
     .target Lady Jaina Proudmoore
 step
-    .goto 942,59.39,69.36
-    .gossipoption 50743 >>Talk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
+    .goto 942,67.62,44.68
+    .gossipoption 50743 >>|cRXP_WARN_Wait for the Roleplay and then|r Talk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .target Lady Jaina Proudmoore
     .isOnQuest 54851
 step
-    .goto 942,71.17,43.99
+    .goto 942,68.16,45.63
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Boat|r.
     >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r.
     .complete 54851,2 --1/1 Vessel blessed
@@ -427,6 +427,7 @@ step
     .target Lady Jaina Proudmoore
 step
     .goto 942,71.18,44.03
+
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Steering Wheel|r.
     .complete 53720,1 --1/1 Sail to Stormwind Harbor
 step

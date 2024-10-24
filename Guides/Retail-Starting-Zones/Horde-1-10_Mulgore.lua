@@ -259,14 +259,14 @@ step
     .target Ruul Eagletalon
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Plainstrider|r. and |cff00ecffWolfs|r. Loot them for their |cRXP_LOOT_talons/paws|r.
+    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their |cRXP_LOOT_talons/paws|r.
     .complete 20440,2 --4/4 Plainstrider Talon
     .complete 20440,1 --6/6 Prairie Wolf Paw
     .mob Adult Plainstrider
     .mob Prairie Wolf
 step
     >>Kill |cRXP_ENEMY_Palemane Gnolls|r.
-    >>Keep an eye out for |cRXP_ENEMY_Snagglespear|r. and |cRXP_ENEMY_Arra'chea|r.
+    >>Keep an eye out for |cRXP_ENEMY_Snagglespear|r and |cRXP_ENEMY_Arra'chea|r.
     .goto 7,48.44,70.79,30,0
     .goto 7,53.35,71.71
     .complete 14438,1 --15/15 Palemane Gnolls
@@ -278,7 +278,7 @@ step
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
 step
-    >>Kill |cRXP_ENEMY_Plainstrider|r. and |cff00ecffWolfs|r. Loot them for their |cRXP_LOOT_talons/paws|r.
+    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their |cRXP_LOOT_talons/paws|r.
     .goto 7,53.65,68.34,30,0
     .goto 7,50.30,65.51,30,0
     .goto 7,51.92,62.67
@@ -406,7 +406,7 @@ step
     .goto 88,35.79,63.03,10,0
     .goto 88,32.51,70.74,20 >>Take one of the two elevators downwards. Dying here costs you at least one minute
 step
-    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r. and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_talons|r.
+    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_talons|r.
     >>Look out for Doomsayer Wiserunner
     .goto 7,34.20,37.19,20,0
     .goto 7,35.62,39,85,20,0
@@ -456,7 +456,7 @@ step
     .mob Wiry Swoop
 step
     #label MulgoreCougarStalkerClaws
-    >>Kill |cRXP_ENEMY_Praeri Stalkers|r. and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |cRXP_LOOT_claws|r.
+    >>Kill |cRXP_ENEMY_Praeri Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |cRXP_LOOT_claws|r.
     >>Keep an eye out for |cRXP_ENEMY_Mazzranache|r.
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0

@@ -59,7 +59,8 @@ step
 step
     #label NightborneThalyssraEstate
     .goto 680,65.88,63.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r. Press "ESC" to skip the upcoming cutscene
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r.
+    *|cRXP_WARN_Press "ESC" to skip the upcoming cutscene|r
     .turnin 49973 >>Turn in Thalyssra's Estate
     .accept 49613 >>Accept Silvermoon City
     .target Lady Liadrin
@@ -90,7 +91,8 @@ step
     .goto 85,56.02,88.25
     .zone 110 >>Take the Portal to Silvermoon
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r. Press "ESC" to skip the upcoming cutscene
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to
+    *|cRXP_WARN_Press "ESC" to skip the upcoming cutscene|r
     .goto 110,58.11,19.87
     .turnin 49613 >>Turn in Silvermoon City
     .accept 49354 >>Accept Remember the Sunwell
@@ -114,7 +116,7 @@ step
     .goto 973,49.27,67.10
 step
     .isOnQuest 49354
-    >>Kill |cRXP_ENEMY_Void Effusions|r. and |cRXP_ENEMY_Creeping Void|r.
+    >>Kill |cRXP_ENEMY_Void Effusions|r and |cRXP_ENEMY_Creeping Void|r.
     .goto 973,46.43,74.16,25,0
     .goto 973,36.95,61.32,25,0
     .goto 973,47.16,47.87,25,0

@@ -70,7 +70,7 @@ step << !DemonHunter !Dracthyr
     .goto 1165,45.15,47.02,20,0
     .goto 1165,42.06,26.50,20 >>Jump down the pyramid carefully
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r. and |cRXP_FRIENDLY_High Prelate Rata|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r and |cRXP_FRIENDLY_High Prelate Rata|r.
     .turnin 53823 >>Turn in A Queen's Entourage
     .goto 1165,42.58,22.81
     .accept 53824 >>Accept The Rite of Kings and Queens
@@ -110,7 +110,7 @@ step
     .complete 53826,1 --1/1 Enforcer Malzon confronted
     .mob Enforcer Malzon
 step
-    >>Defeat |cRXP_ENEMY_Rioting Speakers|r. or talk to |cRXP_ENEMY_Rioting Zocalo Druges|r.
+    >>Defeat |cRXP_ENEMY_Rioting Speakers|r or talk to |cRXP_ENEMY_Rioting Zocalo Druges|r.
     .goto 1165,36.17,7.69,20,0
     .goto 1165,34.96,10.72,20,0
     .goto 1165,36.49,15.16,20,0
@@ -131,7 +131,7 @@ step
     .goto 1165,42.61,22.91,12,0
     .goto 1165,41.41,18.05,12 >>Go back up
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r., |cRXP_FRIENDLY_High Prelate Rata|r., and |cRXP_FRIENDLY_Zolani|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r, |cRXP_FRIENDLY_High Prelate Rata|r and |cRXP_FRIENDLY_Zolani|r.
     .turnin 53826 >>Turn in The Instigator Among Us
     .turnin 54419 >>Turn in Quelling the Masses
     .accept 54301 >>Accept Talanji's Mercy
@@ -145,7 +145,7 @@ step
     .target Zolani
 step
     #completewith ZandalariTrollHeresy
-    >>Defeat |cRXP_ENEMY_Furious Raptari Druids|r. and |cRXP_ENEMY_Incensed Rastari Prelates|r.
+    >>Defeat |cRXP_ENEMY_Furious Raptari Druids|r and |cRXP_ENEMY_Incensed Rastari Prelates|r.
     .complete 54300,1 --12/12 Angered faithful subdued
     .mob Furious Raptari Druid
     .mob Incensed Rastari Prelate
@@ -165,7 +165,7 @@ step
     .complete 54925,1 --1/1 Prelate Kaj'ra slain
     .mob Prelate Kaj'ra
 step
-    >>Defeat |cRXP_ENEMY_Furious Raptari Druids|r. and |cRXP_ENEMY_Incensed Rastari Prelates|r.
+    >>Defeat |cRXP_ENEMY_Furious Raptari Druids|r and |cRXP_ENEMY_Incensed Rastari Prelates|r.
     >>Evacuate the |cRXP_FRIENDLY_Priests|r.
     .goto 1165,52.00,11.87,20,0
     .goto 1165,49.21,14.52,15,0
@@ -183,7 +183,7 @@ step
     .target Balina
 step
     .groundgoto 1165,41.81,17.15,30,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Prelate Rata|r., |cRXP_FRIENDLY_Zolani|r., and |cRXP_FRIENDLY_Princess Talanji|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Prelate Rata|r, |cRXP_FRIENDLY_Zolani|r and |cRXP_FRIENDLY_Princess Talanji|r.
     .turnin 54925 >>Turn in Heresy!
     .goto 1165,40.49,11.85
     .turnin 54300 >>Turn in Breaking the Faith
@@ -205,7 +205,7 @@ step
     .goto 1166,61.24,38.93
     .complete 53825,1 --1/1 Meet the new Zanchuli Council
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wardruid Loti|r., |cRXP_FRIENDLY_Lashk|r., |cRXP_FRIENDLY_Jo'nok|r., |cRXP_FRIENDLY_General Rakera|r., and |cRXP_FRIENDLY_Hexlord Raal|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wardruid Loti|r, |cRXP_FRIENDLY_Lashk|r, |cRXP_FRIENDLY_Jo'nok|r, |cRXP_FRIENDLY_General Rakera|r and |cRXP_FRIENDLY_Hexlord Raal|r.
     .complete 53825,2 --1/1 Greet Wardruid Loti
     .goto 1166,63.05,24.49
     .complete 53825,3 --1/1 Greet Lash
@@ -259,7 +259,7 @@ step
     .complete 53828,1 --1/1 Follow Talanji
 step
     #label ZandalariTrollGazeoftheLoa
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r. and |cRXP_FRIENDLY_Krag'wa the Huge|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r and |cRXP_FRIENDLY_Krag'wa the Huge|r.
     .turnin 53828 >>Turn in Gaze of the Loa
     .goto 1165,44.57,14.38
     .accept 54031 >>Accept Gaze of the Loa: Krag'wa
@@ -274,7 +274,7 @@ step
     .timer 15,RP
     .target Krag'wa the Huge
 step
-    >>Just run away from the frogs with |T132307:0|t[Dash] (1) that attack you and wait until |cRXP_FRIENDLY_Princess Talanji|r. has defeated them all
+    >>Just run away from the frogs with |T132307:0|t[Dash] (1) that attack you and wait until |cRXP_FRIENDLY_Princess Talanji|r has defeated them all.
     .goto 1165,45.13,16.82
     .complete 54031,2 --1/1 Krag'wa's trial complete
 step
@@ -340,7 +340,8 @@ step
     .accept 53830 >>Accept Queen of the Zandalari
     .target Princess Talanji
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r. Press "ESC" to skip the upcoming cutscene
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Talanji|r.
+    *|cRXP_WARN_Press "ESC" to skip the upcoming cutscene|r
     .skipgossip 145359,1
     .goto 1165,42.73,8.73
     .complete 53830,1 --1/1 Witness Talanji's address
@@ -370,7 +371,7 @@ step
     .noflyable 862
     .isQuestTurnedIn 47436
     .isOnQuest 53719
-    .vehicle 131154 >>Click the Totem of Pa'ku
+    .vehicle 131154 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the Totem of Pa'ku
     .goto 1165,51.37,40.95
 step
     #completewith ZandalariTrollAllegianceoftheZandalari

@@ -46,7 +46,7 @@ step
     #sticky
     #label MardumAssaultonMardum
     .goto 672,38.73,45.39,0,0
-    >>Kill |cRXP_ENEMY_enemies|r. and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Legion Communicator|r. in the area.
+    >>Kill |cRXP_ENEMY_enemies|r and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Legion Communicator|r. in the area.
     .accept 39279 >>Accept Assault on Mardum (Bonus Objective)
     .complete 39279,1 --Assault the Legion in the lowlands (100%)
     --x .mob
@@ -74,7 +74,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Legion Gateway|r.
     .complete 40378,3 --1/1 Find Allari to the southeast
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r. and |cRXP_FRIENDLY_Sevis Brightflame|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r and |cRXP_FRIENDLY_Sevis Brightflame|r.
     .turnin 40378 >>Turn in Enter the Illidari: Ashtongue
     .accept 38759 >>Accept Set Them Free
     .accept 39049 >>Accept Eye On the Prize
@@ -95,7 +95,7 @@ step
     *|cRXP_WARN_Refresh when buff is fading|r.
 step
     .goto 672,39.00,73.24
-    >>Kill an |cff00ecffAnguish Jailer|r. and loot him for |cRXP_LOOT_Soulwrought Key|r.
+    >>Kill an |cff00ecffAnguish Jailer|r and loot him for |cRXP_LOOT_Soulwrought Key|r.
     .complete 38759,1 --1/1 Soulwrought Key
 step
     .goto 672,39.34,71.64
@@ -103,7 +103,7 @@ step
     .complete 38759,3 --1/1 Cyana Nightglaive freed
 step
     .goto 672,41.74,73.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cage|r. and the |cRXP_PICK_Legion Communicator|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cage|r and the |cRXP_PICK_Legion Communicator|r.
     .complete 38759,2 --1/1 Belath Dawnblade freed
 step
     .goto 672,42.63,79.37
@@ -259,7 +259,7 @@ step
 step
     .goto 673,54.77,58.28
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_chest|r. for a ring.
-    .turnin 39973,1 >> Click the Chest
+    .turnin 39973,1 >> |TInterface/cursor/crosshair/interact.blp:20|tClick the Chest
 step
     #completewith next
     .hs >> Use Hearthstone |cRXP_WARN_to Illidari Foothold|r.
@@ -306,7 +306,7 @@ step
     .accept 40222 >>Accept The Imp Mother's Tome
 step
     .goto 672,77.05,28.04
-    >>Kill |cff00ecffProlifica|r. and loot her for |cRXP_LOOT_Tome of Fel Secrets|r.
+    >>Kill |cff00ecffProlifica|r and loot her for |cRXP_LOOT_Tome of Fel Secrets|r.
     .complete 40222,1 --1/1 Tome of Fel Secrets
 step
     #completewith next
@@ -334,7 +334,7 @@ step
     +|cfff78300Mount up and follow the arrow|r.
 step
     #requires Area1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r. and |cRXP_FRIENDLY_Kor'vas|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r and |cRXP_FRIENDLY_Kor'vas|r.
     >>|cRXP_WARN_If you still have the Felrush Buff you can Felrush over the Abyss directly to Kayn|r.
     .turnin 38727 >>Turn in Stop the Bombardment
     .turnin 38819 >>Turn in Their Numbers Are Legion
@@ -346,7 +346,7 @@ step
     .target Kor'vas Blodthorn
 step
     .goto 672,60.56,44.76
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r. and choose a specialization |cRXP_WARN_(Recommendation: Havoc)|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r and choose a specialization |cRXP_WARN_(Recommendation: Havoc)|r.
     .complete 40051,1 --1/1 Choose between Havoc & Vengeance
 step
     .goto 672,60.52,44.76
@@ -402,7 +402,7 @@ step
     .target Cyana Nightglaive
 step
     .goto 672,70.0,40.6
-    >>Kill the |cff00ecffBrood Queen Tyranna|r. and loot her for |cRXP_LOOT_Sargerite Keystone|r.
+    >>Kill the |cff00ecffBrood Queen Tyranna|r and loot her for |cRXP_LOOT_Sargerite Keystone|r.
     .complete 38728,1 --1/1 Sargerite Keyston
     .mob Brood Queen Tyranna
 step
@@ -511,7 +511,7 @@ step
     .goto 677,51.23,37.05,20 >>|cRXP_WARN_Follow the arrow|r.
 step
     #requires Area2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r.,|cRXP_FRIENDLY_Kayn Sunfury|r. and |cRXP_FRIENDLY_Maiev Shadowsong|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r.,|cRXP_FRIENDLY_Kayn Sunfury|r and |cRXP_FRIENDLY_Maiev Shadowsong|r.
     .turnin 38689 >>Turn in Fel Infusion
     .goto 677,49.68,49.3
     .turnin 38690 >>Turn in Rise of the Illidari
@@ -553,7 +553,7 @@ step
     .complete 39682,1 --1/1 Ride a Vampiric Felbat to the Upper Vault
     .target Vampiric Felbat
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r. and |cRXP_FRIENDLY_Allari the Souleater|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r and |cRXP_FRIENDLY_Allari the Souleater|r.
     .goto 678,41.33,47.33
     .turnin 39682 >>Turn in Grand Theft Felbat
     .accept 39685 >>Accept Frozen in Time
@@ -621,7 +621,7 @@ step
     .complete 40373,1 --1/1 Pool of Judgment viewed
 step
     .goto 679,24.52,53.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r. and select either |cRXP_FRIENDLY_Kayn|r. or |cRXP_FRIENDLY_Altruis|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r and select either |cRXP_FRIENDLY_Kayn|r or |cRXP_FRIENDLY_Altruis|r.
     .complete 40373,2 --1/1 Choose between Kayn and Altruis
     .target Kor'vas Bloodthorn
 step

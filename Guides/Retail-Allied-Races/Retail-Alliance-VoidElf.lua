@@ -16,7 +16,7 @@ step
     .accept 49929 >>Accept The Call for Allies
 step
     .goto 84,52.05,13.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r. |cRXP_WARN_inside the Stormwind Embassy|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .turnin 49929 >>Turn in The Call for Allies
     .accept 50239 >>Accept A Choice of Allies
     .target Aysa Cloudsinger
@@ -69,7 +69,7 @@ step
     .goto 95,71.04,32.02,5,0
     .goto 95,79.35,16.76,5,0
     .goto 95,79.66,17.52
-    .cast 258931 >> Jump to and Click the |cRXP_PICK_Teleportation Console|r.
+    .cast 258931 >> Jump to and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Teleportation Console|r.
 step
     .goto 95,79.99,19.86,5,0
     .goto 95,79.27,20.21,5,0
@@ -131,7 +131,7 @@ step
 step
     #completewith next
     .goto 972,27.98,24.48,5,0
-    .cast 253691 >> |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r. to teleport to |cRXP_WARN_Stormwind|r.
+    .cast 253691 >>Click on the |cRXP_PICK_Void Portal|r. to teleport to |cRXP_WARN_Stormwind|r.
     .isOnQuest 48962
 step
     .goto 84,52.05,13.42

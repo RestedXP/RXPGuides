@@ -17,7 +17,7 @@ step
     .accept 49929 >>Accept The Call for Allies
 step
     .goto 84,52.05,13.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r. |cRXP_WARN_inside the Stormwind Embassy|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .turnin 49929 >>Turn in The Call for Allies
     .accept 50239 >>Accept A Choice of Allies
     .target Aysa Cloudsinger
@@ -104,7 +104,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,56.43,23.82
-    .scenario 3554,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r. to arrive.|r.
+    .scenario 3554,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r to arrive|r.
     .isOnQuest 49266
 step
     .goto 933,46.96,27.4
@@ -122,7 +122,7 @@ step
     .goto 933,52.93,31.59,20,0
     .goto 933,41.26,46.52,20,0
     .goto 933,27.44,36.56
-    .scenario 3556,1 >>Kill |cRXP_ENEMY_Doubts|r. and |cRXP_ENEMY_Fears|r.
+    .scenario 3556,1 >>Kill |cRXP_ENEMY_Doubts|r and |cRXP_ENEMY_Fears|r.
     .mob Fear
     .mob Doubt
     .isOnQuest 49266
@@ -131,7 +131,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,16.92,46.28
-    .scenario 3570,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r. to arrive.|r.
+    .scenario 3570,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r to arrive|r.
     .isOnQuest 49266
 step
     .goto 933,11.35,50.13,5 >>Enter |cRXP_WARN_the cave|r.
@@ -150,7 +150,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,41.85,58.85
-    .scenario 3572,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r. to arrive.|r.
+    .scenario 3572,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r to arrive|r.
     .isOnQuest 49266
 step
     .goto 933,46.79,65.98
@@ -162,7 +162,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,66.37,77.37
-    .scenario 3579,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r. to arrive.|r.
+    .scenario 3579,1 >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_T'paartos|r to arrive|r.
     .isOnQuest 49266
 step
     .goto 933,68.51,77,5 >>|cRXP_WARN_Descend the spiral staircase|r.
@@ -171,7 +171,7 @@ step
     .goto 933,63.78,71.47,5,0
     .goto 933,61.53,75.87,5,0
     .goto 933,68.36,77.08
-    .scenario 3574,1 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r.|r.(1)
+    .scenario 3574,1 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r|r(1).
     .target T'paartos
     .isOnQuest 49266
 step
@@ -179,30 +179,30 @@ step
     .isOnQuest 49266
 step
     .goto 933,65.73,73.57
-    .scenario 3574,2 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r.|r.(2)
+    .scenario 3574,2 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r|r(2).
     .target T'paartos
     .isOnQuest 49266
 step
     .goto 933,72.31,86.51
-    .scenario 3574,3 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r.|r.(3)
+    .scenario 3574,3 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r|r(3).
     .target T'paartos
     .isOnQuest 49266
 step
     .goto 933,73.59,75.21,15,0
     .goto 933,69.63,68.27
-    .scenario 3574,4 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r.|r.(4)
+    .scenario 3574,4 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r|r(4).
     .target T'paartos
     .isOnQuest 49266
 step
     .goto 933,65.16,71.82,15,0
     .goto 933,63.03,74.51
-    .scenario 3574,5 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r.|r.(5)
+    .scenario 3574,5 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r|r(5).
     .target T'paartos
     .isOnQuest 49266
 step
     .goto 933,64.02,81.39,15,0
     .goto 933,69.6,77.79
-    .scenario 3574,6 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r.|r.(6)
+    .scenario 3574,6 >>|cRXP_WARN_Interact with |cRXP_FRIENDLY_T'paartos|r|r(6).
     .target T'paartos
     .isOnQuest 49266
 step
@@ -219,7 +219,7 @@ step
     +|cRXP_WARN_You can also leave using other standard methods|r.
     .isOnQuest 49266
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya|r. and |cRXP_FRIENDLY_High Exarch Turalyon|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya|r and |cRXP_FRIENDLY_High Exarch Turalyon|r.
     .turnin 49266 >>Turn in Forge of Aeons
     .goto 940,48.453,39.556
     .target +Captain Fareeya
@@ -230,7 +230,7 @@ step
     #completewith next
     .goto 941,43.180,24.938
     >>Go downstairs
-    .zone 84 >>Click the |cRXP_PICK_Portal to Stormwind|r.
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Portal to Stormwind|r.
 step
     .goto 84,52.79,14.51,5,0
     .goto 84,52.05,13.40

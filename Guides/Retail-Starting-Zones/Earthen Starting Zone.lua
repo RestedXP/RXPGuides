@@ -16,17 +16,17 @@ step
     .target Dawn
 step
     .goto 2322,87.04,49.47
-    >>Step on the scanner and click on the |cRXP_PICK_Diagnostics Scan|r.
+    >>Step on the scanner and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Diagnostics Scan|r.
     .complete 79200,1 --1/1 Diagnostics Scan completed
     .target Diagnostics Scanner
 step
     .goto 2322,83.70,60.93
-    >>Step on the scanner and click on the |cRXP_PICK_Cognitive Scan|r.
+    >>Step on the scanner and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cognitive Scan|r.
     .complete 79200,2 --1/1 Cognitive Scan completed
     .target Cognitive Scan
 step
     .goto 2322,83.77,37.91
-    >>Step on the scanner and click on the |cRXP_PICK_Anomaly Scan|r.
+    >>Step on the scanner and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Anomaly Scan|r.
     .complete 79200,3 --1/1 Anomaly Scan completed
     .target Anomaly Scan
 step
@@ -49,19 +49,19 @@ step
     .target Foreman Uzjax
 step
     .goto 2322,61.40,47.07
-    >>Click on the |cRXP_PICK_Primary Interface|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Primary Interface|r.
     .complete 79201,1 --1/1 Primary analysis completed
     .skipgossip 224809,1,1,1
     .target Primary Interface
 step
     .goto 2322,61.40,51.92
-    >>Click on the |cRXP_PICK_Secondary Interface|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Secondary Interface|r.
     .complete 79201,2 --1/1 Secondary analysis completed
     .skipgossip 224797,1,1,1
     .target Secondary Interface
 step
     .goto 2322,57.37,49.55
-    >>Click on the |cRXP_PICK_Tertiary Interface|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tertiary Interface|r.
     .complete 79201,3 --1/1 Tertiary analysis completed
     .skipgossip 224810,1,1,1
     .target Tertiary Interface
@@ -87,7 +87,7 @@ step
     .goto 2322,45.94,41.24,10,0
     .goto 2322,42.74,39.91,10,0
     .goto 2322,41.86,42.16,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Awakened Stormhands|r. and |cRXP_FRIENDLY_Awakened Machinist|r. and defeat them.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Awakened Stormhands|r and |cRXP_FRIENDLY_Awakened Machinist|r and defeat them.
     *|cRXP_WARN_only speak to one at a time|r.
     .complete 79202,1 --6/6 Earthen defeated in combat
     .mob Awakened Stormhand
@@ -133,7 +133,7 @@ step
 step << Alliance
     #completewith next
     .goto 2322,7.3,46.27
-    .zone 84 >>Click on the |cRXP_PICK_Portal|r.
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
 step << Alliance
     .goto 84,53.03,15.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
@@ -154,7 +154,7 @@ step << Alliance
 step << Horde
     #completewith next
     .goto 2322,7.16,52.62
-    .zone 85 >>Click on the |cRXP_PICK_Portal|r.
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
 step << Horde
     .goto 85,39.40,79.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.

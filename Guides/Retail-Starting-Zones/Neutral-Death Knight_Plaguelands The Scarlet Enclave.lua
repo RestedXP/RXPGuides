@@ -33,7 +33,7 @@ step
     .collect 38607,1
 step
     .goto 124,47.88,27.54
-    >>|cRXP_WARN_Go to the Runeforge|r. and use the |T135410:0|t[Battle-Worn Sword]
+    >>|cRXP_WARN_Go to the Runeforge|r and use the |T135410:0|t[Battle-Worn Sword]
     .complete 12619,1 --1/1 Runebladed Sword
     .use 38607
 step
@@ -82,7 +82,7 @@ step
     .complete 12641,4 --1/1 Chapel of the Crimson Flame Analyzed
 step
     .goto 124,51.34,35.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r. and press (4) to exit the Eyeball.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r and press (4) to exit the Eyeball.
     .turnin 12641 >>Turn in Death Comes From On High
     .accept 12657 >>Accept The Might Of The Scourge
     .target The Lich King
@@ -101,7 +101,7 @@ step
     .target Lord Thorval
 step
     .goto 124,50.68,34.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scourge Commander Thalanor|r., who is patrolling on the balcony.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scourge Commander Thalanor|r,who is patrolling on the balcony.
     .turnin 12850 >>Turn in Report To Scourge Commander Thalanor
     .accept 12670 >>Accept The Scarlet Harvest
 step
@@ -123,7 +123,7 @@ step
     .target Prince Valanar
 step
     .goto 124,52.67,34.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salanar the Horseman|r., who is |cRXP_WARN_patrolling on the streets|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salanar the Horseman|r,who is |cRXP_WARN_patrolling on the streets|r.
     .accept 12680 >>Accept Grand Theft Palomino
     .target Salanar the Horseman
 step
@@ -139,7 +139,7 @@ step
     .mob Death Knight Initiate
 step
     .goto 124,52.31,38.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r., who patrols a little.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r,who patrols a little.
     .accept 12679 >>Accept Tonight We Dine In Havenshire
     .target Orithos the Sky Darkener
 step
@@ -150,7 +150,7 @@ step
     #completewith next
     .goto 124,55.25,46.16,10,0
     .goto 124,54.11,52.21
-    >>Kill |cRXP_ENEMY_Crusaders|r. and |cRXP_ENEMY_Citizens|r.
+    >>Kill |cRXP_ENEMY_Crusaders|r and |cRXP_ENEMY_Citizens|r.
     .complete 12678,1 --10/10 Scarlet Crusader slain
     .complete 12678,2 --10/10 Citizen of Havenshire slain
     .target Scarlet Crusader
@@ -163,7 +163,7 @@ step
     #label arrowspart2time
     .goto 124,55.25,46.16,10,0
     .goto 124,54.11,52.21
-    >>Kill |cRXP_ENEMY_Crusaders|r. and |cRXP_ENEMY_Citizens|r.
+    >>Kill |cRXP_ENEMY_Crusaders|r and |cRXP_ENEMY_Citizens|r.
     .complete 12678,1 --10/10 Scarlet Crusader slain
     .complete 12678,2 --10/10 Citizen of Havenshire slain
     .target Scarlet Crusader
@@ -182,7 +182,7 @@ step
     .goto 124,51.41,41.09,30,0
     .goto 124,52.83,34.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with a |cRXP_FRIENDLY_Horse|r. |cRXP_WARN_near the Stables|r. be careful of |cRXP_ENEMY_Stable Master Kitrik|r.
-    >>Use |T135788:0|t[Gallop](2) for increased Movement Speed and Deliver the |T132261:0|t[Stolen Horse](1) when you are infront of |cRXP_FRIENDLY_Salanar the Horseman|r., who is patrolling |cRXP_WARN_in the streets|r.
+    >>Use |T135788:0|t[Gallop](2) for increased Movement Speed and Deliver the |T132261:0|t[Stolen Horse](1) when you are infront of |cRXP_FRIENDLY_Salanar the Horseman|r,who is patrolling |cRXP_WARN_in the streets|r.
     .complete 12680,1 --1/1 Horse Successfully Stolen
     .target Salanar the Horseman
 step
@@ -194,7 +194,7 @@ step
 step
     .goto 124,55.4,41.6,30,0
     .goto 124,51.16,37.82
-    >>Kill a |cRXP_ENEMY_Dark Rider of Acherus|r. |cRXP_WARN_near the stables|r. and |TInterface/cursor/crosshair/interact.blp:20|tInteract with the horse
+    >>Kill a |cRXP_ENEMY_Dark Rider of Acherus|r. |cRXP_WARN_near the stables|r and |TInterface/cursor/crosshair/interact.blp:20|tInteract with the horse
     >>Use the |T136129:0|t[Horseman's Call] to deliver the Horse |cRXP_WARN_once you're back in town|r.
     .complete 12687,1
 step
@@ -204,7 +204,7 @@ step
     .target Salanar the Horseman
 step
     .goto 124,52.43,37.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r., who is patrolling a little.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r,who is patrolling a little.
     .turnin 12679,1 >>Turn in Tonight We Dine In Havenshire
     .target Orithos the Sky Darkener
 step
@@ -226,11 +226,11 @@ step
     .target Gothik the Harvester
 step
     #completewith next
-    +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r.
+    +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
     *[1] Press the |cRXP_WARN_Escape key|r.
     *[2] Select |cRXP_WARN_Options|r.
     *[3] Navigate to |cRXP_WARN_Keybindings|r.
-    *[4] Within |cRXP_WARN_Keybindings|r., find |cRXP_WARN_RestedXP Guides|r.
+    *[4] Within |cRXP_WARN_Keybindings|r,find |cRXP_WARN_RestedXP Guides|r.
     *[5] Select and bind the |cRXP_WARN_Active Buttons|r.
 step
     .goto 124,58.27,30.98,5,0
@@ -257,7 +257,7 @@ step
 step
     .goto 124,67.78,39.25
     >>|cRXP_WARN_Travel to the ship, making sure to evade as many foes as you can|r.
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cannon|r. and use (1) to kill enemies, use (2) if they get too close, use (3) to escape.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cannon|r and use (1) to kill enemies, use (2) if they get too close, use (3) to escape.
     .complete 12701,1 --100/100 Scarlet Defender slain
     .mob Scarlet Defender
 step
@@ -305,7 +305,7 @@ step
     .target Baron Rivendare
 step
     #completewith citizenrequirementtime
-    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r., |cRXP_ENEMY_Citizens|r. and loot them for |cRXP_LOOT_Crusader Skull|r.
+    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r,|cRXP_ENEMY_Citizens|r and loot them for |cRXP_LOOT_Crusader Skull|r.
     .complete 12722,1 --10/10 Scarlet Crusade Soldier slain
     .complete 12716,3 --10/10 Crusader Skull
     .complete 12722,2 --15/15 Citizen of New Avalon slain
@@ -335,7 +335,7 @@ step
     .goto 124,57.77,61.90,40,0
     .goto 124,52.61,71.72,80,0
     .goto 124,62.03,60.24
-    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r., |cRXP_ENEMY_Citizens|r. and loot them for |cRXP_LOOT_Crusader Skull|r.
+    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r,|cRXP_ENEMY_Citizens|r and loot them for |cRXP_LOOT_Crusader Skull|r.
     .complete 12722,1 --10/10 Scarlet Crusade Soldier slain
     .complete 12716,3 --10/10 Crusader Skull
     .complete 12722,2 --15/15 Citizen of New Avalon slain
@@ -399,11 +399,11 @@ step
     .accept 12727 >>Accept Bloody Breakout
     .target Koltira Deathweaver
 step
-    >>Kill |cRXP_ENEMY_the waves of enemies|r. and kill |cRXP_ENEMY_Valroth|r. and |TInterface/cursor/crosshair/interact.blp:20|tClick his remains after.
+    >>Kill |cRXP_ENEMY_the waves of enemies|r and kill |cRXP_ENEMY_Valroth|r and |TInterface/cursor/crosshair/interact.blp:20|tClick his remains after.
     .complete 12727,1 --1/1 Valroth's Head
 step
     .goto 124,62.98,68.31
-    >>|cRXP_WARN_Go upstairs within the keep|r. and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_book|r.
+    >>|cRXP_WARN_Go upstairs within the keep|r and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_book|r.
     .complete 12724,1 --1/1 New Avalon Patrol Schedule
 step
     .goto 124,56.24,79.84

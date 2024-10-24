@@ -87,7 +87,7 @@ step << Warlock
 	.cast 688 >> Cast |T136218:0|r.[Summon Imp] to summon your Imp
 	.xp <3,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r. and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .accept 25136 >>Accept Galgar's Cactus Apple Surprise
     .goto 461,42.98,62.41
     .accept 37446 >>Accept Lazy Peons
@@ -102,7 +102,7 @@ step
 step
     #completewith ValleyOfTrialsBackDen
     >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r.
-    *|cRXP_WARN_NOTE: You can just Right-Click the Peons|r.
+    *|cRXP_WARN_NOTE: You can just Right-|TInterface/cursor/crosshair/interact.blp:20|tClick the Peons|r.
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
     .target Lazy Peon
@@ -138,7 +138,7 @@ step
     .complete 25127,1 --8/8 Scorpid Worker Tail
     .mob Scorpid Worker
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Jump down back to town|r. Talk to |cRXP_FRIENDLY_Galgar|r., |cRXP_FRIENDLY_Gornek|r., |cRXP_FRIENDLY_Zureetha|r., and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Jump down back to town|r. Talk to |cRXP_FRIENDLY_Galgar|r,|cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Zureetha|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
     .turnin 25127 >>Turn in Sting of the Scorpid
@@ -154,7 +154,7 @@ step
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump down back to town. Talk to |cRXP_FRIENDLY_Galgar|r., |cRXP_FRIENDLY_Gornek|r., and |cRXP_FRIENDLY_Zureetha|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump down back to town. Talk to |cRXP_FRIENDLY_Galgar|r,|cRXP_FRIENDLY_Gornek|r,and |cRXP_FRIENDLY_Zureetha|r.
     .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
     .turnin 25127 >>Turn in Sting of the Scorpid
@@ -166,7 +166,7 @@ step
     .target Gornek
     .target Zureetha Fargaze
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r., |cRXP_FRIENDLY_Zureetha|r., and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Zureetha|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.93,66.42
     .accept 25131 >>Accept Vile Familiars
@@ -178,7 +178,7 @@ step
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r. and |cRXP_FRIENDLY_Zureetha|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r and |cRXP_FRIENDLY_Zureetha|r.
     .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.91,66.41
     .accept 25131 >>Accept Vile Familiars
@@ -217,7 +217,7 @@ step
     .use 16114
     .target Lazy Peon
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r. and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25131 >>Turn in Vile Familiars
     .accept 25132 >>Accept Burning Blade Medallion
     .goto 461,45.81,63.42
@@ -229,7 +229,7 @@ step
     .target Foreman Thazz'ril
 step
 	#label ValleyTurnins
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r. and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25131 >>Turn in Vile Familiars
     .accept 25132 >>Accept Burning Blade Medallion
     .goto 461,45.81,63.42
@@ -245,7 +245,7 @@ step << Hunter
     .complete 25136,1 --6/6 Cactus Apple
 step << Hunter Orc
     .goto 461,47.61,47.66
-    .cast 1515 >>Target a |cRXP_ENEMY_Mottled Boar|r., cast and then channel |T132164:0|t[Tame Beast] to tame it
+    .cast 1515 >>Target a |cRXP_ENEMY_Mottled Boar|r,cast and then channel |T132164:0|t[Tame Beast] to tame it
     .isOnQuest 25135
     .mob Mottled Boar
 step
@@ -287,7 +287,7 @@ step
     .deathskip >>Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << !Hunter !Warlock
     .deathskip >>|cfff78300Set your pet to passive.|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << Hunter/Warlock
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r., |cRXP_FRIENDLY_Galgar|r., |cRXP_FRIENDLY_Zureetha Fargaze|r., and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Galgar|r,|cRXP_FRIENDLY_Zureetha Fargaze|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25130 >>Turn in Back to the Den
     .goto 461,44.93,66.42
     .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
@@ -303,7 +303,7 @@ step
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r., |cRXP_FRIENDLY_Zureetha Fargaze|r., and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Zureetha Fargaze|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25130 >>Turn in Back to the Den
     .goto 461,44.93,66.42
     .turnin 25132 >>Turn in Burning Blade Medallion
@@ -801,7 +801,7 @@ step
     .accept 25064 >>Accept Moraya
     .target Vol'jin
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora'jin|r. and |cRXP_FRIENDLY_Moraya|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora'jin|r and |cRXP_FRIENDLY_Moraya|r.
     .accept 25037 >>Accept Crab Fishin'
     .goto 463,60.52,62.87
     .turnin 25064 >>Turn in Moraya
@@ -880,7 +880,7 @@ step
     .complete 25037,1 --5/5 Fresh Crawler Meat
     .mob Pygmy Surf Crawler
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tegashi|r. and |cRXP_FRIENDLY_Kijara|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tegashi|r and |cRXP_FRIENDLY_Kijara|r.
     .turnin 24625 >>Turn in Consort of the Sea Witch
     .turnin 24624 >>Turn in Mercy for the Lost
     .goto 463,45.73,85.00
@@ -936,7 +936,7 @@ step
     .mob Pygmy Surf Crawler
 step << Troll
     #label TrollBreakingtheLine
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r., |cRXP_FRIENDLY_Tortunga|r., and |cRXP_FRIENDLY_Tora'jin|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r,|cRXP_FRIENDLY_Tortunga|r,and |cRXP_FRIENDLY_Tora'jin|r.
     .turnin 24626 >>Turn in Young and Vicious
     .goto 463,56.82,63.69
     .accept 25035 >>Accept Breaking the Line
@@ -949,7 +949,7 @@ step << Troll
     .target Tora'jin
 --XX was 1600
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r. and |cRXP_FRIENDLY_Tora'jin|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tora'jin|r.
     .turnin 24626 >>Turn in Young and Vicious
     .goto 463,56.82,63.69
     .accept 25035 >>Accept Breaking the Line << Orc

@@ -16,7 +16,7 @@ step
     .accept 49929 >>Accept The Call for Allies
 step
     .goto 84,52.05,13.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r. |cRXP_WARN_inside the Stormwind Embassy|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .turnin 49929 >>Turn in The Call for Allies
     .accept 50239 >>Accept A Choice of Allies
     .target Aysa Cloudsinger
@@ -108,7 +108,7 @@ step
     .goto 1462,67.97,44.26,10,0
     .goto 1462,66.34,46.73,10,0
     .goto 1462,74.89,51.51
-    >>Kill |cRXP_ENEMY_Malfunctioning Scrapbot|r. and |cRXP_ENEMY_Malfunctioning Scraphound|r. and loot them for their |cRXP_LOOT_Acquisitioned Machine Part|r.
+    >>Kill |cRXP_ENEMY_Malfunctioning Scrapbot|r and |cRXP_ENEMY_Malfunctioning Scraphound|r and loot them for their |cRXP_LOOT_Acquisitioned Machine Part|r.
     .complete 57488,2 --6/6 Acquisitioned Machine Part
     .mob Malfunctioning Scrapbot
     .mob Malfunctioning Scraphound
@@ -116,11 +116,11 @@ step
     .goto 1462,73.61,58.36,10,0
     .goto 1462,73.36,61.51,10,0
     .goto 1462,69.93,58.88
-    >>Kill |cRXP_ENEMY_Congealed Oil|r. |cRXP_WARN_If necessary, you can also kill |cRXP_ENEMY_Slime Elemental|r.|r. and loot them for their |cRXP_LOOT_Acquisitioned Machine Part|r.
+    >>Kill |cRXP_ENEMY_Congealed Oil|r. |cRXP_WARN_If necessary, you can also kill |cRXP_ENEMY_Slime Elemental|r.|r and loot them for their |cRXP_LOOT_Acquisitioned Machine Part|r.
     .mob Slime Elemental
     .mob Congealed Oil
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Waren Gearhart|r. and |cRXP_FRIENDLY_Prince Erazmin|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Waren Gearhart|r and |cRXP_FRIENDLY_Prince Erazmin|r.
     .turnin 57488 >>Turn in The Current Schematic
     .goto 1462,73.13,33.33
     .accept 57490 >>Accept Voyage to Safety
@@ -145,7 +145,7 @@ step
     >>|cRXP_WARN_Head to the location indicated by the arrow|r.
     .complete 57490,4 --1/1 Pod delivered
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Erazmin|r. and |cRXP_FRIENDLY_Christy Punchcog|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Erazmin|r and |cRXP_FRIENDLY_Christy Punchcog|r.
     .turnin 57490 >>Turn in Voyage to Safety
     .goto 1462,73.22,33.14
     .accept 57491 >>Accept Better... Stronger... Less Dead
@@ -154,18 +154,18 @@ step
     .target Christy Punchcog
 step
     .goto 1462,54.49,26.94
-    >>Kill |cRXP_ENEMY_Insurgent Cycloid|r. and loot him for |cRXP_LOOT_Omni Electromagnetic Amplifier|r.
+    >>Kill |cRXP_ENEMY_Insurgent Cycloid|r and loot him for |cRXP_LOOT_Omni Electromagnetic Amplifier|r.
     .complete 57491,2 --1/1 Omni Electromagnetic Amplifier
     .mob Insurgent Cycloid
 step
     .goto 1462,37.46,46.05,10,0
     .goto 1462,36.79,58.83
-    >>Kill |cRXP_ENEMY_HK-3 Aerial Dissuasion Unit|r. and loot him for |cRXP_LOOT_Neural Accelerator|r.
+    >>Kill |cRXP_ENEMY_HK-3 Aerial Dissuasion Unit|r and loot him for |cRXP_LOOT_Neural Accelerator|r.
     .complete 57491,1 --1/1 Neural Accelerator
     .mob HK-3 Aerial Dissuasion Unit
 step
     .goto 1462,52.79,51.86
-    >>Kill |cRXP_ENEMY_Insurgent Crawler|, |cRXP_ENEMY_Upgraded Sentry|r. and loot them for |cRXP_LOOT_Flux Energized Servos|r.
+    >>Kill |cRXP_ENEMY_Insurgent Crawler|, |cRXP_ENEMY_Upgraded Sentry|r and loot them for |cRXP_LOOT_Flux Energized Servos|r.
     .complete 57491,3 --1/1 Flux Energized Servos
     .mob Upgraded Sentry
     .mob Insurgent Crawler#
@@ -273,7 +273,7 @@ step
     .complete 57494,6 --1/1 Generator activated
 step
     .goto 1462,73.56,32.08
-    .cast 311518 >>|cRXP_WARN_Use your|r. |T136099:0|t[ExtraActionButton] near |cRXP_FRIENDLY_Gelbin Mekkatorque|r. |cRXP_WARN_to defibrillate him|r.
+    .cast 311518 >>|cRXP_WARN_Use your|r. |T136099:0|t[ExtraActionButton] near |cRXP_FRIENDLY_Gelbin Mekkatorque|r |cRXP_WARN_to defibrillate him|r.
     .target Gelbin Mekkatorque
     .timer 5, Duration until continuation.
 step

@@ -42,7 +42,7 @@ step
     .accept 8326 >>Accept Unfortunate Measures
     .target Magistrix Erona
 step
-    >>Kill |cRXP_ENEMY_Springpaw Cubs|r. and |cRXP_ENEMY_Springpaw Lynx|r. Loot them for their |cRXP_LOOT_collars|r.
+    >>Kill |cRXP_ENEMY_Springpaw Cubs|r and |cRXP_ENEMY_Springpaw Lynx|r. Loot them for their |cRXP_LOOT_collars|r.
     .goto 467,65.77,39.97,20,0
     .goto 467,68.40,37.61,20,0
     .goto 467,63.49,33.62,30,0
@@ -99,7 +99,7 @@ step
 step
     #requires EversongWoodsArcaneSilver
     #completewith EversongWoodsSecondBelonging
-    >>Kill |cRXP_ENEMY_Tenders|r. and |cRXP_ENEMY_Feral Tenders|r. on the side
+    >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r. on the side
     .complete 8334,2 --7/7 Feral Tender slain
     .complete 8334,1 --7/7 Tender slain
     .mob Tender
@@ -119,7 +119,7 @@ step
     .goto 467,52.2,69.4
     .complete 37443,1 --1/1 Solanian's Scrying Orb
 step
-    >>Kill |cRXP_ENEMY_Tenders|r. and |cRXP_ENEMY_Feral Tenders|r.
+    >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r.
     .goto 467,54.76,70.68
     .complete 8334,2 --7/7 Feral Tender slain
     .complete 8334,1 --7/7 Tender slain
@@ -137,7 +137,7 @@ step
     .target Lanthan Perilon
 step
     #completewith EversongWoodsFelendrenHead
-    >>Kill |cRXP_ENEMY_Arcane Wraiths|r. and |cRXP_ENEMY_Tainted Arcane Wraith|r. while going up the academy
+    >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r. while going up the academy
     .complete 8335,1 --8/8 Arcane Wraith slain
     .complete 8335,2 --2/2 Tainted Arcane Wraith slain
     .mob Arcane Wraith
@@ -162,7 +162,7 @@ step
     .goto 467,36.34,63.76,5,0
     .goto 467,37.98,66.43,8 >>Follow the way up
 step
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .collect 20483,1,8338,1
     .accept 8338 >>Accept Tainted Arcane Sliver
     .mob Tainted Arcane Wraith
@@ -173,7 +173,7 @@ step
     .complete 8335,3 --1/1 Felendren's Head
     .mob Felendren the Banished
 step
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .collect 20483,1,8338,1
     .accept 8338 >>Accept Tainted Arcane Sliver
     .mob Tainted Arcane Wraith
@@ -193,7 +193,7 @@ step
     .isOnQuest 8338
     #sticky
     #label EversongWoodsArcaneWraith
-    >>Kill |cRXP_ENEMY_Arcane Wraiths|r. and |cRXP_ENEMY_Tainted Arcane Wraith|r.
+    >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r.
     .goto 467,36.49,62.42,10,0
 #loop
 	.line 467,35.95,62.37,33.98,60.95,33.30,57.44,35.22,55.35,37.68,57.26,41.53,61.92,42.39,66.27,44.03,69.13,43.00,71.32,41,32,71.70,39.72,74.29,38.05,73.09,37.83,70.00,38.26,66.85
@@ -217,7 +217,7 @@ step
     .mob Tainted Arcane Wraith
 step
     .isOnQuest 8338
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .collect 20483,1,8338,1
     .accept 8338 >>Accept Tainted Arcane Sliver
     .mob Tainted Arcane Wraith
@@ -240,7 +240,7 @@ step
     .turnin 37440 >>Turn in A Fistful of Slivers
     .target Arcanist Ithanas
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Walk up the ramp|r. and talk to |cRXP_FRIENDLY_Well Watcher Solanian|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Walk up the ramp|r and talk to |cRXP_FRIENDLY_Well Watcher Solanian|r.
     .goto 467,62.74,45.12,5,0
     .goto 467,65.29,45.79,10,0
     .goto 467,65.50,42.88,5,0
@@ -406,7 +406,7 @@ step
     .target Ley-Keeper Velania
 step
     #completewith next
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -414,7 +414,7 @@ step
     .complete 9352,1 --1/1 Intruder Defeated
     .mob Darnassian Scout
 step
-    >>Kill |cRXP_ENEMY_Mana Stalker|r. and |cRXP_ENEMY_Manawraiths|r.
+    >>Kill |cRXP_ENEMY_Mana Stalker|r and |cRXP_ENEMY_Manawraiths|r.
     .goto 94,33.69,61.69,15,0
     .goto 94,34.50,57.84,20,0
     .goto 94,35.66,58.00
@@ -423,7 +423,7 @@ step
     .mob Mana Stalker
     .mob Manawraith
 step
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -452,7 +452,7 @@ step << Hunter/Warlock
     #completewith next
     +|cRXP_WARN_Reminder: Resummon your pet and set it to 'Assist'|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r. and |cRXP_FRIENDLY_Sathiel|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r and |cRXP_FRIENDLY_Sathiel|r.
     .accept 9358 >>Accept Ranger Sareyn
     .goto 94,43.67,71.31
     .accept 9130 >>Accept Goods from Silvermoon City
@@ -467,7 +467,7 @@ step
     .target Ranger Sareyn
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Rotlim Maurauders|r. and |cRXP_ENEMY_Darkwraiths|r.
+    >>Kill |cRXP_ENEMY_Rotlim Maurauders|r and |cRXP_ENEMY_Darkwraiths|r.
     .goto 94,50.75,81.06,30,0
     .goto 94,51.00,76.81,30,0
     .goto 94,51.98,72.04,30,0
@@ -513,7 +513,7 @@ step
     .accept 9255 >>Accept Research Notes
     .target Apprentice Mirveda
 step
-    >>Kill |cRXP_ENEMY_Rotlim Maurauders|r. and |cRXP_ENEMY_Darkwraiths|r.
+    >>Kill |cRXP_ENEMY_Rotlim Maurauders|r and |cRXP_ENEMY_Darkwraiths|r.
     .goto 94,51.98,72.04,30,0
     .goto 94,51.00,76.81
     .complete 9252,1 --4/4 Rotlimb Marauder slain

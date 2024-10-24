@@ -63,7 +63,7 @@ step
     .accept 53890 >>Accept New Allies, New Problems
     .target Kiro
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Commander Dresh|r., |cRXP_FRIENDLY_Bladeguard Sonji|r., and |cRXP_FRIENDLY_First Arcanist Thalyssra|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Commander Dresh|r, |cRXP_FRIENDLY_Bladeguard Sonji|r and |cRXP_FRIENDLY_First Arcanist Thalyssra|r.
     .complete 53890,1 --1/1 Commander Dresh questioned
     .goto 85,48.23,71.76
     .complete 53890,2 --1/1 Bladeguard Sonji questioned
@@ -139,7 +139,7 @@ step
     >>Pick up |cRXP_PICK_Twilight Ore|r. from the veins
     .complete 53894,1 --15/15 Twilight Ore
 step
-    >>Use the |T310733:0|t[Enlarging Totem] before killing |cRXP_ENEMY_beasts|r. around the area. Loot them for their |cRXP_LOOT_flanks|r., |cRXP_LOOT_meat|r., and |cRXP_LOOT_tidbits|r.
+    >>Use the |T310733:0|t[Enlarging Totem] before killing |cRXP_ENEMY_beasts|r. around the area. Loot them for their [|cRXP_LOOT_flanks|r], [|cRXP_LOOT_meat|r], and [|cRXP_LOOT_tidbits|r].
     .goto 241,48.40,65.62,30,0
     .goto 241,46.62,63.33,30,0
     .goto 241,44.39,67.00,30,0
@@ -183,7 +183,7 @@ step
     #completewith next
     .goto 241,46.62,65.95,8 >>Enter the house
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r. and defeat him
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r and defeat him
     .goto 241,45.93,65.50
     .complete 53897,1 --1/1 Foreman Magrok invited
     .skipgossip
@@ -198,7 +198,7 @@ step
     .accept 53898 >>Accept Strength and Honor
     .target Kiro
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r. and defaet him
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r and defaet him
     .goto 241,45.67,76.42
     .complete 53898,1 --1/1 Foreman Magrok confronted
     .complete 53898,2 --1/1 Foreman Magrok defeated
@@ -270,7 +270,7 @@ step
     .target Nisha
 step
     #completewith VulperaExplosionsAlwaysWork
-    >>Kill |cRXP_ENEMY_Nazeshi Overseer|r. or |cRXP_ENEMY_Nazeshi Tempest-Wielder|r. Loot them for their |cRXP_LOOT_weaponry|r.
+    >>Kill |cRXP_ENEMY_Nazeshi Overseer|r or |cRXP_ENEMY_Nazeshi Tempest-Wielder|r. Loot them for their [|cRXP_LOOT_weaponry|r].
     .complete 53900,1 --10/10 Nazeshi Weaponry collected
     .mob Nazeshi Tempest-Wielder
     .mob Nazeshi Overseer
@@ -311,7 +311,7 @@ step
     .goto 862,73.71,66.84
     .complete 53901,1 --8/8 Explosives placed
 step
-    >>Kill |cRXP_ENEMY_Nazeshi Overseer|r. or |cRXP_ENEMY_Nazeshi Tempest-Wielder|r. Loot them for their |cRXP_LOOT_weaponry|r.
+    >>Kill |cRXP_ENEMY_Nazeshi Overseer|r or |cRXP_ENEMY_Nazeshi Tempest-Wielder|r. Loot them for their [|cRXP_LOOT_weaponry|r].
     .goto 862,74.18,65.41,20,0
     .goto 862,75.11,66.23,20,0
     .goto 862,76.92,66.23,25,0
@@ -344,7 +344,7 @@ step
     .mob Tidecaller Nezara
 step
     .goto 862,77.18,65.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nisha|r. next to you
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nisha|r next to you.
     .turnin 53902 >>Turn in Taking Out the Tidecaller
     .accept 54027 >>Accept Threat Contained
     .target Nisha
@@ -414,7 +414,7 @@ step
     .complete 53904,2 --1/1 Speak to Boss Mida
     .target Boss Mida
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Micah Broadhoof|r. inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Micah Broadhoof|r inside the house.
     .goto 680,61.22,55.15
     .complete 53904,1 --1/1 Speak to Micah Broadhoof
     .target Micah Broadhoof
@@ -436,7 +436,7 @@ step
     .complete 53905,2 --1/1 Boss Mida assigned
     .target Boss Mida
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Micah Broadhoof|r. inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Micah Broadhoof|r inside the house.
     .goto 680,61.22,55.15
     .skipgossip 2
     .complete 53905,1 --1/1 Micah assigned
@@ -448,7 +448,7 @@ step
     .complete 53905,3 --1/1 Nomi assigned
     .target Nomi
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vintner Iltheux|r. inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vintner Iltheux|r inside the house.
     .goto 680,58.79,55.43
     .complete 53905,4 --1/1 Vintner Iltheux informed
     .target Vintner Iltheux
@@ -465,12 +465,12 @@ step
     .accept 53906 >>Accept Fermented for the Horde
     .target Nomi
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss Mida|r. and buy 10 |cRXP_BUY_Fermented Fireblooms|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss Mida|r and buy 10 |cRXP_BUY_Fermented Fireblooms|r.
     .goto 680,61.36,55.36
     .complete 53906,2 --10/10 Fermented Firebloom
     .target Boss Mida
 step
-    >>Kill |cRXP_ENEMY_Tattered Silkwings|r. Loot them for their |cRXP_LOOT_Fibers|r.
+    >>Kill |cRXP_ENEMY_Tattered Silkwings|r. Loot them for their [|cRXP_LOOT_Fibers|r].
     .goto 680,63.97,57.97,25,0
     .goto 680,62.87,59.77,25,0
     .goto 680,61.06,57.61,25,0
@@ -484,7 +484,7 @@ step
     .complete 53906,1 --20/20 Silkwing Fibers
     .mob Tattered Silkwing
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nomi|r. and interact with the Nightborne Vat
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nomi|r and interact with the Nightborne Vat
     .turnin 53906 >>Turn in Fermented for the Horde
     .accept 53907 >>Accept Sip and Savor
     .goto 680,60.60,56.22
@@ -492,7 +492,7 @@ step
     .goto 680,60.59,56.34
     .target Nomi
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vintner Iltheux|r. and wait for the RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vintner Iltheux|r and wait for the RP
     .goto 680,58.79,55.42
     .skipgossip
     .complete 53907,2 --1/1 Deliver the sample to Vintner Iltheux
@@ -527,7 +527,7 @@ step
     .goto 85,49.88,75.57,10 >>Enter Grommash Hold
 step
     .goto 85,48.31,71.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r. and wait for the RP
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r and wait for the RP
     .turnin 53908 >>Turn in Awaiting Our Arrival
     .accept 57448 >>Accept New Allies Among Us
     .complete 57448,1 --1/1 Witness Baine welcome the vulpera to the Horde

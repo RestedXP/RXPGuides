@@ -37,7 +37,7 @@ step
     .accept 28608 >>Accept The Shadow Grave
     .target Undertaker Mordo
 step
-    >>|cRXP_WARN_Follow the arrow down into the grave|r. and loot the |cRXP_LOOT_twine|r. and the |cRXP_LOOT_fluid|r.
+    >>|cRXP_WARN_Follow the arrow down into the grave|r and loot the |cRXP_LOOT_twine|r and the |cRXP_LOOT_fluid|r.
     .goto 18,30.33,72.24,4,0
     .goto 18,30.32,72.84,4,0
     .goto 18,30.00,72.84,4,0
@@ -112,7 +112,7 @@ step << Warlock
     +|cRXP_WARN_Reminder: Use |T136218:0|t[Summon Imp] to summon your pet|r.
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Wretched Ghouls|r. and |cRXP_ENEMY_Rattlecage Skeletons|r.
+    >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r.
     .goto 465,51.61,47.23,0,0
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Wretched Ghoul
@@ -126,7 +126,7 @@ step
     .complete 26800,1 --6/6 Scarlet Corpses gathered
     .target Scarlet Corpse
 step
-    >>Kill |cRXP_ENEMY_Wretched Ghouls|r. and |cRXP_ENEMY_Rattlecage Skeletons|r.
+    >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r.
     .goto 465,51.61,47.23
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Wretched Ghoul
@@ -175,7 +175,7 @@ step << Hunter
     .cast 1515 >>Tame a |cRXP_ENEMY_Ragged Scavenger|r.
     .mob Ragged Scavenger
 step
-    >>Kill |cRXP_ENEMY_Mangy Duskbats|r. and |cRXP_ENEMY_Ragged Savengers|r. around you. Loot them for their |cRXP_LOOT_paws|r. and |cRXP_LOOT_wings|r.
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r. around you. Loot them for their |cRXP_LOOT_paws|r and |cRXP_LOOT_wings|r.
     .goto 465,63.26,27.68,15,0
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
@@ -223,7 +223,7 @@ step
     .target Darnell
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r. and |cRXP_ENEMY_Rotbrain Magus'|r. |cRXP_WARN_Focus undeads that are already fighting|r.
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r. |cRXP_WARN_Focus undeads that are already fighting|r.
     .goto 465,74.1,66.0,0,0
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
@@ -234,7 +234,7 @@ step
     .complete 24971,1 --1/1 Marshal Redpath slain
     .mob Marshal Redpath
 step
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r. and |cRXP_ENEMY_Rotbrain Magus'|r. |cRXP_WARN_Focus undeads that are already fighting|r.
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r. |cRXP_WARN_Focus undeads that are already fighting|r.
     .goto 465,74.1,66.0
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
@@ -276,7 +276,7 @@ step
     .turnin 24972 >>Turn in Vital Intelligence
     .target Deathguard Simmer
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r. and |cRXP_FRIENDLY_Apothecary Johaan|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
     .accept 24978 >>Accept Reaping the Reapers
     .goto 18,44.75,53.67
     .accept 24975 >>Accept Fields of Grief
@@ -296,7 +296,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
-    >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r. and |cRXP_ENEMY_Farmer Solliden|r.
+    >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
     .link https://i.imgur.com/lc7y3b4.jpeg >>You can attack |cRXP_ENEMY_Shadowstalker|r. from the position shown in the screenshot
     .goto 18,40.33,51.42,0
     .goto 18,37.91,51.27,0,0
@@ -311,7 +311,7 @@ step
     .complete 24975,1 --10/10 Tirisfal Pumpkin
 step
     >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
-    >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r. and |cRXP_ENEMY_Farmer Solliden|r.
+    >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
     .goto 18,40.33,51.42,0
     .goto 18,37.91,51.27,0,0
     .complete 24978,1 --10/10 Tirisfal Farmer slain
@@ -331,7 +331,7 @@ step << Warlock/Hunter
     #completewith next
     +|cRXP_WARN_Reminder:Set your pet to back to 'Assist'|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r. and |cRXP_FRIENDLY_Apothecary Johaan|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
     >>Look out for |cRXP_ENEMY_Bayne|r. on your way back
     .goto 18,45.30,49.37,15,0
     .unitscan Bayne
@@ -487,7 +487,7 @@ step
     .target Ley-Keeper Caidanis
     step
     #completewith next
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -495,7 +495,7 @@ step
     .complete 9352,1 --1/1 Intruder Defeated
     .mob Darnassian Scout
 step
-    >>Kill |cRXP_ENEMY_Mana Stalker|r. and |cRXP_ENEMY_Manawraiths|r.
+    >>Kill |cRXP_ENEMY_Mana Stalker|r and |cRXP_ENEMY_Manawraiths|r.
     .goto 94,33.69,61.69,15,0
     .goto 94,34.50,57.84,20,0
     .goto 94,35.66,58.00
@@ -504,7 +504,7 @@ step
     .mob Mana Stalker
     .mob Manawraith
 step
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. Click it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
