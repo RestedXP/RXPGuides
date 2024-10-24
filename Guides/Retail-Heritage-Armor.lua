@@ -205,7 +205,7 @@ step
     .mob Clessington Attendant
 step
     .goto 52,42.60,71.96
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72431,1 --1/1 Defias Hideout entered
 step
     #label Count Clessington
@@ -228,7 +228,7 @@ step
     .timer 60,RP
 step
     #sticky
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72431,2 --1/1 Count Clessington found
 step
     .goto 55,49.41,49.63,10,0
@@ -266,7 +266,7 @@ step
     .goto 52,46.88,66.62,10 >>Follow the Arrow
     .timer 5, RP
 step
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     *|cRXP_WARN_You can use the|r [ExtraActionButton] to increase your movement speed.
     .complete 72453,1 --1/1 Defias Hideout escaped
 step
@@ -561,6 +561,9 @@ step
     #completewith Maiev Shadowsong1
     +Stay close to |cRXP_FRIENDLY_Maiev Shadowsong|r
 step
+    .goto 77,36.09,57.49,5,0
+    .goto 77,35.9,57.8,5,0
+    .goto 77,36.19,57.79,5,0
     .goto 77,36.18,56.85
     >>Click on |cRXP_PICK_Felflame Brazier|r
     .complete 76203,2,1 --6/6 Felflame Braziers extinguished
@@ -586,8 +589,11 @@ step
     .complete 76203,2,6 --6/6 Felflame Braziers extinguished
 step
     #label Maiev Shadowsong1
-    .goto 77,38.40,53.96
-    >>|cRXP_WARN_Follow the Arrow|r
+    .goto 77,39,54.04,10,0
+    .goto 77,38.85,54.36,10,0
+    .goto 77,38.19,53.7,10,0
+    .goto 77,38.05,53.68
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76203,3 --1/1 Discover what lurks in the depths of Shadow Hold
     .timer 5, RP
 step
@@ -620,51 +626,81 @@ step
     .mob Hel'nurathian Defender
     .mob Hel'nurathian Felmaw
 step
-    #sticky
+    .isOnQuest 76206
+    .goto 77,39.03,50.3
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
+step
+    #hidewindow
+    #completewith Portal1
+    .goto 77,39.47,49.61,5,0
+    .goto 77,39.69,49.86,5,0
+    .goto 77,39.93,49.99,5,0
+    .goto 77,39.86,49.57,5,0
+    .goto 77,39.66,49.86,5,0
+    .goto 77,39.96,49.87,5,0
+    .goto 77,41.17,48.4
+    +1
+step
+    .isOnQuest 76206
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76206,1,1 --4/4 Portals closed
 step
+    #label Portal1
     .isOnQuest 76206
-    .goto 77,39.02,50.33
-    .cast 416036 >>Click on the |cRXP_PICK_Portals|r
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
 step
-    #sticky
+    #hidewindow
+    #completewith Portal2
+    .goto 77,40.72,48.7,15,0
+    .goto 77,41.05,49.58
+    +1
+step
+    .isOnQuest 76206
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76206,1,2 --4/4 Portals closed
 step
     .isOnQuest 76206
-    .goto 77,39.58,49.62,5,0
-    .goto 77,39.83,50.04,5,0
-    .goto 77,39.9,49.59,5,0
-    .goto 77,39.68,49.9,5,0
-    .goto 77,39.95,49.91,5,0
-    .goto 77,39.33,46.66,5,0
-    .goto 77,41.13,48.39
-    .complete 76206,1,2 --4/4 Portals closed
+    #label Portal2
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
 step
-    #sticky
+    #hidewindow
+    #completewith Portal3
+    .goto 77,40.5,47.76,10,0
+    .goto 77,39.28,46.94
+    +1
+step
     .isOnQuest 76206
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76206,1,3 --4/4 Portals closed
 step
-    .isOnQuest 76206
-    .goto 77,40.88,48.5,10,0
-    .goto 77,41.04,49.6
-    .cast 416036 >>Click on the |cRXP_PICK_Portals|r
+    #label Portal3
+    .cast 416036 >>Click on the |cRXP_PICK_Portal|r
 step
-    #sticky
-    .isOnQuest 76206
-    .complete 76206,1,4 --4/4 Portals closed
-step
-    .isOnQuest 76206
-    #label Portals
-    .goto 77,40.48,47.51,10,0
-    .goto 77,39.29,46.93
-    .cast 416036 >>Click on the |cRXP_PICK_Portals|r
-step
+    #loop
+    .goto 77,40.5,47.76,10,0
+    .goto 77,40.53,48.05,10,0
+    .goto 77,40.4,48.96,10,0
+    .goto 77,41.05,49.58,10,0
+    .goto 77,39.03,50.3,10,0
     >>Kill |cRXP_ENEMY_Hel'nurathian Hel'nurathian Cultist,|r |cRXP_ENEMY_Hel'nurathian Defender|r and |cRXP_ENEMY_Hel'nurathian Felmaw.|r
     .complete 76205,1 --Enemies slain in Shadow Hold (100%)
     .mob Hel'nurathian Cultist
     .mob Hel'nurathian Defender
     .mob Hel'nurathian Felmaw
 step
+    #hidewindow
+    #completewith Turn in Balancing the Scales
+    .goto 77,39.14,46.23,15,0
+    .goto 77,38.74,46.88,15,0
+    .goto 77,37.98,46.21
+    +1
+step
+    .isOnQuest 76206
+    #label Portals
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 76206,1,4 --4/4 Portals closed
+step
+    #label Turn in Balancing the Scales
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maiev Shadowsong|r and |cRXP_FRIENDLY_Arko'narin Starshade|r
     .turnin 76205 >>Turn in Balancing the Scales
     .goto 77,37.98,46.21
@@ -678,6 +714,7 @@ step
     .accept 76207 >>Accept Wardens' Wrath
     .target Arko'narin Starshade
 step
+    .goto 77,38.47,45.7,10,0
     .goto 77,38.58,46.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maiev Shadowsong|r
     .target Maiev Shadowsong
@@ -702,7 +739,7 @@ step
     .target Maiev Shadowsong
 step
     .goto 12,47.4,30.36
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 76212,1 --1/1 Take your position
 step
     #completewith next
@@ -767,7 +804,7 @@ step
     .goto 31,38.47,54.23,10,0
     .goto 31,50.87,20.89,10,0
     .goto 31,39.69,22.64
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 53838,1 --1/1 Find the missing excavators
 step
     .goto 31,39.80,22.55
@@ -1310,7 +1347,7 @@ step
     .mob Bloodeyes
 step
     .goto 47,18.10,57.23
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 54980,3 --1/1 Bloodeyes brought to Raven Hill
 step
     #loop
@@ -1561,7 +1598,7 @@ step
     .target High Artificer Ataanya
 step
     .goto 108,40.51,25.07
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78071,2 --1/1 Draenite miners located
 step
     #loop
@@ -1665,7 +1702,7 @@ step
     .use 210454
 step
     .goto 103,55.36,79.03
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78075,2 --1/1 Return to Romuul in the Exodar
 step
     .goto 103,55.36,79.03
@@ -1737,7 +1774,7 @@ step
     .target +Prophet Velen
 step
     .goto 106,43.85,77.68
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78079,1 --1/1 Meet Velen and Hatuun in Nazzivian
 step
     .goto 106,41.6,77.85
@@ -1765,7 +1802,7 @@ step
     .target Arzaal
 step
     .goto 106,41.47,33.07
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78080,1 --1/1 Source of fel revealed
 step
     .goto 106,41.47,33.07
@@ -1796,7 +1833,7 @@ step
     .use 210454
 step
     .goto 103,54.72,80.66
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 78081,2 --1/1 Return to Velen in the Exodar
 step
     .goto 103,54.72,80.66
@@ -2278,7 +2315,7 @@ step
     .mob Foul Offering
 step
     .goto 50,81.77,47.86
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 77879,2 --1/1 Return to Jani
     .timer 20,RP
 step
@@ -2891,7 +2928,7 @@ step
     .mob Flood Elemental
 step
     .goto 1,40.48,26.90
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72466,2 --1/1 Return to the Ancient Skeleton
 step
     .goto 1,40.60,26.77
@@ -2969,7 +3006,7 @@ step
 --     .target Galgar
 step
     .goto 1,59.28,63.38
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72475,1 --Trail Followed
 step
     #completewith next
@@ -3639,7 +3676,7 @@ step
     .target Lilian Voss
 step
     .goto 2070,61.84,71.51
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 65788,1 --1/1 Enter the Throne Room of Lordaeron
 step
     .goto 2070,61.84,72.83
@@ -3865,7 +3902,7 @@ step
     .mob Scarlet Confessor
 step
     .goto 21,66.33,31.09
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72864,2 --1/1 Meet Lilian Voss Ouside Fenris Keep
 step
     .goto 21,66.33,31.09
@@ -3875,7 +3912,7 @@ step
     .accept 72865 >>Accept This is the Hour of the Forsaken
 step
     .goto 21,65.74,24.72
-    >>|cRXP_WARN_Follow the Arrow|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 72865,1 --1/1 Reach Fenris Keep
 step
     .goto 21,65.19,24.42,10,0

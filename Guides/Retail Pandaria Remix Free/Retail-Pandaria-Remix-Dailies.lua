@@ -160,7 +160,8 @@ step
 step
     .isOnQuest 31714
     #completewith LordOonaSlainB
-    >>Click on |cRXP_FRIENDLY_Misguided Serpents|r. |cRXP_WARN_Be careful as you're able to kill them accidentally|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Misguided Serpents|r.
+    *|cRXP_WARN_Be careful as you're able to kill them accidentally.|r
     .complete 31714,1 --10/10 Rescued Serpent
     .target Misguided Serpent
 step
@@ -205,7 +206,8 @@ step
     .mob Oona Tuna-Catcher
 step
     .isOnQuest 31714
-    >>Click on |cRXP_FRIENDLY_Misguided Serpents|r. |cRXP_WARN_Be careful as you're able to kill them accidentally|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Misguided Serpents|r.
+    *|cRXP_WARN_Be careful as you're able to kill them accidentally|r.
     .complete 31714,1 --10/10 Rescued Serpent
     .target Misguided Serpent
 step
@@ -219,7 +221,7 @@ step
 step
     .isOnQuest 31710
     #completewith SeedofDoubtSlainB
-    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r]
+    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r].
     .complete 31710,1 --100/100 Tiny Spider Eye
     .mob Widowspawn
 step
@@ -275,7 +277,7 @@ step
 step
     .isOnQuest 31710
     #label TinySpiderEyes
-    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r]
+    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r].
     .complete 31710,1 --100/100 Tiny Spider Eye
     .mob Widowspawn
 step
@@ -346,7 +348,7 @@ step
     .mob Slitherscale saurok
 step
     .isOnQuest 30156
-    >>Kill |cRXP_ENEMY_Saltback Turtles|r and |cRXP_ENEMY_Saltback Yearlings|r. Loot them for the |T237339:0|t[Saltback Meat Scrap] or |T237338:0|t[Saltback Meat]
+    >>Kill |cRXP_ENEMY_Saltback Turtles|r and |cRXP_ENEMY_Saltback Yearlings|r. Loot them for the |T237339:0|t[Saltback Meat Scrap] or |T237338:0|t[Saltback Meat].
     >>Combine 5 |T237339:0|t[Saltback Meat Scrap] to get |T237338:0|t[Saltback Meat]
     >>|cRXP_WARN_Click on the |cRXP_FRIENDLY_Cloud Serpent|r next to you|r
     .use 79028
@@ -362,7 +364,7 @@ step
     .mob Slitherscale saurok
 step
     .isOnQuest 30158
-    >>Click on the |cRXP_PICK_Slitherscale Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slitherscale Weapons|r
     .complete 30158,1 --5/5 Slitherscale Harpoon
 step
     .isOnQuest 30155
@@ -389,13 +391,13 @@ step
 step
     .isOnQuest 31700
     #completewith WindwardHuntressSlain
-    >>Click on the |cRXP_PICK_Stolen Boots|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
     .isOnQuest 30154
     #completewith WindwardHuntressSlain
-    >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r].
     .complete 30154,1 --5/5 Tiger Flank
     .mob Windward Tiger
 step
@@ -438,13 +440,13 @@ step
 step
     .isOnQuest 31700
     #completewith ShadowfaeMadcapSlain
-    >>Click on the |cRXP_PICK_Stolen Boots|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
     .isOnQuest 30154
     #completewith ShadowfaeMadcapSlain
-    >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r].
     .complete 30154,1 --5/5 Tiger Flank
     .mob Windward Tiger
 step
@@ -490,20 +492,20 @@ step
 step
     .isOnQuest 31700
     #completewith TigerFlank
-    >>Click on the |cRXP_PICK_Stolen Boots|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
     .isOnQuest 30154
     #label TigerFlank
-    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r].
     .complete 30154,1 --5/5 Tiger Flank
     .mob Windward Tiger
     .mob Windward Alpha
 step
     .isOnQuest 31700
     #completewith ShadowfaeTricksterSlain
-    >>Click on the |cRXP_PICK_Stolen Boots|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
@@ -521,7 +523,7 @@ step
 step
     .isOnQuest 31700
     #completewith next
-    >>Click on the |cRXP_PICK_Stolen Boots|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
@@ -532,7 +534,7 @@ step
 step
     .isOnQuest 31700
     #label StolenBoots
-    >>Click on the |cRXP_PICK_Stolen Boots|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
@@ -800,25 +802,25 @@ step
     .goto 395,46.25,56.38,15,0
     .goto 395,26.83,47.25,15,0
     .goto 395,36.48,36.55
-    .cast 3365 >>Click on the Spirit Orb
+    .cast 3365 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Spirit Orb
 step
     .isOnQuest 30277
     #completewith DeactivateSpiritWall
     #requires SpiritWallA
     #label SpiritWallB
-    >>Click on the Spirit Orb
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Spirit Orb
     .goto 395,23.16,28.83
-    .cast 3365 >>Click on the Spirit Orb
+    .cast 3365 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Spirit Orb
 step
     .isOnQuest 30277
     #requires SpiritWallB
     >>|cRXP_WARN_Loot at the first rune on the floor. This one is the safe on which won't kill you. Follow this rune to the spirit orb|r
-    >>Click on the Spirit Orb
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Spirit Orb
     .goto 395,49.10,22.67
     .complete 30277,1 --1/1 Deactivate Spirit Wall
 step
     .isOnQuest 30277
-    >>Click on the |cRXP_PICK_Ancient Guo-Lai Artifact|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Guo-Lai Artifact|r
     .goto 395,49.63,30.67
     .complete 30277,2 --1/1 Ancient Guo-Lau Artifact
 step
@@ -893,7 +895,8 @@ step
 step
     .isOnQuest 31808
     .goto 422,50.82,41.37
-    >>|cRXP_WARN_Follow the arrow|r. Click on |cRXP_FRIENDLY_Kovok|r
+    #title |cFFFCDC00Follow the Arrow|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Kovok|r
     .complete 31808,1 --1/1 Locate Kovok near the Clutches of Shek'zeer
     .target Kovok
 step
@@ -938,7 +941,7 @@ step
     .goto 422,49.71,33.25,30,0
     .goto 422,46.05,30.11,30,0
     .goto 422,44.73,34.43,27,0
-    >>Click on the |cRXP_PICK_Kunchong Cages|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kunchong Cages|r
     .complete 31494,1 --8/8 Kunchong Hatchling released
 step
     .isOnQuest 31109
@@ -967,7 +970,7 @@ step
 step
     .isOnQuest 31502
     #completewith FeederA
-    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r]
+    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r].
     .complete 31502,1 --24/24 Needler Wing
     .mob Shek'zeer Needler
 step
@@ -991,7 +994,7 @@ step
 step
     .isOnQuest 31496
     #requires EastFeeder
-    >>Click on the |cRXP_PICK_East Feeder|r or use the |T134772:0|t[Sap Jar]
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_East Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,37.85,33.06
     .use 87400
     .complete 31496,2 --1/1 East Feeder
@@ -1013,7 +1016,7 @@ step
 step
     .isOnQuest 31496
     #requires NorthFeeder
-    >>Click on the |cRXP_PICK_North Feeder|r or use the |T134772:0|t[Sap Jar]
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_North Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,37.03,32.83
     .use 87400
     .complete 31496,3 --1/1 North Feeder
@@ -1034,7 +1037,7 @@ step
 step
     .isOnQuest 31496
     #requires CentralFeeder
-    >>Click on the |cRXP_PICK_Central Feeder|r or use the |T134772:0|t[Sap Jar]
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Central Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,37.40,29.24
     .use 87400
     .complete 31496,1 --1/1 Central Feeder
@@ -1056,7 +1059,7 @@ step
     .isOnQuest 31496
     #requires NortheastFeeder
     #label FeederA
-    >>Click on the |cRXP_PICK_Northeast Feeder|r or use the |T134772:0|t[Sap Jar]
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Northeast Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,39.04,30.47
     .use 87400
     .complete 31496,4 --1/1 Northeast Feeder
@@ -1066,7 +1069,7 @@ step
     .goto 422,40.10,31.25,35,0
     .goto 422,33.92,30.95,35,0
     .goto 422,38.50,28.84,35,0
-    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r]
+    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r].
     .complete 31502,1 --24/24 Needler Wing
     .mob Shek'zeer Needler
 step
@@ -1096,11 +1099,11 @@ step
 step
     .isOnQuest 31233
     #completewith next
-    >>Click on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards click on the |cRXP_PICK_Amber Pot|r below the tap
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Amber Pot|r below the tap.
     .complete 31233,1 --6/6 Amber Sap
 step
     .isOnQuest 31234
-    >>Kill |cRXP_ENEMY_Mire Beasts|r. Loot them for the |T237299:0|t[|cRXP_LOOT_Pristine Mire Beast Eye|r]
+    >>Kill |cRXP_ENEMY_Mire Beasts|r. Loot them for the |T237299:0|t[|cRXP_LOOT_Pristine Mire Beast Eye|r].
     .complete 31234,1 --1/1 Pristine Mire Beast Eye
     .goto 422,67.35,36.63
     .mob Mire Beast
@@ -1129,7 +1132,7 @@ step
 step
     .isOnQuest 31232
     #label GurhtaniTablets
-    >>Click on the |cRXP_PICK_Gurthani Tablets|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gurthani Tablets|r
     .complete 31232,1 --8/8 Gurthani Tablet
 step
     .isOnQuest 31231
@@ -1152,7 +1155,7 @@ step
 step
     .isOnQuest 31238
     #completewith AmberSapA
-    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T350575:0|t[|cRXP_LOOT_Mushan Tongues|r]
+    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T350575:0|t[|cRXP_LOOT_Mushan Tongues|r].
     .complete 31238,1 --4/4 Mushan Tongue
     .mob Greatback Mushan
     .mob Greatback Calf
@@ -1214,7 +1217,7 @@ step
     .goto 422,73.35,31.56,15,0
     .goto 422,73.83,28.74,15,0
     .goto 422,71.13,24.09,15,0
-    >>Click on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards click on the |cRXP_PICK_Amber Pot|r below the tap
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Amber Pot|r below the tap.
     .complete 31233,1 --6/6 Amber Sap
 step
     .isOnQuest 31238
@@ -1224,7 +1227,7 @@ step
     .goto 422,67.03,20.71,45,0
     .goto 422,62.41,25.75,45,0
     .goto 422,50.10,29.42,45,0
-    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T350575:0|t[|cRXP_LOOT_Mushan Tongues|r]
+    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T350575:0|t[|cRXP_LOOT_Mushan Tongues|r].
     .complete 31238,1 --4/4 Mushan Tongue
     .mob Greatback Mushan
     .mob Greatback Calf
@@ -1358,19 +1361,19 @@ step
 step
     #completewith Ancient Mantras
     .isOnQuest 30063
-    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for [|cRXP_LOOT_Mask of Doubt|r].
     .complete 30063,1 --8/8 Mask of Doubt
     .mob Lingering Doubt
     .mob Final Doubt
 step
     #completewith Ancient Mantras
     .isOnQuest 30065
-    >>Click on |cRXP_PICK_Arrows|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Arrows|r
     .complete 30065,1 --8/8 Defender's Arrow
 step
     #completewith Ancient Mantras
     .isOnQuest 30064
-    >>Click on the |cRXP_PICK_Books|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Books|r
     .complete 30064,1 --6/6 Ancient Sutra
 step
     .isOnQuest 30066
@@ -1390,14 +1393,14 @@ step
 step
     #completewith Defender's Arrow
     .isOnQuest 30063
-    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for [|cRXP_LOOT_Mask of Doubt|r].
     .complete 30063,1 --8/8 Mask of Doubt
     .mob Lingering Doubt
     .mob Final Doubt
 step
     #label Defender's Arrow
     .isOnQuest 30065
-    >>Click on |cRXP_PICK_Arrows|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Arrows|r
     .complete 30065,1 --8/8 Defender's Arrow
 step
     #completewith Ancient Sutra
@@ -1409,19 +1412,19 @@ step
 step
     #completewith Ancient Sutra
     .isOnQuest 30063
-    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for [|cRXP_LOOT_Mask of Doubt|r].
     .complete 30063,1 --8/8 Mask of Doubt
     .mob Lingering Doubt
     .mob Final Doubt
 step
     #label Ancient Sutra
     .isOnQuest 30064
-    >>Click on the |cRXP_PICK_Books|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Books|r
     .complete 30064,1 --6/6 Ancient Sutra
 step
     #completewith next
     .isOnQuest 30063
-    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for [|cRXP_LOOT_Mask of Doubt|r].
     .complete 30063,1 --8/8 Mask of Doubt
     .mob Lingering Doubt
     .mob Final Doubt
@@ -1434,7 +1437,7 @@ step
 step
     #label AugustLoop1
     .isOnQuest 30063
-    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for [|cRXP_LOOT_Mask of Doubt|r].
     .complete 30063,1 --8/8 Mask of Doubt
     .mob Lingering Doubt
     .mob Final Doubt
@@ -1788,12 +1791,12 @@ step
 step
     #completewith 1
     .isOnQuest 30954
-    >>Click on the |cRXP_PICK_Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
     #completewith 1
     .isOnQuest 30955
-    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Niuzao Food Supplies|r
     .complete 30955,1 --6/6 Gather Food for Niuzao
 step
     #completewith 1
@@ -1811,7 +1814,7 @@ step
 step
     #completewith 1
     .isOnQuest 30958
-    >>Click on |cRXP_PICK_Bricks|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bricks|r
     .complete 30958,1 --10/10 Loose Brick
 step
     #label 1
@@ -1837,12 +1840,12 @@ step
 step
     #completewith 2
     .isOnQuest 30954
-    >>Click on the |cRXP_PICK_Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
     #completewith 2
     .isOnQuest 30955
-    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Niuzao Food Supplies|r
     .complete 30955,1 --6/6 Gather Food for Niuzao
 step
     #completewith 2
@@ -1860,7 +1863,7 @@ step
 step
     #label 2
     .isOnQuest 30958
-    >>Click on |cRXP_PICK_Bricks|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bricks|r
     .complete 30958,1 --10/10 Loose Brick
 step
     #completewith 3
@@ -1872,12 +1875,12 @@ step
 step
     #completewith 3
     .isOnQuest 30954
-    >>Click on the |cRXP_PICK_Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
     #completewith 3
     .isOnQuest 30955
-    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Niuzao Food Supplies|r
     .complete 30955,1 --6/6 Gather Food for Niuzao
 step
     #completewith 3
@@ -1902,12 +1905,12 @@ step
 step
     #completewith 4
     .isOnQuest 30954
-    >>Click on the |cRXP_PICK_Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
     #completewith 4
     .isOnQuest 30955
-    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Niuzao Food Supplies|r
     .complete 30955,1 --6/6 Gather Food for Niuzao
 step
     #label 4
@@ -1925,12 +1928,12 @@ step
 step
     #completewith 5
     .isOnQuest 30954
-    >>Click on the |cRXP_PICK_Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
     #label 5
     .isOnQuest 30955
-    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Niuzao Food Supplies|r
     .complete 30955,1 --6/6 Gather Food for Niuzao
 step
     #completewith next
@@ -1941,7 +1944,7 @@ step
     .mob Sra'thik Swiftclaw
 step
     .isOnQuest 30954
-    >>Click on the |cRXP_PICK_Weapons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
     #label Pot of Fire
@@ -2030,7 +2033,7 @@ step
 step
     .isOnQuest 30717
     #completewith Spirit of the Crane found
-    >>Click on |cRXP_PICK_Feathers|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
     .isOnQuest 30718
@@ -2046,7 +2049,7 @@ step
 step
     .isOnQuest 30717
     #completewith next
-    >>Click on |cRXP_PICK_Feathers|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
     .isOnQuest 30718
@@ -2056,7 +2059,7 @@ step
 step
     .isOnQuest 30717
     #label Gift of the Great Crane
-    >>Click on |cRXP_PICK_Feathers|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
     .isOnQuest 30718,30716,30717
@@ -2323,7 +2326,7 @@ step
     .mob Alliance
 step
     .isOnQuest 32126
-    >>Click on |cRXP_PICK_Alliance Supply Drop|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Alliance Supply Drop|r
     .complete 32126,1 --8/8 Alliance Supply Drops destroyed
 step
     .isOnQuest 32123
@@ -2365,14 +2368,14 @@ step
     .isOnQuest 32199
     #label PollutedViseclawMeatA
     .goto 418,18.01,55.41
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1,3 --3/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
 step
     .isOnQuest 32199
     #completewith next
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1 --5/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
@@ -2399,7 +2402,7 @@ step
 step
     .isOnQuest 32199
     #completewith WorkOrderFuel
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1 --5/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
@@ -2427,7 +2430,7 @@ step
 step
     .isOnQuest 32199
     #completewith WorkOrderLumber
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1 --5/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
@@ -2477,18 +2480,18 @@ step
 step
     .isOnQuest 32238
     #completewith next
-    >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
     .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
     .use 91902
     .mob Shieldwall Mecha Pounder
 step
     .isOnQuest 32139
-    >>Click on |cRXP_PICK_Domination Point Lumber|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Domination Point Lumber|r
     .complete 32139,1 --9/9 Domination Point Lumber collected
 step
     .isOnQuest 32238
     #label ShieldwallMechaPounderExploded
-    >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
     .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
     .use 91902
     .mob Shieldwall Mecha Pounder
@@ -2523,7 +2526,7 @@ step
 step
     .isOnQuest 32199
     #completewith LieutenantEthanJacobsonSlain
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1 --5/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
@@ -2552,7 +2555,7 @@ step
     .mob 7th Legion Paratrooper
 step
     .isOnQuest 32199
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1 --5/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
@@ -2579,7 +2582,7 @@ step
     .goto 418,21.86,63.93,35,0
     .goto 418,16.16,58.46,35,0
     .goto 418,19.49,53.54,35,0
-    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for |T645112:0|t[Polluted Visceclaw Meat].
     .complete 32199,1 --5/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
@@ -2656,7 +2659,7 @@ step
     .mob Captain Brent the Black
 step
     .isOnQuest 32128
-    >>Click on the |cRXP_PICK_Powder|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Powder|r
     .goto 418,11.56,75.15,10,0
     .goto 418,12.33,75.59
     .complete 32128,2 --1/1 The Defiant ammunition destroyed
@@ -2668,7 +2671,7 @@ step
     .mob Captain Mulkey
 step
     .isOnQuest 32128
-    >>Click on the |cRXP_PICK_Powder|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Powder|r
     .goto 418,14.09,77.07,10,0
     .goto 418,15.09,76.61
     .complete 32128,1 --1/1 Valor's Edge ammunition destroyed
@@ -2901,7 +2904,7 @@ step
 step
     .isOnQuest 32144
     #completewith Scout-o-Meter Mk III
-    >>Click on |cRXP_PICK_Crates|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Crates|r
     .complete 32144,1 --8/8 Horde Supply Crates Destroyed
 step
     .isOnQuest 32143
@@ -2923,11 +2926,11 @@ step
     .target Scout-o-Meter Mk III
 step
     .isOnQuest 32143
-    >>Click on the Quest PoP-UP to turn in the quest
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Quest PoP-UP to turn in the quest
     .turnin 32143 >>Turn in A Kind of Magic
 step
     .isQuestTurnedIn 32145
-    >>Click on the Quest PoP-UP to accept the new quest
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Quest PoP-UP to accept the new quest
     .accept 32145 >>Accept Don't Lose Your Head
 step
     .isOnQuest 32145
@@ -2973,7 +2976,7 @@ step
     .mob Dominance Raider
 step
     .isOnQuest 32144
-    >>Click on |cRXP_PICK_Crates|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Crates|r
     .complete 32144,1 --8/8 Horde Supply Crates Destroyed
 step
     .isOnQuest 32142,32146
@@ -3060,7 +3063,7 @@ step
 step
     .isOnQuest 32446
     #completewith Northwestern
-    >>Click on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
     .complete 32446,1 --6/6 Scrap Metal
     .mob Jungle Shredder
 step
@@ -3114,7 +3117,7 @@ step
 step
     .isOnQuest 32446
     #label Scrap Metal
-    >>Click on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
     .complete 32446,1 --6/6 Scrap Metal
     .mob Jungle Shredder
 step
@@ -3202,14 +3205,14 @@ step
 step
     #completewith CipheredScroll
     .isOnQuest 31116
-    >>Kill |cRXP_ENEMY_Defiled Spirits|r. Loot them for the |T132859:0|t[|cRXP_LOOT_Ancient Spirit Dust|r]
-    >>Click on the |cRXP_PICK_Defiled Yaungol Remains|r (you need 4 dust per remains)
+    >>Kill |cRXP_ENEMY_Defiled Spirits|r. Loot them for the |T132859:0|t[|cRXP_LOOT_Ancient Spirit Dust|r].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defiled Yaungol Remains|r (you need 4 dust per remains)
     .complete 31116,1 --8/8 Spirits Returned to Their Remnants
     .mob Defiled Spirit
 step
     #label CipheredScroll
     .isOnQuest 31118
-    >>Kill |cRXP_ENEMY_Deadtalkers|r and |cRXP_ENEMY_Uruk|r. Loot them for the |T1:0|t[Ciphered Scroll]
+    >>Kill |cRXP_ENEMY_Deadtalkers|r and |cRXP_ENEMY_Uruk|r. Loot them for the |T1:0|t[Ciphered Scroll].
     .complete 31118,1 --1/1 Ciphered Scroll
     .mob Deadtalker Crusher
     .mob Deadtalker Corpsedefiler
@@ -3224,8 +3227,8 @@ step
     .mob Deadtalker Crusher
 step
     .isOnQuest 31116
-    >>Kill |cRXP_ENEMY_Defiled Spirits|r. Loot them for the |T132859:0|t[|cRXP_LOOT_Ancient Spirit Dust|r]
-    >>Click on the |cRXP_PICK_Defiled Yaungol Remains|r (you need 4 dust per remains)
+    >>Kill |cRXP_ENEMY_Defiled Spirits|r. Loot them for the |T132859:0|t[|cRXP_LOOT_Ancient Spirit Dust|r].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defiled Yaungol Remains|r (you need 4 dust per remains)
     .complete 31116,1 --8/8 Spirits Returned to Their Remnants
     .mob Defiled Spirit
 step
@@ -3239,7 +3242,7 @@ step
 step
     .isOnQuest 31119
     #completewith next
-    >>Click on |cRXP_PICK_Highly Explosive Yaungol Oil Barrel|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highly Explosive Yaungol Oil Barrel|r
     .collect 84762,10 --10 Highly Explosive Yaungol Oil
 step
     .isOnQuest 31113
@@ -3255,7 +3258,7 @@ step
 step
     .isOnQuest 31119
     #completewith next
-    >>Click on |cRXP_PICK_Highly Explosive Yaungol Oil Barrel|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highly Explosive Yaungol Oil Barrel|r
     .collect 84762,10 --10 Highly Explosive Yaungol Oil
     .goto 388,61.52,43.70,0
     .goto 388,60.89,41.58,0
@@ -3342,15 +3345,14 @@ step
     .mob Sra'thik Mutilator
 step
     .isOnQuest 31199
-    >>Click on the |cRXP_PICK_Sra'thik Siege Weapon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Siege Weapon|r
     .goto 388,27.44,54.78
     .complete 31199,2 --1/1 Small Southern Siege Weapon destroyed
 step
     .isOnQuest 31199
-    >>Click on the |cRXP_PICK_Sra'thik Siege Weapon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Siege Weapon|r
     .goto 388,25.76,53.55
     .complete 31199,1 --1/1 Large Southern Siege Weapon destroyed
-
 step
     .isOnQuest 31197
     #completewith ShadoPanTraineesFreed
@@ -3377,12 +3379,12 @@ step
 step
     .isOnQuest 31198
     .goto 388,23.57,55.64
-    >>Click on the |cRXP_PICK_Sra'thik Idol|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Idol|r
     .complete 31198,1 --1/1 Southern idol
 step
     .isOnQuest 31198
     .goto 388,21.53,49.24
-    >>Click on the |cRXP_PICK_Sra'thik Idol|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Idol|r
     .complete 31198,3 --1/1 Center idol
 step
     .isOnQuest 31200
@@ -3399,16 +3401,16 @@ step
 step
     .isOnQuest 31198
     .goto 388,27.82,41.96
-    >>Click on the |cRXP_PICK_Sra'thik Idol|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Idol|r
     .complete 31198,4 --1/1 Eastern idol
 step
     .isOnQuest 31199
-    >>Click on the |cRXP_PICK_Sra'thik Siege Weapon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Siege Weapon|r
     .goto 388,27.18,41.18
     .complete 31199,3 --1/1 Large Northern Siege Weapon destroyed
 step
     .isOnQuest 31199
-    >>Click on the |cRXP_PICK_Sra'thik Siege Weapon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Siege Weapon|r
     .goto 388,26.06,39.94
     .complete 31199,4 --1/1 Small Northern Siege Weapon destroyed
 step
@@ -3432,7 +3434,7 @@ step
 step
     .isOnQuest 31198
     .goto 388,16.17,45.78
-    >>Click on the |cRXP_PICK_Sra'thik Idol|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sra'thik Idol|r
     .complete 31198,2 --1/1 Western idol
 step
     .isOnQuest 31201
@@ -3608,13 +3610,13 @@ step
 step
     .isOnQuest 31048
     #completewith ShanzeIllusionistsSlain
-    >>Click on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
     .complete 31048,1 --24/24 Shan'ze Ancestor slain
     .mob Shan'ze Ancestor
 step
     .isOnQuest 31044
     #completewith ShanzeIllusionistsSlain
-    >>Kill the |cRXP_ENEMY_Bronze Quilen|r. Loot them for the |T370770:0|t[|cRXP_LOOT_Bronze Claws|r]
+    >>Kill the |cRXP_ENEMY_Bronze Quilen|r. Loot them for the |T370770:0|t[|cRXP_LOOT_Bronze Claws|r].
     .complete 31044,1 --20/20 Bronze Claw
     .mob Bronze Quilen
 step
@@ -3633,13 +3635,13 @@ step
 step
     .isOnQuest 31048
     #completewith BronzeClaws
-    >>Click on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
     .complete 31048,1 --24/24 Shan'ze Ancestor slain
     .mob Shan'ze Ancestor
 step
     .isOnQuest 31044
     #label BronzeClaws
-    >>Kill the |cRXP_ENEMY_Bronze Quilen|r. Loot them for the |T370770:0|t[|cRXP_LOOT_Bronze Claws|r]
+    >>Kill the |cRXP_ENEMY_Bronze Quilen|r. Loot them for the |T370770:0|t[|cRXP_LOOT_Bronze Claws|r].
     .complete 31044,1 --20/20 Bronze Claw
     .mob Bronze Quilen
 step
@@ -3652,7 +3654,7 @@ step
 step
     .isOnQuest 31048
     #label ShanzeAncestorsSlain
-    >>Click on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
     .complete 31048,1 --24/24 Shan'ze Ancestor slain
     .mob Shan'ze Ancestor
 step
@@ -3675,13 +3677,13 @@ step
 step
     .isOnQuest 31042
     #completewith WildCloudridersFreed
-    >>Kill the |cRXP_ENEMY_Onyx Stormclaws|r. Loot them for the |T399041:0|t[|cRXP_LOOT_Onyx Hearts|r]
+    >>Kill the |cRXP_ENEMY_Onyx Stormclaws|r. Loot them for the |T399041:0|t[|cRXP_LOOT_Onyx Hearts|r].
     .complete 31042,1 --4/4 Onyx Heart
     .mob Onyx Stormclaw
 step
     .isOnQuest 31043
     #completewith WildCloudridersFreed
-    >>Click on the |cRXP_PICK_Shan'ze Tablets|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shan'ze Tablets|r
     .complete 31043,1 --8/8 Shan'ze Tablet
 step
     .isOnQuest 31047
@@ -3691,7 +3693,7 @@ step
     .goto 388,33.48,27.21,35,0
     .goto 388,34.97,20.17,35,0
     .goto 388,31.75,21.86,35,0
-    >>Click on the |cRXP_PICK_Ball and Chain|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ball and Chain|r
     .complete 31047,1 --6/6 Wild Cloudriders freed
 step
     #completewith ShanzeeSerpenbindersBeastmastersSlain
@@ -3717,12 +3719,12 @@ step
 step
     .isOnQuest 31043
     #completewith OnyxHeart
-    >>Click on the |cRXP_PICK_Shan'ze Tablets|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shan'ze Tablets|r
     .complete 31043,1 --8/8 Shan'ze Tablet
 step
     .isOnQuest 31042
     #label OnyxHeart
-    >>Kill the |cRXP_ENEMY_Onyx Stormclaws|r. Loot them for the |T399041:0|t[|cRXP_LOOT_Onyx Hearts|r]
+    >>Kill the |cRXP_ENEMY_Onyx Stormclaws|r. Loot them for the |T399041:0|t[|cRXP_LOOT_Onyx Hearts|r].
     .complete 31042,1 --4/4 Onyx Heart
     .mob Onyx Stormclaw
 step
@@ -3734,7 +3736,7 @@ step
     .mob Shan'ze BeastMaster
 step
     .isOnQuest 31043
-    >>Click on the |cRXP_PICK_Shan'ze Tablets|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shan'ze Tablets|r
     .complete 31043,1 --8/8 Shan'ze Tablet
 step
     .isOnQuest 31105
@@ -3753,7 +3755,7 @@ step
 step
     .isOnQuest 31041
     #completewith CloudrunnerHatchlingsFreed
-    >>Click on the |cRXP_PICK_Shiny Eggs|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shiny Eggs|r
     .complete 31041,1 --8/8 Cloudrunner Egg
 step
     #label CloudrunnerHatchlingsFreed
@@ -3763,7 +3765,7 @@ step
     .goto 388,34.97,20.17,35,0
     .goto 388,31.75,21.86,35,0
     .goto 388,30.26,26.06,35,0
-    >>Click on the |cRXP_PICK_Shan'ze Cages|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shan'ze Cages|r
     .complete 31046,1 --20/20 Cloudrunner Hatchlings freed
     .target Cloudrunner Hatchling
 step
@@ -3794,7 +3796,7 @@ step
 step
     .isOnQuest 31041
     #label CloudrunnerEggs
-    >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cloudrunner Eggs|r
     .complete 31041,1 --8/8 Cloudrunner Egg
 step
     .isOnQuest 31040
@@ -3938,7 +3940,7 @@ step
 step
     .isOnQuest 31061
     .goto 388,33.47,15.63
-    >>Click on a |cRXP_ENEMY_Shan'ze Cloudrunner|r or use |T134226:0|t[Bronze Claws]. Kill the |cRXP_ENEMY_Shan'ze Cloudrunner|r you're sitting on
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on a |cRXP_ENEMY_Shan'ze Cloudrunner|r or use |T134226:0|t[Bronze Claws]. Kill the |cRXP_ENEMY_Shan'ze Cloudrunner|r you're sitting on
     .complete 31061,1 --8/8 Shan'ze Cloudrider saved
     .use 83134
     .mob Shan'ze Cloudrunner

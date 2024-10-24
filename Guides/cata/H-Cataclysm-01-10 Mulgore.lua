@@ -1195,6 +1195,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your hearthstone to Thunder Bluff
     .target Innkeeper Pala
+    .isQuestAvailable 24540
 step
     #xprate <1.2
     #completewith next

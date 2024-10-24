@@ -4202,6 +4202,17 @@ step
     #label DeleteGyromast
     #optional
     .destroy 7442 >> Delete |T134459:0|t[Gyromast's Key] from your bags, as it's no longer needed
+step << !NightElf !Dwarf Hunter !Druid
+    #completewith BeachedCloak
+    #map Darkshore
+    .goto Felwood,18.50,19.87,100 >> Travel to Auberdine
+    .cooldown item,6948,<0
+step << !NightElf !Dwarf Hunter !Druid
+    #xprate <1.59
+    #optional
+    #completewith next
+    .hs >> Hearth to Auberdine
+    .cooldown item,6948,>0,1
 step << Druid
     #label Turtle4727
     .goto 1439,53.113,18.099
@@ -6038,10 +6049,16 @@ step << Druid
     .trainer >> Train your class spells
     .target Loganaar
 step << NightElf/Dwarf Hunter
+    #completewith BeachedCloak
+    #map Darkshore
+    .goto Felwood,18.50,19.87,100 >> Travel to Auberdine
+    .cooldown item,6948,<0
+step << NightElf/Dwarf Hunter
     #xprate <1.59
     #optional
     #completewith next
     .hs >> Hearth to Auberdine
+    .cooldown item,6948,>0,1
 step
     #xprate <1.59
     #label BeachedCloak
@@ -10213,6 +10230,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_You may have to wait for him to respawn or for others to finish the escort|r
     .turnin 729 >> Turn in The Absent Minded Prospector
+    .isOnQuest 729
     .target Prospector Remtravel
 step
     .goto Darkshore,35.72,83.69
@@ -10222,6 +10240,7 @@ step
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
     .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
+    .isQuestAvailable 731
 step
     #requires prospector
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
@@ -10438,13 +10457,6 @@ step
     .mob Dark Strand Enforcer
     .mob Dark Strand Excavator
 step
-    .goto Ashenvale,31.25,30.70
-    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs| untill you have enough xp to reach level 20
-    .mob Dark Strand Cultist
-    .mob Dark Strand Adept
-    .mob Dark Strand Enforcer
-    .mob Dark Strand Excavator
-step
     .goto Ashenvale,33.01,21.41,50,0
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
@@ -10452,6 +10464,13 @@ step
     >>|cRXP_WARN_They look like small brown sacks. They can be hard to see|r
     .complete 1010,1
     .isOnQuest 1010
+step
+    .goto Ashenvale,31.25,30.70
+    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r untill you have enough xp to reach level 20
+    .mob Dark Strand Cultist
+    .mob Dark Strand Adept
+    .mob Dark Strand Enforcer
+    .mob Dark Strand Excavator
 step
 	#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -10954,7 +10973,7 @@ step
     .itemStat 15,QUALITY,<7
 step
 	#xprate <1.5 --<< !NightElf/Hunter
-    #completewith Murkdeep
+    #completewith MasterG
     #optional
     .goto Darkshore,40.23,81.28,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
@@ -11075,6 +11094,16 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .isOnQuest 945
 step
+	#xprate <1.5 --<< !NightElf/Hunter
+    #completewith prospectorEscort
+    #optional
+    .goto Darkshore,40.23,81.28,0
+    >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    .complete 1003,1
+    .isOnQuest 1003
+    .mob Grizzled Thistle Bear
+step
     #sticky
     #label prospector
     .goto 1439,35.724,83.696
@@ -11082,13 +11111,16 @@ step
     >>|cRXP_WARN_You may have to wait for him to respawn or for others to finish the escort|r
     .turnin 729 >> Turn in The Absent Minded Prospector
     .target Prospector Remtravel
+    .isOnQuest 729
 step
+    #label prospectorEscort
     .goto Darkshore,35.72,83.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r. This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
     .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
+    .isQuestAvailable 731
 step
     #requires prospector
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
@@ -11230,24 +11262,6 @@ step
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
 step
-#xprate <1.5
-    #completewith next
-    .goto Darkshore,45.00,85.30,30 >> Travel toward |cRXP_FRIENDLY_Volcor|r in the Cave
-step
-#xprate <1.5
-    .goto Darkshore,45.00,85.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
-    .turnin 993 >> Turn in A Lost Master
-    .accept 995 >> Accept Escape Through Stealth
-    .timer 20,Escape Through Stealth RP
-    .target Volcor
-step
-#xprate <1.5
-    .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_Wait out the RP|r
-    .complete 995,1
-    .isOnQuest 995
-step
     #xprate <1.5
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
@@ -11274,6 +11288,34 @@ step
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
     .isOnQuest 5321
+step
+#xprate <1.5
+    #completewith volcorEnd
+    .goto Ashenvale,27.26,35.58
+    +|cRXP_FRIENDLY_Kerlonian|r will follow you and ocasionally help in combat. |cRXP_WARN_Make sure you don't lose him as he will stop moving when he falls asleep. You have 25 minutes to reach Ashenvale and complete this quest|r
+    .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep while standing next to him to wake him up|r
+    >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
+    .isOnQuest 5321
+step
+#xprate <1.5
+    #completewith next
+    .goto Darkshore,45.00,85.30,30 >> Travel toward |cRXP_FRIENDLY_Volcor|r in the Cave
+    .isOnQuest 993
+step
+#xprate <1.5
+    .goto Darkshore,45.00,85.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
+    .turnin 993 >> Turn in A Lost Master
+    .accept 995 >> Accept Escape Through Stealth
+    .timer 20,Escape Through Stealth RP
+    .target Volcor
+step
+#xprate <1.5
+    #label volcorEnd
+    .goto Darkshore,44.44,84.69
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 995,1
+    .isOnQuest 995
 step -- adjusted to heading there straight from southern most beached sea creature
 #xprate >1.49
     #completewith tower
@@ -11354,6 +11396,13 @@ step
     .complete 970,1
     .mob Dark Strand Cultist
     .mob Dark Strand Adept
+step
+    .goto Ashenvale,31.25,30.70
+    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r untill you have enough xp to reach level 20
+    .mob Dark Strand Cultist
+    .mob Dark Strand Adept
+    .mob Dark Strand Enforcer
+    .mob Dark Strand Excavator
 step
     #xprate <1.59
     #optional

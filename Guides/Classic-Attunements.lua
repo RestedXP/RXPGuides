@@ -808,10 +808,7 @@ step
 step
     #hardcore
     >>Take a right before entering the The Exyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molton Core|r instance portal
-    >>|cRXP_WARN_The fastest way to get here is by doing the 'Lava skip'. This starts from the platform of|r |cRXP_ENEMY_Lord Incendius|r
-    --.link >> |cRXP_WARN_Click here for video reference|r
     .complete 7848,1 --Core Fragment 1/1
-    --VV TODO: Lava skip video
 step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r

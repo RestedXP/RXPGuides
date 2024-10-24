@@ -48,6 +48,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gort|r
     .fp The Mor'shan Rampart >> Get The Mor'shan Rampart flight path
     .target Gort Goreflight
+    .subzoneskip 1703,1
 step
     #completewith FindGorat
     >>Kill |cRXP_ENEMY_Ashenvale Skirmishers|r and |cRXP_ENEMY_Ashenvale Bowmen|r
@@ -281,6 +282,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fp >>Get the Splintertree Post Flight Path
     .target Vhulgra
+    .isQuestAvailable 6503
 step
     .goto 63,73.56,60.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuray'bin|r
@@ -293,6 +295,7 @@ step
     .home >>Set your Hearthstone to Splintertree Post
     .target Innkeeper Kaylisk
     .isQuestTurnedIn 13712
+    .isQuestAvailable 6503
 step
     .goto 63,73.19,60.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valusha|r
@@ -795,6 +798,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .fp >>Get the Zoram'gar Outpost Flight Path
     .target Andruk
+    .isQuestAvailable 26890
 step
     .goto 63,12.11,33.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Grimfang|r
@@ -819,6 +823,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Duras|r
     .home >>Set your Hearthstone to Zoram'gar Outpost
     .target Innkeeper Duras
+    .isQuestAvailable 26890
 step
     .goto 63,12.77,34.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
@@ -969,6 +974,7 @@ step
     .turnin 26890 >>Turn in The Essence of Aku'Mai
     .target Dagrun Ragehammer
 step
+    #completewith HellscreamsWatchPickups
     .goto 63,11.16,34.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .gossipoption 111691 >>Fly to Hellscream's Watch
@@ -978,11 +984,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thraka|r
     .fp >>Get the Hellscream's Watch Flight Path
     .target Thraka
+    .isQuestAvailable 6462
 step
     .goto 63,38.60,42.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Linkasa|r
     .home >>Set your Hearthstone to Hellscream's Watch
     .target Innkeeper Linkasa
+    .isQuestAvailable 6462
 step
     .goto 63,38.01,42.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Goggath|r
@@ -1008,6 +1016,7 @@ step
     .accept 13943 >>Accept Breathing Room
     .target Captain Goggath
 step
+    #label HellscreamsWatchPickups
     .goto 63,38.89,42.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mitsuwa|r
     .accept 6462 >>Accept Troll Charm
@@ -1261,6 +1270,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wind Tamer Shoshok|r
     .fp >>Get the Silverwind Refuge Flight Path
     .target Wind Tamer Shoshok
+    .subzoneskip 420,1
 step
     .goto 63,49.96,67.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flooz|r
@@ -1516,6 +1526,7 @@ step
     #sticky
     .abandon 2 >>Abandon Sharptalon's Claw as it won't get turned in anymore
 step
+    #completewith STV1
     .goto 63,73.18,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fly Orgrimmar >>Fly to Orgrimmar
@@ -1612,6 +1623,7 @@ step
     .isQuestTurnedIn 13841
 step
     #questguide
+    #completewith STV1
     .goto 85,49.64,59.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fly Splintertree Post >>Fly to Splintertree Post
@@ -1642,6 +1654,7 @@ step
     .isQuestTurnedIn 13841
 step
     #questguide
+    #completewith STV1
     .goto 63,73.18,61.58
     .fly Orgrimmar >>Fly to Orgrimmar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
@@ -1665,6 +1678,7 @@ step
     .isOnQuest 26416
     --STV breadcrumb quest
 step
+    #label STV1
     #optional
     .goto 85,51.31,56.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bort|r

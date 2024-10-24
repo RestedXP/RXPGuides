@@ -1466,8 +1466,14 @@ step
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
+    #completewith NorthDarkshore
+    #map Darkshore
+    .goto Felwood,18.50,19.87,100 >> Travel to Auberdine
+    .cooldown item,6948,<0
+step
     #completewith next
     .hs >> Hearth to Auberdine
+    .cooldown item,6948,>0,1
 step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -1491,6 +1497,7 @@ step
     .accept 948 >> Accept Onu
 step
 #map Darkshore
+    #label NorthDarkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
 	.target Sentinel Glynda Nal'Shea
     .goto Darkshore,37.70,43.39
