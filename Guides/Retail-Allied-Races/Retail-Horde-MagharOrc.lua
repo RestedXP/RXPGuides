@@ -16,13 +16,13 @@ step
     .isOnQuest 49930
     .isQuestAvailable 49930
     .goto 85,37.76,81.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r in Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r in Orgrimmar.
     .turnin 49930 >>Turn in The Call for Allies
     .target Ji Firepaw
 step
     .isQuestAvailable 50242
     .goto 85,37.76,81.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 50242 >>Accept A Choice of Allies
     .target Ji Firepaw
 step
@@ -36,14 +36,14 @@ step
     .complete 50242,5 -- Learn more about the Vulpera
 step
     .isQuestComplete 50242
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .goto 85,37.65,81.44
     .turnin 50242 >>Turn in A Choice of Allies
     .target Ji Firepaw
 step
     #label MagharOrcStartQuestline
     .goto 85,37.77,81.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 53466 >>Accept Vision of Time
     .target Ji Firepaw
 step
@@ -54,7 +54,7 @@ step
     .zone 1163 >>Take the Portal to Zuldazar
 step
     .goto 1163,67.03,73.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r.
     .turnin 53466 >>Turn in Vision of Time
     .accept 53467 >>Accept Caverns of Time
     .target Chief Telemancer Oculeth
@@ -79,7 +79,7 @@ step
     .goto 74,50.46,19.50,30,0
     .goto 74,39.19,50.42,30,0
     .goto 75,41.74,49.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the path down. Talk to |cRXP_FRIENDLY_Anachronos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the path down. Talk to |cRXP_FRIENDLY_Anachronos|r.
     .turnin 53467 >>Turn in Caverns of Time
     .accept 53354 >>Accept Echo of Gul'dan
     .target Anachronos
@@ -121,14 +121,14 @@ step
     .goto 85,52.69,52.84
     .zone 50 >>Take the Zeppelin to Stranglethorn Vale
 step
-    >>Fly to the Time Rift and click on it. Kill the |cRXP_ENEMY_Echo of Gul'dan|r
+    >>Fly to the Time Rift and |TInterface/cursor/crosshair/interact.blp:20|tClick on it. Kill the |cRXP_ENEMY_Echo of Gul'dan|r.
     >>Dodge Liquid Hellfire. Sidestep Fel Efflux. Interrupt Death Coil
     .goto 17,54.42,50.49
     .complete 53354,1 --1/1 Echo of Gul'dan slain
     .mob Echo of Gul'dan
 step
     .goto 17,54.40,50.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r.
     .turnin 53354 >>Turn in Echo of Gul'dan
     .accept 53353 >>Accept Echo of Warlord Zaela
     .target Anachronos
@@ -146,14 +146,14 @@ step
     .goto 85,57.47,92.26
     .zone 371 >>Go up. Take the Portal to Jade Forest
 step
-    >>Fly to the Time Rift and click on it. Kill the |cRXP_ENEMY_Echo of Warlord Zaela|r
+    >>Fly to the Time Rift and |TInterface/cursor/crosshair/interact.blp:20|tClick on it. Kill the |cRXP_ENEMY_Echo of Warlord Zaela|r.
     .goto 379,68.60,46.08,15,0
     .goto 379,68.80,43.69
     .complete 53353,1 --1/1 Echo of Warlord Zaela slain
     .mob Echo of Warlord Zaela
 step
     .goto 379,68.90,43.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r.
     .turnin 53353 >>Turn in Echo of Warlord Zaela
     .accept 53355 >>Accept Echo of Garrosh Hellscream
     .target Anachronos
@@ -183,25 +183,25 @@ step
     .goto 371,28.52,14.02
     .zone 85 >>Take the Portal to Orgrimmar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave Orgrimmar. Talk to |cRXP_FRIENDLY_Anachronos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave Orgrimmar. Talk to |cRXP_FRIENDLY_Anachronos|r.
     .goto 1,40.80,16.36
     .skipgossip
     .complete 53355,1 --1/1 Meet Anachronos outside Orgrimmar
     .target Anachronos
 step
-    >>(No arrow possible) Jump down. Click on the Time Rift. Kill the |cRXP_ENEMY_Echo of Garrosh Hellscream|r
+    >>(No arrow possible) Jump down. |TInterface/cursor/crosshair/interact.blp:20|tClick on the Time Rift. Kill the |cRXP_ENEMY_Echo of Garrosh Hellscream|r.
     >>Move away during his Whirlwind. Dodge the Ironstars (Machines of War cast)
     .complete 53355,2 --1/1 Echo of Garrosh Hellscream slain
     .mob Echo of Garrosh Hellscream
 step
     #completewith next
     #title Take the Portal to Zuldazar
-    >>Leave the instance group (Right-Click your character frame)
+    >>Leave the instance group (Right-|TInterface/cursor/crosshair/interact.blp:20|tClick your character frame)
     .goto 85,53.44,90.45,10,0
     .goto 85,58.59,91.32
     .zone 1163 >>Take the Portal to Zuldazar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r and |cRXP_FRIENDLY_Eitrigg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r and |cRXP_FRIENDLY_Eitrigg|r.
     .turnin 53355 >>Turn in Echo of Garrosh Hellscream
     .goto 1163,72.00,65.50
     .accept 52942 >>Accept Restoring Old Bonds
@@ -209,7 +209,7 @@ step
     .target Chief Telemancer Oculeth
     .target Eitrigg
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r.
     .complete 52942,1 --1/1 Speak with Oculeth to go to Draenor
     .goto 1163,72.00,65.50
     .skipgossip 131443,1
@@ -221,34 +221,34 @@ step
     .complete 52942,2 --Meet the Overlord
 step
     .goto 1170,44.94,53.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r.
     .turnin 52942 >>Turn in Restoring Old Bonds
     .accept 52943 >>Accept Calling Out the Clans
     .target Eitrigg
 step
-    >>Click on the |cRXP_PICK_Blackrock banner|r. Relog if you can't click on it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,45.17,52.64
     .complete 52943,1 --1/1 Blackrock
 step
-    >>Click on the |cRXP_PICK_Blackrock banner|r. Relog if you can't click on it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,45.48,51.94
     .complete 52943,2 --1/1 Warsong
 step
-    >>Click on the |cRXP_PICK_Blackrock banner|r. Relog if you can't click on it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,44.82,52.00
     .complete 52943,3 --1/1 Frostwolf
 step
     .goto 1170,45.14,52.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r.
     .turnin 52943 >>Turn in Calling Out the Clans
     .target Overlord Geya'rah
 step
     .goto 1170,45.26,52.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Grommash Hellscream|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Grommash Hellscream|r.
     .accept 52945 >>Accept Bonds Forged Through Battle
     .target Grommash Hellscream
 step
-    >>Kill |cRXP_ENEMY_Kor'gall Defectors|r and |cRXP_ENEMY_Kor'gall Agitators|r
+    >>Kill |cRXP_ENEMY_Kor'gall Defectors|r and |cRXP_ENEMY_Kor'gall Agitators|r.
     .goto 1170,40.23,65.14,25,0
     .goto 1170,39.10,65.72,25,0
     .goto 1170,38.81,67.47,25,0
@@ -258,7 +258,7 @@ step
     .mob Kor'gall Defector
     .mob Kor'gall Agitator
 step
-    >>Kill |cRXP_ENEMY_Kor'gall, Greatson of Kor'gall|r after a short RP
+    >>Kill |cRXP_ENEMY_Kor'gall, Greatson of Kor'gall|r. after a short RP
     >>Side-step the Violent Crash. Dodge the Boulders
     .goto 1170,36.80,68.06,15,0
     .goto 1170,36.26,68.70,10,0
@@ -267,7 +267,7 @@ step
     .mob Kor'gall, Greatson of Kor'gall
 step
     .goto 1170,36.48,70.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r.
     .turnin 52945 >>Turn in Bonds Forged Through Battle
     .accept 52955 >>Accept Tyranny of the Light
     .target Overlord Geya'rah
@@ -288,7 +288,7 @@ step
     .scenario 3973,1
 step
     .isOnQuest 52955
-    >>Destroy |cRXP_ENEMY_Lightbound Batteries|r and kill |cRXP_ENEMY_Lighbounds|r
+    >>Destroy |cRXP_ENEMY_Lightbound Batteries|r and kill |cRXP_ENEMY_Lighbounds|r.
     .goto 1170,44.76,75.62,15,0
     .goto 1170,45.18,76.10,15,0
     .goto 1170,45.94,74.77,15,0
@@ -300,19 +300,19 @@ step
     .scenario 3974,1
 step
     .isOnQuest 52955
-    >>Follow the arrow to |cRXP_ENEMY_Exarch Orelis|r
+    >>Follow the arrow to |cRXP_ENEMY_Exarch Orelis|r.
     .goto 1170,45.49,78.58
     .scenario 3975,1
 step
     .isOnQuest 52955
-    >>Kill |cRXP_ENEMY_Exarch Orelis|r
+    >>Kill |cRXP_ENEMY_Exarch Orelis|r.
     >>Side-step and dodge the Prometheus Ray. Interrupt Holy Light
     .goto 1170,45.26,80.33
     .scenario 3976,1
     .mob Exarch Orelis
 step
     .isOnQuest 52955
-    >>Run back to Beastwatch and meet |cRXP_FRIENDLY_Grommash Hellscream|r
+    >>Run back to Beastwatch and meet |cRXP_FRIENDLY_Grommash Hellscream|r.
     .goto 1170,44.55,71.37
     .scenario 3977,1
     .timer 55,Order RP
@@ -340,14 +340,14 @@ step
 step
     #requires MagharOrcTyrannyoftheLight
     .goto 1,41.25,16.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r.
     .turnin 52955 >>Turn in Tyranny of the Light
     .accept 51479 >>Accept The Uncorrupted
     .target Overlord Geya'rah
 step
     .goto 85,38.64,80.07,12,0
     .goto 85,37.78,81.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 51479 >>Turn in The Uncorrupted
     .target Ji Firepaw
 step
