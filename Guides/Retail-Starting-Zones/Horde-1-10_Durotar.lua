@@ -96,7 +96,7 @@ step
     .target Foreman Thazz'ril
 step
     #completewith ValleyOfTrialsSarkoth
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |cRXP_LOOT_Tails|r.
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their [|cRXP_LOOT_Tails|r].
     .complete 25127,1 --8/8 Scorpid Worker Tail
     .mob Scorpid Worker
 step
@@ -108,7 +108,7 @@ step
     .target Lazy Peon
 step
     #completewith ValleyTurnins
-    >>Loot the |cRXP_LOOT_Cactus Apple|r. plants
+    >>Loot the [|cRXP_LOOT_Cactus Apple|r]. plants
     .complete 25136,1 --6/6 Cactus Apple
 step
 	#label Sarkoth
@@ -119,12 +119,12 @@ step
     .target Hana'zua
 step
     #label ValleyOfTrialsSarkoth
-	>>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for his |cRXP_LOOT_Claw|r.
+	>>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for his [|cRXP_LOOT_Claw|r].
     .goto 461,32.7,61.9
     .complete 25129,1 --1/1 Sarkoth's Mangled Claw
     .mob Sarkoth
 step
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |cRXP_LOOT_Tails|r.
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their [|cRXP_LOOT_Tails|r].
 #loop
 	.line 461,37.38,65.09,34.90,67.58,32.93,66.72,32.45,61.81,32.11,57.46,34.97,57.14,39.82,56.48,37.38,65.09
 	.goto 461,37.38,65.09,40,0
@@ -138,7 +138,7 @@ step
     .complete 25127,1 --8/8 Scorpid Worker Tail
     .mob Scorpid Worker
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Jump down back to town|r. Talk to |cRXP_FRIENDLY_Galgar|r,|cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Zureetha|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Jump down back to town|r. Talk to |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
     .turnin 25127 >>Turn in Sting of the Scorpid
@@ -154,7 +154,7 @@ step
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump down back to town. Talk to |cRXP_FRIENDLY_Galgar|r,|cRXP_FRIENDLY_Gornek|r,and |cRXP_FRIENDLY_Zureetha|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump down back to town. Talk to |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Gornek|r, and |cRXP_FRIENDLY_Zureetha|r.
     .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
     .goto 461,42.95,62.42
     .turnin 25127 >>Turn in Sting of the Scorpid
@@ -166,7 +166,7 @@ step
     .target Gornek
     .target Zureetha Fargaze
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Zureetha|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25127 >>Turn in Sting of the Scorpid
     .goto 461,44.93,66.42
     .accept 25131 >>Accept Vile Familiars
@@ -241,7 +241,7 @@ step << Hunter
     #completewith next
     .goto 461,52.42,52.84,20,0
     .goto 461,50.50,53.00,20,0
-    >>Loot the |cRXP_LOOT_Cactus Apple|r. plants
+    >>Loot the [|cRXP_LOOT_Cactus Apple|r]. plants
     .complete 25136,1 --6/6 Cactus Apple
 step << Hunter Orc
     .goto 461,47.61,47.66
@@ -253,7 +253,7 @@ step
     .goto 461,51.34,32.89,18,0
     .goto 461,50.28,27.29,18,0
     .goto 461,53.63,28.29
-    >>Loot the |cRXP_LOOT_Cactus Apple|r. plants
+    >>Loot the [|cRXP_LOOT_Cactus Apple|r]. plants
     .complete 25136,1 --6/6 Cactus Apple
 step
     #completewith Yarrog
@@ -261,14 +261,14 @@ step
     .complete 25132,1 --5/5 Felstalker slain
     .mob Felstalker
 step
-    >>Loot |cRXP_LOOT_Thazz'ril's Pick|r. on the ground
+    >>Loot [|cRXP_LOOT_Thazz'ril's Pick|r]. on the ground
     .goto 1,45.37,56.22,15,0
     .goto 2,75.04,80.08,15,0
     .goto 2,40.75,52.56
     .complete 25135,1 --1/1 Thazz'ril's Pick
 step
 	#label Yarrog
-    >>Kill |cRXP_ENEMY_Yarrog Baneshadow|r. Loot him for his |cRXP_LOOT_Medallion|r.
+    >>Kill |cRXP_ENEMY_Yarrog Baneshadow|r. Loot him for his [|cRXP_LOOT_Medallion|r].
     .goto 2,39.21,88.42,15,0
     .goto 2,14.96,46.80
     .complete 25132,2 --1/1 Bruning Blade Medallion
@@ -285,9 +285,9 @@ step
     .goto 2,14.96,46.80,-1
     .goto 461,48.47,70.89,-1
     .deathskip >>Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << !Hunter !Warlock
-    .deathskip >>|cfff78300Set your pet to passive.|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << Hunter/Warlock
+    .deathskip >>|cfff78300Set your pet to passive|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << Hunter/Warlock
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Galgar|r,|cRXP_FRIENDLY_Zureetha Fargaze|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Zureetha Fargaze|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25130 >>Turn in Back to the Den
     .goto 461,44.93,66.42
     .turnin 25136 >>Turn in Galgar's Cactus Apple Surprise
@@ -303,7 +303,7 @@ step
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r,|cRXP_FRIENDLY_Zureetha Fargaze|r,and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha Fargaze|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25130 >>Turn in Back to the Den
     .goto 461,44.93,66.42
     .turnin 25132 >>Turn in Burning Blade Medallion
@@ -322,7 +322,7 @@ step << Troll
     .goto 1,45.34,56.40,10,0
     .goto 2,57.97,30.96
     .deathskip >>Go back inside the cave. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint << !Hunter !Warlock
-    .deathskip >>Go back inside the cave. |cfff78300Set your pet to passive.|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint << Hunter/Warlock
+    .deathskip >>Go back inside the cave. |cfff78300Set your pet to passive|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint << Hunter/Warlock
 step << Troll
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burok|r.
@@ -524,55 +524,55 @@ step << Warrior
     .goto 463,49.55,59.41,20,0
     .goto 463,52.07,61.40,20,0
     .goto 463,55.33,59.93
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24641,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Mage
     .goto 463,62.91,48.23,10,0
     .goto 463,62.71,56.70
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24753,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Shaman
     .goto 463,47.46,51.74,10,0
     .goto 463,48.06,46.84,10,0
     .goto 463,49.87,41.43,10,0
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24761,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Druid
     .goto 463,63.12,57.25,10,0
     .goto 463,62.68,50.67,10,0
     .goto 463,62.87,47.90
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24767,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Rogue
     .goto 463,48.82,43.95,10,0
     .goto 463,50.89,40.74
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24773,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Hunter
     .goto 463,55.41,41.56
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24779,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Priest
     .goto 463,55.42,41.49
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 24785,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Warlock
     .goto 463,49.05,44.40,10,0
     .goto 463,50.84,41.86
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 26275,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Monk
     .goto 463,48.82,43.95,10,0
     .goto 463,50.89,40.74
-    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r.
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their [|cRXP_LOOT_Pelts|r].
     .complete 31160,1 --6/6 Wildmane Cat Pelt
     .mob Wildmane Cat
 step << Warrior
@@ -839,7 +839,7 @@ step
     .mob Corrupted Bloodtalon
 step
     .goto 463,36.72,69.04
-    >>Kill |cRXP_ENEMY_Naj'tess|r. Loot him for his |cRXP_LOOT_Orb|r.
+    >>Kill |cRXP_ENEMY_Naj'tess|r. Loot him for his [|cRXP_LOOT_Orb|r].
     .complete 24625,1 --1/1 Naj'tess' Orb of Corruption
     .mob Naj'tess
 step
@@ -876,7 +876,7 @@ step
     .use 52283
 step
 	#completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. on your way back. Loot them for their |cRXP_LOOT_Meat|r.
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. on your way back. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
     .mob Pygmy Surf Crawler
 step
@@ -931,12 +931,12 @@ step << Hunter Troll
 step
     .goto 463,52.87,71.28,40,0
     .goto 463,58.36,70.75
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. Loot them for their |cRXP_LOOT_Meat|r.
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
     .mob Pygmy Surf Crawler
 step << Troll
     #label TrollBreakingtheLine
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r,|cRXP_FRIENDLY_Tortunga|r,and |cRXP_FRIENDLY_Tora'jin|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r, |cRXP_FRIENDLY_Tortunga|r, and |cRXP_FRIENDLY_Tora'jin|r.
     .turnin 24626 >>Turn in Young and Vicious
     .goto 463,56.82,63.69
     .accept 25035 >>Accept Breaking the Line
@@ -977,7 +977,7 @@ step
 step
     #sticky
     #label EchoingIslesSpitescaleNagas
-    >>Kill |cRXP_ENEMY_Spitescale Nagas|r. while placing the |cRXP_LOOT_fetishes|r.
+    >>Kill |cRXP_ENEMY_Spitescale Nagas|r. while placing the [|cRXP_LOOT_fetishes|r].
     >>|cfff78300Don't jump down|r.
     .goto 464,58.0,46.3,0,0
     .complete 24812,1 --12/12 Spitescale Naga

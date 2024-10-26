@@ -95,7 +95,7 @@ step
     *|cRXP_WARN_Refresh when buff is fading|r.
 step
     .goto 672,39.00,73.24
-    >>Kill an |cff00ecffAnguish Jailer|r and loot him for |cRXP_LOOT_Soulwrought Key|r.
+    >>Kill an |cff00ecffAnguish Jailer|r and loot him for [|cRXP_LOOT_Soulwrought Key|r].
     .complete 38759,1 --1/1 Soulwrought Key
 step
     .goto 672,39.34,71.64
@@ -306,7 +306,7 @@ step
     .accept 40222 >>Accept The Imp Mother's Tome
 step
     .goto 672,77.05,28.04
-    >>Kill |cff00ecffProlifica|r and loot her for |cRXP_LOOT_Tome of Fel Secrets|r.
+    >>Kill |cff00ecffProlifica|r and loot her for [|cRXP_LOOT_Tome of Fel Secrets|r].
     .complete 40222,1 --1/1 Tome of Fel Secrets
 step
     #completewith next
@@ -402,7 +402,7 @@ step
     .target Cyana Nightglaive
 step
     .goto 672,70.0,40.6
-    >>Kill the |cff00ecffBrood Queen Tyranna|r and loot her for |cRXP_LOOT_Sargerite Keystone|r.
+    >>Kill the |cff00ecffBrood Queen Tyranna|r and loot her for [|cRXP_LOOT_Sargerite Keystone|r].
     .complete 38728,1 --1/1 Sargerite Keyston
     .mob Brood Queen Tyranna
 step

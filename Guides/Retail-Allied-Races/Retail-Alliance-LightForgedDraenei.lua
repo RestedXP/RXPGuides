@@ -77,7 +77,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,87.42,29.73
-    .scenario 3549,1 >>|cRXP_WARN_Wait |cRXP_WARN_infront of the building|r.|r.
+    .scenario 3549,1 >>|cRXP_WARN_Wait |cRXP_WARN_infront of the building|r|r.
     .isOnQuest 49266
 step
     .goto 933,89.13,28.53,5 >>|cRXP_WARN_Head to the location indicated by the arrow|r.
@@ -96,7 +96,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,66.87,29.96
-    .scenario 3553,1 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Swamp Serpent|r.|r.
+    .scenario 3553,1 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Swamp Serpent|r|r.
     .mob Swamp Serpent
     .isOnQuest 49266
  step
@@ -139,7 +139,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,8.57,50.04
-    .scenario 3571,1 >>|cRXP_WARN_Kill |cRXP_ENEMY_Terror|r.|r.
+    .scenario 3571,1 >>|cRXP_WARN_Kill |cRXP_ENEMY_Terror|r|r.
     .mob Terror
     .isOnQuest 49266
 step
@@ -175,7 +175,7 @@ step
     .target T'paartos
     .isOnQuest 49266
 step
-    .goto 933,61.53,75.87,5 >>|cRXP_WARN_Descend deeper |cRXP_WARN_into the cave|r.|r.
+    .goto 933,61.53,75.87,5 >>|cRXP_WARN_Descend deeper |cRXP_WARN_into the cave|r|r.
     .isOnQuest 49266
 step
     .goto 933,65.73,73.57

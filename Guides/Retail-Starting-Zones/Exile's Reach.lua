@@ -117,7 +117,7 @@ step
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     >>|cRXP_WARN_This will allow you to press a Keybind to use a Quest Item/Target a relevant mob|r.
 step << Alliance
-	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Kee-La|r,|cRXP_FRIENDLY_Austin|r,and |cRXP_FRIENDLY_Bjorn|r. on the ground around you
+	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Kee-La|r, |cRXP_FRIENDLY_Austin|r, and |cRXP_FRIENDLY_Bjorn|r. on the ground around you
     .complete 54951,2 --1/1 First Aid Kit used on Kee-La
     .goto 1409,61.73,83.48,-1
     .complete 54951,3 --1/1 First Aid Kit used on Austin Huxworth
@@ -129,7 +129,7 @@ step << Alliance
     .target Austin Huxworth
     .target Bjorn Stouthands
 step << Horde
-	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Bo|r,|cRXP_FRIENDLY_Mithdran|r,and |cRXP_FRIENDLY_Lana|r. on the ground around you
+	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Bo|r, |cRXP_FRIENDLY_Mithdran|r, and |cRXP_FRIENDLY_Lana|r. on the ground around you
     .complete 59930,2 --1/1 First Aid Kit used on Bo
     .goto 1409,61.73,83.48,-1
     .complete 59930,3 --1/1 First Aid Kit used on Mithdran Dawntracker
@@ -183,7 +183,7 @@ step << Rogue/Warrior/Monk/Paladin
     .goto 1409,56.31,74.62,30,0
     .goto 1409,59.58,72.91,30,0
     .goto 1409,58.05,70.22
-    >>Kill |cRXP_ENEMY_Coastal Albatrosses|r,|cRXP_ENEMY_Coastal Goats|r,and |cRXP_ENEMY_Prickly Porcupines|r. Loot them for their |cRXP_LOOT_Meat|r.
+    >>Kill |cRXP_ENEMY_Coastal Albatrosses|r, |cRXP_ENEMY_Coastal Goats|r, and |cRXP_ENEMY_Prickly Porcupines|r. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 55174,1 << Alliance --5/5 Raw Meat collected from wildlife
     .complete 59932,1 << Horde --5/5 Raw Meat collected from wildlife
 	.mob Coastal Albatross
@@ -195,7 +195,7 @@ step << !Rogue !Warrior !Monk !Paladin
     .goto 1409,56.31,74.62,30,0
     .goto 1409,59.58,72.91,30,0
     .goto 1409,58.05,70.22
-    >>Kill |cRXP_ENEMY_Coastal Albatrosses|r,|cRXP_ENEMY_Coastal Goats|r,and |cRXP_ENEMY_Prickly Porcupines|r. Loot them for their |cRXP_LOOT_Meat|r.
+    >>Kill |cRXP_ENEMY_Coastal Albatrosses|r, |cRXP_ENEMY_Coastal Goats|r, and |cRXP_ENEMY_Prickly Porcupines|r. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 55174,1 << Alliance --5/5 Raw Meat collected from wildlife
     .complete 59932,1 << Horde --5/5 Raw Meat collected from wildlife
 	.mob Coastal Albatross
@@ -594,7 +594,7 @@ step << Alliance
 	.target Kee-La
 step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r and |cRXP_FRIENDLY_Shuja|r.
-    *|cRXP_WARN_You may have to wait for |cRXP_FRIENDLY_Shuja|r.|r.
+    *|cRXP_WARN_You may have to wait for |cRXP_FRIENDLY_Shuja|r|r.
     .turnin 59943 >>Turn in The Harpy Problem
     .accept 59945 >>Accept Harpy Culling
     .accept 59946 >>Accept Purge the Totems
@@ -603,7 +603,7 @@ step << Horde
     .goto 1409,56.83,46.17
 step
 	#completewith Harpytotem
-	>>Kill |cRXP_ENEMY_Harpy Boltcallers|r,|cRXP_ENEMY_Snatchers|r,and |cRXP_ENEMY_Hunting Worgs|r. Don't focus on this yet
+	>>Kill |cRXP_ENEMY_Harpy Boltcallers|r, |cRXP_ENEMY_Snatchers|r, and |cRXP_ENEMY_Hunting Worgs|r. Don't focus on this yet
     .complete 55764,1 << Alliance --10/10 Harpies and cohorts slain
     .complete 59945,1 << Horde --10/10 Harpies and cohorts slain
 	.mob Harpy Boltcaller
@@ -667,7 +667,7 @@ step
     .goto 1409,55.90,42.97,30,0
     .goto 1409,59.06,39.05,30,0
     .goto 1409,58.23,44.49
-	>>Kill |cRXP_ENEMY_Harpy Boltcallers|r,|cRXP_ENEMY_Snatchers|r,and |cRXP_ENEMY_Hunting Worgs|r.
+	>>Kill |cRXP_ENEMY_Harpy Boltcallers|r, |cRXP_ENEMY_Snatchers|r, and |cRXP_ENEMY_Hunting Worgs|r.
     .complete 55764,1 << Alliance --10/10 Harpies and cohorts slain
     .complete 59945,1 << Horde --10/10 Harpies and cohorts slain
     .goto 1409,56.16,43.55,0,0
@@ -675,7 +675,7 @@ step
 	.mob Harpy Snatcher
 	.mob Hunting Worg
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert|r,|cRXP_FRIENDLY_Bo|r,and |cRXP_FRIENDLY_Shuja|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert|r, |cRXP_FRIENDLY_Bo|r, and |cRXP_FRIENDLY_Shuja|r.
     .turnin 59944 >>Turn in The Rescue of Herbert Gloomburst
     .goto 1409,56.90,46.13
     .turnin 59946 >>Turn in Purge the Totems
@@ -687,7 +687,7 @@ step << Horde
 	.target Bo
     .target Shuja Grimaxe
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy|r,|cRXP_FRIENDLY_Kee-La|r and |cRXP_FRIENDLY_Henry|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy|r, |cRXP_FRIENDLY_Kee-La|r and |cRXP_FRIENDLY_Henry|r.
     .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
     .goto 1409,56.90,46.14
     .turnin 55764 >>Turn in Harpy Culling
@@ -1500,7 +1500,7 @@ step
     .complete 55981,6 << Alliance --Reach the Citadel entrance
     .complete 59978,6 << Horde --Reach the Citadel entrance
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r,|cRXP_FRIENDLY_Henry|r,and |cRXP_FRIENDLY_Meredy|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r, |cRXP_FRIENDLY_Henry|r, and |cRXP_FRIENDLY_Meredy|r.
     .turnin 55981 >>Turn in Right Beneath Their Eyes
     .accept 55990 >>Accept Controlling their Stones
     .goto 1409,40.16,32.35
@@ -1512,7 +1512,7 @@ step << Alliance
 	.target Henry Garrick
 	.target Meredy Huntsworth
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka|r,|cRXP_FRIENDLY_Shuja|r and |cRXP_FRIENDLY_Herbert|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka|r, |cRXP_FRIENDLY_Shuja|r and |cRXP_FRIENDLY_Herbert|r.
     .turnin 59978 >>Turn in Right Beneath Their Eyes
     .accept 59981 >>Accept Controlling their Stones
     .goto 1409,40.29,32.45
@@ -1525,14 +1525,14 @@ step << Horde
 	.target Herbert Gloomburst
 step
 	#completewith KillOgre
-    >>Kill |cRXP_ENEMY_Ogre Shadowcasters|r,|cRXP_ENEMY_Brutes|r,and |cRXP_ENEMY_Chefs|r.
+    >>Kill |cRXP_ENEMY_Ogre Shadowcasters|r, |cRXP_ENEMY_Brutes|r, and |cRXP_ENEMY_Chefs|r.
     .complete 55988,1 << Alliance --8/8 Ogres slain
     .complete 59979,1 << Horde--8/8 Ogres slain
 	.mob Ogre Brute
 	.mob Ogre Chef
 	.mob Ogre Shadowcaster
 step
-    >>Kill |cRXP_ENEMY_Wug|r and |cRXP_ENEMY_Jugnug|r. inside the buildings. Loot them for their |cRXP_LOOT_Ward Stones|r.
+    >>Kill |cRXP_ENEMY_Wug|r and |cRXP_ENEMY_Jugnug|r. inside the buildings. Loot them for their [|cRXP_LOOT_Ward Stones|r].
     .complete 55990,2 << Alliance --1/1 Wug's ward stone recovered
     .complete 59981,2 << Horde --1/1 Wug's ward stone recovered
     .goto 1409,44.13,37.29
@@ -1558,7 +1558,7 @@ step
     .complete 59980,1,3 << Horde --3/4 Catapults destroyed
 step
     .goto 1409,42.80,41.00
-    >>Kill |cRXP_ENEMY_Grunk|r. inside the Building. Loot him for his |cRXP_LOOT_Ward Stone|r.
+    >>Kill |cRXP_ENEMY_Grunk|r. inside the Building. Loot him for his [|cRXP_LOOT_Ward Stone|r].
     .complete 55990,3 << Alliance --1/1 Grunk's ward stone recovered
     .complete 59981,3 << Horde --1/1 Grunk's ward stone recovered
 	.mob Grunk
@@ -1592,7 +1592,7 @@ step
     .goto 1409,43.95,42.92,30,0
     .goto 1409,43.95,42.92,30,0
     .goto 1409,41.91,41.79
-    >>Kill |cRXP_ENEMY_Ogre Shadowcasters|r,|cRXP_ENEMY_Brutes|r,and |cRXP_ENEMY_Chefs|r.
+    >>Kill |cRXP_ENEMY_Ogre Shadowcasters|r, |cRXP_ENEMY_Brutes|r, and |cRXP_ENEMY_Chefs|r.
     .complete 55988,1 << Alliance --8/8 Ogres slain
     .complete 59979,1 << Horde--8/8 Ogres slain
 	.mob Ogre Brute

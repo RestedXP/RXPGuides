@@ -183,7 +183,7 @@ step
 	.target Merchant Lorvo
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t|cRXP_LOOT_Supplies|r.
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.mob Amberleaf Scamp
 step
@@ -197,7 +197,7 @@ step
     .goto 378,53.00,20.17,15,0
     .goto 378,54.03,20.93,15,0
     .goto 378,54.02,17.44
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t|cRXP_LOOT_Supplies|r.
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.target Amberleaf Scamp
 step
@@ -241,7 +241,7 @@ step
 step
     #title Advanced
     .isOnQuest 29414
-    >>|cFFFF0000Try out find out.|r.
+    >>|cFFFF0000Try out find out|r.
     .goto 378,57.52,34.59,5 >>|cRXP_WARN_Staying near the entrance is faster but more dangerous|r.
 step
     .goto 378,57.54,34.68
@@ -307,7 +307,7 @@ step
 step
     #label Fluttering Breeze
     .goto 378,46.73,30.32,10,0
-    >>Kill the |cRXP_ENEMY_Living Air|r and loot him for the |T463565:0|t|cRXP_LOOT_Fluttering Breeze|r.
+    >>Kill the |cRXP_ENEMY_Living Air|r and loot him for the |T463565:0|t[|cRXP_LOOT_Fluttering Breeze|r].
     .complete 29523,1 --1/1 Fluttering Breeze
     .use 72109
 	.mob Living Air
@@ -623,7 +623,7 @@ step
 	.goto 378,73.97,72.58,5,0
 	.goto 378,73.94,70.86,5,0
 	.goto 378,74.70,74.76,5,0
-    >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r and loot them for their |cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tclick the |cRXP_PICK_Carrots|r. on the ground.
+    >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r and loot them for their [|cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tclick the |cRXP_PICK_Carrots|r]. on the ground.
     .complete 29770,2 --3/3 Stolen Carrot
 	.mob Plump Carrotcatcher
 step
@@ -643,7 +643,7 @@ step
     .complete 29769,1 --10/10 Plump Virmen slain
 	.mob Plump Virmen
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gao Summerdraft|r,|cRXP_FRIENDLY_Ji Firepaw|r,and |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gao Summerdraft|r, |cRXP_FRIENDLY_Ji Firepaw|r, and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29770 >>Turn in Still Good!
     .goto 378,68.13,66.40
     .turnin 29769 >>Turn in Rascals
@@ -661,7 +661,7 @@ step
 step
     .goto 378,62.63,77.05
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Mallet|r. |cRXP_WARN_on the barrel|r.
-    >>|cRXP_WARN_You don't have to kill |cRXP_ENEMY_Raggis|r. if you can avoid it.|r.
+    >>|cRXP_WARN_You don't have to kill |cRXP_ENEMY_Raggis|r. if you can avoid it|r.
     .complete 29768,1 --1/1 Dai-Lo Recess Mallet
 step
     .goto 378,63.77,77.19,15,0
@@ -753,7 +753,7 @@ step
     .target Shen Stonecarver
 step
     #completewith Defaced Scroll of Wisdom burned
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes|r.
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their [|cRXP_LOOT_Brushes|r].
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
@@ -783,7 +783,7 @@ step
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes|r.
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their [|cRXP_LOOT_Brushes|r].
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
@@ -811,11 +811,11 @@ step
 	.goto 378,33.99,50.90,15,0
 	.goto 378,32.16,50.53,15,0
 	.goto 378,31.32,52.22,15,0
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes|r.
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their [|cRXP_LOOT_Brushes|r].
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r,|cRXP_FRIENDLY_Jojo Ironbrow|r,and |cRXP_FRIENDLY_Ji Firepaw|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r, |cRXP_FRIENDLY_Jojo Ironbrow|r, and |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29777 >>Turn in Tools of the Enemy
     .goto 378,31.78,39.71
     .turnin 29783 >>Turn in Stronger Than Stone
@@ -889,7 +889,7 @@ step
     .complete 29781,1 --8/8 Stolen Firework Bundle
 step
 	#completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw, who should be next to you. |cFFFF0000If he isn't there, skip this step.|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw, who should be next to you. |cFFFF0000If he isn't there, skip this step|r.
     .turnin 29779 >>Turn in The Direct Solution
     .turnin 29780 >>Turn in Do No Evil
     .turnin 29781 >>Turn in Monkey Advisory Warning

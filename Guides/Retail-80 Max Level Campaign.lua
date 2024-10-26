@@ -678,7 +678,7 @@ step
     .target Y'tekhi
 step
     #completewith Central Warehouse investigated
-    >>Kill |cRXP_ENEMY_Loyalist Mutagenician|r and |cRXP_ENEMY_Loyalist Bio-smith.|r Loot them for |cRXP_LOOT_|T1391773:0|tLoyalist Secretions|r
+    >>Kill |cRXP_ENEMY_Loyalist Mutagenician|r and |cRXP_ENEMY_Loyalist Bio-smith.|r Loot them for |T1391773:0|t[|cRXP_LOOT_Loyalist Secretions|r]
     *Use your |cRXP_WARN_ExtraActionButton|r to distract nearby patrolling guards if they are in the way.
     .complete 79233,1 --6/6 Loyalist Secretions
     .mob Loyalist Mutagenician
@@ -709,7 +709,7 @@ step
     .goto 2213,72.17,78.49,40,0
     .goto 2213,68.07,63.29,40,0
     .goto 2213,57.86,62.09,40,0
-    >>Kill |cRXP_ENEMY_Loyalist Mutagenician|r and |cRXP_ENEMY_Loyalist Bio-smith.|r Loot them for |cRXP_LOOT_|T1391773:0|tLoyalist Secretions|r
+    >>Kill |cRXP_ENEMY_Loyalist Mutagenician|r and |cRXP_ENEMY_Loyalist Bio-smith.|r Loot them for |T1391773:0|t[|cRXP_LOOT_Loyalist Secretions|r]
     *Use your |cRXP_WARN_ExtraActionButton|r to distract nearby patrolling guards if they are in the way.
     .complete 79233,1 --6/6 Loyalist Secretions
     .mob Loyalist Mutagenician

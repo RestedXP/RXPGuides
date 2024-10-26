@@ -37,7 +37,7 @@ step
     .accept 28608 >>Accept The Shadow Grave
     .target Undertaker Mordo
 step
-    >>|cRXP_WARN_Follow the arrow down into the grave|r and loot the |cRXP_LOOT_twine|r and the |cRXP_LOOT_fluid|r.
+    >>|cRXP_WARN_Follow the arrow down into the grave|r and loot the [|cRXP_LOOT_twine|r and the |cRXP_LOOT_fluid|r].
     .goto 18,30.33,72.24,4,0
     .goto 18,30.32,72.84,4,0
     .goto 18,30.00,72.84,4,0
@@ -154,7 +154,7 @@ step
     .goto 465,54.36,56.96,6,0
     .goto 465,46.75,58.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the house and talk to |cRXP_FRIENDLY_Lilian Voss|r.
-    >>|cRXP_WARN_She can be down or upstairs. After talking to her (during the roleplay) you can already leave the house and return to |cRXP_FRIENDLY_Novice Elreth|r.|r.
+    >>|cRXP_WARN_She can be down or upstairs. After talking to her (during the roleplay) you can already leave the house and return to |cRXP_FRIENDLY_Novice Elreth|r|r.
     .skipgossip
     .complete 24961,1 --1/1 Show Lilian her reflection
     .target Lilian Voss
@@ -175,7 +175,7 @@ step << Hunter
     .cast 1515 >>Tame a |cRXP_ENEMY_Ragged Scavenger|r.
     .mob Ragged Scavenger
 step
-    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r. around you. Loot them for their |cRXP_LOOT_paws|r and |cRXP_LOOT_wings|r.
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r. around you. Loot them for their [|cRXP_LOOT_paws|r and |cRXP_LOOT_wings|r].
     .goto 465,63.26,27.68,15,0
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
@@ -241,7 +241,7 @@ step
     .mob Robrain Magus
 step
     .isOnQuest 24971
-    >>Follow the arrow, look out for the rare Fangor. Loot him for a |cRXP_LOOT_bag|r.
+    >>Follow the arrow, look out for the rare Fangor. Loot him for a [|cRXP_LOOT_bag|r].
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
     .goto 465,61.88,82.00,5,0
     .goto 465,62.58,78.73,5,0
@@ -303,7 +303,7 @@ step
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the |cRXP_LOOT_Tirifal Pumpkins|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the [|cRXP_LOOT_Tirifal Pumpkins|r].
     .goto 18,36.82,51.45,20,0
     .goto 18,35.57,51.12,20,0
     .goto 18,36.68,49.50,20,0
@@ -423,11 +423,11 @@ step
     .target Aeldon Sunbrand
 step
     #completewith next
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on |cRXP_LOOT_Unstable Mana Crystal Crates|r. to collect them
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r]. to collect them
     .complete 8463,1 --6/6 Unstable Mana Crystal
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their |cRXP_LOOT_cores|r.
+    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their [|cRXP_LOOT_cores|r].
     .goto 94,46.94,44.59,15,0
     .goto 94,47.69,39.02,15,0
     .goto 94,47.11,37.44,15,0
@@ -435,19 +435,19 @@ step
     .complete 8472,1 --6/6 Arcane Core
     .mob Arcane Patroller
 step
-    >>Kill |cRXP_ENEMY_Thaelis|r. Loot him for his |cRXP_LOOT_head|r.
+    >>Kill |cRXP_ENEMY_Thaelis|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 94,45.36,38.12,5,0
     .goto 94,45.01,37.68
     .complete 8468,1 --1/1 Thaelis' Head
     .mob Thaelis
 step
-    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their |cRXP_LOOT_cores|r.
+    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their [|cRXP_LOOT_cores|r].
     .goto 94,45.39,40.64,20,0
     .goto 94,42.18,40.59
     .complete 8472,1 --6/6 Arcane Cores
     .mob Arcane Patroller
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on |cRXP_LOOT_Unstable Mana Crystal Crates|r. to collect them
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r]. to collect them
     .goto 94,45.13,40.71,18,0
     .goto 94,46.01,43.29,25,0
     .goto 94,46.92,44.57,10,0
@@ -487,7 +487,7 @@ step
     .target Ley-Keeper Caidanis
     step
     #completewith next
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the [|cRXP_LOOT_Incriminating Documents|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -504,7 +504,7 @@ step
     .mob Mana Stalker
     .mob Manawraith
 step
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the [|cRXP_LOOT_Incriminating Documents|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -542,7 +542,7 @@ step
     .target Apprentice Mirveda
 step
     .isOnQuest 8487
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the |cRXP_LOOT_Tainted Soil Samples|r. from the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the [|cRXP_LOOT_Tainted Soil Samples|r]. from the ground
     .goto 94,52.34,71.77,20,0
     .goto 94,51.92,68.47,20,0
     .goto 94,52.59,69.60,10,0

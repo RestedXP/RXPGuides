@@ -267,7 +267,7 @@ step
     .complete 24502,1 --1/1 Bilgewater Buccaneer
     .complete 24502,2 --8/8 Steamwheedle Shark Footbombed
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the quest in your quest log, |cRXP_WARN_you may have to dismount to accept the next quest from |cRXP_FRIENDLY_Coach Crosscheck|r.|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the quest in your quest log, |cRXP_WARN_you may have to dismount to accept the next quest from |cRXP_FRIENDLY_Coach Crosscheck|r|r.
     .goto 194,47.7,57.7
     .turnin 24502 >>Turn in Necessary Roughness by clicking onto the quest under your minimap
     .accept 24503 >>Accept Fourth and Goal << Male
@@ -365,7 +365,7 @@ step
     .accept 14120 >>Accept A Bazillion Macaroons?!
     .target Trade Prince Gallywix
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump out of the window and talk to |cRXP_FRIENDLY_Sassy Handwrench|r,|cRXP_FRIENDLY_Megs Dreadshredder|r,and |cRXP_FRIENDLY_Foreman Dampwick|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump out of the window and talk to |cRXP_FRIENDLY_Sassy Handwrench|r, |cRXP_FRIENDLY_Megs Dreadshredder|r, and |cRXP_FRIENDLY_Foreman Dampwick|r.
     .turnin 14120 >>Turn in A Bazillion Macaroons?!
     .accept 14122 >>Accept The Great Bank Heist
     .goto 194,59.6,77.1
@@ -381,7 +381,7 @@ step
     .use 46856
     .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]. While in the vehicle you are immune to fall damage|r.
 step
-    >>Aim the |T133712:0|t[Kablooey Bombs] on Kaja'mite Deposits and loot the |cRXP_LOOT_Kaja'mite Chunks|r. on the ground near the mines.
+    >>Aim the |T133712:0|t[Kablooey Bombs] on Kaja'mite Deposits and loot the [|cRXP_LOOT_Kaja'mite Chunks|r]. on the ground near the mines.
     .goto 194,67.27,77.69,8,0
     .goto 194,69.59,79.35,8,0
     .goto 194,69.03,83.16,8,0
@@ -429,12 +429,12 @@ step
     #completewith KezanWaltzRightIn
     +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r and |cRXP_ENEMY_Keesnout Potbellys|r. because they can detect and kill you|r.
 step
-    >>Pick up the |cRXP_LOOT_bomb|r.
+    >>Pick up the [|cRXP_LOOT_bomb|r].
     .goto 194,24.20,40.67,30,0
     .goto 194,19.9,30.7
     .complete 14123,3 --1/1 The Ultimate Bomb
 step
-    >>Pick up the |cRXP_LOOT_painting|r.
+    >>Pick up the [|cRXP_LOOT_painting|r].
     .goto 194,13.1,35.2
     .complete 14123,2 --1/1 The Goblin Lisa
 step
@@ -446,7 +446,7 @@ step
     .goto 194,17.34,45.91,3 >>Go up the stairs
 step
     #label KezanWaltzRightIn
-    >>Pick up |cRXP_LOOT_Maldy's Falcon|r.
+    >>Pick up [|cRXP_LOOT_Maldy's Falcon|r].
     .goto 194,16.7,46.2
     .complete 14123,1 --1/1 Maldy's Falcon
 step
@@ -576,7 +576,7 @@ step
     .mob Bomb Throwing Monkeys
     .mob Teraptor Hatchlings
 step
-    >>Collect |cRXP_LOOT_Crates of Tools|r.
+    >>Collect [|cRXP_LOOT_Crates of Tools|r].
     .goto 174,29.73,75.42,15,0
     .goto 174,30.35,74.49,15,0
     .goto 174,30.10,72.55,20,0
@@ -714,7 +714,7 @@ step
     .accept 14241 >>Accept Get to the Gyrochoppa!
     .target Scout Brax
 step
-    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochopper Pilots|r. Loot them for the |cRXP_LOOT_Gyrochoppa Keys|r.
+    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochopper Pilots|r. Loot them for the [|cRXP_LOOT_Gyrochoppa Keys|r].
     .goto 174,23.23,67.50
     .complete 14241,1 --1/1 Gyrochoppa Keys
     .mob SI:7 Operative
@@ -829,7 +829,7 @@ step
     .target Bamm Megabomb
     .target Hobart Grapplehammer
 step
-    >>Kill the |cRXP_ENEMY_Mechachicken|r. Loot its |cRXP_LOOT_egg|r.
+    >>Kill the |cRXP_ENEMY_Mechachicken|r. Loot its [|cRXP_LOOT_egg|r].
     .goto 174,44.46,54.24
     .complete 24744,1 --1/1 The Biggest Egg Ever
     .mob Mechachicken
@@ -840,7 +840,7 @@ step
     .accept 24816 >>Accept Who's Top of the Food Chain Now?
     .target Hobart Grapplehammer
 step
-    >>Kill |cRXP_ENEMY_Ravenous Lurkers|r. Loot them for their |cRXP_LOOT_parts|r.
+    >>Kill |cRXP_ENEMY_Ravenous Lurkers|r. Loot them for their [|cRXP_LOOT_parts|r].
     .goto 174,43.41,70.15,20,0
     .goto 174,42.49,63.12,20,0
     .goto 174,41.53,63.36,10,0
@@ -886,7 +886,7 @@ step
     .target Brett "Coins" McQuid
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Nagas|r. while replacing the banners. Loot them for their |cRXP_LOOT_hides|r.
+    >>Kill |cRXP_ENEMY_Nagas|r. while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
     .goto 174,54.12,78.39,0,0
     .complete 24859,1 --5/5 Intact Naga Hide
 step
@@ -902,7 +902,7 @@ step
     .goto 174,53.53,76.90,10,0
     .complete 24858,1 --10/10 Naga Banners replaced
 step
-    >>Kill |cRXP_ENEMY_Nagas|r. while replacing the banners. Loot them for their |cRXP_LOOT_hides|r.
+    >>Kill |cRXP_ENEMY_Nagas|r. while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
     .goto 174,54.27,83.49,30,0
     .goto 174,54.12,78.39,0,0
     .complete 24859,1 --5/5 Intact Naga Hide
@@ -934,7 +934,7 @@ step
     .accept 24868 >>Accept Surrender or Else!
     .target Megs Dreadshredder
 step
-    >>|cRXP_WARN_When you see the spawn animation (purple circle) then you can already go back. Keep looking behind you because you still have to kill the |cRXP_ENEMY_leader|r.|r.
+    >>|cRXP_WARN_When you see the spawn animation (purple circle) then you can already go back. Keep looking behind you because you still have to kill the |cRXP_ENEMY_leader|r|r.
     .goto 174,54.07,90.06,1,0
     .goto 174,53.90,84.17
     .complete 24868,1 --1/1 Leader of the naga dealt with
@@ -1018,7 +1018,7 @@ step
     #completewith next
     +|cRXP_WARN_Avoid the |cRXP_ENEMY_Goblin Zombies|r. while running up the mountain|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r,|cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r, |cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r.
     .turnin 24940 >>Turn in Up the Volcano
     .accept 24942 >>Accept Zombies vs. Super Booster Rocket Boots
     .goto 174,51.8,47.1
@@ -1038,7 +1038,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Goblin Zombies|r. by walking over them with the Rocket Boots
-    >>|cRXP_WARN_Avoid |cRXP_ENEMY_Oostan Headhunters|r.|r. They can kill you very easily
+    >>|cRXP_WARN_Avoid |cRXP_ENEMY_Oostan Headhunters|r|r. They can kill you very easily
     .use 52013
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
@@ -1071,7 +1071,7 @@ step
     .goto 174,56.67,44.26,15,0
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r,|cRXP_FRIENDLY_Assistant Greedy|r,and |cRXP_FRIENDLY_Coach Crosscheck|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r, |cRXP_FRIENDLY_Assistant Greedy|r, and |cRXP_FRIENDLY_Coach Crosscheck|r.
     .turnin 24945 >>Turn in Three Little Pygmies
     .goto 174,51.85,47.20
     .turnin 24946 >>Turn in Rockin' Powder
@@ -1093,7 +1093,7 @@ step
     .accept 24954 >>Accept Children of a Turtle God
     .target Hobart Grapplehammer
 step
-    >>Kill |cRXP_ENEMY_Childs of Volcanoth|r. Loot them for the |cRXP_LOOT_glands|r.
+    >>Kill |cRXP_ENEMY_Childs of Volcanoth|r. Loot them for the [|cRXP_LOOT_glands|r].
     .goto 174,66.92,44.29,20,0
     .goto 174,68.64,43.40
     .complete 24954,1 --5/5 Fire Gland
@@ -1117,7 +1117,7 @@ step
     .accept 25023 >>Accept Old Friends
     .target Sassy Hardwrench
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r,|cRXP_FRIENDLY_Sassy Hardwrench|r,and |cRXP_FRIENDLY_Aggra|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r, |cRXP_FRIENDLY_Sassy Hardwrench|r, and |cRXP_FRIENDLY_Aggra|r.
     .turnin 25023 >>Turn in Old Friends
     .accept 25024 >>Accept Repel the Paratroopers
     .goto 174,36.79,43.14
@@ -1141,18 +1141,18 @@ step
     .complete 25024,1 --10/10 Alliance Paratrooper slain
     .mob Alliance Paratrooper
 step
-    >>Kill |cRXP_ENEMY_Commander Arrington|r. Loot him for his |cRXP_LOOT_head|r.
+    >>Kill |cRXP_ENEMY_Commander Arrington|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 174,32.29,42.89
     .complete 25093,1 --1/1 Commander Arrington's Head
     .target Commander Arrington
 step
-    >>Kill |cRXP_ENEMY_Alexi Silenthowl|r. Loot him for his |cRXP_LOOT_head|r.
+    >>Kill |cRXP_ENEMY_Alexi Silenthowl|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 174,30.80,33.92
     .complete 25093,3 --1/1 Alexi Silenthowl's Head
     .mob Alexi Silenthowl
 step
     #label TheLostIslesCyn
-    >>Kill |cRXP_ENEMY_Darkblade Cyn|r. Loot him for his |cRXP_LOOT_head|r.
+    >>Kill |cRXP_ENEMY_Darkblade Cyn|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 174,33.44,27.88
     .complete 25093,2 --1/1 Darkblade Cyn's Head
     .mob Darkblade Cyn
@@ -1168,7 +1168,7 @@ step
     .hs >>Hearth to Warchief's Lookout
 step
     #requires TheLostIslesLandMines
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r,|cRXP_FRIENDLY_Aggra|r,and |cRXP_FRIENDLY_Sassy Hardwrench|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r, |cRXP_FRIENDLY_Aggra|r, and |cRXP_FRIENDLY_Sassy Hardwrench|r.
     .turnin 25024 >>Turn in Repel the Paratroopers
     .goto 174,36.8,43.1
     .turnin 25093 >>Turn in The Heads of the SI:7
@@ -1304,7 +1304,7 @@ step
     .complete 25200,1 --8/8 Steamwheedle Shark slain
     .mob Steamwheedle Shark
 step
-    >>Pick up the |cRXP_LOOT_Spare Shredder Parts|r.
+    >>Pick up the [|cRXP_LOOT_Spare Shredder Parts|r].
     .goto 174,53.24,19.55,20,0
     .goto 174,52.16,20.68,20,0
     .goto 174,51.85,19.17,20,0
@@ -1348,12 +1348,12 @@ step
     .goto 174,50.5,13.2
     .complete 25204,3 --1/1 Valve #3 released
 step << Female
-    >>Kill |cRXP_ENEMY_Chip Endale|r. Loot him for his |cRXP_LOOT_heart|r.
+    >>Kill |cRXP_ENEMY_Chip Endale|r. Loot him for his [|cRXP_LOOT_heart|r].
     .goto 174,50.1,13.8
     .complete 25202,1 --1/1 Still-Beating Heart
     .mob Chip Endale
 step << Male
-    >>Kill |cRXP_ENEMY_Chip Endale|r. Loot him for his |cRXP_LOOT_heart|r.
+    >>Kill |cRXP_ENEMY_Chip Endale|r. Loot him for his [|cRXP_LOOT_heart|r].
     .goto 174,50.1,13.8
     .complete 25203,1 --1/1 Still-Beating Heart
     .mob Chip Endale

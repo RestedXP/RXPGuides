@@ -3063,7 +3063,7 @@ step
 step
     .isOnQuest 32446
     #completewith Northwestern
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them [|cRXP_LOOT_Scrap Metals|r]
     .complete 32446,1 --6/6 Scrap Metal
     .mob Jungle Shredder
 step
@@ -3117,7 +3117,7 @@ step
 step
     .isOnQuest 32446
     #label Scrap Metal
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them [|cRXP_LOOT_Scrap Metals|r]
     .complete 32446,1 --6/6 Scrap Metal
     .mob Jungle Shredder
 step

@@ -42,7 +42,7 @@ step
     .accept 8326 >>Accept Unfortunate Measures
     .target Magistrix Erona
 step
-    >>Kill |cRXP_ENEMY_Springpaw Cubs|r and |cRXP_ENEMY_Springpaw Lynx|r. Loot them for their |cRXP_LOOT_collars|r.
+    >>Kill |cRXP_ENEMY_Springpaw Cubs|r and |cRXP_ENEMY_Springpaw Lynx|r. Loot them for their [|cRXP_LOOT_collars|r].
     .goto 467,65.77,39.97,20,0
     .goto 467,68.40,37.61,20,0
     .goto 467,63.49,33.62,30,0
@@ -88,7 +88,7 @@ step
 step
     #sticky
     #label EversongWoodsArcaneSilver
-    >>Kill |cRXP_ENEMY_Mana Wyrms|r. Loot them for the |cRXP_LOOT_silver|r.
+    >>Kill |cRXP_ENEMY_Mana Wyrms|r. Loot them for the [|cRXP_LOOT_silver|r].
     .goto 467,50.15,40.74
     .complete 37440,1 --6/6 Arcane Sliver
     .mob Mana Wyrm
@@ -106,16 +106,16 @@ step
     .mob Feral Tender
 step
     #requires EversongWoodsArcaneSilver
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the glowing |cRXP_LOOT_Shrine of Dath'Remar|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the glowing [|cRXP_LOOT_Shrine of Dath'Remar|r].
     .goto 467,35.3,40.2
     .complete 37442,1 --1/1 Shrine of Dath'Remar Read
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the |cRXP_LOOT_Scroll of Scourge Magic|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the [|cRXP_LOOT_Scroll of Scourge Magic|r]. on the ground
     .goto 467,40.4,50.5
     .complete 37443,2 --1/1 Scroll of Scourge Magic
 step
     #label EversongWoodsSecondBelonging
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the |cRXP_LOOT_Solanian's Srying Orb|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the [|cRXP_LOOT_Solanian's Srying Orb|r].
     .goto 467,52.2,69.4
     .complete 37443,1 --1/1 Solanian's Scrying Orb
 step
@@ -126,7 +126,7 @@ step
     .mob Tender
     .mob Feral Tender
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up |cRXP_LOOT_Solanian's Journal|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up [|cRXP_LOOT_Solanian's Journal|r]. on the ground
     .goto 467,60.1,57.1
     .complete 37443,3 --1/1 Solanian's Journal
 step
@@ -162,18 +162,18 @@ step
     .goto 467,36.34,63.76,5,0
     .goto 467,37.98,66.43,8 >>Follow the way up
 step
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the [|cRXP_LOOT_Tainted Arcane Sliver|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .collect 20483,1,8338,1
     .accept 8338 >>Accept Tainted Arcane Sliver
     .mob Tainted Arcane Wraith
 step
     #label EversongWoodsFelendrenHead
-    >>Kill |cRXP_ENEMY_Felendren the Banished|r. Loot him for his |cRXP_LOOT_head|r.
+    >>Kill |cRXP_ENEMY_Felendren the Banished|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 467,38.92,63.98
     .complete 8335,3 --1/1 Felendren's Head
     .mob Felendren the Banished
 step
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the [|cRXP_LOOT_Tainted Arcane Sliver|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .collect 20483,1,8338,1
     .accept 8338 >>Accept Tainted Arcane Sliver
     .mob Tainted Arcane Wraith
@@ -217,7 +217,7 @@ step
     .mob Tainted Arcane Wraith
 step
     .isOnQuest 8338
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the |cRXP_LOOT_Tainted Arcane Sliver|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for the [|cRXP_LOOT_Tainted Arcane Sliver|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .collect 20483,1,8338,1
     .accept 8338 >>Accept Tainted Arcane Sliver
     .mob Tainted Arcane Wraith
@@ -336,11 +336,11 @@ step
     .target Aeldon Sunbrand
 step
     #completewith next
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on |cRXP_LOOT_Unstable Mana Crystal Crates|r. to collect them
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r]. to collect them
     .complete 8463,1 --6/6 Unstable Mana Crystal
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their |cRXP_LOOT_cores|r.
+    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their [|cRXP_LOOT_cores|r].
     .goto 94,46.94,44.59,15,0
     .goto 94,47.69,39.02,15,0
     .goto 94,47.11,37.44,15,0
@@ -348,19 +348,19 @@ step
     .complete 8472,1 --6/6 Arcane Core
     .mob Arcane Patroller
 step
-    >>Kill |cRXP_ENEMY_Thaelis|r. Loot him for his |cRXP_LOOT_head|r.
+    >>Kill |cRXP_ENEMY_Thaelis|r. Loot him for his [|cRXP_LOOT_head|r].
     .goto 94,45.36,38.12,5,0
     .goto 94,45.01,37.68
     .complete 8468,1 --1/1 Thaelis' Head
     .mob Thaelis
 step
-    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their |cRXP_LOOT_cores|r.
+    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their [|cRXP_LOOT_cores|r].
     .goto 94,45.39,40.64,20,0
     .goto 94,42.18,40.59
     .complete 8472,1 --6/6 Arcane Cores
     .mob Arcane Patroller
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on |cRXP_LOOT_Unstable Mana Crystal Crates|r. to collect them
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r]. to collect them
     .goto 94,45.13,40.71,18,0
     .goto 94,46.01,43.29,25,0
     .goto 94,46.92,44.57,10,0
@@ -406,7 +406,7 @@ step
     .target Ley-Keeper Velania
 step
     #completewith next
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the [|cRXP_LOOT_Incriminating Documents|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -423,7 +423,7 @@ step
     .mob Mana Stalker
     .mob Manawraith
 step
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the |cRXP_LOOT_Incriminating Documents|r. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
+    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the [|cRXP_LOOT_Incriminating Documents|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
     .goto 94,36.4,60.7,20,0
     .goto 94,34.65,62.03,20,0
     .collect 20765,1,8482,1
@@ -476,14 +476,14 @@ step
     .mob Rotlimb Marauder
     .mob Darkwraith
 step
-    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Maurauders|r.|r.
+    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Maurauders|r|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
     .goto 94,54.28,70.98
     .turnin 9254 >>Turn in The Wayward Apprentice
     .accept 8487 >>Accept Corrupted Soil
     .target Apprentice Mirveda
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the |cRXP_LOOT_Tainted Soil Samples|r. from the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tPick up the [|cRXP_LOOT_Tainted Soil Samples|r]. from the ground
     .goto 94,52.34,71.77,20,0
     .goto 94,51.92,68.47,20,0
     .goto 94,52.59,69.60,10,0
