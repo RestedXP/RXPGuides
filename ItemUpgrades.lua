@@ -1301,13 +1301,32 @@ end
 function addon.itemUpgrades.Test()
     local itemData
     local testData = {
-        14136, 16886, 2816, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
-        13052, 20703
+        ['CLASSIC'] = {
+            ['WARRIOR'] = {
+                16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
+                13052, 20703
+            },
+            ['MAGE'] = {14136}
+        },
+        ['CATA'] = {
+            ['WARRIOR'] = {
+                16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
+                13052, 20703
+            },
+            ['MAGE'] = {14136}
+        }
     }
-    for _, itemID in pairs(testData) do
+
+    addon.itemUpgrades.testItems = {}
+    for _, itemID in pairs(testData[addon.game][addon.player.class]) do
         print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
+
         if itemData then
+            addon.itemUpgrades.testItems[itemData.itemID] = itemData
+        end
+
+        if addon.settings.profile.debug and itemData then
             for key, value in pairs(itemData) do
                 print('  ', key, value)
             end
