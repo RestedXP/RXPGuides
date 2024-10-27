@@ -329,8 +329,6 @@ local KEY_TO_TEXT = {
 
 if addon.game == "CATA" then
     KEY_TO_TEXT['ITEM_MOD_MASTERY_RATING_SHORT'] = _G.ITEM_MOD_MASTERY_RATING
-    KEY_TO_TEXT['ITEM_MOD_EXPERTISE_RATING_SHORT'] =
-        _G.ITEM_MOD_EXPERTISE_RATING
 
     KEY_TO_TEXT['ITEM_MOD_HIT_RANGED_RATING_SHORT'] =
         _G.ITEM_MOD_HIT_RANGED_RATING
@@ -1309,10 +1307,7 @@ function addon.itemUpgrades.Test()
             ['MAGE'] = {14136}
         },
         ['CATA'] = {
-            ['WARRIOR'] = {
-                16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
-                13052, 20703
-            },
+            ['WARRIOR'] = {11820, 35042, 35916, 63827, 66884, 66933},
             ['MAGE'] = {14136}
         }
     }
