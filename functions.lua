@@ -2144,7 +2144,6 @@ function addon.functions.bindlocation(self, ...)
         element.location = location and C_Map.GetAreaInfo(location)
         element.text = text
         element.textOnly = true
-        element.tooltipText = addon.icons.home .. element.text
         return element
     end
     local element = self.element
