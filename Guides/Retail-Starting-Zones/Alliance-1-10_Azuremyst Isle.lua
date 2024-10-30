@@ -36,7 +36,7 @@ step
     .goto 468,46.91,34.21,40,0
     .goto 468,41.99,33.66,40,0
     .goto 468,37.3,28.15,40,0
-    >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for |cRXP_LOOT_Vial of Moth Blood|r.
+    >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for [|cRXP_LOOT_Vial of Moth Blood|r].
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
 step
@@ -120,7 +120,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
-    >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their |cRXP_LOOT_Lasher Samples|r.
+    >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their [|cRXP_LOOT_Lasher Samples|r].
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
@@ -240,7 +240,7 @@ step
 	.target Tolaan
 step
     .goto 468,27.8,80.41
-    >>Kill |cRXP_ENEMY_Surveyor Candress|r and loot her for her |cRXP_LOOT_Blood Elf Plans|r.
+    >>Kill |cRXP_ENEMY_Surveyor Candress|r and loot her for her [|cRXP_LOOT_Blood Elf Plans|r].
     .complete 9311,1 --1/1 Surveyor Candress slain
 step
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blood Elf Plans|r.
@@ -349,7 +349,7 @@ step
 	.target Zaldaan
 step
     #completewith Root Trapper Vine
-    >>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for |cRXP_LOOT_Moongraze Stag Tenderloin|r.
+    >>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for [|cRXP_LOOT_Moongraze Stag Tenderloin|r].
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
 	.mob Moongraze Buck
@@ -362,7 +362,7 @@ step
     .goto 97,43.6,41.92,40,0
     .goto 97,43.52,45.58,40,0
     .goto 97,45.73,45.09,40,0
-    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r and loot them for the |cRXP_LOOT_Faintly Glowing Crystal|r.
+    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r and loot them for the [|cRXP_LOOT_Faintly Glowing Crystal|r].
 	.collect 23678,1,9455
     .accept 9455 >>Accept Strange Findings
     .use 23678
@@ -388,12 +388,12 @@ step
     .goto 97,59.16,56.12,40,0
     +1
 step
-    >>Kill |cRXP_ENEMY_Root Trappers|r and loot them for |cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r.
+    >>Kill |cRXP_ENEMY_Root Trappers|r and loot them for [|cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r].
     .complete 9463,1 --8/8 Root Trapper Vine
 	.mob Root Trapper
 step
     #label Root Trapper Vine
-	>>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for |cRXP_LOOT_|T134025:0|t[Moongraze Stag Tenderloin.]|r.
+	>>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for [|cRXP_LOOT_|T134025:0|t[Moongraze Stag Tenderloin.]|r].
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
 	.mob Moongraze Buck
@@ -454,7 +454,7 @@ step
     .goto 97,59.12,69.89,40,0
     .goto 97,60.64,70.09,40,0
     .goto 97,61.62,68.49,40,0
-    >>Kill |cRXP_ENEMY_Skittering Crawlers|r and loot them for |cRXP_LOOT_|T134007:0|t[Skittering Crawler Meats.]|r.
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r and loot them for [|cRXP_LOOT_|T134007:0|t[Skittering Crawler Meats.]|r].
     .complete 9512,1 --6/6 Skittering Crawler Meat
 	.mob Skittering Crawler
 step
@@ -522,7 +522,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Nagas|r and loot them for |cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r.
+    >>Kill |cRXP_ENEMY_Nagas|r and loot them for [|cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r].
     -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
 	.collect 23759,1,9514
     .accept 9514 >>Accept Rune Covered Tablet
@@ -538,7 +538,7 @@ step
     .complete 9523,1 --8/8 Ancient Relic
 step
     #label Wrathscale
-    >>Kill |cRXP_ENEMY_Nagas|r and loot them for |cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r.
+    >>Kill |cRXP_ENEMY_Nagas|r and loot them for [|cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r].
     -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
 	.collect 23759,1,9514
     .accept 9514 >>Accept Rune Covered Tablet
@@ -564,7 +564,7 @@ step
     .complete 9456,1 --8/8 Infected Nightstalker Runt slain
 	.mob Infected Nightstalker Runt
 step
-    >>Kill |cRXP_ENEMY_Moongraze Bucks|r and loot them for|cRXP_LOOT_|T134346:0|tMoongraze Buck Hides|r.
+    >>Kill |cRXP_ENEMY_Moongraze Bucks|r and loot them for[|cRXP_LOOT_|T134346:0|tMoongraze Buck Hides|r].
     .complete 10324,1 --6/6 Moongraze Buck Hide
 	.mob Moongraze Buck
 step
@@ -595,7 +595,7 @@ step
 	.target Cowlen
 step
     .goto 97,14.58,90.66
-    >>Kill |cRXP_ENEMY_Owlbeasts|r and loot them for the |cRXP_LOOT_Remain's of Cowlen's Family|r.
+    >>Kill |cRXP_ENEMY_Owlbeasts|r and loot them for the [|cRXP_LOOT_Remain's of Cowlen's Family|r].
     .complete 9527,1 --1/1 Remains of Cowlen's Family
 step
     #sticky
@@ -630,7 +630,7 @@ step
 step
     .goto 97,48.56,71.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer "Spark" Overgrind|r.
-    >>|cRXP_WARN_Wait for the Roleplay,|r Kill |cRXP_ENEMY_Engineer "Spark" Overgrind|r and loot him for |cRXP_LOOT_Traitor's Communication|r.
+    >>|cRXP_WARN_Wait for the Roleplay,|r Kill |cRXP_ENEMY_Engineer "Spark" Overgrind|r and loot him for [|cRXP_LOOT_Traitor's Communication|r].
     .complete 9537,1 --1/1 Traitor's Communication
     .skipgossip
     .mob Engineer "Spark" Overgrind

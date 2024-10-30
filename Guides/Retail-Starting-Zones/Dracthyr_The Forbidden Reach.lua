@@ -312,7 +312,7 @@ step
     .mob Scythid Steamstalker
     .mob Deatheater Scythid
 step
-    >>Kill |cRXP_ENEMY_Scalerenders|r. in the area. Loot them for the |cRXP_LOOT_glands|r.
+    >>Kill |cRXP_ENEMY_Scalerenders|r. in the area. Loot them for the [|cRXP_LOOT_glands|r].
 #loop
 	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
 	.goto 2118,24.77,30.11,20,0

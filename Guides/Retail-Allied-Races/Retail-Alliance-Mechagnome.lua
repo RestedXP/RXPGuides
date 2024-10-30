@@ -108,7 +108,7 @@ step
     .goto 1462,67.97,44.26,10,0
     .goto 1462,66.34,46.73,10,0
     .goto 1462,74.89,51.51
-    >>Kill |cRXP_ENEMY_Malfunctioning Scrapbot|r and |cRXP_ENEMY_Malfunctioning Scraphound|r and loot them for their |cRXP_LOOT_Acquisitioned Machine Part|r.
+    >>Kill |cRXP_ENEMY_Malfunctioning Scrapbot|r and |cRXP_ENEMY_Malfunctioning Scraphound|r and loot them for their [|cRXP_LOOT_Acquisitioned Machine Part|r].
     .complete 57488,2 --6/6 Acquisitioned Machine Part
     .mob Malfunctioning Scrapbot
     .mob Malfunctioning Scraphound
@@ -116,7 +116,7 @@ step
     .goto 1462,73.61,58.36,10,0
     .goto 1462,73.36,61.51,10,0
     .goto 1462,69.93,58.88
-    >>Kill |cRXP_ENEMY_Congealed Oil|r. |cRXP_WARN_If necessary, you can also kill |cRXP_ENEMY_Slime Elemental|r.|r and loot them for their |cRXP_LOOT_Acquisitioned Machine Part|r.
+    >>Kill |cRXP_ENEMY_Congealed Oil|r. |cRXP_WARN_If necessary, you can also kill |cRXP_ENEMY_Slime Elemental|r.|r and loot them for their [|cRXP_LOOT_Acquisitioned Machine Part|r].
     .mob Slime Elemental
     .mob Congealed Oil
 step
@@ -138,7 +138,7 @@ step
     .mob Rust-Eye the Clever
 step
     .goto 1462,86.92,73.79
-    >>Loot him for the |cRXP_LOOT_Pod|r.
+    >>Loot him for the [|cRXP_LOOT_Pod|r].
     .complete 57490,3 --1/1 Pod retrieved
 step
     .goto 1462,73.12,33.33
@@ -154,18 +154,18 @@ step
     .target Christy Punchcog
 step
     .goto 1462,54.49,26.94
-    >>Kill |cRXP_ENEMY_Insurgent Cycloid|r and loot him for |cRXP_LOOT_Omni Electromagnetic Amplifier|r.
+    >>Kill |cRXP_ENEMY_Insurgent Cycloid|r and loot him for [|cRXP_LOOT_Omni Electromagnetic Amplifier|r].
     .complete 57491,2 --1/1 Omni Electromagnetic Amplifier
     .mob Insurgent Cycloid
 step
     .goto 1462,37.46,46.05,10,0
     .goto 1462,36.79,58.83
-    >>Kill |cRXP_ENEMY_HK-3 Aerial Dissuasion Unit|r and loot him for |cRXP_LOOT_Neural Accelerator|r.
+    >>Kill |cRXP_ENEMY_HK-3 Aerial Dissuasion Unit|r and loot him for [|cRXP_LOOT_Neural Accelerator|r].
     .complete 57491,1 --1/1 Neural Accelerator
     .mob HK-3 Aerial Dissuasion Unit
 step
     .goto 1462,52.79,51.86
-    >>Kill |cRXP_ENEMY_Insurgent Crawler|, |cRXP_ENEMY_Upgraded Sentry|r and loot them for |cRXP_LOOT_Flux Energized Servos|r.
+    >>Kill |cRXP_ENEMY_Insurgent Crawler|, |cRXP_ENEMY_Upgraded Sentry|r and loot them for [|cRXP_LOOT_Flux Energized Servos|r].
     .complete 57491,3 --1/1 Flux Energized Servos
     .mob Upgraded Sentry
     .mob Insurgent Crawler#

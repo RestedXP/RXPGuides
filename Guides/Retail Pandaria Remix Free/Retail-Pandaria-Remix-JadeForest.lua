@@ -198,7 +198,7 @@ step
     .goto 371,43.81,25.36,0
     .goto 371,44.13,25.03,0
     .goto 371,43.81,24.71,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tian Pupil|r. to challenge them to duel. |cRXP_WARN_You can fight multiple at once if you dare|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tian Pupil|r to challenge them to duel. |cRXP_WARN_You can fight multiple at once if you dare|r.
     .complete 29632,1 --8/8 Tian Pupil defeated
     .skipgossip
     .target Tian Pupil
@@ -273,7 +273,7 @@ step
 step
     .group
     .goto 371,41.61,28.34
-    >>|cRXP_WARN_Face your |cFFFF0000character|r. away from the training grounds and aim your |cFFFF0000camera|r. towards it.|r.
+    >>|cRXP_WARN_Face your |cFFFF0000character|r. away from the training grounds and aim your |cFFFF0000camera|r. towards it|r.
     *After the |cRXP_FRIENDLY_Tian Students|r. copy the |cFFFF0000master's action|r,use |T135906:0|t[Punch(1)] for a punch, |T132219:0|t[Kick(2)] for a stomp, and |T236169:0|t[Growl(3)] for a growl.
     .complete 29623,1 --12/12 Practice Strikes completed
     .target Tian Student
@@ -1215,10 +1215,10 @@ step
     *|cRXP_WARN_Gem extraction:|r.  Players can remove gems from items by using the |T1379201:0|t[Gem Extraction] Ability or by scrapping obsolete gear with gems inside, allowing them to reuse or replace the gems with better ones. This ensures that players can continually optimize their gear without losing valuable gems.
     *|cRXP_WARN_Loot and Rewards:|r. |T4638724:0|t[Bronze] can also be obtained from various event activities, such as dragonriding, looting enemies and completing quests.
 step
-    +|cFFFF0000TLDR: Always loot each enemy and never forget to wear your cloak.|r.
+    +|cFFFF0000TLDR: Always loot each enemy and never forget to wear your cloak|r.
 step
     +The guide will instruct you to buy gems and upgrade your gear.
-    *|cRXP_WARN_However, if you prefer to spend your |T4638724:0|t[Bronze] on cosmetics, you will need to manually skip those steps.|r.
+    *|cRXP_WARN_However, if you prefer to spend your |T4638724:0|t[Bronze] on cosmetics, you will need to manually skip those steps|r.
 step
     +During downtime, commonly referred to as roleplay or RP, the guide will instruct you to scrap, extract gems, open |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r and equip new gear and gems.
     *|cRXP_WARN_This may occasionally be required outside of downtime as well|r.
@@ -1487,7 +1487,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r, |cRXP_ENEMY_Thunder Hold Cannoneers|r,and |cRXP_ENEMY_Thunder Hold Armsmen|r.
+    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r, |cRXP_ENEMY_Thunder Hold Cannoneers|r, and |cRXP_ENEMY_Thunder Hold Armsmen|r.
     .complete 31767,1 --15/15 Thunder Hold troops slain
     .mob Thunder Hold Mender
     .mob Thunder Hold Cannoneer
@@ -1498,7 +1498,7 @@ step
     .complete 31768,1 --10/10 Thunder Hold Munitions destroyed
 step
     #label ThunderHoldTroops
-    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r, |cRXP_ENEMY_Thunder Hold Cannoneers|r,and |cRXP_ENEMY_Thunder Hold Armsmen|r.
+    >>Kill |cRXP_ENEMY_Thunder Hold Menders|r, |cRXP_ENEMY_Thunder Hold Cannoneers|r, and |cRXP_ENEMY_Thunder Hold Armsmen|r.
     .complete 31767,1 --15/15 Thunder Hold troops slain
     .mob Thunder Hold Mender
     .mob Thunder Hold Cannoneer
@@ -1673,7 +1673,7 @@ step
     .turnin 31978 >>Turn in Priorities!
     .target Ellie Honeypaw
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayor Honeydew|r, |cRXP_FRIENDLY_Taran Zhu|r,and |cRXP_FRIENDLY_Sergeant Gorrok|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayor Honeydew|r, |cRXP_FRIENDLY_Taran Zhu|r, and |cRXP_FRIENDLY_Sergeant Gorrok|r.
     .turnin 31770 >>Turn in You're Either With Us Or...
     .goto 371,29.18,13.79
     .target +Mayor Honeydew
@@ -2188,7 +2188,7 @@ step
     .link /run GenericTraitUI_LoadUI();GenericTraitFrame:SetSystemID(1);ToggleFrame(GenericTraitFrame) >> CLICK HERE
 step
     >>Use |T249177:0|t[Full Autofire(1)] then use |T249177:0|t[Torpedo Rocket(2)] on |cRXP_ENEMY_Shredders|r, |cRXP_ENEMY_Peons|r and |cRXP_ENEMY_Grunts|r. |cRXP_WARN_Ideally, target as many as possible at once and barrels if they are in close proximity|r.
-    *|cFFFF0000Make sure to do this as often as possible.|r.|r.
+    *|cFFFF0000Make sure to do this as often as possible|r.|r.
     .complete 31732,2 --8/8 Garrosh'ar Shredder slain
     .complete 31732,1 --60/60 Garrosh'ar Horde slain
     .timer 20, RP
@@ -2786,7 +2786,7 @@ step
     +1
 step
     #completewith Prisoners freed
-    >>Kill |cRXP_ENEMY_Slingtail Hozens|r. Loot them for |cRXP_LOOT_|T133749:0|t Bamboo Keys|r.
+    >>Kill |cRXP_ENEMY_Slingtail Hozens|r. Loot them for |T133749:0|t[|cRXP_LOOT_Bamboo Keys|r].
     .complete 29558,1 --12/12 Slingtail hozen slain
     .mob Slingtail Treeleaper
     .mob Slingtail Mudseer
@@ -2861,7 +2861,7 @@ step
     .target Bold Karasshi
 step
     #completewith Accept The Pearlfin Situation
-    +|cRXP_WARN_Wait for the roleplay, which will be completed when the timer runs out|r. |cFFFF0000tidy your bags and optimize your equipment use --x item .|r.
+    +|cRXP_WARN_Wait for the roleplay, which will be completed when the timer runs out|r. |cFFFF0000tidy your bags and optimize your equipment use --x item |r.
 step
     #label Accept The Pearlfin Situation
     .goto 371,58.93,81.93

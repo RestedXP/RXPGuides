@@ -185,7 +185,7 @@ step
 step
     #completewith next
     .goto 18,60.74,58.68
-    .zone 85 >>Take the Portal to Orgrimmar on top of the tower. |cRXP_WARN_You may have to talk to Zidormi (speech bubble on the map) to get to the correct phase.|r.
+    .zone 85 >>Take the Portal to Orgrimmar on top of the tower. |cRXP_WARN_You may have to talk to Zidormi (speech bubble on the map) to get to the correct phase|r.
 step
     #label NightborneTheNightborne
     .goto 85,37.76,81.16

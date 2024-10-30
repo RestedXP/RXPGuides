@@ -262,7 +262,7 @@ step << DK
     .use 53428
 step << DK
     .isOnQuest 58989
-    .goto 23,83.25,49.02,5 >>|cRXP_WARN_Step onto |cRXP_WARN_the purple circle|r. to teleport again.|r.
+    .goto 23,83.25,49.02,5 >>|cRXP_WARN_Step onto |cRXP_WARN_the purple circle|r. to teleport again|r.
 step << DK
     .goto 23,82.02,46.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.

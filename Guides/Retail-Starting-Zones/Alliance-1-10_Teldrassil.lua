@@ -37,7 +37,7 @@ step
 	.target Melithar Staghelm
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Grell|r,|cRXP_ENEMY_Grellkin|r and loot them for their |cRXP_LOOT_Fel Moss|r.
+    >>Kill |cRXP_ENEMY_Grell|r, |cRXP_ENEMY_Grellkin|r and loot them for their [|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 	.mob Grell
 	.mob Grellkin
@@ -55,7 +55,7 @@ step
     .goto 460,31.70,74.85,15,0
     .goto 460,30.66,70.55,20,0
     .goto 460,36.66,79.84
-    >>Kill |cRXP_ENEMY_Grell|r,|cRXP_ENEMY_Grellkin|r and loot them for their |cRXP_LOOT_Fel Moss|r.
+    >>Kill |cRXP_ENEMY_Grell|r, |cRXP_ENEMY_Grellkin|r and loot them for their [|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 	.mob Grell
 	.mob Grellkin
@@ -201,7 +201,7 @@ step
 	.target Zenn Foulhoof
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r,|cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Strigid Owls|r and loot them for their |cRXP_LOOT_Nightsaber Fangs,|r,|cRXP_LOOT_Strigid Owl Feathers|r and |cRXP_LOOT_ Webwood Spider Silks|r.
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r, |cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Strigid Owls|r and loot them for their [|cRXP_LOOT_Nightsaber Fangs,|r, |cRXP_LOOT_Strigid Owl Feathers|r and |cRXP_LOOT_ Webwood Spider Silks|r].
 	>>|cRXP_WARN_You will get another opportunity to complete this task soon|r.
     .complete 488,1 --2/2 Nightsaber Fang
     .complete 488,2 --2/2 Strigid Owl Feather
@@ -261,7 +261,7 @@ step
 	.target Nyoma
 step
     #completewith TeldrassilEmeraldDreamcatcher
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r,|cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Strigid Owls|r and loot them for their |cRXP_LOOT_Nightsaber Fangs,|r,|cRXP_LOOT_Strigid Owl Feathers|r and |cRXP_LOOT_ Webwood Spider Silks|r.
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r, |cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Strigid Owls|r and loot them for their [|cRXP_LOOT_Nightsaber Fangs,|r, |cRXP_LOOT_Strigid Owl Feathers|r and |cRXP_LOOT_ Webwood Spider Silks|r].
     .complete 488,1 --2/2 Nightsaber Fang
     .complete 488,2 --2/2 Strigid Owl Feather
     .complete 488,3 --2/2 Webwood Spider Silk
@@ -335,7 +335,7 @@ step
     .goto 57,61.28,51.69,40,0
     .goto 57,60.21,50.03,40,0
     .goto 57,57.48,48.54
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r,|cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Strigid Owls|r and loot them for their |cRXP_LOOT_Nightsaber Fangs,|r,|cRXP_LOOT_Strigid Owl Feathers|r and |cRXP_LOOT_ Webwood Spider Silks|r.
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r, |cRXP_ENEMY_Nightsabers|r and |cRXP_ENEMY_Strigid Owls|r and loot them for their [|cRXP_LOOT_Nightsaber Fangs,|r, |cRXP_LOOT_Strigid Owl Feathers|r and |cRXP_LOOT_ Webwood Spider Silks|r].
     .complete 488,1 --2/2 Nightsaber Fang
     .complete 488,2 --2/2 Strigid Owl Feather
     .complete 488,3 --2/2 Webwood Spider Silk
@@ -354,7 +354,7 @@ step
 step
     #label Ferocitas
     .goto 57,67.26,46.83
-    >>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r and loot him for |cRXP_LOOT_Tallonkai's Jewel|r.
+    >>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r and loot him for [|cRXP_LOOT_Tallonkai's Jewel|r].
     .complete 2459,2 --1/1 Tallonkai's Jewel
 	.mob Ferocitas the Dream Eater
 step
@@ -499,7 +499,7 @@ step
 	.target Wizbang Cranktoggle
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r and loot them for their |cRXP_LOOT_Corrupted Tide Crawler Flesh|r.
+    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r and loot them for their [|cRXP_LOOT_Corrupted Tide Crawler Flesh|r].
     .complete 13521,1 --4/4 Corrupted Tide Crawler Flesh
 	.mob Corrupted Tide Crawler
 step
@@ -516,7 +516,7 @@ step
     .goto 62,52.57,17.53,20,0
     .goto 62,53.18,18.53,20,0
     .goto 62,52.41,19.60
-    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r and loot them for their |cRXP_LOOT_Corrupted Tide Crawler Flesh|r.
+    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r and loot them for their [|cRXP_LOOT_Corrupted Tide Crawler Flesh|r].
     .complete 13521,1 --4/4 Corrupted Tide Crawler Flesh
 	.mob Corrupted Tide Crawler
 step
@@ -541,7 +541,7 @@ step
     .goto 62,55.73,23.95,40,0
     .goto 62,54.87,27.67,40,0
     .goto 62,52.96,25.46
-    >>Kill |cRXP_ENEMY_Bears|r and loot them for their |cRXP_LOOT_Corrupted Thistle Bear Guts|r.
+    >>Kill |cRXP_ENEMY_Bears|r and loot them for their [|cRXP_LOOT_Corrupted Thistle Bear Guts|r].
     .complete 13528,1 --6/6 Corrupted Thistle Bear Guts
 	.mob Corrupted Thistle Bear
 	.mob Corrupted Thistle Bear Matriarch
@@ -560,8 +560,8 @@ step
 	.target Tharnariun
 step
     #completewith next
-	>>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for |cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key|r.
-	>>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r.) as you quest.|r.
+	>>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for [|cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key|r].
+	>>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r.) as you quest|r.
     .complete 13554,1 --6/6 Foul Ichor
     .complete 13529,2 --8/8 Vile Grell slain
 	.collect 44927,1,13557
@@ -597,8 +597,8 @@ step
     .goto 62,56.97,32.66,30,0
     .goto 62,56.58,33.64,30,0
     .goto 62,57.10,34.18
-    >>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for |cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key|r.
-    >>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r.) as you quest.|r.
+    >>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for [|cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key|r].
+    >>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r.) as you quest|r.
     .complete 13554,1 --6/6 Foul Ichor
     .complete 13529,2 --8/8 Vile Grell slain
 	.collect 44927,1,13557

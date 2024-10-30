@@ -305,7 +305,7 @@ step
     .target Baron Rivendare
 step
     #completewith citizenrequirementtime
-    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r,|cRXP_ENEMY_Citizens|r and loot them for |cRXP_LOOT_Crusader Skull|r.
+    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r, |cRXP_ENEMY_Citizens|r and loot them for [|cRXP_LOOT_Crusader Skull|r].
     .complete 12722,1 --10/10 Scarlet Crusade Soldier slain
     .complete 12716,3 --10/10 Crusader Skull
     .complete 12722,2 --15/15 Citizen of New Avalon slain
@@ -335,7 +335,7 @@ step
     .goto 124,57.77,61.90,40,0
     .goto 124,52.61,71.72,80,0
     .goto 124,62.03,60.24
-    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r,|cRXP_ENEMY_Citizens|r and loot them for |cRXP_LOOT_Crusader Skull|r.
+    >>Kill |cRXP_ENEMY_Scarlet Crusaders|r, |cRXP_ENEMY_Citizens|r and loot them for [|cRXP_LOOT_Crusader Skull|r].
     .complete 12722,1 --10/10 Scarlet Crusade Soldier slain
     .complete 12716,3 --10/10 Crusader Skull
     .complete 12722,2 --15/15 Citizen of New Avalon slain
@@ -501,7 +501,7 @@ step
     .target Orbaz Bloodbane
 step
     .goto 124,59.69,76.6
-    >>Use 136065|T967530:0|t[Makeshift Cover] to summon the |cRXP_ENEMY_Courier|r. then kill and |cRXP_LOOT_loot him|r.
+    >>Use 136065|T967530:0|t[Makeshift Cover] to summon the |cRXP_ENEMY_Courier|r. then kill and [|cRXP_LOOT_loot him|r].
     .complete 12754,1 --1/1 Scarlet Courier's Belongings
     .complete 12754,2 --1/1 Scarlet Courier's Message
     .use 39645

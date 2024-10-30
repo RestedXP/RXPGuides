@@ -73,7 +73,7 @@ step
     .waypoint 202,58.449,36.570,12,0
     .waypoint 202,55.539,33.642,12,0
     .waypoint 202,60.040,20.806,12,0
-    >>Open |cRXP_PICK_Supply Crates|r. on the ground. Loot them for |cRXP_LOOT_Salvaged Supplies|r.
+    >>Open |cRXP_PICK_Supply Crates|r. on the ground. Loot them for [|cRXP_LOOT_Salvaged Supplies|r].
     .complete 14094,1 --Salvaged Supplies (4)
 step
     #sticky
@@ -629,8 +629,8 @@ step
     .goto 179,33.33,71.73,30,0
     .goto 179,33.33,67.76,30,0
     .goto 179,33.63,64.76,30,0
-    >>Loot |T132620:0|t|cRXP_LOOT_[Black Gunpowder Kegs]|r. on the ground
-    >>Throw the |T132620:0|t|cRXP_LOOT_[Black Gunpowder Kegs]|r. at |cRXP_ENEMY_Horrid Abominations|r.
+    >>Loot |T132620:0|t[|cRXP_LOOT_Black Gunpowder Kegs|r]. on the ground
+    >>Throw the |T132620:0|t[|cRXP_LOOT_Black Gunpowder Kegs|r. at |cRXP_ENEMY_Horrid Abominations|r].
     .collect 49202,4,14348,1,-1 --Black Gunpowder Keg (4)
     .complete 14348,1 --Gunpowder thrown at Abominations (4)
     .use 49202
@@ -1066,7 +1066,7 @@ step
 	.target Grandma Wahl
 step
     .goto 179,33.96,77.38
-    >>Loot the |cRXP_LOOT_Linen-Wrapped Book|r. on the ground
+    >>Loot the [|cRXP_LOOT_Linen-Wrapped Book|r]. on the ground
     .complete 14399,1 --Linen-Wrapped Book (1)
 step
     .goto 179,32.52,75.49
@@ -1079,10 +1079,10 @@ step
     #completewith next
     .goto 179,32.50,76.06,8,0
     .goto 179,32.27,76.07,10,0
-    .goto 179,32.04,75.45,10 >>Travel toward |cRXP_LOOT_Grandma's Good Clothes|r. outside
+    .goto 179,32.04,75.45,10 >>Travel toward [|cRXP_LOOT_Grandma's Good Clothes|r]. outside
 step
     .goto 179,32.04,75.45
-    >>Loot |cRXP_LOOT_Grandma's Good Clothes|r. outside
+    >>Loot [|cRXP_LOOT_Grandma's Good Clothes|r]. outside
     .complete 14400,1 --Grandma's Good Clothes (1)
 step
     .goto 179,32.52,75.49
@@ -1099,7 +1099,7 @@ step
     .isOnQuest 14401
 step
     .goto 179,35.24,74.98
-    >>Kill |cRXP_ENEMY_Lucius the Cruel|r. Loot him for |cRXP_LOOT_Chance the Cat|r.
+    >>Kill |cRXP_ENEMY_Lucius the Cruel|r. Loot him for [|cRXP_LOOT_Chance the Cat|r].
     .complete 14401,1 --Chance the Cat (1)
 	.mob Lucius the Cruel
 step
@@ -1132,7 +1132,7 @@ step
 	.mob Forsaken Castaway
 step
     .goto 179,37.58,85.98
-    >>Open the |cRXP_PICK_Barrel of Coal Tar|r. on the ground. Loot it for the |cRXP_LOOT_Coal Tar|r.
+    >>Open the |cRXP_PICK_Barrel of Coal Tar|r. on the ground. Loot it for the [|cRXP_LOOT_Coal Tar|r].
     .complete 14404,3 --Coal Tar (1)
 step
     #optional
@@ -1140,11 +1140,11 @@ step
     .goto 179,37.05,86.81,6 >>Enter the Hayward Fishery house
 step
     .goto 179,37.46,87.15
-    >>Loot the |cRXP_LOOT_Shipwright's Tools|r. on the ground inside
+    >>Loot the [|cRXP_LOOT_Shipwright's Tools|r]. on the ground inside
     .complete 14404,1 --Shipwright's Tools (1)
 step
     .goto 179,36.09,86.44
-    >>Loot the |cRXP_LOOT_Planks of Wood|r. on the ground
+    >>Loot the [|cRXP_LOOT_Planks of Wood|r]. on the ground
     .complete 14404,2 --Planks of Wood (1)
 step
     #requires Castaways
@@ -1260,7 +1260,7 @@ step
     .goto 179,50.38,84.87,15,0
     .goto 179,48.88,84.64,15,0
     .goto 179,48.14,85.41,15,0
-    .goto 179,46.74,83.20,12 >>Travel toward |cRXP_LOOT_Koroth's Banner|r. atop the mountain
+    .goto 179,46.74,83.20,12 >>Travel toward [|cRXP_LOOT_Koroth's Banner|r]. atop the mountain
 step
     #sticky
     #label Ogres
@@ -1280,7 +1280,7 @@ step
 step
     #label Koroth
     .goto 179,46.74,83.20
-    >>Loot |cRXP_LOOT_Koroth's Banner|r. on the ground
+    >>Loot [|cRXP_LOOT_Koroth's Banner|r]. on the ground
     .complete 24472,2 --Koroth's Banner (1)
 step
     #requires Ogres
@@ -1343,7 +1343,7 @@ step
     .goto 179,67.18,90.80,15,0
     .goto 179,67.41,91.41,15,0
     .goto 179,67.36,92.29,15,0
-    >>Loot |cRXP_LOOT_Old Journal Pages|r. on the ground
+    >>Loot [|cRXP_LOOT_Old Journal Pages|r]. on the ground
     .complete 24495,1 --Old Journal Page (6)
 step
     #requires Stormglen
@@ -1489,8 +1489,8 @@ step
     .goto 179,60.06,78.49,15,0
     .goto 179,59.77,78.08,15,0
     .goto 179,59.97,77.38,15,0
-    >>Loot |cRXP_LOOT_Moonleaf|r. on the ground
-    *|cRXP_WARN_You can see the location of |cRXP_LOOT_Moonleaf|r. on your minimap if you have|r. |T133939:0|t[Find Herbs] |cRXP_WARN_enabled|r.
+    >>Loot [|cRXP_LOOT_Moonleaf|r]. on the ground
+    *|cRXP_WARN_You can see the location of [|cRXP_LOOT_Moonleaf|r. on your minimap if you have|r. |T133939:0|t[Find Herbs] |cRXP_WARN_enabled|r].
     .complete 24628,1 --Moonleaf (6)
 	.skill herbalism,1,1
 step
@@ -1517,7 +1517,7 @@ step
     .goto 179,60.06,78.49,15,0
     .goto 179,59.77,78.08,15,0
     .goto 179,59.97,77.38,15,0
-    >>Loot |cRXP_LOOT_Moonleaf|r. on the ground
+    >>Loot [|cRXP_LOOT_Moonleaf|r]. on the ground
     .complete 24628,1 --Moonleaf (6)
     .skill herbalism,<1,1
 step
@@ -1548,7 +1548,7 @@ step
 step
     #label ScytheOfElune
     .goto 179,57.51,75.59
-	>>Open the |cRXP_PICK_Worn Coffer|r. inside. Loot it for the |cRXP_LOOT_Mysterious Artifact|r.
+	>>Open the |cRXP_PICK_Worn Coffer|r. inside. Loot it for the [|cRXP_LOOT_Mysterious Artifact|r].
     .complete 24646,1 --Mysterious Artifact (1)
     .use 50134
 step
@@ -1558,7 +1558,7 @@ step
     .accept 24593 >>Accept Neither Human Nor Beast
 	.target Lord Darius Crowley
 step
-    >>Drink from the |cRXP_PICK_Well of Fury|r,|cRXP_PICK_Well of Tranquility|r,and |cRXP_PICK_Well of Balance|r.
+    >>Drink from the |cRXP_PICK_Well of Fury|r, |cRXP_PICK_Well of Tranquility|r, and |cRXP_PICK_Well of Balance|r.
     .complete 24593,1 --Well of Fury (1)
     .goto 179,68.98,72.80,-1
     .complete 24593,2 --Well of Tranquility (1)
@@ -1667,7 +1667,7 @@ step
     .accept 24677 >>Accept Flank the Forsaken
 	.target King Genn Greymane
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r,|cRXP_FRIENDLY_Magda Whitewall|r,and |cRXP_FRIENDLY_Marcus|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r, |cRXP_FRIENDLY_Magda Whitewall|r, and |cRXP_FRIENDLY_Marcus|r.
     .turnin 24677 >>Turn in Flank the Forsaken
     .accept 24575 >>Accept Liberation Day
     .goto 179,70.88,39.84
@@ -1692,7 +1692,7 @@ step
     .goto 179,78.11,43.54,45,0
     .goto 179,78.05,38.73,45,0
     .goto 179,77.83,35.81,45,0
-    >>Kill |cRXP_ENEMY_Brown Stags|r. Loot them for |cRXP_LOOT_Sides of Stag Meat|r.
+    >>Kill |cRXP_ENEMY_Brown Stags|r. Loot them for [|cRXP_LOOT_Sides of Stag Meat|r].
     .complete 24675,1 --Side of Stag Meat (10)
 	.mob Brown Stag
 step
@@ -1712,8 +1712,8 @@ step
     .waypoint 180,27.38,59.96,15,0
     .waypoint 180,27.12,66.71,15,0
     .waypoint 179,75.71,31.17,15,0
-    >>Kill |cRXP_ENEMY_Forsaken Slavedrivers|r. Loot them for |T134247:0|t|cRXP_LOOT_[Slaver's Keys]|r.
-    >>Use the |T134247:0|t|cRXP_LOOT_[Slaver's Keys]|r. on the |cRXP_PICK_Ball and Chain|r. of the |cRXP_FRIENDLY_Enslaved Villagers|r. inside and around Emberstone Mine to free them
+    >>Kill |cRXP_ENEMY_Forsaken Slavedrivers|r. Loot them for |T134247:0|t[|cRXP_LOOT_Slaver's Keys|r].
+    >>Use the |T134247:0|t[|cRXP_LOOT_Slaver's Keys|r. on the |cRXP_PICK_Ball and Chain|r. of the |cRXP_FRIENDLY_Enslaved Villagers|r]. inside and around Emberstone Mine to free them
     .collect 49881,5,24575,1,-1 --Slaver's Key (5)
     .complete 24575,1 --Enslaved Gilnean freed (5)
 	.mob Forsaken Slavedriver
@@ -1756,7 +1756,7 @@ step << skip
 --XX skipping because theres 0 repair vendors in Gilneas past duskhaven?
 step
     #requires Enslaved
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magda Whitewall|r,|cRXP_FRIENDLY_Marcus|r,and |cRXP_FRIENDLY_Lorna Crowley|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magda Whitewall|r, |cRXP_FRIENDLY_Marcus|r, and |cRXP_FRIENDLY_Lorna Crowley|r.
     .turnin 24675 >>Turn in Last Meal
     .goto 179,70.65,39.70
 	.target +Magda Whitewall
@@ -2001,7 +2001,7 @@ step
     .goto 179,64.89,27.43,-1
     .goto 179,61.30,35.14,-1
     >>Whilst on the |cRXP_FRIENDLY_Captured Riding Bat|r.:
-    >>Kill |cRXP_ENEMY_Forsaken Plaguesmiths|r,|cRXP_ENEMY_Forsaken Invaders|r,and |cRXP_ENEMY_Forsaken Catapults|r.
+    >>Kill |cRXP_ENEMY_Forsaken Plaguesmiths|r, |cRXP_ENEMY_Forsaken Invaders|r, and |cRXP_ENEMY_Forsaken Catapults|r.
     >>Cast |T133709:0|t[Iron Bomb] (1) (Ranged Instant: Deals damage)
     .complete 24920,2 --Invading Forsaken (40)
     .complete 24920,1 --Forsaken Catapult slain (6)
@@ -2027,7 +2027,7 @@ step
     #completewith Knee
     .goto 179,53.56,55.10,20,0
     .goto 179,49.87,57.26,10,0
-    >>|cRXP_WARN_Use the|r. |T135432:0|t[Half-Burnt Torch] |cRXP_WARN_to scare away |cRXP_ENEMY_Putrescent Maggots|r,|cRXP_ENEMY_Underground Spiders|r,and|r. |cRXP_ENEMY_Graveyard Rats|r.
+    >>|cRXP_WARN_Use the|r. |T135432:0|t[Half-Burnt Torch] |cRXP_WARN_to scare away |cRXP_ENEMY_Putrescent Maggots|r, |cRXP_ENEMY_Underground Spiders|r, and|r. |cRXP_ENEMY_Graveyard Rats|r.
     .goto 179,49.78,57.88,6 >>Travel toward the end of the crypt
     .mob Putrescent Maggot
     .mob Underground Spider
@@ -2061,7 +2061,7 @@ step
     .goto 179,49.33,49.77,15,0
     .goto 179,51.01,53.23,15,0
     .goto 179,51.18,54.22,15,0
-    >>Open the |cRXP_PICK_Disturbed Soil|r. on the ground. Loot it for its |cRXP_LOOT_Unearthed Mementos|r.
+    >>Open the |cRXP_PICK_Disturbed Soil|r. on the ground. Loot it for its [|cRXP_LOOT_Unearthed Mementos|r].
     .complete 24602,1 --Unearthed Memento (5)
 step
     .goto 179,49.84,56.93
@@ -2121,7 +2121,7 @@ step
     .goto 179,26.56,31.40,60,0
     .goto 179,30.78,38.88,60,0
     >>Whilst in the |cRXP_FRIENDLY_Glaive Thrower|r.:
-    >>Kill |cRXP_ENEMY_Orc Raiders|r,|cRXP_ENEMY_Wolfmaw Outriders|r,and |cRXP_ENEMY_Orcish War Machines|r.
+    >>Kill |cRXP_ENEMY_Orc Raiders|r, |cRXP_ENEMY_Wolfmaw Outriders|r, and |cRXP_ENEMY_Orcish War Machines|r.
     >>Cast |T132330:0|t[Launch Glaive] (1) (Ranged Instant: Deals damage and knocks back)
     >>|T236303:0|t[Glaive Barrage] (2) (Ranged Instant: Deals A LOT of damage and knocks back)
     >>|T136106:0|t[Double Speed] (3) (Self Instant: Increases movespeed by 100% for 10 seconds)

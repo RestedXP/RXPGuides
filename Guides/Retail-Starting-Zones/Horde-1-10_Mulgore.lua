@@ -85,7 +85,7 @@ step
     .target Adana Thunderhorn
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot the thiefs for their |cRXP_LOOT_stolen rifles|r.
+    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot the thiefs for their [|cRXP_LOOT_stolen rifles|r].
     .complete 14456,1 --7/7 Stolen Rifle
     .mob Bristleback Gun Thief
 step
@@ -97,7 +97,7 @@ step
     .complete 14455,1 --7/7 Bristleback Thorncaller slain
     .mob Bristleback Thorncaller
 step
-    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot the thiefs for their |cRXP_LOOT_stolen rifles|r.
+    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot the thiefs for their [|cRXP_LOOT_stolen rifles|r].
     .goto 462,36.18,61.12,15,0
     .goto 462,32.81,63.11
     .complete 14456,1 --7/7 Stolen Rifle
@@ -118,18 +118,18 @@ step
     .complete 14459,1 --10/10 Armored Battleboar slain
     .mob Armored Battleboar
 step
-    >>Use |T135432:0|t[Adana's Torch] next to the |cRXP_LOOT_trough|r.
+    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .use 49539
     .goto 462,26.37,66.33
     .complete 14461,1 --1/1 First Trough
 step
-    >>Use |T135432:0|t[Adana's Torch] next to the |cRXP_LOOT_trough|r.
+    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .use 49539
     .goto 462,25.12,69.15
     .complete 14461,2 --1/1 Second Trough
 step
     #label QuestKeybindingsTauren
-    >>Use |T135432:0|t[Adana's Torch] next to the |cRXP_LOOT_trough|r.
+    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .use 49539
     .goto 462,28.2,70.4
     .complete 14461,3 --1/1 Third Trough
@@ -142,7 +142,7 @@ step
     .accept 14460 >>Accept Rite of Honor
     .target Adana Thunderhorn
 step
-    >>Kill |cRXP_ENEMY_Chief Squealer Thornmantle|r. Loot him for his |cRXP_LOOT_mantle|r.
+    >>Kill |cRXP_ENEMY_Chief Squealer Thornmantle|r. Loot him for his [|cRXP_LOOT_mantle|r].
     .goto 462,15.20,46.73
     .complete 14460,1 --1/1 Mane of Thornmantle
     .mob Chief Squealer Thornmantle
@@ -259,7 +259,7 @@ step
     .target Ruul Eagletalon
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their |cRXP_LOOT_talons/paws|r.
+    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their [|cRXP_LOOT_talons/paws|r].
     .complete 20440,2 --4/4 Plainstrider Talon
     .complete 20440,1 --6/6 Prairie Wolf Paw
     .mob Adult Plainstrider
@@ -273,12 +273,12 @@ step
     .mob Palemane Gnoll
 step
     #completewith MulgorePoisonedWater
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_quills|r.
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     >>You don't need to complete this quest at this point
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
 step
-    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their |cRXP_LOOT_talons/paws|r.
+    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their [|cRXP_LOOT_talons/paws|r].
     .goto 7,53.65,68.34,30,0
     .goto 7,50.30,65.51,30,0
     .goto 7,51.92,62.67
@@ -300,7 +300,7 @@ step
     .complete 24440,1 --Well Cleansed
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_quills|r.
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     >>|cRXP_WARN_You don't need to complete this quest at this point|r.
     .goto 7,56.22,63.43,30,0
     .complete 761,1 --8/8 Trophy Swoop Quill
@@ -313,7 +313,7 @@ step
     .target Morin Cloudstalker
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_quills|r.
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     >>|cRXP_WARN_You don't need to complete this quest at this point|r.
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
@@ -336,7 +336,7 @@ step
     .complete 26179,1 --7/7 Venture Co. Worker slain
     .mob Venture Co. Worker
 step
-    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for the |cRXP_LOOT_clipboard|r.
+    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for the [|cRXP_LOOT_clipboard|r].
     .goto 9,41.79,84.78
     .complete 26180,1 --1/1 Fizsprocket's Clipboard
     .mob Supervisor Fizsprocket
@@ -349,7 +349,7 @@ step
     .mob Venture Co. Worker
 step
     #completewith MulgorePoisonedWater
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_quills|r.
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     >>|cRXP_WARN_You don't need to complete this quest at this point|r.
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
@@ -406,7 +406,7 @@ step
     .goto 88,35.79,63.03,10,0
     .goto 88,32.51,70.74,20 >>Take one of the two elevators downwards. Dying here costs you at least one minute
 step
-    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_talons|r.
+    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their [|cRXP_LOOT_talons|r].
     >>Look out for Doomsayer Wiserunner
     .goto 7,34.20,37.19,20,0
     .goto 7,35.62,39,85,20,0
@@ -440,23 +440,23 @@ step << Warlock/Hunter
     +|cRXP_WARN_Reminder:Resummon your pet and set it to back to 'Assist'|r.
 step
     #completewith MulgoreCougarStalkerClaws
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_femur|r.
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
     .mob Flatland Cougar
 step
     #completewith MulgoreCougarStalkerClaws
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |cRXP_LOOT_Tender Stride Meat|r.
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a [|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05,0,0
     .collect 33009,1,11129,1
     .mob Adult Plainstrider
 step
     #completewith MulgoreCougarStalkerClaws
-    >>Kill |cRXP_ENEMY_Wiry Swoops|r. Loot them for their |cRXP_LOOT_quills|r.
+    >>Kill |cRXP_ENEMY_Wiry Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Wiry Swoop
 step
     #label MulgoreCougarStalkerClaws
-    >>Kill |cRXP_ENEMY_Praeri Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |cRXP_LOOT_claws|r.
+    >>Kill |cRXP_ENEMY_Praeri Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the [|cRXP_LOOT_claws|r].
     >>Keep an eye out for |cRXP_ENEMY_Mazzranache|r.
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0
@@ -470,18 +470,18 @@ step
     .mob Flatland Cougar
 step
     #completewith TrophySwoopQuill
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_femur|r.
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
     .mob Flatland Cougar
 step
     #completewith TrophySwoopQuill
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |cRXP_LOOT_Tender Stride Meat|r.
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a [|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05,0,0
     .collect 33009,1,11129,1
     .mob Adult Plainstrider
 step
     #label TrophySwoopQuill
-    >>Kill |cRXP_ENEMY_Wiry Swoops|r. Loot them for their |cRXP_LOOT_quills|r.
+    >>Kill |cRXP_ENEMY_Wiry Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0
     .goto 7,42.48,44.81,15,0
@@ -492,16 +492,16 @@ step
     .mob Wiry Swoop
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_femur|r.
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
     .mob Flatland Cougar
 step
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |cRXP_LOOT_Tender Stride Meat|r.
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a [|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05
     .collect 33009,1,11129,1
     .mob Adult Plainstrider
 step
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_femur|r.
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0
     .goto 7,42.48,44.81,15,0
@@ -517,7 +517,7 @@ step
     .deathskip >>Pull some mobs and die
 step
     #completewith MulgoreTurnInThunderhorn
-    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the |cRXP_LOOT_Tender Stride Meat|r.|r.
+    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the [|cRXP_LOOT_Tender Stride Meat|r|r].
     .use 33009
     .target Kyle
     .complete 11129,1 --1/1 Kyle fed
@@ -557,7 +557,7 @@ step
     .turnin 761 >>Turn in Swoop Hunting
     .target Harken Windtotem
 step
-    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the |cRXP_LOOT_Tender Stride Meat|r.|r.
+    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the [|cRXP_LOOT_Tender Stride Meat|r|r].
     .use 33009
     .target Kyle
     .goto 7,48.25,60.43,20,0

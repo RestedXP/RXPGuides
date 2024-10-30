@@ -306,23 +306,23 @@ step
     .mob Defias Mage
 step
     .goto 425,35.61,61.23
-    >>Kill |cRXP_ENEMY_Enforcer Grant.|r Loot them for |cRXP_LOOT_Enforcer Grant's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Grant.|r Loot them for [|cRXP_LOOT_Enforcer Grant's Signet|r]
     .complete 72449,1 --1/1 Enforcer Grant's Signet
     .mob Enforcer Grant
 step
     .goto 425,49.52,62.61
-    >>Kill |cRXP_ENEMY_Enforcer Jennive.|r Loot them for |cRXP_LOOT_Enforcer Jennive's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Jennive.|r Loot them for [|cRXP_LOOT_Enforcer Jennive's Signet|r]
     .complete 72449,2 --1/1 Enforcer Jennive's Signet
     .mob Enforcer Jennive
 step
     .goto 425,35.32,39.05
-    >>Kill |cRXP_ENEMY_Enforcer Tera.|r Loot them for |cRXP_LOOT_Enforcer Tera's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Tera.|r Loot them for [|cRXP_LOOT_Enforcer Tera's Signet|r]
     .complete 72449,3 --1/1 Enforcer Tera's Signet
     .mob Enforcer Tera
 step
     #label Enforcer Horb's Signet
     .goto 425,31.25,19.24
-    >>Kill |cRXP_ENEMY_Enforcer Horb.|r Loot them for |cRXP_LOOT_Enforcer Horb's Signet|r
+    >>Kill |cRXP_ENEMY_Enforcer Horb.|r Loot them for [|cRXP_LOOT_Enforcer Horb's Signet|r]
     .complete 72449,4 --1/1 Enforcer Horb's Signet
     .mob Enforcer Horb
 step
@@ -1183,7 +1183,7 @@ step
     .accept 54582 >>Accept Smarter Than Your Average Trogg
 step
     .goto 114,64.62,23.02
-    >>Kill |cRXP_ENEMY_Krugg the Smart.|r Loot them for the |cRXP_LOOT_Broken Communication Device.|r
+    >>Kill |cRXP_ENEMY_Krugg the Smart.|r Loot them for the [|cRXP_LOOT_Broken Communication Device.|r]
     .complete 54582,1 --1/1 Krugg the Smart slain
     .complete 54582,2 --1/1 Broken Communication Device
     .mob Krugg the Smart
@@ -1360,7 +1360,7 @@ step
     .accept 54982 >>Accept The Spirit of the Hunter
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for |cRXP_LOOT_Bloodstained Fangs.|r
+    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for [|cRXP_LOOT_Bloodstained Fangs.|r]
     .complete 54982,1 --6/6 Bloodstained Fangs
     .mob Mistfang Alpha
 step
@@ -1372,7 +1372,7 @@ step
     .goto 47,77.27,35.49,15,0
     .goto 47,77.3,30.53,15,0
     .goto 47,81.7,33.46,15,0
-    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for |cRXP_LOOT_Bloodstained Fangs.|r
+    >>Kill |cRXP_ENEMY_Mistfang Alpha.|r Loot them for [|cRXP_LOOT_Bloodstained Fangs.|r]
     .complete 54982,1 --6/6 Bloodstained Fangs
     .mob Mistfang Alpha
 step
@@ -1748,7 +1748,7 @@ step
     .goto 106,52.67,80.43,40,0
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Infected Nightsaber|r and |cRXP_ENEMY_Corrupted Grizzly|r. Loot them for |cRXP_LOOT_itted Bones.|r
+    >>Kill |cRXP_ENEMY_Infected Nightsaber|r and |cRXP_ENEMY_Corrupted Grizzly|r. Loot them for [|cRXP_LOOT_itted Bones.|r]
     .complete 78077,1 --8/8 Pitted Bones
     .mob Infected Nightsaber
     .mob Corrupted Grizzly
@@ -2028,7 +2028,7 @@ step
     .goto 1532,55.88,69.89,20,0
     .goto 1532,55.7,74.02,20,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shady Thug.|r
-    *|cRXP_WARN_If you have to kill them|r Loot them for |cRXP_LOOT_Unpaid Debt|r
+    *|cRXP_WARN_If you have to kill them|r Loot them for [|cRXP_LOOT_Unpaid Debt|r]
     .skipgossip
     .complete 57051,1 --8/8 Unpaid Debt
     .target Shady Thug
@@ -2308,7 +2308,7 @@ step
     .goto 50,88.01,45.74,20,0
     .goto 50,89.17,49.06,20,0
     .goto 50,87.18,49.64,20,0
-    >>Kill |cRXP_ENEMY_Animated Offering|r, |cRXP_ENEMY_Hakkari Ritualist|r and |cRXP_ENEMY_Foul Offering.|r Loot them for |cRXP_LOOT_Offering to Hakkar|r
+    >>Kill |cRXP_ENEMY_Animated Offering|r, |cRXP_ENEMY_Hakkari Ritualist|r and |cRXP_ENEMY_Foul Offering.|r Loot them for [|cRXP_LOOT_Offering to Hakkar|r]
     .complete 77879,1 --6/6 Offering to Hakkar
     .mob Animated Offering
     .mob Hakkari Ritualist
@@ -2396,7 +2396,7 @@ step
     .accept 77882 >>Accept Stolen but Not Forgotten
     .accept 78875 >>Accept The Unkillable
 step
-    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for |cRXP_LOOT_Altar Fragment.|r
+    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for [|cRXP_LOOT_Altar Fragment.|r]
     *Click on |cRXP_PICK_Dusty Bags|r
     .complete 77882,1 --8/8 Altar Fragment
     .mob Mosh'Ogg Witch Doctor
@@ -2407,7 +2407,7 @@ step
     .goto 50,68.44,49.04,10,0
     .goto 50,67.92,47,10,0
     .goto 50,69.18,46.97
-    >>Kill |cRXP_ENEMY_Mai'Zoth.|r Loot them for |cRXP_LOOT_Lukou's Altar Centerpiece|r
+    >>Kill |cRXP_ENEMY_Mai'Zoth.|r Loot them for [|cRXP_LOOT_Lukou's Altar Centerpiece|r]
     .complete 78875,1 --1/1 Lukou's Altar Centerpiece
     .mob Mai'Zoth
 step
@@ -2420,7 +2420,7 @@ step
     .goto 50,68.34,48.88,10,0
     .goto 50,68.76,49.38,10,0
     .goto 50,68.97,48.84,10,0
-    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for |cRXP_LOOT_Altar Fragment.|r
+    >>Kill |cRXP_ENEMY_Mosh'Ogg Witch Doctor|r and |cRXP_ENEMY_Mosh'Ogg Spellcrafter.|r Loot them for [|cRXP_LOOT_Altar Fragment.|r]
     *Click on |cRXP_PICK_Dusty Bags|r
     .complete 77882,1 --8/8 Altar Fragment
 step
@@ -3015,7 +3015,7 @@ step
     .timer 5,RP
 step
     .goto 1,59.15,63.43
-    >>Kill |cRXP_ENEMY_Gor'krosh.|r Loot them for |cRXP_LOOT_Long Knife|r
+    >>Kill |cRXP_ENEMY_Gor'krosh.|r Loot them for [|cRXP_LOOT_Long Knife|r]
     .complete 72475,2 --1/1 Gor'krosh slain
     .complete 72475,4 --1/1 "Long Knife" Collected
     .mob Gor'krosh
@@ -3724,7 +3724,7 @@ step
     .accept 72857 >>Accept Boom Weed
 step
     #completewith Notice to All Undead
-    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for |cRXP_LOOT_Plagued Flesh|r
+    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for [|cRXP_LOOT_Plagued Flesh|r]
     .complete 72856,1 --12/12 Plagued Flesh
     .mob Plagued Wolf
     .mob Sickly Deer
@@ -3761,7 +3761,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for |cRXP_LOOT_Plagued Flesh|r
+    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for [|cRXP_LOOT_Plagued Flesh|r]
     .complete 72856,1 --12/12 Plagued Flesh
     .mob Plagued Wolf
     .mob Sickly Deer
@@ -3771,7 +3771,7 @@ step
     .complete 72857,1 --6/6 Boom Weed
 step
     #label Plagued Flesh
-    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for |cRXP_LOOT_Plagued Flesh|r
+    >>Kill |cRXP_ENEMY_Plagued Wolf,|r |cRXP_ENEMY_Sickly Deer|r and |cRXP_ENEMY_Plagued Bear.|r Loot them for [|cRXP_LOOT_Plagued Flesh|r]
     .complete 72856,1 --12/12 Plagued Flesh
     .mob Plagued Wolf
     .mob Sickly Deer
@@ -3796,7 +3796,7 @@ step
 step
     .goto 21,52.75,27.58,10,0
     .goto 21,52.81,28.10
-    >>Kill |cRXP_ENEMY_Lieutenant Hawlsey.|r Loot them for |cRXP_LOOT_Hawlsey's Armor|r
+    >>Kill |cRXP_ENEMY_Lieutenant Hawlsey.|r Loot them for [|cRXP_LOOT_Hawlsey's Armor|r]
     .complete 72859,1 --1/1 Steal Lieutenant Hawlsey's Armor
     .mob Lieutenant Hawlsey
 step

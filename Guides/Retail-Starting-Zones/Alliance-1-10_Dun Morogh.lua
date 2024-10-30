@@ -157,11 +157,11 @@ step
     .goto 27,38.393,67.671,0
     .goto 27,36.450,67.833,0
     .goto 27,36.450,67.833,15,0
-    >>Loot the |cRXP_LOOT_Forgotten Dwarven Artifacts|r. in the ground
+    >>Loot the [|cRXP_LOOT_Forgotten Dwarven Artifacts|r]. in the ground
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 step
     .goto 27,37.079,67.402
-    >>Open the |cRXP_PICK_Keg of Gnomenbrau|r on the ground. Loot it for the |cRXP_LOOT_Cask of Gnomenbrau|r
+    >>Open the |cRXP_PICK_Keg of Gnomenbrau|r on the ground. Loot it for the [|cRXP_LOOT_Cask of Gnomenbrau|r]
 .
     .complete 24474,3 --Cask of Gnomenbrau (1)
 step
@@ -179,11 +179,11 @@ step
     .goto 27,36.821,68.680,15,0
     .goto 27,36.450,67.833,15,0
     .goto 27,35.548,67.767,15,0 --West1
-    >>Loot the |cRXP_LOOT_Forgotten Dwarven Artifacts|r. in the ground
+    >>Loot the [|cRXP_LOOT_Forgotten Dwarven Artifacts|r]. in the ground
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 step
     .goto 27,34.822,67.386
-    >>Open the |cRXP_PICK_Keg of Stormhammer Stout|r on the ground. Loot it for the |cRXP_LOOT_Casak of Stormhammer Stout|r
+    >>Open the |cRXP_PICK_Keg of Stormhammer Stout|r on the ground. Loot it for the [|cRXP_LOOT_Casak of Stormhammer Stout|r]
 .
     .complete 24474,1 --Cask of Stormhammer Stout (1)
 step
@@ -196,11 +196,11 @@ step
     .goto 27,34.244,67.234,15,0
     .goto 27,34.321,68.013,15,0
     .goto 27,33.794,67.327,15,0
-    >>Loot the |cRXP_LOOT_Forgotten Dwarven Artifacts|r. in the ground
+    >>Loot the [|cRXP_LOOT_Forgotten Dwarven Artifacts|r]. in the ground
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 step
     .goto 27,31.469,67.635
-    >>Open the |cRXP_PICK_Keg of Theramore Pale Ale|r in the ground. Loot it for the |cRXP_LOOT_Cask of Stormhammer Stout|r
+    >>Open the |cRXP_PICK_Keg of Theramore Pale Ale|r in the ground. Loot it for the [|cRXP_LOOT_Cask of Stormhammer Stout|r]
 .
     .complete 24474,2 --Cask of Theramore Pale Ale (1)
 step
@@ -225,7 +225,7 @@ step
     .goto 27,37.093,68.372,15,0
     .goto 27,36.821,68.680,15,0
     .goto 27,36.450,67.833,15,0
-    >>Loot the |cRXP_LOOT_Forgotten Dwarven Artifacts|r. in the ground
+    >>Loot the [|cRXP_LOOT_Forgotten Dwarven Artifacts|r]. in the ground
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 step << skip
     #loop
@@ -250,7 +250,7 @@ step << skip
     .goto 27,28.926,69.221,15,0
     .goto 27,29.245,68.975,15,0
     .goto 27,31.020,69.465,15,0
-    >>Loot the |cRXP_LOOT_Forgotten Dwarven Artifacts|r. in the ground
+    >>Loot the [|cRXP_LOOT_Forgotten Dwarven Artifacts|r]. in the ground
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 --XX Far west side near boars. Just not worth it - there's enough shared spawns outside Anvilmar
 step
@@ -317,7 +317,7 @@ step
     .goto 27,39.236,72.809,0
     .goto 27,37.185,74.444,0
     .goto 27,34.571,68.391,35,0
-    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Ragged Wolf Hides|r
+    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their [|cRXP_LOOT_Ragged Wolf Hides|r]
 .
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
@@ -331,7 +331,7 @@ step
     .goto 27,36.077,74.386,0
     .goto 27,31.914,69.640,0
     .goto 27,34.474,69.536,35,0
-    >>Kill |cRXP_ENEMY_Small Crag Boars|r. Loot them for their |cRXP_LOOT_Boar Haunches|r.
+    >>Kill |cRXP_ENEMY_Small Crag Boars|r. Loot them for their [|cRXP_LOOT_Boar Haunches|r].
     .complete 24475,1 --Boar Haunch (3)
     .mob *Small Crag Boar
 step
@@ -346,8 +346,8 @@ step
     .goto 27,32.729,70.874,30,0
     .goto 27,33.203,71.701,30,0
     .goto 27,34.104,71.636,30,0
-    >>Kill |cRXP_ENEMY_Rockjaw Scavengers|r. Loot them for their |cRXP_LOOT_Priceless Rockjaw Artifacts|r.
-    >>|cRXP_PICK_Be aware as |cRXP_ENEMY_Rockjaw Scavengers|r cast|r. |T135238:0|t[Throw Priceless Artifact] |cRXP_PICK_(Deals damage, but gives you a |cRXP_LOOT_Priceless Rockjaw Artifact|r.)|r
+    >>Kill |cRXP_ENEMY_Rockjaw Scavengers|r. Loot them for their [|cRXP_LOOT_Priceless Rockjaw Artifacts|r].
+    >>|cRXP_PICK_Be aware as |cRXP_ENEMY_Rockjaw Scavengers|r cast|r. |T135238:0|t[Throw Priceless Artifact] |cRXP_PICK_(Deals damage, but gives you a [|cRXP_LOOT_Priceless Rockjaw Artifact|r.)|r]
 .
     .complete 24486,1 --Priceless Rockjaw Artifact (5)
 	.mob Rockjaw Scavenger
@@ -374,7 +374,7 @@ step
     .waypoint 27,38.883,72.557,50,0
     .waypoint 27,37.879,73.478,50,0
     .waypoint 27,37.185,74.444,50,0
-    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Ragged Wolf Hides|r
+    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their [|cRXP_LOOT_Ragged Wolf Hides|r]
 .
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
@@ -393,7 +393,7 @@ step
     .goto 27,32.453,72.893,50,0
     .goto 27,30.989,70.747,50,0
     .goto 27,31.914,69.640,50,0
-    >>Kill |cRXP_ENEMY_Small Crag Boars|r. Loot them for their |cRXP_LOOT_Boar Haunches|r.
+    >>Kill |cRXP_ENEMY_Small Crag Boars|r. Loot them for their [|cRXP_LOOT_Boar Haunches|r].
     .complete 24475,1 --Boar Haunch (3)
     .mob Small Crag Boar
 step
@@ -452,7 +452,7 @@ step
     .isOnQuest 24487
     .subzoneskip 77,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r,|cRXP_FRIENDLY_Apprentice Soren|r, and |cRXP_FRIENDLY_Felix Whindlebolt|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r, |cRXP_FRIENDLY_Apprentice Soren|r, and |cRXP_FRIENDLY_Felix Whindlebolt|r.
     .turnin 24487 >>Turn in Whitebeard Needs Ye
     .accept 182 >>Accept The Troll Menace
     .goto 27,32.064,74.170
@@ -492,7 +492,7 @@ step
 	.mob Frostmane Troll Whelp
 step
     .goto 27,27.846,74.530
-    >>Loot |cRXP_LOOT_Felix's Box|r. on the ground
+    >>Loot [|cRXP_LOOT_Felix's Box|r]. on the ground
     .complete 3361,1 --Felix's Box (1)
 step
     #optional
@@ -526,7 +526,7 @@ step
 --XX no good way to do the .goto prios for these steps
 step
     .goto 27,29.750,78.485
-    >>Loot |cRXP_LOOT_Felix's Chest|r. on the ground
+    >>Loot [|cRXP_LOOT_Felix's Chest|r]. on the ground
     .complete 3361,2 --Felix's Chest (1)
 step
     #optional
@@ -548,7 +548,7 @@ step
 step
     #requires Rikkari
     .goto 27,33.325,77.755
-    >>Loot |cRXP_LOOT_Felix's Bucket of Bolts|r. on the ground
+    >>Loot [|cRXP_LOOT_Felix's Bucket of Bolts|r]. on the ground
     .complete 3361,3 --Felix's Bucket of Bolts (1)
 step
     #optional
@@ -556,7 +556,7 @@ step
 --XXREQ Placeholder invis step until multiple requires per step
 step
     #requires Whelps
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felix Whindlebolt|r, |cRXP_FRIENDLY_Apprentice Soren|r,and |cRXP_FRIENDLY_Grelin Whitebeard|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felix Whindlebolt|r, |cRXP_FRIENDLY_Apprentice Soren|r, and |cRXP_FRIENDLY_Grelin Whitebeard|r
 .
     .turnin 3361 >>Turn in A Refugee's Quandary
     .goto 27,31.906,74.525,10,0
@@ -715,9 +715,9 @@ step
 	.target Jona Ironstock
 step
     #label Pack
-    >>Open the |cRXP_PICK_Beer Barrel on the ground|r. Loot it for the |cRXP_LOOT_Coldridge Beer Flagon|r.
-    >>Loot the |cRXP_LOOT_Leftover Boar Meat|r. on the table
-    >>Open the box of |cRXP_PICK_Wolf-Hide Cloaks|r. on the ground. Loot it for the |cRXP_LOOT_Ragged Wolf-Hide Cloak|r.
+    >>Open the |cRXP_PICK_Beer Barrel on the ground|r. Loot it for the [|cRXP_LOOT_Coldridge Beer Flagon|r].
+    >>Loot the [|cRXP_LOOT_Leftover Boar Meat|r]. on the table
+    >>Open the box of |cRXP_PICK_Wolf-Hide Cloaks|r. on the ground. Loot it for the [|cRXP_LOOT_Ragged Wolf-Hide Cloak|r].
     .complete 24492,1 --Coldridge Beer Flagon (1)
     .goto 27,35.949,66.531
     .complete 24492,3 --Leftover Boar Meat (1)
@@ -725,7 +725,7 @@ step
     .complete 24492,2 --Ragged Wolf-Hide Cloak (1)
     .goto 27,35.900,66.633
 step << skip
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r,|cRXP_PICK_Leftover Boar Meat|r and the |cRXP_PICK_Crate|r. |cRXP_WARN_inside Anvilmar|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r, |cRXP_PICK_Leftover Boar Meat|r and the |cRXP_PICK_Crate|r. |cRXP_WARN_inside Anvilmar|r.
     .complete 24492,3
     .goto Dun Morogh,35.39,66.03
     .complete 24492,2
@@ -981,7 +981,7 @@ step
     .goto 469,41.387,31.803,15,0
     .goto 469,42.278,28.782,15,0
     .goto 469,41.582,29.198,15,0
-    >>Loot the |cRXP_LOOT_Spare Parts|r. on the ground
+    >>Loot the [|cRXP_LOOT_Spare Parts|r]. on the ground
     .complete 26222,1 --Spare Part (7)
 step
     .goto 469,40.578,28.021
@@ -1025,7 +1025,7 @@ step
     .goto 469,38.054,47.396,0
     .goto 469,39.129,53.303,0
     .goto 469,41.419,42.524,0
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their |cRXP_LOOT_Recovered Possessions|r.
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their [|cRXP_LOOT_Recovered Possessions|r].
     .complete 26264,1 --Recovered Possession (6)
     .mob *Toxic Sludge
 step
@@ -1074,7 +1074,7 @@ step
     .goto 469,40.920,48.049,40,0
     .goto 469,40.209,47.931,40,0
     .goto 469,41.419,42.524,40,0
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their |cRXP_LOOT_Recovered Possessions|r.
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their [|cRXP_LOOT_Recovered Possessions|r].
     .complete 26264,1 --Recovered Possession (6)
     .mob Toxic Sludge
 step
@@ -1131,7 +1131,7 @@ step
     .waypoint 469,47.163,65.769,40,0
     .waypoint 469,43.581,70.051,40,0
     .waypoint 469,42.336,69.559,40,0
-    >>Kill |cRXP_ENEMY_Rockjaw Bonepickers|r and |cRXP_ENEMY_Rockjaw Marauders|r. Loot them for the |cRXP_LOOT_Stolen Powder Kegs|r.
+    >>Kill |cRXP_ENEMY_Rockjaw Bonepickers|r and |cRXP_ENEMY_Rockjaw Marauders|r. Loot them for the [|cRXP_LOOT_Stolen Powder Kegs|r].
     .complete 26285,1 --Stolen Powder Keg (7)
 	.mob Rockjaw Bonepicker
 	.mob Rockjaw Marauder
@@ -1329,7 +1329,7 @@ step << skip
 --XX unlikely to ever be worth
 step
     #requires Tanks
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r,|cRXP_FRIENDLY_Hinkles Fastblast|r,and |cRXP_FRIENDLY_Kelsey Steelspark|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r, |cRXP_FRIENDLY_Hinkles Fastblast|r, and |cRXP_FRIENDLY_Kelsey Steelspark|r.
     .turnin 26331 >>Turn in Crushcog's Minions
     .goto 469,38.802,32.715
 	.target +High Tinker Mekkatorgue
@@ -1557,7 +1557,7 @@ step
     .goto 27,53.193,42.603,0
     .goto 27,53.376,44.252,60,0
     .goto 27,53.193,42.603,60,0
-	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r.
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their [|cRXP_LOOT_Tender Boar Ribs|r].
     .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
@@ -1602,8 +1602,8 @@ step
     .waypoint 27,49.153,41.241,15,0
     .waypoint 27,49.220,37.873,15,0
     .waypoint 27,48.949,37.202,15,0
-    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for their |cRXP_LOOT_Shimmerweed|r.
-    >>Click on the |cRXP_PICK_Shimmerweed Baskets|r on the ground. Loot them for their |cRXP_LOOT_Shimmerweed|r.
+    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for their [|cRXP_LOOT_Shimmerweed|r].
+    >>Click on the |cRXP_PICK_Shimmerweed Baskets|r on the ground. Loot them for their [|cRXP_LOOT_Shimmerweed|r].
     .complete 315,1 --Shimmerweed (7)
 	.mob Frostmane Seer
 step
@@ -1681,7 +1681,7 @@ step
     .goto 27,51.697,54.360,60,0
     .goto 27,50.738,54.065,60,0
     .goto 27,49.815,53.919,60,0
-	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r.
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their [|cRXP_LOOT_Tender Boar Ribs|r].
     .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
@@ -1699,7 +1699,7 @@ step
     .waypoint 29,60.967,56.171,15,0
     .waypoint 29,56.301,54.391,15,0
     .waypoint 29,50.663,47.870,15,0
-    >>Loot the |cRXP_LOOT_Pilfered Supplies|r. on the ground
+    >>Loot the [|cRXP_LOOT_Pilfered Supplies|r]. on the ground
     .complete 25668,1 --Pilfered Supplies (6)
 step
     #completewith WendigoCave
@@ -1802,7 +1802,7 @@ step
     .goto 27,55.315,56.087,0
     .goto 27,55.156,54.313,60,0
     .goto 27,55.315,56.087,60,0
-	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r.
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their [|cRXP_LOOT_Tender Boar Ribs|r].
     .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
@@ -1827,7 +1827,7 @@ step
     .waypoint 27,57.341,57.547,45,0
     .waypoint 27,56.923,57.456,45,0
     .waypoint 27,56.337,56.955,45,0
-    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r. Loot them for their |cRXP_LOOT_Gyromechanic Gears|r.
+    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r. Loot them for their [|cRXP_LOOT_Gyromechanic Gears|r].
     .complete 412,1 --Gyromechanic Gear (8)
 	.mob Frostmane Scavenger
 step
@@ -1867,7 +1867,7 @@ step
     .goto 27,54.442,59.686,60,0
     .goto 27,53.235,60.000,60,0
     .goto 27,53.276,57.839,60,0
-	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r.
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their [|cRXP_LOOT_Tender Boar Ribs|r].
     .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step

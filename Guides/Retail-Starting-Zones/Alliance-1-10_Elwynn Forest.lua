@@ -311,7 +311,7 @@ step
     .goto 425,57.63,77.83,50,0
     .goto 425,57.48,71.22,50,0
     .goto 425,56.07,62.66,50,0
-    >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for |cRXP_LOOT_Blackrock Orc Weapons|r.
+    >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for [|cRXP_LOOT_Blackrock Orc Weapons|r].
     .complete 26389,1 --Blackrock Orc Weapon (8)
     .mob Blackrock Invader
 step
@@ -563,7 +563,7 @@ step
     .goto 407,55.83,53.02,15,0
     .goto 407,50.44,59.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kae Ti|r and buy a |T133734:0|t[Ride Ticket Book] from her.
-    *|cRXP_WARN_buy the cheaper version |cRXP_WARN_on the left in the window|r.|r.
+    *|cRXP_WARN_buy the cheaper version |cRXP_WARN_on the left in the window|r|r.
     .collect 92788,1,92794,1 --Ride Ticket Book (1)
 	.target Kae Ti
     .dmf
@@ -577,7 +577,7 @@ step
 step
 	#veteran
     .goto 407,49.45,57.5
-    >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r.|r.
+    >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the quest items in your bag |cRXP_WARN_and skip the ones you don't have)|
     --x insert macro to accept quests here
     .accept 29464 >>Accept Tools of Divination
@@ -594,7 +594,7 @@ step
 step
 	#fresh
     .goto 407,49.45,57.5
-    >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r.|r.
+    >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r|r.
     .zoneskip 407,1
     .dmf
 step
@@ -826,7 +826,7 @@ step
 step
     #completewith FargodeepM
     .goto 37,38.22,83.41,0
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r.
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their [|cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r].
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob Kobold Tunneler
@@ -864,7 +864,7 @@ step
     .goto 39,78.65,28.65,20,0
     .goto 39,57.67,25.29,20,0
     .goto 38,53.73,72.25
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r.
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their [|cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r].
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob Kobold Tunneler
@@ -888,7 +888,7 @@ step
     .goto 37,33.32,84.95,20,0
     .goto 37,33.41,86.16,20,0
     .goto 37,32.48,86.81,20,0
-    >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Brass Collar|r.
+    >>Kill |cRXP_ENEMY_Princess|r. Loot her for her [|cRXP_LOOT_Brass Collar|r].
     .complete 88,1 --1/1 Brass Collar
 	.mob Princess
 step
@@ -943,7 +943,7 @@ step
     .waypoint 37,27.80,88.36,40,0
     .waypoint 37,27.67,86.21,40,0
     .waypoint 37,26.32,86.82,40,0
-    >>Kill |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r.
+    >>Kill |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for their [|cRXP_LOOT_Painted Gnoll Armbands|r].
     .complete 11,1 --8/8 Painted Gnoll Armband
 	.mob *Riverpaw Outrunner
 	.mob *Riverpaw Runt
@@ -1012,7 +1012,7 @@ step
     .goto 52,58.12,19.58,20,0
     .goto 52,57.31,18.33,20,0
     .goto 52,58.56,16.21,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r,|cRXP_FRIENDLY_West Plains Drifters|r,and |cRXP_FRIENDLY_Transients|r. Pay them for their |cRXP_LOOT_Clues|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r. Pay them for their [|cRXP_LOOT_Clues|r].
     .complete 26209,1 --1/1 Clue #1 obtained
     .complete 26209,2 --1/1 Clue #2 obtained
     .complete 26209,3 --1/1 Clue #3 obtained
@@ -1034,7 +1034,7 @@ step
     .goto 52,58.12,19.58,20,0
     .goto 52,57.31,18.33,20,0
     .goto 52,58.56,16.21,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r,|cRXP_FRIENDLY_West Plains Drifters|r,and |cRXP_FRIENDLY_Transients|r. for their |cRXP_LOOT_Clues|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r. for their [|cRXP_LOOT_Clues|r].
     >>|cRXP_WARN_Stay mounted and spam talk to them, ignore them if they turn hostile|r.
     .complete 26209,1 --1/1 Clue #1 obtained
     .complete 26209,2 --1/1 Clue #2 obtained
@@ -1065,7 +1065,7 @@ step
     .goto 52,51.38,15.89,40,0
     .goto 52,50.68,14.77,40,0
     .goto 52,56.46,13.26,40,0
-    >>Kill |cRXP_ENEMY_Riverpaw Scouts|r and |cRXP_ENEMY_Riverpaw Gnolls|r. Loot them for the |cRXP_LOOT_Riverpaw Gnoll Clue|r.
+    >>Kill |cRXP_ENEMY_Riverpaw Scouts|r and |cRXP_ENEMY_Riverpaw Gnolls|r. Loot them for the [|cRXP_LOOT_Riverpaw Gnoll Clue|r].
     .complete 26213,1 --1/1 Riverpaw Gnoll Clue
 	.mob Riverpaw Scout
 	.mob Riverpaw Gnoll
@@ -1192,7 +1192,7 @@ step
 step
 	#completewith next
     .goto 37,75.71,86.29,0
-    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r.
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their [|cRXP_LOOT_Torn Murloc Fins|r].
     .complete 46,1,4 --Torn Murloc Fin (4/8)
     .mob Murloc Forager
     .mob Murloc Lurker
@@ -1217,8 +1217,8 @@ step
 step
     .goto 37,78.87,67.20,10,0
     .goto 37,78.637,67.157
-    >>Kill |cRXP_FRIENDLY_James Clark|r. inside. Loot him for |cRXP_LOOT_James Clark's Head|r and the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r.
-    >>|cRXP_WARN_Use the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r. to start the quest|r.
+    >>Kill |cRXP_FRIENDLY_James Clark|r. inside. Loot him for [|cRXP_LOOT_James Clark's Head|r and the |T134939:0|t|cRXP_LOOT_Gold Pickup Schedule|r].
+    >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r]. to start the quest|r.
     .complete 26152,1 --James Clark's Head (1)
     .collect 1307,1,123,1 --Gold Pickup Schedule (1)
     .accept 123 >>Accept The Collector
@@ -1255,7 +1255,7 @@ step
     .goto 37,80.88,53.78,0
     .goto 37,80.63,62.25,0
     .goto 37,82.79,60.12,0
-    >>Loot |cRXP_LOOT_Bundles of Wood|r. on the ground next to the trees
+    >>Loot [|cRXP_LOOT_Bundles of Wood|r]. on the ground next to the trees
     .complete 5545,1 -- Bundle of Wood (8)
 step
     #label LostGuards
@@ -1279,7 +1279,7 @@ step
     .waypoint 37,77.474,57.257,40,0
     .waypoint 37,77.991,58.108,40,0
     .waypoint 37,79.370,57.016,40,0
-    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r.
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their [|cRXP_LOOT_Torn Murloc Fins|r].
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r. will cast|r. |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r.
     .complete 46,1 --Torn Murloc Fin (8)
     .mob Murloc Forager
@@ -1336,7 +1336,7 @@ step
     .goto 37,84.20,61.55,20,0
     .goto 37,83.85,60.48,20,0
     .goto 37,82.79,60.12,20,0
-    >>Loot |cRXP_LOOT_Bundles of Wood|r. on the ground next to the trees
+    >>Loot [|cRXP_LOOT_Bundles of Wood|r]. on the ground next to the trees
     .complete 5545,1 -- Bundle of Wood (8)
 step << skip
     #requires MurlocFins
@@ -1359,7 +1359,7 @@ step
     .goto 37,68.23,76.33,0
     .goto 37,71.31,76.93,0
     .goto 37,71.81,78.51,0
-    >>Kill |cRXP_ENEMY_Bandits|r,|cRXP_ENEMY_Erlan Drudgemoor|r. inside, and |cRXP_ENEMY_Surena Caledon|r. inside. Loot them for their |cRXP_LOOT_Linen Scraps|r.
+    >>Kill |cRXP_ENEMY_Bandits|r, |cRXP_ENEMY_Erlan Drudgemoor|r. inside, and |cRXP_ENEMY_Surena Caledon|r. inside. Loot them for their [|cRXP_LOOT_Linen Scraps|r].
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
     .mob Erlan Drudgemoor
@@ -1368,7 +1368,7 @@ step
     #optional
     #label Morgan
     .goto 37,71.02,80.67
-    >>Kill |cRXP_ENEMY_Morgan the Collector|r. inside. Loot him for |cRXP_LOOT_The Collector's Ring|r and |cRXP_LOOT_Linen Scraps|r.
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r. inside. Loot him for [|cRXP_LOOT_The Collector's Ring|r and |cRXP_LOOT_Linen Scraps|r].
     >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. in and around the house. Loot it if it's up|r.
     .complete 147,1 --The Collector's Ring (1)
     .complete 83,1 --Collect Linen Scrap (6)
@@ -1378,7 +1378,7 @@ step
     .isOnQuest 83
 step
     .goto 37,71.02,80.67
-    >>Kill |cRXP_ENEMY_Morgan the Collector|r. inside. Loot him for |cRXP_LOOT_The Collector's Ring|r.
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r. inside. Loot him for [|cRXP_LOOT_The Collector's Ring|r].
     >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. in and around the house. Loot it if it's up|r.
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
@@ -1407,7 +1407,7 @@ step
     .goto 37,71.31,76.93,10,0
     .goto 37,70.84,78.22,50,0
     .goto 37,71.81,78.51,50,0
-    >>Kill |cRXP_ENEMY_Bandits|r. Loot them for their |cRXP_LOOT_Linen Scraps|r.
+    >>Kill |cRXP_ENEMY_Bandits|r. Loot them for their [|cRXP_LOOT_Linen Scraps|r].
     >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. in and around the barn. Loot it if it's up|r.
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit

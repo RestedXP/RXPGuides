@@ -464,8 +464,8 @@ function addon.comms.OpenBugReport(stepNumber)
                     end
 
                     if e.x and e.y then
-                        stepData = fmt("%s\n  goto = %.2f / %.2f", stepData,
-                                       e.x, e.y)
+                        stepData = fmt("%s\n  goto = %.2f / %.2f (%d/%d,%.4f,%.4f)", stepData,
+                                       e.x, e.y, e.zone or 0, e.instance, e.wx, e.wy )
                     end
 
                     if e.targets then
