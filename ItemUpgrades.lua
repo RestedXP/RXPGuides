@@ -1358,7 +1358,6 @@ addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
     if not addon.settings.profile.enableItemUpgradesAH then return end
-    if addon.game == "CATA" then return end -- TODO support Cata
 
     if ahSession.isInitialized then return end
 
