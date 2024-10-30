@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.gameVersion > 40000 then return end
+if addon.gameVersion > 50000 then return end
 
 local GameTooltip = _G.GameTooltip
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
@@ -454,8 +454,13 @@ function addon.talents.functions.talent(element, validate)
         talentIndex = lookup[talentData.tier][talentData.column]
 
         if talentIndex and validate then return true end
-
-        if addon.gameVersion > 30000 then
+        local thing
+        if addon.gameVersion > 40000 then
+            -- Return values don't match API docs/TWW, so used /dump GetTalentInfo(1,11) for Arms War
+            name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(
+                                                            talentData.tab,
+                                                            talentIndex)
+        elseif addon.gameVersion > 30000 then
             name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
                                                                   talentData.tab,
                                                                   talentIndex)
@@ -675,6 +680,9 @@ end
 function addon.talents:DrawTalents()
     local guide = self:GetCurrentGuide()
     if not guide then return end
+
+    -- TODO add talent plan support
+    if addon.game == "CATA" then return end
 
     if not PlayerTalentFrame:IsShown() then return end
     if PlayerTalentFrame.pet then return end
@@ -982,5 +990,15 @@ function addon.talents:ProcessPetTalents(validate)
     end
 
 end
+
+addon.talents.cata = {}
+
+local function cataDrawTalentLevels(talentIndex, numbers) end
+
+local function cataSetHighlightColor(talentIndex, numbers) end
+
+function addon.talents.cata:DrawTalents() end
+
+function addon.talents.cata:HookUI() end
 
 _G.RXPGuides.talents = {RegisterGuide = addon.talents.RegisterGuide}
