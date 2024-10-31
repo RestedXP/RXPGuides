@@ -681,13 +681,12 @@ function addon.talents:DrawTalents()
     local guide = self:GetCurrentGuide()
     if not guide then return end
 
-    -- TODO add talent plan support
-    if addon.game == "CATA" then return end
-
     if not PlayerTalentFrame:IsShown() then return end
     if PlayerTalentFrame.pet then return end
 
     if not indexLookup['player'] then self:BuildIndexLookup() end
+
+    if addon.game == "CATA" then return addon.talents.cata:DrawTalents(guide) end
 
     if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
@@ -997,7 +996,17 @@ local function cataDrawTalentLevels(talentIndex, numbers) end
 
 local function cataSetHighlightColor(talentIndex, numbers) end
 
-function addon.talents.cata:DrawTalents() end
+function addon.talents.cata:DrawTalents(guide)
+    guide = guide or self:GetCurrentGuide()
+    if not guide then return end
+
+    if not PlayerTalentFrame:IsShown() then return end
+    if PlayerTalentFrame.pet then return end
+
+    if not indexLookup['player'] then self:BuildIndexLookup() end
+
+    print("cata.DrawTalents()")
+end
 
 function addon.talents.cata:HookUI() end
 
