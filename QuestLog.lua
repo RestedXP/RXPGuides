@@ -130,8 +130,9 @@ function addon.UpdateQuestButton(index)
             tooltip = format("%s%s%s%s%s|r", tooltip, separator,
                                 addon.icons.error, addon.colors.tooltip,
                                 L("Quest is not part of any guide"))
-            -- TODO change to new Brandung image
-            button:SetNormalTexture('Interface/GossipFrame/BattleMasterGossipIcon')
+
+            button:SetNormalTexture("Interface/AddOns/" .. addonName ..
+                                        "/Textures/orphaned_quest-64")
             showButton = true
         else
             -- Inefficient, but set back to default texture in case of orphans
