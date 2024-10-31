@@ -854,7 +854,7 @@ function addon.settings:CreateAceOptionsPanel()
     end
 
     local optionsWidth = 1.08
-    local settingsCache = {orphans = {}}
+    local settingsCache = {invertedOrphans = {}}
 
     local optionsTable = {
         type = "group",
@@ -1523,13 +1523,13 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "execute",
                         width = optionsWidth,
                         func = function()
-                            addon.AbandonOrphanedQuests(settingsCache.orphans)
-                            wipe(settingsCache.orphans)
+                            addon.AbandonOrphanedQuests(settingsCache.invertedOrphans)
+                            wipe(settingsCache.invertedOrphans)
                         end,
                         confirm = function()
                             local result = L("Abandon the following quests?")
 
-                            for _, d in ipairs(settingsCache.orphans) do
+                            for _, d in ipairs(settingsCache.invertedOrphans) do
                                 result =
                                     fmt("%s\n%s (level %d)", result,
                                         d.questLogTitleText, d.level)
@@ -1538,7 +1538,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return result
                         end,
                         disabled = function()
-                            return #settingsCache.orphans == 0
+                            return #settingsCache.invertedOrphans == 0
                         end
                     },
                     orphanedQuestBox = {
@@ -1546,15 +1546,16 @@ function addon.settings:CreateAceOptionsPanel()
                         type = 'description',
                         name = function()
                             -- TODO prevent double call on settings frame load, optimization
+                            -- Explicity not using addon.orphanedList to reduce chance of outdated results
                             local result = ""
-                            local orphans = addon.GetOrphanedQuests()
-                            for _, d in ipairs(orphans) do
+                            local invertedOrphans = addon.GetOrphanedQuests()
+                            for _, d in ipairs(invertedOrphans) do
                                 result =
                                     fmt("%s\n%s (level %d)", result,
                                         d.questLogTitleText, d.level)
                             end
 
-                            settingsCache.orphans = orphans
+                            settingsCache.invertedOrphans = invertedOrphans
 
                             return result
                         end,
