@@ -2434,3 +2434,51 @@ step
     .itemcount 226406,1
     .use 226406
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Druid SoD/Shaman SoD/Paladin SoD/Mage SoD/Warlock SoD/Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Meditation Specialization
+#name Meditation Specialization - 30 (Thousand Needles)
+
+step
+    #completewith next
+    .zone Thousand Needles >> Travel to the Shimmering Flats in Thousand Needles
+    >>The closest flight path to the rune location is Gadgetzan
+step
+    .goto Thousand Needles,80,77,10 >> Head inside the hut marked on your map
+step
+    .goto Thousand Needles,80,77
+    >>|cRXP_WARN_Enter the hut and and look for a |cRXP_WARN_gray book|r laying on a shelf inside. Loot it for the rune|r
+    .collect 231828,1 --Rune of Meditation Specialization
+step
+    .train 468763 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Meditation Specialization|r] to train |T135913:0|t[Meditation Specialization]
+    .itemcount 231828,1
+    .use 231828
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD/Shaman SoD/Paladin SoD/Mage SoD/Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Healing Specialization
+#name Healing Specialization - 40 (Arathi Highlands)
+
+step
+    #completewith next
+    .zone Arathi Highlands >> Travel to Arathi Highlands
+step
+    .goto Arathi Highlands,21.98,79.75,40 >> Head to Faldir's Cove, follow the path between the mountains and Stromgarde's southeastern wall
+step
+    .goto Arathi Highlands,35.2,79.1
+    >>|cRXP_WARN_Head to the campfire next to |cRXP_FRIENDLY_Professor Phizzlethorpe|r look for a |cRXP_WARN_gray book|r laying on a box next to the campfire. Loot it for the rune|r
+    .collect 231829,1 --Rune of Healing Specialization
+    .target Professor Phizzlethorpe
+step
+    .train 468761 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Specialization|r] to train |T135913:0|t[Healing Specialization]
+    .itemcount 231829,1
+    .use 231829
+]])
