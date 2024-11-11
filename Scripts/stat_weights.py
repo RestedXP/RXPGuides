@@ -51,6 +51,9 @@ for csvPath in glob.glob(cataGlob):
         csvreader = csv.DictReader(csvfile)
 
         for row in csvreader:
+            if not row["Title"]:
+                continue
+
             if row["Spec"]:
                 dbTitle = f'{row["Title"]} - {row["Spec"]}'
             else:
