@@ -261,7 +261,6 @@ function addon.talents:HookUI()
     end
 
     if not talentTooltips.hooked then
-
         hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
                        talentTooltips.updateFunc)
 
@@ -653,17 +652,30 @@ if addon.gameVersion < 40000 then
         GameTooltip:Show()
     end
 else
-    talentTooltips.updateFunc = function(self)
-        print("self:GetID()", self:GetID())
+    talentTooltips.updateFunc = function(talentIndexFrame)
+        -- print("updateFunc cata", talentIndexFrame:GetName())
 
-        -- TODO Cata support
-        if not talentTooltips.data then return end
+        -- Only calculate string on tooltip hover, vs every DrawTalents like on Era
 
-        local tooltip = talentTooltips.data[self:GetID()]
-        if not tooltip then return end
+        RXPD4 = talentIndexFrame.RXP
+
+        if not talentIndexFrame.RXP then return end
+
+        local rxpTooltip = fmt("%s\n%s%s: %s %s|r",
+                               talentIndexFrame.RXP.tooltipTextHeader,
+                               addon.colors.tooltip,
+                               _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL, ', ' ..
+                                   strjoin(',',
+                                           unpack(talentIndexFrame.RXP.levels)))
+
+        -- for level, _ in pairs(talentIndexFrame.RXP.levels) do
+        -- rxpTooltip = fmt("%s\n%s%s: %s %d|r", rxpTooltip, addon.colors.tooltip, _G.TRADE_SKILLS_LEARNED_TAB,_G.LEVEL, level)
+        -- end
+
+        if not rxpTooltip then return end
 
         -- Handle refreshing of UI
-        GameTooltip:AddLine(tooltip, 1, 1, 1)
+        GameTooltip:AddLine(rxpTooltip, 1, 1, 1)
 
         -- Force tooltip redraw
         GameTooltip:Show()
@@ -1171,7 +1183,6 @@ function addon.talents.cata:DrawTalents(guide)
 
     -- TODO cache data if unchanged
     local highlightTexture, talentInfo
-    local tooltipTextHeader = fmt("%s - %s", addon.title, guide.name)
 
     -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
@@ -1194,15 +1205,18 @@ function addon.talents.cata:DrawTalents(guide)
                             -- talentIndexFrameName
                             -- ht = hightlightFrame,
                             levels = {},
-                            talentData = talentData
+                            talentData = talentData,
+                            tooltipTextHeader = fmt("%s - %s", addon.title,
+                                                    guide.name)
                         }
 
                         talentTooltips.cataHighlights[talentData.tab][talentIndex] =
                             talentInfo
                     end
 
+                    -- TODO fix persistence
                     if not talentInfo.levels[upcomingTalent] then
-                        talentInfo.levels[upcomingTalent] = true
+                        talentInfo.levels[upcomingTalent] = upcomingTalent
                     end
 
                     -- tinsert(talentInfo.tooltipLines, fmt("%s%s: %s %d|r", addon.colors.tooltip, _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL,upcomingTalent))
@@ -1211,6 +1225,8 @@ function addon.talents.cata:DrawTalents(guide)
                         talentInfo.talentIndexFrameName =
                             "PlayerTalentFramePanel" .. talentData.tab ..
                                 "Talent" .. talentIndex
+                        talentInfo.talentIndexFrame =
+                            _G[talentInfo.talentIndexFrameName]
 
                         -- print("TalentFrame", talentInfo.talentIndexFrameName)
                         highlightTexture =
@@ -1224,6 +1240,9 @@ function addon.talents.cata:DrawTalents(guide)
                             _G[talentInfo.talentIndexFrameName .. "Slot"])
 
                         talentInfo.highlightTexture = highlightTexture
+
+                        -- Add reverse lookup for tooltip updateFunc logic
+                        talentInfo.talentIndexFrame.RXP = talentInfo
                     end
 
                     setCataHighlightColor(talentInfo.highlightTexture,
