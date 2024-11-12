@@ -41,14 +41,8 @@ addon.talents.petGuides = {
 
 local compatible = true
 local indexLookup = {}
-local activeIndices = {}
-local levelsForIndex = {}
 local talentTooltips = {
     hooked = false,
-    data = {},
-    highlights = {},
-    cataHighlights = addon.game == "CATA" and {[1] = {}, [2] = {}, [3] = {}} or
-        nil,
     highlightColors = {
         [1] = {14 / 255, 131 / 255, 18 / 255}, -- RXP_BUY
         [2] = {0, 1, 37 / 255}, -- RXP_FRIENDLY
@@ -57,6 +51,26 @@ local talentTooltips = {
         [5] = {252 / 255, 220 / 250, 0} -- RXP_WARN
     }
 }
+
+local activeIndices, levelsForIndex
+
+if addon.gameVersion < 40000 then
+    -- Classic, TBC, Wrath use a single-tab view, each view change resets the highlight state
+    -- These also share the same frame elements but different talentIndex
+    talentTooltips.data = {}
+    talentTooltips.highlights = {}
+    activeIndices = {}
+    levelsForIndex = {}
+else
+    -- Cata+ uses a three tab single view
+    talentTooltips.cataHighlights = {
+        [1] = {
+            -- [talentIndex] = { ['ht'] = hightlightFrame, ['levels'] = [11,12,13,21] }
+        },
+        [2] = {},
+        [3] = {}
+    }
+end
 
 local function buildTalentGuidesMenu()
     local menu = {}
@@ -247,6 +261,7 @@ function addon.talents:HookUI()
     end
 
     if not talentTooltips.hooked then
+
         hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
                        talentTooltips.updateFunc)
 
@@ -626,15 +641,33 @@ function addon.talents:UpdateSelectedGuide(key)
     return true
 end
 
-talentTooltips.updateFunc = function(self)
-    local tooltip = talentTooltips.data[self:GetID()]
-    if not tooltip then return end
+if addon.gameVersion < 40000 then
+    talentTooltips.updateFunc = function(self)
+        local tooltip = talentTooltips.data[self:GetID()]
+        if not tooltip then return end
 
-    -- Handle refreshing of UI
-    GameTooltip:AddLine(tooltip, 1, 1, 1)
+        -- Handle refreshing of UI
+        GameTooltip:AddLine(tooltip, 1, 1, 1)
 
-    -- Force tooltip redraw
-    GameTooltip:Show()
+        -- Force tooltip redraw
+        GameTooltip:Show()
+    end
+else
+    talentTooltips.updateFunc = function(self)
+        print("self:GetID()", self:GetID())
+
+        -- TODO Cata support
+        if not talentTooltips.data then return end
+
+        local tooltip = talentTooltips.data[self:GetID()]
+        if not tooltip then return end
+
+        -- Handle refreshing of UI
+        GameTooltip:AddLine(tooltip, 1, 1, 1)
+
+        -- Force tooltip redraw
+        GameTooltip:Show()
+    end
 end
 
 local function DrawTalentLevels(talentIndex, numbers)
@@ -1032,59 +1065,72 @@ end
 
 addon.talents.cata = {}
 
-local function cataDrawTalentLevels(talentIndex, numbers)
-    local ht = talentTooltips.highlights[talentIndex]
+local function cataDrawTalentLevels(talentIndexFrameName, numbers)
+    local talentIndexFrame = _G[talentIndexFrameName]
+    if not talentIndexFrame then
+        print("cataDrawTalentLevels not ht")
+        return
+    end
 
-    if not ht then return end
+    if not talentIndexFrame.levelHeader then
+        talentIndexFrame.levelHeader = CreateFrame("Frame", "$parent_levelText",
+                                                   talentIndexFrame,
+                                                   BackdropTemplate)
 
-    if not ht.levelHeader then
-        ht.levelHeader = CreateFrame("Frame", "$parent_levelText",
-                                     _G["PlayerTalentFrameTalent" .. talentIndex],
-                                     BackdropTemplate)
+        talentIndexFrame.levelHeader:SetPoint("TOPLEFT", talentIndexFrame, 0, 0)
+        talentIndexFrame.levelHeader.text =
+            talentIndexFrame.levelHeader:CreateFontString(nil, "OVERLAY")
 
-        ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
-        ht.levelHeader.text = ht.levelHeader:CreateFontString(nil, "OVERLAY")
-
-        ht.levelHeader.text:ClearAllPoints()
-        ht.levelHeader.text:SetPoint("CENTER", ht.levelHeader, 0, 3)
-        ht.levelHeader.text:SetJustifyH("LEFT")
-        ht.levelHeader.text:SetJustifyV("MIDDLE")
+        talentIndexFrame.levelHeader.text:ClearAllPoints()
+        talentIndexFrame.levelHeader.text:SetPoint("CENTER",
+                                                   talentIndexFrame.levelHeader,
+                                                   0, 3)
+        talentIndexFrame.levelHeader.text:SetJustifyH("LEFT")
+        talentIndexFrame.levelHeader.text:SetJustifyV("MIDDLE")
 
         -- TODO specific text color setting?
-        ht.levelHeader.text:SetTextColor(unpack(addon.activeTheme.textColor))
-        ht.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
+        talentIndexFrame.levelHeader.text:SetTextColor(
+            unpack(addon.activeTheme.textColor))
+        talentIndexFrame.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
     end
 
     -- If 5 levels of preview, overlaps with nearby
     if #numbers == 5 then
-        ht.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
-        ht.levelHeader:SetPoint("TOPLEFT", ht, -3, 0)
+        talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+        talentIndexFrame.levelHeader:SetPoint("TOPLEFT", talentIndexFrame, -3, 0)
     else
-        ht.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
-        ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
+        talentIndexFrame.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
+        talentIndexFrame.levelHeader:SetPoint("TOPLEFT", talentIndexFrame, 0, 0)
     end
 
     -- Ensure single number ends up as a string
     local newText = '' .. strjoin(',', unpack(numbers))
 
     -- No changes, prevent uneeded UI calls
-    if ht.levelHeader.text:GetText() == newText then return end
+    if talentIndexFrame.levelHeader.text:GetText() == newText then return end
 
-    ht.levelHeader.text:SetText(newText)
-    ht.levelHeader:SetSize(ht.levelHeader.text:GetStringWidth() + 10, 17)
+    talentIndexFrame.levelHeader.text:SetText(newText)
+    talentIndexFrame.levelHeader:SetSize(
+        talentIndexFrame.levelHeader.text:GetStringWidth() + 10, 17)
 
 end
 
-local function setCataHighlightColor(highlightFrame, index)
-    -- Set color to last if no specific match
-    local color = talentTooltips.highlightColors[index] or
-                      talentTooltips.highlightColors[#talentTooltips.highlightColors]
+local function setCataHighlightColor(highlightTexture, colorIndex)
+    local color = talentTooltips.highlightColors[colorIndex]
 
-    -- print("setCataHighlightColor", highlightFrame:GetName(), index)
-    highlightFrame:SetVertexColor(unpack(color))
+    if not color then
+        if colorIndex > 0 then
+            color =
+                talentTooltips.highlightColors[#talentTooltips.highlightColors]
+        else
+            color = talentTooltips.highlightColors[1]
+        end
+    end
+
+    -- print("setCataHighlightColor", highlightTexture:GetName(), colorIndex)
+    highlightTexture:SetVertexColor(unpack(color))
 end
 
-local activeCataIndices = {[1] = {}, [2] = {}, [3] = {}}
 function addon.talents.cata:DrawTalents(guide)
     guide = guide or self:GetCurrentGuide()
     if not guide then return end
@@ -1097,7 +1143,7 @@ function addon.talents.cata:DrawTalents(guide)
     if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
         local ht
-        for i in pairs(talentTooltips.highlights) do
+        for i in pairs(talentTooltips.cataHighlights) do
             ht = talentTooltips.highlights[i]
             if ht:IsShown() then ht:Hide() end
 
@@ -1124,11 +1170,8 @@ function addon.talents.cata:DrawTalents(guide)
                                 addon.settings.profile.upcomingTalentCount
 
     -- TODO cache data if unchanged
-    levelsForIndex = {[1] = {}, [2] = {}, [3] = {}}
-    talentTooltips.cataData = {[1] = {}, [2] = {}, [3] = {}}
-    activeCataIndices = {[1] = {}, [2] = {}, [3] = {}}
-
-    local ht, talentFrame, talentLookup
+    local highlightTexture, talentInfo
+    local tooltipTextHeader = fmt("%s - %s", addon.title, guide.name)
 
     -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
@@ -1143,47 +1186,48 @@ function addon.talents.cata:DrawTalents(guide)
                     talentIndex =
                         indexLookup['player'][talentData.tab][talentData.tier][talentData.column]
 
-                    -- talentData.tab
-                    -- activeCataIndices[talentData.tab][talentIndex] =
-                    talentLookup =
-                        talentTooltips.cataData[talentData.tab][talentIndex]
-                    talentLookup = talentLookup or
-                                       fmt("\n%s - %s", addon.title, guide.name)
-
-                    talentLookup = fmt("%s\n%s%s: %s %d|r", talentLookup,
-                                       addon.colors.tooltip,
-                                       _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL,
-                                       upcomingTalent)
-
-                    if not talentTooltips.cataHighlights[talentData.tab][talentIndex] then
-                        talentFrame =
-                            "PlayerTalentFramePanel" .. talentData.tab ..
-                                "Talent" .. talentIndex
-                        print("TalentFrame", talentFrame)
-                        ht = _G[talentFrame]:CreateTexture(
-                                 "$parent_LevelPreview", "BORDER")
-
-                        ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
-                        ht:SetBlendMode("ADD")
-                        ht:SetAllPoints(_G[talentFrame .. "Slot"])
+                    if talentTooltips.cataHighlights[talentData.tab][talentIndex] then
+                        talentInfo =
+                            talentTooltips.cataHighlights[talentData.tab][talentIndex]
+                    else
+                        talentInfo = {
+                            -- talentIndexFrameName
+                            -- ht = hightlightFrame,
+                            levels = {},
+                            talentData = talentData
+                        }
 
                         talentTooltips.cataHighlights[talentData.tab][talentIndex] =
-                            ht
+                            talentInfo
                     end
 
-                    setCataHighlightColor(
-                        talentTooltips.cataHighlights[talentData.tab][talentIndex],
-                        upcomingTalent - playerLevel)
-
-                    if levelsForIndex[talentData.tab][talentIndex] then
-                        tinsert(levelsForIndex[talentData.tab][talentIndex],
-                                upcomingTalent)
-                    else
-                        levelsForIndex[talentData.tab][talentIndex] = {
-                            upcomingTalent
-                        }
+                    if not talentInfo.levels[upcomingTalent] then
+                        talentInfo.levels[upcomingTalent] = true
                     end
 
+                    -- tinsert(talentInfo.tooltipLines, fmt("%s%s: %s %d|r", addon.colors.tooltip, _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL,upcomingTalent))
+
+                    if not talentInfo.highlightTexture then
+                        talentInfo.talentIndexFrameName =
+                            "PlayerTalentFramePanel" .. talentData.tab ..
+                                "Talent" .. talentIndex
+
+                        -- print("TalentFrame", talentInfo.talentIndexFrameName)
+                        highlightTexture =
+                            _G[talentInfo.talentIndexFrameName]:CreateTexture(
+                                "$parent_LevelPreview", "BORDER")
+
+                        highlightTexture:SetTexture(
+                            "Interface/Buttons/ButtonHilight-Square")
+                        highlightTexture:SetBlendMode("ADD")
+                        highlightTexture:SetAllPoints(
+                            _G[talentInfo.talentIndexFrameName .. "Slot"])
+
+                        talentInfo.highlightTexture = highlightTexture
+                    end
+
+                    setCataHighlightColor(talentInfo.highlightTexture,
+                                          upcomingTalent - playerLevel)
                 end -- ipairs(element.talent)
             end -- ipairs(levelStep.elements)
 
@@ -1191,32 +1235,32 @@ function addon.talents.cata:DrawTalents(guide)
     end
 
     _G.RXPD = {
-        levelsForIndex = levelsForIndex,
         cataHighlights = talentTooltips.cataHighlights,
-        activeCataIndices = activeCataIndices
+        guideSteps = guide.steps
     }
 
     -- Ensure all highlights and levelHeaders are shown/hidden as applicable
-    --[[for index, ht in pairs(talentTooltips.cataHighlights) do
-        -- activeCataIndices[talentData.tab][index]
-        if activeIndices[index] and activeIndices[index] == currentTab then
-            -- Set levelHeader data from array data
-            cataDrawTalentLevels(index, levelsForIndex[index])
 
-            if not ht:IsShown() then ht:Show() end
-            if not ht.levelHeader:IsShown() then
-                ht.levelHeader:Show()
+    for tab, tabData in ipairs(talentTooltips.cataHighlights) do
+        for index, tInfo in ipairs(tabData) do
+
+            cataDrawTalentLevels(tInfo.talentIndexFrameName, tInfo.levels)
+
+            if not tInfo.highlightTexture:IsShown() then
+                tInfo.highlightTexture:Show()
             end
-        else
-            if ht:IsShown() then ht:Hide() end
-            if ht.levelHeader:IsShown() then ht.levelHeader:Hide() end
+
+            if not _G[tInfo.talentIndexFrameName].levelHeader:IsShown() then
+                _G[tInfo.talentIndexFrameName].levelHeader:Show()
+            end
+            -- else
+            --    if highlight:IsShown() then highlight:Hide() end
+            --    if highlight.levelHeader:IsShown() then
+            --        highlight.levelHeader:Hide()
+            --    end
+            -- end
         end
-
     end
-    --]]
-
 end
-
--- function addon.talents.cata:HookUI() end
 
 _G.RXPGuides.talents = {RegisterGuide = addon.talents.RegisterGuide}
