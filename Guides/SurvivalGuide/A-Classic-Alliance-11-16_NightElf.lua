@@ -1107,11 +1107,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .train 199 >> Train 2h Maces
     .target Buliwyf Stonehand
-step << Rogue
-    .goto Ironforge,61.170,89.539
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r
-    .train 198 >> Train 1h Maces
-    .target Buliwyf Stonehand
 step << Warrior
     .goto Ironforge,62.551,88.699
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelomir Ironhand|r
