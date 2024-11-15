@@ -1088,7 +1088,7 @@ step << Rogue
     .trainer >> Train your class spells
     .target Fenthwick
 step << Rogue
-    .goto Ironforge,51.494,15.335
+    .goto Ironforge,61.170,89.539
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .train 198 >> Train 1h Maces
     .target Buliwyf Stonehand
