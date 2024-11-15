@@ -111,6 +111,7 @@ step
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
 step
+#xprate <1.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r, |cRXP_FRIENDLY_Mountaineer Cobbleflint|r and |cRXP_FRIENDLY_Captain Wallbang|r
     .turnin 26146 >>Turn in In Defense of the King's Lands
     .accept 26148 >>Accept A Decisive Strike
@@ -123,6 +124,16 @@ step
     .target +Mountaineer Wallbang
     .goto 48,23.298,75.054
 step
+#xprate >1.299
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r, |cRXP_FRIENDLY_Mountaineer Cobbleflint|r and |cRXP_FRIENDLY_Captain Wallbang|r
+    .turnin 26146 >>Turn in In Defense of the King's Lands
+    .target +Captain Rugelfuss
+    .goto 48,23.359,74.990
+    .turnin 26145 >>Turn in The Trogg Threat
+    .target +Mountaineer Cobbleflint
+    .goto 48,23.332,74.927
+step
+#xprate <1.3
 #sticky
 #label troggcave1
 #loop
@@ -141,11 +152,13 @@ step
     .mob Stonesplinter Shaman
     .mob Stonesplinter Bonesnapper
 step
+#xprate <1.3
     >>Go to the very end of the cave and kill |cRXP_ENEMY_Grawmug|r
     .goto 48,34.289,61.146
     .complete 26148,1 --|1/1 Grawmug slain
     .mob Grawmug
 step
+#xprate <1.3
 #requires troggcave1
     .goto 48,23.321,75.013
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r and |cRXP_FRIENDLY_Captain Wallbang|r
@@ -165,7 +178,7 @@ step
     .goto 48,35.079,46.663
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
     .target Mountaineer Kadrell
-    .turnin 26176 >>Turn in Onward to Thelsamar
+    .turnin -26176 >>Turn in Onward to Thelsamar
     .accept 26842 >>Accept Out of Gnoll-where
     .accept 13636 >>Accept Stormpike's Orders
 step
@@ -178,7 +191,7 @@ step
     .target Innkeeper Hearthstove
 step
     .goto 48,34.849,49.177
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .target Vidra Hearthstove
     .accept 26860 >>Accept Thelsamar Blood Sausages
 step << Paladin
@@ -200,7 +213,7 @@ step << Hunter
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
     .trainer >> Train your class spells
-    .target Belda Wildheart    
+    .target Belda Wildheart
 step << Warrior
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
@@ -227,7 +240,7 @@ step
     .accept 13648 >>Accept WANTED: The Dark Iron Spy
 step
     .goto 48,35.960,44.028
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dakk Blunderblast|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dakk Blunderblast|r
     .target Dakk Blunderblast
     .accept 25118 >>Accept Looking for Lurkers
 step
@@ -411,7 +424,7 @@ step << Hunter
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
     .trainer >> Train your class spells
-    .target Belda Wildheart    
+    .target Belda Wildheart
 step << Warrior
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
@@ -419,7 +432,7 @@ step << Warrior
     .target Grendin Swiftaxe
 step
     .goto 48,35.079,46.663
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
     .target Mountaineer Kadrell
     .accept 26932 >>Accept Buzz Off
 step << Shaman
@@ -542,7 +555,7 @@ step
     .target Cannary Caskshot
 step
     .goto 48,36.992,47.016
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
     .accept 13639 >>Accept Resupplying the Excavation
     .target Jern Hornhelm
 step
@@ -566,7 +579,7 @@ step
     .accept 13657 >>Accept Explorers' League Document (3 of 6)
 step
     .goto 48,64.896,66.659
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
     .target Magmar Fellhew
     .accept 26961 >>Accept Gathering Idols
 step
@@ -622,22 +635,22 @@ step
     .subzoneskip 147
 step
     .goto 48,82.789,63.459
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Safety Warden Pipsy|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Safety Warden Pipsy|r
     .target Safety Warden Pipsy
     .accept 27025 >>Accept Thistle While You Work
 step
     .goto 48,83.428,65.309
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .target Daryl the Youngling
     .accept 27016 >>Accept The Joy of Boar Hunting
 step
     .goto 48,81.944,64.505
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r
     .target Vyrin Swiftwind
     .home >>Set your Hearthstone to Farstrider Lodge
 step
     .goto 48,81.647,64.750
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .accept 27031 >>Accept Wing Nut
 step
@@ -719,7 +732,7 @@ step
     #loop
     .goto 48,52.298,39.499,40,0
     .goto 48,56.479,31.679,40,0
-    .goto 48,58.179,44.704,40,0  
+    .goto 48,58.179,44.704,40,0
     .goto 48,52.298,39.499,0
     .goto 48,56.479,31.679,0
     .goto 48,58.179,44.704,0
@@ -731,7 +744,7 @@ step
     #loop
     .goto 48,52.298,39.499,40,0
     .goto 48,56.479,31.679,40,0
-    .goto 48,58.179,44.704,40,0  
+    .goto 48,58.179,44.704,40,0
     .goto 48,52.298,39.499,0
     .goto 48,56.479,31.679,0
     .goto 48,58.179,44.704,0
@@ -762,7 +775,7 @@ step
     .turnin 27030 >>Turn in Foxtails By The Handful
 step
     .goto 48,81.910,64.618
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r
     .target Vyrin Swiftwind
     .accept 27036 >>Accept Vyrin's Revenge
 step
@@ -890,7 +903,7 @@ step << Hunter
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
     .trainer >> Train your class spells
-    .target Belda Wildheart    
+    .target Belda Wildheart
 step << Warrior
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
@@ -927,7 +940,7 @@ step
 step
 #questguide
     .goto 48,50.532,23.802
-    >>Kill |cRXP_ENEMY_Twilight Landshaper|r 
+    >>Kill |cRXP_ENEMY_Twilight Landshaper|r
     .complete 27035,1 --|1/1 Twilight Landshaper destroyed
     .mob Twilight Landshaper
 step
