@@ -2301,7 +2301,25 @@ step << Rogue
     .itemcount 203990,1
 step
     #hardcore
+    #completewith next
+    .subzone 362 >>Travel to Razor Hill
+step
+    #hardcore
     #label Betrayers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 823 >>Turn in Report to Orgnil
+    .accept 806 >>Accept Dark Storms
+    .goto Durotar,52.24,43.15
+    .accept 784 >>Accept Vanquish the Betrayers
+    .accept 837 >>Accept Encroachment
+    .goto Durotar,51.95,43.50
+    .accept 815 >>Accept Break a Few Eggs
+    .goto Durotar,51.09,42.49
+    .target Orgnil Soulscar
+    .target Gar'Thok
+    .target Cook Torka
+step
+    #hardcore
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
@@ -2505,7 +2523,28 @@ step << !Priest !Mage
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
+    .xp 7+2520 >> Grind to 2520+/4500xp
+    .isNotOnQuest 823
+step << !Priest !Mage
+    #xprate <1.5
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
     .xp 7+2200 >> Grind to 2200+/4500xp
+    .isOnQuest 823
+step << !Priest !Mage
+    #xprate >1.49
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
+    .xp 7+1530 >> Grind to 1530+/4500xp
+    .isNotOnQuest 823
 step << !Priest !Mage
     #xprate >1.49
     .goto Durotar,59.02,50.24,50,0
@@ -2515,6 +2554,17 @@ step << !Priest !Mage
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
     .xp 7+1050 >> Grind to 1050+/4500xp
+    .isOnQuest 823
+step << Priest
+    #xprate <1.5
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
+    .xp 7+2070 >> Grind to 2070+/4500xp
+    .isNotOnQuest 823
 step << Priest
     #xprate <1.5
     .goto Durotar,59.02,50.24,50,0
@@ -2524,6 +2574,17 @@ step << Priest
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
     .xp 7+1750 >> Grind to 1750+/4500xp
+    .isOnQuest 823
+step << Priest
+    #xprate >1.49
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
+    .xp 7+855 >> Grind to 855+/4500xp
+    .isNotOnQuest 823
 step << Priest
     #xprate >1.49
     .goto Durotar,59.02,50.24,50,0
@@ -2533,6 +2594,7 @@ step << Priest
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
     .xp 7+375 >> Grind to 375+/4500xp
+    .isOnQuest 823
 step
     #softcore
     #completewith RazorTurnins1

@@ -2190,7 +2190,12 @@ step << Warrior
     .mob Vampiric Duskbat
     .train 403475,1
 step
-    #completewith next
+    #loop
+    .goto Tirisfal Glades,41.09,47.59,0
+    .goto Tirisfal Glades,51.31,50.01
+    .goto Tirisfal Glades,46.01,51.59
+    .goto Tirisfal Glades,41.09,47.59
+    .goto Tirisfal Glades,41.45,41.62
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -2465,6 +2470,12 @@ step
     .subzone 159 >> Travel back to Brill
     .subzoneskip 159
     .cooldown item,6948,<0
+step
+    #xprate <1.5
+    #softcore
+    #completewith FoodandWater2
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .subzoneskip 159
 step
     #xprate >1.49
     #hardcore
