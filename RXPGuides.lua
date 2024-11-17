@@ -1007,8 +1007,21 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     end
 end
 
+function addon.IsNewCharacter()
+    local n = 0
+    for i in pairs(_G.GetQuestsCompleted()) do
+        n = n + 1
+        if n > 1 then
+            return false
+        end
+    end
+    if UnitXP("player") == 0 and n > 1 then
+        return true
+    end
+end
+
 function addon:CreateMetaDataTable(wipe)
-    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion then
+    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() then
         RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
     end
