@@ -557,9 +557,9 @@ step
     .turnin 447 >>Turn in A Recipe For Death
     .goto Undercity,48.84,69.25
     .turnin 1359 >> Turn in Zinge's Delivery
-    .goto Undercity,50.16,67.97
     .accept 1358 >> Accept Sample for Helbrim
     .target Master Apothecary Faranell
+    .goto Undercity,50.16,67.97
     .target Apothecary Zinge
     .solo
 step
@@ -568,8 +568,8 @@ step
     .accept 450 >>Accept A Recipe For Death
     .goto Undercity,48.84,69.25
     .turnin 1359 >> Turn in Zinge's Delivery
-    .goto Undercity,50.16,67.97
     .accept 1358 >> Accept Sample for Helbrim
+    .goto Undercity,50.16,67.97
     .target Master Apothecary Faranell
     .target Apothecary Zinge
     .group

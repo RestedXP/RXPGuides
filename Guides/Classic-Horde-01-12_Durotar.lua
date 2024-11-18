@@ -2095,7 +2095,6 @@ step
     .goto Durotar,57.50,73.26,-1
     .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 786
-    .subzoneskip 366,1
 step
     #xprate <1.5
     #hardcore
@@ -2318,13 +2317,6 @@ step
     .target Orgnil Soulscar
     .target Gar'Thok
     .target Cook Torka
-step
-    #hardcore
-    .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
-    >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
-    .accept 784 >>Accept Vanquish the Betrayers
-    .target Gar'thok
 step << Hunter
     #hardcore
     #season 2
@@ -7849,7 +7841,7 @@ step
     .complete 4402,1 --Cactus Apple (10)
 step
     #completewith Tails
-    .goto Durotar,44.98,69.13,20,0
+    .goto Durotar,44.98,69.13,45,0
     .goto Durotar,45.64,65.70,45,0
     .goto Durotar,47.37,65.67,45,0
     >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
@@ -9066,7 +9058,6 @@ step
     .goto Durotar,57.50,73.26,-1
     .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 786
-    .subzoneskip 366,1
 step
     #xprate <1.5
     #hardcore

@@ -2461,27 +2461,24 @@ step
     #hardcore
     #completewith FoodandWater2
     .hs >> Hearth to Brill
-    .subzoneskip 159
+
     .cooldown item,6948,>0,1
 step
     #xprate <1.5
     #hardcore
     #completewith FoodandWater2
     .subzone 159 >> Travel back to Brill
-    .subzoneskip 159
     .cooldown item,6948,<0
 step
     #xprate <1.5
     #softcore
     #completewith FoodandWater2
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .subzoneskip 159
 step
     #xprate >1.49
     #hardcore
     #completewith FoodandWater2
     .subzone 159 >> Travel back to Brill
-    .subzoneskip 159
 step
     #xprate >1.49
     #softcore
@@ -2593,7 +2590,6 @@ step << Warrior
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
-    .zoneskip Undercity
     .zoneskip Undercity
 step << Warlock
     #completewith next
@@ -4855,8 +4851,8 @@ step
     .turnin 447 >>Turn in A Recipe For Death
     .goto Undercity,48.84,69.25
     .turnin 1359 >> Turn in Zinge's Delivery
-    .goto Undercity,50.16,67.97
     .accept 1358 >> Accept Sample for Helbrim
+    .goto Undercity,50.16,67.97
     .target Master Apothecary Faranell
     .target Apothecary Zinge
 step << Undead Warrior
@@ -9527,7 +9523,7 @@ step << Mage
     .train 1449 >> Train your class spells
     .target Cain Firesong
     .xp <12,1
-    .xp <14,1
+    .xp >14,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
@@ -9540,7 +9536,7 @@ step << Rogue
     .train 1766 >> Train |T132219:0|t[Kick]
     .target Marion Call
     .xp <12,1
-    .xp <14,1
+    .xp >14,1
 step << Rogue
     #optional
     .goto Tirisfal Glades,61.75,52.00
@@ -9554,7 +9550,7 @@ step << Warlock
     .train 755 >> Train |T136168:0|t[Health Funnel]
     .target Rupert Boch
     .xp <12,1
-    .xp <14,1
+    .xp >14,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
