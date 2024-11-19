@@ -1009,7 +1009,8 @@ end
 
 function addon.IsNewCharacter()
     local n = 0
-    for i in pairs(_G.GetQuestsCompleted()) do
+    local GetQuests = C_QuestLog and C_QuestLog.GetAllCompletedQuestIDs or _G.GetQuestsCompleted
+    for i in pairs(GetQuests()) do
         n = n + 1
         if n > 1 then
             return false
