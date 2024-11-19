@@ -312,6 +312,7 @@ step << Hunter
     .money <0.2633
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.5
+    .equip 18,2515
 step << Hunter/Rogue
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandre|r
@@ -904,6 +905,7 @@ step << Hunter
     .money <0.2633
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.5
+    .equip 18,2515
     .group
 step << Druid
     #completewith next

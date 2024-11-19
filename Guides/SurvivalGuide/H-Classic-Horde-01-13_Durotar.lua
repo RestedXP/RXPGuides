@@ -1807,27 +1807,34 @@ step << Hunter
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
+    >>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock
+    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest
+    .vendor >> Vendor Trash
+    .home >> Set your Hearthstone to Razor Hill
+    .turnin 2161 >>Turn in A Peon's Burden
+    .target Innkeeper Grosk
+    .train 6760,1 << Rogue
+    .train 139,1 << Priest
+    .train 980,1 << Warlock
+    .train 8044,1 << Shaman
+    .train 284,1 << Warrior
+step << !Mage !Hunter !Druid
+    #optional
+    .goto Durotar,51.51,41.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
     .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
-    .collect 1179,10,818,1 << Warlock/Priest/Shaman --Ice Cold Milk (10)
-    .collect 1179,20,818,1 << Mage --Ice Cold Milk (20)
-    .collect 2287,10,818,1 << Rogue/Warrior --Haunch of Meat (10)
     .target Innkeeper Grosk
-    .money <0.065 << Rogue/Warrior/Shaman/Warlock --to ensure user still has 4 silver left for class spells
-    .money <0.045 << Priest --to ensure user still has 2 silver left for class spells
-    .money <0.050 << Mage --Mage not getting class training here
-step
-    #optional
-    .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
-    .money >0.065 << Rogue/Warrior/Shaman/Warlock
-    .money >0.045 << Priest
-    .money >0.050 << Mage
+    .train 6760,3 << Rogue
+    .train 139,3 << Priest
+    .train 980,3 << Warlock
+    .train 8044,3 << Shaman
+    .train 284,3 << Warrior
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
