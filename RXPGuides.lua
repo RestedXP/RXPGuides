@@ -1449,6 +1449,7 @@ function addon:UpdateLoop(diff)
         errorCount = 0
         updateTick = 0
         updateError = false
+        --print('error')
         return 'error'
     elseif updateTick > (tickRate + rand() / 128) then
         updateError = true
@@ -1459,6 +1460,7 @@ function addon:UpdateLoop(diff)
         event = ""
         local updateFrequency = addon.updateFrequency or 0.075
         tickRate = math.min(updateFrequency,4*GetTickTime()) + (addon.isCastingHS or 0)
+        --AA = tickRate
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
                 addon.Call("updateQuest",func,ref)
@@ -1607,10 +1609,13 @@ function addon:UpdateLoop(diff)
                 updateTimer = time
                 skip = skip % 4096
             end
-            addon.updateFrequency = addon.settings.profile and addon.settings.profile.updateFrequency/1e3
+            addon.updateFrequency = (addon.settings.profile and addon.settings.profile.updateFrequency or 75)/1e3
         end
         updateError = false
     end
+    --[[if updateError then
+        print(event)
+    end]]
 end
 
 function addon.HardcoreToggle()
