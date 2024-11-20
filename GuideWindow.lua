@@ -1419,7 +1419,10 @@ function addon.ProcessGuideTable(guide)
             --print(startAt,stopAt)
         end
         local newGuide = addon:FetchGuide(group,name)
-        if not newGuide then return end
+        if not newGuide then
+            print(format("RXPGuides - Error trying to include guide: %s\\%s",group,name))
+            return
+        end
         if not guideRef[newGuide] and guide ~= newGuide then
             guideRef[newGuide] = true
             ProcessSteps(newGuide,startAt,stopAt)
