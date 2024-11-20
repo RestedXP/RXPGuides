@@ -234,7 +234,7 @@ step
     .complete 41800,2 --10/10 Necrotic Defiler slain
     .mob Necrotic Defiler
 step
-    >>Kill |cRXP_ENEMY_Necrogg the Darkspear|r. He's patrolling down the mountain
+    >>Kill |cRXP_ENEMY_Necrogg the Darkspear|r. He's patrolling down the mountain.
     >>Use |T135127:0|t[Harpoon Stomp] (2) after the knockback
     .goto 650,53.00,69.40
     .complete 41800,3 --1/1 Necrogg the Darkspear slain
@@ -306,7 +306,7 @@ step
     .complete 41882,1 --6/6 Highmountain Protector freed
 step
     >>Kill |cRXP_ENEMY_Necrodarks|r or |cRXP_ENEMY_Frozen Mists|r. Loot them for the [|cRXP_LOOT_Shadowice Shards|r].
-    >>|cRXP_WARN_|cRXP_ENEMY_Frozen Mists|r. are the best source|r.
+    >>|cRXP_WARN_|cRXP_ENEMY_Frozen Mists|r are the best source|r.
     .complete 41840,1 --20/20 Shadowice Shard
     .goto 650,57.15,94.63,30,0
     .goto 650,54.48,91.85,30,0

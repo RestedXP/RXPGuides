@@ -22,7 +22,7 @@ step << Orc
     .zoneskip 1727
     #completewith DurotarFirstQuestCheck
     +Welcome to the |cfff78300Orc Starting Zone|r. Guide of RestedXP.
-    *Without consumables/heirlooms this route is roughly 5 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r. instead.
+    *Without consumables/heirlooms this route is roughly 5 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
     *With consumables/heirlooms this route is just as fast or up to 15% faster.
 step << Orc
     .zoneskip 1727,1
@@ -257,7 +257,7 @@ step
     .complete 25136,1 --6/6 Cactus Apple
 step
     #completewith Yarrog
-	>>Kill |cRXP_ENEMY_Felstalkers|r. within the cave
+	>>Kill |cRXP_ENEMY_Felstalkers|r within the cave.
     .complete 25132,1 --5/5 Felstalker slain
     .mob Felstalker
 step
@@ -277,7 +277,7 @@ step
     .goto 2,39.21,88.42,15,0
     .goto 2,75.04,80.08,15,0
     .goto 1,45.37,56.22
-	>>Kill |cRXP_ENEMY_Felstalkers|r. within the cave
+	>>Kill |cRXP_ENEMY_Felstalkers|r within the cave.
     .complete 25132,1 --5/5 Felstalker slain
     .mob Felstalker
 step
@@ -360,7 +360,7 @@ step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
     +Welcome to the |cfff78300Troll Starting Zone|r. Guide of RestedXP.
-    *Without consumables/heirlooms this route is roughly 5 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r. instead.
+    *Without consumables/heirlooms this route is roughly 5 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
     *With consumbales/heirlooms this route is just as fast or up to 15% faster.
 step << Troll
     .zoneskip 1727,1
@@ -876,7 +876,7 @@ step
     .use 52283
 step
 	#completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. on your way back. Loot them for their [|cRXP_LOOT_Meat|r].
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r on your way back. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
     .mob Pygmy Surf Crawler
 step
@@ -914,19 +914,19 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    >>Use the |T134326:0|t[Bloodtalon Lasso] on |cRXP_FRIENDLY_Swiftclaw|r. He spawns next to you and then runs counter-clockwise around the island
+    >>Use the |T134326:0|t[Bloodtalon Lasso] on |cRXP_FRIENDLY_Swiftclaw|r. He spawns next to you and then runs counter-clockwise around the island.
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Swiftclaw
     .use 50053
 step
     .goto 463,50.42,66.82,40,0
     .goto 463,53.21,65.40
-    >>Ride |cRXP_FRIENDLY_Swiftclaw|r. back to the |cRXP_PICK_Raptor Pen|r.
+    >>Ride |cRXP_FRIENDLY_Swiftclaw|r back to the |cRXP_PICK_Raptor Pen|r.
     .complete 24626,2 --1/1 Return Swiftclaw to the Raptor Pens
 step << Hunter Troll
     #completewith TrollBreakingtheLine
     .goto 463,53.03,65.42
-    .cast 1515 >>|cRXP_WARN_Tame a |cRXP_ENEMY_Bloodtalon Raptor|r. with your |T132164:0|t[Tame Beast] ability|r.
+    .cast 1515 >>|cRXP_WARN_Tame a |cRXP_ENEMY_Bloodtalon Raptor|r with your |T132164:0|t[Tame Beast] ability|r.
     .mob Bloodtalon Raptor
 step
     .goto 463,52.87,71.28,40,0
@@ -977,13 +977,13 @@ step
 step
     #sticky
     #label EchoingIslesSpitescaleNagas
-    >>Kill |cRXP_ENEMY_Spitescale Nagas|r. while placing the [|cRXP_LOOT_fetishes|r].
+    >>Kill |cRXP_ENEMY_Spitescale Nagas|r while placing the [|cRXP_LOOT_fetishes|r].
     >>|cfff78300Don't jump down|r.
     .goto 464,58.0,46.3,0,0
     .complete 24812,1 --12/12 Spitescale Naga
 	.isQuestTurnedIn 25035
 step
-    >>Use the |T132482:0|t[Territorial Fetish] next to |cRXP_PICK_Spitescale Flags|r. The fetishes despawn after a while and you can place them again
+    >>Use the |T132482:0|t[Territorial Fetish] next to |cRXP_PICK_Spitescale Flags|r. The fetishes despawn after a while and you can place them again.
     .goto 464,61.97,71.50,6,0
     .goto 464,66.21,58.45,6,0
     .goto 464,68.96,40.94,6,0

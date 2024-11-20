@@ -46,7 +46,7 @@ step
     #sticky
     #label MardumAssaultonMardum
     .goto 672,38.73,45.39,0,0
-    >>Kill |cRXP_ENEMY_enemies|r and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Legion Communicator|r. in the area.
+    >>Kill |cRXP_ENEMY_enemies|r and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Legion Communicator|r in the area.
     .accept 39279 >>Accept Assault on Mardum (Bonus Objective)
     .complete 39279,1 --Assault the Legion in the lowlands (100%)
     --x .mob
@@ -133,7 +133,7 @@ step
     #title Check Fel Crystal Location
     #completewith next
     .goto 672,41.31,67.02,10,0
-    .goto 672,38.74,68.27,10 >>Check for Empowered Fel Crystal(Green Fel Crystal) |cfff78300above the cave|r. You can manually skip this step if it's not there
+    .goto 672,38.74,68.27,10 >>Check for Empowered Fel Crystal(Green Fel Crystal) |cfff78300above the cave|r. You can manually skip this step if it's not there.
 step
     .goto 672,38.58,67.85
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cage|r.
@@ -258,7 +258,7 @@ step
     .target Fel Lord Caza
 step
     .goto 673,54.77,58.28
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_chest|r. for a ring.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_chest|r for a ring.
     .turnin 39973,1 >> |TInterface/cursor/crosshair/interact.blp:20|tClick the Chest
 step
     #completewith next
@@ -281,7 +281,7 @@ step
     .target Allari the Souleater
 step
     #completewith
-    >>Kill |cRXP_ENEMY_mobs|r. in the area
+    >>Kill |cRXP_ENEMY_mobs|r in the area.
     .complete 38819,1 --War progress (100%)
     --x .mob
 step
@@ -323,7 +323,7 @@ step
     .goto 672,66.23,25.97,25,0
     .goto 672,64.89,27.25,30,0
     .goto 672,63.71,29.63
-    >>Kill |cRXP_ENEMY_mobs|r. in the area
+    >>Kill |cRXP_ENEMY_mobs|r in the area.
     .complete 38819,1 --War progress (100%)
     --x .mob
 step
@@ -382,7 +382,7 @@ step
     .target Kayn Sunfury
 step
     .goto 672,62.52,44.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izal Whitemoon|r. |cRXP_WARN_after doing /sit|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izal Whitemoon|r |cRXP_WARN_after doing /sit|r.
     .complete 39663,1 --1/1 Ride to the Fel Hammer
     .skipgossip
 step
@@ -391,7 +391,7 @@ step
     +Leap to your Death by jumping into the Abyss, wait on the Resurrection
 step
     .goto 672,69.93,44.23
-    >>Engage the |cRXP_ENEMY_Brood Queen Tyranna|r. in combat and persist until she retreats into the shadows then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyana Nightglaive|r.
+    >>Engage the |cRXP_ENEMY_Brood Queen Tyranna|r in combat and persist until she retreats into the shadows then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyana Nightglaive|r.
     .turnin 39663 >>Turn in On Felbat Wings
     .target Cyana Nightglaive
     .mob Brood Queen Tyranna
@@ -463,7 +463,7 @@ step
 step
     #sticky
     #label Area2
-    >>Tag as many |cRXP_ENEMY_Savage Stalkers|r. as possible and kill them while |TInterface/cursor/crosshair/interact.blp:20|tclicking |cRXP_PICK_cells|r.
+    >>Tag as many |cRXP_ENEMY_Savage Stalkers|r as possible and kill them while |TInterface/cursor/crosshair/interact.blp:20|tclicking |cRXP_PICK_cells|r.
     .complete 38689,1 --100/100 Fel Energy regained
     .mob Savage Stalker
 step
@@ -511,7 +511,7 @@ step
     .goto 677,51.23,37.05,20 >>|cRXP_WARN_Follow the arrow|r.
 step
     #requires Area2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r.,|cRXP_FRIENDLY_Kayn Sunfury|r and |cRXP_FRIENDLY_Maiev Shadowsong|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r,|cRXP_FRIENDLY_Kayn Sunfury|r and |cRXP_FRIENDLY_Maiev Shadowsong|r.
     .turnin 38689 >>Turn in Fel Infusion
     .goto 677,49.68,49.3
     .turnin 38690 >>Turn in Rise of the Illidari
@@ -741,7 +741,7 @@ step <<Alliance
     .goto 84,70.1,79.88,25,0
     .goto 84,70.41,84.03,25,0
     .goto 84,70.92,72.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r. |cRXP_WARN_in Goldshire|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cRXP_WARN_in Goldshire|r.
     .fp >>Get the Goldshire Flight Path
     .nodmf
     .isQuestTurnedIn 44463 --x DH Check

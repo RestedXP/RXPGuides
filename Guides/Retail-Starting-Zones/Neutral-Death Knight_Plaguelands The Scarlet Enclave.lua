@@ -29,7 +29,7 @@ step
     .target Instructor Razuvious
 step
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_PICK_Battle-Worn Sword|r. |cRXP_WARN_found in the area|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_PICK_Battle-Worn Sword|r |cRXP_WARN_found in the area|r.
     .collect 38607,1
 step
     .goto 124,47.88,27.54
@@ -44,7 +44,7 @@ step
     .target Instructor Razuvious
 step
     .goto 124,47.88,27.54
-    >>|cRXP_WARN_Go to the Runeforge|r. open your Spellbook and use the [Enchant Razorice] on your weapon.
+    >>|cRXP_WARN_Go to the Runeforge|r, open your Spellbook and use the [Enchant Razorice] on your weapon.
     .complete 12842,1 --Weapon emblazoned (1)
 step
     .goto 124,47.59,28.73
@@ -54,7 +54,7 @@ step
     .target Instructor Razuvious
 step
     .goto 124,48.59,28.73
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Acherus Soul Prison |r. to free an |cRXP_ENEMY_Initiate|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Acherus Soul Prison |r to free an |cRXP_ENEMY_Initiate|r.
     .complete 12848,1 --1/1 Unworthy Initiate dominated
     .mob Unworthy Initiate
 step
@@ -72,7 +72,7 @@ step
 step
     .goto 124,51.04,36.32
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Eye of Acherus Control Mechanism|r.
-    >>Use |T136158:0|t[Siphon of Acherus](1) |cRXP_WARN_near the Red Arrows|r. |cRXP_WARN_(not too close or you will be attacked, 45yards range)|r. to analyze it.
+    >>Use |T136158:0|t[Siphon of Acherus](1) |cRXP_WARN_near the Red Arrows|r |cRXP_WARN_(not too close or you will be attacked, 45yards range)|r to analyze it.
     >>Use |T136187:0|t[Summon Ghouls](2) to distract the Knights.
     >>Use [Shroud](3) to hide |cRXP_WARN_(can be used while walking)|r.
     >>Use |T136190:0|t[Recall Eye of Acherus] (4) when you are finished.
@@ -107,14 +107,14 @@ step
 step
     #fresh
     .goto 124,52.08,35.04
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Scourge Gryphon|r. |cRXP_WARN_on the Balcony|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Scourge Gryphon|r |cRXP_WARN_on the Balcony|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Valanar|r.
     .turnin 12670 >>Turn in The Scarlet Harvest
     .accept 12678 >>Accept If Chaos Drives, Let Suffering Hold The Reins
     .target Prince Valanar
 step
     #veteran
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Scourge Gryphon|r. |cRXP_WARN_on the Balcony|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Scourge Gryphon|r |cRXP_WARN_on the Balcony|r.
     >>|cRXP_WARN_You can already mount up, you don't need to wait to unlock the DK mount|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Valanar|r.
     .goto 124,52.08,35.04
@@ -133,7 +133,7 @@ step
     .target Olrun the Battlecaller
 step
     .goto 124,52.79,34.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Death Knight Initiates|r. found in the area |cRXP_WARN_and defeat them in a duel|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Death Knight Initiates|r found in the area |cRXP_WARN_and defeat them in a duel|r.
     .complete 12733,1 --5/5 Death Knights defeated in a duel
     .skipgossip
     .mob Death Knight Initiate
@@ -157,7 +157,7 @@ step
     .target Citizen of Havenshire
 step
     goto 124,55.25,46.16
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Abandoned Mail|r. |cRXP_WARN_on the Mailbox|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Abandoned Mail|r |cRXP_WARN_on the Mailbox|r.
     .turnin 12711 >>Turn in Abandoned Mail
 step
     #label arrowspart2time
@@ -181,7 +181,7 @@ step
     .goto 124,55.4,41.6,30,0
     .goto 124,51.41,41.09,30,0
     .goto 124,52.83,34.04
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with a |cRXP_FRIENDLY_Horse|r. |cRXP_WARN_near the Stables|r. be careful of |cRXP_ENEMY_Stable Master Kitrik|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with a |cRXP_FRIENDLY_Horse|r |cRXP_WARN_near the Stables|r be careful of |cRXP_ENEMY_Stable Master Kitrik|r.
     >>Use |T135788:0|t[Gallop](2) for increased Movement Speed and Deliver the |T132261:0|t[Stolen Horse](1) when you are infront of |cRXP_FRIENDLY_Salanar the Horseman|r,who is patrolling |cRXP_WARN_in the streets|r.
     .complete 12680,1 --1/1 Horse Successfully Stolen
     .target Salanar the Horseman
@@ -194,7 +194,7 @@ step
 step
     .goto 124,55.4,41.6,30,0
     .goto 124,51.16,37.82
-    >>Kill a |cRXP_ENEMY_Dark Rider of Acherus|r. |cRXP_WARN_near the stables|r and |TInterface/cursor/crosshair/interact.blp:20|tInteract with the horse
+    >>Kill a |cRXP_ENEMY_Dark Rider of Acherus|r |cRXP_WARN_near the stables|r and |TInterface/cursor/crosshair/interact.blp:20|tInteract with the horse
     >>Use the |T136129:0|t[Horseman's Call] to deliver the Horse |cRXP_WARN_once you're back in town|r.
     .complete 12687,1
 step
@@ -235,8 +235,8 @@ step
 step
     .goto 124,58.27,30.98,5,0
     --x insert more goto's
-    >>Use |T133882:0|t[Gift of the Harvester] on |cRXP_ENEMY_Miner|r. until you have [5] |cRXP_FRIENDLY_Scarlet Ghouls|r. following you then return to |cRXP_FRIENDLY_Gothik the Harvester|r.
-    >>|cRXP_WARN_Miners don't always turn into friendly |cRXP_FRIENDLY_Scarlet Ghouls|r. |r.
+    >>Use |T133882:0|t[Gift of the Harvester] on |cRXP_ENEMY_Miner|r until you have [5] |cRXP_FRIENDLY_Scarlet Ghouls|r following you then return to |cRXP_FRIENDLY_Gothik the Harvester|r.
+    >>|cRXP_WARN_Miners don't always turn into friendly |cRXP_FRIENDLY_Scarlet Ghouls|r|r.
     .complete 12698,1 --5/5 Scarlet Ghoul Returned
     .use 39253
     .mob Scarlet Ghoul
@@ -313,7 +313,7 @@ step
     .mob Citizen of New Avalon
 step
     .goto 124,52.61,71.72
-    >>Kill |cRXP_ENEMY_Mayor Quimby|r. |cRXP_WARN_inside the city hall|r.
+    >>Kill |cRXP_ENEMY_Mayor Quimby|r |cRXP_WARN_inside the city hall|r.
     .complete 12719,1 --1/1 Mayor Quimby slain
     .mob Mayor Quimby
 step
@@ -343,7 +343,7 @@ step
     .mob Citizen of New Avalon
 step
     .goto 124,54.29,57.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Keleseth|r. |cRXP_WARN_inside the Crypt|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Keleseth|r |cRXP_WARN_inside the Crypt|r.
     .turnin 12719 >>Turn in Nowhere To Run And Nowhere To Hide
     .accept 12720 >>Accept How To Win Friends And Influence Enemies
     .target Prince Keleseth
@@ -354,7 +354,7 @@ step
     .target Baron Rivendare
 step
     .goto 124,55.88,52.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noth the Plaguebringer|r. |cRXP_WARN_outside of the Crypt|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noth the Plaguebringer|r |cRXP_WARN_outside of the Crypt|r.
     .turnin 12716 >>Turn in The Plaguebringer's Request
     .accept 12717 >>Accept Noth's Special Brew
     .target outside of the Crypt
@@ -369,12 +369,12 @@ step
     .collect 142274,1
 step
     .goto 124,55.79,65.73
-    >>Autohit |cRXP_ENEMY_Scarlet Enemies|r. until they talk. Don't use abilities. |cRXP_WARN_(This can take awhile if you are unlucky)|r.
+    >>Autohit |cRXP_ENEMY_Scarlet Enemies|r until they talk. Don't use abilities. |cRXP_WARN_(This can take awhile if you are unlucky)|r.
     .complete 12720,1
 step
     .goto 124,54.29,57.31
     >>|cRXP_WARN_Don't forget to re-equip your weapons!!|r.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Keleseth|r. |cRXP_WARN_inside the Crypt|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Keleseth|r |cRXP_WARN_inside the Crypt|r.
     .turnin 12720 >>Turn in How To Win Friends And Influence Enemies
     .accept 12723 >>Accept Behind Scarlet Lines
     .target Prince Keleseth
@@ -448,18 +448,18 @@ step
     .goto 124,54.25,83.91 << NightElf
     .goto 124,54.11,83.75 << Goblin
     .goto 124,54.5,83.85 << Tauren
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Lord Harford|r. then kill them << Worgen
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Lady Eonys|r. then kill them << BloodElf
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Donovan Pulfrost|r. then kill them << Dwarf
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Kug Ironjaw|r. then kill them << Orc
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Antoine Brack|r. then kill them << Undead
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Ellen Stanbridge|r. then kill them << Human
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Iggy Darktusk|r. then kill them << Troll
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Lord Harford|r then kill them << Worgen
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Lady Eonys|r then kill them << BloodElf
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Donovan Pulfrost|r then kill them << Dwarf
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Kug Ironjaw|r then kill them << Orc
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Antoine Brack|r then kill them << Undead
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Ellen Stanbridge|r then kill them << Human
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Iggy Darktusk|r then kill them << Troll
     >>Go inside the House wait infront of |cRXP_FRIENDLY_Goby Blastenheimer |r.then kill them << Gnome
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Gally Lumpstain|r. then kill them << Goblin
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Yazmina Oakenthorn|r. then kill them << NightElf
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Malar Bravehorn|r. then kill them << Tauren
-    >>Go inside the House wait infront of |cRXP_FRIENDLY_Valok the Righteous|r. then kill them << Draenei
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Gally Lumpstain|r then kill them << Goblin
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Yazmina Oakenthorn|r then kill them << NightElf
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Malar Bravehorn|r then kill them << Tauren
+    >>Go inside the House wait infront of |cRXP_FRIENDLY_Valok the Righteous|r then kill them << Draenei
     .complete 28650,1 >>Complete A Special Surprise << Goblin
     .complete 28649,1 >>Complete A Special Surprise << Worgen
     .complete 12739,1 >>Complete A Special Surprise << Tauren
@@ -501,7 +501,7 @@ step
     .target Orbaz Bloodbane
 step
     .goto 124,59.69,76.6
-    >>Use 136065|T967530:0|t[Makeshift Cover] to summon the |cRXP_ENEMY_Courier|r. then kill and [|cRXP_LOOT_loot him|r].
+    >>Use 136065|T967530:0|t[Makeshift Cover] to summon the |cRXP_ENEMY_Courier|r then kill and [|cRXP_LOOT_loot him|r].
     .complete 12754,1 --1/1 Scarlet Courier's Belongings
     .complete 12754,2 --1/1 Scarlet Courier's Message
     .use 39645
@@ -585,7 +585,7 @@ step
 step
     .goto 23,83.15,48.75,10,0
     .goto 23,81.72,46.70
-    >>Walk on the |cRXP_WARN_Purple Teleporter|r. then slay the |cRXP_ENEMY_abominations|r. |cRXP_WARN_in the room|r.
+    >>Walk on the |cRXP_WARN_Purple Teleporter|r then slay the |cRXP_ENEMY_abominations|r |cRXP_WARN_in the room|r.
     .complete 13166,2 --10/10 Scourge slain
     .complete 13166,1 --1/1 Patchwerk slain
     .target Patchwerk

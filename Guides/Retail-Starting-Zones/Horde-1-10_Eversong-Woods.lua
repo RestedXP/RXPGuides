@@ -15,7 +15,7 @@ step
     .zoneskip 1727
     #completewith SunstriderIsleFirstQuestCheck
     +Welcome to the |cfff78300Blood Elf Starting Zone|r. Guide of RestedXP.
-    *This route is roughly 10-20 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r. instead.
+    *This route is roughly 10-20 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
 step
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the |cfff78300Blood Elf Starting Zone|r.
@@ -99,7 +99,7 @@ step
 step
     #requires EversongWoodsArcaneSilver
     #completewith EversongWoodsSecondBelonging
-    >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r. on the side
+    >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r on the side.
     .complete 8334,2 --7/7 Feral Tender slain
     .complete 8334,1 --7/7 Tender slain
     .mob Tender
@@ -137,7 +137,7 @@ step
     .target Lanthan Perilon
 step
     #completewith EversongWoodsFelendrenHead
-    >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r. while going up the academy
+    >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraith|r while going up the academy.
     .complete 8335,1 --8/8 Arcane Wraith slain
     .complete 8335,2 --2/2 Tainted Arcane Wraith slain
     .mob Arcane Wraith
@@ -276,7 +276,7 @@ RXPGuides.RegisterGuide([[
 step << Hunter
     #completewith next
     .goto 467,58.74,57.51
-    .cast 1515 >>Tame a |cRXP_ENEMY_Mana Wyrm|r. with your ability |T132164:0|t[Tame Beast]
+    .cast 1515 >>Tame a |cRXP_ENEMY_Mana Wyrm|r with your ability |T132164:0|t[Tame Beast].
 step
     .isOnQuest 8347
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Outrunner Alarion|r.
@@ -496,7 +496,7 @@ step
     .turnin 8487 >>Turn in Corrupted Soil
     .target Apprentice Mirveda
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for around 5 seconds and talk to |cRXP_FRIENDLY_Apprentice Mirveda|r. again
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for around 5 seconds and talk to |cRXP_FRIENDLY_Apprentice Mirveda|r again.
     .goto 94,54.28,70.98
     .accept 8488 >>Accept Unexpected Results
     .target Apprentice Mirveda
@@ -570,5 +570,5 @@ step
     .goto 110,76.06,52.10,20,0
     .goto 110,56.39,23.23,20,0
     .goto 110,58.55,18.65
-    .zone 85 >>|cRXP_WARN_Mount up|r. Take the portal to Orgrimmar
+    .zone 85 >>|cRXP_WARN_Mount up|r Take the portal to Orgrimmar.
 ]])

@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     +Welcome to the |cRXP_WARN_Dwarf Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r. instead.
+    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
 step
     .goto 27,36.872,70.045
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joren Ironstock|r.
@@ -136,13 +136,13 @@ step
     .goto 27,35.997,65.913,12,0
     .goto 27,36.009,66.126,12,0
     .goto 27,35.944,66.274,12,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r inside.
     .turnin 24473 >>Turn in Lockdown in Anvilmar
     .accept 24474 >>Accept First Things First: We're Gonna Need Some Beer
 	.target Jona Ironstock
 step
     .goto 27,35.801,66.256
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside.
     .accept 24477 >>Accept Dwarven Artifacts
 	.target Grundel Harkin
 step
@@ -289,13 +289,13 @@ step
     .goto 27,35.997,65.913,12,0
     .goto 27,36.009,66.126,12,0
     .goto 27,35.944,66.274,12,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r inside.
     .turnin 24474 >>Turn in First Things First: We're Gonna Need Some Beer
     .accept 24475 >>Accept All the Other Stuff
 	.target Jona Ironstock
 step
     .goto 27,35.801,66.256,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside.
     .turnin 24477 >>Turn in Dwarven Artifacts
     .accept 24486 >>Accept Make Hay While the Sun Shines
 	.target Grundel Harkin
@@ -347,7 +347,7 @@ step
     .goto 27,33.203,71.701,30,0
     .goto 27,34.104,71.636,30,0
     >>Kill |cRXP_ENEMY_Rockjaw Scavengers|r. Loot them for their [|cRXP_LOOT_Priceless Rockjaw Artifacts|r].
-    >>|cRXP_PICK_Be aware as |cRXP_ENEMY_Rockjaw Scavengers|r cast|r. |T135238:0|t[Throw Priceless Artifact] |cRXP_PICK_(Deals damage, but gives you a [|cRXP_LOOT_Priceless Rockjaw Artifact|r.)|r]
+    >>|cRXP_PICK_Be aware as |cRXP_ENEMY_Rockjaw Scavengers|r cast|r |T135238:0|t[Throw Priceless Artifact] |cRXP_PICK_(Deals damage, but gives you a [|cRXP_LOOT_Priceless Rockjaw Artifact|r.)|r]
 .
     .complete 24486,1 --Priceless Rockjaw Artifact (5)
 	.mob Rockjaw Scavenger
@@ -427,7 +427,7 @@ step
     #label Sun
     #requires DunWolves
     .goto 27,35.801,66.256
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside.
     .turnin 24486 >>Turn in Make Hay While the Sun Shines
 	.target Grundel Harkin
 step
@@ -440,7 +440,7 @@ step
     .goto 27,35.997,65.913,12,0
     .goto 27,36.009,66.126,12,0
     .goto 27,35.944,66.274,12,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r inside.
     .turnin 24475 >>Turn in All the Other Stuff
     .accept 24487 >>Accept Whitebeard Needs Ye
 	.target Jona Ironstock
@@ -497,7 +497,7 @@ step
 step
     #optional
     #completewith next
-    .goto 27,27.759,75.195,10 >> Travel toward |cRXP_FRIENDLY_Soothsayer Mirim'koa|r. inside
+    .goto 27,27.759,75.195,10 >> Travel toward |cRXP_FRIENDLY_Soothsayer Mirim'koa|r inside.
     .timer 11,Trolling for Information RP
     .isOnQuest 24489
 --XX you can start the event earlier then get the box and come back but its way too hard to communicate it/trust the player enough for a 3s time gain vs 20s time loss
@@ -511,7 +511,7 @@ step
 step
     #optional
     #completewith next
-    .goto 27,29.593,78.754,11 >> Travel toward |cRXP_FRIENDLY_Soothsayer Rikkari|r. inside
+    .goto 27,29.593,78.754,11 >> Travel toward |cRXP_FRIENDLY_Soothsayer Rikkari|r inside.
     .timer 11,Trolling for Information RP
     .isOnQuest 24489
 step
@@ -591,7 +591,7 @@ step
     .goto 428,18.302,48.547,15,0
     .goto 428,37.713,29.248,15,0
     .goto 428,52.353,14.297,15,0
-    .goto 428,76.449,32.098,80 >> Travel toward |cRXP_ENEMY_Grik'nir the Cold|r. inside
+    .goto 428,76.449,32.098,80 >> Travel toward |cRXP_ENEMY_Grik'nir the Cold|r inside.
 	.isOnQuest 218
 step
     #sticky
@@ -633,12 +633,12 @@ step
     .goto 428,69.711,31.243,10,0
     .goto 428,69.677,26.654,10,0
     .goto 428,66.486,22.402,10,0
-    >>Kill the |cRXP_ENEMY_Wayward Fire Elemental|r. inside
+    >>Kill the |cRXP_ENEMY_Wayward Fire Elemental|r inside.
     .complete 218,2 --Wayward Fire Elemental (1)
 	.mob Wayward Fire Elemental
 step
     .goto 428,76.449,32.098
-    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. inside
+    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside.
     .complete 218,1 --Grik'nir the Cold (1)
 	.mob Grik'nir the Cold
 step
@@ -710,14 +710,14 @@ step
     .goto 27,35.997,65.913,12,0
     .goto 27,36.009,66.126,12,0
     .goto 27,35.944,66.274,12,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jona Ironstock|r inside.
     .accept 24493 >>Accept Don't Forget About Us
 	.target Jona Ironstock
 step
     #label Pack
     >>Open the |cRXP_PICK_Beer Barrel on the ground|r. Loot it for the [|cRXP_LOOT_Coldridge Beer Flagon|r].
     >>Loot the [|cRXP_LOOT_Leftover Boar Meat|r]. on the table
-    >>Open the box of |cRXP_PICK_Wolf-Hide Cloaks|r. on the ground. Loot it for the [|cRXP_LOOT_Ragged Wolf-Hide Cloak|r].
+    >>Open the box of |cRXP_PICK_Wolf-Hide Cloaks|r on the ground. Loot it for the [|cRXP_LOOT_Ragged Wolf-Hide Cloak|r].
     .complete 24492,1 --Coldridge Beer Flagon (1)
     .goto 27,35.949,66.531
     .complete 24492,3 --Leftover Boar Meat (1)
@@ -725,7 +725,7 @@ step
     .complete 24492,2 --Ragged Wolf-Hide Cloak (1)
     .goto 27,35.900,66.633
 step << skip
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r, |cRXP_PICK_Leftover Boar Meat|r and the |cRXP_PICK_Crate|r. |cRXP_WARN_inside Anvilmar|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r, |cRXP_PICK_Leftover Boar Meat|r and the |cRXP_PICK_Crate|r |cRXP_WARN_inside Anvilmar|r.
     .complete 24492,3
     .goto Dun Morogh,35.39,66.03
     .complete 24492,2
@@ -750,7 +750,7 @@ step
 --   .timer 83.5,Pack Your Bags RP
 	.target Milo Geartwinge
 step
-    >>|cRXP_WARN_When the 26-second timer expires (26 seconds after accepting the ride), log out and then back on whilst on |cRXP_FRIENDLY_Milo's Gyro|r. to logout skip to Kharanos|r.
+    >>|cRXP_WARN_When the 26-second timer expires (26 seconds after accepting the ride), log out and then back on whilst on |cRXP_FRIENDLY_Milo's Gyro|r to logout skip to Kharanos|r.
     >>|cRXP_WARN_If you do it before the timer expires you may logout skip to New Tinkertown or back to Coldridge Valley. If this happens, travel to Kharanos normally|r.
     .subzone 131 >> Travel to Kharanos
     .isOnQuest 24493
@@ -772,7 +772,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     +Welcome to the |cRXP_WARN_Gnome Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r. instead.
+    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
     step
     .goto 30,34.101,32.243
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nevin Twistwrench|r.
@@ -851,7 +851,7 @@ step
 	.target Gaffer Coilspring
 step
     .goto 30,58.746,82.974
-    >>|cRXP_WARN_Type /sit in front of the |cRXP_FRIENDLY_Sanitron 500|r. then enter it to skip the RP|r.
+    >>|cRXP_WARN_Type /sit in front of the |cRXP_FRIENDLY_Sanitron 500|r then enter it to skip the RP|r.
     .complete 27635,1 --Decontamination Process started (1)
     .target Sanitron 500
 --XX  .emote SIT,46185 Doesn't work here, needs a delay (batch makes this not work)
@@ -942,7 +942,7 @@ step
 	.target High Tinker Mekkatorque
 step
     .goto 469,38.802,32.715
-    >>|cRXP_WARN_Wait out the RP next to|r. |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
+    >>|cRXP_WARN_Wait out the RP next to|r |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
     .complete 26208,1 --Learn about Operation: Gnomeregan (1)
 --XX moves to     .goto 469,38.622,32.905 1-2s after objective completes
 step
@@ -1052,8 +1052,8 @@ step
     .goto 469,40.808,52.328,15,0
     .goto 469,41.910,51.865,15,0
     .goto 469,41.328,50.585,15,0
-    >>Guide your |cRXP_FRIENDLY_GS-9x Multi-bot|r. toward the Geysers in the green pools
-    >>|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r. dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r. for a new one|r.
+    >>Guide your |cRXP_FRIENDLY_GS-9x Multi-bot|r toward the Geysers in the green pools
+    >>|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r for a new one|r.
     .complete 26205,1 --Clean up Toxic Geysers (5)
     .skipgossip 42553,1
 step
@@ -1152,7 +1152,7 @@ step
     .goto 469,47.007,71.031,15,0
     .goto 469,45.803,69.339,15,0
     .goto 469,43.887,70.268,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Makeshift Cages|r. to rescue the |cRXP_FRIENDLY_Captured Demolitionists|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Makeshift Cages|r to rescue the |cRXP_FRIENDLY_Captured Demolitionists|r.
     .complete 26284,1 --Captured Demolitionists rescued (6)
 step
     #requires PowderKegs
@@ -1174,8 +1174,8 @@ step
     .goto 470,64.507,54.540,15,0
     .goto 470,60.714,72.486,15,0
     .goto 470,45.246,74.390,15,0
-    .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r. inside
-    >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r. unless you attack them|r.
+    .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside.
+    >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
     .noflyable --Azeroth Flying
 step
     #completewith Bruggor
@@ -1185,19 +1185,19 @@ step
     .goto 470,64.507,54.540,15,0
     .goto 470,60.714,72.486,15,0
     .goto 470,45.246,74.390,15,0
-    .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r. inside
+    .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside.
     .flyable --Azeroth Flying
 step
     #sticky
     #label Detonator
     .goto 470,36.112,40.902,0,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r. on the ground inside
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r on the ground inside.
     .complete 26318,1 --Detonate trogg tunnel (1)
 step
     #label Bruggor
     .goto 470,21.791,58.700,15,0
     .goto 470,31.866,44.578
-    >>Kill |cRXP_ENEMY_Boss Bruggor|r. inside
+    >>Kill |cRXP_ENEMY_Boss Bruggor|r inside.
     .complete 26318,2 --Boss Bruggor (1)
 	.mob Boss Bruggor
 step
@@ -1209,7 +1209,7 @@ step
     .goto 470,74.752,38.437,15,0
     .goto 470,83.611,44.352,15,0
     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
-    >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r. unless you attack them|r.
+    >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
     .noflyable --Azeroth Flying
     .subzoneskip 135,1
 step
@@ -1498,12 +1498,12 @@ step
     #completewith Belm
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
-    .goto 27,54.485,50.847,10 >> Enter the Thunderbrew Distillery. Travel toward |cRXP_FRIENDLY_Innkeeper Belm|r. inside
+    .goto 27,54.485,50.847,10 >> Enter the Thunderbrew Distillery. Travel toward |cRXP_FRIENDLY_Innkeeper Belm|r inside.
 step << Gnome
     #requires Distillery
     #completewith Belm
     .goto 27,54.485,50.847
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside.
     .turnin 26380,2 >>Turn in Bound for Kharanos
 	.target Innkeeper Belm
     .isOnQuest 26380
@@ -1511,7 +1511,7 @@ step << Gnome
 step
     #label Belm
     .goto 27,54.485,50.847
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside.
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_from him|r.
     .collect 2894,1,384,1 --Rhapsody Malt (1)
     .home >>Set your Hearthstone to Thunderbrew Distillery
@@ -1522,7 +1522,7 @@ step << Dwarf/Gnome/DarkIronDwarf
     .goto 27,54.784,50.629,8,0
     .goto 27,54.733,50.815,8,0
     .goto 27,54.733,50.815
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r. inside in the backroom
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom.
     .accept 6387 >>Accept Honor Students
     .train 2550 >> Train |T4620671:0|t[Cooking]
 	.target Gremlock Pilsnor
@@ -1533,7 +1533,7 @@ step << !Dwarf !Gnome !DarkIronDwarf
     .goto 27,54.784,50.629,8,0
     .goto 27,54.733,50.815,8,0
     .goto 27,54.733,50.815
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r. inside in the backroom
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom.
     .train 2550 >> Train |T4620671:0|t[Cooking]
 	.target Gremlock Pilsnor
     .dmf
@@ -1542,7 +1542,7 @@ step << Dwarf/Gnome/DarkIronDwarf
     .goto 27,54.784,50.629,8,0
     .goto 27,54.733,50.815,8,0
     .goto 27,54.733,50.815
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r. inside in the backroom
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom.
     .accept 6387 >>Accept Honor Students
 	.target Gremlock Pilsnor
 step
@@ -1728,7 +1728,7 @@ step
     .waypoint 29,69.067,56.919,40,0
     .waypoint 29,51.657,55.467,40,0
     .waypoint 29,49.271,52.117,40,0
-    >>Kill |cRXP_ENEMY_Wendigos|r. inside
+    >>Kill |cRXP_ENEMY_Wendigos|r inside.
     .complete 25667,1 --Wendigo slain (10)
 	.mob Wendigo
 step
@@ -1738,23 +1738,23 @@ step
     .goto 29,58.971,77.810,20,0
     .goto 29,53.639,70.746,20,0
     .goto 29,51.947,65.073,20,0
-    .goto 29,51.819,48.382,15 >>Travel toward |cRXP_FRIENDLY_Mountaineer Dunstan|r. inside
+    .goto 29,51.819,48.382,15 >>Travel toward |cRXP_FRIENDLY_Mountaineer Dunstan|r inside.
     .isOnQuest 313
 step
     .goto 29,51.819,48.382
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Dunstan|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Dunstan|r inside.
     .complete 313,1 --Convey orders to Mountaineer Dunstan (1)
 	.target Mountaineer Dunstan
     .skipgossip
 step
     .goto 29,60.272,56.211
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Lewin|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Lewin|r inside.
     .complete 313,2 --Convey orders to Mountaineer Lewin (1)
 	.target Mountaineer Lewin
     .skipgossip
 step
     .goto 29,61.511,22.248
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Valgrum|r. inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Valgrum|r inside.
     .complete 313,3 --Convey orders to Mountaineer Valgrum (1)
 	.target Mountaineer Valgrum
     .skipgossip

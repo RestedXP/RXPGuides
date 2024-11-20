@@ -14,11 +14,11 @@ step << Alliance/Horde
 	#completewith next
     +Welcome to RestedXP Exile's Reach Guide! This Guide is both beginner friendly and the fastest intro guide.
 step << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r. in front of you
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r in front of you.
 	.accept 56775 >> Accept Warming Up
 	.target Captain Garrick
 step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka|r. in front of you
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka|r in front of you.
 	.accept 59926 >> Accept Warming Up
 	.target Warlord Breka Grimaxe
 step
@@ -63,7 +63,7 @@ step << Horde
 	.timer 13,Brace for Impact RP
 	.target Grunt Throg
 step << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r. inside the ship
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r inside the ship.
 	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r.
 	.turnin 58208 >>Turn in Brace for Impact
 	.target Captain Garrick
@@ -95,7 +95,7 @@ step
     .goto 1409,60.02,81.97,20,0
     .goto 1409,61.75,79.36,20,0
     .goto 1409,61.12,77.68
-    >>Kill |cRXP_ENEMY_Murloc Spearhunters|r and |cRXP_ENEMY_Watershapers|r. Loot them for their |T1387611:0|t[|cRXP_LOOT_First Aid Kits|r.]
+    >>Kill |cRXP_ENEMY_Murloc Spearhunters|r and |cRXP_ENEMY_Watershapers|r. Loot them for their |T1387611:0|t[|cRXP_LOOT_First Aid Kits|r].
     .complete 55122,1 << Alliance   --6/6 First Aid Kits recovered from defeated Murlocs
     .complete 59929,1 << Horde      --6/6 First Aid Kits recovered from defeated Murlocs
     .mob Murloc Spearhunter
@@ -117,7 +117,7 @@ step
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     >>|cRXP_WARN_This will allow you to press a Keybind to use a Quest Item/Target a relevant mob|r.
 step << Alliance
-	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Kee-La|r, |cRXP_FRIENDLY_Austin|r, and |cRXP_FRIENDLY_Bjorn|r. on the ground around you
+	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Kee-La|r, |cRXP_FRIENDLY_Austin|r, and |cRXP_FRIENDLY_Bjorn|r on the ground around you.
     .complete 54951,2 --1/1 First Aid Kit used on Kee-La
     .goto 1409,61.73,83.48,-1
     .complete 54951,3 --1/1 First Aid Kit used on Austin Huxworth
@@ -129,7 +129,7 @@ step << Alliance
     .target Austin Huxworth
     .target Bjorn Stouthands
 step << Horde
-	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Bo|r, |cRXP_FRIENDLY_Mithdran|r, and |cRXP_FRIENDLY_Lana|r. on the ground around you
+	>>Use the |T1387611:0|t[First Aid Kit] on |cRXP_FRIENDLY_Bo|r, |cRXP_FRIENDLY_Mithdran|r, and |cRXP_FRIENDLY_Lana|r on the ground around you.
     .complete 59930,2 --1/1 First Aid Kit used on Bo
     .goto 1409,61.73,83.48,-1
     .complete 59930,3 --1/1 First Aid Kit used on Mithdran Dawntracker
@@ -203,7 +203,7 @@ step << !Rogue !Warrior !Monk !Paladin
 	.mob Pricky Porcupine
 step
     .goto 1409,58.33,74.58
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Campfire|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Campfire|r on the ground.
     .complete 55174,2 << Alliance --1/1 Cook the meat on the campfire
     .complete 59932,2 << Horde --1/1 Cook the meat on the campfire
 step << Alliance
@@ -231,10 +231,10 @@ step << Horde
 step << Alliance !Hunter
     .goto 1409,57.60,72.95 << !Monk
     .goto 1409,58.87,73.55 << Monk
-    >>Follow |cRXP_FRIENDLY_Garrick|r. Once |cRXP_ENEMY_Garrick|r. turns hostile, attack her
+    >>Follow |cRXP_FRIENDLY_Garrick|r. Once |cRXP_ENEMY_Garrick|r turns hostile, attack her
     >>Cast |T136207:0|tShadow Word: Pain. Apply it 3 more times before the debuff falls off << Priest
-    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Garrick|r. 3 times. You can use |T132316:0|tHamstring to slow her. << Warrior
-    >>Cast |T136096:0|tMoonfire on |cRXP_ENEMY_Garrick|r. when she prompts you to  << Druid
+    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Garrick|r 3 times. You can use |T132316:0|tHamstring to slow her. << Warrior
+    >>Cast |T136096:0|tMoonfire on |cRXP_ENEMY_Garrick|r when she prompts you to  << Druid
     >>Cast |T135846:0|tFrostbolt at range, then cast |T135807:0|tFire Blast in melee range -> Repeat << Mage
     >>Cast |T136048:0|tLightning Bolt at range, then cast |T460956:0|tPrimal Strike 4 times -> Repeat << Shaman
     >>Cast |T135891:0|tCrusader Strike 3 times to build 3 Holy Power, then cast |T236265:0|tShield of the Righteous -> Repeat << Paladin
@@ -245,10 +245,10 @@ step << Alliance !Hunter
 step << Horde !Hunter
     .goto 1409,57.60,72.95 << !Monk
     .goto 1409,58.87,73.55 << Monk
-    >>Follow |cRXP_FRIENDLY_Breka|r. Once |cRXP_ENEMY_Breka|r. turns hostile, attack her
+    >>Follow |cRXP_FRIENDLY_Breka|r. Once |cRXP_ENEMY_Breka|r turns hostile, attack her.
     >>Cast |T136207:0|tShadow Word: Pain. Apply it 3 more times before the debuff falls off << Priest
-    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Breka|r. 3 times. You can use |T132316:0|tHamstring to slow her. << Warrior
-    >>Cast |T136096:0|tMoonfire on |cRXP_ENEMY_Breka|r. when she prompts you to  << Druid
+    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Breka|r 3 times. You can use |T132316:0|tHamstring to slow her. << Warrior
+    >>Cast |T136096:0|tMoonfire on |cRXP_ENEMY_Breka|r when she prompts you to  << Druid
     >>Cast |T135846:0|tFrostbolt at range, then cast |T135807:0|tFire Blast in melee range -> Repeat << Mage
     >>Cast |T136048:0|tLightning Bolt at range, then cast |T460956:0|tPrimal Strike 4 times -> Repeat << Shaman
     >>Cast |T135891:0|tCrusader Strike 3 times to build 3 Holy Power, then cast |T236265:0|tShield of the Righteous -> Repeat << Paladin
@@ -305,7 +305,7 @@ step << Hunter
     .goto 1409,64.22,68.26,30,0
     .goto 1409,63.60,70.74
     >>Drag |T132161:0|t[Call Pet] and |T132179:0|t[Pet Utility] onto your Action Bars
-	>>|cRXP_WARN_Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Sharpbeak Hawk|r. to tame it. Make sure you tame a Hawk for increased movement speed|r.
+	>>|cRXP_WARN_Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Sharpbeak Hawk|r to tame it. Make sure you tame a Hawk for increased movement speed|r.
     .complete 59342,2 << Alliance --1/1 Any wildlife beast tamed
     .complete 59937,2 << Horde --1/1 Any wildlife beast tamed
 	.mob Sharpbeak Hawk
@@ -415,14 +415,14 @@ step
     #sticky
 	#label Chest1
     .goto 1409,58.51,59.30
-	.turnin 56579 >>Loot the |cRXP_PICK_Chest|r. on the ground
+	.turnin 56579 >>Loot the |cRXP_PICK_Chest|r on the ground.
 step
 	.goto 1409,56.63,55.46,40,0
     .goto 1409,58.51,59.30,40,0
 	.goto 1409,56.63,55.46,40,0
     .goto 1409,58.51,59.30
-    >>Use the |T2735166:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r. in melee range << Alliance
-    >>Use the |T2735166:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r. in melee range << Horde
+    >>Use the |T2735166:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r in melee range << Alliance
+    >>Use the |T2735166:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r in melee range << Horde
     .complete 56034,1 << Alliance --3/3 Re-Sizer v9.0.1 tested on Wandering Boars
     .complete 59941,1 << Horde --3/3 Re-Sizer v9.0.1 tested on Wandering Boars
 	.mob Wandering Boar
@@ -449,23 +449,23 @@ step << Horde
 	.target Cork Fizzlepop
 step << Alliance
     .goto 1409,56.53,58.42
-    >>Get onto the |cRXP_FRIENDLY_Giant Boar|r. after a short RP
+    >>Get onto the |cRXP_FRIENDLY_Giant Boar|r after a short RP
     .complete 55879,1 --1/1 Ride the Giant Boar
     .target Giant Boar
 step << Horde
     .goto 1409,56.08,58.81
-    >>Get into the |cRXP_FRIENDLY_Choppy Booster Mk. 5|r. after a short RP
+    >>Get into the |cRXP_FRIENDLY_Choppy Booster Mk. 5|r after a short RP
     .complete 59942,1 --1/1 Ride the Choppy Booster Mk. 5
     .target Choppy Booster Mk. 5
 step << Alliance
     .goto 1409,52.59,53.34
-	>>Use |T132226:0|t[Trample] (1) on |cRXP_ENEMY_Monstrous Cadavers|r. to kill them
+	>>Use |T132226:0|t[Trample] (1) on |cRXP_ENEMY_Monstrous Cadavers|r to kill them.
     .complete 55879,2 --8/8 Monstrous Cadaver slain
 	.timer 8,Ride of the Boar RP
 	.mob Monstrous Cadaver
 step << Horde
     .goto 1409,52.59,53.34
-    >>Use |T2735166:0|t[Re-Sizer Blast] (1) on |cRXP_ENEMY_Monstrous Cadavers|r. to kill them
+    >>Use |T2735166:0|t[Re-Sizer Blast] (1) on |cRXP_ENEMY_Monstrous Cadavers|r to kill them.
     .complete 59942,2 --8/8 Monstrous Cadaver slain
 	.timer 13,Roleplay Duration
 	.mob Monstrous Cadaver
@@ -503,14 +503,14 @@ step << Horde
 step << Alliance
     .goto 1409,52.22,55.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richter|r.
-	>>Buy |cRXP_BUY_Tough Jerky|r or an |cRXP_BUY_Alliance Tabard|r. Sell any trash in your bags
+	>>Buy |cRXP_BUY_Tough Jerky|r or an |cRXP_BUY_Alliance Tabard|r. Sell any trash in your bags.
     .complete 55194,2 --Any Item sold to Quartermaster Richter
     .complete 55194,1 --Any Item purchased from Quartermaster Richter
 	.target Quartermaster Richter
 step << Horde
     .goto 1409,52.45,55.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'hake|r.
-	>>Buy |cRXP_BUY_Tough Jerky|r or a |cRXP_BUY_Horde Tabard|r. Sell any trash in your bags
+	>>Buy |cRXP_BUY_Tough Jerky|r or a |cRXP_BUY_Horde Tabard|r. Sell any trash in your bags.
     .complete 59950,1 -- A Purchase an item from Provisioner Jin'hake
     .complete 59950,2 -- Sell an item to Provisioner Jin'hake
     .buy 178120,1
@@ -558,19 +558,19 @@ step << Horde
 	.target Lana Jordan
 step << Shaman
     .goto 1409,52.12,51.65
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r on the ground.
     .complete 59002,1,1 --1/4 Veil Blossom
 step << Shaman
     .goto 1409,51.84,51.12
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r on the ground.
     .complete 59002,1,2 --2/4 Veil Blossom
 step << Shaman
     .goto 1409,52.53,51.00
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r on the ground.
     .complete 59002,1,3 --3/4 Veil Blossom
 step << Shaman
     .goto 1409,53.23,51.38
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r. on the ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tLoot the |cRXP_PICK_Blossoms|r on the ground.
     .complete 59002,1 --4/4 Veil Blossom
 step << Horde
     .goto 1409,53.79,52.17
@@ -603,7 +603,7 @@ step << Horde
     .goto 1409,56.83,46.17
 step
 	#completewith Harpytotem
-	>>Kill |cRXP_ENEMY_Harpy Boltcallers|r, |cRXP_ENEMY_Snatchers|r, and |cRXP_ENEMY_Hunting Worgs|r. Don't focus on this yet
+	>>Kill |cRXP_ENEMY_Harpy Boltcallers|r, |cRXP_ENEMY_Snatchers|r, and |cRXP_ENEMY_Hunting Worgs|r. Don't focus on this yet.
     .complete 55764,1 << Alliance --10/10 Harpies and cohorts slain
     .complete 59945,1 << Horde --10/10 Harpies and cohorts slain
 	.mob Harpy Boltcaller
@@ -611,39 +611,39 @@ step
 	.mob Hunting Worg
 step
     .goto 1409,58.23,44.49
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r. to burn it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r to burn it.
     .complete 59946,1,1 << Horde --1/5 Harpy Totems burned
     .complete 55881,1,1 << Alliance --1/5 Harpy Totems burned
 step
     .goto 1409,58.84,42.95
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r. to burn it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r to burn it.
     .complete 59946,1,2 << Horde --2/5 Harpy Totems burned
     .complete 55881,1,2 << Alliance --2/5 Harpy Totems burned
 step
     .goto 1409,61.23,41.31
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r. to burn it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r to burn it.
     .complete 59946,1,3 << Horde --3/5 Harpy Totems burned
     .complete 55881,1,3 << Alliance --3/5 Harpy Totems burned
     .goto 1409,61.23,41.31
 step
     #label Chest3
     .goto 1409,59.33,37.63
-    .turnin 56581 >>Loot the |cRXP_PICK_Chest|r. on the ground
+    .turnin 56581 >>Loot the |cRXP_PICK_Chest|r on the ground.
 step
     .goto 1409,59.01,39.10
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r. to burn it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r to burn it.
     .complete 59946,1,4 << Horde --4/5 Harpy Totems burned
     .complete 55881,1,4 << Alliance --4/5 Harpy Totems burned
 step
 	#label Harpytotem
     .goto 1409,57.18,42.23
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r. to burn it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Harpy Totem|r to burn it.
     .complete 59946,1 << Horde --5/5 Harpy Totems burned
     .complete 55881,1 << Alliance --5/5 Harpy Totems burned
 step
 	#completewith next
-    >>Kill |cRXP_ENEMY_Harpies|r and |cRXP_ENEMY_Worgs|r. that are summoned as you protect |cRXP_FRIENDLY_Meredy|r. << Alliance
-    >>Kill |cRXP_ENEMY_Harpies|r and |cRXP_ENEMY_Worgs|r. that are summoned as you protect |cRXP_FRIENDLY_Herbert|r. << Horde
+    >>Kill |cRXP_ENEMY_Harpies|r and |cRXP_ENEMY_Worgs|r that are summoned as you protect |cRXP_FRIENDLY_Meredy|r. << Alliance
+    >>Kill |cRXP_ENEMY_Harpies|r and |cRXP_ENEMY_Worgs|r that are summoned as you protect |cRXP_FRIENDLY_Herbert|r. << Horde
     .complete 55764,1 << Alliance --10/10 Harpies and cohorts slain
     .complete 59945,1 << Horde --10/10 Harpies and cohorts slain
     .goto 1409,56.16,43.55,0,0
@@ -654,7 +654,7 @@ step
     .goto 1409,54.29,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy|r. << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert|r. << Horde
-	>>Kill the oncoming waves of enemies. Kill |cRXP_ENEMY_Bloodbeak|r. when he appears
+	>>Kill the oncoming waves of enemies. Kill |cRXP_ENEMY_Bloodbeak|r when he appears.
     .complete 55763,1 << Alliance --1/1 Meredy Huntswell rescued
     .complete 59944,1 << Horde --1/1 Herbert Gloomburst rescued
     .skipgossip
@@ -704,19 +704,19 @@ step
     .accept 54933 >>Accept Freeing the Light
 	.target Lightspawn
 step
-	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r. to disperse the energy
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy.
     .complete 54933,1 --1/1 First necrotic energy dispersed
     .goto 1409,57.42,49.68
 step
-	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r. to disperse the energy
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy.
     .complete 54933,2 --1/1 Second necrotic energy dispersed
     .goto 1409,58.49,49.16
 step
-	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r. to disperse the energy
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy.
     .complete 54933,3 --1/1 Third necrotic energy dispersed
     .goto 1409,59.00,50.69
 step
-	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r. to disperse the energy
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy.
     .complete 54933,4 --1/1 Fourth necrotic energy dispersed
 	.timer 11,Freeing the Light RP
     .goto 1409,57.82,51.19
@@ -754,11 +754,11 @@ step << Horde Paladin
 	.target Daelya Twilightsbane
 step << Alliance Paladin
     .goto 1409,57.08,52.73
-	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Altar|r. to destroy it
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Altar|r to destroy it.
     .complete 58946,2 --1/1 Necrotic altar destroyed
 step << Horde Paladin
     .goto 1409,57.08,52.73
-	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Altar|r. to destroy it
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Altar|r to destroy it.
     .complete 60174,2 --1/1 Necrotic altar destroyed
 step << Alliance Paladin
     .goto 1409,57.57,52.22
@@ -777,7 +777,7 @@ step
 	.target Lightspawn
 step << Alliance Warrior
     .goto 1409,51.47,47.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_ENEMY_Hjalmar|r. |cRXP_WARN_Damage him to 20% or less health|r. |cRXP_WARN_Cast|r. |T135358:0|t|cRXP_WARN_Execute on him|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_ENEMY_Hjalmar|r. |cRXP_WARN_Damage him to 20% or less health|r. |cRXP_WARN_Cast|r |T135358:0|t|cRXP_WARN_Execute on him|r.
     .turnin 58914 >>Turn in A Warrior's End
     .accept 58915 >>Accept Hjalmar's Final Execution
     .complete 58915,1 --1/1 Hjalmar the Undying slain with Execute
@@ -785,7 +785,7 @@ step << Alliance Warrior
 	.target Hjalmar the Undying
 step << Horde Warrior
     .goto 1409,51.47,47.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_ENEMY_Hjalmar|r. |cRXP_WARN_Damage him to 20% or less health|r. |cRXP_WARN_Cast|r. |T135358:0|t|cRXP_WARN_Execute on him|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_ENEMY_Hjalmar|r. |cRXP_WARN_Damage him to 20% or less health|r. |cRXP_WARN_Cast|r |T135358:0|t|cRXP_WARN_Execute on him|r.
     .turnin 59971 >>Turn in A Warrior's End
     .accept 59972 >>Accept Hjalmar's Final Execution
     .complete 59972,1 --1/1 Hjalmar the Undying slain with Execute
@@ -836,7 +836,7 @@ step << Horde Priest
 	.target Sha'zul
 step << Alliance Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hubert|r.'s Corpse on the ground
-	>>Loot the |cRXP_PICK_Book|r. that appears next to him on the ground
+	>>Loot the |cRXP_PICK_Book|r that appears next to him on the ground.
     .complete 58962,1 --1/1 Dead warlock's body investigated
     .goto 1409,52.53,45.89
     .complete 58962,2 --1/1 Old Grimoire
@@ -845,7 +845,7 @@ step << Alliance Warlock
     .skipgossip
 step << Horde Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprag|r.'s Corpse on the ground
-	>>Loot the |cRXP_PICK_Book|r. that appears next to him on the ground
+	>>Loot the |cRXP_PICK_Book|r that appears next to him on the ground.
     .complete 59970,1 --1/1 Dead warlock's body investigated
     .goto 1409,52.53,45.89
     .complete 59970,2 --1/1 Old Grimoire
@@ -917,17 +917,17 @@ step << Horde Monk
 	.target Bo
 step << Shaman
     .goto 1409,54.40,58.45
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_FRIENDLY_Ghost Wolf|r. to free it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_FRIENDLY_Ghost Wolf|r to free it.
     .complete 59002,3,1 --1/3 Captured ghost wolves freed
     .target Ghost Wolf
 step << Shaman
     .goto 1409,55.28,52.79
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_FRIENDLY_Ghost Wolf|r. to free it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_FRIENDLY_Ghost Wolf|r to free it.
     .complete 59002,3,2 --2/3 Captured ghost wolves freed
     .target Ghost Wolf
 step << Shaman
     .goto 1409,55.40,50.78
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_FRIENDLY_Ghost Wolf|r. to free it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_FRIENDLY_Ghost Wolf|r to free it.
     .complete 59002,3 --3/3 Captured ghost wolves freed
     .target Ghost Wolf
 step << Shaman
@@ -965,12 +965,12 @@ step << Horde Monk
 	.target Bo
 step << Alliance Monk
     .goto 1409,53.72,50.24
-    >>Follow |cRXP_FRIENDLY_Kee-La|r. When |cRXP_ENEMY_Kee-La|r. turns hostile, cast |T606552:0|tTouch of Death on her
+    >>Follow |cRXP_FRIENDLY_Kee-La|r. When |cRXP_ENEMY_Kee-La|r turns hostile, cast |T606552:0|tTouch of Death on her.
     .complete 59349,1 --1/1 Touch of Death used on Kee-La
     .mob Kee-La
 step << Horde Monk
     .goto 1409,53.72,50.24
-    >>Follow |cRXP_FRIENDLY_Bo|r. When |cRXP_ENEMY_Bo|r. turns hostile, cast |T606552:0|tTouch of Death on him
+    >>Follow |cRXP_FRIENDLY_Bo|r. When |cRXP_ENEMY_Bo|r turns hostile, cast |T606552:0|tTouch of Death on him
     .complete 59957,1 --1/1 Touch of Death used on Bo
     .mob Bo
 step << Alliance Monk
@@ -995,7 +995,7 @@ step << Horde Mage
 	.target Herbert Gloomburst
 step << Mage
     .goto 1409,51.95,49.84
-	>>Loot the |cRXP_PICK_Spell Book|r. underwater
+	>>Loot the |cRXP_PICK_Spell Book|r underwater.
     .complete 59352,1 << Alliance --1/1 Meredy's Spell Book
     .complete 59954,1 << Horde --1/1 Herbert's Spell Book
 step << Alliance Mage
@@ -1018,7 +1018,7 @@ step << Horde Mage
 	.target Herbert Gloomburst
 step << Alliance Mage
     .goto 1409,52.30,55.46
-    >>Follow |cRXP_FRIENDLY_Meredy|r and |cRXP_FRIENDLY_Cole|r. Wait out the RP
+    >>Follow |cRXP_FRIENDLY_Meredy|r and |cRXP_FRIENDLY_Cole|r. Wait out the RP.
     >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Meredy|r or |cRXP_ENEMY_Cole|r,then damage whoever you polymorphed once
     .complete 59354,2 --Practice Polymorph with Meredy or Cole
 	.timer 10,The Best Way to Use Sheep RP
@@ -1026,7 +1026,7 @@ step << Alliance Mage
 	.mob Private Cole
 step << Horde Mage
     .goto 1409,52.30,55.46
-    >>Follow |cRXP_FRIENDLY_Herbert|r and |cRXP_FRIENDLY_Throg|r. Wait out the RP
+    >>Follow |cRXP_FRIENDLY_Herbert|r and |cRXP_FRIENDLY_Throg|r. Wait out the RP.
     >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Herbert|r or |cRXP_ENEMY_Throg|r,then damage whoever you polymorphed once
     .complete 59955,2 --Practice Polymorph with Herbert or Throg
 	.timer 10,The Best Way to Use Sheep RP
@@ -1062,31 +1062,31 @@ step
     .goto 1409,50.88,60.45,10 >>Go down into the Spider Cave
 step
     .goto 1409,52.07,59.99
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r to destroy it.
     .complete 55639,1,1 << Alliance --1/5 Trapped Expedition Member rescued from cocoons
     .complete 59949,1,1 << Horde --1/5 Trapped Expedition Member rescued from cocoons
 step
     .goto 1409,52.02,58.31,15,0
     .goto 1409,50.26,58.69
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r to destroy it.
     .complete 55639,1,2 << Alliance --2/5 Trapped Expedition Member rescued from cocoons
     .complete 59949,1,2 << Horde --2/5 Trapped Expedition Member rescued from cocoons
 step
     .goto 1409,49.71,60.49,15,0
     .goto 1409,49.70,62.02
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r to destroy it.
     .complete 55639,1,3 << Alliance --3/5 Trapped Expedition Member rescued from cocoons
     .complete 59949,1,3 << Horde --3/5 Trapped Expedition Member rescued from cocoons
 step
     .goto 1409,51.12,62.10,15,0
     .goto 1409,51.96,60.67
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r to destroy it.
     .complete 55639,1,4 << Alliance --4/5 Trapped Expedition Member rescued from cocoons
     .complete 59949,1,4 << Horde --4/5 Trapped Expedition Member rescued from cocoons
 step
     .goto 1409,52.07,59.13,12,0
     .goto 1409,50.87,58.12
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Cocoon|r to destroy it.
     .complete 55639,1 << Alliance --5/5 Trapped Expedition Member rescued from cocoons
     .complete 59949,1 << Horde --5/5 Trapped Expedition Member rescued from cocoons
 step
@@ -1099,27 +1099,27 @@ step
 step << skip
 	#completewith next
     .goto 1409,47.79,60.27
-    .vehicle >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Ralia|r. to ride her
+    .vehicle >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Ralia|r to ride her.
 	.timer 51,Who Lurks in the Pit RP
 	.target Ralia Dreamchaser
 --VV ALLIANCE Ralia/Crenna not classified as either vehicle or flight paths so can't do this. unluko
 step << Alliance
     .goto 1409,47.79,60.27
 --  .goto 1409,51.83,58.76
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Ralia|r. to ride her. Wait out the RP
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Ralia|r to ride her. Wait out the RP
     .complete 55639,3 --Ride Ralia Dreamchaser to escape (1)
 	.target Ralia Dreamchaser
 step << skip
 	#completewith next
     .goto 1409,47.79,60.27
-    .vehicle >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Crenna|r. to ride her
+    .vehicle >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Crenna|r to ride her.
 	.timer 51,Who Lurks in the Pit RP
 	.target Crenna Earth-Daughter
 --VV HORDE Ralia/Crenna not classified as either vehicle or flight paths so can't do this. unluko
 step << Horde
     .goto 1409,47.79,60.27
 --   .goto 1409,51.83,58.76
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Crenna|r. to ride her. Wait out the RP
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Crenna|r to ride her. Wait out the RP.
     .complete 59949,3 --Ride Crenna Earth-Daughter to escape (1)
 	.target Crenna Earth-Daughter
 step << Horde !Hunter !Rogue !Druid
@@ -1188,7 +1188,7 @@ step << Alliance Druid
 	.target Captain Garrick
 step << Druid
     .goto 1409,45.34,49.19
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Druid Stone|r. to perform the ritual
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Druid Stone|r to perform the ritual.
     .complete 59350,1 << Alliance --1/1 Commune with the Druid Stone
     .complete 59951,1 << Horde --1/1 Commune with the Druid Stone
 step << Alliance Druid
@@ -1214,7 +1214,7 @@ step << Alliance Druid
     .accept 56344 >>Accept To Darkmaul Citadel
 	.target Captain Garrick
 step << Hunter
-    >>Loot the |cRXP_PICK_Chain|r and |cRXP_PICK_Spring|r. on the ground
+    >>Loot the |cRXP_PICK_Chain|r and |cRXP_PICK_Spring|r on the ground.
     .complete 59355,2 << Alliance --1/1 Rusted Chain
     .complete 59952,2 << Horde --1/1 Rusted Chain
     .goto 1409,52.25,53.03
@@ -1334,17 +1334,17 @@ step << Horde Rogue
 	.target Drizza Sidestabber
 step << Rogue
     .goto 1409,44.76,56.42
-    >>Loot the |cRXP_PICK_Hemlock Plant|r. on the ground
+    >>Loot the |cRXP_PICK_Hemlock Plant|r on the ground.
     .complete 58917,2,1 << Alliance --3/3 Withering Hemlock
     .complete 59967,2,1 << Horde --3/3 Withering Hemlock
 step << Rogue
     .goto 1409,45.17,55.69
-    >>Loot the |cRXP_PICK_Hemlock Plant|r. on the ground
+    >>Loot the |cRXP_PICK_Hemlock Plant|r on the ground.
     .complete 58917,2,2 << Alliance --3/3 Withering Hemlock
     .complete 59967,2,2 << Horde --3/3 Withering Hemlock
 step << Rogue
     .goto 1409,45.09,54.66
-    >>Loot the |cRXP_PICK_Hemlock Plant|r. on the ground
+    >>Loot the |cRXP_PICK_Hemlock Plant|r on the ground.
     .complete 58917,2 << Alliance --3/3 Withering Hemlock
     .complete 59967,2 << Horde --3/3 Withering Hemlock
 step << Alliance Rogue
@@ -1487,7 +1487,7 @@ step
     .complete 59978,3 << Horde --Find the ogre cooking Area
 step
     .goto 1409,45.68,37.55
-    >>Target |cRXP_FRIENDLY_Gor'groth|r. to automatically wave at him. If this doesn't work, type /wave at |cRXP_FRIENDLY_Gor'groth|r.
+    >>Target |cRXP_FRIENDLY_Gor'groth|r to automatically wave at him. If this doesn't work, type /wave at |cRXP_FRIENDLY_Gor'groth|r.
     .complete 55981,4 << Alliance --Type /wave to Gor'groth
     .complete 59978,4 << Horde --Type /wave to Gor'groth
     .emote WAVE,153580
@@ -1532,7 +1532,7 @@ step
 	.mob Ogre Chef
 	.mob Ogre Shadowcaster
 step
-    >>Kill |cRXP_ENEMY_Wug|r and |cRXP_ENEMY_Jugnug|r. inside the buildings. Loot them for their [|cRXP_LOOT_Ward Stones|r].
+    >>Kill |cRXP_ENEMY_Wug|r and |cRXP_ENEMY_Jugnug|r inside the buildings. Loot them for their [|cRXP_LOOT_Ward Stones|r].
     .complete 55990,2 << Alliance --1/1 Wug's ward stone recovered
     .complete 59981,2 << Horde --1/1 Wug's ward stone recovered
     .goto 1409,44.13,37.29
@@ -1543,34 +1543,33 @@ step
 	.mob Jugnug
 step
     .goto 1409,47.21,36.44
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r. to destroy it
-    .complete 55989,1,1 << Alliance --1/4 Catapults destroyed
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r to destroy it.
     .complete 59980,1,1 << Horde --1/4 Catapults destroyed
 step
     .goto 1409,46.26,39.71
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r to destroy it.
     .complete 55989,1,2 << Alliance --2/4 Catapults destroyed
     .complete 59980,1,2 << Horde --2/4 Catapults destroyed
 step
     .goto 1409,45.28,41.72
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r to destroy it.
     .complete 55989,1,3 << Alliance --3/4 Catapults destroyed
     .complete 59980,1,3 << Horde --3/4 Catapults destroyed
 step
     .goto 1409,42.80,41.00
-    >>Kill |cRXP_ENEMY_Grunk|r. inside the Building. Loot him for his [|cRXP_LOOT_Ward Stone|r].
+    >>Kill |cRXP_ENEMY_Grunk|r inside the Building. Loot him for his [|cRXP_LOOT_Ward Stone|r].
     .complete 55990,3 << Alliance --1/1 Grunk's ward stone recovered
     .complete 59981,3 << Horde --1/1 Grunk's ward stone recovered
 	.mob Grunk
 step
     .goto 1409,43.74,42.86
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r. to destroy it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Catapult|r to destroy it.
     .complete 55989,1 << Alliance --4/4 Catapults destroyed
     .complete 59980,1 << Horde --4/4 Catapults destroyed
 step
 	#label KillOgre
     .goto 1409,41.81,42.88
-    .turnin 56088 >>Loot the |cRXP_PICK_Chest|r. on the ground
+    .turnin 56088 >>Loot the |cRXP_PICK_Chest|r on the ground.
 step
     .goto 1409,43.19,37.59,30,0
     .goto 1409,45.74,34.78,30,0
@@ -1616,17 +1615,17 @@ step << Horde
 	.target Shuja Grimaxe
 step
     .goto 1409,39.93,32.44
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r. to disable it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r to disable it.
     .complete 55990,4,1 << Alliance --1/3 Disable runes holding Warlord Thunderwalker
     .complete 59981,4,1 << Horde --1/3 Disable runes holding Warlord Thunderwalker
 step
     .goto 1409,39.73,32.04
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r. to disable it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r to disable it.
     .complete 55990,4,2 << Alliance --2/3 Disable runes holding Warlord Thunderwalker
     .complete 59981,4,2 << Horde --2/3 Disable runes holding Warlord Thunderwalker
 step
     .goto 1409,40.07,31.96
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r. to disable it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r to disable it.
     .complete 55990,4,3 << Alliance --3/3 Disable runes holding Warlord Thunderwalker
     .complete 59981,4,3 << Horde --3/3 Disable runes holding Warlord Thunderwalker
 step << Alliance
@@ -1646,7 +1645,7 @@ step
     .complete 55992,1 << Alliance --Use the Group Finder to enter the dungeon, "Darkmaul Citadel"
     .complete 59984,1 << Horde --Use the Group Finder to enter the dungeon, "Darkmaul Citadel"
 step
-    >>Clear the Dungeon by killing |cRXP_ENEMY_Ravnyr|r. at the end
+    >>Clear the Dungeon by killing |cRXP_ENEMY_Ravnyr|r at the end.
     .complete 55992,2 << Alliance --1/1 Gor'groth's final ritual stopped
     .complete 59984,2 << Horde --1/1 Gor'groth's final ritual stopped
 step << Alliance
@@ -1683,13 +1682,13 @@ step << Horde
 	.target Warlord Breka Grimaxe
 step << Alliance
     .goto 1409,40.37,32.63
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Gryphon|r. to ride to Stormwind. Wait out the RP
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Gryphon|r to ride to Stormwind. Wait out the RP.
     .complete 55991,1 --1/1 Alliance Gryphon rode back to Stormwind
 	.isOnQuest 55991
     .target Alliance Gryphon
 step << Horde
     .goto 1409,40.37,32.63
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Wyvern|r. to ride to Orgrimmar. Wait out the RP
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Wyvern|r to ride to Orgrimmar. Wait out the RP.
     .complete 59985,1 --1/1 Horde Wyvern rode back to Orgrimmar
     .isOnQuest 59985
     .target Horde Wyvern
@@ -1744,7 +1743,7 @@ step << Alliance
 --     .goto 84,70.28,79.83,20,0
 --     .goto 84,67.72,80.03,30,0
 --     .goto 84,63.77,73.59
---     >>|cRXP_WARN_Follow|r.|cRXP_FRIENDLY_Lindie|r. |cRXP_WARN_Stay near him otherwise he will stop moving|r.
+--     >>|cRXP_WARN_Follow|r |cRXP_FRIENDLY_Lindie|r. |cRXP_WARN_Stay near him otherwise he will stop moving|r.
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato|r.
 --     .accept 332 >>Accept Wine Shop Advert
 -- 	.target Lindie Springstock
@@ -1776,7 +1775,7 @@ step << Alliance
     +|cRXP_WARN_Move the mount in your Mount Journal to your Action Bars (Default: SHIFT+P). Use the mount to move faster|r.
     .isQuestTurnedIn 59583
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lindie Springstock|r. |cRXP_WARN_next to you|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lindie Springstock|r |cRXP_WARN_next to you|r.
     .accept 58910 >>Accept What's Your Specialty? << Druid
     .accept 59586 >>Accept What's Your Specialty? << Hunter
     .accept 59587 >>Accept What's Your Specialty? << Mage
@@ -1943,7 +1942,7 @@ step << Alliance Warlock
 	.target Laphandrus Voidheart
     .isQuestTurnedIn 59583
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r. |cRXP_WARN_next to you|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r |cRXP_WARN_next to you|r.
     .accept 58911 >>Accept Home Is Where the Hearth Is
 	.target Lindie Springstock
     .isQuestTurnedIn 59583
@@ -2032,7 +2031,7 @@ step << Horde
 	.target Cork Fizzlepop
 step << Horde
     .goto 85,62.06,33.33
-    >>|cRXP_WARN_Ride with|r. |cRXP_FRIENDLY_Cork|r.
+    >>|cRXP_WARN_Ride with|r |cRXP_FRIENDLY_Cork|r.
     .complete 60344,3 --1/1 Ride with Cork Fizzlepop to the Stables
 	.target Cork Fizzlepop
     .isQuestAvailable 63219
