@@ -921,7 +921,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #group RestedXP Horde 1-22
 #defaultfor Undead
-#next 11-14 Silverpine Forest; 12-17 The Barrens
+#next 12-14 Silverpine Forest; 12-17 The Barrens
 
 step
     .goto Tirisfal Glades,40.91,54.17
