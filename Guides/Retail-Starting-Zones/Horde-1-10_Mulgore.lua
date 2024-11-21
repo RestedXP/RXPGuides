@@ -14,7 +14,7 @@ step << Tauren
     .zoneskip 1727
     #completewith MulgoreFirstQuestCheck
     +Welcome to the |cfff78300Tauren Starting Zone|r. Guide of RestedXP.
-    *This route is roughly 10-20 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r. instead.
+    *This route is roughly 10-20 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
 step << Tauren
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the |cfff78300Undead Starting Zone|r.
@@ -174,7 +174,7 @@ step
     .goto 462,11.91,27.64,10,0
     .goto 462,12.50,29.17,8 >>Follow the way up the mountain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dyami Windsoar|r. on top of the mountain
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dyami Windsoar|r on top of the mountain.
     .goto 462,15.63,30.26
     .turnin 23733 >>Turn in Rites of the Earthmother
     .accept 24215 >>Accept Rite of the Winds
@@ -217,7 +217,7 @@ step
     .goto 7,46.53,58.17,5 >>Enter the tent
 step
     #label MulgoreABundleofHidesAccept
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r. inside the tent
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r inside the tent.
     .goto 7,46.06,58.19
     .accept 6361 >>Accept A Bundle of Hides
     .target Varg Windwhisper

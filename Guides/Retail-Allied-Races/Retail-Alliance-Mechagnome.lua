@@ -273,7 +273,7 @@ step
     .complete 57494,6 --1/1 Generator activated
 step
     .goto 1462,73.56,32.08
-    .cast 311518 >>|cRXP_WARN_Use your|r. |T136099:0|t[ExtraActionButton] near |cRXP_FRIENDLY_Gelbin Mekkatorque|r |cRXP_WARN_to defibrillate him|r.
+    .cast 311518 >>|cRXP_WARN_Use your|r |T136099:0|t[ExtraActionButton] near |cRXP_FRIENDLY_Gelbin Mekkatorque|r |cRXP_WARN_to defibrillate him|r.
     .target Gelbin Mekkatorque
     .timer 5, Duration until continuation.
 step

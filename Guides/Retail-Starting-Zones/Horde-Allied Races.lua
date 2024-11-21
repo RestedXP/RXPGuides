@@ -103,7 +103,7 @@ step << DK
     .goto 1602,49.59,90.70
     .complete 58877,1 --1/1 Fealty sworn
 step << DK
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r. Select any Two-Hand Weapon
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r and select any Two-Hand Weapon.
     .goto 1602,49.59,90.70
     .turnin 58877 >>Turn in Death's Power Grows
     .accept 58903 >>Accept Defender of Azeroth

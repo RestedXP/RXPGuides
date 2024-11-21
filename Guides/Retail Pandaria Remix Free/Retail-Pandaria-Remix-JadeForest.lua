@@ -123,7 +123,7 @@ step
     .accept 29618 >>Accept The High Elder
 step
     .goto 371,45.22,25.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r. |cRXP_WARN_on the balcony|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r |cRXP_WARN_on the balcony|r.
     .turnin 29618 >>Turn in The High Elder
     .target High Elder Cloudfall
 step
@@ -273,8 +273,8 @@ step
 step
     .group
     .goto 371,41.61,28.34
-    >>|cRXP_WARN_Face your |cFFFF0000character|r. away from the training grounds and aim your |cFFFF0000camera|r. towards it|r.
-    *After the |cRXP_FRIENDLY_Tian Students|r. copy the |cFFFF0000master's action|r,use |T135906:0|t[Punch(1)] for a punch, |T132219:0|t[Kick(2)] for a stomp, and |T236169:0|t[Growl(3)] for a growl.
+    >>|cRXP_WARN_Face your |cFFFF0000character|r away from the training grounds and aim your |cFFFF0000camera|r towards it|r.
+    *After the |cRXP_FRIENDLY_Tian Students|r copy the |cFFFF0000master's action|r,use |T135906:0|t[Punch(1)] for a punch, |T132219:0|t[Kick(2)] for a stomp, and |T236169:0|t[Growl(3)] for a growl.
     .complete 29623,1 --12/12 Practice Strikes completed
     .target Tian Student
 step
@@ -411,7 +411,7 @@ step
     -- .goto 371,34.62,23.61,0 << Alliance
     -- .goto 371,34.32,23.72,0 << Alliance
     -- .goto 371,34.31,22.87,0 << Alliance
-    >>Click on |cRXP_PICK_Bushleaf Cluster|r. |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character)|r.
+    >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character)|r.
     .complete 29629,1 --80/80 Blushleaf Extract
 step
     #completewith next
@@ -480,7 +480,7 @@ step
     .target Guard Shan Long
 --step
 --    .goto 371,41.60,23.69
---    >>|cRXP_WARN_Return the Cauldron|r. but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting|r.
+--    >>|cRXP_WARN_Return the Cauldron|r but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting|r.
 --    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     .convertquest 29646,29646 << Horde
@@ -588,12 +588,12 @@ step
     -- .timer 100,RP
 step
     .goto 371,44.363,15.629
-    >>Kill |cRXP_ENEMY_Ancient Spirits|r. until quest completion (you have to kill 20 mobs to fill the bar).
+    >>Kill |cRXP_ENEMY_Ancient Spirits|r until quest completion (you have to kill 20 mobs to fill the bar).
     .complete 29749,2 --1/1 Interrupt the Ritual of Spiritbinding
     .mob Ancient Spirit
 step
     #completewith next
-    .logout >> |cRXP_WARN_Press Escape and select Logout|r. wait until you can log back in to skip roleplay.
+    .logout >> |cRXP_WARN_Press Escape and select Logout|r wait until you can log back in to skip roleplay.
 step
     .goto 371,44.23,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r.
@@ -720,8 +720,8 @@ step
 --    .accept 29755 >>Accept Pei-Back
 --step
 --    .goto 371,42.51,10.62
---    >>Defeat the |cRXP_ENEMY_Stonebound Colossus|r. |cRXP_WARN_Return to your bodies soul when |cRXP_ENEMY_Shan Jitong|r. rips you from it.
---    >>Kill |cRXP_ENEMY_Shan Jitong|r. at the end
+--    >>Defeat the |cRXP_ENEMY_Stonebound Colossus|r. |cRXP_WARN_Return to your bodies soul when |cRXP_ENEMY_Shan Jitong|r rips you from it.
+--    >>Kill |cRXP_ENEMY_Shan Jitong|r at the end
 --    .complete 29755,1 --1/1 Shan Jitong slain
 --    .mob shan jitong
 --    .mob Stonebound Colossus
@@ -866,7 +866,7 @@ step
     .goto 371,43.28,75.72,10,0
     .goto 371,43.28,75.77,0
     .goto 371,43.28,75.72,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gentle Mother Hanae|r. |cRXP_WARN_inside the house|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gentle Mother Hanae|r |cRXP_WARN_inside the house|r.
     .turnin 29580 >>Turn in Orchard-Supplied Hardware
     .turnin 29585 >>Turn in Spitfire
     .target Gentle Mother Hanae
@@ -899,7 +899,7 @@ step
 step
     #label FarmersSetFree
     #completewith next
-    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r. by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r. chained to them.
+    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r chained to them.
     .complete 29587,1 --10/10 Farmers Set Free
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
@@ -924,7 +924,7 @@ step
     .goto 371,39.46,74.75,0
     .goto 371,39.70,74.32,0
     .goto 371,40.18,74.77,0
-    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r. by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r. chained to them.
+    >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r chained to them.
     .complete 29587,1 --10/10 Farmers Set Free
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
@@ -1015,33 +1015,33 @@ step
     .mob Slitherscale Eggdrinker
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r. |cRXP_WARN_[1]|r.
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[1]|r.
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r. |cRXP_WARN_[2]|r.
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[2]|r.
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r. |cRXP_WARN_[3]|r.
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[3]|r.
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r. |cRXP_WARN_[4]|r.
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[4]|r.
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r. |cRXP_WARN_[5]|r.
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[5]|r.
     .use 78947
     .target Windward Hatchlings
 step
     #label Interact with Windward Hatchlings
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r. |cRXP_WARN_[6]|r.
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[6]|r.
     .use 78947
     .target Windward Hatchlings
 step
@@ -1160,7 +1160,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith test
-    +|cFFFF0000Important:|r. |cRXP_WARN_Read each section carefully and click through the guide for detailed tips and strategies|r.
+    +|cFFFF0000Important:|r |cRXP_WARN_Read each section carefully and click through the guide for detailed tips and strategies|r.
 step
     #label test
     +The |T623705:0|t[Cloak of Infinite Potential] is a crucial item for this event. Here’s how it works and how you can maximize its potential:
@@ -1168,10 +1168,10 @@ step
     +|cRXP_WARN_Acquisition:|r Obtain the |T623705:0|t[Cloak of Infinite Potential] from the initial questline.
 step
     +|cRXP_WARN_Stat Gains:|r The cloak gains stats through various activities:
-    *|cRXP_WARN_Looting Enemies:|r. Defeat normal enemies, elites, rares, and bosses.
-    *|cRXP_WARN_Opening Pandaria Treasures:|r. Find and open Treasures of Pandaria scattered throughout Pandaria.
-    *|cRXP_WARN_Completing Content:|r. Participate in dungeons, scenarios, and raids.
-    *|cRXP_WARN_Completing Quests:|r. Finish quests to receive |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r. open them to enhance your cloak stats further.
+    *|cRXP_WARN_Looting Enemies:|r Defeat normal enemies, elites, rares, and bosses.
+    *|cRXP_WARN_Opening Pandaria Treasures:|r Find and open Treasures of Pandaria scattered throughout Pandaria.
+    *|cRXP_WARN_Completing Content:|r Participate in dungeons, scenarios, and raids.
+    *|cRXP_WARN_Completing Quests:|r Finish quests to receive |cRXP_FRIENDLY_|T1542852:0|tCaches of Infinite Treasures|r open them to enhance your cloak stats further.
 step
     +|cRXP_WARN_Stat Increase Mechanism:|r Each stat increase gained from the various activities is random. While you may get lucky and receive a lot of your desired stats early on, rest assured that by continuously participating in these activities, you will eventually fully upgrade your cloak.
     *|cRXP_WARN_Stats that can be Enhanced:|r.
@@ -1211,9 +1211,9 @@ step
     *Here's a detailed explanation of how Bronze works and its role in the event:
 step
     +|cRXP_WARN_Acquisition of |T4638724:0|t[Bronze]|r.
-    *|cRXP_WARN_Scrapping Unwanted Items:|r. Players can scrap unwanted or outleveled items |cRXP_WARN_including prismatic gems|r. by using the |T4643984:0|t[Unraveling Sands] Abilty to obtain Bronze. This process helps players clear their inventory of items they no longer need while gaining a valuable resource.
+    *|cRXP_WARN_Scrapping Unwanted Items:|r Players can scrap unwanted or outleveled items |cRXP_WARN_including prismatic gems|r by using the |T4643984:0|t[Unraveling Sands] Abilty to obtain Bronze. This process helps players clear their inventory of items they no longer need while gaining a valuable resource.
     *|cRXP_WARN_Gem extraction:|r.  Players can remove gems from items by using the |T1379201:0|t[Gem Extraction] Ability or by scrapping obsolete gear with gems inside, allowing them to reuse or replace the gems with better ones. This ensures that players can continually optimize their gear without losing valuable gems.
-    *|cRXP_WARN_Loot and Rewards:|r. |T4638724:0|t[Bronze] can also be obtained from various event activities, such as dragonriding, looting enemies and completing quests.
+    *|cRXP_WARN_Loot and Rewards:|r |T4638724:0|t[Bronze] can also be obtained from various event activities, such as dragonriding, looting enemies and completing quests.
 step
     +|cFFFF0000TLDR: Always loot each enemy and never forget to wear your cloak|r.
 step
@@ -1744,7 +1744,7 @@ step
     #completewith next
     .goto 371,65.21,37.46,5,0
     .goto 371,28.58,14.04,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
-    *Click on the |cRXP_PICK_Portal to Honeydew Village|r. to go back.
+    *Click on the |cRXP_PICK_Portal to Honeydew Village|r to go back.
     .itemcount 216712,1
 step
     .goto 371,31.14,17.52
@@ -1938,7 +1938,7 @@ step
 step
     #label StrongarmGyrocopter
     >>Pick up |T133837:0|t[Requisitioned Firework Launchers]. |cRXP_WARN_You can only carry 4 at a time|r.
-    >>|cRXP_WARN_Click on the |cRXP_ENEMY_Strongarm Gyrocopters|r. in the air|r. (you can just Right-Click them)
+    >>|cRXP_WARN_Click on the |cRXP_ENEMY_Strongarm Gyrocopters|r in the air|r. (you can just Right-Click them)
     .use 89163
     .complete 31777,1 --12/12 Strongarm Gyrocopter shot down
     .mob Strongarm Gyrocopter
@@ -2048,7 +2048,7 @@ step
     +1
 step
     #completewith next
-    >>Click on |cRXP_PICK_Lurching Blossoms|r. |cRXP_WARN_(possible while mounted)|r.
+    >>Click on |cRXP_PICK_Lurching Blossoms|r |cRXP_WARN_(possible while mounted)|r.
     .complete 29815,1 --8/8 Viscous Chlorophyll
     .target Lurching Blossom
 step
@@ -2080,7 +2080,7 @@ step
     .target Recovered Gyrocopter
 step
     .goto 371,28.07,24.79
-    >>|cRXP_WARN_Use|r. |T237521:0|t[Poison Blossom] (2) |cRXP_WARN_while above a large group of mobs|r. |cRXP_WARN_Use |r. |T135431:0|t[Throw Star] (1) |cRXP_WARN_to kill individual mobs|r.
+    >>|cRXP_WARN_Use|r |T237521:0|t[Poison Blossom] (2) |cRXP_WARN_while above a large group of mobs|r. |cRXP_WARN_Use |r |T135431:0|t[Throw Star] (1) |cRXP_WARN_to kill individual mobs|r.
     >>Kill |cRXP_ENEMY_Hozen Nibstabber|r and |cRXP_ENEMY_Hozen Gutripper|r.
     .complete 29827,2 --25/25 Hozen Nibstabber slain
     .complete 29827,1 --25/25 Hozen Gutripper slain
@@ -2432,7 +2432,7 @@ step
     #completewith next
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
-    *Click on the |cRXP_PICK_Portal|r. to go back.
+    *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
     .goto 371,44.89,84.58,10,0
@@ -2496,7 +2496,7 @@ step
     #completewith Critical Condition
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
-    *Click on the |cRXP_PICK_Portal|r. to go back.
+    *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
     .xp <14,1
@@ -2527,7 +2527,7 @@ step
     .goto 371,46.2,84.82
 step
     #completewith Dalgan and Bellandra Felstorm
-    >>Kill |cRXP_ENEMY_Eye of Ga'trul|r. to free |cRXP_FRIENDLY_Pandaren Cubs|r.
+    >>Kill |cRXP_ENEMY_Eye of Ga'trul|r to free |cRXP_FRIENDLY_Pandaren Cubs|r.
     .complete 31744,1 --8/8 Captive Pandaren Cub freed
     .target Captive Pandaren Cub
     .mob Eye of Ga'trul
@@ -2580,7 +2580,7 @@ step
     .goto 371,41.78,80.31,10,0
     .goto 371,41.15,80.27,0
     .goto 371,41.78,80.31,0
-    >>Kill |cRXP_ENEMY_Dalgan|r and |cRXP_ENEMY_Bellandra Felstorm|r. |cRXP_WARN_on the terrace|r.
+    >>Kill |cRXP_ENEMY_Dalgan|r and |cRXP_ENEMY_Bellandra Felstorm|r |cRXP_WARN_on the terrace|r.
     .complete 31742,1 --1/1 Dalgan slain
     .mob dalgan
     .complete 31742,2 --1/1 Bellandra Felstorm slain
@@ -2610,7 +2610,7 @@ step
     .goto 371,40.34,82.23,0
     .goto 371,39.62,82.29,0
     .goto 371,39.76,81.08,0
-    >>Kill |cRXP_ENEMY_Eye of Ga'trul|r. to free |cRXP_FRIENDLY_Pandaren Cubs|r.
+    >>Kill |cRXP_ENEMY_Eye of Ga'trul|r to free |cRXP_FRIENDLY_Pandaren Cubs|r.
     .complete 31744,1 --8/8 Captive Pandaren Cub freed
     .target Captive Pandaren Cub
     .mob Eye of Ga'trul
@@ -2672,7 +2672,7 @@ step
     #completewith Paw'don Village
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
-    *Click on the |cRXP_PICK_Portal|r. to go back.
+    *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
     #label Paw'don Village
@@ -2710,7 +2710,7 @@ step
 step
     .goto 371,49.79,89.96,8,0
     .goto 371,50,90.28
-    >>Click on |cRXP_PICK_Fine Leather Journal|r. |cRXP_WARN_inside the ship|r.
+    >>Click on |cRXP_PICK_Fine Leather Journal|r |cRXP_WARN_inside the ship|r.
     .complete 29555,1,2 --3/3 Clues found
     .target Fine Leather Journal
 step
@@ -2792,11 +2792,11 @@ step
     .mob Slingtail Mudseer
 step
     #completewith Prisoners freed
-    >>Click on |cRXP_PICK_Hozen Skulls|r. |cRXP_WARN_on the ground|r.
+    >>Click on |cRXP_PICK_Hozen Skulls|r |cRXP_WARN_on the ground|r.
     .complete 29560,1 --8/8 Ancient Hozen Skull
 step
     #label Prisoners freed
-    >>Click on |cRXP_PICK_Hozen Cages|r. to free |cRXP_FRIENDLY_Alliance Prisoners|r |cRXP_WARN_Don't open empty cages|r.
+    >>Click on |cRXP_PICK_Hozen Cages|r to free |cRXP_FRIENDLY_Alliance Prisoners|r |cRXP_WARN_Don't open empty cages|r.
     .complete 29559,1 --6/6 Prisoners freed
     .collect 74260,6,29559,0x1,-1
     .disablecheckbox
@@ -2936,7 +2936,7 @@ step
 --     .mob Slingtail Stickypaw
 -- step
 --     #completewith Watersmithing
---     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
+--     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
 --     .complete 29762,1 --8/8 Glassfin Heirloom
 --     .target Pearlfin Villager
 -- step
@@ -2959,7 +2959,7 @@ step
     +1
 step
     #completewith next
-    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
+    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
 step
@@ -2971,7 +2971,7 @@ step
     .mob Slingtail Stickypaw
 step
     #label Clothes
-    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r. to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
+    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect [|cRXP_LOOT_Glassfin Heirlooms|r].
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
 step
@@ -3000,7 +3000,7 @@ step
 step
     .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area|r.
-    *Click on the |cRXP_PICK_Portal|r. to go back.
+    *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 -- step
 --     .goto 371,31.96,27.76

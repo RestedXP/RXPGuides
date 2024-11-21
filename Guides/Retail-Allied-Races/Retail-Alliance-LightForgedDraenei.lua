@@ -55,7 +55,7 @@ step
 step
     .goto 84,52.81,14.57,5,0
     .goto 84,54.426,14.433
-    .zone 940 >>Use the |cRXP_PICK_Lightforged Beacon|r. to teleport to the Vindicaar
+    .zone 940 >>Use the |cRXP_PICK_Lightforged Beacon|r to teleport to the Vindicaar
     .complete 49698,1 --Stormwind Embassy Beacon used (1)
     .isOnQuest 49698
 step
@@ -67,7 +67,7 @@ step
     .target Captain Fareeya
 step
     .goto 940,49.945,46.279
-    .zone 933 >>Use the |cRXP_PICK_Lightforged Beacon|r. to teleport to the Forge of Aeons
+    .zone 933 >>Use the |cRXP_PICK_Lightforged Beacon|r to teleport to the Forge of Aeons
     .isOnQuest 49266
 --XX no zone ID (its a scenario) so .cast must be used
 step
@@ -108,7 +108,7 @@ step
     .isOnQuest 49266
 step
     .goto 933,46.96,27.4
-    .scenario 3555,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r. inside |cRXP_WARN_the cave|r.
+    .scenario 3555,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r inside |cRXP_WARN_the cave|r.
     .isOnQuest 49266
 step
     .goto 933,46.96,27.4

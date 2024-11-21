@@ -148,7 +148,7 @@ step
 	.goto 378,60.46,19.60,8 >>|cRXP_WARN_Take the shortcut to the top floor by jumping through the gap under the second set of stairs|r.
 step
     .goto 378,59.95,20.39
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Banner|r. to burn it.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Banner|r to burn it.
     .complete 29408,2 --1/1 Burn the Edict of Temperance
 step
 	#completewith next
@@ -235,7 +235,7 @@ step
 step
     #sticky
     .goto 378,57.89,36.55,10,0
-    >>Defend |cRXP_FRIENDLY_Aysa|r. from the incoming |cRXP_ENEMY_Amberleaf Troublemakers|r.
+    >>Defend |cRXP_FRIENDLY_Aysa|r from the incoming |cRXP_ENEMY_Amberleaf Troublemakers|r.
     .complete 29414,1 --1/1 Protect Aysa while she meditates
 	.mob Amberleaf Troublemaker
 step
@@ -361,7 +361,7 @@ step
 step
     .goto 378,38.88,24.64,10,0
     .goto 378,38.81,25.51
-    >>Defeat |cRXP_FRIENDLY_Master Li Fei|r. by reducing his health to 20%.
+    >>Defeat |cRXP_FRIENDLY_Master Li Fei|r by reducing his health to 20%.
     .complete 29421,1 --1/1 Defeat Master Li Fei
 	.mob Master Li Fei
 step
@@ -445,23 +445,23 @@ step
     .isOnQuest 29663
 	#completewith Shrine
     .goto 378,63.37,45.17
-	.vehicle >> |TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_FRIENDLY_Balance Pole|r. while you are not in the water.
+	.vehicle >> |TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_FRIENDLY_Balance Pole|r while you are not in the water.
 step
     #completewith Shrine
-	>>Defeat the |cRXP_ENEMY_Tushui Monks|r. on the poles.
+	>>Defeat the |cRXP_ENEMY_Tushui Monks|r on the poles.
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
 step
     .isOnQuest 29661
 	#label Shrine
-    .goto 378,61.39,47.87,5 >>Navigate towards the |cRXP_WARN_Shrine|r. by hopping onto the poles that are nearest to it.
+    .goto 378,61.39,47.87,5 >>Navigate towards the |cRXP_WARN_Shrine|r by hopping onto the poles that are nearest to it.
 step
     .goto 378,61.41,47.81
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bell|r.
     .complete 29661,1 --1/1 Ring the Training Bell
 step
     #completewith next
-	>>Defeat the |cRXP_ENEMY_Tushui Monks|r. on the poles.
+	>>Defeat the |cRXP_ENEMY_Tushui Monks|r on the poles.
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
 step
@@ -482,7 +482,7 @@ step
     .goto 378,62.25,50,15,0
     .goto 378,60.43,48.97,15,0
     .goto 378,62.22,44.33
-	>>Defeat the |cRXP_ENEMY_Tushui Monks|r. on the poles.
+	>>Defeat the |cRXP_ENEMY_Tushui Monks|r on the poles.
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
 step
@@ -518,8 +518,8 @@ step
     .mob Water Pincer
 step
     .goto 378,76.21,46.87
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Ancient Clam|r. |cRXP_WARN_underwater|r.
-    >>|cRXP_WARN_You don't need to kill|r. |cRXP_ENEMY_Fang-she|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Ancient Clam|r |cRXP_WARN_underwater|r.
+    >>|cRXP_WARN_You don't need to kill|r |cRXP_ENEMY_Fang-she|r.
     .complete 29677,1 --1/1 Sun Pearl
     .mob Fang-she
 step
@@ -551,7 +551,7 @@ step
 	.target Aysa Cloudsinger
 step
     --x shiek : no go to here, as i think it would only be confusing here.
-    >>Follow |cRXP_FRIENDLY_Shu|r. closely as he moves around. He'll cast a Spout |cRXP_WARN_in the nearby water|r. Make sure to position yourself |cRXP_WARN_on top of it|r.
+    >>Follow |cRXP_FRIENDLY_Shu|r closely as he moves around. He'll cast a Spout |cRXP_WARN_in the nearby water|r. Make sure to position yourself |cRXP_WARN_on top of it|r.
     >>Use Disengage after you get launched in the air for the last Spout  << Hunter
     >>Use Blink after you get launched in the air for the last Spout << Mage
     .complete 29679,1 --5/5 Play with the Spirit of Water
@@ -565,7 +565,7 @@ step
 step
     .goto 378,76.57,57.36,40,0
     .goto 378,68.89,64.98
-	>>|cRXP_WARN_Disregard the|r. |cRXP_FRIENDLY_Delivery Cart|r.; |cRXP_WARN_traveling on foot will get you to your destination faster|r.
+	>>|cRXP_WARN_Disregard the|r |cRXP_FRIENDLY_Delivery Cart|r.; |cRXP_WARN_traveling on foot will get you to your destination faster|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29680 >>Turn in The Source of Our Livelihood
     .accept 29769 >>Accept Rascals
@@ -660,7 +660,7 @@ step
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
     .goto 378,62.63,77.05
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Mallet|r. |cRXP_WARN_on the barrel|r.
+	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Mallet|r |cRXP_WARN_on the barrel|r.
     >>|cRXP_WARN_You don't have to kill |cRXP_ENEMY_Raggis|r. if you can avoid it|r.
     .complete 29768,1 --1/1 Dai-Lo Recess Mallet
 step
@@ -672,7 +672,7 @@ step
     .goto 378,63.27,79.16,15,0
     .goto 378,62.94,79.04,15,0
     .goto 378,62.19,81.08
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Wood Planks|r. |cRXP_WARN_on the floor|r.
+	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Wood Planks|r |cRXP_WARN_on the floor|r.
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Ji Firepaw|r.
@@ -712,7 +712,7 @@ step
     .goto 378,58.86,63.38,40,0
     .goto 378,55.23,58.57,40,0
     .goto 378,51.48,57.40,20 >>Travel to the Temple of the Five Dawns
-	>>|cRXP_WARN_Disregard the|r. |cRXP_FRIENDLY_Delivery Cart|r.; |cRXP_WARN_traveling on foot will get you to your destination faster|r.
+	>>|cRXP_WARN_Disregard the|r |cRXP_FRIENDLY_Delivery Cart|r.; |cRXP_WARN_traveling on foot will get you to your destination faster|r.
 step
     .goto 378,51.59,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
@@ -779,7 +779,7 @@ step
 	.goto 378,32.57,53.31,15,0
 	.goto 378,28.71,50.23,15,0
     #label Defaced Scroll of Wisdom burned
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Banners|r. on the monuments.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Banners|r on the monuments.
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
 step
     #completewith next
@@ -913,7 +913,7 @@ step
     .goto 378,31.14,36.79,5,0
     .goto 378,32.17,36.36,8,0
     .goto 378,32.88,37.16,8,0
-    .goto 378,32.94,35.61,8 >>|cRXP_WARN_Carefully|r. walk over the rope
+    .goto 378,32.94,35.61,8 >>|cRXP_WARN_Carefully|r walk over the rope.
 step
 	#label BalancedP
     .goto 378,32.94,35.61
@@ -937,7 +937,7 @@ step
 	#sticky
 	#label Temple3
 	#requires Temple2
-    .goto 378,26.64,66.63,10 >> Run toward |cRXP_FRIENDLY_Dafeng|r. after the winds in the next room subside
+    .goto 378,26.64,66.63,10 >> Run toward |cRXP_FRIENDLY_Dafeng|r after the winds in the next room subside.
 	.isOnQuest 29785
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r and |cRXP_FRIENDLY_Aysa|r.
@@ -959,7 +959,7 @@ step
     .goto 378,31.37,60.05,5,0
     .goto 378,29.78,58.93,5,0
     .goto 378,30.52,59.72
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Firework Launchers|r. when |cRXP_ENEMY_Zhao-Ren|r. is over them to damage him. He circles counter-clockwise. |cRXP_WARN_Avoid his Lightning puddles|r. Damage him when he lands. Kill him when he lands the second time
+	>>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Firework Launchers|r when |cRXP_ENEMY_Zhao-Ren|r is over them to damage him. He circles counter-clockwise. |cRXP_WARN_Avoid his Lightning puddles|r. Damage him when he lands. Kill him when he lands the second time
     .complete 29786,1 --1/1 Zhao-Ren slain
 	.target Zhao-Ren
 step
@@ -996,7 +996,7 @@ step
     .goto 378,18.18,44.52,30,0
     .goto 378,24.22,45.72,30,0
     .goto 378,18.18,44.52
-	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r and loot the |cRXP_PICK_Charms|r. hanging from the trees.
+	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r and loot the |cRXP_PICK_Charms|r hanging from the trees.
     .complete 29788,1 --8/8 Thornbranch Scamp slain
     .complete 29789,1 --8/8 Kun-Pai Ritual Charm
 	.target Thornbranch Scamp
@@ -1025,7 +1025,7 @@ step
 	.target Aysa Cloudsinger
 step
     .goto 378,15.55,48.91
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Air Balloon|r. to Board it
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Air Balloon|r to Board it.
     .complete 29791,1 --1/1 Board the Hot Air Balloon
 	.timer 191,The Suffering of Shen-zin Su RP
 step
@@ -1075,7 +1075,7 @@ step
 	.goto 378,45.89,71.57,40,0
 	.goto 378,55.62,69.49,40,0
 	.goto 378,54.51,85.54,40,0
-    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r. Loot the |cRXP_PICK_Bamboo Stalks|r. |cRXP_WARN_on the ground|r.
+    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r. Loot the |cRXP_PICK_Bamboo Stalks|r |cRXP_WARN_on the ground|r.
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
     .complete 29795,1 --10/10 Broken Bamboo Stalk
 	.mob Pei-Wu Tiger
@@ -1133,7 +1133,7 @@ step
 	.target Jojo Ironbrow
 step
 	#completewith Sailor2
-    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r. Loot the |cRXP_PICK_Medical Supplies|r. on the ground
+    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r. Loot the |cRXP_PICK_Medical Supplies|r on the ground.
     .complete 29665,1 --8/8 Deepscale Tormentor slain
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
@@ -1148,7 +1148,7 @@ step
 step
     #optional
     .goto 378,42.27,86.80
-    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r. back to |cRXP_FRIENDLY_Delora|r.'s Camp
+    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora's|r Camp.
     .complete 29794,1,1 --3/3 Injured Sailors rescued
 step
     #optional
@@ -1161,7 +1161,7 @@ step
     #optional
 	#label Sailor2
     .goto 378,42.27,86.80
-    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r. back to |cRXP_FRIENDLY_Delora|r.'s Camp
+    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora's|r Camp.
     .complete 29794,1,2 --3/3 Injured Sailors rescued
 step
     #optional
@@ -1182,7 +1182,7 @@ step
     .goto 378,36.41,85.51,10,0
     .goto 378,36.82,89.24
 	>>|cRXP_WARN_Don't pick up a new Sailor yet|r.
-    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r. Loot the |cRXP_PICK_Medical Supplies|r. on the ground
+    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r. Loot the |cRXP_PICK_Medical Supplies|r on the ground.
     .complete 29665,1 --8/8 Deepscale Tormentor slain
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
@@ -1201,7 +1201,7 @@ step
 	.target Injured Sailor
 step
     .goto 378,42.27,86.80
-    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r. back to |cRXP_FRIENDLY_Delora Lionheart|r.'s Camp
+    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora Lionheart's|r Camp.
     .complete 29794,1 --3/3 Injured Sailors rescued
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
@@ -1216,7 +1216,7 @@ step
 step
     .goto 378,36.50,84.23
     >>Kill |cRXP_ENEMY_Vordraka, The Deep Sea Nightmare|r.
-    >>|cRXP_WARN_Dodge his Deep Sea Smash|r. Kill |cRXP_ENEMY_Deepscale Aggressors|r. when they spawn
+    >>|cRXP_WARN_Dodge his Deep Sea Smash|r. Kill |cRXP_ENEMY_Deepscale Aggressors|r when they spawn.
     .complete 29798,1 --1/1 Vordraka, the Deep Sea Nightmare slain
 	.mob Vordraka, The Deep Sea Nightmare
     .mob Deepscale Aggressor
@@ -1256,7 +1256,7 @@ step
     .goto 378,40.26,83.35,5,0
     .goto 378,40.12,84.37,5,0
     .goto 378,38.44,86.07
-    >>Free |cRXP_FRIENDLY_Alliance Priests|r and |cRXP_FRIENDLY_Horde Druids|r. from the Wreckages, then talk to them. Kill |cRXP_ENEMY_Dampscale Fleshrippers|r. if they're attacking them
+    >>Free |cRXP_FRIENDLY_Alliance Priests|r and |cRXP_FRIENDLY_Horde Druids|r from the Wreckages, then talk to them. Kill |cRXP_ENEMY_Dampscale Fleshrippers|r. If they're attacking them.
     .complete 29799,1 --1/1 Protect the healers
 	.target Alliance Priest
 	.target Horde Druid
@@ -1279,7 +1279,7 @@ step
     .hs >> Hearthstone |cRXP_WARN_to the Temple of Five Dawns|r.
 step
     .goto 378,51.45,48.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Shang Xi|r. Select your Faction
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Shang Xi|r and select your Faction.
 	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r.
     .turnin 29800 >>Turn in New Allies
     .accept 31450 >>Accept A New Fate

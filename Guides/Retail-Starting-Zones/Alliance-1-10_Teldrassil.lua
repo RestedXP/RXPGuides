@@ -95,10 +95,10 @@ step
 	.target Dentaria Silverglade
 step
 	#completewith next
-	.goto 58,44.87,88.5,5 >> Enter the |cRXP_WARN_Cave|r.  then wait for |cRXP_FRIENDLY_Tarindrella|r. to appear
+	.goto 58,44.87,88.5,5 >> Enter the |cRXP_WARN_Cave|r.  then wait for |cRXP_FRIENDLY_Tarindrella|r to appear.
 step
     .goto 58,44.87,88.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r. at the arrow location. She will appear after a couple seconds.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r at the arrow location. She will appear after a couple seconds.
     .turnin 28725 >>Turn in The Woodland Protector
     .accept 28726 >>Accept Webwood Corruption
 	.target Tarindrella
@@ -107,13 +107,13 @@ step
     .goto 58,41.27,33.22,10,0 <<!Hunter
     .goto 58,34.81,15.50,15,0 <<!Hunter
     .waypoint 58,46.33,41.34,-30,0
-    >>Kill |cRXP_ENEMY_Spiders|r. |cRXP_WARN_within the Cave|r.
+    >>Kill |cRXP_ENEMY_Spiders|r |cRXP_WARN_within the Cave|r.
     >>By using Disengage across the Gap at the Waypoint Location you can save some Time <<Hunter
-    >>Make sure that if you do it you don't kill |cRXP_ENEMY_Githyiss the Vile|r. because you need him shortly after << Hunter
+    >>Make sure that if you do it you don't kill |cRXP_ENEMY_Githyiss the Vile|r because you need him shortly after. << Hunter
     .complete 28726,1 --12/12 Webwood Spider slain
 	.mob Webwood Spider
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r. next to you.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r next to you.
     .turnin 28726 >>Turn in Webwood Corruption
     .accept 28727 >>Accept Vile Touch
 	.target Tarindrella
@@ -125,7 +125,7 @@ step
     .complete 28727,1 --1/1 Githyiss the Vile slain
 	.mob Githyiss the Vile
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r. next to you
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r next to you.
     .turnin 28727,1 >>Turn in Vile Touch
     .accept 28728 >>Accept Signs of Things to Come
 	.target Tarindrella
@@ -294,7 +294,7 @@ step
 	.target Gaerolas Talvethren
 step
     #completewith next
-    +Check for |cRXP_ENEMY_Uruson(Rare)|r. patrolling |cRXP_WARN_between the Houses|r.
+    +Check for |cRXP_ENEMY_Uruson(Rare)|r patrolling |cRXP_WARN_between the Houses|r.
 	.unitscan Uruson
 step
     #label TeldrassilEmeraldDreamcatcher
@@ -580,11 +580,11 @@ step
     .goto 62,56.97,32.66,15,0
     .goto 62,56.58,33.64,15,0
     .goto 62,57.10,34.18
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cages|r. |cRXP_WARN_throughout the Cave|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cages|r |cRXP_WARN_throughout the Cave|r.
 	.complete 13557,1
 step
     .goto 62,58.41,33.08
-    >>Kill |cRXP_ENEMY_Zenn|r. |cRXP_WARN_inside the Cave|r.
+    >>Kill |cRXP_ENEMY_Zenn|r |cRXP_WARN_inside the Cave|r.
     >>|cRXP_WARN_Check for a chest next to him. It may not be there|r.
     .complete 13529,1 --1/1 Zenn Foulhoof slain
 	.mob Zenn Foulhoof
@@ -611,7 +611,7 @@ step
 step
     .goto 62,56.79,33.52,20,0
     .goto 62,57.43,33.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on the |cRXP_PICK_Disgusting Workbench|r. |cRXP_WARN_in the back of the cave|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on the |cRXP_PICK_Disgusting Workbench|r |cRXP_WARN_in the back of the cave|r.
     .accept 13831 >>Accept A Troubling Prescription
 step
     #completewith next
@@ -632,7 +632,7 @@ step
 	.target Wizbang
 step
     .goto 62,50.90,18.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r. |cRXP_WARN_patrolling up and down the stairs in the Inn|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r |cRXP_WARN_patrolling up and down the stairs in the Inn|r.
     .turnin 13520 >>Turn in The Boon of the Seas
 	.target Serendia Oakwhisper
 step
@@ -698,7 +698,7 @@ step
 	.target Darkmoon Faire Mystic Mage
 step
     #completewith next
-    .goto 89,36.58,49.23,20 >>Walk |cRXP_WARN_into the Purple Zone|r. to get teleported.
+    .goto 89,36.58,49.23,20 >>Walk |cRXP_WARN_into the Purple Zone|r to get teleported.
     .zoneskip 97
     .nodmf
 step
@@ -724,7 +724,7 @@ step
 	.target Renato Gallina
 step
     .nodmf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r. |cRXP_WARN_in Goldshire|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cRXP_WARN_in Goldshire|r.
     .goto 37,41.71,64.64
     .fp >>Get the Goldshire Flight Path
 	.target Bartlett the Brave
