@@ -105,7 +105,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 26
+local cacheVersion = false
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -1449,7 +1449,7 @@ function addon:UpdateLoop(diff)
         errorCount = 0
         updateTick = 0
         updateError = false
-        --print('error')
+        print('error')
         return 'error'
     elseif updateTick > (tickRate + rand() / 128) then
         updateError = true
@@ -1460,7 +1460,7 @@ function addon:UpdateLoop(diff)
         event = ""
         local updateFrequency = addon.updateFrequency or 0.075
         tickRate = math.min(updateFrequency,4*GetTickTime()) + (addon.isCastingHS or 0)
-        --AA = tickRate
+        AA = tickRate
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
                 addon.Call("updateQuest",func,ref)
@@ -1613,9 +1613,9 @@ function addon:UpdateLoop(diff)
         end
         updateError = false
     end
-    --[[if updateError then
+    if updateError then
         print(event)
-    end]]
+    end
 end
 
 function addon.HardcoreToggle()
