@@ -105,7 +105,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = false
+local cacheVersion = 26
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -143,7 +143,10 @@ end
 
 function addon.GetSeason()
 
-return C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
+    local season = C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
+    if season > 2 then
+        return 0
+    end
 
 end
 
