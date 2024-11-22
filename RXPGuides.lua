@@ -147,7 +147,7 @@ function addon.GetSeason()
     if season > 2 then
         return 0
     end
-
+    return season
 end
 
 local RXPGuides = {}
