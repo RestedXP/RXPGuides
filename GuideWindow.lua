@@ -651,6 +651,7 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeItems)
     table.wipe(addon.activeSpells)
     table.wipe(addon.inventoryManager.itemsToOpen)
+    table.wipe(addon.activeObjectives)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1

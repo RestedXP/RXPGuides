@@ -1313,9 +1313,11 @@ local questMonster = string.gsub(_G.QUEST_MONSTERS_KILLED, "%d+%$", "")
 questMonster = questMonster:gsub("%%s", "%.%*"):gsub("%%d", "%%d%+")
 local questItem = string.gsub(_G.QUEST_ITEMS_NEEDED, "%%s", "%(%.%*%)"):gsub(
                       "%%d", "%%d%+")
+local retrievingQuestData = L("Retrieving quest data") .. "..."
 
+addon.activeObjectives = {}
 function addon.UpdateQuestCompletionData(self)
-
+    addon.activeObjectives[self] = addon.UpdateQuestCompletionData
     local element = self.element
     if not element then return end
     local step = element.step
@@ -1384,7 +1386,7 @@ function addon.UpdateQuestCompletionData(self)
         end
     else
         element.requestFromServer = true
-        element.text = L("Retrieving quest data") .. "..."
+        element.text = retrievingQuestData
         element.tooltipText = nil
 
         addon.UpdateStepText(self)
@@ -1518,7 +1520,7 @@ function addon.functions.complete(self, ...)
         id = id and GetQuestId(id)
         local element = {questId = id, dynamicText = true, obj = obj,
                          objMax = objMax, requestFromServer = true,
-                         text = "", flags = flags, textOnly = (flags % 2) == 1
+                         text = " ", flags = flags, textOnly = (flags % 2) == 1
                         }
         if id and id < 0 then
             id = math.abs(id)

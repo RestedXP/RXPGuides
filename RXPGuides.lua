@@ -1430,6 +1430,7 @@ addon.updateInactiveQuest = {}
 local stepCounter = 1
 local batchSize = 5
 local updateTimer = GetTime()
+local cycleStart = GetTime()
 
 local updateTick = 0
 local skip = 0
@@ -1463,7 +1464,6 @@ function addon:UpdateLoop(diff)
         event = ""
         local updateFrequency = addon.updateFrequency or 0.075
         tickRate = math.min(updateFrequency,4*GetTickTime()) + (addon.isCastingHS or 0)
-        AA = tickRate
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
                 addon.Call("updateQuest",func,ref)
@@ -1585,6 +1585,13 @@ function addon:UpdateLoop(diff)
                 table.remove(addon.updateInactiveQuest, element)
                 -- print('r'..element)
             end
+        elseif GetTime() - cycleStart > 2 then
+            cycleStart = GetTime()
+            for ref, func in pairs(addon.activeObjectives) do
+                addon.Call("updateQuest",func,ref)
+                activeQuestUpdate = activeQuestUpdate + 1
+                addon.updateActiveQuest[ref] = nil
+            end
         elseif not guideLoaded and addon.currentGuide then
             event = event .. "/istep"
             local max = #addon.currentGuide.steps
@@ -1616,9 +1623,9 @@ function addon:UpdateLoop(diff)
         end
         updateError = false
     end
-    if updateError then
+    --[[if updateError then
         print(event)
-    end
+    end]]
 end
 
 function addon.HardcoreToggle()
