@@ -5007,7 +5007,7 @@ step
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .isQuestComplete 813
+    .isQuestComplete 813 << Warrior/Shaman/Hunter
 step
     #xprate <1.5
     #hardcore
