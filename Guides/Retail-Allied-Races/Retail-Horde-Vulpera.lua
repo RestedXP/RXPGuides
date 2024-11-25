@@ -136,10 +136,10 @@ step
     .goto 241,46.62,65.95,8 >>Leave the cellar
 step
     #completewith next
-    >>Pick up |cRXP_PICK_Twilight Ore|r. from the veins
+    >>Pick up |cRXP_PICK_Twilight Ore|r from the veins.
     .complete 53894,1 --15/15 Twilight Ore
 step
-    >>Use the |T310733:0|t[Enlarging Totem] before killing |cRXP_ENEMY_beasts|r. around the area. Loot them for their [|cRXP_LOOT_flanks|r], [|cRXP_LOOT_meat|r], and [|cRXP_LOOT_tidbits|r].
+    >>Use the |T310733:0|t[Enlarging Totem] before killing |cRXP_ENEMY_beasts|r around the area. Loot them for their [|cRXP_LOOT_flanks|r], [|cRXP_LOOT_meat|r], and [|cRXP_LOOT_tidbits|r].
     .goto 241,48.40,65.62,30,0
     .goto 241,46.62,63.33,30,0
     .goto 241,44.39,67.00,30,0
@@ -161,7 +161,7 @@ step
     .mob Twilight Prowler
     .mob Highlands Clucker
 step
-    >>Pick up |cRXP_PICK_Twilight Ore|r. from the veins
+    >>Pick up |cRXP_PICK_Twilight Ore|r from the veins.
     .goto 241,51.13,68.58,30,0
     .goto 241,48.60,70.24,30,0
     .goto 241,46.42,72.89,30,0

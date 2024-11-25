@@ -20,7 +20,7 @@ step
     +Welcome to the Drakthyr Guide of RestedXP.
 step
     #label DrakthyrIntroduction
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r or |cRXP_FRIENDLY_Dervishian|r. in front of you. Wait for your Disintegrate to complete.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r or |cRXP_FRIENDLY_Dervishian|r in front of you. Wait for your Disintegrate to complete.
     .goto 2109,47.50,84.52,-1
     .goto 2109,46.28,79.52,-1
     .goto 2109,42.91,77.49,-1
@@ -40,7 +40,7 @@ step
     .complete 64864,3 --1/1 Tethalash awakened
     .target Tethalash
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_bones|r. on the bed
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_bones|r on the bed.
     .goto 2109,47.95,79.94
     .complete 64864,2 --1/1 Kethahn found
 step
@@ -53,7 +53,7 @@ step
     .target Azurathel
 step
     #label TheForbiddenReachAwakenDracthyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r. after a short roleplay
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r after a short roleplay
     .turnin 64864 >>Turn in Awaken, Dracthyr
     .accept 64865 >>Accept Gear Up
     .goto 2109,32.92,81.57
@@ -67,11 +67,11 @@ step
     .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r and place it into the Crystal Focus next to it
 step
     .goto 2109,38.29,74.52
-    .turnin 66010 >>Pick up the |cRXP_PICK_Mysterious Wand|r. on the table
+    .turnin 66010 >>Pick up the |cRXP_PICK_Mysterious Wand|r on the table.
 step
     #sticky
     #label TheForbiddenReachArcaneGuardians
-    >>Focus |cRXP_ENEMY_Ancient Constructs|r. Run away when they hit 40% (they splinter and spawn two small adds)
+    >>Focus |cRXP_ENEMY_Ancient Constructs|r. Run away when they hit 40% (they splinter and spawn two small adds).
     .complete 64863,1 --4/4 Guardians or Constructs slain
     .mob Ancient Guardian
     .mob Ancient Construct
@@ -138,7 +138,7 @@ step
     .goto 2109,66.4,10.69
     .complete 64871,1 --Exit reached
 step
-    >>Kill |cRXP_ENEMY_Lapisagos|r. The small elementals give you a damage buff on death
+    >>Kill |cRXP_ENEMY_Lapisagos|r. The small elementals give you a damage buff on death.
     .goto 2109,66.4,10.69
     .complete 64871,2 --1/1 Lapisagos slain
     .mob Lapisagos
@@ -157,14 +157,14 @@ step
     +Check your bags for new equipment
 step
     #completewith TheForbiddenReachTheFireWithin
-    +|cRXP_WARN_You can |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fire Breath Infusers|r. to reset your Fire Breath cooldown|r.
+    +|cRXP_WARN_You can |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fire Breath Infusers|r to reset your Fire Breath cooldown|r.
 step
     #label TheForbiddenReachTheFireWithin3
     >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the last empowerement section
     .goto 2118,43.78,61.29
     .complete 64872,3 --Cast an Empowered III Fire Breath
 step
-    >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the |cRXP_WARN_second|r. empowerement section
+    >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the |cRXP_WARN_second|r empowerement section.
     .goto 2118,43.78,61.29
     .complete 64872,2 --Cast an Empowered II Fire Breath
 step
@@ -224,7 +224,7 @@ step
     .cast 369536 >>Cast Soar
 step
     .goto 2118,42.12,34.36
-    .turnin 65909 >> Pick up the |cRXP_PICK_Bag of Enchanted Wind|r. for a Movement Speed Buff
+    .turnin 65909 >> Pick up the |cRXP_PICK_Bag of Enchanted Wind|r for a Movement Speed Buff
 step
     #completewith next
     +Use the [ExtraActionButton] to get back
@@ -307,12 +307,12 @@ step
     +Spamming Space is faster than walking normally
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Scythid|r. in the Area
+    >>Kill |cRXP_ENEMY_Scythid|r in the Area.
     .complete 65074,1 --4/4 Scythid slain
     .mob Scythid Steamstalker
     .mob Deatheater Scythid
 step
-    >>Kill |cRXP_ENEMY_Scalerenders|r. in the area. Loot them for the [|cRXP_LOOT_glands|r].
+    >>Kill |cRXP_ENEMY_Scalerenders|r in the area. Loot them for the [|cRXP_LOOT_glands|r].
 #loop
 	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
 	.goto 2118,24.77,30.11,20,0
@@ -327,7 +327,7 @@ step
     .mob Scalerender Beetle
     .mob Deatheater Scythid
 step
-    >>Kill |cRXP_ENEMY_Scythid|r. in the Area
+    >>Kill |cRXP_ENEMY_Scythid|r in the Area.
     .goto 2118,35.21,24.52,30,0
     .goto 2118,31.33,24.79,30,0
 #loop
@@ -361,7 +361,7 @@ step
     +Check your Bags for new Equipment
     *Check your Spellbook for Emerald Blossom and Fury of the Aspect(if you are 60)
 step
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r. to reset your cooldown
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r to reset your cooldown
     *Alternatively use |T4622464:0:0|t[Living Flame]
     .complete 65307,3 --1/1 Atrenosh Hailstone healed
     .goto 2118,24.90,13.59
@@ -369,7 +369,7 @@ step
     .goto 2118,24.90,13.59
     .target Injured Drakonid
 step
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Talon|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r. to reset your cooldown
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Talon|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r to reset your cooldown
     *Alternatively use |T4622464:0:0|t[Living Flame]
     .goto 2118,25.77,17.75,15,0
     .goto 2118,25.89,18.55,15,0
@@ -390,7 +390,7 @@ step
     #completewith TheForbiddenReachNeverForgotten3
     +|cRXP_WARN_Use the [ExtraActionButton] almost on cooldown to reduce toxicity levels|r.
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_Report: Infestation|r. on the Ground
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the |cRXP_PICK_Report: Infestation|r on the Ground.
     .goto 2110,66.63,67.70
     .complete 66324,2 --1/1 Clues discovered
     .use 191729
@@ -415,11 +415,11 @@ step
     .target Tenezeth
 step
     #completewith TheForbiddenReachNeverForgotten10
-    +|cRXP_WARN_Only use the |cffffff00[ExtraActionButton]|r. to stay at like 50-60%|r.
+    +|cRXP_WARN_Only use the |cffffff00[ExtraActionButton]|r to stay at like 50-60%|r.
 step
     #completewith next
     .goto 2110,27.74,45.67
-    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r. on the ground
+    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r on the ground.
 step
     #label TheForbiddenReachNeverForgotten10
     >>Place the Crystal Key in the |cRXP_PICK_Crystal Lock|r.
@@ -618,7 +618,7 @@ step
     .goto 2118,47.75,34.69
     .complete 65097,2 --Wrathion found
 step
-    >>Heal |cRXP_FRIENDLY_Wrathion|r. with Living Flame and Emerald Blossom
+    >>Heal |cRXP_FRIENDLY_Wrathion|r with Living Flame and Emerald Blossom.
     .goto 2118,47.09,35.38
     .complete 65097,3 --1/1 Wrathion healed
     .target Wrathion
@@ -633,7 +633,7 @@ step
     .goto 2118,45.96,40.26
     .complete 65098,1 --1/1 Ebyssian found
 step
-    >>Heal |cRXP_FRIENDLY_Ebyssian|r. above 90% HP with Living Flame and Emerald Blossom
+    >>Heal |cRXP_FRIENDLY_Ebyssian|r above 90% HP with Living Flame and Emerald Blossom.
     .goto 2118,43.22,38.26
     .complete 65098,2 --1/1 Ebyssian healed
     .target Ebyssian
@@ -800,7 +800,7 @@ step
     .skipgossip 190239,1
     .complete 65613,1 --1/1 Ask Ebyssian about Visage Form
 step << Horde
-    >>Wait for |cRXP_FRIENDLY_Ebyssian|r. to finish his story
+    >>Wait for |cRXP_FRIENDLY_Ebyssian|r to finish his story.
     .goto 85,44.06,37.96
     .complete 65613,2 --1/1 Learn about Visage Form
 step

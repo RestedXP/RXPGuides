@@ -143,8 +143,11 @@ end
 
 function addon.GetSeason()
 
-return C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
-
+    local season = C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
+    if season > 2 then
+        return 0
+    end
+    return season
 end
 
 local RXPGuides = {}
@@ -1007,8 +1010,22 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     end
 end
 
+function addon.IsNewCharacter()
+    local n = 0
+    local GetQuests = C_QuestLog and C_QuestLog.GetAllCompletedQuestIDs or _G.GetQuestsCompleted
+    for i in pairs(GetQuests()) do
+        n = n + 1
+        if n > 1 then
+            return false
+        end
+    end
+    if UnitXP("player") == 0 and n > 1 then
+        return true
+    end
+end
+
 function addon:CreateMetaDataTable(wipe)
-    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion then
+    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() then
         RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
     end
@@ -1413,6 +1430,7 @@ addon.updateInactiveQuest = {}
 local stepCounter = 1
 local batchSize = 5
 local updateTimer = GetTime()
+local cycleStart = GetTime()
 
 local updateTick = 0
 local skip = 0
@@ -1435,6 +1453,7 @@ function addon:UpdateLoop(diff)
         errorCount = 0
         updateTick = 0
         updateError = false
+        print('error')
         return 'error'
     elseif updateTick > (tickRate + rand() / 128) then
         updateError = true
@@ -1443,8 +1462,8 @@ function addon:UpdateLoop(diff)
         local activeQuestUpdate = 0
         skip = skip + 1
         event = ""
-        tickRate = math.min(0.1,4*GetTickTime()) + (addon.isCastingHS or 0)
-
+        local updateFrequency = addon.updateFrequency or 0.075
+        tickRate = math.min(updateFrequency,4*GetTickTime()) + (addon.isCastingHS or 0)
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
                 addon.Call("updateQuest",func,ref)
@@ -1566,6 +1585,13 @@ function addon:UpdateLoop(diff)
                 table.remove(addon.updateInactiveQuest, element)
                 -- print('r'..element)
             end
+        elseif GetTime() - cycleStart > 2 then
+            cycleStart = GetTime()
+            for ref, func in pairs(addon.activeObjectives) do
+                addon.Call("updateQuest",func,ref)
+                activeQuestUpdate = activeQuestUpdate + 1
+                addon.updateActiveQuest[ref] = nil
+            end
         elseif not guideLoaded and addon.currentGuide then
             event = event .. "/istep"
             local max = #addon.currentGuide.steps
@@ -1593,9 +1619,13 @@ function addon:UpdateLoop(diff)
                 updateTimer = time
                 skip = skip % 4096
             end
+            addon.updateFrequency = (addon.settings.profile and addon.settings.profile.updateFrequency or 75)/1e3
         end
         updateError = false
     end
+    --[[if updateError then
+        print(event)
+    end]]
 end
 
 function addon.HardcoreToggle()

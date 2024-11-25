@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #name 12-17 The Barrens
+#displayname 14-18 The Barrens << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
 #next 17-22 Stonetalon/Barrens/Ashenvale
@@ -3002,6 +3003,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
+#displayname 18-22 Stonetalon/Barrens/Ashenvale << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
 #next RestedXP Horde 22-30\22-24 Hillsbrad

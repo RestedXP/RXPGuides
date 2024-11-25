@@ -148,6 +148,7 @@ local settingsDBDefaults = {
         distanceBetweenPins = 1,
         worldMapPinBackgroundOpacity = 0.35,
         batchSize = 6,
+        updateFrequency = 75,
         phase = 6,
         xprate = 1,
         guideFontSize = 9,
@@ -3072,12 +3073,23 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.5,
                         min = 1,
-                        max = 100,
-                        step = 1,
+                        max = 50,
+                        step = 0.500001,
                         hidden = addon.gameVersion > 50000,
                         disabled = function()
                             return not addon.settings.profile.enableHSbatch
                         end
+                    },
+                    updateFrequency = {
+                        name = L("Update Frequency (ms)"),
+                        desc = L(
+                            "Defines how often the addon updates in milliseconds, increase this if you're having performance issues"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 1.6,
+                        min = 5,
+                        max = 150,
+                        step = 5
                     },
                     optimizePerformance = {
                         name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),
@@ -3099,7 +3111,8 @@ function addon.settings:CreateAceOptionsPanel()
                                     p.enableVendorTreasure or
                                     p.enableItemUpgrades or
                                     p.enableItemUpgradesAH or
-                                    p.hideCompletedSteps or p.showUnusedGuides) or
+                                    p.hideCompletedSteps or
+                                    p.showUnusedGuides or p.updateFrequency < 150) or
                                     addon.RXPFrame.BottomFrame:GetHeight() < 35
                         end,
                         set = function(_, value)
@@ -3121,6 +3134,9 @@ function addon.settings:CreateAceOptionsPanel()
                             p.enableItemUpgradesAH = value
                             p.hideCompletedSteps = value
                             p.showUnusedGuides = value
+                            if value == true then
+                                p.updateFrequency = 150
+                            end
 
                             -- Only impact step list if disabling
                             if not value then

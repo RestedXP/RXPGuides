@@ -2095,7 +2095,6 @@ step
     .goto Durotar,57.50,73.26,-1
     .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 786
-    .subzoneskip 366,1
 step
     #xprate <1.5
     #hardcore
@@ -2301,12 +2300,23 @@ step << Rogue
     .itemcount 203990,1
 step
     #hardcore
+    #completewith next
+    .subzone 362 >>Travel to Razor Hill
+step
+    #hardcore
     #label Betrayers
-    .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
-    >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 823 >>Turn in Report to Orgnil
+    .accept 806 >>Accept Dark Storms
+    .goto Durotar,52.24,43.15
     .accept 784 >>Accept Vanquish the Betrayers
-    .target Gar'thok
+    .accept 837 >>Accept Encroachment
+    .goto Durotar,51.95,43.50
+    .accept 815 >>Accept Break a Few Eggs
+    .goto Durotar,51.09,42.49
+    .target Orgnil Soulscar
+    .target Gar'Thok
+    .target Cook Torka
 step << Hunter
     #hardcore
     #season 2
@@ -2505,7 +2515,28 @@ step << !Priest !Mage
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
+    .xp 7+2520 >> Grind to 2520+/4500xp
+    .isNotOnQuest 823
+step << !Priest !Mage
+    #xprate <1.5
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
     .xp 7+2200 >> Grind to 2200+/4500xp
+    .isOnQuest 823
+step << !Priest !Mage
+    #xprate >1.49
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
+    .xp 7+1530 >> Grind to 1530+/4500xp
+    .isNotOnQuest 823
 step << !Priest !Mage
     #xprate >1.49
     .goto Durotar,59.02,50.24,50,0
@@ -2515,6 +2546,17 @@ step << !Priest !Mage
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
     .xp 7+1050 >> Grind to 1050+/4500xp
+    .isOnQuest 823
+step << Priest
+    #xprate <1.5
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
+    .xp 7+2070 >> Grind to 2070+/4500xp
+    .isNotOnQuest 823
 step << Priest
     #xprate <1.5
     .goto Durotar,59.02,50.24,50,0
@@ -2524,6 +2566,17 @@ step << Priest
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
     .xp 7+1750 >> Grind to 1750+/4500xp
+    .isOnQuest 823
+step << Priest
+    #xprate >1.49
+    .goto Durotar,59.02,50.24,50,0
+    .goto Durotar,57.93,47.71,50,0
+    .goto Durotar,59.20,44.30,50,0
+    .goto Durotar,57.96,42.46,50,0
+    .goto Durotar,56.47,43.45,50,0
+    .goto Durotar,55.50,48.97
+    .xp 7+855 >> Grind to 855+/4500xp
+    .isNotOnQuest 823
 step << Priest
     #xprate >1.49
     .goto Durotar,59.02,50.24,50,0
@@ -2533,6 +2586,7 @@ step << Priest
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97
     .xp 7+375 >> Grind to 375+/4500xp
+    .isOnQuest 823
 step
     #softcore
     #completewith RazorTurnins1
@@ -2718,29 +2772,34 @@ step << Hunter
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
+    >>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock
+    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest
+    .vendor >> Vendor Trash
+    .home >> Set your Hearthstone to Razor Hill
+    .turnin 2161 >>Turn in A Peon's Burden
+    .target Innkeeper Grosk
+    .train 6760,1 << Rogue
+    .train 139,1 << Priest
+    .train 980,1 << Warlock
+    .train 8044,1 << Shaman
+    .train 284,1 << Warrior
+step << !Mage !Hunter !Druid
+    #optional
+    .goto Durotar,51.51,41.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
     .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
-    .collect 1179,10,825,1 << Warlock/Priest/Shaman --Ice Cold Milk (10)
-    .collect 1179,20,825,1 << Mage --Ice Cold Milk (20)
-    .collect 2287,10,825,1 << Rogue/Warrior --Haunch of Meat (10)
     .target Innkeeper Grosk
-    .money <0.065 << Rogue/Warrior/Shaman/Warlock --to ensure user still has 4 silver left for class spells
-    .money <0.045 << Priest --to ensure user still has 2 silver left for class spells
-    .money <0.050 << Mage --Mage not getting class training here
-    .isOnQuest 825 --From the Wreckage
-step << !Hunter
-    #optional
-    .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
-    .money >0.065 << Rogue/Warrior/Shaman/Warlock
-    .money >0.045 << Priest
-    .money >0.050 << Mage
-    .isOnQuest 825 --From the Wreckage
+    .train 6760,3 << Rogue
+    .train 139,3 << Priest
+    .train 980,3 << Warlock
+    .train 8044,3 << Shaman
+    .train 284,3 << Warrior
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -4948,7 +5007,7 @@ step
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .isQuestComplete 813
+    .isQuestComplete 813 << Warrior/Shaman/Hunter
 step
     #xprate <1.5
     #hardcore
@@ -7787,7 +7846,7 @@ step
     .complete 4402,1 --Cactus Apple (10)
 step
     #completewith Tails
-    .goto Durotar,44.98,69.13,20,0
+    .goto Durotar,44.98,69.13,45,0
     .goto Durotar,45.64,65.70,45,0
     .goto Durotar,47.37,65.67,45,0
     >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
@@ -9004,7 +9063,6 @@ step
     .goto Durotar,57.50,73.26,-1
     .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 786
-    .subzoneskip 366,1
 step
     #xprate <1.5
     #hardcore
@@ -9627,24 +9685,7 @@ step
     .vendor >> Vendor Trash
     .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
-    .collect 1179,10,825,1 << Warlock/Priest/Shaman --Ice Cold Milk (10)
-    .collect 1179,20,825,1 << Mage --Ice Cold Milk (20)
-    .collect 2287,10,825,1 << Rogue/Warrior --Haunch of Meat (10)
     .target Innkeeper Grosk
-    .money <0.065 << Rogue/Warrior/Shaman/Warlock --to ensure user still has 4 silver left for class spells
-    .money <0.045 << Priest --to ensure user still has 2 silver left for class spells
-    .money <0.050 << Mage --Mage not getting class training here
-    .isOnQuest 825 --From the Wreckage
-step << !Hunter
-    #optional
-    .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
-    .money >0.065 << Rogue/Warrior/Shaman/Warlock
-    .money >0.045 << Priest
-    .money >0.050 << Mage
-    .isOnQuest 825 --From the Wreckage
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r

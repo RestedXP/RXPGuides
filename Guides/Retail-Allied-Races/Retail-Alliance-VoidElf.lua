@@ -131,7 +131,7 @@ step
 step
     #completewith next
     .goto 972,27.98,24.48,5,0
-    .cast 253691 >>Click on the |cRXP_PICK_Void Portal|r. to teleport to |cRXP_WARN_Stormwind|r.
+    .cast 253691 >>Click on the |cRXP_PICK_Void Portal|r to teleport to |cRXP_WARN_Stormwind|r.
     .isOnQuest 48962
 step
     .goto 84,52.05,13.42
