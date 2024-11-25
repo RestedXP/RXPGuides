@@ -653,27 +653,28 @@ if addon.gameVersion < 40000 then
     end
 else
     talentTooltips.updateFunc = function(talentIndexFrame)
-        -- print("updateFunc cata", talentIndexFrame:GetName())
+        if not (talentIndexFrame.RXP and talentIndexFrame.RXP.levels) then
+            return
+        end
+
+        -- Because drawing at tooltip time, extra step required to order it vs everytime in drawTalents
+        local sorted_levels = {}
+        for l, _ in pairs(talentIndexFrame.RXP.levels) do
+            tinsert(sorted_levels, l)
+        end
+
+        tsort(sorted_levels)
+
+        local levelsCsv = ''
+        for _, level in pairs(sorted_levels) do
+            levelsCsv = fmt('%s%d ', levelsCsv, level)
+        end
 
         -- Only calculate string on tooltip hover, vs every DrawTalents like on Era
-
-        RXPD4 = talentIndexFrame.RXP
-
-        if not talentIndexFrame.RXP then return end
-
         local rxpTooltip = fmt("%s\n%s%s: %s %s|r",
                                talentIndexFrame.RXP.tooltipTextHeader,
                                addon.colors.tooltip,
-                               _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL, ', ' ..
-                                   strjoin(',',
-                                           unpack(talentIndexFrame.RXP.levels)))
-
-        -- for level, _ in pairs(talentIndexFrame.RXP.levels) do
-        -- rxpTooltip = fmt("%s\n%s%s: %s %d|r", rxpTooltip, addon.colors.tooltip, _G.TRADE_SKILLS_LEARNED_TAB,_G.LEVEL, level)
-        -- end
-
-        if not rxpTooltip then return end
-
+                               _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL, levelsCsv)
         -- Handle refreshing of UI
         GameTooltip:AddLine(rxpTooltip, 1, 1, 1)
 
