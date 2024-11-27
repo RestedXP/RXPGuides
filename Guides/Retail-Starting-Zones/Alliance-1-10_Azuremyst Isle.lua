@@ -581,7 +581,8 @@ step
     .use 23792
 step
     #completewith next
-    .aura -30298 >>.link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
+    .aura -30298 >> Right click off the Tree Disguise Kit buff
+    .link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
 step
     .goto 97,15.26,92.24
     >>|cRXP_WARN_Follow the Arrow|r.
