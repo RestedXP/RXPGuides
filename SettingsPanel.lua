@@ -1448,7 +1448,10 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
-                        hidden = addon.game ~= "CLASSIC" or addon.settings.profile.season == 2
+                        hidden = addon.game ~= "CLASSIC" or addon.settings.profile.season == 2,
+                        disabled = function ()
+                            return addon.settings.profile.enableAutomaticXpRate
+                        end,
                     },
                     hardcore = {
                         name = L("Hardcore mode"),
@@ -3459,6 +3462,13 @@ function addon.settings:DetectXPRate(softUpdate)
     elseif addon.gameVersion < 20000 then
         local season = addon.GetSeason() or CheckBuff(362859) and 1
 
+        --Anniversary realms
+        local realm = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason() or 0
+        if realm == 11 or realm == 12 then
+            addon.settings.profile.phase = 1
+        else
+            addon.settings.profile.phase = 6
+        end
         if season == addon.settings.profile.season then return end
 
 
