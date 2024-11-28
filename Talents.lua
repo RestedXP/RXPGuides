@@ -1078,46 +1078,52 @@ end
 
 addon.talents.cata = {}
 
-local function cataDrawTalentLevels(talentIndexFrameName, numbers)
+local function cataDrawTalentLevels(talentIndexFrameName, levels)
     local talentIndexFrame = _G[talentIndexFrameName]
-    if not talentIndexFrame then
-        print("cataDrawTalentLevels not ht")
-        return
-    end
+    if not talentIndexFrame then return end
 
     if not talentIndexFrame.levelHeader then
-        talentIndexFrame.levelHeader = CreateFrame("Frame", "$parent_levelText",
-                                                   talentIndexFrame,
+        local anchor = _G[talentIndexFrameName .. 'IconOverlay']
+        talentIndexFrame.levelHeader = CreateFrame("Frame",
+                                                   "$parent_RXPLevelText",
+                                                   anchor or talentIndexFrame,
                                                    BackdropTemplate)
 
-        talentIndexFrame.levelHeader:SetPoint("TOPLEFT", talentIndexFrame, 0, 0)
+        talentIndexFrame.levelHeader:SetPoint("BOTTOMLEFT", talentIndexFrame,
+                                              "TOPLEFT", 0, -4)
         talentIndexFrame.levelHeader.text =
             talentIndexFrame.levelHeader:CreateFontString(nil, "OVERLAY")
 
         talentIndexFrame.levelHeader.text:ClearAllPoints()
-        talentIndexFrame.levelHeader.text:SetPoint("CENTER",
+        talentIndexFrame.levelHeader.text:SetPoint("LEFT",
                                                    talentIndexFrame.levelHeader,
-                                                   0, 3)
+                                                   0, 0)
         talentIndexFrame.levelHeader.text:SetJustifyH("LEFT")
         talentIndexFrame.levelHeader.text:SetJustifyV("MIDDLE")
 
-        -- TODO specific text color setting?
         talentIndexFrame.levelHeader.text:SetTextColor(
             unpack(addon.activeTheme.textColor))
-        talentIndexFrame.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
+        talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
     end
+
+    -- TODO cache optimization
+    -- Because drawing at tooltip time, extra step required to order it
+    local sorted_levels = {}
+    for l, _ in pairs(levels) do tinsert(sorted_levels, l) end
+
+    tsort(sorted_levels)
+    local newText = '' .. strjoin(',', unpack(sorted_levels))
 
     -- If 5 levels of preview, overlaps with nearby
-    if #numbers == 5 then
-        talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
-        talentIndexFrame.levelHeader:SetPoint("TOPLEFT", talentIndexFrame, -3, 0)
+    if #sorted_levels < 4 then
+        -- talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+        talentIndexFrame.levelHeader:SetPoint("BOTTOMLEFT", talentIndexFrame,
+                                              "TOPLEFT", 0, -4)
     else
-        talentIndexFrame.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
-        talentIndexFrame.levelHeader:SetPoint("TOPLEFT", talentIndexFrame, 0, 0)
+        -- talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+        talentIndexFrame.levelHeader:SetPoint("BOTTOMLEFT", talentIndexFrame,
+                                              "TOPLEFT", -2 * #sorted_levels, -4)
     end
-
-    -- Ensure single number ends up as a string
-    local newText = '' .. strjoin(',', unpack(numbers))
 
     -- No changes, prevent uneeded UI calls
     if talentIndexFrame.levelHeader.text:GetText() == newText then return end
@@ -1125,7 +1131,6 @@ local function cataDrawTalentLevels(talentIndexFrameName, numbers)
     talentIndexFrame.levelHeader.text:SetText(newText)
     talentIndexFrame.levelHeader:SetSize(
         talentIndexFrame.levelHeader.text:GetStringWidth() + 10, 17)
-
 end
 
 local function setCataHighlightColor(highlightTexture, colorIndex)
@@ -1246,8 +1251,8 @@ function addon.talents.cata:DrawTalents(guide)
                         talentInfo.talentIndexFrame.RXP = talentInfo
                     end
 
-                    setCataHighlightColor(talentInfo.highlightTexture,
-                                          upcomingTalent - playerLevel)
+                    -- TODO visual clutter, may need to remove highlights completely from Cata
+                    -- setCataHighlightColor(talentInfo.highlightTexture, upcomingTalent - playerLevel)
                 end -- ipairs(element.talent)
             end -- ipairs(levelStep.elements)
 
@@ -1261,9 +1266,8 @@ function addon.talents.cata:DrawTalents(guide)
 
     -- Ensure all highlights and levelHeaders are shown/hidden as applicable
 
-    for tab, tabData in ipairs(talentTooltips.cataHighlights) do
-        for index, tInfo in ipairs(tabData) do
-
+    for _, tabData in pairs(talentTooltips.cataHighlights) do
+        for _, tInfo in pairs(tabData) do
             cataDrawTalentLevels(tInfo.talentIndexFrameName, tInfo.levels)
 
             if not tInfo.highlightTexture:IsShown() then
