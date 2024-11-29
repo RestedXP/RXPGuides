@@ -1815,9 +1815,10 @@ RXPGuides.RegisterGuide([[
 #subgroup Max Level Storylines (80)
 #name g) Siren Isle Main Campaign
 #next h) Fate of the Kirn Tor
-#displayname Siren Isle Main Campaign
+#displayname Siren Isle Main Campaign & Side Quests
 
 
+--WEEK 1 CAMPAIGN START
 
 step
     .goto 2339,41.85,26.20
@@ -1827,11 +1828,12 @@ step
 step
     .goto 2339,43.41,29.92,15,0
     .goto 2248,55.40,33.862
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r |cRXP_WARN_on the zeppelin|r.
     .turnin 84719 >>Turn in The Expedition Awaits
     .target Skaggit
     .accept 84720 >>Accept To the Siren Isle!
 step
+    .goto 2248,55.40,33.862
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r
     .complete 84720,1 --1/1 Talk to Skaggit to depart from Dornogal
     .skipgossipid 124305
@@ -1839,6 +1841,7 @@ step
 step
     #completewith next
     #hidewindow
+    #title Follow the Arrow
     .goto 2369,69.34,50.86,20 >> test
     .timer 9,RP
 step
@@ -1847,7 +1850,7 @@ step
     >>|cRXP_WARN_You are unable to fly here; this will be unlocked later|r.
     .complete 84720,2 --1/1 Rendezvous with Skaggit
 step
-    .goto 2369,69.32,48.13
+    .goto 2369,69.32,48.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r
     .turnin 84720 >>Turn in To the Siren Isle!
     .target Skaggit
@@ -1880,7 +1883,7 @@ step
     .target Bargus
 step
     .goto 2369,67.50,41.98
-    >>Wait for the Roleplay
+    >>|cRXP_WARN_Wait for the brief roleplay|r, |cRXP_WARN_which will be completed when the timer runs out|r.
     .complete 84721,4 --1/1 Device assembled
 step
     .goto 2369,67.47,41.93
@@ -1890,11 +1893,11 @@ step
     .accept 84722 >>Accept Facet-nating Signals
 step
     .goto 2369,57.03,47.72,40,0
-    .goto 2369,48.56,44.69
+    .goto 2369,48.56,44.7
     #title Follow the Arrow
     .complete 84722,1 --Meet up with Bargus
 step
-    .goto 2369,48.56,44.68
+    .goto 2369,48.56,44.7
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_First Earthen Pylon|r
     .complete 84722,2 --1/1 First Earthen Pylon Activated
 step
@@ -1924,7 +1927,7 @@ step
     .timer 10,RP
 step
     .goto 2369,44.64,22.43
-    >>Wait in front of the cave with your back facing it until the entrance is blown open, so the blast pushes you closer to the cave.
+    >>Wait in front of the cave |cRXP_WARN_with your back facing it|r until the entrance is blown open,|cRXP_WARN_so the blast pushes you closer to the cave.|r
     .complete 84941,1 --1/1 Collapsed tunnel cleared
 step
     .goto 2369,48.87,18.42
@@ -1933,7 +1936,8 @@ step
     .timer 5,RP
 step
     .goto 2369,48.83,18.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
+    >>|cRXP_WARN_Wait for the brief roleplay|r, |cRXP_WARN_which will be completed when the timer runs out|r.
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
     .turnin 84941 >>Turn in Cave Barging
     .target Bargus
     .accept 84723 >>Accept Buried Secrets
@@ -1950,40 +1954,51 @@ step
 step
     .goto 2375,47.58,44.69
     #title Follow the Arrow
+    >>Kill |cRXP_ENEMY_Crystalsworn Memory|r |cRXP_WARN_if they bother you|r and |cRXP_WARN_don't run into|r |cRXP_ENEMY_Faded Construct|r.
     .complete 84723,2 --Follow the Signal through the Vault.
+    .mob Crystalsworn Memory
 step
     .goto 2375,47.59,44.68
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Rune|r
+    *Kill |cRXP_ENEMY_Crystalsworn Memory|r |cRXP_WARN_if they bother you|r and |cRXP_WARN_don't run into|r |cRXP_ENEMY_Faded Construct|r.
     .complete 84723,4 --Follow the signal into the Central Chamber
+    .mob Crystalsworn Memory
+    .mob Faded Construct
     .target Bargus
 step
     .goto 2375,48.02,49.32,10,0
     .goto 2375,40.15,70.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
+    *>>Kill |cRXP_ENEMY_Crystalsworn Memory|r |cRXP_WARN_if they bother you|r.
     .complete 84723,5 --Follow the signal into the Central Chamber
     .timer 8,RP
     .target Bargus
 step
     .goto 2375,40.15,70.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
+    >>|cRXP_WARN_Wait for the brief roleplay|r, |cRXP_WARN_which will be completed when the timer runs out|r.
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
     .turnin 84723 >>Turn in Buried Secrets
     .target Bargus
     .accept 84724 >>Accept The Radiant Vault
 step
     .goto 2375,37.43,77.95
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skeletal Remains|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skeletal Remains|r.
     .complete 84724,1 --1/1 Skeletal Remains Inspected
     .target Skeletal Remains
 step
     .goto 2375,37.43,77.95
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skeletal Remains|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skeletal Remains|r.
     .complete 84724,2 --1/1 Ring Taken
     .skipgossipid 124399
 step
     .goto 2375,44.86,72.79
-    >>Kill |cRXP_ENEMY_Vault Guardian.|r Loot him for |T6215540:0|t[|cRXP_LOOT_Cracked Citrine|r]
+    >>Kill |cRXP_ENEMY_Vault Guardian|r.
     .complete 84724,3 --1/1 Tomb Guardian Defeated
     .mob Vault Guardian
+step
+    .goto 2375,41.37,74.38
+    >>Loot |cRXP_ENEMY_Vault Guardian|r for |T6215540:0|t[|cRXP_LOOT_Cracked Citrine|r].
+    .complete 84724,4 --1/1 Cracked Citrine Collected
 step
     #completewith next
     .goto 2375,38.01,78.01
@@ -1992,7 +2007,8 @@ step
     .target Bargus
 step
     .goto 2369,71.12,44.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
+    >>|cRXP_WARN_Wait for the brief roleplay|r, |cRXP_WARN_which will be completed when the timer runs out|r.
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
     .turnin 84724 >>Turn in The Radiant Vault
     .target Bargus
 step
@@ -2002,7 +2018,8 @@ step
     .target Angorla
 step
     .goto 2369,71.09,44.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r and finish the puzzle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r and finish the puzzle.
+    *|cRXP_WARN_Rearrange the positions so that none of the connecting intersect|r.
     .skipgossipid 124757 -- do It
     .complete 84728,1 --1/1 Cracked Citrine Repaired
     --x .skipgossipid 131242 -- wait
@@ -2019,11 +2036,11 @@ step
     .use 228411
 step
     .goto 2369,71.09,44.11
-    >>Open your character panel and Shift-Right Click on |T6215518:0|t[Cyrce's Circlet]. Then, Left Click and drag |T6215530:0|t[Windsinger's Runed Citrine] from your bags into the red gem slot.
+    >>Open your character panel and Shift-Right Click on |T6215518:0|t[Cyrce's Circlet]. Then, Left Click and drag |T6215530:0|t[Windsinger's Runed Citrine] from your bags into the |cFFEB144Cred gem slot|r.
     .complete 84725,2 --1/1 Socket
 step
     .goto 2369,71.09,44.11
-    >>Open your character panel and Shift-Right Click on |T6215518:0|t[Cyrce's Circlet]. Next, Left Click to remove |T6215530:0|t[Windsinger's Runed Citrine] from the red gem slot, then Left Click again to reapply it.
+    >>Open your character panel and Shift-Right Click on |T6215518:0|t[Cyrce's Circlet]. Next, Left Click to remove |T6215530:0|t[Windsinger's Runed Citrine] from the |cFFEB144Cred gem slot|r, then Left Click again to reapply it.
     .complete 84725,3 --1/1 Unsocket
 step
     .goto 2369,71.09,44.11
@@ -2032,188 +2049,323 @@ step
     .target Angorla
     .accept 86174 >>Accept Special Assignment: Storm's a Brewin'
     .accept 84726 >>Accept Uncovered Mysteries
+
+--CONTRUBUTION
+
 step
-    #completewith Dipping
-    .complete 84852,1 >>Kill enemies on the way to your next objectives, focusing especially on elites and rares, as you'll need to take down a large number of them.
+    .goto 2369,69.40,43.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
+    .accept 85059 >>Accept A Piece of the Action
+    .target Jack the Hammer
 step
+    .goto 2369,69.32,43.18
+    >>Click on |cRXP_PICK_Siren Isle Command Map|r and contribute to any of the 3 events.
+    .complete 85059,1 --1/1 Contribute to an event
+step
+    .goto 2369,69.40,43.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
+    .turnin 85059 >>Turn in A Piece of the Action
+    .accept 86156 >>Accept Getting Involved
+    .target Jack the Hammer
+--MIGHT MOVE IF NOT ENOUGH RESOURCES AT THIS TIME; CHECK
+step
+    --MAKE IT STICKY/COMPLETEWITH
     #completewith next
+    .goto 2369,69.32,43.18
+    >>Click on |cRXP_PICK_Siren Isle Command Map|r and contribute to any of the 3 events. |cRXP_WARN_10 times if u can.|r
+    .complete 86156,1 --10/10 Contribute ten times to events
+--MAKE IT STICKY/COMPLETEWITH
+--.complete 86156,2 --1/1 DO ONE OF THE EVENTS IF ITS UP
+https://wowhead.com/quest=85753
+https://wowhead.com/quest=85762
+https://wowhead.com/quest=85764
+step --DAILLIES
+    .goto 2369,71.03,39.72
+    -- .questcount <2,83932,85589
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .accept 83932 >>Accept Historical Documents -- Vrykul
+    .accept 85589 >>Accept Ruffled Pages -- Naga
+    -- Beach Comber -- Naga
+    .target Stellin Veras
+step --DAILLIES
+    .goto 2369,69.53,42.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
+    .accept 84222 >>Accept Secure the Perimeter -- Vrykul 5x
+    .accept 84627 >>Accept Three Heads of the Deep -- Naga 4x
+    .accept 84430 >>Accept Crystal Crusade -- Naga
+    .target Sky-Captain Elaena Lancekat
+step --DAILLIES
+    .goto 2369,69.12,43.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
+    .accept 84432 >>Accept Longship Landing -- Vrykul
+    .accept 84680 >>Accept Rock 'n Stone Revival -- Vrykul
+    .target Dawn
+step -- Vrykul
+    #completewith 2/8
+    >>Kill |cRXP_ENEMY_Bloodwake Vrykuls|r
+    .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .mob Bloodwake Marauder
+    .mob Bloodwake Spellslinger
+    .mob Bloodwake Deathdealer
+step -- Vrykul
+    #completewith 2/8
+    >>Kill |cRXP_ENEMY_Bloodbrine Horrors|r
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
+    .mob Bloodbrine Horror
+step -- Vrykul
+    .goto 2369,70.81,57.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,1 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,71.89,61.14
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,2 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    #label 2/8
+    >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
+    .complete 84680,1,2 --8/8 Restless Stones and Pebbles animated
+    .use 228988
+step --Main Campaign
     .goto 2369,68.37,71.61,20,0
     .goto 2369,68.38,73.77
-    .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r inside the cave.
-step
-    .goto 2369,68.38,73.77
-    >>Click on the |cRXP_PICK_Runed Chest|r
+    .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r |cRXP_WARN_inside the cave|r.
+    >>Click on the |cRXP_PICK_Runed Chest|r.
     .complete 84726,1 --1/1 Vrykul Ruins Searched
-step
-    #completewith next
+step --Main Campaign
+    .isOnQuest 84726
     #title Leave Cave
-    .goto 2369,67.92,70.79,10 >>Leave the Cave
-step
+    .goto 2369,67.92,70.79,10 >>Leave the Cave.
+step -- Vrykul
+    #completewith A Ritual of Runes
+    >>Kill |cRXP_ENEMY_Bloodwake Vrykul|r
+    .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .mob Bloodwake Marauder
+    .mob Bloodwake Spellslinger
+    .mob Bloodwake Deathdealer
+step -- Vrykul
+    #completewith Peak Precision
+    >>Kill |cRXP_ENEMY_Bloodbrine Horror|r
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
+    .mob Bloodbrine Horror
+step -- Vrykul
+    .goto 2369,58.59,72.19
+    >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
+    .complete 84680,1,4 --8/8 Restless Stones and Pebbles animated
+    .use 228988
+step -- Vrykul
+    .goto 2369,70.81,57.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,3 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,71.89,61.14
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,4 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,53.93,72.65
+    >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
+    .complete 84680,1,6 --8/8 Restless Stones and Pebbles animated
+    .use 228988
+step -- Vrykul
+    .goto 2369,51.71,70.56
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,5 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,49.14,71.92
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,6 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,47.9,71.9
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,7 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,47.47,75.02
+    >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
+    .complete 84680,1,8 --8/8 Restless Stones and Pebbles animated
+    .use 228988
+step -- Vrykul
     #completewith next
+    .goto 2369,46.88,78
+    >>Kill |cRXP_ENEMY_Wreckwater|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+    .mob Wreckwater
+step -- Vrykul
+    .goto 2369,39.23,73.61
+    >>Kill |cRXP_ENEMY_Brined Monstrosity|r.
+    .complete 84680,3 --1/1 Brined Monstrosity slain
+    .mob Brined Monstrosity
+step -- Vrykul
+    #completewith next
+    .goto 2369,32.35,73.99
+    >>Kill |cRXP_ENEMY_Ikir the Flotsurge|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+    .mob Ikir the Flotsurge
+step -- Vrykul
+    >>Kill |cRXP_ENEMY_Bloodbrine Horrors|r.
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
+    .mob Bloodbrine Horror
+step --Main Campaign
     .goto 2369,32.45,69.20
     .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r at the trees.
-step
-    .goto 2369,32.45,69.20
-    >>click on the |cRXP_PICK_Runed Chest|r
+    >>Click on the |cRXP_PICK_Runed Chest|r.
     .complete 84726,2 --1/1 Vrykul Ritual Site Searched
-step
+-- OPTIONAL QUEST; KEEP FOR JETPACK; REMOVES 1 DAILY IN NAGA INVASION
+step --SIDEQUEST
+    #label Peak Precision
+    .goto 2369,37.83,62.5,40,0
+    .goto 2369,34.13,58.39,40,0
+    .goto 2369,37.99,51.16,40,0
     .goto 2369,42.17,49.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Benny Springjet|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Benny Springjet|r.
+    *|cRXP_WARN_Do not complete or turn in this quest, as it allows us to have continuous access to the jetpack without needing to purchase it.|r
     .accept 84252 >>Accept Peak Precision
     .target Benny Springjet
--- step
---     .isOnQuest 84252
---     .goto 2369,39.51,20.08
---     .aura 469809 >>Use |T511727:0|t[Experimental Go-Pack] to fly into the air.
---     .use 230795
--- step
---     .isOnQuest 84252
---     .goto 2369,39.51,20.08
---     .aura -469809 >>Remove the buff to unlock an ability that catapults you forward.
--- step
---     #completewith next
---     .isOnQuest 84252
---     .goto 2369,39.51,20.08
---     .cast 469807 >>Use your ExtraActionButton and aim at the ground to move forward faster.
-step
+step --JETPACK USE
+    #completewith <INSERT LABEL>
+    +<TEXT HOW TO USE JETPACK>
+    *|cRXP_WARN_Do not complete or turn in this quest, as it allows us to have continuous access to the jetpack without needing to purchase it.|r
+    *ADD WEEK 1 TEXT IF THEY WANT AN ADDITIONAL DAILY AND ITS NAGA INVASION
+step -- Vrykul
+    .goto 2369,42.08,47.18
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,8 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,42.29,45.93
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,9 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,45.94,47.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,10 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,51.49,48.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r.
+    .accept 84248 >>Accept A Ritual of Runes -- Vrykul
+    .target Machinist Kromleg
+step -- Vrykul
     #completewith next
+    #title Enter Cave
+    .isOnQuest 84248
+    .goto 2369,50.84,41.67,10,0 >>Enter the Cave
+step -- Vrykul
+    .goto 2369,53.1,40.72
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r.
+    .complete 84248,1,1 --5/5 Summoning Runes destroyed
+step -- Vrykul
+    .goto 2369,54.15,37.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r.
+    .complete 84248,1,2 --5/5 Summoning Runes destroyed
+step -- Vrykul
+    .goto 2369,53.9,36.79
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r.
+    .complete 84248,1,3 --5/5 Summoning Runes destroyed
+step -- Vrykul
+    .goto 2369,52.55,38.4
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r.
+    .complete 84248,1,4 --5/5 Summoning Runes destroyed
+step -- Vrykul
+    .goto 2369,51.42,37.58
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r.
+    .complete 84248,1,5 --5/5 Summoning Runes destroyed
+step -- Vrykul
+    .goto 2369,51.42,37.58
+    >>Kill |cRXP_ENEMY_Inhyldir the Cursed|r.
+    .complete 84248,2 --1/1 Inhyldir the Cursed slain
+    .mob Inhyldir the Cursed
+step -- Vrykul
+    .isOnQuest 84248
+    #title Leave Cave
+    #completewith next
+    .goto 2369,50.09,43.31,10 >>Leave the Cave
+step -- Vrykul
+    .goto 2369,51.48,48.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r.
+    .turnin 84248 >>Turn in A Ritual of Runes
+    .target Machinist Kromleg
+step -- MAIN CAMPAIGN
     .goto 2369,39.51,20.08
-    .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r
-step
-    .goto 2369,39.51,20.08
+    .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r.
     >>Click on the |cRXP_PICK_Runed Chest|r
     .complete 84726,3 --1/1 Vrykul Gravesite Searched
--- step
---     .isOnQuest 84252
---     .aura 469809 >>Use |T511727:0|t[Experimental Go-Pack] to fly into the air.
---     .use 230795
--- step
---     .isOnQuest 84252
---     .aura -469809 >>Remove the buff to unlock an ability that catapults you forward.
--- step
---     #completewith next
---     .isOnQuest 84252
---     .cast 469807 >>Use your ExtraActionButton and aim at the ground to move forward faster.
+step -- Vrykul
+    #completewith next
+    .goto 2369,38.15,12.13,40,0
+    .goto 2369,31.36,22.59,40,0
+    .goto 2369,36.64,26.27,40,0
+    >>Kill |cRXP_ENEMY_Grimgull|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+    .mob Grimgull
+step -- Vrykul
+    >>Kill |cRXP_ENEMY_Bloodwake Vrykul|r
+    .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .mob Bloodwake Marauder
+    .mob Bloodwake Spellslinger
+    .mob Bloodwake Deathdealer
+step -- Vrykul
+    .goto 2369,51.75,32.46
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,11 --12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    .goto 2369,51.55,33.49
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .complete 83932,1,12--12/12 Interesting Notes added to the Research Journal
+step -- Vrykul
+    #completewith next
+    .goto 2369,53.36,34.1
+    >>Kill |cRXP_ENEMY_Ghostmaker|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+    .mob Ghostmaker
+step -- Vrykul
+    #completewith next
+    #loop
+    .goto 2369,66.32,25.05,40,0
+    .goto 2369,76.33,22.08,40,0
+    >>Kill |cRXP_ENEMY_Ghostmaker|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+    .mob Ghostmaker
 step
     .goto 2369,71.21,44.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
     .turnin 84726 >>Turn in Uncovered Mysteries
     .target Angorla
+
+-- DAILY TURNIN
 step
-    >>Use |T6215533:0|t[Raw Singing Citrine] on |T6215518:0|t[Cyrce's Circlet]
-    .use 229365
-    .use 228411
+    .goto 2369,71.03,39.72
+    -- .questcount <2,83932,85589
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .turnin 83932 >>Turn in Historical Documents -- Vrykul
+    .turnin 85589 >>Turn in Ruffled Pages -- Naga
+    -- Beach Comber -- Naga
+    .target Stellin Veras
 step
-    .goto 2369,72.18,43.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
-    .accept 85653 >>Accept Dipping a Toe
-    .target Apprentice Tanmar
--- step
---     .goto 2369,75.12,45.47
---     >>Click on the |cRXP_PICK_Survey Device|r
---     .complete 84252,1,1
--- step
---     .isOnQuest 84252
---     .aura 469809 >>Use |T511727:0|t[Experimental Go-Pack] to fly into the air.
---     .use 230795
--- step
---     .isOnQuest 84252
---     .aura -469809 >>Remove the buff to unlock an ability that catapults you forward.
--- step
---     #completewith next
---     .isOnQuest 84252
---     .cast 469807 >>Use your ExtraActionButton and aim at the ground to move forward faster.
+    .goto 2369,69.53,42.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
+    .turnin 84222 >>Turn in Secure the Perimeter -- Vrykul 5x
+    .turnin 84627 >>Turn in Three Heads of the Deep -- Naga 4x
+    .turnin 84430 >>Turn in Crystal Crusade -- Naga
+    .target Sky-Captain Elaena Lancekat
 step
-    .goto 2369,73.34,52.34
-    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
-    .complete 85653,1 --1/1 Search the East Shore
--- step
---     .isOnQuest 84252
---     .aura 469809 >>Use |T511727:0|t[Experimental Go-Pack] to fly into the air.
---     .use 230795
--- step
---     .isOnQuest 84252
---     .aura -469809 >>Remove the buff to unlock an ability that catapults you forward.
--- step
---     #completewith next
---     .isOnQuest 84252
---     .cast 469807 >>Use your ExtraActionButton and aim at the ground to move forward faster.
+    .goto 2369,69.12,43.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
+    .turnin 84432 >>Turn in Longship Landing -- Vrykul
+    .turnin 84680 >>Turn in Rock 'n Stone Revival -- Vrykul
+    .target Dawn
 step
-    .goto 2369,45.92,87.70
-    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
-    .complete 85653,3 --1/1 Search the Southern Shore
--- step
---     .goto 2369,42.13,67.8
---     >>Click on the |cRXP_PICK_Survey Device|r
---     .complete 84252,1,2
--- step
---     .goto 2369,39.09,52.21
---     >>Click on the |cRXP_PICK_Survey Device|r
---     .complete 84252,1,3
--- step
---     .goto 2369,42.99,52.18
---     >>Click on the |cRXP_PICK_Survey Device|r
---     .complete 84252,1,4
--- step
---     .goto 2369,36.73,42.97
---     >>Click on the |cRXP_PICK_Survey Device|r
---     .complete 84252,1,5
--- step
---     .goto 2369,34.63,28.99
---     >>Click on the |cRXP_PICK_Survey Device|r
---     .complete 84252,1,6
--- step
---     .isOnQuest 84252
---     .aura 469809 >>Use |T511727:0|t[Experimental Go-Pack] to fly into the air.
---     .use 230795
--- step
---     .isOnQuest 84252
---     .aura -469809 >>Remove the buff to unlock an ability that catapults you forward.
--- step
---     #completewith next
---     .isOnQuest 84252
---     .cast 469807 >>Use your ExtraActionButton and aim at the ground to move forward faster.
-step
-    .goto 2369,33.07,20.52
-    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
-    .complete 85653,2 --1/1 Search the Northern Shore
-step
-    #label Dipping
-    .goto 2369,72.19,42.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
-    .turnin 85653 >>Turn in Dipping a Toe
-    .target Apprentice Tanmar
-step
-    >>Use |T6215533:0|t[Raw Singing Citrine] on |T6215518:0|t[Cyrce's Circlet]
-    .use 229365
-    .use 228411
-step
-    #loop
-    .goto 2369,73.34,52.34,30,0
-    .goto 2369,45.92,87.70,30,0
-    .goto 2369,33.07,20.52,30,0
-    >>Kill the remaining enemies on the way to your next objectives, focusing especially on elites and rares, as you'll need to take down a large number of them.
+    .goto 2369,69.40,43.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
+    .turnin 86156 >>Turn in Getting Involved
+    .target Jack the Hammer
+step -- 1-3 WQ Possible
     .complete 84852,1
-step
-    .goto 2369,69.06,49.26
-    .gossipoption 123657 >>Talk to |cRXP_FRIENDLY_Suzie Boltwrench|r
-    .target Suzie Boltwrench
-step
-    .goto 2369,69.63,48.63
-    >>Click on |cRXP_PICK_Crawler Mine|r
-    .complete 85113,2 --1/1 Use equipment provided (Optional)
-step
-    .goto 2369,68.65,54.63
-    .complete 85113,3 --Storm threats eliminated (100%)
-step
-    .goto 2369,69.24,49.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench|r
-    .turnin 85113 >>Turn in Special Assignment: Storm's a Brewin
-    .target Suzie Boltwrench
-step
-    .goto 2369,69.24,49.25
-    .gossipoption 125326 >>Talk to |cRXP_FRIENDLY_Suzie Boltwrench|r
-    .target Suzie Boltwrench
+    .complete 84851,1
+    .complete 84850,1
+    https://wowhead.com/quest=84852
+step -- check rare daily if completed vrykul
+
+-- WEEK 1 MAIN CAMPAIGN END
+
+-- WEEK 1 QUESTLINE: Reading the Runes
+
 step
     .goto 2369,67.51,41.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
@@ -2229,11 +2381,21 @@ step
     .goto 2375,48.63,41.4,20,0
     .goto 2375,32.19,28.56
     >>Click on the |cRXP_PICK_Stone|r
+    *|cRXP_WARN_Don't run into|r |cRXP_ENEMY_Faded Construct|r.
     .complete 85876,2 --1/1 Fury of Thrayir examined
+    .mob Crystalsworn Memory
+    .mob Skittersong Krolusk
+    .mob Brinebound Wraith
+    .mob Faded Construct
 step
     .goto 2375,73.88,64.04
     >>Click on the |cRXP_PICK_Stone|r
+    *|cRXP_WARN_Don't run into|r |cRXP_ENEMY_Faded Construct|r.
     .complete 85876,3 --1/1 Keys of Thrayir examined
+    .mob Crystalsworn Memory
+    .mob Skittersong Krolusk
+    .mob Brinebound Wraith
+    .mob Faded Construct
 step
     .goto 2375,49.64,44.91,20,0
     .goto 2375,37.12,77.25
@@ -2244,12 +2406,18 @@ step
     .goto 2375,33.19,84.45
     >>Click on the |cRXP_PICK_Stone|r
     .complete 85876,4 --1/1 Cyrce and the Galeorn examined
+    .mob Crystalsworn Memory
+    .mob Skittersong Krolusk
+    .mob Brinebound Wraith
 step
     .goto 2375,61.35,12.79,20,0
+    .goto 2375,61.49,12.6,15,0
     .goto 2369,45.27,21.58,30,0
     .goto 2369,67.49,41.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
+    *|cRXP_WARN_Don't run into|r |cRXP_ENEMY_Faded Construct|r.
     .turnin 85876 >>Turn in Reading the Runes
+    .mob Faded Construct
     .target Bargus
 step
     .goto 2369,71.05,39.69
@@ -2258,26 +2426,32 @@ step
     .target Stellin Verasa
     .accept 85571 >>Accept Scattered To The Winds
 step
-    .goto 2369,55.91,14.54
     .goto 2369,71.04,59.31
-    >>Click on the |cRXP_PICK_Stone|r
-    .complete 85571,1,1 --5/5 Faded Journal Page
+    >>Click on the |cRXP_PICK_Weathered Journal Page|r.
+    .complete 85571,4 --1/1 Weathered Journal Page
 step
     .goto 2369,51.44,75.83
-    .complete 85571,1,2 --5/5 Faded Journal Page
+    >>Click on the |cRXP_PICK_Soggy Journal Page|r.
+    .complete 85571,2 --1/1 Soggy Journal Page
 step
+    .goto 2369,38.45,52.87,10,0
     .goto 2369,38.49,52.84,10,0
     .goto 2369,39.02,51.66,5,0
     .goto 2369,39.26,54.22
-    .complete 85571,1,3 --5/5 Faded Journal Page
-step
-    .goto 2369,46.07,47.06
-    .complete 85571,1,4 --5/5 Faded Journal Page
+    >>Click on the |cRXP_PICK_Faded Journal Page|r.
+    .complete 85571,1 --1/1 Faded Journal Page
 step
     .goto 2369,56.08,11.92,10,0
     .goto 2369,55.83,14.61
-    .complete 85571,1,5 --5/5 Faded Journal Page
+    >>Click on the |cRXP_PICK_Torn Journal Page|r |cRXP_WARN_underneath the Wooden Structure|r.
+    .complete 85571,3 --1/1 Torn Journal Page
 step
+    .goto 2369,56.07,11.91,20,0
+    .goto 2369,55.83,14.68
+    >>Click on the |cRXP_PICK_Stained Journal Page|r |cRXP_WARN_inside the cave|r.
+    .complete 85571,5 --1/1 Stained Journal Page
+step
+    .goto 2369,56.43,11.78,10,0
     .goto 2369,71.03,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
     .turnin 85571 >>Turn in Scattered To The Winds
@@ -2299,7 +2473,7 @@ step
     .goto 2369,71.78,45.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
     .complete 85572,2 --1/1 Speak to Ricket
-    .skipgossipid 131381
+    .skipgossipid 125515
     .target Ricket
 step
     .goto 2369,71.02,39.69
@@ -2316,29 +2490,369 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
     .turnin 85573 >>Turn in Laid To Rest At Last
     .target Stellin Verasa
+
+-- TURN IN CONTRUBUTION WEEK 1 ADDITONAL/MOVE CHECK IF NEEDED
+
+-- STORM WQ WEEK 1
+
 step
-    .goto 2369,69.40,43.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
-    .accept 85059 >>Accept A Piece of the Action
-    .target Jack the Hammer
+    .goto 2369,69.06,49.26
+    .gossipoption 123657 >>Talk to |cRXP_FRIENDLY_Suzie Boltwrench|r
+    .target Suzie Boltwrench
 step
-    .goto 2369,69.31,43.16
-    >>Click on the |cRXP_PICK_Siren Isle Command Map|r and contribute to an event.
-    .complete 85059,1 --1/1 Contribute to an event
+    .goto 2369,69.63,48.63
+    >>Click on |cRXP_PICK_Crawler Mine|r
+    .complete 85113,2 --1/1 Use equipment provided (Optional)
 step
-    .goto 2369,69.36,43.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
-    .turnin 85059 >>Turn in A Piece of the Action
-    .target Jack the Hammer
-    .accept 86156 >>Accept Getting Involved
+    .goto 2369,68.65,54.63
+    >>Kill
+    *use extraaction
+    .complete 85113,3 --Storm threats eliminated (100%)
+    .mob Storm-Touched Clawfiend
+    .mob Shadowtide Watcher
 step
-    .goto 2369,69.36,43.19
-    .complete 86156,1 --10/10 Contribute ten times to events
+    .goto 2369,69.24,49.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench|r
+    .turnin 85113 >>Turn in Special Assignment: Storm's a Brewin
+    .target Suzie Boltwrench
 step
-    .goto 2369,69.35,43.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
-    .turnin 86156 >>Turn in Getting Involved
-    .target Jack the Hammer
+    .goto 2369,69.24,49.25
+    .gossipoption 125326 >>Talk to |cRXP_FRIENDLY_Suzie Boltwrench|r
+    .target Suzie Boltwrench
+
+
+-- MAIN CAMPAIGN WEEK 2
+
+step
+    .goto 2369,72.18,43.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .accept 85653 >>Accept Dipping a Toe
+    .target Apprentice Tanmar
+
+--COMPLETION OF Survey Devices; NOT TURNIN
+
+step
+    .goto 2369,75.12,45.47
+    >>Click on the |cRXP_PICK_Survey Device|r
+    .complete 84252,1,1
+step
+    .goto 2369,73.34,52.34
+    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
+    .complete 85653,1 --1/1 Search the East Shore
+step
+    .goto 2369,45.92,87.70
+    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
+    .complete 85653,3 --1/1 Search the Southern Shore
+
+--COMPLETION OF Survey Devices; NOT TURNIN
+
+step
+    .goto 2369,42.13,67.8
+    >>Click on the |cRXP_PICK_Survey Device|r
+    .complete 84252,1,2
+step
+    .goto 2369,39.09,52.21
+    >>Click on the |cRXP_PICK_Survey Device|r
+    .complete 84252,1,3
+step
+    .goto 2369,42.99,52.18
+    >>Click on the |cRXP_PICK_Survey Device|r
+    .complete 84252,1,4
+step
+    .goto 2369,36.73,42.97
+    >>Click on the |cRXP_PICK_Survey Device|r
+    .complete 84252,1,5
+step
+    .goto 2369,34.63,28.99
+    >>Click on the |cRXP_PICK_Survey Device|r
+    .complete 84252,1,6
+step
+    .goto 2369,33.07,20.52
+    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
+    .complete 85653,2 --1/1 Search the Northern Shore
+step
+    .goto 2369,72.19,42.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .turnin 85653 >>Turn in Dipping a Toe2
+    .target Apprentice Tanmar
+
+-- MAIN CAMPAIGN WEEK 3
+
+step
+    .goto 2369,71.28,45.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .accept 85654 >>Accept Juicing Up And Storming Out
+    .target Didi the Wrench
+step
+    .goto 2369,69.14,49.66
+    .complete 85654,3 --1/1 Activate the TR-06 Pummeler
+step
+    .goto 2369,69.27,47.94
+    .complete 85654,4 --1/1 Use the N.U.K.U.L.A.R Target Painter
+step
+    .goto 2369,71.28,45.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .turnin 85654 >>Turn in Juicing Up And Storming Out
+    .target Didi the Wrench
+step
+    .goto 2369,71.22,44.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
+    .accept 85655 >>Accept Unleashing Her Power
+    .target Angorla
+step
+    .goto 2369,37.41,56.94
+    .complete 85655,1 --10/10 Potential Unveiled
+step
+    .goto 2369,71.21,44.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
+    .turnin 85655 >>Turn in Unleashing Her Power
+    .target Angorla
+
+-- MAIN CAMPAIGN WEEK 4
+
+step
+    .goto 2369,72.19,43.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .accept 85656 >>Accept The Singing Bandit Catcher
+    .target Apprentice Tanmar
+step
+    .goto 2369,48.43,58.40
+    .complete 85656,3 --1/1 Ghoststone Diggings Searched
+step
+    .goto 2369,38.94,52.49
+    .complete 85656,2 --1/1 Salt and Shanty Searched
+step
+    .goto 2369,52.34,38.57
+    .complete 85656,1 --1/1 Spirit Scarred Cave Searched
+step
+    .goto 2369,72.14,42.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .turnin 85656 >>Turn in The Singing Bandit Catcher
+    .target Apprentice Tanmar
+
+-- MAIN CAMPAIGN WEEK 5
+
+step
+    .goto 2369,71.28,45.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .accept 85657 >>Accept Cyrce Would Be So Proud
+    .target Didi the Wrench
+step
+    .goto 2369,71.43,45.49
+    .complete 85657,1 --1/1 Survive a ride in the Skypiercer
+step
+    .goto 2369,71.29,45.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .turnin 85657 >>Turn in Cyrce Would Be So Proud
+    .target Didi the Wrench
+
+-- MAIN CAMPAIGN WEEK 6
+
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup Max Level Storylines (80)
+#name h) Siren Isle Daillies Inguide
+#displayname Siren Isle Daillies
+
+step
+    .goto 2369,71.03,39.72
+    -- .questcount <2,83932,85589
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .accept 83932 >>Accept Historical Documents -- Vrykul
+    .accept 85589 >>Accept Ruffled Pages -- Naga
+    -- Beach Comber -- Naga
+    .target Stellin Veras
+step
+    .goto 2369,69.53,42.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
+    .accept 84222 >>Accept Secure the Perimeter -- Vrykul 5x
+    .accept 84627 >>Accept Three Heads of the Deep -- Naga 4x
+    .accept 84430 >>Accept Crystal Crusade -- Naga
+    .target Sky-Captain Elaena Lancekat
+step
+    .goto 2369,69.12,43.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
+    .accept 84432 >>Accept Longship Landing -- Vrykul
+    .accept 84680 >>Accept Rock 'n Stone Revival -- Vrykul
+    .target Dawn
+
+-- step -- Naga
+--     .goto 2369,61.03,67.76
+--     >>Kill |cRXP_ENEMY_Nereu of the Silent Wave|r
+--     .complete 84627,3 --1/1 Nereu of the Silent Wave slain
+--     .mob Nereu of the Silent Wave
+
+
+
+
+
+
+
+
+
+-- step
+--     #completewith
+--     .complete 84430,2 --30/30 Crystal Fragment
+-- step
+--     #completewith
+--     .complete 84430,1 --10/10 Crystal Chunk
+
+
+step
+    .goto 2369,49.33,74.06
+    >>Kill |cRXP_ENEMY_Extractor Silisai|r
+    .complete 84627,2 --1/1 Extractor Silisai slain
+    .mob Extractor Silisai
+step
+    .goto 2369,51.49,48.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .accept 84248 >>Accept A Ritual of Runes -- Vrykul
+    .target Machinist Kromleg
+step
+    .goto 2369,53.14,40.33
+    .complete 84248,1 --5/5 Summoning Runes destroyed
+step
+    .goto 2369,52.82,40.35
+    >>Kill |cRXP_ENEMY_Inhyldir the Cursed|r
+    .complete 84248,2 --1/1 Inhyldir the Cursed slain
+    .mob Inhyldir the Cursed
+step
+    .goto 2369,51.48,48.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .turnin 84248 >>Turn in A Ritual of Runes
+    .target Machinist Kromleg
+
+step
+    .goto 2369,41.96,68.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .accept 85051 >>Accept Beach Comber
+    .target Machinist Kromleg
+step
+    .goto 2369,32.45,69.20
+    >>Click on the |cRXP_PICK_Runed Chest|r.
+    .complete 84726,2 --1/1 Vrykul Ritual Site Searched
+step
+    .complete 85589,1 --15/15 Ruffled Pages
+step
+    .complete 85051,1 --Escort Kerchunk as he searches the beach (100%)
+step
+    .goto 2369,41.97,68.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .turnin 85051 >>Turn in Beach Comber
+    .target Machinist Kromleg
+step
+    #completewith
+    .complete 85051,2 --24/24 Salvageable Scrap
+step
+    .goto 2369,39.51,20.08
+    >>Click on the |cRXP_PICK_Runed Chest|r
+    .complete 84726,3 --1/1 Vrykul Gravesite Searched
+step
+    .complete 85051,2 --24/24 Salvageable Scrap
+step
+    .goto 2369,69.14,43.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
+    .turnin 84432 >>Turn in Longship Landing
+    .turnin 84680 >>Turn in Rock 'n Stone Revival
+    .target Dawn
+step
+    .goto 2369,71.00,39.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .turnin 83932 >>Turn in Historical Documents
+    .turnin 85589 >>Turn in Ruffled Pages
+    .target Stellin Verasa
+step
+    .goto 2369,69.41,42.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
+    .turnin 84627 >>Turn in Three Heads of the Deep
+    .turnin 84222 >>Turn in Secure the Perimeter
+    .turnin 84430 >>Turn in Crystal Crusade
+
+step
+    .turnin 84852 >>Turn in Legacy of the Vrykul
+    .turnin 84851 >>Turn in Tides of Greed
+    .turnin 84850 >>Turn in Serpent's Wrath
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup Max Level Storylines (80)
+#name h) Storm Daillies Inguide
+#displayname Siren Isle Daillies
+-- storm daillies storms brewin
+step
+    .goto 2369,43.75,23.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regald Hornfyre|r
+    .accept 84241 >>Accept Shoreline Stand
+    .target Regald Hornfyre
+step
+    .goto 2375,60.61,15.00
+    .complete 84241,3 --1/1 Use the Singing Tablet to enter the Forgotten Tomb (Optional)
+step
+    .goto 2375,52.76,35.16
+    >>Kill |cRXP_ENEMY_Tide-Champion Korval|r
+    .complete 84241,2 --1/1 Tide-Champion Korval slain
+    .mob Tide-Champion Korval
+step
+    .goto 2369,49.01,16.72
+    >>Kill |cRXP_ENEMY_Brinebound Wraith|r
+    .complete 84241,1 --15/15 Brinebound Wraith slain
+    .mob Brinebound Wraith
+step
+    .goto 2369,43.73,23.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regald Hornfyre|r
+    .turnin 84241 >>Turn in Shoreline Stand
+    .target Regald Hornfyre
+    .complete 85113,3 --Storm threats eliminated (100%)
+step
+    .goto 2369,63.45,66.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sally Boltwrench|r
+    .accept 84225 >>Accept Eggstinction
+    .target Sally Boltwrench
+step
+    .goto 2369,60.52,73.65
+    .complete 84225,2 --12/12 Spawning Cluth destroyed using equipment
+step
+    .goto 2369,57.12,71.07
+    .complete 84225,1 --12/12 Seafury Eggtenders
+step
+    .goto 2369,63.49,66.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sally Boltwrench|r
+    .turnin 84225 >>Turn in Eggstinction
+    .target Sally Boltwrench
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup Max Level Storylines (80)
+#name h) Siren Isle Crocodile
+#internal
+
+step
+    .goto 2369,71.01,48.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starving Snapdragon Runt|r
+    .accept 86482 >>Accept A Lifeline
+    .target Starving Snapdragon Runt
+step
+    .goto 2369,71.24,47.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zexel Fingersnap|r
+    .complete 86482,1 --1/1 Speak to Zexel Fingersnap
+    .target Zexel Fingersnap
+    .complete 86482,2 --1/1 Kaja'Cola-braised Meat Aquired
+    .skipgossipid 131423
+step
+    .goto 2369,70.98,48.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starving Snapdragon Runt|r
+    .turnin 86482 >>Turn in A Lifeline
+    .target Starving Snapdragon Runt
 ]])
 
 RXPGuides.RegisterGuide([[
