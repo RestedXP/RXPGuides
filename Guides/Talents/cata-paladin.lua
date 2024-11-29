@@ -1,0 +1,3 @@
+local _, addon = ...
+
+if addon.player.class ~= "PALADIN" or addon.game ~= "CATA" then return end
