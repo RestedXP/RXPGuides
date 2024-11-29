@@ -33,6 +33,7 @@ step
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
+    .mob Mottled Worg
     .unitscan Gorefang
 step
     .goto Silverpine Forest,56.25,10.27,30,0
@@ -59,6 +60,7 @@ step
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
+    .mob Mottled Worg
     .unitscan Gorefang
 step
     #completewith next

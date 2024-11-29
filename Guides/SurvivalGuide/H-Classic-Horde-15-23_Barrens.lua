@@ -592,6 +592,7 @@ step
     .cooldown item,6948,>0
     .use 6948
     .dungeon RFC
+    .zoneskip Thunder Bluff,1
 step
     #completewith KreenigSnarlsnout
     .goto Thunder Bluff,47.00,49.82
@@ -1441,6 +1442,7 @@ step
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
 step
+    #ssf
     .goto The Barrens,63.55,4.92,100,0
     .goto The Barrens,61.46,4.50,40,0
     .goto The Barrens,61.06,3.63,40,0
@@ -1452,6 +1454,22 @@ step
     .goto The Barrens,61.17,5.05,40,0
     .goto The Barrens,61.51,4.43
     >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .dungeon DM
+step
+    #ah
+    .goto The Barrens,63.55,4.92,100,0
+    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.06,3.63,40,0
+    .goto The Barrens,61.63,3.37,40,0
+    .goto The Barrens,62.14,3.52,40,0
+    .goto The Barrens,61.94,4.53,40,0
+    .goto The Barrens,61.85,5.37,40,0
+    .goto The Barrens,61.44,5.56,40,0
+    .goto The Barrens,61.17,5.05,40,0
+    .goto The Barrens,61.51,4.43
+    >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    >>|cRXP_WARN_You could also buy them from the auction house instead|r
     .collect 814,5,103,1 --Flask of Oil (5)
     .dungeon DM
 step
@@ -2711,6 +2729,14 @@ step << Priest
     .train 14914 >> Train your class spells
     .target Ur'kyo
     .xp <20,1
+    .dungeon DM
+step
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Flask of Oil] |cRXP_BUY_from the Auction House if possible|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+	.target Auctioneer Thathung
     .dungeon DM
 step
     #completewith next

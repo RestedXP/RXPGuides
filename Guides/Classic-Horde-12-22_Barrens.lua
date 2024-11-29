@@ -389,6 +389,7 @@ step << !Undead !Tauren
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .isOnQuest 867
+    .dungeon !RFC
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout
@@ -722,6 +723,15 @@ step << !Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
+step
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
+    .fly Crossroads >>Fly to The Crossroads
+    .target Omusa Thunderhorn
+    .dungeon RFC
+    .isOnQuest 5724
+    .isQuestComplete 5723
 step --<< Tauren
     #completewith RFCTurninsTB1
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
@@ -754,6 +764,13 @@ step --<< Tauren
     .isQuestComplete 5723
     .zoneskip Thunder Bluff,1
     .dungeon RFC
+step 
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Thunder Bluff >> Get the Thunder Bluff flight path
+    .target Tal
+    .zoneskip Thunder Bluff,1
+    .dungeon RFC
 step
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads
@@ -761,13 +778,14 @@ step
     .zoneskip The Barrens
     .cooldown item,6948,>0
     .dungeon RFC
+    .zoneskip Thunder Bluff,1
 step 
     #completewith KreenigSnarlsnout
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to Crossroads
     .target Tal
-    .zoneskip The Barrens
+    .zoneskip Thunder Bluff,1
     .cooldown item,6948,<0
 step
     .goto The Barrens,55.70,27.30,20,0
@@ -1849,6 +1867,7 @@ step
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
 step
+    #ssf
     .goto The Barrens,63.55,4.92,100,0
     .goto The Barrens,61.46,4.50,40,0
     .goto The Barrens,61.06,3.63,40,0
@@ -1860,6 +1879,22 @@ step
     .goto The Barrens,61.17,5.05,40,0
     .goto The Barrens,61.51,4.43
     >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .dungeon DM
+step
+    #ah
+    .goto The Barrens,63.55,4.92,100,0
+    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.06,3.63,40,0
+    .goto The Barrens,61.63,3.37,40,0
+    .goto The Barrens,62.14,3.52,40,0
+    .goto The Barrens,61.94,4.53,40,0
+    .goto The Barrens,61.85,5.37,40,0
+    .goto The Barrens,61.44,5.56,40,0
+    .goto The Barrens,61.17,5.05,40,0
+    .goto The Barrens,61.51,4.43
+    >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    >>|cRXP_WARN_You could also buy them from the auction house instead|r
     .collect 814,5,103,1 --Flask of Oil (5)
     .dungeon DM
 step << skip
@@ -2836,6 +2871,7 @@ step
     .goto The Barrens,45.71,40.56,50,0
     .goto The Barrens,45.64,38.16,50,0
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
+    >>|cRXP_WARN_Feel free to skip this quest if you haven't had many drops yet so far|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Bloodcharger
     .mob Kolkar Pack runner
@@ -3989,6 +4025,14 @@ step << Priest
     .train 14914 >> Train your class spells
     .target Ur'kyo
     .xp <20,1
+    .dungeon DM
+step
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Flask of Oil] |cRXP_BUY_from the Auction House if possible|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+	.target Auctioneer Thathung
     .dungeon DM
 step
     #completewith next
@@ -7184,6 +7228,15 @@ step << !Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
+step
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
+    .fly Crossroads >>Fly to The Crossroads
+    .target Omusa Thunderhorn
+    .dungeon RFC
+    .isOnQuest 5724
+    .isQuestComplete 5723
 step --<< Tauren
     #completewith RFCTurninsTB1
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
@@ -7216,11 +7269,18 @@ step --<< Tauren
     .isQuestComplete 5723
     .zoneskip Thunder Bluff,1
     .dungeon RFC
+step 
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Thunder Bluff >> Get the Thunder Bluff flight path
+    .target Tal
+    .zoneskip Thunder Bluff,1
+    .dungeon RFC
 step
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads
     .use 6948
-    .zoneskip The Barrens
+    .zoneskip Thunder Bluff,1
     .cooldown item,6948,>0
     .dungeon RFC
 step 
@@ -7229,7 +7289,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to Crossroads
     .target Tal
-    .zoneskip The Barrens
+    .zoneskip Thunder Bluff,1
     .cooldown item,6948,<0
 step
     .goto The Barrens,55.70,27.30,20,0
@@ -8442,6 +8502,7 @@ step
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
 step
+    #ssf
     .goto The Barrens,63.55,4.92,100,0
     .goto The Barrens,61.46,4.50,40,0
     .goto The Barrens,61.06,3.63,40,0
@@ -8453,6 +8514,22 @@ step
     .goto The Barrens,61.17,5.05,40,0
     .goto The Barrens,61.51,4.43
     >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .dungeon DM
+step
+    #ah
+    .goto The Barrens,63.55,4.92,100,0
+    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.06,3.63,40,0
+    .goto The Barrens,61.63,3.37,40,0
+    .goto The Barrens,62.14,3.52,40,0
+    .goto The Barrens,61.94,4.53,40,0
+    .goto The Barrens,61.85,5.37,40,0
+    .goto The Barrens,61.44,5.56,40,0
+    .goto The Barrens,61.17,5.05,40,0
+    .goto The Barrens,61.51,4.43
+    >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    >>|cRXP_WARN_You could also buy them from the auction house instead|r
     .collect 814,5,103,1 --Flask of Oil (5)
     .dungeon DM
 step << skip
@@ -9560,6 +9637,7 @@ step
     .goto The Barrens,45.71,40.56,50,0
     .goto The Barrens,45.64,38.16,50,0
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
+    >>|cRXP_WARN_Feel free to skip this quest if you haven't had many drops yet so far|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Bloodcharger
     .mob Kolkar Pack runner
@@ -10903,6 +10981,14 @@ step << Priest
     .xp <20,1
     .dungeon DM
     --VV Adjust to 20-22 level range
+step
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Flask of Oil] |cRXP_BUY_from the Auction House if possible|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+	.target Auctioneer Thathung
+    .dungeon DM
 step
     #completewith next
     .zone Durotar >> Leave Orgrimmar
