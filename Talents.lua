@@ -63,7 +63,7 @@ if addon.gameVersion < 40000 then
     levelsForIndex = {}
 else
     -- Cata+ uses a three tab single view
-    talentTooltips.cataHighlights = {
+    talentTooltips.cataPlan = {
         [1] = {
             -- [talentIndex] = { ['ht'] = hightlightFrame, ['levels'] = [11,12,13,21] }
         },
@@ -1133,22 +1133,6 @@ local function cataDrawTalentLevels(talentIndexFrameName, levels)
         talentIndexFrame.levelHeader.text:GetStringWidth() + 10, 17)
 end
 
-local function setCataHighlightColor(highlightTexture, colorIndex)
-    local color = talentTooltips.highlightColors[colorIndex]
-
-    if not color then
-        if colorIndex > 0 then
-            color =
-                talentTooltips.highlightColors[#talentTooltips.highlightColors]
-        else
-            color = talentTooltips.highlightColors[1]
-        end
-    end
-
-    -- print("setCataHighlightColor", highlightTexture:GetName(), colorIndex)
-    highlightTexture:SetVertexColor(unpack(color))
-end
-
 function addon.talents.cata:DrawTalents(guide)
     guide = guide or self:GetCurrentGuide()
     if not guide then return end
@@ -1158,10 +1142,11 @@ function addon.talents.cata:DrawTalents(guide)
 
     if not indexLookup['player'] then self:BuildIndexLookup() end
 
+    -- hightlightTalentPlan doesn't include highlights in Cata
     if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
         local ht
-        for i in pairs(talentTooltips.cataHighlights) do
+        for i in pairs(talentTooltips.cataPlan) do
             ht = talentTooltips.highlights[i]
             if ht:IsShown() then ht:Hide() end
 
@@ -1190,7 +1175,7 @@ function addon.talents.cata:DrawTalents(guide)
     -- TODO cache data if unchanged
     local highlightTexture, talentInfo
 
-    -- Create highlight frames and set data objects for later processing
+    -- Create plan frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
 
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
@@ -1203,86 +1188,50 @@ function addon.talents.cata:DrawTalents(guide)
                     talentIndex =
                         indexLookup['player'][talentData.tab][talentData.tier][talentData.column]
 
-                    if talentTooltips.cataHighlights[talentData.tab][talentIndex] then
+                    if talentTooltips.cataPlan[talentData.tab][talentIndex] then
                         talentInfo =
-                            talentTooltips.cataHighlights[talentData.tab][talentIndex]
+                            talentTooltips.cataPlan[talentData.tab][talentIndex]
                     else
                         talentInfo = {
-                            -- talentIndexFrameName
-                            -- ht = hightlightFrame,
                             levels = {},
                             talentData = talentData,
                             tooltipTextHeader = fmt("%s - %s", addon.title,
                                                     guide.name)
                         }
 
-                        talentTooltips.cataHighlights[talentData.tab][talentIndex] =
+                        talentTooltips.cataPlan[talentData.tab][talentIndex] =
                             talentInfo
                     end
 
-                    -- TODO fix persistence
                     if not talentInfo.levels[upcomingTalent] then
                         talentInfo.levels[upcomingTalent] = upcomingTalent
                     end
 
-                    -- tinsert(talentInfo.tooltipLines, fmt("%s%s: %s %d|r", addon.colors.tooltip, _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL,upcomingTalent))
-
-                    if not talentInfo.highlightTexture then
+                    if not talentInfo.talentIndexFrameName then
                         talentInfo.talentIndexFrameName =
                             "PlayerTalentFramePanel" .. talentData.tab ..
                                 "Talent" .. talentIndex
                         talentInfo.talentIndexFrame =
                             _G[talentInfo.talentIndexFrameName]
 
-                        -- print("TalentFrame", talentInfo.talentIndexFrameName)
-                        highlightTexture =
-                            _G[talentInfo.talentIndexFrameName]:CreateTexture(
-                                "$parent_LevelPreview", "BORDER")
-
-                        highlightTexture:SetTexture(
-                            "Interface/Buttons/ButtonHilight-Square")
-                        highlightTexture:SetBlendMode("ADD")
-                        highlightTexture:SetAllPoints(
-                            _G[talentInfo.talentIndexFrameName .. "Slot"])
-
-                        talentInfo.highlightTexture = highlightTexture
-
                         -- Add reverse lookup for tooltip updateFunc logic
                         talentInfo.talentIndexFrame.RXP = talentInfo
                     end
 
-                    -- TODO visual clutter, may need to remove highlights completely from Cata
-                    -- setCataHighlightColor(talentInfo.highlightTexture, upcomingTalent - playerLevel)
                 end -- ipairs(element.talent)
             end -- ipairs(levelStep.elements)
 
         end -- if levelStep
     end
 
-    _G.RXPD = {
-        cataHighlights = talentTooltips.cataHighlights,
-        guideSteps = guide.steps
-    }
-
-    -- Ensure all highlights and levelHeaders are shown/hidden as applicable
-
-    for _, tabData in pairs(talentTooltips.cataHighlights) do
+    -- Ensure all plans and levelHeaders are shown/hidden as applicable
+    for _, tabData in pairs(talentTooltips.cataPlan) do
         for _, tInfo in pairs(tabData) do
             cataDrawTalentLevels(tInfo.talentIndexFrameName, tInfo.levels)
-
-            if not tInfo.highlightTexture:IsShown() then
-                tInfo.highlightTexture:Show()
-            end
 
             if not _G[tInfo.talentIndexFrameName].levelHeader:IsShown() then
                 _G[tInfo.talentIndexFrameName].levelHeader:Show()
             end
-            -- else
-            --    if highlight:IsShown() then highlight:Hide() end
-            --    if highlight.levelHeader:IsShown() then
-            --        highlight.levelHeader:Hide()
-            --    end
-            -- end
         end
     end
 end
