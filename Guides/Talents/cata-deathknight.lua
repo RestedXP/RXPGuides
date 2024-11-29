@@ -1,3 +1,132 @@
 local _, addon = ...
 
 if addon.player.class ~= "DEATHKNIGHT" or addon.game ~= "CATA" then return end
+
+addon.talents.RegisterGuide([[
+#name Blood Death Knight 55-85
+#minLevel 10
+#maxLevel 85
+
+level -- Butchery
+	.talent 1,1,1,1
+
+level -- Butchery
+	.talent 1,1,1,2
+
+level -- Bladed Armor
+	.talent 1,1,3,1
+
+level -- Bladed Armor
+	.talent 1,1,3,2
+
+level -- Bladed Armor
+	.talent 1,1,3,3
+
+level -- Improved Blood Tap
+	.talent 1,2,1,1
+
+level -- Improved Blood Tap
+	.talent 1,2,1,2
+
+level -- Scent of Blood
+	.talent 1,2,2,1
+
+level -- Scent of Blood
+	.talent 1,2,2,2
+
+level -- Scent of Blood
+	.talent 1,2,2,3
+
+level -- Scarlet Fever
+	.talent 1,2,3,1
+
+level -- Scarlet Fever
+	.talent 1,2,3,2
+
+level -- Bone Shield
+	.talent 1,3,2,1
+
+level -- Abomination's Might
+	.talent 1,3,4,1
+
+level -- Abomination's Might
+	.talent 1,3,4,2
+
+level -- Improved Blood Presence
+	.talent 1,4,2,1
+
+level -- Improved Blood Presence
+	.talent 1,4,2,2
+
+level -- Blood Parasite
+	.talent 1,4,2,1
+
+level -- Blood Parasite
+	.talent 1,4,2,2
+
+level -- Sanguine Fortitude
+	.talent 1,4,1,1
+
+level -- Sanguine Fortitude
+	.talent 1,4,1,2
+
+level -- Rune Tap
+	.talent 1,5,2,1
+
+level -- Vampiric Blood
+	.talent 1,5,3,1
+
+level -- Will of the Necropolis
+	.talent 1,5,1,1
+
+level -- Will of the Necropolis
+	.talent 1,5,1,2
+
+level -- Improved Death Strike
+	.talent 1,6,2,1
+
+level -- Improved Death Strike
+	.talent 1,6,2,2
+
+level -- Crimson Scourge
+	.talent 1,6,3,1
+
+level -- Crimson Scourge
+	.talent 1,6,3,2
+
+level -- Improved Death Strike
+	.talent 1,6,2,3
+
+level -- Dancing Rune Weapon
+	.talent 1,7,2,1
+
+level -- Will of the Necropolis
+	.talent 1,5,1,3
+
+level -- Unholy Command
+	.talent 3,1,1,1
+
+level -- Unholy Command
+	.talent 3,1,1,2
+
+level -- Epidemic
+	.talent 3,1,3,1
+
+level -- Epidemic
+	.talent 3,1,3,2
+
+level -- Epidemic
+	.talent 3,1,3,3
+
+level -- Morbidity
+	.talent 3,2,4,1
+
+level -- Morbidity
+	.talent 3,2,4,2
+
+level -- Morbidity
+	.talent 3,2,4,3
+
+level -- Runic Power Mastery
+	.talent 2,1,1,1
+]])
