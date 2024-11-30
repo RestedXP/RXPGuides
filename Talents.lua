@@ -210,10 +210,8 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
     end
 end
 
-function addon.talents:HookUI()
+function addon.talents:UpdateTalentsButton()
     local iconReference = {}
-
-    if not self:IsSupported() then return end
 
     if _G.PlayerSpecTab3 and _G.PlayerSpecTab3:IsShown() then -- Wrath hunter regardless of dual-spec
         iconReference.frame = _G.PlayerSpecTab3
@@ -236,7 +234,6 @@ function addon.talents:HookUI()
             "TOP", iconReference.frame, "BOTTOM", 0, iconReference.offsetY
         }
     elseif addon.game == "CATA" and _G.PlayerSpecTab1 then -- Cata, non dual-spec non-hunter
-
         iconReference.frame = _G.PlayerTalentFrame
         iconReference.size = 32
         iconReference.point = {
@@ -256,24 +253,13 @@ function addon.talents:HookUI()
         }
         -- elseif Retail
     else
-        addon.error(fmt("%s - %s", _G.TALENTS, _G.ADDON_NOT_AVAILABLE))
-        return
-    end
-
-    if not talentTooltips.hooked then
-        hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
-                       talentTooltips.updateFunc)
-
-        talentTooltips.hooked = true
+        return nil
     end
 
     local button = self.talentsButton
     -- Build a button to match Wrath dual-spec talent tabs
     if not button then
         button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
-        button:SetWidth(iconReference.size)
-        button:SetHeight(iconReference.size)
-        button:SetPoint(unpack(iconReference.point))
         button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
 
         button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
@@ -317,6 +303,26 @@ function addon.talents:HookUI()
         end)
 
         self.talentsButton = button
+    end
+
+    button:SetWidth(iconReference.size)
+    button:SetHeight(iconReference.size)
+    button:SetPoint(unpack(iconReference.point))
+
+    return true
+end
+
+function addon.talents:HookUI()
+    if not self:IsSupported() then return end
+
+    if not self:UpdateTalentsButton() then
+        addon.error(fmt("%s - %s", _G.TALENTS, _G.ADDON_NOT_AVAILABLE))
+
+        return
+    end
+
+    if not talentTooltips.hooked then
+        talentTooltips.hooked = true
     end
 
     if not self.menuFrame then
