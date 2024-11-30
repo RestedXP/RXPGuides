@@ -130,3 +130,127 @@ level -- Morbidity
 level -- Runic Power Mastery
 	.talent 2,1,1,1
 ]])
+
+
+addon.talents.RegisterGuide([[
+#name Frost Death Knight 55-85
+#minLevel 10
+#maxLevel 85
+
+level -- Nerves of Cold Steel
+	.talent 2,1,3,1
+
+level -- Nerves of Cold Steel
+	.talent 2,1,3,2
+
+level -- Nerves of Cold Steel
+	.talent 2,1,3,3
+
+level -- Runic Power Mastery
+	.talent 2,2,1,1
+
+level -- Runic Power Mastery
+	.talent 2,2,1,2
+
+level -- Runic Power Mastery
+	.talent 2,2,1,3
+
+level -- Endless Winter
+	.talent 2,2,4,1
+
+level -- Endless Winter
+	.talent 2,2,4,2
+
+level -- Killing Machine
+	.talent 2,3,3,1
+
+level -- Killing Machine
+	.talent 2,3,3,2
+
+level -- Killing Machine
+	.talent 2,3,3,3
+
+level -- Merciless Combat
+	.talent 2,3,1,1
+
+level -- Merciless Combat
+	.talent 2,3,1,2
+
+level -- Pillar of Frost
+	.talent 2,4,2,1
+
+level -- Improved Icy Talons
+	.talent 2,4,3,1
+
+level -- Brittle Bones
+	.talent 2,4,4,1
+
+level -- Brittle Bones
+	.talent 2,4,4,2
+
+level -- Rime
+	.talent 2,4,1,1
+
+level -- Rime
+	.talent 2,4,1,2
+
+level -- Rime
+	.talent 2,4,1,3
+
+level -- Improved Frost Presence
+	.talent 2,5,3,1
+
+level -- Improved Frost Presence
+	.talent 2,5,3,2
+
+level -- Hungering Cold
+	.talent 2,5,2,1
+
+level -- Threat of Thassarian
+	.talent 2,6,1,1
+
+level -- Threat of Thassarian
+	.talent 2,6,1,2
+
+level -- Threat of Thassarian
+	.talent 2,6,1,3
+
+level -- On a Pale Horse
+	.talent 2,2,3,1
+
+level -- On a Pale Horse
+	.talent 2,2,3,2
+
+level -- Howling Blast
+	.talent 2,7,2,1
+
+level -- Bladed Armor
+	.talent 1,1,3,1
+
+level -- Bladed Armor
+	.talent 1,1,3,2
+
+level -- Bladed Armor
+	.talent 1,1,3,3
+
+level -- Butchery
+	.talent 1,1,1,1
+
+level -- Butchery
+	.talent 1,1,1,2
+
+level -- Improved Blood Tap
+	.talent 1,2,1,1
+
+level -- Improved Blood Tap
+	.talent 1,2,1,2
+
+level -- Scent of Blood
+	.talent 1,2,2,1
+
+level -- Scent of Blood
+	.talent 1,2,2,2
+
+level -- Scent of Blood
+	.talent 1,2,2,3
+]])
