@@ -764,7 +764,7 @@ step --<< Tauren
     .isQuestComplete 5723
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step 
+step << !Tauren !Shaman !Warrior/Undead
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Thunder Bluff >> Get the Thunder Bluff flight path
@@ -3152,12 +3152,9 @@ step
     .target Xen'Zilla
 step << Priest/Mage/Warlock
     #completewith next
-    .goto Stonetalon Mountains,68.59,88.34,80,0
-    .goto Stonetalon Mountains,64.95,83.88,80,0
-    .goto Stonetalon Mountains,61.47,81.51,80,0
-    .goto Stonetalon Mountains,60.36,76.28,80,0
-    .goto Stonetalon Mountains,59.04,73.01,80,0
-    .goto Stonetalon Mountains,60.83,71.84,80,0
+    .goto Stonetalon Mountains,68.59,88.34,100,0
+    .goto Stonetalon Mountains,64.95,83.88,100,0
+    .goto Stonetalon Mountains,61.47,81.51,100,0
     >>Kill every |cRXP_ENEMY_Deepmoss Creeper|r you see
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
@@ -3288,6 +3285,7 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Undead Warrior
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
@@ -3304,6 +3302,7 @@ step << Undead Warrior
     .itemcount 4818,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .xp <19,1
 step << Undead Warrior
     #completewith BluePrints
     +Equip the |T135280:0|t[Dacian Falx]
@@ -3311,6 +3310,7 @@ step << Undead Warrior
     .itemcount 922,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .xp <21,1
 step << Shaman
     #season 0
     .goto Stonetalon Mountains,58.22,51.74
@@ -3328,6 +3328,7 @@ step << Shaman
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Shaman
     #season 2
     .goto Stonetalon Mountains,58.22,51.74
@@ -3345,6 +3346,7 @@ step << Shaman
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .xp <20,1
 step << Rogue
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -3360,6 +3362,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step
     #label Windshear
     .subzone 461 >> Travel to Windshear Crag
@@ -4231,7 +4234,7 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
 step
-    #completewith Thunderhawk
+    #completewith IshamuhaleTurnin
     .goto The Barrens,44.55,59.27,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r << Tauren/Shaman/Orc Warrior/Troll Warrior
@@ -4667,6 +4670,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step << Warrior/Shaman
     #completewith next
     #ah
@@ -4686,6 +4690,7 @@ step << Warrior
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Shaman
     #season 0
     .goto Thunder Bluff,53.21,58.25
@@ -4703,6 +4708,7 @@ step << Shaman
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <21,1
 step << Shaman
     #season 2
     .goto Thunder Bluff,53.21,58.25
@@ -4720,6 +4726,7 @@ step << Shaman
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .xp <20,1
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuna|r|cRXP_BUY_. Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_from her|r
@@ -4735,6 +4742,7 @@ step << Hunter
     .itemcount 3027,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.1
+    .xp <20,1
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuna|r
@@ -4748,24 +4756,29 @@ step
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Fly to Camp Taurajo
+    .fly Crossroads >>Fly to Crossroads
     .target Tal
     .zoneskip The Barrens
     .dungeon WC
 step
     #sticky
     #completewith EnterWC
-    .goto The Barrens,45.40,53.96,80,0
-    .goto The Barrens,44.79,51.77,80,0
-    .goto The Barrens,43.25,47.98,80,0
-    .goto The Barrens,40.92,45.16,80,0
-    .goto The Barrens,45.40,53.96
     .subzone 718 >> Now you should be looking for a group to Wailing Caverns
     >>Grind |cRXP_ENEMY_Quilboars|r while assembling a Wailing Caverns group
     .dungeon WC
 step
     .goto The Barrens,46.15,36.93,100 >> Travel to Wailing Caverns
     .isOnQuest 914
+    .dungeon WC
+step
+    #completewith next
+    .goto The Barrens,46.95,35.18,0
+    .goto The Barrens,46.95,35.18,30,0
+    .goto The Barrens,46.83,34.74,20,0
+    .goto Kalimdor,51.98,55.36,20,0
+    .goto Kalimdor,51.89,55.55,10,0
+    .goto Kalimdor,51.87,55.50,10 >>Run up the mountain at the Wailing Caverns meeting stone
+    >>|cRXP_WARN_Follow the arrow closely to reach the hidden cave|r
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
@@ -4998,10 +5011,10 @@ step
 step
     #label GShard
     .goto The Barrens,62.99,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
-    .target Sputtervale
+    .target Sputtervalve
     .isOnQuest 6981
     .dungeon WC
 step
@@ -5023,14 +5036,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .turnin 6981 >> Turn in The Glowing Shard
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isQuestTurnedIn 6981
     .dungeon WC
 step
@@ -6347,8 +6360,8 @@ step << Rogue
 step << Rogue
     >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
     .itemcount 6452,1
-    .aura 9991
-    .aura 9810
+    .use 6452
+    .aura -9991
 step << Rogue
     .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
     .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
@@ -7269,7 +7282,7 @@ step --<< Tauren
     .isQuestComplete 5723
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step 
+step << !Tauren !Shaman !Warrior/Undead
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Thunder Bluff >> Get the Thunder Bluff flight path
@@ -9986,12 +9999,9 @@ step
 step
     #xprate <2.1
     #completewith next
-    .goto Stonetalon Mountains,68.59,88.34,80,0
-    .goto Stonetalon Mountains,64.95,83.88,80,0
-    .goto Stonetalon Mountains,61.47,81.51,80,0
-    .goto Stonetalon Mountains,60.36,76.28,80,0
-    .goto Stonetalon Mountains,59.04,73.01,80,0
-    .goto Stonetalon Mountains,60.83,71.84,80,0
+    .goto Stonetalon Mountains,68.59,88.34,100,0
+    .goto Stonetalon Mountains,64.95,83.88,100,0
+    .goto Stonetalon Mountains,61.47,81.51,100,0
     >>Kill every |cRXP_ENEMY_Deepmoss Creeper|r you see
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
@@ -10135,6 +10145,7 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
+    .xp <20,1
 step << Undead Warrior
     #xprate <2.1
     .goto Stonetalon Mountains,58.22,51.74
@@ -10161,6 +10172,7 @@ step << Undead Warrior
     .itemcount 922,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
+    .xp <21,1
 step << Shaman
     #xprate <2.1
     #season 0
@@ -10180,6 +10192,7 @@ step << Shaman
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Shaman
     #xprate <2.1
     #season 2
@@ -10199,6 +10212,7 @@ step << Shaman
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .xp <20,1
 step << Rogue
     #xprate <2.1
     #season 0
@@ -10218,6 +10232,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step << Rogue
     #xprate <2.1
     #season 2
@@ -10237,6 +10252,7 @@ step << Rogue
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
+    .xp <19,1
 step
     #xprate <2.1
     #label Windshear
@@ -11228,7 +11244,7 @@ step
     .target Mangletooth
 step
     #optional
-    #completewith Thunderhawk
+    #completewith IshamuhaleTurnin
     .goto The Barrens,44.55,59.27,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
@@ -11652,6 +11668,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step << Rogue
     #season 2
     .goto Thunder Bluff,53.00,56.63
@@ -11669,6 +11686,7 @@ step << Rogue
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+    .xp <19,1
 step << Warrior/Shaman
     #completewith next
     #ah
@@ -11688,6 +11706,7 @@ step << Warrior
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Shaman
     #season 0
     .goto Thunder Bluff,53.21,58.25
@@ -11705,6 +11724,7 @@ step << Shaman
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Shaman
     #season 2
     .goto Thunder Bluff,53.21,58.25
@@ -11722,6 +11742,7 @@ step << Shaman
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .xp <20,1
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuna|r|cRXP_BUY_. Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_from her|r
@@ -11737,6 +11758,7 @@ step << Hunter
     .itemcount 3027,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.1
+    .xp <20,1
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuna|r
@@ -11747,24 +11769,29 @@ step
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Fly to Camp Taurajo
+    .fly Crossroads >>Fly to Crossroads
     .target Tal
     .zoneskip The Barrens
     .dungeon WC
 step
     #sticky
     #completewith EnterWC
-    .goto The Barrens,45.40,53.96,80,0
-    .goto The Barrens,44.79,51.77,80,0
-    .goto The Barrens,43.25,47.98,80,0
-    .goto The Barrens,40.92,45.16,80,0
-    .goto The Barrens,45.40,53.96
     .subzone 718 >> Now you should be looking for a group to Wailing Caverns
     >>Grind |cRXP_ENEMY_Quilboars|r while assembling a Wailing Caverns group
     .dungeon WC
 step
     .goto The Barrens,46.15,36.93,100 >> Travel to Wailing Caverns
     .isOnQuest 914
+    .dungeon WC
+step
+    #completewith next
+    .goto The Barrens,46.95,35.18,0
+    .goto The Barrens,46.95,35.18,30,0
+    .goto The Barrens,46.83,34.74,20,0
+    .goto Kalimdor,51.98,55.36,20,0
+    .goto Kalimdor,51.89,55.55,10,0
+    .goto Kalimdor,51.87,55.50,10 >>Run up the mountain at the Wailing Caverns meeting stone
+    >>|cRXP_WARN_Follow the arrow closely to reach the hidden cave|r
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
@@ -11997,10 +12024,10 @@ step
 step
     #label GShard
     .goto The Barrens,62.99,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
-    .target Sputtervale
+    .target Sputtervalve
     .isOnQuest 6981
     .dungeon WC
 step
@@ -12022,14 +12049,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .turnin 6981 >> Turn in The Glowing Shard
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isQuestTurnedIn 6981
     .dungeon WC
 step
@@ -12578,8 +12605,8 @@ step << Rogue
 step << Rogue
     >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
     .itemcount 6452,1
-    .aura 9991
-    .aura 9810
+    .use 6452
+    .aura -9991
 step << Rogue
     .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
     .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
