@@ -2178,6 +2178,7 @@ step << Troll Warrior/Undead Warrior
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Orc Warrior
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135423:0|t[Battle Axe] |cRXP_BUY_from him|r
@@ -2193,6 +2194,7 @@ step << Orc Warrior
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.3
+    .xp <20,1
 step << Tauren Warrior
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T133044:0|t[Maul] |cRXP_BUY_from him|r
@@ -2208,6 +2210,7 @@ step << Tauren Warrior
     .itemcount 924,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+    .xp <21,1
 step << Shaman
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135157:0|t[Long Staff] |cRXP_BUY_from him|r
@@ -2223,6 +2226,7 @@ step << Shaman
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Rogue
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -2238,6 +2242,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
@@ -3300,6 +3305,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step << Warrior/Shaman
     #completewith next
     #ah
@@ -3382,7 +3388,7 @@ step
 step
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Fly to Camp Taurajo
+    .fly Crossroads >>Fly to Crossroads
     .target Tal
     .zoneskip The Barrens
 step
@@ -3433,6 +3439,16 @@ step
 step
     .goto The Barrens,46.15,36.93,100 >> Travel to Wailing Caverns
     .isOnQuest 914
+    .dungeon WC
+step
+    #completewith next
+    .goto The Barrens,46.95,35.18,0
+    .goto The Barrens,46.95,35.18,30,0
+    .goto The Barrens,46.83,34.74,20,0
+    .goto Kalimdor,51.98,55.36,20,0
+    .goto Kalimdor,51.89,55.55,10,0
+    .goto Kalimdor,51.87,55.50,10 >>Run up the mountain at the Wailing Caverns meeting stone
+    >>|cRXP_WARN_Follow the arrow closely to reach the hidden cave|r
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
@@ -3617,10 +3633,10 @@ step
     .dungeon WC
 step
     .goto The Barrens,62.99,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
-    .target Sputtervale
+    .target Sputtervalve
     .isOnQuest 6981
     .dungeon WC
 step
@@ -3656,14 +3672,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .turnin 6981 >> Turn in The Glowing Shard
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isQuestTurnedIn 6981
     .dungeon WC
 step

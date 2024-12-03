@@ -3695,7 +3695,7 @@ step
     #requires CandleBeckoning
     #completewith next
     .goto Tirisfal Glades,66.64,44.89
-    >>Click |cRXP_PICK_Lillith's Dinner Table|r to spawn |cRXP_ENEMY_Nefara|r
+    +Click |cRXP_PICK_Lillith's Dinner Table|r to spawn |cRXP_ENEMY_Nefara|r
     .isOnQuest 409
 step
     #xprate <1.5
