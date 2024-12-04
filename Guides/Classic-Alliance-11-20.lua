@@ -98,20 +98,24 @@ step
     #completewith TravelCompass
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
     #completewith TravelCompass
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
 step
     #label TravelCompass
     .isOnQuest 399
@@ -134,20 +138,24 @@ step
     #completewith bennytime
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
     #completewith bennytime
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
 step
     .goto Westfall,50.0,22.6,75 >> Travel to the Jansen Stead, |cRXP_WARN_work on the other quest objectives as you move there|r
 step
@@ -210,22 +218,22 @@ step << Human Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
     .turnin 184 >> Turn in Furlbrow's Deed
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
     .isOnQuest 184
 step << Human Warlock
     #xprate >1.1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
     .turnin 184 >> Turn in Furlbrow's Deed
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
+    .target +Verna Furlbrow
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
     .isOnQuest 184
 step
     #xprate <1.2
@@ -233,21 +241,21 @@ step
     #label FurlbrowFarm << !Human/!Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
+    .target +Verna Furlbrow
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
 step
     #xprate >1.1
     #optional << Human Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
 step
     #completewith SaldeanVendor
 	.goto Westfall,56.04,31.23
@@ -328,12 +336,14 @@ step
     .goto Westfall,54.42,40.38
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
 	.target Farmer Saldean
@@ -351,10 +361,12 @@ step
     >>Finish off the |cRXP_ENEMY_Defias|r quests in the area marked on your map. |cRXP_WARN_It is a dynamic respawn area meaning if you kill enough mobs they will keep respawning|r
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
@@ -1248,13 +1260,13 @@ step << NightElf Warrior/NightElf Rogue
 step << NightElf Warrior/NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurdram Stonehammer|r and |cRXP_FRIENDLY_Delfrum Flintbeard|r
     .train 2575 >> Train |T134708:0|t[Mining]
+    .target +Kurdram Stonehammer
     .goto Darkshore,38.249,41.008
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .target +Delfrum Flintbeard
     .goto Darkshore,38.191,40.935
     >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
-    .target Kurdram Stonehammer
-    .target Delfrum Flintbeard
 step << NightElf Warrior/NightElf Rogue
     #optional
     .goto Darkshore,38.142,41.108
@@ -2026,9 +2038,9 @@ step << NightElf/Hunter/Druid/Warrior
     .goto 1439,39.332,54.079,50,0
     >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r
     .complete 985,1 -- Blackwood Pathfinder (8)
+    .mob +Blackwood Pathfinder
     .complete 985,2 -- Blackwood Windtalker (5)
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
+    .mob +Blackwood Windtalker
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid/Warrior
     #xprate <1.5 --<< !NightElf/Hunter
@@ -6682,11 +6694,11 @@ step << Human
     .dungeon DM
 step
     #xprate >1.59 << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
-    .accept 168 >> Accept Collecting Memories
+    .accept +168 >> Accept Collecting Memories
     .goto StormwindClassic,65.438,21.175
     .target Wilder Thistlenettle
-    .target Shoni the Shilent
     .dungeon DM
 step << Hunter
 --   #xprate >1.59
@@ -8964,11 +8976,11 @@ step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .turnin 166 >> Turn in The Defias Brotherhood
+    .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin -214 >> Turn in Red Silk Bandanas
+    .target +Scout Riell
     .goto Westfall,56.67,47.35
-    .target Gryan Stoutmantle
-    .target Scout Riell
 step
 .dungeon DM
     #completewith next
@@ -9081,11 +9093,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r and |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 167 >> Turn in Oh Brother. . .
     .turnin 168 >> Turn in Collecting Memories
+    .target +Wilder Thistlenettle
     .goto StormwindClassic,65.438,21.175
     .turnin 2040 >> Turn in Underground Assault
-    .goto StormwindClassic,55.510,12.504
-    .target Wilder Thistlenettle
-    .target Shoni the Shilent
+    .target +Shoni the Shilent
+    .goto StormwindClassic,55.510,12.504    
 step << Rogue
 .dungeon DM
     .goto StormwindClassic,74.64,52.82
@@ -9446,9 +9458,9 @@ step
     .goto Redridge Mountains,31.13,82.18
 	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
     .complete 246,1 --Redridge Mongrel (10)
+    .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
-    .mob Redridge Mongrel
-	.mob Redridge Poacher
+	.mob +Redridge Poacher
 step
     .goto Redridge Mountains,49.0,70.0
     >>Kill |cRXP_ENEMY_Murloc Shorestrikers|r and |cRXP_ENEMY_Murloc Minor Tidecallers|r. Loot them for their |cRXP_LOOT_Fins|r and |cRXP_LOOT_Sunfish|r
@@ -10074,11 +10086,15 @@ step
     .goto Redridge Mountains,22.5,35.7,0
     >>Kill |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
     .complete 124,1 --Redridge Brute (10)
+    .mob +Redridge Brute
     .complete 124,2 --Redridge Mystic (8)
+    .mob +Redridge Mystic
     .complete 89,1 --Iron Pike (5)
+    .mob +Redridge Mystic
+	.mob +Redridge Brute
     .complete 89,2 --Iron Rivet (5)
-	.mob Redridge Mystic
-	.mob Redridge Brute
+	.mob +Redridge Mystic
+	.mob +Redridge Brute
 step
     #xprate <1.2
     .goto Redridge Mountains,43.47,31.68,50,0
