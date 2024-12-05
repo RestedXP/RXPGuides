@@ -712,11 +712,11 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
+    .target +Senator Mehr Stonehallow
     .goto Dun Morogh,68.671,55.969
     .accept 432 >> Accept Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
-    .target Senator Mehr Stonehallow
-    .target Foreman Stonebrow
+    .target +Foreman Stonebrow
 step << Warrior/Paladin/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
     .goto Dun Morogh,69.324,55.456
@@ -729,17 +729,17 @@ step
     .goto Dun Morogh,70.7,56.4
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
+    .mob +Rockjaw Bonesnapper
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
+    .target +Foreman Stonebrow
     .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
-    .goto Dun Morogh,68.671,55.969
-    .target Senator Mehr Stonehallow
-    .target Foreman Stonebrow
+    .target +Senator Mehr Stonehallow
+    .goto Dun Morogh,68.671,55.969    
 step
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.892,39.188
@@ -792,12 +792,12 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob +Forest Lurker
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
 step
     #completewith next
     .goto Loch Modan,34.828,49.283,130 >> Travel to Thelsamar
@@ -844,11 +844,11 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .solo
     #completewith StormpikeStop
@@ -856,11 +856,11 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .group
     #completewith MinerGear
@@ -892,11 +892,11 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step << Paladin/Warrior
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r
@@ -950,6 +950,7 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3173,3,418,1 --Bear Meat (3)
+    .mob +Elder Black Bear
     .goto Loch Modan,26.9,10.7,90,0
     .goto Loch Modan,30.9,10.6,90,0
     .goto Loch Modan,28.6,15.4,90,0
@@ -964,6 +965,7 @@ step
     .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
     .collect 3172,3,418,1 --Boar Intestines (3)
+    .mob +Mountain Boar
     .goto Loch Modan,38.0,34.9,90,0
     .goto Loch Modan,37.1,39.8,90,0
     .goto Loch Modan,29.8,35.9,90,0
@@ -987,9 +989,7 @@ step
     .goto Loch Modan,36.2,30.9,90,0
     .goto Loch Modan,39.0,32.1,90,0
     .goto Loch Modan,31.9,16.4
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto Loch Modan,36.72,41.97,15,0
@@ -1050,11 +1050,15 @@ step
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .mob +Stonesplinter Scout
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
     .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10)
-    .mob Stonesplinter Trogg
-    .mob Stonesplinter Scout
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .target Mountaineer Cobbleflint
