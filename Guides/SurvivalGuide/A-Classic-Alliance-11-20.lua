@@ -95,12 +95,14 @@ step
     #completewith HarvestW
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |cRXP_LOOT_Red Leather Bandanas|r
     .goto Westfall,48.21,46.70,60,0
@@ -112,10 +114,12 @@ step
     .goto Westfall,48.21,46.70
     .goto Westfall,41.21,40.75
     .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
 step
 	#label bennytime
     .goto Westfall,49.34,19.27
@@ -166,20 +170,20 @@ step
     #era
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
 step
     #som
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
     .goto Westfall,56.40,30.50
@@ -220,12 +224,14 @@ step
     .goto Westfall,54.42,40.38
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
     .collect 723,8,22,1 --Goretusk Liver (8)
-    .mob Young Goretusk
-    .mob Goretusk
-    .mob Young Fleshripper
-    .mob Fleshripper
+    .mob +Young Goretusk
+    .mob +Goretusk
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
 	.target Farmer Saldean
@@ -988,9 +994,9 @@ step
     .goto Darkshore,39.34,56.58,50,0
     .goto Darkshore,39.84,53.82
     .complete 985,1 -- Blackwood Pathfinder
+    .mob +Blackwood Pathfinder
     .complete 985,2 -- Blackwood Windtalker
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
+    .mob +Blackwood Windtalker
 step
 #map Darkshore
     .goto Felwood,22.39,29.45
@@ -2149,11 +2155,11 @@ step
 .dungeon WC
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
     .accept 1486 >> Accept Deviate Hides
+    .target +Nalpak
     .goto 1414,51.912,55.422 -- Nalpak
     .accept 1487 >> Accept Deviate Eradication
     .goto 1414,51.918,55.444 -- Ebru
-    .target Nalpak
-    .target Ebru
+    .target +Ebru
 step
 .dungeon WC
     #completewith EnterWC
@@ -2273,10 +2279,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
     .turnin 1486 >> Turn in Deviate Hides
     .goto 1414,51.912,55.422 -- Nalpak
+    .target +Nalpak
     .turnin 1487 >> Turn in Deviate Eradication
     .goto 1414,51.918,55.444 -- Ebru
-    .target Nalpak
-    .target Ebru
+    .target +Ebru
     .isQuestComplete 1486
     .isQuestComplete 1487
 step

@@ -338,6 +338,7 @@ step
     >>Kill |cRXP_ENEMY_Mo'grosh Ogres|r, |cRXP_ENEMY_Mo'grosh Enforcers|r and |cRXP_ENEMY_Mo'grosh Brutes|r
     >>|cRXP_ENEMY_Mo'grosh Brutes|r |cRXP_WARN_are only found inside the Caves. It is recommended you don't enter the northeastern cave, and just kill them in the 2 other Mini-Caves|r
     .complete 255,1 -- Mo'grosh Ogre slain (4)
+    .mob +Mo'grosh Ogre
     .goto Loch Modan,73.87,29.64,60,0
     .goto Loch Modan,73.57,25.15,60,0
     .goto Loch Modan,73.61,20.23,60,0
@@ -345,6 +346,7 @@ step
     .goto Loch Modan,68.86,28.05,60,0
     .goto Loch Modan,70.51,23.73
     .complete 255,3 -- Mo'grosh Enforcer slain (4)
+    .mob +Mo'grosh Enforcer
     .goto Loch Modan,73.87,29.64,60,0
     .goto Loch Modan,73.57,25.15,60,0
     .goto Loch Modan,73.61,20.23,60,0
@@ -357,9 +359,7 @@ step
     .goto Loch Modan,68.63,19.49,25,0
     .goto Loch Modan,74.84,25.08
     .isOnQuest 255
-    .mob Mo'grosh Ogre
-    .mob Mo'grosh Brute
-    .mob Mo'grosh Enforcer
+    .mob +Mo'grosh Brute
 step
     #completewith next
     +|cRXP_WARN_Be careful not to run into the|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! It's an elite pack of 2 |cRXP_ENEMY_Orcs|r and a |cRXP_ENEMY_Tauren|r who patrol the east side of The Loch (the line on your map)|r
