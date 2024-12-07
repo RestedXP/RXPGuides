@@ -655,6 +655,7 @@ function addon.SetStep(n, n2, loopback)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
+    local activeTargets = {}
 
     for i = 1, n - 1 do
         local step = guide.steps[i]
@@ -950,21 +951,32 @@ function addon.SetStep(n, n2, loopback)
                     end
                 end
             end
+
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
-                    tinsert(stepUnitscan, addon.GetCreatureName(t))
+                    if not activeTargets[t] then
+                        activeTargets[t] = true
+                        tinsert(stepUnitscan, addon.GetCreatureName(t))
+                    end
                 end
             end
             if element.mobs then
                 for _, t in ipairs(element.mobs) do
-                    tinsert(stepMobs, addon.GetCreatureName(t))
+                    if not activeTargets[t] then
+                        activeTargets[t] = true
+                        tinsert(stepMobs, addon.GetCreatureName(t))
+                    end
                 end
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    tinsert(stepTargets, addon.GetCreatureName(t))
+                    if not activeTargets[t] then
+                        activeTargets[t] = true
+                        tinsert(stepTargets, addon.GetCreatureName(t))
+                    end
                 end
             end
+
             --local spacing = 0
 
         end
