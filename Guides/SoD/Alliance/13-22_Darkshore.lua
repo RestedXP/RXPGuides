@@ -6088,13 +6088,6 @@ step << Warlock
     .dungeon DM
 step << Warlock
     #xprate >1.59
-    .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
-    .accept 1716 >> Accept Devourer of Souls
-    .target Gakin the Darkbinder
-    .dungeon DM
-step << Warlock
-    #xprate >1.59
     #sticky
     #label Torment2DMEnd
     #requires Torment2DM

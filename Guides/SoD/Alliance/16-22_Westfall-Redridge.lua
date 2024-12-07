@@ -26,7 +26,7 @@ step << Priest !NightElf
     .goto StormwindClassic,20.8,50.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara Meideros|r
     .target Nara Meideros
-    .accept 78194 >> Accept Secrets of Elune
+    .accept 78195 >> Accept Secrets of Elune
 step << Human Paladin
     #optional
     .goto StormwindClassic,39.80,29.77
