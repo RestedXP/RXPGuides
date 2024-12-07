@@ -2100,32 +2100,36 @@ step --DAILLIES
     .accept 84432 >>Accept Longship Landing -- Vrykul
     .accept 84680 >>Accept Rock 'n Stone Revival -- Vrykul
     .target Dawn
+step
+    .goto 2369,70.53,50.48
+    .vehicle >> Enter |cRXP_FRIENDLY_Unreliable Goblin Waveshredder|r
+    .target Unreliable Goblin Waveshredder
 step -- Vrykul
-    #completewith 2/8
+    #completewith
     >>Kill |cRXP_ENEMY_Bloodwake Vrykuls|r
     .complete 84432,1 --15/15 Bloodwake Vrykul slain
     .mob Bloodwake Marauder
     .mob Bloodwake Spellslinger
     .mob Bloodwake Deathdealer
 step -- Vrykul
-    #completewith 2/8
+    #completewith --1/1 Vrykul Ruins Searched
     >>Kill |cRXP_ENEMY_Bloodbrine Horrors|r
     .complete 84680,2 --8/8 Bloodbrine Horror slain
     .mob Bloodbrine Horror
 step -- Vrykul
-    .goto 2369,70.81,57.84
+    #completewith --1/1 Vrykul Ruins Searched
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,1 --12/12 Interesting Notes added to the Research Journal
+    .collect ,12
 step -- Vrykul
-    .goto 2369,71.89,61.14
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,2 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
-    #label 2/8
+    #completewith --1/1 Vrykul Ruins Searched
     >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
-    .complete 84680,1,2 --8/8 Restless Stones and Pebbles animated
+    .complete 84680,1 --8/8 Restless Stones and Pebbles animated
     .use 228988
 step --Main Campaign
+    #label --1/1 Vrykul Ruins Searched
+    .isOnQuest 84726
+    .goto 2369,70.81,57.84,20,0
+    .goto 2369,70.06,64.15,20,0
     .goto 2369,68.37,71.61,20,0
     .goto 2369,68.38,73.77
     .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r |cRXP_WARN_inside the cave|r.
@@ -2136,81 +2140,66 @@ step --Main Campaign
     #title Leave Cave
     .goto 2369,67.92,70.79,10 >>Leave the Cave.
 step -- Vrykul
-    #completewith A Ritual of Runes
-    >>Kill |cRXP_ENEMY_Bloodwake Vrykul|r
+    #completewith Brined Monstrosity
+    >>Kill |cRXP_ENEMY_Bloodwake Vrykuls|r
     .complete 84432,1 --15/15 Bloodwake Vrykul slain
     .mob Bloodwake Marauder
     .mob Bloodwake Spellslinger
     .mob Bloodwake Deathdealer
 step -- Vrykul
-    #completewith Peak Precision
-    >>Kill |cRXP_ENEMY_Bloodbrine Horror|r
+    #completewith Brined Monstrosity
+    >>Kill |cRXP_ENEMY_Bloodbrine Horrors|r
     .complete 84680,2 --8/8 Bloodbrine Horror slain
     .mob Bloodbrine Horror
 step -- Vrykul
-    .goto 2369,58.59,72.19
+    #completewith Brined Monstrosity
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
+    .collect ,12
+step -- Vrykul
+    #completewith Brined Monstrosity
     >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
-    .complete 84680,1,4 --8/8 Restless Stones and Pebbles animated
+    .complete 84680,1 --8/8 Restless Stones and Pebbles animated
     .use 228988
 step -- Vrykul
-    .goto 2369,70.81,57.84
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,3 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
-    .goto 2369,71.89,61.14
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,4 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
-    .goto 2369,53.93,72.65
-    >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
-    .complete 84680,1,6 --8/8 Restless Stones and Pebbles animated
-    .use 228988
-step -- Vrykul
-    .goto 2369,51.71,70.56
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,5 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
-    .goto 2369,49.14,71.92
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,6 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
-    .goto 2369,47.9,71.9
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,7 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
-    .goto 2369,47.47,75.02
-    >>Stand inbetween the Rocks and use |T135975:0|t[Rock Retriever]. |cRXP_WARN_If you didn't get credit for both use it again once it's ready|r.
-    .complete 84680,1,8 --8/8 Restless Stones and Pebbles animated
-    .use 228988
-step -- Vrykul
-    #completewith next
-    .goto 2369,46.88,78
+    #completewith Brined Monstrosity
     >>Kill |cRXP_ENEMY_Wreckwater|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
     .complete 84222,1 --2/2 Rare Siren Isle enemies slain
     .mob Wreckwater
 step -- Vrykul
+    #label Brined Monstrosity
+    .goto 2369,58.59,72.19
+    .goto 2369,54.2,78.44
+    .goto 2369,54.01,76.04
+    .goto 2369,51.3,76.15
+    .goto 2369,50.26,76.71
+    .goto 2369,50.75,74.8
+    .goto 2369,49.17,72.01
+    .goto 2369,47.54,75.04
+    .goto 2369,46.88,78
     .goto 2369,39.23,73.61
     >>Kill |cRXP_ENEMY_Brined Monstrosity|r.
     .complete 84680,3 --1/1 Brined Monstrosity slain
     .mob Brined Monstrosity
 step -- Vrykul
-    #completewith next
-    .goto 2369,32.35,73.99
+    #completewith --1/1 Vrykul Ritual Site Searched 2
     >>Kill |cRXP_ENEMY_Ikir the Flotsurge|r |cRXP_WARN_if he's up|r. |cRXP_WARN_You might need other players to kill him|r.
     .complete 84222,1 --2/2 Rare Siren Isle enemies slain
     .mob Ikir the Flotsurge
 step -- Vrykul
+    #completewith --1/1 Vrykul Ritual Site Searched 2
     >>Kill |cRXP_ENEMY_Bloodbrine Horrors|r.
     .complete 84680,2 --8/8 Bloodbrine Horror slain
     .mob Bloodbrine Horror
 step --Main Campaign
+    #label --1/1 Vrykul Ritual Site Searched 2
+    .isOnQuest 84726
+    .goto 2369,32.35,73.99
     .goto 2369,32.45,69.20
     .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r at the trees.
     >>Click on the |cRXP_PICK_Runed Chest|r.
     .complete 84726,2 --1/1 Vrykul Ritual Site Searched
 -- OPTIONAL QUEST; KEEP FOR JETPACK; REMOVES 1 DAILY IN NAGA INVASION
 step --SIDEQUEST
-    #label Peak Precision
     .goto 2369,37.83,62.5,40,0
     .goto 2369,34.13,58.39,40,0
     .goto 2369,37.99,51.16,40,0
@@ -2225,17 +2214,12 @@ step --JETPACK USE
     *|cRXP_WARN_Do not complete or turn in this quest, as it allows us to have continuous access to the jetpack without needing to purchase it.|r
     *ADD WEEK 1 TEXT IF THEY WANT AN ADDITIONAL DAILY AND ITS NAGA INVASION
 step -- Vrykul
+    #completewith next
     .goto 2369,42.08,47.18
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,8 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
     .goto 2369,42.29,45.93
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,9 --12/12 Interesting Notes added to the Research Journal
-step -- Vrykul
     .goto 2369,45.94,47.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,10 --12/12 Interesting Notes added to the Research Journal
+    .collect ,12
 step -- Vrykul
     .goto 2369,51.49,48.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r.
@@ -2282,6 +2266,7 @@ step -- Vrykul
     .turnin 84248 >>Turn in A Ritual of Runes
     .target Machinist Kromleg
 step -- MAIN CAMPAIGN
+    .isOnQuest 84726
     .goto 2369,39.51,20.08
     .cast 470864 >>Use the [ExtraActionButton] near the |cRXP_PICK_Runed Chest|r.
     >>Click on the |cRXP_PICK_Runed Chest|r
@@ -2303,11 +2288,11 @@ step -- Vrykul
 step -- Vrykul
     .goto 2369,51.75,32.46
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,11 --12/12 Interesting Notes added to the Research Journal
+    .collect 227406,1,11
 step -- Vrykul
     .goto 2369,51.55,33.49
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Note|r.
-    .complete 83932,1,12--12/12 Interesting Notes added to the Research Journal
+    .collect 227406,1,12
 step -- Vrykul
     #completewith next
     .goto 2369,53.36,34.1
@@ -2573,7 +2558,7 @@ step
 step
     .goto 2369,72.19,42.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
-    .turnin 85653 >>Turn in Dipping a Toe2
+    .turnin 85653 >>Turn in Dipping a Toe
     .target Apprentice Tanmar
 
 -- MAIN CAMPAIGN WEEK 3
