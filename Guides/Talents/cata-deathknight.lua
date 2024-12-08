@@ -254,3 +254,132 @@ level -- Scent of Blood
 level -- Scent of Blood
 	.talent 1,2,2,3
 ]])
+
+addon.talents.RegisterGuide([[
+#name Unholy Death Knight 10-85
+#minLevel 10
+#maxLevel 85
+
+level -- Epidemic
+	.talent 3,1,3,1
+
+level -- Epidemic
+	.talent 3,1,3,2
+
+level -- Epidemic
+	.talent 3,1,3,3
+
+level -- Unholy Command
+	.talent 3,1,1,1
+
+level -- Unholy Command
+	.talent 3,1,1,2
+
+level -- Morbidity
+	.talent 3,2,4,1
+
+level -- Morbidity
+	.talent 3,2,4,2
+
+level -- Morbidity
+	.talent 3,2,4,3
+
+level -- Virulence
+	.talent 3,2,2,1
+
+level -- Virulence
+	.talent 3,2,2,2
+
+level -- Unholy Frenzy
+	.talent 3,3,2,1
+
+level -- Runic Corruption
+	.talent 3,3,1,1
+
+level -- Runic Corruption
+	.talent 3,3,1,1
+
+level -- Contaigen
+	.talent 3,3,3,1
+
+level -- Contaigen
+	.talent 3,3,3,2
+
+level -- Rage of Rivendare
+	.talent 3,4,3,1
+
+level -- Rage of Rivendare
+	.talent 3,4,3,2
+
+level -- Rage of Rivendare
+	.talent 3,4,3,3
+
+level -- Shadow Infusion
+	.talent 3,3,4,1
+
+level -- Shadow Infusion
+	.talent 3,3,4,2
+
+level -- Shadow Infusion
+	.talent 3,3,4,3
+
+level -- Unholy Blight
+	.talent 3,5,1,1
+
+level -- Virulence
+	.talent 3,2,2,3
+
+level -- Dark Transformation
+	.talent 3,5,3,1
+
+level -- Improved Unholy Presence
+	.talent 3,5,3,1
+
+level -- Improved Unholy Presence
+	.talent 3,5,3,2
+
+level -- Ebon Plaguebringer
+	.talent 3,6,2,1
+
+level -- Ebon Plaguebringer
+	.talent 3,6,2,2
+
+level -- Sudden Doom
+	.talent 3,6,3,1
+
+level -- Sudden Doom
+	.talent 3,6,3,2
+
+level -- Sudden Doom
+	.talent 3,6,3,3
+
+level -- Summon Gargoyle
+	.talent 3,7,2,1
+
+level -- Butchery
+	.talent 1,1,1,1
+
+level -- Butchery
+	.talent 1,1,1,2
+
+level -- Bladed Armor
+	.talent 1,1,3,1
+
+level -- Bladed Armor
+	.talent 1,1,3,2
+
+level -- Bladed Armor
+	.talent 1,1,3,3
+
+level -- Improved Blood Tap
+	.talent 1,2,1,1
+
+level -- Improved Blood Tap
+	.talent 1,2,1,2
+
+level -- Scent of Blood
+	.talent 1,2,2,1
+
+level -- Scent of Blood
+	.talent 1,2,2,2
+]])
