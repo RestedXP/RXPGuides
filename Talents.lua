@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.gameVersion > 40000 then return end
+if addon.gameVersion > 50000 then return end
 
 local GameTooltip = _G.GameTooltip
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
@@ -41,12 +41,8 @@ addon.talents.petGuides = {
 
 local compatible = true
 local indexLookup = {}
-local activeIndices = {}
-local levelsForIndex = {}
 local talentTooltips = {
     hooked = false,
-    data = {},
-    highlights = {},
     highlightColors = {
         [1] = {14 / 255, 131 / 255, 18 / 255}, -- RXP_BUY
         [2] = {0, 1, 37 / 255}, -- RXP_FRIENDLY
@@ -55,6 +51,26 @@ local talentTooltips = {
         [5] = {252 / 255, 220 / 250, 0} -- RXP_WARN
     }
 }
+
+local activeIndices, levelsForIndex
+
+if addon.gameVersion < 40000 then
+    -- Classic, TBC, Wrath use a single-tab view, each view change resets the highlight state
+    -- These also share the same frame elements but different talentIndex
+    talentTooltips.data = {}
+    talentTooltips.highlights = {}
+    activeIndices = {}
+    levelsForIndex = {}
+else
+    -- Cata+ uses a three tab single view
+    talentTooltips.cataPlan = {
+        [1] = {
+            -- [talentIndex] = { ['ht'] = hightlightFrame, ['levels'] = [11,12,13,21] }
+        },
+        [2] = {},
+        [3] = {}
+    }
+end
 
 local function buildTalentGuidesMenu()
     local menu = {}
@@ -194,10 +210,8 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
     end
 end
 
-function addon.talents:HookUI()
+function addon.talents:UpdateTalentsButton()
     local iconReference = {}
-
-    if not self:IsSupported() then return end
 
     if _G.PlayerSpecTab3 and _G.PlayerSpecTab3:IsShown() then -- Wrath hunter regardless of dual-spec
         iconReference.frame = _G.PlayerSpecTab3
@@ -219,6 +233,12 @@ function addon.talents:HookUI()
         iconReference.point = {
             "TOP", iconReference.frame, "BOTTOM", 0, iconReference.offsetY
         }
+    elseif addon.game == "CATA" and _G.PlayerSpecTab1 then -- Cata, non dual-spec non-hunter
+        iconReference.frame = _G.PlayerTalentFrame
+        iconReference.size = 32
+        iconReference.point = {
+            "TOPLEFT", iconReference.frame, "TOPRIGHT", 0, -65
+        }
     elseif _G.PlayerSpecTab1 then -- Wrath, non dual-spec non-hunter
         iconReference.frame = _G.PlayerTalentFrame
         iconReference.size = 32
@@ -233,24 +253,13 @@ function addon.talents:HookUI()
         }
         -- elseif Retail
     else
-        addon.error(fmt("%s - %s", _G.TALENTS, _G.ADDON_NOT_AVAILABLE))
-        return
-    end
-
-    if not talentTooltips.hooked then
-        hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
-                       talentTooltips.updateFunc)
-
-        talentTooltips.hooked = true
+        return nil
     end
 
     local button = self.talentsButton
     -- Build a button to match Wrath dual-spec talent tabs
     if not button then
         button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
-        button:SetWidth(iconReference.size)
-        button:SetHeight(iconReference.size)
-        button:SetPoint(unpack(iconReference.point))
         button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
 
         button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
@@ -294,6 +303,26 @@ function addon.talents:HookUI()
         end)
 
         self.talentsButton = button
+    end
+
+    button:SetWidth(iconReference.size)
+    button:SetHeight(iconReference.size)
+    button:SetPoint(unpack(iconReference.point))
+
+    return true
+end
+
+function addon.talents:HookUI()
+    if not self:IsSupported() then return end
+
+    if not self:UpdateTalentsButton() then
+        addon.error(fmt("%s - %s", _G.TALENTS, _G.ADDON_NOT_AVAILABLE))
+
+        return
+    end
+
+    if not talentTooltips.hooked then
+        talentTooltips.hooked = true
     end
 
     if not self.menuFrame then
@@ -454,8 +483,13 @@ function addon.talents.functions.talent(element, validate)
         talentIndex = lookup[talentData.tier][talentData.column]
 
         if talentIndex and validate then return true end
-
-        if addon.gameVersion > 30000 then
+        local thing
+        if addon.gameVersion > 40000 then
+            -- Return values don't match API docs/TWW, so used /dump GetTalentInfo(1,11) for Arms War
+            name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(
+                                                            talentData.tab,
+                                                            talentIndex)
+        elseif addon.gameVersion > 30000 then
             name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
                                                                   talentData.tab,
                                                                   talentIndex)
@@ -612,15 +646,47 @@ function addon.talents:UpdateSelectedGuide(key)
     return true
 end
 
-talentTooltips.updateFunc = function(self)
-    local tooltip = talentTooltips.data[self:GetID()]
-    if not tooltip then return end
+if addon.gameVersion < 40000 then
+    talentTooltips.updateFunc = function(self)
+        local tooltip = talentTooltips.data[self:GetID()]
+        if not tooltip then return end
 
-    -- Handle refreshing of UI
-    GameTooltip:AddLine(tooltip, 1, 1, 1)
+        -- Handle refreshing of UI
+        GameTooltip:AddLine(tooltip, 1, 1, 1)
 
-    -- Force tooltip redraw
-    GameTooltip:Show()
+        -- Force tooltip redraw
+        GameTooltip:Show()
+    end
+else
+    talentTooltips.updateFunc = function(talentIndexFrame)
+        if not (talentIndexFrame.RXP and talentIndexFrame.RXP.levels) then
+            return
+        end
+
+        -- Because drawing at tooltip time, extra step required to order it vs everytime in drawTalents
+        local sorted_levels = {}
+        for l, _ in pairs(talentIndexFrame.RXP.levels) do
+            tinsert(sorted_levels, l)
+        end
+
+        tsort(sorted_levels)
+
+        local levelsCsv = ''
+        for _, level in pairs(sorted_levels) do
+            levelsCsv = fmt('%s%d ', levelsCsv, level)
+        end
+
+        -- Only calculate string on tooltip hover, vs every DrawTalents like on Era
+        local rxpTooltip = fmt("%s\n%s%s: %s %s|r",
+                               talentIndexFrame.RXP.tooltipTextHeader,
+                               addon.colors.tooltip,
+                               _G.TRADE_SKILLS_LEARNED_TAB, _G.LEVEL, levelsCsv)
+        -- Handle refreshing of UI
+        GameTooltip:AddLine(rxpTooltip, 1, 1, 1)
+
+        -- Force tooltip redraw
+        GameTooltip:Show()
+    end
 end
 
 local function DrawTalentLevels(talentIndex, numbers)
@@ -680,6 +746,8 @@ function addon.talents:DrawTalents()
     if PlayerTalentFrame.pet then return end
 
     if not indexLookup['player'] then self:BuildIndexLookup() end
+
+    if addon.game == "CATA" then return addon.talents.cata:DrawTalents(guide) end
 
     if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
@@ -854,7 +922,38 @@ function addon.talents:ProcessTalents(validate)
         return
     end
 
-    -- TODO prevent max level toon loading wrong talent and costing gold to retrain
+    if addon.game == "CATA" then
+        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
+        if _G.PlayerTalentFramePanel1Summary:IsShown() then
+            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
+            _G.PlayerTalentFrameToggleSummariesButton:Click()
+        end
+
+        -- then "Select a X Specialization" based on first talent chosen
+        local firstTalentTab = -1
+
+        for _, step in ipairs(guide.steps) do
+            if firstTalentTab > -1 then break end
+
+            for _, element in ipairs(step.elements) do
+                if element.talent and element.talent[1] and
+                    element.talent[1].tab then
+                    firstTalentTab = element.talent[1].tab
+                    break
+                end
+            end
+        end
+
+        local firstTalentTabButton = _G["PlayerTalentFramePanel" ..
+                                         firstTalentTab .. "SelectTreeButton"]
+        if firstTalentTabButton then
+            if firstTalentTabButton:IsShown() then
+                firstTalentTabButton:Click()
+            end
+        else
+            -- Failure to get first tab, panic?
+        end
+    end
 
     local stepLevel, remainingPoints
 
@@ -981,6 +1080,166 @@ function addon.talents:ProcessPetTalents(validate)
 
     end
 
+end
+
+addon.talents.cata = {}
+
+local function cataDrawTalentLevels(talentIndexFrameName, levels)
+    local talentIndexFrame = _G[talentIndexFrameName]
+    if not talentIndexFrame then return end
+
+    if not talentIndexFrame.levelHeader then
+        local anchor = _G[talentIndexFrameName .. 'IconOverlay']
+        talentIndexFrame.levelHeader = CreateFrame("Frame",
+                                                   "$parent_RXPLevelText",
+                                                   anchor or talentIndexFrame,
+                                                   BackdropTemplate)
+
+        talentIndexFrame.levelHeader:SetPoint("BOTTOMLEFT", talentIndexFrame,
+                                              "TOPLEFT", 0, -4)
+        talentIndexFrame.levelHeader.text =
+            talentIndexFrame.levelHeader:CreateFontString(nil, "OVERLAY")
+
+        talentIndexFrame.levelHeader.text:ClearAllPoints()
+        talentIndexFrame.levelHeader.text:SetPoint("LEFT",
+                                                   talentIndexFrame.levelHeader,
+                                                   0, 0)
+        talentIndexFrame.levelHeader.text:SetJustifyH("LEFT")
+        talentIndexFrame.levelHeader.text:SetJustifyV("MIDDLE")
+
+        talentIndexFrame.levelHeader.text:SetTextColor(
+            unpack(addon.activeTheme.textColor))
+        talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+    end
+
+    -- TODO cache optimization
+    -- Because drawing at tooltip time, extra step required to order it
+    local sorted_levels = {}
+    for l, _ in pairs(levels) do tinsert(sorted_levels, l) end
+
+    tsort(sorted_levels)
+    local newText = '' .. strjoin(',', unpack(sorted_levels))
+
+    -- If 5 levels of preview, overlaps with nearby
+    if #sorted_levels < 4 then
+        -- talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+        talentIndexFrame.levelHeader:SetPoint("BOTTOMLEFT", talentIndexFrame,
+                                              "TOPLEFT", 0, -4)
+    else
+        -- talentIndexFrame.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+        talentIndexFrame.levelHeader:SetPoint("BOTTOMLEFT", talentIndexFrame,
+                                              "TOPLEFT", -2 * #sorted_levels, -4)
+    end
+
+    -- No changes, prevent uneeded UI calls
+    if talentIndexFrame.levelHeader.text:GetText() == newText then return end
+
+    talentIndexFrame.levelHeader.text:SetText(newText)
+    talentIndexFrame.levelHeader:SetSize(
+        talentIndexFrame.levelHeader.text:GetStringWidth() + 10, 17)
+end
+
+function addon.talents.cata:DrawTalents(guide)
+    guide = guide or self:GetCurrentGuide()
+    if not guide then return end
+
+    if not PlayerTalentFrame:IsShown() then return end
+    if PlayerTalentFrame.pet then return end
+
+    if not indexLookup['player'] then self:BuildIndexLookup() end
+
+    -- hightlightTalentPlan doesn't include highlights in Cata
+    if not addon.settings.profile.hightlightTalentPlan then
+        -- If disabled, cleanup old draws for dynamic settings
+        local ht
+        for i in pairs(talentTooltips.cataPlan) do
+            ht = talentTooltips.highlights[i]
+            if ht:IsShown() then ht:Hide() end
+
+            if ht.levelHeader and ht.levelHeader:IsShown() then
+                ht.levelHeader:Hide()
+                ht.levelHeader.text:SetText(nil)
+            end
+        end
+
+        return
+    end
+
+    local remainingPoints, levelStep, talentIndex
+
+    if GetUnspentTalentPoints then
+        remainingPoints = GetUnspentTalentPoints() -
+                              GetGroupPreviewTalentPointsSpent()
+    else
+        remainingPoints = UnitCharacterPoints("player")
+    end
+
+    local playerLevel = UnitLevel("player")
+    local advancedWarning = playerLevel +
+                                addon.settings.profile.upcomingTalentCount
+
+    -- TODO cache data if unchanged
+    local highlightTexture, talentInfo
+
+    -- Create plan frames and set data objects for later processing
+    for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
+
+        levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
+
+        if levelStep then
+
+            for _, element in ipairs(levelStep.elements) do
+                for _, talentData in ipairs(element.talent) do
+
+                    talentIndex =
+                        indexLookup['player'][talentData.tab][talentData.tier][talentData.column]
+
+                    if talentTooltips.cataPlan[talentData.tab][talentIndex] then
+                        talentInfo =
+                            talentTooltips.cataPlan[talentData.tab][talentIndex]
+                    else
+                        talentInfo = {
+                            levels = {},
+                            talentData = talentData,
+                            tooltipTextHeader = fmt("%s - %s", addon.title,
+                                                    guide.name)
+                        }
+
+                        talentTooltips.cataPlan[talentData.tab][talentIndex] =
+                            talentInfo
+                    end
+
+                    if not talentInfo.levels[upcomingTalent] then
+                        talentInfo.levels[upcomingTalent] = upcomingTalent
+                    end
+
+                    if not talentInfo.talentIndexFrameName then
+                        talentInfo.talentIndexFrameName =
+                            "PlayerTalentFramePanel" .. talentData.tab ..
+                                "Talent" .. talentIndex
+                        talentInfo.talentIndexFrame =
+                            _G[talentInfo.talentIndexFrameName]
+
+                        -- Add reverse lookup for tooltip updateFunc logic
+                        talentInfo.talentIndexFrame.RXP = talentInfo
+                    end
+
+                end -- ipairs(element.talent)
+            end -- ipairs(levelStep.elements)
+
+        end -- if levelStep
+    end
+
+    -- Ensure all plans and levelHeaders are shown/hidden as applicable
+    for _, tabData in pairs(talentTooltips.cataPlan) do
+        for _, tInfo in pairs(tabData) do
+            cataDrawTalentLevels(tInfo.talentIndexFrameName, tInfo.levels)
+
+            if not _G[tInfo.talentIndexFrameName].levelHeader:IsShown() then
+                _G[tInfo.talentIndexFrameName].levelHeader:Show()
+            end
+        end
+    end
 end
 
 _G.RXPGuides.talents = {RegisterGuide = addon.talents.RegisterGuide}
