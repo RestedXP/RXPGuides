@@ -259,3 +259,129 @@ level -- Arcane Concentration
 level -- Arcane Concentration
 	.talent 1,1,1,2
 ]])
+
+addon.talents.RegisterGuide([[
+#name Frost Mage 10-85
+#minLevel 10
+#maxLevel 85
+
+level -- Early Frost
+	.talent 3,1,1,1
+
+level -- Early Frost
+	.talent 3,1,1,2
+
+level -- Shatter
+	.talent 3,1,3,1
+
+level -- Shatter
+	.talent 3,1,3,2
+
+level -- Piercing Ice
+	.talent 3,1,2,1
+
+level -- Piercing Ice
+	.talent 3,1,2,2
+
+level -- Piercing Ice
+	.talent 3,1,2,3
+
+level -- Ice Flows
+	.talent 3,2,1,1
+
+level -- Improved Cone of Cold
+	.talent 3,2,2,2
+
+level -- Icy Veins
+	.talent 3,3,2,1
+
+level -- Fingers of Frost
+	.talent 3,3,3,1
+
+level -- Fingers of Frost
+	.talent 3,3,3,2
+
+level -- Fingers of Frost
+	.talent 3,3,3,3
+
+level -- Improved Freeze
+	.talent 3,3,4,1
+
+level -- Cold Snap
+	.talent 3,4,2,1
+
+level -- Improved Freeze
+	.talent 3,3,4,2
+
+level -- Improved Freeze
+	.talent 3,3,4,3
+
+level -- Brain Freeze
+	.talent 3,4,3,1
+
+level -- Brain Freeze
+	.talent 3,4,3,2
+
+level -- Ice Barrier
+	.talent 3,5,2,1
+
+level -- Brain Freeze
+	.talent 3,4,3,3
+
+level -- Enduring Winter
+	.talent 3,4,1,1
+
+level -- Enduring Winter
+	.talent 3,4,1,2
+
+level -- Enduring Winter
+	.talent 3,4,1,3
+
+level -- Ice Flows
+	.talent 3,2,1,2
+
+level -- Ice Flows
+	.talent 3,2,1,3
+
+level -- Permafrost
+	.talent 3,2,4,1
+
+level -- Permafrost
+	.talent 3,2,4,2
+
+level -- Permafrost
+	.talent 3,2,4,3
+
+level -- Deep Freeze
+	.talent 3,7,2,1
+
+level -- Ice Shards
+	.talent 3,3,1,1
+
+level -- Ice Shards
+	.talent 3,3,1,2
+
+level -- Reactive Barrier
+	.talent 2,5,3,1
+
+level -- Reactive Barrier
+	.talent 2,5,3,2
+
+level -- Frostfire Orb
+	.talent 2,6,3,1
+
+level -- Frostfire Orb
+	.talent 2,6,3,2
+
+level -- Netherwind Presence
+	.talent 1,1,3,1
+
+level -- Netherwind Presence
+	.talent 1,1,3,2
+
+level -- Netherwind Presence
+	.talent 1,1,3,3
+
+level -- Arcane Concentration
+	.talent 3,1,1,1
+]])
