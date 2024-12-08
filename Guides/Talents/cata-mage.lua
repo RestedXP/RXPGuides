@@ -1,3 +1,132 @@
 local _, addon = ...
 
 if addon.player.class ~= "MAGE" or addon.game ~= "CATA" then return end
+
+addon.talents.RegisterGuide([[
+#name Arcane Mage 10-85
+#minLevel 10
+#maxLevel 85
+
+level -- Netherwind Presence
+	.talent 1,1,3,1
+
+level -- Netherwind Presence
+	.talent 1,1,3,2
+
+level -- Netherwind Presence
+	.talent 1,1,3,3
+
+level -- Arcane Concentration
+	.talent 1,1,1,1
+
+level -- Arcane Concentration
+	.talent 1,1,1,2
+
+level -- Improved Arcane Missiles
+	.talent 1,2,3,1
+
+level -- Improved Arcane Missiles
+	.talent 1,2,3,2
+
+level -- Improved Blink
+	.talent 1,2,4,1
+
+level -- Improved Blink
+	.talent 1,2,4,2
+
+level -- Arcane Concentration
+	.talent 1,1,1,3
+
+level -- Missile Barrage
+	.talent 1,3,3,1
+
+level -- Missile Barrage
+	.talent 1,3,3,2
+
+level -- Presence of Mind
+	.talent 1,3,2,1
+
+level -- Torment the Weak
+	.talent 1,2,1,1
+
+level -- Torment the Weak
+	.talent 1,2,1,2
+
+level -- Arcane Tactics
+	.talent 1,4,2,1
+
+level -- Torment the Weak
+	.talent 1,2,1,3
+
+level -- Arcane Flows
+	.talent 1,3,1,1
+
+level -- Arcane Flows
+	.talent 1,3,1,2
+
+level -- Improved Arcane Explosion
+	.talent 1,4,4,1
+
+level -- Slow
+	.talent 1,5,2,1
+
+level -- Nether Vortex
+	.talent 1,5,3,1
+
+level -- Nether Vortex
+	.talent 1,5,3,2
+
+level -- Arcane Potency
+	.talent 1,5,1,1
+
+level -- Arcane Potency
+	.talent 1,5,1,2
+
+level -- Improved Mana Gem
+	.talent 1,6,3,1
+
+level -- Improved Mana Gem
+	.talent 1,6,3,2
+
+level -- Improved Arcane Explosion
+	.talent 1,4,4,2
+
+level -- Incanter's Absorption
+	.talent 1,4,3,1
+
+level -- Incanter's Absorption
+	.talent 1,4,3,2
+
+level -- Arcane Power
+	.talent 1,7,2,1
+
+level -- Burning Soul
+	.talent 2,1,2,1
+
+level -- Burning Soul
+	.talent 2,1,2,2
+
+level -- Burning Soul
+	.talent 2,1,2,3
+
+level -- Master of Elements
+	.talent 2,1,1,1
+
+level -- Master of Elements
+	.talent 2,1,1,2
+
+level -- Shatter
+	.talent 3,1,3,1
+
+level -- Shatter
+	.talent 3,1,3,2
+
+level -- Piercing Ice
+	.talent 3,1,2,1
+
+level -- Piercing Ice
+	.talent 3,1,2,2
+
+level -- Piercing Ice
+	.talent 3,1,2,3
+]])
