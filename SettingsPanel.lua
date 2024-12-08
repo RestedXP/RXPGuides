@@ -2958,7 +2958,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "range",
                         width = optionsWidth,
                         order = 5.4,
-                        min = 1,
+                        min = 0,
                         max = 20,
                         step = 1,
                         set = function(info, value)

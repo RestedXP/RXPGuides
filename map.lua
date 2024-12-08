@@ -835,6 +835,8 @@ end
 
 -- Generate pins using the current guide's steps, then add the pins to the world map
 local function addWorldMapPins()
+	if addon.settings.profile.numMapPins == 0 then return end
+
     -- Calculate which pins should be on the world map
     local pins = generatePins(addon.currentGuide.steps, addon.settings.profile.numMapPins,
                               RXPCData.currentStep, false)
