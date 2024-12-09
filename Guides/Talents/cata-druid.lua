@@ -47,10 +47,10 @@ level -- Euphoria
 	.talent 1,3,1,2
 
 level -- Shooting Stars
-	.talent 1,3,3,1
+	.talent 1,3,4,1
 
 level -- Shooting Stars
-	.talent 1,3,3,2
+	.talent 1,3,4,2
 
 level -- Owlkin Frenzy
 	.talent 1,4,2,1
@@ -152,10 +152,10 @@ level -- Furor
 	.talent 2,1,2,3
 
 level -- Feral Aggression
-	.talent 2,2,3,1
+	.talent 2,2,4,1
 
 level -- Feral Aggression
-	.talent 2,2,3,2
+	.talent 2,2,4,2
 
 level -- Predatory Strikes
 	.talent 2,1,3,1
