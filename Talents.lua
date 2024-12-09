@@ -202,6 +202,7 @@ function addon.talents:ADDON_LOADED(_, loadedAddon)
                                         function() self:DrawTalents() end)
 
         PlayerTalentFrame = _G.PlayerTalentFrame
+
         self:BuildIndexLookup()
     elseif loadedAddon == "Talented" then
         compatible = false
@@ -502,7 +503,7 @@ function addon.talents.functions.talent(element, validate)
         talentIndex = lookup[talentData.tier][talentData.column]
 
         if talentIndex and validate then return true end
-        local thing
+
         if addon.gameVersion > 40000 then
             -- Return values don't match API docs/TWW, so used /dump GetTalentInfo(1,11) for Arms War
             name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(
@@ -768,7 +769,8 @@ function addon.talents:DrawTalents()
     if not PlayerTalentFrame:IsShown() then return end
     if PlayerTalentFrame.pet then return end
 
-    if not indexLookup['player'].initialized then self:BuildIndexLookup() end
+    -- Intialization race condition at login, silently ignore instead of spammy or retries
+    if not indexLookup['player'].initialized then return end
 
     if addon.game == "CATA" then return addon.talents.cata:DrawTalents(guide) end
 
@@ -892,7 +894,6 @@ end
 
 function addon.talents:BuildIndexLookup()
     local kind = PlayerTalentFrame.pet and GetPetTalentTree() or 'player'
-    print("BuildIndexLookup()", kind)
 
     if indexLookup[kind] and indexLookup[kind].initialized then return end
 
@@ -901,10 +902,7 @@ function addon.talents:BuildIndexLookup()
     local tier, column
     local name
 
-    print("BuildIndexLookup() looping")
-
-    if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) ~=
-        _G.PLAYER_TALENT_TAB then return end
+    print("BuildIndexLookup() looping", kind)
 
     for tabIndex = 1, _G.GetNumTalentTabs(nil, PlayerTalentFrame.pet,
                                           PlayerTalentFrame.talentGroup) do
@@ -925,7 +923,9 @@ function addon.talents:BuildIndexLookup()
         end
     end
 
-    indexLookup[kind].initialized = true
+    if indexLookup[kind][1] and indexLookup[kind][1][1] then
+        indexLookup[kind].initialized = true
+    end
 end
 
 function addon.talents:ProcessTalents(validate)
@@ -1192,9 +1192,9 @@ function addon.talents.cata:DrawTalents(guide)
     if not PlayerTalentFrame:IsShown() then return end
     if PlayerTalentFrame.pet then return end
 
-    if not indexLookup['player'].initialized then
-        addon.talents:BuildIndexLookup()
-    end
+    -- Initialization issue, probably Glyphs tab loaded at first login
+    -- Silently exit instead of spammy errors or BuildIndexLookup retries
+    if not indexLookup['player'].initialized then print("DrawTalents indexLookup nil / not initialized") return end
 
     -- hightlightTalentPlan doesn't include highlights in Cata
     if not addon.settings.profile.hightlightTalentPlan then
@@ -1215,13 +1215,12 @@ function addon.talents.cata:DrawTalents(guide)
 
     local playerLevel = UnitLevel("player")
 
-    -- TODO support Cata handling of one talent every 2-3 levels
     local advancedWarning = playerLevel +
                                 addon.settings.profile.upcomingTalentCount
 
     -- TODO cache data if unchanged
     local talentInfo, levelLookup, levelStepIndex
-    RXPD5 = indexLookup
+
     -- Create plan frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
         levelStepIndex = upcomingTalent - guide.minLevel + 1
