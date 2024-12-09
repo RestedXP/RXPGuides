@@ -322,6 +322,9 @@ function addon.talents:HookUI()
     end
 
     if not talentTooltips.hooked then
+        hooksecurefunc("PlayerTalentFrameTalent_OnEnter",
+                       talentTooltips.updateFunc)
+
         talentTooltips.hooked = true
     end
 
@@ -1139,6 +1142,22 @@ local function cataDrawTalentLevels(talentIndexFrameName, levels)
         talentIndexFrame.levelHeader.text:GetStringWidth() + 10, 17)
 end
 
+-- https://www.wowhead.com/guide=cataclysm&mastery#talents
+local cataTalentLevels = {
+    10, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45,
+    47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 82,
+    83, 84, 85
+}
+
+local function lookupTalentLevel(upcomingTalent)
+    if not cataTalentLevels[upcomingTalent] then
+        print("lookupTalentLevel", upcomingTalent,
+              cataTalentLevels[upcomingTalent])
+    end
+
+    return cataTalentLevels[upcomingTalent]
+end
+
 function addon.talents.cata:DrawTalents(guide)
     guide = guide or self:GetCurrentGuide()
     if not guide then return end
@@ -1181,11 +1200,10 @@ function addon.talents.cata:DrawTalents(guide)
                                 addon.settings.profile.upcomingTalentCount
 
     -- TODO cache data if unchanged
-    local highlightTexture, talentInfo
+    local talentInfo, levelLookup
 
     -- Create plan frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
-
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
         if levelStep then
@@ -1211,8 +1229,10 @@ function addon.talents.cata:DrawTalents(guide)
                             talentInfo
                     end
 
-                    if not talentInfo.levels[upcomingTalent] then
-                        talentInfo.levels[upcomingTalent] = upcomingTalent
+                    levelLookup = lookupTalentLevel(upcomingTalent -
+                                                        guide.minLevel)
+                    if not talentInfo.levels[levelLookup] then
+                        talentInfo.levels[levelLookup] = levelLookup
                     end
 
                     if not talentInfo.talentIndexFrameName then
