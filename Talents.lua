@@ -1149,8 +1149,7 @@ function addon.talents.cata:DrawTalents(guide)
     if not indexLookup['player'] then self:BuildIndexLookup() end
 
     -- hightlightTalentPlan doesn't include highlights in Cata
-    -- TODO support Cata handling of one talent every 2-3 levels
-    if not addon.settings.profile.hightlightTalentPlan and addon.game ~= "CATA" then
+    if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
         local ht
         for i in pairs(talentTooltips.cataPlan) do
@@ -1176,6 +1175,8 @@ function addon.talents.cata:DrawTalents(guide)
     end
 
     local playerLevel = UnitLevel("player")
+
+    -- TODO support Cata handling of one talent every 2-3 levels
     local advancedWarning = playerLevel +
                                 addon.settings.profile.upcomingTalentCount
 
