@@ -40,7 +40,7 @@ addon.talents.petGuides = {
 }
 
 local compatible = true
-local indexLookup = {}
+local indexLookup = {['player'] = {}}
 local talentTooltips = {
     hooked = false,
     highlightColors = {
@@ -182,7 +182,7 @@ function addon.talents:Setup()
 
     self:RegisterEvent("ADDON_LOADED")
 
-    self:UpdateSelectedGuide(addon.settings.profile.activeTalentGuide)
+    self:UpdateSelectedGuide(RXPCData.activeTalentGuide)
 
     if tonumber(GetCVar("previewTalents")) == 0 and addon.gameVersion > 30000 and
         addon.settings.profile.previewTalents then
@@ -365,6 +365,7 @@ function addon.talents:ParseGuide(text)
     local step = {}
     local linenumber = 0
     local currentStep = 0
+    local parseSuccess, internalParseFailure
 
     -- Loop over each line in guide
     for line in sgmatch(text, "[^\n\r]+") do
@@ -381,12 +382,16 @@ function addon.talents:ParseGuide(text)
         elseif currentStep > 0 then -- Parse metadata tags first
 
             -- Parse function calls
-            line:gsub("^%.(%S+)%s*(.*)", function(command, lineArgs)
+            parseSuccess = line:gsub("^%.(%S+)%s*(.*)",
+                                     function(command, lineArgs)
                 -- print("Processing guide command", command, "with (", lineArgs, ")")
                 if self.functions[command] then
                     local element = self.functions[command](lineArgs)
 
-                    if not element then return end
+                    if not element then
+                        internalParseFailure = true
+                        return
+                    end
 
                     tinsert(step.elements, element)
                 else
@@ -399,7 +404,7 @@ function addon.talents:ParseGuide(text)
 
         elseif line ~= "" then
             -- Parse metadata tags
-            line:gsub("^#(%S+)%s*(.*)", function(tag, value)
+            parseSuccess = line:gsub("^#(%S+)%s*(.*)", function(tag, value)
                 -- print("Parsing tag at", linenumber, tag, value)
                 -- Set metadata without overwriting
                 if tag and tag ~= "" and not guide[tag] then
@@ -407,6 +412,14 @@ function addon.talents:ParseGuide(text)
                 end
             end)
 
+        end
+
+        if not parseSuccess or internalParseFailure then
+            addon.comms.PrettyPrint("%s: Critical failure for $s",
+                                    L("Error parsing guide"),
+                                    guide.name or guide.key or 'Unknown')
+
+            return
         end
     end
 
@@ -482,6 +495,8 @@ function addon.talents.functions.talent(element, validate)
                 talentData.tier, talentData.column)
             return false
         end
+
+        -- TODO validate cataLevelLookup for overun, allow underrun for multi-spec chains
 
         talentIndex = lookup[talentData.tier][talentData.column]
 
@@ -628,7 +643,7 @@ function addon.talents:GetCurrentGuide()
         return self.petGuides[GetPetTalentTree()]
     else
         -- TODO automatically select talent guide for chosen spec, harder to do without DB
-        return self.guides[addon.settings.profile.activeTalentGuide]
+        return self.guides[RXPCData.activeTalentGuide]
     end
 end
 
@@ -644,8 +659,12 @@ function addon.talents:UpdateSelectedGuide(key)
         return
     end
 
-    addon.settings.profile.activeTalentGuide = key
+    if addon.game == "CATA" then self.cata.CleanupTalentPlan() end
 
+    -- This is shared, so errors on swapping if shared profiles are used!
+    -- e.g. Hunter guide loaded but load in a Shaman
+    RXPCData.activeTalentGuide = key
+    print("RXPCData.activeTalentGuide", RXPCData.activeTalentGuide)
     return true
 end
 
@@ -748,7 +767,7 @@ function addon.talents:DrawTalents()
     if not PlayerTalentFrame:IsShown() then return end
     if PlayerTalentFrame.pet then return end
 
-    if not indexLookup['player'] then self:BuildIndexLookup() end
+    if not indexLookup['player'].initialized then self:BuildIndexLookup() end
 
     if addon.game == "CATA" then return addon.talents.cata:DrawTalents(guide) end
 
@@ -872,13 +891,19 @@ end
 
 function addon.talents:BuildIndexLookup()
     local kind = PlayerTalentFrame.pet and GetPetTalentTree() or 'player'
+    print("BuildIndexLookup()", kind)
 
-    if indexLookup and indexLookup[kind] then return end
+    if indexLookup[kind] and indexLookup[kind].initialized then return end
 
     indexLookup[kind] = {}
 
     local tier, column
     local name
+
+    print("BuildIndexLookup() looping")
+
+    if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) ~=
+        _G.PLAYER_TALENT_TAB then return end
 
     for tabIndex = 1, _G.GetNumTalentTabs(nil, PlayerTalentFrame.pet,
                                           PlayerTalentFrame.talentGroup) do
@@ -898,6 +923,8 @@ function addon.talents:BuildIndexLookup()
 
         end
     end
+
+    indexLookup[kind].initialized = true
 end
 
 function addon.talents:ProcessTalents(validate)
@@ -926,6 +953,10 @@ function addon.talents:ProcessTalents(validate)
     end
 
     if addon.game == "CATA" then
+        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) ==
+            _G.GLYPH_TALENT_TAB then
+            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
+        end
         -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
         if _G.PlayerTalentFramePanel1Summary:IsShown() then
             -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
@@ -1149,13 +1180,12 @@ local cataTalentLevels = {
     83, 84, 85
 }
 
-local function lookupTalentLevel(upcomingTalent)
-    if not cataTalentLevels[upcomingTalent] then
-        print("lookupTalentLevel", upcomingTalent,
-              cataTalentLevels[upcomingTalent])
+local function lookupTalentLevel(nextTalentStepIndex)
+    -- Array starts at 0, but nextTalentStepIndex is base1 and +1
+    if not cataTalentLevels[nextTalentStepIndex + 1] then
+        -- print("lookupTalentLevel", nextTalentStepIndex + 1)
     end
-
-    return cataTalentLevels[upcomingTalent]
+    return cataTalentLevels[nextTalentStepIndex + 1]
 end
 
 function addon.talents.cata:DrawTalents(guide)
@@ -1165,21 +1195,14 @@ function addon.talents.cata:DrawTalents(guide)
     if not PlayerTalentFrame:IsShown() then return end
     if PlayerTalentFrame.pet then return end
 
-    if not indexLookup['player'] then self:BuildIndexLookup() end
+    if not indexLookup['player'].initialized then
+        addon.talents:BuildIndexLookup()
+    end
 
     -- hightlightTalentPlan doesn't include highlights in Cata
     if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
-        local ht
-        for i in pairs(talentTooltips.cataPlan) do
-            ht = talentTooltips.highlights[i]
-            if ht:IsShown() then ht:Hide() end
-
-            if ht.levelHeader and ht.levelHeader:IsShown() then
-                ht.levelHeader:Hide()
-                ht.levelHeader.text:SetText(nil)
-            end
-        end
+        self.CleanupTalentPlan()
 
         return
     end
@@ -1231,7 +1254,12 @@ function addon.talents.cata:DrawTalents(guide)
 
                     levelLookup = lookupTalentLevel(upcomingTalent -
                                                         guide.minLevel)
-                    if not talentInfo.levels[levelLookup] then
+                    if not levelLookup then
+                        -- Error looking up level, misformatted guide
+                        return
+                    end
+
+                    if levelLookup and not talentInfo.levels[levelLookup] then
                         talentInfo.levels[levelLookup] = levelLookup
                     end
 
@@ -1260,6 +1288,22 @@ function addon.talents.cata:DrawTalents(guide)
             if not _G[tInfo.talentIndexFrameName].levelHeader:IsShown() then
                 _G[tInfo.talentIndexFrameName].levelHeader:Show()
             end
+        end
+    end
+end
+
+function addon.talents.cata.CleanupTalentPlan()
+    if _G.PlayerTalentFrameResetButton_OnClick then
+        _G.PlayerTalentFrameResetButton_OnClick()
+    end
+
+    for _, tabData in pairs(talentTooltips.cataPlan) do
+        for _, tInfo in pairs(tabData) do
+            if _G[tInfo.talentIndexFrameName].levelHeader:IsShown() then
+                _G[tInfo.talentIndexFrameName].levelHeader:Hide()
+            end
+            _G[tInfo.talentIndexFrameName].levelHeader.text:SetText(nil)
+            wipe(tInfo.levels)
         end
     end
 end
