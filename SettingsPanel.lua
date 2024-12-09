@@ -1241,6 +1241,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.5,
+                        hidden = addon.game == "CATA", -- Hide until Cata talent count handling
                         disabled = function()
                             return not (addon.talents and
                                        addon.settings.profile.enableTalentGuides and
