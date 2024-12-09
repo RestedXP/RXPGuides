@@ -92,10 +92,13 @@ level -- Lava Surge
 	.talent 1,6,3,2
 
 level -- Feedback
-	.talent 1,6,3,1
+	.talent 1,6,2,1
 
 level -- Feedback
-	.talent 1,6,3,2
+	.talent 1,6,2,2
+
+level -- Feedback
+	.talent 1,6,2,3
 
 level -- Elemental Weapons
 	.talent 2,1,1,1
@@ -105,6 +108,12 @@ level -- Elemental Weapons
 
 level -- Improved Shields
 	.talent 2,1,3,1
+
+level -- Improved Shields
+	.talent 2,1,3,2
+
+level -- Improved Shields
+	.talent 2,1,3,3
 
 level -- Ancestral Swiftness
 	.talent 2,2,3,1
@@ -173,7 +182,7 @@ level -- Elemental Weapons
 	.talent 2,1,1,1
 
 level -- Elemental Weapons
-	.talent 2,2,1,1
+	.talent 2,1,1,2
 
 level -- Searing Flames
 	.talent 2,4,3,1
@@ -194,7 +203,7 @@ level -- Elemental Devastation
 	.talent 2,2,1,3
 
 level -- Shamanistic Rage
-	.talent 2,5,1,1
+	.talent 2,5,2,1
 
 level -- Unleashed Rage
 	.talent 2,5,4,1
@@ -209,13 +218,13 @@ level -- Improved Lava Lash
 	.talent 2,6,3,2
 
 level -- Maelstom Weapon
-	.talent 2,6,3,1
+	.talent 2,6,2,1
 
 level -- Maelstom Weapon
-	.talent 2,6,3,2
+	.talent 2,6,2,2
 
 level -- Maelstom Weapon
-	.talent 2,6,3,3
+	.talent 2,6,2,3
 
 level -- Feral Spirit
 	.talent 2,7,2,1
