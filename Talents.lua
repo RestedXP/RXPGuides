@@ -390,6 +390,7 @@ function addon.talents:ParseGuide(text)
 
                     if not element then
                         internalParseFailure = true
+                        print("internalParseFailure", internalParseFailure)
                         return
                     end
 
@@ -1223,11 +1224,12 @@ function addon.talents.cata:DrawTalents(guide)
                                 addon.settings.profile.upcomingTalentCount
 
     -- TODO cache data if unchanged
-    local talentInfo, levelLookup
+    local talentInfo, levelLookup, levelStepIndex
 
     -- Create plan frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
-        levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
+        levelStepIndex = upcomingTalent - guide.minLevel + 1
+        levelStep = guide.steps[levelStepIndex]
 
         if levelStep then
 
@@ -1252,8 +1254,7 @@ function addon.talents.cata:DrawTalents(guide)
                             talentInfo
                     end
 
-                    levelLookup = lookupTalentLevel(upcomingTalent -
-                                                        guide.minLevel)
+                    levelLookup = lookupTalentLevel(levelStepIndex)
                     if not levelLookup then
                         -- Error looking up level, misformatted guide
                         return
