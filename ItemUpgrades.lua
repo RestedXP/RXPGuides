@@ -659,7 +659,7 @@ local function getSpec()
 
     -- if addon.settings.profile.enableTalentGuides then
     --     -- Difficult/impossible to map talent guide
-    --     -- addon.settings.profile.activeTalentGuide == "Rogue - Hardcore Rogue 10-60"
+    --     -- RXPCData.activeTalentGuide == "Rogue - Hardcore Rogue 10-60"
     -- end
 
     -- Calculate most likely spec

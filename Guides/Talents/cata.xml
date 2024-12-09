@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Guides/Talents/cata-deathknight.lua"/>
+    <Script file="Guides/Talents/cata-druid.lua"/>
+    <Script file="Guides/Talents/cata-hunter.lua"/>
+    <Script file="Guides/Talents/cata-mage.lua"/>
+    <Script file="Guides/Talents/cata-paladin.lua"/>
+    <Script file="Guides/Talents/cata-priest.lua"/>
+    <Script file="Guides/Talents/cata-rogue.lua"/>
+    <Script file="Guides/Talents/cata-shaman.lua"/>
+    <Script file="Guides/Talents/cata-warlock.lua"/>
+    <Script file="Guides/Talents/cata-warrior.lua"/>
+</Ui>
