@@ -1182,11 +1182,7 @@ local cataTalentLevels = {
 }
 
 local function lookupTalentLevel(nextTalentStepIndex)
-    -- Array starts at 0, but nextTalentStepIndex is base1 and +1
-    if not cataTalentLevels[nextTalentStepIndex + 1] then
-        -- print("lookupTalentLevel", nextTalentStepIndex + 1)
-    end
-    return cataTalentLevels[nextTalentStepIndex + 1]
+    return cataTalentLevels[nextTalentStepIndex]
 end
 
 function addon.talents.cata:DrawTalents(guide)
@@ -1225,7 +1221,7 @@ function addon.talents.cata:DrawTalents(guide)
 
     -- TODO cache data if unchanged
     local talentInfo, levelLookup, levelStepIndex
-
+    RXPD5 = indexLookup
     -- Create plan frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
         levelStepIndex = upcomingTalent - guide.minLevel + 1
@@ -1298,12 +1294,20 @@ function addon.talents.cata.CleanupTalentPlan()
         _G.PlayerTalentFrameResetButton_OnClick()
     end
 
+    local f
+
     for _, tabData in pairs(talentTooltips.cataPlan) do
         for _, tInfo in pairs(tabData) do
-            if _G[tInfo.talentIndexFrameName].levelHeader:IsShown() then
-                _G[tInfo.talentIndexFrameName].levelHeader:Hide()
+            f = _G[tInfo.talentIndexFrameName]
+
+            if f and f.levelHeader and f.levelHeader:IsShown() then
+                f.levelHeader:Hide()
+
+                if f.levelHeader.text then
+                    f.levelHeader.text:SetText(nil)
+                end
             end
-            _G[tInfo.talentIndexFrameName].levelHeader.text:SetText(nil)
+
             wipe(tInfo.levels)
         end
     end
