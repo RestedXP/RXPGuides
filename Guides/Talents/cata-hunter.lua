@@ -42,10 +42,10 @@ level -- Pathfinding
 	.talent 1,2,1,1
 
 level -- Pathfinding
-	.talent 1,2,1,1
+	.talent 1,2,1,2
 
 level -- Fervor
-	.talent 1,3,1,1
+	.talent 1,3,2,1
 
 level -- Focus Fire
 	.talent 1,3,3,1
@@ -63,10 +63,10 @@ level -- Longevity
 	.talent 1,4,1,1
 
 level -- Longevity
-	.talent 1,4,1,1
+	.talent 1,4,1,2
 
 level -- Longevity
-	.talent 1,4,1,1
+	.talent 1,4,1,3
 
 level -- Improved Kill Command
 	.talent 1,1,1,1
@@ -86,14 +86,14 @@ level -- Spirit Bond
 level -- Spirit Bond
 	.talent 1,2,2,2
 
-level -- Killing Streak
-	.talent 1,4,3,1
-
 level -- The Beast Within
 	.talent 1,6,2,1
 
 level -- Invigoration
 	.talent 1,6,3,1
+
+level -- Killing Streak
+	.talent 1,4,3,1
 
 level -- Kindred Spirits
 	.talent 1,6,1,1
@@ -172,10 +172,10 @@ level -- Piercing Shots
 	.talent 2,3,3,1
 
 level -- Piercing Shots
-	.talent 2,3,3,1
+	.talent 2,3,3,2
 
 level -- Piercing Shots
-	.talent 2,3,3,1
+	.talent 2,3,3,3
 
 level -- Silencing Shot
 	.talent 2,3,1,1
@@ -271,10 +271,10 @@ level -- Pathing
 	.talent 3,1,2,1
 
 level -- Pathing
-	.talent 3,1,2,1
+	.talent 3,1,2,2
 
 level -- Pathing
-	.talent 3,1,2,1
+	.talent 3,1,2,3
 
 level -- Improved Serpent Sting
 	.talent 3,1,3,1
