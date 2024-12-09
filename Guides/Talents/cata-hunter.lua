@@ -63,10 +63,10 @@ level -- Longevity
 	.talent 1,4,1,1
 
 level -- Longevity
-	.talent 1,4,2,1
+	.talent 1,4,1,1
 
 level -- Longevity
-	.talent 1,4,3,1
+	.talent 1,4,1,1
 
 level -- Improved Kill Command
 	.talent 1,1,1,1
