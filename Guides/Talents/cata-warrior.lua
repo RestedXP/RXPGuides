@@ -47,7 +47,7 @@ level -- Taste for Blood
 	.talent 1,3,1,3
 
 level -- Sweeping Strikes
-	.talent 1,3,2,3
+	.talent 1,3,2,1
 
 level -- Impale
 	.talent 1,3,3,1
@@ -82,9 +82,6 @@ level -- Lambs to the Slaughter
 level -- Sudden Death
 	.talent 1,5,4,1
 
-level -- Sudden Death
-	.talent 1,5,4,2
-
 level -- Wrecking Crew
 	.talent 1,6,1,1
 
@@ -92,7 +89,7 @@ level -- Wrecking Crew
 	.talent 1,6,1,2
 
 level -- Sudden Death
-	.talent 1,5,1,2
+	.talent 1,5,4,2
 
 level -- Impale
 	.talent 1,3,3,2
@@ -132,5 +129,4 @@ level -- Incite
 
 level -- Incite
 	.talent 3,1,1,3
-
 ]])
