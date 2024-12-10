@@ -102,8 +102,7 @@ step << Warlock
     .goto Durotar,45.30,56.42,100 >> Travel toward the Burning Blade Coven
     .isOnQuest 1485
 step << Warlock
-#loop
-	.line Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.3,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    #loop
 	.goto Durotar,43.87,58.42,25,0
 	.goto Durotar,44.53,58.62,25,0
 	.goto Durotar,45.18,58.42,25,0
@@ -4218,9 +4217,9 @@ step
     .goto Tirisfal Glades,45.08,31.15
     >>Kill |cRXP_ENEMY_Thurman|r and |cRXP_ENEMY_Gregor|r. Loot them for their |cRXP_LOOT_Remains|r. They can patrol around
     .complete 354,3 --Thurman's Remains (1)
+    .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
-    .unitscan Thurman Agamand
-    .unitscan Gregor Agamand
+    .unitscan +Gregor Agamand
     .isOnQuest 354
 step
     #optional
