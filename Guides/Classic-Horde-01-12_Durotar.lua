@@ -6134,9 +6134,9 @@ step
     .goto Tirisfal Glades,45.08,31.15,60,0
     >>Kill |cRXP_ENEMY_Thurman|r and |cRXP_ENEMY_Gregor|r. Loot them for their |cRXP_LOOT_Remains|r. They can patrol around
     .complete 354,3 --Thurman's Remains (1)
+    .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
-    .unitscan Thurman Agamand
-    .unitscan Gregor Agamand
+    .unitscan +Gregor Agamand
     .isOnQuest 354
 step
     #optional

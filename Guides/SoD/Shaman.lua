@@ -2100,7 +2100,7 @@ step
     #completewith next
     .goto Kalimdor,44.36,34.86
     >>|cRXP_WARN_Join or create a fresh (0/7) raid (10-man) group for Blackfathom Deeps|r
-    .zone 221 >> Enter Blackfathom Deeps in Ashenvale
+    .subzone 2797,2 >> Make your way to the BFD Instance Portal. Zone in
     .train 410101,1
     .xp <25,1
 step
