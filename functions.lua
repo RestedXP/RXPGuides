@@ -2677,8 +2677,10 @@ function addon.functions.xp(self, ...)
 
     local element = self.element
     local step = element.step
+    local reverseLogic = element.reverseLogic
+    local xpskip = addon.settings.profile.enableXpStepSkipping or element.reverseLogic
     if addon.isHidden or
-             (not addon.settings.profile.enableXpStepSkipping and
+             (not xpskip and
                  element.textOnly == true and not element.reverseLogic) then
         return
     end
@@ -2686,7 +2688,6 @@ function addon.functions.xp(self, ...)
     local currentXP = UnitXP("player")
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
-    local reverseLogic = element.reverseLogic
     local xp = element.xp
 
     local ref = element.ref
