@@ -10944,6 +10944,8 @@ step << Warlock
     .turnin 5727 >>Turn in Hidden Enemies
     .target Nazgrel
     .isQuestTurnedIn 5726
+step << Warlock
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step << Shaman/Mage/Hunter
     #xprate >2.09
     #completewith next

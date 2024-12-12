@@ -409,6 +409,9 @@ step
     .target Thrall
     .dungeon RFC
 step
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
@@ -1698,6 +1701,9 @@ step
     .goto The Barrens,51.62,30.90
     .target Sergra Darkthorn
     .target Darsok Swiftdagger
+step
+    #completewith TheEscapeTurnIn
+    .destroy 10327 >>|cRXP_WARN_Destroy|r |T134227:0|t[Horn of Echeyakee] |cRXP_WARN_as you no longer need it|r
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r

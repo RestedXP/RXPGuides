@@ -2472,29 +2472,10 @@ step << Mage
     .use 203753
     .itemcount 203753,1
 step
-    #xprate <1.5
-    #hardcore
-    #completewith FoodandWater2
-    .hs >> Hearth to Brill
-    .cooldown item,6948,>0,1
-step
-    #xprate <1.5
-    #hardcore
-    #completewith FoodandWater2
-    .subzone 159 >> Travel back to Brill
-    .cooldown item,6948,<0
-step
-    #xprate <1.5
-    #softcore
-    #completewith FoodandWater2
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step
-    #xprate >1.49
     #hardcore
     #completewith FoodandWater2
     .subzone 159 >> Travel back to Brill
 step
-    #xprate >1.49
     #softcore
     #completewith FoodandWater2
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -3447,6 +3428,12 @@ step
     #xprate <1.5
     #completewith UndercityLS2
     .hs >> Hearth to Undercity
+    .cooldown item,6948,>0,1
+step
+    #xprate <1.5
+    #completewith UndercityLS2
+    .zone Undercity >>Travel to the Undercity
+    .cooldown item,6948,<0
 step
     #xprate <1.5
     #ah
@@ -5314,6 +5301,9 @@ step << Undead
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
+step << Undead
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
@@ -9675,6 +9665,9 @@ step << Undead
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
+step << Undead
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97

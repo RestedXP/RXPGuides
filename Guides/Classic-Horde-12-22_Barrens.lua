@@ -178,18 +178,11 @@ step << !Shaman !Warrior/Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
-step << Undead
+step << !Tauren !Shaman !Warrior/Undead
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
-    .dungeon !RFC
-step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
-    .home >> Set your Hearthstone to Crossroads
-    .target Innkeeper Boorand Plainswind
-    .dungeon RFC
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #softcore
     .goto The Barrens,52.62,29.84
@@ -383,13 +376,11 @@ step << Tauren Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
     .target Uthrok
-step << !Undead !Tauren
+step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
-    .isOnQuest 867
-    .dungeon !RFC
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout
@@ -548,38 +539,38 @@ step << Tauren
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << !Undead
     .goto Durotar,53.08,9.19,0
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 5761 >>Accept Slaying the Beast
     .target Neeru Fireblade
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
     .dungeon RFC
-step
+step << !Undead
     #label HiddenEnemiesPickup
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -587,17 +578,20 @@ step
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << !Undead
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+step << !Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
-step
+step << !Undead
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
     .dungeon RFC
-step
+step << !Undead
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -606,21 +600,21 @@ step
     .mob Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step
+step << !Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 5722 >> Turn in Searching for the Lost Satchel
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
-step
+step << !Undead
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
-step
+step << !Undead
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -629,7 +623,7 @@ step
     .mob Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step
+step << !Undead
     #requires TroggsShamans
     #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -639,13 +633,13 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step
+step << !Undead
     >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
-step
+step << !Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
@@ -654,7 +648,7 @@ step
     .mob Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
-step
+step << !Undead
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
@@ -662,14 +656,14 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
     .isQuestComplete 5761
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
@@ -677,14 +671,14 @@ step
     .target Thrall
     .isQuestComplete 5728
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5729 >> Turn in Hidden Enemies
@@ -692,7 +686,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
     .isQuestTurnedIn 5728
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
@@ -715,7 +709,20 @@ step << !Tauren
     .use 6948
     .zoneskip The Barrens
     .dungeon RFC
-step << !Tauren
+step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
+    #completewith RFCTurninsTB1
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Devrak
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+    .zoneskip Thunder Bluff
+
+    --not worth to turn in 5723/5724 w/o TB flight path
+
+step << skip
     #completewith RFCTurninsTB1
     .goto Mulgore,68.68,60.34,120,0
     .zone Thunder Bluff >>Travel South to Camp Taurajo and enter Mulgore. Travel to Thunder Bluff from there
@@ -723,22 +730,21 @@ step << !Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step
+step << skip
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
-    .fly Crossroads >>Fly to The Crossroads
     .target Omusa Thunderhorn
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #completewith RFCTurninsTB1
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -747,7 +753,7 @@ step --<< Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -755,7 +761,7 @@ step --<< Tauren
     .isOnQuest 5724
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #label RFCTurninsTB1
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
@@ -764,7 +770,7 @@ step --<< Tauren
     .isQuestComplete 5723
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step << !Tauren !Shaman !Warrior/Undead
+step << skip
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Thunder Bluff >> Get the Thunder Bluff flight path
@@ -775,10 +781,9 @@ step
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads
     .use 6948
-    .zoneskip The Barrens
+    .zoneskip Thunder Bluff,1
     .cooldown item,6948,>0
     .dungeon RFC
-    .zoneskip Thunder Bluff,1
 step 
     #completewith KreenigSnarlsnout
     .goto Thunder Bluff,47.00,49.82
@@ -787,6 +792,7 @@ step
     .target Tal
     .zoneskip Thunder Bluff,1
     .cooldown item,6948,<0
+    .dungeon RFC
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
@@ -2313,6 +2319,9 @@ step
     .turnin 881 >>Turn in Echeyakee
     .accept 905 >>Accept The Angry Scytheclaws
     .target Sergra Darkthorn
+step
+    #completewith RapHornsPickup
+    .destroy 10327 >>|cRXP_WARN_Destroy|r |T134227:0|t[Horn of Echeyakee] |cRXP_WARN_as you no longer need it|r
 step << Warrior
     #season 2
     .goto The Barrens,52.27,31.08,
@@ -2598,7 +2607,7 @@ step
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
-    #completewith LakotaMani
+    #completewith LakotaMani1
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
@@ -2645,16 +2654,12 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
-    #label LakotaMani
-    #loop
+    #label LakotaMani1
+    #completewith CampTArrive
     .goto The Barrens,45.14,52.82,0
     .goto The Barrens,45.93,49.08,0
     .goto The Barrens,47.43,51.37,0
     .goto The Barrens,50.10,53.34,0
-    .goto The Barrens,45.14,52.82,80,0
-    .goto The Barrens,45.93,49.08,80,0
-    .goto The Barrens,47.43,51.37,80,0
-    .goto The Barrens,50.10,53.34,80,0
 	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -2664,7 +2669,7 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
-    #completewith SetCampTaurajoHS
+    #completewith CampTArrive
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
@@ -2689,9 +2694,11 @@ step << Hunter
     .use 208701
     .itemcount 208701,1
 step
+    #label CampTArrive
     #completewith next
     .goto The Barrens,45.23,58.41,120 >> Travel to Camp Taurajo
 step
+    #requires CampTArrive
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
@@ -3485,7 +3492,7 @@ step
     .accept 882 >>Accept Ishamuhale
     .target Jorn Skyseer
 step
-	#completewith LakotaMani
+	#completewith LakotaMani2
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
@@ -3500,7 +3507,7 @@ step
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer
 step
-    #label LakotaMani
+    #label LakotaMani2
     #loop
     .goto The Barrens,45.14,52.82,0
     .goto The Barrens,45.93,49.08,0
@@ -6575,14 +6582,12 @@ step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
-    .dungeon !RFC
 step << Undead
     #xprate >2.09
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
-    .dungeon !RFC
 step << !Undead !Tauren
     #xprate >2.09
     .goto The Barrens,52.62,29.85
@@ -7066,38 +7071,38 @@ step << Tauren
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << !Undead
     .goto Durotar,53.08,9.19,0
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 5761 >>Accept Slaying the Beast
     .target Neeru Fireblade
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
     .dungeon RFC
-step
+step << !Undead
     #label HiddenEnemiesPickup
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -7105,17 +7110,20 @@ step
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << !Undead
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+step << !Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
-step
+step << !Undead
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
     .dungeon RFC
-step
+step << !Undead
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -7124,21 +7132,21 @@ step
     .mob Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step
+step << !Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 5722 >> Turn in Searching for the Lost Satchel
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
-step
+step << !Undead
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
-step
+step << !Undead
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -7147,7 +7155,7 @@ step
     .mob Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step
+step << !Undead
     #requires TroggsShamans
     #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -7157,13 +7165,13 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step
+step << !Undead
     >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
-step
+step << !Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
@@ -7172,7 +7180,7 @@ step
     .mob Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
-step
+step << !Undead
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
@@ -7180,14 +7188,14 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
     .isQuestComplete 5761
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
@@ -7195,14 +7203,14 @@ step
     .target Thrall
     .isQuestComplete 5728
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC
-step
+step << !Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5729 >> Turn in Hidden Enemies
@@ -7210,7 +7218,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
     .isQuestTurnedIn 5728
-step
+step << !Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
@@ -7233,7 +7241,20 @@ step << !Tauren
     .use 6948
     .zoneskip The Barrens
     .dungeon RFC
-step << !Tauren
+step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
+    #completewith RFCTurninsTB1
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Devrak
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+    .zoneskip Thunder Bluff
+
+    --not worth to turn in 5723/5724 w/o TB flight path
+
+step << skip
     #completewith RFCTurninsTB1
     .goto Mulgore,68.68,60.34,120,0
     .zone Thunder Bluff >>Travel South to Camp Taurajo and enter Mulgore. Travel to Thunder Bluff from there
@@ -7241,22 +7262,21 @@ step << !Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step
+step << skip
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
-    .fly Crossroads >>Fly to The Crossroads
     .target Omusa Thunderhorn
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #completewith RFCTurninsTB1
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -7265,7 +7285,7 @@ step --<< Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -7273,7 +7293,7 @@ step --<< Tauren
     .isOnQuest 5724
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step --<< Tauren
+step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #label RFCTurninsTB1
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
@@ -7282,7 +7302,7 @@ step --<< Tauren
     .isQuestComplete 5723
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step << !Tauren !Shaman !Warrior/Undead
+step << skip
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Thunder Bluff >> Get the Thunder Bluff flight path
@@ -7304,6 +7324,7 @@ step
     .target Tal
     .zoneskip Thunder Bluff,1
     .cooldown item,6948,<0
+    .dungeon RFC
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
@@ -8991,6 +9012,9 @@ step
     .turnin 881 >>Turn in Echeyakee
     .accept 905 >>Accept The Angry Scytheclaws
     .target Sergra Darkthorn
+step
+    #completewith RapHornsPickup
+    .destroy 10327 >>|cRXP_WARN_Destroy|r |T134227:0|t[Horn of Echeyakee] |cRXP_WARN_as you no longer need it|r
 step << Warrior
     #season 2
     .goto The Barrens,52.27,31.08,
@@ -9371,7 +9395,7 @@ step
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
-    #completewith LakotaMani
+    #completewith LakotaMani1
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
@@ -9418,16 +9442,12 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
-    #label LakotaMani
-    #loop
+    #label LakotaMani1
+    #completewith CampTArrive
     .goto The Barrens,45.14,52.82,0
     .goto The Barrens,45.93,49.08,0
     .goto The Barrens,47.43,51.37,0
     .goto The Barrens,50.10,53.34,0
-    .goto The Barrens,45.14,52.82,80,0
-    .goto The Barrens,45.93,49.08,80,0
-    .goto The Barrens,47.43,51.37,80,0
-    .goto The Barrens,50.10,53.34,80,0
 	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -9437,7 +9457,7 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
-    #completewith SetCampTaurajoHS
+    #completewith CampTArrive
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
@@ -9462,8 +9482,16 @@ step << Hunter
     .use 208701
     .itemcount 208701,1
 step
+    #label CampTArrive
     #completewith next
     .goto The Barrens,45.23,58.41,120 >> Travel to Camp Taurajo
+step
+    #requires CampTArrive
+    #label SetCampTaurajoHS
+    .goto The Barrens,45.58,59.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
+    .home >>Set your Hearthstone to Camp Taurajo
+    .target Innkeeper Byula
 step
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
@@ -10437,7 +10465,7 @@ step << Warlock/Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
-	#completewith LakotaMani
+	#completewith LakotaMani2
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
@@ -10452,7 +10480,7 @@ step
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer
 step
-    #label LakotaMani
+    #label LakotaMani2
     #loop
     .goto The Barrens,45.14,52.82,0
     .goto The Barrens,45.93,49.08,0
