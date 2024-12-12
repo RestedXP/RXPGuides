@@ -1816,7 +1816,7 @@ RXPGuides.RegisterGuide([[
 #name g) Siren Isle Main Campaign
 #next h) Fate of the Kirn Tor
 #displayname Siren Isle Main Campaign & Side Quests
-
+#internal
 
 --WEEK 1 CAMPAIGN START
 
@@ -1992,7 +1992,7 @@ step
     .skipgossipid 124399
 step
     .goto 2375,44.86,72.79
-    >>Kill |cRXP_ENEMY_Vault Guardian|r.
+    >>Kill the |cRXP_ENEMY_Vault Guardian|r.
     .complete 84724,3 --1/1 Tomb Guardian Defeated
     .mob Vault Guardian
 step
@@ -2036,11 +2036,11 @@ step
     .use 228411
 step
     .goto 2369,71.09,44.11
-    >>Open your character panel and Shift-Right Click on |T6215518:0|t[Cyrce's Circlet]. Then, Left Click and drag |T6215530:0|t[Windsinger's Runed Citrine] from your bags into the |cFFEB144Cred gem slot|r.
+    >>Open your character panel and Shift+Right-Click on |T6215518:0|t[Cyrce's Circlet] (ring slot). Then, Left-Click and drag |T6215530:0|t[Windsinger's Runed Citrine] from your bags into the |cFFEB144Cred gem slot|r.
     .complete 84725,2 --1/1 Socket
 step
     .goto 2369,71.09,44.11
-    >>Open your character panel and Shift-Right Click on |T6215518:0|t[Cyrce's Circlet]. Next, Left Click to remove |T6215530:0|t[Windsinger's Runed Citrine] from the |cFFEB144Cred gem slot|r, then Left Click again to reapply it.
+    >>Open your character panel and Shift+Right-Click on |T6215518:0|t[Cyrce's Circlet]. Next, Left-Click to remove |T6215530:0|t[Windsinger's Runed Citrine] from the |cFFEB144Cred gem slot|r, then Left-Click again to reapply it.
     .complete 84725,3 --1/1 Unsocket
 step
     .goto 2369,71.09,44.11
@@ -2079,6 +2079,7 @@ step
 https://wowhead.com/quest=85753
 https://wowhead.com/quest=85762
 https://wowhead.com/quest=85764
+
 step --DAILLIES
     .goto 2369,71.03,39.72
     -- .questcount <2,83932,85589
@@ -2642,6 +2643,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Max Level Storylines (80)
 #name h) Siren Isle Daillies Inguide
 #displayname Siren Isle Daillies
+#internal
 
 step
     .goto 2369,71.03,39.72
@@ -2649,6 +2651,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
     .accept 83932 >>Accept Historical Documents -- Vrykul
     .accept 85589 >>Accept Ruffled Pages -- Naga
+    .accept 84619 >>Accept Ooker Dooker Literature Club
     -- Beach Comber -- Naga
     .target Stellin Veras
 step
@@ -2664,7 +2667,12 @@ step
     .accept 84432 >>Accept Longship Landing -- Vrykul
     .accept 84680 >>Accept Rock 'n Stone Revival -- Vrykul
     .target Dawn
-
+step
+    .goto 2369,69.33,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r
+    .accept 83753 >>Accept Cannon Karma
+    .accept 84299 >>Accept Pirate Plunder
+    .target Skaggi
 -- step -- Naga
 --     .goto 2369,61.03,67.76
 --     >>Kill |cRXP_ENEMY_Nereu of the Silent Wave|r
@@ -2738,6 +2746,88 @@ step
     .complete 84726,3 --1/1 Vrykul Gravesite Searched
 step
     .complete 85051,2 --24/24 Salvageable Scrap
+
+step
+    .isOnQuest 83753
+    .goto 2369,47.64,64.96
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackstell Cannonballs|r.
+    >>Kill |cRXP_ENEMY_Cannon Master Jin'chu|r. Loot him for the |T252185:0|t[|cRXP_LOOT_Blacksteel Cannonballs|r].
+    .complete 83753,1 --1/1 Cannon Master Jin'chu
+    .complete 83753,2 --1/1 Blacksteel Cannonballs collected
+    .mob Cannon Master Jin'chu
+step
+    .isOnQuest 83753
+    .goto 2369,47.95,66.03
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bilge Rat Cannon|r.
+    .complete 83753,3 --1/1 Bilge Rat Cannon controlled
+step
+    .isOnQuest 83753
+    .goto 2369,47.95,66.03
+    >>Spam |T252185:0|t[Cannon Shot] to kill the |cRXP_ENEMY_Bilge Rat|r forces
+    .complete 83753,4 --Bilge Rat Forces destroyed (100%)
+step
+    .isOnQuest 84619
+    .goto 2369,54.76,83.26
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bilge Rat Trunk|r
+    .complete 84619,4 --1/1 Ookler's Diary
+step
+    .isOnQuest 84619
+    .goto 2369,54.76,83.26
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Siren Isle Manifest|r |cRXP_WARN_on the boat|r
+    .complete 84619,2 --1/1 Siren Isle Manifest
+step
+    .isOnQuest 84619
+    #completewith next
+    >>Kill |cRXP_ENEMY_First Mate Dat-Dat|r. Loot him for |T134245:0|t[|cRXP_LOOT_First Mate Dat Dat's Key|r].
+    .collect 231809,1 --1/1 First Mate Dat Dat's Key
+    .mob First Mate Dat-Dat
+step
+    .isOnQuest 84619
+    .goto 2369,62.69,97.44
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Song's of the Siren|r book |cRXP_WARN_on the boat|r
+    .complete 84619,5 --1/1 Songs of the Siren
+step
+    .isOnQuest 84619
+    #hidewindow
+    #label FirstMateDatDatsKey
+    .complete 84619,1 --1/1 Ashvane Co. Survry Report
+step
+    .isOnQuest 84619
+    .goto 2369,62.92,97.25
+    #completewith FirstMateDatDatsKey
+    >>Kill |cRXP_ENEMY_First Mate Dat-Dat|r. Loot him for |T134245:0|t[|cRXP_LOOT_First Mate Dat Dat's Key|r].
+    .collect 231809,1 --1/1 First Mate Dat Dat's Key
+    .mob First Mate Dat-Dat
+step
+    .isOnQuest 84619
+    #requires FirstMateDatDatsKey
+    .goto 2369,60.36,98.00
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dat Dat's Book Stash|r
+    .complete 84619,1 --1/1 Ashvane Co. Survry Report
+step
+    .isOnQuest 84619
+    #requires FirstMateDatDatsKey
+    .goto 2369,66.64,87.34
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hozen Poetry|r
+    .complete 84619,3 --1/1 Hozen Poetry
+step
+    .isQuestComplete 83753
+    .goto 2369,69.34,43.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r
+    .turnin 83753 >>Turn in Cannon Karma
+    .target Skaggit
+step
+    .isQuestComplete 84299
+    .goto 2369,69.34,43.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skaggit|r
+    .turnin 84299 >>Turn in Pirate Plunder
+    .target Skaggit
+step
+    .isQuestComplete 84619
+    .goto 2369,71.05,39.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .turnin 84619 >>Turn in Ooker Dooker Literature Club
+    .target Stellin Verasa
 step
     .goto 2369,69.14,43.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
@@ -2770,6 +2860,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Max Level Storylines (80)
 #name h) Storm Daillies Inguide
 #displayname Siren Isle Daillies
+#internal
+
 -- storm daillies storms brewin
 step
     .goto 2369,43.75,23.91
@@ -2847,8 +2939,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Max Level Storylines (80)
 #name h) Fate of the Kirn Tor
 #displayname Fate of the Kirn Tor
-
-
 
 step
     .goto 2339,42.58,27.14

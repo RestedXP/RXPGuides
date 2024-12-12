@@ -4319,15 +4319,22 @@ step << Druid
 	.target Daelyshia
 step << Druid
     #season 2
+    .goto Ashenvale,34.8,49.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Thenysil|r
+    .target Sentinel Thenysil
+    .accept 1070 >> Accept On Guard in Stonetalon
+step << Druid
+    #season 2
     .goto Ashenvale,42.4,72.3,30 >> Head to the Talondeep path leading to the Stonetalon Mountains
 step << Druid
     #season 2
     .goto Stonetalon Mountains,78.2,42.6,40 >> Run through the tunnel into the Stonetalon Mountains
 step << Druid
     #season 2
-    .goto Stonetalon Mountains,59.6,67.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_Gaxim Rustfizzle|r
-    .accept 1075 >> Accept A Scroll from Mauren
+    .goto Stonetalon Mountains,59.8,66.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaela Shadowspear|r
+    .target Kaela Shadowspear
+    .turnin 1070 >> Turn in On Guard in Stonetalon
 step << Druid
     #season 2
     .goto Stonetalon Mountains,71.5,86.5,40 >> Head to the Grimtotem Village marked on your map

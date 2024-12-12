@@ -7395,7 +7395,7 @@ step
     .target Viktori Prism'Antras
     .isQuestTurnedIn 174
 step
-    .goto Duskwood,79.78,48.06
+    .goto Duskwood,81.46,59.02
     >>Talk to |cRXP_FRIENDLY_Mary|r
     .turnin 175 >> Turn in Look To The Stars
     .accept 177 >> Accept Look To The Stars

@@ -5827,6 +5827,7 @@ step
     .target Furen Longbeard
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
+    .dungeon !DM
 step << Rogue
     #xprate <1.5
     .goto StormwindClassic,74.65,52.83
