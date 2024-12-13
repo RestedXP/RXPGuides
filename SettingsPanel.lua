@@ -209,6 +209,8 @@ local settingsDBDefaults = {
         emergencyThreshold = 0.2,
         enableEmergencyIconAnimations = true,
 
+        preLoadData = false,
+
         dungeons = {},
 
         framePositions = {},
@@ -3094,6 +3096,14 @@ function addon.settings:CreateAceOptionsPanel()
                         max = 150,
                         step = 5
                     },
+                    preLoadData = {
+                        name = L("Pre load all data"),
+                        desc = L(
+                            "Loads all addon data upfront, instead of loading the data slowly over time. This increases loading screen times, only enable this option if you are experiencing frame rate drops"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.65,
+                    },
                     optimizePerformance = {
                         name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),
                         desc = _G.OPTION_TOOLTIP_COMBAT_TARGET_MODE_NEW,
@@ -3115,13 +3125,16 @@ function addon.settings:CreateAceOptionsPanel()
                                     p.enableItemUpgrades or
                                     p.enableItemUpgradesAH or
                                     p.hideCompletedSteps or
-                                    p.showUnusedGuides or p.updateFrequency < 150) or
-                                    addon.RXPFrame.BottomFrame:GetHeight() < 35
+                                    p.showUnusedGuides or
+                                    not p.preLoadData or
+                                    p.updateFrequency < 150)
+                                    --or addon.RXPFrame.BottomFrame:GetHeight() < 35
                         end,
                         set = function(_, value)
                             -- Disable all supplemental
                             -- Support re-enabling with (most) defaults
                             local p = self.profile
+                            value = not value
                             p.enableTargetAutomation = value
                             p.enableTips = value
                             p.enableTracker = value
@@ -3138,7 +3151,10 @@ function addon.settings:CreateAceOptionsPanel()
                             p.hideCompletedSteps = value
                             p.showUnusedGuides = value
                             if value == true then
+                                p.updateFrequency = 75
+                            else
                                 p.updateFrequency = 150
+                                p.preLoadData = true
                             end
 
                             -- Only impact step list if disabling

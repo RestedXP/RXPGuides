@@ -1019,13 +1019,13 @@ function addon.IsNewCharacter()
             return false
         end
     end
-    if UnitXP("player") == 0 and n > 1 then
+    if UnitXP("player") == 0 then
         return true
     end
 end
 
 function addon:CreateMetaDataTable(wipe)
-    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() then
+    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() or addon.settings.profile.preLoadData then
         RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
     end
@@ -1052,7 +1052,6 @@ function addon:OnInitialize()
     RXPCData.questNameCache = RXPCData.questNameCache or {}
     RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}
     RXPCData.questObjectivesCache[0] = RXPCData.questObjectivesCache[0] or 0
-    addon.CreateMetaDataTable()
 
     if not RXPData.gameVersion then
         RXPData.gameVersion = gameVersion
@@ -1062,6 +1061,7 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeSettings()
+    addon.CreateMetaDataTable()
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     addon.settings.profile.hardcore =
@@ -1116,6 +1116,9 @@ end
 
 function addon:OnEnable()
     addon.LoadEmbeddedGuides()
+    if addon.settings.profile.preLoadData then
+        addon.LoadAllGuides()
+    end
     addon.addonLoaded = true
     ProcessSpells()
     addon.GetProfessionLevel()

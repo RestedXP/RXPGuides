@@ -717,6 +717,14 @@ function addon.LoadCachedGuides()
     end
 end
 
+function addon.LoadAllGuides()
+    for _,guide in pairs(addon.guides) do
+        if not guide.steps then
+            addon:FetchGuide(guide)
+        end
+    end
+end
+
 local function parseLine(linetext,step,parsingLogic)
     if not parsingLogic then
         parsingLogic = addon.functions
