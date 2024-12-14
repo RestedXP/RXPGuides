@@ -3503,8 +3503,7 @@ step
     .goto Kalimdor,51.89,54.77,20,0
     .goto Kalimdor,51.95,54.56,20,0
     .goto Kalimdor,52.27,54.65,30,0
-    .goto Kalimdor,52.40,55.18
-    .zone 279 >> Enter the WC Instance portal. Zone in
+    .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
     #completewith GlowingShard

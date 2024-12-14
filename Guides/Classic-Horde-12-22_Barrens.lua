@@ -4770,7 +4770,7 @@ step
 step
     #sticky
     #completewith EnterWC
-    .subzone 718 >> Now you should be looking for a group to Wailing Caverns
+    +Now you should be looking for a group to Wailing Caverns
     >>Grind |cRXP_ENEMY_Quilboars|r while assembling a Wailing Caverns group
     .dungeon WC
 step
@@ -4851,8 +4851,7 @@ step
     .goto Kalimdor,51.89,54.77,20,0
     .goto Kalimdor,51.95,54.56,20,0
     .goto Kalimdor,52.27,54.65,30,0
-    .goto Kalimdor,52.40,55.18
-    .zone 279 >> Enter the WC Instance portal. Zone in
+    .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
     #hardcore
@@ -5748,7 +5747,7 @@ step << Priest
     #season 0,1
     #sticky
     #completewith EnterBFD
-    .subzone 719 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
+    .subzone 2797,2 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
     .dungeon BFD
 step
     #xprate <1.5
@@ -5900,7 +5899,7 @@ step << Priest
     #season 0,1
     #label EnterBFD
     .goto Kalimdor,44.36,34.86
-    .zone 221 >> Enter the BFD Instance portal. Zone in
+    .subzone 2797,2 >> Enter the BFD Instance portal. Zone in
     .dungeon BFD
 step << Priest
     #xprate <1.5
@@ -11885,8 +11884,7 @@ step
     .goto Kalimdor,51.89,54.77,20,0
     .goto Kalimdor,51.95,54.56,20,0
     .goto Kalimdor,52.27,54.65,30,0
-    .goto Kalimdor,52.40,55.18
-    .zone 279 >> Enter the WC Instance portal. Zone in
+    .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
     #hardcore
