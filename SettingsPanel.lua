@@ -218,7 +218,7 @@ local settingsDBDefaults = {
     }
 }
 
-function addon.settings:InitializeSettings()
+function addon.settings:InitializeDatabase()
     -- New character settings format
     -- Only set defaults for enabled = true
     if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
@@ -232,7 +232,9 @@ function addon.settings:InitializeSettings()
     settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
     loadedProfileKey = settingsDB.keys.profile
+end
 
+function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateLegacySettings()

@@ -1060,8 +1060,9 @@ function addon:OnInitialize()
         addon.db.profile.guides = {}
         RXPData.gameVersion = gameVersion
     end
-    addon.settings:InitializeSettings()
+    addon.settings:InitializeDatabase()
     addon.CreateMetaDataTable()
+    addon.settings:InitializeSettings()
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     addon.settings.profile.hardcore =
