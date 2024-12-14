@@ -190,6 +190,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 6365 >>Accept Meats to Orgrimmar
     .target Zargh
 step
+    #optional
     #completewith DisruptTheAttacks
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Beaks|r
     .complete 844,1 --Plainstrider Beak (7)
@@ -228,7 +229,8 @@ step << skip
     .isQuestComplete 924
 --XX !Tauren !Undead
 step << Shaman
-    #completewith DisruptTheAttacks
+    #sticky
+    #label FireTar2
     .goto The Barrens,54.97,25.23,50,0
     .goto The Barrens,54.2,24.60,50,0
     .goto The Barrens,53.57,25.51
@@ -237,6 +239,7 @@ step << Shaman
     .mob Razormane Water Seeker
     .mob Razormane Thornweaver
 step
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
@@ -251,6 +254,7 @@ step
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
+    #requires FireTar2<<Shaman
     #label DisruptTheAttacks
 #loop
 	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
@@ -406,6 +410,7 @@ step << Tauren
     .accept 819 >> Accept Chen's Empty Keg
     .dungeon RFC
 step << Tauren
+    #optional
     #completewith KreenigSnarlsnout1
     .goto The Barrens,56.75,24.69,50,0
     .goto The Barrens,59.26,24.67,50,0
@@ -416,6 +421,7 @@ step << Tauren
     .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
+    #optional
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
@@ -428,6 +434,7 @@ step << Tauren
     .mob Kreenig Snarlsnout
     .dungeon RFC
 step << Tauren
+    #optional
     #completewith next
     .goto The Barrens,56.75,24.69,50,0
     .goto The Barrens,59.26,24.67,50,0
@@ -466,6 +473,7 @@ step << Tauren
     .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
+    #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
@@ -592,6 +600,7 @@ step << !Undead
     .accept 5723 >> Accept Testing an Enemy's Strength
     .dungeon RFC
 step << !Undead
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -624,6 +633,7 @@ step << !Undead
     .isOnQuest 5723
     .dungeon RFC
 step << !Undead
+    #optional
     #requires TroggsShamans
     #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -784,7 +794,7 @@ step
     .zoneskip Thunder Bluff,1
     .cooldown item,6948,>0
     .dungeon RFC
-step 
+step
     #completewith KreenigSnarlsnout
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -800,6 +810,7 @@ step
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
+    #optional
     #completewith KreenigSnarlsnout
     .goto The Barrens,56.75,24.69,50,0
     .goto The Barrens,59.26,24.67,50,0
@@ -809,6 +820,7 @@ step
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
 step
+    #optional
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
@@ -833,17 +845,21 @@ step << Warlock
     .itemcount 208750,1
     .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
 step
+    #optional
     #completewith next
-    .goto The Barrens,56.75,24.69,50,0
-    .goto The Barrens,59.26,24.67,50,0
+    .goto The Barrens,56.75,24.69,0
+    .goto The Barrens,59.26,24.67,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
 step
+    #loop
     .goto The Barrens,58.38,27.01,30,0
-    .goto The Barrens,59.46,24.58
+    .goto The Barrens,59.46,24.58,30,0
+    .goto The Barrens,58.38,27.01,0
+    .goto The Barrens,59.46,24.58,0
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
@@ -868,6 +884,7 @@ step
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
 step << !Tauren !Undead
+    #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
@@ -881,12 +898,14 @@ step << !Tauren !Undead
     .target Ak'Zeloth
     .isQuestComplete 924
 step << Shaman
+    #optional
     #completewith ShamanDurotar
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step << Shaman
+    #optional
     #completewith ShamanDurotar
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
@@ -935,12 +954,14 @@ step << Shaman
     .turnin 1526 >>Turn in Call of Fire
     .accept 1527 >>Accept Call of Fire
 step << Shaman
+    #optional
     #completewith FireEnd
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step << Shaman
+    #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
@@ -964,6 +985,7 @@ step << skip
     .mob Sunscale Screecher
 --XX Need to add goto about halfway down since they only spawn up north, would be too messy to add it
 step
+    #optional
     #completewith next
     .goto The Barrens,63.89,31.66,100,0
     >>Kill |cRXP_ENEMY_Zhevra Runners|r. Loot them for their |cRXP_LOOT_Hooves|r
@@ -1101,7 +1123,7 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith BaronLongshore
-    +Equip the |T133052:0|t[Hammer] 
+    +Equip the |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -1157,6 +1179,7 @@ step
     #completewith BaronLongshore
     .destroy 5088 >> |cRXP_WARN_Delete the|r |T133735:0|t[Control Console Operating Manual] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
+    #optional
     #completewith BaronLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
@@ -1164,6 +1187,7 @@ step
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
+    #optional
 	#completewith next
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
 	.complete 1963,1 --Tazan's Satchel (1)
@@ -1178,6 +1202,7 @@ step
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step << Orc Rogue/Troll Rogue
+    #optional
 	#completewith next
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
 	.complete 1963,1 --Tazan's Satchel (1)
@@ -1329,7 +1354,7 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith BaronLongshore
-    +Equip the |T133052:0|t[Hammer] 
+    +Equip the |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -1433,12 +1458,14 @@ step << Tauren Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
     .target Uthrok
 step
+    #optional
     #completewith RegtharDeathgate1
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
 step
+    #optional
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
@@ -1465,6 +1492,7 @@ step
     .accept 850 >>Accept Kolkar Leaders
     .target Regthar Deathgate
 step
+    #optional
     #xprate <1.5
     #completewith KodobaneTurnin
     >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for their |cRXP_LOOT_Bracers|r
@@ -1474,6 +1502,7 @@ step
     .mob Kolkar Stormer
     .isOnQuest 855
 step
+    #optional
     #completewith Barak
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_This quest does not have to be completed now|r
@@ -1521,6 +1550,7 @@ step
     .target Regthar Deathgate
     .isQuestTurnedIn 850
 step
+    #optional
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     >>|cRXP_WARN_This quest does not have to be completed now|r
@@ -1560,6 +1590,7 @@ step << skip --!Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
 step << skip --!Tauren
+    #optional
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
     .goto Stonetalon Mountains,80.10,98.20,40,0
@@ -1728,6 +1759,7 @@ step
     --.dungeon !RFC
     .xp >17,1
 step
+    #optional
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -1777,6 +1809,7 @@ step
     .turnin 901 >>Turn in Samophlange
     .accept 902 >>Accept Samophlange
 step
+    #optional
     #completewith Ignition
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -1850,6 +1883,7 @@ step
     .mob Overseer Glibby
     .isOnQuest 863
 step
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -2065,6 +2099,7 @@ step << Rogue
     .accept 2382 >>Accept Wrenix of Ratchet
     .target Zando'zan
 step << Orc Rogue/Troll Rogue
+    #optional
     #completewith next
     .goto Orgrimmar,42.10,49.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy a|r |T134065:0|t[Thieves' Tools] |cRXP_BUY_from him|r
@@ -2472,6 +2507,7 @@ step << Warrior
     .use 208741
     .itemcount 208741,1
 step
+    #optional
     #completewith TestSeeds
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -2479,6 +2515,7 @@ step
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
 step
+    #optional
     #completewith TestSeeds
     >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r and |cRXP_LOOT_Feathers|r
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
@@ -2491,11 +2528,13 @@ step
     >>Loot the |cRXP_PICK_Stolen Silver|r on the ground
     .complete 3281,1 --Stolen Silver (1)
 step
+    #optional
     #xprate <1.5
     #completewith Verog
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
+    #optional
     #xprate >1.49
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
@@ -2506,6 +2545,7 @@ step
     >>Click the |cRXP_PICK_Bubble Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step << Druid/Mage
+    #optional
     #season 2
     #completewith Verog
     >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
@@ -2515,6 +2555,7 @@ step << Druid/Mage
     .train 407988,1 << Druid
     .train 401767,1 << Mage
 step
+    #optional
     #xprate <1.5
     #completewith next
     #loop
@@ -2607,6 +2648,7 @@ step
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
+    #optional
     #completewith LakotaMani1
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -2636,6 +2678,7 @@ step
     .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
@@ -2649,6 +2692,7 @@ step
     .target Beaten Corpse
     .skipgossip
 step
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Thunder Lizard Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
@@ -2669,6 +2713,7 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
+    #optional
     #completewith CampTArrive
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
     .complete 821,3 --Thunder Lizard Horn (1)
@@ -2783,12 +2828,14 @@ step
     .subzone 387 >> Travel to the Lushwater Oasis
     .isQuestTurnedIn 851
 step
+    #optional
     #xprate <1.5
     #completewith Hezrul
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r as you're looking for |cRXP_ENEMY_Hezrul Bloodmark|r. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
 step
+    #optional
     #xprate <1.5
     #completewith next
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
@@ -2978,6 +3025,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #optional
     #xprate <1.5
     #completewith StonetalonPickups
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -3776,7 +3824,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .isQuestTurnedIn 865
 step << Warrior
     #completewith FlytoXroads
-    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] 
+    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
     .use 4800
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
@@ -4757,7 +4805,7 @@ step << Hunter
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
 
-    --WC 
+    --WC
 
 step
     #completewith next
@@ -6682,7 +6730,8 @@ step << skip
     .isQuestComplete 924
 --XX !Tauren !Undead
 step << Shaman
-    #completewith DisruptTheAttacks
+    #sticky
+    #label FireTar1
     .goto The Barrens,54.97,25.23,50,0
     .goto The Barrens,54.2,24.60,50,0
     .goto The Barrens,53.57,25.51
@@ -6691,6 +6740,7 @@ step << Shaman
     .mob Razormane Water Seeker
     .mob Razormane Thornweaver
 step
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
@@ -6705,6 +6755,7 @@ step
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
+    #requires FireTar1<< Shaman
     #label DisruptTheAttacks
 #loop
 	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
@@ -6757,6 +6808,7 @@ step << !Undead !Tauren
     .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
 step
+    #optional
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
@@ -6959,6 +7011,7 @@ step << Tauren
     .mob Kreenig Snarlsnout
     .dungeon RFC
 step << Tauren
+    #optional
     #completewith next
     .goto The Barrens,56.75,24.69,50,0
     .goto The Barrens,59.26,24.67,50,0
@@ -6997,6 +7050,7 @@ step << Tauren
     .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
+    #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
@@ -7123,6 +7177,7 @@ step << !Undead
     .accept 5723 >> Accept Testing an Enemy's Strength
     .dungeon RFC
 step << !Undead
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -7155,6 +7210,7 @@ step << !Undead
     .isOnQuest 5723
     .dungeon RFC
 step << !Undead
+    #optional
     #requires TroggsShamans
     #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -7315,7 +7371,8 @@ step
     .zoneskip Thunder Bluff,1
     .cooldown item,6948,>0
     .dungeon RFC
-step 
+step
+    #optional
     #completewith KreenigSnarlsnout
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -7331,6 +7388,7 @@ step
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
+    #optional
     #completewith KreenigSnarlsnout
     .goto The Barrens,56.75,24.69,50,0
     .goto The Barrens,59.26,24.67,50,0
@@ -7632,7 +7690,7 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith BaronLongshore
-    +Equip the |T133052:0|t[Hammer] 
+    +Equip the |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -7683,7 +7741,7 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith BaronLongshore
-    +Equip the |T135302:0|t[Poniard] 
+    +Equip the |T135302:0|t[Poniard]
     .use 2208
     .itemcount 2208,1
     .itemStat 16,QUALITY,<7
@@ -7881,7 +7939,7 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith FlyToXroads1
-    +Equip the |T133052:0|t[Hammer] 
+    +Equip the |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -7933,7 +7991,7 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith FlyToXroads1
-    +Equip the |T135302:0|t[Poniard] 
+    +Equip the |T135302:0|t[Poniard]
     .use 2208
     .itemcount 2208,1
     .itemStat 16,QUALITY,<7
@@ -10770,7 +10828,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .equip 9,4794
 step << Warrior
     #completewith FlytoXroads
-    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] 
+    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
     .use 4800
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
@@ -12640,7 +12698,7 @@ step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine
     .isOnQuest 6421
-step 
+step
     #optional
     .abandon 4021 >> Abandon Counterattack!
     .isOnQuest 4021
