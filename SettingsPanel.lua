@@ -190,7 +190,6 @@ local settingsDBDefaults = {
 
         -- Talents
         enableTalentGuides = true,
-        activeTalentGuide = nil,
         previewTalents = true,
         hightlightTalentPlan = true,
         upcomingTalentCount = 5,
