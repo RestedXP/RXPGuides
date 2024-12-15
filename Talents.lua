@@ -391,7 +391,7 @@ function addon.talents:ParseGuide(text)
 
                     if not element then
                         internalParseFailure = true
-                        print("internalParseFailure", internalParseFailure)
+                        -- print("internalParseFailure", internalParseFailure)
                         return
                     end
 
@@ -666,7 +666,7 @@ function addon.talents:UpdateSelectedGuide(key)
     -- This is shared, so errors on swapping if shared profiles are used!
     -- e.g. Hunter guide loaded but load in a Shaman
     RXPCData.activeTalentGuide = key
-    print("RXPCData.activeTalentGuide", RXPCData.activeTalentGuide)
+    -- print("RXPCData.activeTalentGuide", RXPCData.activeTalentGuide)
     return true
 end
 
@@ -902,7 +902,7 @@ function addon.talents:BuildIndexLookup()
     local tier, column
     local name
 
-    print("BuildIndexLookup() looping", kind)
+    -- print("BuildIndexLookup() looping", kind)
 
     for tabIndex = 1, _G.GetNumTalentTabs(nil, PlayerTalentFrame.pet,
                                           PlayerTalentFrame.talentGroup) do
@@ -1194,7 +1194,7 @@ function addon.talents.cata:DrawTalents(guide)
 
     -- Initialization issue, probably Glyphs tab loaded at first login
     -- Silently exit instead of spammy errors or BuildIndexLookup retries
-    if not indexLookup['player'].initialized then print("DrawTalents indexLookup nil / not initialized") return end
+    if not indexLookup['player'].initialized then return end
 
     -- hightlightTalentPlan doesn't include highlights in Cata
     if not addon.settings.profile.hightlightTalentPlan then
