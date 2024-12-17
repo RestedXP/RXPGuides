@@ -2407,6 +2407,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Max Level Storylines (80)
 #name h) Siren Isle Daillies Inguide
 #displayname Siren Isle Daillies
+#internal
 
 step --DAILLIES
     .goto 2369,71.03,39.72
@@ -2889,6 +2890,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Max Level Storylines (80)
 #name h) Storm Daillies Inguide
 #displayname Siren Isle Daillies
+#internal
 
 -- storm daillies storms brewin
 step
@@ -2939,6 +2941,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP The War Within
 #subgroup Max Level Storylines (80)
 #name h) Siren Isle Crocodile
+#internal
 
 step
     .goto 2369,71.01,48.67
