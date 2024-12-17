@@ -402,7 +402,7 @@ step << Druid
     .use 208414 >>Equip the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r]
     .aura 408828 >>|cRXP_WARN_Kill 6 mobs with|r |T136096:0|t[Moonfire] |cRXP_WARN_to unlock the Idol|r
     .isOnQuest 77648
-step
+step << Druid
     #season 2
     #completewith DirtyMap
     #requires FuryofStormrageRune
