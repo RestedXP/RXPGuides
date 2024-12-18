@@ -3533,24 +3533,6 @@ step
     .accept 432 >> Accept Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
     .target +Foreman Stonebrow
-step << Warrior
-    #season 2
-    #completewith RockjawEnd
-    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r. Loot them for their |cRXP_LOOT_Pristine Trogg Heart|r
-    .collect 208158,1 -- Pristine Trogg Heart (1)
-    .mob Rockjaw Ambusher
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
-    .train 403475,1
-step << Rogue
-    #season 2
-    #completewith RockjawEnd
-    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208215,1 -- Top-Left Map Piece (1)
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
-    .train 398196,1
 step << Dwarf Paladin
     #xprate >1.49
     #sticky
@@ -3618,24 +3600,6 @@ step
     #label RockjawEnd
     #requires Skullthumpers
 --XXREQ Placeholder invis step until multiple requires per step
-step << Rogue
-    #season 2
-    .goto Dun Morogh,70.8,56.0
-    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208215,1 -- Top-Left Map Piece (1)
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
-    .train 398196,1
-step << Warrior
-    #season 2
-    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r. Loot them for their |cRXP_LOOT_Pristine Trogg Heart|r
-    .collect 208158,1 -- Pristine Trogg Heart (1)
-    .goto Dun Morogh,70.6,56.6
-    .mob Rockjaw Ambusher
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
-    .train 403475,1
 step
     #requires PalaCloth << Paladin -->1.49 or higher
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
