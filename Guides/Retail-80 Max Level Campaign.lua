@@ -1813,9 +1813,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP The War Within
 #subgroup Max Level Storylines (80)
-#name g) Siren Isle Main Campaign
+#name g) Siren Isle Campaign
 #next h) Fate of the Kirn Tor
-#displayname Siren Isle Main Campaign & Side Quests
+#displayname Siren Isle Campaign
 
 --WEEK 1 CAMPAIGN START
 
