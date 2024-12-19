@@ -1416,6 +1416,7 @@ function addon.ScheduleTask(self, ref, ...)
 --    print('w',ref)
     local time = type(self) == "number" and self or GetTime() + tickRate * 3
     --print(type(ref))
+
     if type(ref) == "table" then
         addon.scheduledTasks[ref] = time
     elseif type(ref) == "function" then
@@ -1444,15 +1445,18 @@ local event = ""
 
 function addon:UpdateLoop(diff)
     updateTick = updateTick + diff
+
     if updateError then
         errorCount = errorCount + 1
     end
+
     if addon.isHidden then
         updateError = false
         --print('hidden')
         return 'hidden'
     elseif errorCount >= 10 then
         addon.lastEvent = event
+
         tickRate = 10
         errorCount = 0
         updateTick = 0
@@ -1466,8 +1470,9 @@ function addon:UpdateLoop(diff)
         local activeQuestUpdate = 0
         skip = skip + 1
         event = ""
-        local updateFrequency = addon.updateFrequency or 0.075
-        tickRate = math.min(updateFrequency,4*GetTickTime()) + (addon.isCastingHS or 0)
+
+        tickRate = (addon.updateFrequency or 75) + (addon.isCastingHS or 0)
+
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do
                 addon.Call("updateQuest",func,ref)
@@ -1475,8 +1480,10 @@ function addon:UpdateLoop(diff)
                 addon.updateActiveQuest[ref] = nil
                 -- print('f',ref.element.step.index,math.random())
             end
+
             if activeQuestUpdate > 0 then event = event .. "/activeQ" end
         end
+
         if addon.nextStep then
             skip = 1
             addon.SetStep(addon.nextStep)
@@ -1485,6 +1492,7 @@ function addon:UpdateLoop(diff)
             addon.nextStep = false
         elseif addon.loadNextStep then
             event = event .. "/loadNext"
+
             addon.loadNextStep = false
             addon.SetStep(RXPCData.currentStep + 1)
             addon.questAutoAccept = true
@@ -1493,16 +1501,20 @@ function addon:UpdateLoop(diff)
         elseif activeQuestUpdate == 0 then
             if addon.updateSteps then
                 event = event .. "/stepComplete"
+
                 addon.UpdateStepCompletion()
             elseif addon.updateStepText and addon.currentGuide and skip % 2 == 0 then
                 event = event .. "/textsingle"
+
                 addon.updateStepText = false
                 local updateText
                 local steps = addon.currentGuide.steps
                 local update = {}
+
                 for n in pairs(addon.stepUpdateList) do
                     tinsert(update,n)
                 end
+
                 for _,n in pairs(update) do
                     if steps[n] then
                         if not updateText and steps[n].active then
@@ -1514,22 +1526,26 @@ function addon:UpdateLoop(diff)
                         end
                     end
                 end
+
                 if updateText or addon.updateTipWindow then
                     addon.updateTipWindow = false
                     addon.RXPFrame.CurrentStepFrame.UpdateText()
                 end
             elseif addon.updateBottomFrame then
                 event = event .. "/bottomFrame"
+
                 errorCount = 0
                 addon.RXPFrame.BottomFrame.UpdateFrame()
                 addon.RXPFrame.SetStepFrameAnchor()
                 updateError = false
                 skip = 1
+
                 return 'bottomFrame'
             elseif skip % 2 == 1 and next(addon.guideCache) then
                 event = event .. "/cache"
                 local length = 0
                 local loadGuide = true
+
                 for _,guide in pairs(addon.guides) do
                     if (loadGuide or guide.disablecaching) and not guide.steps then
                         addon:FetchGuide(guide)
@@ -1541,6 +1557,7 @@ function addon:UpdateLoop(diff)
                         end
                     end
                 end
+
                 if not next(addon.guideCache) and RXPCData.guideMetaData.enabledDungeons then
                     RXPCData.guideMetaData.enabledDungeons[addon.player.faction] =
                         addon.dungeons or
@@ -1555,6 +1572,7 @@ function addon:UpdateLoop(diff)
                 event = event .. "/auto"
                 addon.QuestAutomation()
             end
+
             if addon.updateMap then
                 event = event .. "/map"
                 addon.UpdateMap(true)
@@ -1574,6 +1592,7 @@ function addon:UpdateLoop(diff)
             event = event .. "/inactiveQ"
             activeQuestUpdate = 0
             local deletedIndexes = {}
+
             for i, ref in ipairs(addon.updateInactiveQuest) do
                 activeQuestUpdate = activeQuestUpdate + 1
                 if activeQuestUpdate > 3 then
@@ -1584,6 +1603,7 @@ function addon:UpdateLoop(diff)
                     tinsert(deletedIndexes, i)
                 end
             end
+
             for i = #deletedIndexes, 1, -1 do
                 local element = deletedIndexes[i]
                 table.remove(addon.updateInactiveQuest, element)
@@ -1591,6 +1611,7 @@ function addon:UpdateLoop(diff)
             end
         elseif GetTime() - cycleStart > 2 then
             cycleStart = GetTime()
+
             for ref, func in pairs(addon.activeObjectives) do
                 addon.Call("updateQuest",func,ref)
                 activeQuestUpdate = activeQuestUpdate + 1
@@ -1615,15 +1636,21 @@ function addon:UpdateLoop(diff)
                 local tdiff = time - updateTimer
                 stepCounter = 1
                 --print(tdiff,batchSize)
+
                 if tdiff > 10 then
                     batchSize = math.min(batchSize + 1*(math.ceil(tdiff/8)),10)
                 elseif batchSize > 2 then
                     batchSize = batchSize - 1
                 end
+
                 updateTimer = time
                 skip = skip % 4096
             end
-            addon.updateFrequency = (addon.settings.profile and addon.settings.profile.updateFrequency or 75)/1e3
+
+            addon.updateFrequency = (addon.settings.profile and
+                                        addon.settings.profile.updateFrequency or
+                                        75)
+
         end
         updateError = false
     end
