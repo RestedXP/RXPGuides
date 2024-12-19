@@ -1813,6 +1813,360 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP The War Within
 #subgroup Max Level Storylines (80)
+#name z) Lingering Shadows
+#displayname Lingering Shadows
+
+step
+    .goto 2339,42.36,26.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r in |cRXP_WARN_Dornogal|r.
+    .accept 82690 >>Accept Lingering Shadows
+    .target Alleria Windrunner
+step
+    #completewith next
+    .gossipoption 124142 >>To fast travel, open the Dungeon Finder and queue for the follower dungeon Dawnbreak. Once inside, Talk to |cRXP_FRIENDLY_General Steelstrike|r.
+    .target General Steelstrike
+step
+    .goto 2215,62.98,67.51
+    #title Follow the Arrow
+    >>Find |cRXP_FRIENDLY_Orweyna|r in |cRXP_WARN_Hallowfall|r.
+    .complete 82690,1 --1/1 Return to where Alleria sensed Black Blood in Hallowfall
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r and |cRXP_FRIENDLY_Hannan|r
+    .turnin 82690 >>Turn in Lingering Shadows
+    .accept 82692 >>Accept Price of a Mission
+    .accept 82693 >>Accept Standing in the Way
+    .goto 2215,62.98,67.51
+    .accept 82691 >>Accept No Breathing Room
+    .goto 2215,62.99,67.59
+    .target Orweyna
+    .target Hannan
+step
+    #completewith Strange Flower
+    >>Kill |cRXP_ENEMY_Fleshmite|r and |cRXP_ENEMY_Jawcrawler|r. Kill |cRXP_ENEMY_Seeping Crustbreaker|r |cRXP_WARN_if they are not bugged|r.
+    .complete 82691,1 --Seeping creatures culled (100%)
+    .mob Seeping Fleshmite
+    .mob Seeping Jawcrawler
+    .mob Seeping Crustbreaker
+step
+    .goto 2215,64.42,67.95
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Flower|r.
+    .complete 82692,1,1 --6/6 Strange Flower examined
+step
+    .goto 2215,64.47,68.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_On'hiea|r
+    .complete 82692,2,1 --3/3 Haranir evacuated
+    .skipgossipid 123067
+    .mob On'hiea
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bloodcrust Behemoth|r
+    .complete 82693,1 --1/1 Bloodcrust Behemoth slain
+    .mob Bloodcrust Behemoth
+step
+    .goto 2215,65.98,65.55,40,0
+    .goto 2215,66.65,64.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greenspeaker Na'layro|r
+    .complete 82692,2,2 --3/3 Haranir evacuated
+    .skipgossipid 123068
+    .mob Greenspeaker Na'layro
+step
+    .goto 2215,66.63,64.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Flower|r.
+    .complete 82692,1,2 --6/6 Strange Flower examined
+step
+    .goto 2215,65.95,65.56
+    >>Kill |cRXP_ENEMY_Bloodcrust Behemoth|r
+    .complete 82693,1 --1/1 Bloodcrust Behemoth slain
+    .mob Bloodcrust Behemoth
+step
+    .goto 2215,65.4,65.09
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Flower|r.
+    .complete 82692,1,3 --6/6 Strange Flower examined
+step
+    .goto 2215,64.58,64.33
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Flower|r.
+    .complete 82692,1,4 --6/6 Strange Flower examined
+step
+    .goto 2215,64.2,64.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ney'leia|r
+    .complete 82692,2,3 --3/3 Haranir evacuated
+    .skipgossipid 123066
+    .mob Ney'leia
+step
+    .goto 2215,64.16,64.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Flower|r.
+    .complete 82692,1,5 --6/6 Strange Flower examined
+step
+    #label Strange Flower
+    .goto 2215,63.39,67.02
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Flower|r.
+    .complete 82692,1,6 --6/6 Strange Flower examined
+step
+    #loop
+    .goto 2215,62.94,68.48,40,0
+    .goto 2215,64.38,68.9,40,0
+    .goto 2215,64.96,67.86,40,0
+    .goto 2215,67.05,67.42,40,0
+    .goto 2215,66.18,65.54,40,0
+    .goto 2215,64.36,64.81,40,0
+    .goto 2215,63.97,66.82,40,0
+    >>Kill |cRXP_ENEMY_Fleshmite|r and |cRXP_ENEMY_Jawcrawler|r. Kill |cRXP_ENEMY_Seeping Crustbreaker|r |cRXP_WARN_if they are not bugged|r.
+    .complete 82691,1 --Seeping creatures culled (100%)
+    .mob Seeping Fleshmite
+    .mob Seeping Jawcrawler
+    .mob Seeping Crustbreaker
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannan|r and |cRXP_FRIENDLY_Orweyna|r
+    .turnin 82691 >>Turn in No Breathing Room
+    .goto 2215,63,67.58
+    .target +Hannan
+    .turnin 82692 >>Turn in Price of a Mission
+    .turnin 82693 >>Turn in Standing in the Way
+    .accept 82694 >>Accept Together, Alone
+    .goto 2215,62.97,67.5
+    .target +Orweyna
+step
+    .goto 2215,58.83,46.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannan|r 
+    .complete 82694,1 --1/1 Find Hannan beneath the Fangs in Hallowfall
+step
+    .goto 2215,58.84,46.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannan|r
+    .complete 82694,2 --1/1 Speak to Hannan
+    .skipgossipid 123866
+    .target Hannan
+step
+    .goto 2215,24.90,51.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .turnin 82694 >>Turn in Together, Alone
+    .target Orweyna
+    .accept 82695 >>Accept The Voice
+step
+    .goto 2215,24.9,51.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .complete 82695,1 --1/1 Speak to Orweyna to begin (Optional)
+    .skipgossipid 124955
+    .target Orweyna
+step
+    .goto 2215,24.3,51.69,25,0
+    .goto 2215,24.36,51.19,25,0
+    .goto 2215,24.7,50.98,25,0
+    .goto 2215,25.06,50.99,25,0
+    .goto 2215,24.62,50.66,25,0
+    >>Kill 5 enemy waves of |cRXP_ENEMY_Oozing Visions|r and |cRXP_ENEMY_Terrifying Visions|r.
+    .complete 82695,2 --1/1 Defend Orweyna during her meditation
+    .mob Oozing Vision
+    .mob Terrifying Vision
+step
+    .goto 2215,24.90,51.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .turnin 82695 >>Turn in The Voice
+    .target Orweyna
+    .accept 82696 >>Accept Ringing in the Deeps
+--Travel
+step
+    .goto 2214,58.74,64.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r |cRXP_WARN_in Ringing Deeps|r.
+    .turnin 82696 >>Turn in Ringing in the Deeps
+    .target Orweyna
+step
+    .goto 2214,58.46,64.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
+    .accept 82697 >>Accept Good Help These Days
+    .target Monte Gazlowe
+step
+    .goto 2214,62.52,75.04
+    >>Kill |cRXP_ENEMY_Haxle Drillbit|r. Loot them for |T134939:0|t[|cRXP_LOOT_Opportunity Work Permit|r].
+    .complete 82697,1 --1/1 Opportunity Work Permit taken
+    .mob Haxle Drillbit
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r and |cRXP_FRIENDLY_Orweyna|r.
+    .turnin 82697 >>Turn in Good Help These Days
+    .accept 82699 >>Accept Hey, What's Going On?
+    .goto 2214,64.57,79.77
+    .target +Monte Gazlowe
+    .accept 82698 >>Accept Haywired and Hostile
+    .goto 2214,64.46,79.77
+    .target +Orweyna
+step
+    #completewith Question Harried Workers
+    >>Kill |cRXP_ENEMY_Haywire Excavator|r. |cRXP_WARN_It's important that you don't skip them|r.
+    .complete 82698,1 --4/4 Haywire Excavator slain
+    .mob Haywire Excavator
+step
+    .goto 2214,62.36,82.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
+    .complete 82699,1,1 --4/4 Question Harried Workers
+    .mob Harried Worker
+    .skipgossipid 123125
+step
+    .goto 2214,61.78,82.4
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
+    .complete 82699,2,1 --6/6 Used Fuel Drum examined
+    .mob Activated Remnants
+step
+    .goto 2214,62.58,83.88
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
+    .complete 82699,2,2 --6/6 Used Fuel Drum examined
+    .mob Activated Remnants
+step
+    .goto 2214,61.46,84.72
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
+    .complete 82699,2,3 --6/6 Used Fuel Drum examined
+    .mob Activated Remnants
+step
+    .goto 2214,61.26,85.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
+    .complete 82699,1,2 --4/4 Question Harried Workers
+    .mob Harried Worker
+    .skipgossipid 123125
+step
+    .goto 2214,62.01,87.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
+    .complete 82699,1,3 --4/4 Question Harried Workers
+    .mob Harried Worker
+    .skipgossipid 123125
+step
+    .goto 2214,62.27,88.25
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
+    .complete 82699,2,4 --6/6 Used Fuel Drum examined
+    .mob Activated Remnants
+step
+    .goto 2214,62.14,89.46
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
+    .complete 82699,2,5 --6/6 Used Fuel Drum examined
+    .mob Activated Remnants
+step
+    #label Question Harried Workers
+    .goto 2214,61.63,90.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harried Worker|r
+    .complete 82699,1,4 --4/4 Question Harried Workers
+    .mob Harried Worker
+    .skipgossipid 123125
+step
+    #completewith next
+    .goto 2214,60.85,90.37,30,0
+    .goto 2214,61.05,92.26,40,0
+    .goto 2214,59.94,91.3,40,0
+    .goto 2214,60.68,88
+    >>Kill |cRXP_ENEMY_Haywire Excavator|r. |cRXP_WARN_It's important that you don't skip them|r.
+    .complete 82698,1 --4/4 Haywire Excavator slain
+    .mob Haywire Excavator
+step
+    .goto 2214,60.68,88
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Oil Barrel|r. |cRXP_WARN_|cRXP_ENEMY_Activated Remnants|r will spawn|r.
+    .complete 82699,2,6 --6/6 Used Fuel Drum examined
+    .mob Activated Remnants
+step
+    #loop
+    .goto 2214,60.18,81.9,40,0
+    .goto 2214,62.57,84.2,40,0
+    .goto 2214,61.8,85.97,40,0
+    .goto 2214,61.96,90.34,40,0
+    .goto 2214,60.79,90.41,40,0
+    .goto 2214,61.06,92.33,40,0
+    .goto 2214,59.92,91.43,40,0
+    >>Kill |cRXP_ENEMY_Haywire Excavator|r. |cRXP_WARN_It's important that you don't skip them|r.
+    .complete 82698,1 --4/4 Haywire Excavator slain
+    .mob Haywire Excavator
+step
+    .goto 2214,60.39,87.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r |cRXP_WARN_on the house|r.
+    .turnin 82699 >>Turn in Hey, What's Going On?
+    .target Renzik "The Shiv"
+    .turnin 82698 >>Turn in Haywired and Hostile
+    .accept 82700 >>Accept Built to Blast
+step
+    .goto 2214,58.42,86.41
+    >>Kill |cRXP_ENEMY_Haywire MEK IV|r
+    .complete 82700,1 --1/1 Haywire MEK IV slain
+    .mob Haywire MEK IV
+step
+    .goto 2214,64.46,79.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .turnin 82700 >>Turn in Built to Blast
+    .target Orweyna
+    .accept 82701 >>Accept Bat Versus World
+step
+    .goto 2214,64.46,79.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .complete 82701,1 --1/1 Speak to Orweyna
+    .skipgossipid 123172 
+    .target Orweyna
+step
+    .goto 2214,64.27,80
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r.
+    *Use |T252188:0|t[Listen In] |cRXP_WARN_on the Tower near the Circle|r.
+    *|cRXP_WARN_Be aware that goblins will try to kill you|r.
+    .complete 82701,2,1 --4/4 "Listen In" to Gather Intel
+step
+    .goto 2214,63.1,80.78
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    *Use |T252188:0|t[Listen In] |cRXP_WARN_on the Bridge near the Circle|r.
+    *|cRXP_WARN_Be aware that goblins will try to kill you|r.
+    .complete 82701,2,2 --4/4 "Listen In" to Gather Intel
+step
+    .goto 2214,63.46,78.82
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
+    *|cRXP_WARN_Be aware that goblins will try to kill you|r.
+    .complete 82701,2,3 --4/4 "Listen In" to Gather Intel
+step
+    .goto 2214,65.49,77.27
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
+    *|cRXP_WARN_Be aware that goblins will try to kill you|r.
+    .complete 82701,2,4 ----4/4 "Listen In" to Gather Intel
+step
+    .goto 2214,66.68,78.42
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    *Use |T252188:0|t[Listen In] |cRXP_WARN_near the Cave Wall|r.
+    *|cRXP_WARN_Be aware that goblins will try to kill you|r.
+    .complete 82701,3 --1/1 Listen In at the Cave Wall
+step
+    .goto 2214,60.99,86.47
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r.
+    *Use |T252188:0|t[Listen In] |cRXP_WARN_on the building near the circle|r.
+    *|cRXP_WARN_Dodge the obstacles in the sky to avoid getting stunned|r.
+    .complete 82701,4 --1/1 Reach Foreman's Office
+    .mob Blinding Glowmite
+    .mob Hazardous Heli
+step
+    .goto 2214,60.64,86.81
+    >>Use the |T252188:0|t[ExtraActionButton].
+    .complete 82701,5 --1/1 Find Information
+step
+    .goto 2214,64.46,79.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .turnin 82701 >>Turn in Bat Versus World
+    .target Orweyna
+--Travel
+step
+    .goto 2339,42.37,26.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_|in Dornogalr
+    .turnin 82702 >>Turn in Found Friends
+    .target Alleria Windrunner
+step
+    .goto 2339,42.29,27.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
+    .accept 84701 >>Accept The Speaker
+    .target Orweyna
+step
+    #completewith next
+    .goto 2339,40.73,22.33
+    .cast 431519 >> Use the |cRXP_PICK_Earthen Teleporter|r.
+step
+    .goto 2339,35.49,81.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magni Bronzebeard|r
+    .turnin 84701 >>Turn in The Speaker
+    .target Magni Bronzebeard
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup Max Level Storylines (80)
 #name g) Siren Isle Campaign
 #next h) Fate of the Kirn Tor
 #displayname Siren Isle Campaign
