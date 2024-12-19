@@ -86,7 +86,7 @@ step
 --     #completewith next
 --     .goto 1161,67.09,23.33,5,0
 --     .goto 1161,66.98,14.99
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joan Weber|r. |cRXP_WARN_and if you don't have the flightpath you can just fly|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joan Weber|r |cRXP_WARN_and if you don't have the flightpath you can just fly|r.
 --     .fly Brennadam >>Fly |cRXP_WARN_to Brennadam|r.
 --     .target Joan Weber
 step
@@ -156,7 +156,7 @@ step
     .target Sal Atwater
 step
     .goto 942,50.23,49.88
-    >>|cRXP_WARN_Head to the location indicated by the arrow|r. |cRXP_WARN_inside the the House|r.
+    >>|cRXP_WARN_Head to the location indicated by the arrow|r |cRXP_WARN_inside the the House|r.
     .complete 54708,3 --1/1 Meet the actual shipwright
     .timer 10, Shipwright RP
 step
@@ -268,14 +268,14 @@ step
     .goto 896,34.52,29.77,10,0
     .goto 896,35.9,30.32,10,0
     .goto 896,36.65,29.98,10,0
-    .goto 896,36.60,28.88,5 >>|cRXP_WARN_Follow the |cRXP_ENEMY_Wicker Beast|r. |cRXP_WARN_inside the cave|r.
+    .goto 896,36.60,28.88,5 >>|cRXP_WARN_Follow the |cRXP_ENEMY_Wicker Beast|r |cRXP_WARN_inside the cave|r.
     .timer 3,Short Roleplay
     .mob Wicker Beast
     .target Wicker Beast
     .isOnQuest 54732
 step
     .goto 896,36.6,28.88
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Storehouse Key|r. |cRXP_WARN_on the ground|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Storehouse Key|r |cRXP_WARN_on the ground|r.
     .complete 54732,1 --1/1 Storehouse Key
 step
     .goto 896,36.62,28.83
@@ -285,16 +285,16 @@ step
     .target Wicker Beast
 step
     .goto 896,35.31,28.90
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Gnawed Bone|r. |cRXP_WARN_on the ground|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Gnawed Bone|r |cRXP_WARN_on the ground|r.
     .complete 55136,3 --1/1 Gnawed Bone
 step
     .goto 896,35.99,30.96
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Worn Collar|r. |cRXP_WARN_around a tree branch|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Worn Collar|r |cRXP_WARN_around a tree branch|r.
     .complete 55136,1 --1/1 Worn Collar
 step
     .goto 896,34.19,30.81,8,0
     .goto 896,34.60,30.56
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Worn Collar|r. |cRXP_WARN_inside a house|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Worn Collar|r |cRXP_WARN_inside a house|r.
     .complete 55136,2 --1/1 Squeaky Toy
 step
     .goto 896,33.17,30.37

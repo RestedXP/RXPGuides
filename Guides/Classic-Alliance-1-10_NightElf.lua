@@ -27,9 +27,9 @@ step
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
     .goto Teldrassil,62.0,42.6,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
+    .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
-    .mob Young Nightsaber
-    .mob Young Thistle Boar
+    .mob +Young Thistle Boar
 step
     >>Loot the mobs you kill, make sure you have at least 10 copper worth of vendor trash, you will need it to train |T132333:0|t[Battle Shout]<< Warrior
     .xp 2 >> Grind to level 2
@@ -37,18 +37,18 @@ step << !sod/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
     .accept 4495 >> Accept A Good Friend
+    .target +Dirania Silvershine
     .goto Teldrassil,60.899,41.961
     .accept 458 >> Accept The Woodland Protector
 	.goto Teldrassil,59.924,42.474
-    .target Dirania Silvershine
-    .target Melithar Staghelm
+    .target +Melithar Staghelm
 step
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
     .goto Teldrassil,62.0,42.6,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
+    .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
-    .mob Young Nightsaber
-    .mob Young Thistle Boar
+    .mob +Young Thistle Boar
 step << Hunter
 #xprate >1.99
     #requires balance1
@@ -62,9 +62,9 @@ step << Hunter
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .mob +Mangy Nightsaber
     .complete 457,2 --Kill Thistle Boar (x7)
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .mob +Thistle Boar
 step << Hunter
     #season 0,1
     .goto Teldrassil,59.8,34.1
@@ -131,9 +131,9 @@ step << !Hunter
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .mob +Mangy Nightsaber
     .complete 457,2 --Kill Thistle Boar (x7)
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .mob +Thistle Boar
 step << !Hunter
     #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
@@ -189,7 +189,6 @@ step
     .target Gilshalan Windwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .accept 916 >> Accept Webwood Venom
-    .target Gilshalan Windwalker
 step << Hunter
     .xp 4-40
 step << Hunter
@@ -371,9 +370,9 @@ step << Hunter
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .mob +Mangy Nightsaber
     .complete 457,2 --Kill Thistle Boar (x7)
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .mob +Thistle Boar
 step
 #xprate <1.99
     #requires vial1
@@ -433,11 +432,11 @@ step
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .mob +Nightsaber
     .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .mob +Strigid Owl
     .complete 488,3 --Collect Webwood Spider Silk (x3)
-    .mob Nightsaber
-    .mob Strigid Owl
-    .mob Webwood Lurker
+    .mob +Webwood Lurker
 step
     #sticky
 	#completewith DenlansEarth
@@ -590,11 +589,11 @@ step
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .mob +Nightsaber
     .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .mob +Strigid Owl
     .complete 488,3 --Collect Webwood Spider Silk (x3)
-    .mob Nightsaber
-    .mob Strigid Owl
-    .mob Webwood Lurker
+    .mob +Webwood Lurker
 step
     #sticky
 	#completewith DenlanStart
@@ -681,11 +680,11 @@ step
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .mob +Nightsaber
     .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .mob +Strigid Owl
     .complete 488,3 --Collect Webwood Spider Silk (x3)
-    .mob Nightsaber
-    .mob Strigid Owl
-    .mob Webwood Lurker
+    .mob +Webwood Lurkerr
 step
     #sticky
 	#completewith Starbreeze
@@ -728,20 +727,20 @@ step
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     >>|cRXP_WARN_Save any|r |T132832:0|t[Small Eggs] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .mob +Nightsaber
     .goto Teldrassil,66.10,52.43,60,0
     .goto Teldrassil,61.95,61.07,50,0
     .goto Teldrassil,59.14,60.91
     .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .mob +Strigid Owl
     .goto Teldrassil,66.10,52.43,60,0
     .goto Teldrassil,63.39,64.22,50,0
     .goto Teldrassil,59.14,60.91
     .complete 488,3 --Collect Webwood Spider Silk (x3)
+    .mob +Webwood Lurker
     .goto Teldrassil,61.06,54.66,50,0
     .goto Teldrassil,60.17,59.62,50,0
     .goto Teldrassil,58.22,56.32
-    .mob Nightsaber
-    .mob Strigid Owl
-    .mob Webwood Lurker
 step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
@@ -900,7 +899,6 @@ step
     .turnin 489 >> Turn in Seek Redemption!
     .itemcount 3418,3
     .isOnQuest 489
-    .target Zenn Foulhoof
 step
 	#completewith jewel
     >>Loot the |cRXP_LOOT_Fel Cones|r on the ground

@@ -15,7 +15,7 @@ step << Undead
     .zoneskip 1727
     #completewith TirisfalFistQuestCheck
     +Welcome to the |cfff78300Undead Starting Zone Guide|r. of RestedXP.
-    *This route is up to 50% slower than |cfff78300Exiles Reach|r. regardless of the available consumables/heirlooms. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r. instead.
+    *This route is up to 50% slower than |cfff78300Exiles Reach|r regardless of the available consumables/heirlooms. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
 step << Undead
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the Undead Starting Zone.
@@ -60,7 +60,7 @@ step
 step
     #sticky
     #label tirisfal26799
-    >>Kill |cRXP_ENEMY_Mindless Zombies|r. while speaking with the undead
+    >>Kill |cRXP_ENEMY_Mindless Zombies|r while speaking with the undead.
     .goto 465,44.4,73.9,0,0
     .complete 26799,1 --6/6 Mindless Zombie slain
     .mob Mindless Zombie
@@ -175,7 +175,7 @@ step << Hunter
     .cast 1515 >>Tame a |cRXP_ENEMY_Ragged Scavenger|r.
     .mob Ragged Scavenger
 step
-    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r. around you. Loot them for their [|cRXP_LOOT_paws|r and |cRXP_LOOT_wings|r].
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r around you. Loot them for their [|cRXP_LOOT_paws|r and |cRXP_LOOT_wings|r].
     .goto 465,63.26,27.68,15,0
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
@@ -196,7 +196,7 @@ step
     .complete 24973,1 --8/8 Young Night Web Spider slain
     .mob Young Night Web Spider
 step
-    >>Kill |cRXP_ENEMY_Night Web Spiders|r. inside the mine
+    >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the mine.
     .goto 465,30.18,30.58,10,0
     .goto 466,62.9,58.0,10,0
     .goto 466,45.27,69.84,10,0
@@ -297,7 +297,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
     >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
-    .link https://i.imgur.com/lc7y3b4.jpeg >>You can attack |cRXP_ENEMY_Shadowstalker|r. from the position shown in the screenshot
+    .link https://i.imgur.com/lc7y3b4.jpeg >>You can attack |cRXP_ENEMY_Shadowstalker|r from the position shown in the screenshot.
     .goto 18,40.33,51.42,0
     .goto 18,37.91,51.27,0,0
     .complete 24978,1 --10/10 Tirisfal Farmer slain
@@ -320,7 +320,7 @@ step << Warlock/Hunter
     #completewith next
     +|cfff78300Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r.
 step
-    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r. until it runs away then use the |T133802:0|t[Murloc Leash]. |cRXP_WARN_You mustn't kill it|r.
+    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r until it runs away then use the |T133802:0|t[Murloc Leash]. |cRXP_WARN_You mustn't kill it|r.
     >>Look out for the rare |cRXP_ENEMY_Muad|r.
     .use 52059
     .goto 18,35.8,43.4
@@ -332,7 +332,7 @@ step << Warlock/Hunter
     +|cRXP_WARN_Reminder:Set your pet to back to 'Assist'|r.
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
-    >>Look out for |cRXP_ENEMY_Bayne|r. on your way back
+    >>Look out for |cRXP_ENEMY_Bayne|r on your way back.
     .goto 18,45.30,49.37,15,0
     .unitscan Bayne
     .turnin 24978 >>Turn in Reaping the Reapers
@@ -557,7 +557,7 @@ step
     .target Apprentice Mirveda
 step
     .isQuestTurnedIn 8487
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for around 5 seconds and talk to |cRXP_FRIENDLY_Apprentice Mirveda|r. again
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for around 5 seconds and talk to |cRXP_FRIENDLY_Apprentice Mirveda|r again.
     .goto 94,54.28,70.98
     .accept 8488 >>Accept Unexpected Results
     .target Apprentice Mirveda

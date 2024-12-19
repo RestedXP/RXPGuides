@@ -1062,10 +1062,7 @@ step
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
-    .collect 1179,10,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (10)
-    .collect 2287,10,818,1 << Rogue/Warrior --Haunch of Meat (10)
     .target Innkeeper Grosk
-    .money <0.025
 step
     >>|cRXP_WARN_You can talk to|r |cRXP_FRIENDLY_Gar'thok|r |cRXP_WARN_from outside or on top of the bunker|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r and |cRXP_FRIENDLY_Torka|r
@@ -1601,27 +1598,34 @@ step << Troll Warrior
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
+    >>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock
+    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest
+    .vendor >> Vendor Trash
+    .home >> Set your Hearthstone to Razor Hill
+    .turnin 2161 >>Turn in A Peon's Burden
+    .target Innkeeper Grosk
+    .train 6760,1 << Rogue
+    .train 139,1 << Priest
+    .train 980,1 << Warlock
+    .train 8044,1 << Shaman
+    .train 284,1 << Warrior
+step << !Mage !Hunter !Druid
+    #optional
+    .goto Durotar,51.51,41.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
     .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
-    .collect 1179,10,818,1 << Warlock/Priest/Shaman --Ice Cold Milk (10)
-    .collect 1179,20,818,1 << Mage --Ice Cold Milk (20)
-    .collect 2287,10,818,1 << Rogue/Warrior --Haunch of Meat (10)
     .target Innkeeper Grosk
-    .money <0.065 << Rogue/Warrior/Shaman/Warlock --to ensure user still has 4 silver left for class spells
-    .money <0.045 << Priest --to ensure user still has 2 silver left for class spells
-    .money <0.050 << Mage --Mage not getting class training here
-step
-    #optional
-    .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
-    .money >0.065 << Rogue/Warrior/Shaman/Warlock
-    .money >0.045 << Priest
-    .money >0.050 << Mage
+    .train 6760,3 << Rogue
+    .train 139,3 << Priest
+    .train 980,3 << Warlock
+    .train 8044,3 << Shaman
+    .train 284,3 << Warrior
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -2355,6 +2359,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Accept Speak with Dillinger
     .target Austil de Mon << Warrior
+    .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
@@ -2400,17 +2405,20 @@ step << Warrior
     .turnin 1818 >> Turn in Speak with Dillinger
     .accept 1819 >> Accept Ulag the Cleaver
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
     >>|cRXP_WARN_Click on the skull on the ground. This will summon|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Kill him|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .turnin 1819 >> Turn in Ulag the Cleaver
     .accept 1820 >> Accept Speak with Coleman
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step << Warlock/Mage/Priest
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
@@ -2655,9 +2663,9 @@ step
     .goto Tirisfal Glades,45.08,31.15
     >>Kill |cRXP_ENEMY_Thurman|r and |cRXP_ENEMY_Gregor|r. Loot them for their |cRXP_LOOT_Remains|r. They can patrol around
     .complete 354,3 --Thurman's Remains (1)
+    .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
-    .unitscan Thurman Agamand
-    .unitscan Gregor Agamand
+    .unitscan +Gregor Agamand
 step
     #requires MillsOverun
     #completewith MaggotEye
@@ -2789,8 +2797,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2807,8 +2813,6 @@ step
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2825,8 +2829,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Yvette Farthing
@@ -2837,8 +2839,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Coleman Farthing
@@ -2851,7 +2851,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2867,7 +2866,6 @@ step
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2883,7 +2881,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Yvette Farthing
@@ -2893,10 +2890,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Coleman Farthing
+step << Warrior
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
+    .turnin 1820 >>Turn in Speak with Coleman
+    .accept 1821 >>Accept Agamand Heirlooms
+    .group
+    .isQuestTurnedIn 1819
+step << Warrior
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
+    .turnin 1820 >>Turn in Speak with Coleman
+    .solo
+    .isQuestTurnedIn 1819
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor

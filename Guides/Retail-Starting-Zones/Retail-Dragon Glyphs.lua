@@ -616,7 +616,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .zoneskip 2200
-    +This guide requires you to have the |cRXP_WARN_Zaralek Caverns|r. unlocked.
+    +This guide requires you to have the |cRXP_WARN_Zaralek Caverns|r unlocked.
 step
     .zone 2200 >>Enter Zaralek Cavern |cRXP_WARN_through the Thaldraszus entrance|r.
 step
@@ -705,7 +705,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .zoneskip 2200
-    +This guide requires you to have the |cRXP_WARN_Emerald Dream|r. unlocked.
+    +This guide requires you to have the |cRXP_WARN_Emerald Dream|r unlocked.
 step
     .goto 2112,62.70,57.33,-1
     .goto 2023,18.40,52.37,-1

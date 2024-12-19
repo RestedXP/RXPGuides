@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     +Welcome to the |cRXP_WARN_Draenei Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r. instead.
+    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
 step
     .goto 468,61.21,29.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megelon|r.
@@ -154,7 +154,7 @@ step
 step
     .isOnQuest 9294
     #completewith next
-    +|cFFFF0000[TIP]|r To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r. press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
+    +|cFFFF0000[TIP]|r To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
 step
     .goto 468,45.85,62.9
     >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water|r.
@@ -429,7 +429,7 @@ step
     .goto 97,52.35,59.31,40,0
     .goto 97,53.71,56.86,40,0
     .goto 97,50.31,53.83,40,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r. located on the ground.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r located on the ground.
     *|cRXP_WARN_They should be visible on the minimap|r.
     .complete 9473,1 --5/5 Azure Snapdragon Bulb
 step
@@ -534,7 +534,7 @@ step
 	.mob Wrathscale Siren
     .use 23759
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Relics|r. located on the ground.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Relics|r located on the ground.
     .complete 9523,1 --8/8 Ancient Relic
 step
     #label Wrathscale
@@ -581,7 +581,8 @@ step
     .use 23792
 step
     #completewith next
-    .aura -30298 >>.link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
+    .aura -30298 >> Right click off the Tree Disguise Kit buff
+    .link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
 step
     .goto 97,15.26,92.24
     >>|cRXP_WARN_Follow the Arrow|r.

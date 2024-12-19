@@ -258,7 +258,7 @@ step
     .mob Kor'gall Defector
     .mob Kor'gall Agitator
 step
-    >>Kill |cRXP_ENEMY_Kor'gall, Greatson of Kor'gall|r. after a short RP
+    >>Kill |cRXP_ENEMY_Kor'gall, Greatson of Kor'gall|r after a short RP.
     >>Side-step the Violent Crash. Dodge the Boulders
     .goto 1170,36.80,68.06,15,0
     .goto 1170,36.26,68.70,10,0

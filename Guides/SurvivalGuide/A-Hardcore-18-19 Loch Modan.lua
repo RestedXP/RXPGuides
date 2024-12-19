@@ -139,6 +139,13 @@ step
     .target Chief Engineer Hinderweir VII
 step
     #completewith next
+    +|cRXP_WARN_Be careful not to run into the|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! It's an elite pack of 2 |cRXP_ENEMY_Orcs|r and a |cRXP_ENEMY_Tauren|r who patrol the east side of The Loch (the line on your map)|r
+    .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
+    .unitscan Haren Swifthoof
+    .unitscan Gradok
+    .unitscan Thragomm
+step
+    #completewith next
     .goto Loch Modan,82.92,59.37,80,0
     .goto Loch Modan,83.28,62.97,25 >> Travel to The Farstrider Lodge
 step
@@ -216,6 +223,16 @@ step
     .accept 271 >> Accept Vyrin's Revenge
     .target Vyrin Swiftwind
 step
+    #completewith next
+    +|cRXP_WARN_Be careful not to run into the|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! It's an elite pack of 2 |cRXP_ENEMY_Orcs|r and a |cRXP_ENEMY_Tauren|r who patrol the east side of The Loch (the line on your map)|r
+    .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
+    .unitscan Haren Swifthoof
+    .unitscan Gradok
+    .unitscan Thragomm
+step
+    #completewith next
+    .goto Loch Modan,54.7,38.3,200 >> Travel to the island located in the middle of The Loch
+step
     .goto Loch Modan,58.86,38.32,80,0
     .goto Loch Modan,54.80,40.02,60,0
     .goto Loch Modan,54.16,35.79,60,0
@@ -224,6 +241,13 @@ step
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
+step
+    #completewith next
+    +|cRXP_WARN_Be careful not to run into the|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! It's an elite pack of 2 |cRXP_ENEMY_Orcs|r and a |cRXP_ENEMY_Tauren|r who patrol the east side of The Loch (the line on your map)|r
+    .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
+    .unitscan Haren Swifthoof
+    .unitscan Gradok
+    .unitscan Thragomm
 step
     #completewith next
     .goto Loch Modan,64.89,66.66,80 >> Travel to Ironband's Excavation Site
@@ -314,6 +338,7 @@ step
     >>Kill |cRXP_ENEMY_Mo'grosh Ogres|r, |cRXP_ENEMY_Mo'grosh Enforcers|r and |cRXP_ENEMY_Mo'grosh Brutes|r
     >>|cRXP_ENEMY_Mo'grosh Brutes|r |cRXP_WARN_are only found inside the Caves. It is recommended you don't enter the northeastern cave, and just kill them in the 2 other Mini-Caves|r
     .complete 255,1 -- Mo'grosh Ogre slain (4)
+    .mob +Mo'grosh Ogre
     .goto Loch Modan,73.87,29.64,60,0
     .goto Loch Modan,73.57,25.15,60,0
     .goto Loch Modan,73.61,20.23,60,0
@@ -321,6 +346,7 @@ step
     .goto Loch Modan,68.86,28.05,60,0
     .goto Loch Modan,70.51,23.73
     .complete 255,3 -- Mo'grosh Enforcer slain (4)
+    .mob +Mo'grosh Enforcer
     .goto Loch Modan,73.87,29.64,60,0
     .goto Loch Modan,73.57,25.15,60,0
     .goto Loch Modan,73.61,20.23,60,0
@@ -333,9 +359,14 @@ step
     .goto Loch Modan,68.63,19.49,25,0
     .goto Loch Modan,74.84,25.08
     .isOnQuest 255
-    .mob Mo'grosh Ogre
-    .mob Mo'grosh Brute
-    .mob Mo'grosh Enforcer
+    .mob +Mo'grosh Brute
+step
+    #completewith next
+    +|cRXP_WARN_Be careful not to run into the|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! It's an elite pack of 2 |cRXP_ENEMY_Orcs|r and a |cRXP_ENEMY_Tauren|r who patrol the east side of The Loch (the line on your map)|r
+    .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
+    .unitscan Haren Swifthoof
+    .unitscan Gradok
+    .unitscan Thragomm
 step
     #completewith FINISHED
     .goto Loch Modan,36.77,46.20,150 >> Travel to Thelsamar

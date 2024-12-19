@@ -33,6 +33,7 @@ step
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
+    .mob Mottled Worg
     .unitscan Gorefang
 step
     .goto Silverpine Forest,56.25,10.27,30,0
@@ -59,6 +60,7 @@ step
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
+    .mob Mottled Worg
     .unitscan Gorefang
 step
     #completewith next
@@ -312,6 +314,7 @@ step << Hunter
     .money <0.2633
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.5
+    .equip 18,2515
 step << Hunter/Rogue
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandre|r
@@ -557,9 +560,9 @@ step
     .turnin 447 >>Turn in A Recipe For Death
     .goto Undercity,48.84,69.25
     .turnin 1359 >> Turn in Zinge's Delivery
-    .goto Undercity,50.16,67.97
     .accept 1358 >> Accept Sample for Helbrim
     .target Master Apothecary Faranell
+    .goto Undercity,50.16,67.97
     .target Apothecary Zinge
     .solo
 step
@@ -568,8 +571,8 @@ step
     .accept 450 >>Accept A Recipe For Death
     .goto Undercity,48.84,69.25
     .turnin 1359 >> Turn in Zinge's Delivery
-    .goto Undercity,50.16,67.97
     .accept 1358 >> Accept Sample for Helbrim
+    .goto Undercity,50.16,67.97
     .target Master Apothecary Faranell
     .target Apothecary Zinge
     .group
@@ -904,6 +907,7 @@ step << Hunter
     .money <0.2633
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.5
+    .equip 18,2515
     .group
 step << Druid
     #completewith next

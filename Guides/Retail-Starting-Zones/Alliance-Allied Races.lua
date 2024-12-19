@@ -115,7 +115,7 @@ step << !DK
     .target Lulana << Mechagnome
 step << DarkIronDwarf !DK
     .goto 84,62.16,30.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r. in front of the |cRXP_PICK_Hero's Call Board|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r in front of the |cRXP_PICK_Hero's Call Board|r.
     .accept 46727 >>Accept Tides of War
     .isQuestTurnedIn 51486
     .target Hero's Herald
@@ -173,7 +173,7 @@ step << !DK
     .goto 84,67.1,83.44,25,0
     .goto 84,69.69,84.78,25,0
     .goto 37,41.71,64.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r. |cRXP_WARN_in Goldshire|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cRXP_WARN_in Goldshire|r.
     .fp >>Get the Goldshire Flight Path
     .target Bartlett the Brave
     .nodmf
@@ -184,7 +184,7 @@ step << DK
     .target The Lich King
     .zoneskip 84
 step << DK
-    >>Use the [Extra Action Button] |cRXP_WARN_infront of|r. |cRXP_FRIENDLY_The Lich King|r.
+    >>Use the [Extra Action Button] |cRXP_WARN_infront of|r |cRXP_FRIENDLY_The Lich King|r.
     .complete 58877,1 --1/1 Fealty sworn
     .target The Lich King
     .isOnQuest 58877
@@ -251,7 +251,7 @@ step << DK
     .target Highlord Darion Mograine
 step << DK
     .goto 23,83.19,48.90
-    >>Step onto |cRXP_WARN_the purple circle|r. to teleport.
+    >>Step onto |cRXP_WARN_the purple circle|r to teleport.
     .isQuestTurnedIn 58877 --x New Type of DK Check
     .complete 58989,1 --1/1 Use the portal to the 2nd floor
 step << DK
@@ -262,7 +262,7 @@ step << DK
     .use 53428
 step << DK
     .isOnQuest 58989
-    .goto 23,83.25,49.02,5 >>|cRXP_WARN_Step onto |cRXP_WARN_the purple circle|r. to teleport again|r.
+    .goto 23,83.25,49.02,5 >>|cRXP_WARN_Step onto |cRXP_WARN_the purple circle|r to teleport again|r.
 step << DK
     .goto 23,82.02,46.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.

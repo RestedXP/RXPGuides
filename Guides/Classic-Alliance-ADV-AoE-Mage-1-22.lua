@@ -476,11 +476,11 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bernice|r and |cRXP_FRIENDLY_Ma|r
     .accept 85 >> Accept Lost Necklace
+    .target +"Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.486,84.253
     .accept 88 >> Accept Princess Must Die!
 	.goto Elwynn Forest,34.660,84.482
-    .target "Auntie" Bernice Stonefield
-    .target Ma Stonefield
+    .target +Ma Stonefield
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Kobold Candles|r
@@ -532,12 +532,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bernice|r and then |cRXP_FRIENDLY_Gramma|r inside
     .turnin 86 >> Turn in Pie for Billy
     .accept 84 >> Accept Back to Billy
+    .target +"Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.486,84.253
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
+    .target +Gramma Stonefield
     .goto Elwynn Forest,34.94,83.86
-    .target "Auntie" Bernice Stonefield
-    .target Gramma Stonefield
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Kobold Candles|r
@@ -694,9 +694,9 @@ step
     .goto Elwynn Forest,71.61,60.82,50,0
     >>Kill all |cRXP_ENEMY_Young Forest Bears|r you see and |cRXP_ENEMY_Prowlers|r
     .complete 52,2 --Kill Young Forest Bear (x5)
+    .unitscan +Young Forest Bear
     .complete 52,1 --Kill Prowler (x8)
-	.unitscan Young Forest Bear
-	.mob Prowler
+	.mob +Prowler
 step
     .goto Elwynn Forest,72.65,60.33
 	>>Click the |cRXP_PICK_half-eaten body|r on the ground
@@ -708,9 +708,9 @@ step
     .goto Elwynn Forest,78.78,60.94,70,0
     >>Kill all |cRXP_ENEMY_Young Forest Bears|r you see and |cRXP_ENEMY_Prowlers|r
     .complete 52,2 --Kill Young Forest Bear (x5)
+    .unitscan +Young Forest Bear
     .complete 52,1 --Kill Prowler (x8)
-	.unitscan Young Forest Bear
-	.mob Prowler
+	.mob +Prowler
 step
     .goto Elwynn Forest,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raelen|r
@@ -868,11 +868,11 @@ step
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
     .accept 109 >> Accept Report to Gryan Stoutmantle
+    .target +Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .accept 1097 >> Accept Elmore's Task
-    .goto Elwynn Forest,41.706,65.544
-    .target Marshal Dughan
-    .target Smith Argus
+    .target +Smith Argus
+    .goto Elwynn Forest,41.706,65.544   
 step
     .goto Elwynn Forest,43.16,89.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell|r inside
@@ -881,11 +881,11 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma|r and |cRXP_FRIENDLY_Bernice|r
     .turnin 88,3 >> Turn in Princess Must Die!
+    .target +Ma Stonefield
     .goto Elwynn Forest,34.660,84.482
     .turnin 87 >> Turn in Goldtooth
     .goto Elwynn Forest,34.486,84.253
-    .target Ma Stonefield
-    .target "Auntie" Bernice Stonefield
+    .target +"Auntie" Bernice Stonefield
 step
 #loop
 	.line Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
@@ -917,22 +917,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna|r
     .accept 64 >> Accept The Forgotten Heirloom
     .turnin 184 >> Turn in Furlbrow's Deed
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
     .goto Westfall,59.91,19.41
-    .target Farmer Furlbrow
-    .target Verna Furlbrow
+    .target +Verna Furlbrow
     .isOnQuest 184
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna|r
     .accept 64 >> Accept The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
+    .target +Verna Furlbrow
     .goto Westfall,59.91,19.41
-    .target Farmer Furlbrow
-    .target Verna Furlbrow
 step
     #completewith next
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for |cRXP_LOOT_Handfuls of Oats|r
@@ -941,13 +941,13 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r and then |cRXP_FRIENDLY_Salma|r inside
     .accept 9 >>Accept The Killing Fields
+    .target +Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
+    .target +Salma Saldean
     .goto Westfall,56.42,30.52
-    .target Farmer Saldean
-    .target Salma Saldean
 step
     #completewith next
     >>|cRXP_WARN_Be VERY careful of |cRXP_ENEMY_Harvest Watchers|r and |cRXP_ENEMY_Harvest Golems|r en route|r
@@ -956,14 +956,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan|r, |cRXP_FRIENDLY_Danuvin|r, and then |cRXP_FRIENDLY_Lewis|r inside
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .accept 12 >> Accept The People's Militia
+    .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .accept 102 >> Accept Patrolling Westfall
+    .target +Captain Danuvin
     .goto Westfall,56.42,47.62
     .accept 6181 >> Accept A Swift Message
     .goto Westfall,57.002,47.169
-	.target Gryan Stoutmantle
-	.target Captain Danuvin
-    .target Quartermaster Lewis
+    .target +Quartermaster Lewis
 step
     .goto Westfall,56.56,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -1242,11 +1242,11 @@ step
     #requires Ghilm
     >>Talk to |cRXP_FRIENDLY_Mehr|r and |cRXP_FRIENDLY_Stonebrow|r
     .accept 433 >> Accept The Public Servant
+    .target +Senator Mehr Stonehallow
     .goto Dun Morogh,68.67,55.97
     .accept 432 >> Accept Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
-    .target Senator Mehr Stonehallow
-    .target Foreman Stonebrow
+    .target +Foreman Stonebrow
 step
     #completewith Bonesnappers
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
@@ -1291,11 +1291,11 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Stonebrow|r and |cRXP_FRIENDLY_Mehr|r
     .turnin 432 >> Turn in Those Blasted Troggs!
+    .target +Foreman Stonebrow
     .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
     .goto Dun Morogh,68.67,55.97
-    .target Foreman Stonebrow
-    .target Senator Mehr Stonehallow
+    .target +Senator Mehr Stonehallow
 step
     #requires Frast
     .goto Dun Morogh,69.33,55.46
@@ -1515,11 +1515,11 @@ step
     .turnin 179,3 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3114 >> Accept Glyphic Memorandum
+    .target +Sten Stoutarm
     .goto Dun Morogh,29.927,71.201
     .accept 170 >> Accept A New Threat
     .goto Dun Morogh,29.71,71.25
-    .target Sten Stoutarm
-    .target Balir Frosthammer
+    .target +Balir Frosthammer
 step
     #xprate >1.09
     .goto Dun Morogh,29.927,71.201
@@ -1543,9 +1543,9 @@ step
     .goto 1426,20.627,70.415,0
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
+    .mob +Burly Rockjaw Trogg
     .isOnQuest 170
 step
     #season 2
@@ -1608,9 +1608,9 @@ step
     .goto 1426,20.627,70.415,0
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg 
+    .mob +Burly Rockjaw Trogg 
     .isOnQuest 170
 step
     #label Talin
@@ -1786,9 +1786,9 @@ step
     .waypoint 1426,29.280,75.500,50,0
     >>|cRXP_WARN_Kill ALL |cRXP_ENEMY_Rockjaw Troggs|r you see and|r |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
+    .mob +Burly Rockjaw Trogg
     .isOnQuest 170
 step
     #label StolenJ
@@ -1867,15 +1867,15 @@ step
     >>Talk to |cRXP_FRIENDLY_Stonegear|r, |cRXP_FRIENDLY_Beldin|r, and |cRXP_FRIENDLY_Loslor|r
     >>|cRXP_WARN_Kite |cRXP_ENEMY_Young Black Bears|r to the |cRXP_FRIENDLY_Ironforge Mountaineer|r if you pulled any (make sure to deal 51%+ damage to get credit)|r
     .accept 313 >> Accept The Grizzled Den
+    .target +Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
     .turnin 400 >> Turn in Tools for Steelgrill
+    .target +Beldin Steelgrill
     .goto Dun Morogh,50.45,49.09
     .accept 5541 >> Accept Ammo for Rumbleshot
     .vendor >> Vendor Trash
     .goto Dun Morogh,50.084,49.420
-    .target Pilot Stonegear
-    .target Beldin Steelgrill
-    .target Loslor Rudge
+    .target +Loslor Rudge
     .isQuestAvailable 312
 step
     #completewith next
@@ -2239,11 +2239,11 @@ step
     .turnin 318 >> Turn in Evershine
     .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
+    .target +Rejold Barleybrew
     .goto Dun Morogh,30.19,45.73
     .accept 310 >> Accept Bitter Rivals
     .goto Dun Morogh,30.186,45.531
-    .target Rejold Barleybrew
-    .target Marleth Barleybrew
+    .target +Marleth Barleybrew
 step
     .goto Dun Morogh,30.45,46.01,0,0
     >>Talk to |cRXP_FRIENDLY_Keeg|r
@@ -2272,12 +2272,13 @@ step
     >>|cRXP_WARN_Focus on the|r |cRXP_ENEMY_Snow Leopards|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage), and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
+    .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
+    .mob +Elder Crag Boar
     .complete 319,3 --Kill Snow Leopard (x8)
+    .mob +Snow Leopard
     .complete 384,1 --Crag Boar Rib (6)
-    .mob Ice Claw Bear
-    .mob Elder Crag Boar
-    .mob Snow Leopard
+    .mob +Elder Crag Boar
     .isQuestAvailable 384
 step
     #completewith CaveLS
@@ -2287,11 +2288,11 @@ step
     >>|cRXP_WARN_Focus on the|r |cRXP_ENEMY_Snow Leopards|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage), and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
+    .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
+    .mob +Elder Crag Boar
     .complete 319,3 --Kill Snow Leopard (x8)
-    .mob Ice Claw Bear
-    .mob Elder Crag Boar
-    .mob Snow Leopard
+    .mob +Snow Leopard
     .isQuestTurnedIn 384
 step << skip
     #completewith next
@@ -2460,13 +2461,14 @@ step
     >>|cRXP_WARN_Remember to kite an |cRXP_ENEMY_Ice Claw Bear|r or |cRXP_ENEMY_Snow Leopards|r back to the questgiver if possible|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage), and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
+    .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
+    .mob +Elder Crag Boar
     .complete 319,3 --Kill Snow Leopard (x8)
+    .mob +Snow Leopard
     .complete 384,1 --Crag Boar Rib (6)
     .disablecheckbox
-    .mob Ice Claw Bear
     .mob Elder Crag Boar
-    .mob Snow Leopard
     .isQuestAvailable 384
 step
     .goto Dun Morogh,32.11,49.72,40,0
@@ -2485,11 +2487,11 @@ step
     >>|cRXP_WARN_Remember to kite an |cRXP_ENEMY_Ice Claw Bear|r or |cRXP_ENEMY_Snow Leopards|r back to the questgiver if possible|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage), and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
+    .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
+    .mob +Elder Crag Boar
     .complete 319,3 --Kill Snow Leopard (x8)
-    .mob Ice Claw Bear
-    .mob Elder Crag Boar
-    .mob Snow Leopard
+    .mob +Snow Leopard
     .isQuestTurnedIn 384
 step
     >>Talk to |cRXP_FRIENDLY_Rejold|r and |cRXP_FRIENDLY_Marleth|r
@@ -2593,11 +2595,11 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Bellowfiz|r and |cRXP_FRIENDLY_Stonegear|r
     .turnin 320,2 >> Turn in Return to Bellowfiz
+    .target +Pilot Bellowfiz
     .goto Dun Morogh,49.426,48.410
     .turnin 313 >> Turn in The Grizzled Den
     .goto Dun Morogh,49.622,48.612
-    .target Pilot Bellowfiz
-    .target Pilot Stonegear
+    .target +Pilot Stonegear
 step
     #completewith next
     +|cRXP_WARN_Deal 51%+ damage to nearby |cRXP_ENEMY_Winter Wolves|r, then pull them to the |cRXP_FRIENDLY_Ironforge Mountaineers|r that CAN be patrolling on the road to kill them more efficiently|r
@@ -2682,11 +2684,11 @@ step
     #requires Ghilm
     >>Talk to |cRXP_FRIENDLY_Mehr|r and |cRXP_FRIENDLY_Stonebrow|r
     .accept 433 >> Accept The Public Servant
+    .target +Senator Mehr Stonehallow
     .goto Dun Morogh,68.67,55.97
     .accept 432 >> Accept Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
-    .target Senator Mehr Stonehallow
-    .target Foreman Stonebrow
+    .target +Foreman Stonebrow
 step
     #completewith Bonesnappers
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
@@ -2730,11 +2732,11 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Stonebrow|r and |cRXP_FRIENDLY_Mehr|r
     .turnin 432 >> Turn in Those Blasted Troggs!
+    .target +Foreman Stonebrow
     .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
     .goto Dun Morogh,68.67,55.97
-    .target Foreman Stonebrow
-    .target Senator Mehr Stonehallow
+    .target +Senator Mehr Stonehallow
 step
     #requires Frast
     .goto Dun Morogh,69.33,55.46
@@ -3178,11 +3180,11 @@ step
     >>Talk to |cRXP_FRIENDLY_Thundris|r and |cRXP_FRIENDLY_Alanndarian|r
     .accept 954 >>Accept Bashal'Aran
     .accept 958 >>Accept Tools of the Highborne
+    .target +Thundris Windweaver
     .goto Darkshore,37.39,40.13
     .accept 2178 >>Accept Easy Strider Living
     .goto Darkshore,37.69,40.66
-    .target Thundris Windweaver
-    .target Alanndarian Nightsong
+    .target +Alanndarian Nightsong
 	.skill cooking,<10,1
 step
     #requires DalmondBags
@@ -3195,11 +3197,11 @@ step
     #requires DalmondBags
     >>Talk to |cRXP_FRIENDLY_Terenthis|r and |cRXP_FRIENDLY_Tharnariun|r
     .accept 984 >>Accept How Big a Threat?
+    .target +Terenthis
     .goto Darkshore,39.37,43.49
     .accept 2118 >>Accept Plagued Lands
     .goto Darkshore,38.84,43.41
-    .target Terenthis
-    .target Tharnariun Treetender
+    .target +Tharnariun Treetender
  step
     .goto Darkshore,36.77,44.28
     >>Talk to |cRXP_FRIENDLY_Laird|r
@@ -3411,12 +3413,12 @@ step
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
+    .target +Terenthis
     .goto Darkshore,39.37,43.49
     .turnin 2118 >> Turn in Plagued Lands
     .accept 2138 >> Accept Cleansing of the Infected
     .goto Darkshore,38.84,43.41
-    .target Terenthis
-    .target Tharnariun Treetender
+    .target +Tharnariun Treetender
 step
     #sticky
     #label Gwennyth
@@ -3738,11 +3740,11 @@ step << skip
 step
     >>Talk to |cRXP_FRIENDLY_Terenthis|r and |cRXP_FRIENDLY_Tharnariun|r
     .accept 984 >>Accept How Big a Threat?
+    .target +Terenthis
     .goto Darkshore,39.37,43.49,-1
     .accept 2118 >>Accept Plagued Lands
     .goto Darkshore,38.84,43.41,-1
-    .target Terenthis
-    .target Tharnariun Treetender
+    .target +Tharnariun Treetender
 step << skip
     #completewith next
     .goto Darkshore,37.44,43.12,20,0
@@ -3768,11 +3770,11 @@ step
     >>Talk to |cRXP_FRIENDLY_Thundris|r and |cRXP_FRIENDLY_Alanndarian|r
     .accept 954 >>Accept Bashal'Aran
     .accept 958 >>Accept Tools of the Highborne
+    .target +Thundris Windweaver
     .goto Darkshore,37.39,40.13,-1
     .accept 2178 >>Accept Easy Strider Living
     .goto Darkshore,37.69,40.66,-1
-    .target Thundris Windweaver
-    .target Alanndarian Nightsong
+    .target +Alanndarian Nightsong
 	.skill cooking,<10,1
 step
     .goto Darkshore,46.71,34.64
@@ -4176,21 +4178,23 @@ step
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mountain Boar
-    .mob Elder Black Bear
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .goto Loch Modan,26.67,56.94
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Trogg Stone Teeth|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stonesplinter Scouts|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Ranged Cast: Deals 14-20 damage)|r
     >>|cRXP_WARN_This is a hyperspawn area. You should not need to move from here|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .mob +Stonesplinter Scout
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
-    .mob Stonesplinter Trogg
-    .mob Stonesplinter Scout
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
 step
     .goto Loch Modan,22.071,73.127
     >>Talk to |cRXP_FRIENDLY_Cobbleflint|r
@@ -4224,11 +4228,11 @@ step
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mountain Boar
-    .mob Elder Black Bear
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .goto Loch Modan,23.57,17.93,30 >>Travel to Algaz Station
     .isOnQuest 1339
@@ -4255,11 +4259,11 @@ step
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mountain Boar
-    .mob Elder Black Bear
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     #completewith Exit
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Tunnel Rat Ears|r
@@ -4330,11 +4334,11 @@ step
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mountain Boar
-    .mob Elder Black Bear
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .goto Loch Modan,23.57,17.93,30 >>Travel to Algaz Station
     .isOnQuest 307
@@ -4375,11 +4379,11 @@ step
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mountain Boar
-    .mob Elder Black Bear
-    .mob Forest Lurker
+    .mob +Forest Lurker
     .xp <13+5500,1 << Gnome
 step
     #completewith Boast
@@ -4389,32 +4393,31 @@ step
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mangy Mountain Boar
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Grizzled Black Bear
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mangy Mountain Boar
-    .mob Mountain Boar
-    .mob Grizzled Black Bear
-    .mob Elder Black Bear
-    .mob Cliff Lurker
-    .mob Forest Lurker
+    .mob +Cliff Lurker
+    .mob +Forest Lurker
     .xp >13+5500,1 << Gnome
 step
     .goto Loch Modan,37.18,47.13,10,0
     >>Talk to |cRXP_FRIENDLY_Brock|r and |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_They can be inside or outside the building|r
     .turnin 6392 >>Turn in Return to Brock << Gnome
+    .target +Brock Stoneseeker
     .goto Loch Modan,37.02,47.80
     .accept 436 >> Accept Ironband's Excavation
     .goto Loch Modan,37.23,47.37
-    .target Brock Stoneseeker
-    .target Jern Hornhelm
+    .target +Jern Hornhelm
     .xp >13+5500,1 << Gnome
 step
     .goto Loch Modan,37.23,47.37
     >>Talk to |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_He can be inside or outside the building|r
     .accept 436 >> Accept Ironband's Excavation
-    .target Brock Stoneseeker
     .target Jern Hornhelm
     .xp >13+6550,1 << Gnome
     .isQuestTurnedIn 6392
@@ -4475,11 +4478,11 @@ step << Gnome
 step << Gnome
     >>Talk to |cRXP_FRIENDLY_Ironband|r and |cRXP_FRIENDLY_Magmar|r
     .accept 298 >> Accept Excavation Progress Report
+    .target +Prospector Ironband
     .goto Loch Modan,65.94,65.62
     .turnin 436 >> Turn in Ironband's Excavation
     .goto Loch Modan,64.89,66.66
-    .target Prospector Ironband
-    .target Magmar Fellhew
+    .target +Magmar Fellhew
     .isOnQuest 436
 step << Gnome
     #label ExcavationP
@@ -4552,14 +4555,14 @@ step << Gnome
     >>|cRXP_WARN_Remember to kite them to |cRXP_FRIENDLY_Mountaineers|r if needed|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mountain Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mangy Mountain Boar
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Grizzled Black Bear
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Mangy Mountain Boar
-    .mob Mountain Boar
-    .mob Grizzled Black Bear
-    .mob Elder Black Bear
-    .mob Cliff Lurker
-    .mob Forest Lurker
+    .mob +Cliff Lurker
+    .mob +Forest Lurker
 step << Gnome
 #loop
 	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
@@ -4598,23 +4601,23 @@ step << Gnome
     >>Talk to |cRXP_FRIENDLY_Brock|r and |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_They can be inside or outside the building|r
     .turnin 6392 >>Turn in Return to Brock
+    .target +Brock Stoneseeker
     .goto Loch Modan,37.02,47.80
     .turnin 298 >> Turn in Excavation Progress Report
     .accept 301 >> Accept Report to Ironforge
     .goto Loch Modan,37.23,47.37
-    .target Brock Stoneseeker
-    .target Jern Hornhelm
+    .target +Jern Hornhelm
     .isOnQuest 298
 step << Gnome
     .goto Loch Modan,37.18,47.13,10,0
     >>Talk to |cRXP_FRIENDLY_Brock|r and |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_They can be inside or outside the building|r
     .turnin 6392 >>Turn in Return to Brock
+    .target Brock Stoneseeker
     .goto Loch Modan,37.02,47.80
     .accept 301 >> Accept Report to Ironforge
     .goto Loch Modan,37.23,47.37
-    .target Brock Stoneseeker
-    .target Jern Hornhelm
+    .target +Jern Hornhelm
     .isQuestTurnedIn 298
 step << Gnome
     .goto Loch Modan,37.18,47.13,10,0
@@ -4940,11 +4943,11 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Barithras|r and |cRXP_FRIENDLY_Glynda|r
     .accept 947 >>Accept Cave Mushrooms
+    .target +Barithras Moonshade
     .goto Darkshore,37.32,43.64
     .accept 4811 >>Accept The Red Crystal
     .goto Darkshore,37.68,43.38
-    .target Barithras Moonshade
-    .target Sentinel Glynda Nal'Shea
+    .target +Sentinel Glynda Nal'Shea
 step
     #label DeepO
     .goto Darkshore,38.11,41.16
@@ -5165,9 +5168,9 @@ step
     >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blackwood Pathfinders|r cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds), and |cRXP_ENEMY_Blackwood Windtalkers|r cast|r |T136022:0|t[Gust of Wind] |cRXP_WARN_(melee-range aoe stun)|r
     .complete 985,1 --Blackwood Pathfinder (8)
+    .mob +Blackwood Pathfinder
     .complete 985,2 --Blackwood Windtalker (5)
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
+    .mob +Blackwood Windtalker
 step
     #completewith Auberdine
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -5306,16 +5309,16 @@ step
     >>Talk to |cRXP_FRIENDLY_Tharnariun|r, |cRXP_FRIENDLY_Terenthis|r, and then |cRXP_FRIENDLY_Elissa|r upstairs
     .turnin 2138 >>Turn in Cleansing of the Infected
     .accept 2139 >>Accept Tharnariun's Hope
+    .target +Tharnariun Treetender
     .goto Darkshore,38.84,43.42
     .turnin 985 >> Turn in How Big a Threat?
     .accept 986 >> Accept A Lost Master
+    .target +Terenthis
     .goto Darkshore,39.37,43.49
     .accept 965 >>Accept The Tower of Althalaxx
     .goto Darkshore,39.27,43.13,8,0
     .goto Darkshore,39.04,43.55
-    .target Tharnariun Treetender
-    .target Terenthis
-    .target Sentinel Elissa Starbreeze
+    .target +Sentinel Elissa Starbreeze
 step << Gnome
     #completewith next
     +Equip the |T132491:0|t[Wise Man's Belt]
@@ -5534,14 +5537,14 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Glynda|r, |cRXP_FRIENDLY_Barithras|r, and the |cRXP_PICK_Wanted Poster|r
     .turnin 4813,2 >>Turn in The Fragments Within
+    .target +Sentinel Glynda Nal'Shea
     .goto Darkshore,37.68,43.38
     .turnin 947 >>Turn in Cave Mushrooms
     .accept 948 >>Accept Onu
+    .target +Barithras Moonshade
     .goto Darkshore,37.32,43.64
     .accept 4740 >> Accept WANTED: Murkdeep!
     .goto Darkshore,37.22,44.22
-    .target Sentinel Glynda Nal'Shea
-    .target Barithras Moonshade
 step
     .goto Darkshore,36.77,44.28
     >>Talk to |cRXP_FRIENDLY_Laird|r
@@ -5706,12 +5709,12 @@ step
     >>Talk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna|r
     .accept 64 >> Accept The Forgotten Heirloom
     .accept 109 >> Accept Report to Gryan Stoutmantle
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 36 >> Accept Westfall Stew
     .accept 151 >> Accept Poor Old Blanchy
     .goto Westfall,59.91,19.41
-    .target Farmer Furlbrow
-    .target Verna Furlbrow
+    .target +Verna Furlbrow
 step << Gnome
     #completewith Gryan
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for |cRXP_LOOT_Handfuls of Oats|r
@@ -5720,13 +5723,13 @@ step << Gnome
 step
     >>Talk to |cRXP_FRIENDLY_Farmer Saldean|r and then |cRXP_FRIENDLY_Salma|r inside
     .accept 9 >> Accept The Killing Fields
+    .target +Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
     .goto Westfall,56.42,30.52
-    .target Farmer Saldean
-    .target Salma Saldean
+    .target +Salma Saldean
 step << Gnome
     #completewith Gryan
     .goto Westfall,53.54,31.72,60,0
@@ -5742,10 +5745,11 @@ step << Gnome
     >>AoE |cRXP_ENEMY_Young Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Livers|r and |cRXP_LOOT_Goretusk Snouts|r
     >>AoE |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
     .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob +Young Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
-    .mob Young Goretusk
-    .mob Young Fleshripper
+    .mob +Young Fleshripper
 step
     #label Gryan << Gnome
 	>> Talk to |cRXP_FRIENDLY_Gryan|r and |cRXP_FRIENDLY_Danuvin|r << Gnome
@@ -5753,14 +5757,14 @@ step
     .turnin 109 >> Turn in Report to Gryan Stoutmantle << Gnome
     .accept 65 >> Accept The Defias Brotherhood
     .accept 12 >> Accept The People's Militia << Gnome
+    .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin 6285 >> Turn in Return to Lewis << Human
     .goto Westfall,57.002,47.169 << Human
     .accept 102 >> Accept Patrolling Westfall << Gnome
     .goto Westfall,56.42,47.62 << Gnome
-	.target Gryan Stoutmantle
-	.target Captain Danuvin << Gnome
-    .target Quartermaster Lewis << Human
+	.target +Captain Danuvin << Gnome
+    .target +Quartermaster Lewis << Human
 step
     .goto Westfall,53.98,52.99
 	>>Talk to |cRXP_FRIENDLY_Galiaan|r
@@ -5839,10 +5843,11 @@ step
     >>AoE |cRXP_ENEMY_Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Livers|r and |cRXP_LOOT_Goretusk Snouts|r
     >>AoE |cRXP_ENEMY_Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
     .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob +Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Goretusk
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
-    .mob Goretusk
-    .mob Fleshripper
+    .mob +Fleshripper
 step
     #completewith Compass
     .goto Westfall,39.45,52.34,60,0
@@ -5981,12 +5986,15 @@ step
     >>AoE |cRXP_ENEMY_Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Livers|r and |cRXP_LOOT_Goretusk Snouts|r
     >>AoE |cRXP_ENEMY_Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
     .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob +Great Goretusk
+    .mob +Goretusk
+    .mob +Young Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Great Goretusk
+    .mob +Goretusk
+    .mob +Young Goretusk
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
-    .mob Great Goretusk
-    .mob Goretusk
-    .mob Young Goretusk
-    .mob Fleshripper
+    .mob +Fleshripper
 step
     #completewith next
     >>AoE |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |cRXP_LOOT_Red Leather Bandanas|r
@@ -6013,11 +6021,12 @@ step
     >>AoE |cRXP_ENEMY_Young Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Livers|r and |cRXP_LOOT_Goretusk Snouts|r
     >>AoE |cRXP_ENEMY_Fleshrippers|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
     .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob +Young Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
-    .mob Young Goretusk
-    .mob Fleshripper
-    .mob Young Fleshripper
+    .mob +Fleshripper
+    .mob +Young Fleshripper
 step
     .goto Westfall,44.14,26.66,60,0
     .goto Westfall,46.13,26.52,60,0
@@ -6026,10 +6035,12 @@ step
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Defias Trappers|r cast|r |T132090:0|t[Backstab] |cRXP_WARN_and|r |T132149:0|t[Net]
     >>|cRXP_WARN_Skip this step if you're not at least 10/15 on both |cRXP_ENEMY_Defias Trappers|r and|r |cRXP_ENEMY_Defias Smugglers|r
     .complete 153,1,1 --Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
     .complete 12,1 --Defias Trapper (15)
+    .mob +Defias Trapper
     .complete 12,2 --Defias Smuggler (15)
-    .mob Defias Trapper
-    .mob Defias Smuggler
+    .mob +Defias Smuggler
 step
     #completewith next
     .goto Westfall,48.74,20.79,60,0
@@ -6083,23 +6094,25 @@ step
     #label Furlbrows
     >>Talk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna|r
     .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .turnin 151 >> Turn in Poor Old Blanchy
     .goto Westfall,59.91,19.41
-    .target Farmer Furlbrow
-    .target Verna Furlbrow
+    .target +Verna Furlbrow
 step
     .goto Westfall,59.72,34.62,80,0
     .goto Westfall,60.24,47.40
     >>AoE |cRXP_ENEMY_Goretusks|r and |cRXP_ENEMY_Young Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Livers|r and |cRXP_LOOT_Goretusk Snouts|r
     >>AoE |cRXP_ENEMY_Fleshrippers|r |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
     .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob +Goretusk
+    .mob +Young Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Goretusk
+    .mob +Young Goretusk
     .collect 729,3,38,1 --Stringy Vulture Meat (3)
-    .mob Goretusk
-    .mob Young Goretusk
-    .mob Fleshripper
-    .mob Young Fleshripper
+    .mob +Fleshripper
+    .mob +Young Fleshripper
 step
     .goto Westfall,52.84,30.46,60,0
     .goto Westfall,51.70,23.16
@@ -6118,20 +6131,20 @@ step
     >>Talk to |cRXP_FRIENDLY_Farmer Saldean|r and then |cRXP_FRIENDLY_Salma|r inside
     .turnin 9,1 >> Turn in The Killing Fields
     .vendor >> Vendor Trash
+    .target +Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 22 >> Turn in Goretusk Liver Pie
     .turnin 38 >> Turn in Westfall Stew
     .goto Westfall,56.42,30.52
-    .target Farmer Saldean
-    .target Salma Saldean
+    .target +Salma Saldean
 step
 	>> Talk to |cRXP_FRIENDLY_Gryan|r and |cRXP_FRIENDLY_Danuvin|r
     .turnin 12 >> Turn in The People's Militia
+    .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin 102,1 >> Turn in Patrolling Westfall
     .goto Westfall,56.42,47.62
-	.target Gryan Stoutmantle
-	.target Captain Danuvin
+	.target +Captain Danuvin
     .isQuestComplete 12
 step
     .goto Westfall,56.42,47.62
@@ -6932,11 +6945,11 @@ step
     .turnin 4731 >>Turn in Beached Sea Turtle
     .turnin 4732 >>Turn in Beached Sea Turtle
     .turnin 4733 >>Turn in Beached Sea Creature
+    .target +Gwennyth Bly'Leggonde
     .goto Darkshore,36.62,45.60
     .turnin 1138,2 >>Turn in Fruit of the Sea
     .goto Darkshore,36.09,44.93
-    .target Gwennyth Bly'Leggonde
-    .target Gubber Blump
+    .target +Gubber Blump
 step
     .goto Darkshore,37.73,43.38
     >>Talk to |cRXP_FRIENDLY_Glynda|r
@@ -6946,11 +6959,11 @@ step
     >>Talk to |cRXP_FRIENDLY_Terenthis|r and |cRXP_FRIENDLY_Gershala|r
     .turnin 986 >>Turn in A Lost Master
     .accept 993 >>Accept A Lost Master
+    .target +Terenthis
     .goto Darkshore,39.37,43.48
     .turnin 3765 >> Turn in The Corruption Abroad
     .goto Darkshore,38.32,43.04
-    .target Terenthis
-    .target Gershala Nightwhisper
+    .target +Gershala Nightwhisper
 step
     .goto Darkshore,38.11,41.16
     >>Talk to |cRXP_FRIENDLY_Gorbold|r
@@ -7382,7 +7395,7 @@ step
     .target Viktori Prism'Antras
     .isQuestTurnedIn 174
 step
-    .goto Duskwood,79.78,48.06
+    .goto Duskwood,81.46,59.02
     >>Talk to |cRXP_FRIENDLY_Mary|r
     .turnin 175 >> Turn in Look To The Stars
     .accept 177 >> Accept Look To The Stars
@@ -7429,19 +7442,20 @@ step
     >>AoE |cRXP_ENEMY_Tarantulas|r. Loot them for |cRXP_LOOT_Crisp Spider Meat|r
     >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
+    .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
+    .mob +Great Goretusk
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
-    .mob Tarantula
-    .mob Great Goretusk
+    .mob +Great Goretusk
     .skill cooking,50,1
 step
     #completewith Gnolls
     >>AoE |cRXP_ENEMY_Tarantulas|r. Loot them for |cRXP_LOOT_Crisp Spider Meat|r
     >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
+    .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
-    .mob Tarantula
-    .mob Great Goretusk
+    .mob +Great Goretusk
     .skill cooking,<50,1
 step
     .goto Redridge Mountains,15.52,72.58,60,0
@@ -7481,13 +7495,13 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Marris|r and |cRXP_FRIENDLY_Oslow|r
     .accept 20 >>Accept Blackrock Menace
+    .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
     .accept 125 >>Accept The Lost Tools
     .turnin 345 >>Turn in Ink Supplies
     .accept 347 >>Accept Rethban Ore
     .goto Redridge Mountains,32.14,48.64
-    .target Marshal Marris
-    .target Foreman Oslow
+    .target +Foreman Oslow
 step
     .goto Redridge Mountains,29.89,47.36
     >>Talk to |cRXP_FRIENDLY_Karen|r
@@ -7580,19 +7594,20 @@ step
     >>AoE |cRXP_ENEMY_Tarantulas|r. Loot them for |cRXP_LOOT_Crisp Spider Meat|r
     >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
+    .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
+    .mob +Great Goretusk
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
-    .mob Tarantula
-    .mob Great Goretusk
+    .mob +Great Goretusk
     .skill cooking,50,1
 step
     #completewith Gnolls3
     >>AoE |cRXP_ENEMY_Tarantulas|r. Loot them for |cRXP_LOOT_Crisp Spider Meat|r
     >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
+    .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
-    .mob Tarantula
-    .mob Great Goretusk
+    .mob +Great Goretusk
     .skill cooking,<50,1
 step
     .goto Redridge Mountains,15.52,72.58,60,0
@@ -7617,9 +7632,9 @@ step
     >>AoE the |cRXP_ENEMY_Redridge Mongrels|r, |cRXP_ENEMY_Redridge Thrashers|r, and |cRXP_ENEMY_Redridge Poachers|r
     >>|cRXP_WARN_Remember to deadzone the|r |cRXP_ENEMY_Redridge Poachers|r
     .complete 246,1 --Redridge Mongrel (10)
+    .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
-    .mob Redridge Mongrel
-    .mob Redridge Poacher
+    .mob +Redridge Poacher
 step
     .goto Redridge Mountains,30.74,59.99
     >>Talk to |cRXP_FRIENDLY_Feldon|r
@@ -7822,10 +7837,11 @@ step
     >>AoE |cRXP_ENEMY_Redridge Bashers|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
     >>Mine the |cRXP_PICK_Copper Veins|r in the cave. Loot them for the |cRXP_LOOT_Rethban Ore|r
     .complete 347,1 --Rethban Ore (5)
+    .mob +Redridge Drudger
     .complete 89,1 --Iron Pike (5)
+    .mob +Redridge Basher
     .complete 89,2 --Iron Rivet (5)
-    .mob Redridge Drudger
-    .mob Redridge Basher
+    .mob +Redridge Basher
 step
 #loop
 	.line Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
@@ -7869,11 +7885,11 @@ step
     >>Talk to |cRXP_FRIENDLY_Marris|r and |cRXP_FRIENDLY_Oslow|r
     .turnin 20 >>Turn in Blackrock Menace
     .accept 19 >>Accept Tharil'zun
+    .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
     .turnin 89,1 >>Turn in The Everstill Bridge
     .goto Redridge Mountains,32.14,48.64
-    .target Marshal Marris
-    .target Foreman Oslow
+    .target +Foreman Oslow
 step
     .goto Redridge Mountains,30.94,47.24
     >>Talk to |cRXP_FRIENDLY_Verner|r

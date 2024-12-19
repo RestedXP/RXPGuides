@@ -26,19 +26,19 @@ step
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
     .goto Teldrassil,62.0,42.6
     .complete 456,1 --Kill Young Nightsaber (x7)
+    .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
-    .mob Young Nightsaber
-    .mob Young Thistle Boar
+    .mob +Young Thistle Boar
 step
     .xp 2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     .accept 4495 >> Accept A Good Friend
+    .target +Dirania Silvershine
     .goto Teldrassil,60.899,41.961
     .accept 458 >> Accept The Woodland Protector
 	.goto Teldrassil,59.924,42.474
-    .target Dirania Silvershine
-    .target Melithar Staghelm
+    .target +Melithar Staghelm
 step << Hunter
     #era
     .goto Teldrassil,59.8,34.1
@@ -90,9 +90,9 @@ step << !Hunter
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .mob +Young Nightsaber
     .complete 457,2 --Kill Thistle Boar (x7)
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .mob +Thistle Boar
 step << !Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
@@ -260,9 +260,9 @@ step << Hunter
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .mob +Young Nightsaber
     .complete 457,2 --Kill Thistle Boar (x7)
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .mob +Thistle Boar
 step
     #requires vial1
     #completewith next
@@ -317,11 +317,11 @@ step
     >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .mob +Nightsaber
     .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .mob +Strigid Owl
     .complete 488,3 --Collect Webwood Spider Silk (x3)
-    .mob Nightsaber
-    .mob Strigid Owl
-    .mob Webwood Lurker
+    .mob +Webwood Lurker
 step
     #sticky
 	#completewith spiderLegs
@@ -492,10 +492,12 @@ step
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     >>|cRXP_WARN_Save any|r |T132832:0|t[Small Eggs] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .mob +Nightsaber
     .goto Teldrassil,66.10,52.43,60,0
     .goto Teldrassil,61.95,61.07,50,0
     .goto Teldrassil,59.14,60.91
     .complete 488,2 --Collect Strigid Owl Feather (x3)
+    .mob +Strigid Owl
     .goto Teldrassil,66.10,52.43,60,0
     .goto Teldrassil,63.39,64.22,50,0
     .goto Teldrassil,59.14,60.91
@@ -503,9 +505,7 @@ step
     .goto Teldrassil,61.06,54.66,50,0
     .goto Teldrassil,60.17,59.62,50,0
     .goto Teldrassil,58.22,56.32
-    .mob Nightsaber
-    .mob Strigid Owl
-    .mob Webwood Lurker
+    .mob +Webwood Lurker
 step
     #era
     .goto Teldrassil,60.7,54.4
@@ -797,7 +797,7 @@ step << Hunter
     #label xp10
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
-step << Hunter
+step << Hunter skip
     #era/som--xpgate
     #sticky
     #label xp10

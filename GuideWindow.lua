@@ -651,9 +651,11 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeItems)
     table.wipe(addon.activeSpells)
     table.wipe(addon.inventoryManager.itemsToOpen)
+    table.wipe(addon.activeObjectives)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
+    local activeTargets = {}
 
     for i = 1, n - 1 do
         local step = guide.steps[i]
@@ -949,21 +951,32 @@ function addon.SetStep(n, n2, loopback)
                     end
                 end
             end
+
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
-                    tinsert(stepUnitscan, addon.GetCreatureName(t))
+                    if not activeTargets[t] then
+                        activeTargets[t] = true
+                        tinsert(stepUnitscan, addon.GetCreatureName(t))
+                    end
                 end
             end
             if element.mobs then
                 for _, t in ipairs(element.mobs) do
-                    tinsert(stepMobs, addon.GetCreatureName(t))
+                    if not activeTargets[t] then
+                        activeTargets[t] = true
+                        tinsert(stepMobs, addon.GetCreatureName(t))
+                    end
                 end
             end
             if element.targets then
                 for _, t in ipairs(element.targets) do
-                    tinsert(stepTargets, addon.GetCreatureName(t))
+                    if not activeTargets[t] then
+                        activeTargets[t] = true
+                        tinsert(stepTargets, addon.GetCreatureName(t))
+                    end
                 end
             end
+
             --local spacing = 0
 
         end
@@ -1419,7 +1432,10 @@ function addon.ProcessGuideTable(guide)
             --print(startAt,stopAt)
         end
         local newGuide = addon:FetchGuide(group,name)
-        if not newGuide then return end
+        if not newGuide then
+            print(format("RXPGuides - Error trying to include guide: %s\\%s",group,name))
+            return
+        end
         if not guideRef[newGuide] and guide ~= newGuide then
             guideRef[newGuide] = true
             ProcessSteps(newGuide,startAt,stopAt)

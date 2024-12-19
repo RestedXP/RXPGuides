@@ -9,20 +9,26 @@ addon.talents.RegisterGuide([[
 #hardcore
 
 
-level -- Endurance Training Rank 1
-	.talent 1,1,3,1
+level -- Improved Aspect of the Hawk Rank 1
+	.talent 1,1,2,1
 
-level -- Endurance Training Rank 2
-	.talent 1,1,3,2
+level -- Improved Aspect of the Hawk Rank 2
+	.talent 1,1,2,2
 
-level -- Endurance Training Rank 3
-	.talent 1,1,3,3
+level -- Improved Aspect of the Hawk Rank 3
+	.talent 1,1,2,3
 
-level -- Endurance Training Rank 4
-	.talent 1,1,3,4
+level -- Improved Aspect of the Hawk Rank 4
+	.talent 1,1,2,4
 
-level -- Endurance Training Rank 5
-	.talent 1,1,3,5
+level -- Improved Aspect of the Hawk Rank 5
+	.talent 1,1,2,5
+
+level -- Improved Revive Pet Rank 1
+	.talent 1,2,4,1
+
+level -- Improved Revive Pet Rank 2
+	.talent 1,2,4,2
 
 level -- Thick Hide Rank 1
 	.talent 1,2,3,1
@@ -32,12 +38,6 @@ level -- Thick Hide Rank 2
 
 level -- Thick Hide Rank 3
 	.talent 1,2,3,3
-
-level -- Improved Revive Pet Rank 1
-	.talent 1,2,4,1
-
-level -- Improved Revive Pet Rank 2
-	.talent 1,2,4,2
 
 level -- Bestial Swiftness
 	.talent 1,3,2,1
@@ -169,21 +169,27 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 
-level -- Endurance Training Rank 1
-	.talent 1,1,3,1
+level -- Improved Aspect of the Hawk Rank 1
+	.talent 1,1,2,1
 
-level -- Endurance Training Rank 2
-	.talent 1,1,3,2
+level -- Improved Aspect of the Hawk Rank 2
+	.talent 1,1,2,2
 
-level -- Endurance Training Rank 3
-	.talent 1,1,3,3
+level -- Improved Aspect of the Hawk Rank 3
+	.talent 1,1,2,3
 
-level -- Endurance Training Rank 4
-	.talent 1,1,3,4
+level -- Improved Aspect of the Hawk Rank 4
+	.talent 1,1,2,4
 
-level -- Endurance Training Rank 5
-	.talent 1,1,3,5
+level -- Improved Aspect of the Hawk Rank 5
+	.talent 1,1,2,5
 
+level -- Improved Revive Pet Rank 1
+	.talent 1,2,4,1
+
+level -- Improved Revive Pet Rank 2
+	.talent 1,2,4,2
+	
 level -- Thick Hide Rank 1
 	.talent 1,2,3,1
 
@@ -192,13 +198,7 @@ level -- Thick Hide Rank 2
 
 level -- Thick Hide Rank 3
 	.talent 1,2,3,3
-
-level -- Improved Revive Pet Rank 1
-	.talent 1,2,4,1
-
-level -- Improved Revive Pet Rank 2
-	.talent 1,2,4,2
-
+	
 level -- Bestial Swiftness
 	.talent 1,3,2,1
 

@@ -1,7 +1,6 @@
-## Interface: 40400
+## Interface: 40401
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
-## Notes-zhCN: TODO
 ## Author: RestedXP
 ## Version: @project-version@
 ## OptionalDeps: Questie, RXPGuides_Themes
@@ -41,8 +40,7 @@ HardcoreIntroUI.lua
 
 Guides/GuideList-cata.xml
 
-#Talents.lua
-#Guides/Talents/classic.xml
+Talents.lua
+Guides/Talents/cata.xml
 
-#CptStadicsVendorTreasures.lua
 ItemUpgrades.lua

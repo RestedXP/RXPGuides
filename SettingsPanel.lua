@@ -148,6 +148,7 @@ local settingsDBDefaults = {
         distanceBetweenPins = 1,
         worldMapPinBackgroundOpacity = 0.35,
         batchSize = 6,
+        updateFrequency = 75,
         phase = 6,
         xprate = 1,
         guideFontSize = 9,
@@ -189,7 +190,6 @@ local settingsDBDefaults = {
 
         -- Talents
         enableTalentGuides = true,
-        activeTalentGuide = nil,
         previewTalents = true,
         hightlightTalentPlan = true,
         upcomingTalentCount = 5,
@@ -208,6 +208,8 @@ local settingsDBDefaults = {
         emergencyThreshold = 0.2,
         enableEmergencyIconAnimations = true,
 
+        preLoadData = false,
+
         dungeons = {},
 
         framePositions = {},
@@ -215,7 +217,7 @@ local settingsDBDefaults = {
     }
 }
 
-function addon.settings:InitializeSettings()
+function addon.settings:InitializeDatabase()
     -- New character settings format
     -- Only set defaults for enabled = true
     if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
@@ -229,7 +231,9 @@ function addon.settings:InitializeSettings()
     settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
     loadedProfileKey = settingsDB.keys.profile
+end
 
+function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateLegacySettings()
@@ -854,7 +858,7 @@ function addon.settings:CreateAceOptionsPanel()
     end
 
     local optionsWidth = 1.08
-    local settingsCache = {orphans = {}}
+    local settingsCache = {invertedOrphans = {}}
 
     local optionsTable = {
         type = "group",
@@ -1447,7 +1451,10 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
-                        hidden = addon.game ~= "CLASSIC" or addon.settings.profile.season == 2
+                        hidden = addon.game ~= "CLASSIC" or addon.settings.profile.season == 2,
+                        disabled = function ()
+                            return addon.settings.profile.enableAutomaticXpRate
+                        end,
                     },
                     hardcore = {
                         name = L("Hardcore mode"),
@@ -1523,13 +1530,13 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "execute",
                         width = optionsWidth,
                         func = function()
-                            addon.AbandonOrphanedQuests(settingsCache.orphans)
-                            wipe(settingsCache.orphans)
+                            addon.AbandonOrphanedQuests(settingsCache.invertedOrphans)
+                            wipe(settingsCache.invertedOrphans)
                         end,
                         confirm = function()
                             local result = L("Abandon the following quests?")
 
-                            for _, d in ipairs(settingsCache.orphans) do
+                            for _, d in ipairs(settingsCache.invertedOrphans) do
                                 result =
                                     fmt("%s\n%s (level %d)", result,
                                         d.questLogTitleText, d.level)
@@ -1538,7 +1545,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return result
                         end,
                         disabled = function()
-                            return #settingsCache.orphans == 0
+                            return #settingsCache.invertedOrphans == 0
                         end
                     },
                     orphanedQuestBox = {
@@ -1546,15 +1553,16 @@ function addon.settings:CreateAceOptionsPanel()
                         type = 'description',
                         name = function()
                             -- TODO prevent double call on settings frame load, optimization
+                            -- Explicity not using addon.orphanedList to reduce chance of outdated results
                             local result = ""
-                            local orphans = addon.GetOrphanedQuests()
-                            for _, d in ipairs(orphans) do
+                            local invertedOrphans = addon.GetOrphanedQuests()
+                            for _, d in ipairs(invertedOrphans) do
                                 result =
                                     fmt("%s\n%s (level %d)", result,
                                         d.questLogTitleText, d.level)
                             end
 
-                            settingsCache.orphans = orphans
+                            settingsCache.invertedOrphans = invertedOrphans
 
                             return result
                         end,
@@ -2953,7 +2961,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "range",
                         width = optionsWidth,
                         order = 5.4,
-                        min = 1,
+                        min = 0,
                         max = 20,
                         step = 1,
                         set = function(info, value)
@@ -3071,12 +3079,31 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.5,
                         min = 1,
-                        max = 100,
-                        step = 1,
+                        max = 50,
+                        step = 0.500001,
                         hidden = addon.gameVersion > 50000,
                         disabled = function()
                             return not addon.settings.profile.enableHSbatch
                         end
+                    },
+                    updateFrequency = {
+                        name = L("Update Frequency (ms)"),
+                        desc = L(
+                            "Defines how often the addon updates in milliseconds, increase this if you're having performance issues"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 1.6,
+                        min = 5,
+                        max = 150,
+                        step = 5
+                    },
+                    preLoadData = {
+                        name = L("Pre load all data"),
+                        desc = L(
+                            "Loads all addon data upfront, instead of loading the data slowly over time. This increases loading screen times, only enable this option if you are experiencing frame rate drops"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.65,
                     },
                     optimizePerformance = {
                         name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),
@@ -3098,13 +3125,17 @@ function addon.settings:CreateAceOptionsPanel()
                                     p.enableVendorTreasure or
                                     p.enableItemUpgrades or
                                     p.enableItemUpgradesAH or
-                                    p.hideCompletedSteps or p.showUnusedGuides) or
-                                    addon.RXPFrame.BottomFrame:GetHeight() < 35
+                                    p.hideCompletedSteps or
+                                    p.showUnusedGuides or
+                                    not p.preLoadData or
+                                    p.updateFrequency < 150)
+                                    --or addon.RXPFrame.BottomFrame:GetHeight() < 35
                         end,
                         set = function(_, value)
                             -- Disable all supplemental
                             -- Support re-enabling with (most) defaults
                             local p = self.profile
+                            value = not value
                             p.enableTargetAutomation = value
                             p.enableTips = value
                             p.enableTracker = value
@@ -3120,6 +3151,12 @@ function addon.settings:CreateAceOptionsPanel()
                             p.enableItemUpgradesAH = value
                             p.hideCompletedSteps = value
                             p.showUnusedGuides = value
+                            if value == true then
+                                p.updateFrequency = 75
+                            else
+                                p.updateFrequency = 150
+                                p.preLoadData = true
+                            end
 
                             -- Only impact step list if disabling
                             if not value then
@@ -3442,6 +3479,13 @@ function addon.settings:DetectXPRate(softUpdate)
     elseif addon.gameVersion < 20000 then
         local season = addon.GetSeason() or CheckBuff(362859) and 1
 
+        --Anniversary realms
+        local realm = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason() or 0
+        if realm == 11 or realm == 12 then
+            addon.settings.profile.phase = 1
+        else
+            addon.settings.profile.phase = 6
+        end
         if season == addon.settings.profile.season then return end
 
 

@@ -31,14 +31,14 @@ step << Warrior
     >>|cRXP_WARN_You will train|r |T132333:0|t[Battle Shout] |cRXP_WARN_which increases early leveling speeds|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r
     .vendor >> |cRXP_WARN_Vendor trash|r
+    .target +Grundel Harkin
     .goto Dun Morogh,28.793,67.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
     .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .target +Thran Khorman
     .goto Dun Morogh,28.832,67.242
     .mob Ragged Young Wolf
     .mob Ragged Timber Wolf
-    .target Grundel Harkin
-    .target Thran Khorman
 step << Warlock
     #completewith next
     .goto Dun Morogh,28.792,68.497,20 >> Enter Anvilmar
@@ -143,9 +143,9 @@ step
     #completewith Rockjaw
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
+    .mob +Burly Rockjaw Trogg
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .target Talin Keeneye
@@ -191,9 +191,9 @@ step << Paladin/Mage/Warlock/Hunter
     .goto Dun Morogh,31.37,75.63
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
+    .mob +Burly Rockjaw Trogg
 step << Paladin/Mage/Warlock/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .target Nori Pridedrift
@@ -257,9 +257,9 @@ step << !Paladin !Mage !Warlock !Hunter
     #completewith next
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
+    .mob +Burly Rockjaw Trogg
 step << Paladin/Mage/Warlock/Hunter
     .goto Dun Morogh,26.3,79.2,40,0
     .goto Dun Morogh,22.7,79.3,40,0
@@ -285,9 +285,9 @@ step << !Paladin !Mage
     .goto Dun Morogh,28.7,77.5
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
+    .mob +Burly Rockjaw Trogg
 step << !Paladin !Mage !Warlock !Hunter
     .xp 4 >> Grind to 4
 step << !Paladin !Mage !Warlock !Hunter
@@ -649,11 +649,13 @@ step << !Paladin !Warrior !Rogue
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
+    .mob +Young Black Bear
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
+    .mob +Crag Boar
+    .mob +Large Crag Boar
     .collect 2886,6,384,1,1 --Collect Crag Boar Rib (x6)
-    .mob Crag Boar
-    .mob Large Crag Boar
-    .mob Young Black Bear
+    .mob +Crag Boar
+    .mob +Large Crag Boar
 step << !Paladin !Warrior !Rogue
     #completewith Ribs
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
@@ -718,11 +720,13 @@ step << Paladin/Warrior/Rogue
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
+    .mob +Young Black Bear
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
+    .mob +Crag Boar
+    .mob +Large Crag Boar
     .collect 2886,6,384,1,1 --Collect Crag Boar Rib (x6)
-    .mob Young Black Bear
-    .mob Crag Boar
-    .mob Large Crag Boar
+    .mob +Crag Boar
+    .mob +Large Crag Boar
 step << Paladin/Warrior/Rogue
     #completewith Ribs
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
@@ -873,11 +877,11 @@ step
     .goto Dun Morogh,28.7,43.7
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r and |cRXP_ENEMY_Snow Leopards|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
+    .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
+    .mob +Elder Crag Boar
     .complete 319,3 --Kill Snow Leopard (x8)
-    .mob Ice Claw Bear
-    .mob Elder Crag Boar
-    .mob Snow Leopard
+    .mob +Snow Leopard
 step
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
     .goto Dun Morogh,31.5,38.9,60,0
@@ -1345,28 +1349,28 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
+    .target +Senator Mehr Stonehallow
     .goto Dun Morogh,68.671,55.969
     .accept 432 >> Accept Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
-    .target Senator Mehr Stonehallow
-    .target Foreman Stonebrow
+    .target +Foreman Stonebrow
 step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
+    .mob +Rockjaw Bonesnapper
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
+    .target +Foreman Stonebrow
     .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
     .goto Dun Morogh,68.671,55.969
-    .target Senator Mehr Stonehallow
-    .target Foreman Stonebrow
+    .target +Senator Mehr Stonehallow
 step
     #era
     .goto Dun Morogh,67.1,59.7
@@ -1471,13 +1475,13 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob +Forest Lurker
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_Don't go out of your way to complete this right now. You'll come back to Loch Modan soon|r
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
 step
     #completewith next
     .goto Loch Modan,23.85,17.92,100 >> Travel north to the Algaz Station
@@ -1739,11 +1743,11 @@ step
     .accept 47 >> Accept Gold Dust Exchange
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
-    .target Ma Stonefield
-    .target "Auntie" Bernice Stonefield
     .accept 88 >> Accept Princess Must Die!
+    .target +Ma Stonefield
     .goto Elwynn Forest,34.660,84.483
     .accept 85 >> Accept Lost Necklace
+    .target +"Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.486,84.252
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
@@ -1861,9 +1865,9 @@ step
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
     .complete 52,1 --Kill Prowler (x8)
+    .mob +Prowler
     .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
+    .mob +Young Forest Bear
 step
     #era
     >>Click |cRXP_PICK_A half-eaten body|r on the ground
@@ -1902,8 +1906,8 @@ step
     .goto Elwynn Forest,86.99,64.83
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,1 --Kill Prowler (x8)
+    .mob +Prowler
     .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
     .mob Young Forest Bear
 step
     #era
@@ -2294,12 +2298,12 @@ step
     #label WestEntry
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .accept 64 >> Accept The Forgotten Heirloom
+    .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 151 >> Accept Poor Old Blanchy
     .accept 36 >> Accept Westfall Stew
     .goto Westfall,59.92,19.42
-    .target Farmer Furlbrow
-	.target Verna Furlbrow
+	.target +Verna Furlbrow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
     .target Farmer Saldean
@@ -2460,11 +2464,11 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .solo
     #completewith StormpikeStop
@@ -2472,11 +2476,11 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .group
     #completewith MinerGear
@@ -2508,11 +2512,11 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step << Paladin/Warrior
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r
@@ -2563,6 +2567,7 @@ step
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .collect 3173,3,418,1 --Bear Meat (3)
+    .mob +Elder Black Bear
     .goto Loch Modan,26.9,10.7,90,0
     .goto Loch Modan,30.9,10.6,90,0
     .goto Loch Modan,28.6,15.4,90,0
@@ -2577,6 +2582,7 @@ step
     .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
     .collect 3172,3,418,1 --Boar Intestines (3)
+    .mob +Mountain Boar
     .goto Loch Modan,38.0,34.9,90,0
     .goto Loch Modan,37.1,39.8,90,0
     .goto Loch Modan,29.8,35.9,90,0
@@ -2600,9 +2606,7 @@ step
     .goto Loch Modan,36.2,30.9,90,0
     .goto Loch Modan,39.0,32.1,90,0
     .goto Loch Modan,31.9,16.4
-    .mob Elder Black Bear
-    .mob Mountain Boar
-    .mob Forest Lurker
+    .mob +Forest Lurker
 step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto Loch Modan,36.72,41.97,15,0
@@ -2640,10 +2644,12 @@ step
     .goto Loch Modan,33.88,76.58
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .mob +Stonesplinter Scout
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
-    .mob Stonesplinter Trogg
-    .mob Stonesplinter Scout
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
 step
     #era
     .goto Loch Modan,27.4,48.4

@@ -14,11 +14,11 @@ step << Goblin
     .zoneskip 1727
     #completewith KezanFirstQuestCheck
     +Welcome to the |cRXP_WARN_Goblin Starting Zone|r. Guide of RestedXP.
-    *This route is a lot slower than |cRXP_WARN_Exiles Reach|r. For faster leveling recreate your character and choose |cRXP_WARN_Exiles Reach|r. instead.
+    *This route is a lot slower than |cRXP_WARN_Exiles Reach|r. For faster leveling recreate your character and choose |cRXP_WARN_Exiles Reach|r instead.
 step << Goblin
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the |cRXP_WARN_Goblin Starting Zone|r.
-    +Please choose the |cRXP_WARN_Exiles Reach|r. Guide.
+    +Please choose the |cRXP_WARN_Exiles Reach|r Guide.
 step
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
@@ -242,7 +242,7 @@ step
     .accept 24488 >>Accept The Replacements
     .target Coach Crosscheck
 step
-    >>Pick up the |cRXP_PICK_Replacements Parts|r. from the ground while on the Hot Rod
+    >>Pick up the |cRXP_PICK_Replacements Parts|r from the ground while on the Hot Rod.
 #loop
 	.line 194,50.99,57.96,51.22,61.01,49.78,66.39,48.17,66.87,46.08,68.18,44.49,65.76,44.23,63.11,43.75,59.25
 	.goto 194,50.99,57.96,20,0
@@ -261,8 +261,8 @@ step
     .accept 24502 >>Accept Necessary Roughness
     .target Coach Crosscheck
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Bilgewater Buccaneer|r. roboter
-    >>Use |T134480:0|t[Throw Footbomb] (1) to kill the |cRXP_ENEMY_Steamwheedle Sharks|r. in front of you
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Bilgewater Buccaneer|r roboter.
+    >>Use |T134480:0|t[Throw Footbomb] (1) to kill the |cRXP_ENEMY_Steamwheedle Sharks|r in front of you.
     .goto 194,47.7,57.7
     .complete 24502,1 --1/1 Bilgewater Buccaneer
     .complete 24502,2 --8/8 Steamwheedle Shark Footbombed
@@ -320,11 +320,11 @@ step << Male
     .target Sassy Hardwrench
     .target Candy Cane
 step
-    >>Use |T132809:0|t[Bubbly] (1) on |cRXP_FRIENDLY_Goblins|r. who drink
+    >>Use |T132809:0|t[Bubbly] (1) on |cRXP_FRIENDLY_Goblins|r who drink.
     >>Use the |T132806:0|t[Bucket] (2) on drunk/confused looking |cRXP_FRIENDLY_Goblins|r.
-    >>|T133836:0|t[Dance] (3) with |cRXP_FRIENDLY_Goblins|r. who dance
-    >>Use |T134285:0|t[Fireworks] (4) on |cRXP_FRIENDLY_Goblins|r. with sparks
-    >>Use |T237329:0|t[Hors D'oeuvres] (5) on |cRXP_FRIENDLY_Goblins|r. who eat
+    >>|T133836:0|t[Dance] (3) with |cRXP_FRIENDLY_Goblins|r who dance.
+    >>Use |T134285:0|t[Fireworks] (4) on |cRXP_FRIENDLY_Goblins|r with sparks.
+    >>Use |T237329:0|t[Hors D'oeuvres] (5) on |cRXP_FRIENDLY_Goblins|r who eat.
     .goto 194,59.56,78.75,15,0
     .goto 194,59.09,80.31,10,0
     .goto 194,60.59,82.98,15,0
@@ -342,7 +342,7 @@ step
     .accept 14115 >>Accept Pirate Party Crashers
     .target Sassy Hardwrench
 step
-    >>Kill |cRXP_ENEMY_Pirate Party Crashers|r. Focus the ones with lower HP
+    >>Kill |cRXP_ENEMY_Pirate Party Crashers|r. Focus the ones with lower HP.
     .goto 194,57.51,76.97,8,0
     .goto 194,60.05,80.79
     .complete 14115,1 --12/12 Pirate Party Crasher slain
@@ -392,7 +392,7 @@ step
     .use 48768
     .complete 14124,1 --12/12 Kaja'mite Chunk
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r. She moves around in the area
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r. She moves around in the area.
     .goto 194,58.82,75.06
     .accept 14123 >>Accept Waltz Right In
     .target Slinky Sharpshiv
@@ -401,7 +401,7 @@ step
     .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]. While in the vehicle you are immune to fall damage|r.
 step
     #completewith next
-    >>Drive over |cRXP_ENEMY_Hired Looters|r. when you see them
+    >>Drive over |cRXP_ENEMY_Hired Looters|r when you see them.
     .goto 194,57.94,69.61,15,0
     .goto 194,47.67,60.09,25,0
     .goto 194,38.63,78.42,25,0
@@ -427,7 +427,7 @@ step
     .vehicle 34840 >>|cRXP_WARN_Make sure to use your |T134246:0|t[Keys to the Hot Rod]|r.
 step
     #completewith KezanWaltzRightIn
-    +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r and |cRXP_ENEMY_Keesnout Potbellys|r. because they can detect and kill you|r.
+    +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r and |cRXP_ENEMY_Keesnout Potbellys|r because they can detect and kill you|r.
 step
     >>Pick up the [|cRXP_LOOT_bomb|r].
     .goto 194,24.20,40.67,30,0
@@ -453,7 +453,7 @@ step
     #completewith next
     .goto 194,17.65,45.94,5,0
     .goto 194,17.00,33.96
-    .deathskip >>Jump out of the window and run into hostile |cRXP_ENEMY_Villa Mooks|r or |cRXP_ENEMY_Keesnout Potbellys|r. to die
+    .deathskip >>Jump out of the window and run into hostile |cRXP_ENEMY_Villa Mooks|r or |cRXP_ENEMY_Keesnout Potbellys|r to die.
 step
     #completewith next
     .goto 194,61.89,54.13,25,0
@@ -671,7 +671,7 @@ step
     .accept 14236 >>Accept Weed Whacker
     .target Kilag Gorefang
 step
-    >>Use the |cRXP_FRIENDLY_Weed Whacker|r and run through the |cRXP_ENEMY_plants|r. to kill them
+    >>Use the |cRXP_FRIENDLY_Weed Whacker|r and run through the |cRXP_ENEMY_plants|r to kill them.
     .use 49108
     .goto 174,33.90,72.85,30,0
     .goto 174,32.81,76.42,20,0
@@ -737,7 +737,7 @@ step
     .accept 14326 >>Accept Meet Me Up Top
     .target Thrall
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo outside and meet |cRXP_FRIENDLY_Thrall|r. on the deck
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo outside and meet |cRXP_FRIENDLY_Thrall|r on the deck.
     .goto 174,12.68,63.33,10,0
     .goto 174,12.4,63.1
     .turnin 14326 >>Turn in Meet Me Up Top
@@ -786,7 +786,7 @@ step
     .accept 24671 >>Accept Cluster Cluck
     .target Hobart Grapplehammer
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on 10 |cRXP_PICK_cluckers|r. around the town
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on 10 |cRXP_PICK_cluckers|r around the town.
 #loop
 	.line 174,45.64,64.12,46.45,64.90,47.03,65.75,46.28,66.40,45.39,66.82,44.55,66.91,44.52,65.61,44.67,63.90
 	.goto 174,45.64,64.12,20,0
@@ -812,7 +812,7 @@ step
     .use 132516
     .itemcount 132516,1
 step
-    >>Use the |T236997:0|t[Wild Cluster Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r. steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
+    >>Use the |T236997:0|t[Wild Cluster Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
     .use 50232
     .goto 174,49.64,63.45,30,0
     .goto 174,50.25,65.80,20,0
@@ -886,7 +886,7 @@ step
     .target Brett "Coins" McQuid
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Nagas|r. while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
+    >>Kill |cRXP_ENEMY_Nagas|r while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
     .goto 174,54.12,78.39,0,0
     .complete 24859,1 --5/5 Intact Naga Hide
 step
@@ -902,7 +902,7 @@ step
     .goto 174,53.53,76.90,10,0
     .complete 24858,1 --10/10 Naga Banners replaced
 step
-    >>Kill |cRXP_ENEMY_Nagas|r. while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
+    >>Kill |cRXP_ENEMY_Nagas|r while replacing the banners. Loot them for their [|cRXP_LOOT_hides|r].
     .goto 174,54.27,83.49,30,0
     .goto 174,54.12,78.39,0,0
     .complete 24859,1 --5/5 Intact Naga Hide
@@ -957,7 +957,7 @@ step
     .accept 24901 >>Accept Town-In-A-Box: Under Attack
     .target Sassy Hardwrench
 step
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick a |cRXP_PICK_B.C. Eliminator|r. to enter it and shoot at |cRXP_ENEMY_Oomlot Warriors|r.
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick a |cRXP_PICK_B.C. Eliminator|r to enter it and shoot at |cRXP_ENEMY_Oomlot Warriors|r.
     .goto 174,45.7,65.0
     .complete 24901,1 --30/30 Oomlot Warriors defeated
 step
@@ -978,7 +978,7 @@ step
     .target Izzy
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Oomlot Shamans|r. to free the goblins
+    >>Kill |cRXP_ENEMY_Oomlot Shamans|r to free the goblins.
     .goto 174,59.16,70.39,0,0
     .complete 24925,1 --5/5 Goblin Captives freed
     .mob Oomlot Shaman
@@ -989,7 +989,7 @@ step
     .complete 24929,1 --1/1 Yngwie slain
     .mob Yngwie
 step
-    >>Kill |cRXP_ENEMY_Oomlot Shamans|r. to free the goblins
+    >>Kill |cRXP_ENEMY_Oomlot Shamans|r to free the goblins.
     .goto 174,59.16,70.39
     .complete 24925,1 --5/5 Goblin Captives freed
     .mob Oomlot Shaman
@@ -1016,7 +1016,7 @@ step
     .itemcount 132516,1
 step
     #completewith next
-    +|cRXP_WARN_Avoid the |cRXP_ENEMY_Goblin Zombies|r. while running up the mountain|r.
+    +|cRXP_WARN_Avoid the |cRXP_ENEMY_Goblin Zombies|r while running up the mountain|r.
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r, |cRXP_FRIENDLY_Foreman Dampwick|r and |cRXP_FRIENDLY_Assistant Greely|r.
     .turnin 24940 >>Turn in Up the Volcano
@@ -1037,13 +1037,13 @@ step
     .cast 72891 >>|cRXP_WARN_Use the |T133029:0|t[Super Booster Rocket Boots]|r.
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Goblin Zombies|r. by walking over them with the Rocket Boots
-    >>|cRXP_WARN_Avoid |cRXP_ENEMY_Oostan Headhunters|r|r. They can kill you very easily
+    >>Kill |cRXP_ENEMY_Goblin Zombies|r by walking over them with the Rocket Boots.
+    >>|cRXP_WARN_Avoid |cRXP_ENEMY_Oostan Headhunters|r|r. They can kill you very easily.
     .use 52013
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
     #completewith TheLostIslesGaahl
-    >>Pick up |cRXP_PICK_Rockin' Powder|r. from the ground
+    >>Pick up |cRXP_PICK_Rockin' Powder|r from the ground.
     .complete 24946,1 --5/5 Rockin' Powder
 step
     >>Kill |cRXP_ENEMY_Malmo|r.
@@ -1066,7 +1066,7 @@ step
     .goto 174,58.8,40.5
     .complete 24946,1 --5/5 Rockin' Powder
 step
-    >>Kill |cRXP_ENEMY_Goblin Zombies|r. by walking over them with the Rocket Boots
+    >>Kill |cRXP_ENEMY_Goblin Zombies|r by walking over them with the Rocket Boots.
     .use 52013
     .goto 174,56.67,44.26,15,0
     .complete 24942,1 --50/50 Goblin Zombies slain
@@ -1182,7 +1182,7 @@ step
 step
     #completewith next
     .skipgossip 38387,1
-    .vehicle 39074 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r. to enter the vehicle
+    .vehicle 39074 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r to enter the vehicle.
     .target Sassy Hardwrench
 step
     >>Use |T134273:0|t[Wild Weasel Rockets] (2) on cooldown
@@ -1209,7 +1209,7 @@ step
     .timer 87,Panther Ride
     .target Kilag Gorefang
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r. after riding with the panther
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r after riding with the panther.
     .goto 174,53.71,34.94
     .turnin 25100 >>Turn in Let's Ride
     .accept 25109 >>Accept The Gallywix Labor Mine
@@ -1223,7 +1223,7 @@ step
     .accept 25110 >>Accept Kaja'Cola Gives You IDEAS! (TM)
     .target Assistant Greely
 step
-    >>Pick up a |cRXP_PICK_Kaja'Cola Zero-One|r. from the ground
+    >>Pick up a |cRXP_PICK_Kaja'Cola Zero-One|r from the ground.
     .goto 174,53.59,37.41,10,0
     .goto 174,53.94,37.46,10,0
     .goto 174,53.70,36.67
@@ -1392,7 +1392,7 @@ step
     .timer 24,Shredder Ride
     .target Assistant Greely
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r. after riding with the shredder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r after riding with the shredder.
     .goto 174,43.63,25.32
     .turnin 25213 >>Turn in The Slave Pits
     .accept 25244 >>Accept What Kind of Name is Candy, Anyway? << Female

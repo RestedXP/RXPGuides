@@ -409,6 +409,9 @@ step
     .target Thrall
     .dungeon RFC
 step
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
@@ -592,6 +595,7 @@ step
     .cooldown item,6948,>0
     .use 6948
     .dungeon RFC
+    .zoneskip Thunder Bluff,1
 step
     #completewith KreenigSnarlsnout
     .goto Thunder Bluff,47.00,49.82
@@ -951,34 +955,36 @@ step << Rogue
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step
-    .goto The Barrens,63.89,35.93,50,0
-    .goto The Barrens,64.28,35.60,50,0
-    .goto The Barrens,64.54,34.93,50,0
-    .goto The Barrens,64.42,33.12,50,0
-    .goto The Barrens,63.90,32.03,50,0
-    .goto The Barrens,63.78,31.03,50,0
-    .goto The Barrens,62.89,29.77,50,0
-    .goto The Barrens,64.28,35.60
-    >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for |cRXP_LOOT_Hooves|r
-    .complete 845,1 --Zhevra Hooves (4)
-    .mob Zhevra Runner
-step
     #label FlyToXroads1
-    #completewith next
+    #completewith XroadsTurnins3
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .isQuestComplete 845
 step
+    #loop
+    .goto The Barrens,55.27,37.82,0
+    .goto The Barrens,48.33,36.75,0
+    .goto The Barrens,55.27,37.82,80,0
+    .goto The Barrens,53.84,38.52,80,0
+    .goto The Barrens,52.63,38.07,80,0
+    .goto The Barrens,49.49,37.20,80,0
+    .goto The Barrens,48.33,36.75,80,0
+    >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for |cRXP_LOOT_Hooves|r
+    .complete 845,1 --Zhevra Hooves (4)
+    .mob Zhevra Runner
+step
+    #label XroadsTurnins3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
+    .target +Thork
     .goto The Barrens,51.50,30.87
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
+    .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
-    .target Sergra Darkthorn
-    .target Thork
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -1441,6 +1447,7 @@ step
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
 step
+    #ssf
     .goto The Barrens,63.55,4.92,100,0
     .goto The Barrens,61.46,4.50,40,0
     .goto The Barrens,61.06,3.63,40,0
@@ -1452,6 +1459,22 @@ step
     .goto The Barrens,61.17,5.05,40,0
     .goto The Barrens,61.51,4.43
     >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .dungeon DM
+step
+    #ah
+    .goto The Barrens,63.55,4.92,100,0
+    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.06,3.63,40,0
+    .goto The Barrens,61.63,3.37,40,0
+    .goto The Barrens,62.14,3.52,40,0
+    .goto The Barrens,61.94,4.53,40,0
+    .goto The Barrens,61.85,5.37,40,0
+    .goto The Barrens,61.44,5.56,40,0
+    .goto The Barrens,61.17,5.05,40,0
+    .goto The Barrens,61.51,4.43
+    >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
+    >>|cRXP_WARN_You could also buy them from the auction house instead|r
     .collect 814,5,103,1 --Flask of Oil (5)
     .dungeon DM
 step
@@ -1680,6 +1703,9 @@ step
     .goto The Barrens,51.62,30.90
     .target Sergra Darkthorn
     .target Darsok Swiftdagger
+step
+    #completewith TheEscapeTurnIn
+    .destroy 10327 >>|cRXP_WARN_Destroy|r |T134227:0|t[Horn of Echeyakee] |cRXP_WARN_as you no longer need it|r
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -2160,6 +2186,7 @@ step << Troll Warrior/Undead Warrior
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Orc Warrior
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135423:0|t[Battle Axe] |cRXP_BUY_from him|r
@@ -2175,6 +2202,7 @@ step << Orc Warrior
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.3
+    .xp <20,1
 step << Tauren Warrior
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T133044:0|t[Maul] |cRXP_BUY_from him|r
@@ -2190,6 +2218,7 @@ step << Tauren Warrior
     .itemcount 924,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+    .xp <21,1
 step << Shaman
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135157:0|t[Long Staff] |cRXP_BUY_from him|r
@@ -2205,6 +2234,7 @@ step << Shaman
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Rogue
     .goto Stonetalon Mountains,58.22,51.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -2220,6 +2250,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
@@ -2713,6 +2744,14 @@ step << Priest
     .xp <20,1
     .dungeon DM
 step
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Flask of Oil] |cRXP_BUY_from the Auction House if possible|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+	.target Auctioneer Thathung
+    .dungeon DM
+step
     #completewith next
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
@@ -3037,6 +3076,7 @@ step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
+    .train 227 >>Train Staves
     .target Ansekhwa
 step << Troll Hunter/Orc Hunter/Undead Warrior/Warlock/Priest
     .goto Thunder Bluff,40.93,62.73
@@ -3274,6 +3314,7 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
 step << Warrior/Shaman
     #completewith next
     #ah
@@ -3356,7 +3397,7 @@ step
 step
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Camp Taurajo >>Fly to Camp Taurajo
+    .fly Crossroads >>Fly to Crossroads
     .target Tal
     .zoneskip The Barrens
 step
@@ -3409,6 +3450,16 @@ step
     .isOnQuest 914
     .dungeon WC
 step
+    #completewith next
+    .goto The Barrens,46.95,35.18,0
+    .goto The Barrens,46.95,35.18,30,0
+    .goto The Barrens,46.83,34.74,20,0
+    .goto Kalimdor,51.98,55.36,20,0
+    .goto Kalimdor,51.89,55.55,10,0
+    .goto Kalimdor,51.87,55.50,10 >>Run up the mountain at the Wailing Caverns meeting stone
+    >>|cRXP_WARN_Follow the arrow closely to reach the hidden cave|r
+    .dungeon WC
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
     >>|cRXP_WARN_They are located above the the Wailing Caverns cave entrance|r
     .accept 1486 >> Accept Deviate Hides
@@ -3455,8 +3506,7 @@ step
     .goto Kalimdor,51.89,54.77,20,0
     .goto Kalimdor,51.95,54.56,20,0
     .goto Kalimdor,52.27,54.65,30,0
-    .goto Kalimdor,52.40,55.18
-    .zone 279 >> Enter the WC Instance portal. Zone in
+    .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
     #completewith GlowingShard
@@ -3591,10 +3641,10 @@ step
     .dungeon WC
 step
     .goto The Barrens,62.99,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervale|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
-    .target Sputtervale
+    .target Sputtervalve
     .isOnQuest 6981
     .dungeon WC
 step
@@ -3630,14 +3680,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .turnin 6981 >> Turn in The Glowing Shard
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .accept 3369 >> Accept In Nightmares
-    .target Falla
+    .target Falla Sagewind
     .isQuestTurnedIn 6981
     .dungeon WC
 step

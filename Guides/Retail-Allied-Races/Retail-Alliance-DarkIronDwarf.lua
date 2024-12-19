@@ -58,11 +58,11 @@ step
     .isOnQuest 51813
 step
     .goto 1159,55.84,31.94
-    .cast 274627 >>Click the |cRXP_PICK_Crate|r. |cRXP_WARN_on the ground|r.
+    .cast 274627 >>Click the |cRXP_PICK_Crate|r |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,56.65,31.33
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Crate|r. |cRXP_WARN_on The Black Anvil|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Crate|r |cRXP_WARN_on The Black Anvil|r.
     .scenario 3847,1
     .timer 5, Time until first wave.
     .isOnQuest 51813
@@ -106,7 +106,7 @@ step
     .goto 1159,38.09,58.9,15,0
     .goto 1159,29.93,56.72,10,0
     .goto 1159,35.73,63.84
-    >>Kill every |cRXP_ENEMY_Enemy|r. you encounter on your path.
+    >>Kill every |cRXP_ENEMY_Enemy|r you encounter on your path.
     .scenario 3851,1,100
     .isOnQuest 51813
     .mob Wanton Sapper
@@ -115,26 +115,26 @@ step
     .mob Venture Co. Earthshaper
 step
     .goto 1159,35.73,63.84
-    >>Defeat |cRXP_ENEMY_Rixxa Fluxflame|r. by reducing her health to 75%.
+    >>Defeat |cRXP_ENEMY_Rixxa Fluxflame|r by reducing her health to 75%.
     .scenario 3852,1
     .timer 11, Duration until continuation.
     .mob Rixxa Fluxflame
     .isOnQuest 51813
 step
     .goto 1159,36.79,61.65
-    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,39.37,55.18
-    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,44.33,49.55
-    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,49.23,44.38
-    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r. |cRXP_WARN_on the ground|r.
+    .cast 3365 >>Click the |cRXP_PICK_Propellant Canister|r |cRXP_WARN_on the ground|r.
     .isOnQuest 51813
 step
     .goto 1159,57.11,30.41
@@ -179,7 +179,7 @@ step
     .isOnQuest 53342
 step
     .goto 1160,41.94,25.73,25,0
-    .goto 1160,44.83,64.11,15 >>Use |T1032476:0|t[Afterburn](2) to sprint and |T135781:0|t[Frozen Keekers](1) to kill |cRXP_ENEMY_enemies|r. |cRXP_WARN_infront of you|r.
+    .goto 1160,44.83,64.11,15 >>Use |T1032476:0|t[Afterburn](2) to sprint and |T135781:0|t[Frozen Keekers](1) to kill |cRXP_ENEMY_enemies|r |cRXP_WARN_infront of you|r.
     .timer 7, Duration until continuation.
     .isOnQuest 53342
 step
@@ -191,7 +191,7 @@ step
     .isOnQuest 53342
 step
     .goto 1160,56.48,54.86
-    >>Kill |cRXP_ENEMY_Gezzrok the Keeper|r and then |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Orb|r. |cRXP_WARN_in the middle|r.
+    >>Kill |cRXP_ENEMY_Gezzrok the Keeper|r and then |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Orb|r |cRXP_WARN_in the middle|r.
     .complete 53342,2 --1/1 Fragment o' the Molten Core
     .mob Gezzrok the Keeper
 step
@@ -212,7 +212,7 @@ step
     .isOnQuest 53352
 step
     .goto 1958,49.24,29.7
-    >>|cRXP_WARN_Wait for the brief roleplay then|r. then Kill |cRXP_ENEMY_Dark Iron Cultist|r.
+    >>|cRXP_WARN_Wait for the brief roleplay|r then Kill |cRXP_ENEMY_Dark Iron Cultist|r.
     .scenario 3982,1
     .mob Dark Iron Cultist
     .isOnQuest 53352
@@ -224,7 +224,7 @@ step
     .goto 1959,50.82,67.4,5,0
     .goto 1959,48.71,62.17,10,0
     .goto 1959,50.69,59.05,10,0
-    >>Kill most |cRXP_ENEMY_enemies|r. you encounter on your path.
+    >>Kill most |cRXP_ENEMY_enemies|r you encounter on your path.
     .scenario 3983,1,100
     .mob Blazing Elemental
     .mob Lava Spawn
@@ -271,7 +271,7 @@ step
     .isOnQuest 51474
 step
     .goto 1159,56.65,31.35
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Yellow Orb|r. |cRXP_WARN_on the anvil|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Yellow Orb|r |cRXP_WARN_on the anvil|r.
     .complete 51474,1 --1/1 Black Anvil repaired
 step
     .goto 1159,57.19,30.87

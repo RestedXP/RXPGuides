@@ -39,12 +39,12 @@ step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r 
     .accept 2040 >> Accept Underground Assault
+    .target +Shoni the Shilent
     .goto StormwindClassic,55.510,12.504
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
     .goto StormwindClassic,65.438,21.175
-    .target Wilder Thistlenettle
-    .target Shoni the Shilent
+    .target +Wilder Thistlenettle
 step << Hunter
     #ssf
     #completewith ExitSW
@@ -399,11 +399,11 @@ step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .accept 166 >> Accept The Defias Brotherhood
+    .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .accept 214 >> Accept Red Silk Bandanas
     .goto Westfall,56.67,47.35
-    .target Gryan Stoutmantle
-    .target Scout Riell
+    .target +Scout Riell
 step
 .dungeon DM
     .goto Westfall,60.4,72.2
@@ -484,11 +484,11 @@ step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .turnin 166 >> Turn in The Defias Brotherhood
+    .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin 214 >> Turn in Red Silk Bandanas
     .goto Westfall,56.67,47.35
-    .target Gryan Stoutmantle
-    .target Scout Riell
+    .target +Scout Riell
 step
 .dungeon DM
     #completewith next
@@ -523,11 +523,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r and |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 167 >> Turn in Oh Brother. . .
     .turnin 168 >> Turn in Collecting Memories
+    .target +Wilder Thistlenettle
     .goto StormwindClassic,65.438,21.175
     .turnin 2040 >> Turn in Underground Assault
     .goto StormwindClassic,55.510,12.504
-    .target Wilder Thistlenettle
-    .target Shoni the Shilent
+    .target +Shoni the Shilent
 step -- adding again 2nd time incase hitting 20 after turning in triple DM quests
 .dungeon DM
     .goto StormwindClassic,45.694,38.416
@@ -676,11 +676,11 @@ step
     >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .collect 2296,5,92,1
+    .mob +Great Goretusk
     .collect 1080,5,92,1
+    .mob +Dire Condor
     .collect 1081,5,92,1
-    .mob Great Goretusk
-    .mob Tarantula
-    .mob Dire Condor
+    .mob +Tarantula
 step
     .isOnQuest 122
     #completewith Toolbox
@@ -698,9 +698,9 @@ step
     .goto Redridge Mountains,31.13,82.18
 	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
     .complete 246,1 --Redridge Mongrel (10)
+    .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
-    .mob Redridge Mongrel
-	.mob Redridge Poacher
+	.mob +Redridge Poacher
 step
     #era/som
     #completewith next
@@ -709,9 +709,9 @@ step
     >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .collect 2296,5,92,1
+    .mob +Great Goretusk
     .collect 1080,5,92,1
-    .mob Great Goretusk
-    .mob Dire Condor
+    .mob +Dire Condor
 step
     #era/som
     .goto Redridge Mountains,21.22,67.77,45,0
@@ -729,6 +729,7 @@ step
     >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .collect 1080,5,92,1
+    .mob +Dire Condor
     .goto Redridge Mountains,66.4,76.6,60,0
     .goto Redridge Mountains,35.6,69.6,60,0
     .goto Redridge Mountains,45.4,76.6
@@ -738,8 +739,7 @@ step
     .goto Redridge Mountains,32.25,70.20,60,0
     .goto Redridge Mountains,31.02,72.14,60,0
     .goto Redridge Mountains,15.73,52.83
-    .mob Great Goretusk
-    .mob Dire Condor
+    .mob +Great Goretusk
 step
     #label Toolbox
     >>|cRXP_WARN_Jump into the Lake. Be aware of the patrolling Elite |cRXP_ENEMY_Lake Thresher|r in the water|r 
@@ -950,11 +950,11 @@ step << Rogue
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r and |cRXP_FRIENDLY_Master Mathias Shaw|r
     .accept 2281 >> Accept Redridge Rendezvous
+    .target +Renzik "The Shiv"
     .goto StormwindClassic,75.76,60.35
     .accept 2360 >> Accept Mathias and the Defias
     .goto StormwindClassic,75.78,59.84
-    .target Renzik "The Shiv"
-    .target Master Mathias Shaw
+    .target +Master Mathias Shaw
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     .goto StormwindClassic,76.08,50.14,15,0
@@ -1052,11 +1052,15 @@ step
     .goto Redridge Mountains,22.5,35.7,0
     >>Kill |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
     .complete 124,1 --Redridge Brute (10)
+	.mob +Redridge Brute
     .complete 124,2 --Redridge Mystic (8)
+    .mob +Redridge Mystic
     .complete 89,1 --Iron Pike (5)
+    .mob +Redridge Mystic
+	.mob +Redridge Brute
     .complete 89,2 --Iron Rivet (5)
-	.mob Redridge Mystic
-	.mob Redridge Brute
+	.mob +Redridge Mystic
+	.mob +Redridge Brute
 step << Rogue
     .goto Redridge Mountains,52.10,45.24
     +Open the |cRXP_PICK_Practice Lockboxes|r until you reach 80 in |T136058:0|t[Lockpicking]

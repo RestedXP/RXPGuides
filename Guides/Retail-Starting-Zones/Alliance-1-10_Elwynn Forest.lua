@@ -15,8 +15,8 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     +Welcome to the Human Starting Zone Guide of RestedXP.
-    +It's highly recommended to |cRXP_WARN_NOT|r. level |cRXP_WARN_in the Human Starting Zone|r and instead choose |cRXP_WARN_Exile's Reach|r. for faster leveling.
-    *|cRXP_WARN_The Human Starting Experience|r. requires a lot of experience from Rares and Treasure to be equally efficient.
+    +It's highly recommended to |cRXP_WARN_NOT|r. level |cRXP_WARN_in the Human Starting Zone|r and instead choose |cRXP_WARN_Exile's Reach|r for faster leveling.
+    *|cRXP_WARN_The Human Starting Experience|r requires a lot of experience from Rares and Treasure to be equally efficient.
 step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r.
@@ -84,7 +84,7 @@ step
     .goto 425,23.64,51.42,40,0
     .goto 425,26.60,54.71,40,0
     >>Kill |cRXP_ENEMY_Blackrock Spies|r.
-    >>|cRXP_WARN_They are|r. |T132320:0|t[Stealthed] |cRXP_WARN_(but easily visible)|r.
+    >>|cRXP_WARN_They are|r |T132320:0|t[Stealthed] |cRXP_WARN_(but easily visible)|r.
     .complete 28759,1 << Human Hunter/KulTiran Hunter --Blackrock Spies (8)
     .complete 28769,1 << Human Mage/KulTiran Mage--Blackrock Spies (8)
     .complete 28770,1 << Human Paladin --Blackrock Spies (8)
@@ -176,7 +176,7 @@ step
     .goto 425,31.56,25.82,15,0
     .goto 425,33.45,24.77,15,0
     .goto 425,36.08,23.69,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Injured Stormwind Infantries|r. on the ground to revive them
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Injured Stormwind Infantries|r on the ground to revive them.
     .complete 28806,1 << Human Hunter/KulTiran Hunter --Revive Injured Soldiers (4)
     .complete 28808,1 << Human Mage/KulTiran Mage --Revive Injured Soldiers (4)
     .complete 28809,1 << Human Paladin --Revive Injured Soldiers (4)
@@ -456,8 +456,8 @@ step
     #completewith Cooking
     .goto 37,43.77,65.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r.
-    >>|cRXP_BUY_Buy 5|r. |T132789:0|t[Moonberry Juice] |cRXP_BUY_from him|r.
-    >>|cRXP_WARN_The|r. |T132789:0|t[Moonberry Juice] |cRXP_WARN_is for an|r. |T4620669:0|t[Alchemy] |cRXP_WARN_Darkmoon Faire quest. If you don't want to train|r. |T4620669:0|t[Alchemy]|cRXP_WARN_, skip the objective|r.
+    >>|cRXP_BUY_Buy 5|r |T132789:0|t[Moonberry Juice] |cRXP_BUY_from him|r.
+    >>|cRXP_WARN_The|r |T132789:0|t[Moonberry Juice] |cRXP_WARN_is for an|r |T4620669:0|t[Alchemy] |cRXP_WARN_Darkmoon Faire quest. If you don't want to train|r |T4620669:0|t[Alchemy]|cRXP_WARN_, skip the objective|r.
     .turnin 37112 >>Turn in Rest and Relaxation
     .collect 1645,5,29506,1 --Moonberry Juice (5)
     .home >>Set your Hearthstone to Lion's Pride Inn
@@ -551,11 +551,11 @@ step
     .goto 37,43.2,65.63,5,0
     .goto 37,42.9,65.7,5,0
     .goto 37,41.78,69.55
-    .zone 407 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r. |cRXP_WARN_to the Darkmoon Island|r.
+    .zone 407 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r |cRXP_WARN_to the Darkmoon Island|r.
     .dmf
 step
     #completewith next
-    +|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Strider|r. |cRXP_WARN_only if you don't have a level 1 mount|r.
+    +|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Strider|r |cRXP_WARN_only if you don't have a level 1 mount|r.
     .dmf
 step
     #veteran
@@ -751,7 +751,7 @@ step
 	.isOnQuest 29444
 step
     .goto 407,50.56,90.80
-    .zone 37 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r. |cRXP_WARN_to Elwynn Forest|r.
+    .zone 37 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r |cRXP_WARN_to Elwynn Forest|r.
     .zoneskip 407,1
     .dmf
 step
@@ -812,7 +812,7 @@ step
     .isQuestTurnedIn 31903 --x Pet Battle Campaign Check
 step
 	#veteran
-    >>Defeat |cRXP_ENEMY_Julia Stevens|r. in a Pet Battle.
+    >>Defeat |cRXP_ENEMY_Julia Stevens|r in a Pet Battle.
     .complete 31693,1 --Defeat Julia Stevens
     .target Julia Stevens
     .isOnQuest 31693
@@ -876,7 +876,7 @@ step
 	.target Ma Stonefield
 step
     #optional
-    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. inside the stables. Loot it if it's up|r.
+    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the stables. Loot it if it's up|r.
     .isOnQuest 60
     .noflyable
 step
@@ -898,7 +898,7 @@ step
 	.target Ma Stonefield
 step
     #optional
-    .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Morgaine the Sly|r. inside. Kill her if she's up|r.
+    .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Morgaine the Sly|r inside. Kill her if she's up|r.
     .unitscan Morgaine the Sly
     .isOnQuest 60
     .noflyable
@@ -924,7 +924,7 @@ step
     .goto 37,27.80,88.36,0
     .goto 37,27.67,86.21,0
     .goto 37,26.32,86.82,0
-    +|cRXP_WARN_[RARE & CHEST] Keep an eye out for the |cRXP_PICK_Chest|r and |cRXP_ENEMY_Gruff Swiftbite|r. in the camps. Loot the |cRXP_PICK_Chest|r. if you find one, and kill |cRXP_ENEMY_Gruff Swiftbite|r. if he's up|r.
+    +|cRXP_WARN_[RARE & CHEST] Keep an eye out for the |cRXP_PICK_Chest|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Loot the |cRXP_PICK_Chest|r. if you find one, and kill |cRXP_ENEMY_Gruff Swiftbite|r. if he's up|r.
 	.unitscan Gruff Swiftbite
     .noflyable
 step
@@ -951,7 +951,7 @@ step
     #sticky
     #label Deed
     .goto 37,24.78,95.26
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Westfall Deed|r. on the ground
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Westfall Deed|r on the ground.
     .accept 184 >>Accept Furlbrow's Deed
 step
     #label Hogger
@@ -983,7 +983,7 @@ step
 step
 	#veteran
     .goto 52,61.04,18.82
-    >>Defeat |cRXP_ENEMY_Old MacDonald|r. in a Pet Battle
+    >>Defeat |cRXP_ENEMY_Old MacDonald|r in a Pet Battle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Old MacDonald
     .complete 31780,1 --Defeat Old MacDonald
 	.target Old MacDonald
@@ -1055,7 +1055,7 @@ step
 step
     #optional
 	#completewith Horatio
-    .goto 52,56.46,13.26,30 >>|cRXP_WARN_[CHEST] Check for a |cRXP_PICK_Chest|r. in the camp|r.
+    .goto 52,56.46,13.26,30 >>|cRXP_WARN_[CHEST] Check for a |cRXP_PICK_Chest|r in the camp|r.
     .noflyable
 step
     #loop
@@ -1123,7 +1123,7 @@ step
     .noflyable
 step
     #optional
-    .goto 37,57.49,64.61,45 >> |cRXP_WARN_[CHEST] Scan the murloc islands with your mouse for a|r. |cRXP_PICK_Chest|r. Your mouse will become a |TInterface/cursor/crosshair/interact.blp:20|tgear icon if there's a |cRXP_PICK_Chest|r. If you find one. Loot it if it's up|r.
+    .goto 37,57.49,64.61,45 >> |cRXP_WARN_[CHEST] Scan the murloc islands with your mouse for a|r |cRXP_PICK_Chest|r. Your mouse will become a |TInterface/cursor/crosshair/interact.blp:20|tgear icon if there's a |cRXP_PICK_Chest|r. If you find one. Loot it if it's up|r.
     .isOnQuest 35
     .noflyable
 step
@@ -1134,7 +1134,7 @@ step
     .noflyable
 step
     #optional
-    .goto 37,64.7,56.73,30 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. inside the Kobold Camp. Loot it if it's up|r.
+    .goto 37,64.7,56.73,30 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the Kobold Camp. Loot it if it's up|r.
     .isOnQuest 35
     .noflyable
 step
@@ -1154,7 +1154,7 @@ step
     .goto 40,37.01,50.26,20,0
     .goto 40,47.25,36.66,20,0
     .goto 40,53.93,30.58,20,0
-    .goto 40,45.14,21.76,20 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Mother Fang|r. at the back of Jasperlode Mine. Kill her if she's up|r.
+    .goto 40,45.14,21.76,20 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Mother Fang|r at the back of Jasperlode Mine. Kill her if she's up|r.
 	.unitscan Mother Fang
     .isOnQuest 35
     .noflyable
@@ -1177,7 +1177,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r.
-    >>Kill any |cRXP_ENEMY_Young Forest Bears|r. you see
+    >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see.
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .mob +*Prowler
     .mob +*Gray Forest Wolf
@@ -1217,7 +1217,7 @@ step
 step
     .goto 37,78.87,67.20,10,0
     .goto 37,78.637,67.157
-    >>Kill |cRXP_FRIENDLY_James Clark|r. inside. Loot him for [|cRXP_LOOT_James Clark's Head|r and the |T134939:0|t|cRXP_LOOT_Gold Pickup Schedule|r].
+    >>Kill |cRXP_FRIENDLY_James Clark|r inside. Loot him for [|cRXP_LOOT_James Clark's Head|r and the |T134939:0|t|cRXP_LOOT_Gold Pickup Schedule|r].
     >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r]. to start the quest|r.
     .complete 26152,1 --James Clark's Head (1)
     .collect 1307,1,123,1 --Gold Pickup Schedule (1)
@@ -1244,7 +1244,7 @@ step
     .goto 37,74.75,67.13,0
     .goto 37,87.15,64.63,0
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r.
-    >>Kill any |cRXP_ENEMY_Young Forest Bears|r. you see
+    >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see.
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .mob +*Prowler
     .mob +*Gray Forest Wolf
@@ -1260,7 +1260,7 @@ step
 step
     #label LostGuards
     .goto 37,72.653,60.323
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_A half-eaten body|r. on the ground
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_A half-eaten body|r on the ground.
     .turnin 37 >>Turn in Find the Lost Guards
     .accept 45 >>Accept Discover Rolf's Fate
 step
@@ -1280,13 +1280,13 @@ step
     .waypoint 37,77.991,58.108,40,0
     .waypoint 37,79.370,57.016,40,0
     >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their [|cRXP_LOOT_Torn Murloc Fins|r].
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r. will cast|r. |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r.
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r.
     .complete 46,1 --Torn Murloc Fin (8)
     .mob Murloc Forager
     .mob Murloc Lurker
 step
     .goto 37,79.795,55.510
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Rolf's corpse|r. on the ground
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Rolf's corpse|r on the ground.
     .turnin 45 >>Turn in Discover Rolf's Fate
     .accept 71 >>Accept Report to Thomas
 step
@@ -1305,7 +1305,7 @@ step
     .waypoint 37,74.75,67.13,60,0
     .waypoint 37,87.15,64.63,60,0
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r.
-    >>Kill any |cRXP_ENEMY_Young Forest Bears|r. you see
+    >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see.
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .mob +*Prowler
     .mob +*Gray Forest Wolf
@@ -1359,7 +1359,7 @@ step
     .goto 37,68.23,76.33,0
     .goto 37,71.31,76.93,0
     .goto 37,71.81,78.51,0
-    >>Kill |cRXP_ENEMY_Bandits|r, |cRXP_ENEMY_Erlan Drudgemoor|r. inside, and |cRXP_ENEMY_Surena Caledon|r. inside. Loot them for their [|cRXP_LOOT_Linen Scraps|r].
+    >>Kill |cRXP_ENEMY_Bandits|r, |cRXP_ENEMY_Erlan Drudgemoor|r inside, and |cRXP_ENEMY_Surena Caledon|r inside. Loot them for their [|cRXP_LOOT_Linen Scraps|r].
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
     .mob Erlan Drudgemoor
@@ -1368,8 +1368,8 @@ step
     #optional
     #label Morgan
     .goto 37,71.02,80.67
-    >>Kill |cRXP_ENEMY_Morgan the Collector|r. inside. Loot him for [|cRXP_LOOT_The Collector's Ring|r and |cRXP_LOOT_Linen Scraps|r].
-    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. in and around the house. Loot it if it's up|r.
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r inside. Loot him for [|cRXP_LOOT_The Collector's Ring|r and |cRXP_LOOT_Linen Scraps|r].
+    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r in and around the house. Loot it if it's up|r.
     .complete 147,1 --The Collector's Ring (1)
     .complete 83,1 --Collect Linen Scrap (6)
     .disablecheckbox
@@ -1378,8 +1378,8 @@ step
     .isOnQuest 83
 step
     .goto 37,71.02,80.67
-    >>Kill |cRXP_ENEMY_Morgan the Collector|r. inside. Loot him for [|cRXP_LOOT_The Collector's Ring|r].
-    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. in and around the house. Loot it if it's up|r.
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r inside. Loot him for [|cRXP_LOOT_The Collector's Ring|r].
+    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r in and around the house. Loot it if it's up|r.
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
 step
@@ -1408,7 +1408,7 @@ step
     .goto 37,70.84,78.22,50,0
     .goto 37,71.81,78.51,50,0
     >>Kill |cRXP_ENEMY_Bandits|r. Loot them for their [|cRXP_LOOT_Linen Scraps|r].
-    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r. in and around the barn. Loot it if it's up|r.
+    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r in and around the barn. Loot it if it's up|r.
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
 step
