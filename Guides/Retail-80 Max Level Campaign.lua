@@ -2251,15 +2251,15 @@ step
     .complete 84722,1 --Meet up with Bargus
 step
     .goto 2369,48.56,44.7
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_First Earthen Pylon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Earthen Pylon|r at the waypoint destination
     .complete 84722,2 --1/1 First Earthen Pylon Activated
 step
     .goto 2369,45.44,41.66
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Second Earthen Pylon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Earthen Pylon|r at the waypoint destination
     .complete 84722,3 --1/1 Second Earthen Pylon Activated
 step
     .goto 2369,44.86,44.12
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Third Earthen Pylon|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Earthen Pylon|r at the waypoint destination
     .complete 84722,4 --1/1 Third Earthen Pylon Activated
 step
     .goto 2369,48.12,43.98
@@ -2420,6 +2420,45 @@ step
     .turnin 85059 >>Turn in A Piece of the Action
     .accept 86156 >>Accept Getting Involved
     .target Jack the Hammer
+step
+    .goto 2369,70.46,67.14,20,0
+    .goto 2369,68.38,73.76
+    >>|cRXP_WARN_Use the ExtraActionButton in the cave|r.
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runed Storm Cache|r.
+    .complete 84726,1 --1/1 Vrykul Ruins Searched
+step
+    .areapoiexists 2369,8149
+    .goto 2369,61.93,74.69
+    >>Complete the |cRXP_WARN_The Drain Excavation|r by killing |cRXP_ENEMY_Gravesludge|r
+    .complete 86156,2 --1/1 DO ONE OF THE EVENTS IF ITS UP
+    .mob Gravesludge
+step
+    .goto 2369,32.41,69.36
+    >>|cRXP_WARN_Use the ExtraActionButton|r.
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runed Storm Cache|r.
+    .complete 84726,2 --1/1 Vrykul Ritual Site Searched
+step
+    .areapoiexists 2369,8152
+    .goto 2369,33.20,64.80
+    >>Complete the |cRXP_WARN_The Drowned Lair Excavation|r by killing |cRXP_ENEMY_Nerathor|r
+    .complete 86156,2 --1/1 DO ONE OF THE EVENTS IF ITS UP
+    .mob Nerathor
+step
+    .areapoiexists 2369,8150
+    .goto 2369,44.03,56.32
+    >>Complete the |cRXP_WARN_Shuddering Hallow Excavation|r by killing |cRXP_ENEMY_Stalgnarok|r
+    .complete 86156,2 --1/1 DO ONE OF THE EVENTS IF ITS UP
+    .mob Stalagnarok
+step
+    .goto 2369,39.48,20.23
+    >>|cRXP_WARN_Use the ExtraActionButton|r.
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runed Storm Cache|r.
+    .complete 84726,3 --1/1 Vrykul Gravesite Searched
+step
+    .goto 2369,71.21,44.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
+    .turnin 84726 >>Turn in Uncovered Mysteries
+    .target Angorla
 step
     .areapoiexists 2369,8149
     .goto 2369,61.93,74.69
@@ -2770,6 +2809,16 @@ RXPGuides.RegisterGuide([[
 #displayname Siren Isle Daillies
 #internal
 
+step
+    #loop
+    .goto 2369,69.42,42.84,10,0
+    .goto 2369,71.34,44.10,10,0
+    .goto 2369,71.04,39.69,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r, |cRXP_FRIENDLY_Dawn|r, and |cRXP_FRIENDLY_Stellin Verasa|r
+    .questcount 3,83932,84222,84432 >>|cRXP_WARN_Accept the repeatable quests in the Floatsam Shoal|r
+    .target Sky-Captain Elaena Lancekat
+    .target Dawn
+    .target Stellin Verasa
 step --DAILLIES
     .goto 2369,71.03,39.72
     -- .questcount <2,83932,85589

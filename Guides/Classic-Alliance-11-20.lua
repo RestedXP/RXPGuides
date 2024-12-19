@@ -1775,7 +1775,7 @@ step << NightElf/Hunter/Druid/Warrior
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
     .isQuestTurnedIn 4811
-step << NightElf/Hunter
+step << NightElf Hunter
     #optional
     #season 0
     .goto Darkshore,37.4,40.6
@@ -5174,6 +5174,7 @@ step << !Human Rogue
     .accept 94 >> Accept A Watchful Eye
     .target Theocritus
     .dungeon !DM
+    .xp <20,1
 step << !Human Rogue
     #xprate >1.59
     #optional
@@ -7176,6 +7177,7 @@ step << !Human !Warlock
     .accept 94 >> Accept A Watchful Eye
     .target Theocritus
     .dungeon DM
+    .xp <20,1
 step << !Human !Warlock
     #xprate >1.59 << !Hunter
     #optional
@@ -9978,6 +9980,7 @@ step
     .target Theocritus
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r at the top
     .accept 94 >> Accept A Watchful Eye
+    .xp <20,1
 step
     #label InRR
     #completewith FlyR
