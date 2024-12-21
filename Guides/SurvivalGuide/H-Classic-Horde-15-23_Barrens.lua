@@ -468,9 +468,9 @@ step
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
+    .mob +Bazzalan
     .complete 5728,2 --Jergosh the Invoker (1)
-    .mob Bazzalan
-    .mob Jergosh the Invoker
+    .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
 step
@@ -955,34 +955,36 @@ step << Rogue
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step
-    .goto The Barrens,63.89,35.93,50,0
-    .goto The Barrens,64.28,35.60,50,0
-    .goto The Barrens,64.54,34.93,50,0
-    .goto The Barrens,64.42,33.12,50,0
-    .goto The Barrens,63.90,32.03,50,0
-    .goto The Barrens,63.78,31.03,50,0
-    .goto The Barrens,62.89,29.77,50,0
-    .goto The Barrens,64.28,35.60
-    >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for |cRXP_LOOT_Hooves|r
-    .complete 845,1 --Zhevra Hooves (4)
-    .mob Zhevra Runner
-step
     #label FlyToXroads1
-    #completewith next
+    #completewith XroadsTurnins3
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .isQuestComplete 845
 step
+    #loop
+    .goto The Barrens,55.27,37.82,0
+    .goto The Barrens,48.33,36.75,0
+    .goto The Barrens,55.27,37.82,80,0
+    .goto The Barrens,53.84,38.52,80,0
+    .goto The Barrens,52.63,38.07,80,0
+    .goto The Barrens,49.49,37.20,80,0
+    .goto The Barrens,48.33,36.75,80,0
+    >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for |cRXP_LOOT_Hooves|r
+    .complete 845,1 --Zhevra Hooves (4)
+    .mob Zhevra Runner
+step
+    #label XroadsTurnins3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
+    .target +Thork
     .goto The Barrens,51.50,30.87
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
+    .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
-    .target Sergra Darkthorn
-    .target Thork
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -3074,6 +3076,7 @@ step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
+    .train 227 >>Train Staves
     .target Ansekhwa
 step << Troll Hunter/Orc Hunter/Undead Warrior/Warlock/Priest
     .goto Thunder Bluff,40.93,62.73

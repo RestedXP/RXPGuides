@@ -2359,6 +2359,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Accept Speak with Dillinger
     .target Austil de Mon << Warrior
+    .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
@@ -2404,17 +2405,20 @@ step << Warrior
     .turnin 1818 >> Turn in Speak with Dillinger
     .accept 1819 >> Accept Ulag the Cleaver
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
     >>|cRXP_WARN_Click on the skull on the ground. This will summon|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Kill him|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .turnin 1819 >> Turn in Ulag the Cleaver
     .accept 1820 >> Accept Speak with Coleman
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step << Warlock/Mage/Priest
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
@@ -2793,8 +2797,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2811,8 +2813,6 @@ step
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2829,8 +2829,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Yvette Farthing
@@ -2841,8 +2839,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
-    .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Coleman Farthing
@@ -2855,7 +2851,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2871,7 +2866,6 @@ step
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
@@ -2887,7 +2881,6 @@ step
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Yvette Farthing
@@ -2897,10 +2890,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
-    .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Coleman Farthing
+step << Warrior
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
+    .turnin 1820 >>Turn in Speak with Coleman
+    .accept 1821 >>Accept Agamand Heirlooms
+    .group
+    .isQuestTurnedIn 1819
+step << Warrior
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
+    .turnin 1820 >>Turn in Speak with Coleman
+    .solo
+    .isQuestTurnedIn 1819
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor

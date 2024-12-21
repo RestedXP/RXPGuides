@@ -62,18 +62,17 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Venya|r and |cRXP_FRIENDLY_Sarvis|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r << Mage
     .accept 1470 >>Accept Piercing the Veil << Warlock
-    .goto Tirisfal Glades,30.98,66.41,0,0 << Warlock
+    .goto Tirisfal Glades,30.98,66.41 << Warlock
     .target +Venya Marthand << Warlock
     .turnin 363 >> Turn in Rude Awakening
     .accept 364 >> Accept The Mindless Ones
     .target +Shadow Priest Sarvis
-    .goto Tirisfal Glades,30.84,66.20,0,0
+    .goto Tirisfal Glades,30.84,66.20
 step << Warlock/Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
     .xp <2,1
 step << Mage
@@ -105,7 +104,6 @@ step << !Warlock !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
     .xp <2,1
 step << Warrior
@@ -808,12 +806,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r << !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r and |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 6395 >> Turn in Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.86,66.05
     .accept 5651 >> Accept In Favor of Darkness << Priest
+    .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Novice Elreth
-    .target Dark Cleric Duesten << Priest
 step << Mage
     #season 2
     .goto Tirisfal Glades,30.94,66.06
@@ -1638,12 +1636,12 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 374 >>Accept Proof of Demise
-    .target +Magistrate Sevren
+    .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
     .accept 398 >>Accept Wanted: Maggot Eye
     .goto Tirisfal Glades,60.74,51.52
     .accept 358 >>Accept Graverobbers
-    .target +Deathguard Burgess
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
 step
     #xprate <1.5
@@ -2002,10 +2000,11 @@ step
     >>|cRXP_WARN_Make sure you die on (or to the West of) the goto arrow|r
 step
     #label DoomedWeed
-    .goto Tirisfal Glades,59.26,46.73,30,0
+    #loop
+    .goto Tirisfal Glades,57.71,48.96,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
-    .goto Tirisfal Glades,57.71,48.96
+    .goto Tirisfal Glades,59.26,46.73,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5482 >>Turn in Doom Weed
     .target Junior Apothecary Holland
@@ -2529,6 +2528,7 @@ step << Warrior
     .trainer >> Train your class spells
     .accept 1818 >> Accept Speak with Dillinger
     .target Austil de Mon << Warrior
+    .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
@@ -2571,6 +2571,7 @@ step << Warrior
     .turnin 1818 >> Turn in Speak with Dillinger
     .accept 1819 >> Accept Ulag the Cleaver
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
     >>|cRXP_WARN_Click on the skull on the ground. This will summon|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Kill him|r
@@ -2632,14 +2633,14 @@ step << Warlock
 step
     #label ScarletCrusade1
     #loop
-	.goto Tirisfal Glades,50.07,68.87,25,0
-	.goto Tirisfal Glades,50.23,66.94,25,0
-	.goto Tirisfal Glades,51.16,65.73,25,0
-	.goto Tirisfal Glades,51.75,66.04,25,0
-	.goto Tirisfal Glades,52.93,67.62,25,0
-	.goto Tirisfal Glades,52.72,69.33,25,0
-	.goto Tirisfal Glades,51.96,69.57,25,0
-	.goto Tirisfal Glades,51.03,69.55,25,0
+	.goto Tirisfal Glades,50.07,68.87,40,0
+	.goto Tirisfal Glades,50.23,66.94,40,0
+	.goto Tirisfal Glades,51.16,65.73,40,0
+	.goto Tirisfal Glades,51.75,66.04,40,0
+	.goto Tirisfal Glades,52.93,67.62,40,0
+	.goto Tirisfal Glades,52.72,69.33,40,0
+	.goto Tirisfal Glades,51.96,69.57,40,0
+	.goto Tirisfal Glades,51.03,69.55,40,0
     >>Kill |cRXP_ENEMY_Captain Perrine|r, |cRXP_ENEMY_Scarlet Zealots|r and |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 370,1 --Captain Perrine (1)
     .mob +Captain Perrine
@@ -3012,9 +3013,9 @@ step << Mage
     #completewith next
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
+    .mob +Wandering Spirit
 step << Mage
     .goto Tirisfal Glades,77.48,62.00
     >>Loot any of the plants on the ground for a |cRXP_PICK_Balnir Snapdragon|r
@@ -4246,11 +4247,13 @@ step
     .accept 449 >>Accept The Deathstalkers' Report
     .target Rane Yorick
 step
+    #loop
+    .goto Silverpine Forest,57.72,10.07,0
     .goto Silverpine Forest,55.96,16.18,50,0
     .goto Silverpine Forest,58.37,15.56,50,0
     .goto Silverpine Forest,59.40,13.58,50,0
     .goto Silverpine Forest,60.11,10.51,50,0
-    .goto Silverpine Forest,57.72,10.07
+    .goto Silverpine Forest,57.72,10.07,50,0
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
@@ -4293,11 +4296,11 @@ step
 step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Podrig|r
     .accept 477 >>Accept Border Crossings
+    .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .accept 6321 >>Accept Supplying the Sepulcher
+    .target +Deathguard Podrig
     .goto Silverpine Forest,43.43,41.67
-    .target Shadow Priest Allister
-    .target Deathguard Podrig
 step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
@@ -4328,13 +4331,15 @@ step
     .accept 430 >>Accept Return to Quinn
     .target Apothecary Renferrel
 step
+    #loop
+    .goto Silverpine Forest,49.12,36.72,0
     .goto Silverpine Forest,50.32,39.22,50,0
     .goto Silverpine Forest,51.86,41.56,50,0
     .goto Silverpine Forest,51.53,43.06,50,0
     .goto Silverpine Forest,51.62,44.85,50,0
     .goto Silverpine Forest,51.80,46.60,50,0
     .goto Silverpine Forest,50.83,47.74,50,0
-    .goto Silverpine Forest,49.12,36.72
+    .goto Silverpine Forest,49.12,36.72,50,0
     >>Kill |cRXP_ENEMY_Moonrage Whitescalps|r
     .complete 421,1 --Moonrage Whitescalp (5)
     .mob Moonrage Whitescalp
@@ -4358,7 +4363,8 @@ step
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
-    .goto Silverpine Forest,53.39,13.32,80 >> Travel to The Ivar Patch
+    .goto Silverpine Forest,53.39,13.32,80,0
+    .subzone 239 >>Travel to The Ivar Patch
 step
     #label QuinnYorick
     .goto Silverpine Forest,53.39,13.32,8,0
@@ -4433,30 +4439,30 @@ step
     .vendor >> Vendor trash
     .target Killian Sanatha
 step
-#loop
-	.line Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
-	.goto Silverpine Forest,37.25,15.99,25,0
-	.goto Silverpine Forest,35.67,16.01,25,0
-	.goto Silverpine Forest,34.96,16.34,25,0
-	.goto Silverpine Forest,33.99,17.24,25,0
-	.goto Silverpine Forest,34.14,15.26,25,0
-	.goto Silverpine Forest,35.06,14.50,25,0
-	.goto Silverpine Forest,35.85,13.83,25,0
-	.goto Silverpine Forest,36.33,14.20,25,0
+    #loop
+	.goto Silverpine Forest,36.33,14.20,0
+	.goto Silverpine Forest,37.25,15.99,50,0
+	.goto Silverpine Forest,35.67,16.01,50,0
+	.goto Silverpine Forest,34.96,16.34,50,0
+	.goto Silverpine Forest,33.99,17.24,50,0
+	.goto Silverpine Forest,34.14,15.26,50,0
+	.goto Silverpine Forest,35.06,14.50,50,0
+	.goto Silverpine Forest,35.85,13.83,50,0
+	.goto Silverpine Forest,36.33,14.20,50,0
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
     >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_as it's impossibly difficult to kill her!|r << !Mage !Warlock
     >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
-    .unitscan Krethis Shadowspinner
-    .unitscan Son of Arugal
+    .unitscan Krethis Shadowspi
 step
+    #loop
+    .goto Silverpine Forest,41.60,21.65,0
     .goto Silverpine Forest,41.37,19.64,50,0
     .goto Silverpine Forest,41.60,21.65,50,0
     .goto Silverpine Forest,42.36,23.77,50,0
     .goto Silverpine Forest,44.67,24.84,50,0
     .goto Silverpine Forest,46.08,26.62,50,0
-    .goto Silverpine Forest,41.60,21.65
     >>Finish killing |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
@@ -4470,7 +4476,8 @@ step
 step
     #hardcore
     #completewith next
-    .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
+    .goto Silverpine Forest,45.51,41.26,100,0
+    .subzone 228 >>Travel back to The Sepulcher
 step
     #xprate <1.5
     .goto Silverpine Forest,44.20,39.73
@@ -4514,13 +4521,13 @@ step
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrea|r
-    .vendor >> Buy |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r] from her if they're up
+    .vendor >> Buy |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r] from her if it's up
     .target Andrea Boynton
     .money <0.1400
 step << Rogue
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandre|r
-    .vendor >> Buy |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] from her if they're up
+    .vendor >> Buy |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] from her if it's up
     .target Alexandre Lefevre
     .money <0.2633
 step << Warlock/Mage/Priest
@@ -4553,9 +4560,9 @@ step
     >>Kill |cRXP_ENEMY_Moonrage Gluttons|r and |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for their |cRXP_LOOT_Shackles|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_enrage when they are below 25% health. Kill them quickly when they are low|r
     .complete 423,1 --Glutton Shackle (6)
+    .mob +Moonrage Glutton
     .complete 423,2 --Darksoul Shackle (3)
-    .mob Moonrage Glutton
-    .mob Moonrage Darksoul
+    .mob +Moonrage Darksoul
 step << Mage
     #season 2
     #completewith BorderCrossings
@@ -4625,24 +4632,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
     .turnin 478 >>Turn in Maps and Runes
     .accept 481 >>Accept Dalar's Analysis
+    .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .turnin 423 >>Turn in Arugal's Folly
     .turnin 481 >>Turn in Dalar's Analysis
     .accept 482 >>Accept Dalaran's Intentions
+    .target +Dalar Dawnweaver
     .goto Silverpine Forest,44.20,39.73
-    .target Shadow Priest Allister
-    .target Dalar Dawnweaver
 step
     #xprate >1.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
     .turnin 478 >>Turn in Maps and Runes
     .accept 481 >>Accept Dalar's Analysis
+    .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .turnin 481 >>Turn in Dalar's Analysis
     .accept 482 >>Accept Dalaran's Intentions
+    .target +Dalar Dawnweaver
     .goto Silverpine Forest,44.20,39.73
-    .target Shadow Priest Allister
-    .target Dalar Dawnweaver
 step
     .goto Silverpine Forest,43.98,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r
@@ -5319,9 +5326,9 @@ step << Undead
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
+    .mob +Ragefire Trogg
     .complete 5723,2 --Ragefire Shaman (8)
-    .mob Ragefire Trogg
-    .mob Ragefire Shaman
+    .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
 step << Undead
@@ -5342,9 +5349,9 @@ step << Undead
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
+    .mob +Ragefire Trogg
     .complete 5723,2 --Ragefire Shaman (8)
-    .mob Ragefire Trogg
-    .mob Ragefire Shaman
+    .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
 step << Undead
@@ -5367,9 +5374,9 @@ step << Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
+    .mob +Bazzalan
     .complete 5728,2 --Jergosh the Invoker (1)
-    .mob Bazzalan
-    .mob Jergosh the Invoker
+    .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
 step << Undead
@@ -5605,19 +5612,18 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Venya|r and |cRXP_FRIENDLY_Sarvis|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r << Mage
     .accept 1470 >>Accept Piercing the Veil << Warlock
-    .goto Tirisfal Glades,30.98,66.41,0,0 << Warlock
+    .goto Tirisfal Glades,30.98,66.41 << Warlock
+    .target +Venya Marthand << Warlock
     .turnin 363 >> Turn in Rude Awakening
     .accept 364 >> Accept The Mindless Ones
-    .goto Tirisfal Glades,30.84,66.20,0,0
-    .target Venya Marthand
-    .target Shadow Priest Sarvis
+    .target +Shadow Priest Sarvis
+    .goto Tirisfal Glades,30.84,66.20
 step << Warlock/Mage
     #xprate <2.1
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
     .xp <2,1
 step << Warlock/Mage
@@ -5626,7 +5632,6 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
 step << Mage
     #requires Percing
@@ -5658,7 +5663,6 @@ step << !Warlock !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
     .xp <2,1
 step << !Warlock !Mage
@@ -5666,7 +5670,6 @@ step << !Warlock !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
 step << Warrior
     #completewith next
@@ -5685,6 +5688,7 @@ step << Warrior
 step << Warlock
     #requires Piercing
     #loop
+    .goto Tirisfal Glades,31.82,61.48,0
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
     .goto Tirisfal Glades,32.07,60.17,30,0
@@ -5694,7 +5698,6 @@ step << Warlock
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r. Loot them for their |cRXP_LOOT_Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
@@ -5736,23 +5739,21 @@ step
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
-    .goto Tirisfal Glades,31.35,66.21,10,0
-#loop
-	.line Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
-	.goto Tirisfal Glades,31.72,63.98,25,0
-	.goto Tirisfal Glades,30.69,63.88,25,0
-	.goto Tirisfal Glades,30.90,62.20,25,0
-	.goto Tirisfal Glades,30.73,61.66,25,0
-	.goto Tirisfal Glades,31.14,61.41,25,0
-	.goto Tirisfal Glades,31.80,61.83,25,0
-	.goto Tirisfal Glades,32.85,63.02,25,0
-	.goto Tirisfal Glades,32.90,63.54,25,0
-	.goto Tirisfal Glades,33.41,63.06,25,0
-	.goto Tirisfal Glades,33.75,62.86,25,0
-	.goto Tirisfal Glades,33.51,63.82,25,0
-	.goto Tirisfal Glades,33.55,64.57,25,0
-	.goto Tirisfal Glades,33.29,64.96,25,0
-	.goto Tirisfal Glades,31.72,63.98,25,0
+    #loop
+	.goto Tirisfal Glades,31.72,63.98,0
+	.goto Tirisfal Glades,31.72,63.98,40,0
+	.goto Tirisfal Glades,30.69,63.88,40,0
+	.goto Tirisfal Glades,30.90,62.20,40,0
+	.goto Tirisfal Glades,30.73,61.66,40,0
+	.goto Tirisfal Glades,31.14,61.41,40,0
+	.goto Tirisfal Glades,31.80,61.83,40,0
+	.goto Tirisfal Glades,32.85,63.02,40,0
+	.goto Tirisfal Glades,32.90,63.54,40,0
+	.goto Tirisfal Glades,33.41,63.06,40,0
+	.goto Tirisfal Glades,33.75,62.86,40,0
+	.goto Tirisfal Glades,33.51,63.82,40,0
+	.goto Tirisfal Glades,33.55,64.57,40,0
+	.goto Tirisfal Glades,33.29,64.96,40,0
     >>Kill |cRXP_ENEMY_Mindless Zombies|r and |cRXP_ENEMY_Wretched Zombies|r
     .complete 364,1 --Kill Mindless Zombie (x8)
     .mob +Mindless Zombie
@@ -5804,24 +5805,24 @@ step
     .accept 3098 >> Accept Glyphic Scroll << Mage
     .accept 3099 >> Accept Tainted Scroll << Warlock
     .accept 3901 >> Accept Rattling the Rattlecages
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .accept 376 >> Accept The Damned
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
     .turnin 3099 >> Turn in Tainted Scroll << Warlock
     .accept 77672 >>Accept The Lost Rune << Warlock
+    .target +Maximillion << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
     .turnin 3098 >> Turn in Glyphic Scroll << Mage
     .accept 77671 >>Accept Spell Research << Mage
+    .target +Isabella << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
     .turnin 3097 >> Turn in Hallowed Scroll << Priest
     .accept 77670 >>Accept Meditation on Undeath << Priest
+    .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
-    .target Maximillion << Warlock
-    .target Isabella << Mage
-    .target Dark Cleric Duesten << Priest
 step
     #xprate <2.1
     #season 0
@@ -5836,21 +5837,21 @@ step
     .accept 3098 >> Accept Glyphic Scroll << Mage
     .accept 3099 >> Accept Tainted Scroll << Warlock
     .accept 3901 >> Accept Rattling the Rattlecages
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .accept 376 >> Accept The Damned
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
     .turnin 3099 >> Turn in Tainted Scroll << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
+    .target +Maximillion << Warlock
     .turnin 3098 >> Turn in Glyphic Scroll << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
+    .target +Isabella << Mage
     .turnin 3097 >> Turn in Hallowed Scroll << Priest
+    .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
-    .target Maximillion << Warlock
-    .target Isabella << Mage
-    .target Dark Cleric Duesten << Priest
 step << Priest
     #xprate <2.1
     #season 2
@@ -5875,6 +5876,8 @@ step << Mage/Warlock/Priest
     .target Joshua Kien
     .isOnQuest 364
 step
+    #loop
+    .goto Tirisfal Glades,34.32,56.79,0
     .goto Tirisfal Glades,29.21,66.68,40,0
     .goto Tirisfal Glades,29.48,65.70,40,0
     .goto Tirisfal Glades,29.60,64.04,40,0
@@ -5885,16 +5888,6 @@ step
     .goto Tirisfal Glades,32.07,57.74,40,0
     .goto Tirisfal Glades,32.85,58.35,40,0
     .goto Tirisfal Glades,34.32,56.79,40,0
-    .goto Tirisfal Glades,29.21,66.68,40,0
-    .goto Tirisfal Glades,29.48,65.70,40,0
-    .goto Tirisfal Glades,29.60,64.04,40,0
-    .goto Tirisfal Glades,29.67,63.39,40,0
-    .goto Tirisfal Glades,30.09,61.51,40,0
-    .goto Tirisfal Glades,30.97,59.66,40,0
-    .goto Tirisfal Glades,31.61,58.57,40,0
-    .goto Tirisfal Glades,32.07,57.74,40,0
-    .goto Tirisfal Glades,32.85,58.35,40,0
-    .goto Tirisfal Glades,34.32,56.79
     >>Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Ragged Scavengers|r. Loot them for their |cRXP_LOOT_Scavenger Paws|r
     >>Kill |cRXP_ENEMY_Duskbats|r and |cRXP_ENEMY_Mangy Duskbats|r. Loot them for their |cRXP_LOOT_Duskbat Wings|r
     >>|cRXP_WARN_Try to avoid |cRXP_ENEMY_Mangy Duskbats|r if you can due to them being much tougher to kill than |cRXP_ENEMY_Duskbats|r|r
@@ -5907,6 +5900,7 @@ step
 step
     #xprate <2.1
     #loop
+    .goto Tirisfal Glades,31.82,61.48,0
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
     .goto Tirisfal Glades,32.07,60.17,30,0
@@ -5916,7 +5910,6 @@ step
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
@@ -5936,13 +5929,13 @@ step
     #xprate <2.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r and |cRXP_FRIENDLY_Elreth|r
     .turnin 3901 >> Turn in Rattling the Rattlecages
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .turnin 376 >> Turn in The Damned
     .accept 6395 >> Accept Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
 step << Mage/Warlock/Priest
     #xprate >2.09
     .goto Tirisfal Glades,32.23,65.59,8,0
@@ -5981,25 +5974,25 @@ step
     .accept 3097 >> Accept Hallowed Scroll << Priest
     .accept 3098 >> Accept Glyphic Scroll << Mage
     .accept 3099 >> Accept Tainted Scroll << Warlock
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .turnin 376 >> Turn in The Damned
     .accept 6395 >> Accept Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
     .turnin 3099 >> Turn in Tainted Scroll << Warlock
     .accept 77672 >>Accept The Lost Rune << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
+    .target +Maximillion << Warlock
     .turnin 3098 >> Turn in Glyphic Scroll << Mage
     .accept 77671 >>Accept Spell Research << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
+    .target +Isabella << Mage
     .turnin 3097 >> Turn in Hallowed Scroll << Priest
     .accept 77670 >>Accept Meditation on Undeath << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
-    .target Maximillion << Warlock
-    .target Isabella << Mage
-    .target Dark Cleric Duesten << Priest
+    .target +Dark Cleric Duesten << Priest
 step
     #xprate >2.09
     #season 0
@@ -6013,22 +6006,22 @@ step
     .accept 3097 >> Accept Hallowed Scroll << Priest
     .accept 3098 >> Accept Glyphic Scroll << Mage
     .accept 3099 >> Accept Tainted Scroll << Warlock
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .turnin 376 >> Turn in The Damned
     .accept 6395 >> Accept Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
     .turnin 3099 >> Turn in Tainted Scroll << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
+    .target +Maximillion << Warlock
     .turnin 3098 >> Turn in Glyphic Scroll << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
+    .target +Isabella << Mage
     .turnin 3097 >> Turn in Hallowed Scroll << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
-    .target Maximillion << Warlock
-    .target Isabella << Mage
-    .target Dark Cleric Duesten << Priest
+    .target +Dark Cleric Duesten << Priest
 step << Priest
     #xprate <2.1
     #season 2
@@ -6180,9 +6173,8 @@ step
     .abandon 3902 >> Abandon Scavenging Deathknell
 step
     #xprate <1.5
-    >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
-#loop
-	.line Tirisfal Glades,32.37,64.37,32.81,64.39,32.89,64.60,33.01,65.38,33.79,64.57,33.13,63.08,32.79,63.11,31.86,61.49,31.75,61.96,31.70,62.53,31.34,62.44,32.37,64.37
+    #loop
+	.goto Tirisfal Glades,32.37,64.37,
 	.goto Tirisfal Glades,32.37,64.37,12,0
 	.goto Tirisfal Glades,32.81,64.39,12,0
 	.goto Tirisfal Glades,32.89,64.60,12,0
@@ -6194,32 +6186,28 @@ step
 	.goto Tirisfal Glades,31.75,61.96,12,0
 	.goto Tirisfal Glades,31.70,62.53,12,0
 	.goto Tirisfal Glades,31.34,62.44,12,0
-	.goto Tirisfal Glades,32.37,64.37,12,0
+    >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
     .complete 3902,1 --Collect Scavenged Goods (x6)
 step
     #label NightWebStart
-    .goto Tirisfal Glades,29.29,59.38,50,0
-    .goto Tirisfal Glades,29.94,57.33,50,0
-#loop
-	.line Tirisfal Glades,29.94,57.33,29.82,56.03,29.25,55.77,28.40,56.51,27.68,57.10,28.29,58.31,28.25,59.41,28.80,59.53,29.29,59.40,29.67,58.53,29.94,57.33
-	.goto Tirisfal Glades,29.94,57.33,25,0
-	.goto Tirisfal Glades,29.82,56.03,25,0
-	.goto Tirisfal Glades,29.25,55.77,25,0
-	.goto Tirisfal Glades,28.40,56.51,25,0
-	.goto Tirisfal Glades,27.68,57.10,25,0
-	.goto Tirisfal Glades,28.29,58.31,25,0
-	.goto Tirisfal Glades,28.25,59.41,25,0
-	.goto Tirisfal Glades,28.80,59.53,25,0
-	.goto Tirisfal Glades,29.29,59.40,25,0
-	.goto Tirisfal Glades,29.67,58.53,25,0
-	.goto Tirisfal Glades,29.94,57.33,25,0
+    #loop
+	.goto Tirisfal Glades,29.94,57.33,0
+	.goto Tirisfal Glades,29.94,57.33,40,0
+	.goto Tirisfal Glades,29.82,56.03,40,0
+	.goto Tirisfal Glades,29.25,55.77,40,0
+	.goto Tirisfal Glades,28.40,56.51,40,0
+	.goto Tirisfal Glades,27.68,57.10,40,0
+	.goto Tirisfal Glades,28.29,58.31,40,0
+	.goto Tirisfal Glades,28.25,59.41,40,0
+	.goto Tirisfal Glades,28.80,59.53,40,0
+	.goto Tirisfal Glades,29.29,59.40,40,0
+	.goto Tirisfal Glades,29.67,58.53,40,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r
     .complete 380,1,6 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
 step
-    .goto Tirisfal Glades,27.86,58.98,40,0
-#loop
-	.line Tirisfal Glades,28.25,58.27,28.42,59.07,27.86,60.57,27.17,59.18,27.30,57.97,26.94,56.42,27.51,56.00,28.25,58.27
+    #loop
+	.goto Tirisfal Glades,28.25,58.27,0
 	.goto Tirisfal Glades,28.25,58.27,25,0
 	.goto Tirisfal Glades,28.42,59.07,25,0
 	.goto Tirisfal Glades,27.86,60.57,25,0
@@ -6227,7 +6215,6 @@ step
 	.goto Tirisfal Glades,27.30,57.97,25,0
 	.goto Tirisfal Glades,26.94,56.42,25,0
 	.goto Tirisfal Glades,27.51,56.00,25,0
-	.goto Tirisfal Glades,28.25,58.27,25,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r close to the cave entrance
     .complete 380,1 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
@@ -6270,6 +6257,8 @@ step << Warrior
     .complete 77668,1 --Learn Spell: Engrave Gloves - Victory Rush
     .isOnQuest 77668
 step
+    #loop
+    .goto Tirisfal Glades,24.68,59.54,0
     .goto Tirisfal Glades,26.31,59.60,30,0
     .goto Tirisfal Glades,25.61,59.55,20,0
     .goto Tirisfal Glades,25.11,60.33,20,0
@@ -6277,13 +6266,6 @@ step
     .goto Tirisfal Glades,23.23,59.91,20,0
     .goto Tirisfal Glades,23.89,58.36,20,0
     .goto Tirisfal Glades,24.68,59.54,20,0
-    .goto Tirisfal Glades,26.31,59.60,30,0
-    .goto Tirisfal Glades,25.61,59.55,20,0
-    .goto Tirisfal Glades,25.11,60.33,20,0
-    .goto Tirisfal Glades,24.18,60.77,20,0
-    .goto Tirisfal Glades,23.23,59.91,20,0
-    .goto Tirisfal Glades,23.89,58.36,20,0
-    .goto Tirisfal Glades,24.68,59.54
     >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the cave
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
@@ -6363,26 +6345,25 @@ step << Mage
     .mob Scarlet Convert
 step << Mage
     #season 2
-#loop
-	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-	.goto Tirisfal Glades,36.13,68.74,25,0
-	.goto Tirisfal Glades,36.46,69.49,25,0
-	.goto Tirisfal Glades,36.85,70.02,25,0
-	.goto Tirisfal Glades,37.42,69.58,25,0
-	.goto Tirisfal Glades,38.05,69.79,25,0
-	.goto Tirisfal Glades,37.91,69.22,25,0
-	.goto Tirisfal Glades,38.03,68.77,25,0
-	.goto Tirisfal Glades,38.49,68.28,25,0
-	.goto Tirisfal Glades,38.72,67.07,25,0
-	.goto Tirisfal Glades,38.59,66.25,25,0
-	.goto Tirisfal Glades,38.65,65.07,25,0
-	.goto Tirisfal Glades,37.62,65.36,25,0
-	.goto Tirisfal Glades,36.93,65.38,25,0
-	.goto Tirisfal Glades,36.51,65.42,25,0
-	.goto Tirisfal Glades,36.85,66.59,25,0
-	.goto Tirisfal Glades,37.45,67.95,25,0
-	.goto Tirisfal Glades,36.93,68.16,25,0
-	.goto Tirisfal Glades,36.13,68.74,25,0
+    #loop
+	.goto Tirisfal Glades,36.13,68.74,0
+	.goto Tirisfal Glades,36.13,68.74,40,0
+	.goto Tirisfal Glades,36.46,69.49,40,0
+	.goto Tirisfal Glades,36.85,70.02,40,0
+	.goto Tirisfal Glades,37.42,69.58,40,0
+	.goto Tirisfal Glades,38.05,69.79,40,0
+	.goto Tirisfal Glades,37.91,69.22,40,0
+	.goto Tirisfal Glades,38.03,68.77,40,0
+	.goto Tirisfal Glades,38.49,68.28,40,0
+	.goto Tirisfal Glades,38.72,67.07,40,0
+	.goto Tirisfal Glades,38.59,66.25,40,0
+	.goto Tirisfal Glades,38.65,65.07,40,0
+	.goto Tirisfal Glades,37.62,65.36,40,0
+	.goto Tirisfal Glades,36.93,65.38,40,0
+	.goto Tirisfal Glades,36.51,65.42,40,0
+	.goto Tirisfal Glades,36.85,66.59,40,0
+	.goto Tirisfal Glades,37.45,67.95,40,0
+	.goto Tirisfal Glades,36.93,68.16,40,0
     >>Kill |cRXP_ENEMY_Scarlet Initiates|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77671,1 --Spell Notes: CALE ENCI (1)
     .mob Scarlet Initiate
@@ -6403,26 +6384,25 @@ step << Rogue
     .mob Scarlet Convert
 step << Rogue
     #season 2
-#loop
-	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-	.goto Tirisfal Glades,36.13,68.74,25,0
-	.goto Tirisfal Glades,36.46,69.49,25,0
-	.goto Tirisfal Glades,36.85,70.02,25,0
-	.goto Tirisfal Glades,37.42,69.58,25,0
-	.goto Tirisfal Glades,38.05,69.79,25,0
-	.goto Tirisfal Glades,37.91,69.22,25,0
-	.goto Tirisfal Glades,38.03,68.77,25,0
-	.goto Tirisfal Glades,38.49,68.28,25,0
-	.goto Tirisfal Glades,38.72,67.07,25,0
-	.goto Tirisfal Glades,38.59,66.25,25,0
-	.goto Tirisfal Glades,38.65,65.07,25,0
-	.goto Tirisfal Glades,37.62,65.36,25,0
-	.goto Tirisfal Glades,36.93,65.38,25,0
-	.goto Tirisfal Glades,36.51,65.42,25,0
-	.goto Tirisfal Glades,36.85,66.59,25,0
-	.goto Tirisfal Glades,37.45,67.95,25,0
-	.goto Tirisfal Glades,36.93,68.16,25,0
-	.goto Tirisfal Glades,36.13,68.74,25,0
+    #loop
+	.goto Tirisfal Glades,36.13,68.74,0
+	.goto Tirisfal Glades,36.13,68.74,40,0
+	.goto Tirisfal Glades,36.46,69.49,40,0
+	.goto Tirisfal Glades,36.85,70.02,40,0
+	.goto Tirisfal Glades,37.42,69.58,40,0
+	.goto Tirisfal Glades,38.05,69.79,40,0
+	.goto Tirisfal Glades,37.91,69.22,40,0
+	.goto Tirisfal Glades,38.03,68.77,40,0
+	.goto Tirisfal Glades,38.49,68.28,40,0
+	.goto Tirisfal Glades,38.72,67.07,40,0
+	.goto Tirisfal Glades,38.59,66.25,40,0
+	.goto Tirisfal Glades,38.65,65.07,40,0
+	.goto Tirisfal Glades,37.62,65.36,40,0
+	.goto Tirisfal Glades,36.93,65.38,40,0
+	.goto Tirisfal Glades,36.51,65.42,40,0
+	.goto Tirisfal Glades,36.85,66.59,40,0
+	.goto Tirisfal Glades,37.45,67.95,40,0
+	.goto Tirisfal Glades,36.93,68.16,40,0
     >>Kill |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
     .collect 204795,1,77669,1 --Rune of Shadowstrike (1)
 step << Rogue
@@ -6433,26 +6413,25 @@ step << Rogue
     .isOnQuest 77669
 step
     #requires NightWebH
-#loop
-	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-	.goto Tirisfal Glades,36.13,68.74,25,0
-	.goto Tirisfal Glades,36.46,69.49,25,0
-	.goto Tirisfal Glades,36.85,70.02,25,0
-	.goto Tirisfal Glades,37.42,69.58,25,0
-	.goto Tirisfal Glades,38.05,69.79,25,0
-	.goto Tirisfal Glades,37.91,69.22,25,0
-	.goto Tirisfal Glades,38.03,68.77,25,0
-	.goto Tirisfal Glades,38.49,68.28,25,0
-	.goto Tirisfal Glades,38.72,67.07,25,0
-	.goto Tirisfal Glades,38.59,66.25,25,0
-	.goto Tirisfal Glades,38.65,65.07,25,0
-	.goto Tirisfal Glades,37.62,65.36,25,0
-	.goto Tirisfal Glades,36.93,65.38,25,0
-	.goto Tirisfal Glades,36.51,65.42,25,0
-	.goto Tirisfal Glades,36.85,66.59,25,0
-	.goto Tirisfal Glades,37.45,67.95,25,0
-	.goto Tirisfal Glades,36.93,68.16,25,0
-	.goto Tirisfal Glades,36.13,68.74,25,0
+    #loop
+	.goto Tirisfal Glades,36.13,68.74,0
+	.goto Tirisfal Glades,36.13,68.74,40,0
+	.goto Tirisfal Glades,36.46,69.49,40,0
+	.goto Tirisfal Glades,36.85,70.02,40,0
+	.goto Tirisfal Glades,37.42,69.58,40,0
+	.goto Tirisfal Glades,38.05,69.79,40,0
+	.goto Tirisfal Glades,37.91,69.22,40,0
+	.goto Tirisfal Glades,38.03,68.77,40,0
+	.goto Tirisfal Glades,38.49,68.28,40,0
+	.goto Tirisfal Glades,38.72,67.07,40,0
+	.goto Tirisfal Glades,38.59,66.25,40,0
+	.goto Tirisfal Glades,38.65,65.07,40,0
+	.goto Tirisfal Glades,37.62,65.36,40,0
+	.goto Tirisfal Glades,36.93,65.38,40,0
+	.goto Tirisfal Glades,36.51,65.42,40,0
+	.goto Tirisfal Glades,36.85,66.59,40,0
+	.goto Tirisfal Glades,37.45,67.95,40,0
+	.goto Tirisfal Glades,36.93,68.16,40,0
     >>Kill |cRXP_ENEMY_Scarlet Initiates|r and |cRXP_ENEMY_Scarlet Converts|r. Loot them for their |cRXP_LOOT_Scarlet Armbands|r
     >>|cRXP_WARN_Don't kill |cRXP_ENEMY_Meven Korgal|r yet|r
     >>|cRXP_WARN_Try to avoid |cRXP_ENEMY_Scarlet Initiates|r if you can as they have|r |T135843:0|t[Frost Armor] |cRXP_WARN_(slows your attack speed)|r << Warrior/Rogue
@@ -6481,12 +6460,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r << !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r and |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 6395 >> Turn in Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.86,66.05
     .accept 5651 >> Accept In Favor of Darkness << Priest
+    .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Novice Elreth
-    .target Dark Cleric Duesten << Priest
 step << Mage
     #season 2
     .goto Tirisfal Glades,30.94,66.06
@@ -6526,31 +6505,30 @@ step
     .accept 383 >> Accept Vital Intelligence
     .target Executor Arren
 step
-    .goto Tirisfal Glades,34.08,59.51,40,0
-    .goto Tirisfal Glades,35.34,56.55,40,0
-    .goto Tirisfal Glades,36.83,56.85,40,0
-    .goto Tirisfal Glades,37.76,59.38,40,0
-    .goto Tirisfal Glades,37.51,62.99,40,0
-#loop
-	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-	.goto Tirisfal Glades,36.13,68.74,25,0
-	.goto Tirisfal Glades,36.46,69.49,25,0
-	.goto Tirisfal Glades,36.85,70.02,25,0
-	.goto Tirisfal Glades,37.42,69.58,25,0
-	.goto Tirisfal Glades,38.05,69.79,25,0
-	.goto Tirisfal Glades,37.91,69.22,25,0
-	.goto Tirisfal Glades,38.03,68.77,25,0
-	.goto Tirisfal Glades,38.49,68.28,25,0
-	.goto Tirisfal Glades,38.72,67.07,25,0
-	.goto Tirisfal Glades,38.59,66.25,25,0
-	.goto Tirisfal Glades,38.65,65.07,25,0
-	.goto Tirisfal Glades,37.62,65.36,25,0
-	.goto Tirisfal Glades,36.93,65.38,25,0
-	.goto Tirisfal Glades,36.51,65.42,25,0
-	.goto Tirisfal Glades,36.85,66.59,25,0
-	.goto Tirisfal Glades,37.45,67.95,25,0
-	.goto Tirisfal Glades,36.93,68.16,25,0
-	.goto Tirisfal Glades,36.13,68.74,25,0
+    #loop
+    .goto Tirisfal Glades,34.08,59.51,50,0
+    .goto Tirisfal Glades,35.34,56.55,50,0
+    .goto Tirisfal Glades,36.83,56.85,50,0
+    .goto Tirisfal Glades,37.76,59.38,50,0
+    .goto Tirisfal Glades,37.51,62.99,50,0
+	.goto Tirisfal Glades,36.13,68.74,50,0
+	.goto Tirisfal Glades,36.46,69.49,50,0
+	.goto Tirisfal Glades,36.85,70.02,50,0
+	.goto Tirisfal Glades,37.42,69.58,50,0
+	.goto Tirisfal Glades,38.05,69.79,50,0
+	.goto Tirisfal Glades,37.91,69.22,50,0
+	.goto Tirisfal Glades,38.03,68.77,50,0
+	.goto Tirisfal Glades,38.49,68.28,50,0
+	.goto Tirisfal Glades,38.72,67.07,50,0
+	.goto Tirisfal Glades,38.59,66.25,50,0
+	.goto Tirisfal Glades,38.65,65.07,50,0
+	.goto Tirisfal Glades,37.62,65.36,50,0
+	.goto Tirisfal Glades,36.93,65.38,50,0
+	.goto Tirisfal Glades,36.51,65.42,50,0
+	.goto Tirisfal Glades,36.85,66.59,50,0
+	.goto Tirisfal Glades,37.45,67.95,50,0
+	.goto Tirisfal Glades,36.93,68.16,50,0
+	.goto Tirisfal Glades,36.13,68.74,50,0
     .xp 5+1900 >>Grind to 1900+/2800xp
 step
     .goto Tirisfal Glades,38.24,56.77
@@ -6576,6 +6554,9 @@ step
     .accept 365 >>Accept Fields of Grief
     .target Deathguard Simmer
 step
+    #loop
+    .goto Tirisfal Glades,56.13,52.48,0
+    .goto Tirisfal Glades,40.77,54.42,0
     .goto Tirisfal Glades,40.77,54.42,40,0
     .goto Tirisfal Glades,42.04,55.11,40,0
     .goto Tirisfal Glades,43.59,54.30,40,0
@@ -6585,7 +6566,6 @@ step
     .goto Tirisfal Glades,52.52,54.48,40,0
     .goto Tirisfal Glades,54.49,52.65,40,0
     .goto Tirisfal Glades,56.13,52.48,40,0
-    .goto Tirisfal Glades,42.04,55.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r.
     >>|cRXP_WARN_He's an abomination that patrols along the road to Brill|r
     .accept 5481 >>Accept Gordo's Task
@@ -6603,12 +6583,12 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r and |cRXP_FRIENDLY_Zygand|r
     .accept 404 >>Accept A Putrid Task
+    .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.45
     .turnin 383 >>Turn in Vital Intelligence
     .accept 427 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.59,51.77
-    .target Deathguard Dillinger
-    .target Executor Zygand
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
@@ -6788,6 +6768,8 @@ step
     .mob Decrepit Darkhound
 step
     #label Claws
+    #loop
+    .goto Tirisfal Glades,52.63,56.98,0
     .goto Tirisfal Glades,54.95,50.53,50,0
     .goto Tirisfal Glades,53.35,50.29,50,0
     .goto Tirisfal Glades,52.12,50.38,50,0
@@ -6795,8 +6777,8 @@ step
     .goto Tirisfal Glades,52.03,53.74,50,0
     .goto Tirisfal Glades,52.29,56.72,50,0
     .goto Tirisfal Glades,53.95,56.53,50,0
-    .goto Tirisfal Glades,53.55,58.25
-    .goto Tirisfal Glades,52.63,56.98
+    .goto Tirisfal Glades,53.55,58.25,50,0
+    .goto Tirisfal Glades,52.63,56.98,50,0
     >>Kill |cRXP_ENEMY_Rotting Dead|r and |cRXP_ENEMY_Ravaged Corpses|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
@@ -6867,24 +6849,28 @@ step << Rogue
     .mob Tirisfal Farmhand
     .train 400095,1
 step
+    #loop
+    .goto Tirisfal Glades,36.63,50.09,0
     .goto Tirisfal Glades,37.20,52.17,50,0
     .goto Tirisfal Glades,36.64,50.09,50,0
     .goto Tirisfal Glades,36.10,49.07,50,0
     .goto Tirisfal Glades,35.08,49.82,50,0
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
-    .goto Tirisfal Glades,36.63,50.09
+    .goto Tirisfal Glades,36.63,50.09,50,0
     >>Loot the |cRXP_LOOT_Pumpkins|r found in the field.
     .complete 365,1 --Tirisfal Pumpkin (10)
 step << Rogue
     #season 2
+    #loop
+    .goto Tirisfal Glades,36.63,50.09,0
     .goto Tirisfal Glades,37.20,52.17,50,0
     .goto Tirisfal Glades,36.64,50.09,50,0
     .goto Tirisfal Glades,36.10,49.07,50,0
     .goto Tirisfal Glades,35.08,49.82,50,0
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
-    .goto Tirisfal Glades,36.63,50.09
+    .goto Tirisfal Glades,36.63,50.09,50,0
     >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
     .collect 208036,1 --Top-Left Map Piece (1)
     .mob Tirisfal Farmer
@@ -7011,10 +6997,11 @@ step << Priest
     .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
 step
     #softcore
+    #loop
+    .goto Tirisfal Glades,57.71,48.96,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
     .goto Tirisfal Glades,59.26,46.73,30,0
-    .goto Tirisfal Glades,57.71,48.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5481 >>Turn in Gordo's Task
     .accept 5482 >>Accept Doom Weed
@@ -7023,45 +7010,45 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
+    .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
     .turnin 367 >>Turn in A New Plague
     .turnin 365 >>Turn in Fields of Grief
     .accept 368 >>Accept A New Plague
     .accept 407 >>Accept Fields of Grief
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 427 >>Turn in At War With The Scarlet Crusade
     .accept 370 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
-    .target Deathguard Dillinger
-    .target Executor Zygand
-    .target Apothecary Johaan
     .isQuestComplete 367
 step
     #label BrillTurnin1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
+    .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
     .turnin 365 >>Turn in Fields of Grief
     .accept 407 >>Accept Fields of Grief
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 427 >>Turn in At War With The Scarlet Crusade
     .accept 370 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
-    .target Deathguard Dillinger
-    .target Executor Zygand
-    .target Apothecary Johaan
 step
     #xprate >1.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 374 >>Accept Proof of Demise
+    .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
     .accept 398 >>Accept Wanted: Maggot Eye
     .goto Tirisfal Glades,60.74,51.52
     .accept 358 >>Accept Graverobbers
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .target Magistrate Sevren
-    .target Deathguard Burgess
  step
     #xprate >1.49
     #optional
@@ -7179,10 +7166,11 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step
     #hardcore
+    #loop
+    .goto Tirisfal Glades,57.71,48.96,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
     .goto Tirisfal Glades,59.26,46.73,30,0
-    .goto Tirisfal Glades,57.71,48.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5481 >>Turn in Gordo's Task
     .accept 5482 >>Accept Doom Weed
@@ -7205,6 +7193,8 @@ step
     .mob Vampiric Duskbat
 step
     #xprate <1.5
+    #loop
+    .goto Tirisfal Glades,58.20,58.15,0
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -7214,13 +7204,14 @@ step
     .goto Tirisfal Glades,47.88,60.87,50,0
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
+    .goto Tirisfal Glades,56.45,62.62,50,0
     >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for their |cRXP_LOOT_Blood|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
 step << Rogue/Warrior
     #xprate <1.5
     #optional
+    #loop
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -7230,7 +7221,7 @@ step << Rogue/Warrior
     .goto Tirisfal Glades,47.88,60.87,50,0
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
+    .goto Tirisfal Glades,56.45,62.62,50,0
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -7240,6 +7231,7 @@ step << Rogue/Warrior
     #xprate <1.5
     #optional
     #label DuskbatTrophy1
+    #loop
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -7249,12 +7241,14 @@ step << Rogue/Warrior
     .goto Tirisfal Glades,47.88,60.87,50,0
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
+    .goto Tirisfal Glades,56.45,62.62,50,0
     .xp 7+3260 >> Grind to 3260+/4500
 --XX 700 (375)+540 (367)
 step
     #xprate >1.49
     #optional
+    #loop
+    .goto Tirisfal Glades,56.45,62.62,0
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -7264,7 +7258,7 @@ step
     .goto Tirisfal Glades,47.88,60.87,50,0
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
+    .goto Tirisfal Glades,56.45,62.62,50,0
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -7274,6 +7268,7 @@ step
     #xprate >1.49
     #optional
     #label DuskbatTrophy1
+    .goto Tirisfal Glades,56.45,62.62,0
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -7283,7 +7278,7 @@ step
     .goto Tirisfal Glades,47.88,60.87,50,0
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
+    .goto Tirisfal Glades,56.45,62.62,50,0
     .xp 7+2640 >> Grind to 2640+/4500
 --XX 700 (375)+540 (367)
 step
@@ -7309,13 +7304,13 @@ step
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 374 >>Accept Proof of Demise
+    .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
     .accept 398 >>Accept Wanted: Maggot Eye
     .goto Tirisfal Glades,60.74,51.52
     .accept 358 >>Accept Graverobbers
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .target Magistrate Sevren
-    .target Deathguard Burgess
 step
     #xprate <1.5
     #optional
@@ -7591,6 +7586,8 @@ step << Mage
     .itemcount 203749,1 --Spell Notes: Enlightenment (1)
 step << Warrior
     #season 2
+    #loop
+    .goto Tirisfal Glades,59.54,27.86,0
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -7599,7 +7596,6 @@ step << Warrior
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86
     >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
     .complete 368,1 --Vile Fin Scale (5)
     .collect 204477,1 --Severed Murloc Head (1)
@@ -7621,6 +7617,8 @@ step << Rogue
     .train 400095,1
 step
     #label MurlocVins
+    #loop
+    .goto Tirisfal Glades,59.54,27.86,0
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -7629,7 +7627,6 @@ step
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86
     >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
@@ -7637,6 +7634,8 @@ step
     .mob Vile Fin Muckdweller
 step << Rogue
     #season 2
+    #loop
+    .goto Tirisfal Glades,59.54,27.86,0
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -7645,7 +7644,6 @@ step << Rogue
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86
     >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Fin Murlocs|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
     .collect 208007,1 --Shipwreck Cache Key (1)
     .mob Vile Fin Puddlejumper
@@ -7666,6 +7664,8 @@ step << Rogue
     .itemcount 204174,1
 step << Rogue
     #season 2
+    #loop
+    .goto Tirisfal Glades,59.54,27.86,0
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -7674,7 +7674,6 @@ step << Rogue
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86
     >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
@@ -7699,10 +7698,11 @@ step
     >>|cRXP_WARN_Make sure you die on (or to the West of) the goto arrow|r
 step
     #label DoomedWeed
-    .goto Tirisfal Glades,59.26,46.73,30,0
+    #loop
+    .goto Tirisfal Glades,57.71,48.96,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
-    .goto Tirisfal Glades,57.71,48.96
+    .goto Tirisfal Glades,59.26,46.73,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5482 >>Turn in Doom Weed
     .target Junior Apothecary Holland
@@ -7723,29 +7723,29 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
     .turnin 368 >>Turn in A New Plague
     .accept 369 >>Accept A New Plague
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 398 >>Turn in Wanted: Maggot Eye
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Turn in Graverobbers
     .accept 405 >>Accept The Prodigal Lich << Warlock
     .accept 359 >>Accept Forsaken Duties
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
-    .target Executor Zygand
-    .target Magistrate Sevren
 step
     #xprate >2.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
     .turnin 368 >>Turn in A New Plague
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 398 >>Turn in Wanted: Maggot Eye
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Turn in Graverobbers
     .accept 405 >>Accept The Prodigal Lich << Warlock
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
-    .target Executor Zygand
-    .target Magistrate Sevren
 step
     #optional
     .goto Tirisfal Glades,61.03,52.35
@@ -7817,6 +7817,7 @@ step << Warrior
     .accept 1818 >> Accept Speak with Dillinger
     .target Austil de Mon
     .xp <10,1
+    .isQuestAvailable 1498
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
@@ -7989,7 +7990,7 @@ step
     .use 2839
 step
     #xprate <2.1
-    #sticky
+    #completewith ThurmanGregor
     #label MillsOverun
     >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
     .complete 426,1 --Notched Rib (5)
@@ -8013,17 +8014,35 @@ step
 step
     #xprate <2.1
     #label ThurmanGregor
+    #loop
+    .goto Tirisfal Glades,45.08,31.15,0
     .goto Tirisfal Glades,43.71,35.25,60,0
     .goto Tirisfal Glades,45.03,30.99,60,0
     .goto Tirisfal Glades,46.79,29.80,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
-    .goto Tirisfal Glades,45.08,31.15
+    .goto Tirisfal Glades,45.08,31.15,60,0
     >>Kill |cRXP_ENEMY_Thurman|r and |cRXP_ENEMY_Gregor|r. Loot them for their |cRXP_LOOT_Remains|r. They can patrol around
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
     .unitscan +Gregor Agamand
+step
+    #xprate <2.1
+    #loop
+    .goto Tirisfal Glades,45.08,31.15,0
+    .goto Tirisfal Glades,43.71,35.25,60,0
+    .goto Tirisfal Glades,45.03,30.99,60,0
+    .goto Tirisfal Glades,46.79,29.80,60,0
+    .goto Tirisfal Glades,42.82,31.93,60,0
+    .goto Tirisfal Glades,42.82,31.93,60,0
+    .goto Tirisfal Glades,45.08,31.15,60,0
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
+    .complete 426,1 --Notched Rib (5)
+    .mob +Rattlecage Soldier
+    .mob +Cracked Skull Soldier
+    .complete 426,2 --Blackened Skull (3)
+    .mob +Darkeye Bonecaster
 step << skip
     #xprate <1.5
     #optional
@@ -8260,13 +8279,13 @@ step
     #xprate <2.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r
     .turnin 361 >>Turn in A Letter Undelivered
+    .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
-    .target Yvette Farthing
-    .target Coleman Farthing
     .isOnQuest 361
 step
     #xprate <2.1
@@ -8462,25 +8481,24 @@ step << Warlock
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
-#loop
-	.line Tirisfal Glades,50.07,68.87,50.23,66.94,51.16,65.73,51.75,66.04,52.93,67.62,52.72,69.33,51.96,69.57,51.03,69.55
-	.goto Tirisfal Glades,50.07,68.87,25,0
-	.goto Tirisfal Glades,50.23,66.94,25,0
-	.goto Tirisfal Glades,51.16,65.73,25,0
-	.goto Tirisfal Glades,51.75,66.04,25,0
-	.goto Tirisfal Glades,52.93,67.62,25,0
-	.goto Tirisfal Glades,52.72,69.33,25,0
-	.goto Tirisfal Glades,51.96,69.57,25,0
-	.goto Tirisfal Glades,51.03,69.55,25,0
+    #loop
+	.goto Tirisfal Glades,50.07,68.87,40,0
+	.goto Tirisfal Glades,50.23,66.94,40,0
+	.goto Tirisfal Glades,51.16,65.73,40,0
+	.goto Tirisfal Glades,51.75,66.04,40,0
+	.goto Tirisfal Glades,52.93,67.62,40,0
+	.goto Tirisfal Glades,52.72,69.33,40,0
+	.goto Tirisfal Glades,51.96,69.57,40,0
+	.goto Tirisfal Glades,51.03,69.55,40,0
     >>Kill |cRXP_ENEMY_Captain Perrine|r, |cRXP_ENEMY_Scarlet Zealots|r and |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 370,1 --Captain Perrine (1)
+    .mob +Captain Perrine
     .complete 370,2 --Scarlet Zealot (3)
+    .mob +Scarlet Zealot
     .complete 370,3 --Scarlet Missionary (3)
+    .mob +Scarlet Missionary
     .complete 374,1 --Scarlet Insignia Ring (10)
     .disablecheckbox
-    .mob Captain Perrine
-    .mob Scarlet Zealot
-    .mob Scarlet Missionary
 step << Rogue
     #season 2
     .goto Tirisfal Glades,51.17,67.81
@@ -8915,12 +8933,14 @@ step
 step
     #xprate >2.09
     #label ThurmanGregor
+    #loop
+    .goto Tirisfal Glades,45.08,31.15,0
     .goto Tirisfal Glades,43.71,35.25,60,0
     .goto Tirisfal Glades,45.03,30.99,60,0
     .goto Tirisfal Glades,46.79,29.80,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
-    .goto Tirisfal Glades,45.08,31.15
+    .goto Tirisfal Glades,45.08,31.15,60,0
     >>Kill |cRXP_ENEMY_Thurman|r and |cRXP_ENEMY_Gregor|r. Loot them for their |cRXP_LOOT_Remains|r. They can patrol around
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
@@ -8928,12 +8948,14 @@ step
     .unitscan +Gregor Agamand
 step
     #xprate >2.09
+    #loop
+    .goto Tirisfal Glades,45.08,31.15,0
     .goto Tirisfal Glades,43.71,35.25,60,0
     .goto Tirisfal Glades,45.03,30.99,60,0
     .goto Tirisfal Glades,46.79,29.80,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
-    .goto Tirisfal Glades,45.08,31.15
+    .goto Tirisfal Glades,45.08,31.15,60,0
     >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
     .complete 426,1 --Notched Rib (5)
     .mob +Rattlecage Soldier
@@ -8988,12 +9010,12 @@ step
     #xprate >2.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r
     .turnin 361 >>Turn in A Letter Undelivered
+    .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
-    .target Yvette Farthing
-    .target Coleman Farthing
     .isOnQuest 361
 step
     #xprate >2.09
@@ -9132,9 +9154,9 @@ step << skip
     #completewith next
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
+    .mob +Wandering Spirit
 step << skip
     .goto Tirisfal Glades,77.48,62.00
     >>Loot any of the plants on the ground for a |cRXP_PICK_Balnir Snapdragon|r
@@ -9143,23 +9165,22 @@ step
     #xprate <2.1
     #optional
     #label HorrorsandSpirits
-#loop
-	.line Tirisfal Glades,74.31,60.98,74.45,59.64,75.08,58.56,76.45,58.67,77.41,58.66,78.55,60.43,77.45,61.46,76.79,62.60,74.99,61.98,74.31,60.98
-	.goto Tirisfal Glades,74.31,60.98,25,0
-	.goto Tirisfal Glades,74.45,59.64,25,0
-	.goto Tirisfal Glades,75.08,58.56,25,0
-	.goto Tirisfal Glades,76.45,58.67,25,0
-	.goto Tirisfal Glades,77.41,58.66,25,0
-	.goto Tirisfal Glades,78.55,60.43,25,0
-	.goto Tirisfal Glades,77.45,61.46,25,0
-	.goto Tirisfal Glades,76.79,62.60,25,0
-	.goto Tirisfal Glades,74.99,61.98,25,0
-	.goto Tirisfal Glades,74.31,60.98,25,0
+    #loop
+	.goto Tirisfal Glades,74.31,60.98,0
+	.goto Tirisfal Glades,74.31,60.98,50,0
+	.goto Tirisfal Glades,74.45,59.64,50,0
+	.goto Tirisfal Glades,75.08,58.56,50,0
+	.goto Tirisfal Glades,76.45,58.67,50,0
+	.goto Tirisfal Glades,77.41,58.66,50,0
+	.goto Tirisfal Glades,78.55,60.43,50,0
+	.goto Tirisfal Glades,77.45,61.46,50,0
+	.goto Tirisfal Glades,76.79,62.60,50,0
+	.goto Tirisfal Glades,74.99,61.98,50,0
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
+    .mob +Wandering Spirit
 step << Mage
     #xprate <2.1
     #season 2
@@ -9683,9 +9704,9 @@ step << Undead
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
+    .mob +Ragefire Trogg
     .complete 5723,2 --Ragefire Shaman (8)
-    .mob Ragefire Trogg
-    .mob Ragefire Shaman
+    .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
 step << Undead
@@ -9706,9 +9727,9 @@ step << Undead
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
+    .mob +Ragefire Trogg
     .complete 5723,2 --Ragefire Shaman (8)
-    .mob Ragefire Trogg
-    .mob Ragefire Shaman
+    .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
 step << Undead
@@ -9731,9 +9752,9 @@ step << Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
+    .mob +Bazzalan
     .complete 5728,2 --Jergosh the Invoker (1)
-    .mob Bazzalan
-    .mob Jergosh the Invoker
+    .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
 step << Undead

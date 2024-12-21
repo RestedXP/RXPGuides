@@ -2770,7 +2770,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
     .collect 2512,1000,825,1 << Hunter --Rough Arrow (1000)
     .target Ghrawt
-    .itemcount 2512,<600 << Hunter
+    .itemcount 2512,<800 << Hunter
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -3312,9 +3312,9 @@ step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
-    .collect 11362,1,6082,1 --Medium Quiver (1)
+    --.collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
-    .money <0.1300
+    --.money <0.1300
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
@@ -5437,6 +5437,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Accept Speak with Dillinger
     .target Austil de Mon << Warrior
+    .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
@@ -5548,17 +5549,20 @@ step << Warrior
     .turnin 1818 >> Turn in Speak with Dillinger
     .accept 1819 >> Accept Ulag the Cleaver
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
     >>|cRXP_WARN_Click the|r |cRXP_WARN_Mausoleum Trigger|r |cRXP_WARN_on the ground. This will summon|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Kill him|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
+    .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .turnin 1819 >> Turn in Ulag the Cleaver
     .accept 1820 >> Accept Speak with Coleman
     .target Deathguard Dillinger
+    .isQuestAvailable 1498
 step
     #optional
     #completewith Pumpkins
@@ -6430,6 +6434,7 @@ step << Warrior
     .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .target Coleman Farthing
+    .isQuestTurnedIn 1819
 step
     #optional
     .goto Tirisfal Glades,61.89,52.73
@@ -9728,7 +9733,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
     .collect 2512,1000,825,1 << Hunter --Rough Arrow (1000)
     .target Ghrawt
-    .itemcount 2512,<600 << Hunter
+    .itemcount 2512,<800 << Hunter
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -10219,9 +10224,9 @@ step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
-    .collect 11362,1,6082,1 --Medium Quiver (1)
+    --.collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
-    .money <0.1300
+    --.money <0.1300
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
