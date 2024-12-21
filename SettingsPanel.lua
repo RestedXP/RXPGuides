@@ -3095,7 +3095,12 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.6,
                         min = 5,
                         max = 150,
-                        step = 5
+                        step = 5,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
                     },
                     preLoadData = {
                         name = L("Pre load all data"),
