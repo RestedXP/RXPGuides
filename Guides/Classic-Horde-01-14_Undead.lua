@@ -5374,9 +5374,9 @@ step << Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
+    .mob +Bazzalan
     .complete 5728,2 --Jergosh the Invoker (1)
-    .mob Bazzalan
-    .mob Jergosh the Invoker
+    .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
 step << Undead
@@ -9752,9 +9752,9 @@ step << Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
+    .mob +Bazzalan
     .complete 5728,2 --Jergosh the Invoker (1)
-    .mob Bazzalan
-    .mob Jergosh the Invoker
+    .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
 step << Undead
