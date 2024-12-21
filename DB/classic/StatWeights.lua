@@ -40,7 +40,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 30.18,
     },
     ['Druid Speedrun 10-19 - Feral Combat'] = {
         ['Title'] = "Druid Speedrun 10-19",
@@ -79,7 +78,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 30.18,
     },
     ['Druid Speedrun 20-29 - Feral Combat'] = {
         ['Title'] = "Druid Speedrun 20-29",
@@ -118,7 +116,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 34.70,
     },
     ['Druid Speedrun 30-39 - Feral Combat'] = {
         ['Title'] = "Druid Speedrun 30-39",
@@ -157,7 +154,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 24.19,
     },
     ['Druid Speedrun 40-49 - Feral Combat'] = {
         ['Title'] = "Druid Speedrun 40-49",
@@ -196,7 +192,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.21,
     },
     ['Druid Speedrun 50-60 - Feral Combat'] = {
         ['Title'] = "Druid Speedrun 50-60",
@@ -235,7 +230,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 29.28,
     },
     ['Druid Hardcore 1-9 - Feral Combat'] = {
         ['Title'] = "Druid Hardcore 1-9",
@@ -274,7 +268,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 33.10,
     },
     ['Druid Hardcore 10-19 - Feral Combat'] = {
         ['Title'] = "Druid Hardcore 10-19",
@@ -313,7 +306,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 30.63,
     },
     ['Druid Hardcore 20-29 - Feral Combat'] = {
         ['Title'] = "Druid Hardcore 20-29",
@@ -352,7 +344,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 34.91,
     },
     ['Druid Hardcore 30-39 - Feral Combat'] = {
         ['Title'] = "Druid Hardcore 30-39",
@@ -391,7 +382,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 24.35,
     },
     ['Druid Hardcore 40-49 - Feral Combat'] = {
         ['Title'] = "Druid Hardcore 40-49",
@@ -430,7 +420,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.41,
     },
     ['Druid Hardcore 50-60 - Feral Combat'] = {
         ['Title'] = "Druid Hardcore 50-60",
@@ -469,7 +458,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 29.54,
     },
     ['Druid Speedrun 1-9 - Balance'] = {
         ['Title'] = "Druid Speedrun 1-9",
@@ -508,7 +496,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.82,
         ['STAT_SPELLDAMAGE_FROST'] = 0.23,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 33.43,
     },
     ['Druid Speedrun 10-19 - Balance'] = {
         ['Title'] = "Druid Speedrun 10-19",
@@ -547,7 +534,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.16,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 13.48,
     },
     ['Druid Speedrun 20-29 - Balance'] = {
         ['Title'] = "Druid Speedrun 20-29",
@@ -586,7 +572,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.19,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 22.00,
     },
     ['Druid Speedrun 30-39 - Balance'] = {
         ['Title'] = "Druid Speedrun 30-39",
@@ -625,7 +610,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.57,
         ['STAT_SPELLDAMAGE_FROST'] = 0.22,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 24.96,
     },
     ['Druid Speedrun 40-49 - Balance'] = {
         ['Title'] = "Druid Speedrun 40-49",
@@ -664,7 +648,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.42,
         ['STAT_SPELLDAMAGE_FROST'] = 0.20,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 24.50,
     },
     ['Druid Speedrun 50-60 - Balance'] = {
         ['Title'] = "Druid Speedrun 50-60",
@@ -703,7 +686,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.30,
         ['STAT_SPELLDAMAGE_FROST'] = 0.19,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 25.31,
     },
     ['Druid Hardcore 1-9 - Balance'] = {
         ['Title'] = "Druid Hardcore 1-9",
@@ -742,7 +724,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.91,
         ['STAT_SPELLDAMAGE_FROST'] = 0.13,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 27.70,
     },
     ['Druid Hardcore 10-19 - Balance'] = {
         ['Title'] = "Druid Hardcore 10-19",
@@ -781,7 +762,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.16,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 13.94,
     },
     ['Druid Hardcore 20-29 - Balance'] = {
         ['Title'] = "Druid Hardcore 20-29",
@@ -820,7 +800,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.19,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 22.25,
     },
     ['Druid Hardcore 30-39 - Balance'] = {
         ['Title'] = "Druid Hardcore 30-39",
@@ -859,7 +838,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.57,
         ['STAT_SPELLDAMAGE_FROST'] = 0.22,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 25.15,
     },
     ['Druid Hardcore 40-49 - Balance'] = {
         ['Title'] = "Druid Hardcore 40-49",
@@ -898,7 +876,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.42,
         ['STAT_SPELLDAMAGE_FROST'] = 0.20,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 24.72,
     },
     ['Druid Hardcore 50-60 - Balance'] = {
         ['Title'] = "Druid Hardcore 50-60",
@@ -937,7 +914,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.30,
         ['STAT_SPELLDAMAGE_FROST'] = 0.19,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 25.58,
     },
     ['Hunter Speedrun 1-9'] = {
         ['Title'] = "Hunter Speedrun 1-9",
@@ -975,7 +951,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.06,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 64.55,
     },
     ['Hunter Speedrun 10-19'] = {
         ['Title'] = "Hunter Speedrun 10-19",
@@ -1013,7 +988,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.14,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 86.14,
     },
     ['Hunter Speedrun 20-29'] = {
         ['Title'] = "Hunter Speedrun 20-29",
@@ -1051,7 +1025,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.14,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 114.58,
     },
     ['Hunter Speedrun 30-39'] = {
         ['Title'] = "Hunter Speedrun 30-39",
@@ -1089,7 +1062,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.10,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 141.17,
     },
     ['Hunter Speedrun 40-49'] = {
         ['Title'] = "Hunter Speedrun 40-49",
@@ -1127,7 +1099,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.09,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 167.95,
     },
     ['Hunter Speedrun 50-60'] = {
         ['Title'] = "Hunter Speedrun 50-60",
@@ -1165,7 +1136,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.09,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 197.25,
     },
     ['Hunter Hardcore 1-9'] = {
         ['Title'] = "Hunter Hardcore 1-9",
@@ -1203,7 +1173,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.06,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 59.95,
     },
     ['Hunter Hardcore 10-19'] = {
         ['Title'] = "Hunter Hardcore 10-19",
@@ -1241,7 +1210,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.14,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 91.33,
     },
     ['Hunter Hardcore 20-29'] = {
         ['Title'] = "Hunter Hardcore 20-29",
@@ -1279,7 +1247,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.14,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 119.62,
     },
     ['Hunter Hardcore 30-39'] = {
         ['Title'] = "Hunter Hardcore 30-39",
@@ -1317,7 +1284,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.10,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 146.35,
     },
     ['Hunter Hardcore 40-49'] = {
         ['Title'] = "Hunter Hardcore 40-49",
@@ -1355,7 +1321,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.09,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 173.20,
     },
     ['Hunter Hardcore 50-60'] = {
         ['Title'] = "Hunter Hardcore 50-60",
@@ -1393,7 +1358,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.09,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 202.56,
     },
     ['Mage Speedrun 1-9 - Frost'] = {
         ['Title'] = "Mage Speedrun 1-9",
@@ -1432,7 +1396,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.17,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.02,
     },
     ['Mage Speedrun 10-19 - Frost'] = {
         ['Title'] = "Mage Speedrun 10-19",
@@ -1471,7 +1434,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.78,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 20-29 - Frost'] = {
         ['Title'] = "Mage Speedrun 20-29",
@@ -1510,7 +1472,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.82,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 30-39 - Frost'] = {
         ['Title'] = "Mage Speedrun 30-39",
@@ -1549,7 +1510,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.02,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 40-49 - Frost'] = {
         ['Title'] = "Mage Speedrun 40-49",
@@ -1588,7 +1548,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.82,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 50-60 - Frost'] = {
         ['Title'] = "Mage Speedrun 50-60",
@@ -1627,7 +1586,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.67,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 1-9 - Frost'] = {
         ['Title'] = "Mage Hardcore 1-9",
@@ -1666,7 +1624,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.17,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 10-19 - Frost'] = {
         ['Title'] = "Mage Hardcore 10-19",
@@ -1705,7 +1662,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.78,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 20-29 - Frost'] = {
         ['Title'] = "Mage Hardcore 20-29",
@@ -1744,7 +1700,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.82,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 30-39 - Frost'] = {
         ['Title'] = "Mage Hardcore 30-39",
@@ -1783,7 +1738,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.02,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 40-49 - Frost'] = {
         ['Title'] = "Mage Hardcore 40-49",
@@ -1822,7 +1776,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.82,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 50-60 - Frost'] = {
         ['Title'] = "Mage Hardcore 50-60",
@@ -1861,7 +1814,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.67,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 1-9 - Fire'] = {
         ['Title'] = "Mage Speedrun 1-9",
@@ -1900,7 +1852,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 10-19 - Fire'] = {
         ['Title'] = "Mage Speedrun 10-19",
@@ -1939,7 +1890,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 20-29 - Fire'] = {
         ['Title'] = "Mage Speedrun 20-29",
@@ -1978,7 +1928,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 30-39 - Fire'] = {
         ['Title'] = "Mage Speedrun 30-39",
@@ -2017,7 +1966,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 40-49 - Fire'] = {
         ['Title'] = "Mage Speedrun 40-49",
@@ -2056,7 +2004,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Speedrun 50-60 - Fire'] = {
         ['Title'] = "Mage Speedrun 50-60",
@@ -2095,7 +2042,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 1-9 - Fire'] = {
         ['Title'] = "Mage Hardcore 1-9",
@@ -2134,7 +2080,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 10-19 - Fire'] = {
         ['Title'] = "Mage Hardcore 10-19",
@@ -2173,7 +2118,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 20-29 - Fire'] = {
         ['Title'] = "Mage Hardcore 20-29",
@@ -2212,7 +2156,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = #REF!,
     },
     ['Mage Hardcore 30-39 - Fire'] = {
         ['Title'] = "Mage Hardcore 30-39",
@@ -2251,7 +2194,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.02,
     },
     ['Mage Hardcore 40-49 - Fire'] = {
         ['Title'] = "Mage Hardcore 40-49",
@@ -2290,7 +2232,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 35.84,
     },
     ['Mage Hardcore 50-60 - Fire'] = {
         ['Title'] = "Mage Hardcore 50-60",
@@ -2329,7 +2270,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 39.75,
     },
     ['Mage Speedrun 1-9 - Arcane'] = {
         ['Title'] = "Mage Speedrun 1-9",
@@ -2368,7 +2308,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 40.03,
     },
     ['Mage Speedrun 10-19 - Arcane'] = {
         ['Title'] = "Mage Speedrun 10-19",
@@ -2407,7 +2346,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 41.59,
     },
     ['Mage Speedrun 20-29 - Arcane'] = {
         ['Title'] = "Mage Speedrun 20-29",
@@ -2446,7 +2384,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 44.78,
     },
     ['Mage Speedrun 30-39 - Arcane'] = {
         ['Title'] = "Mage Speedrun 30-39",
@@ -2485,7 +2422,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.41,
     },
     ['Mage Speedrun 40-49 - Arcane'] = {
         ['Title'] = "Mage Speedrun 40-49",
@@ -2524,7 +2460,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 36.05,
     },
     ['Mage Speedrun 50-60 - Arcane'] = {
         ['Title'] = "Mage Speedrun 50-60",
@@ -2563,7 +2498,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 39.89,
     },
     ['Mage Hardcore 1-9 - Arcane'] = {
         ['Title'] = "Mage Hardcore 1-9",
@@ -2602,7 +2536,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 40.14,
     },
     ['Mage Hardcore 10-19 - Arcane'] = {
         ['Title'] = "Mage Hardcore 10-19",
@@ -2641,7 +2574,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 41.77,
     },
     ['Mage Hardcore 20-29 - Arcane'] = {
         ['Title'] = "Mage Hardcore 20-29",
@@ -2680,7 +2612,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 45.04,
     },
     ['Mage Hardcore 30-39 - Arcane'] = {
         ['Title'] = "Mage Hardcore 30-39",
@@ -2719,7 +2650,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.02,
     },
     ['Mage Hardcore 40-49 - Arcane'] = {
         ['Title'] = "Mage Hardcore 40-49",
@@ -2758,7 +2688,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 35.84,
     },
     ['Mage Hardcore 50-60 - Arcane'] = {
         ['Title'] = "Mage Hardcore 50-60",
@@ -2797,7 +2726,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 39.75,
     },
     ['Mage Speedrun 1-9 - AOE'] = {
         ['Title'] = "Mage Speedrun 1-9",
@@ -2836,7 +2764,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.94,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 40.03,
     },
     ['Mage Speedrun 10-19 - AOE'] = {
         ['Title'] = "Mage Speedrun 10-19",
@@ -2875,7 +2802,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.22,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 41.59,
     },
     ['Mage Speedrun 20-29 - AOE'] = {
         ['Title'] = "Mage Speedrun 20-29",
@@ -2914,7 +2840,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.26,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 44.78,
     },
     ['Mage Speedrun 30-39 - AOE'] = {
         ['Title'] = "Mage Speedrun 30-39",
@@ -2953,7 +2878,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.62,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.50,
     },
     ['Mage Speedrun 40-49 - AOE'] = {
         ['Title'] = "Mage Speedrun 40-49",
@@ -2992,7 +2916,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.46,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 36.05,
     },
     ['Mage Speedrun 50-60 - AOE'] = {
         ['Title'] = "Mage Speedrun 50-60",
@@ -3031,7 +2954,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.34,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 39.89,
     },
     ['Mage Hardcore 1-9 - AOE'] = {
         ['Title'] = "Mage Hardcore 1-9",
@@ -3070,7 +2992,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.94,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 40.14,
     },
     ['Mage Hardcore 10-19 - AOE'] = {
         ['Title'] = "Mage Hardcore 10-19",
@@ -3109,7 +3030,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.22,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 41.77,
     },
     ['Mage Hardcore 20-29 - AOE'] = {
         ['Title'] = "Mage Hardcore 20-29",
@@ -3148,7 +3068,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 2.26,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 45.04,
     },
     ['Mage Hardcore 30-39 - AOE'] = {
         ['Title'] = "Mage Hardcore 30-39",
@@ -3187,7 +3106,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.62,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 26.02,
     },
     ['Mage Hardcore 40-49 - AOE'] = {
         ['Title'] = "Mage Hardcore 40-49",
@@ -3226,7 +3144,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.46,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 35.84,
     },
     ['Mage Hardcore 50-60 - AOE'] = {
         ['Title'] = "Mage Hardcore 50-60",
@@ -3265,7 +3182,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 1.34,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 39.75,
     },
     ['Paladin Speedrun 1-9 - Retribution'] = {
         ['Title'] = "Paladin Speedrun 1-9",
@@ -3304,7 +3220,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 30.71,
     },
     ['Paladin Speedrun 10-19 - Retribution'] = {
         ['Title'] = "Paladin Speedrun 10-19",
@@ -3343,7 +3258,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 36.24,
     },
     ['Paladin Speedrun 20-29 - Retribution'] = {
         ['Title'] = "Paladin Speedrun 20-29",
@@ -3382,7 +3296,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 42.20,
     },
     ['Paladin Speedrun 30-39 - Retribution'] = {
         ['Title'] = "Paladin Speedrun 30-39",
@@ -3421,7 +3334,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 49.09,
     },
     ['Paladin Speedrun 40-49 - Retribution'] = {
         ['Title'] = "Paladin Speedrun 40-49",
@@ -3460,7 +3372,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 52.40,
     },
     ['Paladin Speedrun 50-60 - Retribution'] = {
         ['Title'] = "Paladin Speedrun 50-60",
@@ -3499,7 +3410,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 57.34,
     },
     ['Paladin Hardcore 1-9 - Retribution'] = {
         ['Title'] = "Paladin Hardcore 1-9",
@@ -3538,7 +3448,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 31.12,
     },
     ['Paladin Hardcore 10-19 - Retribution'] = {
         ['Title'] = "Paladin Hardcore 10-19",
@@ -3577,7 +3486,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 36.43,
     },
     ['Paladin Hardcore 20-29 - Retribution'] = {
         ['Title'] = "Paladin Hardcore 20-29",
@@ -3616,7 +3524,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 42.33,
     },
     ['Paladin Hardcore 30-39 - Retribution'] = {
         ['Title'] = "Paladin Hardcore 30-39",
@@ -3655,7 +3562,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 44.20,
     },
     ['Paladin Hardcore 40-49 - Retribution'] = {
         ['Title'] = "Paladin Hardcore 40-49",
@@ -3694,7 +3600,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 52.66,
     },
     ['Paladin Hardcore 50-60 - Retribution'] = {
         ['Title'] = "Paladin Hardcore 50-60",
@@ -3733,7 +3638,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 57.66,
     },
     ['Priest Speedrun 1-9 - Discipline '] = {
         ['Title'] = "Priest Speedrun 1-9",
@@ -3772,7 +3676,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.19,
-        ['Total'] = 23.30,
     },
     ['Priest Speedrun 10-19 - Discipline '] = {
         ['Title'] = "Priest Speedrun 10-19",
@@ -3811,7 +3714,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.44,
-        ['Total'] = 28.47,
     },
     ['Priest Speedrun 20-29 - Discipline '] = {
         ['Title'] = "Priest Speedrun 20-29",
@@ -3850,7 +3752,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.45,
-        ['Total'] = 29.80,
     },
     ['Priest Speedrun 30-39 - Discipline '] = {
         ['Title'] = "Priest Speedrun 30-39",
@@ -3889,7 +3790,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.32,
-        ['Total'] = 28.91,
     },
     ['Priest Speedrun 40-49 - Discipline '] = {
         ['Title'] = "Priest Speedrun 40-49",
@@ -3928,7 +3828,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.29,
-        ['Total'] = 28.39,
     },
     ['Priest Speedrun 50-60 - Discipline '] = {
         ['Title'] = "Priest Speedrun 50-60",
@@ -3967,7 +3866,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.27,
-        ['Total'] = 29.33,
     },
     ['Priest Hardcore 1-9 - Discipline '] = {
         ['Title'] = "Priest Hardcore 1-9",
@@ -4006,7 +3904,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.19,
-        ['Total'] = 23.69,
     },
     ['Priest Hardcore 10-19 - Discipline '] = {
         ['Title'] = "Priest Hardcore 10-19",
@@ -4045,7 +3942,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.44,
-        ['Total'] = 28.53,
     },
     ['Priest Hardcore 20-29 - Discipline '] = {
         ['Title'] = "Priest Hardcore 20-29",
@@ -4084,7 +3980,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.45,
-        ['Total'] = 29.78,
     },
     ['Priest Hardcore 30-39 - Discipline '] = {
         ['Title'] = "Priest Hardcore 30-39",
@@ -4123,7 +4018,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.32,
-        ['Total'] = 28.90,
     },
     ['Priest Hardcore 40-49 - Discipline '] = {
         ['Title'] = "Priest Hardcore 40-49",
@@ -4162,7 +4056,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.29,
-        ['Total'] = 28.49,
     },
     ['Priest Hardcore 50-60 - Discipline '] = {
         ['Title'] = "Priest Hardcore 50-60",
@@ -4201,7 +4094,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.27,
-        ['Total'] = 29.52,
     },
     ['Priest Speedrun 1-9 - Shadow'] = {
         ['Title'] = "Priest Speedrun 1-9",
@@ -4240,7 +4132,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.94,
-        ['Total'] = 25.46,
     },
     ['Priest Speedrun 10-19 - Shadow'] = {
         ['Title'] = "Priest Speedrun 10-19",
@@ -4279,7 +4170,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.22,
-        ['Total'] = 33.59,
     },
     ['Priest Speedrun 20-29 - Shadow'] = {
         ['Title'] = "Priest Speedrun 20-29",
@@ -4318,7 +4208,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.26,
-        ['Total'] = 34.99,
     },
     ['Priest Speedrun 30-39 - Shadow'] = {
         ['Title'] = "Priest Speedrun 30-39",
@@ -4357,7 +4246,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.62,
-        ['Total'] = 32.62,
     },
     ['Priest Speedrun 40-49 - Shadow'] = {
         ['Title'] = "Priest Speedrun 40-49",
@@ -4396,7 +4284,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.46,
-        ['Total'] = 31.74,
     },
     ['Priest Speedrun 50-60 - Shadow'] = {
         ['Title'] = "Priest Speedrun 50-60",
@@ -4435,7 +4322,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.34,
-        ['Total'] = 32.40,
     },
     ['Priest Hardcore 1-9 - Shadow'] = {
         ['Title'] = "Priest Hardcore 1-9",
@@ -4474,7 +4360,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.94,
-        ['Total'] = 25.93,
     },
     ['Priest Hardcore 10-19 - Shadow'] = {
         ['Title'] = "Priest Hardcore 10-19",
@@ -4513,7 +4398,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.22,
-        ['Total'] = 33.65,
     },
     ['Priest Hardcore 20-29 - Shadow'] = {
         ['Title'] = "Priest Hardcore 20-29",
@@ -4552,7 +4436,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.26,
-        ['Total'] = 34.97,
     },
     ['Priest Hardcore 30-39 - Shadow'] = {
         ['Title'] = "Priest Hardcore 30-39",
@@ -4591,7 +4474,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.62,
-        ['Total'] = 32.62,
     },
     ['Priest Hardcore 40-49 - Shadow'] = {
         ['Title'] = "Priest Hardcore 40-49",
@@ -4630,7 +4512,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.46,
-        ['Total'] = 31.83,
     },
     ['Priest Hardcore 50-60 - Shadow'] = {
         ['Title'] = "Priest Hardcore 50-60",
@@ -4669,7 +4550,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.34,
-        ['Total'] = 32.59,
     },
     ['Rogue Speedrun 1-9'] = {
         ['Title'] = "Rogue Speedrun 1-9",
@@ -4707,7 +4587,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 49.98,
     },
     ['Rogue Speedrun 10-19'] = {
         ['Title'] = "Rogue Speedrun 10-19",
@@ -4745,7 +4624,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 71.44,
     },
     ['Rogue Speedrun 20-29'] = {
         ['Title'] = "Rogue Speedrun 20-29",
@@ -4783,7 +4661,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 74.57,
     },
     ['Rogue Speedrun 30-39'] = {
         ['Title'] = "Rogue Speedrun 30-39",
@@ -4821,7 +4698,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 80.41,
     },
     ['Rogue Speedrun 40-49'] = {
         ['Title'] = "Rogue Speedrun 40-49",
@@ -4859,7 +4735,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 83.18,
     },
     ['Rogue Speedrun 50-60'] = {
         ['Title'] = "Rogue Speedrun 50-60",
@@ -4897,7 +4772,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 31.74,
     },
     ['Rogue Hardcore 1-9'] = {
         ['Title'] = "Rogue Hardcore 1-9",
@@ -4935,7 +4809,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 50.31,
     },
     ['Rogue Hardcore 10-19'] = {
         ['Title'] = "Rogue Hardcore 10-19",
@@ -4973,7 +4846,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 72.04,
     },
     ['Rogue Hardcore 20-29'] = {
         ['Title'] = "Rogue Hardcore 20-29",
@@ -5011,7 +4883,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 74.89,
     },
     ['Rogue Hardcore 30-39'] = {
         ['Title'] = "Rogue Hardcore 30-39",
@@ -5049,7 +4920,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 80.81,
     },
     ['Rogue Hardcore 40-49'] = {
         ['Title'] = "Rogue Hardcore 40-49",
@@ -5087,7 +4957,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 83.37,
     },
     ['Rogue Hardcore 50-60'] = {
         ['Title'] = "Rogue Hardcore 50-60",
@@ -5125,7 +4994,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 32.25,
     },
     ['Shaman Speedrun 1-9 - Enhancement'] = {
         ['Title'] = "Shaman Speedrun 1-9",
@@ -5164,7 +5032,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.27,
         ['STAT_SPELLDAMAGE_FROST'] = 0.04,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 31.33,
     },
     ['Shaman Speedrun 10-19 - Enhancement'] = {
         ['Title'] = "Shaman Speedrun 10-19",
@@ -5203,7 +5070,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.65,
         ['STAT_SPELLDAMAGE_FROST'] = 0.09,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 38.69,
     },
     ['Shaman Speedrun 20-29 - Enhancement'] = {
         ['Title'] = "Shaman Speedrun 20-29",
@@ -5242,7 +5108,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.66,
         ['STAT_SPELLDAMAGE_FROST'] = 0.09,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 45.43,
     },
     ['Shaman Speedrun 30-39 - Enhancement'] = {
         ['Title'] = "Shaman Speedrun 30-39",
@@ -5281,7 +5146,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.47,
         ['STAT_SPELLDAMAGE_FROST'] = 0.07,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 52.54,
     },
     ['Shaman Speedrun 40-49 - Enhancement'] = {
         ['Title'] = "Shaman Speedrun 40-49",
@@ -5320,7 +5184,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.43,
         ['STAT_SPELLDAMAGE_FROST'] = 0.06,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 56.43,
     },
     ['Shaman Speedrun 50-60 - Enhancement'] = {
         ['Title'] = "Shaman Speedrun 50-60",
@@ -5359,7 +5222,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.39,
         ['STAT_SPELLDAMAGE_FROST'] = 0.06,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 62.01,
     },
     ['Shaman Hardcore 1-9 - Enhancement'] = {
         ['Title'] = "Shaman Hardcore 1-9",
@@ -5398,7 +5260,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.27,
         ['STAT_SPELLDAMAGE_FROST'] = 0.04,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 31.91,
     },
     ['Shaman Hardcore 10-19 - Enhancement'] = {
         ['Title'] = "Shaman Hardcore 10-19",
@@ -5437,7 +5298,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.65,
         ['STAT_SPELLDAMAGE_FROST'] = 0.09,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 39.02,
     },
     ['Shaman Hardcore 20-29 - Enhancement'] = {
         ['Title'] = "Shaman Hardcore 20-29",
@@ -5476,7 +5336,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.66,
         ['STAT_SPELLDAMAGE_FROST'] = 0.09,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 45.68,
     },
     ['Shaman Hardcore 30-39 - Enhancement'] = {
         ['Title'] = "Shaman Hardcore 30-39",
@@ -5515,7 +5374,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.47,
         ['STAT_SPELLDAMAGE_FROST'] = 0.07,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 47.73,
     },
     ['Shaman Hardcore 40-49 - Enhancement'] = {
         ['Title'] = "Shaman Hardcore 40-49",
@@ -5554,7 +5412,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.43,
         ['STAT_SPELLDAMAGE_FROST'] = 0.06,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 56.74,
     },
     ['Shaman Hardcore 50-60 - Enhancement'] = {
         ['Title'] = "Shaman Hardcore 50-60",
@@ -5593,7 +5450,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.39,
         ['STAT_SPELLDAMAGE_FROST'] = 0.06,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 62.37,
     },
     ['Shaman Speedrun 1-9 - Elemental'] = {
         ['Title'] = "Shaman Speedrun 1-9",
@@ -5632,7 +5488,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.82,
         ['STAT_SPELLDAMAGE_FROST'] = 0.23,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 14.09,
     },
     ['Shaman Speedrun 10-19 - Elemental'] = {
         ['Title'] = "Shaman Speedrun 10-19",
@@ -5671,7 +5526,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.16,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 23.82,
     },
     ['Shaman Speedrun 20-29 - Elemental'] = {
         ['Title'] = "Shaman Speedrun 20-29",
@@ -5710,7 +5564,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.19,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 27.68,
     },
     ['Shaman Speedrun 30-39 - Elemental'] = {
         ['Title'] = "Shaman Speedrun 30-39",
@@ -5749,7 +5602,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.57,
         ['STAT_SPELLDAMAGE_FROST'] = 0.22,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 27.90,
     },
     ['Shaman Speedrun 40-49 - Elemental'] = {
         ['Title'] = "Shaman Speedrun 40-49",
@@ -5788,7 +5640,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.42,
         ['STAT_SPELLDAMAGE_FROST'] = 0.20,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 29.49,
     },
     ['Shaman Speedrun 50-60 - Elemental'] = {
         ['Title'] = "Shaman Speedrun 50-60",
@@ -5827,7 +5678,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.30,
         ['STAT_SPELLDAMAGE_FROST'] = 0.19,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 32.73,
     },
     ['Shaman Hardcore 1-9 - Elemental'] = {
         ['Title'] = "Shaman Hardcore 1-9",
@@ -5866,7 +5716,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.91,
         ['STAT_SPELLDAMAGE_FROST'] = 0.13,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 14.56,
     },
     ['Shaman Hardcore 10-19 - Elemental'] = {
         ['Title'] = "Shaman Hardcore 10-19",
@@ -5905,7 +5754,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.16,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 24.07,
     },
     ['Shaman Hardcore 20-29 - Elemental'] = {
         ['Title'] = "Shaman Hardcore 20-29",
@@ -5944,7 +5792,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 2.19,
         ['STAT_SPELLDAMAGE_FROST'] = 0.31,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 27.87,
     },
     ['Shaman Hardcore 30-39 - Elemental'] = {
         ['Title'] = "Shaman Hardcore 30-39",
@@ -5983,7 +5830,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.57,
         ['STAT_SPELLDAMAGE_FROST'] = 0.22,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 28.12,
     },
     ['Shaman Hardcore 40-49 - Elemental'] = {
         ['Title'] = "Shaman Hardcore 40-49",
@@ -6022,7 +5868,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.42,
         ['STAT_SPELLDAMAGE_FROST'] = 0.20,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 29.77,
     },
     ['Shaman Hardcore 50-60 - Elemental'] = {
         ['Title'] = "Shaman Hardcore 50-60",
@@ -6061,7 +5906,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 1.30,
         ['STAT_SPELLDAMAGE_FROST'] = 0.19,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
-        ['Total'] = 33.06,
     },
     ['Warlock Speedrun 1-9 - Affliction'] = {
         ['Title'] = "Warlock Speedrun 1-9",
@@ -6100,7 +5944,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.17,
-        ['Total'] = 24.35,
     },
     ['Warlock Speedrun 10-19 - Affliction'] = {
         ['Title'] = "Warlock Speedrun 10-19",
@@ -6139,7 +5982,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.78,
-        ['Total'] = 30.22,
     },
     ['Warlock Speedrun 20-29 - Affliction'] = {
         ['Title'] = "Warlock Speedrun 20-29",
@@ -6178,7 +6020,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.82,
-        ['Total'] = 31.21,
     },
     ['Warlock Speedrun 30-39 - Affliction'] = {
         ['Title'] = "Warlock Speedrun 30-39",
@@ -6217,7 +6058,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.02,
-        ['Total'] = 29.29,
     },
     ['Warlock Speedrun 40-49 - Affliction'] = {
         ['Title'] = "Warlock Speedrun 40-49",
@@ -6256,7 +6096,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.82,
-        ['Total'] = 28.38,
     },
     ['Warlock Speedrun 50-60 - Affliction'] = {
         ['Title'] = "Warlock Speedrun 50-60",
@@ -6295,7 +6134,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.67,
-        ['Total'] = 28.93,
     },
     ['Warlock Hardcore 1-9 - Affliction'] = {
         ['Title'] = "Warlock Hardcore 1-9",
@@ -6334,7 +6172,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.17,
-        ['Total'] = 24.78,
     },
     ['Warlock Hardcore 10-19 - Affliction'] = {
         ['Title'] = "Warlock Hardcore 10-19",
@@ -6373,7 +6210,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.78,
-        ['Total'] = 30.51,
     },
     ['Warlock Hardcore 20-29 - Affliction'] = {
         ['Title'] = "Warlock Hardcore 20-29",
@@ -6412,7 +6248,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.82,
-        ['Total'] = 31.44,
     },
     ['Warlock Hardcore 30-39 - Affliction'] = {
         ['Title'] = "Warlock Hardcore 30-39",
@@ -6451,7 +6286,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 2.02,
-        ['Total'] = 29.52,
     },
     ['Warlock Hardcore 40-49 - Affliction'] = {
         ['Title'] = "Warlock Hardcore 40-49",
@@ -6490,7 +6324,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.82,
-        ['Total'] = 28.65,
     },
     ['Warlock Hardcore 50-60 - Affliction'] = {
         ['Title'] = "Warlock Hardcore 50-60",
@@ -6529,7 +6362,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.67,
-        ['Total'] = 29.26,
     },
     ['Warlock Speedrun 1-9 - Destruction'] = {
         ['Title'] = "Warlock Speedrun 1-9",
@@ -6568,7 +6400,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.78,
-        ['Total'] = 24.68,
     },
     ['Warlock Speedrun 10-19 - Destruction'] = {
         ['Title'] = "Warlock Speedrun 10-19",
@@ -6607,7 +6438,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.85,
-        ['Total'] = 31.51,
     },
     ['Warlock Speedrun 20-29 - Destruction'] = {
         ['Title'] = "Warlock Speedrun 20-29",
@@ -6646,7 +6476,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.88,
-        ['Total'] = 33.21,
     },
     ['Warlock Speedrun 30-39 - Destruction'] = {
         ['Title'] = "Warlock Speedrun 30-39",
@@ -6685,7 +6514,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.35,
-        ['Total'] = 31.84,
     },
     ['Warlock Speedrun 40-49 - Destruction'] = {
         ['Title'] = "Warlock Speedrun 40-49",
@@ -6724,7 +6552,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.21,
-        ['Total'] = 31.56,
     },
     ['Warlock Speedrun 50-60 - Destruction'] = {
         ['Title'] = "Warlock Speedrun 50-60",
@@ -6763,7 +6590,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.11,
-        ['Total'] = 32.78,
     },
     ['Warlock Hardcore 1-9 - Destruction'] = {
         ['Title'] = "Warlock Hardcore 1-9",
@@ -6802,7 +6628,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.78,
-        ['Total'] = 25.19,
     },
     ['Warlock Hardcore 10-19 - Destruction'] = {
         ['Title'] = "Warlock Hardcore 10-19",
@@ -6841,7 +6666,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.85,
-        ['Total'] = 31.80,
     },
     ['Warlock Hardcore 20-29 - Destruction'] = {
         ['Title'] = "Warlock Hardcore 20-29",
@@ -6880,7 +6704,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.88,
-        ['Total'] = 33.45,
     },
     ['Warlock Hardcore 30-39 - Destruction'] = {
         ['Title'] = "Warlock Hardcore 30-39",
@@ -6919,7 +6742,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.35,
-        ['Total'] = 32.07,
     },
     ['Warlock Hardcore 40-49 - Destruction'] = {
         ['Title'] = "Warlock Hardcore 40-49",
@@ -6958,7 +6780,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.21,
-        ['Total'] = 31.83,
     },
     ['Warlock Hardcore 50-60 - Destruction'] = {
         ['Title'] = "Warlock Hardcore 50-60",
@@ -6997,7 +6818,6 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_NATURE'] = 0.00,
         ['STAT_SPELLDAMAGE_FROST'] = 0.00,
         ['STAT_SPELLDAMAGE_SHADOW'] = 1.11,
-        ['Total'] = 33.11,
     },
     ['Warrior Speedrun 1-9'] = {
         ['Title'] = "Warrior Speedrun 1-9",
