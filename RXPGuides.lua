@@ -1654,7 +1654,7 @@ function addon:UpdateLoop(diff)
 
             addon.updateFrequency = (addon.settings.profile and
                                         addon.settings.profile.updateFrequency or
-                                        75)
+                                        75)/1000
 
         end
         updateError = false
