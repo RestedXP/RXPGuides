@@ -1550,28 +1550,7 @@ function addon.LegacyUpdateLoop()
         end
     end
 
-    if skip % 16 == 1 then
-        event = event .. "/inactiveQ"
-        activeQuestUpdate = 0
-        local deletedIndexes = {}
-
-        for i, ref in ipairs(addon.updateInactiveQuest) do
-            activeQuestUpdate = activeQuestUpdate + 1
-            if activeQuestUpdate > 3 then
-                break
-            else
-                -- print('ok',ref.element.step.index,ref.element.requestFromServer)
-                addon.UpdateQuestCompletionData(ref)
-                tinsert(deletedIndexes, i)
-            end
-        end
-
-        for i = #deletedIndexes, 1, -1 do
-            local element = deletedIndexes[i]
-            table.remove(addon.updateInactiveQuest, element)
-            -- print('r'..element)
-        end
-    elseif GetTime() - cycleStart > 2 then
+    if GetTime() - cycleStart > 2 then
         cycleStart = GetTime()
 
         for ref, func in pairs(addon.activeObjectives) do
@@ -1639,6 +1618,11 @@ function addon.tickers:SetupTickerLoops()
     if not self.cycleFour then
         -- skip % 4 == 3
         self.cycleFour = NewTicker(updateFrequency * 4, self.CycleFour)
+    end
+
+    if not self.cycleSixteen then
+        -- skip % 16 == 1
+        self.cycleSixteen = NewTicker(updateFrequency * 16, self.CycleSixteen)
     end
 
     if not self.cycleThirty then
@@ -1711,6 +1695,34 @@ function addon.tickers.CycleFour()
     event = event .. "/task"
     addon.UpdateScheduledTasks()
     addon.ClearQuestCache()
+end
+
+function addon.tickers.CycleSixteen()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    event = event .. "/inactiveQ"
+    local activeQuestUpdate = 0
+    local deletedIndexes = {}
+    local element
+
+    for i, ref in ipairs(addon.updateInactiveQuest) do
+        activeQuestUpdate = activeQuestUpdate + 1
+        if activeQuestUpdate > 3 then
+            break
+        else
+            -- print('ok',ref.element.step.index,ref.element.requestFromServer)
+            addon.UpdateQuestCompletionData(ref)
+            tinsert(deletedIndexes, i)
+        end
+    end
+
+    for i = #deletedIndexes, 1, -1 do
+        element = deletedIndexes[i]
+        table.remove(addon.updateInactiveQuest, element)
+        -- print('r' .. element)
+    end
 end
 
 function addon.tickers.CycleThirty()
