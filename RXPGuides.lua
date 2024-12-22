@@ -1550,29 +1550,7 @@ function addon.LegacyUpdateLoop()
         end
     end
 
-    if skip % 4 == 2 then
-        if addon.questAutoAccept then
-            addon.questAutoAccept = false
-            event = event .. "/auto"
-            addon.QuestAutomation()
-        end
-
-        if addon.updateMap then
-            event = event .. "/map"
-            addon.UpdateMap(true)
-        end
-    elseif skip % 4 == 0 then
-        event = event .. "/goto"
-        addon.UpdateGotoSteps()
-        -- event = event .. "/updateGoto"
-    elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
-        event = event .. "/task"
-        addon.UpdateScheduledTasks()
-        addon.ClearQuestCache()
-    elseif skip % 32 == 29 then
-        event = event .. "/toptext"
-        addon.RXPFrame.CurrentStepFrame.UpdateText()
-    elseif skip % 16 == 1 then
+    if skip % 16 == 1 then
         event = event .. "/inactiveQ"
         activeQuestUpdate = 0
         local deletedIndexes = {}
@@ -1632,6 +1610,7 @@ function addon.LegacyUpdateLoop()
         end
 
     end
+
     updateError = false
 end
 
@@ -1647,25 +1626,100 @@ function addon.tickers:SetupTickerLoops()
         self.legacy = NewTicker(updateFrequency, addon.LegacyUpdateLoop)
     end
 
+    if not self.cycleZero then
+        -- skip % 4 == 0
+        self.cycleZero = NewTicker(updateFrequency, self.CycleZero)
+    end
+
+    if not self.cycleThree then
+        -- skip % 4 == 2
+        self.cycleThree = NewTicker(updateFrequency * 3, self.CycleThree)
+    end
+
+    if not self.cycleFour then
+        -- skip % 4 == 3
+        self.cycleFour = NewTicker(updateFrequency * 4, self.CycleFour)
+    end
+
+    if not self.cycleThirty then
+        -- skip % 32 == 29
+        self.cycleThirty = NewTicker(updateFrequency * 30, self.CycleThirty)
+    end
+
 end
 
 function addon.tickers:ShouldContinue()
     if addon.isHidden then
         updateError = false
         --print('hidden')
-        return 'hidden'
+        return false, 'hidden'
     end
 
     if errorCount >= 10 then
+        -- TODO revise lastEvent = event for multiple-tickers
         addon.lastEvent = event
 
         errorCount = 0
         updateError = false
         -- print('error')
-        return 'error'
+        return false, 'error'
     end
 
     return true
+end
+
+function addon.tickers.CycleFoo()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+end
+
+function addon.tickers.CycleZero()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    event = event .. "/goto"
+    addon.UpdateGotoSteps()
+    -- event = event .. "/updateGoto"
+end
+
+function addon.tickers.CycleThree()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    if addon.questAutoAccept then
+        addon.questAutoAccept = false
+        event = event .. "/auto"
+        addon.QuestAutomation()
+    end
+
+    if addon.updateMap then
+        event = event .. "/map"
+        addon.UpdateMap(true)
+    end
+end
+
+function addon.tickers.CycleFour()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    if addon.ProcessMessageQueue() then return end
+
+    event = event .. "/task"
+    addon.UpdateScheduledTasks()
+    addon.ClearQuestCache()
+end
+
+function addon.tickers.CycleThirty()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    event = event .. "/toptext"
+    addon.RXPFrame.CurrentStepFrame.UpdateText()
 end
 
 function addon.HardcoreToggle()
