@@ -63,13 +63,13 @@ function addon.SetupArrow()
     af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
     af.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
-    addon.arrowFrame:SetScript("OnUpdate", addon.UpdateArrow)
+    addon.arrowFrame:SetScript("OnUpdate", addon.DrawArrow)
 end
 
-function addon.UpdateArrow(self)
+function addon.DrawArrow(self)
+    self = self or addon.arrowFrame
 
     if addon.settings.profile.disableArrow or not self then return end
-    local element = self.element
     if af.wrongContinent then
         -- If first time setting wrong continent, notify player
         if self.text:GetText() ~= "~" then
@@ -78,56 +78,59 @@ function addon.UpdateArrow(self)
 
         af.alpha = 1
         af:SetAlpha(1)
+        addon.hideArrow = true
         self.texture:SetRotation(0)
         self.text:SetText("~")
         return
     end
-    if element then
-        local x, y, instance = HBD:GetPlayerWorldPosition()
-        local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
-                                               element.wy)
-        local facing = GetPlayerFacing()
 
-        if not (dist and facing) then
-            if af.alpha ~= 0 then
-                af.alpha = 0
-                af:SetAlpha(0)
-            end
-            return
-        elseif af.alpha ~= 1 then
-            af.alpha = 1
-            af:SetAlpha(1)
+    local element = self.element
+    if not element then return end
+
+    local x, y, instance = HBD:GetPlayerWorldPosition()
+    local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
+                                            element.wy)
+    local facing = GetPlayerFacing()
+
+    if not (dist and facing) then
+        if af.alpha ~= 0 then
+            af.alpha = 0
+            af:SetAlpha(0)
         end
+        return
+    elseif af.alpha ~= 1 then
+        af.alpha = 1
+        af:SetAlpha(1)
+    end
 
-        local orientation = angle - facing
-        local diff = math.abs(orientation - self.orientation)
-        dist = math.floor(dist)
+    local orientation = angle - facing
+    local diff = math.abs(orientation - self.orientation)
+    dist = math.floor(dist)
 
-        if diff > self.lowerbound and diff < self.upperbound or self.forceUpdate then
-            self.orientation = orientation
-            self.texture:SetRotation(orientation)
-            self.forceUpdate = false
-        end
+    if diff > self.lowerbound and diff < self.upperbound or self.forceUpdate then
+        self.orientation = orientation
+        self.texture:SetRotation(orientation)
+        self.forceUpdate = false
+    end
 
-        if dist ~= self.distance then
-            self.distance = dist
-            local step = element.step
-            local title = step and (step.title or step.index and ("Step "..step.index))
-            if element.title then
-                for RXP_ in string.gmatch(element.title, "RXP_[A-Z]+_") do
-                    element.title = element.title:gsub(RXP_, addon.guideTextColors[RXP_] or
-                                                 addon.guideTextColors.default["error"])
-                end
-                --self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
-                self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
-            elseif title then
-                for RXP_ in string.gmatch(title, "RXP_[A-Z]+_") do
-                    title = title:gsub(RXP_, addon.guideTextColors[RXP_] or addon.guideTextColors.default["error"])
-                end
-                self.text:SetText(string.format("%s\n(%dyd)", title, dist))
-            else
-                self.text:SetText(string.format("(%dyd)", dist))
+    if dist ~= self.distance then
+        self.distance = dist
+        local step = element.step
+        local title = step and (step.title or step.index and ("Step "..step.index))
+        if element.title then
+            for RXP_ in string.gmatch(element.title, "RXP_[A-Z]+_") do
+                element.title = element.title:gsub(RXP_, addon.guideTextColors[RXP_] or
+                                                addon.guideTextColors.default["error"])
             end
+            --self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
+            self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
+        elseif title then
+            for RXP_ in string.gmatch(title, "RXP_[A-Z]+_") do
+                title = title:gsub(RXP_, addon.guideTextColors[RXP_] or addon.guideTextColors.default["error"])
+            end
+            self.text:SetText(string.format("%s\n(%dyd)", title, dist))
+        else
+            self.text:SetText(string.format("(%dyd)", dist))
         end
     end
 
@@ -921,10 +924,10 @@ end
 local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
 -- Updates the arrow
 
-local function updateArrow()
-
+local function updateArrowData()
     local lowPrioWPs
     local loop = {}
+
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
@@ -944,6 +947,8 @@ local function updateArrow()
             af.dist = 0
             af.orientation = 0
             af.element = element
+
+            -- forceUpdate set if 1/X steps are completed, e.g. 6/7 + 7/7 Plainstriders
             af.forceUpdate = true
             return true
         end
@@ -1010,7 +1015,7 @@ function addon.ResetArrowPosition()
     end
     af:ClearAllPoints()
     af:SetPoint("CENTER", 0, 200)
-    updateArrow()
+    updateArrowData()
 end
 
 -- Removes all pins from the map and mini map and resets all data structrures
@@ -1037,7 +1042,7 @@ function addon.UpdateMap(resetPins)
         addWorldMapLines()
         addWorldMapPins()
         addMiniMapPins()
-        updateArrow()
+        updateArrowData()
         addon.DisplayLines(true)
     else
         addon.updateMap = true
@@ -1081,6 +1086,7 @@ function addon.UpdateGotoSteps()
     local forceArrowUpdate = UnitIsGhost("player") == (af.element ~= corpseWP)
     DisplayLines()
     if #addon.activeWaypoints == 0 and not forceArrowUpdate then
+        addon.hideArrow = true
         af:Hide()
         return
     end
@@ -1184,7 +1190,7 @@ function addon.UpdateGotoSteps()
         end
     end
 
-    if addon.hideArrow ~= hideArrow then
+    if addon.hideArrow ~= hideArrow and not af.wrongContinent then
         addon.hideArrow = hideArrow
         forceArrowUpdate = true
     end
@@ -1298,7 +1304,7 @@ function addon.UpdateGotoSteps()
 
     end
 
-    if forceArrowUpdate then updateArrow() end
+    if forceArrowUpdate then updateArrowData() end
 end
 
 local function GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)

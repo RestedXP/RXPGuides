@@ -1008,7 +1008,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.UpdateArrow(addon.arrowFrame)
+                            addon.DrawArrow(addon.arrowFrame)
                         end
                     },
                     disableItemWindow = {
