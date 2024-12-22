@@ -373,7 +373,6 @@ function Frame:InitializeZones()
 end
 
 function Frame.OnUpdate()
-    Frame.sinceLastUpdate = 0
     Frame:CheckNearby()
     Frame:CheckZone()
 end
