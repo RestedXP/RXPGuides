@@ -1550,15 +1550,7 @@ function addon.LegacyUpdateLoop()
         end
     end
 
-    if GetTime() - cycleStart > 2 then
-        cycleStart = GetTime()
-
-        for ref, func in pairs(addon.activeObjectives) do
-            addon.Call("updateQuest",func,ref)
-            activeQuestUpdate = activeQuestUpdate + 1
-            addon.updateActiveQuest[ref] = nil
-        end
-    elseif not guideLoaded and addon.currentGuide then
+    if not guideLoaded and addon.currentGuide then
         event = event .. "/istep"
         local max = #addon.currentGuide.steps
         local offset = RXPCData.currentStep + 1
@@ -1682,6 +1674,13 @@ function addon.tickers.CycleThree()
     if addon.updateMap then
         event = event .. "/map"
         addon.UpdateMap(true)
+    end
+
+    -- Update activeObjectives data to resolve cached issues
+    for ref, func in pairs(addon.activeObjectives) do
+        addon.Call("updateQuest", func, ref)
+
+        addon.updateActiveQuest[ref] = nil
     end
 end
 
