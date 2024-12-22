@@ -71,6 +71,11 @@ function addon.UpdateArrow(self)
     if addon.settings.profile.disableArrow or not self then return end
     local element = self.element
     if af.wrongContinent then
+        -- If first time setting wrong continent, notify player
+        if self.text:GetText() ~= "~" then
+            addon.comms.PrettyPrint("%s %s", _G.ERR_TAXINOSUCHPATH, _G.SPELL_FAILED_INCORRECT_AREA)
+        end
+
         af.alpha = 1
         af:SetAlpha(1)
         self.texture:SetRotation(0)
