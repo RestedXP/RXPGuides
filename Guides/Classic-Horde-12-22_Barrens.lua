@@ -11380,6 +11380,7 @@ step
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
+    .addquestitem 5075,5052
 step
     #optional
     #completewith IshamuhaleTurnin

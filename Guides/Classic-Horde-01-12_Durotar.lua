@@ -4915,6 +4915,7 @@ step << !Warrior !Shaman !Hunter
     .mob Burning Blade Cultist
     .isQuestTurnedIn 828
 step << Mage
+    #season 2
     #xprate <1.5
     #loop
     .goto Durotar,53.18,29.15,0
