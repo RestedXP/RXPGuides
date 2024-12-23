@@ -10785,7 +10785,7 @@ step << Dwarf Hunter
 
 RXPGuides.RegisterGuide([[
 #classic
-#season 0,1
+#season 0
 #version 1
 << Alliance !Hunter
 #season 0
