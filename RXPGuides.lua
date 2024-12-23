@@ -1593,33 +1593,41 @@ function addon.tickers:SetupTickerLoops()
         updateFrequency = addon.settings.profile.updateFrequency / 1000
     end
 
+    local jitter = {
+        [0] = updateFrequency + math.random(0.001, 0.01),
+        [3] = updateFrequency * 3 + math.random(0.003, 0.03),
+        [4] = updateFrequency * 4 + math.random(0.004, 0.04),
+        [16] = updateFrequency * 16 + math.random(0.016, 0.16),
+        [30] = updateFrequency * 30 + math.random(0.03, 0.3)
+    }
+
     if not self.legacy then
         self.legacy = NewTicker(updateFrequency, addon.LegacyUpdateLoop)
     end
 
     if not self.cycleZero then
         -- skip % 4 == 0
-        self.cycleZero = NewTicker(updateFrequency, self.CycleZero)
+        self.cycleZero = NewTicker(jitter[0], self.CycleZero)
     end
 
     if not self.cycleThree then
         -- skip % 4 == 2
-        self.cycleThree = NewTicker(updateFrequency * 3, self.CycleThree)
+        self.cycleThree = NewTicker(jitter[3], self.CycleThree)
     end
 
     if not self.cycleFour then
         -- skip % 4 == 3
-        self.cycleFour = NewTicker(updateFrequency * 4, self.CycleFour)
+        self.cycleFour = NewTicker(jitter[4], self.CycleFour)
     end
 
     if not self.cycleSixteen then
         -- skip % 16 == 1
-        self.cycleSixteen = NewTicker(updateFrequency * 16, self.CycleSixteen)
+        self.cycleSixteen = NewTicker(jitter[16], self.CycleSixteen)
     end
 
     if not self.cycleThirty then
         -- skip % 32 == 29
-        self.cycleThirty = NewTicker(updateFrequency * 30, self.CycleThirty)
+        self.cycleThirty = NewTicker(jitter[30], self.CycleThirty)
     end
 
 end
