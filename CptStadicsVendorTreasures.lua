@@ -372,14 +372,9 @@ function Frame:InitializeZones()
 
 end
 
-function Frame:OnUpdate(sinceLastUpdate)
-    self.sinceLastUpdate = (self.sinceLastUpdate or 0) + sinceLastUpdate;
-    if (self.sinceLastUpdate >= DELAY) then
-        self.sinceLastUpdate = 0
-        self:CheckNearby()
-        self:CheckZone()
-    end
-
+function Frame.OnUpdate()
+    Frame:CheckNearby()
+    Frame:CheckZone()
 end
 
 function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
@@ -875,9 +870,7 @@ function addon.VendorTreasures:Setup()
     Frame:RegisterEvent("ZONE_CHANGED")
     Frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
-    Frame:SetScript("OnUpdate", function(_, sinceLastUpdate)
-        Frame:OnUpdate(sinceLastUpdate)
-    end)
+    Frame.ticker = C_Timer.NewTicker(DELAY, Frame.OnUpdate)
 
     Frame:SetScript("OnEvent", function(this) this:CheckZone() end)
 
