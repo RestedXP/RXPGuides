@@ -1635,6 +1635,7 @@ step
     .target Anduin Wrynn
 ]])
 
+-- Lingering Shadows
 RXPGuides.RegisterGuide([[
 #df
 #version 1
@@ -2167,6 +2168,7 @@ step
     .target Executor Nizrek
 ]])
 
+-- Siren Isle Campaign
 RXPGuides.RegisterGuide([[
 #df
 #version 1
@@ -2509,8 +2511,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
     .turnin 86156 >>Turn in Getting Involved
     .target Jack the Hammer
-step
-    +The next free update will contain the next part of the story!
 
 -- WEEK 1 MAIN CAMPAIGN END
 
