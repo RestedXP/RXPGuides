@@ -2676,31 +2676,31 @@ step
 --
 ---- MAIN CAMPAIGN WEEK 2
 --
---
---
---step
---    .goto 2369,72.18,43.00
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
---    .accept 85653 >>Accept Dipping a Toe
---    .target Apprentice Tanmar
---
+
+
+step
+    .goto 2369,72.18,43.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .accept 85653 >>Accept Dipping a Toe
+    .target Apprentice Tanmar
+
 ----COMPLETION OF Survey Devices; NOT TURNIN
 --
 --step
 --    .goto 2369,75.12,45.47
 --    >>Click on the |cRXP_PICK_Survey Device|r
 --    .complete 84252,1,1
---step
---    .goto 2369,73.34,52.34
---    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
---    .complete 85653,1 --1/1 Search the East Shore
---step
---    .goto 2369,45.92,87.70
---    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
---    .complete 85653,3 --1/1 Search the Southern Shore
+step
+    .goto 2369,73.34,52.34
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
+    .complete 85653,1 --1/1 Search the East Shore
+step
+    .goto 2369,45.92,87.70
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
+    .complete 85653,3 --1/1 Search the Southern Shore
 --
 ----COMPLETION OF Survey Devices; NOT TURNIN
---
+
 --step
 --    .goto 2369,42.13,67.8
 --    >>Click on the |cRXP_PICK_Survey Device|r
@@ -2721,16 +2721,18 @@ step
 --    .goto 2369,34.63,28.99
 --    >>Click on the |cRXP_PICK_Survey Device|r
 --    .complete 84252,1,6
---step
---    .goto 2369,33.07,20.52
---    >>Click on the |cRXP_PICK_Seafearer's Chest|r inside the Water.
---    .complete 85653,2 --1/1 Search the Northern Shore
---step
---    .goto 2369,72.19,42.99
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
---    .turnin 85653 >>Turn in Dipping a Toe
---    .target Apprentice Tanmar
---
+step
+    .goto 2369,33.07,20.52
+    >>Click on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
+    .complete 85653,2 --1/1 Search the Northern Shore
+step
+    .goto 2369,72.19,42.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .turnin 85653 >>Turn in Dipping a Toe
+    .target Apprentice Tanmar
+
+step
+    +The next free update will contain the next part of the story!
 ---- MAIN CAMPAIGN WEEK 3
 --
 --step
