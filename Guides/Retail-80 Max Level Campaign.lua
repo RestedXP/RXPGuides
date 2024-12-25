@@ -2805,12 +2805,13 @@ step
 
 ]])
 
+-- Siren Isle Dailies/Weeklies?
 RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
 #subgroup Max Level Storylines (80)
-#name h) Siren Isle Daillies Inguide
+#name h) Siren Isle Daillies
 #displayname Siren Isle Daillies
 #internal
 
@@ -2819,33 +2820,202 @@ step
     .goto 2369,69.42,42.84,10,0
     .goto 2369,71.34,44.10,10,0
     .goto 2369,71.04,39.69,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r, |cRXP_FRIENDLY_Dawn|r, and |cRXP_FRIENDLY_Stellin Verasa|r
-    .questcount 3,83932,84222,84432 >>|cRXP_WARN_Accept the repeatable quests in the Floatsam Shoal|r
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r, |cRXP_FRIENDLY_Dawn|r, and |cRXP_FRIENDLY_Stellin Verasa|r
+    .questcount <4,83932,85589,84222,84627,84430,84432,84680 >>|cRXP_WARN_Accept the repeatable quests in the Floatsam Shoal|r
     .target Sky-Captain Elaena Lancekat
     .target Dawn
     .target Stellin Verasa
-step --DAILLIES
-    .goto 2369,71.03,39.72
-    -- .questcount <2,83932,85589
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
-    .accept 83932 >>Accept Historical Documents -- Vrykul
-    .accept 85589 >>Accept Ruffled Pages -- Naga
-    -- Beach Comber -- Naga
-    .target Stellin Veras
-step --DAILLIES
-    .goto 2369,69.53,42.80
+step
+    .isQuestAvailable 84248
+    .goto 2369,51.50,48.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .accept 84248 >>Accept A Ritual of Runes
+    .target Machinist Kromleg
+step
+    .isOnQuest 84222
+    #completewith InterestingNotes
+    >>Kill |cRXP_ENEMY_Rares|r on the Siren Isle (look for stars on your map)
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+step
+    .isOnQuest 84248
+    #completewith next
+    #label EnterCaveRitualRunes
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r
+    .complete 84248,1 --5/5 Summoning Runes destroyed
+step
+    .isOnQuest 84248
+    #completewith EnterCaveRitualRunes
+    #title Enter the cave
+    .goto 2369,50.09,42.41,8 >>Enter the cave
+step
+    .isOnQuest 84248
+    #title |TInterface/cursor/crosshair/interact.blp:20|tSummoning Runes
+    #requires EnterCaveRitualRunes
+    #loop
+    .goto 2369,52.58,38.46,10,0
+    .goto 2369,53.10,40.69,10,0
+    .goto 2369,54.11,37.70,10,0
+    .goto 2369,53.32,35.62,10,0
+    .goto 2369,51.41,37.53,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r
+    .complete 84248,1 --5/5 Summoning Runes destroyed
+step
+    .isOnQuest 84248
+    .goto 2369,53.02,37.76
+    >>Kill |cRXP_ENEMY_Inhyldir the Cursed|r
+    .complete 84248,2 --1/1 Inhyldir the Cursed slain
+    .mob Inhyldir the Cursed
+step
+    .isOnQuest 84248
+    #completewith next
+    #label LeaveCaveRitualRunes
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .turnin 84248 >>Turn in A Ritual of Runes
+    .target Machinist Kromleg
+step
+    .isOnQuest 84248
+    #completewith LeaveCaveRitualRunes
+    #title Enter the cave
+    .goto 2369,50.09,42.41,8 >>Leave the cave
+step
+    .isOnQuest 84248
+    #requires LeaveCaveRitualRunes
+    .goto 2369,51.51,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .turnin 84248 >>Turn in A Ritual of Runes
+    .target Machinist Kromleg
+step
+    .isOnQuest 83932
+    #completewith BrinedMonstrosity
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
+    *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
+    .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
+step
+    .isOnQuest 84432
+    #completewith BrinedMonstrosity
+    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r in the area
+    .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .mob Bloodwake Spellslinger
+    .mob Bloodwake Deathdealer
+    .mob Bloodwake Marauder
+    .mob Bloodwake Brawler
+step
+    .isOnQuest 84680
+    #completewith BrinedMonstrosity
+    >>Use the |T511729:0|t[Rock Reviver] on |cRXP_PICK_Restless Stones|r and |cRXP_PICK_Restless Pebbles|r
+    >>Kill the |cRXP_ENEMY_Bloodbrine Horrors|r
+    .complete 84680,1 --8/8 Restless Stones and Pebbles animated
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
+    .mob Bloodbrine Horror
+step
+    .isOnQuest 84680
+    #label BrinedMonstrosity
+    .goto 2369,39.39,73.45
+    >>Kill the |cRXP_ENEMY_Brined Monstrosity|r
+    .complete 84680,3 --1/1 Brined Monstrosity slain
+    .mob Brined Monstrosity
+step
+    #hidewindow
+    #completewith BloodwakeVrykul
+    #loop
+    .goto 2369,49.72,74.73,30,0
+    .goto 2369,57.90,70.69,45,0
+    .goto 2369,54.82,82.28,25,0
+    .goto 2369,61.58,83.82,25,0
+    .goto 2369,60.29,89.30,35,0
+    .goto 2369,66.11,67.24,35,0
+    .goto 2369,57.92,61.66,25,0
+    .goto 2369,50.18,61.10,25,0
+    +1
+step
+    .isOnQuest 83932
+    #completewith RestlessBloodbrine
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
+    *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
+    .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
+step
+    .isOnQuest 84432
+    #completewith RestlessBloodbrine
+    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r in the area
+    .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .mob Bloodwake Spellslinger
+    .mob Bloodwake Deathdealer
+    .mob Bloodwake Marauder
+    .mob Bloodwake Brawler
+step
+    .isOnQuest 84680
+    #label RestlessBloodbrine
+    >>Use the |T511729:0|t[Rock Reviver] on |cRXP_PICK_Restless Stones|r and |cRXP_PICK_Restless Pebbles|r
+    >>Kill the |cRXP_ENEMY_Bloodbrine Horrors|r
+    .complete 84680,1 --8/8 Restless Stones and Pebbles animated
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
+    .mob Bloodbrine Horror
+step
+    .isOnQuest 83932
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
+    *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
+    .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
+step
+    .isOnQuest 84432
+    #label BloodwakeVrykul
+    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r in the area
+    .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .mob Bloodwake Spellslinger
+    .mob Bloodwake Marauder
+step
+    .isOnQuest 83932
+    #label InterestingNotes
+    #loop
+    .goto 2369,48.19,60.36,20,0
+    .goto 2369,42.30,46.05,20,0
+    .goto 2369,45.95,47.72,20,0
+    .goto 2369,39.75,52.98,20,0
+    .goto 2369,39.02,39.07,20,0
+    .goto 2369,52.22,32.87,20,0
+    .goto 2369,66.49,64.54,15,0
+    .goto 2369,67.39,60.92,15,0
+    .goto 2369,63.95,63.12,15,0
+    .goto 2369,62.48,67.31,20,0
+    .goto 2369,56.01,85.92,20,0
+    .goto 2369,54.01,77.09,20,0
+    .goto 2369,50.80,76.44,20,0
+    .goto 2369,49.17,71.57,20,0
+    .goto 2369,51.91,70.01,15,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
+    *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
+    .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
+step
+    .isOnQuest 84222
+    >>Kill |cRXP_ENEMY_Rares|r on the Siren Isle (look for stars on your map)
+    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
+step
+    .isOnQuest 84222
+    .isQuestComplete 84222
+    .goto 2369,69.43,42.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
-    .accept 84222 >>Accept Secure the Perimeter -- Vrykul 5x
-    .accept 84627 >>Accept Three Heads of the Deep -- Naga 4x
-    .accept 84430 >>Accept Crystal Crusade -- Naga
+    .turnin 84222 >>Turn in Secure the Perimeter
     .target Sky-Captain Elaena Lancekat
-step --DAILLIES
-    .goto 2369,69.12,43.08
+step
+    .isOnQuest 84680
+    .goto 2369,69.13,43.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
-    .accept 84432 >>Accept Longship Landing -- Vrykul
-    .accept 84680 >>Accept Rock 'n Stone Revival -- Vrykul
+    .turnin 84680 >>Turn in Rock 'n Stone Revival
     .target Dawn
 step
+    .isOnQuest 84432
+    .goto 2369,69.13,43.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
+    .turnin 84432 >>Turn in Longship Landing
+    .target Dawn
+step
+    .isOnQuest 83932
+    .goto 2369,71.05,39.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .turnin 83932 >>Turn in Historical Documents
+    .target Stellin Verasa
+step
+    .isOnQuest 84432
     .goto 2369,70.53,50.48
     .vehicle >> Enter |cRXP_FRIENDLY_Unreliable Goblin Waveshredder|r
     .target Unreliable Goblin Waveshredder
