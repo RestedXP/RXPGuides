@@ -3706,15 +3706,16 @@ function addon.settings.ReplaceColors(element)
         return textLine
     end
 
+    local fieldString
     if type(element) == "table" or element and element.textReplaced then
         element.textReplaced = element.textReplaced or {}
         for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else
-                local str = element[field]
-                element.textReplaced[i] = str
-                element[field] = replace(str)
+                fieldString = element[field]
+                element.textReplaced[i] = fieldString
+                element[field] = replace(fieldString)
             end
         end
     else
