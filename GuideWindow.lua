@@ -651,7 +651,6 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeItems)
     table.wipe(addon.activeSpells)
     table.wipe(addon.inventoryManager.itemsToOpen)
-    table.wipe(addon.activeObjectives)
     ClearFrameData()
     local level = UnitLevel("player")
     local scrollHeight = 1
@@ -1051,18 +1050,20 @@ function CurrentStepFrame.UpdateText()
     addon.updateStepText = false
     local guide = addon.currentGuide
     if not guide then return end
-    local group = guide.group
 
     -- StepScroll(n)
-    local totalHeight = 0
-    local c = 0
+    local totalHeight, frameHeight = 0, 0
+    local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
-    for i, step in ipairs(activeSteps) do
+    local loopStepIndex, stepframe, elementFrame
+    local text, icon
 
-        local index = step.index
+    for _, step in ipairs(activeSteps) do
+
+        loopStepIndex = step.index
         c = c + 1
-        local stepframe = CurrentStepFrame.framePool[c]
+        stepframe = CurrentStepFrame.framePool[c]
         if stepframe then
             if not step.tip then
                 stepframe:ClearAllPoints()
@@ -1080,18 +1081,18 @@ function CurrentStepFrame.UpdateText()
             end
 
             stepframe.number.text:SetText(step.title or
-                                            (fmt(L("Step %d"), index)))
+                                            (fmt(L("Step %d"), loopStepIndex)))
             stepframe.number:SetSize(stepframe.number.text:GetStringWidth() + 10, 17)
 
-            local e = 0
-            local frameHeight = 0
+            e = 0
+            frameHeight = 0
             for j, element in ipairs(step.elements or {}) do
                 e = j
-                local elementFrame = stepframe.elements[e]
+                elementFrame = stepframe.elements[e]
                 if elementFrame then
                     elementFrame:Show()
 
-                    local spacing = 0
+                    spacing = 0
                     if not IsFrameShown(elementFrame,step) then
                         elementFrame:SetAlpha(0)
                         elementFrame.button:Hide()
@@ -1099,7 +1100,7 @@ function CurrentStepFrame.UpdateText()
                         spacing = 1
                     elseif element.text then
                         elementFrame:SetAlpha(1)
-                        local text = elementFrame.text
+                        text = elementFrame.text -- TODO check if " "
 
                         elementFrame.button:ClearAllPoints()
                         elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1);
@@ -1108,7 +1109,7 @@ function CurrentStepFrame.UpdateText()
                                                 "TOPRIGHT", 11, -1)
                         elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
                         text:SetText(L(element.text))
-                        local h = math.ceil(elementFrame.text:GetStringHeight() *
+                        h = math.ceil(elementFrame.text:GetStringHeight() *
                                                 1.1) + 1
                         -- print('sh:',h)
                         elementFrame:SetHeight(h)
@@ -1152,7 +1153,7 @@ function CurrentStepFrame.UpdateText()
                                             "BOTTOMRIGHT", 0, 0 + spacing)
                     end
                     if element.tag and element.text then
-                        local icon = element.icon or addon.icons[element.tag] or ""
+                        icon = element.icon or addon.icons[element.tag] or ""
                         elementFrame.icon:SetText(icon)
                         elementFrame.icon:Show()
                     else
