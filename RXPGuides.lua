@@ -1652,12 +1652,6 @@ function addon.tickers:ShouldContinue()
     return true
 end
 
-function addon.tickers.CycleFoo()
-    local shouldContinue = addon.tickers:ShouldContinue()
-
-    if not shouldContinue then return shouldContinue end
-end
-
 function addon.tickers.CycleZero()
     local shouldContinue = addon.tickers:ShouldContinue()
 
