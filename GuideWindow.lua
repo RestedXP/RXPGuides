@@ -1115,6 +1115,8 @@ function CurrentStepFrame.UpdateText()
                          -- Prevent text from overwritten with " ", could be stale text
                         if element.text ~= ' ' then
                             elementFrame.text:SetText(L(element.text))
+                        else
+                            element.requestFromServer = true
                         end
 
                         h = math.ceil(elementFrame.text:GetStringHeight() *
