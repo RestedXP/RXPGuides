@@ -1056,17 +1056,18 @@ function CurrentStepFrame.UpdateText()
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
-    local loopStepIndex, stepframe, elementFrame
-    local icon
+    local loopStepIndex, stepframe, elementFrame, icon
 
     for _, step in ipairs(activeSteps) do
 
         loopStepIndex = step.index
         c = c + 1
         stepframe = CurrentStepFrame.framePool[c]
+
         if stepframe then
             if not step.tip then
                 stepframe:ClearAllPoints()
+
                 if anchor < 1 then
                     stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
                     stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
@@ -1076,6 +1077,7 @@ function CurrentStepFrame.UpdateText()
                     stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor],
                                     "BOTTOMRIGHT", 0, -5)
                 end
+
                 stepframe:SetMovable(false)
                 anchor = c
             end
@@ -1089,6 +1091,7 @@ function CurrentStepFrame.UpdateText()
             for j, element in ipairs(step.elements or {}) do
                 e = j
                 elementFrame = stepframe.elements[e]
+
                 if elementFrame then
                     elementFrame:Show()
 
@@ -1124,9 +1127,11 @@ function CurrentStepFrame.UpdateText()
                             elementFrame:EnableMouse(true)
                             elementFrame.button:EnableMouse(true)
                         end
+
                         elementFrame.icon:ClearAllPoints()
                         elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button,
                                                 "TOPRIGHT", 0, -1)
+
                         if element.textOnly then
                             elementFrame.button:SetChecked(true)
                             elementFrame.button:Hide()
@@ -1142,7 +1147,9 @@ function CurrentStepFrame.UpdateText()
                         element.completed = true
                         spacing = 1
                     end
+
                     elementFrame:ClearAllPoints()
+
                     if e == 1 then
                         elementFrame:SetPoint("TOPLEFT", stepframe, 0, -10 + spacing)
                         elementFrame:SetPoint("TOPRIGHT", stepframe, 0,
@@ -1153,6 +1160,7 @@ function CurrentStepFrame.UpdateText()
                         elementFrame:SetPoint("TOPRIGHT", stepframe.elements[e - 1],
                                             "BOTTOMRIGHT", 0, 0 + spacing)
                     end
+
                     if element.tag and element.text then
                         icon = element.icon or addon.icons[element.tag] or ""
                         elementFrame.icon:SetText(icon)
@@ -1178,13 +1186,17 @@ function CurrentStepFrame.UpdateText()
                 stepframe:SetAlpha(1)
                 frameHeight = math.ceil(frameHeight + 18)
             end
+
             stepframe:SetHeight(frameHeight)
+
             if step.tip then
                 frameHeight = -5
             end
+
             totalHeight = totalHeight + frameHeight + 5
         end
     end
+
     CurrentStepFrame:SetHeight(totalHeight - 5)
 end
 
