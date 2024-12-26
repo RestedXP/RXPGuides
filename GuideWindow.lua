@@ -1796,6 +1796,7 @@ end
 
 function BottomFrame.UpdateFrame(self, stepn)
     local level = UnitLevel("player")
+
     if stepPos[0] and ((not self and stepn) or (self and self.step)) and IsFrameShown(self,self and self.step) then
         local stepNumber = stepn or self.step.index
         local frame = ScrollChild.framePool[stepNumber]
@@ -1812,10 +1813,13 @@ function BottomFrame.UpdateFrame(self, stepn)
         local fheight
         local hideStep = step.level > level or (not IsFrameShown(frame,step))
 
-        local text
+        local text, rawtext, icon
+        local stepDiff
+
         for _, element in ipairs(frame.step.elements or {}) do
-            local stepDiff = element.step.index - RXPCData.currentStep
+            stepDiff = element.step.index - RXPCData.currentStep
             element.element = element
+
             if element.requestFromServer then
                 --addon.lastCall = element.tag
                 addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
@@ -1830,11 +1834,14 @@ function BottomFrame.UpdateFrame(self, stepn)
                 --addon.functions[element.tag](element,"WindowUpdate")
                 addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
             end
-            local rawtext = element.tooltipText
+
+            rawtext = element.tooltipText
+
             if not rawtext and element.text then
-                local icon = element.icon or addon.icons[element.tag] or ""
+                icon = element.icon or addon.icons[element.tag] or ""
                 rawtext = icon .. element.text
             end
+
             if hideStep then
                 text = ""
             elseif rawtext and not element.hideTooltip then
@@ -1845,10 +1852,13 @@ function BottomFrame.UpdateFrame(self, stepn)
                 end
             end
         end
+
         step.text = text
+
         if frame.text then
             frame.text:SetText(text)
         end
+
         if hideStep then
             fheight = 1
             frame:SetAlpha(0)
@@ -1863,12 +1873,15 @@ function BottomFrame.UpdateFrame(self, stepn)
         for n = stepNumber + 1, #stepPos do
             stepPos[n] = stepPos[n] + hDiff
         end
+
         stepPos[0] = stepPos[0] + hDiff
 
     else
         addon.updateBottomFrame = false
+
         local totalHeight = 0
         --local hiddenFrames = 0
+
         for n, frame in ipairs(ScrollChild.framePool) do
             if not frame:IsShown() then break end
             local text
@@ -1880,7 +1893,9 @@ function BottomFrame.UpdateFrame(self, stepn)
             for _, element in ipairs(frame.step.elements or {}) do
                 if not self then
                     local stepDiff = element.step.index - RXPCData.currentStep
+
                     element.element = element
+
                     if element.requestFromServer then
                         --addon.lastCall = element.tag
                         --addon.functions[element.tag](element,"WindowUpdate")
@@ -1898,11 +1913,14 @@ function BottomFrame.UpdateFrame(self, stepn)
                         addon.Call(element.tag,addon.functions[element.tag],element,"WindowUpdate")
                     end
                 end
+
                 local rawtext = element.tooltipText
+
                 if not rawtext and element.text then
                     local icon = element.icon or addon.icons[element.tag] or ""
                     rawtext = icon .. element.text
                 end
+
                 if hideStep then
                     text = ""
                 elseif rawtext and not element.hideTooltip and rawtext ~= "" then
@@ -1952,14 +1970,18 @@ function BottomFrame.UpdateFrame(self, stepn)
         stepPos[0] = totalHeight
         -- print(ScrollChild.framePool[#ScrollChild.framePool]:GetBottom(),totalHeight)
     end
+
     local guide = addon.currentGuide
+
     if guide then
         ScrollChild:SetHeight(ScrollChild.f1:GetHeight() -
                                   BottomFrame.hiddenFrames * 4)
     end
+
     local w = RXPFrame:GetWidth() - 35
     ScrollChild:SetWidth(w)
     local bottomFrameHeight = BottomFrame:GetHeight()
+
     if bottomFrameHeight < 30 then
         BottomFrame:Hide()
         if RXPFrame:GetHeight() < 28 then RXPFrame:SetHeight(28) end
@@ -1967,6 +1989,7 @@ function BottomFrame.UpdateFrame(self, stepn)
         if RXPFrame:GetHeight() > 50 then
             addon.settings.profile.frameHeight = RXPFrame:GetHeight()
         end
+
         RXPFrame:SetHeight(28)
         BottomFrame:Hide()
     elseif not BottomFrame:IsShown() then
@@ -1974,6 +1997,7 @@ function BottomFrame.UpdateFrame(self, stepn)
             RXPFrame:SetHeight(math.max(addon.settings.profile.frameHeight,
                                         50))
         end
+
         BottomFrame:Show()
     end
 
