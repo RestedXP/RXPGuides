@@ -1057,7 +1057,7 @@ function CurrentStepFrame.UpdateText()
     local anchor = 0
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     local loopStepIndex, stepframe, elementFrame
-    local text, icon
+    local icon
 
     for _, step in ipairs(activeSteps) do
 
@@ -1100,15 +1100,16 @@ function CurrentStepFrame.UpdateText()
                         spacing = 1
                     elseif element.text then
                         elementFrame:SetAlpha(1)
-                        text = elementFrame.text -- TODO check if " "
 
                         elementFrame.button:ClearAllPoints()
-                        elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1);
+                        elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1)
+
                         elementFrame.text:ClearAllPoints()
                         elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
                                                 "TOPRIGHT", 11, -1)
                         elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
-                        text:SetText(L(element.text))
+                        elementFrame.text:SetText(L(element.text)) -- TODO check if " "
+
                         h = math.ceil(elementFrame.text:GetStringHeight() *
                                                 1.1) + 1
                         -- print('sh:',h)
