@@ -1111,7 +1111,11 @@ function CurrentStepFrame.UpdateText()
                         elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
                                                 "TOPRIGHT", 11, -1)
                         elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
-                        elementFrame.text:SetText(L(element.text)) -- TODO check if " "
+
+                         -- Prevent text from overwritten with " ", could be stale text
+                        if element.text ~= ' ' then
+                            elementFrame.text:SetText(L(element.text))
+                        end
 
                         h = math.ceil(elementFrame.text:GetStringHeight() *
                                                 1.1) + 1
