@@ -1319,91 +1319,104 @@ function addon.UpdateQuestCompletionData(self)
     -- addon.activeObjectives[self] = addon.UpdateQuestCompletionData
     local element = self.element
     if not element then return end
+
     local step = element.step
     local icon = addon.icons.complete
     local id = element.questId
 
     if not element.tag or element.tag ~= "complete" then
         return
-    elseif type(id) ~= "number" then
+    end
+
+    if type(id) ~= "number" then
         print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. (element.step.index  or "*"))
         return
     end
+
     -- local skip
     local objectives = addon.GetQuestObjectives(id, element.step.index)
-    local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
     local useCache
+
     if not (objectives and #objectives > 0) then
         objectives = addon.GetQuestObjectives(id, element.step.index, true)
         useCache = true
-    end
 
-    local objtext = " "
-    local completed
-
-    if objectives and #objectives > 0 then
-        if element.obj and element.obj <= #objectives then
-            local obj = objectives[element.obj]
-            obj.numFulfilled = obj.numFulfilled or 0
-            obj.numRequired = obj.numRequired or 0xff
-            if element.objMax then
-                obj.numRequired = math.min(element.objMax, obj.numRequired)
-                --[[if obj.numFulfilled > obj.numRequired then
-                    obj.numFulfilled = obj.numRequired
-                end]]
-            end
-            local t = obj.text or " "
-            if t:find("[%a\194-\234]") then
-                element.requestFromServer = false
-            else
-                element.requestFromServer = true
-            end
-            if obj.type == "item" then
-                icon = addon.icons.collect
-            elseif obj.type == "monster" and
-                (t:find(questMonster) or obj.questie) then
-                icon = addon.icons.combat
-            end
-
-            if not obj.questie then
-                if obj.type == "event" then
-                    if isQuestComplete then
-                        t = fmt(t .. ": %d/%d", obj.numRequired,
-                                          obj.numRequired)
-                    else
-                        t = fmt(t .. ": %d/%d", obj.numFulfilled,
-                                          obj.numRequired)
-                    end
-                elseif isQuestComplete then
-                    t = t:gsub(": %d+/(%d+)", ": %1/%1")
-                end
-            end
-            completed = obj.finished or
-                            (element.objMax and obj.numFulfilled >=
-                                obj.numRequired)
-            objtext = t
-        end
-    else
         element.requestFromServer = true
         element.text = retrievingQuestData
         element.tooltipText = nil
 
         addon.UpdateStepText(self)
+
         return
     end
 
+    local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
+    local objtext = " "
+    local completed
+
+    if element.obj and element.obj <= #objectives then
+        local obj = objectives[element.obj]
+
+        obj.numFulfilled = obj.numFulfilled or 0
+        obj.numRequired = obj.numRequired or 0xff
+        if element.objMax then
+            obj.numRequired = math.min(element.objMax, obj.numRequired)
+            --[[if obj.numFulfilled > obj.numRequired then
+                obj.numFulfilled = obj.numRequired
+            end]]
+        end
+
+        local t = obj.text or " "
+
+        if t:find("[%a\194-\234]") then
+            element.requestFromServer = false
+        else
+            element.requestFromServer = true
+        end
+
+        if obj.type == "item" then
+            icon = addon.icons.collect
+        elseif obj.type == "monster" and (t:find(questMonster) or obj.questie) then
+            icon = addon.icons.combat
+        end
+
+        if not obj.questie then
+            if obj.type == "event" then
+                if isQuestComplete then
+                    t = fmt(t .. ": %d/%d", obj.numRequired,
+                                        obj.numRequired)
+                else
+                    t = fmt(t .. ": %d/%d", obj.numFulfilled,
+                                        obj.numRequired)
+                end
+            elseif isQuestComplete then
+                t = t:gsub(": %d+/(%d+)", ": %1/%1")
+            end
+        end
+
+        completed = obj.finished or
+                        (element.objMax and obj.numFulfilled >=
+                            obj.numRequired)
+        objtext = t
+    end
+
+
     if step.active and db and type(db.QueryQuest) == "function" and element.obj and
         not isQuestComplete and not addon.skipPreReq[id] then
+
         local quest = db:GetQuest(id)
+
         if quest and quest.ObjectiveData and quest.ObjectiveData[element.obj] then
             local itemId = quest.ObjectiveData[element.obj].Id
             local questType = quest.ObjectiveData[element.obj].Type
             local validQuest = true
+
             if questType == "item" then
                 addon.GetItemName(itemId)
                 validQuest = select(12, GetItemInfo(itemId)) == 12 and
                                  select(11, GetItemInfo(itemId)) == 0
             end
+
             if not IsOnQuest(id) and validQuest then
                 local requiredQuests
                 local doable = db:IsDoable(id)
@@ -1413,8 +1426,10 @@ function addon.UpdateQuestCompletionData(self)
                 else
                     requiredQuests = {id}
                 end
+
                 local tooltip = addon.colors.tooltip ..
                                     L("Missing pre-requisites") .. ":|r\n"
+
                 for i, qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)", tooltip,
@@ -1426,6 +1441,7 @@ function addon.UpdateQuestCompletionData(self)
                                          db:GetQuest(qid).name, qid)
                     end
                 end
+
                 element.tooltip = tooltip
                 element.icon = addon.icons.error
                 -- skip = RXPData.skipMissingPreReqs
@@ -1438,6 +1454,7 @@ function addon.UpdateQuestCompletionData(self)
         element.icon = icon
         element.tooltip = nil
     end
+
     if addon.settings.profile.debug then
         element.tooltip = id
     end
@@ -1451,10 +1468,13 @@ function addon.UpdateQuestCompletionData(self)
     else
         element.title = ""
     end
+
     local prefix = " "
+
     if objtext and #objtext > 0 then
         prefix = objtext:sub(1, 1)
     end
+
     if not quest or prefix == " " or prefix == ":" or useCache then
         element.requestFromServer = true
     elseif quest then
@@ -1470,33 +1490,36 @@ function addon.UpdateQuestCompletionData(self)
 
     addon.UpdateStepText(self)
 
-    if completed then
-        if not element.completed and step.active == true and element.flags % 2 == 0 then
-            addon.comms:AnnounceStepEvent('.complete', {
-                title = element.title,
-                completionText = element.text,
-                step = RXPCData.currentStep,
-                guideName = RXPCData.currentGuideName
-            })
-            if element.timer then
-                addon.StartTimer(element.timer,element.timerText)
-            end
-        end
-
-        if element.flags % 2 == 1 and step.active then
-            addon.updateSteps = true
-            step.completed = true
-            if element.textOnly == true then
-                element.tooltipText = L"Step skipped: This step requires a quest available that is already complete"
-            end
-        end
-        addon.SetElementComplete(self, true)
-        -- elseif skip then
-        --    addon.SetElementComplete(self)
-    else
+    if not completed then
         addon.SetElementIncomplete(self)
+        return
     end
 
+    if not element.completed and step.active == true and element.flags % 2 == 0 then
+        addon.comms:AnnounceStepEvent('.complete', {
+            title = element.title,
+            completionText = element.text,
+            step = RXPCData.currentStep,
+            guideName = RXPCData.currentGuideName
+        })
+
+        if element.timer then
+            addon.StartTimer(element.timer,element.timerText)
+        end
+    end
+
+    if element.flags % 2 == 1 and step.active then
+        addon.updateSteps = true
+        step.completed = true
+
+        if element.textOnly == true then
+            element.tooltipText = L"Step skipped: This step requires a quest available that is already complete"
+        end
+    end
+
+    addon.SetElementComplete(self, true)
+    -- elseif skip then
+    --    addon.SetElementComplete(self)
 end
 
 function addon.functions.complete(self, ...)
