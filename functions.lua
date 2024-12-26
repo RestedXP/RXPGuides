@@ -1315,9 +1315,8 @@ local questItem = string.gsub(_G.QUEST_ITEMS_NEEDED, "%%s", "%(%.%*%)"):gsub(
                       "%%d", "%%d%+")
 local retrievingQuestData = L("Retrieving quest data") .. "..."
 
-addon.activeObjectives = {}
 function addon.UpdateQuestCompletionData(self)
-    addon.activeObjectives[self] = addon.UpdateQuestCompletionData
+    -- addon.activeObjectives[self] = addon.UpdateQuestCompletionData
     local element = self.element
     if not element then return end
     local step = element.step
