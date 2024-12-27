@@ -1677,13 +1677,6 @@ function addon.tickers.CycleThree()
         event = event .. "/map"
         addon.UpdateMap(true)
     end
-
-    -- Check for cached objective issues
-    -- for ref, func in pairs(addon.updateActiveQuest) do
-    --    addon.Call("updateQuest", func, ref)
-
-    --    addon.updateActiveQuest[ref] = nil
-    -- end
 end
 
 function addon.tickers.CycleFour()
