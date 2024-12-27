@@ -29,6 +29,7 @@ local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtex
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+local NewTicker = C_Timer.NewTicker
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -1221,8 +1222,8 @@ function addon:OnEnable()
     end
 
     -- Only start update loop after everything initializes and enables
-    local updateFrame = CreateFrame("Frame")
-    updateFrame:SetScript("OnUpdate", addon.UpdateLoop)
+    addon.tickers:SetupTickerLoops()
+
     RXPData.release = addon.release
     RXPData.cacheVersion = cacheVersion
 end
@@ -1410,11 +1411,9 @@ function addon.UpdateScheduledTasks()
     end
 end
 
-local tickRate = 0.05
-
 function addon.ScheduleTask(self, ref, ...)
 --    print('w',ref)
-    local time = type(self) == "number" and self or GetTime() + tickRate * 3
+    local time = type(self) == "number" and self or GetTime() + (addon.settings.profile.updateFrequency / 1000)
     --print(type(ref))
 
     if type(ref) == "table" then
@@ -1437,231 +1436,296 @@ local batchSize = 5
 local updateTimer = GetTime()
 local cycleStart = GetTime()
 
-local updateTick = 0
 local skip = 0
 local updateError
 local errorCount = 0
 local event = ""
 
-function addon:UpdateLoop(diff)
-    updateTick = updateTick + diff
-
+function addon.LegacyUpdateLoop()
+    -- NewTicker calls function every updateFrequency, making diff/updateTick/tickRate logic obsolete
     if updateError then
         errorCount = errorCount + 1
     end
 
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    updateError = true
+    local guideLoaded
+    local activeQuestUpdate = 0
+    skip = skip + 1
+    event = ""
+
+    if not addon.loadNextStep then
+        for ref, func in pairs(addon.updateActiveQuest) do
+            addon.Call("updateQuest",func,ref)
+            activeQuestUpdate = activeQuestUpdate + 1
+            addon.updateActiveQuest[ref] = nil
+            -- print('f',ref.element.step.index,math.random())
+        end
+
+        if activeQuestUpdate > 0 then event = event .. "/activeQ" end
+    end
+
+    if addon.nextStep then
+        skip = 1
+        addon.SetStep(addon.nextStep)
+        addon.questAutoAccept = true
+        addon.updateBottomFrame = true
+        addon.nextStep = false
+    elseif addon.loadNextStep then
+        event = event .. "/loadNext"
+
+        addon.loadNextStep = false
+        addon.SetStep(RXPCData.currentStep + 1)
+        addon.questAutoAccept = true
+        skip = 1
+        addon.updateBottomFrame = true
+    elseif activeQuestUpdate == 0 then
+        if addon.updateSteps then
+            event = event .. "/stepComplete"
+
+            addon.UpdateStepCompletion()
+        elseif addon.updateStepText and addon.currentGuide and skip % 2 == 0 then
+            event = event .. "/textsingle"
+
+            addon.updateStepText = false
+            local updateText
+            local steps = addon.currentGuide.steps
+            local update = {}
+
+            for n in pairs(addon.stepUpdateList) do
+                tinsert(update,n)
+            end
+
+            for _,n in pairs(update) do
+                if steps[n] then
+                    if not updateText and steps[n].active then
+                        updateText = true
+                    end
+                    addon.RXPFrame.BottomFrame.UpdateFrame(nil, n)
+                    if not addon.updateStepText then
+                        addon.stepUpdateList[n] = nil
+                    end
+                end
+            end
+
+            if updateText or addon.updateTipWindow then
+                addon.updateTipWindow = false
+                addon.RXPFrame.CurrentStepFrame.UpdateText()
+            end
+        elseif addon.updateBottomFrame then
+            event = event .. "/bottomFrame"
+
+            errorCount = 0
+            addon.RXPFrame.BottomFrame.UpdateFrame()
+            addon.RXPFrame.SetStepFrameAnchor()
+            updateError = false
+            skip = 1
+
+            return 'bottomFrame'
+        elseif skip % 2 == 1 and next(addon.guideCache) then
+            event = event .. "/cache"
+            local length = 0
+            local loadGuide = true
+
+            for _,guide in pairs(addon.guides) do
+                if (loadGuide or guide.disablecaching) and not guide.steps then
+                    addon:FetchGuide(guide)
+                    guideLoaded = true
+                    length = length + (tonumber(guide.length) or 0)
+                    --print('f',not guide.steps and guide.name)
+                    if length > 45000 or GetFramerate() < 60 then
+                        loadGuide = false
+                    end
+                end
+            end
+
+            if not next(addon.guideCache) and RXPCData.guideMetaData.enabledDungeons then
+                RXPCData.guideMetaData.enabledDungeons[addon.player.faction] =
+                    addon.dungeons or
+                    RXPCData.guideMetaData.enabledDungeons[addon.player.faction]
+            end
+        end
+    end
+
+    if not guideLoaded and addon.currentGuide then
+        event = event .. "/istep"
+        local max = #addon.currentGuide.steps
+        local offset = RXPCData.currentStep + 1
+        if stepCounter == offset then
+            stepCounter = stepCounter + 8
+        end
+
+        addon.RXPFrame.BottomFrame.UpdateFrame(nil,offset + stepCounter % 8)
+
+        for n = stepCounter,stepCounter + batchSize - 1 do
+            addon.RXPFrame.BottomFrame.UpdateFrame(nil,n)
+        end
+        stepCounter = stepCounter + batchSize
+        if stepCounter > max then
+            local time = GetTime()
+            local tdiff = time - updateTimer
+            stepCounter = 1
+            --print(tdiff,batchSize)
+
+            if tdiff > 10 then
+                batchSize = math.min(batchSize + 1*(math.ceil(tdiff/8)),10)
+            elseif batchSize > 2 then
+                batchSize = batchSize - 1
+            end
+
+            updateTimer = time
+            skip = skip % 4096
+        end
+
+    end
+
+    updateError = false
+end
+
+addon.tickers = {}
+function addon.tickers:SetupTickerLoops()
+    local updateFrequency = 0.075
+
+    if addon.settings.profile and addon.settings.profile.updateFrequency then
+        updateFrequency = addon.settings.profile.updateFrequency / 1000
+    end
+
+    local jitter = {
+        [0] = updateFrequency + math.random(0.001, 0.01),
+        [3] = updateFrequency * 3 + math.random(0.003, 0.03),
+        [4] = updateFrequency * 4 + math.random(0.004, 0.04),
+        [16] = updateFrequency * 16 + math.random(0.016, 0.16),
+        [30] = updateFrequency * 30 + math.random(0.03, 0.3)
+    }
+
+    if not self.legacy then
+        self.legacy = NewTicker(updateFrequency, addon.LegacyUpdateLoop)
+    end
+
+    if not self.cycleZero then
+        -- skip % 4 == 0
+        self.cycleZero = NewTicker(jitter[0], self.CycleZero)
+    end
+
+    if not self.cycleThree then
+        -- skip % 4 == 2
+        self.cycleThree = NewTicker(jitter[3], self.CycleThree)
+    end
+
+    if not self.cycleFour then
+        -- skip % 4 == 3
+        self.cycleFour = NewTicker(jitter[4], self.CycleFour)
+    end
+
+    if not self.cycleSixteen then
+        -- skip % 16 == 1
+        self.cycleSixteen = NewTicker(jitter[16], self.CycleSixteen)
+    end
+
+    if not self.cycleThirty then
+        -- skip % 32 == 29
+        self.cycleThirty = NewTicker(jitter[30], self.CycleThirty)
+    end
+
+end
+
+function addon.tickers:ShouldContinue()
     if addon.isHidden then
         updateError = false
         --print('hidden')
-        return 'hidden'
-    elseif errorCount >= 10 then
+        return false, 'hidden'
+    end
+
+    if errorCount >= 10 then
+        -- TODO revise lastEvent = event for multiple-tickers
         addon.lastEvent = event
 
-        tickRate = 10
         errorCount = 0
-        updateTick = 0
         updateError = false
-        print('error')
-        return 'error'
-    elseif updateTick > (tickRate + rand() / 128) then
-        updateError = true
-        local guideLoaded
-        updateTick = 0
-        local activeQuestUpdate = 0
-        skip = skip + 1
-        event = ""
-
-        local updateFrequency = addon.updateFrequency or 0.075
-        if addon.isCastingHS then
-            tickRate = math.min(updateFrequency, 4 * GetTickTime()) + addon.isCastingHS
-        else
-            tickRate = updateFrequency
-        end
-
-        if not addon.loadNextStep then
-            for ref, func in pairs(addon.updateActiveQuest) do
-                addon.Call("updateQuest",func,ref)
-                activeQuestUpdate = activeQuestUpdate + 1
-                addon.updateActiveQuest[ref] = nil
-                -- print('f',ref.element.step.index,math.random())
-            end
-
-            if activeQuestUpdate > 0 then event = event .. "/activeQ" end
-        end
-
-        if addon.nextStep then
-            skip = 1
-            addon.SetStep(addon.nextStep)
-            addon.questAutoAccept = true
-            addon.updateBottomFrame = true
-            addon.nextStep = false
-        elseif addon.loadNextStep then
-            event = event .. "/loadNext"
-
-            addon.loadNextStep = false
-            addon.SetStep(RXPCData.currentStep + 1)
-            addon.questAutoAccept = true
-            skip = 1
-            addon.updateBottomFrame = true
-        elseif activeQuestUpdate == 0 then
-            if addon.updateSteps then
-                event = event .. "/stepComplete"
-
-                addon.UpdateStepCompletion()
-            elseif addon.updateStepText and addon.currentGuide and skip % 2 == 0 then
-                event = event .. "/textsingle"
-
-                addon.updateStepText = false
-                local updateText
-                local steps = addon.currentGuide.steps
-                local update = {}
-
-                for n in pairs(addon.stepUpdateList) do
-                    tinsert(update,n)
-                end
-
-                for _,n in pairs(update) do
-                    if steps[n] then
-                        if not updateText and steps[n].active then
-                            updateText = true
-                        end
-                        addon.RXPFrame.BottomFrame.UpdateFrame(nil, n)
-                        if not addon.updateStepText then
-                            addon.stepUpdateList[n] = nil
-                        end
-                    end
-                end
-
-                if updateText or addon.updateTipWindow then
-                    addon.updateTipWindow = false
-                    addon.RXPFrame.CurrentStepFrame.UpdateText()
-                end
-            elseif addon.updateBottomFrame then
-                event = event .. "/bottomFrame"
-
-                errorCount = 0
-                addon.RXPFrame.BottomFrame.UpdateFrame()
-                addon.RXPFrame.SetStepFrameAnchor()
-                updateError = false
-                skip = 1
-
-                return 'bottomFrame'
-            elseif skip % 2 == 1 and next(addon.guideCache) then
-                event = event .. "/cache"
-                local length = 0
-                local loadGuide = true
-
-                for _,guide in pairs(addon.guides) do
-                    if (loadGuide or guide.disablecaching) and not guide.steps then
-                        addon:FetchGuide(guide)
-                        guideLoaded = true
-                        length = length + (tonumber(guide.length) or 0)
-                        --print('f',not guide.steps and guide.name)
-                        if length > 45000 or GetFramerate() < 60 then
-                            loadGuide = false
-                        end
-                    end
-                end
-
-                if not next(addon.guideCache) and RXPCData.guideMetaData.enabledDungeons then
-                    RXPCData.guideMetaData.enabledDungeons[addon.player.faction] =
-                        addon.dungeons or
-                        RXPCData.guideMetaData.enabledDungeons[addon.player.faction]
-                end
-            end
-        end
-
-        if skip % 4 == 2 then
-            if addon.questAutoAccept then
-                addon.questAutoAccept = false
-                event = event .. "/auto"
-                addon.QuestAutomation()
-            end
-
-            if addon.updateMap then
-                event = event .. "/map"
-                addon.UpdateMap(true)
-            end
-        elseif skip % 4 == 0 then
-            event = event .. "/goto"
-            addon.UpdateGotoSteps()
-            -- event = event .. "/updateGoto"
-        elseif skip % 4 == 3 and not addon.ProcessMessageQueue() then
-            event = event .. "/task"
-            addon.UpdateScheduledTasks()
-            addon.ClearQuestCache()
-        elseif skip % 32 == 29 then
-            event = event .. "/toptext"
-            addon.RXPFrame.CurrentStepFrame.UpdateText()
-        elseif skip % 16 == 1 then
-            event = event .. "/inactiveQ"
-            activeQuestUpdate = 0
-            local deletedIndexes = {}
-
-            for i, ref in ipairs(addon.updateInactiveQuest) do
-                activeQuestUpdate = activeQuestUpdate + 1
-                if activeQuestUpdate > 3 then
-                    break
-                else
-                    -- print('ok',ref.element.step.index,ref.element.requestFromServer)
-                    addon.UpdateQuestCompletionData(ref)
-                    tinsert(deletedIndexes, i)
-                end
-            end
-
-            for i = #deletedIndexes, 1, -1 do
-                local element = deletedIndexes[i]
-                table.remove(addon.updateInactiveQuest, element)
-                -- print('r'..element)
-            end
-        elseif GetTime() - cycleStart > 2 then
-            cycleStart = GetTime()
-
-            for ref, func in pairs(addon.activeObjectives) do
-                addon.Call("updateQuest",func,ref)
-                activeQuestUpdate = activeQuestUpdate + 1
-                addon.updateActiveQuest[ref] = nil
-            end
-        elseif not guideLoaded and addon.currentGuide then
-            event = event .. "/istep"
-            local max = #addon.currentGuide.steps
-            local offset = RXPCData.currentStep + 1
-            if stepCounter == offset then
-                stepCounter = stepCounter + 8
-            end
-
-            addon.RXPFrame.BottomFrame.UpdateFrame(nil,offset + stepCounter % 8)
-
-            for n = stepCounter,stepCounter + batchSize - 1 do
-                addon.RXPFrame.BottomFrame.UpdateFrame(nil,n)
-            end
-            stepCounter = stepCounter + batchSize
-            if stepCounter > max then
-                local time = GetTime()
-                local tdiff = time - updateTimer
-                stepCounter = 1
-                --print(tdiff,batchSize)
-
-                if tdiff > 10 then
-                    batchSize = math.min(batchSize + 1*(math.ceil(tdiff/8)),10)
-                elseif batchSize > 2 then
-                    batchSize = batchSize - 1
-                end
-
-                updateTimer = time
-                skip = skip % 4096
-            end
-
-            addon.updateFrequency = (addon.settings.profile and
-                                        addon.settings.profile.updateFrequency or
-                                        75)/1000
-
-        end
-        updateError = false
+        -- print('error')
+        return false, 'error'
     end
-    --[[if updateError then
-        print(event)
-    end]]
+
+    return true
+end
+
+function addon.tickers.CycleZero()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    event = event .. "/goto"
+    addon.UpdateGotoSteps()
+    -- event = event .. "/updateGoto"
+end
+
+function addon.tickers.CycleThree()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    if addon.questAutoAccept then
+        addon.questAutoAccept = false
+        event = event .. "/auto"
+        addon.QuestAutomation()
+    end
+
+    if addon.updateMap then
+        event = event .. "/map"
+        addon.UpdateMap(true)
+    end
+end
+
+function addon.tickers.CycleFour()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    if addon.ProcessMessageQueue() then return end
+
+    event = event .. "/task"
+    addon.UpdateScheduledTasks()
+    addon.ClearQuestCache()
+end
+
+function addon.tickers.CycleSixteen()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    event = event .. "/inactiveQ"
+    local activeQuestUpdate = 0
+    local deletedIndexes = {}
+    local element
+
+    for i, ref in ipairs(addon.updateInactiveQuest) do
+        activeQuestUpdate = activeQuestUpdate + 1
+        if activeQuestUpdate > 3 then
+            break
+        else
+            -- print('ok',ref.element.step.index,ref.element.requestFromServer)
+            addon.UpdateQuestCompletionData(ref)
+            tinsert(deletedIndexes, i)
+        end
+    end
+
+    for i = #deletedIndexes, 1, -1 do
+        element = deletedIndexes[i]
+        table.remove(addon.updateInactiveQuest, element)
+        -- print('r' .. element)
+    end
+end
+
+function addon.tickers.CycleThirty()
+    local shouldContinue = addon.tickers:ShouldContinue()
+
+    if not shouldContinue then return shouldContinue end
+
+    event = event .. "/toptext"
+    addon.RXPFrame.CurrentStepFrame.UpdateText()
 end
 
 function addon.HardcoreToggle()

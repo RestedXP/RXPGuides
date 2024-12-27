@@ -1008,7 +1008,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.UpdateArrow(addon.arrowFrame)
+                            addon.DrawArrow(addon.arrowFrame)
                         end
                     },
                     disableItemWindow = {
@@ -3095,7 +3095,12 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.6,
                         min = 5,
                         max = 150,
-                        step = 5
+                        step = 5,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
                     },
                     preLoadData = {
                         name = L("Pre load all data"),
@@ -3701,15 +3706,16 @@ function addon.settings.ReplaceColors(element)
         return textLine
     end
 
+    local fieldString
     if type(element) == "table" or element and element.textReplaced then
         element.textReplaced = element.textReplaced or {}
         for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else
-                local str = element[field]
-                element.textReplaced[i] = str
-                element[field] = replace(str)
+                fieldString = element[field]
+                element.textReplaced[i] = fieldString
+                element[field] = replace(fieldString)
             end
         end
     else
