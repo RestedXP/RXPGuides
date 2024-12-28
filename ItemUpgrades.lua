@@ -961,16 +961,23 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     end
 
     -- Not a magic school, return default weighting
-    -- TODO also include base spellpower
-    -- Base spellpower CANNOT BE TRUSTED, 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
-    if totalStatWeight == 0 and stats['STAT_SPELLDAMAGE'] then
-        --  print("Not a magic school")
+    -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted, e.g. 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
+    if totalStatWeight == 0 and stats['STAT_SPELLDAMAGE'] then -- Legacy block
+        -- print("STAT_SPELLDAMAGE: Not a magic school", stats['STAT_SPELLDAMAGE'])
         -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted without validation
         -- Set spellPower stat to built-in stat after verifying no school
         stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_DAMAGE_DONE'] + 1
 
         return stats['STAT_SPELLDAMAGE'] *
                    session.activeStatWeights['STAT_SPELLDAMAGE']
+
+    elseif totalStatWeight == 0 and stats['ITEM_MOD_SPELL_POWER'] then -- Anniversary/Era/SoD/Cata
+        -- print("ITEM_MOD_SPELL_POWER: Not a magic school", stats['ITEM_MOD_SPELL_POWER'])
+        -- Set spellPower stat to built-in stat after verifying no school
+        stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_POWER'] + 1
+
+        return stats['STAT_SPELLDAMAGE'] *
+                   (session.activeStatWeights['STAT_SPELLDAMAGE'] or session.activeStatWeights['ITEM_MOD_SPELL_POWER'])
     end
 
     return totalStatWeight
@@ -1110,10 +1117,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
             -- dpsWeights is evaluated later, based on slot comparison wich this level doesn't know about
             -- totalWeight = totalWeight + statWeight
-        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' then
+        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' or key == 'ITEM_MOD_SPELL_POWER' then
             -- ITEM_MOD_SPELL_DAMAGE_DONE is terrible, but it's built-in so key off that to parse spell damage
             statWeight = CalculateSpellWeight(stats, tooltipTextLines)
-            -- print("Key", key, "Value", value, "weighted at", statWeight)
+            -- print("Spell: Key", key, "Value", value, "weighted at", statWeight)
 
             -- If fails to parse, return nil instead of misallocating to all spellpower
             if not statWeight then
@@ -1127,7 +1134,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             statWeight = value * session.activeStatWeights[key]
             totalWeight = totalWeight + statWeight
 
-            -- print("Key", key, "Value", value, "weighted at", statWeight)
+            -- print("General: Key", key, "Value", value, "weighted at", statWeight)
         end
     end
 
@@ -1303,7 +1310,7 @@ function addon.itemUpgrades.Test()
                 16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
                 13052, 20703
             },
-            ['SHAMAN'] = {14136}
+            ['SHAMAN'] = {892, 14136, 16923, 6324, 209671}
         },
         ['CATA'] = {
             ['WARRIOR'] = {11820, 35042, 35916, 63827, 66884, 66933},
