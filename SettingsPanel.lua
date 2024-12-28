@@ -421,18 +421,18 @@ local function SetProfileOption(info, value)
     addon.settings.profile[info[#info]] = value
 end
 
-function addon.settings:ProcessImportBox()
+function addon.settings.ProcessImportBox()
     if not importCache.workerFrame:IsShown() then
         importCache.workerFrame:Show()
     end
 
-    if not addon.settings.profile.showEnabled then self.ToggleActive() end
+    if not addon.settings.profile.showEnabled then addon.settings.ToggleActive() end
 
     local guidesLoaded, errorMsg = addon.ImportString(importCache.bufferString,
                                                       importCache.workerFrame)
     if guidesLoaded and not errorMsg then
-        if self.gui then
-            self.gui.selectedDeleteGuide = ""
+        if addon.settings.gui then
+            addon.settings.gui.selectedDeleteGuide = ""
         end
         return true
     else
@@ -531,7 +531,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
         if text:find("%%[|]+%d+$") then
             addon.settings.OpenSettings('Import')
             --[[
-            local status, errorMsg = addon.settings:ProcessImportBox()
+            local status, errorMsg = addon.settings.ProcessImportBox()
             print(status, errorMsg, importCache.bufferString:len())
             ]]
             _G.RunNextFrame(function()
