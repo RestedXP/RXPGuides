@@ -2210,7 +2210,7 @@ step
     .mob Dustwind Storm Witch
 step << Tauren Hunter
     #completewith next
-    +|cFFFCDCPick the|r |T135493:0|t[Hickory Shortbow] |cFFFCDCas your quest reward and save it. You will get Bow training in Orgrimmar|r
+    +|cRXP_WARN_Pick the|r |T135493:0|t[Hickory Shortbow] |cRXP_WARN_as your quest reward and save it. You will get Bow training in Orgrimmar|r
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r

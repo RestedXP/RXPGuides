@@ -556,11 +556,17 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step
+    #completewith ZingeAndFaranell
+    .goto Undercity,47.20,59.69,0
+    .goto Undercity,47.20,59.69,12,0
+    .goto Undercity,43.55,68.11,12,0
+    .goto Undercity,45.20,71.67,12 >>Travel toward |cRXP_FRIENDLY_Zinge|r and |cRXP_FRIENDLY_Faranell|r
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
     .turnin 447 >>Turn in A Recipe For Death
     .goto Undercity,48.84,69.25
-    .turnin 1359 >> Turn in Zinge's Delivery
-    .accept 1358 >> Accept Sample for Helbrim
+    .turnin 1359 >>Turn in Zinge's Delivery
+    .accept 1358 >>Accept Sample for Helbrim
     .target Master Apothecary Faranell
     .goto Undercity,50.16,67.97
     .target Apothecary Zinge
@@ -570,12 +576,15 @@ step
     .turnin 447 >>Turn in A Recipe For Death
     .accept 450 >>Accept A Recipe For Death
     .goto Undercity,48.84,69.25
-    .turnin 1359 >> Turn in Zinge's Delivery
-    .accept 1358 >> Accept Sample for Helbrim
+    .turnin 1359 >>Turn in Zinge's Delivery
+    .accept 1358 >>Accept Sample for Helbrim
     .goto Undercity,50.16,67.97
     .target Master Apothecary Faranell
     .target Apothecary Zinge
     .group
+step
+    #optional
+    #label ZingeAndFaranell
 step << Mage
     .goto Undercity,85.14,10.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r

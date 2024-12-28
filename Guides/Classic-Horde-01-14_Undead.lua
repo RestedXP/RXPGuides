@@ -4861,12 +4861,12 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
     .turnin 447 >>Turn in A Recipe For Death
+    .target +Master Apothecary Faranell
     .goto Undercity,48.84,69.25
     .turnin 1359 >> Turn in Zinge's Delivery
     .accept 1358 >> Accept Sample for Helbrim
+    .target +Apothecary Zinge
     .goto Undercity,50.16,67.97
-    .target Master Apothecary Faranell
-    .target Apothecary Zinge
 step << Undead Warrior
     #season 2
     #label RuneOfDevastateUndead
