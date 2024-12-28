@@ -1413,7 +1413,12 @@ end
 
 function addon.ScheduleTask(self, ref, ...)
 --    print('w',ref)
-    local time = type(self) == "number" and self or GetTime() + (addon.settings.profile.updateFrequency / 1000)
+    local updateFrequency = 0.075
+
+    if addon.settings.profile and addon.settings.profile.updateFrequency then
+        updateFrequency = addon.settings.profile.updateFrequency / 1000
+    end
+    local time = type(self) == "number" and self or GetTime() + updateFrequency
     --print(type(ref))
 
     if type(ref) == "table" then
