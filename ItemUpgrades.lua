@@ -298,7 +298,6 @@ local CLASS_MAP = {
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
 -- GSheet or pretty name = Regex formatting
 local KEY_TO_TEXT = {
-    ['STAT_ARMOR'] = _G.ARMOR_TEMPLATE,
     ['ITEM_MOD_STRENGTH_SHORT'] = _G.ITEM_MOD_STRENGTH,
     ['ITEM_MOD_AGILITY_SHORT'] = _G.ITEM_MOD_AGILITY,
     ['ITEM_MOD_INTELLECT_SHORT'] = _G.ITEM_MOD_INTELLECT,
