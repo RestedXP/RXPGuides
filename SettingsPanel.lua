@@ -421,18 +421,18 @@ local function SetProfileOption(info, value)
     addon.settings.profile[info[#info]] = value
 end
 
-function addon.settings:ProcessImportBox()
+function addon.settings.ProcessImportBox()
     if not importCache.workerFrame:IsShown() then
         importCache.workerFrame:Show()
     end
 
-    if not addon.settings.profile.showEnabled then self.ToggleActive() end
+    if not addon.settings.profile.showEnabled then addon.settings.ToggleActive() end
 
     local guidesLoaded, errorMsg = addon.ImportString(importCache.bufferString,
                                                       importCache.workerFrame)
     if guidesLoaded and not errorMsg then
-        if self.gui then
-            self.gui.selectedDeleteGuide = ""
+        if addon.settings.gui then
+            addon.settings.gui.selectedDeleteGuide = ""
         end
         return true
     else
@@ -489,7 +489,7 @@ function importCache.validate(self)
     -- Gets disabled on paste, re-enable after processing completes
     importCache.widget.obj.editBox:Enable()
     if errorMsg then
-        addon.settings.UpdateImportStatusHistory(self,errorMsg)
+        addon.settings:UpdateImportStatusHistory(errorMsg)
         return errorMsg
     end
     return status
@@ -531,7 +531,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
         if text:find("%%[|]+%d+$") then
             addon.settings.OpenSettings('Import')
             --[[
-            local status, errorMsg = addon.settings:ProcessImportBox()
+            local status, errorMsg = addon.settings.ProcessImportBox()
             print(status, errorMsg, importCache.bufferString:len())
             ]]
             _G.RunNextFrame(function()
@@ -1008,7 +1008,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.UpdateArrow(addon.arrowFrame)
+                            addon.DrawArrow(addon.arrowFrame)
                         end
                     },
                     disableItemWindow = {
@@ -3095,7 +3095,12 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.6,
                         min = 5,
                         max = 150,
-                        step = 5
+                        step = 5,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end
                     },
                     preLoadData = {
                         name = L("Pre load all data"),
@@ -3701,15 +3706,16 @@ function addon.settings.ReplaceColors(element)
         return textLine
     end
 
+    local fieldString
     if type(element) == "table" or element and element.textReplaced then
         element.textReplaced = element.textReplaced or {}
         for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else
-                local str = element[field]
-                element.textReplaced[i] = str
-                element[field] = replace(str)
+                fieldString = element[field]
+                element.textReplaced[i] = fieldString
+                element[field] = replace(fieldString)
             end
         end
     else

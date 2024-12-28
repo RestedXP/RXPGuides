@@ -30,7 +30,6 @@ local lowPrioTargets = {}
 
 local proxmityPolling = {
     frequency = 0.25,
-    last = GetTime(),
     match = false,
     lastMatch = 0,
     matchTimeout = 5,
@@ -98,7 +97,11 @@ function addon.targeting:Setup()
     end
 
     if addon.settings.profile.showTargetingOnProximity then
-        WorldFrame:HookScript("OnUpdate", self.CheckTargetProximity)
+        if addon.settings.profile and addon.settings.profile.updateFrequency then
+            proxmityPolling.frequency = addon.settings.profile.updateFrequency / 2
+        end
+
+        self.ticker = C_Timer.NewTicker(proxmityPolling.frequency, self.CheckTargetProximity)
 
         self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 
@@ -487,10 +490,6 @@ function addon.targeting.CheckTargetProximity()
     if not shouldTargetCheck() or
         not addon.settings.profile.showTargetingOnProximity then return end
 
-    if GetTime() - proxmityPolling.last <= proxmityPolling.frequency then
-        return
-    end
-
     if addon.settings.profile.enableEnemyTargeting then
         for _, name in pairs(unitscanList) do
             proxmityPolling.scanData = {name = name, kind = 'unitscan'}
@@ -518,7 +517,6 @@ function addon.targeting.CheckTargetProximity()
     end
 
     local now = GetTime()
-    proxmityPolling.last = now
 
     -- Unset match if >5s without a ADDON_ACTION_FORBIDDEN
     -- No hits, reset everything
@@ -990,7 +988,7 @@ local function GetUnitTexture(self, name, unit)
     end
 end
 
-function addon.targeting:UpdateTargetFrame(selector, OnUpdate)
+function addon.targeting:UpdateTargetFrame(selector)
     if not addon.settings.profile.enableTargetAutomation then return end
 
     local targetFrame = self.activeTargetFrame
