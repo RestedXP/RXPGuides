@@ -489,7 +489,7 @@ function importCache.validate(self)
     -- Gets disabled on paste, re-enable after processing completes
     importCache.widget.obj.editBox:Enable()
     if errorMsg then
-        addon.settings.UpdateImportStatusHistory(self,errorMsg)
+        addon.settings:UpdateImportStatusHistory(errorMsg)
         return errorMsg
     end
     return status
