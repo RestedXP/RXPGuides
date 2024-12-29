@@ -98,7 +98,7 @@ function addon.targeting:Setup()
 
     if addon.settings.profile.showTargetingOnProximity then
         if addon.settings.profile and addon.settings.profile.updateFrequency then
-            proxmityPolling.frequency = addon.settings.profile.updateFrequency / 2
+            proxmityPolling.frequency = addon.settings.profile.updateFrequency / 2000
         end
 
         self.ticker = C_Timer.NewTicker(proxmityPolling.frequency, self.CheckTargetProximity)
