@@ -958,6 +958,11 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     --    ...
     -- }
 
+    -- No spellpower weights for class
+    if not (session.activeStatWeights['STAT_SPELLDAMAGE'] or session.activeStatWeights['ITEM_MOD_SPELL_POWER']) then
+        return 0
+    end
+
     local schoolStatWeight, totalStatWeight = 0, 0
     local schoolKey, schoolName, spellPower
 
