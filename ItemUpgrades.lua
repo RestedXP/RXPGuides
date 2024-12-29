@@ -6,9 +6,9 @@ local locale = GetLocale()
 
 if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
-local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
+local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch =
     string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
-    strlower
+    strlower, string.match
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or
@@ -298,7 +298,6 @@ local CLASS_MAP = {
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
 -- GSheet or pretty name = Regex formatting
 local KEY_TO_TEXT = {
-    ['STAT_ARMOR'] = _G.ARMOR_TEMPLATE,
     ['ITEM_MOD_STRENGTH_SHORT'] = _G.ITEM_MOD_STRENGTH,
     ['ITEM_MOD_AGILITY_SHORT'] = _G.ITEM_MOD_AGILITY,
     ['ITEM_MOD_INTELLECT_SHORT'] = _G.ITEM_MOD_INTELLECT,
@@ -523,7 +522,11 @@ local function TooltipSetItem(tooltip, ...)
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
         if data['debug'] or not data['Ratio'] then
-            ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
+            if addon.settings.profile.debug then
+                ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
+            else
+                ratioText = _G.SPELL_FAILED_ERROR
+            end
         else
             ratioText = prettyPrintRatio(data['Ratio'])
         end
@@ -796,7 +799,10 @@ function addon.itemUpgrades:GetSpecWeights()
     return options
 end
 
-local function GetTooltipLines(tooltip)
+-- ITEM_SET_NAME = "%s (%d/%d)";
+local SET_BONUS_MATCH = "(%w+)%s+%((%d+)/(%d+)%)"
+
+local function GetTooltipLines(tooltip, baseItemData)
     local textLines = {}
     -- print("GetTooltipLines, tooltip", tooltip:GetName(), tooltip:NumLines())
 
@@ -804,11 +810,27 @@ local function GetTooltipLines(tooltip)
     if tooltip:NumLines() == 0 then return end
 
     local regions = {tooltip:GetRegions()}
+    local rText
+    local setMatch = {}
+
     for _, r in ipairs(regions) do
 
         if r:IsObjectType("FontString") and r:GetText() then
-            -- print("GetTooltipLines, regions", r:GetText())
-            tinsert(textLines, r:GetText())
+            rText = r:GetText()
+            -- print("GetTooltipLines, regions", rText)
+
+            -- Set bonus, so stop gathering lines past set bonus
+            if baseItemData and baseItemData.setID then
+                -- print("GetTooltipLines, checking for set bonus line '" .. rText .. "'")
+                setMatch = {smatch(rText, SET_BONUS_MATCH)}
+
+                if setMatch[1] and setMatch[2] and setMatch[3] then
+                    -- print("GetTooltipLines, aborting at set bonuses", rText)
+                    break
+                end
+            end
+
+            tinsert(textLines, rText)
         end
     end
     return textLines
@@ -942,7 +964,7 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     -- Check all tooltip lines for regex matches
     for _, line in ipairs(tooltipTextLines) do
         -- print("CalculateSpellWeight (", line, ")")
-        schoolName, spellPower = string.match(line, SPELL_KIND_MATCH)
+        schoolName, spellPower = smatch(line, SPELL_KIND_MATCH)
 
         if schoolName then
             schoolKey = SPELL_KIND_MAP[strlower(schoolName)]
@@ -962,16 +984,23 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     end
 
     -- Not a magic school, return default weighting
-    -- TODO also include base spellpower
-    -- Base spellpower CANNOT BE TRUSTED, 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
-    if totalStatWeight == 0 and stats['STAT_SPELLDAMAGE'] then
-        --  print("Not a magic school")
+    -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted, e.g. 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
+    if totalStatWeight == 0 and stats['STAT_SPELLDAMAGE'] then -- Legacy block
+        -- print("STAT_SPELLDAMAGE: Not a magic school", stats['STAT_SPELLDAMAGE'])
         -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted without validation
         -- Set spellPower stat to built-in stat after verifying no school
         stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_DAMAGE_DONE'] + 1
 
         return stats['STAT_SPELLDAMAGE'] *
                    session.activeStatWeights['STAT_SPELLDAMAGE']
+
+    elseif totalStatWeight == 0 and stats['ITEM_MOD_SPELL_POWER'] then -- Anniversary/Era/SoD/Cata
+        -- print("ITEM_MOD_SPELL_POWER: Not a magic school", stats['ITEM_MOD_SPELL_POWER'])
+        -- Set spellPower stat to built-in stat after verifying no school
+        stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_POWER'] + 1
+
+        return stats['STAT_SPELLDAMAGE'] *
+                   (session.activeStatWeights['STAT_SPELLDAMAGE'] or session.activeStatWeights['ITEM_MOD_SPELL_POWER'])
     end
 
     return totalStatWeight
@@ -989,7 +1018,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     end
 
     local _, _, _, _, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _,
-          itemSubTypeID = GetItemInfo(itemLink)
+          itemSubTypeID, _, _, setID = GetItemInfo(itemLink)
 
     -- Not an equippable item
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or
@@ -1021,12 +1050,13 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         itemSubTypeID = itemSubTypeID,
         itemEquipLoc = itemEquipLoc,
         sellPrice = sellPrice,
-        itemMinLevel = itemMinLevel
+        itemMinLevel = itemMinLevel,
+        setID = setID
     }
 
     -- Parse tooltip for all additional stats
     if tooltip then
-        tooltipTextLines = GetTooltipLines(tooltip)
+        tooltipTextLines = GetTooltipLines(tooltip, itemData)
     else -- If not tooltip, set hidden comparison tooltip
         tooltip = GetComparisonTip()
 
@@ -1039,7 +1069,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         tooltip:SetHyperlink(itemLink)
         -- print("RXPItemUpgradesComparison:SetHyperlink", itemLink)
 
-        tooltipTextLines = GetTooltipLines(tooltip)
+        tooltipTextLines = GetTooltipLines(tooltip, itemData)
 
         if not tooltipTextLines then
             -- print("Comparisontip lines empty")
@@ -1065,7 +1095,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                 if type(regex) == "table" then
                     for _, r in ipairs(regex) do
                         -- print("Parsing table", i, line, "for", r)
-                        match1, match2 = string.match(line, r)
+                        match1, match2 = smatch(line, r)
 
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
@@ -1078,7 +1108,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                     end
                 else
                     -- print("Parsing not-table", i, line, "for", regex)
-                    match1, match2 = string.match(line, regex)
+                    match1, match2 = smatch(line, regex)
 
                     -- Only expect one number per line, so ignore if double match
                     if match1 and not match2 then
@@ -1111,10 +1141,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
             -- dpsWeights is evaluated later, based on slot comparison wich this level doesn't know about
             -- totalWeight = totalWeight + statWeight
-        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' then
+        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' or key == 'ITEM_MOD_SPELL_POWER' then
             -- ITEM_MOD_SPELL_DAMAGE_DONE is terrible, but it's built-in so key off that to parse spell damage
             statWeight = CalculateSpellWeight(stats, tooltipTextLines)
-            -- print("Key", key, "Value", value, "weighted at", statWeight)
+            -- print("Spell: Key", key, "Value", value, "weighted at", statWeight)
 
             -- If fails to parse, return nil instead of misallocating to all spellpower
             if not statWeight then
@@ -1128,7 +1158,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             statWeight = value * session.activeStatWeights[key]
             totalWeight = totalWeight + statWeight
 
-            -- print("Key", key, "Value", value, "weighted at", statWeight)
+            -- print("General: Key", key, "Value", value, "weighted at", statWeight)
         end
     end
 
@@ -1304,7 +1334,7 @@ function addon.itemUpgrades.Test()
                 16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
                 13052, 20703
             },
-            ['SHAMAN'] = {14136}
+            ['SHAMAN'] = {892, 14136, 16923, 6324, 209671}
         },
         ['CATA'] = {
             ['WARRIOR'] = {11820, 35042, 35916, 63827, 66884, 66933},
