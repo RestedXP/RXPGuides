@@ -522,7 +522,11 @@ local function TooltipSetItem(tooltip, ...)
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
         if data['debug'] or not data['Ratio'] then
-            ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
+            if addon.settings.profile.debug then
+                ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
+            else
+                ratioText = _G.SPELL_FAILED_ERROR
+            end
         else
             ratioText = prettyPrintRatio(data['Ratio'])
         end
