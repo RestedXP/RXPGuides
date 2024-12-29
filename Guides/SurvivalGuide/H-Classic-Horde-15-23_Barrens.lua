@@ -1526,7 +1526,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
     >>|cRXP_WARN_This will begin an escort. Make sure you're at full health|r
     .turnin 858 >>Turn in Ignition
-    .accept 863 >>Accept The Escape
+    .accept 863,1 >>Accept The Escape
     .target Wizzlecrank's Shredder
 step
     #label Slugs
