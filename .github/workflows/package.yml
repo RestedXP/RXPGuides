@@ -42,7 +42,7 @@ jobs:
 
           cp RXPGuides/CHANGELOG.md ./ftp/
 
-          for game in wrath classic cata; do
+          for game in classic cata; do
             zip=$(ls RXPGuides-*${game}.zip)
 
             cp "${zip}" "./ftp/RXPGuides-latest-${game}.zip"
@@ -55,7 +55,7 @@ jobs:
             fi
           done
 
-          zip=$(ls RXPGuides-*wrath.zip)
+          zip=$(ls RXPGuides-*classic.zip)
           cp "${zip}" "./ftp/RXPGuides.zip"
 
           cd ..
