@@ -7554,8 +7554,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #group RestedXP Alliance 1-20
 #name 6-11 Dun Morogh (Hunter)
-#displayname 6-11 Dun Morogh << !SoD
-#displayname 6-12 Dun Morogh << SoD
+#displayname 6-11 Dun Morogh
 #next 11-13 Loch Modan (Hunter)
 #defaultfor Dwarf Hunter
 
@@ -7587,6 +7586,11 @@ step
     .target Tannok Frosthammer
     .goto Dun Morogh,47.217,52.195
     .turnin 2160 >> Turn in Supplies to Tannok
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .target Innkeeper Belm
+    .goto Dun Morogh,47.377,52.523
+    .home >> Set your Hearthstone to Kharanos
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
     .target Tharek Blackstone
@@ -7945,12 +7949,6 @@ step
     .goto Dun Morogh,79.672,36.171
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
-step << Hunter
-    #season 2
-    #completewith next
-    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
-    .collect 206169,1 -- Rune of Explosive Shot (1)
-    .train 410123,1
 step
     >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
     .goto Dun Morogh,78.97,37.14
@@ -7961,11 +7959,6 @@ step
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
-step << Hunter
-    #season 2
-    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
-    .use 206169
-    .itemcount 206169,1
 step
     #hardcore
     .hs >> Hearth to Kharanos
@@ -8231,23 +8224,14 @@ step
     .accept 433 >> Accept The Public Servant
     .target Senator Mehr Stonehallow
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
-    .accept 432 >> Accept Those Blasted Troggs!
-    .goto Dun Morogh,69.084,56.330
-    .target Foreman Stonebrow
-step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r
-    .complete 432,1 --Kill Rockjaw Skullthumper (x6)
-    .mob +Rockjaw Skullthumper
+    >>Kill |cRXP_ENEMY_Rockjaw Bonesnappers|r
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob +Rockjaw Bonesnapper
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 432 >> Turn in Those Blasted Troggs!
-    .target +Foreman Stonebrow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
     .target +Senator Mehr Stonehallow

@@ -2040,6 +2040,7 @@ step
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
+    .accept 973 >> Accept The Tower of Althalaxx
 step
     .goto Ashenvale,31.89,22.53
     .xp 20 >> Grind to level 20
