@@ -2486,7 +2486,7 @@ step
     .mob Nerathor
 step
     .goto 2369,69.32,43.18
-    >>Click on |cRXP_PICK_Siren Isle Command Map|r and contribute to any of the 3 events. |cRXP_WARN_10 times if u can.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Siren Isle Command Map|r and contribute to any of the 3 events. |cRXP_WARN_10 times if u can.|r
     .complete 86156,1 --10/10 Contribute ten times to events
 step
     .areapoiexists 2369,8149
@@ -2511,185 +2511,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack the Hammer|r
     .turnin 86156 >>Turn in Getting Involved
     .target Jack the Hammer
-
--- WEEK 1 MAIN CAMPAIGN END
-
--- WEEK 1 QUESTLINE: Reading the Runes
---step
---    .goto 2369,67.51,41.92
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
---    .accept 85876 >>Accept Reading the Runes
---    .target Bargus
---step
---    .goto 2369,45.27,21.58,30,0
---    .goto 2369,50.31,15.36
---    >>Click on |cRXP_PICK_Singing Tablet|r
---    .complete 85876,1 --1/1 Re-enter the Forgotten Tomb
---    .skipgossipid 125531
---step
---    .goto 2375,48.63,41.4,20,0
---    .goto 2375,32.19,28.56
---    >>Click on the |cRXP_PICK_Stone|r
---    *|cRXP_WARN_Don't run into|r |cRXP_ENEMY_Faded Construct|r.
---    .complete 85876,2 --1/1 Fury of Thrayir examined
---    .mob Crystalsworn Memory
---    .mob Skittersong Krolusk
---    .mob Brinebound Wraith
---    .mob Faded Construct
---step
---    .goto 2375,73.88,64.04
---    >>Click on the |cRXP_PICK_Stone|r
---    *|cRXP_WARN_Don't run into|r |cRXP_ENEMY_Faded Construct|r.
---    .complete 85876,3 --1/1 Keys of Thrayir examined
---    .mob Crystalsworn Memory
---    .mob Skittersong Krolusk
---    .mob Brinebound Wraith
---    .mob Faded Construct
---step
---    .goto 2375,49.64,44.91,20,0
---    .goto 2375,37.12,77.25
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tattered Journal|r
---    .accept 85570 >>Accept The Tattered Journal
---    .target Tattered Journal
---step
---    .goto 2375,33.19,84.45
---    >>Click on the |cRXP_PICK_Stone|r
---    .complete 85876,4 --1/1 Cyrce and the Galeorn examined
---    .mob Crystalsworn Memory
---    .mob Skittersong Krolusk
---    .mob Brinebound Wraith
---step
---    .goto 2375,61.35,12.79,20,0
---    .goto 2375,61.49,12.6,15,0
---    .goto 2369,45.27,21.58,30,0
---    .goto 2369,67.49,41.99
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bargus|r
---    *|cRXP_WARN_Don't run into|r |cRXP_ENEMY_Faded Construct|r.
---    .turnin 85876 >>Turn in Reading the Runes
---    .mob Faded Construct
---    .target Bargus
---step
---    .goto 2369,71.05,39.69
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
---    .turnin 85570 >>Turn in The Tattered Journal
---    .target Stellin Verasa
---    .accept 85571 >>Accept Scattered To The Winds
---step
---    .goto 2369,71.04,59.31
---    >>Click on the |cRXP_PICK_Weathered Journal Page|r.
---    .complete 85571,4 --1/1 Weathered Journal Page
---step
---    .goto 2369,51.44,75.83
---    >>Click on the |cRXP_PICK_Soggy Journal Page|r.
---    .complete 85571,2 --1/1 Soggy Journal Page
---step
---    .goto 2369,38.45,52.87,10,0
---    .goto 2369,38.49,52.84,10,0
---    .goto 2369,39.02,51.66,5,0
---    .goto 2369,39.26,54.22
---    >>Click on the |cRXP_PICK_Faded Journal Page|r |cRXP_WARN_upstairs|r.
---    .complete 85571,1 --1/1 Faded Journal Page
---step
---    .goto 2369,46.07,47.06
---    >>Click on the |cRXP_PICK_Torn Journal Page|r |cRXP_WARN_underneath the Wooden Structure|r.
---    .complete 85571,3 --1/1 Torn Journal Page
---step
---    .goto 2369,56.07,11.91,20,0
---    .goto 2369,55.83,14.68
---    >>Click on the |cRXP_PICK_Stained Journal Page|r |cRXP_WARN_inside the cave|r.
---    .complete 85571,5 --1/1 Stained Journal Page
---step
---    .goto 2369,56.43,11.78,10,0
---    .goto 2369,71.03,39.68
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
---    .turnin 85571 >>Turn in Scattered To The Winds
---    .target Stellin Verasa
---    .accept 85572 >>Accept A Group Effort
---step
---    .goto 2369,66.98,40.89
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alta|r
---    .complete 85572,1 --1/1 Speak to Alta
---    .skipgossipid 125529
---    .target Alta
---step
---    .goto 2369,69.22,43.61
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skitter|r
---    .complete 85572,3 --1/1 Speak to Skitter
---    .skipgossipid 125526
---    .target Skitter
---step
---    .goto 2369,71.78,45.86
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ricket|r
---    .complete 85572,2 --1/1 Speak to Ricket
---    .skipgossipid 125515
---    .target Ricket
---step
---    .goto 2369,71.02,39.69
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
---    .turnin 85572 >>Turn in A Group Effort
---    .target Stellin Verasa
---    .accept 85573 >>Accept Laid To Rest At Last
---step
---    .goto 2369,38.88,54.77
---    >>Click on the |cRXP_PICK_Tattered Kul Tiran Journal|r
---    .complete 85573,1 --1/1 Tattered Kul Tiran Journal
---step
---    .goto 2369,71.02,39.67
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
---    .turnin 85573 >>Turn in Laid To Rest At Last
---    .target Stellin Verasa
---
----- TURN IN CONTRUBUTION WEEK 1 ADDITONAL/MOVE CHECK IF NEEDED
---
----- STORM WQ WEEK 1
---
---step
---    .isOnQuest 85113
---    .goto 2369,69.06,49.26
---    .gossipoption 123657 >>Talk to |cRXP_FRIENDLY_Suzie Boltwrench|r
---    .target Suzie Boltwrench
---step
---    .isOnQuest 85113
---    .goto 2369,69.63,48.63
---    >>Click on |cRXP_PICK_Crawler Mine|r
---    .complete 85113,2 --1/1 Use equipment provided (Optional)
---step
---    .isOnQuest 85113
---    .goto 2369,68.65,54.63
---    >>Kill
---    *use extraaction
---    .complete 85113,3 --Storm threats eliminated (100%)
---    .mob Storm-Touched Clawfiend
---    .mob Shadowtide Watcher
---step
---    .isOnQuest 85113
---    .goto 2369,69.24,49.28
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench|r
---    .turnin 85113 >>Turn in Special Assignment: Storm's a Brewin
---    .target Suzie Boltwrench
---step
---    -- Add aura check
---    .goto 2369,69.24,49.25
---    .gossipoption 125326 >>Talk to |cRXP_FRIENDLY_Suzie Boltwrench|r
---    .target Suzie Boltwrench
---
---
----- MAIN CAMPAIGN WEEK 2
---
-
-
 step
     .goto 2369,72.18,43.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
     .accept 85653 >>Accept Dipping a Toe
     .target Apprentice Tanmar
-
-----COMPLETION OF Survey Devices; NOT TURNIN
---
---step
---    .goto 2369,75.12,45.47
---    >>Click on the |cRXP_PICK_Survey Device|r
---    .complete 84252,1,1
 step
     .goto 2369,73.34,52.34
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
@@ -2698,32 +2524,9 @@ step
     .goto 2369,45.92,87.70
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
     .complete 85653,3 --1/1 Search the Southern Shore
---
-----COMPLETION OF Survey Devices; NOT TURNIN
-
---step
---    .goto 2369,42.13,67.8
---    >>Click on the |cRXP_PICK_Survey Device|r
---    .complete 84252,1,2
---step
---    .goto 2369,39.09,52.21
---    >>Click on the |cRXP_PICK_Survey Device|r
---    .complete 84252,1,3
---step
---    .goto 2369,42.99,52.18
---    >>Click on the |cRXP_PICK_Survey Device|r
---    .complete 84252,1,4
---step
---    .goto 2369,36.73,42.97
---    >>Click on the |cRXP_PICK_Survey Device|r
---    .complete 84252,1,5
---step
---    .goto 2369,34.63,28.99
---    >>Click on the |cRXP_PICK_Survey Device|r
---    .complete 84252,1,6
 step
     .goto 2369,33.07,20.52
-    >>Click on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seafearer's Chest|r on the seabed.
     .complete 85653,2 --1/1 Search the Northern Shore
 step
     .goto 2369,72.19,42.99
@@ -2731,26 +2534,61 @@ step
     .turnin 85653 >>Turn in Dipping a Toe
     .target Apprentice Tanmar
 
+
+step
+    .goto 2369,71.28,45.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .accept 85654 >>Accept Juicing Up And Storming Out
+    .target Didi the Wrench
+step
+    .isOnQuest 85654
+    >>Kill |cRXP_ENEMY_rares|r, |cRXP_ENEMY_enemies|r, complete repeatable quests and excavations or open |cRXP_PICK_chests|r to complete the first part of the special assignment quest
+    .complete 84851,1 --Complete activities and secure the Siren Isle (100%)
+step
+    .goto 2369,69.07,49.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench to enter Storm Mode|r
+    .complete 85654,2 --1/1 Talk to Suzie Boltwrench to enter Storm Mode
+    .target Suzie Boltwrench
+    .skipgossipid 123657
+step
+    .isOnQuest 85654
+    .goto 2369,69.07,49.25
+    .aura 458069 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench to enter Storm Mode|r
+    .target Suzie Boltwrench
+    .skipgossipid 123657
+step
+    .goto 2369,69.14,49.66
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_TR-06 Pummeler|r
+    .complete 85654,3 --1/1 Activate the TR-06 Pummeler
+step
+    .isOnQuest 85654
+    #hidewindow
+    #completewith next
+    #label NUKULARTargetPainter
+    .complete 85654,4 --1/1 Use the N.U.K.U.L.A.R Target Painter
+step
+    .isOnQuest 85654
+    #completewith NUKULARTargetPainter
+    .goto 2369,69.27,47.94
+    .aura 466925 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_.U.K.U.L.A.R Target Painter|r on top of the boxes
+step
+    .isOnQuest 85654
+    #requires NUKULARTargetPainter
+    >>Use the |cRXP_WARN_ExtraActionButton|r and aim it anywhere
+    .complete 85654,4 --1/1 Use the N.U.K.U.L.A.R Target Painter
+step
+    .isOnQuest 85654
+    .goto 2369,69.07,49.25
+    .aura -458069 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench to leave Storm Mode|r
+    .skipgossipid 125326
+    .target Suzie Boltwrench
+step
+    .goto 2369,71.28,45.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .turnin 85654 >>Turn in Juicing Up And Storming Out
+    .target Didi the Wrench
 step
     +The next free update will contain the next part of the story!
----- MAIN CAMPAIGN WEEK 3
---
---step
---    .goto 2369,71.28,45.94
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
---    .accept 85654 >>Accept Juicing Up And Storming Out
---    .target Didi the Wrench
---step
---    .goto 2369,69.14,49.66
---    .complete 85654,3 --1/1 Activate the TR-06 Pummeler
---step
---    .goto 2369,69.27,47.94
---    .complete 85654,4 --1/1 Use the N.U.K.U.L.A.R Target Painter
---step
---    .goto 2369,71.28,45.96
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
---    .turnin 85654 >>Turn in Juicing Up And Storming Out
---    .target Didi the Wrench
 --step
 --    .goto 2369,71.22,44.01
 --    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
