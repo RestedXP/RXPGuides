@@ -2208,7 +2208,6 @@ step
     .use 2839
 step
     #completewith ThurmanGregor
-    #label MillsOverun
     >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
     .complete 426,1 --Notched Rib (5)
     .mob +Rattlecage Soldier
@@ -2242,6 +2241,7 @@ step
     .complete 354,1 --Gregor's Remains (1)
     .unitscan +Gregor Agamand
 step
+    #label MillsOverun
     #loop
     .goto Tirisfal Glades,45.08,31.15,0
     .goto Tirisfal Glades,43.71,35.25,60,0

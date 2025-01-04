@@ -1617,12 +1617,12 @@ step << Mage
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
+    .target +Shikrik
     .goto Durotar,42.39,69.00
     .turnin 1516 >>Turn in Call of Earth
     .accept 1517 >>Accept Call of Earth
+    .target +Canaga Earthcaller
     .goto Durotar,42.40,69.17
-    .target Shikrik
-    .target Canaga Earthcaller
     .xp <6,1
 step << Shaman
     .goto Durotar,42.40,69.17
@@ -2932,7 +2932,8 @@ step
     .mob Bloodtalon Taillasher
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -3706,8 +3707,8 @@ step << !Warrior !Shaman !Hunter
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     .goto Durotar,41.54,18.59
-    >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
+    >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
 step << Warrior/Shaman
@@ -6102,15 +6103,13 @@ step
     .accept 361 >> Accept A Letter Undelivered
     .use 2839
 step
-    #optional
-    #sticky
-    #label MillsOverun
+    #completewith ThurmanGregor
     >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
     .complete 426,1 --Notched Rib (5)
+    .mob +Rattlecage Soldier
+    .mob +Cracked Skull Soldier
     .complete 426,2 --Blackened Skull (3)
-    .mob Rattlecage Soldier
-    .mob Darkeye Bonecaster
-    .mob Cracked Skull Soldier
+    .mob +Darkeye Bonecaster
     .isOnQuest 426
 step
     #optional
@@ -6130,6 +6129,7 @@ step
 step
     #optional
     #label ThurmanGregor
+    #loop
     .goto Tirisfal Glades,45.08,31.15,0
     .goto Tirisfal Glades,43.71,35.25,60,0
     .goto Tirisfal Glades,45.03,30.99,60,0
@@ -6144,8 +6144,24 @@ step
     .unitscan +Gregor Agamand
     .isOnQuest 354
 step
-    #optional
+    #loop
+    #label MillsOverun
+    .goto Tirisfal Glades,45.08,31.15,0
+    .goto Tirisfal Glades,43.71,35.25,60,0
+    .goto Tirisfal Glades,45.03,30.99,60,0
+    .goto Tirisfal Glades,46.79,29.80,60,0
+    .goto Tirisfal Glades,42.82,31.93,60,0
+    .goto Tirisfal Glades,42.82,31.93,60,0
+    .goto Tirisfal Glades,45.08,31.15,60,0
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
+    .complete 426,1 --Notched Rib (5)
+    .mob +Rattlecage Soldier
+    .mob +Cracked Skull Soldier
+    .complete 426,2 --Blackened Skull (3)
+    .mob +Darkeye Bonecaster
+step
     #requires MillsOverun
+    #optional
     #completewith MaggotEye
     .goto Tirisfal Glades,54.32,31.56,15,0
     .goto Tirisfal Glades,54.78,32.75,15,0
@@ -6517,9 +6533,9 @@ step << Mage
     #completewith next
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
+    .mob +Wandering Spirit
     .isOnQuest 356
 step << Mage
     #season 2
@@ -6594,6 +6610,8 @@ step
     .isOnQuest 374
 step
     #optional
+    #loop
+    .goto Tirisfal Glades,79.82,56.40,0
     .goto Tirisfal Glades,78.82,56.14,20,0
     .goto Tirisfal Glades,80.95,57.21,40,0
     .goto Tirisfal Glades,81.62,54.84,40,0
@@ -6603,7 +6621,7 @@ step
     .goto Tirisfal Glades,76.15,55.30,40,0
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
-    .goto Tirisfal Glades,79.82,56.40
+    .goto Tirisfal Glades,79.82,56.40,40,0
     >>Kill |cRXP_ENEMY_Captain Vachon|r and |cRXP_ENEMY_Scarlet Friars|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Scarlet Friars|r |cRXP_WARN_can cast|r |T135929:0|t[Lesser Heal]
     .complete 371,1 --Captain Vachon (1)
@@ -8647,12 +8665,12 @@ step << Mage
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
+    .target +Shikrik
     .goto Durotar,42.39,69.00
     .turnin 1516 >>Turn in Call of Earth
     .accept 1517 >>Accept Call of Earth
+    .target +Canaga Earthcaller
     .goto Durotar,42.40,69.17
-    .target Shikrik
-    .target Canaga Earthcaller
     .xp <6,1
 step << Shaman
     .goto Durotar,42.40,69.17
@@ -9869,7 +9887,8 @@ step
     .mob Bloodtalon Taillasher
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
