@@ -59,18 +59,17 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Venya|r and |cRXP_FRIENDLY_Sarvis|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r << Mage
     .accept 1470 >>Accept Piercing the Veil << Warlock
-    .goto Tirisfal Glades,30.98,66.41,0,0 << Warlock
+    .goto Tirisfal Glades,30.98,66.41 << Warlock
+    .target +Venya Marthand << Warlock
     .turnin 363 >> Turn in Rude Awakening
     .accept 364 >> Accept The Mindless Ones
-    .goto Tirisfal Glades,30.84,66.20,0,0
-    .target Venya Marthand
-    .target Shadow Priest Sarvis
+    .target +Shadow Priest Sarvis
+    .goto Tirisfal Glades,30.84,66.20
 step << Warlock/Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
     .xp <2,1
 step << Mage
@@ -102,7 +101,6 @@ step << !Warlock !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r
     .accept 376 >> Accept The Damned
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
     .target Novice Elreth
     .xp <2,1
 step << Warrior
@@ -122,6 +120,7 @@ step << Warrior
 step << Warlock
     #requires Piercing
     #loop
+    .goto Tirisfal Glades,31.82,61.48,0
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
     .goto Tirisfal Glades,32.07,60.17,30,0
@@ -131,7 +130,6 @@ step << Warlock
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r. Loot them for their |cRXP_LOOT_Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
@@ -161,28 +159,26 @@ step << Warlock
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
-    .goto Tirisfal Glades,31.35,66.21,10,0
-#loop
-	.line Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.8,33.55,64.57,33.29,64.96,31.72,63.98
-	.goto Tirisfal Glades,31.72,63.98,25,0
-	.goto Tirisfal Glades,30.69,63.88,25,0
-	.goto Tirisfal Glades,30.90,62.20,25,0
-	.goto Tirisfal Glades,30.73,61.66,25,0
-	.goto Tirisfal Glades,31.14,61.41,25,0
-	.goto Tirisfal Glades,31.80,61.83,25,0
-	.goto Tirisfal Glades,32.85,63.02,25,0
-	.goto Tirisfal Glades,32.90,63.54,25,0
-	.goto Tirisfal Glades,33.41,63.06,25,0
-	.goto Tirisfal Glades,33.75,62.86,25,0
-	.goto Tirisfal Glades,33.51,63.80,25,0
-	.goto Tirisfal Glades,33.55,64.57,25,0
-	.goto Tirisfal Glades,33.29,64.96,25,0
-	.goto Tirisfal Glades,31.72,63.98,25,0
+    #loop
+	.goto Tirisfal Glades,31.72,63.98,0
+	.goto Tirisfal Glades,31.72,63.98,40,0
+	.goto Tirisfal Glades,30.69,63.88,40,0
+	.goto Tirisfal Glades,30.90,62.20,40,0
+	.goto Tirisfal Glades,30.73,61.66,40,0
+	.goto Tirisfal Glades,31.14,61.41,40,0
+	.goto Tirisfal Glades,31.80,61.83,40,0
+	.goto Tirisfal Glades,32.85,63.02,40,0
+	.goto Tirisfal Glades,32.90,63.54,40,0
+	.goto Tirisfal Glades,33.41,63.06,40,0
+	.goto Tirisfal Glades,33.75,62.86,40,0
+	.goto Tirisfal Glades,33.51,63.82,40,0
+	.goto Tirisfal Glades,33.55,64.57,40,0
+	.goto Tirisfal Glades,33.29,64.96,40,0
     >>Kill |cRXP_ENEMY_Mindless Zombies|r and |cRXP_ENEMY_Wretched Zombies|r
     .complete 364,1 --Kill Mindless Zombie (x8)
+    .mob +Mindless Zombie
     .complete 364,2 --Kill Wretched Zombie (x8)
-    .mob Mindless Zombie
-    .mob Wretched Zombie
+    .mob +Wretched Zombie
 step << Mage/Warlock/Priest
     #completewith Vendor2
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mindless Zombies|r and |cRXP_ENEMY_Wretched Zombies|r. Loot them until you have 33 copper worth of vendor items (including your armor)|r
@@ -224,21 +220,21 @@ step
     .accept 3098 >> Accept Glyphic Scroll << Mage
     .accept 3099 >> Accept Tainted Scroll << Warlock
     .accept 3901 >> Accept Rattling the Rattlecages
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .accept 376 >> Accept The Damned
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
     .turnin 3099 >> Turn in Tainted Scroll << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
+    .target +Maximillion << Warlock
     .turnin 3098 >> Turn in Glyphic Scroll << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
+    .target +Isabella << Mage
     .turnin 3097 >> Turn in Hallowed Scroll << Priest
+    .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
-    .target Maximillion << Warlock
-    .target Isabella << Mage
-    .target Dark Cleric Duesten << Priest
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
@@ -248,6 +244,8 @@ step << Mage/Warlock/Priest
     .target Joshua Kien
     .isOnQuest 364
 step
+    #loop
+    .goto Tirisfal Glades,34.32,56.79,0
     .goto Tirisfal Glades,29.21,66.68,40,0
     .goto Tirisfal Glades,29.48,65.70,40,0
     .goto Tirisfal Glades,29.60,64.04,40,0
@@ -258,27 +256,18 @@ step
     .goto Tirisfal Glades,32.07,57.74,40,0
     .goto Tirisfal Glades,32.85,58.35,40,0
     .goto Tirisfal Glades,34.32,56.79,40,0
-    .goto Tirisfal Glades,29.21,66.68,40,0
-    .goto Tirisfal Glades,29.48,65.70,40,0
-    .goto Tirisfal Glades,29.60,64.04,40,0
-    .goto Tirisfal Glades,29.67,63.39,40,0
-    .goto Tirisfal Glades,30.09,61.51,40,0
-    .goto Tirisfal Glades,30.97,59.66,40,0
-    .goto Tirisfal Glades,31.61,58.57,40,0
-    .goto Tirisfal Glades,32.07,57.74,40,0
-    .goto Tirisfal Glades,32.85,58.35,40,0
-    .goto Tirisfal Glades,34.32,56.79
     >>Kill |cRXP_ENEMY_Young Scavengers|r and |cRXP_ENEMY_Ragged Scavengers|r. Loot them for their |cRXP_LOOT_Scavenger Paws|r
     >>Kill |cRXP_ENEMY_Duskbats|r and |cRXP_ENEMY_Mangy Duskbats|r. Loot them for their |cRXP_LOOT_Duskbat Wings|r
     >>|cRXP_WARN_Try to avoid |cRXP_ENEMY_Mangy Duskbats|r if you can due to them being much tougher to kill than |cRXP_ENEMY_Duskbats|r|r
     .complete 376,1 --Collect Scavenger Paw (x6)
+    .mob +Young Scavenger
+    .mob +Ragged Scavenger
     .complete 376,2 --Collect Duskbat Wing (x6)
-    .mob Young Scavenger
-    .mob Ragged Scavenger
-    .mob Duskbat
-    .mob Mangy Duskbat
+    .mob +Duskbat
+    .mob +Mangy Duskbat
 step
     #loop
+    .goto Tirisfal Glades,31.82,61.48,0
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
     .goto Tirisfal Glades,32.07,60.17,30,0
@@ -288,7 +277,6 @@ step
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
@@ -304,7 +292,6 @@ step
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    .goto Tirisfal Glades,31.82,61.48,30,0
     .xp 3+480 >>Grind to 480+/1400xp << Warrior/Rogue
     .xp 3+560 >>Grind to 560+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
@@ -321,7 +308,6 @@ step
     .goto Tirisfal Glades,33.94,61.81,30,0
     .goto Tirisfal Glades,34.21,63.05,30,0
     .goto Tirisfal Glades,33.01,63.01,30,0
-    .goto Tirisfal Glades,31.82,61.48,30,0
     .xp 3+940 >>Grind to 940+/1400xp << Warrior/Rogue
     .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
@@ -340,13 +326,13 @@ step << Mage/Warlock/Priest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r and |cRXP_FRIENDLY_Elreth|r
     .turnin 3901 >> Turn in Rattling the Rattlecages
+    .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     .turnin 376 >> Turn in The Damned
     .accept 6395 >> Accept Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
-    .target Shadow Priest Sarvis
-    .target Novice Elreth
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
@@ -387,11 +373,11 @@ step
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltain|r and |cRXP_FRIENDLY_Arren|r
     .accept 3902 >> Accept Scavenging Deathknell
+    .target +Deathguard Saltain
     .goto Tirisfal Glades,31.61,65.62
     .accept 380 >> Accept Night Web's Hollow
+    .target +Executor Arren
     .goto Tirisfal Glades,32.15,66.01
-    .target Deathguard Saltain
-    .target Executor Arren
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r
@@ -430,9 +416,8 @@ step << Rogue
     .turnin 3096 >> Turn in Encrypted Scroll
     .target David Trias
 step
-    >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
-#loop
-	.line Tirisfal Glades,32.37,64.37,32.81,64.39,32.89,64.60,33.01,65.38,33.79,64.57,33.13,63.08,32.79,63.11,31.86,61.49,31.75,61.96,31.70,62.53,31.34,62.44,32.37,64.37
+    #loop
+	.goto Tirisfal Glades,32.37,64.37,0
 	.goto Tirisfal Glades,32.37,64.37,12,0
 	.goto Tirisfal Glades,32.81,64.39,12,0
 	.goto Tirisfal Glades,32.89,64.60,12,0
@@ -444,31 +429,27 @@ step
 	.goto Tirisfal Glades,31.75,61.96,12,0
 	.goto Tirisfal Glades,31.70,62.53,12,0
 	.goto Tirisfal Glades,31.34,62.44,12,0
-	.goto Tirisfal Glades,32.37,64.37,12,0
+    >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
     .complete 3902,1 --Collect Scavenged Goods (x6)
 step
-    .goto Tirisfal Glades,29.29,59.38,50,0
-    .goto Tirisfal Glades,29.94,57.33,50,0
-#loop
-	.line Tirisfal Glades,29.94,57.33,29.82,56.03,29.25,55.77,28.40,56.51,27.68,57.10,28.29,58.31,28.25,59.41,28.80,59.53,29.29,59.40,29.67,58.53,29.94,57.33
-	.goto Tirisfal Glades,29.94,57.33,25,0
-	.goto Tirisfal Glades,29.82,56.03,25,0
-	.goto Tirisfal Glades,29.25,55.77,25,0
-	.goto Tirisfal Glades,28.40,56.51,25,0
-	.goto Tirisfal Glades,27.68,57.10,25,0
-	.goto Tirisfal Glades,28.29,58.31,25,0
-	.goto Tirisfal Glades,28.25,59.41,25,0
-	.goto Tirisfal Glades,28.80,59.53,25,0
-	.goto Tirisfal Glades,29.29,59.40,25,0
-	.goto Tirisfal Glades,29.67,58.53,25,0
-	.goto Tirisfal Glades,29.94,57.33,25,0
+    #loop
+	.goto Tirisfal Glades,29.94,57.33,0
+	.goto Tirisfal Glades,29.94,57.33,40,0
+	.goto Tirisfal Glades,29.82,56.03,40,0
+	.goto Tirisfal Glades,29.25,55.77,40,0
+	.goto Tirisfal Glades,28.40,56.51,40,0
+	.goto Tirisfal Glades,27.68,57.10,40,0
+	.goto Tirisfal Glades,28.29,58.31,40,0
+	.goto Tirisfal Glades,28.25,59.41,40,0
+	.goto Tirisfal Glades,28.80,59.53,40,0
+	.goto Tirisfal Glades,29.29,59.40,40,0
+	.goto Tirisfal Glades,29.67,58.53,40,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r
     .complete 380,1,6 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
 step
-    .goto Tirisfal Glades,27.86,58.98,40,0
-#loop
-	.line Tirisfal Glades,28.25,58.27,28.42,59.07,27.86,60.57,27.17,59.18,27.30,57.97,26.94,56.42,27.51,56.00,28.25,58.27
+    #loop
+	.goto Tirisfal Glades,28.25,58.27,0
 	.goto Tirisfal Glades,28.25,58.27,25,0
 	.goto Tirisfal Glades,28.42,59.07,25,0
 	.goto Tirisfal Glades,27.86,60.57,25,0
@@ -476,7 +457,6 @@ step
 	.goto Tirisfal Glades,27.30,57.97,25,0
 	.goto Tirisfal Glades,26.94,56.42,25,0
 	.goto Tirisfal Glades,27.51,56.00,25,0
-	.goto Tirisfal Glades,28.25,58.27,25,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r close to the cave entrance
     .complete 380,1 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
@@ -485,6 +465,8 @@ step
     .goto Tirisfal Glades,26.80,59.40,15,0
     .goto Tirisfal Glades,26.31,59.60,30 >>Go inside the cave
 step
+    #loop
+    .goto Tirisfal Glades,24.68,59.54,0
     .goto Tirisfal Glades,26.31,59.60,30,0
     .goto Tirisfal Glades,25.61,59.55,20,0
     .goto Tirisfal Glades,25.11,60.33,20,0
@@ -492,13 +474,6 @@ step
     .goto Tirisfal Glades,23.23,59.91,20,0
     .goto Tirisfal Glades,23.89,58.36,20,0
     .goto Tirisfal Glades,24.68,59.54,20,0
-    .goto Tirisfal Glades,26.31,59.60,30,0
-    .goto Tirisfal Glades,25.61,59.55,20,0
-    .goto Tirisfal Glades,25.11,60.33,20,0
-    .goto Tirisfal Glades,24.18,60.77,20,0
-    .goto Tirisfal Glades,23.23,59.91,20,0
-    .goto Tirisfal Glades,23.89,58.36,20,0
-    .goto Tirisfal Glades,24.68,59.54
     >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the cave
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
@@ -545,26 +520,25 @@ step << Warlock/Mage/Priest
     .itemcount 159,<15
 step
     #requires NightWebH
-#loop
-	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-	.goto Tirisfal Glades,36.13,68.74,25,0
-	.goto Tirisfal Glades,36.46,69.49,25,0
-	.goto Tirisfal Glades,36.85,70.02,25,0
-	.goto Tirisfal Glades,37.42,69.58,25,0
-	.goto Tirisfal Glades,38.05,69.79,25,0
-	.goto Tirisfal Glades,37.91,69.22,25,0
-	.goto Tirisfal Glades,38.03,68.77,25,0
-	.goto Tirisfal Glades,38.49,68.28,25,0
-	.goto Tirisfal Glades,38.72,67.07,25,0
-	.goto Tirisfal Glades,38.59,66.25,25,0
-	.goto Tirisfal Glades,38.65,65.07,25,0
-	.goto Tirisfal Glades,37.62,65.36,25,0
-	.goto Tirisfal Glades,36.93,65.38,25,0
-	.goto Tirisfal Glades,36.51,65.42,25,0
-	.goto Tirisfal Glades,36.85,66.59,25,0
-	.goto Tirisfal Glades,37.45,67.95,25,0
-	.goto Tirisfal Glades,36.93,68.16,25,0
-	.goto Tirisfal Glades,36.13,68.74,25,0
+    #loop
+	.goto Tirisfal Glades,36.13,68.74,0
+	.goto Tirisfal Glades,36.13,68.74,40,0
+	.goto Tirisfal Glades,36.46,69.49,40,0
+	.goto Tirisfal Glades,36.85,70.02,40,0
+	.goto Tirisfal Glades,37.42,69.58,40,0
+	.goto Tirisfal Glades,38.05,69.79,40,0
+	.goto Tirisfal Glades,37.91,69.22,40,0
+	.goto Tirisfal Glades,38.03,68.77,40,0
+	.goto Tirisfal Glades,38.49,68.28,40,0
+	.goto Tirisfal Glades,38.72,67.07,40,0
+	.goto Tirisfal Glades,38.59,66.25,40,0
+	.goto Tirisfal Glades,38.65,65.07,40,0
+	.goto Tirisfal Glades,37.62,65.36,40,0
+	.goto Tirisfal Glades,36.93,65.38,40,0
+	.goto Tirisfal Glades,36.51,65.42,40,0
+	.goto Tirisfal Glades,36.85,66.59,40,0
+	.goto Tirisfal Glades,37.45,67.95,40,0
+	.goto Tirisfal Glades,36.93,68.16,40,0
     >>Kill |cRXP_ENEMY_Scarlet Initiates|r and |cRXP_ENEMY_Scarlet Converts|r. Loot them for their |cRXP_LOOT_Scarlet Armbands|r
     >>|cRXP_WARN_Don't kill |cRXP_ENEMY_Meven Korgal|r yet|r
     >>|cRXP_WARN_Try to avoid |cRXP_ENEMY_Scarlet Initiates|r if you can as they have|r |T135843:0|t[Frost Armor] |cRXP_WARN_(slows your attack speed)|r << Warrior/Rogue
@@ -588,12 +562,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r << !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elreth|r and |cRXP_FRIENDLY_Duesten|r << Priest
     .turnin 6395 >> Turn in Marla's Last Wish
+    .target +Novice Elreth
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.86,66.05
     .accept 5651 >> Accept In Favor of Darkness << Priest
+    .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
-    .target Novice Elreth
-    .target Dark Cleric Duesten << Priest
 step
     #sticky
     #label ScarletC
@@ -620,31 +594,30 @@ step
     .accept 383 >> Accept Vital Intelligence
     .target Executor Arren
 step
-    .goto Tirisfal Glades,34.08,59.51,40,0
-    .goto Tirisfal Glades,35.34,56.55,40,0
-    .goto Tirisfal Glades,36.83,56.85,40,0
-    .goto Tirisfal Glades,37.76,59.38,40,0
-    .goto Tirisfal Glades,37.51,62.99,40,0
-#loop
-	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-	.goto Tirisfal Glades,36.13,68.74,25,0
-	.goto Tirisfal Glades,36.46,69.49,25,0
-	.goto Tirisfal Glades,36.85,70.02,25,0
-	.goto Tirisfal Glades,37.42,69.58,25,0
-	.goto Tirisfal Glades,38.05,69.79,25,0
-	.goto Tirisfal Glades,37.91,69.22,25,0
-	.goto Tirisfal Glades,38.03,68.77,25,0
-	.goto Tirisfal Glades,38.49,68.28,25,0
-	.goto Tirisfal Glades,38.72,67.07,25,0
-	.goto Tirisfal Glades,38.59,66.25,25,0
-	.goto Tirisfal Glades,38.65,65.07,25,0
-	.goto Tirisfal Glades,37.62,65.36,25,0
-	.goto Tirisfal Glades,36.93,65.38,25,0
-	.goto Tirisfal Glades,36.51,65.42,25,0
-	.goto Tirisfal Glades,36.85,66.59,25,0
-	.goto Tirisfal Glades,37.45,67.95,25,0
-	.goto Tirisfal Glades,36.93,68.16,25,0
-	.goto Tirisfal Glades,36.13,68.74,25,0
+    #loop
+    .goto Tirisfal Glades,34.08,59.51,50,0
+    .goto Tirisfal Glades,35.34,56.55,50,0
+    .goto Tirisfal Glades,36.83,56.85,50,0
+    .goto Tirisfal Glades,37.76,59.38,50,0
+    .goto Tirisfal Glades,37.51,62.99,50,0
+	.goto Tirisfal Glades,36.13,68.74,50,0
+	.goto Tirisfal Glades,36.46,69.49,50,0
+	.goto Tirisfal Glades,36.85,70.02,50,0
+	.goto Tirisfal Glades,37.42,69.58,50,0
+	.goto Tirisfal Glades,38.05,69.79,50,0
+	.goto Tirisfal Glades,37.91,69.22,50,0
+	.goto Tirisfal Glades,38.03,68.77,50,0
+	.goto Tirisfal Glades,38.49,68.28,50,0
+	.goto Tirisfal Glades,38.72,67.07,50,0
+	.goto Tirisfal Glades,38.59,66.25,50,0
+	.goto Tirisfal Glades,38.65,65.07,50,0
+	.goto Tirisfal Glades,37.62,65.36,50,0
+	.goto Tirisfal Glades,36.93,65.38,50,0
+	.goto Tirisfal Glades,36.51,65.42,50,0
+	.goto Tirisfal Glades,36.85,66.59,50,0
+	.goto Tirisfal Glades,37.45,67.95,50,0
+	.goto Tirisfal Glades,36.93,68.16,50,0
+	.goto Tirisfal Glades,36.13,68.74,50,0
     .xp 5+2350 >>Grind to 2350+/2800xp
 step
     .goto Tirisfal Glades,38.24,56.77
@@ -671,6 +644,9 @@ step
     .accept 365 >>Accept Fields of Grief
     .target Deathguard Simmer
 step
+    #loop
+    .goto Tirisfal Glades,56.13,52.48,0
+    .goto Tirisfal Glades,40.77,54.42,0
     .goto Tirisfal Glades,40.77,54.42,40,0
     .goto Tirisfal Glades,42.04,55.11,40,0
     .goto Tirisfal Glades,43.59,54.30,40,0
@@ -680,7 +656,6 @@ step
     .goto Tirisfal Glades,52.52,54.48,40,0
     .goto Tirisfal Glades,54.49,52.65,40,0
     .goto Tirisfal Glades,56.13,52.48,40,0
-    .goto Tirisfal Glades,42.04,55.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r. He's an abomination that patrols along the road to Brill
     .accept 5481 >>Accept Gordo's Task
     .target Gordo
@@ -693,12 +668,12 @@ step << Priest/Warlock
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r and |cRXP_FRIENDLY_Zygand|r
     .accept 404 >>Accept A Putrid Task
+    .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.45
     .turnin 383 >>Turn in Vital Intelligence
     .accept 427 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.59,51.77
-    .target Deathguard Dillinger
-    .target Executor Zygand
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
@@ -839,7 +814,7 @@ step
 step << Priest
     .goto Tirisfal Glades,59.18,46.49
     >>Cast |T135929:0|t[Lesser Heal] and |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Deathguard Kel|r
-    >>|cRXP_WARN_You need Lesser Heal Rank 2 for this quest|r
+    >>|cRXP_WARN_You need|r |T135929:0|t[Lesser Heal Rank 2] |cRXP_WARN_for this quest|r
     .complete 5650,1 --Heal and fortify Deathguard Kel (1)
     .target Deathguard Kel
 step
@@ -853,6 +828,8 @@ step
     .mob Decrepit Darkhound
 step
     #label Claws
+    #loop
+    .goto Tirisfal Glades,52.63,56.98,0
     .goto Tirisfal Glades,54.95,50.53,50,0
     .goto Tirisfal Glades,53.35,50.29,50,0
     .goto Tirisfal Glades,52.12,50.38,50,0
@@ -860,8 +837,8 @@ step
     .goto Tirisfal Glades,52.03,53.74,50,0
     .goto Tirisfal Glades,52.29,56.72,50,0
     .goto Tirisfal Glades,53.95,56.53,50,0
-    .goto Tirisfal Glades,53.55,58.25
-    .goto Tirisfal Glades,52.63,56.98
+    .goto Tirisfal Glades,53.55,58.25,50,0
+    .goto Tirisfal Glades,52.63,56.98,50,0
     >>Kill |cRXP_ENEMY_Rotting Dead|r and |cRXP_ENEMY_Ravaged Corpses|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
@@ -871,12 +848,14 @@ step
     >>Loot the |cRXP_PICK_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step
+    #loop
+    .goto Tirisfal Glades,41.70,44.01,0
     .goto Tirisfal Glades,44.41,56.83,100,0
     .goto Tirisfal Glades,42.64,53.40,100,0
     .goto Tirisfal Glades,40.84,46.59,100,0
     .goto Tirisfal Glades,38.69,44.10,100,0
     .goto Tirisfal Glades,38.63,39.44,100,0
-    .goto Tirisfal Glades,41.70,44.01
+    .goto Tirisfal Glades,41.70,44.01,100,0
     >>Kill any |cRXP_ENEMY_Decrepit Darkhound|r you see. Loot them for their |cRXP_LOOT_Blood|r
     >>|cRXP_WARN_Avoid the|r |cRXP_ENEMY_Cursed Darkhounds|r|cRXP_WARN_. They are higher level|r
     .complete 367,1 --Darkhound Blood (5)
@@ -893,13 +872,15 @@ step << Priest/Warlock
     >>|cRXP_WARN_Start collecting 3 stacks of|r |T132889:0|t[Linen Cloth]|cRXP_WARN_. This will be used to make your wand later|r
     .collect 2589,60 --Linen Cloth (60)
 step
+    #loop
+    .goto Tirisfal Glades,36.63,50.09,0
     .goto Tirisfal Glades,37.20,52.17,50,0
     .goto Tirisfal Glades,36.64,50.09,50,0
     .goto Tirisfal Glades,36.10,49.07,50,0
     .goto Tirisfal Glades,35.08,49.82,50,0
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
-    .goto Tirisfal Glades,36.63,50.09
+    .goto Tirisfal Glades,36.63,50.09,50,0
     >>Loot the |cRXP_LOOT_Pumpkins|r found in the field.
     .complete 365,1 --Tirisfal Pumpkin (10)
 step
@@ -938,23 +919,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Dillinger|r
     .turnin 427 >>Turn in At War With The Scarlet Crusade
     .accept 370 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 367 >>Turn in A New Plague
     .turnin 365 >> Turn in Fields of Grief
     .accept 368 >>Accept A New Plague
     .accept 407 >> Accept Fields of Grief
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
+    .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.43
-    .target Deathguard Dillinger
-    .target Executor Zygand
-    .target Apothecary Johaan
 step
+    #loop
+    .goto Tirisfal Glades,57.71,48.96,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
     .goto Tirisfal Glades,59.26,46.73,30,0
-    .goto Tirisfal Glades,57.71,48.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5481 >>Turn in Gordo's Task
     .accept 5482 >>Accept Doom Weed
@@ -1068,11 +1050,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r and |cRXP_FRIENDLY_Torka|r
     .accept 784 >>Accept Vanquish the Betrayers
     .accept 837 >>Accept Encroachment
+    .target +Gar'thok
     .goto Durotar,51.95,43.50
     .accept 815 >>Accept Break a Few Eggs
+    .target +Cook Torka
     .goto Durotar,51.09,42.49
-    .target Gar'thok
-    .target Cook Torka
 step
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -1108,11 +1090,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ukor|r
     .accept 2161 >>Accept A Peon's Burden
     .target Ukor
-    step
-    .goto Durotar,54.3,73.3,25,0
-    .goto Durotar,54.5,75.0,25,0
-    .goto Durotar,54.1,76.6,25,0
-    .goto Durotar,54.1,76.6
+step
+    #loop
+    .goto Durotar,54.20,73.36,0
+    .goto Durotar,54.09,76.31,25,0
+    .goto Durotar,54.52,74.83,25,0
+    .goto Durotar,54.20,73.36,25,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
     .accept 786 >>Accept Thwarting Kolkar Aggression
     .target Lar Prowltusk
@@ -1120,16 +1103,16 @@ step
     #label SenjinPickups
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Accept Practical Prey
+    .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
     .accept 818 >>Accept A Solvent Spirit
+    .target +Master Vornal
     .goto Durotar,55.94,74.40
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
+    .target +Master Gadrin
     .goto Durotar,55.94,74.72
-    .target Master Vornal
-    .target Master Gadrin
-    .target Vel'rin Fang
 step << Rogue
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
@@ -1220,11 +1203,12 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0 >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
-    .complete 818,2 --Crawler Mucus (8)
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .complete 818,2,4 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
+    .complete 818,1,2 --Intact Makrura Eye (4)
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     .goto Durotar,52.20,83.00,75 >> Reach the end of the beach
     .isOnQuest 818
@@ -1254,9 +1238,11 @@ step
     .goto Durotar,50.95,79.14,30 >>Leave the Kolkar base
     .isQuestComplete 786
 step
+    #loop
+    .goto Durotar,54.20,73.36,0
     .goto Durotar,54.09,76.31,25,0
     .goto Durotar,54.52,74.83,25,0
-    .goto Durotar,54.20,73.36
+    .goto Durotar,54.20,73.36,25,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
     .target Lar Prowltusk
@@ -1387,10 +1373,10 @@ step
     #completewith AgedEnvelope
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
 step
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -1411,46 +1397,69 @@ step
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
 step
+    #loop
+    .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
     .goto Durotar,57.36,56.59,30,0
     .goto Durotar,58.10,55.52,30,0
     .goto Durotar,58.54,53.68,30,0
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
-    .goto Durotar,58.99,58.30
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
+    .goto Durotar,58.99,58.30,30,0
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
+    .itemcount 4870,<8 --Canvas Scraps (<8)
 step
+    #loop
+    .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
     .goto Durotar,57.36,56.59,30,0
     .goto Durotar,58.10,55.52,30,0
     .goto Durotar,58.54,53.68,30,0
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
-    .goto Durotar,58.99,58.30
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r and Loot them for their |cRXP_LOOT_Scraps|r
+    .goto Durotar,58.99,58.30,30,0
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
+    .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
+    .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
+step
+    #label ScrapsFinished
+    #loop
+    .goto Durotar,58.99,58.30,0
+    .goto Durotar,57.65,58.52,30,0
+    .goto Durotar,57.36,56.59,30,0
+    .goto Durotar,58.10,55.52,30,0
+    .goto Durotar,58.54,53.68,30,0
+    .goto Durotar,56.54,54.52,30,0
+    .goto Durotar,56.37,58.35,30,0
+    .goto Durotar,58.99,58.30,30,0
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
 step << !Priest !Mage
+    #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
     .goto Durotar,59.20,44.30,50,0
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
-    .goto Durotar,55.50,48.97
+    .goto Durotar,55.50,48.97,50,0
     .xp 7+2180 >> Grind to 2200+/4500xp
 step << Priest
+    #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
     .goto Durotar,59.20,44.30,50,0
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
-    .goto Durotar,55.50,48.97
+    .goto Durotar,55.50,48.97,50,0
     .xp 7+1730 >> Grind to 1750+/4500xp
 step
     #completewith next
@@ -1459,34 +1468,34 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
+    .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
     .accept 831 >>Accept The Admiral's Orders
     .accept 837 >>Accept Encroachment
+    .target +Gar'Thok
     .goto Durotar,51.95,43.50
     .accept 815 >>Accept Break a Few Eggs
+    .target +Cook Torka
     .goto Durotar,51.09,42.49
-    .target Orgnil Soulscar
-    .target Gar'Thok
-    .target Cook Torka
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
+    .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
     .accept 831 >>Accept The Admiral's Orders
     .accept 837 >>Accept Encroachment
+    .target +Gar'Thok
     .goto Durotar,51.95,43.50
     .accept 815 >>Accept Break a Few Eggs
+    .target +Cook Torka
     .goto Durotar,51.09,42.49
-    .target Orgnil Soulscar
-    .target Gar'Thok
-    .target Cook Torka
 step
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -1672,23 +1681,26 @@ step
     .money <0.05
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. This does not need to be finished now
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #label Tools
-    >>Loot the |cRXP_PICK_Gnomish Toolboxes|r inside and around the boats
+    #loop
+    .goto Durotar,61.96,55.46,0
     .goto Durotar,61.96,55.46,20,0
     .goto Durotar,62.25,56.34,20,0
     .goto Durotar,62.43,59.84,20,0
     .goto Durotar,62.09,60.68,20,0
     .goto Durotar,62.51,60.56,20,0
     .goto Durotar,63.24,58.10,20,0
-    .goto Durotar,62.25,56.34
+    .goto Durotar,62.25,56.34,20,0
+    >>Loot the |cRXP_PICK_Gnomish Toolboxes|r inside and around the boats
     .complete 825,1 --Gnomish Tools (3)
 step
     #completewith TaillasherEggs
@@ -1700,16 +1712,19 @@ step
     .mob Durotar Tiger
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #label TaillasherEggs
     #loop
+    .goto Durotar,67.04,71.40,0
+    .goto Durotar,70.23,70.84,0
     .goto Durotar,67.74,69.86,40,0
     .goto Durotar,67.04,71.40,40,0
     .goto Durotar,67.66,73.86,40,0
@@ -1719,19 +1734,19 @@ step
     .goto Durotar,70.23,70.84,40,0
     .goto Durotar,69.69,70.35,40,0
     .goto Durotar,69.21,69.69,40,0
-    .goto Durotar,67.74,69.86,40,0
     >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground. They're usually guarded by a |cRXP_ENEMY_Bloodtalon Taillasher|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     .goto Durotar,66.94,84.41,150 >>Swim to the main island
 step
@@ -1739,9 +1754,9 @@ step
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r.
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
@@ -1771,6 +1786,7 @@ step
 step
     #label Fur
     #loop
+    .goto Durotar,67.23,88.76,0
     .goto Durotar,67.23,88.76,40,0
     .goto Durotar,66.52,87.74,40,0
     .goto Durotar,65.94,86.72,40,0
@@ -1780,23 +1796,26 @@ step
     .goto Durotar,68.42,82.43,40,0
     .goto Durotar,68.50,84.32,40,0
     .goto Durotar,68.47,86.77,40,0
-    .goto Durotar,67.23,88.50,40,0
+    .goto Durotar,67.23,88.00,40,0
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r.
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
+    #loop
+    .goto Durotar,59.79,83.44,0
     .goto Durotar,65.27,87.86,50,0
     .goto Durotar,64.72,88.53,50,0
     .goto Durotar,64.70,84.89,50,0
@@ -1812,17 +1831,18 @@ step
     .goto Durotar,61.48,91.37,50,0
     .goto Durotar,60.37,91.36,50,0
     .goto Durotar,59.04,90.51,50,0
-    .goto Durotar,59.79,83.44
+    .goto Durotar,59.79,83.44,50,0
     >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
+    #loop
+    .goto Durotar,59.64,73.84,0
     .goto Durotar,59.64,73.84,60,0
     .goto Durotar,58.11,77.30,60,0
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    .goto Durotar,59.64,73.84
     >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
@@ -1847,19 +1867,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Vel'rin|r
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826 >>Turn in Zalazane
+    .target +Master Gadrin
     .goto Durotar,55.95,74.73
     .turnin 818 >>Turn in A Solvent Spirit
+    .target +Master Vornal
     .goto Durotar,55.95,74.39
     .turnin 817 >>Turn in Practical Prey
+    .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
-    .goto Durotar,54.1,76.6
-    .target Master Gadrin
-    .target Master Vornal
-    .target Vel'rin Fang
 step
     #completewith Stolensupplies
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
 step
+    #loop
+    .goto Durotar,49.22,48.96,0
     .goto Durotar,50.21,50.78,30,0
     .goto Durotar,50.18,49.23,30,0
     .goto Durotar,49.48,49.14,30,0
@@ -1869,23 +1890,23 @@ step
     .goto Durotar,47.58,49.62,30,0
     .goto Durotar,47.06,49.53,30,0
     .goto Durotar,46.90,48.11,30,0
-    .goto Durotar,49.22,48.96
+    .goto Durotar,49.22,48.96,30,0
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
     .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .mob +Razormane Scout
 step
     #completewith next
     .goto Durotar,51.12,42.46,150 >> Run to Razor Hill
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
+    .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Turn in From The Wreckage....
+    .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .target Cook Torka
-    .target Gar'Thok
 step
     .goto Durotar,54.17,41.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rawrk|r
@@ -1934,24 +1955,24 @@ step
     .target Takrin Pathseeker
     .xp <10,1
 step
-#loop
-	.line Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
-	.goto Durotar,44.45,39.74,25,0
-	.goto Durotar,44.49,37.47,25,0
-	.goto Durotar,43.30,37.32,25,0
-	.goto Durotar,41.70,37.09,25,0
-	.goto Durotar,41.64,38.27,25,0
-	.goto Durotar,41.94,40.46,25,0
-	.goto Durotar,43.30,40.40,25,0
-	.goto Durotar,44.45,39.74,25,0
+    #loop
+    .goto Durotar,44.45,39.74,0
+    .goto Durotar,44.45,39.74,50,0
+    .goto Durotar,44.49,37.47,50,0
+    .goto Durotar,43.30,37.32,50,0
+    .goto Durotar,41.70,37.09,50,0
+    .goto Durotar,41.64,38.27,50,0
+    .goto Durotar,41.94,40.46,50,0
+    .goto Durotar,43.30,40.40,50,0
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
-    >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_Razormane Dustrunners|r |cRXP_WARN_cast Rejuvenation (Heal) and|r |cRXP_ENEMY_Razormane Battleguards|r |cRXP_WARN_are tanky|r
     .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
-    .mob Razormane Dustrunner
-    .mob Razormane Battleguard
+    .mob +Razormane Battleguard
 step
     #label Stolensupplies
+    #loop
+    .goto Durotar,47.92,33.10,0
     .goto Durotar,47.34,33.38,30,0
     .goto Durotar,47.92,33.10,30,0
     .goto Durotar,49.11,33.11,30,0
@@ -1964,7 +1985,6 @@ step
     .goto Durotar,50.83,25.94,30,0
     .goto Durotar,49.68,24.38,30,0
     .goto Durotar,49.05,22.49,30,0
-    .goto Durotar,47.92,33.10
     >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
@@ -1977,18 +1997,20 @@ step
     .accept 834 >>Accept Winds in the Desert
     .target Rezlak
 step
-    .goto Durotar,49.70,21.90,40,0
-    .goto Durotar,49.70,24.33,40,0
-    .goto Durotar,50.13,25.70,40,0
-    .goto Durotar,50.85,25.96,40,0
-    .goto Durotar,51.65,27.67,40,0
-    .goto Durotar,49.85,27.07,40,0
-    .goto Durotar,50.68,31.55,40,0
-    .goto Durotar,48.10,34.36,40,0
-    .goto Durotar,47.35,33.40,40,0
-    .goto Durotar,48.49,32.01,40,0
-    .goto Durotar,47.19,30.87,40,0
-    .goto Durotar,49.70,21.90
+    #loop
+    .goto Durotar,47.92,33.10,0
+    .goto Durotar,47.34,33.38,30,0
+    .goto Durotar,47.92,33.10,30,0
+    .goto Durotar,49.11,33.11,30,0
+    .goto Durotar,48.53,32.00,30,0
+    .goto Durotar,47.36,30.98,30,0
+    .goto Durotar,47.14,29.68,30,0
+    .goto Durotar,46.49,34.67,30,0
+    .goto Durotar,50.13,32.35,30,0
+    .goto Durotar,49.78,28.26,30,0
+    .goto Durotar,50.83,25.94,30,0
+    .goto Durotar,49.68,24.38,30,0
+    .goto Durotar,49.05,22.49,30,0
     >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
 step
@@ -2002,19 +2024,20 @@ step
     .goto Durotar,53.41,27.81,15 >> Travel through the cave
     .solo
 step
+    #loop
+    .goto Durotar,53.98,23.70,0
     .goto Durotar,54.02,27.23,40,0
     .goto Durotar,52.82,24.27,40,0
     .goto Durotar,51.85,23.95,40,0
     .goto Durotar,54.01,23.63,40,0
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
-    .goto Durotar,53.98,23.70
+    .goto Durotar,53.98,23.70,40,0
     >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r
-    >>|cRXP_WARN_These mobs flee. Be careful not to double pull|r
     .complete 835,1 --Dustwind Savage (12)
+    .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
-    .mob Dustwind Savage
-    .mob Dustwind Storm Witch
+    .mob +Dustwind Storm Witch
     .solo
 step << Troll Warrior/Undead Warrior
     #completewith next
@@ -2032,7 +2055,7 @@ step
     .goto Durotar,42.28,25.45,30,0
     .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge << !Hunter !Warlock
     .cast 2641 >>|cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
-    >>|cRXP_WARN_Dismiss your imp and then jump into Thunder Ridge|r << Warlock
+    +|cRXP_WARN_Dismiss your imp and then jump into Thunder Ridge|r << Warlock
     .group
 step
     .goto Durotar,42.13,26.67
@@ -2147,13 +2170,14 @@ step
     .group
 step
     #label Collars1
+    #loop
+    .goto Durotar,52.70,27.97,0
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
     .goto Durotar,53.05,27.87,12,0
     .goto Durotar,53.14,27.24,12,0
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
-    .goto Durotar,52.70,27.97
     >>Kill |cRXP_ENEMY_ Burning Blade Thugs|r, |cRXP_ENEMY_Neophytes|r and |cRXP_ENEMY_Cultists|r. Loot them for their |cRXP_LOOT_Collars|r
     .complete 827,1 --Searing Collar (6)
     .mob Burning Blade Thug
@@ -2180,19 +2204,21 @@ step
     .goto Durotar,53.41,27.81,15 >> Travel through the cave
     .group
 step
+    #loop
+    .goto Durotar,53.98,23.70,0
     .goto Durotar,54.02,27.23,40,0
     .goto Durotar,52.82,24.27,40,0
     .goto Durotar,51.85,23.95,40,0
     .goto Durotar,54.01,23.63,40,0
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
-    .goto Durotar,53.98,23.70
+    .goto Durotar,53.98,23.70,40,0
     >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r
     >>|cRXP_WARN_These mobs flee. Be careful not to double pull|r
     .complete 835,1 --Dustwind Savage (12)
+    .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
-    .mob Dustwind Savage
-    .mob Dustwind Storm Witch
+    .mob +Dustwind Storm Witch
     .group
 step << Troll Warrior/Undead Warrior
     #completewith next
@@ -2344,11 +2370,11 @@ step
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .accept 354 >>Accept Deaths in the Family
     .accept 362 >>Accept The Haunted Mills
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
     .accept 375 >>Accept The Chill of Death
+    .target +Gretchen Dedmar
     .goto Tirisfal Glades,61.89,52.73
-    .target Coleman Farthing
-    .target Gretchen Dedmar
     .maxlevel 12
 step << Warrior
     #completewith next
@@ -2392,13 +2418,13 @@ step << !Mage
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 374 >>Accept Proof of Demise
+    .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
     .accept 398 >>Accept Wanted: Maggot Eye
     .goto Tirisfal Glades,60.74,51.52
     .accept 358 >>Accept Graverobbers
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .target Magistrate Sevren
-    .target Deathguard Burgess
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
@@ -2553,25 +2579,24 @@ step << Warlock
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
-#loop
-	.line Tirisfal Glades,50.07,68.87,50.23,66.94,51.16,65.73,51.75,66.04,52.93,67.62,52.72,69.33,51.96,69.57,51.03,69.55
-	.goto Tirisfal Glades,50.07,68.87,25,0
-	.goto Tirisfal Glades,50.23,66.94,25,0
-	.goto Tirisfal Glades,51.16,65.73,25,0
-	.goto Tirisfal Glades,51.75,66.04,25,0
-	.goto Tirisfal Glades,52.93,67.62,25,0
-	.goto Tirisfal Glades,52.72,69.33,25,0
-	.goto Tirisfal Glades,51.96,69.57,25,0
-	.goto Tirisfal Glades,51.03,69.55,25,0
+    #loop
+	.goto Tirisfal Glades,50.07,68.87,40,0
+	.goto Tirisfal Glades,50.23,66.94,40,0
+	.goto Tirisfal Glades,51.16,65.73,40,0
+	.goto Tirisfal Glades,51.75,66.04,40,0
+	.goto Tirisfal Glades,52.93,67.62,40,0
+	.goto Tirisfal Glades,52.72,69.33,40,0
+	.goto Tirisfal Glades,51.96,69.57,40,0
+	.goto Tirisfal Glades,51.03,69.55,40,0
     >>Kill |cRXP_ENEMY_Captain Perrine|r, |cRXP_ENEMY_Scarlet Zealots|r and |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 370,1 --Captain Perrine (1)
+    .mob +Captain Perrine
     .complete 370,2 --Scarlet Zealot (3)
+    .mob +Scarlet Zealot
     .complete 370,3 --Scarlet Missionary (3)
+    .mob +Scarlet Missionary
     .complete 374,1 --Scarlet Insignia Ring (10)
     .disablecheckbox
-    .mob Captain Perrine
-    .mob Scarlet Zealot
-    .mob Scarlet Missionary
 step << Warlock
     .goto Tirisfal Glades,51.06,67.57
     >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
@@ -2634,14 +2659,13 @@ step
     .accept 361 >> Accept A Letter Undelivered
     .use 2839
 step
-    #sticky
-    #label MillsOverun
+    #completewith ThurmanGregor
     >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
     .complete 426,1 --Notched Rib (5)
+    .mob +Rattlecage Soldier
+    .mob +Cracked Skull Soldier
     .complete 426,2 --Blackened Skull (3)
-    .mob Rattlecage Soldier
-    .mob Darkeye Bonecaster
-    .mob Cracked Skull Soldier
+    .mob +Darkeye Bonecaster
 step
     #label KillDevlin
     .goto Tirisfal Glades,47.34,40.78
@@ -2655,17 +2679,35 @@ step
     .mob Nissa Agamand
 step
     #label ThurmanGregor
+    #loop
+    .goto Tirisfal Glades,45.08,31.15,0
     .goto Tirisfal Glades,43.71,35.25,60,0
     .goto Tirisfal Glades,45.03,30.99,60,0
     .goto Tirisfal Glades,46.79,29.80,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
     .goto Tirisfal Glades,42.82,31.93,60,0
-    .goto Tirisfal Glades,45.08,31.15
+    .goto Tirisfal Glades,45.08,31.15,60,0
     >>Kill |cRXP_ENEMY_Thurman|r and |cRXP_ENEMY_Gregor|r. Loot them for their |cRXP_LOOT_Remains|r. They can patrol around
     .complete 354,3 --Thurman's Remains (1)
     .unitscan +Thurman Agamand
     .complete 354,1 --Gregor's Remains (1)
     .unitscan +Gregor Agamand
+step
+    #loop
+    #label MillsOverun
+    .goto Tirisfal Glades,45.08,31.15,0
+    .goto Tirisfal Glades,43.71,35.25,60,0
+    .goto Tirisfal Glades,45.03,30.99,60,0
+    .goto Tirisfal Glades,46.79,29.80,60,0
+    .goto Tirisfal Glades,42.82,31.93,60,0
+    .goto Tirisfal Glades,42.82,31.93,60,0
+    .goto Tirisfal Glades,45.08,31.15,60,0
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
+    .complete 426,1 --Notched Rib (5)
+    .mob +Rattlecage Soldier
+    .mob +Cracked Skull Soldier
+    .complete 426,2 --Blackened Skull (3)
+    .mob +Darkeye Bonecaster
 step
     #requires MillsOverun
     #completewith MaggotEye
@@ -2691,6 +2733,7 @@ step
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
 step
+    .goto Tirisfal Glades,59.54,27.86,0
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -2699,7 +2742,7 @@ step
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86
+    .goto Tirisfal Glades,59.54,27.86,50,0
     >>Kill |cRXP_ENEMY_Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
@@ -2721,6 +2764,8 @@ step
     .mob Rot Hide Graverobber
 step
     #optional
+    #loop
+    .goto Tirisfal Glades,57.48,35.95,0
     .goto Tirisfal Glades,57.68,34.37,30,0
     .goto Tirisfal Glades,57.45,35.96,30,0
     .goto Tirisfal Glades,56.79,37.79,30,0
@@ -2733,18 +2778,19 @@ step
     .goto Tirisfal Glades,58.29,42.93,30,0
     .goto Tirisfal Glades,58.83,40.68,30,0
     .goto Tirisfal Glades,58.36,38.55,30,0
-    .goto Tirisfal Glades,57.48,35.95
+    .goto Tirisfal Glades,57.48,35.95,30,0
     >>Loot the |cRXP_PICK_Doom Weed|r on the ground. They are found near trees in the Gnoll area
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
 step
     #label RotHideGnolls
+    #loop
+    .goto Tirisfal Glades,55.24,42.54,0
     .goto Tirisfal Glades,56.31,39.67,40,0
     .goto Tirisfal Glades,54.71,41.19,40,0
     .goto Tirisfal Glades,53.90,43.93,40,0
     .goto Tirisfal Glades,55.24,42.54,40,0
     .goto Tirisfal Glades,56.43,43.92,40,0
-    .goto Tirisfal Glades,55.24,42.54
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,1 --Rot Hide Graverobber (8)
@@ -2752,11 +2798,11 @@ step
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
 step
-    #optional
-    .goto Tirisfal Glades,59.26,46.73,30,0
+    #loop
+    .goto Tirisfal Glades,57.71,48.96,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
-    .goto Tirisfal Glades,57.71,48.96
+    .goto Tirisfal Glades,59.26,46.73,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5482 >>Turn in Doom Weed
     .target Junior Apothecary Holland
@@ -2764,21 +2810,21 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
     .turnin 426 >>Turn in The Mills Overrun
+    .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.19,51.44
     .turnin 368 >>Turn in A New Plague
     .accept 369 >>Accept A New Plague
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 398 >>Turn in Wanted: Maggot Eye
     .turnin 370 >>Turn in At War With The Scarlet Crusade
     .accept 371 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Turn in Graverobbers
     .accept 359 >>Accept Forsaken Duties
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .target Deathguard Dillinger
-    .target Apothecary Johaan
-    .target Executor Zygand
-    .target Magistrate Sevren
 step
     #completewith HorrorsandSpirits
     +|cRXP_WARN_Bind your|r |T133849:0|t[Slumber Sand]|cRXP_WARN_. Save it for emergency situations|r
@@ -2794,16 +2840,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
+    .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
+    .target +Gretchen Dedmar
     .goto Tirisfal Glades,61.89,52.73
-    .target Yvette Farthing
-    .target Coleman Farthing
-    .target Gretchen Dedmar
     .isQuestComplete 375
     .isOnQuest 361
     .group
@@ -2814,11 +2860,11 @@ step
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
+    .target +Gretchen Dedmar
     .goto Tirisfal Glades,61.89,52.73
-    .target Coleman Farthing
-    .target Gretchen Dedmar
     .isQuestComplete 375
     .group
 step
@@ -2826,13 +2872,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
+    .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
-    .target Yvette Farthing
-    .target Coleman Farthing
     .isOnQuest 361
     .group
 step
@@ -2848,16 +2894,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
+    .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
+    .target +Gretchen Dedmar
     .goto Tirisfal Glades,61.89,52.73
-    .target Yvette Farthing
-    .target Coleman Farthing
-    .target Gretchen Dedmar
     .isQuestComplete 375
     .isOnQuest 361
 step
@@ -2867,24 +2913,24 @@ step
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
+    .target +Gretchen Dedmar
     .goto Tirisfal Glades,61.89,52.73
-    .target Coleman Farthing
-    .target Gretchen Dedmar
     .isQuestComplete 375
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
+    .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
+    .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
-    .target Yvette Farthing
-    .target Coleman Farthing
     .isOnQuest 361
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
@@ -2968,32 +3014,31 @@ step << Mage
     #completewith next
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
+    .mob +Wandering Spirit
 step << Mage
     .goto Tirisfal Glades,77.48,62.00
     >>Loot any of the plants on the ground for a |cRXP_PICK_Balnir Snapdragon|r
     .complete 1882,1 --Balnir Snapdragons (1)
 step
     #label HorrorsandSpirits
-#loop
-	.line Tirisfal Glades,74.31,60.98,74.45,59.64,75.08,58.56,76.45,58.67,77.41,58.66,78.55,60.43,77.45,61.46,76.79,62.60,74.99,61.98,74.31,60.98
-	.goto Tirisfal Glades,74.31,60.98,25,0
-	.goto Tirisfal Glades,74.45,59.64,25,0
-	.goto Tirisfal Glades,75.08,58.56,25,0
-	.goto Tirisfal Glades,76.45,58.67,25,0
-	.goto Tirisfal Glades,77.41,58.66,25,0
-	.goto Tirisfal Glades,78.55,60.43,25,0
-	.goto Tirisfal Glades,77.45,61.46,25,0
-	.goto Tirisfal Glades,76.79,62.60,25,0
-	.goto Tirisfal Glades,74.99,61.98,25,0
-	.goto Tirisfal Glades,74.31,60.98,25,0
+    #loop
+	.goto Tirisfal Glades,74.31,60.98,0
+	.goto Tirisfal Glades,74.31,60.98,50,0
+	.goto Tirisfal Glades,74.45,59.64,50,0
+	.goto Tirisfal Glades,75.08,58.56,50,0
+	.goto Tirisfal Glades,76.45,58.67,50,0
+	.goto Tirisfal Glades,77.41,58.66,50,0
+	.goto Tirisfal Glades,78.55,60.43,50,0
+	.goto Tirisfal Glades,77.45,61.46,50,0
+	.goto Tirisfal Glades,76.79,62.60,50,0
+	.goto Tirisfal Glades,74.99,61.98,50,0
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
+    .mob +Bleeding Horror
     .complete 356,2 --Wandering Spirit (8)
-    .mob Bleeding Horror
-    .mob Wandering Spirit
+    .mob +Wandering Spirit
 step << Priest/Warlock
     #completewith Scarletrings
     >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
@@ -3006,6 +3051,8 @@ step
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
 step
+    #loop
+    .goto Tirisfal Glades,79.82,56.40,0
     .goto Tirisfal Glades,78.82,56.14,20,0
     .goto Tirisfal Glades,80.95,57.21,40,0
     .goto Tirisfal Glades,81.62,54.84,40,0
@@ -3015,16 +3062,18 @@ step
     .goto Tirisfal Glades,76.15,55.30,40,0
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
-    .goto Tirisfal Glades,79.82,56.40
+    .goto Tirisfal Glades,79.82,56.40,40,0
     >>Kill |cRXP_ENEMY_Captain Vachon|r and |cRXP_ENEMY_Scarlet Friars|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Scarlet Friars|r |cRXP_WARN_can cast|r |T135929:0|t[Lesser Heal]
     .complete 371,1 --Captain Vachon (1)
+    .mob +Captain Vachon
     .complete 371,2 --Scarlet Friar (5)
-    .mob Captain Vachon
-    .mob Scarlet Friar
+    .mob +Scarlet Friar
     .isOnQuest 371
 step
     #label ScarletRings
+    #loop
+    .goto Tirisfal Glades,79.82,56.40,0
     .goto Tirisfal Glades,80.95,57.21,40,0
     .goto Tirisfal Glades,81.62,54.84,40,0
     .goto Tirisfal Glades,81.56,53.07,40,0
@@ -3033,13 +3082,15 @@ step
     .goto Tirisfal Glades,76.15,55.30,40,0
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
-    .goto Tirisfal Glades,79.82,56.40
+    .goto Tirisfal Glades,79.82,56.40,40,0
     >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .mob Scarlet Friar
     .mob Scarlet Zealot
     .isOnQuest 374
 step << Priest/Warlock
+    #loop
+    .goto Tirisfal Glades,79.82,56.40,0
     .goto Tirisfal Glades,80.95,57.21,40,0
     .goto Tirisfal Glades,81.62,54.84,40,0
     .goto Tirisfal Glades,81.56,53.07,40,0
@@ -3048,7 +3099,7 @@ step << Priest/Warlock
     .goto Tirisfal Glades,76.15,55.30,40,0
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
-    .goto Tirisfal Glades,79.82,56.40
+    .goto Tirisfal Glades,79.82,56.40,40,0
     >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
     .mob Scarlet Friar
@@ -3097,39 +3148,39 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 374 >>Turn in Proof of Demise
+    .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
     .turnin 371 >>Turn in At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 360 >>Turn in Return to the Magistrate
     .turnin 355 >>Turn in Speak with Sevren
     .accept 408 >>Accept The Family Crypt
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
     .turnin 369 >>Turn in A New Plague
-    .accept 492 >>Accept A New Plague
     .accept 445 >>Accept Delivery to Silverpine Forest
+    .accept 492 >>Accept A New Plague
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
-    .target Deathguard Burgess
-    .target Executor Zygand
-    .target Magistrate Sevren
-    .target Apothecary Johaan
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 374 >>Turn in Proof of Demise
+    .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
     .turnin 371 >>Turn in At War With The Scarlet Crusade
+    .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 360 >>Turn in Return to the Magistrate
     .turnin 355 >>Turn in Speak with Sevren
+    .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
     .turnin 369 >>Turn in A New Plague
-    .accept 492 >>Accept A New Plague
     .accept 445 >>Accept Delivery to Silverpine Forest
+    .accept 492 >>Accept A New Plague
+    .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
-    .target Deathguard Burgess
-    .target Executor Zygand
-    .target Magistrate Sevren
-    .target Apothecary Johaan
 step
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r upstairs
@@ -3186,9 +3237,9 @@ step
     >>Kill |cRXP_ENEMY_Wailing Ancestors|r and |cRXP_ENEMY_Rotting Ancestors|r
     >>|cRXP_WARN_Be careful! The mobs in this crypt respawn dynamically!|r
     .complete 408,1 --Wailing Ancestor (8)
+    .mob +Wailing Ancestor
     .complete 408,2 --Rotting Ancestor (8)
-    .mob Wailing Ancestor
-    .mob Rotting Ancestor
+    .mob +Rotting Ancestor
     .group 2
 step
     #label CaptainDargol
@@ -3211,8 +3262,8 @@ step << Warrior
     .isOnQuest 1821
     .group 2
 step
-#loop
-	.line Tirisfal Glades,51.88,25.86,52.61,25.85,52.60,26.88,51.90,26.87
+    #loop
+	.goto Tirisfal Glades,51.90,26.87,0
 	.goto Tirisfal Glades,51.88,25.86,25,0
 	.goto Tirisfal Glades,52.61,25.85,25,0
 	.goto Tirisfal Glades,52.60,26.88,25,0
@@ -3220,17 +3271,19 @@ step
     >>Kill |cRXP_ENEMY_Wailing Ancestors|r and |cRXP_ENEMY_Rotting Ancestors|r
     >>|cRXP_WARN_Be careful! The mobs in this crypt respawn dynamically!|r
     .complete 408,1 --Wailing Ancestor (8)
+    .mob +Wailing Ancestor
     .complete 408,2 --Rotting Ancestor (8)
-    .mob Wailing Ancestor
-    .mob Rotting Ancestor
+    .mob +Rotting Ancestor
     .isOnQuest 408
     .group 2
 step << Warrior
+    #loop
+    .goto Tirisfal Glades,52.66,25.87,0
     .goto Tirisfal Glades,51.70,25.69,12,0
     .goto Tirisfal Glades,52.62,25.62,12,0
     .goto Tirisfal Glades,52.65,27.02,12,0
     .goto Tirisfal Glades,51.89,27.10,12,0
-    .goto Tirisfal Glades,52.66,25.87
+    .goto Tirisfal Glades,52.66,25.87,12,0
     >>Loot the |cRXP_PICK_Agamand Weapon Racks|r on the ground
     .complete 1821,1 --Agamand Family Axe (1)
     .complete 1821,2 --Agamand Family Dagger (1)

@@ -2396,9 +2396,9 @@ step << Shaman
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
     .complete 764,2 --Venture Co. Supervisor (6)
-    .mob Venture Co. Worker
-    .mob Venture Co. Supervisor
+    .mob +Venture Co. Supervisor
 step << Shaman
     #season 2
     #label Fizsprocket1
@@ -3766,9 +3766,9 @@ step << Tauren
     #completewith Ambercorns
     >>Kill |cRXP_ENEMY_Prairie Wolves|r and |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |cRXP_LOOT_Paws|r and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
+    .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
-    .mob Prairie Wolf
-    .mob Adult Plainstrider
+    .mob +Adult Plainstrider
 step << Hunter
     #season 2
     .goto Mulgore,59.02,54.36

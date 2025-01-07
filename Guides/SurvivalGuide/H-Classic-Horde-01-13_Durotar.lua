@@ -2649,7 +2649,7 @@ step
     .goto Durotar,42.28,25.45,30,0
     .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge << !Hunter !Warlock
     .cast 2641 >>|cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
-    >>|cRXP_WARN_Dismiss your imp and then jump into Thunder Ridge|r << Warlock
+    +|cRXP_WARN_Dismiss your imp and then jump into Thunder Ridge|r << Warlock
     .group
 step
     .goto Durotar,42.13,26.67

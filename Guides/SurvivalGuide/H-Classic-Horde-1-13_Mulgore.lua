@@ -67,6 +67,8 @@ step
     >>Loot the |cRXP_LOOT_Water Pitcher|r on the well behind |cRXP_FRIENDLY_Hawkwind|r
     .complete 753,1 --Water Pitcher (1)
 step
+    #loop
+    .goto Mulgore,47.36,83.05,0
     .goto Mulgore,50.23,79.38,50,0
     .goto Mulgore,51.02,78.68,50,0
     .goto Mulgore,50.85,75.68,50,0
@@ -74,7 +76,7 @@ step
     .goto Mulgore,47.10,76.54,50,0
     .goto Mulgore,45.77,80.39,50,0
     .goto Mulgore,45.56,82.39,50,0
-    .goto Mulgore,47.36,83.05
+    .goto Mulgore,47.36,83.05,50,0
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Meat|r and |cRXP_LOOT_Feathers|r
     .complete 747,1 --Plainstrider Meat (7)
     .complete 747,2 --Plainstrider Feather (7)
@@ -132,6 +134,8 @@ step
     .accept 757 >>Accept Rite of Strength
     .target Seer Graytongue
 step
+   #loop
+    .goto Mulgore,44.60,90.86,0
     .goto Mulgore,43.21,89.26,50,0
     .goto Mulgore,44.64,91.58,50,0
     .goto Mulgore,45.82,90.52,50,0
@@ -142,31 +146,29 @@ step
     .goto Mulgore,49.10,89.50,50,0
     .goto Mulgore,47.06,88.64,50,0
     .goto Mulgore,45.06,89.89,50,0
-    .goto Mulgore,44.60,90.86
+    .goto Mulgore,44.60,90.86,50,0
     >>Kill |cRXP_ENEMY_Mountain Cougars|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
 step
-#loop
-	.line Mulgore,45.56,87.95,46.92,87.84,48.67,86.83,50.65,85.87,51.01,83.71,52.06,81.53,51.87,79.58,51.67,77.39,51.95,75.16,50.32,76.33,48.85,75.82,47.41,75.30,46.80,78.21,45.84,80.41,45.03,82.15,44.09,83.89,43.90,86.08,45.56,87.95
-	.goto Mulgore,45.56,87.95,25,0
-	.goto Mulgore,46.92,87.84,25,0
-	.goto Mulgore,48.67,86.83,25,0
-	.goto Mulgore,50.65,85.87,25,0
-	.goto Mulgore,51.01,83.71,25,0
-	.goto Mulgore,52.06,81.53,25,0
-	.goto Mulgore,51.87,79.58,25,0
-	.goto Mulgore,51.67,77.39,25,0
-	.goto Mulgore,51.95,75.16,25,0
-	.goto Mulgore,50.32,76.33,25,0
-	.goto Mulgore,48.85,75.82,25,0
-	.goto Mulgore,47.41,75.30,25,0
-	.goto Mulgore,46.80,78.21,25,0
-	.goto Mulgore,45.84,80.41,25,0
-	.goto Mulgore,45.03,82.15,25,0
-	.goto Mulgore,44.09,83.89,25,0
-	.goto Mulgore,43.90,86.08,25,0
-	.goto Mulgore,45.56,87.95,25,0
+    #loop
+	.goto Mulgore,45.56,87.95,40,0
+	.goto Mulgore,46.92,87.84,40,0
+	.goto Mulgore,48.67,86.83,40,0
+	.goto Mulgore,50.65,85.87,40,0
+	.goto Mulgore,51.01,83.71,40,0
+	.goto Mulgore,52.06,81.53,40,0
+	.goto Mulgore,51.87,79.58,40,0
+	.goto Mulgore,51.67,77.39,40,0
+	.goto Mulgore,51.95,75.16,40,0
+	.goto Mulgore,50.32,76.33,40,0
+	.goto Mulgore,48.85,75.82,40,0
+	.goto Mulgore,47.41,75.30,40,0
+	.goto Mulgore,46.80,78.21,40,0
+	.goto Mulgore,45.84,80.41,40,0
+	.goto Mulgore,45.03,82.15,40,0
+	.goto Mulgore,44.09,83.89,40,0
+	.goto Mulgore,43.90,86.08,40,0
     .xp 3+1150 >> Grind to 1150+/1400xp
     .mob Plainstrider
 step << Warrior/Druid
@@ -234,6 +236,8 @@ step << Shaman
     .train 8042 >>Train |T136026:0|t[Earth Shock]
     .target Meela Dawnstrider
 step
+    #loop
+    .goto Mulgore,55.99,85.46,0
     .goto Mulgore,52.70,79.32,50,0
     .goto Mulgore,54.19,79.83,50,0
     .goto Mulgore,55.73,80.28,50,0
@@ -245,7 +249,7 @@ step
     .goto Mulgore,57.92,89.27,50,0
     .goto Mulgore,57.69,86.77,50,0
     .goto Mulgore,57.31,85.39,50,0
-    .goto Mulgore,55.99,85.46
+    .goto Mulgore,55.99,85.46,50,0
     >>Kill |cRXP_ENEMY_Battleboars|r. Loot them for their |cRXP_LOOT_Flanks|r and |cRXP_LOOT_Snouts|r
     .complete 780,2 --Battleboar Flank (8)
     .complete 780,1 --Battleboar Snout (8)
@@ -284,6 +288,8 @@ step << Shaman
     .complete 1519,1 --Ritual Salve (2)
     .mob Bristleback Shaman
 step
+    #loop
+    .goto Mulgore,63.93,78.34,0
     .goto Mulgore,63.81,76.65,40,0
     .goto Mulgore,62.92,76.91,40,0
     .goto Mulgore,61.31,77.22,40,0
@@ -291,22 +297,26 @@ step
     .goto Mulgore,62.53,79.52,40,0
     .goto Mulgore,64.20,79.01,40,0
     .goto Mulgore,65.82,78.13,40,0
-    .goto Mulgore,63.93,78.34
+    .goto Mulgore,63.93,78.34,40,0
     >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Belts|r
     .complete 757,1 --Bristleback Belt (12)
     .mob Bristleback Quilboar
 step << Shaman
+    #loop
+    .goto Mulgore,63.86,80.14,0
     .goto Mulgore,63.74,81.18,40,0
     .goto Mulgore,63.86,79.97,40,0
     .goto Mulgore,65.00,78.60,40,0
     .goto Mulgore,66.05,77.83,40,0
     .goto Mulgore,65.93,77.10,40,0
     .goto Mulgore,63.57,76.25,40,0
-    .goto Mulgore,63.86,80.14
+    .goto Mulgore,63.86,80.14,40,0
     >>Kill |cRXP_ENEMY_Bristleback Shamans|r. Loot them for their |cRXP_LOOT_Salves|r
     .complete 1519,1 --Ritual Salve (2)
     .mob Bristleback Shaman
 step
+    #loop
+    .goto Mulgore,62.27,82.03,0
     .goto Mulgore,63.98,80.08,40,0
     .goto Mulgore,64.31,78.29,40,0
     .goto Mulgore,63.67,76.18,40,0
@@ -317,7 +327,7 @@ step
     .goto Mulgore,60.82,80.81,40,0
     .goto Mulgore,60.08,81.93,40,0
     .goto Mulgore,61.03,82.32,40,0
-    .goto Mulgore,62.27,82.03
+    .goto Mulgore,62.27,82.03,40,0
     .xp 5+880 >> Grind to 880+/2800xp << !Shaman
     .xp 5 >> Grind to level 5 << Shaman
 step
@@ -328,20 +338,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull|r, |cRXP_FRIENDLY_Brave|r and |cRXP_FRIENDLY_Hawkwind|r << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull|r, |cRXP_FRIENDLY_Brave|r, |cRXP_FRIENDLY_Seer|r and |cRXP_FRIENDLY_Hawkwind|r << Shaman
     .turnin 780 >>Turn in The Battleboars
+    .target +Grull Hawkwind
     .goto Mulgore,44.92,77.12
     .turnin 3376 >>Turn in Break Sharptusk!
+    .target +Brave Windfeather
     .goto Mulgore,44.67,76.68
     .turnin 1519 >>Turn in Call of Earth << Shaman
     .accept 1520 >>Accept Call of Earth << Shaman
+    .target +Seer Ravenfeather << Shaman
     .goto Mulgore,44.73,76.18 << Shaman
     .turnin 781 >>Turn in Attack on Camp Narache
     .turnin 757 >>Turn in Rite of Strength
     .accept 763 >>Accept Rites of the Earthmother
+    .target +Chief Hawkwind
     .goto Mulgore,44.18,76.07
-    .target Grull Hawkwind
-    .target Brave Windfeather
-    .target Seer Ravenfeather << Shaman
-    .target Chief Hawkwind
 step << Shaman
     #completewith CallofEarth
     #label Rock
@@ -431,14 +441,14 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r and |cRXP_FRIENDLY_Baine|r
     .accept 743 >>Accept Dangers of the Windfury
+    .target +Ruul Eagletalon
     .goto Mulgore,47.36,62.01
     .turnin 763 >>Turn in Rites of the Earthmother
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
+    .target +Baine Bloodhoof
     .goto Mulgore,47.51,60.16
-    .target Ruul Eagletalon
-    .target Baine Bloodhoof
 step
     .goto Mulgore,46.63,61.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
@@ -553,38 +563,40 @@ step << Tauren
     #completewith next
     >>Kill |cRXP_ENEMY_Prairie Wolves|r and |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |cRXP_LOOT_Paws|r and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
+    .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
-    .mob Prairie Wolf
-    .mob Adult Plainstrider
+    .mob +Adult Plainstrider
 step
+    #loop
+    .goto Mulgore,50.36,66.49,0
     .goto Mulgore,48.71,64.44,15,0
     .goto Mulgore,50.36,66.49,15,0
     .goto Mulgore,51.92,63.85,15,0
     .goto Mulgore,51.13,71.06,15,0
-    .goto Mulgore,50.36,66.49
+    .goto Mulgore,50.36,66.49,15,0
     >>Collect the |cRXP_PICK_Ambercorns|r. They can be found under the trees on the ground
     .complete 771,2 --Ambercorn (2)
 step << Tauren
-#loop
-	.line Mulgore,50.82,66.66,51.06,63.63,52.79,62.06,53.98,61.68,55.67,62.77,56.46,64.93,56.02,67.78,55.02,69.65,52.33,70.07,50.40,70.24,48.60,69.43,45.98,69.70,48.58,67.37
-	.goto Mulgore,50.82,66.66,25,0
-	.goto Mulgore,51.06,63.63,25,0
-	.goto Mulgore,52.79,62.06,25,0
-	.goto Mulgore,53.98,61.68,25,0
-	.goto Mulgore,55.67,62.77,25,0
-	.goto Mulgore,56.46,64.93,25,0
-	.goto Mulgore,56.02,67.78,25,0
-	.goto Mulgore,55.02,69.65,25,0
-	.goto Mulgore,52.33,70.07,25,0
-	.goto Mulgore,50.40,70.24,25,0
-	.goto Mulgore,48.60,69.43,25,0
-	.goto Mulgore,45.98,69.70,25,0
-	.goto Mulgore,48.58,67.37,25,0
+    #loop
+	.goto Mulgore,50.82,66.66,0
+	.goto Mulgore,50.82,66.66,50,0
+	.goto Mulgore,51.06,63.63,50,0
+	.goto Mulgore,52.79,62.06,50,0
+	.goto Mulgore,53.98,61.68,50,0
+	.goto Mulgore,55.67,62.77,50,0
+	.goto Mulgore,56.46,64.93,50,0
+	.goto Mulgore,56.02,67.78,50,0
+	.goto Mulgore,55.02,69.65,50,0
+	.goto Mulgore,52.33,70.07,50,0
+	.goto Mulgore,50.40,70.24,50,0
+	.goto Mulgore,48.60,69.43,50,0
+	.goto Mulgore,45.98,69.70,50,0
+	.goto Mulgore,48.58,67.37,50,0
     >>Kill |cRXP_ENEMY_Prairie Wolves|r and |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |cRXP_LOOT_Paws|r and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
+    .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
-    .mob Prairie Wolf
-    .mob Adult Plainstrider
+    .mob +Adult Plainstrider
 step << Tauren
     .goto Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
@@ -602,10 +614,12 @@ step << Tauren
     .complete 754,1 --Cleanse the Winterhoof Water Well (1)
 step
     #label Stones
+    #loop
+    .goto Mulgore,54.06,66.40,0
     .goto Mulgore,53.35,65.78,10,0
     .goto Mulgore,53.70,65.59,10,0
     .goto Mulgore,53.98,65.94,10,0
-    .goto Mulgore,54.06,66.40
+    .goto Mulgore,54.06,66.40,10,0
     >>Collect the |cRXP_PICK_Well Stones|r around the Well
     .complete 771,1 --Well Stone (2)
 step
@@ -617,21 +631,20 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #label Gnolls
+    #loop
+    .goto Mulgore,53.5,73.0,0
+    .goto Mulgore,48.3,72.0,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0,90,0
-    .goto Mulgore,53.5,73.0,90,0
-    .goto Mulgore,48.3,72.0,90,0
-    .goto Mulgore,53.5,73.0,90,0
-    .goto Mulgore,48.3,72.0
     >>Go back and forth between the two camps. Kill |cRXP_ENEMY_Palemane Tanners|r, |cRXP_ENEMY_Palemane Skinners|r and |cRXP_ENEMY_Palemane Poachers|r
     >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Snagglespear|r |cRXP_WARN_(Level 9 rare). He's too difficult to kill.|r
     .complete 745,1 --Palemane Tanner (10)
+    .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
+    .mob +Palemane Skinner
     .complete 745,3 --Palemane Poacher (5)
+    .mob +Palemane Poacher
     .unitscan Snagglespear
-    .mob Palemane Tanner
-    .mob Palemane Skinner
-    .mob Palemane Poacher
 step
     .goto Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
@@ -646,11 +659,11 @@ step << Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r and |cRXP_FRIENDLY_Baine|r
     .turnin 754 >>Turn in Winterhoof Cleansing
     .accept 756 >>Accept Thunderhorn Totem
+    .target +Mull Thunderhorn
     .goto Mulgore,48.53,60.40
     .turnin 745 >>Turn in Sharing the Land
+    .target +Baine Bloodhoof
     .goto Mulgore,47.51,60.16
-    .target Mull Thunderhorn
-    .target Baine Bloodhoof
 step << !Tauren
     .goto Mulgore,47.51,60.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r and |cRXP_FRIENDLY_Baine|r
@@ -758,12 +771,14 @@ step << Shaman
     .target Narm Skychaser
     .xp <8,1
 step
+    #loop
+    .goto Mulgore,55.14,60.65,0
     .goto Mulgore,51.50,59.23,50,0
     .goto Mulgore,53.00,60.24,50,0
     .goto Mulgore,55.14,60.65,50,0
     .goto Mulgore,57.47,61.26,50,0
     .goto Mulgore,59.65,62.40,50,0
-    .goto Mulgore,55.14,60.65
+    .goto Mulgore,55.14,60.65,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
@@ -780,10 +795,10 @@ step << Tauren
     #completewith RavagedCaravan1
     >>Kill |cRXP_ENEMY_Stalkers|r and |cRXP_ENEMY_Cougars|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 756,1 --Stalker Claws (6)
+    .mob +Prairie Wolf
+    .mob +Prairie Wolf Alpha
     .complete 756,2 --Cougar Claws (6)
-    .mob Prairie Wolf
-    .mob Prairie Wolf Alpha
-    .mob Flatland Cougar
+    .mob +Flatland Cougar
 step
 	#completewith Clawsx
 	>>Kill |cRXP_ENEMY_Swoops|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
@@ -797,16 +812,17 @@ step
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << Tauren
+    #loop
+    .goto Mulgore,58.1,48.6,0
     .goto Mulgore,58.1,48.6,60,0
     .goto Mulgore,54.5,40.1,60,0
     .goto Mulgore,46.4,50.7,60,0
-    .goto Mulgore,58.1,48.6
     >>Kill |cRXP_ENEMY_Stalkers|r and |cRXP_ENEMY_Cougars|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 756,1 --Stalker Claws (6)
+    .mob +Prairie Wolf
+    .mob +Prairie Wolf Alpha
     .complete 756,2 --Cougar Claws (6)
-    .mob Prairie Wolf
-    .mob Prairie Wolf Alpha
-    .mob Flatland Cougar
+    .mob +Flatland Cougar
 step
     #optional
     #label Clawsx
@@ -976,19 +992,19 @@ step
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
 step
-#loop
-	.line Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
-	.goto Mulgore,34.08,43.71,25,0
-	.goto Mulgore,32.98,42.96,25,0
-	.goto Mulgore,31.72,43.08,25,0
-	.goto Mulgore,31.08,42.09,25,0
-	.goto Mulgore,31.12,40.87,25,0
-	.goto Mulgore,31.74,40.31,25,0
-	.goto Mulgore,32.44,41.17,25,0
-	.goto Mulgore,33.57,41.30,25,0
-	.goto Mulgore,33.82,40.26,25,0
-	.goto Mulgore,34.48,41.21,25,0
-	.goto Mulgore,34.50,42.29,25,0
+    #loop
+	.goto Mulgore,31.74,40.31,0
+	.goto Mulgore,34.08,43.71,50,0
+	.goto Mulgore,32.98,42.96,50,0
+	.goto Mulgore,31.72,43.08,50,0
+	.goto Mulgore,31.08,42.09,50,0
+	.goto Mulgore,31.12,40.87,50,0
+	.goto Mulgore,31.74,40.31,50,0
+	.goto Mulgore,32.44,41.17,50,0
+	.goto Mulgore,33.57,41.30,50,0
+	.goto Mulgore,33.82,40.26,50,0
+	.goto Mulgore,34.48,41.21,50,0
+	.goto Mulgore,34.50,42.29,50,0
     >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_Talons|r
     .complete 743,1 --Windfury Talon (8)
     .mob Windfury Wind Witch
@@ -1038,8 +1054,8 @@ step
     .accept 775 >>Accept Journey into Thunder Bluff
     .target Ancestral Spirit
 step
-#loop
-	.line Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
+    #loop
+	.goto Mulgore,59.85,25.62,0
 	.goto Mulgore,59.85,25.62,25,0
 	.goto Mulgore,61.14,22.93,25,0
 	.goto Mulgore,61.77,22.49,25,0
@@ -1066,50 +1082,50 @@ step
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
-#loop
-	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-	.goto Mulgore,59.52,23.36,25,0
-	.goto Mulgore,57.51,19.08,25,0
-	.goto Mulgore,55.21,18.67,25,0
-	.goto Mulgore,52.99,17.34,25,0
-	.goto Mulgore,51.00,18.40,25,0
-	.goto Mulgore,49.84,20.74,25,0
-	.goto Mulgore,49.82,23.69,25,0
-	.goto Mulgore,49.52,26.10,25,0
-	.goto Mulgore,49.72,28.14,25,0
-	.goto Mulgore,50.79,29.37,25,0
-	.goto Mulgore,52.24,30.07,25,0
-	.goto Mulgore,54.21,30.43,25,0
-	.goto Mulgore,56.15,30.35,25,0
-	.goto Mulgore,57.77,30.48,25,0
-	.goto Mulgore,58.79,28.52,25,0
-	.goto Mulgore,60.56,25.88,25,0
-	.goto Mulgore,59.52,23.36,25,0
+    #loop
+	.goto Mulgore,51.00,18.40,0
+	.goto Mulgore,59.52,23.36,60,0
+	.goto Mulgore,57.51,19.08,60,0
+	.goto Mulgore,55.21,18.67,60,0
+	.goto Mulgore,52.99,17.34,60,0
+	.goto Mulgore,51.00,18.40,60,0
+	.goto Mulgore,49.84,20.74,60,0
+	.goto Mulgore,49.82,23.69,60,0
+	.goto Mulgore,49.52,26.10,60,0
+	.goto Mulgore,49.72,28.14,60,0
+	.goto Mulgore,50.79,29.37,60,0
+	.goto Mulgore,52.24,30.07,60,0
+	.goto Mulgore,54.21,30.43,60,0
+	.goto Mulgore,56.15,30.35,60,0
+	.goto Mulgore,57.77,30.48,60,0
+	.goto Mulgore,58.79,28.52,60,0
+	.goto Mulgore,60.56,25.88,60,0
+	.goto Mulgore,59.52,23.36,60,0
 	>>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
     .mob Taloned Swoop
 step
-#loop
-	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-	.goto Mulgore,59.52,23.36,25,0
-	.goto Mulgore,57.51,19.08,25,0
-	.goto Mulgore,55.21,18.67,25,0
-	.goto Mulgore,52.99,17.34,25,0
-	.goto Mulgore,51.00,18.40,25,0
-	.goto Mulgore,49.84,20.74,25,0
-	.goto Mulgore,49.82,23.69,25,0
-	.goto Mulgore,49.52,26.10,25,0
-	.goto Mulgore,49.72,28.14,25,0
-	.goto Mulgore,50.79,29.37,25,0
-	.goto Mulgore,52.24,30.07,25,0
-	.goto Mulgore,54.21,30.43,25,0
-	.goto Mulgore,56.15,30.35,25,0
-	.goto Mulgore,57.77,30.48,25,0
-	.goto Mulgore,58.79,28.52,25,0
-	.goto Mulgore,60.56,25.88,25,0
-	.goto Mulgore,59.52,23.36,25,0
+    #loop
+	.goto Mulgore,50.79,29.37,0
+	.goto Mulgore,59.52,23.36,60,0
+	.goto Mulgore,57.51,19.08,60,0
+	.goto Mulgore,55.21,18.67,60,0
+	.goto Mulgore,52.99,17.34,60,0
+	.goto Mulgore,51.00,18.40,60,0
+	.goto Mulgore,49.84,20.74,60,0
+	.goto Mulgore,49.82,23.69,60,0
+	.goto Mulgore,49.52,26.10,60,0
+	.goto Mulgore,49.72,28.14,60,0
+	.goto Mulgore,50.79,29.37,60,0
+	.goto Mulgore,52.24,30.07,60,0
+	.goto Mulgore,54.21,30.43,60,0
+	.goto Mulgore,56.15,30.35,60,0
+	.goto Mulgore,57.77,30.48,60,0
+	.goto Mulgore,58.79,28.52,60,0
+	.goto Mulgore,60.56,25.88,60,0
+	.goto Mulgore,59.52,23.36,60,0
     >>|cRXP_WARN_Finish getting the items for Mazzranache|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
@@ -1117,95 +1133,91 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #optional
-#loop
-	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-	.goto Mulgore,59.52,23.36,25,0
-	.goto Mulgore,57.51,19.08,25,0
-	.goto Mulgore,55.21,18.67,25,0
-	.goto Mulgore,52.99,17.34,25,0
-	.goto Mulgore,51.00,18.40,25,0
-	.goto Mulgore,49.84,20.74,25,0
-	.goto Mulgore,49.82,23.69,25,0
-	.goto Mulgore,49.52,26.10,25,0
-	.goto Mulgore,49.72,28.14,25,0
-	.goto Mulgore,50.79,29.37,25,0
-	.goto Mulgore,52.24,30.07,25,0
-	.goto Mulgore,54.21,30.43,25,0
-	.goto Mulgore,56.15,30.35,25,0
-	.goto Mulgore,57.77,30.48,25,0
-	.goto Mulgore,58.79,28.52,25,0
-	.goto Mulgore,60.56,25.88,25,0
-	.goto Mulgore,59.52,23.36,25,0
+    #loop
+	.goto Mulgore,59.52,23.36,60,0
+	.goto Mulgore,57.51,19.08,60,0
+	.goto Mulgore,55.21,18.67,60,0
+	.goto Mulgore,52.99,17.34,60,0
+	.goto Mulgore,51.00,18.40,60,0
+	.goto Mulgore,49.84,20.74,60,0
+	.goto Mulgore,49.82,23.69,60,0
+	.goto Mulgore,49.52,26.10,60,0
+	.goto Mulgore,49.72,28.14,60,0
+	.goto Mulgore,50.79,29.37,60,0
+	.goto Mulgore,52.24,30.07,60,0
+	.goto Mulgore,54.21,30.43,60,0
+	.goto Mulgore,56.15,30.35,60,0
+	.goto Mulgore,57.77,30.48,60,0
+	.goto Mulgore,58.79,28.52,60,0
+	.goto Mulgore,60.56,25.88,60,0
+	.goto Mulgore,59.52,23.36,60,0
     .xp 9+4400 >> Grind to 3020+/6500xp
     .isQuestComplete 761
     .isQuestComplete 766
 step
     #optional
-#loop
-	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-	.goto Mulgore,59.52,23.36,25,0
-	.goto Mulgore,57.51,19.08,25,0
-	.goto Mulgore,55.21,18.67,25,0
-	.goto Mulgore,52.99,17.34,25,0
-	.goto Mulgore,51.00,18.40,25,0
-	.goto Mulgore,49.84,20.74,25,0
-	.goto Mulgore,49.82,23.69,25,0
-	.goto Mulgore,49.52,26.10,25,0
-	.goto Mulgore,49.72,28.14,25,0
-	.goto Mulgore,50.79,29.37,25,0
-	.goto Mulgore,52.24,30.07,25,0
-	.goto Mulgore,54.21,30.43,25,0
-	.goto Mulgore,56.15,30.35,25,0
-	.goto Mulgore,57.77,30.48,25,0
-	.goto Mulgore,58.79,28.52,25,0
-	.goto Mulgore,60.56,25.88,25,0
-	.goto Mulgore,59.52,23.36,25,0
+    #loop
+	.goto Mulgore,59.52,23.36,60,0
+	.goto Mulgore,57.51,19.08,60,0
+	.goto Mulgore,55.21,18.67,60,0
+	.goto Mulgore,52.99,17.34,60,0
+	.goto Mulgore,51.00,18.40,60,0
+	.goto Mulgore,49.84,20.74,60,0
+	.goto Mulgore,49.82,23.69,60,0
+	.goto Mulgore,49.52,26.10,60,0
+	.goto Mulgore,49.72,28.14,60,0
+	.goto Mulgore,50.79,29.37,60,0
+	.goto Mulgore,52.24,30.07,60,0
+	.goto Mulgore,54.21,30.43,60,0
+	.goto Mulgore,56.15,30.35,60,0
+	.goto Mulgore,57.77,30.48,60,0
+	.goto Mulgore,58.79,28.52,60,0
+	.goto Mulgore,60.56,25.88,60,0
+	.goto Mulgore,59.52,23.36,60,0
     .xp 9+4400 >> Grind to 3720+/6500xp
     .isQuestComplete 761
 step
     #optional
-#loop
-	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-	.goto Mulgore,59.52,23.36,25,0
-	.goto Mulgore,57.51,19.08,25,0
-	.goto Mulgore,55.21,18.67,25,0
-	.goto Mulgore,52.99,17.34,25,0
-	.goto Mulgore,51.00,18.40,25,0
-	.goto Mulgore,49.84,20.74,25,0
-	.goto Mulgore,49.82,23.69,25,0
-	.goto Mulgore,49.52,26.10,25,0
-	.goto Mulgore,49.72,28.14,25,0
-	.goto Mulgore,50.79,29.37,25,0
-	.goto Mulgore,52.24,30.07,25,0
-	.goto Mulgore,54.21,30.43,25,0
-	.goto Mulgore,56.15,30.35,25,0
-	.goto Mulgore,57.77,30.48,25,0
-	.goto Mulgore,58.79,28.52,25,0
-	.goto Mulgore,60.56,25.88,25,0
-	.goto Mulgore,59.52,23.36,25,0
+    #loop
+	.goto Mulgore,59.52,23.36,60,0
+	.goto Mulgore,57.51,19.08,60,0
+	.goto Mulgore,55.21,18.67,60,0
+	.goto Mulgore,52.99,17.34,60,0
+	.goto Mulgore,51.00,18.40,60,0
+	.goto Mulgore,49.84,20.74,60,0
+	.goto Mulgore,49.82,23.69,60,0
+	.goto Mulgore,49.52,26.10,60,0
+	.goto Mulgore,49.72,28.14,60,0
+	.goto Mulgore,50.79,29.37,60,0
+	.goto Mulgore,52.24,30.07,60,0
+	.goto Mulgore,54.21,30.43,60,0
+	.goto Mulgore,56.15,30.35,60,0
+	.goto Mulgore,57.77,30.48,60,0
+	.goto Mulgore,58.79,28.52,60,0
+	.goto Mulgore,60.56,25.88,60,0
+	.goto Mulgore,59.52,23.36,60,0
     .xp 9+4400 >> Grind to 3700+/6500xp
     .isQuestComplete 766
 step
     #optional
-#loop
-	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-	.goto Mulgore,59.52,23.36,25,0
-	.goto Mulgore,57.51,19.08,25,0
-	.goto Mulgore,55.21,18.67,25,0
-	.goto Mulgore,52.99,17.34,25,0
-	.goto Mulgore,51.00,18.40,25,0
-	.goto Mulgore,49.84,20.74,25,0
-	.goto Mulgore,49.82,23.69,25,0
-	.goto Mulgore,49.52,26.10,25,0
-	.goto Mulgore,49.72,28.14,25,0
-	.goto Mulgore,50.79,29.37,25,0
-	.goto Mulgore,52.24,30.07,25,0
-	.goto Mulgore,54.21,30.43,25,0
-	.goto Mulgore,56.15,30.35,25,0
-	.goto Mulgore,57.77,30.48,25,0
-	.goto Mulgore,58.79,28.52,25,0
-	.goto Mulgore,60.56,25.88,25,0
-	.goto Mulgore,59.52,23.36,25,0
+    #loop
+	.goto Mulgore,59.52,23.36,60,0
+	.goto Mulgore,57.51,19.08,60,0
+	.goto Mulgore,55.21,18.67,60,0
+	.goto Mulgore,52.99,17.34,60,0
+	.goto Mulgore,51.00,18.40,60,0
+	.goto Mulgore,49.84,20.74,60,0
+	.goto Mulgore,49.82,23.69,60,0
+	.goto Mulgore,49.52,26.10,60,0
+	.goto Mulgore,49.72,28.14,60,0
+	.goto Mulgore,50.79,29.37,60,0
+	.goto Mulgore,52.24,30.07,60,0
+	.goto Mulgore,54.21,30.43,60,0
+	.goto Mulgore,56.15,30.35,60,0
+	.goto Mulgore,57.77,30.48,60,0
+	.goto Mulgore,58.79,28.52,60,0
+	.goto Mulgore,60.56,25.88,60,0
+	.goto Mulgore,59.52,23.36,60,0
     .xp 9+4400 >> Grind to 4400+/6500xp
 step << !Druid
     #completewith Bloodhooffinalturnins1
@@ -1285,36 +1297,38 @@ step
 step << Warrior
     .goto Mulgore,49.52,60.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
-    .train 6546 >> Train your class spells
+    .train 6546 >>Train your class spells
     .target Krang Stonehoof
 step << Shaman
     .goto Mulgore,48.38,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narm|r
     .accept 2984 >>Accept Call of Fire
-    .trainer >> Train your class spells
+    .trainer >>Train your class spells
     .target Narm Skychaser
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .accept 6061 >>Accept Taming the Beast
-    .trainer >> Train your class spells
+    .trainer >>Train your class spells
     .target Yaw Sharpmane
 step << Druid
     .goto Mulgore,48.48,59.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
-    .trainer >> Train your class spells
-    .accept 5928 >> Accept Heeding the Call
+    .trainer >>Train your class spells
+    .accept 5928 >>Accept Heeding the Call
     .target Gennia Runetotem
     .isQuestAvailable 5928
 step << Druid
     .goto Mulgore,48.48,59.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
-    .train 8924 >> Train your class spells
+    .train 8924 >>Train your class spells
     .target Gennia Runetotem
 step << Hunter
+    #loop
+    .goto Mulgore,39.38,57.43,0
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
-    .goto Mulgore,39.38,57.43
+    .goto Mulgore,39.38,57.43,50,0
     .use 15914 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Adult Plainstrider|r |cRXP_WARN_at max range|r
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
@@ -1325,10 +1339,12 @@ step << Hunter
     .accept 6087 >>Accept Taming the Beast
     .target Yaw Sharpmane
 step << Hunter
+    #loop
+    .goto Mulgore,49.49,42.27,0
     .goto Mulgore,47.18,50.15,50,0
     .goto Mulgore,46.65,47.22,50,0
     .goto Mulgore,48.18,45.27,50,0
-    .goto Mulgore,49.49,42.27
+    .goto Mulgore,49.49,42.27,50,0
     .use 15915 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Prairie Stalker|r |cRXP_WARN_at max range|r
     .complete 6087,1 --Tame a Prairie Stalker (1)
     .mob Prairie Stalker
@@ -1339,10 +1355,11 @@ step << Hunter
     .accept 6088 >>Accept Taming the Beast
     .target Yaw Sharpmane
 step << Hunter
+    #loop
+    .goto Mulgore,47.25,41.33,0
     .goto Mulgore,47.25,41.33,80,0
     .goto Mulgore,45.41,40.29,80,0
     .goto Mulgore,51.57,44.40,80,0
-    .goto Mulgore,47.25,41.33
     .use 15916 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Swoop|r |cRXP_WARN_at max range and re-cast it immediately if they knock you down|r
     >>|cRXP_WARN_If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back|r
     .complete 6088,1 --Tame a Swoop (1)
@@ -1364,12 +1381,14 @@ step
     .money <0.05
     .target Jhawna Oatwind
 step
+    #loop
+    .goto Mulgore,55.14,60.65,0
     .goto Mulgore,51.50,59.23,50,0
     .goto Mulgore,53.00,60.24,50,0
     .goto Mulgore,55.14,60.65,50,0
     .goto Mulgore,57.47,61.26,50,0
     .goto Mulgore,59.65,62.40,50,0
-    .goto Mulgore,55.14,60.65
+    .goto Mulgore,55.14,60.65,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
@@ -1379,12 +1398,14 @@ step
 	.unitscan Morin Cloudstalker
     .group
 step
+    #loop
+    .goto Mulgore,55.14,60.65,0
     .goto Mulgore,51.50,59.23,50,0
     .goto Mulgore,53.00,60.24,50,0
     .goto Mulgore,55.14,60.65,50,0
     .goto Mulgore,57.47,61.26,50,0
     .goto Mulgore,59.65,62.40,50,0
-    .goto Mulgore,55.14,60.65
+    .goto Mulgore,55.14,60.65,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
@@ -1398,9 +1419,9 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
     .complete 764,2 --Venture Co. Supervisor (6)
-    .mob Venture Co. Worker
-    .mob Venture Co. Supervisor
+    .mob +Venture Co. Supervisor
     .group 2
 step
     #label Fizsprocket
@@ -1410,8 +1431,8 @@ step
     .mob Supervisor Fizsprocket
     .group 2
 step
-#loop
-	.line Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
+    #loop
+	.goto Mulgore,61.35,47.55,0
 	.goto Mulgore,61.35,47.55,25,0
 	.goto Mulgore,60.10,47.84,25,0
 	.goto Mulgore,59.50,48.21,25,0
@@ -1419,20 +1440,21 @@ step
 	.goto Mulgore,60.14,49.14,25,0
 	.goto Mulgore,62.01,48.74,25,0
 	.goto Mulgore,61.89,47.84,25,0
-	.goto Mulgore,61.35,47.55,25,0
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
     .complete 764,2 --Venture Co. Supervisor (6)
-    .mob Venture Co. Worker
-    .mob Venture Co. Supervisor
+    .mob +Venture Co. Supervisor
     .group 2
 step
-    .goto Mulgore,59.65,62.40,50,0
-    .goto Mulgore,57.47,61.26,50,0
-    .goto Mulgore,55.14,60.65,50,0
-    .goto Mulgore,53.00,60.24,50,0
+    #loop
+    .goto Mulgore,55.14,60.65,0
     .goto Mulgore,51.50,59.23,50,0
-    .goto Mulgore,55.14,60.65
+    .goto Mulgore,53.00,60.24,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .goto Mulgore,57.47,61.26,50,0
+    .goto Mulgore,59.65,62.40,50,0
+    .goto Mulgore,55.14,60.65,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
@@ -1458,27 +1480,28 @@ step << Tauren
     .accept 854 >>Accept Journey to the Crossroads
     .target Kirge Sternhorn
 step
+    #completewith next
     .goto The Barrens,52.07,31.96,120 >>Travel north toward The Crossroads
     >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may agro high level mobs|r
  step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Gazrog|r |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Jahan|r
     .accept 870 >>Accept The Forgotten Pools
+    .target +Tonga Runetotem
     .goto The Barrens,52.26,31.93
     .accept 844 >>Accept Plainstrider Menace
+    .target +Sergra Darkthorn
     .goto The Barrens,52.24,31.00
     .accept 869 >>Accept Raptor Thieves
+    .target +Gazrog
     .goto The Barrens,51.93,30.32
     .turnin 854 >>Turn in Journey to the Crossroads << Tauren
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
+    .target +Thork
     .goto The Barrens,51.50,30.87
     .accept 6361 >>Accept A Bundle of Hides
+    .target +Jahan Hawkwing
     .goto The Barrens,51.21,29.05
-    .target Tonga Runetotem
-    .target Sergra Darkthorn
-    .target Gazrog
-    .target Thork
-    .target Jahan Hawkwing
 step
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
@@ -1740,9 +1763,11 @@ step << Shaman
     .zone The Barrens >> Travel back to The Barrens
     .zoneskip The Barrens
 step << Shaman
+    #loop
+    .goto The Barrens,53.57,25.51,0
     .goto The Barrens,54.97,25.23,50,0
     .goto The Barrens,54.2,24.60,50,0
-    .goto The Barrens,53.57,25.51
+    .goto The Barrens,53.57,25.51,50,0
     >>Kill a |cRXP_ENEMY_Razormane Water Seeker|r or |cRXP_ENEMY_Razormane Thornweaver|r. Loot them for a |cRXP_LOOT_Fire Tar|r
     .complete 1525,1 --Fire Tar (1)
     .mob Razormane Water Seeker
@@ -1806,10 +1831,10 @@ step
     #completewith AgedEnvelope
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
 step
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -1830,28 +1855,49 @@ step
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
 step
+    #loop
+    .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
     .goto Durotar,57.36,56.59,30,0
     .goto Durotar,58.10,55.52,30,0
     .goto Durotar,58.54,53.68,30,0
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
-    .goto Durotar,58.99,58.30
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
+    .goto Durotar,58.99,58.30,30,0
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .complete 784,2 --Kul Tiras Marine (8)
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
+    .itemcount 4870,<8 --Canvas Scraps (<8)
 step
+    #loop
+    .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
     .goto Durotar,57.36,56.59,30,0
     .goto Durotar,58.10,55.52,30,0
     .goto Durotar,58.54,53.68,30,0
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
-    .goto Durotar,58.99,58.30
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r and Loot them for their |cRXP_LOOT_Scraps|r
+    .goto Durotar,58.99,58.30,30,0
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
+    .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
+    .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
+step
+    #label ScrapsFinished
+    #loop
+    .goto Durotar,58.99,58.30,0
+    .goto Durotar,57.65,58.52,30,0
+    .goto Durotar,57.36,56.59,30,0
+    .goto Durotar,58.10,55.52,30,0
+    .goto Durotar,58.54,53.68,30,0
+    .goto Durotar,56.54,54.52,30,0
+    .goto Durotar,56.37,58.35,30,0
+    .goto Durotar,58.99,58.30,30,0
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
@@ -1867,31 +1913,35 @@ step
     #label SenjinPickups
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Accept Practical Prey
+    .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
     .accept 818 >>Accept A Solvent Spirit
+    .target +Master Vornal
     .goto Durotar,55.94,74.40
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
+    .target +Master Gadrin
     .goto Durotar,55.94,74.72
-    .target Master Vornal
-    .target Master Gadrin
-    .target Vel'rin Fang
 step
     #completewith TaillasherEggs
-    >>Kill every |cRXP_ENEMY_Crawler|r and |cRXP_ENEMY_Makrura|r you see. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r. This does not have to be finished now
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
+    #loop
+    #label TaillasherEggs
+    .goto Durotar,59.49,83.77,0
     .goto Durotar,60.28,80.02,60,0
     .goto Durotar,60.28,82.74,60,0
     .goto Durotar,59.62,84.76,60,0
@@ -1902,8 +1952,7 @@ step
     .goto Durotar,62.69,97.21,60,0
     .goto Durotar,63.00,94.40,60,0
     .goto Durotar,59.85,89.56,60,0
-    .goto Durotar,59.49,83.77
-    #label TaillasherEggs
+    .goto Durotar,59.49,83.77,60,0
     >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground. They're usually guarded by a |cRXP_ENEMY_Bloodtalon Taillasher|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
@@ -1912,21 +1961,22 @@ step
     .goto Durotar,67.06,87.21,120 >>Swim to the main island
 step
     #completewith MinshinasSkull
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r.
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
@@ -1955,35 +2005,37 @@ step
     .mob Durotar Tiger
 step
     #label Fur
-#loop
-	.line Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88.76
-	.goto Durotar,67.23,88.76,25,0
-	.goto Durotar,66.52,87.74,25,0
-	.goto Durotar,65.94,86.72,25,0
-	.goto Durotar,65.90,84.04,25,0
-	.goto Durotar,65.88,82.85,25,0
-	.goto Durotar,67.38,82.61,25,0
-	.goto Durotar,68.42,82.43,25,0
-	.goto Durotar,68.50,84.32,25,0
-	.goto Durotar,68.47,86.77,25,0
-	.goto Durotar,67.23,88.76,25,0
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r.
-    >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
+    #loop
+    .goto Durotar,67.23,88.76,0
+    .goto Durotar,67.23,88.76,40,0
+    .goto Durotar,66.52,87.74,40,0
+    .goto Durotar,65.94,86.72,40,0
+    .goto Durotar,65.90,84.04,40,0
+    .goto Durotar,65.88,82.85,40,0
+    .goto Durotar,67.38,82.61,40,0
+    .goto Durotar,68.42,82.43,40,0
+    .goto Durotar,68.50,84.32,40,0
+    .goto Durotar,68.47,86.77,40,0
+    .goto Durotar,67.23,88.00,40,0
+    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     >>|cRXP_WARN_Go to the southern islands if you're not almost done with this quest at this point. Many|r |cRXP_ENEMY_Crawlers|r |cRXP_WARN_and|r |cRXP_ENEMY_Makruras|r |cRXP_WARN_can be found there|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
+    #loop
+    .goto Durotar,59.79,83.44,0
     .goto Durotar,65.27,87.86,50,0
     .goto Durotar,64.72,88.53,50,0
     .goto Durotar,64.70,84.89,50,0
@@ -1999,23 +2051,26 @@ step
     .goto Durotar,61.48,91.37,50,0
     .goto Durotar,60.37,91.36,50,0
     .goto Durotar,59.04,90.51,50,0
-    .goto Durotar,59.79,83.44
+    .goto Durotar,59.79,83.44,50,0
     >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
+    #loop
+    .goto Durotar,59.64,73.84,0
     .goto Durotar,59.64,73.84,60,0
     .goto Durotar,58.11,77.30,60,0
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    .goto Durotar,59.64,73.84
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #completewith Zalazaneturnin
     .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
@@ -2031,19 +2086,20 @@ step
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826,2 >>Turn in Zalazane << Shaman
     .turnin 826 >>Turn in Zalazane << !Shaman
+    .target +Master Gadrin
     .goto Durotar,55.95,74.73
     .turnin 818 >>Turn in A Solvent Spirit
+    .target +Master Vornal
     .goto Durotar,55.95,74.39
     .turnin 817 >>Turn in Practical Prey
+    .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
-    .goto Durotar,54.1,76.6
-    .target Master Gadrin
-    .target Master Vornal
-    .target Vel'rin Fang
 step
     #completewith Stolensupplies
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
 step
+    #loop
+    .goto Durotar,49.22,48.96,0
     .goto Durotar,50.21,50.78,30,0
     .goto Durotar,50.18,49.23,30,0
     .goto Durotar,49.48,49.14,30,0
@@ -2053,59 +2109,58 @@ step
     .goto Durotar,47.58,49.62,30,0
     .goto Durotar,47.06,49.53,30,0
     .goto Durotar,46.90,48.11,30,0
-    .goto Durotar,49.22,48.96
+    .goto Durotar,49.22,48.96,30,0
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
     .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .mob +Razormane Scout
 step
     #label Encroachment
-#loop
-	.line Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
-	.goto Durotar,44.45,39.74,25,0
-	.goto Durotar,44.49,37.47,25,0
-	.goto Durotar,43.30,37.32,25,0
-	.goto Durotar,41.70,37.09,25,0
-	.goto Durotar,41.64,38.27,25,0
-	.goto Durotar,41.94,40.46,25,0
-	.goto Durotar,43.30,40.40,25,0
-	.goto Durotar,44.45,39.74,25,0
+    #loop
+	.goto Durotar,44.45,39.74,0
+	.goto Durotar,44.45,39.74,50,0
+	.goto Durotar,44.49,37.47,50,0
+	.goto Durotar,43.30,37.32,50,0
+	.goto Durotar,41.70,37.09,50,0
+	.goto Durotar,41.64,38.27,50,0
+	.goto Durotar,41.94,40.46,50,0
+	.goto Durotar,43.30,40.40,50,0
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
-    .mob Razormane Dustrunner
-    .mob Razormane Battleguard
+    .mob +Razormane Battleguard
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
+    .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
+    .target +Orgnil Soulscar
     .goto Durotar,52.25,43.18
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 837 >>Turn in Encroachment
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 831 >>Accept The Admiral's Orders
+    .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .target Cook Torka
-    .target Orgnil Soulscar
-    .target Gar'Thok
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
+    .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 823 >>Turn in Report to Orgnil
+    .target +Orgnil Soulscar
     .goto Durotar,52.25,43.18
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 837 >>Turn in Encroachment
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 831 >>Accept The Admiral's Orders
+    .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .target Cook Torka
-    .target Orgnil Soulscar
-    .target Gar'Thok
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Innkeepr Grosk|r
@@ -2115,7 +2170,7 @@ step
     .goto Durotar,54.39,42.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jark|r
     >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
-    .collect 4496,1,818,1 --Small Brown Pouch (1)
+    .collect 4496,1,835,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
 step << Warrior
@@ -2171,6 +2226,8 @@ step
     .accept 834 >>Accept Winds in the Desert
     .target Rezlak
 step
+    #loop
+    .goto Durotar,49.70,21.90,0
     .goto Durotar,49.70,21.90,40,0
     .goto Durotar,49.70,24.33,40,0
     .goto Durotar,50.13,25.70,40,0
@@ -2182,7 +2239,6 @@ step
     .goto Durotar,47.35,33.40,40,0
     .goto Durotar,48.49,32.01,40,0
     .goto Durotar,47.19,30.87,40,0
-    .goto Durotar,49.70,21.90
     >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
 step
@@ -2195,19 +2251,21 @@ step
     #completewith next
     .goto Durotar,53.41,27.81,15 >> Travel through the cave
 step
+    #loop
+    .goto Durotar,53.98,23.70,0
     .goto Durotar,54.02,27.23,40,0
     .goto Durotar,52.82,24.27,40,0
     .goto Durotar,51.85,23.95,40,0
     .goto Durotar,54.01,23.63,40,0
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
-    .goto Durotar,53.98,23.70
+    .goto Durotar,53.98,23.70,40,0
     >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r
     >>|cRXP_WARN_These mobs flee. Be careful not to double pull|r
     .complete 835,1 --Dustwind Savage (12)
+    .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
-    .mob Dustwind Savage
-    .mob Dustwind Storm Witch
+    .mob +Dustwind Storm Witch
 step << Tauren Hunter
     #completewith next
     +|cRXP_WARN_Pick the|r |T135493:0|t[Hickory Shortbow] |cRXP_WARN_as your quest reward and save it. You will get Bow training in Orgrimmar|r
@@ -2226,7 +2284,7 @@ step
     #completewith next
     .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge << !Hunter !Warlock
     .cast 2641 >>|cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
-    >>|cRXP_WARN_Dismiss your imp and then jump into Thunder Ridge|r << Warlock
+    +|cRXP_WARN_Dismiss your imp and then jump into Thunder Ridge|r << Warlock
     .group
 step
     .goto Durotar,42.13,26.67
@@ -2353,13 +2411,15 @@ step
     .isQuestTurnedIn 806
     .group
 step << Shaman
+    #loop
+    .goto Durotar,51.90,25.70,0
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
     .goto Durotar,53.05,27.87,12,0
     .goto Durotar,53.14,27.24,12,0
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
-    .goto Durotar,51.90,25.70
+    .goto Durotar,51.90,25.70,12,0
     >>Kill |cRXP_ENEMY_Thugs|r and |cRXP_ENEMY_Neophytes|r. Loot them for their |cRXP_LOOT_Collars|r
     >>Kill |cRXP_ENEMY_Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
     .complete 827,1 --Searing Collar (6)
@@ -2369,15 +2429,17 @@ step << Shaman
     .mob Burning Blade Cultist
     .isQuestTurnedIn 806
     .group
-step
+step << !Shaman
     #label Collars1
+    #loop
+    .goto Durotar,51.90,25.70,0
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
     .goto Durotar,53.05,27.87,12,0
     .goto Durotar,53.14,27.24,12,0
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
-    .goto Durotar,52.70,27.97
+    .goto Durotar,51.90,25.70,12,0
     >>Kill |cRXP_ENEMY_ Burning Blade Thugs|r, |cRXP_ENEMY_Neophytes|r and |cRXP_ENEMY_Cultists|r. Loot them for their |cRXP_LOOT_Collars|r
     .complete 827,1 --Searing Collar (6)
     .mob Burning Blade Thug
@@ -2386,13 +2448,15 @@ step
     .isQuestTurnedIn 806
     .group
 step << Shaman
+    #loop
+    .goto Durotar,51.90,25.70,0
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
     .goto Durotar,53.05,27.87,12,0
     .goto Durotar,53.14,27.24,12,0
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
-    .goto Durotar,51.90,25.70
+    .goto Durotar,51.90,25.70,12,0
     >>Kill |cRXP_ENEMY_Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
@@ -2535,6 +2599,8 @@ step
     .zoneskip Durotar
 step
     #label FindingAntitode
+    #loop
+    .goto Durotar,38.89,16.91,0
     .goto Durotar,42.47,19.99,50,0
     .goto Durotar,41.07,19.85,50,0
     .goto Durotar,40.21,17.21,50,0
@@ -2544,7 +2610,6 @@ step
     .goto Durotar,36.91,25.63,50,0
     .goto Durotar,36.64,28.18,50,0
     .goto Durotar,36.40,30.95,50,0
-    .goto Durotar,38.89,16.91
     >>Kill |cRXP_ENEMY_Venomtail Scorpids|r. Loot them for their |cRXP_LOOT_Poison Sacs|r
     .complete 813,1 --Venomtail Poison Sac (4)
     .mob Venomtail Scorpid
@@ -2707,11 +2772,11 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
+    .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
+    .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
-    .mob Razormane Water Seeker
-    .mob Razormane Thornweaver
-    .mob Razormane Hunter
+    .mob +Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
@@ -2719,27 +2784,28 @@ step
     .accept 819 >> Accept Chen's Empty Keg
 step
     #label DisruptTheAttacks
-#loop
-	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
-	.goto The Barrens,53.63,24.50,25,0
-	.goto The Barrens,54.26,24.64,25,0
-	.goto The Barrens,54.81,25.19,25,0
-	.goto The Barrens,55.50,25.61,25,0
-	.goto The Barrens,55.86,26.30,25,0
-	.goto The Barrens,55.83,27.15,25,0
-	.goto The Barrens,55.41,27.41,25,0
-	.goto The Barrens,54.50,26.97,25,0
-	.goto The Barrens,54.05,26.11,25,0
-	.goto The Barrens,53.51,25.24,25,0
-	.goto The Barrens,53.63,24.50,25,0
+    #loop
+	.goto The Barrens,53.63,24.50,0
+	.goto The Barrens,53.63,24.50,50,0
+	.goto The Barrens,54.26,24.64,50,0
+	.goto The Barrens,54.81,25.19,50,0
+	.goto The Barrens,55.50,25.61,50,0
+	.goto The Barrens,55.86,26.30,50,0
+	.goto The Barrens,55.83,27.15,50,0
+	.goto The Barrens,55.41,27.41,50,0
+	.goto The Barrens,54.50,26.97,50,0
+	.goto The Barrens,54.05,26.11,50,0
+	.goto The Barrens,53.51,25.24,50,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
+    .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
+    .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
-    .mob Razormane Water Seeker
-    .mob Razormane Thornweaver
-    .mob Razormane Hunter
+    .mob +Razormane Hunter
 step
+    #loop
+    .goto The Barrens,53.71,29.19,0
     .goto The Barrens,53.36,26.28,80,0
     .goto The Barrens,53.23,28.41,80,0
     .goto The Barrens,53.57,29.58,80,0
@@ -2749,7 +2815,7 @@ step
     .goto The Barrens,50.05,29.77,80,0
     .goto The Barrens,50.93,27.72,80,0
     .goto The Barrens,52.83,27.91,80,0
-    .goto The Barrens,53.71,29.19
+    .goto The Barrens,53.71,29.19,80,0
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Beaks|r
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
@@ -2759,12 +2825,12 @@ step << Tauren
     .turnin 844 >>Turn in Plainstrider Menace
     .turnin 842 >>Turn in Crossroads Conscription
     .accept 845 >>Accept The Zhevra
+    .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
     .turnin 871 >>Turn in The Disruption Ends
     .accept 872 >>Accept Disrupt the Attacks
+    .target +Thork
     .goto The Barrens,51.50,30.87
-    .target Sergra Darkthorn
-    .target Thork
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
@@ -2945,6 +3011,8 @@ step << Warrior
     .accept 1820 >> Accept Speak with Coleman
     .target Deathguard Dillinger
 step
+    #loop
+    .goto Tirisfal Glades,43.58,61.39,0
     .goto Tirisfal Glades,56.77,59.83,60,0
     .goto Tirisfal Glades,57.41,61.92,60,0
     .goto Tirisfal Glades,55.03,63.17,60,0
@@ -2954,7 +3022,7 @@ step
     .goto Tirisfal Glades,47.92,60.42,60,0
     .goto Tirisfal Glades,46.61,59.75,60,0
     .goto Tirisfal Glades,44.02,60.11,60,0
-    .goto Tirisfal Glades,43.58,61.39
+    .goto Tirisfal Glades,43.58,61.39,60,0
     >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for their |cRXP_LOOT_Blood|r
     >>|cRXP_WARN_You will receive|r |T133849:0|t[Slumber Sand] |cRXP_WARN_from the follow-up of this quest, you can skip it if you want|r
     .complete 367,1 --Darkhound Blood (5)
@@ -2985,6 +3053,8 @@ step
     .mob Maggot Eye
     .isOnQuest 368
 step
+    #loop
+    .goto Tirisfal Glades,59.54,27.86,0
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -2993,7 +3063,6 @@ step
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86
     >>Kill |cRXP_ENEMY_Murlocs|r at the beach. Loot them for their |cRXP_LOOT_Scales|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
@@ -3095,7 +3164,5 @@ step
     #label Entersilverpine
     .zone Silverpine Forest >> Travel to Silverpine Forest
     .zoneskip Silverpine Forest
-
-
     ]])
 

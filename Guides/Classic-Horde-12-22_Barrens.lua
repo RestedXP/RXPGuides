@@ -259,6 +259,7 @@ step
     #requires FireTar2<<Shaman
     #label DisruptTheAttacks
     #loop
+	.goto The Barrens,53.63,24.50,0
 	.goto The Barrens,53.63,24.50,50,0
 	.goto The Barrens,54.26,24.64,50,0
 	.goto The Barrens,54.81,25.19,50,0
@@ -269,7 +270,6 @@ step
 	.goto The Barrens,54.50,26.97,50,0
 	.goto The Barrens,54.05,26.11,50,0
 	.goto The Barrens,53.51,25.24,50,0
-	.goto The Barrens,53.63,24.50,50,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
     .mob +Razormane Water Seeker
