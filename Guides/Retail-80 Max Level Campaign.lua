@@ -3227,182 +3227,386 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 2339,42.58,27.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r |cRXP_WARN_in Dornogal|r.
     .accept 84223 >>Accept Survivor's Guilt
     .target Archmage Khadgar
 step
+    #completewith next
+    #title Leave House
+    .goto 2339,42.74,30.57,15 >>Leave the House
+step
     .goto 2248,29.58,58.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r.
     .turnin 84223 >>Turn in Survivor's Guilt
     .target Archmage Aethas Sunreaver
     .accept 83031 >>Accept The Hardest Part
+step
+    .goto 2248,29.59,58.14
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Letter|r.
     .complete 83031,1 --1/1 Letter to the survivors written
+    .skipgossipid 124241
+    .skipgossipid 124239
+    .skipgossipid 124242
 step
     .goto 2248,29.57,58.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r.
     .turnin 83031 >>Turn in The Hardest Part
     .target Archmage Aethas Sunreaver
     .accept 83499 >>Accept Arcane Wasteland
 step
-    .goto 2248,31.31,54.17
+    #completewith Frostfire Essence
+    >>Kill |cRXP_ENEMY_Lingering Spark|r, |cRXP_ENEMY_Mana Fragment|r and |cRXP_ENEMY_Shard of Dalaran|r. Loot them for |T1328542:0|t[|cRXP_LOOT_Arcane Dust|r].
+    *|cRXP_WARN_You should kill most of the ones you encounter|r.
     .complete 83499,1 --10/10 Arcane Dust collected
+    .mob Lingering Spark
+    .mob Mana Fragment
+    .mob Shard of Dalaran
 step
-    .goto 2248,29.93,52.54
-    .complete 82470,1 --1/1 Flow of Magic fixed
+    .goto 2248,29.89,54.29
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Radiant Prism Crystal|r.
+    .complete 83499,2,1 --4/4 Radiant Prism Crystals collected
 step
-    .goto 2248,29.93,52.54
-    .turnin 82470 >>Turn in *undefined*
-
+    .goto 2248,29.93,53.74
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Radiant Prism Crystal|r.
+    .complete 83499,2,2 --4/4 Radiant Prism Crystals collected
 step
-    .goto 2248,30.33,52.29
-    .complete 83499,2 --4/4 Radiant Prism Crystals collected
+    .goto 2248,30.64,52.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Radiant Prism Crystal|r.
+    .complete 83499,2,3 --4/4 Radiant Prism Crystals collected
 step
+    .goto 2248,31.28,52.29
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Radiant Prism Crystal|r.
+    .complete 83499,2,4 --4/4 Radiant Prism Crystals collected
+step
+    #label Frostfire Essence
     .goto 2248,28.87,51.88
+    >>Kill |cRXP_ENEMY_Frostfire Elemental|r. Loot them for |T429384:0|t[|cRXP_LOOT_Frostfire Essence|r].
     .complete 83499,3 --1/1 Frostfire Essence collected
+    .mob Frostfire Elemental
+step
+    #loop
+    .goto 2248,29.98,53.81,40,0
+    .goto 2248,31.02,55.42,40,0
+    .goto 2248,31.62,53.89,40,0
+    .goto 2248,30.96,52.24,40,0
+    >>Kill |cRXP_ENEMY_Lingering Spark|r, |cRXP_ENEMY_Mana Fragment|r and |cRXP_ENEMY_Shard of Dalaran|r. Loot them for |T132854:0|t[|cRXP_LOOT_Arcane Dust|r].
+    *|cRXP_WARN_You should kill most of the ones you encounter|r.
+    .complete 83499,1 --10/10 Arcane Dust collected
+    .mob Lingering Spark
+    .mob Mana Fragment
+    .mob Shard of Dalaran
 step
     .goto 2248,29.57,58.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r.
     .turnin 83499 >>Turn in Arcane Wasteland
     .target Archmage Aethas Sunreaver
     .accept 83502 >>Accept Lessons in Defensive Magic
 step
     .goto 2248,29.37,58.08
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Arcane Ward|r.
     .complete 83502,1 --1/1 First Ward activated
 step
     .goto 2248,29.61,57.50
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Arcane Ward|r.
     .complete 83502,2 --1/1 Second Ward activated
 step
     .goto 2248,29.99,57.92
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Arcane Ward|r.
     .complete 83502,3 --1/1 Third Ward activated
 step
     .goto 2248,29.76,58.52
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Arcane Ward|r.
     .complete 83502,4 --1/1 Fourth Ward activated
 step
-    .goto 2248,29.79,58.26
+    .goto 2248,29.74,57.93
+    >>Use your |cRXP_WARN_ExtraActionButton|r.
     .complete 83502,5 --1/1 Spell empowered
+    .timer 6,RP
 step
     .goto 2248,29.74,57.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r.
     .turnin 83502 >>Turn in Lessons in Defensive Magic
     .target Archmage Aethas Sunreaver
     .accept 83539 >>Accept Feeling Blue
+    .timer 13,RP
 step
     .goto 2248,29.62,57.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .complete 83539,1 --1/1 Speak with Kalecgos
+    .skipgossipid 123141
     .target Kalecgos
+step
+    .goto 2248,29.65,57.59
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bag of Helpful Goods|r.
     .complete 83539,2 --1/1 Bag of Helpful Goods collected
+step
+    #completewith next
+    .cast 456663 >>Use your |cRXP_WARN_ExtraActionButton|r.
+    .timer 5,RP
+step
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 83539,3 --1/1 Bag of Helpful Goods searched
 step
-    .goto 2248,29.73,58.31
-    .complete 83539,4 --6/6 Items placed in the outpost
+    .goto 2248,29.5,57.79
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mailbox|r.
+    .complete 83539,4,1 --6/6 Items placed in the outpost
+step
+    .goto 2248,29.46,57.99
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tent|r.
+    .complete 83539,4,2 --6/6 Items placed in the outpost
+step
+    .goto 2248,29.49,58.12
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cabinet Display|r.
+    .complete 83539,4,3 --6/6 Items placed in the outpost
+step
+    .goto 2248,29.59,58.17
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Enchanted Display|r.
+    .complete 83539,4,4 --6/6 Items placed in the outpost
+step
+    .goto 2248,29.74,58.33
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flying Carpet|r.
+    .complete 83539,4,5 --6/6 Items placed in the outpost
+    .skipgossipid 123144
+step
+    .goto 2248,29.71,58
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r.
+    .complete 83539,4,6 --6/6 Items placed in the outpost 
 step
     .goto 2248,29.78,57.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83539 >>Turn in Feeling Blue
     .target Kalecgos
     .accept 83553 >>Accept Magic-stealing Kobolds
 step
     .goto 2248,61.72,41.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83553 >>Turn in Magic-stealing Kobolds
-
     .accept 83554 >>Accept Trinkets, Curios and Other Powerful Objects
+    .target Kalecgos
 step
     .goto 2248,62.14,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kobold Thief|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kobold Thief|r.
     .accept 83555 >>Accept Mysterious Necklace
     .target Kobold Thief
 step
-    .goto 2248,62.80,41.10
+    #completewith Arcane Manuscripts
+    >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for |T1379168:0|t[|cRXP_LOOT_Kirin Tor Artifacts|r].
     .complete 83554,1 --15/15 Kirin Tor Artifacts collected
+    .mob Candlelit Big-Boomer
+    .mob Candlelit Ouchpatcher
+    .mob Candlelit Hexthrower
 step
-    .goto 2248,63.25,45.22
-    .complete 83554,2 --5/5 Arcane Manuscripts found
+    .goto 2248,62.17,40.61
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bag of Stolen Goods|r.
+    .complete 83554,2,1 --5/5 Arcane Manuscripts found
+step
+    .goto 2248,64.31,41.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bag of Stolen Goods|r.
+    .complete 83554,2,2 --5/5 Arcane Manuscripts found
+step
+    .goto 2248,64.37,43.07
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bag of Stolen Goods|r.
+    .complete 83554,2,3 --5/5 Arcane Manuscripts found
+step
+    .goto 2248,64.42,44.14
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bag of Stolen Goods|r.
+    .complete 83554,2,4 --5/5 Arcane Manuscripts found
+step
+    #label Arcane Manuscripts
+    .goto 2248,63.25,45.23
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bag of Stolen Goods|r.
+    .complete 83554,2,5 --5/5 Arcane Manuscripts found
+step
+    #loop
+    .goto 2248,64.07,42.53,40,0
+    .goto 2248,63.33,41.85,40,0
+    .goto 2248,62.64,43.54,40,0
+    .goto 2248,62.45,42.58,40,0
+    >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for |T1379168:0|t[|cRXP_LOOT_Kirin Tor Artifacts|r].
+    .complete 83554,1 --15/15 Kirin Tor Artifacts collected
+    .mob Candlelit Big-Boomer
+    .mob Candlelit Ouchpatcher
+    .mob Candlelit Hexthrower
 step
     .goto 2248,61.52,42.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83554 >>Turn in Trinkets, Curios and Other Powerful Objects
     .target Kalecgos
     .turnin 83555 >>Turn in Mysterious Necklace
-
     .accept 83556 >>Accept Maybe You Shouldn't Touch That
+step
+    .goto 2248,61.52,42.85
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Emerald Necklace|r |cRXP_WARN_In Kalecgos Hands|r.
     .complete 83556,1 --1/1 Emerald Necklace inspected
+    .skipgossipid 123192
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
+    .turnin 83556 >>Turn in Maybe You Shouldn't Touch That
+    .timer 20,RP
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
+    .accept 83641 >>Accept Trapped Between Life and Death
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r.
+    .complete 83641,1 
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r.
+    .complete 83641,2
+    .skipgossipid 123261
+    .target Fragmented Soul
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ingredients|r |cRXP_WARN_next to the cauldron|r.
+    .complete 83641,3
+step
+    >>Kill |cRXP_ENEMY_Disfigured Ghoul|r.
+    .complete 83641,4
+    .timer 10,RP
+    .mob Disfigured Ghoul
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kel'Thuzad|r.
+    .complete 83641,5
+    .skipgossipid 131340
+    .mob Archmage Kel'Thuzad
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
+    .complete 83641,6
 step
     .goto 2248,61.52,42.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83641 >>Turn in Trapped Between Life and Death
     .target Kalecgos
     .accept 83643 >>Accept Somehow We Survived
 step
-    .goto 2248,30.99,57.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 83643 >>Turn in Somehow We Survived
-
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .goto 2248,30.99,57.80
+    .target +Kalecgos
     .accept 83723 >>Accept A Helping Hand
-    .target Lady Jaina Proudmoore
+    .goto 2248,30.97,57.73
+    .target +Lady Jaina Proudmoore
 step
-    .goto 2248,29.86,54.13
-    .complete 83723,1 --3/3 Mages extracted from portals
+    #completewith next
+    .goto 2248,31.12,56.66
+    .cast 462625 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Unstable Portal|r.
+    .target Unstable Portal
+step
+    .goto 2248,31.7,54.96
+    #title Mount Up
+    >>|cRXP_WARN_Go to the next objective|r.
+    .complete 83723,1,1 --3/3 Mages extracted from portals
+step
+    #completewith next
+    .goto 2248,31.7,54.96
+    .cast 462625 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Unstable Portal|r.
+    .target Unstable Portal
+step
+    .goto 2248,29.98,54.05
+    #title Mount Up
+    >>|cRXP_WARN_Go to the next objective|r.
+    .complete 83723,1,2 --3/3 Mages extracted from portals
+step
+    #completewith next
+    .goto 2248,29.98,54.05
+    .cast 462625 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Unstable Portal|r.
+    .target Unstable Portal
 step
     .goto 2248,29.80,57.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    #title Mount Up
+    >>|cRXP_WARN_Go to the next objective|r.
+    .complete 83723,1,3 --3/3 Mages extracted from portals
+step
+    .goto 2248,29.80,57.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 83723 >>Turn in A Helping Hand
     .target Lady Jaina Proudmoore
     .accept 83743 >>Accept Arcane Cold War
+    .timer 30,RP
 step
     .goto 2248,29.68,57.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
     .complete 83743,2 --1/1 Portal taken (Optional)
 step
     .goto 2274,39.62,75.09
     .complete 83743,1 --1/1 Jaina found in Azj-Kahet
 step
     .goto 2255,35.27,53.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 83743 >>Turn in Arcane Cold War
     .target Lady Jaina Proudmoore
     .accept 83762 >>Accept Critical Mass
 step
-    .goto 2255,35.71,51.38
+    #loop
+    .goto 2255,35.38,52.82,20,0
+    .goto 2255,35.18,52.02,20,0
+    .goto 2255,35.79,51.25,20,0
+    .goto 2255,36.03,51.8,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r and kill any enemies that emerge.
     .complete 83762,1 --Magical objects disentangled (100%)
 step
     .goto 2255,35.59,52.38
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mana Bomb|r and entangle the connections.
     .complete 83762,2 --1/1 Mana Bomb disarmed
+    .timer 5,RP
 step
     .goto 2255,35.55,52.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 83762 >>Turn in Critical Mass
     .target Lady Jaina Proudmoore
     .accept 83763 >>Accept Preserve the Legacy
     .accept 83764 >>Accept Too Powerful, Too Dangerous
 step
-    .goto 2255,35.31,51.81
-    .complete 83764,1 --3/3 Dangerous artifacts destroyed
+    .goto 2255,35.68,52.57
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wand of Permafrost|r.
+    .complete 83764,1,1 --3/3 Dangerous artifacts destroyed
 step
-    .goto 2255,35.64,51.35
+    .goto 2255,36.22,52.53
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Thalen Songweaver's notes|r |cRXP_WARN_in the water|r.
+    .complete 83763,3 --1/1 Thalen Songweaver's notes collected
+step
+    .goto 2255,35.65,51.35
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Antonidas' book|r.
     .complete 83763,1 --1/1 Antonidas' book collected
 step
     .goto 2255,35.03,51.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Medivh's Schematics|r.
     .complete 83763,2 --1/1 Medivh's Schematics collected
 step
-    .goto 2255,36.21,52.50
-    .complete 83763,3 --1/1 Thalen Songweaver's notes collected
+    .goto 2255,35.31,51.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Staff of a Thousand Meteors|r.
+    .complete 83764,1,2 --3/3 Dangerous artifacts destroyed
 step
-    .goto 2248,31.46,50.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .goto 2255,35.68,52.57
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll of Permanent Polymorph|r.
+    .complete 83764,1,3 --3/3 Dangerous artifacts destroyed
+step
+    #completewith next
+    .goto 2255,57.49,41.63
+    .zone 2339 >>Take the Azj-Kahet Portal to Dornogal.
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Archmage Khadgar|r.
     .turnin 83763 >>Turn in Preserve the Legacy
-    .target Lady Jaina Proudmoore
     .turnin 83764 >>Turn in Too Powerful, Too Dangerous
-
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .goto 2248,31.46,50.96
+    .target +Lady Jaina Proudmoore
     .accept 83773 >>Accept Farewell, City of Magic
-    .target Archmage Khadgar
+    .goto 2248,31.45,50.93
+    .target +Archmage Khadgar
+step
+    #loop
+    .goto 2248,31.41,51.03,5,0
+    .goto 2248,31.63,50.8,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on one of the |cRXP_PICK_Mementos|r on the table and select the correct boat.
+    *|cRXP_WARN_Repeat 3times|r.
     .complete 83773,1 --3/3 Mementos placed on boats
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaina|r
+step
+    .goto 2248,31.47,50.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaina|r.
     .complete 83773,2 --1/1 Speak with Jaina
+    .skipgossipid 123819
     .target Jaina
 step
     .goto 2248,31.43,50.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .turnin 83773 >>Turn in Farewell, City of Magic
     .target Archmage Khadgar
 ]])
