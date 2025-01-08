@@ -2588,20 +2588,38 @@ step
     .turnin 85654 >>Turn in Juicing Up And Storming Out
     .target Didi the Wrench
 step
+    .goto 2369,71.22,44.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
+    .accept 85655 >>Accept Unleashing Her Power
+    .target Angorla
+step
+    #completewith next
+    #hidewindow
+    #label EquipCyresCircleUnleashingPower
+    .isOnQuest 85655
+    .equip 11,228411 >>Equip the Cyre's Circle
+
+step
+    .isOnQuest 85655
+    #completewith EquipCyresCircleUnleashingPower
+    .equip 11,228411 >>Equip the Cyre's Circle
+    .use 228411
+step
+    #requires EquipCyresCircleUnleashingPower
+    #loop
+    .goto 2369,63.44,76.73,35,0
+    .goto 2369,34.47,65.59,35,0
+    .goto 2369,45.96,56.72,35,0
+    .goto 2369,45.19,23.39,45,0
+    >>Run around and attack |cRXP_ENEMY_anything|r
+    .complete 85655,1 --10/10 Potential Unveiled
+step
+    .goto 2369,71.21,44.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
+    .turnin 85655 >>Turn in Unleashing Her Power
+    .target Angorla
+step
     +The next free update will contain the next part of the story!
---step
---    .goto 2369,71.22,44.01
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
---    .accept 85655 >>Accept Unleashing Her Power
---    .target Angorla
---step
---    .goto 2369,37.41,56.94
---    .complete 85655,1 --10/10 Potential Unveiled
---step
---    .goto 2369,71.21,44.00
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
---    .turnin 85655 >>Turn in Unleashing Her Power
---    .target Angorla
 --
 ---- MAIN CAMPAIGN WEEK 4
 --
