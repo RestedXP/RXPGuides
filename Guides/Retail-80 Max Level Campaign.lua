@@ -2688,10 +2688,65 @@ step
     .target Skaggit
 step
     .isOnQuest 83932
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
+    *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
+    .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
+    .use 227405
+step
+    .isOnQuest 83932
     .isQuestAvailable 84248
     .goto 2369,51.50,48.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
     .accept 84248 >>Accept A Ritual of Runes
+    .target Machinist Kromleg
+step
+    .isOnQuest 84248
+    #completewith next
+    #label EnterCaveRitualRunes
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r
+    .complete 84248,1 --5/5 Summoning Runes destroyed
+step
+    .isOnQuest 84248
+    #completewith EnterCaveRitualRunes
+    #title Enter the cave
+    .goto 2369,50.09,42.41,8 >>Enter the cave
+step
+    .isOnQuest 84248
+    #title |TInterface/cursor/crosshair/interact.blp:20|tSummoning Runes
+    #requires EnterCaveRitualRunes
+    #loop
+    .goto 2369,52.58,38.46,10,0
+    .goto 2369,53.10,40.69,10,0
+    .goto 2369,54.11,37.70,10,0
+    .goto 2369,53.32,35.62,10,0
+    .goto 2369,51.41,37.53,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r
+    .complete 84248,1 --5/5 Summoning Runes destroyed
+step
+    .isOnQuest 84248
+    .goto 2369,53.02,37.76
+    >>Kill |cRXP_ENEMY_Inhyldir the Cursed|r
+    .complete 84248,2 --1/1 Inhyldir the Cursed slain
+    .mob Inhyldir the Cursed
+step
+    .isOnQuest 84248
+    #completewith next
+    #label LeaveCaveRitualRunes
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .turnin 84248 >>Turn in A Ritual of Runes
+    .target Machinist Kromleg
+step
+    .isOnQuest 84248
+    #completewith LeaveCaveRitualRunes
+    #title Leave the cave
+    .goto 2369,50.09,42.41,8 >>Leave the cave
+step
+    .isOnQuest 84248
+    #requires LeaveCaveRitualRunes
+    .goto 2369,51.51,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
+    .turnin 84248 >>Turn in A Ritual of Runes
     .target Machinist Kromleg
 step
     .isOnQuest 84299
@@ -2790,81 +2845,15 @@ step
     .turnin 83827 >>Turn in Silence the Song
     .target Regald Hornfyre
 step
-    .isOnQuest 84222
-    #completewith InterestingNotes
-    >>Kill |cRXP_ENEMY_Rares|r on the Siren Isle (look for stars on your map)
-    .complete 84222,1 --2/2 Rare Siren Isle enemies slain
-step
-    .isOnQuest 84248
+    .isOnQuest 84432,84680
     #completewith next
-    #label EnterCaveRitualRunes
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r
-    .complete 84248,1 --5/5 Summoning Runes destroyed
-step
-    .isOnQuest 84248
-    #completewith EnterCaveRitualRunes
-    #title Enter the cave
-    .goto 2369,50.09,42.41,8 >>Enter the cave
-step
-    .isOnQuest 84248
-    #title |TInterface/cursor/crosshair/interact.blp:20|tSummoning Runes
-    #requires EnterCaveRitualRunes
-    #loop
-    .goto 2369,52.58,38.46,10,0
-    .goto 2369,53.10,40.69,10,0
-    .goto 2369,54.11,37.70,10,0
-    .goto 2369,53.32,35.62,10,0
-    .goto 2369,51.41,37.53,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Runes|r
-    .complete 84248,1 --5/5 Summoning Runes destroyed
-step
-    .isOnQuest 84248
-    .goto 2369,53.02,37.76
-    >>Kill |cRXP_ENEMY_Inhyldir the Cursed|r
-    .complete 84248,2 --1/1 Inhyldir the Cursed slain
-    .mob Inhyldir the Cursed
-step
-    .isOnQuest 84248
-    #completewith next
-    #label LeaveCaveRitualRunes
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
-    .turnin 84248 >>Turn in A Ritual of Runes
-    .target Machinist Kromleg
-step
-    .isOnQuest 84248
-    #completewith LeaveCaveRitualRunes
-    #title Enter the cave
-    .goto 2369,50.09,42.41,8 >>Leave the cave
-step
-    .isOnQuest 84248
-    #requires LeaveCaveRitualRunes
-    .goto 2369,51.51,48.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
-    .turnin 84248 >>Turn in A Ritual of Runes
-    .target Machinist Kromleg
-step
-    .isOnQuest 83932
-    #completewith BrinedMonstrosity
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
-    *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
-    .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
-step
-    .isOnQuest 84432
-    #completewith BrinedMonstrosity
-    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r in the area
+    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r and |cRXP_ENEMY_Bloodbrine Horrors|r in the area
     .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
     .mob Bloodwake Spellslinger
     .mob Bloodwake Deathdealer
     .mob Bloodwake Marauder
     .mob Bloodwake Brawler
-step
-    .isOnQuest 84680
-    #completewith BrinedMonstrosity
-    >>Use the |T511729:0|t[Rock Reviver] on |cRXP_PICK_Restless Stones|r and |cRXP_PICK_Restless Pebbles|r
-    >>Kill the |cRXP_ENEMY_Bloodbrine Horrors|r
-    .complete 84680,1 --8/8 Restless Stones and Pebbles animated
-    .complete 84680,2 --8/8 Bloodbrine Horror slain
-    .mob Bloodbrine Horror
 step
     .isOnQuest 84680
     #label BrinedMonstrosity
@@ -2876,11 +2865,12 @@ step
     #hidewindow
     #completewith BloodwakeVrykul
     #loop
+    .goto 2369,39.39,73.45,30,0
     .goto 2369,49.72,74.73,30,0
     .goto 2369,57.90,70.69,45,0
     .goto 2369,54.82,82.28,25,0
     .goto 2369,61.58,83.82,25,0
-    .goto 2369,60.29,89.30,35,0
+    .goto 2369,63.17,87.14,30,0
     .goto 2369,66.11,67.24,35,0
     .goto 2369,57.92,61.66,25,0
     .goto 2369,50.18,61.10,25,0
@@ -2891,23 +2881,24 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Interesting Notes|r, |cRXP_PICK_Faded Notes|r and |cRXP_PICK_Old Scrolls|r.
     *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
     .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
+    .use 227405
 step
-    .isOnQuest 84432
+    .isOnQuest 84432,84680
     #completewith RestlessBloodbrine
-    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r in the area
+    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r and |cRXP_ENEMY_Bloodbrine Horrors|r in the area
     .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
     .mob Bloodwake Spellslinger
-    .mob Bloodwake Deathdealer
     .mob Bloodwake Marauder
-    .mob Bloodwake Brawler
+    .mob Bloodbrine Horror
 step
     .isOnQuest 84680
     #label RestlessBloodbrine
     >>Use the |T511729:0|t[Rock Reviver] on |cRXP_PICK_Restless Stones|r and |cRXP_PICK_Restless Pebbles|r
-    >>Kill the |cRXP_ENEMY_Bloodbrine Horrors|r
     .complete 84680,1 --8/8 Restless Stones and Pebbles animated
-    .complete 84680,2 --8/8 Bloodbrine Horror slain
-    .mob Bloodbrine Horror
+    .use 228988
+    .target Restless Stone
+    .target Restless Pebble
 step
     .isOnQuest 83932
     #completewith next
@@ -2915,12 +2906,14 @@ step
     *|cRXP_WARN_Use the|r |T2101967:0|t[Research Journal] |cRXP_WARN_afterwards|r.
     .complete 83932,1 --12/12 Interesting Notes added to the Research Journal
 step
-    .isOnQuest 84432
+    .isOnQuest 84432,84680
     #label BloodwakeVrykul
-    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r in the area
+    >>Kill the |cRXP_ENEMY_Bloodwake Vrykuls|r and |cRXP_ENEMY_Bloodbrine Horrors|r in the area
     .complete 84432,1 --15/15 Bloodwake Vrykul slain
+    .complete 84680,2 --8/8 Bloodbrine Horror slain
     .mob Bloodwake Spellslinger
     .mob Bloodwake Marauder
+    .mob Bloodbrine Horror
 step
     .isOnQuest 83932
     #label InterestingNotes
@@ -3040,6 +3033,7 @@ step
 step
     .isOnQuest 84222
     >>Kill |cRXP_ENEMY_Rares|r on the Siren Isle (look for stars on your map)
+    *|cRXP_WARN_Just wait in the center of the isle until one appears|r
     .complete 84222,1 --2/2 Rare Siren Isle enemies slain
 step
     .isOnQuest 84619
@@ -3142,11 +3136,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
     .turnin 83932 >>Turn in Historical Documents
     .target Stellin Verasa
-step
-    .isOnQuest 84432
-    .goto 2369,70.53,50.48
-    .vehicle >> Enter |cRXP_FRIENDLY_Unreliable Goblin Waveshredder|r
-    .target Unreliable Goblin Waveshredder
 ]])
 
 RXPGuides.RegisterGuide([[
