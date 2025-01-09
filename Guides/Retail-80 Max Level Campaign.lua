@@ -1922,38 +1922,44 @@ step
     .skipgossipid 123172 
     .target Orweyna
 step
+    #title Fly to the top of the tower
     .goto 2214,64.27,80
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r.
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_on the Tower near the Circle|r.
+    *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,1 --4/4 "Listen In" to Gather Intel
 step
     .goto 2214,63.1,80.78
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_on the Bridge near the Circle|r.
+    *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,2 --4/4 "Listen In" to Gather Intel
 step
     .goto 2214,63.46,78.82
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
+    *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,3 --4/4 "Listen In" to Gather Intel
 step
     .goto 2214,65.49,77.27
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
+    *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,4 ----4/4 "Listen In" to Gather Intel
 step
     .goto 2214,66.68,78.42
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the Cave Wall|r.
+    *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,3 --1/1 Listen In at the Cave Wall
 step
     .goto 2214,60.99,86.47
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for faster movement speed|r.
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_on the building near the circle|r.
     *|cRXP_WARN_Dodge the obstacles in the sky to avoid getting stunned|r.
     .complete 82701,4 --1/1 Reach Foreman's Office
@@ -1961,17 +1967,22 @@ step
     .mob Hazardous Heli
 step
     .goto 2214,60.64,86.81
-    >>Use the |T252188:0|t[ExtraActionButton].
+    >>Use the |T252188:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 82701,5 --1/1 Find Information
 step
     .goto 2214,64.46,79.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
     .turnin 82701 >>Turn in Bat Versus World
     .target Orweyna
+step
+    .goto 2214,64.57,79.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
+    .accept 82702 >>Accept Found Friends
+    .target Monte Gazlowe
 --Travel
 step
     .goto 2339,42.37,26.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_|in Dornogalr
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_in Dornogalr
     .turnin 82702 >>Turn in Found Friends
     .target Alleria Windrunner
 step
@@ -1979,10 +1990,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
     .accept 84701 >>Accept The Speaker
     .target Orweyna
-step
-    #completewith next
-    .goto 2339,40.73,22.33
-    .cast 431519 >> Use the |cRXP_PICK_Earthen Teleporter|r.
 step
     .goto 2339,35.49,81.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magni Bronzebeard|r
@@ -3217,14 +3224,19 @@ step
     .target Starving Snapdragon Runt
 ]])
 
+-- Fate of the Kirin Tor
 RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
 #subgroup Max Level Storylines (80)
-#name h) Fate of the Kirn Tor
-#displayname Fate of the Kirn Tor
+#name h) Fate of the Kirin Tor
+#displayname Fate of the Kirin Tor
 
+step
+    .isQuestAvailable 82702
+    #completewith next
+    +|cRXP_WARN_You have to complete the 'Lingering Shadows' chapter first|r
 step
     .goto 2339,42.58,27.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r |cRXP_WARN_in Dornogal|r.
@@ -3232,8 +3244,8 @@ step
     .target Archmage Khadgar
 step
     #completewith next
-    #title Leave House
-    .goto 2339,42.74,30.57,15 >>Leave the House
+    #title Leave the hall
+    .goto 2339,42.74,30.57,15 >>Leave the Hall
 step
     .goto 2248,29.58,58.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Aethas Sunreaver|r.
@@ -3255,7 +3267,7 @@ step
     .accept 83499 >>Accept Arcane Wasteland
 step
     #completewith Frostfire Essence
-    >>Kill |cRXP_ENEMY_Lingering Spark|r, |cRXP_ENEMY_Mana Fragment|r and |cRXP_ENEMY_Shard of Dalaran|r. Loot them for |T1328542:0|t[|cRXP_LOOT_Arcane Dust|r].
+    >>Kill |cRXP_ENEMY_Lingering Spark|r, |cRXP_ENEMY_Mana Fragment|r and |cRXP_ENEMY_Shard of Dalaran|r. Loot them for the |T4549108:0|t[|cRXP_LOOT_Arcane Dust|r].
     *|cRXP_WARN_You should kill most of the ones you encounter|r.
     .complete 83499,1 --10/10 Arcane Dust collected
     .mob Lingering Spark
@@ -3280,7 +3292,7 @@ step
 step
     #label Frostfire Essence
     .goto 2248,28.87,51.88
-    >>Kill |cRXP_ENEMY_Frostfire Elemental|r. Loot them for |T429384:0|t[|cRXP_LOOT_Frostfire Essence|r].
+    >>Kill |cRXP_ENEMY_Frostfire Elemental|r. Loot it for the |T429384:0|t[|cRXP_LOOT_Frostfire Essence|r].
     .complete 83499,3 --1/1 Frostfire Essence collected
     .mob Frostfire Elemental
 step
@@ -3319,7 +3331,7 @@ step
     .complete 83502,4 --1/1 Fourth Ward activated
 step
     .goto 2248,29.74,57.93
-    >>Use your |cRXP_WARN_ExtraActionButton|r.
+    >>Use the |T429384:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 83502,5 --1/1 Spell empowered
     .timer 6,RP
 step
@@ -3341,7 +3353,7 @@ step
     .complete 83539,2 --1/1 Bag of Helpful Goods collected
 step
     #completewith next
-    .cast 456663 >>Use your |cRXP_WARN_ExtraActionButton|r.
+    .cast 456663 >>Use the |T1519433:0|t[|cRXP_WARN_ExtraActionButton|r].
     .timer 5,RP
 step
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -3390,7 +3402,7 @@ step
     .target Kobold Thief
 step
     #completewith Arcane Manuscripts
-    >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for |T1379168:0|t[|cRXP_LOOT_Kirin Tor Artifacts|r].
+    >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for the |T1379168:0|t[|cRXP_LOOT_Kirin Tor Artifacts|r].
     .complete 83554,1 --15/15 Kirin Tor Artifacts collected
     .mob Candlelit Big-Boomer
     .mob Candlelit Ouchpatcher
@@ -3440,6 +3452,10 @@ step
     .complete 83556,1 --1/1 Emerald Necklace inspected
     .skipgossipid 123192
 step
+    .isOnQuest 83556
+    #completewith PocketDimension
+    +|cRXP_WARN_There are no coordinates available in this zone|r
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83556 >>Turn in Maybe You Shouldn't Touch That
     .timer 20,RP
@@ -3447,29 +3463,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .accept 83641 >>Accept Trapped Between Life and Death
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r.
-    .complete 83641,1 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r |cRXP_WARN_in the center of the platform|r.
+    .complete 83641,1 --1/1 Scroll investigated
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r.
-    .complete 83641,2
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragmented Souls|r |cRXP_WARN_at the edge of the platform|r.
+    .complete 83641,2 --3/3 Fragmented Souls released
     .skipgossipid 123261
     .target Fragmented Soul
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ingredients|r |cRXP_WARN_next to the cauldron|r.
-    .complete 83641,3
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on 3 |cRXP_PICK_Ingredients|r |cRXP_WARN_next to the cauldron|r (Essence of Death, Alchemical Solution, Skull).
+    .complete 83641,3 --3/3 Ingredients added to the Cauldron
 step
-    >>Kill |cRXP_ENEMY_Disfigured Ghoul|r.
-    .complete 83641,4
-    .timer 10,RP
+    >>Kill the |cRXP_ENEMY_Disfigured Ghouls|r.
+    .complete 83641,4 --3/3 Disfigured Ghoul slain
+    .timer 12,RP
     .mob Disfigured Ghoul
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kel'Thuzad|r.
-    .complete 83641,5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the mirror image of |cRXP_FRIENDLY_Archmage Kel'Thuzad|r.
+    .complete 83641,5 --1/1 Speak with the Mirror Image
     .skipgossipid 131340
     .mob Archmage Kel'Thuzad
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
-    .complete 83641,6
+    #label PocketDimension
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Passage Between Dimensions (Portal)|r.
+    .complete 83641,6 --1/1 Leave pocket dimension
 step
     .goto 2248,61.52,42.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
@@ -3492,7 +3509,7 @@ step
 step
     .goto 2248,31.7,54.96
     #title Mount Up
-    >>|cRXP_WARN_Go to the next objective|r.
+    >>|cRXP_WARN_After clicking on the portal run towards the next objective|r.
     .complete 83723,1,1 --3/3 Mages extracted from portals
 step
     #completewith next
@@ -3502,7 +3519,7 @@ step
 step
     .goto 2248,29.98,54.05
     #title Mount Up
-    >>|cRXP_WARN_Go to the next objective|r.
+    >>|cRXP_WARN_After clicking on the portal run towards the next objective|r.
     .complete 83723,1,2 --3/3 Mages extracted from portals
 step
     #completewith next
@@ -3512,7 +3529,7 @@ step
 step
     .goto 2248,29.80,57.83
     #title Mount Up
-    >>|cRXP_WARN_Go to the next objective|r.
+    >>|cRXP_WARN_After clicking on the portal run towards the next objective|r.
     .complete 83723,1,3 --3/3 Mages extracted from portals
 step
     .goto 2248,29.80,57.83
@@ -3520,7 +3537,7 @@ step
     .turnin 83723 >>Turn in A Helping Hand
     .target Lady Jaina Proudmoore
     .accept 83743 >>Accept Arcane Cold War
-    .timer 30,RP
+    .timer 15,RP
 step
     .goto 2248,29.68,57.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
@@ -3540,8 +3557,10 @@ step
     .goto 2255,35.18,52.02,20,0
     .goto 2255,35.79,51.25,20,0
     .goto 2255,36.03,51.8,20,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r and kill any enemies that emerge.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r that are connected to the mana bomb in the center and kill any |cRXP_ENEMY_enemies|r that emerge.
+    *|cRXP_WARN_It's possible that some objects are not connected but still required|r
     .complete 83762,1 --Magical objects disentangled (100%)
+    .mob Polymorphed Sheep
 step
     .goto 2255,35.59,52.38
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mana Bomb|r and entangle the connections.
@@ -3551,16 +3570,16 @@ step
     .goto 2255,35.55,52.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 83762 >>Turn in Critical Mass
-    .target Lady Jaina Proudmoore
     .accept 83763 >>Accept Preserve the Legacy
     .accept 83764 >>Accept Too Powerful, Too Dangerous
+    .target Lady Jaina Proudmoore
 step
     .goto 2255,35.68,52.57
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wand of Permafrost|r.
     .complete 83764,1,1 --3/3 Dangerous artifacts destroyed
 step
     .goto 2255,36.22,52.53
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Thalen Songweaver's notes|r |cRXP_WARN_in the water|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Thalen Songweaver's Notes|r |cRXP_WARN_in the water|r.
     .complete 83763,3 --1/1 Thalen Songweaver's notes collected
 step
     .goto 2255,35.65,51.35
@@ -3568,14 +3587,14 @@ step
     .complete 83763,1 --1/1 Antonidas' book collected
 step
     .goto 2255,35.03,51.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Medivh's Schematics|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Medivh's Karazhan Schematics|r.
     .complete 83763,2 --1/1 Medivh's Schematics collected
 step
     .goto 2255,35.31,51.83
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Staff of a Thousand Meteors|r.
     .complete 83764,1,2 --3/3 Dangerous artifacts destroyed
 step
-    .goto 2255,35.68,52.57
+    .goto 2255,35.32,52.54
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll of Permanent Polymorph|r.
     .complete 83764,1,3 --3/3 Dangerous artifacts destroyed
 step
@@ -3595,7 +3614,7 @@ step
     #loop
     .goto 2248,31.41,51.03,5,0
     .goto 2248,31.63,50.8,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on one of the |cRXP_PICK_Mementos|r on the table and select the correct boat.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on one of the |cRXP_PICK_Mementos|r on the table and |cRXP_WARN_then on  the correct boat|r. Repeat this 3 times.
     *|cRXP_WARN_Repeat 3times|r.
     .complete 83773,1 --3/3 Mementos placed on boats
 step
