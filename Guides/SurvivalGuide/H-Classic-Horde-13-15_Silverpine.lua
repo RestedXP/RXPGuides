@@ -52,11 +52,13 @@ step
     .accept 449 >>Accept The Deathstalkers' Report
     .target Rane Yorick
 step
+    #loop
+    .goto Silverpine Forest,57.72,10.07,0
     .goto Silverpine Forest,55.96,16.18,50,0
     .goto Silverpine Forest,58.37,15.56,50,0
     .goto Silverpine Forest,59.40,13.58,50,0
     .goto Silverpine Forest,60.11,10.51,50,0
-    .goto Silverpine Forest,57.72,10.07
+    .goto Silverpine Forest,57.72,10.07,50,0
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
@@ -93,11 +95,11 @@ step
 step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Podrig|r
     .accept 477 >>Accept Border Crossings
+    .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .accept 6321 >>Accept Supplying the Sepulcher
+    .target +Deathguard Podrig
     .goto Silverpine Forest,43.43,41.67
-    .target Shadow Priest Allister
-    .target Deathguard Podrig
 step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
@@ -128,13 +130,15 @@ step
     .accept 430 >>Accept Return to Quinn
     .target Apothecary Renferrel
 step
+    #loop
+    .goto Silverpine Forest,49.12,36.72,0
     .goto Silverpine Forest,50.32,39.22,50,0
     .goto Silverpine Forest,51.86,41.56,50,0
     .goto Silverpine Forest,51.53,43.06,50,0
     .goto Silverpine Forest,51.62,44.85,50,0
     .goto Silverpine Forest,51.80,46.60,50,0
     .goto Silverpine Forest,50.83,47.74,50,0
-    .goto Silverpine Forest,49.12,36.72
+    .goto Silverpine Forest,49.12,36.72,50,0
     >>Kill |cRXP_ENEMY_Moonrage Whitescalps|r
     .complete 421,1 --Moonrage Whitescalp (5)
     .mob Moonrage Whitescalp
@@ -233,16 +237,16 @@ step
     .vendor >> Vendor trash
     .target Killian Sanatha
 step
-#loop
-	.line Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
-	.goto Silverpine Forest,37.25,15.99,25,0
-	.goto Silverpine Forest,35.67,16.01,25,0
-	.goto Silverpine Forest,34.96,16.34,25,0
-	.goto Silverpine Forest,33.99,17.24,25,0
-	.goto Silverpine Forest,34.14,15.26,25,0
-	.goto Silverpine Forest,35.06,14.50,25,0
-	.goto Silverpine Forest,35.85,13.83,25,0
-	.goto Silverpine Forest,36.33,14.20,25,0
+    #loop
+	.goto Silverpine Forest,36.33,14.20,0
+	.goto Silverpine Forest,37.25,15.99,50,0
+	.goto Silverpine Forest,35.67,16.01,50,0
+	.goto Silverpine Forest,34.96,16.34,50,0
+	.goto Silverpine Forest,33.99,17.24,50,0
+	.goto Silverpine Forest,34.14,15.26,50,0
+	.goto Silverpine Forest,35.06,14.50,50,0
+	.goto Silverpine Forest,35.85,13.83,50,0
+	.goto Silverpine Forest,36.33,14.20,50,0
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
     >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_is up, SHE WILL KILL YOU! She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r
     .complete 447,2 --Skittering Blood (6)
@@ -250,12 +254,13 @@ step
     .unitscan Krethis Shadowspinner
     .unitscan Son of Arugal
 step
+    #loop
+    .goto Silverpine Forest,41.60,21.65,0
     .goto Silverpine Forest,41.37,19.64,50,0
     .goto Silverpine Forest,41.60,21.65,50,0
     .goto Silverpine Forest,42.36,23.77,50,0
     .goto Silverpine Forest,44.67,24.84,50,0
     .goto Silverpine Forest,46.08,26.62,50,0
-    .goto Silverpine Forest,41.60,21.65
     >>Finish killing |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
@@ -372,24 +377,24 @@ step
     .unitscan Son of Arugal
 step
     #label Shackles
-#loop
-	.line Silverpine Forest,44.22,31.55,43.51,32.38,42.61,31.12,41.28,30.25,39.70,30.24,38.96,29.15,38.28,27.10,37.60,24.16,38.07,23.13,38.56,21.93,39.73,23.26,41.49,23.51,41.14,25.50,41.17,28.26,42.01,29.27,43.83,31.00
-	.goto Silverpine Forest,44.22,31.55,25,0
-	.goto Silverpine Forest,43.51,32.38,25,0
-	.goto Silverpine Forest,42.61,31.12,25,0
-	.goto Silverpine Forest,41.28,30.25,25,0
-	.goto Silverpine Forest,39.70,30.24,25,0
-	.goto Silverpine Forest,38.96,29.15,25,0
-	.goto Silverpine Forest,38.28,27.10,25,0
-	.goto Silverpine Forest,37.60,24.16,25,0
-	.goto Silverpine Forest,38.07,23.13,25,0
-	.goto Silverpine Forest,38.56,21.93,25,0
-	.goto Silverpine Forest,39.73,23.26,25,0
-	.goto Silverpine Forest,41.49,23.51,25,0
-	.goto Silverpine Forest,41.14,25.50,25,0
-	.goto Silverpine Forest,41.17,28.26,25,0
-	.goto Silverpine Forest,42.01,29.27,25,0
-	.goto Silverpine Forest,43.83,31.00,25,0
+    #loop
+	.goto Silverpine Forest,43.83,31.00,0
+	.goto Silverpine Forest,44.22,31.55,50,0
+	.goto Silverpine Forest,43.51,32.38,50,0
+	.goto Silverpine Forest,42.61,31.12,50,0
+	.goto Silverpine Forest,41.28,30.25,50,0
+	.goto Silverpine Forest,39.70,30.24,50,0
+	.goto Silverpine Forest,38.96,29.15,50,0
+	.goto Silverpine Forest,38.28,27.10,50,0
+	.goto Silverpine Forest,37.60,24.16,50,0
+	.goto Silverpine Forest,38.07,23.13,50,0
+	.goto Silverpine Forest,38.56,21.93,50,0
+	.goto Silverpine Forest,39.73,23.26,50,0
+	.goto Silverpine Forest,41.49,23.51,50,0
+	.goto Silverpine Forest,41.14,25.50,50,0
+	.goto Silverpine Forest,41.17,28.26,50,0
+	.goto Silverpine Forest,42.01,29.27,50,0
+	.goto Silverpine Forest,43.83,31.00,50,0
     >>Kill |cRXP_ENEMY_Moonrage Gluttons|r and |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for their |cRXP_LOOT_Shackles|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_enrage when they are below 25% health. Kill them quickly when they are low|r
     .complete 423,1 --Glutton Shackle (6)
@@ -418,26 +423,26 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
     .turnin 478 >>Turn in Maps and Runes
     .accept 481 >>Accept Dalar's Analysis
+    .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .turnin 423 >>Turn in Arugal's Folly
     .turnin 481 >>Turn in Dalar's Analysis
     .accept 482 >>Accept Dalaran's Intentions
     .accept 424 >>Accept Arugal's Folly
+    .target +Dalar Dawnweaver
     .goto Silverpine Forest,44.20,39.73
-    .target Shadow Priest Allister
-    .target Dalar Dawnweaver
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
     .turnin 478 >>Turn in Maps and Runes
     .accept 481 >>Accept Dalar's Analysis
+    .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .turnin 423 >>Turn in Arugal's Folly
     .turnin 481 >>Turn in Dalar's Analysis
     .accept 482 >>Accept Dalaran's Intentions
+    .target +Dalar Dawnweaver
     .goto Silverpine Forest,44.20,39.73
-    .target Shadow Priest Allister
-    .target Dalar Dawnweaver
 step
     .goto Silverpine Forest,43.98,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r
@@ -467,11 +472,16 @@ step
     .turnin 439 >>Turn in Rot Hide Clues
     .accept 440 >>Accept The Engraved Ring
     .target High Executor Hadrec
-step
+step << Undead
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
-    .turnin 6321 >>Turn in Supplying the Sepulcher << Undead
-    .accept 6323 >>Accept Ride to the Undercity << Undead
+    .turnin 6321 >>Turn in Supplying the Sepulcher
+    .accept 6323 >>Accept Ride to the Undercity
+    .target Karos Razok
+step
+    #completewith ZingeAndFaranell
+    .goto Silverpine Forest,45.62,42.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
     .fp Sepulcher >> Get the Sepulcher flight path << !Undead
     .fly Undercity >> Fly to the Undercity
     .target Karos Razok
@@ -564,23 +574,23 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
     .turnin 447 >>Turn in A Recipe For Death
+    .target +Master Apothecary Faranell
     .goto Undercity,48.84,69.25
     .turnin 1359 >>Turn in Zinge's Delivery
     .accept 1358 >>Accept Sample for Helbrim
-    .target Master Apothecary Faranell
+    .target +Apothecary Zinge
     .goto Undercity,50.16,67.97
-    .target Apothecary Zinge
     .solo
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
     .turnin 447 >>Turn in A Recipe For Death
     .accept 450 >>Accept A Recipe For Death
+    .target +Master Apothecary Faranell
     .goto Undercity,48.84,69.25
     .turnin 1359 >>Turn in Zinge's Delivery
     .accept 1358 >>Accept Sample for Helbrim
+    .target +Apothecary Zinge
     .goto Undercity,50.16,67.97
-    .target Master Apothecary Faranell
-    .target Apothecary Zinge
     .group
 step
     #optional
@@ -734,15 +744,23 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
     .turnin 6322 >>Turn in Michael Garrett
     .accept 6324 >>Accept Return to Podrig
-    .fly The Supulcher >> Fly to The Sepulcher
     .target Michael Garrett
-step << !Undead
+step
+    #completewith GrimsonthePale
     .goto Undercity,63.27,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
     .fly The Supulcher >> Fly to The Sepulcher
     .target Michael Garrett
     .zoneskip Silverpine Forest
     .group
+step << Undead
+    #completewith next
+    .goto Undercity,63.27,48.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
+    .fly The Supulcher >> Fly to The Sepulcher
+    .target Michael Garrett
+    .zoneskip Silverpine Forest
+    .solo
 step << Undead
     .goto Silverpine Forest,43.43,41.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Podrig|r
@@ -778,22 +796,23 @@ step
     .group
 step
     #completewith next
-    .goto Silverpine Forest,57.90,63.10,120 >> Travel toward Ambermill
+    .goto Silverpine Forest,57.90,63.10,120,0
+    .subzone 233 >> Travel toward Ambermill
     .group
 step
-#loop
-	.line Silverpine Forest,57.91,62.48,59.10,61.88,59.79,63.08,60.79,62.55,61.98,62.56,61.00,64.89,60.10,65.93,59.02,67.10,57.56,67.57,57.62,65.17,57.12,63.39
-	.goto Silverpine Forest,57.91,62.48,25,0
-	.goto Silverpine Forest,59.10,61.88,25,0
-	.goto Silverpine Forest,59.79,63.08,25,0
-	.goto Silverpine Forest,60.79,62.55,25,0
-	.goto Silverpine Forest,61.98,62.56,25,0
-	.goto Silverpine Forest,61.00,64.89,25,0
-	.goto Silverpine Forest,60.10,65.93,25,0
-	.goto Silverpine Forest,59.02,67.10,25,0
-	.goto Silverpine Forest,57.56,67.57,25,0
-	.goto Silverpine Forest,57.62,65.17,25,0
-	.goto Silverpine Forest,57.12,63.39,25,0
+    #loop
+	.goto Silverpine Forest,57.12,63.39,0
+	.goto Silverpine Forest,57.91,62.48,50,0
+	.goto Silverpine Forest,59.10,61.88,50,0
+	.goto Silverpine Forest,59.79,63.08,50,0
+	.goto Silverpine Forest,60.79,62.55,50,0
+	.goto Silverpine Forest,61.98,62.56,50,0
+	.goto Silverpine Forest,61.00,64.89,50,0
+	.goto Silverpine Forest,60.10,65.93,50,0
+	.goto Silverpine Forest,59.02,67.10,50,0
+	.goto Silverpine Forest,57.56,67.57,50,0
+	.goto Silverpine Forest,57.62,65.17,50,0
+	.goto Silverpine Forest,57.12,63.39,50,0
     >>Kill |cRXP_ENEMY_Dalaran Protectors|r and |cRXP_ENEMY_Dalaran Mages|r. Loot them for their |cRXP_LOOT_Pendants|r
     .complete 479,1 --Dalaran Pendant (8)
     .mob Dalaran Mage
@@ -865,11 +884,13 @@ step
     .isQuestComplete 452
     .group
 step
+    #loop
+    .goto Silverpine Forest,45.48,73.43,0
     .goto Silverpine Forest,45.66,74.90,40,0
     .goto Silverpine Forest,44.11,73.50,40,0
     .goto Silverpine Forest,45.41,72.42,40,0
     .goto Silverpine Forest,46.61,73.00,40,0
-    .goto Silverpine Forest,45.48,73.43
+    .goto Silverpine Forest,45.48,73.43,40,0
     >>Finish killing the |cRXP_ENEMY_Pyrewood|r mobs. Loot them for their |cRXP_LOOT_Shackles|r
     .complete 99,1 -- Pyrewood Shackle (6)
     .mob Pyrewood Watcher

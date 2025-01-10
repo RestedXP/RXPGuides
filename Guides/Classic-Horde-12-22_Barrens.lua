@@ -256,7 +256,7 @@ step
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
-    #requires FireTar2<<Shaman
+    #requires FireTar2 << Shaman
     #label DisruptTheAttacks
     #loop
 	.goto The Barrens,53.63,24.50,0
@@ -1005,6 +1005,7 @@ step
     .accept 887 >>Accept Southsea Freebooters
     .target Gazlowe
 step
+    #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fp Ratchet >> Get the Ratchet flight path
@@ -3572,6 +3573,9 @@ step
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .mob +Bristleback Geomancer
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
+    .mob +Bristleback Water Seeker
+    .mob +Bristleback Thornweaver
+    .mob +Bristleback Geomancer
 step
     #label LakotaMani2
     #loop
@@ -3626,6 +3630,9 @@ step
     .complete 878,3 --Kill Bristleback Geomancer (x12)
     .mob +Bristleback Geomancer
     .complete 899,1 --Collect Bristleback Quilboar Tusk (x60)
+    .mob +Bristleback Water Seeker
+    .mob +Bristleback Thornweaver
+    .mob +Bristleback Geomancer
 step << Warlock/Shaman
     #loop
 	.goto The Barrens,50.71,54.60,60,0
@@ -5585,6 +5592,7 @@ step
     .unitscan XT:9
 step
     #xprate <1.5
+    #loop
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
     .goto Stonetalon Mountains,67.18,46.87,50,0
     .goto Stonetalon Mountains,66.53,46.95,50,0
@@ -5828,6 +5836,7 @@ step << Priest
 step
     #xprate <1.5
 	#loop
+    .goto Ashenvale,11.01,28.57,0
 	.goto Ashenvale,10.86,26.99,50,0
 	.goto Ashenvale,11.23,25.73,50,0
 	.goto Ashenvale,11.83,25.75,50,0
@@ -7600,6 +7609,7 @@ step
     .accept 887 >>Accept Southsea Freebooters
     .target Gazlowe
 step
+    #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fp Ratchet >> Get the Ratchet flight path
@@ -9730,7 +9740,6 @@ step
     .goto The Barrens,46.09,40.98,50,0
     .goto The Barrens,46.08,40.68,50,0
     .goto The Barrens,45.71,40.56,50,0
-    .goto The Barrens,45.64,38.16,50,0
     >>Find & kill |cRXP_ENEMY_Hezrul Bloodmark|r, he patrols around the lake. Loot him for his |cRXP_LOOT_Head|r
     .complete 852,1 --Hezrul's Head
     .unitscan Hezrul Bloodmark
@@ -9771,7 +9780,6 @@ step
     .goto The Barrens,46.09,40.98,50,0
     .goto The Barrens,46.08,40.68,50,0
     .goto The Barrens,45.71,40.56,50,0
-    .goto The Barrens,45.64,38.16,50,0
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
     >>|cRXP_WARN_Feel free to skip this quest if you haven't had many drops yet so far|r
     .complete 855,1 --Centaur Bracers (15)
@@ -12083,13 +12091,12 @@ step
     .isOnQuest 1491
     .dungeon WC
 step
-    #completewith next
+    #completewith DeviateRaptors
     >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
     .dungeon WC
 step
-    #label DeviateRaptors
     >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
@@ -12099,11 +12106,11 @@ step
     .mob +Deviate Shambler
     .complete 1487,4 --Deviate Dreadfang (7)
     .mob +Deviate Dreadfang
+    .complete 1486,1 --Deviate Hide (20)
     .isOnQuest 1487
     .isOnQuest 1486
     .dungeon WC
  step
-    #label DeviateRaptors
     >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
