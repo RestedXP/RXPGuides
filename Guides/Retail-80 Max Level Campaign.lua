@@ -2626,30 +2626,46 @@ step
     .turnin 85655 >>Turn in Unleashing Her Power
     .target Angorla
 step
+    .goto 2369,72.19,43.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .accept 85656 >>Accept The Singing Bandit Catcher
+    .target Apprentice Tanmar
+step
+    #completewith next
+    #label SpiritScarredCave
+    >>Kill the |cRXP_ENEMY_Cursed Sailor|r. Loot it for the |T6215537:0|t[|cRXP_LOOT_Singing Fragment|r].
+    .complete 85656,1 --1/1 Spirit Scarred Cave Searched
+    .mob Cursed Sailor
+step
+    #title Enter Cave
+    #completewith SpiritScarredCave
+    .goto 2369,49.96,42.67,10 >>Enter the cave
+step
+    #requires SpiritScarredCave
+    .goto 2369,52.34,38.57
+    >>Kill the |cRXP_ENEMY_Cursed Sailor|r. Loot it for the |T6215537:0|t[|cRXP_LOOT_Singing Fragment|r].
+    .complete 85656,1 --1/1 Spirit Scarred Cave Searched
+    .mob Cursed Sailor
+step
+    .goto 2369,43.21,47.79,10,0
+    .goto 2369,43.02,49.41,10,0
+    .goto 2369,38.94,52.49
+    >>Kill the |cRXP_ENEMY_Cursed Sailor|r. Loot it for the |T6215537:0|t[|cRXP_LOOT_Singing Fragment|r].
+    .complete 85656,2 --1/1 Salt and Shanty Searched
+    .mob Cursed Sailor
+step
+    .goto 2369,48.43,58.40
+    >>Kill the |cRXP_ENEMY_Cursed Sailor|r. Loot it for the |T6215537:0|t[|cRXP_LOOT_Singing Fragment|r].
+    .complete 85656,3 --1/1 Ghoststone Diggings Searched
+    .mob Cursed Sailor
+step
+    .goto 2369,72.14,42.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
+    .turnin 85656 >>Turn in The Singing Bandit Catcher
+    .target Apprentice Tanmar
+
+step
     +The next free update will contain the next part of the story!
---
----- MAIN CAMPAIGN WEEK 4
---
---step
---    .goto 2369,72.19,43.00
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
---    .accept 85656 >>Accept The Singing Bandit Catcher
---    .target Apprentice Tanmar
---step
---    .goto 2369,48.43,58.40
---    .complete 85656,3 --1/1 Ghoststone Diggings Searched
---step
---    .goto 2369,38.94,52.49
---    .complete 85656,2 --1/1 Salt and Shanty Searched
---step
---    .goto 2369,52.34,38.57
---    .complete 85656,1 --1/1 Spirit Scarred Cave Searched
---step
---    .goto 2369,72.14,42.98
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
---    .turnin 85656 >>Turn in The Singing Bandit Catcher
---    .target Apprentice Tanmar
---
 ---- MAIN CAMPAIGN WEEK 5
 --
 --step
