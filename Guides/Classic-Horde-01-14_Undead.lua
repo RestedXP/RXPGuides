@@ -2523,6 +2523,14 @@ step << Priest
 	.trainer >> Train your class spells
     .target Dark Cleric Beryl
 step << Warrior
+    #optional
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
+step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .trainer >> Train your class spells
@@ -7811,6 +7819,14 @@ step << Warrior
     .xp >10,1
 step << Warrior
     #optional
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
+step << Warrior
+    #optional
     .goto Tirisfal Glades,61.85,52.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .trainer >> Train your class spells
@@ -8320,6 +8336,16 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
 	.trainer >> Train your class spells
     .target Dark Cleric Beryl
+step << Warrior
+    #xprate <2.1
+    #optional
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
+    #xprate <2.1
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
 step << Warrior
     #xprate <2.1
     .goto Tirisfal Glades,61.85,52.55

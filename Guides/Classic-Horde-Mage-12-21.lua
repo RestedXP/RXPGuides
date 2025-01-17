@@ -41,6 +41,11 @@ step
 >>Talk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step
+    .goto The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
+    .home >> Set your Hearthstone to Crossroads
+    .target Innkeeper Boorand Plainswind
+step
     .goto The Barrens,51.5,30.8
 .target Thork
 >>Talk to |cRXP_FRIENDLY_Thork|r

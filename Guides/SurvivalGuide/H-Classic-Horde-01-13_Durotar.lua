@@ -3593,9 +3593,13 @@ step
     .goto Tirisfal Glades,61.89,52.73
     .maxlevel 12
 step << Warrior
-    #completewith next
+    #optional
     .abandon 1505 >>Abandon Veteran Uzzek
     .isOnQuest 1505
+step << Warrior
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
@@ -3842,6 +3846,14 @@ step
 step
     #optional
     #label Brillturnins2
+step << Warrior
+    #optional
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r

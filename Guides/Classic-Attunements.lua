@@ -1296,6 +1296,11 @@ step
 	.target High Executor Derrington
     .isOnQuest 5095
 step
+	.goto Western Plaguelands,26.55,56.18
+	>>Click the |cRXP_PICK_Box of Incendiaries|r by the fire
+	.collect 12814,1,5095,1 --Flame in a Bottle (1)	
+    .isOnQuest 5095
+step
     #label ScarletDiversionsPU
     #requires ThoriumBars
     .goto Tirisfal Glades,83.15,68.92
@@ -1391,11 +1396,11 @@ step
     .collect 12359,2,5802,1 --Thorium Bar x2
 step
     #completewith next
-    .goto Tanaris,51.006,29.345
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bera Stonehammer|r
-    .fly Un'Goro >> Fly to Un'Goro Crater
-    .target Bera Stonehammer
-    .zoneskip Un'Goro Crater
+    .goto Silithus,48.69,36.67,0
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runk|r
+    .fly Un'Goro >>Fly to Un'Goro Crater
+	.target Runk Windtamer
+	.zoneskip Un'Goro Crater
 step
     #completewith next
     .goto Un'Goro Crater,49.62,47.56,100 >>Travel to the top of the mountain at Fire Plume Ridge

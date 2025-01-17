@@ -5435,10 +5435,18 @@ step
     .maxlevel 12 << Warlock
     .maxlevel 13 << Warrior
 step << Warrior
+    #optional
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
+step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Accept Speak with Dillinger
-    .target Austil de Mon << Warrior
+    .target Austil de Mon
     .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
