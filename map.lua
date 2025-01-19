@@ -1163,6 +1163,7 @@ function addon.UpdateGotoSteps()
                             source.previousObjective = source.currentObjective
                         end
                         if dist <= element.radius and objectiveCheck then
+                            local enabled = not element.skip
                             if element.persistent and not element.skip then
                                 element.skip = true
                                 addon.UpdateMap()
@@ -1177,6 +1178,10 @@ function addon.UpdateGotoSteps()
                                 if element.timer then
                                     addon.StartTimer(element.timer,element.timerText)
                                 end
+                            end
+                            if enabled and addon.settings.profile.debug and element.skip then
+                                print(format("%d: Waypoint reached\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
+                                       element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
                             end
                         elseif element.persistent and element.skip then
                             element.skip = false
