@@ -1226,3 +1226,10 @@ function addon.targeting:LoadRares()
     rareTargets = addon.rares[zone] or {}
     self:UpdateTargetFrame()
 end
+
+function addon.ResetTargetPosition()
+    local f = _G.RXPTargetFrame
+    f:ClearAllPoints()
+    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+end
+

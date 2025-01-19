@@ -1739,6 +1739,15 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.targeting.activeTargetFrame:SetScale(value)
                         end
                     },
+                    resetTargetPosition = {
+                        name = L("Reset Window Position"), -- TODO locale
+                        order = 2.52,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.ResetTargetPosition()
+                        end
+                    },
                     alertHeader = {
                         name = _G.COMMUNITIES_NOTIFICATION_SETTINGS,
                         type = "header",
@@ -2925,6 +2934,15 @@ function addon.settings:CreateAceOptionsPanel()
                             if addon.activeItemFrame then
                                 addon.activeItemFrame:UpdateVisuals()
                             end
+                        end
+                    },
+                    resetItemPosition = {
+                        name = L("Reset Window Position"), -- TODO locale
+                        order = 4.21,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.ResetItemPosition()
                         end
                     },
                     mapHeader = {

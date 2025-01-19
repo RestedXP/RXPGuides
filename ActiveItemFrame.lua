@@ -395,3 +395,9 @@ function addon.UpdateItemFrame(itemFrame)
     UpdateCooldowns()
 
 end
+
+function addon.ResetItemPosition()
+    local f = _G.RXPItemFrame
+    f:ClearAllPoints()
+    f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+end
