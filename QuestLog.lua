@@ -398,7 +398,7 @@ end
 -- Set on first GetOrphanedQuests run, likely by UpdateQuestButton call
 addon.orphanedList = nil -- {}
 function addon.GetOrphanedQuests()
-    if not addon.currentGuide or not addon.currentGuide.key then
+    if addon.isHidden or not addon.currentGuide or not addon.currentGuide.key then
         return {}, {}
     end
     local invertedList, orphanedList = {}, {}
