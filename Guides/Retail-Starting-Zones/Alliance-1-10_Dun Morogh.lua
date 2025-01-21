@@ -773,22 +773,20 @@ step
     #completewith next
     +Welcome to the |cRXP_WARN_Gnome Starting Zone|r. Guide by RestedXP.
     *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
-    step
+step
     .goto 30,34.101,32.243
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nevin Twistwrench|r.
     .accept 27670 >>Accept Pinned Down
 step
     #loop
-    .goto 30,40.712,32.200,0
-    .goto 30,43.924,36.923,0
-    .goto 30,44.916,26.413,0
-    .goto 30,40.712,32.200,15,0
-    .goto 30,43.924,36.923,25,0
-    .goto 30,49.744,39.322,25,0
-    .goto 30,49.077,32.873,25,0
-    .goto 30,50.404,27.498,25,0
-    .goto 30,44.916,26.413,25,0
+    .goto 30,60.77,28.77,0
+    .goto 30,58.51,41.47,0
+    .goto 30,52.05,61.18,0
+    .goto 30,40.53,31.95,20,0
+    .goto 30,47.79,41.62,25,0
+    .goto 30,48.07,25.62,25,0
     >>Kill |cRXP_ENEMY_Crazed Leper Gnomes|r.
+    *|cRXP_WARN_Ignore the one that is stuck on the stairs|r.
     .complete 27670,1 --Crazed Leper Gnome (6)
 	.mob Crazed Leper Gnome
 step
@@ -814,22 +812,28 @@ step << skip
     .isOnQuest 27671
 step
     #loop
-    .goto 30,50.065,30.713,0
-    .goto 30,52.634,23.152,0
-    .goto 30,51.591,37.316,0
-    .goto 30,50.065,30.713,15,0
-    .goto 30,53.170,29.377,15,0
-    .goto 30,52.156,27.685,15,0
-    .goto 30,52.634,23.152,15,0
-    .goto 30,45.858,24.345,15,0
-    .goto 30,47.631,30.000,15,0
-    .goto 30,43.926,30.137,15,0
-    .goto 30,42.540,36.441,15,0
-    .goto 30,50.993,42.921,15,0
-    .goto 30,51.591,37.316,15,0
-    >>Use the |T967530:0|t[Teleport Beacon] on |cRXP_FRIENDLY_Survivors|r.
+    .goto 30,50.07,30.69,3,0
+    .goto 30,53.18,29.29,5,0
+    .goto 30,52.15,27.62,5,0
+    .goto 30,52.67,23.08,8,0
+    .goto 30,45.86,24.31,10,0
+    .goto 30,47.63,30.01,5,0
+    .goto 30,43.91,30.16,8,0
+    .goto 30,42.59,36.47,8,0
+    .goto 30,50.99,42.94,15,0
+    .goto 30,51.61,37.35,10,0
+    .goto 30,48.14,33.31,10,0
+    .goto 30,54.92,35.93,10,0
+    .goto 30,55.11,36.97,5,0
+    .goto 30,53.89,43.48,7,0
+    .goto 30,60.25,43.79,10,0
+    .goto 30,64.41,37.61,10,0
+    .goto 30,64.01,32.74,8,0
+    .goto 30,62.91,28.42,10,0
+    .goto 30,57.68,30.99,10,0
+    .goto 30,56.04,23.32,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Survivors|r.
     .complete 27671,1 --Survivors Rescued (6)
-    .use 62057
 	.target Survivor
 step
     .goto 30,50.973,31.915
@@ -838,23 +842,18 @@ step
     .accept 28169 >>Accept Withdraw to the Loading Room!
 	.target Carvo Blastbolt
 step
-    #completewith next
-    .goto 30,51.481,37.082,20,0
-    .goto 30,52.309,62.433,20,0
-    .goto 30,53.355,74.209,20,0
-    .goto 30,53.063,82.341,15 >>Travel toward |cRXP_FRIENDLY_Gaffer Coilspring|r.
-step
     .goto 30,53.063,82.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaffer Coilspring|r.
     .turnin 28169 >>Turn in Withdraw to the Loading Room!
     .accept 27635 >>Accept Decontamination
 	.target Gaffer Coilspring
 step
-    .goto 30,58.746,82.974
-    >>|cRXP_WARN_Type /sit in front of the |cRXP_FRIENDLY_Sanitron 500|r then enter it to skip the RP|r.
+    .goto 30,58.93,81.73
+    -- >>|cRXP_WARN_Type /sit in front of the |cRXP_FRIENDLY_Sanitron 500|r then enter it to skip the RP|r.
+    >>Click on the |cRXP_PICK_Sanitron 500|r, |cRXP_WARN_but only when you are certain you are within range to enter it. Ensure you are stationary before clicking, and click only once(don't use the interact button)|r.
     .complete 27635,1 --Decontamination Process started (1)
     .target Sanitron 500
---XX  .emote SIT,46185 Doesn't work here, needs a delay (batch makes this not work)
+    .emote SIT,46185
 --   .timer 26,Decontamination RP
 step
     .goto 30,66.420,81.624
@@ -867,7 +866,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torben Zapblast|r.
     .complete 27674,1 --Speak to Torben Zapblast (1)
     .target Torben Zapblast
-	.skipgossip
+	.skipgossipid 37763
 step
     .goto 469,39.504,38.383
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nevin Twistwrench|r.
