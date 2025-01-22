@@ -2541,16 +2541,29 @@ step
     .turnin 85653 >>Turn in Dipping a Toe
     .target Apprentice Tanmar
 
-
+step
+    .isQuestAvailable 85654
+    .isQuestTurnedIn 85653
+    .isOnQuest 84852
+    >>Kill |cRXP_ENEMY_rares|r, |cRXP_ENEMY_enemies|r, complete repeatable quests and excavations or open |cRXP_PICK_chests|r to complete the first part of the special assignment quest
+    .complete 84852,1 --Complete activities and secure the Siren Isle (100%)
+step
+    .isQuestAvailable 85654
+    .isQuestTurnedIn 85653
+    .isOnQuest 84851
+    >>Kill |cRXP_ENEMY_rares|r, |cRXP_ENEMY_enemies|r, complete repeatable quests and excavations or open |cRXP_PICK_chests|r to complete the first part of the special assignment quest
+    .complete 84851,1 --Complete activities and secure the Siren Isle (100%)
+step
+    .isQuestAvailable 85654
+    .isQuestTurnedIn 85653
+    .isOnQuest 84850
+    >>Kill |cRXP_ENEMY_rares|r, |cRXP_ENEMY_enemies|r, complete repeatable quests and excavations or open |cRXP_PICK_chests|r to complete the first part of the special assignment quest
+    .complete 84850,1 --Complete activities and secure the Siren Isle (100%)
 step
     .goto 2369,71.28,45.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
     .accept 85654 >>Accept Juicing Up And Storming Out
     .target Didi the Wrench
-step
-    .isOnQuest 85654
-    >>Kill |cRXP_ENEMY_rares|r, |cRXP_ENEMY_enemies|r, complete repeatable quests and excavations or open |cRXP_PICK_chests|r to complete the first part of the special assignment quest
-    .complete 84851,1 --Complete activities and secure the Siren Isle (100%)
 step
     .goto 2369,69.07,49.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench to enter Storm Mode|r
@@ -2585,7 +2598,7 @@ step
     .complete 85654,4 --1/1 Use the N.U.K.U.L.A.R Target Painter
 step
     .isOnQuest 85654
-    .goto 2369,69.07,49.25
+    .goto 2369,69.23,49.26
     .aura -458069 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzie Boltwrench to leave Storm Mode|r
     .skipgossipid 125326
     .target Suzie Boltwrench
@@ -2663,27 +2676,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Tanmar|r
     .turnin 85656 >>Turn in The Singing Bandit Catcher
     .target Apprentice Tanmar
-
 step
-    +The next free update will contain the next part of the story!
----- MAIN CAMPAIGN WEEK 5
---
---step
---    .goto 2369,71.28,45.98
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
---    .accept 85657 >>Accept Cyrce Would Be So Proud
---    .target Didi the Wrench
---step
---    .goto 2369,71.43,45.49
---    .complete 85657,1 --1/1 Survive a ride in the Skypiercer
---step
---    .goto 2369,71.29,45.93
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
---    .turnin 85657 >>Turn in Cyrce Would Be So Proud
---    .target Didi the Wrench
---
----- MAIN CAMPAIGN WEEK 6
-
+    .goto 2369,71.28,45.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .accept 85657 >>Accept Cyrce Would Be So Proud
+    .target Didi the Wrench
+step
+    .goto 2369,72.19,44.89
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Skypiercer|r
+    *|cRXP_WARN_Use the correct ability:|r
+    - Wind on the left: Left
+    - Wind on the right: Right
+    - Wind in the middle: Forward
+    .complete 85657,1 --1/1 Survive a ride in the Skypiercer
+    .target The Skypiercer
+step
+    .goto 2369,71.29,45.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Didi the Wrench|r
+    .turnin 85657 >>Turn in Cyrce Would Be So Proud
+    .target Didi the Wrench
 ]])
 
 -- Siren Isle Dailies/Weeklies?
@@ -2988,7 +2999,7 @@ step
     .mob Extractor Silisai
 step
     .isQuestAvailable 85051
-    .isOnQuest 84627,84430,85549
+    .isOnQuest 84627,84430,85589
     .goto 2369,41.95,68.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
     .accept 85051 >>Accept Beach Comber
@@ -3010,6 +3021,7 @@ step
 step
     .isOnQuest 85051
     .isQuestComplete 85051
+    #label ThreeHeadsOfTheDeep
     .goto 2369,41.95,68.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kromleg|r
     .turnin 85051 >>Turn in Beach Comber
@@ -3028,29 +3040,35 @@ step
     .mob Water Shell
     .mob Crystal Chunk
 step
-    .isOnQuest 85549
+    .isOnQuest 85589
     #completewith next
     #label RuffledPagesA
-    >>Kill |cRXP_ENEMY_X|r. Loot them for the |T1:0|t[|cRXP_LOOT_|r].
-    .complete 85549,1 --15/15 Ruffled Pages
+    >>Kill |cRXP_ENEMY_Cliffreach Pridetalons|r. Loot them for the |T134332:0|t[|cRXP_LOOT_Ruffled Pages|r].
+    .complete 85589,1 --15/15 Ruffled Pages
+    .mob Cliffreach Pridetalon
+    .mob Cliffreach Matriarch
 step
-    .isOnQuest 85549
+    .isOnQuest 85589
     #completewith RuffledPagesA
     .goto 2369,46.27,65.11
     .cast 313062 >>Look up and click on the |cRXP_PICK_Grappling Hold|r.
 step
-    .isOnQuest 85549
+    .isOnQuest 85589
     #requires RuffledPagesA
     #loop
     .goto 2369,42.31,61.27,15,0
     .goto 2369,39.70,62.48,15,0
+    .goto 2369,41.94,60.27,10,0
+    .goto 2369,43.18,63.49,10,0
     .goto 2369,39.59,58.73,15,0
+    .goto 2369,38.83,58.94,20,0
     .goto 2369,31.29,59.51,15,0
     .goto 2369,30.69,65.57,15,0
     .goto 2369,29.57,70.49,10,0
     .goto 2369,26.74,72.44,15,0
     >>Kill |cRXP_ENEMY_Cliffreach Pridetalons|r. Loot them for the |T134332:0|t[|cRXP_LOOT_Ruffled Pages|r].
-    .complete 85549,1 --15/15 Ruffled Pages
+    *Look up and click on the |cRXP_PICK_Grappling Hold|r.
+    .complete 85589,1 --15/15 Ruffled Pages
     .mob Cliffreach Pridetalon
     .mob Cliffreach Matriarch
 step
@@ -3142,6 +3160,18 @@ step
     .turnin 84222 >>Turn in Secure the Perimeter
     .target Sky-Captain Elaena Lancekat
 step
+    .isOnQuest 84430
+    .goto 2369,69.43,42.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
+    .turnin 84430 >>Turn in Crystal Crusade
+    .target Sky-Captain Elaena Lancekat
+step
+    .isOnQuest 84627
+    .goto 2369,69.43,42.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky-Captain Elaena Lancekat|r
+    .turnin 84627 >>Turn in Three Heads of the Deep
+    .target Sky-Captain Elaena Lancekat
+step
     .isOnQuest 84680
     .goto 2369,69.13,43.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r
@@ -3158,6 +3188,12 @@ step
     .goto 2369,71.05,39.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
     .turnin 83932 >>Turn in Historical Documents
+    .target Stellin Verasa,
+step
+    .isOnQuest 85589
+    .goto 2369,71.05,39.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stellin Verasa|r
+    .turnin 85589 >>Turn in Ruffled Pages
     .target Stellin Verasa
 ]])
 
