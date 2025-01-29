@@ -7844,11 +7844,6 @@ step
     .turnin 310 >> Turn in Bitter Rivals
     .accept 311 >> Accept Return to Marleth
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
-    .target Innkeeper Belm
-    .goto Dun Morogh,47.377,52.523
-    .home >> Set your Hearthstone to Kharanos
-step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
     .target Ragnar Thunderbrew
     .goto Dun Morogh,46.825,52.361
@@ -7921,10 +7916,10 @@ step
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
 step
-    .goto Dun Morogh,68.671,55.969
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .accept 433 >> Accept The Public Servant
-    .target Senator Mehr Stonehallow
+    .goto Dun Morogh,69.084,56.330
+    .target Foreman Stonebrow
+    >>Talk to |cRXP_FRIENDLY_Foreman Stonebrow|r
+    .accept 432 >> Accept Those Blasted Troggs!
 step
 #loop
     .goto Dun Morogh,67.5,59.4,40,0
@@ -7935,10 +7930,10 @@ step
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
-    .goto Dun Morogh,68.671,55.969
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 433 >> Turn in The Public Servant
-    .target Senator Mehr Stonehallow
+    .goto Dun Morogh,69.084,56.330
+    .target Foreman Stonebrow
+    >>Talk to |cRXP_FRIENDLY_Foreman Stonebrow|r
+    .turnin 432 >> Turn in Those Blasted Troggs!
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
