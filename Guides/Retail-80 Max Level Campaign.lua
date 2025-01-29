@@ -2703,9 +2703,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP The War Within
 #subgroup Max Level Storylines (80)
-#name h) Siren Isle Daillies
-#displayname Siren Isle Daillies
-#internal
+#name h) Siren Isle Weeklies
+#displayname Siren Isle Weeklies
 
 step
     #loop
