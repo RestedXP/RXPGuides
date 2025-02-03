@@ -1039,6 +1039,12 @@ function addon:CreateMetaDataTable(wipe)
     guideMetaData.enabledDungeons.Horde = guideMetaData.enabledDungeons.Horde or {}
     guideMetaData.enabledDungeons.Alliance = guideMetaData.enabledDungeons.Alliance or {}
     guideMetaData.enableGroupQuests = guideMetaData.enableGroupQuests or {}
+
+    guideMetaData.professionGuides = guideMetaData.professionGuides or {}
+    guideMetaData.enabledProfessions = guideMetaData.enabledProfessions or {}
+    guideMetaData.enabledProfessions.Horde = guideMetaData.enabledProfessions.Horde or {}
+    guideMetaData.enabledProfessions.Alliance = guideMetaData.enabledProfessions.Alliance or {}
+
 end
 
 function addon:OnInitialize()
@@ -1974,6 +1980,21 @@ function addon.stepLogic.DungeonCheck(step)
     elseif dungeon and dungeon ~= dskip and addon.settings.profile.dungeons[dungeon] then
         return true
     elseif not dungeon then
+        return true
+    end
+end
+
+function addon.stepLogic.ProfessionCheck(step)
+    local profession = step.profession
+    local pskip = step.professionskip
+    --print(dungeon,dskip)
+    if not addon.settings.profile.professions then
+        return true
+    elseif pskip and addon.settings.profile.professions == pskip then
+        return false
+    elseif profession and profession ~= pskip and addon.settings.profile.professions == profession then
+        return true
+    elseif not profession then
         return true
     end
 end

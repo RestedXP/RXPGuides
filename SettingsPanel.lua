@@ -1517,6 +1517,34 @@ function addon.settings:CreateAceOptionsPanel()
                                            .faction])
                         end
                     },
+                    professions = {
+                        hidden = function()
+                            return addon.game ~= "CLASSIC" or not next(addon.professions)
+                        end,
+                        --[[disabled = function()
+                            return addon.settings.profile.enableAutomaticXpRate
+                        end,]]
+                        name = L("Professions"),
+                        desc = function()
+                            local out =
+                                L "Level professions along with the guide\nGuides that support this feature:\n"
+                            for guide in pairs(
+                                             RXPCData.guideMetaData.professionGuides) do
+                                out = fmt("%s\n%s", out, guide)
+                            end
+                            return out
+                        end,
+                        type = "select",
+                        values = addon.GenerateProfessionTable,
+                        --sorting = {0, 1, 2},
+                        width = optionsWidth,
+                        order = 2.91,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
+                        end,
+                    },
                     questCleanupHeader = {
                         name = L("Quest Cleanup"),
                         type = "header",
