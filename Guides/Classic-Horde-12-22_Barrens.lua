@@ -4149,15 +4149,21 @@ step
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
-    .accept 104 >> Accept The Coastal Menace
     .accept 103 >> Accept Keeper of the Flame
     .target Captain Grayson
+    .itemcount 814,5 -- Flask of Oil (5)
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 103 >> Turn in Keeper of the Flame
     .itemcount 814,5 -- Flask of Oil (5)
+    .target Captain Grayson
+    .dungeon DM
+step
+    .goto Westfall,30.01,86.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
+    .accept 104 >> Accept The Coastal Menace
     .target Captain Grayson
     .dungeon DM
 step

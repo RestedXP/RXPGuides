@@ -368,7 +368,7 @@ step
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
-    .fly Orgrimmar >>Fly to Orgrimmar
+    .fly Orgrimmar >> Fly to Orgrimmar
     .target Tal
     .dungeon RFC
 step
@@ -2807,15 +2807,21 @@ step
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
-    .accept 104 >> Accept The Coastal Menace
     .accept 103 >> Accept Keeper of the Flame
     .target Captain Grayson
+    .itemcount 814,5 -- Flask of Oil (5)
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 103 >> Turn in Keeper of the Flame
     .itemcount 814,5 -- Flask of Oil (5)
+    .target Captain Grayson
+    .dungeon DM
+step
+    .goto Westfall,30.01,86.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
+    .accept 104 >> Accept The Coastal Menace
     .target Captain Grayson
     .dungeon DM
 step
@@ -3144,6 +3150,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
     .accept 264 >> Until Death Do Us Part
     .target Clarice Foster
+    .dungeon !WC
 step
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
@@ -3591,10 +3598,8 @@ step
 step
     #label GlowingShard
     >>Once you have reached |cRXP_FRIENDLY_Naralex|r you will get attack by two waves of enemies and finally by |cRXP_ENEMY_Mutanus the Devourer|r
-    >>Kill him and loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] and use it to start the quest
-    .collect 10441,1 --Collect Glowing Shard (x1)
-    .accept 6981 >> Accept The Glowing Shard
-    .use 10441
+    >>Kill him and loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r]
+    .collect 10441,1,6981,1 --Collect Glowing Shard (x1)
     .mob Mutanus the Devourer
     .dungeon WC
 step
@@ -3665,17 +3670,9 @@ step
     .isOnQuest 962
     .dungeon WC
 step
-    #completewith next
+    #completewith GlowingShardRP
     .hs >> Hearth to Ratchet
     .use 6948
-    .dungeon WC
-step
-    .goto The Barrens,62.99,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
-    .skipgossip
-    .target Sputtervalve
-    .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,63.09,37.61
@@ -3696,6 +3693,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .isOnQuest 6981
+    .dungeon WC
+step
+    .use 10441 >>Use the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] to accept the quest
+    .accept 6981 >> Accept The Glowing Shard
+step
+    #label GlowingShardRP
+    .goto The Barrens,62.99,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
+    .skipgossip
+    .target Sputtervalve
     .isOnQuest 6981
     .dungeon WC
 step
@@ -3778,6 +3787,12 @@ step
     .turnin 962 >>Turn in Serpentbloom
     .target Apothecary Zamah
     .isQuestComplete 962
+    .dungeon WC
+step
+    .goto Thunder Bluff,28.55,25.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
+    .accept 264 >> Until Death Do Us Part
+    .target Clarice Foster
     .dungeon WC
 step
     .goto Thunder Bluff,45.83,64.74

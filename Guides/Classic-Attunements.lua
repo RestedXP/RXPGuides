@@ -371,11 +371,11 @@ step
 step
     >>Kill |cRXP_ENEMY_Highlord Omokk|r, |cRXP_ENEMY_War Master Voone|r and |cRXP_ENEMY_Overlord Wyrmthalak|r
     .complete 4903,2 --Highlord Omokk 1/1
+    .mob +Highlord Omokk
     .complete 4903,3 --War Master Voone 1/1
+    .mob +War Master Voone
     .complete 4903,1 --Overlord Wyrmthalak 1/1
-    .mob Highlord Omokk
-    .mob War Master Voone
-    .mob Overlord Wyrmthalak
+    .mob +Overlord Wyrmthalak
 step
     #requires ImportantDocuments
     #completewith next
@@ -391,11 +391,14 @@ step
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step
+    .goto Orgrimmar,34.27,39.35,10,0
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r and go through the dialogue, then talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 4941 >>Turn in Eitrigg's Wisdom
     .accept 4974 >>Accept For The Horde!
+    .target Eitrigg
     .target Thrall
+    .skipgossip
 step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
@@ -722,7 +725,7 @@ step
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
-    .isQuestTurnedIn 6403
+    .isQuestTurnedIn 6601 
     >>Kill |cRXP_ENEMY_General Drakkisath|r. Loot him for |cRXP_LOOT_Blood of the Black Dragon Champion|r
     .complete 6602,1 --Blood of the Black Dragon Champion 1/1
     .mob General Drakkisath
@@ -730,7 +733,7 @@ step
     #completewith next
     .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
-    .isQuestComplete 6403
+    .isQuestComplete 6602
     #loop
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
@@ -895,11 +898,11 @@ step
     >>Kill |cRXP_ENEMY_Overlord Wyrmthalak|r. Loot him for |cRXP_LOOT_Gemstone of Bloodaxe|r
     >>|cRXP_WARN_The|r |cRXP_LOOT_Gemstones|r |cRXP_WARN_have a ~30% drop chance. You will most likely have to complete multiple LBRS runs|r
     .complete 4742,1 --Gemstone of Spirestone 1/1
+    .target +Highlord Omokk
     .complete 4742,2 --Gemstone of Smolderthorn 1/1
+    .target +War Master Voone
     .complete 4742,3 --Gemstone of Bloodaxe 1/1
-    .target Highlord Omokk
-    .target War Master Voone
-    .target Overlord Wyrmthalak
+    .target +Overlord Wyrmthalak
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scarshield Infiltrator|r
     >>|cRXP_WARN_As you enter Hordemar City at the start of the dungeon, he will be located on a platform to your left|r

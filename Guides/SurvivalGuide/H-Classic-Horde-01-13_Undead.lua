@@ -3143,6 +3143,12 @@ step
     .mob Greater Duskbat
     .mob Vampiric Duskbat
 step
+    #label LinneaTurnin
+    .goto Tirisfal Glades,65.49,60.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
+    .turnin 356 >>Turn in Rear Guard Patrol
+    .target Deathguard Linnea
+step
     .goto Tirisfal Glades,61.03,52.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from|r |cRXP_FRIENDLY_her|r
