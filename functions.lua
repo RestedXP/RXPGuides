@@ -6235,6 +6235,40 @@ function addon.functions.dungeon(self, text, instance)
     end
 end
 
+addon.professions = {}
+function addon.functions.profession(self, text, instance)
+    if type(self) == "string" then -- on parse
+        local skip
+        if instance and instance:sub(1,1) == "!" then
+            instance = instance:sub(2,-1)
+            skip = true
+        end
+        if not addon.GetProfessionId then return end
+        local tag = addon.GetProfessionId(instance)
+
+        if tag and not skip then
+            if RXPCData.guideMetaData.professionGuides[addon.player.faction] then
+                RXPCData.guideMetaData.professionGuides[addon.player.faction][tag] = true
+            end
+            addon.professions[tag] = true
+            addon.step.profession = tag
+            --print(tag,name)
+            RXPCData.guideMetaData.professionGuides[addon.currentGuideGroup] = true
+        elseif tag and skip then
+            addon.step.professionskip = tag
+        else
+            return addon.error(
+                L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                   ': Invalid profession name\n' .. self)
+        end
+
+        if text and text ~= "" then
+            return {textOnly = true, text = text}
+        end
+
+    end
+end
+
 function addon.functions.group(self, ...)
     if type(self) == "string" then -- on parse
         local text, number = ...
