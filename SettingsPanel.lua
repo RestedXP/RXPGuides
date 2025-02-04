@@ -1535,7 +1535,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return out
                         end,
                         type = "select",
-                        values = addon.GenerateProfessionTable,
+                        values = addon.GenerateProfessionTable or {},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
                         order = 2.91,
