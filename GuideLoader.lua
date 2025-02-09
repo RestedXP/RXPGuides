@@ -730,9 +730,13 @@ local function parseLine(linetext,step,parsingLogic)
         parsingLogic = addon.functions
     end
     addon.step = step
-    if addon.lastEelement and addon.lastEelement.step ~= step then
-        addon.lastEelement = nil
+    if addon.lastObjective and addon.lastObjective.step ~= step then
+        addon.lastObjective = nil
     end
+    if addon.lastElement and addon.lastElement.step ~= step then
+        addon.lastElement = nil
+    end
+
     local line = linetext
     local classtag
     line = line:gsub("%s*<<%s*(.+)", function(t)
@@ -780,7 +784,7 @@ local function parseLine(linetext,step,parsingLogic)
             element.tag = tag
             element.step = step
             if element.parent then
-                element.parent = addon.lastEelement
+                element.parent = addon.lastObjective
             end
         else
             local ltext
@@ -800,7 +804,7 @@ local function parseLine(linetext,step,parsingLogic)
         element = {text = text, textOnly = true, step = step}
     elseif line:sub(1, 1) == "+" then
         element = {text = line:sub(2, -1), step = step}
-        addon.lastEelement = element
+        addon.lastObjective = element
     elseif line:sub(1, 1) == "*" then
         element = {
             text = line:sub(2, -1):gsub("\\n", "\n"),
@@ -812,7 +816,7 @@ local function parseLine(linetext,step,parsingLogic)
         -- error('Error parsing guide at line '..linenumber..'/ '..guide.name)
     end
     if element and (text and not element.textOnly or element.dynamicText) then
-        addon.lastEelement = element
+        addon.lastObjective = element
     end
 
     --[[if RXPData.localeTable and element and element.text then
@@ -827,6 +831,7 @@ local function parseLine(linetext,step,parsingLogic)
         end
     elseif step.elements and element then
         tinsert(step.elements, element)
+        addon.lastElement = element
     end
     return element
 end
@@ -834,7 +839,7 @@ addon.ParseLine = parseLine
 
 function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, key)
 
-    addon.lastElement = nil
+    addon.lastObjective = nil
     if not groupOrContent then return end
 
     local playerLevel = UnitLevel("player")
@@ -921,7 +926,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                 addon.minGuideVersion = math.min(guide.version,addon.minGuideVersion)
                 addon.maxGuideVersion = math.max(guide.version,addon.maxGuideVersion)
                 addon.guide = false
-                addon.lastEelement = nil
+                addon.lastObjective = nil
                 guide.key = guide.key or key
                 return guide, skipGuide
             elseif currentStep == 0 then
@@ -944,7 +949,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                 step.stepId = linenumber + guide.guideId
                 --step.index = currentStep
                 addon.step = step
-                --addon.lastEelement = nil
+                --addon.lastObjective = nil
                 parsingLogic = addon.functions
             end
         elseif not skip then
@@ -1017,7 +1022,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     addon.maxGuideVersion = math.max(guide.version,addon.maxGuideVersion)
 
     addon.guide = false
-    addon.lastElement = nil
+    addon.lastObjective = nil
     -- print(guide.name,"\n",guide.enabledFor)
 
     local metadata = {length = length}

@@ -929,7 +929,9 @@ local function updateArrowData()
     local loop = {}
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
-        if element.lowPrio and not lowPrio then
+        if element.hidden then
+            return
+        elseif element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
             return
         end
@@ -1126,10 +1128,12 @@ function addon.UpdateGotoSteps()
             hideArrow = true
         end
     end
+    local updateMap
     for i, element in ipairs(addon.activeWaypoints) do
         local step = element.step
         if step and step.active then
 
+            local hidden = element.hidden
             if (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
@@ -1153,9 +1157,25 @@ function addon.UpdateGotoSteps()
                             closestPoint = element
                         end
                     end
-                    if element.radius then
+                    local isActive = true
+                    if element.activationRadius then
+                        local _,aDist = HBD:GetWorldVector(instance, x, y, element.xref,
+                                                   element.yref)
+                        if aDist then
+                            if element.activationRadius < 0 then aDist = -aDist end
+                            if aDist > element.activationRadius then
+                                element.hidden = true
+                                isActive = false
+                            else
+                                element.hidden = false
+                            end
+                        end
+                        --print(isActive,aDist,element.activationRadius)
+                    end
+                    if element.radius and isActive then
                         local source = element.source or element
                         local objectiveCheck = true
+                        if element.radius < 0 then dist = -dist end
                         if source.currentObjective then
                             if source.currentObjective <= source.previousObjective then
                                 objectiveCheck = false
@@ -1164,14 +1184,12 @@ function addon.UpdateGotoSteps()
                         end
                         if dist <= element.radius and objectiveCheck then
                             local enabled = not element.skip
-                            if element.persistent and not element.skip then
-                                element.skip = true
-                                addon.UpdateMap()
+                            if element.persistent then
+                                element.hidden = true
                             elseif not (element.textOnly and element.hidePin and
                                          element.wpHash ~= af.element.wpHash and not element.generated) then
                                 CheckLoop(element,step)
                                 element.skip = true
-                                addon.UpdateMap()
                                 if not element.textOnly then
                                     addon.SetElementComplete(element.frame)
                                 end
@@ -1183,16 +1201,21 @@ function addon.UpdateGotoSteps()
                                 print(format("%d: Waypoint reached\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
                                        element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
                             end
-                        elseif element.persistent and element.skip then
-                            element.skip = false
-                            RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
-                            addon.UpdateMap()
+                        elseif element.persistent then
+                            element.hidden = false
                         end
                     end
                 end
             end
+            if hidden ~= element.hidden then
+                updateMap = true
+            end
             --
         end
+    end
+
+    if updateMap then
+        addon.UpdateMap()
     end
 
     if addon.hideArrow ~= hideArrow and not af.wrongContinent then

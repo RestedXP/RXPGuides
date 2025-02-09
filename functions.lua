@@ -1894,6 +1894,33 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
     end
 end
 
+function addon.functions.wpradius(self,_,zone,x,y,radius)
+    local element = addon.lastElement
+    if element and element.wx then
+
+        local subzone = zone:find(".-/%d+")
+        if subzone then
+            x = tonumber(x)
+            y = tonumber(y)
+        else
+            zone, x , y = addon.GetMapInfo(zone,x,y)
+            x, y, zone =
+            HBD:GetWorldCoordinatesFromZone(x / 100, y / 100,
+                                            zone)
+        end
+        radius = tonumber(radius)
+        if (x and y and radius) then
+            element.xref, element.yref = x,y
+            element.persistent = true
+            element.activationRadius = radius
+        else
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ": Invalid coordinates or map name\n" .. self)
+        end
+    end
+end
+
 function addon.functions.pin(self, ...)
     -- creates a map pin without an waypoint arrow
     if type(self) == "string" then
