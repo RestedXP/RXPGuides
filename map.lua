@@ -358,6 +358,29 @@ MapPinPool.creationFunc = function(framePool)
                 self.text:SetPoint("CENTER", self, 1, 0)
             end
 
+            local radius = element.radius
+            if element.activationRadius and element.wx == element.xref and element.wy == element.yref then
+                radius = element.activationRadius
+            end
+            if step.active and addon.settings.profile.debug and radius and not isMiniMapPin then
+
+                radius = math.abs(radius)
+                local zone = _G.WorldMapFrame:GetMapID()
+                local w,h = HBD:GetZoneSize(zone)
+                local canvas = _G.WorldMapFrame:GetCanvas()
+                local scale = canvas:GetScale()
+
+                --local a,b = WorldMapFrame.ScrollContainer:GetCurrentZoomRange()
+
+                radius = radius * 2 * scale
+                local x,y = radius/w,radius/h
+                local width = canvas:GetWidth() * x
+                local height = canvas:GetHeight() * y
+                self:SetWidth(width)
+                self:SetHeight(height)
+                self:SetBackdropColor(0.1, 0.1, 0.1, 0.5)
+            end
+
             self:SetScale(addon.settings.profile.worldMapPinScale)
             self:SetAlpha(pin.opacity)
         end
@@ -1134,6 +1157,26 @@ function addon.UpdateGotoSteps()
         if step and step.active then
 
             local hidden = element.hidden
+            local isActive = true
+            if element.activationRadius then
+                local _,aDist = HBD:GetWorldVector(instance, x, y, element.xref,
+                                            element.yref)
+                if aDist then
+                    --print(aDist,'-',element.x,element.y)
+                    if element.activationRadius < 0 then aDist = -aDist end
+                    if aDist > element.activationRadius then
+                        element.hidden = true
+                        isActive = false
+                    else
+                        element.hidden = false
+                        if hidden and addon.settings.profile.debug then
+                            print(format("%d: Waypoint activation\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
+                                element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
+                        end
+                    end
+                end
+                --print(isActive,aDist,element.activationRadius)
+            end
             if (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
@@ -1157,21 +1200,7 @@ function addon.UpdateGotoSteps()
                             closestPoint = element
                         end
                     end
-                    local isActive = true
-                    if element.activationRadius then
-                        local _,aDist = HBD:GetWorldVector(instance, x, y, element.xref,
-                                                   element.yref)
-                        if aDist then
-                            if element.activationRadius < 0 then aDist = -aDist end
-                            if aDist > element.activationRadius then
-                                element.hidden = true
-                                isActive = false
-                            else
-                                element.hidden = false
-                            end
-                        end
-                        --print(isActive,aDist,element.activationRadius)
-                    end
+
                     if element.radius and isActive then
                         local source = element.source or element
                         local objectiveCheck = true
@@ -1190,6 +1219,7 @@ function addon.UpdateGotoSteps()
                                          element.wpHash ~= af.element.wpHash and not element.generated) then
                                 CheckLoop(element,step)
                                 element.skip = true
+                                updateMap = true
                                 if not element.textOnly then
                                     addon.SetElementComplete(element.frame)
                                 end
