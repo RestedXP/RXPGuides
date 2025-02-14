@@ -828,7 +828,7 @@ step
     .goto 63,12.77,34.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
     >>|cRXP_WARN_This will start an escort quest. Be careful as it's difficult|r
-    .accept 6641 >>Accept Vorsha the Lasher
+    .accept 6641,1 >> Accept Vorsha the Lasher
     .target Muglash
 step
     #completewith LitLightHouse

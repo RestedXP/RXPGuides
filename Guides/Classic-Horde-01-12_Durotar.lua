@@ -1293,6 +1293,7 @@ step << !Warrior !Rogue !Shaman
     .isOnQuest 4402
 step << !Warrior !Rogue !Shaman
     #xprate <1.5
+    #optional
     #loop
     .goto Durotar,43.87,58.42,40,0
     .goto Durotar,44.53,58.62,40,0
@@ -1451,6 +1452,7 @@ step
     .isQuestTurnedIn 4402
 step
     #xprate <1.5
+    #optional
     #loop
 	.goto Durotar,42.70,52.99,25,0
 	.goto Durotar,42.97,51.14,25,0
@@ -1532,7 +1534,8 @@ step << Warrior/Rogue
     #softcore
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     #softcore
@@ -1957,6 +1960,7 @@ step << Mage
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Un'Thuwa
 step << Warrior/Rogue
+    #softcore
     #completewith TravelToTiragarde
     +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,786,1
@@ -2340,7 +2344,8 @@ step << Warrior/Rogue
     #hardcore
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     #hardcore
@@ -2372,9 +2377,23 @@ step << Hunter
     .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
     .use 206155
     .itemcount 206155,1
+step << Warrior/Rogue
+    #hardcore
+    #completewith TravelToTiragarde
+    +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
+    .collect 2862,1,786,1
+    .skill blacksmithing,<1,1
+    .train 2575,3 --Mining Trained
 step
+    #softcore
     #label TravelToTiragarde
     .goto Durotar,54.42,62.64,60,0
+    .subzone 372 >> Travel to Tiragarde Keep. Grind mobs on the way
+    .isOnQuest 784
+step
+    #hardcore
+    #label TravelToTiragarde
+    .goto Durotar,57.26,54.69,60,0
     .subzone 372 >> Travel to Tiragarde Keep. Grind mobs on the way
     .isOnQuest 784
 step
@@ -2503,6 +2522,7 @@ step << Priest
     .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
 step << !Priest !Mage
     #xprate <1.5
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2514,6 +2534,7 @@ step << !Priest !Mage
     .isNotOnQuest 823
 step << !Priest !Mage
     #xprate <1.5
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2525,6 +2546,7 @@ step << !Priest !Mage
     .isOnQuest 823
 step << !Priest !Mage
     #xprate >1.49
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2536,6 +2558,7 @@ step << !Priest !Mage
     .isNotOnQuest 823
 step << !Priest !Mage
     #xprate >1.49
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2547,6 +2570,7 @@ step << !Priest !Mage
     .isOnQuest 823
 step << Priest
     #xprate <1.5
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2558,6 +2582,7 @@ step << Priest
     .isNotOnQuest 823
 step << Priest
     #xprate <1.5
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2569,6 +2594,7 @@ step << Priest
     .isOnQuest 823
 step << Priest
     #xprate >1.49
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2580,6 +2606,7 @@ step << Priest
     .isNotOnQuest 823
 step << Priest
     #xprate >1.49
+    #optional
     #loop
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
@@ -2599,6 +2626,7 @@ step
     #completewith next
     .goto Durotar,52.38,43.77,120 >> Travel to Razor Hill
 step
+    #softcore
     #label RazorTurnins1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
@@ -2615,6 +2643,16 @@ step
     .accept 815 >>Accept Break a Few Eggs
     .target +Cook Torka
     .goto Durotar,51.09,42.49
+step
+    #hardcore
+    #label RazorTurnins1
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 784 >>Turn in Vanquish the Betrayers
+    .turnin 830 >>Turn in The Admiral's Orders
+    .accept 825 >>Accept From The Wreckage....
+    .accept 831 >>Accept The Admiral's Orders
+    .target +Gar'Thok
 step
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -2639,7 +2677,8 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575,1 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -3197,6 +3236,7 @@ step
     .complete 837,4 --Razormane Battleguard (4)
     .mob +Razormane Battleguard
 step << Hunter
+    #optional
     #xprate <1.5 
     #loop
 	.goto Durotar,47.52,48.67,0
@@ -3210,6 +3250,7 @@ step << Hunter
 	.goto Durotar,47.17,49.44,50,0
     .xp 9+4470 >> Grind to 4470+/6500xp
 step
+    #optional
     #xprate >1.49
     #loop
     .goto Durotar,49.14,48.89,0
@@ -5076,7 +5117,7 @@ step
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto Orgrimmar,48.97,92.84,50,0
     .zone Orgrimmar >> Enter Orgrimmar
-step
+step << !Rogue
     #xprate <1.5 << Shaman/Warrior
     .goto Orgrimmar,47.21,70.27,15,0
     .goto Orgrimmar,47.55,68.37
@@ -5109,7 +5150,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
     .collect 3135,200,354,1 --Sharp Throwing Axe (200)
     .vendor >> Vendor your trash
-    .target K'waii
+    .target Trak'gen
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Rogue
@@ -5386,14 +5427,32 @@ step << Orc Rogue/Troll Rogue
     .target Archibald
     .money <0.3023
 step << Orc Rogue/Troll Rogue
-    .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1,398,1 --Collect Cutlass (1)
+    #ssf
+    #optional
+    #label RogueCutlass1
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    .collect 851,1,435,1 --Collect Cutlass (1)
     .money <0.2023
-    .skill Swords,<1,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .target Charles Seaton
+    .target Louis Warren
+    .zoneskip Undercity,1
+step << Orc Rogue/Troll Rogue
+    #ah
+    #optional
+    #label RogueCutlass1
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 851,1,435,1 --Collect Cutlass (1)
+    .money <0.2023
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .target Louis Warren
+    .zoneskip Undercity,1
 step << Orc Rogue/Troll Rogue
     #completewith KillDevlin
     +Equip the |T135346:0|t[Cutlass]
@@ -5537,7 +5596,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .accept 445 >>Accept Delivery to Silverpine Forest
     .accept 367 >>Accept A New Plague
-    .target Apothecary Johaanstep
+    .target Apothecary Johaan
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
 step
@@ -5722,8 +5781,7 @@ step << Rogue
     .collect 208035,1 --Top-Right Map Piece (1)
     .mob Scarlet Warrior
     .train 400095,1
-step << Mage
-    #season 2
+step
     #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
@@ -5903,7 +5961,7 @@ step << Undead Priest
     .turnin 5658 >> Turn in Touch of Weakness
     .target Aelthalyste
 step << Rogue
-    #completewith Swordtraining1
+    #completewith Swordtraining2
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
@@ -5911,7 +5969,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
-    #completewith Swordtraining1
+    #completewith Swordtraining2
     .goto Undercity,66.09,20.06,20,0
     .goto Undercity,64.37,23.94,20,0
     .goto Undercity,65.93,26.71,10,0
@@ -5928,31 +5986,51 @@ step << Rogue
     .money <0.3023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+step << Orc Rogue/Troll Rogue
+    #ssf
+    #optional
+    #label RogueCutlass2
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    .collect 851,1,354,1 --Collect Cutlass (1)
+    .money <0.3023
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .target Louis Warren
+    .zoneskip Undercity,1
+step << Orc Rogue/Troll Rogue
+    #ah
+    #optional
+    #label RogueCutlass2
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 851,1,354,1 --Collect Cutlass (1)
+    .money <0.3023
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .target Louis Warren
+    .zoneskip Undercity,1
 step << Undead Rogue
     .goto Undercity,83.52,69.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
     .turnin 1885 >>Turn in Mennet Carkad
     .accept 1886 >>Accept The Deathstalkers
     .target Mennet Carkad
-    .money <0.3023
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .zoneskip Undercity,1
 step << Rogue
-    #label Swordtraining1
+    #label Swordtraining2
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
     .train 201 >>Train 1h Swords
     .target Archibald
-    .money <0.3023
-step << Rogue
-    .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1,398,1 --Collect Cutlass (1)
-    .money <0.2023
-    .skill Swords,<1,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .target Charles Seaton
+    .money <0.1
+    .zoneskip Undercity,1
 step << Rogue
     #completewith KillDevlin
     +Equip the |T135346:0|t[Cutlass]
@@ -6703,7 +6781,7 @@ step
 step
     #optional
     #completewith LinneaTurnin
-    .goto Tirisfal Glades,65.49,60.25,60 >> Travel back to Linnea
+    .goto Tirisfal Glades,65.49,60.25,60 >> Travel back toward |cRXP_FRIENDLY_Linnea|r
 step
     #optional
     #completewith next
@@ -7013,14 +7091,14 @@ step << Mage
     .turnin 1882 >>Turn in The Balnir Farmstead
     .target Anastasia Hartwell
 step << Rogue
-    #completewith Swordtraining2
+    #completewith Swordtraining3
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
-    #completewith Swordtraining2
+    #completewith Swordtraining3
     .goto Undercity,66.09,20.06,20,0
     .goto Undercity,64.37,23.94,20,0
     .goto Undercity,65.93,26.71,10,0
@@ -7049,6 +7127,33 @@ step << !Undead
     .fp Undercity >> Get the Undercity flight path
     >>|cRXP_WARN_Skip this step if you already took the flight path!|r
     .target Michael Garrett
+step << Orc Rogue/Troll Rogue
+    #ssf
+    #optional
+    #label RogueCutlass3
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    .collect 851,1 --Collect Cutlass (1)
+    .money <0.2023
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .target Louis Warren
+    .zoneskip Undercity,1
+step << Orc Rogue/Troll Rogue
+    #ah
+    #optional
+    #label RogueCutlass3
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 851,1 --Collect Cutlass (1)
+    .money <0.2023
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .target Louis Warren
+    .zoneskip Undercity,1
 step << Undead Rogue
     .goto Undercity,83.52,69.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
@@ -7057,19 +7162,12 @@ step << Undead Rogue
     .target Mennet Carkad
     .isOnQuest 1885
 step << Rogue
-    #label Swordtraining2
+    #label Swordtraining3
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
     .train 201 >>Train 1h Swords
     .target Archibald
-step << Rogue
-    .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1,435,1 --Collect Cutlass (1)
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .target Charles Seaton
-    .money <0.2023
+    .money <0.1
 step << Rogue
     #completewith Entersilverpine
     +Equip the |T135346:0|t[Cutlass]
@@ -7077,6 +7175,7 @@ step << Rogue
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .train 201,1
 step << Undead Warrior
     #completewith Entersilverpine
     .goto Tirisfal Glades,61.80,65.06,20,0
@@ -8587,7 +8686,8 @@ step << Warrior/Rogue
     #softcore
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     #softcore
@@ -9394,7 +9494,8 @@ step << Warrior/Rogue
     #hardcore
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     #hardcore
@@ -9629,7 +9730,8 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575,1 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -9907,7 +10009,7 @@ step
     .goto Durotar,66.94,84.41,150 >>Swim to the main island
     .isOnQuest 826
 step
-    #completewith MinshinasSkull
+    #completewith ZalazaneKill
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
@@ -10675,7 +10777,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
     .collect 3135,200 --Sharp Throwing Axe (200)
     .vendor >> Vendor your trash
-    .target K'waii
+    .target Trak'gen
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Rogue

@@ -1029,7 +1029,8 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1353,8 +1354,7 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step
     #label TravelToTiragarde
-    .goto Durotar,54.42,62.64,60,0
-    .goto Durotar,59.20,58.38,60,0
+    .goto Durotar,57.26,54.69,60,0
     .subzone 372 >> Travel to Tiragarde Keep
     .isOnQuest 784
 step
@@ -1520,7 +1520,8 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1750,7 +1751,7 @@ step
 step
     .goto Durotar,66.94,84.41,150 >>Swim to the main island
 step
-    #completewith MinshinasSkull
+    #completewith ZalazaneKill
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r.
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
     .complete 826,1 --Hexed Troll (8)
@@ -1771,6 +1772,7 @@ step
     >>Loot one of the |cRXP_LOOT_Skulls|r on the ground
     .complete 808,1 --Minshina's Skull (1)
 step
+    #label ZalazaneKill
     .goto Durotar,67.4,87.8
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
@@ -2242,7 +2244,7 @@ step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
     .collect 3135,200,354,1 --Sharp Throwing Axe (200)
-    .target K'waii
+    .target Trak'gen
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Rogue
@@ -2429,6 +2431,15 @@ step
     .accept 358 >>Accept Graverobbers
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
+    .maxlevel 11
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r and the |cRXP_FRIENDLY_Wanted Poster|r
+    .accept 374 >>Accept Proof of Demise
+    .target +Deathguard Burgess
+    .goto Tirisfal Glades,60.93,52.01
+    .accept 398 >>Accept Wanted: Maggot Eye
+    .goto Tirisfal Glades,60.74,51.52
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
@@ -2729,6 +2740,8 @@ step
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Gnoll
     .mob Rot Hide Mongrel
+    .isOnQuest 358
+    .maxlevel 11
 step
     #requires MillsOverun
     #label MaggotEye
@@ -2766,6 +2779,8 @@ step
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
+    .isOnQuest 358
+    .maxlevel 11
 step
     #optional
     #loop
@@ -2786,6 +2801,7 @@ step
     >>Loot the |cRXP_PICK_Doom Weed|r on the ground. They are found near trees in the Gnoll area
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
+    .maxlevel 11
 step
     #label RotHideGnolls
     #loop
@@ -2801,6 +2817,8 @@ step
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
+    .isOnQuest 358
+    .maxlevel 11
 step
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -2810,7 +2828,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5482 >>Turn in Doom Weed
     .target Junior Apothecary Holland
-    .isOnQuest 5482
+    .isQuestComplete 5482
+step
+    #optional
+    .abandon 5482 >>Abandon Doom Weed
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
     .turnin 426 >>Turn in The Mills Overrun
@@ -2829,6 +2850,24 @@ step
     .accept 359 >>Accept Forsaken Duties
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
+    .isQuestComplete 358
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
+    .turnin 426 >>Turn in The Mills Overrun
+    .target +Deathguard Dillinger
+    .goto Tirisfal Glades,58.19,51.44
+    .turnin 368 >>Turn in A New Plague
+    .accept 369 >>Accept A New Plague
+    .target +Apothecary Johaan
+    .goto Tirisfal Glades,59.45,52.40
+    .turnin 398 >>Turn in Wanted: Maggot Eye
+    .turnin 370 >>Turn in At War With The Scarlet Crusade
+    .accept 371 >>Accept At War With The Scarlet Crusade
+    .target +Executor Zygand
+    .goto Tirisfal Glades,60.58,51.77
+step
+    #optional
+    .abandon 358 >>Abandon Graverobbers
 step
     #completewith HorrorsandSpirits
     +|cRXP_WARN_Bind your|r |T133849:0|t[Slumber Sand]|cRXP_WARN_. Save it for emergency situations|r
@@ -2993,10 +3032,10 @@ step << !Mage
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from her|r <<Warrior/Rogue
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from her|r << Warlock
     .vendor >> Vendor Trash
-    .collect 1179,20,359,1 << Mage/Priest --Ice Cold Milk (20)
-    .collect 4605,20,359,1 << Rogue/Warrior --Red-speckled Mushroom (20)
-    .collect 1179,15,359,1 << Warlock --Ice Cold Milk (15)
-    .collect 4605,15,359,1 << Warlock --Red-speckled Mushroom (15)
+    .collect 1179,20,356,1 << Mage/Priest --Ice Cold Milk (20)
+    .collect 4605,20,356,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,15,356,1 << Warlock --Ice Cold Milk (15)
+    .collect 4605,15,356,1 << Warlock --Red-speckled Mushroom (15)
     .money <0.050 << !Warlock
     .money <0.075 << Warlock
     .target Innkeeper Renee
@@ -3006,6 +3045,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
     .turnin 359 >>Turn in Forsaken Duties
     .accept 360 >>Accept Return to the Magistrate
+    .accept 356 >>Accept Rear Guard Patrol
+    .target Deathguard Linnea
+    .isQuestTurnedIn 358
+step
+    #label UnluckyRogue
+    .goto Tirisfal Glades,65.49,60.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
     .accept 356 >>Accept Rear Guard Patrol
     .target Deathguard Linnea
 step
@@ -3051,7 +3097,7 @@ step << Priest/Warlock
     .mob Scarlet Zealot
 step
     #completewith next
-    >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Kill |cRXP_ENEMY_Scarlet Fiars|r and |cRXP_ENEMY_Scarlet Zealots|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
 step
@@ -3087,7 +3133,7 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Kill |cRXP_ENEMY_Scarlet Fiars|r and |cRXP_ENEMY_Scarlet Zealots|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .mob Scarlet Friar
     .mob Scarlet Zealot
@@ -3134,7 +3180,7 @@ step
     .mob Vicious Night Web Spider
 step
     #completewith LinneaTurnin
-    .goto Tirisfal Glades,65.49,60.25,60 >> Travel back to Linnea
+    .goto Tirisfal Glades,65.49,60.25,60 >> Travel back toward |cRXP_FRIENDLY_Linnea|r
 step
     #completewith next
     >>Finish killing |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
@@ -3173,6 +3219,26 @@ step
     .accept 492 >>Accept A New Plague
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
+    .isOnQuest 360
+    .group
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
+    .turnin 374 >>Turn in Proof of Demise
+    .target +Deathguard Burgess
+    .goto Tirisfal Glades,60.93,52.01
+    .turnin 371 >>Turn in At War With The Scarlet Crusade
+    .target +Executor Zygand
+    .goto Tirisfal Glades,60.58,51.77
+    .turnin 355 >>Turn in Speak with Sevren
+    .accept 408 >>Accept The Family Crypt
+    .target +Magistrate Sevren
+    .goto Tirisfal Glades,61.26,50.84
+    .turnin 369 >>Turn in A New Plague
+    .accept 445 >>Accept Delivery to Silverpine Forest
+    .accept 492 >>Accept A New Plague
+    .target +Apothecary Johaan
+    .goto Tirisfal Glades,59.45,52.39
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
@@ -3183,6 +3249,24 @@ step
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 360 >>Turn in Return to the Magistrate
+    .turnin 355 >>Turn in Speak with Sevren
+    .target +Magistrate Sevren
+    .goto Tirisfal Glades,61.26,50.84
+    .turnin 369 >>Turn in A New Plague
+    .accept 445 >>Accept Delivery to Silverpine Forest
+    .accept 492 >>Accept A New Plague
+    .target +Apothecary Johaan
+    .goto Tirisfal Glades,59.45,52.39
+    .isOnQuest 360
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
+    .turnin 374 >>Turn in Proof of Demise
+    .target +Deathguard Burgess
+    .goto Tirisfal Glades,60.93,52.01
+    .turnin 371 >>Turn in At War With The Scarlet Crusade
+    .target +Executor Zygand
+    .goto Tirisfal Glades,60.58,51.77
     .turnin 355 >>Turn in Speak with Sevren
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84

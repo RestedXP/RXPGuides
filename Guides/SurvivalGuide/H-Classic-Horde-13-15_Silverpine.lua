@@ -18,7 +18,7 @@ step
     #label WorgHearts
     #completewith next
     >>Kill |cRXP_ENEMY_Worgs|r as you travel toward |cRXP_FRIENDLY_Erland|r. Loot them for their |cRXP_LOOT_Hearts|r
-    .collect 3164,6 --Collect Discolored Worg Heart (x6)
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
     .unitscan Gorefang
@@ -31,7 +31,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
-    .collect 3164,6 --Collect Discolored Worg Heart (x6)
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
     .unitscan Gorefang
@@ -60,7 +60,7 @@ step
     .goto Silverpine Forest,60.11,10.51,50,0
     .goto Silverpine Forest,57.72,10.07,50,0
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
-    .collect 3164,6 --Collect Discolored Worg Heart (x6)
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
     .unitscan Gorefang
@@ -111,7 +111,7 @@ step
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,15 >> Enter the crypt
+    .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
@@ -129,6 +129,7 @@ step
     .accept 447 >>Accept A Recipe For Death
     .accept 430 >>Accept Return to Quinn
     .target Apothecary Renferrel
+    .addquestitem 3164,429
 step
     #loop
     .goto Silverpine Forest,49.12,36.72,0
@@ -282,10 +283,10 @@ step
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,15 >> Enter the crypt
+    .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
     .goto Silverpine Forest,43.43,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 437 >> Turn in The Dead Fields
     .accept 438 >> Accept The Decrepit Ferry
     .target High Executor Hadrec
@@ -412,7 +413,7 @@ step
 step
     .goto Silverpine Forest,49.89,60.33
     >>Click the |cRXP_PICK_Crate|r in the camp
-    >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt]|cRXP_WARN_ and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
+    >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
     .turnin 477 >>Turn in Border Crossings
     .accept 478 >>Accept Maps and Runes
     .mob Dalaran Apprentice
@@ -464,11 +465,11 @@ step
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,15 >> Enter the crypt
+    .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
     #label RotHideCluesTurnIn
     .goto Silverpine Forest,43.43,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 439 >>Turn in Rot Hide Clues
     .accept 440 >>Accept The Engraved Ring
     .target High Executor Hadrec

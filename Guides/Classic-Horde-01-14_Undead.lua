@@ -2705,8 +2705,8 @@ step << Rogue
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brom|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
-    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Brom Killian
 step << Warrior/Rogue
     .goto Undercity,56.72,36.92
@@ -2820,6 +2820,7 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
     .collect 851,1,371,1 --Collect Cutlass (1)
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -3472,7 +3473,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Charles Seaton|r in the Rogue Quarter
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,372,1 --Collect Cutlass (1)
-    .money <0.2200
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -3484,7 +3485,7 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
     .collect 851,1,372,1 --Collect Cutlass (1)
-    .money <0.2200
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -3879,7 +3880,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
-    .money <0.2200
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Louis Warren
@@ -3892,7 +3893,7 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
     .collect 851,1,435,1 --Collect Cutlass (1)
-    .money <0.2200
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Louis Warren
@@ -4221,7 +4222,7 @@ step
     #label WorgHearts
     #completewith next
     >>Kill |cRXP_ENEMY_Worgs|r as you travel toward |cRXP_FRIENDLY_Erland|r. Loot them for their |cRXP_LOOT_Hearts|r
-    .collect 3164,6 --Collect Discolored Worg Heart (x6)
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
     .unitscan Gorefang
@@ -4234,7 +4235,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
-    .collect 3164,6 --Collect Discolored Worg Heart (x6)
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
     .unitscan Gorefang
@@ -4263,7 +4264,7 @@ step
     .goto Silverpine Forest,60.11,10.51,50,0
     .goto Silverpine Forest,57.72,10.07,50,0
     >>Kill |cRXP_ENEMY_Worgs|r. Loot them for their |cRXP_LOOT_Hearts|r
-    .collect 3164,6 --Collect Discolored Worg Heart (x6)
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
     .unitscan Gorefang
@@ -4320,7 +4321,7 @@ step
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,15 >> Enter the crypt
+    .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
@@ -4338,6 +4339,7 @@ step
     .accept 447 >>Accept A Recipe For Death
     .accept 430 >>Accept Return to Quinn
     .target Apothecary Renferrel
+    .addquestitem 3164,429
 step
     #loop
     .goto Silverpine Forest,49.12,36.72,0
@@ -4495,20 +4497,22 @@ step
     .target Dalar Dawnweaver
 step
     #xprate >1.49
-    #label ArugalTurnin
     .goto Silverpine Forest,44.20,39.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
     .turnin 422 >> Turn in Arugal's Folly
     .target Dalar Dawnweaver
 step
+    #optional
+    #label ArugalTurnin
+step
     #completewith next
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,15 >> Enter the crypt
+    .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
     .goto Silverpine Forest,43.43,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 437 >> Turn in The Dead Fields
     .accept 438 >> Accept The Decrepit Ferry
     .target High Executor Hadrec
@@ -4582,7 +4586,7 @@ step
     #hardcore
     .goto Silverpine Forest,49.89,60.33
     >>Click the |cRXP_PICK_Crate|r in the camp
-    >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt]|cRXP_WARN_and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
+    >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
     .turnin 477 >>Turn in Border Crossings
     .accept 478 >>Accept Maps and Runes
     .mob Dalaran Apprentice
@@ -4668,11 +4672,11 @@ step
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,15 >> Enter the crypt
+    .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
     #label RotHideCluesTurnIn
     .goto Silverpine Forest,43.43,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 439 >>Turn in Rot Hide Clues
     .target High Executor Hadrec
 step
@@ -5138,11 +5142,6 @@ step << skip --Undead !Rogue !Warrior
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
     .zoneskip Undercity,1
     .dungeon !RFC
-step << Undead !Rogue !Warrior
-    #xprate <1.5
-    #requires TouchOW << Undead Priest
-    #completewith ZeptoDurotar
-    .zone Tirisfal Glades >>Exit Undercity
 
 
 
@@ -8576,8 +8575,8 @@ step << Rogue
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brom|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
-    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2575,1 >> Train |T136248:0|t[Mining]
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Brom Killian
 step << Warrior/Rogue
     .goto Undercity,56.72,36.92
@@ -8714,6 +8713,7 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
     .collect 851,1,371,1 --Collect Cutlass (1)
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -8734,6 +8734,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Charles Seaton|r in the Rogue Quarter
     .vendor >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_or a|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .money <0.2023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton

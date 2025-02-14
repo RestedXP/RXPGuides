@@ -142,6 +142,27 @@ step << !Undead !Tauren
     .accept 5041 >>Accept Supplies for the Crossroads
     .target +Thork
     .goto The Barrens,51.50,30.87
+    .maxlevel 16
+step << !Undead !Tauren
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Gazrog|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Tonga|r and |cRXP_FRIENDLY_Mankrik|r
+    .accept 6365 >>Accept Meats to Orgrimmar
+    .target +Zargh
+    .goto The Barrens,52.62,29.84
+    .accept 869 >>Accept Raptor Thieves
+    .target +Gazrog
+    .goto The Barrens,51.93,30.32
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace
+    .target +Sergra Darkthorn
+    .goto The Barrens,52.23,31.00
+    .accept 870 >>Accept The Forgotten Pools
+    .target +Tonga Runetotem
+    .goto The Barrens,52.26,31.94
+    .accept 899 >>Accept Consumed by Hatred
+    .accept 4921 >>Accept Lost in Battle
+    .target +Mankrik
+    .goto The Barrens,52.00,31.60
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Mankrik|r and |cRXP_FRIENDLY_Thork|r
     .accept 869 >>Accept Raptor Thieves
@@ -162,6 +183,24 @@ step
     .accept 5041 >>Accept Supplies for the Crossroads
     .target +Thork
     .goto The Barrens,51.50,30.87
+    .maxlevel 16
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Tonga|r and |cRXP_FRIENDLY_Mankrik|r
+    .accept 869 >>Accept Raptor Thieves
+    .target +Gazrog
+    .goto The Barrens,51.93,30.32
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace
+    .target +Sergra Darkthorn
+    .goto The Barrens,52.23,31.00
+    .accept 870 >>Accept The Forgotten Pools
+    .target +Tonga Runetotem
+    .goto The Barrens,52.26,31.94
+    .accept 899 >>Accept Consumed by Hatred
+    .accept 4921 >>Accept Lost in Battle
+    .target +Mankrik
+    .goto The Barrens,52.00,31.60
 step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
@@ -201,7 +240,8 @@ step
     .group
     #label DemonSeed
     .goto The Barrens,47.98,19.08
-    >>Right click the |cRXP_PICK_Altar|r. Make sure you have a |T134095:0|t[Flawed Power Stone] on you
+    >>Right click the |cRXP_PICK_Altar|r
+    >>|cRXP_WARN_Make sure you have a|r |T134095:0|t[Flawed Power Stone] |cRXP_WARN_(30 minute duration) on you|r
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
@@ -228,6 +268,7 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
+    .isOnQuest 871
 step
     .goto The Barrens,55.70,27.30
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
@@ -254,6 +295,7 @@ step << !Tauren !Hunter !Shaman
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
+    .isOnQuest 871
 step
     #loop
     .goto The Barrens,53.71,29.19,0
@@ -272,41 +314,28 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
+    .goto The Barrens,52.23,31.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
-    .target +Sergra Darkthorn
-    .goto The Barrens,52.23,31.00
+    .target Sergra Darkthorn
+step
+    .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
-    .target +Thork
+    .target Thork
+    .isQuestComplete 871
+step
     .goto The Barrens,51.50,30.87
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r and |cRXP_FRIENDLY_Mankrik|r
-    .accept 870 >>Accept The Forgotten Pools
-    .target +Tonga Runetotem
-    .goto The Barrens,52.26,31.94
-    .accept 899 >> Accept Consumed by Hatred
-    .accept 4921 >> Accept Lost in Battle
-    .target +Mankrik
-    .goto The Barrens,52.00,31.60
-step
-    .goto The Barrens,51.62,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
-    >>|cRXP_WARN_He is at the top of the tower|r
-    .accept 867 >>Accept Harpy Raiders
-    .target Darsok Swiftdagger
-step
-    .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    .accept 848 >>Accept Fungal Spores
-    .accept 1492 >>Accept Wharfmaster Dizzywig
-	.turnin 1358 >> Turn in Sample for Helbrim
-    .target Apothecary Helbrim
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .accept 872 >>Accept The Disruption Ends
+    .target Thork
+    .isQuestTurnedIn 871
 step << !Tauren !Undead
     .goto The Barrens,52.62,29.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
-    .turnin 6386 >> Turn in Return to the Crossroads
+    .turnin 6386 >>Turn in Return to the Crossroads
     .target Zargh
     .isOnQuest 6386
 step
@@ -591,14 +620,14 @@ step
     .dungeon RFC
     .isQuestComplete 5723
 step
-    #completewith KreenigSnarlsnout
+    #completewith RatchetArrive
     .hs >> Hearth to The Crossroads
     .cooldown item,6948,>0
     .use 6948
     .dungeon RFC
     .zoneskip Thunder Bluff,1
 step
-    #completewith KreenigSnarlsnout
+    #completewith RatchetArrive
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
@@ -641,16 +670,19 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
+    .isOnQuest 5041
 step
     #label KreenigSnarlsnout
     .goto The Barrens,58.69,27.08
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
+    .isOnQuest 872
 step
     #optional
     #completewith next
@@ -661,11 +693,13 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
+    .isOnQuest 5041
 step
     #loop
 	.goto The Barrens,58.90,25.37,0
@@ -687,6 +721,7 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
@@ -705,8 +740,10 @@ step
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
-    .goto The Barrens,63.08,36.56,120 >> Travel south toward Ratchet
+    .goto The Barrens,63.08,36.56,120 >> Travel toward Ratchet
+    .subzoneskip 392,1
 step
+    #label RatchetArrive
     .goto The Barrens,62.68,36.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .accept 887 >>Accept Southsea Freebooters
@@ -979,20 +1016,38 @@ step
     .goto The Barrens,52.63,38.07,80,0
     .goto The Barrens,49.49,37.20,80,0
     .goto The Barrens,48.33,36.75,80,0
-    >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for |cRXP_LOOT_Hooves|r
+    >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
-    #label XroadsTurnins3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
+    .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
-    .target +Thork
+    .target Thork
+    .isQuestComplete 872
+    .isQuestComplete 5041
+step
+    #optional
     .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .turnin 5041 >>Turn in Supplies for the Crossroads
+    .target Thork
+    .isQuestComplete 5041
+step
+    #optional
+    .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .turnin 872 >>Turn in The Disruption Ends
+    .target Thork
+    .isQuestComplete 872
+step
+    #label XroadsTurnins3
+    .goto The Barrens,52.23,31.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
-    .target +Sergra Darkthorn
-    .goto The Barrens,52.23,31.00
+    .target Sergra Darkthorn
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -1015,7 +1070,7 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
-    .accept 855 >> Accept Centaur Bracers
+    .accept 855 >>Accept Centaur Bracers
     .target Regthar Deathgate
 step
     #completewith Leaders
@@ -3269,12 +3324,12 @@ step << Druid
 step << Druid
     #completewith next
     .goto Moonglade,54.30,55.68
-    .collect 15877,1,30,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
+    .collect 15877,1,28,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
     >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> Use the |T134125:0|t[Shrine Bauble] at the Shrine of Remulos
-    .complete 30,1 -- Complete the Trial of the Lake
+    .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
     .goto Moonglade,36.52,40.10
@@ -4254,7 +4309,7 @@ step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
     >>|cRXP_WARN_This will start an escort quest. Be careful as it's difficult|r
-    .accept 6641 >> Accept Vorsha the Lasher
+    .accept 6641,1 >> Accept Vorsha the Lasher
     .target Muglash
     .group 2
 step
@@ -4773,7 +4828,7 @@ step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
-    .target K'waii
+    .target Trak'gen
 step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine
