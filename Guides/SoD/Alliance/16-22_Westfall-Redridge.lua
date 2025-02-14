@@ -1433,6 +1433,8 @@ step
     .goto Dun Morogh,53.48,37.50,30,0
     .goto Dun Morogh,54.04,38.60,30,0
     .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot. Hug the left side of the mountain en route
+    .subzoneskip 150 -- Skips if already in menethil
+    .subzoneskip 2104 -- Skips if already in menethil inn
 step
     .goto Dun Morogh,60.18,43.01,12,0
     .goto Dun Morogh,60.42,43.75,12,0
@@ -1459,6 +1461,8 @@ step
     .link https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLICK HERE for reference (it is HEAVILY advised you do so)|r
     .goto Dun Morogh,60.65,11.38,20 >>Carefully drop down the mountain side
     .isQuestAvailable 983
+    .subzoneskip 150 -- Skips if already in menethil
+    .subzoneskip 2104 -- Skips if already in menethil inn
 step
     .goto Dun Morogh,60.80,10.33,10,0
     .goto Dun Morogh,60.61,9.73,8,0
@@ -1480,4 +1484,6 @@ step
     .mob Bluegill Raider
     .unitscan Sludginn
     .isQuestAvailable 983
+    .subzoneskip 150 -- Skips if already in menethil
+    .subzoneskip 2104 -- Skips if already in menethil inn
 ]])

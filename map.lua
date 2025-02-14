@@ -358,6 +358,29 @@ MapPinPool.creationFunc = function(framePool)
                 self.text:SetPoint("CENTER", self, 1, 0)
             end
 
+            local radius = element.radius
+            if element.activationRadius and element.wx == element.xref and element.wy == element.yref then
+                radius = element.activationRadius
+            end
+            if step.active and addon.settings.profile.debug and radius and not isMiniMapPin then
+
+                radius = math.abs(radius)
+                local zone = _G.WorldMapFrame:GetMapID()
+                local w,h = HBD:GetZoneSize(zone)
+                local canvas = _G.WorldMapFrame:GetCanvas()
+                local scale = canvas:GetScale()
+
+                --local a,b = WorldMapFrame.ScrollContainer:GetCurrentZoomRange()
+
+                radius = radius * 2 * scale
+                local x,y = radius/w,radius/h
+                local width = canvas:GetWidth() * x
+                local height = canvas:GetHeight() * y
+                self:SetWidth(width)
+                self:SetHeight(height)
+                self:SetBackdropColor(0.1, 0.1, 0.1, 0.5)
+            end
+
             self:SetScale(addon.settings.profile.worldMapPinScale)
             self:SetAlpha(pin.opacity)
         end
@@ -929,7 +952,9 @@ local function updateArrowData()
     local loop = {}
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
-        if element.lowPrio and not lowPrio then
+        if element.hidden then
+            return
+        elseif element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
             return
         end
@@ -1126,10 +1151,32 @@ function addon.UpdateGotoSteps()
             hideArrow = true
         end
     end
+    local updateMap
     for i, element in ipairs(addon.activeWaypoints) do
         local step = element.step
         if step and step.active then
 
+            local hidden = element.hidden
+            local isActive = true
+            if element.activationRadius then
+                local _,aDist = HBD:GetWorldVector(instance, x, y, element.xref,
+                                            element.yref)
+                if aDist then
+                    --print(aDist,'-',element.x,element.y)
+                    if element.activationRadius < 0 then aDist = -aDist end
+                    if aDist > element.activationRadius then
+                        element.hidden = true
+                        isActive = false
+                    else
+                        element.hidden = false
+                        if hidden and addon.settings.profile.debug then
+                            print(format("%d: Waypoint activation\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
+                                element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
+                        end
+                    end
+                end
+                --print(isActive,aDist,element.activationRadius)
+            end
             if (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
                     (element.parent.completed or element.parent.skip) and
@@ -1153,9 +1200,11 @@ function addon.UpdateGotoSteps()
                             closestPoint = element
                         end
                     end
-                    if element.radius then
+
+                    if element.radius and isActive then
                         local source = element.source or element
                         local objectiveCheck = true
+                        if element.radius < 0 then dist = -dist end
                         if source.currentObjective then
                             if source.currentObjective <= source.previousObjective then
                                 objectiveCheck = false
@@ -1164,14 +1213,13 @@ function addon.UpdateGotoSteps()
                         end
                         if dist <= element.radius and objectiveCheck then
                             local enabled = not element.skip
-                            if element.persistent and not element.skip then
-                                element.skip = true
-                                addon.UpdateMap()
+                            if element.persistent then
+                                element.hidden = true
                             elseif not (element.textOnly and element.hidePin and
                                          element.wpHash ~= af.element.wpHash and not element.generated) then
                                 CheckLoop(element,step)
                                 element.skip = true
-                                addon.UpdateMap()
+                                updateMap = true
                                 if not element.textOnly then
                                     addon.SetElementComplete(element.frame)
                                 end
@@ -1183,16 +1231,21 @@ function addon.UpdateGotoSteps()
                                 print(format("%d: Waypoint reached\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
                                        element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
                             end
-                        elseif element.persistent and element.skip then
-                            element.skip = false
-                            RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
-                            addon.UpdateMap()
+                        elseif element.persistent then
+                            element.hidden = false
                         end
                     end
                 end
             end
+            if hidden ~= element.hidden then
+                updateMap = true
+            end
             --
         end
+    end
+
+    if updateMap then
+        addon.UpdateMap()
     end
 
     if addon.hideArrow ~= hideArrow and not af.wrongContinent then
