@@ -1,4 +1,5 @@
 local addonName, addon = ...
+local L = addon.locale.Get
 
 if not (addon.game == "CLASSIC" or addon.game == "CATA") then return end
 
@@ -2016,14 +2017,24 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_EnableTab(attachment, index)
 end
 
+StaticPopupDialogs["RXPNoUpgradesFound"] = {
+    text = L("No item upgrades found"),
+    button1 = _G.OKAY,
+    timeout = 0,
+    whileDead = 1,
+    hideOnEscape = 1,
+    showAlert = 1
+}
+
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
 
     local blockData
-
+    local n = 0
     for slotId, data in pairs(ahSession.bestAnalysis) do
         if data.budget.itemLink or data.best.itemLink then
+            n = n + 1
             -- print("DisplayEmbeddedResults:", data.slotName, "processing upgrades")
             blockData = {['Name'] = data.slotName}
 
@@ -2074,6 +2085,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
         else
             -- print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
+    end
+    if n == 0 then
+        _G.StaticPopup_Show("RXPNoUpgradesFound")
     end
 end
 
