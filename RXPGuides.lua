@@ -1353,7 +1353,10 @@ function addon:GROUP_LEFT()
     if not addon.settings.profile.showEnabled then return end
 
     for _, frame in pairs(addon.enabledFrames) do
-        frame:SetShown(frame.IsFeatureEnabled())
+        local shown, isSecure = frame.IsFeatureEnabled()
+        if not (isSecure and InCombatLockdown()) then
+            frame:SetShown(shown)
+        end
     end
 end
 

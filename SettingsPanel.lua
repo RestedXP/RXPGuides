@@ -3390,8 +3390,9 @@ function addon.settings.ToggleActive()
     addon.settings.profile.showEnabled = not addon.settings.profile.showEnabled
 
     for _, frame in pairs(addon.enabledFrames) do
-        if frame.IsFeatureEnabled() and frame.SetShown then
-            frame:SetShown(addon.settings.profile.showEnabled)
+        local shown, isSecure = frame.IsFeatureEnabled()
+        if not (isSecure and InCombatLockdown()) then
+            frame:SetShown(shown)
         end
     end
 

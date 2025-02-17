@@ -816,10 +816,10 @@ function addon.targeting:CreateTargetFrame()
 
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
-        if not addon.settings.profile.enableTargetAutomation then return end
+        if not addon.settings.profile.enableTargetAutomation then return nil,true end
 
         if addon.settings.profile.showTargetingOnProximity then
-            return proxmityPolling.match and shouldTargetCheck()
+            return proxmityPolling.match and shouldTargetCheck(),true
         end
 
         return shouldTargetCheck()

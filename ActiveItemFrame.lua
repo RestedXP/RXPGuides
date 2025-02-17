@@ -207,7 +207,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()
-        return not addon.settings.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
+        return not addon.settings.profile.disableItemWindow and next(GetActiveItemList()) ~= nil,true
     end
 
     f.onMouseDown = function()
