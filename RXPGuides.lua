@@ -1351,10 +1351,12 @@ function addon:GROUP_LEFT()
     if not addon.settings.profile.hideInRaid then return end
 
     if not addon.settings.profile.showEnabled then return end
-
-    for _, frame in pairs(addon.enabledFrames) do
-        frame:SetShown(frame.IsFeatureEnabled())
-    end
+    
+	if not InCombatLockdown() then
+		for _, frame in pairs(addon.enabledFrames) do
+			frame:SetShown(frame.IsFeatureEnabled())
+		end
+	end
 end
 
 function addon:COMPANION_LEARNED(...) addon.UpdateItemFrame() end
