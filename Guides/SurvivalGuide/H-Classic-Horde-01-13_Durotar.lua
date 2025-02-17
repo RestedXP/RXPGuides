@@ -783,6 +783,7 @@ step << Shaman
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
 step
+    #optional
     #loop
 	.goto Durotar,42.70,52.99,25,0
 	.goto Durotar,42.97,51.14,25,0
@@ -808,6 +809,7 @@ step
     .xp 5+1810 >> Grind to 1810+/2800xp << Shaman
     .isQuestTurnedIn 4402
 step
+    #optional
     #loop
 	.goto Durotar,42.70,52.99,25,0
 	.goto Durotar,42.97,51.14,25,0

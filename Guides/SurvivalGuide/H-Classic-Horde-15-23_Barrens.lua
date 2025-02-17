@@ -2117,7 +2117,7 @@ step
 step
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya|r
-    .accept 6523 >> Accept Protect Kaya
+    .accept 6523,1 >> Accept Protect Kaya
     .target Kaya Flathoof
 step
     .goto Stonetalon Mountains,71.82,86.79,40,0
@@ -3186,7 +3186,6 @@ step
     .goto Thunder Bluff,47.12,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step
     .goto Thunder Bluff,45.83,64.74
@@ -3426,7 +3425,6 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Shaman
-    #season 0
     .goto Thunder Bluff,53.21,58.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Etu|r|cRXP_BUY_. Buy a|r |T135157:0|t[Long Staff] |cRXP_BUY_from him|r
     .collect 928,1,493,1 --Collect Long Staff (1)
@@ -3435,7 +3433,6 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Shaman
-    #season 0
     #completewith KayaLives
     +Equip the |T135157:0|t[Long Staff]
     .use 928
@@ -3753,6 +3750,8 @@ step
 step
     .use 10441 >>Use the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] to accept the quest
     .accept 6981 >> Accept The Glowing Shard
+    .itemcount 10441,1
+    .dungeon WC
 step
     #label GlowingShardRP
     .goto The Barrens,62.99,37.22
@@ -4475,6 +4474,11 @@ step
     .hs >> Hearth to Thunder Bluff
     .use 6948
     .cooldown item,6948,>0
+step
+    .goto Thunder Bluff,47.12,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
+    .target Chesmu
 step
     #completewith flytoORG
     .goto Ashenvale,12.24,33.80

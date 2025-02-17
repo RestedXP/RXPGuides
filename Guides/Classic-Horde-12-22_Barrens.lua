@@ -3205,7 +3205,7 @@ step
 step
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya|r
-    .accept 6523 >> Accept Protect Kaya
+    .accept 6523,1 >> Accept Protect Kaya
     .target Kaya Flathoof
     .isQuestTurnedIn 6548
 step
@@ -6023,7 +6023,7 @@ step << Priest
     #xprate <1.5
     #season 0,1
     >>Kill |cRXP_ENEMY_Baron Aquanis|r. Loot him for a |T136222:0|t[|cRXP_LOOT_Strange Water Globe|r]. Use it to accept the quest
-    .collect 16782,1 --Strange Water Globe (1)
+    .collect 16782,1,6782 --Strange Water Globe (1)
     .accept 6922 >>Accept Baron Aquanis
     .mob Baron Aquanis
     .use 16782
@@ -10078,7 +10078,7 @@ step
     #optional
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya|r
-    .accept 6523 >> Accept Protect Kaya
+    .accept 6523,1 >> Accept Protect Kaya
     .target Kaya Flathoof
     .isQuestTurnedIn 6548
 step
