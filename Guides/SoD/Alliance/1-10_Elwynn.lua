@@ -16,166 +16,100 @@ RXPGuides.RegisterGuide([[
 step << !Human
     #completewith next
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
-step << Mage
-    #completewith next
-    +Note that you have selected the single target Mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
-step << !Human Mage
-    #season 2
-    #completewith next
-    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T135844:0|t[Ice Lance])
 step
     #softcore << Warlock
     #optional
     #completewith Within
     .destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
-step << Warlock
-    #season 2
-    #sticky
-    #label WarlockVendor << Human
-    .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dane Winslow|r
-    .vendor >> |cRXP_WARN_Vendor your Body Armor, Shirt, Pants and Boots along with the Food and Water in your bags. You need 10c total|r
-    .target Dane Winslow
-step << Human Warlock
-    #season 2
-    #loop
-    .goto 1429,49.052,38.270,0
-    .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0
-    .goto 1429,46.465,38.272,45,0
-    .goto 1429,45.896,38.013,45,0
-    .goto 1429,45.708,38.720,45,0
-    .goto 1429,46.302,39.994,45,0
-    .goto 1429,45.718,40.733,45,0
-    .goto 1429,46.399,41.838,45,0
-    .goto 1429,46.741,40.987,45,0
-    .goto 1429,47.703,40.299,45,0
-    .goto 1429,47.976,39.422,45,0
-    .goto 1429,49.052,38.270,45,0
-    .goto 1429,48.362,37.582,45,0
-    .goto 1429,47.136,37.636,45,0
-    .goto 1429,46.870,36.906,45,0
-    .goto 1429,46.476,37.034,45,0
-    .xp 2 >> Grind to level 2
-    .mob Young Wolf
-step << Warlock
-    #season 0,1
-    #completewith next
-    .goto Elwynn Forest,50.051,42.689
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dane Winslow|r
-    .vendor >> |cRXP_WARN_Vendor your Body Armor, Shirt, Pants and Boots along with the Food and Water in your bags. You need 10c total|r
-    .target Dane Winslow
-step << Warlock
-    #season 0,1
-    .goto Elwynn Forest,49.873,42.649
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .accept 1598 >> Accept The Stolen Tome
-    .train 348 >> Train |T135817:0|t[Immolate]
-    .target Drusilla La Salle
-step << Warlock
-    #season 2
-    #requires WarlockVendor << Human
-    .goto Elwynn Forest,49.873,42.649
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .accept 1598 >> Accept The Stolen Tome
-    .accept 77621 >> Accept Stolen Power << Human
-    .train 348 >> Train |T135817:0|t[Immolate]
-    .target Drusilla La Salle
-step << Warlock
-    #season 2
-    .goto Elwynn Forest,52.544,51.922
-    >>|cRXP_WARN_Carefully avoid as many |cRXP_ENEMY_Defias Thugs|r as you can en route to the|r |cRXP_PICK_Defias Stashbox|r
-    >>|cRXP_WARN_Kill the |cRXP_ENEMY_Defias Thugs|r around the|r |cRXP_PICK_Defias Stashbox|r
-    >>|cRXP_WARN_Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
-    .collect 205230,1 -- Rune of Haunting (1)
-    .train 403919,1
-step << Warlock
-    #season 2
-    #label RoH
-    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T236298:0|t[Haunt]
-    .use 205230
-    .itemcount 205230,1
-step << Warlock
-    #hardcore
---   .goto Elwynn Forest,52.9,44.3,60,0
-    .goto Elwynn Forest,56.7,44.0
-    >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
-    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
-    >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
-    .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_Click here for video reference|r
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #hardcore
-    #completewith next
-    .goto Elwynn Forest,56.828,43.734
-    >>|cRXP_WARN_Remain inside the Tent so |cRXP_ENEMY_Defias Thugs|r can't hit you|r
-    .hs >> Hearth to Northshire Valley
-step << Warlock
-    #softcore
---  .goto Elwynn Forest,52.9,44.3,60,0
-    .goto Elwynn Forest,56.7,44.0
-    >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
-    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
-    >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_Click here for video reference|r
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #softcore
-    #completewith next
-    .goto 1429,49.527,43.491,0
-    .deathskip >> Die and respawn at the Spirit Healer
-    .target Spirit Healer
-step << Warlock
-    #season 0,1
-    .goto Elwynn Forest,49.873,42.649
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 1598 >> Turn in The Stolen Tome
-    .target Drusilla La Salle
-step << Warlock
-    #season 2
-    .goto Elwynn Forest,49.873,42.649
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 1598 >> Turn in The Stolen Tome
-    .turnin 77621 >> Turn in Stolen Power << Human
-    .target Drusilla La Salle
-step << Human Warlock
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
-    .use 711
-    .itemcount 711,1 --Tattered Cloth Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 403919,3
-step << Human Warlock
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T236298:0|t[Haunt]
-    .train 403919,3
-step << Warlock
-    #optional
-    #completewith next
-    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
-    .usespell 688
 step
     .goto Elwynn Forest,48.17,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .accept 783 >> Accept A Threat Within
     .target Deputy Willem
+step << Warrior/Rogue/Mage/Warlock
+    .goto Elwynn Forest,46.4,40.3
+    .xp 2 >>Kill |cRXP_ENEMY_Young Wolves|r until you reach level 2 (4 mobs)
+    >>Make sure you loot them, you will need 15c for runes+training << Rogue/Warrior
+    >>Make sure you loot them, you will need 30c for gloves and runes << Mage
+    >>Make sure you loot them, you will need 40c for bracers, training and runes << Warlock
+step << Mage/Warlock
+    .goto Elwynn Forest,47.57,41.43
+    >>|cRXP_WARN_If you dont have 30 copper worth of trash kill more wolves|r << Mage
+    >>|cRXP_WARN_If you dont have 40 copper worth of trash kill more wolves|r << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dermot Johns|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    >>Vendor trash and buy the |T132952:0|t[Thin Cloth Gloves], you will need them to engrave a rune on soon << Mage
+    >>Vendor trash and buy the |T132602:0|t[Thin Cloth Bracers], you will need them to engrave a rune on soon << Warlock
+    .collect 2119,1 << Mage --Thin Cloth Gloves (1)
+    .collect 3600,1 << Warlock --Thin Cloth Bracers (1)
+    .target Dermot Johns
+step << Warrior/Rogue/Mage/Warlock
+    .goto Elwynn Forest,48.22,41.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
+    .vendor >>|cRXP_BUY_Vendor trash and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]|r << Rogue
+    .vendor >>|cRXP_BUY_Buy all of the key AoE runes|r << Mage
+    .vendor >>|cRXP_BUY_Buy all of the following runes:|r << Warlock
+    .collect 204806,1 << Warrior --Rune of Victory Rush
+    .collect 204795,1 << Rogue --Rune of Shadowstrike
+    .collect 203746,1 << Mage --Spell Notes: Living Flame
+    .collect 208799,1 << Mage --Spell Notes: Living Bomb
+    .collect 203748,1 << Mage --Spell Notes: Burnout
+    .collect 225690,1 << Mage --Spell Notes: Frozen Orb
+    .collect 205215,1 << Warlock --Rune of Tactics
+    .collect 210824,1 << Warlock --Rune of the Pact
+    .collect 211477,1 << Warlock --Rune of Incinerate
+    .collect 205230,1 << Warlock --Rune of Haunting
+    >>You will get the rest of your runes very soon
+    .target Rune Broker
+    .skipgossip
+step << Warrior/Rogue/Mage
+    .train 400105 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] to train |T132323:0|t[Shadowstrike], you will engrave it soon << Rogue
+    .train 403470 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] to train |T132342:0|t[Victory Rush], you will engrave it soon << Warrior
+    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] to train |T135820:0|t[Living Flame] << Mage
+    .train 415936 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Bomb|r] to train |T236220:0|t[Living Bomb] << Mage
+    .train 401759 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] to train |T236207:0|t[Burnout] << Mage
+    .train 440858 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Frozen Orb|r] to train |T135851:0|t[Frozen Orb] << Mage
+    .train 416009 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r] to train |T136150:0|t[Demonic Tactics] << Warlock
+    .train 425476 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] to train |T237562:0|t[Demonic Pact] << Warlock
+    .train 211477 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
+    .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
+    .use 203746 << Mage --Spell Notes: Living Flame
+    .use 208799 << Mage --Spell Notes: Living Bomb
+    .use 203748 << Mage --Spell Notes: Burnout
+    .use 225690 << Mage --Spell Notes: Frozen Orb
+    .use 204806 << Warrior --Rune of Victory Rush
+    .use 204795 << Rogue --Rune of Shadowstrike
+    .use 205215 << Warlock --Rune of Tactics
+    .use 210824 << Warlock --Rune of the Pact
+    .use 211477 << Warlock --Rune of Incinerate
+    .use 205230 << Warlock --Rune of Haunting
 step << Warrior
-    .goto Elwynn Forest,46.4,40.3,35,0
-    >>Kill |cRXP_ENEMY_Young Wolves|r until you have 10c+ worth of vendor trash
-    >>|cRXP_WARN_You will train|r |T132333:0|t[Battle Shout] |cRXP_WARN_which increases early leveling speeds|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
-    .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
     .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .accept 77616 >> Accept The Lost Rune
+    .turnin 77616 >> Turn in The Lost Rune
     .goto Elwynn Forest,50.242,42.287
     .mob Young Wolf
-    .target Brother Danil
     .target Llane Beshere
+step << Warrior/Rogue/Mage/Warlock
+    .equip 10 >> Equip the |T132952:0|t[Thin Cloth Gloves] << Mage
+    .use 2119 << Mage --Thin Cloth Gloves
+    .engrave 7 >> Engrave |T135820:0|t[Living Flame] on your pants << Mage
+    .engrave 10 >> Engrave |T236220:0|t[Living Bomb] on your gloves << Mage
+    .engrave 5 >> Engrave |T236207:0|t[Burnout] on your chest << Mage
+    .equip 10 >> Equip the |T132938:0|t[Tarnished Chain Gloves] << Warrior
+    .engrave 10 >> Engrave |T132342:0|t[Victory Rush] on your gloves << Warrior
+    .use 2385 << Warrior -- Tarnished Chain Gloves
+    .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves] << Rogue
+    .engrave 10 >> Engrave |T132323:0|t[Shadowstrike] on your gloves << Rogue
+    .use 2125 << Rogue --Cracked Leather Gloves
+    .equip 9 >> Equip the |T132602:0|t[Thin Cloth Bracers] << Warlock
+    .use 3600 << Warlock --Thin Cloth Bracers
+    .engrave 5 >> Engrave |T136150:0|t[Demonic Tactics] on your chest << Warlock
+    .engrave 7 >> Engrave |T237562:0|t[Demonic Pact] on your pants << Warlock
+    .engrave 9 >> Engrave |T135789:0|t[Incinerate] on your bracers << Warlock
 step
     #label Within
     .goto Elwynn Forest,48.923,41.606
@@ -187,7 +121,101 @@ step
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .accept 5261 >> Accept Eagan Peltskinner
+    .accept 18 >> Accept Brotherhood of Thieves << Warlock
     .target Deputy Willem
+step << Warlock
+    #season 2
+    .goto Elwynn Forest,49.873,42.649
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .accept 1598 >> Accept The Stolen Tome
+    .accept 77621 >> Accept Stolen Power << Human
+    .turnin 77621 >> Turn in Stolen Power << Human
+    .train 348 >> Train |T135817:0|t[Immolate]
+    .target Drusilla La Salle
+step << Human Warlock
+    #season 2
+    #label GlovesEquip
+    #completewith RestandR
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .itemcount 711,1 --Tattered Cloth Gloves (1)
+    .train 403919,3
+step << Human Warlock
+    #season 2
+    #requires GlovesEquip
+    #completewith RestandR
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T236298:0|t[Haunt]
+    .train 403919,3
+step << Warlock
+    #completewith next
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
+    .complete 18,1 --Collect Red Burlap Bandana (x12)
+	.mob Defias Thug
+step << Warlock
+    .goto Elwynn Forest,56.7,44.0
+    >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    .complete 1598,1 --Collect Powers of the Void (x1)
+step << Warlock
+    #loop
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
+    .complete 18,1 --Collect Red Burlap Bandana (x12)
+	.mob Defias Thug
+step << Warlock
+    #hardcore
+    #completewith next
+    .goto Elwynn Forest,56.828,43.734
+    .hs >> Hearth to Northshire Valley
+step << Warlock
+    #softcore
+    #completewith next
+    .goto 1429,49.527,43.491,0
+    .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
+step << Warlock
+    .goto Elwynn Forest,49.873,42.649
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
+    .turnin 1598 >> Turn in The Stolen Tome
+    .target Drusilla La Salle
+step << Warlock
+    #optional
+    #completewith next
+    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
+    .usespell 688
+step << Warlock
+    .goto Elwynn Forest,48.17,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    .turnin 18,1 >> Turn in Brotherhood of Thieves
+    .target Deputy Willem
+step << Warlock
+    #optional
+    #completewith next
+    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
+    .use 2224
+    .itemcount 2224,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
+step << Priest/Paladin
+    .goto Elwynn Forest,48.22,41.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    .vendor >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] from him|r << Priest
+    .vendor >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] from him|r << Paladin
+    .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
+    .collect 226398,1  << Paladin --Testament of Martyrdom
+    >>You will get the rest of your runes very soon
+    .target Rune Broker
+    .skipgossip
+step << Priest/Paladin
+    #sticky
+    .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
+    .train 407798 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] to train |T135961:0|t[Seal of Martyrdom], |cRXP_WARN_use it as your primary Seal|r << Paladin
+    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants << Priest
 step
     #label EaganWolves
     .goto Elwynn Forest,48.941,40.166
@@ -195,7 +223,27 @@ step
     .turnin 5261 >> Turn in Eagan Peltskinner
     .accept 33 >> Accept Wolves Across The Border
     .target Eagan Peltskinner
-step << Priest/Mage/Warlock
+step << Rogue
+    #completewith next
+    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Kobold Vermin|r on the way to the trainer
+    .complete 33,1 --Tough Wolf Meat (8)
+    .complete 7,1 -- Kobold Vermin Slain (10)
+    .mob Young Wolf
+	.mob Timber Wolf
+    .mob Kobold Vermin
+step << Rogue
+    .goto Elwynn Forest,50.6,40.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
+    .accept 77618 >> Accept Thrice Stolen
+    .turnin 77618 >> Turn in Thrice Stolen
+    .train 1784 >> Train |T132320:0|t[Stealth], you will need it to use |T135131:0|t[Shadowstrike]
+    .target Jorik Kerridan
+step << Mage
+    #optional
+    #sticky
+    .engrave 15 >> Be on the lookout for any cloak drops. Once you get one engrave |T135851:0|t[Frozen Orb] on it
+    >>|cRXP_WARN_That spell is extremely overpowered|r
+step << Mage/Warlock
     #completewith next
     .goto Elwynn Forest,46.2,40.4,40,0
     .goto Elwynn Forest,47.486,41.566
@@ -205,6 +253,11 @@ step << Priest/Mage/Warlock
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
+step << Paladin
+    #completewith next
+    >>Kill |cRXP_ENEMY_Kobold Vermin|r
+    .complete 7,1 --Kill Kobold Vermin (x10)
+    .mob Kobold Vermin
 step
     #sticky
     #label WolfMeatEnd
@@ -229,7 +282,7 @@ step
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 	.mob Young Wolf
 	.mob Timber Wolf
-step
+step << !Priest !Paladin
     #loop
     .goto 1429,47.601,36.720,0
     .goto 1429,49.215,37.010,0
@@ -248,92 +301,7 @@ step
     >>Kill |cRXP_ENEMY_Kobold Vermins|r
     .complete 7,1 --Kill Kobold Vermin (x10)
     .mob Kobold Vermin
-
-
-----Start of Warrior/Priest Early Laborer Mine rune section----
-
-
-step << Priest
-    #xprate >1.59
-    #season 2
-    #loop
-    #sticky
-    #label Memory
-    .goto 1429,47.813,31.456,0
-    .goto 1429,48.597,27.641,0
-    .goto 1429,50.342,27.011,0
-    .waypoint 1429,47.813,31.456,30,0
-    .waypoint 1429,47.886,30.755,30,0
-    .waypoint 1429,48.440,29.480,30,0
-    .waypoint 1429,48.287,28.397,30,0
-    .waypoint 1429,48.597,27.641,30,0
-    .waypoint 1429,48.695,26.498,30,0
-    .waypoint 1429,49.498,25.840,30,0
-    .waypoint 1429,50.143,25.864,30,0
-    .waypoint 1429,50.342,27.011,30,0
-    >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine. Loot them for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
-    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
-    .mob Kobold Laborer
-    .train 402862,1
-step << skip --logout skip Priest
-    #xprate >1.59
-    #season 2
-    #optional
-    #requires Memory
-    #completewith EarlyWorker
-    .goto 1429,50.626,27.209,-1
-    .goto 1429,48.646,29.703,-1
-    .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
-    .subzoneskip 34,1 --Echo Ridge Mine
-    .train 402862,1
-step << Priest
-	#softcore
-    #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer in Northshire
-    .target Spirit Healer
-step << Warrior
-    #xprate >1.59
-    #season 2
-    #optional
-    #completewith next
-    .goto 1429,48.086,30.502,20,0
-    .goto 1429,48.379,29.579,20,0
-    .goto 1429,48.336,28.597,20,0
-    .goto 1429,48.679,26.618,20,0
-    .goto 1429,49.919,25.792,20,0
-    .goto 1429,50.639,27.274,15 >>Travel toward the |cRXP_PICK_Kobold Stashbox|r inside Echo Ridge Mine
-    .train 403470,1
-step << Warrior
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,50.640,27.276
-    >>Open the |cRXP_PICK_Kobold Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
-    .collect 204806,1 -- Rune of Victory Rush (1)
-    .train 403470,1
-step << Warrior
-    #xprate >1.59
-    #season 2
-    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
-    .use 204806
-    .itemcount 204806,1 -- Rune of Victory Rush (1)
-step << skip --logout skip Warrior
-    #xprate >1.59
-    #season 2
-    #optional
-    #completewith EarlyWorker
-    .goto 1429,50.626,27.209
-    .subzone 9 >>|cRXP_WARN_Jump on top of the light on the Minecart. Perform a Logout Skip by logging out and back in|r
-    .subzoneskip 34,1 --Echo Ridge Mine
-step << Warrior
-	#softcore
-    #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer in Northshire
-    .target Spirit Heale
-
-----End of Warrior/Priest Early Laborer Mine rune section----
-
-
-step
+step << !Priest !Paladin
     #xprate >1.59
     #optional
     #completewith next
@@ -348,7 +316,15 @@ step
     .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
     .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
     .target Eagan Peltskinner
-step
+step << Paladin
+    #optional
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    +|cRXP_WARN_Grind |cRXP_ENEMY_Kobold Vermin|r or |cRXP_ENEMY_Wolves|r and sell trash until you have at least 93 copper|r
+    .money >0.0093
+    .mob Kobold Vermin
+    .mob Young Wolf
+	.mob Timber Wolf
+step << !Priest !Paladin
     #xprate >1.59
     #optional
     #loop
@@ -364,15 +340,46 @@ step
     .xp 3+1060 >> Grind to 1060+/1400xp
     .mob Young Wolf
 	.mob Timber Wolf
-step << Paladin/Warrior
+step << Paladin
+    .goto Elwynn Forest,47.70,41.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godrick Rothgar|r
+    >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy the|r |T134955:0|t[Small Shield]
+    .collect 17184,1 --Small Shield (1)
+    .target Godrick Rothgar
+step << Paladin
+    .goto Elwynn Forest,47.25,41.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
+    >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy the|r |T133485:0|t[Club]
+    .collect 2130,1 --Club (1)
+    .target Janos Hammerknuckle
+step << Paladin
+    .equip 16,2130 >> Equip the |T133485:0|t[Club]
+    .equip 17,17184 >> Equip the |T134955:0|t[Small Shield]
+step << Warrior
     #xprate >1.59
     #optional
     #completewith CleanupEnd
-    +|cRXP_WARN_Grind and sell trash until you have 1s 35c|r
-    .money >0.0135
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    +|cRXP_WARN_Grind and sell trash until you have 1 silver|r
+    .money >0.01
     .train 100,1 << Warrior --Charge
     .train 20271,1 << Paladin --Judgement
     .isOnQuest 7
+step << Priest
+    #optional
+    #completewith next
+    .equip 8,80 >> |cRXP_WARN_Equip the|r |T132543:0|t[Soft Fur-lined Shoes], you will use them to engrave a rune on soon
+step << Priest
+    .goto Elwynn Forest,47.57,41.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dermot Johns|r
+    >>If you don't have enough money for both items, kill more wolves
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    >>Vendor trash and buy the |T132495:0|t[Thin Cloth Belt] and |T132952:0|t[Thin Cloth Gloves], you will them it to engrave a rune on soon
+    .collect 3599,1 --Thin Cloth Belt (1)
+    .collect 2119,1 --Thin Cloth Gloves (1)
+    .target Dermot Johns
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
@@ -381,27 +388,99 @@ step << Priest/Mage/Warlock
     >>|cRXP_WARN_Make sure you save 10c or more for later|r << Priest/Mage
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
+step << Priest/Paladin
+    .goto Elwynn Forest,48.22,41.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >>|cRXP_BUY_Buy all of the following runes:|r
+    .collect 212552,1 << Priest --Psychosophic Epiphany
+    .collect 205940,1 << Priest --Memory of a Dark Purpose
+    .collect 205951,1 << Priest --Memory of a Troubled Acolyte
+    .collect 205932,1 << Priest --Prophecy of a King's Demise
+    .collect 235600,1 << Paladin --Rune of Divine Storm
+    .collect 211488,1 << Paladin --Rune of the Avenger
+    .collect 235602,1 << Paladin --Rune of the Hammer of the Righteous
+    .collect 205420,1 << Paladin --Libram of Judgement
+    .collect 235604,1 << Paladin --Rune of the Shield of Righteousness
+    >>You will get the rest of your runes very soon
+    .target Rune Broker
+    .skipgossip
+step << Priest/Paladin
+    .train 431663 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] to train |T136181:0|t[Mind Spike] << Priest
+    .train 425216 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpouse|r] to train |T237514:0|t[Void Plague] << Priest
+    .train 402862 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] to train |T237545:0|t[Penance] << Priest
+    .train 402849 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] to train |T136149:0|t[Shadow Word: Death] << Priest
+    .train 410014 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Divine Storm|r] to train |T236250:0|t[Divine Storm] << Paladin
+    .train 410008 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Avenger|r] to train |T135874:0|t[Avenger's Shield] << Paladin
+    .train 410013 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer of the Righteous|r] to train |T236253:0|t[Hammer of the Righteous] << Paladin
+    .train 440788 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shield of Righteousness|r] to train |T236265:0|t[Shield of Righteousness] << Paladin
+    .equip 18,205420 >> Equip the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] you will need it to learn |T135891:0|t[Crusader Strike] later << Paladin
+    .use 212552 << Priest --Psychosophic Epiphany
+    .use 205940 << Priest --Memory of a Dark Purpose
+    .use 205951 << Priest --Memory of a Troubled Acolyte
+    .use 205932 << Priest --Prophecy of a King's Demise
+    .use 235600 << Paladin --Rune of Divine Storm
+    .use 211488 << Paladin --Rune of the Avenger
+    .use 235602 << Paladin --Rune of the Hammer of the Righteous
+    .use 205420 << Paladin --Libram of Judgement
+    .use 235604 << Paladin --Rune of the Shield of Righteousness
+step << Paladin
+    #sticky
+    >>|cRXP_WARN_Be on the lookout for any|r |T132624:0|t[Chest]|cRXP_WARN_,|r |T132602:0|t[Bracers] |cRXP_WARN_or|r |T133762:0|t[Cloak] |cRXP_WARN_you can equip|r
+    .engrave 5 >> Engrave |T236250:0|t[Divine Storm] on your chest
+    .engrave 9 >> Engrave |T236253:0|t[Hammer of the Righteous] on your bracers
+    .engrave 15 >> Engrave |T236265:0|t[Shield of Righteousness] on your cloak
+step << Priest/Paladin
+    .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt << Priest
+    .engrave 8 >> Engrave |T237514:0|t[Void Plague] on your boots << Priest
+    .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves << Priest
+    .engrave 7 >> Engrave |T135874:0|t[Avenger's Shield] on your pants << Paladin
+step << Priest/Paladin
+    #loop
+    .goto 1429,47.601,36.720,0
+    .goto 1429,49.215,37.010,0
+    .goto 1429,47.569,34.967,0
+    .goto 1429,47.601,36.720,45,0
+    .goto 1429,47.381,36.314,45,0
+    .goto 1429,47.611,35.863,45,0
+    .goto 1429,48.314,36.487,45,0
+    .goto 1429,49.070,36.438,45,0
+    .goto 1429,49.215,37.010,45,0
+    .goto 1429,49.838,36.413,45,0
+    .goto 1429,50.105,35.668,45,0
+    .goto 1429,49.823,35.161,45,0
+    .goto 1429,48.845,35.066,45,0
+    .goto 1429,47.569,34.967,45,0
+    >>Kill |cRXP_ENEMY_Kobold Vermins|r
+    .complete 7,1 --Kill Kobold Vermin (x10)
+    .mob Kobold Vermin
+step << Priest/Paladin
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto 1429,45.718,40.733,0
+    .xp 3+720 >> Grind to 720+/1400xp
+    .mob Young Wolf
+	.mob Timber Wolf
 step << !Priest !Mage !Warlock !Rogue
     .goto Elwynn Forest,47.691,41.417
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
     .vendor >>Vendor Trash
     .target Godric Rothgar
-step << Rogue
-    #season 0,1
-    .goto Elwynn Forest,47.240,41.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
-    .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_from him if you can afford it|r
-    .collect 2139,1 -- Dirk (1)
-    .disablecheckbox
-    .target Janos Hammerknuckle
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
-step << Rogue
-    #season 0,1
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T135650:0|t[Dirk]
-    .use 2139
-    .itemcount 2139,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
+step << Mage
+    .goto Elwynn Forest,48.22,41.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
+    >>Make sure that you bought |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Ice Lance|r] you will it to turnin an extra quest
+    .collect 203745,1 --Spell Notes: Ice Lance
+    .target Rune Broker
+    .skipgossip
+step << Mage
+    #sticky
+    #optional
+    #label IceLance
+    .train 401760 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Ice Lance|r] to train |T135844:0|t[Ice Lance]
 step
     #label CleanupEnd
     .goto Elwynn Forest,48.923,41.606
@@ -415,14 +494,7 @@ step
     .accept 3104 >> Accept Glyphic Letter << Mage
     .accept 3105 >> Accept Tainted Letter << Warlock
     .target Marshal McBride
-step << Paladin/Warrior
-    #xprate >1.59
-    #optional
-    #completewith next
-    +|cRXP_WARN_Grind and sell trash until you have 2s 10c|r
-    .money >0.0210
-    .train 100,1 << Warrior --Charge
-    .train 20271,1 << Paladin --Judgement
+
 
 
 
@@ -445,20 +517,14 @@ step << Mage
     .goto 1429,49.436,39.881,10,0
     .goto Elwynn Forest,49.661,39.402,12 >>Travel toward |cRXP_FRIENDLY_Khelden Bremen|r upstairs
 step << Mage
-    #xprate >1.59
-    #season 0,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside upstairs
-    .goto Elwynn Forest,49.661,39.402
-    .turnin 3104 >> Turn in Glyphic Letter
-    .trainer >> Train your class spells
-    .target Khelden Bremen
-step << Mage
+    #requires IceLance
     #xprate >1.59
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside upstairs
     .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
-    .accept 77620 >> Accept Spell Research << Human Mage
+    .accept 77620 >> Accept Spell Research << Human
+    .turnin 77620 >> Turn in Spell Research << Human
     .trainer >> Train your class spells
     .target Khelden Bremen
 step << Priest
@@ -473,43 +539,10 @@ step << Priest
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
     .turnin 3103 >> Turn in Hallowed Letter
-    .accept 77619 >> Accept Meditation on the Light << Human Priest
-    .trainer >> Train your class spells
+    .accept 77619 >> Accept Meditation on the Light << Human
+    .turnin 77619 >> Turn in Meditation on the Light << Human
+    .trainer >> Train your class spells, |cRXP_WARN_if you can't afford them, skip training. You will be mainly using rune abilities anyway|r
     .target Priestess Anetta
-step << Priest
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|cRXP_WARN_Type /kneel in your chatbox while inside of Northshire Abbey|r
-    >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff to learn|r |T237545:0|t[Penance]
-    .use 205951
-    .itemcount 205951,1
-step << Human Priest
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
-    .turnin 77619 >> Turn in Meditation on the Light
-    .target Priestess Anetta
-    .isOnQuest 77619
-step << Human Priest
-    #xprate >1.59
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
-    .use 711
-    .itemcount 711,1 --Tattered Cloth Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 402862,3
-step << Human Priest
-    #xprate >1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T237545:0|t[Penance]
-    .train 402862,3
 step << Warrior/Paladin
     #xprate >1.59
     #optional
@@ -519,38 +552,14 @@ step << Warrior/Paladin
     .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs << Paladin
 step << Warrior
     #xprate >1.59
-    #season 0,1
-    .goto Elwynn Forest,50.242,42.287
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
-    .turnin 3100 >> Turn in Simple Letter
-    .trainer >> Train your class spells
-    .target Llane Beshere
-step << Warrior
-    #xprate >1.59
     #season 2
     .goto Elwynn Forest,50.242,42.287
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
     .turnin 3100 >> Turn in Simple Letter
     .accept 77616 >> Accept The Lost Rune << Human
     .turnin 77616 >> Turn in The Lost Rune << Human
-    .trainer >> Train your class spells
-    >>|cRXP_WARN_If you didn't end up getting 2 silver, train only|r |T132337:0|t[|cRXP_FRIENDLY_Charge|r]
+    .train 100 >> Train |T132337:0|t[Charge]
     .target Llane Beshere
-step << Warrior
-    #season 2
-    #optional
-    #completewith RuneWorkers
-    .engrave 10 >>Equip the |T132938:0|t[|cRXP_LOOT_Gloves|r] you got from the quest and engrave |T132342:0|t[|cRXP_FRIENDLY_Victory Rush|r] on them
-    .use 2385 --Tarnished Chain Gloves
-    .train 402927,3
-step << Paladin
-    #xprate >1.59
-    #season 0,1
-    .goto Elwynn Forest,50.433,42.124
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
-    .turnin 3101 >> Turn in Consecrated Letter
-    .trainer >> Train your class spells
-    .target Brother Sammuel
 step << Paladin
     #xprate >1.59
     #season 2
@@ -558,9 +567,10 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 3101 >> Turn in Consecrated Letter
     .accept 77617 >> Accept Relics of the Light << Human Paladin
-    .train 20271 >> Train your class spells
+    .train 20271 >> Train |T135959:0|t[Judgement]
+    >>|cRXP_WARN_If you have extra money you can spend it on|r |T135906:0|t[Blessing of Might] |cRXP_WARN_or|r Chest/Bracers/Cloak |cRXP_WARN_if you're still missing them. It is much better to buy the gear than the Blessing|r
     .target Brother Sammuel
-step << Priest/Warrior
+step << Priest/Warrior/Paladin
     #xprate >1.59
     #season 2
     #optional
@@ -569,12 +579,39 @@ step << Priest/Warrior
 step
     #xprate >1.59
     #season 2
-    #requires Memory << Priest --Season 2
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
     .accept 18 >> Accept Brotherhood of Thieves
-    .accept 3903 >> Accept Milly Osworth << Rogue
     .target Deputy Willem
+step << !Mage !Priest !Paladin
+    .goto Elwynn Forest,48.22,41.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
+    .target Rune Broker
+    .skipgossip
+step << Paladin
+    #loop
+    #sticky
+    #label EarlyLibram3
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
+    .waypoint Elwynn Forest,53.86,47.05,30,0
+    .waypoint Elwynn Forest,55.43,45.87,30,0
+    .waypoint Elwynn Forest,55.09,49.00,30,0
+    .waypoint Elwynn Forest,53.89,50.52,30,0
+    .waypoint Elwynn Forest,52.55,48.79,30,0
+    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .itemStat 18,QUALITY,2
+    .train 410002,1
+step << Paladin
+    #sticky
+    #label EarlyLibram4
+    #requires EarlyLibram3
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T135891:0|t[Crusader Strike]
+    .use 205420
+    .aura -408828
+    .train 410002,1
 step
     #xprate >1.59
     #season 2
@@ -601,79 +638,15 @@ step
     >>Kill |cRXP_ENEMY_Kobold Workers|r
     .complete 15,1 --Kill Kobold Worker (x10)
     .mob Kobold Worker
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #loop
-    #sticky
-    #label EarlyLibram1
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .waypoint Elwynn Forest,52.55,48.79,30,0
-    .waypoint Elwynn Forest,53.89,50.52,30,0
-    .waypoint Elwynn Forest,55.09,49.00,30,0
-    .waypoint Elwynn Forest,55.43,45.87,30,0
-    .waypoint Elwynn Forest,53.86,47.05,30,0
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
-    .collect 205420,1 -- Libram of Judgement (1)
-    .mob Defias Thug
-    .train 410002,1
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #sticky
-    #label EarlyLibram2
-    #requires EarlyLibram1
-    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
-    .use 205420
-    .itemcount 205420,1 --Libram of Judgement (1)
-    .train 410002,1
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #loop
-    #sticky
-    #label EarlyLibram3
-    #requires EarlyLibram2
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .waypoint Elwynn Forest,53.86,47.05,30,0
-    .waypoint Elwynn Forest,55.43,45.87,30,0
-    .waypoint Elwynn Forest,55.09,49.00,30,0
-    .waypoint Elwynn Forest,53.89,50.52,30,0
-    .waypoint Elwynn Forest,52.55,48.79,30,0
-    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    .itemStat 18,QUALITY,2
-    .train 410002,1
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #sticky
-    #label EarlyLibram4
-    #requires EarlyLibram3
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T135891:0|t[Crusader Strike]
-    .use 205420
-    .aura -408828
-    .train 410002,1
 step << Rogue
     #xprate >1.59
     #season 2
-    #sticky
-    #label Shadowstrike1
-    .goto Elwynn Forest,52.544,51.922
-    >>|cRXP_WARN_Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
-    .collect 204795,1 -- Rune of Shadowstrike (1)
-    .train 400105,1
-step << Rogue
-    #xprate >1.59
-    #season 2
-    #sticky
-    #requires Shadowstrike1
-    #label Shadowstrike2
-    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T132291:0|t[Shadowstrike]
-    .use 204795
-    .itemcount 204795,1
-step
+    #requires Shadowstrike2
+    .goto Elwynn Forest,50.314,39.916
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
+    .turnin 3102 >> Turn in Encrypted Letter
+    .target Jorik Kerridan
+step << !Warlock
     #xprate >1.59
     #season 2
     #loop
@@ -688,22 +661,13 @@ step
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 	.mob Defias Thug
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #softcore
-    #completewith next
-    #requires EarlyLibram4
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
--- .subzoneskip 59,1
 step
     #optional
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-step << Paladin/Rogue
+step << !Warlock
     #xprate >1.59
     #season 2
     #requires Shadowstrike2 << Rogue
@@ -711,9 +675,11 @@ step << Paladin/Rogue
     .goto Elwynn Forest,48.17,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue
-    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
-    .accept 6 >> Accept Bounty on Garrick Padfoot << Rogue
---  .accept 3903 >> Accept Milly Osworth
+    .turnin 18,2 >> Turn in Brotherhood of Thieves << Paladin
+    .turnin 18,2 >> Turn in Brotherhood of Thieves << Priest
+    .turnin 18,3 >> Turn in Brotherhood of Thieves << Warrior
+    .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
+    .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
     .target Deputy Willem
 step << Rogue
     #xprate >1.59
@@ -722,88 +688,21 @@ step << Rogue
     .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
     .use 2224
     .itemcount 2224,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
-step << Rogue
-    .goto Elwynn Forest,50.8,39.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
-    >>|cRXP_WARN_Don't accept the followup quest|r
-    .turnin 3903 >> Turn in Milly Osworth
-    .target Milly Osworth
-step << Rogue
-    #xprate >1.59
-    #season 2
-    #requires Shadowstrike2
-    .goto Elwynn Forest,50.314,39.916
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
-    .turnin 3102 >> Turn in Encrypted Letter
-    .accept 77618 >> Accept Thrice Stolen << Human
-    .turnin 77618 >> Turn in Thrice Stolen << Human
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Jorik Kerridan
-step << Human Rogue
-    #xprate >1.59
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,2125 >> |cRXP_WARN_Equip the|r |T132952:0|t[Cracked Leather Gloves]
-    .use 2125
-    .itemcount 2125,1 --Cracked Leather Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 400105,3
-step << Human Rogue
-    #xprate >1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t[Cracked Leather Gloves] |cRXP_WARN_with|r |T132291:0|t[Shadowstrike]
-    .train 400105,3
-step << Rogue
-    #label CuttyNote
-    #season 2
-    .goto 1429,57.518,48.253
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Garrick Padfoot|r for |T134331:0|t[Cutty's Note]
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    >>|cRXP_WARN_You HAVE TO|r |T133644:0|t[Pick Pocket] |cRXP_ENEMY_him to get the note! Don't kill him before you do so|r
-    .collect 203723,1 -- Cutty's Note (1)
-    .mob Garrick Padfoot
-    .train 400094,1
-step << Rogue
-    #season 2
-    .goto 1429,57.518,48.253
-    >>Kill |cRXP_ENEMY_Garrick Padfoot|r and loot him for his head
-    .collect 182,1 -- Cutty's Note (1)
-    .mob Garrick Padfoot
-    .train 400094,1
-step
-    #optional
-    #softcore
-    #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
-step << Rogue
-    .goto Elwynn Forest,48.17,42.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    >>|cRXP_WARN_Equip the chest you get as reward from this quest. You will use it to engrave a rune on later|r
-    .turnin 6,2 >> Turn in Bounty on Garrick Padfoot
-    .target Deputy Willem
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.01
 step << Paladin
     #xprate >1.59
     #season 2
     #completewith RestandR
-    .equip 16,5579 >> Equip the |T133052:0|t[Militia Warhammer]
-    .use 5579
-    .itemcount 5579,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
-step << Priest
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|cRXP_WARN_Type /kneel in your chatbox while inside of Northshire Abbey|r
-    >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff to learn|r |T237545:0|t[Penance]
-    .use 205951
-    .itemcount 205951,1
+    .equip 16,5580 >> Equip the |T133052:0|t[Militia Hammer]
+    .use 5580
+    .itemcount 5580,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.97
+step << Warrior
+    #completewith RestandR
+    .equip 16,1161 >> Equip the |T135274:0|t[Militia Shortsword]
+    .use 1161
+    .itemcount 1161,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.01
 step << Human Priest
     #xprate >1.59
     #optional
@@ -816,36 +715,9 @@ step << Human Priest
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .accept 5623 >> Accept In Favor of the Light
-    .turnin 77619 >> Turn in Meditation on the Light
     .target Priestess Anetta
     .isOnQuest 77619
     .xp <5,1
-step << Human Priest
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
-    .turnin 77619 >> Turn in Meditation on the Light
-    .target Priestess Anetta
-    .isOnQuest 77619
-    .xp >5,1
-step << Human Priest
-    #xprate >1.59
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
-    .use 711
-    .itemcount 711,1 --Tattered Cloth Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 402862,3
-step << Human Priest
-    #xprate >1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T237545:0|t[Penance]
-    .train 402862,3
 step << Human Warrior/Human Paladin
     #xprate >1.59
     #season 2
@@ -860,6 +732,7 @@ step << Human Paladin
     .goto Elwynn Forest,50.433,42.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs
     .turnin 77617 >> Turn in Relics of the Light
+    .train >> Train your class spells
     .target Brother Sammuel
     .isOnQuest 77617
 step << Human Paladin
@@ -883,6 +756,13 @@ step << Human Paladin
     .train 403470,3 << Warrior
     .train 410002,3 << Paladin
     .itemStat 10,LEVEL,<5
+step
+    #xprate >1.59
+    .goto Elwynn Forest,48.923,41.606
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 15 >> Turn in Investigate Echo Ridge
+    .accept 21 >> Accept Skirmish at Echo Ridge
+    .target Marshal McBride
 step << Human Paladin/Warrior/Priest
     #xprate >1.59
     #season 2
@@ -904,167 +784,13 @@ step << Warlock
 ----End of 2x training section----
 
 
-step << Mage
-    #season 2
-    #loop
-    #sticky
-    #completewith RedBurlapBandana << !Human
-    #label CALEENCI
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .waypoint Elwynn Forest,52.55,48.79,30,0
-    .waypoint Elwynn Forest,53.89,50.52,30,0
-    .waypoint Elwynn Forest,55.09,49.00,30,0
-    .waypoint Elwynn Forest,55.43,45.87,30,0
-    .waypoint Elwynn Forest,53.86,47.05,30,0
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
-    >>|cRXP_WARN_NOTE: You will be unable to train|r |T135844:0|t[Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Human
-    .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
-    .mob Defias Thug
-    .train 401760,1
-step << Human Mage
-    #season 2
-    #requires CALEENCI
-    #label CALEENCI2
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T135844:0|t[Ice Lance]
-    .use 203751
-    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
-step << !Paladin !Rogue
-    #xprate >1.59
-    #season 2
-    #requires CALEENCI2 << Mage
---   #requires Libram4 << Paladin
---  #requires Shadowstrike2 << Rogue
-    .goto Elwynn Forest,48.17,42.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue/Warlock
-    .turnin 18,2 >> Turn in Brotherhood of Thieves << Priest
-    .turnin 18,3 >> Turn in Brotherhood of Thieves << Warrior
-    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
-    .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
-    .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
---   .accept 3903 >> Accept Milly Osworth
-    .target Deputy Willem
-step << Paladin
-    #season 0,1
-    #completewith RestandR
-    .equip 16,5579 >> |cRXP_WARN_Equip the|r |T133052:0|t[Militia Warhammer]
-    .use 5579
-    .itemcount 5579,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #completewith RestandR
-    .equip 16,5579 >> |cRXP_WARN_Equip the|r |T133052:0|t[Militia Warhammer]
-    .use 5579
-    .itemcount 5579,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
-step << Rogue
-    #xprate <1.59
-    #season 2
-    #completewith RestandR
-    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
-    .use 2224
-    .itemcount 2224,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
-step << Rogue
-    #season 0,1
-    #completewith RestandR
-    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
-    .use 2224
-    .itemcount 2224,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
-step << Warrior
-    #completewith RestandR
-    .equip 16,1161 >> Equip the |T135274:0|t[Militia Shortsword]
-    .use 1161
-    .itemcount 1161,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
-step
-    #xprate >1.59
-    .goto Elwynn Forest,48.923,41.606
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
-    .turnin 15 >> Turn in Investigate Echo Ridge
-    .accept 21 >> Accept Skirmish at Echo Ridge
-    .target Marshal McBride
-step << Priest
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
-    .accept 5623 >> Accept In Favor of the Light
-    .trainer >> Train your class spells
-    .target Priestess Anetta
-step << Human Mage
-    #season 2
-    #optional
-    #completewith next
-    .goto 1429,48.79,41.58,12,0
-    .goto 1429,48.975,41.146,12,0
-    .goto 1429,49.262,40.633,12,0
-    .goto 1429,49.510,40.095,6,0
-    .goto 1429,49.691,40.230,6,0
-    .goto 1429,49.595,40.673,6,0
-    .goto 1429,49.324,40.492,6,0
-    .goto 1429,49.436,39.881,10,0
-    .goto Elwynn Forest,49.661,39.402,12 >>Travel toward |cRXP_FRIENDLY_Khelden Bremen|r upstairs
-    .isQuestComplete 77620
-step << Human Mage
-    #season 2
-    .goto Elwynn Forest,49.661,39.402
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside
-    .turnin 77620 >> Turn in Spell Research
-    .target Khelden Bremen
-    .isQuestComplete 77620
-step << Human Mage
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
-    .use 711
-    .itemcount 711,1 --Tattered Cloth Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 401760,3
-step << Human Mage
-    #xprate <1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T135844:0|t[Ice Lance]
-    .train 401760,3
-step << Warrior/Paladin
-    #xprate <1.59
-    #optional
-    #completewith next
-    .goto Elwynn Forest,48.85,41.76,15,0
-    .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs
-step << Human Paladin
-    #xprate <1.59
-    #season 2
-    .isQuestComplete 77617
-    .goto Elwynn Forest,50.433,42.124
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
-    .turnin 77617 >> Turn in Relics of the Light
-    .target Brother Sammuel
-step << Human Paladin
-    #xprate <1.59
-    #season 2
-    #completewith RestandR
-    #label GlovesEquip
-    .equip 10,2385 >> |cRXP_WARN_Equip the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r
-    .use 2385
-    .itemcount 2385,1
-    .itemStat 10,LEVEL,<5
-    .train 410002,3
-step << Human Paladin
-    #xprate <1.59
-    #season 2
-    #completewith RestandR
-    #requires GlovesEquip
-    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r |cRXP_WARN_with|r |T135891:0|t[Crusader Strike]
-    .itemStat 10,LEVEL,<5
-    .train 410002,3
+step << Priest/Paladin
+    .goto Elwynn Forest,48.22,41.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you want from him|r
+    .target Rune Broker
+    .skipgossip
 step
     #optional
     #completewith next
@@ -1088,27 +814,18 @@ step
     >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine
     .complete 21,1 --Kill Kobold Laborer (x12)
     .mob Kobold Laborer
-step << skip --logout skip
-    #xprate >1.59
-    #season 2
-    .goto 1429,50.626,27.209,-1
-    .goto 1429,48.646,29.703,-1
-    .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
-    .subzoneskip 34,1 --Echo Ridge Mine
-    .isOnQuest 21
 step
 	#softcore
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer in Northshire
     .target Spirit Healer
 step
-    #xprate >1.49 << Priest/Mage
+    #xprate >1.49
     #optional
     #completewith RestandR
     .abandon 3904 >> Abandon Milly's Harvest
 step
     #xprate >1.49
-    #requires CuttyNote << Rogue --Season 2
     #optional
     #loop
     .goto Elwynn Forest,52.55,48.79,0
@@ -1150,34 +867,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .accept 2158 >> Accept Rest and Relaxation
     .target Falkhaan Isenstrider
-step << Rogue
-    #season 2
-    .goto Elwynn Forest,49.983,52.012
-    >>Talk to |cRXP_FRIENDLY_Cutty|r just south of the Northshire Valley wall
-    >>He will give you the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    .collect 203990,1 -- Rune of Mutilation (1)
-    .skipgossip
-    .target Cutty
-    .train 400094,1
-step << Rogue
-    #season 2
-    .train 400094 >> |cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Mutilation]|r |cRXP_WARN_to learn|r |T132304:0|t[Mutilate]
-    .use 203990 -- Rune of Mutilation (1)
-    .target Cutty
-    .train 400094,1
-step << Rogue
-    #season 2
-    .goto Elwynn Forest,46.122,62.937,5,0
-    .goto Elwynn Forest,46.175,62.124
-    >>|cRXP_WARN_Using the crates outside of the house, jump up on to the roof and run up behind the chimney|r
-    >>Open the |cRXP_PICK_Rusty Lockbox|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Slaughter]|r
-    .collect 203993,1 -- Rune of Slaughter (1)
-    .train 424992,1
-step << Rogue
-    #season 2
-    .train 424992 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Slaughter]|r |cRXP_WARN_to train|r |T236280:0|t[Slaughter from the Shadows]
-    .use 203993
-    .itemcount 203993,1
 ]])
 
 

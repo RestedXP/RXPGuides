@@ -34,6 +34,8 @@ step << Druid/Warrior/Rogue
 step << Warrior/Rogue
     .train 400105 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] to train |T132323:0|t[Shadowstrike], you will engrave it soon << Rogue
     .train 403470 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] to train |T132342:0|t[Victory Rush], you will engrave it soon << Warrior
+    .use 204806 << Warrior --Rune of Victory Rush
+    .use 204795 << Rogue --Rune of Shadowstrike
 step << Druid
     #optional
     #completewith next
@@ -79,6 +81,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
     .accept 77573 >> Accept Second-Story Work
     .turnin 77573 >> Turn in Second-Story Work
+    .train 1784 >> Train |T132320:0|t[Stealth], you will need it to use |T135131:0|t[Shadowstrike]
     .target Frahun Shadewhisper
 step << Warrior
     #season 2
