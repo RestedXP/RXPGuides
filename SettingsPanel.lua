@@ -2379,7 +2379,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function()
                             return not (self.profile.enableTips and
-                                       self.profile.enableItemUpgrades)
+                                       self.profile.enableItemUpgrades) or
+                                       UnitLevel("player") == GetMaxPlayerLevel()
                         end
                     },
                     enableQuestChoiceRecommendation = {
@@ -2393,7 +2394,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function()
                             return not (self.profile.enableTips and
-                                       self.profile.enableItemUpgrades)
+                                       self.profile.enableItemUpgrades) or
+                                       UnitLevel("player") == GetMaxPlayerLevel()
                         end
                     },
                     enableQuestChoiceAutomation = {
@@ -2409,8 +2411,8 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades and
-                                       self.profile
-                                           .enableQuestChoiceRecommendation)
+                                       self.profile.enableQuestChoiceRecommendation) or
+                                       UnitLevel("player") == GetMaxPlayerLevel()
                         end
                     },
                     enableItemUpgradesAH = {
@@ -2426,8 +2428,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades) or
-                                       UnitLevel("player") ==
-                                       GetMaxPlayerLevel()
+                                       UnitLevel("player") == GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
