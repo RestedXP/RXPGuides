@@ -15,94 +15,61 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #completewith next
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
-step << !Gnome Mage
-    #season 2
-    #completewith next
-    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
-step << Warlock
-#sticky
-#label wlrune1
-    #season 2
-    .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
-    .collect 205230,1 -- Rune of Haunting (1)
-    .train 403919,1
-step << Warlock
-#requires wlrune1
-#sticky
-    #season 2
-    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
-    .use 205230
-    .itemcount 205230,1 -- Rune of Haunting (1)
---XX Era Level 1 Warrior/Warlock training, Era Warlock imp accept start
-step << Warrior/Warlock
-    #season 0,1
-    #completewith next
-    .goto 1426,28.533,72.587,50,0
-    .goto 1426,28.239,71.707,50,0
-    +|cRXP_WARN_Kill and loot |cRXP_ENEMY_Ragged Young Wolves|r until you have 10 copper or more of vendor trash|r
-    >>|cRXP_WARN_Unequip your|r |T132665:0|t[Acolyte's Robe]|cRXP_WARN_,|r |T135005:0|t[Acolyte's Shirt]|cRXP_WARN_,|r |T134581:0|t[Acolyte's Pants]|cRXP_WARN_, and|r |T132535:0|t[Acolyte's Shoes] |cRXP_WARN_so you can vendor them for 4 copper|r << Warlock
-    >>|cRXP_WARN_Unequip your|r |T135009:0|t[Recruit's Shirt]|cRXP_WARN_,|r |T134582:0|t[Recruit's Pants]|cRXP_WARN_, and|r |T132540:0|t[Recruit's Boots] |cRXP_WARN_so you can vendor them for 3 copper|r << Warrior
-    .complete 179,1 --Tough Wolf Meat (8)
-    .disablecheckbox
-    .mob Ragged Young Wolf
-    .money >0.001
-step << Warrior/Warlock
-    #season 0,1
+step << Mage/Hunter/Priest/Paladin/Warrior
+    .goto Dun Morogh,29.47,72.06
+    >> |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >> |cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] from him|r << Priest
+    >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] from him|r << Paladin
+    >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from him|r << Warrior
+    >> |cRXP_BUY_Vendor trash and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]|r << Rogue
+    >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] from him|r << Mage
+    >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] and |T132540:0|t[Boots] |cRXP_WARN_(they can't be engraved on)|r |cRXP_BUY_and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] and |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] from him|r << Hunter
+    >> |cRXP_BUY_Vendor trash and buy all of the following runes:|r << Warlock
+    .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
+    .collect 226398,1  << Paladin --Testament of Martyrdom
+    .collect 204716,1 << Warrior --Rune of Frenzied Assault
+    .collect 204795,1 << Rogue --Rune of Shadowstrike
+    .collect 203746,1 << Mage --Spell Notes: Living Flame
+    .collect 209852,1 << Hunter --Rune of Kill Command
+    .collect 226401,1 << Hunter --Treatise on the Heart of the Lion
+    .collect 205215,1 << Warlock --Rune of Tactics
+    .collect 210824,1 << Warlock --Rune of the Pact
+    .collect 211477,1 << Warlock --Rune of Incinerate
+    .collect 205230,1 << Warlock --Rune of Haunting
+    .collect 228797,1 << Warlock --Grimoire of Fel Armor
+    >>You will get the rest of your runes very soon
+    .target Rune Broker
+    .skipgossip
+step << Mage/Hunter/Priest/Paladin/Warrior
+    #sticky
     #optional
-    #completewith next
-    .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
-step << Warrior/Warlock
-    #season 0,1
-    .goto 1426,28.792,67.837
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside
-    .vendor >> Vendor Trash
-    .target Grundel Harkin
-    .train 6673,1 << Warrior
-    .train 348.1 << Warlock
-step << Warrior
-    #season 0,1
-    .goto 1426,28.831,67.238
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r inside
-    .train 6673 >>Train |T132333:0|t[Battle Shout]
-    .target Thran Khorman
-step << Warlock
-    #season 0,1
-    .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r inside
-    .train 348 >> Train |T135817:0|t[Immolate]
-    .accept 1599 >> Accept Beginnings
-    .target Alamar Grimm
-step << Warrior/Warlock
-    #season 0,1
-    #softcore << Warlock
-    #label WarriorHS
-    #completewith WolfMeat
-    .hs >> Hearth to Coldridge Valley
-    .subzoneskip 77,1
---XX All era warriors, era softcore warlocks
-step << Warrior/Warlock
-    #season 0,1
-    #softcore << Warlock
+    .use 205947 << Priest --Prophecy of a Desecrated Citadel
+    .use 226398 << Paladin --Testament of martyrdom
+    .use 204716 << Warrior --Rune of Frenzied Assault
+    .use 203746 << Mage --Spell Notes: Living Flame
+    .use 209852 << Hunter --Rune of Kill Command
+    .use 226401 << Hunter --Treatise on the Heart of the Lion
+    .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
+    .train 407798 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] to train |T135961:0|t[Seal of Martyrdom], |cRXP_WARN_use it as your primary Seal|r << Paladin
+    .train 425447 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] << Warrior
+    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] << Mage
+    .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] << Hunter
+    .train 409580 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] to train |T132185:0|t[Heart of the Lion] << Hunter
+    .engrave 7 >> Engrave |T236174:0|t[Kill Shot] on your pants << Hunter
+    .engrave 7 >> Engrave |T135820:0|t[Living Flame] on your pants << Mage
+    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants << Priest
+    .engrave 7 >> Engrave |T236317:0|t[Frenzied Assault] on your pants << Warrior
+    >>|cRXP_WARN_TIP:|r You can pull multiple |cRXP_ENEMY_Wolves|r with |T135812:0|t[Fireball] and then AoE them with |T135820:0|t[Living Flame] << Mage
+step << Hunter
     #optional
-    #requires WarriorHS
-    #completewith WolfMeat
-	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
---XX Era Warriors, Era Softcore Warlocks drop HS
-step << Warlock
-    #season 0,1
-    #optional
-    #completewith next
-    .goto 1426,28.938,68.358,12,0
-    .goto 1426,28.831,68.698,12 >> Exit Anvilmar
-    .subzoneskip 77,1
---XX Era Level 1 Warrior/Warlock training, warlock imp accept end
+    #sticky
+    .aura 409583 >> Remember to activate your |T132185:0|t[Heart of the Lion]
 step
     #label WolfMeat
     .goto 1426,29.529,73.286,0
@@ -132,28 +99,72 @@ step
     .goto 1426,28.557,72.487,60,0
     .xp 2 >> Grind to level 2
     .mob Ragged Young Wolf
-step << Priest/Mage/Warlock
-    #season 0,1
-    .goto Dun Morogh,30.087,71.563
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
-    >>Vendor Trash
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
-    .collect 159,15 --Collect Refreshing Spring Water (x15)
-    .target Adlin Pridedrift
-    .xp >6,1
+step << Warrior/Mage/Warlock/Hunter
+    .goto Dun Morogh,29.47,72.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
+    .vendor >>|cRXP_BUY_Vendor trash and buy all of the key AoE runes|r << Mage
+    .vendor >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Hunter
+    .vendor >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Warlock
+    .collect 204806,1 << Warrior --Rune of Victory Rush
+    .collect 208799,1 << Mage --Spell Notes: Living Bomb
+    .collect 203748,1 << Mage --Spell Notes: Burnout
+    .collect 225690,1 << Mage --Spell Notes: Frozen Orb
+    .collect 203745,1 << Mage --Spell Notes: Ice Lance
+    .collect 206168,1 << Hunter --Rune of the Chimera
+    .collect 210818,1 << Hunter --Rune of Lone Wolf
+    .collect 213124,1 << Hunter --Rune of Close Combat
+    .collect 226252,1 << Hunter --Rune of the Guerrilla
+    .collect 205215,1 << Warlock --Rune of Tactics
+    .collect 210824,1 << Warlock --Rune of the Pact
+    .collect 211477,1 << Warlock --Rune of Incinerate
+    .collect 205230,1 << Warlock --Rune of Haunting
+    .collect 228797,1 << Warlock --Grimoire of Fel Armor
+    >> Ice Lance is only useful so you can turn in a quest later << Mage
+    >>|cRXP_WARN_You will get the rest of your runes later|r
+    .target Rune Broker
+    .skipgossip
+step << Warrior/Mage/Hunter
+    .train 403470 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] to train |T132342:0|t[Victory Rush], you will engrave it soon << Warrior
+    .train 415936 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Bomb|r] to train |T236220:0|t[Living Bomb] << Mage
+    .train 401759 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] to train |T236207:0|t[Burnout] << Mage
+    .train 440858 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Frozen Orb|r] to train |T135851:0|t[Frozen Orb] << Mage
+    .train 401760 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Ice Lance|r] to train |T135844:0|t[Ice Lance] << Mage
+    .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
+    .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
+    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
+    .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
+    .train 416009 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r] to train |T136150:0|t[Demonic Tactics] << Warlock
+    .train 425476 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] to train |T237562:0|t[Demonic Pact] << Warlock
+    .train 211477 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
+    .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
+    .train 403619 >> Use the |T133733:0|t[Grimoire of Fel Armor] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
+    .use 208799 << Mage --Spell Notes: Living Bomb
+    .use 203748 << Mage --Spell Notes: Burnout
+    .use 225690 << Mage --Spell Notes: Frozen Orb
+    .use 206168 << Hunter --Rune of the Chimera
+    .use 210818 << Hunter --Rune of Lone Wolf
+    .use 213124 << Hunter --Rune of Close Combat
+    .use 226252 << Hunter --Rune of the Guerrilla
+    .use 204806 << Warrior --Rune of Victory Rush
+    .use 205215 << Warlock --Rune of Tactics
+    .use 210824 << Warlock --Rune of the Pact
+    .use 211477 << Warlock --Rune of Incinerate
+    .use 205230 << Warlock --Rune of Haunting
+    .use 228797 << Warlock --Grimoire of Fel Armor
 step << Mage
     #season 2
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     >>Vendor Trash
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
     >>|cRXP_WARN_Make sure you save 10c for later|r
-    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Adlin Pridedrift
     .xp >6,1
-step << !Priest !Mage !Warlock
+step << !Priest !Mage !Warlock !Warrior !Rogue
     #completewith next << !Hunter
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
@@ -166,7 +177,7 @@ step << !Priest !Mage !Warlock
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
-    >>|cRXP_WARN_Make sure to equip the gloves you get from this quest so you can engrave a rune of them later|r
+    >>|cRXP_WARN_Make sure to equip the gloves you get from this quest so you can engrave a rune of them|r
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3106 >> Accept Simple Rune << Dwarf Warrior
@@ -179,13 +190,71 @@ step
     .accept 3114 >> Accept Glyphic Memorandum << Gnome Mage
     .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
     .target Sten Stoutarm
-step
-    #xprate <1.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
-    .goto Dun Morogh,29.709,71.255
-    .accept 170 >> Accept A New Threat
-    .target Balir Frosthammer
---XX SoD level 2 Training/Rune quest accept start (-Paladin, they don't need to yet)
+step << Priest/Paladin/Rogue
+    .goto Dun Morogh,29.47,72.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >>|cRXP_BUY_Buy all of the following runes:|r
+    .collect 210979,1 << Rogue --Rune of Shadowstep
+    .collect 221428,1 << Rogue --Rune of Foul Play
+    .collect 204795,1 << Rogue --Rune of Shadowstrike
+    .collect 208772,1 << Rogue --Rune of Saber Slash
+    .collect 227922,1 << Rogue --Rune of the Swashbuckler
+    .collect 212552,1 << Priest --Psychosophic Epiphany
+    .collect 205940,1 << Priest --Memory of a Dark Purpose
+    .collect 205951,1 << Priest --Memory of a Troubled Acolyte
+    .collect 205932,1 << Priest --Prophecy of a King's Demise
+    .collect 235600,1 << Paladin --Rune of Divine Storm
+    .collect 211488,1 << Paladin --Rune of the Avenger
+    .collect 235602,1 << Paladin --Rune of the Hammer of the Righteous
+    .collect 205420,1 << Paladin --Libram of Judgement
+    .collect 235604,1 << Paladin --Rune of the Shield of Righteousness
+    >>You will get the rest of your runes very soon
+    .target Rune Broker
+    .skipgossip
+step << Priest/Paladin/Rogue
+    .train 400101 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shadowstep|r] to train |T132303:0|t[Shadowstep] << Rogue
+    .train 432301 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] to train |T236285:0|t[Unfair Advantage] << Rogue
+    .train 400105 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] to train |T132323:0|t[Shadowstrike] << Rogue
+    .train 424984 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r] to train |T132375:0|t[Saber Slash] << Rogue
+    .train 415922 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Swashbuckler|r] to train |T134538:0|t[Blunderbuss] << Rogue
+    .train 431663 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] to train |T136181:0|t[Mind Spike] << Priest
+    .train 425216 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpouse|r] to train |T237514:0|t[Void Plague] << Priest
+    .train 402862 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] to train |T237545:0|t[Penance] << Priest
+    .train 402849 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] to train |T136149:0|t[Shadow Word: Death] << Priest
+    .train 410014 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Divine Storm|r] to train |T236250:0|t[Divine Storm] << Paladin
+    .train 410008 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Avenger|r] to train |T135874:0|t[Avenger's Shield] << Paladin
+    .train 410013 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer of the Righteous|r] to train |T236253:0|t[Hammer of the Righteous] << Paladin
+    .train 440788 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shield of Righteousness|r] to train |T236265:0|t[Shield of Righteousness] << Paladin
+    .equip 18,205420 >> Equip the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] you will need it to learn |T135891:0|t[Crusader Strike] later << Paladin
+    .use 210979 << Rogue --Rune of Shadowstep
+    .use 221428 << Rogue --Rune of Foul Play
+    .use 204795 << Rogue --Rune of Shadowstrike
+    .use 208772 << Rogue --Rune of Saber Slash
+    .use 227922 << Rogue --Rune of the Swashbuckler
+    .use 212552 << Priest --Psychosophic Epiphany
+    .use 205940 << Priest --Memory of a Dark Purpose
+    .use 205951 << Priest --Memory of a Troubled Acolyte
+    .use 205932 << Priest --Prophecy of a King's Demise
+    .use 235600 << Paladin --Rune of Divine Storm
+    .use 211488 << Paladin --Rune of the Avenger
+    .use 235602 << Paladin --Rune of the Hammer of the Righteous
+    .use 205420 << Paladin --Libram of Judgement
+    .use 235604 << Paladin --Rune of the Shield of Righteousness
+step << Mage
+    #optional
+    #sticky
+    .engrave 15 >> Be on the lookout for any cloak drops. Once you get one engrave |T135851:0|t[Frozen Orb] on it
+    >>|cRXP_WARN_This spell is extremely overpowered|r
+step << Mage/Hunter/Priest
+    .equip 10 >> Equip the |T132939:0|t[Wolf Handler Gloves] << Hunter
+    .equip 10 >> Equip the |T132940:0|t[Rabbit Handler Gloves] << Mage
+    .use 6171 << Hunter --Wolf Handler Gloves
+    .use 719 << Mage --Rabbit Handler Gloves
+    .engrave 10 >> Engrave |T236176:0|t[Chimera Shot] on your gloves << Hunter
+    .engrave 7 >> Engrave |T135820:0|t[Living Flame] on your pants << Mage
+    .engrave 10 >> Engrave |T236220:0|t[Living Bomb] on your gloves << Mage
+    .engrave 5 >> Engrave |T236207:0|t[Burnout] on your chest << Mage
 step << Priest/Mage/Warlock
     #season 2
     #xprate <1.1
@@ -204,36 +273,76 @@ step << Priest/Mage/Warlock
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
-step << Priest
-    #season 2
-    .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
-    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
-    .train 402862,1
-step << Mage
-    #season 2
-    .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
-    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
-    .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
-    .train 401760,1
-step << !Paladin !Hunter
+step << Hunter
+    #sticky
+    #optional
+    >> |cRXP_WARN_Be on the lookout for any|r Chest/Belt/Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
+    .engrave 5 >> Engrave |T132266:0|t[Lone Wolf] on your |T132724:0|t[Chest]
+    .engrave 6 >> Engrave |T132394:0|t[Meele Specialist] on your |T132513:0|t[Belt]
+    .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
+step << Paladin
+    #completewith next
+    >>Kill more |cRXP_ENEMY_Wolves|r or |cRXP_ENEMY_Troggs|r untill you have 88 copper worth of vendor trash. |cRXP_WARN_You will need it to buy weapons soon|r
+    .money 0.0088
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
+step << !Hunter !Mage
     #season 2
     #label EnterAnvilmar
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.642,68.375,12 >> Enter Anvilmar << Rogue/Warlock/Mage
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << !Rogue !Warlock !Mage
+    .goto 1426,28.642,68.375,12 >> Enter Anvilmar << Rogue/Warlock/Paladin
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << !Rogue !Warlock !Paladin
+step << Paladin
+    #season 2
+    .goto Dun Morogh,28.833,68.332
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
+    .turnin 3107 >> Turn in Consecrated Rune << Dwarf
+    .accept 77657 >> Accept Relics of the Light << Dwarf
+    .target Bromos Grummner
+step << Paladin
+    .goto Dun Morogh,28.79,67.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r
+    >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
+    >> |cRXP_BUY_Vendor trash and buy the|r |T134955:0|t[Small Shield]
+    .collect 17184,1 --Small Shield (1)
+    .target Grundel Harkin
+step << Paladin
+    .goto Dun Morogh,28.66,67.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rybrad Coldbank|r
+    >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
+    >> |cRXP_BUY_Vendor trash and buy the|r |T133485:0|t[Club]
+    .collect 2130,1 --Club (1)
+    .target Rybrad Coldbank
+step << Paladin
+    #sticky
+    >>|cRXP_WARN_Be on the lookout for any|r |T132624:0|t[Chest]|cRXP_WARN_,|r |T132602:0|t[Bracers] |cRXP_WARN_or|r |T133762:0|t[Cloak] |cRXP_WARN_you can equip|r
+    .engrave 5 >> Engrave |T236250:0|t[Divine Storm] on your chest
+    .engrave 9 >> Engrave |T236253:0|t[Hammer of the Righteous] on your bracers
+    .engrave 15 >> Engrave |T236265:0|t[Shield of Righteousness] on your cloak
+step << Paladin
+    #optional
+    #completewith next
+    .equip 16,2130 >> Equip the |T133485:0|t[Club]
+    .equip 17,17184 >> Equip the |T134955:0|t[Small Shield]
 step << Warlock
     #season 2
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
+    >>|cRXP_WARN_You don't need to train spells yet, they're not worth using over the runes|r
     .accept 1599 >> Accept Beginnings
     .turnin 3115 >> Turn in Tainted Memorandum << Gnome
     .accept 77666 >> Accept Stolen Power << Gnome
     .turnin 77666 >> Turn in Stolen Power << Gnome
-    .train 348 >> Train |T135817:0|t[Immolate]
     .target Alamar Grimm
 step << Warrior
     #season 2
@@ -242,9 +351,10 @@ step << Warrior
     .turnin 3106 >> Turn in Simple Rune << Dwarf
     .turnin 3112 >> Turn in Simple Memorandum << Gnome
     .accept 77655 >> Accept The Lost Rune << Dwarf
+    .turnin 77655 >> Turn in The Lost Rune << Dwarf
     .accept 77656 >> Accept The Lost Rune << Gnome
+    .turnin 77656 >> Turn in The Lost Rune << Gnome
     .train 6673 >>Train |T132333:0|t[Battle Shout]
-    .trainer >> Train your class spells
     .target Thran Khorman
 step << Rogue
     #season 2
@@ -253,39 +363,46 @@ step << Rogue
     .turnin 3109 >> Turn in Encrypted Rune << Dwarf
     .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
     .accept 77658 >> Accept Thrice Stolen << Dwarf
+    .turn in 77658 >> Turn in Thrice Stolen << Dwarf
     .accept 77659 >> Accept Thrice Stolen << Gnome
+    .turnin 77659 >> Turnin Thrice Stolen << Gnome
     .train 1784 >>Train |T132320:0|t[Stealth]
     .target Solm Hargrin
+step << Priest/Rogue
+    .goto Dun Morogh,28.77,66.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    >>If you don't have enough money for both items |cRXP_WARN_(60 copper)|r, kill more |cRXP_ENEMY_Wolves|r << Priest
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    >>Vendor trash and buy the |T132495:0|t[Thin Cloth Belt] and |T132543:0|t[Thin Cloth Shoes], you will them to engrave runes on them soon << Priest
+    >>Vendor trash and buy the |T132495:0|t[Thin Cloth Belt] and |T132602:0|t[Thin Cloth Bracers], you will them to engrave runes on them soon << Rogue
+    .collect 3599,1 --Thin Cloth Belt (1)
+    .collect 2117,1 << Priest --Thin Cloth Shoes (1)
+    .collect 3600,1 << Rogue --Thin Cloth Bracers (1)
+    .target Durnan Furcutter
+step << Rogue
+    .equip 6 >> Equip the |T132495:0|t[Thin Cloth Belt]
+    .equip 9 >> Equip the |T132602:0|t[Thin Cloth Bracers]
+    .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves]
+    .engrave 6 >> Engrave |T132303:0|t[Shadowstep] on your belt
+    .engrave 9 >> Engrave |T236285:0|t[Unfair Advantage] on your bracers
+    .engrave 10 >> Engrave |T132375:0|t[Saber Slash] on your gloves
+    .use 3599 --Thin Cloth Belt
+    .use 3600 --Thin Cloth Bracers
+    .use 2125 --Cracked Leather Gloves
+step << Rogue
+    #optional
+    #sticky
+    .engrave 15 >> Be on the lookout for any cloak drops. Once you get one engrave |T134538:0|t[Blunderbuss] on it
+    >>|cRXP_WARN_This is a very strong cleave ability|r
 step << Priest
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r inside
     >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_as you'll need it for a class quest soon|r << Dwarf
     .turnin 3110 >> Turn in Hallowed Rune << Dwarf
-    .accept 5626 >> Accept In Favor of the Light << Dwarf
     .accept 77661 >> Accept Meditation on the Light << Dwarf
-    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .turnin 77661 >> Turn in Meditation on the Light << Dwarf
     .target Branstock Khalder
-step << Priest
-    #season 2
-    .goto 1426,28.922,66.378
-    .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Altar of the Light|r inside to receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_If this doesn't work, type /kneel with the |cRXP_FRIENDLY_Altar of the Light|r targetted|r
-    .target Altar of the Light
-    .emote KNEEL,208565
-    .train 402862,1
-step << Priest
-    #season 2
-    .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Penance]
-    .aura -410935
-    .use 205951
-step << Dwarf Priest
-    #season 2
-    .goto Dun Morogh,28.600,66.385
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r inside
-    .turnin 77661 >> Turn in Meditation on the Light
-    .target Branstock Khalder
-    .isQuestComplete 77661
 step << Gnome Warlock/Dwarf Priest
     #season 2
     #label GlovesEquip
@@ -294,14 +411,38 @@ step << Gnome Warlock/Dwarf Priest
     .use 711
     .train 402862,3 << Priest
     .train 403919,3 << Warlock
-step << Gnome Warlock/Dwarf Priest
+step << Gnome Warlock
     #season 2
     #requires GlovesEquip
     #completewith Observations
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Haunt] << Warlock
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Penance] << Priest
-    .train 402862,3 << Priest
     .train 403919,3 << Warlock
+step << Priest/Paladin
+    .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt << Priest
+    .engrave 8 >> Engrave |T237514:0|t[Void Plague] on your boots << Priest
+    .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves << Priest
+    .engrave 7 >> Engrave |T135874:0|t[Avenger's Shield] on your pants << Paladin
+step << Warlock
+    .goto Dun Morogh,28.77,66.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    >>|cRXP_BUY_Vendor trash and buy the|r |T132602:0|t[Thin Cloth Bracers] |cRXP_BUY_and|r |T132543:0|t[Thin Cloth Shoes]|cRXP_BUY_, you will need them to engrave a rune on soon|r << Warlock
+    .collect 3600,1 << Warlock --Thin Cloth Bracers (1)
+    .collect 2117,1 << Warlock --Thin Cloth Shoes (1)
+    .target Durnan Furcutter
+step << Warrior/Warlock
+    .equip 10 >> Equip the |T132938:0|t[Tarnished Chain Gloves] << Warrior
+    .engrave 10 >> Engrave |T132342:0|t[Victory Rush] on your gloves << Warrior
+    .use 2385 << Warrior -- Tarnished Chain Gloves
+    .use 2125 << Rogue --Cracked Leather Gloves
+    .equip 9 >> Equip the |T132602:0|t[Thin Cloth Bracers] << Warlock
+    .equip 10 >> Equip the |T132543:0|t[Thin Cloth Shoes] << Warlock
+    .use 3600 << Warlock --Thin Cloth Bracers
+    .use 2117 << Warlock --Thin Cloth Shoes
+    .engrave 5 >> Engrave |T136150:0|t[Demonic Tactics] on your chest << Warlock
+    .engrave 7 >> Engrave |T237562:0|t[Demonic Pact] on your pants << Warlock
+    .engrave 9 >> Engrave |T135789:0|t[Incinerate] on your bracers << Warlock
+    .engrave 8 >> Engrave |T236302:0|t[Shadowflame] on your boots << Warlock
 step << !Paladin !Hunter
     #season 2 << !Warlock --Only Warlock is inside Anvilmar in Era at this step
     #optional
@@ -326,48 +467,12 @@ step
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
 step
-#season 0,1
-    #label Talin
-    .goto Dun Morogh,22.601,71.433
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
-    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
-    .accept 183 >> Accept The Boar Hunter
-    .accept 234 >> Accept Coldridge Valley Mail Delivery
-    .target Talin Keeneye
-step
 #season 2
     #label Talin
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 234 >> Accept Coldridge Valley Mail Delivery
-    .target Talin Keeneye
-step
-#season 0,1
-    #loop
-    .goto 1426,22.276,72.549,0
-    .goto 1426,20.924,70.393,0
-    .goto 1426,22.662,69.331,0
-    .goto 1426,24.358,72.591,0
-    .goto 1426,22.276,72.549,45,0
-    .goto 1426,21.209,72.266,45,0
-    .goto 1426,20.880,71.470,45,0
-    .goto 1426,20.924,70.393,45,0
-    .goto 1426,21.330,69.261,45,0
-    .goto 1426,22.035,69.231,45,0
-    .goto 1426,22.662,69.331,45,0
-    .goto 1426,24.317,68.026,45,0
-    .goto 1426,24.754,69.257,45,0
-    .goto 1426,24.878,71.191,45,0
-    .goto 1426,24.358,72.591,45,0
-    >>Kill |cRXP_ENEMY_Small Crag Boars|r
-    .complete 183,1 --Kill Small Crag Boar (x12)
-    .mob Small Crag Boar
-step
-#season 0,1
-    .goto Dun Morogh,22.601,71.433
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
-    .turnin 183 >> Turn in The Boar Hunter
     .target Talin Keeneye
 step << Paladin/Warlock/Hunter
     #xprate <1.1
@@ -422,8 +527,13 @@ step
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
     .target Grelin Whitebeard
-step << Hunter
-    #completewith next
+step << Paladin/Warlock/Hunter
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step << Hunter/Paladin
     .goto 1426,25.861,78.197,0
     .goto 1426,23.716,80.257,0
     .goto 1426,20.671,75.838,0
@@ -443,12 +553,6 @@ step << Hunter
     .goto 1426,23.716,80.257,0
     .goto 1426,20.671,75.838,0
     .xp 4 >> Grind to level 4
-step << Paladin/Warlock/Hunter
-    .goto Dun Morogh,24.980,75.963
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
-    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
-    .accept 3364 >> Accept Scalding Mornbrew Delivery
-    .target Nori Pridedrift
 step << Warlock
 #season 2
 #completewith next
@@ -479,9 +583,16 @@ step << Warlock/Paladin/Hunter
 step << Paladin/Warlock/Hunter
     #optional
     #completewith next
+    #label EnterAnvilmar
     .goto 1426,28.792,68.804,12,0
     >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
     .goto 1426,28.939,68.387,20 >> Enter Anvilmar
+step << Hunter
+    #optional
+    #completewith HTraining
+    #requires EnterAnvilmar
+    .goto Dun Morogh,28.77,66.37,0
+    .vendor >>|cRXP_BUY_Consider buying missing gear pieces from |cRXP_FRIENDLY_Durnan Furcutter|r inside anvilmar to engrave |T134419:0|t|cRXP_WARN_[Runes]|r on|r
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r inside
@@ -492,11 +603,13 @@ step << Paladin/Warlock/Hunter
     .isQuestAvailable 317
 step << Hunter
     #season 2
+    #label HTraining
     .goto Dun Morogh,29.175,67.455
     .target Thorgas Grimson
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
     .turnin 3108 >>Turn in Etched Rune << Dwarf
     .accept 77660 >> Accept Trek Through the Caves << Dwarf
+    .turnin 77660 >> Turn in Trek Through the Caves << Dwarf
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
 step << Paladin
     #season 2
@@ -507,17 +620,9 @@ step << Paladin
     .train 20271 >> Train |T135959:0|t[Judgement]
     .target Bromos Grummner
 step << Warlock
-    #season 0,1
-    .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
-    .turnin 3115 >> Turn in Tainted Memorandum
-    .train 172 >>Train |T136118:0|t[Corruption]
-    .target Alamar Grimm
-step << Warlock
     #season 2
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
-    .train 172 >>Train |T136118:0|t[Corruption]
     .turnin 1599 >> Turn in Beginnings
     .target Alamar Grimm
 step << Paladin/Warlock/Hunter
@@ -532,15 +637,6 @@ step << Paladin/Warlock/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
     .target Balir Frosthammer
-step << Warlock
-#season 0,1
-    .goto Dun Morogh,30.087,71.563
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
-    >>Vendor Trash
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .collect 159,15 --Collect Refreshing Spring Water (x15)
-    .target Adlin Pridedrift
-    .xp >6,1
 step << !Paladin !Warlock !Hunter
     #xprate <1.1
     #sticky
@@ -565,50 +661,6 @@ step << !Paladin !Warlock !Hunter
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
-step << Warrior/Paladin
-    #season 2
-    #completewith Observations
-    #label Victory1 << Warrior
-    #label Libram1 << Paladin
-    .goto 1426,25.861,78.197,0
-    .goto 1426,23.716,80.257,0
-    .goto 1426,20.671,75.838,0
-    .waypoint 1426,22.836,79.962,45,0
-    .waypoint 1426,22.684,78.888,45,0
-    .waypoint 1426,21.029,76.459,45,0
-    .waypoint 1426,20.671,75.838,45,0
-    .waypoint 1426,25.861,78.197,45,0
-    .waypoint 1426,26.382,78.409,45,0
-    .waypoint 1426,26.031,79.854,45,0
-    .waypoint 1426,23.716,80.257,45,0
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r << Warrior
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r << Paladin
-    .collect 204806,1 << Warrior --Rune of Victory Rush (1)
-    .collect 205420,1 << Paladin -- Libram of Judgement (1)
-    .mob Frostmane Troll Whelp
-    .train 403470,1 << Warrior
-    .train 410002,1 << Paladin
-step << Warrior
-    #season 2
-    #completewith Observations
-    #label Victory2
-    #requires Victory1
-    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Victory Rush]
-    .use 204806
-    .itemcount 204806,1
-step << Warrior
-    #season 2
-    #completewith Observations
-    #label Victory3
-    #requires Victory2
-    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
-    .train 403470,3
-step << Warrior
-    #season 2
-    #completewith Observations
-    #requires Victory3
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Victory Rush]
-    .train 403470,3
 step << Paladin
     #season 2
     #completewith Observations
@@ -624,21 +676,6 @@ step << Paladin
     #completewith Observations
     #label Libram3
     #requires Libram2
-    .goto 1426,24.193,77.305,0
-    .goto 1426,22.529,74.512,0
-    .goto 1426,24.288,73.154,0
-    .goto 1426,29.303,77.337,0
-    .waypoint 1426,29.303,77.337,55,0
-    .waypoint 1426,28.812,76.397,55,0
-    .waypoint 1426,25.920,74.571,55,0
-    .waypoint 1426,24.619,74.280,55,0
-    .waypoint 1426,24.288,73.154,55,0
-    .waypoint 1426,23.616,72.634,55,0
-    .waypoint 1426,22.735,73.285,55,0
-    .waypoint 1426,22.529,74.512,55,0
-    .waypoint 1426,22.828,76.017,55,0
-    .waypoint 1426,23.497,76.707,55,0
-    .waypoint 1426,24.193,77.305,55,0
     .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .itemStat 18,QUALITY,2
     .train 410002,1
@@ -664,7 +701,7 @@ step << Paladin
     #requires Libram5
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .train 410002,3
-step
+step << !Paladin !Hunter
     #loop
     #label TrollWhelps
     .goto 1426,25.861,78.197,0
@@ -681,12 +718,6 @@ step
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
-step << Warrior/Paladin
-    #season 2
-    #optional
-    #requires Victory2 << Warrior
-    #requires Libram4 << Paladin
---XXREQ Placeholder invis step until multiple requires per step
 step
     #requires TroggEnd << !Paladin !Warlock !Hunter
     .goto Dun Morogh,25.076,75.713
@@ -732,16 +763,6 @@ step
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
 --XXSOD xpgate for early 6 training?
-step << Rogue/Hunter
-    #season 2
-    .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r << Rogue
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r << Hunter
-    >>|cRXP_WARN_Watch out, |cRXP_ENEMY_Grik'nir the Cold|r respawns very quickly! You might have to kill him again to loot the chest|r
-    .collect 204795,1 << Rogue --Rune of Shadowstrike (1)
-    .collect 206168,1 << Hunter -- Rune of the Chimera (1)
-    .train 400105,1 << Rogue
-    .train 410121,1 << Hunter
 step << Rogue
     #season 2
     #hardcore
@@ -749,37 +770,6 @@ step << Rogue
     .use 204795
     .itemcount 204795,1 --Rune of Shadowstrike (1)
 --XX HC as softcore have timed quest turnin in Anvilmar (softcore rogues do it after turnin)
-step << Hunter
-    #season 2
-    .train 410121 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Chimera Shot]
-    .use 206168
-    .itemcount 206168,1
-step << Rogue
-    #season 2
-    #hardcore
-    #completewith Observations
-    #label Shadowstrike1
-    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132952:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
-    .train 400105,3
-step << Hunter
-    #season 2
-    #completewith Observations
-    #label Chimera1
-    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132952:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
-    .train 410121,1
-step << Rogue
-    #season 2
-    #hardcore
-    #completewith Observations
-    #requires Shadowstrike1
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Shadowstrike]
-    .train 400105,3
-step << Hunter
-    #season 2
-    #completewith Observations
-    #requires Chimera1
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Chimera Shot]
-    .train 410121,1
 step << !Paladin !Warlock !Hunter
     #softcore
     #requires Grelin << Rogue
@@ -911,37 +901,9 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
     .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
     .accept 77667 >> Accept Spell Research << Gnome
+    .turnin 77667 >> Turn in Spell Research << Gnome
     .trainer >> Train your class spells
     .target Marryk Nurribit
-step << Gnome Mage
-    #xprate >1.59
-    #season 2
-    #completewith next
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
-    .use 203751
-    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
-step << Gnome Mage
-    #xprate >1.59
-    #season 2
-    .goto Dun Morogh,28.709,66.366
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
-    .turnin 77667 >> Turn in Spell Research
-    .target Marryk Nurribit
-step << Gnome Mage
-    #xprate >1.59
-    #season 2
-    #label GlovesEquip
-    #completewith Observations
-    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
-    .use 711
-    .train 401760,3
-step << Gnome Mage
-    #xprate >1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith Observations
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
-    .train 401760,3
 step << Rogue
     #xprate >1.59
     #season 0,1
@@ -952,37 +914,12 @@ step << Rogue
     .train 1784 >>Train |T132320:0|t[Stealth]
     .trainer >>Train your class spells
     .target Solm Hargrin
-step << Rogue
-    #xprate >1.59
-    #season 2
-    .goto Dun Morogh,28.369,67.513
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
-    .turnin 77658 >> Turn in Thrice Stolen << Dwarf
-    .turnin 77659 >> Turn in Thrice Stolen << Gnome
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .trainer >>Train your class spells
-    .target Solm Hargrin
-step << Priest
-    #xprate >1.59
-    #season 0,1
-    .goto Dun Morogh,28.600,66.385
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
-    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_and|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need them for a class quest soon|r << Dwarf
-    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
-    .accept 5626 >> Accept In Favor of the Light << Dwarf
-    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
-    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
-    .trainer >> Train your class spells
-    .target Branstock Khalder
 step << Priest
     #xprate >1.59
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
-    >>|cRXP_WARN_Train|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need it for a class quest soon|r << Dwarf
     .accept 5626 >> Accept In Favor of the Light << Dwarf
-    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
-    .trainer >> Train your class spells
     .target Branstock Khalder
 step << Warrior
     #xprate >1.59
@@ -998,9 +935,8 @@ step << Warrior
     #season 2
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
-    .turnin 77655 >> Turn in The Lost Rune << Dwarf
-    .turnin 77656 >> Turn in The Lost Rune << Gnome
-    .trainer >> Train your class spells
+    >>If you have 2 silver train |T132155:0|t[Rend] as well
+    .train 100,1 << Warrior --Charge
     .target Thran Khorman
 
 
@@ -1071,26 +1007,6 @@ step << Rogue
     .turnin 3109 >> Turn in Encrypted Rune << Dwarf
     .train 1784 >>Train |T132320:0|t[Stealth]
     .target Solm Hargrin
-step << Rogue
-    #xprate <1.59
-    #season 2
-    .goto Dun Morogh,28.369,67.513
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
-    .turnin 77658 >> Turn in Thrice Stolen << Dwarf
-    .turnin 77659 >> Turn in Thrice Stolen << Gnome
-    .target Solm Hargrin
-step << Priest
-    #xprate <1.59
-    #season 0,1
-    .goto Dun Morogh,28.600,66.385
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
-    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_and|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need them for a class quest soon|r << Dwarf
-    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
-    .accept 5626 >> Accept In Favor of the Light << Dwarf
-    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
-    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
-    .trainer >> Train your class spells
-    .target Branstock Khalder
 step << Priest
     #xprate <1.59
     #season 2
@@ -1139,16 +1055,6 @@ step << !Paladin !Warlock !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
     .target Balir Frosthammer
-step << Priest/Mage
-#season 0,1
-    .goto Dun Morogh,30.087,71.563
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
-    >>Vendor Trash
-    >>|cRXP_BUY_Buy 5|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .collect 159,5 --Collect Refreshing Spring Water (x5)
-    .target Adlin Pridedrift
-    .money <0.0025
-    .xp >8,1
 step << !Paladin !Warlock !Hunter
     #softcore
     #label Stolen
@@ -1164,27 +1070,13 @@ step << !Paladin !Warlock !Hunter
     .target Nori Pridedrift
 step << Mage
     #completewith next
-    .hs >> Use your Hearthstone and head back to Anvilmar
-step << Mage
-    .goto Dun Morogh,28.709,66.366
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
-    .train 143 >> Train |T135812:0|t[Fireball] (Rank2)
-    .train 2136 >> Train |T135807:0|t[Fire Blast]
-    .target Marryk Nurribit
-step << Dwarf Paladin/Dwarf Hunter/Mage
+    .hs >> Use your Hearthstone
+step << Dwarf Paladin/Dwarf Hunter
     #season 2
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
     .goto 1426,28.939,68.387,12 >> Enter Anvilmar
-step << Mage
-    .goto Dun Morogh,30.087,71.563
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
-    >>Vendor Trash
-    >>|cRXP_BUY_Buy some more|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .collect 159,5 --Collect Refreshing Spring Water (x5)
-    .target Adlin Pridedrift
-    .money <0.0025
 step << Dwarf Paladin
     #season 2
     #optional
@@ -1209,6 +1101,13 @@ step << Dwarf Paladin/Dwarf Hunter
     #completewith ColdridgePass
     .abandon 77657 >> Abandon Relics of the Light as you already have a pair of |T132938:0|t[Gloves] equipped << Paladin
     .abandon 77660 >> Abandon Trek Through the Caves as you already have a pair of |T132952:0|t[Gloves] equipped << Hunter
+step
+    .goto Dun Morogh,29.47,72.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
+    .target Rune Broker
+    .skipgossip
 step
     #label Observations
     >>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r and |cRXP_FRIENDLY_Hands Springsprocket|r

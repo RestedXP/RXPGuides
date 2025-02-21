@@ -61,6 +61,7 @@ step << Warrior/Rogue/Mage/Warlock
     .collect 210824,1 << Warlock --Rune of the Pact
     .collect 211477,1 << Warlock --Rune of Incinerate
     .collect 205230,1 << Warlock --Rune of Haunting
+    .collect 228797,1 << Warlock --Grimoire of Fel Armor
     >>You will get the rest of your runes very soon
     .target Rune Broker
     .skipgossip
@@ -75,6 +76,7 @@ step << Warrior/Rogue/Mage
     .train 425476 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] to train |T237562:0|t[Demonic Pact] << Warlock
     .train 211477 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
     .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
+    .train 403619 >> Use the |T133733:0|t[Grimoire of Fel Armor] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
     .use 203746 << Mage --Spell Notes: Living Flame
     .use 208799 << Mage --Spell Notes: Living Bomb
     .use 203748 << Mage --Spell Notes: Burnout
@@ -85,6 +87,7 @@ step << Warrior/Rogue/Mage
     .use 210824 << Warlock --Rune of the Pact
     .use 211477 << Warlock --Rune of Incinerate
     .use 205230 << Warlock --Rune of Haunting
+    .use 228797 << Warlock --Grimoire of Fel Armor
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
     .train 6673 >>Train |T132333:0|t[Battle Shout]
@@ -213,6 +216,8 @@ step << Priest/Paladin
     .skipgossip
 step << Priest/Paladin
     #sticky
+    .use 205947 << Priest --Prophecy of a Desecrated Citadel
+    .use 226398 << Paladin --Testament of martyrdom
     .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
     .train 407798 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] to train |T135961:0|t[Seal of Martyrdom], |cRXP_WARN_use it as your primary Seal|r << Paladin
     .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants << Priest
@@ -242,7 +247,7 @@ step << Mage
     #optional
     #sticky
     .engrave 15 >> Be on the lookout for any cloak drops. Once you get one engrave |T135851:0|t[Frozen Orb] on it
-    >>|cRXP_WARN_That spell is extremely overpowered|r
+    >>|cRXP_WARN_This spell is extremely overpowered|r
 step << Mage/Warlock
     #completewith next
     .goto Elwynn Forest,46.2,40.4,40,0
@@ -374,9 +379,9 @@ step << Priest
 step << Priest
     .goto Elwynn Forest,47.57,41.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dermot Johns|r
-    >>If you don't have enough money for both items, kill more wolves
+    >>If you don't have enough money for both items |cRXP_WARN_(60 copper)|r, kill more |cRXP_ENEMY_wolves|r
     >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
-    >>Vendor trash and buy the |T132495:0|t[Thin Cloth Belt] and |T132952:0|t[Thin Cloth Gloves], you will them it to engrave a rune on soon
+    >>Vendor trash and buy the |T132495:0|t[Thin Cloth Belt] and |T132952:0|t[Thin Cloth Gloves], you will them to engrave a rune on soon
     .collect 3599,1 --Thin Cloth Belt (1)
     .collect 2119,1 --Thin Cloth Gloves (1)
     .target Dermot Johns
