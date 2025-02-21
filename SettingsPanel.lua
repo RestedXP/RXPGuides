@@ -9,10 +9,10 @@ local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 local EasyMenu = function(...)
-    if LibDD then
-        LibDD:EasyMenu(...)
-    else
+    if _G.EasyMenu then
         _G.EasyMenu(...)
+    else
+        LibDD:EasyMenu(...)
     end
 end
 

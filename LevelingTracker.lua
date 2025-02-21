@@ -15,10 +15,10 @@ local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 local EasyMenu = function(...)
-    if LibDD then
-        LibDD:EasyMenu(...)
-    else
+    if _G.EasyMenu then
         _G.EasyMenu(...)
+    else
+        LibDD:EasyMenu(...)
     end
 end
 
