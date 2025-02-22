@@ -5,10 +5,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name a) Against the Current
 #displayname |cRXP_WARN_Chapter 1|r - Against the Current
 #next b) Ties That Bird
+#subweight 6
 
 step
     .isOnQuest 84365
@@ -241,10 +242,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name b) Ties That Bird
 #displayname |cRXP_WARN_Chapter 2|r - Ties That Bird
 #next c) News from Below
+#subweight 6
 
 step
     .goto 2339,31.54,59.68
@@ -629,10 +631,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name c) News from Below
 #displayname |cRXP_WARN_Chapter 3|r - News from Below
 #next d) The Machines to War
+#subweight 6
 
 
 step
@@ -892,7 +895,7 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name d) The Machines to War
 #displayname |cRXP_WARN_Chapter 4|r - The Machines to War
 #next e) A Light in the Dark
@@ -1443,10 +1446,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Campaign (80)
+#subgroup 11.0 Max Level Campaign (80)
 #name e) A Light in the Dark
 #displayname |cRXP_WARN_Chapter 5|r - A Light in the Dark
 #next z) Lingering Shadows
+#subweight 6
 
 
 step
@@ -1640,9 +1644,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
+#subgroup Miscellaneous Storylines (80)
 #name z) Lingering Shadows
 #displayname Lingering Shadows
+#subweight 4.5
 
 step
     .goto 2339,42.36,26.88
@@ -2003,9 +2008,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
+#subgroup Miscellaneous Storylines (80)
 #name f) Story Mode: Queen Ansurek
 #displayname Story Mode: Queen Ansurek
+#subweight 4.5
 
 step
     .goto 2339,31.62,63.16
@@ -2180,10 +2186,11 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
+#subgroup Miscellaneous Storylines (80)
 #name g) Siren Isle Campaign
 #next h) Fate of the Kirn Tor
 #displayname Siren Isle Campaign
+#subweight 4.5
 
 --WEEK 1 CAMPAIGN START
 
@@ -2413,9 +2420,8 @@ step
     .goto 2369,71.09,44.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angorla|r
     .turnin 84725 >>Turn in The Circlet Calls
-    .target Angorla
-    .accept 86174 >>Accept Special Assignment: Storm's a Brewin'
     .accept 84726 >>Accept Uncovered Mysteries
+    .target Angorla
 
 --CONTRUBUTION
 
@@ -2702,10 +2708,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Siren Isle Weeklies
+#subgroup Dailies and Weeklies (80)
+#name a) Siren Isle Weeklies
 #displayname Siren Isle Weeklies
-
+#subweight -2
 step
     #loop
     .goto 2369,69.29,43.48,10,0
@@ -3196,93 +3202,16 @@ step
     .target Stellin Verasa
 ]])
 
+-- Fate of the Kirin Tor 1
 RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Storm Daillies Inguide
-#displayname Siren Isle Daillies
-#internal
-
--- storm daillies storms brewin
-step
-    .goto 2369,43.75,23.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regald Hornfyre|r
-    .accept 84241 >>Accept Shoreline Stand
-    .target Regald Hornfyre
-step
-    .goto 2375,60.61,15.00
-    .complete 84241,3 --1/1 Use the Singing Tablet to enter the Forgotten Tomb (Optional)
-step
-    .goto 2375,52.76,35.16
-    >>Kill |cRXP_ENEMY_Tide-Champion Korval|r
-    .complete 84241,2 --1/1 Tide-Champion Korval slain
-    .mob Tide-Champion Korval
-step
-    .goto 2369,49.01,16.72
-    >>Kill |cRXP_ENEMY_Brinebound Wraith|r
-    .complete 84241,1 --15/15 Brinebound Wraith slain
-    .mob Brinebound Wraith
-step
-    .goto 2369,43.73,23.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regald Hornfyre|r
-    .turnin 84241 >>Turn in Shoreline Stand
-    .target Regald Hornfyre
-    .complete 85113,3 --Storm threats eliminated (100%)
-step
-    .goto 2369,63.45,66.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sally Boltwrench|r
-    .accept 84225 >>Accept Eggstinction
-    .target Sally Boltwrench
-step
-    .goto 2369,60.52,73.65
-    .complete 84225,2 --12/12 Spawning Cluth destroyed using equipment
-step
-    .goto 2369,57.12,71.07
-    .complete 84225,1 --12/12 Seafury Eggtenders
-step
-    .goto 2369,63.49,66.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sally Boltwrench|r
-    .turnin 84225 >>Turn in Eggstinction
-    .target Sally Boltwrench
-]])
-
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Siren Isle Crocodile
-#internal
-
-step
-    .goto 2369,71.01,48.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starving Snapdragon Runt|r
-    .accept 86482 >>Accept A Lifeline
-    .target Starving Snapdragon Runt
-step
-    .goto 2369,71.24,47.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zexel Fingersnap|r
-    .complete 86482,1 --1/1 Speak to Zexel Fingersnap
-    .target Zexel Fingersnap
-    .complete 86482,2 --1/1 Kaja'Cola-braised Meat Aquired
-    .skipgossipid 131423
-step
-    .goto 2369,70.98,48.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starving Snapdragon Runt|r
-    .turnin 86482 >>Turn in A Lifeline
-    .target Starving Snapdragon Runt
-]])
-
--- Fate of the Kirin Tor
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP The War Within
-#subgroup Max Level Storylines (80)
-#name h) Fate of the Kirin Tor
-#displayname Fate of the Kirin Tor
+#subgroup 11.0.7 Fate of the Kirin Tor (80)
+#name a) Arcane Desolation
+#displayname |cRXP_WARN_Chapter 1|r - Arcane Desolation
+#next b) Strength Amidst Ruins
+#subweight 5
 
 step
     .isQuestAvailable 82702
@@ -3545,10 +3474,24 @@ step
     .target Kalecgos
     .accept 83643 >>Accept Somehow We Survived
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
     .turnin 83643 >>Turn in Somehow We Survived
     .goto 2248,30.99,57.80
     .target +Kalecgos
+]])
+
+-- Fate of the Kirin Tor 2
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP The War Within
+#subgroup 11.0.7 Fate of the Kirin Tor (80)
+#name b) Strength Amidst Ruins
+#displayname |cRXP_WARN_Chapter 2|r - Strength Amidst Ruins
+#subweight 5
+
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .accept 83723 >>Accept A Helping Hand
     .goto 2248,30.97,57.73
     .target +Lady Jaina Proudmoore
