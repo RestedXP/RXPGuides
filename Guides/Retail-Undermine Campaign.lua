@@ -44,7 +44,7 @@ step
     #title Portal to Azj-Kahet
     .zone 2255 >>Go through the Portal to Azj-Kahet
 step
-    #title Fly to The Ringing Deeps
+    #title |cFFFCDC00Fly to The Ringing Deeps|r
     .isOnQuest 83137
     .isQuestAvailable 84220
     .goto 2255,59.23,42.38,40,0
@@ -66,7 +66,7 @@ step
     .target Tollbooth Entrepreneur
     .skipgossipid 124980
 step
-    #title Follow the arrow
+    #title |cFFFCDC00Follow the arrow|r
     .goto 2214,65.8,75.3
     .complete 83139,2 --Locate Mining Camp
 step
@@ -143,8 +143,8 @@ step
     .turnin 83141 >>Turn in Miner Investigations
     .goto 2214,72.56,79.33
     .target +Orweyna
-    .turnin 83142 >>Turn in Order of Magnitude
     .turnin 83140 >>Turn in Hostile Work Environment
+    .turnin 83142 >>Turn in Order of Magnitude
     .goto 2214,72.53,79.24
     .target +Monte Gazlowe
 step
@@ -162,6 +162,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zirdo|r.
     .complete 83143,1 --1/1 Begin the tour
     .target Zirdo
+    .skipgossipid 123518
 step
     #title Follow the arrow
     .goto 2214,72.27,80.17
@@ -195,23 +196,23 @@ step
 step
     #title Pipeline Valve (1/4)
     .goto 2214,70.15,81.76
-    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton] and aim it at the valve.
+    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton]|r and aim it at the valve.
     .complete 83144,3,1 --1/4 Target attack on Pipeline Valve
 step
     #title Pipeline Valve (2/4)
     .goto 2214,69.9,82.33
-    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton] and aim it at the valve.
+    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton]|r and aim it at the valve.
     .complete 83144,3,2 --2/4 Target attack on Pipeline Valve
 step
     #title Pipeline Valve (3/4)
     .goto 2214,69.18,82.85
-    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton] and aim it at the valve.
+    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton]|r and aim it at the valve.
     .complete 83144,3,3 --3/4 Target attack on Pipeline Valve
 step
     #label PipelineValves
     #title Pipeline Valve (4/4)
     .goto 2214,69.53,84.25
-    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton] and aim it at the valve.
+    >>Use the |T132106:0|t[|cRXP_WARN_ExtraActionButton]|r and aim it at the valve.
     .complete 83144,3 --4/4 Target attack on Pipeline Valve
     .timer 15,Roleplay
 step
@@ -282,14 +283,14 @@ step
     .skipgossipid 124900
 step
     #completewith SpeakBinni
-    #title Enter Cave
+    #title |cFFFCDC00Enter Cave|r
     .goto 2214,72.24,82.42,10 >>Enter the cave
 step
     #requires SpeakBinni
     .goto 2214,72.34,82.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Conspiracy Theory" Binni|r
     .complete 83145,2 --1/1 Speak with "Conspiracy Theory" Binni
-    .timer 15,Roleplay
+    .timer 14,Roleplay
     .target "Conspiracy Theory" Binni
     .skipgossipid 124900
     .skipgossipid 124901
@@ -297,7 +298,7 @@ step
     .goto 2214,72.21,82.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Extractor Drill X-71|r |cRXP_WARN_after the roleplay|r.
     .complete 83145,3 --1/1 Stop the drill
-    .timer 3,Roleplay
+    .timer 4,Roleplay
     .mob Extractor Drill X-71
 step
     .goto 2214,72.3,82.29
@@ -308,7 +309,7 @@ step
     .target Pamsy
 step
     #completewith next
-    #title Leave Cave
+    #title |cFFFCDC00Leave Cave|r
     .goto 2214,71.98,82.96,15 >>Leave the cave
 step
     .goto 2214,70.58,88.6
@@ -386,7 +387,7 @@ step
 step
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chillburst Canister|r.
-    >>Or kill |cRXP_ENEMY_Chillgut Slimes|r. Loot them for the |T237030:0|t[|cRXP_LOOT_Chillburst Canister|r].
+    >>Kill |cRXP_ENEMY_Chillgut Slimes|r. Loot them for the |T237030:0|t[|cRXP_LOOT_Chillburst Canister|r].
     .complete 83148,1 --12/12 Chillburst Canister
     .mob Chillgut Slime
 step
@@ -408,7 +409,7 @@ step
     .goto 2214,72.35,96.05,40,0
     .goto 2214,71.59,97.48,40,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chillburst Canister|r.
-    >>Or kill |cRXP_ENEMY_Chillgut Slimes|r. Loot them for the |T237030:0|t[|cRXP_LOOT_Chillburst Canister|r].
+    >>Kill |cRXP_ENEMY_Chillgut Slimes|r. Loot them for the |T237030:0|t[|cRXP_LOOT_Chillburst Canister|r].
     .complete 83148,1 --12/12 Chillburst Canister
     .mob Chillgut Slime
 step
@@ -556,16 +557,12 @@ step
     .goto 2346,42.68,51.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
     .complete 83096,3 --1/1 Speak to Gas Grimeshank
-    .timer 23,Roleplay
+    .timer 24,Roleplay
     .target Gas Grimeshank
     .skipgossipid 131277
--- step
---     .goto 2346,43.38,50.53
---     .accept 87374 >>Accept C.H.E.T.T.ing In
---     .complete 87374,1 --Talk with C.H.E.T.T. about C.H.E.T.T. Lists 
 step
     .goto 2346,39.97,53.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimla Fizzlecrank|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimla Fizzlecrank|r |cRXP_WARN_after the roleplay|r
     .turnin 83096 >>Turn in Welcome to Undermine
     .accept 83109 >>Accept The Grimla Express
     .target Grimla Fizzlecrank
@@ -581,7 +578,7 @@ step
     .target Gramps
 step
     .goto 2346,45.21,42.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimla Fizzlecrank|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimla Fizzlecrank|r |cRXP_WARN_after the roleplay|r
     .turnin 83109 >>Turn in The Grimla Express
     .target Grimla Fizzlecrank
     .accept 85941 >>Accept Attitude Adjustment
@@ -602,7 +599,7 @@ step
     .goto 2346,49.09,42.71,6,0
     .goto 2346,49.29,42.22,6,0
     .goto 2346,48.94,42.19
-    #title |cFFFCDC00Follow the arrow|r
+    #title |cFFFCDC00Follow the arrow upstairs|r
     .complete 86297,1 --Search upstairs for information
 step
     #label DelbyOverbiteQuestioned
@@ -623,9 +620,8 @@ step
 step
     #completewith DarkfuseSlainA
     #title Leave the house
-    .goto 2346,49.17,41.37,5,0
-    .goto 2346,49.44,42.06,8,0
-    .goto 2346,48.49,40.94,10 >>Leave the house
+    .goto 2346,48.92,42.76,5,0
+    .goto 2346,48.78,41.22,10 >>Leave the house
 step
     #requires DarkfuseSlainA
     #loop
@@ -715,6 +711,63 @@ step
     .accept 83168 >>Accept A Trail of Black Blood
     .target Orweyna
 step
+    .isQuestAvailable account 86618
+    .goto 2346,43.26,59.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
+    .accept 87581 >>Accept No More Walkin' Here
+    .target Gas Grimeshank
+step
+    .isQuestAvailable account 86618
+    #completewith next
+    #label NoMoreWalkinHere
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
+    .dailyturnin 84352,87581 >>Turn in No More Walkin' Here
+    .accept 86618 >>Accept License Not Required
+    .target Nanny Talullah
+step
+    .isQuestAvailable account 86618
+    #completewith NoMoreWalkinHere
+    .goto 2346,35.40,48.84,15,0
+    .goto 2346,36.49,46.12,15,0
+    .goto 2346,37.65,48.06,5,0
+    .goto 2346,37.89,47.56,5,0
+    .goto 2346,37.51,47.13,5,0
+    .goto 2346,37.78,46.73,5,0
+    .goto 2346,38.11,47.25,5 >>Climb the stairs of the house
+step
+    .isQuestAvailable account 86618
+    #requires NoMoreWalkinHere
+    .goto 2346,37.42,48.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
+    .dailyturnin 84352,87581 >>Turn in No More Walkin' Here
+    .accept 86618 >>Accept License Not Required
+    .target Nanny Talullah
+step
+    .isOnQuest 86618
+    .goto 2346,37.42,48.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
+    .complete 86618,1 --1/1 Talk to Nanny Talullah
+    .target Nanny Talullah
+    .skipgossipid 131561
+step
+    .isOnQuest 86618
+    #hidewindow
+    #completewith next
+    #label GetInG99Breakneck
+    .complete 86618,2 --1/1 Get in the G-99 Breakneck
+step
+    .isOnQuest 86618
+    #completewith GetInG99Breakneck
+    .goto 2346,37.31,49.09
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Escape Chains|r
+    .complete 86618,3 --1/1 Use the escape chains to reach the streets of Undermine (Optional)
+step
+    .isOnQuest 86618
+    #requires GetInG99Breakneck
+    .goto 2346,36.90,50.03
+    >>Use the |T1408996:0|t[G-99 Breakneck] button (zone button)
+    .complete 86618,2 --1/1 Get in the G-99 Breakneck
+step
     #title |cFFFCDC00Follow the arrow|r
     .goto 2346,33.46,48.27
     .complete 83168,1 --Investigate Hovel Hill
@@ -739,6 +792,7 @@ step
     .turnin 83168 >>Turn in A Trail of Black Blood
     .accept 83169 >>Accept Long Way from Booty Bay
     .target Monte Gazlowe
+
 -----------------------
 --- INSERT G-99 Questline
 -----------------------
@@ -750,6 +804,7 @@ step
     .target Baron Revilgaz
 step
     #completewith SpeakBaronRevilgazA
+    #title |cFFFCDC00Use the G-99 Breakneck|r
     .goto 2346,26.28,50.01,20,0
     .goto 2346,31.22,38.08,15 >>Follow the arrow
 step
@@ -778,15 +833,14 @@ step
     .mob +Propaganda Pusher
 step
     #loop
-    .goto 2346,30.97,40.20,10,0
-    .goto 2346,29.89,39.62,10,0
-    .goto 2346,30.49,43.25,10,0
-    .goto 2346,31.66,45.23,10,0
-    .goto 2346,33.92,42.21,10,0
-    .goto 2346,37.05,43.20,10,0
-    .goto 2346,33.88,36.07,10,0
-    .goto 2346,31.97,37.10,10,0
-    #title Poster burned
+    .goto 2346,30.97,40.20,8,0
+    .goto 2346,29.89,39.62,8,0
+    .goto 2346,30.49,43.25,8,0
+    .goto 2346,31.66,45.23,8,0
+    .goto 2346,33.92,42.21,8,0
+    .goto 2346,37.05,43.20,8,0
+    .goto 2346,33.88,36.07,8,0
+    .goto 2346,31.97,37.10,8,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Darkfuse Recruitment Papers|r
     .complete 83171,1 --8/8 Darkfuse Recruitment Posters burned
 step
@@ -815,6 +869,32 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r
     .accept 83172 >>Accept Black Blood Baton Pass
     .target Renzik "The Shiv"
+step
+    .isOnQuest 86618
+    #title |cFFFCDC00Use the|r |T6383558:0|t[G-99 Breakneck]
+    #loop
+    .goto 2346,37.27,46.46,40,0
+    .goto 2346,37.07,41.26,30,0
+    .complete 86618,4 --Drive around Undermine (100%)
+step
+    .isOnQuest 86618
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,37.27,46.46
+    .complete 86618,5 --Reach the D.R.I.V.E.
+step
+    .isOnQuest 86618
+    .goto 2346,37.72,47.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mobber|r
+    >>|cRXP_WARN_Install the |T4548870:0|t[Turbo: Wildfuel Mk. 0]|r
+    .complete 86618,6 --1/1 Exit the G-99 Breakneck and install a turbo at the D.R.I.V.E.
+    .target Mobber
+    .skipgossipid 125367
+step
+    .isOnQuest 86618
+    #completewith next
+    >>Use the |T1408996:0|t[G-99 Breakneck] button (zone button)
+    >>Drive around and drift (hold space) to gain Turbo (or pick up cans). Use the |T4548870:0|t[Boost] (1) when you have enough Turbo.
+    .complete 86618,7 --1/1 Get back in the G-99 Breakneck and activate your boost
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r and |cRXP_FRIENDLY_Monte Gazlowe|r
     .turnin 83172 >>Turn in Black Blood Baton Pass
@@ -913,12 +993,42 @@ RXPGuides.RegisterGuide([[
 -----------------------------------------------------
 --- START CHAPTER 3
 -----------------------------------------------------
+
 step
     .goto 2346,42.33,51.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
     .accept 83114 >>Accept Red Tape
     .target Monte Gazlowe
 step
+    .isQuestAvailable account 86535
+    .goto 2346,27.67,54.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rustol|r
+    .accept 86535 >>Accept Test Run
+    .target Rustol
+step
+    .isOnQuest 86535
+    #title |cFFFCDC00Walk onto the teleporter|r
+    .goto 2346,27.82,54.03
+    .complete 86535,1 --1/1 Use the teleporter to travel to Dornogal
+step
+    .isOnQuest 86535
+    .goto 2339,52.63,50.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kenzi|r
+    .turnin 86535 >>Turn in Test Run
+    .target Kenzi
+step
+    #hidewindow
+    #completewith next
+    #label FindAlleriaAtSlamCentralStation
+    #title |cFFFCDC00Follow the arrow|r
+    .complete 83114,1 --1/1 Find Alleria at Slam Central Station
+step
+    .zoneskip 2339,1
+    #completewith FindAlleriaAtSlamCentralStation
+    .goto 2339,52.53,50.58
+    .zone 2346 >>|cRXP_WARN_Walk onto the teleporter|r
+step
+    #requires FindAlleriaAtSlamCentralStation
     .goto 2346,17.66,50.96
     #title |cFFFCDC00Follow the arrow|r
     .complete 83114,1 --1/1 Find Alleria at Slam Central Station
@@ -934,17 +1044,22 @@ step
     .skipgossipid 124200
 step
     .goto 2346,18.13,50.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r |cRXP_WARN_after the roleplay|r
     .turnin 83114 >>Turn in Red Tape
     .accept 83115 >>Accept In the Mix
     .target Monte Gazlowe
+step
+    .isOnQuest 86618
+    #completewith next
+    >>Drive around and drift (hold space) to gain Turbo (boost meter).
+    .complete 86618,8 --30/30 Regain boost meter by drifting
 step
     #completewith next
     #label FindNoggenfoggerInVatworks
     .complete 83115,1 --1/1 Find Noggenfogger in the Vatworks
 step
     #completewith FindNoggenfoggerInVatworks
-    #title Enter the house
+    #title |cFFFCDC00Enter the house|r
     .goto 2346,25.19,53.24,30,0
     .goto 2346,29.06,69.60,5 >>Enter the house
 step
@@ -953,7 +1068,7 @@ step
     #title |cFFFCDC00Follow the arrow|r
     .complete 83115,1 --1/1 Find Noggenfogger in the Vatworks
 step
-    #title Below the stairs
+    #title |cFFFCDC00Below the stairs|r
     .goto 2346,27.46,70.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r |cRXP_WARN_below|r
     .complete 83115,2 --1/1 Ask Noggenfogger to say more
@@ -991,7 +1106,7 @@ step
     .use 226157
 step
     #completewith StationLabguardsA
-    #title Leave the laboratory
+    #title |cFFFCDC00Leave the laboratory|r
     .goto 2346,27.07,71.21,5,0
     .goto 2346,27.41,70.83,5,0
     .goto 2346,27.86,70.82,5,0
@@ -1015,11 +1130,11 @@ step
     .target Monte Gazlowe
 step
     #completewith PotionCommotion
-    #title Enter the laboratory
+    #title |cFFFCDC00Enter the laboratory|r
     .goto 2346,29.00,69.66,5 >>Enter the laboratory
 step
     #requires PotionCommotion
-    #title Below the stairs
+    #title |cFFFCDC00Below the stairs|r
     .goto 2346,27.47,71.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
     .turnin 83116 >>Turn in Potion Commotion
@@ -1034,11 +1149,17 @@ step
     .target Monte Gazlowe
 step
     #completewith ChasingaLeadA
-    #title Leave the laboratory
+    #title |cFFFCDC00Leave the laboratory|r
     .goto 2346,27.07,71.21,5,0
     .goto 2346,27.41,70.83,5,0
     .goto 2346,27.86,70.82,5,0
     .goto 2346,29.02,69.64,5 >>Leave the laboratory
+step
+    .isOnQuest 86618
+    #requires ChasingaLeadA
+    #completewith next
+    >>Drive around and drift (hold space) to gain Turbo (boost meter).
+    .complete 86618,8 --30/30 Regain boost meter by drifting
 step
     #requires ChasingaLeadA
     .goto 2346,46.08,78.56
@@ -1121,6 +1242,13 @@ step
     .turnin 83120 >>Turn in Stealing the Keys
     .accept 83933 >>Accept The Kaja'Coast
     .target Monte Gazlowe
+step
+    .isOnQuest 86618
+    >>Drive around and drift (hold space) to gain Turbo (boost meter).
+    .complete 86618,8 --30/30 Regain boost meter by drifting
+step
+    .isOnQuest 86618
+    #include RestedXP The War Within\Unlock G-99 Breakneck@UnlockG99BreakneckB-UnlockG99BreakneckC
 step
     .goto 2346,18.80,52.21
     #title |cFFFCDC00Follow the arrow|r
@@ -2137,6 +2265,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
+    #label UnlockG99BreakneckA
     .goto 2346,42.68,51.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
     .accept 84352 >>Accept No More Walkin' Here
@@ -2222,12 +2351,52 @@ step
     >>Drive around and drift (hold space) to gain Turbo (boost meter).
     .complete 86618,8 --30/30 Regain boost meter by drifting
 step
+    #label UnlockG99BreakneckB
     .goto 2346,36.82,46.23
-    >>Use |T3610511:0|t[Start Job] (5) button 
+    >>Use the |T3610511:0|t[Start Job] (5) button. Get a job (in-game)!
     .complete 86618,9 --1/1 Get a job from Nanny Talullah
 step
-    #completewith X
+    .isOnQuest 86618
+    #completewith UnlockG99BreakneckC
+    >>|cRXP_WARN_It's possible that not all jobs are included in this guide. Just follow the green arrow and the instructions|r
     .complete 86618,10 --1/1 Complete your job from Nanny Talullah
+--step
+--    .isOnQuest 83055
+--    #title |cFFFCDC00Follow the arrow|r
+--    .goto 2346,51.37,70.02
+--    .complete 83055,1 --Package acquired
+--step
+--    .isOnQuest 83055
+--    #title |cFFFCDC00Follow the arrow|r
+--    .goto 2346,46.01,42.96,35,0
+--    .goto 2346,51.31,38.26
+--    .turnin 83055 >>Package Delivered
+step
+    .isOnQuest 85732
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,51.48,66.47
+    .complete 85732,1 --1/1 Arrived at Venturewood
+step
+    .isOnQuest 85732
+    #loop
+    .goto 2346,50.33,62.19,30,0
+    .goto 2346,45.41,57.37,30,0
+    .goto 2346,43.31,66.03,30,0
+    >>Drive over the |cRXP_PICK_Subborn Roaches|r
+    .complete 85732,2 --20/20 Roaches "Diffused"
+step
+    .isOnQuest 86315
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,44.71,68.50
+    .complete 86315,1 --1/1 Arrived at Venturewood
+step
+    .isOnQuest 86315
+    #loop
+    .goto 2346,44.71,68.50,30,0
+    .goto 2346,44.98,61.37,35,0
+    .goto 2346,47.99,68.35,35,0
+    >>Kill the |cRXP_ENEMY_Underriders|r
+    .complete 86315,2 --Underriders defeated (100%)
 step
     #title |cFFFCDC00Follow the arrow|r
     .isOnQuest 84791
@@ -2246,6 +2415,7 @@ step
     .goto 2346,56.60,29.98
     .aura -460013 >>Exit the G-99 Breakneck by using |T4200126:0|t[Eject] (6)
 step
+    .isOnQuest 84791
     #requires CustomersFed
     .goto 2346,56.60,29.98
     >>Use the |T237335:0|t[|cRXP_WARN_ExtraActionButton|r]. Aim it at the |cRXP_FRIENDLY_Hungry Goblins|r
@@ -2261,17 +2431,31 @@ step
     #label CustomersFed
     .goto 2346,56.60,29.98,0
     >>Use the |T1046253:0|t[|cRXP_WARN_ExtraActionButton|r]. Aim it at the |cRXP_FRIENDLY_Hungry Goblins|r
-    .complete 84791,2 --5/5 Customers fed
+    .complete 84788,2 --5/5 Customers fed
 step
     .isOnQuest 84788
     #completewith CustomersFed
     .goto 2346,56.60,29.98
     .aura -460013 >>Exit the G-99 Breakneck by using |T4200126:0|t[Eject] (6)
 step
+    .isOnQuest 84788
     #requires CustomersFed
     .goto 2346,56.60,29.98
     >>Use the |T1046253:0|t[|cRXP_WARN_ExtraActionButton|r]. Aim it at the |cRXP_FRIENDLY_Hungry Goblins|r
     .complete 84788,2 --5/5 Customers fed
+step
+    .isOnQuest 86311
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,63.91,76.28
+    .complete 86311,1 --Arrived at the Heaps
+step
+    .isOnQuest 86311
+    #loop
+    .goto 2346,63.91,76.28,25,0
+    .goto 2346,67.68,87.01,35,0
+    >>Kill the |cRXP_ENEMY_enemies|r in The Heap
+    .complete 86311,2 --Heaps enemies defeated (100%)
+
 step
     .isOnQuest 86319
     #title |cFFFCDC00Follow the arrow|r
@@ -2319,7 +2503,10 @@ step
 step
     .isOnQuest 85888
     .goto 2346,64.77,87.06
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pile of Unsorted Trash|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pile of Unsorted Trash|r.
+    *|cRXP_WARN_There are 2 possibilities:|r
+    *- If it's trash then go to the "Trash This Way!" sign
+    *- If it's art then go into the cave next to you
     .complete 85888,2 --5/5 Junk Sorted
 step
     .isOnQuest 86318
@@ -2339,6 +2526,21 @@ step
     .mob Darkfuse Oppressor
     .mob Darkfuse Enforcer
 step
+    .isOnQuest 85946
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,48.88,51.52
+    .complete 85946,1 --Arrived at Pleasent Heights
+step
+    .isOnQuest 85946
+    .goto 2346,49.48,51.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bored Teenagers|r and |cRXP_FRIENDLY_Dweebus Fizzlewit|r
+    .complete 85946,2 --3/3 Supermarket Crabs recovered for
+    .target Bored Teenager
+    .target Dweebus Fizzlewit
+    .skipgossipid 125525
+    .skipgossipid 125524
+    .skipgossipid 125543
+step
     .isOnQuest 85733
     #title |cFFFCDC00Follow the arrow|r
     .goto 2346,52.32,53.04
@@ -2348,6 +2550,45 @@ step
     #title |cFFFCDC00Jump repeatedly|r
     .goto 2346,52.51,54.12
     .complete 85733,2 --Fruit Mashed (100%)
+step
+    .isOnQuest 85797
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,25.28,59.63
+    .complete 85797,1 --Arrived at Vatworks
+step
+    .isOnQuest 85797
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garbo Punchgut|r.
+    >>Kill |cRXP_ENEMY_Pierce Punchgut|r.
+    .complete 85797,2 --1/1 Knife Tested
+    .target Garbo Punchgut
+    .mob Pierce Punchgut
+    .skipgossipid 125403
+step
+    .isOnQuest 85874
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,41.27,85.29
+    .complete 85874,1 --Arrived at Vatworks
+step
+    .isOnQuest 85874
+    .goto 2346,41.61,85.02
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fishin Pole|r
+    >>Kill the |cRXP_ENEMY_Sewer Slinker|r. Loot it for |T133895:0|t[Gary the Goldfish]
+    .complete 85874,2 --1/1 Gary the Goldfish rescued
+    .mob Sewer Slinker
+step
+    .isOnQuest 86320
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,36.66,59.76
+    .complete 86320,1 --Arrived at Vatworks
+step
+    .isOnQuest 86320
+    #loop
+    .goto 2346,40.41,57.34,25,0
+    .goto 2346,37.35,64.17,25,0
+    .goto 2346,41.23,62.47,25,0
+    >>Kill the |cRXP_ENEMY_Emboldened bullies|r
+    .mob Emboldened Bully
+    .mob Emboldened Browbeater
 step
     .isOnQuest 86410
     #title |cFFFCDC00Follow the arrow|r
@@ -2406,14 +2647,39 @@ step
     #label DaisyRescuedRunOntoPipe
     #completewith DaisyRescued
     #title |cFFFCDC00Run onto the pipe|r
-    .goto 2346,37.01,56.54,3 >>Run onto the pipe |cRXP_WARN_with base movement speed|r
+    .goto 2346,37.01,56.54,3 >>Run onto the pipe |cRXP_WARN_with base movement speed|r.
 step
     #requires DaisyRescuedRunOntoPipe
     .isOnQuest 85717
     .goto 2346,37.27,55.69
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Daisy|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Daisy|r.
     .complete 85717,2 --1/1 Daisy Rescued
     .target Daisy
+step
+    .isOnQuest 85715
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,29.61,30.30
+    .complete 85715,1 --Arrived at Hovel Hill
+step
+    .isOnQuest 85715
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on to the |cRXP_PICK_Artist Prop|r
+    .goto 2346,28.93,29.06
+    .complete 85715,2 --1/1 Model for Painting
+step
+    .isOnQuest 85771
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,28.70,46.76
+    .complete 85771,1 --Arrived at Hovel Hill
+step
+    .isOnQuest 85771
+    #title |cFFFCDC00Follow the arrow|r
+    #loop
+    .goto 2346,26.17,38.88,30,0
+    .goto 2346,25.49,46.47,25,0
+    .goto 2346,32.91,48.18,35,0
+    .goto 2346,28.35,41.46,30,0
+    >>Drive around near the |cRXP_FRIENDLY_Citizens|r
+    .complete 85771,2 --6/6 Newspapers delivered to citizens of Undermine
 step
     .isOnQuest 85759
     #title |cFFFCDC00Follow the arrow|r
@@ -2504,6 +2770,34 @@ step
     .complete 86317,2 --4/4 Darkfuse Smuggler slain
     .mob Darkfuse Smuggler
 step
+    .isOnQuest 85758
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,39.03,50.96
+    .complete 85758,1 --Arrived at the Incontinental Hotel
+step
+    .isOnQuest 85758
+    #loop
+    .goto 2346,39.59,51.89,6,0
+    .goto 2346,40.19,51.71,6,0
+    .goto 2346,40.39,50.59,6,0
+    .goto 2346,39.96,50.14,6,0
+    .goto 2346,39.60,50.70,5,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dirt Spots|r
+    .complete 85758,2 --5/5 Dirt Spots Polished
+step
+    .isOnQuest 86418
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,43.13,51.09
+    .complete 86418,1 --Arrived at the Incontinental Hotel
+step
+    .isOnQuest 86418
+    #loop
+    .goto 2346,44.30,49.21,15,0
+    .goto 2346,40.28,56.15,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Hotel Guests|r
+    .complete 86418,2 --
+    .target Hotel Guest
+step
     .isOnQuest 85826
     #title |cFFFCDC00Follow the arrow|r
     .goto 2346,45.04,45.71
@@ -2550,6 +2844,7 @@ step
     .goto 2346,38.11,47.25,6 >>Climb the stairs of the house
 step
     #requires LicenseNotRequiredB
+    #label UnlockG99BreakneckC
     .goto 2346,37.43,48.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
     .turnin 86618 >>Turn in License Not Required
