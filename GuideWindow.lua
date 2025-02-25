@@ -24,7 +24,7 @@ local RXPFrame = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 addon.RXPFrame = RXPFrame
 addon.enabledFrames["RXPFrame"] = RXPFrame
 RXPFrame.IsFeatureEnabled = function()
-    return not addon.settings.profile.hideGuideWindow
+    return not addon.settings.profile.hideGuideWindow,false
 end
 
 local BottomFrame = CreateFrame("Frame", "$parent_bottomFrame", RXPFrame,
