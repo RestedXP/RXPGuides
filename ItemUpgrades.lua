@@ -1393,7 +1393,7 @@ local ahSession = {
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
-    if not addon.settings.profile.enableItemUpgradesAH then return end
+    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then return end
 
     if ahSession.isInitialized then return end
 

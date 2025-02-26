@@ -178,22 +178,8 @@ step
     #label Sarkoth
     .goto Durotar,40.60,66.80
     >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r << !Hunter !Warrior
-    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r and for |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
-    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r and for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
     .complete 790,1 --Sarkoth's Mangled Claw (1)
-    .collect 206169,1,790,1 << Hunter --Rune of Explosive Shot (1)
-    .collect 204809,1,790,1 << Warrior --Rune of Furious Thunder(1)
     .mob Sarkoth
-step << Warrior
-    #season 2
-    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
-    .use 204809
-    .itemcount 204809,1
-step << Hunter
-    #season 2
-    .train 410123 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
-    .use 206169
-    .itemcount 206169,1
 step
     #season 0
     #label Sarkoth
@@ -356,30 +342,10 @@ step
     .turnin 804 >>Turn in Sarkoth << !Shaman
     .target Gornek
 step << Rogue
+    #season 0
     #completewith Rwag
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.27,68.00,12 >>Travel toward |cRXP_FRIENDLY_Rwag|r
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
-    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
-    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
-    .train 53 >> Train |T132090:0|t[Backstab]
-    .target Rwag
-    .money <0.04
-    .xp <4,1
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
-    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
-    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
-    .target Rwag
 step << Rogue
     #season 0
     .goto Durotar,41.27,68.00
@@ -425,7 +391,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
     .accept 77586 >>Accept Stolen Power
-    .train 172 >> Train |T136118:0|t[Corruption]
     .target Nartok
 step << Warlock
     #season 0
@@ -698,54 +663,6 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
     .turnin 77642 >>Turn in Wisdom of the Loa
     .target Ken'jai
-step << Rogue/Warrior
-    #season 2
-    .goto Durotar,43.27,69.51
-    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
-    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    >>|cRXP_WARN_Walk around past |cRXP_ENEMY_Sarkoth|r and jump down to reach the chest|r
-    .collect 204795,1,77592,1 << Troll Rogue --Rune of Shadowstrike (1)
-    .collect 204795,1,77583,1 << Orc Rogue --Rune of Shadowstrike (1)
-    .collect 204806,1,77588,1 << Troll Warrior--Rune of Victory Rush (1)
-    .collect 204806,1,77582,1 << Orc Warrior --Rune of Victory Rush (1)
-step << Rogue/Warrior
-    #season 2
-    .use 204795 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
-    .use 204806 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    .complete 77592,1 << Troll Rogue --Learn Spell: Engrave Gloves - Shadowstrike
-    .complete 77583,1 << Orc Rogue --Learn Spell: Engrave Gloves - Shadowstrike
-    .complete 77588,1 << Troll Warrior --Learn Spell: Engrave Gloves - Victory Rush
-    .complete 77582,1 << Orc Warrior --Learn Spell: Engrave Gloves - Victory Rush
-    .isOnQuest 77592 << Troll Rogue
-    .isOnQuest 77583 << Orc Rogue
-    .isOnQuest 77588 << Troll Warrior
-    .isOnQuest 77582 << Orc Warrior
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
-    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Rwag
-    .money <0.011
-    .xp <4,1
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
-    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .target Rwag
-step << Warrior
-    #season 2
-    .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .turnin 77588 >>Turn in A Trial of Fitness << Troll
-    .turnin 77582 >>Turn in A Trial of Fitness << Orc
-    .target Frang
 step
     #completewith Sting
     >>Loot the |cRXP_LOOT_Cactus Apples|r near the Cacti
@@ -887,84 +804,13 @@ step << Shaman
     .aura 408828 >>Continue to kill |cRXP_ENEMY_Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
     .mob Scorpid Worker
     --User must be level 3 to be able to use item!
-step << Shaman
-    #season 2
-    #label OverloadRune
-    >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
-    .use 206381
-    .complete 77587,1 << Troll Shaman --Learn Spell: Engrave Chest - Overload
-    .complete 77585,1 << Orc Shaman --Learn Spell: Engrave Chest - Overload
+
 step << Hunter
     #season 2
     #completewith ChimeraRune
     >>Kill |cRXP_ENEMY_Vile Familiars|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
-step << Hunter
-    #season 2
-    #loop
-    .goto Durotar,43.26,58.28,0
-    .goto Durotar,43.26,58.28,40,0
-    .goto Durotar,42.81,58.41,40,0
-    .goto Durotar,41.90,58.35,40,0
-    .goto Durotar,41.97,59.20,40,0
-    .goto Durotar,41.36,60.35,40,0
-    .goto Durotar,40.66,61.27,40,0
-    .goto Durotar,40.07,61.35,40,0
-    .goto Durotar,39.42,61.29,40,0
-    .goto Durotar,39.46,62.17,40,0
-    .goto Durotar,39.55,63.10,40,0
-    .goto Durotar,40.13,64.04,40,0
-    .goto Durotar,40.84,64.06,40,0
-    .goto Durotar,40.74,65.86,40,0
-    .goto Durotar,39.93,66.03,40,0
-    .goto Durotar,40.04,66.99,40,0
-    .goto Durotar,40.09,67.66,40,0
-    .goto Durotar,40.13,68.50,40,0
-    .goto Durotar,40.72,68.55,40,0
-    .goto Durotar,41.30,67.84,40,0
-    .goto Durotar,41.37,66.72,40,0
-    .goto Durotar,41.89,66.05,40,0
-    .goto Durotar,41.27,65.71,40,0
-    .goto Durotar,41.36,64.07,40,0
-    .goto Durotar,41.33,63.12,40,0
-    .goto Durotar,41.35,61.98,40,0
-    .goto Durotar,41.49,61.25,40,0
-    .goto Durotar,41.90,60.24,40,0
-    .goto Durotar,42.51,59.34,40,0
-    .goto Durotar,43.08,59.62,40,0
-    .goto Durotar,43.91,59.33,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.85,60.34,40,0
-    .goto Durotar,46.46,61.11,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.14,64.08,40,0
-    .goto Durotar,47.58,64.04,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,46.90,61.15,40,0
-    .goto Durotar,46.98,60.18,40,0
-    .goto Durotar,47.07,59.34,40,0
-    .goto Durotar,46.47,58.28,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,43.91,59.33,40,0
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
-    .collect 206168,1,77590,1 << Troll Hunter --Rune of the Chimera (1)
-    .collect 206168,1,77584,1 << Orc Hunter --Rune of the Chimera (1)
-    .mob Scorpid Worker
-    .train 410121,1
-step << Hunter
-    #season 2
-    #label ChimeraRune
-    .use 206168 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
-    .complete 77590,1 << Troll Hunter --Learn Spell: Engrave Gloves - Chimera Shot
-    .complete 77584,1 << Orc Hunter --Learn Spell: Engrave Gloves - Chimera Shot
-    .isOnQuest 77590 << Troll Hunter
-    .isOnQuest 77584 << Orc Hunter
-    .train 410121,1
 step << !Warlock
     #label Imps
     #loop
@@ -1232,12 +1078,6 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .target Frang
     .money <0.01
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Rwag
 step
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
@@ -1355,13 +1195,6 @@ step << Warlock
     .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
     .complete 77586,1 --Learn Spell: Engrave Gloves - Haunt
     .isOnQuest 77586
-step << Rogue
-    #season 2
-    .goto Durotar,42.70,52.99
-    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Yarrog Baneshadow|r for |T134331:0|t[|cRXP_LOOT_Note from Ba'so|r]
-    .collect 207098,1 --Note from Ba'so (1)
-	.mob Yarrog Baneshadow
-    .train 400094,1
 step
     #label Yarrog
     .goto Durotar,42.70,52.99
@@ -1394,35 +1227,6 @@ step << Shaman
     >>Kill |cRXP_ENEMY_Felstalkers|r. Loot them for |cRXP_LOOT_Felstalker Hooves|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
-step << Hunter
-    #season 2
-    #loop
-	.goto Durotar,42.70,52.99,0
-	.goto Durotar,42.70,52.99,25,0
-	.goto Durotar,42.97,51.14,25,0
-	.goto Durotar,43.56,52.05,25,0
-	.goto Durotar,43.74,52.65,25,0
-	.goto Durotar,44.13,52.85,25,0
-	.goto Durotar,44.82,52.51,25,0
-	.goto Durotar,44.83,53.40,25,0
-	.goto Durotar,44.78,54.57,25,0
-	.goto Durotar,45.14,55.02,25,0
-	.goto Durotar,45.51,55.23,25,0
-	.goto Durotar,45.14,55.02,25,0
-	.goto Durotar,44.51,55.03,25,0
-	.goto Durotar,44.21,54.12,25,0
-	.goto Durotar,43.92,54.30,25,0
-	.goto Durotar,43.87,55.22,25,0
-	.goto Durotar,43.46,55.56,25,0
-	.goto Durotar,43.05,55.24,25,0
-	.goto Durotar,42.38,54.22,25,0
-	.goto Durotar,42.53,53.48,25,0
-	.goto Durotar,43.27,53.82,25,0
-    .xp 6 >> Grind to level 6
-    >>|cRXP_WARN_This will allow you to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_early|r
-    .mob Felstalker
-    .mob Vile Familiar
-    .train 410113,1
 step
     #optional
     #xprate <1.5
@@ -1497,15 +1301,6 @@ step
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
-step << Hunter
-    #softcore
-    #season 2
-    .goto Durotar,51.85,43.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
-    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
-    .train 410113,1
-    .target Thotar
 step
     #softcore
     #completewith next
@@ -1551,22 +1346,6 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
-step << Hunter
-    #softcore
-    #season 2
-    .goto Durotar,40.61,52.19
-    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
-    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Marksmanship (1)
-    .mob Rustling Bush
-    .mob Razormane Poacher
-    .train 410113,1
-step << Hunter
-    #softcore
-    #season 2
-    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
-    .use 206155
-    .itemcount 206155,1
 step
     #completewith next
     .hs >>Hearth to the Valley of Trials
@@ -2307,15 +2086,6 @@ step
     .accept 815 >>Accept Break a Few Eggs
     .target +Cook Torka
     .goto Durotar,51.09,42.49
-step << Hunter
-    #hardcore
-    #season 2
-    .goto Durotar,51.85,43.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
-    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
-    .train 410113,1
-    .target Thotar
 step
     #hardcore
     #completewith next
@@ -2361,22 +2131,6 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
-step << Hunter
-    #hardcore
-    #season 2
-    .goto Durotar,40.61,52.19
-    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
-    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Marksmanship (1)
-    .mob Rustling Bush
-    .mob Razormane Poacher
-    .train 410113,1
-step << Hunter
-    #hardcore
-    #season 2
-    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
-    .use 206155
-    .itemcount 206155,1
 step << Warrior/Rogue
     #hardcore
     #completewith TravelToTiragarde
@@ -5685,14 +5439,6 @@ step << Rogue
     .accept 365 >>Accept Fields of Grief
     .target Deathguard Simmer
     .maxlevel 10
-step << Rogue
-    #optional
-    #completewith next
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
-    .collect 208036,1 --Top-Left Map Piece (1)
-    .mob Tirisfal Farmer
-    .mob Tirisfal Farmhand
-    .train 400095,1
 step << Mage
     #season 2
     #completewith next
@@ -5718,30 +5464,6 @@ step
     >>Loot the |cRXP_LOOT_Pumpkins|r found in the field.
     .complete 365,1 --Tirisfal Pumpkin (10)
     .isOnQuest 365
-step << Rogue
-    #season 2
-    #loop
-    .goto Tirisfal Glades,36.63,50.09,0
-    .goto Tirisfal Glades,37.20,52.17,50,0
-    .goto Tirisfal Glades,36.64,50.09,50,0
-    .goto Tirisfal Glades,36.10,49.07,50,0
-    .goto Tirisfal Glades,35.08,49.82,50,0
-    .goto Tirisfal Glades,35.30,50.91,50,0
-    .goto Tirisfal Glades,34.57,51.58,50,0
-    .goto Tirisfal Glades,36.63,50.09,50,0
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
-    .collect 208036,1 --Top-Left Map Piece (1)
-    .mob Tirisfal Farmer
-    .mob Tirisfal Farmhand
-    .train 400095,1
-step << Rogue
-    #season 2
-    #optional
-    #completewith next
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
-    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
-    .collect 208035,1 --Top-Right Map Piece (1)
-    .train 400095,1
 step
     #optional
     #loop
@@ -5761,26 +5483,6 @@ step
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
     .isOnQuest 427
-step << Rogue
-    #season 2
-    #loop
-    .goto Tirisfal Glades,31.78,51.36,0
-    .goto Tirisfal Glades,33.73,49.34,50,0
-    .goto Tirisfal Glades,33.65,51.07,50,0
-    .goto Tirisfal Glades,31.78,51.36,50,0
-    .goto Tirisfal Glades,30.02,50.48,50,0
-    .goto Tirisfal Glades,29.91,49.24,50,0
-    .goto Tirisfal Glades,30.62,47.53,50,0
-    .goto Tirisfal Glades,31.01,46.50,50,0
-    .goto Tirisfal Glades,32.15,44.83,50,0
-    .goto Tirisfal Glades,33.73,45.29,50,0
-    .goto Tirisfal Glades,34.10,47.88,50,0
-    .goto Tirisfal Glades,33.73,49.34,50,0
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
-    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
-    .collect 208035,1 --Top-Right Map Piece (1)
-    .mob Scarlet Warrior
-    .train 400095,1
 step
     #optional
     #completewith next
@@ -6079,14 +5781,6 @@ step
     >>|cRXP_WARN_You don't have to complete this step now|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
-step << Rogue
-    #season 2
-    #optional
-    #completewith ScarletCrusade1
-    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Captain Perrine|r for a |T133385:0|t[|cRXP_LOOT_Scarlet Lieutenant Signet Ring|r]
-    .collect 208085,1 --Scarlet Lieutenant Signet Ring (1)
-    .mob Captain Perrine
-    .train 400094,1
 step << Warlock
     #optional
     #completewith next
@@ -6114,13 +5808,6 @@ step
     .complete 370,3 --Scarlet Missionary (3)
     .mob +Scarlet Missionary
     .isOnQuest 370
-step << Rogue
-    #season 2
-    .goto Tirisfal Glades,51.17,67.81
-    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Captain Perrine|r for a |T133385:0|t[|cRXP_LOOT_Scarlet Lieutenant Signet Ring|r]
-    .collect 208085,1 --Scarlet Lieutenant Signet Ring (1)
-    .mob Captain Perrine
-    .train 400094,1
 step << Warlock
     .goto Tirisfal Glades,51.06,67.57
     >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
@@ -6274,13 +5961,6 @@ step
     >>Kill |cRXP_ENEMY_Maggot Eye|r. Loot him for his |cRXP_LOOT_Paw|r
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
-step << Rogue
-    #season 2
-    #optional
-    #completewith next
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
-    .collect 208037,1 --Bottom-Right Map Piece (1)
-    .train 400095,1
 step
     #optional
     #loop
@@ -6300,25 +5980,6 @@ step
     .mob Vile Fin Minor Oracle
     .mob Vile Fin Muckdweller
     .isOnQuest 368
-step << Rogue
-    #season 2
-    #loop
-    .goto Tirisfal Glades,59.54,27.86,0
-    .goto Tirisfal Glades,59.38,29.05,50,0
-    .goto Tirisfal Glades,59.54,27.86,50,0
-    .goto Tirisfal Glades,60.64,28.66,50,0
-    .goto Tirisfal Glades,61.49,29.40,50,0
-    .goto Tirisfal Glades,62.96,29.46,50,0
-    .goto Tirisfal Glades,65.68,30.22,50,0
-    .goto Tirisfal Glades,67.48,28.97,50,0
-    .goto Tirisfal Glades,68.22,26.46,50,0
-    .goto Tirisfal Glades,59.54,27.86,50,0
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
-    .collect 208037,1 --Bottom-Right Map Piece (1)
-    .mob Vile Fin Puddlejumper
-    .mob Vile Fin Minor Oracle
-    .mob Vile Fin Muckdweller
-    .train 400095,1
 step
     #optional
     #completewith RotHideGnolls
@@ -6340,13 +6001,6 @@ step << Mage
     .mob Odd Melon
     .train 415942,1
     .train 118,3
-step << Rogue
-    #season 2
-    #optional
-    #completewith RotHideGnolls
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
-    .collect 208038,1 --Bottom-Left Map Piece (1)
-    .train 400095,1
 step
     #optional
     #label RotHideGnolls
@@ -6365,27 +6019,6 @@ step
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
     .isOnQuest 358
-step << Rogue
-    #season 2
-    #loop
-    .goto Tirisfal Glades,55.24,42.54,0
-    .goto Tirisfal Glades,56.31,39.67,40,0
-    .goto Tirisfal Glades,54.71,41.19,40,0
-    .goto Tirisfal Glades,53.90,43.93,40,0
-    .goto Tirisfal Glades,55.24,42.54,40,0
-    .goto Tirisfal Glades,56.43,43.92,40,0
-    .goto Tirisfal Glades,55.24,42.54,40,0
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
-    .collect 208038,1 --Bottom-Left Map Piece (1)
-    .mob Rot Hide Mongrel
-    .mob Rot Hide Graverobber
-    .mob Rot Hide Gnoll
-    .train 400095,1
-step << Rogue
-    #season 2
-    .use 208036 >>Use the |T134327:0|t[|cRXP_LOOT_Map Pieces|r] to create |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r]
-    .collect 208034,1 --Tirisfal Treasure Map (1)
-    .train 400095,1
 step
     #optional
     #softcore
@@ -6396,18 +6029,6 @@ step
     #hardcore
     #completewith MillsTurnin
     .subzone 159 >> Travel to Brill
-step << Rogue
-    #season 2
-    .goto Tirisfal Glades,52.89,54.06
-    .use 208034 >>Use the |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r] below the bridge
-    >>Loot the |cRXP_PICK_Buried Treasure|r chest that spawns for |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
-    .collect 203991,1 --Rune of Quick Draw (1s)
-    .train 400095,1
-step << Rogue
-    #season 2
-    .train 400095 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
-    .use 203991
-    .itemcount 203991,1
 step
     #optional
     .goto Tirisfal Glades,58.19,51.44
@@ -7343,34 +6964,143 @@ RXPGuides.RegisterGuide([[
 step << !Orc !Troll
     #completewith next
     +|cRXP_WARN_You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r
-step << !Troll Mage
-    #season 2
-    #completewith next
-    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step
     .goto Durotar,43.29,68.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
     .accept 4641 >>Accept Your Place In The World
     .target Kaltunk
-step << Warrior/Shaman/Warlock
-    #completewith next
-    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
-    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
-    .goto Durotar,43.85,71.73,30,0 << Warlock
-    .goto Durotar,44.19,65.34,30,0 << Warrior/Shaman
+step
+    .xp 2 >> Kill four |cRXP_ENEMY_Mottled Boars|r to reach level 2
+    >>|cRXP_WARN_Loot them until you have 15 copper worth of vendor items << !Warlock !Priest
+    >>|cRXP_WARN_Loot them until you have 30 copper worth of vendor items << Warlock/Priest
+    .goto Durotar,44.32,71.16
     .mob Mottled Boar
-    .money >0.01
+step
+    .goto Durotar,42.73,68.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] and |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] << Orc Warrior
+    >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Troll Warrior
+    >>|cRXP_BUY_Vendor trash and buy the|r |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] and |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] << Shaman
+    >>|cRXP_BUY_Vendor trash and buy all of the key AoE runes|r << Mage
+    >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Hunter/Warlock/Rogue/Priest
+    .collect 206387,1 << Shaman --Kajaric Icon
+    .collect 206381,1 << Shaman --Dyadic Icon
+    .collect 204806,1 << Warrior --Rune of Victory Rush
+    .collect 208799,1 << Mage --Spell Notes: Living Bomb
+    .collect 203746,1 << Mage --Spell Notes: Living Flame
+    .collect 203748,1 << Mage --Spell Notes: Burnout
+    .collect 225690,1 << Mage --Spell Notes: Frozen Orb
+    .collect 203745,1 << Mage --Spell Notes: Ice Lance
+    .collect 209852,1 << Hunter --Rune of Kill Command
+    .collect 226401,1 << Hunter --Treatise on the Heart of the Lion
+    .collect 216770,1 << Hunter --Treatise on Aspect of the Viper
+    .collect 206168,1 << Hunter --Rune of the Chimera
+    .collect 210818,1 << Hunter --Rune of Lone Wolf
+    .collect 213124,1 << Hunter --Rune of Close Combat
+    .collect 226252,1 << Hunter --Rune of the Guerrilla
+    .collect 205215,1 << Warlock --Rune of Tactics
+    .collect 210824,1 << Warlock --Rune of the Pact
+    .collect 211477,1 << Warlock --Rune of Incinerate
+    .collect 205230,1 << Warlock --Rune of Haunting
+    .collect 228797,1 << Warlock --Grimoire of Fel Armor
+    .collect 210979,1 << Rogue --Rune of Shadowstep
+    .collect 221428,1 << Rogue --Rune of Foul Play
+    .collect 204795,1 << Rogue --Rune of Shadowstrike
+    .collect 208772,1 << Rogue --Rune of Saber Slash
+    .collect 227922,1 << Rogue --Rune of the Swashbuckler
+    .collect 212552,1 << Priest --Psychosophic Epiphany
+    .collect 205940,1 << Priest --Memory of a Dark Purpose
+    .collect 205951,1 << Priest --Memory of a Troubled Acolyte
+    .collect 205932,1 << Priest --Prophecy of a King's Demise
+    .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
+    >> Ice Lance is only useful so you can turn in a quest later << Mage
+    >>|cRXP_WARN_You will get the rest of your runes later|r
+    .target Rune Broker
+    .skipgossip
+step
+    .train 403470 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] to train |T132342:0|t[Victory Rush]<< Warrior
+    .train 415936 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Bomb|r] to train |T236220:0|t[Living Bomb] << Mage
+    .train 401759 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] to train |T236207:0|t[Burnout] << Mage
+    .train 440858 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Frozen Orb|r] to train |T135851:0|t[Frozen Orb] << Mage
+    .train 401760 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Ice Lance|r] to train |T135844:0|t[Ice Lance] << Mage
+    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] << Mage
+    .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
+    .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
+    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
+    .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper to train |T132160:0|t[Aspect of the Viper]|r] << Hunter
+    .train 416009 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r] to train |T136150:0|t[Demonic Tactics] << Warlock
+    .train 425476 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] to train |T237562:0|t[Demonic Pact] << Warlock
+    .train 416015 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
+    .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
+    .train 403619 >> Use the |T133733:0|t[Grimoire of Fel Armor] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
+    .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
+    .train 407798 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] to train |T135961:0|t[Seal of Martyrdom], |cRXP_WARN_use it as your primary Seal|r << Paladin
+    .train 425447 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] to train |T236317:0|t[Frenzied Assault] << Orc Warrior
+    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] << Mage
+    .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] to train |T236174:0|t[Kill Shot] << Hunter
+    .train 409580 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] to train |T132185:0|t[Heart of the Lion] << Hunter
+    .train 400101 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shadowstep|r] to train |T132303:0|t[Shadowstep] << Rogue
+    .train 432301 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] to train |T236285:0|t[Unfair Advantage] << Rogue
+    .train 400105 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] to train |T132323:0|t[Shadowstrike] << Rogue
+    .train 424984 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r] to train |T132375:0|t[Saber Slash] << Rogue
+    .train 415922 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Swashbuckler|r] to train |T134538:0|t[Blunderbuss] << Rogue
+    .equip 18 >> Equip the |T134920:0|t[|cRXP_FRIENDLY_Kajaric Icon|r], you can use it after 30 seconds to train |T237582:0|t[Lava Burst] << Shaman
+    .train 431663 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] to train |T136181:0|t[Mind Spike] << Priest
+    .train 425216 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpouse|r] to train |T237514:0|t[Void Plague] << Priest
+    .train 402862 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] to train |T237545:0|t[Penance] << Priest
+    .train 402849 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] to train |T136149:0|t[Shadow Word: Death] << Priest
+    .use 206387 << Shaman --Kajaric Icon
+    .use 205947 << Priest --Prophecy of a Desecrated Citadel
+    .use 212552 << Priest --Psychosophic Epiphany
+    .use 205940 << Priest --Memory of a Dark Purpose
+    .use 205951 << Priest --Memory of a Troubled Acolyte
+    .use 205932 << Priest --Prophecy of a King's Demise
+    .use 226398 << Paladin --Testament of martyrdom
+    .use 204716 << Orc Warrior --Rune of Frenzied Assault
+    .use 203746 << Mage --Spell Notes: Living Flame
+    .use 209852 << Hunter --Rune of Kill Command
+    .use 226401 << Hunter --Treatise on the Heart of the Lion
+    .use 208799 << Mage --Spell Notes: Living Bomb
+    .use 203748 << Mage --Spell Notes: Burnout
+    .use 225690 << Mage --Spell Notes: Frozen Orb
+    .use 203746 << Mage --Spell Notes: Living Flame
+    .use 204716 << Orc Warrior --Rune of Frenzied Assault
+    .use 206168 << Hunter --Rune of the Chimera
+    .use 210818 << Hunter --Rune of Lone Wolf
+    .use 213124 << Hunter --Rune of Close Combat
+    .use 226252 << Hunter --Rune of the Guerrilla
+    .use 216770 << Hunter --Treatise on Aspect of the Viper
+    .use 204806 << Warrior --Rune of Victory Rush
+    .use 205215 << Warlock --Rune of Tactics
+    .use 210824 << Warlock --Rune of the Pact
+    .use 211477 << Warlock --Rune of Incinerate
+    .use 205230 << Warlock --Rune of Haunting
+    .use 228797 << Warlock --Grimoire of Fel Armor
+    .use 210979 << Rogue --Rune of Shadowstep
+    .use 221428 << Rogue --Rune of Foul Play
+    .use 204795 << Rogue --Rune of Shadowstrike
+    .use 208772 << Rogue --Rune of Saber Slash
+    .use 227922 << Rogue --Rune of the Swashbuckler
 step << Warlock
     .goto Durotar,42.59,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruzan|r
     .accept 1485 >>Accept Vile Familiars
     .target Ruzan
-step << Warrior/Shaman
-    .goto Durotar,42.59,67.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
-    .vendor >> Vendor Trash
-    .target Duokna
-    .money >0.01
+step << Shaman
+    #optional
+    #label LavaBurst
+    #sticky
+    .train 410095 >> Use the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] from your charachter panel to train |T237582:0|t[Molten Blast]
+step << Shaman
+    #optional
+    #requires LavaBurst
+    #label Overload
+    #sticky
+    .equip 18,206381 >> Equip the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    .train 410094 >> Use it after 30 seconds to train |T136050:0|t[Overload]
+    .use 206381
 step
     .goto Durotar,42.28,68.48,12,0 << !Warrior !Shaman
     .goto Durotar,42.29,68.39,12,0 << Warrior/Shaman
@@ -7379,6 +7109,74 @@ step
     .turnin 4641 >>Turn in Your Place In The World
     .accept 788 >>Accept Cutting Teeth
     .target Gornek
+step << Priest
+    #season 2
+    .goto Durotar,40.61,67.81
+    >>|cRXP_WARN_Run deeper into the den|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huklah|r
+    .vendor >>|cRXP_BUY_Vendor Trash. Buy a |r |T132513:0|t[Tattered Cloth Belt] |cRXP_BUY_from him to engrave a rune on|r
+    .collect 3595,1 --Tattered Cloth Belt
+    .target Huklah
+step << Priest
+    #season 2
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
+    .accept 77642 >>Accept Wisdom of the Loa
+    .turnin 77642 >>Turn in Wisom of the Loa
+    .target Ken'jai
+step << Priest
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt << Priest
+    .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves << Priest
+step << Mage
+    #season 2
+    #requires Galgar
+    .goto Durotar,42.51,69.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
+    .accept 77643 >>Accept Spell Research << Troll Mage
+    .turnin 77643 >>Turn in Spell Research << Troll Mage
+    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
+    .target Mai'ah
+step << Mage
+    #season 2
+    #optional
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T236220:0|t[Living Bomb]
+    .engrave 7 >>|cRXP_WARN_Engrave your pants with|r |T135820:0|t[Living Flame]
+    .engrave 5 >>|cRXP_WARN_Engrave your chest with|r |T236207:0|t[Burnout]
+step << Mage
+    #optional
+    #sticky
+    .engrave 15 >> Be on the lookout for any cloak drops. Once you get one engrave |T135851:0|t[Frozen Orb] on it
+    >>|cRXP_WARN_This spell is extremely overpowered|r
+step << Hunter
+    #season 2
+    #xprate >1.49
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
+    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
+    .turnin 77590 >>Turn in Rugged Terrain << Troll Hunter
+    .turnin 77584 >>Turn in Hunt for the Rune << Orc Hunter
+    .target Jen'shan
+step << Rogue
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r inside
+    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
+    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
+    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
+    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .target Rwag
+step << Rogue
+    #optional
+    #completewith sarkoth
+    .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves]
+    .engrave 10 >> Engrave |T132375:0|t[Saber Slash] on your gloves
+    .use 2125 --Cracked Leather Gloves
 step << Warrior/Shaman
     .goto Durotar,42.28,68.48,10,0
     .goto Durotar,42.89,69.44 << Warrior
@@ -7387,8 +7185,17 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r << Shaman
     .train 6673 >>Train |T132333:0|t[Battle Shout] << Warrior
     .train 8017 >>Train |T136086:0|t[Rockbiter Weapon] << Shaman
+    .accept 77588 >>Accept A Trial of Fitness << Troll Warrior
+    .accept 77582 >>Accept A Trial of Fitness << Orc Warrior
+    .turnin 77588 >>Turn in A Trial of Fitness << Troll Warrior
+    .turnin 77582 >>Accept A Trial of Fitness << Orc Warrior
     .target Frang << Warrior
     .target Shikrik << Shaman
+step << Warrior
+    .equip 10 >> Equip the |T132938:0|t[Tarnished Chain Gloves] << Warrior
+    .engrave 10 >> Engrave |T132342:0|t[Victory Rush] on your gloves << Warrior
+    .engrave 7 >> Engrave |T236317:0|t[Frenzied Assault] on your pants << Orc Warrior
+    .use 2385 << Warrior -- Tarnished Chain Gloves
 step << Warlock
     #softcore
     #completewith Nartok
@@ -7403,7 +7210,7 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
     .money >0.01
 step << Warlock
     #hardcore
@@ -7411,9 +7218,10 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
 step << Warlock
     #softcore
+    #season 0
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
     .vendor >>Vendor Trash
@@ -7421,6 +7229,7 @@ step << Warlock
     .money >0.01
 step << Warlock
     #hardcore
+    #season 0
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
     .vendor >>Vendor Trash
@@ -7431,8 +7240,26 @@ step << Warlock
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .accept 77586 >>Accept Stolen Power
-    .train 348 >>Train |T135817:0|t[Immolate]
+    .turnin 77586 >>Turn in Stolen Power
     .target Nartok
+step << Warlock
+    #season 2
+    .goto Durotar,40.61,67.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huklah|r
+    .vendor >>|cRXP_BUY_Vendor Trash. Buy a pair of |r [Tattered Cloth Bracers] |cRXP_BUY_from him to engrave a rune on|r
+    .collect 3596,1 --Tattered Cloth Bracers
+    .target Huklah
+step << Warlock
+    #season 2
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .equip 9,3596 >> |cRXP_ENEMY_Equip the|r |T132606:0|t[Tattered Cloth Bracers]
+    .use 711
+    .use 3596
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Haunt] << Warlock
+    .engrave 9 >> |cRXP_WARN_Engrave your|r |T132606:0|t[Tattered Cloth Bracers] with |T135789:0|t[Incinerate]
+    .engrave 7 >> |cRXP_WARN_Engrave your pants with |T237562:0|t[Demonic Pact]
+    .train 403919,3 << Warlock
 step << Warlock
     #season 0
     #label Nartok
@@ -7489,6 +7316,28 @@ step << Warlock
     >>Kill |cRXP_ENEMY_Vile Familiars|r. Loot them for |cRXP_LOOT_Vile Familiar Heads|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob Vile Familiar
+step << Hunter
+    #optional
+    #completewith sarkoth
+    .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves]
+    .engrave 7 >> Engrave |T236174:0|t[Kill Shot] on your pants
+    .engrave 10 >> Engrave |T236176:0|t[Chimera Shot] on your gloves
+    .aura 409583 >> Remember to activate your |T132185:0|t[Heart of the Lion]
+    .use 2125 --Cracked Leather Gloves
+step << Hunter
+    #sticky
+    #optional
+    >>|cRXP_WARN_Be on the lookout for any|r Chest/Belt/Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
+    .engrave 5 >> Engrave |T132266:0|t[Lone Wolf] on your |T132724:0|t[Chest]
+    .engrave 6 >> Engrave |T132394:0|t[Meele Specialist] on your |T132513:0|t[Belt]
+    .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
+step << Rogue
+    #sticky
+    #optional
+    >>|cRXP_WARN_Be on the lookout for any|r Belt/Cloak/Bracer |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
+    .engrave 6 >> Engrave |T132303:0|t[Shadowstep] on your |T132513:0|t[Belt]
+    .engrave 15 >> Engrave |T134538:0|t[Blunderbuss] on your |T133771:0|t[Cloak]
+    .engrave 9 >> Engrave |T236285:0|t[Unfair Advantage] on your |T133830:0|t[Bracers]
 step
     #completewith Sarkoth
     .goto Durotar,43.57,67.28,35,0 << !Warlock
@@ -7502,28 +7351,6 @@ step
     .accept 790 >>Accept Sarkoth
     .target Hana'zua
 step
-    #season 2
-    #label Sarkoth
-    .goto Durotar,40.60,66.80
-    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r << !Hunter !Warrior
-    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r and for |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
-    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r and for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
-    .complete 790,1 --Sarkoth's Mangled Claw (1)
-    .collect 206169,1,790,1 << Hunter --Rune of Explosive Shot (1)
-    .collect 204809,1,790,1 << Warrior --Rune of Furious Thunder(1)
-    .mob Sarkoth
-step << Warrior
-    #season 2
-    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
-    .use 204809
-    .itemcount 204809,1
-step << Hunter
-    #season 2
-    .train 410123 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
-    .use 206169
-    .itemcount 206169,1
-step
-    #season 0
     #label Sarkoth
     .goto Durotar,40.60,66.80
     >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r
@@ -7627,30 +7454,10 @@ step
     .turnin 804 >>Turn in Sarkoth << !Shaman
     .target Gornek
 step << Rogue
+    #season 0
     #completewith Rwag
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.27,68.00,12 >>Travel toward |cRXP_FRIENDLY_Rwag|r
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
-    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
-    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
-    .train 53 >> Train |T132090:0|t[Backstab]
-    .target Rwag
-    .money <0.04
-    .xp <4,1
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
-    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
-    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
-    .target Rwag
 step << Rogue
     #season 0
     .goto Durotar,41.27,68.00
@@ -7695,8 +7502,6 @@ step << Warlock
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
-    .accept 77586 >>Accept Stolen Power
-    .train 172 >> Train |T136118:0|t[Corruption]
     .target Nartok
 step << Warlock
     #season 0
@@ -7713,6 +7518,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
     .target Galgar
+    .xp >4,1
 step << !Rogue
     #xprate <1.5
     .goto Durotar,42.59,67.34
@@ -7727,6 +7533,7 @@ step << !Rogue
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
 step << !Rogue
     #xprate >1.49
+    #season 0 << Mage
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
@@ -7801,8 +7608,6 @@ step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Turn in Glyphic Tablet << Troll
-    .accept 77643 >>Accept Spell Research << Troll Mage
-    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .target Mai'ah
 step << Mage
     #season 0
@@ -7825,8 +7630,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
-    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
-    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
     .money <0.01
@@ -7838,8 +7641,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
-    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
-    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .target Jen'shan
 step << Hunter
     #xprate <1.5
@@ -7848,8 +7649,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
-    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
-    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .target Jen'shan
 step << Hunter
     #xprate >1.49
@@ -7895,8 +7694,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment << Orc
     .turnin 3065 >>Turn in Simple Tablet << Troll
-    .accept 77588 >>Accept A Trial of Fitness << Troll
-    .accept 77582 >>Accept A Trial of Fitness << Orc
     .train 772 >> Train |T132155:0|t[Rend]
     .target Frang
     .money <0.01
@@ -7907,8 +7704,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment << Orc
     .turnin 3065 >>Turn in Simple Tablet << Troll
-    .accept 77588 >>Accept A Trial of Fitness << Troll
-    .accept 77582 >>Accept A Trial of Fitness << Orc
     .target Frang
 step << Warrior
     #xprate >1.49
@@ -7935,8 +7730,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment << Orc
     .turnin 3065 >>Turn in Simple Tablet << Troll
-    .accept 77588 >>Accept A Trial of Fitness << Troll
-    .accept 77582 >>Accept A Trial of Fitness << Orc
     .target Frang
 step << Warrior
     #xprate <1.5
@@ -7967,72 +7760,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
     .accept 5441 >>Accept Lazy Peons
     .target Foreman Thazz'ril
-step << Priest
-    #season 2
-    .goto Durotar,55.41,72.84
-    >>Travel to the |cRXP_FRIENDLY_Serpent Loa|r statue at Sen'Jin Village and type /kneel
-    .use 205951 >>Talk to |cRXP_FRIENDLY_Serpent Loa|r as he appears, then use |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
-    .complete 77642,1 --Learn Spell: Engrave Gloves - Penance
-    .target Serpent Loa
-    .skipgossip
-step << Priest
-    #season 2
-    .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-    .turnin 77642 >>Turn in Wisdom of the Loa
-    .target Ken'jai
-step << Rogue/Warrior
-    #season 2
-    .goto Durotar,43.27,69.51
-    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
-    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    >>|cRXP_WARN_Walk around past |cRXP_ENEMY_Sarkoth|r and jump down to reach the chest|r
-    .collect 204795,1,77592,1 << Troll Rogue --Rune of Shadowstrike (1)
-    .collect 204795,1,77583,1 << Orc Rogue --Rune of Shadowstrike (1)
-    .collect 204806,1,77588,1 << Troll Warrior--Rune of Victory Rush (1)
-    .collect 204806,1,77582,1 << Orc Warrior --Rune of Victory Rush (1)
-step << Rogue/Warrior
-    #season 2
-    .use 204795 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
-    .use 204806 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    .complete 77592,1 << Troll Rogue --Learn Spell: Engrave Gloves - Shadowstrike
-    .complete 77583,1 << Orc Rogue --Learn Spell: Engrave Gloves - Shadowstrike
-    .complete 77588,1 << Troll Warrior --Learn Spell: Engrave Gloves - Victory Rush
-    .complete 77582,1 << Orc Warrior --Learn Spell: Engrave Gloves - Victory Rush
-    .isOnQuest 77592 << Troll Rogue
-    .isOnQuest 77583 << Orc Rogue
-    .isOnQuest 77588 << Troll Warrior
-    .isOnQuest 77582 << Orc Warrior
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
-    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Rwag
-    .money <0.011
-    .xp <4,1
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
-    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .target Rwag
-step << Warrior
-    #season 2
-    .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .turnin 77588 >>Turn in A Trial of Fitness << Troll
-    .turnin 77582 >>Turn in A Trial of Fitness << Orc
-    .target Frang
 step
     #completewith Sting
     >>Loot the |cRXP_LOOT_Cactus Apples|r near the Cacti
     .complete 4402,1 --Cactus Apple (10)
+    .isOnQuest 4402
 step
     #completewith Tails
     .goto Durotar,44.98,69.13,45,0
@@ -8053,201 +7785,12 @@ step << Shaman
     >>Kill |cRXP_ENEMY_Vile Familiars|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
-step << Shaman
-    #season 2
-    #loop
-	.goto Durotar,43.26,58.28,0
-    .goto Durotar,43.26,58.28,40,0
-    .goto Durotar,42.81,58.41,40,0
-    .goto Durotar,41.90,58.35,40,0
-    .goto Durotar,41.97,59.20,40,0
-    .goto Durotar,41.36,60.35,40,0
-    .goto Durotar,40.66,61.27,40,0
-    .goto Durotar,40.07,61.35,40,0
-    .goto Durotar,39.42,61.29,40,0
-    .goto Durotar,39.46,62.17,40,0
-    .goto Durotar,39.55,63.10,40,0
-    .goto Durotar,40.13,64.04,40,0
-    .goto Durotar,40.84,64.06,40,0
-    .goto Durotar,40.74,65.86,40,0
-    .goto Durotar,39.93,66.03,40,0
-    .goto Durotar,40.04,66.99,40,0
-    .goto Durotar,40.09,67.66,40,0
-    .goto Durotar,40.13,68.50,40,0
-    .goto Durotar,40.72,68.55,40,0
-    .goto Durotar,41.30,67.84,40,0
-    .goto Durotar,41.37,66.72,40,0
-    .goto Durotar,41.89,66.05,40,0
-    .goto Durotar,41.27,65.71,40,0
-    .goto Durotar,41.36,64.07,40,0
-    .goto Durotar,41.33,63.12,40,0
-    .goto Durotar,41.35,61.98,40,0
-    .goto Durotar,41.49,61.25,40,0
-    .goto Durotar,41.90,60.24,40,0
-    .goto Durotar,42.51,59.34,40,0
-    .goto Durotar,43.08,59.62,40,0
-    .goto Durotar,43.91,59.33,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.85,60.34,40,0
-    .goto Durotar,46.46,61.11,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.14,64.08,40,0
-    .goto Durotar,47.58,64.04,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,46.90,61.15,40,0
-    .goto Durotar,46.98,60.18,40,0
-    .goto Durotar,47.07,59.34,40,0
-    .goto Durotar,46.47,58.28,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,43.91,59.33,40,0
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
-    .collect 206381,1,77587,1 << Troll Shaman --Dyadic Icon (1)
-    .collect 206381,1,77585,1 << Orc Shaman --Dyadic Icon (1)
-    .mob Scorpid Worker
-    .train 410094,1
-step << Shaman
-    #season 2
-    .equip 18,206381 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
-    .use 206381
-    .itemcount 206381,1 --Dyadic Icon (1)
-    .train 410094,1
-    .xp <3,1
-step << Shaman
-    #season 2
-    #loop
-	.goto Durotar,43.26,58.28,0
-    .goto Durotar,43.26,58.28,40,0
-    .goto Durotar,42.81,58.41,40,0
-    .goto Durotar,41.90,58.35,40,0
-    .goto Durotar,41.97,59.20,40,0
-    .goto Durotar,41.36,60.35,40,0
-    .goto Durotar,40.66,61.27,40,0
-    .goto Durotar,40.07,61.35,40,0
-    .goto Durotar,39.42,61.29,40,0
-    .goto Durotar,39.46,62.17,40,0
-    .goto Durotar,39.55,63.10,40,0
-    .goto Durotar,40.13,64.04,40,0
-    .goto Durotar,40.84,64.06,40,0
-    .goto Durotar,40.74,65.86,40,0
-    .goto Durotar,39.93,66.03,40,0
-    .goto Durotar,40.04,66.99,40,0
-    .goto Durotar,40.09,67.66,40,0
-    .goto Durotar,40.13,68.50,40,0
-    .goto Durotar,40.72,68.55,40,0
-    .goto Durotar,41.30,67.84,40,0
-    .goto Durotar,41.37,66.72,40,0
-    .goto Durotar,41.89,66.05,40,0
-    .goto Durotar,41.27,65.71,40,0
-    .goto Durotar,41.36,64.07,40,0
-    .goto Durotar,41.33,63.12,40,0
-    .goto Durotar,41.35,61.98,40,0
-    .goto Durotar,41.49,61.25,40,0
-    .goto Durotar,41.90,60.24,40,0
-    .goto Durotar,42.51,59.34,40,0
-    .goto Durotar,43.08,59.62,40,0
-    .goto Durotar,43.91,59.33,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.85,60.34,40,0
-    .goto Durotar,46.46,61.11,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.14,64.08,40,0
-    .goto Durotar,47.58,64.04,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,46.90,61.15,40,0
-    .goto Durotar,46.98,60.18,40,0
-    .goto Durotar,47.07,59.34,40,0
-    .goto Durotar,46.47,58.28,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,43.91,59.33,40,0
-    .aura 408828 >>Continue to kill |cRXP_ENEMY_Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
-    .mob Scorpid Worker
-    --User must be level 3 to be able to use item!
-step << Shaman
-    #season 2
-    #label OverloadRune
-    >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
-    .use 206381
-    .complete 77587,1 << Troll Shaman --Learn Spell: Engrave Chest - Overload
-    .complete 77585,1 << Orc Shaman --Learn Spell: Engrave Chest - Overload
 step << Hunter
     #season 2
     #completewith ChimeraRune
     >>Kill |cRXP_ENEMY_Vile Familiars|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
-step << Hunter
-    #season 2
-    #loop
-    .goto Durotar,43.26,58.28,0
-    .goto Durotar,43.26,58.28,40,0
-    .goto Durotar,42.81,58.41,40,0
-    .goto Durotar,41.90,58.35,40,0
-    .goto Durotar,41.97,59.20,40,0
-    .goto Durotar,41.36,60.35,40,0
-    .goto Durotar,40.66,61.27,40,0
-    .goto Durotar,40.07,61.35,40,0
-    .goto Durotar,39.42,61.29,40,0
-    .goto Durotar,39.46,62.17,40,0
-    .goto Durotar,39.55,63.10,40,0
-    .goto Durotar,40.13,64.04,40,0
-    .goto Durotar,40.84,64.06,40,0
-    .goto Durotar,40.74,65.86,40,0
-    .goto Durotar,39.93,66.03,40,0
-    .goto Durotar,40.04,66.99,40,0
-    .goto Durotar,40.09,67.66,40,0
-    .goto Durotar,40.13,68.50,40,0
-    .goto Durotar,40.72,68.55,40,0
-    .goto Durotar,41.30,67.84,40,0
-    .goto Durotar,41.37,66.72,40,0
-    .goto Durotar,41.89,66.05,40,0
-    .goto Durotar,41.27,65.71,40,0
-    .goto Durotar,41.36,64.07,40,0
-    .goto Durotar,41.33,63.12,40,0
-    .goto Durotar,41.35,61.98,40,0
-    .goto Durotar,41.49,61.25,40,0
-    .goto Durotar,41.90,60.24,40,0
-    .goto Durotar,42.51,59.34,40,0
-    .goto Durotar,43.08,59.62,40,0
-    .goto Durotar,43.91,59.33,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.85,60.34,40,0
-    .goto Durotar,46.46,61.11,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.14,64.08,40,0
-    .goto Durotar,47.58,64.04,40,0
-    .goto Durotar,47.08,63.15,40,0
-    .goto Durotar,47.09,62.24,40,0
-    .goto Durotar,46.90,61.15,40,0
-    .goto Durotar,46.98,60.18,40,0
-    .goto Durotar,47.07,59.34,40,0
-    .goto Durotar,46.47,58.28,40,0
-    .goto Durotar,45.81,59.30,40,0
-    .goto Durotar,45.15,59.46,40,0
-    .goto Durotar,43.91,59.33,40,0
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
-    .collect 206168,1,77590,1 << Troll Hunter --Rune of the Chimera (1)
-    .collect 206168,1,77584,1 << Orc Hunter --Rune of the Chimera (1)
-    .mob Scorpid Worker
-    .train 410121,1
-step << Hunter
-    #season 2
-    #label ChimeraRune
-    .use 206168 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
-    .complete 77590,1 << Troll Hunter --Learn Spell: Engrave Gloves - Chimera Shot
-    .complete 77584,1 << Orc Hunter --Learn Spell: Engrave Gloves - Chimera Shot
-    .isOnQuest 77590 << Troll Hunter
-    .isOnQuest 77584 << Orc Hunter
-    .train 410121,1
 step << !Warlock
     #label Imps
     #loop
@@ -8388,6 +7931,7 @@ step << Shaman
     .target Shikrik
     .target Canaga Earthcaller
 step << Mage
+    #season 0
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .train 116 >> Train |T135846:0|t[Frostbolt]
@@ -8439,12 +7983,6 @@ step << Priest
     .turnin 3085 >>Turn in Hallowed Tablet
     .money <0.01
     .target Ken'jai
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Rwag
 step << !Warlock
 	.goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
@@ -8519,6 +8057,7 @@ step
     .goto Durotar,46.08,62.98,25,0
     >>Loot the |cRXP_LOOT_Cactus Apples|r near the Cacti
     .complete 4402,1 --Cactus Apple (10)
+    .isOnQuest 4402
 step
 	#completewith Thazz
     #label Cave
@@ -8542,32 +8081,6 @@ step
     .goto Durotar,43.72,53.79
     >>Loot |cRXP_LOOT_Thazz'ril's Pick|r against the wall
     .complete 6394,1 --Thazz'ril's Pick (1)
-step << Mage/Warlock
-    #season 2
-    .goto Durotar,43.004,54.456
-    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r << Mage
-    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Troll Mage
-    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r << Warlock
-    .collect 203751,1,77643,1 << Mage --Spell Notes: CALE ENCI (1)
-    .collect 205230,1,77586,1 << Warlock--Rune of Haunting (1)
-    .train 401760,1 << Mage
-step << Mage
-    #season 2
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
-    .use 203751
-    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
-step << Warlock
-    #season 2
-    .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .complete 77586,1 --Learn Spell: Engrave Gloves - Haunt
-    .isOnQuest 77586
-step << Rogue
-    #season 2
-    .goto Durotar,42.70,52.99
-    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Yarrog Baneshadow|r for |T134331:0|t[|cRXP_LOOT_Note from Ba'so|r]
-    .collect 207098,1 --Note from Ba'so (1)
-	.mob Yarrog Baneshadow
-    .train 400094,1
 step
     #label Yarrog
     .goto Durotar,42.70,52.99
@@ -8600,35 +8113,6 @@ step << Shaman
     >>Kill |cRXP_ENEMY_Felstalkers|r. Loot them for |cRXP_LOOT_Felstalker Hooves|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
-step << Hunter
-    #season 2
-    #loop
-	.goto Durotar,42.70,52.99,0
-	.goto Durotar,42.70,52.99,25,0
-	.goto Durotar,42.97,51.14,25,0
-	.goto Durotar,43.56,52.05,25,0
-	.goto Durotar,43.74,52.65,25,0
-	.goto Durotar,44.13,52.85,25,0
-	.goto Durotar,44.82,52.51,25,0
-	.goto Durotar,44.83,53.40,25,0
-	.goto Durotar,44.78,54.57,25,0
-	.goto Durotar,45.14,55.02,25,0
-	.goto Durotar,45.51,55.23,25,0
-	.goto Durotar,45.14,55.02,25,0
-	.goto Durotar,44.51,55.03,25,0
-	.goto Durotar,44.21,54.12,25,0
-	.goto Durotar,43.92,54.30,25,0
-	.goto Durotar,43.87,55.22,25,0
-	.goto Durotar,43.46,55.56,25,0
-	.goto Durotar,43.05,55.24,25,0
-	.goto Durotar,42.38,54.22,25,0
-	.goto Durotar,42.53,53.48,25,0
-	.goto Durotar,43.27,53.82,25,0
-    .xp 6 >> Grind to level 6
-    >>|cRXP_WARN_This will allow you to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_early|r
-    .mob Felstalker
-    .mob Vile Familiar
-    .train 410113,1
 step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
@@ -8649,15 +8133,6 @@ step
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
-step << Hunter
-    #softcore
-    #season 2
-    .goto Durotar,51.85,43.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
-    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
-    .train 410113,1
-    .target Thotar
 step
     #softcore
     #completewith next
@@ -8703,22 +8178,6 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
-step << Hunter
-    #softcore
-    #season 2
-    .goto Durotar,40.61,52.19
-    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
-    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Marksmanship (1)
-    .mob Rustling Bush
-    .mob Razormane Poacher
-    .train 410113,1
-step << Hunter
-    #softcore
-    #season 2
-    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
-    .use 206155
-    .itemcount 206155,1
 step
     #completewith BurningBladeTurnin
     .hs >>Hearth to the Valley of Trials
@@ -8734,12 +8193,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
     .target Galgar
+    .isQuestComplete 4402
 step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.03
+step
+    .goto Durotar,42.74,68.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
+    .target Rune Broker
+    .skipgossip
 step
     #label BurningBladeTurnin
     .goto Durotar,42.85,69.15
@@ -8748,21 +8215,20 @@ step
     .accept 805 >>Accept Report to Sen'jin Village
     .target Zureetha Fargaze
 step << Priest
+    #season 0
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
 	.accept 5649 >> Accept In Favor of Spirituality
 	.train 591 >>Train |T135924:0|t[Smite]
     .train 17 >>Train |T135940:0|t[Power Word: Shield]
     .target Ken'jai
-step << Mage
+step << Priest
     #season 2
-    .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
-    .train 143 >> Train |T135812:0|t[Fireball]
-    .train 2136 >>Train |T135807:0|t[Fire Blast]
-    .turnin 77643 >> Turn in Spell Research
-    .target Mai'ah
-    .isQuestComplete 77643
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
+	.accept 5649 >> Accept In Favor of Spirituality
+    .train 17 >>Train |T135940:0|t[Power Word: Shield]
+    .target Ken'jai
 step << Mage
     #season 0
     .goto Durotar,42.51,69.04
@@ -8787,17 +8253,13 @@ step << Shaman
     .accept 1517 >>Accept Call of Earth
     .target Canaga Earthcaller
 step << Hunter
+    #season 2
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
-    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+--    .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .target Jen'shan
-    .money <0.02
-step << Hunter
-    .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
-    .train 3044 >>Train |T132218:0|t[Arcane Shot]
-    .target Jen'shan
+    .money <0.01
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
@@ -9457,15 +8919,6 @@ step
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
-step << Hunter
-    #hardcore
-    #season 2
-    .goto Durotar,51.85,43.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
-    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
-    .train 410113,1
-    .target Thotar
 step
     #hardcore
     #completewith next
@@ -9511,22 +8964,6 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
-step << Hunter
-    #hardcore
-    #season 2
-    .goto Durotar,40.61,52.19
-    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
-    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Marksmanship (1)
-    .mob Rustling Bush
-    .mob Razormane Poacher
-    .train 410113,1
-step << Hunter
-    #hardcore
-    #season 2
-    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
-    .use 206155
-    .itemcount 206155,1
 step
     #xprate <1.5
     #label TravelToTiragarde

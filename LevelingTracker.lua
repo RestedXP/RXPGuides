@@ -15,10 +15,10 @@ local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 local EasyMenu = function(...)
-    if LibDD then
-        LibDD:EasyMenu(...)
-    else
+    if _G.EasyMenu then
         _G.EasyMenu(...)
+    else
+        LibDD:EasyMenu(...)
     end
 end
 
@@ -809,7 +809,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not trackerUi then return end
     addon.enabledFrames["trackerUi"] = trackerUi
     trackerUi.IsFeatureEnabled = function()
-        return addon.settings.profile.enableTracker
+        return addon.settings.profile.enableTracker,false
     end
     self.state.levelReportData = nil
 
@@ -1146,7 +1146,7 @@ function addon.tracker:CreateLevelSplits()
     addon.tracker.levelSplits = f
     addon.enabledFrames["levelSplits"] = f
     f.IsFeatureEnabled = function()
-        return addon.settings.profile.enablelevelSplits
+        return addon.settings.profile.enablelevelSplits,false
     end
     f:SetClampedToScreen(true)
     f:EnableMouse(true)

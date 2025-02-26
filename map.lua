@@ -27,7 +27,8 @@ end
 
 addon.enabledFrames["arrowFrame"] = af
 af.IsFeatureEnabled = function ()
-    return not addon.settings.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
+    local shown = not addon.settings.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
+    return shown,false
 end
 
 --local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"

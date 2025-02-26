@@ -116,6 +116,7 @@ step << Warrior/Mage/Warlock/Hunter
     .collect 210818,1 << Hunter --Rune of Lone Wolf
     .collect 213124,1 << Hunter --Rune of Close Combat
     .collect 226252,1 << Hunter --Rune of the Guerrilla
+    .collect 216770,1 << Hunter --Treatise on Aspect of the Viper
     .collect 205215,1 << Warlock --Rune of Tactics
     .collect 210824,1 << Warlock --Rune of the Pact
     .collect 211477,1 << Warlock --Rune of Incinerate
@@ -135,9 +136,10 @@ step << Warrior/Mage/Hunter
     .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
     .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
     .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper to train |T132160:0|t[Aspect of the Viper]|r] << Hunter
     .train 416009 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r] to train |T136150:0|t[Demonic Tactics] << Warlock
     .train 425476 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] to train |T237562:0|t[Demonic Pact] << Warlock
-    .train 211477 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
+    .train 416015 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
     .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
     .train 403619 >> Use the |T133733:0|t[Grimoire of Fel Armor] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
     .use 208799 << Mage --Spell Notes: Living Bomb
@@ -147,6 +149,7 @@ step << Warrior/Mage/Hunter
     .use 210818 << Hunter --Rune of Lone Wolf
     .use 213124 << Hunter --Rune of Close Combat
     .use 226252 << Hunter --Rune of the Guerrilla
+    .use 216770 << Hunter --Treatise on Aspect of the Viper
     .use 204806 << Warrior --Rune of Victory Rush
     .use 205215 << Warlock --Rune of Tactics
     .use 210824 << Warlock --Rune of the Pact
