@@ -711,13 +711,13 @@ step
     .accept 83168 >>Accept A Trail of Black Blood
     .target Orweyna
 step
-    .isQuestAvailable account 87581
+    .isQuestAvailable account,87581
     .goto 2346,43.26,59.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
     .accept 87581 >>Accept No More Walkin' Here
     .target Gas Grimeshank
 step
-    .isQuestAvailable account 86618
+    .isOnQuest 84352,87581
     #completewith next
     #label NoMoreWalkinHere
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
@@ -725,7 +725,7 @@ step
     .accept 86618 >>Accept License Not Required
     .target Nanny Talullah
 step
-    .isQuestAvailable account 86618
+    .isQuestAvailable account,86618
     #completewith NoMoreWalkinHere
     .goto 2346,35.40,48.84,15,0
     .goto 2346,36.49,46.12,15,0
@@ -735,7 +735,7 @@ step
     .goto 2346,37.78,46.73,5,0
     .goto 2346,38.11,47.25,5 >>Climb the stairs of the house
 step
-    .isQuestAvailable account 86618
+    .isOnQuest 84352,87581
     #requires NoMoreWalkinHere
     .goto 2346,37.42,48.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
@@ -994,7 +994,7 @@ step
     .accept 83114 >>Accept Red Tape
     .target Monte Gazlowe
 step
-    .isQuestAvailable account 86535
+    .isQuestAvailable account,86535
     .goto 2346,27.67,54.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rustol|r
     .accept 86535 >>Accept Test Run
