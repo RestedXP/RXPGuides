@@ -750,25 +750,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nanny Talullah|r
     .complete 86618,1 --1/1 Talk to Nanny Talullah
     .target Nanny Talullah
-    .skipgossipid 131561
-step
-    .isOnQuest 86618
-    #hidewindow
-    #completewith next
-    #label GetInG99Breakneck
-    .complete 86618,2 --1/1 Get in the G-99 Breakneck
-step
-    .isOnQuest 86618
-    #completewith GetInG99Breakneck
-    .goto 2346,37.31,49.09
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Escape Chains|r
-    .complete 86618,3 --1/1 Use the escape chains to reach the streets of Undermine (Optional)
-step
-    .isOnQuest 86618
-    #requires GetInG99Breakneck
-    .goto 2346,36.90,50.03
-    >>Use the |T1408996:0|t[G-99 Breakneck] button (zone button)
-    .complete 86618,2 --1/1 Get in the G-99 Breakneck
+    .skipgossipid 132619
 step
     #title |cFFFCDC00Follow the arrow|r
     .goto 2346,33.46,48.27
