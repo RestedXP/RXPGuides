@@ -158,7 +158,7 @@ step
     .gossipoption 123518 >>Talk to |cRXP_FRIENDLY_Zirdo|r.
     .timer 17,Roleplay
 step
-    .goto 2214,76.69,79.13
+    .goto 2214,72.54,79.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zirdo|r.
     .complete 83143,1 --1/1 Begin the tour
     .target Zirdo
