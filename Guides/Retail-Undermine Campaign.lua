@@ -376,7 +376,7 @@ step
     .target +Orweyna
     .turnin 85444 >>Turn in Found Family
     .accept 83148 >>Accept X-Treme Chill
-    .timer 5,Roleplay
+    .timer 6,Roleplay
     .goto 2214,70.53,88.75
     .target +Monte Gazlowe
 step
@@ -557,7 +557,7 @@ step
     .goto 2346,42.68,51.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
     .complete 83096,3 --1/1 Speak to Gas Grimeshank
-    .timer 24,Roleplay
+    .timer 25,Roleplay
     .target Gas Grimeshank
     .skipgossipid 131277
 step
@@ -570,7 +570,7 @@ step
     #completewith next
     .goto 2346,39.80,53.04
     .vehicle >>|Tinterface/cursor/crosshair/driver.blp:20|tClick on the |cRXP_PICK_Gramps|r
-    .timer 37,RP
+    .timer 37,Roleplay
 step
     .goto 2346,45.21,42.12
     >>|cRXP_WARN_Wait for the roleplay.|r
@@ -1030,7 +1030,7 @@ step
     .goto 2346,17.79,50.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Customs Agents|r. Defeat the ones that turn hostile
     .complete 83114,2 --4/4 Customs Agents convinced to leave
-    .timer 17,RP
+    .timer 17,Roleplay
     .target Custom Agent
     .skipgossipid 124207
     .skipgossipid 124208
