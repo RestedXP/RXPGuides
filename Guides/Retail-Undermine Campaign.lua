@@ -19,6 +19,7 @@ step
     .accept 83137 >>Accept When Opportunity Explodes
     .target Renzik "The Shiv"
 step
+    .zoneskip 2214
     .isQuestTurnedIn 78546
     .goto 2248,37.60,72.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oathsworn Earthen|r.
