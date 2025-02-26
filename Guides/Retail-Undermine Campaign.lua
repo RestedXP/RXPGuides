@@ -711,7 +711,7 @@ step
     .accept 83168 >>Accept A Trail of Black Blood
     .target Orweyna
 step
-    .isQuestAvailable account 86618
+    .isQuestAvailable account 87581
     .goto 2346,43.26,59.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
     .accept 87581 >>Accept No More Walkin' Here
@@ -890,12 +890,6 @@ step
     .target Mobber
     .skipgossipid 125367
 step
-    .isOnQuest 86618
-    #completewith next
-    >>Use the |T1408996:0|t[G-99 Breakneck] button (zone button)
-    >>Drive around and drift (hold space) to gain Turbo (or pick up cans). Use the |T4548870:0|t[Boost] (1) when you have enough Turbo.
-    .complete 86618,7 --1/1 Get back in the G-99 Breakneck and activate your boost
-step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r and |cRXP_FRIENDLY_Monte Gazlowe|r
     .turnin 83172 >>Turn in Black Blood Baton Pass
     .accept 83173 >>Accept Clearing Out the Depot
@@ -1049,11 +1043,6 @@ step
     .accept 83115 >>Accept In the Mix
     .target Monte Gazlowe
 step
-    .isOnQuest 86618
-    #completewith next
-    >>Drive around and drift (hold space) to gain Turbo (boost meter).
-    .complete 86618,8 --30/30 Regain boost meter by drifting
-step
     #completewith next
     #label FindNoggenfoggerInVatworks
     .complete 83115,1 --1/1 Find Noggenfogger in the Vatworks
@@ -1155,12 +1144,6 @@ step
     .goto 2346,27.86,70.82,5,0
     .goto 2346,29.02,69.64,5 >>Leave the laboratory
 step
-    .isOnQuest 86618
-    #requires ChasingaLeadA
-    #completewith next
-    >>Drive around and drift (hold space) to gain Turbo (boost meter).
-    .complete 86618,8 --30/30 Regain boost meter by drifting
-step
     #requires ChasingaLeadA
     .goto 2346,46.08,78.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
@@ -1242,13 +1225,6 @@ step
     .turnin 83120 >>Turn in Stealing the Keys
     .accept 83933 >>Accept The Kaja'Coast
     .target Monte Gazlowe
-step
-    .isOnQuest 86618
-    >>Drive around and drift (hold space) to gain Turbo (boost meter).
-    .complete 86618,8 --30/30 Regain boost meter by drifting
-step
-    .isOnQuest 86618
-    #include RestedXP The War Within\Unlock G-99 Breakneck@UnlockG99BreakneckB-UnlockG99BreakneckC
 step
     .goto 2346,18.80,52.21
     #title |cFFFCDC00Follow the arrow|r
