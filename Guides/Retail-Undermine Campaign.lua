@@ -555,6 +555,7 @@ step
     .complete 83096,4 --1/1 Speak to Smaks Topskimmer
     .target Smaks Topskimmer
     .skipgossipid 131276
+    .skipgossipid 131311
 step
     .goto 2346,42.68,51.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gas Grimeshank|r
