@@ -1461,7 +1461,6 @@ step
     #title |cFFFCDC00Follow the arrow|r
     .complete 83125,3 --1/1 Meet Gazlowe at the Vatworks
 step
-    .goto 2346,25.03,53.02,15,0
     .goto 2346,29.22,69.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
     .turnin 83125 >>Turn in Price Hike
