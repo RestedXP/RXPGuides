@@ -218,10 +218,10 @@ step
     .timer 15,Roleplay
 step
     #loop
-    .goto 2214,70.93,82.88,30,0
-    .goto 2214,70.31,81.12,35,0
-    .goto 2214,68.07,83.52,35,0
-    .goto 2214,69.95,85.88,35,0
+    .goto 2214,70.93,82.88,45,0
+    .goto 2214,70.31,81.12,45,0
+    .goto 2214,68.07,83.52,45,0
+    .goto 2214,69.95,85.88,45,0
     >>Kill |cRXP_ENEMY_Giant Gorewalker|r and |cRXP_ENEMY_Forming Pusglob|r
     .complete 83144,2 --2/2 Giant Gorewalker slain
     .mob +Giant Gorewalker
@@ -485,12 +485,13 @@ step
     .complete 83151,1 --1/1 Speak to Gazlowe
     .target Monte Gazlowe
     .skipgossipid 123805
--- step
---     .goto 2214,70.33,89.59
---     >>|Tinterface/cursor/crosshair/driver.blp:20|tClick on |cRXP_PICK_Pamsy's Rocketboard|r
---     .complete 83151,2 --1/1 Ride Pamsy's Rocketboard (Optional)
---     .timer 20,RP
---     .target Pamsy's Rocketboard
+step
+    #completewith next
+    .goto 2214,70.33,89.59,0,0
+    >>|Tinterface/cursor/crosshair/driver.blp:20|tClick on |cRXP_PICK_Pamsy's Rocketboard|r |cRXP_WARN_(Optional)|r
+    .complete 83151,2 --1/1 Ride Pamsy's Rocketboard (Optional)
+    .timer 20,RP
+    .target Pamsy's Rocketboard
 step
     .goto 2214,72.96,73.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stelliya|r.
@@ -863,8 +864,8 @@ step
     .goto 2346,30.71,39.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Revilgaz|r
     .turnin 83170 >>Turn in Not Again!
-    .target Baron Revilgaz
     .turnin 83171 >>Turn in Eye Sores for Sore Eyes
+    .target Baron Revilgaz
 step
     .goto 2346,30.79,39.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r
@@ -1173,7 +1174,6 @@ step
     .use 226358
 step
     #title |cFFFCDC00Avoid the |cFFFF5722Hyenas|r|r. Schedule (1/3)
-    .goto 2346,46.82,83.82,10,0
     .goto 2346,46.6,86.1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Employee Schedule|r
     .complete 83118,1,1 --1/3 Employee Schedule
@@ -1189,6 +1189,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Employee Schedule|r
     .complete 83118,1 --3/3 Employee Schedule
 step
+    #title |cFFFCDC00Avoid the |cFFFF5722Hyenas|r|r
     #loop
     .goto 2346,44.95,88.03,25,0
     .goto 2346,50.19,86.74,20,0
