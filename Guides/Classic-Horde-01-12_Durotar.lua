@@ -981,6 +981,7 @@ step << Shaman
     .target Shikrik
     .target Canaga Earthcaller
 step << Mage
+    #season 0
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .train 116 >> Train |T135846:0|t[Frostbolt]
@@ -1176,25 +1177,6 @@ step
     .goto Durotar,43.72,53.79
     >>Loot |cRXP_LOOT_Thazz'ril's Pick|r against the wall
     .complete 6394,1 --Thazz'ril's Pick (1)
-step << Mage/Warlock
-    #season 2
-    .goto Durotar,43.004,54.456
-    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r << Mage
-    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Troll Mage
-    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r << Warlock
-    .collect 203751,1,77643,1 << Mage --Spell Notes: CALE ENCI (1)
-    .collect 205230,1,77586,1 << Warlock--Rune of Haunting (1)
-    .train 401760,1 << Mage
-step << Mage
-    #season 2
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
-    .use 203751
-    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
-step << Warlock
-    #season 2
-    .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .complete 77586,1 --Learn Spell: Engrave Gloves - Haunt
-    .isOnQuest 77586
 step
     #label Yarrog
     .goto Durotar,42.70,52.99
@@ -6970,12 +6952,14 @@ step
     .accept 4641 >>Accept Your Place In The World
     .target Kaltunk
 step
+    #season 2
     .xp 2 >> Kill four |cRXP_ENEMY_Mottled Boars|r to reach level 2
     >>|cRXP_WARN_Loot them until you have 15 copper worth of vendor items << !Warlock !Priest
     >>|cRXP_WARN_Loot them until you have 30 copper worth of vendor items << Warlock/Priest
     .goto Durotar,44.32,71.16
     .mob Mottled Boar
 step
+    #season 2
     .goto Durotar,42.73,68.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
     >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
@@ -6987,6 +6971,7 @@ step
     .collect 206387,1 << Shaman --Kajaric Icon
     .collect 206381,1 << Shaman --Dyadic Icon
     .collect 204806,1 << Warrior --Rune of Victory Rush
+    .collect 204716,1 << Orc Warrior --Rune of Frenzied Assault
     .collect 208799,1 << Mage --Spell Notes: Living Bomb
     .collect 203746,1 << Mage --Spell Notes: Living Flame
     .collect 203748,1 << Mage --Spell Notes: Burnout
@@ -7019,12 +7004,13 @@ step
     .target Rune Broker
     .skipgossip
 step
+    #season 2
     .train 403470 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] to train |T132342:0|t[Victory Rush]<< Warrior
     .train 415936 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Bomb|r] to train |T236220:0|t[Living Bomb] << Mage
     .train 401759 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] to train |T236207:0|t[Burnout] << Mage
     .train 440858 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Frozen Orb|r] to train |T135851:0|t[Frozen Orb] << Mage
     .train 401760 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Ice Lance|r] to train |T135844:0|t[Ice Lance] << Mage
-    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] << Mage
+    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] to train |T135820:0|t[Living Flame]  << Mage
     .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
     .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
     .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
@@ -7036,9 +7022,7 @@ step
     .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
     .train 403619 >> Use the |T133733:0|t[Grimoire of Fel Armor] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
     .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
-    .train 407798 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] to train |T135961:0|t[Seal of Martyrdom], |cRXP_WARN_use it as your primary Seal|r << Paladin
     .train 425447 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] to train |T236317:0|t[Frenzied Assault] << Orc Warrior
-    .train 401768 >> Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Living Flame|r] << Mage
     .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] to train |T236174:0|t[Kill Shot] << Hunter
     .train 409580 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] to train |T132185:0|t[Heart of the Lion] << Hunter
     .train 400101 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shadowstep|r] to train |T132303:0|t[Shadowstep] << Rogue
@@ -7057,7 +7041,6 @@ step
     .use 205940 << Priest --Memory of a Dark Purpose
     .use 205951 << Priest --Memory of a Troubled Acolyte
     .use 205932 << Priest --Prophecy of a King's Demise
-    .use 226398 << Paladin --Testament of martyrdom
     .use 204716 << Orc Warrior --Rune of Frenzied Assault
     .use 203746 << Mage --Spell Notes: Living Flame
     .use 209852 << Hunter --Rune of Kill Command
@@ -7066,6 +7049,7 @@ step
     .use 203748 << Mage --Spell Notes: Burnout
     .use 225690 << Mage --Spell Notes: Frozen Orb
     .use 203746 << Mage --Spell Notes: Living Flame
+    .use 203745 << Mage --Spell Notes: Ice Lance
     .use 204716 << Orc Warrior --Rune of Frenzied Assault
     .use 206168 << Hunter --Rune of the Chimera
     .use 210818 << Hunter --Rune of Lone Wolf
@@ -7084,16 +7068,22 @@ step
     .use 208772 << Rogue --Rune of Saber Slash
     .use 227922 << Rogue --Rune of the Swashbuckler
 step << Warlock
+    #optional
+    #sticky
+    .aura 403619 >> Make sure you remember to activate your |T136156:0|t[Fel Armor]
+step << Warlock
     .goto Durotar,42.59,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruzan|r
     .accept 1485 >>Accept Vile Familiars
     .target Ruzan
 step << Shaman
+    #season 2
     #optional
     #label LavaBurst
     #sticky
     .train 410095 >> Use the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] from your charachter panel to train |T237582:0|t[Molten Blast]
 step << Shaman
+    #season 2
     #optional
     #requires LavaBurst
     #label Overload
@@ -7125,10 +7115,14 @@ step << Priest
     .turnin 77642 >>Turn in Wisom of the Loa
     .target Ken'jai
 step << Priest
+    #season 2
     .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .equip 6,3595 >> |cRXP_WARN_Equip the|r |T132513:0|t[Tattered Cloth Belt]
     .use 711
-    .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt << Priest
-    .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves << Priest
+    .use 3595
+    .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt
+    .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves
+    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants 
 step << Mage
     #season 2
     #requires Galgar
@@ -7143,10 +7137,11 @@ step << Mage
     #optional
     .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
     .use 711
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T236220:0|t[Living Bomb]
+    .engrave 10 >>|cRXP_WARN_Engrave your|r gloves with|r |T236220:0|t[Living Bomb]
     .engrave 7 >>|cRXP_WARN_Engrave your pants with|r |T135820:0|t[Living Flame]
     .engrave 5 >>|cRXP_WARN_Engrave your chest with|r |T236207:0|t[Burnout]
 step << Mage
+    #season 2
     #optional
     #sticky
     .engrave 15 >> Be on the lookout for any cloak drops. Once you get one engrave |T135851:0|t[Frozen Orb] on it
@@ -7172,12 +7167,24 @@ step << Rogue
     .train 1784 >>Train |T132320:0|t[Stealth]
     .target Rwag
 step << Rogue
+    #season 2
     #optional
-    #completewith sarkoth
     .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves]
     .engrave 10 >> Engrave |T132375:0|t[Saber Slash] on your gloves
     .use 2125 --Cracked Leather Gloves
 step << Warrior/Shaman
+    #season 0
+    .goto Durotar,42.28,68.48,10,0
+    .goto Durotar,42.89,69.44 << Warrior
+    .goto Durotar,42.39,69.00 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r << Shaman
+    .train 6673 >>Train |T132333:0|t[Battle Shout] << Warrior
+    .train 8017 >>Train |T136086:0|t[Rockbiter Weapon] << Shaman
+    .target Frang << Warrior
+    .target Shikrik << Shaman
+step << Warrior/Shaman
+    #season 2
     .goto Durotar,42.28,68.48,10,0
     .goto Durotar,42.89,69.44 << Warrior
     .goto Durotar,42.39,69.00 << Shaman
@@ -7192,6 +7199,7 @@ step << Warrior/Shaman
     .target Frang << Warrior
     .target Shikrik << Shaman
 step << Warrior
+    #season 2
     .equip 10 >> Equip the |T132938:0|t[Tarnished Chain Gloves] << Warrior
     .engrave 10 >> Engrave |T132342:0|t[Victory Rush] on your gloves << Warrior
     .engrave 7 >> Engrave |T236317:0|t[Frenzied Assault] on your pants << Orc Warrior
@@ -7251,15 +7259,13 @@ step << Warlock
     .target Huklah
 step << Warlock
     #season 2
-    #completewith Observations
     .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
     .equip 9,3596 >> |cRXP_ENEMY_Equip the|r |T132606:0|t[Tattered Cloth Bracers]
     .use 711
     .use 3596
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Haunt] << Warlock
-    .engrave 9 >> |cRXP_WARN_Engrave your|r |T132606:0|t[Tattered Cloth Bracers] with |T135789:0|t[Incinerate]
+    .engrave 10 >>|cRXP_WARN_Engrave your|r gloves with|r |T133816:0|t[Haunt] << Warlock
+    .engrave 9 >> |cRXP_WARN_Engrave your|r bracers with |T135789:0|t[Incinerate]
     .engrave 7 >> |cRXP_WARN_Engrave your pants with |T237562:0|t[Demonic Pact]
-    .train 403919,3 << Warlock
 step << Warlock
     #season 0
     #label Nartok
@@ -7317,6 +7323,7 @@ step << Warlock
     .complete 1485,1 --Vile Familiar Head (6)
     .mob Vile Familiar
 step << Hunter
+    #season 2
     #optional
     #completewith sarkoth
     .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves]
@@ -7325,6 +7332,7 @@ step << Hunter
     .aura 409583 >> Remember to activate your |T132185:0|t[Heart of the Lion]
     .use 2125 --Cracked Leather Gloves
 step << Hunter
+    #season 2
     #sticky
     #optional
     >>|cRXP_WARN_Be on the lookout for any|r Chest/Belt/Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
@@ -7332,6 +7340,7 @@ step << Hunter
     .engrave 6 >> Engrave |T132394:0|t[Meele Specialist] on your |T132513:0|t[Belt]
     .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
 step << Rogue
+    #season 2
     #sticky
     #optional
     >>|cRXP_WARN_Be on the lookout for any|r Belt/Cloak/Bracer |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
@@ -8201,6 +8210,7 @@ step
     .target Duokna
     .money >0.03
 step
+    #season 2
     .goto Durotar,42.74,68.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
     >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r

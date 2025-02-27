@@ -88,6 +88,10 @@ step << Warrior/Rogue/Mage
     .use 211477 << Warlock --Rune of Incinerate
     .use 205230 << Warlock --Rune of Haunting
     .use 228797 << Warlock --Grimoire of Fel Armor
+step << Warlock
+    #optional
+    #sticky
+    .aura 403619 >> |cRXP_WARN_Make sure you remember to activate your|r |T136156:0|t[Fel Armor]
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
     .train 6673 >>Train |T132333:0|t[Battle Shout]
