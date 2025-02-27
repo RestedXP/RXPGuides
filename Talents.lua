@@ -5,7 +5,7 @@ if addon.gameVersion > 50000 then return end
 local GameTooltip = _G.GameTooltip
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 local EasyMenu = function(...)
-    if G.EasyMenu then
+    if _G.EasyMenu then
         _G.EasyMenu(...)
     else
         LibDD:EasyMenu(...)
