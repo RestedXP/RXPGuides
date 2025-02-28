@@ -2679,6 +2679,19 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.92
                     },
+                    previewFramePositions = {
+                        name = fmt("%s Frame Positions", _G.PREVIEW),
+                        desc = fmt("%s Frame Positions", _G.PREVIEW),
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 1.93,
+                        confirm = function()
+                            return L("This action will reload your current guide when toggled off.\nAre you sure?")
+                        end,
+                        func = function()
+                            addon.settings:ToggleFramePreviews()
+                        end
+                    },
                     textColorsHeader = {
                         name = _G.LOCALE_TEXT_LABEL,
                         type = "header",
@@ -3881,6 +3894,45 @@ function addon.settings:SetupMapButton()
                     recalculateMapButton)
     end
 
+end
+
+function addon.settings:ToggleFramePreviews()
+
+    local currentGuide = addon.currentGuide
+    local nextLine = ''
+    if currentGuide.name ~= '' and currentGuide.group ~= '' then
+        nextLine = fmt("%s/%s", currentGuide.group, currentGuide.name)
+    end
+
+    local previewsGuideContent = fmt([[
+#name %s
+%s
+step
+    #sticky
+    #completewith next
+    +This is a temporary guide to allow frame positioning, skip all steps to reload the current guide
+step
+    .target %s
+    .hs >> Position Active Items
+    .goto %s,0.0,0.0
+step
+    .
+    ]],
+    fmt("%s Frame Positions", _G.PREVIEW),
+    nextLine, -- TODO fix #next auto-resume
+    addon.player.name,
+    GetRealZoneText()
+    )
+
+    addon.RegisterGuide(_G.PREVIEW, previewsGuideContent)
+
+    local guideToLoad = addon.GetGuideTable(_G.PREVIEW, fmt("%s Frame Positions", _G.PREVIEW))
+
+    addon.LoadGuide(guideToLoad)
+
+    -- Reset savedvariables to resume original guide on reload
+    RXPCData.currentGuideName = currentGuide.name
+    RXPCData.currentGuideGroup = currentGuide.group
 end
 
 function addon.settings:SaveFramePositions()
