@@ -6965,7 +6965,7 @@ step
     >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
     >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] and |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] << Orc Warrior
     >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Troll Warrior
-    >>|cRXP_BUY_Vendor trash and buy the|r |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] and |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] << Shaman
+    >>|cRXP_BUY_Vendor trash and buy the|r |T134920:0|t[|cRXP_FRIENDLY_Kajaric Icon|r] |cRXP_BUY_and|r |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] << Shaman
     >>|cRXP_BUY_Vendor trash and buy all of the key AoE runes|r << Mage
     >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Hunter/Warlock/Rogue/Priest
     .collect 206387,1 << Shaman --Kajaric Icon
@@ -7081,7 +7081,7 @@ step << Shaman
     #optional
     #label LavaBurst
     #sticky
-    .train 410095 >> Use the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] from your charachter panel to train |T237582:0|t[Molten Blast]
+    .train 410095 >> Use the |T134920:0|t[|cRXP_FRIENDLY_Kajaric Icon|r] from your character panel to train |T237582:0|t[Lava Burst]
 step << Shaman
     #season 2
     #optional

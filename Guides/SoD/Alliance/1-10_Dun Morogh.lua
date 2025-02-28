@@ -112,8 +112,7 @@ step << Warrior/Mage/Warlock/Hunter
     >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
     .vendor >>|cRXP_BUY_Vendor trash and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
     .vendor >>|cRXP_BUY_Vendor trash and buy all of the key AoE runes|r << Mage
-    .vendor >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Hunter
-    .vendor >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Warlock
+    .vendor >>|cRXP_BUY_Vendor trash and buy all of the following runes:|r << Hunter/Warlock
     .collect 204806,1 << Warrior --Rune of Victory Rush
     .collect 208799,1 << Mage --Spell Notes: Living Bomb
     .collect 203748,1 << Mage --Spell Notes: Burnout
