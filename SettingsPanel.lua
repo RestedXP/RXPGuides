@@ -101,6 +101,8 @@ function addon.settings.ChatCommand(input)
         addon.settings.ToggleActive()
     elseif input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
+    elseif input == "preview" then
+        addon.settings:ToggleFramePreviews()
     elseif input == "help" then
         addon.comms.PrettyPrint(_G.HELP .. "\n" ..
                                     addon.help["What are command the line options?"])
@@ -3899,9 +3901,11 @@ end
 function addon.settings:ToggleFramePreviews()
 
     local currentGuide = addon.currentGuide
+    local currentStep = RXPCData.currentStep
+
     local nextLine = ''
     if currentGuide.name ~= '' and currentGuide.group ~= '' then
-        nextLine = fmt("%s/%s", currentGuide.group, currentGuide.name)
+        nextLine = fmt("%s\\%s", currentGuide.group, currentGuide.name)
     end
 
     local previewsGuideContent = fmt([[
@@ -3912,16 +3916,20 @@ step
     #completewith next
     +This is a temporary guide to allow frame positioning, skip all steps to reload the current guide
 step
+    >> Position Active Targets and Arrow
     .target %s
     .hs >> Position Active Items
     .goto %s,0.0,0.0
 step
-    .
+    +%s
+    >>|cRXP_WARN_Skip this step to return%s|r
     ]],
     fmt("%s Frame Positions", _G.PREVIEW),
     nextLine, -- TODO fix #next auto-resume
     addon.player.name,
-    GetRealZoneText()
+    GetRealZoneText(),
+    fmt(_G.ERR_QUEST_COMPLETE_S, _G.PREVIEW),
+    currentGuide.name == "" and '' or fmt(" to %s", nextLine)
     )
 
     addon.RegisterGuide(_G.PREVIEW, previewsGuideContent)
@@ -3933,6 +3941,7 @@ step
     -- Reset savedvariables to resume original guide on reload
     RXPCData.currentGuideName = currentGuide.name
     RXPCData.currentGuideGroup = currentGuide.group
+    RXPCData.currentStep = currentStep
 end
 
 function addon.settings:SaveFramePositions()
