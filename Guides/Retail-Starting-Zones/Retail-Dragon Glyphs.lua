@@ -835,47 +835,47 @@ RXPGuides.RegisterGuide([[
 
 step
     #title Skyriding: The Stonevault Exterior
-    .goto 2214,46.88,10.06
+    .goto 2214,42.72,10.06
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,2 >>Pick up the Skyriding: The Stonevault Exterior
 step
     #title Skyriding Glyph: Gundargaz
-    .goto 2214,49.02,31.61
+    .goto 2214,44.86,31.61
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,1 >>Pick up the Skyriding Glyph: Gundargaz
 step
     #title Skyriding Glyph: Lost Mines
-    .goto 2214,57.26,31.54
+    .goto 2214,53.10,31.54
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,3 >>Pick up the Skyriding Glyph: Lost Mines
 step
     #title Skyriding Glyph: Chittering Den
-    .goto 2214,69.46,34.52
+    .goto 2214,65.30,34.52
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,4 >>Pick up the Skyriding Glyph: Chittering Den
 step
     #title Skyriding Glyph: The Rumbling Wastes
-    .goto 2214,56.22,56.21
+    .goto 2214,52.06,56.21
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,5 >>Pick up the Skyriding Glyph: The Rumbling Wastes
 step
-    .goto 2214,62.93,66.06
+    .goto 2214,58.77,66.06
     #title Skyriding Glyph: Taelloch Mine
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,8 >>Pick up the Skyriding Glyph: Taelloch Mine
 step
-    .goto 2214,63.89,94.94
+    .goto 2214,59.73,94.94
     #title Skyriding Glyph: Abyssal Excavation
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,7 >>Pick up the Skyriding Glyph: Abyssal Excavation
 step
     #title Skyriding Glyph: The Living Grotto
-    .goto 2214,49.26,66.16
+    .goto 2214,45.10,66.16
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,6 >>Pick up the Skyriding Glyph: The Living Grotto
 step
     #title Skyriding Glyph: The Waterworks
-    .goto 2214,46.46,51.67
+    .goto 2214,42.30,51.67
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,9 >>Pick up the Skyriding Glyph: The Waterworks
 ]])
