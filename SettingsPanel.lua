@@ -102,7 +102,7 @@ function addon.settings.ChatCommand(input)
     elseif input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
     elseif input == "preview" then
-        addon.settings:ToggleFramePreviews()
+        addon.settings:EnableFramePreviews()
     elseif input == "help" then
         addon.comms.PrettyPrint(_G.HELP .. "\n" ..
                                     addon.help["What are command the line options?"])
@@ -2691,7 +2691,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return L("This action will reload your current guide when toggled off.\nAre you sure?")
                         end,
                         func = function()
-                            addon.settings:ToggleFramePreviews()
+                            addon.settings:EnableFramePreviews()
                         end
                     },
                     textColorsHeader = {
@@ -3898,10 +3898,15 @@ function addon.settings:SetupMapButton()
 
 end
 
-function addon.settings:ToggleFramePreviews()
+function addon.settings:EnableFramePreviews()
 
     local currentGuide = addon.currentGuide
     local currentStep = RXPCData.currentStep
+
+    -- Prevent overwriting actual guide if activating multiple times
+    if addon.currentGuide.name == fmt("%s Frame Positions", _G.PREVIEW) then
+        return
+    end
 
     local nextLine = ''
     if currentGuide.name ~= '' and currentGuide.group ~= '' then
@@ -3925,7 +3930,7 @@ step
     >>|cRXP_WARN_Skip this step to return%s|r
     ]],
     fmt("%s Frame Positions", _G.PREVIEW),
-    nextLine, -- TODO fix #next auto-resume
+    nextLine,
     addon.player.name,
     GetRealZoneText(),
     fmt(_G.ERR_QUEST_COMPLETE_S, _G.PREVIEW),
@@ -3936,12 +3941,18 @@ step
 
     local guideToLoad = addon.GetGuideTable(_G.PREVIEW, fmt("%s Frame Positions", _G.PREVIEW))
 
-    addon.LoadGuide(guideToLoad)
+    guideToLoad.next = nextLine
 
-    -- Reset savedvariables to resume original guide on reload
-    RXPCData.currentGuideName = currentGuide.name
-    RXPCData.currentGuideGroup = currentGuide.group
-    RXPCData.currentStep = currentStep
+    local loadPreviewGuide = function ()
+        addon:LoadGuide(guideToLoad)
+
+        -- Reset savedvariables to resume original guide on reload
+        -- RXPCData.currentGuideName = currentGuide.name
+        -- RXPCData.currentGuideGroup = currentGuide.group
+        -- RXPCData.currentStep = currentStep
+    end
+
+    addon:ScheduleTask(loadPreviewGuide)
 end
 
 function addon.settings:SaveFramePositions()
