@@ -1667,6 +1667,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 11.1 Underground Campaign (80)
 #name e) Chapter 5 - Ignite the Fuel of Change
 #displayname |cRXP_WARN_Chapter 5|r - Ignite the Fuel of Change
+#next f) Chapter 6 - Homecoming
 #subweight 4.6
 
 -----------------------------------------------------
@@ -2208,12 +2209,146 @@ step
     .goto 2346,43.61,51.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r
     .turnin 85780 >>Turn in Right Where We Want Him
-    .accept 86204 >>Accept Liberation of Undermine: The House Loses
     .target Monte Gazlowe
 
 -----------------------------------------------------
 --- END CHAPTER 5
 -----------------------------------------------------
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#version 3
+#group RestedXP The War Within
+#subgroup 11.1 Underground Campaign (80)
+#name f) Chapter 6 - Homecoming
+#displayname |cRXP_WARN_Chapter 6|r - Homecoming
+#subweight 4.6
+
+step
+    .goto 2346,43.61,51.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+    .accept 86204 >>Accept Liberation of Undermine: The House Loses
+    .target Monte Gazlowe
+step
+    .goto 2346,43.61,51.09
+    >>Kill |cRXP_ENEMY_Chome King Gallywix|r inside the Liberation of Undermine raid
+    .complete 86204,1 --1/1 Chrome King Gallywix defeated
+step
+    #completewith next
+    #label LiberationOfThingsLeft
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r.
+    .turnin 86204 >>Turn in Liberation of Undermine: The House Loses
+    .accept 87321 >>Accept Things Left Undone
+    .target Marin Noggenfogger
+step
+    #completewith LiberationOfThingsLeft
+    #title |cFFFCDC00Enter the laboratory|r
+    .goto 2346,29.00,69.66,5 >>Enter the laboratory
+step
+    #requires LiberationOfThingsLeft
+    .goto 2346,27.37,70.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r.
+    .turnin 86204 >>Turn in Liberation of Undermine: The House Loses
+    .accept 87321 >>Accept Things Left Undone
+    .target Marin Noggenfogger
+step
+    #completewith next
+    #label ThingsSettledDust
+    .goto 2346,42.59,51.57,0,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+    .turnin 87321 >>Turn in Things Left Undone
+    .accept 85190 >>Accept Settled Dust
+    .target Monte Gazlowe
+step
+    #completewith ThingsSettledDust
+    #title |cFFFCDC00Leave the laboratory|r
+    .goto 2346,27.07,71.21,5,0
+    .goto 2346,27.41,70.83,5,0
+    .goto 2346,27.86,70.82,5,0
+    .goto 2346,29.02,69.64,5 >>Leave the laboratory
+step
+    #requires ThingsSettledDust
+    .goto 2346,42.99,50.87,10,0
+    .goto 2346,42.44,50.11,10,0
+    .goto 2346,42.59,51.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+    .turnin 87321 >>Turn in Things Left Undone
+    .accept 85190 >>Accept Settled Dust
+    .target Monte Gazlowe
+step
+    .goto 2346,42.59,51.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r.
+    .complete 85190,1 --1/1 Speak to Gazlowe
+    .target Gazlowe
+    .skipgossipid 131839
+step
+    .goto 2346,42.89,52.11
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Westfall|r.
+    .complete 85190,3 --1/1 Enter the Portal to Westfall
+step
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 52,30.03,86.05
+    .complete 85190,4 --1/1 Meet Mathias Shaw in Westfall
+step
+    .goto 52,30.03,86.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r.
+    .turnin 85190 >>Turn in Settled Dust
+    .accept 85191 >>Accept Cut After Cut
+    .target Master Mathias Shaw
+step
+    .goto 52,30.16,86.39
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Well-Worn Throwing Knives|r.
+    .complete 85191,1,1 --1/3 Renzik's belongings collected
+step
+    .goto 52,29.66,85.39
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Unused Fishing Gear|r.
+    .complete 85191,1,2 --2/3 Renzik's belongings collected
+step
+    .goto 52,30.56,85.96
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Old Copy of "Undermine Weekly"|r.
+    .complete 85191,1 --3/3 Renzik's belongings collected
+step
+    .goto 52,30.02,86.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r.
+    .turnin 85191 >>Turn in Cut After Cut
+    .accept 85192 >>Accept Coming Home
+    .target Master Mathias Shaw
+step
+    .goto 2346,40.03,25.62
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |A:Dungeon:24:24|a|cRXP_PICK_Portal to Undermine|r
+    .complete 85192,1 --1/1 Take the portal to Undermine (Optional)
+step
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2346,39.12,23.26
+    .complete 85192,2 --1/1 Meet Gazlowe on the Scrapshop's upper stairs
+step
+    .goto 2346,39.12,23.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+    .complete 85192,3 --1/1 Take Renzik's ashes
+    .target Monte Gazlowe
+    .skipgossipid 131347
+step
+    .goto 2346,39.13,23.55
+    >>Use the |T571694:0|t[|cRXP_WARN_ExtraActionButton|r].
+    .complete 85192,4 --1/1 Spread Renzik's ashes
+step
+    .goto 2346,39.12,23.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+    .turnin 85192 >>Turn in Coming Home
+    .accept 87297 >>Accept Cashing the Check
+    .target Monte Gazlowe
+step
+    .goto 2346,43.56,51.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimla|r.
+    .complete 87297,1 --1/1 Speak to Grimla
+    .target Grimla
+    .skipgossipid 132237
+step
+    .goto 2346,43.63,51.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+    .turnin 87297 >>Turn in Cashing the Check
+    .target Monte Gazlowe
 ]])
 
 RXPGuides.RegisterGuide([[
