@@ -3901,21 +3901,19 @@ end
 function addon.settings:EnableFramePreviews()
 
     local currentGuide = addon.currentGuide
-    local currentStep = RXPCData.currentStep
 
     -- Prevent overwriting actual guide if activating multiple times
-    if addon.currentGuide.name == fmt("%s Frame Positions", _G.PREVIEW) then
+    if currentGuide.name == fmt("%s Frame Positions", _G.PREVIEW) then
         return
     end
 
-    local nextLine = ''
+    local nextLine = nil
     if currentGuide.name ~= '' and currentGuide.group ~= '' then
         nextLine = fmt("%s\\%s", currentGuide.group, currentGuide.name)
     end
 
     local previewsGuideContent = fmt([[
 #name %s
-%s
 step
     #sticky
     #completewith next
@@ -3930,11 +3928,10 @@ step
     >>|cRXP_WARN_Skip this step to return%s|r
     ]],
     fmt("%s Frame Positions", _G.PREVIEW),
-    nextLine,
     addon.player.name,
     GetRealZoneText(),
     fmt(_G.ERR_QUEST_COMPLETE_S, _G.PREVIEW),
-    currentGuide.name == "" and '' or fmt(" to %s", nextLine)
+    currentGuide.name == "" and '' or fmt(" to %s", nextLine or _G.MAINMENU)
     )
 
     addon.RegisterGuide(_G.PREVIEW, previewsGuideContent)
@@ -3945,11 +3942,6 @@ step
 
     local loadPreviewGuide = function ()
         addon:LoadGuide(guideToLoad)
-
-        -- Reset savedvariables to resume original guide on reload
-        -- RXPCData.currentGuideName = currentGuide.name
-        -- RXPCData.currentGuideGroup = currentGuide.group
-        -- RXPCData.currentStep = currentStep
     end
 
     addon:ScheduleTask(loadPreviewGuide)
