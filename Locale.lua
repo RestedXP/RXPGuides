@@ -44,7 +44,7 @@ local function noop(text) return text end
 local locale = GetLocale()
 
 -- Explicitly check supported languages, default to enUS
-if locale == 'zhCN' or locale == 'zhTW' or locale == 'frFR' or locale == 'koKR' then
+if locale == 'zhCN' or locale == 'zhTW' or locale == 'frFR' or locale == 'koKR'  or locale == 'esES' then
     addon.locale.Get = getForeign
 else
     addon.locale.Get = noop
