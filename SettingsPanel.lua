@@ -101,6 +101,8 @@ function addon.settings.ChatCommand(input)
         addon.settings.ToggleActive()
     elseif input == "bug" or input == "feedback" then
         addon.comms.OpenBugReport()
+    elseif input == "preview" then
+        addon.settings:EnableFramePreviews()
     elseif input == "help" then
         addon.comms.PrettyPrint(_G.HELP .. "\n" ..
                                     addon.help["What are command the line options?"])
@@ -2679,6 +2681,19 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.92
                     },
+                    previewFramePositions = {
+                        name = fmt("%s Frame Positions", _G.PREVIEW),
+                        desc = fmt("%s Frame Positions", _G.PREVIEW),
+                        type = 'execute',
+                        width = optionsWidth,
+                        order = 1.93,
+                        confirm = function()
+                            return L("This action will reload your current guide when toggled off.\nAre you sure?")
+                        end,
+                        func = function()
+                            addon.settings:EnableFramePreviews()
+                        end
+                    },
                     textColorsHeader = {
                         name = _G.LOCALE_TEXT_LABEL,
                         type = "header",
@@ -3881,6 +3896,55 @@ function addon.settings:SetupMapButton()
                     recalculateMapButton)
     end
 
+end
+
+function addon.settings:EnableFramePreviews()
+
+    local currentGuide = addon.currentGuide
+
+    -- Prevent overwriting actual guide if activating multiple times
+    if currentGuide.name == fmt("%s Frame Positions", _G.PREVIEW) then
+        return
+    end
+
+    local nextLine = nil
+    if currentGuide.name ~= '' and currentGuide.group ~= '' then
+        nextLine = fmt("%s\\%s", currentGuide.group, currentGuide.name)
+    end
+
+    local previewsGuideContent = fmt([[
+#name %s
+step
+    #sticky
+    #completewith next
+    +This is a temporary guide to allow frame positioning, skip all steps to reload the current guide
+step
+    >> Position Active Targets and Arrow
+    .target %s
+    .hs >> Position Active Items
+    .goto %s,0.0,0.0
+step
+    +%s
+    >>|cRXP_WARN_Skip this step to return%s|r
+    ]],
+    fmt("%s Frame Positions", _G.PREVIEW),
+    addon.player.name,
+    GetRealZoneText(),
+    fmt(_G.ERR_QUEST_COMPLETE_S, _G.PREVIEW),
+    currentGuide.name == "" and '' or fmt(" to %s", nextLine or _G.MAINMENU)
+    )
+
+    addon.RegisterGuide(_G.PREVIEW, previewsGuideContent)
+
+    local guideToLoad = addon.GetGuideTable(_G.PREVIEW, fmt("%s Frame Positions", _G.PREVIEW))
+
+    guideToLoad.next = nextLine
+
+    local loadPreviewGuide = function ()
+        addon:LoadGuide(guideToLoad)
+    end
+
+    addon:ScheduleTask(loadPreviewGuide)
 end
 
 function addon.settings:SaveFramePositions()
