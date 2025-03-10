@@ -20,27 +20,61 @@ step
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .accept 456 >> Accept The Balance of Nature
-step << Druid/Warrior/Rogue
+step << Druid/Warrior/Rogue/Hunter/Priest
     .goto Teldrassil,58.88,43.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
-    .vendor >>|cRXP_BUY_Vendor one of your |T133975:0|t|cRXP_LOOT_[Shiny Red Apples]|r and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] << Druid
-    .collect 210500,1 << Druid --Rune of the Stars (1)
-    .vendor >>|cRXP_BUY_Vendor one of your |T133972:0|t|cRXP_LOOT_[Tough Jerky]|r and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    .collect 204806,1 << Warrior --Rune of Victory Rush (1)
-    .vendor >>|cRXP_BUY_Vendor one of your |T133964:0|t|cRXP_LOOT_[Tough Hunks of Bread]|r and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
+    >>|cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] from him|r << Priest
+    >>|cRXP_BUY_Sell your|r |T133975:0|t[Apples] |cRXP_BUY_and buy the following runes:|r << Druid
+    >>|cRXP_BUY_Vendor one of your |T133972:0|t|cRXP_LOOT_[Tough Jerky]|r and buy the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
+    >>|cRXP_BUY_Sell your|r |T135005:0|t[Shirt] and |T132540:0|t[Boots] |cRXP_WARN_(they can't be engraved on)|r |cRXP_BUY_and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] |cRXP_BUY_and|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r] << Rogue
+    >>|cRXP_BUY_Sell your|r |T135005:0|t[Shirt] and |T132540:0|t[Boots] |cRXP_WARN_(they can't be engraved on)|r |cRXP_BUY_and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] |cRXP_BUY_and|r |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] from him|r << Hunter
+    .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
+    .collect 209852,1 << Hunter --Rune of Kill Command
+    .collect 226401,1 << Hunter --Treatise on the Heart of the Lion
+    .collect 208414,1 << Druid --Lunar Idol
+    .collect 210500,1 << Druid --Rune of the Stars
+    .collect 206989,1 << Druid --Rune of the Sun
+    .collect 227749,1 << Druid --Rune of the Falling Star
+    .collect 204806,1 << Warrior --Rune of Victory Rush
+    .collect 210979,1 << Rogue --Rune of Shadowstep
+    .collect 208772,1 << Rogue --Rune of Saber Slash
     >>You will get the rest of your runes very soon
     .target Rune Broker
     .skipgossip
-step << Warrior/Rogue
-    .train 400105 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] to train |T132323:0|t[Shadowstrike], you will engrave it soon << Rogue
+step << Warrior/Rogue/Hunter/Druid/Priest
+    .equip 18 >> Equip the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r], you can use it after 30 seconds to train |T237472:0|t[Fury of Stormrage] << Druid
+    .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
+    .train 400105 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] to train |T132323:0|t[Shadowstrike] << Rogue
+    .train 424984 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r] to train |T132375:0|t[Saber Slash] << Rogue
     .train 403470 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] to train |T132342:0|t[Victory Rush], you will engrave it soon << Warrior
+    .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] << Hunter
+    .train 409580 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] to train |T132185:0|t[Heart of the Lion] << Hunter
+    .train 424718 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] to train |T135730:0|t[Starsurge] << Druid
+    .train 416044 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] to train |T236216:0|t[Sunfire] << Druid
+    .train 439770 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Falling Star|r] to train |T236168:0|t[Starfall] << Druid
+    .use 205947 << Priest --Prophecy of a Desecrated Citadel
     .use 204806 << Warrior --Rune of Victory Rush
     .use 204795 << Rogue --Rune of Shadowstrike
-step << Druid
+    .use 208772 << Rogue --Rune of Saber Slash
+    .use 209852 << Hunter --Rune of Kill Command
+    .use 226401 << Hunter --Treatise on the Heart of the Lion
+    .use 208414 << Druid --Lunar Idol
+    .use 210500 << Druid --Rune of the Stars
+    .use 206989 << Druid --Rune of the Sun
+    .use 227749 << Druid --Rune of the Falling Star
+    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants << Priest
+    .engrave 7 >> Engrave |T236174:0|t[Kill Shot] on your pants << Hunter
+    .engrave 7 >> Engrave |T135730:0|t[Starsurge] on your pants << Druid
+step << Hunter
     #optional
-    #completewith next
-    .train 424718 >> Use the |T134419:0|t[Rune of the Stars] to train |T135730:0|t[Starsurge]
-    .engrave 7 >> Engrave |T135730:0|t[Starsurge] on your pants
+    #sticky
+    .aura 409583 >> Remember to activate your |T132185:0|t[Heart of the Lion]
+step << Druid
+    #season 2
+    #optional
+    #sticky
+    .train 410061 >> Use the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] from your character panel to train |T237472:0|t[Fury of Stormrage]
+    .engrave 5 >> Engrave your chest with |T237472:0|t[Fury of Stormrage]
 step
     #sticky
     #label balance1
@@ -81,7 +115,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
     .accept 77573 >> Accept Second-Story Work
     .turnin 77573 >> Turn in Second-Story Work
-    .train 1784 >> Train |T132320:0|t[Stealth], you will need it to use |T135131:0|t[Shadowstrike]
     .target Frahun Shadewhisper
 step << Warrior
     #season 2
@@ -96,7 +129,7 @@ step << Warrior/Rogue
     .engrave 10 >> Engrave |T132342:0|t[Victory Rush] on your gloves << Warrior
     .use 2385 << Warrior -- Tarnished Chain Gloves
     .equip 10 >> Equip the |T132952:0|t[Cracked Leather Gloves] << Rogue
-    .engrave 10 >> Engrave |T132323:0|t[Shadowstrike] on your gloves << Rogue
+    .engrave 10 >> Engrave |T132375:0|t[Saber Slash] on your gloves << Rogue
     .use 2125 << Rogue --Cracked Leather Gloves
 step << Warrior/Rogue
     #season 2
@@ -117,34 +150,92 @@ step
 	.goto Teldrassil,58.695,44.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     >>Take the |T132939:0|t[Gloves] as a reward to engrave a rune on them << Druid/Hunter
+    >>Take the |T132611:0|t[Bracers] as a reward to engrave a rune on them << Priest
     .turnin 456 >> Turn in The Balance of Nature
     .target Conservator Ilthalaine
     .accept 457 >> Accept The Balance of Nature
-step
+step << Hunter/Rogue/Priest
     .goto Teldrassil,58.88,43.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
     >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
-    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
-    >>Make sure you bought the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] << Hunter
-    >>Make sure you bought the |T136222:0|t[Memories of a [|cRXP_FRIENDLY_Troubled Acolyte|r] and [|cRXP_FRIENDLY_Dark Purpouse|r] << Priest
-    >>Make sure you bought the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] << Druid
+    >> |cRXP_BUY_Vendor trash and buy all of the following runes:|r << Hunter/Rogue/Priest
+    .collect 212552,1 << Priest --Psychosophic Epiphany
+    .collect 221481,1 << Priest --Nihilist Epiphany
+    .collect 205940,1 << Priest --Memory of a Dark Purpose
+    .collect 205951,1 << Priest --Memory of a Troubled Acolyte
+    .collect 205932,1 << Priest --Prophecy of a King's Demise
+    .collect 206168,1 << Hunter --Rune of the Chimera
+    .collect 216770,1 << Hunter --Treatise on Aspect of the Viper
+    .collect 210818,1 << Hunter --Rune of Lone Wolf
+    .collect 213124,1 << Hunter --Rune of Close Combat
+    .collect 226252,1 << Hunter --Rune of the Guerrilla
+    .collect 210979,1 << Rogue --Rune of Shadowstep
+    .collect 221428,1 << Rogue --Rune of Foul Play
+    .collect 227922,1 << Rogue --Rune of the Swashbuckler
+    >>You will get the rest of your runes very soon
     .target Rune Broker
     .skipgossip
-step << Hunter
+step << Hunter/Rogue/Priest
+    .use 212552 << Priest --Psychosophic Epiphany
+    .use 221481 << Priest --Nihilit Epiphany
+    .use 205940 << Priest --Memory of a Dark Purpose
+    .use 205951 << Priest --Memory of a Troubled Acolyte
+    .use 205932 << Priest --Prophecy of a King's Demise
+    .use 206168 << Hunter --Rune of the Chimera
+    .use 216770 << Hunter --Treatise on Aspect of the Viper
+    .use 210818 << Hunter --Rune of Lone Wolf
+    .use 213124 << Hunter --Rune of Close Combat
+    .use 226252 << Hunter --Rune of the Guerrilla
+    .use 210979 << Rogue --Rune of Shadowstep
+    .use 221428 << Rogue --Rune of Foul Play
+    .use 227922 << Rogue --Rune of the Swashbuckler
+    .train 431663 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] to train |T136181:0|t[Mind Spike] << Priest
+    .train 431705 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Nihilist Epiphany|r] to train |T132886:0|t[Void Zone] << Priest
+    .train 425216 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpouse|r] to train |T237514:0|t[Void Plague] << Priest
+    .train 402862 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] to train |T237545:0|t[Penance] << Priest
+    .train 402849 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] to train |T136149:0|t[Shadow Word: Death] << Priest
+    .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
+    .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
+    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
+    .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
+    .train 400101 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shadowstep|r] to train |T132303:0|t[Shadowstep] << Rogue
+    .train 432301 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] to train |T236285:0|t[Unfair Advantage] << Rogue
+    .train 415922 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Swashbuckler|r] to train |T134538:0|t[Blunderbuss] << Rogue
+step << Druid
+    #sticky
     #optional
-    #completewith balancetwocomplete
-    >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot]
+    >> |cRXP_WARN_Be on the lookout for any|r Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip it and engrave|r |T236168:0|t[Starfall] |cRXP_WARN_on it|r
+    .engrave 15 >> Engrave |T236168:0|t[Starfall] on your |T133771:0|t[Cloak]
+step << Hunter
+    #sticky
+    #optional
+    >> |cRXP_WARN_Be on the lookout for any|r Chest/Belt/Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
+    .engrave 5 >> Engrave |T132266:0|t[Lone Wolf] on your |T132724:0|t[Chest]
+    .engrave 6 >> Engrave |T132394:0|t[Meele Specialist] on your |T132513:0|t[Belt]
+    .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
+step << Rogue
+    #sticky
+    #optional
+    >> |cRXP_WARN_Be on the lookout for any|r Belt/Cloak/Bracer |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
+    .engrave 5 >> Engrave |T236285:0|t[Unfair Advantage] on your |T133830:0|t[Bracers]
+    .engrave 6 >> Engrave |T132303:0|t[Shadowstep] on your |T132513:0|t[Belt]
+    .engrave 15 >> Engrave |T134538:0|t[Blunderbuss] on your |T133771:0|t[Cloak]
+step << Hunter/Druid
+    #optional
+    #sticky
     .equip 10 >> Equip the |T132939:0|t[Archery Training Gloves]
-    .engrave 10 >> Engrave |T236176:0|t[Chimera Shot] on your gloves
+    .engrave 10 >> Engrave |T236176:0|t[Chimera Shot] on your gloves << Hunter
+    .engrave 10 >> Engrave |T236216:0|t[Sunfire] on your gloves << Druid
     .use 5394
-    .use 206168
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.6,41.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janna Brightmoon|r upstairs
-    .vendor >>|cRXP_BUY_Vendor Trash|r
-    .collect 2117,1 >>Buy a pair of |T132543:0|t|cRXP_LOOT_Thin Cloth Shoes|r to engrave |T237514:0|t[Void Plague] on
-    .target
+    >>|cRXP_BUY_Vendor trash and buy the|r |T132495:0|t[Thin Cloth Belt] |cRXP_BUY_and|r |T132543:0|t[Thin Cloth Shoes]|cRXP_BUY_. You will need them to engrave runes on|r
+    .collect 3599,1 --Thin Cloth Belt (1)
+    .collect 2117,1 --Thin Cloth Shoes (1)
+    .target Janna Brightmoon
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.174,40.442
@@ -155,13 +246,18 @@ step << NightElf Priest
 step << Priest
     #optional
     #completewith next
-    .equip 10 >> Equip the |T132961:0|t[Tattered Cloth Gloves] to engrave |T237545:0|t[Penance] on them
-    .use 711
-step << Priest
-    #optional
-    #completewith next
-    .engrave 10 >> Engrave |T237545:0|t[Penance] on your gloves
+    .equip 10 >> Equip the |T132961:0|t[Tattered Cloth Gloves]
+    .equip 6 >> Equip the |T132495:0|t[Thin Cloth Belt]
+    .equip 8 >> Equip the |T132543:0|t[Thin Cloth Shoes]
+    .equip 9 >> Equip the |T132611:0|t[Steamleaf Bracers]
+    .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves
+    .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your bracers
     .engrave 8 >> Engrave |T237514:0|t[Void Plague] on your feet
+    .engrave 9 >> Engrave |T132886:0|t[Void Zone] on your bracers
+    .use 711 --Tattered Cloth Gloves
+    .use 3599 --Thin Cloth Belt
+    .use 2117 --Thin Cloth Shoes
+    .use 11187 --Steamleaf Bracers
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.6,40.8
@@ -203,13 +299,7 @@ step
     .target Conservator Ilthalaine
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
-	.accept 3120 >> Accept Verdant Sigil << Druid
     .accept 3119 >> Accept Hallowed Sigil << Priest
-step << Druid
-    #optional
-    #completewith next
-    +Make sure you bought the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] from the |cRXP_ENEMY_Rune Broker|r
-    .equip 18 >> Equip the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r]
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r
@@ -253,7 +343,6 @@ step << Druid/Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
-    >>|cRXP_WARN_Make sure you have 1 silver left so you can train|r |T136096:0|t[Moonfire] << Druid
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
 step
@@ -262,19 +351,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .accept 916 >> Accept Webwood Venom
     .target Gilshalan Windwalker
-step << Druid
-    #season 2
-    .xp 4
-step << Druid
-    #season 2
-    .goto Teldrassil,57.80,40.97,25,0
-    .goto Teldrassil,58.626,40.287
-    >>Ascend the Aldrassil Tree
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
-	.turnin 3120 >> Turn in Verdant Sigil
-    .accept 77571 >> Accept Relics of the Kaldorei
-    .trainer >> Train your class spells. Ensure you learn |T136096:0|t[Moonfire]
-    .target Mardant Strongoak
 step << Hunter
     .xp 4-40
 step << Hunter
@@ -287,16 +363,6 @@ step << Hunter
     .turnin 77568 >> Turn in A Hunter's Strength
     .train 1978 >>Train Serpent Sting
     .target Ayanna Everstride
-step << Druid
-    #sticky
-    #label LunarIdol
-    .train 410061 >> Try to |cRXP_WARN_kill mobs while they're under the effect of your|r |T136096:0|t[Moonfire]
-    >>After 6 kills you will be able to use the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] to train |T237472:0|t[Fury of Stormrage]
-step << Druid
-    #sticky
-    #optional
-    #requires LunarIdol
-    .engrave 5 >> Engrave |T237472:0|t[Fury of Stormrage] on your chest
 step
     .goto Teldrassil,57.95,38.20,10,0
     .goto Teldrassil,57.76,37.27,10,0
@@ -391,10 +457,17 @@ step
 step
 	.goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
-    >>TIP: |cRXP_WARN_Take the Tunic as a reward from this quest and equip it. You will use it to engrave a rune on later|r << Hunter/Rogue/Druid
-    >>TIP: |cRXP_WARN_Take the Robes as a reward from this quest and equip it. You will use it to engrave a rune on later|r << Priest
+    >>TIP: |cRXP_WARN_Take the Tunic as a reward from this quest and equip it. You will use it to engrave a rune on later|r << Hunter/Rogue
     .turnin 917 >> Turn in Webwood Egg
     .target Gilshalan Windwalker
+step
+    #season 2
+    .goto Mulgore,44.35,76.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
+    >>|cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
+    .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
+    .target Rune Broker
+    .skipgossip
 step << Priest
     #requires vial1
     .goto Teldrassil,59.2,40.5
