@@ -2231,13 +2231,30 @@ step
     .accept 86204 >>Accept Liberation of Undermine: The House Loses
     .target Monte Gazlowe
 step
-    .goto 2346,43.61,51.09
-    >>Kill |cRXP_ENEMY_Chome King Gallywix|r inside the Liberation of Undermine raid
+    #completewith next
+    #label Chrome King Gallywix
+    >>Kill |cRXP_ENEMY_Chrome King Gallywix|r inside the Liberation of Undermine raid.
+    .complete 86204,2 --1/1 Chrome King Gallywix defeated
+step
+    #completewith Chrome King Gallywix
+    .goto 2346,43.51,51.7
+    -- .gossipoption 131582 >>Talk to |cRXP_FRIENDLY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paks Topskimmer|r
     .complete 86204,1 --1/1 Chrome King Gallywix defeated
+    .skipgossipid 131582
+    .target Paks Topskimmer
+step
+    #requires Chrome King Gallywix
+    >>Kill |cRXP_ENEMY_Chrome King Gallywix|r inside the Liberation of Undermine raid.
+    .complete 86204,2 --1/1 Chrome King Gallywix defeated
+step
+    .zoneskip 2409,1
+    +Leave the Raid (Right-Click your player frame) or use the npc near gallywix.
 step
     #completewith next
     #label LiberationOfThingsLeft
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r.
+    *|cRXP_WARN_Leave the Raid (Right-Click your player frame; storymode) or hearthstone.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r in unde
     .turnin 86204 >>Turn in Liberation of Undermine: The House Loses
     .accept 87321 >>Accept Things Left Undone
     .target Marin Noggenfogger
@@ -2315,7 +2332,7 @@ step
     .accept 85192 >>Accept Coming Home
     .target Master Mathias Shaw
 step
-    .goto 2346,40.03,25.62
+    .goto 52,29.52,85.96
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |A:Dungeon:24:24|a|cRXP_PICK_Portal to Undermine|r
     .complete 85192,1 --1/1 Take the portal to Undermine (Optional)
 step
@@ -2329,8 +2346,12 @@ step
     .target Monte Gazlowe
     .skipgossipid 131347
 step
+    .isOnQuest 85192
     .goto 2346,39.13,23.55
-    >>Use the |T571694:0|t[|cRXP_WARN_ExtraActionButton|r].
+    .cast 474433 >>Use the |T571694:0|t[|cRXP_WARN_ExtraActionButton|r].
+    .timer 5,RP
+step
+    >>|cRXP_WARN_Wait for the roleplay|r.
     .complete 85192,4 --1/1 Spread Renzik's ashes
 step
     .goto 2346,39.12,23.28
