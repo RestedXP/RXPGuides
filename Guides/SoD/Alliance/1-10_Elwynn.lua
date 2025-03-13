@@ -211,20 +211,40 @@ step << Warlock
 step << Priest/Paladin
     .goto Elwynn Forest,48.22,41.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
-    .vendor >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] from him|r << Priest
-    .vendor >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] from him|r << Paladin
+    >>|cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] from him|r << Priest
+    >>|cRXP_BUY_Sell your|r |T135005:0|t[Shirt] and |T132540:0|t[Boots] |cRXP_WARN_(they can't be engraved on)|r |cRXP_BUY_and buy the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] and |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] from him|r << Paladin
     .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
     .collect 226398,1  << Paladin --Testament of Martyrdom
+    .collect 205420,1 << Paladin --Libram of Judgement
     >>You will get the rest of your runes very soon
     .target Rune Broker
     .skipgossip
 step << Priest/Paladin
     #sticky
+    #label Libram
     .use 205947 << Priest --Prophecy of a Desecrated Citadel
     .use 226398 << Paladin --Testament of martyrdom
+    .use 205420 << Paladin --Libram of Judgement
     .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
     .train 407798 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] to train |T135961:0|t[Seal of Martyrdom], |cRXP_WARN_use it as your primary Seal|r << Paladin
+    .equip 18 >> Equip the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] you can use it after 30 seconds to learn |T135891:0|t[Crusader Strike] << Paladin
     .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants << Priest
+step << Paladin
+    #optional
+    #completewith Vermin
+    .aura 407798 >> Remember to use |T135961:0|t[Seal of Martyrdom] as your seal
+step << Paladin
+    #sticky
+    #optional
+    #requires Libram
+    #label LibramLearn
+    .train 410002 >> Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] to learn |T135891:0|t[Crusader Strike]
+step << Paladin
+    #optional
+    #requires LibramLearn
+    #completewith PalaQ
+    .engrave 10 >> |cRXP_WARN_Be on the lookout for any|r |T132952:0|t[Gloves] |cRXP_WARN_drop.|r |cRXP_WARN_Engrave them with|r |T135891:0|t[Crusader Strike]
+    >>If you don't find any you'll eventually get them from a class quest
 step
     #label EaganWolves
     .goto Elwynn Forest,48.941,40.166
@@ -263,6 +283,7 @@ step << Mage/Warlock
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step << Paladin
+    #label Vermin
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Vermin|r
     .complete 7,1 --Kill Kobold Vermin (x10)
@@ -353,19 +374,21 @@ step << Paladin
     .goto Elwynn Forest,47.70,41.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godrick Rothgar|r
     >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
-    .vendor >> |cRXP_BUY_Vendor trash and buy the|r |T134955:0|t[Small Shield]
+    >>|cRXP_BUY_Vendor trash and buy the|r |T134955:0|t[Small Shield]
     .collect 17184,1 --Small Shield (1)
     .target Godrick Rothgar
 step << Paladin
     .goto Elwynn Forest,47.25,41.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
     >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
-    .vendor >> |cRXP_BUY_Vendor trash and buy the|r |T133485:0|t[Club]
+    >>|cRXP_BUY_Vendor trash and buy the|r |T133485:0|t[Club]
     .collect 2130,1 --Club (1)
     .target Janos Hammerknuckle
 step << Paladin
     .equip 16,2130 >> Equip the |T133485:0|t[Club]
     .equip 17,17184 >> Equip the |T134955:0|t[Small Shield]
+    .use 2130 --Club
+    .use 17184 --Small Shield
 step << Warrior
     #xprate >1.59
     #optional
@@ -409,7 +432,6 @@ step << Priest/Paladin
     .collect 235600,1 << Paladin --Rune of Divine Storm
     .collect 211488,1 << Paladin --Rune of the Avenger
     .collect 235602,1 << Paladin --Rune of the Hammer of the Righteous
-    .collect 205420,1 << Paladin --Libram of Judgement
     .collect 235604,1 << Paladin --Rune of the Shield of Righteousness
     >>You will get the rest of your runes very soon
     .target Rune Broker
@@ -423,7 +445,6 @@ step << Priest/Paladin
     .train 410008 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Avenger|r] to train |T135874:0|t[Avenger's Shield] << Paladin
     .train 410013 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer of the Righteous|r] to train |T236253:0|t[Hammer of the Righteous] << Paladin
     .train 440788 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shield of Righteousness|r] to train |T236265:0|t[Shield of Righteousness] << Paladin
-    .equip 18,205420 >> Equip the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] you will need it to learn |T135891:0|t[Crusader Strike] later << Paladin
     .use 212552 << Priest --Psychosophic Epiphany
     .use 205940 << Priest --Memory of a Dark Purpose
     .use 205951 << Priest --Memory of a Troubled Acolyte
@@ -431,19 +452,20 @@ step << Priest/Paladin
     .use 235600 << Paladin --Rune of Divine Storm
     .use 211488 << Paladin --Rune of the Avenger
     .use 235602 << Paladin --Rune of the Hammer of the Righteous
-    .use 205420 << Paladin --Libram of Judgement
     .use 235604 << Paladin --Rune of the Shield of Righteousness
 step << Paladin
     #sticky
-    >>|cRXP_WARN_Be on the lookout for any|r |T132624:0|t[Chest]|cRXP_WARN_,|r |T132602:0|t[Bracers] |cRXP_WARN_or|r |T133762:0|t[Cloak] |cRXP_WARN_you can equip|r
+    >>|cRXP_WARN_Be on the lookout for any|r |T132624:0|t[Chest]|cRXP_WARN_,|r |cRXP_WARN_or|r |T133762:0|t[Cloak] |cRXP_WARN_you can equip|r
     .engrave 5 >> Engrave |T236250:0|t[Divine Storm] on your chest
-    .engrave 9 >> Engrave |T236253:0|t[Hammer of the Righteous] on your bracers
     .engrave 15 >> Engrave |T236265:0|t[Shield of Righteousness] on your cloak
 step << Priest/Paladin
+    .use 6070 << Paladin --Wolfskin Bracers
+    .equip 9 >> Equip the |T132604:0|t[Wolfskin Bracers] << Paladin
     .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt << Priest
     .engrave 8 >> Engrave |T237514:0|t[Void Plague] on your boots << Priest
     .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves << Priest
     .engrave 7 >> Engrave |T135874:0|t[Avenger's Shield] on your pants << Paladin
+    .engrave 9 >> Engrave |T236253:0|t[Hammer of the Righteous] on your bracers << Paladin
 step << Priest/Paladin
     #loop
     .goto 1429,47.601,36.720,0
@@ -471,7 +493,7 @@ step << Priest/Paladin
     .xp 3+720 >> Grind to 720+/1400xp
     .mob Young Wolf
 	.mob Timber Wolf
-step << !Priest !Mage !Warlock !Rogue
+step << !Priest !Mage !Warlock !Rogue !Paladin
     .goto Elwynn Forest,47.691,41.417
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
     .vendor >>Vendor Trash
@@ -572,13 +594,20 @@ step << Warrior
 step << Paladin
     #xprate >1.59
     #season 2
+    #label PalaQ
     .goto Elwynn Forest,50.433,42.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 3101 >> Turn in Consecrated Letter
-    .accept 77617 >> Accept Relics of the Light << Human Paladin
-    .train 20271 >> Train |T135959:0|t[Judgement]
-    >>|cRXP_WARN_If you have extra money you can spend it on|r |T135906:0|t[Blessing of Might] |cRXP_WARN_or|r Chest/Bracers/Cloak |cRXP_WARN_if you're still missing them. It is much better to buy the gear than the Blessing|r
+    .accept 77617 >> Accept Relics of the Light << Human
+    .turnin 77617 >> Turn in Relics of the Light << Human
+    >>|cRXP_WARN_If you have extra money you can spend it on|r |T135906:0|t[Blessing of Might], |T135959:0|t[Judgement] |cRXP_WARN_or a|r |T135029:0|t[Chestpiece] |cRXP_WARN_if you're still missing them. I'd recommend prioritizing the chestpiece|r
     .target Brother Sammuel
+step << Paladin
+    #optional
+    #completewith RestandR
+    .use 2385 --Tarnished Chain Gloves
+    .equip 10 >> Equip the |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r if you haven't found other gloves yet
+    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r |cRXP_WARN_with|r |T135891:0|t[Crusader Strike] << Paladin
 step << Priest/Warrior/Paladin
     #xprate >1.59
     #season 2
@@ -599,28 +628,6 @@ step << !Mage !Priest !Paladin
     .vendor >> |cRXP_BUY_Vendor trash and buy all the |T134419:0|t|cRXP_WARN_[Runes]|r that you need from him|r
     .target Rune Broker
     .skipgossip
-step << Paladin
-    #loop
-    #sticky
-    #label EarlyLibram3
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .waypoint Elwynn Forest,53.86,47.05,30,0
-    .waypoint Elwynn Forest,55.43,45.87,30,0
-    .waypoint Elwynn Forest,55.09,49.00,30,0
-    .waypoint Elwynn Forest,53.89,50.52,30,0
-    .waypoint Elwynn Forest,52.55,48.79,30,0
-    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    .itemStat 18,QUALITY,2
-    .train 410002,1
-step << Paladin
-    #sticky
-    #label EarlyLibram4
-    #requires EarlyLibram3
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T135891:0|t[Crusader Strike]
-    .use 205420
-    .aura -408828
-    .train 410002,1
 step
     #xprate >1.59
     #season 2
@@ -752,16 +759,6 @@ step << Human Paladin
     .equip 10,2385 >> |cRXP_WARN_Equip the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r
     .use 2385
     .itemcount 2385,1
-    .train 403470,3 << Warrior
-    .train 410002,3 << Paladin
-    .itemStat 10,LEVEL,<5
-step << Human Paladin
-    #xprate >1.59
-    #season 2
-    #completewith RestandR
-    #requires GlovesEquip
-    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r |cRXP_WARN_with|r |T132342:0|t[Victory Rush] << Warrior
-    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r |cRXP_WARN_with|r |T135891:0|t[Crusader Strike] << Paladin
     .train 403470,3 << Warrior
     .train 410002,3 << Paladin
     .itemStat 10,LEVEL,<5

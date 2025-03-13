@@ -25,7 +25,7 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     >> |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rune Broker|r
     >> |cRXP_WARN_MAKE SURE NOT TO VENDOR GEAR THAT CAN BE EQUIPPED|r
     >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] from him|r << Priest
-    >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] from him|r << Paladin
+    >>|cRXP_BUY_Sell your|r |T135005:0|t[Shirt] and |T132540:0|t[Boots] |cRXP_WARN_(they can't be engraved on)|r |cRXP_BUY_and buy the |T133745:0|t[|cRXP_FRIENDLY_Testament of Martyrdom|r] and |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] from him|r << Paladin
     >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from him|r << Warrior
     >> |cRXP_BUY_Sell your|r |T135005:0|t[Shirt] |cRXP_BUY_and buy the |T133733:0|t[|cRXP_FRIENDLY_Grimoire of Fel Armor|r] from him|r << Warlock
     >> |cRXP_BUY_Vendor trash and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]|r << Rogue
@@ -34,6 +34,7 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     >> |cRXP_BUY_Vendor trash and buy all of the following runes:|r << Warlock
     .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
     .collect 226398,1  << Paladin --Testament of Martyrdom
+    .collect 205420,1 << Paladin --Libram of Judgement
     .collect 204716,1 << Warrior --Rune of Frenzied Assault
     .collect 204795,1 << Rogue --Rune of Shadowstrike
     .collect 203746,1 << Mage --Spell Notes: Living Flame
@@ -50,8 +51,11 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
 step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     #sticky
     #optional
+    #label Libram << Paladin
+    .equip 18 >> Equip the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] you can use it after 30 seconds to learn |T135891:0|t[Crusader Strike] << Paladin
     .use 205947 << Priest --Prophecy of a Desecrated Citadel
     .use 226398 << Paladin --Testament of martyrdom
+    .use 205420 << Paladin --Libram of Judgement
     .use 204716 << Warrior --Rune of Frenzied Assault
     .use 203746 << Mage --Spell Notes: Living Flame
     .use 209852 << Hunter --Rune of Kill Command
@@ -69,6 +73,12 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants << Priest
     .engrave 7 >> Engrave |T236317:0|t[Frenzied Assault] on your pants << Warrior
     >>|cRXP_WARN_TIP:|r You can pull multiple |cRXP_ENEMY_Wolves|r with |T135812:0|t[Fireball] and then AoE them with |T135820:0|t[Living Flame] << Mage
+step << Paladin
+    #sticky
+    #optional
+    #requires Libram
+    #label LibramLearn
+    .train 410002 >> Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] to learn |T135891:0|t[Crusader Strike]
 step << Hunter
     #optional
     #sticky
@@ -77,6 +87,10 @@ step << Warlock
     #optional
     #sticky
     .aura 403619 >> |cRXP_WARN_Make sure you remember to activate your|r |T136156:0|t[Fel Armor]
+step << Paladin
+    #optional
+    #completewith next
+    .aura 407798 >> Remember to use |T135961:0|t[Seal of Martyrdom] as your seal
 step
     #label WolfMeat
     .goto 1426,29.529,73.286,0
@@ -213,7 +227,6 @@ step << Priest/Paladin/Rogue
     .collect 235600,1 << Paladin --Rune of Divine Storm
     .collect 211488,1 << Paladin --Rune of the Avenger
     .collect 235602,1 << Paladin --Rune of the Hammer of the Righteous
-    .collect 205420,1 << Paladin --Libram of Judgement
     .collect 235604,1 << Paladin --Rune of the Shield of Righteousness
     >>You will get the rest of your runes very soon
     .target Rune Broker
@@ -232,7 +245,6 @@ step << Priest/Paladin/Rogue
     .train 410008 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Avenger|r] to train |T135874:0|t[Avenger's Shield] << Paladin
     .train 410013 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer of the Righteous|r] to train |T236253:0|t[Hammer of the Righteous] << Paladin
     .train 440788 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shield of Righteousness|r] to train |T236265:0|t[Shield of Righteousness] << Paladin
-    .equip 18,205420 >> Equip the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] you will need it to learn |T135891:0|t[Crusader Strike] later << Paladin
     .use 210979 << Rogue --Rune of Shadowstep
     .use 221428 << Rogue --Rune of Foul Play
     .use 204795 << Rogue --Rune of Shadowstrike
@@ -245,7 +257,6 @@ step << Priest/Paladin/Rogue
     .use 235600 << Paladin --Rune of Divine Storm
     .use 211488 << Paladin --Rune of the Avenger
     .use 235602 << Paladin --Rune of the Hammer of the Righteous
-    .use 205420 << Paladin --Libram of Judgement
     .use 235604 << Paladin --Rune of the Shield of Righteousness
 step << Mage
     #optional
@@ -288,7 +299,7 @@ step << Hunter
     .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
 step << Paladin
     #completewith next
-    >>Kill more |cRXP_ENEMY_Wolves|r or |cRXP_ENEMY_Troggs|r untill you have 88 copper worth of vendor trash. |cRXP_WARN_You will need it to buy weapons soon|r
+    +Kill more |cRXP_ENEMY_Wolves|r or |cRXP_ENEMY_Troggs|r untill you have 88 copper worth of vendor trash. |cRXP_WARN_You will need it to buy weapons soon|r
     .money 0.0088
     .goto 1426,29.529,73.286,0
     .goto 1426,28.117,75.088,0
@@ -314,6 +325,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
     .turnin 3107 >> Turn in Consecrated Rune << Dwarf
     .accept 77657 >> Accept Relics of the Light << Dwarf
+    .turnin 77657 >> Turn in Relics of the Light << Dwarf
     .target Bromos Grummner
 step << Paladin
     .goto Dun Morogh,28.79,67.85
@@ -340,6 +352,8 @@ step << Paladin
     #completewith next
     .equip 16,2130 >> Equip the |T133485:0|t[Club]
     .equip 17,17184 >> Equip the |T134955:0|t[Small Shield]
+    .use 2130 --Club
+    .use 17184 --Small Shield
 step << Warlock
     #season 2
     .goto Dun Morogh,28.650,66.145
@@ -428,6 +442,7 @@ step << Priest/Paladin
     .engrave 8 >> Engrave |T237514:0|t[Void Plague] on your boots << Priest
     .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves << Priest
     .engrave 7 >> Engrave |T135874:0|t[Avenger's Shield] on your pants << Paladin
+    .engrave 10 >> Engrave |T135891:0|t[Crusader Strike] on your gloves << Paladin
 step << Warlock
     .goto Dun Morogh,28.77,66.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
@@ -580,11 +595,10 @@ step << Warlock
     >>|cRXP_WARN_You're on a timer. Do NOT go AFK or log out|r
     .complete 1599,1 --Collect Feather Charm (x3)
     .mob Frostmane Novice
-step << Warlock/Paladin/Hunter
+step << Warlock/Hunter/Paladin
     #season 2
     #completewith next
     >>|cRXP_WARN_Make sure you will have at least one silver after vendoring. You will need it to train|r |T132204:0|t[Serpent Sting] << Hunter
-    >>|cRXP_WARN_Make sure you will have at least one silver after vendoring. You will need it to train|r |T135959:0|t[Judgement] << Paladin
     .hs >> Hearth to Anvilmar
 step << Paladin/Warlock/Hunter
     #optional
@@ -621,9 +635,8 @@ step << Paladin
     #season 2
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
-    .turnin 3107 >> Turn in Consecrated Rune << Dwarf
-    .accept 77657 >> Accept Relics of the Light << Dwarf
-    .train 20271 >> Train |T135959:0|t[Judgement]
+    >>|cRXP_WARN_If you havent found any|r |T132624:0|t[Chest]|cRXP_WARN_ or|r |T132602:0|t[Bracers] |cRXP_WARN_yet, buy them from the vendor inside Anvilmar instead of spending money on training spells. Runes are stronger than spells you can buy|r
+    .train >> Train your class spells
     .target Bromos Grummner
 step << Warlock
     #season 2
@@ -667,46 +680,6 @@ step << !Paladin !Warlock !Hunter
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
-step << Paladin
-    #season 2
-    #completewith Observations
-    #label Libram2
-    #requires Libram1
-    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
-    .use 205420
-    .itemcount 205420,1 --Libram of Judgement (1)
---  .itemStat 18,QUALITY,<2
-    .train 410002,1
-step << Paladin
-    #season 2
-    #completewith Observations
-    #label Libram3
-    #requires Libram2
-    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    .itemStat 18,QUALITY,2
-    .train 410002,1
-step << Paladin
-    #season 2
-    #completewith Observations
-    #label Libram4
-    #requires Libram3
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
-    .use 205420
-    .aura -408828
-    .train 410002,1
-step << Paladin
-    #season 2
-    #completewith Observations
-    #label Libram5
-    #requires Libram4
-    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
-    .train 410002,3
-step << Paladin
-    #season 2
-    #completewith Observations
-    #requires Libram5
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
-    .train 410002,3
 step << !Paladin !Hunter
     #loop
     #label TrollWhelps
