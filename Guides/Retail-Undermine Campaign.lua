@@ -12,19 +12,112 @@ RXPGuides.RegisterGuide([[
 --- START CHAPTER 1
 -----------------------------------------------------
 
-
 step
-    .goto 2339,42.22,26.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r.
-    .accept 83137 >>Accept When Opportunity Explodes
-    .target Renzik "The Shiv"
+    .zone 2339 >>Enter Dornogal
 step
-    .zoneskip 2214
-    .isQuestTurnedIn 78546
-    .goto 2248,37.60,72.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oathsworn Earthen|r.
-    .turnin 84220 >>Accept & Turn in Passage to the Ringing Deeps
-    .target Oathsworn Earthen
+    .goto 2339,52.61,50.14
+    .achievement 40900,6 
+    .zone 2346 >>Enter Undermine by taking the portal.
+step
+    .isQuestAvailable 86417
+    #completewith next
+    #label skip the campaign
+    .goto 2346,27.1,53.07,5,0
+    .goto 2346,37.48,50.94,10,0
+    .goto 2346,42.64,52,10,0
+    .goto 2346,43.53,51.7
+    .achievement 40900,6
+    .gossipoption 132243 >>Talk to |cRXP_FRIENDLY_Paks Topskimmer|r to skip the campaign.
+    *|cRXP_WARN_This is for skipping the campaign. If you want to playthrough the campaign, manually skip this step|r.
+    .target Paks Topskimmer
+step
+    #hidewindow
+    #completewith skip the campaign
+    .goto 2346,43.53,51.7,60 >>1
+step
+    #requires skip the campaign
+    .isQuestAvailable 86417
+    .goto 2346,43.53,51.7
+    .achievement 40900,6
+    .gossipoption 132243 >>Talk to |cRXP_FRIENDLY_Paks Topskimmer|r to skip the campaign |cRXP_WARN_until Chapter 6|r.
+    *|cRXP_WARN_This is for skipping the campaign. If you want to playthrough the campaign, manually skip this step|r.
+    .target Paks Topskimmer
+step
+    .isQuestTurnedIn 86417
+    +If you want to do Chapter 6; Switch to Chapter 6 Guide.
+    *|cRXP_WARN_This is for skipping the campaign. If you want to playthrough the campaign, manually skip this step|r.
+-- step
+--     .isQuestTurnedIn 86417
+--     .goto 2346,43.61,51.09
+--     .achievement 40900,6
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monte Gazlowe|r.
+--     .accept 86204 >>Accept Liberation of Undermine: The House Loses
+--     .target Monte Gazlowe
+-- step
+--     .isQuestTurnedIn 86417
+--     #completewith next
+--     #label Chrome King Gallywix
+--     .achievement 40900,6
+--     >>Kill |cRXP_ENEMY_Chrome King Gallywix|r inside the Liberation of Undermine raid.
+--     .complete 86204,2 --1/1 Chrome King Gallywix defeated
+-- step
+--     .isQuestTurnedIn 86417
+--     #completewith Chrome King Gallywix
+--     .goto 2346,43.51,51.7
+--     .achievement 40900,6
+--     -- .gossipoption 131582 >>Talk to |cRXP_FRIENDLY_|r
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paks Topskimmer|r
+--     .complete 86204,1 --1/1 Chrome King Gallywix defeated
+--     .skipgossipid 131582
+--     .target Paks Topskimmer
+-- step
+--     .isQuestTurnedIn 86417
+--     #requires Chrome King Gallywix
+--     .achievement 40900,6
+--     >>Kill |cRXP_ENEMY_Chrome King Gallywix|r inside the Liberation of Undermine raid.
+--     .complete 86204,2 --1/1 Chrome King Gallywix defeated
+-- step
+--     .isQuestTurnedIn 86417
+--     .zoneskip 2409,1
+--     .achievement 40900,6
+--     +Leave the Raid (Right-Click your player frame) or use the npc near gallywix.
+-- step
+--     .isQuestTurnedIn 86417
+--     #completewith next
+--     #label LiberationOfThingsLeft
+--     .achievement 40900,6
+--     *|cRXP_WARN_Leave the Raid (Right-Click your player frame; storymode) or hearthstone.|r
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
+--     .turnin 86204 >>Turn in Liberation of Undermine: The House Loses
+--     .accept 87321 >>Accept Things Left Undone
+--     .target Marin Noggenfogger
+-- step
+--     .isQuestTurnedIn 86417
+--     #completewith LiberationOfThingsLeft
+--     #title |cFFFCDC00Enter the laboratory|r
+--     .goto 2346,29.00,69.66,5 >>Enter the laboratory
+--     .achievement 40900,6
+-- step
+--     .isQuestTurnedIn 86417
+--     #requires LiberationOfThingsLeft
+--     .goto 2346,27.37,70.97
+--     .achievement 40900,6
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r.
+--     .turnin 86204 >>Turn in Liberation of Undermine: The House Loses
+--     .accept 87321 >>Accept Things Left Undone
+--     .target Marin Noggenfogger
+-- step
+--     .goto 2339,42.22,26.97
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r in Dornogal.
+--     .accept 83137 >>Accept When Opportunity Explodes
+--     .target Renzik "The Shiv"
+-- step
+--     .zoneskip 2214
+--     .isQuestTurnedIn 78546
+--     .goto 2248,37.60,72.64
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oathsworn Earthen|r.
+--     .turnin 84220 >>Accept & Turn in Passage to the Ringing Deeps
+--     .target Oathsworn Earthen
 step
     .isQuestTurnedIn 84220
     #label WhenOpportunityExplodes
@@ -2254,7 +2347,7 @@ step
     #completewith next
     #label LiberationOfThingsLeft
     *|cRXP_WARN_Leave the Raid (Right-Click your player frame; storymode) or hearthstone.|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r in unde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marin Noggenfogger|r
     .turnin 86204 >>Turn in Liberation of Undermine: The House Loses
     .accept 87321 >>Accept Things Left Undone
     .target Marin Noggenfogger
