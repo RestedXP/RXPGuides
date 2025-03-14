@@ -921,6 +921,19 @@ step << Gnome Monk
     .accept 31137 >>Accept Meet the High Tinker
 	.target Xi, Friend to the Small
 step << Gnome Hunter
+    #completewith next
+    #label The Future of Gnomeregan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muffinus Chromebrew|r.
+    .turnin 41217 >>Turn in The Future of Gnomeregan
+    .accept 41218 >>Accept Meet the High Tinker
+	.target Muffinus Chromebrew
+step << Gnome Hunter
+    #completewith The Future of Gnomeregan
+    #hidewindow
+    .goto 469,41,31.49,10,0 
+    .goto 469,42.1,30.96,10 >>1
+step << Gnome Hunter
+    #requires The Future of Gnomeregan
     .goto 469,41.925,31.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muffinus Chromebrew|r.
     .turnin 41217 >>Turn in The Future of Gnomeregan
@@ -943,9 +956,8 @@ step
     .goto 469,38.802,32.715
     >>|cRXP_WARN_Wait out the RP next to|r |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
     .complete 26208,1 --Learn about Operation: Gnomeregan (1)
---XX moves to     .goto 469,38.622,32.905 1-2s after objective completes
 step
-    .goto 469,38.622,32.905
+    .goto 469,38.81,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
     .turnin 26208 >>Turn in The Fight Continues
     .accept 26566 >>Accept A Triumph of Gnomish Ingenuity
@@ -958,29 +970,17 @@ step
 	.target Engineer Grindspark
 step
     #loop
-    .goto 469,40.494,27.605,0
-    .goto 469,40.120,29.225,0
-    .goto 469,39.656,32.676,0
-    .goto 469,41.582,29.198,0
-    .goto 469,40.494,27.605,10,0
-    .goto 469,39.198,24.420,15,0
-    .goto 469,38.810,27.054,15,0
-    .goto 469,40.120,29.225,15,0
-    .goto 469,39.165,29.163,15,0
---  .goto 469,38.476,28.416,15,0 --Inside, would cause too much confusion
-    .goto 469,38.584,29.471,15,0
-    .goto 469,38.171,30.664,15,0
-    .goto 469,36.688,31.718,15,0
-    .goto 469,37.961,32.983,15,0
-    .goto 469,39.656,32.676,15,0
-    .goto 469,40.736,34.654,15,0
-    .goto 469,41.463,35.446,15,0
-    .goto 469,41.611,33.559,15,0
-    .goto 469,41.052,33.663,15,0
-    .goto 469,41.387,31.803,15,0
-    .goto 469,42.278,28.782,15,0
-    .goto 469,41.582,29.198,15,0
-    >>Loot the [|cRXP_LOOT_Spare Parts|r]. on the ground
+    .goto 469,40.49,27.58,5,0
+    .goto 469,39.74,29.13,10,0
+    .goto 469,39.13,29.19,10,0
+    .goto 469,38.58,29.48,10,0
+    .goto 469,39.92,30.49,10,0
+    .goto 469,41.21,31.72,10,0
+    .goto 469,41.57,29.22,10,0
+    .goto 469,40.97,28.95,10,0
+    .goto 469,41.13,28,10,0
+    .goto 469,40.87,28.81,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Spare Parts|r.
     .complete 26222,1 --Spare Part (7)
 step
     .goto 469,40.578,28.021
@@ -994,90 +994,156 @@ step
     .accept 26264 >>Accept What's Left Behind
 	.target Tock Sprysprocket
 step
+    #completewith next
+    #label Dealing with the Fallout
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Fizzwhistle|r.
+    .accept 26265 >>Accept Dealing with the Fallout
+	.target Corporal Fizzwhistle
+step 
+    #completewith Dealing with the Fallout
+    #hidewindow
+    .goto 469,39.4,29.14,10,0
+    .goto 469,38.72,38.66,10 >>1
+step
+    #requires Dealing with the Fallout
     .goto 469,38.201,40.196
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Fizzwhistle|r.
     .accept 26265 >>Accept Dealing with the Fallout
 	.target Corporal Fizzwhistle
 step
-    #sticky
-    #label Contamination
+    #hidewindow
+    #completewith Living Contaminations
     #loop
-    .goto 469,40.992,40.259,0
-    .goto 469,37.170,40.971,0
-    .goto 469,39.912,49.912,0
-    .waypoint 469,40.992,40.259,40,0
-    .waypoint 469,40.559,39.847,40,0
-    .waypoint 469,39.968,40.426,40,0
-    .waypoint 469,39.065,40.724,40,0
-    .waypoint 469,38.592,40.539,40,0
-    .waypoint 469,37.980,41.331,40,0
-    .waypoint 469,37.170,40.971,40,0
-    .waypoint 469,36.360,40.843,40,0
-    .waypoint 469,34.620,43.365,40,0
-    .waypoint 469,36.336,44.818,40,0
-    .waypoint 469,39.912,49.912,40,0
+    .goto 469,40.05,42.01,15,0
+    .goto 469,41.76,44.64,15,0
+    .goto 469,42.66,45.39,15,0
+    .goto 469,40.54,45.69,15,0
+    .goto 469,39.36,45.6,15,0
+    .goto 469,37.98,46.62,15,0
+    .goto 469,37.09,50.61,15,0
+    .goto 469,41.05,52.15,15,0
+    .goto 469,42.18,51.57,15,0
+    .goto 469,41.29,50.26,15,0
+    .goto 469,38.44,56.98,15,0
+    .goto 469,37.54,56.79,15,0
+    .goto 469,42.47,61.83,15,0
+    .goto 469,42.47,63.32,15,0
+    +1
+step
+    #completewith Living Contaminations
+    +|cRXP_WARN_[RARE]|r Kill |cRXP_ENEMY_Gibblewilt|r if he's up, |cRXP_WARN_as he gives a lot of XP|r.
+    .unitscan Gibblewilt
+step
+    #completewith GS-9x Multi-Bot
     >>Kill |cRXP_ENEMY_Living Contaminations|r.
     .complete 26265,1 --Living Contamination (6)
     .mob Living Contamination
 step
-    #completewith Geysers
-    .goto 469,38.054,47.396,0
-    .goto 469,39.129,53.303,0
-    .goto 469,41.419,42.524,0
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their [|cRXP_LOOT_Recovered Possessions|r].
-    .complete 26264,1 --Recovered Possession (6)
-    .mob *Toxic Sludge
-step
-    #optional
-    #completewith next
-    .goto 469,40.603,45.713,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gibblewilt|r. Kill him if he's up|r.
-    .unitscan Gibblewilt
-    .noflyable
-step
-    #label Geysers
-    #loop
-    .goto 469,40.578,28.021,0 --Grindspark
-    .goto 469,40.029,42.015,0
-    .goto 469,39.349,46.363,0
-    .goto 469,41.328,50.585,0
-    .goto 469,40.029,42.015,15,0
-    .goto 469,41.629,44.514,15,0
-    .goto 469,42.430,45.128,15,0
-    .goto 469,39.349,46.363,15,0
-    .goto 469,38.657,45.115,15,0
-    .goto 469,37.860,46.624,15,0
-    .goto 469,36.858,50.094,15,0
-    .goto 469,37.386,50.996,15,0
-    .goto 469,40.808,52.328,15,0
-    .goto 469,41.910,51.865,15,0
-    .goto 469,41.328,50.585,15,0
-    >>Guide your |cRXP_FRIENDLY_GS-9x Multi-bot|r toward the Geysers in the green pools
-    >>|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r for a new one|r.
-    .complete 26205,1 --Clean up Toxic Geysers (5)
-    .skipgossip 42553,1
-step
-    #optional
-    #loop
-    .goto 469,38.054,47.396,0
-    .goto 469,39.129,53.303,0
-    .goto 469,41.419,42.524,0
-    .goto 469,38.054,47.396,40,0
-    .goto 469,35.840,46.516,40,0
-    .goto 469,34.007,48.244,40,0
-    .goto 469,34.752,49.411,40,0
-    .goto 469,35.620,52.363,40,0
-    .goto 469,36.659,52.593,40,0
-    .goto 469,39.129,53.303,40,0
-    .goto 469,40.837,53.655,40,0
-    .goto 469,42.523,50.016,40,0
-    .goto 469,40.920,48.049,40,0
-    .goto 469,40.209,47.931,40,0
-    .goto 469,41.419,42.524,40,0
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their [|cRXP_LOOT_Recovered Possessions|r].
+    #completewith GS-9x Multi-Bot
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
     .complete 26264,1 --Recovered Possession (6)
     .mob Toxic Sludge
 step
-    #requires Contamination
+    #label GS-9x Multi-Bot
+    >>Guide the |cRXP_FRIENDLY_GS-9x Multi-bot|r toward the geysers within the green pools.
+    *|cFFFF0000Don't run into the geysers, or you'll be knocked up!|r
+    *|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r for a new one|r.
+    .complete 26205,1 --Clean up Toxic Geysers (5)
+    .target GS-9x Multi-Bot
+    .skipgossip 42553,1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Living Contaminations|r.
+    .complete 26265,1 --Living Contamination (6)
+    .mob Living Contamination
+step
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
+    .complete 26264,1 --Recovered Possession (6)
+    .mob Toxic Sludge
+step
+    #label Living Contaminations
+    >>Kill |cRXP_ENEMY_Living Contaminations|r.
+    .complete 26265,1 --Living Contamination (6)
+    .mob Living Contamination
+-- step
+--     #sticky
+--     #label Contamination
+--     #loop
+--     .goto 469,40.992,40.259,0
+--     .goto 469,37.170,40.971,0
+--     .goto 469,39.912,49.912,0
+--     .waypoint 469,40.992,40.259,40,0
+--     .waypoint 469,40.559,39.847,40,0
+--     .waypoint 469,39.968,40.426,40,0
+--     .waypoint 469,39.065,40.724,40,0
+--     .waypoint 469,38.592,40.539,40,0
+--     .waypoint 469,37.980,41.331,40,0
+--     .waypoint 469,37.170,40.971,40,0
+--     .waypoint 469,36.360,40.843,40,0
+--     .waypoint 469,34.620,43.365,40,0
+--     .waypoint 469,36.336,44.818,40,0
+--     .waypoint 469,39.912,49.912,40,0
+--     >>Kill |cRXP_ENEMY_Living Contaminations|r.
+--     .complete 26265,1 --Living Contamination (6)
+--     .mob Living Contamination
+-- step
+--     #completewith Geysers
+--     .goto 469,38.054,47.396,0
+--     .goto 469,39.129,53.303,0
+--     .goto 469,41.419,42.524,0
+--     >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their [|cRXP_LOOT_Recovered Possessions|r].
+--     .complete 26264,1 --Recovered Possession (6)
+--     .mob *Toxic Sludge
+-- step
+--     #optional
+--     #completewith next
+--     .goto 469,40.603,45.713,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gibblewilt|r. Kill him if he's up|r.
+--     .unitscan Gibblewilt
+--     .noflyable
+-- step
+--     #label Geysers
+--     #loop
+--     .goto 469,40.578,28.021,0 --Grindspark
+--     .goto 469,40.029,42.015,0
+--     .goto 469,39.349,46.363,0
+--     .goto 469,41.328,50.585,0
+--     .goto 469,40.029,42.015,15,0
+--     .goto 469,41.629,44.514,15,0
+--     .goto 469,42.430,45.128,15,0
+--     .goto 469,39.349,46.363,15,0
+--     .goto 469,38.657,45.115,15,0
+--     .goto 469,37.860,46.624,15,0
+--     .goto 469,36.858,50.094,15,0
+--     .goto 469,37.386,50.996,15,0
+--     .goto 469,40.808,52.328,15,0
+--     .goto 469,41.910,51.865,15,0
+--     .goto 469,41.328,50.585,15,0
+--     >>Guide your |cRXP_FRIENDLY_GS-9x Multi-bot|r toward the Geysers in the green pools
+--     >>|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r for a new one|r.
+--     .complete 26205,1 --Clean up Toxic Geysers (5)
+--     .skipgossip 42553,1
+-- step
+--     #optional
+--     #loop
+--     .goto 469,38.054,47.396,0
+--     .goto 469,39.129,53.303,0
+--     .goto 469,41.419,42.524,0
+--     .goto 469,38.054,47.396,40,0
+--     .goto 469,35.840,46.516,40,0
+--     .goto 469,34.007,48.244,40,0
+--     .goto 469,34.752,49.411,40,0
+--     .goto 469,35.620,52.363,40,0
+--     .goto 469,36.659,52.593,40,0
+--     .goto 469,39.129,53.303,40,0
+--     .goto 469,40.837,53.655,40,0
+--     .goto 469,42.523,50.016,40,0
+--     .goto 469,40.920,48.049,40,0
+--     .goto 469,40.209,47.931,40,0
+--     .goto 469,41.419,42.524,40,0
+--     >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their [|cRXP_LOOT_Recovered Possessions|r].
+--     .complete 26264,1 --Recovered Possession (6)
+--     .mob Toxic Sludge
+step
     .goto 469,38.201,40.196
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Fizzwhistle|r.
     .turnin 26265 >>Turn in Dealing with the Fallout
@@ -1093,11 +1159,35 @@ step
     .turnin 26264 >>Turn in What's Left Behind
 	.target Tock Sprysprocket
 step
+    #completewith next
+    #label What's Keeping Kharmarn?
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tread Sparknozzle|r.
+    .accept 26316 >>Accept What's Keeping Kharmarn?
+	.target Captain Tread Sparknozzle
+step
+    #completewith What's Keeping Kharmarn?
+    #hidewindow
+    .goto 469,39.38,29.09,10 >>1
+step
+    #requires What's Keeping Kharmarn?
     .goto 469,38.385,33.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tread Sparknozzle|r.
     .accept 26316 >>Accept What's Keeping Kharmarn?
 	.target Captain Tread Sparknozzle
 step
+    #completewith next
+    #label Missing in Action
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
+    .turnin 26316 >>Turn in What's Keeping Kharmarn?
+    .accept 26284 >>Accept Missing in Action
+    .accept 26285 >>Accept Get Me Explosives Back!
+	.target Kharmarn Palegrip
+step
+    #hidewindow
+    #completewith Missing in Action
+    .goto 469,37.29,38.97,10 >>1
+step
+    #requires Missing in Action
     .goto 469,37.283,65.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
     .turnin 26316 >>Turn in What's Keeping Kharmarn?
@@ -1105,142 +1195,245 @@ step
     .accept 26285 >>Accept Get Me Explosives Back!
 	.target Kharmarn Palegrip
 step
-    #optional
-    #completewith next
-    .goto 469,37.265,67.852,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Caverndeep Looter|r. Kill him if he's up|r.
-	.unitscan Caverndeep Looter
-    .noflyable
---XX I could not find this guy (supposedly pats between Frostmane Hold and the cave entrance), need more accurate coordinates
+    #hidewindow
+    #completewith Stolen Powder Keg
+    #loop
+    .goto 469,36.59,68.65,15,0
+    .goto 469,38.24,68.88,15,0
+    .goto 469,37.99,72.61,15,0
+    .goto 469,38.86,74.37,15,0
+    .goto 469,40.85,74.37,15,0
+    .goto 469,42,73.55,15,0
+    .goto 469,41.09,69.67,15,0
+    .goto 469,44.01,70.25,15,0
+    .goto 469,45.91,69.29,15,0
+    .goto 469,47.08,71.13,15,0
+    .goto 469,47.23,73.6,15,0
+    .goto 469,44.96,73.37,15,0
+    +1
 step
-    #sticky
-    #label PowderKegs
-    .goto 469,38.413,67.778,0
-    .goto 469,46.960,73.690,0
-    .goto 469,42.336,69.559,0
-    .waypoint 469,38.413,67.778,40,0
-    .waypoint 469,36.284,70.305,40,0
-    .waypoint 469,39.268,75.879,40,0
-    .waypoint 469,42.366,75.706,40,0
-    .waypoint 469,44.629,77.577,40,0
-    .waypoint 469,45.326,73.024,40,0
-    .waypoint 469,46.960,73.690,40,0
-    .waypoint 469,47.296,72.654,40,0
-    .waypoint 469,46.734,71.721,40,0
-    .waypoint 469,47.119,68.438,40,0
-    .waypoint 469,47.163,65.769,40,0
-    .waypoint 469,43.581,70.051,40,0
-    .waypoint 469,42.336,69.559,40,0
-    >>Kill |cRXP_ENEMY_Rockjaw Bonepickers|r and |cRXP_ENEMY_Rockjaw Marauders|r. Loot them for the [|cRXP_LOOT_Stolen Powder Kegs|r].
+    #completewith Stolen Powder Keg
+    +|cRXP_WARN_[RARE]|r Kill |cRXP_ENEMY_Caverndeep Looter|r if he's up, |cRXP_WARN_as he gives a lot of XP|r.
+	.unitscan Caverndeep Looter
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Rockjaw Bonepickers|r and |cRXP_ENEMY_Rockjaw Marauders|r. 
+    *Loot them for the |T132622:0|t[|cRXP_LOOT_Stolen Powder Kegs|r].
     .complete 26285,1 --Stolen Powder Keg (7)
 	.mob Rockjaw Bonepicker
 	.mob Rockjaw Marauder
 step
-    #loop
-    .goto 469,36.560,68.469,0
-    .goto 469,38.768,74.257,0
-    .goto 469,45.803,69.339,0
-    .goto 469,36.560,68.469,15,0
-    .goto 469,38.134,68.845,15,0
-    .goto 469,37.972,72.466,15,0
-    .goto 469,38.768,74.257,15,0
-    .goto 469,40.738,74.411,15,0
-    .goto 469,41.168,69.792,15,0
-    .goto 469,42.045,73.682,15,0
-    .goto 469,45.032,73.353,15,0
-    .goto 469,47.131,73.469,15,0
-    .goto 469,47.007,71.031,15,0
-    .goto 469,45.803,69.339,15,0
-    .goto 469,43.887,70.268,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Makeshift Cages|r to rescue the |cRXP_FRIENDLY_Captured Demolitionists|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Makeshift Cages|r
     .complete 26284,1 --Captured Demolitionists rescued (6)
 step
-    #requires PowderKegs
+    #label Stolen Powder Keg
+    >>Kill |cRXP_ENEMY_Rockjaw Bonepickers|r and |cRXP_ENEMY_Rockjaw Marauders|r. 
+    *Loot them for the |T132622:0|t[|cRXP_LOOT_Stolen Powder Kegs|r].
+    .complete 26285,1 --Stolen Powder Keg (7)
+	.mob Rockjaw Bonepicker
+	.mob Rockjaw Marauder
+step
     .goto 469,37.283,65.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
     .turnin 26284 >>Turn in Missing in Action
     .turnin 26285 >>Turn in Get Me Explosives Back!
     .accept 26318 >>Accept Finishin' the Job
 	.target Kharmarn Palegrip
+-- step
+--     #sticky
+--     #label PowderKegs
+--     .goto 469,38.413,67.778,0
+--     .goto 469,46.960,73.690,0
+--     .goto 469,42.336,69.559,0
+--     .waypoint 469,38.413,67.778,40,0
+--     .waypoint 469,36.284,70.305,40,0
+--     .waypoint 469,39.268,75.879,40,0
+--     .waypoint 469,42.366,75.706,40,0
+--     .waypoint 469,44.629,77.577,40,0
+--     .waypoint 469,45.326,73.024,40,0
+--     .waypoint 469,46.960,73.690,40,0
+--     .waypoint 469,47.296,72.654,40,0
+--     .waypoint 469,46.734,71.721,40,0
+--     .waypoint 469,47.119,68.438,40,0
+--     .waypoint 469,47.163,65.769,40,0
+--     .waypoint 469,43.581,70.051,40,0
+--     .waypoint 469,42.336,69.559,40,0
+--     >>Kill |cRXP_ENEMY_Rockjaw Bonepickers|r and |cRXP_ENEMY_Rockjaw Marauders|r. Loot them for the [|cRXP_LOOT_Stolen Powder Kegs|r].
+--     .complete 26285,1 --Stolen Powder Keg (7)
+-- 	.mob Rockjaw Bonepicker
+-- 	.mob Rockjaw Marauder
+-- step
+--     #loop
+--     .goto 469,36.560,68.469,0
+--     .goto 469,38.768,74.257,0
+--     .goto 469,45.803,69.339,0
+--     .goto 469,36.560,68.469,15,0
+--     .goto 469,38.134,68.845,15,0
+--     .goto 469,37.972,72.466,15,0
+--     .goto 469,38.768,74.257,15,0
+--     .goto 469,40.738,74.411,15,0
+--     .goto 469,41.168,69.792,15,0
+--     .goto 469,42.045,73.682,15,0
+--     .goto 469,45.032,73.353,15,0
+--     .goto 469,47.131,73.469,15,0
+--     .goto 469,47.007,71.031,15,0
+--     .goto 469,45.803,69.339,15,0
+--     .goto 469,43.887,70.268,15,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Makeshift Cages|r to rescue the |cRXP_FRIENDLY_Captured Demolitionists|r.
+--     .complete 26284,1 --Captured Demolitionists rescued (6)
+-- step
+--     #requires PowderKegs
+--     .goto 469,37.283,65.200
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
+--     .turnin 26284 >>Turn in Missing in Action
+--     .turnin 26285 >>Turn in Get Me Explosives Back!
+--     .accept 26318 >>Accept Finishin' the Job
+-- 	.target Kharmarn Palegrip
 step
-	#completewith next
-    .goto 470,95.285,56.045,15 >>Enter the Frostmane Hold cave
-    .isOnQuest 26318
+    #completewith next
+    #label Boss Bruggor
+    >>Kill |cRXP_ENEMY_Boss Bruggor|r.
+    .complete 26318,2 --Boss Bruggor (1)
 step
-    #completewith Bruggor
-    .goto 470,87.857,52.221,15,0
-    .goto 470,83.611,44.352,15,0
-    .goto 470,74.752,38.437,15,0
-    .goto 470,64.507,54.540,15,0
-    .goto 470,60.714,72.486,15,0
-    .goto 470,45.246,74.390,15,0
-    .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside.
-    >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
-    .noflyable --Azeroth Flying
+    #title |cFFFCDC00Enter Cave|r
+    #completewith Boss Bruggor
+    .goto 469,33.8,66.29,15 >>Enter the Frostmane Hold Cave
 step
-    #completewith Bruggor
-    .goto 470,87.857,52.221,15,0
-    .goto 470,83.611,44.352,15,0
-    .goto 470,74.752,38.437,15,0
-    .goto 470,64.507,54.540,15,0
-    .goto 470,60.714,72.486,15,0
-    .goto 470,45.246,74.390,15,0
-    .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside.
-    .flyable --Azeroth Flying
-step
-    #sticky
-    #label Detonator
-    .goto 470,36.112,40.902,0,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r on the ground inside.
-    .complete 26318,1 --Detonate trogg tunnel (1)
-step
-    #label Bruggor
-    .goto 470,21.791,58.700,15,0
-    .goto 470,31.866,44.578
-    >>Kill |cRXP_ENEMY_Boss Bruggor|r inside.
+    #requires Boss Bruggor
+    .goto 470,87.21,51.37,10,0
+    .goto 470,79.61,39.36,10,0
+    .goto 470,67.4,48.66,10,0
+    .goto 470,59.67,74.59,10,0
+    .goto 470,44.6,75.2,10,0
+    .goto 470,34.74,63.44,10,0
+    .goto 470,27.47,52.08
+    >>Kill |cRXP_ENEMY_Boss Bruggor|r.
+    *|cRXP_WARN_You won't aggro the sleeping|r |cRXP_ENEMY_Rockjaw Fungus-Flingers|r |cRXP_WARN_unless you attack them|r.
     .complete 26318,2 --Boss Bruggor (1)
 	.mob Boss Bruggor
 step
-    #requires Detonator
-    #completewith Finishing
-    .goto 470,45.246,74.390,15,0
-    .goto 470,60.714,72.486,15,0
-    .goto 470,64.507,54.540,15,0
-    .goto 470,74.752,38.437,15,0
-    .goto 470,83.611,44.352,15,0
-    .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
-    >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
-    .noflyable --Azeroth Flying
-    .subzoneskip 135,1
+    .goto 470,36.17,40.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r.
+    .complete 26318,1 --Detonate trogg tunnel (1)
 step
-    #optional
-    #requires Detonator
-    #completewith Finishing
-    .goto 470,45.246,74.390,15,0
-    .goto 470,60.714,72.486,15,0
-    .goto 470,64.507,54.540,15,0
-    .goto 470,74.752,38.437,15,0
-    .goto 470,83.611,44.352,15,0
-    .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
-    .flyable --Azeroth Flying
-    .subzoneskip 135,1
+    #completewith next
+    #label Finishin' the Job
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
+    .turnin 26318 >>Turn in Finishin' the Job
+    -- .accept 26329 >>Accept One More Thing
+	.target Kharmarn Palegrip
 step
-    #label Finishing
-    #requires Detonator
+    #completewith Finishin' the Job
+    #title |cFFFCDC00Exit Cave|r
+    .goto 470,34.89,63.73,10,0
+    .goto 470,46.28,74.88,10,0
+    .goto 470,60.56,72.62,10,0
+    .goto 470,64.93,53.53,10,0
+    .goto 470,76.16,37.36,10,0
+    .goto 470,87.69,51.74,10,0
+    .goto 469,34.42,66.18,10 >>Exit the Frostmane Hold Cave.
+    *|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
+step
+    #requires Finishin' the Job
     .goto 469,37.283,65.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
     .turnin 26318 >>Turn in Finishin' the Job
     .accept 26329 >>Accept One More Thing
 	.target Kharmarn Palegrip
+-- step
+-- 	#completewith next
+--     .goto 470,95.285,56.045,15 >>Enter the Frostmane Hold cave
+--     .isOnQuest 26318
+-- step
+--     #completewith Bruggor
+--     .goto 470,87.857,52.221,15,0
+--     .goto 470,83.611,44.352,15,0
+--     .goto 470,74.752,38.437,15,0
+--     .goto 470,64.507,54.540,15,0
+--     .goto 470,60.714,72.486,15,0
+--     .goto 470,45.246,74.390,15,0
+--     .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside.
+--     >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
+--     .noflyable --Azeroth Flying
+-- step
+--     #completewith Bruggor
+--     .goto 470,87.857,52.221,15,0
+--     .goto 470,83.611,44.352,15,0
+--     .goto 470,74.752,38.437,15,0
+--     .goto 470,64.507,54.540,15,0
+--     .goto 470,60.714,72.486,15,0
+--     .goto 470,45.246,74.390,15,0
+--     .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside.
+--     .flyable --Azeroth Flying
+-- step
+--     #sticky
+--     #label Detonator
+--     .goto 470,36.112,40.902,0,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r on the ground inside.
+--     .complete 26318,1 --Detonate trogg tunnel (1)
+-- step
+--     #label Bruggor
+--     .goto 470,21.791,58.700,15,0
+--     .goto 470,31.866,44.578
+--     >>Kill |cRXP_ENEMY_Boss Bruggor|r inside.
+--     .complete 26318,2 --Boss Bruggor (1)
+-- 	.mob Boss Bruggor
+-- step
+--     #requires Detonator
+--     #completewith Finishing
+--     .goto 470,45.246,74.390,15,0
+--     .goto 470,60.714,72.486,15,0
+--     .goto 470,64.507,54.540,15,0
+--     .goto 470,74.752,38.437,15,0
+--     .goto 470,83.611,44.352,15,0
+--     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
+--     >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
+--     .noflyable --Azeroth Flying
+--     .subzoneskip 135,1
+-- step
+--     #optional
+--     #requires Detonator
+--     #completewith Finishing
+--     .goto 470,45.246,74.390,15,0
+--     .goto 470,60.714,72.486,15,0
+--     .goto 470,64.507,54.540,15,0
+--     .goto 470,74.752,38.437,15,0
+--     .goto 470,83.611,44.352,15,0
+--     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
+--     .flyable --Azeroth Flying
+--     .subzoneskip 135,1
+-- step
+--     #label Finishing
+--     #requires Detonator
+--     .goto 469,37.283,65.200
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
+--     .turnin 26318 >>Turn in Finishin' the Job
+--     .accept 26329 >>Accept One More Thing
+-- 	.target Kharmarn Palegrip
+-- step not faster on average
+--     #completewith next
+--     .goto 469,36.284,70.305,-1
+--     .goto 469,47.880,44.670,-1
+--     *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r.
+--     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step
     #completewith next
-    .goto 469,36.284,70.305,-1
-    .goto 469,47.880,44.670,-1
--- .goto 425,38.29,58.12
-    *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r.
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
-    .skill riding,75,1
---XX NOTE: Dying in gnomer sends you to Chill Breeze
+    #label in One More Thing
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r and |cRXP_FRIENDLY_Hinkles Fastblast|r.
+    .turnin 26329 >>Turn in One More Thing
+    .accept 26331 >>Accept Crushcog's Minions
+	.target +High Tinker Mekkatorgue
+    .accept 26333 >>Accept No Tanks!
+	.target +Hinkles Fastblast
 step
+    #title |cFFFCDC00Follow the Arrow|r
+    #hidewindow
+    #completewith in One More Thing
+    .goto 469,37.25,59.43,10,0
+    .goto 469,37.26,54.35,10,0
+    .goto 469,38.71,40.01,10 >>1
+step
+    #requires in One More Thing
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r and |cRXP_FRIENDLY_Hinkles Fastblast|r.
     .turnin 26329 >>Turn in One More Thing
     .accept 26331 >>Accept Crushcog's Minions
