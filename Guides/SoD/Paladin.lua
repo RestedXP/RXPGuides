@@ -2204,11 +2204,11 @@ step
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
-    .goto Eastern Plaguelands,59.8,70.8 --Not sure if this is the house or the other one, need more info
+    .goto Eastern Plaguelands,61.3,69.3 --Not sure if this is the house or the other one, need more info
     >>Enter the house in Corrin's Crossing. Loot the |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_on the second floor|r
     .complete 84318,1
 step
-    .goto Eastern Plaguelands,59.8,70.8
+    .goto Eastern Plaguelands,61.3,69.3
     >>Use |T134566:0|t[Orthas' Favourite Gold Tooth] to summon |cRXP_FRIENDLY_Orthas|r again. Talk to him to turnin the quest and get the followup
     .turnin 84318 >> Turn in Oi!
     .accept 84319 >> Accept Oh No Ye Don't

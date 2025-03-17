@@ -1660,6 +1660,7 @@ step
 step
     .goto Wetlands,15.5,23.5
     >>Kill Captain Halyndor by entering the ship through the broken mast
+    >>|cRXP_WARN_Be careful he can cast|r |T136232:0|t[Ward of the Eye]|cRXP_WARN_ making him|r |cRXP_ENEMY_REFLECT SPELLS|r |cRXP_WARN_for 6 seconds|r
     .complete 290,1 --Collect Intrepid Strongbox Key (x1)
 step
     .goto Wetlands,14.4,24.0
