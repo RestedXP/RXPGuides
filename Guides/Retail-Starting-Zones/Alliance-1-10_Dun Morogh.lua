@@ -801,7 +801,7 @@ step
     .turnin 28167 >>Turn in Report to Carvo Blastbolt
     .accept 27671 >>Accept See to the Survivors
 	.target Carvo Blastbolt
-step << skip
+step
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
     *[1] Press the |cRXP_WARN_Escape key|r.
@@ -812,27 +812,34 @@ step << skip
     .isOnQuest 27671
 step
     #loop
-    .goto 30,50.07,30.69,3,0
-    .goto 30,53.18,29.29,5,0
-    .goto 30,52.15,27.62,5,0
-    .goto 30,52.67,23.08,8,0
-    .goto 30,45.86,24.31,10,0
-    .goto 30,47.63,30.01,5,0
-    .goto 30,43.91,30.16,8,0
-    .goto 30,42.59,36.47,8,0
-    .goto 30,50.99,42.94,15,0
-    .goto 30,51.61,37.35,10,0
-    .goto 30,48.14,33.31,10,0
-    .goto 30,54.92,35.93,10,0
-    .goto 30,55.11,36.97,5,0
-    .goto 30,53.89,43.48,7,0
-    .goto 30,60.25,43.79,10,0
-    .goto 30,64.41,37.61,10,0
-    .goto 30,64.01,32.74,8,0
-    .goto 30,62.91,28.42,10,0
-    .goto 30,57.68,30.99,10,0
-    .goto 30,56.04,23.32,10,0
+    .goto 30,47.66,30.02,10,0
+    .goto 30,53.18,29.42,11,0
+    .goto 30,52.63,23.41,10,0
+    .goto 30,45.35,28.18,10,0
+    .goto 30,44.02,36.28,10,0
+    .goto 30,51.61,37.3,11,0
+    -- .goto 30,50.07,30.69,3,0
+    -- .goto 30,53.18,29.29,7,0
+    -- .goto 30,52.15,27.62,7,0
+    -- .goto 30,52.67,23.08,8,0
+    -- .goto 30,45.86,24.31,10,0
+    -- .goto 30,47.63,30.01,5,0
+    -- .goto 30,43.91,30.16,8,0
+    -- .goto 30,42.59,36.47,8,0
+    -- .goto 30,50.99,42.94,15,0
+    -- .goto 30,51.61,37.35,10,0
+    -- .goto 30,48.14,33.31,10,0
+    -- .goto 30,54.92,35.93,10,0
+    -- .goto 30,55.11,36.97,5,0
+    -- .goto 30,53.89,43.48,7,0
+    -- .goto 30,60.25,43.79,10,0
+    -- .goto 30,64.41,37.61,10,0
+    -- .goto 30,64.01,32.74,8,0
+    -- .goto 30,62.91,28.42,10,0
+    -- .goto 30,57.68,30.99,10,0
+    -- .goto 30,56.04,23.32,10,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Survivors|r.
+    *|cRXP_WARN_You can do this from a distance|r.
     .complete 27671,1 --Survivors Rescued (6)
 	.target Survivor
 step
@@ -842,6 +849,19 @@ step
     .accept 28169 >>Accept Withdraw to the Loading Room!
 	.target Carvo Blastbolt
 step
+    #completewith next
+    #label Withdraw to the Loading Room!
+    .goto 30,53.47,75.07,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaffer Coilspring|r.
+    .turnin 28169 >>Turn in Withdraw to the Loading Room!
+    .accept 27635 >>Accept Decontamination
+	.target Gaffer Coilspring
+step
+    #completewith Withdraw to the Loading Room!
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 30,53.063,82.341,30 >>Head to the questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you know how|r.
+step
+    #requires Withdraw to the Loading Room!
     .goto 30,53.063,82.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaffer Coilspring|r.
     .turnin 28169 >>Turn in Withdraw to the Loading Room!
@@ -923,6 +943,9 @@ step << Gnome Monk
 step << Gnome Hunter
     #completewith next
     #label The Future of Gnomeregan
+    .goto 469,39.66,37.34,5,0
+    .goto 469,41.1,31.17,10,0
+    .goto 469,42.1,30.91,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muffinus Chromebrew|r.
     .turnin 41217 >>Turn in The Future of Gnomeregan
     .accept 41218 >>Accept Meet the High Tinker
@@ -930,8 +953,7 @@ step << Gnome Hunter
 step << Gnome Hunter
     #completewith The Future of Gnomeregan
     #hidewindow
-    .goto 469,41,31.49,10,0 
-    .goto 469,42.1,30.96,10 >>1
+    .goto 469,41.925,31.636,10 >>1
 step << Gnome Hunter
     #requires The Future of Gnomeregan
     .goto 469,41.925,31.636
@@ -950,7 +972,7 @@ step
     .turnin 31137 >>Turn in Meet the High Tinker << Monk
     .turnin 41218 >>Turn in Meet the High Tinker << Hunter/Druid
     .accept 26208 >>Accept The Fight Continues
-	.timer 5,Meet the High Tinker RP
+	.timer 4.5,Meet the High Tinker RP
 	.target High Tinker Mekkatorque
 step
     .goto 469,38.802,32.715
@@ -970,16 +992,48 @@ step
 	.target Engineer Grindspark
 step
     #loop
-    .goto 469,40.49,27.58,5,0
-    .goto 469,39.74,29.13,10,0
-    .goto 469,39.13,29.19,10,0
-    .goto 469,38.58,29.48,10,0
+    -- .goto 469,40.5,27.63,6,0
+    -- .goto 469,39.6,29.35,8,0
+    -- -- .goto 469,39.17,29.2,6,0
+    -- .goto 469,38.62,29.48,10,0
+    -- .goto 469,39.92,30.49,6,0
+    -- .goto 469,41.57,29.22,6,0
+    -- .goto 469,41.06,28.93,3,0
+    -- .goto 469,41.14,27.98,6,0
+    -- .goto 469,40.87,28.82,3,0
+    -- .goto 469,38.88,27.1,6,0
+    -- .goto 469,39.88,29.12,15,0
+    -- .goto 469,38.5,28.45,10,0
+    -- .goto 469,39.26,28.98,8,0
+    -- .goto 469,39.28,29.16,3,0
+    -- .goto 469,39.28,29.16,12,0
+    -- .goto 469,37.97,32.97,10,0
+    -- .goto 469,39.69,32.66,10,0
+    -- .goto 469,41.18,31.75,10,0
+    -- .goto 469,40.73,34.67,10,0
+    -- .goto 469,41.51,35.43,10,0
+    -- .goto 469,41.65,33.57,10,0
+    .goto 469,40.5,27.63,6,0
+    .goto 469,39.6,29.35,10,0
+    .goto 469,38.62,29.48,10,0
     .goto 469,39.92,30.49,10,0
-    .goto 469,41.21,31.72,10,0
-    .goto 469,41.57,29.22,10,0
-    .goto 469,40.97,28.95,10,0
-    .goto 469,41.13,28,10,0
-    .goto 469,40.87,28.81,10,0
+    .goto 469,41.57,29.22,6,0
+    .goto 469,41.06,28.93,3,0
+    .goto 469,41.14,27.98,6,0
+    .goto 469,40.87,28.82,3,0
+    .goto 469,38.88,27.1,15,0
+    .goto 469,39.88,29.12,10,0
+    .goto 469,38.5,28.45,10,0
+    .goto 469,39.26,28.98,8,0
+    .goto 469,39.28,29.16,3,0
+    .goto 469,39.28,29.16,10,0
+    .goto 469,37.97,32.97,10,0
+    .goto 469,39.69,32.66,10,0
+    .goto 469,42.16,30.91,10,0
+    .goto 469,42.31,28.85,10,0
+    .goto 469,40.14,30.26,10,0
+    .goto 469,41.3,33.51,10,0
+    .goto 469,41.21,36.74,10,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Spare Parts|r.
     .complete 26222,1 --Spare Part (7)
 step
@@ -997,13 +1051,14 @@ step
     #completewith next
     #label Dealing with the Fallout
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Fizzwhistle|r.
+    .goto 469,39.4,29.14,10,0
+    .goto 469,38.72,38.66,10,0
     .accept 26265 >>Accept Dealing with the Fallout
 	.target Corporal Fizzwhistle
 step 
     #completewith Dealing with the Fallout
     #hidewindow
-    .goto 469,39.4,29.14,10,0
-    .goto 469,38.72,38.66,10 >>1
+    .goto 469,38.201,40.196,20 >>1
 step
     #requires Dealing with the Fallout
     .goto 469,38.201,40.196
@@ -1015,13 +1070,14 @@ step
     #completewith Living Contaminations
     #loop
     .goto 469,40.05,42.01,15,0
-    .goto 469,41.76,44.64,15,0
     .goto 469,42.66,45.39,15,0
-    .goto 469,40.54,45.69,15,0
-    .goto 469,39.36,45.6,15,0
-    .goto 469,37.98,46.62,15,0
-    .goto 469,37.09,50.61,15,0
+    .goto 469,39.18,46.56,10,0
+    .goto 469,38.58,44.96,10,0
+    .goto 469,37.78,47.01,10,0
+    .goto 469,37.09,50.61,10,0
     .goto 469,41.05,52.15,15,0
+    .goto 469,41.41,50.23,15,0
+    .goto 469,41.98,52.25,15,0
     .goto 469,42.18,51.57,15,0
     .goto 469,41.29,50.26,15,0
     .goto 469,38.44,56.98,15,0
@@ -1040,13 +1096,13 @@ step
     .mob Living Contamination
 step
     #completewith GS-9x Multi-Bot
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r. 
+    *Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
     .complete 26264,1 --Recovered Possession (6)
     .mob Toxic Sludge
 step
     #label GS-9x Multi-Bot
-    >>Guide the |cRXP_FRIENDLY_GS-9x Multi-bot|r toward the geysers within the green pools.
-    *|cFFFF0000Don't run into the geysers, or you'll be knocked up!|r
+    >>Guide the |cRXP_FRIENDLY_GS-9x Multi-bot|r into the geysers |cFFFF0000avoid running into them yourself|r.
     *|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r for a new one|r.
     .complete 26205,1 --Clean up Toxic Geysers (5)
     .target GS-9x Multi-Bot
@@ -1057,7 +1113,8 @@ step
     .complete 26265,1 --Living Contamination (6)
     .mob Living Contamination
 step
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r.
+    Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
     .complete 26264,1 --Recovered Possession (6)
     .mob Toxic Sludge
 step
@@ -1144,12 +1201,37 @@ step
 --     .complete 26264,1 --Recovered Possession (6)
 --     .mob Toxic Sludge
 step
+    #completewith next
+    #label Turn in Dealing with the Fallout
     .goto 469,38.201,40.196
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Fizzwhistle|r.
     .turnin 26265 >>Turn in Dealing with the Fallout
 	.target Corporal Fizzwhistle
 step
-    .goto 469,40.578,28.021
+    #completewith Turn in Dealing with the Fallout
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 469,38.201,40.196,60 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you can't mount|r.
+step
+    #requires Turn in Dealing with the Fallout
+    .goto 469,38.201,40.196
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Fizzwhistle|r.
+    .turnin 26265 >>Turn in Dealing with the Fallout
+	.target Corporal Fizzwhistle
+step
+    #completewith next
+    #label Turn in A Job for the Multi-Bot
+    .goto 469,39.04,38.13,10,0
+    .goto 469,40.58,28.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer Grindspark|r.
+    .turnin 26205 >>Turn in A Job for the Multi-Bot
+	.target Engineer Grindspark
+step 
+    #completewith Turn in A Job for the Multi-Bot
+    #hidewindow
+    .goto 469,40.58,28.04,10 >>1
+step
+    #requires Turn in A Job for the Multi-Bot
+    .goto 469,40.58,28.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer Grindspark|r.
     .turnin 26205 >>Turn in A Job for the Multi-Bot
 	.target Engineer Grindspark
@@ -1161,31 +1243,33 @@ step
 step
     #completewith next
     #label What's Keeping Kharmarn?
+    .goto 469,39.36,29.15,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tread Sparknozzle|r.
     .accept 26316 >>Accept What's Keeping Kharmarn?
 	.target Captain Tread Sparknozzle
 step
     #completewith What's Keeping Kharmarn?
     #hidewindow
-    .goto 469,39.38,29.09,10 >>1
+    .goto 469,38.4,33.44,10 >>1
 step
     #requires What's Keeping Kharmarn?
-    .goto 469,38.385,33.488
+    .goto 469,38.4,33.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tread Sparknozzle|r.
     .accept 26316 >>Accept What's Keeping Kharmarn?
 	.target Captain Tread Sparknozzle
 step
     #completewith next
     #label Missing in Action
+    .goto 469,37.29,38.97,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
     .turnin 26316 >>Turn in What's Keeping Kharmarn?
     .accept 26284 >>Accept Missing in Action
     .accept 26285 >>Accept Get Me Explosives Back!
 	.target Kharmarn Palegrip
 step
-    #hidewindow
     #completewith Missing in Action
-    .goto 469,37.29,38.97,10 >>1
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 469,37.283,65.200,20 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you can't mount|r.
 step
     #requires Missing in Action
     .goto 469,37.283,65.200
@@ -1203,8 +1287,8 @@ step
     .goto 469,37.99,72.61,15,0
     .goto 469,38.86,74.37,15,0
     .goto 469,40.85,74.37,15,0
-    .goto 469,42,73.55,15,0
     .goto 469,41.09,69.67,15,0
+    .goto 469,42,73.55,15,0
     .goto 469,44.01,70.25,15,0
     .goto 469,45.91,69.29,15,0
     .goto 469,47.08,71.13,15,0
@@ -1300,38 +1384,62 @@ step
     .goto 469,33.8,66.29,15 >>Enter the Frostmane Hold Cave
 step
     #requires Boss Bruggor
+    #completewith next
+    #label Detonate trogg tunnel
     .goto 470,87.21,51.37,10,0
     .goto 470,79.61,39.36,10,0
     .goto 470,67.4,48.66,10,0
     .goto 470,59.67,74.59,10,0
     .goto 470,44.6,75.2,10,0
     .goto 470,34.74,63.44,10,0
+    .goto 470,27.47,52.08,10,0
+    .goto 470,36.17,40.83
+    >>Kill |cRXP_ENEMY_Boss Bruggor|r.
+    *|cRXP_WARN_You won't aggro the sleeping|r |cRXP_ENEMY_Rockjaw Fungus-Flingers|r |cRXP_WARN_unless you attack them|r.
+    .complete 26318,2 --Boss Bruggor (1)
+	.mob Boss Bruggor
+step
+    #requires Boss Bruggor
+    #completewith Detonate trogg tunnel
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 470,27.47,52.08,30 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you know how|r.
+step
+    #requires Detonate trogg tunnel
+    #completewith next
+    .goto 470,27.47,52.08,10,0
+    >>Kill |cRXP_ENEMY_Boss Bruggor|r.
+    *|cRXP_WARN_You won't aggro the sleeping|r |cRXP_ENEMY_Rockjaw Fungus-Flingers|r |cRXP_WARN_unless you attack them|r.
+    .complete 26318,2 --Boss Bruggor (1)
+	.mob Boss Bruggor
+step
+    #requires Detonate trogg tunnel
+    .goto 470,36.17,40.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r.
+    .complete 26318,1 --Detonate trogg tunnel (1)
+step
     .goto 470,27.47,52.08
     >>Kill |cRXP_ENEMY_Boss Bruggor|r.
     *|cRXP_WARN_You won't aggro the sleeping|r |cRXP_ENEMY_Rockjaw Fungus-Flingers|r |cRXP_WARN_unless you attack them|r.
     .complete 26318,2 --Boss Bruggor (1)
 	.mob Boss Bruggor
 step
-    .goto 470,36.17,40.83
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Detonator|r.
-    .complete 26318,1 --Detonate trogg tunnel (1)
-step
     #completewith next
     #label Finishin' the Job
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
-    .turnin 26318 >>Turn in Finishin' the Job
-    -- .accept 26329 >>Accept One More Thing
-	.target Kharmarn Palegrip
-step
-    #completewith Finishin' the Job
-    #title |cFFFCDC00Exit Cave|r
     .goto 470,34.89,63.73,10,0
     .goto 470,46.28,74.88,10,0
     .goto 470,60.56,72.62,10,0
     .goto 470,64.93,53.53,10,0
     .goto 470,76.16,37.36,10,0
     .goto 470,87.69,51.74,10,0
-    .goto 469,34.42,66.18,10 >>Exit the Frostmane Hold Cave.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r.
+    .turnin 26318 >>Turn in Finishin' the Job
+    .accept 26329 >>Accept One More Thing
+    .disablecheckbox
+	.target Kharmarn Palegrip
+step
+    #completewith Finishin' the Job
+    #title |cFFFCDC00Exit Cave|r
+    .goto 469,34.42,66.18,30 >>Exit the Frostmane Hold Cave, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you know how|r.
     *|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
 step
     #requires Finishin' the Job
@@ -1420,18 +1528,19 @@ step
     #completewith next
     #label in One More Thing
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r and |cRXP_FRIENDLY_Hinkles Fastblast|r.
-    .turnin 26329 >>Turn in One More Thing
-    .accept 26331 >>Accept Crushcog's Minions
-	.target +High Tinker Mekkatorgue
-    .accept 26333 >>Accept No Tanks!
-	.target +Hinkles Fastblast
-step
-    #title |cFFFCDC00Follow the Arrow|r
-    #hidewindow
-    #completewith in One More Thing
     .goto 469,37.25,59.43,10,0
     .goto 469,37.26,54.35,10,0
-    .goto 469,38.71,40.01,10 >>1
+    .goto 469,38.71,40.01,10,0
+    .turnin 26329 >>Turn in One More Thing
+    .accept 26331 >>Accept Crushcog's Minions
+    .disablecheckbox
+    .accept 26333 >>Accept No Tanks!
+    .disablecheckbox
+	.target +High Tinker Mekkatorgue
+step
+    #title |cFFFCDC00Follow the Arrow|r
+    #completewith in One More Thing
+    .goto 469,38.802,32.715,100 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount|r.
 step
     #requires in One More Thing
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r and |cRXP_FRIENDLY_Hinkles Fastblast|r.
@@ -1442,85 +1551,57 @@ step
     .accept 26333 >>Accept No Tanks!
     .goto 469,38.204,33.662
 	.target +Hinkles Fastblast
+-- step
+--     >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Timber|r. Kill him if he's up|r.
+--     .unitscan Timber
 step
-    #sticky
-    #label Tanks
-    #loop
-    .goto 469,59.638,21.877,0
-    .goto 469,53.711,22.482,0
-    .goto 469,58.619,23.568,0
-    .waypoint 469,59.638,21.877,15,0
-    .waypoint 469,59.620,19.066,15,0
-    .waypoint 469,58.784,18.047,15,0
-    .waypoint 469,57.507,18.837,15,0
-    .waypoint 469,56.560,20.889,15,0
-    .waypoint 469,55.463,21.067,15,0
-    .waypoint 469,53.711,22.482,15,0
-    .waypoint 469,53.126,24.536,15,0
-    .waypoint 469,54.080,26.011,15,0
-    .waypoint 469,55.407,23.742,15,0
-    .waypoint 469,56.513,23.676,15,0
-    .waypoint 469,57.585,23.609,15,0
-    .waypoint 469,58.619,23.568,15,0
-    >>Use the |T133710:0|t[Techno-Grenades] on the |cRXP_FRIENDLY_Repaired Mechano-Tanks|r.
+    #completewith next
+    #label Repaired Mechano-Tanks destroyed
+    .goto 469,42.31,31.79,10,0
+    .goto 469,47.39,27.48,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Repaired Mechano-Tanks|r.
+    *|cRXP_WARN_You can do this from a distance|r.
     .complete 26333,1 --Repaired Mechano-Tanks destroyed (5)
 	.mob Repaired Mechano-Tank
     .use 58200
 step
-    #sticky
-    #label CrushcogM
+    #completewith Repaired Mechano-Tanks destroyed
+    .goto 469,49.24,26.54,10 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount|r.
+step
+    #requires Repaired Mechano-Tanks destroyed
+    #hidewindow
+    #completewith Crushcog's Minions killed
     #loop
-    .goto 469,54.018,26.884,0
-    .goto 469,60.672,22.216,0
-    .goto 469,52.540,24.667,0
-    .goto 469,54.018,26.884,45,0
-    .goto 469,55.919,26.336,45,0
-    .goto 469,57.608,25.933,45,0
-    .goto 469,60.002,25.191,45,0
-    .goto 469,61.148,25.266,45,0
-    .goto 469,60.490,23.847,45,0
-    .goto 469,60.672,22.216,45,0
-    .goto 469,56.948,18.526,45,0
-    .goto 469,56.251,19.440,45,0
-    .goto 469,54.541,18.700,45,0
-    .goto 469,54.364,20.143,45,0
-    .goto 469,52.960,21.320,45,0
-    .goto 469,52.540,24.667,45,0
+    .goto 469,52.77,23.59,10,0
+    .goto 469,54.43,21.88,10,0
+    .goto 469,55.97,21.22,10,0
+    .goto 469,56.07,24.99,20,0
+    .goto 469,53.61,26.69,20,0
+    .goto 469,58.18,23.56,30,0
+    .goto 469,58.66,21.09,30,0
+    .goto 469,58.14,18.36,30,0
+    +1
+step
+    #requires Repaired Mechano-Tanks destroyed
+    #completewith next
     >>Kill |cRXP_ENEMY_Crushcog Battle Suits|r and |cRXP_ENEMY_Irradiated Technicians|r.
 	.complete 26331,1 --Crushcog's Minions killed (8)
 	.mob Crushcog Battle Suit
 	.mob Irradiated Technician
 step
-    #optional
-    .goto 469,66.100,26.168,45,0
-    .goto 469,66.023,27.211,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Weaponized Rabbot|r. Kill it if it's up|r.
-	.unitscan Weaponized Rabbot
-    .isOnQuest 26331
-    .noflyable
+    #requires Repaired Mechano-Tanks destroyed
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Repaired Mechano-Tanks|r.
+    *|cRXP_WARN_You can do this from a distance|r.
+    .complete 26333,1 --Repaired Mechano-Tanks destroyed (5)
+	.mob Repaired Mechano-Tank
+    .use 58200
 step
-    #optional
-    .goto 469,68.698,35.590,45,0
-    .goto 469,67.992,35.519,45,0
-    .goto 469,67.433,37.129,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Timber|r. Kill him if he's up|r.
-    .unitscan Timber
-    .isOnQuest 26331
-    .noflyable
+    #label Crushcog's Minions killed
+    >>Kill |cRXP_ENEMY_Crushcog Battle Suits|r and |cRXP_ENEMY_Irradiated Technicians|r.
+	.complete 26331,1 --Crushcog's Minions killed (8)
+	.mob Crushcog Battle Suit
+	.mob Irradiated Technician
 step
-    #optional
-    #requires CrushcogM
---XXREQ Placeholder invis step until multiple requires per step
-step << skip
-    #requires Tanks
-    #completewith next
-    .goto 469,56.346,21.833,-1
-    .goto 469,47.880,44.670,-1
--- .goto 425,38.29,58.12
-    *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r.
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
-    .skill riding,75,1
---XX unlikely to ever be worth
-step
-    #requires Tanks
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r, |cRXP_FRIENDLY_Hinkles Fastblast|r, and |cRXP_FRIENDLY_Kelsey Steelspark|r.
     .turnin 26331 >>Turn in Crushcog's Minions
     .goto 469,38.802,32.715
@@ -1532,6 +1613,35 @@ step
     .goto 469,38.025,33.570
 	.target +Kelsey Steelspark
 step
+    #completewith next
+    #label Staging in Brewnall
+    .goto 469,48.744,52.880
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+    .turnin 26339 >>Turn in Staging in Brewnall
+    .accept 26342 >>Accept Paint it Black
+    .disablecheckbox
+	.target Jarvi Shadowstep
+step
+    --insert if bags are needed
+    #completewith Staging in Brewnall
+    .goto 469,39.94,35.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carson Crazybread|r.
+    .collect 4496,3
+    .buy 4496,3
+    .target Carson Crazybread
+step
+    #requires Staging in Brewnall
+    #completewith next
+    +|cRXP_WARN_[RARE]|r Kill |cRXP_ENEMY_Gibblewilt|r if he's up, |cRXP_WARN_as he gives a lot of XP|r.
+    .unitscan Gibblewilt
+step
+    #requires Staging in Brewnall
+    .goto 469,48.744,52.880
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+    .turnin 26339 >>Turn in Staging in Brewnall
+    .accept 26342 >>Accept Paint it Black
+	.target Jarvi Shadowstep
+step
     .goto 469,48.744,52.880
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
     .turnin 26339 >>Turn in Staging in Brewnall
@@ -1539,72 +1649,230 @@ step
 	.target Jarvi Shadowstep
 step
     #loop
-    .goto 469,52.723,50.681,0
-    .goto 469,52.556,44.220,0
-    .goto 469,61.154,48.908,0
-    .goto 469,52.723,50.681,50,0
-    .goto 469,55.901,51.426,50,0
-    .goto 469,52.556,44.220,50,0
-    .goto 469,54.584,39.961,50,0
-    .goto 469,61.154,48.908,50,0
-    >>Use the |T133037:0|t[Paintinator] on |cRXP_ENEMY_Crushcog Sentry-Bots|r.
+    .goto 469,55.05,48.64,25,0
+    .goto 469,54.64,52.83,25,0
+    .goto 469,54.24,43.3,25,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Crushcog Sentry Bot|r
     .complete 26342,1 --Crushcog's Sentry Bot blinded (5)
 	.mob Crushcog Sentry Bot
     .use 58203
+-- step
+--     #optional
+--     #questguide
+--     .goto 469,48.744,52.880
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+--     .turnin 26342 >>Turn in Paint it Black
+--     .accept 26364 >>Accept Down with Crushcog!
+-- 	.target Jarvi Shadowstep
 step
-    #optional
-    #questguide
     .goto 469,48.744,52.880
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
     .turnin 26342 >>Turn in Paint it Black
-    .accept 26364 >>Accept Down with Crushcog!
 	.target Jarvi Shadowstep
-step
-    .goto 469,48.744,52.880
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
-    .turnin 26342 >>Turn in Paint it Black
-	.target Jarvi Shadowstep
-step
-    #questguide
-    #optional
-    #completewith Razlo
-    #label Mekkatalk
-    .goto 469,57.188,47.535
-    .gossipoption 38798 >> Talk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
-    .timer 72,Down with Crushcog! RP
-    .target High Tinker Mekkatorque
-    .isOnQuest 26364
-step
-    #questguide
-    #optional
-    #completewith next
-    #requires Mekkatalk
-    >>|cRXP_WARN_Wait out the RP|r.
-    +Use the |T308321:0|t[Orbital Targeting Device] on |cRXP_ENEMY_Razlo Crushcog|r and |cRXP_ENEMY_Crushcog's Guardians|r.
-    .isOnQuest 26364
-    .use 58253
-step
-    #questguide
-    #label Razlo
-    .goto 469,58.749,42.222
-    >>Defeat |cRXP_ENEMY_Razlo Crushcog|r.
-    .complete 26364,2 --Razlo Crushcog defeated (1)
-    .use 58253
-    .mob Razlo Crushcog
-    .mob Crushcog's Guardians
-step
-    #questguide
-    .goto 469,48.744,52.880
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
-    .turnin 26364 >>Turn in Down with Crushcog!
-    .accept 26373 >>Accept On to Kharanos
-	.target Jarvi Shadowstep
+-- step
+--     #questguide
+--     #optional
+--     #completewith Razlo
+--     #label Mekkatalk
+--     .goto 469,57.188,47.535
+--     .gossipoption 38798 >> Talk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
+--     .timer 72,Down with Crushcog! RP
+--     .target High Tinker Mekkatorque
+--     .isOnQuest 26364
+-- step
+--     #questguide
+--     #optional
+--     #completewith next
+--     #requires Mekkatalk
+--     >>|cRXP_WARN_Wait out the RP|r.
+--     +Use the |T308321:0|t[Orbital Targeting Device] on |cRXP_ENEMY_Razlo Crushcog|r and |cRXP_ENEMY_Crushcog's Guardians|r.
+--     .isOnQuest 26364
+--     .use 58253
+-- step
+--     #questguide
+--     #label Razlo
+--     .goto 469,58.749,42.222
+--     >>Defeat |cRXP_ENEMY_Razlo Crushcog|r.
+--     .complete 26364,2 --Razlo Crushcog defeated (1)
+--     .use 58253
+--     .mob Razlo Crushcog
+--     .mob Crushcog's Guardians
+-- step
+--     #questguide
+--     .goto 469,48.744,52.880
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+--     .turnin 26364 >>Turn in Down with Crushcog!
+--     .accept 26373 >>Accept On to Kharanos
+-- 	.target Jarvi Shadowstep
 step
     .goto 27,49.906,44.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ciara Deepstone|r.
     .accept 26380 >>Accept Bound for Kharanos
 	.target Ciara Deepstone
 --XX Doable by other races but simpler to do for gnomes only
+-- step
+--     #sticky
+--     #label Tanks
+--     #loop
+--     .goto 469,59.638,21.877,0
+--     .goto 469,53.711,22.482,0
+--     .goto 469,58.619,23.568,0
+--     .waypoint 469,59.638,21.877,15,0
+--     .waypoint 469,59.620,19.066,15,0
+--     .waypoint 469,58.784,18.047,15,0
+--     .waypoint 469,57.507,18.837,15,0
+--     .waypoint 469,56.560,20.889,15,0
+--     .waypoint 469,55.463,21.067,15,0
+--     .waypoint 469,53.711,22.482,15,0
+--     .waypoint 469,53.126,24.536,15,0
+--     .waypoint 469,54.080,26.011,15,0
+--     .waypoint 469,55.407,23.742,15,0
+--     .waypoint 469,56.513,23.676,15,0
+--     .waypoint 469,57.585,23.609,15,0
+--     .waypoint 469,58.619,23.568,15,0
+--     >>Use the |T133710:0|t[Techno-Grenades] on the |cRXP_FRIENDLY_Repaired Mechano-Tanks|r.
+--     .complete 26333,1 --Repaired Mechano-Tanks destroyed (5)
+-- 	.mob Repaired Mechano-Tank
+--     .use 58200
+-- step
+--     #sticky
+--     #label CrushcogM
+--     #loop
+--     .goto 469,54.018,26.884,0
+--     .goto 469,60.672,22.216,0
+--     .goto 469,52.540,24.667,0
+--     .goto 469,54.018,26.884,45,0
+--     .goto 469,55.919,26.336,45,0
+--     .goto 469,57.608,25.933,45,0
+--     .goto 469,60.002,25.191,45,0
+--     .goto 469,61.148,25.266,45,0
+--     .goto 469,60.490,23.847,45,0
+--     .goto 469,60.672,22.216,45,0
+--     .goto 469,56.948,18.526,45,0
+--     .goto 469,56.251,19.440,45,0
+--     .goto 469,54.541,18.700,45,0
+--     .goto 469,54.364,20.143,45,0
+--     .goto 469,52.960,21.320,45,0
+--     .goto 469,52.540,24.667,45,0
+--     >>Kill |cRXP_ENEMY_Crushcog Battle Suits|r and |cRXP_ENEMY_Irradiated Technicians|r.
+-- 	.complete 26331,1 --Crushcog's Minions killed (8)
+-- 	.mob Crushcog Battle Suit
+-- 	.mob Irradiated Technician
+-- step
+--     #optional
+--     .goto 469,66.100,26.168,45,0
+--     .goto 469,66.023,27.211,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Weaponized Rabbot|r. Kill it if it's up|r.
+-- 	.unitscan Weaponized Rabbot
+--     .isOnQuest 26331
+--     .noflyable
+-- step
+--     #optional
+--     .goto 469,68.698,35.590,45,0
+--     .goto 469,67.992,35.519,45,0
+--     .goto 469,67.433,37.129,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Timber|r. Kill him if he's up|r.
+--     .unitscan Timber
+--     .isOnQuest 26331
+--     .noflyable
+-- step
+--     #optional
+--     #requires CrushcogM
+-- --XXREQ Placeholder invis step until multiple requires per step
+-- step << skip
+--     #requires Tanks
+--     #completewith next
+--     .goto 469,56.346,21.833,-1
+--     .goto 469,47.880,44.670,-1
+-- -- .goto 425,38.29,58.12
+--     *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r.
+--     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+--     .skill riding,75,1
+-- --XX unlikely to ever be worth
+-- step
+--     #requires Tanks
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r, |cRXP_FRIENDLY_Hinkles Fastblast|r, and |cRXP_FRIENDLY_Kelsey Steelspark|r.
+--     .turnin 26331 >>Turn in Crushcog's Minions
+--     .goto 469,38.802,32.715
+-- 	.target +High Tinker Mekkatorgue
+--     .turnin 26333 >>Turn in No Tanks!
+--     .goto 469,38.204,33.662
+-- 	.target +Hinkles Fastblast
+--     .accept 26339 >>Accept Staging in Brewnall
+--     .goto 469,38.025,33.570
+-- 	.target +Kelsey Steelspark
+-- step
+--     .goto 469,48.744,52.880
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+--     .turnin 26339 >>Turn in Staging in Brewnall
+--     .accept 26342 >>Accept Paint it Black
+-- 	.target Jarvi Shadowstep
+-- step
+--     #loop
+--     .goto 469,52.723,50.681,0
+--     .goto 469,52.556,44.220,0
+--     .goto 469,61.154,48.908,0
+--     .goto 469,52.723,50.681,50,0
+--     .goto 469,55.901,51.426,50,0
+--     .goto 469,52.556,44.220,50,0
+--     .goto 469,54.584,39.961,50,0
+--     .goto 469,61.154,48.908,50,0
+--     >>Use the |T133037:0|t[Paintinator] on |cRXP_ENEMY_Crushcog Sentry-Bots|r.
+--     .complete 26342,1 --Crushcog's Sentry Bot blinded (5)
+-- 	.mob Crushcog Sentry Bot
+--     .use 58203
+-- step
+--     #optional
+--     #questguide
+--     .goto 469,48.744,52.880
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+--     .turnin 26342 >>Turn in Paint it Black
+--     .accept 26364 >>Accept Down with Crushcog!
+-- 	.target Jarvi Shadowstep
+-- step
+--     .goto 469,48.744,52.880
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+--     .turnin 26342 >>Turn in Paint it Black
+-- 	.target Jarvi Shadowstep
+-- step
+--     #questguide
+--     #optional
+--     #completewith Razlo
+--     #label Mekkatalk
+--     .goto 469,57.188,47.535
+--     .gossipoption 38798 >> Talk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r.
+--     .timer 72,Down with Crushcog! RP
+--     .target High Tinker Mekkatorque
+--     .isOnQuest 26364
+-- step
+--     #questguide
+--     #optional
+--     #completewith next
+--     #requires Mekkatalk
+--     >>|cRXP_WARN_Wait out the RP|r.
+--     +Use the |T308321:0|t[Orbital Targeting Device] on |cRXP_ENEMY_Razlo Crushcog|r and |cRXP_ENEMY_Crushcog's Guardians|r.
+--     .isOnQuest 26364
+--     .use 58253
+-- step
+--     #questguide
+--     #label Razlo
+--     .goto 469,58.749,42.222
+--     >>Defeat |cRXP_ENEMY_Razlo Crushcog|r.
+--     .complete 26364,2 --Razlo Crushcog defeated (1)
+--     .use 58253
+--     .mob Razlo Crushcog
+--     .mob Crushcog's Guardians
+-- step
+--     #questguide
+--     .goto 469,48.744,52.880
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r.
+--     .turnin 26364 >>Turn in Down with Crushcog!
+--     .accept 26373 >>Accept On to Kharanos
+-- 	.target Jarvi Shadowstep
+-- step
+--     .goto 27,49.906,44.980
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ciara Deepstone|r.
+--     .accept 26380 >>Accept Bound for Kharanos
+-- 	.target Ciara Deepstone
+-- --XX Doable by other races but simpler to do for gnomes only
 ]])
 
 RXPGuides.RegisterGuide([[
