@@ -70,15 +70,17 @@ step
     .accept 25172 >>Accept Invaders in Our Home
     .target Gornek
 step
-    .goto 461,50.69,76.52,40,0
-    .goto 461,46.45,87.24,55,0
-    .goto 461,42.75,78.98
+    #loop
+    .goto 461,51.95,75.86,40,0
+    .goto 461,46.75,87.23,55,0
+    .goto 461,36.46,78.09,45,0
 	>>Kill the stealthed |cRXP_ENEMY_Northwatch Scouts|r.
     .complete 25172,1 --7/7 Northwatch Scout slain
     .mob Northwatch Scout
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r.
+    .goto 461,46.95,72.89,40,0
     .goto 461,44.93,66.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r.
     .turnin 25172 >>Turn in Invaders in Our Home
     .accept 25127 >>Accept Invaders in Our Home
     .target Gornek
@@ -96,37 +98,51 @@ step
     .target Foreman Thazz'ril
 step
     #completewith ValleyOfTrialsSarkoth
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their [|cRXP_LOOT_Tails|r].
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |T132274:0|t[Scorpid Worker Tails].
     .complete 25127,1 --8/8 Scorpid Worker Tail
     .mob Scorpid Worker
 step
     #completewith ValleyOfTrialsBackDen
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r.
-    *|cRXP_WARN_NOTE: You can just Right-|TInterface/cursor/crosshair/interact.blp:20|tClick the Peons|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the sleeping |cRXP_FRIENDLY_Lazy Peons|r.
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
     .target Lazy Peon
 step
     #completewith ValleyTurnins
-    >>Loot the [|cRXP_LOOT_Cactus Apple|r]. plants
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cactus Apples|r.
     .complete 25136,1 --6/6 Cactus Apple
 step
-	#label Sarkoth
+    #optional
+    #completewith next
+    #label SarkothRoute
+    .goto 461,46.52,58.50,10,0
+    .goto 461,34.62,44.23
     >>Leave the town heading north
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
+    .accept 25129 >>Accept Sarkoth
+    .target Hana'zua
+step
+    #hidewindow
+    #completewith SarkothRoute
+    .goto 461,34.62,44.23,15 >>1
+step
+    #requires SarkothRoute
+	#label Sarkoth
     .goto 461,34.62,44.23
+    >>Leave the town heading north
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
     .accept 25129 >>Accept Sarkoth
     .target Hana'zua
 step
     #label ValleyOfTrialsSarkoth
-	>>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for his [|cRXP_LOOT_Claw|r].
     .goto 461,32.7,61.9
+	>>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |T134294:0|t[|cRXP_LOOT_Sarkoth's Mangled Claw|r].
     .complete 25129,1 --1/1 Sarkoth's Mangled Claw
     .mob Sarkoth
 step
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their [|cRXP_LOOT_Tails|r].
-#loop
-	.line 461,37.38,65.09,34.90,67.58,32.93,66.72,32.45,61.81,32.11,57.46,34.97,57.14,39.82,56.48,37.38,65.09
+    #title Finish |T132274:0|t[Scorpid Worker Tails]
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for their |T132274:0|t[Scorpid Worker Tails].
+    #loop
 	.goto 461,37.38,65.09,40,0
 	.goto 461,34.90,67.58,40,0
 	.goto 461,32.93,66.72,40,0
@@ -186,6 +202,20 @@ step
     .target Gornek
     .target Zureetha Fargaze
 step
+    #completewith next
+    #label ValleyOfTrialsBackDenRoute
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
+    .goto 461,46.45,57.83,15,0
+    .goto 461,34.62,44.23
+    .turnin 25129 >>Turn in Sarkoth
+    .accept 25130 >>Accept Back to the Den
+    .target Hana'zua
+step
+    #hidewindow
+    #completewith ValleyOfTrialsBackDenRoute
+    .goto 461,34.62,44.23,20 >>1
+step
+    #requires ValleyOfTrialsBackDenRoute
     #label ValleyOfTrialsBackDen
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r.
     .goto 461,34.62,44.23
@@ -194,36 +224,40 @@ step
     .target Hana'zua
 step
     #completewith next
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the sleeping |cRXP_FRIENDLY_Lazy Peons|r.
     .goto 461,36.22,35.30,20,0
     .goto 461,37.20,29.67,20,0
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
     .target Lazy Peon
 step
+    #loop
     .goto 461,49.86,25.11,50,0
     .goto 461,56.34,31.92,50,0
-    .goto 461,48.90,37.40
+    .goto 461,48.90,37.40,50,0
 	>>Kill |cRXP_ENEMY_Vile Familiars|r.
     .complete 25131,1 --8/8 Vile Familiar slain
     .mob Vile Familiar
 step
-    .goto 461,58.79,36.66,35,0
+    #loop
+    .goto 461,58.79,36.66,25,0
+    .goto 461,61.15,56.34,30,0
     .goto 461,54.42,57.33,20,0
     .goto 461,52.01,69.59,20,0
-    .goto 461,48.28,71.90
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r.
+    .goto 461,48.28,71.90,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the sleeping |cRXP_FRIENDLY_Lazy Peons|r.
     .complete 37446,1 --4/4 Sleeping Lazy Peons awakened
     .use 16114
     .target Lazy Peon
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha Fargaze|r and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25131 >>Turn in Vile Familiars
-    .accept 25132 >>Accept Burning Blade Medallion
     .goto 461,45.81,63.42
     .turnin 37446 >>Turn in Lazy Peons
     .accept 25135 >>Accept Thazz'ril's Pick
     .goto 461,46.15,63.28
+    .accept 25132 >>Accept Burning Blade Medallion
+    .goto 461,45.81,63.42
 	.isOnQuest 37446
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
@@ -241,7 +275,7 @@ step << Hunter
     #completewith next
     .goto 461,52.42,52.84,20,0
     .goto 461,50.50,53.00,20,0
-    >>Loot the [|cRXP_LOOT_Cactus Apple|r]. plants
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cactus Apples|r.
     .complete 25136,1 --6/6 Cactus Apple
 step << Hunter Orc
     .goto 461,47.61,47.66
@@ -249,11 +283,12 @@ step << Hunter Orc
     .isOnQuest 25135
     .mob Mottled Boar
 step
+    #loop
     .goto 461,50.50,53.00,18,0 << !Hunter
     .goto 461,51.34,32.89,18,0
     .goto 461,50.28,27.29,18,0
-    .goto 461,53.63,28.29
-    >>Loot the [|cRXP_LOOT_Cactus Apple|r]. plants
+    .goto 461,53.63,28.29,18,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cactus Apples|r.
     .complete 25136,1 --6/6 Cactus Apple
 step
     #completewith Yarrog
@@ -261,17 +296,27 @@ step
     .complete 25132,1 --5/5 Felstalker slain
     .mob Felstalker
 step
+    #label ThazzrilsPickA
+    #completewith next
     >>Loot [|cRXP_LOOT_Thazz'ril's Pick|r]. on the ground
-    .goto 1,45.37,56.22,15,0
+    .complete 25135,1 --1/1 Thazz'ril's Pick
+step
+    #title Enter the cave
+    #completewith ThazzrilsPickA
+    .goto 1,45.37,56.22,15 >>Enter the cave
+step
+    #requires ThazzrilsPickA
     .goto 2,75.04,80.08,15,0
     .goto 2,40.75,52.56
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_LOOT_Thazz'ril's Pick|r
     .complete 25135,1 --1/1 Thazz'ril's Pick
 step
 	#label Yarrog
-    >>Kill |cRXP_ENEMY_Yarrog Baneshadow|r. Loot him for his [|cRXP_LOOT_Medallion|r].
+    >>Kill |cRXP_ENEMY_Yarrog Baneshadow|r. Loot him for the |T133434:0|t[|cRXP_LOOT_Burning Blade Medallion|r].
     .goto 2,39.21,88.42,15,0
+    .goto 2,26.73,83.52,15,0
     .goto 2,14.96,46.80
-    .complete 25132,2 --1/1 Bruning Blade Medallion
+    .complete 25132,2 --1/1 Burning Blade Medallion
     .mob Yarrog Baneshadow
 step
     .goto 2,39.21,88.42,15,0
@@ -286,6 +331,10 @@ step
     .goto 461,48.47,70.89,-1
     .deathskip >>Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << !Hunter !Warlock
     .deathskip >>|cfff78300Set your pet to passive|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << Hunter/Warlock
+step
+    #hidewindow
+    #completewith next
+    .goto 461,48.45,70.92,20 >>1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Zureetha Fargaze|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25130 >>Turn in Back to the Den
@@ -370,8 +419,25 @@ step << Troll
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
+step << Orc
+    #completewith next
+    #label ReportToSenjinVillage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r.
+    .turnin 25133 >>Turn in Report to Sen'jin Village
+    .target Master Gadrin
+step << Orc
+    #completwith ReportToSenjinVillage
+    .goto 461,68.14,69.72,20,0
+    .goto 461,71.74,67.17,20 >>Leave the Valley of Trials
+step << Orc
+    #requires ReportToSenjinVillage
+    .goto 1,55.95,74.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Gadrin|r.
+    .turnin 25133 >>Turn in Report to Sen'jin Village
+    .target Master Gadrin
 step
-    #label EchoIslesFirstQuestCheck
+    #requires EchoIslesFirstQuestCheckA
+    #label EchoIslesFirstQuestCheckB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'thala|r.
     .goto 463,42.82,53.43
     .accept 24607 >>Accept The Rise of the Darkspear << Warrior
@@ -440,22 +506,23 @@ step << Monk
     .accept 31158 >>Accept The Basics: Hitting Things
     .target Zabrax
 step
+    #loop
     .goto 463,52.20,54.49,15,0 << Warrior
-    .goto 463,51.67,53.56 << Warrior
+    .goto 463,51.67,53.56,15,0 << Warrior
     .goto 463,60.90,52.87,20,0 << Mage
-    .goto 463,58.92,53.59 << Mage
+    .goto 463,58.92,53.59,15,0 << Mage
     .goto 463,49.82,54.17,20,0 << Shaman
     .goto 463,50.35,48.82,20,0 << Warlock
     .goto 463,58.83,53.72,20,0 << Druid
-    .goto 463,57.35,55.29 << Druid
+    .goto 463,57.35,55.29,20,0 << Druid
     .goto 463,52.97,49.26,15,0 << Rogue
-    .goto 463,52.89,50.69 << Rogue
+    .goto 463,52.89,50.69,15,0 << Rogue
     .goto 463,56.65,49.54,15,0 << Hunter
-    .goto 463,55.92,50.76 << Hunter
+    .goto 463,55.92,50.76,15,0 << Hunter
     .goto 463,58.78,47.98 << Priest
     .goto 463,49.44,52.23 << Warlock/Shaman
     .goto 463,52.89,50.69,15,0 << Monk
-    .goto 463,52.96,53.08 << Monk
+    .goto 463,52.96,53.08,15,0 << Monk
     >>Kill the |cRXP_ENEMY_Tiki Targets|r.
     .complete 24639,1 << Warrior --6/6 Tiki Target slain
     .complete 24751,1 << Mage --6/6 Tiki Target slain
@@ -839,12 +906,12 @@ step
     .mob Corrupted Bloodtalon
 step
     .goto 463,36.72,69.04
-    >>Kill |cRXP_ENEMY_Naj'tess|r. Loot him for his [|cRXP_LOOT_Orb|r].
+    >>Kill |cRXP_ENEMY_Naj'tess|r. Loot him for the |T332402:0|t[|cRXP_LOOT_Naj'tess' Orb of Corruption|r].
     .complete 24625,1 --1/1 Naj'tess' Orb of Corruption
     .mob Naj'tess
 step
 	#label Bloodtalons
-#loop
+    #loop
 	.line 463,34.04,70.60,36.60,69.56,38.51,66.20,40.18,69.15,40.05,71.23,39.37,74.83,38.41,73.07,36.67,73.48,35.14,73.49,36.60,69.56
 	.goto 463,34.04,70.60,30,0
 	.goto 463,36.60,69.56,30,0
@@ -876,7 +943,7 @@ step
     .use 52283
 step
 	#completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r on your way back. Loot them for their [|cRXP_LOOT_Meat|r].
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r on your way back. Loot them for the |T134007:0|t[|cRXP_LOOT_Fresh Crawler Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
     .mob Pygmy Surf Crawler
 step
@@ -929,8 +996,9 @@ step << Hunter Troll
     .cast 1515 >>|cRXP_WARN_Tame a |cRXP_ENEMY_Bloodtalon Raptor|r with your |T132164:0|t[Tame Beast] ability|r.
     .mob Bloodtalon Raptor
 step
+    #loop
     .goto 463,52.87,71.28,40,0
-    .goto 463,58.36,70.75
+    .goto 463,58.36,70.75,30,0
     >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r. Loot them for their [|cRXP_LOOT_Meat|r].
     .complete 25037,1 --5/5 Fresh Crawler Meat
     .mob Pygmy Surf Crawler
@@ -949,7 +1017,8 @@ step << Troll
     .target Tora'jin
 --XX was 1600
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tora'jin|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r, |cRXP_FRIENDLY_Tortunga|r, and |cRXP_FRIENDLY_Tora'jin|r. << Orc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moraya|r and |cRXP_FRIENDLY_Tora'jin|r. << Troll
     .turnin 24626 >>Turn in Young and Vicious
     .goto 463,56.82,63.69
     .accept 25035 >>Accept Breaking the Line << Orc
@@ -977,19 +1046,29 @@ step
 step
     #sticky
     #label EchoingIslesSpitescaleNagas
-    >>Kill |cRXP_ENEMY_Spitescale Nagas|r while placing the [|cRXP_LOOT_fetishes|r].
-    >>|cfff78300Don't jump down|r.
+    >>Kill |cRXP_ENEMY_Spitescale Nagas|r while placing the [|cRXP_LOOT_Territorial Fetishes|r].
     .goto 464,58.0,46.3,0,0
     .complete 24812,1 --12/12 Spitescale Naga
 	.isQuestTurnedIn 25035
 step
     >>Use the |T132482:0|t[Territorial Fetish] next to |cRXP_PICK_Spitescale Flags|r. The fetishes despawn after a while and you can place them again.
-    .goto 464,61.97,71.50,6,0
-    .goto 464,66.21,58.45,6,0
-    .goto 464,68.96,40.94,6,0
-    .goto 464,61.30,39.97,6,0
-    .goto 464,56.63,44.08,6,0
-    .goto 464,61.97,71.50,6,0
+    .goto 464,61.97,71.50,10,0
+    .goto 464,66.21,58.45,10,0
+    .goto 464,68.96,40.94,10,0
+    .goto 464,61.30,39.97,10,0
+    .goto 464,56.63,44.08,10,0
+    .goto 464,61.97,71.50,10,0
+    .goto 464,62.32,28.54,10,0
+    .goto 464,70.05,27.89,10,0
+    .goto 464,77.46,16.94,10,0
+    .goto 464,72.44,43.92,10,0
+    .goto 464,77.81,47.26,10,0
+    .goto 464,73.25,55.40,10,0
+    .goto 464,76.82,63.45,10,0
+    .goto 464,67.34,78.51,10,0
+    .goto 464,52.47,61.80,10,0
+    .goto 464,71.26,73.84,15,0
+    .goto 464,69.36,30.91,15,0
     .use 52065
     .complete 24813,1 --8/8 Territorial Fetish placed
 	.isQuestTurnedIn 25035
