@@ -40,6 +40,7 @@
 	<Script file="Guides/SoD/Alliance.lua"/>
 	<Script file="Guides/SoD/Shaman.lua"/>
 	<Script file="Guides/SoD/Horde.lua"/>
+	<Script file="Guides/SoD/Attunements.lua"/>
 	
 	<Script file="Guides/SoD/Incursions.lua"/>
 	
