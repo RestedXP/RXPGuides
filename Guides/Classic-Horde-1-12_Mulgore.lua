@@ -3010,8 +3010,8 @@ step << Shaman/Druid
     #completewith next
     +|cRXP_WARN_Keep killing |cRXP_ENEMY_Plainstriders|r until you have 42 copper worth of vendor items|r << Shaman
     +|cRXP_WARN_Keep killing |cRXP_ENEMY_Plainstriders|r until you have 20 copper worth of vendor items|r << Druid
-    .money 0.0042 << Shaman
-    .money 0.002 << Druid
+    .money >0.0042 << Shaman
+    .money >0.002 << Druid
 step << Druid
     #season 2
     .goto Mulgore,45.08,75.94
