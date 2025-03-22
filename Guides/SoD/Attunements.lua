@@ -16,8 +16,10 @@ step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde
     .zone Deadwind Pass >> Travel to the |cRXP_PICK_Deadwind Pass|r
+    .isOnQuest 86964
 step
     .goto Deadwind Pass,47.36,75.60,100 >> Travel south towards |cRXP_LOOT_Karazhan|r
+    .isOnQuest 86964
 step
     .goto Deadwind Pass,39,74
     >>Look for a corpse of a |cRXP_FRIENDLY_Deceased Adventurer|r
@@ -28,11 +30,12 @@ step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.09,34.10
     >>Travel north to the Dalaran Agent's camp
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Keanna|r at her camp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Keanna|r
     .turnin 86965 >> Turn in No Ordinary Shadows
     .accept 86966 >> Accept Seeking Survivors
 step
     .goto Deadwind Pass,59.2,73.4,30 >> Travel south to the entrance of the ogre cave
+    .isOnQuest 86966
 step
     .goto Deadwind Pass,65.0,78.0
     >>Enter the cave, look for the |cRXP_FRIENDLY_Injured Adventurer|r, he is locked in a cage
@@ -54,7 +57,7 @@ step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.32,34.09
     >>Travel back north to the Dalaran Agent's camp
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harrison Jones|r at the camp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harrison Jones|r
     .turnin 86967 >> Turn in To the Rescue
     .accept 86968 >> Accept Are You Afraid of the Dark?
     .target Harrison Jones
@@ -62,9 +65,8 @@ step
     .goto Deadwind Pass,52.09,34.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Keanna|r
     .turnin 86968 >> Turn in Are You Afraid of the Dark?
-    .accept 86969 >> Accept Hypothesis
+    .accept 86969 >> Accept The Hypothesis
     .target Agent Keanna
-
 step
     #optional
     #completewith Hypothesis
@@ -98,8 +100,8 @@ step
     #optional
     #completewith Hypothesis
     #label EnterDungeon
-    .zoneskip 2557 --Dire Maul
-    .zoneskip 15475 --Demon Fall Canyon
+    .subzoneskip 2557 --Dire Maul
+    .subzoneskip 15475 --Demon Fall Canyon
     .goto Kalimdor,42.98,67.51,0 --Dire Maul Entrance
     .goto Ashenvale,84.5,75.0,0 --Demon Fall Canyon Entrance
     +Look for a group for either |cRXP_LOOT_Dire Maul West|r or |cRXP_LOOT_Demon Fall Canyon|r and enter the dungeon
@@ -111,7 +113,7 @@ step
     #requires EnterDungeon
     >>Kill |cRXP_ENEMY_Tendris Warpwood|r the first boss in the instance. Loot him for the |T135139:0|t[Ironwood Branch]
     .complete 86969,2
-    .zoneskip 2557,1 --Only shows in Dire Maul
+    .subzoneskip 2557,1 --Only shows in Dire Maul
     .isOnQuest 86969
 step
     #optional
@@ -119,7 +121,7 @@ step
     #requires EnterDungeon
     >>Kill |cRXP_ENEMY_Grimroot|r the first boss in the instance. Loot him for the |T135139:0|t[Ironwood Branch]
     .complete 86969,2
-    .zoneskip 15475,1 --Only shows in Demon Fall Canyon
+    .subzoneskip 15475,1 --Only shows in Demon Fall Canyon
     .isOnQuest 86969
 step
     #optional
@@ -171,4 +173,77 @@ step
     .mob Grimroot
     .mob Tendris Warpwood
     .isOnQuest 86969
+step
+    .goto Deadwind Pass,43.08,34.22 << Alliance
+    .goto Deadwind Pass,51.01,42.19 << Horde
+    .zone Deadwind Pass >> Return to the |cRXP_PICK_Deadwind Pass|r
+    .isQuestComplete 86969
+step
+    .goto Deadwind Pass,51.28,39.91,20,0
+    .goto Deadwind Pass,52.09,34.10
+    >>Travel to the Dalaran Agent's camp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Keanna|r
+    .turnin 86969 >> Turn in The Hypothesis
+    .accept 86970 >> Accept Testing Our Hypothesis
+step
+    .goto Deadwind Pass,45.10,77.96,20,0
+    .goto Deadwind Pass,42.20,77.41,20,0
+    .goto Deadwind Pass,39.98,75.36,20,0
+    .goto Deadwind Pass,39.93,74.24
+    >>Travel to Morgan's Plot located west of Karazhan. |cRXP_WARN_Walk into the massive shadow orb there|r
+    >>Use your |T135432:0|t[|cRXP_FRIENDLY_Enchanted Firebrand|r] once inside and wait for the RP to complete
+    .complete 86970,1
+    .use 235790 --Enchanted Firebrand
+step
+    .goto Deadwind Pass,45.10,77.96,20,0
+    .goto Deadwind Pass,55.40,78.75,20,0
+    .goto Deadwind Pass,51.28,39.91,20,0
+    .goto Deadwind Pass,52.32,34.09
+    >>Travel back north to the Dalaran Agent's camp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Keanna|r
+    .turnin 86970 >> Turn in Testing Our Hypothesis
+    .target Agent Keanna
+step
+    >>|cRXP_WARN_Congratulations, you're now attuned to the Karazhan Crypts!|r
+    >>You can |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harrison Jones|r to pick up a quest from him that can be completed inside the instance
+    .accept 86971 >> Accept Curious Karazhan Curios!
+    .target Harrison Jones
 ]])
+
+--UNCOMMENT BELOW IF NEEDED
+--RXPGuides.RegisterGuide([[
+--#classic
+--#season 2
+--#group RestedXP Endgame Guides
+--#subgroup Attunements
+--#name Scarlet Enclave Attunement
+
+--step
+--    #completewith next
+--    .subzone 2268 >> Travel to the |cRXP_LOOT_Light's Hope Chapel|r in |cRXP_PICK_Eastern Plaguelands|r
+--step
+--    .goto Eastern Plaguelands,81.6,57.8
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r inside the chapel
+--    .accept 87459 >> Accept Scarlet Activities
+--    .target Leonid Barthalomew the Revered
+--step
+--    #completewith next
+--    .zone Tirisfal Glades >> Travel to Tirisfal Glades
+--step
+--    .goto Tirisfal Glades,81,58
+--    >>Click on the |cRXP_PICK_Ball and Chain|r outside of the small tent. It will spawn a |cRXP_ENEMY_Scarlet Infiltrator|r who will attack you
+--    >>Kill him and loot for the |T133471:0|t[Orders from the High General]
+--    .complete 87459,1 --Orders from the High General
+--    .mob Scarlet Infiltrator
+--step
+--    #completewith next
+--    .subzone 2268 >> Return to the |cRXP_LOOT_Light's Hope Chapel|r in |cRXP_PICK_Eastern Plaguelands|r
+--step
+--    .goto Eastern Plaguelands,81.6,57.8
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r inside the chapel
+--   .turnin 87459 >> Turn in Scarlet Activities
+--    .target Leonid Barthalomew the Revered
+--step
+--    +|cRXP_WARN_Congratulations, you're now attuned to the Scarlet Enclave!|r
+
+--]])
