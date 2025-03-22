@@ -64,21 +64,28 @@ step
     .turnin 86968 >> Turn in Are You Afraid of the Dark?
     .accept 86969 >> Accept Hypothesis
     .target Agent Keanna
+
 step
     #optional
     #completewith Hypothesis
     #label Wetlands
     .zone Wetlands >> Travel to |cRXP_PICK_Wetlands|r to look for the |T132839:0|t[Flame of Life]
+    .isOnQuest 86969
 step
     #optional
     #completewith Hypothesis
     #requires Wetlands
     #label GrimBatol
-    .goto 1437/0,-3451.700,-3450.800,40 >> Head to the start of the path to Grim Batol
+    .goto 1437/0,-3451.700,-3450.800,40 >> Head to the start of the path to |cRXP_LOOT_Grim Batol|r
+    .isOnQuest 86969
 step
     #optional
     #completewith Hypothesis
     #requires GrimBatol
+    .goto Wetlands,52.55,41.62,0
+    .goto Wetlands,88.07,60.72,0
+    .goto Wetlands,85.72,69.33,0
+    .goto Wetlands,87.04,51.45
     >>Kill any of the |cRXP_ENEMY_Dragonkin|r in the area untill you loot the |T132839:0|t[|cRXP_LOOT_Flame of Life|r]
     .collect 235789,1 --Flame of Life
     .mob Red Scalebane
@@ -86,20 +93,82 @@ step
     .mob Wyrmkin Firebrand
     .mob Red Dragonspawn
     .mob Scalebane Royal Guard
+    .isOnQuest 86969
+step
+    #optional
+    #completewith Hypothesis
+    #label EnterDungeon
+    .zoneskip 2557 --Dire Maul
+    .zoneskip 15475 --Demon Fall Canyon
+    .goto Kalimdor,42.98,67.51,0 --Dire Maul Entrance
+    .goto Ashenvale,84.5,75.0,0 --Demon Fall Canyon Entrance
+    +Look for a group for either |cRXP_LOOT_Dire Maul West|r or |cRXP_LOOT_Demon Fall Canyon|r and enter the dungeon
+    >>|cRXP_WARN_Keep in mind you need to be attuned to enter Demon Fall Canyon.|r You can find a guide for that in the Endgame Guides > Attunements section
+    .isOnQuest 86969
+step
+    #optional
+    #completewith Hypothesis
+    #requires EnterDungeon
+    >>Kill |cRXP_ENEMY_Tendris Warpwood|r the first boss in the instance. Loot him for the |T135139:0|t[Ironwood Branch]
+    .complete 86969,2
+    .zoneskip 2557,1 --Only shows in Dire Maul
+    .isOnQuest 86969
+step
+    #optional
+    #completewith Hypothesis
+    #requires EnterDungeon
+    >>Kill |cRXP_ENEMY_Grimroot|r the first boss in the instance. Loot him for the |T135139:0|t[Ironwood Branch]
+    .complete 86969,2
+    .zoneskip 15475,1 --Only shows in Demon Fall Canyon
+    .isOnQuest 86969
 step
     #optional
     #completewith Hypothesis
     #label Winterspring
     .zone Winterspring >> Travel to |cRXP_PICK_Winterspring|r to look for the |T136116:0|t[Enthusiastic Wisp]
+    .isOnQuest 86969
+    .itemcount 235788,<1
+step
+    #optional
+    #completewith Hypothesis
+    #requires Winterspring
+    #label Darkwhisper
+    .goto Winterspring,60.39,73.95,50 >> Travel to the |cRXP_LOOT_Darkwhisper Gorge|r
+    .isOnQuest 86969
+    .itemcount 235788,<1
+step
+    #optional
+    #completewith Hypothesis
+    #requires Darkwhisper
+    .goto Winterspring,59.78,75.92,20,0
+    .goto Winterspring,60.18,78.08,20,0
+    .goto Winterspring,60.74,79.11,20,0
+    .goto Winterspring,61.16,80.19,20,0
+    .goto Winterspring,61.21,82.13,20,0
+    .goto Winterspring,59.09,83.57,20,0
+    .goto Winterspring,58.93,85.67,20,0
+    .goto Winterspring,56.06,84.80,20,0
+    .goto Winterspring,55.13,84.21,20,0
+    .goto Winterspring,53.88,84.77,20,0
+    .goto Winterspring,53.08,86.33,20,0
+    .goto Winterspring,52.68,88.38,20,0
+    .goto Winterspring,52.2,90.4
+    .target Enthusiastic Wisp
+    >>Travel south and look for the |cRXP_FRIENDLY_Enthusiastic Wisp|r. Interact with it to pick it up
+    >>|cRXP_WARN_Avoid fighting the elite demons in the area. You can just run past them|r
+    .complete 86969,3 --Enthusiastic Wisp
+    .isOnQuest 86969
+    .itemcount 235788,<1 
 step
     #label Hypothesis
     >>Collect the |T132839:0|t[Flame of Life]. It drops from |cRXP_ENEMY_Elite Dragonkin|r near |cRXP_LOOT_Grim Batol|r in |cRXP_PICK_Wetlands|r
-    >>Collect the |T135139:0|t[Ironwood Branch]. It drops from either |cRXP_ENEMY_Grimroot|r in |cRXP_LOOT_Demon Fall Canyon|r(dungeon) or |cRXP_ENEMY_Tendris Warpwood|r in |cRXP_LOOT_Dire Maul West|r(dungeon)
+    >>Collect the |T135139:0|t[Ironwood Branch]. It drops from either |cRXP_ENEMY_Grimroot|r in |cRXP_LOOT_Demon Fall Canyon|r|cRXP_WARN_(dungeon)|r or |cRXP_ENEMY_Tendris Warpwood|r in |cRXP_LOOT_Dire Maul West|r|cRXP_WARN_(dungeon)|r
     >>Collect the |T136116:0|t[Enthusiastic Wisp]. It's an interactable |cRXP_FRIENDLY_friendly NPC|r in |cRXP_LOOT_Darkwhisper Gorge|r in |cRXP_PICK_Winterspring|r
     >>|cRXP_WARN_These items can be collected in any order|r
     .complete 86969,1 --Flame of Life
     .complete 86969,2 --Ancient Ironwood Branch
-    .complete 86969,3 --Enthusiastic Wips
+    .complete 86969,3 --Enthusiastic Wisp
     .mob Grimroot
     .mob Tendris Warpwood
+    .isOnQuest 86969
 ]])
