@@ -2147,7 +2147,7 @@ step << Undead Warlock
     .train 705 >> Train your class spells
     .target Richard Kerwin
     .xp <12,1
-step << Undead Warlock
+step << skip --Logout skip Undead Warlock
     #completewith next
     .goto Undercity,82.36,15.31
     .goto Undercity,67.90,15.29,30 >> |cRXP_WARN_Go to the Reagent Vendor on your right and perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r

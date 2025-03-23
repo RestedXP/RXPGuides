@@ -10743,7 +10743,7 @@ step << Undead Mage
     .itemcount 17031,<20
     .train 3563,3
     .target Hannah Akeley
-step << Undead Mage
+step << skip --Logout skip Undead Mage
     #completewith next
     .goto Undercity,82.28,15.47
     .goto Undercity,67.90,15.29,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
