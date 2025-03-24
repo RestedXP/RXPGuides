@@ -2459,7 +2459,7 @@ step << Shaman
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
     .solo
-step << Shaman
+step << skip --logout skip Shaman
     .goto Durotar,53.03,26.82
     .goto Durotar,47.31,17.89,30 >>|cRXP_WARN_Jump onto the rock. Perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=9A6LHcLZeTU&ab >> |cRXP_WARN_CLICK HERE for an example|r

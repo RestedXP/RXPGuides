@@ -10191,7 +10191,7 @@ step << Paladin
     .train 5588 >>Train your class spells
 	.target Champion Cyssa Dawnrose
     .xp <24,1
-step
+step << skip --logout skip
     #completewith ExitUC
     .goto Undercity,55.20,90.91
     .goto Undercity,67.88,14.97,30 >>|cRXP_WARN_Go to the edge of the main platform in the Royal Quarter. Perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in|r

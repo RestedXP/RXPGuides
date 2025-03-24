@@ -1111,7 +1111,7 @@ step
     .xp 5+1255 >> Grind to 1255+/2800xp << !Shaman
     .xp 5+265 >> Grind to 265+/2800xp << Shaman
     .isOnQuest 4402
-step
+step << skip --logout skip
 	#completewith next
     .goto Durotar,44.70,52.47
     .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the edge of the rock until it looks like they're floating, then logging out and back in|r
