@@ -2885,7 +2885,7 @@ step
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you fail it|r << !Warrior
     >>|cRXP_WARN_You will most likely not be able to solo this quest!|r I'd recommend not even attempting it unless you can find another player to group with << Warrior
     >>Skip this step if you fail or there's no one to group with << Warrior
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r << Hunter
     .link https://youtu.be/md926sh3L6U >> |cRXP_WARN_Click here for a video walkthrough|r << !Hunter
     .target Prospector Remtravel
 step
@@ -2893,7 +2893,7 @@ step
     #season 2
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you fail it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r << Hunter
     .complete 731,1
     .isOnQuest 731
 step << Druid/Hunter/Warrior
@@ -2922,7 +2922,7 @@ step << !Warrior
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r << Hunter
 step << !Warrior
 	#season 2
     .goto 1439,31.229,85.564
@@ -3962,7 +3962,7 @@ step << !sod/Hunter/Druid
     >>|cRXP_WARN_Use|r |T136100:0|t[Entangling Roots] |cRXP_WARN_on him when he turns hostile then create distance and kite using instant cast spells|r << Druid
     >>|cRXP_WARN_If you are unable to kill the |cRXP_ENEMY_The Threshwackonator 4100|r, skip this step|r
     .complete 2078,1 --Gyromast's Revenge (1)
-    .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/1WRRmKYBr9s >> |cRXP_WARN_Click here for a video guide|r
     .mob The Threshwackonator 4100
     .isOnQuest 2078 << Warrior/Paladin/Rogue
 --XX DRUID: Test if you can root

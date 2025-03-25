@@ -1754,7 +1754,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Foggy MacKreel|r
     .accept 647 >> Accept MacKreel's Moonshine
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
-    .link https://www.twitch.tv/videos/646111384 >>Click here for reference
+    .link https://youtu.be/EmcLDfGL_xg >>Click here for reference
 step
 #xprate <1.5
     .goto Arathi Highlands,44.3,93.0
@@ -4255,7 +4255,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Foggy MacKreel|r
     .accept 647 >> Accept MacKreel's Moonshine
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
-    .link https://www.twitch.tv/videos/646111384 >>Click here for reference
+    .link https://youtu.be/EmcLDfGL_xg >>Click here for reference
     .timer 900,Moonshine Expiration Time
 step
     .goto Arathi Highlands,44.3,93.0

@@ -4751,7 +4751,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
-    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
+    .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Jennea|r
 step
     .goto Stormwind City,38.61,79.39
@@ -5620,7 +5620,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
-    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
+    .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Jennea|r
 step
     #requires Bank2
@@ -6173,7 +6173,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
-    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
+    .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Jennea|r
 step
     .goto Stormwind City,38.61,79.39
@@ -7134,7 +7134,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
-    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
+    .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Larimaine|r
 step
     #requires Bank1

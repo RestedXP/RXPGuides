@@ -3455,14 +3455,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r. This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
     >>|cRXP_WARN_This quest is VERY difficult. You can skip this step and come back at level 19|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
 step << Hunter
     #requires prospector
     #season 0
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. You can skip this step and come back at level 19|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .complete 731,1
     .isOnQuest 731
 step << Hunter
@@ -3473,7 +3473,7 @@ step << Hunter
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
     >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
     #completewith CompleteThistleBears
     #season 0
@@ -4005,7 +4005,7 @@ step
     >>|cRXP_WARN_Use|r |T136100:0|t[Entangling Roots] |cRXP_WARN_on him when he turns hostile then create distance and kite using instant cast spells|r << Druid
     >>|cRXP_WARN_If you are unable to kill the |cRXP_ENEMY_The Threshwackonator 4100|r, skip this step|r
     .complete 2078,1 --Gyromast's Revenge (1)
-    .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/1WRRmKYBr9s >> |cRXP_WARN_Click here for a video guide|r
     .mob The Threshwackonator 4100
     .isOnQuest 2078 << Warrior/Paladin/Rogue
 --XX DRUID: Test if you can root
@@ -10039,7 +10039,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
@@ -10075,14 +10075,14 @@ step
     >>This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
     .isQuestAvailable 731
 step
     #requires prospector
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .complete 731,1
     .isOnQuest 731
 step
@@ -10114,7 +10114,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
     #xprate <1.5
     #optional
@@ -10476,7 +10476,7 @@ step
     >>|cRXP_ENEMY_Ilkrud Magthrull|r |cRXP_WARN_will cast|r |T136221:0|t[Ilkrud's Guardians] |cRXP_WARN_which is a 5 second long cast and will summon 2 Voidwalkers. Stop this cast if you're able to|r
     >>|cRXP_WARN_Clear an exit path if needed so you can reset them along with the |cRXP_ENEMY_Succubus|r if needed. You may skip this and do it at level 23 if you wish|r
     .complete 973,1
-    .link https://www.twitch.tv/videos/1182187763 >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/03nTrdcQiKY >> |cRXP_WARN_Click here for video reference|r
 	.isOnQuest 973
     .mob Ilkrud Magthrull
 step
@@ -10955,14 +10955,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r. This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
     .isQuestAvailable 731
 step
     #requires prospector
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .complete 731,1
     .isOnQuest 731
 step
@@ -11026,7 +11026,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
     #xprate <1.5
     .goto 1439,31.229,85.564

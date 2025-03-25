@@ -1418,7 +1418,7 @@ step
     >>|cRXP_WARN_This quest is VERY difficult|r
     .skipgossip
     .complete 2078,1
-    .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/1WRRmKYBr9s >> |cRXP_WARN_Click here for a video guide|r
     .mob The Threshwackonator 4100
 step
 .group 3
@@ -1878,13 +1878,13 @@ step
     >>This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
 step
     #requires prospector
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
     .complete 731,1
     .isOnQuest 731
 step
@@ -1892,7 +1892,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+    .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
     .goto Ashenvale,13.93,2.01
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
