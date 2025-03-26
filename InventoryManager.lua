@@ -168,12 +168,16 @@ local function SortQuiver()
 
 end
 
+local exceptions = {
+    [6196] = true,
+}
+
 local function IsJunk(id)
     if not id then return end
     local discard = RXPCData.discardPile[id]
     if discard == nil then
         local _, _, quality = GetItemInfo(id)
-        if quality == Enum.ItemQuality.Poor then
+        if quality == Enum.ItemQuality.Poor and not exceptions[id] then
             return true
             --TODO: add an option that ignores auto selling grays if item is an upgrade
         end
