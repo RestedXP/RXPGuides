@@ -61,7 +61,7 @@ local function applies(textEntry,customClass)
                         entry = faction
                     elseif uppercase == "DF" then
                         entry = "RETAIL"
-                    elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
+                    elseif faction == "Neutral" and not customClass and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
                     end
                     v = (not(gendercheck or uppercase == class or entry == race or

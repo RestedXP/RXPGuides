@@ -2038,10 +2038,17 @@ local function IsGuideActive(guide)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
         addon.stepLogic.LevelCheck(guide) and not guide.internal and
-        addon.stepLogic.LoremasterCheck(guide) and
-        (not addon.player.neutral or not guide.enabledFor or addon.applies(guide.enabledFor)) then
-        -- print('-',guide.name,not guide.som,not guide.era,som)
-        return true
+        addon.stepLogic.LoremasterCheck(guide) then
+        if (not addon.player.neutral or not guide.enabledFor) then
+            return true
+        else
+            --Make sure only neutral guides show up if you don't have a faction assigned
+            local enabledFor = guide.enabledFor
+            local enabled = addon.applies(enabledFor)
+            local horde = addon.applies(enabledFor,"Horde")
+            local alliance = addon.applies(enabledFor,"Alliance")
+            return enabled and horde and alliance
+        end
     end
 end
 
