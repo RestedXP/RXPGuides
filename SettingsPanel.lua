@@ -1505,7 +1505,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.9,
                         values = RXPCData.guideMetaData.enabledDungeons[addon.player
-                            .faction],
+                            .faction] or {},
                         get = function(_, key)
                             return addon.settings.profile.dungeons[key]
                         end,
