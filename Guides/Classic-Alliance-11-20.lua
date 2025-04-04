@@ -1516,6 +1516,7 @@ step
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1528,6 +1529,7 @@ step
     #completewith LateTurtleStart
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1675,6 +1677,7 @@ step << NightElf/Hunter/Druid/Warrior
     #season 0
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -2479,6 +2482,7 @@ step
     #completewith BoatSeaCreature
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -5857,6 +5861,15 @@ step << Dwarf Hunter
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
     .target Chief Archaeologist Greywhisker
+    .isOnQuest 741
+step << Dwarf Hunter
+    #xprate <1.59
+    #optional
+    .goto Teldrassil,23.70,64.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+    .accept 942 >> Accept The Absent Minded Prospector
+    .target Chief Archaeologist Greywhisker
+    .isQuestTurnedIn 741
 step << Druid
     #xprate <1.59
     #optional
@@ -5975,8 +5988,6 @@ step
     .zoneskip Wetlands
     .dungeon DM
 step
-    #season 1
-    #xprate >1.59
     #optional
     #label DarkshoreDMCook1
     #requires TravelMenethilDMBoat
@@ -5994,8 +6005,6 @@ step
     .zoneskip Wetlands
     .dungeon DM
 step
-    #season 1
-    #xprate >1.59
     #optional
     #requires DarkshoreDMCook1
     #completewith DarnDMBoat
@@ -10713,6 +10722,15 @@ step
     .goto Teldrassil,23.70,64.51
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
+    .isOnQuest 741
+step
+    #optional
+    #xprate <1.59
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+	.target Chief Archaeologist Greywhisker
+    .goto Teldrassil,23.70,64.51
+    .accept 942 >> Accept The Absent Minded Prospector
+    .isQuestTurnedIn 741
 step << !Dwarf/!Hunter
     #xprate <1.59
     #label end

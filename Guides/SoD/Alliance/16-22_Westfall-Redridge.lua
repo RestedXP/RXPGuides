@@ -915,9 +915,14 @@ step << Rogue
     .accept 2360 >> Accept Mathias and the Defias
     .goto StormwindClassic,75.78,59.84
     .target Master Mathias Shaw
-step
+step << !Rogue
+.dungeon DM
+    .goto Redridge Mountains,30.590,59.410
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
+step << Rogue
 #completewith next
-.dungeon DM << !Rogue
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall
