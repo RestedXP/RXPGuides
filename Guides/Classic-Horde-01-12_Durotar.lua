@@ -3489,6 +3489,7 @@ step << Warrior/Shaman/Hunter
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
 step << Warrior/Shaman
+    #optional
     #xprate <1.5
     #loop
     .goto Durotar,43.56,15.08,0
@@ -3496,6 +3497,16 @@ step << Warrior/Shaman
     .goto Durotar,44.13,17.02,60,0
     .goto Durotar,43.56,15.08,60,0
     .xp 9+2930 >>Grind to 2930+/6500 into level 9
+step << Warrior/Shaman
+    #optional
+    #xprate <1.5
+    #loop
+    .goto Durotar,43.56,15.08,0
+    .goto Durotar,44.16,19.19,60,0
+    .goto Durotar,44.13,17.02,60,0
+    .goto Durotar,43.56,15.08,60,0
+    +Grind until your hearthstone cooldown is <5 minutes
+    .cooldown item,6948,<0
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman
     #label EnterOrg
