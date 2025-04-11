@@ -1,8 +1,8 @@
 ## Interface: 30403
 ## Interface-Mainline: 110005
-## Interface-Cata: 40401
+## Interface-Cata: 40402
 ## Interface-Wrath: 30403
-## Interface-Classic: 11506
+## Interface-Classic: 11507
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
