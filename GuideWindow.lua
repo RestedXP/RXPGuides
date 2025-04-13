@@ -1543,7 +1543,7 @@ end
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
 
-    if not guide or guide.internal or not guide.empty and not addon.IsGuideActive(guide) and
+    if not guide or guide.internal or guide.disabled or not guide.empty and not addon.IsGuideActive(guide) and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) then
         return addon:LoadGuide(addon.emptyGuide)
     end
@@ -2134,9 +2134,13 @@ function RXPFrame:GenerateMenuTable(menu)
                     end
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuideTable
-                    subitem.arg1 = guide.group
-                    subitem.arg2 = guideName
+                    if guide.disabled then
+                        subitem.isTitle = 1
+                    else
+                        subitem.func = addon.LoadGuideTable
+                        subitem.arg1 = guide.group
+                        subitem.arg2 = guideName
+                    end
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
                     tinsert(subtable.menuList, subitem)
@@ -2146,9 +2150,13 @@ function RXPFrame:GenerateMenuTable(menu)
                     guide.submenuIndex = submenuIndex
                     local subitem = {}
                     subitem.text = addon.GetGuideName(guide)
-                    subitem.func = addon.LoadGuideTable
-                    subitem.arg1 = guide.group
-                    subitem.arg2 = guideName
+                    if guide.disabled then
+                        subitem.isTitle = 1
+                    else
+                        subitem.func = addon.LoadGuideTable
+                        subitem.arg1 = guide.group
+                        subitem.arg2 = guideName
+                    end
                     subitem.notCheckable = 1
                     tinsert(item.menuList, subitem)
                 end
