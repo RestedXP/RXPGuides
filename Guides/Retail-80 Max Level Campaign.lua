@@ -3623,3 +3623,392 @@ step
     .turnin 83773 >>Turn in Farewell, City of Magic
     .target Archmage Khadgar
 ]])
+
+--Horrific Visions
+RXPGuides.RegisterGuide([[
+#retail
+#version 3
+#group RestedXP The War Within
+#subgroup 11.1.5 (80)
+#name a) Horrific Visions
+#displayname Horrific Vision Intro
+#next a) Nightfall Radiance
+
+step
+    .goto 2339,42.51,28.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Researcher Onermu|r
+    .accept 86706 >>Accept Seeking Knowledge of the Past
+    .target Researcher Onermu
+step
+    .goto 2339,34.69,68.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soridormi|r
+    .turnin 86706 >>Turn in Seeking Knowledge of the Past
+    .accept 87328 >>Accept Truly Horrific to Behold
+    .target Soridormi
+step
+    .goto 2339,34.69,68.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soridormi|r
+    .complete 87328,1 --1/1 Speak to Soridormi
+    .skipgossipid 132133
+    .target Soridormi
+step
+    .goto 2339,34.52,69.71
+    >>Shortly, orbs will appear in the sky and descend toward the ground. Jump into them to receive credit.
+    .complete 87328,2 --10/10 Collect Horrific Sands of Time
+step
+    .goto 2339,34.56,68.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soridormi|r
+    .turnin 87328 >>Turn in Truly Horrific to Behold
+    .accept 87329 >>Accept Into the Darkest Memories
+    .target Soridormi
+step
+    .goto 2339,34.68,68.34
+    >>Click on the |cFFDB2EEFPortal|r
+    .complete 87329,1 --1/1 Portal to Horrific Visions used
+    .skipgossipid 132129
+    .skipgossipid 132128
+step
+    .goto 2403,51.99,83.64
+    .wpradius 2403,51.99,83.64,100,0
+    .goto 2404,53.25,51.25
+    .wpradius 2404,53.25,51.25,100,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Image of Wrathion|r
+    .complete 87329,2 --1/1 Speak to the Image of Wrathion
+    .timer 10,RP
+    .skipgossipid 125259
+    .target the Image of Wrathion
+step
+    .zoneskip 2403,1
+    .isOnQuest 87329
+    .goto 2403,49.86,75.54,10,0
+    .goto 2403,49.37,75.07,10,0
+    .goto 2403,49.34,74.01,10,0
+    .goto 2403,48.45,71.42
+    .scenario 1733,1 >>Kill |cRXP_ENEMY_Voidbound Honor Guards|r to open the door to |cRXP_ENEMY_Thrall|r and kill him.
+    .mob Thrall
+    .mob Voidbound Honor Guard
+step
+    .zoneskip 2404,1
+    .isOnQuest 87329
+    .goto 2404,52,54.15,15,0
+    .goto 2404,53.53,52.32,15,0
+    .goto 2404,52.97,51.12,10,0
+    .goto 2404,52.26,50.62,10,0
+    .goto 2404,51.72,49.68,10,0
+    .goto 2404,51.63,48.56,10,0
+    .goto 2404,50.13,45.71
+    .scenario 4171,1 >>Kill |cRXP_ENEMY_Fallen Riftwalker|r to open the door to |cRXP_ENEMY_Alleria Windrunner|r and kill her. 
+    .mob Alleria Windrunner
+    .mob Fallen Riftwalker
+step
+    .zoneskip 2404,1
+    .isOnQuest 87329
+    .goto 2404,41.58,34.72
+    .cast 3365 >>Click on the |cRXP_PICK_Chest|r
+    .complete 87329,3 --100/20 Corrupted Mementos
+step
+    .isOnQuest 87329
+    .zoneskip 2404,1
+    +Leave the Horrific Vision (Right-Click your player frame).
+step
+    .isOnQuest 87329
+    .zoneskip 2403,1
+    .goto 2403,51.99,85.64
+    .cast 3365 >>Click on the |cRXP_PICK_Chest|r
+    .complete 87329,3 --100/20 Corrupted Mementos
+step
+    .isOnQuest 87329
+    .zoneskip 2403,1
+    +Leave the Horrific Vision (Right-Click your player frame).
+step
+    .goto 2339,34.57,68.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soridormi|r
+    .turnin 87329 >>Turn in Into the Darkest Memories
+    .target Soridormi
+    .accept 87332 >>Accept A Collection of Variables
+step
+    .goto 2339,35.21,68.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Augermu|r
+    .turnin 87332 >>Turn in A Collection of Variables
+    .target Augermu
+    .accept 87335 >>Accept Echoing Lessons
+step
+    .goto 2339,35.24,68.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Augermu|r
+    .complete 87335,1 --1/1 Echo of N'Zoth created
+    .skipgossipid 132107
+    .target Augermu
+step
+    .goto 2339,35.09,68.34
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hourglass of Horrific Visions|r and select Orb Operation Manual.
+    .complete 87335,2 --1/1 Orb Operation Manual unlocked
+    .skipgossipid 132100
+step
+    .goto 2339,35.19,68.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Augermu|r
+    .turnin 87335 >>Turn in Echoing Lessons
+    .target Augermu
+    .accept 87336 >>Accept Remembering Again and Again
+step
+    .goto 2339,34.55,68.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soridormi|r
+    .turnin 87336 >>Turn in Remembering Again and Again
+    .target Soridormi
+step
+    .goto 2339,35.24,68.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Augermu|r
+    .accept 90719 >>Accept Borrowing Corruption
+    .target Augermu
+step
+    .zoneskip 2404
+    .goto 2339,34.67,68.29
+    .zone 2403 >>Click on the |cRXP_PICK_Portal|r and enter the Vision.
+    .skipgossipid 132129
+    .skipgossipid 132128
+step
+    .zoneskip 2403,1
+    .goto 2403,52.00,82.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bronze Hourglass|r
+    .accept 88803 >>Accept Timely Assistance
+    .target Bronze Hourglass
+step
+    .zoneskip 2404,1
+    .goto 2404,53.29,50.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bronze Hourglass|r
+    .accept 88803 >>Accept Timely Assistance
+    .target Bronze Hourglass
+step
+    .goto 2404,53.29,50.39
+    .wpradius 2404,53.29,50.39,100,0
+    .goto 2403,52.00,82.81
+    .wpradius 2403,52.00,82.81,100,0
+    >>Select DPS,Healer or Tank Role for your companion.
+    .complete 88803,1 --1/1 Use the hourglass to summon aid
+step
+    .zoneskip 2403,1
+    .goto 2403,52.00,82.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bronze Hourglass|r
+    .turnin 88803 >>Turn in Timely Assistance
+    .target Bronze Hourglass
+step
+    .zoneskip 2404,1
+    .goto 2404,53.29,50.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bronze Hourglass|r
+    .turnin 88803 >>Turn in Timely Assistance
+    .target Bronze Hourglass
+step
+    >>Kill |cRXP_ENEMY_Bosses|r inside the Horrific Vision and open the crates at the end to loot them for |T3528446:0|t[|cRXP_LOOT_Black Blood Residue|r].
+    .complete 90719,1
+]])
+
+--Nightfall Radiance
+RXPGuides.RegisterGuide([[
+#retail
+#version 3
+#group RestedXP The War Within
+#subgroup 11.1.5 (80)
+#name a) Nightfall Radiance
+#displayname Nightfall Radiance
+
+step
+    #include a) DawnBreakerTeleport
+step
+    .goto 2215,28.26,56.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylton Wyldbraun|r
+    .turnin 85005 >>Turn in A Radiant Call
+    .target Mylton Wyldbraun
+    .accept 89331 >>Accept Flame Fortification
+    .accept 89332 >>Accept Boot Camp
+    .accept 89295 >>Accept The Flame Burns Eternal
+ step
+    .goto 2215,28.26,56.11
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylton Wyldbraun|r 
+    .questcount <3 87477,87475,87480,88711,88916,88945 >> |cRXP_WARN_Pick up the 3 available dailies |r
+    .target Mylton Wyldbraun
+    -- .accept 87477 >>Accept Sureki Incursion: Southern Swarm
+    -- .accept 87475 >>Accept Sureki Incursion: Hold the Wall
+    -- .accept 87480 >>Accept Sureki Incursion: The Eastern Assault
+    -- .accept 88711 >>Accept Radiant Incursion: Toxins and Pheromones
+    -- .accept 88916 >>Accept Radiant Incursion: Sureki's End
+    -- .accept 88945 >>Accept Radiant Incursion: Rak-Zakaz
+step
+    .goto 2215,28.29,56.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lars Bronsmaelt|r
+    .accept 89493 >>Accept Welcome to the Field
+    .turnin 89493 >>Turn in Welcome to the Field
+    .target Lars Bronsmaelt
+step
+    .isOnQuest 88711
+    .goto 2215,26.48,55.11,40,0
+    #completewith Radiant Incursion: Toxins and Pheromones
+    >>Check your map to see if the Nightfall event is active. If it is, complete it now; if not, do it later.
+    .complete 89295,1 --Complete the scenario "Nightfall"
+    .complete 89331,1 --Complete the scenario "Nightfall"
+step
+    .isOnQuest 
+    .goto 2215,26.48,55.11,40,0
+    #completewith Sureki Incursion: The Eastern Assault
+    >>Check your map to see if the Nightfall event is active. If it is, complete it now; if not, do it later.
+    .complete 89295,1 --Complete the scenario "Nightfall"
+    .complete 89331,1 --Complete the scenario "Nightfall"
+-----------------------------------------------------
+--- DAILLIES BATCH 1
+-----------------------------------------------------
+step
+    .isOnQuest 88916
+    .goto 2274,48.6,57.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sacred Alchemist|r
+    .complete 88916,1 --1/1 Field Elixir taken (Optional)
+    .skipgossipid 132981
+    .target Sacred Alchemist
+step
+    .isOnQuest 88916
+    #loop
+    .goto 2255,63.1,0.87,40,0
+    .goto 2255,63.77,5.57,40,0
+    .goto 2255,64.24,6.33,40,0
+    .goto 2255,64.39,8.27,40,0
+    .goto 2255,64.37,10.76,40,0
+    .goto 2255,64.74,14.76,40,0
+    .goto 2255,66.34,13.43,40,0
+    .goto 2255,65.25,6.91,40,0
+    >>Kill |cRXP_ENEMY_Sureki Forces|r and click on the nearby |cRXP_PICK_Objects|r.
+    .complete 88916,2 --Sureki Forces disrupted (100%)
+    .mob Toxic Swarmite
+    .mob Battlefront Hauler
+    .mob Stagshell Mite
+    .mob Skitterling Soldier
+    .mob Sureki Raider
+    .mob Nerubian Ballista
+    .mob Crimson Deathweaver
+    .mob Sureki Priestess
+step
+    #loop
+    .goto 2255,64.76,21.1,40,0
+    .goto 2255,63.91,27.14,40,0
+    .goto 2255,63.83,30.4,40,0
+    .goto 2255,62.39,30.92,40,0
+    .goto 2255,60.62,28.25,40,0
+    .isOnQuest 88945
+    >>Kill |cRXP_ENEMY_Sureki Forces|r
+    .complete 88945,1 --Sureki Sympathizers disrupted (100%)
+step
+    .isQuestComplete 88916
+    .isQuestComplete 88945
+    .goto 2255,60.65,18.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ysabel Gleamgaard|r
+    .dailyturnin 88916 >>Turn in Radiant Incursion: Sureki's End
+    .dailyturnin 88945 >>Turn in Radiant Incursion: Rak-Zakaz
+    .target Ysabel Gleamgaard
+step
+    .isOnQuest 88711
+    .goto 2255,65.33,49.67,40,0
+    .goto 2255,66.34,53.89,40,0
+    .goto 2255,68.72,54.3,40,0
+    .goto 2255,69.9,56.17,40,0
+    .goto 2255,66.52,55.31,40,0
+    >>Kill |cRXP_ENEMY_Sureki Forces|r and click on the nearby |cRXP_PICK_Objects|r.
+    .complete 88711,1 --Sureki forces disrupted (100%)
+step
+    #label Radiant Incursion: Toxins and Pheromones
+    .isQuestComplete 88711
+    .goto 2255,65.98,59.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lamplighter Kaerter|r
+    .dailyturnin 88711 >>Turn in Radiant Incursion: Toxins and Pheromones
+    .target Lamplighter Kaerter
+step
+    .isQuestComplete 88711
+    #include a) DawnBreakerTeleport
+-----------------------------------------------------
+--- DAILLIES BATCH 2
+-----------------------------------------------------
+step
+    #loop
+    .isOnQuest 87475
+    .goto 2215,40.13,58.29,30,0
+    .goto 2215,41.29,59.47,30,0
+    .goto 2215,40.61,61.16,30,0
+    >>Kill |cRXP_ENEMY_Sureki Forces|r and click on the nearby |cRXP_PICK_Objects|r.
+    .complete 87475,1 --Sureki forces repelled (100%)
+    .mob Sureki Ballista
+    .mob Sureki Marauder
+    .mob Sureki Battle Drone
+    .mob Sureki Siegelord
+step
+    .isQuestComplete 87475
+    .goto 2215,40.59,57.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auralia Steelstrike|r
+    .turnin 87475 >>Turn in Sureki Incursion: Hold the Wall
+    .target Auralia Steelstrike
+step
+    .isOnQuest 87477
+    #loop
+    .goto 2215,47.5,68.2,30,0
+    .goto 2215,48.06,69.2,30,0
+    .goto 2215,51.2,65.38,30,0
+    .goto 2215,51.49,70.75,30,0
+    >>Kill |cRXP_ENEMY_Sureki Forces|r and click on the nearby |cRXP_PICK_Objects|r.
+    .complete 87477,1 --Sureki swarm thwarted (100%)
+    .mob Sureki Ballista
+    .mob Sureki Marauder
+    .mob Sureki Battle Drone
+    .mob Sureki Siegelord
+step
+    .isQuestComplete 87477
+    .goto 2215,52.00,66.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meradyth Lacke|r
+    .turnin 87477 >>Turn in Sureki Incursion: Southern Swarm
+    .target Meradyth Lacke
+step
+    .isOnQuest 87480
+    #loop
+    .goto 2215,71.76,45.59,30,0
+    .goto 2215,72.06,46.62,30,0
+    .goto 2215,72.78,47.01,30,0
+    .goto 2215,73.61,45.84,30,0
+    .goto 2215,74.6,45,30,0
+    .goto 2215,75.86,45.18,30,0
+    .goto 2215,75.66,43.38,30,0
+    .goto 2215,73.09,43.06,30,0
+    .goto 2215,71.5,42.9,30,0
+    >>Kill |cRXP_ENEMY_Sureki Forces|r and click on the nearby |cRXP_PICK_Objects|r.
+    .complete 87480,1 --Sureki invasion disrupted (100%)
+step
+    .isQuestComplete 87480
+    #label Sureki Incursion: The Eastern Assault
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Izaeh Strongiron|r on a platform high above.
+    .turnin 87480 >>Turn in Sureki Incursion: The Eastern Assault
+    .target Izaeh Strongiron
+step
+    .goto 2215,26.48,55.11
+    >>Check your map to see if the Nightfall event is active. If it is, complete it now; if not, wait for it to become active.
+    .complete 89295,1 --Complete the scenario "Nightfall"
+    .complete 89331,1 --Complete the scenario "Nightfall"
+step
+    .goto 2215,28.26,56.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylton Wyldbraun|r
+    .turnin 89332 >>Turn in Boot Camp
+    .turnin 89295 >>Turn in The Flame Burns Eternal
+    .turnin 89331 >>Turn in Flame Fortification
+    .target Mylton Wyldbraun
+]])
+
+--DawnBreakerTeleport
+RXPGuides.RegisterGuide([[
+#retail
+#version 3
+#group RestedXP The War Within
+#name a) DawnBreakerTeleport
+#internal
+
+step
+    >>Open the Adventure Guide (default: Shift + J), navigate to Suggested Content, and look for the quest Nightfall Radiance. Accept it.
+    .accept 85005 >>Accept A Radiant Call
+step
+    .zoneskip 2215
+    .zone 2359 >>Open the Dungeon Finder, navigate to Follower Dungeons, and queue for |cRXP_WARN_'The Dawnbreaker'|r.
+step
+    .zoneskip 2215
+    .gossipoption 124142 >>Talk to |cRXP_FRIENDLY_General Steelstrike|r inside Dawnbreaker. |cRXP_WARN_She should be visible from the entrance. Use the Active Targets frame to mark her.|r
+    .target General Steelstrik
+]])
