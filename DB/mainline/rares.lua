@@ -1,5 +1,10 @@
 local _, addon = ...
 
+-- As of 11.1.5 TargetUnit now fires ADDON_ACTION_FORBIDDEN at execution, rather than target matches
+if addon.gameVersion >= 110105 then
+    return
+end
+
 addon.rares = {
     ["Mulgore"] = {
         "Pokey Thornmantle", "Arra'chea", "Doomsayer Wiserunner",
