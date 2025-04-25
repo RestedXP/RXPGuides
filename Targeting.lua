@@ -1220,10 +1220,12 @@ function addon.targeting:LoadRares()
     end
 
     local zone = GetRealZoneText()
+    local subzone = GetSubZoneText()
 
-    if not zone then return end
+    if not (zone or subzone) then return end
 
-    rareTargets = addon.rares[zone] or {}
+    rareTargets = addon.rares[subzone] or addon.rares[zone] or {}
+
     self:UpdateTargetFrame()
 end
 
