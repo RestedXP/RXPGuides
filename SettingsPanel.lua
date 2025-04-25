@@ -25,6 +25,7 @@ local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
+local gameVersion = select(4, GetBuildInfo())
 
 local importCache = {
     bufferString = "",
@@ -167,7 +168,7 @@ local settingsDBDefaults = {
         enableEnemyTargeting = true,
         enableEnemyMarking = true,
         enableMobMarking = true,
-        showTargetingOnProximity = true,
+        showTargetingOnProximity = gameVersion < 110105,
         soundOnFind = 3175,
         soundOnFindChannel = 'Master',
         scanForRares = true,
@@ -391,6 +392,12 @@ function addon.settings:MigrateLegacySettings()
         n("xprate", RXPCData.xprate)
         db.xprate = RXPCData.xprate
         RXPCData.xprate = nil
+    end
+
+    -- As of 11.1.5 TargetUnit now fires ADDON_ACTION_FORBIDDEN at execution, rather than target matches
+    -- Force disable setting, rather than gameVersion everywhere
+    if db.showTargetingOnProximity and gameVersion >= 110105 then
+        db.showTargetingOnProximity = false
     end
 end
 
@@ -1640,7 +1647,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable Active Targets"), -- TODO locale
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
-                        width = optionsWidth,
+                        width = gameVersion < 110105 and optionsWidth or optionsWidth * 3,
                         order = 2.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1664,7 +1671,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function()
                             return not self.profile.enableTargetAutomation
-                        end
+                        end,
+                        hidden = addon.gameVersion >= 110105
                     },
                     enableFriendlyTargeting = {
                         name = L("Scan Friendly Targets"), -- TODO locale
@@ -1726,7 +1734,8 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity
-                        end
+                        end,
+                        hidden = addon.gameVersion >= 110105
                     },
                     notifyOnRares = {
                         name = L("Notify on Rares"), -- TODO locale
@@ -1738,7 +1747,8 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity or
                                        not self.profile.scanForRares
-                        end
+                        end,
+                        hidden = addon.gameVersion >= 110105
                     },
                     hideActiveTargetsBackground = {
                         name = L("Hide Targets Background"),
