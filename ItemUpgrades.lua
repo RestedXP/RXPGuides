@@ -463,8 +463,6 @@ local function TooltipSetItem(tooltip, ...)
     local itemData = addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if not itemData then return end
 
-    if not itemData then return end
-
     local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     if not statComparisons or next(statComparisons) == nil then
@@ -510,6 +508,7 @@ local function TooltipSetItem(tooltip, ...)
     end
 
     if addon.settings.profile.enableTotalEP then
+        -- TODO put 1H, OH, or 2H prefix
         tinsert(lines, fmt("  Total Stat EP: %s", addon.Round(itemData.totalWeight, 2)))
     end
 
@@ -1117,24 +1116,14 @@ local SPEED_SUFFIX_SLOT_MAP = {
     ['RANGED'] = _G.INVSLOT_RANGED
 }
 
--- returns equippedWeight, comparedWeight
-function addon.itemUpgrades:CalculateWeaponWeight(equippedData, comparedData, slotComparisonId)
-    local equippedWeight = equippedData.totalWeight
-    local comparedWeight = comparedData.totalWeight
-
-    for suffix, data in pairs(equippedData.dpsWeights or {}) do
+function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
+    for suffix, data in pairs(itemData.dpsWeights or {}) do
         if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            equippedWeight = equippedWeight + data.overallWeight
+            return itemData.totalWeight + data.overallWeight
         end
     end
 
-    for suffix, data in pairs(comparedData.dpsWeights or {}) do
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            comparedWeight = comparedWeight + data.overallWeight
-        end
-    end
-
-    return equippedWeight, comparedWeight
+    return -1
 end
 
 -- return ratio, weight, debugMsg
@@ -1152,13 +1141,17 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
     -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
     -- MH / OH have more complex handling, requires DPS calculations here
     if IsWeaponSlot(equippedData.itemEquipLoc) then
-        equippedWeight, comparedWeight = self:CalculateWeaponWeight(equippedData, comparedData, slotComparisonId)
+        equippedWeight = self:CalculateWeaponWeight(equippedData, slotComparisonId)
+        comparedWeight = self:CalculateWeaponWeight(comparedData, slotComparisonId)
     else
         equippedWeight = equippedData.totalWeight
         comparedWeight = comparedData.totalWeight
     end
 
-    if equippedWeight == 0 then
+    -- If -1, then failed to calculate speed/DPS EP
+    if equippedWeight < 0 or comparedWeight < 0 then
+        return nil, -1, _G.UNKNOWN
+    elseif equippedWeight == 0 then
         return 1.0, comparedWeight, nil
     elseif comparedWeight == 0 then
         return nil, 0, _G.EMPTY
