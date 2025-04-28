@@ -1332,7 +1332,7 @@ step
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
-    .train 6480 >> Train |T136058:0|t[Pick Lock]
+    .train 1804 >> Train |T136058:0|t[Pick Lock]
     .train 921 >> Train |T133644:0|t[Pick Pocket]
     .accept 2379 >> Accept Zando'Zan
     .target Shenthul
