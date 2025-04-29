@@ -465,12 +465,12 @@ local function TooltipSetItem(tooltip, ...)
 
     local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
+    -- TODO port weapon kind prefix up here
     if not statComparisons or next(statComparisons) == nil then
         if addon.settings.profile.enableTotalEP then
             if itemData and itemData.totalWeight and itemData.totalWeight > 0 then
                 tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
 
-                -- TODO Remove "Stat"
                 tooltip:AddLine(fmt("  Total EP: %s", addon.Round(itemData.totalWeight, 2)))
             end
         end
@@ -479,7 +479,7 @@ local function TooltipSetItem(tooltip, ...)
     end
 
     local lines = {}
-    local statEPIncrease
+    local statEPIncrease, itemEP
     local lineText
 
     for _, statsData in ipairs(statComparisons) do
@@ -496,20 +496,34 @@ local function TooltipSetItem(tooltip, ...)
             lineText = nil
         end
 
-        -- if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
-        --    tinsert(lines, fmt("  %s: %s / +%s EP (%s)",data['ItemLink'] or _G.UNKNOWN, ratioText,
-        --                addon.Round(data.WeightIncrease, 2), _G.INVTYPE_WEAPONOFFHAND))
-        -- end
+        if IsMeleeSlot(itemData.itemEquipLoc) then
+            for suffix, data in pairs(itemData.dpsWeights or {}) do
+                tinsert(lines, fmt("  - %s DPS EP: %s", suffix, addon.Round(itemData.totalWeight + data.scaleWeight, 2)))
+            end
+        end
 
         if lineText then tinsert(lines, lineText) end
 
         if statsData['debug'] and addon.settings.profile.debug then tinsert(lines, "    -" .. statsData['debug']) end
-
     end
 
     if addon.settings.profile.enableTotalEP then
+        if itemData.dpsWeights then -- IsWeaponSlot equivalent
+            if IsMeleeSlot(itemData.itemEquipLoc) then
+                for suffix, data in pairs(itemData.dpsWeights or {}) do
+                    tinsert(lines, fmt("  Total EP %s: +%s", suffix, addon.Round(itemData.totalWeight + data.scaleWeight, 2)))
+                end
+            else -- IsRangedSlot
+                itemEP = addon.Round(itemData.totalWeight + itemData.dpsWeights["RANGED"].scaleWeight, 2)
+
+                tinsert(lines, fmt("  Total EP (%s): %s", "RANGED", itemEP))
+            end
+        else -- Armor
+            itemEP = addon.Round(itemData.totalWeight, 2)
+            tinsert(lines, fmt("  Total EP: %s", itemEP))
+        end
+
         -- TODO put 1H, OH, or 2H prefix
-        tinsert(lines, fmt("  Total Stat EP: %s", addon.Round(itemData.totalWeight, 2)))
     end
 
     if #lines > 0 then
