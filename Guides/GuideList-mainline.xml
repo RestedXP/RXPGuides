@@ -1,38 +1,25 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
 <Script file="Guides/Import.lua"/>
 
------------------------------------------------------
---- LEVELING
------------------------------------------------------
+<!-- LEVELING -->
 <Script file="Guides/Retail/Leveling/Conventional/Starting Zones.lua"/>
-<Script file="Guides/Retail/Leveling/Conventional/Darkmoon Faire.lua"/>
+<!-- <Script file="Guides/Retail/Leveling/Conventional/Darkmoon Faire.lua"/> -->
 <Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Dailies.lua"/>
 <Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Jade Forest.lua"/>
-<Script file="Guides/Retail/Leveling/Remix/Legion/"/>
+<!-- <Script file="Guides/Retail/Leveling/Remix/Legion/"/> -->
 
 
------------------------------------------------------
---- END GAME
------------------------------------------------------
-
-<Script file="Guides/Retail/Endgame/War Within/Siren Isle Campaign + Weeklies.lua"/>
+<!-- END GAME -->
+<Script file="Guides/Retail/Endgame/War Within/Siren Isles.lua"/>
 <Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
 <Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
 <Script file="Guides/Retail/Endgame/War Within/Undermine Campaign.Lua"/>
-<Script file="Guides/Retail/Endgame/War Within/11.1.5.Lua"/>
 
-
------------------------------------------------------
---- COLLECTABLES
------------------------------------------------------
-
+<!-- COLLECTABLES -->
 <Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>
 <Script file="Guides/Retail/Collectables/Allied Races.Lua"/>
 
-
------------------------------------------------------
---- LOREMASTER
------------------------------------------------------
+<!-- LOREMASTER -->
 
 
 
