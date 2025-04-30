@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
 <Script file="Guides/Import.lua"/>
 
-<Script file="Guides/Retail/Leveling/Conventional/Snippits.lua"/>
+<Script file="Guides/Retail/Snippits.lua"/>
 
 <!-- LEVELING -->
 <Script file="Guides/Retail/Leveling/Conventional/Starting Zones.lua"/>
