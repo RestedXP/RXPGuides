@@ -1,13 +1,28 @@
---DF
+-- ============================
+-- ==========   DF ============
+-- ============================
 
+--SEPERATOR
 RXPGuides.RegisterGuide([[
-#df
-#name A1 Waking Shores Dragon Glyphs
-#displayname Waking Shores Dragon Glyphs
+#retail
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name 0
+#displayname |cFFFCDC00DRAGONFLIGHT|r
+#disabled
+
+
+]])
+
+--Waking Shores
+RXPGuides.RegisterGuide([[
+#retail
 #version 3
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
-#next B1 Ohn'ahran Plains Dragon Glyphs
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name a) Waking Shores Glyphs
+#displayname |cFF00CCFF1|r - Waking Shores
+#next b) Ohn'ahran Plains Glyphs
 
 step
     #completewith WakingShoreDragonGlyphs
@@ -143,14 +158,15 @@ step
     .achievement 16576,11 >>Pick up the Dragon Glyph: Rubyscale Outpost a few yards above the ground
 ]])
 
+--Ohn'ahran Plains
 RXPGuides.RegisterGuide([[
-#df
-#name B1 Ohn'ahran Plains Dragon Glyphs
-#displayname Ohn'ahran Plains Dragon Glyphs
+#retail
 #version 3
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
-#next C1 Azure Span Dragon Glyphs
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name b) Ohn'ahran Plains Glyphs
+#displayname |cFF00CCFF2|r - Ohn'ahran Plains
+#next c) Azure Span Glyphs
 
 step
     #title Dragon Glyph: Mirewood Fen
@@ -250,14 +266,15 @@ step
     .achievement 16576,8 >>Pick up the Dragon Glyph: Dragonsprings Summit in the air above the small sea
 ]])
 
+--Azure Span
 RXPGuides.RegisterGuide([[
-#df
-#name C1 Azure Span Dragon Glyphs
-#displayname Azure Span Dragon Glyphs
+#retail
 #version 3
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
-#next D1 Thaldraszus Dragon Glyphs
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name c) Azure Span Glyphs
+#displayname |cFF00CCFF3|r - Azure Span
+#next d) Thaldraszus Glyphs
 
 step
     #title Dragon Glyph: Forkriver Crossing
@@ -379,14 +396,15 @@ step
     .achievement 16577,1 >>Pick up the Dragon Glyph: Cobalt Assembly above the tower
 ]])
 
+--Thaldraszus
 RXPGuides.RegisterGuide([[
-#df
-#name D1 Thaldraszus Dragon Glyphs
-#displayname Thaldraszus Dragon Glyphs
+#retail
 #version 3
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
-#next E1 Forbidden Reach Dragon Glyphs
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name d) Thaldraszus Glyphs
+#displayname |cFF00CCFF4|r - Thaldraszus
+#next e) Forbidden Reach Glyphs
 
 step
     #title Dragon Glyph: South Hold Gate
@@ -490,14 +508,15 @@ step
     .achievement 16578,1 >>Pick up the Dragon Glyph: Temporal Conflux on top of the tower
 ]])
 
+--Forbidden Reach
 RXPGuides.RegisterGuide([[
-#df
-#name E1 Forbidden Reach Dragon Glyphs
-#displayname Forbidden Reach Dragon Glyphs
-#next F1 Zaralek Cavern Dragon Glyphs
+#retail
 #version 3
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name e) Forbidden Reach Glyphs
+#displayname |cFF00CCFF5|r - Forbidden Reach
+#next f) Zaralek Cavern Glyphs
 
 step
     #completewith next
@@ -605,13 +624,15 @@ step
     .achievement 17411,2 >> Pick up the Dragon Glyph: Talon's Watch hidden within the bottom of the tower on an island
 ]])
 
+--Zaralek Cavern
 RXPGuides.RegisterGuide([[
-#df
-#name F1 Zaralek Cavern Dragon Glyphs
-#displayname Zaralek Cavern Dragon Glyphs
+#retail
 #version 3
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name f) Zaralek Cavern Glyphs
+#displayname |cFF00CCFF6|r - Zaralek Cavern
+#next g) Emerald Dream Dragon Glyphs
 
 
 step
@@ -694,13 +715,15 @@ step
     .achievement 19306,8 >> Pick up the Dragon Glyph: Aberrus Approach behind the raid instance |cRXP_WARN_at the top of the lava waterfall|r.
 ]])
 
+--Emerald Dream
 RXPGuides.RegisterGuide([[
-#df
-#name G1 Emerald Dream Dragon Glyphs
-#displayname Emerald Dream Dragon Glyphs
+#retail
 #version 2
-#group RestedXP Skyriding Glyphs
-#subgroup Dragonflight
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name g) Emerald Dream Dragon Glyphs
+#displayname |cFF00CCFF7|r - Emerald Dream
+#next h) Isle of the Dorn Glyphs
 
 
 step
@@ -756,16 +779,31 @@ step
     .achievement 19306,7 >> Pick up the Dragon Glyph: Whorlwing Basin
 ]])
 
---TWW
+-- =============================
+-- ==========   TWW ============
+-- =============================
 
+--SEPERATOR
+RXPGuides.RegisterGuide([[
+#retail
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name ga
+#displayname |cFFFCDC00THE WAR WITHIN|r
+#disabled
+
+
+]])
+
+--Isle of the Dorn
 RXPGuides.RegisterGuide([[
 #version 1
-#df
-#group RestedXP Skyriding Glyphs
-#subgroup The War Within
-#name A1 Isle of the Dorn Skyriding Glyphs
-#displayname Isle of the Dorn Skyriding Glyphs
-#next B1 The Ringing Deeps Skyriding Glyphs
+#retail
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name h) Isle of the Dorn Glyphs
+#displayname |cFF1EFF001|r - Isle of the Dorn
+#next i) The Ringing Deeps Glyphs
 
 step
     #completewith
@@ -823,14 +861,15 @@ step
     .achievement 40166,2 >>Pick up the Skyriding Glyph: Dhar Oztan
 ]])
 
+--The Ringing Deeps
 RXPGuides.RegisterGuide([[
 #version 1
-#df
-#group RestedXP Skyriding Glyphs
-#subgroup The War Within
-#name B1 The Ringing Deeps Skyriding Glyphs
-#displayname The Ringing Deeps Skyriding Glyphs
-#next C1 Hallowfall Skyriding Glyphs
+#retail
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name i) The Ringing Deeps Glyphs
+#displayname |cFF1EFF002|r - The Ringing Deeps
+#next j) Hallowfall Glyphs
 
 
 step
@@ -880,14 +919,15 @@ step
     .achievement 40703,9 >>Pick up the Skyriding Glyph: The Waterworks
 ]])
 
+--Hallowfall
 RXPGuides.RegisterGuide([[
 #version 1
-#df
-#group RestedXP Skyriding Glyphs
-#subgroup The War Within
-#name C1 Hallowfall Skyriding Glyphs
-#displayname Hallowfall Skyriding Glyphs
-#next Azj-Kahet Skyriding Glyphs
+#retail
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#name j) Hallowfall Glyphs
+#displayname |cFF1EFF003|r - Hallowfall
+#next k) Azj-Kahet Glyphs
 
 step
     #title Skyriding: The Fangs
@@ -941,13 +981,15 @@ step
     .achievement 40704,10 >>Pick up the Skyriding Glyph: Tenir's Ascent
 ]])
 
+--Azj-Kahet
 RXPGuides.RegisterGuide([[
 #version 1
-#df
-#group RestedXP Skyriding Glyphs
-#subgroup The War Within
-#name D1 Azj-Kahet Skyriding Glyphs
-#displayname Azj-Kahet Skyriding Glyphs
+#retail
+#group RestedXP Collectables
+#subgroup Skyriding Glyphs
+#displayname |cFF1EFF004|r - Azj-Kahet
+#name k) Azj-Kahet Glyphs
+#next a) Waking Shores Glyphs
 
 step
     #title Skyriding: Trickling Abyss
@@ -1005,4 +1047,3 @@ step
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40705,9 >>Pick up the Skyriding Glyph: Silken Ward
 ]])
-

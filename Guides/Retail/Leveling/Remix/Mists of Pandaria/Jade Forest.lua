@@ -4,7 +4,7 @@
 
 -- Jade Forest Tian Monastery
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
 #group RestedXP Pandaria Remix
 #name 1) Jade Forest Side Quests Tian Monastery
@@ -501,7 +501,7 @@ step
 
 -- Jade Forest Sprites Plight
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
 #group RestedXP Pandaria Remix
 #name 1) Jade Forest Side Quests Sprites Plight
@@ -735,7 +735,7 @@ step
 
 -- Jade Forest Defiance
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
 #group RestedXP Pandaria Remix
 #name 1) Jade Forest Defiance Side Quests
@@ -938,7 +938,7 @@ step
 
 -- Jade Forest Cloud Serpent
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
 #group RestedXP Pandaria Remix
 #name 1) Jade Forest Cloud Serpent Side Quests
@@ -1148,15 +1148,28 @@ step
 ---x MAIN QUESTS
 ----------------------------
 
--- Pandaria Remix Leveling Guide: How to Use & Essential Tips
+--SEPERATOR
 RXPGuides.RegisterGuide([[
-#df
+#retail
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#name 0
+#displayname |cFFFCDC00LEVELING|r
+#disabled
+
+
+
+]])
+
+-- Pandaria Remix Leveling Guide: How to Use & Essential Tips
+RXPGuides.RegisterGuide([[ 
+#retail
 #version 1
-#group RestedXP Pandaria Remix
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
--- #subweight 11
-#displayname |cFFFCDC00How to Use & Essential Tips|r
+#displayname |cFF00CCFF0|r - How to Use & Essential Tips |cRXP_ENEMY_(Optional)|r
 
 step
     #completewith test
@@ -1234,13 +1247,13 @@ step
 
 -- Introduction
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
-#group RestedXP Pandaria Remix
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
 #name 2) Pandaria Remix Introduction
-#displayname |cFFFCDC00Chapter 0|r - Timeless Isle Introduction
+#displayname |cFF00CCFF1|r - Timeless Isle Introduction
 #title Timeless Isle Introduction
--- #subweight 1
 #next 3) Jade Forest Horde << Horde
 #next 3) Jade Forest Alliance << Alliance
 
@@ -1394,14 +1407,16 @@ step << Alliance
 
 -- Jade Forest Horde
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
-#group RestedXP Pandaria Remix
-#name 3) Jade Forest Horde
-#displayname |cFFFCDC00Chapter 1|r - Jade Forest
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subweight -1
 #title Jade Forest
+#name 3) Jade Forest Horde
+#displayname |cFF00CCFF2|r - Jade Forest
 #next 4) Valley of the Four Winds 1
--- #subweight 9
+
 << Horde
 
 step
@@ -2156,14 +2171,15 @@ step
 
 -- Jade Forest Alliance
 RXPGuides.RegisterGuide([[
-#df
+#retail
 #version 1
-#group RestedXP Pandaria Remix
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subweight -1
 #name 3) Jade Forest Alliance
-#displayname |cFFFCDC00Chapter 1|r - Jade Forest
+#displayname |cFF00CCFF2|r - Jade Forest
 #title Jade Forest
 #next 4) Valley of the Four Winds 1
--- #subweight 9
 <<Alliance
 
 step
