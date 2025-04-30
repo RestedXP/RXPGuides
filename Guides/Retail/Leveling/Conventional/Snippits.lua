@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Speed Leveling
+#group RestedXP War Within Endgame
 #name a) DawnBreakerTeleport
 #internal
 
