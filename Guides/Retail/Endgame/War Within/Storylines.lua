@@ -776,6 +776,9 @@ RXPGuides.RegisterGuide([[
 #displayname Nightfall Radiance
 
 step
+    >>Open the Adventure Guide (default: Shift + J), navigate to Suggested Content, and look for the quest Nightfall Radiance. Accept it.
+    .accept 85005 >>Accept A Radiant Call
+step
     #include a) DawnBreakerTeleport
 step
     .goto 2215,28.26,56.11
@@ -956,4 +959,359 @@ step
     .turnin 89295 >>Turn in The Flame Burns Eternal
     .turnin 89331 >>Turn in Flame Fortification
     .target Mylton Wyldbraun
+]])
+
+--Rise of the Red Dawn
+RXPGuides.RegisterGuide([[
+#retail
+#version 3
+#group RestedXP War Within Endgame
+#subgroup |cFFFCDC00(80)|r Storylines
+#name a) Rise of the Red Dawn
+#displayname Rise of the Red Dawn
+#internal
+
+step
+    .goto 84,61.67,17.17
+    >>Open the Adventure Guide (default: Shift + J), navigate to Suggested Content, and look for the quest Title "Rise of the Red Dawn". Press Accept Quest.
+    .accept 91039 >>Accept Faerin's Request
+    .target Asdasad
+    .accept 90968 >>Accept Titanic Rumblings
+step
+    .goto 2339,46.07,49.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .turnin 91039 >>Turn in Faerin's Request
+    .target Faerin Lothar
+    .accept 84638 >>Accept Trouble in the Highlands
+step
+    .goto 2372,21.97,38.88
+    .complete 84638,1 --1/1 Take the portal to the Arathi Highlands
+step
+    .goto 2372,21.54,38.45
+    .complete 84638,2 --1/1 Follow Faerin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin|r
+    .complete 84638,3 --1/1 Speak to Faerin
+    132093
+    
+    .target Faerin
+    .goto 2372,20.46,39.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
+    .turnin 84638 >>Turn in Trouble in the Highlands
+    .target Danath Trollbane
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walker Gresham|r
+    .accept 84639 >>Accept Torches and Tar
+    .target Walker Gresham
+step
+    .goto 2372,20.52,39.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggie Wiltshire|r
+    .accept 84658 >>Accept Finding Family
+    .target Maggie Wiltshire
+step
+    .goto 2372,17.37,42.34
+    .complete 84658,2 --1/1 Sharon Wiltshire found
+step
+    .goto 2372,15.05,42.73
+    .accept 84640 >>Accept Emblematic of Things to Come
+step
+    .goto 2372,14.08,41.84
+    .complete 84658,3 --1/1 Ellie found
+step
+    .goto 2372,14.77,42.89
+    .complete 84658,1 --1/1 Marshall Wiltshire found
+step
+    .goto 2372,16.06,39.68
+    .complete 84639,1 --10/10 Barrels of Tar retrieved
+step
+    .goto 2372,14.32,40.11
+    .complete 84639,2 --10/10 Stolen Torches retrieved
+step
+    .goto 2372,20.43,39.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
+    .turnin 84640 >>Turn in Emblematic of Things to Come
+    .target Danath Trollbane
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walker Gresham|r
+    .turnin 84639 >>Turn in Torches and Tar
+    .target Walker Gresham
+step
+    .goto 2372,20.52,39.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggie Wiltshire|r
+    .turnin 84658 >>Turn in Finding Family
+    .target Maggie Wiltshire
+step
+    .goto 2372,20.46,39.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
+    .accept 84641 >>Accept Ill Tidings
+    .target Danath Trollbane
+step
+    .goto 2372,19.41,56.18
+    .turnin 84641 >>Turn in Ill Tidings
+
+step
+    .goto 2372,19.36,56.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Roderick Brewston|r
+    .accept 84643 >>Accept Curfew Kerfuffle
+    .target Captain Roderick Brewston
+    .accept 84645 >>Accept Deputy Delivery
+
+    131507
+
+    step
+    .goto 2372,13.98,69.42
+    .complete 84643,1 --15/15 Marran Supporters sent home
+step
+    .goto 2372,11.96,68.03
+    .complete 84645,1 --5/5 Brewston's requests delivered
+step
+    .goto 2372,17.46,59.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Roderick Brewston|r
+    .turnin 84643 >>Turn in Curfew Kerfuffle
+    .target Captain Roderick Brewston
+    .turnin 84645 >>Turn in Deputy Delivery
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colonel Veronica Nials|r
+    .accept 84649 >>Accept Marran Trollbane
+    .target Colonel Veronica Nials
+step
+    .goto 2372,17.76,60.43
+    .complete 84649,1 --1/1 Follow Colonel Nials downstairs
+step
+    .goto 2372,17.73,60.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin|r
+    .complete 84649,2 --1/1 Speak to Faerin
+    .target Faerin
+131587
+
+.complete 84649,3 --1/1 Listen to the conversation
+step
+    .goto 2372,17.54,59.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colonel Veronica Nials|r
+    .turnin 84649 >>Turn in Marran Trollbane
+    .target Colonel Veronica Nials
+    .accept 84650 >>Accept Finding Refuge at Refuge Pointe
+
+step
+.goto 2372,38.01,52.27
+.complete 84650,1 --1/1 Meet Faerin at Refuge Pointe
+.complete 84650,2 --1/1 Search the body for clues
+131607
+step
+    .goto 2372,40.73,53.71
+    .complete 84650,3 --1/1 Follow Faerin up the hill
+step
+    .goto 2372,40.95,53.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga|r
+    .complete 84650,4 --1/1 Speak to Karga
+    .target Karga
+    131610
+
+step
+    .goto 2372,40.81,53.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .turnin 84650 >>Turn in Finding Refuge at Refuge Pointe
+    .target Faerin Lothar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga Bloodfury|r
+    .accept 84651 >>Accept A Familiar Face
+    .target Karga Bloodfury
+    .accept 84652 >>Accept Supply Run
+step
+    .goto 2372,39.77,46.67
+    .complete 84652,1 --4/4 Supply Crates collected
+step
+    .goto 2372,40.79,47.42
+    .complete 84651,1 --1/1 Enemy leader defeated
+step
+    .goto 2372,40.94,53.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga Bloodfury|r
+    .turnin 84651 >>Turn in A Familiar Face
+    .target Karga Bloodfury
+    .turnin 84652 >>Turn in Supply Run
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .accept 84656 >>Accept Onward to Hammerfall
+    .target Faerin Lothar
+step
+    .goto 2372,69.71,39.37
+    .turnin 84656 >>Turn in Onward to Hammerfall
+
+step
+    .goto 2372,69.70,39.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r
+    .accept 84704 >>Accept A Different Point of View
+    .target Eitrigg
+step
+    .goto 2372,69.17,31.83
+    .complete 84704,1 --4/4 Supply Crates placed
+step
+    .goto 2372,69.57,32.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .turnin 84704 >>Turn in A Different Point of View
+    .target Faerin Lothar
+    .accept 84707 >>Accept To See a Troll
+step
+    .goto 2372,54.44,63.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    .turnin 84707 >>Turn in To See a Troll
+    .target Overlord Geya'rah
+    .accept 84705 >>Accept Withering the Witherbark
+    .accept 84706 >>Accept Crime Family
+
+step
+    .goto 2372,40.81,53.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .turnin 84650 >>Turn in Finding Refuge at Refuge Pointe
+    .target Faerin Lothar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga Bloodfury|r
+    .accept 84651 >>Accept A Familiar Face
+    .target Karga Bloodfury
+    .accept 84652 >>Accept Supply Run
+step
+    .goto 2372,39.77,46.67
+    .complete 84652,1 --4/4 Supply Crates collected
+step
+    .goto 2372,40.79,47.42
+    .complete 84651,1 --1/1 Enemy leader defeated
+step
+    .goto 2372,40.94,53.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga Bloodfury|r
+    .turnin 84651 >>Turn in A Familiar Face
+    .target Karga Bloodfury
+    .turnin 84652 >>Turn in Supply Run
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .accept 84656 >>Accept Onward to Hammerfall
+    .target Faerin Lothar
+step
+    .goto 2372,69.71,39.37
+    .turnin 84656 >>Turn in Onward to Hammerfall
+
+step
+    .goto 2372,69.70,39.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r
+    .accept 84704 >>Accept A Different Point of View
+    .target Eitrigg
+step
+    .goto 2372,69.17,31.83
+    .complete 84704,1 --4/4 Supply Crates placed
+step
+    .goto 2372,69.57,32.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .turnin 84704 >>Turn in A Different Point of View
+    .target Faerin Lothar
+    .accept 84707 >>Accept To See a Troll
+step
+    .goto 2372,54.44,63.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    .turnin 84707 >>Turn in To See a Troll
+    .target Overlord Geya'rah
+    .accept 84705 >>Accept Withering the Witherbark
+    .accept 84706 >>Accept Crime Family
+    
+
+step
+
+    .complete 84712,2 --1/1 Dead Horse investigated
+    125032
+
+step
+    .goto 2372,42.15,61.18
+    .complete 84712,1 --1/1 Orcish Axe investigated
+    125039
+
+step
+    .goto 2372,40.86,61.27
+    .complete 84712,3 --1/1 Suspicious Dirt investigated
+    125040
+
+step
+    .goto 2372,41.56,61.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    .complete 84712,4 --1/1 Speak to Overlord Geya'rah
+    .target Overlord Geya'rah
+    125047
+step
+
+.complete 84712,5 --1/1 Listen to the conversation
+step
+    .goto 2372,41.55,61.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
+    .turnin 84712 >>Turn in False Flag
+    .target Overlord Geya'rah
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .accept 84657 >>Accept Return to Stromgarde
+    .target Faerin Lothar
+
+step
+    .goto 2372,17.60,59.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nials in the Stromgarde barracks|r
+    .complete 84657,1 --1/1 Speak with Nials in the Stromgarde barracks
+    .target Nials in the Stromgarde barracks
+    131973
+
+
+    .complete 84657,2 --1/1 Await rescue
+step
+    .goto 2372,17.73,60.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Roderick Brewston|r
+    .turnin 84657 >>Turn in Return to Stromgarde
+    .target Captain Roderick Brewston
+    .accept 87299 >>Accept How Old Are These Things?
+    .accept 84659 >>Accept The Search for Faerin
+step
+    .goto 2372,15.19,61.94
+    .complete 84659,1 --1/1 Army tent searched
+step
+    .goto 2372,14.46,64.97
+    .complete 84659,2 --1/1 Inn basement searched
+step
+    .goto 2372,14.19,69.31
+    .complete 84659,3 --1/1 Tavern searched
+step
+    .goto 2372,16.34,68.86
+    .complete 84659,4 --1/1 Home searched
+step
+    .goto 2372,11.18,70.78
+    .complete 84659,5 --1/1 Mage tower searched
+step
+    .goto 2372,10.98,70.42
+    .complete 84659,6 --1/1 Faerin freed
+step
+    .goto 2372,15.83,65.66
+    .complete 87299,1 --20/20 Articles of Proof
+
+step
+    .goto 2372,19.33,59.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Roderick Brewston|r
+    .turnin 87299 >>Turn in How Old Are These Things?
+    .target Captain Roderick Brewston
+    .turnin 84659 >>Turn in The Search for Faerin
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .accept 84717 >>Accept Rise of the Red Dawn
+    .target Faerin Lothar
+step
+    .goto 2372,19.46,64.73
+    >>Kill |cRXP_ENEMY_Joseph the Enlightened|r
+    .complete 84717,1 --1/1 Joseph the Enlightened slain
+    .mob Joseph the Enlightened
+step
+    .goto 2372,21.30,64.97
+    .complete 84717,2 --1/1 Danath and Eitrigg found
+step
+    .goto 2372,21.64,65.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
+    .turnin 84717 >>Turn in Rise of the Red Dawn
+    .target Danath Trollbane
+    .accept 85529 >>Accept Past Glory
+step
+    .goto 2372,20.46,44.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin|r
+    .complete 85529,1 --1/1 Speak to Faerin
+    .target Faerin
+
+    .complete 85529,2 --1/1 Listen to Faerin and Danath
+step
+    .goto 2372,20.46,44.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
+    .turnin 85529 >>Turn in Past Glory
+    .target Faerin Lothar
 ]])

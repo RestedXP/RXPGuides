@@ -7,9 +7,6 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    >>Open the Adventure Guide (default: Shift + J), navigate to Suggested Content, and look for the quest Nightfall Radiance. Accept it.
-    .accept 85005 >>Accept A Radiant Call
-step
     .zoneskip 2215
     .zone 2359 >>Open the Dungeon Finder, navigate to Follower Dungeons, and queue for |cRXP_WARN_'The Dawnbreaker'|r.
 step
