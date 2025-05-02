@@ -80,6 +80,13 @@ L["Open Feedback Form"] = "Open Feedback Form"
 C["STOCKS"] = "STOCKS"
 C["ULDA"] = "ULDA"
 C["SM"] = "SM"
+L["NEW FEATURE"] = "NEW FEATURE"
+L["Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r"] = "Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r"
+L["Select Survival Guide"] = "Select Survival Guide"
+L["Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community."] = "Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community."
+L["Select Speedrun Guide"] = "Select Speedrun Guide"
+L["WELCOME\nADVENTURER"] = "WELCOME\nADVENTURER"
+L["Select your desired features to configure your Guide.\nLet's Go!"] = "Select your desired features to configure your Guide.\nLet's Go!"
 
 --Help.lua
 C["TomTom"] = "TomTom"
