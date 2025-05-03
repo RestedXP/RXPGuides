@@ -122,12 +122,15 @@ local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
 local maxLevel
 
-if gameVersion > 50000 then
+if gameVersion > 60000 then
     addon.game = "RETAIL"
     maxLevel = 70
     if gameVersion > 120000 then
         maxLevel = 80
     end
+elseif gameVersion > 50000 then
+    addon.game = "MOP"
+    maxLevel = 90
 elseif gameVersion > 40000 then
     addon.game = "CATA"
     maxLevel = 85

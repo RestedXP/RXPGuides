@@ -1,4 +1,4 @@
-## Interface: 40402
+## Interface: 50000
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
@@ -20,7 +20,7 @@ GuideWindow.lua
 Help.lua
 SettingsPanel.lua
 
-DB/cata.xml
+DB/mop.xml
 
 HSBatching.lua
 QuestLog.lua
@@ -36,7 +36,7 @@ InventoryManager.lua
 map.lua
 functions.lua
 GuideLoader.lua
-#HardcoreIntroUI.lua
+HardcoreIntroUI.lua
 
 Guides/GuideList-cata.xml
 
