@@ -1,11 +1,12 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Alliance' then return end
 
 RXPGuides.RegisterGuide([[
 
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 10-20 Loch Modan
 #displayname 10-18 Loch Modan
 #next 15-20 Redridge

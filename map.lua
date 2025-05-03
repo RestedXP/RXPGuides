@@ -893,6 +893,18 @@ local function addWorldMapPins()
             end
             HBDPins:AddWorldMapIconMap(addon, worldMapFrame, map, x, y,
                                        _G.HBD_PINS_WORLDMAP_SHOW_CONTINENT)
+            local subzones = addon.GetSubZones(map)
+            if subzones then
+                for _,subzone in pairs(subzones) do
+                    --print(subzone)
+                    local x,y = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, subzone, true)
+                    if x and y and not(x < 0 or y < 0 or x > 1 or y > 1) then
+                        local worldMapFrame = worldMapFramePool:Acquire()
+                        worldMapFrame:render(pin, false)
+                        HBDPins:AddWorldMapIconMap(addon, worldMapFrame, subzone, x, y)
+                    end
+                end
+            end
         end
     end
 end

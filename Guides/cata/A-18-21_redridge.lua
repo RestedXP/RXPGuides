@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Alliance' then return end
 RXPGuides.RegisterGuide([[
 
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 15-20 Redridge
 #displayname 18-21 Redridge
 #next 20-25 Duskwood
@@ -48,7 +49,7 @@ step << NightElf
     >>Talk to |cRXP_FRIENDLY_Jartsam|r
     .train 33388 >> Train Apprentice Riding
     .target Jartsam
-    .money <3.4000 
+    .money <3.4000
     .xp <20,1
 step << NightElf
     .goto 89,36.547,50.413
@@ -75,7 +76,7 @@ step << Draenei
     >>Talk to |cRXP_FRIENDLY_Aalun|r
     .train 33388 >> Train Apprentice Riding
     .target Aalun
-    .money <3.6000 
+    .money <3.6000
     .xp <20,1
     .zoneskip Azuremyst Isle,1
 step << Draenei
@@ -264,7 +265,7 @@ step
     .goto 37,84.322,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Hunter|r
     .train 33388 >> Train Apprentice Riding
-    .money <3.6000 
+    .money <3.6000
     .target Randal Hunter
     .xp <20,1
 step << Human
@@ -295,7 +296,7 @@ step
     .maxlevel 20,endOfTheGuide
 step
     .goto 49,16.032,64.633
-    >>Click the |cRXP_PICK_Wanted Poster|r 
+    >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 26504 >>Accept WANTED: Redridge Gnolls
 step
     .goto 49,15.622,65.327
@@ -613,7 +614,7 @@ step
     .goto 49,28.588,42.644,15 >> Exit the Lakeshire Town Hall
 step
     .goto 49,31.856,44.894
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .accept 26513 >>Accept Like a Fart in the Wind
     .target Marshal Marris
 step
@@ -825,10 +826,10 @@ step
     .goto 49,31.480,44.344
     >>Travel toward |cRXP_FRIENDLY_Foreman Oslow|r. Use the |T332402:0|t[Ettin Control Orb] next to him whilst you control a |cRXP_FRIENDLY_Subdued Canyon Ettin|r
     .complete 26520,1 --Foreman Oslow Saved (1)
-    .use 58895 
+    .use 58895
 step
     .goto 49,31.856,44.894
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 26513 >>Turn in Like a Fart in the Wind
     .target Marshal Marris
 step
@@ -872,7 +873,7 @@ step
 ------Skip/remove section if Keeshan added
 step
     .goto 49,22.043,42.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
     .accept 26509 >>Accept An Unwelcome Guest
     .target Martie Jainrose
 step
@@ -937,7 +938,7 @@ step
     .goto 37,84.322,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Hunter|r
     .train 33388 >> Train Apprentice Riding
-    .money <3.6000 
+    .money <3.6000
     .target Randal Hunter
     .xp <20,1
 step
@@ -995,7 +996,7 @@ step
     .goto 49,25.990,42.754,10 >> Exit the Lakeshire Inn --Exiting West (OPTIONAL SECTION)
 step
     .goto 49,22.043,42.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
     .accept 26509 >>Accept An Unwelcome Guest
     .target Martie Jainrose
 step
@@ -1758,7 +1759,7 @@ step
     .mob *Shadowhide Warrior
     .mob *Shadowhide Slayer
     .mob *Shadowhide Brute
-    .mob *Shadowhide Gnoll 
+    .mob *Shadowhide Gnoll
 step
     #questguide
     #sticky

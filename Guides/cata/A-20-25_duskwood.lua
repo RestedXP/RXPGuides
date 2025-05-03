@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Alliance' then return end
 RXPGuides.RegisterGuide([[
 
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 20-25 Duskwood
 #displayname 21-26 Duskwood
 #next 25-30 Northern Stranglethorn
@@ -516,12 +517,12 @@ step
 	.target +Watcher Dodds
 step
     .goto 47,20.015,57.884
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Elsington|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Elsington|r
     .target Sister Elsington
     .accept 26777 >>Accept Soothing Spirits
 step
     .goto 47,18.628,58.335
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r
     .accept 26721 >>Accept The Jitters-Bugs
     .target Jitters
 step

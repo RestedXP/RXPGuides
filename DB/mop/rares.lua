@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.game ~= "CATA" then return end
+if addon.game ~= "MOP" then return end
 addon.rares = {
     ["Mulgore"] = {
         "Pokey Thornmantle", "Arra'chea", "Doomsayer Wiserunner",

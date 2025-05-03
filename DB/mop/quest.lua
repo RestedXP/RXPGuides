@@ -1,6 +1,6 @@
 local _,addon = ...
 
-if addon.game ~= "CATA" then return end
+if addon.game ~= "MOP" then return end
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,

@@ -1,8 +1,9 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 10-22 Azshara
 #displayname 11-22 Azshara << Goblin
@@ -1589,7 +1590,7 @@ step
     .turnin 14345 >>Turn in Wash Out
     .accept 14340 >>Accept Dressed to Impress
     .target Sorata Firespinner
-step 
+step
     #xprate <1.2
     .goto 76,42.61,23.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
@@ -2143,7 +2144,7 @@ step
     .goto 76,25.93,49.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
     .gossipoption 112442 >>Take the rocketride to the Northern Rocketway Terminus
-    .timer 83,Northern Rocketway Terminus 
+    .timer 83,Northern Rocketway Terminus
     .target Bilgewater Rocket-jockey
     .isOnQuest 14391
 step

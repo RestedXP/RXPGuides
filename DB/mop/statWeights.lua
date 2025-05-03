@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.game ~= "CATA" then return end
+if addon.game ~= "MOP" then return end
 
 addon.statWeights = {
     ['Death Knight Speedrun 55 - 59 - Frost'] = {

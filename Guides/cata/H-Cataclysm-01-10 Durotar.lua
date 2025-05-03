@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Horde' then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 1-6 Valley of Trials
 #next 6-10 Durotar
@@ -33,7 +34,7 @@ step
     .goto 1411,44.96,65.65,30,0
     .goto 1411,45.09,64.90,30,0
     .goto 1411,43.62,64.74,30,0
-    .goto 1411,43.97,63.57 
+    .goto 1411,43.97,63.57
     >>Kill |cRXP_ENEMY_Mottled Boars|r
     .complete 25126,1 --Mottled Boar slaughtered (6)
     .mob Mottled Boar
@@ -65,7 +66,7 @@ step
     >>Kill |cRXP_ENEMY_Northwatch Scouts|r
     >>|cRXP_WARN_They are stealthed|r
     .complete 25172,1 --Northwatch Scout (7)
-    .mob Northwatch Scout 
+    .mob Northwatch Scout
     --VV Check on yard range for these stealthed mobs
 step
 #loop
@@ -259,7 +260,7 @@ step
     .isQuestComplete 25136
 step
     .goto 1411,43.23,68.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r    
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 25127 >>Turn in Sting of the Scorpid
     .target Gornek
 step
@@ -269,7 +270,7 @@ step
     .target Canaga Earthcaller
 step
     .goto 1411,43.45,67.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r   
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
     .accept 25131 >>Accept Vile Familiars
     .target Zureetha Fargaze
 step
@@ -444,6 +445,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 1-6 Darkspear Isle
 #next 6-10 Durotar
@@ -526,14 +528,14 @@ step
     .goto 1411,64.732,84.031 << Shaman
     .goto 1411,65.931,84.338 << Warrior
  	>>Kill |cRXP_ENEMY_Tiki Targets|r
-	.complete 24771,1 << Rogue --Kill Tiki Target (x6) 
-	.complete 24639,1 << Warrior --Kill Tiki Target (x6) 
-	.complete 24751,1 << Mage --Kill Tiki Target (x6) 
-	.complete 24759,1 << Shaman --Kill Tiki Target (x6) 
-	.complete 24751,1 << Druid --Kill Tiki Target (x6) 
-	.complete 24777,1 << Hunter --Kill Tiki Target (x6) 
-	.complete 24783,1 << Priest --Kill Tiki Target (x6) 
-	.complete 26273,1 << Warlock --Kill Tiki Target (x6) 
+	.complete 24771,1 << Rogue --Kill Tiki Target (x6)
+	.complete 24639,1 << Warrior --Kill Tiki Target (x6)
+	.complete 24751,1 << Mage --Kill Tiki Target (x6)
+	.complete 24759,1 << Shaman --Kill Tiki Target (x6)
+	.complete 24751,1 << Druid --Kill Tiki Target (x6)
+	.complete 24777,1 << Hunter --Kill Tiki Target (x6)
+	.complete 24783,1 << Priest --Kill Tiki Target (x6)
+	.complete 26273,1 << Warlock --Kill Tiki Target (x6)
 	.mob Tiki Target
 step << Rogue
     .goto 1411,65.89,83.25
@@ -604,7 +606,7 @@ step << Warrior
     .goto 1411,66.60,87.54,40,0
     .goto 1411,66.86,86.75,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 24639,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 24639,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Mage
     #loop
@@ -616,7 +618,7 @@ step << Mage
     .goto 1411,69.35,82.48,40,0
     .goto 1411,69.25,81.02,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 24753,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 24753,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Shaman
     #loop
@@ -628,7 +630,7 @@ step << Shaman
     .goto 1411,64.99,79.80,40,0
     .goto 1411,65.55,80.36,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 24761,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 24761,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Druid
     #loop
@@ -640,7 +642,7 @@ step << Druid
     .goto 1411,69.35,82.48,40,0
     .goto 1411,69.25,81.02,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 24767,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 24767,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Hunter
     #loop
@@ -655,7 +657,7 @@ step << Hunter
     .goto 1411,69.02,81.08,40,0
     .goto 1411,68.47,81.43,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 24779,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 24779,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Priest
     #loop
@@ -670,7 +672,7 @@ step << Priest
     .goto 1411,69.02,81.08,40,0
     .goto 1411,68.47,81.43,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 24785,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 24785,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Warlock
     #loop
@@ -681,7 +683,7 @@ step << Warlock
     .goto 1411,64.49,80.21,40,0
     .goto 1411,64.78,81.23,40,0
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
-	.complete 26275,1 --Collect Wildmane Cat Pelt (x6) 
+	.complete 26275,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
 step << Rogue
     .goto 1411,65.89,83.25
@@ -991,7 +993,7 @@ step
     #label CrossBridge
     #completewith Kijara
     .goto 1411,66.09,89.14,40,0
-    .goto 1411,64.94,89.02,40,0 
+    .goto 1411,64.94,89.02,40,0
     .goto 1411,63.42,93.50,40 >> Cross the Bridge
 step
     #require CrossBridge
@@ -1021,7 +1023,7 @@ step
 	#completewith Bloodtalons
 	.goto 1411,61.32,91.76,40,0
 	>>Use your |T132161:0|t[|cRXP_LOOT_Bloodtalon Whistle|r] when you are near |cRXP_FRIENDLY_Lost Bloodtalon Hatchling|r to rescue them
-	.complete 24623,1 --Rescue Bloodtalon Hatchling (x12) 
+	.complete 24623,1 --Rescue Bloodtalon Hatchling (x12)
 	.target Bloodtalon Hatchling
 	.use 52283
 step
@@ -1240,6 +1242,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 6-10 Durotar
 #next 10-22 Azshara
@@ -1423,7 +1426,7 @@ step
     .complete 25167,2 --Northwatch Lug (10)
     .mob Northwatch Lug
     .mob Northwatch Supply Crate
-step  
+step
     #loop
     .goto 1411,55.68,78.92,0
     .goto 1411,53.52,82.09,0
@@ -1602,7 +1605,7 @@ step
     .mob Northwatch Ranger
 step
     #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r 
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     --VV Beta test needed
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Lar|r and |cRXP_FRIENDLY_Master Gadrin|r
@@ -1646,7 +1649,7 @@ step << Hunter
     .target Hai'zan
     .xp <6,1
     .xp >8,1
-step << Hunterw 
+step << Hunterw
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .train 5116 >> Train your class spells
@@ -2112,9 +2115,9 @@ step
     .goto 1411,49.21,48.60,40,0
     .goto 1411,50.13,49.39,40,0
     .goto 1411,43.57,50.27,40,0
-    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r 
+    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
     .complete 25190,1 --Razormane Quilboar (4)
-    .mob +Razormane Quilboar 
+    .mob +Razormane Quilboar
     .complete 25190,2 --Razormane Scout (4)
     .mob +Razormane Scout
 step
@@ -2139,7 +2142,7 @@ step
 	.goto 1411,43.32,37.02,30,0
 	.goto 1411,42.63,36.62,30,0
 	.goto 1411,41.98,36.95,30,0
-    >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r 
+    >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     .complete 25192,1 --Razormane Dustrunner (5)
     .mob +Razormane Dustrunner
     .complete 25192,2 --Razormane Battleguard (5)
@@ -2461,7 +2464,7 @@ step
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
     .goto 1411,48.95,22.34,40,0
-    >>Loot the |cRXP_LOOT_Kul Sack of Supplies|r on the ground  
+    >>Loot the |cRXP_LOOT_Kul Sack of Supplies|r on the ground
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step
@@ -2516,9 +2519,9 @@ step
     #xprate <1.2
     #optional
     #completewith Fizzled
-    .goto 1411,45.11,13.65,30 >> Run to |cRXP_FRIENDLY_Gor|r 
+    .goto 1411,45.11,13.65,30 >> Run to |cRXP_FRIENDLY_Gor|r
 step << skip
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor|r and |cRXP_FRIENDLY_Shin|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor|r and |cRXP_FRIENDLY_Shin|r
     .turnin 25196 >>Turn in The Dranosh'ar Blockade
     --.accept 25206 >>Accept Ignoring the Warnings
     .accept 25236 >>Accept Thunder Down Under
@@ -2560,7 +2563,7 @@ step
 step << skip
     .goto 1411,44.90,14.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shin|r
-    .gossipoption 112089 >> Talk to |cRXP_FRIENDLY_Shin|r 
+    .gossipoption 112089 >> Talk to |cRXP_FRIENDLY_Shin|r
     .target Shin Stonepillar
 step << skip
     .goto 1411,52.47,16.47

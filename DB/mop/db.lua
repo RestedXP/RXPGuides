@@ -1,5 +1,5 @@
 local addonName, addon = ...
-if addon.game ~= "CATA" then return end
+if addon.game ~= "MOP" then return end
 local faction = UnitFactionGroup("player")
 
 addon.skipPreReq = {
@@ -47,11 +47,27 @@ elseif class == "HUNTER" then
     addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
 end
 
+addon.subzoneList = {}
+
 addon.mapId = {}
 for i = 1, 2200 do
 	local map = C_Map.GetMapInfo(i)
 	if map and not addon.mapId[map.name] then
 		addon.mapId[map.name] = i
+
+        local mapType = map.mapType
+        if mapType >= 3 and mapType ~= 4 then
+            local parentId = map.parentMapID
+            local parent = parentId and C_Map.GetMapInfo(parentId)
+            if parent and parent.mapType == 3 then
+                local t = addon.subzoneList[parentId]
+                if not t then
+                    t = {}
+                    addon.subzoneList[parentId] = t
+                end
+                table.insert(t,i)
+            end
+        end
 	end
 end
 
@@ -138,7 +154,6 @@ addon.mapId["246"] = addon.mapId["The Shattered Halls"]
 addon.mapId["194"] = addon.mapId["Kezan"]
 addon.mapId["245"] = addon.mapId["Tol Barad Peninsula"]
 addon.mapId["338"] = addon.mapId["Molten Front"]
-addon.mapId["1423"] = addon.mapId["Eastern Plaguelands"]
 addon.mapId["1421"] = addon.mapId["Silverpine Forest"]
 addon.mapId["219"] = addon.mapId["Zul'Farrak"]
 addon.mapId["302"] = addon.mapId["Scarlet Monastery"]
@@ -246,7 +261,7 @@ addon.mapId["119"] = addon.mapId["Sholazar Basin"]
 addon.mapId["1451"] = addon.mapId["Silithus"]
 addon.mapId["1460"] = addon.mapId["Warsong Gulch"]
 addon.mapId["332"] = addon.mapId["Serpentshrine Cavern"]
-addon.mapId["1423"] = addon.mapId["EPLNew"]
+addon.mapId["1423"] = addon.mapId["Eastern Plaguelands"]
 addon.mapId["1948"] = addon.mapId["Shadowmoon Valley"]
 addon.mapId["1425"] = addon.mapId["The Hinterlands"]
 addon.mapId["1946"] = addon.mapId["Zangarmarsh"]

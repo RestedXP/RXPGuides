@@ -1,8 +1,9 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 1-6 Mulgore
 #next 6-10 Mulgore
@@ -296,6 +297,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 6-10 Mulgore
 #next 10-22 Azshara

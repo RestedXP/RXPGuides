@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Alliance' then return end
 RXPGuides.RegisterGuide([[
 
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 1-6 Coldridge Valley
 #displayname 1-6 Coldridge Valley
 #next 6-7 Dun Morogh;6-9 Elwynn Forest
@@ -787,6 +788,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 1-6 New Tinkertown
 #displayname 1-6 New Tinkertown
 #next 6-7 Dun Morogh;6-9 Elwynn Forest
@@ -1522,6 +1524,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 6-7 Dun Morogh
 #next 6-9 Elwynn Forest
 #defaultfor Dwarf/Gnome
@@ -1892,6 +1895,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 7-9 Dun Morogh
 #next 9-11 Dun Morogh
 #defaultfor None
@@ -2222,6 +2226,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 9-11 Dun Morogh
 #displayname 9-10 Dun Morogh
 #next 10-20 Loch Modan

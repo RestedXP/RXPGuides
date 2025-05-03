@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Horde' then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 1-6 Sunstrider Isle
 #next 6-10 Eversong Woods
@@ -445,6 +446,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 6-10 Eversong Woods
 #next 10-22 Azshara
@@ -858,7 +860,7 @@ step
 step
     #xprate <1.2
     .goto Eversong Woods,44.718,69.619
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Velan Brightoak|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Velan Brightoak|r
     .accept 8491 >>Accept Pelt Collection
     .target Velan Brightoak
 step
@@ -1071,14 +1073,14 @@ step
 step
     #xprate <1.2
     .goto Eversong Woods,43.675,71.309
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r
     .accept 9358 >>Accept Ranger Sareyn
     .target Marniel Amberlight
     .maxlevel 9
 step
     #xprate <1.2
     .goto Eversong Woods,44.030,70.760
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r
     .accept 9254 >>Accept The Wayward Apprentice
     .target Magistrix Landra Dawnstrider
     .maxlevel 9

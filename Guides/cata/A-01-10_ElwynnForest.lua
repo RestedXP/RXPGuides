@@ -1,9 +1,10 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction ~= 'Alliance' then return end
 RXPGuides.RegisterGuide([[
 
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 1-6 Northshire Valley
 #version 1
 #next 6-9 Elwynn Forest
@@ -548,6 +549,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 6-9 Elwynn Forest
 #next 9-11 Dun Morogh
 #defaultfor Human/Dwarf/Gnome
