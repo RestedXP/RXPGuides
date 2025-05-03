@@ -23,7 +23,7 @@ jobs:
       - name: Package and release Classic
         uses: BigWigsMods/packager@v2
         with:
-          args: -g vanilla
+          args: -g classic
 
       - name: Package and release Cata
         uses: BigWigsMods/packager@v2
