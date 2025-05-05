@@ -1,12 +1,12 @@
 local _,addon = ...
-if addon.gameVersion < 40000 or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Alliance' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
 #mop
 << Horde
 #name 10-22 Azshara
-#displayname 11-22 Azshara << Goblin
+#displayname 11-22 Azshara << Goblin/Pandaren
 #next 22-27 Ashenvale
 #version 1
 --#group RXP Cataclysm (H)

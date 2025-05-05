@@ -1,5 +1,5 @@
 local _,addon = ...
-if addon.gameVersion < 40000 or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 
@@ -10,13 +10,59 @@ RXPGuides.RegisterGuide([[
 #name 10-20 Loch Modan
 #displayname 10-18 Loch Modan
 #next 15-20 Redridge
-#defaultfor Human/Dwarf/Gnome
+#defaultfor Human/Dwarf/Gnome/Pandaren
 
 <<Alliance
 
 step
     #optional
     .maxlevel 20,endOfTheGuide
+step << Pandaren
+    .goto 84,70.94,72.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Gol'Bolar Quarry >> Fly to Gol'Bolar Quarry
+	.target Dungar Longdrink
+    .zoneskip Dun Morogh
+    .zoneskip Loch Modan
+step << Pandaren
+    #optional
+    #completewith next
+    .goto 27,87.534,48.059,20,0
+    .goto 27,88.331,47.792,12,0
+    .goto 27,88.873,48.312,12,0
+    .goto 48,12.138,54.947,20,0
+    .goto 48,14.025,56.641,12 >> |cRXP_WARN_Travel up the mountain, then carefully drop down toward|r |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .noflyable
+step << Pandaren
+    .goto 48,14.006,56.485
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .accept 26854 >>Accept The Lost Pilot
+    .target Pilot Hammerfoot
+step << Pandaren
+    #optional
+    #completewith next
+    .goto 48,12.639,58.419,20,0
+    .goto 27,89.543,51.716,20,0
+    >>Travel toward |cRXP_PICK_A Dwarven Corpse|r on the ground
+    .noflyable
+step << Pandaren
+    .goto 27,87.633,50.139
+    >>Click |cRXP_PICK_A Dwarven Corpse|r on the ground
+    >>|cRXP_WARN_This will make |cRXP_ENEMY_Mangeclaw|r start running towards you|r
+    .turnin 26854 >>Turn in The Lost Pilot
+    .accept 26855 >>Accept A Pilot's Revenge
+step << Pandaren
+    .goto 27,87.421,50.013,0
+    .goto 27,87.357,49.213
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Mangy Claw|r
+    .complete 26855,1 --Mangy Claw (1)
+    .unitscan Mangeclaw
+step << Pandaren
+    .goto 48,14.006,56.485
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .turnin 26855 >>Turn in A Pilot's Revenge
+    .accept 13635 >>Accept South Gate Status Report
+    .target Pilot Hammerfoot
 step
     #completewith next
     .goto 48,21.398,66.390,30,0
@@ -46,24 +92,12 @@ step << Warrior/Paladin
 step << Rogue/Shaman
     .goto 48,23.673,74.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorvald Deepforge|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1 -- Cutlass (1)
-    .money <0.1618
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-    .target Thorvald Deepforge
-    .xp >11,1
-    .xp <10,1
-step << Rogue/Shaman
-    .goto 48,23.673,74.329
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorvald Deepforge|r
     >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
     .collect 853,1 -- Hatchet (1)
     .money <0.1927
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
     .target Thorvald Deepforge
-    .xp >12,1
     .xp <11,1
 step << Warrior/Paladin
     #optional
@@ -73,14 +107,6 @@ step << Warrior/Paladin
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
-step << Rogue/Shaman
-    #optional
-    #completewith end
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass] |cRXP_WARN_in your mainhand|r
-    .use 851
-    .itemcount 851,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
 step << Rogue/Shaman
     #optional
     #completewith end

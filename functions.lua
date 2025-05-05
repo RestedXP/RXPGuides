@@ -6648,3 +6648,19 @@ function addon.functions.isInScenario(self, ...)
         end
     end
 end
+
+function addon.functions.neutralzonefinished(self, event)
+    if event == "WindowUpdate" then
+        return
+    elseif type(self) == "string" then
+        return {}
+    end
+    local step = self.element and self.element.step
+    --print(3,self,event,step.active)
+    if step and step.active then
+        local faction = UnitFactionGroup("player")
+        addon.player.faction = faction
+        addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+    end
+
+end
