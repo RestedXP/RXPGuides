@@ -1,6 +1,9 @@
 local _, addon = ...
 
-if addon.game ~= "MOP" then return end
+--Unitscan feature broken on mop client
+if addon.gameVersion >= 50000 then
+    return
+end
 addon.rares = {
     ["Mulgore"] = {
         "Pokey Thornmantle", "Arra'chea", "Doomsayer Wiserunner",

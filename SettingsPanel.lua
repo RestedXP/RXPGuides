@@ -27,6 +27,9 @@ local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
 local gameVersion = select(4, GetBuildInfo())
 
+--Unitscan functionality broken on mop and retail
+local unitscanEnabled = gameVersion < 50000
+
 local importCache = {
     bufferString = "",
     displayString = "",
@@ -168,7 +171,7 @@ local settingsDBDefaults = {
         enableEnemyTargeting = true,
         enableEnemyMarking = true,
         enableMobMarking = true,
-        showTargetingOnProximity = gameVersion < 110105,
+        showTargetingOnProximity = unitscanEnabled,
         soundOnFind = 3175,
         soundOnFindChannel = 'Master',
         scanForRares = true,
@@ -396,7 +399,7 @@ function addon.settings:MigrateLegacySettings()
 
     -- As of 11.1.5 TargetUnit now fires ADDON_ACTION_FORBIDDEN at execution, rather than target matches
     -- Force disable setting, rather than gameVersion everywhere
-    if db.showTargetingOnProximity and gameVersion >= 110105 then
+    if db.showTargetingOnProximity and not unitscanEnabled then
         db.showTargetingOnProximity = false
     end
 end
@@ -1647,7 +1650,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable Active Targets"), -- TODO locale
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
-                        width = gameVersion < 110105 and optionsWidth or optionsWidth * 3,
+                        width = unitscanEnabled and optionsWidth or optionsWidth * 3,
                         order = 2.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1672,7 +1675,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not self.profile.enableTargetAutomation
                         end,
-                        hidden = addon.gameVersion >= 110105
+                        hidden = not unitscanEnabled
                     },
                     enableFriendlyTargeting = {
                         name = L("Scan Friendly Targets"), -- TODO locale
@@ -1735,7 +1738,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity
                         end,
-                        hidden = addon.gameVersion >= 110105
+                        hidden = not unitscanEnabled
                     },
                     notifyOnRares = {
                         name = L("Notify on Rares"), -- TODO locale
@@ -1748,7 +1751,7 @@ function addon.settings:CreateAceOptionsPanel()
                                        not self.profile.showTargetingOnProximity or
                                        not self.profile.scanForRares
                         end,
-                        hidden = addon.gameVersion >= 110105
+                        hidden = not unitscanEnabled
                     },
                     hideActiveTargetsBackground = {
                         name = L("Hide Targets Background"),
