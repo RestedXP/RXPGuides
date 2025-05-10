@@ -17,7 +17,8 @@ addon.heirlooms = {
     [3] = true,--shoulder
     [5] = true,--chest
     [12] = true,--ring1
-    [13] = true,--ring2
+    --[13] = true,--ring2
+    [11] = true,--ring slotid shifted by -1 in mop
     [1] = true,--head
     [15] = true,--cloak
 }

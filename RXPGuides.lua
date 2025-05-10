@@ -998,7 +998,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_AUTOCOMPLETE" then
         if arg1 and addon.disabledQuests[arg1] then
             return
-        elseif (addon.gameVersion < 50000 and UnitLevel('player') ~= 85) then
+        elseif (addon.gameVersion < 60000 and UnitLevel('player') < 85) then
             for i = 1, GetNumAutoQuestPopUps() do
                 local id,status = GetAutoQuestPopUp(i)
                 if status == "COMPLETE" or id == arg1 then
