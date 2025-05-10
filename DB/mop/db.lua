@@ -484,230 +484,6 @@ for zone,id in pairs(addon.mapId) do
 	end
 end
 
-addon.mapId["ScarletEnclave"] = 124
-addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
-addon.mapId["CrystalsongForest"] = addon.mapId["Crystalsong Forest"]
-addon.mapId["StormPeaks"] = addon.mapId["The Storm Peaks"]
-addon.mapId["TheStormPeaks"] = addon.mapId["The Storm Peaks"]
-addon.mapId["SholazarBasin"] = addon.mapId["Sholazar Basin"]
-addon.mapId["ZulDrak"] = addon.mapId["Zul'Drak"]
-addon.mapId["GrizzlyHills"] = addon.mapId["Grizzly Hills"]
-addon.mapId["HowlingFjord"] = addon.mapId["Howling Fjord"]
-addon.mapId["BoreanTundra"] = addon.mapId["Borean Tundra"]
-
-addon.mapId["179"] = addon.mapId["Gilneas"]
-addon.mapId["247"] = addon.mapId["Ruins of Ahn'Qiraj"]
-addon.mapId["409"] = addon.mapId["Dragon Soul"]
-addon.mapId["153"] = addon.mapId["Gundrak"]
-addon.mapId["258"] = addon.mapId["Sethekk Halls"]
-addon.mapId["1449"] = addon.mapId["Un'Goro Crater"]
-addon.mapId["1455"] = addon.mapId["Ironforge"]
-addon.mapId["125"] = addon.mapId["Dalaran"]
-addon.mapId["168"] = addon.mapId["The Violet Hold"]
-addon.mapId["1422"] = addon.mapId["Western Plaguelands"]
-addon.mapId["1437"] = addon.mapId["Wetlands"]
-addon.mapId["119"] = addon.mapId["SholazarBasin"]
-addon.mapId["140"] = addon.mapId["Halls of Stone"]
-addon.mapId["206"] = addon.mapId["Twin Peaks"]
-addon.mapId["127"] = addon.mapId["CrystalsongForest"]
-addon.mapId["1461"] = addon.mapId["Arathi Basin"]
-addon.mapId["114"] = addon.mapId["BoreanTundra"]
-addon.mapId["218"] = addon.mapId["Ruins of Gilneas City"]
-addon.mapId["162"] = addon.mapId["Naxxramas"]
-addon.mapId["1427"] = addon.mapId["Searing Gorge"]
-addon.mapId["401"] = addon.mapId["End Time"]
-addon.mapId["1949"] = addon.mapId["Blade's Edge Mountains"]
-addon.mapId["329"] = addon.mapId["Hyjal Summit"]
-addon.mapId["347"] = addon.mapId["Hellfire Ramparts"]
-addon.mapId["156"] = addon.mapId["Vault of Archavon"]
-addon.mapId["279"] = addon.mapId["Wailing Caverns"]
-addon.mapId["248"] = addon.mapId["Onyxia's Lair"]
-addon.mapId["116"] = addon.mapId["Grizzly Hills"]
-addon.mapId["1950"] = addon.mapId["Bloodmyst Isle"]
-addon.mapId["1423"] = addon.mapId["Eastern Plaguelands"]
---addon.mapId["1453"] = addon.mapId["StormwindClassic"]
-addon.mapId["1944"] = addon.mapId["Hellfire Peninsula"]
-addon.mapId["398"] = addon.mapId["Well of Eternity"]
-addon.mapId["121"] = addon.mapId["ZulDrak"]
-addon.mapId["1452"] = addon.mapId["Winterspring"]
-addon.mapId["120"] = addon.mapId["StormPeaks"]
-addon.mapId["348"] = addon.mapId["Magisters' Terrace"]
-addon.mapId["1446"] = addon.mapId["Tanaris"]
-addon.mapId["317"] = addon.mapId["Stratholme"]
-addon.mapId["114"] = addon.mapId["Borean Tundra"]
-addon.mapId["136"] = addon.mapId["Utgarde Pinnacle"]
-addon.mapId["1441"] = addon.mapId["Thousand Needles"]
-addon.mapId["220"] = addon.mapId["The Temple of Atal'Hakkar"]
-addon.mapId["1440"] = addon.mapId["Ashenvale"]
-addon.mapId["1439"] = addon.mapId["Darkshore"]
-addon.mapId["1435"] = addon.mapId["Swamp of Sorrows"]
-addon.mapId["207"] = addon.mapId["Deepholm"]
-addon.mapId["1438"] = addon.mapId["Teldrassil"]
-addon.mapId["130"] = addon.mapId["The Culling of Stratholme"]
-addon.mapId["1434"] = addon.mapId["Northern Stranglethorn"]
-addon.mapId["224"] = addon.mapId["Stranglethorn Vale"]
-addon.mapId["185"] = addon.mapId["Halls of Reflection"]
-addon.mapId["1433"] = addon.mapId["Redridge Mountains"]
-addon.mapId["277"] = addon.mapId["Lost City of the Tol'vir"]
-addon.mapId["275"] = addon.mapId["The Battle for Gilneas"]
-addon.mapId["1432"] = addon.mapId["Loch Modan"]
-addon.mapId["291"] = addon.mapId["The Deadmines"]
-addon.mapId["138"] = addon.mapId["Halls of Lightning"]
-addon.mapId["322"] = addon.mapId["Throne of the Tides"]
-addon.mapId["297"] = addon.mapId["Halls of Origination"]
-addon.mapId["1431"] = addon.mapId["Duskwood"]
-addon.mapId["1430"] = addon.mapId["Deadwind Pass"]
-addon.mapId["1429"] = addon.mapId["Elwynn Forest"]
-addon.mapId["1428"] = addon.mapId["Burning Steppes"]
-addon.mapId["282"] = addon.mapId["Baradin Hold"]
-addon.mapId["1426"] = addon.mapId["Dun Morogh"]
-addon.mapId["310"] = addon.mapId["Shadowfang Keep"]
-addon.mapId["1947"] = addon.mapId["The Exodar"]
-addon.mapId["246"] = addon.mapId["The Shattered Halls"]
-addon.mapId["194"] = addon.mapId["Kezan"]
-addon.mapId["245"] = addon.mapId["Tol Barad Peninsula"]
-addon.mapId["338"] = addon.mapId["Molten Front"]
-addon.mapId["1421"] = addon.mapId["Silverpine Forest"]
-addon.mapId["219"] = addon.mapId["Zul'Farrak"]
-addon.mapId["302"] = addon.mapId["Scarlet Monastery"]
-addon.mapId["1456"] = addon.mapId["Thunder Bluff"]
-addon.mapId["1418"] = addon.mapId["Badlands"]
-addon.mapId["1442"] = addon.mapId["Stonetalon Mountains"]
-addon.mapId["1412"] = addon.mapId["Mulgore"]
-addon.mapId["1411"] = addon.mapId["Durotar"]
-addon.mapId["157"] = addon.mapId["Azjol-Nerub"]
-addon.mapId["147"] = addon.mapId["Ulduar"]
-addon.mapId["256"] = addon.mapId["Auchenai Crypts"]
-addon.mapId["160"] = addon.mapId["Drak'Tharon Keep"]
-addon.mapId["946"] = addon.mapId["Cosmic"]
-addon.mapId["987"] = addon.mapId["Outland"]
-addon.mapId["407"] = addon.mapId["Darkmoon Island"]
-addon.mapId["116"] = addon.mapId["GrizzlyHills"]
-addon.mapId["183"] = addon.mapId["The Forge of Souls"]
-addon.mapId["200"] = addon.mapId["The Ruby Sanctum"]
-addon.mapId["244"] = addon.mapId["Tol Barad"]
-addon.mapId["267"] = addon.mapId["The Mechanar"]
-addon.mapId["129"] = addon.mapId["The Nexus"]
-addon.mapId["273"] = addon.mapId["The Black Morass"]
-addon.mapId["113"] = addon.mapId["Northrend"]
-addon.mapId["274"] = addon.mapId["Old Hillsbrad Foothills"]
-addon.mapId["169"] = addon.mapId["Isle of Conquest"]
-addon.mapId["1454"] = addon.mapId["Orgrimmar"]
-addon.mapId["217"] = addon.mapId["Ruins of Gilneas"]
-addon.mapId["233"] = addon.mapId["Zul'Gurub"]
-addon.mapId["1420"] = addon.mapId["Tirisfal Glades"]
-addon.mapId["260"] = addon.mapId["Shadow Labyrinth"]
-addon.mapId["335"] = addon.mapId["Sunwell Plateau"]
-addon.mapId["1447"] = addon.mapId["Azshara"]
-addon.mapId["331"] = addon.mapId["Magtheridon's Lair"]
-addon.mapId["266"] = addon.mapId["The Botanica"]
-addon.mapId["330"] = addon.mapId["Gruul's Lair"]
-addon.mapId["174"] = addon.mapId["The Lost Isles"]
-addon.mapId["241"] = addon.mapId["Twilight Highlands"]
-addon.mapId["171"] = addon.mapId["Trial of the Champion"]
-addon.mapId["367"] = addon.mapId["Firelands"]
-addon.mapId["118"] = addon.mapId["Icecrown"]
-addon.mapId["128"] = addon.mapId["Strand of the Ancients"]
-addon.mapId["1953"] = addon.mapId["Netherstorm"]
-addon.mapId["263"] = addon.mapId["The Steamvault"]
-addon.mapId["327"] = addon.mapId["Ahn'Qiraj: The Fallen Kingdom"]
-addon.mapId["328"] = addon.mapId["Throne of the Four Winds"]
-addon.mapId["232"] = addon.mapId["Molten Core"]
-addon.mapId["230"] = addon.mapId["Uldaman"]
-addon.mapId["124"] = addon.mapId["ScarletEnclave"]
-addon.mapId["285"] = addon.mapId["Blackwing Descent"]
-addon.mapId["324"] = addon.mapId["The Stonecore"]
-addon.mapId["199"] = addon.mapId["Southern Barrens"]
-addon.mapId["213"] = addon.mapId["Ragefire Chasm"]
-addon.mapId["186"] = addon.mapId["Icecrown Citadel"]
-addon.mapId["155"] = addon.mapId["The Obsidian Sanctum"]
-addon.mapId["203"] = addon.mapId["Vashj'ir"]
-addon.mapId["118"] = addon.mapId["IcecrownGlacier"]
-addon.mapId["287"] = addon.mapId["Blackwing Lair"]
-addon.mapId["117"] = addon.mapId["Howling Fjord"]
-addon.mapId["127"] = addon.mapId["Crystalsong Forest"]
-addon.mapId["276"] = addon.mapId["The Maelstrom"]
-addon.mapId["272"] = addon.mapId["Mana-Tombs"]
-addon.mapId["301"] = addon.mapId["Razorfen Kraul"]
-addon.mapId["265"] = addon.mapId["The Slave Pens"]
-addon.mapId["249"] = addon.mapId["Uldum"]
-addon.mapId["1444"] = addon.mapId["Feralas"]
-addon.mapId["120"] = addon.mapId["The Storm Peaks"]
-addon.mapId["226"] = addon.mapId["Gnomeregan"]
-addon.mapId["225"] = addon.mapId["The Stockade"]
-addon.mapId["142"] = addon.mapId["The Oculus"]
-addon.mapId["1424"] = addon.mapId["Hillsbrad Foothills"]
-addon.mapId["269"] = addon.mapId["The Arcatraz"]
-addon.mapId["1943"] = addon.mapId["Azuremyst Isle"]
-addon.mapId["1457"] = addon.mapId["Darnassus"]
---addon.mapId["1453"] = addon.mapId["StormwindNew"]
-addon.mapId["325"] = addon.mapId["The Vortex Pinnacle"]
-addon.mapId["399"] = addon.mapId["Hour of Twilight"]
-addon.mapId["947"] = addon.mapId["Azeroth"]
-addon.mapId["184"] = addon.mapId["Pit of Saron"]
-addon.mapId["334"] = addon.mapId["Tempest Keep"]
-addon.mapId["262"] = addon.mapId["The Underbog"]
-addon.mapId["202"] = addon.mapId["Gilneas City"]
-addon.mapId["319"] = addon.mapId["Ahn'Qiraj"]
-addon.mapId["1448"] = addon.mapId["Felwood"]
-addon.mapId["1450"] = addon.mapId["Moonglade"]
-addon.mapId["1952"] = addon.mapId["Terokkar Forest"]
-addon.mapId["120"] = addon.mapId["TheStormPeaks"]
-addon.mapId["1453"] = addon.mapId["Stormwind City"]
-addon.mapId["1419"] = addon.mapId["Blasted Lands"]
-addon.mapId["205"] = addon.mapId["Shimmering Expanse"]
-addon.mapId["123"] = addon.mapId["Wintergrasp"]
-addon.mapId["1458"] = addon.mapId["Undercity"]
-addon.mapId["1459"] = addon.mapId["Alterac Valley"]
-addon.mapId["1951"] = addon.mapId["Nagrand"]
-addon.mapId["1941"] = addon.mapId["Eversong Woods"]
-addon.mapId["242"] = addon.mapId["Blackrock Depths"]
-addon.mapId["1445"] = addon.mapId["Dustwallow Marsh"]
-addon.mapId["1417"] = addon.mapId["Arathi Highlands"]
-addon.mapId["261"] = addon.mapId["The Blood Furnace"]
-addon.mapId["133"] = addon.mapId["Utgarde Keep"]
-addon.mapId["280"] = addon.mapId["Maraudon"]
-addon.mapId["1443"] = addon.mapId["Desolace"]
-addon.mapId["172"] = addon.mapId["Trial of the Crusader"]
-addon.mapId["1954"] = addon.mapId["Silvermoon City"]
-addon.mapId["119"] = addon.mapId["Sholazar Basin"]
-addon.mapId["1451"] = addon.mapId["Silithus"]
-addon.mapId["1460"] = addon.mapId["Warsong Gulch"]
-addon.mapId["332"] = addon.mapId["Serpentshrine Cavern"]
-addon.mapId["1423"] = addon.mapId["Eastern Plaguelands"]
-addon.mapId["1948"] = addon.mapId["Shadowmoon Valley"]
-addon.mapId["1425"] = addon.mapId["The Hinterlands"]
-addon.mapId["1946"] = addon.mapId["Zangarmarsh"]
-addon.mapId["117"] = addon.mapId["HowlingFjord"]
-addon.mapId["293"] = addon.mapId["Grim Batol"]
-addon.mapId["306"] = addon.mapId["ScholomanceOLD"]
-addon.mapId["294"] = addon.mapId["The Bastion of Twilight"]
-addon.mapId["1942"] = addon.mapId["Ghostlands"]
-addon.mapId["234"] = addon.mapId["Dire Maul"]
-addon.mapId["397"] = addon.mapId["Eye of the Storm"]
-addon.mapId["115"] = addon.mapId["Dragonblight"]
-addon.mapId["210"] = addon.mapId["The Cape of Stranglethorn"]
-addon.mapId["250"] = addon.mapId["Blackrock Spire"]
-addon.mapId["300"] = addon.mapId["Razorfen Downs"]
-addon.mapId["170"] = addon.mapId["Hrothgar's Landing"]
-addon.mapId["339"] = addon.mapId["Black Temple"]
-addon.mapId["1436"] = addon.mapId["Westfall"]
-addon.mapId["204"] = addon.mapId["Abyssal Depths"]
-addon.mapId["141"] = addon.mapId["The Eye of Eternity"]
-addon.mapId["1415"] = addon.mapId["Eastern Kingdoms"]
-addon.mapId["283"] = addon.mapId["Blackrock Caverns"]
-addon.mapId["333"] = addon.mapId["Zul'Aman"]
-addon.mapId["121"] = addon.mapId["Zul'Drak"]
-addon.mapId["1414"] = addon.mapId["Kalimdor"]
-addon.mapId["350"] = addon.mapId["Karazhan"]
-addon.mapId["132"] = addon.mapId["Ahn'kahet: The Old Kingdom"]
-addon.mapId["1413"] = addon.mapId["The Barrens"]
-addon.mapId["198"] = addon.mapId["Mount Hyjal"]
-addon.mapId["1957"] = addon.mapId["Isle of Quel'Danas"]
-addon.mapId["201"] = addon.mapId["Kelp'thar Forest"]
-addon.mapId["1955"] = addon.mapId["Shattrath City"]
-addon.mapId["221"] = addon.mapId["Blackfathom Deeps"]
-
 addon.professionID = {
     alchemy = {2259, 3101, 3464, 11611, 28596, 51304},
     blacksmithing = {2018, 3100, 3538, 9785, 29844, 51300},
@@ -1242,7 +1018,7 @@ addon.taxiPos = {
     [29] = {wx = 966.57001, wy = 1040.31995, flag = 2},
     [30] = {wx = -4310.60986, wy = -927.06403, flag = 2},
     [31] = {wx = -4996.87988, wy = 73.94270, flag = 1},
-    [32] = {wx = -3825.37012, wy = -4516.58008, flag = 1},
+    [32] = {wx = -3825.37012, wy = -4516.58008, flag = 9},
     [33] = {wx = 2147.25000, wy = 1537.87000, flag = 1},
     [37] = {wx = 139.24001, wy = 1325.81995, flag = 1},
     [38] = {wx = -1767.64001, wy = 3263.88989, flag = 2},
@@ -1376,6 +1152,59 @@ addon.taxiPos = {
     [192] = {wx = 2652.88989, wy = -4392.70996, flag = 2},
     [289] = {wx = 3587.84009, wy = 5973.29980, flag = 3},
     [247] = {wx = 3504.12988, wy = 1992.03003, flag = 1},
+  },
+  [870] = {
+    [1090] = {wx = -570.40503, wy = 3859.79004, flag = 3},
+    [1115] = {wx = 234.40601, wy = 2198.03003, flag = 1},
+    [1117] = {wx = 2123.14990, wy = 2584.92993, flag = 2},
+    [1056] = {wx = 1803.31995, wy = 4204.22998, flag = 3},
+    [1070] = {wx = 172.66299, wy = 3152.25000, flag = 3},
+    [1072] = {wx = 982.67700, wy = 3451.86011, flag = 3},
+    [1080] = {wx = 465.85599, wy = -1558.56006, flag = 3},
+    [1294] = {wx = -404.95001, wy = -4608.56006, flag = 2},
+    [1029] = {wx = 784.89899, wy = -203.67000, flag = 3},
+    [1293] = {wx = -901.37000, wy = -4639.12012, flag = 1},
+    [1222] = {wx = 5799.64014, wy = 1080.56995, flag = 2},
+    [1221] = {wx = 5753.75977, wy = 1255.55005, flag = 1},
+    [1195] = {wx = -1752.18994, wy = 2492.02002, flag = 2},
+    [1190] = {wx = -1193.56006, wy = -1193.69995, flag = 1},
+    [1053] = {wx = 2363.22998, wy = 2994.38989, flag = 3},
+    [1073] = {wx = 611.36499, wy = 2125.03003, flag = 3},
+    [1071] = {wx = -1086.20996, wy = 3136.18994, flag = 3},
+    [1058] = {wx = 1580.16003, wy = 894.16699, flag = 2},
+    [1057] = {wx = 896.45300, wy = 334.35101, flag = 1},
+    [1055] = {wx = 1531.72998, wy = 3963.69995, flag = 3},
+    [1018] = {wx = 3504.04004, wy = 690.67700, flag = 3},
+    [895] = {wx = 1503.70996, wy = -1832.13000, flag = 3},
+    [1022] = {wx = 3124.52002, wy = 1224.28003, flag = 3},
+    [1020] = {wx = 2103.35010, wy = 1463.82996, flag = 1},
+    [1054] = {wx = 1440.71997, wy = 2804.48999, flag = 3},
+    [992] = {wx = -2082.30005, wy = 1483.63000, flag = 3},
+    [987] = {wx = -878.27600, wy = 171.40300, flag = 6},
+    [988] = {wx = -1125.31006, wy = -227.74699, flag = 1},
+    [984] = {wx = 543.91498, wy = -637.81403, flag = 7},
+    [973] = {wx = 2927.15991, wy = -509.18399, flag = 2},
+    [1052] = {wx = 460.54001, wy = -100.46700, flag = 3},
+    [969] = {wx = 2550.76001, wy = -2418.32007, flag = 3},
+    [971] = {wx = 2505.89990, wy = -1590.89001, flag = 3},
+    [1019] = {wx = 2250.59009, wy = 931.56897, flag = 2},
+    [966] = {wx = -307.20001, wy = -1762.77002, flag = 1},
+    [894] = {wx = 1418.56995, wy = -487.70300, flag = 6},
+    [986] = {wx = -375.68399, wy = -647.96503, flag = 3},
+    [985] = {wx = -221.32600, wy = 464.55899, flag = 3},
+    [991] = {wx = -1156.60999, wy = 1770.38000, flag = 5},
+    [989] = {wx = -436.54001, wy = 1886.69995, flag = 3},
+    [1024] = {wx = 1880.58997, wy = 2088.58008, flag = 3},
+    [990] = {wx = -1685.68005, wy = 1590.33997, flag = 2},
+    [967] = {wx = 1600.66003, wy = -2530.27002, flag = 3},
+    [993] = {wx = -2504.09009, wy = 491.58301, flag = 3},
+    [970] = {wx = 2400.75000, wy = -2099.42993, flag = 3},
+    [968] = {wx = 773.24701, wy = -2358.95996, flag = 3},
+    [1017] = {wx = 1690.10999, wy = 303.95801, flag = 3},
+    [972] = {wx = -186.09700, wy = -2594.61011, flag = 1},
+    [1021] = {wx = 4362.95996, wy = 932.11798, flag = 3},
+    [1023] = {wx = 2716.42993, wy = 2163.31006, flag = 3},
+    [1025] = {wx = 3151.85010, wy = 2677.76001, flag = 3},
   },
   [530] = {
     [99] = {wx = 228.50000, wy = 2633.57007, flag = 2},
