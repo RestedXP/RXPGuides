@@ -37,15 +37,9 @@ addon.defaultGuideList = {
 }
 
 if faction == "Horde" then
-    addon.defaultGroup = "RestedXP Horde 1-30"
+    addon.defaultGroup = "RXP Cataclysm 1-80 (H)"
 elseif faction == "Alliance" then
-    addon.defaultGroup = "RestedXP Alliance 1-20"
-end
-
-if class == "WARLOCK" then
-    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-12 Dun Morogh"
-elseif class == "HUNTER" then
-    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
+    addon.defaultGroup = "RXP Cataclysm 1-80 (A)"
 end
 
 addon.subzoneList = {}
@@ -897,7 +891,7 @@ addon.mapId = {
 addon.mapConversion = addon.mapConversion or {}
 
 
-
+--See TaxiNodes dbc table for reference
 addon.taxiPos = {
   [0] = {
     [2] = {wx = -8841.05957, wy = 489.65601, flag = 1},

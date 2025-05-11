@@ -1853,8 +1853,14 @@ end
 
 --MAX_PLAYER_LEVEL_TABLE[GetAccountExpansionLevel()]--not working on cata beta
 function addon.stepLogic.LoremasterCheck(step)
-    local loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+    local loremaster
+    if addon.gameVersion < 50000 then
+       loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
                      addon.game == "CATA" and addon.settings.profile.loremasterMode
+    elseif addon.gameVersion < 60000 then
+        loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    end
+
     if step.questguide and not loremaster or step.speedrunguide and loremaster then
         return false
     end

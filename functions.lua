@@ -65,8 +65,14 @@ end
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 local function LoremasterEnabled()
-        return addon.game == "WOTLK" and addon.settings.profile.northrendLM or
-                     addon.game == "CATA" and addon.settings.profile.loremasterMode
+    local loremaster
+    if addon.gameVersion < 50000 then
+            loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+                    addon.game == "CATA" and addon.settings.profile.loremasterMode
+    elseif addon.gameVersion < 60000 then
+        loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    end
+    return loremaster
 end
 
 --local RXPGuides = addon.RXPGuides
