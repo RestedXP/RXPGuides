@@ -2559,6 +2559,8 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     end
 
     local count = GetItemCount(id,element.includeBank)
+    numRequired = math.ceil(numRequired)
+
     if count == 0 then
         if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
             count = count + 1
