@@ -681,7 +681,7 @@ step << !Warlock
     >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |cRXP_LOOT_Scorpid Worker Tails|r
     .complete 789,1 --Scorpid Worker Tail (10)
     .mob Scorpid Worker
-step << Shaman
+step << skip --Shaman
     #season 2
     #completewith OverloadRune
     >>Kill |cRXP_ENEMY_Vile Familiars|r
@@ -803,9 +803,9 @@ step << Shaman
     .goto Durotar,43.91,59.33,40,0
     .aura 408828 >>Continue to kill |cRXP_ENEMY_Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
     .mob Scorpid Worker
+    .train 410094,1
     --User must be level 3 to be able to use item!
-
-step << Hunter
+step << skip --Hunter
     #season 2
     #completewith ChimeraRune
     >>Kill |cRXP_ENEMY_Vile Familiars|r
@@ -2617,8 +2617,8 @@ step << Rogue
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5649 >> In Favor of Spirituality
-    .accept 5648 >> Garments of Spirituality
+    .turnin 5649 >> Turn in In Favor of Spirituality
+    .accept 5648 >> Accept Garments of Spirituality
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -2702,7 +2702,8 @@ step
     .goto Durotar,69.69,70.35,40,0
     .goto Durotar,69.21,69.69,40,0
     .goto Durotar,67.74,69.86,40,0
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground. They're usually guarded by a |cRXP_ENEMY_Bloodtalon Taillasher|r
+    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step
@@ -7026,12 +7027,12 @@ step
     .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
     .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
     .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
-    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper to train |T132160:0|t[Aspect of the Viper]|r] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper|r] to train |T132160:0|t[Aspect of the Viper]|r] << Hunter
     .train 416009 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r] to train |T136150:0|t[Demonic Tactics] << Warlock
     .train 425476 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] to train |T237562:0|t[Demonic Pact] << Warlock
     .train 416015 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] to train |T135789:0|t[Incinerate] << Warlock
     .train 403919 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] to train |T236298:0|t[Haunt] << Warlock
-    .train 403619 >> Use the |T133733:0|t[Grimoire of Fel Armor] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
+    .train 403619 >> Use the |T133733:0|t[|cRXP_FRIENDLY_Grimoire of Fel Armor|r] to train |T136156:0|t[Fel Armor] |cRXP_WARN_use it as your main armor spell|r << Warlock
     .train 402852 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] to train |T237570:0|t[Homunculi] << Priest
     .train 425447 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] to train |T236317:0|t[Frenzied Assault] << Orc Warrior
     .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] to train |T236174:0|t[Kill Shot] << Hunter
@@ -7799,13 +7800,13 @@ step << !Warlock
     >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |cRXP_LOOT_Scorpid Worker Tails|r
     .complete 789,1 --Scorpid Worker Tail (10)
     .mob Scorpid Worker
-step << Shaman
+step << skip --Shaman
     #season 2
     #completewith OverloadRune
     >>Kill |cRXP_ENEMY_Vile Familiars|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
-step << Hunter
+step << << skip --Hunter
     #season 2
     #completewith ChimeraRune
     >>Kill |cRXP_ENEMY_Vile Familiars|r
@@ -8153,6 +8154,12 @@ step
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
+step
+    #softcore
+    .goto Durotar,51.09,42.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
+    .accept 815 >>Accept Break a Few Eggs
+    .target Cook Torka
 step
     #softcore
     #completewith next
@@ -8602,102 +8609,6 @@ step << Warrior/Rogue
     .collect 2862,1,786,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
-step
-    #xprate >1.49
-    #completewith next
-    .goto Durotar,58.54,75.89,40,0
-    .goto Durotar,57.73,77.91,40,0
-    .goto Durotar,55.72,79.62,40,0
-    .goto Durotar,54.23,82.26,40,0
-    .goto Durotar,52.20,83.00,40,0
-    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
-    .complete 818,2,4 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1,2 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    #xprate >1.49
-    .goto Durotar,54.17,82.60,75 >> Reach the end of the beach
-step
-    #xprate <1.5
-    #completewith next
-    .goto Durotar,58.54,75.89,40,0
-    .goto Durotar,57.73,77.91,40,0
-    .goto Durotar,55.72,79.62,40,0
-    .goto Durotar,54.23,82.26,40,0
-    .goto Durotar,52.20,83.00,40,0
-    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
-    .complete 818,2 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    #xprate <1.5
-    .goto Durotar,52.20,83.00,75 >> Reach the end of the beach
-    .isOnQuest 818
-step
-    #xprate <1.5
-    #completewith Bonfire
-    >>Kill |cRXP_ENEMY_Kolkar Drudges|r and |cRXP_ENEMY_Kolkar Outrunners|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
---   >>|cRXP_WARN_Do not focus on completing this|r
-    .complete 791,1 --Canvas Scraps (8)
-    .isOnQuest 791
-step
-    #xprate <1.5
-    .goto Durotar,50.9,79.2,30 >>Enter the Kolkar base
-    .isOnQuest 786
-step << Priest
-    #xprate <1.5
-    #sticky
-    #softcore
-    #label Linen
-    #completewith HorrorsandSpirits
-    >>|cRXP_WARN_Start collecting 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_as you quest throughout Durotar. This will be used to make your wand later|r
-    >>|cRXP_WARN_Skip this step if you've already bought a wand or can get one cheap from the AH.|r
-    .collect 2589,60 --Linen Cloth (60)
-step << Priest
-    #xprate <1.5
-    #sticky
-    #hardcore
-    #label Linen
-    #completewith HorrorsandSpirits
-    >>|cRXP_WARN_Start collecting 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_as you quest throughout Durotar. This will be used to make your wand later|r
-    .collect 2589,60 --Linen Cloth (60)
-step
-    #sticky
-    #xprate <1.5
-    #completewith Bonfire
-    +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Kolkanis|r |cRXP_WARN_is up, he is a level 9 rare. You may have to use a |r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it|r
-    .unitscan Warlord Kolkanis
-step << Warrior
-    #xprate <1.5
-    #season 2
-    #completewith Bonfire
-    >>Kill |cRXP_ENEMY_Kolkar Drudges|r and |cRXP_ENEMY_Kolkar Outrunners|r. Loot them for a |cRXP_LOOT_Severed Centaur Head|r
-    .collect 207062,1 --Severed Centaur Head (1)
-    .mob Kolkar Drudge
-    .mob Kolkar Outrunner
-    .train 403475,1
-step
-    #xprate <1.5
-    .goto Durotar,49.81,81.29
-    >>Burn the |cRXP_PICK_Attack Plan|r inside the tent on the ground
-    .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
-step
-    #xprate <1.5
-    >>Burn the |cRXP_PICK_Attack Plan|r on the ground
-    .goto Durotar,47.66,77.34
-    .complete 786,2 --Attack Plan: Sen'jin Village destroyed (1)
-step
-    #xprate <1.5
-    #label Bonfire
-    >>Burn the |cRXP_PICK_Attack Plan|r on the ground
-    .goto Durotar,46.23,78.94
-    .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step << Warrior
     #xprate <2.1
     #season 2
@@ -8712,204 +8623,248 @@ step << Warrior
     .mob Kolkar Outrunner
     .train 403475,1
 step
-    #xprate <1.5
-    #softcore
-    .goto Durotar,46.43,79.25,-1
-    .goto Durotar,57.50,73.26,-1
-    .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .isQuestComplete 786
+    #completewith MainIsle
+    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    .complete 818,2,4 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
+    .complete 818,1,2 --Intact Makrura Eye (4)
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
-    #xprate <1.5
-    #hardcore
+    #completewith MainIsle
+    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    .complete 817,1 --Durotar Tiger Fur (4)
+    .mob Durotar Tiger
+step
+    #softcore
+    #completewith MainIsle
+    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    .complete 815,1 --Taillasher Egg (3)
+    .mob Bloodtalon Taillasher
+step
+    #label MainIsle
+    .goto Durotar,66.94,84.41,150 >>Swim to the main island
+    .isOnQuest 826
+step
+    #completewith ZalazaneKill1
+    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
+    .complete 826,2 --Voodoo Troll (8)
+    .mob +Voodoo Troll
+step
     #completewith next
-    .goto Durotar,50.95,79.14,30 >>Leave the Kolkar base
-    .isQuestComplete 786
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
+    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
+    .complete 826,3 --Zalazane's Head (1)
+    .mob Zalazane
+step
+    #label MinshinasSkull
+    .goto Durotar,67.4,87.8
+    >>Loot one of the |cRXP_LOOT_Skulls|r on the ground
+    .complete 808,1 --Minshina's Skull (1)
+step
+    #label ZalazaneKill1
+    .goto Durotar,67.4,87.8
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
+    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
+    .complete 826,3 --Zalazane's Head (1)
+    .mob Zalazane
+step << Mage
+    #season 2
+    .goto Durotar,67.4,87.8
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
+    .collect 203753,1
+    .mob Zalazane
+    .train 401765,1
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
+    .use 203753
+step
+    #completewith TrollsDone
+    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    .complete 817,1 --Durotar Tiger Fur (4)
+    .mob Durotar Tiger
+step
+    #completewith TigerFur
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
+    .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
+    .complete 818,1 --Intact Makrura Eye (4)
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
+step
+    #softcore
+    #completewith CrawlMakru
+    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    .complete 815,1 --Taillasher Egg (3)
+    .mob Bloodtalon Taillasher
+step
+    #label TrollsDone
+    #loop
+    .goto Durotar,67.23,88.76,0
+    .goto Durotar,67.23,88.76,40,0
+    .goto Durotar,66.52,87.74,40,0
+    .goto Durotar,65.94,86.72,40,0
+    .goto Durotar,65.90,84.04,40,0
+    .goto Durotar,65.88,82.85,40,0
+    .goto Durotar,67.38,82.61,40,0
+    .goto Durotar,68.42,82.43,40,0
+    .goto Durotar,68.50,84.32,40,0
+    .goto Durotar,68.47,86.77,40,0
+    .goto Durotar,67.23,88.00,40,0
+    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
+    .complete 826,2 --Voodoo Troll (8)
+    .mob +Voodoo Troll
+step << Priest
+    #season 2
+    #loop
+    .goto Durotar,67.23,88.76,0
+    .goto Durotar,67.23,88.76,40,0
+    .goto Durotar,66.52,87.74,40,0
+    .goto Durotar,65.94,86.72,40,0
+    .goto Durotar,65.90,84.04,40,0
+    .goto Durotar,65.88,82.85,40,0
+    .goto Durotar,67.38,82.61,40,0
+    .goto Durotar,68.42,82.43,40,0
+    .goto Durotar,68.50,84.32,40,0
+    .goto Durotar,68.47,86.77,40,0
+    .goto Durotar,67.23,88.00,40,0
+    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
+    .mob Voodoo Troll
+    .train 402852,1
+step
+    #label TigerFur
+    #loop
+    .goto Durotar,59.79,83.44,0
+    .goto Durotar,65.27,87.86,50,0
+    .goto Durotar,64.72,88.53,50,0
+    .goto Durotar,64.70,84.89,50,0
+    .goto Durotar,64.68,80.80,50,0
+    .goto Durotar,65.35,80.11,50,0
+    .goto Durotar,65.87,81.23,50,0
+    .goto Durotar,60.28,80.04,50,0
+    .goto Durotar,60.60,82.26,50,0
+    .goto Durotar,59.88,83.51,50,0
+    .goto Durotar,59.56,84.86,50,0
+    .goto Durotar,60.84,88.79,50,0
+    .goto Durotar,61.41,89.69,50,0
+    .goto Durotar,61.48,91.37,50,0
+    .goto Durotar,60.37,91.36,50,0
+    .goto Durotar,59.04,90.51,50,0
+    .goto Durotar,59.79,83.44,50,0
+    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    .complete 817,1 --Durotar Tiger Fur (4)
+    .mob Durotar Tiger
+step
+    #label CrawlMakru
+    #loop
+    .goto Durotar,62.88,93.48,0
+    .goto Durotar,59.48,86.33,0
+    .goto Durotar,59.92,80.80,0
+    .goto Durotar,57.90,78.13,0
+    .goto Durotar,53.27,83.05,0
+    .goto Durotar,62.88,93.48,50,0
+    .goto Durotar,59.48,86.33,50,0
+    .goto Durotar,59.92,80.80,50,0
+    .goto Durotar,57.90,78.13,50,0
+    .goto Durotar,53.27,83.05,50,0
+    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
+    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
+    .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
+    .complete 818,1 --Intact Makrura Eye (4)
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
+step
+    #softcore
+    .goto Durotar,59.86,89.64,0
+    .goto Durotar,59.51,83.64,0
+    .goto Durotar,60.94,78.75,0
+    .goto Durotar,63.54,74.33,0
+    .goto Durotar,67.04,71.40,0
+    .goto Durotar,59.86,89.64,40,0
+    .goto Durotar,59.51,83.64,40,0
+    .goto Durotar,60.94,78.75,40,0
+    .goto Durotar,63.54,74.33,40,0
+    .goto Durotar,67.04,71.40,40,0
+    .goto Durotar,67.66,73.86,40,0
+    .goto Durotar,68.67,74.47,40,0
+    .goto Durotar,69.76,74.69,40,0
+    .goto Durotar,70.29,73.31,40,0
+    .goto Durotar,70.23,70.84,40,0
+    .goto Durotar,69.69,70.35,40,0
+    .goto Durotar,69.21,69.69,40,0
+    .goto Durotar,67.74,69.86,40,0
+    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    .complete 815,1 --Taillasher Egg (3)
+    .mob Bloodtalon Taillasher
+step
+    #softcore
+    #completewith next
+    .goto Durotar,57.50,73.26,50,0
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run back
 step
     #hardcore
-    #xprate <1.5
-    #loop
-    .goto Durotar,54.20,73.36,0
-    .goto Durotar,54.09,76.31,25,0
-    .goto Durotar,54.52,74.83,25,0
-    .goto Durotar,54.20,73.36,25,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
-    .turnin 786,1 >>Turn in Thwarting Kolkar Aggression << Shaman
-    .turnin 786 >>Turn in Thwarting Kolkar Aggression << !Shaman
-    .target Lar Prowltusk
-    .isQuestComplete 786
-step << Shaman
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
-    .target Trayexir
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Shaman
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
-    .collect 2495,1,823,1 --Collect Walking Stick (1)
-    .money <0.0504
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Rogue
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (4s 01c). You'll come back later if you don't have enough yet
-    .target Trayexir
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
-step << Rogue
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
-    .collect 2494,1,823,1 --Collect Stiletto (1)
-    .money <0.0401
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
-step << Orc Warrior
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T132401:0|t[Large Axe] (4s 84c). You'll come back later if you don't have enough yet
-    .target Trayexir
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Orc Warrior
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
-    .collect 2491,1,823,1 --Collect Large Axe (1)
-    .money <0.0484
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Troll Warrior
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135421:0|t[Tomahawk] (5s 40c). You'll come back later if you don't have enough yet
-    .target Trayexir
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
-step << Troll Warrior
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
-    .collect 2490,1,823,1 --Collect Tomahawk (1)
-    .money <0.0540
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
-step << Hunter
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135499:0|t[Hornwood Recurve Bow] (2s 83c). You'll come back later if you don't have enough yet
-    .target Trayexir
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
-step << Hunter
-    #xprate <1.5
-    .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
-    .collect 2506,1,823,1 --Collect Hornwood Recurve Bow (1)
-    .money <0.0283
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
-step << Rogue
-    #xprate <1.5
-    #completewith TravelToTiragarde
-    +Equip the |T135421:0|t[Weighted Throwing Axe]
-    .use 3131
-    .itemcount 3131,1
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
-step << Shaman
-    #xprate <1.5
-    #completewith TravelToTiragarde
-    +Equip the |T135145:0|t[Walking Stick]
-    .use 2495
-    .itemcount 2495,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Rogue
-    #xprate <1.5
-    #completewith TravelToTiragarde
-    +Equip the |T135641:0|t[Stiletto]
-    .use 2494
-    .itemcount 2494,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
-step << Orc Warrior
-    #xprate <1.5
-    #completewith TravelToTiragarde
-    +Equip the |T132401:0|t[large Axe]
-    .use 2491
-    .itemcount 2491,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Troll Warrior
-    #xprate <1.5
-    #completewith TravelToTiragarde
-    +Equip the |T135421:0|t[Tomahawk]
-    .use 2490
-    .itemcount 2490,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
-step << Hunter
-    #xprate <1.5
-    #completewith TravelToTiragarde
-    +Equip the |T135499:0|t[Hornwood Recurve Bow]
-    .use 2506
-    .itemcount 2506,1
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
+    #completewith Zalazaneturnin
+    .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
 step
-    #xprate <1.5
-    #optional
-    .goto Durotar,55.95,74.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
+    .goto Durotar,56.48,73.11
+    >>Jump into the hut
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    .vendor >> Vendor trash and repair
+    .target Trayexir
+    .isOnQuest 808
+step << Mage
+    .goto Durotar,56.3,75.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
+    .train 118 >> Train your class spells
+    .target Un'Thuwa
+step
+    #label Zalazaneturnin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Vel'rin|r
+    .turnin 808 >>Turn in Minshina's Skull
+    .turnin 826,2 >>Turn in Zalazane << Shaman
+    .turnin 826 >>Turn in Zalazane << !Shaman
+    .target +Master Gadrin
+    .goto Durotar,55.95,74.73
     .turnin 818 >>Turn in A Solvent Spirit
-    .target Master Vornal
-    .isQuestComplete 818
-step << Warrior/Rogue/Shaman
-    #xprate <1.5
-    .goto Durotar,55.62,73.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
-    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r
-    .vendor >> Vendor trash
-    .collect 2287,10,823,1 --Haunch of Meat (10)
-    .money <0.025
-    .target Hai'zan
-step << Warlock/Mage/Priest
-    #xprate <1.5
-    .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (20)
-    .collect 159,20,784,1
-    .target K'waii
-    .money <0.010
-step << Warlock/Mage/Priest
-    #xprate <1.5
-    .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (10)
-    .collect 159,10,784,1
-    .target K'waii
-    .money <0.0050
+    .target +Master Vornal
+    .goto Durotar,55.95,74.39
+    .turnin 817 >>Turn in Practical Prey
+    .target +Vel'rin Fang
+    .goto Durotar,55.95,73.93
+step << Priest
+    #season 2
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66
+    .skipgossip 208307,1
+    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .train 402852,1
+step << Priest
+    #season 2
+    #completewith TravelToTiragarde
+    .aura 418459 >>|cRXP_WARN_Now you have to find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
+    .use 205947
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .itemcount 205947,1
 step
-    #xprate <1.5
-    #softcore
-    #loop
-    .goto Durotar,54.20,73.36,0
-    .goto Durotar,54.09,76.31,25,0
-    .goto Durotar,54.52,74.83,25,0
-    .goto Durotar,54.20,73.36,25,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
-    .turnin 786,1 >>Turn in Thwarting Kolkar Aggression << Shaman
-    .turnin 786 >>Turn in Thwarting Kolkar Aggression << !Shaman
-    .target Lar Prowltusk
+    #completewith TravelToTiragarde
+    +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
 step << Rogue
     #season 2
     .goto Durotar,51.82,58.67
@@ -8928,10 +8883,7 @@ step << Rogue
 step
     #hardcore
     #completewith next
-    .goto Durotar,44.70,52.47
-    .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
-    .target Spirit Healer
-    .subzoneskip 362
+    .subzone 362 >>Travel to Razor Hill
 step
     #hardcore
     #label Betrayers
@@ -8986,17 +8938,20 @@ step << Warrior/Rogue
     .target Dwukk
     .skill blacksmithing,1,1
 step
+    #softcore
     #xprate <1.5
     #label TravelToTiragarde
     .goto Durotar,59.20,58.38,60,0
     .subzone 372 >> Travel to Tiragarde Keep. Grind mobs on the way
     .isOnQuest 784
 step
+    #softcore
     #xprate >1.49
     #label TravelToTiragarde
     .goto Durotar,59.20,58.38,60,0
     .subzone 372 >> Travel to Tiragarde Keep
     .isOnQuest 784
+    .maxlevel 11
 step
     #sticky
     #completewith AgedEnvelope
@@ -9030,6 +8985,7 @@ step
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1,830,1 --Collect Benedict's Key (1)
     .mob Lieutenant Benedict
+    .maxlevel 11
 step
     #label AgedEnvelope
     .goto Durotar,59.87,57.87,5,0
@@ -9044,6 +9000,7 @@ step
     .collect 4881,1,830,1 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
+    .maxlevel 11
 step
     #loop
     .goto Durotar,58.99,58.30,0
@@ -9061,6 +9018,7 @@ step
     .mob Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
     .itemcount 4870,<8 --Canvas Scraps (<8)
+    .maxlevel 11
 step
     #loop
     .goto Durotar,58.99,58.30,0
@@ -9076,6 +9034,7 @@ step
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
     .mob +Kul Tiras Marine
+    .maxlevel 11
 step
     #label ScrapsFinished
     #loop
@@ -9091,6 +9050,7 @@ step
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
+    .maxlevel 11
 step << Priest
     #season 2
     #loop
@@ -9107,6 +9067,7 @@ step << Priest
     .train 425216,1
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
+    .maxlevel 11
 step << Priest
     #season 2
     #completewith next
@@ -9132,38 +9093,59 @@ step
     .goto Durotar,52.38,43.77,120 >> Travel to Razor Hill
 step
     #xprate <2.1
-    #label RazorTurnins1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
+    .goto Durotar,52.24,43.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
-    .target +Orgnil Soulscar
-    .goto Durotar,52.24,43.15
-    .turnin 784 >>Turn in Vanquish the Betrayers
-    .turnin 830 >>Turn in The Admiral's Orders
-    .accept 825 >>Accept From The Wreckage....
-    .accept 831 >>Accept The Admiral's Orders << !Mage !Shaman
-    .accept 837 >>Accept Encroachment
-    .target +Gar'Thok
-    .goto Durotar,51.95,43.50
-    .accept 815 >>Accept Break a Few Eggs
-    .target +Cook Torka
-    .goto Durotar,51.09,42.49
+    .target Orgnil Soulscar
 step
     #xprate >2.09
-    #label RazorTurnins1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
-    .turnin 823 >>Turn in Report to Orgnil
-    .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r
+    .turnin 823 >>Turn in Report to Orgnil
+    .target Orgnil Soulscar
+step
+    #xprate <2.1
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
-    .accept 825 >>Accept From The Wreckage....
     .accept 831 >>Accept The Admiral's Orders << !Mage !Shaman
-    .target +Gar'Thok
+    .accept 837 >>Accept Encroachment
+    .target Gar'Thok
+    .isQuestComplete 784
+    .isOnQuest 830
+step
+    #xprate <2.1
     .goto Durotar,51.95,43.50
-    .accept 815 >>Accept Break a Few Eggs
-    .target +Cook Torka
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r
+    .accept 831 >>Accept The Admiral's Orders << !Mage !Shaman
+    .accept 837 >>Accept Encroachment
+    .target Gar'Thok
+    .isQuestTurnedIn 830
+step
+    #xprate >2.09
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 784 >>Turn in Vanquish the Betrayers
+    .turnin 830 >>Turn in The Admiral's Orders
+    .accept 831 >>Accept The Admiral's Orders
+    .target Gar'Thok
+    .isQuestComplete 784
+    .isOnQuest 830
+step
+    #xprate >2.09
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r
+    .accept 831 >>Accept The Admiral's Orders
+    .target Gar'Thok
+    .isQuestTurnedIn 830
+step
     .goto Durotar,51.09,42.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
+    .turnin 815 >>Turn in Break a Few Eggs
+    .target Cook Torka
+    .isQuestComplete 815
 step
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -9317,10 +9299,17 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
-    .collect 2512,1000,825,1 << Hunter --Rough Arrow (1000)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
+    .collect 2515,1200,6082,1 --Sharp Arrow (1200)
+    --.collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
-    .itemcount 2512,<800 << Hunter
+    --.money <0.1300
+step << Hunter
+    .goto Durotar,52.97,41.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
+    .collect 2515,1200,6082,1 --Sharp Arrow (1200)
+    .target Ghrawt
+    .itemcount 2515,<600 --Sharp Arrow (600)
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -9330,43 +9319,11 @@ step
     .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
     .target Innkeeper Grosk
-step << Warrior
-    .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .train 284 >> Train your class spells
-    .target Tarshaw Jaggedscar
-step << Shaman
-    .goto Durotar,54.42,42.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
-    .train 8044 >> Train your class spells
-    .target Swart
-step << Warlock
-    #completewith next
-    .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
-    .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
-    .target Kitha
-    .money <0.01
-step << Warlock
-    #completewith Tools
-    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
-step << Hunter
-    .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .train 5116 >> Train your class spells
-    .target Thotar
-step << Rogue
-    .goto Durotar,51.98,43.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >> Train your class spells
-    .target Kaplak
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5649 >> In Favor of Spirituality
-    .accept 5648 >> Garments of Spirituality
+    .turnin 5649 >> Turn in In Favor of Spirituality
+    .accept 5648 >> Accept Garments of Spirituality
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -9392,367 +9349,6 @@ step
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
-    -->>This does not need to be finished now
-    .complete 818,2 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    #label Tools
-    #loop
-    .goto Durotar,61.96,55.46,0
-    .goto Durotar,61.96,55.46,20,0
-    .goto Durotar,62.25,56.34,20,0
-    .goto Durotar,62.43,59.84,20,0
-    .goto Durotar,62.09,60.68,20,0
-    .goto Durotar,62.51,60.56,20,0
-    .goto Durotar,63.24,58.10,20,0
-    .goto Durotar,62.25,56.34,20,0
-    >>Loot the |cRXP_PICK_Gnomish Toolboxes|r inside and around the boats
-    .complete 825,1 --Gnomish Tools (3)
-step
-    #completewith TaillasherEggs
-    .goto Durotar,67.10,69.29,100 >> Swim to the Island
-step
-    #completewith MinshinasSkull
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
-    -->>This does not need to be finished now
-    .complete 817,1 --Durotar Tiger Fur (4)
-    .mob Durotar Tiger
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
-    -->>This does not need to be finished now
-    .complete 818,2 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    #label TaillasherEggs
-    #loop
-    .goto Durotar,67.04,71.40,0
-    .goto Durotar,70.23,70.84,0
-    .goto Durotar,67.04,71.40,40,0
-    .goto Durotar,67.66,73.86,40,0
-    .goto Durotar,68.67,74.47,40,0
-    .goto Durotar,69.76,74.69,40,0
-    .goto Durotar,70.29,73.31,40,0
-    .goto Durotar,70.23,70.84,40,0
-    .goto Durotar,69.69,70.35,40,0
-    .goto Durotar,69.21,69.69,40,0
-    .goto Durotar,67.74,69.86,40,0
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground. They're usually guarded by a |cRXP_ENEMY_Bloodtalon Taillasher|r
-    .complete 815,1 --Taillasher Egg (3)
-    .mob Bloodtalon Taillasher
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
-    .complete 818,2 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    .goto Durotar,66.94,84.41,150 >>Swim to the main island
-    .isOnQuest 826
-step
-    #completewith ZalazaneKill
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
-    .complete 826,1 --Hexed Troll (8)
-    .mob +Hexed Troll
-    .complete 826,2 --Voodoo Troll (8)
-    .mob +Voodoo Troll
-step << Priest
-    #season 2
-    #completewith Fur
-    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
-    .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
-    .mob Voodoo Troll
-    .train 402852,1
-step << Mage
-    #season 2
-    #completewith ZalazaneKill
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
-    .collect 203753,1
-    .mob Zalazane
-    .train 401765,1
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
-    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
-    .complete 826,3 --Zalazane's Head (1)
-    .mob Zalazane
-step
-    #label MinshinasSkull
-    .goto Durotar,67.4,87.8
-    >>Loot one of the |cRXP_LOOT_Skulls|r on the ground
-    .complete 808,1 --Minshina's Skull (1)
-step
-    #label ZalazaneKill
-    .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
-    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
-    .complete 826,3 --Zalazane's Head (1)
-    .mob Zalazane
-step << Mage
-    #season 2
-    .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
-    .collect 203753,1
-    .mob Zalazane
-    .train 401765,1
-step << Mage
-    #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
-    .use 203753
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
-    .complete 817,1 --Durotar Tiger Fur (4)
-    .mob Durotar Tiger
-step
-    #label Fur
-    #loop
-    .goto Durotar,67.23,88.76,0
-    .goto Durotar,67.23,88.76,40,0
-    .goto Durotar,66.52,87.74,40,0
-    .goto Durotar,65.94,86.72,40,0
-    .goto Durotar,65.90,84.04,40,0
-    .goto Durotar,65.88,82.85,40,0
-    .goto Durotar,67.38,82.61,40,0
-    .goto Durotar,68.42,82.43,40,0
-    .goto Durotar,68.50,84.32,40,0
-    .goto Durotar,68.47,86.77,40,0
-    .goto Durotar,67.23,88.00,40,0
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
-    .complete 826,1 --Hexed Troll (8)
-    .mob +Hexed Troll
-    .complete 826,2 --Voodoo Troll (8)
-    .mob +Voodoo Troll
-step << Priest
-    #season 2
-    #loop
-    .goto Durotar,67.23,88.76,0
-    .goto Durotar,67.23,88.76,40,0
-    .goto Durotar,66.52,87.74,40,0
-    .goto Durotar,65.94,86.72,40,0
-    .goto Durotar,65.90,84.04,40,0
-    .goto Durotar,65.88,82.85,40,0
-    .goto Durotar,67.38,82.61,40,0
-    .goto Durotar,68.42,82.43,40,0
-    .goto Durotar,68.50,84.32,40,0
-    .goto Durotar,68.47,86.77,40,0
-    .goto Durotar,67.23,88.00,40,0
-    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
-    .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
-    .mob Voodoo Troll
-    .train 402852,1
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
-    -->>This does not need to be finished now
-    .complete 818,2 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    #loop
-    .goto Durotar,59.79,83.44,0
-    .goto Durotar,65.27,87.86,50,0
-    .goto Durotar,64.72,88.53,50,0
-    .goto Durotar,64.70,84.89,50,0
-    .goto Durotar,64.68,80.80,50,0
-    .goto Durotar,65.35,80.11,50,0
-    .goto Durotar,65.87,81.23,50,0
-    .goto Durotar,60.28,80.04,50,0
-    .goto Durotar,60.60,82.26,50,0
-    .goto Durotar,59.88,83.51,50,0
-    .goto Durotar,59.56,84.86,50,0
-    .goto Durotar,60.84,88.79,50,0
-    .goto Durotar,61.41,89.69,50,0
-    .goto Durotar,61.48,91.37,50,0
-    .goto Durotar,60.37,91.36,50,0
-    .goto Durotar,59.04,90.51,50,0
-    .goto Durotar,59.79,83.44,50,0
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
-    .complete 817,1 --Durotar Tiger Fur (4)
-    .mob Durotar Tiger
-step
-    #loop
-    .goto Durotar,59.64,73.84,0
-    .goto Durotar,59.64,73.84,60,0
-    .goto Durotar,58.11,77.30,60,0
-    .goto Durotar,57.27,79.38,60,0
-    .goto Durotar,55.66,80.47,60,0
-    .goto Durotar,53.8,83.14,60,0
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
-    -->>This does not need to be finished now
-    .complete 818,2 --Crawler Mucus (8)
-    .mob +Pygmy Surf Crawler
-    .mob +Surf Crawler
-    .complete 818,1 --Intact Makrura Eye (4)
-    .mob +Makrura Shellhide
-    .mob +Makrura Clacker
-step
-    #softcore
-    #completewith next
-    .goto Durotar,57.50,73.26,50,0
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run back
-step
-    #hardcore
-    #completewith Zalazaneturnin
-    .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
-step
-    .goto Durotar,56.48,73.11
-    >>Jump into the hut
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
-    .vendor >> Vendor trash and repair
-    .target Trayexir
-    .isOnQuest 808
-step
-    #label Zalazaneturnin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Vel'rin|r
-    .turnin 808 >>Turn in Minshina's Skull
-    .turnin 826,2 >>Turn in Zalazane << Shaman
-    .turnin 826 >>Turn in Zalazane << !Shaman
-    .target +Master Gadrin
-    .goto Durotar,55.95,74.73
-    .turnin 818 >>Turn in A Solvent Spirit
-    .target +Master Vornal
-    .goto Durotar,55.95,74.39
-    .turnin 817 >>Turn in Practical Prey
-    .target +Vel'rin Fang
-    .goto Durotar,55.95,73.93
-step << Mage
-    .goto Durotar,56.3,75.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 118 >> Train your class spells
-    .target Un'Thuwa
-    .xp <8,1
-    .xp >10,1
-step << Mage
-    .goto Durotar,56.3,75.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 122 >> Train your class spells
-    .target Un'Thuwa
-    .xp <10,1
-step << Priest
-    #season 2
-    .emote KNEEL,208309
-    .goto Durotar,55.32,72.66
-    .skipgossip 208307,1
-    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
-    .train 402852,1
-step << Priest
-    #season 2
-    #completewith QuilboarsScouts
-    .aura 418459 >>|cRXP_WARN_Now you have to find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
-    .use 205947
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    .itemcount 205947,1
-step
-    #completewith QuilboarsScouts
-    +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
-step << Warrior
-    #xprate <2.1
-    #season 2
-    #loop
-    .goto Durotar,49.22,48.96,0
-    .goto Durotar,50.21,50.78,30,0
-    .goto Durotar,50.18,49.23,30,0
-    .goto Durotar,49.48,49.14,30,0
-    .goto Durotar,49.32,48.18,30,0
-    .goto Durotar,48.81,49.00,30,0
-    .goto Durotar,48.49,49.29,30,0
-    .goto Durotar,47.58,49.62,30,0
-    .goto Durotar,47.06,49.53,30,0
-    .goto Durotar,46.90,48.11,30,0
-    .goto Durotar,49.22,48.96,30,0
-    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
-    .collect 206994,1 ---Severed Quilboar Head (1)
-    .complete 837,1 --Razormane Quilboar (4)
-    .mob +Razormane Quilboar
-    .complete 837,2 --Razormane Scout (4)
-    .mob +Razormane Scout
-    .train 403475,1
-step
-    #xprate <2.1
-    #label QuilboarsScouts
-    #loop
-    .goto Durotar,49.22,48.96,0
-    .goto Durotar,50.21,50.78,30,0
-    .goto Durotar,50.18,49.23,30,0
-    .goto Durotar,49.48,49.14,30,0
-    .goto Durotar,49.32,48.18,30,0
-    .goto Durotar,48.81,49.00,30,0
-    .goto Durotar,48.49,49.29,30,0
-    .goto Durotar,47.58,49.62,30,0
-    .goto Durotar,47.06,49.53,30,0
-    .goto Durotar,46.90,48.11,30,0
-    .goto Durotar,49.22,48.96,30,0
-    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
-    .complete 837,1 --Razormane Quilboar (4)
-    .mob +Razormane Quilboar
-    .complete 837,2 --Razormane Scout (4)
-    .mob +Razormane Scout
-step
-    #optional
-    #loop
-    .goto Durotar,49.14,48.89,0
-    .goto Durotar,49.14,48.89,30,0
-    .goto Durotar,47.43,49.18,30,0
-    .xp 9+3350 >> Grind to 3350+/6500xp
-step
-    #xprate <2.1
-    #softcore
-    #completewith RazorTurnins015
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run to Razor Hill
-step
-    #xprate <2.1
-    #hardcore
-    #completewith RazorTurnins015
-    .subzone 362 >>Travel to Razor Hill
-step
-    #xprate >2.09
-    #completewith RazorTurnins015
-    .subzone 362 >> Travel to Razor Hill
-    .cooldown item,6948,<0
-step << Shaman
-    #xprate >1.49
-    .goto Durotar,54.42,42.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
-    .train 8050 >> Train your class spells
-    .accept 2983 >>Accept Call of Fire
-    .target Swart
-    .isNotOnQuest 1522
-step
-    #xprate >1.49
-    #label RazorTurnins015
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 815 >>Turn in Break a Few Eggs
-    .target +Cook Torka
-    .goto Durotar,51.12,42.46
-    .turnin 825 >>Turn in From The Wreckage....
-    .target +Gar'Thok
-    .goto Durotar,51.95,43.50
 step << Shaman
     #xprate >1.49
     .goto Durotar,54.42,42.59
@@ -9808,19 +9404,6 @@ step << Hunter
     .accept 6062 >>Accept Taming the Beast
     .trainer >> Train your class spells
     .target Thotar
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
-    .collect 2515,1200,6082,1 --Sharp Arrow (1200)
-    --.collect 11362,1,6082,1 --Medium Quiver (1)
-    .target Ghrawt
-    --.money <0.1300
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
-    .collect 2515,1200,6082,1 --Sharp Arrow (1200)
-    .target Ghrawt
-    .itemcount 2515,<600 --Sharp Arrow (600)
 step << Hunter
     #loop
     .goto Durotar,51.65,56.51,0
@@ -9928,6 +9511,27 @@ step
     .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
     .mob +Razormane Battleguard
+step << Warrior
+    #season 2
+    #loop
+    .goto Durotar,49.22,48.96,0
+    .goto Durotar,50.21,50.78,30,0
+    .goto Durotar,50.18,49.23,30,0
+    .goto Durotar,49.48,49.14,30,0
+    .goto Durotar,49.32,48.18,30,0
+    .goto Durotar,48.81,49.00,30,0
+    .goto Durotar,48.49,49.29,30,0
+    .goto Durotar,47.58,49.62,30,0
+    .goto Durotar,47.06,49.53,30,0
+    .goto Durotar,46.90,48.11,30,0
+    .goto Durotar,49.22,48.96,30,0
+    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
+    .collect 206994,1 ---Severed Quilboar Head (1)
+    .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
+    .complete 837,2 --Razormane Scout (4)
+    .mob +Razormane Scout
+    .train 403475,1
 step << Warrior/Shaman
     #xprate <2.1
     #completewith next
@@ -10398,7 +10002,13 @@ step << Hunter
     .train 24547 >>Train your pet spells
     .target Xao'tsu
 step << Hunter
+    #season 0
     #completewith RazorTurnins2
+    +|cRXP_WARN_Put|r |T132162:0|t[Beast Training]|cRXP_WARN_(under the General tab),|r |T132163:0|t[Revive Pet]|cRXP_WARN_, and|r |T132165:0|t[Feed Pet] |cRXP_WARN_onto your Action Bars|r
+    >>|cRXP_WARN_Remember to train your pet whenever they get Training Points for|r |T132162:0|t[Beast Training]
+step << Hunter
+    #season 2
+    #completewith End
     +|cRXP_WARN_Put|r |T132162:0|t[Beast Training]|cRXP_WARN_(under the General tab),|r |T132163:0|t[Revive Pet]|cRXP_WARN_, and|r |T132165:0|t[Feed Pet] |cRXP_WARN_onto your Action Bars|r
     >>|cRXP_WARN_Remember to train your pet whenever they get Training Points for|r |T132162:0|t[Beast Training]
 step << Hunter
@@ -10700,5 +10310,7 @@ step << Warrior
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
     .target Uzzek
-
+step
+    #optional
+    #label End
 ]])
