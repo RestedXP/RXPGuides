@@ -65,8 +65,14 @@ end
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 local function LoremasterEnabled()
-        return addon.game == "WOTLK" and addon.settings.profile.northrendLM or
-                     addon.game == "CATA" and addon.settings.profile.loremasterMode
+    local loremaster
+    if addon.gameVersion < 50000 then
+            loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+                    addon.game == "CATA" and addon.settings.profile.loremasterMode
+    elseif addon.gameVersion < 60000 then
+        loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    end
+    return loremaster
 end
 
 --local RXPGuides = addon.RXPGuides
@@ -2553,6 +2559,8 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     end
 
     local count = GetItemCount(id,element.includeBank)
+    numRequired = math.ceil(numRequired)
+
     if count == 0 then
         if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
             count = count + 1
@@ -5763,8 +5771,10 @@ function addon.CanPlayerFly(zoneOrContinent)
     else
         local cwf = addon.IsPlayerSpell(54197)--Cold weather flying
         local fml = addon.IsPlayerSpell(90267)--Flight Master's license
+        local wfw = addon.IsPlayerSpell(115913)--Wisdom of the Four Winds
         --1945 = outland,113 = northrend
-        if ((continentId == addon.GetMapId("Outland") or
+        --
+        if ((continentId == addon.GetMapId("Outland") or (wfw and continentId == RXP.GetMapId("Pandaria")) or
             (cwf and continentId == addon.GetMapId("Northrend")) or
             (fml and (continentId == addon.GetMapId("Kalimdor") or continentId == addon.GetMapId("Eastern Kingdoms"))))
                 and ridingSkill > 224) then

@@ -1431,7 +1431,7 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
                         end,
-                        hidden = addon.game ~= "CATA"
+                        hidden = addon.game ~= "CATA" and addon.game ~= "MOP"
                     },
                     chromieTime = {
                         name = L("Show Chromie Time Guides"),
