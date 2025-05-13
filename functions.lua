@@ -2022,7 +2022,7 @@ function addon.functions.line(self, text, zone, ...)
                 local xc,yc = HBD:GetZoneCoordinatesFromWorld(wx, wy, tonumber(zone))
                 segments[x] = xc*100
                 segments[y] = yc*100
-                print('v',x,xc,y,wx,wy)
+                --print('v',x,xc,y,wx,wy)
             end
         end
 
@@ -6703,6 +6703,6 @@ end
 
 function addon.functions.beta(self, text)
     if type(self) == "string" and addon.player.beta then
-        return {text = text}
+        return {text = text, textOnly = true}
     end
 end
