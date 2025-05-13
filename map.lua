@@ -177,7 +177,11 @@ local function PinOnEnter(self)
         end
         icon = icon:gsub("(|T.-):%d+:%d+:","%1:0:0:")
         if parent and not parent.hideTooltip then
-            text = parent.mapTooltip or parent.tooltipText or parent.text or ""
+            local hiddentext = parent.hiddentext
+            if hiddentext and hiddentext:len() < 8 then
+                hiddentext = false
+            end
+            text = parent.mapTooltip or parent.tooltipText or hiddentext or parent.text or ""
             local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
             if title and title ~= lastStep then
                 _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
@@ -186,7 +190,11 @@ local function PinOnEnter(self)
             _G.GameTooltip:AddLine(debug..text)
             lines = lines + 1
         elseif not parent and not element.hideTooltip then
-            text = element.mapTooltip or element.tooltipText or step.text or ""
+            local hiddentext = step.hiddentext
+            if hiddentext and hiddentext:len() < 8 then
+                hiddentext = false
+            end
+            text = element.mapTooltip or element.tooltipText or hiddentext or step.text or ""
             local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
             if title and step ~= lastStep then
                 _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
