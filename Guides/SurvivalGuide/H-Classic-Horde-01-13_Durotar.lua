@@ -876,7 +876,7 @@ step << skip
 step << skip --Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575,1 >> Train |T136248:0|t[Mining]
+    .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << skip --Warrior/Rogue
@@ -1673,7 +1673,7 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575,1 >> Train |T136248:0|t[Mining]
+    .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
@@ -4205,7 +4205,7 @@ step
     .isOnQuest 362
 step
     #optional
-    #completewith ThurmanGregor
+    #completewith MillsOverun
     >>|T134939:0|t[|cRXP_LOOT_Thurman's Letter|r] |cRXP_WARN_may drop from these mobs. Accept the quest if it does|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >> Accept A Letter Undelivered
