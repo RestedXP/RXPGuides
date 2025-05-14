@@ -739,7 +739,7 @@ function addon.GetItemName(id)
     return name
 end
 
-function addon.SetElementComplete(self, disable)
+function addon.SetElementComplete(self, disable, skipIfInactive)
     local element
     if not self.element and self.tag then
         element = self
@@ -747,11 +747,15 @@ function addon.SetElementComplete(self, disable)
         element = self.element
     end
     if not element then return end
+    local active = element.step.active
+    if skipIfInactive and not active then
+        return
+    end
     element.completed = true
     element.skip = true
     addon.updateSteps = true
     addon.UpdateMap()
-    if element.step.active and GetTime() - addon.lastStepUpdate > 1 then
+    if active and GetTime() - addon.lastStepUpdate > 1 then
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
     end
 
@@ -2642,9 +2646,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
                 guideName = RXPCData.currentGuideName
             })
         end
-        addon.SetElementComplete(self, true)
+        addon.SetElementComplete(self, true, true)
     elseif numRequired == count then
-        addon.SetElementComplete(self, true)
+        addon.SetElementComplete(self, true, true)
     elseif not element.textOnly then
         addon.SetElementIncomplete(self)
     end
