@@ -295,7 +295,9 @@ local IsQuestTurnedIn = function(id,accountWide)
         isQuestTurnedIn = IsTurnedIn(id)
     end
     if isQuestTurnedIn then addon.recentTurnIn[id] = nil end
-    return isQuestTurnedIn or (recentTurnIn and GetTime() - recentTurnIn < 2)
+    local recent = recentTurnIn and GetTime() - recentTurnIn < 2
+    --if recent then print(7,recent,id) end
+    return isQuestTurnedIn or recent
 end
 --QT = IsQuestTurnedIn
 
@@ -1245,10 +1247,14 @@ function addon.functions.turnin(self, ...)
                 return addon.ReloadGuide()
             end
             addon.SetElementComplete(self)
-            addon.recentTurnIn[id] = GetTime()
+            if step.active then
+                addon.recentTurnIn[id] = GetTime()
+            end
         elseif isComplete then
             addon.SetElementComplete(self, true)
-            addon.recentTurnIn[id] = GetTime()
+            if step.active then
+                addon.recentTurnIn[id] = GetTime()
+            end
         end
 
         if step.active then
@@ -2006,6 +2012,20 @@ function addon.functions.line(self, text, zone, ...)
             zone = zone:sub(2-1)
             element.thickness = 1
         end
+
+        local z,continent = zone:match("(%d+)/(%d+)")
+        if continent then
+            zone = z
+            for x = 1, #segments, 2 do
+                local y = x+1
+                local wx,wy = segments[x],segments[y]
+                local xc,yc = HBD:GetZoneCoordinatesFromWorld(wx, wy, tonumber(zone))
+                segments[x] = xc*100
+                segments[y] = yc*100
+                --print('v',x,xc,y,wx,wy)
+            end
+        end
+
         if zone then
             lastZone = zone
         else
@@ -2259,8 +2279,9 @@ function addon.functions.fp(self, ...)
         end
 
         if location and location ~= "" and location:find("%w+") then
+            local l = location:gsub("%-","%%-")
             for id, fp in pairs(addon.FPDB[addon.player.faction] or {}) do
-                if strupper(fp.name):find(strupper(location)) then
+                if strupper(fp.name):find(strupper(l)) then
                     element.fpId = id
                     break
                 end
@@ -3631,14 +3652,15 @@ function addon.functions.isQuestComplete(self, ...)
     end
     local element = self.element
     local step = element.step
+    if not step.active then return end
     local id = element.questId
     local event = ...
     local isCompleted = not(IsOnQuest(id) and IsQuestComplete(id)) == not(element.reverse)
-    if event ~= "WindowUpdate" and step.active and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
-    elseif step.active and not step.completed then
+    elseif not step.completed then
         element.tooltipText = nil
     end
 end
@@ -3669,6 +3691,11 @@ function addon.functions.isOnQuest(self, text, ...)
     end
     local element = self.element
     local onQuest = false
+    local event = text
+    local step = element.step
+
+    if not step.active then return end
+
     for _,id in pairs(element.questIds) do
         if IsOnQuest(id) then
             onQuest = true
@@ -3676,13 +3703,11 @@ function addon.functions.isOnQuest(self, text, ...)
     end
 
 
-    local event = text
-    local step = element.step
-    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
-    elseif step.active and not step.completed then
+    elseif not step.completed then
         element.tooltipText = nil
     end
 end
@@ -3722,6 +3747,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     end
     local element = self.element
     local step = element.step
+    if not step.active then return end
     local ids = element.questIds
     local questTurnedIn = false
     local event = text
@@ -3736,11 +3762,11 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id,accountWide)
         end
     end
-    if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
-    elseif step.active and not step.completed then
+    elseif not step.completed then
         element.tooltipText = nil
     end
 end
@@ -6673,4 +6699,10 @@ function addon.functions.neutralzonefinished(self, event)
         addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
     end
 
+end
+
+function addon.functions.beta(self, text)
+    if type(self) == "string" and addon.player.beta then
+        return {text = text, textOnly = true}
+    end
 end

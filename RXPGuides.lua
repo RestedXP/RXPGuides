@@ -177,6 +177,7 @@ addon.player = {
     name = UnitName("player"),
     maxlevel = maxLevel,
     season = addon.GetSeason(),
+    beta = GetCurrentRegion() >= 20,
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
