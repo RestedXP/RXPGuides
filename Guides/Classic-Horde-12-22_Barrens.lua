@@ -1409,6 +1409,12 @@ step
     .target Bragok
     .isQuestComplete 845
 step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
+step
     #loop
     .goto The Barrens,55.27,37.82,0
     .goto The Barrens,48.33,36.75,0
@@ -2081,7 +2087,6 @@ step << Shaman
     .target Kardris Dreamseeker
     .xp <18,1
 step
-    #label SpiritsPickup
     .goto Orgrimmar,38.94,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor|r
     .accept 1061 >>Accept The Spirits of Stonetalon
@@ -2267,6 +2272,9 @@ step << Druid/Mage
     .itemcount 208689,<1,1 << Druid
     .train 407988,1 << Druid
     .train 401767,1 << Mage
+step
+    #optional
+    #label SpiritsPickup
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -6555,6 +6563,7 @@ step << !Tauren
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
+    .maxlevel 15
 step << !Undead !Tauren
     #xprate <2.1
     #hardcore
@@ -6590,6 +6599,7 @@ step << Orc Hunter/Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Uthrok
+    .xp >15,1
 step << Orc Hunter/Troll Hunter
     #completewith DisruptTheAttacks
     +Equip the |T135499:0|t[Laminated Recurve Bow]
@@ -6597,6 +6607,15 @@ step << Orc Hunter/Troll Hunter
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .xp >15,1
+step << Troll Hunter/Orc Hunter
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r
+    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] |cRXP_BUY_from him if it's available and stock up on arrows|r
+    >>|cRXP_WARN_If it's not up, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_WARN_instead|r
+    .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
+    .target Uthrok
+    .xp <16,1
 step << Orc Warrior
     .goto The Barrens,51.23,29.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
@@ -6796,11 +6815,13 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
+    .maxlevel 15
 step
     .goto The Barrens,55.70,27.30
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
+    .maxlevel 15
 step
     #requires FireTar1<< Shaman
     #label DisruptTheAttacks
@@ -6823,6 +6844,7 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
+    .maxlevel 15
 step << Warrior !Undead
     #completewith next
     .goto The Barrens,54.53,27.96,30,0
@@ -6888,16 +6910,26 @@ step << Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
+    .goto The Barrens,52.24,31.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 842 >>Turn in Crossroads Conscription << Tauren Shaman
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
-    .target +Sergra Darkthorn
-    .goto The Barrens,52.24,31.01
+    .target Sergra Darkthorn
+step
+    .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
-    .target +Thork
+    .target Thork
+    .isQuestComplete 871
+step
+    #optional
     .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .accept 872 >>Accept The Disruption Ends
+    .target Thork
+    .isQuestTurnedIn 871
 step
     #xprate <2.1
     .goto The Barrens,51.62,30.90
@@ -6922,6 +6954,7 @@ step << Orc Hunter/Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Uthrok
+    .xp >15,1
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith KreenigSnarlsnout
@@ -6930,6 +6963,15 @@ step << Orc Hunter/Troll Hunter
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .xp >15,1
+step << Troll Hunter/Orc Hunter
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r
+    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] |cRXP_BUY_from him if it's available and stock up on arrows|r
+    >>|cRXP_WARN_If it's not up, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_WARN_instead|r
+    .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
+    .target Uthrok
+    .xp <16,1
 step << Tauren Hunter
     #optional
     .goto The Barrens,51.11,29.07
@@ -6996,7 +7038,7 @@ step << Orc Shaman/Troll Shaman
 step << Orc Shaman/Troll Shaman
     #xprate <2.1
     #optional
-    #completewith DisruptTheAttacks
+    #completewith KreenigSnarlsnout1
     +Equip the |T133490:0|t[Mace]
     .use 852
     .itemcount 852,1
@@ -7015,7 +7057,7 @@ step << Shaman
 step << Shaman
     #xprate >2.09
     #optional
-    #completewith DisruptTheAttacks
+    #completewith KreenigSnarlsnout1
     +Equip the |T133490:0|t[Mace]
     .use 852
     .itemcount 852,1
@@ -7046,11 +7088,13 @@ step << Tauren
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
     .dungeon RFC
+    .isOnQuest 872
 step << Tauren
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
+    .isOnQuest 872
 step << Tauren
     #label KreenigSnarlsnout1
     .goto The Barrens,58.69,27.08
@@ -7058,6 +7102,7 @@ step << Tauren
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
     .dungeon RFC
+    .isOnQuest 872
 step << Tauren
     #optional
     #completewith next
@@ -7069,12 +7114,14 @@ step << Tauren
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
     .dungeon RFC
+    .isOnQuest 872
 step << Tauren
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
+    .isOnQuest 872
 step << Tauren
    #loop
 	.goto The Barrens,58.90,25.37,0
@@ -7097,6 +7144,7 @@ step << Tauren
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
     .dungeon RFC
+    .isOnQuest 872
 step << Tauren
     #optional
     #completewith next
@@ -7445,16 +7493,19 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
+    .isOnQuest 872
 step
     #label KreenigSnarlsnout
     .goto The Barrens,58.69,27.08
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
+    .isOnQuest 872
 step << Warlock
     #season 2
     .train 403932,1
@@ -7464,11 +7515,13 @@ step << Warlock
     .cast 1454
     .cast 735
     .collect 208750,1
+    .isOnQuest 872
 step << Warlock
     #season 2
     .use 208750
     .itemcount 208750,1
     .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
+    .isOnQuest 872
 step
     #completewith next
     .goto The Barrens,56.75,24.69,50,0
@@ -7478,11 +7531,13 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
+    .isOnQuest 872
 step
     #loop
 	.goto The Barrens,58.90,25.37,0
@@ -7504,6 +7559,7 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
+    .isOnQuest 872
 step << !Tauren !Undead
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
@@ -7616,6 +7672,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .accept 887 >>Accept Southsea Freebooters
     .target Gazlowe
+    .maxlevel 16
 step
     #completewith next
     .goto The Barrens,63.09,37.16
@@ -7623,12 +7680,16 @@ step
     .fp Ratchet >> Get the Ratchet flight path
     .target Bragok
 step
+    .goto The Barrens,62.98,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and the |cRXP_FRIENDLY_Wanted Poster|r
     .accept 894 >>Accept Samophlange
-    .goto The Barrens,62.98,37.22
-    .accept 895 >>Accept WANTED: Baron Longshore
-    .goto The Barrens,62.59,37.47
     .target Sputtervalve
+    .maxlevel 16
+step
+    .goto The Barrens,62.59,37.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
+    .accept 895 >>Accept WANTED: Baron Longshore
+    .maxlevel 16
 step << Undead Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135353:0|t[Espadon] |cRXP_BUY_from him|r
@@ -7839,6 +7900,7 @@ step
     >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r He can be found in one of the camps
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
+    .isOnQuest 895
 step << Orc Rogue/Troll Rogue
 	#completewith next
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
@@ -7855,6 +7917,7 @@ step
     .mob +Southsea Brigand
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
+    .isOnQuest 887
 step << Orc Rogue/Troll Rogue
     .goto The Barrens,63.70,44.32,50,0
     .goto The Barrens,62.70,44.07,50,0
@@ -7862,6 +7925,8 @@ step << Orc Rogue/Troll Rogue
     >>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
+    .isOnQuest 1963
+    .maxlevel 16
 step
     .goto The Barrens,62.68,36.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
@@ -7869,6 +7934,15 @@ step
     .turnin 895 >>Turn in WANTED: Baron Longshore
     .accept 890 >>Accept The Missing Shipment
     .target Gazlowe
+    .isQuestComplete 887
+    .isQuestComplete 895
+step
+    #optional
+    .goto The Barrens,62.68,36.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
+    .accept 890 >>Accept The Missing Shipment
+    .target Gazlowe
+    .isQuestTurnedIn 887
 step
     .goto The Barrens,63.35,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dizzywig|r
@@ -7877,12 +7951,20 @@ step
     .accept 892 >>Accept The Missing Shipment
     .accept 896 >>Accept Miner's Fortune
     .target Wharfmaster Dizzywig
+    .isQuestTurnedIn 887
+step
+    .goto The Barrens,63.35,38.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dizzywig|r
+    .turnin 1492 >>Turn in Wharfmaster Dizzywig
+    .accept 896 >>Accept Miner's Fortune
+    .target Wharfmaster Dizzywig
 step
     .goto The Barrens,62.68,36.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 892 >>Turn in The Missing Shipment
     .accept 888 >>Accept Stolen Booty
     .target Gazlowe
+    .isQuestTurnedIn 887
 step << Undead Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135353:0|t[Espadon] |cRXP_BUY_from him|r
@@ -8058,6 +8140,12 @@ step
     .target Bragok
     .isQuestComplete 845
 step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
+step
     #loop
     .goto The Barrens,55.27,37.82,0
     .goto The Barrens,48.33,36.75,0
@@ -8070,16 +8158,34 @@ step
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
-    #label XroadsTurnins3
+    .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
-    .target +Thork
+    .target Thork
+    .isQuestComplete 5041
+    .isQuestComplete 872
+step
+    #optional
     .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
+    .turnin 872 >>Turn in The Disruption Ends
+    .target Thork
+    .isQuestComplete 5041
+step
+    #optional
+    .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
+    .turnin 5041 >>Turn in Supplies for the Crossroads
+    .target Thork
+    .isQuestComplete 5041
+step
+    #label XroadsTurnins3
+    .goto The Barrens,52.23,31.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
-    .target +Sergra Darkthorn
-    .goto The Barrens,52.23,31.00
+    .target+Sergra Darkthorn
 step << skip
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -8480,6 +8586,23 @@ step
     .target Sergra Darkthorn
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
+    .goto The Barrens,52.24,31.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
+    .turnin 881 >>Turn in Echeyakee
+    .accept 905 >>Accept The Angry Scytheclaws
+    .target Sergra Darkthorn
+    .xp <20,1
+step
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Orgrimmar >> Fly to Orgrimmar
+    .zoneskip Orgrimmar
+    .target Devrak
+    .xp <20,1
+step
+    #optional
+    .maxlevel 19,NorthBarrensSkip
+step
     #xprate <2.1
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -8521,30 +8644,42 @@ step
     >>Click the |cRXP_PICK_Valve|r
     >>|cRXP_WARN_Be careful! Two mobs will spawn after you shut off the Valve|r
     .complete 900,2 --Shut off Fuel Control Valve (1)
+    .isOnQuest 900
 step
     .goto The Barrens,52.29,11.40
     >>Click the |cRXP_PICK_Valve|r
     >>|cRXP_WARN_One mob will spawn after you shut off the Valve|r
     .complete 900,3 --Shut off Regulator Valve (1)
+    .isOnQuest 900
 step
     .goto The Barrens,52.40,11.40
     >>Click the |cRXP_PICK_Valve|r
     .complete 900,1 --Shut off Main Control Valve (1)
+    .isOnQuest 900
 step
     .goto The Barrens,52.40,11.65
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 900 >>Turn in Samophlange
     .accept 901 >>Accept Samophlange
+    .isQuestComplete 900
+step
+    #optional
+    .goto The Barrens,52.40,11.65
+    >>Click the |cRXP_PICK_Control Console|r
+    .accept 901 >>Accept Samophlange
+    .isQuestTurnedIn 900
 step
     .goto The Barrens,52.84,10.40
     >>Kill |cRXP_ENEMY_Tinkerer Sniggles|r in the building. Loot him for his |cRXP_LOOT_Console Key|r
     .complete 901,1 --Console Key (1)
     .mob Tinkerer Sniggles
+    .isQuestTurnedIn 900
 step
     .goto The Barrens,52.40,11.65
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 901 >>Turn in Samophlange
     .accept 902 >>Accept Samophlange
+    .isQuestTurnedIn 900
 step
     #completewith Ignition
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -8686,6 +8821,9 @@ step
     .goto Kalimdor,56.81,45.47
     .zone Orgrimmar >>Enter Orgrimmar through the Eastern entrance
 step
+    #optional
+    #label NorthBarrensSkip
+step
     #completewith next
     .skill firstaid,40 >> |cRXP_WARN_Create|r |T133685:0|t[Linen Bandages] |cRXP_WARN_until your skill is 40 or higher|r
     .skill firstaid,<1,1
@@ -8826,9 +8964,6 @@ step << Shaman/Hunter
     .use 226402 << Shaman -- Revelation of Shamanistic Rage
     .target Zor Lonetree
     .money <0.5
-step
-    #optional
-    #label SpiritsPickup
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
@@ -8982,7 +9117,7 @@ step << Tauren Warrior/Undead Warrior
 step << Hunter
     .goto Orgrimmar,81.17,18.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from him|r
-    .collect 3026,1,3281,1 --Collect Laminated Recurve Bow (1)
+    .collect 3026,1,3281,1 --Collect Reinforced Bow (1)
     .money <0.3588
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
@@ -9033,6 +9168,9 @@ step << Druid
 	.target Auctioneer Thathung
     .itemcount 208689,<1,1 << Druid
     .train 407988,1 << Druid
+step
+    #optional
+    #label SpiritsPickup
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -9161,80 +9299,41 @@ step << Rogue
     .collect 7970,1,888,1 --E.C.A.C. (1)
     .collect 5060,1,888,1 --Thieves' Tools (1)
 step
-    #xprate <2.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
+    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 902 >>Turn in Samophlange
     .turnin 863 >>Turn in The Escape
+    .target Sputtervalve
+    .isQuestComplete 863
+    .isOnQuest 902
+step
+    #optional
+    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .turnin 902 >>Turn in Samophlange
+    .target Sputtervalve
+    .isOnQuest 902
+step
+    #optional
+    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
+    .turnin 863 >>Turn in The Escape
+    .target Sputtervalve
+    .isQuestComplete 863
+step
+    #xprate <2.1
+    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .accept 3921 >>Accept Wenikee Boltbucket << Hunter
     .accept 1483 >>Accept Ziz Fizziks
-    .target +Sputtervalve
-    .goto The Barrens,62.98,37.22
-    .turnin 896 >>Turn in Miner's Fortune
-    .target +Wharfmaster Dizzywig
-    .goto The Barrens,63.35,38.45
-    .isQuestComplete 896
-    .isQuestComplete 863
-step
-    #xprate <2.1
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
-    .turnin 902 >>Turn in Samophlange
-    .accept 3921 >>Accept Wenikee Boltbucket << Hunter
-    .accept 1483 >>Accept Ziz Fizziks
-    .target +Sputtervalve
-    .goto The Barrens,62.98,37.22
-    .turnin 896 >>Turn in Miner's Fortune
-    .target +Wharfmaster Dizzywig
-    .goto The Barrens,63.35,38.45
-    .isQuestComplete 896
-step
-    #xprate <2.1
-    #optional
-    .goto The Barrens,62.98,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .turnin 863 >>Turn in The Escape
-    .accept 1483 >>Accept Ziz Fizziks
     .target Sputtervalve
-    .isQuestComplete 863
+    .isQuestTurnedIn 902 << Hunter
 step
-    #xprate <2.1
-    #optional
-    #label TheEscapeTurnIn
-    .goto The Barrens,62.98,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .accept 1483 >> Accept Ziz Fizziks
-    .target Sputtervalve
-step
-    #xprate >2.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
-    .turnin 902 >>Turn in Samophlange
-    .turnin 863 >>Turn in The Escape
-    .target +Sputtervalve
-    .goto The Barrens,62.98,37.22
-    .turnin 896 >>Turn in Miner's Fortune
-    .target +Wharfmaster Dizzywig
     .goto The Barrens,63.35,38.45
-    .isQuestComplete 896
-    .isQuestComplete 863
-step
-    #xprate >2.09
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
-    .turnin 902 >>Turn in Samophlange
-    .target +Sputtervalve
-    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dizzywig|r
     .turnin 896 >>Turn in Miner's Fortune
-    .goto The Barrens,63.35,38.45
-    .target +Wharfmaster Dizzywig
+    .target Wharfmaster Dizzywig
     .isQuestComplete 896
-step
-    #xprate >2.09
-    #optional
-    .goto The Barrens,62.98,37.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
-    .turnin 863 >>Turn in The Escape
-    .target Sputtervalve
-    .isQuestComplete 863
 step
     #xprate <2.1
     #label RapHornsPickup
@@ -9347,10 +9446,12 @@ step
     .goto The Barrens,63.58,49.25
     >>Loot the |cRXP_PICK_Crate|r on the ground
     .complete 888,2 --Telescopic Lens (1)
+    .isOnQuest 888
 step
     .goto The Barrens,62.63,49.64
     >>Loot the |cRXP_PICK_Crate|r on the ground
     .complete 888,1 --Shipment of Boots (1)
+    .isOnQuest 888
 step << Warrior/Rogue
     #season 2
     #completewith EndlessRageRune << Warrior
@@ -9599,12 +9700,6 @@ step
     .goto The Barrens,45.23,58.41,120 >> Travel to Camp Taurajo
 step
     #requires CampTArrive
-    #label SetCampTaurajoHS
-    .goto The Barrens,45.58,59.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
-    .home >>Set your Hearthstone to Camp Taurajo
-    .target Innkeeper Byula
-step
     #label SetCampTaurajoHS
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
@@ -10775,7 +10870,7 @@ step
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob Ishamuhale
 step
-    #completewith BootyTurnin
+    #completewith FlytoXroads
     .goto The Barrens,63.07,36.31 << Rogue
     .goto The Barrens,62.68,36.23 << !Rogue
     .subzone 392 >> Travel to Ratchet
@@ -10790,6 +10885,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 888 >>Turn in Stolen Booty
     .target Gazlowe
+    .isQuestComplete 888
 step
     #sticky
     #completewith FlytoXroads

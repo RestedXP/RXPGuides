@@ -1008,6 +1008,12 @@ step
     .target Bragok
     .isQuestComplete 845
 step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
+step
     #loop
     .goto The Barrens,55.27,37.82,0
     .goto The Barrens,48.33,36.75,0
