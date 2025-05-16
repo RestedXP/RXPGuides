@@ -4505,6 +4505,7 @@ step << !Tauren !Shaman !Warrior/Undead
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
+    .target Mangletooth
 step << !Tauren !Shaman !Warrior/Undead
     #completewith next
     .goto Mulgore,68.68,60.34,120,0
@@ -8180,12 +8181,17 @@ step
     .target Thork
     .isQuestComplete 5041
 step
+    #optional
+    #completewith RegtharDeathgate1
+    .abandon 871 >>Abandon Disrupt the Attacks
+    .abandon 5041 >>Abandon Supplies for the Crossroads
+step
     #label XroadsTurnins3
     .goto The Barrens,52.23,31.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
-    .target+Sergra Darkthorn
+    .target Sergra Darkthorn
 step << skip
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -8586,6 +8592,7 @@ step
     .target Sergra Darkthorn
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
+    #optional
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 881 >>Turn in Echeyakee
@@ -8593,6 +8600,7 @@ step
     .target Sergra Darkthorn
     .xp <20,1
 step
+    #optional
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
@@ -8977,6 +8985,14 @@ step << Orc Rogue/Troll Rogue
     .turnin 1963 >> Turn in The Shattered Hand
     .accept 1858 >> Accept The Shattered Hand
     .target Therzok
+    .isQuestComplete 1963
+step << Orc Rogue/Troll Rogue
+    #optional
+    .goto Orgrimmar,42.74,53.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
+    .accept 1858 >> Accept The Shattered Hand
+    .target Therzok
+    .isQuestTurnedIn 1963
 step << Rogue
     .goto Orgrimmar,42.72,52.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zando'zan|r
@@ -8990,27 +9006,25 @@ step << Orc Rogue/Troll Rogue
     .collect 5060,1,1858,1 --Collect Thieves' Tools (1)
     .target Rekkul
     .money <0.15
+    .isQuestTurnedIn 1963
 step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.74,53.52
     >>|cRXP_WARN_Use|r |T136058:0|t[Pick Lock] |cRXP_WARN_to open|r |T133626:0|t[Tazan's Satchel]
     .complete 1858,1 --Tazan's Logbook (1)
     .itemcount 5060,1
+    .isQuestTurnedIn 1963
 step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,53.99,68.05
     >>|cRXP_WARN_Use|r |T133644:0|t[Pick Pocket] |cRXP_WARN_on|r |cRXP_ENEMY_Gamon|r |cRXP_WARN_in the Inn. Use his key to open|r |T133626:0|t[Tazan's Satchel]
 	.collect 7208,1,1858,1 --Tazan's Key
 	.complete 1858,1 --Tazan's Logbook (1)
-    .isOnQuest 1858
+    .isQuestTurnedIn 1963
 step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.74,53.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
     .turnin 1858 >>Turn in The Shattered Hand
     .target Therzok
-step << Orc Rogue/Troll Rogue
-    .goto Orgrimmar,42.74,53.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
-    .turnin 1858 >>Turn in The Shattered Hand
-    .target Therzok
+    .isQuestTurnedIn 1963
 step << Rogue
     .goto Orgrimmar,45.64,55.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kareth|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|r
@@ -9019,6 +9033,10 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
     .target Kareth
+step << Orc Rogue/Troll Rogue
+    #optional
+    #completewith FoodandWater2
+    .abandon 1963 >> Abandon The Shattered Hand
 step << Rogue
     #optional
     #completewith FoodandWater2
@@ -11685,6 +11703,7 @@ step << !Tauren
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
+    .target Mangletooth
 step << !Tauren
     #completewith next
     .goto Mulgore,68.68,60.34,120,0

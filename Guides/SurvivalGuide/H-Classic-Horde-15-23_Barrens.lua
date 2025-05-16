@@ -3152,6 +3152,7 @@ step << !Tauren
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
+    .target Mangletooth
 step << !Tauren
     #completewith next
     .goto Mulgore,68.68,60.34,120,0
