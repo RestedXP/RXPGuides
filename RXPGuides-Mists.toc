@@ -38,7 +38,7 @@ functions.lua
 GuideLoader.lua
 HardcoreIntroUI.lua
 
-Guides/GuideList-cata.xml
+Guides/GuideList-mop.xml
 
 #Talents.lua
 #Guides/Talents/cata.xml
