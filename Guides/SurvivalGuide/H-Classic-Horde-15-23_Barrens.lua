@@ -380,6 +380,7 @@ step << !Tauren
     .goto Mulgore,68.68,60.34,120,0
     .zone Thunder Bluff >>Travel South to Camp Taurajo and enter Mulgore. Travel to Thunder Bluff from there
     >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
+    .dungeon RFC
 step
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
@@ -441,6 +442,7 @@ step
 step
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97

@@ -5822,11 +5822,10 @@ step
     .turnin 860 >>Turn in Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
-    .isOnQuest 6860
+    .isOnQuest 860
 step
     .goto The Barrens,52.23,31.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
-    .turnin 860 >>Turn in Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
 step

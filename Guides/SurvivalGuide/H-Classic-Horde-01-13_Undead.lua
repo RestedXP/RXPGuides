@@ -1039,7 +1039,7 @@ step << Warrior/Rogue
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
     >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_Wuark|r
-    .collect 2901,1,9144,1 --Mining Pick (1)
+    .collect 2901,1,784,1 --Mining Pick (1)
     .target Wuark
 step
     .goto Durotar,51.51,41.64
@@ -1530,7 +1530,7 @@ step << Warrior/Rogue
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
     >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_Wuark|r
-    .collect 2901,1,9144,1 --Mining Pick (1)
+    .collect 2901,1,818,1 --Mining Pick (1)
     .target Wuark
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
