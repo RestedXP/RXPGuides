@@ -762,7 +762,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 		button:SetWidth(165)
 		button:SetHeight(35)
 
-		button:SetText("Select Survival Guide")
+		button:SetText(L"Select Survival Guide")
 		button:SetNormalFontObject("GameFontNormal")
 
 		local ntex = button:CreateTexture()
@@ -806,7 +806,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 		font_string:SetWidth(350)
 		font_string:SetTextColor(186 / 255, 186 / 255, 186 / 255)
         font_string:SetFont("Interface\\Addons\\RXPGuides\\Fonts\\BerlinSansFBDemi-Bold_wide5.ttf", 14, "OUTLINE, THICK")
-		font_string:SetText("NEW FEATURE")
+		font_string:SetText(L"NEW FEATURE")
 		button:SetFontString(font_string)
 
 		--[[local ntex = button:CreateTexture()
@@ -819,7 +819,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 	end
 
 	local function addTitleFont()
-		createLargeTitleFont("ULTIMATE HARDCORE\nSURVIVAL GUIDE", frame, 0, -15)
+		createLargeTitleFont(L"ULTIMATE HARDCORE\nSURVIVAL GUIDE", frame, 0, -15)
 	end
 
 	local function addDescriptionFont()
@@ -984,12 +984,12 @@ local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, bac
 	end
 
 	local function addTitleFont()
-		createLargeTitleFont("SPEEDRUN GUIDE", frame, 0, 37)
+		createLargeTitleFont(L"SPEEDRUN GUIDE", frame, 0, 37)
 	end
 
 	local function addDescriptionFont()
 		createDescriptionFont(
-			"Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community.",
+			L"Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community.",
 			frame,
 			0,
 			-5
@@ -998,7 +998,7 @@ local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, bac
 
 	local function addSelectSpeedrunButton(anchor,x,y,callback,text)
         anchor = anchor or frame
-        text = text or "Select Speedrun Guide"
+        text = text or L"Select Speedrun Guide"
         x = x or 0
         y = y or -60
         callback = callback or selectSpeedrunFunctor
@@ -1062,7 +1062,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		button:SetWidth(165)
 		button:SetHeight(35)
 
-		button:SetText("Submit & Continue")
+		button:SetText(L"Submit & Continue")
 		button:SetNormalFontObject("GameFontNormal")
 
 		local ntex = button:CreateTexture()
@@ -1100,7 +1100,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 		button:SetWidth(100)
 		button:SetHeight(35)
 
-		button:SetText("Back")
+		button:SetText(L"Back")
 		button:SetNormalFontObject("GameFontNormal")
 
 		local ntex = button:CreateTexture()
@@ -1131,11 +1131,11 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 	end
 
 	local function addTitleFont()
-		createLargeTitleFont("WELCOME\nADVENTURER", frame, 0, 160)
+		createLargeTitleFont(L"WELCOME\nADVENTURER", frame, 0, 160)
 	end
 
 	local function addDescriptionFont()
-		createDescriptionFont("Select your desired features to configure your Guide.\nLet's Go!", frame, 0, 110)
+		createDescriptionFont(L"Select your desired features to configure your Guide.\nLet's Go!", frame, 0, 110)
 	end
 
 	addTitleFont()
@@ -1148,8 +1148,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
     local height = 0
 	height = addHardcoreOptionButton(
 		frame,
-		"Enable Hostile Enemy Warning",
-		"Alerts when a dangerous entity is nearby and shows patrolling elites on the world map.",
+		L"Enable Hostile Enemy Warning",
+		L"Alerts when a dangerous entity is nearby and shows patrolling elites on the world map.",
 		132212,
 		y_offset,
         function(enabled)
@@ -1172,8 +1172,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
     ]]
 	height = addHardcoreOptionButton(
 		frame,
-		"Enable Auction House",
-		"Considers quests that require items that are obtained through trading with other players.",
+		L"Enable Auction House",
+		L"Considers quests that require items that are obtained through trading with other players.",
 		133787,
 		y_offset,
         function(enabled)
@@ -1183,8 +1183,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 	y_offset = y_offset + y_offset_delta - height
 	height = addHardcoreOptionButton(
 		frame,
-		"Enable Group Quests",
-		"Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience.",
+		L"Enable Group Quests",
+		L"Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience.",
 		135892,
 		y_offset,
         function(enabled)
@@ -1196,8 +1196,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
     if dungeonlist then
         addHardcoreOptionButton(
             frame,
-            "Enable Dungeons",
-            "Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions.",
+            L"Enable Dungeons",
+            L"Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions.",
             135860,
             y_offset,
             function()
@@ -1213,9 +1213,9 @@ end
 
 local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFunctor, selectRecDungeonsFunctor)
 	local frame = createHardcoreUIFrame(375, 580, 0.35, 0.5, 0.2, UIParent, "TOP", "TOP", default_x, default_y, 3)
-	createLargeTitleFont("DUNGEON\nCONFIGURATION", frame, 0, 145)
+	createLargeTitleFont(L"DUNGEON\nCONFIGURATION", frame, 0, 145)
 	createDescriptionFont(
-		"Add Dungeons to your route. The guide will adjust to\n your selection accordingly.",
+		L"Add Dungeons to your route. The guide will adjust to\n your selection accordingly.",
 		frame,
 		0,
 		85
@@ -1223,8 +1223,8 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 
 	 _,dungeonConfigButton = addHardcoreOptionButton(
 		frame,
-		"Select all Dungeons",
-		"Factor all of your available Dungeons to your levelling route",
+		L"Select all Dungeons",
+		L"Factor all of your available Dungeons to your levelling route",
 		135743,
 		-450,
 		selectAllFunctor
@@ -1232,8 +1232,8 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 
 	 _,dungeonConfigButton2 = addHardcoreOptionButton(
 		frame,
-		"Select Recommended Dungeons",
-		"Factor only the high impact dungeons into the route",
+		L"Select Recommended Dungeons",
+		L"Factor only the high impact dungeons into the route",
 		135741,
 		-375,
 		selectRecDungeonsFunctor
@@ -1244,7 +1244,7 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 		button:SetWidth(165)
 		button:SetHeight(35)
 
-		button:SetText("Submit & Continue")
+		button:SetText(L"Submit & Continue")
 		button:SetNormalFontObject("GameFontNormal")
 
 		local ntex = button:CreateTexture()
@@ -1279,7 +1279,7 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 		button:SetWidth(100)
 		button:SetHeight(35)
 
-		button:SetText("Back")
+		button:SetText(L"Back")
 		button:SetNormalFontObject("GameFontNormal")
 
 		local ntex = button:CreateTexture()

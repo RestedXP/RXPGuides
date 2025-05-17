@@ -31,17 +31,15 @@ _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton3:LeftButton"] =
 _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
     "Cible ennemie 4"
 
--- Words
+--Words
 L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "Tuer"}
 
 
--- ActiveItemFrame.lua file
+--ActiveItemFrame.lua file
 
-
--- Communications.lua file
-
+--Communications.lua file
 L["Give Feedback for step"] = "Faire un commentaire sur cette étape"
-L["I just leveled from %d to %d in %s"] = "Je viens de gagner un niveau depuis %d vers %d en %s"
+L["I just leveled from %d to %d in %s"] = "Je viens de passer du niveau  %d à %d en %s"
 L["I just leveled up to %d"] = "Je viens de monter au niveau %d"
 L["There's a new addon version (%s) available"] = "Une nouvelle version (%s) de l'addon est disponible"
 L["There's a new version (%s) available for %s"] = "Il y'a une nouvelle version (%s) disponible pour %s"
@@ -61,8 +59,7 @@ L["minutes"] = "minutes"
 L["second"] = "seconde"
 L["seconds"] = "secondes"
 
--- functions.lua file
-
+--functions.lua file
 L["Objective Complete"] = "Objectif terminé"
 L["Error parsing guide"] = "Erreur lors de l'analyse du guide"
 L["Missing pre-requisites"] = "Dépendances manquantes"
@@ -90,8 +87,7 @@ L["Attempting to withdraw"] = "Tentative de retrait"
 L["Skip to step %d if you are level %d or above"] = "Passez à l'étape %d si votre niveau est égal ou supérieur à %d"
 L["(Skip this step if you are level %d or above)"] = "(Sautez cette étape si votre niveau est égal ou supérieur à %d)"
 
--- GuideLoader.lua file
-
+--GuideLoader.lua file
 L["Failed to ReadCacheData"] = "Échec lors de la lecture du cache des données"
 L["Incomplete or invalid encoded string"] = "Chaîne de caractères chiffrée incomplète ou invalide"
 L["Total guides loaded: %d/%s"] = "Guides totaux chargés : %d/%s"
@@ -99,8 +95,7 @@ L["Loading Guides"] = "Chargement des guides"
 L["Guides Loaded Successfully"] = "Guides chargés avec succès"
 L["Guide has no name"] = "Ce guide n'a pas de nom"
 
--- GuideWindow.lua file
-
+--GuideWindow.lua file
 L["Step %d"] = "Étape %d"
 L["Welcome to RestedXP Guides\nRight click to pick a guide"] = "Bienvenue sur RestedXP Guides\nFaites un clic droit pour choisir un guide"
 L["Go to step"] = "Aller à l'étape"
@@ -117,14 +112,13 @@ L["Import guide"] = "Importer un guide"
 L["Leveling report"] = "Rapport de niveau"
 L["Open Feedback Form"] = "Ouvrir le formulaire de commentaire"
 
--- Help.lua file
+--Help.lua file
 
 
--- HSBatching.lua file
+--HSBatching.lua file
 
 
--- LevelingTracker.lua file
-
+--LevelingTracker.lua file
 L["Resetting level %d start time to now!"] = "Reset du chrono du niveau %d maintenant !"
 L["Max"] = "Max"
 L["Reached Level"] = "Niveau atteint"
@@ -147,23 +141,20 @@ L["Time to"] = "Durée avant"
 L["Total Time"] = "Durée total"
 L["Level %d time"] = "Durée %d du niveau"
 
--- Locale.lua file
+--Locale.lua file
 
 
--- map.lua file
+--map.lua file
 
 
--- QuestLog.lua file
-
+--QuestLog.lua file
 L["Quest is being picked up at"] = "La quête commence avec"
 L["Quest is being turned in at"] = "La quête se valide avec"
 
--- RXPGuides.lua file
-
+--RXPGuides.lua file
 L["Development"] = "Développement"
 
--- SettingsPanel.lua file
-
+--SettingsPanel.lua file
 L["Please restart your game client and try again"] = "Veuillez redémarrer votre client de jeu et réessayez"
 L["Failed to Import Guides: Invalid Import String"] = "Échec lors de l'importation du guide : chaîne de caractères invalide"
 L["Guide Import"] = "Importer un guide"
@@ -180,6 +171,8 @@ L["Loaded %d characters into import buffer, %d shown"] = "%d personnages chargé
 L["Loaded %d characters into import buffer"] = "%d personnages chargés dans le buffer d'importation"
 L["This requires a reload to take effect, continue?"] = "Ceci nécessite un rechargement de l'IU pour prendre effet, continuer ?"
 L["Join Discord"] = "Rejoindre Discord"
+L["Run Guide Configurator"] = "Lancer Configurateur du Guide"
+L["Emergency Actions"] = "Actions d'urgence"
 L["Show unused guides"] = "Afficher les guides inutilisés"
 L["Displays guides that are not applicable for your class/race such as starting zones for other races"] = "Afficher les guides non pertinent à votre classe/race tel que les zones de départ des autres races"
 L["Auto load starting zone guides"] = "Charger automatiquement les guides de zones de départ"
@@ -341,13 +334,58 @@ L["Skip quests with missing pre-requisites"] = "Sauter les quêtes dont les pré
 L["Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"] = "Saute automatiquement les quêtes si vous n'avez pas les pré-requis\n(requiert Questie)"
 L["Experience rate change detected, reloading guide for %.2fx"] = "Changement du bonus d'exp détecté, rechargement du guide pour %.2fx"
 
--- Targeting.lua file
-
+--Targeting.lua file
 L["No enabled RXP frames for targeting functionality"] = "Pas de cadre RXP actif pour la fonctionnalité de ciblage"
 L["Targeting macro updated with (%s)"] = "Macro de ciblage mise à jour avec (%s)"
 L["current step has no configured targets"] = "l'étape actuelle n'a pas de cible configurée"
 L["A macro has been automatically built to aid in leveling. Please move %s to your action bars."] = "Une macro a été automatiquement créée pour aider au leveling. Veuillez ajouter %s à votre barre d'actions"
-L["Rare Found! %s is nearby."] = "Mob rare trouvé ! %s est proche"
+L["Rare Found! %s is nearby."] = "Mob rare trouvé ! %s est proche de vous !"
 
--- Timers.lua file
+--Timers.lua file
 
+--GuideWindow.lua file
+L["Welcome to RestedXP Guides\nRight click to pick a guide"] = "Bienvenue dans RestedXP Guides\nCliquez avec le bouton droit pour choisir un guide"
+L["Available Guides"] = "Guides disponibles"
+
+--HardcoreIntroUI.lua.lua file
+L["NEW FEATURE"] = "NOUVELLE FONCTIONNALITÉ"
+L["ULTIMATE HARDCORE\nSURVIVAL GUIDE"]= "GUIDE DE SURVIE\nHARDCORE ULTIME"
+L["Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r"] = "Découvrez le nouveau Guide de survie hardcore ultime,\nspécialement conçu pour faire évoluer votre personnage de la manière la plus sûre possible. |cff228B22Inclut de nouvelles fonctionnalités.|r"
+L["Select Survival Guide"] = "Sélectionnez Guide Survie"
+L["SPEEDRUN GUIDE"] = "GUIDE SPEEDRUN"
+L["Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community."] = "Découvrez les guides les plus rapides et les plus efficaces. Fabriqué à la main et mise à jour par les meilleurs Speedrunner de la communauté de WoW Classic."
+L["Select Speedrun Guide"] = "Sélectionnez Guide Speedrun"
+L["WELCOME\nADVENTURER"] = "BIENVENUE\nAVENTURIER"
+L["Select your desired features to configure your Guide.\nLet's Go!"] = "Sélectionnez les fonctionnalités souhaitées pour configurer votre guide.\nC'est parti!"
+L["Enable Hostile Enemy Warning"] = "Activer l'avertissement d'ennemi"
+L["Alerts when a dangerous entity is nearby and shows patrolling elites on the world map."] = "Alerte lorsqu'un ennemi dangereux est a proximite et affiche les elites en patrouille sur la carte du monde."
+L["Enable Auction House"] = "Activer l'hotel des ventes"
+L["Considers quests that require items that are obtained through trading with other players."] = "Permet l'achat d'objet de quetes grace a l'hotel des ventes"
+L["Enable Group Quests"] = "Activer les quetes de groupe"
+L["Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."] = "Affichez les quetes elite et les itineraires difficiles des le debut du guide. Laissez cette option decochee si vous preferez une experience solo."
+L["Enable Dungeons"] = "Activer les donjons"
+L["Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."] = "Ajoute des quetes en donjon a votre guide. Cela permet d'eviter des longues sessions de farm."
+L["DUNGEON\nCONFIGURATION"] = "CONFIGURATION\nDONJON"
+L["Add Dungeons to your route. The guide will adjust to\n your selection accordingly."] = "Ajoutez des donjons, Le guide s'adaptera à votre sélection."
+L["Select all Dungeons"] = "Selectionnez tous les donjons"
+L["Factor all of your available Dungeons to your levelling route"] = "Integrez tous les donjons disponibles a votre guide"
+L["Select Recommended Dungeons"] = "Selectionnez les donjons"
+L["Factor only the high impact dungeons into the route"] = "Ne prenez en compte que les donjons a fort impact dans le guide"
+L["Location: "] = "Zone: "
+L["\n\nProfessions that benefit:"] = "\n\nProfessions qui en bénéficient"
+L["Back"] = "Retour"
+L["Submit & Continue"] = "Soumettre et Continuer"
+
+--classic\db.lua
+L["Travel Speed: %s"] = "Temps Voyage: %s"
+L["Quest XP: %s"] = "XP Quete: %s"
+L["Terrible"] = "Terrible"
+L["Bad"] = "Mauvais"
+L["Good"] = "Bon"
+L["Excellent"] = "Excellent"
+L["Skinning"] = "Depecage"
+L["Herbalism"] = "Herboristerie"
+L["Mining"] = "Minage"
+L["Enchanting"] = "Enchantement"
+L["Engineering"] = "Ingenierie"
+L["Leatherworking"] = "Travail du cuir"
