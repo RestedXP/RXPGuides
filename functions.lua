@@ -1250,15 +1250,11 @@ function addon.functions.turnin(self, ...)
             if id == 10551 or id == 10552 then
                 return addon.ReloadGuide()
             end
+            addon.recentTurnIn[id] = GetTime()
             addon.SetElementComplete(self)
-            if step.active then
-                addon.recentTurnIn[id] = GetTime()
-            end
-        elseif isComplete then
+        elseif isComplete and event ~= "WindowUpdate" and step.active then
+            addon.recentTurnIn[id] = GetTime()
             addon.SetElementComplete(self, true)
-            if step.active then
-                addon.recentTurnIn[id] = GetTime()
-            end
         end
 
         if step.active then
