@@ -964,7 +964,7 @@ step
 --Rise of the Red Dawn
 RXPGuides.RegisterGuide([[
 #retail
-#version 3
+#version 4
 #group RestedXP War Within Endgame
 #subgroup |cFFFCDC00(80)|r Storylines
 #name a) Rise of the Red Dawn
