@@ -450,6 +450,16 @@ local function IsMeleeSlot(itemEquipLoc)
                'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND'
 end
 
+local function enableTotalEPLines(itemData, lines)
+    if itemData.dpsWeights then -- IsWeaponSlot equivalent
+        for suffix, data in pairs(itemData.dpsWeights) do
+            tinsert(lines, fmt("  Total EP (%s): %.2f", suffix, addon.Round(itemData.totalWeight + data.scaleWeight, 2)))
+        end
+    else -- Armor
+        tinsert(lines, fmt("  Total EP: %.2f", addon.Round(itemData.totalWeight, 2)))
+    end
+end
+
 local function TooltipSetItem(tooltip, ...)
     if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips then return end
 
@@ -461,25 +471,27 @@ local function TooltipSetItem(tooltip, ...)
     if IsEquippedItem(itemLink) then return end
 
     local itemData = addon.itemUpgrades:GetItemData(itemLink, tooltip)
-    if not itemData then return end
+    if not (itemData and itemData.totalWeight) then return end
 
     local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
-    -- TODO port weapon kind prefix up here
+    local lines = {}
+
     if not statComparisons or next(statComparisons) == nil then
         if addon.settings.profile.enableTotalEP then
-            if itemData and itemData.totalWeight and itemData.totalWeight > 0 then
-                tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+            enableTotalEPLines(itemData, lines)
 
-                tooltip:AddLine(fmt("  Total EP: %s", addon.Round(itemData.totalWeight, 2)))
+            if #lines > 0 then
+                tooltip:AddLine(fmt("%s - %s noSC", addon.title, _G.ITEM_UPGRADE))
+
+                for _, line in ipairs(lines) do tooltip:AddLine(line) end
             end
         end
 
         return
     end
 
-    local lines = {}
-    local statEPIncrease, itemEP
+    local statEPIncrease
     local lineText
 
     for _, statsData in ipairs(statComparisons) do
@@ -488,18 +500,16 @@ local function TooltipSetItem(tooltip, ...)
         if statEPIncrease == 0 then statEPIncrease = addon.Round(statsData.WeightIncrease, 4) end
 
         if statsData['Ratio'] then
-            lineText = fmt("  %s: %s / +%s EP", statsData['ItemLink'] or _G.UNKNOWN,
+            lineText = fmt("  %s: %s / +%s stats EP", statsData['ItemLink'] or _G.UNKNOWN,
                            prettyPrintRatio(statsData['Ratio']), statEPIncrease)
         elseif statsData['ItemLink'] == _G.EMPTY then
-            lineText = fmt("  %s: +%s EP", statsData['ItemLink'], statEPIncrease)
+            lineText = fmt("  %s: +%s stats EP", statsData['ItemLink'], statEPIncrease)
         else -- SPELL_FAILED_ERROR
             lineText = nil
         end
 
-        if IsMeleeSlot(itemData.itemEquipLoc) then
-            for suffix, data in pairs(itemData.dpsWeights or {}) do
-                tinsert(lines, fmt("  - %s DPS EP: %s", suffix, addon.Round(itemData.totalWeight + data.scaleWeight, 2)))
-            end
+        for suffix, data in pairs(itemData.dpsWeights or {}) do
+            tinsert(lines, fmt("  - %s DPS EP: %s", suffix, addon.Round(statEPIncrease + data.scaleWeight, 2)))
         end
 
         if lineText then tinsert(lines, lineText) end
@@ -508,26 +518,11 @@ local function TooltipSetItem(tooltip, ...)
     end
 
     if addon.settings.profile.enableTotalEP then
-        if itemData.dpsWeights then -- IsWeaponSlot equivalent
-            if IsMeleeSlot(itemData.itemEquipLoc) then
-                for suffix, data in pairs(itemData.dpsWeights or {}) do
-                    tinsert(lines, fmt("  Total EP %s: +%s", suffix, addon.Round(itemData.totalWeight + data.scaleWeight, 2)))
-                end
-            else -- IsRangedSlot
-                itemEP = addon.Round(itemData.totalWeight + itemData.dpsWeights["RANGED"].scaleWeight, 2)
-
-                tinsert(lines, fmt("  Total EP (%s): %s", "RANGED", itemEP))
-            end
-        else -- Armor
-            itemEP = addon.Round(itemData.totalWeight, 2)
-            tinsert(lines, fmt("  Total EP: %s", itemEP))
-        end
-
-        -- TODO put 1H, OH, or 2H prefix
+        enableTotalEPLines(itemData, lines)
     end
 
     if #lines > 0 then
-        tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+        tooltip:AddLine(fmt("%s - %s final", addon.title, _G.ITEM_UPGRADE))
 
         for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
@@ -1143,7 +1138,6 @@ end
 -- return ratio, weight, debugMsg
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotComparisonId)
     if not comparedData or not equippedItemLink then return nil, -1, "invalid parameters" end
-    print("Stack3, GetEquippedComparisonRatio")
 
     -- Load equipped item into hidden tooltip for parsing
     local equippedData = self:GetItemData(equippedItemLink, nil)
