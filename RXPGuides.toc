@@ -1,8 +1,4 @@
-## Interface: 30403
-## Interface-Mainline: 110005
-## Interface-Cata: 40402
-## Interface-Wrath: 30403
-## Interface-Classic: 11507
+## Interface: 110005, 40402, 50500, 11507
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
@@ -13,9 +9,10 @@
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
 
-libs\embeds.xml
+libs\embeds_Mainline.xml [AllowLoadGameType mainline]
+libs\embeds.xml [AllowLoadGameType classic]
 locale\locales.xml
-UI\includes.xml
+UI\includes.xml [AllowLoadGameType classic]
 
 Locale.lua
 Themes.lua
@@ -23,6 +20,14 @@ RXPGuides.lua
 GuideWindow.lua
 Help.lua
 SettingsPanel.lua
+
+DB/mainline.xml [AllowLoadGameType mainline]
+DB/mop.xml [AllowLoadGameType mists]
+DB/cata.xml [AllowLoadGameType cata]
+DB/wotlk.xml [AllowLoadGameType wrath]
+DB/tbc.xml [AllowLoadGameType tbc]
+DB/classic.xml [AllowLoadGameType vanilla]
+
 HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
@@ -33,13 +38,20 @@ Targeting.lua
 Tips.lua
 InventoryManager.lua
 
-DB/wotlk.xml
 
 map.lua
 functions.lua
 GuideLoader.lua
+HardcoreIntroUI.lua [AllowLoadGameType vanilla]
 
-Guides/GuideList.xml
+Guides/GuideList-Mainline.xml [AllowLoadGameType mainline]
+Guides/GuideList-cata.xml [AllowLoadGameType cata,mists]
+Guides/GuideList-classic.xml [AllowLoadGameType vanilla]
 
-Talents.lua
-Guides/Talents/wotlk.xml
+Talents.lua [AllowLoadGameType cata,vanilla]
+Guides/Talents/cata.xml [AllowLoadGameType cata]
+Guides/Talents/classic.xml [AllowLoadGameType vanilla]
+
+ItemUpgrades.lua [AllowLoadGameType cata,vanilla]
+
+CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla]

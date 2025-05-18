@@ -1,8 +1,9 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Alliance' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 22-27 Ashenvale
 #next 27-31 Northern Stranglethorn
@@ -791,7 +792,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith next
-    .subzone 2897 >>Travel to Zoram'gar Outpost 
+    .subzone 2897 >>Travel to Zoram'gar Outpost
     .isQuestAvailable 13712
 step
     .goto 63,11.16,34.43

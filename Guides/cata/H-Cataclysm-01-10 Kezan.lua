@@ -1,8 +1,9 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Alliance' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 1-6 Kezan
 #next 6-11 The Lost Isles
@@ -623,6 +624,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 6-11 The Lost Isles
 #next 10-22 Azshara

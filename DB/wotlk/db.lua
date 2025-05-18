@@ -1,6 +1,6 @@
 local addonName, addon = ...
 local faction = UnitFactionGroup("player")
-
+print('1234w')
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,

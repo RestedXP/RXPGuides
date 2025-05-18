@@ -122,12 +122,15 @@ local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
 local maxLevel
 
-if gameVersion > 50000 then
+if gameVersion > 60000 then
     addon.game = "RETAIL"
     maxLevel = 70
     if gameVersion > 120000 then
         maxLevel = 80
     end
+elseif gameVersion > 50000 then
+    addon.game = "MOP"
+    maxLevel = 90
 elseif gameVersion > 40000 then
     addon.game = "CATA"
     maxLevel = 85
@@ -174,6 +177,7 @@ addon.player = {
     name = UnitName("player"),
     maxlevel = maxLevel,
     season = addon.GetSeason(),
+    beta = GetCurrentRegion() >= 20,
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
@@ -995,7 +999,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_AUTOCOMPLETE" then
         if arg1 and addon.disabledQuests[arg1] then
             return
-        elseif (addon.gameVersion < 50000 and UnitLevel('player') ~= 85) then
+        elseif (addon.gameVersion < 60000 and UnitLevel('player') < 85) then
             for i = 1, GetNumAutoQuestPopUps() do
                 local id,status = GetAutoQuestPopUp(i)
                 if status == "COMPLETE" or id == arg1 then
@@ -1850,8 +1854,14 @@ end
 
 --MAX_PLAYER_LEVEL_TABLE[GetAccountExpansionLevel()]--not working on cata beta
 function addon.stepLogic.LoremasterCheck(step)
-    local loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+    local loremaster
+    if addon.gameVersion < 50000 then
+       loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
                      addon.game == "CATA" and addon.settings.profile.loremasterMode
+    elseif addon.gameVersion < 60000 then
+        loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    end
+
     if step.questguide and not loremaster or step.speedrunguide and loremaster then
         return false
     end

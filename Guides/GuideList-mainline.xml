@@ -1,47 +1,29 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
-    <Script file="Guides/Import.lua"/>
+<Script file="Guides/Import.lua"/>
+
+<Script file="Guides/Retail/Snippits.lua"/>
+
+<!-- LEVELING -->
+<Script file="Guides/Retail/Leveling/Conventional/Starting Zones.lua"/>
+<!-- <Script file="Guides/Retail/Leveling/Conventional/Darkmoon Faire.lua"/> -->
+<Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Dailies.lua"/>
+<Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Jade Forest.lua"/>
+<!-- <Script file="Guides/Retail/Leveling/Remix/Legion/"/> -->
 
 
- <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Azuremyst Isle.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Dun Morogh.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Elwynn Forest.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Teldrassil.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Alliance-1-16_Worgen.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Alliance-Allied Races.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Dracthyr_The Forbidden Reach.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Exile's Reach.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Durotar.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Eversong-Woods.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Mulgore.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Horde-1-10_Tirisfal.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Horde-1-16_Goblin.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Horde-Allied Races.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Neutral-Death Knight_Plaguelands The Scarlet Enclave.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Neutral-Demon Hunter_Mardum.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Neutral-Pandaren_The Wandering Isle.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Retail-Dragon Glyphs.lua"/>
- <Script file="Guides/Retail-Starting-Zones/Earthen Starting Zone.lua"/>
+<!-- END GAME -->
+<Script file="Guides/Retail/Endgame/War Within/Siren Isles.lua"/>
+<Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
+<Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
+<Script file="Guides/Retail/Endgame/War Within/Undermine Campaign.Lua"/>
 
-<Script file="Guides/Retail-Allied-Races/Retail-Alliance-DarkIronDwarf.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Alliance-Kultiran.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Alliance-LightForgedDraenei.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Alliance-Mechagnome.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Alliance-VoidElf.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Horde-HighmountainTauren.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Horde-MagharOrc.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Horde-Nightborne.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Horde-Vulpera.lua"/>
-<Script file="Guides/Retail-Allied-Races/Retail-Horde-ZandalariTroll.lua"/>
+<!-- COLLECTABLES -->
+<Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>
+<Script file="Guides/Retail/Collectables/Allied Races.Lua"/>
+<Script file="Guides/Retail/Collectables/Lorewalking.Lua"/>
 
-<Script file="Guides/retail/Retail-BfA-War-Campaign/Retail-Alliance_Battle for Azeroth War Campaign.lua"/>
-<Script file="Guides/retail/Retail-BfA-War-Campaign/Retail-Horde_Battle for Azeroth War Campaign.lua"/>
+<!-- LOREMASTER -->
 
-<Script file="Guides/Retail Pandaria Remix Free/Retail-Pandaria-Remix-Dailies.lua"/>
-<Script file="Guides/Retail Pandaria Remix Free/Retail-Pandaria-Remix-JadeForest.lua"/>
-
-<Script file="Guides/Retail-Heritage-Armor.lua"/>
-<Script file="Guides/Retail-80 Max Level Campaign.lua"/>
-<Script file="Guides/Retail-Undermine Campaign.lua"/>
 
 
 </Ui>

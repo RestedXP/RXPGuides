@@ -65,8 +65,14 @@ end
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 local function LoremasterEnabled()
-        return addon.game == "WOTLK" and addon.settings.profile.northrendLM or
-                     addon.game == "CATA" and addon.settings.profile.loremasterMode
+    local loremaster
+    if addon.gameVersion < 50000 then
+            loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+                    addon.game == "CATA" and addon.settings.profile.loremasterMode
+    elseif addon.gameVersion < 60000 then
+        loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    end
+    return loremaster
 end
 
 --local RXPGuides = addon.RXPGuides
@@ -289,7 +295,9 @@ local IsQuestTurnedIn = function(id,accountWide)
         isQuestTurnedIn = IsTurnedIn(id)
     end
     if isQuestTurnedIn then addon.recentTurnIn[id] = nil end
-    return isQuestTurnedIn or (recentTurnIn and GetTime() - recentTurnIn < 2)
+    local recent = recentTurnIn and GetTime() - recentTurnIn < 2
+    --if recent then print(7,recent,id) end
+    return isQuestTurnedIn or recent
 end
 --QT = IsQuestTurnedIn
 
@@ -731,7 +739,7 @@ function addon.GetItemName(id)
     return name
 end
 
-function addon.SetElementComplete(self, disable)
+function addon.SetElementComplete(self, disable, skipIfInactive)
     local element
     if not self.element and self.tag then
         element = self
@@ -739,11 +747,15 @@ function addon.SetElementComplete(self, disable)
         element = self.element
     end
     if not element then return end
+    local active = element.step.active
+    if skipIfInactive and not active then
+        return
+    end
     element.completed = true
     element.skip = true
     addon.updateSteps = true
     addon.UpdateMap()
-    if element.step.active and GetTime() - addon.lastStepUpdate > 1 then
+    if active and GetTime() - addon.lastStepUpdate > 1 then
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
     end
 
@@ -1238,11 +1250,11 @@ function addon.functions.turnin(self, ...)
             if id == 10551 or id == 10552 then
                 return addon.ReloadGuide()
             end
+            addon.recentTurnIn[id] = GetTime()
             addon.SetElementComplete(self)
+        elseif isComplete and event ~= "WindowUpdate" and step.active then
             addon.recentTurnIn[id] = GetTime()
-        elseif isComplete then
             addon.SetElementComplete(self, true)
-            addon.recentTurnIn[id] = GetTime()
         end
 
         if step.active then
@@ -2000,6 +2012,20 @@ function addon.functions.line(self, text, zone, ...)
             zone = zone:sub(2-1)
             element.thickness = 1
         end
+
+        local z,continent = zone:match("(%d+)/(%d+)")
+        if continent then
+            zone = z
+            for x = 1, #segments, 2 do
+                local y = x+1
+                local wx,wy = segments[x],segments[y]
+                local xc,yc = HBD:GetZoneCoordinatesFromWorld(wx, wy, tonumber(zone))
+                segments[x] = xc*100
+                segments[y] = yc*100
+                --print('v',x,xc,y,wx,wy)
+            end
+        end
+
         if zone then
             lastZone = zone
         else
@@ -2253,8 +2279,9 @@ function addon.functions.fp(self, ...)
         end
 
         if location and location ~= "" and location:find("%w+") then
+            local l = location:gsub("%-","%%-")
             for id, fp in pairs(addon.FPDB[addon.player.faction] or {}) do
-                if strupper(fp.name):find(strupper(location)) then
+                if strupper(fp.name):find(strupper(l)) then
                     element.fpId = id
                     break
                 end
@@ -2553,6 +2580,8 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     end
 
     local count = GetItemCount(id,element.includeBank)
+    numRequired = math.ceil(numRequired)
+
     if count == 0 then
         if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
             count = count + 1
@@ -2613,9 +2642,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
                 guideName = RXPCData.currentGuideName
             })
         end
-        addon.SetElementComplete(self, true)
+        addon.SetElementComplete(self, true, true)
     elseif numRequired == count then
-        addon.SetElementComplete(self, true)
+        addon.SetElementComplete(self, true, true)
     elseif not element.textOnly then
         addon.SetElementIncomplete(self)
     end
@@ -3623,14 +3652,15 @@ function addon.functions.isQuestComplete(self, ...)
     end
     local element = self.element
     local step = element.step
+    if not step.active then return end
     local id = element.questId
     local event = ...
     local isCompleted = not(IsOnQuest(id) and IsQuestComplete(id)) == not(element.reverse)
-    if event ~= "WindowUpdate" and step.active and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
-    elseif step.active and not step.completed then
+    elseif not step.completed then
         element.tooltipText = nil
     end
 end
@@ -3661,6 +3691,11 @@ function addon.functions.isOnQuest(self, text, ...)
     end
     local element = self.element
     local onQuest = false
+    local event = text
+    local step = element.step
+
+    if not step.active then return end
+
     for _,id in pairs(element.questIds) do
         if IsOnQuest(id) then
             onQuest = true
@@ -3668,13 +3703,11 @@ function addon.functions.isOnQuest(self, text, ...)
     end
 
 
-    local event = text
-    local step = element.step
-    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
-    elseif step.active and not step.completed then
+    elseif not step.completed then
         element.tooltipText = nil
     end
 end
@@ -3714,6 +3747,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     end
     local element = self.element
     local step = element.step
+    if not step.active then return end
     local ids = element.questIds
     local questTurnedIn = false
     local event = text
@@ -3728,11 +3762,11 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id,accountWide)
         end
     end
-    if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
-    elseif step.active and not step.completed then
+    elseif not step.completed then
         element.tooltipText = nil
     end
 end
@@ -4742,19 +4776,35 @@ function addon.functions.gossip(self, text, npc, length, flags)
     end
     local event = text
     local element = self.element
-    local frame = _G.GossipFrame and _G.GossipFrame.TitleContainer.TitleText
+    local step = element.step
+    local frame = _G.GossipFrame
+    if not step.active then
+        element.level = -1
+        element.completed = false
+        return
+    end
     if not event and element.step.active and _G.GossipFrame:IsShown() then
         event = "GOSSIP_SHOW"
     end
     if event == "GOSSIP_SHOW" then
-        local name = UnitName('target')
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
+            local name = UnitName('target')
             element.currentNPC = addon.GetNpcId()
             element.name = name
-            element.level = 0
-            --print(name)
-        elseif element.currentNPC == element.npc and frame and frame:IsShown() and frame:GetText() == element.name then
+            --element.level = 0
+            --print(name,element.currentNPC)
+        end
+        local title
+        if not frame then
+            return
+        elseif frame.NineSlice then
+            title = frame:IsShown() and frame:GetTitleText():GetText()
+        else
+            title = frame:IsShown() and frame.TitleContainer.TitleText:GetText()
+        end
+        if element.currentNPC == element.npc and title == element.name then
             element.level = element.level + 1
+            --print('ok',element.level)
         end
         if element.flags % 2 == 1 and element.level >= element.length then
             event = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
@@ -5763,8 +5813,10 @@ function addon.CanPlayerFly(zoneOrContinent)
     else
         local cwf = addon.IsPlayerSpell(54197)--Cold weather flying
         local fml = addon.IsPlayerSpell(90267)--Flight Master's license
+        local wfw = addon.IsPlayerSpell(115913)--Wisdom of the Four Winds
         --1945 = outland,113 = northrend
-        if ((continentId == addon.GetMapId("Outland") or
+        --
+        if ((continentId == addon.GetMapId("Outland") or (wfw and continentId == RXP.GetMapId("Pandaria")) or
             (cwf and continentId == addon.GetMapId("Northrend")) or
             (fml and (continentId == addon.GetMapId("Kalimdor") or continentId == addon.GetMapId("Eastern Kingdoms"))))
                 and ridingSkill > 224) then
@@ -6646,5 +6698,27 @@ function addon.functions.isInScenario(self, ...)
         if addon.settings.profile.debug then
             print(scenarioInfo and scenarioInfo.scenarioID)
         end
+    end
+end
+
+function addon.functions.neutralzonefinished(self, event)
+    if event == "WindowUpdate" then
+        return
+    elseif type(self) == "string" then
+        return {}
+    end
+    local step = self.element and self.element.step
+    --print(3,self,event,step.active)
+    if step and step.active then
+        local faction = UnitFactionGroup("player")
+        addon.player.faction = faction
+        addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+    end
+
+end
+
+function addon.functions.beta(self, text)
+    if type(self) == "string" and addon.player.beta then
+        return {text = text, textOnly = true}
     end
 end

@@ -1,9 +1,10 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
 RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 1-6 Shadowglen
 #next 6-10 Teldrassil
 #defaultfor NightElf
@@ -308,6 +309,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 6-10 Teldrassil
 #next 10-18 Darkshore
 #defaultfor NightElf
@@ -395,7 +397,7 @@ step << Hunter
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
-    .target Jannok Breezesong 
+    .target Jannok Breezesong
 step
     .goto 57,55.82,53.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
@@ -540,7 +542,7 @@ step << Hunter
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
-    .target Jannok Breezesong 
+    .target Jannok Breezesong
 step << Druid
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
@@ -638,7 +640,7 @@ step
 step
     #label shamans
     #sticky
-    >>Kill |cRXP_ENEMY_Gnarlpine Shamans|r. Loot them for their |cRXP_LOOT_Shaman Voodoo Charm|r 
+    >>Kill |cRXP_ENEMY_Gnarlpine Shamans|r. Loot them for their |cRXP_LOOT_Shaman Voodoo Charm|r
     .complete 2541,1 --|1/1 Shaman Voodoo Charm
     .mob Gnarlpine Shaman
 step
@@ -742,7 +744,7 @@ step << Hunter
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
-    .target Jannok Breezesong 
+    .target Jannok Breezesong
 step << Druid
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
@@ -750,7 +752,7 @@ step << Druid
     .target Kal
 step
     .goto 57,49.351,44.672
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
     .target Moon Priestess Amara
     .accept 487 >>Accept The Road to Darnassus
 step
@@ -786,7 +788,7 @@ step
     .maxlevel 10,Teldskip
 step
     .goto 57,55.759,50.467
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
     .target Syral Bladeleaf
     .accept 997 >>Accept Denalan's Earth
 step
@@ -838,7 +840,7 @@ step
     .maxlevel 10,Teldskip
 step
     .goto 57,55.871,53.901
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .target Corithras Moonrage
     .accept 7383 >>Accept Teldrassil: The Burden of the Kaldorei
 step
@@ -856,13 +858,13 @@ step
     .accept 923 >>Accept Mossy Tumors
 step << skip
     .goto 57,39.482,29.844
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .target Sentinel Arynia Cloudsbreak
     .accept 937 >>Accept The Enchanted Glade
 step
     .goto 57,39.199,29.871,5,0
     .goto 57,39.174,29.898
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .target Priestess A'moora
     .accept 2518 >>Accept Tears of the Moon
 step
@@ -1047,7 +1049,7 @@ step << Hunter
     .money <0.1402
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
-    .target Ariyell Skyshadow 
+    .target Ariyell Skyshadow
 step << Warrior
     #optional
     #completewith end

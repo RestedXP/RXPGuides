@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
 RXPGuides.RegisterGuide([[
 
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #name 1-10 Gilneas
 #displayname 1-10 Gilneas
 #next 10-18 Darkshore
@@ -215,7 +216,7 @@ step << !Priest !Druid
     >>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Bloodfang Worgen|r 2 times << Hunter
     >>Cast |T135812:0|t[Fireball] and then |T136096:0|t[Arcane Missiles] when it procs on a |cRXP_ENEMY_Bloodfang Worgen|r << Mage
     .complete 14266,1 << Warrior --Cast Charge (1)
-    .complete 14272,1 << Rogue --Cast Eviscerate (1) 
+    .complete 14272,1 << Rogue --Cast Eviscerate (1)
     .complete 14274,1 << Warlock --Cast Immolate (1)
     .complete 14276,1 << Hunter --Cast Steady Shot (2)
     .complete 14281,1 << Mage --Cast Arcane Missiles (1)
@@ -363,7 +364,7 @@ step
     #optional
     #completewith Brothers
     #label Staircase2
-    .goto 202,53.759,67.454,12,0 
+    .goto 202,53.759,67.454,12,0
     .goto 202,54.046,69.362,12 >>Travel toward the spiral staircase
 --XX NOTE: You can longjump up behind Darius to jump down, but I doubt the avg user can do it (evident of Wetlands skip despite it being easier)
 step
@@ -468,7 +469,7 @@ step
 -- >>|cRXP_WARN_After you save him, press dismount |cRXP_FRIENDLY_King Greymane's Horse|r and die to the|r |cRXP_ENEMY_Bloodfang Rippers|r
     >>|cRXP_WARN_If you fail this, talk to |cRXP_FRIENDLY_King Genn Greymane|r to try again|r
     .complete 14293,1 --Krennan Aranas rescued (1)
-    .timer 19,Save Krennan Aranas RP 
+    .timer 19,Save Krennan Aranas RP
 	.target Krennan Aranas
     .target *King Genn Greymane
     .skipgossip 35550,1
@@ -751,7 +752,7 @@ step
     >>Throw the |T132620:0|t|cRXP_LOOT_[Black Gunpowder Kegs]|r at |cRXP_ENEMY_Horrid Abominations|r
     .collect 49202,4,14348,1,-1 --Black Gunpowder Keg (4)
     .complete 14348,1 --Gunpowder thrown at Abominations (4)
-    .use 49202 
+    .use 49202
 	.mob Horrid Abomination
 step
     .goto 179,35.94,66.16,15,0
@@ -1392,7 +1393,7 @@ step
     .goto 179,52.23,68.59,45,0
     .goto 179,50.45,68.07,45,0
     .goto 179,51.46,69.67,45,0
-    >>Save |cRXP_FRIENDLY_Crash Survivors|r by killing the |cRXP_ENEMY_Swamp Crocolisks|r that are attacking them 
+    >>Save |cRXP_FRIENDLY_Crash Survivors|r by killing the |cRXP_ENEMY_Swamp Crocolisks|r that are attacking them
     .complete 24468,1 --Crash Survivor rescued (5)
 	.mob Swamp Crocolisk
     .target Crash Survivor
@@ -1492,7 +1493,7 @@ step << Hunter
     .goto 179,60.468,90.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
     .trainer >> Train your class spells
-    .target Huntsman Blake  
+    .target Huntsman Blake
 step << Warlock
     .goto 179,61.723,91.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
@@ -1785,7 +1786,7 @@ step
     #requires Walden1
     #completewith TempestBetrayal
     .cast 70456 >>|cRXP_WARN_Use|r |T135446:0|t[Krennan's Potion of Stealth] |cRXP_WARN_to become|r |T132320:0|t[Stealthed]
-    >>|cRXP_WARN_Whilst|r |T132320:0|t[Stealthed]|cRXP_WARN_, you can cast most spells. The|r |T132320:0|t[Stealth] |cRXP_WARN_breaks upon entering combat|r 
+    >>|cRXP_WARN_Whilst|r |T132320:0|t[Stealthed]|cRXP_WARN_, you can cast most spells. The|r |T132320:0|t[Stealth] |cRXP_WARN_breaks upon entering combat|r
     >>|cRXP_WARN_NOTE: |cRXP_ENEMY_Mountain Mastiffs|r have increased|r |T132320:0|t[Stealth] |cRXP_WARN_detection|r
     .use 50218
 step
@@ -1904,7 +1905,7 @@ step
     .isOnQuest 24674
 step
     #optional
-    #requires Emberstone1 
+    #requires Emberstone1
     #completewith Brothogg
     .goto 179,78.13,24.95,15,0
     .goto 179,79.39,26.51,15 >>Travel toward |cRXP_ENEMY_Brothogg the Slavemaster|r inside
@@ -1917,10 +1918,10 @@ step
 	.mob Brothogg the Slavemaster
 step
     #optional
-    #requires Enslaved 
+    #requires Enslaved
     #completewith next
     .goto 179,76.71,30.84,10 >>Exit Emberstone Mine
-    .subzoneskip 4732,1 
+    .subzoneskip 4732,1
 step << skip
     #requires Enslaved
 	#completewith next
@@ -2313,7 +2314,7 @@ step
 	.target Admiral Nightwind
 step
     .goto 57,55.229,89.176
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r
     .accept 28517 >>Accept The Howling Oak
     .target Krennan Aranas
 step

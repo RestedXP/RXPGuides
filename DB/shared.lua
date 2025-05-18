@@ -35,3 +35,9 @@ addon.repStartValue = {
 }
 
 addon.base = {66,78,71,101,116,73,110,102,111}
+
+function addon.GetSubZones(map)
+    if addon.subzoneList then
+        return addon.subzoneList[map]
+    end
+end
