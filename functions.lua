@@ -4776,19 +4776,35 @@ function addon.functions.gossip(self, text, npc, length, flags)
     end
     local event = text
     local element = self.element
-    local frame = _G.GossipFrame and _G.GossipFrame.TitleContainer.TitleText
+    local step = element.step
+    local frame = _G.GossipFrame
+    if not step.active then
+        element.level = -1
+        element.completed = false
+        return
+    end
     if not event and element.step.active and _G.GossipFrame:IsShown() then
         event = "GOSSIP_SHOW"
     end
     if event == "GOSSIP_SHOW" then
-        local name = UnitName('target')
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
+            local name = UnitName('target')
             element.currentNPC = addon.GetNpcId()
             element.name = name
-            element.level = 0
-            --print(name)
-        elseif element.currentNPC == element.npc and frame and frame:IsShown() and frame:GetText() == element.name then
+            --element.level = 0
+            --print(name,element.currentNPC)
+        end
+        local title
+        if not frame then
+            return
+        elseif frame.NineSlice then
+            title = frame:IsShown() and frame:GetTitleText():GetText()
+        else
+            title = frame:IsShown() and frame.TitleContainer.TitleText:GetText()
+        end
+        if element.currentNPC == element.npc and title == element.name then
             element.level = element.level + 1
+            --print('ok',element.level)
         end
         if element.flags % 2 == 1 and element.level >= element.length then
             event = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
