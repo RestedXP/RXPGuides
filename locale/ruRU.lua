@@ -113,16 +113,16 @@ L["Leveling report"] = "Отчет о прокачке"
 L["Open Feedback Form"] = "Открыть форму обратной связи"
 
 --HardcoreIntroUI.lua
-C["STOCKS"] = "ТЮРЬМА"
-C["ULDA"] = "УЛЬДАМАН"
-C["SM"] = "МАО"
+L["STOCKS"] = "ТЮРЬМА"
+L["ULDA"] = "УЛЬДАМАН"
+L["SM"] = "МАО"
 
 --Help.lua
-C["TomTom"] = "TomTom"
-C["SilverDragon"] = "SilverDragon"
-C["TotemTimers"] = "TotemTimers"
-C["Leatrix Maps"] = "Leatrix Maps"
-C["Narcissus"] = "Narcissus"
+L["TomTom"] = "TomTom"
+L["SilverDragon"] = "SilverDragon"
+L["TotemTimers"] = "TotemTimers"
+L["Leatrix Maps"] = "Leatrix Maps"
+L["Narcissus"] = "Narcissus"
 
 --InventoryManager.lua
 L["RXPGuides: |c%sSorting arrows/bullets|r"] = "RXPGuides: |c%sСортировка стрел/патронов|r"
@@ -388,8 +388,8 @@ L["current step has no configured targets"] = "текущий шаг не име
 L["Rare Found! %s is nearby."] = "Найден редкий моб! %s поблизости."
 
 --DB\classic\db.lua
-C["Alliance"] = "Альянс"
-C["Horde"] = "Орда"
+L["Alliance"] = "Альянс"
+L["Horde"] = "Орда"
 
 --libs\AceConfig-3.0\AceConfigCmd-3.0\AceConfigCmd-3.0.lua
 L["unknown argument"] = "неизвестный аргумент"
