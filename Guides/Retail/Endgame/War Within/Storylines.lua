@@ -1024,7 +1024,7 @@ step
     .target +Maggie Wiltshire
 step
     #completewith Barrels of Tar
-    >>Kill |cRXP_ENEMY_Defias|r. Loot them for |T135432:0|t[|cRXP_LOOT_Stolen Torches|r] and a |T656542:0|t[Unfamilar Emblem].
+    >>Kill the |cRXP_ENEMY_Defias|r forces. Loot them for |T135432:0|t[|cRXP_LOOT_Stolen Torches|r] and am |T656542:0|t[|cRXP_LOOT_Unfamilar Emblem|r].
     .complete 84639,2 --10/10 Stolen Torches retrieved
     .accept 84640 >>Accept Emblematic of Things to Come
     .mob Defias Lookout
@@ -1035,7 +1035,7 @@ step
     .complete 84639,1,1 --10/10 Barrels of Tar retrieved
 step
     .goto 2372,17.37,42.34
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sharon Wiltshire|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sharon Wiltshire|r |cRXP_WARN_inside the house|r
     .complete 84658,2 --1/1 Sharon Wiltshire found
     .target Sharon Wiltshire
 step
@@ -1050,7 +1050,8 @@ step
     .target Marshall Wiltshire
 step
     #completewith Barn
-    .goto 2372,14.65,42.17,5 >>Enter Barn
+    #title |cFFFCDC00Enter the barn|r
+    .goto 2372,14.65,42.17,5 >>Enter the barn
 step
     #requires Barn
     .goto 2372,14.77,42.89
@@ -1065,8 +1066,9 @@ step
     .target Ellie
 step
     #completewith Ellie
+    #title |cFFFCDC00Enter the house|r
     .goto 2372,14.6,42.19,5,0
-    .goto 2372,14.27,41.89,5 >>Enter House
+    .goto 2372,14.27,41.89,5 >>Enter the house
 step
     #requires Ellie
     .goto 2372,14.08,41.84
@@ -1074,27 +1076,14 @@ step
     .complete 84658,3 --1/1 Ellie found
     .target Ellie
 step
-    .goto 2372,14.78,40.91
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrels|r
-    .complete 84639,1,7 --10/10 Barrels of Tar retrieved
-step
     #label Barrels of Tar
-    .goto 2372,16.15,39.75
+    #loop
+    .goto 2372,14.78,40.91,12,0
+    .goto 2372,16.14,39.70,12,0
+    .goto 2372,17.50,41.30,12,0
+    .goto 2372,14.94,42.76,12,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
     .complete 84639,1,10 --10/10 Barrels of Tar retrieved
--- step
---     .goto 2372,15.39,40.86
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
---     .complete 84639,1,8 --10/10 Barrels of Tar retrieved
--- step
---     .goto 2372,16.99,40.35
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
---     .complete 84639,1,9 --10/10 Barrels of Tar retrieved
--- step
---     #label Barrels of Tar
---     .goto 2372,17.74,39.98
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
---     .complete 84639,1,10 --10/10 Barrels of Tar retrieved
 step
     #loop
     .goto 2372,18.17,39.76,40,0
@@ -1108,16 +1097,14 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walker Gresham|r, |cRXP_FRIENDLY_Maggie Wiltshire|r and |cRXP_FRIENDLY_Danath Trollbane|r.
     .turnin 84639 >>Turn in Torches and Tar
-    .goto 2372,20.52,39.5
+    .goto 2372,20.47.39.59
     .target +Walker Gresham
     .turnin 84658 >>Turn in Finding Family
-    .goto 2372,20.52,39.5
-    -- .goto 2372,20.52,39.62
+    .goto 2372,20.50,39.39
     .target +Maggie Wiltshire
-    -- .goto 2372,20.43,39.30
     .turnin 84640 >>Turn in Emblematic of Things to Come
     .accept 84641 >>Accept Ill Tidings
-    .goto 2372,20.52,39.5
+    .goto 2372,20.46,39.29
     .target +Danath Trollbane
 step
     .goto 2372,19.41,56.18
@@ -1139,60 +1126,63 @@ step
 step
     .goto 2372,20.57,62.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balinda Darkstone|r
-    .complete 84645,1,1 --5/5 Brewston's requests delivered
+    .complete 84645,1,1 --1/5 Brewston's requests delivered
     .skipgossipid 131507
     .target Balinda Darkstone
 step
     .goto 2372,21.96,65.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joseph the Enlightened|r
-    .complete 84645,1,2 --5/5 Brewston's requests delivered
+    .complete 84645,1,2 --2/5 Brewston's requests delivered
     .mob Joseph the Enlightened
     .skipgossipid 131529
 step
     #completewith next
     #label Brewston
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bertram Barleybeard|r
-    .complete 84645,1,3 --5/5 Brewston's requests delivered
+    .complete 84645,1,3 --3/5 Brewston's requests delivered
     .target Bertram Barleybeard
 step
     #completewith Brewston
+    #title |cFFFCDC00Enter the house|r
     .goto 2372,19.44,65.45,10,0
     .goto 2372,19.63,65.94,5,0
-    .goto 2372,19.86,66.17,5 >>Enter House
+    .goto 2372,19.86,66.17,5 >>Enter the house
 step
     #requires Brewston
     .goto 2372,19.85,66.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bertram Barleybeard|r
-    .complete 84645,1,3 --5/5 Brewston's requests delivered
+    .complete 84645,1,3 --3/5 Brewston's requests delivered
     .target Bertram Barleybeard
     .skipgossipid 131524
 step
     #completewith next
     #label Brewston2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Luma Noss|r
-    .complete 84645,1,4 --5/5 Brewston's requests delivered
+    .complete 84645,1,4 --4/5 Brewston's requests delivered
 step
     #completewith Brewston2
+    #title |cFFFCDC00Leave the house|r
     .goto 2372,19.86,66.17,5,0 
     .goto 2372,19.63,65.94,5,0
-    .goto 2372,19.45,65.12,5 >>Leave House
+    .goto 2372,19.45,65.12,5 >>Leave the house
 step
     #requires Brewston2
     #completewith next
     #label Brewston3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Luma Noss|r
-    .complete 84645,1,4 --5/5 Brewston's requests delivered
+    .complete 84645,1,4 --4/5 Brewston's requests delivered
     .target Luma Noss
 step
     #requires Brewston2
     #completewith Brewston3
+    #title |cFFFCDC00Enter the house|r
     .goto 2372,17.44,66.47,10,0
-    .goto 2372,13.85,69.22,10 >>Enter House
+    .goto 2372,13.85,69.22,10 >>Enter the house
 step
     #requires Brewston3
     .goto 2372,14.39,70.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Luma Noss|r
-    .complete 84645,1,4 --5/5 Brewston's requests delivered
+    .complete 84645,1,4 --4/5 Brewston's requests delivered
     .skipgossipid 131514
     .target Luma Noss
 step
@@ -1202,7 +1192,8 @@ step
     .complete 84645,1,5 --5/5 Brewston's requests delivered
 step
     #completewith Brewston4
-    .goto 2372,13.83,69.28,10 >>Leave House
+    #title |cFFFCDC00Leave the house|r
+    .goto 2372,13.83,69.28,10 >>Leave the house
 step
     #requires Brewston4
     #label Brewston5
@@ -1215,6 +1206,7 @@ step
 step
     #loop
     .goto 2372,12.6,67.59,30,0
+    .goto 2372,14.68,68.43,30,0
     .goto 2372,14.14,64.66,30,0
     .goto 2372,15.94,65.99,30,0
     .goto 2372,17.13,63.08,30,0
@@ -1228,7 +1220,7 @@ step
     .goto 2372,16.27,68.33,30,0
     .goto 2372,14.68,68.43,30,0
     .goto 2372,12.16,69.33,30,0
-    >>Kill |cRXP_ENEMY_Marran Supporters|r
+    >>Kill or talk to |cRXP_ENEMY_Marran Supporters|r
     .complete 84643,1 --15/15 Marran Supporters sent home
     .mob Marran Supporter
     .skipgossipid 131456
@@ -1244,7 +1236,8 @@ step
     .target Colonel Veronica Nials
 step
     #completewith Curfew Kerfuffle
-    .goto 2372,17.53,60.55,10 >>Enter House
+    #title |cFFFCDC00Enter the house|r
+    .goto 2372,17.53,60.55,10 >>Enter the house
 step
     #requires Curfew Kerfuffle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Roderick Brewston|r and |cRXP_FRIENDLY_Colonel Veronica Nials|r
@@ -1276,6 +1269,19 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 84649,3 --1/1 Listen to the conversation
 step
+    #completewith next
+    #label MarranRefuge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colonel Veronica Nials|r
+    .turnin 84649 >>Turn in Marran Trollbane
+    .accept 84650 >>Accept Finding Refuge at Refuge Pointe
+    .target Colonel Veronica Nials
+step
+    #completewith MarranRefuge
+    #title |cFFFCDC00Follow the arrow|r
+    .goto 2372,17.92,60.50,6,0
+    .goto 2372,17.96,59.37,8 >>Go back upstairs
+step
+    #requires MarranRefuge
     .goto 2372,17.54,59.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colonel Veronica Nials|r
     .turnin 84649 >>Turn in Marran Trollbane
@@ -1288,7 +1294,8 @@ step
     .complete 84650,1 --1/1 Meet Faerin at Refuge Pointe
 step
     #completewith Pointe
-    .goto 2372,17.52,60.58,10 >>Leave the House
+    #title |cFFFCDC00Leave the house|r
+    .goto 2372,17.52,60.58,7 >>Leave the house
 step
     #requires Pointe
     .goto 2372,38.01,52.27
@@ -1306,10 +1313,10 @@ step
     .complete 84650,3 --1/1 Follow Faerin up the hill
 step
     .goto 2372,40.95,53.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga Bloodfury|r
     .complete 84650,4 --1/1 Speak to Karga
     .skipgossipid 131610
-    .target Karga
+    .target Karga Bloodfury
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r and |cRXP_FRIENDLY_Karga Bloodfury|r
     .turnin 84650 >>Turn in Finding Refuge at Refuge Pointe
@@ -1320,24 +1327,21 @@ step
     .goto 2372,40.95,53.55
     .target +Karga Bloodfury
 step
-    .goto 2372,40.01,49.53
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84652,1,1 --4/4 Supply Crates collected
+    #completewith next
+    >>Defeat |cRXP_ENEMY_Joseph the Enlightened|r
+    .complete 84651,1 --1/1 Enemy leader defeated
+    .mob Joseph the Enlightened
 step
-    .goto 2372,39.81,48.42
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84652,1,2 --4/4 Supply Crates collected
-step
-    .goto 2372,40.66,48.17
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84652,1,3 --4/4 Supply Crates collected
-step
-    .goto 2372,40.78,46.72
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84652,1,4 --4/4 Supply Crates collected
+    #loop
+    .goto 2372,40.01,49.53,8,0
+    .goto 2372,39.81,48.42,8,0
+    .goto 2372,40.66,48.17,8,0
+    .goto 2372,40.78,46.72,8,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Supply Crates|r.
+    .complete 84652,1 --4/4 Supply Crates collected
 step
     .goto 2372,40.42,46.28
-    >>Kill |cRXP_ENEMY_Joseph the Enlightened|r
+    >>Defeat |cRXP_ENEMY_Joseph the Enlightened|r
     .complete 84651,1 --1/1 Enemy leader defeated
     .mob Joseph the Enlightened
 step
@@ -1360,21 +1364,14 @@ step
     .accept 84704 >>Accept A Different Point of View
     .target Eitrigg
 step
-    .goto 2372,70.18,37.76
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84704,1,1 --4/4 Supply Crates placed
-step
-    .goto 2372,68.94,35.05
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84704,1,2 --4/4 Supply Crates placed
-step
-    .goto 2372,69.32,34.89
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r |cRXP_WARN_on the platform|r.
-    .complete 84704,1,3 --4/4 Supply Crates placed
-step
-    .goto 2372,69.18,31.83
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
-    .complete 84704,1,4 --4/4 Supply Crates placed
+    #loop
+    .goto 2372,70.18,37.76,6,0
+    .goto 2372,68.94,35.05,6,0
+    .goto 2372,69.32,34.89,6,0
+    .goto 2372,69.18,31.83,6,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Supply Crates|r.
+    *|cRXP_WARN_The third one is on the platform|r
+    .complete 84704,1 --4/4 Supply Crates placed
 step
     #completewith next
     #label To See a Troll
@@ -1385,7 +1382,8 @@ step
     .disablecheckbox
 step
     #completewith To See a Troll
-    .goto 2372,69.14,33.07,5 >>Enter the House
+    #title |cFFFCDC00Enter the house|r
+    .goto 2372,69.14,33.07,5 >>Enter the house
 step
     #requires To See a Troll
     .goto 2372,69.57,32.88
@@ -1405,7 +1403,8 @@ step
     .disablecheckbox
 step
     #completewith Withering the Witherbark
-    .goto 2372,69.14,33.07,5 >>Leave the House
+    #title |cFFFCDC00Leave the house|r
+    .goto 2372,69.14,33.07,5 >>Leave the house
 step
     #requires Withering the Witherbark
     .goto 2372,54.44,63.21
@@ -1416,26 +1415,26 @@ step
     .accept 84706 >>Accept Crime Family
 step
     #completewith Perry
-    >>Kill |cRXP_ENEMY_Witherbark troll|r
+    >>Kill the |cRXP_ENEMY_Witherbark Trolls|r
     .complete 84705,1 --15/15 Witherbark troll slain
     .mob Witherbark Headhunter
     .mob Witherbark Axe Thrower
     .mob Witherbark Shadow Hunter
 step
-    .goto 2372,66.60,61.47
+    .goto 2372,66.53,61.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crestor|r
     .complete 84706,3 --1/1 Crestor saved
     .skipgossipid 124871
     .target Crestor
 step
-    .goto 2372,68.23,67.45
+    .goto 2372,68.21,67.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holt|r
     .complete 84706,2 --1/1 Holt saved
     .skipgossipid 124867
     .target Holt
 step
     #label Perry
-    .goto 2372,63.79,72.80
+    .goto 2372,64.00,72.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Perry|r
     .complete 84706,1 --1/1 Perry saved
     .skipgossipid 124855
@@ -1478,27 +1477,31 @@ step
     .target +Faerin Lothar
 step
     #completewith Syndicates
-    >>Kill |cRXP_ENEMY_Syndicates|r
+    >>Kill the |cRXP_ENEMY_Syndicate forces|r
     .complete 84709,1 --Retake Hammerfall (100%)
     .mob Syndicate Torchthrower
     .mob Syndicate Battle Shredder
     .mob Imposter Refugee
     .mob Syndicate Pyromancer
 step
-    .goto 2372,69.59,36.52
+    .goto 2372,69.64,36.11
+    >>Use the |T971277:0|t[|cRXP_WARN_ExtraActionButton|r].
+    .complete 85451,1 --1/1 East Spirit Lodge saved
+step
+    .goto 2372,68.44,37.15
     >>Use the |T971277:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 85451,2 --1/1 West Spirit Lodge saved
 step
-    .goto 2372,68.08,35.52
+    .goto 2372,67.85,35.27
     >>Use the |T971277:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 85451,3 --1/1 Stables saved
 step
-    .goto 2372,69.07,33.14
+    .goto 2372,68.97,33.23
     >>Use the |T971277:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 85451,5 --1/1 Great Hall saved
 step
     .goto 2372,69.28,32.89
-    >>Kill |cRXP_ENEMY_Joseph the Enlightened|r
+    >>Defeat |cRXP_ENEMY_Joseph the Enlightened|r |cRXP_WARN_inside the great hall|r
     .complete 84710,1 --1/1 Joseph the Enlightened defeated
     .mob Joseph the Enlightened
 step
@@ -1508,15 +1511,15 @@ step
     .complete 85451,4 --1/1 Blacksmith saved
 step    
     #completewith Blacksmith
-    .goto 2372,69.02,33.06,10 >>Leave the House
+    #title |cFFFCDC00Leave the house|r
+    .goto 2372,69.02,33.06,10 >>Leave the house
 step
     #requires Blacksmith
     #label Syndicates
-    .goto 2372,68.72,31.88
+    .goto 2372,68.44,31.96
     >>Use the |T971277:0|t[|cRXP_WARN_ExtraActionButton|r].
     .complete 85451,4 --1/1 Blacksmith saved
 step
-    #completewith Syndicates
     #loop
     .goto 2372,69.23,34.83,30,0
     .goto 2372,70.11,38.11,30,0
@@ -1528,15 +1531,17 @@ step
     .mob Imposter Refugee
     .mob Syndicate Pyromancer
 step
-    .goto 2372,68.49,30.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r, |cRXP_FRIENDLY_Faerin Lothar|r and |cRXP_FRIENDLY_Overlord Geya'rah|r.
     .turnin 84709 >>Turn in Hammerfall Down
+    .goto 2372,68.46,30.78
     .target +Eitrigg
     .turnin 84710 >>Turn in Once Bitten Twice Shy
+    .goto 2373,68.43,30.48
     .target +Faerin Lothar
     .turnin 85451 >>Turn in The Burning of Hammerfall
     .accept 84711 >>Accept Danath's Disappearance
-    .target +FateOverlord Geya'rah
+    .goto 2372,68.49,30.63
+    .target +Overlord Geya'rah
 step
     .goto 2372,41.55,61.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r.
@@ -1544,18 +1549,18 @@ step
     .accept 84712 >>Accept False Flag
 step
     .goto 2372,41.62,61.74
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Dead Horse|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dead Horse|r
     .complete 84712,2 --1/1 Dead Horse investigated
     .skipgossipid 125032
     .target Dead Horse
 step
     .goto 2372,42.15,61.18
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Suspicious Dirt|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orcish Axe|r
     .complete 84712,1 --1/1 Orcish Axe investigated
     .skipgossipid 125039
 step
     .goto 2372,40.86,61.27
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Orcish Axe|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Suspicious Dirt|r
     .complete 84712,3 --1/1 Suspicious Dirt investigated
     .skipgossipid 125040
 step
@@ -1585,7 +1590,8 @@ step
     .target Nials in the Stromgarde barracks
 step
     #completewith Nials
-    .goto 2372,17.54,60.62,10 >>Enter the House
+    #title |cFFFCDC00Enter the house|r
+    .goto 2372,17.54,60.62,10 >>Enter the house
 step
     #requires Nials
     .goto 2372,17.52,59.79
@@ -1613,7 +1619,9 @@ step
     #completewith Army Tent
     .goto 2372,17.88,60.42,5,0
     .goto 2372,17.97,59.51,5,0
-    .goto 2372,17.54,60.63,3 >>Leave the House
+    .goto 2372,17.66,59.57,6,0
+    #title |cFFFCDC00Leave the house|r
+    .goto 2372,17.54,60.63,3 >>Leave the house
 step
     #requires Army Tent
     #completewith Proof2
@@ -1627,13 +1635,14 @@ step
     #requires Army Tent
     #label Army tent2
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Dawn Book|r
     .complete 84659,1 --1/1 Army tent searched
     .skipgossipid 132032
 step
     #requires Army Tent
     #completewith Army tent2
-    .goto 2372,15.51,61.8,10 >>Enter the Tent
+    #title |cFFFCDC00Enter the tent|r
+    .goto 2372,15.51,61.8,10 >>Enter the tent
 step
     #requires Army tent2
     .goto 2372,15.19,61.93
@@ -1647,11 +1656,18 @@ step
     .complete 84659,2 --1/1 Inn basement searched
 step
     #completewith Inn basement
-    .goto 2372,15.57,61.74,5,0
-    .goto 2372,15.07,64.9,5,0
-    .goto 2372,14.3,64.88,5,0
-    .goto 2372,14.3,64.55,5,0
-    .goto 2372,14.9,64.48,5 >>Enter the Basement
+    #label FollowArrowHouseBasement
+    #title |cFFFCDC00Enter the inn|r
+    .goto 2372,15.51,61.8,6,0
+    .goto 2372,15.15,64.89,5 >>Enter the inn
+step
+    #requires FollowArrowHouseBasement
+    #completewith Inn basement
+    #label FollowArrowInnBasement
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2372,14.29,64.96,5,0
+    .goto 2372,14.29,64.54,5,0
+    .goto 2372,14.92,64.46,5 >>Follow the arrow into the basement of the nearby house
 step
     #requires Inn basement
     .goto 2372,14.47,64.96
@@ -1661,46 +1677,41 @@ step
 step
     #completewith next
     #label Basement
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Red Dawn Book|r
+    .complete 84659,4 --1/1 Home searched
+step
+    #label ExitTavern
+    #completewith Basement
+    #title |cFFFCDC00Exit the inn|r
     .goto 2372,14.86,64.43,5,0
     .goto 2372,14.3,64.55,5,0
     .goto 2372,14.3,64.88,5,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Book|r
-    .complete 84659,3 --1/1 Tavern searched
+    .goto 2372,15.07,64.9,5 >>Exit the inn
 step
+    #requires ExitTavern
     #completewith Basement
-    .goto 2372,15.07,64.9,5 >>Enter House
-step
-    #completewith Basement
-    .goto 2372,15.07,64.9,5 >>Exit Tavern
-step
-    #requires Basement
-    #label Basement2
-    #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Book|r
-    .complete 84659,4 --1/1 Home searched
-step
-    #requires Basement
-    #completewith Basement2
-    .goto 2372,16.36,68.49,10 >>Enter House
+    #title |cFFFCDC00Enter the house|r
+    .goto 2372,15.07,64.9,5 >>Enter the house
 step
     #requires Basement2
     .goto 2372,16.34,68.87
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Dawn Book|r
     .complete 84659,4 --1/1 Home searched
     .skipgossipid 132033
 step
     #completewith next
     #label Tavern searched
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Dawn Book|r
     .complete 84659,3 --1/1 Tavern searched
 step
     #completewith Tavern searched
+    #title |cFFFCDC00Enter the tavern|r
     .goto 2372,16.33,68.46,5,0
-    .goto 2372,13.89,69.28,5 >>Enter Tavern
+    .goto 2372,13.89,69.28,5 >>Enter the tavern
 step
     #requires Tavern searched
     .goto 2372,14.19,69.33
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Dawn Book|r
     .complete 84659,3 --1/1 Tavern searched
     .skipgossipid 132031
 step
@@ -1712,7 +1723,8 @@ step
     .goto 2372,10.99,70.42,5,0
     .goto 2372,17.52,60.58,10,0
     .goto 2372,10.99,70.42
-    >>Navigate the Mage Tower
+    #title |cFFFCDC00Climb the tower|r
+    >>Climb the Mage Tower
     .complete 84659,5 --1/1 Mage tower searched
 step
     #label Proof2
@@ -1724,16 +1736,17 @@ step
 step
     #completewith next
     #label Mage tower searched2
-    >>Kill |cRXP_ENEMY_Red Dawns|r. Loot them for |T5197944:0|t[|cRXP_LOOT_Proof|r].
+    >>Kill |cRXP_ENEMY_Red Dawns|r. Loot them for any |T5197944:0|t[|cRXP_LOOT_Articles of Proof|r].
     .complete 87299,1 --20/20 Articles of Proof
     .mob Red Dawn Enforcer
     .mob Red Dawn Firebrand
     .mob Red Dawn Houndmaster
 step
     #completewith Mage tower searched2
+    #title |cFFFCDC00Leave the mage tower|r
     .goto 2372,11.3,70.5,5,0
     .goto 2372,11.09,70.84,5,0
-    .goto 2372,11.42,70.34,3 >>Exit the Mage Tower
+    .goto 2372,11.42,70.34,3 >>Leave the mage tower
 step
     #requires Mage tower searched2
     .goto 2372,12.67,67.87,30,0
@@ -1761,7 +1774,7 @@ step
     .target +Faerin Lothar
 step
     .goto 2372,19.46,64.73
-    >>Kill |cRXP_ENEMY_Joseph the Enlightened|r
+    >>Kill |cRXP_ENEMY_Joseph the Enlightened|r (|cRXP_WARN_third time is the charm|r)
     .complete 84717,1 --1/1 Joseph the Enlightened slain
     .mob Joseph the Enlightened
 step
@@ -1792,5 +1805,5 @@ step
     .target Faerin Lothar
 step 
     .goto 2372,20.66,44.97
-    .zone 2339 >>Enter Dornogal
+    .zone 2339 >>Click on the Portal to Dornogal
 ]])
