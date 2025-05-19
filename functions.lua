@@ -4784,7 +4784,8 @@ function addon.functions.gossip(self, text, npc, length, flags)
         return
     end
     if not event and element.step.active and _G.GossipFrame:IsShown() then
-        event = "GOSSIP_SHOW"
+        local options = GossipGetOptions()
+        event = next(options) and "GOSSIP_SHOW"
     end
     if event == "GOSSIP_SHOW" then
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
@@ -6720,5 +6721,39 @@ end
 function addon.functions.beta(self, text)
     if type(self) == "string" and addon.player.beta then
         return {text = text, textOnly = true}
+    end
+end
+
+function addon.functions.klaxxi(self, text, poi, arg1)
+    if type(self) == "string" and addon.player.beta then
+        return {text = text, textOnly = true, poi = poi, arg1 = arg1}
+    end
+
+    local element = self.element
+    local event = text
+    local step = element.step
+    local t = time()
+    local dr = addon.realmData.dailyReset or 0
+    if dr < t then
+        addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
+        addon.realmData.klaxxi = nil
+    end
+
+    if not step.active or event == "WindowUpdate" then return end
+
+    poi = addon.realmData.klaxxi
+    local match
+    if poi == element.poi or (element.poi == 'unknown' and not poi) then
+        match = true
+    end
+
+    if element.arg1 then match = not match end
+
+    if not addon.settings.profile.debug and not addon.isHidden and not match then
+        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif not step.completed then
+        element.tooltipText = nil
     end
 end

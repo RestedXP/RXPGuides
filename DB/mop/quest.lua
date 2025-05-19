@@ -463,3 +463,49 @@ addon.questAcceptItems = {
     --
     [11941] = 35684, -- Scintillating Fragment quest
 }
+--C_DateAndTime.GetSecondsUntilDailyReset()
+
+
+local klaxxiQuests ={
+
+    [31109] = "clutches",
+    [31494] = "clutches",
+    [31496] = "clutches",
+    [31503] = "clutches",
+    [31487] = "clutches",
+    [31599] = "clutches",
+    [31502] = "clutches",
+
+    [31111] = "south",
+    [31509] = "south",
+    [31598] = "south",
+    [31507] = "south",
+    [31506] = "south",
+    [31508] = "south",
+    [31505] = "south",
+
+    [31232] = "terrace",
+    [31238] = "terrace",
+    [31231] = "terrace",
+    [31235] = "terrace",
+    [31234] = "terrace",
+    [31233] = "terrace",
+    [31677] = "terrace",
+
+    [31268] = "lake",
+    [31271] = "lake",
+    [31024] = "lake",
+    [31267] = "lake",
+    [31270] = "lake",
+    [31269] = "lake",
+
+}
+
+function addon.CheckAvailableQuest(id)
+    local hub = klaxxiQuests[id]
+
+    if hub then
+        addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
+        addon.realmData.klaxxi = hub
+    end
+end
