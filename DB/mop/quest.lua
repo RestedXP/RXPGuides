@@ -468,36 +468,36 @@ addon.questAcceptItems = {
 
 local klaxxiQuests ={
 
-    [31109] = "clutches",
-    [31494] = "clutches",
-    [31496] = "clutches",
-    [31503] = "clutches",
-    [31487] = "clutches",
-    [31599] = "clutches",
-    [31502] = "clutches",
+    [31109] = "clutches",--Culling the Swarm
+    [31494] = "clutches",--Free From Her Clutches
+    [31496] = "clutches",--Sampling the Empire's Finest
+    [31503] = "clutches",--Shortcut to Ruin
+    [31487] = "clutches",--Sonic Disruption
+    [31599] = "clutches",--The Matriarch's Maw
+    [31502] = "clutches",--Wing Clip
 
-    [31111] = "south",
-    [31509] = "south",
-    [31598] = "south",
-    [31507] = "south",
-    [31506] = "south",
-    [31508] = "south",
-    [31505] = "south",
+    [31111] = "south",--Eradicating the Zan'thik
+    [31509] = "south",--Fear Takes Root
+    [31598] = "south",--Kypa'rak's Core
+    [31507] = "south",--Meltdown
+    [31506] = "south",--Shackles of Manipulation
+    [31508] = "south",--Specimen Request
+    [31505] = "south",--Vess-Guard Duty
 
-    [31232] = "terrace",
-    [31238] = "terrace",
-    [31231] = "terrace",
-    [31235] = "terrace",
-    [31234] = "terrace",
-    [31233] = "terrace",
-    [31677] = "terrace",
+    [31232] = "terrace",--An Ancient Empire
+    [31238] = "terrace",--Brain Food
+    [31231] = "terrace",--Dreadspinner Extermination
+    [31235] = "terrace",--Nope Nope Nope
+    [31234] = "terrace",--Putting An Eye Out
+    [31233] = "terrace",--Sap Tapping
+    [31677] = "terrace",--The Warlord's Ashes
 
-    [31268] = "lake",
-    [31271] = "lake",
-    [31024] = "lake",
-    [31267] = "lake",
-    [31270] = "lake",
-    [31269] = "lake",
+    [31268] = "lake",--A Little Brain Work
+    [31271] = "lake",--Bad Genes
+    [31024] = "lake",--Kunchong Treats
+    [31267] = "lake",--Mistblade Destruction
+    [31270] = "lake",--The Fight Against Fear
+    [31269] = "lake",--The Scale-Lord
 
 }
 
