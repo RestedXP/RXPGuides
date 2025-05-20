@@ -49,6 +49,7 @@ addon.GetItemCooldown = GetItemCooldown
 local function GetActiveItemList(ref)
     local itemList = {}
     local activeItems = {}
+    local activeSpells = {}
     --[[
     if not (ref and ref.activeItems) then
         ref = addon
@@ -56,14 +57,17 @@ local function GetActiveItemList(ref)
     ref = addon
 
     if ref.activeSpells then
-        for spellId in pairs(ref.activeSpells) do
-            if addon.IsPlayerSpell(spellId) then
+        for spellId,arg in pairs(ref.activeSpells) do
+            --print(arg)
+            if (addon.IsPlayerSpell(spellId) or arg == "p") and not activeSpells[spellId] then
                 local name, rank, icon = GetSpellInfo(spellId)
+                activeSpells[spellId] = true
                 table.insert(itemList, {
                     name = name,
                     texture = icon,
                     spell = true,
                     id = spellId,
+                    arg = arg,
                 })
             end
         end
@@ -71,7 +75,8 @@ local function GetActiveItemList(ref)
 
     for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         local id = GetInventoryItemID("player", i)
-        if id and ref.activeItems[id] then
+        local arg = ref.activeItems[id]
+        if id and arg then
             local itemName, _, _, _, _, _, _, _, _, itemTexture, _, classID =
                 GetItemInfo(id)
             table.insert(itemList, {
@@ -80,6 +85,7 @@ local function GetActiveItemList(ref)
                 invSlot = i,
                 id = id,
                 spell = false,
+                arg = arg,
             })
         end
     end
@@ -88,7 +94,8 @@ local function GetActiveItemList(ref)
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)
-            if id and ref.activeItems[id] and not activeItems[id] then
+            local arg = ref.activeItems[id]
+            if id and arg and not activeItems[id] then
                 activeItems[id] = true
                 local itemName, _, _, _, _, _, _, _, _, itemTexture, _, classID =
                     GetItemInfo(id)
@@ -99,25 +106,34 @@ local function GetActiveItemList(ref)
                     slot = slot,
                     id = id,
                     spell = false,
+                    arg = arg,
                 })
             end
         end
     end
-    if C_ToyBox and PlayerHasToy then
-        for id in pairs(ref.activeItems) do
-            if not activeItems[id] and PlayerHasToy(id) then
-                activeItems[id] = true
-                local itemID, toyName, icon = C_ToyBox.GetToyInfo(id)
-                table.insert(itemList, {
-                    name = toyName,
-                    texture = icon,
-                    toy = true,
-                    id = id,
-                    spell = false,
-                })
+
+    for id,arg in pairs(ref.activeItems) do
+        local toy = C_ToyBox and PlayerHasToy(id)
+        if not activeItems[id] and (arg == "p" or toy) then
+            activeItems[id] = true
+            local name,icon
+            if toy then
+             _, name, icon = C_ToyBox.GetToyInfo(id)
+            else
+                name, _, _, _, _, _, _, _, _, icon =
+                    GetItemInfo(id)
             end
+            table.insert(itemList, {
+                name = name,
+                texture = icon,
+                toy = toy,
+                id = id,
+                spell = false,
+                arg = arg,
+            })
         end
     end
+
     return itemList
 end
 
@@ -260,6 +276,8 @@ local fOnEnter = function(self)
             GameTooltip:SetSpellByID(self.itemId)
         elseif self.toy then
             GameTooltip:SetToyByItemID(self.itemId)
+        else
+            GameTooltip:SetItemByID(self.itemId)
         end
         GameTooltip:Show()
     end

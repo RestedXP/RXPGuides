@@ -5015,9 +5015,10 @@ function addon.functions.use(self, text, ...)
         if text and text ~= "" then element.text = text end
         element.activeItems = {}
         for i, v in ipairs(items) do
-            local id = tonumber(v)
+            local id, arg = v:match("(%d+):?(%S*)")
+            id = tonumber(id)
             if id then
-                element.activeItems[id] = true
+                element.activeItems[id] = arg
             else
                 return addon.error(L("Error parsing guide") .. " " ..
                                        addon.currentGuideName ..
@@ -5038,7 +5039,7 @@ function addon.functions.use(self, text, ...)
         step.activeItems = itemTable
     end
     -- if not text and step.active then
-    for item in pairs(element.activeItems) do itemTable[item] = true end
+    for item,arg in pairs(element.activeItems) do itemTable[item] = arg end
     -- end
 end
 
