@@ -86,7 +86,7 @@ events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
 events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
-events.turnin = "QUEST_TURNED_IN"
+events.turnin = {"QUEST_TURNED_IN","QUEST_LOG_UPDATE"}
 if C_EventUtils and C_EventUtils.IsEventValid("STOP_MOVIE") then
     events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
 else
