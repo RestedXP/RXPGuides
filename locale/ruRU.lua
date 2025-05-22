@@ -100,7 +100,7 @@ L["Go to step"] = "Перейти к шагу"
 L["Select another guide"] = "Выбрать другое руководство"
 L["Reload Guide"] = "Перезагрузить руководство"
 L["Give Feedback for step"] = "Оставить отзыв о шаге"
-L["Welcome to RestedXP Guides\nRight click to pick a guide"] = "Добро пожаловать в руководства RestedXP\nЩелкните правой кнопкой мыши, чтобы выбрать руководство"
+L["Welcome to RestedXP Guides\nRight click to pick a guide"] = "Добро пожаловать в руководства RestedXP\nПКМ, чтобы выбрать руководство"
 L["Available Guides"] = "Доступные руководства"
 L["Gold Farming Guides"] = "Руководства по фарму золота"
 L["Unused Guides"] = "Неиспользуемые руководства"
@@ -375,7 +375,7 @@ L["Enable embedded Cpt. Stadics' Vendor Treasures"] = "Включить встр
 
 --Talents.lua
 L["Available Guides"] = "Доступные руководства"
-L["Left click to apply talents"] = "Щелкните левой кнопкой мыши, чтобы применить таланты"
+L["Left click to apply talents"] = "ЛКМ, чтобы применить таланты"
 L["Error parsing guide"] = "Ошибка разбора руководства"
 L["Too low for %s"] = "Слишком низкий уровень для %s"
 L["Too high for %s"] = "Слишком высокий уровень для %s"
