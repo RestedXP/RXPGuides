@@ -20,7 +20,10 @@
 <!-- COLLECTABLES -->
 <Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>
 <Script file="Guides/Retail/Collectables/Allied Races.Lua"/>
+
+<!--
 <Script file="Guides/Retail/Collectables/Lorewalking.Lua"/>
+-->
 
 <!-- LOREMASTER -->
 
