@@ -2804,11 +2804,6 @@ step << NightElf !Druid
     #season 0
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-step
-    #hardcore << NightElf !Druid
-    #optional
-    .hs >> Hearthstone back to Auberdine
-    .cooldown item,6948,>0,1
 step << skip --logout skip
     #hardcore << NightElf !Druid
     #optional
@@ -2836,7 +2831,6 @@ step
     .isOnQuest 1002
 step
     #optional
-    #season 0 << !Warrior !Rogue
     #label CavetoAuber
     #completewith CliffspringEnd
     .subzone 442 >> Travel to Auberdine
@@ -3782,23 +3776,6 @@ step
     .use 12347
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
-step << Warrior
-    #season 2
-    .goto Darkshore,52.60,36.65,45,0
-    .goto Darkshore,51.48,38.26
-    >>Kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
-    .complete 2139,1 --Den Mother (1)
-    .mob Den Mother
-step << skip --logout skip << Warrior
-    #season 2
-    .goto Darkshore,51.48,38.43
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the mushroom at the back of Den Mother's cave and perform a logout skip by logging out on top of it|r
-step << Warrior
-    #optional
-    #season 2
-    #completewith BlackwoodSod
-    .subzone 442 >> Travel to Auberdine
 step << !Hunter
     #xprate <1.5
     #label CompleteFangs
