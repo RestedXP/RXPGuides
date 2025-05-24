@@ -2443,16 +2443,16 @@ end
 addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
-        element.dynamicText = true
         local text, id, qty, questId, objFlags, flags, arg1, arg2 = ...
-        id = tonumber(id)
+        local element = {ids = id}
+        element.dynamicText = true
+        id = tonumber(id:match('^%d+'))
         objFlags = tonumber(objFlags) or 0
         flags = tonumber(flags) or 0
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ': No item ID provided\n' .. self)
+                           ': Invalid item ID provided\n' .. self)
         end
         element.objFlags = objFlags
         element.questId = tonumber(questId)
@@ -2579,20 +2579,29 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         end
     end
 
-    local count = GetItemCount(id,element.includeBank)
     numRequired = math.ceil(numRequired)
+    --
+    local function GetCount(itemId)
+        local count = GetItemCount(itemId,element.includeBank)
 
-    if count == 0 then
-        if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
-            count = count + 1
-        end
-
-        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-            if GetInventoryItemID("player", i) == id then
+        if count == 0 then
+            if C_ToyBox and PlayerHasToy(itemId) and C_ToyBox.IsToyUsable(itemId) then
                 count = count + 1
-                break
+            end
+
+            for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+                if GetInventoryItemID("player", i) == itemId then
+                    count = count + 1
+                    break
+                end
             end
         end
+        return count
+    end
+
+    local count = 0
+    for itemId in string.gmatch(element.ids,"%d+") do
+        count = count + GetCount(tonumber(itemId))
     end
 
     if (numRequired > 0 and count > numRequired) or
