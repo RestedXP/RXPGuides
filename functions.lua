@@ -122,6 +122,7 @@ end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
 events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
+events.isQuestOffered = events.gossip
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
@@ -4783,16 +4784,16 @@ function addon.functions.gossip(self, text, npc, length, flags)
         local element = {text = text, npc = npc, level = -1, length = tonumber(length) or 0, flags = tonumber(flags) or 0}
         return element
     end
-    local event = text
     local element = self.element
     local step = element.step
-    local frame = _G.GossipFrame
     if not step.active then
         element.level = -1
         element.completed = false
         return
     end
-    if not event and element.step.active and _G.GossipFrame:IsShown() then
+    local event = text
+    local frame = _G.GossipFrame
+    if not event and _G.GossipFrame:IsShown() then
         local options = GossipGetOptions()
         event = next(options) and "GOSSIP_SHOW"
     end
@@ -6799,5 +6800,74 @@ function addon.functions.vale(self, text, poi, arg1)
         addon.updateSteps = true
     elseif not step.completed then
         element.tooltipText = nil
+    end
+end
+
+function addon.functions.isQuestOffered(self, text, npc, ...)
+    if type(self) == "string" then
+        npc = tonumber(npc)
+        if not npc then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ': Invalid npc ID provided\n' .. self)
+        end
+        local element = {textOnly = true, text = text, npc = npc, ids = {...}}
+        local ids = {}
+        for _,q in pairs({...}) do
+            local id = tonumber(q)
+            if id then
+                ids[id] = true
+            end
+        end
+        element.ids = ids
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    if not step.active then
+        return
+    end
+    local event = text
+    local frame = _G.GossipFrame
+    if not event and frame:IsShown() then
+        event = "GOSSIP_SHOW"
+    end
+    if event == "GOSSIP_SHOW" then
+        if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
+            local name = UnitName('target')
+            element.currentNPC = addon.GetNpcId()
+            element.name = name
+            --element.level = 0
+            --print(name,element.currentNPC)
+        end
+        local title
+        if not frame then
+            return
+        elseif frame.NineSlice then
+            title = frame:IsShown() and frame:GetTitleText():GetText()
+        else
+            title = frame:IsShown() and frame.TitleContainer.TitleText:GetText()
+        end
+        if element.currentNPC == element.npc and title == element.name then
+            local quests = C_GossipInfo.GetAvailableQuests()
+            local match
+            for _,q in pairs(quests) do
+                if element.ids[q.questID] then
+                    match = true
+                    element.found = true
+                    break
+                end
+            end
+            if not match then
+                element.tooltipText = not element.found and "Step skipped: Quest is not being offered"
+                step.completed = true
+                addon.updateSteps = true
+            end
+        end
+    end
+    if event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+        element.name = nil
+        element.currentNPC = nil
+        _G.GossipFrame:Hide()
     end
 end
