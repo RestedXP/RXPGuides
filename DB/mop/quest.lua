@@ -501,11 +501,25 @@ local klaxxiQuests ={
 
 }
 
-function addon.CheckAvailableQuest(id)
-    local hub = klaxxiQuests[id]
+local valeQuests = {
+    [31131] = "whitepetal",
+    [31242] = "mistfall",
+}
 
-    if hub then
-        addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
-        addon.realmData.klaxxi = hub
+function addon.CheckAvailableQuest(id)
+    local klaxxiHub = klaxxiQuests[id]
+    local valeQ = valeQuests[id]
+
+    if klaxxiHub then
+        addon.realmData.klaxxi = klaxxiHub
+    elseif valeQ then
+        if addon.realmData.voteb then
+            addon.realmData.voteb[valeQ] = true
+        else
+            addon.realmData.voteb = {[valeQ] = true}
+        end
+    else
+        return
     end
+    addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
 end

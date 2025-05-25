@@ -6767,3 +6767,37 @@ function addon.functions.klaxxi(self, text, poi, arg1)
         element.tooltipText = nil
     end
 end
+
+function addon.functions.vale(self, text, poi, arg1)
+    if type(self) == "string" and addon.player.beta then
+        return {text = text, textOnly = true, poi = poi, arg1 = arg1}
+    end
+
+    local element = self.element
+    local event = text
+    local step = element.step
+    local t = time()
+    local dr = addon.realmData.dailyReset or 0
+    if dr < t or not addon.realmData.voteb then
+        addon.realmData.dailyReset = t + C_DateAndTime.GetSecondsUntilDailyReset()
+        addon.realmData.voteb = {}
+    end
+
+    if not step.active or event == "WindowUpdate" then return end
+
+    poi = addon.realmData.voteb
+    local match
+    if poi[element.poi] or (element.poi == 'unknown' and not next(poi)) then
+        match = true
+    end
+
+    if element.arg1 then match = not match end
+
+    if not addon.settings.profile.debug and not addon.isHidden and not match then
+        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif not step.completed then
+        element.tooltipText = nil
+    end
+end
