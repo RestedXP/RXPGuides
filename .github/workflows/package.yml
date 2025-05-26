@@ -37,30 +37,30 @@ jobs:
       #   with:
       #     args: -g retail
 
-      # - name: Stage releases
-      #   run: |
-      #     cd .release
-      #     mkdir -p ./ftp/
+      - name: Stage releases
+        run: |
+          cd .release
+          mkdir -p ./ftp/
 
-      #     cp RXPGuides/CHANGELOG.md ./ftp/
+          cp RXPGuides/CHANGELOG.md ./ftp/
 
-      #     for game in classic cata; do
-      #       zip=$(ls RXPGuides-*${game}.zip)
 
-      #       cp "${zip}" "./ftp/RXPGuides-latest-${game}.zip"
+          zip=$(ls RXPGuides*.zip)
 
-      #       # Lazy check if alpha (RXPGuides-v4.2.9-1-g623e66a-wrath) vs (RXPGuides-v4.2.9-wrath)
-      #       if (( $(awk -F'-' '{print NF-1}' <<< "${zip}") > 2 )); then
-      #         echo "FTP_DIR=beta" >> $GITHUB_ENV
-      #       else
-      #         echo "FTP_DIR=prod" >> $GITHUB_ENV
-      #       fi
-      #     done
+          cp "${zip}" "./ftp/RXPGuides-latest.zip"
 
-      #     zip=$(ls RXPGuides-*classic.zip)
-      #     cp "${zip}" "./ftp/RXPGuides.zip"
+          # Lazy check if alpha (RXPGuides-v4.2.9-1-g623e66a-wrath) vs (RXPGuides-v4.2.9-wrath)
+          if (( $(awk -F'-' '{print NF-1}' <<< "${zip}") > 2 )); then
+            echo "FTP_DIR=beta" >> $GITHUB_ENV
+          else
+            echo "FTP_DIR=prod" >> $GITHUB_ENV
+          fi
 
-      #     cd ..
+
+          zip=$(ls RXPGuides*.zip)
+          cp "${zip}" "./ftp/RXPGuides.zip"
+
+          cd ..
 
       - name: Upload files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -68,5 +68,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          #local-dir: .release/ftp/
+          local-dir: .release/ftp/
           server-dir: ${{ env.FTP_DIR }}/addon/
