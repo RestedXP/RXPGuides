@@ -2154,6 +2154,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.76
 step << Hunter
     #sticky
+    #label StrigidHunter
 	.goto Teldrassil,41.2,44.4,0
 	.goto Teldrassil,44.2,39.8,0
 	.goto Teldrassil,45.6,31.4,0
@@ -2162,6 +2163,10 @@ step << Hunter
     .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.unitscan Strigid Hunter
+step << Hunter
+    #sticky
+    #requires StrigidHunter
+    .engrave 5 >> Engrave |T132270:0|t[Beast Mastery] on your |T132724:0|t[Chest]
 step
     #season 0 << Rogue/Druid
     .goto Teldrassil,43.2,42.8,55,0
