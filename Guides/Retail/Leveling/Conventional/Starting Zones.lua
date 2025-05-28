@@ -16966,12 +16966,13 @@ step
     .accept 14452 >>Accept Rite of Strength
     .target Grull Hawkwind
 step
-    >>Kill fighting |cRXP_ENEMY_Bristleback Invaders|r.
+    #loop
     .goto 462,40.93,35.68,15,0
     .goto 462,42.01,32.95,15,0
     .goto 462,44.65,34.68,15,0
     .goto 462,44.40,37.15,15,0
-    .goto 462,40.81,38.19
+    .goto 462,40.81,38.19,15,0
+    >>Kill the |cRXP_ENEMY_Bristleback Invaders|r.
     .complete 14452,1 --6/6 Bristleback Invaders slain
     .mob Bristleback Invader
 step
@@ -16981,28 +16982,28 @@ step
     .accept 24852 >>Accept Our Tribe, Imprisoned
     .target Grull Hawkwind
 step
-    #title Brave Freed 1
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tOpen the |cRXP_PICK_Quilboar Cage|r.
+    #title Brave Freed (1/4)
     .goto 462,49.39,35.39
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1,1 --4/4 Braves Freed
 step
-    #title Brave Freed 2
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tOpen the |cRXP_PICK_Quilboar Cage|r.
+    #title Brave Freed (2/4)
     .goto 462,49.07,36.97
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1,2 --4/4 Braves Freed
 step
-    #title Brave Freed 3
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tOpen the |cRXP_PICK_Quilboar Cage|r.
+    #title Brave Freed (3/4)
     .goto 462,49.32,42.12
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Quilboar Cage|r.
     .complete 24852,1,3 --4/4 Braves Freed
 step
-    #title Brave Freed 4
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tOpen the |cRXP_PICK_Quilboar Cage|r.
+    #title Brave Freed (4/4)
     .goto 462,49.07,43.80
-    .complete 24852,1,4 --4/4 Braves Freed
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Quilboar Cage|r.
+    .complete 24852,1 --4/4 Braves Freed
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r.
     .goto 462,39.45,37.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull Hawkwind|r.
     .turnin 24852 >>Turn in Our Tribe, Imprisoned
     .accept 14458 >>Accept Go to Adana
     .target Grull Hawkwind
@@ -17014,24 +17015,28 @@ step
     .accept 14455 >>Accept Stop the Thorncallers
     .target Adana Thunderhorn
 step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot the thiefs for their [|cRXP_LOOT_stolen rifles|r].
-    .complete 14456,1 --7/7 Stolen Rifle
-    .mob Bristleback Gun Thief
-step
-    >>Kill |cRXP_ENEMY_Bristleback Thorncallers|r.
+    #completewith StolenRifles
+    #hidewindow
+    #loop
     .goto 462,32.82,63.39,15,0
     .goto 462,31.86,68.99,15,0
     .goto 462,34.93,70.00,15,0
-    .goto 462,36.56,67.73
+    .goto 462,36.56,67.73,15,0
+    +1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bristleback Thorncallers|r.
     .complete 14455,1 --7/7 Bristleback Thorncaller slain
     .mob Bristleback Thorncaller
 step
-    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot the thiefs for their [|cRXP_LOOT_stolen rifles|r].
-    .goto 462,36.18,61.12,15,0
-    .goto 462,32.81,63.11
+    >>Kill |cRXP_ENEMY_Bristleback Gun Thiefs|r. Loot them for the |T135610:0|t[|cRXP_LOOT_Stolen Rifles|r].
     .complete 14456,1 --7/7 Stolen Rifle
     .mob Bristleback Gun Thief
+step
+    #label StolenRifles
+    >>Kill |cRXP_ENEMY_Bristleback Thorncallers|r.
+    .complete 14455,1 --7/7 Bristleback Thorncaller slain
+    .mob Bristleback Thorncaller
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana Thunderhorn|r.
     .goto 462,30.9,50.6
@@ -17041,28 +17046,37 @@ step
     .accept 14461 >>Accept Feed of Evil
     .target Adana Thunderhorn
 step
-    #sticky
-    #label mulgoreAmoredBattleboar
+    #completewith ArmoredBattleboar
+    #hidewindow
+    #loop
+    .goto 462,26.37,66.33,12,0
+    .goto 462,25.12,69.15,12,0
+    .goto 462,28.2,70.4,12,0
+    +1
+step
+    #completewith ThirdTrough
     >>Kill |cRXP_ENEMY_Armored Battleboars|r.
     .goto 462,26.78,68.79,0,0
     .complete 14459,1 --10/10 Armored Battleboar slain
     .mob Armored Battleboar
 step
-    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
-    .use 49539
-    .goto 462,26.37,66.33
+    >>Use |T135432:0|t[Adana's Torch] to burn the |cRXP_PICK_Trough|r.
     .complete 14461,1 --1/1 First Trough
+    .use 49539
 step
     >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
-    .use 49539
-    .goto 462,25.12,69.15
     .complete 14461,2 --1/1 Second Trough
-step
-    #label QuestKeybindingsTauren
-    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .use 49539
-    .goto 462,28.2,70.4
+step
+    #label ThirdTrough
+    >>Use |T135432:0|t[Adana's Torch] next to the [|cRXP_LOOT_trough|r].
     .complete 14461,3 --1/1 Third Trough
+    .use 49539
+step
+    #label ArmoredBattleboar
+    >>Kill |cRXP_ENEMY_Armored Battleboars|r.
+    .complete 14459,1 --10/10 Armored Battleboar slain
+    .mob Armored Battleboar
 step
     #requires mulgoreAmoredBattleboar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana Thunderhorn|r.
@@ -17100,10 +17114,19 @@ step
     .target Chief Hawkwind
 step
     #completewith next
+    #label RitesoftheEarthmother
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dyami Windsoar|r on top of the mountain.
+    .turnin 23733 >>Turn in Rites of the Earthmother
+    .accept 24215 >>Accept Rite of the Winds
+    .target Dyami Windsoar
+step
+    #title |cFFFCDC00Follow the arrow|r
+    #completewith RitesoftheEarthmother
     .goto 462,19.24,33.81,10,0
     .goto 462,11.91,27.64,10,0
     .goto 462,12.50,29.17,8 >>Follow the way up the mountain
 step
+    #requires RitesoftheEarthmother
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dyami Windsoar|r on top of the mountain.
     .goto 462,15.63,30.26
     .turnin 23733 >>Turn in Rites of the Earthmother
@@ -17111,10 +17134,17 @@ step
     .target Dyami Windsoar
 step
     #completewith next
+    #label Mazzranache
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
+    .accept 26188 >>Accept Mazzranache
+    .target Maur Raincaller
+step
+    #completewith Mazzranache
     .goto 462,15.40,27.68,10,0
     .goto 462,15.44,25.29,20,0
     .deathskip >>Follow the arrow by jumping off the mountain, die and release your spirit
 step
+    #requires Mazzranache
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
     .goto 7,47.16,56.66
     .accept 26188 >>Accept Mazzranache
@@ -17129,7 +17159,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Tauren Camp Mulgore
 #displayname |cFF00CCFF2|r - Mulgore
-#next
+#next 
 #defaultfor Tauren !DK
 
 << Horde
@@ -17139,14 +17169,20 @@ step
     .goto 7,47.16,56.66
     .accept 26188 >>Accept Mazzranache
     .target Maur Raincaller
-step << Hunter/Warlock
-    #completewith MulgoreABundleofHidesAccept
-    +|cRXP_WARN_Reminder: Resummon your pet after a deathskip|r.
 step
     #completewith next
+    #label MulgoreABundleofHidesAcceptA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r inside the tent.
+    .goto 7,46.06,58.19
+    .accept 6361 >>Accept A Bundle of Hides
+    .target Varg Windwhisper
+step
+    #completewith MulgoreABundleofHidesAcceptA
+    #title |cFFFCDC00Enter the tent|r
+    *|cRXP_WARN_Reminder: Resummon your pet after a deathskip|r. << Hunter/Warlock
     .goto 7,46.53,58.17,5 >>Enter the tent
 step
-    #label MulgoreABundleofHidesAccept
+    #label MulgoreABundleofHidesAcceptB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r inside the tent.
     .goto 7,46.06,58.19
     .accept 6361 >>Accept A Bundle of Hides
@@ -17175,6 +17211,8 @@ step
     .isQuestComplete 24215
     .goto 7,47.65,59.58
     .turnin 24215 >>Turn in Rite of the Winds
+    .accept 14438 >>Accept Sharing the Land
+    .accept 24459 >>Accept Morin Cloudstalker
     .target Ahmo Thunderhorn
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo Thunderhorn|r.
@@ -17189,29 +17227,35 @@ step
     .target Ruul Eagletalon
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their [|cRXP_LOOT_talons/paws|r].
+    >>Kill |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Prairie Wolfs|r. Loot them for the |T136063:0|t[|cRXP_LOOT_Plainstrider Talons|r] and |T134297:0|t[|cRXP_LOOT_Prairie Wolf Paw|r].
     .complete 20440,2 --4/4 Plainstrider Talon
     .complete 20440,1 --6/6 Prairie Wolf Paw
     .mob Adult Plainstrider
     .mob Prairie Wolf
 step
-    >>Kill |cRXP_ENEMY_Palemane Gnolls|r.
-    >>Keep an eye out for |cRXP_ENEMY_Snagglespear|r and |cRXP_ENEMY_Arra'chea|r.
+    #loop
     .goto 7,48.44,70.79,30,0
-    .goto 7,53.35,71.71
+    .goto 7,53.35,71.71,30,0
+    >>Kill |cRXP_ENEMY_Palemane Gnolls|r.
+    >>|cRXP_WARN_Keep an eye out for the rares |cRXP_ENEMY_Snagglespear|r and |cRXP_ENEMY_Arra'chea|r (they give a quest worth of experience)|r.
     .complete 14438,1 --15/15 Palemane Gnolls
-    .mob Palemane Gnoll
+    .mob Palemane Skinner
+    .mob Palemane Tanner
+    .mob Palemane Poacher
+    .mob Snagglespear
+    .mob Arra'chea
 step
     #completewith MulgorePoisonedWater
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for the |T135992:0|r[|cRXP_LOOT_Trophy Swoop Quills|r].
     >>You don't need to complete this quest at this point
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
 step
-    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for their [|cRXP_LOOT_talons/paws|r].
+    #loop
     .goto 7,53.65,68.34,30,0
     .goto 7,50.30,65.51,30,0
-    .goto 7,51.92,62.67
+    .goto 7,51.92,62.67,30,0
+    >>Kill |cRXP_ENEMY_Plainstrider|r and |cff00ecffWolfs|r. Loot them for the |T136063:0|t[|cRXP_LOOT_Plainstrider Talons|r] and |T134297:0|t[|cRXP_LOOT_Prairie Wolf Paw|r].
     .complete 20440,2 --4/4 Plainstrider Talon
     .complete 20440,1 --6/6 Prairie Wolf Paw
     .mob Adult Plainstrider
@@ -17230,8 +17274,8 @@ step
     .complete 24440,1 --Well Cleansed
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
-    >>|cRXP_WARN_You don't need to complete this quest at this point|r.
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for the |T135992:0|r[|cRXP_LOOT_Trophy Swoop Quills|r].
+    >>|cRXP_WARN_You don't have to complete this quest now|r.
     .goto 7,56.22,63.43,30,0
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
@@ -17243,13 +17287,19 @@ step
     .target Morin Cloudstalker
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their [|cRXP_LOOT_quills|r].
-    >>|cRXP_WARN_You don't need to complete this quest at this point|r.
+    >>Kill |cRXP_ENEMY_Swoops|r. Loot them for the |T135992:0|r[|cRXP_LOOT_Trophy Swoop Quills|r].
+    >>|cRXP_WARN_You don't have to complete this quest at now|r.
     .complete 761,1 --8/8 Trophy Swoop Quill
     .mob Swoop
 step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
+    >>|cRXP_WARN_You don't have to complete this quest at now|r.
+    .complete 26188,1 --1/1 Flatland Cougar Femur
+    .mob Flatland Cougar
+step
     .goto 7,53.52,48.28
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with the Sealed Supply Crate
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sealed Supply Crate|r
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step
@@ -17261,20 +17311,21 @@ step
     .target Morin Cloudstalker
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Venture Co. Worker|r.
-    >>Keep an eye out for |cRXP_ENEMY_Enforcer Emilgund|r.
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r.
+    >>|cRXP_WARN_Kill the rare |cRXP_ENEMY_Enforcer Emilgund|r if you see him|r.
     .complete 26179,1 --7/7 Venture Co. Worker slain
     .mob Venture Co. Worker
 step
-    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for the [|cRXP_LOOT_clipboard|r].
+    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for |T134944:0|t[|cRXP_LOOT_Fizsprocket's Clipboard|r].
     .goto 9,41.79,84.78
     .complete 26180,1 --1/1 Fizsprocket's Clipboard
     .mob Supervisor Fizsprocket
 step
-    >>Kill |cRXP_ENEMY_Venture Co. Worker|r.
-    >>Keep an eye out for |cRXP_ENEMY_Enforcer Emilgund|r.
-    .goto 9,45.64,82.31,20,0
-    .goto 7,59.09,48.71
+    #loop
+    .goto 9,45.64,82.31,30,0
+    .goto 7,59.09,48.71,20,0
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r.
+    >>|cRXP_WARN_Kill the rare |cRXP_ENEMY_Enforcer Emilgund|r if you see him|r.
     .complete 26179,1 --7/7 Venture Co. Worker slain
     .mob Venture Co. Worker
 step
@@ -17296,18 +17347,30 @@ step
     .accept 24441 >>Accept Thunderhorn Totem
     .target Mull Thunderhorn
 step
+    .isQuestComplete 761
+    .goto 7,48.78,58.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken Windtotem|r.
+    .turnin 761 >>Turn in Swoop Hunting
+    .target Harken Windtotem
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo Thunderhorn|r.
     .goto 7,47.65,59.58
     .turnin 14438 >>Turn in Sharing the Land
     .accept 14491 >>Accept The Restless Earth
     .target Ahmo Thunderhorn
 step
-    #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r.
     .goto 7,46.82,60.45
     .home >>Set your Hearthstone to Bloodhoof Village
     .target Innkeeper Kauth
 step
+    .isQuestComplete 26188
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
+    .goto 7,47.16,56.66
+    .turnin 26188 >>Turn in Mazzranache
+    .mob Maur Raincaller
+step
+    .isOnQuest 6362
     .zoneskip 7,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
     .goto 7,47.45,58.64
@@ -17321,24 +17384,51 @@ step
     .target Ahanu
 step
     #completewith next
+    #label TalTheWindRiderMaster
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb the tower and talk to |cRXP_FRIENDLY_Tal|r.
+    .turnin 6363 >>Turn in Tal the Wind Rider Master
+    .accept 6364 >>Accept Return to Varg
+    .target Tal
+step
+    #completewith TalTheWindRiderMaster
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r.
     .goto 88,45.75,55.83
     .vendor
     .target Ahanu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb the tower and talk to |cRXP_FRIENDLY_Tal|r.
+    #requires TalTheWindRiderMaster
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Climb the tower|r. Talk to |cRXP_FRIENDLY_Tal|r.
     .goto 88,47.03,49.60
     .turnin 6363 >>Turn in Tal the Wind Rider Master
     .accept 6364 >>Accept Return to Varg
     .target Tal
 step
     #completewith next
-    .goto 88,35.79,63.03,10,0
-    .goto 88,32.51,70.74,20 >>Take one of the two elevators downwards. Dying here costs you at least one minute
-step
+    #label WindfuryTalons
     >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their [|cRXP_LOOT_talons|r].
-    >>Look out for Doomsayer Wiserunner
-    .goto 7,34.20,37.19,20,0
+    >>|cRXP_WARN_Kill the |cRXP_ENEMY_Doomsayer Wiserunner|r if you see him|r
+    .complete 743,1 --8/8 Windfury Talon
+    .mob Windfury Wind Witch
+    .mob Windfury Harpy
+step
+    #completewith WindfuryTalons
+    .goto 88,35.79,63.03,10,0
+    .goto 88,32.51,70.74,35 >>Take one of the two elevators downwards. Dying here costs you at least one minute
+step
+    #requires WindfuryTalons
+    #completewith next
+    >>Kill |cRXP_ENEMY_Praeri Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T134297:0|t[|cRXP_LOOT_Cougar Claws|r] and |T134296:0|t[|cRXP_LOOT_Stalker Claws|r].
+    *|cRXP_WARN_You don't have to complete this quest now.|r
+    .complete 24441,2 --6/6 Cougar Claws
+    .complete 24441,1 --6/6 Stalker Claws
+    .mob Prairie Stalker
+    .mob Flatland Cougar
+-- TODO: Maybe split the waypoint for the rare from the quest step
+step
+    #requires WindfuryTalons
+    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their [|cRXP_LOOT_talons|r].
+    >>|cRXP_WARN_Kill the |cRXP_ENEMY_Doomsayer Wiserunner|r if you see him|r
+    .goto 7,34.57,37.78,20,0
     .goto 7,35.62,39,85,20,0
     .goto 7,34.16,42.45,20,0
     .goto 7,35.34,43.13
@@ -17347,7 +17437,7 @@ step
     .mob Windfury Harpy
 step
     >>Use the |T133841:0|t[Drum of the Soothed Earth] on |cRXP_ENEMY_Agitated Earth Spirits|r.
-    >>Try to use the drum on cooldown. Sometimes the elementals may attack you
+    >>|cRXP_WARN_Try to use the drum on cooldown. Sometimes the elementals may attack you|r
     .use 49647
     .goto 7,35.37,46.63,35,0
     .goto 7,32.8,48.5
@@ -17357,10 +17447,17 @@ step << Hunter/Warlock
     #completewith next
     +|cRXP_WARN_Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r.
 step
-    #completewith next
+    #completewtih next
+    #label KylesGoneMissing
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
+    .accept 11129 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
+step
+    #completewith KylesGoneMissing
     .goto 7,32.53,49.01
     .deathskip >>Pull some mobs and die
 step
+    #requires KylesGoneMissing
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
     .goto 7,48.34,53.09
     .accept 11129 >>Accept Kyle's Gone Missing!
@@ -17370,12 +17467,12 @@ step << Warlock/Hunter
     +|cRXP_WARN_Reminder:Resummon your pet and set it to back to 'Assist'|r.
 step
     #completewith MulgoreCougarStalkerClaws
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
     .mob Flatland Cougar
 step
     #completewith MulgoreCougarStalkerClaws
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a [|cRXP_LOOT_Tender Stride Meat|r].
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |T134343:0|t[|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05,0,0
     .collect 33009,1,11129,1
     .mob Adult Plainstrider
@@ -17386,26 +17483,26 @@ step
     .mob Wiry Swoop
 step
     #label MulgoreCougarStalkerClaws
-    >>Kill |cRXP_ENEMY_Praeri Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the [|cRXP_LOOT_claws|r].
-    >>Keep an eye out for |cRXP_ENEMY_Mazzranache|r.
-    .goto 7,47.18,50.35,15,0
-    .goto 7,44.72,48.58,15,0
-    .goto 7,42.48,44.81,15,0
-    .goto 7,41.65,42.07,15,0
+    .goto 7,47.18,50.35,20,0
+    .goto 7,44.72,48.58,20,0
+    .goto 7,42.48,44.81,20,0
+    .goto 7,41.65,42.07,20,0
     .goto 7,46.13,39.72,20,0
-    .goto 7,47.18,50.35
+    .goto 7,47.18,50.35,20,0
+    >>Kill |cRXP_ENEMY_Praeri Stalkers|r and |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T134297:0|t[|cRXP_LOOT_Cougar Claws|r] and |T134296:0|t[|cRXP_LOOT_Stalker Claws|r].
+    >>Keep an eye out for |cRXP_ENEMY_Mazzranache|r.
     .complete 24441,2 --6/6 Cougar Claws
+    .mob +Flatland Cougar
     .complete 24441,1 --6/6 Stalker Claws
-    .mob Prairie Stalker
-    .mob Flatland Cougar
+    .mob +Prairie Stalker
 step
     #completewith TrophySwoopQuill
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for the |T133718:0|t[|cRXP_LOOT_Flatland Cougar Femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
     .mob Flatland Cougar
 step
     #completewith TrophySwoopQuill
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a [|cRXP_LOOT_Tender Stride Meat|r].
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for a |T134343:0|t[|cRXP_LOOT_Tender Stride Meat|r].
     .goto 7,44.71,52.05,0,0
     .collect 33009,1,11129,1
     .mob Adult Plainstrider
@@ -17431,36 +17528,44 @@ step
     .collect 33009,1,11129,1
     .mob Adult Plainstrider
 step
-    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
+    #loop
     .goto 7,47.18,50.35,15,0
     .goto 7,44.72,48.58,15,0
     .goto 7,42.48,44.81,15,0
     .goto 7,41.65,42.07,15,0
     .goto 7,46.13,39.72,20,0
-    .goto 7,47.18,50.35
+    .goto 7,47.18,50.35,20,0
+    >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their [|cRXP_LOOT_femur|r].
     .complete 26188,1 --1/1 Flatland Cougar Femur
     .mob Flatland Cougar
 step
     #completewith MulgoreMazzranacheTurnin
+    #label DieMazzranache
     .goto 7,44.58,45.22
     >>|cRXP_WARN_Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r. << Hunter/Warlock
     .deathskip >>Pull some mobs and die
-step
-    #completewith MulgoreTurnInThunderhorn
-    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the [|cRXP_LOOT_Tender Stride Meat|r|r].
-    .use 33009
-    .target Kyle
-    .complete 11129,1 --1/1 Kyle fed
+step << Warlock/Hunter
+    #requires DieMazzranache
+    #completewith next
+    +|cRXP_WARN_Reminder:Resummon your pet and set it to back to 'Assist'|r.
 step
     #label MulgoreMazzranacheTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur Raincaller|r.
     .goto 7,47.16,56.66
     .turnin 26188 >>Turn in Mazzranache
     .mob Maur Raincaller
-step << Warlock/Hunter
-    #completewith next
-    +|cRXP_WARN_Reminder:Resummon your pet and set it to back to 'Assist'|r.
 step
+    #completewith next
+    #label ReturnToVarg
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r.
+    .turnin 6364 >>Turn in Return to Varg
+    .target Varg Windwhisper
+step
+    #completewith ReturnToVarg
+    #title |cFFFCDC00Enter the tent|r
+    .goto 7,46.58,58.20,8 >>Enter the tent
+step
+    #requires ReturnToVarg
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg Windwhisper|r.
     .goto 7,46.06,58.19
     .turnin 6364 >>Turn in Return to Varg
@@ -17487,12 +17592,13 @@ step
     .turnin 761 >>Turn in Swoop Hunting
     .target Harken Windtotem
 step
-    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the [|cRXP_LOOT_Tender Stride Meat|r|r].
-    .use 33009
-    .target Kyle
+    #loop
     .goto 7,48.25,60.43,20,0
     .goto 7,48.13,57.28,20,0
+    >>Kyle (a wolf) runs in a circle around/through the city. |cRXP_WARN_If you see him running towards you then wait until he is near you, target him and use the [|cRXP_LOOT_Tender Stride Meat|r|r].
     .complete 11129,1 --1/1 Kyle fed
+    .target Kyle
+    .use 33009
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r.
     .goto 7,48.34,53.09
@@ -17500,22 +17606,29 @@ step
     .target Ahab Wheathoof
 step << Tauren
     #completewith next
+    #label FlyToThunderbluffB
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Tak
+step << Tauren
+    #completewith FlyToThunderbluffB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harb Clawhoof|r.
     .goto 7,47.64,58.09
     .vendor 3685
     .target Harb Clawhoof
 step
+    #requires FlyToThunderbluffB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
     .goto 7,47.44,58.64
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Tak
 step
     #completewith next
-    +There are three ways to Orgrimmar.
+    +|cRXP_WARN_There are three ways to Orgrimmar.|r
     *1) Use the Character Stuck Feature
     *2) Use the |T237388:0|t[Scouting Map: Walking Kalimdor with the Earthmother] toy and fly to Orgrimmar
     *3) Follow the arrow and take the Zeppelin to Orgrimmar (very slow)
-    .link https://www.youtube.com/watch?v=jAGUbr8Gz9Y >>Character Stuck Explanation Link
+    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>Character Stuck Explanation Link
 step
     .goto 88,42.81,39.13,10,0
     .goto 88,39.41,38.33,8,0
