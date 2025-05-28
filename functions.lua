@@ -6737,24 +6737,33 @@ function addon.functions.beta(self, text)
     end
 end
 
-function addon.functions.klaxxi(self, text, poi, arg1)
-    if type(self) == "string" and addon.player.beta then
-        return {text = text, textOnly = true, poi = poi, arg1 = arg1}
+function addon.functions.klaxxi(self,text,poi,arg1)
+    return addon.functions.dailyhub(self,text,"klaxxi",poi,arg1)
+end
+
+function addon.functions.celestial(self,text,poi,arg1)
+    return addon.functions.dailyhub(self,text,"celestial",poi,arg1)
+end
+
+function addon.functions.dailyhub(self, text, hub, poi, arg1)
+    if type(self) == "string" then
+        return {text = text,textOnly = true, poi = poi, arg1 = arg1, hub = hub}
     end
 
     local element = self.element
-    local event = text
+    local event = hub
     local step = element.step
     local t = time()
     local dr = addon.realmData.dailyReset or 0
+    hub = element.hub
     if dr < t then
         addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
-        addon.realmData.klaxxi = nil
+        addon.realmData[hub] = nil
     end
 
     if not step.active or event == "WindowUpdate" then return end
 
-    poi = addon.realmData.klaxxi
+    poi = addon.realmData[hub]
     local match
     if poi == element.poi or (element.poi == 'unknown' and not poi) then
         match = true

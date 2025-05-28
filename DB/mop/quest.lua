@@ -508,9 +508,23 @@ local valeQuests = {
     [31296] = "ruinsofguolaiQuiet",
 }
 
+local celestialQuests ={
+
+[31377] = "jade",
+[31376] = "jade",
+[31379] = "cradle",
+[31378] = "cradle",
+[31381] = "blackox",
+[31380] = "blackox",
+[31382] = "whitetiger",
+[31383] = "whitetiger",
+
+}
+
 function addon.CheckAvailableQuest(id)
     local klaxxiHub = klaxxiQuests[id]
     local valeQ = valeQuests[id]
+    local celestial = celestialQuests[id]
 
     if klaxxiHub then
         addon.realmData.klaxxi = klaxxiHub
@@ -520,6 +534,8 @@ function addon.CheckAvailableQuest(id)
         else
             addon.realmData.voteb = {[valeQ] = true}
         end
+    elseif celestial then
+        addon.realmData.celestial = celestial
     else
         return
     end
