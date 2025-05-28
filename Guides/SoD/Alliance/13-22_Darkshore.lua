@@ -1267,7 +1267,7 @@ step << !Warrior !Rogue
     .turnin 947 >> Turn in Cave Mushrooms
     .accept 948 >> Accept Onu
     .target Barithras Moonshade
-step << NightElf/Hunter/Druid/Warrior/Rogue
+step << NightElf/Hunter/Druid/Rogue
     #season 2 << Warrior/Rogue
     #optional
     .goto 1439,37.703,43.393
@@ -1276,9 +1276,9 @@ step << NightElf/Hunter/Druid/Warrior/Rogue
     .accept 4812 >> Accept As Water Cascades << !Druid sod
     .turnin 4813 >> Turn in The Fragments Within << Druid sod
     .target Sentinel Glynda Nal'Shea
-    .xp >14,1 << Hunter/Druid << !sod
+    .xp >17,1 << !Warrior
 --XX If Night Elves, Hunters, or Druids are lower than level 14, do questline
-step << Hunter/Druid
+step << Hunter/Druid/Warrior
     #season 0,1 << Druid
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
@@ -1286,8 +1286,9 @@ step << Hunter/Druid
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5 << Hunter/Druid
+    .xp >17,1
 --XX If Hunters and Druids (in Era) have a worse weapon than the Oakthrush Staff, do the quest even if 14+
-step << NightElf/Hunter/Druid
+step << NightElf/Hunter/Druid/Warrior
     #optional
     #label Cascade
     .goto 1439,37.703,43.393
@@ -1295,17 +1296,7 @@ step << NightElf/Hunter/Druid
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
-step << NightElf/Hunter/Druid
-    #optional
-    #season 0
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    >>|cRXP_WARN_Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him. Sell all your other level 5 or below food|r
-    .collect 4592,40 --Longjaw Mud Snapper (40)
-    .target Laird
-    .subzoneskip 442,1 --skip if you leave Auber
-    .xp >15,1 << Warrior/Rogue
-    .isQuestTurnedIn 4811 --show step if you turned in red crystal
+    .xp >17,1
 step << NightElf/Hunter/Druid/Warrior/Rogue
     #optional
     #season 2 << Warrior/Rogue
@@ -1314,6 +1305,7 @@ step << NightElf/Hunter/Druid/Warrior/Rogue
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
     .isQuestTurnedIn 4811
+    .isOnQuest 4812
 step << !Warrior !Rogue
     #season 2
     .goto Darkshore,37.78,44.06
@@ -1347,21 +1339,6 @@ step << NightElf/Hunter/Druid/Warrior/Rogue
     .skill cooking,10,1 --XX Shows if cooking skill is <10
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid
-    #optional
-    #completewith EarlyCrystalEnd
-    #season 0
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
-    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
-    .skill cooking,50,1
-    .isQuestTurnedIn 4811
-step << NightElf/Hunter/Druid
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith MysteriousCrystalHuntDruidEnd
@@ -1369,15 +1346,6 @@ step << NightElf/Hunter/Druid
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
     .isOnQuest 1002
-    .isQuestTurnedIn 4811
-step << NightElf/Hunter/Druid
-    #season 0
-    .goto 1439,47.314,48.676
-    #label EarlyCrystalEnd
-    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
-    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
-    .turnin 4812 >> Turn in As Water Cascades
-    .accept 4813 >> Accept The Fragments Within
     .isQuestTurnedIn 4811
 step << !Druid sod
     #season 2
@@ -1388,6 +1356,7 @@ step << !Druid sod
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
     .isQuestTurnedIn 4811
+    .isOnQuest 4812
 step << skip --logout skip
     #season 2 << Hunter
     #season 1 << Druid/Warrior/Rogue/Priest
@@ -1409,15 +1378,7 @@ step
     .goto 1439,37.703,43.393
     .subzone 442 >> Return to Auberdine
     .isQuestTurnedIn 4811
-step << NightElf/Hunter/Druid/Warrior
-    #season 0
-    .goto Darkshore,37.70,43.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    >>|cRXP_WARN_Choose the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_as you should try to save a|r |T135641:0|t[Dagger] |cRXP_WARN_for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r << Rogue
-    .turnin 4813 >> Turn in The Fragments Within << !Hunter !Druid
-    .turnin 4813,3 >> Turn in The Fragments Within << Hunter/Druid
-    .target Sentinel Glynda Nal'Shea
-    .isQuestTurnedIn 4811
+    .isOnQuest 4812
 step
     #season 2 << Hunter
     #season 1 << Druid/Warrior/Rogue/Priest
@@ -1428,6 +1389,7 @@ step
     .turnin 4813,3 >> Turn in The Fragments Within << Hunter/Druid
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
+    .isOnQuest 4813
 step << Hunter/Druid/Warrior
     #completewith AmethStart
     +|cRXP_WARN_Equip the|r |T135145:0|t[Oakthrush Staff]

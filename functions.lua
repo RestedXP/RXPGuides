@@ -71,6 +71,8 @@ local function LoremasterEnabled()
                     addon.game == "CATA" and addon.settings.profile.loremasterMode
     elseif addon.gameVersion < 60000 then
         loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    elseif addon.gameVersion < 50000 then
+        loremaster = addon.settings.profile.loremasterMode
     end
     return loremaster
 end
@@ -86,7 +88,7 @@ events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
 events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
-events.turnin = "QUEST_TURNED_IN"
+events.turnin = {"QUEST_TURNED_IN","QUEST_LOG_UPDATE"}
 if C_EventUtils and C_EventUtils.IsEventValid("STOP_MOVIE") then
     events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
 else
@@ -122,6 +124,7 @@ end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
 events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
+events.isQuestOffered = events.gossip
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
@@ -2443,16 +2446,16 @@ end
 addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
-        element.dynamicText = true
         local text, id, qty, questId, objFlags, flags, arg1, arg2 = ...
-        id = tonumber(id)
+        local element = {ids = id}
+        element.dynamicText = true
+        id = tonumber(id:match('^%d+'))
         objFlags = tonumber(objFlags) or 0
         flags = tonumber(flags) or 0
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ': No item ID provided\n' .. self)
+                           ': Invalid item ID provided\n' .. self)
         end
         element.objFlags = objFlags
         element.questId = tonumber(questId)
@@ -2579,20 +2582,29 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         end
     end
 
-    local count = GetItemCount(id,element.includeBank)
     numRequired = math.ceil(numRequired)
+    --
+    local function GetCount(itemId)
+        local count = GetItemCount(itemId,element.includeBank)
 
-    if count == 0 then
-        if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
-            count = count + 1
-        end
-
-        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-            if GetInventoryItemID("player", i) == id then
+        if count == 0 then
+            if C_ToyBox and PlayerHasToy(itemId) and C_ToyBox.IsToyUsable(itemId) then
                 count = count + 1
-                break
+            end
+
+            for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+                if GetInventoryItemID("player", i) == itemId then
+                    count = count + 1
+                    break
+                end
             end
         end
+        return count
+    end
+
+    local count = 0
+    for itemId in string.gmatch(element.ids,"%d+") do
+        count = count + GetCount(tonumber(itemId))
     end
 
     if (numRequired > 0 and count > numRequired) or
@@ -4774,17 +4786,18 @@ function addon.functions.gossip(self, text, npc, length, flags)
         local element = {text = text, npc = npc, level = -1, length = tonumber(length) or 0, flags = tonumber(flags) or 0}
         return element
     end
-    local event = text
     local element = self.element
     local step = element.step
-    local frame = _G.GossipFrame
     if not step.active then
         element.level = -1
         element.completed = false
         return
     end
-    if not event and element.step.active and _G.GossipFrame:IsShown() then
-        event = "GOSSIP_SHOW"
+    local event = text
+    local frame = _G.GossipFrame
+    if not event and _G.GossipFrame:IsShown() then
+        local options = GossipGetOptions()
+        event = next(options) and "GOSSIP_SHOW"
     end
     if event == "GOSSIP_SHOW" then
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
@@ -5014,9 +5027,10 @@ function addon.functions.use(self, text, ...)
         if text and text ~= "" then element.text = text end
         element.activeItems = {}
         for i, v in ipairs(items) do
-            local id = tonumber(v)
+            local id, arg = v:match("(%d+):?(%S*)")
+            id = tonumber(id)
             if id then
-                element.activeItems[id] = true
+                element.activeItems[id] = arg
             else
                 return addon.error(L("Error parsing guide") .. " " ..
                                        addon.currentGuideName ..
@@ -5037,7 +5051,7 @@ function addon.functions.use(self, text, ...)
         step.activeItems = itemTable
     end
     -- if not text and step.active then
-    for item in pairs(element.activeItems) do itemTable[item] = true end
+    for item,arg in pairs(element.activeItems) do itemTable[item] = arg end
     -- end
 end
 
@@ -6720,5 +6734,151 @@ end
 function addon.functions.beta(self, text)
     if type(self) == "string" and addon.player.beta then
         return {text = text, textOnly = true}
+    end
+end
+
+function addon.functions.klaxxi(self,text,poi,arg1)
+    return addon.functions.dailyhub(self,text,"klaxxi",poi,arg1)
+end
+
+function addon.functions.celestial(self,text,poi,arg1)
+    return addon.functions.dailyhub(self,text,"celestial",poi,arg1)
+end
+
+function addon.functions.dailyhub(self, text, hub, poi, arg1)
+    if type(self) == "string" then
+        return {text = text,textOnly = true, poi = poi, arg1 = arg1, hub = hub}
+    end
+
+    local element = self.element
+    local event = hub
+    local step = element.step
+    local t = time()
+    local dr = addon.realmData.dailyReset or 0
+    hub = element.hub
+    if dr < t then
+        addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
+        addon.realmData[hub] = nil
+    end
+
+    if not step.active or event == "WindowUpdate" then return end
+
+    poi = addon.realmData[hub]
+    local match
+    if poi == element.poi or (element.poi == 'unknown' and not poi) then
+        match = true
+    end
+
+    if element.arg1 then match = not match end
+
+    if not addon.settings.profile.debug and not addon.isHidden and not match then
+        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif not step.completed then
+        element.tooltipText = nil
+    end
+end
+
+function addon.functions.vale(self, text, poi, arg1)
+    if type(self) == "string" and addon.player.beta then
+        return {text = text, textOnly = true, poi = poi, arg1 = arg1}
+    end
+
+    local element = self.element
+    local event = text
+    local step = element.step
+    local t = time()
+    local dr = addon.realmData.dailyReset or 0
+    if dr < t or not addon.realmData.voteb then
+        addon.realmData.dailyReset = t + C_DateAndTime.GetSecondsUntilDailyReset()
+        addon.realmData.voteb = {}
+    end
+
+    if not step.active or event == "WindowUpdate" then return end
+
+    poi = addon.realmData.voteb
+    local match
+    if poi[element.poi] or (element.poi == 'unknown' and not next(poi)) then
+        match = true
+    end
+
+    if element.arg1 then match = not match end
+
+    if not addon.settings.profile.debug and not addon.isHidden and not match then
+        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif not step.completed then
+        element.tooltipText = nil
+    end
+end
+
+function addon.functions.isQuestOffered(self, text, npc, ...)
+    if type(self) == "string" then
+        npc = tonumber(npc)
+        if not npc then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ': Invalid npc ID provided\n' .. self)
+        end
+        local element = {textOnly = true, text = text, npc = npc, ids = {...}}
+        local ids = {}
+        for _,q in pairs({...}) do
+            local id = tonumber(q)
+            if id then
+                ids[id] = true
+            end
+        end
+        element.ids = ids
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    if not step.active then
+        return
+    end
+    local event = text
+    local frame = _G.GossipFrame
+    if not event and frame:IsShown() then
+        event = "GOSSIP_SHOW"
+    end
+    if event == "GOSSIP_SHOW" then
+        if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
+            local name = UnitName('target')
+            element.currentNPC = addon.GetNpcId()
+            element.name = name
+            --element.level = 0
+            --print(name,element.currentNPC)
+        end
+        local title
+        if not frame then
+            return
+        elseif frame.NineSlice then
+            title = frame:IsShown() and frame:GetTitleText():GetText()
+        else
+            title = frame:IsShown() and frame.TitleContainer.TitleText:GetText()
+        end
+        if element.currentNPC == element.npc and title == element.name then
+            local quests = C_GossipInfo.GetAvailableQuests()
+            local match
+            for _,q in pairs(quests) do
+                if element.ids[q.questID] then
+                    match = true
+                    element.found = true
+                    break
+                end
+            end
+            if not match then
+                element.tooltipText = not element.found and "Step skipped: Quest is not being offered"
+                step.completed = true
+                addon.updateSteps = true
+            end
+        end
+    end
+    if event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+        element.name = nil
+        element.currentNPC = nil
+        _G.GossipFrame:Hide()
     end
 end

@@ -463,3 +463,81 @@ addon.questAcceptItems = {
     --
     [11941] = 35684, -- Scintillating Fragment quest
 }
+--C_DateAndTime.GetSecondsUntilDailyReset()
+
+
+local klaxxiQuests ={
+
+    [31109] = "clutches",--Culling the Swarm
+    [31494] = "clutches",--Free From Her Clutches
+    [31496] = "clutches",--Sampling the Empire's Finest
+    [31503] = "clutches",--Shortcut to Ruin
+    [31487] = "clutches",--Sonic Disruption
+    [31599] = "clutches",--The Matriarch's Maw
+    [31502] = "clutches",--Wing Clip
+
+    [31111] = "south",--Eradicating the Zan'thik
+    [31509] = "south",--Fear Takes Root
+    [31598] = "south",--Kypa'rak's Core
+    [31507] = "south",--Meltdown
+    [31506] = "south",--Shackles of Manipulation
+    [31508] = "south",--Specimen Request
+    [31505] = "south",--Vess-Guard Duty
+
+    [31232] = "terrace",--An Ancient Empire
+    [31238] = "terrace",--Brain Food
+    [31231] = "terrace",--Dreadspinner Extermination
+    [31235] = "terrace",--Nope Nope Nope
+    [31234] = "terrace",--Putting An Eye Out
+    [31233] = "terrace",--Sap Tapping
+    [31677] = "terrace",--The Warlord's Ashes
+
+    [31268] = "lake",--A Little Brain Work
+    [31271] = "lake",--Bad Genes
+    [31024] = "lake",--Kunchong Treats
+    [31267] = "lake",--Mistblade Destruction
+    [31270] = "lake",--The Fight Against Fear
+    [31269] = "lake",--The Scale-Lord
+
+}
+
+local valeQuests = {
+    [31131] = "whitepetal",
+    [31242] = "mistfallQuiet",
+    [31243] = "mistfallUnderAttack",
+    [31296] = "ruinsofguolaiQuiet",
+}
+
+local celestialQuests ={
+
+[31377] = "jade",
+[31376] = "jade",
+[31379] = "cradle",
+[31378] = "cradle",
+[31381] = "blackox",
+[31380] = "blackox",
+[31382] = "whitetiger",
+[31383] = "whitetiger",
+
+}
+
+function addon.CheckAvailableQuest(id)
+    local klaxxiHub = klaxxiQuests[id]
+    local valeQ = valeQuests[id]
+    local celestial = celestialQuests[id]
+
+    if klaxxiHub then
+        addon.realmData.klaxxi = klaxxiHub
+    elseif valeQ then
+        if addon.realmData.voteb then
+            addon.realmData.voteb[valeQ] = true
+        else
+            addon.realmData.voteb = {[valeQ] = true}
+        end
+    elseif celestial then
+        addon.realmData.celestial = celestial
+    else
+        return
+    end
+    addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
+end

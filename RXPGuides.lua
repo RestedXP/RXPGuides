@@ -219,7 +219,7 @@ function addon.QuestAutoAccept(titleOrId)
 
     -- questAccept contains quest and title lookups
     -- addon.questAccept[747] == addon.questAccept["The Hunt Begins"]
-
+    if addon.CheckAvailableQuest then addon.CheckAvailableQuest(titleOrId) end
     local element = addon.questAccept[titleOrId]
 
     if not element or (element.questId and addon.disabledQuests[element.questId]) then return end
@@ -1059,6 +1059,13 @@ function addon:OnInitialize()
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
+
+    local realm = _G.GetRealmName()
+    RXPData.realmData = RXPData.realmData or {}
+    local realmData = RXPData.realmData[realm] or {}
+    RXPData.realmData[realm] = realmData
+    addon.realmData = realmData
+
 
     RXPCData.questNameCache = RXPCData.questNameCache or {}
     RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}

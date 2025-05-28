@@ -1470,7 +1470,7 @@ function addon.ProcessGuideTable(guide)
                 startAt = nil
             end
             if isShown and not startAt then
-                if not(step.include and step.elements and #step.elements == 0 and not step.requires) then
+                if not(step.include and step.elements and #step.elements == 0 and not step.requires and not step.label) then
                     if step.tip then
                         tinsert(currentGuide.tips,step)
                         lastTip = step

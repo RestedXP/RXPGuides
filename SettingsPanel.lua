@@ -3947,7 +3947,7 @@ step
     currentGuide.name == "" and '' or fmt(" to %s", nextLine or _G.MAINMENU)
     )
 
-    addon.RegisterGuide(_G.PREVIEW, previewsGuideContent)
+    addon.RegisterGuide(_G.PREVIEW or L("Preview"), previewsGuideContent)
 
     local guideToLoad = addon.GetGuideTable(_G.PREVIEW, fmt("%s Frame Positions", _G.PREVIEW))
 

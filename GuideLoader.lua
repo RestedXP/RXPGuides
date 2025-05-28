@@ -321,7 +321,9 @@ function addon.ImportGuide(guide, text, defaultFor, cache)
 end
 
 function addon.RegisterGuide(groupOrContent, text, defaultFor)
-    if addon.addonLoaded then
+    if not groupOrContent then
+        return error('Guide has no contents')
+    elseif addon.addonLoaded then
         local importedGuide, errorMsg = addon.ParseGuide(groupOrContent, text,
                                                         defaultFor)
 
