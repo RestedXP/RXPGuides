@@ -71,6 +71,8 @@ local function LoremasterEnabled()
                     addon.game == "CATA" and addon.settings.profile.loremasterMode
     elseif addon.gameVersion < 60000 then
         loremaster = addon.settings.profile.loremasterMode or UnitLevel('player') == addon.player.maxlevel
+    elseif addon.gameVersion < 50000 then
+        loremaster = addon.settings.profile.loremasterMode
     end
     return loremaster
 end

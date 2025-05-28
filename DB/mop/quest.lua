@@ -503,7 +503,9 @@ local klaxxiQuests ={
 
 local valeQuests = {
     [31131] = "whitepetal",
-    [31242] = "mistfall",
+    [31242] = "mistfallQuiet",
+    [31243] = "mistfallUnderAttack",
+    [31296] = "ruinsofguolaiQuiet",
 }
 
 function addon.CheckAvailableQuest(id)
