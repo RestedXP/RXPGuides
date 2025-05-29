@@ -1389,7 +1389,7 @@ step
     .turnin 4813,3 >> Turn in The Fragments Within << Hunter/Druid
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
-    .isOnQuest 4812
+    .isOnQuest 4813
 step << Hunter/Druid/Warrior
     #completewith AmethStart
     +|cRXP_WARN_Equip the|r |T135145:0|t[Oakthrush Staff]
