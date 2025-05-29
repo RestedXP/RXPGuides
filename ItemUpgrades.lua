@@ -453,10 +453,10 @@ end
 local function enableTotalEPLines(itemData, lines)
     if itemData.dpsWeights then -- IsWeaponSlot equivalent
         for suffix, data in pairs(itemData.dpsWeights) do
-            tinsert(lines, fmt("  Total EP (%s): %.2f", suffix, addon.Round(itemData.totalWeight + data.scaleWeight, 2)))
+            tinsert(lines, fmt("  Total EP (%s): %.2f", suffix, data.speedWeight + data.scaleWeight))
         end
     else -- Armor
-        tinsert(lines, fmt("  Total EP: %.2f", addon.Round(itemData.totalWeight, 2)))
+        tinsert(lines, fmt("  Total EP: %.2f", itemData.totalWeight))
     end
 end
 
@@ -477,12 +477,13 @@ local function TooltipSetItem(tooltip, ...)
 
     local lines = {}
 
+    -- Effectively only used when 1H compares against 2H
     if not statComparisons or next(statComparisons) == nil then
         if addon.settings.profile.enableTotalEP then
             enableTotalEPLines(itemData, lines)
 
             if #lines > 0 then
-                tooltip:AddLine(fmt("%s - %s noSC", addon.title, _G.ITEM_UPGRADE))
+                tooltip:AddLine(fmt("%s - %s SC", addon.title, _G.ITEM_UPGRADE))
 
                 for _, line in ipairs(lines) do tooltip:AddLine(line) end
             end
@@ -491,38 +492,38 @@ local function TooltipSetItem(tooltip, ...)
         return
     end
 
-    local statEPIncrease
     local lineText
 
     for _, statsData in ipairs(statComparisons) do
-        statEPIncrease = addon.Round(statsData.WeightIncrease, 2)
-
-        if statEPIncrease == 0 then statEPIncrease = addon.Round(statsData.WeightIncrease, 4) end
-
         if statsData['Ratio'] then
-            lineText = fmt("  %s: %s / +%s stats EP", statsData['ItemLink'] or _G.UNKNOWN,
-                           prettyPrintRatio(statsData['Ratio']), statEPIncrease)
+            lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
+                           prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
         elseif statsData['ItemLink'] == _G.EMPTY then
-            lineText = fmt("  %s: +%s stats EP", statsData['ItemLink'], statEPIncrease)
+            lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.TotalWeight)
         else -- SPELL_FAILED_ERROR
             lineText = nil
         end
 
-        for suffix, data in pairs(itemData.dpsWeights or {}) do
-            tinsert(lines, fmt("  - %s DPS EP: %s", suffix, addon.Round(statEPIncrease + data.scaleWeight, 2)))
-        end
+        if lineText then
+            if itemData.dpsWeights then
+                for suffix, data in pairs(itemData.dpsWeights or {}) do
+                    -- TODO this is actually total EP calculation, figure out diff
+                    tinsert(lines,
+                            fmt("  - %s EP: %.2f", suffix, statsData.TotalWeight + data.speedWeight + data.scaleWeight))
+                end
+            else -- Insert calculated line above
+                -- TODO combine blocks
+                tinsert(lines, lineText)
+            end
+        end -- Else something went wrong with baseline comparison
 
-        if lineText then tinsert(lines, lineText) end
-
-        if statsData['debug'] and addon.settings.profile.debug then tinsert(lines, "    -" .. statsData['debug']) end
-    end
-
-    if addon.settings.profile.enableTotalEP then
-        enableTotalEPLines(itemData, lines)
+        -- if statsData['debug'] and addon.settings.profile.debug then tinsert(lines, "    - (debug): " .. statsData['debug']) end
     end
 
     if #lines > 0 then
-        tooltip:AddLine(fmt("%s - %s final", addon.title, _G.ITEM_UPGRADE))
+        tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+        if addon.settings.profile.enableTotalEP then enableTotalEPLines(itemData, lines) end
 
         for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
@@ -887,7 +888,7 @@ local function CalculateDPSWeight(itemData, stats)
             overallWeaponWeight = dpsWeight + speedKindWeight
 
             dpsWeights[keySuffix] = {
-                ['overallWeight'] = overallWeaponWeight,
+                ['speedWeight'] = overallWeaponWeight,
                 ['scaleWeight'] = session.activeStatWeights[speedWeightKey]
             }
         end
@@ -1127,9 +1128,7 @@ local SPEED_SUFFIX_SLOT_MAP = {
 
 function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
     for suffix, data in pairs(itemData.dpsWeights or {}) do
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            return itemData.totalWeight + data.overallWeight
-        end
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then return itemData.totalWeight + data.speedWeight end
     end
 
     return -1
