@@ -100,79 +100,101 @@ step
     .accept 3089 >>Accept Rune-Inscribed Parchment << Shaman
     .accept 2383 >> Accept Simple Parchment << Warrior
     .accept 3090 >>Accept Tainted Parchment << Warlock
+    .accept 31156 >>Accept Calligraphed Parchment << Monk
     .target Gornek
+step << Monk
+    .goto 461/1,-4209.900,-618.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gato|r
+    .turnin 31156 >>Turn in Calligraphed Parchment
+    .accept 31157 >>Accept Tiger Palm
+    .target Gato
 step << Rogue
     .goto 1411,42.37,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
     .turnin 3088 >>Turn in Encrypted Parchment
     .accept 25141 >>Accept Eviscerate
-    .train 2098 >> Train |T132292:0|t[Eviscerate]
+    .train 2098 >> Train |T132292:0|t[Eviscerate] << Cata
     .target Rwag
 step << Hunter
     .goto 1411,42.84,69.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karranisha|r
     .turnin 3087 >>Turn in Etched Parchment
     .accept 25139 >>Accept Steady Shot
-    .train 56641 >> Train |T132213:0|t[Steady Shot]
+    .train 56641 >> Train |T132213:0|t[Steady Shot] << Cata
     .target Karranisha
 step << Mage
     .goto 1411,42.52,69.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acrypha|r
     .turnin 25138 >>Turn in Glyphic Parchment
     .accept 25149 >>Accept Arcane Missiles
-    .train 5143 >> Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >> Train |T136096:0|t[Arcane Missiles] << Cata
     .target Acrypha
 step << Shaman
     .goto 1411,42.39,68.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
     .turnin 3089 >>Turn in Rune-Inscribed Parchment
     .accept 25143 >>Accept Primal Strike
-    .train 73899 >> Train |T460956:0|t[Primal Strike]
+    .train 73899 >> Train |T460956:0|t[Primal Strike] << Cata
     .target Shikrik
 step << Warrior
     .goto 1411,42.88,69.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment
     .accept 25147 >>Accept Charge
-    .train 100 >> Train |T132337:0|t[Charge]
+    .train 100 >> Train |T132337:0|t[Charge] << Cata
     .target Frang
 step << Warlock
     .goto 1411,42.38,68.06
     .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
     .accept 25145 >>Accept Immolate
-    .train 348 >> Train |T135817:0|t[Immolate]
+    .train 348 >> Train |T135817:0|t[Immolate] << Cata
     .target Nartok
+step << Monk
+    .goto 1411,43.18,69.47
+	>>Cast |T606551:0|t[Tiger Palm] on a |cRXP_ENEMY_Training Dummy|r
+    .complete 31156,2 --Practice Tiger Palm: 2/2
+	.mob Training Dummy
 step << Rogue
     .goto 1411,43.18,69.47
 	>>Cast |T132292:0|t[Eviscerate] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25141,1 --Cast Eviscerate (x3)
+	.complete 25141,2 << !Cata --Cast Eviscerate (x3)
+	.complete 25141,1 << Cata --Cast Eviscerate (x3)
 	.mob Training Dummy
 step << Hunter
     .goto 1411,43.18,69.47
 	>>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25139,1 --Cast Steady Shot (x5)
+	.complete 25139,2 << !Cata --Cast Steady Shot (x5)
+	.complete 25139,1 << Cata --Cast Steady Shot (x5)
 	.mob Training Dummy
 step << Mage
     .goto 1411,43.18,69.47
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25149,1 --Arcane Missiles (x2)
+	.complete 25149,2 << !Cata--Arcane Missiles (x2)
+	.complete 25149,1 << Cata--Arcane Missiles (x2)
 	.mob Training Dummy
 step << Shaman
     .goto 1411,43.18,69.47
 	>>Cast |T460956:0|t[Primal Strike] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25143,1 --Cast Primal Strike (x3)
+	.complete 25143,2 << !Cata--Cast Primal Strike (x3)
+	.complete 25143,1 << Cata--Cast Primal Strike (x3)
 	.mob Training Dummy
 step << Warrior
     .goto 1411,43.18,69.47
 	>>Cast |T132337:0|t[Charge] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25147,1 --Cast Charge (x1)
+	.complete 25147,2 << !Cata--Cast Charge (x1)
+	.complete 25147,1 << Cata --Cast Charge (x1)
 	.mob Training Dummy
 step << Warlock
     .goto 1411,43.18,69.47
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25145,1 --Cast Immolate (x5)
+	.complete 25145,2 --Cast Immolate (x5)
 	.mob Training Dummy
+step << Monk
+    .goto 461/1,-4209.500,-618.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gato|r
+    .turnin 31157 >>Turn in Tiger Palm
+    .target Gato
 step << Rogue
     .goto 1411,42.37,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
@@ -461,6 +483,7 @@ step << !Troll
 step
     .goto 1411,62.45,84.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'thala|r
+    .accept 31159 >> Accept The Rise of the Darkspear << Monk
 	.accept 24770 >> Accept The Rise of the Darkspear << Rogue
 	.accept 24607 >> Accept The Rise of the Darkspear << Warrior
 	.accept 24750 >> Accept The Rise of the Darkspear << Mage
@@ -470,6 +493,12 @@ step
 	.accept 24782 >> Accept The Rise of the Darkspear << Priest
 	.accept 26272 >> Accept The Rise of the Darkspear << Warlock
     .target Jin'thala
+step << Monk
+    .goto 463/1,-5441.400,-1149.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r
+    .turnin 31159 >>Turn in The Rise of the Darkspear
+    .accept 31158 >>Accept The Basics: Hitting Things
+    .target Zabrax
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r
@@ -528,6 +557,7 @@ step
     .goto 1411,64.732,84.031 << Shaman
     .goto 1411,65.931,84.338 << Warrior
  	>>Kill |cRXP_ENEMY_Tiki Targets|r
+    .complete 31158,1 << Monk --Kill Tiki Target (x6)
 	.complete 24771,1 << Rogue --Kill Tiki Target (x6)
 	.complete 24639,1 << Warrior --Kill Tiki Target (x6)
 	.complete 24751,1 << Mage --Kill Tiki Target (x6)
@@ -537,6 +567,12 @@ step
 	.complete 24783,1 << Priest --Kill Tiki Target (x6)
 	.complete 26273,1 << Warlock --Kill Tiki Target (x6)
 	.mob Tiki Target
+step << Monk
+    .goto 463/1,-5441.300,-1149.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r
+    .turnin 31158 >>Turn in The Basics: Hitting Things
+    .accept 31160 >>Accept A Rough Start
+    .target Zabrax
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r
@@ -547,7 +583,7 @@ step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r
     .turnin 24639 >> Turn in The Basics: Hitting Things
-    .accept 211 >> Accept A Rough Start
+    .accept 24641 >> Accept A Rough Start
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
@@ -585,6 +621,17 @@ step << Warlock
     .turnin 26273 >> Turn in The Basics: Hitting Things
     .accept 26275 >> Accept A Rough Start
     .target Voldreka
+step << Monk
+    #loop
+    .goto 1411,65.51,80.26,0
+    .goto 1411,64.49,80.21,0
+    .goto 1411,65.51,80.26,40,0
+    .goto 1411,65.08,79.72,40,0
+    .goto 1411,64.49,80.21,40,0
+    .goto 1411,64.78,81.23,40,0
+    >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
+	.complete 31160,1 --Collect Wildmane Cat Pelt (x6)
+	.mob Wildmane Cat
 step << Rogue
     #loop
     .goto 1411,65.51,80.26,0
@@ -685,6 +732,12 @@ step << Warlock
     >>Kill |cRXP_ENEMY_Wildmane Cats|r. Loot them for their |cRXP_LOOT_Pelts|r
 	.complete 26275,1 --Collect Wildmane Cat Pelt (x6)
 	.mob Wildmane Cat
+step << Monk
+    .goto 463/1,-5441.300,-1149.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r
+    .turnin 31160 >>Turn in A Rough Start
+    .accept 31161 >>Accept Proving Pit
+    .target Zabrax
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r
@@ -694,8 +747,8 @@ step << Rogue
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r
-    .turnin 211 >> Turn in A Rough Start
-    .accept 212 >> Accept Proving Pit
+    .turnin 24641 >> Turn in A Rough Start
+    .accept 24642 >> Accept Proving Pit
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
@@ -733,16 +786,22 @@ step << Warlock
     .turnin 26275 >> Turn in A Rough Start
     .accept 26276 >> Accept Proving Pit
     .target Voldreka
+step << Monk
+    .goto 1411,65.58,83.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r
+	.complete 31161,1 --Speak to a Darkspear Jailor (x1)
+    .skipgossip
+    .target Darkspear Jailor
 step << Rogue
     .goto 1411,65.58,83.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Jailor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r
 	.complete 24774,1 --Speak to a Darkspear Jailor (x1)
     .skipgossip
     .target Darkspear Jailor
 step << Warrior
     .goto 1411,65.58,83.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkspear Jailor|r
-    .complete 212,1 --Speak to a Darkspear Jailor (x1)
+    .complete 24642,1 --Speak to a Darkspear Jailor (x1)
     .skipgossip
     .target Darkspear Jailor
 step << Mage
@@ -781,6 +840,11 @@ step << Warlock
 	.complete 26276,1 --Speak to a Darkspear Jailor (x1)
     .skipgossip
     .target Darkspear Jailor
+step << Monk
+    .goto 1411,65.29,83.74
+    >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r
+	.complete 31161,2 --1/1 Captive Spitescale Scout slain
+    .mob Captive Spitescale Scout
 step << Rogue
     .goto 1411,65.29,83.74
     >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r
@@ -789,7 +853,7 @@ step << Rogue
 step << Warrior
     .goto 1411,65.29,83.74
     >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r
-	.complete 212,2 --1/1 Captive Spitescale Scout slain
+	.complete 24642,2 --1/1 Captive Spitescale Scout slain
     .mob Captive Spitescale Scout
 step << Mage
     .goto 1411,67.37,83.94
@@ -821,102 +885,127 @@ step << Warlock
     >>Kill the |cRXP_ENEMY_Captive Spitescale Scout|r
 	.complete 26276,2 --1/1 Captive Spitescale Scout slain
     .mob Captive Spitescale Scout
+step << Monk
+    .goto 463/1,-5429.900,-1151.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r
+    .turnin 31161 >>Turn in Proving Pit
+    .accept 31162 >>Accept The Arts of a Monk
+    .target Zabrax
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r
     .turnin 24774 >>Turn in Proving Pit
     .accept 24772 >>Accept The Arts of a Rogue
-    .train 2098 >> Train |T132292:0|t[Eviscerate]
+    .train 2098 >> Train |T132292:0|t[Eviscerate] << Cata
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r
-    .turnin 212 >>Turn in Proving Pit
-    .accept 210 >>Accept The Arts of a Warrior
-    .train 100 >> |T132337:0|t[Charge]
+    .turnin 24642 >>Turn in Proving Pit
+    .accept 24640 >>Accept The Arts of a Warrior
+    .train 100 >> |T132337:0|t[Charge] << Cata
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soratha|r
     .turnin 24754 >>Turn in Proving Pit
     .accept 24752 >>Accept The Arts of a Mage
-    .train 5143 >>Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >>Train |T136096:0|t[Arcane Missiles] << Cata
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nekali|r
     .turnin 24762 >>Turn in Proving Pit
     .accept 24760 >>Accept The Arts of a Shaman
-    .train 73899 >>Train |T460956:0|t[Primal Strike]
+    .train 73899 >>Train |T460956:0|t[Primal Strike] << Cata
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r
     .turnin 24768 >>Turn in Proving Pit
     .accept 24766 >>Accept The Arts of a Druid
-    .train 774 >>Train |T136081:0|t[Rejuvenation]
+    .train 774 >>Train |T136081:0|t[Rejuvenation] << Cata
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ortezza|r
     .turnin 24780 >>Turn in Proving Pit
     .accept 24778 >>Accept The Arts of a Hunter
-    .train 56641 >>Train |T132213:0|t[Steady Shot]
+    .train 56641 >>Train |T132213:0|t[Steady Shot] << Cata
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r
     .turnin 24786 >>Turn in Proving Pit
     .accept 24784 >>Accept The Arts of a Priest
-    .train 2061 >>Train |T135907:0|t[Flash Heal]
+    .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Voldreka|r
     .turnin 26276 >>Turn in Proving Pit
     .accept 26274 >>Accept The Arts of a Warlock
-    .train 348 >>Train |T135817:0|t[Immolate]
+    .train 348 >>Train |T135817:0|t[Immolate] << Cata
     .target Voldreka
+step << Monk
+	.goto 1411,65.91,83.45
+	>>Cast |T606551:0|t[Tiger Palm] on a |cRXP_ENEMY_Tiki Target|r
+	.complete 31162,2 --Cast Tiger Palm (x1)
+	.mob Tiki Target
 step << Rogue
 	.goto 1411,65.91,83.45
 	>>Cast |T132292:0|t[Eviscerate] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 24772,1 --Cast Eviscerate (x3)
+	.complete 24772,2 << !Cata --Cast Eviscerate (x3)
+	.complete 24772,1 << Cata --Cast Eviscerate (x3)
 	.mob Tiki Target
 step << Warrior
 	.goto 1411,65.98,84.42
 	>>Cast |T132337:0|t[Charge] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 210,1 --Cast Charge (x3)
+	.complete 24640,2 << !Cata --Cast Charge (x3)
+	.complete 24640,1 << Cata --Cast Charge (x3)
 	.mob Tiki Target
 step << Mage
 	.goto 1411,68.91,84.31
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 24752,1 --Cast Arcane Missiles (x3)
+	.complete 24752,2 << !Cata --Cast Arcane Missiles (x3)
+	.complete 24752,1 << Cata --Cast Arcane Missiles (x3)
 	.mob Tiki Target
 step << Shaman
 	.goto 1411,64.86,84.69
 	>>Cast |T460956:0|t[Primal Strike] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 24760,1 --Cast Primal Strike (x3)
+	.complete 24760,2 << !Cata --Cast Primal Strike (x3)
+	.complete 24760,1 << Cata --Cast Primal Strike (x3)
 	.mob Tiki Target
 step << Druid
 	.goto 1411,67.91,84.60
 	>>Cast |T136081:0|t[Rejuvenation] on a |cRXP_FRIENDLY_Wounded Darkspear Watcher|r
-	.complete 24766,1 --Cast Rejuvenation (x1)
+	.complete 24766,2 << !Cata --Cast Rejuvenation (x1)
+	.complete 24766,1 << Cata --Cast Rejuvenation (x1)
 	.target Wounded Darkspear Watcher
 step << Hunter
 	.goto 1411,67.18,83.12
 	>>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 24778,1 --Steady Shot (x3)
+	.complete 24778,2 << !Cata --Steady Shot (x3)
+	.complete 24778,1 << Cata --Steady Shot (x3)
 	.mob Tiki Target
 step << Priest
 	.goto 1411,67.35,83.24
 	>>Cast |T135907:0|t[Flash Heal] on a |cRXP_FRIENDLY_Wounded Darkspear Watcher|r
-	.complete 24784,1 --Cast Flash Heal (x5)
+	.complete 24784,2 << !Cata --Cast Flash Heal (x5)
+	.complete 24784,1 << Cata --Cast Flash Heal (x5)
 	.target Wounded Darkspear Watcher
 step << Warlock
 	.goto 1411,65.07,82.88
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 26274,1 --Cast Immolate (x3)
+	.complete 26274,2 << !Cata --Cast Immolate (x3)
+	.complete 26274,1 << Cata --Cast Immolate (x3)
 	.mob Tiki Target
+step << Monk
+    .goto 463/1,-5430.300,-1151.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zabrax|r
+    .turnin 31162 >>Turn in The Arts of a Monk
+    .accept 31163 >>Accept More Than Expected
+    .target Zabrax
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Legati|r
@@ -926,8 +1015,8 @@ step << Rogue
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nortet|r
-    .turnin 211 >>Turn in The Arts of a Warrior
-    .accept 212 >>Accept More Than Expected
+    .turnin 24640 >>Turn in The Arts of a Warrior
+    .accept 24643 >>Accept More Than Expected
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
@@ -968,7 +1057,8 @@ step << Warlock
 step
     .goto 1411,68.86,88.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'Jin|r
-    .turnin 213 >>Turn in More Than Expected << Warrior
+    .turnin 31163 >>Turn in More Than Expected << Monk
+    .turnin 24643 >>Turn in More Than Expected << Warrior
     .turnin 24755 >>Turn in More Than Expected << Mage
     .turnin 24763 >>Turn in More Than Expected << Shaman
     .turnin 24769 >>Turn in More Than Expected << Druid
@@ -1283,17 +1373,17 @@ step << Troll
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r
     .accept 25167 >>Accept Breaking the Chain
     .target Master Gadrin
-step << Shaman
+step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cona|r
     .train 8042 >> Train your class spells
     .target Cona
-step << Druid
+step << Druid Cata
     .goto 1411,56.18,75.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Den'chulu|r
     .train 8921 >> Train your class spells
     .target Den'chulu
-step << Hunter
+step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .train 2973 >> Train your class spells
@@ -1304,12 +1394,11 @@ step
     .goto 1411,56.13,74.53,10,0
     .goto 1411,56.30,73.89,10 >> Go inside the big hut
 step << Mage/Priest/Warlock/Druid
-    #completewith next
     .goto 1411,56.41,73.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'tasi|r
     .vendor >> Vendor trash
     .target Tai'tasi
-step << Warrior
+step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeniss|r
     .train 34428 >> Train your class spells
@@ -1375,27 +1464,27 @@ step << Hunter
     .itemcount 2491,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Mage/Priest/Warlock
+step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
     .goto 1411,56.59,73.25,10,0
     .goto 1411,56.50,72.90,10,0
     .goto 1411,56.33,73.28,10 >> Go upstairs
-step << Mage
+step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bomsanchu|r upstairs
     .train 2136 >> Train your class spells
     .target Bomsanchu
-step << Priest
+step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r upstairs
     .train 589 >> Train your class spells
     .target Parata
-step << Warlock
+step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gusini|r upstairs
     .train 87389 >> Train your class spells
     .target Gusini
-step << Mage/Priest/Warlock
+step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
     .goto 1411,55.71,75.28,10 >> Jump down toward |cRXP_FRIENDLY_Bom'bay|r
 step
@@ -1456,23 +1545,23 @@ step
     .target Bom'bay
     .target Master Gadrin
     .target Lar Prowltusk
-step << Shaman
+step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cona|r
     .train 8042 >> Train your class spells
     .target Cona
-step << Druid
+step << Druid Cata
     .goto 1411,56.18,75.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Den'chulu|r
     .train 8921 >> Train your class spells
     .target Den'chulu
-step << Hunter
+step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .train 2973 >> Train your class spells
     .target Hai'zan
     .xp <6,1
-step << Warrior
+step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeniss|r
     .train 34428 >> Train your class spells
@@ -1538,17 +1627,17 @@ step << Hunter
     .itemcount 2491,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Mage
+step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bomsanchu|r upstairs
     .train 2136 >> Train your class spells
     .target Bomsanchu
-step << Priest
+step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r upstairs
     .train 589 >> Train your class spells
     .target Parata
-step << Warlock
+step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gusini|r upstairs
     .train 87389 >> Train your class spells
@@ -1624,56 +1713,56 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
     .vendor >> Vendor Trash and Repair
     .target Trayexir
-step << Rogue
+step << Rogue Cata
     .goto 1411,56.05,73.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Munalti|r
     .train 15087 >> Train your class spells
     .target Munalti
     .xp <8,1
-step << Shaman
+step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cona|r
     .train 324 >> Train your class spells
     .target Cona
     .xp <8,1
-step << Druid
+step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Den'chulu|r
     .goto 1411,56.18,75.24
     .train 768 >> Train your class spells
     .target Den'chulu
     .xp <8,1
-step << Hunter
+step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .train 2973 >> Train your class spells
     .target Hai'zan
     .xp <6,1
     .xp >8,1
-step << Hunterw
+step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .train 5116 >> Train your class spells
     .target Hai'zan
     .xp <8,1
-step << Warrior
+step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeniss|r
     .train 772 >> Train your class spells
     .target Yeniss
     .xp <7,1
-step << Mage
+step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bomsanchu|r upstairs
     .train 96089 >> Train your class spells
     .target Bomsanchu
     .xp <7,1
-step << Priest
+step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r upstairs
     .train 588 >> Train your class spells
     .target Parata
     .xp <8,1
-step << Warlock
+step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gusini|r upstairs
     .train 687 >> Train your class spells
@@ -1792,49 +1881,49 @@ step << skip
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Burok
-step << Rogue
+step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r in the bunker on the top floor
     .train 15087 >> Train your class spells
     .target Kaplak
     .xp <8,1
-step << Shaman
+step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r inside
     .train 324 >> Train your class spells
     .target Swart
     .xp <8,1
-step << Druid
+step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
     .train 768 >> Train your class spells
     .target Jabul
     .xp <8,1
-step << Hunter
+step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r in the bunker on the bottom floor
     .train 5116 >> Train your class spells
     .target Thotar
     .xp <8,1
-step << Warrior
+step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
     .train 772 >> Train your class spells
     .target Tarshaw Jaggedscar
     .xp <7,1
-step << Mage
+step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
     .train 122 >> Train your class spells
     .target Un'Thuwa
     .xp <8,1
-step << Priest
+step << Priest Cata
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r inside
     .train 588 >>Train your class spells
     .target Tai'jin
     .xp <8,1
-step << Warlock
+step << Warlock Cata
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghugru|r outside
     .train 687 >>Train your class spells
@@ -1929,49 +2018,49 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .accept 25232 >>Accept The Burning Blade
     .target Orgnil Soulscar
-step << Rogue
+step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r in the bunker on the top floor
     .train 15087 >> Train your class spells
     .target Kaplak
     .xp <8,1
-step << Shaman
+step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r inside
     .train 324 >> Train your class spells
     .target Swart
     .xp <8,1
-step << Druid
+step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
     .train 768 >> Train your class spells
     .target Jabul
     .xp <8,1
-step << Hunter
+step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r in the bunker on the bottom floor
     .train 5116 >> Train your class spells
     .target Thotar
     .xp <8,1
-step << Warrior
+step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
     .train 772 >> Train your class spells
     .target Tarshaw Jaggedscar
     .xp <7,1
-step << Mage
+step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
     .train 122 >> Train your class spells
     .target Un'Thuwa
     .xp <8,1
-step << Priest
+step << Priest Cata
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r inside
     .train 588 >>Train your class spells
     .target Tai'jin
     .xp <8,1
-step << Warlock
+step << Warlock Cata
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghugru|r outside
     .train 687 >>Train your class spells
@@ -2178,49 +2267,49 @@ step
     #xprate <1.2
     #completewith DustwindCave
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << Rogue
+step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r in the bunker on the top floor
     .train 61922 >> Train your class spells
     .target Kaplak
     .xp <10,1
-step << Shaman
+step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r inside
     .train 3599 >> Train your class spells
     .target Swart
     .xp <10,1
-step << Druid
+step << Druid Cata
     .goto 1411,53.10,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jabul|r
     .train 5215 >> Train your class spells
     .target Jabul
     .xp <10,1
-step << Hunter
+step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r in the bunker on the bottom floor
     .train 1978 >> Train your class spells
     .target Thotar
     .xp <10,1
-step << Warrior
+step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
     .train 71 >> Train your class spells
     .target Tarshaw Jaggedscar
     .xp <10,1
-step << Mage
+step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
     .train 2139 >> Train your class spells
     .target Un'Thuwa
     .xp <9,1
-step << Priest
+step << Priest Cata
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r inside
     .train 8092 >> Train your class spells
     .target Tai'jin
     .xp <9,1
-step << Warlock
+step << Warlock Cata
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghugru|r outside
     .train 1120 >> Train your class spells
@@ -2349,56 +2438,56 @@ step
     .goto 1411,52.24,43.16
     .turnin 25232 >>Turn in The Burning Blade
     .target Orgnil Soulscar
-step << Rogue
+step << Rogue Cata
     #xprate <1.2
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r in the bunker on the top floor
     .train 61922 >> Train your class spells
     .target Kaplak
     .xp <10,1
-step << Shaman
+step << Shaman Cata
     #xprate <1.2
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r inside
     .train 3599 >> Train your class spells
     .target Swart
     .xp <10,1
-step << Druid
+step << Druid Cata
     #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
     .train 5215 >> Train your class spells
     .target Jabul
     .xp <10,1
-step << Hunter
+step << Hunter Cata
     #xprate <1.2
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r in the bunker on the bottom floor
     .train 1978 >> Train your class spells
     .target Thotar
     .xp <10,1
-step << Warrior
+step << Warrior Cata
     #xprate <1.2
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
     .train 71 >> Train your class spells
     .target Tarshaw Jaggedscar
     .xp <10,1
-step << Mage
+step << Mage Cata
     #xprate <1.2
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
     .train 2139 >> Train your class spells
     .target Un'Thuwa
     .xp <9,1
-step << Priest
+step << Priest Cata
     #xprate <1.2
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r inside
     .train 8092 >> Train your class spells
     .target Tai'jin
     .xp <9,1
-step << Warlock
+step << Warlock Cata
     #xprate <1.2
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghugru|r outside

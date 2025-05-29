@@ -35,9 +35,9 @@ step
     .goto 7,50.92,78.32,30,0
     .goto 7,50.31,77.25,30,0
     .goto 7,49.56,78.24
-    >>Kill |cRXP_ENEMY_Bristleback Invvaders|r
+    >>Kill |cRXP_ENEMY_Bristleback Invaders|r
     .complete 14452,1 --Bristleback Invaders (6)
-    .mob Bristleback Invvader
+    .mob Bristleback Invader
 step
     .goto 7,48.95,78.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grull|r
@@ -92,6 +92,7 @@ step
     .accept 14459 >>Accept The Battleboars
     .accept 14461 >>Accept Feed of Evil
     .goto 7,46.18,82.61
+    .accept 31165 >>Accept Calligraphed Note << Monk
     .accept 3092 >>Accept Accept Etched Note << Hunter
     .accept 3091 >>Accept Simple Note << Warrior
     .accept 27015 >>Accept Consecrated Note << Paladin
@@ -168,79 +169,101 @@ step
     .turnin 24861 >>Turn in Last Rites, First Rites
     .accept 23733 >>Accept Rites of the Earthmother
     .target Chief Hawkwind
+step << Monk
+    .goto 462/1,-260.800,-2910.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoyu|r
+    .turnin 31165 >>Turn in Calligraphed Note
+    .accept 31166 >>Accept Tiger Palm
+    .target Shoyu
 step << Hunter
     .goto 7,45.28,75.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Turn in Etched Note
     .accept 27021 >>Accept The Hunter's Path
-    .train 56641 >> Train |T132213:0|t[Steady Shot]
+    .train 56641 >> Train |T132213:0|t[Steady Shot] << Cata
     .target Lanka Farshot
 step << Warrior
     .goto 7,44.99,75.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Turn in Simple Note
     .accept 27020 >>Accept The First Lesson
-    .train 100 >> Train |T132337:0|t[Charge]
+    .train 100 >> Train |T132337:0|t[Charge] << Cata
     .target Harutt Thunderhorn
 step << Paladin
     .goto 7,44.96,75.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helaku|r
     .turnin 27015 >>Turn in Consecrated Note
     .accept 27023 >>Accept The Way of the Sunwalkers
-    .train 20271 >>Train |T135959:0|t[Judgement]
-    .train 20154 >>Train |T135960:0|t[Seal of Righteousness]
+    .train 20271 >>Train |T135959:0|t[Judgement] << Cata
+    .train 20154 >>Train |T135960:0|t[Seal of Righteousness] << Cata
     .target Sunwalker Helaku
 step << Druid
     .goto 7,45.22,75.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
     .turnin 3094 >>Turn in Verdant Note
     .accept 27067 >>Accept Rejuvenating Touch
-    .train 774 >>Train |T136081:0|t[Rejuvenation]
+    .train 774 >>Train |T136081:0|t[Rejuvenation] << Cata
     .target Gart Mistrunner
 step << Shaman
     .goto 7,45.09,75.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 3093 >>Turn in Rune-Inscribed Note
     .accept 27027 >>Accept Primal Strike
-    .train 73899 >>Train |T460956:0|t[Primal Strike]
+    .train 73899 >>Train |T460956:0|t[Primal Strike] << Cata
     .target Meela Dawnstrider
 step << Priest
     .goto 7,44.99,75.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
     .turnin 27014 >>Turn in Hallowed Note
     .accept 27066 >>Accept Healing in a Flash
-    .train 2061 >>Train |T135907:0|t[Flash Heal]
+    .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
     .target Seer Ravenfeather
+step << Monk
+    .goto 7,45.43,75.39
+	>>Cast |T606551:0|t[Tiger Palm] on a |cRXP_ENEMY_Training Dummy|r
+    .complete 31166,2 --|Practice Tiger Palm: 1/1
+	.mob Training Dummy
 step << Hunter
     .goto 7,45.43,75.39
 	>>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 27021,1 --Steady Shot (x3)
+	.complete 27021,2 << !Cata --Steady Shot (x3)
+	.complete 27021,1 << Cata --Steady Shot (x3)
 	.mob Training Dummy
 step << Warrior
     .goto 7,45.43,75.39
 	>>Cast |T132337:0|t[Charge] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 27020,1 --Cast Charge (x3)
+	.complete 27020,2 << !Cata --Cast Charge (x3)
+	.complete 27020,1 << Cata --Cast Charge (x3)
 	.mob Training Dummy
 step << Paladin
     .goto 7,45.43,75.39
 	>>Cast |T135959:0|t[Judgement] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 27023,1 --Cast Judgement (x3)
+	.complete 27023,2 << !Cata --Cast Judgement (x3)
+	.complete 27023,1 << Cata --Cast Judgement (x3)
 	.mob Training Dummy
 step << Druid
     .goto 7,45.65,75.35
 	>>Cast |T136081:0|t[Rejuvenation] on a |cRXP_FRIENDLY_Wounded Brave|r
-	.complete 27067,1 --Cast Rejuvenation (x1)
+	.complete 27067,2 << !Cata --Cast Rejuvenation (x1)
+	.complete 27067,1 << Cata --Cast Rejuvenation (x1)
 	.target Wounded Brave
 step << Shaman
     .goto 7,45.43,75.39
 	>>Cast |T460956:0|t[Primal Strike] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 27027,1 --Cast Primal Strike (x3)
+	.complete 27027,2 << !Cata --Cast Primal Strike (x3)
+	.complete 27027,1 << Cata --Cast Primal Strike (x3)
 	.mob Training Dummy
 step << Priest
     .goto 7,45.65,75.35
 	>>Cast |T135907:0|t[Flash Heal] on a |cRXP_FRIENDLY_Wounded Brave|r
-	.complete 27066,1 --Cast Flash Heal (x5)
+	.complete 27066,2 << !Cata --Cast Flash Heal (x5)
+	.complete 27066,1 << Cata --Cast Flash Heal (x5)
 	.target Wounded Brave
+step << Monk
+    .goto 462/1,-261.100,-2910.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoyu|r
+    .turnin 31166 >>Turn in Tiger Palm
+    .target Shoyu
 step << Hunter
     .goto 7,45.28,75.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
@@ -313,7 +336,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
     .accept 11129 >>Accept Kyle's Gone Missing!
     .target Ahab Wheathoof
-step << Hunter
+step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .train 2973 >> Train your class spells
@@ -400,22 +423,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken|r
     .accept 761 >>Accept Swoop Hunting
     .target Harken Windtotem
-step << Shaman
+step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarl|r
     .train 8042 >> Train your class spells
     .target Tarl Cloudsong
-step << Priest
+step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alsoomse|r
     .train 589 >> Train your class spells
     .target Seer Alsoomse
-step << Druid
+step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
     .train 8921 >> Train your class spells
     .target Gennia Runetotem
-step << Paladin
+step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iopi|r
     .train 465 >> Train your class spells
@@ -425,7 +448,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .accept 20440 >>Accept Poison Water
     .target Mull Thunderhorn
-step << Warrior
+step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
     .train 34428 >> Train your class spells
@@ -535,7 +558,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 26188 >>Accept Mazzranache
     .target Maur Raincaller
-step << Hunter
+step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .train 2973 >> Train your class spells
@@ -617,31 +640,31 @@ step
     .turnin 24440 >>Turn in Winterhoof Cleansing
     .accept 24441 >>Accept Thunderhorn Totem
     .target Mull Thunderhorn
-step << Warrior
+step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
     .train 84939 >> Train your class spells
     .target Krang Stonehoof
     .xp <7,1
-step << Shaman
+step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarl|r
     .train 324 >> Train your class spells
     .target Tarl Cloudsong
     .xp <8,1
-step << Priest
+step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alsoomse|r
     .train 588 >> Train your class spells
     .target Seer Alsoomse
     .xp <8,1
-step << Druid
+step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
     .train 768 >> Train your class spells
     .target Gennia Runetotem
     .xp <8,1
-step << Paladin
+step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iopi|r
     .train 635 >> Train your class spells
@@ -655,7 +678,7 @@ step
     .itemcount 1179,<20 << !Warrior !Hunter
     .itemcount 4541,<20
     .target Innkeeper Kauth
-step << Hunter
+step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .train 5116 >> Train your class spells
@@ -814,27 +837,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken|r
     .turnin 761 >>Turn in Swoop Huntin
     .target Harken Windtotem
-step << Warrior
+step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
     .train 84939 >> Train your class spells
     .target Krang Stonehoof
-step << Shaman
+step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarl|r
     .train 324 >> Train your class spells
     .target Tarl Cloudsong
-step << Priest
+step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alsoomse|r
     .train 588 >> Train your class spells
     .target Seer Alsoomse
-step << Druid
+step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
     .train 768 >> Train your class spells
     .target Gennia Runetotem
-step << Paladin
+step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iopi|r
     .train 635 >> Train your class spells
@@ -844,7 +867,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 26188 >>Turn in Mazzranache
     .target Maur Raincaller
-step << Hunter
+step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .train 5116 >> Train your class spells
@@ -981,37 +1004,37 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .turnin 24456 >>Turn in Thunderhorn Cleansing
     .target Mull Thunderhorn
-step << Hunter
+step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .train 1978 >> Train your class spells
     .target Yaw Sharpmane
     .xp <10,1
-step << Warrior
+step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
     .train 71 >> Train your class spells
     .target Krang Stonehoof
     .xp <10,1
-step << Shaman
+step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarl|r
     .train 3599 >> Train your class spells
     .target Tarl Cloudsong
     .xp <10,1
-step << Priest
+step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alsoomse|r
     .train 8092 >> Train your class spells
     .target Seer Alsoomse
     .xp <10,1
-step << Druid
+step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
     .train 5215 >> Train your class spells
     .target Gennia Runetotem
     .xp <10,1
-step << Paladin
+step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iopi|r
     .train 82242 >> Train your class spells
