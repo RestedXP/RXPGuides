@@ -1128,15 +1128,8 @@ step
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
-    .accept 957 >> Accept Bashal'Aran
     .target Asterion
     .isQuestComplete 956
-step
-    .goto 1439,44.168,36.289
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
-    .accept 957 >> Accept Bashal'Aran
-    .target Asterion
-    .isQuestTurnedIn 956
 step << !sod/Warrior/Rogue
     #optional
     #completewith RedCrystal
@@ -3882,16 +3875,6 @@ step
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
     .mob Moonstalker Runt
-step << Warrior/Paladin/Rogue
-    #season 0
-    #requires foreststriders
-    .goto 1439,56.654,13.484
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
-    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r << Warrior/Paladin/Rogue
-    .turnin 2098 >> Turn in Gyromast's Retrieval
-    .accept 2078 >> Accept Gyromast's Revenge
-    .target Gelkak Gyromast
-    .solo
 step << !sod/Hunter/Druid
     #requires foreststriders
     .group 2 << Warrior/Paladin/Rogue
@@ -3916,6 +3899,7 @@ step << !sod/Hunter
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4727 >> Accept Beached Sea Turtle
 step << !sod/Hunter/Druid
+    .goto Darkshore,55.81,18.29,10,0
     .goto 1439,56.654,13.484
     #optional
     >>Escort |cRXP_FRIENDLY_The Threshwackonator 4100|r to |cRXP_FRIENDLY_Gelkak Gyromast|r
@@ -4020,6 +4004,7 @@ step << !Warrior
     #completewith BlackwoodSod
     .hs >> Hearth to Auberdine
     .subzoneskip 442
+    .cooldown item,6948,>0,1
 step << !Druid !Warrior
     #optional
     #season 2
@@ -4090,7 +4075,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Turn in A Lost Master
     .target Terenthis
-    .isQuestTurnedIn 986
+    .isQuestComplete 986
 step
     #xprate >1.59
     #requires DeleteGyromast
