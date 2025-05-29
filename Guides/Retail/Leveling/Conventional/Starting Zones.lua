@@ -11117,15 +11117,18 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    .goto 460,45.61,74.52
+    .goto 460,45.54,74.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilthalaine|r.
     .accept 28713 >>Accept The Balance of Nature
 	.target Ilthalaine
 step
-    .goto 460,42.44,76.29,20,0
-    .goto 460,46.63,79.57,20,0
-    .goto 460,50.63,76.87,20,0
-    .goto 460,42.44,76.29
+    #loop
+    .goto 460,51.1,78.12,40,0
+    .goto 460,43.45,83.69,40,0
+    .goto 460,41.56,70.52,40,0
+    .goto 460,37.46,78.38,40,0
+    .goto 460,33.54,67.31,40,0
+    .goto 460,39.8,62.47,40,0
     >>Kill |cRXP_ENEMY_Young Nightsabers|r.
     .complete 28713,1 --6/6 Young Nightsaber slain
 	.mob Young Nightsaber
@@ -11136,96 +11139,160 @@ step
     .accept 28714 >>Accept Fel Moss Corruption
 	.target Ilthalaine
 step
-    .goto 460,45.94,72.87
+    .goto 460,45.72,73.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melithar Staghelm|r.
     .accept 28715 >>Accept Demonic Thieves
 	.target Melithar Staghelm
 step
+    #hidewindow
+    #completewith Grell
+    #loop
+    .goto 460,36.55,79.72,20,0
+    .goto 460,34.34,80.69,20,0
+    .goto 460,33.23,77.07,10,0
+    .goto 460,35.31,76.52,20,0
+    .goto 460,31.06,72.32,40,0
+    .goto 460,31.78,68.8,40,0
+    +1
+step
     #completewith next
-    >>Kill |cRXP_ENEMY_Grell|r, |cRXP_ENEMY_Grellkin|r and loot them for their [|cRXP_LOOT_Fel Moss|r].
+    >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for |T134186:0|t[|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 	.mob Grell
 	.mob Grellkin
 step
-    .goto 460,36.66,79.84,15,0
-    .goto 460,34.82,80.53,15,0
-    .goto 460,31.70,74.85,15,0
-    .goto 460,30.66,70.55,20,0
-    .goto 460,36.66,79.84
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Melithar's Stolen Bags|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Melithar's Stolen Bags|r.
     .complete 28715,1 --5/5 Melithar's Stolen Bags
 step
-    .goto 460,36.66,79.84,15,0
-    .goto 460,34.82,80.53,15,0
-    .goto 460,31.70,74.85,15,0
-    .goto 460,30.66,70.55,20,0
-    .goto 460,36.66,79.84
-    >>Kill |cRXP_ENEMY_Grell|r, |cRXP_ENEMY_Grellkin|r and loot them for their [|cRXP_LOOT_Fel Moss|r].
+    #label Grell
+    >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for |T134186:0|t[|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 	.mob Grell
 	.mob Grellkin
 step
-    .goto 460,45.93,72.86
+    .goto 460,45.96,73.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melithar Staghelm|r.
     .turnin 28715 >>Turn in Demonic Thieves
 	.target Melithar Staghelm
 step
-    .goto 460,46.28,73.48
+    .goto 460,45.96,73.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilthalaine|r.
     .turnin 28714 >>Turn in Fel Moss Corruption
     .accept 28723 >>Accept Priestess of the Moon
 	.target Ilthalaine
 step
-    .goto 460,42.49,50.51
+    #completewith next
+    #label Moon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r.
     .turnin 28723 >>Turn in Priestess of the Moon
     .accept 28724 >>Accept Iverron's Antidote
 	.target Dentaria Silverglade
 step
-    .goto 460,41.87,49.37,5,0
-    .goto 460,40.77,47.27,5,0
-    .goto 460,39.54,52.27,5,0
-    .goto 460,40.18,52.64,5,0
-    .goto 460,40.80,53.32,5,0
-    .goto 460,42.28,52.68,5,0
-    .goto 460,43.60,51.83,5,0
-    .goto 460,41.87,49.37
+    #completewith Moon
+    #hidewindow
+    .goto 460,42.55,61.85,10,0
+    .goto 460,42.69,50.87,70 >>1 
+step
+    #requires Moon
+    .goto 460,42.69,50.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r.
+    .turnin 28723 >>Turn in Priestess of the Moon
+    .accept 28724 >>Accept Iverron's Antidote
+	.target Dentaria Silverglade
+step
+    #loop
+    .goto 460,43.54,51.84,10,0
+    .goto 460,42.18,52.95,10,0
+    .goto 460,41.09,56.9,10,0
+    .goto 460,40.75,53.28,10,0
+    .goto 460,40.01,52.28,10,0
+    .goto 460,39.53,50.64,10,0
+    .goto 460,40.62,49.01,10,0
+    .goto 460,42.09,49.73,10,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Moonpetal Lilies|r.
     .complete 28724,1 -- 7/7 Moonpetal Lily
 step
-    .goto 460,42.49,50.47
+    .goto 460,42.25,50.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r.
     .turnin 28724 >>Turn in Iverron's Antidote
     .accept 28725 >>Accept The Woodland Protector
 	.target Dentaria Silverglade
 step
-	#completewith next
-	.goto 58,44.87,88.5,5 >> Enter the |cRXP_WARN_Cave|r.  then wait for |cRXP_FRIENDLY_Tarindrella|r to appear.
+    #completewith next
+    #label Woodland Protector
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r. 
+    *|cRXP_WARN_She will appear at the entrance of the cave|r.
+    .turnin 28725 >>Turn in The Woodland Protector
+    .accept 28726 >>Accept Webwood Corruption
+    .disablecheckbox
+	.target Tarindrella
 step
-    .goto 58,44.87,88.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r at the arrow location. She will appear after a couple seconds.
+	#completewith Woodland Protector
+    .goto 460,40.68,42.49,20,0
+    .goto 58,45.06,84.11,20 >>Enter the |cRXP_WARN_Cave|r.
+step
+    #requires Woodland Protector
+    .goto 58,44.98,83.27
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r.
     .turnin 28725 >>Turn in The Woodland Protector
     .accept 28726 >>Accept Webwood Corruption
 	.target Tarindrella
+-- step
+--     #completewith next
+--     #hidewindow
+--     #label Webwood Spider
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r next to you.
+--     .turnin 28726 >>Turn in Webwood Corruption
+--     .accept 28727 >>Accept Vile Touch
+--     .disablecheckbox
+-- 	.target Tarindrella
 step
-    .goto 58,39.44,34.72 <<Hunter
-    .goto 58,41.27,33.22,10,0 <<!Hunter
-    .goto 58,34.81,15.50,15,0 <<!Hunter
-    .waypoint 58,46.33,41.34,-30,0
-    >>Kill |cRXP_ENEMY_Spiders|r |cRXP_WARN_within the Cave|r.
-    >>By using Disengage across the Gap at the Waypoint Location you can save some Time <<Hunter
-    >>Make sure that if you do it you don't kill |cRXP_ENEMY_Githyiss the Vile|r because you need him shortly after. << Hunter
+    #completewith next
+    #label Webwood Spider
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r as you follow the route.
     .complete 28726,1 --12/12 Webwood Spider slain
 	.mob Webwood Spider
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r next to you.
+    #completewith Webwood Spider
+    .goto 58,39.52,62.81,30,0
+    .goto 58,32.22,46.27,30,0
+    .goto 58,39.62,34.28,10 >>Jump down the cliff. << !Hunter
+    .goto 58,39.62,34.28,10 >>Position yourself at the edge of the cliff.<< Hunter
+    .goto 58,41.28,28.46,10 >>Use |T132294:0|t[Disengage] to jump to the nearest platform. << Hunter
+step << Hunter
+    #requires Webwood Spider 
+    .goto 58,41.19,16.74,20,0
+    .goto 58,51.51,27.33,20,0
+    .goto 58,56.8,26.03,10,0
+    .goto 58,56.34,41.54,20,0
+    .goto 58,41.6,34.04,20,0
+    .goto 58,33.87,18.02,10,0
+    .goto 58,39.63,14.64,10,0
+    >>Kill remaining |cRXP_ENEMY_Webwood Spiders|r.
+    *|cRXP_WARN_Avoid killing |cRXP_ENEMY_Githyiss the Vile|r as you will need him later|r.
+    .complete 28726,1 --12/12 Webwood Spider slain
+	.mob Webwood Spider
+step
+    #requires Webwood Spider
+    #loop
+    .goto 58,56.34,41.54,20,0
+    .goto 58,41.6,34.04,20,0
+    .goto 58,33.87,18.02,10,0
+    .goto 58,39.63,14.64,10,0
+    .goto 58,51.51,27.33,20,0
+    .goto 58,56.8,26.03,10,0
+    .goto 58,56.34,41.54,20,0
+    >>Kill remaining |cRXP_ENEMY_Webwood Spiders|r.
+    *|cRXP_WARN_Avoid killing |cRXP_ENEMY_Githyiss the Vile|r as you will need him later|r.
+    .complete 28726,1 --12/12 Webwood Spider slain
+	.mob Webwood Spider
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r |cRXP_WARN_next to you|r.
     .turnin 28726 >>Turn in Webwood Corruption
     .accept 28727 >>Accept Vile Touch
 	.target Tarindrella
 step
-    .goto 58,34.56,23.87,0 << !Hunter
-    .goto 58,42.81,19.50,10,0 << !Hunter
-    .goto 58,45.02,31.37
+    .goto 58,44.8,29.1
     >>Kill |cRXP_ENEMY_Githyiss the Vile|r.
     .complete 28727,1 --1/1 Githyiss the Vile slain
 	.mob Githyiss the Vile
@@ -11235,30 +11302,29 @@ step
     .accept 28728 >>Accept Signs of Things to Come
 	.target Tarindrella
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r.
     .goto 460,42.50,50.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r.
     .turnin 28728 >>Turn in Signs of Things to Come
     .accept 28729 >>Accept Teldrassil: Crown of Azeroth
 	.target Dentaria Silverglade
 step
     #completewith next
-    +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key|r.
-    *[2] Select |cRXP_WARN_Options|r.
-    *[3] Navigate to |cRXP_WARN_Keybindings|r.
-    *[4] Within |cRXP_WARN_Keybindings|r,find |cRXP_WARN_RestedXP Guides|r.
-    *[5] Select and bind the |cRXP_WARN_Active Buttons|r.
+    #label Filled Crystal Phial
+    >>Use the |T967530:0|t[Crystal Phial] |cFFfa9602near the Moonwell.|
+    .complete 28729,1 --1/1 Filled Crystal Phial
+    .use 5185
 step << Hunter
-	#completewith next
-    .goto 460,46.36,41.86,30,0
-	.goto 460,51.93,37.12,60 >>Cast |T132164:0|tTame Beast on a Mangy Nightsaber to tame it
-	>>Drag |T132161:0|tCall Pet and |T132179:0|tPet Utility onto your Action Bars
+	#completewith Filled Crystal Phial
+    .goto 460,50.13,34.49
+    .cast 1515 >>Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Mangy Nightsaber|r to tame it.
+	*Drag |T132161:0|tCall Pet and |T132179:0|tPet Utility onto your Action Bars.
 	.target Mangy Nightsaber
 step
+    #requires Filled Crystal Phial
     .goto 460,50.13,34.49
-    >>Use the |T967530:0|t[Crystal Phial] |cFFfa9602near the Moonwell.|
-    .use 5185
+    >>Use the |T967530:0|t[Crystal Phial] |cRXP_WARN_near the Moonwell|r.
     .complete 28729,1 --1/1 Filled Crystal Phial
+    .use 5185
 step
     .goto 460,42.49,50.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r.
@@ -11266,21 +11332,46 @@ step
     .accept 28730 >>Accept Precious Waters
 	.target Dentaria Silverglade
 step
-    .goto 460,41.85,63.54,15,0
-    .goto 460,46.45,53.43,15,0
-    .goto 460,44.44,56.47,15,0
-    .goto 460,45.20,60.69,15,0
-    .goto 460,48.01,58.75,15,0
-    .goto 460,48.14,54.36,15,0
-    .goto 460,47.16,55.95
-    >>Walk up the ramp of the Tree
+    #completewith next
+    #label Precious Waters
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tenaron Stormgrip|r.
     .turnin 28730 >>Turn in Precious Waters
     .accept 28731 >>Accept Teldrassil: Passing Awareness
 	.target Tenaron Stormgrip
 step
+    #completewith Precious Waters
+    .goto 460,41.78,63.83,20,0
+    .goto 460,43.76,58.35,10,0
+    .goto 460,44.56,54.51,10,0
+    .goto 460,46.18,53.36,10,0
+    .goto 460,44.59,57.67,10,0
+    .goto 460,44.87,60.29,10,0
+    .goto 460,46.14,60.77,10,0
+    .goto 460,47.86,58.81,10,0
+    .goto 460,48.5,55.37,10,0
+    .goto 460,47.97,54.61,5 >>Ascend the ramp of the tree.
+step
+    #requires Precious Waters
+    .goto 460,47.37,55.68
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tenaron Stormgrip|r.
+    .turnin 28730 >>Turn in Precious Waters
+    .accept 28731 >>Accept Teldrassil: Passing Awareness
+	.target Tenaron Stormgrip
+step
+    #completewith next
+    #label Dolanaar Delivery
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Porthannius|r.
+    .accept 2159 >>Accept Dolanaar Delivery
+	.target Porthannius
+step
+    #completewith Dolanaar Delivery
+    #title Jump off the Tree.
+    .goto 460,48.12,54.41,8,0
+    .goto 460,48.96,56.98,10,0
+    .goto 460,49.51,59.39,10 >>You have a slowfall buff so you won't die.
+step
+    #requires Dolanaar Delivery
     .goto 460,54.57,84.78
-	>>Jump off the Tree. You have a slowfall buff so you won't die
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Porthannius|r.
     .accept 2159 >>Accept Dolanaar Delivery
 	.target Porthannius
