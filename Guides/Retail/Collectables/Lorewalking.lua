@@ -1574,21 +1574,25 @@ step
     .goto 2418,55.38,21.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
     .complete 85884,3 --1/1 Talk to Cho
-    .timer 300,RP
+    .timer 160,RP
     .skipgossipid 131599
     .target Cho
-----
 step
-    no access player coordinates
+    #completewith Coordinates
+    +There is no access to player coordinates therefore no arrow.
 step
-    >>|cRXP_WARN_Wait for the Roleplay|r.
+    >>|cRXP_WARN_Enter the gate of Stratholme and then Wait for the Roleplay|r.
     .scenario 15174,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthas|r
     .scenario 15805,1
+    .timer 120,RP
     .skipgossipid 36217
     .target Arthas
+step
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 85884,4 --1/1 Witness the Culling of Stratholme
+    .target Arthas
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthas|r
     .scenario 15807,1
@@ -1596,13 +1600,19 @@ step
     .skipgossipid 36273
     .target Arthas
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85884,5 --1/1 Talk to Cho
+    .skipgossipid 134404
+    .target Cho
+step
     >>Kill |cRXP_ENEMY_Mal'Ganis|r
     .complete 85884,5 --1/1 Confront Mal'Ganis
     .mob Mal'Ganis
 step
+    #label Coordinates
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
     .complete 85884,6 --1/1 Talk to Cho
-    .skipgossipid 134404
+    .skipgossipid 131600
     .target Cho
 
 ----
@@ -1612,26 +1622,25 @@ step
     .accept 12291 >>Accept The Forgotten Tale
     .target Orik Trueheart
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Forgotten Rifleman|r
-    .complete 12291,2 --1/1 Forgotten Rifleman Questioned
-    .skipgossipid 37796
-    .mob Forgotten Rifleman
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Forgotten Knight|r
-    .complete 12291,3 --1/1 Forgotten Knight Questioned
-    .skipgossipid 37797
-    .mob Forgotten Knight
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Forgotten Peasant|r
+    #loop
+    .goto 115,86.89,64.68,40,0
+    .goto 115,86.84,67.57,40,0
+    .goto 115,85.44,69.95,40,0
+    .goto 115,84.08,66.37,40,0
+    .goto 115,82.42,66.74,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Forgotten Rifleman|r  |cRXP_FRIENDLY_Forgotten Footman|r |cRXP_FRIENDLY_Forgotten Knight|r |cRXP_FRIENDLY_Forgotten Peasant|r
     .complete 12291,1 --1/1 Forgotten Peasant Questioned
-    .mob Forgotten Peasant
-    .skipgossipid 35881
-step
-    .goto 115,85.23,68.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Forgotten Footman|r
+    .mob +Forgotten Peasant
+    .complete 12291,2 --1/1 Forgotten Rifleman Questioned
+    .mob +Forgotten Rifleman
+    .complete 12291,3 --1/1 Forgotten Knight Questioned
+    .mob +Forgotten Knight
     .complete 12291,4 --1/1 Forgotten Footman Questioned
+    .mob +Forgotten Footman
+    .skipgossipid 37796
+    .skipgossipid 37797
+    .skipgossipid 35881
     .skipgossipid 34970
-    .mob Forgotten Footman
 step
     .goto 115,87.17,57.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r
@@ -1645,12 +1654,23 @@ step
     .complete 12301,1
 step
     #completewith Orik's
-    .goto 115,86.81,66.18
+    .goto 115,86.85,65.99
     .cast 48866 >>Use |T134334:0|t[Orik's Crystalline Orb]
-    .timer 120,RP
+    .timer 113,RP
     .use 37577
+-- step
+--     #requires Orik's
+--     #completewith next
+--     #label Orik's2
+--     >>|cRXP_WARN_Wait for the Roleplay|r.
+--     .complete 12301,1
+-- step
+--     #requires Orik's
+--     #completewith Orik's2
+--     .goto 115,87.31,64.59,10 >>Go to the Questgiver
 step
-    #requires Orik's
+    #requires Orik's2
+    .goto 115,86.97,65.58
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 12301,1
 step
@@ -1749,9 +1769,9 @@ step
     .accept 85885 >>Accept Lorewalking: No King Rules Forever
     .target Lorewalker Cho
 step
-    .goto 118,51.46,79.65
+    .goto 84,64.19,16.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
-    .complete 85885,5 --1/1 Talk to Cho
+    .complete 85885,1 --1/1 Talk to Cho
     .timer 40,RP
     .skipgossipid 131573
 step
