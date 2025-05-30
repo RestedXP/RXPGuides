@@ -2285,10 +2285,6 @@ RXPGuides.RegisterGuide([[
 
 << DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
 
-
-step
-    #completewith next
-    +Welcome to the |cRXP_WARN_Death Knight Starting Zone|r. Guide of RestedXP.
 step
     .goto 124,51.33,35.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r.
@@ -2956,13 +2952,8 @@ RXPGuides.RegisterGuide([[
 #next << Alliance
 #next << Horde
 
-
 << DemonHunter
 
-
-step
-    #completewith DemonHunterIntroduction
-    +Welcome to the |cRXP_WARN_Demon Hunter Starting Zone|r. Guide of RestedXP.
 step
     #completewith next
     +|cRXP_WARN_In speedrun terms, always be on the lookout for green crystals in this area. These crystals give your Fel Rush ability a significant boost by eliminating its cooldown for two whole minutes. This allows you to zip through the zone at a quicker pace and clear obstacles more efficiently|r.
@@ -3840,9 +3831,6 @@ step << !Evoker Alliance
 step << Evoker
     .goto 2109,46.73,78.71
     .accept 64864 >>Auto Accept Awaken, Dracthyr
-step << Evoker
-    #completewith DrakthyrIntroduction
-    +Welcome to the Drakthyr Guide of RestedXP.
 step << Evoker
     #label DrakthyrIntroduction
     >>|TInterface/GossipFrame/HealerGossipIcon:0|tInteract with |cRXP_FRIENDLY_Kodethi|r or |cRXP_FRIENDLY_Dervishian|r in front of you. Wait for your Disintegrate to complete.
@@ -4830,13 +4818,8 @@ RXPGuides.RegisterGuide([[
 #next << Alliance
 #next << Horde
 
-
 << Pandaren !DK
 
-step
-    #completewith next
-    +Welcome to the |cRXP_WARN_Pandaren Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than Exile's Reach. For faster leveling, consider recreating your character and selecting Exile's Reach instead.
 step
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
@@ -6390,55 +6373,73 @@ RXPGuides.RegisterGuide([[
 << Alliance 
 
 step
-    #completewith next
-    +Welcome to the |cRXP_WARN_Draenei Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
-step
-    .goto 468,61.21,29.48
+    .goto 468,61.21,29.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megelon|r.
     .accept 9279 >>Accept You Survived!
 	.target Megelon
 step
-    .goto 468,52.75,35.88
+    .goto 468,52.96,35.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .turnin 9279 >>Turn in You Survived!
     .accept 9280 >>Accept Replenishing the Healing Crystals
 	.target Proenitus
 step
     #loop
-    .goto 468,49.59,30.55,40,0
-    .goto 468,53.92,27.74,40,0
-    .goto 468,53.33,21.41,40,0
-    .goto 468,45.1,22.63,40,0
-    .goto 468,44.45,26.97,40,0
-    .goto 468,46.91,34.21,40,0
-    .goto 468,41.99,33.66,40,0
-    .goto 468,37.3,28.15,40,0
-    >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for [|cRXP_LOOT_Vial of Moth Blood|r].
+    .goto 468,52.84,28.69,30,0
+    .goto 468,51.77,26.5,30,0
+    .goto 468,49.48,29.56,30,0
+    .goto 468,50.64,34.24,30,0
+    .goto 468,46.43,33.61,30,0
+    .goto 468,45.1,28.57,30,0
+    .goto 468,49.21,25.21,30,0
+    .goto 468,53.47,25.15,30,0
+    .goto 468,54.91,28.56,30,0
+    .goto 468,54.47,31.88,30,0
+    >>Kill |cRXP_ENEMY_Vale Moths|r. Loot them for |T134844:0|t[|cRXP_LOOT_Vial of Moth Blood|r].
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
 step
-    .goto 468,52.7,35.9,15,0
+    .goto 468,52.52,35.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .turnin 9280 >>Turn in Replenishing the Healing Crystals
     .accept 9409 >>Accept Urgent Delivery!
 	.target Proenitus
 step
-    #loop
-    .goto 468,52.53,41.11,20,0
-    .goto 468,52.2,43.6,15,0
+    #completewith next
+    #label Urgent Delivery!
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r.
     .turnin 9409 >>Turn in Urgent Delivery!
     .accept 9283 >>Accept Rescue the Survivors!
 	.target Zalduun
 step
-    .goto 468,52.67,37.18,10,0
-    .goto 468,52.7,35.9
+    #completewith Urgent Delivery!
+    .goto 468,52.45,38.24,10 >>Enter the House
+step
+    #requires Urgent Delivery!
+    #loop
+    .goto 468,52.1,41.05,15,0
+    .goto 468,51.78,43.55,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r.
+    .turnin 9409 >>Turn in Urgent Delivery!
+    .accept 9283 >>Accept Rescue the Survivors!
+	.target Zalduun
+step
+    #completewith next
+    #label Botanist Taerix
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .accept 9371 >>Accept Botanist Taerix
 	.target Proenitus
 step
-    .goto 468,49.87,37.34
+    #completewith Botanist Taerix
+    .goto 468,52.75,36.22,30 >>Leave the House
+step
+    #requires Botanist Taerix
+    .goto 468,52.75,36.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
+    .accept 9371 >>Accept Botanist Taerix
+	.target Proenitus
+step
+    .goto 468,50.11,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9371 >>Turn in Botanist Taerix
     .accept 10302 >>Accept Volatile Mutations
@@ -6474,50 +6475,91 @@ step
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
+    .goto 468,49.66,37.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r and |cRXP_FRIENDLY_Apprentice Vishael|r.
     .turnin 10302 >>Turn in Volatile Mutations
     .accept 9293 >>Accept What Must Be Done...
-    .goto 468,49.87,37.34
+	.target +Botanist Taerix
     .accept 9799 >>Accept Botanical Legwork
-    .goto 468,49.72,37.51
-	.target Botanist Taerix
-    .target Apprentice Vishael
+    .target +Apprentice Vishael
 step
+    #completewith next
     #hidewindow
-    #completewith Corrupted Flower
+    #label Corrupted Flower1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
+    .complete 9799,1 --3/3 Corrupted Flower
+step
+    #completewith Corrupted Flower1
+    .goto 468,41.84,40.66,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    .mob Volatile Mutation
+    .mob Vale Moth
+step
+    #requires Corrupted Flower1
+    #hidewindow
+    #completewith Corrupted Flower2
     #loop
-    .goto 468,40.02,39.98,40,0
-    .goto 468,33.42,44.36,40,0
-    .goto 468,38.59,49,40,0
-    .goto 468,40.81,41.07,40,0
-    .goto 468,37.55,52.77,40,0
-    .goto 468,33.03,48.81,40,0
+    .goto 468,40.39,40.13,30,0
+    .goto 468,37.38,43.28,30,0
+    .goto 468,37.4,49.58,30,0
+    .goto 468,39.96,45.86,30,0
+    .goto 468,35.81,39.68,30,0
+    .goto 468,33.71,45.45,30,0
+    .goto 468,34.73,49.62,30,0
     +1
 step
+    #requires Corrupted Flower1
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
-    >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their [|cRXP_LOOT_Lasher Samples|r].
+    #requires Corrupted Flower1
+    >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. Loot them for |T134192:0|t[|cRXP_LOOT_Lasher Samples|r].
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
-    #label Corrupted Flower
+    #label Corrupted Flower2
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
+    #completewith next
+    #label Botanical Legwork
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Vishael|r and |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9799 >>Turn in Botanical Legwork
-    .goto 468,49.72,37.54
+	.target +Apprentice Vishael
     .turnin 9293 >>Turn in What Must Be Done...
     .accept 9294 >>Accept Healing the Lake
-    .goto 468,49.87,37.34
-	.target Apprentice Vishael
-    .target Botanist Taerix
+    .disablecheckbox
+    .target +Botanist Taerix
 step
+    #completewith Botanical Legwork
+    .goto 468,44.92,39.8,20,0
+    .goto 468,49.78,37.47,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Volatile Mutation
+    .mob Vale Moth
+step
+    #requires Botanical Legwork
+    .goto 468,49.78,37.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Vishael|r and |cRXP_FRIENDLY_Botanist Taerix|r.
+    .turnin 9799 >>Turn in Botanical Legwork
+	.target +Apprentice Vishael
+    .turnin 9293 >>Turn in What Must Be Done...
+    .accept 9294 >>Accept Healing the Lake
+    .target +Botanist Taerix
+step
+    #completewith next
+    #label Rescue the Survivors!
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r.
+    .turnin 9283 >>Turn in Rescue the Survivors!
+	.target Zalduun
+step
+    #completewith Rescue the Survivors!
+    .goto 468,51.98,36.89,10,0
+    .goto 468,52.64,37.31,5 >>Enter the House
+step
+    #requires Rescue the Survivors!
     #loop
-    .goto 468,52.53,41.11,20,0
-    .goto 468,52.2,43.6,15,0
+    .goto 468,52.1,41.05,15,0
+    .goto 468,51.78,43.55,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r.
     .turnin 9283 >>Turn in Rescue the Survivors!
 	.target Zalduun
@@ -6534,10 +6576,23 @@ step
     #completewith next
     +|cFFFF0000[TIP]|r To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
 step
-    .goto 468,45.85,62.9
-    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water|r.
-    .use 22955
+    #completewith next
+    #label Neutralizing Agent
+    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water near the big crystal|r.
     .complete 9294,1 --1/1 Disperse the Neutralizing Agent
+    .use 22955
+step
+    #completewith Neutralizing Agent
+    .goto 468,47.39,59.38,15,0
+    .goto 468,46.91,64.16,7 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Volatile Mutation
+    .mob Vale Moth
+step
+    #requires Neutralizing Agent
+    .goto 468,46.91,64.16
+    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water near the big crystal|r.
+    .complete 9294,1 --1/1 Disperse the Neutralizing Agent
+    .use 22955
 step
     #hidewindow
     #completewith inoculated
@@ -7154,10 +7209,7 @@ RXPGuides.RegisterGuide([[
 
 << Alliance
 
-step
-    #completewith next
-    +Welcome to the |cRXP_WARN_Dwarf Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
+
 step
     .goto 427,67.28,41.62  --clickradius
     .goto 27,36.872,70.045  --npc location
@@ -7228,7 +7280,7 @@ step
 step
     #completewith Aid for the Wounded
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 427,65.46,43.86,40 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you can't mount and have a way to do it|r.
+    .goto 427,65.46,43.86,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
 step
     #requires Aid for the Wounded
     .goto 427,65.46,43.86
@@ -7474,7 +7526,7 @@ step
     #requires Whitebeard Needs Ye
     #completewith Whitebeard Needs Ye2
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 427,43.03,62.66 ,40 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you can't mount and have a way to do it|r.
+    .goto 427,43.03,62.66 ,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Whitebeard Needs Ye2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r, |cRXP_FRIENDLY_Apprentice Soren|r, and |cRXP_FRIENDLY_Felix Whindlebolt|r.
@@ -7587,7 +7639,7 @@ step
     .isQuestComplete 182
 step
     #completewith isQuestComplete Troll Menace
-    .goto 427,41.83,63.2,30 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount and have a way to do it|r.
+    .goto 427,41.83,63.2,30 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires isQuestComplete Troll Menace
     .goto 427,46.25,76.11,10,0
@@ -7620,7 +7672,7 @@ step
     .isQuestNotComplete 182
 step
     #completewith isQuestNotComplete Troll Menace
-    .goto 427,41.83,63.2,30 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount and have a way to do it|r.
+    .goto 427,41.83,63.2,30 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
 step
     #requires isQuestNotComplete Troll Menace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felix Whindlebolt|r, |cRXP_FRIENDLY_Apprentice Soren|r, and |cRXP_FRIENDLY_Grelin Whitebeard|r.
@@ -7812,7 +7864,7 @@ step
 	.target Grelin Whitebeard
 step
     #completewith Ice and Fire2
-    .goto 27,32.064,74.170,30 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount and have a way to do it|r.
+    .goto 27,32.064,74.170,30 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .isNotOnQuest 182
 step
     #requires Ice and Fire2
@@ -7831,7 +7883,7 @@ step
 	.target Hands Springsprocket
 step
     #completewith Trip to Ironforge
-    .goto 427,86.95,44.49,90 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount and have a way to do it|r.
+    .goto 427,86.95,44.49,90 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Trip to Ironforge
     .goto 427,86.95,44.49 --clickradius
@@ -7926,10 +7978,6 @@ RXPGuides.RegisterGuide([[
 
 << Alliance
 
-step
-    #completewith next
-    +Welcome to the |cRXP_WARN_Gnome Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
 step
     .goto 30,34.101,32.243
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nevin Twistwrench|r.
@@ -8029,7 +8077,7 @@ step
 step
     #completewith Withdraw to the Loading Room!
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 30,53.063,82.341,30 >>Head to the questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you have a way to do it|r.
+    .goto 30,53.063,82.341,30 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Withdraw to the Loading Room!
     .goto 30,53.83,81.53 --clickradius
@@ -8428,7 +8476,7 @@ step
 step
     #completewith Turn in Dealing with the Fallout
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 469,38.38,39.94,60 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you can't mount and have a way to do it|r.
+    .goto 469,38.38,39.94,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Turn in Dealing with the Fallout
     .goto 469,38.38,39.94
@@ -8490,7 +8538,7 @@ step
 step
     #completewith Missing in Action
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 469,37.11,65.54,40 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you can't mount and have a way to do it|r.
+    .goto 469,37.11,65.54,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Missing in Action
     .goto 469,37.11,65.54
@@ -8624,7 +8672,7 @@ step
     #requires Boss Bruggor
     #completewith Detonate trogg tunnel
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 470,27.47,52.08,30 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you have a way to do it|r.
+    .goto 470,27.47,52.08,30 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Detonate trogg tunnel
     #completewith next
@@ -8661,7 +8709,7 @@ step
 step
     #completewith Finishin' the Job
     #title |cFFFCDC00Exit Cave|r
-    .goto 469,34.42,66.18,30 >>Exit the Frostmane Hold Cave, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you know how|r.
+    .goto 469,34.42,66.18,30 >>Exit the Frostmane Hold Cave, |cRXP_WARN_If you are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     *|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
 step
     #requires Finishin' the Job
@@ -8762,7 +8810,7 @@ step
 step
     #title |cFFFCDC00Follow the Arrow|r
     #completewith in One More Thing
-    .goto 469,38.84,33.15,100 >>Head to the Questgiver, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount and have a way to do it|r.
+    .goto 469,38.84,33.15,100 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires in One More Thing
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r and |cRXP_FRIENDLY_Hinkles Fastblast|r.
@@ -8790,7 +8838,7 @@ step
     .use 58200
 step
     #completewith Repaired Mechano-Tanks destroyed
-    .goto 469,49.24,26.54,10 >>Head to the Objective, efficiently killing monsters along the way without stopping |cRXP_WARN_only if you cannot mount and have a way to do it|r.
+    .goto 469,49.24,26.54,10 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Repaired Mechano-Tanks destroyed
     #hidewindow
@@ -9666,11 +9714,6 @@ RXPGuides.RegisterGuide([[
 
 << Alliance
 
-step
-    #completewith next
-    +Welcome to the Human Starting Zone Guide of RestedXP.
-    +It's highly recommended to |cRXP_WARN_NOT|r. level |cRXP_WARN_in the Human Starting Zone|r and instead choose |cRXP_WARN_Exile's Reach|r for faster leveling.
-    *|cRXP_WARN_The Human Starting Experience|r requires a lot of experience from Rares and Treasure to be equally efficient.
 step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r.
@@ -11153,7 +11196,7 @@ step
     #completewith Fel Moss
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,36.55,79.72,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
 step
@@ -11195,7 +11238,7 @@ step
     #completewith Demonic Thieves
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,45.96,73.38,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
@@ -11266,12 +11309,15 @@ step
 	.target Tarindrella
 step
 	#completewith Woodland Protector
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 460,40.68,42.49,20,0
     .goto 58,45.06,84.11,20 >>Enter the |cRXP_WARN_Cave|r.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
 	.mob Grellkin
+    .mob Thistle Boar
 step
     #requires Woodland Protector
     .goto 58,44.98,83.27
@@ -11360,16 +11406,19 @@ step << !Hunter
 	#completewith Filled Crystal Phial
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,49.97,34.37,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
 	.mob Grellkin
+    .mob Thistle Boar
 step << Hunter
 	#completewith Filled Crystal Phial
     .goto 460,49.97,34.37
 	*|cRXP_WARN_Drag|r |T132161:0|t[Call Pet] |cRXP_WARN_and|r |T132179:0|t[Pet Utility] |cRXP_WARN_onto your Action Bars|r.
     .cast 1515 >>Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Mangy Nightsaber|r to tame it.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .usespell 1515
 	.target Mangy Nightsaber
 step
     #requires Filled Crystal Phial
@@ -11389,11 +11438,12 @@ step
 	#completewith Crown of Azeroth
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,42.49,50.49,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
 	.mob Grellkin
+    .mob Thistle Boar
 step
     #requires Crown of Azeroth
     .goto 460,42.49,50.49
@@ -11420,6 +11470,11 @@ step
     .goto 460,47.86,58.81,10,0
     .goto 460,48.5,55.37,10,0
     .goto 460,47.97,54.61,5 >>Ascend the ramp of the tree.
+    .mob Young Nightsaber
+    .mob Young Thistle Boar
+    .mob Grell
+	.mob Grellkin
+    .mob Thistle Boar
 step
     #requires Precious Waters
     .goto 460,47.37,55.68
@@ -11451,12 +11506,18 @@ step
     #requires Dolanaar Delivery
     #completewith Dolanaar Delivery2
     #title |cFFFCDC00Follow the Arrow|r
+    .goto 460,54.79,86.2,5,0
+    .goto 57,60.39,45.13,10,0
+    .goto 57,60.35,45.81,10,0
+    .goto 57,60.35,45.81,10,0
     .goto 460,54.7,84.79,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
 	.mob Grellkin
+    .mob Strigid Owl
+    .mob Thistle Boar
 step
     #requires Dolanaar Delivery2
     .goto 460,54.7,84.79
@@ -11492,7 +11553,7 @@ step
     #completewith Zenn's Bidding
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,59.56,49.09,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
     #requires Zenn's Bidding
     .goto 57,59.56,49.09
@@ -11501,7 +11562,7 @@ step
 	.target Zenn Foulhoof
 step
     #loop
-    .goto 57,60.72,52.55,40,0
+    .goto 57,60.93,54.2,40,0
     .goto 57,57.41,53.02,40,0
     .goto 57,57.14,48.36,40,0
     .goto 57,59.54,47.9,40,0
@@ -11513,7 +11574,7 @@ step
 	.mob Strigid Owl Feather
 	.mob Webwood Spider
 step
-    .goto 57,59.54,49.18
+    .goto 57,59.49,49.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 488 >>Turn in Zenn's Bidding
     .target Zenn Foulhoof
@@ -11534,13 +11595,17 @@ step
     .accept 489 >>Accept Seek Redemption!
 	.target Syral Bladeleaf
 step
-    #hidewindow
     #completewith Seek Redemption!
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 57,59.1,49.97,10,0
-    .goto 57,55.72,50.52,40 >>1
+    .goto 57,55.84,50.39,40 >>Head to the Objective.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+	.mob Nightsaber Fang
+	.mob Strigid Owl Feather
+	.mob Webwood Spider
 step
     #requires Seek Redemption!
-    .goto 57,55.72,50.52
+    .goto 57,55.84,50.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r.
     .accept 489 >>Accept Seek Redemption!
 	.target Syral Bladeleaf
@@ -11637,7 +11702,7 @@ step
     .goto 57,56.76,54.68,10 >>1
 step
     #requires Fel Cone
-    .goto 57,56.74,53.51
+    .goto 57,56.8,53.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyoma|r.
     .accept 6344 >>Accept Reminders of Home
 	.target Nyoma
@@ -11658,14 +11723,14 @@ step
 step
     #completewith Turn in Seek Redemption!
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 57,59.51,49.15,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    .goto 57,59.56,49.2,60 >>Head to the Objective.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Webwood Lurker
     .mob Strigid Owl
     .mob Nightsaber
 step
     #requires Turn in Seek Redemption!
-    .goto 57,59.51,49.15
+    .goto 57,59.56,49.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 489 >>Turn in Seek Redemption!
     .target Zenn Foulhoof
@@ -11702,7 +11767,7 @@ step
     #completewith Filled Jade Phial
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,62.03,50.54,60 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Webwood Lurker
     .mob Strigid Owl
     .mob Nightsaber
@@ -11730,6 +11795,7 @@ step
     .goto 57,64.6,51.16,5 >>Check for the Treasure Chest |cRXP_WARN_inside the House|r.
     .mob Gnarlpine Gardener
     .mob Gnarlpine Warrior
+    .mob Gnarlpine Ursa
 step    
     #requires in A Troubling Breeze
     .goto 57,64.6,51.16
@@ -11781,9 +11847,24 @@ step
     .turnin 929 >>Turn in Teldrassil: The Refusal of the Aspects
     .target Corithras Moonrage
 step
-    .goto 57,57.61,62.74
+    #completewith next
+    #label Head to the Objective
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Fruited Plant|r
     .accept 930 >>Accept The Glowing Fruit
+    .target Strange Fruited Plant
+step
+    #completewith Head to the Objective
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 57,57.6,62.74,60 >>Head to the Objective.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Webwood Lurker
+    .mob Strigid Owl
+    .mob Nightsaber
+step
+    #requires Head to the Objective
+    .goto 57,57.6,62.74
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Strange Fruited Plant|r
+    .acceptw 930 >>Accept The Glowing Fruit
     .target Strange Fruited Plant
 step
     #completewith next
@@ -11794,13 +11875,14 @@ step
  step
     #completewith Glowing Fruit
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 57,58.72,62
+    .goto 57,58.05,62.22,10,0
+    .goto 57,58.65,62.06,10,0
     .goto 57,59.95,59.78,80 >>Head to the Objective.
-    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Timberling
 step
     #requires Glowing Fruit
-    .goto 57,59.95,59.78
+    .goto 57,59.9,59.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 930 >>Turn in The Glowing Fruit
     .target Denalan
@@ -11842,54 +11924,63 @@ step
     .accept 13946 >>Accept Nature's Reprisal
     .target Syral Bladeleaf
 step
-    .goto 57,55.56,50.00
+    .goto 57,55.62,50.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r.
     .turnin 2438 >>Turn in The Emerald Dreamcatcher
     .accept 2459 >>Accept Ferocitas the Dream Eater
     .accept 932 >>Accept Twisted Hatred
     .target Tallonkai Swiftroot
 step
-    #completewith next
-    #hidewindow
-    #label Fel Rock
+    #completewith 
     >>Use |T134217:0|t[Ireroot Seeds] and place them on |cRXP_ENEMY_Sprites|r killing them.
     .complete 13946,1 --12/12 Fel Rock grellkin killed with Ireroot Seeds
     .mob Rascal Sprite
     .mob Shadow Sprite
 step
+    #completewith next
+    #hidewindow
+    #label Fel Rock
+    .complete 932,1 --1/1 Melenas' Head
+    .mob Rascal Sprite
+    .mob Shadow Sprite
+step
     #completewith Fel Rock
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 57,56.9,49.05,10,0
     .goto 57,56.49,47.84,10,0
-    .goto 59,77.79,86.06,40 >>Enter the Cave
+    .goto 59,77.79,86.06,20 >>Enter the Cave
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Strigid Owl
+    .mob Nightsaber
 step
     #requires Fel Rock
+    #hidewindow
     #completewith next
     #label Fel Rock2
     #loop
-    >>Use |T134217:0|t[Ireroot Seeds] and place them on |cRXP_ENEMY_Sprites|r killing them.
-    .complete 13946,1 --12/12 Fel Rock grellkin killed with Ireroot Seeds
+    .complete 932,1 --1/1 Melenas' Head
     .mob Rascal Sprite
     .mob Shadow Sprite
 step
     #requires Fel Rock
     #completewith Fel Rock2
-    .goto 59,77.18,61.91,40,0
-    .goto 59,57.29,60.13,20,0
-    .goto 59,43.59,53.44,20,0
-    .goto 59,42.35,81.29,20 >>|cRXP_WARN_Check for |cRXP_ENEMY_Threggil(Rare)|r.
+    .goto 59,77.18,61.91,10,0
+    .goto 59,57.29,60.13,10,0
+    .goto 59,43.59,53.44,10 >>|cRXP_WARN_Check for |cRXP_ENEMY_Threggil(Rare)|r.
     .mob Threggil
     .unitscan Threggil
 step
     #requires Fel Rock2
+    #hidewindow
     #completewith next
     #label Fel Rock3
-    >>Use |T134217:0|t[Ireroot Seeds] and place them on |cRXP_ENEMY_Sprites|r killing them.
-    .complete 13946,1 --12/12 Fel Rock grellkin killed with Ireroot Seeds
+    .complete 932,1 --1/1 Melenas' Head
     .mob Rascal Sprite
     .mob Shadow Sprite
 step
     #requires Fel Rock2
     #completewith Fel Rock3
+    .goto 59,42.35,81.29,20,0 
     .goto 59,32.5,81.69,20,0
     .goto 59,31.01,60.8,10 >>Check for a Treasure Chest near the Water.
 step
@@ -11913,7 +12004,7 @@ step
     .mob Lord Melenas
 step
     #completewith Fel Rock4
-    .goto 59,35.32,44.93,10,0
+    .goto 59,35.32,44.93,20,0
     .goto 59,26.74,47.21,5,0
     .goto 59,23.34,46.51,5,0
     .goto 59,20.76,43.33,8 >>Jump up the hills
@@ -11937,8 +12028,8 @@ step
 step
     #requires Nature's Reprisal
     #completewith next
+    #hidewindow
     #label Nature's Reprisal2
-    .goto 57,55.76,50.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
     .turnin 13946 >>Turn in Nature's Reprisal
     .target Syral Bladeleaf
@@ -11952,12 +12043,27 @@ step
     .deathskip >>Die and respawn |cRXP_WARN_at the Spirit Healer|r.
 step
     #requires Nature's Reprisal2
+    #completewith next
+    #label Nature's Reprisal3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
+    .turnin 13946 >>Turn in Nature's Reprisal
+    .target Syral Bladeleaf
+step
+    #hidewindow
+    #completewith Nature's Reprisal3
+    #requires Nature's Reprisal2
+    .goto 57,55.78,52.73,10,0
+    .goto 57,55.78,52.17,10,0
+    .goto 57,55.82,51.03,10,0
+    .goto 57,55.76,50.44,40 >>1
+step
+    #requires Nature's Reprisal3
     .goto 57,55.76,50.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
     .turnin 13946 >>Turn in Nature's Reprisal
     .target Syral Bladeleaf
 step
-    .goto 57,55.55,49.98
+    .goto 57,55.61,50.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .turnin 932 >>Turn in Twisted Hatred
     .target Tallonkai Swiftroot
@@ -11989,9 +12095,15 @@ step
 	.mob Gnarlpine Mystic
 step
     #completewith Ferocitas the Dream Eater
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 57,59.35,48.04,20,0
+    .goto 57,65.05,46.72,20,0
     .goto 57,67.26,46.83,50 >>Check for a Treasure Chest near |cRXP_ENEMY_Ferocitas the Dream Eater|r.
-    .unitscan |cRXP_ENEMY_Ferocitas the Dream Eater|r
-    .mob |cRXP_ENEMY_Ferocitas the Dream Eater|r
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .unitscan Ferocitas the Dream Eater
+    .mob Ferocitas the Dream Eater
+    .mob Strigid Owl
+    .mob Webwood Lurker
 step
     #requires Ferocitas the Dream Eater
     .goto 57,67.26,46.83
@@ -12027,11 +12139,11 @@ step
     #requires Turn in Ferocitas the Dream Eater
     #completewith next
     #label Ferocitas the Dream Eater2
-    .goto 57,55.55,49.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r.
     .turnin 2459 >>Turn in Ferocitas the Dream Eater
 	.target Tallonkai Swiftroot
 step
+    #hidewindow
     #requires Turn in Ferocitas the Dream Eater
     #completewith Ferocitas the Dream Eater2
     .goto 57,55.82,52.95,10,0
@@ -12423,10 +12535,6 @@ RXPGuides.RegisterGuide([[
 << Worgen !DK
 
 step
-    #completewith next
-    +Welcome to the |cRXP_WARN_Worgen Starting Zone|r. Guide by RestedXP.
-    *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cRXP_WARN_Exile's Reach|r. For faster leveling, consider recreating your character and selecting |cRXP_WARN_Exile's Reach|r instead.
-    step
     .goto 202,59.130,23.865
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r.
     .accept 14078 >>Accept Lockdown!
