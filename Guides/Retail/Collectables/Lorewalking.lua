@@ -1574,46 +1574,187 @@ step
     .goto 2418,55.38,21.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
     .complete 85884,3 --1/1 Talk to Cho
+    .timer 160,RP
     .skipgossipid 131599
     .target Cho
 step
+    #completewith Coordinates
+    +There is no access to player coordinates therefore no arrow.
+step
+    >>|cRXP_WARN_Enter the gate of Stratholme and then Wait for the Roleplay|r.
+    .scenario 15174,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthas|r
+    .scenario 15805,1
+    .timer 120,RP
+    .skipgossipid 36217
+    .target Arthas
+step
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 85884,4 --1/1 Witness the Culling of Stratholme
-    .complete 85884,5 --1/1 Confront Mal'Ganis>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
-    .complete 85884,6 --1/1 Talk to Cho
+    .target Arthas
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthas|r
+    .scenario 15807,1
+    .timer 60,RP
+    .skipgossipid 36273
+    .target Arthas
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85884,5 --1/1 Talk to Cho
+    .skipgossipid 134404
     .target Cho
+step
+    >>Kill |cRXP_ENEMY_Mal'Ganis|r
+    .complete 85884,5 --1/1 Confront Mal'Ganis
+    .mob Mal'Ganis
+step
+    #label Coordinates
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85884,6 --1/1 Talk to Cho
+    .skipgossipid 131600
+    .target Cho
+
+----
 step
     .goto 115,87.17,57.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r
     .accept 12291 >>Accept The Forgotten Tale
     .target Orik Trueheart
 step
-    .goto 115,83.11,65.79
-    .complete 12291,2 --1/1 Forgotten Rifleman Questioned
-step
-    .goto 115,82.64,65.66
-    .complete 12291,3 --1/1 Forgotten Knight Questioned
-step
-    .goto 115,83.48,68.17
+    #loop
+    .goto 115,86.89,64.68,40,0
+    .goto 115,86.84,67.57,40,0
+    .goto 115,85.44,69.95,40,0
+    .goto 115,84.08,66.37,40,0
+    .goto 115,82.42,66.74,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Forgotten Rifleman|r  |cRXP_FRIENDLY_Forgotten Footman|r |cRXP_FRIENDLY_Forgotten Knight|r |cRXP_FRIENDLY_Forgotten Peasant|r
     .complete 12291,1 --1/1 Forgotten Peasant Questioned
-step
-    .goto 115,85.23,68.76
+    .mob +Forgotten Peasant
+    .complete 12291,2 --1/1 Forgotten Rifleman Questioned
+    .mob +Forgotten Rifleman
+    .complete 12291,3 --1/1 Forgotten Knight Questioned
+    .mob +Forgotten Knight
     .complete 12291,4 --1/1 Forgotten Footman Questioned
+    .mob +Forgotten Footman
+    .skipgossipid 37796
+    .skipgossipid 37797
+    .skipgossipid 35881
+    .skipgossipid 34970
 step
     .goto 115,87.17,57.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r
     .turnin 12291 >>Turn in The Forgotten Tale
-    .target Orik Trueheart
     .accept 12301 >>Accept The Truth Shall Set Us Free
+    .target Orik Trueheart
+step
+    #completewith next
+    #label Orik's
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 12301,1
+step
+    #completewith Orik's
+    .goto 115,86.85,65.99
+    .cast 48866 >>Use |T134334:0|t[Orik's Crystalline Orb]
+    .timer 113,RP
+    .use 37577
+-- step
+--     #requires Orik's
+--     #completewith next
+--     #label Orik's2
+--     >>|cRXP_WARN_Wait for the Roleplay|r.
+--     .complete 12301,1
+-- step
+--     #requires Orik's
+--     #completewith Orik's2
+--     .goto 115,87.31,64.59,10 >>Go to the Questgiver
+step
+    #requires Orik's2
+    .goto 115,86.97,65.58
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 12301,1
+step
+    .goto 115,87.17,57.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r
     .turnin 12301 >>Turn in The Truth Shall Set Us Free
     .accept 12305 >>Accept Parting Thoughts
+    .target Orik Trueheart
 step
+    #completewith next
+    #label Parting Thoughts
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelig the Visionary|r
+    .turnin 12305 >>Turn in Parting Thoughts
+    .accept 12478 >>Accept Frostmourne Cavern
+    .disablecheckbox
+    .target Zelig the Visionary
+step
+    #completewith Parting Thoughts
+    .goto 115,78.99,47.41,10 >>Enter the Tower
+step
+    #requires Parting Thoughts
     .goto 115,79.15,47.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelig the Visionary|r
     .turnin 12305 >>Turn in Parting Thoughts
-    .target Zelig the Visionary
     .accept 12478 >>Accept Frostmourne Cavern
+    .target Zelig the Visionary
 step
+    #completewith next
+    #hidewindow
+    #label Parting Thoughts2
+    .complete 12478,1 --1/1 Secrets of the Past Revealed
+step
+    #completewith Parting Thoughts2
+    .goto 115,78.95,47.44,4 >>Leave the Tower
+step
+    #requires Parting Thoughts2
+    #completewith next
+    #hidewindow
+    #label Parting Thoughts3
+    .complete 12478,1 --1/1 Secrets of the Past Revealed
+step
+    #requires Parting Thoughts2
+    #completewith Parting Thoughts3
+    .goto 115,74.69,24.28,40,0
+    .goto 115,74.7,22.98,10 >>Enter the Frostmourne Cavern
+step
+    #requires Parting Thoughts3
+    #completewith next
+    #hidewindow
+    #label Parting Thoughts4
     .goto 115,75.06,20.26
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 12478,1 --1/1 Secrets of the Past Revealed
+step
+    #requires Parting Thoughts3
+    #completewith Parting Thoughts4
+    .cast 49817 >>Use |T134334:0|t[Zelig's Scrying Orb]
+    .timer 122,RP
+    .use 37933
+step
+    #requires Parting Thoughts4
+    #hidewindow
+    #completewith next
+    #label Parting Thoughts5
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 12478,1 --1/1 Secrets of the Past Revealed
+step
+    #requires Parting Thoughts4
+    #completewith Parting Thoughts5
+    .goto 115,74.36,23.84,20 >>Leave the Frostmourne Cavern
+step
+    #requires Parting Thoughts5
+    #completewith next
+    #label Parting Thoughts6
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 12478,1 --1/1 Secrets of the Past Revealed
+step
+    #requires Parting Thoughts5
+    #completewith Parting Thoughts6
+    .goto 115,78.96,47.44,20>>Go to the Questgiver
+step
+    #requires Parting Thoughts6
+    .goto 115,79.15,47.16
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 12478,1 --1/1 Secrets of the Past Revealed
 step
     .goto 115,79.15,47.16
@@ -1625,41 +1766,100 @@ step
     .goto 85,54.35,56.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
     .turnin 85884 >>Turn in Lorewalking: The Prince Who Would Be King
+    .accept 85885 >>Accept Lorewalking: No King Rules Forever
     .target Lorewalker Cho
+step
+    .goto 84,64.19,16.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85885,1 --1/1 Talk to Cho
+    .timer 40,RP
+    .skipgossipid 131573
 step
     .goto 118,51.46,79.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r
-    .accept 85875 >>Accept Ascent of the Lich King
-    .target The Lich King
-    .accept 85885 >>Accept Lorewalking: No King Rules Forever
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 85885,2 --1/1 Learn about the Lich King's betrayal
+step
+    .goto 118,51.46,79.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85885,6 --1/1 Talk to Cho
+    .skipgossipid 132759
+step
+    .goto 118,51.46,79.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85885,7 --1/1 Talk to Cho
+    .skipgossipid 132759
 step
     .goto 118,51.52,79.86
+    >>Kill |cRXP_ENEMY_Memory of Muradin|r
     .complete 85875,1 --1/1 Banish the Memory of Muradin
+    .mob Memory of Muradin
+step
+    .goto 118,51.77,80.69
+    >>Kill |cRXP_ENEMY_Memory of Jaina|r
     .complete 85875,2 --1/1 Banish the Memory of Jaina
+    .mob Memory of Jaina
 step
-    .goto 118,51.68,80.36
+    .goto 118,52.01,81.44
+    >>Kill |cRXP_ENEMY_Memory of Uther|r
     .complete 85875,3 --1/1 Banish the Memory of Uther
-step
-    .goto 118,52.35,82.57
-    .complete 85885,4 --1/1 Witness the ascent of the Lich King
+    .mob Memory of Uther
 step
     .goto 118,52.34,82.51
-    .turnin 85875 >>Turn in Ascent of the Lich King
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
-    .complete 85885,5 --1/1 Talk to Cho
-    .target Cho
-    .complete 85885,6 --1/1 Help Jaina investigate the Halls of Reflection>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Memory of Terenas|r
+    .turnin 85875,1 >>Turn in Ascent of the Lich King
+    .complete 85885,4 --1/1 Witness the ascent of the Lich King
+    .target Memory of Terenas
+step
+    .goto 118,52.34,82.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
     .complete 85885,7 --1/1 Talk to Cho
+    .skipgossipid 131603
     .target Cho
 step
-    .goto 85,54.35,56.66
+    .gossipoption 37487 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .timer 300,RP
+    .target Lady Jaina Proudmoore
+step
+    >>Kill |cRXP_ENEMY_Waves|r and |cRXP_ENEMY_Falric|r
+    .scenario 1057,1
+    .mob Ghostly Priest
+    .mob Spectral Footman
+    .mob Tortured Rifleman
+    .mob Phantom Mage
+    .mob Falric
+step
+    >>Kill |cRXP_ENEMY_Waves|r and |cRXP_ENEMY_Marwyn|r
+    .scenario 1057,2
+    .mob Ghostly Priest
+    .mob Spectral Footman
+    .mob Tortured Rifleman
+    .mob Phantom Mage
+    .mob Marwyn
+step
+    .gossipoption 37662 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .timer 300,RP
+    .target Lady Jaina Proudmoore
+step
+    >>Escape from the Lich King
+    .complete 85885,6 --1/1 Help Jaina investigate the Halls of Reflection
+    .mob Raging Ghoul
+    .mob Risen Witch Doctor
+    .mob Lumbering Abomination
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    .turnin 85878 >>Turn in O' Thanagor
-    .target Lorewalker Cho
+    .complete 85885,8 --1/1 Talk to Cho
+    .timer 15,RP
+    .skipgossipid 131606
+    .target Cho
+step
+    .accept 85878,1 >>Accept O' Thanagor
+step
+    >>Kill the Heroes
     .complete 85885,9 --1/1 Complete "O'Thanagor"
 step
     .goto 85,54.35,56.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .turnin 85878 >>Turn in O' Thanagor
     .turnin 85885 >>Turn in Lorewalking: No King Rules Forever
     .target Lorewalker Cho
 ]])

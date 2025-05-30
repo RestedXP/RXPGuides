@@ -504,6 +504,7 @@ local klaxxiQuests ={
 local valeQuests = {
     [31131] = "whitepetal",
     [31242] = "mistfallQuiet",
+    [31245] = "mistfallQuiet",
     [31243] = "mistfallUnderAttack",
     [31296] = "ruinsofguolaiQuiet",
 }
