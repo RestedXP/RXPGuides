@@ -453,7 +453,7 @@ end
 local function enableTotalEPLines(itemData, lines)
     if itemData.dpsWeights then -- IsWeaponSlot equivalent
         for suffix, data in pairs(itemData.dpsWeights) do
-            tinsert(lines, fmt("  Total EP (%s): %.2f", suffix, data.speedWeight + data.scaleWeight))
+            tinsert(lines, fmt("  Total EP (%s): %.2f", suffix, data.totalWeight))
         end
     else -- Armor
         tinsert(lines, fmt("  Total EP: %.2f", itemData.totalWeight))
@@ -509,7 +509,7 @@ local function TooltipSetItem(tooltip, ...)
                 for suffix, data in pairs(itemData.dpsWeights or {}) do
                     -- TODO this is actually total EP calculation, figure out diff
                     tinsert(lines,
-                            fmt("  - %s EP: %.2f", suffix, statsData.TotalWeight + data.speedWeight + data.scaleWeight))
+                            fmt("  - %s EP: %.2f", suffix, statsData.TotalWeight + data.totalWeight))
                 end
             else -- Insert calculated line above
                 -- TODO combine blocks
@@ -859,7 +859,7 @@ local function CalculateDPSWeight(itemData, stats)
 
     local dpsWeights = {}
     local itemEquipLoc = itemData.itemEquipLoc
-    local speedWeightKey, overallWeaponWeight, dpsWeight, speedKindWeight
+    local speedWeightKey, dpsWeight, speedKindWeight
 
     -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
@@ -885,11 +885,9 @@ local function CalculateDPSWeight(itemData, stats)
             speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * session.activeStatWeights[speedWeightKey]
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
-            overallWeaponWeight = dpsWeight + speedKindWeight
-
             dpsWeights[keySuffix] = {
-                ['speedWeight'] = overallWeaponWeight,
-                ['scaleWeight'] = session.activeStatWeights[speedWeightKey]
+                ['totalWeight'] = dpsWeight + speedKindWeight,
+                ['speedWeight'] = speedKindWeight
             }
         end
     end
@@ -1127,10 +1125,12 @@ local SPEED_SUFFIX_SLOT_MAP = {
 }
 
 function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
-    for suffix, data in pairs(itemData.dpsWeights or {}) do
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then return itemData.totalWeight + data.speedWeight end
+    for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
+        print("CalculateWeaponWeight, suffix", suffix, "SPEED_SUFFIX_SLOT_MAP[suffix]", SPEED_SUFFIX_SLOT_MAP[suffix], "return", itemData.totalWeight + dpsData.totalWeight)
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then return itemData.totalWeight + dpsData.totalWeight end
     end
 
+    print("CalculateWeaponWeight:else -1")
     return -1
 end
 
@@ -1148,11 +1148,12 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
     -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
     -- MH / OH have more complex handling, requires DPS calculations here
     if IsWeaponSlot(equippedData.itemEquipLoc) then
+        print(IsWeaponSlot(equippedData.itemEquipLoc), slotComparisonId)
         equippedWeight = self:CalculateWeaponWeight(equippedData, slotComparisonId)
         comparedWeight = self:CalculateWeaponWeight(comparedData, slotComparisonId)
     else
-        equippedWeight = equippedData.totalWeight
-        comparedWeight = comparedData.totalWeight
+        equippedWeight = addon.Round(equippedData.totalWeight, 2)
+        comparedWeight = addon.Round(comparedData.totalWeight, 2)
     end
 
     -- If -1, then failed to calculate speed/DPS EP
@@ -1170,7 +1171,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
         -- Display 'downgrade' when debugging
         return nil, -1, 'downgrade'
     elseif comparedWeight == equippedWeight then
-        return 0, -1, 'equal'
+        return nil, 0, 'equal'
     end
 
     return nil, -1, _G.UNKNOWN
