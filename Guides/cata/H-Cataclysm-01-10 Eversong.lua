@@ -1320,17 +1320,16 @@ step << !Undead
     .goto 110,72.396,85.242
     .zone Silvermoon City >>Enter Silvermoon City
 step << BloodElf
-    .goto 110,53.929,71.027
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Skyles|r
+    .goto Silvermoon City,53.92,71.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sathren Azuredawn|r
     .turnin 9133 >>Turn in Fly to Silvermoon City
-    .target Sathran Azuredown
+    .target Sathren Azuredawn
     .isOnQuest 9133
 step << !Undead
     #completewith next
-    .goto 110,57.52,24.60,10,0
-    .goto 110,51.78,17.90,10,0
-    .goto 110,49.82,17.81,8,0
-    .goto 110,49.46,14.22
+    .goto Silvermoon City,57.53,24.56,10,0
+    .goto Silvermoon City,51.77,17.86,10,0
+    .goto Silvermoon City,49.48,14.80
     .zone Undercity >>Take the Orb of Translocation to Undercity
 step << !Undead
     #completewith next
