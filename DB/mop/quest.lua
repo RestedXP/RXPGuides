@@ -507,6 +507,8 @@ local valeQuests = {
     [31245] = "mistfallQuiet",
     [31243] = "mistfallUnderAttack",
     [31296] = "ruinsofguolaiQuiet",
+    [31294] = "ruinsofguolaiQuiet",
+    [31250] = "settingsun", 
 }
 
 local celestialQuests ={
