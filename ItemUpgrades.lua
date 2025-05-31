@@ -1160,11 +1160,11 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
     if equippedWeight < 0 or comparedWeight < 0 then
         return nil, -1, _G.UNKNOWN
     elseif equippedWeight == 0 then
-        return 1.0, comparedWeight, nil
+        return 1.0, comparedWeight, _G.EMPTY
     elseif comparedWeight == 0 then
         return nil, 0, _G.EMPTY
     elseif comparedWeight > equippedWeight then
-        return addon.Round(comparedWeight / equippedWeight, 2), comparedWeight - equippedWeight, nil
+        return addon.Round(comparedWeight / equippedWeight, 2), comparedWeight - equippedWeight, 'upgrade'
     elseif comparedWeight < equippedWeight then
         -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
         -- return -1 * addon.Round(comparedWeight / equippedWeight, 2)
