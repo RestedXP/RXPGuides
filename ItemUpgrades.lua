@@ -493,6 +493,7 @@ local function TooltipSetItem(tooltip, ...)
     end
 
     local lineText
+    local equippedWeaponWeight, comparedWeaponWeight
 
     for _, statsData in ipairs(statComparisons) do
         if statsData['Ratio'] then
@@ -504,24 +505,21 @@ local function TooltipSetItem(tooltip, ...)
             lineText = nil
         end
 
-        if lineText then
-            if itemData.dpsWeights then
-                for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
-                    -- TODO this is actually total EP calculation, figure out diff
-                    lineText = fmt("%s (%s) EP: +%.2f", statsData['ItemLink'] or _G.UNKNOWN, suffix,
-                                   statsData.TotalWeight + dpsData.totalWeight)
+        for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
+            equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
+            comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
-                    if statsData['debug'] and addon.settings.profile.debug then
-                        lineText = fmt("%s (%s)", lineText, statsData['debug'])
-                    end
+            -- TODO if no equippedWeaponWeight then not comparable slot
+            lineText = fmt("%s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
+                           comparedWeaponWeight - equippedWeaponWeight)
 
-                    tinsert(lines, lineText)
-                end
-            else -- Insert calculated line above
-                -- TODO combine blocks
-                tinsert(lines, lineText)
+            if statsData['debug'] and addon.settings.profile.debug then
+                lineText = fmt("%s (%s)", lineText, statsData['debug'])
             end
-        end -- Else something went wrong with baseline comparison
+
+            -- Add a comparison line for every statComparison, should be 1 except for 1H weapons and rings
+            if lineText and itemData.dpsWeights[suffix] then tinsert(lines, lineText) end
+        end
     end
 
     if #lines > 0 then
@@ -1201,8 +1199,8 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     local statComparisons = {
         -- { ['Ratio'] = 1.23, ['WeightIncrease'] = 23.4, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
     }
-    local equippedItemLink, ratio, weightIncrease, debug
-    local slotNamesToCompare = {}
+    local equippedItemLink, equippedData, ratio, weightIncrease, debug
+    local slotNamesToCompare, dpsWeights = {}, nil
 
     if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
         -- print("is multi-slot", comparedData.itemEquipLoc)
@@ -1236,12 +1234,21 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
             debug = 'same'
         else
             ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
+
+            if slotId == _G.INVSLOT_RANGED or slotId == _G.INVSLOT_MAINHAND or slotId == _G.INVSLOT_OFFHAND then
+                equippedData = self:GetItemData(equippedItemLink, tooltip)
+
+                dpsWeights = CalculateDPSWeight(equippedData, equippedData.stats)
+            else
+                dpsWeights = nil
+            end
         end
 
         -- Even if ratio nil, add to comparisons for upstream handling based on debug value
         if ratio or equippedItemLink == _G.EMPTY or equippedItemLink == _G.NONE then
             tinsert(statComparisons, {
                 ['Ratio'] = ratio,
+                ['DpsWeights'] = dpsWeights,
                 ['TotalWeight'] = comparedData.totalWeight,
                 ['WeightIncrease'] = weightIncrease or 0,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
