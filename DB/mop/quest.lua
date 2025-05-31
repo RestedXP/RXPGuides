@@ -530,10 +530,10 @@ function addon.CheckAvailableQuest(id)
     if klaxxiHub then
         addon.realmData.klaxxi = klaxxiHub
     elseif valeQ then
-        if addon.realmData.voteb then
-            addon.realmData.voteb[valeQ] = true
+        if addon.realmData.voeb then
+            addon.realmData.voeb[valeQ] = true
         else
-            addon.realmData.voteb = {[valeQ] = true}
+            addon.realmData.voeb = {[valeQ] = true}
         end
     elseif celestial then
         addon.realmData.celestial = celestial

@@ -6790,14 +6790,15 @@ function addon.functions.vale(self, text, poi, arg1)
     local step = element.step
     local t = time()
     local dr = addon.realmData.dailyReset or 0
-    if dr < t or not addon.realmData.voteb then
+    addon.realmData.voteb = nil
+    if dr < t or not addon.realmData.voeb then
         addon.realmData.dailyReset = t + C_DateAndTime.GetSecondsUntilDailyReset()
-        addon.realmData.voteb = {}
+        addon.realmData.voeb = {}
     end
 
     if not step.active or event == "WindowUpdate" then return end
 
-    poi = addon.realmData.voteb
+    poi = addon.realmData.voeb
     local match
     if poi[element.poi] or (element.poi == 'unknown' and not next(poi)) then
         match = true

@@ -854,8 +854,9 @@ end
 
 local turnInTimer = 0
 function addon:QuestAutomation(event, arg1, arg2, arg3)
+    local disabled
     if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() or addon.isHidden then
-        return
+        disabled = true
     end
 
     if not event then
@@ -878,7 +879,71 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         end
     end
     --print(event)
-    if event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
+    if event == "GOSSIP_SHOW" then
+        local nActive = GossipGetNumActiveQuests()
+        local nAvailable = GossipGetNumAvailableQuests()
+        local quests, selectAvailableByQuestID, selectActiveByQuestID,
+              missingTurnIn
+        if not disabled then
+            if C_GossipInfo.GetActiveQuests then
+                quests = C_GossipInfo.GetActiveQuests()
+                selectActiveByQuestID = true
+            end
+            for i = 1, nActive do
+                local title, isComplete
+                local reward,isAutoTurnIn
+                if type(quests) == "table" then
+                    title = quests[i].questID
+                    isComplete = quests[i].isComplete
+                    reward,isAutoTurnIn = addon.GetStepQuestReward(title)
+                    if not (isComplete or missingTurnIn) and isAutoTurnIn then
+                        local objectives = addon.GetQuestObjectives(title)
+                        missingTurnIn = objectives and objectives[1].generated and
+                                            (selectActiveByQuestID and title or i)
+                    end
+                else
+                    title, _, _, isComplete = select(i * 6 - 5,
+                                                    GossipGetActiveQuests())
+                    reward,isAutoTurnIn = addon.GetStepQuestReward(title)
+                end
+
+                if isComplete and isAutoTurnIn then
+                    return GossipSelectActiveQuest(
+                            selectActiveByQuestID and title or i)
+                end
+            end
+        end
+        local availableQuests
+        if C_GossipInfo.GetAvailableQuests then
+            availableQuests = C_GossipInfo.GetAvailableQuests()
+            selectAvailableByQuestID = true
+        end
+        if not selectAvailableByQuestID and GossipGetNumOptions() == 0
+                                 and nAvailable == 1 and nActive == 0 then
+            return GossipSelectAvailableQuest(
+                       selectAvailableByQuestID and availableQuests[1] and
+                           availableQuests[1].questID or 1)
+        else
+            local t = type(availableQuests) == "table"
+            for i = 1, nAvailable do
+                local quest
+                if t then
+                    quest = availableQuests[i].questID
+                else
+                    quest = select(i * 7 - 6, GossipGetAvailableQuests())
+                end
+                if addon.QuestAutoAccept(quest) and not disabled then
+                    return GossipSelectAvailableQuest(
+                               selectAvailableByQuestID and quest or i)
+                end
+            end
+        end
+        if missingTurnIn then
+            return GossipSelectActiveQuest(missingTurnIn)
+        end
+    elseif disabled then
+        return
+    elseif event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
         handleQuestComplete()
@@ -934,66 +999,6 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                 end
             end
         end
-    elseif event == "GOSSIP_SHOW" then
-        local nActive = GossipGetNumActiveQuests()
-        local nAvailable = GossipGetNumAvailableQuests()
-        local quests, selectAvailableByQuestID, selectActiveByQuestID,
-              missingTurnIn
-        if C_GossipInfo.GetActiveQuests then
-            quests = C_GossipInfo.GetActiveQuests()
-            selectActiveByQuestID = true
-        end
-        for i = 1, nActive do
-            local title, isComplete
-            local reward,isAutoTurnIn
-            if type(quests) == "table" then
-                title = quests[i].questID
-                isComplete = quests[i].isComplete
-                reward,isAutoTurnIn = addon.GetStepQuestReward(title)
-                if not (isComplete or missingTurnIn) and isAutoTurnIn then
-                    local objectives = addon.GetQuestObjectives(title)
-                    missingTurnIn = objectives and objectives[1].generated and
-                                        (selectActiveByQuestID and title or i)
-                end
-            else
-                title, _, _, isComplete = select(i * 6 - 5,
-                                                 GossipGetActiveQuests())
-                reward,isAutoTurnIn = addon.GetStepQuestReward(title)
-            end
-
-            if isComplete and isAutoTurnIn then
-                return GossipSelectActiveQuest(
-                           selectActiveByQuestID and title or i)
-            end
-        end
-
-        local availableQuests
-        if C_GossipInfo.GetAvailableQuests then
-            availableQuests = C_GossipInfo.GetAvailableQuests()
-            selectAvailableByQuestID = true
-        end
-        if GossipGetNumOptions() == 0 and nAvailable == 1 and nActive == 0 and
-            not selectAvailableByQuestID then
-            return GossipSelectAvailableQuest(
-                       selectAvailableByQuestID and availableQuests[1] and
-                           availableQuests[1].questID or 1)
-        else
-            for i = 1, nAvailable do
-                local quest
-                if type(availableQuests) == "table" then
-                    quest = availableQuests[i].questID
-                else
-                    quest = select(i * 7 - 6, GossipGetAvailableQuests())
-                end
-                if addon.QuestAutoAccept(quest) then
-                    return GossipSelectAvailableQuest(
-                               selectAvailableByQuestID and quest or i)
-                end
-            end
-        end
-        if missingTurnIn then
-            return GossipSelectActiveQuest(missingTurnIn)
-        end
     elseif event == "QUEST_TURNED_IN" and addon.questTurnIn[arg1] then
             turnInTimer = GetTime()
     elseif event == "QUEST_AUTOCOMPLETE" then
@@ -1009,7 +1014,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     end
                 end
             end
-        elseif addon.gameVersion > 50000 and UnitLevel('player') ~= 70 then
+        elseif addon.gameVersion > 60000 and UnitLevel('player') ~= 70 then
             ShowQuestComplete(arg1)
         end
     end
