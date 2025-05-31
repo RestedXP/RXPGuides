@@ -506,18 +506,22 @@ local function TooltipSetItem(tooltip, ...)
 
         if lineText then
             if itemData.dpsWeights then
-                for suffix, data in pairs(itemData.dpsWeights or {}) do
+                for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
                     -- TODO this is actually total EP calculation, figure out diff
-                    tinsert(lines,
-                            fmt("  - %s EP: %.2f", suffix, statsData.TotalWeight + data.totalWeight))
+                    lineText = fmt("%s (%s) EP: +%.2f", statsData['ItemLink'] or _G.UNKNOWN, suffix,
+                                   statsData.TotalWeight + dpsData.totalWeight)
+
+                    if statsData['debug'] and addon.settings.profile.debug then
+                        lineText = fmt("%s (%s)", lineText, statsData['debug'])
+                    end
+
+                    tinsert(lines, lineText)
                 end
             else -- Insert calculated line above
                 -- TODO combine blocks
                 tinsert(lines, lineText)
             end
         end -- Else something went wrong with baseline comparison
-
-        -- if statsData['debug'] and addon.settings.profile.debug then tinsert(lines, "    - (debug): " .. statsData['debug']) end
     end
 
     if #lines > 0 then
@@ -805,17 +809,6 @@ local function GetComparisonTip()
     return session.comparisonTip
 end
 
-local function IsWeaponSlot(itemEquipLoc)
-    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_2HWEAPON' or
-               itemEquipLoc == 'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' or itemEquipLoc ==
-               'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT'
-end
-
-local function IsMeleeSlot(itemEquipLoc)
-    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc == 'INVTYPE_2HWEAPON' or itemEquipLoc ==
-               'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND'
-end
-
 local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
     if type(itemSubTypeID) ~= "number" then
         addon.error("IsUsableForClass, itemSubTypeID number required")
@@ -885,10 +878,7 @@ local function CalculateDPSWeight(itemData, stats)
             speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * session.activeStatWeights[speedWeightKey]
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
-            dpsWeights[keySuffix] = {
-                ['totalWeight'] = dpsWeight + speedKindWeight,
-                ['speedWeight'] = speedKindWeight
-            }
+            dpsWeights[keySuffix] = {['totalWeight'] = dpsWeight + speedKindWeight, ['speedWeight'] = speedKindWeight}
         end
     end
 
@@ -1125,12 +1115,21 @@ local SPEED_SUFFIX_SLOT_MAP = {
 }
 
 function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
-    for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
-        print("CalculateWeaponWeight, suffix", suffix, "SPEED_SUFFIX_SLOT_MAP[suffix]", SPEED_SUFFIX_SLOT_MAP[suffix], "return", itemData.totalWeight + dpsData.totalWeight)
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then return itemData.totalWeight + dpsData.totalWeight end
+    if not itemData.dpsWeights then
+        print("CalculateWeaponWeight, not dpsWeights")
+        return -1
     end
 
-    print("CalculateWeaponWeight:else -1")
+    for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
+        print("CalculateWeaponWeight, suffix", suffix, "SPEED_SUFFIX_SLOT_MAP[suffix]", SPEED_SUFFIX_SLOT_MAP[suffix],
+              "return", itemData.totalWeight + dpsData.totalWeight)
+
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
+            return itemData.totalWeight + dpsData.totalWeight
+        end
+    end
+
+    print("CalculateWeaponWeight, -1")
     return -1
 end
 
@@ -1148,7 +1147,6 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
     -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
     -- MH / OH have more complex handling, requires DPS calculations here
     if IsWeaponSlot(equippedData.itemEquipLoc) then
-        print(IsWeaponSlot(equippedData.itemEquipLoc), slotComparisonId)
         equippedWeight = self:CalculateWeaponWeight(equippedData, slotComparisonId)
         comparedWeight = self:CalculateWeaponWeight(comparedData, slotComparisonId)
     else
@@ -1222,7 +1220,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     -- Will be 1 for most and 1-2 for rings
     for itemEquipLoc, slotId in pairs(slotNamesToCompare) do
         -- TODO if slotId is table
-        print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", "itemEquipLoc", itemEquipLoc, "slotId", slotId)
+        -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", "itemEquipLoc", itemEquipLoc, "slotId", slotId)
         equippedItemLink = GetInventoryItemLink("player", slotId or itemEquipLoc)
 
         -- No equipped item, so anything is an upgrade from no item
