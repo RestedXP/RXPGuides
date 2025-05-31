@@ -540,5 +540,12 @@ function addon.CheckAvailableQuest(id)
     else
         return
     end
-    addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
+    local t = time()
+    local reset = addon.realmData.dailyReset
+    if not reset or t > reset then
+        addon.realmData.voeb = {}
+        addon.realmData.klaxxi = nil
+        addon.realmData.celestial = nil
+        addon.realmData.dailyReset = t + C_DateAndTime.GetSecondsUntilDailyReset()
+    end
 end
