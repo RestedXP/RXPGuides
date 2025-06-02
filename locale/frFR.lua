@@ -32,14 +32,14 @@ _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
     "Cible ennemie 4"
 
 --Words
-L.words = {["Acceptez"] = _G.ACCEPT, ["Kill"] = "Tuez"}
+L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "Tuer"}
 
 
 --ActiveItemFrame.lua file
 
 --Communications.lua file
 L["Give Feedback for step"] = "Faire un commentaire sur cette étape"
-L["I just leveled from %d to %d in %s"] = "Je viens de passer du niveau %d à %d en %s"
+L["I just leveled from %d to %d in %s"] = "Je viens de passer du niveau  %d à %d en %s"
 L["I just leveled up to %d"] = "Je viens de monter au niveau %d"
 L["There's a new addon version (%s) available"] = "Une nouvelle version (%s) de l'addon est disponible"
 L["There's a new version (%s) available for %s"] = "Il y'a une nouvelle version (%s) disponible pour %s"
@@ -119,11 +119,9 @@ L["Open Feedback Form"] = "Ouvrir le formulaire de commentaire"
 
 
 --LevelingTracker.lua file
-L["RestedXP Leveling Report"] = "RestedXP Rapport de Leveling"
 L["Resetting level %d start time to now!"] = "Reset du chrono du niveau %d maintenant !"
 L["Max"] = "Max"
-L["Reached Level "] = "Niveau atteint "
-L["Reached max level"] = "Niveau max atteint"
+L["Reached Level"] = "Niveau atteint"
 L["In-progress"] = "En cours"
 L["Time spent"] = "Temps écoulé"
 L["Zones & Dungeons"] = "Zones & Donjons"
@@ -134,19 +132,6 @@ L["Unable to retrieve report for"] = "Impossible de récupérer le rapport pour"
 L["Missing data"] = "Données manquantes"
 L["Level"] = "Niveau"
 L["Level Splits"] = "Splits des niveaux"
-L["Started level "] = "Niveau de départ "
-L["%d to %d"] = "%d à %d"
-L["* Group: %s"] = "* Groupe: %s"
-L["* Group: %d%%"] = "* Groupe: %d%%"
-L["* Group: %.2f%%"] = "* Groupe: %.2f%%"
-L["* Quests: %s"] = "* Quêtes: %s"
-L["* Quests: %d%%"] = "* Quêtes: %d%%"
-L["* Quests: %.2f%%"] = "* Quêtes: %.2f%%"
-L["* Killing: %s"] = "* Mob tuer: %s"
-L["* Killing: %.2f%%"] = "* Mob tuer: %.2f%%"
-L["* Killing: %d%%"] = "* Mob tuer: %d%%"
-L["Deaths"] = "Morts"
-L["Experience/hour"] = "Expérience/heure"
 L["Temporarily hide, use '/rxp splits' to show again"] = "Fenêtre cachée temporairement, utilisez '/rxp splits' pour ré-afficher"
 L["Export"] = "Exporter"
 L["Import"] = "Importer"
