@@ -6378,7 +6378,7 @@ step
     .accept 9279 >>Accept You Survived!
 	.target Megelon
 step
-    .goto 468,52.96,35.71
+    .goto 468,52.86,35.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .turnin 9279 >>Turn in You Survived!
     .accept 9280 >>Accept Replenishing the Healing Crystals
@@ -6448,16 +6448,17 @@ step
     #hidewindow
     #completewith Volatile Mutation
     #loop
-    .goto 468,49.82,25.72,40,0
-    .goto 468,43.97,27.98,40,0
-    .goto 468,48.04,31.81,40,0
-    .goto 468,45.6,33.35,40,0
-    .goto 468,43.08,37.97,40,0
-    .goto 468,40.97,38.32,40,0
-    .goto 468,36.91,38.34,40,0
-    .goto 468,36.71,47.07,40,0
-    .goto 468,34.91,50.42,40,0
-    .goto 468,40.41,45.1,40,0
+    .goto 468,47.03,31.53,30,0
+    .goto 468,44.28,26.66,30,0
+    .goto 468,50.22,25.47,30,0
+    .goto 468,53,28.76,30,0
+    .goto 468,51.35,20.89,30,0
+    .goto 468,56.71,23.14,30,0
+    .goto 468,55.99,29.92,30,0
+    .goto 468,41.42,38.77,30,0
+    .goto 468,40.37,45.4,30,0
+    .goto 468,35.46,50.34,30,0
+    .goto 468,33.25,42.24,30,0
     +1
 step
     #completewith next
@@ -6475,6 +6476,21 @@ step
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
+    #completewith next
+    #label Botanical Legwork
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r and |cRXP_FRIENDLY_Apprentice Vishael|r.
+    .turnin 10302 >>Turn in Volatile Mutations
+    .accept 9293 >>Accept What Must Be Done...
+    .disablecheckbox
+	.target +Botanist Taerix
+    .accept 9799 >>Accept Botanical Legwork
+    .disablecheckbox
+    .target +Apprentice Vishael
+step
+    #completewith Botanical Legwork
+    .goto 468,49.66,37.15,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires Botanical Legwork
     .goto 468,49.66,37.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r and |cRXP_FRIENDLY_Apprentice Vishael|r.
     .turnin 10302 >>Turn in Volatile Mutations
@@ -6490,7 +6506,7 @@ step
     .complete 9799,1 --3/3 Corrupted Flower
 step
     #completewith Corrupted Flower1
-    .goto 468,41.84,40.66,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel.|r
+    .goto 468,40.88,43.2,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
@@ -6498,9 +6514,9 @@ step
     #hidewindow
     #completewith Corrupted Flower2
     #loop
-    .goto 468,40.39,40.13,30,0
+    .goto 468,40.88,43.2,30,0
     .goto 468,37.38,43.28,30,0
-    .goto 468,37.4,49.58,30,0
+    .goto 468,37.4,49.58,35,0
     .goto 468,39.96,45.86,30,0
     .goto 468,35.81,39.68,30,0
     .goto 468,33.71,45.45,30,0
@@ -6514,6 +6530,7 @@ step
 step
     #requires Corrupted Flower1
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. Loot them for |T134192:0|t[|cRXP_LOOT_Lasher Samples|r].
+    *|cRXP_WARN_Ignore the bugged one in the ground|r.
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
@@ -6532,7 +6549,7 @@ step
     .target +Botanist Taerix
 step
     #completewith Botanical Legwork
-    .goto 468,44.92,39.8,20,0
+    .goto 468,44.92,39.8,40,0
     .goto 468,49.78,37.47,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Volatile Mutation
     .mob Vale Moth
@@ -6564,6 +6581,18 @@ step
     .turnin 9283 >>Turn in Rescue the Survivors!
 	.target Zalduun
 step
+    #completewith next
+    #label Spare Parts
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r and |cRXP_FRIENDLY_Vindicator Aldar|r.
+    .accept 37445 >>Accept Spare Parts
+    .accept 37444 >>Accept Inoculation
+	.target Technician Zhanaa
+    .target Vindicator Aldar
+step
+    #completewith Spare Parts
+    .goto 468,50.55,47.41,20 >>Leave the House
+step
+    #requires Spare Parts
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r and |cRXP_FRIENDLY_Vindicator Aldar|r.
     .accept 37445 >>Accept Spare Parts
     .goto 468,50.52,47.93
@@ -6572,13 +6601,115 @@ step
 	.target Technician Zhanaa
     .target Vindicator Aldar
 step
-    .isOnQuest 9294
+    #completewith next
+    #label Emitter Spare Part
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts|r.
+    .complete 37445,1 --4/4 Emitter Spare Part
+step <<!Hunter
+    #completewith Emitter Spare Part
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 468,53.63,53.97,10,0
+    .goto 468,54.58,54.58,5,0
+    .goto 468,54.98,55.51,10,0
+    .goto 468,55.27,57.62,20 >>Jump onto the white stone by the waterfall, then jump down to the ground.
+step <<Hunter
+    #completewith Emitter Spare Part
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 468,53.68,51.21,10 >>Position yourself with your back at the edge of the cliff.
+    .goto 468,55.81,53.12,10 >>Use |T132294:0|t[Disengage] to leap across the Water. 
+    .goto 468,56.53,53.88
+    .cast 1515 >>Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Vale Moth|r to tame it.
+    .usespell 1515
+    .mob Vale Moth
+step
+    #requires Emitter Spare Part
+    #hidewindow
+    #completewith inoculated
+    #loop
+    .goto 468,56.71,67.79,20,0
+    .goto 468,53.93,68.77,40,0
+    .goto 468,56.37,67.94,10,0
+    .goto 468,57.04,68.3,10,0
+    .goto 468,57.71,69.2,10,0
+    .goto 468,57.46,71.46,20,0
+    .goto 468,63.59,66.9,10,0
+    .goto 468,62.85,65.5,10,0
+    .goto 468,63.15,63.38,10,0
+    .goto 468,63.93,61.75,20,0
+    .goto 468,63.12,69.18,40,0
+    .goto 468,67.92,72.17,20,0
+    .goto 468,69.4,71.14,20,0
+    .goto 468,71.82,70.82,20,0
+    .goto 468,70.09,74.99,20,0
+    .goto 468,66.84,78.92,20,0
+    .goto 468,65.54,80.89,20,0
+    .goto 468,65.02,82.77,20,0
+    .goto 468,65.82,87.04,20,0
+    .goto 468,63.78,88.55,20,0
+    .goto 468,62.88,86.78,20,0
+    .goto 468,61.73,84.6,20,0
+    .goto 468,62.72,78.7,20,0
+    .goto 468,60.89,77.7,20,0
+    .goto 468,59.6,75.04,20,0
+    .goto 468,58.32,70.44,20,0
+    +1
+step
+    #requires Emitter Spare Part
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Nestlewood Owlkin|r from close range.
+    .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
+	.mob Nestlewood Owlkin
+    .use 22962
+step
+    #requires Emitter Spare Part
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts|r.
+    .complete 37445,1 --4/4 Emitter Spare Part
+step
+    #label inoculated
+    >>Use the |T132775:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins|r from close range.w
+    .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
+	.mob Nestlewood Owlkin
+    .use 22962
+step
+    #completewith next
+    #label Turn in Spare Parts
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r and |cRXP_FRIENDLY_Technician Zhanaa|r.
+    .turnin 37445 >>Turn in Spare Parts
+    .turnin 37444 >>Turn in Inoculation
+    .accept 9309 >>Accept The Missing Scout
+    .disablecheckbox
+	.target +Vindicator Aldar
+-- step
+--     #completewith Turn in Spare Parts
+--     .hs >>Use |T134414:0|t[Hearthstone]
+step
+    #completewith Turn in Spare Parts
+    .goto 468,62.21,63.45,5,0
+    .goto 468,61.22,62.27,10,0
+    .goto 468,60.61,64.49,10,0
+    .goto 468,59.71,64.41,10,0
+    .goto 468,57.37,64.96
+    >>You can die to the enemies surrounding you, or you can follow the arrow and jump off a hill—the latter option is faster if you are nearby.
+    .deathskip >> Die and respawn at the Spirit Healer
+--     .hs >>Use |T134414:0|t[Hearthstone] if you are going to log off in less than 30minutes
+step
+    #requires Turn in Spare Parts
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r and |cRXP_FRIENDLY_Technician Zhanaa|r.
+    .turnin 37445 >>Turn in Spare Parts
+    .goto 468,50.5,47.9
+	.target +Technician Zhanaa
+    -- .turnin 10304 >>Turn in Vindicator Aldar
+    .turnin 37444 >>Turn in Inoculation
+    .accept 9309 >>Accept The Missing Scout
+    .goto 468,50.6,48.7
+	.target +Vindicator Aldar
+step
     #completewith next
     +|cFFFF0000[TIP]|r To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
 step
     #completewith next
     #label Neutralizing Agent
-    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water near the big crystal|r.
+    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_near the water by the large crystal|r.
     .complete 9294,1 --1/1 Disperse the Neutralizing Agent
     .use 22955
 step
@@ -6589,68 +6720,22 @@ step
     .mob Vale Moth
 step
     #requires Neutralizing Agent
-    .goto 468,46.91,64.16
-    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_at the water near the big crystal|r.
+    >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_near the water by the large crystal|r.
     .complete 9294,1 --1/1 Disperse the Neutralizing Agent
     .use 22955
 step
-    #hidewindow
-    #completewith inoculated
-    #loop
-    .goto 468,57.23,65.1,40,0
-    .goto 468,56.16,60.24,30,0
-    .goto 468,57.57,68.94,27,0
-    .goto 468,53.48,68.31,40,0
-    .goto 468,58.99,70.58,30,0
-    .goto 468,64.21,65.6,30,0
-    .goto 468,61.99,63.22,20,0
-    .goto 468,62.18,63.4,40,0
-    .goto 468,64.27,63.71,40,0
-    .goto 468,64.29,67.43,40,0
-    .goto 468,71.05,74.32,40,0
-    .goto 468,65.41,81.11,40,0
-    .goto 468,63.01,78.3,40,0
-    .goto 468,60.77,78.5,40,0
-    .goto 468,61.85,84.54,40,0
-    .goto 468,64.18,88.65,40,0
-    .goto 468,65.24,84.26,40,0
-    +1
-step
     #completewith next
-    >>Use the |T132775:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins|r.
-    .use 22962
-    .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
-	.mob Nestlewood Owlkin
+    #label The Missing Scout
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tolaan|r.
+    .turnin 9309 >>Turn in The Missing Scout
+    .accept 10303 >>Accept The Blood Elves
+	.target Tolaan
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts|r.
-    .complete 37445,1 --4/4 Emitter Spare Part
+    #hidewindow
+    #completewith The Missing Scout
+    .goto 468,46.74,67.31,10 >>1
 step
-    >>Use the |T132775:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins|r.
-    .use 22962
-    .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
-	.mob Nestlewood Owlkin
-step
-    .isOnQuest 9294
-    #label inoculated
-    >>|cRXP_WARN_RXP Guides frequently employ death skips as a strategy to swiftly reach their targeted locations|r.
-    .deathskip >> Die and respawn at the Crash Site
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
-    .turnin 9294 >>Turn in Healing the Lake
-    .goto 468,49.86,37.36
-	.target Botanist Taerix
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r and |cRXP_FRIENDLY_Technician Zhanaa|r.
-    .turnin 37445 >>Turn in Spare Parts
-    .goto 468,50.5,47.9
-	.target +Technician Zhanaa
-    .turnin 10304 >>Turn in Vindicator Aldar
-    .turnin 37444 >>Turn in Inoculation
-    .accept 9309 >>Accept The Missing Scout
-    .goto 468,50.6,48.7
-	.target +Vindicator Aldar
-step
-    .goto 468,37.13,61.57,40,0
+    #requires The Missing Scout
     .goto 468,33.91,69.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tolaan|r.
     .turnin 9309 >>Turn in The Missing Scout
@@ -6658,45 +6743,85 @@ step
 	.target Tolaan
 step
     #loop
-    .goto 468,31.64,76.45,40,0
-    .goto 468,28.95,71.2,40,0
-    .goto 468,26.4,77.56,40,0
-    .goto 468,30.91,78.83,40,0
+    .goto 468,33.32,74.12,20,0
+    .goto 468,29.83,75.39,20,0
+    .goto 468,28.38,73.07,20,0
+    .goto 468,28.31,71,20,0
+    .goto 468,31.23,69.98,20,0
+    .goto 468,26.47,76.69,20,0
+    .goto 468,30.17,78.5,20,0
     >>Kill |cRXP_ENEMY_Blood Elf Scouts|r.
     .complete 10303,1 --10/10 Blood Elf Scout slain
 	.mob Blood Elf Scout
 step
-    .goto 468,33.91,69.36
+    .goto 468,33.67,69.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tolaan|r.
     .turnin 10303 >>Turn in The Blood Elves
     .accept 9311 >>Accept Blood Elf Spy
 	.target Tolaan
 step
-    .goto 468,27.8,80.41
-    >>Kill |cRXP_ENEMY_Surveyor Candress|r and loot her for her [|cRXP_LOOT_Blood Elf Plans|r].
-    .complete 9311,1 --1/1 Surveyor Candress slain
-step
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blood Elf Plans|r.
-    .accept 9798 >>Accept Blood Elf Plans
-    .use 24414
-	.target Surveyor Candress
-step
-    .isOnQuest 9311
     #completewith next
-    .goto 468,26.67,75.62,40,0
-    .goto 468,29.6,78.2,40,0
-    .goto 468,32.85,73.76,40,0
-    .goto 468,28.99,71.46,40,0
-    .deathskip >> Die and respawn at the Crash Site
+    #label Surveyor Candress
+    >>Kill |cRXP_ENEMY_Surveyor Candress|r. Loot her for |T132319:0|t[|cRXP_LOOT_Blood Elf Plans|r].
+    .complete 9311,1 --1/1 Surveyor Candress slain
+    .accept 9798 >>Accept Blood Elf Plans
+    .disablecheckbox
+	.target Surveyor Candress
+    .use 24414
 step
-    .goto 468,50.66,48.75
+    #completewith Surveyor Candress
+    .goto 468,30.71,77.11,10 >>Go uphill
+step
+    #requires Surveyor Candress
+    .goto 468,27.8,80.41
+    >>Kill |cRXP_ENEMY_Surveyor Candress|r. Loot her for |T132319:0|t[|cRXP_LOOT_Blood Elf Plans|r].
+    .complete 9311,1 --1/1 Surveyor Candress slain
+    .accept 9798 >>Accept Blood Elf Plans
+	.target Surveyor Candress
+    .use 24414
+step
+    #completewith next
+    #label Healing the Lake
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
+    .turnin 9294 >>Turn in Healing the Lake
+	.target Botanist Taerix
+step
+    #completewith Healing the Lake
+    .goto 468,26.97,76.13,40,0
+    .goto 468,28.56,72.18,40,0
+    .goto 468,32.29,74.47,40,0
+    .deathskip >> Die and respawn at the Spirit Healer
+step
+    #requires Healing the Lake
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
+    .turnin 9294 >>Turn in Healing the Lake
+    .goto 468,49.86,37.36
+	.target Botanist Taerix
+step
+    #completewith next
+    #label Blood Elf Spy
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r.
+    .turnin 9311 >>Turn in Blood Elf Spy
+    .turnin 9798 >>Turn in Blood Elf Plans
+    .accept 9312 >>Accept The Emitter
+    .disablecheckbox
+	.target Vindicator Aldar
+step
+    #completewith Blood Elf Spy
+    #hidewindow
+    .goto 468,49.29,41.05,10,0
+    .goto 468,49.77,46,10,0
+    .goto 468,50.66,48.75,40 >>1
+step
+    #requires Blood Elf Spy
+    .goto 468,50.53,48.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r.
     .turnin 9311 >>Turn in Blood Elf Spy
     .turnin 9798 >>Turn in Blood Elf Plans
     .accept 9312 >>Accept The Emitter
 	.target Vindicator Aldar
 step
-    .goto 468,50.51,47.88
+    .goto 468,50.5,48.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r.
     .turnin 9312 >>Turn in The Emitter
     .accept 9313 >>Accept Travel to Azure Watch
@@ -11459,7 +11584,7 @@ step << Hunter
     .cast 1515 >>Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Mangy Nightsaber|r to tame it.
     *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .usespell 1515
-	.target Mangy Nightsaber
+	.mob Mangy Nightsaber
 step
     .xp >10,1
     #requires Filled Crystal Phial
