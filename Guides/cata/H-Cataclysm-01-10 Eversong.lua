@@ -1,10 +1,11 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Alliance' then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 1-6 Sunstrider Isle
 #next 6-10 Eversong Woods
@@ -63,6 +64,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r
     .turnin 8326 >>Turn in Unfortunate Measures
     .accept 8327 >>Accept Report to Lanthan Perilon
+    .accept 31170 >>Accept Monk Training << Monk
     .accept 9393 >>Accept Hunter Training << Hunter
     .accept 8328 >>Accept Mage Training << Mage
     .accept 9676 >>Accept Paladin Training << Paladin
@@ -71,91 +73,114 @@ step
     .accept 8563 >>Accept Warlock Training << Warlock
     .accept 8329 >>Accept Warrior Training << Warrior
     .target Magistrix Erona
+step << Monk
+    .goto 467/0,-3998.000,7978.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pao|r
+    .turnin 31170 >>Turn in Monk Training
+    .accept 31171 >>Accept Tiger Palm
+    .target Pao
 step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .turnin 9393 >>Turn in Hunter Training
     .accept 10070 <<Accept Steady Shot
-    .train 56641 >>Train |T132213:0|t[Steady Shot]
+    .train 56641 >>Train |T132213:0|t[Steady Shot] << Cata
     .target Ranger Sallina
 step << Mage
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .turnin 8328 >>Turn in Mage Training
     .accept 10068 >>Accept Arcane Missiles
-    .train 5143 >>Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >>Train |T136096:0|t[Arcane Missiles] << Cata
     .target Julia Sunstriker
 step << Paladin
     .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jesthenis Sunstriker|r
     .turnin 9676 >>Turn in Paladin Training
     .accept 10069 >>Accept Ways of the Light
-    .train 20271 >>Train |T135959:0|t[Judgement]
-    .train 20154 >>Train |T135960:0|t[Seal of Righteousness]
+    .train 20271 >>Train |T135959:0|t[Judgement] << Cata
+    .train 20154 >>Train |T135960:0|t[Seal of Righteousness] << Cata
     .target Jesthenis Sunstriker
 step << Priest
     .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .turnin 8564 >>Turn in Priest Training
     .accept 10072 >>Accept Healing the Wounded
-    .train 2061 >>Train |T135907:0|t[Flash Heal]
+    .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Avoker|r
     .turnin 9392 >>Turn in Rogue Training
     .accept 10071 >>Accept Evisceration
-    .train 2098 >>Train |T132292:0|t[Eviscerate]
+    .train 2098 >>Train |T132292:0|t[Eviscerate] << Cata
     .target Pathstalker Avoker
 step << Warlock
     .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .turnin 8563 >>Turn in Warlock Training
     .accept 10073 >>Accept Immolation
-    .train 348 >>Train |T135817:0|t[Immolate]
+    .train 348 >>Train |T135817:0|t[Immolate] << Cata
     .target Summoner Teli'Larien
 step << Warrior
     .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delios Silverblade|r
     .turnin 8329 >>Turn in Warrior Training
     .accept 27091 >>Accept Charge!
-    .train 100 >>Train |T132337:0|t[Charge]
+    .train 100 >>Train |T132337:0|t[Charge] << Cata
     .target Delios Silverblade
+step << Monk
+    .goto Eversong Woods,38.34,20.64
+	>>Cast |T606551:0|t[Tiger Palm] on a |cRXP_ENEMY_Training Dummy|r outside
+	.complete 31171,2 --Cast Tiger Palm
+	.mob Training Dummy
 step << Hunter
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10070,1 --Cast Steady Shot
+	.complete 10070,2 << !Cata --Cast Steady Shot
+	.complete 10070,1 << Cata --Cast Steady Shot
 	.mob Training Dummy
 step << Mage
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10068,1 --Cast Arcane Missiles
+	.complete 10068,2 << !Cata --Cast Arcane Missiles
+	.complete 10068,1 << Cata --Cast Arcane Missiles
 	.mob Training Dummy
 step << Paladin
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T135960:0|t[Seal of Righteousness] on yourself, then cast |T135959:0|t[Judgement] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10069,1 --Cast Judgement
+	.complete 10069,2 << !Cata --Cast Judgement
+	.complete 10069,1 << Cata --Cast Judgement
 	.mob Training Dummy
  step << Priest
     .goto Eversong Woods,39.49,20.29
 	>>Cast |T135907:0|t[Flash Heal] on a |cRXP_ENEMY_Wounded Outrunner|r
-	.complete 10072,1 --Cast Flash Heal
+	.complete 10072,2 << !Cata --Cast Flash Heal
+	.complete 10072,1 << Cata --Cast Flash Heal
 	.target Wounded Outrunner
 step << Rogue
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T132292:0|t[Eviscerate] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10071,1 --Cast Eviscerate
+	.complete 10071,2 << !Cata --Cast Eviscerate
+	.complete 10071,1 << Cata --Cast Eviscerate
 	.mob Training Dummy
 step << Warlock
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10073,1 --Cast Immolate
+	.complete 10073,2 << !Cata --Cast Immolate
+	.complete 10073,1 << Cata --Cast Immolate
 	.mob Training Dummy
 step << Warrior
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T132337:0|t[Charge] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 27091,1 --Cast Charge
+	.complete 27091,2 << !Cata --Cast Charge
+	.complete 27091,1 << Cata --Cast Charge
 	.mob Training Dummy
+step << Monk
+    .goto 467/0,-3998.200,7978.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pao|r
+    .turnin 31171 >>Turn in Tiger Palm
+    .target Pao
 step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
@@ -369,43 +394,43 @@ step
     .turnin 8330 >>Turn in Solanian's Belongings
     .turnin 8345 >>Turn in The Shrine of Dath'Remar
     .target Well Watcher Solanian
-step << Hunter
+step << Hunter Cata
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .train 2973 >>Train |T132223:0|t[Raptor Strike]
     .target Ranger Sallina
     .xp <6,1
-step << Mage
+step << Mage Cata
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Julia Sunstriker
     .xp <5,1
-step << Paladin
+step << Paladin Cata
     .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jesthenis Sunstriker|r
     .train 465 >>Train |T135893:0|t[Devotion Aura]
     .target Jesthenis Sunstriker
     .xp <5,1
-step << Priest
+step << Priest Cata
     .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .train 17 >>Train |T135940:0|t[Power Word: Shield]
     .target Matron Arena
     .xp <5,1
-step << Rogue
+step << Rogue Cata
     .goto Eversong Woods,38.93,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Avoker|r
     .train 1784 >>Train |T132320:0|t[Stealth]
     .target Pathstalker Avoker
     .xp <5,1
-step << Warlock
+step << Warlock Cata
     .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .train 1454 >>Train |T136126:0|t[Life Tap]
     .target Summoner Teli'Larien
     .xp <5,1
-step << Warrior
+step << Warrior Cata
     .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delios Silverblade|r
     .train 34428 >>Train |T132342:0|t[Victory Rush]
@@ -445,6 +470,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 6-10 Eversong Woods
 #next 10-22 Azshara
@@ -605,14 +631,14 @@ step
     .turnin 8463 >>Turn in Unstable Mana Crystals
     .accept 9352 >>Accept Darnassian Intrusions
     .target Aeldon Sunbrand
-step << Paladin
+step << Paladin Cata
     .goto Eversong Woods,48.39,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noellene|r
     .train 635 >>Train your class spells
     .target Noellene
 	.xp <7,1
     .xp >9,1
-step << Paladin
+step << Paladin Cata
     #optional
     .goto Eversong Woods,48.39,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noellene|r
@@ -620,14 +646,14 @@ step << Paladin
     .target Noellene
     .xp >7,1
 	.xp <9,1
-step << Warrior
+step << Warrior Cata
     .goto Eversong Woods,48.29,46.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lothan|r
     .train 772 >>Train your class spells
     .target Lothan Silverblade
 	.xp <7,1
     .xp >9,1
-step << Warrior
+step << Warrior Cata
     #optional
     .goto Eversong Woods,48.29,46.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lothan|r
@@ -635,46 +661,46 @@ step << Warrior
     .target Lothan Silverblade
     .xp >7,1
 	.xp <9,1
-step << Rogue
+step << Rogue Cata
     .goto Eversong Woods,48.58,46.29,8,0
     .goto Eversong Woods,48.50,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tannaria|r upstairs
     .train 5277 >>Train your class spells
     .target Tannaria
 	.xp <9,1
-step << Hunter
+step << Hunter Cata
     .goto Eversong Woods,48.27,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannovia|r
     .train 2973 >>Train your class spells
     .target Hannovia
     .xp <6,1
     .xp >8,1
-step << Hunter
+step << Hunter Cata
     #optional
     .goto Eversong Woods,48.27,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannovia|r
     .train 5116 >>Train your class spells
     .target Hannovia
 	.xp <8,1
-step << Mage/Warlock/Priest
+step << Mage Cata/Warlock Cata/Priest Cata
     #optional
     #completewith next
     .goto Eversong Woods,47.771,47.303,8,0
     .goto Eversong Woods,47.823,47.696,8 >>Enter the Inn
-step << Mage/Warlock/Priest
+step << Mage Cata/Warlock Cata/Priest Cata
     #optional
     #completewith next
     .goto Eversong Woods,48.286,47.097,8,0
     .goto Eversong Woods,48.054,47.130,8,0
     .goto Eversong Woods,48.074,47.354,8 >>Go upstairs
-step << Priest
+step << Priest Cata
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ponaris|r
     .train 588 >>Train your class spells
     .target Ponaris
 	.xp <7,1
     .xp >9,1
-step << Priest
+step << Priest Cata
     #optional
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ponaris|r
@@ -682,14 +708,14 @@ step << Priest
     .target Ponaris
 	.xp >7,1
     .xp <9,1
-step << Mage
+step << Mage Cata
     .goto Eversong Woods,48.04,48.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garridel|r
     .train 116 >>Train your class spells
     .target Garridel
 	.xp <7,1
     .xp >8,1
-step << Mage
+step << Mage Cata
     #optional
     .goto Eversong Woods,48.04,48.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garridel|r
@@ -697,14 +723,14 @@ step << Mage
     .target Garridel
 	.xp >7,1
     .xp <8,1
-step << Warlock
+step << Warlock Cata
     .goto Eversong Woods,48.23,47.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celoenus|r
     .train 689 >>Train your class spells
     .target Celoenus
 	.xp <6,1
     .xp >8,1
-step << Warlock
+step << Warlock Cata
     #optional
     .goto Eversong Woods,48.23,47.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celoenus|r
@@ -858,7 +884,7 @@ step
 step
     #xprate <1.2
     .goto Eversong Woods,44.718,69.619
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Velan Brightoak|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Velan Brightoak|r
     .accept 8491 >>Accept Pelt Collection
     .target Velan Brightoak
 step
@@ -1071,14 +1097,14 @@ step
 step
     #xprate <1.2
     .goto Eversong Woods,43.675,71.309
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r
     .accept 9358 >>Accept Ranger Sareyn
     .target Marniel Amberlight
     .maxlevel 9
 step
     #xprate <1.2
     .goto Eversong Woods,44.030,70.760
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r
     .accept 9254 >>Accept The Wayward Apprentice
     .target Magistrix Landra Dawnstrider
     .maxlevel 9
@@ -1234,49 +1260,49 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon|r
     .turnin 8482 >> Turn in Incriminating Documents
     .target Aeldon Sunbrand
-step << Paladin
+step << Paladin Cata
     .goto Eversong Woods,48.39,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noellene|r
     .train 20473 >>Train your class spells
     .target Noellene
-step << Warrior
+step << Warrior Cata
     .goto Eversong Woods,48.29,46.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lothan|r
     .train 71 >>Train your class spells
     .target Lothan Silverblade
-step << Rogue
+step << Rogue Cata
     .goto Eversong Woods,48.58,46.29,8,0
     .goto Eversong Woods,48.50,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tannaria|r upstairs
     .train 5277 >>Train your class spells
     .target Tannaria
-step << Hunter
+step << Hunter Cata
     .goto Eversong Woods,48.27,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannovia|r
     .train 34026 >>Train your class spells
     .target Hannovia
-step << Mage/Warlock/Priest
+step << Mage Cata/Warlock Cata/Priest Cata
     #optional
     #completewith next
     .goto Eversong Woods,47.771,47.303,8,0
     .goto Eversong Woods,47.823,47.696,8 >>Enter the Inn
-step << Mage/Warlock/Priest
+step << Mage Cata/Warlock Cata/Priest Cata
     #optional
     #completewith next
     .goto Eversong Woods,48.286,47.097,8,0
     .goto Eversong Woods,48.054,47.130,8,0
     .goto Eversong Woods,48.074,47.354,8 >>Go upstairs
-step << Priest
+step << Priest Cata
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ponaris|r
     .train 8092 >>Train your class spells
     .target Ponaris
-step << Mage
+step << Mage Cata
     .goto Eversong Woods,48.04,48.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garridel|r
     .train 2139 >>Train your class spells
     .target Garridel
-step << Warlock
+step << Warlock Cata
     .goto Eversong Woods,48.23,47.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celoenus|r
     .train 1120 >>Train your class spells
@@ -1294,17 +1320,16 @@ step << !Undead
     .goto 110,72.396,85.242
     .zone Silvermoon City >>Enter Silvermoon City
 step << BloodElf
-    .goto 110,53.929,71.027
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Skyles|r
+    .goto Silvermoon City,53.92,71.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sathren Azuredawn|r
     .turnin 9133 >>Turn in Fly to Silvermoon City
-    .target Sathran Azuredown
+    .target Sathren Azuredawn
     .isOnQuest 9133
 step << !Undead
     #completewith next
-    .goto 110,57.52,24.60,10,0
-    .goto 110,51.78,17.90,10,0
-    .goto 110,49.82,17.81,8,0
-    .goto 110,49.46,14.22
+    .goto Silvermoon City,57.53,24.56,10,0
+    .goto Silvermoon City,51.77,17.86,10,0
+    .goto Silvermoon City,49.48,14.80
     .zone Undercity >>Take the Orb of Translocation to Undercity
 step << !Undead
     #completewith next

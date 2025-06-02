@@ -1,5 +1,5 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
 --TODO: skip the furbolg quests if xp rate is greater than 1x
 RXPGuides.RegisterGuide([[
 << Alliance
@@ -7,6 +7,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
+#mop
 #defaultfor Draenei
 #next 10-18 Darkshore
 step

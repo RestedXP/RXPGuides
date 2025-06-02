@@ -152,7 +152,7 @@ function addon.SetupGuideWindow()
     GuideName.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     Footer.text:SetFont(addon.font, 9, "")
-    if GetCurrentRegion() < 20 then--PTR Region 72?
+    if addon.player.beta then
         Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
     else
         Footer.text:SetText(fmt("RXP Beta %s %d/%d", addon.release, addon.minGuideVersion ,addon.maxGuideVersion))
@@ -1470,7 +1470,7 @@ function addon.ProcessGuideTable(guide)
                 startAt = nil
             end
             if isShown and not startAt then
-                if not(step.include and step.elements and #step.elements == 0 and not step.requires) then
+                if not(step.include and step.elements and #step.elements == 0 and not step.requires and not step.label) then
                     if step.tip then
                         tinsert(currentGuide.tips,step)
                         lastTip = step
@@ -1844,9 +1844,7 @@ function BottomFrame.UpdateFrame(self, stepn)
                 rawtext = icon .. element.text
             end
 
-            if hideStep then
-                text = ""
-            elseif rawtext and not element.hideTooltip then
+            if rawtext and not element.hideTooltip then
                 if not text then
                     text = "   " .. rawtext
                 else
@@ -1855,7 +1853,12 @@ function BottomFrame.UpdateFrame(self, stepn)
             end
         end
 
-        step.text = text
+        if hideStep then
+            step.text = ""
+            step.hiddentext = text
+        else
+            step.text = text
+        end
 
         if frame.text then
             frame.text:SetText(text)
@@ -1923,9 +1926,7 @@ function BottomFrame.UpdateFrame(self, stepn)
                     rawtext = icon .. element.text
                 end
 
-                if hideStep then
-                    text = ""
-                elseif rawtext and not element.hideTooltip and rawtext ~= "" then
+                if rawtext and not element.hideTooltip and rawtext ~= "" then
                     if not text then
                         text = "   " .. rawtext
                     else
@@ -1934,6 +1935,10 @@ function BottomFrame.UpdateFrame(self, stepn)
                 end
             end
 
+            if hideStep then
+                step.hiddentext = text
+                text = ""
+            end
             if step.completed or
                 (not step.sticky and RXPCData.currentStep > step.index) or
                 RXPCData.stepSkip[step.index] then

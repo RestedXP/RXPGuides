@@ -19,21 +19,23 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-      - name: Package and release Classic
+      - name: Package and release
         uses: BigWigsMods/packager@v2
-        with:
-          args: -g classic
 
-      - name: Package and release Cata
-        uses: BigWigsMods/packager@v2
-        with:
-          args: -g cata
+      # - name: Package and release Classic
+      #   uses: BigWigsMods/packager@v2
+      #   with:
+      #     args: -g classic
 
-      - name: Package and release Retail
-        uses: BigWigsMods/packager@v2
-        with:
-          args: -g retail
+      # - name: Package and release Cata
+      #   uses: BigWigsMods/packager@v2
+      #   with:
+      #     args: -g cata
+
+      # - name: Package and release Retail
+      #   uses: BigWigsMods/packager@v2
+      #   with:
+      #     args: -g retail
 
       - name: Stage releases
         run: |
@@ -42,20 +44,20 @@ jobs:
 
           cp RXPGuides/CHANGELOG.md ./ftp/
 
-          for game in classic cata; do
-            zip=$(ls RXPGuides-*${game}.zip)
 
-            cp "${zip}" "./ftp/RXPGuides-latest-${game}.zip"
+          zip=$(ls RXPGuides*.zip)
 
-            # Lazy check if alpha (RXPGuides-v4.2.9-1-g623e66a-wrath) vs (RXPGuides-v4.2.9-wrath)
-            if (( $(awk -F'-' '{print NF-1}' <<< "${zip}") > 2 )); then
-              echo "FTP_DIR=beta" >> $GITHUB_ENV
-            else
-              echo "FTP_DIR=prod" >> $GITHUB_ENV
-            fi
-          done
+          cp "${zip}" "./ftp/RXPGuides-latest.zip"
 
-          zip=$(ls RXPGuides-*classic.zip)
+          # Lazy check if alpha (RXPGuides-v4.2.9-1-g623e66a-wrath) vs (RXPGuides-v4.2.9-wrath)
+          if (( $(awk -F'-' '{print NF-1}' <<< "${zip}") > 2 )); then
+            echo "FTP_DIR=beta" >> $GITHUB_ENV
+          else
+            echo "FTP_DIR=prod" >> $GITHUB_ENV
+          fi
+
+
+          zip=$(ls RXPGuides*.zip)
           cp "${zip}" "./ftp/RXPGuides.zip"
 
           cd ..

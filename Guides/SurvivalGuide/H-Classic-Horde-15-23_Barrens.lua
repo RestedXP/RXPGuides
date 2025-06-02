@@ -380,6 +380,7 @@ step << !Tauren
     .goto Mulgore,68.68,60.34,120,0
     .zone Thunder Bluff >>Travel South to Camp Taurajo and enter Mulgore. Travel to Thunder Bluff from there
     >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
+    .dungeon RFC
 step
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
@@ -441,6 +442,7 @@ step
 step
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
@@ -1007,6 +1009,12 @@ step
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
     .isQuestComplete 845
+step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
 step
     #loop
     .goto The Barrens,55.27,37.82,0
@@ -3146,6 +3154,7 @@ step << !Tauren
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
+    .target Mangletooth
 step << !Tauren
     #completewith next
     .goto Mulgore,68.68,60.34,120,0
@@ -3741,13 +3750,6 @@ step
     .isQuestComplete 1491
     .dungeon WC
 step
-    .goto The Barrens,63.09,37.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to The Crossroads
-    .target Bragok
-    .isOnQuest 6981
-    .dungeon WC
-step
     .use 10441 >>Use the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] to accept the quest
     .accept 6981 >> Accept The Glowing Shard
     .itemcount 10441,1
@@ -3759,6 +3761,13 @@ step
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
     .target Sputtervalve
+    .isOnQuest 6981
+    .dungeon WC
+step
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fly Crossroads >> Fly to The Crossroads
+    .target Bragok
     .isOnQuest 6981
     .dungeon WC
 step

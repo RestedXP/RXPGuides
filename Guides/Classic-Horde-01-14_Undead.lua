@@ -1866,16 +1866,16 @@ step << Rogue
     .train 400095,1
 step
     #hardcore
-    #completewith DoomedWeed
+    #completewith Brill3
     .subzone 159 >> Travel back to Brill
     .subzoneskip 159
 step
     #softcore
-    #completewith DoomedWeed
+    #completewith Brill3
     .goto Tirisfal Glades,64.50,29.41
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     >>|cRXP_WARN_Make sure you die on (or to the West of) the goto arrow|r
-step
+step << skip
     #label DoomedWeed
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -2582,7 +2582,7 @@ step << Rogue
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brom|r
-    .train 2575,1 >> Train |T136248:0|t[Mining]
+    .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Brom Killian
 step << Warrior/Rogue
@@ -5589,7 +5589,6 @@ step << Warrior
     #completewith Training1
     .goto Tirisfal Glades,32.22,65.64,8 >> Go inside the building
 step << Priest/Mage
-    #label Vendor
     #season 0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joshua|r
@@ -5603,6 +5602,9 @@ step << Priest
     .accept 77670 >> Accept Meditation on the Undeath
     .turnin 77670 >> Turn in Meditation on the Undeath
     .target Dark Cleric Duesten
+step
+    #optional
+    #label Vendor
 step << Warlock/Mage
     #sticky
     #label Piercing
@@ -6490,7 +6492,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .accept 365 >>Accept Fields of Grief
     .target Deathguard Simmer
-step
+step << skip
     #loop
     .goto Tirisfal Glades,56.13,52.48,0
     .goto Tirisfal Glades,40.77,54.42,0
@@ -6694,12 +6696,12 @@ step << Priest
     >>|cRXP_WARN_You need Lesser Heal Rank 2 for this quest|r
     .complete 5650,1 --Heal and fortify Deathguard Kel (1)
     .target Deathguard Kel
-step
+step << skip
     #completewith Claws
     >>Loot the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step
-    #completewith GloomWeed
+    #completewith next
     >>Kill any |cRXP_ENEMY_Decrepit Darkhound|r you see. Loot them for their |cRXP_LOOT_Blood|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -6720,10 +6722,13 @@ step
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
     .mob Ravaged Corpse
-step
+step << skip
     #label GloomWeed
+    #loop
+    .goto Tirisfal Glades,39.55,50.64,0
+    .goto Tirisfal Glades,44.43,57.33,0
     .goto Tirisfal Glades,39.55,50.64,50,0
-    .goto Tirisfal Glades,44.43,57.33
+    .goto Tirisfal Glades,44.43,57.33,50,0
     >>Finish looting the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step << Warrior
@@ -6915,7 +6920,7 @@ step
     #softcore
     #completewith BrillTurnin1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_ Spirit Healer|r
-step
+step << skip
     #softcore
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -7084,7 +7089,7 @@ step << Warrior
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
-step
+step << skip
     #hardcore
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -7349,7 +7354,7 @@ step << Warrior
     .mob Rote Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
-step
+step << skip
     #completewith next
     >>Loot the |cRXP_LOOT_Doom Weed|r on the ground
     >>|cRXP_WARN_They are found near trees in the Gnoll area|r
@@ -7375,7 +7380,7 @@ step
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
     .mob Rot Hide Mongrel
-step
+step << skip
     #label Doomweed
     #loop
     .goto Tirisfal Glades,57.48,35.95,0
@@ -7396,6 +7401,9 @@ step
     >>|cRXP_WARN_They are found near trees in the Gnoll area|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
+step
+    #optional
+    #label Doomweed
 step << Mage
     #season 2
     #optional
@@ -7616,7 +7624,7 @@ step
     .goto Tirisfal Glades,64.50,29.41
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     >>|cRXP_WARN_Make sure you die on (or to the West of) the goto arrow|r
-step
+step << skip
     #label DoomedWeed
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -7883,7 +7891,9 @@ step << Warrior
     .accept 1820 >> Accept Speak with Coleman
     .target Deathguard Dillinger
     .isQuestTurnedIn 1818
-
+step
+    #optional
+    #label Brill3
     --150% route does Agamand Mills after UC
 
 step << Warrior
@@ -8482,7 +8492,7 @@ step << Rogue
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brom|r
-    .train 2575,1 >> Train |T136248:0|t[Mining]
+    .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Brom Killian
 step << Warrior/Rogue

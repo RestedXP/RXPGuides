@@ -1,8 +1,9 @@
 local _,addon = ...
-if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
+if addon.gameVersion < 40000 or addon.player.faction == 'Alliance' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
+#mop
 << Horde
 #name 22-27 Ashenvale
 #next 27-31 Northern Stranglethorn
@@ -791,7 +792,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith next
-    .subzone 2897 >>Travel to Zoram'gar Outpost 
+    .subzone 2897 >>Travel to Zoram'gar Outpost
     .isQuestAvailable 13712
 step
     .goto 63,11.16,34.43
@@ -1532,38 +1533,38 @@ step
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Vhulgra
     .zoneskip Orgrimmar
-step << Rogue/Warlock
+step << Rogue Cata/Warlock Cata
     #completewith next
     .goto 1454,45.81,66.88,40 >> Travel toward the Cleft of Shadow
-step << Shaman/Druid/Paladin/Warrior/Hunter/Priest
+step << Shaman Cata/Druid Cata/Paladin Cata/Warrior Cata/Hunter Cata/Priest Cata
     #completewith next
     .goto 1454/1,-4291.89990,1876.70007,50 >> Travel to the Valley of Wisdom
-step << Rogue
+step << Rogue Cata
     .goto 1454,44.65,61.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordul|r
     .trainer >> Train your class spells
     .target Gordul
-step << Rogue
+step << Rogue Cata
     .goto 1454,29.60,50.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rekkul|r.
     .vendor >>|cRXP_BUY_Stock up on|r |T132273:0|t[Poisons]
     .target Rekkul
-step << Shaman
+step << Shaman Cata
     .goto 1454/1,-4282.60010,1884.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sahi|r
     .trainer >> Train your class spells
     .target Sahi Cloudsinger
-step << Druid
+step << Druid Cata
     .goto 1454/1,-4285.10010,1889.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalla|r
     .trainer >> Train your class spells
     .target Shalla Whiteleaf
-step << Mage
+step << Mage Cata
     .goto 1454/1,-4125.10010,1690.59998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthel'nay|r
     .trainer >> Train your class spells
     .target Uthel'nay
-step << Mage
+step << Mage Cata
     .goto 1454/1,-4128.89990,1692.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zirazi the Star-Gazer|r
     .train 3567 >>Train |T135759:0|t[Teleport: Orgrimmar]
@@ -1572,32 +1573,32 @@ step << Mage
     .train 32272 >>Train |T135761:0|t[Teleport: Silvermoon]
     .target Zirazi the Star-Gazer
     .xp <24,1
-step << Mage
+step << Mage Cata
     .goto 1454/1,-4382.50000,1673.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horthus|r
     .collect 17031,20 >>|cRXP_BUY_Buy a stack of|r |T134419:0|t[Rune of Teleportation] |cRXP_BUY_from him|r
     .target Horthus
-step << Priest
+step << Priest Cata
     .goto 1454/1,-4297.60010,1863.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liwatha|r
     .trainer >> Train your class spells
     .target Seer Liwatha
-step << Warlock
+step << Warlock Cata
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .trainer >> Train your class spells
     .target Mirket
-step << Paladin
+step << Paladin Cata
     .goto 1454/1,-4292.50000,1863.70007
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atohmo|r
     .trainer >> Train your class spells
     .target Sunwalker Atohmo
-step << Hunter
+step << Hunter Cata
     .goto 1454/1,-4281.00000,1872.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nohi|r
     .trainer >> Train your class spells
     .target Nohi Plainswalker
-step << Warrior
+step << Warrior Cata
     .goto 1454/1,-4284.00000,1867.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nahu|r
     .trainer >> Train your class spells
@@ -1673,7 +1674,6 @@ step
     .goto 85,51.31,56.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bort|r
     .turnin 26416 >>Turn in Well, Come to the Jungle
-    .accept 26417 >>Accept Northern Stranglethorn: The Fallen Empire
     .target Bort
     .isOnQuest 26416
     --STV breadcrumb quest
@@ -1685,4 +1685,5 @@ step
     .accept 26417 >>Accept Northern Stranglethorn: The Fallen Empire
     .target Bort
     .isQuestTurnedIn 26416
+    .isNotOnQuest 28688
     ]])

@@ -18,6 +18,8 @@ local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseC
 --local GetContainerItemLink = C_Container and C_Container.GetContainerItemLink or _G.GetContainerItemLink
 --local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
+local GetCoinTextureString = C_CurrencyInfo and C_CurrencyInfo.GetCoinTextureString or _G.GetCoinTextureString
+
 inventoryManager.bagHook = _G.ContainerFrame_Update
 
 local GetContainerItemInfo
