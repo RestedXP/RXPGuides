@@ -6373,17 +6373,20 @@ RXPGuides.RegisterGuide([[
 << Alliance 
 
 step
+    .xp >10,1
     .goto 468,61.21,29.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megelon|r.
     .accept 9279 >>Accept You Survived!
 	.target Megelon
 step
+    .xp >10,1
     .goto 468,52.86,35.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .turnin 9279 >>Turn in You Survived!
     .accept 9280 >>Accept Replenishing the Healing Crystals
 	.target Proenitus
 step
+    .xp >10,1
     #loop
     .goto 468,52.84,28.69,30,0
     .goto 468,51.77,26.5,30,0
@@ -6399,12 +6402,14 @@ step
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
 step
+    .xp >10,1
     .goto 468,52.52,35.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .turnin 9280 >>Turn in Replenishing the Healing Crystals
     .accept 9409 >>Accept Urgent Delivery!
 	.target Proenitus
 step
+    .xp >10,1
     #completewith next
     #label Urgent Delivery!
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r.
@@ -6412,9 +6417,11 @@ step
     .accept 9283 >>Accept Rescue the Survivors!
 	.target Zalduun
 step
+    .xp >10,1
     #completewith Urgent Delivery!
     .goto 468,52.45,38.24,10 >>Enter the House
 step
+    .xp >10,1
     #requires Urgent Delivery!
     #loop
     .goto 468,52.1,41.05,15,0
@@ -6424,58 +6431,67 @@ step
     .accept 9283 >>Accept Rescue the Survivors!
 	.target Zalduun
 step
+    .xp >10,1
     #completewith next
     #label Botanist Taerix
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .accept 9371 >>Accept Botanist Taerix
 	.target Proenitus
 step
+    .xp >10,1
     #completewith Botanist Taerix
     .goto 468,52.75,36.22,30 >>Leave the House
 step
+    .xp >10,1
     #requires Botanist Taerix
     .goto 468,52.75,36.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Proenitus|r.
     .accept 9371 >>Accept Botanist Taerix
 	.target Proenitus
 step
+    .xp >10,1
     .goto 468,50.11,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9371 >>Turn in Botanist Taerix
     .accept 10302 >>Accept Volatile Mutations
 	.target Botanist Taerix
 step
+    .xp >10,1
     #hidewindow
     #completewith Volatile Mutation
     #loop
-    .goto 468,47.03,31.53,30,0
-    .goto 468,44.28,26.66,30,0
-    .goto 468,50.22,25.47,30,0
-    .goto 468,53,28.76,30,0
-    .goto 468,51.35,20.89,30,0
-    .goto 468,56.71,23.14,30,0
-    .goto 468,55.99,29.92,30,0
-    .goto 468,41.42,38.77,30,0
-    .goto 468,40.37,45.4,30,0
-    .goto 468,35.46,50.34,30,0
+    .goto 468,47.03,31.53,40,0
+    .goto 468,44.28,26.66,40,0
+    .goto 468,50.22,25.47,40,0
+    .goto 468,53,28.76,40,0
+    .goto 468,51.35,20.89,40,0
+    .goto 468,56.71,23.14,40,0
+    .goto 468,55.99,29.92,40,0
+    .goto 468,41.42,38.77,40,0
+    .goto 468,40.37,45.4,40,0
+    .goto 468,35.46,50.34,40,0
     .goto 468,33.25,42.24,30,0
     +1
 step
+    .xp >10,1
     #completewith next
     >>Kill |cRXP_ENEMY_Volatile Mutations|r.
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
+    .xp >10,1
     >>Use |T135923:0|t[Gift of the Naaru] on |cRXP_FRIENDLY_Draenei Survivor|r |cRXP_WARN_ideally|r from a distance.
     .complete 9283,1 --1/1 Draenei Survivors Saved
     .use 370626
     .target Draenei Survivor
 step
+    .xp >10,1
     #label Volatile Mutation
     >>Kill |cRXP_ENEMY_Volatile Mutations|r.
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
 step
+    .xp >10,1
     #completewith next
     #label Botanical Legwork
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r and |cRXP_FRIENDLY_Apprentice Vishael|r.
@@ -6487,9 +6503,11 @@ step
     .disablecheckbox
     .target +Apprentice Vishael
 step
+    .xp >10,1
     #completewith Botanical Legwork
     .goto 468,49.66,37.15,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
+    .xp >10,1
     #requires Botanical Legwork
     .goto 468,49.66,37.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r and |cRXP_FRIENDLY_Apprentice Vishael|r.
@@ -6499,17 +6517,20 @@ step
     .accept 9799 >>Accept Botanical Legwork
     .target +Apprentice Vishael
 step
+    .xp >10,1
     #completewith next
     #hidewindow
     #label Corrupted Flower1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
+    .xp >10,1
     #completewith Corrupted Flower1
     .goto 468,40.88,43.2,40 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
+    .xp >10,1
     #requires Corrupted Flower1
     #hidewindow
     #completewith Corrupted Flower2
@@ -6517,27 +6538,32 @@ step
     .goto 468,40.88,43.2,30,0
     .goto 468,37.38,43.28,30,0
     .goto 468,37.4,49.58,35,0
+    .goto 468,37.89,52.1,30,0
     .goto 468,39.96,45.86,30,0
     .goto 468,35.81,39.68,30,0
     .goto 468,33.71,45.45,30,0
     .goto 468,34.73,49.62,30,0
     +1
 step
+    .xp >10,1
     #requires Corrupted Flower1
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
+    .xp >10,1
     #requires Corrupted Flower1
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. Loot them for |T134192:0|t[|cRXP_LOOT_Lasher Samples|r].
     *|cRXP_WARN_Ignore the bugged one in the ground|r.
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
+    .xp >10,1
     #label Corrupted Flower2
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers|r.
     .complete 9799,1 --3/3 Corrupted Flower
 step
+    .xp >10,1
     #completewith next
     #label Botanical Legwork
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Vishael|r and |cRXP_FRIENDLY_Botanist Taerix|r.
@@ -6548,12 +6574,14 @@ step
     .disablecheckbox
     .target +Botanist Taerix
 step
+    .xp >10,1
     #completewith Botanical Legwork
     .goto 468,44.92,39.8,40,0
     .goto 468,49.78,37.47,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
+    .xp >10,1
     #requires Botanical Legwork
     .goto 468,49.78,37.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Vishael|r and |cRXP_FRIENDLY_Botanist Taerix|r.
@@ -6563,16 +6591,19 @@ step
     .accept 9294 >>Accept Healing the Lake
     .target +Botanist Taerix
 step
+    .xp >10,1
     #completewith next
     #label Rescue the Survivors!
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r.
     .turnin 9283 >>Turn in Rescue the Survivors!
 	.target Zalduun
 step
+    .xp >10,1
     #completewith Rescue the Survivors!
     .goto 468,51.98,36.89,10,0
     .goto 468,52.64,37.31,5 >>Enter the House
 step
+    .xp >10,1
     #requires Rescue the Survivors!
     #loop
     .goto 468,52.1,41.05,15,0
@@ -6581,6 +6612,7 @@ step
     .turnin 9283 >>Turn in Rescue the Survivors!
 	.target Zalduun
 step
+    .xp >10,1
     #completewith next
     #label Spare Parts
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r and |cRXP_FRIENDLY_Vindicator Aldar|r.
@@ -6589,9 +6621,11 @@ step
 	.target Technician Zhanaa
     .target Vindicator Aldar
 step
+    .xp >10,1
     #completewith Spare Parts
     .goto 468,50.55,47.41,20 >>Leave the House
 step
+    .xp >10,1
     #requires Spare Parts
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r and |cRXP_FRIENDLY_Vindicator Aldar|r.
     .accept 37445 >>Accept Spare Parts
@@ -6601,11 +6635,13 @@ step
 	.target Technician Zhanaa
     .target Vindicator Aldar
 step
+    .xp >10,1
     #completewith next
     #label Emitter Spare Part
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts|r.
     .complete 37445,1 --4/4 Emitter Spare Part
 step <<!Hunter
+    .xp >10,1
     #completewith Emitter Spare Part
     #title |cFFFCDC00Follow the Arrow|r
     .goto 468,53.63,53.97,10,0
@@ -6613,6 +6649,7 @@ step <<!Hunter
     .goto 468,54.98,55.51,10,0
     .goto 468,55.27,57.62,20 >>Jump onto the white stone by the waterfall, then jump down to the ground.
 step <<Hunter
+    .xp >10,1
     #completewith Emitter Spare Part
     #title |cFFFCDC00Follow the Arrow|r
     .goto 468,53.68,51.21,10 >>Position yourself with your back at the edge of the cliff.
@@ -6622,6 +6659,7 @@ step <<Hunter
     .usespell 1515
     .mob Vale Moth
 step
+    .xp >10,1
     #requires Emitter Spare Part
     #hidewindow
     #completewith inoculated
@@ -6654,6 +6692,7 @@ step
     .goto 468,58.32,70.44,20,0
     +1
 step
+    .xp >10,1
     #requires Emitter Spare Part
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Nestlewood Owlkin|r from close range.
@@ -6661,16 +6700,19 @@ step
 	.mob Nestlewood Owlkin
     .use 22962
 step
+    .xp >10,1
     #requires Emitter Spare Part
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts|r.
     .complete 37445,1 --4/4 Emitter Spare Part
 step
+    .xp >10,1
     #label inoculated
-    >>Use the |T132775:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins|r from close range.w
+    >>Use the |T132775:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins|r from close range.
     .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
 	.mob Nestlewood Owlkin
     .use 22962
 step
+    .xp >10,1
     #completewith next
     #label Turn in Spare Parts
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r and |cRXP_FRIENDLY_Technician Zhanaa|r.
@@ -6683,6 +6725,7 @@ step
 --     #completewith Turn in Spare Parts
 --     .hs >>Use |T134414:0|t[Hearthstone]
 step
+    .xp >10,1
     #completewith Turn in Spare Parts
     .goto 468,62.21,63.45,5,0
     .goto 468,61.22,62.27,10,0
@@ -6691,8 +6734,8 @@ step
     .goto 468,57.37,64.96
     >>You can die to the enemies surrounding you, or you can follow the arrow and jump off a hill—the latter option is faster if you are nearby.
     .deathskip >> Die and respawn at the Spirit Healer
---     .hs >>Use |T134414:0|t[Hearthstone] if you are going to log off in less than 30minutes
 step
+    .xp >10,1
     #requires Turn in Spare Parts
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r and |cRXP_FRIENDLY_Technician Zhanaa|r.
     .turnin 37445 >>Turn in Spare Parts
@@ -6704,26 +6747,32 @@ step
     .goto 468,50.6,48.7
 	.target +Vindicator Aldar
 step
+    .xp >10,1
     #completewith next
     +|cFFFF0000[TIP]|r To set up keybindings for |cRXP_WARN_quest items, target and mob frames, or to delete the cheapest junk item,|r press Escape to open the Options menu, go to Keybindings, and find RestedXP Guides.
 step
+    .xp >10,1
     #completewith next
     #label Neutralizing Agent
     >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_near the water by the large crystal|r.
     .complete 9294,1 --1/1 Disperse the Neutralizing Agent
     .use 22955
 step
+    .xp >10,1
     #completewith Neutralizing Agent
     .goto 468,47.39,59.38,15,0
     .goto 468,46.91,64.16,7 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
+    .xp >10,1
     #requires Neutralizing Agent
+    .goto 468,46.91,64.16
     >>Use the |T132858:0|t[Neutralizing Agent] |cRXP_WARN_near the water by the large crystal|r.
     .complete 9294,1 --1/1 Disperse the Neutralizing Agent
     .use 22955
 step
+    .xp >10,1
     #completewith next
     #label The Missing Scout
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tolaan|r.
@@ -6731,10 +6780,12 @@ step
     .accept 10303 >>Accept The Blood Elves
 	.target Tolaan
 step
-    #hidewindow
+    .xp >10,1
     #completewith The Missing Scout
-    .goto 468,46.74,67.31,10 >>1
+    .goto 468,46.74,67.31,10,0
+    .goto 468,33.91,69.36,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
+    .xp >10,1
     #requires The Missing Scout
     .goto 468,33.91,69.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tolaan|r.
@@ -6742,6 +6793,7 @@ step
     .accept 10303 >>Accept The Blood Elves
 	.target Tolaan
 step
+    .xp >10,1
     #loop
     .goto 468,33.32,74.12,20,0
     .goto 468,29.83,75.39,20,0
@@ -6754,12 +6806,14 @@ step
     .complete 10303,1 --10/10 Blood Elf Scout slain
 	.mob Blood Elf Scout
 step
+    .xp >10,1
     .goto 468,33.67,69.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tolaan|r.
     .turnin 10303 >>Turn in The Blood Elves
     .accept 9311 >>Accept Blood Elf Spy
 	.target Tolaan
 step
+    .xp >10,1
     #completewith next
     #label Surveyor Candress
     >>Kill |cRXP_ENEMY_Surveyor Candress|r. Loot her for |T132319:0|t[|cRXP_LOOT_Blood Elf Plans|r].
@@ -6769,9 +6823,11 @@ step
 	.target Surveyor Candress
     .use 24414
 step
+    .xp >10,1
     #completewith Surveyor Candress
     .goto 468,30.71,77.11,10 >>Go uphill
 step
+    .xp >10,1
     #requires Surveyor Candress
     .goto 468,27.8,80.41
     >>Kill |cRXP_ENEMY_Surveyor Candress|r. Loot her for |T132319:0|t[|cRXP_LOOT_Blood Elf Plans|r].
@@ -6780,24 +6836,28 @@ step
 	.target Surveyor Candress
     .use 24414
 step
+    .xp >10,1
     #completewith next
     #label Healing the Lake
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9294 >>Turn in Healing the Lake
 	.target Botanist Taerix
 step
+    .xp >10,1
     #completewith Healing the Lake
     .goto 468,26.97,76.13,40,0
     .goto 468,28.56,72.18,40,0
     .goto 468,32.29,74.47,40,0
     .deathskip >> Die and respawn at the Spirit Healer
 step
+    .xp >10,1
     #requires Healing the Lake
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9294 >>Turn in Healing the Lake
     .goto 468,49.86,37.36
 	.target Botanist Taerix
 step
+    .xp >10,1
     #completewith next
     #label Blood Elf Spy
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r.
@@ -6807,12 +6867,14 @@ step
     .disablecheckbox
 	.target Vindicator Aldar
 step
+    .xp >10,1
     #completewith Blood Elf Spy
     #hidewindow
     .goto 468,49.29,41.05,10,0
     .goto 468,49.77,46,10,0
     .goto 468,50.66,48.75,40 >>1
 step
+    .xp >10,1
     #requires Blood Elf Spy
     .goto 468,50.53,48.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar|r.
@@ -6821,6 +6883,7 @@ step
     .accept 9312 >>Accept The Emitter
 	.target Vindicator Aldar
 step
+    .xp >10,1
     .goto 468,50.5,48.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r.
     .turnin 9312 >>Turn in The Emitter
@@ -6842,76 +6905,167 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
+    .xp >10,1
+    .goto 468,50.5,48.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Zhanaa|r.
+    .accept 9313 >>Accept Travel to Azure Watch
+	.target Technician Zhanaa
+step
+    .xp >10,1
+    #completewith next
+    #label Word from Azure Watch
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeun|r.
+    .accept 9314 >>Accept Word from Azure Watch
+	.target Aeun
+step
+    .xp >10,1
+    #completewith Word from Azure Watch
+    .goto 468,31.66,51.82,30,0
+    .goto 468,25.6,53.55,15,0
+    .goto 97,64.5,54.04,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Volatile Mutation
+    .mob Vale Moth
+step
+    .xp >10,1
+    #requires Word from Azure Watch
     .goto 97,64.5,54.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeun|r.
     .accept 9314 >>Accept Word from Azure Watch
 	.target Aeun
 step
+    .xp >10,1
     .goto 97,49.78,51.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
     .accept 9454 >>Accept The Great Moongraze Hunt
 	.target Acteon
 step
+    .xp >10,1
+    .goto 97,49.3,52.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lehna|r.
+    .train 125610 >>Train |T643856:0|t[Battle Pet Training]
+    .skipgossipid 41206
+    .target Lehna
+step
+    .xp >10,1
     .goto 97,48.68,52.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valn|r.
     .train 2366 >> Train |T4620675:0|t[Herbalism]
 	.skipgossip 47431,1,1,1
 	.target Valn
 step
+    .xp >10,1
     .goto 97,48.68,52.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valn|r.
     .train 2575 >> Train |T4620679:0|t[Mining]
 	.skipgossip 47431,2,3,2
 	.target Valn
 step
-    #completewith home
-    +|cRXP_WARN_Only gather herbs or mine ores for experience when they are immediately nearby|r.
-step
+    .xp >10,1
     #completewith next
-    .vendor >>Talk to |cRXP_FRIENDLY_Otonambusi|r, buy bags if you need |cRXP_WARN_(don't sell Moongraze Stag Tenderloin)|r.
-	.target Otonambusi
-step
-    .goto 97,48.39,51.78
+    #label Medicinal Purpose
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anchorite Fateema|r.
     .accept 9463 >>Accept Medicinal Purpose
 	.target Anchorite Fateema
 step
-    .goto 97,48.97,51.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dulvi|r.
-    .accept 10428 >>Accept The Missing Fisherman
-	.target Dulvi
+    .xp >10,1
+    #completewith next
+    .goto 97,48.36,52.23,10,0
+    .goto 97,48.04,52.15
+    .vendor >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Otonambusi|r to buy bags.
+    .buy 4496,4
+	.target Otonambusi
 step
+    .xp >10,1
+    #requires Medicinal Purpose
+    .goto 97,48.39,51.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anchorite Fateema|r.
+    .accept 9463 >>Accept Medicinal Purpose
+	.target Anchorite Fateema
+-- step
+--     .xp >10,1
+--     .goto 97,48.85,50.98
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dulvi|r.
+--     .accept 10428 >>Accept The Missing Fisherman
+-- 	.target Dulvi
+step
+    .xp >10,1
     .goto 97,48.72,50.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Dyvuun|r.
     .turnin 9313 >>Turn in Travel to Azure Watch
 	.target Technician Dyvuun
 step
-    .goto 97,48.34,49.14
+    .xp >10,1
+    #completewith next
+    #hidewindow
+    #label Word from Azure Watch
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caregiver Chellan|r.
-    .turnin 9314,1 >>Turn in Word from Azure Watch
-    .accept 9603 >>Accept Bds, Bandages, and Beyond
+    .turnin 9314,2 >>Turn in Word from Azure Watch
+    .accept 9603 >>Accept Beds, Bandages, and Beyond
+    .disablecheckbox
 	.target Caregiver Chellan
 step
-	#label home
+    .xp >10,1
+    #completewith Word from Azure Watch
+    .goto 97,48.81,49.97,5,0
+    .goto 97,48.65,49.69,5 >>Enter the House
+step
+    .xp >10,1
+    #requires Word from Azure Watch
+    #completewith next
+    #label Beds, Bandages, and Beyond
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caregiver Chellan|r.
+    .turnin 9314,2 >>Turn in Word from Azure Watch
+    .accept 9603 >>Accept Beds, Bandages, and Beyond
+	.target Caregiver Chellan
+step
+    .xp >10,1
     #completewith next
     .goto 97,48.34,49.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caregiver Chellan|r.
     .home >>Set your |cRXP_WARN_Hearthstone to Azure Watch|r.
 	.target Caregiver Chellan
 step
-    .goto 97,48.8,49.97,17,0
+    .xp >10,1
+    #requires Beds, Bandages, and Beyond
+    .goto 97,48.34,49.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caregiver Chellan|r.
+    .turnin 9314,2 >>Turn in Word from Azure Watch
+    .accept 9603 >>Accept Bds, Bandages, and Beyond
+	.target Caregiver Chellan
+step
+    .xp >10,1
+    #completewith next
+    #label Wings of a Hippogryph
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldaan|r.
+    .turnin 9603 >>Turn in Beds, Bandages, and Beyond
+    .accept 9604 >>Accept On the Wings of a Hippogryph
+    .disablecheckbox
+	.target Zaldaan
+step
+    .xp >10,1
+    #completewith Wings of a Hippogryph
+    .goto 97,48.83,50,5 >>Leave the House
+step
+    .xp >10,1
+    #requires Wings of a Hippogryph
     .goto 97,49.72,49.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldaan|r.
     .turnin 9603 >>Turn in Beds, Bandages, and Beyond
     .accept 9604 >>Accept On the Wings of a Hippogryph
 	.target Zaldaan
 step
-    #completewith Root Trapper Vine
-    >>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for [|cRXP_LOOT_Moongraze Stag Tenderloin|r].
+    .xp >10,1
+    #completewith next
+    +|cRXP_WARN_Only gather herbs or mine ores for experience when they are immediately nearby|r.
+step
+    .xp >10,1
+    #completewith next
+    >>Kill |cRXP_ENEMY_Deer|r. Loot them for |T134025:0|t[|cRXP_LOOT_Moongraze Stag Tenderloin|r].
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
 	.mob Moongraze Buck
 step
+    .xp >10,1
     #loop
     .goto 97,51.48,44.08,40,0
     .goto 97,52.08,41.08,40,0
@@ -6920,12 +7074,13 @@ step
     .goto 97,43.6,41.92,40,0
     .goto 97,43.52,45.58,40,0
     .goto 97,45.73,45.09,40,0
-    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r and loot them for the [|cRXP_LOOT_Faintly Glowing Crystal|r].
+    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r. Loot them for the |T134072:0|t[|cRXP_LOOT_Faintly Glowing Crystal|r].
 	.collect 23678,1,9455
     .accept 9455 >>Accept Strange Findings
-    .use 23678
 	.mob Infected Nightstalker Runt
+    .use 23678
 step
+    .xp >10,1
     #hidewindow
     #completewith Root Trapper Vine
     #loop
@@ -6945,91 +7100,364 @@ step
     .goto 97,58.15,60.18,40,0
     .goto 97,59.16,56.12,40,0
     +1
+-- step
+--     .goto 97,53.37,61.39
+--     .accept 9616 >>Accept Bandits!
 step
-    >>Kill |cRXP_ENEMY_Root Trappers|r and loot them for [|cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r].
+    .xp >10,1
+    #completewith next
+    >>Kill |cRXP_ENEMY_Root Trappers|r. Loot them for [|cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r].
     .complete 9463,1 --8/8 Root Trapper Vine
 	.mob Root Trapper
 step
-    #label Root Trapper Vine
-	>>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for [|cRXP_LOOT_|T134025:0|t[Moongraze Stag Tenderloin.]|r].
+    .xp >10,1
+	>>Kill |cRXP_ENEMY_Deer|r. Loot them for |T134025:0|t[|cRXP_LOOT_Moongraze Stag Tenderloin|r].
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
 	.mob Moongraze Buck
 step
+    .xp >10,1
+    #label Root Trapper Vine
+    >>Kill |cRXP_ENEMY_Root Trappers|r. Loot them for [|cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r].
+    .complete 9463,1 --8/8 Root Trapper Vine
+	.mob Root Trapper
+step
+    #xprate <1.46
+    .xp >10,1
+    #completewith next
+    #label The Great Moongraze Hunt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
+    .turnin 9454 >>Turn in The Great Moongraze Hunt
+    .accept 10324 >>Accept The Great Moongraze Hunt
+    .disablecheckbox
+	.target Acteon
+step
+    .xp >10,1
+    #xprate >1.44-1.50
+    .xp >10,1
+    #completewith next
+    #label The Great Moongraze Hunt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
+    .turnin 9454 >>Turn in The Great Moongraze Hunt
+	.target Acteon
+step
+    .xp >10,1
+    #completewith The Great Moongraze Hunt
+    .goto 97,49.78,51.94,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    .xp >10,1
+    #xprate <1.46
+    #requires The Great Moongraze Hunt
     .goto 97,49.78,51.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
     .turnin 9454 >>Turn in The Great Moongraze Hunt
     .accept 10324 >>Accept The Great Moongraze Hunt
 	.target Acteon
 step
+    .xp >10,1
+    #xprate >1.44-1.50
+    #requires The Great Moongraze Hunt
+    .goto 97,49.78,51.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
+    .turnin 9454 >>Turn in The Great Moongraze Hunt
+	.target Acteon
+step
+    #xprate <1.46
+    .xp >10,1
     .goto 97,48.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anchorite Fateema|r.
     .turnin 9463 >>Turn in Medicinal Purpose
 	.target Anchorite Fateema
 step
+    #xprate >1.44-1.50
+    .xp >10,1
     .goto 97,48.40,51.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r.
     .accept 9473 >>Accept An Alternative Alternative
 	.target Daedal
 step
+    #xprate <1.46
     .goto 97,47.12,50.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r.
     .turnin 9455 >>Turn in Strange Findings
-    .accept 9623 >>Accept Coming of Age
+    -- .accept 9623 >>Accept Coming of Age
     .accept 9456 >>Accept Nightstalker Clean Up, Isle 2...
 	.target Exarch Menelaous
 step
-    #loop
-    .goto 97,47.16,54.21,40,0
-    .goto 97,45.81,55.32,40,0
-    .goto 97,46.65,58.67,40,0
-    .goto 97,49.8,60.22,40,0
-    .goto 97,52.35,59.31,40,0
-    .goto 97,53.71,56.86,40,0
-    .goto 97,50.31,53.83,40,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r located on the ground.
-    *|cRXP_WARN_They should be visible on the minimap|r.
+    #xprate >1.44-1.50
+    .goto 97,47.12,50.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r.
+    .turnin 9455 >>Turn in Strange Findings
+    -- .accept 9623 >>Accept Coming of Age
+    .accept 9456 >>Accept Nightstalker Clean Up, Isle 2...
+	.target Exarch Menelaous
+step
+    #xprate >1.44-1.50
+    .goto 97,49.69,49.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldaan|r
+    .fly The Exodar >>Fly to The Exodar
+    .target Zaldaan
+step
+    #xprate >1.44-1.50
+    .goto 103,56.80,49.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nurguni|r
+    .turnin 9604 >>Turn in On the Wings of a Hippogryph
+    .target Nurguni
+    .accept 9605 >>Accept Hippogryph Master Stephanos
+step
+    #xprate >1.44-1.50
+    .goto 103,54.35,36.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r
+    .turnin 9605 >>Turn in Hippogryph Master Stephanos
+    .target Stephanos
+    .accept 9606 >>Accept Return to Caregiver Chellan
+step
+    #xprate >1.44-1.50
+    #completewith next
+    #label Caregiver Chellan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caregiver Chellan|r
+    .turnin 9606 >>Turn in Return to Caregiver Chellan
+    .target Caregiver Chellan
+step
+    #xprate >1.44-1.50
+    #completewith Caregiver Chellan
+    .xp >10,1
+    .hs >>Use |T134414:0|t[Hearthstone]
+-- step
+--     .goto 103,54.35,36.64
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r
+--     .fly Azure Watch >>Fly to Azure Watch
+--     .target Stephanos
+step
+    #xprate >1.44-1.50
+    #requires Caregiver Chellan
+    .goto 97,48.36,49.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caregiver Chellan|r
+    .turnin 9606 >>Turn in Return to Caregiver Chellan
+    .target Caregiver Chellan
+step
+    #xprate <1.46
+    #completewith next
+    #label Azure Snapdragon Bulb
+    #hidewindow
+    .xp >10,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r.
+    *|cRXP_WARN_These should be visible on your minimap, provided you have learned the Herbalism skill.|r.
     .complete 9473,1 --5/5 Azure Snapdragon Bulb
 step
+    #xprate <1.46
+    .xp >10,1
+    #completewith Azure Snapdragon Bulb
+    .goto 97,46.97,49.12,10,0
+    .goto 97,46.98,48.26,10,0
+    .goto 97,46.41,46.95,10 >>Cross the tree trunk.
+step
+    #xprate <1.46
+    #requires Azure Snapdragon Bulb
+    .xp >10,1
+    #hidewindow
+    #completewith Infected Nightstalker Runt 
+    #loop
+    .goto 97,44.7,45.52,40,0
+    .goto 97,42.7,47.24,40,0
+    .goto 97,40.74,46.05,40,0
+    .goto 97,41.08,43.36,40,0
+    .goto 97,44.48,41.62,40,0
+    +1
+step
+    #xprate <1.46
+    #requires Azure Snapdragon Bulb
+    #completewith Moongraze Buck Hide
+    .xp >10,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r.
+    *|cRXP_WARN_These should be visible on your minimap, provided you have learned the Herbalism skill.|r.
+    .complete 9473,1 --5/5 Azure Snapdragon Bulb
+step
+    #xprate <1.46
+    #requires Azure Snapdragon Bulb
+    #completewith Moongraze Buck Hide
+    .xp >10,1
+    >>Kill |cRXP_ENEMY_Infected Nightstalker Runt|r
+    .complete 9456,1 --8/8 Infected Nightstalker Runt slain
+    .mob Infected Nightstalker Runt
+step
+    #xprate <1.46
+    #requires Azure Snapdragon Bulb
+    #label Moongraze Buck Hide
+    .xp >10,1
+    >>Kill |cRXP_ENEMY_Moongraze Bucks|r. Loot them for |T463856:0|t[|cRXP_LOOT_Moongraze Buck Hide|r].
+    .complete 10324,1 --6/6 Moongraze Buck Hide
+    .mob Moongraze Buck
+step
+    #xprate <1.46
+    #completewith next
+    .xp >10,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r.
+    *|cRXP_WARN_These should be visible on your minimap, provided you have learned the Herbalism skill.|r.
+    .complete 9473,1 --5/5 Azure Snapdragon Bulb
+step
+    #xprate <1.46
+    .xp >10,1
+    #label Infected Nightstalker Runt
+    >>Kill |cRXP_ENEMY_Infected Nightstalker Runt|r
+    .complete 9456,1 --8/8 Infected Nightstalker Runt slain
+    .mob Infected Nightstalker Runt
+step
+    #xprate <1.46
+    .xp >10,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r.
+    *|cRXP_WARN_These should be visible on your minimap, provided you have learned the Herbalism skill.|r.
+    .complete 9473,1 --5/5 Azure Snapdragon Bulb
+step
+    #xprate <1.46
+    .xp >10,1
+    #hidewindow
+    #completewith next
+    #label Nightstalker Clean Up, Isle 2...
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
+    .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
+    .target Exarch Menelaous
+step
+    #xprate <1.10-1.20
+    .xp >10,1
+    #hidewindow
+    #completewith next
+    #label Nightstalker Clean Up, Isle 2...
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
+    .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
+    .target Exarch Menelaous
+step
+    #xprate 1.10-1.20
+    #completewith Nightstalker Clean Up, Isle 2...
+    .xp >10,1
+    .hs >>Use |T134414:0|t[Hearthstone]
+step
+    #xprate 1.0-1.05
+    #hidewindow
+    .goto 97,47.03,43.22,30,0
+    .goto 97,49.73,49.13,60 >>1
+step
+    #xprate 1.10-1.20
+    #requires Nightstalker Clean Up, Isle 2...
+    #completewith next
+    #label 123
+    .xp >10,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
+    .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
+    .target Exarch Menelaous
+step
+    #xprate 1.10-1.20
+    .xp >10,1
+    #requires Nightstalker Clean Up, Isle 2...
+    #completewith 123
+    .goto 97,48.83,50,5 >>Leave the House
+step
+    #requires 123
+    #xprate <1.46
+    .xp >10,1
+    .goto 97,47.14,50.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
+    .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
+    .target Exarch Menelaous
+step
+    #xprate <1.46
+    .xp >10,1
+    .goto 97,48.40,51.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r
+    .turnin 9473 >>Turn in An Alternative Alternative
+    .target Daedal
+step
+    #xprate <1.0-1.10
+    .xp >10,1
+    .goto 97,48.40,51.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r
+    .turnin 9473 >>Turn in An Alternative Alternative
+    .accept 9505 >>11
+    .target Daedal
+step
+    #xprate <1.46
+    .xp >10,1
+    .goto 97,49.80,51.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r
+    .turnin 10324 >>Turn in The Great Moongraze Hunt
+    .target Acteon
+step
+    #xprate <1.0-1.10
+    .goto 97,47.03,70.18
+    .turnin 9505 >>Turn in 
+step
+    #xprate <1.0-1.10
+    #completewith next
+    #label Cookie's Jumbo Gumbo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r.
+    .accept 9512 >>Accept Cookie's Jumbo Gumbo
+	.target "Cookie" McWeaksauce
+step
+    #xprate <1.0-1.10
+    #completewith Cookie's Jumbo Gumbo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r.
+    .train 2550 >>Train |T4620671:0|t[Cooking]
+	.target "Cookie" McWeaksauce
+step
+    #xprate <1.0-1.10
+    #requires Cookie's Jumbo Gumbo
     .goto 97,46.68,70.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r.
     .accept 9512 >>Accept Cookie's Jumbo Gumbo
 	.target "Cookie" McWeaksauce
 step
+    #xprate <1.0-1.10
     .goto 97,47.03,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
     .accept 9506 >>Accept A Small Start
 	.target Admiral Odesyus
 step
-    #loop
-    .goto 97,48.46,72.42,40,0
-    .goto 12,32.6,29.33,40,0
-    .goto 97,50.62,70.09,40,0
-    .goto 97,52.19,70.56,40,0
-    .goto 97,53.46,70.76,40,0
-    .goto 97,55.61,70.39,40,0
-    .goto 97,57.13,70.18,40,0
-    .goto 97,59.12,69.89,40,0
-    .goto 97,60.64,70.09,40,0
-    .goto 97,61.62,68.49,40,0
-    >>Kill |cRXP_ENEMY_Skittering Crawlers|r and loot them for [|cRXP_LOOT_|T134007:0|t[Skittering Crawler Meats.]|r].
+    #xprate <1.0-1.10
+    #completewith next
+    #label Skittering Crawler Meat
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r. Loot them for |T134007:0|t[|cRXP_LOOT_Skittering Crawler Meat|r].
     .complete 9512,1 --6/6 Skittering Crawler Meat
 	.mob Skittering Crawler
 step
+    #xprate <1.0-1.10
+    #completewith Skittering Crawler Meat
+    #hidewindow
+    .goto 97,50.01,69.84,40,0
+    .goto 97,52.37,69.3,40,0
+    .goto 97,58.13,69.25,40,0
+    .goto 97,59.94,70.42,40,0
+    .goto 97,61.66,68.32,40 >>1
+step
+    #xprate <1.0-1.10
+    #requires Skittering Crawler Meat
     .goto 97,59.57,67.65
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nautical Compass|r |cRXP_WARN_in the small camp|r.
     .complete 9506,1 --1/1 Nautical Compass
 step
+    #xprate <1.0-1.10
     .goto 97,58.60,66.36
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nautical Map|r |cRXP_WARN_in the small camp|r.
     .complete 9506,2 --1/1 Nautical Map
 step
+    #xprate <1.0-1.10
+    #loop
+    .goto 97,55.49,69.25,40,0
+    .goto 97,52.43,69.1,40,0
+    .goto 97,50.8,69.66,40,0
+    .goto 97,49.76,73.69,40,0
+    .goto 97,48.37,71.99,40,0
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r. Loot them for |T134007:0|t[|cRXP_LOOT_Skittering Crawler Meat|r].
+    .complete 9512,1 --6/6 Skittering Crawler Meat
+	.mob Skittering Crawler
+step
+    #xprate <1.0-1.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
     .turnin 9506 >>Turn in A Small Start
     .accept 9530 >>Accept I've Got a Plant
     .goto 97,47.03,70.20
 	.target +Admiral Odesyus
 step
+    #xprate <1.0-1.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen|r and |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r.
     .accept 9513 >>Accept Reclaiming the Ruins
     .goto 97,47.13,70.28
@@ -7038,11 +7466,13 @@ step
     .goto 97,47.24,70.00
     .target +Archaeologist Adamant Ironheart
 step
+    #xprate <1.0-1.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r.
     .turnin 9512 >>Turn in Cookie's Jumbo Gumbo
     .goto 97,46.69,70.53
 	.target +"Cookie" McWeaksauce
 step
+    #xprate <1.0-1.10
     #loop
     .goto 97,50.66,66.93,40,0
     .goto 97,51.81,65.36,40,0
@@ -7055,270 +7485,344 @@ step
     .complete 9530,2 --5/5 Pile of Leaves
     .complete 9530,1 --1/1 Hollowed Out Tree
 step
+    #xprate <1.0-1.10
     .goto 97,47.04,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
     .turnin 9530 >>Turn in I've Got a Plant
     .accept 9531 >>Accept Tree's Company
 	.target Admiral Odesyus
-step
-    #hidewindow
-    #completewith Wrathscale
-    #loop
-    .goto 97,45.85,71.97,30,0
-    .goto 97,41.36,74.99,30,0
-    .goto 97,39.63,75.2,30,0
-    .goto 97,37.86,80.73,30,0
-    .goto 97,35.02,80.97,30,0
-    .goto 97,35.57,77.98,30,0
-    .goto 97,34.43,76.67,30,0
-    .goto 97,33.76,79.13,30,0
-    .goto 97,31.23,77.58,30,0
-    .goto 97,29.91,78.67,30,0
-    .goto 97,27.92,79.45,30,0
-    .goto 97,26.14,77.96,30,0
-    .goto 97,29.22,76.68,30,0
-    +1
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Nagas|r and loot them for [|cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r].
-    -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
-	.collect 23759,1,9514
-    .accept 9514 >>Accept Rune Covered Tablet
-    .complete 9513,1 --5/5 Wrathscale Myrmidon slain
-    .complete 9513,2 --5/5 Wrathscale Naga slain
-    .complete 9513,3 --5/5 Wrathscale Siren slain
-	.mob Wrathscale Myrmidon
-	.mob Wrathscale Naga
-	.mob Wrathscale Siren
-    .use 23759
-step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Relics|r located on the ground.
-    .complete 9523,1 --8/8 Ancient Relic
-step
-    #label Wrathscale
-    >>Kill |cRXP_ENEMY_Nagas|r and loot them for [|cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r].
-    -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
-	.collect 23759,1,9514
-    .accept 9514 >>Accept Rune Covered Tablet
-    .complete 9513,1 --5/5 Wrathscale Myrmidon slain
-    .complete 9513,2 --5/5 Wrathscale Naga slain
-    .complete 9513,3 --5/5 Wrathscale Siren slain
-	.mob Wrathscale Myrmidon
-	.mob Wrathscale Naga
-	.mob Wrathscale Siren
-    .use 23759
-step
-    #hidewindow
-    #completewith Infected Nightstalker Runt
-    #loop
-    .goto 97,28.5,73.33,40,0
-    .goto 97,32.05,71.43,40,0
-    .goto 97,32.63,65.74,40,0
-    .goto 97,24.98,73.92,40,0
-    +1
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r.
-    .complete 9456,1 --8/8 Infected Nightstalker Runt slain
-	.mob Infected Nightstalker Runt
-step
-    >>Kill |cRXP_ENEMY_Moongraze Bucks|r and loot them for[|cRXP_LOOT_|T134346:0|tMoongraze Buck Hides|r].
-    .complete 10324,1 --6/6 Moongraze Buck Hide
-	.mob Moongraze Buck
-step
-    #label Infected Nightstalker Runt
-    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r.
-    .complete 9456,1 --8/8 Infected Nightstalker Runt slain
-	.mob Infected Nightstalker Runt
-step
-    .isOnQuest 9531
-    .goto 97,18.8,83.46,10,0
-    .goto 97,18.37,86.32,10,0
-    .goto 97,16.59,94.46
-    .aura 30298 >>Use the |T132288:0|t[Tree Disguise Kit] near the |cRXP_WARN_Red Flag|r.
-    .use 23792
-step
-    #completewith next
-    .aura -30298 >> Right click off the Tree Disguise Kit buff
-    .link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
-step
-    .goto 97,15.26,92.24
-    >>|cRXP_WARN_Follow the Arrow|r.
-    .complete 9531,1 --1/1 The Traitor Uncovered
-step
-    #label QuestKeybindingsDraenei2
-    .goto 97,16.59,94.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cowlen|r.
-    .turnin 10428 >>Turn in The Missing Fisherman
-    .accept 9527 >>Accept All That Remains
-	.target Cowlen
-step
-    .goto 97,14.58,90.66
-    >>Kill |cRXP_ENEMY_Owlbeasts|r and loot them for the [|cRXP_LOOT_Remain's of Cowlen's Family|r].
-    .complete 9527,1 --1/1 Remains of Cowlen's Family
-step
-    #sticky
-    .goto 97,16.59,94.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cowlen|r.
-    .turnin 9527 >>Turn in All That Remains
-	.target Cowlen
-step
-    #completewith next
-    .deathskip >> Die to the |cRXP_ENEMY_Owlbeasts|r Respawn |cRXP_WARN_at Azure Watch|r.
-step
-    .goto 97,47.04,70.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
-    .turnin 9531 >>Turn in Tree's Company
-    .accept 9537 >>Accept Show Gnomercy
-	.target Admiral Odesyus
-step
-    .goto 97,47.13,70.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r.
-    .turnin 9513 >>Turn in Reclaiming the Ruins
-	.target Priestess Kyleen Il'dinare
-step
-    .goto 97,47.14,70.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r.
-    .turnin 9514 >>Turn in Rune Covered Tablet
-	.target Priestess Kyleen Il'dinare
-step
-    .goto 97,47.23,69.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r.
-    .turnin 9523 >>Turn in Precious and Fragile Things Need Special Handling
-	.target Archaeologist Adamant Ironheart
-step
-    .goto 97,48.56,71.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer "Spark" Overgrind|r.
-    >>|cRXP_WARN_Wait for the Roleplay,|r Kill |cRXP_ENEMY_Engineer "Spark" Overgrind|r and loot him for [|cRXP_LOOT_Traitor's Communication|r].
-    .complete 9537,1 --1/1 Traitor's Communication
-    .skipgossip
-    .mob Engineer "Spark" Overgrind
-step
-    .goto 97,47.04,70.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
-    .turnin 9537,1 >>Turn in Show Gnomercy
-    .accept 9602 >>Accept Deliver Them From Evil...
-	.target Admiral Odesyus
-step
-    #completewith next
-    .hs >> Hearthstone |cRXP_WARN_to Azure Watch|r.
-step
-    .goto 97,49.78,51.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
-    .turnin 10324 >>Turn in The Great Moongraze Hunt
-	.target Acteon
-step
-    .goto 97,48.39,51.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r.
-    .turnin 9473 >>Turn in An Alternative Alternative
-	.target Daedal
-step
-    .goto 97,47.12,50.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r.
-    .turnin 9602 >>Turn in Deliver Them From Evil...
-    .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
-	.target Exarch Menelaous
-step
-    .goto 103,81.51,51.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torallius the Pack Handler|r.
-    .turnin 9623 >>Turn in Coming of Age
-	.target Torallius the Pack Handler
-step
-    .goto 103,75.17,53.85,20,0
-    .goto 103,73.55,39.76,20,0
-    .goto 103,66.18,33.78,20,0
-    .goto 103,62.49,43.7,20,0
-    .goto 103,57.03,50.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nurguni|r |cRXP_WARN_inside The Exodar|r.
-    .turnin 9604 >>Turn in On the Wings of a Hippogryph
-    .accept 9605 >> Accept Hippogryph Master Stephanos
-	.target Nurguni
-step
-    .goto 103,55.07,47.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
-    .accept 46727 >>Accept Tides of War
-	.target Hero's Herald
-step
-    .goto 103,54.49,36.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r.
-    .turnin 9605 >>Turn in Hippogryph Master Stephanos
-	.target Stephanos
-step
-    .nodmf
-    .goto 103,48.34,62.9,5 >> |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal|r.
-    .zoneskip 84
-step
-    #completewith next
-    .goto 84,49.36,86.76,10,0
-    .goto 84,53.58,85.4,15,0
-    .goto 84,53.95,79.25,15,0
-    .goto 84,55.54,76.05,20,0
-    .goto 84,60.00,71.95,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
-    .accept 46727 >>Accept Tides of War
-	.target Hero's Herald
-    .nodmf
-step
-    .goto 84,49.36,86.76,10,0
-    .goto 84,53.58,85.4,15,0
-    .goto 84,53.95,79.25,15,0
-    .goto 84,55.54,76.05,20,0
-    .goto 84,60.00,71.95,20,0
-    .goto 84,63.77,73.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r.
-    .accept 332 >>Accept Wine Shop Advert
-	.target Renato Gallina
-    .nodmf
-step
-    .goto 84,67.49,80.56,20,0
-    .goto 84,67.03,83.44,20,0
-    .goto 84,69.76,84.87,20,0
-    .goto 37,41.71,64.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cRXP_WARN_in Goldshire|r.
-    .fp >>Get the Goldshire Flight Path
-	.target Bartlett the Brave
-    .nodmf
-step
-    #veteran
-    .goto 103,61,52.56,5,0
-    .goto 103,63.23,58.75
-    +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
-    >>|cRXP_WARN_It is recommended to log in with a different character possessing at least 10,000 gold. Use this character to purchase the items and then send them over|r.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Auctioneer Iressa|r.
-    .collect 71715,1
-    .collect 71638,1
-    .collect 71637,1
-    .collect 71636,1
-    .collect 71635,1
-    .collect 71952,1
-    .collect 71951,1
-    .collect 71953,1
-    .collect 71716,1
-    .target Auctioneer Iressa
-    .dmf
-step
-    #fresh
-    #completewith DarkMoonFaire
-    +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r.
-    .dmf
-step
-    #completewith next
-    .link /run AbandonSkill(186); AbandonSkill(182);>> |cRXP_WARN_Click on this text to receive a macro that will unlearn your professions|r.
-    .dmf
-step
-    #label DarkMoonFaire
-    .goto 103,51.34,42.03
-    .zoneskip 37 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
-    .accept 7905 >>Accept The Darkmoon Faire
-	.target Darkmoon Faire Mystic Mage
-    .dmf
-step
-    .goto 84,62.10,32.18
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
-    .zoneskip 37
-    .skipgossip
-	.target Darkmoon Faire Mystic Mage
-    .dmf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- step
+--     .goto 97,62.17,52.34
+--     .complete 9452,1 --10/10 Red Snapper
+-- step
+--     .goto 97,61.06,54.23
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Diktynna|r
+--     .turnin 9452 >>Turn in Red Snapper - Very Tasty!
+--     .target Diktynna
+--     .accept 9453 >>Accept Find Acteon!
+-- step
+--     .goto 97,49.78,51.94
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r
+--     .turnin 9453 >>Turn in Find Acteon!
+--     .target Acteon
+
+-- step
+--     #loop
+
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r.
+--     *|cRXP_WARN_These should be visible on your minimap, provided you have learned the Herbalism skill.|r.
+--     .complete 9473,1 --5/5 Azure Snapdragon Bulb
+-- step
+--     #loop
+--     .goto 97,46.79,53.01,30,0
+--     .goto 97,47.7,53.99,30,0
+--     .goto 97,47.06,58.52,30,0
+--     .goto 97,50.07,59.37,30,0
+--     .goto 97,43.71,57.17,30,0
+--     .goto 97,52.11,59.76,30,0
+--     .goto 97,54.43,57.31,30,0
+--     .goto 97,51.13,55.16,30,0
+--     .goto 97,43.6,56.25,30,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Azure Snapdragon|r.
+--     *|cRXP_WARN_These should be visible on your minimap, provided you have learned the Herbalism skill.|r.
+--     .complete 9473,1 --5/5 Azure Snapdragon Bulb
+-- step
+--     #hidewindow
+--     #completewith Wrathscale
+--     #loop
+--     .goto 97,45.85,71.97,30,0
+--     .goto 97,41.36,74.99,30,0
+--     .goto 97,39.63,75.2,30,0
+--     .goto 97,37.86,80.73,30,0
+--     .goto 97,35.02,80.97,30,0
+--     .goto 97,35.57,77.98,30,0
+--     .goto 97,34.43,76.67,30,0
+--     .goto 97,33.76,79.13,30,0
+--     .goto 97,31.23,77.58,30,0
+--     .goto 97,29.91,78.67,30,0
+--     .goto 97,27.92,79.45,30,0
+--     .goto 97,26.14,77.96,30,0
+--     .goto 97,29.22,76.68,30,0
+--     +1
+-- step
+--     #completewith next
+--     >>Kill |cRXP_ENEMY_Nagas|r and loot them for [|cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r].
+--     -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
+-- 	.collect 23759,1,9514
+--     .accept 9514 >>Accept Rune Covered Tablet
+--     .complete 9513,1 --5/5 Wrathscale Myrmidon slain
+--     .complete 9513,2 --5/5 Wrathscale Naga slain
+--     .complete 9513,3 --5/5 Wrathscale Siren slain
+-- 	.mob Wrathscale Myrmidon
+-- 	.mob Wrathscale Naga
+-- 	.mob Wrathscale Siren
+--     .use 23759
+-- step
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Relics|r located on the ground.
+--     .complete 9523,1 --8/8 Ancient Relic
+-- step
+--     #label Wrathscale
+--     >>Kill |cRXP_ENEMY_Nagas|r and loot them for [|cRXP_LOOT_|T134462:0|t[Rune Covered Tablet.]|r].
+--     -- *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rune Covered Tablet|r.
+-- 	.collect 23759,1,9514
+--     .accept 9514 >>Accept Rune Covered Tablet
+--     .complete 9513,1 --5/5 Wrathscale Myrmidon slain
+--     .complete 9513,2 --5/5 Wrathscale Naga slain
+--     .complete 9513,3 --5/5 Wrathscale Siren slain
+-- 	.mob Wrathscale Myrmidon
+-- 	.mob Wrathscale Naga
+-- 	.mob Wrathscale Siren
+--     .use 23759
+-- step
+--     #hidewindow
+--     #completewith Infected Nightstalker Runt
+--     #loop
+--     .goto 97,28.5,73.33,40,0
+--     .goto 97,32.05,71.43,40,0
+--     .goto 97,32.63,65.74,40,0
+--     .goto 97,24.98,73.92,40,0
+--     +1
+-- step
+--     #completewith next
+--     >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r.
+--     .complete 9456,1 --8/8 Infected Nightstalker Runt slain
+-- 	.mob Infected Nightstalker Runt
+-- step
+--     >>Kill |cRXP_ENEMY_Moongraze Bucks|r and loot them for[|cRXP_LOOT_|T134346:0|tMoongraze Buck Hides|r].
+--     .complete 10324,1 --6/6 Moongraze Buck Hide
+-- 	.mob Moongraze Buck
+-- step
+--     #label Infected Nightstalker Runt
+--     >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r.
+--     .complete 9456,1 --8/8 Infected Nightstalker Runt slain
+-- 	.mob Infected Nightstalker Runt
+-- step
+--     .isOnQuest 9531
+--     .goto 97,18.8,83.46,10,0
+--     .goto 97,18.37,86.32,10,0
+--     .goto 97,16.59,94.46
+--     .aura 30298 >>Use the |T132288:0|t[Tree Disguise Kit] near the |cRXP_WARN_Red Flag|r.
+--     .use 23792
+-- step
+--     #completewith next
+--     .aura -30298 >> Right click off the Tree Disguise Kit buff
+--     .link /cancelaura Tree Disguise Kit >>|TInterface/cursor/crosshair/interact.blp:20|tClick here for a macro. Paste this into the chat.
+-- step
+--     .goto 97,15.26,92.24
+--     >>|cRXP_WARN_Follow the Arrow|r.
+--     .complete 9531,1 --1/1 The Traitor Uncovered
+-- step
+--     #label QuestKeybindingsDraenei2
+--     .goto 97,16.59,94.46
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cowlen|r.
+--     .turnin 10428 >>Turn in The Missing Fisherman
+--     .accept 9527 >>Accept All That Remains
+-- 	.target Cowlen
+-- step
+--     .goto 97,14.58,90.66
+--     >>Kill |cRXP_ENEMY_Owlbeasts|r and loot them for the [|cRXP_LOOT_Remain's of Cowlen's Family|r].
+--     .complete 9527,1 --1/1 Remains of Cowlen's Family
+-- step
+--     #sticky
+--     .goto 97,16.59,94.45
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cowlen|r.
+--     .turnin 9527 >>Turn in All That Remains
+-- 	.target Cowlen
+-- step
+--     #completewith next
+--     .deathskip >> Die to the |cRXP_ENEMY_Owlbeasts|r Respawn |cRXP_WARN_at Azure Watch|r.
+-- step
+--     .goto 97,47.04,70.21
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
+--     .turnin 9531 >>Turn in Tree's Company
+--     .accept 9537 >>Accept Show Gnomercy
+-- 	.target Admiral Odesyus
+-- step
+--     .goto 97,47.13,70.29
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r.
+--     .turnin 9513 >>Turn in Reclaiming the Ruins
+-- 	.target Priestess Kyleen Il'dinare
+-- step
+--     .goto 97,47.14,70.33
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r.
+--     .turnin 9514 >>Turn in Rune Covered Tablet
+-- 	.target Priestess Kyleen Il'dinare
+-- step
+--     .goto 97,47.23,69.99
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r.
+--     .turnin 9523 >>Turn in Precious and Fragile Things Need Special Handling
+-- 	.target Archaeologist Adamant Ironheart
+-- step
+--     .goto 97,48.56,71.71
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer "Spark" Overgrind|r.
+--     >>|cRXP_WARN_Wait for the Roleplay,|r Kill |cRXP_ENEMY_Engineer "Spark" Overgrind|r and loot him for [|cRXP_LOOT_Traitor's Communication|r].
+--     .complete 9537,1 --1/1 Traitor's Communication
+--     .skipgossip
+--     .mob Engineer "Spark" Overgrind
+-- step
+--     .goto 97,47.04,70.21
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
+--     .turnin 9537,1 >>Turn in Show Gnomercy
+--     .accept 9602 >>Accept Deliver Them From Evil...
+-- 	.target Admiral Odesyus
+-- step
+--     #completewith next
+--     .hs >> Hearthstone |cRXP_WARN_to Azure Watch|r.
+-- step
+--     .goto 97,49.78,51.94
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r.
+--     .turnin 10324 >>Turn in The Great Moongraze Hunt
+-- 	.target Acteon
+-- step
+--     .goto 97,48.39,51.47
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r.
+--     .turnin 9473 >>Turn in An Alternative Alternative
+-- 	.target Daedal
+-- step
+--     .goto 97,47.12,50.61
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r.
+--     .turnin 9602 >>Turn in Deliver Them From Evil...
+--     .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
+-- 	.target Exarch Menelaous
+-- step
+--     .goto 103,81.51,51.47
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torallius the Pack Handler|r.
+--     .turnin 9623 >>Turn in Coming of Age
+-- 	.target Torallius the Pack Handler
+-- step
+--     .goto 103,75.17,53.85,20,0
+--     .goto 103,73.55,39.76,20,0
+--     .goto 103,66.18,33.78,20,0
+--     .goto 103,62.49,43.7,20,0
+--     .goto 103,57.03,50.08
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nurguni|r |cRXP_WARN_inside The Exodar|r.
+--     .turnin 9604 >>Turn in On the Wings of a Hippogryph
+--     .accept 9605 >> Accept Hippogryph Master Stephanos
+-- 	.target Nurguni
+-- step
+--     .goto 103,55.07,47.2
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
+--     .accept 46727 >>Accept Tides of War
+-- 	.target Hero's Herald
+-- step
+--     .goto 103,54.49,36.32
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r.
+--     .turnin 9605 >>Turn in Hippogryph Master Stephanos
+-- 	.target Stephanos
+-- step
+--     .nodmf
+--     .goto 103,48.34,62.9,5 >> |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal|r.
+--     .zoneskip 84
+-- step
+--     #completewith next
+--     .goto 84,49.36,86.76,10,0
+--     .goto 84,53.58,85.4,15,0
+--     .goto 84,53.95,79.25,15,0
+--     .goto 84,55.54,76.05,20,0
+--     .goto 84,60.00,71.95,20,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
+--     .accept 46727 >>Accept Tides of War
+-- 	.target Hero's Herald
+--     .nodmf
+-- step
+--     .goto 84,49.36,86.76,10,0
+--     .goto 84,53.58,85.4,15,0
+--     .goto 84,53.95,79.25,15,0
+--     .goto 84,55.54,76.05,20,0
+--     .goto 84,60.00,71.95,20,0
+--     .goto 84,63.77,73.60
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r.
+--     .accept 332 >>Accept Wine Shop Advert
+-- 	.target Renato Gallina
+--     .nodmf
+-- step
+--     .goto 84,67.49,80.56,20,0
+--     .goto 84,67.03,83.44,20,0
+--     .goto 84,69.76,84.87,20,0
+--     .goto 37,41.71,64.64
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cRXP_WARN_in Goldshire|r.
+--     .fp >>Get the Goldshire Flight Path
+-- 	.target Bartlett the Brave
+--     .nodmf
+-- step
+--     #veteran
+--     .goto 103,61,52.56,5,0
+--     .goto 103,63.23,58.75
+--     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
+--     >>|cRXP_WARN_It is recommended to log in with a different character possessing at least 10,000 gold. Use this character to purchase the items and then send them over|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Auctioneer Iressa|r.
+--     .collect 71715,1
+--     .collect 71638,1
+--     .collect 71637,1
+--     .collect 71636,1
+--     .collect 71635,1
+--     .collect 71952,1
+--     .collect 71951,1
+--     .collect 71953,1
+--     .collect 71716,1
+--     .target Auctioneer Iressa
+--     .dmf
+-- step
+--     #fresh
+--     #completewith DarkMoonFaire
+--     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r.
+--     .dmf
+-- step
+--     #completewith next
+--     .link /run AbandonSkill(186); AbandonSkill(182);>> |cRXP_WARN_Click on this text to receive a macro that will unlearn your professions|r.
+--     .dmf
+-- step
+--     #label DarkMoonFaire
+--     .goto 103,51.34,42.03
+--     .zoneskip 37 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
+--     .accept 7905 >>Accept The Darkmoon Faire
+-- 	.target Darkmoon Faire Mystic Mage
+--     .dmf
+-- step
+--     .goto 84,62.10,32.18
+--     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
+--     .zoneskip 37
+--     .skipgossip
+-- 	.target Darkmoon Faire Mystic Mage
+--     .dmf
 ]])
 
 --Dwarf Coldridge Vallley
