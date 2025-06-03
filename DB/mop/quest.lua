@@ -509,7 +509,8 @@ local valeQuests = {
     [31296] = "ruinsofguolaiQuiet",
     [31294] = "ruinsofguolaiQuiet",
     [31240] = "ruinsofguolaiQuiet",
-    [31250] = "settingsun", 
+    [31250] = "settingsun",
+    [31247] = "settingsun",
 }
 
 local celestialQuests ={
