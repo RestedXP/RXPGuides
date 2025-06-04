@@ -3452,7 +3452,7 @@ function addon.functions.abandon(self, text, ...)
         for n,id in ipairs(ids) do
             element.ids[n] = GetQuestId(tonumber(id))
         end
-        if not id then
+        if not element.ids[1] then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
