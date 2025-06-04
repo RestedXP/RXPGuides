@@ -3462,7 +3462,7 @@ function addon.functions.abandon(self, text, ...)
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
-        elseif #ids == 1 then
+        else
             element.text = _G.ABANDON_QUEST_ABBREV .. " *quest*"
             element.requestFromServer = true
         end
@@ -3475,7 +3475,6 @@ function addon.functions.abandon(self, text, ...)
         return element
     else
         local element = self.element
-        if not element.step.active then return end
 
         local id = element.ids[1]
         if element.retrieveText then
@@ -3492,6 +3491,7 @@ function addon.functions.abandon(self, text, ...)
                 element.requestFromServer = true
             end
         end
+        if not element.step.active then return end
         element.tooltipText = addon.icons.abandon .. element.text
 
         local match = true
@@ -3502,7 +3502,7 @@ function addon.functions.abandon(self, text, ...)
             end
         end
 
-        if self.element.step.active and match then
+        if match then
             addon.SetElementComplete(self, true)
         else
             addon.SetElementIncomplete(self)
@@ -6892,5 +6892,21 @@ function addon.functions.isQuestOffered(self, text, npc, ...)
         element.name = nil
         element.currentNPC = nil
         _G.GossipFrame:Hide()
+    end
+end
+
+function addon.functions.dailyreset(self, text, hub, arg1)
+    if not addon.dailyDB then
+        return
+    elseif type(self) == "string" then
+        return {text = text,textOnly = true, arg1 = arg1, hub = hub}
+    end
+    local element = self.element
+    if not element.step.active then
+        element.check = false
+        return
+    elseif not element.check then
+        element.check = true
+        addon.dailyDB.ResetQuests(element.hub)
     end
 end

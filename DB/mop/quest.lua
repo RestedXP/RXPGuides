@@ -465,6 +465,7 @@ addon.questAcceptItems = {
 }
 --C_DateAndTime.GetSecondsUntilDailyReset()
 
+addon.dailyDB = {}
 
 local klaxxiQuests ={
 
@@ -500,6 +501,48 @@ local klaxxiQuests ={
     [31269] = "lake",--The Scale-Lord
 
 }
+addon.dailyDB.klaxxiQuests = klaxxiQuests
+local celestialQuests
+
+local function CheckQuestHub(faction)
+    local reset = true
+    local hubs
+    local t
+    if faction == "klaxxi" then
+        hubs = {lake = 0, terrace = 0, south = 0, clutches = 0}
+        t = klaxxiQuests
+    elseif faction == "celestial" then
+        hubs = {jade = 0, cradle = 0, blackox = 0, whitetiger = 0}
+        t = celestialQuests
+    end
+
+    for id,hub in pairs(t) do
+        if addon.IsQuestTurnedIn(id) then
+            reset = false
+            break
+        end
+        local n = hubs[hub]
+        if addon.IsOnQuest(id) and n then
+            hubs[hub] = n+1
+        end
+    end
+    if reset then
+        local count = 0
+        local current
+        for hub,n in pairs(hubs) do
+            if n > 0 and n > count then
+                current = hub
+                count = n
+            end
+        end
+        if current and count >= 5 then
+             addon.realmData[faction] = current
+        else
+            addon.realmData[faction] = nil
+        end
+    end
+end
+addon.dailyDB.CheckQuestHub = CheckQuestHub
 
 local valeQuests = {
     [31131] = "whitepetal",
@@ -513,7 +556,35 @@ local valeQuests = {
     [31247] = "settingsun",
 }
 
-local celestialQuests ={
+addon.dailyDB.valeQuests = valeQuests
+
+local function CheckValeQuests()
+    local reset = true
+    --local current = {}
+    for id,hub in pairs(valeQuests) do
+        if addon.IsQuestTurnedIn(id) or addon.IsOnQuest(id) then
+            reset = false
+            --addon.realmData.voeb[hub] = true
+        end
+    end
+    if reset then
+        addon.realmData.voeb = {}
+    end
+end
+
+addon.dailyDB.CheckValeQuests = CheckValeQuests
+
+function addon.dailyDB.ResetQuests(hub)
+    if hub == "klaxxi" then
+        CheckQuestHub("klaxxi")
+    elseif hub == "vale" then
+        CheckValeQuests()
+    elseif hub == "celestial" then
+        CheckQuestHub("celestial")
+    end
+end
+
+celestialQuests ={
 
 [31377] = "jade",
 [31376] = "jade",
@@ -525,6 +596,8 @@ local celestialQuests ={
 [31383] = "whitetiger",
 
 }
+
+addon.dailyDB.celestialQuests = celestialQuests
 
 function addon.CheckAvailableQuest(id)
     local klaxxiHub = klaxxiQuests[id]
