@@ -3443,23 +3443,26 @@ function addon.functions.istrained(self, text, ...)
     end
 end
 
-function addon.functions.abandon(self, ...)
+function addon.functions.abandon(self, text, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         -- element.tag = "abandon"
-        local text, id = ...
-        id = GetQuestId(tonumber(id))
+        local ids = {...}
+        element.ids = {}
+        for n,id in ipairs(ids) do
+            element.ids[n] = GetQuestId(tonumber(id))
+        end
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
         end
         element.title = ""
-        element.questId = id
+        --element.questId = id
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
-        else
+        elseif #ids == 1 then
             element.text = _G.ABANDON_QUEST_ABBREV .. " *quest*"
             element.requestFromServer = true
         end
@@ -3473,8 +3476,8 @@ function addon.functions.abandon(self, ...)
     else
         local element = self.element
         if not element.step.active then return end
-        local event, _, questId = ...
-        local id = element.questId
+
+        local id = element.ids[1]
         if element.retrieveText then
             local quest = addon.GetQuestName(id, element)
             if quest then
@@ -3491,7 +3494,15 @@ function addon.functions.abandon(self, ...)
         end
         element.tooltipText = addon.icons.abandon .. element.text
 
-        if self.element.step.active and not IsOnQuest(id) then
+        local match = true
+        for _,qid in pairs(element.ids) do
+            if IsOnQuest(qid) then
+                match = false
+                break
+            end
+        end
+
+        if self.element.step.active and match then
             addon.SetElementComplete(self, true)
         else
             addon.SetElementIncomplete(self)
