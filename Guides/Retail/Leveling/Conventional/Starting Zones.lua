@@ -7160,7 +7160,7 @@ step
     .xp >10,1
     #xprate >1.30
     #hidewindow
-    #completewith Root Trapper Vine
+    #completewith Root Trapper Vine2
     #loop
     .goto 97,54.34,46.83,40,0
     .goto 97,55.34,44.58,40,0
@@ -7183,7 +7183,7 @@ step
     #xprate >1.30
     #completewith next
     #label Root Trapper Vine
-    >>Kill |cRXP_ENEMY_Root Trappers|r. Loot them for [|cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r].
+    >>Kill |cRXP_ENEMY_Root Trappers|r. Loot them for [|cRXP_LOOT_|T134196:0|tRoot Trapper Vine|r].
     .complete 9463,1 --8/8 Root Trapper Vine
 	.mob Root Trapper
 step
@@ -7195,9 +7195,10 @@ step
 	.mob Moongraze Stag
 	.mob Moongraze Buck
 step
+    #requires Root Trapper Vine
+    #label Root Trapper Vine2
     #xprate >1.30
-    #label Root Trapper Vine
-    >>Kill |cRXP_ENEMY_Root Trappers|r. Loot them for [|cRXP_LOOT_|T134196:0|t[Root Trapper Vine]|r].
+    >>Kill |cRXP_ENEMY_Root Trappers|r. Loot them for [|cRXP_LOOT_|T134196:0|tRoot Trapper Vine|r].
     .complete 9463,1 --8/8 Root Trapper Vine
 	.mob Root Trapper
 step
@@ -7600,12 +7601,13 @@ step
     .turnin 9456 >>Turn in Nightstalker Clean Up, Isle 2...
     .target Exarch Menelaous
 step
-    #xprate <1.25
+    #xprate >1.30
     .xp >10,1
     #completewith Nightstalker Clean Up, Isle 2...
     #title |cFFFCDC00Follow the Arrow|r
     .goto 97,47.2,43.22,40,0
-    .goto 97,49.71,49.1,60 >>Make your way around the mountain to the flight path.
+    .goto 97,48.27,48.51,40,0 
+    .goto 97,47.14,50.61,60,0 >>Make your way around the mountain to the flight path.
 step
     #requires Nightstalker Clean Up, Isle 2...
     #xprate >1.30
@@ -7620,6 +7622,7 @@ step
     .goto 97,48.43,51.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r
     .turnin 9473 >>Turn in An Alternative Alternative
+    .timer 36,RP
     .target Daedal
 step
     #xprate >1.30
@@ -7764,6 +7767,7 @@ step
     .goto 97,48.43,51.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r
     .turnin 9473 >>Turn in An Alternative Alternative
+    .timer 36,RP
     .target Daedal
 step
     #xprate 1.25-1.30
@@ -7989,6 +7993,12 @@ step
 -- =========================
 
 step
+    .xp >10,1
+    .goto 97,48.45,51.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daedal|r
+    .accept 9505 >>Accept The Prophecy of Velen
+    .target Daedal
+step
     .isQuestComplete 9505
     .xp <9.7,1
     .goto 97,47.03,70.18
@@ -7999,6 +8009,7 @@ step
     .xp >10,1
     .goto 97,46.66,70.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r.
+    .skipgossipid 30302
     .train 2550 >>Train |T4620671:0|t[Cooking]
 	.target "Cookie" McWeaksauce
 step
@@ -8009,12 +8020,12 @@ step
 	.target "Cookie" McWeaksauce
 step
     .isQuestComplete 9505
-    .xp <9.7,1
     .goto 97,46.94,70.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9505 >>Turn in The Prophecy of Velen
     .target Admiral Odesyus
 step
+    .isNotOnQuest 9506
     .xp >10,1
     .xp <9.8,1
     #loop
@@ -8028,6 +8039,7 @@ step
 	.mob Skittering Crawler
 step
     .isQuestComplete 9512
+    .isNotOnQuest 9512
     .xp <9.8,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r.
     .turnin 9512 >>Turn in Cookie's Jumbo Gumbo
@@ -8079,15 +8091,19 @@ step
 	.mob Skittering Crawler
 step
     .isQuestComplete 9506
+    .goto 97,47.03,70.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
     .turnin 9506 >>Turn in A Small Start
 step
+    .xp >10,1
+    .xp <9.8,1
+    .goto 97,47.03,70.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
     .accept 9530 >>Accept I've Got a Plant
-    .goto 97,47.03,70.20
 	.target +Admiral Odesyus
 step
     .xp >10,1
+    .xp <9.8,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Kyleen|r and |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r.
     .accept 9513 >>Accept Reclaiming the Ruins
     .goto 97,47.13,70.28
@@ -8126,7 +8142,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Odesyus|r.
     .accept 9531 >>Accept Tree's Company
 	.target Admiral Odesyus
-
+step
+    #include a) Lost Dragonscale Alliance
 
 
 
