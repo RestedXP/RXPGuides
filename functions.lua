@@ -6910,3 +6910,36 @@ function addon.functions.dailyreset(self, text, hub, arg1)
         addon.dailyDB.ResetQuests(element.hub)
     end
 end
+
+events.skipOnQuest = {"QUEST_ACCEPTED","QUEST_LOG_UPDATE"}
+function addon.functions.skipOnQuest(self, text, id, label)
+    if type(self) == "string" then
+        id = tonumber(id)
+        if not (id and label) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid quest ID\n" .. self)
+        end
+
+        return {textOnly = true, id = id, label = label}
+    end
+    local element = self.element
+    local step = element.step
+
+    if not step.active then return end
+    local event = text
+    local guide = addon.currentGuide
+    local onQuest = addon.IsOnQuest(element.id)
+
+    if not step.completed and (onQuest or label == element.id) then
+        addon.updateSteps = true
+        step.completed = true
+        local ref = element.label
+        if ref and guide.labels[ref] then
+            local n = guide.labels[ref]
+            addon.nextStep = guide.labels[ref]
+            return
+        end
+    end
+
+end
