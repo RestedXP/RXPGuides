@@ -419,7 +419,7 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
 
         if not sparse[parentIndex] then
             sparse[parentIndex] = {
-                text = fmt("%d to %d", lowerLevel, upperLevel),
+                text = fmt(L"%d to %d", lowerLevel, upperLevel),
                 hasArrow = true,
                 menuList = {}
             }
@@ -440,7 +440,7 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target,
         if level == addon.tracker.maxLevel then
             insertData.text = fmt("%d (%s)", level, L("Max"))
         else
-            insertData.text = fmt("%d to %d", level, level + 1)
+            insertData.text = fmt(L"%d to %d", level, level + 1)
         end
 
         insertData.arg1 = level
@@ -494,7 +494,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi:EnableResize(false)
 
     trackerUi.statustext:GetParent():Hide() -- Hide the statustext bar
-    trackerUi:SetTitle("RestedXP Leveling Report")
+    trackerUi:SetTitle(L"RestedXP Leveling Report")
     trackerUi.frame:ClearAllPoints()
     trackerUi.frame:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x,
                              offset.y)
@@ -549,7 +549,7 @@ function addon.tracker:CreateGui(attachment, target)
     trackerUi.levelButton = AceGUI:Create("Button")
     trackerUi.levelButton:SetRelativeWidth(0.45)
 
-    trackerUi.levelButton:SetText(fmt("%d to %d", playerLevel, playerLevel + 1))
+    trackerUi.levelButton:SetText(fmt(L"%d to %d", playerLevel, playerLevel + 1))
 
     trackerUi.levelMenuFrame = CreateFrame("Frame", "RXPG_LevelMenuFrame",
                                            trackerUi.levelButton.frame,
@@ -850,11 +850,11 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
         if selectedLevel == addon.tracker.maxLevel then
             trackerUi.levelButton:SetText(
                 fmt("%d (%s)", selectedLevel, L("Max")))
-            trackerUi.reachedContainer.label:SetText("Reached max level")
+            trackerUi.reachedContainer.label:SetText(L"Reached max level")
         else
             trackerUi.levelButton:SetText(
-                fmt("%d to %d", selectedLevel, selectedLevel + 1))
-            trackerUi.reachedContainer.label:SetText("Started level " ..
+                fmt(L"%d to %d", selectedLevel, selectedLevel + 1))
+            trackerUi.reachedContainer.label:SetText(L"Started level " ..
                                                          selectedLevel)
         end
 
@@ -876,9 +876,9 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
             trackerUi.reachedContainer.data:SetText("Missing data")
         end
     else
-        trackerUi.levelButton:SetText(fmt("%d to %d", selectedLevel,
+        trackerUi.levelButton:SetText(fmt(L"%d to %d", selectedLevel,
                                           selectedLevel + 1))
-        trackerUi.reachedContainer.label:SetText("Reached Level " ..
+        trackerUi.reachedContainer.label:SetText(L"Reached Level " ..
                                                      selectedLevel + 1)
 
         trackerUi.reachedContainer.data:SetText(
@@ -900,17 +900,17 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if selectedLevel == addon.tracker.maxLevel or UnitXP("player") == 0 then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %s", 'N/A'))
-        trackerUi.teamworkContainer.data['group']:SetText(fmt("* Group: %s",
+        trackerUi.teamworkContainer.data['group']:SetText(fmt(L"* Group: %s",
                                                               'N/A'))
     elseif report.groupExperience == 0 then
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.2f%%", 100))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %.2f%%", 0))
+            fmt(L"* Group: %.2f%%", 0))
     elseif (report.soloExperience + report.groupExperience) == 0 then -- If division error
         trackerUi.teamworkContainer.data['solo']:SetText(fmt("* Solo: %d%%", 0))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %d%%", 0))
+            fmt(L"* Group: %d%%", 0))
     else
         ratio = report.groupExperience /
                     (report.soloExperience + report.groupExperience)
@@ -918,33 +918,33 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
         trackerUi.teamworkContainer.data['solo']:SetText(
             fmt("* Solo: %.2f%%", 100 - percentage))
         trackerUi.teamworkContainer.data['group']:SetText(
-            fmt("* Group: %.2f%%", percentage))
+            fmt(L"* Group: %.2f%%", percentage))
     end
 
     if selectedLevel == addon.tracker.maxLevel or UnitXP("player") == 0 then
-        trackerUi.sourcesContainer.data['quests']:SetText(fmt("* Quests: %s",
+        trackerUi.sourcesContainer.data['quests']:SetText(fmt(L"* Quests: %s",
                                                               "N/A"))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %s", "N/A"))
+            fmt(L"* Killing: %s", "N/A"))
     elseif report.questXP == 0 then
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
-                                                              "* Quests: %.2f%%",
+                                                              L"* Quests: %.2f%%",
                                                               0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %.2f%%", 100))
+            fmt(L"* Killing: %.2f%%", 100))
     elseif (report.questXP + report.mobXP) == 0 then -- If division error
         trackerUi.sourcesContainer.data['quests']:SetText(
-            fmt("* Quests: %d%%", 0))
+            fmt(L"* Quests: %d%%", 0))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %d%%", 0))
+            fmt(L"* Killing: %d%%", 0))
     else
         ratio = report.mobXP / (report.questXP + report.mobXP)
         percentage = 100 * ratio
         trackerUi.sourcesContainer.data['quests']:SetText(fmt(
-                                                              "* Quests: %.2f%%",
+                                                              L"* Quests: %.2f%%",
                                                               100 - percentage))
         trackerUi.sourcesContainer.data['mobs']:SetText(
-            fmt("* Killing: %.2f%%", percentage))
+            fmt(L"* Killing: %.2f%%", percentage))
     end
 
     local zonesBlock = ""
@@ -957,7 +957,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     trackerUi.zonesContainer.data:SetText(zonesBlock)
 
     local extrasBlock = ""
-    extrasBlock = fmt("%s* %s: %s\n", extrasBlock, "Deaths",
+    extrasBlock = fmt("%s* %s: %s\n", extrasBlock, L("Deaths"),
                       report.deaths or L("Missing data"))
 
     if report.timestamp and report.timestamp.started and
@@ -973,7 +973,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
         local xpPerHour = report.totalXP / (levelSeconds / 60 / 60)
 
-        extrasBlock = fmt("%s* %s: %d\n", extrasBlock, "Experience/hour",
+        extrasBlock = fmt("%s* %s: %d\n", extrasBlock, L("Experience/hour"),
                           xpPerHour or "Missing data")
     end
 
