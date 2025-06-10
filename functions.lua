@@ -6943,3 +6943,61 @@ function addon.functions.skipOnQuest(self, text, id, label)
     end
 
 end
+
+function addon.GetChoiceId()
+    if not C_PlayerChoice then return end
+    local choices = C_PlayerChoice.GetCurrentPlayerChoiceInfo()
+    if choices and choices.options then
+        for _,t in pairs(choices.options) do
+            print(t.header..":",t.choiceArtID)
+        end
+        return
+    end
+    print('-- Chromie Time --')
+    for _,t in pairs(C_ChromieTime.GetChromieTimeExpansionOptions()) do
+        print(t.name..':',t.id)
+    end
+end
+
+events.choose = "PLAYER_CHOICE_UPDATE"
+function addon.functions.choose(self,text,id,button)
+    if not C_PlayerChoice then
+        return
+    elseif type(self) == "string" then
+        return {text = text, id = tonumber(id), textOnly = true, button = tonumber(button) or 1}
+    end
+    --addon.GetChoiceId()
+    local element = self.element
+    if not element.step.active then return end
+    local choices = C_PlayerChoice.GetCurrentPlayerChoiceInfo()
+    if choices and choices.options then
+        for _,t in pairs(choices.options) do
+            if t.choiceArtID == element.id or t.id == element.id then
+                local b = t.buttons[element.button].id
+                C_PlayerChoice.SendPlayerChoiceResponse(b)
+                addon:ScheduleTask(C_PlayerChoice.OnUIClosed)
+            end
+        end
+    end
+
+end
+
+events.chromietime = "PLAYER_INTERACTION_MANAGER_FRAME_SHOW"
+function addon.functions.chromietime(self,text,id)
+    if not C_ChromieTime then
+        return
+    elseif type(self) == "string" then
+        return {text = text, id = id, textOnly = true}
+    end
+    local element = self.element
+    if id ~= Enum.PlayerInteractionType.ChromieTime or not element.step.active then
+        return
+    end
+    id = element.id
+    for _,t in pairs(C_ChromieTime.GetChromieTimeExpansionOptions()) do
+        if t.id == tonumber(id) or id == t.previewAtlas or id == t.mapAtlas then
+            C_ChromieTime.SelectChromieTimeOption(t.id)
+            return
+        end
+    end
+end
