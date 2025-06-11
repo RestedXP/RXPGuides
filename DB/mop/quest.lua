@@ -556,6 +556,7 @@ local valeQuests = {
     [31244] = "ruinsofguolaiUnderAttack",
     [31250] = "settingsun",
     [31247] = "settingsun",
+    [30385] = "settingsun",
 }
 
 addon.dailyDB.valeQuests = valeQuests
