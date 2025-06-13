@@ -1662,6 +1662,16 @@ step
     .complete 85884,4 --1/1 Witness the Culling of Stratholme
     .target Arthas
 step
+    #completewith next
+    #label Arthas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthas|r
+    .scenario 15807,1
+    .target Arthas
+step
+    #completewith Arthas
+    .gossipoption 134404 >>Talk to |cRXP_FRIENDLY_Cho|r
+step
+    #requires Arthas
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthas|r
     .scenario 15807,1
     .timer 60,RP
@@ -1670,13 +1680,8 @@ step
 step
     >>Follow |cRXP_FRIENDLY_Arthas|r and kill |cRXP_ENEMY_Mal'Ganis|r.
     *|cRXP_WARN_Wait for roleplay after|r.
-    .scenario 15804,1
+    .complete 85884,5 --Confront Malganis
     .mob Mal'Ganis
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
-    .complete 85884,5 --1/1 Talk to Cho
-    .skipgossipid 134404
-    .target Cho
 step
     #label Coordinates
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
@@ -1833,7 +1838,7 @@ step
     .goto 2339,49.6,31.63,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
     .complete 85885,1 --1/1 Talk to Cho
-    .timer 40,RP
+    .timer 24,RP
     .skipgossipid 131573
 step
     .goto 85,54.35,56.66,-1 <<Horde
@@ -1851,9 +1856,8 @@ step
 step
     #completewith next
     #label Memory of Muradin
-    >>Kill |cRXP_ENEMY_Memory of Muradin|r
-    .complete 85875,1 --1/1 Banish the Memory of Muradin
-    .mob Memory of Muradin
+    >>Enter Icecrown
+    .accept 85875 >>Accept Ascent of the Lich King
 step
     #completewith Memory of Muradin
     .goto 85,54.35,56.66,-1 <<Horde
@@ -1862,6 +1866,13 @@ step
     .gossipoption 134404 >>Talk to |cRXP_FRIENDLY_Cho|r
 step
     #requires Memory of Muradin
+    .accept 85875 >>Accept Ascent of the Lich King
+step
+    .goto 118,51.54,79.93
+    >>Kill |cRXP_ENEMY_Memory of Muradin|r
+    .complete 85875,1 --1/1 Banish the Memory of Muradin
+    .mob Memory of Muradin
+step
     .goto 118,51.52,79.86
     >>Kill |cRXP_ENEMY_Memory of Muradin|r
     .complete 85875,1 --1/1 Banish the Memory of Muradin
@@ -1877,20 +1888,23 @@ step
     .complete 85875,3 --1/1 Banish the Memory of Uther
     .mob Memory of Uther
 step
+    .isOnQuest 85875
     .goto 118,52.34,82.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Memory of Terenas|r
-    .complete 85885,4 --1/1 Witness the ascent of the Lich King
     .turnin 85875,1 >>Turn in Ascent of the Lich King
     .target Memory of Terenas
 step
+    .complete 85885,4 --1/1 Witness the ascent of the Lich King
+step
     .goto 118,52.34,82.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    .complete 85885,7 --1/1 Talk to Cho
+    .complete 85885,5 --1/1 Talk to Cho
     .skipgossipid 131603
     .target Cho
 step
-    .gossipoption 37487 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .timer 300,RP
+    *|cRXP_WARN_Walk forward a bit to spawn |cRXP_FRIENDLY_Lady Jaina Proudmoore|r behind you|r
+    .gossipoption 37487 >>Talk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .timer 230,RP
     .target Lady Jaina Proudmoore
 step
     >>Kill |cRXP_ENEMY_Waves|r and |cRXP_ENEMY_Falric|r
@@ -1909,26 +1923,31 @@ step
     .mob Phantom Mage
     .mob Marwyn
 step
-    .gossipoption 37662 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .timer 300,RP
+    *|cRXP_WARN_Walk through the hallway. You will encounter the |cRXP_ENEMY_Lich King|r and |cRXP_FRIENDLY_Jaina|r.
+    *Fight the |cRXP_ENEMY_Lich King|r until |cRXP_FRIENDLY_Jaina|r freezes him, then follow her.|r
+    .gossipoption 37662 >>Talk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .timer 330,RP
     .target Lady Jaina Proudmoore
 step
-    >>Escape from the Lich King
+    >>Defeat the waves of enemies summoned by the |cRXP_ENEMY_Lich King|r.
+    *Defeating the waves of enemies allows |cRXP_FRIENDLY_Jaina|r to progress
+    *|cRXP_WARN_Don't let the Lich King reach |cRXP_FRIENDLY_Jaina|r|r.
     .complete 85885,6 --1/1 Help Jaina investigate the Halls of Reflection
     .mob Raging Ghoul
     .mob Risen Witch Doctor
     .mob Lumbering Abomination
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
-    .complete 85885,8 --1/1 Talk to Cho
-    .timer 15,RP
+    .complete 85885,7 --1/1 Talk to Cho
     .skipgossipid 131606
     .target Cho
 step
     .accept 85878,1 >>Accept O' Thanagor
 step
-    >>Kill the Heroes
-    .complete 85885,9 --1/1 Complete "O'Thanagor"
+    >>Spam |T132291:0|t[Defile] ideally around as many npcs.
+    *Use |T237532:0|t[Pain and Suffering] on cooldown.
+    *Use |T135833:0|t[Remorseless Winter] on cooldown.
+    .complete 85878,1 --1/1 Complete "O'Thanagor"
 step
     .goto 85,54.35,56.66,-1
     .goto 84,64.19,16.26,-1
