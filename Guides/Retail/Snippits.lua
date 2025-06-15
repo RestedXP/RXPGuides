@@ -26,6 +26,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
+    .accept 65436 >>Accept The Dragon Isles Await
+step
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .use 205456
