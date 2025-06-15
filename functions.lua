@@ -3616,13 +3616,13 @@ function addon.functions.questcount(self, text, count, ...)
         n = tonumber(n)
         element.total = n
         local ids = {...}
-        for i,v in pairs(ids) do
+        for i,v in ipairs(ids) do
             ids[i] = tonumber(v)
         end
-        if not (ids[1] and n) then
+        if not (n) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
-                           ": Invalid PoI ID\n" .. self)
+                           ": Invalid argument\n" .. self)
         end
         element.ids = ids
         if text and text ~= "" then element.text = text end
@@ -3634,12 +3634,16 @@ function addon.functions.questcount(self, text, count, ...)
     local event = text
     if not step.active then return end
     count = 0
-    for _,quest in pairs(element.ids) do
-        local id = GetQuestId(quest)
-        addon.questAccept[id] = element
-        if IsOnQuest(id) or IsQuestTurnedIn(id) then
-            count = count + 1
+    if element.ids[1] then
+        for _,quest in pairs(element.ids) do
+            local id = GetQuestId(quest)
+            addon.questAccept[id] = element
+            if IsOnQuest(id) or IsQuestTurnedIn(id) then
+                count = count + 1
+            end
         end
+    else
+        count = GetNumQuests()
     end
 
     local step = element.step
