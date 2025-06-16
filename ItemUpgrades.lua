@@ -1148,8 +1148,8 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
         equippedWeight = self:CalculateWeaponWeight(equippedData, slotComparisonId)
         comparedWeight = self:CalculateWeaponWeight(comparedData, slotComparisonId)
     else
-        equippedWeight = addon.Round(equippedData.totalWeight, 2)
-        comparedWeight = addon.Round(comparedData.totalWeight, 2)
+        equippedWeight = equippedData.totalWeight
+        comparedWeight = comparedData.totalWeight
     end
 
     -- If -1, then failed to calculate speed/DPS EP
@@ -1160,10 +1160,10 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, compare
     elseif comparedWeight == 0 then
         return nil, 0, _G.EMPTY
     elseif comparedWeight > equippedWeight then
-        return addon.Round(comparedWeight / equippedWeight, 2), comparedWeight - equippedWeight, 'upgrade'
+        return comparedWeight / equippedWeight, comparedWeight - equippedWeight, 'upgrade'
     elseif comparedWeight < equippedWeight then
         -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
-        -- return -1 * addon.Round(comparedWeight / equippedWeight, 2)
+        -- return -1 * comparedWeight / equippedWeight
         -- Display 'downgrade' when debugging
         return nil, -1, 'downgrade'
     elseif comparedWeight == equippedWeight then
