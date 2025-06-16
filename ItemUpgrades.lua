@@ -500,9 +500,14 @@ local function TooltipSetItem(tooltip, ...)
             lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
                            prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
         elseif statsData['ItemLink'] == _G.EMPTY then
-            lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.TotalWeight)
+            lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.WeightIncrease)
         else -- SPELL_FAILED_ERROR
             lineText = nil
+        end
+
+        -- If successful comparison but not a weapon
+        if lineText and not statsData.DpsWeights then
+            tinsert(lines, lineText)
         end
 
         for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
