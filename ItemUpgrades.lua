@@ -471,15 +471,27 @@ local function TooltipSetItem(tooltip, ...)
     if not itemLink then return end
     -- print("TooltipSetItem", tooltip:GetName(), itemLink)
 
-    -- Exclude addon text when looking at an equipped item
-    if IsEquippedItem(itemLink) then return end
-
     local itemData = addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if not (itemData and itemData.totalWeight) then return end
 
-    local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
-
     local lines = {}
+    -- Exclude addon text when looking at an equipped item
+    --  Unless enableTotalEP
+    if IsEquippedItem(itemLink) then
+        if addon.settings.profile.enableTotalEP then
+            enableTotalEPLines(itemData, lines)
+
+            if #lines > 0 then
+                tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+                for _, line in ipairs(lines) do tooltip:AddLine(line) end
+            end
+        end
+
+        return
+    end
+
+    local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- Effectively only used when 1H compares against 2H
     if not statComparisons or next(statComparisons) == nil then
