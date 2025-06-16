@@ -114,7 +114,7 @@ local CLASS_MAP = {
             [ItemWeaponSubclass.Axe2H] = true,
             [ItemWeaponSubclass.Mace1H] = true,
             [ItemWeaponSubclass.Mace2H] = true,
-            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 20 end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true,
             [ItemWeaponSubclass.Unarmed] = true
@@ -137,19 +137,19 @@ local CLASS_MAP = {
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
             ["INVTYPE_WEAPONOFFHAND"] = function()
-                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+                return UnitLevel("player") >= 18 and _G.INVSLOT_OFFHAND or nil
             end
         },
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
-            [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 40 end
+            [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
             [ItemWeaponSubclass.Axe2H] = true,
             [ItemWeaponSubclass.Bows] = true,
             [ItemWeaponSubclass.Guns] = true,
-            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 20 end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true,
             [ItemWeaponSubclass.Staff] = true,
@@ -173,14 +173,14 @@ local CLASS_MAP = {
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = true,
-            [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 40 end
+            [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
             [ItemWeaponSubclass.Axe2H] = true,
             [ItemWeaponSubclass.Mace1H] = true,
             [ItemWeaponSubclass.Mace2H] = true,
-            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 20 end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true
         }
@@ -220,7 +220,7 @@ local CLASS_MAP = {
         ["Slot"] = {{["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND}},
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
-            [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 40 end
+            [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
@@ -248,13 +248,13 @@ local CLASS_MAP = {
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
             ["INVTYPE_WEAPONOFFHAND"] = function()
-                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+                return UnitLevel("player") >= 18 and _G.INVSLOT_OFFHAND or nil
             end
         },
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = true,
-            [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 40 end
+            [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
@@ -263,7 +263,7 @@ local CLASS_MAP = {
             [ItemWeaponSubclass.Guns] = true,
             [ItemWeaponSubclass.Mace1H] = true,
             [ItemWeaponSubclass.Mace2H] = true,
-            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 20 end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true,
             [ItemWeaponSubclass.Staff] = true,
