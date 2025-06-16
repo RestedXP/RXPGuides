@@ -531,7 +531,7 @@ local function TooltipSetItem(tooltip, ...)
             comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
             -- TODO if no equippedWeaponWeight then not comparable slot
-            lineText = fmt("%s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
+            lineText = fmt("  %s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
                            comparedWeaponWeight - equippedWeaponWeight)
 
             if statsData['debug'] and addon.settings.profile.debug then
