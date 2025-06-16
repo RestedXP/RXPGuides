@@ -546,6 +546,11 @@ addon.dailyDB.CheckQuestHub = CheckQuestHub
 
 local valeQuests = {
     [31131] = "whitepetal",
+    [30283] = "whitepetalUnderAttack",
+    [30293] = "whitepetalUnderAttack",
+    [30292] = "whitepetalUnderAttack",
+    [30282] = "whitepetalUnderAttack",
+    [30281] = "whitepetalUnderAttack",
     [31242] = "mistfallQuiet",
     [31245] = "mistfallQuiet",
     [31243] = "mistfallUnderAttack",
