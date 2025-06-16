@@ -877,27 +877,27 @@ local function CalculateDPSWeight(itemData, stats)
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
     -- weaponSlotToWeightKey['INVTYPE_WEAPON'] = { "MH", "OH" }
     for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
+        if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
+            'INVTYPE_RANGEDRIGHT' then
+
+            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
+                            session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
+        else
+            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
+                            session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+        end
 
         -- Lookup speed weight key with kind suffix (MH, OH, RANGED, 2H)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
 
         -- Check weaponKind keys for class statWeights
         if session.activeStatWeights[speedWeightKey] then
-
-            if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
-                'INVTYPE_RANGEDRIGHT' then
-
-                dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                                session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
-            else
-                dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                                session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
-            end
-
             speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * session.activeStatWeights[speedWeightKey]
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
             dpsWeights[keySuffix] = {['totalWeight'] = dpsWeight + speedKindWeight, ['speedWeight'] = speedKindWeight}
+        else -- Weapon speed irrelevant, likely a caster
+            dpsWeights[keySuffix] = {['totalWeight'] = dpsWeight, ['speedWeight'] = 0.00}
         end
     end
 
