@@ -528,6 +528,7 @@ local function TooltipSetItem(tooltip, ...)
 
         for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
             equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
+            -- TODO handle 1H for casters, dpsWeights[suffix] is nil
             comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
             -- TODO if no equippedWeaponWeight then not comparable slot
@@ -968,6 +969,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     end
 
     if session.itemCache[itemLink] then
+        if session.itemCache[itemLink] == -1 then return end
         -- print("Returning cached weight", itemLink, session.itemCache[itemLink].totalWeight)
         return session.itemCache[itemLink]
     end
@@ -978,6 +980,12 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     -- Not an equippable item
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or itemEquipLoc == "INVTYPE_BAG" or
         itemEquipLoc == "INVTYPE_NON_EQUIP_IGNORE" then return end
+
+    if not IsUsableForClass(itemSubTypeID, itemEquipLoc) then
+        -- print("GetItemData: not usable by class")
+        session.itemCache[itemLink] = -1
+        return
+    end
 
     -- Parse API stats first before processing tooltip text
     local stats = GetItemStats(itemLink)
