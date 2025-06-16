@@ -13,58 +13,58 @@ RXPGuides.RegisterGuide([[
 #group RXP Cataclysm 1-80 (H)
 #subweight 10000
 
-step << Rogue/Warlock/Mage
+step << Rogue Cata/Warlock Cata/Mage Cata
     #completewith next
     .goto 1454,45.81,66.88,40 >> Travel toward the Cleft of Shadow
-step << Priest/Paladin
+step << Priest Cata/Paladin Cata
     #completewith next
     .goto 1454,49.88,75.54,30 >> Enter Grommash Hold
-step << Shaman/Druid
+step << Shaman Cata/Druid Cata
     #completewith next
     .goto 1454,44.84,75.46,40,0
     .goto 1454,41.53,60.64,40 >> Travel to the Valley of Wisdom
-step << Rogue
+step << Rogue Cata
     .goto 1454,44.65,61.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordul|r
     .train 61922 >> Train your class spells
     .target Gordul
-step << Rogue
+step << Rogue Cata
     .goto 1454,29.60,50.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rekkul|r.
     >>|cRXP_BUY_Buy|r |T132273:0|t[Instant Poison] |cRXP_BUY_from him|r
     .collect 6947,20,14129,1 --Instant Poison (20)
     .target Rekkul
-step << Shaman
+step << Shaman Cata
     .goto 1454,44.64,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sahi|r
     .train 3599 >> Train your class spells
     .target Sahi Cloudsinger
     .xp <10,1
-step << Druid
+step << Druid Cata
     .goto 1454,44.79,51.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalla|r
     .train 5215 >> Train your class spells
     .target Shalla Whiteleaf
     .xp <10,1
-step << Mage
+step << Mage Cata
     .goto 1454,48.45,62.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marud|r
     .train 5505 >> Train your class spells
     .target Marud
     .xp <10,1
-step << Priest
+step << Priest Cata
     .goto 1454,49.17,70.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tyelis|r
     .train 8092 >> Train your class spells
     .target Tyelis
     .xp <10,1
-step << Warlock
+step << Warlock Cata
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 1120 >> Train your class spells
     .target Mirket
     .xp <10,1
-step << Paladin
+step << Paladin Cata
     .goto 1454,49.27,71.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyreanor|r
     .train 82242 >> Train your class spells
@@ -85,7 +85,7 @@ step << !Warrior !Paladin !Rogue !Hunter !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kiro|r
     .vendor >> Vendor and Repair
     .target Kiro
-step << Warrior
+step << Warrior Cata
     .goto 1454,73.71,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ronakada|r
     .train 71 >> Train your class spells
@@ -231,7 +231,7 @@ step << Rogue
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-step << Hunter
+step << Hunter Cata
     .goto 1454,63.87,32.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak Grimshot|r
     .train 1978 >> Train your class spells
@@ -1170,22 +1170,22 @@ step
     .timer 59,A Hello to Arms RP
     .target Friz Groundspin
     .isOnQuest 24458
-step << Shaman
+step << Shaman Cata
     .goto 76,56.671,49.531
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r
     .trainer >> Train your class spells
     .target Maxx Avalanche
-step << Mage
+step << Mage Cata
     .goto 76,56.919,49.598
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizz Lighter|r
     .trainer >> Train your class spells
     .target Fizz Lighter
-step << Warlock
+step << Warlock Cata
     .goto 76,56.708,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Evol Fingers|r
     .trainer >> Train your class spells
     .target Evol Fingers
-step << Priest
+step << Priest Cata
     .goto 76,56.852,50.279
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Goldskimmer|r
     .trainer >> Train your class spells
@@ -1200,17 +1200,17 @@ step
     .home >> Set your hearthstone to Bilgewater Harbor
     .target Grimy Greasefingers
     .subzoneskip 4821,1
-step << Rogue
+step << Rogue Cata
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stinky Shapshiv|r
     .trainer >> Train your class spells
     .target Stinky Shapshiv
-step << Hunter
+step << Hunter Cata
     .goto 76,56.914,50.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r
     .trainer >> Train your class spells
     .target Bamm Megabomb
-step << Warrior
+step << Warrior Cata
     .goto 76,57.167,50.105
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warrior-Matic NX-01|r upstairs
     .trainer >> Train your class spells
@@ -2238,11 +2238,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azuregos|r
     .accept 14392 >>Accept Farewell, Minnow
     .target Azuregos
-step << Druid
+step << Druid Cata
     #completewith DruidTraining1
     .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
-step << Druid
+step << Druid Cata
     #label DruidTraining1
     .goto 1450/1,-2593.69995,7867.39990
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
@@ -2253,37 +2253,37 @@ step
     .hs >>Hearth to Bilgewater Harbor
     .use 6948
     .subzoneskip 4821
-step << Shaman
+step << Shaman Cata
     .goto 76,56.671,49.531
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Max Avalanche|r
     .trainer >> Train your class spells
     .target Max Avalanche
-step << Mage
+step << Mage Cata
     .goto 76,56.919,49.598
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizz Lighter|r
     .trainer >> Train your class spells
     .target Fizz Lighter
-step << Warlock
+step << Warlock Cata
     .goto 76,56.708,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Evol Fingers|r
     .trainer >> Train your class spells
     .target Evol Fingers
-step << Priest
+step << Priest Cata
     .goto 76,56.852,50.279
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Goldskimmer|r
     .trainer >> Train your class spells
     .target Sister Goldskimmer
-step << Rogue
+step << Rogue Cata
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stinky Shapshiv|r
     .trainer >> Train your class spells
     .target Stinky Shapshiv
-step << Hunter
+step << Hunter Cata
     .goto 76,56.914,50.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r
     .trainer >> Train your class spells
     .target Bamm Megabomb
-step << Warrior
+step << Warrior Cata
     .goto 76,57.167,50.105
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warrior-Matic NX-01|r upstairs
     .trainer >> Train your class spells
@@ -2625,14 +2625,14 @@ step << Tauren !Paladin
 	.target Harb Clawhoof
 	.mountcount 75-150,<1
     .xp <20,1
-step << Warlock
+step << Warlock Cata
     #label FelsteedTraining
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 5784 >>Train |T136103:0|t[Felsteed]
     .target Mirket
     .mountcount 75-150,<1
-step << Paladin
+step << Paladin Cata
     #label WarhorseTraining
     .goto 1454/1,-4292.50000,1863.70007
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atohmo|r
@@ -2641,6 +2641,7 @@ step << Paladin
     .target Sunwalker Atohmo
     .mountcount 75-150,<1
 step << !Orc !Goblin !Warlock !Paladin
+    #optional
     #completewith FlyValormok
     .hs >>Hearth to Orgrimmar
     .use 6948
@@ -2733,7 +2734,6 @@ step << Rogue
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
-
 step
     #label FlyValormok
     .goto 1454/1,-4370.00000,1799.90002

@@ -3750,13 +3750,6 @@ step
     .isQuestComplete 1491
     .dungeon WC
 step
-    .goto The Barrens,63.09,37.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to The Crossroads
-    .target Bragok
-    .isOnQuest 6981
-    .dungeon WC
-step
     .use 10441 >>Use the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] to accept the quest
     .accept 6981 >> Accept The Glowing Shard
     .itemcount 10441,1
@@ -3768,6 +3761,13 @@ step
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
     .target Sputtervalve
+    .isOnQuest 6981
+    .dungeon WC
+step
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fly Crossroads >> Fly to The Crossroads
+    .target Bragok
     .isOnQuest 6981
     .dungeon WC
 step

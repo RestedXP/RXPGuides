@@ -277,79 +277,86 @@ step << Rogue
     .goto 194,58.27,73.10,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Slinky|r
     .accept 14010 >>Accept Eviscerate
-    .train 2098 >> Train |T132292:0|t[Eviscerate]
+    .train 2098 >> Train |T132292:0|t[Eviscerate] << Cata
     .target Slinky Sharpshiv
 step << Warrior
     .goto 194,60.27,77.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Warrior-Matic NX-01|r
     .accept 14013 >>Accept Charge
-    .train 100 >> |T132337:0|t[Charge]
+    .train 100 >> |T132337:0|t[Charge] << Cata
     .target Warrior-Matic NX-01
 step << Hunter
     .goto 194,60.42,77.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bamm|r
     .accept 14007 >>Accept Steady Shot
-    .train 56641 >>Train |T132213:0|t[Steady Shot]
+    .train 56641 >>Train |T132213:0|t[Steady Shot] << Cata
     .target Bamm Megabomb
 step << Shaman
     .goto 194,59.68,75.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maxx|r
     .accept 14011 >>Accept Primal Strike
-    .train 73899 >>Train |T460956:0|t[Primal Strike]
+    .train 73899 >>Train |T460956:0|t[Primal Strike] << Cata
     .target Maxx Avalanche
 step << Mage
     .goto 194,59.37,73.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Fizz|r
     .accept 14008 >>Accept Arcane Missiles
-    .train 5143 >>Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >>Train |T136096:0|t[Arcane Missiles] << Cata
     .target Fizz Lighter
     --VV Quest id is 14008#.?
 step << Warlock
     .goto 194,57.96,74.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Evol|r
     .accept 14012 >>Accept Immolate
-    .train 348 >>Train |T135817:0|t[Immolate]
+    .train 348 >>Train |T135817:0|t[Immolate] << Cata
     .target Evol Fingers
 step << Priest
     .goto 194,57.87,77.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Goldskimmer|r
     .accept 14009 >>Accept Flash Heal
-    .train 2061 >>Train |T135907:0|t[Flash Heal]
+    .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
     .target Sister Goldskimmer
 step << Rogue
     .goto 194,60.91,77.39
 	>>Cast |T132292:0|t[Eviscerate] on a |cFFFF5722Training Dummy|r
-	.complete 14010,1 --Cast Eviscerate (x3)
+	.complete 14010,2 << !Cata --Cast Eviscerate (x3)
+	.complete 14010,1 << Cata --Cast Eviscerate (x3)
 	.mob Training Dummy
 step << Warrior
     .goto 194,60.91,77.39
 	>>Cast |T132337:0|t[Charge] on a |cFFFF5722Training Dummy|r
-	.complete 14013,1 --Cast Charge (x3)
+	.complete 14013,2 << !Cata --Cast Charge (x3)
+	.complete 14013,1 << Cata --Cast Charge (x3)
 	.mob Training Dummy
 step << Hunter
     .goto 194,60.91,77.39
 	>>Cast |T132213:0|t[Steady Shot] on a |cFFFF5722Training Dummy|r
-	.complete 14007,1 --Steady Shot (x3)
+	.complete 14007,2 << !Cata --Steady Shot (x3)
+	.complete 14007,1 << Cata --Steady Shot (x3)
 	.mob Training Dummy
 step << Shaman
     .goto 194,60.91,77.39
 	>>Cast |T460956:0|t[Primal Strike] on a |cFFFF5722Training Dummy|r
-	.complete 14011,1 --Cast Primal Strike (x3)
+	.complete 14011,2 << !Cata --Cast Primal Strike (x3)
+	.complete 14011,1 << Cata --Cast Primal Strike (x3)
 	.mob Training Dummy
 step << Mage
     .goto 194,60.91,77.39
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cFFFF5722Training Dummy|r
-	.complete 14008,1 --Cast Arcane Missiles (x3)
+	.complete 14008,2 << !Cata --Cast Arcane Missiles (x3)
+	.complete 14008,1 << Cata --Cast Arcane Missiles (x3)
 	.mob Training Dummy
 step << Warlock
     .goto 194,60.91,77.39
 	>>Cast |T135817:0|t[Immolate] on a |cFFFF5722Training Dummy|r
-	.complete 14012,1 --Cast Immolate (x3)
+	.complete 14012,2 << !Cata --Cast Immolate (x3)
+	.complete 14012,1 << Cata --Cast Immolate (x3)
 	.mob Training Dummy
 step << Priest
     .goto 194,58.24,77.40
 	>>Cast |T135907:0|t[Flash Heal] on a |cFF00FF25Injured Employee|r
-	.complete 14009,1 --Cast Flash Heal (x5)
+	.complete 14009,2 << !Cata --Cast Flash Heal (x5)
+	.complete 14009,1 << Cata --Cast Flash Heal (x5)
 	.target Injured Employee
 step << Rogue
     .goto 194,59.47,77.73,-1
@@ -673,35 +680,35 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r
     .goto 174,27.85,74.29
     .accept 14473 >>Accept It's Our Problem Now
-    .trainer >>Train your class spells << Shaman
+    .trainer >>Train your class spells << Shaman Cata
     .target Maxx Avalanche
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r
     .goto 174,27.95,74.43
     .accept 14019 >>Accept Monkey Business
-    .trainer >>Train your class spells << Hunter
+    .trainer >>Train your class spells << Hunter Cata
     .target Bamm Megabomb
-step << Priest
+step << Priest Cata
     .goto 174,27.697,74.527
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Goldskimmer|r
     .trainer >>Train your class spells
     .target Sister Goldskimmer
-step << Mage
+step << Mage Cata
     .goto 174,27.715,74.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizz Lighter|r
     .trainer >>Train your class spells
     .target Fizz Lighter
-step << Warlock
+step << Warlock Cata
     .goto 174,28.419,75.648
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Evol Fingers|r
     .trainer >>Train your class spells
     .target Evol Fingers
-step << Warrior
+step << Warrior Cata
     .goto 174,28.656,76.161
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warrior-Matic NX-01|r
     .trainer >>Train your class spells
     .target Warrior-Matic NX-01
-step << Rogue
+step << Rogue Cata
     .goto 174,28.654,76.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r
     .trainer >>Train your class spells
@@ -958,37 +965,37 @@ step
     .home >>Set your Hearthstone to Town-In-A-Box
     .target Grimy Greasefingers
     .isQuestAvailable 24925
-step << Priest
+step << Priest Cata
     .goto 174,45.586,65.375
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Goldskimmer|r
     .trainer >>Train your class spells
     .target Sister Goldskimmer
-step << Hunter
+step << Hunter Cata
     .goto 174,45.246,64.844
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r
     .trainer >>Train your class spells
     .target Bamm Megabomb
-step << Mage
+step << Mage Cata
     .goto 174,45.119,65.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizz Lighter|r
     .trainer >>Train your class spells
     .target Fizz Lighter
-step << Warlock
+step << Warlock Cata
     .goto 174,45.492,65.593
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Evol Fingers|r
     .trainer >>Train your class spells
     .target Evol Fingers
-step << Shaman
+step << Shaman Cata
     .goto 174,45.106,65.270
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r
     .trainer >>Train your class spells
     .target Maxx Avalanche
-step << Warrior
+step << Warrior Cata
     .goto 174,28.656,76.161
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warrior-Matic NX-01|r
     .trainer >>Train your class spells
     .target Warrior-Matic NX-01
-step << Rogue
+step << Rogue Cata
     .goto 174,45.055,65.524
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r
     .trainer >>Train your class spells
@@ -1483,37 +1490,37 @@ step
     .turnin 25100 >>Turn in Let's Ride
     .accept 25109 >>Accept The Gallywix Labor Mine
     .target Slinky Sharpshiv
-step << Priest
+step << Priest Cata
     .goto 174,53.760,35.798
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Goldskimmer|r
     .trainer >>Train your class spells
     .target Sister Goldskimmer
-step << Hunter
+step << Hunter Cata
     .goto 174,53.744,35.882
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bamm Megabomb|r
     .trainer >>Train your class spells
     .target Bamm Megabomb
-step << Mage
+step << Mage Cata
     .goto 174,53.754,33.614
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fizz Lighter|r
     .trainer >>Train your class spells
     .target Fizz Lighter
-step << Warlock
+step << Warlock Cata
     .goto 174,54.087,34.662
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Evol Fingers|r
     .trainer >>Train your class spells
     .target Evol Fingers
-step << Shaman
+step << Shaman Cata
     .goto 174,53.245,35.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxx Avalanche|r
     .trainer >>Train your class spells
     .target Maxx Avalanche
-step << Warrior
+step << Warrior Cata
     .goto 174,53.810,35.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warrior-Matic NX-01|r
     .trainer >>Train your class spells
     .target Warrior-Matic NX-01
-step << Rogue
+step << Rogue Cata
     .goto 174,53.716,34.928
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky Sharpshiv|r
     .trainer >>Train your class spells

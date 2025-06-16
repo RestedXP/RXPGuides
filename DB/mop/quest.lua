@@ -465,6 +465,7 @@ addon.questAcceptItems = {
 }
 --C_DateAndTime.GetSecondsUntilDailyReset()
 
+addon.dailyDB = {}
 
 local klaxxiQuests ={
 
@@ -500,15 +501,98 @@ local klaxxiQuests ={
     [31269] = "lake",--The Scale-Lord
 
 }
+addon.dailyDB.klaxxiQuests = klaxxiQuests
+local celestialQuests
+
+local function CheckQuestHub(faction)
+    local reset = true
+    local hubs
+    local t
+    if faction == "klaxxi" then
+        hubs = {lake = 0, terrace = 0, south = 0, clutches = 0}
+        t = klaxxiQuests
+    elseif faction == "celestial" then
+        hubs = {jade = 0, cradle = 0, blackox = 0, whitetiger = 0}
+        t = celestialQuests
+    end
+
+    for id,hub in pairs(t) do
+        if addon.IsQuestTurnedIn(id) then
+            reset = false
+            break
+        end
+        local n = hubs[hub]
+        if addon.IsOnQuest(id) and n then
+            hubs[hub] = n+1
+        end
+    end
+    if reset then
+        local count = 0
+        local current
+        for hub,n in pairs(hubs) do
+            if n > 0 and n > count then
+                current = hub
+                count = n
+            end
+        end
+        if current and count >= 5 then
+             addon.realmData[faction] = current
+        else
+            addon.realmData[faction] = nil
+        end
+    end
+end
+addon.dailyDB.CheckQuestHub = CheckQuestHub
 
 local valeQuests = {
     [31131] = "whitepetal",
+    [30283] = "whitepetalUnderAttack",
+    [30293] = "whitepetalUnderAttack",
+    [30292] = "whitepetalUnderAttack",
+    [30282] = "whitepetalUnderAttack",
+    [30281] = "whitepetalUnderAttack",
     [31242] = "mistfallQuiet",
+    [31245] = "mistfallQuiet",
     [31243] = "mistfallUnderAttack",
+    [31246] = "mistfallUnderAttack",
     [31296] = "ruinsofguolaiQuiet",
+    [31294] = "ruinsofguolaiQuiet",
+    [31240] = "ruinsofguolaiQuiet",
+    [31244] = "ruinsofguolaiUnderAttack",
+    [31250] = "settingsun",
+    [31247] = "settingsun",
+    [30385] = "settingsun",
 }
 
-local celestialQuests ={
+addon.dailyDB.valeQuests = valeQuests
+
+local function CheckValeQuests()
+    local reset = true
+    --local current = {}
+    for id,hub in pairs(valeQuests) do
+        if addon.IsQuestTurnedIn(id) or addon.IsOnQuest(id) then
+            reset = false
+            --addon.realmData.voeb[hub] = true
+        end
+    end
+    if reset then
+        addon.realmData.voeb = {}
+    end
+end
+
+addon.dailyDB.CheckValeQuests = CheckValeQuests
+
+function addon.dailyDB.ResetQuests(hub)
+    if hub == "klaxxi" then
+        CheckQuestHub("klaxxi")
+    elseif hub == "vale" then
+        CheckValeQuests()
+    elseif hub == "celestial" then
+        CheckQuestHub("celestial")
+    end
+end
+
+celestialQuests ={
 
 [31377] = "jade",
 [31376] = "jade",
@@ -521,6 +605,8 @@ local celestialQuests ={
 
 }
 
+addon.dailyDB.celestialQuests = celestialQuests
+
 function addon.CheckAvailableQuest(id)
     local klaxxiHub = klaxxiQuests[id]
     local valeQ = valeQuests[id]
@@ -529,15 +615,22 @@ function addon.CheckAvailableQuest(id)
     if klaxxiHub then
         addon.realmData.klaxxi = klaxxiHub
     elseif valeQ then
-        if addon.realmData.voteb then
-            addon.realmData.voteb[valeQ] = true
+        if addon.realmData.voeb then
+            addon.realmData.voeb[valeQ] = true
         else
-            addon.realmData.voteb = {[valeQ] = true}
+            addon.realmData.voeb = {[valeQ] = true}
         end
     elseif celestial then
         addon.realmData.celestial = celestial
     else
         return
     end
-    addon.realmData.dailyReset = time() + C_DateAndTime.GetSecondsUntilDailyReset()
+    local t = time()
+    local reset = addon.realmData.dailyReset
+    if not reset or t > reset then
+        addon.realmData.voeb = {}
+        addon.realmData.klaxxi = nil
+        addon.realmData.celestial = nil
+        addon.realmData.dailyReset = t + C_DateAndTime.GetSecondsUntilDailyReset()
+    end
 end

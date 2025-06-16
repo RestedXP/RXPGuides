@@ -1424,7 +1424,6 @@ step
 step
     #completewith next
     #label Withering the Witherbark
-    .goto 2372,54.55,63.34 --clickradius
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
     .turnin 84707 >>Turn in To See a Troll
     .target Overlord Geya'rah
@@ -1567,16 +1566,14 @@ step
     .mob Imposter Refugee
     .mob Syndicate Pyromancer
 step
+    .goto 2372,68.46,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r, |cRXP_FRIENDLY_Faerin Lothar|r and |cRXP_FRIENDLY_Overlord Geya'rah|r.
     .turnin 84709 >>Turn in Hammerfall Down
-    .goto 2372,68.46,30.78
     .target +Eitrigg
     .turnin 84710 >>Turn in Once Bitten Twice Shy
-    .goto 2373,68.43,30.48
     .target +Faerin Lothar
     .turnin 85451 >>Turn in The Burning of Hammerfall
     .accept 84711 >>Accept Danath's Disappearance
-    .goto 2372,68.49,30.63
     .target +Overlord Geya'rah
 step
     .goto 2372,41.55,61.68
@@ -1686,50 +1683,66 @@ step
     .complete 84659,1 --1/1 Army tent searched
     .skipgossipid 132032
 step
-    #label Inn basement
     #completewith next
+    #hidewindow
+    #label Inn basement
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r
     .complete 84659,2 --1/1 Inn basement searched
 step
     #completewith Inn basement
-    #label FollowArrowHouseBasement
     #title |cFFFCDC00Enter the inn|r
     .goto 2372,15.51,61.8,6,0
     .goto 2372,15.15,64.89,5 >>Enter the inn
 step
-    #requires FollowArrowHouseBasement
-    #completewith Inn basement
-    #label FollowArrowInnBasement
-    #title |cFFFCDC00Follow the Arrow|r
-    .goto 2372,14.29,64.96,5,0
-    .goto 2372,14.29,64.54,5,0
-    .goto 2372,14.92,64.46,5 >>Follow the arrow into the basement of the nearby house
-step
     #requires Inn basement
+    #completewith next
+    #label Inn basement2
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r
+    .complete 84659,2 --1/1 Inn basement searched
+    .skipgossipid 132030
+step
+    #completewith Inn basement2
+    #requires Inn basement
+    #hidewindow
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2372,14.29,64.92,3,0
+    .goto 2372,14.3,64.55,3,0
+    .goto 2372,14.78,64.49,5 >>1
+step
+    #requires Inn basement2
     .goto 2372,14.47,64.96
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r
     .complete 84659,2 --1/1 Inn basement searched
     .skipgossipid 132030
 step
+    #requires Inn basement2
     #completewith next
-    #label Basement
+    #hidewindow
+    #label Inn basement3
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Red Dawn Book|r
     .complete 84659,4 --1/1 Home searched
+ step
+    #completewith Inn basement3
+    #requires Inn basement2
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2372,14.78,64.49,5,0
+    .goto 2372,14.3,64.55,3,0
+    .goto 2372,14.29,64.92,3,0
+    .goto 2372,15.2,64.89,5 >>Exit the Inn
 step
-    #label ExitTavern
-    #completewith Basement
-    #title |cFFFCDC00Exit the inn|r
-    .goto 2372,14.86,64.43,5,0
-    .goto 2372,14.3,64.55,5,0
-    .goto 2372,14.3,64.88,5,0
-    .goto 2372,15.07,64.9,5 >>Exit the inn
+    #requires Inn basement3
+    #completewith next
+    #label Home searched
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Dawn Book|r
+    .complete 84659,4 --1/1 Home searched
+    .skipgossipid 132033
 step
-    #requires ExitTavern
-    #completewith Basement
+    #requires Inn basement3
+    #completewith Home searched
     #title |cFFFCDC00Enter the house|r
-    .goto 2372,15.07,64.9,5 >>Enter the house
+    .goto 2372,16.38,68.54,5 >>Enter the house
 step
-    #requires Basement2
+    #requires Home searched
     .goto 2372,16.34,68.87
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Red Dawn Book|r
     .complete 84659,4 --1/1 Home searched
@@ -1751,6 +1764,16 @@ step
     .complete 84659,3 --1/1 Tavern searched
     .skipgossipid 132031
 step
+    #completewith next
+    #hidewindow
+    #label Mage Tower
+    .complete 84659,5 --1/1 Mage tower searched
+step
+    #completewith Mage Tower
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2372,11.3,70.44,5 >>Enter Mage Tower
+step
+    #requires Mage Tower
     .goto 2372,11.32,70.43,5,0
     .goto 2372,11.07,70.85,5,0
     .goto 2372,11.06,70.4,5,0
@@ -1760,7 +1783,6 @@ step
     .goto 2372,17.52,60.58,10,0
     .goto 2372,10.99,70.42
     #title |cFFFCDC00Climb the tower|r
-    >>Climb the Mage Tower
     .complete 84659,5 --1/1 Mage tower searched
 step
     #label Proof2
