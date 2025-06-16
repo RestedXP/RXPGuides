@@ -428,15 +428,19 @@ end
 local function prettyPrintRatio(ratio)
     if not ratio then return "NaN" end
 
+    local percentage
+
     if ratio == 1 then
         return '100%'
     elseif ratio > 0 then
-        return (((ratio * 100) - 100) .. '%')
+        percentage = ((ratio * 100) - 100)
     elseif ratio == 0 then
         return '0%'
+    else -- < 0
+        percentage = (ratio * 100)
     end
-    -- < 0
-    return ((ratio * 100) .. '%')
+
+    return fmt("%.2f%%", percentage)
 end
 
 local function IsWeaponSlot(itemEquipLoc)
