@@ -165,7 +165,7 @@ local function UpdateCooldowns()
                 start,duration = GetItemCooldown(id)
             end
             --local remaining, cd
-            if start then
+            if start and duration then
                 --remaining = start + duration - GetTime()
                 --cd = FormatCooldown(start,remaining,enable)
                 btn.cooldown:SetCooldown(start,duration)
