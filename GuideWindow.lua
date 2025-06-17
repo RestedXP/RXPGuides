@@ -1114,7 +1114,7 @@ function CurrentStepFrame.UpdateText()
 
                          -- Prevent text from overwritten with " ", could be stale text
                         if element.text ~= ' ' then
-                            elementFrame.text:SetText(L(element.text))
+                            elementFrame.text:SetText(addon.ReplaceNpcIds(L(element.text)))
                         else
                             element.requestFromServer = true
                         end
@@ -1845,6 +1845,7 @@ function BottomFrame.UpdateFrame(self, stepn)
             end
 
             if rawtext and not element.hideTooltip then
+                rawtext = addon.ReplaceNpcIds(rawtext,element)
                 if not text then
                     text = "   " .. rawtext
                 else
@@ -1927,6 +1928,7 @@ function BottomFrame.UpdateFrame(self, stepn)
                 end
 
                 if rawtext and not element.hideTooltip and rawtext ~= "" then
+                    rawtext = addon.ReplaceNpcIds(rawtext,element)
                     if not text then
                         text = "   " .. rawtext
                     else

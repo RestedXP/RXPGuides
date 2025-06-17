@@ -733,6 +733,53 @@ function addon.GetQuestObjectives(id, step, useCache)
     end
 end
 
+local NPCNames = {}
+function addon.GetNpcName(id)
+    local npc = NPCNames[id]
+
+    if type(id) ~= "number" then
+        return
+    elseif type(npc) == "string" then
+        return npc
+    elseif not npc or GetTime()-npc > 1.5  then
+        GameTooltip:SetOwner(WorldFrame, "ANCHOR_BOTTOMRIGHT")
+        GameTooltip:ClearLines()
+        GameTooltip:SetHyperlink(string.format("unit:Creature-0-0-0-0-%d",id))
+        local name
+        if GameTooltip:IsShown() then
+            name = GameTooltipTextLeft1:GetText()
+            --DevTools_Dump(name)
+            name = name:match("^|c%x%x%x%x%x%x%x%x(.*)|") or name
+            NPCNames[id] = name
+        end
+        GameTooltip:Hide()
+        if name then
+            return name
+        else
+            NPCNames[id] = GetTime()
+            return
+        end
+    end
+    return npc
+
+end
+
+function addon.ReplaceNpcIds(textLine,element)
+    if element and not element.step.active then
+        return textLine:gsub("::%d+","")
+    end
+    for name,npcId in string.gmatch(textLine, "|c%x%x%x%x%x%x%x%x([^|:]+)::(%d+)|r") do
+        --local newName
+        --if addon.player.lang ~= "en" then
+            local newName = addon.GetNpcName(tonumber(npcId))
+        --end
+        newName = newName or name
+        textLine = textLine:gsub(name.."::%d+",newName)
+    end
+
+    return textLine
+end
+
 function addon.GetItemName(id)
     id = id or false
     id = tonumber(id)
@@ -4151,6 +4198,54 @@ addon.separators.unitscan = semicolonsep
 addon.separators.target = semicolonsep
 addon.separators.mob = semicolonsep
 
+local function CheckNpcIds(element,t)
+    for i,v in ipairs(t) do
+        local name,id = v:match("(.+)::(%d+)$")
+        id = tonumber(id) or tonumber(v)
+        if name and addon.player.lang == "en" then
+            t[i] = name
+        elseif id then
+            local name --= addon.GetNpcName(id)
+            if name then
+                t[i] = name
+            else
+                t[i] = tostring(id)
+                element.update = true
+            end
+        end
+    end
+end
+
+local function UpdateNpcNames(element)
+    local t = element.unitlist
+    if element.update then
+        local update = false
+        local reload
+
+        local i = element.step.index or 0
+        if not element.step.active and math.abs(i-RXPCData.currentStep) > 2 or GetTime() - addon.lastStepUpdate < 1 then
+            return
+        end
+
+        for i,id in ipairs(t) do
+            local id = tonumber(id)
+            if id then
+                local name = addon.GetNpcName(id,element)
+                if name then
+                    t[i] = name
+                    reload = true
+                else
+                    update = true
+                end
+            end
+        end
+        element.update = update
+        if reload and element.step.active then
+             addon.ScheduleTask(0.75,addon.ReloadStep)
+        end
+    end
+end
+
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
         local element = {}
@@ -4162,12 +4257,14 @@ function addon.functions.unitscan(self, text, ...)
         local prefix = t[1]
         if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
-            element.unitlist = t
             element.parent = true
         end
+        element.unitlist = t
+        CheckNpcIds(element,t)
         return element
     end
 
+    UpdateNpcNames(self.element)
     UpdateTargets(self.element,"unitscan")
 end
 
@@ -4182,12 +4279,14 @@ function addon.functions.target(self, text, ...)
         local prefix = t[1]
         if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
-            element.unitlist = t
             element.parent = true
         end
+        element.unitlist = t
+        CheckNpcIds(element,t)
         return element
     end
 
+    UpdateNpcNames(self.element)
     UpdateTargets(self.element,"targets")
 end
 
@@ -4202,12 +4301,14 @@ function addon.functions.mob(self, text, ...)
         local prefix = t[1]
         if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
-            element.unitlist = t
             element.parent = true
         end
+        element.unitlist = t
+        CheckNpcIds(element,t)
         return element
     end
 
+    UpdateNpcNames(self.element)
     UpdateTargets(self.element,"mobs")
 end
 

@@ -178,6 +178,7 @@ addon.player = {
     maxlevel = maxLevel,
     season = addon.GetSeason(),
     beta = GetCurrentRegion() >= 20,
+    lang = GetLocale():sub(1,2)
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
