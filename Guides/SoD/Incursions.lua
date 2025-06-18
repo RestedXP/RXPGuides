@@ -165,7 +165,11 @@ step
     .accept 81744 >> Accept Duskwood Mission XV: Defeat Amokarok
     .maxlevel 53
 step
-    .goto 1431/0,-421.400,-10360.601,5 >> Go through the dream portal to travel to the nightmare version of Duskwood. |cRXP_WARN_There's a lot of mobs including stealthed satyrs on the way to the portal. Try not to fight them and just run straight into it. All the mobs will reset once you go through|r
+    #completewith next
+    +|cRXP_WARN_Click on the portal next to the questgiver|r to be phased into the Emerald Dream
+    .maxlevel 53
+step
+    .goto Duskwood,47.07,49.64,10 >> Head out of the Twilight Grove |cRXP_WARN_once inside the Emerald Dream|r
     .maxlevel 53
 step
     #sticky
@@ -291,16 +295,14 @@ step
     .goto 1431/0,-421.400,-10360.601,5 >> Head back to the nightmare portal. |cRXP_WARN_Do not die on the way or the escort quests will fail! If you safely reach the portal all three quests should complete|r
     .maxlevel 53
 step
-    .goto 1431/0,-422.100,-10412.101
-    >>Make sure you got the credit for all of the escort quests. They should all complete by the time you reach the portal. |cRXP_WARN_Don't cross to the other side and wait a bit if you don't have the credit yet|r
-    >>|cRXP_WARN_If any of the three NPCs is no longer following you go back and talk to then again|r
-    >>|cRXP_WARN_Walk back and forth of the pointed marked by your arrow (bottom of the portal ramp) a couple times. This will make the NPCs cross the threshold and give you the credit|r
+    .goto 1431/0,-421.400,-10360.601
+    >>Make sure you got the credit for all of the escort quests. They should all complete by the time you reach the portal. |cRXP_WARN_Try moving back and forth a bit if you don't get the credit|r
     .complete 81745,1
     .complete 81746,1
     .complete 81747,1
     .maxlevel 53
 step
-    .goto 1431/0,-421.400,-10360.601,5 >> Go back through the dream portal to travel to the real world version of Duskwood. |cRXP_WARN_Do not die on the way or the escort quests will fail! If you safely reach the portal all three quests should complete|r
+    .goto Duskwood,46.63,47.90,5 >> Return to the portal you ussed to phase into the emerald dream and |cRXP_WARN_click it to phase back into the normal world|r
     .maxlevel 53
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Field Captain Palandar|r
@@ -907,8 +909,8 @@ step
     .target Quartermaster Alandra
     .maxlevel 53
 step
-    .goto The Hinterlands,62.25,22.88,7 >> Go through the dream portal to travel to the nightmare version of The Hinterlands. |cRXP_WARN_There's a lot of mobs including stealthed satyrs on the way to the portal. Try not to fight them and just run straight into it. All the mobs will reset once you go through|r
-    .maxlevel 53
+    #completewith next
+    +|cRXP_WARN_Click on the portal next to the questgiver|r to be phased into the Emerald Dream
 step
     .goto 1425/0,-3788.100,468.800,20 >> Head towards Skulk Rock. |cRXP_WARN_Avoid running into the |cRXP_ENEMY_Unstable Wisps|r or they will explode dealing around 700 damage to you|r
     .maxlevel 53
@@ -1063,7 +1065,7 @@ step
 step
     #requires Turtles
     .goto 1425/0,-4010.800,758.000
-    >>Make sure you got the credit for all of the escort quests. They should all complete by the time you reach the portal. |cRXP_WARN_Don't cross to the other side and wait a bit if you don't have the credit yet|r
+    >>Make sure you got the credit for all of the escort quests. They should all complete by the time you reach the big dream portal
     >>|cRXP_WARN_If any of the three NPCs is no longer following you go back and talk to then again|r
     >>|cRXP_WARN_Walk back and forth of the pointed marked by your arrow (bottom of the portal ramp) a couple times. This will make the NPCs cross the threshold and give you the credit|r
     .complete 81850,1
@@ -1071,7 +1073,7 @@ step
     .complete 81852,1
     .maxlevel 53
 step
-    .goto The Hinterlands,62.25,22.88,7 >> Go back through the portal to the real world version of The Hinterlands
+    .goto The Hinterlands,61.35,34.58,5 >> Go back through the portal to the real world version of The Hinterlands
     .maxlevel 53
 step
     >>Talk to |cRXP_FRIENDLY_Field Captain Korlian|r
