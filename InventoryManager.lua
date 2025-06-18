@@ -359,14 +359,35 @@ _G["BINDING_NAME_CLICK RXPInventory_DeleteJunk:LeftButton"] =
     L("Delete Cheapest Junk Item")
 
 local bagEvent = "BAG_UPDATE_DELAYED"
-local WorldFrameHook = function()
+local WorldFrameHook = function(self,...)
+    --local n = self and self:GetName()
+    --print(n,...)
     if inventoryManager.IsBagAutomationEnabled() then
         DeleteItems()
     end
     OpenItems()
 end
-local f = inventoryManager.DeleteJunkFrame or CreateFrame("Frame","RXPDeleteJunk",WorldFrame)
+local f = inventoryManager.DeleteJunkFrame or CreateFrame("Frame","RXPDeleteJunk",UIParent)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
+
+local clickFrame
+
+if f.SetPassThroughButtons then
+    --post patch 1.15.7 workaround
+    clickFrame = CreateFrame("Frame","RXPJunkHandler",UIParent)
+    clickFrame:SetAllPoints("WorldFrame")
+    clickFrame:SetScript("OnMouseDown", function(self)
+        WorldFrameHook()
+        clickFrame:Hide()
+    end)
+    clickFrame:EnableMouse(false)
+    clickFrame:SetMouseClickEnabled(true)
+    clickFrame:EnableMouseMotion(false)
+    clickFrame:EnableMouseWheel(false)
+    clickFrame:SetFrameStrata("BACKGROUND")
+    clickFrame:SetFrameLevel(0)
+    clickFrame:Hide()
+end
 
 --You can only delete items on a hardware input, so we hook every keyboard input and mouse click to our item deletion function
 
@@ -374,7 +395,19 @@ f:SetScript("OnEvent",function(self)
     inventoryManager.bagUpdated = true
     self:RegisterEvent(bagEvent)
     self:RegisterEvent("LOOT_READY")
-    self:SetScript("OnEvent",function()
+    self:RegisterEvent("UI_ERROR_MESSAGE")
+
+    self:SetScript("OnEvent",function(self,event,flag,msg)
+        if clickFrame then
+            if inventoryManager.IsBagAutomationEnabled() then
+                if event == "UI_ERROR_MESSAGE" and flag == 3 and msg == INVENTORY_FULL and LootFrame:IsShown() then
+                    clickFrame:Show()
+                    LootFrame:Hide()
+                end
+            else
+                clickFrame:Hide()
+            end
+        end
         if inventoryManager.IsBagAutomationEnabled() then
             FindJunk()
         end
