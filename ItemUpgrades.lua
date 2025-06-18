@@ -872,7 +872,7 @@ local function CalculateDPSWeight(itemData, stats)
 
     local dpsWeights = {}
     local itemEquipLoc = itemData.itemEquipLoc
-    local speedWeightKey, dpsWeight, speedKindWeight
+    local speedWeightKey, dpsWeight, speedKindWeight, dpsWeightModifier
 
     -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
@@ -881,11 +881,15 @@ local function CalculateDPSWeight(itemData, stats)
         if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
             'INVTYPE_RANGEDRIGHT' then
 
-            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                            session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
+            dpsWeightModifier = session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
         else
-            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                            session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+            dpsWeightModifier = session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+        end
+
+        if dpsWeightModifier > 0 then
+            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] * dpsWeightModifier
+        else
+            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] -- * 1
         end
 
         -- Lookup speed weight key with kind suffix (MH, OH, RANGED, 2H)
