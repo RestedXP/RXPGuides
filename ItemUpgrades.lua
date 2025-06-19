@@ -973,7 +973,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     end
 
     if session.itemCache[itemLink] then
-        if session.itemCache[itemLink] == -1 then return end
+        if session.itemCache[itemLink].unusable then return end
         -- print("Returning cached weight", itemLink, session.itemCache[itemLink].totalWeight)
         return session.itemCache[itemLink]
     end
@@ -985,10 +985,22 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or itemEquipLoc == "INVTYPE_BAG" or
         itemEquipLoc == "INVTYPE_NON_EQUIP_IGNORE" then return end
 
+    local itemData
+
     if not IsUsableForClass(itemSubTypeID, itemEquipLoc) then
-        -- print("GetItemData: not usable by class")
-        session.itemCache[itemLink] = -1
-        return
+        itemData = {
+            unusable = true,
+            itemLink = itemLink,
+            itemSubTypeID = itemSubTypeID,
+            itemEquipLoc = itemEquipLoc,
+            sellPrice = sellPrice,
+            itemMinLevel = itemMinLevel,
+            setID = setID
+        }
+
+        session.itemCache[itemLink] = itemData
+
+        return itemData
     end
 
     -- Parse API stats first before processing tooltip text
@@ -1011,7 +1023,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         totalWeight = session.activeStatWeights.extraWeight[itemID]
     end
 
-    local itemData = {
+    itemData = {
         itemID = itemID,
         itemLink = itemLink,
         itemSubTypeID = itemSubTypeID,
