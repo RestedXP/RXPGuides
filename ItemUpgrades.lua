@@ -1384,14 +1384,11 @@ end
 function addon.itemUpgrades.AH:SearchForSelectedItem() return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData) end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
-    RXPD4 = itemData
     if not itemData.Name then
-        print("not itemData.name")
         return
     end
 
     if not _G.AuctionFrame:IsShown() then
-        print("not session.windowOpen")
         return
     end
 
