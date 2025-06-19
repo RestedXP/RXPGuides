@@ -886,7 +886,7 @@ local function CalculateDPSWeight(itemData, stats)
             dpsWeightModifier = session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
         end
 
-        if dpsWeightModifier > 0 then
+        if dpsWeightModifier and dpsWeightModifier > 0 then
             dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] * dpsWeightModifier
         else
             dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] -- * 1
