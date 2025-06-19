@@ -896,7 +896,7 @@ local function CalculateDPSWeight(itemData, stats)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
 
         -- Check weaponKind keys for class statWeights
-        if session.activeStatWeights[speedWeightKey] then
+        if session.activeStatWeights[speedWeightKey] and session.activeStatWeights[speedWeightKey] > 0 then
             speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * session.activeStatWeights[speedWeightKey]
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
