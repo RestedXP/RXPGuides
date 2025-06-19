@@ -1152,10 +1152,9 @@ function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
     end
 
     for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
-        print("CalculateWeaponWeight, suffix", suffix, "SPEED_SUFFIX_SLOT_MAP[suffix]", SPEED_SUFFIX_SLOT_MAP[suffix],
-              "return", itemData.totalWeight + dpsData.totalWeight)
-
         if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
+            print("CalculateWeaponWeight, suffix", suffix, slotComparisonId, itemData.totalWeight + dpsData.totalWeight)
+
             return itemData.totalWeight + dpsData.totalWeight
         end
     end
