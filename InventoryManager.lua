@@ -378,6 +378,11 @@ if f.SetPassThroughButtons then
     clickFrame:SetAllPoints("WorldFrame")
     clickFrame:SetScript("OnMouseDown", function(self)
         WorldFrameHook()
+        if GetCVarBool("autoLootDefault") ~= IsModifiedClick("AUTOLOOTTOGGLE") then
+            for i = GetNumLootItems(), 1, -1 do
+                LootSlot(i)
+            end
+        end
         clickFrame:Hide()
     end)
     clickFrame:EnableMouse(false)
@@ -402,7 +407,6 @@ f:SetScript("OnEvent",function(self)
             if inventoryManager.IsBagAutomationEnabled() then
                 if event == "UI_ERROR_MESSAGE" and flag == 3 and msg == INVENTORY_FULL and LootFrame:IsShown() then
                     clickFrame:Show()
-                    LootFrame:Hide()
                 end
             else
                 clickFrame:Hide()
