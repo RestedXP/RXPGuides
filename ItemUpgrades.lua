@@ -876,7 +876,7 @@ local function CalculateDPSWeight(itemData, stats)
 
     local dpsWeights = {}
     local itemEquipLoc = itemData.itemEquipLoc
-    local speedWeightKey, dpsWeight, speedKindWeight, dpsWeightModifier
+    local speedWeightKey, speedWeightModifier, dpsWeight, speedKindWeight, dpsWeightModifier
 
     -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
@@ -898,10 +898,18 @@ local function CalculateDPSWeight(itemData, stats)
 
         -- Lookup speed weight key with kind suffix (MH, OH, RANGED, 2H)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
+        speedWeightModifier = session.activeStatWeights[speedWeightKey]
 
-        -- Check weaponKind keys for class statWeights
-        if session.activeStatWeights[speedWeightKey] and session.activeStatWeights[speedWeightKey] > 0 then
-            speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * session.activeStatWeights[speedWeightKey]
+        -- Prevent multiplication by 0
+        if not speedWeightModifier or speedWeightModifier == 0 then
+            speedWeightModifier = 1
+        end
+
+        -- Exclude Off-hand comparison before trained
+        if keySuffix == "OH" and not session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
+            -- print("Untrained OH")
+        elseif speedWeightModifier then
+            speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * speedWeightModifier
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
             dpsWeights[keySuffix] = {['totalWeight'] = dpsWeight + speedKindWeight, ['speedWeight'] = speedKindWeight}
