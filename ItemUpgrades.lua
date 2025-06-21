@@ -527,20 +527,22 @@ local function TooltipSetItem(tooltip, ...)
         end
 
         for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
-            equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
-            -- TODO handle 1H for casters, dpsWeights[suffix] is nil
-            comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
+            -- Only compare weights if they are compatible
+            if itemData.dpsWeights[suffix] then
+                equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
 
-            -- TODO if no equippedWeaponWeight then not comparable slot
-            lineText = fmt("  %s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
-                           comparedWeaponWeight - equippedWeaponWeight)
+                comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
-            if statsData['debug'] and addon.settings.profile.debug then
-                lineText = fmt("%s (%s)", lineText, statsData['debug'])
+                lineText = fmt("  %s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
+                            comparedWeaponWeight - equippedWeaponWeight)
+
+                if statsData['debug'] and addon.settings.profile.debug then
+                    lineText = fmt("%s (%s)", lineText, statsData['debug'])
+                end
+
+                -- Add a comparison line for every statComparison, should be 1 except for 1H weapons and rings
+                if lineText then tinsert(lines, lineText) end
             end
-
-            -- Add a comparison line for every statComparison, should be 1 except for 1H weapons and rings
-            if lineText and itemData.dpsWeights[suffix] then tinsert(lines, lineText) end
         end
     end
 
@@ -840,13 +842,15 @@ local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
         return
     end
 
-    -- Type not usable by class
     if IsWeaponSlot(itemEquipLoc) then
         if not session.equippableWeapons[itemSubTypeID] then return end
     else
         if not session.equippableArmor[itemSubTypeID] then return end
     end
 
+    -- A fully trained class will get to here, but that's not the case when leveling
+    -- TODO exclude untrained weapon types
+    -- https://www.wowhead.com/classic/spells/proficiencies?filter=22;1;0
     return true
 end
 
