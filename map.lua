@@ -184,10 +184,10 @@ local function PinOnEnter(self)
             text = parent.mapTooltip or parent.tooltipText or hiddentext or parent.text or ""
             local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
             if title and title ~= lastStep then
-                _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
+                _G.GameTooltip:AddLine(addon.ReplaceNpcIds(icon..title),unpack(addon.colors.mapPins))
                 lastStep = title
             end
-            _G.GameTooltip:AddLine(debug..text)
+            _G.GameTooltip:AddLine(addon.ReplaceNpcIds(debug..text))
             lines = lines + 1
         elseif not parent and not element.hideTooltip then
             local hiddentext = step.hiddentext
@@ -197,10 +197,10 @@ local function PinOnEnter(self)
             text = element.mapTooltip or element.tooltipText or hiddentext or step.text or ""
             local title = step.mapTooltip or step.title or step.index and ("Step " .. step.index) or step.tip and "Tip"
             if title and step ~= lastStep then
-                _G.GameTooltip:AddLine(icon..title,unpack(addon.colors.mapPins))
+                _G.GameTooltip:AddLine(addon.ReplaceNpcIds(icon..title),unpack(addon.colors.mapPins))
                 lastStep = title
             end
-            _G.GameTooltip:AddLine(debug..text)
+            _G.GameTooltip:AddLine(addon.ReplaceNpcIds(debug..text))
             lines = lines + 1
         end
     end
@@ -298,8 +298,12 @@ MapPinPool.creationFunc = function(framePool)
             self.text:SetTextColor(unpack(addon.colors.mapPins))
         end
 
-        if #pin.elements > 1 and not icon then
+        if not icon and #pin.elements > 1 then
             self.text:SetText(label .. "+")
+        elseif step.alternateIcon and #pin.elements > 1 then
+            icon = step.alternateIcon and step.alternateIcon:match("(|T.-:%d.*|t)") or icon
+            label = icon
+            self.text:SetText(label)
         else
             self.text:SetText(label)
         end
@@ -692,9 +696,8 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
             local step = steps[startingIndex + i]
             ProcessMapPin(step)
         end
-
-        addon:ProcessGeneratedSteps(ProcessMapPin,true)
     end
+    addon:ProcessGeneratedSteps(ProcessMapPin,true)
 
     return pins
 end
@@ -959,8 +962,9 @@ local function addMiniMapPins(pins)
         if element and element.x then
             local miniMapFrame = miniMapFramePool:Acquire()
             miniMapFrame:render(pin, true)
+            local step = element.step
             HBDPins:AddMinimapIconMap(addon, miniMapFrame, element.zone,
-                                      element.x / 100, element.y / 100, true, true)
+                                      element.x / 100, element.y / 100, true, not (step and step.hideMinimap))
         end
     end
 end

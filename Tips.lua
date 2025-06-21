@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.gameVersion > 40000 then return end
+if addon.gameVersion > 60000 then return end
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
@@ -449,12 +449,19 @@ end
 
 local function IsStepActive(self)
     local levelBuffer = 1000
-    if (not addon.settings.profile.showDangerousMobsMap and self.mapTooltip) or
-        (self.isUnitscan and not addon.settings.profile.showDangerousUnitscan) then
+    local profile = addon.settings.profile
+    local active
+    if addon.gameVersion < 20000 then
+        active = profile.showDangerousMobsMap
+    else
+        active = profile.showRares and self.rare or profile.showTreasures and self.treasure
+    end
+    if (not active and self.mapTooltip) or
+        (self.isUnitscan and not profile.showDangerousUnitscan) then
         -- DevTools_Dump(self.elements[1].unitscan)
         -- DevTools_Dump(self.elements[1].targets)
         return false
-    elseif not addon.settings.profile.debug and self.levelBuffer then
+    elseif not profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
     end
     if not self.MaxLevel or self.MaxLevel >= UnitLevel("player") - levelBuffer then
@@ -470,8 +477,11 @@ function addon.tips:LoadDangerousMobs(reloadData)
                      GetRealZoneText()
     local zoneList
     addon.UpdateMap()
-
-    if not zone or not addon.dangerousMobs[zone] and
+    if not zone or not addon.dangerousMobs[zone] then
+        zone = mapId
+    end
+    --print(zone,addon.dangerousMobs[zone])
+    if not addon.dangerousMobs[zone] and
         not addon.settings.profile.debug then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
@@ -488,46 +498,69 @@ function addon.tips:LoadDangerousMobs(reloadData)
         for _, zoneData in pairs(zoneList) do
             for name, list in pairs(zoneData) do
                 for _, mobData in ipairs(list) do
-                    -- added a semicolon separator in case the database entry has multiple coords
-                    for line in mobData.Location:gmatch("[^\r\n;]+") do
-                        line:gsub("^%s+", "")
-                        line:gsub("%s+$", "")
-                        local element = addon.ParseLine(line)
-                        local skip
-                        if element then
-                            local step = {}
-                            element.step = step
-                            -- element.drawCenterPoint = true--Adds an icon at the center of the lines
-                            step.isActive = IsStepActive
-                            step.levelBuffer =
-                                mobData.Classification == "Normal" and 1 or 3
-                            if element.wx or element.segments then
-                                -- step.linethickness = 2
-                                step.showTooltip = true -- Shows tooltip when hovering over a line
-                                step.icon =
-                                    "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t" -- texture used for the icon
-                                step.mapTooltip = fmt("%s %s (%d)",
-                                                      _G.VOICEMACRO_1_Sc_0,
-                                                      name, mobData.MaxLevel) -- Tooltip title
+                    if not mobData.applies or addon.applies(mobData.applies) then
+                        if type(name) == "number" then
+                            name = fmt("npc:%s:%d",mobData.Name or "",name)
+                        end
+                        -- added a semicolon separator in case the database entry has multiple coords
+                        for line in mobData.Location:gmatch("[^\r\n;]+") do
+                            line:gsub("^%s+", "")
+                            line:gsub("%s+$", "")
+                            local element = addon.ParseLine(line)
+                            local skip
+                            if element then
+                                local step = {}
+                                if element.tag == "rare" then step.rare = true end
+                                if element.tag == "treasure" then step.treasure = true end
+                                element.step = step
+                                -- element.drawCenterPoint = true--Adds an icon at the center of the lines
+                                step.isActive = IsStepActive
+                                step.levelBuffer =
+                                    mobData.Classification == "Normal" and 1 or 3
+                                if element.wx or element.segments then
+                                    -- step.linethickness = 2
+                                    step.showTooltip = true -- Shows tooltip when hovering over a line
+                                    step.icon = mobData.Icon or
+                                        "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t" -- texture used for the icon
+                                    step.alternateIcon = mobData.AltIcon
+                                    local prefix = ""
 
-                                -- Tooltip description:
-                                element.mapTooltip = fmt("%s - %s\n%s",
-                                                         mobData.Classification or
-                                                             "",
-                                                         mobData.Movement or "",
-                                                         mobData.Notes or "")
-                            elseif element.targets or element.unitscan or
-                                element.mobs then
-                                if not addon.settings.profile
-                                    .showDangerousUnitscan then
-                                    skip = true
-                                    -- DevTools_Dump(self.elements[1].mobs)
+                                    if addon.gameVersion < 20000 then
+                                        prefix = _G.VOICEMACRO_1_Sc_0
+                                        step.mapTooltip = fmt("%s %s (%d)",
+                                                            prefix,
+                                                            name, mobData.MaxLevel) -- Tooltip title
+                                    else
+                                        step.mapTooltip = name -- Tooltip title
+                                    end
+
+                                    -- Tooltip description:
+                                    if mobData.Movement then
+                                    element.mapTooltip = fmt("%s - %s\n%s",
+                                                            mobData.Classification or
+                                                                "",
+                                                            mobData.Movement or "",
+                                                            mobData.Notes or "")
+                                    else
+                                    element.mapTooltip = fmt("%s\n%s",
+                                                            mobData.Classification or
+                                                                "",
+                                                            mobData.Notes or "")
+                                    end
+                                elseif element.targets or element.unitscan or
+                                    element.mobs then
+                                    if not addon.settings.profile
+                                        .showDangerousUnitscan then
+                                        skip = true
+                                        -- DevTools_Dump(self.elements[1].mobs)
+                                    end
+                                    step.isUnitscan = true
                                 end
-                                step.isUnitscan = true
-                            end
-                            if not skip then
-                                step.elements = {element}
-                                tinsert(steps, step)
+                                if not skip then
+                                    step.hideMinimap = true
+                                    step.elements = {element}
+                                    tinsert(steps, step)
+                                end
                             end
                         end
                     end

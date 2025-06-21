@@ -827,9 +827,10 @@ local function parseLine(linetext,step,parsingLogic)
     if not step then
         if element then
             element.parent = nil
-        else
+        --[[else
             addon.error(L("Error parsing ") .. addon.currentGuideName .. ':'
                  .. linetext)
+        ]]
         end
     elseif step.elements and element then
         tinsert(step.elements, element)

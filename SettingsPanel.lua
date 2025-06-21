@@ -2280,7 +2280,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     dangerousMobsHeader = {
-                        name = L("Dangerous Mobs Tracking"),
+                        name = addon.gameVersion < 20000 and L("Dangerous Mobs Tracking") or L("Rare Tracker"),
                         type = "header",
                         width = "full",
                         order = 4.0,
@@ -2304,7 +2304,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.dangerousMobs
+                            return not addon.dangerousMobs or addon.gameVersion > 20000
                         end
                     },
                     showDangerousUnitscan = {
@@ -2323,7 +2323,62 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.dangerousMobs
+                            return not addon.dangerousMobs or addon.gameVersion > 20000
+                        end
+                    },
+                    showRares = {
+                        name = L("Track Rare Mobs"), -- TODO locale
+                        desc = addon.rareDesc,
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.3,
+                        set = function(info, value)
+                            -- addon.settings.profile.showDangerousMobsMap = value
+                            SetProfileOption(info, value)
+                            addon.tips:LoadDangerousMobs(true)
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips
+                        end,
+                        hidden = function()
+                            return not addon.dangerousMobs or addon.gameVersion < 20000
+                        end
+                    },
+                    ignoreDuplicateRares = {
+                        name = L("Skip mobs already killed"), -- TODO locale
+                        desc = L("Don't show on the map rare mobs you already killed for their respective achievement"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.31,
+                        set = function(info, value)
+                            -- addon.settings.profile.showDangerousMobsMap = value
+                            SetProfileOption(info, value)
+                            addon.tips:LoadDangerousMobs(true)
+                            addon:ReloadGuide(true)
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips
+                        end,
+                        hidden = function()
+                            return not addon.dangerousMobs or addon.gameVersion < 20000
+                        end
+                    },
+                    showTreasures = {
+                        name = L("Track Treasures"), -- TODO locale
+                        desc = addon.treasureDesc,
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.32,
+                        set = function(info, value)
+                            -- addon.settings.profile.showDangerousMobsMap = value
+                            SetProfileOption(info, value)
+                            addon.tips:LoadDangerousMobs(true)
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips
+                        end,
+                        hidden = function()
+                            return not addon.dangerousMobs or addon.gameVersion < 20000
                         end
                     },
                     itemUpgradesHeader = {

@@ -759,12 +759,19 @@ function addon.GetNpcName(id)
             NPCNames[id] = GetTime()
             return
         end
+    else
+        return
     end
-    return npc
-
 end
 
 function addon.ReplaceNpcIds(textLine,element)
+    textLine = textLine:gsub("npc:(.-):(%d+)",function(name,id)
+        if not element or element.step.active then
+            return addon.GetNpcName(tonumber(id)) or name
+        else
+            return id
+        end
+    end)
     if element and not element.step.active then
         return textLine:gsub("::%d+","")
     end
@@ -1992,7 +1999,7 @@ function addon.functions.pin(self, ...)
     -- creates a map pin without an waypoint arrow
     if type(self) == "string" then
         local element = {}
-        element.tag = "goto"
+        --element.tag = "goto"
         local text, zone, x, y, tooltip = ...
         if zone then
             lastZone = zone
@@ -2048,6 +2055,87 @@ function addon.functions.pin(self, ...)
         element.textOnly = true
 
         return element
+    end
+end
+
+events.treasure = "QUEST_LOG_UPDATE"
+function addon.functions.treasure(self, text, zone, x, y, id)
+    if type(self) == "string" then
+        local element = addon.functions.pin(self, text, zone, x, y)
+        element.questId = tonumber(id)
+        --element.ignoreGrouping = true
+        if element.questId and IsQuestTurnedIn(element.questId) then
+            return
+        else
+            return element
+        end
+    end
+    local element = self.element
+    local qid = element.questId
+    element.step.treasure = true
+    if not (element.skip or addon.settings.profile.showTreasures) then
+        addon.SetElementComplete(self)
+        return
+    elseif element.skip and addon.settings.profile.showTreasures then
+        addon.SetElementIncomplete(self)
+    end
+    if qid and not element.skip and IsQuestTurnedIn(qid) then
+        element.completed = true
+        element.skip = true
+        addon.UpdateMap()
+    end
+end
+
+addon.rares = {}
+local rareAchievements = {7439,8103,8714}
+events.rare = "CRITERIA_UPDATE"
+function addon.functions.rare(self, text, zone, x, y, nameOrId)
+    if type(self) == "string" then
+        local element = addon.functions.pin(self, text, zone, x, y)
+        local z = element.zone
+        local zoneTable = addon.rares[z] or {}
+        addon.rares[z] = zoneTable
+        element.id = tonumber(nameOrId:match("(%d+)"))
+        local index = fmt("%.2f,%.2f",element.x,element.y)
+        zoneTable[index] = nameOrId
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    step.rare = true
+    if not (element.skip or addon.settings.profile.showRares) then
+        addon.SetElementComplete(self)
+        return
+    elseif element.skip and addon.settings.profile.showRares then
+        addon.SetElementIncomplete(self)
+    end
+    if not addon.settings.profile.ignoreDuplicateRares then
+        addon.SetElementIncomplete(self)
+        return
+    end
+    if step.active and element.id and not element.name then
+        element.name = addon.GetNpcName(element.id)
+    end
+    if not element.achievement and type(element.name) == "string" then
+        for _,id in ipairs(rareAchievements) do
+            local n = GetAchievementNumCriteria(id)
+            for i = 1,n do
+                local displayText = GetAchievementCriteriaInfo(id,i)
+                if displayText == element.name then
+                    element.achievement = id
+                    element.criteria = i
+                    break
+                end
+            end
+            if element.achievement then break end
+        end
+    end
+    if element.achievement and not element.skip then
+        local displayText,_,completed = GetAchievementCriteriaInfo(element.achievement,element.criteria)
+        if completed then
+            --print(displayText,'ok1')
+            addon.SetElementComplete(self)
+        end
     end
 end
 
