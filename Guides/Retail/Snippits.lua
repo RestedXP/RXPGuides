@@ -80,16 +80,16 @@ RXPGuides.RegisterGuide([[
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
 --     >>|cRXP_WARN_These professions are used for Darkmoon Faire quests later. If you don't want to do this, skip this step|r.
 --     .train 2259 >> Train |T4620669:0|t[Alchemy] and |T4620676:0|t[Inscription]
--- 	.skipgossip 47384,2,1,1
--- 	.target Lien Farmer
+--     .skipgossip 47384,2,1,1
+--     .target Lien Farmer
 --     .dmf
 -- step
 --     #veteran
 --     .goto 37,41.95,67.16
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
 --     .train 45357 >> Train |T4620676:0|t[Inscription]
--- 	.skipgossip 47384,3,6,2
--- 	.target Lien Farmer
+--     .skipgossip 47384,3,6,2
+--     .target Lien Farmer
 --     .dmf
 --     .train 2259,3 --Only show if you have Alchemy
 -- step
@@ -101,7 +101,7 @@ RXPGuides.RegisterGuide([[
 -- --  .collect 2320,1,29520,1 --Coarse Thread (1)
 --     .collect 30817,5,29509,1 --Simple Flour (5)
 --     .collect 39354,5,29515,1 --Light Parchment (1)
--- 	.target Tharynn Bouden
+--     .target Tharynn Bouden
 --     .dmf
 --     .train 45357,3 --Only show if you have Inscription
 -- --XX 29520 needs to be added
@@ -114,7 +114,7 @@ RXPGuides.RegisterGuide([[
 -- --    .collect 6260,1,29520,1 --Blue Dye (1)
 -- --  .collect 2320,1,29520,1 --Coarse Thread (1)
 --     .collect 30817,5,29509,1 --Simple Flour (5)
--- 	.target Tharynn Bouden
+--     .target Tharynn Bouden
 --     .dmf
 -- --XX 29520 needs to be added
 -- --XX DMF section needs a polish at some point. Coords to 3dp, new formatting, #optional on steps
@@ -137,7 +137,7 @@ RXPGuides.RegisterGuide([[
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kae Ti|r and buy a |T133734:0|t[Ride Ticket Book] from her.
 --     *|cRXP_WARN_buy the cheaper version |cRXP_WARN_on the left in the window|r|r.
 --     .collect 92788,1,92794,1 --Ride Ticket Book (1)
--- 	.target Kae Ti
+--     .target Kae Ti
 --     .dmf
 -- step
 --     #completewith next
@@ -147,7 +147,7 @@ RXPGuides.RegisterGuide([[
 --     .use 92788
 --     .use 92794
 -- step
--- 	#veteran
+--     #veteran
 --     .goto 407,49.45,57.5
 --     >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r|r.
 --     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the quest items in your bag |cRXP_WARN_and skip the ones you don't have)|
@@ -164,13 +164,13 @@ RXPGuides.RegisterGuide([[
 --     .zoneskip 407,1
 --     .dmf
 -- step
--- 	#fresh
+--     #fresh
 --     .goto 407,49.45,57.5
 --     >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r|r.
 --     .zoneskip 407,1
 --     .dmf
 -- step
--- 	#veteran
+--     #veteran
 --     .goto 407,51.91,60.94
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
 --     .turnin -29464 >>Turn in Tools of Divination
@@ -188,7 +188,7 @@ RXPGuides.RegisterGuide([[
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r and buy as many |T669449:0|t[Darkmoon Top Hats] from him as you can.
 --     .turnin 7905 >>Turn in The Darkmoon Faire
 --     .collect 171364,1,29506,1 --Darkmoon Top Hat (1)
--- 	.target Gelvas Grimegate
+--     .target Gelvas Grimegate
 --     .zoneskip 407,1
 --     .dmf
 -- step
@@ -196,40 +196,40 @@ RXPGuides.RegisterGuide([[
 --     .goto 407,47.76,64.76
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r.
 --     .turnin 7905 >>Turn in The Darkmoon Faire
--- 	.target Gelvas Grimegate
+--     .target Gelvas Grimegate
 --     .zoneskip 407,1
 --     .dmf
 -- step
 --     .goto 407,52.89,67.96
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r.
 --     .accept 29509 >>Accept Putting the Crunch in the Frog
--- 	.target Stamp Thunderhorn
+--     .target Stamp Thunderhorn
 --     .zoneskip 407,1
 --     .dmf
 -- step
 --     .goto 407,52.88,67.96
 --     >>Use the |T133642:0|t[Plump Frogs] to turn them into |T237579:0|t[Breaded Frogs].
--- 	.collect 72056,5,29509,1,-1 --Plump Frogs (5)
--- 	.collect 30817,5,29509,1,-1 --Simple Flour (5)
--- 	.collect 72057,5,29509,1 --Breaded Frog (5)
+--     .collect 72056,5,29509,1,-1 --Plump Frogs (5)
+--     .collect 30817,5,29509,1,-1 --Simple Flour (5)
+--     .collect 72057,5,29509,1 --Breaded Frog (5)
 --     .use 72056 --Plump Frog
 --     .zoneskip 407,1
--- 	.dmf
--- 	.isOnQuest 29509
+--     .dmf
+--     .isOnQuest 29509
 -- step
 --     .goto 407,52.88,67.96
--- 	>>Use the |T237579:0|t[Breaded Frogs] near |cRXP_FRIENDLY_Stamp Thunderhorn|r.
--- 	.collect 72057,5,29509,1,-1 --Breaded Frog (5)
+--     >>Use the |T237579:0|t[Breaded Frogs] near |cRXP_FRIENDLY_Stamp Thunderhorn|r.
+--     .collect 72057,5,29509,1,-1 --Breaded Frog (5)
 --     .complete 29509,1 --5/5 Crunchy Frog
--- 	.use 72057 --Breaded Frog
+--     .use 72057 --Breaded Frog
 --     .zoneskip 407,1
 --     .dmf
--- 	.isOnQuest 29509
+--     .isOnQuest 29509
 -- step
 --     .goto 407,52.88,67.96
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r.
 --     .turnin 29509 >>Turn in Putting the Crunch in the Frog
--- 	.target Stamp Thunderhorn
+--     .target Stamp Thunderhorn
 --     .zoneskip 407,1
 --     .dmf
 -- step
@@ -237,7 +237,7 @@ RXPGuides.RegisterGuide([[
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r and buy |T132792:0|t[Fizzy Faire Drinks] from her.
 --     .accept 29506 >>Accept A Fizzy Fusion
 --     .collect 19299,5,29506,1 --Fizzy Faire Drinks (5)
--- 	.target Sylannia
+--     .target Sylannia
 --     .zoneskip 407,1
 --     .dmf
 --     .train 2259,3 --Only show if you have Alchemy
@@ -255,7 +255,7 @@ RXPGuides.RegisterGuide([[
 --     .goto 407,50.53,69.56
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r.
 --     .turnin 29506 >>Turn in A Fizzy Fusion
--- 	.target Sylannia
+--     .target Sylannia
 --     .zoneskip 407,1
 --     .dmf
 --     .isOnQuest 29506
@@ -264,37 +264,37 @@ RXPGuides.RegisterGuide([[
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
 --     .turnin 29445 >>Turn in An Intriguing Grimoire
 --     .accept 29515 >>Accept Writing the Future
--- 	.target Sayge
+--     .target Sayge
 --     .zoneskip 407,1
 --     .dmf
--- 	.isOnQuest 29445
+--     .isOnQuest 29445
 --     .train 45357,3 --Only show if you have Inscription
 -- step
 --     #optional
 --     .goto 407,53.23,75.82
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
 --     .turnin 29445 >>Turn in An Intriguing Grimoire
--- 	.target Sayge
+--     .target Sayge
 --     .zoneskip 407,1
 --     .dmf
--- 	.isOnQuest 29445
+--     .isOnQuest 29445
 -- step
 --     #optional
 --     .goto 407,53.23,75.82
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
 --     .accept 29515 >>Accept Writing the Future
--- 	.target Sayge
+--     .target Sayge
 --     .zoneskip 407,1
 --     .dmf
 --     .train 45357,3 --Only show if you have Inscription
 -- step
 --     .goto 407,53.23,75.82
--- 	>>Use the |T413571:0|t[Bundle of Exotic Herbs] to make |T237061:0|t[Prophetic Ink]
--- 	.collect 71972,1,29515,1
+--     >>Use the |T413571:0|t[Bundle of Exotic Herbs] to make |T237061:0|t[Prophetic Ink]
+--     .collect 71972,1,29515,1
 --     .use 71971
 --     .zoneskip 407,1
--- 	.dmf
--- 	.isOnQuest 29515
+--     .dmf
+--     .isOnQuest 29515
 -- step
 --     .goto 407,53.23,75.82
 --     >>Use the |T237061:0|t[Prophetic Ink] to make |T134943:0|t[Fortunes]
@@ -302,13 +302,13 @@ RXPGuides.RegisterGuide([[
 --     .complete 29515,1 --5/5 Fortune
 --     .use 71972
 --     .zoneskip 407,1
--- 	.dmf
--- 	.isOnQuest 29515
+--     .dmf
+--     .isOnQuest 29515
 -- step
 --     .goto 407,53.23,75.82
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
 --     .turnin 29515 >>Turn in Writing the Future
--- 	.target Sayge
+--     .target Sayge
 --     .skipgossip
 --     .zoneskip 407,1
 --     .dmf
@@ -317,10 +317,10 @@ RXPGuides.RegisterGuide([[
 --     .goto 407,51.11,82.04
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yebb Neblegear|r.
 --     .turnin 29444 >>Turn in An Exotic Egg
--- 	.target Yebb Neblegear
+--     .target Yebb Neblegear
 --     .zoneskip 407,1
 --     .dmf
--- 	.isOnQuest 29444
+--     .isOnQuest 29444
 -- step
 --     .goto 407,50.56,90.80
 --     .zone 37 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r |cRXP_WARN_to Elwynn Forest|r.
@@ -334,7 +334,7 @@ RXPGuides.RegisterGuide([[
 --     --x .skill 171,<1 >>Unlearn Alchemy
 --     --x add unlearn logic
 --     .isOnQuest 60
--- 	.dmf
+--     .dmf
 -- step
 --     #sticky
 --     #label Professions1
@@ -375,7 +375,7 @@ RXPGuides.RegisterGuide([[
 --     .skipgossip 47396,2,3,2
 --     .train 2366,3 --Herbalism
 -- step
--- 	#veteran
+--     #veteran
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
 --     >>|cRXP_WARN_Skip this step if you don't have level 25 Pet Battle Pets|r.
 --     .goto 37,41.65,83.67
@@ -383,16 +383,42 @@ RXPGuides.RegisterGuide([[
 --     .target Julia Stevens
 --     .isQuestTurnedIn 31903 --x Pet Battle Campaign Check
 -- step
--- 	#veteran
+--     #veteran
 --     >>Defeat |cRXP_ENEMY_Julia Stevens|r in a Pet Battle.
 --     .complete 31693,1 --Defeat Julia Stevens
 --     .target Julia Stevens
 --     .isOnQuest 31693
 -- step
--- 	#veteran
+--     #veteran
 --     .goto 37,41.66,83.66
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
 --     .turnin 31693 >>Turn in Julia Stevens
 --     .target Julia Stevens
 --     .isQuestComplete 31693
+]])
+
+--Lost Dragonscale
+RXPGuides.RegisterGuide([[
+#retail
+#version 4
+#group RestedXP Speed Leveling
+#name a) Lost Dragonscale Horde
+#internal
+
+<< Horde
+
+step
+    .accept 65436 >>Accept The Dragon Isles Await
+step
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Orgrimmar.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+step
+    .isOnQuest 65435
+    .abandon 65435,1
+-- step
+--     .goto 84,79.83,27.08
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r to receive another |T134309:0|t[Lost Dragonscale] for future use.
+--     .accept 65436 >>Accept The Dragon Isles Await
+--     .target Wrathion
 ]])

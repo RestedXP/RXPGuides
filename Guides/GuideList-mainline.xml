@@ -16,6 +16,9 @@
 <Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
 <Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
 <Script file="Guides/Retail/Endgame/War Within/Undermine Campaign.Lua"/>
+<Script file="Guides/Retail/Endgame/War Within/K'aresh Campaign.lua"/>
+
+
 
 <!-- COLLECTABLES -->
 <Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>

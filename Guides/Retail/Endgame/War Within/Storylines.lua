@@ -813,7 +813,6 @@ step
     .complete 89295,1 --Complete the scenario "Nightfall"
     .complete 89331,1 --Complete the scenario "Nightfall"
 step
-    .isOnQuest 
     .goto 2215,26.48,55.11,40,0
     #completewith Sureki Incursion: The Eastern Assault
     >>Check your map to see if the Nightfall event is active. If it is, complete it now; if not, do it later.
