@@ -11917,7 +11917,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r.
     .home >>Set your Hearthstone to Lion's Pride Inn
 	.target Innkeeper Farley
-    .subzoneskip 5637
+    .subzoneskip 5637,1
     .dmf 
 
 -- ==============
@@ -11929,7 +11929,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r.
     .home >>Set your Hearthstone to Lion's Pride Inn
 	.target Innkeeper Farley
-    .subzoneskip 5637
+    .subzoneskip 5637,1,1
     .nodmf
 
 
@@ -11981,6 +11981,42 @@ step
 	.target Remy "Two Times"
 step
     #completewith next
+    #label Julia Stevens
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
+    .daily 31693 >>Accept Julia Stevens
+    .train 125610,3
+	.target Julia Stevens
+    .isQuestTurnedIn 31889,31891,31902,31903
+step
+    #completewith Julia Stevens
+    .goto 37,41.66,83.67,60 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .use 57395
+    .mob Stonetusk Boar
+    .mob Kobold Tunneler
+step
+    #requires Julia Stevens
+    .goto 37,41.66,83.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
+    .daily 31693 >>Accept Julia Stevens
+    .train 125610,3
+	.target Julia Stevens
+    .isQuestTurnedIn 31889,31891,31902,31903
+step
+    .goto 37,41.66,83.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
+    *|cRXP_WARN_Defeat her in a Pet Battle|r.
+    .complete 31693,1 --Defeat Julia Stevens
+	.target Julia Stevens
+    .skipgossipid 40127
+    .isOnQuest 31693
+step
+    .goto 37,41.66,83.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
+    .turnin 31693 >>Turn in Julia Stevens
+	.target Julia Stevens
+    .isQuestComplete 31693
+step
+    #completewith next
     #label Large Candle
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for |T133848:0|t[|cRXP_LOOT_Gold Dust|r] and |T133750:0|t[|cRXP_LOOT_Large Candles|r].
     .complete 60,1 --8/8 Large Candle
@@ -11989,10 +12025,12 @@ step
 	.mob Kobold Miner
 step
     #completewith Large Candle
-    .groundgoto 37,40.18,80.47,20,0
-    .goto 37,39.02,82.46,10,0
+    .goto 37,39.13,83.16,20,0
     .goto 38,41.17,84.24,5 >>Enter the Mine.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    *|cRXP_WARN_[RARE]|r Check for |cRXP_ENEMY_Narg the Taskmaster|r near the Mine. Kill |cRXP_ENEMY_Narg|r if he's up.
     .use 57395
+	.unitscan Narg the Taskmaster
 step
     #requires Large Candle
     #completewith next
@@ -12006,13 +12044,12 @@ step
     #requires Large Candle
     #completewith Traverse the Mine
     .goto 38,45.04,64.28,15,0
-    .goto 38,56.94,59.79
+    .goto 38,50.1,54.38
     >>Traverse the Mine
     .complete 62,1 --Scout through the Fargodeep Mine
 step
     #requires Traverse the Mine
     #completewith next
-    #label Gold Dust
     .goto 38,53.11,39.87,20,0
     .goto 39,63.2,24.25,20,0
     .goto 39,78.6,29.79,20,0
@@ -12025,10 +12062,18 @@ step
 	.mob Kobold Miner
 step
     #requires Traverse the Mine
-    #completewith Gold Dust
+    #hidewindow
+    #completewith next
+    #label Princess Must Die!2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r.
+    .accept 88 >>Accept Princess Must Die!
+	.target Ma Stonefield
+step
+    #requires Traverse the Mine
+    #completewith Princess Must Die!2
     .goto 37,38.22,81.62,15 >>Make your way out of the mine via the back tunnel.
 step
-    #requires Gold Dust
+    #requires Princess Must Die!2
     #hidewindow
     #completewith next
     #label Princess Must Die!
@@ -12036,10 +12081,10 @@ step
     .accept 88 >>Accept Princess Must Die!
 	.target Ma Stonefield
 step
-    #requires Gold Dust
+    #requires Princess Must Die!2
     #completewith Princess Must Die!
     .goto 37,38.18,82.22,10,0
-    .goto 37,38.22,83.41,20 >>|cRXP_WARN_[RARE & TREASURE]|r Check near the mine for a |cRXP_PICK_Treasure|r and |cRXP_ENEMY_Narg the Taskmaster|r. Click on the treasure and kill Narg if they are up  — |cRXP_WARN_both give a lot of XP|r
+    .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE & TREASURE]|r Check near the mine for a |cRXP_PICK_Treasure|r and |cRXP_ENEMY_Narg the Taskmaster|r. Click on the treasure and kill Narg if they are up  — |cRXP_WARN_both give a lot of XP|r
 	.unitscan Narg the Taskmaster
 step
     #requires Princess Must Die!
@@ -12083,17 +12128,28 @@ step
     .turnin 88 >>Turn in Princess Must Die!
 	.target Ma Stonefield
 -- step
---     .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE]|r Check for |cRXP_ENEMY_Morgaine the Sly|r. Kill him if he's up|r, |cRXP_WARN_as he gives a lot of XP|r. 
+--     .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE]|r Check for |cRXP_ENEMY_Morgaine the Sly|r. Kill her if she's up|r, |cRXP_WARN_as he gives a lot of XP|r. 
 --     .unitscan Morgaine the Sly
 -- step
---     .goto 37,27.22,67.51,40 >>|cRXP_WARN_[RARE]|r Check for |cRXP_ENEMY_Morgaine the Sly|r. Kill him if he's up|r, |cRXP_WARN_as he gives a lot of XP|r. 
+--     .goto 37,27.22,67.51,40 >>|cRXP_WARN_[RARE]|r Check for |cRXP_ENEMY_Grizzled Ben|r. Kill him if he's up|r, |cRXP_WARN_as he gives a lot of XP|r. 
 -- 	.unitscan Grizzled Ben
 step
-    .goto 37,24.55,74.68
+    #completewith next
+    #label Hogger
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_WANTED Poster|r
     .accept 176 >>Accept WANTED: "Hogger"
 step
-    .goto 37,24.23,74.45
+    #completewith Hogger
+    .goto 37,24.66,74.88,65 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Riverpaw Runt
+    .mob Stonetusk Boar
+step
+    #requires Hogger
+    .goto 37,24.66,74.88
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_WANTED Poster|r
+    .accept 176 >>Accept WANTED: "Hogger"
+step
+    .goto 37,24.33,74.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r.
     .accept 11 >>Accept Riverpaw Gnoll Bounty
 	.target Deputy Rainer
@@ -12133,34 +12189,47 @@ step
 	.mob *Riverpaw Outrunner
 	.mob *Riverpaw Runt
 step
+    #completewith next
+    #label Riverpaw Gnoll Bounty
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r.
+    .turnin 11 >>Turn in Riverpaw Gnoll Bounty
+	.target Deputy Rainer
+step
+    #completewith Riverpaw Gnoll Bounty
+    .goto 37,24.27,74.66,65 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .mob Riverpaw Runt
+    .mob Stonetusk Boar
+    .mob Riverpaw Outrunner
+    .mob Longsnout
+step
+    #requires Riverpaw Gnoll Bounty
     .goto 37,24.27,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r.
     .turnin 11 >>Turn in Riverpaw Gnoll Bounty
 	.target Deputy Rainer
 step
-    .goto 52,60.85,18.49
+    .goto 52,60.86,18.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r.
     .daily 31780 >>Accept Old MacDonald
     .train 125610,3
 	.target Old MacDonald
-    .isQuestTurnedIn 31889/31891/31902/31903
+    .isQuestTurnedIn 31889,31891,31902,31903
 step
-    .goto 52,61.04,18.82
-    >>Defeat |cRXP_ENEMY_Old MacDonald|r in a Pet Battle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Old MacDonald
+    .goto 52,60.86,18.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r
+    *|cRXP_WARN_Defeat him in a Pet Battle|r.
     .complete 31780,1 --Defeat Old MacDonald
 	.target Old MacDonald
-    .skipgossip 65648,1
+    .skipgossipid 65648
     .isOnQuest 31780
 step
-    .goto 52,61.04,18.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r.
+    .goto 52,60.86,18.32
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Old MacDonald Quest Pop-UP|r and turn in the quest.
     .turnin 31780 >>Turn in Old MacDonald
 	.target Old MacDonald
     .isQuestComplete 31780
 step
-    .goto 52,60.05,19.28,5,0
-    .goto 52,60.18,19.37
+    .goto 52,60.09,19.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Horatio Laine|r.
     .turnin 184 >>Turn in Furlbrow's Deed
     .turnin 26378 >>Turn in Hero's Call: Westfall!
@@ -12174,7 +12243,8 @@ step
     .goto 52,58.12,19.58,20,0
     .goto 52,57.31,18.33,20,0
     .goto 52,58.56,16.21,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r. Pay them for their [|cRXP_LOOT_Clues|r].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Citizens|r. Pay them for their [|cRXP_LOOT_Clues|r].
+    *|cRXP_WARN_ignore them if they turn hostile if you can|r.
     .complete 26209,1 --1/1 Clue #1 obtained
     .complete 26209,2 --1/1 Clue #2 obtained
     .complete 26209,3 --1/1 Clue #3 obtained
@@ -12186,26 +12256,6 @@ step
     .skipgossip 42384,1 --Homeless Stormwind Citizen
     .skipgossip 42386,1 --Homeless Stormwind Citizen
     .skipgossip 42391,1 --West Plains Drifter
-    .skill riding,75,1
-step
-    #loop
-    #optional
-    .goto 52,58.23,18.12,0
-    .goto 52,58.56,16.21,20,0
-    .goto 52,59.18,18.16,20,0
-    .goto 52,58.12,19.58,20,0
-    .goto 52,57.31,18.33,20,0
-    .goto 52,58.56,16.21,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r. for their [|cRXP_LOOT_Clues|r].
-    >>|cRXP_WARN_Stay mounted and spam talk to them, ignore them if they turn hostile|r.
-    .complete 26209,1 --1/1 Clue #1 obtained
-    .complete 26209,2 --1/1 Clue #2 obtained
-    .complete 26209,3 --1/1 Clue #3 obtained
-    .complete 26209,4 --1/1 Clue #4 obtained
-	.target Homeless Stormwind Citizen
-	.target West Plains Drifter
-    .target Transients
-    .skipgossip 2
 step
     .goto 52,60.05,19.28,5,0
     .goto 52,60.18,19.37
@@ -12222,7 +12272,7 @@ step
 	.mob Riverpaw Gnoll
 step
     #completewith Riverpaw Gnoll Clue
-    .goto 52,56.46,13.26,30 >>|cRXP_WARN_[CHEST]|r Check for a |cRXP_PICK_Chest|r in the camp.
+    .goto 52,56.32,13.54,20 >>|cRXP_WARN_[CHEST]|r Check for a |cRXP_PICK_Chest|r in the camp.
 step
     #requires Riverpaw Gnoll Clue
     #loop
@@ -12281,14 +12331,16 @@ step
     #requires Turn in The Fargodeep Mine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r and |cRXP_FRIENDLY_Marshal Dughan|r.
     .turnin 47 >>Turn in Gold Dust Exchange
-    .goto 37,42.14,67.25
+    .goto 37,42.22,67.06
 	.target +Remy "Two Times"
+step
+    .goto 37,42.11,65.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r.
     .turnin 62 >>Turn in The Fargodeep Mine
     .turnin 40 >>Turn in A Fishy Peril
     .turnin 176 >>Turn in WANTED: "Hogger"
     .accept 35 >>Accept Further Concerns
     .accept 76 >>Accept The Jasperlode Mine
-    .goto 37,42.11,65.93
 	.target +Marshal Dughan
 	.isOnQuest 40
 step
@@ -12309,15 +12361,17 @@ step
     #completewith Turn in The Fargodeep Mine
     .goto 37,42.86,65.71,5 >>Leave the Inn
 step
+    .goto 37,42.22,67.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r and |cRXP_FRIENDLY_Marshal Dughan|r.
     .turnin 47 >>Turn in Gold Dust Exchange
-    .goto 37,42.2,67.08
 	.target +Remy "Two Times"
+step
+    .goto 37,42.16,66.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r.
     .turnin 62 >>Turn in The Fargodeep Mine
     .accept 35 >>Accept Further Concerns
     .accept 76 >>Accept The Jasperlode Mine
     .turnin 176 >>Turn in WANTED: "Hogger"
-    .goto 37,42.16,66.11
 	.target +Marshal Dughan
 
 
