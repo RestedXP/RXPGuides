@@ -171,6 +171,7 @@ local CLASS_MAP = {
     ["PALADIN"] = {
         ["Slot"] = {["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND},
         ["ArmorType"] = {
+            [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = true,
             [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 35 end
@@ -219,6 +220,7 @@ local CLASS_MAP = {
     ["SHAMAN"] = {
         ["Slot"] = {{["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND}},
         ["ArmorType"] = {
+            [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 35 end
         },
@@ -252,6 +254,7 @@ local CLASS_MAP = {
             end
         },
         ["ArmorType"] = {
+            [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = true,
             [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 35 end
@@ -865,7 +868,9 @@ local function CalculateDPSWeight(itemData, stats)
     --    ...
     -- }
 
-    -- TODO doesn't work on hidden/background tooltip parsing sometimes?
+    -- Shield gets here from being INVTYPE_OFFHAND
+    if itemData.itemEquipLoc == "INVTYPE_SHIELD" then return end
+
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
         if addon.settings.profile.debug then
             addon.comms.PrettyPrint("itemUpgrades CalculateDPSWeight, Speed property required %s",
@@ -1130,7 +1135,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             statWeight = nil
 
             -- dpsWeights is evaluated later, based on slot comparison wich this level doesn't know about
-            -- totalWeight = totalWeight + statWeight
+            -- totalWeight = statWeight + dpsWeight
         elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' or key == 'ITEM_MOD_SPELL_POWER' then
             -- ITEM_MOD_SPELL_DAMAGE_DONE is terrible, but it's built-in so key off that to parse spell damage
             statWeight = CalculateSpellWeight(stats, tooltipTextLines)
@@ -1294,7 +1299,11 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
             if slotId == _G.INVSLOT_RANGED or slotId == _G.INVSLOT_MAINHAND or slotId == _G.INVSLOT_OFFHAND then
                 equippedData = self:GetItemData(equippedItemLink, tooltip)
 
-                dpsWeights = CalculateDPSWeight(equippedData, equippedData.stats)
+                if equippedData and equippedData.stats then
+                    dpsWeights = CalculateDPSWeight(equippedData, equippedData.stats)
+                else
+                    dpsWeights = nil
+                end
             else
                 dpsWeights = nil
             end
