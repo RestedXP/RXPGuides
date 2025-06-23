@@ -32,7 +32,7 @@ _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
     "Cible ennemie 4"
 
 --Words
-L.words = {["Acceptez"] = _G.ACCEPT, ["Kill"] = "Tuez"}
+L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "Tuez"}
 
 
 --ActiveItemFrame.lua file
