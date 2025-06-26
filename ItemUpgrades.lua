@@ -993,9 +993,6 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     local _, _, _, itemLevel, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID, _, _, setID =
         GetItemInfo(itemLink)
 
-    -- itemLevel is generally 5 levels highter than required
-    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
-
     -- Not an equippable item
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or itemEquipLoc == "INVTYPE_BAG" or
         itemEquipLoc == "INVTYPE_NON_EQUIP_IGNORE" then return end
@@ -1017,6 +1014,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
         return itemData
     end
+
+    -- itemLevel is generally 5 levels highter than required
+    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
 
     -- Parse API stats first before processing tooltip text
     local stats = GetItemStats(itemLink)
