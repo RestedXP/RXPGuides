@@ -525,9 +525,7 @@ local function TooltipSetItem(tooltip, ...)
         end
 
         -- If successful comparison but not a weapon
-        if lineText and not statsData.DpsWeights then
-            tinsert(lines, lineText)
-        end
+        if lineText and not statsData.DpsWeights then tinsert(lines, lineText) end
 
         for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
             -- Only compare weights if they are compatible
@@ -537,7 +535,7 @@ local function TooltipSetItem(tooltip, ...)
                 comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
                 lineText = fmt("  %s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
-                            comparedWeaponWeight - equippedWeaponWeight)
+                               comparedWeaponWeight - equippedWeaponWeight)
 
                 if statsData['debug'] and addon.settings.profile.debug then
                     lineText = fmt("%s (%s)", lineText, statsData['debug'])
@@ -887,8 +885,7 @@ local function CalculateDPSWeight(itemData, stats)
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
     -- weaponSlotToWeightKey['INVTYPE_WEAPON'] = { "MH", "OH" }
     for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
-        if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
-            'INVTYPE_RANGEDRIGHT' then
+        if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT' then
 
             dpsWeightModifier = session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
         else
@@ -906,9 +903,7 @@ local function CalculateDPSWeight(itemData, stats)
         speedWeightModifier = session.activeStatWeights[speedWeightKey]
 
         -- Prevent multiplication by 0
-        if not speedWeightModifier or speedWeightModifier == 0 then
-            speedWeightModifier = 1
-        end
+        if not speedWeightModifier or speedWeightModifier == 0 then speedWeightModifier = 1 end
 
         -- Exclude Off-hand comparison before trained
         if keySuffix == "OH" and not session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
@@ -995,13 +990,11 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return session.itemCache[itemLink]
     end
 
-    local _, _, _, itemLevel, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID, _, _, setID = GetItemInfo(
-                                                                                                             itemLink)
+    local _, _, _, itemLevel, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID, _, _, setID =
+        GetItemInfo(itemLink)
 
     -- itemLevel is generally 5 levels highter than required
-    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then
-        return
-    end
+    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
 
     -- Not an equippable item
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or itemEquipLoc == "INVTYPE_BAG" or
@@ -1422,13 +1415,9 @@ end
 function addon.itemUpgrades.AH:SearchForSelectedItem() return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData) end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
-    if not itemData.Name then
-        return
-    end
+    if not itemData.Name then return end
 
-    if not _G.AuctionFrame:IsShown() then
-        return
-    end
+    if not _G.AuctionFrame:IsShown() then return end
 
     -- print("SearchForBuyoutItem", itemData.itemLink)
 
