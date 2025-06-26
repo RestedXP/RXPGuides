@@ -1280,7 +1280,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", "itemEquipLoc", itemEquipLoc, "slotId", slotId)
         equippedItemLink = GetInventoryItemLink("player", slotId or itemEquipLoc)
 
-        if comparedData.itemEquipLoc == "INVTYPE_SHIELD" then
+        if comparedData.itemEquipLoc == "INVTYPE_SHIELD" or comparedData.itemEquipLoc == "INVTYPE_HOLDABLE" then
             -- Prevent shields from showing up as "Empty: " upgrades when using 2H
             ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
         elseif not equippedItemLink or equippedItemLink == "" then
