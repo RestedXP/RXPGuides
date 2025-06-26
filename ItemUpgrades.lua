@@ -995,8 +995,13 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return session.itemCache[itemLink]
     end
 
-    local _, _, _, _, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID, _, _, setID = GetItemInfo(
+    local _, _, _, itemLevel, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID, _, _, setID = GetItemInfo(
                                                                                                              itemLink)
+
+    -- itemLevel is generally 5 levels highter than required
+    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then
+        return
+    end
 
     -- Not an equippable item
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or itemEquipLoc == "INVTYPE_BAG" or
