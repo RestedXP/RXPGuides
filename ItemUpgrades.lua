@@ -350,6 +350,21 @@ local WEAPON_SLOT_MAP = {
     }
 }
 
+-- Used for dpsWeights post-processing
+local SPEED_SUFFIX_SLOT_MAP = {
+    ['2H'] = _G.INVSLOT_MAINHAND,
+    ['MH'] = _G.INVSLOT_MAINHAND,
+    ['OH'] = _G.INVSLOT_OFFHAND,
+    ['RANGED'] = _G.INVSLOT_RANGED
+}
+
+local SPEED_SUFFIX_NAME_MAP = {
+    ['2H'] = _G.INVTYPE_2HWEAPON,
+    ['MH'] = _G.INVTYPE_WEAPONMAINHAND,
+    ['OH'] = _G.INVTYPE_WEAPONOFFHAND,
+    ['RANGED'] = _G.INVTYPE_RANGED
+}
+
 -- Turn GSheet suffix
 local SPELL_KIND_MAP = {
     -- SPELL_SCHOOL1_NAME = "STAT_SPELLDAMAGE_HOLY",
@@ -460,7 +475,7 @@ end
 local function enableTotalEPLines(itemData, lines)
     if itemData.dpsWeights then -- IsWeaponSlot equivalent
         for suffix, data in pairs(itemData.dpsWeights) do
-            tinsert(lines, fmt("  Total EP (%s): %.2f", suffix, data.totalWeight))
+            tinsert(lines, fmt("  Total EP (%s): %.2f", SPEED_SUFFIX_NAME_MAP[suffix], data.totalWeight))
         end
     else -- Armor
         tinsert(lines, fmt("  Total EP: %.2f", itemData.totalWeight))
@@ -534,7 +549,7 @@ local function TooltipSetItem(tooltip, ...)
                 equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
                 comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
-                lineText = fmt("  %s (%s): %s / +%.2f", statsData['ItemLink'], suffix,
+                lineText = fmt("  %s (%s): %s / +%.2f", statsData['ItemLink'], SPEED_SUFFIX_NAME_MAP[suffix],
                                prettyPrintRatio(comparedWeaponWeight / equippedWeaponWeight),
                                comparedWeaponWeight - equippedWeaponWeight)
 
@@ -1164,14 +1179,6 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     return itemData
 end
-
--- Used for dpsWeights post-processing
-local SPEED_SUFFIX_SLOT_MAP = {
-    ['2H'] = _G.INVSLOT_MAINHAND,
-    ['MH'] = _G.INVSLOT_MAINHAND,
-    ['OH'] = _G.INVSLOT_OFFHAND,
-    ['RANGED'] = _G.INVSLOT_RANGED
-}
 
 function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
     if not itemData.dpsWeights then
