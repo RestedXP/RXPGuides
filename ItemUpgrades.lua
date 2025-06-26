@@ -515,26 +515,27 @@ local function TooltipSetItem(tooltip, ...)
     local equippedWeaponWeight, comparedWeaponWeight
 
     for _, statsData in ipairs(statComparisons) do
-        if statsData['Ratio'] then
-            lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
-                           prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
-        elseif statsData['ItemLink'] == _G.EMPTY then
-            lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.WeightIncrease)
-        else -- SPELL_FAILED_ERROR
-            lineText = nil
-        end
+        if not statsData.DpsWeights then
+            if statsData['Ratio'] then
+                lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
+                            prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
+            elseif statsData['ItemLink'] == _G.EMPTY then
+                lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.WeightIncrease)
+            else -- SPELL_FAILED_ERROR
+                lineText = nil
+            end
 
-        -- If successful comparison but not a weapon
-        if lineText and not statsData.DpsWeights then tinsert(lines, lineText) end
+            if lineText then tinsert(lines, lineText) end
+        end
 
         for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
             -- Only compare weights if they are compatible
             if itemData.dpsWeights[suffix] then
                 equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
-
                 comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
-                lineText = fmt("  %s (%s) EP: +%.2f", statsData['ItemLink'], suffix,
+                lineText = fmt("  %s (%s): %s / +%.2f", statsData['ItemLink'], suffix,
+                               prettyPrintRatio(comparedWeaponWeight / equippedWeaponWeight),
                                comparedWeaponWeight - equippedWeaponWeight)
 
                 if statsData['debug'] and addon.settings.profile.debug then
