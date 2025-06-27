@@ -2581,7 +2581,7 @@ end
 addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
-        local text, id, qty, questId, objFlags, flags, arg1, arg2 = ...
+        local text, id, qty, questId, objFlags, flags, arg1, arg2, arg3 = ...
         local element = {ids = id}
         element.dynamicText = true
         id = tonumber(id:match('^%d+'))
@@ -2636,6 +2636,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         if bit.band(flags, 0x20) == 0x20 then
             element.profession = arg1
             element.multiplier = tonumber(arg2) or 1
+            element.professionStart = tonumber(arg3) or 0
         end
 
         element.flags = flags
@@ -2684,6 +2685,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         elseif element.profession then
             local skill = addon.GetSkillLevel(element.profession)
             if skill >= 0 then
+                skill = math.max(0,skill-element.professionStart)
                 numRequired = numRequired - skill * element.multiplier
                 if numRequired < 0 then numRequired = 0 end
             end
