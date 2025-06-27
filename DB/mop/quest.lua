@@ -553,6 +553,7 @@ local valeQuests = {
     [30281] = "whitepetalUnderAttack",
     [31242] = "mistfallQuiet",
     [31245] = "mistfallQuiet",
+    [31249] = "mistfallQuiet",
     [31243] = "mistfallUnderAttack",
     [31246] = "mistfallUnderAttack",
     [31296] = "ruinsofguolaiQuiet",
