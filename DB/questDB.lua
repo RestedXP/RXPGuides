@@ -126,6 +126,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     return activeFor
 end
 
+local groupCount
 local questQueryTimer = 0
 function addon.GetBestQuests(refreshQuestDB,output)
     output = output or 0
@@ -144,9 +145,27 @@ function addon.GetBestQuests(refreshQuestDB,output)
         local prio1 = k1.priority or 1e3
         local prio2 = k2.priority or 1e3
         local isQuestLog = k1.questLog and k2.questLog
+        local gc1,gc2
+        if QuestDB["groups"] then
+            local g1 = QuestDB["groups"][k1.Id]
+            local g2 = QuestDB["groups"][k2.Id]
+            if g1 then
+                gc1 = (QuestDB["groups"][g1] or 0) <= groupCount[g1]
+            end
+            if g2 then
+                gc2 = (QuestDB["groups"][g2] or 0) <= groupCount[g2]
+                print(123,gc1,gc2,groupCount[g2])
+            end
+        end
+
+
         if q1 and not q2 then
             return false
         elseif q2 and not q1 then
+            return true
+        elseif gc1 == false and gc2 ~= gc1 then
+            return false
+        elseif gc2 == false and gc2 ~= gc1 then
             return true
         elseif x1 ~= x2 then
             return x1 > x2
@@ -168,24 +187,34 @@ function addon.GetBestQuests(refreshQuestDB,output)
     end
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
-
+        groupCount = {}
         local groups = {}
         for id, v in pairs(QuestDB) do
-            v.Id = id
-            local grp = v.group
-            if grp and not groups[grp] then
-                groups[grp] = {}
-            end
-            if IsQuestAvailable(v,id) and not v.itemId and
-                v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
-                if grp then
-                    table.insert(groups[grp],v)
-                else
-                    table.insert(addon.questLogQuests, v)
-                    v.isActive = true
+            if type(id) == "number" then
+                v.Id = id
+                local grp = v.group
+                if grp and not groups[grp] then
+                    groups[grp] = {}
                 end
-            elseif v.questLog then
-                v.isActive = false
+                if IsQuestAvailable(v,id) and not v.itemId and
+                    v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
+                    if QuestDB["groups"] and QuestDB["groups"][id] then
+                        local questGroup = QuestDB["groups"][id]
+                        if groupCount[questGroup] then
+                            groupCount[questGroup] = groupCount[questGroup] + 1
+                        else
+                            groupCount[questGroup] = 1
+                        end
+                    end
+                    if grp then
+                        table.insert(groups[grp],v)
+                    else
+                        table.insert(addon.questLogQuests, v)
+                        v.isActive = true
+                    end
+                elseif v.questLog then
+                    v.isActive = false
+                end
             end
         end
         for _,v in pairs(groups) do
@@ -508,36 +537,37 @@ function addon.CalculateTotalXP(flags)
         end
     end
     for id, quest in pairs(QuestDB) do
-
-        if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
-            if ProcessQuest(quest,id) then
-                addon.questsDone[id] = true
-            end
-        elseif not (quest.questLog or addon.IsQuestTurnedIn(id)) then
-            local item = quest.itemId
-            if ignorePreReqs and item then
+        if type(id) == "number" then
+            if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
                 if ProcessQuest(quest,id) then
                     addon.questsDone[id] = true
                 end
-            elseif type(item) == "table" then
-                local state = true
-                for n, itemId in pairs(item) do
-                    state = state and GetItemCount(itemId, true) >=
-                                quest.itemAmount[n]
-                end
-                if state then
+            elseif not (quest.questLog or addon.IsQuestTurnedIn(id)) then
+                local item = quest.itemId
+                if ignorePreReqs and item then
                     if ProcessQuest(quest,id) then
                         addon.questsDone[id] = true
                     end
-                end
-            elseif type(item) == "number" and GetItemCount(item, true) >=
-                quest.itemAmount then
-                if ProcessQuest(quest,id) then
-                    addon.questsDone[id] = true
-                end
-            elseif not item then
-                if ProcessQuest(quest,id) then
-                    addon.questsDone[id] = true
+                elseif type(item) == "table" then
+                    local state = true
+                    for n, itemId in pairs(item) do
+                        state = state and GetItemCount(itemId, true) >=
+                                    quest.itemAmount[n]
+                    end
+                    if state then
+                        if ProcessQuest(quest,id) then
+                            addon.questsDone[id] = true
+                        end
+                    end
+                elseif type(item) == "number" and GetItemCount(item, true) >=
+                    quest.itemAmount then
+                    if ProcessQuest(quest,id) then
+                        addon.questsDone[id] = true
+                    end
+                elseif not item then
+                    if ProcessQuest(quest,id) then
+                        addon.questsDone[id] = true
+                    end
                 end
             end
         end
