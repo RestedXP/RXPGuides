@@ -511,7 +511,8 @@ local function TooltipSetItem(tooltip, ...)
 
     local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
-    -- Effectively only used when 1H compares against 2H
+    -- Effectively only used when an item downgrade
+    -- TODO when weapons have stats, this may be a problem
     if not statComparisons or next(statComparisons) == nil then
         if addon.settings.profile.enableTotalEP then
             enableTotalEPLines(itemData, lines)
@@ -530,36 +531,44 @@ local function TooltipSetItem(tooltip, ...)
     local equippedWeaponWeight, comparedWeaponWeight
 
     for _, statsData in ipairs(statComparisons) do
-        if not statsData.DpsWeights then
+        lineText = nil
+
+        if IsWeaponSlot(statsData.itemEquipLoc) then
+
+            -- DpsWeights exists when weapon, but only if not Empty
+            for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
+                -- Only compare weights if they are compatible
+                if itemData.dpsWeights[suffix] then
+                    equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
+                    comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
+
+                    if statsData['ItemLink'] == _G.EMPTY then
+                        lineText =
+                            fmt("  %s (%s): +%.2f EP", _G.EMPTY, SPEED_SUFFIX_NAME_MAP[suffix], comparedWeaponWeight)
+                    else
+                        lineText = fmt("  %s (%s): %s / +%.2f EP", statsData['ItemLink'], SPEED_SUFFIX_NAME_MAP[suffix],
+                                       prettyPrintRatio(comparedWeaponWeight / equippedWeaponWeight),
+                                       comparedWeaponWeight - equippedWeaponWeight)
+                    end
+
+                    if statsData['debug'] and addon.settings.profile.debug then
+                        lineText = fmt("%s (%s)", lineText, statsData['debug'])
+                    end
+
+                    -- Add a comparison line for every statComparison, should be 1 except for 1H weapons and rings
+                    -- TODO exclude overly compared when DW
+                    if lineText then tinsert(lines, lineText) end
+                end
+            end
+        else
             if statsData['Ratio'] then
                 lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
-                            prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
+                               prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
             elseif statsData['ItemLink'] == _G.EMPTY then
                 lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.WeightIncrease)
-            else -- SPELL_FAILED_ERROR
-                lineText = nil
             end
 
             if lineText then tinsert(lines, lineText) end
-        end
-
-        for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
-            -- Only compare weights if they are compatible
-            if itemData.dpsWeights[suffix] then
-                equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
-                comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
-
-                lineText = fmt("  %s (%s): %s / +%.2f", statsData['ItemLink'], SPEED_SUFFIX_NAME_MAP[suffix],
-                               prettyPrintRatio(comparedWeaponWeight / equippedWeaponWeight),
-                               comparedWeaponWeight - equippedWeaponWeight)
-
-                if statsData['debug'] and addon.settings.profile.debug then
-                    lineText = fmt("%s (%s)", lineText, statsData['debug'])
-                end
-
-                -- Add a comparison line for every statComparison, should be 1 except for 1H weapons and rings
-                if lineText then tinsert(lines, lineText) end
-            end
         end
     end
 
@@ -871,7 +880,7 @@ local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
     return true
 end
 
-local function CalculateDPSWeight(itemData, stats)
+local function CalculateDPSWeight(itemData, stats, itemEquipLoc)
     -- Example:
     -- itemData = {
     --    ['itemEquipLoc'] = 'INVTYPE_RANGED',
@@ -881,6 +890,17 @@ local function CalculateDPSWeight(itemData, stats)
     --    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = 12.3456789,
     --    ...
     -- }
+    local dpsWeights = {}
+
+    -- This only happens if an empty slot comparison
+    -- Fake a 0 weight base item to preserve upstream comparison logic
+    if itemEquipLoc and not itemData then
+        for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
+            dpsWeights[keySuffix] = {['totalWeight'] = 0.00, ['speedWeight'] = 0.00}
+        end
+
+        return dpsWeights
+    end
 
     -- Shield gets here from being INVTYPE_OFFHAND
     if itemData.itemEquipLoc == "INVTYPE_SHIELD" then return end
@@ -893,8 +913,7 @@ local function CalculateDPSWeight(itemData, stats)
         return nil
     end
 
-    local dpsWeights = {}
-    local itemEquipLoc = itemData.itemEquipLoc
+    itemEquipLoc = itemData.itemEquipLoc
     local speedWeightKey, speedWeightModifier, dpsWeight, speedKindWeight, dpsWeightModifier
 
     -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
@@ -1284,6 +1303,8 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     -- Check applicable slots
     -- Will be 1 for most and 1-2 for rings
     for itemEquipLoc, slotId in pairs(slotNamesToCompare) do
+        dpsWeights = nil
+
         -- TODO if slotId is table
         -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", "itemEquipLoc", itemEquipLoc, "slotId", slotId)
         equippedItemLink = GetInventoryItemLink("player", slotId or itemEquipLoc)
@@ -1291,29 +1312,33 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         if comparedData.itemEquipLoc == "INVTYPE_SHIELD" or comparedData.itemEquipLoc == "INVTYPE_HOLDABLE" then
             -- Prevent shields from showing up as "Empty: " upgrades when using 2H
             ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
+        elseif comparedData.itemLink == equippedItemLink then
+            -- Same item, so not an upgrade
+            ratio = nil
+            debug = 'same'
+            weightIncrease = nil
+        elseif slotId == _G.INVSLOT_MAINHAND or slotId == _G.INVSLOT_OFFHAND or slotId == _G.INVSLOT_RANGED then
+            ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
+
+            equippedData = self:GetItemData(equippedItemLink, tooltip)
+
+            if equippedData and equippedData.stats then
+                dpsWeights = CalculateDPSWeight(equippedData, equippedData.stats)
+            else
+                dpsWeights = CalculateDPSWeight(nil, nil, itemEquipLoc)
+
+                debug = _G.EMPTY
+                equippedItemLink = _G.EMPTY
+                ratio = nil
+                weightIncrease = nil
+            end
         elseif not equippedItemLink or equippedItemLink == "" then
             ratio = nil
             debug = _G.EMPTY
             equippedItemLink = _G.EMPTY
             weightIncrease = comparedData.totalWeight
-        elseif comparedData.itemLink == equippedItemLink then
-            -- Same item, so not an upgrade
-            ratio = nil
-            debug = 'same'
         else
             ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
-
-            if slotId == _G.INVSLOT_RANGED or slotId == _G.INVSLOT_MAINHAND or slotId == _G.INVSLOT_OFFHAND then
-                equippedData = self:GetItemData(equippedItemLink, tooltip)
-
-                if equippedData and equippedData.stats then
-                    dpsWeights = CalculateDPSWeight(equippedData, equippedData.stats)
-                else
-                    dpsWeights = nil
-                end
-            else
-                dpsWeights = nil
-            end
         end
 
         -- Even if ratio nil, add to comparisons for upstream handling based on debug value
@@ -1324,7 +1349,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
                 ['TotalWeight'] = comparedData.totalWeight,
                 ['WeightIncrease'] = weightIncrease or 0,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
-                ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets/weapons
+                ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
                 ['debug'] = addon.settings.profile.debug and debug
             })
         end
