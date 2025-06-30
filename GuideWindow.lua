@@ -1453,7 +1453,9 @@ function addon.ProcessGuideTable(guide)
         end
         local newGuide = addon:FetchGuide(group,name)
         if not newGuide then
-            print(format("RXPGuides - Error trying to include guide: %s\\%s",group,name))
+            if name ~= "QuestDB" then
+                print(format(L"RXPGuides - Error trying to include guide: %s\\%s",group,name))
+            end
             return
         end
         if not guideRef[newGuide] and guide ~= newGuide then

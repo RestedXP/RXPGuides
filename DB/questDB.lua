@@ -12,8 +12,10 @@ end
 local function GetXPMods()
     if addon.player.season == 2 then
         return 1.5
-    else
+    elseif addon.gameVersion < 40000 then
         return addon.GetXPBonuses(false,80)
+    else
+        return addon.GetXPBonuses(true,85)
     end
 end
 
@@ -154,7 +156,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
             end
             if g2 then
                 gc2 = (QuestDB["groups"][g2] or 0) <= groupCount[g2]
-                print(123,gc1,gc2,groupCount[g2])
+                --print(123,gc1,gc2,groupCount[g2])
             end
         end
 
