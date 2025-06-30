@@ -9,8 +9,10 @@ RXPGuides.RegisterGuide([[
 #displayname 11-22 Azshara << Goblin/Pandaren
 #next 22-27 Ashenvale
 #version 1
---#group RXP Cataclysm (H)
-#group RXP Cataclysm 1-80 (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step << Rogue Cata/Warlock Cata/Mage Cata

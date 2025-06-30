@@ -8,9 +8,11 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Mulgore
 #next 6-10 Mulgore
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor Tauren
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step << !Tauren
@@ -325,9 +327,11 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Mulgore
 #next 10-22 Azshara
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor Tauren
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 

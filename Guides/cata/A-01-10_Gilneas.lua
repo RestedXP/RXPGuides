@@ -3,7 +3,8 @@ if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
 RXPGuides.RegisterGuide([[
 
 #version 1
-#group RXP Cataclysm 1-80 (A)
+#group RXP Cataclysm 1-80 (A) << cata
+#group RXP MoP 1-80 (A) << mop
 #cata
 #mop
 #name 1-10 Gilneas

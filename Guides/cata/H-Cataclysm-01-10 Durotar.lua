@@ -10,9 +10,11 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Valley of Trials
 #next 6-10 Durotar
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor Orc
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 
@@ -472,9 +474,11 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Darkspear Isle
 #next 6-10 Durotar
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor Troll
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step << !Troll
@@ -1337,9 +1341,11 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Durotar
 #next 10-22 Azshara
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor Orc/Troll
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step << skip

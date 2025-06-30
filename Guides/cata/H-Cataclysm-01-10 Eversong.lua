@@ -10,9 +10,11 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Sunstrider Isle
 #next 6-10 Eversong Woods
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor BloodElf
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 
@@ -475,9 +477,11 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Eversong Woods
 #next 10-22 Azshara
 #version 1
---#group RXP Cataclysm (H)
+--#group RXP Cataclysm (H) << cata
+#group RXP MoP (H) << mop
 #defaultfor BloodElf/Undead
-#group RXP Cataclysm 1-80 (H)
+#group RXP Cataclysm 1-80 (H) << cata
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step << Undead
