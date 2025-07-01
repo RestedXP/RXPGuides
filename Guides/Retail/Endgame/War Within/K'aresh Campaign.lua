@@ -215,7 +215,7 @@ step
     .complete 84960,1 --1/1 Investigate the Void Presence
 step
     .goto 2472,47.81,63.46
-    >>|cRXP_WARN_Enter the chamber|r
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 84960,2 --1/1 Locate the source
 step
     .goto 2472,47.43,65.77
@@ -276,6 +276,7 @@ step
     .goto 2472,53.59,40.69,18,0
     .goto 2472,53.23,44.12,18,0
     .goto 2472,52.49,46.77,15,0
+    .goto 2472,49.85,58.03,15,0
     +1
 step
     #completewith next
@@ -298,8 +299,7 @@ step
     .mob Shadowguard Darkweaver
     .mob Shadowguard Voidripper
 step
-    .goto 2472,51.19,55.63,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_next to you|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_next to you|r.
     .turnin 84964 >>Turn in Heroes Among Shadow
     .turnin 84961 >>Turn in Barriers to Entry
     .turnin 84963 >>Turn in Sealing the Shadows
@@ -320,8 +320,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Market Guardians|r
     .complete 84965,1 --5/5 Guardians activated
 step
-    .goto 2472,51.19,55.63,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_next to you|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_next to you|r.
     .turnin 84965 >>Turn in Core Contributions
     .accept 86835 >>Accept Regroup!
     .target Alleria Windrunner
@@ -365,13 +364,13 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 2472,37.68,74.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r.
     .accept 85032 >>Accept What Is Left of Home
     .target Locus-Walker
 step
     #completewith next
     #label TalkToInkeeperA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
     .complete 85032,1 --1/1 Talk to the Innkeeper
     .target the Innkeeper
 step
@@ -393,7 +392,7 @@ step
     #requires TalkToInkeeperA
     #completewith next
     #label TalkToInkeeperB
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
     .complete 85032,1 --1/1 Talk to the Innkeeper
     .target the Innkeeper
 step
@@ -407,20 +406,22 @@ step
 step
     #requires TalkToInkeeperB
     .goto 2472,41.12,25.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'orr|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'orr|r.
     .complete 85032,1 --1/1 Talk to the Innkeeper
     .target Ba'orr
     .skipgossipid 133203
+    .skipgossipid 133205
+    .skipgossipid 133223
 step
     .goto 2472,40.62,29.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'sirik|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'sirik|r.
     .complete 85032,3 --1/1 Talk to the Quartermaster
     .target Om'sirik
     .skipgossipid 133225
 step
     #completewith next
     #label TalkToFlightMasterA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Flight Master|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Flight Master|r.
     .complete 85032,4 --1/1 Talk to the Flight Master
     .target the Flight Master
 step
@@ -434,7 +435,7 @@ step
 step
     #requires TalkToFlightMasterA
     .goto 2472,34.75,10.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Flight Master|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flight Master|r.
     .complete 85032,4 --1/1 Talk to the Flight Master
     .target the Flight Master
     .skipgossipid 133617
@@ -630,7 +631,7 @@ step
 step
     .goto 2371,47.11,54.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
-    .turnin 84860 >>Turn in Damage Report 101
+    .turnin 84860 >>Turn in Eco-Stabilizing 101
     .turnin 84859 >>Turn in Damage Report 101
     .accept 84861 >>Accept This Is Our Dome!
     .target Ve'nari
