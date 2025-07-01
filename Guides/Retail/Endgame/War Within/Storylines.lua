@@ -1114,7 +1114,7 @@ step
     .goto 2372,20.51,39.51 --clickradius
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walker Gresham|r, |cRXP_FRIENDLY_Maggie Wiltshire|r and |cRXP_FRIENDLY_Danath Trollbane|r.
     .turnin 84639 >>Turn in Torches and Tar
-    .goto 2372,20.47.39.59 --npc location
+    .goto 2372,20.47,39.59 --npc location
     .target +Walker Gresham
     .turnin 84658 >>Turn in Finding Family
     .goto 2372,20.50,39.39 --npc location
