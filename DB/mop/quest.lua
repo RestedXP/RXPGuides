@@ -596,14 +596,14 @@ end
 
 celestialQuests ={
 
-[31377] = "jade",
-[31376] = "jade",
-[31379] = "cradle",
-[31378] = "cradle",
-[31381] = "blackox",
-[31380] = "blackox",
-[31382] = "whitetiger",
-[31383] = "whitetiger",
+[31376] = "jadeserpent",
+[31377] = "jadeserpent",
+[31378] = "redcrane",
+[31379] = "redcrane",
+[31380] = "whitetiger",
+[31381] = "whitetiger",
+[31382] = "niuzaotemple",
+[31383] = "niuzaotemple",
 
 }
 
