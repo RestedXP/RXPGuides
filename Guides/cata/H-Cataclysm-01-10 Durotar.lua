@@ -531,7 +531,7 @@ step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r
     .turnin 24764 >> Turn in The Rise of the Darkspear
-    .accept 24751 >> Accept The Basics: Hitting Things
+    .accept 24765 >> Accept The Basics: Hitting Things
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
@@ -566,7 +566,7 @@ step
 	.complete 24639,1 << Warrior --Kill Tiki Target (x6)
 	.complete 24751,1 << Mage --Kill Tiki Target (x6)
 	.complete 24759,1 << Shaman --Kill Tiki Target (x6)
-	.complete 24751,1 << Druid --Kill Tiki Target (x6)
+	.complete 24765,1 << Druid --Kill Tiki Target (x6)
 	.complete 24777,1 << Hunter --Kill Tiki Target (x6)
 	.complete 24783,1 << Priest --Kill Tiki Target (x6)
 	.complete 26273,1 << Warlock --Kill Tiki Target (x6)
@@ -1350,10 +1350,10 @@ RXPGuides.RegisterGuide([[
 
 step << skip
     #completewith BreakingtheChain
-    .goto 1411,67.21,86.10,40,0
-    .goto 1411,63.67,82.61,40,0
-    .goto 1411,60.48,81.45,40,0
-    .goto 1411,60.09,79.68,40,0
+    .goto 1411,67.21,86.10,60,0
+    .goto 1411,63.67,82.61,60,0
+    .goto 1411,60.48,81.45,60,0
+    .goto 1411,60.09,79.68,60,0
     .subzone 367 >> Travel to Sen'Jin Village
 step << Troll
     #completewith BreakingtheChain
@@ -1361,8 +1361,8 @@ step << Troll
     .subzone 367 >> Travel to Sen'Jin Village
 step << Orc
     #completewith BreakingtheChain
-    .goto 1411,48.47,67.93,40,0
-    .goto 1411,50.44,68.39,40,0
+    .goto 1411,48.47,67.93,60,0
+    .goto 1411,50.44,68.39,60,0
     .subzone 367 >> Travel to Sen'Jin Village
 step
     #optional << Troll
@@ -1539,18 +1539,32 @@ step
     .complete 25170,1 --Collect Crawler Mucus (5)
     .mob Surf Crawler
 step
+    #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Gadrin|r and |cRXP_FRIENDLY_Lar|r
     .turnin 25170 >>Turn in Cleaning Up the Coastline
     .accept 25165 >>Accept Never Trust a Big Barb and a Smile
+    .target +Bom'bay
     .goto 1411,55.78,75.36
     .turnin 25167 >>Turn in Breaking the Chain
     .accept 25168 >>Accept Purge the Valley
+    .target +Master Gadrin
     .goto 1411,55.91,74.72
     .accept 25169 >>Accept The War of Northwatch Aggression
     .goto 1411,55.47,75.06
-    .target Bom'bay
-    .target Master Gadrin
-    .target Lar Prowltusk
+    .target +Lar Prowltusk
+step
+    #xprate >1.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Gadrin|r and |cRXP_FRIENDLY_Lar|r
+    .turnin 25170 >>Turn in Cleaning Up the Coastline
+    .target +Bom'bay
+    .goto 1411,55.78,75.36
+    .turnin 25167 >>Turn in Breaking the Chain
+    .accept 25168 >>Accept Purge the Valley
+    .target +Master Gadrin
+    .goto 1411,55.91,74.72
+    .accept 25169 >>Accept The War of Northwatch Aggression
+    .target +Lar Prowltusk
+    .goto 1411,55.47,75.06
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cona|r
@@ -1649,6 +1663,7 @@ step << Warlock Cata
     .train 87389 >> Train your class spells
     .target Gusini
 step
+    #xprate <1.2
     #loop
     .goto 1411,52.72,75.35,0
     .waypoint 1411,54.15,74.77,40,0
@@ -1703,17 +1718,28 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     --VV Beta test needed
 step
+    #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Lar|r and |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 25165 >>Turn in Never Trust a Big Barb and a Smile
+    .target +Bom'bay
     .goto 1411,55.74,75.42
     .turnin 25169 >>Turn in The War of Northwatch Aggression
+    .target +Lar Prowltusk
     .goto 1411,55.42,75.11
     .turnin 25168 >>Turn in Purge the Valley
     .accept 25171 >>Accept Riding On
+    .target +Master Gadrin
     .goto 1411,55.91,74.78
-    .target Bom'bay
-    .target Lar Prowltusk
-    .target Master Gadrin
+step
+    #xprate >1.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r and |cRXP_FRIENDLY_Master Gadrin|r
+    .turnin 25169 >>Turn in The War of Northwatch Aggression
+    .target +Lar Prowltusk
+    .goto 1411,55.42,75.11
+    .turnin 25168 >>Turn in Purge the Valley
+    .accept 25171 >>Accept Riding On
+    .target +Master Gadrin
+    .goto 1411,55.91,74.78
 step
     .goto 1411,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
