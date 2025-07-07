@@ -6987,7 +6987,7 @@ function addon.functions.dailyhub(self, text, hub, poi, arg1)
 end
 
 function addon.functions.vale(self, text, poi, arg1)
-    if type(self) == "string" and addon.player.beta then
+    if type(self) == "string" then
         return {text = text, textOnly = true, poi = poi, arg1 = arg1}
     end
 
