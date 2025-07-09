@@ -1518,9 +1518,9 @@ step
     >>Kill |cRXP_ENEMY_Northwatch Supply Crates|r and |cRXP_ENEMY_Northwatch Lugs|r
     >>|cRXP_WARN_You may have to wait for more to respawn|r
     .complete 25167,1 --Northwatch Supply Crates destroyed (3)
+    .mob +Northwatch Supply Crate
     .complete 25167,2 --Northwatch Lug (10)
-    .mob Northwatch Lug
-    .mob Northwatch Supply Crate
+    .mob +Northwatch Lug
 step
     #loop
     .goto 1411,55.68,78.92,0
@@ -1539,7 +1539,7 @@ step
     .complete 25170,1 --Collect Crawler Mucus (5)
     .mob Surf Crawler
 step
-    #xprate <1.2
+    #xprate <1.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Gadrin|r and |cRXP_FRIENDLY_Lar|r
     .turnin 25170 >>Turn in Cleaning Up the Coastline
     .accept 25165 >>Accept Never Trust a Big Barb and a Smile
@@ -1547,13 +1547,13 @@ step
     .goto 1411,55.78,75.36
     .turnin 25167 >>Turn in Breaking the Chain
     .accept 25168 >>Accept Purge the Valley
-    .target +Master Gadrin
+    .target +Master Gadrinw
     .goto 1411,55.91,74.72
     .accept 25169 >>Accept The War of Northwatch Aggression
     .goto 1411,55.47,75.06
     .target +Lar Prowltusk
 step
-    #xprate >1.19
+    #xprate >1.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Gadrin|r and |cRXP_FRIENDLY_Lar|r
     .turnin 25170 >>Turn in Cleaning Up the Coastline
     .target +Bom'bay
@@ -1663,7 +1663,7 @@ step << Warlock Cata
     .train 87389 >> Train your class spells
     .target Gusini
 step
-    #xprate <1.2
+    #xprate <1.1
     #loop
     .goto 1411,52.72,75.35,0
     .waypoint 1411,54.15,74.77,40,0
@@ -1718,7 +1718,7 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     --VV Beta test needed
 step
-    #xprate <1.2
+    #xprate <1.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bom'bay|r, |cRXP_FRIENDLY_Lar|r and |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 25165 >>Turn in Never Trust a Big Barb and a Smile
     .target +Bom'bay
@@ -1731,7 +1731,7 @@ step
     .target +Master Gadrin
     .goto 1411,55.91,74.78
 step
-    #xprate >1.19
+    #xprate >1.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r and |cRXP_FRIENDLY_Master Gadrin|r
     .turnin 25169 >>Turn in The War of Northwatch Aggression
     .target +Lar Prowltusk
@@ -1800,13 +1800,20 @@ step << Warlock Cata
     .train 687 >> Train your class spells
     .target Gusini
     .xp <8,1
-step
+step << cata
+    #completewith RazorVisit1
     .goto 1411,55.26,74.66
     .gossipoption 112084 >> Talk to |cRXP_FRIENDLY_Jhash|r
     >>|cRXP_WARN_Take the ride to Razor Hill|r
     .timer 67, Riding on RP
     .target Raider Jhash
     .isOnQuest 25171
+step << !cata
+    #completewith RazorVisit1
+    .goto Durotar,55.38,73.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Handler Marnlek|r
+    .fly Razor Hill >>Fly to Razor Hill
+    .target Handler Marnlek
 step
     .goto 1411,51.51,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grosk|r
@@ -1820,6 +1827,7 @@ step
     .accept 25173 >>Accept From Bad to Worse
     .target Gar'Thok
 step
+    #label RazorVisit1
     .goto 1411,53.03,43.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gail|r
     .accept 25176 >>Accept Exploiting the Situation
@@ -2216,7 +2224,7 @@ step
     .goto 1411,42.70,49.90
     >>Escort |cRXP_FRIENDLY_Tekla|r to |cRXP_FRIENDLY_Raggaran|r
     .complete 25189,1 --Escort Grandmatron Tekla to Raggaran
-    .complete 25188,1 --Help Grandmatron Tekla (1)
+    --.complete 25188,1 --Help Grandmatron Tekla (1) --completes once quest 25189 is turned in
     .target Grandmatron Tekla
 step
     .goto 1411,42.66,49.89
