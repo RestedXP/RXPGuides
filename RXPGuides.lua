@@ -1465,7 +1465,7 @@ addon.updateInactiveQuest = {}
 local stepCounter = 1
 local batchSize = 5
 local updateTimer = GetTime()
-local cycleStart = GetTime()
+--local cycleStart = GetTime()
 
 local skip = 0
 local updateError
