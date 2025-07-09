@@ -11,7 +11,6 @@ RXPGuides.RegisterGuide([[
 #next 6-10 Durotar
 #version 1
 --#group RXP Cataclysm (H) << cata
-#group RXP MoP (H) << mop
 #defaultfor Orc
 #group RXP Cataclysm 1-80 (H) << cata
 #group RXP MoP 1-80 (H) << mop
@@ -475,7 +474,6 @@ RXPGuides.RegisterGuide([[
 #next 6-10 Durotar
 #version 1
 --#group RXP Cataclysm (H) << cata
-#group RXP MoP (H) << mop
 #defaultfor Troll
 #group RXP Cataclysm 1-80 (H) << cata
 #group RXP MoP 1-80 (H) << mop
@@ -1342,7 +1340,6 @@ RXPGuides.RegisterGuide([[
 #next 10-22 Azshara
 #version 1
 --#group RXP Cataclysm (H) << cata
-#group RXP MoP (H) << mop
 #defaultfor Orc/Troll
 #group RXP Cataclysm 1-80 (H) << cata
 #group RXP MoP 1-80 (H) << mop

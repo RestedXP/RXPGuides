@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #next 6-10 Eversong Woods
 #version 1
 --#group RXP Cataclysm (H) << cata
-#group RXP MoP (H) << mop
+
 #defaultfor Undead
 #group RXP Cataclysm 1-80 (H) << cata
 #group RXP MoP 1-80 (H) << mop

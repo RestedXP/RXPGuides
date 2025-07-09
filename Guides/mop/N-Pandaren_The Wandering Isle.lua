@@ -6,7 +6,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Starting Zone (Pandaren)
 #name 1-12 The Wandering Isle
-#next RXP Cataclysm 1-80 (A)\10-20 Loch Modan;RXP Cataclysm 1-80 (H)\10-22 Azshara;skip
+#next RXP Cataclysm 1-80 (A)\10-20 Loch Modan;RXP Cataclysm 1-80 (H)\10-22 Azshara;RXP MoP 1-80 (A)\10-20 Loch Modan;RXP MoP 1-80 (H)\10-22 Azshara;skip
+
 
 << Pandaren !DK
 
@@ -1360,13 +1361,6 @@ step <<skip
 	.target King Varian Wrynn
     .neutralzonefinished
 step
-    .zoneskip 1
-    .zoneskip 85
-    .goto 84,62.81,71.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
-    .accept 46727 >>Accept Battle for Azeroth: Tides of War
-    .target Hero's Herald
-step
     .zoneskip 84
     #completewith next
     .goto 85,49.87,75.52,20 >> Go |cRXP_WARN_inside Grommash Hold|r.
@@ -1377,4 +1371,9 @@ step
     .turnin 31012 >> Turn in Joining the Horde
     .target Garrosh Hellscream
     .neutralzonefinished
+step
+.zoneskip 84
+.zoneskip 1
+.zoneskip 85
++Congratulations, you just finished the pandaren starting zone, please click on the cogwheel button under the RXP window and select the appropriate follow-up guide
 ]])

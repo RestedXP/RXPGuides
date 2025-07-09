@@ -2250,28 +2250,41 @@ function addon.functions.hs(self, ...)
         return {text = text}
     end
     local event, unit, _, id = ...
-    local step = self.element.step
-    if class == "SHAMAN" then
-        step.activeSpells = step.activeSpells or {}
-        step.activeSpells[556] = true
+    local element = self.element
+    local step = element.step
+    if not element.disableItemWindow then
+        if class == "SHAMAN" then
+            step.activeSpells = step.activeSpells or {}
+            step.activeSpells[556] = true
+        end
+
+        step.activeItems = step.activeItems or {}
+        step.activeItems[6948] = true
+        step.activeItems[184871] = true
     end
-
-    step.activeItems = step.activeItems or {}
-    step.activeItems[6948] = true
-    step.activeItems[184871] = true
-
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
         if (id == 8690 or id == 556 or id == 348699 or id == 184871) then
             addon.SetElementComplete(self)
         elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             for _,v in pairs(addon.hearthstoneSpellIds) do
                 if v == id then
-                    return addon.SetElementComplete(self)
+                    addon.SetElementComplete(self)
+                    return
                 end
             end
         end
     end
 end
+
+events.hsbatching = events.hs
+function addon.functions.hsbatching(self,...)
+    local element = addon.functions.hs(self, ...)
+    if element then
+        element.disableItemWindow  = true
+    end
+    return element
+end
+
 
 local homeText = strupper(_G.HOME or "%")
 function addon.SelectGossipType(gossipType,noOp)
@@ -6987,7 +7000,7 @@ function addon.functions.dailyhub(self, text, hub, poi, arg1)
 end
 
 function addon.functions.vale(self, text, poi, arg1)
-    if type(self) == "string" and addon.player.beta then
+    if type(self) == "string" then
         return {text = text, textOnly = true, poi = poi, arg1 = arg1}
     end
 
