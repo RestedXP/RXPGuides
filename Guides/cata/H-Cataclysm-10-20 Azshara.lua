@@ -242,7 +242,7 @@ step << Hunter Cata
 step
     #completewith RunawayShredder
     .goto 1454,75.39,4.15,0
-    .zone Azshara >> Enter Azshara through the Northern exit
+    .zone Azshara >> Enter Azshara through the northern exit
 step
     #optional
     .goto 76,26.81,76.96
@@ -346,71 +346,21 @@ step
     .goto 76,21.506,75.870
     >>Kill the |cRXP_ENEMY_Talrendis Ancient|r to the west
     >>|cRXP_WARN_If you lost your Shredder, mount a|r |cRXP_FRIENDLY_Backup Shredder|r |cRXP_WARN_instead|r
+    >>|cRXP_WARN_Cast|r |T132489:0|t[Recharge] |cRXP_WARN_if your |cRXP_FRIENDLY_Shredder|r gets low health|r
     .complete 14155,1 --Talrendis Ancient (1)
     .unitscan Talrendis Ancient
     .target Backup Shredder
 step
-    #loop
-    .goto 76,21.966,74.436,0
-    .goto 76,30.679,74.065,0
-    .waypoint 76,21.966,74.436,60,0
-    .waypoint 76,23.589,74.546,60,0
-    .waypoint 76,25.579,74.477,60,0
-    .waypoint 76,27.129,74.676,60,0
-    .waypoint 76,29.138,74.328,60,0
-    .waypoint 76,30.679,74.065,60,0
+    #completewith next
     >>Kill |cRXP_ENEMY_Talrendis Scouts|r. They are stealthed
     >>Kill |cRXP_ENEMY_Weakened Mosshoof Stags|r. Loot them for their |cRXP_LOOT_Slab of Venison|r
     >>|cRXP_ENEMY_Talrendis Scouts|r |cRXP_WARN_can jump you as you're killing|r |cRXP_ENEMY_Weakened Mosshoof Stags|r
+    >>|cRXP_WARN_Skip this step if you're not almost done at this point|r
     .complete 14117,1 --Talrendis Scout (8)
     .complete 14118,1 --Slab of Venison (15)
     .disablecheckbox
     .unitscan Talrendis Scout
     .mob Weakened Mosshoof Stag
-step
-    #completewith ArborcideTurnin
-    >>If you looted the |T133464:0|t[Scout's Orders], use the item to accept the quest
-    .collect 47039,1,14127 --Scout's Orders (1)
-    .accept 14127 >>Accept Return of the Highborne?
-    .use 47039
-    .itemcount 47039,1
-step
-    #completewith ArborcideTurnin
-    >>Kill |cRXP_ENEMY_Weakened Mosshoof Stags|r. Loot them for their |cRXP_LOOT_Slab of Venison|r
-    >>|cRXP_WARN_Skip this step if you are not close to finishing it at this point|r
-    .complete 14118,1 --Slab of Venison (15)
-    .mob Weakened Mosshoof Stag
-step
-    #optional
-    .goto 76,26.83,76.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
-    .turnin 14117 >>Turn in The Eyes of Ashenvale
-    .turnin 14118 >>Turn in Venison for the Troops
-    .turnin 14127 >>Turn in Return of the Highborne?
-    .target Ag'tor Bloodfist
-    .isQuestComplete 14118
-    .isOnQuest 14127
-step
-    #optional
-    .goto 76,26.83,76.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
-    .turnin 14117 >>Turn in The Eyes of Ashenvale
-    .turnin 14127 >>Turn in Return of the Highborne?
-    .target Ag'tor Bloodfist
-    .isOnQuest 14127
-step
-    #optional
-    .goto 76,26.83,76.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
-    .turnin 14117 >>Turn in The Eyes of Ashenvale
-    .turnin 14118 >>Turn in Venison for the Troops
-    .target Ag'tor Bloodfist
-    .isQuestComplete 14118
-step
-    .goto 76,26.83,76.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
-    .turnin 14117 >>Turn in The Eyes of Ashenvale
-    .target Ag'tor Bloodfist
 step
     #label ArborcideTurnin
     .goto 76,27.00,77.07
@@ -422,27 +372,34 @@ step
     #optional
     .goto 76,26.83,76.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
-    .turnin 14118 >>Turn in Venison for the Troops
+    .collect 47039,1,14127 --Scout's Orders (1)
+    .accept 14127 >>Accept Return of the Highborne?
+    .turnin 14127 >>Turn in Return of the Highborne?
+    .use 47039
+    .itemcount 47039,1
     .target Ag'tor Bloodfist
-    .isQuestComplete 14118
+step
+    #optional
+    .goto 76,26.83,76.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
+    .turnin 14117 >>Turn in The Eyes of Ashenvale
+    .target Ag'tor Bloodfist
+    .isQuestComplete 14117
 step
     #optional
     .goto 76,26.83,76.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
     .turnin 14127 >>Turn in Return of the Highborne?
     .target Ag'tor Bloodfist
-    .isOnQuest 14127
-step
-    #optional
-    .goto 76,26.83,76.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
-    .accept 14128 >>Accept Return of the Highborne?
-    .target Ag'tor Bloodfist
-    .isQuestTurnedIn 14127
+    .isQuestComplete 14118
 step
     #completewith Horzak1
     #optional
     .abandon 14118 >>Abandon Venison for the Troops
+step
+    #completewith Horzak1
+    #optional
+    .abandon 14117 >>Abandon in The Eyes of Ashenvale
 step
     #completewith Horzak1
     .subzone 4830 >>Travel to the Orgrimmar Rocketway Exchange
@@ -453,18 +410,16 @@ step
     .target Malynea Skyreaver
     .isOnQuest 14128
 step
-    .goto 76,29.12,66.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fisk|r
-    .accept 14197 >>Accept A Quota to Meet
-    .target Foreman Fisk
-step
     #label Horzak1
-    .goto 76,29.15,66.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horzak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horzak|r and |cRXP_FRIENDLY_Foreman Fisk|r
     .turnin 14162 >>Turn in Report to Horzak
     .accept 14161 >>Accept Basilisk Bashin'
     .accept 14165 >>Accept Stone Cold
-    .target Horzak Zignibble
+    .target +Horzak Zignibble
+    .goto 76,29.15,66.25
+    .accept 14197 >>Accept A Quota to Meet
+    .target +Foreman Fisk
+    .goto Azshara,29.07,66.25
 step
     #completewith next
     .subzone 4744 >>Travel West to the Mountainfoot Stripmine
@@ -1461,10 +1416,14 @@ step
     .turnin 24449 >>Turn in Shore Leave
     .target Uncle Bedlam
 step
-    .maxlevel 18,NorthAzsharaSkip
     .goto 76,55.49,52.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalec|r
     .turnin 14407 >>Turn in Azshara Blues
+    .target Kalec
+step
+    .maxlevel 18,NorthAzsharaSkip
+    .goto 76,55.49,52.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalec|r
     .accept 14130 >>Accept Friends Come In All Colors
     .target Kalec
 step
@@ -2529,6 +2488,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .target Kroum
+    .zoneskip Orgrimmar
 step
     .goto 1454/1,-4356.80029,1799.59998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maztha|r
@@ -2759,6 +2719,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kulg Gorespatter|r
     .gossipoption 111683 >>Fly to The Mor'Shan Ramparts
     .target Kulg Gorespatter
+    .subzoneskip 2457,1
     .isOnQuest 13866
 step
     #optional
