@@ -5,12 +5,15 @@ RXPGuides.RegisterGuide([[
 #version 6
 #wotlk
 #cata
+#mop
 << DK
 #group RestedXP Death Knight Start
 #next RestedXP Alliance 60-70\59-61 Hellfire Peninsula << Alliance wotlk
 #next RestedXP Horde 60-70\59-61 Hellfire Peninsula << Horde wotlk
-#next RXP Cataclysm 60-80 (H)\59-61 Hellfire Peninsula << Horde !wotlk
-#next RXP Cataclysm 60-80 (A)\59-61 Hellfire Peninsula << Alliance !wotlk
+#next RXP Cataclysm 60-80 (H)\59-61 Hellfire Peninsula << Horde cata
+#next RXP Cataclysm 60-80 (A)\59-61 Hellfire Peninsula << Alliance cata
+#next RXP MoP 60-80 (H)\59-61 Hellfire Peninsula << Horde !wotlk !cata
+#next RXP MoP 60-80 (A)\59-61 Hellfire Peninsula << Alliance !wotlk !cata
 #defaultfor DK
 #name 55-58 The Scarlet Enclave
 
