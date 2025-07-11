@@ -84,15 +84,21 @@ step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .turnin 9393 >>Turn in Hunter Training
-    .accept 10070 <<Accept Steady Shot
+    .accept 10070 >> Accept Steady Shot
     .train 56641 >>Train |T132213:0|t[Steady Shot] << Cata
     .target Ranger Sallina
-step << Mage
+step << Mage cata
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .turnin 8328 >>Turn in Mage Training
     .accept 10068 >>Accept Arcane Missiles
     .train 5143 >>Train |T136096:0|t[Arcane Missiles] << Cata
+    .target Julia Sunstriker
+step << Mage !cata
+    .goto Eversong Woods,39.23,21.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
+    .turnin 8328 >>Turn in Mage Training
+    .accept 10068 >>Accept Frost Nova
     .target Julia Sunstriker
 step << Paladin
     .goto Eversong Woods,39.47,20.55
@@ -102,12 +108,18 @@ step << Paladin
     .train 20271 >>Train |T135959:0|t[Judgement] << Cata
     .train 20154 >>Train |T135960:0|t[Seal of Righteousness] << Cata
     .target Jesthenis Sunstriker
-step << Priest
+step << Priest cata
     .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .turnin 8564 >>Turn in Priest Training
     .accept 10072 >>Accept Healing the Wounded
     .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
+    .target Matron Arena
+step << Priest !cata
+    .goto Eversong Woods,39.41,20.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
+    .turnin 8564 >>Turn in Priest Training
+    .accept 10072 >>Accept Learning the Word
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
@@ -116,12 +128,18 @@ step << Rogue
     .accept 10071 >>Accept Evisceration
     .train 2098 >>Train |T132292:0|t[Eviscerate] << Cata
     .target Pathstalker Avoker
-step << Warlock
+step << Warlock cata
     .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .turnin 8563 >>Turn in Warlock Training
     .accept 10073 >>Accept Immolation
     .train 348 >>Train |T135817:0|t[Immolate] << Cata
+    .target Summoner Teli'Larien
+step << Warlock !cata
+    .goto Eversong Woods,38.94,21.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
+    .turnin 8563 >>Turn in Warlock Training
+    .accept 10073 >>Accept Corruption
     .target Summoner Teli'Larien
 step << Warrior
     .goto Eversong Woods,39.29,20.11
@@ -141,35 +159,51 @@ step << Hunter
 	.complete 10070,2 << !Cata --Cast Steady Shot
 	.complete 10070,1 << Cata --Cast Steady Shot
 	.mob Training Dummy
-step << Mage
+step << Mage cata
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10068,2 << !Cata --Cast Arcane Missiles
 	.complete 10068,1 << Cata --Cast Arcane Missiles
 	.mob Training Dummy
-step << Paladin
+step << Mage !cata
+    .goto Eversong Woods,38.34,20.64
+	>>Cast |T135848:0|t[Frost Nova] on a |cRXP_ENEMY_Training Dummy|r outside
+	.complete 10068,2 --Cast Frost Nova
+	.mob Training Dummy
+step << Paladin cata
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T135960:0|t[Seal of Righteousness] on yourself, then cast |T135959:0|t[Judgement] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10069,2 << !Cata --Cast Judgement
 	.complete 10069,1 << Cata --Cast Judgement
 	.mob Training Dummy
- step << Priest
+step << Paladin !cata
+    .goto Eversong Woods,38.34,20.64
+	>>Cast |T135961:0|t[Seal of Command], then attack a |cRXP_ENEMY_Training Dummy|r outside
+	.complete 10069,2
+	.mob Training Dummy
+step << Priest cata
     .goto Eversong Woods,39.49,20.29
 	>>Cast |T135907:0|t[Flash Heal] on a |cRXP_ENEMY_Wounded Outrunner|r
-	.complete 10072,2 << !Cata --Cast Flash Heal
-	.complete 10072,1 << Cata --Cast Flash Heal
+	.complete 10072,1 --Cast Flash Heal
 	.target Wounded Outrunner
+ step << Priest !cata
+    .goto Eversong Woods,38.34,20.64
+	>>Cast |T136207:0|t[Shadow Word: Pain] on a |cRXP_ENEMY_Training Dummy|r outside
+	.complete 10072,2 --Cast Shadow Word: Pain
+	.mob Training Dummy
 step << Rogue
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T132292:0|t[Eviscerate] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 10071,2 << !Cata --Cast Eviscerate
 	.complete 10071,1 << Cata --Cast Eviscerate
 	.mob Training Dummy
-step << Warlock
+step << Warlock cata
     .goto Eversong Woods,38.34,20.64
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Training Dummy|r outside
-	.complete 10073,2 << !Cata --Cast Immolate
-	.complete 10073,1 << Cata --Cast Immolate
+	.complete 10073,1 --Cast Immolate
+	.mob Training Dummy
+step << Warlock !cata
+    .goto Eversong Woods,38.34,20.64
+	>>Cast |T136118:0|t[Corruption] on a |cRXP_ENEMY_Training Dummy|r outside
+	.complete 10073,2 --Cast Corruption
 	.mob Training Dummy
 step << Warrior
     .goto Eversong Woods,38.34,20.64
@@ -187,30 +221,45 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .turnin 10070 >>Turn in Steady Shot
     .target Ranger Sallina
-step << Mage
+step << Mage cata
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .turnin 10068 >>Turn in Arcane Missiles
+    .target Julia Sunstriker
+step << Mage !cata
+    .goto Eversong Woods,39.23,21.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
+    .turnin 10068 >>Turn in Frost Nova
     .target Julia Sunstriker
 step << Paladin
     .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jesthenis Sunstriker|r
     .turnin 10069 >>Turn in Ways of the Light
     .target Jesthenis Sunstriker
-step << Priest
+step << Priest cata
     .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .turnin 10072 >>Turn in Healing the Wounded
+    .target Matron Arena
+step << Priest !cata
+    .goto Eversong Woods,39.41,20.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
+    .turnin 10072 >>Turn in Learning the Word
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Avoker|r
     .turnin 10071 >>Turn in Evisceration
     .target Pathstalker Avoker
-step << Warlock
+step << Warlock cata
     .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .turnin 10073 >>Turn in Immolation
+    .target Summoner Teli'Larien
+step << Warlock !cata
+    .goto Eversong Woods,38.94,21.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
+    .turnin 10073 >>Turn in Corruption
     .target Summoner Teli'Larien
 step << Warrior
     .goto Eversong Woods,39.29,20.11

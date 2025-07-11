@@ -123,12 +123,18 @@ step << Hunter
     .accept 25139 >>Accept Steady Shot
     .train 56641 >> Train |T132213:0|t[Steady Shot] << Cata
     .target Karranisha
-step << Mage
+step << Mage cata
     .goto 1411,42.52,69.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acrypha|r
     .turnin 25138 >>Turn in Glyphic Parchment
     .accept 25149 >>Accept Arcane Missiles
     .train 5143 >> Train |T136096:0|t[Arcane Missiles] << Cata
+    .target Acrypha
+step << Mage !cata
+    .goto 1411,42.52,69.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acrypha|r
+    .turnin 25138 >>Turn in Glyphic Parchment
+    .accept 25149 >>Accept Frost Nova
     .target Acrypha
 step << Shaman
     .goto 1411,42.39,68.99
@@ -144,12 +150,18 @@ step << Warrior
     .accept 25147 >>Accept Charge
     .train 100 >> Train |T132337:0|t[Charge] << Cata
     .target Frang
-step << Warlock
+step << Warlock cata
     .goto 1411,42.38,68.06
     .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Turn in Tainted Parchment
     .accept 25145 >>Accept Immolate
     .train 348 >> Train |T135817:0|t[Immolate] << Cata
+    .target Nartok
+step << Warlock !cata
+    .goto 1411,42.38,68.06
+    .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
+    .turnin 3090 >>Turn in Tainted Parchment
+    .accept 25145 >>Accept Corruption
     .target Nartok
 step << Monk
     .goto 1411,43.18,69.47
@@ -168,11 +180,15 @@ step << Hunter
 	.complete 25139,2 << !Cata --Cast Steady Shot (x5)
 	.complete 25139,1 << Cata --Cast Steady Shot (x5)
 	.mob Training Dummy
-step << Mage
+step << Mage cata
     .goto 1411,43.18,69.47
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25149,2 << !Cata--Arcane Missiles (x2)
-	.complete 25149,1 << Cata--Arcane Missiles (x2)
+	.complete 25149,1 --Arcane Missiles (x2)
+	.mob Training Dummy
+step << Mage !cata
+    .goto 1411,43.18,69.47
+	>>Cast |T135848:0|t[Frost Nova] on a |cRXP_ENEMY_Training Dummy|r
+	.complete 25149,2 --Cast Frost Nova
 	.mob Training Dummy
 step << Shaman
     .goto 1411,43.18,69.47
@@ -186,10 +202,15 @@ step << Warrior
 	.complete 25147,2 << !Cata--Cast Charge (x1)
 	.complete 25147,1 << Cata --Cast Charge (x1)
 	.mob Training Dummy
-step << Warlock
+step << Warlock cata
     .goto 1411,43.18,69.47
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 25145,2 --Cast Immolate (x5)
+	.complete 25145,2,1 --Cast Immolate (x5)
+	.mob Training Dummy
+step << Warlock !cata
+    .goto 1411,43.18,69.47
+	>>Cast |T136118:0|t[Corruption] on a |cRXP_ENEMY_Training Dummy|r
+	.complete 25145,2 --Cast Corruption (x5)
 	.mob Training Dummy
 step << Monk
     .goto 461/1,-4209.500,-618.300
@@ -935,12 +956,18 @@ step << Hunter
     .accept 24778 >>Accept The Arts of a Hunter
     .train 56641 >>Train |T132213:0|t[Steady Shot] << Cata
     .target Ortezza
-step << Priest
+step << Priest cata
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r
     .turnin 24786 >>Turn in Proving Pit
     .accept 24784 >>Accept The Arts of a Priest
     .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
+    .target Tunari
+step << Priest !cata
+    .goto 1411,67.59,83.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r
+    .turnin 24786 >>Turn in Proving Pit
+    .accept 24784 >>Accept Learnin' tha Word
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
@@ -966,11 +993,16 @@ step << Warrior
 	.complete 24640,2 << !Cata --Cast Charge (x3)
 	.complete 24640,1 << Cata --Cast Charge (x3)
 	.mob Tiki Target
-step << Mage
+step << Mage cata
 	.goto 1411,68.91,84.31
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Tiki Target|r
 	.complete 24752,2 << !Cata --Cast Arcane Missiles (x3)
 	.complete 24752,1 << Cata --Cast Arcane Missiles (x3)
+	.mob Tiki Target
+step << Mage !cata
+	.goto 1411,68.91,84.31
+	>>Cast |T135848:0|t[Frost Nova] on a |cRXP_ENEMY_Tiki Target|r
+	.complete 24752,2 --Cast Frost Nova
 	.mob Tiki Target
 step << Shaman
 	.goto 1411,64.86,84.69
@@ -978,11 +1010,15 @@ step << Shaman
 	.complete 24760,2 << !Cata --Cast Primal Strike (x3)
 	.complete 24760,1 << Cata --Cast Primal Strike (x3)
 	.mob Tiki Target
-step << Druid
+step << Druid cata
 	.goto 1411,67.91,84.60
 	>>Cast |T136081:0|t[Rejuvenation] on a |cRXP_FRIENDLY_Wounded Darkspear Watcher|r
-	.complete 24766,2 << !Cata --Cast Rejuvenation (x1)
-	.complete 24766,1 << Cata --Cast Rejuvenation (x1)
+	.complete 24766,1 --Cast Rejuvenation (x1)
+	.target Wounded Darkspear Watcher
+step << Druid !cata
+	.goto 1411,67.91,84.60
+	>>Cast |T136096:0|t[Moonfire] on a |cRXP_FRIENDLY_Wounded Darkspear Watcher|r
+	.complete 24766,2 --Cast Moonfire
 	.target Wounded Darkspear Watcher
 step << Hunter
 	.goto 1411,67.18,83.12
@@ -990,17 +1026,25 @@ step << Hunter
 	.complete 24778,2 << !Cata --Steady Shot (x3)
 	.complete 24778,1 << Cata --Steady Shot (x3)
 	.mob Tiki Target
-step << Priest
+step << Priest cata
 	.goto 1411,67.35,83.24
 	>>Cast |T135907:0|t[Flash Heal] on a |cRXP_FRIENDLY_Wounded Darkspear Watcher|r
-	.complete 24784,2 << !Cata --Cast Flash Heal (x5)
-	.complete 24784,1 << Cata --Cast Flash Heal (x5)
+	.complete 24784,1 --Cast Flash Heal (x5)
 	.target Wounded Darkspear Watcher
-step << Warlock
+step << Priest !cata
+	.goto 1411,65.07,82.88
+	>>Cast |T136207:0|t[Shadow Word: Pain] on a |cRXP_ENEMY_Tiki Target|r
+	.complete 24784,2 --Shadow Word: Pain
+	.mob Tiki Target
+step << Warlock cata
 	.goto 1411,65.07,82.88
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 26274,2 << !Cata --Cast Immolate (x3)
-	.complete 26274,1 << Cata --Cast Immolate (x3)
+	.complete 26274,1 --Cast Immolate (x3)
+	.mob Tiki Target
+step << Warlock !cata
+	.goto 1411,65.07,82.88
+	>>Cast |T136118:0|t[Corruption] on a |cRXP_ENEMY_Tiki Target|r
+	.complete 26274,2 --Cast Corruption
 	.mob Tiki Target
 step << Monk
     .goto 463/1,-5430.300,-1151.600
@@ -1044,10 +1088,16 @@ step << Hunter
     .turnin 24778 >>Turn in The Arts of a Hunter
     .accept 24781 >>Accept More Than Expected
     .target Ortezza
-step << Priest
+step << Priest cata
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r
     .turnin 24784 >>Turn in The Arts of a Priest
+    .accept 24787 >>Accept More Than Expected
+    .target Tunari
+step << Priest !cata
+    .goto 1411,67.59,83.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tunari|r
+    .turnin 24784 >>Turn in Learnin' tha Word
     .accept 24787 >>Accept More Than Expected
     .target Tunari
 step << Warlock
@@ -1544,7 +1594,7 @@ step
     .goto 1411,55.78,75.36
     .turnin 25167 >>Turn in Breaking the Chain
     .accept 25168 >>Accept Purge the Valley
-    .target +Master Gadrinw
+    .target +Master Gadrin
     .goto 1411,55.91,74.72
     .accept 25169 >>Accept The War of Northwatch Aggression
     .goto 1411,55.47,75.06

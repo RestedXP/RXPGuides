@@ -199,12 +199,18 @@ step << Paladin
     .train 20271 >>Train |T135959:0|t[Judgement] << Cata
     .train 20154 >>Train |T135960:0|t[Seal of Righteousness] << Cata
     .target Sunwalker Helaku
-step << Druid
+step << Druid cata
     .goto 7,45.22,75.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
     .turnin 3094 >>Turn in Verdant Note
     .accept 27067 >>Accept Rejuvenating Touch
     .train 774 >>Train |T136081:0|t[Rejuvenation] << Cata
+    .target Gart Mistrunner
+step << Druid !cata
+    .goto 7,45.22,75.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
+    .turnin 3094 >>Turn in Verdant Note
+    .accept 27067 >>Accept Moonfire
     .target Gart Mistrunner
 step << Shaman
     .goto 7,45.09,75.06
@@ -213,12 +219,18 @@ step << Shaman
     .accept 27027 >>Accept Primal Strike
     .train 73899 >>Train |T460956:0|t[Primal Strike] << Cata
     .target Meela Dawnstrider
-step << Priest
+step << Priest cata
     .goto 7,44.99,75.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
     .turnin 27014 >>Turn in Hallowed Note
     .accept 27066 >>Accept Healing in a Flash
     .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
+    .target Seer Ravenfeather
+step << Priest !cata
+    .goto 7,44.99,75.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
+    .turnin 27014 >>Turn in Hallowed Note
+    .accept 27066 >>Accept Learning the Word
     .target Seer Ravenfeather
 step << Monk
     .goto 7,45.43,75.39
@@ -237,18 +249,26 @@ step << Warrior
 	.complete 27020,2 << !Cata --Cast Charge (x3)
 	.complete 27020,1 << Cata --Cast Charge (x3)
 	.mob Training Dummy
-step << Paladin
+step << Paladin cata
     .goto 7,45.43,75.39
 	>>Cast |T135959:0|t[Judgement] on a |cRXP_ENEMY_Training Dummy|r
-	.complete 27023,2 << !Cata --Cast Judgement (x3)
-	.complete 27023,1 << Cata --Cast Judgement (x3)
+	.complete 27023,1 --Cast Judgement (x3)
 	.mob Training Dummy
-step << Druid
+step << Paladin !cata
+    .goto 7,45.43,75.39
+	>>Cast |T135961:0|t[Seal of Command], then attack a |cRXP_ENEMY_Training Dummy|r
+	.complete 27023,2
+    .mob Training Dummy
+step << Druid cata
     .goto 7,45.65,75.35
 	>>Cast |T136081:0|t[Rejuvenation] on a |cRXP_FRIENDLY_Wounded Brave|r
-	.complete 27067,2 << !Cata --Cast Rejuvenation (x1)
 	.complete 27067,1 << Cata --Cast Rejuvenation (x1)
 	.target Wounded Brave
+step << Druid !cata
+    .goto 7,45.43,75.39
+	>>Cast |T136096:0|t[Moonfire] on a |cRXP_ENEMY_Training Dummy|r
+	.complete 27067,2 --Cast Moonfire
+	.mob Training Dummy
 step << Shaman
     .goto 7,45.43,75.39
 	>>Cast |T460956:0|t[Primal Strike] on a |cRXP_ENEMY_Training Dummy|r
@@ -281,20 +301,30 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helaku|r
     .turnin 27023 >>Turn in The Way of the Sunwalkers
     .target Sunwalker Helaku
-step << Druid
+step << Druid cata
     .goto 7,45.22,75.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
     .turnin 27067 >>Turn in Rejuvenating Touch
+    .target Gart Mistrunner
+step << Druid !cata
+    .goto 7,45.22,75.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
+    .turnin 27067 >>Turn in Moonfire
     .target Gart Mistrunner
 step << Shaman
     .goto 7,45.09,75.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 27027 >>Turn in Primal Strike
     .target Meela Dawnstrider
-step << Priest
+step << Priest cata
     .goto 7,44.99,75.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
     .turnin 27066 >>Turn in Healing in a Flash
+    .target Seer Ravenfeather
+step << Priest !cata
+    .goto 7,44.99,75.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
+    .turnin 27066 >>Turn in Learning the Word
     .target Seer Ravenfeather
 step
     #completewith next
