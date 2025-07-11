@@ -35,7 +35,8 @@ step
     .goto 425,29.25,38.05,40,0
     .goto 425,26.25,40.59,40,0
     .goto 425,26.09,53.65,40,0
-    >>Kill |cRXP_ENEMY_Blackrock Worgs|r
+    >>Kill |cRXP_ENEMY_Blackrock Worgs|r << !mop
+    >>Kill |cRXP_ENEMY_Blackrock Battle Worgs|r << mop
     .complete 28757,1 << Human Mage --Blackrock Worgs (6)
     .complete 28762,1 << Human Paladin --Blackrock Worgs (6)
     .complete 28763,1 << Human Priest --Blackrock Worgs (6)
@@ -45,7 +46,8 @@ step
     .complete 28767,1 << Human Hunter --Blackrock Worgs (6)
     .complete 29078,1 << !Human --Blackrock Worgs (6)
     .complete 31139,1 << Human Death Knight/Human Monk --Blackrock Worgs (6)
-    .mob Blackrock Worg
+    .mob Blackrock Worg << !mop
+    .mob Blackrock Battle Worg << mop
 step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
@@ -93,7 +95,7 @@ step
     .complete 29079,1 << !Human --Blackrock Spies (8)
     .complete 31140,1 << Human Death Knight/Human Monk --Blackrock Spies (8)
     .mob Blackrock Spy
-step << MOP
+step << skip
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 28769 >>Turn in Lions for Lambs << Human Mage
@@ -115,7 +117,7 @@ step << MOP
     .accept 29080 >>Accept Join the Battle! << !Human
     .accept 31143 >>Accept Join the Battle! << Human Death Knight/Human Monk
     .target Marshal McBride
-step << Cata
+step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 28769 >>Turn in Lions for Lambs << Human Mage
@@ -137,36 +139,37 @@ step << Cata
     .accept 29080 >>Accept Join the Battle! << !Human
     .target Marshal McBride
 --XX needs testing on non-human classes. Not needed for Monks/DKs
-step << Warrior Cata/Paladin Cata
+
+step << Warrior/Paladin
     #optional
     #completewith next
     .goto 425,35.84,51.87,8,0
     .goto 425,38.46,52.30,8,0
     .goto 425,40.87,53.80,10 >> Travel toward |cRXP_FRIENDLY_Llane Beshere|r inside the Abbey << Warrior
     .goto 425,41.55,53.23,10 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside the Abbey << Paladin
-step << Warrior Cata
+step << Warrior
     .goto 425,40.87,53.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r
     .turnin 3100 >>Turn in Simple Letter << Human
     .accept 26913 >>Accept Charging into Battle << Human
-    .train 100 >>Train |T132337:0|t[Charge]
+    .train 100 >>Train |T132337:0|t[Charge] << Cata
     .target Llane Beshere
-step << Paladin Cata
+step << Paladin
     .goto 425,41.55,53.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 3101 >>Turn in Consecrated Letter << Human
     .accept 26918 >>Accept The Power of the Light << Human
-    .train 20154 >>Train |T135960:0|t[Seal of Righteousness]
-    .train 20271 >>Train |T135959:0|t[Judgement]
+    .train 20154 >>Train |T135960:0|t[Seal of Righteousness] << Cata
+    .train 20271 >>Train |T135959:0|t[Judgement] << Cata
     .target Brother Sammuel
-step << Rogue Cata
+step << Rogue
     .goto 425,41.13,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r outside on the opposite side of the Abbey
     .turnin 3102 >>Turn in Encrypted Letter << Human
     .accept 26915 >>Accept The Deepest Cut << Human
-    .train 2098 >>Train |T132292:0|t[Eviscerate]
+    .train 2098 >>Train |T132292:0|t[Eviscerate] << Cata
     .target Jorik Kerridan
-step << Human Priest Cata/Human Mage Cata
+step << Human Priest/Human Mage
     #optional
     #completewith next
     .goto 425,35.61,51.32,8,0
@@ -176,15 +179,15 @@ step << Human Priest Cata/Human Mage Cata
     .goto 425,37.94,45.13,5,0 << Mage
     .goto 425,39.31,43.78,10 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r inside the Abbey << Priest
     .goto 425,38.78,43.47,10 >> Travel toward |cRXP_FRIENDLY_Khelden Bremen|r inside the Abbey upstairs. Jump up from the stairs via the rail outside his room if you can << Mage
-step << Human Priest Cata
+step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .turnin 3103 >>Turn in Hallowed Letter << Human
     .accept 26919 >>Accept Healing the Wounded << Human
-    .train 2061 >>Train |T135907:0|t[Flash Heal]
+    .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
     .target Priestess Anetta
 --XX Human Priest only since Flash Heal is somewhat useless when you just smite spam
-step << Human Priest Cata
+step << Human Priest
     #loop
     .goto 425,39.31,43.78,0
     .goto 425,38.97,43.16,10,0
@@ -199,29 +202,29 @@ step << Human Priest Cata
     >>Cast |T135907:0|t[Flash Heal] on 5 |cRXP_FRIENDLY_Wounded Trainees|r inside the Abbey
     .complete 26919,1 --Cast Flash Heal (5)
     .target Wounded Trainee
-step << Human Mage Cata
+step << Human Mage
     .goto 425,38.78,43.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
     .turnin 3104 >>Turn in Glyphic Letter << Human
     .accept 26916 >>Accept Mastering the Arcane << Human
-    .train 5143 >>Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >>Train |T136096:0|t[Arcane Missiles] << Cata
     .target Khelden Bremen
 --XX Human Mage only since Arcane Missiles is somewhat useless when you just fireball spam
-step << Warlock Cata
+step << Warlock
     .goto 425,39.55,55.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .turnin 3105 >>Turn in Tainted Letter << Human
     .accept 26914 >>Accept Immolation << Human
-    .train 348 >>Train |T135817:0|t[Immolate]
+    .train 348 >>Train |T135817:0|t[Immolate] << Cata
     .target Drusilla La Salle
-step << Hunter Cata
+step << Hunter
     .goto 425,34.83,54.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley Blank|r
     .turnin 26910 >>Turn in Etched Letter << Human
     .accept 26917 >>Accept The Hunter's Path << Human
-    .train 56641 >>Train |T132213:0|t[Steady Shot]
+    .train 56641 >>Train |T132213:0|t[Steady Shot] << Cata
     .target Ashley Blank
-step << Human Warrior Cata/Human Paladin Cata/Human Mage Cata
+step << Human Warrior/Human Paladin/Human Mage
     #optional
     #completewith next
     .goto 425,38.46,52.30,8,0 << Warrior/Paladin
@@ -230,7 +233,7 @@ step << Human Warrior Cata/Human Paladin Cata/Human Mage Cata
     .goto 425,35.61,51.32,8,0 << Mage
     .goto 425,33.82,53.38,10,0
     .goto 425,35.58,60.57,40 >> Travel toward the |cRXP_ENEMY_Training Dummies|r
-step << !Priest Human Cata
+step << !Priest Human
     .goto 425,35.58,60.57,-1
     .goto 425,35.82,61.08,-1
     .goto 425,35.81,61.71,-1
@@ -245,14 +248,22 @@ step << !Priest Human Cata
     >>Cast |T135812:0|t[Fireball] and then |T136096:0|t[Arcane Missiles] when it procs on a |cRXP_ENEMY_Training Dummy|r 2 times << Mage
     >>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Training Dummy|r 5 times << Hunter
     >>Cast |T135960:0|t[Seal of Righteousness] and then |T135959:0|t[Judgement] on a |cRXP_ENEMY_Training Dummy|r << Paladin
-    .complete 26913,1 << Warrior --Cast Charge (1)
-    .complete 26914,1 << Warlock --Cast Immolation (5)
-    .complete 26915,1 << Rogue --Cast Eviscerate (3)
-    .complete 26916,1 << Mage --Cast Arcane Missiles (2)
-    .complete 26917,1 << Hunter --Cast Steady Shot (5)
-    .complete 26918,1 << Paladin --Cast Judgement (1)
+--cata ids
+    .complete 26913,1 << Warrior Cata --Cast Charge (1)
+    .complete 26914,1 << Warlock Cata --Cast Immolation (5)
+    .complete 26915,1 << Rogue Cata --Cast Eviscerate (3)
+    .complete 26916,1 << Mage Cata --Cast Arcane Missiles (2)
+    .complete 26917,1 << Hunter Cata --Cast Steady Shot (5)
+    .complete 26918,1 << Paladin Cata --Cast Judgement (1)
+--mop ids
+    .complete 26913,2 << Warrior mop --Cast Charge (1)
+    .complete 26914,2 << Warlock mop --Cast Immolation (5)
+    .complete 26915,2 << Rogue mop --Cast Eviscerate (3)
+    .complete 26916,2 << Mage mop --Cast Arcane Missiles (2)
+    .complete 26917,2 << Hunter mop --Cast Steady Shot (5)
+    .complete 26918,2 << Paladin mop --Cast Judgement (1)
     .mob Training Dummy
-step << Human Warrior Cata/Human Paladin Cata/Human Mage Cata
+step << Human Warrior/Human Paladin/Human Mage
     #optional
     #completewith next
     .goto 425,35.84,51.87,8,0 << Warrior/Paladin
@@ -264,49 +275,53 @@ step << Human Warrior Cata/Human Paladin Cata/Human Mage Cata
     .goto 425,40.87,53.80,10 >> Return to |cRXP_FRIENDLY_Llane Beshere|r inside the Abbey << Warrior
     .goto 425,41.55,53.23,10 >> Return to |cRXP_FRIENDLY_Brother Sammuel|r inside the Abbey << Paladin
     .goto 425,38.78,43.47,10 >> Return to |cRXP_FRIENDLY_Khelden Bremen|r inside the Abbey << Mage
-step << Human Priest Cata
+step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .turnin 26919 >>Turn in Healing the Wounded
     .accept 28786 >>Accept Join the Battle!
     .target Priestess Anetta
-step << Human Mage Cata
+step << Human Mage
     .goto 425,38.78,43.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
     .turnin 26916 >>Turn in Mastering the Arcane
     .accept 28784 >>Accept Join the Battle!
     .target Khelden Bremen
-step << Human Warrior Cata
+step << Human Warrior
     .goto 425,40.87,53.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r
     .turnin 26913 >>Turn in Charging into Battle
     .accept 28789 >>Accept Join the Battle!
     .target Llane Beshere
-step << Human Paladin Cata
+step << Human Paladin
     .goto 425,41.55,53.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 26918 >>Turn in The Power of the Light
     .accept 28785 >>Accept Join the Battle!
     .target Brother Sammuel
-step << Human Rogue Cata
+step << Human Rogue
     .goto 425,41.13,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
     .turnin 26915 >>Turn in The Deepest Cut
     .accept 28787 >>Accept Join the Battle!
     .target Jorik Kerridan
-step << Human Warlock Cata
+step << Human Warlock
     .goto 425,39.55,55.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .turnin 26914 >>Turn in Immolation
     .accept 28788 >>Accept Join the Battle!
     .target Drusilla La Salle
 --XX May not need to turn in class quest to accept followup (aka can turn in later)
-step << Human Hunter Cata
+step << Human Hunter
     .goto 425,34.83,54.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley Blank|r
     .turnin 26917 >>Turn in The Hunter's Path
     .accept 28780 >>Accept Join the Battle!
     .target Ashley Blank
+
+
+
+
 step
     .goto 425,35.73,39.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Willem|r
@@ -982,43 +997,43 @@ step
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
 	.target Remy "Two Times"
-step << Hunter
+step << Hunter cata
     .goto 37,40.854,65.902
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Benjamin Foxworthy|r
     .trainer >> Train your class spells
     .target Benjamin Foxworthy
-step << Paladin
+step << Paladin cata
     .goto 37,41.074,65.953
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
     .trainer >> Train your class spells
     .target Brother Wilhelm
-step << Warrior
+step << Warrior cata
     .goto 37,41.069,65.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .trainer >> Train your class spells
     .target Lyria Du Lac
-step << Warlock
+step << Warlock cata
     #completewith next
     .goto 37,44.54,65.76,15 >> Travel down into the Goldshire Inn basement
-step << Warlock
+step << Warlock cata
     .goto 37,44.389,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
     .trainer >> Train your class spells
     .target Maximillian Crowe
-step << Mage/Priest/Rogue
+step << Mage/Priest/Rogue cata
     #completewith next
     .goto 37,43.86,66.40,15 >> Travel up stairs in the Goldshire Inn
-step << Mage
+step << Mage cata
     .goto 37,43.246,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
     .trainer >> Train your class spells
     .target Zaldimar Wefhellt
-step << Priest
+step << Priest cata
     .goto 37,43.282,65.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
     .trainer >> Train your class spells
     .target Priestess Josetta
-step << Rogue
+step << Rogue cata
     .goto 37,43.872,65.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
     .trainer >> Train your class spells
