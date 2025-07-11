@@ -160,64 +160,79 @@ end
 
 --Guides have a lot of optional steps of the like: Turn in this quest if you have completed it, otherwise do it later
 
+local stepIndex = 0
+local guideKey,qLogCache,futureTurnInsCache
 function addon.GetExpectedQuestLog()
     local guide = addon.currentGuide
     local startGuide
     local currentStep = RXPCData.currentStep
-    if guide.standalone then
-        startGuide = guide
-    else
-        local group = guide.group
-        local name = addon.guideList[group].defaultGuide_
-        startGuide = addon:FetchGuide(group,name)
+    local scanQuests
+    if guideKey ~= guide.key and stepIndex ~= currentStep or not qLogCache then
+        scanQuests = true
     end
-    startGuide = addon.ProcessGuideTable(startGuide)
-    if not (startGuide and startGuide.steps) then return {},{} end
-    --print(group,name)
-    local qLog = addon.GetQuestLog(nil,nil,startGuide,true,guide.key,currentStep)
-    if not qLog or not next(qLog) then
-        return {},{}
-    end
-    local futureTurnIns = {}
+    guideKey = guide.key
+    stepIndex = currentStep
 
-    local function ProcessStep(step,guide)
-        for _,element in ipairs(step.elements) do
-            if element.tag and (element.tag:find("turnin")) then
-                local ids = element.ids or {element.questId}
-                for _,id in pairs(ids) do
-                    if addon.IsOnQuest(id) then
-                        futureTurnIns[id] = guide.key
+    local function scanGuides()
+        if guide.standalone then
+            startGuide = guide
+        else
+            local group = guide.group
+            local name = addon.guideList[group].defaultGuide_
+            startGuide = addon:FetchGuide(group,name)
+        end
+        startGuide = addon.ProcessGuideTable(startGuide)
+        if not (startGuide and startGuide.steps) then return {},{} end
+        --print(group,name)
+        local qLog = addon.GetQuestLog(nil,nil,startGuide,true,guide.key,currentStep)
+        if not qLog or not next(qLog) then
+            return {},{}
+        end
+        local futureTurnIns = {}
+
+        local function ProcessStep(step,guide)
+            for _,element in ipairs(step.elements) do
+                if element.tag and (element.tag:find("turnin")) then
+                    local ids = element.ids or {element.questId}
+                    for _,id in pairs(ids) do
+                        if addon.IsOnQuest(id) then
+                            futureTurnIns[id] = guide.key
+                        end
                     end
                 end
             end
         end
-    end
-    for i = currentStep,#guide.steps do
-        local step = guide.steps[i]
-        if step then
-            ProcessStep(step,guide)
-        end
-    end
-
-    local nextGroup,nextName,nextGuide
-
-    repeat
-        nextGroup,nextName = addon.functions.next(false,guide)
-        nextGuide = addon:FetchGuide(nextGroup,nextName)
-        if nextGuide and nextGuide.steps then
-            if guide.key ~= nextGuide.key then
-                nextGuide = addon.ProcessGuideTable(nextGuide)
-                guide = nextGuide
-                for _,step in ipairs(guide.steps) do
-                    ProcessStep(step,guide)
-                end
-            else
-                nextGuide = nil
+        for i = currentStep,#guide.steps do
+            local step = guide.steps[i]
+            if step then
+                ProcessStep(step,guide)
             end
         end
-    until not nextGuide
 
-    return qLog,futureTurnIns
+        local nextGroup,nextName,nextGuide
+
+        repeat
+            nextGroup,nextName = addon.functions.next(false,guide)
+            nextGuide = addon:FetchGuide(nextGroup,nextName)
+            if nextGuide and nextGuide.steps then
+                if guide.key ~= nextGuide.key then
+                    nextGuide = addon.ProcessGuideTable(nextGuide)
+                    guide = nextGuide
+                    for _,step in ipairs(guide.steps) do
+                        ProcessStep(step,guide)
+                    end
+                else
+                    nextGuide = nil
+                end
+            end
+        until not nextGuide
+
+        return qLog,futureTurnIns
+    end
+    if scanQuests then
+        qLogCache,futureTurnInsCache = scanGuides()
+    end
+    return qLogCache,futureTurnInsCache
 end
 
 function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
@@ -492,6 +507,7 @@ function addon.AbandonOrphanedQuests(orphans)
     end)
 end
 
+--[[ no longer necessary
 -- Classic / Cata
 if _G.ToggleQuestLog and _G.QuestLogFrame then
     hooksecurefunc("ToggleQuestLog", function()
@@ -506,3 +522,4 @@ if _G.ToggleQuestLog and _G.QuestLogFrame then
 -- else
 --     addon.game == 'RETAIL'
 end
+]]
