@@ -299,24 +299,38 @@ step << Shaman
     .accept 14011 >>Accept Primal Strike
     .train 73899 >>Train |T460956:0|t[Primal Strike] << Cata
     .target Maxx Avalanche
-step << Mage
+step << Mage cata
     .goto 194,59.37,73.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Fizz|r
     .accept 14008 >>Accept Arcane Missiles
     .train 5143 >>Train |T136096:0|t[Arcane Missiles] << Cata
     .target Fizz Lighter
-    --VV Quest id is 14008#.?
-step << Warlock
+step << Mage !cata
+    .goto 194,59.37,73.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Fizz|r
+    .accept 14008 >>Accept Frost Nova
+    .target Fizz Lighter
+step << Warlock cata
     .goto 194,57.96,74.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Evol|r
     .accept 14012 >>Accept Immolate
     .train 348 >>Train |T135817:0|t[Immolate] << Cata
     .target Evol Fingers
-step << Priest
+step << Warlock !cata
+    .goto 194,57.96,74.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Evol|r
+    .accept 14012 >>Accept Corruption
+    .target Evol Fingers
+step << Priest cata
     .goto 194,57.87,77.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Goldskimmer|r
     .accept 14009 >>Accept Flash Heal
     .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
+    .target Sister Goldskimmer
+step << Priest !cata
+    .goto 194,57.87,77.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Goldskimmer|r
+    .accept 14009 >>Accept Learning the Word
     .target Sister Goldskimmer
 step << Rogue
     .goto 194,60.91,77.39
@@ -342,24 +356,38 @@ step << Shaman
 	.complete 14011,2 << !Cata --Cast Primal Strike (x3)
 	.complete 14011,1 << Cata --Cast Primal Strike (x3)
 	.mob Training Dummy
-step << Mage
+step << Mage cata
     .goto 194,60.91,77.39
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cFFFF5722Training Dummy|r
 	.complete 14008,2 << !Cata --Cast Arcane Missiles (x3)
 	.complete 14008,1 << Cata --Cast Arcane Missiles (x3)
 	.mob Training Dummy
-step << Warlock
+step << Mage !cata
+    .goto 194,60.91,77.39
+	>>Cast |T135848:0|t[Frost Nova] on a |cFFFF5722Training Dummy|r
+	.complete 14008,2 << !Cata --Cast Arcane Missiles (x3)
+	.complete 14008,1 << Cata --Cast Arcane Missiles (x3)
+	.mob Training Dummy
+step << Warlock cata
     .goto 194,60.91,77.39
 	>>Cast |T135817:0|t[Immolate] on a |cFFFF5722Training Dummy|r
-	.complete 14012,2 << !Cata --Cast Immolate (x3)
-	.complete 14012,1 << Cata --Cast Immolate (x3)
+	.complete 14012,1 --Cast Immolate (x3)
 	.mob Training Dummy
-step << Priest
+step << Warlock !cata
+    .goto 194,60.91,77.39
+	>>Cast |T136118:0|t[Corruption] on a |cFFFF5722Training Dummy|r
+	.complete 14012,2 << !Cata --Cast Corruption (x3)
+	.mob Training Dummy
+step << Priest cata
     .goto 194,58.24,77.40
 	>>Cast |T135907:0|t[Flash Heal] on a |cFF00FF25Injured Employee|r
-	.complete 14009,2 << !Cata --Cast Flash Heal (x5)
-	.complete 14009,1 << Cata --Cast Flash Heal (x5)
+	.complete 14009,1 --Cast Flash Heal (x5)
 	.target Injured Employee
+step << Priest !cata
+    .goto 194,60.91,77.39
+	>>Cast |T136207:0|t[Shadow Word: Pain] on a |cFFFF5722Training Dummy|r
+	.complete 14009,2 --Cast Shadow Word: Pain
+	.mob Training Dummy
 step << Rogue
     .goto 194,59.47,77.73,-1
     .goto 194,58.27,73.10,-1
@@ -381,21 +409,35 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maxx|r
     .turnin 14011 >>Turn in Primal Strike
     .target Maxx Avalanche
-step << Mage
+step << Mage cata
     .goto 194,59.37,73.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Fizz|r
     .turnin 14008 >>Turn in Arcane Missiles
     .target Fizz Lighter
-    --VV Quest id is 14008#.?
-step << Warlock
+step << Mage !cata
+    .goto 194,59.37,73.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Fizz|r
+    .turnin 14008 >>Turn in Frost Nova
+    .target Fizz Lighter
+step << Warlock cata
     .goto 194,57.96,74.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Evol|r
     .turnin 14012 >>Turn in Immolate
     .target Evol Fingers
-step << Priest
+step << Warlock !cata
+    .goto 194,57.96,74.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Evol|r
+    .turnin 14012 >>Turn in Immolate
+    .target Evol Fingers
+step << Priest cata
     .goto 194,57.87,77.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Goldskimmer|r
     .turnin 14009 >>Turn in Flash Heal
+    .target Sister Goldskimmer
+step << Priest !cata
+    .goto 194,57.87,77.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Goldskimmer|r
+    .turnin 14009 >>Turn in Learning the Word
     .target Sister Goldskimmer
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chip|r << Female

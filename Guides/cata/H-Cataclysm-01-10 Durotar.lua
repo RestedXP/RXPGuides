@@ -227,10 +227,15 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karranisha|r
     .turnin 25139 >>Turn in Steady Shot
     .target Karranisha
-step << Mage
+step << Mage cata
     .goto 1411,42.52,69.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acrypha|r
     .turnin 25149 >>Turn in Arcane Missiles
+    .target Acrypha
+step << Mage !cata
+    .goto 1411,42.52,69.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acrypha|r
+    .turnin 25149 >>Turn in Frost Nova
     .target Acrypha
 step << Shaman
     .goto 1411,42.39,68.99
@@ -242,10 +247,15 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 25147 >>Turn in Charge
     .target Frang
-step << Warlock
+step << Warlock cata
     .goto 1411,42.38,68.06
     .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 25145 >>Turn in Immolate
+    .target Nartok
+step << Warlock !cata
+    .goto 1411,42.38,68.06
+    .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
+    .turnin 25145 >>Turn in Corruption
     .target Nartok
 step
     .goto 1411,42.67,67.31
@@ -1034,7 +1044,7 @@ step << Priest cata
 step << Priest !cata
 	.goto 1411,65.07,82.88
 	>>Cast |T136207:0|t[Shadow Word: Pain] on a |cRXP_ENEMY_Tiki Target|r
-	.complete 24784,2 --Shadow Word: Pain
+	.complete 24784,2 --Cast Shadow Word: Pain
 	.mob Tiki Target
 step << Warlock cata
 	.goto 1411,65.07,82.88
