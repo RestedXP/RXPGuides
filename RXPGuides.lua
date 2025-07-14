@@ -1003,7 +1003,27 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_TURNED_IN" and addon.questTurnIn[arg1] then
             turnInTimer = GetTime()
     elseif event == "QUEST_AUTOCOMPLETE" then
-        if arg1 and addon.disabledQuests[arg1] then
+        local grp = addon.currentGuide and addon.currentGuide.group
+        if grp then
+            grp = strupper(grp)
+            if grp:find("PREP") then
+                return
+            end
+        end
+        local maxLvl = 0
+        local xp = UnitXP('player')/UnitXPMax('player')
+
+        if addon.gameVersion < 40000 then
+            maxLvl = 70
+        elseif addon.gameVersion < 50000 then
+            maxLvl = 80
+        elseif addon.gameVersion < 60000 then
+            maxLvl = 85
+        end
+
+        if UnitLevel('player') == maxLvl and xp < 0.01 then
+            return
+        elseif arg1 and addon.disabledQuests[arg1] then
             return
         elseif (addon.gameVersion < 60000 and UnitLevel('player') < 85) then
             for i = 1, GetNumAutoQuestPopUps() do
@@ -1015,7 +1035,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     end
                 end
             end
-        elseif addon.gameVersion > 60000 and UnitLevel('player') ~= 70 then
+        elseif addon.gameVersion > 60000 then
             ShowQuestComplete(arg1)
         end
     end
