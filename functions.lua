@@ -3759,9 +3759,12 @@ events.questcount = events.complete
 function addon.functions.questcount(self, text, count, ...)
     if type(self) == "string" then
         local element = {}
-        local operator, n = string.match(count, "([<>]?)%s*(%d+)")
+        local operator, n, flag = string.match(count, "([<>]?)%s*(%d+)([%*]*)")
         if operator == "<" then
             element.reverse = true
+        end
+        if flag == "*" then
+            element.ignoreTurnedInQuests = true
         end
         n = tonumber(n)
         element.total = n
@@ -3788,7 +3791,7 @@ function addon.functions.questcount(self, text, count, ...)
         for _,quest in pairs(element.ids) do
             local id = GetQuestId(quest)
             addon.questAccept[id] = element
-            if IsOnQuest(id) or IsQuestTurnedIn(id) then
+            if IsOnQuest(id) or not element.ignoreTurnedInQuests and IsQuestTurnedIn(id) then
                 count = count + 1
             end
         end
