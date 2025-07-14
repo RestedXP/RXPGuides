@@ -24,6 +24,7 @@ local embeddedGuides = {}
 
 addon.minGuideVersion = 0
 addon.maxGuideVersion = 0
+local aCache = {}
 
 local function applies(textEntry,customClass)
     if textEntry then
@@ -79,8 +80,14 @@ local function applies(textEntry,customClass)
             --print(isMatch and "TRUE" or "FALSE",'-',text)
             return isMatch
         end
-
-        return parse(textEntry,customClass)
+        local match
+        if not aCache[textEntry] then
+            match = parse(textEntry,customClass)
+            aCache[textEntry] = match
+            return match
+        else
+            return aCache[textEntry]
+        end
     end
     return true
 end
