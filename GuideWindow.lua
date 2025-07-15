@@ -1521,7 +1521,6 @@ function addon:FetchGuide(guide,arg2)
             guide.key = key
             --newGuide.group = grp
             parser = addon.guideCache[key]
-            A1 = key
             --print('ok2',key,parser)
         end
 
@@ -1533,7 +1532,7 @@ function addon:FetchGuide(guide,arg2)
             newGuide.submenuIndex = oldGuide.submenuIndex
 
             if not addon.guides[index] then
-                index = index:gsub("(.-)|",grp.."|")
+                index = index:gsub("^(.-)%|%|",grp.."||")
             end
             addon.guides[index] = newGuide
             addon.guideCache[key] = nil
