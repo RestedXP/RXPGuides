@@ -245,6 +245,7 @@ local GetContainerItemInfo = C_Container and C_Container.GetContainerItemInfo or
 local GetItemCooldown = addon.GetItemCooldown
 
 addon.recentTurnIn = {}
+addon.recentAccept = {}
 
 function addon.ExpandQuestHeaders()
     for i = 1, GetNumQuests() do
@@ -297,10 +298,13 @@ local IsQuestTurnedIn = function(id,accountWide)
     else
         isQuestTurnedIn = IsTurnedIn(id)
     end
-    if isQuestTurnedIn then addon.recentTurnIn[id] = nil end
-    local recent = recentTurnIn and GetTime() - recentTurnIn < 2
+    if isQuestTurnedIn then
+        addon.recentTurnIn[id] = nil
+        return true
+    elseif recentTurnIn and GetTime() - recentTurnIn < 2 then
+        return true
+    end
     --if recent then print(7,recent,id) end
-    return isQuestTurnedIn or recent
 end
 --QT = IsQuestTurnedIn
 
@@ -322,7 +326,16 @@ function addon.IsQuestComplete(id)
 end
 local IsQuestComplete = addon.IsQuestComplete
 
-local function IsOnQuest(id) return C_QuestLog.IsOnQuest(id) end
+local function IsOnQuest(id)
+    local quest = C_QuestLog.IsOnQuest(id)
+    local recent = addon.recentAccept[id]
+    if quest then
+        addon.recentAccept[id] = nil
+    elseif recent and GetTime()-recent < 2 then
+        return true
+    end
+    return quest
+end
 
 local function GetLogIndexForQuestID(questID)
     if C_QuestLog.GetLogIndexForQuestID then
@@ -1011,6 +1024,9 @@ function addon.functions.accept(self, ...)
         if event == "QUEST_ACCEPTED" then
             questId = questId or arg1
             isQuestAccepted = questId == id or IsQuestTurnedIn(id) or IsOnQuest(id)
+            if questId == id then
+                addon.recentAccept[id] = GetTime()
+            end
         else
             isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
         end
@@ -2517,10 +2533,11 @@ function addon.functions.fly(self, ...)
     elseif event == "TAXIMAP_OPENED" and addon.settings.profile.enableFPAutomation and
         element.location then
         addon:TAXIMAP_OPENED()
+        local loc = element.location:gsub("%-","%%-")
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
             local name = id and addon.FPDB[addon.player.faction] and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
-            if name and strupper(name):find(element.location) then
+            if name and strupper(name):find(loc) then
                 local button = getglobal("TaxiButton" .. i)
                 if button then
                     _G.TaxiNodeOnButtonEnter(button)
