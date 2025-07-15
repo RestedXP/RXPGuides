@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 
 #defaultfor Tauren
 #group RXP Cataclysm 1-80 (H) << cata
-#group RXP MoP 1-80 (H) << mop
+#group RXP MoP 1-60 (H) << mop
 #subweight 10000
 
 step << !Tauren
@@ -361,7 +361,7 @@ RXPGuides.RegisterGuide([[
 
 #defaultfor Tauren
 #group RXP Cataclysm 1-80 (H) << cata
-#group RXP MoP 1-80 (H) << mop
+#group RXP MoP 1-60 (H) << mop
 #subweight 10000
 
 
