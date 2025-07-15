@@ -106,7 +106,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 26
+local cacheVersion = 27
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -1059,6 +1059,19 @@ function addon:CreateMetaDataTable(wipe)
     if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() or addon.settings.profile.preLoadData then
         RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
+        local deleteIndexes = {}
+        local guides = addon.db.profile.guides
+        for key,v in pairs(guides) do
+            --print(i,v)
+            local grp = addon.GroupOverride(key)
+            if grp ~= key then
+                guides[grp] = v
+                table.insert(deleteIndexes,key)
+            end
+        end
+        for _,i in ipairs(deleteIndexes) do
+            guides[i] = nil
+        end
     end
     RXPData.guideMetaData = nil
     local guideMetaData = RXPCData.guideMetaData or {}

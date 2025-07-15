@@ -1050,10 +1050,8 @@ end
 
 function addon.GroupOverride(guide,arg2)
     local function SwapGroup(grp,subgrp)
-        if grp == "RXP MoP 1-80 (A)" then
-            return "RXP MoP 1-60 (A)",subgrp
-        elseif grp == "RXP MoP 1-80 (H)" then
-            return "RXP MoP 1-60 (H)",subgrp
+        if grp:match("RXP MoP 1%-80") then
+            return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
         end
         local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
         --local group,subgroup

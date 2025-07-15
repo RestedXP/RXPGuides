@@ -1513,12 +1513,28 @@ function addon:FetchGuide(guide,arg2)
             guide.parse = nil
         end
         local parser = addon.guideCache[key]
+        local grp = guide.group
+        if not parser then
+            grp = addon.GroupOverride(guide.group)
+            key = key:gsub("^(.-)%|",grp.."|")
+            guide.group = grp
+            guide.key = key
+            --newGuide.group = grp
+            parser = addon.guideCache[key]
+            A1 = key
+            --print('ok2',key,parser)
+        end
 
         local newGuide = parser and parser(parser) or
                             guide.parse and guide.parse(guide.parse)
         if newGuide then
+            newGuide.group = grp
             newGuide.menuIndex = oldGuide.menuIndex
             newGuide.submenuIndex = oldGuide.submenuIndex
+
+            if not addon.guides[index] then
+                index = index:gsub("(.-)|",grp.."|")
+            end
             addon.guides[index] = newGuide
             addon.guideCache[key] = nil
             guide = newGuide
