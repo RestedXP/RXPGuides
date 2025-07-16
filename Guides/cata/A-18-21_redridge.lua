@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 
 #version 1
 #group RXP Cataclysm 1-80 (A) << cata
-#group RXP MoP 1-80 (A) << mop
+#group RXP MoP 1-60 (A) << mop
 #cata
 #mop
 #name 15-20 Redridge

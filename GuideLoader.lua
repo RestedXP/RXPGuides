@@ -24,6 +24,7 @@ local embeddedGuides = {}
 
 addon.minGuideVersion = 0
 addon.maxGuideVersion = 0
+local aCache = {}
 
 local function applies(textEntry,customClass)
     if textEntry then
@@ -79,8 +80,14 @@ local function applies(textEntry,customClass)
             --print(isMatch and "TRUE" or "FALSE",'-',text)
             return isMatch
         end
-
-        return parse(textEntry,customClass)
+        local match
+        if not aCache[textEntry] then
+            match = parse(textEntry,customClass)
+            aCache[textEntry] = match
+            return match
+        else
+            return aCache[textEntry]
+        end
     end
     return true
 end
@@ -1043,6 +1050,9 @@ end
 
 function addon.GroupOverride(guide,arg2)
     local function SwapGroup(grp,subgrp)
+        if grp:match("RXP MoP 1%-80") then
+            return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
+        end
         local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
         --local group,subgroup
         local swap

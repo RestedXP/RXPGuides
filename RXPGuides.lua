@@ -106,7 +106,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 26
+local cacheVersion = 27
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -1003,7 +1003,27 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_TURNED_IN" and addon.questTurnIn[arg1] then
             turnInTimer = GetTime()
     elseif event == "QUEST_AUTOCOMPLETE" then
-        if arg1 and addon.disabledQuests[arg1] then
+        local grp = addon.currentGuide and addon.currentGuide.group
+        if grp then
+            grp = strupper(grp)
+            if grp:find("PREP") then
+                return
+            end
+        end
+        local maxLvl = 0
+        local xp = UnitXP('player')/UnitXPMax('player')
+
+        if addon.gameVersion < 40000 then
+            maxLvl = 70
+        elseif addon.gameVersion < 50000 then
+            maxLvl = 80
+        elseif addon.gameVersion < 60000 then
+            maxLvl = 85
+        end
+
+        if UnitLevel('player') == maxLvl and xp < 0.01 then
+            return
+        elseif arg1 and addon.disabledQuests[arg1] then
             return
         elseif (addon.gameVersion < 60000 and UnitLevel('player') < 85) then
             for i = 1, GetNumAutoQuestPopUps() do
@@ -1015,7 +1035,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     end
                 end
             end
-        elseif addon.gameVersion > 60000 and UnitLevel('player') ~= 70 then
+        elseif addon.gameVersion > 60000 then
             ShowQuestComplete(arg1)
         end
     end
@@ -1039,6 +1059,19 @@ function addon:CreateMetaDataTable(wipe)
     if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() or addon.settings.profile.preLoadData then
         RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
+        local deleteIndexes = {}
+        local guides = addon.db.profile.guides
+        for key,v in pairs(guides) do
+            --print(i,v)
+            local grp = addon.GroupOverride(key)
+            if grp ~= key then
+                guides[grp] = v
+                table.insert(deleteIndexes,key)
+            end
+        end
+        for _,i in ipairs(deleteIndexes) do
+            guides[i] = nil
+        end
     end
     RXPData.guideMetaData = nil
     local guideMetaData = RXPCData.guideMetaData or {}
