@@ -2363,6 +2363,12 @@ function addon.functions.home(self, ...)
         return
     end
     local event = ...
+    if (event == nil and element.step.active) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
+    end
     if event == "HEARTHSTONE_BOUND" or element.location and element.location == GetBindLocation() then
         addon.SetElementComplete(self)
         element.confirm = false
@@ -2461,6 +2467,12 @@ function addon.functions.fp(self, ...)
     local event, arg1, arg2 = ...
     local element = self.element
     local fpId = element.fpId
+    if (event == nil and element.step.active) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
+    end
     --print('v',element.fpId,RXPCData.flightPaths[element.fpId])
     if self.element.step.active then
         --print(element.fpId,'-',RXPCData.flightPaths[element.fpId])
@@ -4964,7 +4976,7 @@ function addon.functions.skipgossip(self, text, ...)
     local nArgs = #args
     local event = text
     local id = tonumber(args[1])
-    if (element.step.active and event == nil) then
+    if (event == nil and element.step.active) then
         local g = GossipGetOptions()
         if type(g) == "table" and #g > 0 then
             event = "GOSSIP_SHOW"
@@ -5034,9 +5046,11 @@ function addon.functions.gossip(self, text, npc, length, flags)
     end
     local event = text
     local frame = _G.GossipFrame
-    if not event and _G.GossipFrame:IsShown() then
-        local options = GossipGetOptions()
-        event = next(options) and "GOSSIP_SHOW"
+    if (event == nil and element.step.active) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
     end
     if event == "GOSSIP_SHOW" then
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
@@ -5108,6 +5122,12 @@ function addon.functions.skipgossipid(self, text, ...)
     end
     --print('ok1')
     local event = text
+    if (event == nil and element.step.active) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
+    end
     if event == "GOSSIP_SHOW" then
         local args = element.args or {}
         local gossipOptions = GossipGetOptions()
