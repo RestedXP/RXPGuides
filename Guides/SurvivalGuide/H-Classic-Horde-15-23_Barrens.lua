@@ -70,7 +70,7 @@ step << Warlock
 step << Warlock
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Grimoire of Sacrifice]
-    .collect 16316,1,842,1 --Grimoire of Sacrifice (Rank 1) (1)
+    .collect 16351,1,842,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kitha
     .xp <16,1
 step << Warlock
@@ -1401,14 +1401,14 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.54,46.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurgul|r and buy |T133738:0|t[Grimoire of Sacrifice]
-    .collect 16316,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
+    .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurgul|r and buy |T133738:0|t[Grimoire of Sacrifice]
-    .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurgul|r and buy |T133738:0|t[Grimoire of Firebolt (Rank 3)]
+    .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (Rank 1) (1)
     .target Kurgul
     .xp <18,1
 step << Warrior
