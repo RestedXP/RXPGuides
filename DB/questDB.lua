@@ -442,6 +442,7 @@ function addon.functions.requires(self,text,mode,...)
         local pass = false
         for _,v in pairs(args) do
             local id = tonumber(v)
+            id = addon.GetQuestId(id)
             if id then
                 pass = pass or addon.IsGuideQuestActive(id)
             end
