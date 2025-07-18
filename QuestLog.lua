@@ -234,7 +234,8 @@ function addon.GetExpectedQuestLog()
     end
     return qLogCache,futureTurnInsCache
 end
-
+local maxQLogSize = 0
+local maxIndex = 0
 function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
     if not (QL and LT) then
         QL = {}
@@ -279,6 +280,10 @@ function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
         end
         local nQuests = 0
         for n in pairs(QL) do nQuests = nQuests + 1 end
+        if nQuests > maxQLogSize then
+            maxIndex = step.index
+            maxQLogSize = nQuests
+        end
         if (not silent and (nQuests > maxQuests or step.stop)) or (stopGuide == guide.key and stopStep == step.index) then
             qError = true
             eStep = step
@@ -295,6 +300,9 @@ function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
             n = n + 1
         end
         print("QuestLog length: " .. n)
+        print(format("QuestLog maximum size: %d - step %d",maxQLogSize,maxIndex))
+        maxQLogSize = 0
+        maxIndex = 0
     end
     if qError then
         if not silent then

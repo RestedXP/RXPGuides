@@ -3825,7 +3825,7 @@ function addon.functions.questcount(self, text, count, ...)
             end
         end
     else
-        count = GetNumQuests()
+        _,count = GetNumQuests()
     end
 
     local step = element.step
