@@ -67,7 +67,7 @@ step
     .complete 9293,1 --Collect Lasher Sample (x10)
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .mob Mutated Root Lasher
-step << Priest/Shaman
+step << cata Priest/Shaman
     .goto Azuremyst Isle,79.1,46.5
 	.xp 4-470 >>Grind until you are 470xp away from level 4 (930/1400)
 step
@@ -93,17 +93,18 @@ step
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
     .turnin 9409 >> Turn in Urgent Delivery!
     .accept 9283 >> Accept Rescue the Survivors!
-    .accept 26970 >> Accept Aiding the Injured << Priest
-    .train 2061 >> Train |T135907:0|t[Flash Heal] << Priest
-    .train 589 >> Train |T136207:0|t[Shadow Word: Pain] << Priest
+    .accept 26970 >> Accept Aiding the Injured << cata Priest
+    .accept 26970 >> Accept Learning the Word << !cata Priest
+    .train 2061 >> Train |T135907:0|t[Flash Heal] << cata Priest
+    .train 589 >> Train |T136207:0|t[Shadow Word: Pain] << cata Priest
     .target Zalduun
-step << Priest
+step << Priest cata
     .goto Azuremyst Isle,80.32,48.30,10,0
     .goto Azuremyst Isle,80.12,49.23
     >>|cRXP_WARN_Cast|r |T135907:0|t[Flash Heal] |cRXP_WARN_5 times on an |cRXP_FRIENDLY_Injured Draenei|r beside you|r
     .complete 26970,1 -- Heal Injured Draenei
     .target Injured Draenei
-step << Priest
+step << Priest cata
     #loop
     .goto Azuremyst Isle,80.25,48.46,10,0
     .goto Azuremyst Isle,80.01,49.42,10,0
@@ -111,13 +112,13 @@ step << Priest
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
     .turnin 26970 >> Turn in Aiding the Injured
     .target Zalduun
-step << Mage
+step << Mage cata
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valaatu|r
     .accept 26968 >> Accept Arcane Missiles
 	.train 5143 >> Train |T136096:0|t[Arcane Missiles]
     .target Valaatu
-step << Paladin
+step << Paladin cata
     #loop
     .goto Azuremyst Isle,79.695,48.236,7,0
     .goto Azuremyst Isle,80.12,49.13,7,0
@@ -127,20 +128,20 @@ step << Paladin
     .train 20154 >> Train |T135960:0|t[Seal of Righteousness]
 	.train 20271 >> Train |T135959:0|t[Judgement]
     .target Aurelon
-step << Warrior
+step << Warrior cata
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kore|r
     .accept 26958 >> Accept Your First Lesson
 	.train 100 >> Train |T132337:0|t[Charge]
     .target Kore
-step << Shaman
+step << Shaman cata
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firmanvaar|r
     .accept 26969 >> Accept Primal Strike
     .train 8075 >> Train |T136023:0|t[Strength of Earth Totem]
     .train 73899 >> Train |T460956:0|t[Primal Strike]
     .target Firmanvaar
-step << Hunter
+step << Hunter cata
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keilnei|r
 	.accept 26963 >> Accept Steadying Your Shot
@@ -200,27 +201,37 @@ step
 step << Mage
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r until you get a|r |T135731:0|t[Arcane Missles!] |cRXP_WARN_proc, then cast|r |T136096:0|t[Arcane Missiles]|cRXP_WARN_. Repeat this twice|r
-    .complete 26968,1 -- Practice Arcane Missles (1)
+    .complete 26968,1 << cata -- Practice Arcane Missles (1)
+    .complete 26968,2 << !cata -- Practice Arcane Missles (1)
     .mob Training Dummy
 step << Shaman
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Cast|r |T460956:0|t[Primal Strike] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r 3 times|r
-    .complete 26969,1 -- Practice Primal Strike (1)
+    .complete 26969,1 << cata -- Practice Primal Strike (1)
+    .complete 26969,2 << !cata -- Practice Primal Strike (1)
     .mob Training Dummy
 step << Hunter
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Cast|r |T132213:0|t[Steady Shot] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r 5 times|r
-    .complete 26963,1 -- Practice Steady Shot (1)
+    .complete 26963,1 << cata -- Practice Steady Shot (1)
+    .complete 26963,2 << !cata -- Practice Steady Shot (1)
     .mob Training Dummy
 step << Warrior
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Cast|r |T132337:0|t[Charge] |cRXP_WARN_on the|r |cRXP_ENEMY_Training Dummy|r
-    .complete 26958,1 -- Practice Charge (1)
+    .complete 26958,1 << cata -- Practice Charge (1)
+    .complete 26958,2 << !cata -- Practice Charge (1)
     .mob Training Dummy
 step << Paladin
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Cast|r |T135960:0|t[Seal of Righteousness] |cRXP_WARN_followed by|r |T135959:0|t[Judgement] |cRXP_WARN_on the|r |cRXP_ENEMY_Training Dummy|r
-    .complete 26966,1 -- Practice Charge (1)
+    .complete 26966,1 << cata -- Practice Charge (1)
+    .complete 26966,2 << !cata -- Practice Charge (1)
+    .mob Training Dummy
+step << Priest !cata
+    .goto Azuremyst Isle,79.662,46.427
+    >>|cRXP_WARN_Cast|r |T136207:0|t[Shadow Word: Pain] |cRXP_WARN_on a |cRXP_ENEMY_Training Dummy|r 5 times|r
+    .complete 26970,2 -- Shadow Word: Pain (5)
     .mob Training Dummy
 step
 	#completewith SpareParts
@@ -235,7 +246,15 @@ step
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
-    .turnin 9283 >> Turn in  Rescue the Survivors!
+    .turnin 9283 >> Turn in Rescue the Survivors!
+    .target Zalduun
+step << !cata Priest
+    #loop
+    .goto Azuremyst Isle,80.25,48.46,10,0
+    .goto Azuremyst Isle,80.01,49.42,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalduun|r
+    >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
+    .turnin 26970 >> Turn in Learning the Word
     .target Zalduun
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
@@ -342,12 +361,12 @@ step
     .turnin 9312 >> Turn in The Emitter
     .accept 9313 >> Accept Travel to Azure Watch
     .target Technician Zhanaa
-step << Mage
+step << Mage cata
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valaatu|r
 	.train 2136 >> Train |T135807:0|t[Fire Blast]
     .target Valaatu
-step << Priest
+step << Priest cata
     #loop
     .goto Azuremyst Isle,80.25,48.46,10,0
     .goto Azuremyst Isle,80.01,49.42,10,0
@@ -355,7 +374,7 @@ step << Priest
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
     .train 17 >> Train |T135940:0|t[Power Word: Shield]
     .target Zalduun
-step << Paladin
+step << Paladin cata
     #loop
     .goto Azuremyst Isle,79.695,48.236,7,0
     .goto Azuremyst Isle,80.12,49.13,7,0
@@ -363,12 +382,12 @@ step << Paladin
     >>|cRXP_FRIENDLY_Aurelon|r |cRXP_WARN_may patrol slightly|r
 	.train 465 >> Train |T135893:0|t[Devotion Aura]
     .target Aurelon
-step << Warrior
+step << Warrior cata
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kore|r
 	.train 34428 >> Train |T132342:0|t[Victory Rush]
     .target Kore
-step << Shaman
+step << Shaman cata
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firmanvaar|r
 	.train 8042 >> |T136026:0|t[Earth Shock]
@@ -426,7 +445,7 @@ step << Shaman
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Warrior/Paladin/Rogue
+step
     .goto Azuremyst Isle,48.960,51.063
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dulvi|r
     .train 2575 >>Train |T134708:0|t[Mining]
@@ -451,7 +470,7 @@ step
     .turnin 9455 >> Turn in Strange Findings
     .accept 9456 >> Accept Nightstalker Clean Up, Isle 2...
     .target Exarch Menelaous
-step << Shaman
+step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tuluun|r
     .train 331 >> Train |T136052:0|t[Healing Wave]
@@ -478,31 +497,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldaan|r
     .turnin 9603 >>Turn in Beds, Bandages, and Beyond
     .target Zaldaan
-step << Paladin
+step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tullas|r
     .train 635 >> Train |T135920:0|t[Holy Light]
     .target Tullas
     .xp <7,1
-step << Priest
+step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guvan|r
     .accept 9586 >> Accept Help Tavara
     .train 588 >> Train |T135926:0|t[Inner Fire]
     .target Guvan
     .xp <7,1
-step << Priest
+step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guvan|r
     .accept 9586 >> Accept Help Tavara
     .target Guvan
-step << Warrior
+step << Warrior cata
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruada|r
     .train 772 >> Train |T132155:0|t[Rend]
     .target Ruada
     .xp <7,1
-step << Hunter
+step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r
     .train 2973 >> Train |T132223:0|t[Raptor Strike]
@@ -627,7 +646,7 @@ step
     .turnin 9454 >> Turn in The Great Moongraze Hunt
     .accept 10324 >> Accept The Great Moongraze Hunt
     .target Acteon
-step << Hunter
+step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r
     .train 5116 >> Train |T135860:0|t[Concussive Shot]
@@ -641,35 +660,35 @@ step
     .accept 9473 >> Accept An Alternative Alternative
     .target +Daedal
     .goto Azuremyst Isle,48.392,51.482
-step << Shaman
+step << Shaman cata
     .train 331,1
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tuluun|r
     .train 331 >> Train |T136052:0|t[Healing Wave]
     .train 324 >> Train |T136051:0|t[Lightning Shield]
     .target Tuluun
-step << Shaman
+step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tuluun|r
     .train 324 >> Train |T136051:0|t[Lightning Shield]
     .target Tuluun
-step << Paladin
+step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tullas|r
     .train 635 >> Train |T135920:0|t[Holy Light]
     .target Tullas
-step << Priest
+step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guvan|r
     .turnin 9586 >> Turn in Help Tavara
     .trainer >> Train your class spells
     .target Guvan
-step << Mage
+step << Mage cata
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Semid|r
     .trainer >> Train your class spells
     .target Semid
-step << Warrior
+step << Warrior cata
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruada|r
     .train 772 >> Train |T132155:0|t[Rend]
@@ -923,32 +942,32 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
     .target Exarch Menelaous
-step << Shaman
+step << Shaman cata
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tuluun|r
     .trainer >> Train your class spells
     .target Tuluun
-step << Paladin
+step << Paladin cata
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tullas|r
     .trainer >> Train your class spells
     .target Tullas
-step << Priest
+step << Priest cata
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guvan|r
     .trainer >> Train your class spells
     .target Guvan
-step << Mage
+step << Mage cata
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Semid|r
     .trainer >> Train your class spells
     .target Semid
-step << Warrior
+step << Warrior cata
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruada|r
     .trainer >> Train your class spells
     .target Ruada
-step << Hunter
+step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon|r
     .trainer >> Train your class spells

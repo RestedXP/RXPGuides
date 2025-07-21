@@ -164,7 +164,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seargent Cleese|r
     .turnin 14265 >>Turn in Your Instructor
     .accept 14266 >>Accept Charge
-    .train 100 >>Train |T132337:0|t[Charge]
+    .train 100 >>Train |T132337:0|t[Charge] << cata
 	.target Sergeant Cleese
 step << Rogue
     .goto 202,71.406,65.752
@@ -172,42 +172,44 @@ step << Rogue
     >>|cRXP_WARN_She is|r |T132320:0|t[Stealthed]
     .turnin 14269 >>Turn in Someone's Looking for You
     .accept 14272 >>Accept Eviscerate
-    .train 2098 >>Train |T132292:0|t[Eviscerate]
+    .train 2098 >>Train |T132292:0|t[Eviscerate] << cata
 	.target Loren the Fence
 step << Warlock
     .goto 202,71.420,64.435
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
     .turnin 14273 >>Turn in Shady Associates
     .accept 14274 >>Accept Immolate
-    .train 348 >>Train |T135817:0|t[Immolate]
+    .train 348 >>Train |T135817:0|t[Immolate] << cata
 	.target Vitus Darkwalker
 step << Hunter
     .goto 202,71.503,61.307
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
     .turnin 14275 >>Turn in Someone's Keeping Track of You
     .accept 14276 >>Accept Steady Shot
-    .train 56641 >>Train |T132213:0|t[Steady Shot]
+    .train 56641 >>Train |T132213:0|t[Steady Shot] << cata
 	.target Huntsman Blake
 step << Mage
     .goto 202,68.043,64.695
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
     .turnin 14277 >>Turn in Arcane Inquiries
     .accept 14281 >>Accept Arcane Missiles
-    .train 5143 >>Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >>Train |T136096:0|t[Arcane Missiles] << cata
 	.target Myriam Spellwaker
 step << Priest
     .goto 202,70.421,65.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
     .turnin 14278 >>Turn in Seek the Sister
-    .accept 14279 >>Accept Flash Heal
-    .train 2061 >>Train |T135907:0|t[Flash Heal]
+    .accept 14279 >>Accept Flash Heal << cata
+    .accept 14279 >>Accept Learning the Word << !cata
+    .train 2061 >>Train |T135907:0|t[Flash Heal] << cata
 	.target Sister Almyra
 step << Druid
     .goto 202,70.190,65.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
     .turnin 14280 >>Turn in The Winds Know Your Name... Apparently
-    .accept 14283 >>Accept A Rejuvenating Touch
-    .train 774 >>Train |T136081:0|t[Rejuvenation]
+    .accept 14283 >>Accept A Rejuvenating Touch << cata
+    .accept 14283 >>Accept Moonfire << !cata
+    .train 774 >>Train |T136081:0|t[Rejuvenation] << cata
 	.target Celestine of the Harvest
 step << !Priest !Druid
     .goto 202,67.168,64.124
@@ -216,13 +218,25 @@ step << !Priest !Druid
     >>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Bloodfang Worgen|r << Warlock
     >>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Bloodfang Worgen|r 2 times << Hunter
     >>Cast |T135812:0|t[Fireball] and then |T136096:0|t[Arcane Missiles] when it procs on a |cRXP_ENEMY_Bloodfang Worgen|r << Mage
-    .complete 14266,1 << Warrior --Cast Charge (1)
-    .complete 14272,1 << Rogue --Cast Eviscerate (1)
-    .complete 14274,1 << Warlock --Cast Immolate (1)
-    .complete 14276,1 << Hunter --Cast Steady Shot (2)
-    .complete 14281,1 << Mage --Cast Arcane Missiles (1)
+    .complete 14266,1 << Warrior cata --Cast Charge (1)
+    .complete 14272,1 << Rogue cata --Cast Eviscerate (1)
+    .complete 14274,1 << Warlock cata --Cast Immolate (1)
+    .complete 14276,1 << Hunter cata --Cast Steady Shot (2)
+    .complete 14281,1 << Mage cata --Cast Arcane Missiles (1)
+    .complete 14266,2 << Warrior !cata --Cast Charge (1)
+    .complete 14272,2 << Rogue !cata --Cast Eviscerate (1)
+    .complete 14274,2 << Warlock !cata --Cast Immolate (1)
+    .complete 14276,2 << Hunter !cata --Cast Steady Shot (2)
+    .complete 14281,2 << Mage !cata --Cast Arcane Missiles (1)
     .mob Bloodfang Worgen
-step << Priest/Druid
+step << !cata Druid/Priest
+    .goto 202,67.168,64.124
+    >>Cast |T136096:0|t[Moonfire] on a |cRXP_ENEMY_Bloodfang Worgen|r << Druid
+    >>Cast |T136207:0|t[Shadow Word: Pain] twice on a |cRXP_ENEMY_Bloodfang Worgen|r << Priest
+    .complete 14279,2 << Priest --Cast Shadow Word: Pain (1)
+    .complete 14283,2 << Druid --Cast Moonfire (2)
+    .mob Bloodfang Worgen
+step << cata Priest/Druid 
     #loop
     .goto 202,70.421,65.541,0
     .goto 202,71.003,66.538,8,0
@@ -267,13 +281,15 @@ step << Mage
 step << Priest
     .goto 202,70.421,65.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
-    .turnin 14279 >>Turn in Flash Heal
+    .turnin 14279 >>Turn in Flash Heal << cata
+    .turnin 14279 >>Turn in Learning the Word << !cata
     .accept 14289 >>Accept Safety in Numbers
 	.target Sister Almyra
 step << Druid
     .goto 202,70.190,65.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
-    .turnin 14283 >> Turn in A Rejuvenating Touch
+    .turnin 14283 >> Turn in A Rejuvenating Touch << cata
+    .turnin 14283 >> Turn in Moonfire << !cata
     .accept 14291 >> Accept Safety in Numbers
 	.target Celestine of the Harvest
 step
@@ -647,12 +663,12 @@ step
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,3,2
     .train 2366,3 --Herbalism
-step << Hunter
+step << Hunter cata
     .goto 179,38.032,63.359
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
     .trainer >> Train your class spells
     .target Huntsman Blake
-step << Warrior
+step << Warrior cata
     .goto 179,38.278,63.457
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r
     .trainer >> Train your class spells
@@ -673,27 +689,27 @@ step
     .target Samantha Buckley
     .train 2575,3 --Mining
     .subzoneskip 4786,1
-step << Priest
+step << Priest cata
     .goto 179,36.015,64.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
     .trainer >> Train your class spells
     .target Sister Almyra
-step << Druid
+step << Druid cata
     .goto 179,36.276,64.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
     .trainer >> Train your class spells
     .target Celestine of the Harvest
-step << Mage
+step << Mage cata 
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
     .trainer >> Train your class spells
     .target Myriam Spellwaker
-step << Warlock
+step << Warlock cata
     .goto 179,35.824,63.866
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
     .trainer >> Train your class spells
     .target Vitus Darkwalker
-step << Rogue
+step << Rogue cata
     .goto 179,36.735,65.379
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
     .trainer >> Train your class spells
@@ -1276,37 +1292,37 @@ step
 step
     #completewith next
     .hs >> Hearth to Duskhaven
-step << Priest
+step << Priest cata
     .goto 179,36.015,64.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
     .trainer >> Train your class spells
     .target Sister Almyra
-step << Druid
+step << Druid cata
     .goto 179,36.276,64.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
     .trainer >> Train your class spells
     .target Celestine of the Harvest
-step << Mage
+step << Mage cata
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
     .trainer >> Train your class spells
     .target Celestine of the Harvest
-step << Warlock
+step << Warlock cata
     .goto 179,35.824,63.866
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
     .trainer >> Train your class spells
     .target Vitus Darkwalker
-step << Rogue
+step << Rogue cata
     .goto 179,36.735,65.379
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
     .trainer >> Train your class spells
     .target Loren the Fence
-step << Hunter
+step << Hunter cata
     .goto 179,38.032,63.359
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
     .trainer >> Train your class spells
     .target Huntsman Blake
-step << Warrior
+step << Warrior cata
     .goto 179,38.278,63.457
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r
     .trainer >> Train your class spells

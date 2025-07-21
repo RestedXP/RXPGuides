@@ -182,12 +182,13 @@ step << Human Priest/Human Mage
 step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
-    .turnin 3103 >>Turn in Hallowed Letter << Human
-    .accept 26919 >>Accept Healing the Wounded << Human
+    .turnin 3103 >>Turn in Hallowed Letter
+    .accept 26919 >>Accept Healing the Wounded << cata
+    .accept 26919 >>Accept Learning the Word << !cata
     .train 2061 >>Train |T135907:0|t[Flash Heal] << Cata
     .target Priestess Anetta
 --XX Human Priest only since Flash Heal is somewhat useless when you just smite spam
-step << Human Priest
+step << Cata Human Priest
     #loop
     .goto 425,39.31,43.78,0
     .goto 425,38.97,43.16,10,0
@@ -202,6 +203,18 @@ step << Human Priest
     >>Cast |T135907:0|t[Flash Heal] on 5 |cRXP_FRIENDLY_Wounded Trainees|r inside the Abbey
     .complete 26919,1 --Cast Flash Heal (5)
     .target Wounded Trainee
+step << !Cata Human Priest
+    .goto 425,35.58,60.57,-1
+    .goto 425,35.82,61.08,-1
+    .goto 425,35.81,61.71,-1
+    .goto 425,35.55,62.26,-1
+    .goto 425,35.13,62.46,-1
+    .goto 425,34.74,62.27,-1
+    .goto 425,34.48,61.76,-1
+    .goto 425,34.46,61.13,-1
+    >>Cast |T136207:0|t[Shadow Word: Pain] on a |cRXP_ENEMY_Training Dummy|r 5 times
+    .complete 26919,2 --Cast Flash Heal (5)
+    .target Training Dummy
 step << Human Mage
     .goto 425,38.78,43.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r

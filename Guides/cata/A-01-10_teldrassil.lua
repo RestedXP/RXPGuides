@@ -81,18 +81,31 @@ step << Priest
     .goto 1438/1,801.60004,10458.79980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
     .turnin 3119 >> Turn in Hallowed Sigil
-    .accept 26949 >> Accept Healing for the Wounded
-    .train 2061 >> Train |T135907:0|t[Flash Heal]
+    .accept 26949 >> Accept Healing for the Wounded << cata
+    .accept 26949 >> Accept Learning the Word << !cata
+    .train 2061 >> Train |T135907:0|t[Flash Heal] << cata
     .target Shanda
-step << Priest
+step << Priest cata
     .goto 1438/1,797.70001,10464.60059
     >>|cRXP_WARN_Cast|r |T135907:0|t[Flash Heal] |cRXP_WARN_5 times on a |cRXP_FRIENDLY_Wounded Sentinel|r beside you|r
     .complete 26949,1 -- Heal Wounded Sentinel
     .target Wounded Sentinel
+step << Priest !cata
+    .goto 1438/1,813.50000,10417.29980,-1
+    .goto 1438/1,808.29999,10412.70020,-1
+    .goto 1438/1,803.90002,10407.60059,-1
+    .goto 1438/1,798.60004,10402.70020,-1
+    .goto 1438/1,793.29999,10397.10059,-1
+    .goto 1438/1,787.40002,10393.00000,-1
+    .goto 1438/1,781.90002,10389.90039,-1
+    >>|cRXP_WARN_Cast|r |T136207:0|t[Shadow Word: Pain] |cRXP_WARN_5 times on a|r |cRXP_ENEMY_Training Dummy|r
+    .complete 26949,2 -- Heal Wounded Sentinel
+    .target Training Dummy
 step << Priest
     .goto 1438/1,801.60004,10458.79980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
-    .turnin 26949 >> Turn in Healing for the Wounded
+    .turnin 26949 >> Turn in Healing for the Wounded << cata
+    .turnin 26949 >> Turn in Learning the Word << !cata
     .accept 28723 >> Accept Priestess of the Moon
     .target Shanda
 step << Mage
@@ -100,7 +113,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhyanda|r
     .turnin 26841 >> Turn in Forbidden Sigil
     .accept 26940 >> Accept Arcane Missiles
-    .train 5143 >> Train |T136096:0|t[Arcane Missiles]
+    .train 5143 >> Train |T136096:0|t[Arcane Missiles] << cata
     .target Rhyanda
 step << Mage
     .goto 1438/1,813.50000,10417.29980,-1
@@ -111,7 +124,8 @@ step << Mage
     .goto 1438/1,787.40002,10393.00000,-1
     .goto 1438/1,781.90002,10389.90039,-1
     >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r until you get a|r |T135731:0|t[Arcane Missles!] |cRXP_WARN_proc, then cast|r |T136096:0|t[Arcane Missiles]|cRXP_WARN_. Repeat this twice|r
-    .complete 26940,1 -- Practice Arcane Missles (1)
+    .complete 26940,1 << cata -- Practice Arcane Missles (1)
+    .complete 26940,2 << !cata -- Practice Arcane Missles (1)
     .mob Training Dummy
 step << Mage
     #completewith next
@@ -132,12 +146,13 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
     .turnin 3116 >> Turn in Simple Sigil
     .accept 26945 >> Accept Learning New Techniques
-	.train 100 >> Train |T132337:0|t[Charge]
+	.train 100 >> Train |T132337:0|t[Charge] << cata
     .target Alyissia
 step << Warrior
     .goto 1438/1,808.79999,10460.79980
     >>|cRXP_WARN_Cast|r |T132337:0|t[Charge] |cRXP_WARN_on the|r |cRXP_ENEMY_Training Dummy|r
-    .complete 26945,1 -- Practice Charge (1)
+    .complete 26945,1 << cata -- Practice Charge (1)
+    .complete 26945,2 << !cata -- Practice Charge (1)
     .mob Training Dummy
 step << Warrior
     .goto 1438/1,778.10004,10526.60059
@@ -150,13 +165,14 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
     .turnin 3118 >> Turn in Encrypted Sigil
     .accept 26946 >> Accept A Rogue's Advantage
-	.train 2098 >> Train |T132292:0|t[Eviscerate]
+	.train 2098 >> Train |T132292:0|t[Eviscerate] << cata
     .target Frahun Shadewhisper
 step << Rogue
     .goto 1438/1,808.79999,10486.00000,-1
     .goto 1438/1,805.60004,10481.79980,-1
     >>|cRXP_WARN_Cast|r |T136189:0|t[Sinister Strike] |cRXP_WARN_followed by|r |T132292:0|t[Eviscerate] |cRXP_WARN_3 times on the|r |cRXP_ENEMY_Training Dummy|r
-    .complete 26946,1 -- Practice Eviscerate (1)
+    .complete 26946,1 << cata -- Practice Eviscerate (1)
+    .complete 26946,2 << !cata -- Practice Eviscerate (1)
     .mob Training Dummy
 step << Rogue
     .goto 1438/1,778.00000,10519.20020
@@ -169,12 +185,13 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
     .turnin 3117 >> Turn in Etched Sigil
     .accept 26947 >> Accept A Woodsman's Training
-	.train 56641 >> Train |T132213:0|t[Steady Shot]
+	.train 56641 >> Train |T132213:0|t[Steady Shot] << cata
     .target Ayanna Everstride
 step << Hunter
     .goto 1438/1,801.20001,10454.90039
     >>|cRXP_WARN_Cast|r |T132213:0|t[Steady Shot] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r 5 times|r
-    .complete 26947,1 -- Practice Steady Shot (1)
+    .complete 26947,1 << cata-- Practice Steady Shot (1)
+    .complete 26947,2 << !cata -- Practice Steady Shot (1)
     .mob Training Dummy
 step << Hunter
     .goto 1438/1,778.00000,10448.10059
@@ -189,19 +206,26 @@ step << Druid
     .goto 1438/1,816.00000,10485.90039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
     .turnin 3120 >> Turn in Verdant Sigil
-    .accept 26948 >> Accept Rejuvenating Touch
-	.train 774 >> Train |T136081:0|t[Rejuvenation]
+    .accept 26948 >> Accept Rejuvenating Touch << cata
+    .accept 26948 >> Accept Moonfire << !cata
+	.train 774 >> Train |T136081:0|t[Rejuvenation] << cata
     .target Mardant Strongoak
-step << Druid
+step << Druid cata
     .goto 1438/1,769.79999,10436.29980,-1
     .goto 1438/1,788.29999,10417.90039,-1
     >>|cRXP_WARN_Cast|r |T136081:0|t[Rejuvenation] |cRXP_WARN_on a|r |cRXP_FRIENDLY_Wounded Sentinel|r
     .complete 26948,1 -- Heal Wounded Sentinel
     .target Wounded Sentinel
+step << !cata Druid
+    .goto 460,46.003,56.584
+    >>|cRXP_WARN_Cast|r |T136096:0|t[Moonfire] |cRXP_WARN_on a|r |cRXP_ENEMY_Training Dummy|r
+    .complete 26948,2 -- Heal Wounded Sentinel
+    .target Training Dummy
 step << Druid
     .goto 1438/1,816.00000,10485.90039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
-    .turnin 26948 >> Turn in Rejuvenating Touch
+    .turnin 26948 >> Turn in Rejuvenating Touch << cata
+    .turnin 26948 >> Turn in Moonfire << !cata
     .accept 28723 >> Accept Priestess of the Moon
     .target Mardant Strongoak
 step
@@ -375,27 +399,27 @@ step
     .train 2575 >> Train |T136248:0|t[Mining]
 	.skipgossip 47420,2,3,2
 	.target Iranis Shadebloom
-step << Warrior
+step << Warrior cata
     .goto 57,55.887,51.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
     .trainer >> Train your class spells
     .target Kyra Windblade
-step << Mage
+step << Mage cata
     .goto 57,55.816,51.389
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Irriende|r
     .trainer >> Train your class spells
     .target Irriende
-step << Priest
+step << Priest cata
     .goto 57,55.319,49.594
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
     .trainer >> Train your class spells
     .target Laurna Morninglight
-step << Rogue
+step << Rogue cata
     .goto 57,56.027,52.534
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
     .target Jannok Breezesong
-step << Hunter
+step << Hunter cata
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
@@ -406,7 +430,7 @@ step
     .turnin 28731 >>Turn in Teldrassil: Passing Awareness
     .accept 929 >>Accept Teldrassil: The Refusal of the Aspects
 	.target Corithras Moonrage
-step << Druid
+step << Druid cata
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
     .trainer >> Train your class spells
@@ -515,7 +539,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r
     .turnin 2459 >>Turn in Ferocitas the Dream Eater
 	.target Tallonkai Swiftroot
-step << Priest
+step << Priest cata
     .goto 57,55.319,49.594
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
     .trainer >> Train your class spells
@@ -525,27 +549,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
     .accept 489 >>Accept Seek Redemption!
 	.target Syral Bladeleaf
-step << Warrior
+step << Warrior cata
     .goto 57,55.887,51.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
     .trainer >> Train your class spells
     .target Kyra Windblade
-step << Mage
+step << Mage cata
     .goto 57,55.816,51.389
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Irriende|r
     .trainer >> Train your class spells
     .target Irriende
-step << Rogue
+step << Rogue cata
     .goto 57,56.027,52.534
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
     .target Jannok Breezesong
-step << Hunter
+step << Hunter cata
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
     .target Jannok Breezesong
-step << Druid
+step << Druid cata
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
     .trainer >> Train your class spells
@@ -722,32 +746,32 @@ step
     .turnin 13945 >>Turn in Resident Danger
     .target +Sentinel Kyra Starsong
     .goto 57,55.656,51.991
-step << Warrior
+step << Warrior cata
     .goto 57,55.887,51.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
     .trainer >> Train your class spells
     .target Kyra Windblade
-step << Mage
+step << Mage cata
     .goto 57,55.816,51.389
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Irriende|r
     .trainer >> Train your class spells
     .target Irriende
-step << Priest
+step << Priest cata
     .goto 57,55.319,49.594
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
     .trainer >> Train your class spells
     .target Laurna Morninglight
-step << Rogue
+step << Rogue cata
     .goto 57,56.027,52.534
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
     .target Jannok Breezesong
-step << Hunter
+step << Hunter cata
     .goto 57,56.284,51.973
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .trainer >> Train your class spells
     .target Jannok Breezesong
-step << Druid
+step << Druid cata
     .goto 57,55.650,53.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
     .trainer >> Train your class spells
