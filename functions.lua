@@ -5245,11 +5245,12 @@ function addon.functions.maxlevel(self, ...)
     local step = element.step
     local ref = element.ref
     local guide = addon.currentGuide
+    local playerLevelMax = GetEffectivePlayerMaxLevel and GetEffectivePlayerMaxLevel() or 90
 
     if addon.isHidden or (ref and not guide.labels[ref]) then
         return
     elseif level > element.level and addon.settings.profile.enableXpStepSkipping then
-        if step.active and not step.completed and not LoremasterEnabled() then
+        if step.active and not step.completed and (not LoremasterEnabled() or element.level == playerLevelMax - 1) then
             addon.updateSteps = true
             step.completed = true
             if step.textOnly then
