@@ -288,18 +288,21 @@ local function CheckDataIntegrity(str, h1, mode)
     end
 end
 
+local ncache = 0
 function addon.CacheGuide(key, guide, enabledFor, guideVersion, metadata)
+    ncache = ncache + 1
     if type(guide) == "table" then
         guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
-        addon.db.profile.guides[key] = guide
+        guide.key = key
+        addon.db.profile.guides[key .. "|" .. ncache] = guide
     else
         guide = guide:gsub("%s-[\r\n]+%s*", "\n")
         guide = guide:gsub("[\t ][\t ]+", " ")
         guide = guide:gsub("%-%-[^\n]*", "")
         guide = "--" .. addon.ReadCacheData("string") .. "\n" .. guide
         guide = LibDeflate:CompressDeflate(guide)
-        addon.db.profile.guides[key] = addon.BuildCacheObject(guide, enabledFor,
-                                                             guideVersion, metadata)
+        addon.db.profile.guides[key .. "|" .. ncache] = addon.BuildCacheObject(guide, enabledFor,
+                                                             guideVersion, metadata, key)
     end
 end
 
@@ -344,13 +347,14 @@ function addon.RegisterGuide(groupOrContent, text, defaultFor)
     end
 end
 
-function addon.BuildCacheObject(groupOrContent, enabledFor, guideVersion, metadata)
+function addon.BuildCacheObject(groupOrContent, enabledFor, guideVersion, metadata, key)
     return {
         groupOrContent = groupOrContent,
         cache = true,
         enabledFor = enabledFor,
         version = guideVersion,
         metadata = metadata,
+        key = key,
     }
 end
 
@@ -671,6 +675,11 @@ function addon.LoadCachedGuides()
     end
 
     for key, guideData in pairs(addon.db.profile.guides) do
+        if guideData.key then
+            key = guideData.key
+        else
+            key = key:match("^[^|]+|[^|]-|[^|]+") or key
+        end
         local guide, errorMsg, metadata
         local enabled = not guideData.enabledFor or
                             applies(guideData.enabledFor)
