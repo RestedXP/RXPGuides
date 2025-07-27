@@ -1053,6 +1053,12 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     -- itemLevel is generally 5 levels highter than required
     if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
 
+    -- Need itemID for easier code lookups
+    local itemID = GetItemInfoInstant(itemLink)
+
+    -- Exclude skinning knife, mining pick, and blacksmith hammer
+    if itemID == 7005 or itemID == 2901 or itemID == 5956 then return end
+
     -- Parse API stats first before processing tooltip text
     local stats = GetItemStats(itemLink)
 
@@ -1064,9 +1070,6 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     local totalWeight = 0
     local statWeight, tooltipTextLines
-
-    -- Need itemID for easier code lookups
-    local itemID = GetItemInfoInstant(itemLink)
 
     if session.activeStatWeights and session.activeStatWeights.extraWeight and
         session.activeStatWeights.extraWeight[itemID] then
@@ -1207,7 +1210,7 @@ function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
 
     for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
         if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            print("CalculateWeaponWeight, suffix", suffix, slotComparisonId, itemData.totalWeight + dpsData.totalWeight)
+            -- print("CalculateWeaponWeight, suffix", suffix, slotComparisonId, itemData.totalWeight + dpsData.totalWeight)
 
             return itemData.totalWeight + dpsData.totalWeight
         end
