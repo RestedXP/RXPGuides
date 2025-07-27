@@ -1707,6 +1707,17 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
     return true
 end
 
+-- Because of processing sequencing, override some names for UI
+local function getAHSlotName(invEquipType,slotId)
+    if invEquipType == 'INVTYPE_THROWN' then
+        return _G['INVTYPE_RANGED']
+    elseif invEquipType == 'INVTYPE_HOLDABLE' then
+        return _G['INVTYPE_WEAPONOFFHAND']
+    end
+
+    return _G[invEquipType]
+end
+
 function addon.itemUpgrades.AH:Analyze()
     ahSession.bestAnalysis = {}
 
@@ -1715,7 +1726,7 @@ function addon.itemUpgrades.AH:Analyze()
         if type(slotId) == "table" then -- ring or trinket slot
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
-                    slotName = _G[invEquipType],
+                    slotName = getAHSlotName(invEquipType, j),
                     best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
                     budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
                 }
@@ -1725,7 +1736,7 @@ function addon.itemUpgrades.AH:Analyze()
             -- print("Ignoring weapons", slotId, invEquipType)
         else
             ahSession.bestAnalysis[slotId] = {
-                slotName = _G[invEquipType],
+                slotName = getAHSlotName(invEquipType, slotId),
                 best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
                 budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
             }
