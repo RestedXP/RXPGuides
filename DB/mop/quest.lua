@@ -564,6 +564,7 @@ local valeQuests = {
     [31250] = "settingsun",
     [31247] = "settingsun",
     [30385] = "settingsun",
+    [31297] = "settingsun",
 }
 
 addon.dailyDB.valeQuests = valeQuests
