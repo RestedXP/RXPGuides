@@ -1708,7 +1708,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
 end
 
 -- Because of processing sequencing, override some names for UI
-local function getAHSlotName(invEquipType,slotId)
+local function getAHSlotName(invEquipType)
     if invEquipType == 'INVTYPE_THROWN' then
         return _G['INVTYPE_RANGED']
     elseif invEquipType == 'INVTYPE_HOLDABLE' then
@@ -1725,18 +1725,22 @@ function addon.itemUpgrades.AH:Analyze()
     for invEquipType, slotId in pairs(session.equippableSlots) do
         if type(slotId) == "table" then -- ring or trinket slot
             for j, _ in pairs(slotId) do
-                ahSession.bestAnalysis[j] = {
-                    slotName = getAHSlotName(invEquipType, j),
-                    best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
-                    budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
-                }
+                if j == _G.INVSLOT_FINGER2 and ahSession.bestAnalysis[_G.INVSLOT_FINGER1] then
+                    -- Do nothing, redundant finger inclusion
+                else
+                    ahSession.bestAnalysis[j] = {
+                        slotName = getAHSlotName(invEquipType),
+                        best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
+                        budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
+                    }
+                end
             end
         elseif IsMeleeSlot(invEquipType) then
-            -- TODO re-enable after fixing melee weapon comparison logic, highly complex because of MH+OH vs 2H vs weapon skills
+            -- TODO re-enable after adopting weapon comparison fixes into AH logic
             -- print("Ignoring weapons", slotId, invEquipType)
         else
             ahSession.bestAnalysis[slotId] = {
-                slotName = getAHSlotName(invEquipType, slotId),
+                slotName = getAHSlotName(invEquipType),
                 best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
                 budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
             }
@@ -1746,19 +1750,20 @@ function addon.itemUpgrades.AH:Analyze()
 
     local bAS, slotId
 
-    local comparisons = {}
     for itemLink, scanData in pairs(ahSession.scanData) do
         calculate(itemLink, scanData)
 
         slotId = session.equippableSlots[scanData.itemEquipLoc]
         if type(slotId) == "table" then
-            comparisons = slotId
+            for _, id in pairs(slotId) do
+                bAS = ahSession.bestAnalysis[id]
+                -- print("Analyze", itemLink, "weightPerCopper",
+                --      scanData.weightPerCopper, "relativeWPC",
+                --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
+                analyzeSlotUpgrade(scanData, itemLink, bAS)
+            end
         else
-            comparisons = {slotId}
-        end
-
-        for _, id in ipairs(comparisons) do
-            bAS = ahSession.bestAnalysis[id]
+            bAS = ahSession.bestAnalysis[slotId]
             -- print("Analyze", itemLink, "weightPerCopper",
             --      scanData.weightPerCopper, "relativeWPC",
             --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
