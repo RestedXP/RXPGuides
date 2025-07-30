@@ -121,6 +121,7 @@ step
     .goto Dun Morogh,69.084,56.330
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
+    .xp >12,1,QuarryEnd
 step << !Human Rogue
     #season 2
     #loop
@@ -308,6 +309,7 @@ step
 step
     #optional
     #completewith next
+    #label QuarryEnd
     .goto 1426,77.189,48.816,50,0
     .goto 1426,81.252,42.650,50,0
     .goto Dun Morogh,83.892,39.188,20 >> Travel toward |cRXP_FRIENDLY_Pilot Hammerfoot|r
@@ -1149,13 +1151,8 @@ step << Mage
     #season 2
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T236220:0|t[Living Bomb]
+    .train 415936,1
     .use 208854
-step << Mage
-    #season 2
-    #optional
-    #completewith next
-    .train 415936,3
-    .engrave 9,400613 >> Open your character sheet and engrave your gloves with |T236220:0|t[Living Bomb.]
 step
 #loop
     .goto Loch Modan,34.7,71.6,0
@@ -1423,6 +1420,7 @@ step
     .goto Loch Modan,34.828,49.283
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step << Human
+    #requires ratcatching
     .hs >> Hearth to Stormwind
 step << !Human
     #requires ratcatching
