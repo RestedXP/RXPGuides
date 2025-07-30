@@ -93,7 +93,6 @@ step
     .complete 28773,1 << Human Warlock --Blackrock Spies (8)
     .complete 28774,1 << Human Warrior --Blackrock Spies (8)
     .complete 29079,1 << !Human --Blackrock Spies (8)
-    .complete 31140,1 << Human Death Knight/Human Monk --Blackrock Spies (8)
     .mob Blackrock Spy
 step << skip
     .goto 425,33.56,53.04
@@ -136,10 +135,17 @@ step
     .accept 3104 >>Accept Glyphic Letter << Human Mage
     .accept 3105 >>Accept Tainted Letter << Human Warlock
     .accept 26910 >>Accept Etched Letter << Human Hunter
+    .accept 31141 >>Accept Calligraphed Letter << Human Monk
     .accept 29080 >>Accept Join the Battle! << !Human
     .target Marshal McBride
 --XX needs testing on non-human classes. Not needed for Monks/DKs
 
+step << Human Monk
+    .goto 425/0,-212.100,-8907.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bao|r
+    .target Bao
+    .turnin 31141 >>Turn in Calligraphed Letter
+    .accept 31142 >>Accept Palm of the Tiger
 step << Warrior/Paladin
     #optional
     #completewith next
@@ -255,6 +261,7 @@ step << !Priest Human
     .goto 425,34.74,62.27,-1
     .goto 425,34.48,61.76,-1
     .goto 425,34.46,61.13,-1
+    >>Cast |T574576:0|t[Jab] followed by |T606551:0|t[Tiger Palm] on a |cRXP_ENEMY_Training Dummy|r << Monk
     >>Cast |T132337:0|t[Charge] on a |cRXP_ENEMY_Training Dummy|r << Warrior
     >>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Training Dummy|r 5 times << Warlock
     >>Cast |T136189:0|t[Sinister Strike] and then |T132292:0|t[Eviscerate] on a |cRXP_ENEMY_Training Dummy|r 3 times << Rogue
@@ -275,8 +282,9 @@ step << !Priest Human
     .complete 26916,2 << Mage mop --Cast Arcane Missiles (2)
     .complete 26917,2 << Hunter mop --Cast Steady Shot (5)
     .complete 26918,2 << Paladin mop --Cast Judgement (1)
+    .complete 31142,2 << Monk --|Practice Tiger Palm: 1/1
     .mob Training Dummy
-step << Human Warrior/Human Paladin/Human Mage
+step << Human Warrior/Human Paladin/Human Mage/Human Monk
     #optional
     #completewith next
     .goto 425,35.84,51.87,8,0 << Warrior/Paladin
@@ -288,6 +296,13 @@ step << Human Warrior/Human Paladin/Human Mage
     .goto 425,40.87,53.80,10 >> Return to |cRXP_FRIENDLY_Llane Beshere|r inside the Abbey << Warrior
     .goto 425,41.55,53.23,10 >> Return to |cRXP_FRIENDLY_Brother Sammuel|r inside the Abbey << Paladin
     .goto 425,38.78,43.47,10 >> Return to |cRXP_FRIENDLY_Khelden Bremen|r inside the Abbey << Mage
+    .goto 425/0,-212.100,-8907.400,10 >> Return to |cRXP_FRIENDLY_Bao|r inside the Abbey << Monk
+step << Human Monk
+    .goto 425/0,-212.100,-8907.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
+    .turnin 31142 >>Turn in Healing the Wounded
+    .accept 31143 >>Accept Join the Battle!
+    .target Priestess Anetta
 step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
@@ -357,7 +372,7 @@ step
     .accept 29081 >>Accept They Sent Assassins << !Human
     .accept 31144 >>Accept They Sent Assassins << Human Death Knight/Human Monk
     .target Sergeant Willem
-step
+step << !DK !Monk
     #loop
     .goto 425,34.99,38.24,0
     .goto 425,34.47,39.42,8,0
@@ -372,7 +387,7 @@ step
     .accept 28812 >>Accept Fear No Evil << Human Warlock
     .accept 28813 >>Accept Fear No Evil << Human Warrior
     .accept 29082 >>Accept Fear No Evil << !Human
-    .accept 63447 >>Accept Fear No Evil << Human Death Knight/Human Monk
+    --.accept 63447 >>Accept Fear No Evil << Human Death Knight/Human Monk
     .target Brother Paxton
 step << skip
     #optional
@@ -381,7 +396,7 @@ step << skip
     *|cRXP_WARN_It's important to kill Rares and loot Treasure Chests, as they award a lot of experience|r
 	.unitscan Gug Fatcandle
     .noflyable
-step
+step << !DK !Monk
     #sticky
     #label Soldiers
     #loop
@@ -402,7 +417,7 @@ step
     .complete 28811,1 << Human Rogue --Revive Injured Soldiers (4)
     .complete 28812,1 << Human Warlock --Revive Injured Soldiers (4)
     .complete 28813,1 << Human Warrior --Revive Injured Soldiers (4)
-    .complete 63447,1 << Human Death Knight/Human Monk --Revive Injured Soldiers (4)
+    --.complete 63447,1 << Human Death Knight/Human Monk --Revive Injured Soldiers (4)
     .target Injured Stormwind Infantry
 step
     #loop
@@ -427,7 +442,7 @@ step
     .complete 29081,1 << !Human --Goblin Assassins (8)
     .complete 31144,1 << Human Death Knight/Human Monk --Goblin Assassins (8)
     .mob Goblin Assassin
-step
+step << !DK !Monk
     #requires Soldiers
     #loop
     .goto 425,34.99,38.24,0
@@ -443,7 +458,7 @@ step
     .turnin 28812 >>Turn in Fear No Evil << Human Warlock
     .turnin 28813 >>Turn in Fear No Evil << Human Warrior
     .turnin 29082 >>Turn in Fear No Evil << !Human
-    .turnin 63447 >>Turn in Fear No Evil << Human Death Knight/Human Monk
+    --.turnin 63447 >>Turn in Fear No Evil << Human Death Knight/Human Monk
     .target Brother Paxton
 step
     #label Rear
