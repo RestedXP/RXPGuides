@@ -292,6 +292,8 @@ local function FindJunk(deleteItem)
     elseif bestBag and bestSlot then
         inventoryManager.deleteBag = bestBag
         inventoryManager.deleteSlot = bestSlot
+    elseif inventoryManager.clickFrame then
+        inventoryManager.clickFrame:Hide()
     end
     --print(bestBag,bestSlot)
 end
@@ -375,7 +377,8 @@ local clickFrame
 if f.SetPassThroughButtons then
     --post patch 1.15.7 workaround
     clickFrame = CreateFrame("Frame","RXPJunkHandler",UIParent)
-    clickFrame:SetAllPoints("WorldFrame")
+    inventoryManager.clickFrame = clickFrame
+    clickFrame:SetAllPoints(UIParent)
     clickFrame:SetScript("OnMouseDown", function(self)
         WorldFrameHook()
         if GetCVarBool("autoLootDefault") ~= IsModifiedClick("AUTOLOOTTOGGLE") then
@@ -385,6 +388,16 @@ if f.SetPassThroughButtons then
         end
         clickFrame:Hide()
     end)
+
+    local button = "LootButton"
+    local current = _G["LootButton1"]
+    local i = 1
+    while current and i < 10 do
+        current:HookScript("OnClick",WorldFrameHook)
+        i = i + 1
+        current = _G[button .. i]
+    end
+
     clickFrame:EnableMouse(false)
     clickFrame:SetMouseClickEnabled(true)
     clickFrame:EnableMouseMotion(false)
