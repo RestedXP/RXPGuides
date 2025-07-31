@@ -49,8 +49,8 @@ local function StartHSTimer()
         currentFPS = GetCVar("maxfps")
         HSstart = GetTime()
         HSframe:SetScript("OnUpdate", SwitchBindLocation)
-        local bind = _G.StaticPopup1 and _G.StaticPopup1.text and
-                            _G.StaticPopup1.text:GetText() or ""
+        local text = _G.StaticPopup1 and (_G.StaticPopup1.text or _G.StaticPopup1.Text)
+        local bind = text and text:GetText() or ""
         if bind:find(bindConfirmation) then
             SetCVar("maxfps", "300")
             addon.isCastingHS = 0.5

@@ -553,7 +553,8 @@ end
 local actionForbiddenText = fmt(ADDON_ACTION_FORBIDDEN, addonName)
 
 local TextBoxHook = function(self)
-    if self.text:GetText() == actionForbiddenText then
+    local text = self.text or self.Text
+    if text and text:GetText() == actionForbiddenText then
         if self:IsShown() then self:Hide() end
         local _, channel = PlaySound(SOUNDKIT.IG_MAINMENU_CLOSE)
         if channel then
