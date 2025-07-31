@@ -175,6 +175,7 @@ addon.player = {
     faction = select(1,UnitFactionGroup("player")),
     guid = UnitGUID("player"),
     name = UnitName("player"),
+    level = UnitLevel("player"),
     maxlevel = maxLevel,
     season = addon.GetSeason(),
     beta = GetCurrentRegion() >= 20,
@@ -1383,6 +1384,8 @@ function addon:PLAYER_LEVEL_UP(_, level)
         addon.SetStep(1)
         addon.SetStep(stepn)]]
     end
+
+    addon.player.level = level
 end
 
 function addon:UNIT_PET(_, unit)

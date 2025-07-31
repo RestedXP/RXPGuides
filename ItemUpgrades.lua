@@ -7,20 +7,18 @@ local locale = GetLocale()
 
 if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
-local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch =
-    string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
-    strlower, string.match
+local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch = string.format, table.insert, ipairs,
+                                                                                  pairs, next, type, wipe, tonumber,
+                                                                                  strlower, string.match
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
-local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or
-                               _G.GetItemInfoInstant
+local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
 local IsEquippedItem = C_Item and C_Item.IsEquippedItem or _G.IsEquippedItem
 local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
 local UnitLevel = _G.UnitLevel
 local GetInventoryItemLink = _G.GetInventoryItemLink
 
-local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass,
-                                              Enum.ItemWeaponSubclass
+local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemWeaponSubclass
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
@@ -82,10 +80,7 @@ local CLASS_MAP = {
             ["INVTYPE_FEET"] = _G.INVSLOT_FEET,
             ["INVTYPE_WRIST"] = _G.INVSLOT_WRIST,
             ["INVTYPE_HAND"] = _G.INVSLOT_HAND,
-            ["INVTYPE_FINGER"] = {
-                [_G.INVSLOT_FINGER1] = _G.INVSLOT_FINGER1,
-                [_G.INVSLOT_FINGER2] = _G.INVSLOT_FINGER2
-            },
+            ["INVTYPE_FINGER"] = {[_G.INVSLOT_FINGER1] = _G.INVSLOT_FINGER1, [_G.INVSLOT_FINGER2] = _G.INVSLOT_FINGER2},
             ["INVTYPE_TRINKET"] = {
                 [_G.INVSLOT_TRINKET1] = _G.INVSLOT_TRINKET1,
                 [_G.INVSLOT_TRINKET2] = _G.INVSLOT_TRINKET2
@@ -119,9 +114,7 @@ local CLASS_MAP = {
             [ItemWeaponSubclass.Axe2H] = true,
             [ItemWeaponSubclass.Mace1H] = true,
             [ItemWeaponSubclass.Mace2H] = true,
-            [ItemWeaponSubclass.Polearm] = function()
-                return UnitLevel("player") >= 20
-            end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true,
             [ItemWeaponSubclass.Unarmed] = true
@@ -144,23 +137,19 @@ local CLASS_MAP = {
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
             ["INVTYPE_WEAPONOFFHAND"] = function()
-                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+                return UnitLevel("player") >= 18 and _G.INVSLOT_OFFHAND or nil
             end
         },
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
-            [ItemArmorSubclass.Mail] = function()
-                return UnitLevel("player") >= 40
-            end
+            [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
             [ItemWeaponSubclass.Axe2H] = true,
             [ItemWeaponSubclass.Bows] = true,
             [ItemWeaponSubclass.Guns] = true,
-            [ItemWeaponSubclass.Polearm] = function()
-                return UnitLevel("player") >= 20
-            end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true,
             [ItemWeaponSubclass.Staff] = true,
@@ -182,20 +171,17 @@ local CLASS_MAP = {
     ["PALADIN"] = {
         ["Slot"] = {["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND},
         ["ArmorType"] = {
+            [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = true,
-            [ItemArmorSubclass.Plate] = function()
-                return UnitLevel("player") >= 40
-            end
+            [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
             [ItemWeaponSubclass.Axe2H] = true,
             [ItemWeaponSubclass.Mace1H] = true,
             [ItemWeaponSubclass.Mace2H] = true,
-            [ItemWeaponSubclass.Polearm] = function()
-                return UnitLevel("player") >= 20
-            end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true
         }
@@ -234,10 +220,9 @@ local CLASS_MAP = {
     ["SHAMAN"] = {
         ["Slot"] = {{["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND}},
         ["ArmorType"] = {
+            [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
-            [ItemArmorSubclass.Mail] = function()
-                return UnitLevel("player") >= 40
-            end
+            [ItemArmorSubclass.Mail] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
@@ -265,15 +250,14 @@ local CLASS_MAP = {
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
             ["INVTYPE_WEAPONOFFHAND"] = function()
-                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+                return UnitLevel("player") >= 18 and _G.INVSLOT_OFFHAND or nil
             end
         },
         ["ArmorType"] = {
+            [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
             [ItemArmorSubclass.Mail] = true,
-            [ItemArmorSubclass.Plate] = function()
-                return UnitLevel("player") >= 40
-            end
+            [ItemArmorSubclass.Plate] = function() return UnitLevel("player") >= 35 end
         },
         ["WeaponType"] = {
             [ItemWeaponSubclass.Axe1H] = true,
@@ -282,9 +266,7 @@ local CLASS_MAP = {
             [ItemWeaponSubclass.Guns] = true,
             [ItemWeaponSubclass.Mace1H] = true,
             [ItemWeaponSubclass.Mace2H] = true,
-            [ItemWeaponSubclass.Polearm] = function()
-                return UnitLevel("player") >= 20
-            end,
+            [ItemWeaponSubclass.Polearm] = function() return UnitLevel("player") >= 18 end,
             [ItemWeaponSubclass.Sword1H] = true,
             [ItemWeaponSubclass.Sword2H] = true,
             [ItemWeaponSubclass.Staff] = true,
@@ -330,18 +312,14 @@ local KEY_TO_TEXT = {
 if addon.game == "CATA" then
     KEY_TO_TEXT['ITEM_MOD_MASTERY_RATING_SHORT'] = _G.ITEM_MOD_MASTERY_RATING
 
-    KEY_TO_TEXT['ITEM_MOD_HIT_RANGED_RATING_SHORT'] =
-        _G.ITEM_MOD_HIT_RANGED_RATING
+    KEY_TO_TEXT['ITEM_MOD_HIT_RANGED_RATING_SHORT'] = _G.ITEM_MOD_HIT_RANGED_RATING
 
-    KEY_TO_TEXT['ITEM_MOD_CRIT_RANGED_RATING_SHORT'] =
-        _G.ITEM_MOD_CRIT_RANGED_RATING
-    KEY_TO_TEXT['ITEM_MOD_SPELL_PENETRATION_SHORT'] =
-        _G.ITEM_MOD_SPELL_PENETRATION
+    KEY_TO_TEXT['ITEM_MOD_CRIT_RANGED_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RANGED_RATING
+    KEY_TO_TEXT['ITEM_MOD_SPELL_PENETRATION_SHORT'] = _G.ITEM_MOD_SPELL_PENETRATION
 
     KEY_TO_TEXT['ITEM_MOD_HEALTH_REGEN_SHORT'] = _G.ITEM_MOD_HEALTH_REGEN
     KEY_TO_TEXT['ITEM_MOD_BLOCK_RATING_SHORT'] = _G.ITEM_MOD_BLOCK_RATING
-    KEY_TO_TEXT['ITEM_MOD_RESILIENCE_RATING_SHORT'] =
-        _G.ITEM_MOD_RESILIENCE_RATING
+    KEY_TO_TEXT['ITEM_MOD_RESILIENCE_RATING_SHORT'] = _G.ITEM_MOD_RESILIENCE_RATING
 end
 
 -- Keys only obtained from tooltip text parsing
@@ -352,30 +330,17 @@ local OUT_OF_BAND_KEYS = {
     ['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Improves your chance to hit by (%d+)%%.",
     ['ITEM_MOD_DODGE_RATING_SHORT'] = "%s+Increases your chance to dodge an attack by (%d+)%%.",
     ['ITEM_MOD_PARRY_RATING_SHORT'] = "%s+Increases your chance to parry an attack by (%d+)%%.",
-    ['ITEM_MOD_ATTACK_POWER_SHORT'] = "%s+%+(%d+)%s+" ..
-        ITEM_MOD_ATTACK_POWER_SHORT,
+    ['ITEM_MOD_ATTACK_POWER_SHORT'] = "%s+%+(%d+)%s+" .. ITEM_MOD_ATTACK_POWER_SHORT,
 
     -- Stats cannot be trusted, explicitly parse
     -- Overrides ITEM_MOD_SPELL_DAMAGE_DONE built-in
-    ['STAT_SPELLDAMAGE'] = {
-        _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
-    }
+    ['STAT_SPELLDAMAGE'] = {_G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE}
 }
 
 local WEAPON_SLOT_MAP = {
     ['2H'] = {['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}},
-    ['MH'] = {
-        ['Slot'] = {
-            ["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND,
-            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND
-        }
-    },
-    ['OH'] = {
-        ['Slot'] = {
-            ["INVTYPE_WEAPON"] = _G.INVSLOT_OFFHAND,
-            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
-        }
-    },
+    ['MH'] = {['Slot'] = {["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND, ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND}},
+    ['OH'] = {['Slot'] = {["INVTYPE_WEAPON"] = _G.INVSLOT_OFFHAND, ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND}},
     ['RANGED'] = {
         ["Slot"] = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
@@ -383,6 +348,21 @@ local WEAPON_SLOT_MAP = {
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED
         }
     }
+}
+
+-- Used for dpsWeights post-processing
+local SPEED_SUFFIX_SLOT_MAP = {
+    ['2H'] = _G.INVSLOT_MAINHAND,
+    ['MH'] = _G.INVSLOT_MAINHAND,
+    ['OH'] = _G.INVSLOT_OFFHAND,
+    ['RANGED'] = _G.INVSLOT_RANGED
+}
+
+local SPEED_SUFFIX_NAME_MAP = {
+    ['2H'] = _G.INVTYPE_2HWEAPON,
+    ['MH'] = _G.INVTYPE_WEAPONMAINHAND,
+    ['OH'] = _G.INVTYPE_WEAPONOFFHAND,
+    ['RANGED'] = _G.INVTYPE_RANGED
 }
 
 -- Turn GSheet suffix
@@ -395,25 +375,18 @@ local SPELL_KIND_MAP = {
     [SPELL_SCHOOL6_NAME] = "STAT_SPELLDAMAGE_ARCANE"
 }
 
-local SPELL_KIND_MATCH =
-    "Increases damage done by (%a+) spells and effects by up to (%d+)."
+local SPELL_KIND_MATCH = "Increases damage done by (%a+) spells and effects by up to (%d+)."
 
 if locale == 'frFR' then
-    SPELL_KIND_MATCH =
-        "Augmente les dégâts infligés par les sorts et effets d?e?'? ?(%a+) de (%d+) au maximum."
+    SPELL_KIND_MATCH = "Augmente les dégâts infligés par les sorts et effets d?e?'? ?(%a+) de (%d+) au maximum."
 
     -- Comma decimal delimiter
-    OUT_OF_BAND_KEYS['ITEM_MOD_CR_SPEED_SHORT'] =
-        _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+,%d+)"
+    OUT_OF_BAND_KEYS['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+,%d+)"
 
-    OUT_OF_BAND_KEYS['ITEM_MOD_CRIT_RATING_SHORT'] =
-        "%s+Augmente vos chances d'infliger un coup critique de (%d+)%%."
-    OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] =
-        "%s+Augmente vos chances de toucher de (%d+)%%."
-    OUT_OF_BAND_KEYS['ITEM_MOD_DODGE_RATING_SHORT'] =
-        "%s+Augmente vos chances d'esquiver une attaque de (%d+)%%."
-    OUT_OF_BAND_KEYS['ITEM_MOD_PARRY_RATING_SHORT'] =
-        "%s+Augmente vos chances de parer une attaque de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_CRIT_RATING_SHORT'] = "%s+Augmente vos chances d'infliger un coup critique de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Augmente vos chances de toucher de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_DODGE_RATING_SHORT'] = "%s+Augmente vos chances d'esquiver une attaque de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_PARRY_RATING_SHORT'] = "%s+Augmente vos chances de parer une attaque de (%d+)%%."
 end
 
 local SPEC_MAP = {
@@ -437,9 +410,7 @@ for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
     end
 
     for itemEquipLoc, _ in pairs(d.Slot) do
-        if not session.weaponSlotToWeightKey[itemEquipLoc] then
-            session.weaponSlotToWeightKey[itemEquipLoc] = {}
-        end
+        if not session.weaponSlotToWeightKey[itemEquipLoc] then session.weaponSlotToWeightKey[itemEquipLoc] = {} end
 
         -- ['INVTYPE_WEAPON'] = { "MH", "OH" }
         tinsert(session.weaponSlotToWeightKey[itemEquipLoc], weaponKey)
@@ -455,9 +426,7 @@ end
 -- Maps regex global string with stat rating key
 -- Turn descriptive text into number friendly regexes
 local function KeyToRegex(keyString)
-    if session.statsRegexes[keyString] then
-        return session.statsRegexes[keyString]
-    end
+    if session.statsRegexes[keyString] then return session.statsRegexes[keyString] end
 
     local regex = KEY_TO_TEXT[keyString]
     -- Return nil for keys without mappings
@@ -477,85 +446,146 @@ end
 local function prettyPrintRatio(ratio)
     if not ratio then return "NaN" end
 
+    local percentage
+
     if ratio == 1 then
         return '100%'
     elseif ratio > 0 then
-        return (((ratio * 100) - 100) .. '%')
+        percentage = ((ratio * 100) - 100)
     elseif ratio == 0 then
         return '0%'
+    else -- < 0
+        percentage = (ratio * 100)
     end
-    -- < 0
-    return ((ratio * 100) .. '%')
+
+    return fmt("%.2f%%", percentage)
+end
+
+local function IsWeaponSlot(itemEquipLoc)
+    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_2HWEAPON' or
+               itemEquipLoc == 'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' or itemEquipLoc ==
+               'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT'
+end
+
+local function IsMeleeSlot(itemEquipLoc)
+    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc == 'INVTYPE_2HWEAPON' or itemEquipLoc ==
+               'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND'
+end
+
+local function enableTotalEPLines(itemData, lines)
+    if itemData.dpsWeights then -- IsWeaponSlot equivalent
+        for suffix, data in pairs(itemData.dpsWeights) do
+            tinsert(lines, fmt("  Total EP (%s): %.2f", SPEED_SUFFIX_NAME_MAP[suffix], data.totalWeight))
+        end
+    else -- Armor
+        tinsert(lines, fmt("  Total EP: %.2f", itemData.totalWeight))
+    end
 end
 
 local function TooltipSetItem(tooltip, ...)
-    if not addon.settings.profile.enableItemUpgrades or
-        not addon.settings.profile.enableTips then return end
+    if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips then return end
 
     local _, itemLink = tooltip:GetItem()
     if not itemLink then return end
     -- print("TooltipSetItem", tooltip:GetName(), itemLink)
 
+    local itemData = addon.itemUpgrades:GetItemData(itemLink, tooltip)
+    if not (itemData and itemData.totalWeight) then return end
+
+    local lines = {}
     -- Exclude addon text when looking at an equipped item
-    if IsEquippedItem(itemLink) then return end
-
-    local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
-
-    -- This doesn't work for grey/white weapons as they have 0 weight until comparison against a slot
-    if not comparisons or next(comparisons) == nil then
+    --  Unless enableTotalEP
+    if IsEquippedItem(itemLink) then
         if addon.settings.profile.enableTotalEP then
-            local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
+            enableTotalEPLines(itemData, lines)
 
-            if item and item.totalWeight and item.totalWeight > 0 then
+            if #lines > 0 then
                 tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
 
-                tooltip:AddLine(fmt("  Total EP: %s",
-                                    addon.Round(item.totalWeight, 2)))
+                for _, line in ipairs(lines) do tooltip:AddLine(line) end
             end
         end
+
         return
-
     end
-    local lines = {}
 
-    local ratioText
-    for _, data in ipairs(comparisons) do
-        -- Remove base 100 from percentage
-        -- A 140% upgrade ratio is only a 40% upgrade
-        if data['debug'] or not data['Ratio'] then
-            if addon.settings.profile.debug then
-                ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
-            else
-                ratioText = _G.SPELL_FAILED_ERROR
+    local statComparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
+
+    -- Effectively only used when an item downgrade
+    -- TODO when weapons have stats, this may be a problem
+    if not statComparisons or next(statComparisons) == nil then
+        if addon.settings.profile.enableTotalEP then
+            enableTotalEPLines(itemData, lines)
+
+            if #lines > 0 then
+                tooltip:AddLine(fmt("%s - %s SC", addon.title, _G.ITEM_UPGRADE))
+
+                for _, line in ipairs(lines) do tooltip:AddLine(line) end
+            end
+        end
+
+        return
+    end
+
+    local lineText
+    local equippedWeaponWeight, comparedWeaponWeight
+
+    for _, statsData in ipairs(statComparisons) do
+        lineText = nil
+
+        if IsWeaponSlot(statsData.itemEquipLoc) then
+
+            -- DpsWeights exists when weapon, but only if not Empty
+            for suffix, comparisonDpsData in pairs(statsData.DpsWeights or {}) do
+                -- Only compare weights if they are compatible
+                if itemData.dpsWeights[suffix] then
+                    equippedWeaponWeight = statsData.TotalWeight + comparisonDpsData.totalWeight
+                    comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
+
+                    if statsData['ItemLink'] == _G.EMPTY then
+                        lineText = fmt("  %s (%s): +%.2f EP", _G.EMPTY, SPEED_SUFFIX_NAME_MAP[suffix],
+                                       comparedWeaponWeight)
+                    else
+                        lineText = fmt("  %s (%s): %s / +%.2f EP", statsData['ItemLink'], SPEED_SUFFIX_NAME_MAP[suffix],
+                                       prettyPrintRatio(comparedWeaponWeight / equippedWeaponWeight),
+                                       comparedWeaponWeight - equippedWeaponWeight)
+                    end
+
+                    if statsData['debug'] and addon.settings.profile.debug then
+                        lineText = fmt("%s (%s)", lineText, statsData['debug'])
+                    end
+
+                    -- Limit dual wielding comparison output to weapon in the specific slot
+                    -- E.g. Compare a new 1H against current 1H in MH slot, not against that 1H in MH and OH slot (4 lines)
+                    if statsData.itemEquipLoc == 'INVTYPE_WEAPON' or statsData.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
+                        if statsData['SlotCompared'] == _G.INVSLOT_MAINHAND and suffix == "MH" then
+                            tinsert(lines, lineText)
+                        elseif statsData['SlotCompared'] == _G.INVSLOT_OFFHAND and suffix == "OH" then
+                            tinsert(lines, lineText)
+                        -- else -- ignore cross-hand comparisons in tooltip
+                        end
+                    else
+                        -- Add a comparison line for every statComparison, should be 1 except for 1H weapons
+                        tinsert(lines, lineText)
+                    end
+                end
             end
         else
-            ratioText = prettyPrintRatio(data['Ratio'])
-        end
+            if statsData['Ratio'] then
+                lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
+                               prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
+            elseif statsData['ItemLink'] == _G.EMPTY then
+                lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.WeightIncrease)
+            end
 
-        if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
-            tinsert(lines,
-                    fmt("  %s: %s / +%s EP (%s)",
-                        data['ItemLink'] or _G.UNKNOWN, ratioText,
-                        addon.Round(data.WeightIncrease, 2),
-                        _G.INVTYPE_WEAPONOFFHAND))
-        elseif data.ItemLink ~= _G.EMPTY then
-            tinsert(lines,
-                    fmt("  %s: %s / +%s EP", data['ItemLink'] or _G.UNKNOWN,
-                        ratioText, addon.Round(data.WeightIncrease, 2)))
-        end
-    end
-
-    if addon.settings.profile.enableTotalEP then
-        local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
-
-        if item then
-            tinsert(lines,
-                    fmt("  Total EP: %s", addon.Round(item.totalWeight, 2)))
+            if lineText then tinsert(lines, lineText) end
         end
     end
 
     if #lines > 0 then
         tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+        if addon.settings.profile.enableTotalEP then enableTotalEPLines(itemData, lines) end
 
         for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
@@ -586,8 +616,7 @@ end
 
 function addon.itemUpgrades:Setup()
     -- Toggle functionality off
-    if not addon.settings.profile.enableItemUpgrades or
-        not addon.settings.profile.enableTips then return end
+    if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips then return end
 
     if UnitLevel("player") == GetMaxPlayerLevel() then return end
 
@@ -615,9 +644,7 @@ function addon.itemUpgrades:Setup()
     end
 
     -- Add out-of-band (aka hackery) stat parsing
-    for key, regex in pairs(OUT_OF_BAND_KEYS) do
-        session.statsRegexes[key] = regex
-    end
+    for key, regex in pairs(OUT_OF_BAND_KEYS) do session.statsRegexes[key] = regex end
 
     -- Inventory
     GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
@@ -653,22 +680,19 @@ function addon.itemUpgrades:LoadStatWeights()
 
     local newWeights = {}
 
-    local guideMode = addon.settings.profile.hardcore and "HARDCORE" or
-                          "SPEEDRUN"
+    local guideMode = addon.settings.profile.hardcore and "HARDCORE" or "SPEEDRUN"
 
     -- TODO chance this doesn't evaluate properly on PLAYER_LEVEL_UP event
     local playerLevel = UnitLevel("player")
 
     for dbTitle, data in pairs(addon.statWeights) do
         if data.MAX_LEVEL <= data.MIN_LEVEL then
-            addon.comms.PrettyPrint(
-                "Invalid min (%s) and max %s level for for %s", data.MIN_LEVEL,
-                data.MAX_LEVEL, dbTitle)
+            addon.comms.PrettyPrint("Invalid min (%s) and max %s level for for %s", data.MIN_LEVEL, data.MAX_LEVEL,
+                                    dbTitle)
         end
 
-        if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
-            guideMode and playerLevel >= data.MIN_LEVEL and playerLevel <=
-            data.MAX_LEVEL then
+        if strupper(data.Class) == addon.player.class and strupper(data.Kind) == guideMode and playerLevel >=
+            data.MIN_LEVEL and playerLevel <= data.MAX_LEVEL then
             newWeights[data.Spec or data.Class] = data
 
             -- print("Loaded statWeights", data.Title)
@@ -689,11 +713,9 @@ function addon.itemUpgrades:LoadStatWeights()
         -- SoD
         if addon.player.season == 3 and data['ITEM_MOD_SPIRIT_SHORT'] then
             if addon.player.class == "PRIEST" then
-                data['ITEM_MOD_SPIRIT_SHORT'] =
-                    data['ITEM_MOD_SPIRIT_SHORT'] * 0.75
+                data['ITEM_MOD_SPIRIT_SHORT'] = data['ITEM_MOD_SPIRIT_SHORT'] * 0.75
             else
-                data['ITEM_MOD_SPIRIT_SHORT'] =
-                    data['ITEM_MOD_SPIRIT_SHORT'] * 0.5
+                data['ITEM_MOD_SPIRIT_SHORT'] = data['ITEM_MOD_SPIRIT_SHORT'] * 0.5
             end
         end
     end
@@ -732,8 +754,7 @@ local function getSpec()
         specName = SPEC_MAP[addon.player.class][guessedSpec.index]
 
         if addon.settings.profile.debug then
-            addon.comms
-                .PrettyPrint("ItemUpgrades, spec guessed as %s", specName)
+            addon.comms.PrettyPrint("ItemUpgrades, spec guessed as %s", specName)
         end
     end
 
@@ -766,26 +787,22 @@ function addon.itemUpgrades:ActivateSpecWeights()
         -- Chosen talents don't match itemUpgradeSpec
         -- Leave alone as is, don't spam user if there's a mismatch
         if addon.settings.profile.debug then
-            addon.comms.PrettyPrint(
-                "ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
-                addon.settings.profile.itemUpgradeSpec, spec)
+            addon.comms.PrettyPrint("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
+                                    addon.settings.profile.itemUpgradeSpec, spec)
         end
     end
 
     if not addon.settings.profile.itemUpgradeSpec then return end
 
     if addon.settings.profile.debug then
-        addon.comms.PrettyPrint("Activating spec weights for %s",
-                                addon.settings.profile.itemUpgradeSpec)
+        addon.comms.PrettyPrint("Activating spec weights for %s", addon.settings.profile.itemUpgradeSpec)
     end
 
-    session.activeStatWeights = session.specWeights[addon.settings.profile
-                                    .itemUpgradeSpec]
+    session.activeStatWeights = session.specWeights[addon.settings.profile.itemUpgradeSpec]
 
     if not session.activeStatWeights then return end
 
-    session.activeStatWeights.extraWeight =
-        ITEM_WEIGHT_ADDITIONS[addon.player.class] or {}
+    session.activeStatWeights.extraWeight = ITEM_WEIGHT_ADDITIONS[addon.player.class] or {}
 
     return session.activeStatWeights ~= nil
 end
@@ -808,7 +825,7 @@ local function GetTooltipLines(tooltip, baseItemData)
     -- print("GetTooltipLines, tooltip", tooltip:GetName(), tooltip:NumLines())
 
     -- Something went wrong
-    if tooltip:NumLines() == 0 then return end
+    if not tooltip or not tooltip.NumLines or tooltip:NumLines() == 0 then return end
 
     local regions = {tooltip:GetRegions()}
     local rText
@@ -840,32 +857,14 @@ end
 local function GetComparisonTip()
     if session.comparisonTip then return session.comparisonTip end
 
-    session.comparisonTip = CreateFrame("GameTooltip",
-                                        "RXPItemUpgradesComparison", nil,
-                                        "GameTooltipTemplate")
+    session.comparisonTip = CreateFrame("GameTooltip", "RXPItemUpgradesComparison", nil, "GameTooltipTemplate")
     session.comparisonTip:SetOwner(WorldFrame, "ANCHOR_NONE")
-    session.comparisonTip:AddFontStrings(
-        session.comparisonTip:CreateFontString("$parentTextLeft1", nil,
-                                               "GameTooltipText"),
-        session.comparisonTip:CreateFontString("$parentTextRight1", nil,
-                                               "GameTooltipText"))
+    session.comparisonTip:AddFontStrings(session.comparisonTip:CreateFontString("$parentTextLeft1", nil,
+                                                                                "GameTooltipText"),
+                                         session.comparisonTip:CreateFontString("$parentTextRight1", nil,
+                                                                                "GameTooltipText"))
 
     return session.comparisonTip
-end
-
-local function IsWeaponSlot(itemEquipLoc)
-    return
-        itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc == 'INVTYPE_RANGED' or
-            itemEquipLoc == 'INVTYPE_2HWEAPON' or itemEquipLoc ==
-            'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' or
-            itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
-            'INVTYPE_RANGEDRIGHT'
-end
-
-local function IsMeleeSlot(itemEquipLoc)
-    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc ==
-               'INVTYPE_2HWEAPON' or itemEquipLoc == 'INVTYPE_WEAPONMAINHAND' or
-               itemEquipLoc == 'INVTYPE_WEAPONOFFHAND'
 end
 
 local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
@@ -879,17 +878,19 @@ local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
         return
     end
 
-    -- Type not usable by class
     if IsWeaponSlot(itemEquipLoc) then
         if not session.equippableWeapons[itemSubTypeID] then return end
     else
         if not session.equippableArmor[itemSubTypeID] then return end
     end
 
+    -- A fully trained class will get to here, but that's not the case when leveling
+    -- TODO exclude untrained weapon types
+    -- https://www.wowhead.com/classic/spells/proficiencies?filter=22;1;0
     return true
 end
 
-local function CalculateDPSWeight(itemData, stats)
+local function CalculateDPSWeight(itemData, stats, itemEquipLoc)
     -- Example:
     -- itemData = {
     --    ['itemEquipLoc'] = 'INVTYPE_RANGED',
@@ -899,53 +900,66 @@ local function CalculateDPSWeight(itemData, stats)
     --    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = 12.3456789,
     --    ...
     -- }
+    local dpsWeights = {}
 
-    -- TODO doesn't work on hidden/background tooltip parsing sometimes?
+    -- This only happens if an empty slot comparison
+    -- Fake a 0 weight base item to preserve upstream comparison logic
+    if itemEquipLoc and not itemData then
+        for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
+            dpsWeights[keySuffix] = {['totalWeight'] = 0.00, ['speedWeight'] = 0.00}
+        end
+
+        return dpsWeights
+    end
+
+    -- Shield gets here from being INVTYPE_OFFHAND
+    if itemData.itemEquipLoc == "INVTYPE_SHIELD" then return end
+
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
         if addon.settings.profile.debug then
-            addon.comms.PrettyPrint(
-                "itemUpgrades CalculateDPSWeight, Speed property required %s",
-                itemData and itemData['itemLink'])
+            addon.comms.PrettyPrint("itemUpgrades CalculateDPSWeight, Speed property required %s",
+                                    itemData and itemData['itemLink'])
         end
         return nil
     end
 
-    local dpsWeights = {}
-    local itemEquipLoc = itemData.itemEquipLoc
-    local speedWeightKey, overallWeaponWeight, dpsWeight, speedKindWeight
+    itemEquipLoc = itemData.itemEquipLoc
+    local speedWeightKey, speedWeightModifier, dpsWeight, speedKindWeight, dpsWeightModifier
 
     -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
     -- weaponSlotToWeightKey['INVTYPE_WEAPON'] = { "MH", "OH" }
-    for _, keySuffix in
-        ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
+    for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
+        if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT' then
+
+            dpsWeightModifier = session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
+        else
+            dpsWeightModifier = session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+        end
+
+        if dpsWeightModifier and dpsWeightModifier > 0 then
+            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] * dpsWeightModifier
+        else
+            dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] -- * 1
+        end
 
         -- Lookup speed weight key with kind suffix (MH, OH, RANGED, 2H)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
+        speedWeightModifier = session.activeStatWeights[speedWeightKey]
 
-        -- Check weaponKind keys for class statWeights
-        if session.activeStatWeights[speedWeightKey] then
+        -- Prevent multiplication by 0
+        if not speedWeightModifier or speedWeightModifier == 0 then speedWeightModifier = 1 end
 
-            if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc ==
-                'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT' then
-
-                dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                                session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
-            else
-                dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                                session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
-            end
-
-            speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] *
-                                  session.activeStatWeights[speedWeightKey]
+        -- Exclude Off-hand comparison before trained
+        if keySuffix == "OH" and not session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
+            -- print("Untrained OH")
+        elseif speedWeightModifier then
+            speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] * speedWeightModifier
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
-            overallWeaponWeight = dpsWeight + speedKindWeight
-
-            dpsWeights[keySuffix] = {
-                ['overallWeight'] = overallWeaponWeight,
-                ['scaleWeight'] = session.activeStatWeights[speedWeightKey]
-            }
+            dpsWeights[keySuffix] = {['totalWeight'] = dpsWeight + speedKindWeight, ['speedWeight'] = speedKindWeight}
+        else -- Weapon speed irrelevant, likely a caster
+            dpsWeights[keySuffix] = {['totalWeight'] = dpsWeight, ['speedWeight'] = 0.00}
         end
     end
 
@@ -976,13 +990,11 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
             schoolKey = SPELL_KIND_MAP[strlower(schoolName)]
 
             -- print("Matched schoolName", strlower(schoolName), schoolKey, spellPower)
-            if session.activeStatWeights[schoolKey] and
-                session.activeStatWeights[schoolKey] > 0 then
+            if session.activeStatWeights[schoolKey] and session.activeStatWeights[schoolKey] > 0 then
 
                 -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted, byRef add parsed stats
                 stats[schoolKey] = spellPower
-                schoolStatWeight = spellPower *
-                                       session.activeStatWeights[schoolKey]
+                schoolStatWeight = spellPower * session.activeStatWeights[schoolKey]
 
                 totalStatWeight = totalStatWeight + schoolStatWeight
             end
@@ -997,8 +1009,7 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
         -- Set spellPower stat to built-in stat after verifying no school
         stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_DAMAGE_DONE'] + 1
 
-        return stats['STAT_SPELLDAMAGE'] *
-                   session.activeStatWeights['STAT_SPELLDAMAGE']
+        return stats['STAT_SPELLDAMAGE'] * session.activeStatWeights['STAT_SPELLDAMAGE']
 
     elseif totalStatWeight == 0 and stats['ITEM_MOD_SPELL_POWER'] then -- Anniversary/Era/SoD/Cata
         -- print("ITEM_MOD_SPELL_POWER: Not a magic school", stats['ITEM_MOD_SPELL_POWER'])
@@ -1019,16 +1030,44 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     end
 
     if session.itemCache[itemLink] then
+        if session.itemCache[itemLink].unusable then return end
         -- print("Returning cached weight", itemLink, session.itemCache[itemLink].totalWeight)
         return session.itemCache[itemLink]
     end
 
-    local _, _, _, _, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _,
-          itemSubTypeID, _, _, setID = GetItemInfo(itemLink)
+    local _, _, _, itemLevel, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID, _, _, setID =
+        GetItemInfo(itemLink)
 
     -- Not an equippable item
-    if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or
-        itemEquipLoc == "INVTYPE_BAG" then return end
+    if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or itemEquipLoc == "INVTYPE_BAG" or
+        itemEquipLoc == "INVTYPE_NON_EQUIP_IGNORE" then return end
+
+    local itemData
+
+    if not IsUsableForClass(itemSubTypeID, itemEquipLoc) then
+        itemData = {
+            unusable = true,
+            itemLink = itemLink,
+            itemSubTypeID = itemSubTypeID,
+            itemEquipLoc = itemEquipLoc,
+            sellPrice = sellPrice,
+            itemMinLevel = itemMinLevel,
+            setID = setID
+        }
+
+        session.itemCache[itemLink] = itemData
+
+        return itemData
+    end
+
+    -- itemLevel is generally 5 levels highter than required
+    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
+
+    -- Need itemID for easier code lookups
+    local itemID = GetItemInfoInstant(itemLink)
+
+    -- Exclude skinning knife, mining pick, and blacksmith hammer
+    if itemID == 7005 or itemID == 2901 or itemID == 5956 then return end
 
     -- Parse API stats first before processing tooltip text
     local stats = GetItemStats(itemLink)
@@ -1042,15 +1081,12 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     local totalWeight = 0
     local statWeight, tooltipTextLines
 
-    -- Need itemID for easier code lookups
-    local itemID = GetItemInfoInstant(itemLink)
-
     if session.activeStatWeights and session.activeStatWeights.extraWeight and
         session.activeStatWeights.extraWeight[itemID] then
         totalWeight = session.activeStatWeights.extraWeight[itemID]
     end
 
-    local itemData = {
+    itemData = {
         itemID = itemID,
         itemLink = itemLink,
         itemSubTypeID = itemSubTypeID,
@@ -1063,6 +1099,8 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     -- Parse tooltip for all additional stats
     if tooltip then
         tooltipTextLines = GetTooltipLines(tooltip, itemData)
+
+        if not tooltipTextLines then return end
     else -- If not tooltip, set hidden comparison tooltip
         tooltip = GetComparisonTip()
 
@@ -1107,9 +1145,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                         if match1 and not match2 then
                             -- print("Extracted multi-match", tonumber(match1), "from", line)
                             -- If no match, try EU , -> . for numbers
-                            stats[key] = tonumber(match1) or
-                                             tonumber(
-                                                 (match1:gsub(",", "%.", 1)))
+                            stats[key] = tonumber(match1) or tonumber((match1:gsub(",", "%.", 1)))
                         end
                     end
                 else
@@ -1120,8 +1156,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                     if match1 and not match2 then
                         -- print("Extracted", tonumber(match1), "from", line)
                         -- If no match, try EU , -> . for numbers
-                        stats[key] = tonumber(match1) or
-                                         tonumber((match1:gsub(",", "%.", 1)))
+                        stats[key] = tonumber(match1) or tonumber((match1:gsub(",", "%.", 1)))
                     end
                 end
             end
@@ -1146,7 +1181,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             statWeight = nil
 
             -- dpsWeights is evaluated later, based on slot comparison wich this level doesn't know about
-            -- totalWeight = totalWeight + statWeight
+            -- totalWeight = statWeight + dpsWeight
         elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' or key == 'ITEM_MOD_SPELL_POWER' then
             -- ITEM_MOD_SPELL_DAMAGE_DONE is terrible, but it's built-in so key off that to parse spell damage
             statWeight = CalculateSpellWeight(stats, tooltipTextLines)
@@ -1177,74 +1212,61 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     return itemData
 end
 
--- Used for dpsWeights post-processing
-local SPEED_SUFFIX_SLOT_MAP = {
-    ['2H'] = _G.INVSLOT_MAINHAND,
-    ['MH'] = _G.INVSLOT_MAINHAND,
-    ['OH'] = _G.INVSLOT_OFFHAND,
-    ['RANGED'] = _G.INVSLOT_RANGED
-}
+function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
+    if not itemData.dpsWeights then
+        return -1
+    end
 
--- returns equippedWeight, comparedWeight
-local function calculateWeaponDPSWeight(equippedData, comparedData,
-                                        slotComparisonId)
-    local equippedWeight = equippedData.totalWeight
-    local comparedWeight = comparedData.totalWeight
-
-    for suffix, data in pairs(equippedData.dpsWeights or {}) do
+    for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
         if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            equippedWeight = equippedWeight + data.overallWeight
+            -- print("CalculateWeaponWeight, suffix", suffix, slotComparisonId, itemData.totalWeight + dpsData.totalWeight)
+
+            return itemData.totalWeight + dpsData.totalWeight
         end
     end
 
-    for suffix, data in pairs(comparedData.dpsWeights or {}) do
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            comparedWeight = comparedWeight + data.overallWeight
-        end
-    end
-
-    return equippedWeight, comparedWeight
+    return -1
 end
 
 -- return ratio, weight, debugMsg
-function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
-                                                       comparedData,
-                                                       slotComparisonId)
-    if not comparedData or not equippedItemLink then
-        -- print("GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
-        return nil, -1, "invalid parameters"
-    end
+function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotComparisonId)
+    if not comparedData or not equippedItemLink then return nil, -1, "invalid parameters" end
 
     -- Load equipped item into hidden tooltip for parsing
     local equippedData = self:GetItemData(equippedItemLink, nil)
 
-    if not equippedData then
-        -- print("GetEquippedComparisonRatio: not equippedData")
-        return nil, -1, "not equippedData"
-    end
+    if not equippedData then return nil, -1, "not equippedData" end
+
+    local equippedWeight, comparedWeight
 
     -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
     -- MH / OH have more complex handling, requires DPS calculations here
-    local equippedWeight, comparedWeight =
-        calculateWeaponDPSWeight(equippedData, comparedData, slotComparisonId)
+    if IsWeaponSlot(equippedData.itemEquipLoc) then
+        equippedWeight = self:CalculateWeaponWeight(equippedData, slotComparisonId)
+        comparedWeight = self:CalculateWeaponWeight(comparedData, slotComparisonId)
+    else
+        equippedWeight = equippedData.totalWeight
+        comparedWeight = comparedData.totalWeight
+    end
 
-    if equippedWeight == 0 or comparedWeight == 0 then
-        -- Prevent division by 0
-        -- One of these has no stats, so treat same as empty slot (nil)
-        return nil, -1, _G.NONE
+    -- If -1, then failed to calculate speed/DPS EP
+    if equippedWeight < 0 or comparedWeight < 0 then
+        return nil, -1, _G.UNKNOWN
+    elseif equippedWeight == 0 then
+        return 1.0, comparedWeight, _G.EMPTY
+    elseif comparedWeight == 0 then
+        return nil, 0, _G.EMPTY
     elseif comparedWeight > equippedWeight then
-        return addon.Round(comparedWeight / equippedWeight, 2),
-               comparedWeight - equippedWeight, nil
+        return comparedWeight / equippedWeight, comparedWeight - equippedWeight, 'upgrade'
     elseif comparedWeight < equippedWeight then
         -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
-        -- return -1 * addon.Round(comparedWeight / equippedWeight, 2)
+        -- return -1 * comparedWeight / equippedWeight
         -- Display 'downgrade' when debugging
         return nil, -1, 'downgrade'
     elseif comparedWeight == equippedWeight then
-        return 0, -1, 'equal'
+        return nil, 0, 'equal'
     end
 
-    -- print("GetEquippedComparisonRatio nil")
     return nil, -1, _G.UNKNOWN
 end
 
@@ -1266,86 +1288,96 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     end
     -- print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
 
-    if not IsUsableForClass(comparedData.itemSubTypeID,
-                            comparedData.itemEquipLoc) then
+    if not IsUsableForClass(comparedData.itemSubTypeID, comparedData.itemEquipLoc) then
         -- print("CompareItemWeight: not usable by class")
         return nil, "unusable"
     end
 
-    local slotsToCompare = {}
+    local statComparisons = {
+        -- { ['Ratio'] = 1.23, ['WeightIncrease'] = 23.4, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
+    }
+    local equippedItemLink, equippedData, ratio, weightIncrease, debug
+    local slotNamesToCompare, dpsWeights = {}, nil
 
     if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
         -- print("is multi-slot", comparedData.itemEquipLoc)
-        slotsToCompare = session.equippableSlots[comparedData.itemEquipLoc]
+        slotNamesToCompare = session.equippableSlots[comparedData.itemEquipLoc]
     else
-        slotsToCompare[comparedData.itemEquipLoc] =
-            session.equippableSlots[comparedData.itemEquipLoc]
+        slotNamesToCompare[comparedData.itemEquipLoc] = session.equippableSlots[comparedData.itemEquipLoc]
     end
 
     -- if 1H weapon, check OH if INVTYPE_WEAPONOFFHAND, add to slot comparisons
-    if comparedData.itemEquipLoc == 'INVTYPE_WEAPON' and
-        session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
-        slotsToCompare['INVTYPE_WEAPONOFFHAND'] =
-            session.equippableSlots['INVTYPE_WEAPONOFFHAND']
+    if comparedData.itemEquipLoc == 'INVTYPE_WEAPON' and session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
+        slotNamesToCompare['INVTYPE_WEAPONOFFHAND'] = session.equippableSlots['INVTYPE_WEAPONOFFHAND']
     end
 
-    local comparisons = {
-        -- { ['Ratio'] = 1.23, ['WeightIncrease'] = 23.4, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
-    }
-    local equippedItemLink, ratio, weightIncrease, debug
-
     -- Check applicable slots
-    -- Will be 1 for most, 1-2 for weapons, 1-2 for rings
-    for itemEquipLoc, slotId in pairs(slotsToCompare) do
-        equippedItemLink = GetInventoryItemLink("player", slotId)
+    -- Will be 1 for most and 1-2 for rings
+    for itemEquipLoc, slotId in pairs(slotNamesToCompare) do
+        dpsWeights = nil
 
-        -- No equipped item, so anything is an upgrade from no item
-        -- 100% looks wrong for a infinitely better upgrade, return nil
-        if not equippedItemLink or equippedItemLink == "" then
-            ratio = nil
-            debug = _G.EMPTY
-            equippedItemLink = _G.EMPTY
+        -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", slotId or itemEquipLoc)
+        equippedItemLink = GetInventoryItemLink("player", slotId or itemEquipLoc)
+
+        if comparedData.itemEquipLoc == "INVTYPE_SHIELD" or comparedData.itemEquipLoc == "INVTYPE_HOLDABLE" then
+            -- Prevent shields from showing up as "Empty: " upgrades when using 2H
+            ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
         elseif comparedData.itemLink == equippedItemLink then
             -- Same item, so not an upgrade
             ratio = nil
             debug = 'same'
+            weightIncrease = nil
+        elseif slotId == _G.INVSLOT_MAINHAND or slotId == _G.INVSLOT_OFFHAND or slotId == _G.INVSLOT_RANGED then
+            ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
+
+            equippedData = self:GetItemData(equippedItemLink, tooltip)
+
+            if equippedData and equippedData.stats then
+                dpsWeights = CalculateDPSWeight(equippedData, equippedData.stats)
+            else
+                dpsWeights = CalculateDPSWeight(nil, nil, itemEquipLoc)
+
+                debug = _G.EMPTY
+                equippedItemLink = _G.EMPTY
+                ratio = nil
+                weightIncrease = nil
+            end
+        elseif not equippedItemLink or equippedItemLink == "" then
+            ratio = nil
+            debug = _G.EMPTY
+            equippedItemLink = _G.EMPTY
+            weightIncrease = comparedData.totalWeight
         else
-            ratio, weightIncrease, debug =
-                self:GetEquippedComparisonRatio(equippedItemLink, comparedData,
-                                                slotId)
+            ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
         end
 
         -- Even if ratio nil, add to comparisons for upstream handling based on debug value
         if ratio or equippedItemLink == _G.EMPTY or equippedItemLink == _G.NONE then
-            tinsert(comparisons, {
+            tinsert(statComparisons, {
                 ['Ratio'] = ratio,
+                ['DpsWeights'] = dpsWeights,
                 ['TotalWeight'] = comparedData.totalWeight,
                 ['WeightIncrease'] = weightIncrease or 0,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
+                ['SlotCompared'] = slotId, -- Track slotId number for weapon display later
                 ['debug'] = addon.settings.profile.debug and debug
             })
         end
 
     end
 
-    return comparisons
+    return statComparisons
 end
 
 function addon.itemUpgrades.Test()
     local itemData
     local testData = {
         ['CLASSIC'] = {
-            ['WARRIOR'] = {
-                16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
-                13052, 20703
-            },
+            ['WARRIOR'] = {16886, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907, 13052, 20703},
             ['SHAMAN'] = {892, 14136, 16923, 6324, 209671}
         },
-        ['CATA'] = {
-            ['WARRIOR'] = {11820, 35042, 35916, 63827, 66884, 66933},
-            ['SHAMAN'] = {14136, 16923, 199329}
-        }
+        ['CATA'] = {['WARRIOR'] = {11820, 35042, 35916, 63827, 66884, 66933}, ['SHAMAN'] = {14136, 16923, 199329}}
     }
 
     addon.itemUpgrades.testItems = {}
@@ -1353,26 +1385,20 @@ function addon.itemUpgrades.Test()
         print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
 
-        if itemData then
-            addon.itemUpgrades.testItems[itemData.itemID] = itemData
-        end
+        if itemData then addon.itemUpgrades.testItems[itemData.itemID] = itemData end
 
         if addon.settings.profile.debug and itemData then
-            for key, value in pairs(itemData) do
-                print('  ', key, value)
-            end
+            for key, value in pairs(itemData) do print('  ', key, value) end
             print('  stats:')
-            for key, value in pairs(itemData.stats) do
-                print('  - ', key, value)
-            end
+            for key, value in pairs(itemData.stats) do print('  - ', key, value) end
         end
     end
 end
 
-local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem =
-    _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
-local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
-    _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
+local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems,
+                                                                       _G.SetSelectedAuctionItem
+local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink,
+                                                                   _G.GetAuctionItemInfo
 
 local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
 
@@ -1430,21 +1456,12 @@ function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
 end
 
 -- Helper function for scanning.xml RXP_IU_AH_BuyButton:OnClick
-function addon.itemUpgrades.AH:SearchForSelectedItem()
-    return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData)
-end
+function addon.itemUpgrades.AH:SearchForSelectedItem() return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData) end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
-    RXPD4 = itemData
-    if not itemData.Name then
-        print("not itemData.name")
-        return
-    end
+    if not itemData.Name then return end
 
-    if not _G.AuctionFrame:IsShown() then
-        print("not session.windowOpen")
-        return
-    end
+    if not _G.AuctionFrame:IsShown() then return end
 
     -- print("SearchForBuyoutItem", itemData.itemLink)
 
@@ -1476,9 +1493,7 @@ function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
         -- print("FindItemAuction error: itemData nil")
         return
     end
-    if not (itemData.ItemID and itemData.ItemLink and itemData.BuyoutMoney) then
-        return
-    end
+    if not (itemData.ItemID and itemData.ItemLink and itemData.BuyoutMoney) then return end
 
     local resultCount, totalAuctions = GetNumAuctionItems("list")
 
@@ -1494,12 +1509,10 @@ function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
         itemLink = GetAuctionItemLink("list", i)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        _, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
-            GetAuctionItemInfo("list", i)
+        _, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ = GetAuctionItemInfo("list", i)
         -- print("Evaluating", i, itemLink, buyoutPrice)
 
-        if itemID == itemData.ItemID and itemLink == itemData.ItemLink and
-            buyoutPrice == itemData.BuyoutMoney then
+        if itemID == itemData.ItemID and itemLink == itemData.ItemLink and buyoutPrice == itemData.BuyoutMoney then
             SetSelectedAuctionItem("list", i)
             return i
         end
@@ -1559,8 +1572,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         itemLink = GetAuctionItemLink("list", i)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, texture, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
-            GetAuctionItemInfo("list", i)
+        name, texture, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ = GetAuctionItemInfo("list", i)
 
         -- TODO if not hasAllInfo
         if ahSession.scanData[itemLink] then
@@ -1613,8 +1625,7 @@ function addon.itemUpgrades.AH:Scan()
     ahSession.sentQuery = true
 
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems("", maxLevel - 5, maxLevel, ahSession.scanPage, true,
-                      Enum.ItemQuality.Uncommon, false, false,
+    QueryAuctionItems("", maxLevel - 5, maxLevel, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
                       AuctionCategories[ahSession.scanType].filters)
 end
 
@@ -1640,8 +1651,7 @@ local function calculate(itemLink, scanData)
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
         if compareData.Ratio then
-            rwpc = (scanData.totalWeight * compareData.Ratio) /
-                       scanData.lowestPrice
+            rwpc = (scanData.totalWeight * compareData.Ratio) / scanData.lowestPrice
         else -- Treat an empty slot as 1:1 upgrade weight
             rwpc = scanData.totalWeight / scanData.lowestPrice
             compareData.Ratio = scanData.totalWeight
@@ -1705,52 +1715,39 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
     return true
 end
 
+-- Because of processing sequencing, override some names for UI
+local function getAHSlotName(invEquipType)
+    if invEquipType == 'INVTYPE_THROWN' then
+        return _G['INVTYPE_RANGED']
+    elseif invEquipType == 'INVTYPE_HOLDABLE' then
+        return _G['INVTYPE_WEAPONOFFHAND']
+    end
+
+    return _G[invEquipType]
+end
+
 function addon.itemUpgrades.AH:Analyze()
     ahSession.bestAnalysis = {}
 
     -- We already know all of this is usable, so just care about slots
-    for invEquipType, slotId in pairs(session.equippableSlots) do
-        if type(slotId) == "table" then -- ring or trinket slot
-            for j, _ in pairs(slotId) do
-                ahSession.bestAnalysis[j] = {
-                    slotName = _G[invEquipType],
-                    best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
-                    budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
-                }
-            end
-        elseif IsMeleeSlot(invEquipType) then
-            -- TODO re-enable after fixing melee weapon comparison logic, highly complex because of MH+OH vs 2H vs weapon skills
-            -- print("Ignoring weapons", slotId, invEquipType)
-        else
-            ahSession.bestAnalysis[slotId] = {
-                slotName = _G[invEquipType],
-                best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
-                budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
-            }
-        end
-
+    for invEquipType, _ in pairs(session.equippableSlots) do
+        ahSession.bestAnalysis[invEquipType] = {
+            slotName = getAHSlotName(invEquipType),
+            best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
+            budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
+        }
     end
 
-    local bAS, slotId
+    local bAS
 
-    local comparisons = {}
     for itemLink, scanData in pairs(ahSession.scanData) do
         calculate(itemLink, scanData)
 
-        slotId = session.equippableSlots[scanData.itemEquipLoc]
-        if type(slotId) == "table" then
-            comparisons = slotId
-        else
-            comparisons = {slotId}
-        end
-
-        for _, id in ipairs(comparisons) do
-            bAS = ahSession.bestAnalysis[id]
-            -- print("Analyze", itemLink, "weightPerCopper",
-            --      scanData.weightPerCopper, "relativeWPC",
-            --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
-            analyzeSlotUpgrade(scanData, itemLink, bAS)
-        end
+        bAS = ahSession.bestAnalysis[scanData.itemEquipLoc]
+        -- print("Analyze", itemLink, "weightPerCopper",
+        --      scanData.weightPerCopper, "relativeWPC",
+        --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
+        analyzeSlotUpgrade(scanData, itemLink, bAS)
     end
 end
 
@@ -1765,8 +1762,7 @@ local function createBuyoutFrame(buyout, buyoutMoney)
 
     if buyout.Money then return end
 
-    buyout.Money = CreateFrame("Frame", "$parentMoneyFrame" .. buyoutIncr,
-                               buyout, "SmallMoneyFrameTemplate")
+    buyout.Money = CreateFrame("Frame", "$parentMoneyFrame" .. buyoutIncr, buyout, "SmallMoneyFrameTemplate")
     buyoutIncr = buyoutIncr + 1
     buyout.Money:SetPoint("RIGHT", 0, -6)
 
@@ -1813,13 +1809,9 @@ local function prettyPrintUpgradeColumn(data)
     --      prettyPrintRatio(data.ratio), "addon.Round(data.weightIncrease, 2))",
     --      addon.Round(data.weightIncrease, 2))
 
-    if data.ratio < 0 then
-        return fmt("%s / +%s EP (BIS)", _G.EMPTY,
-                   addon.Round(data.weightIncrease, 2))
-    end
+    if data.ratio < 0 then return fmt("%s / +%s EP (BIS)", _G.EMPTY, addon.Round(data.weightIncrease, 2)) end
 
-    return fmt("%s / +%s EP (BIS)", prettyPrintRatio(data.ratio),
-               addon.Round(data.weightIncrease, 2))
+    return fmt("%s / +%s EP (BIS)", prettyPrintRatio(data.ratio), addon.Round(data.weightIncrease, 2))
 end
 
 local function prettyPrintBudgetColumn(data)
@@ -1827,8 +1819,7 @@ local function prettyPrintBudgetColumn(data)
 
     if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
 
-    return fmt("%s / %s EP/c (BIS/%s)", prettyPrintRatio(data.ratio),
-               epPerCopper, _G.ICON_TAG_RAID_TARGET_STAR3)
+    return fmt("%s / %s EP/c (BIS/%s)", prettyPrintRatio(data.ratio), epPerCopper, _G.ICON_TAG_RAID_TARGET_STAR3)
 end
 
 function addon.itemUpgrades.AH.RowOnEnter(row)
@@ -1850,9 +1841,7 @@ function addon.itemUpgrades.AH.RowOnClick(this)
         _G.RXP_IU_AH_BuyButton:Disable()
     else
         -- Remove previous locked highlight
-        if ahSession.selectedRow then
-            ahSession.selectedRow:UnlockHighlight()
-        end
+        if ahSession.selectedRow then ahSession.selectedRow:UnlockHighlight() end
         ahSession.selectedRow = this
         this:LockHighlight()
 
@@ -1924,8 +1913,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
     ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
 
-    _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
-                                   _G.MINIMAP_TRACKING_AUCTIONEER))
+    _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER))
 
     local ScrollBar = ahSession.displayFrame.ScrollBox.ScrollBar
     ScrollBar:SetHideIfUnscrollable(false)
@@ -1936,22 +1924,20 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ScrollView:SetElementExtent(19 + 37 * 2)
     ahSession.displayFrame.DataProvider = DataProvider
 
-    ScrollUtil.InitScrollBoxListWithScrollBar(ahSession.displayFrame.ScrollBox,
-                                              ScrollBar, ScrollView)
+    ScrollUtil.InitScrollBoxListWithScrollBar(ahSession.displayFrame.ScrollBox, ScrollBar, ScrollView)
 
     ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
 
-    ScrollView:SetElementExtentCalculator(
-        function(_, itemBlock)
-            if itemBlock.best and itemBlock.budget then
-                -- Header + two rows
-                return 93 -- 19 + 37 * 2
-            end
+    ScrollView:SetElementExtentCalculator(function(_, itemBlock)
+        if itemBlock.best and itemBlock.budget then
+            -- Header + two rows
+            return 93 -- 19 + 37 * 2
+        end
 
-            -- print("SetElementExtentCalculator", itemBlock.Name, "one row")
-            -- Header + one row
-            return 56 -- 19 + 37
-        end)
+        -- print("SetElementExtentCalculator", itemBlock.Name, "one row")
+        -- Header + one row
+        return 56 -- 19 + 37
+    end)
 
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
@@ -1964,32 +1950,24 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     -- Create tab button
     local index = attachment.numTabs + 1
-    local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index,
-                                  attachment, "AuctionTabTemplate")
+    local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index, attachment, "AuctionTabTemplate")
     tabButton.isRXP = true
     tabButton:SetText(addon.name)
     tabButton:SetID(index)
 
-    tabButton:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT",
-                       -8, 0)
+    tabButton:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT", -8, 0)
 
     tabButton:HookScript("OnHide", function() ahSession.displayFrame:Hide() end)
 
     tabButton.Selected = function(this)
         PanelTemplates_SetTab(attachment, this)
 
-        _G.AuctionFrameTopLeft:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-TopLeft")
-        _G.AuctionFrameTop:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top")
-        _G.AuctionFrameTopRight:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-TopRight")
-        _G.AuctionFrameBotLeft:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotLeft")
-        _G.AuctionFrameBot:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
-        _G.AuctionFrameBotRight:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
+        _G.AuctionFrameTopLeft:SetTexture("Interface\\AuctionFrame\\UI-AuctionFrame-Bid-TopLeft")
+        _G.AuctionFrameTop:SetTexture("Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top")
+        _G.AuctionFrameTopRight:SetTexture("Interface\\AuctionFrame\\UI-AuctionFrame-Auction-TopRight")
+        _G.AuctionFrameBotLeft:SetTexture("Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotLeft")
+        _G.AuctionFrameBot:SetTexture("Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
+        _G.AuctionFrameBotRight:SetTexture("Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
 
         ahSession.displayFrame:Show()
 
@@ -2032,7 +2010,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
 
     local blockData
     local n = 0
-    for slotId, data in pairs(ahSession.bestAnalysis) do
+    for itemEquipLoc, data in pairs(ahSession.bestAnalysis) do
         if data.budget.itemLink or data.best.itemLink then
             n = n + 1
             -- print("DisplayEmbeddedResults:", data.slotName, "processing upgrades")
@@ -2044,11 +2022,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                 blockData.best = {
                     ItemLink = data.best.itemLink,
                     ItemID = data.best.itemID,
-                    ItemKindIcon = "Interface/AddOns/" .. addonName ..
-                        "/Textures/rxp_logo-64",
+                    ItemKindIcon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
                     Name = data.best.name,
-                    ColorizedName = getColorizedName(data.best.itemLink,
-                                                     data.best.name),
+                    ColorizedName = getColorizedName(data.best.itemLink, data.best.name),
                     ItemLevel = data.best.level,
                     UpdateEPText = prettyPrintUpgradeColumn(data.best),
                     TotalWeight = data.best.totalWeight,
@@ -2059,15 +2035,13 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
 
             if data.budget.itemLink then
                 -- print("  - DisplayEmbeddedResults budget", data.budget.itemLink)
-                if data.best.itemLink and data.budget.itemLink and
-                    data.best.itemLink ~= data.budget.itemLink then
+                if data.best.itemLink and data.budget.itemLink and data.best.itemLink ~= data.budget.itemLink then
                     blockData.budget = {
                         ItemLink = data.budget.itemLink,
                         ItemID = data.budget.itemID,
                         ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
                         Name = data.budget.name,
-                        ColorizedName = getColorizedName(data.budget.itemLink,
-                                                         data.budget.name),
+                        ColorizedName = getColorizedName(data.budget.itemLink, data.budget.name),
                         ItemLevel = data.budget.level,
                         UpdateEPText = prettyPrintBudgetColumn(data.budget),
                         TotalWeight = data.budget.totalWeight,
@@ -2086,9 +2060,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             -- print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
     end
-    if n == 0 then
-        _G.StaticPopup_Show("RXPNoUpgradesFound")
-    end
+    if n == 0 then _G.StaticPopup_Show("RXPNoUpgradesFound") end
 end
 
 -- Update icons to Brandung mockup
