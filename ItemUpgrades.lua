@@ -543,8 +543,8 @@ local function TooltipSetItem(tooltip, ...)
                     comparedWeaponWeight = itemData.totalWeight + itemData.dpsWeights[suffix].totalWeight
 
                     if statsData['ItemLink'] == _G.EMPTY then
-                        lineText =
-                            fmt("  %s (%s): +%.2f EP", _G.EMPTY, SPEED_SUFFIX_NAME_MAP[suffix], comparedWeaponWeight)
+                        lineText = fmt("  %s (%s): +%.2f EP", _G.EMPTY, SPEED_SUFFIX_NAME_MAP[suffix],
+                                       comparedWeaponWeight)
                     else
                         lineText = fmt("  %s (%s): %s / +%.2f EP", statsData['ItemLink'], SPEED_SUFFIX_NAME_MAP[suffix],
                                        prettyPrintRatio(comparedWeaponWeight / equippedWeaponWeight),
@@ -555,9 +555,19 @@ local function TooltipSetItem(tooltip, ...)
                         lineText = fmt("%s (%s)", lineText, statsData['debug'])
                     end
 
-                    -- Add a comparison line for every statComparison, should be 1 except for 1H weapons and rings
-                    -- TODO exclude overly compared when DW
-                    if lineText then tinsert(lines, lineText) end
+                    -- Limit dual wielding comparison output to weapon in the specific slot
+                    -- E.g. Compare a new 1H against current 1H in MH slot, not against that 1H in MH and OH slot (4 lines)
+                    if statsData.itemEquipLoc == 'INVTYPE_WEAPON' or statsData.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
+                        if statsData['SlotCompared'] == _G.INVSLOT_MAINHAND and suffix == "MH" then
+                            tinsert(lines, lineText)
+                        elseif statsData['SlotCompared'] == _G.INVSLOT_OFFHAND and suffix == "OH" then
+                            tinsert(lines, lineText)
+                        -- else -- ignore cross-hand comparisons in tooltip
+                        end
+                    else
+                        -- Add a comparison line for every statComparison, should be 1 except for 1H weapons
+                        tinsert(lines, lineText)
+                    end
                 end
             end
         else
@@ -1308,8 +1318,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     for itemEquipLoc, slotId in pairs(slotNamesToCompare) do
         dpsWeights = nil
 
-        -- TODO if slotId is table
-        -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", "itemEquipLoc", itemEquipLoc, "slotId", slotId)
+        -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", slotId or itemEquipLoc)
         equippedItemLink = GetInventoryItemLink("player", slotId or itemEquipLoc)
 
         if comparedData.itemEquipLoc == "INVTYPE_SHIELD" or comparedData.itemEquipLoc == "INVTYPE_HOLDABLE" then
@@ -1353,6 +1362,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
                 ['WeightIncrease'] = weightIncrease or 0,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
+                ['SlotCompared'] = slotId, -- Track slotId number for weapon display later
                 ['debug'] = addon.settings.profile.debug and debug
             })
         end
