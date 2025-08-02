@@ -276,21 +276,27 @@ local maxSkillLevel = {}
 local professionNames
 
 function addon.GetProfessionNames()
-    if not professionNames then professionNames = {} end
+    if not professionNames then
+        professionNames = {}
+        addon.professionNames = professionNames
+    end
 
     for profession, ids in pairs(addon.professionID) do
         for i, id in ipairs(ids) do
-            if IsSpellKnown(id) then
+            if IsSpellKnown(id) or addon.gameVersion > 40000 then
                 if id == 2656 then
                     professionNames[profession] = GetSpellInfo(2575)
                 elseif id == 2383 then
-                    professionNames[profession] = GetSpellInfo(9134)
+                    local hid = addon.gameVersion > 30000 and 353982 or 9134
+                    professionNames[profession] = GetSpellInfo(hid)
                 elseif id == 1804 then
                     professionNames[profession] = GetSpellInfo(1809)
                 else
                     professionNames[profession] = GetSpellInfo(id)
                 end
-                break
+                if professionNames[profession] then
+                    break
+                end
             end
         end
     end
@@ -298,6 +304,7 @@ function addon.GetProfessionNames()
     return professionNames
 end
 
+addon.currrentSkillLevel = currrentSkillLevel
 function addon.GetProfessionLevel()
     local names
     if not (professionNames and professionNames.riding) then
@@ -334,6 +341,19 @@ function addon.GetProfessionLevel()
             end
         end
     end
+--[[
+--Enum.Profession is just wrong, can't use that
+    if _G.GetProfessionInfo then
+        for name,id in pairs(Enum.Profession) do
+            local _, _, current, max = _G.GetProfessionInfo(id)
+            if current then
+                local p = strlower(name)
+                currrentSkillLevel[p] = current
+                maxSkillLevel[p] = max
+            end
+        end
+    end
+]]
 end
 
 function addon.UpdateSkillData()
