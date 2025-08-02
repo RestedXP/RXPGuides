@@ -234,7 +234,6 @@ step
     #label DarknessAmongUsA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'en|r
     .turnin 84960 >>Turn in The Darkness Among Us
-    .accept 84966 >>Accept Break the Assault
     .target Om'en
 step
     #title |cFFFCDC00Leave the chamber|r
@@ -245,7 +244,6 @@ step
     .goto 2472,54.06,63.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'en|r
     .turnin 84960 >>Turn in The Darkness Among Us
-    .accept 84966 >>Accept Break the Assault
     .target Om'en
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'en|r, |cRXP_FRIENDLY_Alleria Windrunner|r, and |cRXP_FRIENDLY_Locus-Walker|r
