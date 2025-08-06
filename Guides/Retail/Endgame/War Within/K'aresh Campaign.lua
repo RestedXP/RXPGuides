@@ -54,6 +54,24 @@ step
     #completewith KareshCampaignSkipA
     .accept 85003 >>Accept Restoring Operational Efficiency
 step
+    .isQuestTurnedIn account,89561
+    #completewith next
+    #label Reshii Wraps
+    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
+    .use 235499
+step
+    #completewith Reshii Wraps
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .collect 235499,1
+    .skipgossipid 133897
+step
+    #requires Reshii Wraps
+    .goto 2371,50.34,36.33
+    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
+    .use 235499
+    .subzoneskip 15807,1
+step
     #requires KareshCampaignSkipA
     .goto 2472,59.55,83.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'en|r
