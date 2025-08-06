@@ -41,43 +41,20 @@ step
     .turnin 84957 >>Turn in Return to the Veiled Market
     .target Locus-Walker
 step
-    #hidewindow
+    #label KareshCampaignSkipA
     #completewith next
-    #label Restoring Operational Efficiency
-    .accept 85003 >>Accept Restoring Operational Efficiency
-step
-    #completewith Restoring Operational Efficiency
-    .goto 2472,59.49,83.15
-    .achievementComplete 41970,4,1
+    .goto 2472,59.55,83.46
+    .achievementComplete 41970,3,1
+    .isQuestTurnedIn account,89345
     .gossipoption 134153 >>Talk to |cRXP_FRIENDLY_Om'en|r
+    .skipgossipid 134142
     .target Om'en
 step
-    #requires Restoring Operational Efficiency
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .turnin 90938 >>Turn in A Skip Through the Void
-    .target Hashim
-    .isOnQuest 90938
+    #hidewindow
+    #completewith KareshCampaignSkipA
+    .accept 85003 >>Accept Restoring Operational Efficiency
 step
-    #completewith next
-    #label Reshii Wraps
-    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
-    .use 235499
-    .subzoneskip 15807,1
-step
-    #completewith Reshii Wraps
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .collect 235499,1
-    .skipgossipid 133897
-    .subzoneskip 15807,1
-step
-    #requires Reshii Wraps
-    .goto 2371,50.34,36.33
-    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
-    .use 235499
-    .subzoneskip 15807,1
-step
+    #requires KareshCampaignSkipA
     .goto 2472,59.55,83.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'en|r
     .accept 85003 >>Accept Restoring Operational Efficiency
