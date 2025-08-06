@@ -1130,16 +1130,48 @@ step
     .complete 84910,4 --1/1 Ritual dagger placed
     .goto 2371,74.37,30.51,-1
 step
-    .goto 2371,74.39,30.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
+    .goto 2371,74.45,30.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xal'atath|r
     .complete 84910,5 --1/1 Talk to Soul-Scribe
-    .target Soul-Scribe
+    .target Xal'atath
     .skipgossipid 125067
 step
     .goto 2371,74.39,30.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
     .turnin 84910 >>Turn in The Tabiqa
     .target Soul-Scribe
+step
+    .isQuestAvailable account,89380
+    .goto 2371,74.90,31.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .accept 89380 >>Accept Another World
+    .target Shad'anis
+step
+    .isQuestAvailable account,89561
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .accept 89561 >>Accept Wrapped Up
+    .target Hashim
+ step
+    .isOnQuest 90938
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .complete 89561,1 --1/1 Ask Hashim about empowering the Reshii Wraps
+    .skipgossipid 132925
+ step
+    .isOnQuest 90938
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r and select the upgrades.
+    .complete 89561,2 --1/1 Ask Hashim about empowering the Reshii Wraps
+    .skipgossipid 132925
+ step
+    .isOnQuest 90938
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89561 >>Turn in Wrapped Up
+    .target Shad'anis
+ step
+    #include RestedXP War Within Loremaster\a) Phase Diving Unlock Free
 ]])
 
 RXPGuides.RegisterGuide([[
