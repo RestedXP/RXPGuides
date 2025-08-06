@@ -943,10 +943,12 @@ step
     .accept 84838 >>Accept Enemies of Enemies
     .target Xal'atath
 step
-    .goto 2371,61.02,38.90
+    #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Clefts|r
-    >>Kill |cRXP_ENEMY_Zagithav|r
     .complete 84838,1 --1/1 Coalesced void energy placed (Optional)
+step
+    .goto 2371,61.02,38.90
+    >>Kill |cRXP_ENEMY_Zagithav|r
     .complete 84838,2 --1/1 Zagithav slain
     .mob Zagithav
 step
@@ -1188,11 +1190,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
     .accept 84896 >>Accept The Next Dimension
     .target Soul-Scribe
-step
-    .goto 2371,75.88,33.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .accept 89380 >>Accept Another World
-    .target Shad'anis
 step
     .goto 2371,60.24,29.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
