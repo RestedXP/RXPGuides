@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.2 The Knife's Edge
 #subweight 999.59
 #name an) Chapter 1 - A Shadowy Invitation
@@ -383,7 +383,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.2 The Knife's Edge
 #name ao) Chapter 2 - Void Alliance
 #displayname |cFF00CCFF2|r - Void Alliance
@@ -835,7 +835,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.2 The Knife's Edge
 #name ap) Chapter 3 - Desert Power
 #displayname |cFF00CCFF3|r - Desert Power
@@ -1228,7 +1228,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.2 The Knife's Edge
 #name aq) Chapter 4 - Shadows En Garde
 #displayname |cFF00CCFF4|r - Shadows En Garde
@@ -1470,7 +1470,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.2 The Knife's Edge
 #name ar) Chapter 5 - The Light of K'aresh
 #displayname |cFF00CCFF5|r - The Light of K'aresh

@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Miscellaenous
 #subgroup |cFFFCDC00(80)|r Storylines
 #subweight 999.4
 #name a) Fate of Kirin Tor
@@ -413,7 +413,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Miscellaenous
 #subgroup |cFFFCDC00(80)|r Storylines
 #name a) Story Mode: Queen Ansurek
 #displayname Story Mode: Queen Ansurek
@@ -592,7 +592,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Miscellaenous
 #subgroup |cFFFCDC00(80)|r Storylines
 #name a) Horrific Visions
 #displayname Horrific Vision Intro
@@ -769,7 +769,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Miscellaenous
 #subgroup |cFFFCDC00(80)|r Storylines
 #subweight 999.59
 #name a) Nightfall Radiance
@@ -964,7 +964,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP War Within Endgame
+#group RestedXP War Within Miscellaenous
 #subgroup |cFFFCDC00(80)|r Storylines
 #name a) Rise of the Red Dawn
 #displayname Rise of the Red Dawn
