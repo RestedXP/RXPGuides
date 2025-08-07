@@ -2623,7 +2623,7 @@ end
 addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
-        local text, id, qty, questId, objFlags, flags, arg1, arg2, arg3 = ...
+        local text, id, qty, questId, objFlags, flags, arg1, arg2, arg3, arg4 = ...
         local element = {ids = id}
         element.dynamicText = true
         id = tonumber(id:match('^%d+'))
@@ -2675,10 +2675,12 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         if arg1 and element.subtract and element.multiplier == 1 then
             element.multiplier = tonumber(arg1) or 1
         end
+        element.totalMinimum = 0
         if bit.band(flags, 0x20) == 0x20 then
             element.profession = arg1
             element.multiplier = tonumber(arg2) or 1
             element.professionStart = tonumber(arg3) or 0
+            element.totalMinimum = tonumber(arg4) or 0
         end
 
         element.flags = flags
@@ -2761,7 +2763,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         end
     end
 
-    numRequired = math.ceil(numRequired)
+    numRequired = math.max(math.ceil(numRequired),element.totalMinimum)
     --
     local function GetCount(itemId)
         local count = GetItemCount(itemId,element.includeBank)
