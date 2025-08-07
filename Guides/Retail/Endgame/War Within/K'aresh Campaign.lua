@@ -474,7 +474,7 @@ step
     .accept 85961 >>Accept Moving the Pawns
     .target Locus-Walker
 step
-    #label startchapter2 1
+    #label startchapter21
     .goto 2371,48.23,36.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r
     .turnin 85961 >>Turn in Moving the Pawns
@@ -487,7 +487,7 @@ step
     .target Lo'shah
 step
     .goto 2371,49.43,36.78
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Yanhal|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Yanhal|r |cRXP_WARN_behind the crates|r.
     .complete 84855,2 --1/1 Scout Yanhal found
     .target Yanhal
 step
@@ -522,8 +522,12 @@ step
     .goto 2371,48.18,36.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xal'atath|r
     .complete 84856,1 --1/1 Talk to Xal'atath
+    .timer 5,RP
     .target Xal'atath
     .skipgossipid 131527
+-- step
+--     .isOnQuest 84856
+--     .logout >>Start logging out, cancel it when the timer runs out.
 step
     #title |cFFFCDC00Avoid the Void Revealer|r
     .goto 2371,47.21,21.03,15,0
@@ -542,6 +546,11 @@ step
     .timer 30,RP
     -- Fix RP Duration
 step
+    #completewith next
+    #title |cFFFCDC00Leave Vehicle Fast|r 
+    +This only works if you are fast saving 30seconds.
+step
+    #title |cFFFCDC00Leave Vehicle Fast|r 
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xal'atath|r and |cRXP_FRIENDLY_Locus-Walker|r
     .turnin 84856 >>Turn in Where the Void Gathers
     .goto 2371,48.17,36.64
@@ -623,23 +632,24 @@ step
     .complete 84860,2 --1/1 Biome V-37 stabilized
     .skipgossipid 131301
 step
-    #label startchapter22
     #completewith next
-    #label BiomeD28A
-    #hidewindow
+    #label Biome D-28 stabilized
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rod of Activation|r
     .complete 84860,3 --1/1 Biome D-28 stabilized
 step
     .isOnQuest 84860
-    #completewith BiomeD28A
+    #completewith Biome D-28 stabilized
     .goto 2371,48.84,59.03
     .cast 1233199 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rod of Activation|r
 step
-    #requires BiomeD28A
+    #requires Biome D-28 stabilized
     .goto 2371,48.80,59.08
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rod of Activation|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rod of Activation|r 
     .complete 84860,3 --1/1 Biome D-28 stabilized
 step
+    #label startchapter22
+    .goto 2371,47.13,60.72,20,0
+    .goto 2371,45.95,58.83,10,0
     .goto 2371,46.05,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'door|r
     .complete 84859,4 --1/1 Technician Om'door found
@@ -682,12 +692,13 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defense Matrix|r
     .complete 84862,1,1 --1/4 Defense Matrices placed
 step
+    #label endchapter22
     .goto 2371,51.00,56.34
     #title Matrix placed (2/4)
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defense Matrix|r
     .complete 84862,1,2 --2/4 Defense Matrices placed
 step
-    #label endchapter22
+    #label startchapter23
     .goto 2371,50.29,58.83
     #title Matrix placed (3/4)
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Defense Matrix|r
@@ -722,41 +733,50 @@ step
     .goto 2371,47.13,54.56
     .target +Ve'nari
 step
-    #label startchapter23
-    #completewith EtherealConsoleOverloadedA
+    #completewith next
+    #label destroyed
+    #hidewindow
+    .complete 84865,1,1 --3/3 Shadowguard Cannons destroyed
+step
+    #completewith destroyed
+    .goto 2371,47.34,54.24,10 >>Go out of the |cRXP_WARN_NO MOUNT ZONE|r
+step
+    #requires destroyed
+    #completewith Shadowguard Cannons1
     >>Kill the |cRXP_ENEMY_Shadowguard forces|r
     .complete 84863,1 --12/12 Shadowguard forces eliminated
     .mob Shadowguard Speardancer
     .mob Shadowguard Voidblade
     .mob Shadowguard Riftcaller
 step
-    #completewith EtherealConsoleOverloadedA
+    #requires destroyed
+    .goto 2371,52.5,49.81
     >>Use the |T5976941:0|t[|cRXP_WARN_ExtraActionButton|r] and aim it at the |cRXP_PICK_Shadowguard Cannons|r
-    .complete 84865,1 --3/3 Shadowguard Cannons destroyed
+    .complete 84865,1,1 --3/3 Shadowguard Cannons destroyed
 step
-    .goto 2371,54.10,48.13
-    >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r] at the waypoint location
+    .goto 2371,52.26,48
+    >>Use the |T5976941:0|t[|cRXP_WARN_ExtraActionButton|r] and aim it at the |cRXP_PICK_Shadowguard Cannons|r
+    .complete 84865,1,2 --3/3 Shadowguard Cannons destroyed
+step
+    #completewith next
+    #hidewindow
+    #label Ethereal Siphon Barrier
     .complete 84864,1 --1/1 Ethereal Siphon Barrier removed
-    -- TODO: Add RP timer
 step
-    #label EtherealConsoleOverloadedA
+    #completewith Ethereal Siphon Barrier
+    .goto 2371,54.10,48.13
+    .cast 473548 >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r] at the waypoint location.
+    .timer 20,RP
+step
+    #requires Ethereal Siphon Barrier
+    .goto 2371,54.49,50.38
+    >>Use the |T5976941:0|t[|cRXP_WARN_ExtraActionButton|r] and aim it at the |cRXP_PICK_Shadowguard Cannons|r
+    .complete 84865,1,3 --3/3 Shadowguard Cannons destroyed
+step
+    #label Shadowguard Cannons1
     .goto 2371,54.10,48.13
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ethereal Siphon Console|r
     .complete 84864,2 --1/1 Ethereal Siphon Console overloaded
-step
-    #completewith next
-    >>Kill the |cRXP_ENEMY_Shadowguard forces|r
-    .complete 84863,1 --12/12 Shadowguard forces eliminated
-    .mob Shadowguard Speardancer
-    .mob Shadowguard Voidblade
-    .mob Shadowguard Riftcaller
-step
-    #loop
-    .goto 2371,54.52,50.42,25,0
-    .goto 2371,52.53,49.75,25,0
-    .goto 2371,52.30,48.08,25,0
-    >>Use the |T5976941:0|t[|cRXP_WARN_ExtraActionButton|r] and aim it at the |cRXP_PICK_Shadowguard Cannons|r
-    .complete 84865,1 --3/3 Shadowguard Cannons destroyed
 step
     #loop
     .goto 2371,53.67,45.18,35,0
@@ -827,6 +847,17 @@ step
     .accept 84826 >>Accept Eco-Dome: Rhovan
     .target Locus-Walker
 step
+    #hidewindow
+    #completewith next
+    #label Eco-Dome: Rhovan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r and |cRXP_FRIENDLY_Om'resh|r
+    .turnin 84826 >>Turn in Eco-Dome: Rhovan
+    .target +Om'resh
+step
+    #completewith Eco-Dome: Rhovan
+    .goto 2371,47.32,54.87,10 >>Go out of the |cRXP_WARN_NO MOUNT ZONE|r
+step
+    #requires Eco-Dome: Rhovan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r and |cRXP_FRIENDLY_Om'resh|r
     .turnin 84826 >>Turn in Eco-Dome: Rhovan
     .accept 84827 >>Accept The Shattered Dome
