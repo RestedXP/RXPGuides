@@ -1348,7 +1348,7 @@ step
     .accept 84900 >>Accept Like a Knife Through Aether
     .target Xal'atath
 step
-    #label StartShadow Point: Darkmend
+    #label StartShadowPointDarkmend
     .goto 2371,49.95,26.80
     #title |cFFFCDC00Follow the Arrow|r
     .complete 84900,1 --Approach Xal'atath at Shadow Point: Darkmend
@@ -1550,6 +1550,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Reshii Ribbons|r
     .complete 85037,2 --1/1 K'areshi Wraps
 step
+    #label EndShadowPointDarkmend
     .goto 2371,42.89,21.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .turnin 85037 >>Turn in That's a Wrap
