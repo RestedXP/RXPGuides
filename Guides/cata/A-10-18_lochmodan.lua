@@ -222,42 +222,42 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .target Vidra Hearthstove
     .accept 26860 >>Accept Thelsamar Blood Sausages
-step << Paladin
+step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
     .trainer >> Train your class spells
     .target Faldoc Stonefaith
-step << Rogue
+step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galda Bronzeblade|r
     .trainer >> Train your class spells
     .target Galda Bronzeblade
-step << Mage
+step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gindle the Green|r
     .trainer >> Train your class spells
     .target Gindle the Green
-step << Hunter
+step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
     .trainer >> Train your class spells
     .target Belda Wildheart
-step << Warrior
+step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
     .trainer >> Train your class spells
     .target Grendin Swiftaxe
-step << Shaman
+step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
     .trainer >> Train your class spells
     .target Grenhild Darktalon
-step << Warlock
+step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solbin Shadowcog|r
     .trainer >> Train your class spells
     .target Solbin Shadowcog
-step << Priest
+step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Baerla|r
     .trainer >> Train your class spells
@@ -433,27 +433,27 @@ step
 step
     #optional
     .maxlevel 20,endOfTheGuide
-step << Paladin
+step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
     .trainer >> Train your class spells
     .target Faldoc Stonefaith
-step << Rogue
+step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galda Bronzeblade|r
     .trainer >> Train your class spells
     .target Galda Bronzeblade
-step << Mage
+step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gindle the Green|r
     .trainer >> Train your class spells
     .target Gindle the Green
-step << Hunter
+step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
     .trainer >> Train your class spells
     .target Belda Wildheart
-step << Warrior
+step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
     .trainer >> Train your class spells
@@ -463,17 +463,17 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
     .target Mountaineer Kadrell
     .accept 26932 >>Accept Buzz Off
-step << Shaman
+step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
     .trainer >> Train your class spells
     .target Grenhild Darktalon
-step << Warlock
+step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solbin Shadowcog|r
     .trainer >> Train your class spells
     .target Solbin Shadowcog
-step << Priest
+step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Baerla|r
     .trainer >> Train your class spells
@@ -912,42 +912,42 @@ step
 step
     #optional
     #label endOfTheGuide
-step << Paladin
+step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
     .trainer >> Train your class spells
     .target Faldoc Stonefaith
-step << Rogue
+step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galda Bronzeblade|r
     .trainer >> Train your class spells
     .target Galda Bronzeblade
-step << Mage
+step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gindle the Green|r
     .trainer >> Train your class spells
     .target Gindle the Green
-step << Hunter
+step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
     .trainer >> Train your class spells
     .target Belda Wildheart
-step << Warrior
+step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
     .trainer >> Train your class spells
     .target Grendin Swiftaxe
-step << Shaman
+step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
     .trainer >> Train your class spells
     .target Grenhild Darktalon
-step << Warlock
+step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solbin Shadowcog|r
     .trainer >> Train your class spells
     .target Solbin Shadowcog
-step << Priest
+step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Baerla|r
     .trainer >> Train your class spells
