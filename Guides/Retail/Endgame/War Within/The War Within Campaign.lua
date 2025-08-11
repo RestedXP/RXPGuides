@@ -3,7 +3,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0 Campaign
 #subweight 1000
 #name a) Against the Current
@@ -240,7 +240,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0 Campaign
 #name ab) Ties That Bird
 #displayname |cFF00CCFF2|r - Ties That Bird
@@ -628,7 +628,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0 Campaign
 #name ac) News from Below
 #displayname |cFF00CCFF3|r - News from Below
@@ -891,7 +891,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0 Campaign
 #name ad) The Machines to War
 #displayname |cFF00CCFF4|r - The Machines to War
@@ -1442,7 +1442,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0 Campaign
 #name ae) A Light in the Dark
 #displayname |cFF00CCFF5|r - A Light in the Dark
@@ -1638,7 +1638,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0 Campaign
 #name af) Lingering Shadows
 #displayname |cFF00CCFF6|r - Lingering Shadows

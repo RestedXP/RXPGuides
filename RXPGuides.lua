@@ -300,7 +300,11 @@ function addon.GetProfessionNames()
             end
         end
     end
-    professionNames.riding = GetSpellInfo(33388)
+    if  C_TradeSkillUI and C_TradeSkillUI.GetTradeSkillDisplayName then
+        professionNames.riding = C_TradeSkillUI.GetTradeSkillDisplayName(762)
+    else
+        professionNames.riding = GetSpellInfo(33388)
+    end
     return professionNames
 end
 

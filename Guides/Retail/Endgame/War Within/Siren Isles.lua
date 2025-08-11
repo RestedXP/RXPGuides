@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0.7 Siren Isle
 #subweight 999.9
 #name ag) Siren Isle Campaign
@@ -525,7 +525,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.0.7 Siren Isle
 #name ah) Siren Isle Weeklies
 #displayname |cFF00CCFF2|r - Weeklies

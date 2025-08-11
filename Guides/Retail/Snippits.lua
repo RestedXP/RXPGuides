@@ -422,3 +422,171 @@ step
 --     .accept 65436 >>Accept The Dragon Isles Await
 --     .target Wrathion
 ]])
+
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP War Within Loremaster
+#name a) Phase Diving Unlock Free
+#internal
+
+
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .turnin 90938 >>Turn in A Skip Through the Void
+    .target Hashim
+    .isOnQuest 90938
+step
+    .isQuestTurnedIn account,89561
+    #completewith next
+    #label Reshii Wraps
+    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
+    .use 235499
+step
+    #completewith Reshii Wraps
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .collect 235499,1
+    .skipgossipid 133897
+step
+    #requires Reshii Wraps
+    .goto 2371,50.34,36.33
+    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
+    .use 235499
+    .subzoneskip 15807,1
+step
+    .goto 2371,74.90,31.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .accept 89380 >>Accept Another World
+    .target Shad'anis
+step
+    .isOnQuest 89380
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89380 >>Turn in Another World
+    .accept 89343 >>Accept The Untethered Void
+    .target Shad'anis
+step
+    .goto 2371,50.41,36.40
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r
+    .complete 89343,2 --1/1 Untethered Space entered
+step
+    .goto 2371,50.41,36.40
+    >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r]
+    *|cRXP_WARN_Relog if you can't turn in the quest after using the |cRXP_WARN_ExtraActionButton|r|r
+    .complete 89343,3 --1/1 Return to Normal Space
+step
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89343 >>Turn in The Untethered Void
+    .accept 89344 >>Accept What Doesn't See You
+    .target Shad'anis
+step
+    #completewith next
+    #label WhatDoesntSeeYouA
+    #hidewindow
+    .complete 89344,1 --4/4 Untethered Observers slain
+    .complete 89344,2 --1/1 Phase Energy collected
+step
+    #completewith WhatDoesntSeeYouA
+    .goto 2371,50.41,36.40
+    .aura 1214374,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r
+step
+    #requires WhatDoesntSeeYouA
+    #completewith next
+    >>Kill |cRXP_ENEMY_Untethered Observers|r
+    .complete 89344,1 --4/4 Untethered Observers slain
+    .mob Untethered Observer
+step
+    #requires WhatDoesntSeeYouA
+    .goto 2371,49.10,37.81
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Energy|r
+    .complete 89344,2 --1/1 Phase Energy collected
+step
+    #loop
+    .goto 2371,48.33,37.15,30,0
+    .goto 2371,49.39,36.27,35,0
+    .goto 2371,49.20,39.49,35,0
+    .goto 2371,48.06,38.61,35,0
+    >>Kill |cRXP_ENEMY_Untethered Observers|r
+    .complete 89344,1 --4/4 Untethered Observers slain
+    .mob Untethered Observer
+step
+    #completewith next
+    #label WhatDoesntSeeYouB
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89344 >>Turn in What Doesn't See You
+    .accept 89345 >>Accept The Untethered Horror
+    .target Shad'anis
+step
+    #completewith next
+    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
+step
+    #requires WhatDoesntSeeYouB
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89344 >>Turn in What Doesn't See You
+    .accept 89345 >>Accept The Untethered Horror
+    .target Shad'anis
+step
+    #completewith next
+    #label Netherdeath
+    >>Kill |cRXP_ENEMY_Netherdeath|r
+    .complete 89345,1 --1/1 Netherdeath slain within Untethered Space
+    .mob Netherdeath
+step
+    #completewith Netherdeath
+    .goto 2371,50.41,36.41
+    .cast 1239390 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r.
+step
+    #requires Netherdeath
+    .goto 2371,48.44,39.56,30,0
+    .goto 2371,47.90,40.57
+    >>Kill |cRXP_ENEMY_Netherdeath|r
+    .complete 89345,1 --1/1 Netherdeath slain within Untethered Space
+    .mob Netherdeath
+step
+    #completewith next
+    #label TheUntetheredHorrorA
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89345 >>Turn in The Untethered Horror
+    .target Shad'anis
+step
+    #completewith next
+    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
+step
+    #completewith TheUntetheredHorrorA
+    #hidewindow
+    .goto 2371,50.36,36.31,20 >>1
+step
+    #requires TheUntetheredHorrorA
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89345 >>Turn in The Untethered Horror
+    .target Shad'anis
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .accept 89561 >>Accept Wrapped Up
+    .target Hashim
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .complete 89561,1 --1/1 Ask Hashim about empowering the Reshii Wraps
+    .skipgossipid 132925
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r and select the upgrades.
+    .complete 89561,2 --1/1 Ask Hashim about empowering the Reshii Wraps
+    .skipgossipid 132925
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .turnin 89561 >>Turn in Wrapped Up
+    .target Hashim
+
+
+]])

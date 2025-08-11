@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.1 Campaign 
 #subweight 999.6
 #name ah) Chapter 1 - Trust Issues
@@ -606,7 +606,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.1 Campaign 
 #name ai) Chapter 2 - Undermine Awaits
 #displayname |cFF00CCFF2|r - Undermine Awaits
@@ -1056,7 +1056,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.1 Campaign 
 #name aj) Chapter 3 - Uncovering the Truth
 #displayname |cFF00CCFF3|r - Uncovering the Truth
@@ -1528,7 +1528,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.1 Campaign 
 #name ak) Chapter 4 - Breaking the Shackles
 #displayname |cFF00CCFF4|r - Breaking the Shackles
@@ -1757,7 +1757,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.1 Campaign 
 #name al) Chapter 5 - Ignite the Fuel of Change
 #displayname |cFF00CCFF5|r - Ignite the Fuel of Change
@@ -2313,7 +2313,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #subgroup |cFFFCDC00(80)|r 11.1 Campaign 
 #name am) Chapter 6 - Homecoming
 #displayname |cFF00CCFF6|r - Homecoming
@@ -2469,7 +2469,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP War Within Endgame
+#group RestedXP War Within Campaigns
 #name Unlock G-99 Breakneck
 #displayname G-99 Breakneck Unlock
 #internal
