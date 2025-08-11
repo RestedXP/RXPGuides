@@ -682,8 +682,6 @@ step
     .complete 84860,3 --1/1 Biome D-28 stabilized
 step
     #label startchapter22
-    .goto 2371,47.13,60.72,20,0
-    .goto 2371,45.95,58.83,10,0
     .goto 2371,46.05,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Om'door|r
     .complete 84859,4 --1/1 Technician Om'door found
@@ -1050,11 +1048,13 @@ step
     .goto 2371,61.28,39.28
     .target +Xal'atath
 step
+    #label EndTurnEcoDomeRhovan1
     .goto 2371,61.26,39.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Soul-Scribe|r
     .complete 84848,1 --1/1 Dagger returned
     .target Soul-Scribe
 step
+    #label StartTurnEcoDome2
     .goto 2371,61.28,39.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Xal'atath|r
     .complete 84848,2 --1/1 Talk to Xal'atath
@@ -1222,7 +1222,7 @@ step
     .target Xal'atath
     .skipgossipid 125067
 step
-    #label EndTurnEcoDomeRhovan1
+    #label EndTurnEcoDomeRhovan2
     .goto 2371,74.39,30.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
     .turnin 84910 >>Turn in The Tabiqa
@@ -1417,10 +1417,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Captured Wastelanders|r
     .complete 84904,1,4 --6/6 Trapped Wastelanders rescued
 step
+    #label EndShadowPointDarkmend
     .goto 2371,43.87,19.53
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shadowguard Power Pylons|r
     .complete 84902,1,4 --6/6 Power Pylon disabled
 step
+    #label StartShadowPointDarkmend1
     .goto 2371,45.95,17.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Captured Wastelanders|r
     .complete 84904,1,5 --6/6 Trapped Wastelanders rescued
@@ -1550,7 +1552,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Reshii Ribbons|r
     .complete 85037,2 --1/1 K'areshi Wraps
 step
-    #label EndShadowPointDarkmend
+    #label EndShadowPointDarkmend1
     .goto 2371,42.89,21.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .turnin 85037 >>Turn in That's a Wrap
