@@ -1054,7 +1054,9 @@ local function updateArrowData()
     if SetArrowWP() then
         return
     end
-
+    if af:IsShown() then
+        addon:ScheduleTask(addon.UpdateGotoSteps)
+    end
     af:Hide()
 end
 
@@ -1140,31 +1142,21 @@ function addon.UpdateGotoSteps()
         af:Hide()
         return
     end
-    local function CheckLoop(element,step)
-        --local step = element.step
-        if step.loop and not element.skip and element.radius then
-            local hasValidWPs
-            element.skip = true
-            for _,wp in pairs(step.elements) do
-                if wp.arrow and not wp.skip and wp.textOnly then
-                    hasValidWPs = true
-                    --print(step.index,wp.wpHash)
-                end
-            end
-            --A = step
-            --print('ok1',hasValidWPs)
-            if not hasValidWPs then
-                --print('noValidWPs',step.index)
-                for _,wp in pairs(step.elements) do
-                    if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
-                        wp.skip = false
-                        RXPCData.completedWaypoints[step.index or "tip"][wp.wpHash] = false
+    if not af:IsShown() then
+        for i, step in pairs(addon.RXPFrame.activeSteps) do
+            if step.loop then
+                for _,element in pairs(step.elements) do
+                    --print(element.arrow,element.skip,element.wpHash)
+                    local skip = RXPCData.completedWaypoints[step.index or "tip"][element.wpHash]
+                    if element.arrow and (element.skip or skip) and element.wpHash then
+                        element.skip = false
+                        RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
                     end
                 end
-                forceArrowUpdate = true
             end
         end
     end
+
     local minDist
     --local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
@@ -1242,7 +1234,6 @@ function addon.UpdateGotoSteps()
                                 element.hidden = true
                             elseif not (element.textOnly and element.hidePin and
                                          element.wpHash ~= af.element.wpHash and not element.generated) then
-                                CheckLoop(element,step)
                                 element.skip = true
                                 updateMap = true
                                 if not element.textOnly then
