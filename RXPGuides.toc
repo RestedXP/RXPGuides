@@ -1,4 +1,4 @@
-## Interface: 110005, 40402, 50500, 11507
+## Interface: 110200, 40402, 50500, 11507
 ## Interface-Mists: 50500
 ## Interface-Cata: 40402
 ## Interface-Vanilla: 11507
