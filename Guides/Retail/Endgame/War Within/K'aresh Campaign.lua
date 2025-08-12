@@ -1417,12 +1417,10 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Captured Wastelanders|r
     .complete 84904,1,4 --6/6 Trapped Wastelanders rescued
 step
-    #label EndShadowPointDarkmend
     .goto 2371,43.87,19.53
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shadowguard Power Pylons|r
     .complete 84902,1,4 --6/6 Power Pylon disabled
 step
-    #label StartShadowPointDarkmend1
     .goto 2371,45.95,17.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Captured Wastelanders|r
     .complete 84904,1,5 --6/6 Trapped Wastelanders rescued
@@ -1489,22 +1487,22 @@ step
     .complete 84905,2 --4/4 Unstable Energy Matrix overloaded
 step
     .goto 2371,49.25,17.82
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Shadowguard Energy Reserves|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shadowguard Energy Reserves|r
     *|cRXP_WARN_Avoid the |cRXP_PICK_Tripwires|r, stay on the wall to avoid the lasers and doge the void zones|r
     .complete 84905,3,1 --4/4 Shadowguard Energy Reserves destroyed
 step
     .goto 2371,49.46,18.5
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Shadowguard Energy Reserves|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shadowguard Energy Reserves|r
     *|cRXP_WARN_Avoid the |cRXP_PICK_Tripwires|r, stay on the wall to avoid the lasers and doge the void zones|r
     .complete 84905,3,2 --4/4 Shadowguard Energy Reserves destroyed
 step
     .goto 2371,49.08,19.13
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Shadowguard Energy Reserves|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shadowguard Energy Reserves|r
     *|cRXP_WARN_Avoid the |cRXP_PICK_Tripwires|r, stay on the wall to avoid the lasers and doge the void zones|r
     .complete 84905,3,3 --4/4 Shadowguard Energy Reserves destroyed
 step
     .goto 2371,48.72,18.33
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Shadowguard Energy Reserves|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shadowguard Energy Reserves|r
     *|cRXP_WARN_Avoid the |cRXP_PICK_Tripwires|r, stay on the wall to avoid the lasers and doge the void zones|r
     .complete 84905,3,4 --4/4 Shadowguard Energy Reserves destroyed
 step
@@ -1513,13 +1511,16 @@ step
     .turnin 84905 >>Turn in To Walk Among Shadow
     .target Locus-Walker
 step
+    #label EndShadowPointDarkmend
     .goto 2371,48.17,19.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 84906 >>Accept Nexus Regicide
     .target Alleria Windrunner
 step
+    #label StartShadowPointDarkmend1
     .goto 2371,44.20,16.79
     #title |cFFFCDC00Follow the Arrow|r
+    >>It's inside the Reactor
     .complete 84906,1 --Follow Alleria to Umbral Garrison: Apotheosis
 step
     .goto 2371,43.80,17.11
@@ -1549,7 +1550,7 @@ step
     .skipgossipid 131307
 step
     .goto 2371,42.82,21.56
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the the |cRXP_PICK_Reshii Ribbons|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Reshii Ribbons|r
     .complete 85037,2 --1/1 K'areshi Wraps
 step
     #label EndShadowPointDarkmend1
@@ -1572,7 +1573,4 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 86820 >>Accept Manaforge Omega: Dimensius Looms
     .target Alleria Windrunner
-step
-    +|cRXP_WARN_The rest was not yet available on the PTR and will be added once available|r
-
 ]])
