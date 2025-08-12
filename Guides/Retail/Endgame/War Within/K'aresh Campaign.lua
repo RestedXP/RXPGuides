@@ -54,12 +54,14 @@ step
     #completewith KareshCampaignSkipA
     .accept 85003 >>Accept Restoring Operational Efficiency
 step
+    #requires KareshCampaignSkipA
     .isQuestTurnedIn account,89561
     #completewith next
     #label Reshii Wraps
     .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
     .use 235499
 step
+    #requires KareshCampaignSkipA
     #completewith Reshii Wraps
     .goto 2371,50.34,36.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
@@ -1270,7 +1272,22 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF4|r - Shadows En Garde
 #next ar) Chapter 5 - The Light of K'aresh
 
+
 step
+    #label KareshCampaignSkipB
+    #completewith next
+    .goto 2371,74.39,30.43
+    .achievementComplete 41970,4,1
+    .isQuestTurnedIn account,85037
+    .gossipoption 134152 >>Talk to |cRXP_FRIENDLY_Soul-Scribe|r
+    .skipgossipid 134142
+    .target Soul-Scribe
+step
+    #hidewindow
+    #completewith KareshCampaignSkipB
+    .accept 84896 >>Accept The Next Dimension
+step
+    #requires KareshCampaignSkipB
     .goto 2371,74.39,30.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
     .accept 84896 >>Accept The Next Dimension
