@@ -2546,9 +2546,14 @@ function addon.functions.fly(self, ...)
         element.location then
         addon:TAXIMAP_OPENED()
         local loc = element.location:gsub("%-","%%-")
+        local x,y,_,map = UnitPosition('player')
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
             local name = id and addon.FPDB[addon.player.faction] and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
+            if not name and addon.taxiPos then
+                local data = addon.taxiPos[map][id]
+                name = data and data.name
+            end
             if name and strupper(name):find(loc) then
                 local button = getglobal("TaxiButton" .. i)
                 if button then
