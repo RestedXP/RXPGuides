@@ -1323,8 +1323,8 @@ step
     .accept 84899 >>Accept Shadowguard Diffusion
     .goto 2371,60.74,27.94
     .target +Alleria Windrunner
-step
-    #completewith next
+step 
+    #completewith Shadowguard Weapons
     >>Kill |cRXP_ENEMY_Shadowguard Phaseblade|r, |cRXP_ENEMY_Shadowguard Adept|r, and |cRXP_ENEMY_Shadowguard Voidtamer|r
     .complete 84899,1 --6/6 Shadowguard Phaseblade slain
     .mob +Shadowguard Phaseblade
@@ -1332,18 +1332,26 @@ step
     .mob +Shadowguard Adept
     .complete 84899,3 --3/3 Shadowguard Voidtamer slain
     .mob +Shadowguard Voidtamer
-step
-    #loop
-    .goto 2371,59.12,28.51,6,0
-    .goto 2371,58.68,29.54,6,0
-    .goto 2371,58.34,26.30,6,0
+step 
+    .goto 2371,58.93,30.5,30,0
+    .goto 2371,58.68,29.55
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sand Piles|r appearing after you are close enough to their position
-    .complete 84898,1 --3/3 Shadowguard Weapons
+    .complete 84898,1,1 --3/3 Shadowguard Weapons
+step 
+    .goto 2371,59.12,28.51
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sand Piles|r appearing after you are close enough to their position
+    .complete 84898,1,2 --3/3 Shadowguard Weapons
 step
+    #label Shadowguard Weapons
+    .goto 2371,58.35,26.31
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sand Piles|r appearing after you are close enough to their position
+    .complete 84898,1,3 --3/3 Shadowguard Weapons
+step 
     #loop
-    .goto 2371,57.74,31.33,35,0
-    .goto 2371,61.50,26.58,40,0
-    .goto 2371,58.54,25.69,40,0
+    .goto 2371,58.56,25.13,40,0
+    .goto 2371,59.73,26.45,40,0
+    .goto 2371,59.67,29.67,40,0
+    .goto 2371,58.44,29.72,40,0
     >>Kill |cRXP_ENEMY_Shadowguard Phaseblade|r, |cRXP_ENEMY_Shadowguard Adept|r, and |cRXP_ENEMY_Shadowguard Voidtamer|r
     .complete 84899,1 --6/6 Shadowguard Phaseblade slain
     .mob +Shadowguard Phaseblade
@@ -1590,4 +1598,44 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 86820 >>Accept Manaforge Omega: Dimensius Looms
     .target Alleria Windrunner
+step
+    #completewith next
+    #label Dimensius
+    >>Kill |cRXP_ENEMY_Dimensius|r inside the Manaforge Omega Raid.
+    .complete 86820,1
+    .mob Dimensius
+step
+    #completewith Dimensius
+    .goto 2371,41.97,22.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phase-General Ameer|r
+    .complete 86820,1
+    .target Phase-General Ameer
+step
+    #requires Dimensius
+    >>Kill |cRXP_ENEMY_Dimensius|r inside the Manaforge Omega Raid.
+    .complete 86820,1
+step
+    .zoneskip 2371,1
+    +Leave the Raid (Right-Click your player frame) or use the npc near gallywix.
+step
+    .goto 2371,42.89,21.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
+    .turnin 86820 >>Turn in Manaforge Omega: Dimensius Looms
+    .target Alleria Windrunner
+step
+    .goto 2371,75.88,34.17
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dimmed Crystal|r
+    .complete 86456,1 --1/1 Dimmed Crystal shown to Ve'nari
+step
+    .goto 2371,75.88,34.17
+    .turnin 86456 >>Turn in An Elegy for a Silent World
+    .accept 86457 >>Accept A Lullaby of Hope
+    .complete 86457,1 --1/1 Interact with the Dimmed Crystal
+step
+    .goto 2371,75.89,34.23
+    .turnin 86457 >>Turn in A Lullaby of Hope
+    .accept 86458 >>Accept A Song for Our Future
+    .complete 86458,1 --1/1 Soul-Scribe defeated>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
+    .complete 86458,2 --1/1 Talk to Ve'nari
+    .target Ve'nari
 ]])
