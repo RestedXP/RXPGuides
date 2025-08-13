@@ -754,6 +754,14 @@ step
     .mob Shadowguard Saboteur
     .mob Shadowguard Scout
 step
+    #completewith next
+    .goto 2371,49.01,61.15,20,0
+    >>Use |T4548850:0|t[Flamethrower] on |cRXP_ENEMY_Glutted Creeper|r to remove the barrier then kill them.
+    *|cRXP_WARN_just kill the few and move on or ignore them entirely|r
+    .complete 86201,1 --8/8 Glutted Creeper slain
+    .mob Glutted Creeper
+    .use 233028
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r and |cRXP_FRIENDLY_Xal'atath|r
     .turnin 84861 >>Turn in This Is Our Dome!
     .goto 2371,47.13,54.56
@@ -799,7 +807,8 @@ step
 step
     #completewith Ethereal Siphon Barrier
     .goto 2371,54.10,48.13
-    .cast 473548 >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r] at the waypoint location.
+    .cast 1218640 >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r] |cRXP_WARN_on the barrier|r.
+    *|cRXP_WARN_Make sure to wait infront of the barrier for 1-2second before moving on|r
     .timer 20,RP
 step
     #requires Ethereal Siphon Barrier
@@ -1020,6 +1029,7 @@ step
     .mob Void Terror
     .mob Unreal Observer
 step
+    #label EndTurnEcoDomeRhovan1
     .goto 2371,64.12,47.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xal'atath|r
     .turnin 84869 >>Turn in Hunting on Glass
@@ -1050,7 +1060,6 @@ step
     .goto 2371,61.28,39.28
     .target +Xal'atath
 step
-    #label EndTurnEcoDomeRhovan1
     .goto 2371,61.26,39.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Soul-Scribe|r
     .complete 84848,1 --1/1 Dagger returned
@@ -1146,6 +1155,7 @@ step
     .turnin 84876 >>Turn in The Oasis
     .target Om'talad
 step
+    #label EndTurnEcoDomeRhovan2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xal'atath|r and |cRXP_FRIENDLY_Soul-Scribe|r
     .accept 84879 >>Accept Restoring Hope
     .goto 2371,75.88,34.18,-1
@@ -1154,6 +1164,7 @@ step
     .goto 2371,75.83,34.29,-1
     .target +Soul-Scribe
 step
+    #label StartTurnEcoDomeRhovan3
     #completewith HeartspringWaterA
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Invasive Wurm Eggs|r and |cRXP_PICK_Void Rifts|r
     .complete 84879,1 --Dome cleansed (100%)
@@ -1224,7 +1235,7 @@ step
     .target Xal'atath
     .skipgossipid 125067
 step
-    #label EndTurnEcoDomeRhovan2
+    #label EndTurnEcoDomeRhovan3
     .goto 2371,74.39,30.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Soul-Scribe|r
     .turnin 84910 >>Turn in The Tabiqa
@@ -1536,7 +1547,6 @@ step
     .turnin 84905 >>Turn in To Walk Among Shadow
     .target Locus-Walker
 step
-    #label EndShadowPointDarkmend
     .goto 2371,48.17,19.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 84906 >>Accept Nexus Regicide
@@ -1602,21 +1612,22 @@ step
     #completewith next
     #label Dimensius
     >>Kill |cRXP_ENEMY_Dimensius|r inside the Manaforge Omega Raid.
-    .complete 86820,1
+    .complete 86820,2
     .mob Dimensius
 step
     #completewith Dimensius
     .goto 2371,41.97,22.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phase-General Ameer|r
     .complete 86820,1
+    .skipgossipid
     .target Phase-General Ameer
 step
     #requires Dimensius
     >>Kill |cRXP_ENEMY_Dimensius|r inside the Manaforge Omega Raid.
-    .complete 86820,1
+    .complete 86820,2
 step
     .zoneskip 2371,1
-    +Leave the Raid (Right-Click your player frame) or use the npc near gallywix.
+    +Leave the Raid (Right-Click your player frame)
 step
     .goto 2371,42.89,21.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
@@ -1624,18 +1635,36 @@ step
     .target Alleria Windrunner
 step
     .goto 2371,75.88,34.17
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dimmed Crystal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .complete 86456,1 --1/1 Dimmed Crystal shown to Ve'nari
+    .skipgossip
+    .target Ve'nari
 step
     .goto 2371,75.88,34.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .turnin 86456 >>Turn in An Elegy for a Silent World
     .accept 86457 >>Accept A Lullaby of Hope
+    .target Ve'nari
+step
+    .goto 2371,75.88,34.17
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dimmed Crystal|r
     .complete 86457,1 --1/1 Interact with the Dimmed Crystal
+    .timer 3,RP
 step
     .goto 2371,75.89,34.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .turnin 86457 >>Turn in A Lullaby of Hope
     .accept 86458 >>Accept A Song for Our Future
-    .complete 86458,1 --1/1 Soul-Scribe defeated>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
+    .target Ve'nari
+step
+    >>Que Solo for Eco-Dome Al'dani as a Follower Dungeon.
+    .complete 86458,1 --1/1 Soul-Scribe defeated
+    .mob Soul-Scribe
+step
+    .goto 2371,75.89,34.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .complete 86458,2 --1/1 Talk to Ve'nari
+    .skipgossip
+    .timer 60,RP
     .target Ve'nari
 ]])
