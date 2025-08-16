@@ -247,7 +247,7 @@ function addon.GetStepQuestReward(titleOrId)
 end
 
 function addon.IsPlayerSpell(id)
-    if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+    if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) or C_Spell and C_Spell.IsSpellUsable(id) then
         return true
     end
 

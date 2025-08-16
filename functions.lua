@@ -7257,3 +7257,52 @@ function addon.functions.chromietime(self,text,id)
         end
     end
 end
+
+
+local function ScrapItems(ids)
+    --PLAYER_INTERACTION_MANAGER_FRAME_SHOW 40
+    local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+    local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
+
+    C_ScrappingMachineUI.RemoveAllScrapItems()
+
+    if type(ids) == "number" then
+        ids = {ids}
+    end
+
+    local index = 0
+
+    for _,searchItemID in pairs(ids) do
+        searchItemID = tonumber(searchItemID)
+        if searchItemID then
+            for bagID = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+                local slots = GetContainerNumSlots(bagID) or 0;
+                for slot = 1, slots do
+                    local itemInfo = C_Container.GetContainerItemInfo(bagID, slot);
+                    if itemInfo and itemInfo.itemID then
+                        --AA = itemInfo
+                        if searchItemID == itemInfo.itemID and not itemInfo.isLocked then
+                            PickupContainerItem(bagID, slot)
+                            C_ScrappingMachineUI.DropPendingScrapItemFromCursor(index)
+                            index = index + 1
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+events.scrap = "PLAYER_INTERACTION_MANAGER_FRAME_SHOW"
+function addon.functions.scrap(self,text,...)
+    if not C_ScrappingMachineUI then
+        return
+    elseif type(self) == "string" then
+        return {text = text, ids = {...}, textOnly = true}
+    end
+    local arg1 = ...
+    local ids = self.element.ids
+    if text == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" and arg1 == 40 and ids then
+        ScrapItems(ids)
+    end
+end
