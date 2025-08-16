@@ -7306,3 +7306,22 @@ function addon.functions.scrap(self,text,...)
         ScrapItems(ids)
     end
 end
+
+--C_SpecializationInfo.GetActiveSpecGroup() --spec loadout
+--C_SpecializationInfo.GetSpecialization() -- current spec
+
+function addon.functions.spec(self,text,spec,flags)
+    if type(self) == "string" then
+        return {text = text, spec = spec, textOnly = true, flags = flags}
+    end
+
+    if not text then
+        local currentSpec = C_SpecializationInfo.GetSpecialization()
+        local element = self.element
+        local c = not element.flags
+        if not(tonumber(element.spec) == currentSpec) == c then
+            step.completed = true
+            addon.updateSteps = true
+        end
+    end
+end
