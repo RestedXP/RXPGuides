@@ -828,6 +828,10 @@ function addon.SetElementComplete(self, disable, skipIfInactive)
     if active and GetTime() - addon.lastStepUpdate > 1 then
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
     end
+    if element.OnComplete then
+        --print('onc',element.step.index)
+        element.OnComplete(element)
+    end
 
     if self.button then
         -- print('----ok',disable)
@@ -5322,6 +5326,31 @@ function addon.functions.use(self, text, ...)
     -- end
 end
 
+function addon.functions.macro(self, body, name, icon)
+    if type(self) == "string" then
+        icon = tonumber(icon)
+        if not icon then icon = 134400 end
+        if not (name and body) then
+            return addon.error(L("Error parsing guide") .. " " ..
+                        addon.currentGuideName ..
+                        ": Invalid macro - usage: .macro name,icon >> macrotext\n" .. self)
+        end
+        return {name = name, icon = icon, body = body, textOnly = true, text = text}
+    end
+    local element = self.element
+    local step = element.step
+    local itemTable
+    if not element.id then
+        element.id = element.icon..":"..element.name
+        element.body = element.body:gsub("\\n","\n")
+    end
+    itemTable = step.activeMacros or {}
+    step.activeMacros = itemTable
+    -- if not text and step.active then
+    itemTable[element.id] = element.body
+    -- end
+end
+
 function addon.functions.usespell(...)
     return addon.functions.use(...)
 end
@@ -6385,6 +6414,13 @@ function addon.functions.achievement(self, ...)
         if element.skipStep then
             element.step.completed = true
             addon.updateSteps = true
+            local guide = addon.currentGuide
+            local ref = element.label
+            if ref and guide.labels[ref] then
+                --local n = guide.labels[ref]
+                addon.nextStep = guide.labels[ref]
+                return
+            end
         else
             addon.SetElementComplete(self)
         end
@@ -7183,21 +7219,53 @@ function addon.functions.skipOnQuest(self, text, id, label)
     local step = element.step
 
     if not step.active then return end
-    local event = text
-    local guide = addon.currentGuide
+    --local event = text
     local onQuest = addon.IsOnQuest(element.id)
 
     if not step.completed and (onQuest or label == element.id) then
         addon.updateSteps = true
         step.completed = true
+
+        local guide = addon.currentGuide
         local ref = element.label
         if ref and guide.labels[ref] then
-            local n = guide.labels[ref]
+            --local n = guide.labels[ref]
             addon.nextStep = guide.labels[ref]
             return
         end
     end
 
+end
+
+function addon.functions.skipto(self, text, arg, target)
+    if type(self) == "string" then -- on parse
+        return {text = text, textOnly = true, parent = true, arg = arg, target = target}
+    end
+    local element = self.element
+    local parent = element.parent
+    arg = element.arg
+    target = element.target
+    if parent and not parent.OnComplete then
+        parent.skipToTarget = target
+        if arg == "guide" then
+            parent.OnComplete = function(self)
+                addon.functions.next(nil,self.skipToTarget)
+            end
+        elseif arg == "step" then
+            parent.OnComplete = function(self)
+                local guide = addon.currentGuide
+                local ref = self.skipToTarget
+                if ref and guide.labels[ref] then
+                    --local n = guide.labels[ref]
+                    local step = self.step
+                    addon.updateSteps = true
+                    step.completed = true
+                    addon.nextStep = guide.labels[ref]
+                    return
+                end
+            end
+        end
+    end
 end
 
 function addon.GetChoiceId()

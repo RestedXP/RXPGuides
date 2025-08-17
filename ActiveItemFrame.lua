@@ -50,6 +50,7 @@ local function GetActiveItemList(ref)
     local itemList = {}
     local activeItems = {}
     local activeSpells = {}
+    local activeMacros = {}
     --[[
     if not (ref and ref.activeItems) then
         ref = addon
@@ -69,6 +70,29 @@ local function GetActiveItemList(ref)
                     id = spellId,
                     arg = arg,
                 })
+            end
+        end
+    end
+
+    if ref.activeMacros then
+        for id,arg in pairs(ref.activeMacros) do
+            --print(arg)
+            if not activeMacros[id] then
+                local icon,name = id:match("(%d+):(.*)")
+                icon = tonumber(icon)
+                if not icon or icon == 0 then
+                    icon = 134400
+                end
+                activeMacros[id] = true
+
+                if name then
+                    table.insert(itemList, {
+                        name = name,
+                        texture = icon,
+                        macro = true,
+                        arg = arg,
+                    })
+                end
             end
         end
     end
@@ -268,7 +292,7 @@ end
 
 local fOnEnter = function(self)
     -- print(self.itemId)
-    if not GameTooltip:IsForbidden() and self.itemId then
+    if not GameTooltip:IsForbidden() and (self.itemId or self.macro) then
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
         if self.bag or self.invSlot then
             GameTooltip:SetInventoryItemByID(self.itemId)
@@ -276,6 +300,8 @@ local fOnEnter = function(self)
             GameTooltip:SetSpellByID(self.itemId)
         elseif self.toy then
             GameTooltip:SetToyByItemID(self.itemId)
+        elseif self.macro then
+            GameTooltip:SetText(self.name)
         else
             GameTooltip:SetItemByID(self.itemId)
         end
@@ -375,13 +401,17 @@ function addon.UpdateItemFrame(itemFrame)
 
         -- print(id,item.texture,item.name)
         local attribute = "item"
-        if item.spell then
+        if item.macro then
+            attribute = "macro"
+        elseif item.spell then
             attribute = "spell"
         end
         btn:SetAttribute("type1",attribute)
         if attribute == "item" then
             --btn:SetAttribute("macro", format("/use item:%d",item.id))
             btn:SetAttribute(attribute, format("item:%d",item.id))
+        elseif attribute == "macro" then
+            btn:SetAttribute("macrotext", item.arg)
         else
             btn:SetAttribute(attribute, item.name)
         end
@@ -395,6 +425,8 @@ function addon.UpdateItemFrame(itemFrame)
         btn.invSlot = item.invSlot
         btn.spell = item.spell
         btn.toy = item.toy
+        btn.macro = item.macro
+        btn.name = item.name
 
         btn.icon:SetTexture(item.texture)
         btn:Show()

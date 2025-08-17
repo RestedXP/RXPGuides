@@ -166,6 +166,7 @@ addon.questTurnIn = {}
 addon.disabledQuests = {}
 addon.activeItems = {}
 addon.activeSpells = {}
+addon.activeMacros = {}
 addon.functions = {}
 addon.enabledFrames = {} -- Hold all enabled frame/features for Hide/Show
 addon.player = {
