@@ -827,10 +827,11 @@ function addon.SetElementComplete(self, disable, skipIfInactive)
     addon.UpdateMap()
     if active and GetTime() - addon.lastStepUpdate > 1 then
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
-        if element.OnComplete then
-            --print('onc',element.step.index)
-            element.OnComplete(element)
-        end
+    end
+
+    if element.OnComplete and active then
+        --print('onc',element.step.index)
+        element.OnComplete(element)
     end
 
     if self.button then
