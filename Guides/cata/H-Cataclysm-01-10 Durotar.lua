@@ -1176,7 +1176,7 @@ step
 	.goto 1411,61.32,91.76,40,0
 	>>Use your |T132161:0|t[|cRXP_LOOT_Bloodtalon Whistle|r] when you are near |cRXP_FRIENDLY_Lost Bloodtalon Hatchling|r to rescue them
 	.complete 24623,1 --Rescue Bloodtalon Hatchling (x12)
-	.target Bloodtalon Hatchling
+	.target Lost Bloodtalon Hatchling
 	.use 52283
 step
     #completewith next
@@ -1186,9 +1186,9 @@ step
 	.mob Corrupted Bloodtalon
 step
    	.goto 1411,60.39,89.79
-	>>Kill |cRXP_ENEMY_Naj'Tess|r. Loot loot him for his |cRXP_LOOT_Orb|r
+	>>Kill |cRXP_ENEMY_Naj'tess|r. Loot loot him for his |cRXP_LOOT_Orb|r
 	.complete 24625,1 --Collect Naj'Tess' Orb of Corruption (x1)
-	.mob Naj'Tess
+	.mob Naj'tess
 step
 	#label Bloodtalons
 #loop
@@ -1227,7 +1227,7 @@ step
 	.goto 1411,61.70,91.00,30,0
 	>>Use your |T132161:0|t[|cRXP_LOOT_Bloodtalon Whistle|r] when you are near |cRXP_FRIENDLY_Lost Bloodtalon Hatchling|r to rescue them
 	.complete 24623,1 --Rescue Bloodtalon Hatchling (x12)
-	.target Bloodtalon Hatchling
+	.target Lost Bloodtalon Hatchling
 	.use 52283
 step
 	#completewith next
