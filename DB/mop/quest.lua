@@ -561,6 +561,7 @@ local valeQuests = {
     [31240] = "ruinsofguolaiQuiet",
     [31248] = "ruinsofguolaiQuiet",
     [31244] = "ruinsofguolaiUnderAttack",
+    [31295] = "ruinsofguolaiUnderAttack",
     [31250] = "settingsun",
     [31247] = "settingsun",
     [30385] = "settingsun",
