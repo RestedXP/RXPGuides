@@ -5336,14 +5336,31 @@ function addon.functions.macro(self, body, name, icon)
                         addon.currentGuideName ..
                         ": Invalid macro - usage: .macro name,icon >> macrotext\n" .. self)
         end
+        body:gsub("spell:(%d+)",function(id)
+            C_Spell.RequestLoadSpellData(tonumber(id))
+         end)
         return {name = name, icon = icon, body = body, textOnly = true, text = text}
     end
     local element = self.element
     local step = element.step
     local itemTable
-    if not element.id then
+    if not element.id or element.update then
         element.id = element.icon..":"..element.name
         element.body = element.body:gsub("\\n","\n")
+        local subcount = 0
+        element.body = element.body:gsub("spell:(%d+)",function(id)
+            local name = GetSpellInfo(tonumber(id))
+            if name then
+                return name
+            else
+                subcount = subcount + 1
+            end
+        end)
+        if subcount > 0 then
+            element.update = true
+        else
+            element.update = false
+        end
     end
     itemTable = step.activeMacros or {}
     step.activeMacros = itemTable
