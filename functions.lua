@@ -829,6 +829,11 @@ function addon.SetElementComplete(self, disable, skipIfInactive)
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
     end
 
+    if element.OnComplete and active then
+        --print('onc',element.step.index)
+        element.OnComplete(element)
+    end
+
     if self.button then
         -- print('----ok',disable)
         self.button:SetChecked(true)
@@ -5322,6 +5327,48 @@ function addon.functions.use(self, text, ...)
     -- end
 end
 
+function addon.functions.macro(self, body, name, icon)
+    if type(self) == "string" then
+        icon = tonumber(icon)
+        if not icon then icon = 134400 end
+        if not (name and body) then
+            return addon.error(L("Error parsing guide") .. " " ..
+                        addon.currentGuideName ..
+                        ": Invalid macro - usage: .macro name,icon >> macrotext\n" .. self)
+        end
+        body:gsub("spell:(%d+)",function(id)
+            C_Spell.RequestLoadSpellData(tonumber(id))
+         end)
+        return {name = name, icon = icon, body = body, textOnly = true, text = text}
+    end
+    local element = self.element
+    local step = element.step
+    local itemTable
+    if not element.id or element.update then
+        element.id = element.icon..":"..element.name
+        element.body = element.body:gsub("\\n","\n")
+        local subcount = 0
+        element.body = element.body:gsub("spell:(%d+)",function(id)
+            local name = GetSpellInfo(tonumber(id))
+            if name then
+                return name
+            else
+                subcount = subcount + 1
+            end
+        end)
+        if subcount > 0 then
+            element.update = true
+        else
+            element.update = false
+        end
+    end
+    itemTable = step.activeMacros or {}
+    step.activeMacros = itemTable
+    -- if not text and step.active then
+    itemTable[element.id] = element.body
+    -- end
+end
+
 function addon.functions.usespell(...)
     return addon.functions.use(...)
 end
@@ -6385,6 +6432,13 @@ function addon.functions.achievement(self, ...)
         if element.skipStep then
             element.step.completed = true
             addon.updateSteps = true
+            local guide = addon.currentGuide
+            local ref = element.label
+            if ref and guide.labels[ref] then
+                --local n = guide.labels[ref]
+                addon.nextStep = guide.labels[ref]
+                return
+            end
         else
             addon.SetElementComplete(self)
         end
@@ -7183,21 +7237,53 @@ function addon.functions.skipOnQuest(self, text, id, label)
     local step = element.step
 
     if not step.active then return end
-    local event = text
-    local guide = addon.currentGuide
+    --local event = text
     local onQuest = addon.IsOnQuest(element.id)
 
     if not step.completed and (onQuest or label == element.id) then
         addon.updateSteps = true
         step.completed = true
+
+        local guide = addon.currentGuide
         local ref = element.label
         if ref and guide.labels[ref] then
-            local n = guide.labels[ref]
+            --local n = guide.labels[ref]
             addon.nextStep = guide.labels[ref]
             return
         end
     end
 
+end
+
+function addon.functions.skipto(self, text, arg, target)
+    if type(self) == "string" then -- on parse
+        return {text = text, textOnly = true, parent = true, arg = arg, target = target}
+    end
+    local element = self.element
+    local parent = element.parent
+    arg = element.arg
+    target = element.target
+    if parent and not parent.OnComplete then
+        parent.skipToTarget = target
+        if arg == "guide" then
+            parent.OnComplete = function(self)
+                addon.functions.next(nil,self.skipToTarget)
+            end
+        elseif arg == "step" then
+            parent.OnComplete = function(self)
+                local guide = addon.currentGuide
+                local ref = self.skipToTarget
+                if ref and guide.labels[ref] then
+                    --local n = guide.labels[ref]
+                    local step = self.step
+                    addon.updateSteps = true
+                    step.completed = true
+                    addon.nextStep = guide.labels[ref]
+                    return
+                end
+            end
+        end
+    end
 end
 
 function addon.GetChoiceId()
@@ -7254,6 +7340,74 @@ function addon.functions.chromietime(self,text,id)
         if t.id == tonumber(id) or id == t.previewAtlas or id == t.mapAtlas then
             C_ChromieTime.SelectChromieTimeOption(t.id)
             return
+        end
+    end
+end
+
+
+local function ScrapItems(ids)
+    --PLAYER_INTERACTION_MANAGER_FRAME_SHOW 40
+    local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+    local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
+
+    C_ScrappingMachineUI.RemoveAllScrapItems()
+
+    if type(ids) == "number" then
+        ids = {ids}
+    end
+
+    local index = 0
+
+    for _,searchItemID in pairs(ids) do
+        searchItemID = tonumber(searchItemID)
+        if searchItemID then
+            for bagID = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+                local slots = GetContainerNumSlots(bagID) or 0;
+                for slot = 1, slots do
+                    local itemInfo = C_Container.GetContainerItemInfo(bagID, slot);
+                    if itemInfo and itemInfo.itemID then
+                        --AA = itemInfo
+                        if searchItemID == itemInfo.itemID and not itemInfo.isLocked then
+                            PickupContainerItem(bagID, slot)
+                            C_ScrappingMachineUI.DropPendingScrapItemFromCursor(index)
+                            index = index + 1
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+events.scrap = "PLAYER_INTERACTION_MANAGER_FRAME_SHOW"
+function addon.functions.scrap(self,text,...)
+    if not C_ScrappingMachineUI then
+        return
+    elseif type(self) == "string" then
+        return {text = text, ids = {...}, textOnly = true}
+    end
+    local arg1 = ...
+    local ids = self.element.ids
+    if text == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" and arg1 == 40 and ids then
+        ScrapItems(ids)
+    end
+end
+
+--C_SpecializationInfo.GetActiveSpecGroup() --spec loadout
+--C_SpecializationInfo.GetSpecialization() -- current spec
+
+function addon.functions.spec(self,text,spec,flags)
+    if type(self) == "string" then
+        return {text = text, spec = spec, textOnly = true, flags = flags}
+    end
+
+    if not text then
+        local currentSpec = C_SpecializationInfo.GetSpecialization()
+        local element = self.element
+        local c = not element.flags
+        if not(tonumber(element.spec) == currentSpec) == c then
+            step.completed = true
+            addon.updateSteps = true
         end
     end
 end

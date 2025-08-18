@@ -1619,52 +1619,87 @@ step
     .goto 2371,41.97,22.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phase-General Ameer|r
     .complete 86820,1
-    .skipgossipid
     .target Phase-General Ameer
 step
     #requires Dimensius
-    >>Kill |cRXP_ENEMY_Dimensius|r inside the Manaforge Omega Raid.
+    >>Kill |cRXP_ENEMY_Dimensius|r a inside the Manaforge Omega Raid.
     .complete 86820,2
 step
-    .zoneskip 2371,1
-    +Leave the Raid (Right-Click your player frame)
+    #completewith next
+    #label Xal'tath's Portal
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Xal'tath's Portal|r to complete the quest.
+    .complete 86820,3
+step
+    #completewith Xal'tath's Portal
+    >>Loot |cRXP_ENEMY_Dimensius|r for |T2060147:0|t[|cRXP_LOOT_A Dimmed Crystal|r].
+    .accept 86456 >>Accept An Elegy for a Silent World
+    .collect 234273,1
+step
+    #requires Xal'tath's Portal
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Xal'tath's Portal|r to complete the quest.
+    .complete 86820,3
 step
     .goto 2371,42.89,21.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
+    >>Click on the quest pop-up to turn in the quest
     .turnin 86820 >>Turn in Manaforge Omega: Dimensius Looms
     .target Alleria Windrunner
 step
+    .isOnQuest 86456
     .goto 2371,75.88,34.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .complete 86456,1 --1/1 Dimmed Crystal shown to Ve'nari
     .skipgossip
     .target Ve'nari
 step
+    .isOnQuest 86456
     .goto 2371,75.88,34.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .turnin 86456 >>Turn in An Elegy for a Silent World
+    .target Ve'nari
+step
+    .isQuestTurnedIn 86456
+    .goto 2371,75.88,34.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .accept 86457 >>Accept A Lullaby of Hope
     .target Ve'nari
 step
+    .isOnQuest 86457
     .goto 2371,75.88,34.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dimmed Crystal|r
     .complete 86457,1 --1/1 Interact with the Dimmed Crystal
     .timer 3,RP
 step
+    .goto 2371,75.88,34.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cartel Om Custodian|r
+    .turnin 87290 >>Turn in The Oasis
+    .target Cartel Om Custodian
+    .accept 87337 >>Accept Custodian Duties
+step
+    .isOnQuest 86457
     .goto 2371,75.89,34.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .turnin 86457 >>Turn in A Lullaby of Hope
+    .target Ve'nari
+step
+    .isQuestTurnedIn 86457
+    .goto 2371,75.89,34.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .accept 86458 >>Accept A Song for Our Future
     .target Ve'nari
 step
-    >>Que Solo for Eco-Dome Al'dani as a Follower Dungeon.
+    .isOnQuest 86458
+    >>Que Solo for Eco-Dome Al'dani as a Follower Dungeon or do it with a group.
     .complete 86458,1 --1/1 Soul-Scribe defeated
     .mob Soul-Scribe
 step
-    .goto 2371,75.89,34.23
+    .isOnQuest 86458
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
     .complete 86458,2 --1/1 Talk to Ve'nari
     .skipgossip
-    .timer 60,RP
+    .target Ve'nari
+step
+    .isOnQuest 86458
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ve'nari|r
+    .turnin 86458 >>Turn in A Song for Our Future
     .target Ve'nari
 ]])
