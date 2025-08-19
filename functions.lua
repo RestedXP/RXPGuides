@@ -7423,3 +7423,21 @@ function addon.functions.spec(self,text,spec,flags)
         end
     end
 end
+
+events.acceptmap = "ADVENTURE_MAP_OPEN"
+function addon.functions.acceptmap(self,text,id)
+    if type(self) == "string" then
+        id = tonumber(id)
+        if not id then return end
+        return {text = text, textOnly = true, id = id}
+    end
+    local element = self.element
+    if element.step.active then
+        local quest = C_AdventureMap.GetQuestInfo(element.id)
+        if quest then
+            C_AdventureMap.StartQuest(element.id)
+        end
+    end
+end
+
+
