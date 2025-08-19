@@ -17,17 +17,22 @@ RXPGuides.RegisterGuide([[
 --     #hidewindow
 --     +1
 --     .use 245925
+-- step
+--     #hidewindow
+--     #completewith next
+--     .achievement 42313,1
+--     .skipto step,SkiptoSkyride
+-- step
+--     #hidewindow
+--     #completewith next
+--     .achievement 42313,1
+--     .skipto guide,RestedXP Speed Leveling\ab) Intro Skip
 -- step 
---     -- .isQuestTurnedIn account,89418
---     -- .achievementComplete 42313,1
 --     .goto 627,72.46,45.90
 --     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
---     .complete 89404,1 --1/1 Talk to Moratari
---     .skipgossipid 134056
+--     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
 --     .target Moratari
 step
-    -- .achievementInComplete 42313,1
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .accept 89404 >>Accept Time Crisis
@@ -327,8 +332,6 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Temporal Knot|r
     .complete 90659,2 --1/1 Artifact Swapped
     .target Momentus
-
-
 -- step << DemonHunter
 --     .spec 1
 --     .goto 627,42.81,27.69
@@ -408,7 +411,7 @@ step
     .goto 627,50.89,40.49,8,0
     .goto 627,50.18,41.85,8,0
     .goto 627,48.33,40.01,8,0
-    .goto 627,48.06,37.29,6 >>Enter Building and go upstairs
+    .goto 627,48.06,37.29,6 >>Enter Building and go upstairs 1
 step
     #requires Legion Armor Scraps
     .goto 627,48.06,37.29
@@ -666,10 +669,15 @@ step
     .complete 89417,5 --1/1 Meet Larah
     .skipgossipid 135502
     .target Larah Treebender
+--skipto here    
 step
     .goto 619,45.57,68.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
     .turnin 89417 >>Turn in Infinite Meetings
+    .target Eternus
+step
+    .goto 619,45.57,68.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
     .target Eternus
     .accept 89418 >>Accept A Fixed Point in Time
 
@@ -750,24 +758,26 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Speed Leveling
+#group ab) Intro Skip
 #name ab) Intro Skip
 #next
 #displayname |cFF00CCFF1|r - Intro Skip
 #subgroup |cFFFCDC00(1-80)|r Legion Remix
 #internal
 
+-- step
+--     -- .isQuestTurnedIn account,89418
+--     -- .achievementComplete 42313,1
+--     .goto 627,72.46,45.90
+--     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+--     .complete 89404,1 --1/1 Talk to Moratari
+--     .skipgossipid 134056
+--     .target Moratari
+-- step
+-- +1
 step
-    -- .isQuestTurnedIn account,89418
-    -- .achievementComplete 42313,1
-    .goto 627,72.46,45.90
-    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .complete 89404,1 --1/1 Talk to Moratari
-    .skipgossipid 134056
-    .target Moratari
-step
---skyriding skip
+    --skyriding skip
     .goto 627,72.04,41.59
     .gossipoption 133762 >>Talk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
