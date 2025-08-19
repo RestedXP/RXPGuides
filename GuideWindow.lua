@@ -698,11 +698,13 @@ function addon.SetStep(n, n2, loopback)
     elseif step and not step.completed and
         not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled))) and
         level >= step.level then
+        step.completed = false
         tinsert(activeSteps, step)
         ScrollChild.framePool[n]:SetAlpha(1)
         step.active = true
         scrollHeight = n
         if step.tipWindow then
+            step.tipWindow.completed = false
             tinsert(activeSteps,step.tipWindow)
             step.tipWindow.active = true
         end

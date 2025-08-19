@@ -3826,7 +3826,10 @@ function addon.functions.questcount(self, text, count, ...)
     local element = self.element
     local step = element.step
     local event = text
-    if not step.active then return end
+    if not step.active then
+        step.completed = false
+        return
+    end
     count = 0
     if element.ids[1] then
         for _,quest in pairs(element.ids) do
@@ -3873,7 +3876,10 @@ function addon.functions.isQuestComplete(self, ...)
     end
     local element = self.element
     local step = element.step
-    if not step.active then return end
+    if not step.active then
+        step.completed = false
+        return
+    end
     local id = element.questId
     local event = ...
     local isCompleted = not(IsOnQuest(id) and IsQuestComplete(id)) == not(element.reverse)
@@ -3915,7 +3921,10 @@ function addon.functions.isOnQuest(self, text, ...)
     local event = text
     local step = element.step
 
-    if not step.active then return end
+    if not step.active then
+        step.completed = false
+        return
+    end
 
     for _,id in pairs(element.questIds) do
         if IsOnQuest(id) then
@@ -3968,7 +3977,10 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     end
     local element = self.element
     local step = element.step
-    if not step.active then return end
+    if not step.active then
+        step.completed = false
+        return
+    end
     local ids = element.questIds
     local questTurnedIn = false
     local event = text
