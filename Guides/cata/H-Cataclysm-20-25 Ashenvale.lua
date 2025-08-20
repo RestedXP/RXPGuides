@@ -1142,7 +1142,8 @@ step
     .mob +Astranaar Thrower
 step
     #completewith next
-    +|cRXP_WARN_Use|r |T136011:0|t[Return to Base!] |cRXP_WARN_to fly back to Hellscream's Watch|r
+    .cast vehicle,65481 >>|cRXP_WARN_Use|r |T136011:0|t[Return to Base!] |cRXP_WARN_to fly back to Hellscream's Watch|r
+    .subzoneskip 4691
 step
     .goto 63,37.99,42.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Goggath|r
