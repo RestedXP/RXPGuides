@@ -5827,6 +5827,9 @@ if addon.gameVersion >= 110000 then
         if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
         if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
             addon.SetElementComplete(self)
+            if element.timer then
+                addon.StartTimer(element.timer,element.timerText)
+            end
         end
 
         element.text = element.rawtext .. element.criteria
@@ -6401,7 +6404,7 @@ function addon.functions.achievement(self, ...)
     elseif type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id, criteria, numReq = ...
+        local text, id, criteria, numReq, skiplabel = ...
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -6410,6 +6413,7 @@ function addon.functions.achievement(self, ...)
         end
         element.numReq = tonumber(numReq)
         element.id = id
+        element.label = skiplabel
         element.criteria = tonumber(criteria) or 0
         if text and text ~= "" then
             element.rawtext = text
@@ -6430,8 +6434,8 @@ function addon.functions.achievement(self, ...)
         displayText, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(element.id,element.criteria)
     end
 
-    if element.numReq and element.numReq < reqQuantity then
-        reqQuantity = reqQuantity
+    if element.numReq and element.numReq > 0 and element.numReq < reqQuantity then
+        reqQuantity = element.numReq
     end
 
     if not element.textOnly then
@@ -7423,3 +7427,21 @@ function addon.functions.spec(self,text,spec,flags)
         end
     end
 end
+
+events.acceptmap = "ADVENTURE_MAP_OPEN"
+function addon.functions.acceptmap(self,text,id)
+    if type(self) == "string" then
+        id = tonumber(id)
+        if not id then return end
+        return {text = text, textOnly = true, id = id}
+    end
+    local element = self.element
+    if element.step.active then
+        local quest = C_AdventureMap.GetQuestInfo(element.id)
+        if quest then
+            C_AdventureMap.StartQuest(element.id)
+        end
+    end
+end
+
+
