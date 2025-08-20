@@ -6404,7 +6404,7 @@ function addon.functions.achievement(self, ...)
     elseif type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id, criteria, numReq = ...
+        local text, id, criteria, numReq, skiplabel = ...
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -6413,6 +6413,7 @@ function addon.functions.achievement(self, ...)
         end
         element.numReq = tonumber(numReq)
         element.id = id
+        element.label = skiplabel
         element.criteria = tonumber(criteria) or 0
         if text and text ~= "" then
             element.rawtext = text
@@ -6433,8 +6434,8 @@ function addon.functions.achievement(self, ...)
         displayText, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(element.id,element.criteria)
     end
 
-    if element.numReq and element.numReq < reqQuantity then
-        reqQuantity = reqQuantity
+    if element.numReq and element.numReq > 0 and element.numReq < reqQuantity then
+        reqQuantity = element.numReq
     end
 
     if not element.textOnly then
