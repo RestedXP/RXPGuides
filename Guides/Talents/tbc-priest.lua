@@ -4,6 +4,7 @@ if addon.player.class ~= "PRIEST" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
 #name Shadow Priest (Wand) 10-40
+#next Shadow Priest 10-70
 #minLevel 10
 #maxLevel 40
 
