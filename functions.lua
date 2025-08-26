@@ -3467,7 +3467,8 @@ function addon.functions.next(skip, guide)
         local guideSkip
         local nextGuide
         --Different guides can be separated by a semicolon when using #next
-        for guideName in string.gmatch(guide.next,"%s*([^;]+)%s*") do
+        local n = next
+        for guideName in string.gmatch(n,"%s*([^;]+)%s*") do
             next = guideName:gsub("^%s*(.+)\\%s*", function(grp)
                 group = grp
                 return ""
@@ -4042,7 +4043,7 @@ function addon.functions.spellmissing(self, text, id)
 
 end
 
-function addon.GetSubZoneId(zone,x,y)
+function addon.GetSubZoneId(zone,x,y,ignoreOutput)
     local subzonemax = 1e6
     if gameVersion < 50000 then
         subzonemax = 15325
@@ -4067,7 +4068,9 @@ function addon.GetSubZoneId(zone,x,y)
         for i = 1,subzonemax do
             local zoneName = C_Map.GetAreaInfo(i) or 3
             if zoneName and zoneName == subzone then
-                print(zoneName .. ' Subzone ID: ' .. i)
+                if not ignoreOutput then
+                    print(zoneName .. ' Subzone ID: ' .. i)
+                end
                 return i
             elseif zoneText == zoneName then
                 bestMatchId = i
@@ -4075,7 +4078,9 @@ function addon.GetSubZoneId(zone,x,y)
             end
         end
         if bestMatchId and bestMatchText then
-            print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
+            if not ignoreOutput then
+                print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
+            end
             return bestMatchId
         end
     end

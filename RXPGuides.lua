@@ -1325,6 +1325,9 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     if isInitialLogin then
         C_Timer.After(4, function()
             addon.settings:DetectXPRate()
+            if addon.LoadDefaultGuide and addon.currentGuide.empty then
+                addon.LoadDefaultGuide()
+            end
         end)
 
         C_Timer.After(20, function()
