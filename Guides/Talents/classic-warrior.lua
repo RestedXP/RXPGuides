@@ -152,18 +152,23 @@ level -- Deep Wounds Rank 3
 
 level -- Axe Specialization Rank 1
 	.talent 1,5,1,1
+    #optional
 
 level -- Axe Specialization Rank 2
 	.talent 1,5,1,2
+    #optional
 
 level -- Axe Specialization Rank 3
 	.talent 1,5,1,3
+    #optional
 
 level -- Axe Specialization Rank 4
 	.talent 1,5,1,4
+    #optional
 
 level -- Axe Specialization Rank 5
 	.talent 1,5,1,5
+    #optional
 
 level -- Impale Rank 1
 	.talent 1,4,3,1
@@ -533,18 +538,23 @@ level -- Deep Wounds Rank 3
 
 level -- Axe Specialization Rank 1
 	.talent 1,5,1,1
+    #optional
 
 level -- Axe Specialization Rank 2
 	.talent 1,5,1,2
+    #optional
 
 level -- Axe Specialization Rank 3
 	.talent 1,5,1,3
+    #optional
 
 level -- Axe Specialization Rank 4
 	.talent 1,5,1,4
+    #optional
 
 level -- Axe Specialization Rank 5
 	.talent 1,5,1,5
+    #optional
 
 level -- Impale Rank 1
 	.talent 1,4,3,1
