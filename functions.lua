@@ -5910,6 +5910,9 @@ else
 
         if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
             addon.SetElementComplete(self)
+            if element.timer then
+                addon.StartTimer(element.timer,element.timerText)
+            end
         end
 
         element.text = element.rawtext .. element.criteria
