@@ -3834,13 +3834,14 @@ function addon.settings.ReplaceColors(element)
                                          addon.guideTextColors.default["error"])
         end
 
+        textLine = textLine:gsub("\\n","\n")
         return textLine
     end
 
     local fieldString
     if type(element) == "table" or element and element.textReplaced then
         element.textReplaced = element.textReplaced or {}
-        for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip"}) do
+        for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip","title","arrowtext"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else

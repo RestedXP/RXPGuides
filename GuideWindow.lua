@@ -699,6 +699,7 @@ function addon.SetStep(n, n2, loopback)
         not (req and #activeSteps > 0 and (req.active or not (req.reqFulfilled))) and
         level >= step.level then
         step.completed = false
+        addon.settings.ReplaceColors(step)
         tinsert(activeSteps, step)
         ScrollChild.framePool[n]:SetAlpha(1)
         step.active = true
