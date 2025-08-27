@@ -17102,7 +17102,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Blood Elf Eversong Woods
 #displayname |cFF00CCFF2|r - Eversong Woods
-#next a) BfA Intro
+#next b1) BfA Intro
 #defaultfor BloodElf !DK
 
 << Horde
@@ -17796,7 +17796,7 @@ RXPGuides.RegisterGuide([[
 #displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
 #displayname |cFF00CCFF2|r - Echo Isles << !Troll 
 #next ab) Valley of Trials2 << Troll
-#next a) BfA Intro << !Troll 
+#next b1) BfA Intro << !Troll 
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
@@ -18734,7 +18734,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Tauren Camp Mulgore
 #displayname |cFF00CCFF2|r - Mulgore
-#next a) BfA Intro
+#next b1) BfA Intro
 #defaultfor Tauren !DK
 
 << Horde
@@ -19473,7 +19473,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Undead Eversong Woods
 #displayname |cFF00CCFF2|r - Eversong Woods
-#next a) BfA Intro
+#next b1) BfA Intro
 #defaultfor Undead !DK
 
 << Horde
@@ -19836,7 +19836,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ab) Goblin Intro
 #displayname |cFF00CCFF1|r - Kezan & The Lost Isles
-#next a) BfA Intro
+#next b1) BfA Intro
 
 << Goblin !DK
 
@@ -21314,7 +21314,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) HighmountainTauren
 #displayname |cFF00CCFF1|r - Highmountain
-#next a) BfA Intro
+#next b1) BfA Intro
 
 << HighmountainTauren !DK
 
@@ -21355,7 +21355,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Nightborne Intro
 #displayname |cFF00CCFF1|r - The Nighthold
-#next a) BfA Intro
+#next b1) BfA Intro
 
 << Nightborne !DK
 
@@ -21395,7 +21395,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) ZandalariTroll Intro
 #displayname |cFF00CCFF1|r - Dazar'alor
-#next a) BfA Intro
+#next b1) BfA Intro
 
 << ZandalariTroll !DK
 
@@ -21436,7 +21436,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) MagharOrc Intro
 #displayname |cFF00CCFF1|r - Orgrimmar
-#next a) BfA Intro
+#next b1) BfA Intro
 
 << MagharOrc !DK
 
@@ -21474,7 +21474,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Vulpera Intro
 #displayname |cFF00CCFF1|r - Orgrimmar
-#next a) BfA Intro
+#next b1) BfA Intro
 
 << Vulpera !DK
  
