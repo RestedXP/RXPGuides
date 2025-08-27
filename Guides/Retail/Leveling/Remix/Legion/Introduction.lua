@@ -94,7 +94,7 @@ step
     .goto 627,41.55,39.57,40 >>Leave Buildung
 step
     #requires Magical barriers
-    .goto 627,41.55,39.57
+    .goto 627,42.41,38.31
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_from very far away|r.
     .complete 89406,2,1 --5/5 Magical barriers reinforced
 step
@@ -103,8 +103,10 @@ step
     *|cRXP_WARN_Make sure to do this to receive credit for all three doors at once.|r
     .complete 89406,2,4 --5/5 Magical barriers reinforced
 step
-    .goto 627,40.76,29.66
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_from very far away|r.
+    -- .goto 627,40.76,29.66
+    .goto 627,40.84,30.98
+    -- >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_from very far away|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r
     .complete 89406,2,5 --5/5 Magical barriers reinforced
 step
     .goto 627,42.81,27.66
@@ -140,7 +142,7 @@ step
     .complete 89408,1,2 --12/12 Frayed Temporal Threads collected
 step
     .goto 627,40.69,24.04
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dusty Stone Tablet|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Archeology Chest|r
     .complete 89407,1 --1/1 Dusty Stone Tablet
 step
     .goto 627,40.22,25.16
@@ -173,7 +175,7 @@ step
     .complete 89408,1,7 --12/12 Frayed Temporal Threads collected
 step
     .goto 627,38.36,40.37
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dusty Stone Tablet|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Curio Lockbox|r
     .complete 89407,3 --1/1 Curious Curio
 step
     #completewith next
@@ -198,7 +200,7 @@ step
     .complete 89408,1,10 --12/12 Frayed Temporal Threads collected
 step
     .goto 627,45.98,25.49
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bent and Battered Blade|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Crate|r
     .complete 89407,2 --1/1 Bent and Battered Blade
 step
     .goto 627,46.46,25.91
@@ -295,7 +297,7 @@ step
 step
     #requires Temporal fibers separated
     #completewith Infinite Bronze forged
-    .goto 627,44.98,29.4
+    .goto 627,44.58,29.49
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table infront of you|r.
     .complete 89409,4 --1/1 Anchoring materials infused
 step
@@ -375,7 +377,7 @@ step
 --     .equip 242556
 step
     .goto 627,42.81,27.69
-    >>Open your Character Panel, Shift + Right-Click your Artifact Weapon, learn the skill, apply changes, and place the skill on your action bars.
+    >>|cRXP_WARN_Open your Character Panel, Shift + Right-Click your Artifact Weapon, learn the skill, apply changes, and place the skill on your action bars.|r
     -- .link /run if RemixArtifactFrame then if RemixArtifactFrame:IsShown() then RemixArtifactFrame:Hide() else RemixArtifactFrame:Show() end end >> CLICK HERE TO COPY & PASTE MACRO
     .complete 90659,3 --Purchase the Remix Time trait in your Artifact Weapon
     .use 242557
@@ -383,9 +385,9 @@ step
     .goto 627,42.81,27.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 90659 >>Turn in Something Borrowed
-    .target Momentus
     .accept 89412 >>Accept Get Plenty of Exorcise
     .accept 90901 >>Accept As A Matter of Artifact
+    .target Momentus
 step
     .goto 627,42.40,27.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erus|r
@@ -505,7 +507,7 @@ step
 step
     #requires Legion Armor Scraps
     .goto 627,42.33,27.22
-    >>Click on Scrap
+    >>|cRXP_WARN_You have summoned an |cRXP_PICK_Unraveling Sand|r|r (maybe inside |cRXP_FRIENDLY_Erus|r). Click on it and click on the Scrap button.
     .complete 89413,2 --1/1 Scrap Legion Armor Scraps
     .scrap 251901
 step
@@ -665,7 +667,7 @@ step
     .target Pythagorus
 step
     .goto 619,45.48,68.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah Treebender|r
     .complete 89417,5 --1/1 Meet Larah
     .skipgossipid 135502
     .target Larah Treebender
