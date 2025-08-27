@@ -17102,7 +17102,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Blood Elf Eversong Woods
 #displayname |cFF00CCFF2|r - Eversong Woods
-#next 
+#next a) BfA Intro
 #defaultfor BloodElf !DK
 
 << Horde
@@ -17417,8 +17417,8 @@ RXPGuides.RegisterGuide([[
 #name ab) Valley of Trials2  << Troll
 #displayname |cFF00CCFF2|r - Valley of Trials << Troll
 #displayname Valley of Trials |cRXP_ENEMY_(Alternative)|r << !Troll --Orc
-#next << !Troll --Orc
-#next << Troll
+#next ac) Echo Isles2 << !Troll --Orc
+#next a) BfA Intro << Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
@@ -17795,8 +17795,8 @@ RXPGuides.RegisterGuide([[
 #name ac) Echo Isles2 << !Troll --Orc
 #displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
 #displayname |cFF00CCFF2|r - Echo Isles << !Troll 
-#next << Troll
-#next << !Troll 
+#next ab) Valley of Trials2 << Troll
+#next a) BfA Intro << !Troll 
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
@@ -18734,7 +18734,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Tauren Camp Mulgore
 #displayname |cFF00CCFF2|r - Mulgore
-#next 
+#next a) BfA Intro
 #defaultfor Tauren !DK
 
 << Horde
@@ -19473,7 +19473,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Undead Eversong Woods
 #displayname |cFF00CCFF2|r - Eversong Woods
-#next 
+#next a) BfA Intro
 #defaultfor Undead !DK
 
 << Horde
@@ -19836,7 +19836,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ab) Goblin Intro
 #displayname |cFF00CCFF1|r - Kezan & The Lost Isles
-#next 
+#next a) BfA Intro
 
 << Goblin !DK
 
@@ -21314,7 +21314,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) HighmountainTauren
 #displayname |cFF00CCFF1|r - Highmountain
-#next
+#next a) BfA Intro
 
 << HighmountainTauren !DK
 
@@ -21355,7 +21355,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Nightborne Intro
 #displayname |cFF00CCFF1|r - The Nighthold
-#next
+#next a) BfA Intro
 
 << Nightborne !DK
 
@@ -21395,7 +21395,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) ZandalariTroll Intro
 #displayname |cFF00CCFF1|r - Dazar'alor
-#next
+#next a) BfA Intro
 
 << ZandalariTroll !DK
 
@@ -21436,7 +21436,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) MagharOrc Intro
 #displayname |cFF00CCFF1|r - Orgrimmar
-#next
+#next a) BfA Intro
 
 << MagharOrc !DK
 
@@ -21474,6 +21474,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Vulpera Intro
 #displayname |cFF00CCFF1|r - Orgrimmar
+#next a) BfA Intro
 
 << Vulpera !DK
  
