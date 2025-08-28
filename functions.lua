@@ -1705,6 +1705,18 @@ function addon.functions.complete(self, ...)
     addon.IsOnTurnInGuide(self)
 end
 
+local vector00 = CreateVector2D(0,0)
+local function UpdateInstanceData(self,event)
+
+    local element = self.element
+    if not event and element and element.step.active and element.zone then
+        local zone = element.zone
+        local IID = C_Map.GetWorldPosFromMapPos(zone, vector00)
+        if IID then element.instance = IID end
+        --print(IID)
+    end
+end
+
 local lastZone
 addon.functions["goto"] = function(self, ...)
     if type(self) == "string" then -- on parse
@@ -1798,6 +1810,9 @@ addon.functions["goto"] = function(self, ...)
         end
         return element
     end
+
+    UpdateInstanceData(self,...)
+
 end
 
 events.flygoto = "ZONE_CHANGED"
@@ -1871,6 +1886,7 @@ function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, 
         return element
     end
     QuestWP(self.element)
+    UpdateInstanceData(self,text)
 end
 
 events.questgoto = "QUEST_LOG_UPDATE"
@@ -1891,6 +1907,7 @@ function addon.functions.questgoto(self, text, zone, x, y, radius, questId, objI
         return element
     end
     QuestWP(self.element)
+    UpdateInstanceData(self,text)
 end
 
 function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
@@ -1979,8 +1996,10 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         return element
     end
 
+    UpdateInstanceData(self,text)
+
     local element = self.element
-    local group = addon.currentGuide.group
+    --local group = addon.currentGuide.group
     local callback = addon.functions[element.callback]
     if type(callback) == "function" then
         local lowPrio = callback(self, text, zone, x, y, radius, lowPrio, ...)
@@ -2077,6 +2096,8 @@ function addon.functions.pin(self, ...)
 
         return element
     end
+
+    UpdateInstanceData(self,...)
 end
 
 events.treasure = "QUEST_LOG_UPDATE"
