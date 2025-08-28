@@ -971,10 +971,20 @@ end
 
 local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
 -- Updates the arrow
+  local function IsDeathSkip()
+        for _,step in pairs(addon.RXPFrame.activeSteps) do
+            for _,element in pairs(step.elements) do
+                if element.tag == "deathskip" then
+                    return true
+                end
+            end
+        end
+    end
 
 local function updateArrowData()
     local lowPrioWPs
     local loop = {}
+    local isDeathSkip = true --temp for IsDeathSkip()
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.hidden then
@@ -1022,6 +1032,38 @@ local function updateArrowData()
             return
         end
     end
+        if UnitIsGhost("player") and isDeathSkip and
+   not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
+
+    local skip
+    for _, element in pairs(addon.activeWaypoints) do
+        skip = skip
+            or (element.step and element.step.ignorecorpse)
+            or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
+    end
+    if skip then return end
+
+    local HBD = LibStub("HereBeDragons-2.0")
+    local px, py, instance = HBD and HBD:GetPlayerWorldPosition("player")
+    if px and instance and addon.SpiritHealerWorld then
+        local list = addon.SpiritHealerWorld[instance]
+        if list and #list > 0 then
+            local best, bestD2
+            for i = 1, #list do
+                local n = list[i]
+                local dx, dy = px - n.wx, py - n.wy
+                local d2 = dx*dx + dy*dy
+                if not bestD2 or d2 < bestD2 then bestD2, best = d2, n end
+            end
+            if best then
+                corpseWP.wx, corpseWP.wy, corpseWP.instance = best.wx, best.wy, instance
+                print("|cff33ff99[RXP]|r healer pointer set:", best.name) -- debug
+                ProcessWaypoint(corpseWP)
+                return
+            end
+        end
+    end
+end
 
     local function SetArrowWP()
         lowPrioWPs = {}

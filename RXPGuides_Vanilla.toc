@@ -32,7 +32,6 @@ Targeting.lua
 Tips.lua
 InventoryManager.lua
 
-
 map.lua
 functions.lua
 GuideLoader.lua
