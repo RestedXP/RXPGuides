@@ -1016,7 +1016,6 @@ local function updateArrowData()
     end
     if UnitIsGhost("player") and isDeathSkip and
     not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
-    print("|cff33ff99[RXP]|r Code is running") -- debug
     local skip
     for _, element in pairs(addon.activeWaypoints) do
         skip = skip
