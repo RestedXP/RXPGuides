@@ -982,6 +982,7 @@ local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
     end
 
 local function updateArrowData()
+    print("|cff33ff99[RXP]|r Code is running") -- debug
     local lowPrioWPs
     local loop = {}
     local isDeathSkip = true --temp for IsDeathSkip()
