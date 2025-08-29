@@ -1000,7 +1000,7 @@ local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
 local function updateArrowData()
     local lowPrioWPs
     local loop = {}
-    local isDeathSkip = true --temp for IsDeathSkip()
+    local isDeathSkip = IsDeathSkip()
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.hidden then
