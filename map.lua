@@ -998,7 +998,6 @@ local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
     end
 
 local function updateArrowData()
-    print("|cff33ff99[RXP]|r Code is running") -- debug
     local lowPrioWPs
     local loop = {}
     local isDeathSkip = true --temp for IsDeathSkip()
@@ -1048,7 +1047,7 @@ local function updateArrowData()
             local best, bestD2
             for i = 1, #list do
                 local n = list[i]
-                local dx, dy = px - n.wx, py - n.wy
+                local dx, dy = px - n.wy, py - n.wx
                 local d2 = dx*dx + dy*dy
                 if not bestD2 or d2 < bestD2 then bestD2, best = d2, n end
             end
