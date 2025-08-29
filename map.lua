@@ -1052,8 +1052,7 @@ local function updateArrowData()
                 if not bestD2 or d2 < bestD2 then bestD2, best = d2, n end
             end
             if best then
-                corpseWP.wx, corpseWP.wy, corpseWP.instance = best.wx, best.wy, instance
-                print("|cff33ff99[RXP]|r healer pointer set:", best.name) -- debug
+                corpseWP.wy, corpseWP.wx, corpseWP.instance = best.wx, best.wy, instance
                 ProcessWaypoint(corpseWP)
                 return
             end
