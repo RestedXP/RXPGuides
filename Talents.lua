@@ -360,7 +360,7 @@ function addon.talents:ParseGuide(text)
         elseif line ~= "" then
             -- Parse metadata tags
             parseSuccess = line:gsub("^#(%S+)%s*(.*)", function(tag, value)
-                -- print("Parsing tag at", linenumber, tag, value)
+                -- print("Parsing guide tag at", linenumber, tag, value)
                 -- Set metadata without overwriting
                 if tag and tag ~= "" and not guide[tag] then guide[tag] = value end
             end)
@@ -408,7 +408,7 @@ local function learnClassicTalent(payload)
     return result
 end
 
-function addon.talents.functions.talent(element, validate)
+function addon.talents.functions.talent(element, validate, optional)
     if type(element) == "string" then -- on parse
         local e = {talent = {}}
         local args = element
@@ -458,12 +458,21 @@ function addon.talents.functions.talent(element, validate)
                 local d = {talentData.tab, talentIndex, name}
                 local prompt = fmt(_G.CONFIRM_LEARN_TALENT, name)
 
-                addon.comms:ConfirmChoice("RXPTalentPrompt", prompt, learnClassicTalent, d)
+                if optional then
+                    -- TODO user input timing, noop prompt informing of action/options
+                    -- TODO handle replaying, avoid blocking on user action if talent exists in any optional blocks
+                    addon.comms.PrettyPrint("%s - (%s) %s (%s %d)", _G.TRADE_SKILLS_LEARNED_TAB,
+                                            _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS, name, _G.RANK,
+                                            talentData.rank)
+                else
+                    addon.comms:ConfirmChoice("RXPTalentPrompt", prompt, learnClassicTalent, d)
+                end
 
                 -- Stop as soon as first learning prompt, not a blocking dialog
                 return -1
             elseif addon.settings.profile.previewTalents then
                 local before = GetGroupPreviewTalentPointsSpent()
+                -- TODO if optional
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
 
                 -- Verify training actually worked, there's no return value from Preview
@@ -474,6 +483,7 @@ function addon.talents.functions.talent(element, validate)
 
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name, _G.RANK, talentData.rank)
             else
+                -- TODO if optional
                 if LearnTalent(talentData.tab, talentIndex) then
                     addon.comms.PrettyPrint("%s - %s (%s %d)", _G.TRADE_SKILLS_LEARNED_TAB, name, _G.RANK,
                                             talentData.rank)
@@ -714,12 +724,14 @@ function addon.talents:DrawTalents()
     wipe(levelsForIndex)
 
     local newHightlightTexture
+    RXPD = {}
     -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
 
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
         if levelStep then
+            RXPD[upcomingTalent - guide.minLevel + 1] = levelStep
             for _, element in ipairs(levelStep.elements) do
                 for _, talentData in ipairs(element.talent) do
 
@@ -897,7 +909,7 @@ function addon.talents:ProcessTalents(validate)
                 -- print("Evaluating tag", tag)
                 if self.functions[tag] then
                     -- print("Executing tag function", tag)
-                    result = self.functions[tag](element, validate)
+                    result = self.functions[tag](element, validate, step.optional)
                 else
                     result = false
                     addon.error(L("Error parsing guide") .. " " .. (guide.name or 'Unknown') ..
@@ -962,7 +974,7 @@ function addon.talents:ProcessPetTalents(validate)
                 -- print("Evaluating tag", tag)
                 if self.functions[tag] then
                     -- print("Executing tag function", tag)
-                    result = self.functions[tag](element, validate)
+                    result = self.functions[tag](element, validate, step.optional)
                 else
                     result = false
                     addon.error(L("Error parsing guide") .. " " .. (guide.name or 'Unknown') ..
