@@ -723,7 +723,7 @@ function addon.talents:DrawTalents()
     wipe(activeIndices)
     wipe(levelsForIndex)
 
-    local newHightlightTexture
+    local newHightlightTexture, tooltipPrefix
     RXPD = {}
     -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
@@ -731,6 +731,7 @@ function addon.talents:DrawTalents()
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
         if levelStep then
+            tooltipPrefix = levelStep.optional and _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS or _G.TRADE_SKILLS_LEARNED_TAB
             RXPD[upcomingTalent - guide.minLevel + 1] = levelStep
             for _, element in ipairs(levelStep.elements) do
                 for _, talentData in ipairs(element.talent) do
@@ -744,7 +745,7 @@ function addon.talents:DrawTalents()
                                                                fmt("\n%s - %s", addon.title, guide.name)
 
                         talentTooltips.data[talentIndex] = fmt("%s\n%s%s: %s %d|r", talentTooltips.data[talentIndex],
-                                                               addon.colors.tooltip, _G.TRADE_SKILLS_LEARNED_TAB,
+                                                               addon.colors.tooltip, tooltipPrefix,
                                                                _G.LEVEL, upcomingTalent)
 
                         -- TODO Pre-seed tooltip to prevent delay
