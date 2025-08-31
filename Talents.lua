@@ -337,9 +337,9 @@ function addon.talents:ParseGuide(text)
         elseif currentStep > 0 then -- Parse metadata tags first
 
             -- Parse function calls
-            parseSuccess = line:gsub("^%.(%S+)%s*(.*)", function(command, lineArgs)
-                -- print("Processing guide command", command, "with (", lineArgs, ")")
+            parseSuccess = line:gsub("^[%.#](%S+)%s*(.*)", function(command, lineArgs)
                 if self.functions[command] then
+                    -- print("Processing guide command", command, "with (", lineArgs, ")")
                     local element = self.functions[command](lineArgs)
 
                     if not element then
@@ -349,6 +349,8 @@ function addon.talents:ParseGuide(text)
                     end
 
                     tinsert(step.elements, element)
+                elseif command == "optional" then -- Allowlisted step flags, preserve typo handling
+                    step[command] = true
                 else
                     addon.error(L("Error parsing guide") .. " " .. (guide.name or 'Unknown') ..
                                     ": Invalid function call (." .. command .. ")\n" .. line)
