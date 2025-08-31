@@ -711,13 +711,13 @@ function addon.talents:DrawTalents()
     wipe(activeIndices)
     wipe(levelsForIndex)
 
+    local newHightlightTexture
     -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
 
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
         if levelStep then
-
             for _, element in ipairs(levelStep.elements) do
                 for _, talentData in ipairs(element.talent) do
 
@@ -736,14 +736,14 @@ function addon.talents:DrawTalents()
                         -- TODO Pre-seed tooltip to prevent delay
 
                         if not talentTooltips.highlights[talentIndex] then
-                            local ht = _G["PlayerTalentFrameTalent" .. talentIndex]:CreateTexture(
-                                           "$parent_LevelPreview", "BORDER")
+                            newHightlightTexture = _G["PlayerTalentFrameTalent" .. talentIndex]:CreateTexture(
+                                                       "$parent_LevelPreview", "BORDER")
 
-                            ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
-                            ht:SetBlendMode("ADD")
-                            ht:SetAllPoints(_G["PlayerTalentFrameTalent" .. talentIndex .. "Slot"])
+                            newHightlightTexture:SetTexture("Interface/Buttons/ButtonHilight-Square")
+                            newHightlightTexture:SetBlendMode("ADD")
+                            newHightlightTexture:SetAllPoints(_G["PlayerTalentFrameTalent" .. talentIndex .. "Slot"])
 
-                            talentTooltips.highlights[talentIndex] = ht
+                            talentTooltips.highlights[talentIndex] = newHightlightTexture
                         end
 
                         setHighlightColor(talentIndex, upcomingTalent - playerLevel)
