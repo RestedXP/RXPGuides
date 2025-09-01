@@ -1712,7 +1712,9 @@ local function UpdateInstanceData(self,event)
     if not event and element and element.step.active and element.zone then
         local zone = element.zone
         local IID = C_Map.GetWorldPosFromMapPos(zone, vector00)
-        if IID then element.instance = IID end
+        if IID and not HBD.transforms[IID] then
+            element.instance = IID
+        end
         --print(IID)
     end
 end
