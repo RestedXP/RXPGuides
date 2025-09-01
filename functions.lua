@@ -5819,6 +5819,8 @@ if addon.gameVersion >= 110000 then
 
         local element = self.element
         local step = element.step
+        if not step.active then return end
+
         local criteriaIndex = element.criteriaIndex
         local criteriaInfoByStep = C_ScenarioInfo.GetCriteriaInfoByStep(element.stage, criteriaIndex)
         if not criteriaInfoByStep then return end
@@ -5852,10 +5854,12 @@ if addon.gameVersion >= 110000 then
                                         required)
         if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
         if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
-            addon.SetElementComplete(self)
-            if element.timer then
+            if not element.completed and element.timer then
                 addon.StartTimer(element.timer,element.timerText)
             end
+            addon.SetElementComplete(self)
+        else
+            addon.SetElementIncomplete(self)
         end
 
         element.text = element.rawtext .. element.criteria
@@ -5902,6 +5906,8 @@ else
 
         local element = self.element
         local step = element.step
+        if not step.active then return end
+
         local criteriaIndex = element.criteriaIndex
         local criteriaString, criteriaType, completed, quantity, totalQuantity,
             flags, assetID, quantityString, criteriaID, duration, elapsed, _,
@@ -5930,10 +5936,12 @@ else
         if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
 
         if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
-            addon.SetElementComplete(self)
-            if element.timer then
+            if not element.completed and element.timer then
                 addon.StartTimer(element.timer,element.timerText)
             end
+            addon.SetElementComplete(self)
+        else
+            addon.SetElementIncomplete(self)
         end
 
         element.text = element.rawtext .. element.criteria
