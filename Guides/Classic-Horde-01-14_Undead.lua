@@ -2603,12 +2603,10 @@ step
     #ah
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
-    >>|cRXP_BUY_Buy 6|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
     >>|cRXP_BUY_Buy a|r |T135139:0|t[Lesser Magic Wand] |cRXP_BUY_from the Auction House|r << Priest
     >>|cRXP_BUY_Buy a|r |T135139:0|t[Lesser Magic Wand] |cRXP_BUY_from the Auction House if you wish|r << Mage/Warlock
     >>|cRXP_WARN_If you do this and were gathering|r |T132889:0|t[Linen Cloth] |cRXP_WARN_earlier, you can sell your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_on the Auction House|r << Priest
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    .collect 3164,6,429,1 --Discolored Worg Heart (6)
     .collect 11287,1,435,1 << Priest/Mage/Warlock --Lesser Magic Wand (1)
     .target Auctioneer Rhyker
     .itemStat 18,QUALITY,<7 << Priest/Mage/Warlock
@@ -2620,9 +2618,9 @@ step << !Priest
     #optional
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
-    >>|cRXP_BUY_Buy 6|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    .collect 3164,6,429,1 --Discolored Worg Heart (6)
+    >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
 step << !Warlock
     #xprate <1.5
@@ -3326,7 +3324,9 @@ step
     #ah
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
-    .collect 3164,6,429,1 >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
 step << Mage
     #xprate <1.5

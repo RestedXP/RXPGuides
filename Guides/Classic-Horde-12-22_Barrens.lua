@@ -773,7 +773,6 @@ step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .turnin 5724 >> Turn in Returning the Lost Satchel
     .target Rahauro
     .isOnQuest 5724
-    .zoneskip Thunder Bluff,1
     .dungeon RFC
 step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #label RFCTurninsTB1
@@ -782,7 +781,6 @@ step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .turnin 5723 >> Turn in Testing an Enemy's Strength
     .target Rahauro
     .isQuestComplete 5723
-    .zoneskip Thunder Bluff,1
     .dungeon RFC
 step << skip
     .goto Thunder Bluff,47.00,49.82
@@ -1958,7 +1956,7 @@ step << skip
 step
     #completewith SpiritsPickup
     .goto Kalimdor,56.81,45.47
-    .zone Orgrimmar >>Enter Orgrimmar through the Eastern entrance
+    .zone Orgrimmar >>Enter Orgrimmar through the western entrance
 step
     #completewith next
     .skill firstaid,40 >> |cRXP_WARN_Create|r |T133685:0|t[Linen Bandages] |cRXP_WARN_until your skill is 40 or higher|r
@@ -2776,12 +2774,76 @@ step
     .accept 878 >>Accept Tribes at War
     .target Mangletooth
 step
+    #optional
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
+    .target Omusa Thunderhorn
+    .isOnQuest 5724
+    .dungeon RFC
+step
+    #optional
+    #completewith RFCTurninsTB1
+    .goto Mulgore,68.68,60.34,120,0
+    .zone Mulgore >>Travel into Mulgore
+    .dungeon RFC
+step
+    #optional
+    #completewith RFCTurninsTB1
+    .goto Thunder Bluff,31.78,65.92
+    .zone Thunder Bluff >>Take the lift into Thunder Bluff
+    >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
+    .dungeon RFC
+step
+    #optional
+    #completewith RFCTurninsTB1
+    .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >> Turn in Returning the Lost Satchel
+    .turnin 5723 >> Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >> Turn in Returning the Lost Satchel
+    .target Rahauro
+    .isOnQuest 5724
+    .dungeon RFC
+step
+    #optional
+    #label RFCTurninsTB1
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5723 >> Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isQuestComplete 5723
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Crossroads >>Fly to The Crossroads
+    .target Tal
+    .zoneskip Thunder Bluff,1
+    .dungeon RFC
+step
     #completewith Xroadsturnins2
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
     .fly Crossroads >>Fly to The Crossroads
     .target Omusa Thunderhorn
+    .zoneskip The Barrens,1
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -2806,7 +2868,7 @@ step
     .target +Gazrog
     .goto The Barrens,51.93,30.32
 step
-    .destroy 5165 >>|cRXP_WARN_Delete any leftover|r |T132914:0|t[Sunscale Feathers] |cRXP_WARN_you may still have|r
+    .destroy 5165 >>|cRXP_WARN_Delete any leftover|r |T132914:0|t[Sunscale Feathers] |cRXP_WARN_you still have|r
     .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.11,29.07
