@@ -1053,6 +1053,7 @@ local function updateArrowData()
             end
             if best then
                 corpseWP.wy, corpseWP.wx, corpseWP.instance = best.wx, best.wy, instance
+                print("|cff33ff99[RXP]|r healer:", corpseWP.title, "inst", instance)
                 ProcessWaypoint(corpseWP)
                 return
             end
@@ -1072,6 +1073,7 @@ local function updateArrowData()
         end
         if not skip and corpse and corpse.x then
             corpseWP.wx, corpseWP.wy, corpseWP.instance =
+                print("|cff33ff99[RXP]|r healer:", corpseWP.title, "inst", instance)
                              HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
             ProcessWaypoint(corpseWP)
             return
