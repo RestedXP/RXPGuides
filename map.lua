@@ -988,6 +988,7 @@ end
 local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
 -- Updates the arrow
   local function IsDeathSkip()
+    if not addon.SpiritHealerWorld then return false end
         for _,step in pairs(addon.RXPFrame.activeSteps) do
             for _,element in pairs(step.elements) do
                 if element.tag == "deathskip" then
@@ -1001,37 +1002,50 @@ local function updateArrowData()
     local lowPrioWPs = {}
     local loop = {}
     local HBD = LibStub("HereBeDragons-2.0")
-
+    local isDeathSkip = IsDeathSkip()
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.hidden then return end
         if element.lowPrio and not lowPrio then
-            table.insert(lowPrioWPs, element); return
+            table.insert(lowPrioWPs, element)
+            return
         end
+
         local step = element.step or {}
         if step.loop then loop[step] = true end
+
         local generated = element.generated or 0
-        if (bit.band(generated,0x1) == 0x1)
-           or (element.arrow and element.step and element.step.active
-               and not (element.parent and (element.parent.completed or element.parent.skip))
-               and not (element.text and (element.completed or isComplete) and not isComplete)) then
-            af:SetShown(not addon.settings.profile.disableArrow and not addon.hideArrow and addon.settings.profile.showEnabled)
+        if (bit.band(generated, 0x1) == 0x1)
+            or (element.arrow
+                and element.step
+                and element.step.active
+                and not (element.parent and (element.parent.completed or element.parent.skip))
+                and not (element.text and (element.completed or isComplete) and not isComplete))
+        then
+            af:SetShown(
+                not addon.settings.profile.disableArrow
+                and not addon.hideArrow
+                and addon.settings.profile.showEnabled
+            )
             af.dist, af.orientation, af.element = 0, 0, element
             af.forceUpdate = true
             return true
         end
     end
 
-    if UnitIsGhost("player") and not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
+    if UnitIsGhost("player")
+        and not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913))
+    then
         local aw = addon.activeWaypoints or {}
         local guideName = addon.currentGuide and addon.currentGuide.name
-
         local skip
+
         for _, e in pairs(aw) do
             skip = skip
                 or (e.step and e.step.ignorecorpse)
                 or (not e.textOnly and guideName == "41-43 Badlands")
         end
+
         if skip or not HBD then
             -- fall through
         else
@@ -1039,28 +1053,33 @@ local function updateArrowData()
                 local px, py, inst = HBD:GetPlayerWorldPosition("player")
                 local DB = addon.SpiritHealerWorld or SpiritHealerWorld
                 local list = (px and inst and DB) and DB[inst] or nil
+
                 if list and #list > 0 then
-    local bestWX, bestWY, bestD2
-    for i = 1, #list do
-        local n = list[i]
-        local dx, dy = px - n.wy, py - n.wx
-        local d2 = dx*dx + dy*dy
-        if not bestD2 or d2 < bestD2 then
-            bestD2, bestWX, bestWY = d2, n.wy, n.wx
-        end
-    end
-    if bestWX then
-        corpseWP.x, corpseWP.y, corpseWP.zone, corpseWP.mapID = nil, nil, nil, nil
-        corpseWP.wx, corpseWP.wy, corpseWP.instance = bestWX, bestWY, inst
-        corpseWP.title = "Spirit Healer"
-        ProcessWaypoint(corpseWP)
-        return
-    end
-end
+                    local bestWX, bestWY, bestD2
+                    for i = 1, #list do
+                        local n = list[i]
+                        local dx, dy = px - n.wy, py - n.wx
+                        local d2 = dx * dx + dy * dy
+                        if not bestD2 or d2 < bestD2 then
+                            bestD2, bestWX, bestWY = d2, n.wy, n.wx
+                        end
+                    end
+
+                    if bestWX then
+                        corpseWP.x, corpseWP.y, corpseWP.zone, corpseWP.mapID = nil, nil, nil, nil
+                        corpseWP.wx, corpseWP.wy, corpseWP.instance = bestWX, bestWY, inst
+                        corpseWP.title = "Spirit Healer"
+                        ProcessWaypoint(corpseWP)
+                        return
+                    end
+                end
             end
+
             if not isDeathSkip then
                 local zone = HBD:GetPlayerZone()
-                local corpse = (type(zone) == "number") and C_DeathInfo.GetCorpseMapPosition(zone)
+                local corpse = (type(zone) == "number")
+                    and C_DeathInfo.GetCorpseMapPosition(zone)
+
                 if corpse and corpse.x then
                     local wx, wy, inst = HBD:GetWorldCoordinatesFromZone(corpse.x, corpse.y, zone)
                     if wx and inst then
@@ -1075,6 +1094,8 @@ end
         end
     end
 end
+
+
 
 
 
