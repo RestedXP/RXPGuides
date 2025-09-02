@@ -1002,9 +1002,6 @@ local function updateArrowData()
     local loop = {}
     local HBD = LibStub("HereBeDragons-2.0")
 
--- TESTING
---isDeathSkip = true   -- uncomment to test Spirit Healer branch
- isDeathSkip = false  -- uncomment to test Corpse branch
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.hidden then return end
@@ -1043,28 +1040,25 @@ local function updateArrowData()
                 local DB = addon.SpiritHealerWorld or SpiritHealerWorld
                 local list = (px and inst and DB) and DB[inst] or nil
                 if list and #list > 0 then
-                    local bestWX, bestWY, bestD2
-                    for i = 1, #list do
-                        local n = list[i]
-                        -- try as stored
-                        local dx, dy = px - n.wx, py - n.wy
-                        local d2n = dx*dx + dy*dy
-                        -- try swapped
-                        local dxs, dys = px - n.wy, py - n.wx
-                        local d2s = dxs*dxs + dys*dys
-                        local rowWX, rowWY, rowD2
-                        if d2s < d2n then rowWX, rowWY, rowD2 = n.wy, n.wx, d2s
-                        else               rowWX, rowWY, rowD2 = n.wx, n.wy, d2n end
-                        if not bestD2 or rowD2 < bestD2 then bestD2, bestWX, bestWY = rowD2, rowWX, rowWY end
-                    end
-                    if bestWX then
-                        corpseWP.x, corpseWP.y, corpseWP.zone, corpseWP.mapID = nil, nil, nil, nil
-                        corpseWP.wx, corpseWP.wy, corpseWP.instance = bestWX, bestWY, inst
-                        corpseWP.title = "Spirit Healer"
-                        ProcessWaypoint(corpseWP)
-                        return -- STOP: don’t let normal steps override
-                    end
-                end
+    local bestWX, bestWY, bestD2
+    for i = 1, #list do
+        local n = list[i]
+        -- SWAPPED axes: use (wy, wx)
+        local dx, dy = px - n.wy, py - n.wx
+        local d2 = dx*dx + dy*dy
+        if not bestD2 or d2 < bestD2 then
+            bestD2, bestWX, bestWY = d2, n.wy, n.wx
+        end
+    end
+    if bestWX then
+        corpseWP.x, corpseWP.y, corpseWP.zone, corpseWP.mapID = nil, nil, nil, nil
+        corpseWP.wx, corpseWP.wy, corpseWP.instance = bestWX, bestWY, inst
+        corpseWP.title = "Spirit Healer"
+        ProcessWaypoint(corpseWP)
+        return
+    end
+end
+
             end
 
             if not isDeathSkip then
