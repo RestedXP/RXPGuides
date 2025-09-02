@@ -998,8 +998,9 @@ local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
     end
 
 local function updateArrowData()
-    local lowPrioWPs
+    local lowPrioWPs = {}
     local loop = {}
+    local HBD = LibStub("HereBeDragons-2.0")
     local isDeathSkip = IsDeathSkip()
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
@@ -1031,7 +1032,8 @@ local function updateArrowData()
     end
     if UnitIsGhost("player") and isDeathSkip and
     not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
-    local skip
+    print("|cff33ff99[RXP]|r corpse branch running")
+        local skip
     for _, element in pairs(addon.activeWaypoints) do
         skip = skip
             or (element.step and element.step.ignorecorpse)
@@ -1039,7 +1041,6 @@ local function updateArrowData()
     end
     if skip then return end
 
-    local HBD = LibStub("HereBeDragons-2.0")
     local px, py, instance = HBD:GetPlayerWorldPosition("player")
     if px and instance and addon.SpiritHealerWorld then
         local list = addon.SpiritHealerWorld[instance]
@@ -1059,7 +1060,6 @@ local function updateArrowData()
             end
         end
     end
-
     if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
         not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
         local skip
@@ -1073,7 +1073,6 @@ local function updateArrowData()
         end
         if not skip and corpse and corpse.x then
             corpseWP.wx, corpseWP.wy, corpseWP.instance =
-                print("|cff33ff99[RXP]|r healer:", corpseWP.title, "inst", instance)
                              HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
             ProcessWaypoint(corpseWP)
             return
