@@ -1043,7 +1043,6 @@ local function updateArrowData()
     local bestWX, bestWY, bestD2
     for i = 1, #list do
         local n = list[i]
-        -- SWAPPED axes: use (wy, wx)
         local dx, dy = px - n.wy, py - n.wx
         local d2 = dx*dx + dy*dy
         if not bestD2 or d2 < bestD2 then
@@ -1058,9 +1057,7 @@ local function updateArrowData()
         return
     end
 end
-
             end
-
             if not isDeathSkip then
                 local zone = HBD:GetPlayerZone()
                 local corpse = (type(zone) == "number") and C_DeathInfo.GetCorpseMapPosition(zone)
