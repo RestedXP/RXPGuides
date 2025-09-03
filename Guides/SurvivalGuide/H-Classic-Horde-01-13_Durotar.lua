@@ -1012,7 +1012,7 @@ step << Warlock
     .target Nartok
 step << Warlock
     #completewith Leave
-    .train 20397 >> Use the |T133738:0|t[Grimoire of Blood Pact]
+    .train 20397 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Blood Pact]
     .itemcount 16321,1
     .use 16321
 step << Shaman
@@ -1029,7 +1029,7 @@ step << Shaman
 step << Shaman
     #completewith next
     #requires Shrine
-    .cast 8202 >>Use the |T134743:0|t[Earth Sapta]
+    .cast 8202 >>|cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta]
     .use 6635
 step << Shaman
     #label CallOE1
@@ -1199,43 +1199,49 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Rogue
+    #optional
     #completewith Bonfire
-    +Equip the |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman
+    #optional
     #completewith Bonfire
-    +Equip the |T135145:0|t[Walking Stick]
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
+    #optional
     #completewith Bonfire
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
+    #optional
     #completewith Bonfire
-    +Equip the |T132401:0|t[large Axe]
+    +|cRXP_WARN_Equip the|r |T132401:0|t[large Axe]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
+    #optional
     #completewith Bonfire
-    +Equip the |T135421:0|t[Tomahawk]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Tomahawk]
     .use 2490
     .itemcount 2490,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Hunter
+    #optional
     #completewith Bonfire
-    +Equip the |T135499:0|t[Hornwood Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -1404,43 +1410,49 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Rogue
+    #optional
     #completewith TravelToTiragarde
-    +Equip the |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman
+    #optional
     #completewith TravelToTiragarde
-    +Equip the |T135145:0|t[Walking Stick]
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
+    #optional
     #completewith TravelToTiragarde
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
+    #optional
     #completewith TravelToTiragarde
-    +Equip the |T132401:0|t[large Axe]
+    +|cRXP_WARN_Equip the|r |T132401:0|t[large Axe]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
+    #optional
     #completewith TravelToTiragarde
-    +Equip the |T135421:0|t[Tomahawk]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Tomahawk]
     .use 2490
     .itemcount 2490,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Hunter
+    #optional
     #completewith TravelToTiragarde
-    +Equip the |T135499:0|t[Hornwood Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -1508,7 +1520,8 @@ step << Warrior/Rogue
 step
     #label TravelToTiragarde
     .goto Durotar,57.26,54.69,60,0
-    .subzone 372 >> Travel to Tiragarde Keep. Grind mobs on the way
+    .subzone 372 >> Travel to Tiragarde Keep
+    >>|cRXP_WARN_Grind mobs on the way|r
     .isOnQuest 784
 step
     #sticky
@@ -1530,6 +1543,8 @@ step
     .complete 784,2 --Kul Tiras Marine (8)
     .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
+    .mob +Kul Tiras Marine
+    .mob +Kul Tiras Sailor
 step
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -1561,10 +1576,12 @@ step
     .goto Durotar,58.99,58.30,30,0
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
+    .mob +Kul Tiras Marine
+    .mob +Kul Tiras Sailor
     .itemcount 4870,<8 --Canvas Scraps (<8)
 step
     #loop
@@ -1616,7 +1633,7 @@ step << Priest
     .xp 7+1750 >> Grind to 1750+/4500xp
 step
     #completewith next
-    .goto Durotar,52.38,43.77,120 >> Travel to Razor Hill
+    .subzone 362 >>Travel to Razor Hill
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
@@ -1745,36 +1762,41 @@ step << Troll Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Rogue
+    #optional
     #completewith Toolboxes
-    +Equip the |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman
+    #optional
     #completewith Toolboxes
-    +Equip the |T135145:0|t[Walking Stick]
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
+    #optional
     #completewith Toolboxes
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
+    #optional
     #completewith Toolboxes
-    +Equip the |T132401:0|t[large Axe]
+    +|cRXP_WARN_Equip the|r |T132401:0|t[large Axe]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
+    #optional
     #completewith Toolboxes
-    +Equip the |T135421:0|t[Tomahawk]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Tomahawk]
     .use 2490
     .itemcount 2490,1
     .itemStat 16,QUALITY,<7
@@ -1794,8 +1816,9 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
+    #optional
     #completewith Toolboxes
-    +Equip the |T135499:0|t[Hornwood Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,QUALITY,<7
@@ -1822,6 +1845,7 @@ step
     .train 980,1 << Warlock
     .train 8044,1 << Shaman
     .train 284,1 << Warrior
+    .bindlocation 362
 step << !Mage !Hunter !Druid
     #optional
     .goto Durotar,51.51,41.64
@@ -1837,6 +1861,7 @@ step << !Mage !Hunter !Druid
     .train 980,3 << Warlock
     .train 8044,3 << Shaman
     .train 284,3 << Warrior
+    .bindlocation 362
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -1856,7 +1881,7 @@ step << Warlock
     .money <0.01
 step << Warlock
     #completewith Tools
-    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
     .use 16302
 step << Hunter
     .goto Durotar,51.85,43.49
@@ -2074,6 +2099,7 @@ step
 step
     #completewith Zalazaneturnin
     .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
+    .subzoneskip 367
 step
     .goto Durotar,56.48,73.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
@@ -2216,7 +2242,7 @@ step << Warlock
     .target Kitha
     .money <0.01
 step << Warlock
-    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
     .use 16302
 step << Rogue
     .goto Durotar,51.98,43.69
@@ -2370,9 +2396,11 @@ step << Shaman
     .zone The Barrens >> Travel back to The Barrens
     .zoneskip The Barrens
 step << Shaman
+    #loop
+    .goto The Barrens,53.57,25.51,0
     .goto The Barrens,54.97,25.23,50,0
     .goto The Barrens,54.2,24.60,50,0
-    .goto The Barrens,53.57,25.51
+    .goto The Barrens,53.57,25.51,50,0
     >>Kill a |cRXP_ENEMY_Razormane Water Seeker|r or |cRXP_ENEMY_Razormane Thornweaver|r. Loot them for a |cRXP_LOOT_Fire Tar|r
     .complete 1525,1 --Fire Tar (1)
     .mob Razormane Water Seeker
@@ -2408,9 +2436,6 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .target Devrak
-step << Shaman
-    #completewith Gryhskaturnin1
-    .zone Orgrimmar >> Enter Orgrimmar
     .zoneskip Orgrimmar
 step << Shaman
     .goto Orgrimmar,47.54,68.39
@@ -2421,8 +2446,9 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
+    #optional
     #completewith NeedforaCureAccept
-    +Equip the |T135154:0|t[Quarter Staff] when you are level 11
+    +|cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff] |cRXP_WARN_when you are level 11|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -2559,8 +2585,9 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Zendo'jian
 step << Hunter
+    #optional
     #completewith Rezlak
-    +Equip the |T135499:0|t[Laminated Recurve Bow] when you are level 11
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow] |cRXP_WARN_when you are level 11|r
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -2679,11 +2706,13 @@ step
     .isQuestComplete 806
     .use 6948
     .subzoneskip 362
+    .bindlocation 362,1
     .group
 step << Shaman
     .hs >> Hearth to Razor Hill
     .use 6948
     .subzoneskip 362
+    .bindlocation 362,1
     .solo
 step
     .goto Durotar,51.51,41.64
@@ -2715,13 +2744,14 @@ step
     .isQuestComplete 806
     .group
 step
+    #optional
     .goto Durotar,52.24,43.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .accept 828 >>Accept Margoz
     .target Orgnil Soulscar
     .isQuestTurnedIn 806
     .group
-step
+step << !Shaman
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
@@ -2791,8 +2821,9 @@ step << Hunter
     .itemcount 2515,<600 << Hunter
     .group
 step << Hunter
+    #optional
     #completewith MargozTurnIn
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -2817,16 +2848,14 @@ step
 step << Shaman
     #completewith Collars1
     .goto Durotar,53.18,29.15,50 >> Travel toward Dustwind Cave
-    .solo
-step
+step << !Shaman
     #completewith next
     .goto Durotar,56.49,25.04,50,0
     .goto Durotar,56.11,27.94,50,0
     .goto Durotar,53.18,29.15,50 >> Travel toward Dustwind Cave
     .isQuestTurnedIn 806
     .group
-step
-    #label Collars1
+step << !Shaman
     #loop
     .goto Durotar,53.18,29.15,0
     .goto Durotar,53.18,29.15,20,0
@@ -2845,6 +2874,7 @@ step
     .group
 step << Shaman
     #loop
+    .goto Durotar,53.18,29.15,0
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
     .goto Durotar,53.05,27.87,12,0
@@ -2855,10 +2885,11 @@ step << Shaman
     >>Kill |cRXP_ENEMY_Thugs|r and |cRXP_ENEMY_Neophytes|r. Loot them for their |cRXP_LOOT_Collars|r
     >>Kill |cRXP_ENEMY_Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
     .complete 827,1 --Searing Collar (6)
+    .mob +Burning Blade Thug
+    .mob +Burning Blade Neophyte
+    .mob +Burning Blade Cultist
     .complete 1525,2 --Reagent Pouch (1)
-    .mob Burning Blade Thug
-    .mob Burning Blade Neophyte
-    .mob Burning Blade Cultist
+    .mob +Burning Blade Cultist
     .isQuestTurnedIn 806
     .group
 step << Shaman
@@ -2874,6 +2905,9 @@ step << Shaman
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
     .solo
+step
+    #optional
+    #label Collars1
 step << skip --Shaman
     .goto Durotar,53.03,26.82
     .goto Durotar,47.31,17.89,30 >>|cRXP_WARN_Jump onto the rock. Perform a Logout Skip by positioning your character until it looks like they're floating, then logging out and back in|r
@@ -2954,8 +2988,9 @@ step << Rogue
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Rogue
+    #optional
     #completewith ZeptoUC1
-    +Equip the |T135421:0|t[Sharp Throwing Axe] when you are level 11
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Sharp Throwing Axe] |cRXP_WARN_when you are level 11|r
     .use 3135
     .itemcount 3135,1
     .itemStat 18,QUALITY,<7
@@ -3046,8 +3081,9 @@ step << Troll Warrior/Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Troll Warrior/Undead Warrior
+    #optional
     #completewith ZeptoUC1
-    +Equip the |T135154:0|t[Quarter Staff] when you are level 11
+    +|cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff] |cRXP_WARN_when you are level 11|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -3067,8 +3103,9 @@ step << Orc Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Orc Warrior
+    #optional
     #completewith ZeptoUC1
-    +Equip the |T132395:0|t[Tabar]
+    +|cRXP_WARN_Equip the|r |T132395:0|t[Tabar]
     .use 1196
     .itemcount 1196,1
     .itemStat 16,QUALITY,<7
@@ -3082,8 +3119,9 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
+    #optional
     #completewith ZeptoUC1
-    +Equip the |T135154:0|t[Quarter Staff] when you are level 11
+    +|cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff] |cRXP_WARN_when you are level 11|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -3161,7 +3199,7 @@ step << Shaman
 step << Shaman
     #completewith next
     .goto Durotar,38.18,58.58
-    .cast 8898 >>Use the |T134732:0|t[Fire Sapta]
+    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
     .use 6636
 step << Shaman
     .goto Durotar,38.96,58.22
@@ -3257,8 +3295,9 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Uthrok
 step << Hunter
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -3400,6 +3439,8 @@ step << Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
+    .bindlocation 380
+    .subzoneskip 380,1
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -3407,11 +3448,15 @@ step << Hunter
     .target Barg
     .itemcount 2515,<800 << Hunter
 step << Hunter
-    #completewith ZeptoUC1
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
+    .target Devrak
+step << Hunter
+    #completewith ZeptoUC1
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .target Devrak
     .zoneskip Orgrimmar
@@ -3465,8 +3510,9 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
+    #optional
     #completewith ZeptoUC1
-    +Equip the |T135154:0|t[Quarter Staff]
+    +|cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff]
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -3494,8 +3540,9 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step << Hunter
+    #optional
     #completewith ZeptoUC1
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -3537,6 +3584,7 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,63.25,48.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
     .fp Undercity >> Get the Undercity flight path
     .target Michael Garrett
     .money <0.3023
@@ -3577,7 +3625,7 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     #optional
     #completewith KillDevlin
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -3604,6 +3652,7 @@ step << Orc Rogue/Troll Rogue
 step
     #completewith next
     .goto Tirisfal Glades,61.52,53.20,80 >> Travel to Brill
+    .subzoneskip 159
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
@@ -4077,7 +4126,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith KillDevlin
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -4175,7 +4224,7 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto Undercity,86.64,27.10
-    .cast 9221 >>Use the |T134416:0|t[Runes of Summoning] at the Summoning Circle
+    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Runes of Summoning] |cRXP_WARN_at the Summoning Circle|r
     .use 6284
 step << Warlock
     .goto Undercity,86.64,27.10
@@ -4293,9 +4342,12 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Gnolls|r and |cRXP_ENEMY_Mongrels|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
+    .mob +Rot Hide Mongrel
+    .complete 358,1 --Rot Hide Graverobber (8)
+    .mob +Rot Hide Graverobber
     .complete 358,3 --Embalming Ichor (8)
-    .mob Rot Hide Gnoll
-    .mob Rot Hide Mongrel
+    .mob +Rot Hide Mongrel
+    .mob +Rot Hide Graverobber
     .isOnQuest 358
 step
     #optional
@@ -4342,10 +4394,12 @@ step
     .goto Tirisfal Glades,56.43,43.92,40,0
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
+    .mob +Rot Hide Mongrel
     .complete 358,1 --Rot Hide Graverobber (8)
+    .mob +Rot Hide Graverobber
     .complete 358,3 --Embalming Ichor (8)
-    .mob Rot Hide Mongrel
-    .mob Rot Hide Graverobber
+    .mob +Rot Hide Mongrel
+    .mob +Rot Hide Graverobber
     .isOnQuest 358
 step
     #optional
@@ -5169,8 +5223,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
 step << Rogue
+    #optional
     #completewith Entersilverpine
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -5203,8 +5258,9 @@ step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
+    #optional
     #completewith Entersilverpine
-    +Equip the |T135154:0|t[Quarter Staff]
+    +|cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff]
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -5283,8 +5339,9 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
+    #optional
     #completewith Entersilverpine
-    +Equip the |T135139:0|t[Lesser Magic Wand]
+    +|cRXP_WARN_Equip the|r |T135139:0|t[Lesser Magic Wand]
     .use 11287
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
@@ -5301,6 +5358,9 @@ step << Warrior
     #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
     .isOnQuest 1821
+step << Shaman/Hunter
+    #optional
+    .abandon 816 >>Abandon Lost But Not Forgotten
 step
     #label LeaveUndercity3
     .goto Undercity,47.25,39.12,50,0
@@ -5314,6 +5374,7 @@ step
     .goto Tirisfal Glades,51.10,71.53,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Tirisfal Glades
+    .zoneskip Silverpine Forest
 step
     #label Entersilverpine
     .zone Silverpine Forest >> Travel to Silverpine Forest
