@@ -4176,6 +4176,7 @@ step
     .goto Silverpine Forest,49.77,33.05,50,0
     .goto Silverpine Forest,49.64,37.84,100,0
     .goto Silverpine Forest,45.51,41.26,100 >> Travel to The Sepulcher
+    .subzoneskip 228
 step
     #label ProveyourWorth
     .goto Silverpine Forest,44.20,39.73
@@ -4345,6 +4346,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Killian|r
     .vendor >> Vendor trash
     .target Killian Sanatha
+    .isOnQuest 447
 step
     #loop
 	.goto Silverpine Forest,36.33,14.20,0
@@ -4534,6 +4536,7 @@ step
     #completewith next
     #hardcore
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
+    .subzoneskip 228
 step
     #softcore
     #completewith next
@@ -4587,6 +4590,7 @@ step
     .fp Sepulcher >> Get the Sepulcher flight path << !Undead
     .fly Undercity >> Fly to the Undercity << !Undead
     .target Karos Razok
+    .zoneskip Undercity
 step << Undead
     #xprate >1.49
     .goto Silverpine Forest,45.62,42.58
@@ -4595,6 +4599,7 @@ step << Undead
     .accept 6323 >>Accept Ride to the Undercity
     .fly Undercity >> Fly to the Undercity
     .target Karos Razok
+    .zoneskip Undercity
 step << Undead
     #xprate <1.5
     .hs >> Hearth to the Undercity
@@ -5338,7 +5343,7 @@ step << Undead
 step << !Undead
     .hs >> Hearth to Razor Hill
     .use 6948
-    .zoneskip Durotar
+    .subzoneskip 362
     .bindlocation 362,1
 step << Rogue
     #optional << Undead
@@ -9793,7 +9798,7 @@ step << Undead
 step << !Undead
     .hs >> Hearth to Razor Hill
     .use 6948
-    .zoneskip Durotar
+    .subzoneskip 362
     .bindlocation 362,1
 step << Rogue
     #optional << Undead

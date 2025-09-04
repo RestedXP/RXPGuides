@@ -1432,12 +1432,15 @@ step
     .goto Durotar,58.99,58.30,30,0
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
+    .mob +Kul Tiras Marine
+    .mob +Kul Tiras Sailor
     .itemcount 4870,<8 --Canvas Scraps (<8)
 step
+    #optional
     #loop
     .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
@@ -1453,6 +1456,7 @@ step
     .complete 784,2 --Kul Tiras Marine (8)
     .mob +Kul Tiras Marine
 step
+    #optional
     #label ScrapsFinished
     #loop
     .goto Durotar,58.99,58.30,0
@@ -1681,7 +1685,7 @@ step << Warlock
     .money <0.01
 step << Warlock
     #completewith Tools
-    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
     .use 16302
 step << Rogue
     .goto Durotar,51.98,43.69
@@ -1874,10 +1878,11 @@ step
     .goto Durotar,53.8,83.14,60,0
     >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #completewith Zalazaneturnin
     .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
@@ -1887,6 +1892,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
     .vendor >> Vendor trash and repair. You can talk to him from outside the hut
     .target Trayexir
+    .isQuestAvailable 837
 step << Mage
     .goto Durotar,56.3,75.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
@@ -1962,7 +1968,7 @@ step << Warlock
     .target Kitha
     .money <0.01
 step << Warlock
-    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
     .use 16302
 step << Rogue
     .goto Durotar,51.98,43.69
@@ -2393,7 +2399,7 @@ step
     #label ZeptoUC1
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
-    >>Conjure water while waiting << Mage
+    >>|cRXP_WARN_Conjure water while waiting|r << Mage
     .zoneskip Tirisfal Glades
 step
     #completewith next
@@ -2671,7 +2677,7 @@ step << Warlock
     .target Carendin Halgar
 step << Warlock
     #completewith next
-    .cast 9221 >>Use the |T134416:0|t[Runes of Summoning] at the Summoning Circle
+    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Runes of Summoning] |cRXP_WARN_at the Summoning Circle|r
     .use 6284
 step << Warlock
     .goto Undercity,86.64,27.10
@@ -2766,16 +2772,17 @@ step
     .goto Tirisfal Glades,54.78,32.75,15,0
     .goto Tirisfal Glades,55.84,32.28,15,0
     .goto Tirisfal Glades,56.55,32.43,40,0
-    .goto Tirisfal Glades,57.77,31.69,50 >> Travel down the hills.
+    .goto Tirisfal Glades,57.77,31.69,50 >> Travel down the hills
     >>|cRXP_WARN_Be careful. Don't take too much fall damage. Follow the waypoint for safety|r
 step
     #requires MillsOverun
     #completewith next
     >>Kill |cRXP_ENEMY_Gnolls|r and |cRXP_ENEMY_Mongrels|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
+    .mob +Rot Hide Mongrel
     .complete 358,3 --Embalming Ichor (8)
-    .mob Rot Hide Gnoll
-    .mob Rot Hide Mongrel
+    .mob +Rot Hide Gnoll
+    .mob +Rot Hide Mongrel
     .isOnQuest 358
     .maxlevel 11
 step
@@ -2811,10 +2818,12 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
+    .mob +Rot Hide Mongrel
     .complete 358,1 --Rot Hide Graverobber (8)
+    .mob +Rot Hide Graverobber
     .complete 358,3 --Embalming Ichor (8)
-    .mob Rot Hide Mongrel
-    .mob Rot Hide Graverobber
+    .mob +Rot Hide Mongrel
+    .mob +Rot Hide Graverobber
     .isOnQuest 358
     .maxlevel 11
 step
@@ -2849,10 +2858,12 @@ step
     .goto Tirisfal Glades,56.43,43.92,40,0
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
+    .mob +Rot Hide Mongrel
     .complete 358,1 --Rot Hide Graverobber (8)
+    .mob +Rot Hide Graverobber
     .complete 358,3 --Embalming Ichor (8)
-    .mob Rot Hide Mongrel
-    .mob Rot Hide Graverobber
+    .mob +Rot Hide Mongrel
+    .mob +Rot Hide Graverobber
     .isOnQuest 358
     .maxlevel 11
 step
@@ -3535,7 +3546,6 @@ step << Warlock
 step << Mage
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
-    .zoneskip Undercity
     .zoneskip Undercity
 step << Mage
     #completewith next

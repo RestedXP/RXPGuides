@@ -1565,6 +1565,7 @@ step
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
 step
+    #optional
     #loop
     .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
@@ -2105,6 +2106,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
     .vendor >> Vendor trash and repair. You can talk to him from outside the hut
     .target Trayexir
+    .isQuestAvailable 837
 step << Mage
     .goto Durotar,56.3,75.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
@@ -3562,7 +3564,7 @@ step
     #label ZeptoUC1
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
-    >>Conjure water while waiting << Mage
+    >>|cRXP_WARN_Conjure water while waiting|r << Mage
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
     #optional

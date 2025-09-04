@@ -2217,6 +2217,7 @@ step
     .mob +Kul Tiras Sailor
     .itemcount 4870,<8 --Canvas Scraps (<8)
 step
+    #optional
     #loop
     .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
@@ -2232,6 +2233,7 @@ step
     .complete 784,2 --Kul Tiras Marine (8)
     .mob +Kul Tiras Marine
 step
+    #optional
     #label ScrapsFinished
     #loop
     .goto Durotar,58.99,58.30,0
@@ -5170,7 +5172,7 @@ step << Rogue/Mage/Priest/Warlock
     #label ZeptoUC1
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
-    >>Conjure water while waiting << Mage
+    >>|cRXP_WARN_Conjure water while waiting|r << Mage
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -5877,7 +5879,7 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto Undercity,86.64,27.10
-    .cast 9221 >>Use the |T134416:0|t[Runes of Summoning] at the Summoning Circle
+    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Runes of Summoning] |cRXP_WARN_at the Summoning Circle|r
     .use 6284
 step << Warlock
     .goto Undercity,86.64,27.10
@@ -9085,6 +9087,7 @@ step
     .itemcount 4870,<8 --Canvas Scraps (<8)
     .maxlevel 11
 step
+    #optional
     #loop
     .goto Durotar,58.99,58.30,0
     .goto Durotar,57.65,58.52,30,0
@@ -10206,7 +10209,7 @@ step << Warlock
     .isQuestTurnedIn 5726
 step << Warlock
     #completewith next
-    .cast 9221 >>Use the |T134416:0|t[Glyphs of Summoning] at the Summoning Circle
+    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Glyphs of Summoning] |cRXP_WARN_at the Summoning Circle|r
     .use 6284
 step << Warlock
     .goto Orgrimmar,49.45,50.02
