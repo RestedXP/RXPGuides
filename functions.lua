@@ -148,7 +148,7 @@ events.isOnQuest = events.complete
 events.isQuestTurnedIn = events.complete
 events.isQuestAvailable = events.isQuestTurnedIn
 ]]
-events.cast = events.hs
+events.cast = {"UNIT_SPELLCAST_SUCCEEDED","UNIT_SPELLCAST_FAILED_QUIET"}
 events.blastedLands = events.collect
 events.daily = events.accept
 events.dailyturnin = events.turnin
@@ -1468,27 +1468,31 @@ function addon.UpdateQuestCompletionData(self)
         else
             element.requestFromServer = true
         end
-
         if obj.type == "item" then
             icon = addon.icons.collect
         elseif obj.type == "monster" and (t:find(questMonster) or obj.questie) then
             icon = addon.icons.combat
         end
+        if element.rawtext then
+            t = fmt(element.rawtext, obj.numFulfilled,
+                                            obj.numRequired)
+        else
 
-        if not obj.questie then
-            if obj.type == "event" then
-                if isQuestComplete then
-                    t = fmt(t .. ": %d/%d", obj.numRequired,
-                                        obj.numRequired)
-                else
-                    t = fmt(t .. ": %d/%d", obj.numFulfilled,
-                                        obj.numRequired)
+            if not obj.questie then
+                if obj.type == "event" then
+                    if isQuestComplete then
+                        t = fmt(t .. ": %d/%d", obj.numRequired,
+                                            obj.numRequired)
+                    else
+                        t = fmt(t .. ": %d/%d", obj.numFulfilled,
+                                            obj.numRequired)
+                    end
+                elseif isQuestComplete then
+                    t = t:gsub(": %d+/(%d+)", ": %1/%1")
                 end
-            elseif isQuestComplete then
-                t = t:gsub(": %d+/(%d+)", ": %1/%1")
             end
-        end
 
+        end
         completed = obj.finished or
                         (element.objMax and obj.numFulfilled >=
                             obj.numRequired)
@@ -1637,7 +1641,8 @@ function addon.functions.complete(self, ...)
         id = id and GetQuestId(id)
         local element = {questId = id, dynamicText = true, obj = obj,
                          objMax = objMax, requestFromServer = true,
-                         text = " ", flags = flags, textOnly = (flags % 2) == 1
+                         text = " ", flags = flags, textOnly = (flags % 2) == 1,
+                         rawtext = text
                         }
         if id and id < 0 then
             id = math.abs(id)
@@ -4313,6 +4318,11 @@ function addon.functions.cast(self, text, ...)
         local element = {unit = "player"}
         local ids = {...}
         for i,v in ipairs(ids) do
+            if v[1] == "+" then
+                v = v:sub(2,-1)
+                element.failcheck = element.failcheck or {}
+                element.failcheck[i] = true
+            end
             local newValue = tonumber(v)
             if i == 1 and not newValue then
                 element.unit = v
@@ -4341,9 +4351,10 @@ function addon.functions.cast(self, text, ...)
     local event = text
     local unit, _, id = ...
     local element = self.element
-    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == element.unit then
-        for _,spellId in pairs(element.ids) do
-            if id == spellId then
+    local failed = element.failcheck and event == "UNIT_SPELLCAST_FAILED_QUIET"
+    if (event == "UNIT_SPELLCAST_SUCCEEDED" or failed) and unit == element.unit then
+        for i,spellId in pairs(element.ids) do
+            if id == spellId and (not failed or element.failcheck[i]) then
                 local icon = GetSpellTexture(id)
                 if not element.icon and not element.textOnly and icon then
                     element.icon = "|T" .. icon .. ":0|t"
@@ -6250,7 +6261,12 @@ function addon.functions.collectmount(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id = ...
+        local text, id, args = ...
+        args = tonumber(args) or 0
+        element.args = args
+        if args % 2 == 1 then
+            element.textOnly = true
+        end
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -6270,15 +6286,24 @@ function addon.functions.collectmount(self, ...)
     local element = self.element
     local name, _, _, _, _, _, _, _, _, _, isCollected = C_MountJournal.GetMountInfoByID(element.id)
     element.itemName = name
-    if element.rawtext then
-        element.tooltipText = element.rawtext
-        element.text = fmt("%s\n%s", element.rawtext, element.itemName)
-    else
-        element.text = fmt("%s", element.itemName)
-        element.tooltipText = element.text
+    if not element.textOnly then
+        local current = isCollected and "1" or "0"
+        if element.rawtext then
+            element.tooltipText = element.rawtext
+            element.text = fmt("%s\n%s/1 %s", element.rawtext, current, element.itemName)
+        else
+            element.text = fmt("%s/1 %s", current, element.itemName)
+            element.tooltipText = element.text
+        end
     end
+
+    if not element.step.active then return end
+
     if isCollected then
         addon.SetElementComplete(self)
+    elseif not element.textOnly then
+        element.step.completed = true
+        addon.updateSteps = true
     end
 end
 
@@ -6286,7 +6311,12 @@ function addon.functions.collecttoy(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id = ...
+        local text, id, args = ...
+        args = tonumber(args) or 0
+        element.args = args
+        if args % 2 == 1 then
+            element.textOnly = true
+        end
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -6309,15 +6339,24 @@ function addon.functions.collecttoy(self, ...)
     local isCollected = PlayerHasToy(element.id) and C_ToyBox.IsToyUsable(element.id)
 
     element.itemName = toyName
-    if element.rawtext then
-        element.tooltipText = element.rawtext
-        element.text = fmt("%s\n%s", element.rawtext, element.itemName)
-    else
-        element.text = fmt("%s", element.itemName)
-        element.tooltipText = element.text
+    if not element.textOnly then
+        local current = isCollected and "1" or "0"
+        if element.rawtext then
+            element.tooltipText = element.rawtext
+            element.text = fmt("%s\n%s/1 %s", element.rawtext, current, element.itemName)
+        else
+            element.text = fmt("%s/1 %s", current, element.itemName)
+            element.tooltipText = element.text
+        end
     end
+
+    if not element.step.active then return end
+
     if isCollected then
         addon.SetElementComplete(self)
+    elseif not element.textOnly then
+        element.step.completed = true
+        addon.updateSteps = true
     end
 end
 
@@ -7484,4 +7523,32 @@ function addon.functions.acceptmap(self,text,id)
     end
 end
 
-
+function addon.functions.totalbagslots(self,text,arg1)
+    if type(self) == "string" then
+        local operator, maxslots
+        if arg1 then
+            operator, maxslots = arg1:match("(<?)%s*(%d+)")
+            maxslots = tonumber(maxslots)
+        end
+        if not maxslots then
+            addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                            ": Invalid argument\n" .. self)
+            return
+        end
+        local element = {maxslots = maxslots, text = text}
+        element.operator = operator == "<"
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    if not step.active then return end
+    local total = 0
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+        local n = GetContainerNumSlots(bag) or 0
+        total = total + n
+    end
+    if total < element.maxslots == element.operator then
+        step.completed = true
+        addon.updateSteps = true
+    end
+end
