@@ -5,33 +5,31 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Speed Leveling
+#group RestedXP Legion Remix
 #name a) Intro
-#next 
 #displayname |cFF00CCFF0|r - Intro|r.
 #subgroup |cFFFCDC00(1-80)|r Legion Remix
 #internal
 
+step
+    #sticky
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .openitem 237812
+    .openitem 243373
+step 
+    .goto 627,72.46,45.90
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
+    .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
+    .target Moratari
+step
+    .achievement 42313,1
+    .skipto guide,RestedXP Legion Remix\ab) Intro Skip
 -- step
---     #completewith
---     #hidewindow
---     +1
---     .use 245925
--- step
---     #hidewindow
---     #completewith next
 --     .achievement 42313,1
---     .skipto step,SkiptoSkyride
--- step
---     #hidewindow
---     #completewith next
---     .achievement 42313,1
---     .skipto guide,RestedXP Speed Leveling\ab) Intro Skip
--- step 
---     .goto 627,72.46,45.90
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
---     .target Moratari
+--     .skipto step,SkipIntro
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -63,13 +61,13 @@ step
 step
     #completewith Legion demons purged
     .goto 627,63.56,45.69,10,0
-    .goto 627,59.85,46.83,10 >>Enter Dalaran City
+    .goto 627,59.85,46.83,10,0
+    .goto 627,51,58.6,40 >>Enter Dalaran City
 step
     #requires Legion demons purged
     #loop
-    .goto 627,49.94,63.06,40,0
-    .goto 627,38.87,52.98,40,0
-    .goto 627,34.41,55.6,40,0
+    .goto 627,44.65,59.12,20,0
+    .goto 627,34.24,55.91,20,0
     >>Kill |cRXP_ENEMY_Demons|r
     .complete 89405,1 --Legion demons purged (100%)
     .mob Felguard Invader
@@ -77,10 +75,9 @@ step
     .mob Felstalker Broodling
     .mob Imp Scout
     .mob Felfire Imp
-    --they respawn a lot here so best strat for launch
 step
     .goto 627,49.29,47.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r at the center of dalaran.
     .turnin 89405 >>Turn in Mean Streets of Dalaran
     .target Archmage Khadgar
     .accept 89406 >>Accept Seal and Protect
@@ -91,24 +88,25 @@ step
     .complete 89406,2,1 --5/5 Magical barriers reinforced
 step
     #completewith Magical barriers
-    .goto 627,41.55,39.57,40 >>Leave Buildung
+    .goto 627,45.33,43.21,10 >>Leave Buildung
 step
     #requires Magical barriers
-    .goto 627,42.41,38.31
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_from very far away|r.
+    .goto 627,41.39,39.5,8,0
+    .goto 627,41.98,37.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_to your right from a far|r.
     .complete 89406,2,1 --5/5 Magical barriers reinforced
 step
     .goto 627,37.69,34.76
     >>Stand on the Arrow Location and click on the |cRXP_PICK_Magical barrier|r infront of you.
     *|cRXP_WARN_Make sure to do this to receive credit for all three doors at once.|r
-    .complete 89406,2,4 --5/5 Magical barriers reinforced
+    .complete 89406,2,4 --5/5 Magical barriers rein}forced
 step
-    -- .goto 627,40.76,29.66
-    .goto 627,40.84,30.98
-    -- >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_from very far away|r.
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r
+    .goto 627,40.62,30.13,8,0
+    .goto 627,41.24,31.57
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magical barrier|r |cRXP_WARN_to your right from a far|r.
     .complete 89406,2,5 --5/5 Magical barriers reinforced
 step
+    .goto 627,42.26,27.69,2,0
     .goto 627,42.81,27.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .complete 89406,3 --1/1 Talk to Momentus
@@ -175,7 +173,7 @@ step
     .complete 89408,1,7 --12/12 Frayed Temporal Threads collected
 step
     .goto 627,38.36,40.37
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Curio Lockbox|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Curio Lockbox|r |cRXP_WARN_to your right|r.
     .complete 89407,3 --1/1 Curious Curio
 step
     #completewith next
@@ -238,6 +236,7 @@ step
     .goto 627,42.83,27.66,20 >>1
 step
     #requires Turn in Thrift2
+    .goto 627,42.81,28.45,2,0
     .goto 627,42.83,27.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r 
     .turnin 89407 >>Turn in Thrift
@@ -251,7 +250,7 @@ step
     .complete 89409,1 --Arrived at Tanks for Everything
 step
     #completewith Arrived at Tanks for Everything
-    .goto 627,43.84,30.11,10 >>Enter the Building
+    .goto 627,43.92,29.96,10 >>Enter the Building
 step
     #requires Arrived at Tanks for Everything
     #completewith next
@@ -261,7 +260,7 @@ step
 step
     #completewith Temporal fibers0
     #requires Arrived at Tanks for Everything
-    .goto 627,44.52,29.61
+    .goto 627,45.14,29.31
     #title |cFFFCDC00Follow the Arrow|r
     .complete 89409,1 --Arrived at Tanks for Everything
 step
@@ -273,8 +272,8 @@ step
 step
     #requires Temporal fibers0
     #completewith Temporal fibers
-    .goto 627,44.98,29.4
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge|r
+    .goto 627,45.14,29.31
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Forge|r on the wall.
     .complete 89409,2 --1/1 Anchor materials prepared
 step
     #requires Temporal fibers
@@ -285,7 +284,7 @@ step
 step
     #requires Temporal fibers
     #completewith Temporal fibers separated
-    .goto 627,44.98,29.4
+    .goto 627,45.14,29.31
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Temporal fibers|r on the anvil.
     .complete 89409,3 --1/1 Temporal fibers separated
 step
@@ -297,8 +296,8 @@ step
 step
     #requires Temporal fibers separated
     #completewith Infinite Bronze forged
-    .goto 627,44.58,29.49
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table infront of you|r.
+    .goto 627,45.14,29.31
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bars|r |cRXP_WARN_on the table infront of you from a far|r.
     .complete 89409,4 --1/1 Anchoring materials infused
 step
     #requires Infinite Bronze forged
@@ -322,157 +321,102 @@ step
     .accept 90659 >>Accept Something Borrowed
     .target Momentus
 step
+    .goto 627,42.88,28.69,2,0
     .goto 627,42.81,27.73
     #title |cFFFF0000STOP|r
     *|cRXP_WARN_MAKE SURE YOU HAVE YOUR DESIRED SPEC SELECTED BEFORE PROCEEDING|r.
+    *|cRXP_WARN_THIS UNLOCKS YOUR FIRST ARTIFACT WEAPON|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .complete 90659,1 --1/1 Speak to Momentus after choosing a talent specialization
+    .complete 90659,2 --1/1 Speak to Momentus after choosing a talent specialization
     .target Momentus
     .skipgossipid 133562
 step
     .goto 627,42.78,28.15
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Temporal Knot|r
-    .complete 90659,2 --1/1 Artifact Swapped
+    .complete 90659,3 --1/1 Artifact Swapped
+    .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
     .target Momentus
--- step << DemonHunter
---     .spec 1
---     .goto 627,42.81,27.69
---     .equip 16,242556 >> Equip |T135975:0|t[Twinblades of the deceiver]
--- step << Monk
---     .goto 627,42.81,27.69
---     .equip 242597
--- step << DemonHunter
---     .spec 2
---     .goto 627,42.81,27.69
---     .equip 16,242556 >> Equip |T135975:0|t[Twinblades of the deceiver] 2
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
--- step << DemonHunter
---     .goto 627,42.81,27.69
---     .equip 242556
 step
-    .goto 627,42.81,27.69
-    >>|cRXP_WARN_Open your Character Panel, Shift + Right-Click your Artifact Weapon, learn the skill, apply changes, and place the skill on your action bars.|r
-    -- .link /run if RemixArtifactFrame then if RemixArtifactFrame:IsShown() then RemixArtifactFrame:Hide() else RemixArtifactFrame:Show() end end >> CLICK HERE TO COPY & PASTE MACRO
-    .complete 90659,3 --Purchase the Remix Time trait in your Artifact Weapon
-    .use 242557
+    .goto 627,42.24,28.31
+    >>|cRXP_WARN_In the "Active Items" section|r:
+    *There is a macro, use the macro, learn the skill, apply changes, and place the skill on your action bars.
+    .complete 90659,4 --Purchase the Remix Time trait in your Artifact Weapon
+    .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
 step
-    .goto 627,42.81,27.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .goto 627,42.46,28.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 90659 >>Turn in Something Borrowed
     .accept 89412 >>Accept Get Plenty of Exorcise
     .accept 90901 >>Accept As A Matter of Artifact
-    .target Momentus
-step
-    .goto 627,42.40,27.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erus|r
     .accept 89411 >>Accept Scavenger Hunting
+    .target Momentus
     .target Erus
 step
-    #hidewindow
-    #completewith Scavenger Hunting
-    #label Legion Armor Scraps
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
-    .turnin 89411 >>Turn in Scavenger Hunting
-step
-    #completewith Legion Armor Scraps
+    #completewith Infinite Power
     >>Kill |cRXP_ENEMY_Demons|r. Loot them for |T134515:0|t[|cRXP_LOOT_Legion Armor Scraps|r] and |T1411837:0|t[|cRXP_LOOT_Infinite Power|r].
     .complete 89411,1 --1/1 Legion Armor Scraps
     .complete 90901,1 --250/250 Infinite Power gathered
     .mob Felstalker
-    .mob Felguard Invader
+    .mob Felguard Invader 
 step
-    #label Scavenger Hunting
-    #completewith Legion Armor Scraps
+    #completewith next
+    #label Legion Portal Sealed
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 89412,1,1 --2/2 Legion Portal Sealed
+    .target Legion Portal
+step
+    #completewith Legion Portal Sealed
     .goto 627,46.47,38.67,10,0
     .goto 627,50.89,40.49,8,0
     .goto 627,50.18,41.85,8,0
     .goto 627,48.33,40.01,8,0
-    .goto 627,48.06,37.29,6 >>Enter Building and go upstairs 1
+    .goto 627,48.06,37.29,6 >>Enter Building and go upstairs
 step
-    #requires Legion Armor Scraps
+    #requires Legion Portal Sealed
     .goto 627,48.06,37.29
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 89412,1,1 --2/2 Legion Portal Sealed
     .target Legion Portal
 step
-    #hidewindow
-    #completewith Scavenger Hunting2
-    #label Legion Armor Scraps2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
-    .turnin 89411 >>Turn in Scavenger Hunting
+    #completewith next
+    #label Legion Portal Sealed2
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 89412,1,2 --2/2 Legion Portal Sealed
+    .target Legion Portal
 step
-    #completewith Legion Armor Scraps2
-    >>Kill |cRXP_ENEMY_Demons|r. Loot them for |T134515:0|t[|cRXP_LOOT_Legion Armor Scraps|r] and |T1411837:0|t[|cRXP_LOOT_Infinite Power|r].
-    .complete 89411,1 --1/1 Legion Armor Scraps
-    .complete 90901,1 --250/250 Infinite Power gathered
-    .mob Felstalker
-    .mob Felguard Invader
-step
-    #label Scavenger Hunting2
-    #completewith Legion Armor Scraps2
+    #completewith Legion Portal Sealed2
     .goto 627,49.41,37.4,10,0
     .goto 627,58.07,46.32,20,0
     .goto 627,56.98,46.74,8,0
-    .goto 627,53.1,47.46,25 >>Jump down and Enter the building
+    .goto 627,56.86,46.8,5 >>Jump down and Enter the building
 step
-    #requires Legion Armor Scraps2
+    #requires Legion Portal Sealed2
     #completewith next
-    >>Kill |cRXP_ENEMY_Demons|r. Loot them for |T134515:0|t[|cRXP_LOOT_Legion Armor Scraps|r] and |T1411837:0|t[|cRXP_LOOT_Infinite Power|r].
-    .complete 89411,1 --1/1 Legion Armor Scraps
-    .complete 90901,1 --250/250 Infinite Power gathered
-    .mob Felstalker
-    .mob Felguard Invader
+    #label Infinite Power
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 89412,1,2 --2/2 Legion Portal Sealed
+    .target Legion Portal
 step
-    #requires Legion Armor Scraps2
+    #requires Legion Portal Sealed2
+    #completewith Infinite Power
+    .goto 627,54.74,47.14,2 >>Portal Click Range 
+step
+    #requires Infinite Power
     .goto 627,53.1,47.46
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 89412,1,2 --2/2 Legion Portal Sealed
     .target Legion Portal
 step
+    #completewith next
     #hidewindow
-    #completewith Scavenger Hunting3
-    #label Legion Armor Scraps3
+    #label Scavenger Hunting
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 89411 >>Turn in Scavenger Hunting
 step
-    #completewith Legion Armor Scraps3
-    >>Kill |cRXP_ENEMY_Demons|r. Loot them for |T134515:0|t[|cRXP_LOOT_Legion Armor Scraps|r] and |T1411837:0|t[|cRXP_LOOT_Infinite Power|r].
-    .complete 89411,1 --1/1 Legion Armor Scraps
-    .complete 90901,1 --250/250 Infinite Power gathered
-    .mob Felstalker
-    .mob Felguard Invader
-step
-    #label Scavenger Hunting3
-    #completewith Legion Armor Scraps3
+    #completewith Scavenger Hunting
     .goto 627,57.66,46.35,10 >>Leave the Building
 step
-    #requires Legion Armor Scraps3
+    #requires Scavenger Hunting
     #loop
     .goto 627,49.49,32.77,30,0
     .goto 627,51.11,23.6,30,0
@@ -485,10 +429,11 @@ step
     .mob Felguard Invader
 step
     .goto 627,42.79,27.78
-    >>Open up Character Panel shift right click artifact weapon learn skill hit apply changes put skill on bars
+    >>|cRXP_WARN_Use the macro, learn the skills, apply changes, and place the skill on your action bars.|r
     .complete 90901,2 --250/250 Infinite Power gathered
+    .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erus|r
     .turnin 89411 >>Turn in Scavenger Hunting
     .accept 89413 >>Accept Obliterate, Then Iterate
     .goto 627,42.34,27.40
@@ -502,12 +447,12 @@ step
     #completewith Legion Armor Scraps
     .goto 627,42.33,27.22
     .cast 1232807 >>Use [Unraveling Sands]
-    *|cRXP_WARN_You can move the Ability to your Actionbars.|r
-    .usespell 1232807
+    *|cRXP_WARN_A button appeared in your UI. You can drag the ability to your action bars if you wish.|r
+    -- .usespell 1232807 doesn't work 
 step
     #requires Legion Armor Scraps
     .goto 627,42.33,27.22
-    >>|cRXP_WARN_You have summoned an |cRXP_PICK_Unraveling Sand|r|r (maybe inside |cRXP_FRIENDLY_Erus|r). Click on it and click on the Scrap button.
+    >>|cRXP_WARN_You have summoned the |cRXP_PICK_Unraveling Sand|r|r (maybe inside |cRXP_FRIENDLY_Erus|r). Click it and click on the Scrap button.
     .complete 89413,2 --1/1 Scrap Legion Armor Scraps
     .scrap 251901
 step
@@ -516,7 +461,7 @@ step
     .turnin 89413 >>Turn in Obliterate, Then Iterate
     .target Erus
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 89412 >>Turn in Get Plenty of Exorcise
     .turnin 90901 >>Turn in As A Matter of Artifact
     .goto 627,42.73,27.78
@@ -539,7 +484,7 @@ step
     .goto 627,45.82,43.5,10 >>Enter the Building
 step
     #requires Not A Memento Too Soon
-    .goto 627,49.26,47.59
+    .goto 627,49,47.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
     .turnin 89414 >>Turn in Not A Memento Too Soon
     .target Archmage Khadgar
@@ -579,10 +524,10 @@ step
     .target Archmage Khadgar
 step
     #completewith Storm the Citadel
-    .goto 627,46.28,53.18,10 >>Leave the Building
+    .goto 627,46.28,53.18,10 >>Enter the Building
 step
     #requires Storm the Citadel
-    .goto 627,49.24,47.65
+    .goto 627,49.54,48.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
     .turnin 89415 >>Turn in Storm the Citadel
     .target Archmage Khadgar
@@ -595,36 +540,50 @@ step
     .goto 627,51.01,47.31
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 89416,1 --1/1 Portal used
--- step
---     #completewith next
---     #label Eternal Gratitude
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
---     .turnin 89416 >>Turn in Eternal Gratitude
---     .target Eternus
---     .accept 89417 >>Accept Infinite Meetings
---     .disablecheckbox
--- step
---     #completewith Eternal Gratitude
---     .goto 619,45.66,67.89,15 >>Go out of the |cRXP_WARN_NO MOUNT ZONE|r
 step
-    -- #requires Eternal Gratitude
-    .goto 619,45.67,68.37
-    --.goto 619,45.69,68.51
+    #completewith next
+    #label Eternal Gratitude
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
     .turnin 89416 >>Turn in Eternal Gratitude
     .target Eternus
     .accept 89417 >>Accept Infinite Meetings
 step
-    --you can skyride now
-    .goto 619,45.8,68.29
-    --.goto 619,45.80,68.31
+    #title |cFFFCDC00Mount UP|r
+    #completewith Eternal Gratitude
+    .goto 619,45.65,67.63,2 >>Mount up now, as you are about to enter a no-mount zone.
+step
+    #requires Eternal Gratitude
+    #completewith next
+    #label Infinite Meetings
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 89416 >>Turn in Eternal Gratitude
+    .target Eternus
+    .accept 89417 >>Accept Infinite Meetings
+    .disablecheckbox
+step
+    #requires Eternal Gratitude
+    #completewith Infinite Meetings
+    .goto 619,45.69,68.36,3 >>Dragon Click/Interact Range
+step
+    #requires Infinite Meetings
+    .goto 619,45.7,68.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 89416 >>Turn in Eternal Gratitude
+    .target Eternus
+    .accept 89417 >>Accept Infinite Meetings
+step
+    #completewith skyride
+    +|cRXP_WARN_You can skyride now|r.
+step
+    .goto 619,45.79,68.29,5,0
+    .goto 619,45.82,68.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary XVII|r
     .complete 89417,4 --1/1 Meet Hemet
     .target Hemet Nesingwary XVII
     .skipgossipid 135505
 step
-    .goto 619,45.81,68.17
-    --.goto 619,45.84,68.18
+    .goto 619,45.81,68.17,5,0
+    .goto 619,45.84,68.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horos|r
     .complete 89417,3 --1/1 Meet Horos
     .skipgossipid 135504
@@ -632,73 +591,51 @@ step
 step
     .goto 619,45.83,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    --.accept 91955 >>Accept Just Between Us
     .complete 89417,2 --1/1 Meet Momentus, again
     .skipgossipid 133280
     .target Momentus
--- step
---     #completewith next
---     #label Meet Nostwin
---     
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
---     .complete 89417,1 --1/1 Meet Nostwin
---     .skipgossipid 133270
--- step
---     #completewith Meet Nostwin
--- .goto 619,45.96,67.89
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
---     .home >>Set your Hearthstone to Dalaran
--- step
---     #requires Meet Nostwin
---     .goto 619,45.96,67.89
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
---     .complete 89417,1 --1/1 Meet Nostwin
---     .skipgossipid 133270
 step
     .goto 619,45.96,67.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .complete 89417,1 --1/1 Meet Nostwin
     .skipgossipid 133270
 step
-    .goto 619,45.49,67.83
+    .goto 619,45.53,67.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r
     .complete 89417,6 --1/1 Meet Pythagorus
     .skipgossipid 135503
     .target Pythagorus
 step
-    .goto 619,45.48,68.40
+    #label skyride
+    .goto 619,45.48,68.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah Treebender|r
     .complete 89417,5 --1/1 Meet Larah
     .skipgossipid 135502
     .target Larah Treebender
 --skipto here    
 step
-    .goto 619,45.57,68.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .goto 619,45.6,68.43,5,0
+    .goto 619,45.69,68.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r |cRXP_WARN_from a far|r.
     .turnin 89417 >>Turn in Infinite Meetings
-    .target Eternus
-step
-    .goto 619,45.57,68.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .target Eternus
     .accept 89418 >>Accept A Fixed Point in Time
-
-----SKIP: DECIDE IF IT MAKES SENSE
+    .target Eternus
 step
     #completewith next 
+    #hidewindow
     #label Krasus' Landing
-    .link /leavevehicle >>|cRXP_WARN_CLICK HERE & COPY MACRO|r before talking to her.
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
 step
     #completewith Krasus' Landing
     .goto 619,45.64,67.7
-    .gossipoption 133297 >>Talk to |cRXP_FRIENDLY_Moratari|r
-    *|cRXP_WARN_WHEN ON DRAGON; PASTE MACRO|r
-    .timer 70,RP
+    .gossipoption 133297 >>|cRXP_WARN_In the "Active Items" section|r There is a macro, spam it after talking to |cRXP_FRIENDLY_Moratari|r.
+    .timer 68,RP
     .target Moratari
+    .macro Leave Vehicle,6656430 >> /leavevehicle
 step
     #requires Krasus' Landing
     #label Meet Nostwin2
+    #hidewindow
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .accept 91955 >>Accept Just Between Us
@@ -706,28 +643,44 @@ step
 step
     #requires Krasus' Landing
     #completewith Meet Nostwin2
-    *|cRXP_WARN_WHEN ON DRAGON; PASTE MACRO|r
     .goto 619,45.96,67.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .home >>Set your Hearthstone to Dalaran
+    .macro Leave Vehicle,6656430 >> /leavevehicle
 step
     #requires Meet Nostwin2
+    .isOnQuest 92855
+    .goto 619,45.86,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
+    .turnin 92855 >>Turn in Make Haste, Not Waste
+    .target Lidamorrutu
+step    
+    #requires Meet Nostwin2
     .goto 619,45.83,68.00
-    *|cRXP_WARN_WHEN ON DRAGON; PASTE MACRO|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .accept 91955 >>Accept Just Between Us
     .target Momentus
 step
     #completewith next
-    #label Portal
-    >>|cRXP_WARN_Wait for the Roleplay|r.
-    .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
+    #label A Fixed
+    .isOnQuest 89418
+    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
-    #completewith Portal
+    #completewith A Fixed
+    .isOnQuest 89418
+    .goto 619,45.72,67.52,8 >>Portal Click Range
+step
+    #requires A Fixed
+    .isOnQuest 89418
     .goto 619,45.71,67.45
     .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
-    #requires Portal
+    .isOnQuest 89418
+    .goto 627,71.94,41.44
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
+step
     .goto 627,71.94,41.44
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
@@ -735,21 +688,81 @@ step
     .goto 627,72.04,41.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .turnin 89418 >>Turn in A Fixed Point in Time
-    --.accept 90995 >>Accept The Future of The Fel Hammer << DemonHunter
     .target Moratari
 step
-    .goto 627,72.04,41.59
-    .gossipoption 133762 >>Talk to |cRXP_FRIENDLY_Moratari|r
-    .target Moratari
+    #completewith next
+    #hidewindow
+    #label Infinite Chaos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 91437 >>Turn in Call for Participants
+    .accept 91061 >>Accept Infinite Chaos
+    .disablecheckbox
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .disablecheckbox
+    .target Eternus
+step
+    #completewith Infinite Chaos
+    .goto 627,72.06,40.49
+    .cast 1233963 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
+step
+    #requires Infinite Chaos
+    .isOnQuest 91437
+    .goto 619,45.61,68.46,3,0
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 91437 >>Turn in Call for Participants
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .skipgossipid 1356t03
+    .target Eternus
+step
+    .goto 619,45.61,68.46,3,0
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .target Eternus
+step
+    #completewith next
+    #hidewindow
+    #label Infinite Chaos
+    .accept 91061 >>Accept Infinite Chaos
+step
+    #completewith Infinite Chaos
+    .goto 619,45.68,68.50
+    .gossipoption 135603 >>Talk to |cRXP_FRIENDLY_Eternus|r
+    .target Eternus
+step
+    #requires Infinite Chaos
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .skipgossipid 135604
+    .accept 91061 >>Accept Infinite Chaos
+    .target Eternus
+step
+    .goto 619,45.57,68.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
+    .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
+-- step
+--     #label SkipIntro
+--     +test
+-- step
+--     .goto 634,60.44,60.99
+--     >>Kill |cRXP_ENEMY_Enemies|r
+--     .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
+--     .aura 1238465
+--     .mob Enemies
+-- step
+--     .goto 634,57.56,56.42
+--     >>Kill |cRXP_ENEMY_Empowered enemies|r
+--     .complete 91061,4 --3/3 Empowered enemies slain in Heroic World Tier
+--     .aura 1238465
+--     .mob Empowered enemies
+-- step
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+--     .turnin 91061 >>Turn in Infinite Chao
+--     .aura 1238465
+--     .target Eternus
+---Order Hall Intro
 
-
----order hall stuff
-
-
-
-
-
---inlinite bazaar stuff
 
 
 
@@ -760,33 +773,92 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group ab) Intro Skip
+#group RestedXP Legion Remix
 #name ab) Intro Skip
-#next
 #displayname |cFF00CCFF1|r - Intro Skip
-#subgroup |cFFFCDC00(1-80)|r Legion Remix
-#internal
 
--- step
---     -- .isQuestTurnedIn account,89418
---     -- .achievementComplete 42313,1
---     .goto 627,72.46,45.90
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
---     .complete 89404,1 --1/1 Talk to Moratari
---     .skipgossipid 134056
---     .target Moratari
--- step
--- +1
 step
-    --skyriding skip
-    .goto 627,72.04,41.59
-    .gossipoption 133762 >>Talk to |cRXP_FRIENDLY_Moratari|r
-    .target Moratari
-
----order hall stuff
-
----infinite bazaar
-
-
+    #label Meet Nostwin2
+    #hidewindow
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .accept 91955 >>Accept Just Between Us
+    .target Momentus
+step
+    #completewith Meet Nostwin2
+    .goto 619,45.96,67.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
+    .home >>Set your Hearthstone to Dalaran
+step
+    #requires Meet Nostwin2
+    #completewith next
+    #label Just Between Us
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .accept 91955 >>Accept Just Between Us
+    .target Moment
+step
+    #requires Meet Nostwin2
+    #completewith Just Between Us
+    .goto 619,45.96,67.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
+    .collect 254320,1 --Elixir of Remembered Sight
+    .buy 254320,1 --Elixir of Remembered Sight
+    .skipgossipid 135258
+step
+    #requires Just Between Us
+    .isOnQuest 92855
+    .goto 619,45.86,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
+    .turnin 92855 >>Turn in Make Haste, Not Waste
+    .target Lidamorrutu
+step 
+    #requires Just Between Us
+    .goto 619,45.83,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .accept 91955 >>Accept Just Between Us
+    .target Momentus
+step
+    .isOnQuest 91955
+    .goto 619,45.61,68.46,3,0
+    .goto 619,45.68,68.50
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
+step
+    .isOnQuest 91437
+    .goto 619,45.61,68.46,3,0
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 91437 >>Turn in Call for Participants
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .skipgossipid 135603
+    .target Eternus
+step
+    .goto 619,45.61,68.46,3,0
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .target Eternus
+step
+    #completewith next
+    #hidewindow
+    #label Infinite Chaos
+    .accept 91061 >>Accept Infinite Chaos
+step
+    #completewith Infinite Chaos
+    .goto 619,45.68,68.50
+    .gossipoption 135603 >>Talk to |cRXP_FRIENDLY_Eternus|r
+    .target Eternus
+step
+    #requires Infinite Chaos
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .skipgossipid 135604
+    .accept 91061 >>Accept Infinite Chaos
+    .target Eternus
+step
+    .goto 619,45.57,68.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
+    .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
 ]])
