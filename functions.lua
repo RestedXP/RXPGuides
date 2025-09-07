@@ -9,7 +9,7 @@ local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
-local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
+local IsSpellKnown = C_SpellBook and C_SpellBook.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 

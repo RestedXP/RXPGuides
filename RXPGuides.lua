@@ -248,10 +248,32 @@ function addon.GetStepQuestReward(titleOrId)
 end
 
 function addon.IsPlayerSpell(id)
-    if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) or C_Spell and C_Spell.IsSpellUsable(id) then
+    if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
         return true
     end
-
+    if ExtraActionButton1 then
+        local action = ExtraActionButton1.action
+        if action and HasAction(action) then
+            local _,eabId = GetActionInfo(action)
+            local eabName = GetSpellInfo(eabId)
+            local name = GetSpellInfo(id)
+            if name == eabName then
+                return true
+            end
+        end
+    end
+    if C_ZoneAbility then
+        local spellName = C_Spell.GetSpellInfo(id).name
+        local activeAbilities = C_ZoneAbility.GetActiveAbilities()
+        if activeAbilities then
+            for _,ability in pairs(activeAbilities) do
+                local name = C_Spell.GetSpellInfo(ability.spellID).name
+                if name == spellName then
+                    return true
+                end
+            end
+        end
+    end
     if addon.player.season == 2 then
         for _,slot in pairs (C_Engraving.GetRuneCategories(false,true)) do
 
