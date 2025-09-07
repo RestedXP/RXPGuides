@@ -2135,7 +2135,7 @@ function addon.functions.treasure(self, text, zone, x, y, id)
     end
 end
 
-addon.rares = {}
+addon.rares = addon.rares or {}
 local rareAchievements = {7439,8103,8714}
 events.rare = "CRITERIA_UPDATE"
 function addon.functions.rare(self, text, zone, x, y, nameOrId)

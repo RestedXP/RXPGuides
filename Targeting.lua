@@ -17,6 +17,8 @@ local wipe = wipe
 local GetRealZoneText = GetRealZoneText
 local GetNamePlates = C_NamePlate.GetNamePlates
 
+local HBD = LibStub("HereBeDragons-2.0")
+
 local GameTooltip = _G.GameTooltip
 
 local L = addon.locale.Get
@@ -1220,12 +1222,19 @@ function addon.targeting:LoadRares()
         end
     end
 
+    local zoneID = HBD:GetPlayerZone()
+    local zoneName = ""
+    for name,id in pairs(addon.mapId) do
+        if id == zoneID then
+            zoneName = name
+            break
+        end
+    end
     local zone = GetRealZoneText()
     local subzone = GetSubZoneText()
 
-    if not (zone or subzone) then return end
-
-    rareTargets = addon.rares[subzone] or addon.rares[zone] or {}
+    if not zoneID then return end
+    rareTargets = addon.rares[subzone] or addon.rares[zone] or addon.rares[zoneID] or addon.rares[zoneName] or {}
 
     self:UpdateTargetFrame()
 end

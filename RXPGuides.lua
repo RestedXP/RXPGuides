@@ -1361,6 +1361,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
                 (not addon.currentGuide or addon.currentGuide.empty) then
         addon.startHardcoreIntroUI()
     end
+    addon.targeting:Setup()
 end
 --addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
 function addon:PLAYER_LEAVING_WORLD() addon.isHidden = true end
