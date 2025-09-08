@@ -19,30 +19,28 @@ step
     .use 246937
     .openitem 237812
     .openitem 243373
-step 
+step
+    .achievementComplete 42313,1
     .goto 627,72.46,45.90
     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
 step
-    .achievement 42313,1
-    --.skipto guide,RestedXP Legion Remix\ab) Intro Skip
--- step
---     .achievement 42313,1
---     .skipto step,SkipIntro
+    .achievementComplete 42313,1
+    .skipto guide,RestedXP Legion Remix\ab) Intro Skip
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .accept 89404 >>Accept Time Crisis
     .target Moratari
 step
-    -- .achievementInComplete 42313,1
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .complete 89404,1 --1/1 Talk to Moratari
     .skipgossipid 133083
     .target Moratari
 step
+    .goto 627,67.03,43.15,5,0
     .goto 627,67.63,42.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
     .turnin 89404 >>Turn in Time Crisis
@@ -76,6 +74,7 @@ step
     .mob Imp Scout
     .mob Felfire Imp
 step
+    .goto 627,49.08,46.96,5,0
     .goto 627,49.29,47.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r at the center of dalaran.
     .turnin 89405 >>Turn in Mean Streets of Dalaran
@@ -301,7 +300,7 @@ step
     .complete 89409,4 --1/1 Anchoring materials infused
 step
     #requires Infinite Bronze forged
-    .goto 627,44.98,29.4
+    .goto 627,45.14,29.31
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bronze|r on the anvil.
     .complete 89409,5 --1/1 Infinite Bronze forged
 step
@@ -448,7 +447,7 @@ step
     .goto 627,42.33,27.22
     .cast 1232807 >>Use [Unraveling Sands]
     *|cRXP_WARN_A button appeared in your UI. You can drag the ability to your action bars if you wish.|r
-    -- .usespell 1232807 doesn't work 
+    .usespell 1232807
 step
     #requires Legion Armor Scraps
     .goto 627,42.33,27.22
@@ -612,7 +611,6 @@ step
     .complete 89417,5 --1/1 Meet Larah
     .skipgossipid 135502
     .target Larah Treebender
---skipto here    
 step
     .goto 619,45.6,68.43,5,0
     .goto 619,45.69,68.54
@@ -644,6 +642,7 @@ step
     #requires Krasus' Landing
     #completewith Meet Nostwin2
     .goto 619,45.96,67.89
+    #title |cFFFCDC00Spam Macro|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .home >>Set your Hearthstone to Dalaran
     .macro Leave Vehicle,6656430 >> /leavevehicle
@@ -661,17 +660,8 @@ step
     .accept 91955 >>Accept Just Between Us
     .target Momentus
 step
-    #completewith next
-    #label A Fixed
     .isOnQuest 89418
-    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-step
-    #completewith A Fixed
-    .isOnQuest 89418
-    .goto 619,45.72,67.52,8 >>Portal Click Range
-step
-    #requires A Fixed
-    .isOnQuest 89418
+    .goto 619,45.72,67.52,8 
     .goto 619,45.71,67.45
     .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
@@ -700,19 +690,23 @@ step
     .complete 90754,1 --1/1 Take Moratari's portal
 step
     .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
+    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
     .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
     .target Lord Andestrasz
     .skipgossipid 120917
-    .skipgossipid 120921
-    .skipgossipid 120920
-    .skipgossipid 120919
-    .skipgossipid 120918
+    -- .skipgossipid 120921
+    -- .skipgossipid 120920
+    -- .skipgossipid 120919
+    -- .skipgossipid 120918
 step
     .goto 371,65.27,37.18
+    >>Right-click to learn your mount.
     .complete 90754,3 --1/1 Learn your new skyriding mount from your 
-    >>Use your collected mount
     .use 194034
+    .use 194521
+    .use 194106
+    .use 194549
 step
     .goto 371,65.27,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
@@ -723,190 +717,11 @@ step
     .goto 371,65.27,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
     .turnin 90754 >>Turn in Skyriding
-    .accept 80013 >>Accept How to Glide with Your Dragon
     .target Lord Andestrasz
 step
-    .goto 371,65.27,37.27
-    >>Mount up
-    .complete 80013,1 --1/1 Mount your drake from your collection [Shift+P]
-step
-    .goto 371,66.51,37.16,10,0
-    .goto 371,67.46,36.29
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2,2 --2/5 Glide through the Rings
-step
-    .goto 371,67.46,36.29,10,0
-    .goto 371,67.80,34.64
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2,3 --3/5 Glide through the Rings
-step
-    .goto 371,67.80,34.64,10,0
-    .goto 371,67.41,33.91
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2,4 --4/5 Glide through the Rings
-step
-    .goto 371,67.41,33.91
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2 --5/5 Glide through the Rings
-step
-    .goto 371,66.73,33.58
-    >>Land on the hill
-    .complete 80013,3 --1/1 Land in the target area
-step
-    .goto 371,66.75,33.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80013 >>Turn in How to Glide with Your Dragon
-    .target Celormu
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80015 >>Accept How to Dive with Your Dragon
-    .target Lord Andestrasz
-step
-    .goto 371,66.64,37.18,10,0
-    .goto 371,67.90,37.18
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,2 --2/7 Glide through the Rings
-step
-    .goto 371,67.90,37.18,10,0
-    .goto 371,68.95,37.95
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,3 --3/7 Glide through the Rings
-step
-    .goto 371,68.95,37.95,10,0
-    .goto 371,69.83,39.60
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,4 --4/7 Glide through the Rings
-step
-    .goto 371,69.83,39.60,10,0
-    .goto 371,70.00,43.96
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,5 --5/7 Glide through the Rings
-step
-    .goto 371,70.00,43.96,10,0
-    .goto 371,68.31,46.92
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,6 --6/7 Glide through the Rings
-step
-    .goto 371,68.31,46.92
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2 --7/7 Glide through the Rings
-step
-    .goto 371,66.29,49.31
-    >>Follow the arrow
-    .complete 80015,3 --1/1 Land in the Target Area
-step
-    .goto 371,66.25,49.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80015 >>Turn in How to Dive with Your Dragon
-    .target Celormu
-step
-    .goto 371,65.27,37.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80016 >>Accept The Need For Higher Velocities
-    .target Lord Andestrasz
-step
-    .goto 371,66.29,37.21,10,0
-    .goto 371,68.27,36.26
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,2 --2/6 Glide through the Rings
-step
-    .goto 371,68.27,36.26,10,0
-    .goto 371,68.81,32.48
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,3 --3/6 Glide through the Rings
-step
-    .goto 371,68.81,32.48,10,0
-    .goto 371,67.41,27.37
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,4 --4/6 Glide through the Rings
-step
-    .goto 371,67.41,27.37,15,0
-    .goto 371,66.02,25.50
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,5 --5/6 Glide through the Rings
-step
-    .goto 371,66.02,25.50
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2 --6/6 Glide through the Rings
-step
-    .goto 371,65.01,24.46
-    >>Follow the arrow.
-    .complete 80016,3 --1/1 Land in the Target Area
-step
-    .goto 371,64.98,24.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80016 >>Turn in The Need For Higher Velocities
-    .target Celormu
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80017 >>Accept The Need For Higher Altitudes
-    .target Lord Andestrasz
-step
-    .goto 371,66.32,37.22,15,0
-    .goto 371,67.93,35.70
-    >>Let yourself glide down
-    .complete 80017,2,2 --2/6 Glide through the Rings
-step
-    .goto 371,67.93,35.70,15,0
-    .goto 371,68.77,33.45
-    >>Follow the rings. Use |T4640498:0|t[Skyward Ascent] after reaching the ring.
-    .complete 80017,2,3 --3/6 Glide through the Rings
-step
-    .goto 371,68.77,33.45,15,0
-    .goto 371,68.51,29.83
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80017,2,4 --4/6 Glide through the Rings
-step
-    .goto 371,68.51,29.83,15,0
-    .goto 371,65.39,29.58
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80017,2,5 --5/6 Glide through the Rings
-step
-    .goto 371,65.39,29.58
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80017,2 --6/6 Glide through the Rings
-step
-    .goto 371,62.59,28.66
-    >>Follow the arrow
-    .complete 80017,3 --1/1 Land in the Target Area
-step
-    .goto 371,62.47,28.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80017 >>Turn in The Need For Higher Altitudes
-    .target Celormu
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80018 >>Accept Fashionable Flying
-    .target Lord Andestrasz
-step
-    .goto 371,65.07,36.97
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rostrum of Transformation|r |cRXP_WARN_and leave it immediately|r
-    .complete 80018,1 --1/1 Rostrum of Transformation used
-step
-    .goto 371,65.28,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 80018 >>Turn in Fashionable Flying
-    .accept 90755 >>Accept Time Flies
-    .target Lord Andestrasz
-step
-    #completewith next
-    #label TimeFliesA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .turnin 90755 >>Turn in Time Flies
-    .target Moratari
-step
-    #completewith TimeFliesA
-    .goto 371,65.13,37.09
-    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
-step
-    #requires TimeFliesA
-    .goto 627,72.04,41.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .turnin 90755 >>Turn in Time Flies
-    .target Moratari
+    --skyriding tag
+    .goto 371,65.14,37.1
+    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     #hidewindow
     #completewith next
@@ -960,33 +775,6 @@ step
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
--- step
---     #label SkipIntro
---     +test
--- step
---     .goto 634,60.44,60.99
---     >>Kill |cRXP_ENEMY_Enemies|r
---     .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
---     .aura 1238465
---     .mob Enemies
--- step
---     .goto 634,57.56,56.42
---     >>Kill |cRXP_ENEMY_Empowered enemies|r
---     .complete 91061,4 --3/3 Empowered enemies slain in Heroic World Tier
---     .aura 1238465
---     .mob Empowered enemies
--- step
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
---     .turnin 91061 >>Turn in Infinite Chao
---     .aura 1238465
---     .target Eternus
----Order Hall Intro
-
-
-
-
-
-
 ]])
 
 RXPGuides.RegisterGuide([[
