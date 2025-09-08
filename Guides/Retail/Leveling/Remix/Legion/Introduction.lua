@@ -2,13 +2,14 @@
 -- ==============  CAMPAIGN  ============
 -- ======================================
 
+---Intro
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #name a) Intro
 #displayname |cFF00CCFF0|r - Intro|r.
-#subgroup |cFFFCDC00(1-80)|r Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route 
 #internal
 
 step
@@ -26,7 +27,8 @@ step
     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
 step
-    .achievementComplete 42313,1
+    #optional
+    .achievement 42313,1
     .skipto guide,RestedXP Legion Remix\ab) Intro Skip
 step
     .goto 627,72.46,45.90
@@ -631,30 +633,20 @@ step
     .target Moratari
     .macro Leave Vehicle,6656430 >> /leavevehicle
 step
-    #requires Krasus' Landing
-    #label Meet Nostwin2
-    #hidewindow
-    #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .accept 91955 >>Accept Just Between Us
-    .target Momentus
-step
-    #requires Krasus' Landing
-    #completewith Meet Nostwin2
+    .isOnQuest 89418
     .goto 619,45.96,67.89
     #title |cFFFCDC00Spam Macro|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .home >>Set your Hearthstone to Dalaran
     .macro Leave Vehicle,6656430 >> /leavevehicle
+-- step
+--     #requires Meet Nostwin2
+--     .isOnQuest 92855
+--     .goto 619,45.86,68.00
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
+--     .turnin 92855 >>Turn in Make Haste, Not Waste
+--     .target Lidamorrutu
 step
-    #requires Meet Nostwin2
-    .isOnQuest 92855
-    .goto 619,45.86,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
-    .turnin 92855 >>Turn in Make Haste, Not Waste
-    .target Lidamorrutu
-step    
-    #requires Meet Nostwin2
     .goto 619,45.83,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .accept 91955 >>Accept Just Between Us
@@ -777,13 +769,68 @@ step
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
 ]])
 
+---Intro Skip
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route 
 #name ab) Intro Skip
-#displayname |cFF00CCFF1|r - Intro Skip
 
+step
+    #sticky
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .openitem 237812
+    .openitem 243373
+step
+    .goto 627,72.05,41.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+    .accept 90754 >>Accept Skyriding
+    .target Moratari
+step
+    .goto 627,72.41,41.40
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 90754,1 --1/1 Take Moratari's portal
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
+    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
+    .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
+    .target Lord Andestrasz
+    .skipgossipid 120917
+    -- .skipgossipid 120921
+    -- .skipgossipid 120920
+    -- .skipgossipid 120919
+    -- .skipgossipid 120918
+step
+    .goto 371,65.27,37.18
+    >>Right-click to learn your mount.
+    .complete 90754,3 --1/1 Learn your new skyriding mount from your 
+    .use 194034
+    .use 194521
+    .use 194106
+    .use 194549
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
+    .target Lord Andestrasz
+    .skipgossipid 120916
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .turnin 90754 >>Turn in Skyriding
+    .target Lord Andestrasz
+step
+    --skyriding tag
+    .goto 371,65.14,37.1
+    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    .goto 627,72.08,40.59
+    .cast 1233963 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
 step
     #label Meet Nostwin2
     #hidewindow
@@ -812,13 +859,13 @@ step
     .collect 254320,1 --Elixir of Remembered Sight
     .buy 254320,1 --Elixir of Remembered Sight
     .skipgossipid 135258
-step
-    #requires Just Between Us
-    .isOnQuest 92855
-    .goto 619,45.86,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
-    .turnin 92855 >>Turn in Make Haste, Not Waste
-    .target Lidamorrutu
+-- step
+--     #requires Just Between Us
+--     .isOnQuest 92855
+--     .goto 619,45.86,68.00
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
+--     .turnin 92855 >>Turn in Make Haste, Not Waste
+--     .target Lidamorrutu
 step 
     #requires Just Between Us
     .goto 619,45.83,68.00
