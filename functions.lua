@@ -117,16 +117,21 @@ events.zone = zoneEvents
 events.zoneskip = zoneEvents
 events.subzone = zoneEvents
 events.subzoneskip = zoneEvents
+events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 
 if C_EventUtils and C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
    tinsert(zoneEvents,"ZONE_CHANGED_INDOORS")
 end
-events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
+
+local gossipConfirm
+if C_EventUtils and C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
+    gossipConfirm = "GOSSIP_CONFIRM"
+end
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
-events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
+events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE",gossipConfirm}
 events.isQuestOffered = events.gossip
 events.gossipoption = events.skipgossip
-events.skipgossipid = "GOSSIP_SHOW"
+events.skipgossipid = {"GOSSIP_SHOW",gossipConfirm}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.exitvehicle = events.vehicle
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
@@ -5185,6 +5190,7 @@ function addon.functions.skipgossipid(self, text, ...)
     end
     --print('ok1')
     local event = text
+    local arg1 = ...
     if (event == nil and element.step.active) then
         local g = GossipGetOptions()
         if type(g) == "table" and #g > 0 then
@@ -5213,6 +5219,13 @@ function addon.functions.skipgossipid(self, text, ...)
             addon.StartTimer(element.timer, element.timerText)
         end
         element.select = false
+    elseif event == "GOSSIP_CONFIRM" and C_GossipInfo then
+        --gossip_confirm
+        for _,gossipId in ipairs(args) do
+            if gossipId == arg1 then
+                C_GossipInfo.SelectOption(gossipId,nil,true)
+            end
+        end
     elseif not event then
         element.select = false
     end
@@ -5250,10 +5263,15 @@ function addon.functions.gossipoption(self, ...)
         element.completed or addon.isHidden then
              return
     end
-
+    local event, arg1 = ...
     local matched = false
     local options = GossipGetOptions()
-    if not options then return end
+    if event == "GOSSIP_CONFIRM" and element.gossipId == arg1 then
+        C_GossipInfo.SelectOption(arg1,nil,true)
+        return
+    elseif not options then
+        return
+    end
     --print('1??')
     for _, v in pairs(options) do
         if v.gossipOptionID == element.gossipId then
