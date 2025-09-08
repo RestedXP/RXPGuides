@@ -75,11 +75,10 @@ step << !Shaman !Warrior/Undead
     #completewith ThievesPickup
     .goto The Barrens,50.72,32.61
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .subzoneskip 380
 step << !Shaman !Warrior/Undead
     #hardcore
     #completewith ThievesPickup
-    .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
+    .subzone 380 >> Travel to The Crossroads
 step << !Shaman !Warrior/Undead
     #softcore
     .goto The Barrens,52.26,31.93
@@ -130,6 +129,7 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fp The Crossroads >> Get the The Crossroads flight path
     .target Devrak
+    .isQuestAvailable 1492
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -153,8 +153,9 @@ step << Orc Hunter/Troll Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Uthrok
 step << Orc Hunter/Troll Hunter
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -168,8 +169,9 @@ step << Tauren Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
     .target Uthrok
 step << Tauren Hunter
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T135613:0|t[Hunter's Boomstick]
+    +|cRXP_WARN_Equip th|re |T135613:0|t[Hunter's Boomstick]
     .use 2511
     .itemcount 2511,1
     .itemStat 18,QUALITY,<7
@@ -185,6 +187,8 @@ step << !Tauren !Shaman !Warrior/Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
+    .bindlocation 380
+    .isQuestAvailable 1492
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #softcore
     .goto The Barrens,52.62,29.84
@@ -389,6 +393,8 @@ step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
+    .bindlocation 380
+    .isQuestAvailable 1492
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout
@@ -507,7 +513,7 @@ step << Tauren Shaman
 step << Tauren Shaman
     #completewith next
     .goto Durotar,38.18,58.58
-    .cast 8898 >>Use the |T134732:0|t[Fire Sapta]
+    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
     .use 6636
     .dungeon RFC
 step << Tauren Shaman
@@ -530,7 +536,8 @@ step << Tauren Shaman
     .dungeon RFC
 step << Tauren Shaman
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
     .dungeon RFC
@@ -550,6 +557,7 @@ step << Tauren
     >>|cRXP_WARN_Don't fly anywhere!|r
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
+    .isQuestAvailable 5728
     .dungeon RFC
 step << !Undead
     .goto Orgrimmar,31.74,37.82
@@ -722,6 +730,8 @@ step << !Tauren
     .hs >> Hearth to The Crossroads
     .use 6948
     .zoneskip The Barrens
+    .bindlocation 380,1
+    .subzoneskip 380
     .dungeon RFC
 step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #completewith RFCTurninsTB1
@@ -808,7 +818,8 @@ step
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -943,7 +954,7 @@ step << Shaman
 step << Shaman
     #completewith next
     .goto Durotar,38.18,58.58
-    .cast 8898 >>Use the |T134732:0|t[Fire Sapta]
+    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
     .use 6636
 step << Shaman
     .goto Durotar,38.96,58.22
@@ -977,7 +988,8 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step << skip
@@ -1027,7 +1039,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T135353:0|t[Espadon] when you are level 16
+    +|cRXP_WARN_Equip th|re |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1036,7 +1048,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T135353:0|t[Espadon]
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon]
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1051,8 +1063,9 @@ step << Troll Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Troll Warrior
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -1065,8 +1078,9 @@ step << Orc Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Orc Warrior
+    #optional
     #completewith BaronLongshore
-    +Equip the |T132394:0|t[Bearded Axe]
+    +|cRXP_WARN_Equip the|r |T132394:0|t[Bearded Axe]
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
@@ -1082,7 +1096,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T133046:0|t[Rock Hammer] when you are level 16
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer] |cRXP_WARN_when you are level 16|r
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1091,7 +1105,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T133046:0|t[Rock Hammer]
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer]
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1108,8 +1122,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Shaman
     #season 0
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -1125,8 +1140,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Shaman
     #season 2
+    #optional
     #completewith BaronLongshore
-    +Equip the |T133052:0|t[Hammer]
+    +|cRXP_WARN_Equip the|r |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -1140,8 +1156,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135343:0|t[Scimitar]
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -1155,8 +1172,9 @@ step << Rogue
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << skip
+    #optional
     #completewith BaronLongshore
-    +Equip the second |T135343:0|t[Scimitar] in your off-hand
+    +|cRXP_WARN_Equip the second|r |T135343:0|t[Scimitar] |cRXP_WARN_in your off-hand|r
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -1191,8 +1209,9 @@ step
     .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
     #optional
-	#completewith next
-	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
+	#completewith SouthSea
+	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
+    >>|cRXP_WARN_He patrols up and down the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1207,13 +1226,8 @@ step
     >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r He can be found in one of the camps
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
-step << Orc Rogue/Troll Rogue
-    #optional
-	#completewith next
-	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
-	.complete 1963,1 --Tazan's Satchel (1)
-    .unitscan Tazan
 step
+    #label SouthSea
     #loop
     .goto The Barrens,64.23,47.10,0
     .goto The Barrens,64.40,44.09,50,0
@@ -1228,7 +1242,8 @@ step << Orc Rogue/Troll Rogue
     .goto The Barrens,63.70,44.32,50,0
     .goto The Barrens,62.70,44.07,50,0
     .goto The Barrens,62.18,44.47
-    >>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
+	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
+    >>|cRXP_WARN_He patrols up and down the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1263,7 +1278,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T135353:0|t[Espadon] when you are level 16
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1272,7 +1287,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T135353:0|t[Espadon]
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon]
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1287,8 +1302,9 @@ step << Troll Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Troll Warrior
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -1301,8 +1317,9 @@ step << Orc Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Orc Warrior
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T132394:0|t[Bearded Axe]
+    +|cRXP_WARN_Equip the|r |T132394:0|t[Bearded Axe]
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
@@ -1318,7 +1335,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T133046:0|t[Rock Hammer] when you are level 16
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer] |cRXP_WARN_when you are level 16|r
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1327,7 +1344,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T133046:0|t[Rock Hammer]
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer]
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -1344,8 +1361,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Shaman
     #season 0
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -1361,8 +1379,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Shaman
     #season 2
+    #optional
     #completewith BaronLongshore
-    +Equip the |T133052:0|t[Hammer]
+    +|cRXP_WARN_Equip the|r |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -1376,8 +1395,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135343:0|t[Scimitar]
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -1391,8 +1411,9 @@ step << Rogue
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << skip
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135343:0|t[Scimitar]
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -1405,6 +1426,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .subzoneskip 380
     .isQuestComplete 845
 step
     #completewith next
@@ -1859,7 +1881,8 @@ step
     .goto The Barrens,56.05,8.49,12,0
     .goto The Barrens,56.13,8.56,12,0
     .goto The Barrens,56.34,8.24
-    >>Kill |cRXP_ENEMY_Supervisor Lugwizzle|r. Loot him for his |cRXP_LOOT_Key|r. He patrols up and down the platform
+    >>Kill |cRXP_ENEMY_Supervisor Lugwizzle|r. Loot him for his |cRXP_LOOT_Key|r
+    >>|cRXP_WARN_He patrols up and down the platform|r
     .complete 858,1 --Ignition Key (1)
     .mob Supervisor Lugwizzle
     .isOnQuest 858
@@ -2048,8 +2071,8 @@ step << Tauren/Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     >>|cRXP_WARN_Don't fly anywhere!|r
     .fp Orgrimmar >> Get the Orgrimmar flight path
-    .zoneskip The Barrens
     .target Doras
+    .isQuestAvailable 4921
 step << Shaman
     #season 2
     .goto Orgrimmar,38.82,36.41
@@ -2197,6 +2220,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
     .train 24557 >> Train your pet spells
     .target Xao'tsu
+    .xp <18,1
 step << Troll Hunter/Orc Hunter/Priest
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
@@ -2224,8 +2248,9 @@ step << Hunter
     .target Zendo'jian
     .train 227,3
 step << Hunter
+    #optional
     #completewith FoodandWater2
-    +Equip the |T135490:0|t[Reinforced Bow]
+    +|cRXP_WARN_Equip the|r |T135490:0|t[Reinforced Bow]
     .use 3026
     .itemcount 3026,1
     .itemStat 18,QUALITY,<7
@@ -2242,7 +2267,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Equip the |T135423:0|t[Battle Axe] when you are level 20
+    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe] |cRXP_WARN_when you are level 20|r
     .use 926
     .itemcount 926,1
     .itemStat 18,QUALITY,<7
@@ -2251,7 +2276,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Equip the |T135423:0|t[Battle Axe]
+    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe]
     .use 926
     .itemcount 926,1
     .itemStat 18,QUALITY,<7
@@ -2278,6 +2303,8 @@ step
     .hs >> Hearth to The Crossroads
     .cooldown item,6948,>0
     .use 6948
+    .bindlocation 380,1
+    .subzoneskip 380
 step
     #completewith FoodandWater2
     .goto Orgrimmar,45.120,63.889
@@ -2285,6 +2312,7 @@ step
     .fly Crossroads >>Fly to The Crossroads
     .target Doras
     .cooldown item,6948,<0
+    .subzoneskip 380
 step
     #label FoodandWater2
     .goto The Barrens,51.99,29.89
@@ -2292,6 +2320,7 @@ step
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
+    .isQuestAvailable 3281
 step
     .goto The Barrens,51.93,30.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
@@ -2393,6 +2422,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Ratchet >>Fly to Ratchet
     .target Devrak
+    .subzoneskip 392
 step << Rogue
     .goto The Barrens,63.07,36.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrenix|r
@@ -2755,6 +2785,7 @@ step
     #label CampTArrive
     #completewith next
     .goto The Barrens,45.23,58.41,120 >> Travel to Camp Taurajo
+    .subzoneskip 378
 step
     #requires CampTArrive
     #label SetCampTaurajoHS
@@ -2762,6 +2793,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
     .home >>Set your Hearthstone to Camp Taurajo
     .target Innkeeper Byula
+    .bindlocation 378
+    .isQuestAvailable 1093
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
@@ -2844,6 +2877,7 @@ step
     .fly Crossroads >>Fly to The Crossroads
     .target Omusa Thunderhorn
     .zoneskip The Barrens,1
+    .subzoneskip 380
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -3376,6 +3410,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharm|r
     .fp Sun Rock Retreat >> Get the Sun Rock Retreat flight path
     .target Tharm
+    .subzoneskip 460,1
 step
     #completewith next
     .goto Stonetalon Mountains,58.99,62.60,15 >> Travel toward |cRXP_FRIENDLY_Ziz|r
@@ -3421,8 +3456,9 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Troll Warrior/Orc Warrior/Tauren Warrior
+    #optional
     #completewith BluePrints
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -3438,16 +3474,18 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step << Undead Warrior
+    #optional
     #completewith BluePrints
-    +Equip the |T135329:0|t[Executioner's Sword]
+    +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
     .xp <19,1
 step << Undead Warrior
+    #optional
     #completewith BluePrints
-    +Equip the |T135280:0|t[Dacian Falx]
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
     .use 922
     .itemcount 922,1
     .itemStat 16,QUALITY,<7
@@ -3464,8 +3502,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Shaman
     #season 0
+    #optional
     #completewith BluePrints
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -3482,8 +3521,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Shaman
     #season 2
+    #optional
     #completewith BluePrints
-    +Equip the |T133476:0|t[Flail]
+    +|cRXP_WARN_Equip the|r |T133476:0|t[Flail]
     .use 925
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
@@ -3498,8 +3538,9 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
 step << Rogue
+    #optional
     #completewith BluePrints
-    +Equip the |T135324:0|t[Longsword]
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
@@ -3571,6 +3612,7 @@ step
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
+    #optional
 	#completewith next
 	+|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
 step
@@ -3595,7 +3637,7 @@ step
     .mob Deepmoss Creeper
 step << Druid
     #completewith DruidTraining2
-    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     .goto Moonglade,52.53,40.58
@@ -3615,6 +3657,8 @@ step
     #completewith JornSkyseerTurnin
     .hs >> Hearth to Camp Taurajo
     .use 6948
+    .bindlocation 378,1
+    .subzoneskip 378
 step
     .goto The Barrens,45.58,59.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
@@ -3921,16 +3965,18 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .equip 9,4794
     .isQuestTurnedIn 865
 step << Warrior
+    #optional
     #completewith FlytoXroads
-    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
+    +|cRXP_WARN_Equip the|r |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
     .use 4800
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
     .isQuestTurnedIn 865
     .equip 7,4800
 step << Rogue/Hunter/Warrior/Shaman/Druid
+    #optional
     #completewith FlytoXroads
-    +Equip the |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
+    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3943,6 +3989,7 @@ step
     .home >>Set your Hearthstone to Ratchet
     .target Innkeeper Wiley
     .dungeon WC
+    .bindlocation 392
     .isQuestTurnedIn 865
 step
     .goto The Barrens,63.09,37.61
@@ -3957,6 +4004,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >>Fly to The Crossroads
     .target Bragok
+    .subzoneskip 380
 step << Hunter
     .goto The Barrens,51.50,30.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
@@ -4001,6 +4049,7 @@ step
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .dungeon !WC
+    .dungeon DM
 step
     .goto The Barrens,51.10,29.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
@@ -4342,6 +4391,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to Crossroads
     .target Bragok
+    .subzoneskip 380
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -4504,7 +4554,7 @@ step << Shaman
     .target Brine
 step << Shaman
     .goto The Barrens,44.22,76.75
-    .use 7766 >> Fill your |T132825:0|t[Empty Brown Waterskin] in the watering hole below Brine's hut
+    .use 7766 >> |cRXP_WARN_Fill your|r |T132825:0|t[Empty Brown Waterskin] |cRXP_WARN_in the watering hole below Brine's hut|r
     .complete 1535,1 --Filled Brown Waterskin (1)
 step << Shaman
     .goto The Barrens,43.42,77.41
@@ -4514,7 +4564,7 @@ step << Shaman
     .target Brine
 step << Shaman
     #completewith ThunderhawkTurnin
-    .goto The Barrens,44.85,59.14,200 >>Travel back toward Camp Taurajo
+    .subzone 378 >>Travel back toward Camp Taurajo
 step
     #completewith next
     .goto The Barrens,44.63,62.71,0
@@ -4623,6 +4673,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your Hearthstone to Thunder Bluff
     .target Innkeeper Pala
+    .bindlocation 1638
+    .isQuestAvailable 6442
     .dungeon !WC
 step
     #completewith next
@@ -4742,7 +4794,7 @@ step << Druid
     .target Turak Runetotem
 step << Druid
     #completewith next
-    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -4757,7 +4809,7 @@ step << Druid
     >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
 step << Druid
     .goto Moonglade,36.40,42.01
-    .cast 19719 >> Use the |T134125:0|t[Shrine Bauble] at the Shrine of Remulos
+    .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
     .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
@@ -4770,6 +4822,8 @@ step << Druid
     .hs >> Hearth to Thunder Bluff
     .use 6948
     .cooldown item,6948,>0
+    .bindlocation 1638,1
+    .zoneskip Thunder Bluff
     .dungeon !WC
 step << Druid
     #completewith next
@@ -4777,6 +4831,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen|r
     .fly Thunder Bluff >> Fly to Thunder Bluff
     .target Bunthen Plainswind
+    .zoneskip Thunder Bluff
     .dungeon WC
 step << Druid
     #completewith next
@@ -4784,6 +4839,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen|r
     .fly Thunder Bluff >> Fly to Thunder Bluff
     .target Bunthen Plainswind
+    .zoneskip Thunder Bluff
     .cooldown item,6948,<0
     .dungeon !WC
 step << Hunter
@@ -4827,14 +4883,16 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
 step << Rogue
+    #optional
     #completewith KayaLives
-    +Equip the |T135324:0|t[Longsword]
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
     .xp <21,1
 step << Warrior/Shaman
+    #optional
     #completewith next
     #ah
     +|cRXP_FRIENDLY_If it's cheaper you can buy a green weapon from the auction house instead|r
@@ -4847,8 +4905,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Warrior
+    #optional
     #completewith KayaLives
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -4865,8 +4924,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Shaman
     #season 0
+    #optional
     #completewith KayaLives
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -4883,8 +4943,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Shaman
     #season 2
+    #optional
     #completewith KayaLives
-    +Equip the |T133476:0|t[Flail]
+    +|cRXP_WARN_Equip the|r |T133476:0|t[Flail]
     .use 925
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
@@ -4900,7 +4961,8 @@ step << Hunter
     .target Kuna Thunderhorn
 step << Hunter
     #completewith KayaLives
-    +Equip the |T135489:0|t[Heavy Recurve Bow]
+    #optional
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
     .use 3027
     .itemcount 3027,1
     .itemStat 18,QUALITY,<7
@@ -4927,7 +4989,7 @@ step
     #sticky
     #completewith EnterWC
     +Now you should be looking for a group to Wailing Caverns
-    >>Grind |cRXP_ENEMY_Quilboars|r while assembling a Wailing Caverns group
+    >>Grind |cRXP_ENEMY_Quilboars|r |cRXP_WARN_while assembling a Wailing Caverns group|r
     .dungeon WC
 step
     .goto The Barrens,46.15,36.93,100 >> Travel to Wailing Caverns
@@ -5155,6 +5217,8 @@ step
 step
     #completewith GShard
     .hs >> Hearth to Ratchet
+    .bindlocation 392,1
+    .subzoneskip 392
     .use 6948
     .dungeon WC
 step
@@ -5185,6 +5249,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .subzoneskip 380
     .isOnQuest 6981
     .dungeon WC
 step
@@ -5247,7 +5312,7 @@ step
     .dungeon WC
 step << skip
     #completewith next
-    .goto The Barrens,44.45,59.16,100 >> Travel South to Camp Taurajo
+    .subzone 378 >> Travel South to Camp Taurajo
     .dungeon WC
 step << skip
     .goto The Barrens,44.45,59.16
@@ -5287,6 +5352,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your Hearthstone to Thunder Bluff
     .target Innkeeper Pala
+    .bindlocation 1638
+    .isQuestAvailable 6442
     .dungeon WC
 step
     #optional
@@ -5325,6 +5392,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
+    .subzoneskip 380
     .isQuestTurnedIn 852 << !Hunter
 step
     #xprate >1.49
@@ -5332,6 +5400,7 @@ step
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
+    .subzoneskip 380
     .target Tal
     .isQuestTurnedIn 852 << !Hunter
 step
@@ -5449,7 +5518,7 @@ step << !Hunter
     #xprate <1.5
     #softcore
     #completewith next
-    .deathskip >>Deathskip to Crossroads
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Hunter
     #xprate <1.5
     #hardcore
@@ -5862,6 +5931,7 @@ step
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
    .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
    .target Andruk
+   .isQuestAvailable 6442
 step
     #xprate <1.5
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
@@ -6197,6 +6267,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharm|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Tharm
+    .zoneskip Thunder Bluff
     .cooldown item,6948,<0
 step
     #xprate <1.5
@@ -6204,12 +6275,15 @@ step
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .fly Thunder Bluff >> Fly to Thunder Bluff
+    .zoneskip Thunder Bluff
     .target Andruk
     .cooldown item,6948,<0
 step
     #completewith JourneytoTM
     .hs >> Hearth to Thunder Bluff
     .use 6948
+    .zoneskip Thunder Bluff
+    .bindlocation 1638,1
     .cooldown item,6948,>0
 step
     #completewith next
@@ -6242,12 +6316,14 @@ step << !Warlock
     .target Tal
     .zoneskip Thunder Bluff,1
 step << Warlock
-   .goto Ashenvale,12.24,33.80
-   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
+    #optional
+    .goto Ashenvale,12.24,33.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Andruk
     .zoneskip Ashenvale,1
 step << !Warlock
+    #optional
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .fly Orgrimmar >>Fly to Orgrimmar
@@ -6280,7 +6356,7 @@ step << Warlock
     .target Gan'rul Bloodeye
 step << Warlock
     #completewith next
-    .cast 9224 >>Use |T133290:0|t[Dogran's Pendant] at the Summoning Circle
+    .cast 9224 >>|cRXP_WARN_Use|r |T133290:0|t[Dogran's Pendant] |cRXP_WARN_at the Summoning Circle|r
     .use 6626
 step << Warlock
     .goto Orgrimmar,49.66,50.15
@@ -6435,9 +6511,9 @@ step << Rogue
     --VV Video?
 step << Rogue
     .goto The Barrens,54.77,5.57
-    >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r.
+    >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r
     .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
-step << Rogue/Druid
+step << skip --Rogue/Druid
     #hardcore
     #completewith next
     .goto The Barrens,61.33,4.21,120 >>Travel toward the Boulder Lode Mine
@@ -6458,6 +6534,11 @@ step << Rogue/Druid
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
     .target Devrak
+step << Rogue/Druid
+    #hardcore
+    #completewith flytoORG
+    .goto Kalimdor,56.81,45.47
+    .zone Orgrimmar >>Enter Orgrimmar through the western entrance
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
@@ -6642,6 +6723,7 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fp The Crossroads >> Get the The Crossroads flight path
     .target Devrak
+    .isQuestAvailable 1492
 step << !Tauren
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -6664,8 +6746,9 @@ step << Orc Hunter/Troll Hunter
     .target Uthrok
     .xp >15,1
 step << Orc Hunter/Troll Hunter
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -6688,8 +6771,9 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
     .target Nargal Deatheye
 step << Orc Warrior
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T132395:0|t[Tabar]
+    +|cRXP_WARN_Equip the|r |T132395:0|t[Tabar]
     .use 1196
     .itemcount 1196,1
     .itemStat 16,QUALITY,<7
@@ -6705,8 +6789,9 @@ step << Troll Rogue/Orc Rogue
     .target Nargal Deatheye
 step << Troll Rogue/Orc Rogue
     #season 2
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T135640:0|t[Jambiya]
+    +|cRXP_WARN_Equip the|r |T135640:0|t[Jambiya]
     .use 2207
     .itemcount 2207,1
     .itemStat 16,QUALITY,<7
@@ -6722,8 +6807,9 @@ step << Orc Shaman/Troll Shaman
     .target Nargal Deatheye
 step << Orc Shaman/Troll Shaman
     #xprate <2.1
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T133490:0|t[Mace]
+    +|cRXP_WARN_Equip the|r |T133490:0|t[Mace]
     .use 852
     .itemcount 852,1
     .itemStat 16,QUALITY,<7
@@ -6739,8 +6825,9 @@ step << Shaman
     .target Nargal Deatheye
 step << Shaman
     #xprate >2.09
+    #optional
     #completewith DisruptTheAttacks
-    +Equip the |T133490:0|t[Mace]
+    +|cRXP_WARN_Equip the|r |T133490:0|t[Mace]
     .use 852
     .itemcount 852,1
     .itemStat 16,QUALITY,<7
@@ -6757,12 +6844,16 @@ step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
+    .bindlocation 380
+    .isQuestAvailable 1492
 step << Undead
     #xprate >2.09
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
+    .bindlocation 380
+    .isQuestAvailable 1492
 step << !Undead !Tauren
     #xprate >2.09
     .goto The Barrens,52.62,29.85
@@ -6881,7 +6972,8 @@ step
     .maxlevel 15
 step
     .goto The Barrens,55.70,27.30
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_If it's not up you'll get it later|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
     .maxlevel 15
@@ -7021,7 +7113,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith KreenigSnarlsnout
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -7047,7 +7139,7 @@ step << Tauren Hunter
 step << Tauren Hunter
     #optional
     #completewith KreenigSnarlsnout
-    +Equip the |T135613:0|t[Hunter's Boomstick]
+    +|cRXP_WARN_Equip the|r |T135613:0|t[Hunter's Boomstick]
     .use 2511
     .itemcount 2511,1
     .itemStat 18,QUALITY,<7
@@ -7064,7 +7156,7 @@ step << Orc Warrior
 step << Orc Warrior
     #optional
     #completewith KreenigSnarlsnout
-    +Equip the |T132395:0|t[Tabar]
+    +|cRXP_WARN_Equip the|r |T132395:0|t[Tabar]
     .use 1196
     .itemcount 1196,1
     .itemStat 16,QUALITY,<7
@@ -7083,7 +7175,7 @@ step << Troll Rogue/Orc Rogue
     #optional
     #season 2
     #completewith KreenigSnarlsnout
-    +Equip the |T135640:0|t[Jambiya]
+    +|cRXP_WARN_Equip the|r |T135640:0|t[Jambiya]
     .use 2207
     .itemcount 2207,1
     .itemStat 16,QUALITY,<7
@@ -7102,7 +7194,7 @@ step << Orc Shaman/Troll Shaman
     #xprate <2.1
     #optional
     #completewith KreenigSnarlsnout1
-    +Equip the |T133490:0|t[Mace]
+    +|cRXP_WARN_Equip the|r |T133490:0|t[Mace]
     .use 852
     .itemcount 852,1
     .itemStat 16,QUALITY,<7
@@ -7121,7 +7213,7 @@ step << Shaman
     #xprate >2.09
     #optional
     #completewith KreenigSnarlsnout1
-    +Equip the |T133490:0|t[Mace]
+    +|cRXP_WARN_Equip the|r |T133490:0|t[Mace]
     .use 852
     .itemcount 852,1
     .itemStat 16,QUALITY,<7
@@ -7239,7 +7331,7 @@ step << Tauren Shaman
 step << Tauren Shaman
     #completewith next
     .goto Durotar,38.18,58.58
-    .cast 8898 >>Use the |T134732:0|t[Fire Sapta]
+    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
     .use 6636
     .dungeon RFC
 step << Tauren Shaman
@@ -7282,6 +7374,7 @@ step << Tauren
     >>|cRXP_WARN_Don't fly anywhere!|r
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
+    .isQuestAvailable 5728
     .dungeon RFC
 step << !Undead
     .goto Orgrimmar,31.74,37.82
@@ -7453,6 +7546,7 @@ step << !Tauren
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads
     .use 6948
+    .bindlocation 380
     .zoneskip The Barrens
     .dungeon RFC
 step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
@@ -7528,6 +7622,7 @@ step
     .hs >> Hearth to The Crossroads
     .use 6948
     .zoneskip Thunder Bluff,1
+    .bindlocation 380
     .cooldown item,6948,>0
     .dungeon RFC
 step
@@ -7543,7 +7638,8 @@ step
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -7678,7 +7774,7 @@ step << Shaman
 step << Shaman
     #completewith next
     .goto Durotar,38.18,58.58
-    .cast 8898 >>Use the |T134732:0|t[Fire Sapta]
+    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
     .use 6636
 step << Shaman
     .goto Durotar,38.96,58.22
@@ -7710,7 +7806,8 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step << skip
@@ -7764,7 +7861,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T135353:0|t[Espadon] when you are level 16
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -7773,7 +7870,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T135353:0|t[Espadon]
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon]
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -7788,8 +7885,9 @@ step << Troll Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Troll Warrior
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -7802,8 +7900,9 @@ step << Orc Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Orc Warrior
+    #optional
     #completewith BaronLongshore
-    +Equip the |T132394:0|t[Bearded Axe]
+    +|cRXP_WARN_Equip the|r |T132394:0|t[Bearded Axe]
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
@@ -7819,7 +7918,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T133046:0|t[Rock Hammer] when you are level 16
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer] |cRXP_WARN_when you are level 16|r
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -7828,7 +7927,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith BaronLongshore
-    +Equip the |T133046:0|t[Rock Hammer]
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer]
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -7845,8 +7944,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Shaman
     #season 0
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -7862,8 +7962,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Shaman
     #season 2
+    #optional
     #completewith BaronLongshore
-    +Equip the |T133052:0|t[Hammer]
+    +|cRXP_WARN_Equip the|r |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -7879,8 +7980,9 @@ step << Rogue
     .target Ironzar
 step << Rogue
     #season 0
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135343:0|t[Scimitar]
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -7896,8 +7998,9 @@ step << Rogue
     .target Ironzar
 step << skip
     #season 0
+    #optional
     #completewith BaronLongshore
-    +Equip the second |T135343:0|t[Scimitar] in your off-hand
+    +|cRXP_WARN_Equip the second|r |T135343:0|t[Scimitar] |cRXP_WARN_in your off-hand|r
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -7913,8 +8016,9 @@ step << Rogue
     .target Ironzar
 step << Rogue
     #season 2
+    #optional
     #completewith BaronLongshore
-    +Equip the |T135302:0|t[Poniard]
+    +|cRXP_WARN_Equip the|r |T135302:0|t[Poniard]
     .use 2208
     .itemcount 2208,1
     .itemStat 16,QUALITY,<7
@@ -7947,8 +8051,9 @@ step
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
-	#completewith next
-	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
+	#completewith Southsea
+	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
+    >>|cRXP_WARN_He patrols up and down the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -7964,12 +8069,8 @@ step
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
     .isOnQuest 895
-step << Orc Rogue/Troll Rogue
-	#completewith next
-	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
-	.complete 1963,1 --Tazan's Satchel (1)
-    .unitscan Tazan
 step
+    #label Southsea
     #loop
     .goto The Barrens,64.23,47.10,0
     .goto The Barrens,64.40,44.09,50,0
@@ -7985,7 +8086,8 @@ step << Orc Rogue/Troll Rogue
     .goto The Barrens,63.70,44.32,50,0
     .goto The Barrens,62.70,44.07,50,0
     .goto The Barrens,62.18,44.47
-    >>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
+	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
+    >>|cRXP_WARN_He patrols up and down the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
     .isOnQuest 1963
@@ -8039,7 +8141,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T135353:0|t[Espadon] when you are level 16
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -8048,7 +8150,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T135353:0|t[Espadon]
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon]
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -8063,8 +8165,9 @@ step << Troll Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Troll Warrior
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -8077,8 +8180,9 @@ step << Orc Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Orc Warrior
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T132394:0|t[Bearded Axe]
+    +|cRXP_WARN_Equip the|r |T132394:0|t[Bearded Axe]
     .use 2025
     .itemcount 2025,1
     .itemStat 16,QUALITY,<7
@@ -8094,7 +8198,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T133046:0|t[Rock Hammer] when you are level 16
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer] |cRXP_WARN_when you are level 16|r
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -8103,7 +8207,7 @@ step << Tauren Warrior
 step << Tauren Warrior
     #optional
     #completewith FlyToXroads1
-    +Equip the |T133046:0|t[Rock Hammer]
+    +|cRXP_WARN_Equip the|r |T133046:0|t[Rock Hammer]
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
@@ -8120,8 +8224,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Shaman
     #season 0
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135147:0|t[Gnarled Staff]
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
     .itemStat 16,QUALITY,<7
@@ -8137,8 +8242,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Shaman
     #season 2
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T133052:0|t[Hammer]
+    +|cRXP_WARN_Equip the|r |T133052:0|t[Hammer]
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
@@ -8154,8 +8260,9 @@ step << Rogue
     .target Ironzar
 step << Rogue
     #season 0
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135343:0|t[Scimitar]
+    |cRXP_WARN_+Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
@@ -8171,8 +8278,9 @@ step << Rogue
     .target Ironzar
 step << Rogue
     #season 0
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135343:0|t[Scimitar]
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -8188,8 +8296,9 @@ step << Rogue
     .target Ironzar
 step << Rogue
     #season 2
+    #optional
     #completewith FlyToXroads1
-    +Equip the |T135302:0|t[Poniard]
+    +|cRXP_WARN_Equip the|r |T135302:0|t[Poniard]
     .use 2208
     .itemcount 2208,1
     .itemStat 16,QUALITY,<7
@@ -8201,6 +8310,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .subzoneskip 380
     .isQuestComplete 845
 step
     #completewith next
@@ -8791,7 +8901,8 @@ step
     .goto The Barrens,56.05,8.49,12,0
     .goto The Barrens,56.13,8.56,12,0
     .goto The Barrens,56.34,8.24
-    >>Kill |cRXP_ENEMY_Supervisor Lugwizzle|r. Loot him for his |cRXP_LOOT_Key|r. He patrols up and down the platform
+    >>Kill |cRXP_ENEMY_Supervisor Lugwizzle|r. Loot him for his |cRXP_LOOT_Key|r
+    >>|cRXP_WARN_He patrols up and down the platform|r
     .complete 858,1 --Ignition Key (1)
     .mob Supervisor Lugwizzle
     .isOnQuest 858
@@ -8889,7 +9000,7 @@ step << skip
 step
     #completewith SpiritsPickup
     .goto Kalimdor,56.81,45.47
-    .zone Orgrimmar >>Enter Orgrimmar through the Eastern entrance
+    .zone Orgrimmar >>Enter Orgrimmar through the western entrance
 step
     #optional
     #label NorthBarrensSkip
@@ -8980,8 +9091,8 @@ step << Tauren/Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     >>|cRXP_WARN_Don't fly anywhere!|r
     .fp Orgrimmar >> Get the Orgrimmar flight path
-    .zoneskip The Barrens
     .target Doras
+    .isQuestAvailable 4921
 step << Shaman
     #season 2
     .goto Orgrimmar,38.82,36.41
@@ -9177,6 +9288,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
     .train 24557 >> Train your pet spells
     .target Xao'tsu
+    .xp <18,1
 step << Troll Hunter/Orc Hunter/Priest
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
@@ -9204,8 +9316,9 @@ step << Hunter
     .target Zendo'jian
     .train 227,3
 step << Hunter
+    #optional
     #completewith FoodandWater2
-    +Equip the |T135490:0|t[Reinforced Bow]
+    +|cRXP_WARN_Equip the|r |T135490:0|t[Reinforced Bow]
     .use 3026
     .itemcount 3026,1
     .itemStat 18,QUALITY,<7
@@ -9222,7 +9335,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Equip the |T135423:0|t[Battle Axe] when you are level 20
+    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe] |cRXP_WARN_when you are level 20|r
     .use 926
     .itemcount 926,1
     .itemStat 18,QUALITY,<7
@@ -9231,7 +9344,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith FoodandWater2
-    +Equip the |T135423:0|t[Battle Axe]
+    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe]
     .use 926
     .itemcount 926,1
     .itemStat 18,QUALITY,<7
@@ -9256,6 +9369,8 @@ step
     .hs >> Hearth to The Crossroads
     .cooldown item,6948,>0
     .use 6948
+    .bindlocation 380,1
+    .subzoneskip 380
 step
     #completewith FoodandWater2
     .goto Orgrimmar,45.120,63.889
@@ -9263,6 +9378,7 @@ step
     .fly Crossroads >>Fly to The Crossroads
     .target Doras
     .cooldown item,6948,<0
+    .subzoneskip 380
 step
     #label FoodandWater2
     .goto The Barrens,51.99,29.89
@@ -9270,6 +9386,7 @@ step
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
+    .isQuestAvailable 3281
 step
     .goto The Barrens,51.93,30.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
@@ -9366,6 +9483,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Ratchet >>Fly to Ratchet
     .target Devrak
+    .subzoneskip 392
 step << Rogue
     .goto The Barrens,63.07,36.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrenix|r
@@ -9778,6 +9896,7 @@ step
     #label CampTArrive
     #completewith next
     .goto The Barrens,45.23,58.41,120 >> Travel to Camp Taurajo
+    .subzoneskip 378
 step
     #requires CampTArrive
     #label SetCampTaurajoHS
@@ -9785,6 +9904,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
     .home >>Set your Hearthstone to Camp Taurajo
     .target Innkeeper Byula
+    .bindlocation 378
+    .isQuestAvailable 1093
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
@@ -9803,6 +9924,7 @@ step
     .fp Camp Taurajo >> Get the Camp Taurajo flight path << !Tauren
     .fly Crossroads >>Fly to The Crossroads
     .target Omusa Thunderhorn
+    .subzoneskip 380
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -10412,6 +10534,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharm|r
     .fp Sun Rock Retreat >> Get the Sun Rock Retreat flight path
     .target Tharm
+    .subzoneskip 460,1
 step
     #xprate <2.1
     #completewith next
@@ -10463,8 +10586,9 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Troll Warrior/Orc Warrior/Tauren Warrior
     #xprate <2.1
+    #optional
     #completewith BluePrints
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -10482,16 +10606,18 @@ step << Undead Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Undead Warrior
     #xprate <2.1
+    #optional
     #completewith BluePrints
-    +Equip the |T135329:0|t[Executioner's Sword]
+    +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Undead Warrior
     #xprate <2.1
+    #optional
     #completewith BluePrints
-    +Equip the |T135280:0|t[Dacian Falx]
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
     .use 922
     .itemcount 922,1
     .itemStat 16,QUALITY,<7
@@ -10510,8 +10636,9 @@ step << Shaman
 step << Shaman
     #xprate <2.1
     #season 0
+    #optional
     #completewith BluePrints
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -10530,8 +10657,9 @@ step << Shaman
 step << Shaman
     #xprate <2.1
     #season 2
+    #optional
     #completewith BluePrints
-    +Equip the |T133476:0|t[Flail]
+    +|cRXP_WARN_Equip the|r |T133476:0|t[Flail]
     .use 925
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
@@ -10550,8 +10678,9 @@ step << Rogue
 step << Rogue
     #xprate <2.1
     #season 0
+    #optional
     #completewith BluePrints
-    +Equip the |T135324:0|t[Longsword]
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
@@ -10570,8 +10699,9 @@ step << Rogue
 step << Rogue
     #xprate <2.1
     #season 2
+    #optional
     #completewith BluePrints
-    +Equip the |T135342:0|t[Kris]
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
     .use 2209
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
@@ -10648,6 +10778,7 @@ step
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
+    #optional
     #xprate <2.1
 	#completewith next
 	+|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
@@ -10674,7 +10805,7 @@ step
     .mob Deepmoss Creeper
 step << Druid
     #completewith DruidTraining2
-    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     #optional
@@ -10704,6 +10835,8 @@ step
     .hs >> Hearth to Camp Taurajo
     .use 6948
     .cooldown item,6948,>0
+    .bindlocation 378,1
+    .subzoneskip 378
 step
     #completewith next
     .goto The Barrens,51.50,30.34
@@ -11071,16 +11204,17 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .isQuestTurnedIn 865
     .equip 9,4794
 step << Warrior
+    #optional
     #completewith FlytoXroads
-    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
+    +|cRXP_WARN_Equip the|r |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
     .use 4800
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
     .isQuestTurnedIn 865
     .equip 7,4800
-step << Rogue/Hunter/Warrior/Shaman/Druid
+step << Rogue/Hunter/Warrior/Shaman/Druid    #optional
     #completewith FlytoXroads
-    +Equip the |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
+    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -11093,6 +11227,7 @@ step
     .home >>Set your Hearthstone to Ratchet
     .target Innkeeper Wiley
     .dungeon WC
+    .bindlocation 392
     .isQuestTurnedIn 865
 step
     .goto The Barrens,63.09,37.61
@@ -11107,6 +11242,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+    .subzoneskip 380
 step << Hunter
     #xprate <2.1
     .goto The Barrens,51.50,30.87
@@ -11480,6 +11616,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to Crossroads
     .target Bragok
+    .subzoneskip 380
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -11543,6 +11680,8 @@ step << Warlock
     #xprate >2.09
     #completewith next
     .hs >>Hearth to Camp Taurajo
+    .subzoneskip 378
+    .bindlocation 378,1
     .cooldown item,6948,>0
     .dungeon !WC
 step << Warlock
@@ -11693,7 +11832,7 @@ step << Shaman
     .target Brine
 step << Shaman
     .goto The Barrens,44.22,76.75
-    .use 7766 >> Fill your |T132825:0|t[Empty Brown Waterskin] in the watering hole below Brine's hut
+    .use 7766 >> |cRXP_WARN_Fill your|r |T132825:0|t[Empty Brown Waterskin] |cRXP_WARN_in the watering hole below Brine's hut|r
     .complete 1535,1 --Filled Brown Waterskin (1)
 step << Shaman
     .goto The Barrens,43.42,77.41
@@ -11703,7 +11842,7 @@ step << Shaman
     .target Brine
 step << Shaman
     #completewith ThunderhawkTurnin
-    .goto The Barrens,44.85,59.14,200 >>Travel back toward Camp Taurajo
+    .subzoneskip 378 >>Travel back toward Camp Taurajo
 step << Shaman
     #completewith next
     .goto The Barrens,44.63,62.71,0
@@ -11996,8 +12135,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
 step << Rogue
     #season 0
+    #optional
     #completewith FlyOrgSR
-    +Equip the |T135324:0|t[Longsword]
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
@@ -12014,8 +12154,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
 step << Rogue
     #season 2
+    #optional
     #completewith FlyOrgSR
-    +Equip the |T135342:0|t[Kris]
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
     .use 2209
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
@@ -12034,8 +12175,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Warrior
+    #optional
     #completewith FlyCampT
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -12052,8 +12194,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Shaman
     #season 0
+    #optional
     #completewith CallofWater2
-    +Equip the |T135157:0|t[Long Staff]
+    +|cRXP_WARN_Equip the|r |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
@@ -12070,8 +12213,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Shaman
     #season 2
+    #optional
     #completewith CallofWater2
-    +Equip the |T133476:0|t[Flail]
+    +|cRXP_WARN_Equip the|r |T133476:0|t[Flail]
     .use 925
     .itemcount 925,1
     .itemStat 16,QUALITY,<7
@@ -12086,8 +12230,9 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.1
     .target Kuna Thunderhorn
 step << Hunter
+    #optional
     #completewith FlyCampT
-    +Equip the |T135489:0|t[Heavy Recurve Bow]
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
     .use 3027
     .itemcount 3027,1
     .itemStat 18,QUALITY,<7
@@ -12431,6 +12576,7 @@ step
 step << skip
     #completewith next
     .goto The Barrens,44.45,59.16,100 >> Travel South to Camp Taurajo
+    .subzoneskip 378
     .dungeon WC
 step << skip
     .goto The Barrens,44.45,59.16
@@ -12501,6 +12647,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
+    .subzoneskip 380
 step
     #xprate <2.1
     .goto The Barrens,45.35,28.41
@@ -12629,7 +12776,7 @@ step << !Hunter
     #xprate <2.1
     #softcore
     #completewith next
-    .deathskip >>Deathskip to Crossroads
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Hunter
     #xprate <2.1
     #hardcore
@@ -12743,6 +12890,8 @@ step << skip
 step
     #xprate <2.1
     .hs >>Hearth to Thunder Bluff
+    .bindlocation 1638,1
+    .zoneskip Thunder Bluff
     .use 6948
 step
     #xprate <2.1
@@ -12770,6 +12919,7 @@ step << !Shaman !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
+    .subzoneskip 378
 step << Warlock
     #xprate <2.1
     .goto The Barrens,44.62,59.27
@@ -12850,7 +13000,7 @@ step << Rogue
     #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the western Exit
     .zoneskip The Barrens
 step << Rogue
     #completewith MissionProbable
@@ -12900,9 +13050,9 @@ step << Rogue
     --VV Video?
 step << Rogue
     .goto The Barrens,54.77,5.57
-    >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r.
+    >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r
     .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
-step << Rogue/Druid
+step << skip --Rogue/Druid
     #hardcore
     #completewith next
     .goto The Barrens,61.33,4.21,120 >>Travel toward the Boulder Lode Mine
@@ -12923,6 +13073,11 @@ step << Rogue
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
     .target Devrak
+step << Rogue
+    #hardcore
+    .goto Kalimdor,56.81,45.47
+    .zone Orgrimmar >>Enter Orgrimmar through the western entrance
+    .isQuestComplete 2478
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
