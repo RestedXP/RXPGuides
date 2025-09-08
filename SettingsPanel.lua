@@ -3517,7 +3517,9 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         local warbandBuff = C_UnitAuras.GetPlayerAuraBySpellID(430191)
         --1,2: xp buff, 3: max level
         local warbandBonus = warbandBuff and warbandBuff.points[1] or 0
-        calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus)/100
+        local legionRemix = C_UnitAuras.GetPlayerAuraBySpellID(1232454)
+        legionRemix = legionRemix and legionRemix.points[10] or 0
+        calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus + legionRemix)/100
         return calculatedRate
     elseif addon.game == "WOTLK" then
         local itemQuality
