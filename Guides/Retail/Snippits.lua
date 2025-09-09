@@ -1592,32 +1592,6 @@ step
 step
     #requires Prepare To Strike
     .goto 709,49.12,58.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
-    .complete 40569,1 --1/1 Speak with Li Li Stormstout
-    .skipgossipid 44948
-    .skipgossipid 45131
-    .skipgossipid 45128
-    .target Li Li Stormstout
-step
-    .goto 249,54.93,34.29
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kite|r |cRXP_WARN_after the roleplay|r.
-    .complete 40633,1 --1/1 Ride Li Li's kite to Ramkahen (Optional)
-    .timer 15,RP
-step
-    .goto 249,54.85,32.90
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 40633,2 --1/1 Meet With Li Li in Ramkahen
-    .target Li Li Stormstout
-step
-    .goto 709,49.12,58.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
-    .complete 40569,1 --1/1 Speak with Li Li Stormstout
-    .skipgossipid 44948
-    .skipgossipid 45131
-    .skipgossipid 45128
-    .target Li Li Stormstout
-step
-    .goto 709,51.43,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 40636 >>Turn in Prepare To Strike
     .target Iron-Body Ponshu
@@ -1625,20 +1599,23 @@ step
 step
     .goto 709,49.12,58.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
-    .turnin 40569 >>Turn in The Legend of the Sands
+    .complete 40569,1 --1/1 Speak with Li Li Stormstout
+    .skipgossipid 44948
+    .skipgossipid 45131
+    .skipgossipid 45128
     .target Li Li Stormstout
+step
+    .goto 709,49.12,58.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40569 >>Turn in The Legend of the Sands
     .accept 40633 >>Accept Off To Adventure!
     .timer 48,RP
+    .target Iron-Body Ponshu
 step
-    .goto 249,54.93,34.29
+    .goto 709,50.49,58.61
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kite|r |cRXP_WARN_after the roleplay|r.
     .complete 40633,1 --1/1 Ride Li Li's kite to Ramkahen (Optional)
     .timer 15,RP
-step
-    .goto 249,54.85,32.90
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 40633,2 --1/1 Meet With Li Li in Ramkahen
-    .target Li Li Stormstout
 step
     .goto 249,54.85,32.90
     #title |cFFFCDC00Follow the Arrow|r
@@ -1654,11 +1631,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Phaoris|r
     .accept 40634 >>Accept Thunder on the Sands
     .target King Phaoris
--- step
---     .goto 249,45.69,14.42
---     >>Kill |cRXP_ENEMY_Enemies|r
---     .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
---     .mob Enemies
 step
     #completewith next
     #label Clue Discovered
@@ -1667,9 +1639,10 @@ step
     .mob Nader
 step
     #completewith Clue Discovered
-    .goto 249,54.92,33.66 >>Leave the House
+    .goto 249,54.92,33.66,15 >>Leave the House
 step
     #requires Clue Discovered
+    .goto 249,45.65,14.35
     >>Kill |cRXP_ENEMY_Nader|r. Loot him for |T348535:0|t[|cRXP_LOOT_Essence of Whirlwind].
     .complete 40634,1 --1/1 Clue Discovered
 step
@@ -1694,7 +1667,7 @@ step
     .goto 249,54.92,33.61
     >>Use |T348535:0|t[Essence of the Whirlwind]
     .complete 40570,1 --1/1 Use the Essence of the Whirlwind
-    .timer 30,RP
+    .timer 20,RP
     .use 132745
 step
     .goto 716,30.39,44.18
@@ -1738,7 +1711,7 @@ step
     .goto 716,31.26,66.71
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Zaurac|r
     .scenario 2009,1
-    .timer 30,RP
+    .timer 26,RP
     .target Zaurac
 step
     .goto 716,35.76,82.93
@@ -1752,7 +1725,7 @@ step
     .mob Typhinius
 step
     .zone 709 >>Leave the Instance(Right-Click your player frame).
-    step
+step
     #completewith next
     #hidewindow
     #label Into The Heavens
