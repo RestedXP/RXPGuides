@@ -994,3 +994,1169 @@ step
 --skyriding end
 
 ]])
+
+-- ##################################################
+-- #                  LEGION REMIX                  #
+-- ##################################################
+
+-- ================= ARTIFACT WEAPONS ================
+
+-- --------- Death Knight ---------
+--Blood
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Blood
+#internal
+
+
+]])
+--Frost
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Frost DK
+#internal
+
+]])
+--Unholy
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Unholy
+#internal
+
+]])
+
+-- --------- Demon Hunter ---------
+--Havoc
+RXPGuides.RegisterGuide([[}
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Havoc
+#internal
+
+
+step
+    .goto 627,74.97,48.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .complete 40814,1 --1/1 Artifact weapon chosen
+    .choose 1390100
+    .skipgossipid 45106
+step
+    .goto 627,74.97,48.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 40814 >>Turn in The Power to Survive
+    .target Kayn Sunfury
+    .accept 40819 >>Accept Making Arrangements
+step}
+    .goto 627,65.63,67.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 40819 >>Turn in Making Arrangements
+    .accept 39051 >>Accept By Any Means
+step
+    .goto 627,66.09,68.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Alturas|r
+    .complete 39051,1 --1/1 Convince Warden Alturas
+    .skipgossipid 45518
+    .skipgossipid 45519
+    .target Warden Alturas
+step
+    .goto 723,50.63,52.64
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 39051,2 --1/1 Enter the Violet Hold
+    .timer 83,RP
+step
+    .goto 723,50.63,52.64
+    #title |cFFFCDC00Wait for the Roleplay|r
+    >>Kill |cRXP_ENEMY_|r
+    .complete 39051,3 --1/1 Taldath interrogated
+    .mob Taldath the Destroyer
+step
+    .goto 723,50.32,71.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 39051 >>Turn in By Any Means
+    .target Kayn Sunfury
+    .accept 39247 >>Accept The Hunt
+step
+    #completewith next
+    #label Illidari Fel Bat
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Illidari Fel Bat|r
+    .complete 39247,1 
+    .target Illidari Fel Bat
+step
+    #completewith Illidari Fel Bat
+    .zoneskip 627 >>Leave the Instance(Right-Click your player frame).
+step
+    #requires Illidari Fel Bat
+    .goto 627,75.26,47.61
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Illidari Fel Bat|r
+    .complete 39247,1 
+    .timer 53,RP
+    .target Illidari Fel Bat
+step
+    .isOnQuest 39247
+    .goto 680,25.63,58.94
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .scenario 1808,1
+    .target Illidari Fel Bat
+step
+    .isOnQuest 39247
+    .goto 680,25.21,60.8,30,0
+    .goto 680,25.87,61.97,30,0
+    .goto 680,26.69,63.05,30,0
+    .goto 680,27.38,65.03,30,0
+    >>Kill ALL |cRXP_ENEMY_Demons|r
+    .scenario 1822,2,52
+    .mob Felsoul Fleshcarver
+step
+    .isOnQuest 39247
+    .goto 680,28.18,64.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
+    .scenario 1822,1,1
+step
+    .isOnQuest 39247
+    .goto 680,29.32,60.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
+    .scenario 1822,1,2
+step
+    .isOnQuest 39247
+    #loop
+    .goto 680,30.09,60.65,20,0
+    .goto 680,29.97,63.95,30,0
+    .goto 680,30.57,63.9,30,0
+    .goto 680,30.3,65.99,30,0
+    .goto 680,31.07,66,30,0
+    >>Kill |cRXP_ENEMY_Demons|r |cRXP_WARN_but ignore |cRXP_ENEMY_Felsoul Crusher|r the infernal even if you have aggro|r.
+    .scenario 1822,2,100
+    .mob Fist of the Deceiver
+    .mob Living Flame
+    .mob Felsoul Ritualist
+step
+    .isOnQuest 39247
+    .goto 680,31.5,66.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
+    .scenario 1822,1,3
+step
+    .isOnQuest 39247
+    .goto 680,32.96,66.96
+    >>Kill |cRXP_ENEMY_Varedis Felsoul|r
+    .scenario 1825,1
+    .mob Varedis Felsoul
+step
+    .isOnQuest 39247
+    .goto 680,32.96,66.96
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Twinblades of the Deceiver|r
+    .complete 39247,2 --1/1 Twinblades of the Deceiver
+step
+    #completewith next
+    #label Turn in The Hunt
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .turnin 39247 >>Turn in The Hunt
+    .target Kor'vas Bloodthorn
+    .accept 42869 >>Accept Eternal Vigil
+    .disablecheckbox
+step
+    #completewith Turn in The Hunt
+    .zone 627 >>Leave the Instance(Right-Click your player frame).
+]])
+--Vengeance
+RXPGuides.RegisterGuide([[ 
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Vengeance
+#internal
+
+
+step
+    .goto 627,74.40,51.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r
+    .turnin 41806 >>Turn in Return to Jace
+    .target Jace Darkweaver
+    .accept 41807 >>Accept Establishing a Connection
+step
+    .goto 627,74.37,51.54
+    .complete 41807,1 --1/1 Legion Communicator activated
+step
+    .goto 627,74.02,51.60
+    .complete 41807,2 --1/1 Scout's report received
+step
+    .goto 627,74.54,51.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r
+    .turnin 41807 >>Turn in Establishing a Connection
+    .target Jace Darkweaver
+step
+    .goto 627,75.05,48.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .accept 40249 >>Accept Vengeance Will Be Ours
+    .target Kayn Sunfury
+step
+    .goto 627,86.78,50.79
+    .complete 40249,1 --1/1 Fly to the Broken Shore
+step
+    .goto 676,26.77,61.44
+    .complete 40249,2 --1/1 Aldrachi Warblades
+step
+    .goto 619,46.93,64.59
+    .complete 40249,3 --1/1 Return to Dalaran
+]])
+
+-- --------- Druid ---------
+--Balance
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Balance
+#internal
+
+]])
+--Feral
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Feral
+#internal
+
+]])
+--Guardian
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Guardian
+#internal
+
+]])
+--Restoration
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Restoration Druids
+#internal
+
+]])
+
+-- --------- Hunter ---------
+--Beast Mastery
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Beast Mastery
+#internal
+
+]])
+--Marksmanship
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Marksmanship
+#internal
+
+]])
+--Survival
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Survival
+#internal
+
+]])
+
+-- --------- Mage ---------
+--Arcane
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Arcane
+#internal
+
+]])
+--Fire
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Fire
+#internal
+
+]])
+--Frost
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Frost Mage
+#internal
+
+]])
+
+-- --------- Monk ---------
+--Brewmaster
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Brewmaster
+#internal
+
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40236 >>Turn in The Dawning Light
+    .target Iron-Body Ponshu
+    .accept 40636 >>Accept Prepare To Strike
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .complete 40636,1 --1/1 Artifact weapon chosen
+    .choose 1390109
+    .skipgossipid 45061
+    .target Iron-Body Ponshu
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40636 >>Turn in Prepare To Strike
+    .target Iron-Body Ponshu
+    .accept 42762 >>Accept The Wanderer's Companion
+step
+    #completewith next
+    #label Tak-Tak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak-Tak|r
+    .complete 42762,1 --1/1 Speak with Tak-Tak
+    .target Tak-Tak
+step
+    #completewith Tak-Tak
+    .goto 709,49.71,47.37,10 >>Leave the House
+step
+    #requires Tak-Tak
+    .goto 709,47.19,47.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak-Tak|r
+    .complete 42762,1 --1/1 Speak with Tak-Tak
+    .timer 25,RP
+    .skipgossipid 45493
+    .target Tak-Tak
+step
+    .goto 371,41.67,27.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
+    .turnin 42762 >>Turn in The Wanderer's Companion
+    .target The Monkey King
+    .accept 42768 >>Accept The Riddle of Purity
+    .accept 42766 >>Accept The Riddle of the Barrel
+    .accept 42767 >>Accept The Riddle of the Land
+step
+    #completewith next
+    #label Pure Water Core
+    >>Kill |cRXP_ENEMY_Desecrator Ma'veth|r and |cRXP_ENEMY_Desecrated Water Spirit|r. Loot them for |T132844:0|t[|cRXP_LOOT_Pure Water Core|r].
+    .complete 42768,1 --1/1 Pure Water Core
+    .mob Desecrator Ma'veth
+    .mob Desecrated Water Spirit
+step
+    #completewith Pure Water Core
+    .cast 311850 >>Use |T615341:0|t[Purity Jug]
+    .use 173703
+step
+    #requires Pure Water Core
+    .goto 376,63.22,26.04
+    >>Kill |cRXP_ENEMY_Desecrator Ma'veth|r and |cRXP_ENEMY_Desecrated Water Spirit|r. Loot them for |T132844:0|t[|cRXP_LOOT_Pure Water Core|r].
+    .complete 42768,1 --1/1 Pure Water Core
+    .mob Desecrator Ma'veth
+    .mob Desecrated Water Spirit
+step
+    #completewith next
+    #label Roasted Grain
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Grain|r
+    .complete 42767,1,1 --5/5 Sack of Roasted Grain
+step
+    #completewith Roasted Grain
+    .cast 311857 >>Use |T615341:0|t[Purity Jug]
+    .use 173704
+step
+    #requires Roasted Grain
+    #loop
+    .goto 376,52.94,60.67,20,0
+    .goto 376,51.13,60.79,20,0
+    .goto 376,51.08,62.49,20,0
+    .goto 376,52.6,63.37,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Grain|r
+    .complete 42767,1, --5/5 Sack of Roasted Grain
+step
+    #completewith next
+    #label Vadis
+    >>Kill |cRXP_ENEMY_Vadis|r
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Keg|r
+    .complete 42766,1 --1/1 Odd Smelling Brew
+    .mob Vadis
+step
+    #completewith Vadis
+    .goto 376,51.6,64.28,10,0
+    .goto 376,51.43,65.17,10,0
+    .goto 376,51.11,64.98,10 >>Enter the House and and go upstairs.
+step
+    .goto 376,51.50,64.43
+    >>Kill |cRXP_ENEMY_Vadis|r
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Keg|r
+    .complete 42766,1 --1/1 Odd Smelling Brew
+    .mob Vadis
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r |cRXP_WARN_next to you|r.
+    .turnin 42766 >>Turn in The Riddle of the Barrel
+    .target The Monkey King
+    .turnin 42768 >>Turn in The Riddle of Purity
+    .turnin 42767 >>Turn in The Riddle of the Land
+    .accept 42957 >>Accept Journey to the East
+step
+    #completewith next
+    #label Journey to the East
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
+    .turnin 42957 >>Turn in Journey to the East
+    .accept 42868 >>Accept The Monkey King's Challenge
+step
+    #completewith Journey to the East
+    .cast 311861 >>Use |T615341:0|t[Purity Jug]
+    .use 173704
+step
+    #requires Journey to the East
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
+    .goto 371,55.42,58.14
+    .turnin 42957 >>Turn in Journey to the East
+    .accept 42868 >>Accept The Monkey King's Challenge
+step
+    .goto 371,55.31,58.56
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Brewpot|r
+    .complete 42868,1 --1/1 Brewpot Set
+step
+    .goto 371,55.28,58.5
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r
+    .complete 42868,2 --1/1 Brew Completed
+step
+    .goto 371,55.43,58.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
+    .turnin 42868 >>Turn in The Monkey King's Challenge
+    .target The Monkey King
+    .accept 42765 >>Accept The Trial at the Temple
+step
+    .goto 371,56.23,57.90
+    .complete 42765,1 --1/1 Enter the Temple of the Jade Serpent
+    .timer 120,RP
+step
+    .scenario 2613,1
+    .isOnQuest 42765
+step
+    .scenario 2649,1
+    .isOnQuest 42765
+step
+    .scenario 2649,2
+    .isOnQuest 42765
+step
+    .scenario 2650,1
+    .isOnQuest 42765
+step
+    .scenario 2684,1
+    .isOnQuest 42765
+step
+    .scenario 2661,1
+    .isOnQuest 42765
+step
+    .scenario 2663,1
+    .isOnQuest 42765
+step
+    .scenario 2663,2
+    .isOnQuest 42765
+step
+    .scenario 2665,1
+    .isOnQuest 42765
+step
+    .scenario 2666,1
+    .isOnQuest 42765
+step
+    .scenario 2701,1
+    .isOnQuest 42765
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 42765 >>Turn in The Trial at the Temple
+    .target Iron-Body Ponshu
+    .accept 40793 >>Accept A Matter of Planning
+
+]])
+--Mistweaver
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Mistweaver
+#internal
+
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40236 >>Turn in The Dawning Light
+    .target Iron-Body Ponshu
+    .accept 40636 >>Accept Prepare To Strike
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .complete 40636,1 --1/1 Artifact weapon chosen
+    .choose 1390110
+    .skipgossipid 45061
+    .target Iron-Body Ponshu
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40636 >>Turn in Prepare To Strike
+    .target Iron-Body Ponshu
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40636 >>Turn in Prepare To Strike
+    .target Iron-Body Ponshu
+    .accept 41003 >>Accept The Emperor's Gift
+step
+    #completewith next
+    #label MistweaverScenario
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak-Tak|r
+    .complete 41003,1 --1/1 Speak with Tak-Tak
+    .target Tak-Tak
+step
+    #completewith MistweaverScenario
+    #hidewindow
+    .goto 709,50.49,47.67,15,0
+    .goto 709,49.36,47.43,15 >>1
+step
+    #requires MistweaverScenario
+    .goto 709,47.19,47.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak-Tak|r
+    .complete 41003,1 --1/1 Speak with Tak-Tak
+    .timer 90,RP
+    .skipgossipid 45491
+    .target Tak-Tak
+
+
+step
+    .goto 728,39.21,48.69
+    .complete 41003,2 --1/1 Acquire Sheilun
+step
+    .goto 728,43.68,53.03
+    .complete 41003,3 --1/1 Fly Home with Tak-Tak
+step
+    .goto 709,51.40,48.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 41003 >>Turn in The Emperor's Gift
+    .target Iron-Body Ponshu    
+]])
+--Windwalker
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Windwalker
+
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40236 >>Turn in The Dawning Light
+    .target Iron-Body Ponshu
+    .accept 40636 >>Accept Prepare To Strike
+step
+    .goto 709,51.41,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .complete 40636,1 --1/1 Artifact weapon chosen
+    .choose 139011
+    .skipgossipid 45061
+    .target Iron-Body Ponshu
+step
+    #completewith next
+    #label Prepare To Strike
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40636 >>Turn in Prepare To Strike
+    .target Iron-Body Ponshu
+    .accept 40569 >>Accept The Legend of the Sands
+    .disablecheckbox
+step
+    #completewith Prepare To Strike
+    .goto 709,51.28,53.74,30,0
+    .goto 709,49.96,58.69,30,0
+    .goto 709,51.43,48.41,10 >>Enter the House
+step
+    #requires Prepare To Strike
+    .goto 709,49.12,58.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40636 >>Turn in Prepare To Strike
+    .target Iron-Body Ponshu
+    .accept 40569 >>Accept The Legend of the Sands
+step
+    .goto 709,49.12,58.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .complete 40569,1 --1/1 Speak with Li Li Stormstout
+    .skipgossipid 44948
+    .skipgossipid 45131
+    .skipgossipid 45128
+    .target Li Li Stormstout
+step
+    .goto 709,49.12,58.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40569 >>Turn in The Legend of the Sands
+    .accept 40633 >>Accept Off To Adventure!
+    .timer 48,RP
+    .target Iron-Body Ponshu
+step
+    .goto 709,50.49,58.61
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kite|r |cRXP_WARN_after the roleplay|r.
+    .complete 40633,1 --1/1 Ride Li Li's kite to Ramkahen (Optional)
+    .timer 15,RP
+step
+    .goto 249,54.85,32.90
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 40633,2 --1/1 Meet With Li Li in Ramkahen
+    .target Li Li Stormstout
+step
+    .goto 249,54.85,32.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40633 >>Turn in Off To Adventure!
+    .target Li Li Stormstout
+step
+    .goto 249,54.91,32.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Phaoris|r
+    .accept 40634 >>Accept Thunder on the Sands
+    .target King Phaoris
+step
+    #completewith next
+    #label Clue Discovered
+    >>Kill |cRXP_ENEMY_Nader|r. Loot him for |T348535:0|t[|cRXP_LOOT_Essence of Whirlwind].
+    .complete 40634,1 --1/1 Clue Discovered
+    .mob Nader
+step
+    #completewith Clue Discovered
+    .goto 249,54.92,33.66,15 >>Leave the House
+step
+    #requires Clue Discovered
+    .goto 249,45.65,14.35
+    >>Kill |cRXP_ENEMY_Nader|r. Loot him for |T348535:0|t[|cRXP_LOOT_Essence of Whirlwind].
+    .complete 40634,1 --1/1 Clue Discovered
+step
+    #completewith next
+    #label Thunder on the Sands
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Phaoris|r
+    .turnin 40634 >>Turn in Thunder on the Sands
+    .target King Phaoris
+    .accept 40570 >>Accept Into The Heavens
+    .disablecheckbox
+step
+    #completewith Thunder on the Sands
+    .goto 249,54.92,33.81,15 >>Enter the Building
+step
+    #requires Thunder on the Sands
+    .goto 249,54.91,32.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Phaoris|r
+    .turnin 40634 >>Turn in Thunder on the Sands
+    .target King Phaoris
+    .accept 40570 >>Accept Into The Heavens
+step
+    .goto 249,54.92,33.61
+    >>Use |T348535:0|t[Essence of the Whirlwind]
+    .complete 40570,1 --1/1 Use the Essence of the Whirlwind
+    .timer 20,RP
+    .use 132745
+step
+    .goto 716,30.39,44.18
+    >>Kill |cRXP_ENEMY_Howling Winds|r and |cRXP_ENEMY_Lesser Sandling|r.
+    .scenario 2006,1
+    .mob Lesser Sandling
+    .mob Howling Winds
+step
+    #loop
+    .goto 716,29.63,48.3,30,0
+    .goto 716,29.69,50.78,30,0
+    .goto 716,31.33,52.29,30,0
+    .goto 716,32.92,50.68,30,0
+    .goto 716,32.26,48.2,30,0
+    .goto 716,30.91,49.6,30,0
+    #title |cFFFCDC00Follow the Arrow|r
+    .scenario 2013,1 
+step
+    .goto 716,32.58,52.54
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
+    .scenario 2007,1,1
+step
+    .goto 716,29.3,54.99
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
+    .scenario 2007,1,2
+step
+    .goto 716,25.49,60.28
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
+    .scenario 2007,1,3
+step
+    .goto 716,26.78,59.96,20,0
+    .goto 716,31.78,65.91
+    >>Kill |cRXP_ENEMY_Scion of Typhinius|r and then move towards the boss.
+    .scenario 2007,2
+    .mob Scion of Typhinius
+step
+    .goto 716,31.26,66.71
+    >>Kill |cRXP_ENEMY_Minios|r
+    .scenario 2008,1
+step
+    .goto 716,31.26,66.71
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Zaurac|r
+    .scenario 2009,1
+    .timer 26,RP
+    .target Zaurac
+step
+    .goto 716,35.76,82.93
+    >>Kill |cRXP_ENEMY_Typhinius|r
+    .scenario 2010,1
+    .mob Typhinius
+step
+    .goto 716,35.76,82.93
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists|r
+    .scenario 2011,1
+    .mob Typhinius
+step
+    .zone 709 >>Leave the Instance(Right-Click your player frame).
+step
+    #completewith next
+    #hidewindow
+    #label Into The Heavens
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40570 >>Turn in Into The Heavens
+    .target Li Li Stormstout
+step
+    #completewith Into The Heavens
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+    .usespell 126892
+step
+    #requires Into The Heavens
+    #completewith next
+    #label Into The Heavens2
+    .goto 709,49.11,58.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40570 >>Turn in Into The Heavens
+    .target Li Li Stormstout
+step
+    #requires Into The Heavens
+    #completewith Into The Heavens2
+    .goto 709,51.28,53.74,30,0
+    .goto 709,49.96,58.69,30,0
+    .goto 709,51.43,48.41,10 >>Enter the House
+step
+    #requires Into The Heavens2
+    .goto 709,49.11,58.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40570 >>Turn in Into The Heavens
+    .target Li Li Stormstout
+
+]])
+
+-- --------- Paladin ---------
+--Holy
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Holy Paladin
+#internal
+
+]])
+--Protection
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Protection
+#internal
+
+]])
+--Retribution
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Retribution
+#internal
+
+]])
+
+-- --------- Priest ---------
+--Discipline
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Discipline
+#internal
+
+]])
+--Holy
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Holy Priest
+#internal
+
+]])
+--Shadow
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Shadow
+#internal
+
+]])
+
+-- --------- Rogue ---------
+--Assassination
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Assassination
+#internal
+
+]])
+--Outlaw
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Outlaw
+#internal
+
+]])
+--Subtlety
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Subtlety
+#internal
+
+]])
+
+-- --------- Shaman ---------
+--Elemental
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Elemental
+#internal
+
+
+step
+    #loop
+    .goto 725,34.07,74.37,10,0
+    .goto 725,34.34,76.12,10,0
+    .goto 725,35.76,77.48,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .accept 43334 >>Accept The Coming Storm
+    .target Rehgar Earthfury
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Graddoc|r
+    .complete 43334,1 --1/1 Fly with Graddoc (Optional)
+step
+    .goto 379,66.90,56.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .turnin 43334 >>Turn in The Coming Storm
+    .accept 43338 >>Accept The Codex of Ra
+    .target Xuen
+step
+    .goto 390,22.39,26.70
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 43338,1 --1/1 Travel to the Guo-Lai Halls
+step
+    .zoneskip 395
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    .goto 395,55.19,91.12,12 >>Enter the Guo-Lai Halls
+step
+    #completewith TheEdictsOfXA
+    >>Kill the |cRXP_ENEMY_Mogu Spirits|r in the Guo-Lai Halls
+    *|cRXP_WARN_Avoid the |cRXP_ENEMY_Mogu Statues|r.|r
+    .complete 43338,5 --8/8 Mogu Spirits Purged
+    .mob Shao-Tien Spirit Warrior
+    .mob Shao-Tien Spirit Wraith
+step
+    #completewith next
+    #label TheEdictOfFireA
+    >>Kill |cRXP_ENEMY_Xioliang|r. Loot him for the |T1017867:0|t[|cRXP_LOOT_Edict of Fire|r]
+    .complete 43338,2 --1/1 The Edict of Fire
+    .mob Xioliang
+step
+    #completewith next
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    .goto 395,47.43,81.40,15,0
+    .goto 395,52.13,63.98,25,0
+    .goto 395,67.44,68.62,25 >>Enter the Guo-Lai Ritual Chamber
+step
+    #hidewindow
+    #completewith TheEdictOfFireA
+    .goto 395,74.25,53.19,50 >>1
+step
+    #requires TheEdictOfFireA
+    .goto 395,74.83,51.02
+    >>Kill |cRXP_ENEMY_Xioliang|r. Loot him for the |T1017867:0|t[|cRXP_LOOT_Edict of Fire|r].
+    .complete 43338,2 --1/1 The Edict of Fire
+    .mob Xioliang
+step
+    #completewith next
+    #label TheEdictOfStoneA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Statue of Zhu of the Eternal Stone|r.
+    >>Kill |cRXP_ENEMY_Zhu of the Eternal Stone|r. Loot him for the |T442737:0|t[|cRXP_LOOT_Edict of Stone|r].
+    .complete 43338,3 --1/1 The Edict of Stone
+    .mob Xioliang
+step
+    #completewith next
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    .goto 395,64.19,66.71,15,0
+    .goto 395,27.75,46.45,15,0
+    .goto 395,48.87,30.24,15 >>Enter the Guo-Lai Vault
+step
+    #hidewindow
+    #completewith TheEdictOfStoneA
+    .goto 395,48.87,30.24,50 >>1
+step
+    #requires TheEdictOfStoneA
+    .goto 395,48.87,30.24
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Statue of Zhu of the Eternal Stone|r.
+    >>Kill |cRXP_ENEMY_Zhu of the Eternal Stone|r. Loot him for the |T442737:0|t[|cRXP_LOOT_Edict of Stone|r].
+    .complete 43338,3 --1/1 The Edict of Stone
+    .mob Zhu of the Eternal Stone
+step
+    #completewith next
+    #label TheEdictOfStormA
+    >>Kill |cRXP_ENEMY_Thunder Serpent Nalak'Ra|r. Loot it for the |T839911:0|t[|cRXP_LOOT_Edict of Storm|r].
+    .complete 43338,4 --1/1 The Edict of Storm
+    .mob Thunder Serpent Nalak'Ra
+step
+    --TODO: Color title
+    #completewith next
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    #title Avoid all runes besides the blue/white ones
+    .goto 395,32.94,21.14,15,0
+    .goto 395,27.75,46.45,15,0
+    .goto 395,51.81,57.95,25,0
+    .goto 395,56.24,48.40,15,0
+    .goto 395,64.67,23.05,15,0
+    .goto 395,68.78,23.98,15,0
+    .goto 395,69.57,15.71,15,0
+    .goto 396,66.28,19.96,15 >>Enter the Hall of the Serpent
+step
+    #hidewindow
+    #completewith next
+    .goto 395,66.57,15.31,15 >>1
+step
+    #hidewindow
+    #completewith TheEdictOfStormA
+    .goto 395,62.79,13.12,15 >>1
+step
+    #requires TheEdictOfStormA
+    .goto 396,57.75,50.75
+    >>Kill |cRXP_ENEMY_Thunder Serpent Nalak'Ra|r. Loot it for the |T839911:0|t[|cRXP_LOOT_Edict of Storm|r].
+    .complete 43338,4 --1/1 The Edict of the Storm
+    .mob Thunder Serpent Nalak'Ra
+step
+    #completewith next
+    #label TheCodexofRaA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 43338 >>Turn in The Codex of Ra
+    .accept 39771 >>Accept The Voice of Thunder
+    .target Rehgar Earthfury
+step
+    #completewith next
+    #title Avoid all runes besides the blue/white ones
+    .goto 395,67.13,14.55,15,0
+    .goto 395,70.22,18.57,15,0
+    .goto 395,68.17,24.88,15,0
+    .goto 395,63.00,25.50,15 >>Go back upstairs
+step
+    #hidewindow
+    #completewith TheCodexofRaA
+    .goto 395,56.24,48.40,30 >>1
+step
+    #requires TheCodexofRaA
+    .goto 395,47.11,83.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 43338 >>Turn in The Codex of Ra
+    .accept 39771 >>Accept The Voice of Thunder
+    .target Rehgar Earthfury
+step
+    #completewith next
+    #label TheVoiceOfThunderA
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 39771,1 --1/1 Travel to the Temple of the White Tiger
+step
+    #completewith TheVoiceOfThunderA
+    #title Leave the Guo-Lai Halls
+    .goto 390,22.55,27.08,15 >>|cRXP_WARN_Leave the Guo-Lai Halls|r
+step
+    #requires TheVoiceOfThunderA
+    .goto 379,68.63,57.01
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 39771,1 --1/1 Travel to the Temple of the White Tiger
+step
+    .isInScenario 976
+    .goto 379,68.6,57.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Xuen|r
+    .scenario 1992,1 --Speak with the White Tiger.
+    .skipgossipid 45121
+    .target Xuen
+step
+    .isInScenario 976
+    #completewith next
+    #label DefeatTheGiantslayerA
+    >>Defeat |cRXP_ENEMY_Sigurd the Giantslayer|r
+    .scenario 1993,1 --Defeat Sigurd the Giantslayer.
+    .mob Sigurd the Giantslayer
+step
+    #completewith DefeatTheGiantslayerA
+    .goto 379,69.32,52.72
+    .gossipoption 45122 >>Talk to the |cRXP_FRIENDLY_Xuen|r
+    .target Xuen
+step
+    #requires DefeatTheGiantslayerA
+    .isInScenario 976
+    .goto 379,69.7,53.0
+    >>Defeat |cRXP_ENEMY_Sigurd the Giantslayer|r
+    .scenario 1993,1 --Defeat Sigurd the Giantslayer.
+    .mob Sigurd the Giantslayer
+step
+    .isInScenario 976
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Xuen|r
+    .goto 379,66.7,51.2
+    .scenario 1999,1 --Speak with Xuen to Begin
+    .target Xuen
+    .skipgossipid 45039
+step
+    .isInScenario 976
+    .goto 379,66.7,51.2
+    >>Defeat |cRXP_ENEMY_Chen Stormstout|r and |cRXP_ENEMY_Li Li Stormstout|r
+    .scenario 1999,2 --Chen Stormstout Defeated
+    .scenario 1999,3 --Li Li Stormstout Defeated
+    .mob Chen Stormstout
+    .mob Li Li Stormstout
+step
+    #completewith next
+    #label WeaponsOfStormA
+    .isInScenario 976
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
+    .scenario 2078,1 --Equip the Weapons of the Storm
+step
+    #completewith WeaponsOfStormA
+    #title Enter the Temple
+    .goto 379,68.60,45.89,15 >>Enter the Temple of the White Tiger
+step
+    #requires WeaponsOfStormA
+    .isInScenario 976
+    .goto 379,68.79,43.70
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
+    .scenario 2078,1 --Equip the Weapons of the Storm
+step
+    .isInScenario 976
+    .goto 379,68.8,43.7
+    >>Kill |cRXP_ENEMY_Lord Kra'vos|r and the four |cRXP_ENEMY_Low Inquisitors|r
+    .scenario 2079,1 --Defeat Lord Kra'vos
+    .mob Low Inquisitor
+    .mob Kra'vos
+step
+    .goto 379,68.79,43.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Astral Gate to the Maelstrom|r
+    .complete 39771,3 --1/1 Return to the Maelstrom
+step
+    .goto 726,33.48,74.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 39771 >>Turn in The Voice of Thunder
+    .target Rehgar Earthfury
+]])
+--Enhancement
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Enhancement
+#internal
+
+]])
+--Restoration
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Restoration Shaman
+#internal
+
+]])
+
+-- --------- Warlock ---------
+--Affliction
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Affliction
+#internal
+
+]])
+--Demonology
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Demonology
+#internal
+
+]])
+--Destruction
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Destruction
+#internal
+
+]])
+
+-- --------- Warrior ---------
+--Arms
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Arms
+#internal
+
+]])
+--Fury
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Fury
+#internal
+
+]])
+--Protection
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Protection
+#internal
+
+]])
