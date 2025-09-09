@@ -1562,8 +1562,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Windwalker
-#internal
-
 
 step
     .goto 709,51.41,48.41
@@ -1576,12 +1574,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .complete 40636,1 --1/1 Artifact weapon chosen
     .choose 139011
+    .skipgossipid 45061
     .target Iron-Body Ponshu
 step
+    #completewith next
+    #label Prepare To Strike
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 40636 >>Turn in Prepare To Strike
     .target Iron-Body Ponshu
     .accept 40569 >>Accept The Legend of the Sands
+    .disablecheckbox
 step
     #completewith Prepare To Strike
     .goto 709,51.28,53.74,30,0
@@ -1592,7 +1594,25 @@ step
     .goto 709,49.12,58.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
     .complete 40569,1 --1/1 Speak with Li Li Stormstout
-    .skipgossip 44948
+    .skipgossipid 44948
+    .skipgossipid 45131
+    .skipgossipid 45128
+    .target Li Li Stormstout
+step
+    .goto 249,54.93,34.29
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kite|r |cRXP_WARN_after the roleplay|r.
+    .complete 40633,1 --1/1 Ride Li Li's kite to Ramkahen (Optional)
+    .timer 15,RP
+step
+    .goto 249,54.85,32.90
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 40633,2 --1/1 Meet With Li Li in Ramkahen
+    .target Li Li Stormstout
+step
+    .goto 709,49.12,58.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .complete 40569,1 --1/1 Speak with Li Li Stormstout
+    .skipgossipid 44948
     .skipgossipid 45131
     .skipgossipid 45128
     .target Li Li Stormstout
@@ -1610,17 +1630,16 @@ step
     .accept 40633 >>Accept Off To Adventure!
     .timer 48,RP
 step
-    #completewith next
-    #label Ramkahen
+    .goto 249,54.93,34.29
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kite|r |cRXP_WARN_after the roleplay|r.
     .complete 40633,1 --1/1 Ride Li Li's kite to Ramkahen (Optional)
     .timer 15,RP
 step
-    #completewith Ramkahen
-    #hidewindow
-    .goto 249,54.93,34.29,20 >>1
+    .goto 249,54.85,32.90
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 40633,2 --1/1 Meet With Li Li in Ramkahen
+    .target Li Li Stormstout
 step
-    #requires Ramkahen
     .goto 249,54.85,32.90
     #title |cFFFCDC00Follow the Arrow|r
     .complete 40633,2 --1/1 Meet With Li Li in Ramkahen

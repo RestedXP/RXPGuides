@@ -8,9 +8,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Intro
-#displayname |cFF00CCFF0|r - Intro|r.
+#displayname |cFF00CCFF1|r - Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route 
-#internal
 
 step
     #sticky
@@ -21,8 +20,8 @@ step
     .openitem 237812
     .openitem 243373
 step
-    .achievementComplete 42313,1
     .goto 627,72.46,45.90
+    .achievementComplete 42313,1
     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
