@@ -3517,7 +3517,9 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         local warbandBuff = C_UnitAuras.GetPlayerAuraBySpellID(430191)
         --1,2: xp buff, 3: max level
         local warbandBonus = warbandBuff and warbandBuff.points[1] or 0
-        calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus)/100
+        local legionRemix = C_UnitAuras.GetPlayerAuraBySpellID(1232454)
+        legionRemix = legionRemix and legionRemix.points[10] or 0
+        calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus + legionRemix)/100
         return calculatedRate
     elseif addon.game == "WOTLK" then
         local itemQuality
@@ -3834,13 +3836,14 @@ function addon.settings.ReplaceColors(element)
                                          addon.guideTextColors.default["error"])
         end
 
+        textLine = textLine:gsub("\\n","\n")
         return textLine
     end
 
     local fieldString
     if type(element) == "table" or element and element.textReplaced then
         element.textReplaced = element.textReplaced or {}
-        for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip"}) do
+        for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip","title","arrowtext"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else

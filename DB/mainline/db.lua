@@ -23,6 +23,62 @@ C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
 
+local defaultGuideList = {
+    [3455] = "RestedXP Speed Leveling\\a) Exile's Reach",
+    [460]  = "RestedXP Speed Leveling\\ab) Shadowglen",
+    [425]  = "RestedXP Speed Leveling\\ab) Northshire Valley",
+    [30]   = "RestedXP Speed Leveling\\ab) New Tinkertown",
+    [468]  = "RestedXP Speed Leveling\\ab) Ammen Vale",
+    [202]  = "RestedXP Speed Leveling\\a) Worgen Intro",
+    [378]  = "RestedXP Speed Leveling\\b) Pandaren Intro",
+    [2373] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
+    [971]  = "RestedXP Speed Leveling\\a) VoidElf Intro",
+    [940]  = "RestedXP Speed Leveling\\a) LightforgedDraenei Intro",
+    [2322] = "RestedXP Speed Leveling\\a) EarthenDwarf Intro",
+    [1161] = "RestedXP Speed Leveling\\a) KulTiran Intro",
+    [1573] = "RestedXP Speed Leveling\\a) Mechagnome Intro",
+    [1186] = "RestedXP Speed Leveling\\a) DarkIronDwarf Intro",
+    [124]  = "RestedXP Speed Leveling\\a) DK Intro",
+    [1602] = "RestedXP Speed Leveling\\a) New DK Intro",
+    [465]  = "RestedXP Speed Leveling\\ab) Deathknell",
+    [462]  = "RestedXP Speed Leveling\\ab) Camp Narache",
+    [467]  = "RestedXP Speed Leveling\\ab) Sunstrider Isle",
+    [194]  = "RestedXP Speed Leveling\\ab) Goblin Intro",
+    [680]  = "RestedXP Speed Leveling\\a) Nightborne Intro",
+    [4652] = "RestedXP Speed Leveling\\a) HighmountainTauren",
+    ["MagharOrc"] = "RestedXP Speed Leveling\\a) MagharOrc Intro",
+    [1165] = "RestedXP Speed Leveling\\a) ZandalariTroll Intro",
+    ["Vulpera"] = "RestedXP Speed Leveling\\a) Vulpera Intro", -- changed from duplicate 85 (org)
+    [672]  = "RestedXP Speed Leveling\\a) DH Intro",
+    --[627] = "Legion Remix",
+}
+
+function addon.GetDefaultGuide()
+    local login = addon.tracker.state.login
+    local played = difftime(time(),login.time) + login.totalTimePlayed
+    if played < 120 then
+        local HBD = LibStub("HereBeDragons-2.0")
+        local zone = HBD:GetPlayerZone()
+        local exilesreach = C_Map.GetAreaInfo(3455)
+        local default
+        if zone then
+            default = defaultGuideList[zone]
+        elseif GetSubZoneText() == exilesreach or GetZoneText() == exilesreach then
+            default = defaultGuideList[3455]
+        end
+        return default or defaultGuideList[addon.player.race]
+    end
+end
+
+function addon.LoadDefaultGuide()
+    local defaultGuide = addon.GetDefaultGuide()
+    if defaultGuide then
+        --print(defaultGuide)
+        addon.functions:next(defaultGuide)
+    end
+end
+
+
 addon.mapId = {}
 for i = 1, 2200 do
 	local map = C_Map.GetMapInfo(i)

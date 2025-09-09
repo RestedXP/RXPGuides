@@ -14,6 +14,7 @@ addon.skipPreReq = {
 
 local _,class = UnitClass("player")
 
+--[[
 addon.defaultGuideList = {
     ["Elwynn Forest"] = "RestedXP Alliance 1-20\\01-06 Northshire",
     ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
@@ -22,6 +23,10 @@ addon.defaultGuideList = {
     ["Mulgore"] = "RestedXP Horde 1-30\\01-06 Red Cloud Mesa",
     ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-11 Tirisfal Glades",
 }
+if class == "HUNTER" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-6 Coldridge Valley (Hunter)"
+end
+]]
 
 if faction == "Horde" then
     addon.defaultGroup = "RestedXP Speedrun Guide (H)"
@@ -31,9 +36,6 @@ elseif faction == "Alliance" then
     addon.defaultGroupHC = "RestedXP Survival Guide (A)"
 end
 
-if class == "HUNTER" then
-    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-6 Coldridge Valley (Hunter)"
-end
 
 addon.questConversion = {
 }

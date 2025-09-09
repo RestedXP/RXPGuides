@@ -1500,7 +1500,7 @@ step
 step
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the western Exit
     .zoneskip The Barrens
     .isOnQuest 896
 step

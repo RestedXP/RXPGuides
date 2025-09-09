@@ -807,10 +807,9 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     if not attachment then return end
     local trackerUi = addon.tracker.ui[attachment:GetName()]
     if not trackerUi then return end
-    addon.enabledFrames["trackerUi"] = trackerUi
-    trackerUi.IsFeatureEnabled = function()
-        return addon.settings.profile.enableTracker,false
-    end
+
+    -- Do not support enabledFrames, large window not part of core functionality
+
     self.state.levelReportData = nil
 
     if target and target ~= playerName then
