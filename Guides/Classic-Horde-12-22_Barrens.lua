@@ -433,7 +433,8 @@ step << Tauren
 step << Tauren
     #optional
     #completewith next
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
 step << Tauren
@@ -457,7 +458,8 @@ step << Tauren
 step << Tauren
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
 step << Tauren
@@ -835,7 +837,8 @@ step
 step
     #optional
     #completewith next
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
     #label KreenigSnarlsnout
@@ -873,7 +876,8 @@ step
     .goto The Barrens,59.46,24.58,30,0
     .goto The Barrens,58.38,27.01,0
     .goto The Barrens,59.46,24.58,0
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
     #loop
@@ -3390,14 +3394,14 @@ step
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Jayka
-    .isOnQuest 1483
+    .isQuestAvailable 1093
 step
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
-    .isOnQuest 1483
+    .isQuestAvailable 1093
 step
     .goto Stonetalon Mountains,47.20,61.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran|r
@@ -3868,8 +3872,6 @@ step
     .mob Ishamuhale
 step
     #completewith BootyTurnin
-    .goto The Barrens,63.07,36.31 << Rogue
-    .goto The Barrens,62.68,36.23 << !Rogue
     .subzone 392 >> Travel to Ratchet
 step << Rogue
     .goto The Barrens,63.07,36.31
@@ -6188,6 +6190,8 @@ step << Priest
     #xprate <1.5
     #season 0,1
     .hs >> Hearth to Thunder Bluff
+    .bindlocation 1638,1
+    .zoneskip Thunder Bluff
     .use 6948
     >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_first if you wish. This is the last boss of the dungeon|r
     .dungeon BFD
@@ -7246,7 +7250,8 @@ step << Tauren
     .isOnQuest 872
 step << Tauren
     #completewith next
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
     .isOnQuest 872
@@ -7273,7 +7278,8 @@ step << Tauren
 step << Tauren
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
     .isOnQuest 872
@@ -7655,7 +7661,8 @@ step
     .isOnQuest 872
 step
     #completewith next
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .isOnQuest 872
 step
@@ -7694,7 +7701,8 @@ step
 step
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
-    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
+    >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r
+    >>|cRXP_WARN_It has multiple spawn locations|r
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .isOnQuest 872
 step
