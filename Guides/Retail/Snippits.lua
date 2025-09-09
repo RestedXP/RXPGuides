@@ -995,6 +995,7 @@ step
 
 ]])
 
+
 -- ##################################################
 -- #                  LEGION REMIX                  #
 -- ##################################################
@@ -1562,6 +1563,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Windwalker
+#internal
 
 step
     .goto 709,51.41,48.41
