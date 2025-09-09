@@ -8,6 +8,8 @@ Creative Commons Attribution-NonCommercial 3.0 Unported https://creativecommons.
 if addon.gameVersion > 20000 then return end
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local HBD     = LibStub("HereBeDragons-2.0")
+local HBDPins = LibStub("HereBeDragons-Pins-2.0")
 
 local GameTooltip, WorldMapFrame = _G.GameTooltip, _G.WorldMapFrame
 local UnitOnTaxi, GetBestMapForUnit, GetPlayerMapPosition = _G.UnitOnTaxi,
@@ -18,6 +20,9 @@ local UnitLevel = _G.UnitLevel
 local HORDE, ALLIANCE, NEUTRAL = "Horde", "Alliance", "Neutral"
 
 addon.VendorTreasures = addon:NewModule("VendorTreasures")
+
+-- New Pin owner
+local PIN_OWNER = addon.VendorTreasures
 
 local RARE_ADDON_NAME = "Cpt. Stadics' Vendor Treasures"
 local ICON_PATH = "Interface/GossipFrame/VendorGossipIcon.blp"
@@ -87,12 +92,10 @@ local DATA = {}
 
 local WORLD_MAP_ID = -1
 local WORLD_MAP_PINS = {}
-local WORLD_MAP_CONTAINER = WorldMapFrame:GetCanvas()
 local WORLD_MAP_PIN_SIZE = 18
 
 local MINI_MAP_ID = -1;
 local MINI_MAP_PINS = {};
-local MINI_MAP_CONTAINER = Minimap;
 local MINI_MAP_PIN_SIZE = 12;
 
 local PLAYER_MAP_ID = -1;
@@ -385,7 +388,7 @@ function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
     -- Ensure sure the zone data exists
     if DATA[zone] == nil then DATA[zone] = {} end
 
-    -- Define the data keys for this NPC
+    -- Loot Data for this NPC
     local npcData = {}
     npcData.zone = zone
     npcData.name = name
@@ -396,13 +399,9 @@ function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
     npcData.loot = loot
     npcData.loaded = false
 
-    -- Load loot early for tooltips
     if loot then
         for _, itemID in ipairs(loot) do
             GetItemInfo(itemID)
-            -- if (itemName == nil) then
-            -- print("Invalid Item: " .. itemID);
-            -- end
         end
     end
 
@@ -412,31 +411,24 @@ end
 
 function Frame:GetZoneData(zone) return DATA[zone] end
 
-function Frame:CreateMapPin(container, data)
-
-    -- local containerWidth = container:GetWidth();
-    -- local containerHeight = container:GetHeight();
-
-    local pinFrame = CreateFrame("Button", nil, container)
+function Frame:CreateMapPin(_, data)
+    local pinFrame = CreateFrame("Button", nil, UIParent)
     pinFrame:EnableMouse(true)
     pinFrame:SetFrameLevel(2100)
-    pinFrame:SetScript("OnClick",
-                       function(pin) Frame:ShowPinItemTooltip(pin) end)
+    pinFrame:SetScript("OnClick", function(pin) Frame:ShowPinItemTooltip(pin) end)
     pinFrame:SetScript("OnEnter", function(pin) Frame:ShowPinTooltip(pin) end)
-    pinFrame:SetScript("OnLeave", function(pin) Frame:HidePinTooltip(pin) end)
-
-    local pinTexture = pinFrame:CreateTexture(nil, "BACKGROUND")
+    pinFrame:SetScript("OnLeave", function() Frame:HidePinTooltip() end)
+    local pinTexture = pinFrame:CreateTexture(nil, "OVERLAY")
     pinTexture:SetAllPoints(pinFrame)
     pinTexture:SetTexture(ICON_PATH)
-
     pinFrame.__data = data
     pinFrame.texture = pinTexture
     pinFrame:SetHighlightTexture(ICON_PATH, "ADD")
     pinFrame:Hide()
 
     return pinFrame
-
 end
+
 
 function Frame:ShowPinItemTooltip(pin)
 
@@ -555,29 +547,17 @@ function Frame:UpdateMacros()
     -- print("Create Macro " .. macroName .. " With Content: " .. macroContent .. " And ID " .. macroId);
 end
 
+-- remove comments to re-enable minimap pins
 function Frame:CheckMiniMap()
-    -- TODO port World Map changes to minimap
-    if true then return end
-
-    local mapID = GetMapID();
-    if (mapID ~= MINI_MAP_ID) then Frame:DrawMiniMapPins(); end
-    self:UpdateMiniMapPins();
-
+    --local mapID = GetMapID()
+    --if mapID ~= MINI_MAP_ID then
+        --self:DrawMiniMapPins()
+    --end
 end
 
 function Frame:CheckWorldMap()
     if not IsWorldMapAvailable() then return end
-    -- Only display pins for player's map unless soloSelfFound
-    if not addon.settings.profile.soloSelfFound then
-        if GetBestMapForUnit("player") ~= GetWorldMapID() then
-            Frame:HideWorldMapPins()
-            return
-        end
-    end
-
     if GetWorldMapID() ~= WORLD_MAP_ID then self:DrawWorldMapPins() end
-    self:UpdateWorldMapPins()
-
 end
 
 function Frame:CheckNearby()
@@ -619,170 +599,105 @@ function Frame:CheckNearby()
                 if (distanceNPC == nearbyNPC) then found = true end
             end
         end
-
     end
-
     DISTANCE_NPCS = nearbyNPCs
-
 end
 
 -- World Map --
-function Frame:HideWorldMapNPC(data)
-    local npcPin = data.worldpin
-    npcPin:Hide()
-end
-
 function Frame:ShowWorldMapNPC(data)
     self:LoadNPCData(data)
-    local npcPin = data.worldpin
-    npcPin:Show()
+
+    local x, y = data.x, data.y
+    if x > 1 or y > 1 then x, y = x/100, y/100 end
+    if not x or not y or x < 0 or x > 1 or y < 0 or y > 1 then return end
+
+    data.worldpin:SetSize(WORLD_MAP_PIN_SIZE, WORLD_MAP_PIN_SIZE)
+    data.worldpin:SetScale(addon.settings.profile.vendorTreasurePinScale or 1)
+
+    HBDPins:AddWorldMapIconMap(
+        PIN_OWNER,
+        data.worldpin,
+        data.zone,
+        x, y,
+        _G.HBD_PINS_WORLDMAP_SHOW_CONTINENT
+    )
 end
 
 function Frame:DrawWorldMapPins()
-    Frame:HideWorldMapPins()
-    Frame:ShowWorldMapPins()
+    self:HideWorldMapPins()
+    self:ShowWorldMapPins()
 end
 
 function Frame:HideWorldMapPins()
-    local npcData
-
-    for _, npcPin in pairs(WORLD_MAP_PINS) do
-        npcData = npcPin.__data
-        self:HideWorldMapNPC(npcData)
-    end
-
+    HBDPins:RemoveAllWorldMapIcons(PIN_OWNER)
     wipe(WORLD_MAP_PINS)
 end
 
 function Frame:ShowWorldMapPins()
     WORLD_MAP_ID = GetWorldMapID()
 
-    local zoneData = Frame:GetZoneData(WORLD_MAP_ID)
-
-    if zoneData == nil then return end
-
-    local npcPin
-    for _, npcData in pairs(zoneData) do
-
-        npcPin = npcData.worldpin
-        self:ShowWorldMapNPC(npcData)
-        tinsert(WORLD_MAP_PINS, npcPin)
-
+    wipe(WORLD_MAP_PINS)
+    for _, zoneData in pairs(DATA) do
+        for _, npcData in pairs(zoneData) do
+            self:ShowWorldMapNPC(npcData)
+            tinsert(WORLD_MAP_PINS, npcData.worldpin)
+        end
     end
-
-    self:UpdateWorldMapPins()
-
-end
-
-function Frame:UpdateWorldMapPins()
-    -- TODO: Try not to call this on every frame. Only when the canvas width or height has changed, and if the scale has changed.
-    local width = WORLD_MAP_CONTAINER:GetWidth()
-    local height = WORLD_MAP_CONTAINER:GetHeight()
-
-    local npcData, npcPin, pointX, pointY, pinX, pinY
-
-    for _, pin in pairs(WORLD_MAP_PINS) do
-
-        npcData = pin.__data
-        npcPin = npcData.worldpin
-
-        pointX = npcData.x
-        pointY = npcData.y
-
-        pinX = ((pointX / 100) * width) - (width / 2)
-        pinY = (((pointY / 100) * height) - (height / 2)) * -1
-        npcPin:SetPoint("CENTER", pinX, pinY)
-        npcPin:SetWidth(WORLD_MAP_PIN_SIZE)
-        npcPin:SetHeight(WORLD_MAP_PIN_SIZE)
-        npcPin:SetScale(addon.settings.profile.vendorTreasurePinScale)
-    end
-
 end
 
 -- Mini Map --
 -- TODO RXP, port World Map changes
+
+-- Mini map pins with HBDPins
 function Frame:HideMiniMapNPC(data)
-    local npcPin = data.minipin
-    npcPin:Hide()
+    if data.minipin then
+        HBDPins:RemoveMinimapIcon(PIN_OWNER, data.minipin)
+    end
 end
 
 function Frame:ShowMiniMapNPC(data)
     self:LoadNPCData(data)
-    local npcPin = data.minipin
-    npcPin:Show()
+
+    -- ensure the pin actually has size
+    data.minipin:SetSize(MINI_MAP_PIN_SIZE, MINI_MAP_PIN_SIZE)
+    data.minipin:SetScale(addon.settings.profile.vendorTreasurePinScale or 1)
+
+    local x, y = data.x, data.y
+    if x > 1 or y > 1 then x, y = x/100, y/100 end
+    if not x or not y or x < 0 or x > 1 or y < 0 or y > 1 then return end
+
+    -- showOnEdge=true so an arrow appears if the point is off the minimap
+    HBDPins:AddMinimapIconMap(PIN_OWNER, data.minipin, data.zone, x, y, true)
 end
 
 function Frame:DrawMiniMapPins()
-    -- Disabled for now
-    -- Frame:HideMiniMapPins();
-    -- Frame:ShowMiniMapPins();
+    Frame:HideMiniMapPins()
+    Frame:ShowMiniMapPins()
 end
 
 function Frame:HideMiniMapPins()
-
-    local npcData
-    for _, npcPin in pairs(MINI_MAP_PINS) do
-        npcData = npcPin.__data
-        self:HideMiniMapNPC(npcData)
-    end
-
-    table.wipe(MINI_MAP_PINS)
-
+    HBDPins:RemoveAllMinimapIcons(PIN_OWNER)
+    wipe(MINI_MAP_PINS)
 end
 
 function Frame:ShowMiniMapPins()
-
     MINI_MAP_ID = GetMapID()
+
+    -- Use current map’s data; if none, try parent so city/indoors still show
     local zoneData = Frame:GetZoneData(MINI_MAP_ID)
+    if not zoneData then
+        local info = C_Map.GetMapInfo(MINI_MAP_ID)
+        if info and info.parentMapID then
+            zoneData = Frame:GetZoneData(info.parentMapID)
+        end
+    end
+    if not zoneData then return end
 
-    if zoneData == nil then return end
-
-    local npcPin
+    wipe(MINI_MAP_PINS)
     for _, npcData in pairs(zoneData) do
-
-        npcPin = npcData.minipin
-        self:ShowMiniMapNPC(npcData)
-        table.insert(MINI_MAP_PINS, npcPin)
-
+        Frame:ShowMiniMapNPC(npcData)
+        tinsert(MINI_MAP_PINS, npcData.minipin)
     end
-
-    self:UpdateMiniMapPins()
-
-end
-
-function Frame:UpdateMiniMapPins()
-
-    -- TODO: Try not to call this on every frame. Only when the canvas width or height has changed, and if the scale has changed.
-    local scale = MINI_MAP_CONTAINER:GetEffectiveScale()
-    local width = MINI_MAP_CONTAINER:GetWidth()
-    local height = MINI_MAP_CONTAINER:GetHeight()
-    -- local left = MINI_MAP_CONTAINER:GetLeft()
-    -- local top = MINI_MAP_CONTAINER:GetTop()
-
-    local pinSize = MINI_MAP_PIN_SIZE / scale;
-
-    for _, npcPin in pairs(MINI_MAP_PINS) do
-
-        local npcData = npcPin.__data;
-        local npcPin = npcData.minipin;
-
-        local pointX = npcData.x;
-        local pointY = npcData.y;
-
-        -- if (i == 1) then pointX = 0; pointY = 0; end
-        -- if (i == 2) then pointX = 100; pointY = 0; end
-        -- if (i == 3) then pointX = 0; pointY = 100; end
-        -- if (i == 4) then pointX = 100; pointY = 100; end
-        -- if (i >= 5) then pointX = 50; pointY = 50; end
-
-        local pinX = ((pointX / 100) * width) - (width / 2);
-        local pinY = (((pointY / 100) * height) - (height / 2)) * -1;
-        npcPin:SetPoint("CENTER", pinX, pinY)
-        npcPin:SetWidth(pinSize);
-        npcPin:SetHeight(pinSize);
-
-    end
-
 end
 
 -- Utility
@@ -803,8 +718,8 @@ function Frame:LoadNPCData(data)
 
     data.loaded = true
     data.rarity = rarity
-    data.worldpin = Frame:CreateMapPin(WORLD_MAP_CONTAINER, data)
-    data.minipin = Frame:CreateMapPin(MINI_MAP_CONTAINER, data)
+    data.worldpin = Frame:CreateMapPin(nil, data)
+    data.minipin = Frame:CreateMapPin(nil, data)
 
 end
 
@@ -842,15 +757,6 @@ function addon.VendorTreasures.UpdatePins()
         Frame:HideWorldMapPins()
         return
     end
-
-    -- Only display pins for player's map unless soloSelfFound
-    if not addon.settings.profile.soloSelfFound then
-        if GetBestMapForUnit("player") ~= GetWorldMapID() then
-            Frame:HideWorldMapPins()
-            return
-        end
-    end
-
     Frame:CheckWorldMap()
     Frame:ShowWorldMapPins()
 end

@@ -3,7 +3,7 @@
 ## Notes: In-game leveling guides
 ## Author: RestedXP
 ## Version: @project-version@
-## OptionalDeps: Questie, RXPGuides_Themes
+## OptionalDeps: Questie, RXPGuides_Themes, HereBeDragons, HereBeDragons-Pins
 ## SavedVariables: RXPData, RXPDB, RXPSettings
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246
