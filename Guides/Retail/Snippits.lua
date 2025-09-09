@@ -1863,6 +1863,234 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Elemental
 #internal
 
+
+step
+    #loop
+    .goto 725,34.07,74.37,10,0
+    .goto 725,34.34,76.12,10,0
+    .goto 725,35.76,77.48,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .accept 43334 >>Accept The Coming Storm
+    .target Rehgar Earthfury
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Graddoc|r
+    .complete 43334,1 --1/1 Fly with Graddoc (Optional)
+step
+    .goto 379,66.90,56.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .turnin 43334 >>Turn in The Coming Storm
+    .accept 43338 >>Accept The Codex of Ra
+    .target Xuen
+step
+    .goto 390,22.39,26.70
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 43338,1 --1/1 Travel to the Guo-Lai Halls
+step
+    .zoneskip 395
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    .goto 395,55.19,91.12,12 >>Enter the Guo-Lai Halls
+step
+    #completewith TheEdictsOfXA
+    >>Kill the |cRXP_ENEMY_Mogu Spirits|r in the Guo-Lai Halls
+    *|cRXP_WARN_Avoid the |cRXP_ENEMY_Mogu Statues|r.|r
+    .complete 43338,5 --8/8 Mogu Spirits Purged
+    .mob Shao-Tien Spirit Warrior
+    .mob Shao-Tien Spirit Wraith
+step
+    #completewith next
+    #label TheEdictOfFireA
+    >>Kill |cRXP_ENEMY_Xioliang|r. Loot him for the |T1017867:0|t[|cRXP_LOOT_Edict of Fire|r]
+    .complete 43338,2 --1/1 The Edict of Fire
+    .mob Xioliang
+step
+    #completewith next
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    .goto 395,47.43,81.40,15,0
+    .goto 395,52.13,63.98,25,0
+    .goto 395,67.44,68.62,25 >>Enter the Guo-Lai Ritual Chamber
+step
+    #hidewindow
+    #completewith TheEdictOfFireA
+    .goto 395,74.25,53.19,50 >>1
+step
+    #requires TheEdictOfFireA
+    .goto 395,74.83,51.02
+    >>Kill |cRXP_ENEMY_Xioliang|r. Loot him for the |T1017867:0|t[|cRXP_LOOT_Edict of Fire|r].
+    .complete 43338,2 --1/1 The Edict of Fire
+    .mob Xioliang
+step
+    #completewith next
+    #label TheEdictOfStoneA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Statue of Zhu of the Eternal Stone|r.
+    >>Kill |cRXP_ENEMY_Zhu of the Eternal Stone|r. Loot him for the |T442737:0|t[|cRXP_LOOT_Edict of Stone|r].
+    .complete 43338,3 --1/1 The Edict of Stone
+    .mob Xioliang
+step
+    #completewith next
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    .goto 395,64.19,66.71,15,0
+    .goto 395,27.75,46.45,15,0
+    .goto 395,48.87,30.24,15 >>Enter the Guo-Lai Vault
+step
+    #hidewindow
+    #completewith TheEdictOfStoneA
+    .goto 395,48.87,30.24,50 >>1
+step
+    #requires TheEdictOfStoneA
+    .goto 395,48.87,30.24
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Statue of Zhu of the Eternal Stone|r.
+    >>Kill |cRXP_ENEMY_Zhu of the Eternal Stone|r. Loot him for the |T442737:0|t[|cRXP_LOOT_Edict of Stone|r].
+    .complete 43338,3 --1/1 The Edict of Stone
+    .mob Zhu of the Eternal Stone
+step
+    #completewith next
+    #label TheEdictOfStormA
+    >>Kill |cRXP_ENEMY_Thunder Serpent Nalak'Ra|r. Loot it for the |T839911:0|t[|cRXP_LOOT_Edict of Storm|r].
+    .complete 43338,4 --1/1 The Edict of Storm
+    .mob Thunder Serpent Nalak'Ra
+step
+    --TODO: Color title
+    #completewith next
+    .isOnQuest 43338
+    .isQuestNotComplete 43338
+    #title Avoid all runes besides the blue/white ones
+    .goto 395,32.94,21.14,15,0
+    .goto 395,27.75,46.45,15,0
+    .goto 395,51.81,57.95,25,0
+    .goto 395,56.24,48.40,15,0
+    .goto 395,64.67,23.05,15,0
+    .goto 395,68.78,23.98,15,0
+    .goto 395,69.57,15.71,15,0
+    .goto 396,66.28,19.96,15 >>Enter the Hall of the Serpent
+step
+    #hidewindow
+    #completewith next
+    .goto 395,66.57,15.31,15 >>1
+step
+    #hidewindow
+    #completewith TheEdictOfStormA
+    .goto 395,62.79,13.12,15 >>1
+step
+    #requires TheEdictOfStormA
+    .goto 396,57.75,50.75
+    >>Kill |cRXP_ENEMY_Thunder Serpent Nalak'Ra|r. Loot it for the |T839911:0|t[|cRXP_LOOT_Edict of Storm|r].
+    .complete 43338,4 --1/1 The Edict of the Storm
+    .mob Thunder Serpent Nalak'Ra
+step
+    #completewith next
+    #label TheCodexofRaA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 43338 >>Turn in The Codex of Ra
+    .accept 39771 >>Accept The Voice of Thunder
+    .target Rehgar Earthfury
+step
+    #completewith next
+    #title Avoid all runes besides the blue/white ones
+    .goto 395,67.13,14.55,15,0
+    .goto 395,70.22,18.57,15,0
+    .goto 395,68.17,24.88,15,0
+    .goto 395,63.00,25.50,15 >>Go back upstairs
+step
+    #hidewindow
+    #completewith TheCodexofRaA
+    .goto 395,56.24,48.40,30 >>1
+step
+    #requires TheCodexofRaA
+    .goto 395,47.11,83.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 43338 >>Turn in The Codex of Ra
+    .accept 39771 >>Accept The Voice of Thunder
+    .target Rehgar Earthfury
+step
+    #completewith next
+    #label TheVoiceOfThunderA
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 39771,1 --1/1 Travel to the Temple of the White Tiger
+step
+    #completewith TheVoiceOfThunderA
+    #title Leave the Guo-Lai Halls
+    .goto 390,22.55,27.08,15 >>|cRXP_WARN_Leave the Guo-Lai Halls|r
+step
+    #requires TheVoiceOfThunderA
+    .goto 379,68.63,57.01
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 39771,1 --1/1 Travel to the Temple of the White Tiger
+step
+    .isInScenario 976
+    .goto 379,68.6,57.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Xuen|r
+    .scenario 1992,1 --Speak with the White Tiger.
+    .skipgossipid 45121
+    .target Xuen
+step
+    .isInScenario 976
+    #completewith next
+    #label DefeatTheGiantslayerA
+    >>Defeat |cRXP_ENEMY_Sigurd the Giantslayer|r
+    .scenario 1993,1 --Defeat Sigurd the Giantslayer.
+    .mob Sigurd the Giantslayer
+step
+    #completewith DefeatTheGiantslayerA
+    .goto 379,69.32,52.72
+    .gossipoption 45122 >>Talk to the |cRXP_FRIENDLY_Xuen|r
+    .target Xuen
+step
+    #requires DefeatTheGiantslayerA
+    .isInScenario 976
+    .goto 379,69.7,53.0
+    >>Defeat |cRXP_ENEMY_Sigurd the Giantslayer|r
+    .scenario 1993,1 --Defeat Sigurd the Giantslayer.
+    .mob Sigurd the Giantslayer
+step
+    .isInScenario 976
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Xuen|r
+    .goto 379,66.7,51.2
+    .scenario 1999,1 --Speak with Xuen to Begin
+    .target Xuen
+    .skipgossipid 45039
+step
+    .isInScenario 976
+    .goto 379,66.7,51.2
+    >>Defeat |cRXP_ENEMY_Chen Stormstout|r and |cRXP_ENEMY_Li Li Stormstout|r
+    .scenario 1999,2 --Chen Stormstout Defeated
+    .scenario 1999,3 --Li Li Stormstout Defeated
+    .mob Chen Stormstout
+    .mob Li Li Stormstout
+step
+    #completewith next
+    #label WeaponsOfStormA
+    .isInScenario 976
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
+    .scenario 2078,1 --Equip the Weapons of the Storm
+step
+    #completewith WeaponsOfStormA
+    #title Enter the Temple
+    .goto 379,68.60,45.89,15 >>Enter the Temple of the White Tiger
+step
+    #requires WeaponsOfStormA
+    .isInScenario 976
+    .goto 379,68.79,43.70
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
+    .scenario 2078,1 --Equip the Weapons of the Storm
+step
+    .isInScenario 976
+    .goto 379,68.8,43.7
+    >>Kill |cRXP_ENEMY_Lord Kra'vos|r and the four |cRXP_ENEMY_Low Inquisitors|r
+    .scenario 2079,1 --Defeat Lord Kra'vos
+    .mob Low Inquisitor
+    .mob Kra'vos
+step
+    .goto 379,68.79,43.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Astral Gate to the Maelstrom|r
+    .complete 39771,3 --1/1 Return to the Maelstrom
+step
+    .goto 726,33.48,74.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 39771 >>Turn in The Voice of Thunder
+    .target Rehgar Earthfury
 ]])
 --Enhancement
 RXPGuides.RegisterGuide([[
