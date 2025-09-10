@@ -2072,10 +2072,10 @@ function BottomFrame.SortSteps()
     end
 end]]
 
-local function IsGuideActive(guide)
+local function IsGuideActive(guide,includeInternal)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
-        addon.stepLogic.LevelCheck(guide) and not guide.internal and
+        addon.stepLogic.LevelCheck(guide) and (not guide.internal or includeInternal) and
         addon.stepLogic.LoremasterCheck(guide) then
         if (not addon.player.neutral or not guide.enabledFor) then
             return true
@@ -2128,6 +2128,35 @@ function RXPFrame:GenerateMenuTable(menu)
     table.sort(unusedGuides,sortfunc)
 
     local menuIndex = 1
+    local function ProcessChapters(guide,tbl,activeChapters)
+        if guide.chapters then
+            if not activeChapters then activeChapters = {} end
+            for chapterName in string.gmatch(guide.chapters,"%s*([^;]+)%s*") do
+                local chapter = addon.GetGuideTable(guide.group, chapterName)
+                if addon.IsGuideActive(chapter,true) then
+                    if not tbl.menuList then
+                        tbl.menuList = {}
+                        tbl.func = nil
+                        tbl.arg1 = nil
+                        tbl.arg2 = nil
+                        tbl.hasArrow = true
+                    end
+                    local item = {
+                        arg1 = guide.group,
+                        arg2 = chapterName,
+                        func = addon.LoadGuideTable,
+                        text = addon.GetGuideName(chapter),
+                        notCheckable = 1,
+                    }
+                    if not activeChapters[chapterName] then
+                        ProcessChapters(chapter,item,activeChapters)
+                    end
+                    activeChapters[chapterName] = true
+                    tinsert(tbl.menuList,item)
+                end
+            end
+        end
+    end
 
     local function createMenu(group)
         if group == "RXPGuides" then return end
@@ -2181,6 +2210,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     end
                     subitem.notCheckable = 1
                     subtable.subweight = tonumber(guide.subweight) or subtable.subweight
+                    ProcessChapters(guide,subitem)
                     tinsert(subtable.menuList, subitem)
                 else
                     submenuIndex = submenuIndex + 1
@@ -2196,6 +2226,7 @@ function RXPFrame:GenerateMenuTable(menu)
                         subitem.arg2 = guideName
                     end
                     subitem.notCheckable = 1
+                    ProcessChapters(guide,subitem)
                     tinsert(item.menuList, subitem)
                 end
                 if not defaultGuide and guide.group == addon.defaultGroup then
