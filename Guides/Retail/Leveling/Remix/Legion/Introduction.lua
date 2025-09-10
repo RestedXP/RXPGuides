@@ -1,6 +1,6 @@
--- ============================================================
--- ==============  GROUP LEGION REMIX: REMIX INTRO ============
--- ============================================================
+-- ================================================ -
+-- ==============  GROUP: LEGION REMIX  =========== -
+-- ================================================ -
 
 ---Intro
 RXPGuides.RegisterGuide([[
@@ -9,24 +9,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Intro
 #displayname |cFF00CCFF1|r - Intro|r
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route 
-#next a) Order Hall Death Knight Part 1 << Death Knight
-#next a) Order Hall Demon Hunter Part 1 << Demon Hunter
-#next a) Order Hall Druid Part 1 << Druid
-#next a) Order Hall Hunter Part 1 << Hunter
-#next a) Order Hall Mage Part 1 << Mage
-#next a) Order Hall Monk Part 1 << Monk
-#next a) Order Hall Paladin Part 1 << Paladin
-#next a) Order Hall Priest Part 1 << Priest
-#next a) Order Hall Rogue Part 1 << Rogue
-#next a) Order Hall Shaman Part 1 << Shaman
-#next a) Order Hall Warlock Part 1 << Warlock
-#next a) Order Hall Warrior Part 1 << Warrior
-
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next aa) Skyriding
 
 
 step
-    #completewith Heroic World Tier
+    #completewith Fixed Point in Time
     #hidewindow
     +test
     .use 245925
@@ -42,7 +30,7 @@ step
 step
     #optional
     .achievement 42313,1
-    .skipto guide,RestedXP Legion Remix\ab) Intro Skip
+    .skipto guide,RestedXP Legion Remix\ab) Skyriding
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -79,8 +67,8 @@ step
 step
     #requires Legion demons purged
     #loop
-    .goto 627,44.65,59.12,20,0
-    .goto 627,34.24,55.91,20,0
+    .goto 627,44.65,59.12,15,0
+    .goto 627,34.24,55.91,15,0
     >>Kill |cRXP_ENEMY_Demons|r
     .complete 89405,1 --Legion demons purged (100%)
     .mob Felguard Invader
@@ -186,7 +174,7 @@ step
     #title |cFFFCDC00Run through the Yellow Orbs|r
     .complete 89408,1,7 --12/12 Frayed Temporal Threads collected
 step
-    .goto 627,38.36,40.37
+    .goto 627,38.82,39.94
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Curio Lockbox|r |cRXP_WARN_to your right|r.
     .complete 89407,3 --1/1 Curious Curio
 step
@@ -335,7 +323,6 @@ step
     .accept 90659 >>Accept Something Borrowed
     .target Momentus
 step
-    .goto 627,42.88,28.69,2,0
     .goto 627,42.81,27.73
     #title |cFFFF0000STOP|r
     *|cRXP_WARN_MAKE SURE YOU HAVE YOUR DESIRED SPEC SELECTED BEFORE PROCEEDING|r.
@@ -351,20 +338,21 @@ step
     .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
     .target Momentus
 step
-    .goto 627,42.24,28.31
+    .goto 627,42.17,28.44
     >>|cRXP_WARN_In the "Active Items" section|r:
     *There is a macro, use the macro, learn the skill, apply changes, and place the skill on your action bars.
     .complete 90659,4 --Purchase the Remix Time trait in your Artifact Weapon
     .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
 step
-    .goto 627,42.46,28.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 90659 >>Turn in Something Borrowed
     .accept 89412 >>Accept Get Plenty of Exorcise
     .accept 90901 >>Accept As A Matter of Artifact
+    .goto 627,42.46,28.05
+    .target +Momentus
     .accept 89411 >>Accept Scavenger Hunting
-    .target Momentus
-    .target Erus
+    .goto 627,42.31,27.32
+    .target +Erus
 step
     #completewith Infinite Power
     >>Kill |cRXP_ENEMY_Demons|r. Loot them for |T134515:0|t[|cRXP_LOOT_Legion Armor Scraps|r] and |T1411837:0|t[|cRXP_LOOT_Infinite Power|r].
@@ -640,25 +628,20 @@ step
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
 step
     #completewith Krasus' Landing
+    #title |cFFFCDC00Spam Macro|r
     .goto 619,45.64,67.7
     .gossipoption 133297 >>|cRXP_WARN_In the "Active Items" section|r There is a macro, spam it after talking to |cRXP_FRIENDLY_Moratari|r.
     .timer 68,RP
     .target Moratari
     .macro Leave Vehicle,6656430 >> /leavevehicle
 step
+    #requires Krasus' Landing
     .isOnQuest 89418
     .goto 619,45.96,67.89
     #title |cFFFCDC00Spam Macro|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .home >>Set your Hearthstone to Dalaran
     .macro Leave Vehicle,6656430 >> /leavevehicle
--- step
---     #requires Meet Nostwin2
---     .isOnQuest 92855
---     .goto 619,45.86,68.00
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
---     .turnin 92855 >>Turn in Make Haste, Not Waste
---     .target Lidamorrutu
 step
     .goto 619,45.83,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
@@ -666,9 +649,9 @@ step
     .target Momentus
 step
     .isOnQuest 89418
-    .goto 619,45.72,67.52,8 
+    .goto 619,45.72,67.52,8,0
     .goto 619,45.71,67.45
-    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     .isOnQuest 89418
     .goto 627,71.94,41.44
@@ -676,6 +659,7 @@ step
     .use 254320
     .aura 1257698
 step
+    #label Fixed Point in Time
     .goto 627,71.94,41.44
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
@@ -684,6 +668,37 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .turnin 89418 >>Turn in A Fixed Point in Time
     .target Moratari
+]])
+
+---Skyriding
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#name aa) Skyriding
+#displayname |cFF00CCFF2|r - Skyriding|r
+#next ab) Order Hall Death Knight Part 1 << Death Knight
+#next ab) Order Hall Demon Hunter Part 1 << Demon Hunter
+#next ab) Order Hall Druid Part 1 << Druid
+#next ab) Order Hall Hunter Part 1 << Hunter
+#next ab) Order Hall Mage Part 1 << Mage
+#next ab) Order Hall Monk Part 1 << Monk
+#next ab) Order Hall Paladin Part 1 << Paladin
+#next ab) Order Hall Priest Part 1 << Priest
+#next ab) Order Hall Rogue Part 1 << Rogue
+#next ab) Order Hall Shaman Part 1 << Shaman
+#next ab) Order Hall Warlock Part 1 << Warlock
+#next ab) Order Hall Warrior Part 1 << Warrior
+
+step
+    #completewith Skyriding
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .openitem 237812
+    .openitem 243373
 step
     .goto 627,72.05,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -712,6 +727,7 @@ step
     .use 194521
     .use 194106
     .use 194549
+    .use 194705
 step
     .goto 371,65.27,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
@@ -719,6 +735,7 @@ step
     .target Lord Andestrasz
     .skipgossipid 120916
 step
+    #label Skyriding
     .goto 371,65.27,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
     .turnin 90754 >>Turn in Skyriding
@@ -727,245 +744,18 @@ step
     --skyriding tag
     .goto 371,65.14,37.1
     .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-step
-    #hidewindow
-    #completewith next
-    #label InfiniteChaosA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .turnin 91437 >>Turn in Call for Participants
-    .accept 91061 >>Accept Infinite Chaos
-    .disablecheckbox
-    .accept 91639 >>Accept Embrace Your Own Legend
-    .disablecheckbox
-    .target Eternus
-step
-    .zoneskip 619
-    #completewith InfiniteChaosA
-    .goto 627,72.06,40.49
-    .cast 1233963 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
-step
-    #requires InfiniteChaosA
-    .isOnQuest 91437
-    .goto 619,45.61,68.46,3,0
-    .goto 619,45.68,68.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .turnin 91437 >>Turn in Call for Participants
-    .accept 91639 >>Accept Embrace Your Own Legend
-    .skipgossipid 1356t03
-    .target Eternus
-step
-    .goto 619,45.61,68.46,3,0
-    .goto 619,45.68,68.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .accept 91639 >>Accept Embrace Your Own Legend
-    .target Eternus
-step
-    #completewith next
-    #hidewindow
-    #label Infinite Chaos
-    .accept 91061 >>Accept Infinite Chaos
-step
-    #completewith Infinite Chaos
-    .goto 619,45.68,68.50
-    .gossipoption 135603 >>Talk to |cRXP_FRIENDLY_Eternus|r
-    .target Eternus
-step
-    #requires Infinite Chaos
-    .goto 619,45.57,68.48,20,0
-    .goto 619,45.69,68.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .skipgossipid 135604
-    .accept 91061 >>Accept Infinite Chaos
-    .target Eternus
-step
-    #label Heroic World Tier
-    .goto 619,45.57,68.48
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
-    .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
-step
-    .goto 627,72.08,40.59
-    .zone 619 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
+    .timer 10,RP
 ]])
 
----Intro Skip
+---Monk
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#name ab) Intro Skip
-#displayname |cFF00CCFF2|r - Intro Skip|r
-#next a) Order Hall Death Knight Part 1 << Death Knight
-#next a) Order Hall Demon Hunter Part 1 << Demon Hunter
-#next a) Order Hall Druid Part 1 << Druid
-#next a) Order Hall Hunter Part 1 << Hunter
-#next a) Order Hall Mage Part 1 << Mage
-#next a) Order Hall Monk Part 1 << Monk
-#next a) Order Hall Paladin Part 1 << Paladin
-#next a) Order Hall Priest Part 1 << Priest
-#next a) Order Hall Rogue Part 1 << Rogue
-#next a) Order Hall Shaman Part 1 << Shaman
-#next a) Order Hall Warlock Part 1 << Warlock
-#next a) Order Hall Warrior Part 1 << Warrior
-
-step
-    #completewith Heroic World Tier
-    #hidewindow
-    +test
-    .use 245925
-    .use 246937
-    .openitem 237812
-    .openitem 243373
-step
-    .goto 627,72.05,41.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .accept 90754 >>Accept Skyriding
-    .target Moratari
-step
-    .goto 627,72.41,41.40
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 90754,1 --1/1 Take Moratari's portal
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
-    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
-    .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
-    .target Lord Andestrasz
-    .skipgossipid 120917
-    -- .skipgossipid 120921
-    -- .skipgossipid 120920
-    -- .skipgossipid 120919
-    -- .skipgossipid 120918
-step
-    .goto 371,65.27,37.18
-    >>Right-click to learn your mount.
-    .complete 90754,3 --1/1 Learn your new skyriding mount from your
-    .use 194034
-    .use 194521
-    .use 194106
-    .use 194549
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
-    .target Lord Andestrasz
-    .skipgossipid 120916
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 90754 >>Turn in Skyriding
-    .target Lord Andestrasz
-step
-    --skyriding tag
-    .goto 371,65.14,37.1
-    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-step
-    .goto 627,72.08,40.59
-    .cast 1233963 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
-step
-    #label Meet Nostwin2
-    #hidewindow
-    #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .accept 91955 >>Accept Just Between Us
-    .target Momentus
-step
-    #completewith Meet Nostwin2
-    .goto 619,45.96,67.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
-    .home >>Set your Hearthstone to Dalaran
-step
-    #requires Meet Nostwin2
-    #completewith next
-    #label Just Between Us
-    #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .accept 91955 >>Accept Just Between Us
-    .target Moment
-step
-    #requires Meet Nostwin2
-    #completewith Just Between Us
-    .goto 619,45.96,67.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
-    .collect 254320,1 --Elixir of Remembered Sight
-    .buy 254320,1 --Elixir of Remembered Sight
-    .skipgossipid 135258
--- step
---     #requires Just Between Us
---     .isOnQuest 92855
---     .goto 619,45.86,68.00
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
---     .turnin 92855 >>Turn in Make Haste, Not Waste
---     .target Lidamorrutu
-step
-    #requires Just Between Us
-    .goto 619,45.83,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .accept 91955 >>Accept Just Between Us
-    .target Momentus
-step
-    .isOnQuest 91955
-    .goto 619,45.61,68.46,3,0
-    .goto 619,45.68,68.50
-    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
-    .use 254320
-    .aura 1257698
-step
-    .isOnQuest 91437
-    .goto 619,45.61,68.46,3,0
-    .goto 619,45.68,68.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .turnin 91437 >>Turn in Call for Participants
-    .accept 91639 >>Accept Embrace Your Own Legend
-    .skipgossipid 135603
-    .target Eternus
-step
-    .goto 619,45.61,68.46,3,0
-    .goto 619,45.68,68.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .accept 91639 >>Accept Embrace Your Own Legend
-    .target Eternus
-step
-    #completewith next
-    #hidewindow
-    #label Infinite Chaos
-    .accept 91061 >>Accept Infinite Chaos
-step
-    #completewith Infinite Chaos
-    .goto 619,45.68,68.50
-    .gossipoption 135603 >>Talk to |cRXP_FRIENDLY_Eternus|r
-    .target Eternus
-step
-    #requires Infinite Chaos
-    .goto 619,45.57,68.48,20,0
-    .goto 619,45.69,68.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .skipgossipid 135604
-    .accept 91061 >>Accept Infinite Chaos
-    .target Eternus
-step
-    #label Heroic World Tier
-    .goto 619,45.57,68.48
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
-    .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
-step
-    .goto 619,45.71,67.46
-    .cast 1246470  >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
-]])
-
--- ============================================================
--- ================  GROUP LEGION REMIX: ORDERHALL  ===========
--- ============================================================
-
--- ========== Monk ==========
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#name a) Order Hall Monk Part 1
+#name ab) Order Hall Monk Part 1
 #displayname |cFF00CCFF3|r - Order Hall Intro Monk|r
-#next
+#next ac) Infinite Bazaar
 
 << Monk
 
@@ -985,13 +775,15 @@ step
     .accept 12103 >>Accept Before the Storm
     .target Initiate Da-Nel
 step
-    .goto 424,44.86,27.67
+    .goto 627,38.75,64.25 << Alliance
+    .goto 424,44.86,27.67 << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 12103,1 --Take portal in Dalaran to the Peak of Serenity (Optional)
-step
-    >>Use |T775462:0|t[Zen Pilgrimage]
     .complete 12103,2 --1/1 Travel to Peak of Serenity by Zen Pilgrimage or Dalaran portal
-    -- .macro Zen Pilgrimage,775462 >>/cast Zen Pilgrimage
+-- step
+--     .xp <11,1
+--     >>Use |T775462:0|t[Zen Pilgrimage]
+--     .complete 12103,2 --1/1 Travel to Peak of Serenity by Zen Pilgrimage or Dalaran portal
+--     .macro Zen Pilgrimage,775462 >>/cast Zen Pilgrimage
 step
     .goto 424,44.88,27.75
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Master Hight|r
@@ -1006,7 +798,7 @@ step
     .scenario 1887,1
     .mob Infernal Destroyer
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #completewith next
     #label Vizznak
     .goto 424,44.64,27.73,30,0
@@ -1016,38 +808,38 @@ step
     .scenario 1896,1
     .mob Vizznak
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #completewith Vizznak
     .goto 424,43.45,27.64,40 >>You can't mount here
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #requires Vizznak
     .goto 424,43.45,27.64,20,0
     .goto 424,43.87,27.36
     >>Kill |cRXP_ENEMY_Vizznak|r and afterwards leave the cave.
     .scenario 1896,1
-    .timer 30,RP
+    .timer 23,RP
     .mob Vizznak
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #completewith next
     #label Number Nine Jia
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 1897,1
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #completewith Number Nine Jia
     .goto 424,43.87,27.36
     .cast 193726 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Number Nine Jia|r
     .timer 21,RP
     .target Number Nine Jia
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #requires Number Nine Jia
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 1897,1
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #completewith next
     #label Morvath the Reaver
     .goto 424,45.3,26.4,10,0
@@ -1055,45 +847,38 @@ step
     .scenario 1898,1
     .mob Morvath the Reaver
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #completewith Morvath the Reaver
     #hidewindow
     .goto 424,45.53,25.6,50 >>1
 step
-    .isOnQuest 12103
+    .isInScenario 943
     #requires Morvath the Reaver
     .goto 424,45.53,25.6
     >>Kill |cRXP_ENEMY_Morvath the Reaver|r
     .scenario 1898,1
+    .timer 30,RP
     .mob Morvath the Reaver
 step
-    .isOnQuest 12103
-    #completewith next
-    #title |cFFFCDC00Follow the Arrow|r
-    #label Test3221
-    .scenario 1899,1
+    .isInScenario 943
+    .goto 424,45.28,26.4
+    .countdown 35 >>Kill |cRXP_ENEMY_Infernal Invader|r
+    .timer 30,RP
+    .mob Infernal Invader
 step
-    .isOnQuest 12103
-    #completewith Test3221
-    #title |cFFFCDC00Follow the Arrow|r
-    #hidewindow
-    .goto 424,45.21,26.48,20,0
-    .goto 424,44.67,26.69,50 >>1
-    .timer 60,RP
-step
-    .isOnQuest 12103
-    #requires Test3221
-    .goto 424,44.67,26.69
+    .isInScenario 943
+    .goto 424,45.09,26.57,10,0
+    .goto 424,44.69,26.7
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 1899,1
 step
-    .isOnQuest 12103
+    .isInScenario 943
     .goto 424,44.67,26.71
     >>Kill |cRXP_ENEMY_Portal Master Jorvinax|r
     .scenario 1900,1
     .mob Portal Master Jorvinax
 step
-    .isOnQuest 12103
+    .isInScenario 943
     .goto 424,44.67,26.6
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
     .scenario 1901,1
@@ -1125,7 +910,7 @@ step
     .goto 709,56.05,59.36,25,0
     .goto 709,54.73,58.48,25,0
     .goto 709,51.58,57.48,25,0
-    .goto 709,51.35,54.33,40 >>|cRXP_WARN_You can mount again|r.
+    .goto 709,51.35,54.33,40 >>|cRXP_WARN_You can mount again, but not skyride|r.
 step
     #requires Dawning Light2
     .goto 709,51.35,54.33
@@ -1139,7 +924,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40236,1 --1/1 Accompany Fearsome Jang
-    .timer 67,RP
+    .timer 72,RP
 step
     .goto 709,51.41,48.41
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -1149,17 +934,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 40236 >>Turn in The Dawning Light
     .target Iron-Body Ponshu
---HERE INSERT ARTIFACT WEAPONS    
--- step
---     .spec 1
---     #include a) Artifact Brewmaster
--- step
---     .spec 2
---     #include a) Artifact Windwalker
--- step
---     .spec 3
---     #include a) Artifact Mistweaver
---HERE INSERT WAY TO NEXT QUEST FOR ALL ARTIFACT WEAPONS
+step
+    .goto 709,51.41,48.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .accept 40636 >>Accept Prepare To Strike
+    .target Iron-Body Ponshu
+step
+    .spec 1
+    #include a) Artifact Brewmaster
+step
+    .spec 2
+    #include a) Artifact Windwalker
+step
+    .spec 3
+    #include a) Artifact Mistweaver
 step
     #completewith next
     #label Matter of Planning
@@ -1291,14 +1079,14 @@ step
 --     .accept 41728 >>Accept The Defense of Tian Monastery
 ]])
 
--- ========== Death Knight ==========
+---Death Knight
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Death Knight Part 1
+#name ab) Order Hall Death Knight Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Death Knight
 
@@ -1307,14 +1095,14 @@ step
 
 ]])
 
--- ========== Demon Hunter ==========
+---Demon Hunter
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Demon Hunter Part 1
+#name ab) Order Hall Demon Hunter Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Demon Hunter
 
@@ -2112,14 +1900,14 @@ step
 
 ]])
 
--- ========== Druid ==========
+---Druid
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Druid Part 1
+#name ab) Order Hall Druid Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Druid
 
@@ -2127,14 +1915,14 @@ step
     +test
 ]])
 
--- ========== Hunter ==========
+---Hunter
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Hunter Part 1
+#name ab) Order Hall Hunter Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Hunter
 
@@ -2142,14 +1930,14 @@ step
     +test
 ]])
 
--- ========== Mage ==========
+---Mage
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Mage Part 1
+#name ab) Order Hall Mage Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Mage
 
@@ -2157,14 +1945,14 @@ step
     +test
 ]])
 
--- ========== Paladin ==========
+---Paladin
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Paladin Part 1
+#name ab) Order Hall Paladin Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Paladin
 
@@ -2172,14 +1960,14 @@ step
     +test
 ]])
 
--- ========== Priest ==========
+---Priest
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Priest Part 1
+#name ab) Order Hall Priest Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Priest
 
@@ -2187,14 +1975,14 @@ step
     +test
 ]])
 
--- ========== Rogue ==========
+---Rogue
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Rogue Part 1
+#name ab) Order Hall Rogue Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Rogue
 
@@ -2207,539 +1995,27 @@ step
 
 ]])
 
--- ========== Shaman ==========
+---Shaman
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Shaman Part 1
+#name ab) Order Hall Shaman Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Shaman
 
-step
-    .goto 627,47.31,33.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 39746 >>Accept A Ring Unbroken
-    .target Thrall
-step
-    .goto 627,73.85,43.56
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Stormbeak|r
-    .complete 39746,1 --1/1 Fly to the Maelstrom with Mylra
-    .target Stormbeak
-step
-    .isInScenario 1038
-    .goto 725,31.52,76.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .scenario 2205,1 --1/1 Speak with Nobundo
-    .target Farseer Nobundo
-    .skipgossipid 45305
-step
-    .isInScenario 1038
-    .goto 725,30.01,77.45
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maelstrom Pillar|r
-    .scenario 2206,3 --1/1 Help Rehgar and Erunak
-step
-    .isInScenario 1038
-    .goto 725,33.66,81.85
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Screech|r
-    .scenario 2206,1 --1/1 Help the Dwarves
-step
-    .isInScenario 1038
-    .goto 725,33.66,81.85
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Damp Campfire|r
-    .scenario 2206,2 --1/1 Help the Tauren and Trolls
-step
-    .isInScenario 1038
-    #loop
-    .goto 725,31.07,70.68,25,0
-    .goto 725,30.11,84.72,25,0
-    .goto 725,35.31,77.68,25,0
-    >>Kill the |cRXP_ENEMY_Infernals|r
-    .scenario 2207,1 --5/5 Defeat the Infernals
-    .mob Infernal
-step
-    .isInScenario 1038
-    .goto 725,30.19,76.62
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Tribemother Torra|r
-    >>Use the |T135129:0|t[|cRXP_WARN_ExtraActionButton|r]
-    .scenario 2208,1 --1/1 Use Torra's Spear to Bring Down the Felbat Falthus
-    .target Tribemother Torra
-step
-    .isInScenario 1038
-    .goto 725,30.01,77.44
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maelstrom Pillar|r
-    .scenario 2209,1 --1/1 Active the Maelstrom Pillar to Defeat Geth'xun
-step
-    .goto 725,29.91,77.48
-    >>Complete the scenario
-    .complete 39746,2 --Aid Shaman at the Maelstrom
-step
-    .goto 725,36.20,74.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 39746 >>Turn in A Ring Unbroken
-    .accept 41335 >>Accept The Elements Call...
-    .target Thrall
-step
-    >>Choose one of the artifacts
-    .complete 41335,1 --1/1 Choose your artifact
-step
-    .goto 725,36.20,74.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 41335 >>Turn in The Elements Call...
-    .target Thrall
-
--- step
---     .spec 1
---     #include a) Artifact Elemental
--- step
---     .spec 2
---     #include a) Artifact Enhancement
--- step
---     .spec 3
---     #include a) Artifact Restoration
-step
-    .goto 726,34.04,76.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r
-    .accept 40225 >>Accept A Ring Reforged
-    .target Stormcaller Mylra
-step
-    .goto 726,30.25,77.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nobundo|r
-    .complete 40225,1 --1/1 Speak to Nobundo
-    .target Nobundo
-    .skipgossipid 44785
-step
-    .goto 726,29.16,69.57
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Rockslide|r
-    .complete 40225,2 --1/1 Unearth the Heart of Azeroth
-step
-    .goto 726,28.99,69.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .turnin 40225 >>Turn in A Ring Reforged
-    .accept 41510 >>Accept Azeroth Needs You
-    .target Farseer Nobundo
-step
-    --TODO: Auto Pick?
-    .goto 726,33.49,59.38    
-    .complete 41510,1 --1/1 Initial strike point chosen
-step
-    .goto 726,30.38,51.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .turnin 41510 >>Turn in Azeroth Needs You
---    .accept 44406 >>Accept Aggra's Guidance
-    .target Farseer Nobundo
---step
---    .goto 726,36.16,80.10
---    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r
---    .turnin 44406 >>Turn in Aggra's Guidance
---    .accept 43945 >>Accept Expanding Your Horizons
---    .target Aggra
-step
-    .goto 726,33.05,60.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Sevel|r
-    .accept 42188 >>Accept Nobundo Awaits
-    .target Advisor Sevel
-step
-    .goto 726,34.15,31.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .turnin 42188 >>Turn in Nobundo Awaits
-    .accept 42114 >>Accept The Ritual of Tides
-    .target Farseer Nobundo
-step
-    .goto 726,34.82,31.33
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Totem|r
-    .complete 42114,1 --1/1 Ritual started
-    .timer 125,Neptulon Roleplay
-step
-    .goto 726,34.82,31.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neptulon|r
-    .turnin 42114 >>Turn in The Ritual of Tides
-    .target Neptulon
-step
-    .goto 726,34.14,31.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .accept 42383 >>Accept Rise, Champions
-    .target Farseer Nobundo
-step
-    .goto 726,34.14,31.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .accept 42383 >>Accept Rise, Champions
-    .target Farseer Nobundo
-step
-    .goto 726,34.52,32.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r
-    .turnin 42198 >>Turn in Champion: Stormcaller Mylra
-    .complete 42383,1 --1/1 Recruit Stormcaller Mylra
-    .target Stormcaller Mylra
-step
-    .goto 726,29.55,34.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Hydraxis|r
-    .turnin 42197 >>Turn in Champion: Duke Hydraxis
-    .complete 42383,2 --1/1 Recruit Hydraxis
-    .target Duke Hydraxis
-step
-    .goto 726,33.06,60.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Sevel|r
-    .turnin 42383 >>Turn in Rise, Champions
-    .accept 42141 >>Accept Summoner Morn
-    .turnin 42141 >>Turn in Summoner Morn
-    .accept 42142 >>Accept Recruiting The Troops
-    .turnin 42142 >>Turn in Recruiting The Troops
-    .accept 41741 >>Accept Troops in the Field
-    .turnin 41741 >>Turn in Troops in the Field
-    .accept 42184 >>Accept Mission: Elemental Diplomacy
-    .turnin 42184 >>Turn in Mission: Elemental Diplomacy
-    .accept 42977 >>Accept Servant of the Windseeker
-    .target Advisor Sevel
-step
-    .goto 726,32.64,60.58
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Infinitely Mysterious Portal|r
-    .complete 42977,1 --Silithus's past entered
-step
-    .goto 81,29.62,10.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Demitrian|r
-    .turnin 42977 >>Turn in Servant of the Windseeker
-    .accept 43002 >>Accept Blessed Blade of the Windseeker
-    .target Highlord Demitrian
-step
-    --TODO: Add more check to skip it when no longer on that quest
-    .zoneskip 81,1
-    .goto 81,29.85,10.35
-    .zone 619 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to the Infinite Bazaar|r
-step
-    .zoneskip 619,1
-    .goto 619,45.70,67.44
-    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
-step
-    #completewith next
-    #label BlessedBladeOfTheWindseekerA    
-    .complete 43002,1 --1/1 Thunderfury located
-step
-    --TODO: Title color
-    #completewith BlessedBladeOfTheWindseekerA
-    #title Enter the cave
-    .goto 630,34.40,49.62,15 >>|cRXP_WARN_Enter the cave|r
-step
-    #requires BlessedBladeOfTheWindseekerA
-    .goto 630,32.73,48.83
-    >>|cRXP_WARN_Follow the arrow|r
-    .complete 43002,1 --1/1 Thunderfury located
-step
-    .goto 630,32.73,48.83
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Damaged Thunderfury|r
-    .complete 43002,2 --1/1 Collect damaged Thunderfury
-step
-    --TODO: Add additional checks
-    .hs >>Hearth to Dalaran
-step
-    .zoneskip 619,1
-    .goto 619,45.70,67.44
-    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
-step
-    .zoneskip 627,1
-    .goto 627,67.04,48.20
-    .zone 726 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
-step
-    .goto 726,33.06,60.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Sevel|r
-    .turnin 43002 >>Turn in Blessed Blade of the Windseeker
-    .accept 41770 >>Accept The Skies Above
-    .target Advisor Sevel
-step
-    --TODO: Add additional checks
-    .zoneskip 726,1
-    .goto 726,26.62,41.27
-    .zone 737 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Vortex Pinnacle Portal|r
-step
-    .goto 737,55.21,18.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Consular Celestos|r
-    .turnin 41770 >>Turn in The Skies Above
-    .accept 41771 >>Accept Recharging the Blade
-    .target Consular Celestos
-step
-    #completewith next
-    #label RechargingTheBladeA
-    >>Kill |cRXP_ENEMY_Vortos|r. Loot him for the |T132862:0|t[|cRXP_LOOT_Heart of Skywall|r].
-    .complete 41771,1 --1/1 Heart of Skywall
-    .mob Armored Mistral
-    .mob Wild Vortex
-    .mob Vortos
-step
-    #completewith RechargingTheBladeA
-    .goto 737,62.44,29.11,20,0
-    .goto 737,65.76,30.99,25,0
-    .goto 737,61.82,34.45,25 >>Follow the way to the Cyclone Summit
-step
-    #requires RechargingTheBladeA
-    .goto 737,54.67,45.20
-    >>Kill |cRXP_ENEMY_Vortos|r. Loot him for the |T132862:0|t[|cRXP_LOOT_Heart of Skywall|r].
-    .complete 41771,1 --1/1 Heart of Skywall
-    .mob Armored Mistral
-    .mob Wild Vortex
-    .mob Vortos
-step
-    .goto 737,54.67,45.20
-    >>Use the |T132862:0|t[|cRXP_LOOT_Heart of Skywall|r].
-    .complete 41771,2 --1/1 Use the Heart of Skywall to recharge Thunderfury
-    .use 135589
-step
-    .goto 737,58.13,49.25
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slipstream|r
-    .complete 41771,3 --1/1 Take the Slipstream to Nimbus Rise
-step
-    .goto 737,52.10,81.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Consular Celestos|r
-    .turnin 41771 >>Turn in Recharging the Blade
-    .accept 41776 >>Accept Return of the Windlord
-    .target Consular Celestos
-step
-    .goto 737,52.33,79.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thunderaan|r
-    .turnin 41776 >>Turn in Return of the Windlord
-    .accept 41901 >>Accept Oath of the Windlord
-    .target Thunderaan
-step
-    #completewith next
-    #label OathOfTheWindlordA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Sevel|r
-    .turnin 41901 >>Turn in Oath of the Windlord
-    .accept 42986 >>Accept Enemies of Air
-    .turnin 42986 >>Turn in Enemies of Air
-    .accept 42996 >>Accept The Maelstrom Pillar: Air
-    .accept 44465 >>Accept Recruiting Earthcallers
-    .target Advisor Sevel
-step
-    #completewith OathOfTheWindlordA
-    .goto 737,49.83,80.92
-    .zone 726 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maelstrom Portal|r
-step
-    #requires OathOfTheWindlordA
-    .goto 726,33.06,60.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Sevel|r
-    .turnin 41901 >>Turn in Oath of the Windlord
-    .accept 42986 >>Accept Enemies of Air
-    .turnin 42986 >>Turn in Enemies of Air
-    .accept 42996 >>Accept The Maelstrom Pillar: Air
-    .accept 44465 >>Accept Recruiting Earthcallers
-    .target Advisor Sevel
-step
-    .goto 726,29.62,57.18,10,0
-    .goto 726,27.36,59.61,10,0
-    .goto 726,29.43,77.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elementalist Janai|r
-    .turnin 42996 >>Turn in The Maelstrom Pillar: Air
-    .accept 42983 >>Accept Mistral Essence
-    .target Elementalist Janai
-step
-    .goto 726,30.25,51.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
-    .turnin 41743 >>Turn in Champion: Nobundo
-    .target Farseer Nobundo
-step
-    .goto 726,28.19,45.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Consular Celestos|r
-    .turnin 41742 >>Turn in Champion: Celestos
-    .target Consular Celestos
-step
-    .goto 726,29.23,42.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felinda Frye|r
-    .turnin 44465 >>Turn in Recruiting Earthcallers
-    .target Felinda Frye
-step
-    --TODO: Add additional checks
-    .zoneskip 726,1
-    .goto 726,26.62,41.27
-    .zone 737 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Vortex Pinnacle Portal|r
-step
-    #completewith next
-    #label MistralEssenceA
-    .goto 737,62.64,29.05,25,0
-    .goto 737,65.55,32.42,25,0
-    .goto 737,60.55,36.43,25,0
-    .goto 737,54.82,45.60,35,0
-    .goto 737,57.57,48.93
-    >>Kill the |cRXP_ENEMY_Storm and Wind elementals|r. Loot them for the |T463565:0|t[|cRXP_LOOT_Mistral Essence|r].
-    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slipstream|r at the end
-    .complete 42983,1 --100/100 Mistral Essence
-    .mob Armored Mistral
-    .mob Young Storm Dragon
-    .mob Gust Soldier
-    .mob Wild Vortex
-step
-    #hidewindow
-    #completewith MistralEssenceA
-    .vehicle 106858 >>1
-step
-    #requires MistralEssenceA
-    #completewith next
-    #label MistralEssenceB
-    .goto 737,50.80,78.08,20,0
-    .goto 737,63.88,58.84
-    >>Kill the |cRXP_ENEMY_Storm and Wind elementals|r. Loot them for the |T463565:0|t[|cRXP_LOOT_Mistral Essence|r].
-    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slipstream|r at the end
-    .complete 42983,1 --100/100 Mistral Essence
-    .mob Armored Mistral
-    .mob Young Storm Dragon
-    .mob Gust Soldier
-    .mob Wild Vortex
-step
-    #hidewindow
-    #completewith MistralEssenceB
-    .vehicle 106858 >>1
-step
-    #completewith next
-    #label MistralEssenceC
-    .goto 737,54.82,45.60,35,0
-    .goto 737,60.55,36.43,25,0
-    .goto 737,65.55,32.42,25,0
-    .goto 737,62.64,29.05,25,0
-    .goto 737,65.55,32.42,25,0
-    .goto 737,60.55,36.43,25,0
-    .goto 737,54.82,45.60,35,0
-    .goto 737,57.57,48.93
-    >>Kill the |cRXP_ENEMY_Storm and Wind elementals|r. Loot them for the |T463565:0|t[|cRXP_LOOT_Mistral Essence|r].
-    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slipstream|r at the end
-    .complete 42983,1 --100/100 Mistral Essence
-    .mob Armored Mistral
-    .mob Young Storm Dragon
-    .mob Gust Soldier
-    .mob Wild Vortex
-step
-    #hidewindow
-    #completewith MistralEssenceC
-    .vehicle 106858 >>1
-step
-    #requires MistralEssenceC
-    #completewith next
-    #label MistralEssenceD
-    #loop
-    .goto 737,50.80,78.08,20,0
-    .goto 737,63.88,58.84,30,0
-    >>Kill the |cRXP_ENEMY_Storm and Wind elementals|r. Loot them for the |T463565:0|t[|cRXP_LOOT_Mistral Essence|r].
-    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slipstream|r at the end
-    .complete 42983,1 --100/100 Mistral Essence
-    .mob Armored Mistral
-    .mob Young Storm Dragon
-    .mob Gust Soldier
-    .mob Wild Vortex
-step
-    .zoneskip 737,1
-    .isOnQuest 42983
-    #optional
-    #completewith next
-    #label MistralEssenceE
-    .goto 737,63.88,58.84
-    .vehicle 106858 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Slipstream|r at the end
-step
-    #hidewindow
-    #completewith MistralEssenceE
-    .goto 737,49.87,80.94,420 >>1
-step
-    .zoneskip 737,1
-    .isOnQuest 42983
-    .isQuestComplete 42983
-    #requires MistralEssenceE
-    .goto 737,49.87,80.94
-    .zone 726 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maelstrom Portal|r
-step
-    .goto 727,31.69,50.14,20,0
-    .goto 727,29.92,57.45,20,0
-    .goto 727,27.38,60.91,20,0
-    .goto 726,29.45,77.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elementalist Janai|r
-    .turnin 42983 >>Turn in Mistral Essence
-    .accept 42984 >>Accept Eye of Azshara: The Scepter of Storms
-    .target Elementalist Janai
-step
-    >>Queue for the dungeon |cRXP_WARN_Eye of Azshara|r or clear it solo if you're powerful enough.
-    >>Kill |cRXP_ENEMY_Lady Hatecoil|r. Loot her for the |T135470:0|t[|cRXP_LOOT_Scepter of Storms|r].
-    >>Kill |cRXP_ENEMY_Wrath of Azshara|r
-    .complete 42984,1 --1/1 Scepter of Storms
-    .complete 42984,2 --1/1 Wrath of Azshara slain
-    .mob Lady Hatecoil
-    .mob Wrath of Azshara
-step
-    .goto 726,29.45,77.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elementalist Janai|r
-    .turnin 42984 >>Turn in Eye of Azshara: The Scepter of Storms
-    .target Elementalist Janai
-step
-    .goto 726,33.03,60.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Sevel|r
-    .accept 42200 >>Accept Mission: Investigating Deepholm
-    .turnin 42200 >>Turn in Mission: Investigating Deepholm
-    .accept 41775 >>Accept The Great Stonemother
-    .target Advisor Sevel
-step
-    .goto 726,26.44,57.02,15,0
-    .goto 726,26.18,52.50,15,0
-    .goto 726,27.65,50.92
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Deepholm Portal|r
-    .complete 41775,1 --1/1 Deepholm portal taken
-step
-    .goto 207,56.34,12.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therazane|r
-    .turnin 41775 >>Turn in The Great Stonemother
-    .accept 42068 >>Accept The Return of Twilight
-    .target Therazane
-step
-    .goto 207,64.03,70.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r
-    .turnin 42068 >>Turn in The Return of Twilight
-    .accept 41777 >>Accept Destroying the Cult
-    .accept 41897 >>Accept The Master's Plan
-    .target Muln Earthfury
-step
-    #completewith TheMastersPlanA
-    >>Kill the |cRXP_ENEMY_Twilight Cultists|r.
-    .complete 41777,1 --15/15 Twilight Cultist slain
-    .mob Twilight Darkcaller
-    .mob Twilight Endbringer
-    .mob Twilight Earthbreaker
-step
-    .goto 207,63.99,75.13
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Master's Journal pt. 1|r
-    .complete 41897,1 --1/1 The Master's Journal pt. 1
-step
-    .goto 207,61.74,72.00
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Master's Journal pt. 2|r
-    .complete 41897,2 --1/1 The Master's Journal pt. 2
-step
-    #label TheMastersPlanA
-    .goto 207,62.38,75.97
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Master's Journal pt. 3|r
-    .complete 41897,3 --1/1 The Master's Journal pt. 3
-step
-    #loop
-    .goto 207,63.13,70.94,30,0
-    .goto 207,64.77,75.53,40,0
-    .goto 207,63.05,77.77,40,0
-    .goto 207,62.00,72.08,40,0
-    >>Kill the |cRXP_ENEMY_Twilight Cultists|r.
-    .complete 41777,1 --15/15 Twilight Cultist slain
-    .mob Twilight Darkcaller
-    .mob Twilight Endbringer
-    .mob Twilight Earthbreaker
-step
-    .goto 207,63.20,73.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury|r
-    .turnin 41777 >>Turn in Destroying the Cult
-    .turnin 41897 >>Turn in The Master's Plan
-    .accept 41898 >>Accept Unleashing the Elements
-    .accept 41899 >>Accept Held Captive!
-    .target Muln Earthfury
 ]])
 
--- ========== Warlock ==========
+---Warlock
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Warlock Part 1
+#name ab) Order Hall Warlock Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Warlock
 
@@ -2747,14 +2023,14 @@ step
     +test
 ]])
 
--- ========== Warrior ==========
+---Warrior
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name a) Order Hall Warrior Part 1
+#name ab) Order Hall Warrior Part 1
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next
+#next ac) Infinite Bazaar
 
 << Warrior
 
@@ -2762,16 +2038,119 @@ step
     +test
 ]])
 
--- ============================================================
--- ================  GROUP LEGION REMIX: FIRST ZONE  ==========
--- ============================================================
+---Infinite Bazaar
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#name ac) Infinite Bazaar
+#displayname |cFF00CCFF4|r - Infinite Bazaar|r
+#next ad) First Zone
 
 
 
+step
+    #label Meet Nostwin2
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .accept 91955 >>Accept Just Between Us
+    .target Momentus
+step
+    #completewith Meet Nostwin2
+    .goto 619,45.96,67.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r |cRXP_WARN_twice|r.
+    .home >>Set your Hearthstone to Dalaran
+    .collect 254320,1 --Elixir of Remembered Sight
+    .buy 254320,1 --Elixir of Remembered Sight
+    .skipgossipid 135258
+step
+    #requires Meet Nostwin2
+    .goto 619,45.83,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .accept 91955 >>Accept Just Between Us
+    .target Momentus
+step
+    #hidewindow
+    #completewith next
+    #label InfiniteChaosA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 91437 >>Turn in Call for Participants
+    .accept 91061 >>Accept Infinite Chaos
+    .disablecheckbox
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .disablecheckbox
+    .target Eternus
+step
+    .zoneskip 619
+    #completewith InfiniteChaosA
+    .goto 627,72.06,40.49
+    .cast 1233963 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
+step
+    #requires InfiniteChaosA
+    .isOnQuest 91437
+    .goto 619,45.61,68.46,25,0
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 91437 >>Turn in Call for Participants
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .skipgossipid 1356t03
+    .target Eternus
+step
+    .goto 619,45.61,68.46,25,0
+    .goto 619,45.68,68.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .accept 91639 >>Accept Embrace Your Own Legend
+    .target Eternus
+step
+    .goto 619,45.68,68.50
+    .daily 93112,89540,91613,90100,90112,90113,93117,89600,89679,90102,90103,93114,93116,93120,89524,89590,89678,93113,93118,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and an Infinite Research Quest. 
+    .target Eternus
+step
+    #completewith next
+    #hidewindow
+    #label Infinite Chaos
+    .accept 91061 >>Accept Infinite Chaos
+step
+    #completewith Infinite Chaos
+    .goto 619,45.68,68.50
+    .gossipoption 135603 >>Talk to |cRXP_FRIENDLY_Eternus|r
+    .target Eternus
+step
+    #requires Infinite Chaos
+    .goto 619,45.57,68.48,20,0
+    .goto 619,45.69,68.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .skipgossipid 135604
+    .accept 91061 >>Accept Infinite Chaos
+    .target Eternus
+step
+    #label Heroic World Tier
+    .goto 619,45.57,68.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
+    .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
+step
+    .goto 619,45.71,67.47
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
+    .timer 10,RP
+]])
 
--- ============================================================
--- ==============  GROUP SPEED LEVELING: REMIX INTRO ==========
--- ============================================================
+---First Zone
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#name ad) First Zone
+#displayname |cFF00CCFF5|r - First Zone|r
+
+
+
+]])
+
+-- ================================================= -
+-- ==============  GROUP: SPEED LEVELING: ========== -
+-- ================================================= -
 
 ---Intro
 RXPGuides.RegisterGuide([[
@@ -2781,239 +2160,250 @@ RXPGuides.RegisterGuide([[
 #name b) Intro
 #displayname |cFF00CCFF1|r - Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next b) Order Hall Death Knight Part 1 << Death Knight
-#next b) Order Hall Demon Hunter Part 1 << Demon Hunter
-#next b) Order Hall Druid Part 1 << Druid
-#next b) Order Hall Hunter Part 1 << Hunter
-#next b) Order Hall Mage Part 1 << Mage
-#next b) Order Hall Monk Part 1 << Monk
-#next b) Order Hall Paladin Part 1 << Paladin
-#next b) Order Hall Priest Part 1 << Priest
-#next b) Order Hall Rogue Part 1 << Rogue
-#next b) Order Hall Shaman Part 1 << Shaman
-#next b) Order Hall Warlock Part 1 << Warlock
-#next b) Order Hall Warrior Part 1 << Warrior
-
+#next ba) Skyriding
 
 step
     #include RestedXP Legion Remix\a) Intro
 ]])
 
----Intro Skip
+---Skyriding
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#name ba) Intro Skip
-#displayname |cFF00CCFF2|r - Intro Skip|r
-#next b) Order Hall Death Knight Part 1 << Death Knight
-#next b) Order Hall Demon Hunter Part 1 << Demon Hunter
-#next b) Order Hall Druid Part 1 << Druid
-#next b) Order Hall Hunter Part 1 << Hunter
-#next b) Order Hall Mage Part 1 << Mage
-#next b) Order Hall Monk Part 1 << Monk
-#next b) Order Hall Paladin Part 1 << Paladin
-#next b) Order Hall Priest Part 1 << Priest
-#next b) Order Hall Rogue Part 1 << Rogue
-#next b) Order Hall Shaman Part 1<< Shaman
-#next b) Order Hall Warlock Part 1 << Warlock
-#next b) Order Hall Warrior Part 1 << Warrior
+#name ba) Skyriding
+#displayname |cFF00CCFF2|r - Skyriding|r
+#next bb) Order Hall Death Knight Part 1 << Death Knight
+#next bb) Order Hall Demon Hunter Part 1 << Demon Hunter
+#next bb) Order Hall Druid Part 1 << Druid
+#next bb) Order Hall Hunter Part 1 << Hunter
+#next bb) Order Hall Mage Part 1 << Mage
+#next bb) Order Hall Monk Part 1 << Monk
+#next bb) Order Hall Paladin Part 1 << Paladin
+#next bb) Order Hall Priest Part 1 << Priest
+#next bb) Order Hall Rogue Part 1 << Rogue
+#next bb) Order Hall Shaman Part 1<< Shaman
+#next bb) Order Hall Warlock Part 1 << Warlock
+#next bb) Order Hall Warrior Part 1 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Intro Skip
+    #include RestedXP Legion Remix\aa) Skyriding
 ]])
 
--- ============================================================
--- ==============  GROUP SPEED LEVELING: ORDERHALL ============
--- ============================================================
-
--- ========== Monk ==========
+---Monk
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#name b) Order Hall Monk Part 1
+#name bb) Order Hall Monk Part 1
 #displayname |cFF00CCFF3|r - Order Hall Intro Monk|r
-#next 
+#next bc Infinite Bazaar
 
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Monk Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Monk Part 1
 ]])
 
--- ========== Death Knight ==========
+---Death Knight
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Death Knight Part 1
+#name bb) Order Hall Death Knight Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Death Knight
 
 step
-    #include a) Order Hall Death Knight Part 1
+    #include ab) Order Hall Death Knight Part 1
 
 ]])
 
--- ========== Demon Hunter ==========
+---Demon Hunter
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Demon Hunter Part 1
+#name bb) Order Hall Demon Hunter Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Demon Hunter
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Demon Hunter Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1
 
 
 ]])
 
--- ========== Druid ==========
+---Druid
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Druid Part 1
+#name bb) Order Hall Druid Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Druid Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Druid Part 1
 ]])
 
--- ========== Hunter ==========
+---Hunter
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Hunter Part 1
+#name bb) Order Hall Hunter Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Hunter Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Hunter Part 1
 ]])
 
--- ========== Mage ==========
+---Mage
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Mage Part 1
+#name bb) Order Hall Mage Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Mage
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Mage Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Mage Part 1
 ]])
 
--- ========== Paladin ==========
+---Paladin
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Paladin Part 1
+#name bb) Order Hall Paladin Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Paladin Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Paladin Part 1
 ]])
 
--- ========== Priest ==========
+---Priest
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Priest Part 1
+#name bb) Order Hall Priest Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Priest Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Priest Part 1
 ]])
 
--- ========== Rogue ==========
+---Rogue
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Rogue Part 1
+#name bb) Order Hall Rogue Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Rogue
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Rogue Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Rogue Part 1
 
 
 ]])
 
--- ========== Shaman ==========
+---Shaman
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Shaman Part 1
+#name bb) Order Hall Shaman Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Shaman Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Shaman Part 1
 ]])
 
--- ========== Warlock ==========
+---Warlock
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Warlock Part 1
+#name bb) Order Hall Warlock Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc Infinite Bazaar
 
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Warlock Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Warlock Part 1
 ]])
 
--- ========== Warrior ==========
+---Warrior
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#name b) Order Hall Warrior Part 1
+#name bb) Order Hall Warrior Part 1
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next
+#next bc) Infinite Bazaar
 
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Order Hall Warrior Part 1
+    #include RestedXP Legion Remix\ab) Order Hall Warrior Part 1
 ]])
 
--- ============================================================
--- ================  GROUP SPEED LEVELING: FIRST ZONE  ========
--- ============================================================
+---Infinite Bazaar
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-80)|r Legion Remix
+#name bc) Infinite Bazaar
+#displayname |cFF00CCFF4|r - Infinite Bazaar|r
+#next bd) First Zone
+
+step
+    #include ac) Infinite Bazaar
+
+
+]])
+
+---First Zone
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-80)|r Legion Remix
+#name bd) First Zone
+#displayname |cFF00CCFF5|r - First Zone|r
+
+step
+    #include ad) First Zone
+
+
+]])

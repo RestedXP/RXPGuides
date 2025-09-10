@@ -2162,3 +2162,20 @@ RXPGuides.RegisterGuide([[
 #internal
 
 ]])
+
+--     .turnin 92855 >>Turn in Make Haste, Not Waste
+
+-- step
+--     .goto 619,45.61,68.46,25,0
+--     .goto 619,45.68,68.50
+--     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+--     .use 254320
+--     .aura 1257698 --- somewhere during rp
+
+-- step
+--     #requires Meet Nostwin2
+--     .isOnQuest 92855
+--     .goto 619,45.86,68.00
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
+--     .turnin 92855 >>Turn in Make Haste, Not Waste
+--     .target Lidamorrutu
