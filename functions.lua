@@ -826,6 +826,9 @@ function addon.SetElementComplete(self, disable, skipIfInactive)
     if skipIfInactive and not active then
         return
     end
+    if element.timer and active and not element.completed and not element.textOnly then
+        addon.StartTimer(element.timer,element.timerText)
+    end
     element.completed = true
     element.skip = true
     addon.updateSteps = true
