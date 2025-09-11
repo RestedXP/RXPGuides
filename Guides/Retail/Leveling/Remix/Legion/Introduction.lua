@@ -29,6 +29,8 @@ step
     .target Moratari
 step
     #optional
+    #completewith IntroSkipEnd
+    #hidewindow
     .achievement 42313,1
     .skipto guide,RestedXP Legion Remix\ab) Skyriding
 step
@@ -344,6 +346,7 @@ step
     .complete 90659,4 --Purchase the Remix Time trait in your Artifact Weapon
     .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
 step
+    #label IntroSkipEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 90659 >>Turn in Something Borrowed
     .accept 89412 >>Accept Get Plenty of Exorcise
@@ -648,12 +651,33 @@ step
     .accept 91955 >>Accept Just Between Us
     .target Momentus
 step
-    .isOnQuest 89418
-    .goto 619,45.72,67.52,8,0
-    .goto 619,45.71,67.45
-    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    #completewith next
+    #label The Legion Returns
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .target Archivist Elysiana
+    .skipgossipid 45296
 step
-    .isOnQuest 89418
+    #completewith The Legion Returns
+    .goto 627,31.57,49.39,20 >>Enter the Violet Hold
+step
+    #requires The Legion Returns
+    .goto 627,30.26,51.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .target Archivist Elysiana
+    .skipgossipid 45296
+step
+    #completewith next
+    #label The Legion Returns2
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
+step
+    #completewith The Legion Returns2
+    .goto 627,33.1,49.47,20 >>Leave the Violet Hold
+step
+    #requires The Legion Returns2
     .goto 627,71.94,41.44
     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
     .use 254320
@@ -744,7 +768,7 @@ step
     --skyriding tag
     .goto 371,65.14,37.1
     .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .timer 10,RP
+    .timer 5,RP
 ]])
 
 ---Monk
@@ -760,7 +784,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #completewith Turn in Rise, Champions
+    #completewith Dalaran
     #hidewindow
     +test
     .use 245925
@@ -776,7 +800,7 @@ step
     .target Initiate Da-Nel
 step
     .goto 627,38.75,64.25 << Alliance
-    .goto 424,44.86,27.67 << Horde
+    .goto 627,56.06,22.77 << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 12103,2 --1/1 Travel to Peak of Serenity by Zen Pilgrimage or Dalaran portal
 -- step
@@ -857,13 +881,13 @@ step
     .goto 424,45.53,25.6
     >>Kill |cRXP_ENEMY_Morvath the Reaver|r
     .scenario 1898,1
-    .timer 30,RP
+    .timer 35,RP
     .mob Morvath the Reaver
 step
     .isInScenario 943
     .goto 424,45.28,26.4
     .countdown 35 >>Kill |cRXP_ENEMY_Infernal Invader|r
-    .timer 30,RP
+    .timer 28,RP
     .mob Infernal Invader
 step
     .isInScenario 943
@@ -925,7 +949,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40236,1 --1/1 Accompany Fearsome Jang
     .target Iron-Body Ponshu
-    .timer 72,RP
+    .timer 75,RP
 step
     .goto 709,51.41,48.41
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -950,141 +974,62 @@ step
 -- step
 --     .spec 3
 --     #include a) Artifact Mistweaver
--- step
---     #completewith next
---     #label Matter of Planning
---     .goto 709,49.99,58.69,30,0
---     .goto 709,51.04,57.64,30,0
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .accept 40793 >>Accept A Matter of Planning
---     .target Iron-Body Ponshu
--- step
---     #completewith Matter of Planning
---     #hidewindow
---     .goto 709,51.41,48.4,60 >>1
--- step
---     #requires Matter of Planning
---     .goto 709,51.42,48.40
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .accept 40793 >>Accept A Matter of Planning
---     .target Iron-Body Ponshu
--- step
---     #completewith next
---     #label Turn in A Matter of Planning
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
---     .turnin 40793 >>Turn in A Matter of Planning
---     .accept 40795 >>Accept The Fight Begins
---     .disablecheckbox
---     .target Master Hsu
 step
+    #completewith next
+    #label Matter of Planning
+    .goto 709,49.99,58.69,30,0
+    .goto 709,51.04,57.64,30,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .accept 40793 >>Accept A Matter of Planning
+    .target Iron-Body Ponshu
+step
+    #completewith Matter of Planning
+    #hidewindow
+    .goto 709,51.41,48.4,60 >>1
+step
+    #requires Matter of Planning
+    .goto 709,51.42,48.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .accept 40793 >>Accept A Matter of Planning
+    .target Iron-Body Ponshu
+step
+    #completewith next
+    #label Turn in A Matter of Planning2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
     .turnin 40793 >>Turn in A Matter of Planning
     .accept 40795 >>Accept The Fight Begins
     .disablecheckbox
     .target Master Hsu
 step
-    #completewith Turn in A Matter of Planning
+    #completewith Turn in A Matter of Planning2
     #hidewindow
     .goto 709,51.46,54.08,20,0
     .goto 709,52.77,59.73,50 >>1
 step
-    #requires Turn in A Matter of Planning
+    #requires Turn in A Matter of Planning2
     .goto 709,52.74,59.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
     .turnin 40793 >>Turn in A Matter of Planning
     .accept 40795 >>Accept The Fight Begins
     .target Master Hsu
-
-
-----HERE INSERT MAP QUEST
-
-
-
+--Insert Map Quest
 step
     .goto 709,52.80,59.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
     .turnin 40795 >>Turn in The Fight Begins
     .target Master Hsu
 step
+    #label Dalaran
     .goto 709,52.39,57.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 39735,1 --1/1 Travel to Dalaran
+    .timer 5,RP
 step
+
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r
     .accept 42186 >>Accept Growing Power
     .target Initiate Da-Nel
-step
-    #completewith next
-    #label Growing Power
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .turnin 42186 >>Turn in Growing Power
-step
-    #completewith Growing Power
-    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
-    .usespell 126892
-step
-    #requires Growing Power
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .turnin 42186 >>Turn in Growing Power
-    .target Iron-Body Ponshu
-    .accept 42187 >>Accept Rise, Champions
-    .accept 43973 >>Accept Two Paths, Two Weapons
-----HERE SECOND & THIRD ARTIFACT
--- step
---     .complete 43973,1 --1/1 Choose a second artifact to pursue
--- step
---     .goto 709,51.42,48.42
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .turnin 43973 >>Turn in Two Paths, Two Weapons
---     .target Iron-Body Ponshu
---     .accept 42762 >>Accept The Wanderer's Companion
--- step
---     .goto 709,49.09,58.66
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
---     .turnin 40704 >>Turn in Champion: Li Li Stormstout
-step
-    #completewith next
-    #label Enlist Li Li Stormstout
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r    
-    .complete 42187,2 --1/1 Enlist Li Li Stormstout
-    .target Li Li Stormstout
-step
-    #completewith Enlist Li Li Stormstout
-    .goto 709,51.33,54.04,20,0
-    .goto 709,49.96,58.69,10 >>Enter House
-step
-    #requires Enlist Li Li Stormstout
-    .goto 709,49.14,58.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
-    .turnin 40704 >>Turn in Champion: Li Li Stormstout
-    .target Li Li Stormstout
-    .complete 42187,2 --1/1 Enlist Li Li Stormstout
-step
-    .goto 709,55.25,57.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chen Stormstout|r
-    .turnin 41115 >>Turn in Champion: Chen Stormstout
-    .complete 42187,1 --1/1 Enlist Chen Stormstout
-    .target Chen Stormstout
-step
-    #label Turn in Rise, Champions
-    .goto 709,52.77,59.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
-    .turnin 42187 >>Turn in Rise, Champions
-    .accept 41945 >>Accept Tianji of the Ox
-    .turnin 41945 >>Turn in Tianji of the Ox
-    .accept 41946 >>Accept Building Our Troops
-    .turnin 41946 >>Turn in Building Our Troops
-    .accept 42210 >>Accept Scrolls of Knowledge
-    .turnin 42210 >>Turn in Scrolls of Knowledge
-    .target Master Hsu
--- step
---     .goto 709,51.41,48.38
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .accept 41905 >>Accept Report from Tian Monastery
---     .target Iron-Body Ponshu
---     .turnin 41905 >>Turn in *undefined*
---     .accept 41728 >>Accept The Defense of Tian Monastery
+
 ]])
 
 ---Death Knight
@@ -2137,10 +2082,10 @@ step
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
-step
-    .goto 619,45.71,67.47
-    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
-    .timer 10,RP
+-- step
+--     .goto 619,45.71,67.47
+--     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
+--     .timer 10,RP
 ]])
 
 ---First Zone
@@ -2207,7 +2152,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #name bb) Order Hall Monk Part 1
 #displayname |cFF00CCFF3|r - Order Hall Intro Monk|r
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Monk
 
@@ -2396,7 +2341,7 @@ RXPGuides.RegisterGuide([[
 #next bd) First Zone
 
 step
-    #include ac) Infinite Bazaar
+    #include RestedXP Legion Remix\ac) Infinite Bazaar
 
 
 ]])
@@ -2411,7 +2356,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF5|r - First Zone|r
 
 step
-    #include ad) First Zone
+    #include RestedXP Legion Remix\ad) First Zone
 
 
 ]])

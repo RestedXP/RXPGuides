@@ -1312,6 +1312,14 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Brewmaster
 
 step
+    #completewith Dalaran
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .openitem 237812
+    .openitem 243373
+step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 40236 >>Turn in The Dawning Light
@@ -1344,7 +1352,7 @@ step
     .goto 709,47.19,47.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak-Tak|r
     .complete 42762,1 --1/1 Speak with Tak-Tak
-    .timer 25,RP
+    .timer 23,RP
     .skipgossipid 45493
     .target Tak-Tak
 step
@@ -1404,6 +1412,7 @@ step
     .goto 376,51.43,65.17,10,0
     .goto 376,51.11,64.98,10 >>Enter the House and and go upstairs.
 step
+    #requires Vadis
     .goto 376,51.50,64.43
     >>Kill |cRXP_ENEMY_Vadis|r
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Keg|r
@@ -1422,10 +1431,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
     .turnin 42957 >>Turn in Journey to the East
     .accept 42868 >>Accept The Monkey King's Challenge
+    .disablecheckbox
 step
     #completewith Journey to the East
     .cast 311861 >>Use |T615341:0|t[Purity Jug]
-    .use 173704
+    .use 173706
 step
     #requires Journey to the East
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
@@ -1436,6 +1446,27 @@ step
     .goto 371,55.31,58.56
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Brewpot|r
     .complete 42868,1 --1/1 Brewpot Set
+    .timer 7.5,RP
+step
+    .goto 371,55.37,58.54
+    .isOnQuest 42868
+    .cast 217213 >>Click on the |cRXP_PICK_Blue Orb|r
+    .timer 12,RP
+step
+    .goto 371,55.24,58.52
+    .isOnQuest 42868
+    .cast 217216 >>Click on the |cRXP_PICK_Flour|r
+    .timer 10.5,RP
+step
+    .goto 371,55.21,58.43
+    .isOnQuest 42868
+    .cast 217219 >>Click on the |cRXP_PICK_Barrel|r
+    .timer 11,RP
+step
+    .goto 371,55.39,58.46
+    .isOnQuest 42868
+    .cast 217224 >>Click on the |cRXP_PICK_Banana|r
+    .timer 10,RP
 step
     .goto 371,55.28,58.5
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r
@@ -1447,49 +1478,141 @@ step
     .target The Monkey King
     .accept 42765 >>Accept The Trial at the Temple
 step
-    .goto 371,56.23,57.90
+    .goto 791,30.23,60.31
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 42765,1 --1/1 Enter the Temple of the Jade Serpent
-    .timer 120,RP
+    .timer 43,RP
 step
+    .goto 791,32.38,54.04
+    .isOnQuest 42765
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2613,1
-    .isOnQuest 42765
 step
+    .isInScenario 1137
+    .goto 791,32.09,55.99
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gate|r and move forward.
     .scenario 2649,1
-    .isOnQuest 42765
 step
-    .scenario 2649,2
-    .isOnQuest 42765
+    .goto 791,30.41,59.54,15,0
+    .goto 792,40.41,20.97,15,0
+    .goto 792,34.88,44.12
+    >>Kill |cRXP_ENEMY_Soulflayer of the Inquisiton|r
+    .scenario 2649,2,1
+    .isInScenario 1137
+    .mob Soulflayer of the Inquisiton
 step
+    .goto 791,30.9,60.83,15,0
+    .goto 792,38.99,21.57,15,0
+    .goto 792,34.22,42.55
+    >>Kill |cRXP_ENEMY_Soulflayer of the Inquisiton|r and his |cRXP_ENEMY_minions|r.
+    .scenario 2649,2,1
+    .isInScenario 1137
+    .mob Soulflayer of the Inquisiton
+    .mob Impling Pillager
+step
+    .goto 792,32.6,63.36,15,0
+    .goto 792,51.17,71.47
+    >>Kill |cRXP_ENEMY_Torturer of the Inquisition|r and his |cRXP_ENEMY_minions|r.
+    .scenario 2649,2,2
+    .isInScenario 1137
+    .mob Torturer of the Inquisition
+    .mob Impling Pillager
+step
+    .goto 792,61.76,73.56,15,0
+    .goto 792,66.55,46.16,15,0
+    .goto 792,56.64,42.48
+    >>Kill |cRXP_ENEMY_Soulflayer of the Inquisiton|r and his |cRXP_ENEMY_minions|r.
+    .scenario 2649,2,3
+    .isInScenario 1137
+    .mob Soulflayer of the Inquisiton
+    .mob Impling Pillager
+step
+    .goto 791,25.15,66.37,15,0
+    .goto 791,27.33,71.8
+    >>Kill |cRXP_ENEMY_Belphiar|r
     .scenario 2650,1
-    .isOnQuest 42765
+    .timer 19,RP
+    .isInScenario 1137
+    .mob Belphiar
 step
+    .goto 791,40.59,78.62
+    #title |cFFFCDC00Follow the Arrow|r
     .scenario 2684,1
-    .isOnQuest 42765
+    .isInScenario 1137
 step
+    .goto 791,45.39,80.88,15,0
+    .goto 791,54.79,84.16,15,0
+    .goto 791,53.68,75.04,15,0
+    .goto 791,48.47,65.14,15,0
+    .goto 791,51.32,52.08
+    #title |cFFFCDC00Follow the Arrow|r
     .scenario 2661,1
-    .isOnQuest 42765
+    .isInScenario 1137
 step
+    .goto 791,51.32,52.08
+    >>Kill the waves of |cRXP_ENEMY_Demons|r
+    .scenario 2663,2,15
+    .isInScenario 1137
+    .mob Torturer of the Inquisition
+    .mob Wrathguard Felstriker
+    .mob Inquisitor's Eye
+    .mob Impling Pillager
+    .mob Arbiter of the Inquisiiton
+step
+    .goto 791,46.5,48.86
+    >>Kill the waves of |cRXP_ENEMY_Demons|r
+    .scenario 2663,2,100
     .scenario 2663,1
-    .isOnQuest 42765
+    .isInScenario 1137
+    .mob Torturer of the Inquisition
+    .mob Wrathguard Felstriker
+    .mob Inquisitor's Eye
+    .mob Impling Pillager
+    .mob Arbiter of the Inquisiiton
 step
-    .scenario 2663,2
-    .isOnQuest 42765
-step
+    .goto 791,69.73,60.48
+    >>Kill |cRXP_ENEMY_Lord Korthis|r
+    *|cRXP_WARN_More accurate arrow is not possible|r.
     .scenario 2665,1
-    .isOnQuest 42765
+    .isInScenario 1137
+    .mob Lord Korthis
 step
+    .goto 791,69.73,60.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
+    *|cRXP_WARN_More accurate arrow is not possible|r.
     .scenario 2666,1
-    .isOnQuest 42765
+    .isInScenario 1137
+-- step
+--     .goto 791,69.73,60.48
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yu'lon|r
+--     *|cRXP_WARN_More accurate arrow is not possible|r.
+--     .scenario 2701,1
+--     .timer 30,RP
+--     .skipgossipid 46181
+--     .isInScenario 1137
+--     .target Yu'lon
+-- step
+--     .isInScenario 1137
+--     .zone 371 >>Leave the Instance(Right-Click your player frame).
 step
-    .scenario 2701,1
-    .isOnQuest 42765
+    #completewith next
+    #label Trial at the Temple
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 42765 >>Turn in The Trial at the Temple
+    .target Iron-Body Ponshu
+    .accept 40793 >>Accept A Matter of Planning
+    .disablecheckbox
 step
+    #completewith Trial at the Temple
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+    .usespell 126892
+step
+    #requires Trial at the Temple
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 42765 >>Turn in The Trial at the Temple
     .target Iron-Body Ponshu
     .accept 40793 >>Accept A Matter of Planning
-
 ]])
 --Mistweaver
 RXPGuides.RegisterGuide([[
@@ -1498,6 +1621,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Mistweaver
 
+step
+    #completewith Dalaran
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .openitem 237812
+    .openitem 243373
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -1541,14 +1672,90 @@ step
     .timer 90,RP
     .skipgossipid 45491
     .target Tak-Tak
-
-
+step
+    .isOnQuest 41003
+    #completewith Aspersius
+    +Use |T1360980:0|t[Vivify] on |cRXP_FRIENDLY_Taran Zhu|r to keep him alive and to resurrect him same for all your team membersw.
+    *|cRXP_WARN_It's important as you can't progress with him being dead|r.
+    .target Taran Zhu
+step
+    .isOnQuest 41003
+    .goto 728,92.14,55.2
+    >>Use |T1360980:0|t[Vivify] on |cRXP_FRIENDLY_Taran Zhu|r.
+    .scenario 2091,1
+    .timer 26.5,RP
+    .target Taran Zhu
+    .usespell 116670
+step
+    .isInScenario 1007
+    .goto 728,78.47,48.82
+    >>Kill |cRXP_ENEMY_Hellwarden Xaphan|r
+    .scenario 2098,4
+    .timer 30,RP
+    .mob Hellwarden Xaphan
+step
+    .isInScenario 1007
+    .goto 728,59.2,51.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fei Li|r
+    .scenario 2100,1
+    .skipgossipid 44884
+    .target Fei Li
+step
+    .isInScenario 1007
+    .goto 728,58.86,48.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taoshi|r
+    .scenario 2100,3
+    .skipgossipid 44888
+    .target Taoshi
+step
+    .isInScenario 1007
+    .goto 728,58.97,45.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hawkmaster Nurong|r
+    .scenario 2100,2
+    .skipgossipid 44887
+    .target Hawkmaster Nurong
+step
+    .isInScenario 1007
+    .goto 728,61.89,48.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taran Zhu|r
+    .scenario 2131,1
+    .skipgossipid 45376
+    .target Taran Zhu
+step
+    #label Aspersius
+    .isInScenario 1007
+    .goto 728,40.25,48.82
+    >>Kill |cRXP_ENEMY_Aspersius|r
+    .scenario 2131,2
+    .mob Aspersius
 step
     .goto 728,39.21,48.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .complete 41003,2 --1/1 Acquire Sheilun
 step
-    .goto 728,43.68,53.03
+    .xp <11,1
+    #title |cFFFCDC00Spam Macro|r
+    .goto 728,44.12,53.64
+    >>|cRXP_WARN_In the "Active Items" section|r There is a macro, spam it after talking to |cRXP_FRIENDLY_Taran Zhu|r.
     .complete 41003,3 --1/1 Fly Home with Tak-Tak
+    .macro Leave Vehicle,6656430 >> /leavevehicle
+    .skipgossipid 45497
+    .target Tak-Tak
+step
+    .xp <11,1
+    #title |cFFFCDC00Spam Macro|r
+    .isOnQuest 41003
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage] to return to your orderhall.
+    .usespell 126892
+    .macro Leave Vehicle,6656430 >> /leavevehicle
+step
+    .xp >11,1
+    .goto 728,44.12,53.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taran Zhu|r.
+    .complete 41003,3 --1/1 Fly Home with Tak-Tak
+    .timer 53w,RP
+    .skipgossipid 45497
+    .target Tak-Tak
 step
     .goto 709,51.40,48.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -1562,6 +1769,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Windwalker
 
+step
+    #completewith Dalaran
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .openitem 237812
+    .openitem 243373
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
