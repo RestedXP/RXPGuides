@@ -7139,7 +7139,7 @@ function addon.functions.isInScenario(self, ...)
 
     if event ~= "WindowUpdate" then
         local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
-        if step.active and not addon.settings.profile.debug and not addon.isHidden and scenarioInfo and scenarioInfo.scenarioID ~= element.scenario then
+        if step.active and not addon.settings.profile.debug and not addon.isHidden and (not scenarioInfo or scenarioInfo.scenarioID ~= element.scenario) then
             element.tooltipText = "Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
