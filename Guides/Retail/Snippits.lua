@@ -1310,7 +1310,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Brewmaster
-#internal
 
 step
     .goto 709,51.41,48.41
@@ -1498,7 +1497,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Mistweaver
-#internal
 
 step
     .goto 709,51.41,48.41
@@ -1563,7 +1561,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Windwalker
-#internal
 
 step
     .goto 709,51.41,48.41
@@ -1575,30 +1572,28 @@ step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .complete 40636,1 --1/1 Artifact weapon chosen
-    .choose 139011
+    .choose 1390111
     .skipgossipid 45061
     .target Iron-Body Ponshu
 step
+    #requires Prepare To Strike
+    .goto 709,51.4,48.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .turnin 40636 >>Turn in Prepare To Strike
+    .target Iron-Body Ponshu
+    .accept 40569 >>Accept The Legend of the Sands
+step
     #completewith next
     #label Prepare To Strike
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .turnin 40636 >>Turn in Prepare To Strike
-    .target Iron-Body Ponshu
-    .accept 40569 >>Accept The Legend of the Sands
-    .disablecheckbox
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .complete 40569,1 --1/1 Speak with Li Li Stormstout
+    .target Li Li Stormstout
 step
     #completewith Prepare To Strike
-    .goto 709,51.28,53.74,30,0
-    .goto 709,49.96,58.69,30,0
-    .goto 709,51.43,48.41,10 >>Enter the House
+    .goto 709,51.28,53.77,10,0
+    .goto 709,49.91,58.68,10 >>Enter the House
 step
     #requires Prepare To Strike
-    .goto 709,49.12,58.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .turnin 40636 >>Turn in Prepare To Strike
-    .target Iron-Body Ponshu
-    .accept 40569 >>Accept The Legend of the Sands
-step
     .goto 709,49.12,58.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
     .complete 40569,1 --1/1 Speak with Li Li Stormstout
@@ -1644,6 +1639,7 @@ step
     .goto 249,54.92,33.66,15 >>Leave the House
 step
     #requires Clue Discovered
+    #title |cFFFCDC00Fly manually|r
     .goto 249,45.65,14.35
     >>Kill |cRXP_ENEMY_Nader|r. Loot him for |T348535:0|t[|cRXP_LOOT_Essence of Whirlwind].
     .complete 40634,1 --1/1 Clue Discovered
@@ -1666,98 +1662,138 @@ step
     .target King Phaoris
     .accept 40570 >>Accept Into The Heavens
 step
+    #completewith next
+    #label Essence of the Whirlwind
+    >>Use |T348535:0|t[Essence of the Whirlwind]
+    .complete 40570,1 --1/1 Use the Essence of the Whirlwind
+step
+    #completewith Essence of the Whirlwind
+    .goto 249,54.92,33.61,,10 >>Leave the building
+step
+    #requires Essence of the Whirlwind
     .goto 249,54.92,33.61
     >>Use |T348535:0|t[Essence of the Whirlwind]
     .complete 40570,1 --1/1 Use the Essence of the Whirlwind
-    .timer 20,RP
+    .timer 19,RP
     .use 132745
 step
+    .isInScenario 983
     .goto 716,30.39,44.18
     >>Kill |cRXP_ENEMY_Howling Winds|r and |cRXP_ENEMY_Lesser Sandling|r.
+    .timer 10,RP
     .scenario 2006,1
     .mob Lesser Sandling
     .mob Howling Winds
 step
-    #loop
-    .goto 716,29.63,48.3,30,0
-    .goto 716,29.69,50.78,30,0
-    .goto 716,31.33,52.29,30,0
-    .goto 716,32.92,50.68,30,0
-    .goto 716,32.26,48.2,30,0
-    .goto 716,30.91,49.6,30,0
+    .isInScenario 983
+    .goto 716,29.91,47.18
+    .countdown 14 >>Wait infront of the Tornadoes
+step
+    .isInScenario 983
+    .goto 716,29.61,50.7,15,0
+    .goto 716,31.34,51.67,15,0
+    .goto 716,33.17,50.27,15,0
+    .goto 716,30.74,49.37,15,0
+    .goto 716,31.03,49.94
     #title |cFFFCDC00Follow the Arrow|r
+    >>Avoid the tornadoes and enter the green swirls for a speed boost.
     .scenario 2013,1 
 step
+    .isInScenario 983
     .goto 716,32.58,52.54
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,1
 step
+    .isInScenario 983
     .goto 716,29.3,54.99
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,2
 step
+    .isInScenario 983
     .goto 716,25.49,60.28
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,3
+    .timer 20
 step
-    .goto 716,26.78,59.96,20,0
-    .goto 716,31.78,65.91
-    >>Kill |cRXP_ENEMY_Scion of Typhinius|r and then move towards the boss.
-    .scenario 2007,2
+    .isInScenario 983
+    .goto 716,26.75,59.97
+    .countdown 40 >>Kill |cRXP_ENEMY_Scion of Typhinius|r 
     .mob Scion of Typhinius
 step
-    .goto 716,31.26,66.71
-    >>Kill |cRXP_ENEMY_Minios|r
-    .scenario 2008,1
+    .isInScenario 983
+    .goto 716,28.93,63.06
+    #title |cFFFCDC00Follow the Arrow|r
+    .scenario 2007,2
+    .timer 10,RP
 step
+    .isInScenario 983
+    .goto 716,31.26,66.71
+    >>Kill his |cRXP_ENEMY_Minios|r
+    .scenario 2008,1
+    .mob Storm Cloud
+    .mob Howling Winds
+    .mob Na'ser
+    .mob Zaurac
+step
+    .isInScenario 983
     .goto 716,31.26,66.71
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Zaurac|r
     .scenario 2009,1
-    .timer 26,RP
+    .timer 25,RP
     .target Zaurac
 step
+    .isInScenario 983
     .goto 716,35.76,82.93
     >>Kill |cRXP_ENEMY_Typhinius|r
     .scenario 2010,1
     .mob Typhinius
 step
+    .isInScenario 983
     .goto 716,35.76,82.93
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists|r
     .scenario 2011,1
     .mob Typhinius
 step
-    .zone 709 >>Leave the Instance(Right-Click your player frame).
+    .goto 716,35.65,84.21
+    .vehicle >>Click on the Kite
 step
-    #completewith next
-    #hidewindow
-    #label Into The Heavens
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
-    .turnin 40570 >>Turn in Into The Heavens
-    .target Li Li Stormstout
-step
-    #completewith Into The Heavens
-    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
-    .usespell 126892
-step
-    #requires Into The Heavens
-    #completewith next
-    #label Into The Heavens2
     .goto 709,49.11,58.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
     .turnin 40570 >>Turn in Into The Heavens
     .target Li Li Stormstout
-step
-    #requires Into The Heavens
-    #completewith Into The Heavens2
-    .goto 709,51.28,53.74,30,0
-    .goto 709,49.96,58.69,30,0
-    .goto 709,51.43,48.41,10 >>Enter the House
-step
-    #requires Into The Heavens2
-    .goto 709,49.11,58.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
-    .turnin 40570 >>Turn in Into The Heavens
-    .target Li Li Stormstout
+-- step
+--     .zone 709 >>Leave the Instance(Right-Click your player frame).
+-- step
+--     #completewith next
+--     #hidewindow
+--     #label Into The Heavens
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+--     .turnin 40570 >>Turn in Into The Heavens
+--     .target Li Li Stormstout
+-- step
+--     #completewith Into The Heavens
+--     .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+--     .usespell 126892
+-- step
+--     #requires Into The Heavens
+--     #completewith next
+--     #label Into The Heavens2
+--     .goto 709,49.11,58.67
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+--     .turnin 40570 >>Turn in Into The Heavens
+--     .target Li Li Stormstout
+-- step
+--     #requires Into The Heavens
+--     #completewith Into The Heavens2
+--     .goto 709,51.28,53.74,30,0
+--     .goto 709,49.96,58.69,30,0
+--     .goto 709,51.43,48.41,10 >>Enter the House
+-- step
+--     #requires Into The Heavens2
+--     .goto 709,49.11,58.67
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+--     .turnin 40570 >>Turn in Into The Heavens
+--     .target Li Li Stormstout
 
 ]])
 

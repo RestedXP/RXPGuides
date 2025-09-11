@@ -768,7 +768,7 @@ step
     .openitem 237812
     .openitem 243373
 step
-    .zoneskip 627
+    .zoneskip 627,1
     .zone 627 >>Enter Dalaran
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r.
@@ -924,11 +924,13 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40236,1 --1/1 Accompany Fearsome Jang
+    .target Iron-Body Ponshu
     .timer 72,RP
 step
     .goto 709,51.41,48.41
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40236,2 --1/1 Establish the Order of The Broken Temple
+    .target Iron-Body Ponshu
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -939,36 +941,42 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
+-- step
+--     .spec 1
+--     #include a) Artifact Brewmaster
+-- step
+--     .spec 2
+--     #include a) Artifact Windwalker
+-- step
+--     .spec 3
+--     #include a) Artifact Mistweaver
+-- step
+--     #completewith next
+--     #label Matter of Planning
+--     .goto 709,49.99,58.69,30,0
+--     .goto 709,51.04,57.64,30,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+--     .accept 40793 >>Accept A Matter of Planning
+--     .target Iron-Body Ponshu
+-- step
+--     #completewith Matter of Planning
+--     #hidewindow
+--     .goto 709,51.41,48.4,60 >>1
+-- step
+--     #requires Matter of Planning
+--     .goto 709,51.42,48.40
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+--     .accept 40793 >>Accept A Matter of Planning
+--     .target Iron-Body Ponshu
+-- step
+--     #completewith next
+--     #label Turn in A Matter of Planning
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
+--     .turnin 40793 >>Turn in A Matter of Planning
+--     .accept 40795 >>Accept The Fight Begins
+--     .disablecheckbox
+--     .target Master Hsu
 step
-    .spec 1
-    #include a) Artifact Brewmaster
-step
-    .spec 2
-    #include a) Artifact Windwalker
-step
-    .spec 3
-    #include a) Artifact Mistweaver
-step
-    #completewith next
-    #label Matter of Planning
-    .goto 709,49.99,58.69,30,0
-    .goto 709,51.04,57.64,30,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .accept 40793 >>Accept A Matter of Planning
-    .target Iron-Body Ponshu
-step
-    #completewith Matter of Planning
-    #hidewindow
-    .goto 709,51.41,48.4,60 >>1
-step
-    #requires Matter of Planning
-    .goto 709,51.42,48.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .accept 40793 >>Accept A Matter of Planning
-    .target Iron-Body Ponshu
-step
-    #completewith next
-    #label Turn in A Matter of Planning
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
     .turnin 40793 >>Turn in A Matter of Planning
     .accept 40795 >>Accept The Fight Begins
