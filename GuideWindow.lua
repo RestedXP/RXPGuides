@@ -2181,7 +2181,7 @@ function RXPFrame:GenerateMenuTable(menu)
         for j, guideName in ipairs(t.names_) do
             local guide = addon.GetGuideTable(groupName, guideName)
             --if not guide then print(guide,group,guideName) end
-            if IsGuideActive(guide) then
+            if IsGuideActive(guide) and not guide.chapter then
                 nActive = nActive + 1
                 if guide.subgroup then
                     local subgroup = guide.subgroup
