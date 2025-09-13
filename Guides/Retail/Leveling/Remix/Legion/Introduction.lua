@@ -63,14 +63,17 @@ step
     .mob Felfire Imp
 step
     #completewith Legion demons purged
-    .goto 627,63.56,45.69,10,0
-    .goto 627,59.85,46.83,10,0
-    .goto 627,51,58.6,40 >>Enter Dalaran City
+    .goto 627,61.74,41.58,10,0
+    .goto 627,59.3,43.95,10 >>Enter Dalaran City
 step
     #requires Legion demons purged
-    #loop
-    .goto 627,44.65,59.12,15,0
-    .goto 627,34.24,55.91,15,0
+    .goto 627,54.46,39,15,0
+    .goto 627,50.45,33.52,15,0
+    .goto 627,52.19,42.07,15,0
+    .goto 627,45.67,54.09,15,0
+    .goto 627,42.49,57.09,15,0
+    .goto 627,33.85,54.79,15,0
+    .goto 627,42.69,56.95
     >>Kill |cRXP_ENEMY_Demons|r
     .complete 89405,1 --Legion demons purged (100%)
     .mob Felguard Invader
@@ -226,21 +229,6 @@ step
     .goto 627,43.96,29.97,5 >>Leave Building
 step
     #requires Turn in Thrift
-    #completewith next
-    #label Turn in Thrift2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r 
-    .turnin 89407 >>Turn in Thrift
-    .target Momentus
-    .turnin 89408 >>Turn in Threadbare
-    .accept 89409 >>Accept Infinite Bronze
-    .disablecheckbox
-step
-    #requires Turn in Thrift
-    #completewith Turn in Thrift2
-    .goto 627,42.83,27.66,20 >>1
-step
-    #requires Turn in Thrift2
-    .goto 627,42.81,28.45,2,0
     .goto 627,42.83,27.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r 
     .turnin 89407 >>Turn in Thrift
@@ -725,50 +713,29 @@ step
     .openitem 243373
 step
     .goto 627,72.05,41.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .accept 90754 >>Accept Skyriding
+    .gossipoption 133762 >>Talk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
 step
-    .goto 627,72.41,41.40
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 90754,1 --1/1 Take Moratari's portal
+    #optional
+    #completewith IntroSkipEnd
+    #hidewindow
+    .isQuestTurnedIn account,80018
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 << Death Knight
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 << Demon Hunter
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Druid Part 1 << Druid
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Hunter Part 1 << Hunter
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Mage Part 1 << Mage
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Monk Part 1 << Monk
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Paladin Part 1 << Paladin
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Priest Part 1 << Priest
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Rogue Part 1 << Rogue
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Shaman Part 1 << Shaman
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Warlock Part 1 << Warlock
+    .skipto guide,RestedXP Legion Remix\ab) Order Hall Warrior Part 1 << Warrior
 step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
-    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
-    .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
-    .target Lord Andestrasz
-    .skipgossipid 120917
-    -- .skipgossipid 120921
-    -- .skipgossipid 120920
-    -- .skipgossipid 120919
-    -- .skipgossipid 120918
-step
-    .goto 371,65.27,37.18
-    >>Right-click to learn your mount.
-    .complete 90754,3 --1/1 Learn your new skyriding mount from your 
-    .use 194034
-    .use 194521
-    .use 194106
-    .use 194549
-    .use 194705
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
-    .target Lord Andestrasz
-    .skipgossipid 120916
-step
-    #label Skyriding
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 90754 >>Turn in Skyriding
-    .target Lord Andestrasz
-step
-    --skyriding tag
-    .goto 371,65.14,37.1
-    .cast 1246470 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .timer 5,RP
+    #include RestedXP Legion Remix\a) Skyriding Panda
+
+
 ]])
 
 ---Monk
@@ -1028,6 +995,10 @@ step
     >>Use |T242617:0|t[Curious Simulacrum]
     .accept 92688 >>Accept Bronze Simulacrum
     .use 242617
+step
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r
     .accept 42186 >>Accept Growing Power
@@ -2013,8 +1984,6 @@ step
     .use 245925
     .use 246937
     .use 242516
-    -- .use 253224
-    -- .use 254267
     .use 238726
     .use 217956
     .use 217730
@@ -2023,8 +1992,11 @@ step
     .use 217606
     .use 217731
     .use 249786
+    .use 217608
+    .use 217901
+    .use 217607
+    .use 217929
     .usespell 1241425
-    -- .openitem 249786
     .openitem 237812
     .openitem 243373
     .openitem 246814
@@ -2105,6 +2077,7 @@ step
     .target Eternus
 step
     .goto 619,45.68,68.50
+    >>
     .daily 93112,89540,91613,90100,90112,90113,93117,89600,89679,90102,90103,93114,93116,93120,89524,89590,89678,93113,93118,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and an Infinite Research Quest. 
     .target Eternus
 step
@@ -2130,32 +2103,12 @@ step
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
-step
-    >>Kill |cRXP_ENEMY_Enemies|r |cRXP_ENEMY_Empowered enemies|r
-    |T135975:0|t[Temporal Retreat]
-    .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
-    .complete 91061,4 --3/3 Empowered enemies slain in Heroic World Tier
-step
-    .target Mythunyeth
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .turnin 91061 >>Turn in Infinite Chaos
-    .target Eternus
-step
-    .goto 630,46.39,46.31
-    .accept 90892 >>Accept Clearing the Skies: A Fel of a Time
-step
-    .goto 650,43.64,71.24
-    >>Kill |cRXP_ENEMY_Lost Legion demons|r
-    .complete 90892,1 --10/10 Lost Legion demons slain
-    .mob Lost Legion demons
-step
-    .goto 634,43.70,55.14
-    .complete 90892,2 --25/25 Motes of Bronze collected
-step
-    .goto 634,41.29,55.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mythunyeth|r
-    .turnin 90892 >>Turn in Clearing the Skies: A Fel of a Time
-    .target Mythunyeth
+-- step
+--     >>Kill |cRXP_ENEMY_Enemies|r |cRXP_ENEMY_Empowered enemies|r
+--     |T135975:0|t[Temporal Retreat]
+--     .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
+--     .complete 91061,4 --3/3 Empowered enemies slain in Heroic World Tier
+
 ]])
 
 ---First Zone

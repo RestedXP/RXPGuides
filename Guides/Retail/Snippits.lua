@@ -592,177 +592,7 @@ step
 
 ]])
 
---Skyriding Panda Shiek
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name a) Skyriding Panda
-#internal
-
-step
-    .goto 627,72.04,41.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .accept 90754 >>Accept Skyriding
-    .target Moratari
-step
-    .goto 627,72.44,41.33
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 90754,1 --1/1 Take Moratari's portal
-step
-    >>Learn the Mount from your Inventory
-    .complete 90754,3 --1/1 Learn your new skyriding mount from your inventory
-step
-    .goto 371,65.26,37.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
-    .target Lord Andestrasz
-step
-    .goto 371,65.27,37.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz about Skyriding|r
-    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
-    .target Lord Andestrasz about Skyriding
-    .skipgossipid 120916
-step
-    .goto 371,65.27,37.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 90754 >>Turn in Skyriding
-    .accept 80013 >>Accept How to Glide with Your Dragon
-    .target Lord Andestrasz
-step
-    >>Use your Skyriding Mount
-    .complete 80013,1 --1/1 Mount your drake from your collection [Shift+P]
-step
-    #loop
-    .goto 371,65.44,37.23,10,0
-    .goto 371,66.67,37.01,10,0
-    .goto 371,67.5,36.07,10,0
-    .goto 371,67.58,34.7,10,0
-    .goto 371,67.33,33.9,10,0
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80013,2 --5/5 Glide through the Rings
-step
-    .goto 371,66.75,33.39
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80013,3 --1/1 Land in the target area
-step
-    .goto 371,66.75,33.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80013 >>Turn in How to Glide with Your Dragon
-    .target Celormu
-step
-    .goto 371,65.23,37.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80015 >>Accept How to Dive with Your Dragon
-    .target Lord Andestrasz
-step
-    >>Use your Skyriding Mount
-    .complete 80015,1 --1/1 Hop on your Dragonriding mount (Optional)
-step
-    #loop
-    .goto 371,65.39,37.21,10,0
-    .goto 371,66.66,37.2,10,0
-    .goto 371,67.96,37.32,10,0
-    .goto 371,68.98,38.25,10,0
-    .goto 371,69.71,39.84,10,0
-    .goto 371,69.93,44.16,10,0
-    .goto 371,68.08,46.86,10,0
-    .goto 371,66.25,49.52,10,0
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80015,2 --7/7 Glide through the Rings
-step
-    #loop
-    .goto 371,66.25,49.52
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80015,3 --1/1 Land in the Target Area
-step
-    .goto 371,66.23,49.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80015 >>Turn in How to Dive with Your Dragon
-    .target Celormu
-step
-    .goto 371,65.24,37.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80016 >>Accept The Need For Higher Velocities
-    .target Lord Andestrasz
-step
-    #loop
-    .goto 371,65.38,37.28,10,0
-    .goto 371,66.41,37.05,10,0
-    .goto 371,68.28,36.07,10,0
-    .goto 371,68.63,32.35,10,0
-    .goto 371,67.26,27.22,10,0
-    .goto 371,66,25.59,10,0
-    .goto 371,64.98,24.26,10,0
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80016,2 --6/6 Glide through the Rings
-step
-    .goto 371,64.98,24.26
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80016,3 --1/1 Land in the Target Area
-step
-    .complete 80016,1 --1/1 Hop on your Dragonriding mount (Optional)
-step
-    .goto 371,64.98,24.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80016 >>Turn in The Need For Higher Velocities
-    .target Celormu
-step
-    .goto 371,65.26,37.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80017 >>Accept The Need For Higher Altitudes
-    .target Lord Andestrasz
-step
-    #title |cFFFCDC00Follow the Arrow|r
-    .goto 371,65.43,37.16,10,0
-    .goto 371,66.31,37.04,10,0
-    .goto 371,67.87,35.49,10,0
-    .goto 371,68.78,33.12,10,0
-    .goto 371,68.19,29.91,10,0
-    .goto 371,65.34,29.59,10,0
-    .goto 371,65.35,29.6,10,0
-    .complete 80017,2 --6/6 Glide through the Rings
-step
-    .goto 371,62.51,28.65
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 80017,3 --1/1 Land in the Target Area
-step
-    .complete 80017,1 --1/1 Hop on your Dragonriding mount (Optional)
-step
-    .goto 371,62.51,28.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80017 >>Turn in The Need For Higher Altitudes
-    .target Celormu
-step
-    .goto 371,65.25,37.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80018 >>Accept Fashionable Flying
-    .target Lord Andestrasz
-step
-    .goto 371,65.06,37.04
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rostrum of Transformation|r and exit it.
-    .complete 80018,1 --1/1 Rostrum of Transformation used
-step
-    .goto 371,65.24,37.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 80018 >>Turn in Fashionable Flying
-    .target Lord Andestrasz
-    .accept 90755 >>Accept Time Flies
-step
-    .goto 627,72.16,41.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .turnin 90755 >>Turn in Time Flies
-    .target Moratari
-step
-    .goto 371,65.14,37.09
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .zone 627
-    .cast 1246470
-
-
-]])
-
---Skyriding Panda Permok
+--Skyriding Panda
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -771,7 +601,6 @@ RXPGuides.RegisterGuide([[
 #internal
 
 
---skyriding start
 step
     .goto 627,72.05,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -783,19 +612,24 @@ step
     .complete 90754,1 --1/1 Take Moratari's portal
 step
     .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
+    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
     .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
     .target Lord Andestrasz
     .skipgossipid 120917
-    .skipgossipid 120921
-    .skipgossipid 120920
-    .skipgossipid 120919
-    .skipgossipid 120918
+    -- .skipgossipid 120921
+    -- .skipgossipid 120920
+    -- .skipgossipid 120919
+    -- .skipgossipid 120918
 step
     .goto 371,65.27,37.18
+    >>Right-click to learn your mount.
     .complete 90754,3 --1/1 Learn your new skyriding mount from your 
-    >>Use your collected mount
     .use 194034
+    .use 194521
+    .use 194106
+    .use 194549
+    .use 194705
 step
     .goto 371,65.27,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
@@ -990,9 +824,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .turnin 90755 >>Turn in Time Flies
     .target Moratari
-
---skyriding end
-
 ]])
 
 
@@ -1753,7 +1584,7 @@ step
     .goto 728,44.12,53.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taran Zhu|r.
     .complete 41003,3 --1/1 Fly Home with Tak-Tak
-    .timer 53w,RP
+    .timer 53,RP
     .skipgossipid 45497
     .target Tak-Tak
 step
@@ -2413,20 +2244,3 @@ RXPGuides.RegisterGuide([[
 #internal
 
 ]])
-
---     .turnin 92855 >>Turn in Make Haste, Not Waste
-
--- step
---     .goto 619,45.61,68.46,25,0
---     .goto 619,45.68,68.50
---     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
---     .use 254320
---     .aura 1257698 --- somewhere during rp
-
--- step
---     #requires Meet Nostwin2
---     .isOnQuest 92855
---     .goto 619,45.86,68.00
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
---     .turnin 92855 >>Turn in Make Haste, Not Waste
---     .target Lidamorrutu
