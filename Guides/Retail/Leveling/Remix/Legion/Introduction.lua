@@ -1025,7 +1025,10 @@ step
     .complete 39735,1 --1/1 Travel to Dalaran
     .timer 5,RP
 step
-
+    >>Use |T242617:0|t[Curious Simulacrum]
+    .accept 92688 >>Accept Bronze Simulacrum
+    .use 242617
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r
     .accept 42186 >>Accept Growing Power
     .target Initiate Da-Nel
@@ -2004,6 +2007,45 @@ RXPGuides.RegisterGuide([[
 
 
 step
+    #completewith Heroic World Tier
+    #hidewindow
+    +test
+    .use 245925
+    .use 246937
+    .use 242516
+    -- .use 253224
+    -- .use 254267
+    .use 238726
+    .use 217956
+    .use 217730
+    .use 251821
+    .use 256763
+    .use 217606
+    .use 217731
+    .use 249786
+    .usespell 1241425
+    -- .openitem 249786
+    .openitem 237812
+    .openitem 243373
+    .openitem 246814
+    .openitem 245553
+    .openitem 246813
+    .openitem 253224
+step
+    .goto 619,45.96,67.89
+    >>Use |T242617:0|t[Curious Simulacrum]
+    .accept 92688 >>Accept Bronze Simulacrum
+    .use 242617
+step
+   .goto 627,72.07,40.6
+   .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
+step
+    .isOnQuest 92563
+    .goto 619,45.64,67.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+    .turnin 92563 >>Turn in Awoken by Accessory
+    .target Moratari
+step
     #label Meet Nostwin2
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
@@ -2022,6 +2064,12 @@ step
     .goto 619,45.83,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .accept 91955 >>Accept Just Between Us
+    .target Momentus
+step
+    .goto 619,45.83,67.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .turnin 91955 >>Turn in Just Between Us
+    .turnin 92688 >>Turn in Bronze Simulacrum
     .target Momentus
 step
     #hidewindow
@@ -2082,10 +2130,32 @@ step
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
--- step
---     .goto 619,45.71,67.47
---     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
---     .timer 10,RP
+step
+    >>Kill |cRXP_ENEMY_Enemies|r |cRXP_ENEMY_Empowered enemies|r
+    |T135975:0|t[Temporal Retreat]
+    .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
+    .complete 91061,4 --3/3 Empowered enemies slain in Heroic World Tier
+step
+    .target Mythunyeth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 91061 >>Turn in Infinite Chaos
+    .target Eternus
+step
+    .goto 630,46.39,46.31
+    .accept 90892 >>Accept Clearing the Skies: A Fel of a Time
+step
+    .goto 650,43.64,71.24
+    >>Kill |cRXP_ENEMY_Lost Legion demons|r
+    .complete 90892,1 --10/10 Lost Legion demons slain
+    .mob Lost Legion demons
+step
+    .goto 634,43.70,55.14
+    .complete 90892,2 --25/25 Motes of Bronze collected
+step
+    .goto 634,41.29,55.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mythunyeth|r
+    .turnin 90892 >>Turn in Clearing the Skies: A Fel of a Time
+    .target Mythunyeth
 ]])
 
 ---First Zone
@@ -2155,6 +2225,10 @@ RXPGuides.RegisterGuide([[
 #next bc) Infinite Bazaar
 
 << Monk
+    step
+    >>Use |T242617:0|t[Curious Simulacrum]
+    .accept 92688 >>Accept Bronze Simulacrum
+    .use 242617
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Monk Part 1
