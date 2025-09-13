@@ -2,6 +2,19 @@
 -- ==============  GROUP: LEGION REMIX  =========== -
 -- ================================================ -
 
+---Tips & Tricks
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name 1a) Tips & Tricks
+#displayname |cFF00CCFF0|r - Tips & Tricks|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next a) Intro
+
+
+]])
+
 ---Intro
 RXPGuides.RegisterGuide([[
 #retail
@@ -11,7 +24,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next aa) Skyriding
-
+#subweight 100
 
 step
     #completewith Fixed Point in Time
@@ -745,7 +758,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ab) Order Hall Monk Part 1
-#displayname |cFF00CCFF3|r - Order Hall Intro Monk|r
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #next ac) Infinite Bazaar
 
 << Monk
@@ -1012,6 +1025,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Death Knight Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1028,6 +1042,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Demon Hunter Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1833,6 +1848,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Druid Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1848,6 +1864,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Hunter Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1863,6 +1880,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Mage Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1878,6 +1896,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Paladin Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1893,6 +1912,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Priest Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1908,6 +1928,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Rogue Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1928,10 +1949,14 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Shaman Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
 << Shaman
+
+step
+    +test
 
 ]])
 
@@ -1941,6 +1966,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Warlock Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1956,6 +1982,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Warrior Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2128,6 +2155,19 @@ RXPGuides.RegisterGuide([[
 -- ==============  GROUP: SPEED LEVELING: ========== -
 -- ================================================= -
 
+---Tips & Tricks
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#name 2b) Tips & Tricks
+#displayname |cFF00CCFF0|r - Tips & Tricks|r
+#subgroup |cFFFCDC00(10-80)|r Legion Remix
+#next b) Intro
+
+
+]])
+
 ---Intro
 RXPGuides.RegisterGuide([[
 #retail
@@ -2174,14 +2214,10 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #name bb) Order Hall Monk Part 1
-#displayname |cFF00CCFF3|r - Order Hall Intro Monk|r
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #next bc) Infinite Bazaar
 
 << Monk
-    step
-    >>Use |T242617:0|t[Curious Simulacrum]
-    .accept 92688 >>Accept Bronze Simulacrum
-    .use 242617
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Monk Part 1
@@ -2193,8 +2229,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Death Knight Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Death Knight
 
@@ -2209,8 +2246,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Demon Hunter Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Demon Hunter
 
@@ -2226,8 +2264,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Druid Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Druid
 
@@ -2241,8 +2280,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Hunter Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Hunter
 
@@ -2256,8 +2296,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Mage Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Mage
 
@@ -2271,8 +2312,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Paladin Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Paladin
 
@@ -2286,8 +2328,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Priest Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Priest
 
@@ -2301,8 +2344,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Rogue Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Rogue
 
@@ -2318,10 +2362,11 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Shaman Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
-<< Shaman
+<<Shaman
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Shaman Part 1
@@ -2333,8 +2378,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Warlock Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
-#next bc Infinite Bazaar
+#next bc) Infinite Bazaar
 
 << Warlock
 
@@ -2348,6 +2394,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Warrior Part 1
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Infinite Bazaar
 
