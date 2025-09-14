@@ -12,7 +12,63 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next a) Intro
 
-
+step
+    +|T1411837:0|t[Infinite Power] is the Artifact Power of Legion Remix. It fuels your Artifact Weapon, allowing you to unlock upgrades and grow stronger as you play.
+step
+    +|T1411837:0|t[Infinite Power] is gained from most activities — looting enemies, completing quests, and opening treasures or reward boxes.
+step
+    +|T1411833:0|t[Infinite Knowledge] increases the rate at which you gain |T1411837:0|t[Infinite Power] (Artifact Power). The more ranks of |T1411833:0|t[Infinite Knowledge] you have, the more |T1411837:0|t[Infinite Power] you earn from every activity.
+step
+    +Since every activity rewards more |T1411837:0|t[Infinite Power] with each rank of |T1411833:0|t[Infinite Knowledge], it’s best to unlock as much |T1411833:0|t[Infinite Knowledge] as early as possible.
+step
+    +There are 36 total ranks of |T1411833:0|t[Infinite Knowledge]. In Phase 1, you can obtain 28 of them: 20 from World Content & Quests and 8 from Dungeons & Raids.
+step
+    +|T3193843:0|t[Perfected Epoch Mementos] are account-wide items that each grant a permanent +10% XP boost to all characters in your Warband.
+step
+    +You can obtain a total of 9, all earned through questing — primarily by completing each zone’s main campaign.
+step
+    +|T1411833:0|t[Infinite Knowledge] from World Content & Quest ranks are primarily obtained by completing a zone’s main story questline and its side storylines, collectively known as Lorerunner achievements.
+step
+    +The default speedrun guide covers some |T1411833:0|t[Infinite Knowledge] from World Content & Quests, and most |T3193843:0|t[Perfected Epoch Mementos].
+step
+    +It’s recommended to save the ones we leave out until level 80 for maximum efficiency.
+step
+    +You can find our full main story questline guides under Legion Remix |cRXP_WARN_(10–80+)|r Campaigns for each zone. |cRXP_WARN_Recommended at level 80|r
+step
+    +You can find our full side story questline guides under Legion Remix |cRXP_WARN_(10–80+)|r Sojourner for each zone. |cRXP_WARN_Recommended at level 80|r
+step
+    +You can choose to follow a guide that walks you through both simultaneously under |cRXP_WARN_(10–80+)|r Lorerunner. |cRXP_WARN_Recommended at level 80|r.
+step
+    +It can be used as a substitute for the speedrunning guide, but it’s more efficient to use at 80.
+step
+    +Infinite Research Quests are daily quests with over 100 possible task variations. They are extremely valuable for gearing, as their rewards scale to your level.
+step
+    +If you miss a day of Infinite Research Quests, they will backlog. At the start you can store up to 6 quests, and this cap increases as you progress.
+step
+    +It’s highly recommended to ignore this system until level 80, unless you’ve already reached the 6-quest backlog.
+step
+    +If you complete these quests at level 80, the rewards scale up and grant you level 80 gear.
+step
+    .goto 619,45.56,68.5
+    +It’s highly recommended to activate Heroic Mode at the console in the Infinite Bazaar, as monsters slain in this mode grant 500% more experience and significantly increased loot.
+step
+    +The guide will prompt you to enable Heroic Mode, but you can choose to skip it or turn it off if the difficulty becomes too challenging.
+step
+    +You can leave Heroic Mode at any time without drawbacks by using the ability |cFFFFFF00[Temporal Retreat]|r, found in the General tab of your spellbook.
+step
+    +In Legion Remix, you can fly through sky orbs and airborne demons. It’s recommended to collect them when nearby, as they reward |T1411837:0|t[Infinite Power] and unlock a quest.
+step
+    +At level 70, there is a quest available in the Infinite Bazaar that grants your character 250% increased experience.
+step
+    +We will stockpile valuable quests, bonus objectives, and instant Order Hall completes until this point to maximize XP gains from level 70 to 80.
+step
+    +If you’re wondering why we are not completing a certain quest or objective right away, this is most likely the reason.
+step
+    +|T4638724:0|t[Bronze] returns, now used purely for cosmetic purposes. You can purchase cosmetics at the Infinite Bzaar.
+step
+    +The Scrapper returns! Any unwanted equipment can be scrapped for |T1411837:0|t[Infinite Power] and |T4638724:0|t[Bronze]. You can access this system at the Infinite Bazaar, or anytime by using the |T4643984:0|t[Unraveling Sands] ability.
+step
+    +To upgrade the item level of your weapon, you must use |T4548903:0|t[Artifactium Sand] or |T4548902:0|t[Mound of Artifactium Sand]. These can be obtained from most activities.
 ]])
 
 ---Intro
@@ -2009,6 +2065,7 @@ step
     #hidewindow
     +test
     .use 245925
+    .use 249891
     .use 246937
     .use 242516
     .use 238726
@@ -2102,11 +2159,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
     .accept 91639 >>Accept Embrace Your Own Legend
     .target Eternus
-step
-    .goto 619,45.68,68.50
-    >>
-    .daily 93112,89540,91613,90100,90112,90113,93117,89600,89679,90102,90103,93114,93116,93120,89524,89590,89678,93113,93118,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and an Infinite Research Quest. 
-    .target Eternus
+-- step
+--     .goto 619,45.68,68.50
+--     >>
+--     .daily 93112,89540,91613,90100,90112,90113,93117,89600,89679,90102,90103,93114,93116,93120,89524,89590,89678,93113,93118,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and an Infinite Research Quest. 
+--     .target Eternus
 step
     #completewith next
     #hidewindow

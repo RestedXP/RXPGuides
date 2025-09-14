@@ -1076,6 +1076,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
+#subweight 99.6
 #name ak) 1
 #displayname Druid
 #chapters a) Order Hall Druid;a) Artifact Weapon: Balance;a) Artifact Weapon: Feral;a) Artifact Weapon: Guardian;a) Artifact Weapon: Restoration Druids
