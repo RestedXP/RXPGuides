@@ -13,23 +13,23 @@ RXPGuides.RegisterGuide([[
 #next a) Intro
 
 step
-    +|T1411837:0|t[Infinite Power] is the Artifact Power of Legion Remix. It fuels your Artifact Weapon, allowing you to unlock upgrades and grow stronger as you play.
+    +|cRXP_WARN_|cRXP_WARN_|T1411837:0|t[Infinite Power]|r|r is the Artifact Power of Legion Remix. It fuels your Artifact Weapon, allowing you to unlock upgrades and grow stronger as you play.
 step
-    +|T1411837:0|t[Infinite Power] is gained from most activities — looting enemies, completing quests, and opening treasures or reward boxes.
+    +|cRXP_WARN_|T1411837:0|t[Infinite Power]|r is gained from most activities — looting enemies, completing quests, and opening treasures or reward boxes.
 step
-    +|T1411833:0|t[Infinite Knowledge] increases the rate at which you gain |T1411837:0|t[Infinite Power] (Artifact Power). The more ranks of |T1411833:0|t[Infinite Knowledge] you have, the more |T1411837:0|t[Infinite Power] you earn from every activity.
+    +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r increases the rate at which you gain |cRXP_WARN_|T1411837:0|t[Infinite Power]|r |cRXP_WARN_(Artifact Power)|r. The more ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r you have, the more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r you earn from every activity.
 step
-    +Since every activity rewards more |T1411837:0|t[Infinite Power] with each rank of |T1411833:0|t[Infinite Knowledge], it’s best to unlock as much |T1411833:0|t[Infinite Knowledge] as early as possible.
+    +Since every activity rewards more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r with each rank of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r, it’s best to unlock as much |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|ras early as possible.
 step
-    +There are 36 total ranks of |T1411833:0|t[Infinite Knowledge]. In Phase 1, you can obtain 28 of them: 20 from World Content & Quests and 8 from Dungeons & Raids.
+    +There are 36 total ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r. In Phase 1, you can obtain 28 of them: 20 from World Content & Quests and 8 from Dungeons & Raids.
 step
-    +|T3193843:0|t[Perfected Epoch Mementos] are account-wide items that each grant a permanent +10% XP boost to all characters in your Warband.
+    +|cRXP_WARN_|T3193843:0|t[Perfected Epoch Mementos]|r are account-wide items that each grant a permanent +10% XP boost to all characters in your Warband.
 step
     +You can obtain a total of 9, all earned through questing — primarily by completing each zone’s main campaign.
 step
-    +|T1411833:0|t[Infinite Knowledge] from World Content & Quest ranks are primarily obtained by completing a zone’s main story questline and its side storylines, collectively known as Lorerunner achievements.
+    +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r from World Content & Quest ranks are primarily obtained by completing a zone’s main story questline and its side storylines, collectively known as Lorerunner achievements.
 step
-    +The default speedrun guide covers some |T1411833:0|t[Infinite Knowledge] from World Content & Quests, and most |T3193843:0|t[Perfected Epoch Mementos].
+    +The default speedrun guide covers some |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r from World Content & Quests, and most |cRXP_WARN_|T3193843:0|t[Perfected Epoch Mementos]|r.
 step
     +It’s recommended to save the ones we leave out until level 80 for maximum efficiency.
 step
@@ -54,9 +54,9 @@ step
 step
     +The guide will prompt you to enable Heroic Mode, but you can choose to skip it or turn it off if the difficulty becomes too challenging.
 step
-    +You can leave Heroic Mode at any time without drawbacks by using the ability |cFFFFFF00[Temporal Retreat]|r, found in the General tab of your spellbook.
+    +You can leave Heroic Mode at any time without drawbacks by using the ability |cRXP_WARN_|T4571434:0|t[Temporal Retreat]|r, found in the General tab of your spellbook.
 step
-    +In Legion Remix, you can fly through sky orbs and airborne demons. It’s recommended to collect them when nearby, as they reward |T1411837:0|t[Infinite Power] and unlock a quest.
+    +In Legion Remix, you can fly through sky orbs and airborne demons. It’s recommended to collect them when nearby, as they reward |cRXP_WARN_|T1411837:0|t[Infinite Power]|r and unlock a quest.
 step
     +At level 70, there is a quest available in the Infinite Bazaar that grants your character 250% increased experience.
 step
@@ -64,11 +64,41 @@ step
 step
     +If you’re wondering why we are not completing a certain quest or objective right away, this is most likely the reason.
 step
-    +|T4638724:0|t[Bronze] returns, now used purely for cosmetic purposes. You can purchase cosmetics at the Infinite Bzaar.
+    +|cRXP_WARN_|T4638724:0|t[Bronze]|r returns, now used purely for cosmetic purposes. You can purchase cosmetics at the Infinite Bzaar.
 step
-    +The Scrapper returns! Any unwanted equipment can be scrapped for |T1411837:0|t[Infinite Power] and |T4638724:0|t[Bronze]. You can access this system at the Infinite Bazaar, or anytime by using the |T4643984:0|t[Unraveling Sands] ability.
+    +The Scrapper returns! Any unwanted equipment can be scrapped for |cRXP_WARN_|T1411837:0|t[Infinite Power]|r and |cRXP_WARN_|T4638724:0|t[Bronze]|r. You can access this system at the Infinite Bazaar, or anytime by using the |cRXP_WARN_|T4643984:0|t[Unraveling Sands]|r ability.
 step
-    +To upgrade the item level of your weapon, you must use |T4548903:0|t[Artifactium Sand] or |T4548902:0|t[Mound of Artifactium Sand]. These can be obtained from most activities.
+    +To upgrade the item level of your weapon, you must use |cRXP_WARN_|T4548903:0|t[Artifactium Sand]|r or |cRXP_WARN_|T4548902:0|t[Mound of Artifactium Sand]|r. These can be obtained from most activities.
+step
+    +The Active Items window gives you quick access to specific items & spells used in Legion Remix, so you don’t need to open your full inventory.
+    *In this test, all items and spells are shown, but during gameplay only the items you possess and the relevant spells will be displayed.
+    .macro Artifactium Sand,4548903 >>1
+    .macro Mound of Artifactium Sand,4548902 >>1
+    .macro Mound of Artifactium Sand,4548902 >>1
+    .macro Perfected Epoch Memento,3193843 >>1
+    .macro Memento of Epoch Legends,1551372 >>1
+    .macro Drake Treat,132165 >>1
+    .macro Timeless Scroll of Chaos,4549163 >>1
+    .macro Timeless Scroll of Fortitude,4549167 >>1
+    .macro Timeless Scroll of Mystic Power,4549162 >>1
+    .macro Timeless Scroll of Battle Shout,4549164 >>1
+    .macro Timeless Scroll of the Wild,4549165 >>1
+    .macro Timeless Scroll of Cleansing,4549192 >>1
+    .macro Timeless Drums,4559222 >>1
+    .macro Dreamweaver Champion's Insignia,1394953 >>1
+    .macro Court of Farondis Champion's Insignia,1394952 >>1
+    .macro Highmountain Tribe Champion's Insignia,1394954 >>1
+    .macro Nightfallen Champion's Insignia,1394956 >>1
+    .macro Wardens Champion's Insignia,1394958 >>1
+    .macro Army of the Light Champion's Insignia,1708497 >>1
+    .macro Valarjar Champion's Insignia,1394957 >>1
+    .macro Legionfall Champion's Insignia,1585421 >>1
+    .macro Argussian Reach Champion's Insignia,1708496 >>1
+    .macro Temporal Retreat,4571434 >>1
+    .macro Unraveling Sands,4643984 >>1
+step
+
+
 ]])
 
 ---Intro
@@ -2064,29 +2094,38 @@ step
     #completewith Heroic World Tier
     #hidewindow
     +test
-    .use 245925
-    .use 249891
-    .use 246937
-    .use 242516
-    .use 238726
-    .use 217956
-    .use 217730
-    .use 251821
-    .use 256763
-    .use 217606
-    .use 217731
-    .use 249786
-    .use 217608
-    .use 217901
-    .use 217607
-    .use 217929
-    .usespell 1241425
-    .openitem 237812
-    .openitem 243373
-    .openitem 246814
-    .openitem 245553
-    .openitem 246813
-    .openitem 253224
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     .goto 619,45.96,67.89
     >>Use |T242617:0|t[Curious Simulacrum]
@@ -2222,6 +2261,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next b) Intro
 
+step
+    #include RestedXP Legion Remix\1a) Tips & Tricks
 
 ]])
 
