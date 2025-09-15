@@ -515,6 +515,250 @@ function addon.AbandonOrphanedQuests(orphans)
     end)
 end
 
+-- ====================================================================
+-- Quest Log Button: Cleanup Orphaned Quests (self-contained feature)
+-- ====================================================================
+
+-- Localization for button/tooltip — don't shadow your global L() accessor
+local Loc = addon and addon.L or nil
+local CLEANUP_LABEL = (Loc and Loc.CLEANUP_ORPHANED_QUESTS) or "Cleanup Orphaned Quests"
+local CLEANUP_DESC  = (Loc and Loc.CLEANUP_ORPHANED_QUESTS_DESC)
+    or "Abandons quests that aren't referenced by your current RestedXP guide."
+local RXP_POPUP_CLEANUP = "RXP_CONFIRM_ORPHANED_CLEANUP"
+
+-- Find a parent Quest Log (compat with popular questlog addons)
+local function GetQuestLogParent()
+    if _G.QuestLogFrame then return _G.QuestLogFrame end
+    if _G.ClassicQuestLog then return _G.ClassicQuestLog end
+    if _G.QuestGuru then return _G.QuestGuru end
+    if _G.QuestLogEx then return _G.QuestLogEx end
+    if _G.QuestLogFrameClassic then return _G.QuestLogFrameClassic end
+    return nil
+end
+
+-- Show a single confirmation, then abandon all orphans (with per-quest confirm)
+local function RXP_RunCleanupOrphanedQuests()
+    if not (addon.currentGuide and addon.currentGuide.key) then
+        addon.comms.PrettyPrint("Cleanup: no active guide detected.")
+        return
+    end
+
+    -- Temporarily ignore hidden-state guard so GetOrphanedQuests() returns data
+    local wasHidden = addon.isHidden
+    addon.isHidden = false
+    local orphans = addon.GetOrphanedQuests()
+    addon.isHidden = wasHidden
+
+    local count = (orphans and #orphans) or 0
+    if count == 0 then
+        addon.comms.PrettyPrint("Cleanup: no orphaned quests found.")
+        return
+    end
+
+    if not _G.StaticPopupDialogs[RXP_POPUP_CLEANUP] then
+        _G.StaticPopupDialogs[RXP_POPUP_CLEANUP] = {
+            text = "Abandon %d orphaned quest(s)?",
+            button1 = YES,
+            button2 = NO,
+            OnAccept = function(_, data)
+                addon.BeginAbandonOrphans(data)
+            end,
+            timeout = 0,
+            whileDead = 1,
+            hideOnEscape = 1,
+            preferredIndex = 3,
+        }
+    end
+    _G.StaticPopup_Show(RXP_POPUP_CLEANUP, count, nil, orphans)
+end
+
+-- Abandon loop: abandon from the end (bottom of log), confirm each popup
+function addon.BeginAbandonOrphans(orphans)
+    if not (type(orphans) == "table" and #orphans > 0) then
+        addon.comms.PrettyPrint("Cleanup: no orphaned quests to abandon.")
+        return
+    end
+
+    addon.comms.PrettyPrint("Cleanup: abandoning %d orphaned quest(s)...", #orphans)
+
+    local i = #orphans
+    local function step()
+        if i < 1 then
+            if C_Timer and C_Timer.After then
+                C_Timer.After(0.5, function()
+                    local reg = LibStub and LibStub("AceConfigRegistry-3.0", true)
+                    if reg and addon and addon.title then
+                        reg:NotifyChange(addon.title)
+                    end
+                end)
+            end
+            return
+        end
+
+        local q = orphans[i]
+        i = i - 1
+
+        -- Select quest in log
+        if C_QuestLog and C_QuestLog.SetSelectedQuest then
+            C_QuestLog.SetSelectedQuest(q.questID)
+        else
+            _G.SelectQuestLogEntry(q.questLogIndex)
+        end
+
+        -- Mark and request abandon
+        if C_QuestLog and C_QuestLog.SetAbandonQuest then
+            C_QuestLog.SetAbandonQuest()
+        else
+            _G.SetAbandonQuest()
+        end
+
+        if C_QuestLog and C_QuestLog.AbandonQuest then
+            C_QuestLog.AbandonQuest()
+        else
+            _G.AbandonQuest()
+        end
+
+        -- Confirm the Blizzard abandon popup if it appears
+        if _G.ConfirmAbandonQuest then
+            _G.ConfirmAbandonQuest()
+        else
+            local f = _G.StaticPopup_FindVisible and _G.StaticPopup_FindVisible("ABANDON_QUEST")
+            if f and f.button1 and f.button1.Click then
+                f.button1:Click()
+            end
+        end
+
+        -- Schedule next quest after a tiny delay so the UI can update
+        if C_Timer and C_Timer.After then
+            C_Timer.After(0.15, step)
+        else
+            step()
+        end
+    end
+
+    step()
+end
+
+-- UI creation & behavior
+local cleanupBtn
+local createdCleanupBtn = false
+
+local function SetCleanupBtnEnabled(enabled)
+    if not cleanupBtn then return end
+    if enabled then
+        cleanupBtn:Enable()
+        cleanupBtn:SetAlpha(1)
+    else
+        cleanupBtn:Disable()
+        cleanupBtn:SetAlpha(0.5)
+    end
+end
+
+local function AnchorCleanupButton()
+    if not cleanupBtn or not cleanupBtn:GetParent() then return end
+    local abandon = _G.QuestLogFrameAbandonButton
+    if abandon and abandon:IsShown() then
+        cleanupBtn:ClearAllPoints()
+        cleanupBtn:SetPoint("TOPLEFT", abandon, "BOTTOMLEFT", 0, -6) -- fixed width
+    else
+        cleanupBtn:ClearAllPoints()
+        cleanupBtn:SetPoint("BOTTOMLEFT", cleanupBtn:GetParent(), "BOTTOMLEFT", 20, 45)
+    end
+end
+
+local function CreateCleanupButton()
+    if createdCleanupBtn then return end
+
+    -- Try to ensure the Blizzard quest log is loaded
+    if not GetQuestLogParent() and _G.UIParentLoadAddOn then
+        pcall(_G.UIParentLoadAddOn, "Blizzard_QuestLog")
+    end
+
+    local parent = GetQuestLogParent()
+    if not parent then return end
+
+    cleanupBtn = CreateFrame("Button", "RXPQuestLogCleanupButton", parent, "UIPanelButtonTemplate")
+    cleanupBtn:SetText(CLEANUP_LABEL)
+    cleanupBtn:SetSize(180, 22)
+
+    AnchorCleanupButton()
+
+    cleanupBtn:SetScript("OnClick", function()
+        if InCombatLockdown and InCombatLockdown() then
+            addon.comms.PrettyPrint("You can't do that in combat.")
+            return
+        end
+        RXP_RunCleanupOrphanedQuests()
+    end)
+
+    cleanupBtn:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText(CLEANUP_LABEL, 1, 1, 1)
+        GameTooltip:AddLine(CLEANUP_DESC, nil, nil, nil, true)
+        if InCombatLockdown and InCombatLockdown() then
+            GameTooltip:AddLine("\nUnavailable in combat.", 1, 0.2, 0.2, true)
+        end
+        GameTooltip:Show()
+    end)
+    cleanupBtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
+    createdCleanupBtn = true
+    SetCleanupBtnEnabled(not (InCombatLockdown and InCombatLockdown()))
+
+    -- Re-anchor each time the log opens (some addons move buttons)
+    if parent.HookScript then
+        parent:HookScript("OnShow", function()
+            ReanchorCleanupButtonIfNeeded()
+        end)
+    end
+end
+
+
+local function ReanchorCleanupButtonIfNeeded()
+    if not cleanupBtn or not cleanupBtn:IsShown() then return end
+    AnchorCleanupButton()
+end
+
+-- Events (scoped to this feature)
+do
+    local f = CreateFrame("Frame")
+    f:RegisterEvent("ADDON_LOADED")
+    f:RegisterEvent("PLAYER_LOGIN")
+    f:RegisterEvent("PLAYER_REGEN_DISABLED")
+    f:RegisterEvent("PLAYER_REGEN_ENABLED")
+
+    local hookedToggle = false
+
+    f:SetScript("OnEvent", function(_, ev, arg1)
+        if ev == "ADDON_LOADED" then
+            if arg1 == "Blizzard_QuestLog" or arg1 == addonName then
+                CreateCleanupButton()
+            end
+
+        elseif ev == "PLAYER_LOGIN" then
+            -- Try to create now (will load Blizzard_QuestLog if needed)
+            CreateCleanupButton()
+
+            -- If still no parent, hook ToggleQuestLog so we create on first open
+            if not createdCleanupBtn and _G.ToggleQuestLog and not hookedToggle then
+                hookedToggle = true
+                hooksecurefunc("ToggleQuestLog", function()
+                    CreateCleanupButton()
+                    ReanchorCleanupButtonIfNeeded()
+                end)
+            end
+
+        elseif ev == "PLAYER_REGEN_DISABLED" then
+            SetCleanupBtnEnabled(false)
+
+        elseif ev == "PLAYER_REGEN_ENABLED" then
+            SetCleanupBtnEnabled(true)
+        end
+    end)
+end
+
+
+
 --[[ no longer necessary
 -- Classic / Cata
 if _G.ToggleQuestLog and _G.QuestLogFrame then
