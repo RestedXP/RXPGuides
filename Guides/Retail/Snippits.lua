@@ -874,6 +874,97 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Frost
 #internal
 
+step
+    .goto 627,73.09,46.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r
+    .accept 38990 >>Accept The Call of Icecrown
+    .target Chakheg
+step
+    .goto 627,73.60,46.85
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Death Gate|r
+    .complete 38990,1 --1/1 Use Death Gate
+step
+    .goto 698,59.7,17.3
+    .isInScenario 901
+    >>|cRXP_WARN_Step on the button|r
+    .scenario 1809,1 --Open the Gate to Icecrown
+step
+    .goto 698,59.74,0.36
+    .scenario 1973,1 --1/1 Enter Icecrown Citadel
+step
+    #completewith next
+    +|cRXP_WARN_To open the door, kill the |cRXP_ENEMY_Stoneskin Gatekeeper|r on top of at least one button (or use |T237532:0|t|r[Death Grip] |cRXP_WARN_to grip them onto one) and stand on top of the second one.
+step
+    .goto 700,52.16,66.08
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragments of Frostmourne|r
+    .scenario 1810,1,1 --1/4 Collect Fragments within Icecrown Citadel
+step
+    .goto 700,59.89,53.69
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragments of Frostmourne|r
+    .scenario 1810,1,2 --2/4 Collect Fragments within Icecrown Citadel
+step
+    .goto 700,51.27,41.31
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragments of Frostmourne|r
+    .scenario 1810,1,3 --3/4 Collect Fragments within Icecrown Citadel
+step
+    .goto 700,51.33,49.96
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragments of Frostmourne|r
+    .scenario 1810,1 --4/4 Collect Fragments within Icecrown Citadel
+step
+    .goto 700,51.82,53.41
+    .isInScenario 901
+    >>|cRXP_WARN_Walk onto the teleporter|r
+    .scenario 1811,1 --Use the Scourge Teleporter within the Spire
+step
+    #completewith next
+    #hidewindow
+    .cast 186253 >>1
+    .timer 24,Roleplay
+step
+    .goto 701,49.82,51.71
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hilt of Frostmourne|r
+    .scenario 1812,1 --Reforge the fragments and form your weapon
+step
+    .goto 701,49.82,51.71
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blades of the Fallen Prince|r
+    >>Kill the |cRXP_ENEMY_Echo of Arthas Menethil|r
+    *Kill the |cRXP_ENEMY_Source|r before they reach him.
+    .scenario 1814,1 --Purge the blades of the malevolent souls within
+    .timer 8,Teleport in
+    .mob Echo of Arthas Menethil
+    .mob Mindless Ghoul
+    .mob Icefallen Geist
+    .mob Enraged Zombie
+step
+    .isInScenario 901
+    .goto 701,49.85,51.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blades of the Fallen Prince|r
+    .complete 38990,2 --1/1 Obtain the Blades of the Fallen Prince
+step
+    .goto 701,49.8,51.7
+    .isInScenario 901
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blades of the Fallen Prince|r
+    .scenario 2224,1 --Take the Blades of the Fallen Prince.
+step
+    .goto 701,49.52,90.69
+    .isInScenario 901
+    >>|cRXP_WARN_Wait for the roleplay|r
+    .scenario 1827,1 --Obtain the Lich King's blessing
+step
+    .goto 701,47.64,90.58
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Archerus Waygate|r
+    .scenario 2923,1 --1/1 Acherus Waygate taken
+step
+    .goto 648,51.01,50.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    .turnin 38990 >>Turn in The Call of Icecrown
+    .target Highlord Darion Mograine
 ]])
 --Unholy
 RXPGuides.RegisterGuide([[
