@@ -605,6 +605,7 @@ step
     .goto 627,72.05,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .accept 90754 >>Accept Skyriding
+    .timer 5,RP
     .target Moratari
 step
     .goto 627,72.41,41.40
@@ -673,6 +674,7 @@ step
     .goto 371,66.75,33.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
     .turnin 80013 >>Turn in How to Glide with Your Dragon
+    .timer 3,RP
     .target Celormu
 step
     .goto 371,65.27,37.18
@@ -716,6 +718,7 @@ step
     .goto 371,66.25,49.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
     .turnin 80015 >>Turn in How to Dive with Your Dragon
+    .timer 3,RP
     .target Celormu
 step
     .goto 371,65.27,37.19
@@ -754,6 +757,7 @@ step
     .goto 371,64.98,24.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
     .turnin 80016 >>Turn in The Need For Higher Velocities
+    .timer 3,RP
     .target Celormu
 step
     .goto 371,65.27,37.18
@@ -792,6 +796,7 @@ step
     .goto 371,62.47,28.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
     .turnin 80017 >>Turn in The Need For Higher Altitudes
+    .timer 3,RP
     .target Celormu
 step
     .goto 371,65.27,37.18
@@ -799,10 +804,11 @@ step
     .accept 80018 >>Accept Fashionable Flying
     .target Lord Andestrasz
 step
-    .goto 371,65.07,36.97
+    #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rostrum of Transformation|r |cRXP_WARN_and leave it immediately|r
     .complete 80018,1 --1/1 Rostrum of Transformation used
 step
+    .goto 371,65.07,36.97,10,0
     .goto 371,65.28,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
     .turnin 80018 >>Turn in Fashionable Flying
@@ -820,6 +826,7 @@ step
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
 step
     #requires TimeFliesA
+    #label Skyriding
     .goto 627,72.04,41.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .turnin 90755 >>Turn in Time Flies
@@ -1701,16 +1708,16 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Windwalker
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Windwalker
-#internal
 
-step
-    #completewith Dalaran
-    #hidewindow
-    +test
-    .use 245925
-    .use 246937
-    .openitem 237812
-    .openitem 243373
+
+-- step
+--     #completewith Dalaran
+--     #hidewindow
+--     +test
+--     .use 245925
+--     .use 246937
+--     .openitem 237812
+--     .openitem 243373
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -1757,11 +1764,13 @@ step
     .accept 40633 >>Accept Off To Adventure!
     .timer 48,RP
     .target Iron-Body Ponshu
+--rp shenagans possible
 step
     .goto 709,50.49,58.61
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kite|r |cRXP_WARN_after the roleplay|r.
     .complete 40633,1 --1/1 Ride Li Li's kite to Ramkahen (Optional)
     .timer 15,RP
+
 step
     .goto 249,54.85,32.90
     #title |cFFFCDC00Follow the Arrow|r
@@ -1829,8 +1838,8 @@ step
     .isInScenario 983
     .goto 716,30.39,44.18
     >>Kill |cRXP_ENEMY_Howling Winds|r and |cRXP_ENEMY_Lesser Sandling|r.
-    .timer 10,RP
     .scenario 2006,1
+    .timer 14,RP
     .mob Lesser Sandling
     .mob Howling Winds
 step
@@ -1862,26 +1871,43 @@ step
     .goto 716,25.49,60.28
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,3
-    .timer 20
+    .timer 55
 step
     .isInScenario 983
     .goto 716,26.75,59.97
-    .countdown 40 >>Kill |cRXP_ENEMY_Scion of Typhinius|r 
+    .countdown 55 >>Kill |cRXP_ENEMY_Scion of Typhinius|r 
     .mob Scion of Typhinius
 step
     .isInScenario 983
     .goto 716,28.93,63.06
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2007,2
-    .timer 10,RP
+    .timer 8,RP
 step
     .isInScenario 983
     .goto 716,31.26,66.71
     >>Kill his |cRXP_ENEMY_Minios|r
-    .scenario 2008,1
+    .scenario 2008,1,1
+    .timer 8,RP
     .mob Storm Cloud
     .mob Howling Winds
     .mob Na'ser
+step
+    .isInScenario 983
+    .goto 716,31.26,66.71
+    >>Kill his |cRXP_ENEMY_Minios|r
+    .scenario 2008,1,2
+    .timer 15,RP
+    .mob Storm Cloud
+    .mob Howling Winds
+    .mob Melezan
+    .mob Zaurac
+step
+    .isInScenario 983
+    .goto 716,31.26,66.71
+    >>Kill his |cRXP_ENEMY_Minios|r
+    .scenario 2008,1,3
+    .timer 8,RP
     .mob Zaurac
 step
     .isInScenario 983
@@ -1901,48 +1927,54 @@ step
     .goto 716,35.76,82.93
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists|r
     .scenario 2011,1
+    .complete 40570,2 --1/1 Obtain the Fists of the Heavens
     .mob Typhinius
 step
+    -- .xp >11,1
+    #completewith next
+    #label Into The Heavens1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40570 >>Turn in Into The Heavens
+    .target Li Li Stormstout
+step
+    -- .xp >11,1
+    #completewith Into The Heavens1
     .goto 716,35.65,84.21
     .vehicle >>Click on the Kite
+    .timer 60,RP
 step
+    -- .xp >11,1
+    #requires Into The Heavens1
     .goto 709,49.11,58.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
     .turnin 40570 >>Turn in Into The Heavens
     .target Li Li Stormstout
--- step
---     .zone 709 >>Leave the Instance(Right-Click your player frame).
--- step
---     #completewith next
---     #hidewindow
---     #label Into The Heavens
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
---     .turnin 40570 >>Turn in Into The Heavens
---     .target Li Li Stormstout
--- step
---     #completewith Into The Heavens
---     .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
---     .usespell 126892
--- step
---     #requires Into The Heavens
---     #completewith next
---     #label Into The Heavens2
---     .goto 709,49.11,58.67
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
---     .turnin 40570 >>Turn in Into The Heavens
---     .target Li Li Stormstout
--- step
---     #requires Into The Heavens
---     #completewith Into The Heavens2
---     .goto 709,51.28,53.74,30,0
---     .goto 709,49.96,58.69,30,0
---     .goto 709,51.43,48.41,10 >>Enter the House
--- step
---     #requires Into The Heavens2
---     .goto 709,49.11,58.67
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
---     .turnin 40570 >>Turn in Into The Heavens
---     .target Li Li Stormstout
+step
+    .isOnQuest 40570
+    .zone 249 >>Leave the Instance(Right-Click your player frame).
+    .macro Leave Instance,236367 >> /script LeaveParty()
+step
+    -- .xp <11,1
+    #completewith next
+    #hidewindow
+    #label Into The Heavens
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40570 >>Turn in Into The Heavens
+    .target Li Li Stormstout
+step
+    -- .xp <11,1
+    #completewith Into The Heavens
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+    .usespell 126892
+step
+    -- .xp <11,1
+    #requires Into The Heavens
+    #completewith next
+    #label Into The Heavens2
+    .goto 709,49.11,58.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 40570 >>Turn in Into The Heavens
+    .target Li Li Stormstout
 
 ]])
 
@@ -2442,4 +2474,23 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Protection
 #internal
 
+]])
+
+
+
+-- Order Hall Infinite Bazaar Portal
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Artifact Weapon: Protection
+#displayname Artifact Weapon: Protection
+#internal
+
+step << Paladin
+    .goto 23,73.06,54.03
+    .zone 619 >>Click Portal
+step << Rogue
+    .goto 17,39.5,36.47
+    .zone 619 >>Click Portal
 ]])
