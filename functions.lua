@@ -5869,7 +5869,6 @@ if addon.gameVersion >= 110000 then
         if currentStep and currentStep == element.stage then
             element.stagePos = currentStage
         end
-
         -- print(required,quantity)
         if not (required and quantity) then
             if completed then
@@ -5886,9 +5885,12 @@ if addon.gameVersion >= 110000 then
                                         required)
         if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
 
+        if step.active then
+            --print(element.stagePos, currentStage, currentStep, element.stage)
+        end
         if not step.active then
             return
-        elseif completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
+        elseif completed or quantity >= required or (not element.stagePos or (currentStage and currentStage > element.stagePos)) then
             if not element.completed and element.timer then
                 addon.StartTimer(element.timer,element.timerText)
             end
