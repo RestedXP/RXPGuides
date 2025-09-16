@@ -519,14 +519,14 @@ end
 -- Quest Log Button: Cleanup Orphaned Quests (self-contained feature)
 -- ====================================================================
 
--- Localization for button/tooltip — don't shadow your global L() accessor
+-- Localization for button/tooltip
 local Loc = addon and addon.L or nil
 local CLEANUP_LABEL = (Loc and Loc.CLEANUP_ORPHANED_QUESTS) or "Cleanup Orphaned Quests"
 local CLEANUP_DESC  = (Loc and Loc.CLEANUP_ORPHANED_QUESTS_DESC)
     or "Abandons quests that aren't referenced by your current RestedXP guide."
 local RXP_POPUP_CLEANUP = "RXP_CONFIRM_ORPHANED_CLEANUP"
 
--- Find a parent Quest Log (compat with popular questlog addons)
+-- Find a parent Quest Log
 local function GetQuestLogParent()
     if _G.QuestLogFrame then return _G.QuestLogFrame end
     if _G.ClassicQuestLog then return _G.ClassicQuestLog end
@@ -536,7 +536,7 @@ local function GetQuestLogParent()
     return nil
 end
 
--- Show a single confirmation, then abandon all orphans (with per-quest confirm)
+-- Show a single confirmation, then abandon all orphans just like settings behaves
 local function RXP_RunCleanupOrphanedQuests()
     if not (addon.currentGuide and addon.currentGuide.key) then
         addon.comms.PrettyPrint("Cleanup: no active guide detected.")
@@ -705,7 +705,7 @@ local function CreateCleanupButton()
     createdCleanupBtn = true
     SetCleanupBtnEnabled(not (InCombatLockdown and InCombatLockdown()))
 
-    -- Re-anchor each time the log opens (some addons move buttons)
+    -- Re-anchor each time the log opens
     if parent.HookScript then
         parent:HookScript("OnShow", function()
             ReanchorCleanupButtonIfNeeded()
