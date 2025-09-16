@@ -6523,6 +6523,7 @@ function addon.functions.achievement(self, ...)
     end
 
     local element = self.element
+    local step = element.step
     local id, displayText, points, completed = GetAchievementInfo(element.id)
     local quantity, reqQuantity = completed and 1 or 0,1
 
@@ -6544,6 +6545,8 @@ function addon.functions.achievement(self, ...)
         element.tooltipText = element.text
     end
 
+    if not step.active then return end
+
     if (completed or quantity >= reqQuantity) == not element.reverse then
         if element.skipStep then
             element.step.completed = true
@@ -6559,6 +6562,24 @@ function addon.functions.achievement(self, ...)
             addon.SetElementComplete(self)
         end
     end
+end
+
+events.achievementskip = events.achievement
+function addon.functions.achievementskip(self, ...)
+    if not GetAchievementInfo then
+        return
+    elseif type(self) == "string" then -- on parse
+
+        local text, skiplabel, id, criteria, numReq = ...
+        local element = addon.functions.achievement(self,nil,id,criteria,numReq)
+        element.dynamicText = false
+        element.label = skiplabel
+        element.textOnly = true
+        element.skipStep = true
+        return element
+    end
+
+    return addon.functions.achievement(self,...)
 end
 
 function addon.functions.achievementComplete(self, ...)
