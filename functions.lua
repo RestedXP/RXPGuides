@@ -6240,7 +6240,6 @@ function addon.CanPlayerFly(zoneOrContinent)
     end
 end
 
-AA = addon.CanPlayerFly
 events.noflyable = "ZONE_CHANGED"
 function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
@@ -6276,6 +6275,41 @@ function addon.functions.flyable(self, text, zone, skill)
         element.step.completed = true
         addon.updateSteps = true
     end
+end
+
+
+events.skyriding = "ZONE_CHANGED"
+function addon.functions.skyriding(self, text, label)
+    if type(self) == "string" then
+        return {textOnly = true, label = label}
+    end
+
+    local element = self.element
+    local canPlayerFly = C_MountJournal.IsDragonridingUnlocked()
+    if element.reverse then
+        canPlayerFly = not canPlayerFly
+    end
+
+    if element.step.active and not addon.settings.profile.debug and (not canPlayerFly) and not addon.isHidden then
+        element.step.completed = true
+        addon.updateSteps = true
+        local guide = addon.currentGuide
+        local ref = element.label
+        if ref and guide.labels[ref] then
+            --local n = guide.labels[ref]
+            addon.nextStep = guide.labels[ref]
+            return
+        end
+    end
+end
+
+events.noskyriding = "ZONE_CHANGED"
+function addon.functions.noskyriding(self, text, label)
+    if type(self) == "string" then
+        return {textOnly = true, reverse = true, label = label}
+    end
+
+    return addon.functions.skyriding(self,text)
 end
 
 function addon.functions.collectmount(self, ...)
