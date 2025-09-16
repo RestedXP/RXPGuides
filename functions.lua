@@ -7229,6 +7229,10 @@ function addon.functions.beta(self, text)
     end
 end
 
+function addon.functions.landfall(self,text,poi,arg1)
+    return addon.functions.dailyhub(self,text,"landfall",poi,arg1)
+end
+
 function addon.functions.klaxxi(self,text,poi,arg1)
     return addon.functions.dailyhub(self,text,"klaxxi",poi,arg1)
 end

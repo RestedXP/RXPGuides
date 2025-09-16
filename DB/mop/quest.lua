@@ -504,6 +504,17 @@ local klaxxiQuests ={
 addon.dailyDB.klaxxiQuests = klaxxiQuests
 local celestialQuests
 
+local landfallQuests = {
+    [32235] = "DominancePoint",
+    [32451] = "DominancePoint",
+    [32449] = "Ogudei",
+    [32116] = "Ogudei",
+    [32450] = "LionsLanding",
+    [32452] = "Bilgewater",
+}
+
+addon.dailyDB.landfallQuests = landfallQuests
+
 local function CheckQuestHub(faction)
     local reset = true
     local hubs
@@ -514,6 +525,9 @@ local function CheckQuestHub(faction)
     elseif faction == "celestial" then
         hubs = {jade = 0, cradle = 0, blackox = 0, whitetiger = 0}
         t = celestialQuests
+    elseif faction == "landfall" then
+        hubs = {DominancePoint = 0, Ogudei = 0, LionsLanding = 0, Bilgewater = 0}
+        t = landfallQuests
     end
 
     for id,hub in pairs(t) do
@@ -615,6 +629,7 @@ function addon.CheckAvailableQuest(id)
     local klaxxiHub = klaxxiQuests[id]
     local valeQ = valeQuests[id]
     local celestial = celestialQuests[id]
+    local landfall = landfallQuests[id]
 
     if klaxxiHub then
         addon.realmData.klaxxi = klaxxiHub
@@ -626,6 +641,8 @@ function addon.CheckAvailableQuest(id)
         end
     elseif celestial then
         addon.realmData.celestial = celestial
+    elseif landfall then
+        addon.realmData.landfall = landfall
     else
         return
     end
@@ -635,6 +652,7 @@ function addon.CheckAvailableQuest(id)
         addon.realmData.voeb = {}
         addon.realmData.klaxxi = nil
         addon.realmData.celestial = nil
+        addon.realmData.landfall = nil
         addon.realmData.dailyReset = t + C_DateAndTime.GetSecondsUntilDailyReset()
     end
 end
