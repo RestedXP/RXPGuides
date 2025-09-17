@@ -1150,6 +1150,7 @@ function addon.UpdateGotoSteps()
                         --print(element.arrow,element.skip,element.wpHash)
                         local wp = RXPCData.completedWaypoints[step.index or "tip"]
                         if element.skip or wp and wp[element.wpHash] then
+                            RXP.UpdateMap()
                             element.skip = false
                             if wp then
                                 wp[element.wpHash] = false
