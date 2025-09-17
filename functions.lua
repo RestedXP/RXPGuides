@@ -7581,6 +7581,7 @@ function addon.functions.spec(self,text,spec,flags)
     if not text then
         local currentSpec = C_SpecializationInfo.GetSpecialization()
         local element = self.element
+        local step = element.step
         local c = not element.flags
         if not(tonumber(element.spec) == currentSpec) == c then
             step.completed = true
