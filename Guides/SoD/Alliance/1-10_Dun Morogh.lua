@@ -300,7 +300,7 @@ step << Hunter
 step << Paladin
     #completewith next
     +Kill more |cRXP_ENEMY_Wolves|r or |cRXP_ENEMY_Troggs|r untill you have 88 copper worth of vendor trash. |cRXP_WARN_You will need it to buy weapons soon|r
-    .money 0.0088
+    .money >0.0088
     .goto 1426,29.529,73.286,0
     .goto 1426,28.117,75.088,0
     .goto 1426,28.557,72.487,0
@@ -636,7 +636,7 @@ step << Paladin
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
     >>|cRXP_WARN_If you havent found any|r |T132624:0|t[Chest]|cRXP_WARN_ or|r |T132602:0|t[Bracers] |cRXP_WARN_yet, buy them from the vendor inside Anvilmar instead of spending money on training spells. Runes are stronger than spells you can buy|r
-    .train >> Train your class spells
+    .trainer >> Train your class spells
     .target Bromos Grummner
 step << Warlock
     #season 2

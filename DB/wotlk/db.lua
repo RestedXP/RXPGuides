@@ -13,6 +13,7 @@ addon.skipPreReq = {
 
 local _,class = UnitClass("player")
 
+--[[
 addon.defaultGuideList = {
     ["Elwynn Forest"] = "RestedXP Alliance 1-20\\01-11 Elwynn Forest",
     ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
@@ -23,6 +24,12 @@ addon.defaultGuideList = {
     ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-06 Tirisfal Glades",
     ["Eversong Woods"] = "RestedXP Horde 1-30\\01-06 Eversong Woods",
 }
+if class == "WARLOCK" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-12 Dun Morogh"
+elseif class == "HUNTER" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
+end
+]]
 
 if faction == "Horde" then
     addon.defaultGroup = "RestedXP Horde 1-30"
@@ -30,11 +37,6 @@ elseif faction == "Alliance" then
     addon.defaultGroup = "RestedXP Alliance 1-20"
 end
 
-if class == "WARLOCK" then
-    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-12 Dun Morogh"
-elseif class == "HUNTER" then
-    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
-end
 
 addon.mapId = {
     ["Dire Maul"] = 234,

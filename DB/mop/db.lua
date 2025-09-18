@@ -25,6 +25,7 @@ addon.heirlooms = {
 
 local _,class = UnitClass("player")
 
+--[[
 addon.defaultGuideList = {
     ["Elwynn Forest"] = "RestedXP Alliance 1-20\\01-11 Elwynn Forest",
     ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
@@ -35,6 +36,7 @@ addon.defaultGuideList = {
     ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-06 Tirisfal Glades",
     ["Eversong Woods"] = "RestedXP Horde 1-30\\01-06 Eversong Woods",
 }
+]]
 
 if faction == "Horde" then
     addon.defaultGroup = "RXP Cataclysm 1-80 (H)"

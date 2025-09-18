@@ -851,15 +851,17 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #optional
     #completewith Claws
-    +Equip the |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Rogue
+    #optional
     #completewith Claws
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -879,8 +881,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #optional
     #completewith Claws
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -891,6 +894,8 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
+    .bindlocation 159
+    .subzoneskip 159,1
 step
     #xprate >1.49
     .goto Tirisfal Glades,61.89,52.73
@@ -970,7 +975,8 @@ step << Warlock
 step << Priest/Warlock
     .goto Tirisfal Glades,61.76,51.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vance|r
-    .train 7411 >> Train |T136244:0|t[Enchanting]. This together with |T136249:0|t[Tailoring] will allow you to create a wand later
+    .train 7411 >> Train |T136244:0|t[Enchanting]
+    >>|cRXP_WARN_This together with|r |T136249:0|t[Tailoring] |cRXP_WARN_will allow you to create a wand later|r
     .target Vance Undergloom
 step
     .goto Tirisfal Glades,61.71,52.06
@@ -1209,6 +1215,7 @@ step
     #completewith BrillTurnin1
     .hs >> Hearth to Brill
     .subzoneskip 159
+    .bindlocation 1497,1
     .cooldown item,6948,>0,1
 step
     #hardcore
@@ -1351,8 +1358,9 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #optional
     #completewith NewPlague1
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -1372,8 +1380,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #optional
     #completewith NewPlague1
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -1590,8 +1599,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #xprate <1.5
+    #optional
     #completewith Doomweed
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -1614,8 +1624,9 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
     #xprate <1.5
+    #optional
     #completewith Doomweed
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -1874,7 +1885,7 @@ step
     #completewith Brill3
     .goto Tirisfal Glades,64.50,29.41
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    >>|cRXP_WARN_Make sure you die on (or to the West of) the goto arrow|r
+    >>|cRXP_WARN_Make sure you die on (or to the west of) the arrow|r
 step << skip
     #label DoomedWeed
     #loop
@@ -2005,8 +2016,9 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #optional
     #completewith MillsOverun
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -2026,8 +2038,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #optional
     #completewith MillsOverun
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -2486,6 +2499,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
     .home >> Set your Hearthstone to Undercity
     .target Innkeeper Norman
+    .bindlocation 1497
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
@@ -2603,12 +2617,10 @@ step
     #ah
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
-    >>|cRXP_BUY_Buy 6|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
     >>|cRXP_BUY_Buy a|r |T135139:0|t[Lesser Magic Wand] |cRXP_BUY_from the Auction House|r << Priest
     >>|cRXP_BUY_Buy a|r |T135139:0|t[Lesser Magic Wand] |cRXP_BUY_from the Auction House if you wish|r << Mage/Warlock
     >>|cRXP_WARN_If you do this and were gathering|r |T132889:0|t[Linen Cloth] |cRXP_WARN_earlier, you can sell your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_on the Auction House|r << Priest
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    .collect 3164,6,429,1 --Discolored Worg Heart (6)
     .collect 11287,1,435,1 << Priest/Mage/Warlock --Lesser Magic Wand (1)
     .target Auctioneer Rhyker
     .itemStat 18,QUALITY,<7 << Priest/Mage/Warlock
@@ -2620,9 +2632,9 @@ step << !Priest
     #optional
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
-    >>|cRXP_BUY_Buy 6|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    .collect 3164,6,429,1 --Discolored Worg Heart (6)
+    >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
 step << !Warlock
     #xprate <1.5
@@ -2631,6 +2643,7 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
     .home >> Set your Hearthstone to Undercity
     .target Innkeeper Norman
+    .bindlocation 1497
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
@@ -2675,7 +2688,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith LogoutSkip1
-    +Equip the |T135350:0|t[Claymore]
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
     .use 1198
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
@@ -2704,7 +2717,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith LogoutSkip1
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -3149,6 +3162,7 @@ step
     #completewith ANewPlagueFinal
     .hs >> Hearth to Brill
     .subzoneskip 159
+    .bindlocation 159,1
     .cooldown item,6948,>0,1
 step
     #xprate >1.49
@@ -3172,7 +3186,7 @@ step
     #softcore
     #completewith ANewPlagueFinal
     .goto Tirisfal Glades,66.60,44.95
-    .deathskip >> Die ON THE SMALLER ISLAND and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die |cRXP_WARN_ON THE SMALLER ISLAND|r and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     .goto Tirisfal Glades,59.45,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
@@ -3316,6 +3330,8 @@ step
     #completewith UndercityLS2
     .hs >> Hearth to Undercity
     .cooldown item,6948,>0,1
+    .bindlocation 1497,1
+    .zoneskip Undercity
 step
     #xprate <1.5
     #completewith UndercityLS2
@@ -3326,7 +3342,9 @@ step
     #ah
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
-    .collect 3164,6,429,1 >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
+    .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
 step << Mage
     #xprate <1.5
@@ -3368,8 +3386,9 @@ step << Rogue
     .target Charles Seaton
 step << Rogue
     #xprate <1.5
+    #optional
     #completewith CaptainMelrache
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -3399,8 +3418,9 @@ step << Warrior
     .target Charles Seaton
 step << Warrior
     #xprate <1.5
+    #optional
     #completewith CaptainMelrache
-    +Equip the |T135350:0|t[Claymore]
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
     .use 1198
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
@@ -3777,7 +3797,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Entersilverpine
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -3810,7 +3830,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Entersilverpine
-    +Equip the |T135350:0|t[Claymore]
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
     .use 1198
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
@@ -3973,7 +3993,7 @@ step << Priest
 step << Priest
     #optional
     #completewith Entersilverpine
-    +Equip the |T135139:0|t[Lesser Magic Wand]
+    +|cRXP_WARN_Equip the|r |T135139:0|t[Lesser Magic Wand]
     .use 11287
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
@@ -4156,6 +4176,7 @@ step
     .goto Silverpine Forest,49.77,33.05,50,0
     .goto Silverpine Forest,49.64,37.84,100,0
     .goto Silverpine Forest,45.51,41.26,100 >> Travel to The Sepulcher
+    .subzoneskip 228
 step
     #label ProveyourWorth
     .goto Silverpine Forest,44.20,39.73
@@ -4325,6 +4346,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Killian|r
     .vendor >> Vendor trash
     .target Killian Sanatha
+    .isOnQuest 447
 step
     #loop
 	.goto Silverpine Forest,36.33,14.20,0
@@ -4420,15 +4442,17 @@ step << Rogue
     .target Alexandre Lefevre
     .money <0.2633
 step << Warlock/Mage/Priest
+    #optional
     #completewith Shackles
-    +Equip the |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r]
+    +|cRXP_WARN_Equip the|r |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r]
     .use 4786
     .itemcount 4786,1
     .xp <15,1
     .equip 6,4786
 step << Rogue
+    #optional
     #completewith Shackles
-    +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
+    +|cRXP_WARN_Equip the|r |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
@@ -4512,6 +4536,7 @@ step
     #completewith next
     #hardcore
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
+    .subzoneskip 228
 step
     #softcore
     #completewith next
@@ -4565,6 +4590,7 @@ step
     .fp Sepulcher >> Get the Sepulcher flight path << !Undead
     .fly Undercity >> Fly to the Undercity << !Undead
     .target Karos Razok
+    .zoneskip Undercity
 step << Undead
     #xprate >1.49
     .goto Silverpine Forest,45.62,42.58
@@ -4573,11 +4599,13 @@ step << Undead
     .accept 6323 >>Accept Ride to the Undercity
     .fly Undercity >> Fly to the Undercity
     .target Karos Razok
+    .zoneskip Undercity
 step << Undead
     #xprate <1.5
     .hs >> Hearth to the Undercity
     .use 6948
     .zoneskip Undercity
+    .bindlocation 1497,1
 
 
 
@@ -4619,7 +4647,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Conscript
-    +Equip the |T135343:0|t[Scimitar]
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
@@ -4940,7 +4968,7 @@ step << Priest/Mage/Warlock
 step << Priest/Mage/Warlock
     #optional
     #completewith Conscript
-    +Equip the |T135468:0|t[Smoldering Wand] |cRXP_WARN_when you are level 15|r
+    +|cRXP_WARN_Equip the|r |T135468:0|t[Smoldering Wand] |cRXP_WARN_when you are level 15|r
     .use 5208
     .itemcount 5208,1
     .itemStat 18,QUALITY,<7
@@ -4949,7 +4977,7 @@ step << Priest/Mage/Warlock
 step << Priest/Mage/Warlock
     #optional
     #completewith Conscript
-    +Equip the |T135468:0|t[Smoldering Wand]
+    +|cRXP_WARN_Equip the|r |T135468:0|t[Smoldering Wand]
     .use 5208
     .itemcount 5208,1
     .itemStat 18,QUALITY,<7
@@ -5039,6 +5067,7 @@ step << Undead
     #completewith ZeptoDurotar
     .hs >> Hearth to Brill
     .zoneskip Undercity,1
+    .bindlocation 159,1
 step << Undead Rogue
     #xprate >1.49
     .goto Tirisfal Glades,61.75,52.01
@@ -5314,7 +5343,8 @@ step << Undead
 step << !Undead
     .hs >> Hearth to Razor Hill
     .use 6948
-    .zoneskip Durotar
+    .subzoneskip 362
+    .bindlocation 362,1
 step << Rogue
     #optional << Undead
     .goto Durotar,51.98,43.69
@@ -6550,15 +6580,17 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #optional
     #completewith Claws
-    +Equip the |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Rogue
+    #optional
     #completewith Claws
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -6578,8 +6610,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #optional
     #completewith Claws
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -6590,6 +6623,8 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
+    .bindlocation 159
+    .subzoneskip 159,1
 step
     #xprate >1.49
     .goto Tirisfal Glades,61.89,52.73
@@ -6910,6 +6945,7 @@ step
     .hs >> Hearth to Brill
     .subzoneskip 159
     .cooldown item,6948,>0,1
+    .bindlocation 159,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -7062,8 +7098,9 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #optional
     #completewith NewPlague1
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -7083,8 +7120,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #optional
     #completewith NewPlague1
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -7306,8 +7344,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #xprate <1.5
+    #optional
     #completewith Doomweed
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -7330,8 +7369,9 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
     #xprate <1.5
+    #optional
     #completewith Doomweed
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -7623,7 +7663,7 @@ step
     #completewith DoomedWeed
     .goto Tirisfal Glades,64.50,29.41
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    >>|cRXP_WARN_Make sure you die on (or to the West of) the goto arrow|r
+    >>|cRXP_WARN_Make sure you die on (or to the west of) the goto arrow|r
 step << skip
     #label DoomedWeed
     #loop
@@ -7817,8 +7857,9 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #optional
     #completewith MillsOverun
-    +Equip the |T135641:0|t[Stiletto]
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,QUALITY,<7
@@ -7838,8 +7879,9 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #optional
     #completewith MillsOverun
-    +Equip the |T135321:0|t[Gladius]
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
@@ -8179,6 +8221,7 @@ step << skip
     .hs >> Hearth to Brill
     .subzoneskip 159
     .cooldown item,6948,>0,1
+    .bindlocation 159,1
 step << skip
     #xprate <1.5
     #hardcore
@@ -8559,6 +8602,7 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
     .home >> Set your Hearthstone to Undercity
     .target Innkeeper Norman
+    .bindlocation 1497
 step
     #optional
     #label UCHome
@@ -8606,7 +8650,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith LogoutSkip1
-    +Equip the |T135350:0|t[Claymore]
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
     .use 1198
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
@@ -8658,7 +8702,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith LogoutSkip1
-    +Equip the |T135346:0|t[Cutlass]
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
@@ -8667,7 +8711,7 @@ step << Rogue
     #season 2
     #optional
     #completewith LogoutSkip1
-    +Equip the |T135640:0|t[Jambiya]
+    +|cRXP_WARN_Equip the|r |T135640:0|t[Jambiya]
     .use 2207
     .itemcount 2207,1
     .itemStat 16,QUALITY,<7
@@ -8781,6 +8825,7 @@ step
     #completewith AgamandStart
     #xprate >2.09
     .hs >>Hearth to Brill
+    .bindlocation 159,1
 step
     #optional
     .goto Tirisfal Glades,60.93,52.01
@@ -9323,6 +9368,7 @@ step
     #completewith ANewPlagueFinal
     .hs >> Hearth to Brill
     .subzoneskip 159
+    .bindlocation 159,1
     .cooldown item,6948,>0,1
 step
     #xprate <2.1
@@ -9346,7 +9392,7 @@ step
     #softcore
     #completewith ANewPlagueFinal
     .goto Tirisfal Glades,66.60,44.95
-    .deathskip >> Die ON THE SMALLER ISLAND and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die |cRXP_WARN_ON THE SMALLER ISLAND|r and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #xprate <2.1
     .goto Tirisfal Glades,59.45,52.39
@@ -9752,7 +9798,8 @@ step << Undead
 step << !Undead
     .hs >> Hearth to Razor Hill
     .use 6948
-    .zoneskip Durotar
+    .subzoneskip 362
+    .bindlocation 362,1
 step << Rogue
     #optional << Undead
     .goto Durotar,51.98,43.69
