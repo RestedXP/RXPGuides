@@ -969,12 +969,24 @@ local function addMiniMapPins(pins)
     end
 end
 
-local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
--- Updates the arrow
+local corpseWP = { title = "Corpse", generated = 1, wpHash = 0 }
+
+local function IsDeathSkip()
+    if not addon.SpiritHealerWorld then return false end
+    for _, step in pairs(addon.RXPFrame.activeSteps) do
+        for _, element in pairs(step.elements) do
+            if element.tag == "deathskip" then
+                return true
+            end
+        end
+    end
+end
 
 local function updateArrowData()
     local lowPrioWPs
     local loop = {}
+    local isDeathSkip = IsDeathSkip()
+    local HBD = LibStub("HereBeDragons-2.0")
 
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.hidden then
@@ -984,54 +996,87 @@ local function updateArrowData()
             return
         end
         local step = element.step or {}
-        if step.loop then
-            loop[step] = true
-        end
-        local generated = element.generated or 0
-        if (bit.band(generated,0x1) == 0x1) or (element.arrow and element.step.active and
-            not (element.parent and
-                (element.parent.completed or element.parent.skip)) and
-            not (element.text and (element.completed or isComplete) and
-                not isComplete)) then
-            af:SetShown(not addon.settings.profile.disableArrow and not addon.hideArrow and addon.settings.profile.showEnabled)
-            af.dist = 0
-            af.orientation = 0
-            af.element = element
+        if step.loop then loop[step] = true end
 
-            -- forceUpdate set if 1/X steps are completed, e.g. 6/7 + 7/7 Plainstriders
+        local generated = element.generated or 0
+        if (bit.band(generated, 0x1) == 0x1)
+            or (element.arrow
+                and element.step
+                and element.step.active
+                and not (element.parent and (element.parent.completed or element.parent.skip))
+                and not (element.text and (element.completed or isComplete) and not isComplete))
+        then
+            af:SetShown(
+                not addon.settings.profile.disableArrow
+                and not addon.hideArrow
+                and addon.settings.profile.showEnabled
+            )
+            af.dist, af.orientation, af.element = 0, 0, element
             af.forceUpdate = true
             return true
         end
     end
 
-    if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
-        not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
+    -- 1) Ghost logic: corpse or Spirit Healer (deathskip)
+    if UnitIsGhost("player") and not (addon.QuestAutoAccept(3912) or addon.QuestAutoAccept(3913)) then
+        local aw = addon.activeWaypoints or {}
+        local guideName = addon.currentGuide and addon.currentGuide.name
         local skip
-        for i,element in pairs(addon.activeWaypoints) do
-            skip = skip or (element.step and element.step.ignorecorpse) or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
+        for _, e in pairs(aw) do
+            skip = skip
+                or (e.step and e.step.ignorecorpse)
+                or (not e.textOnly and guideName == "41-43 Badlands")
         end
-        local zone = HBD:GetPlayerZone()
-        local corpse
-        if type(zone) == "number" then
-            corpse = C_DeathInfo.GetCorpseMapPosition(zone)
-        end
-        if not skip and corpse and corpse.x then
-            corpseWP.wx, corpseWP.wy, corpseWP.instance =
-                             HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)
-            ProcessWaypoint(corpseWP)
-            return
+
+        if not skip and HBD then
+            if isDeathSkip then
+                local px, py, inst = HBD:GetPlayerWorldPosition("player")
+                local DB = addon.SpiritHealerWorld or SpiritHealerWorld
+                local list = (px and inst and DB) and DB[inst] or nil
+                if list and #list > 0 then
+                    local bestWX, bestWY, bestD2
+                    for i = 1, #list do
+                        local n = list[i]
+                        local dx, dy = px - n.wy, py - n.wx
+                        local d2 = dx*dx + dy*dy
+                        if not bestD2 or d2 < bestD2 then
+                            bestD2, bestWX, bestWY = d2, n.wy, n.wx
+                        end
+                    end
+                    if bestWX then
+                        corpseWP.x, corpseWP.y, corpseWP.zone, corpseWP.mapID = nil, nil, nil, nil
+                        corpseWP.wx, corpseWP.wy, corpseWP.instance = bestWX, bestWY, inst
+                        corpseWP.title = "Spirit Healer"
+                        if ProcessWaypoint(corpseWP) then return end
+                    end
+                end
+            end
+
+            -- normal corpse arrow if not deathskip
+            if not isDeathSkip then
+                local zone = HBD:GetPlayerZone()
+                local corpse = (type(zone) == "number") and C_DeathInfo.GetCorpseMapPosition(zone)
+                if corpse and corpse.x then
+                    local wx, wy, inst = HBD:GetWorldCoordinatesFromZone(corpse.x, corpse.y, zone)
+                    if wx and inst then
+                        corpseWP.x, corpseWP.y, corpseWP.zone, corpseWP.mapID = nil, nil, nil, nil
+                        corpseWP.wx, corpseWP.wy, corpseWP.instance = wx, wy, inst
+                        corpseWP.title = "Corpse"
+                        if ProcessWaypoint(corpseWP) then return end
+                    end
+                end
+            end
         end
     end
 
     local function SetArrowWP()
         lowPrioWPs = {}
-        for i, element in ipairs(addon.activeWaypoints) do
+        for _, element in ipairs(addon.activeWaypoints) do
             if ProcessWaypoint(element) then
                 return true
             end
         end
-
-        for i, element in ipairs(lowPrioWPs) do
+        for _, element in ipairs(lowPrioWPs) do
             if ProcessWaypoint(element, true) then
                 return true
             end
@@ -1043,7 +1088,7 @@ local function updateArrowData()
     end
 
     for step in pairs(loop) do
-        for _,element in ipairs(step.elements) do
+        for _, element in ipairs(step.elements) do
             if element.arrow and element.wpHash ~= element.wpHash and element.textOnly then
                 element.skip = false
                 RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
@@ -1054,11 +1099,13 @@ local function updateArrowData()
     if SetArrowWP() then
         return
     end
+
     if af:IsShown() then
         addon:ScheduleTask(addon.UpdateGotoSteps)
     end
     af:Hide()
 end
+
 
 function addon.ResetArrowPosition()
     addon.settings.profile.disableArrow = false
