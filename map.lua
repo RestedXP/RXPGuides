@@ -1,21 +1,5 @@
 local addonName, addon = ...
 
-print("|cff33ff99[RXP]|r Map.lua loaded on this client")
-
-local _rxpProbe = CreateFrame("Frame")
-_rxpProbe:RegisterEvent("ADDON_LOADED")
-_rxpProbe:RegisterEvent("PLAYER_DEAD")
-_rxpProbe:RegisterEvent("PLAYER_UNGHOST")
-_rxpProbe:SetScript("OnEvent", function(_, ev, arg1)
-  if ev=="ADDON_LOADED" and arg1=="RXPGuides" then
-    print("|cff33ff99[RXP]|r ADDON_LOADED: RXPGuides")
-  else
-    print("|cff33ff99[RXP]|r EVENT:", ev)
-  end
-end)
-
-
-
 local _G = _G
 
 local HBD = LibStub("HereBeDragons-2.0")
