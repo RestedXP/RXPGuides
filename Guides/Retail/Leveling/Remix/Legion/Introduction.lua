@@ -120,18 +120,18 @@ step
     .use 246937
     .openitem 237812
     .openitem 243373
-step
-    .goto 627,72.46,45.90
-    .achievementComplete 42313,1
-    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
-    .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
-    .target Moratari
-step
-    #optional
-    #completewith IntroSkipEnd
-    #hidewindow
-    .achievement 42313,1
-    .skipto guide,RestedXP Legion Remix\ab) Skyriding
+-- step
+--     .goto 627,72.46,45.90
+--     .achievementComplete 42313,1
+--     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
+--     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
+--     .target Moratari
+-- step
+--     #optional
+--     #completewith IntroSkipEnd
+--     #hidewindow
+--     .achievement 42313,1
+--     .skipto guide,RestedXP Legion Remix\ab) Skyriding
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -841,7 +841,7 @@ step
 
 ]])
 
----Monk
+---Monk Order Hall 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -849,18 +849,18 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ab) Order Hall Monk Part 1
 #displayname |cFF00CCFF3|r - Order Hall Intro|r
-#next ac) Infinite Bazaar
+#next ac) Order Hall Monk Part 2
 
 << Monk
 
-step
-    #completewith Dalaran
-    #hidewindow
-    +test
-    .use 245925
-    .use 246937
-    .openitem 237812
-    .openitem 243373
+-- step
+--     #completewith Dalaran
+--     #hidewindow
+--     +test
+--     .use 245925
+--     .use 246937
+--     .openitem 237812
+--     .openitem 243373
 step
     .zoneskip 627,1
     .zone 627 >>Enter Dalaran
@@ -898,7 +898,7 @@ step
     .goto 424,44.64,27.73,30,0
     .goto 424,44.37,27.58,30,0
     .goto 424,43.65,27.49,30,0
-    >>Kill |cRXP_ENEMY_Vizznak|r 
+    >>Kill |cRXP_ENEMY_Vizznak|r
     .scenario 1896,1
     .mob Vizznak
 step
@@ -1031,19 +1031,57 @@ step
     .turnin 40236 >>Turn in The Dawning Light
     .target Iron-Body Ponshu
 step
+    .isQuestAvailable 40636
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
--- step
---     .spec 1
---     #include a) Artifact Brewmaster
--- step
---     .spec 2
---     #include a) Artifact Windwalker
--- step
---     .spec 3
---     #include a) Artifact Mistweaver
+step
+    .spec 3
+    .goto 627,72.46,45.90
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r W
+    .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .choose 1390111
+    .skipgossipid
+    .target Iron-Body Ponshu
+step
+    .spec 3
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Windwalker
+step
+    .spec 2
+    .goto 627,72.46,45.90
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r M
+    .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .choose 1390110
+    .target Iron-Body Ponshu
+step
+    .spec 2
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
+step
+    .spec 1
+    .goto 627,72.46,45.90
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r B
+    .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .choose 1390109
+    .target Iron-Body Ponshu
+step
+    .spec 1
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
+
+]])
+
+---Monk Order Hall 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#name ac) Order Hall Monk Part 2
+#displayname |cFF00CCFF4|r - Order Hall Intro|r
+#next ad) Infinite Bazaar
+
+<< Monk
+
 step
     #completewith next
     #label Matter of Planning
@@ -1106,7 +1144,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r
     .accept 42186 >>Accept Growing Power
     .target Initiate Da-Nel
-
 ]])
 
 ---Death Knight
@@ -1964,20 +2001,378 @@ step
     +test
 ]])
 
----Mage
+---Mage Order Hall 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Mage Part 1
-#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#displayname |cFF00CCFF3|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
+#name ac) Order Hall Mage Part 2
 
 << Mage
 
 step
-    +test
+    .goto 627,56.99,46.76
+    >>Enter Legion Dalaran
+    .accept 41035 >>Accept Felstorm's Plea
+step
+    #completewith next
+    #label Felstorm's Plea
+    .goto 627,56.99,46.76,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41035 >>Turn in Felstorm's Plea
+    .target Meryl Felstorm
+    .accept 41036 >>Accept The Dreadlord's Prize
+    .disablecheckbox
+step
+    #title |cFFFCDC00Enter House|r
+    #completewith Felstorm's Plea
+    .goto 627,53.71,47.36,25 >>Enter the House
+step
+    #requires Felstorm's Plea
+    .goto 627,53.71,47.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41035 >>Turn in Felstorm's Plea
+    .target Meryl Felstorm
+    .accept 41036 >>Accept The Dreadlord's Prize
+step
+    .isOnQuest 41036
+    .goto 627,57.2,47,10,0
+    .goto 627,67.31,69.6
+    .zone 723 >>Enter the Violet Hold
+step
+    .goto 723,50.88,63.63
+    .isInScenario 1034
+    >>Kill |cRXP_ENEMY_Kathra'natir|r and wait for the roleplay.
+    .scenario 2175,1 --Battle with Kathra'nathir
+    .mob Kathra'natir
+step
+    .isInScenario 1034
+    .goto 723,38.79,52.92
+    >>Use |T135739:0|t[Shimmer] or |T135736:0|t[Blink] through the Barrier.
+    .scenario 2176,1 --Void Barrier passed
+    .usespell 212653
+    .usespell 1953
+step
+    .isInScenario 1034
+    #loop
+    .goto 723,38.79,52.92,30,0
+    .goto 723,43.09,30.88,40,0
+    .goto 723,52.48,32.31,40,0
+    .goto 723,63.66,47.87,40,0
+    >>Kill |cRXP_ENEMY_Siphoning Rift|r
+    .scenario 2176,2 --Siphoning Rift slain
+    .mob Siphoning Rift
+step
+    .goto 723,51.1,48.2
+    .isInScenario 1034
+    >>Click on the |cRXP_PICK_Forge|r
+    .scenario 2177,1 --Activate the Forge of the Guardian
+    .timer 10,RP
+step
+    .isInScenario 1034
+    .goto 723,50.8,63.79
+    >>Kill |cRXP_ENEMY_Kathra'natir|r
+    .complete 41036,1 --1/1 Kathra'natir slain
+    .timer 53,RP
+step
+    .isInScenario 1034
+    .goto 723,50.96,48.12
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .scenario 2178,1 --Kathra'natir defeated
+    .mob Kathra'natir
+step
+    .goto 723,50.96,48.12
+    .isInScenario 1034
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .scenario 2181,1 --Listen to Meryl
+step
+    .isInScenario 1034
+    .goto 723,50.96,48.12
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge|r
+    .complete 41036,2 --1/1 Recover the Forge of the Guardian
+    .timer 40,RP
+step
+    .isInScenario 1034
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 41036,3 --1/1 Listen to Meryl
+step
+    .goto 735,59.15,43.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41036 >>Turn in The Dreadlord's Prize
+    .target Meryl Felstorm
+step
+    .isQuestAvailable 41085
+    .goto 735,59.15,43.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .target Meryl Felstorm
+    .accept 41085 >>Accept A Mage's Weapon
+step
+    .spec 3
+    .goto 735,61.25,26.07
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
+    >>Click on the |cRXP_PICK_Book|r
+    .complete 41085,1 --1/1 Artifact chosen
+    .choose 1389391
+    .target Meryl Felstorm
+step
+    .spec 3
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Frost Mage
+step
+    .spec 2
+    .goto 735,61.25,26.07
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r 
+    >>Click on the |cRXP_PICK_Book|r
+    .complete 41085,1 --1/1 Artifact chosen
+    .target Meryl Felstorm
+    .choose 1389390
+step
+    .spec 2
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Fire
+step
+    .spec 1
+    .goto 735,61.25,26.07
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
+    >>Click on the |cRXP_PICK_Book|r
+    .complete 41085,1 --1/1 Artifact chosen
+    .target Meryl Felstorm
+    .choose 1389389
+step
+    .spec 1
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Arcane
+
+
+
+
+
+
+
+
+
+]])
+
+---Mage Order Hall 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ac) Order Hall Mage Part 2
+#displayname |cFF00CCFF4|r - Order Hall Intro 2|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
+
+<< Mage
+
+
+step
+    >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .accept 41114 >>Accept The Champion's Return
+    .usespell 193759
+step
+    >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .complete 41114,1 --1/1 Teleport to the Hall of the Guardian
+    .usespell 193759
+step
+    #completewith next
+    #label Champion's Return
+    .goto 734,57.58,85.44,15,0
+    .goto 734,53.53,68.82,15,0
+    .goto 735,57.41,70.85,15,0
+    .goto 735,57.91,51.72,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41114 >>Turn in The Champion's Return
+    .target Meryl Felstorm
+    .accept 41112 >>Accept The Great Akazamzarak
+    .disablecheckbox
+step
+    #completewith Champion's Return
+    #hidewindow
+    .goto 735,56.58,33.79,40 >>1
+step
+    #requires Champion's Return
+    .goto 735,56.58,33.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41114 >>Turn in The Champion's Return
+    .target Meryl Felstorm
+    .accept 41112 >>Accept The Great Akazamzarak
+step
+    .isOnQuest 41112
+    .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+    .usespell 224869
+step
+    #requires Great Akazamzarak
+    .goto 627,48.34,63.52
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bucet|r
+    .complete 41112,2 --1/1 Akazamzarak bribed
+step
+    #completewith next
+    #label Great Akazamzarak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
+    .turnin 41112 >>Turn in The Great Akazamzarak
+    .target The Great Akazamzarak
+    .accept 41113 >>Accept The Only Way to Travel
+    .disablecheckbox
+step
+    #completewith Great Akazamzarak
+    .cast 193759>>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .usespell 193759
+step
+    #requires Great Akazamzarak
+    .goto 627,48.32,63.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
+    .turnin 41112 >>Turn in The Great Akazamzarak
+    .target The Great Akazamzarak
+    .accept 41113 >>Accept The Only Way to Travel
+    .disablecheckbox
+step
+    .goto 735,56.56,33.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41113 >>Turn in The Only Way to Travel
+    .timer 60,RP
+    .target Meryl Felstorm
+step
+    .goto 735,60.52,34.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .accept 41124 >>Accept The Tirisgarde Reborn
+    .timer 60,RP
+    .target Meryl Felstorm
+step
+    #completewith next
+    #label new title
+    .goto 735,63.01,57.43,20,0
+    .goto 734,78.37,54.29,20,0
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 41124,1 --1/1 Receive your new title
+step
+    #completewith new title
+    .goto 734,81.61,60.37,30 >>Follow the Arrow
+step
+    #requires new title
+    .goto 734,81.61,60.37
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 41124,1 --1/1 Receive your new title
+step
+    .goto 734,81.61,60.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
+    .turnin 41124 >>Turn in The Tirisgarde Reborn
+    .target The Great Akazamzarak
+    .accept 41141 >>Accept A Conjuror's Duty
+step
+    .goto 734,81.61,60.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
+    .turnin 41141 >>Turn in A Conjuror's Duty
+    .target The Great Akazamzarak
+-- step
+--     .goto 735,44.54,57.90
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jackson Watkins|r
+--     .accept 44240 >>Accept Orange is the New Purple
+--     .turnin 44240 >>Turn in Orange is the New Purple
+--     .target Jackson Watkins -- to do in rp
+step
+    .goto 735,55.28,38.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .accept 42663 >>Accept Rise, Champions
+    .target Meryl Felstorm
+step
+    .goto 735,56.33,37.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r
+    .accept 42662 >>Accept Champion: Archmage Kalec
+    .turnin 42662 >>Turn in Champion: Archmage Kalec
+    .target Archmage Kalec
+    .complete 42663,1 --1/1 Recruit Archmage Kalec
+step
+    .goto 735,55.29,39.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Modera|r
+    .accept 42685 >>Accept Champion: Archmage Modera
+    .turnin 42685 >>Turn in Champion: Archmage Modera
+    .target Archmage Modera
+    .complete 42663,2 --1/1 Recruit Archmage Modera
+step
+    .goto 735,55.35,38.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 42663 >>Turn in Rise, Champions
+    .target Meryl Felstorm
+    .accept 42703 >>Accept Technical Wizardry
+step
+    .goto 734,80.85,63.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
+    .turnin 42703 >>Turn in Technical Wizardry
+    .target Archmage Melis
+    .accept 42126 >>Accept Archmage Omniara
+step
+    #completewith next
+    #label Growing Power
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .accept 42175 >>Accept Growing Power
+    .target Meryl Felstorm
+step
+    #completewith Growing Power
+    #hidewindow
+    .goto 734,73.19,59.45,8,0
+    .goto 734,70.53,62.37,8,0
+    .goto 734,71.43,58.96,8,0
+    .goto 735,71.53,78.41,8,0
+    .goto 735,69.68,77,8,0
+    .goto 735,70.73,59.9,8,0
+    .goto 735,63.04,56.54,8,0
+    .goto 735,55.31,38.08,30 >>1
+step
+    #requires Growing Power
+    .goto 735,55.31,38.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .accept 42175 >>Accept Growing Power
+    .turnin 42175 >>Turn in Growing Power
+    .target Meryl Felstorm
+
+step
+    .goto 735,55.28,38.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .accept 42663 >>Accept Rise, Champions
+    .target Meryl Felstorm
+step
+    .goto 735,55.29,39.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Modera|r
+    .turnin 42685 >>Turn in Champion: Archmage Modera
+    .target Archmage Modera
+    .complete 42663,2 --1/1 Recruit Archmage Modera
+step
+    .goto 735,56.33,37.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r
+    .turnin 42662 >>Turn in Champion: Archmage Kalec
+    .target Archmage Kalec
+    .complete 42663,1 --1/1 Recruit Archmage Kalec
+step
+    .goto 735,55.35,38.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 42663 >>Turn in Rise, Champions
+    .target Meryl Felstorm
+    .accept 42703 >>Accept Technical Wizardry
+step
+    .goto 734,80.85,63.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
+    .turnin 42703 >>Turn in Technical Wizardry
+    .target Archmage Melis
+    .accept 42126 >>Accept Archmage Omniara
+step
+    .goto 734,80.90,63.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
+    .turnin 42126 >>Turn in Archmage Omniara
+    .target Archmage Melis
+    .accept 42127 >>Accept Building Our Troops
+step
+    .goto 734,80.82,63.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
+    .turnin 42127 >>Turn in Building Our Troops
+    .target Archmage Melis
+    .accept 42687 >>Accept Troops in the Field
+step
+    .goto 734,81.30,61.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kummerspéck|r
+    .accept 39735 >>Accept Stormheim
+    .target Kummerspéck
+
 ]])
 
 ---Paladin
@@ -2396,53 +2791,50 @@ step
     .target Ravenholdt Courier
 step
     .isOnQuest 40832
-    .goto 627,72.45,46.02
     .cast 201253 >>Use |T134940:0|t[Sealed Letter]
-    .timer 28,RP
+    .timer 24,RP
     .use 133558
---infinite bazaar here
-step
-    .complete 40832,1 --1/1 Letter read
+--rp stuff here
 step
     #completewith next
     #label whispered
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenholdt Courier|r
-    .complete 40832,2 --1/1 Phrase whispered to "Red"
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 40832,1 --1/1 Letter read
     .target "Red" Jack Findle
 step
     #completewith whispered
-    .goto 627,51.55,68.59,10 >>Enter the Shop
+    .goto 627,51.55,68.59,5 >>Enter the Shop
 step
     #requires whispered
+    .goto 627,53.21,71.04
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 40832,1 --1/1 Letter read
+step
     .goto 627,53.21,71.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenholdt Courier|r
     .complete 40832,2 --1/1 Phrase whispered to "Red"
     .skipgossipid 45226
     .target "Red" Jack Findle
 step
-    .goto 626,78.77,82.77
+    #hidewindow
+    #completewith Hall of Shadows
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 626,82.38,80.61,10,0
+    .goto 626,87.1,89.67,15,0
+    .goto 626,90.77,85.6,10,0
+    .goto 626,78.67,65.93,15,0
+    .goto 626,64.04,52.91,15,0
+    .goto 626,52.67,56.93,10,0
+    .goto 626,50.29,51.45,10,0
+    .goto 626,42.4,68.44
+    +1
+step
     #title |cFFFCDC00Follow the Arrow|r
     .complete 40832,3 --1/1 Enter the Hall of Shadows
 step
-    #completewith next
-    #label The Uncrowned
+    #label Hall of Shadows
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 626,82.38,80.61,15,0
-    .goto 626,87.1,89.67,15,0
-    .goto 626,90.77,85.6,15,0
-    .goto 626,78.67,65.93,15,0
-    .goto 626,64.04,52.91,15,0
-    .goto 626,52.67,56.93,15,0
-    .goto 626,50.29,51.45,15,0
-    .complete 40832,4 --1/1 Find 'The Uncrowned'
-step
-    #completewith The Uncrowned
-    #title |cFFFCDC00Follow the Arrow|r
-    .goto 626,42.4,68.44,30 >>Open the Door to the secret Room
-step
-    #requires The Uncrowned
-    .goto 626,42.4,68.44
-    #title |cFFFCDC00Follow the Arrow|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
     .complete 40832,4 --1/1 Find 'The Uncrowned'
 step
     .goto 626,41.37,77.95
@@ -2489,173 +2881,29 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40840 >>Turn in A Worthy Blade
     .target Lord Jorach Ravenholdt
-step
-    .goto 626,42.37,76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Tess Greymane|r
-    .accept 42501 >>Accept Finishing the Job
-    .target Princess Tess Greymane
-    .accept 42502 >>Accept No Sanctuary
-step
-    >>Use |T254294:0|t[Duskwood Scroll]
-    .complete 42502,1 --1/1 Travel to Duskwood
-    .use 173530
-step
-    #completewith next
-    #label Felcaller Whitley
-    .goto 47,19.14,56.43,10,0 
-    .goto 47,19.62,54.83,10,0
-    .goto 47,19.55,54.47,5,0
-    .goto 47,19.36,54.99,5,0
-    >>Kill |cRXP_ENEMY_Felcaller Whitley|r. Loot him for |T134937:0|t[|cRXP_LOOT_Fel Cipher|r].
-    .complete 42502,2 --1/1 Felcaller Whitley slain
-    .complete 42502,3 --1/1 Information found
-    .mob Felcaller Whitley
-step
-    #completewith Felcaller Whitley
-    .goto 47,19.06,53.88,20 >>Enter House and go upstairs
-step
-    #requires Felcaller Whitley
-    .goto 47,19.06,53.88
-    >>Kill |cRXP_ENEMY_Felcaller Whitley|r. Loot him for |T134937:0|t[|cRXP_LOOT_Fel Cipher|r].
-    .complete 42502,2 --1/1 Felcaller Whitley slain
-    .complete 42502,3 --1/1 Information found
-    .mob Felcaller Whitley
-step
-    .goto 47,19.06,53.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malton|r
-    .turnin 42502 >>Turn in No Sanctuary
-    .target Malton
-step
-    >>Use |T254294:0|t[Blasted Lands Scroll]
-    .complete 42501,1 --1/1 Travel to Blasted Lands
-    .use 173531
-step
-    .goto 17,36.83,30.63
-    >>Kill |cRXP_ENEMY_Caden Shadowgaze|r
-    .complete 42501,2 --1/1 Caden Shadowgaze slain
-    .mob Caden Shadowgaze
-step
-    .goto 17,37.04,30.41
-    .complete 42501,3 --1/1 Information found
-step
-    .goto 17,37.01,30.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malton|r
-    .turnin 42501 >>Turn in Finishing the Job
-    .target Malton
-step
-    .goto 17,36.99,29.82
-    .accept 42503 >>Accept Codebreaker
-step
-    .goto 17,37.21,29.05
-    .complete 42503,1 --1/1 Read the Coded Message
-step
-    .goto 17,37.21,29.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malton|r
-    .turnin 42503 >>Turn in Codebreaker
-    .target Malton
-    .accept 42539 >>Accept Cloak and Dagger
-step
-    .goto 47,73.75,48.60
-    .complete 42539,1 --1/1 Skull of the Innocent
-step
-    .goto 47,73.58,43.71
-    .complete 42539,2 --1/1 Blood of the Innocent
-step
-    .goto 47,71.88,46.78
-    .complete 42539,3 --1/1 Attempt to kill Althea Ebonlocke
-step
-    .goto 47,71.91,47.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malton|r
-    .turnin 42539 >>Turn in Cloak and Dagger
-    .target Malton
-step
-    .goto 47,72.10,47.75
-    .accept 42568 >>Accept Preparation
-step
-    .goto 37,36.79,52.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
-    .turnin 42568 >>Turn in Preparation
-    .target Garona Halforcen
-    .accept 42504 >>Accept The Unseen Blade
-step
-    .goto 37,32.0,49.3
-    .isInScenario 1123
-    .scenario 2548,1 --Confront Mathias Shaw.
-step
-    .goto 84,66.2,74.4
-    .isInScenario 1123
-    .scenario 2549,1 --Obtain a smoke bomb from Elling Trias.
-step
-    .goto 84,61.6,72.2
-    .isInScenario 1123
-    .scenario 2550,1 --Use the smoke bomb in the Trader's Hall.
-step
-    .goto 84,62.6,69.1
-    .isInScenario 1123
-    .scenario 2711,1 --Pickpocket Guards until you find information
-step
-    .goto 84,61.7,69.1
-    .isInScenario 1123
-    .scenario 2711,2 --Read the Coded Message
-step
-    .goto 84,74.7,56.4
-    .isInScenario 1123
-    .scenario 2558,1 --Meet Garona at the Pig and Whistle Tavern in Old Town.
-step
-    .goto 84,75.0,55.5
-    .isInScenario 1123
-    .scenario 2560,1 --Open the tavern door.
-step
-    .goto 84,75.9,53.6
-    .isInScenario 1123
-    .scenario 2560,2 --Make Althea Ebonlocke talk.
-step
-    .goto 84,83.5,29.8
-    .isInScenario 1123
-    .scenario 2561,1 --Find the Herald in Stormwind Keep.
-step
-    .goto 84,82.6,28.2
-    .isInScenario 1123
-    .scenario 2562,1 --Assassinate Melris Malagan.
-step
-    .goto 84,82.83,27.93
-    .complete 42504,1 --1/1 Obtain the Kingslayers
-step
-    .goto 84,82.8,27.9
-    .isInScenario 1123
-    .scenario 2563,1 --Wield the Kingslayers.
-step
-    .goto 84,86.9,37.2
-    .isInScenario 1123
-    .scenario 2564,1 --Take the portal to Dalaran.
-step
-    .goto 626,84.02,84.42
-    .complete 42504,2 --Return to the Hall of Shadows
-step
-    .goto 626,27.49,35.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Steelspark|r
-    .accept 44252 >>Accept A Sheath For Every Blade
-    .target Kelsey Steelspark
-step
-    .goto 626,27.19,36.59
-    .turnin 44252 >>Turn in A Sheath For Every Blade
-step
-    .goto 626,42.38,74.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
-    .turnin 42504 >>Turn in The Unseen Blade
-    .target Garona Halforcen
+--artifact weapons here
 step
     .goto 626,41.48,77.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40950 >>Accept Honoring Success
     .target Lord Jorach Ravenholdt
 step
-    .goto 626,42.23,77.09
+    .goto 626,41.55,77.24
+    >>Use the |cRXP_WARN_ExtraActionButton|r
     .complete 40950,1 --1/1 Raise your glass
+    .timer 80,RP
+    .usespell 210519
+step
+    .goto 626,42.48,68.46
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40950,2 --1/1 Celebrate your victory
 step
-    .goto 626,41.55,70.38
+    .goto 626,42.48,68.46,10,0
+    .goto 626,41.47,78.02
+    >>Defeat |cRXP_ENEMY_Vanessa VanCleef|r then return to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .complete 40950,3 --1/1 Vanessa VanCleef defeated
+    .mob Vanessa VanCleef
+    .target Lord Jorach Ravenholdt
 step
     .goto 626,41.48,78.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
@@ -2663,15 +2911,30 @@ step
     .target Lord Jorach Ravenholdt
     .accept 40996 >>Accept Delegation
 step
+    #completewith next
+    #label Lethal Efficiency
+    .goto 626,44.67,56.99,10,0
+    .goto 626,44.86,49.8,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
+    .turnin 40996 >>Turn in Delegation
+    .accept 40997 >>Accept Lethal Efficiency
+    .disablecheckbox
+    .target Nikki the Gossip
+step
+    #title |cFFFCDC00Follow the Arrow|r
+    #completewith Lethal Efficiency
+    .goto 626,37.79,44.86,40 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to exit secret room.
+step
+    #requires Lethal Efficiency
     .goto 626,37.79,44.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .turnin 40996 >>Turn in Delegation
-    .target Nikki the Gossip
     .accept 40997 >>Accept Lethal Efficiency
+    .target Nikki the Gossip
+step
     .complete 40997,1 --1/1 Initial strike point chosen
 step
     .goto 626,37.79,44.86
-    .accept 39735 >>Accept Stormheim
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .turnin 40997 >>Turn in Lethal Efficiency
     .target Nikki the Gossip
@@ -2679,32 +2942,55 @@ step
     .goto 626,41.64,78.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 42139 >>Accept Rise, Champions
-    .target Lord Jorach Ravenholdt
     .accept 44034 >>Accept Another Worthy Blade
+    .target Lord Jorach Ravenholdt
 step
     .goto 626,42.30,74.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
-    .turnin 43262 >>Turn in 
+    .turnin 43262 >>Turn in Champion: Garona Halforcen
     .target Garona Halforcen
     .complete 42139,1 --1/1 Garona Halforcen recruited
 step
     .goto 626,42.43,68.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vanessa VanCleef|r
-    .turnin 43261 >>Turn in 
+    .turnin 43261 >>Turn in Champion: Vanessa VanCleef
     .target Vanessa VanCleef
     .complete 42139,2 --1/1 Vanessa VanCleef recruited
 step
+    #completewith next
+    #label Turn in Rise, Champions
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
+    .turnin 42139 >>Turn in Rise, Champions
+    .target Nikki the Gossip
+step
+    #completewith Turn in Rise, Champions
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 626,37.79,44.86,40 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to exit secret room.
+step
+    #requires Turn in Rise, Champions
     .goto 626,37.78,44.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .turnin 42139 >>Turn in Rise, Champions
     .target Nikki the Gossip
+step
+    .goto 626,37.78,44.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .accept 42140 >>Accept A More Wretched Hive of Scum and Villainy
     .turnin 42140 >>Turn in A More Wretched Hive of Scum and Villainy
+    .target Nikki the Gossip
+step
+    .goto 626,37.78,44.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .accept 43013 >>Accept The School of Roguery
     .turnin 43013 >>Turn in The School of Roguery
+    .target Nikki the Gossip
+step
+    .goto 626,37.78,44.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .accept 43014 >>Accept The Big Bad Wolfe
     .turnin 43014 >>Turn in *undefined*
     .accept 43015 >>Accept What Winstone Suggests
+    .target Nikki the Gossip
 step
     .goto 626,41.20,78.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
@@ -2712,16 +2998,46 @@ step
     .target Lord Jorach Ravenholdt
     .accept 43958 >>Accept A Body of Evidence
 step
-    .goto 626,81.25,68.12
+    #completewith next
+    #label Investigate the body
     .complete 43958,1 --1/1 Investigate the body
 step
-    .goto 626,81.96,69.45
+    #title |cFFFCDC00Follow the Arrow|r
+    #completewith Investigate the body
+    .goto 626,45.12,56.48,5 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to exit secret room.
+step
+    #requires Investigate the body
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 626,44.84,57.84,10,0
+    .goto 626,47.16,43.14,10,0
+    .goto 626,51.1,35.11,10,0
+    .goto 626,82.04,69.44,10,0
+    .goto 626,82.15,69.11
+    .complete 43958,1 --1/1 Investigate the body
+step
+    .goto 626,82.15,69.11
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Letter|r
     .complete 43958,2 --1/1 Evidence recovered
 step
-    .goto 626,41.57,76.04
+    #completewith next
+    #label Body of Evidence
+    .goto 626,62.9,54.18,10,0
+    .goto 626,50.32,57.49,10,0
+    .goto 626,51.84,51.31,10,0
+    .goto 626,45.13,55.78,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 43958 >>Turn in A Body of Evidence
     .target Lord Jorach Ravenholdt
+step
+    #completewith Body of Evidence
+    .goto 626,41.44,77.94,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
+step
+    #requires Body of Evidence
+    .goto 626,41.44,77.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
+    .turnin 43958 >>Turn in A Body of Evidence
+    .target Lord Jorach Ravenholdt
+step
     .accept 43829 >>Accept Spy vs. Spy
     .turnin 43829 >>Turn in Spy vs. Spy
     .accept 44041 >>Accept The Bloody Truth
@@ -2873,8 +3189,191 @@ RXPGuides.RegisterGuide([[
 
 << Warrior
 
+
 step
-    +test
+    .goto 627,72.43,46.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Dalton|r
+    .accept 42814 >>Accept An Important Mission
+    .target Sergeant Dalton
+step
+    .goto 627,74.61,45.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
+    .turnin 42814 >>Turn in An Important Mission
+    .target Danath Trollbane
+    .accept 42815 >>Accept Return to the Broken Shore
+step
+    .goto 627,84.03,48.33
+    .complete 42815,1 --1/1 Take the flight to the Broken Shore
+step
+    .goto 676,50.4,28.4
+    .isInScenario 933
+    .scenario 1870,1 --Meet up with the vrykul.
+step
+    .goto 676,51.0,30.6
+    .isInScenario 933
+    .scenario 1871,1 --Legion forces eliminated
+step
+    .goto 676,51.1,30.1
+    .isInScenario 933
+    .scenario 2225,1 --Approach Danica
+step
+    .goto 676,49.7,32.4
+    .isInScenario 933
+    .scenario 1872,1 --Defeat Bezzeredes and his allies.
+step
+    .goto 676,49.3,34.6
+    .isInScenario 933
+    .scenario 1873,1 --Defeat Malgalor
+step
+    .goto 695,59.04,27.27
+    .complete 42815,2 --1/1 Prove your valor on the Broken Shore
+step
+    .goto 695,58.99,29.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danica the Reclaimer|r
+    .turnin 42815 >>Turn in Return to the Broken Shore
+    .target Danica the Reclaimer
+    .accept 39654 >>Accept Odyn and the Valarjar
+step
+    .goto 695,58.81,46.52
+    .complete 39654,1 --1/1 Follow Danica
+step
+    .goto 695,58.54,69.41
+    .complete 39654,2 --1/1 Go to the Great Mead Hall
+step
+    .goto 695,58.33,84.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
+    .turnin 39654 >>Turn in Odyn and the Valarjar
+    .target Odyn
+    .accept 40579 >>Accept Weapons of Legend
+    .complete 40579,1 --1/1 Artifact chosen
+step
+    .goto 695,58.33,84.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
+    .turnin 40579 >>Turn in Weapons of Legend
+    .target Odyn
+    .accept 41105 >>Accept The Sword of Kings>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aerylia to go to Tirisfal Glades (Optional)|r
+    .complete 41105,1 --1/1 Speak with Aerylia to go to Tirisfal Glades (Optional)
+    .target Aerylia to go to Tirisfal Glades (Optional)
+step
+    .goto 18,14.6,58.9
+    .isInScenario 1037
+    .scenario 2237,1 --Investigate the camp.
+step
+    .goto 18,13.4,56.3
+    .isInScenario 1037
+    .scenario 2203,1 --Slay the ritualists torturing Thoradin.
+step
+    .goto 18,14.1,56.6
+    .isInScenario 1037
+    .scenario 2204,1 --Follow and listen to Thoradin.
+step
+    .goto 20,37.1,45.3
+    .isInScenario 1037
+    .scenario 2210,1 --Enter the Tomb of Tyr.
+step
+    .goto 20,36.2,58.2
+    .isInScenario 1037
+    .scenario 2211,1 --Void Tendrils killed
+step
+    .goto 20,37.6,54.6
+    .isInScenario 1037
+    .scenario 2212,1 --Kill Soth'ozz
+step
+    .goto 20,46.6,76.3
+    .isInScenario 1037
+    .scenario 2213,1 --Reach the prison chamber.
+step
+    .goto 20,61.8,74.3
+    .isInScenario 1037
+    .scenario 2214,1 --Take the sword
+step
+    .goto 20,60.1,74.2
+    .isInScenario 1037
+    .scenario 2215,1 --Defeat Zakajz
+step
+    .goto 20,61.4,73.4
+    .isInScenario 1037
+    .scenario 2216,1 --Take Strom'kar, the Warbreaker.
+step
+    .goto 20,61.4,74.8
+    .isInScenario 1037
+    .scenario 2216,2 --Zakajz killed permanently.
+step
+    .goto 20,61.4,74.8
+    .isInScenario 1037
+    .scenario 2216,2 --Zakajz killed permanently.
+    .complete 41105,5 --1/1 Take Odyn's portal back to Skyhold
+step
+    .goto 695,58.34,83.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
+    .turnin 41105 >>Turn in The Sword of Kings
+    .target Odyn
+step
+    .goto 695,59.58,83.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danica the Reclaimer|r
+    .accept 39214 >>Accept The Eye of Odyn
+    .target Danica the Reclaimer
+step
+    .goto 695,59.75,13.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skyseer Ghrent|r
+    .turnin 39214 >>Turn in The Eye of Odyn
+    .target Skyseer Ghrent
+    .accept 40585 >>Accept Thus Begins the War
+step
+    .goto 695,59.30,13.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicenna|r
+    .accept 39735 >>Accept Stormheim
+    .target Felicenna
+    .complete 40585,1 --1/1 Assault point chosen
+step
+    .goto 695,59.77,13.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skyseer Ghrent|r
+    .turnin 40585 >>Turn in Thus Begins the War
+    .target Skyseer Ghrent
+step
+    .goto 695,56.16,27.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Durnolf|r
+    .accept 44255 >>Accept Axe and You Shall Receive
+    .target Quartermaster Durnolf
+    .turnin 44255 >>Turn in Axe and You Shall Receive
+step
+    .goto 695,58.40,85.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
+    .accept 42598 >>Accept Champions of Skyhold
+    .target Odyn
+    .accept 43949 >>Accept More Weapons of Legend
+step
+    .goto 695,61.55,34.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Finna Bjornsdottir|r
+    .turnin 42606 >>Turn in Champion: Finna Bjornsdottir
+    .target Finna Bjornsdottir
+    .complete 42598,2 --1/1 Recruit Finna Bjornsdottir
+step
+    .goto 695,61.24,33.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnvald Drakeborn|r
+    .turnin 42605 >>Turn in Champion: Ragnvald Drakeborn
+    .target Ragnvald Drakeborn
+    .complete 42598,1 --1/1 Recruit Ragnvald Drakeborn
+step
+    .goto 695,59.74,13.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skyseer Ghrent|r
+    .turnin 42598 >>Turn in Champions of Skyhold
+    .target Skyseer Ghrent
+    .accept 42607 >>Accept Captain Stahlstrom
+    .turnin 42607 >>Turn in Captain Stahlstrom
+    .accept 42609 >>Accept Recruiting the Troops
+    .turnin 42609 >>Turn in Recruiting the Troops
+    .accept 42610 >>Accept Troops in the Field
+    .turnin 42610 >>Turn in *undefined*
+    .accept 42611 >>Accept Einar the Runecaster
+    .turnin 42611 >>Turn in *undefined*
+    .accept 43750 >>Accept The Call of Battle
+step
+    .goto 695,55.94,84.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hymdall|r
+    .turnin 43750 >>Turn in The Call of Battle
+    .target Hymdall
+    .accept 42193 >>Accept The Gjallarhorn
 ]])
 
 ---Infinite Bazaar
@@ -2884,7 +3383,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ac) Infinite Bazaar
-#displayname |cFF00CCFF4|r - Infinite Bazaar|r
+#displayname |cFF00CCFFx|r - Infinite Bazaar|r
 #next ad) First Zone
 
 
