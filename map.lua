@@ -1428,13 +1428,13 @@ addon.classicToWrathEPL = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.
 addon.wrathToClassicEPL = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
 
 
-addon.mID = {}
+--addon.mID = {}
 function addon.GetMapId(zone)
-    local z = tonumber(zone)
+    --[[local z = tonumber(zone)
     if z then
         addon.mID[z] = true
         --print(1,z)
-    end
+    end]]
     return addon.mapId[zone]
 end
 
