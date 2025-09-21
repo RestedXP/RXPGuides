@@ -195,6 +195,7 @@ addon.icons = {
     error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
     engrave = "|T134419:0|t",
+    clicknext = "|TInterface/Tooltips/ReforgeGreenArrow:0|t",
 }
 
 if addon.gameVersion > 50000 then
@@ -3477,26 +3478,33 @@ function addon.functions.money(self, ...)
     if self.element.step.completed then addon.updateSteps = true end
 end
 
-function addon.functions.next(skip, guide)
+function addon.functions.next(skip, guide, arg1)
+    local element
+    --local step
     if type(skip) == "string" then
-        local element = {}
-        element.textOnly = true
+        element = {next = arg1, textOnly = true}
         return element
-    elseif skip and
-        (type(skip) == "number" or (skip.step and (not skip.step.active and not skip.step.completed))) then
+    elseif type(skip) == "number" then
         return
+    elseif type(skip) == "table" and skip.step and skip.element.next then
+        if not skip.step.active then
+            return
+        end
+        element = skip.element
+        --step = skip.step
     end
 
     local next
     if type(guide) == "table" then
         next = guide.next
     elseif type(guide) == "string" then
-        next = guide
+        next = element and element.next or guide
         guide = addon.currentGuide
     else
         guide = addon.currentGuide
-        next = guide.next
+        next = element and element.next or guide.next
     end
+    --print(guide,next)
 
     if next then
         local group = guide.group
@@ -4265,10 +4273,34 @@ function addon.functions.zoneskip(self, text, zone, flags)
     end
 end
 
+function addon.functions.clicknext(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, nextGuide = ...
+        if not (nextGuide and text) then
+            return addon.error(
+                    L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid syntax\n" .. self)
+        end
+        element.textOnly = true
+        element.next = nextGuide
+        --element.hideTooltip = true
+        --element.tooltip = L("Click to view the link")
+        element.text = text
+        return element
+    end
+    if self and self.highlight then
+        self.highlight:Show()
+        self:SetScript("OnMouseDown", addon.functions.next)
+    end
+end
+
 addon.separators.link = function(t,args)
     local link = args:gsub("%s+$", "")
     tinsert(t, link)
 end
+
+addon.separators.clicknext = addon.separators.link
 
 local function LinkOnClick(self)
 
@@ -7575,7 +7607,7 @@ end
 
 function addon.functions.spec(self,text,spec,flags)
     if type(self) == "string" then
-        return {text = text, spec = spec, textOnly = true, flags = flags}
+        return {text = text, spec = spec, textOnly = not text, flags = flags}
     end
 
     if not text then
@@ -7583,9 +7615,13 @@ function addon.functions.spec(self,text,spec,flags)
         local element = self.element
         local step = element.step
         local c = not element.flags
-        if not(tonumber(element.spec) == currentSpec) == c then
-            step.completed = true
-            addon.updateSteps = true
+        if step.active and (not(tonumber(element.spec) == currentSpec) == c) then
+            if element.textOnly then
+                step.completed = true
+                addon.updateSteps = true
+            else
+                addon.SetElementComplete(self)
+            end
         end
     end
 end
