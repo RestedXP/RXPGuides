@@ -793,8 +793,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name aa) Skyriding
 #displayname |cFF00CCFF2|r - Skyriding|r
-#next ab) Order Hall Death Knight Part 1 << Death Knight
-#next ab) Order Hall Demon Hunter Part 1 << Demon Hunter
+#next ab) Order Hall Death Knight Part 1 << DeathKnight
+#next ab) Order Hall Demon Hunter Part 1 << DemonHunter
 #next ab) Order Hall Druid Part 1 << Druid
 #next ab) Order Hall Hunter Part 1 << Hunter
 #next ab) Order Hall Mage Part 1 << Mage
@@ -885,6 +885,11 @@ step
     .timer 42,RP
     .target Master Hight
 step
+    .goto 424,45,27.6
+    .isOnQuest 12103
+    #title Wait at Door
+    .countdown 32 >>|cRXP_WARN_Wait for the Roleplay|r.
+step
     .isOnQuest 12103
     .goto 424,45,27.6
     #title Wait at Door
@@ -892,19 +897,22 @@ step
     .scenario 1887,1
     .mob Infernal Destroyer
 step
+    #completewith Portal Master Jorvinax
+    +You can't mount in this scenario
+step
     .isInScenario 943
     #completewith next
     #label Vizznak
     .goto 424,44.64,27.73,30,0
     .goto 424,44.37,27.58,30,0
     .goto 424,43.65,27.49,30,0
-    >>Kill |cRXP_ENEMY_Vizznak|r
+    >>Enter the cave and kill |cRXP_ENEMY_Vizznak|r.
     .scenario 1896,1
     .mob Vizznak
 step
     .isInScenario 943
     #completewith Vizznak
-    .goto 424,43.45,27.64,40 >>You can't mount here
+    .goto 424,43.45,27.64,40 >>Follow the Arrow
 step
     .isInScenario 943
     #requires Vizznak
@@ -924,7 +932,7 @@ step
     .isInScenario 943
     #completewith Number Nine Jia
     .goto 424,43.87,27.36
-    .cast 193726 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Number Nine Jia|r
+    .cast 193726 >>Click on the |cRXP_PICK_Number Nine Jia|r
     .timer 21,RP
     .target Number Nine Jia
 step
@@ -957,15 +965,18 @@ step
     .isInScenario 943
     .goto 424,45.28,26.4
     .countdown 35 >>Kill |cRXP_ENEMY_Infernal Invader|r
-    .timer 28,RP
     .mob Infernal Invader
 step
     .isInScenario 943
-    .goto 424,45.09,26.57,10,0
+    .goto 424,45.09,26.57,10 >>Follow the Arrow
+    .timer 25,RP
+step
+    .isInScenario 943
     .goto 424,44.69,26.7
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 1899,1
 step
+    #label Portal Master Jorvinax
     .isInScenario 943
     .goto 424,44.67,26.71
     >>Kill |cRXP_ENEMY_Portal Master Jorvinax|r
@@ -1019,7 +1030,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40236,1 --1/1 Accompany Fearsome Jang
     .target Iron-Body Ponshu
-    .timer 75,RP
+    .timer 73.5,RP
 step
     .goto 709,51.41,48.41
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -1037,36 +1048,38 @@ step
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
 step
-    .spec 3
-    .goto 627,72.46,45.90
-    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r W
-    .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .choose 1390111
-    .skipgossipid
-    .target Iron-Body Ponshu
-step
-    .spec 3
-    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Windwalker
-step
-    .spec 2
-    .goto 627,72.46,45.90
-    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r M
-    .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .choose 1390110
-    .target Iron-Body Ponshu
-step
-    .spec 2
-    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
-step
-    .spec 1
-    .goto 627,72.46,45.90
-    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r B
-    .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .choose 1390109
-    .target Iron-Body Ponshu
-step
-    .spec 1
-    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
+
+-- step
+--     .spec 3
+--     .goto 627,72.46,45.90
+--     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r W
+--     .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+--     .choose 1390111
+--     .skipgossipid
+--     .target Iron-Body Ponshu
+-- step
+--     .spec 3
+--     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Windwalker
+-- step
+--     .spec 2
+--     .goto 627,72.46,45.90
+--     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r M
+--     .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+--     .choose 1390110
+--     .target Iron-Body Ponshu
+-- step
+--     .spec 2
+--     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
+-- step
+--     .spec 1
+--     .goto 627,72.46,45.90
+--     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r B
+--     .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+--     .choose 1390109
+--     .target Iron-Body Ponshu
+-- step
+--     .spec 1
+--     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
 
 ]])
 
@@ -1173,7 +1186,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     .goto 627,72.07,41.63
@@ -1202,12 +1215,46 @@ step
     .turnin 39261 >>Turn in Call of the Illidari
     .target Kayn Sunfury
     .accept 40814 >>Accept The Power to Survive
---here
 step
-    #requires Turn in The Hunt
+    .spec 1
+    .goto 627,74.97,48.99
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r Sub
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
+    .complete 40814,1 --1/1 Artifact chosen
+    .skipgossipid 45106
+    .choose 1389397
+    .target Kayn Sunfury
+step
+    .spec 1
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Havoc
+step
+    .spec 2
+    .goto 627,74.97,48.99
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r  fire
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
+    .complete 40814,1 --1/1 Artifact chosen
+    .skipgossipid 45106
+    .choose 1390101
+    .target Kayn Sunfury
+step
+    .spec 2
+    .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Vengeance
+]])
+
+---Demon Hunter Intro 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ac) Order Hall Demon Hunter Part 2
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+
+<< DemonHunter
+
+step
     .goto 627,73.86,46.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
-    .turnin 39247 >>Turn in The Hunt
     .target Kor'vas Bloodthorn
     .accept 42869 >>Accept Eternal Vigil
 step
@@ -1224,10 +1271,11 @@ step
     .goto 627,95.12,65.97
     >>Use the |cRXP_WARN_ExtraActionButton|r
     .complete 42872,1 --1/1 Have the prisoners' souls removed
-    .use 217377
+    .usespell 217377
 step
     .goto 627,97.66,68.89
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gate|r.
+    *|cRXP_WARN_You might have to click twice|r.
     .complete 42872,2 --1/1 Rip open a gateway to the Fel Hammer
 step
     .goto 627,95.15,65.96
@@ -1258,7 +1306,7 @@ step
     #completewith Fel Hammer
     .goto 720,58.84,65.90
     .cast 203269 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
-    .timer 38,RP
+    .timer 37.5,RP
 step
     #requires Fel Hammer
     .goto 720,58.64,57.83
@@ -1324,9 +1372,9 @@ step
 step
     #hidewindow
     #completewith Time is of the Essence
-    .goto 720,46.47,56.04,30,0
-    .goto 720,51.22,66.52,30,0
-    .goto 720,58.59,57.91,30 >>1
+    .goto 720,70.06,55.41,15,0
+    .goto 720,67.12,65.49,15,0
+    .goto 720,58.59,57.91,5 >>1
 step
     #requires Time is of the Essence
     .goto 720,58.59,57.91
@@ -1338,13 +1386,11 @@ step
     .goto 720,58.84,54.94
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crucible|r
     .complete 41069,1 --1/1 Initial strike point chosen
-    .accept 39735 >>Accept Stormheim
 step
     .goto 720,58.57,57.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 41069 >>Turn in Direct Our Wrath
     .target Kayn Sunfury
-    -- .accept 44383 >>Accept In Pursuit of Power
 step
     .goto 720,56.07,54.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Battlelord Gaardoun|r
@@ -1353,12 +1399,14 @@ step
 step
     .goto 720,58.62,57.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .accept 42695 >>Accept Champion: Kayn Sunfury
     .turnin 42695 >>Turn in Champion: Kayn Sunfury
-    .target Kayn Sunfury
     .complete 42671,1 --Kayn Sunfury recruited
+    .target Kayn Sunfury
 step
     .goto 720,56.18,38.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asha Ravensong|r
+    .accept 42697 >>Accept Champion: Asha Ravensong
     .turnin 42697 >>Turn in Champion: Asha Ravensong
     .target Asha Ravensong
     .complete 42671,2 --Asha Ravensong recruited
@@ -1367,10 +1415,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .turnin 42671 >>Turn in Rise, Champions
     .target Kor'vas Bloodthorn
+step
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .accept 42677 >>Accept Things Gaardroun Needs
     .turnin 42677 >>Turn in Things Gaardroun Needs
+    .target Kor'vas Bloodthorn
+step
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .target Kor'vas Bloodthorn
     .accept 42679 >>Accept Broken Warriors
     .turnin 42679 >>Turn in Broken Warriors
+step
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .target Kor'vas Bloodthorn
     .accept 42681 >>Accept Loramus, Is That You?
     .turnin 42681 >>Turn in *undefined*
     .accept 42683 >>Accept Demonic Improvements
@@ -1507,9 +1567,6 @@ step
     .turnin 41704 >>Turn in Subject 16
     .target First Arcanist Thalyssra
     .accept 41760 >>Accept Kel'danath's Legacy
-
-step
- 
 step
     .goto 720,58.65,57.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
@@ -1658,7 +1715,7 @@ step
 step
     .goto 619,45.69,68.53
     .accept 90112 >>Accept Infinite Research: Combat Studies, Elite
-    step
+step
     .goto 720,57.62,52.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belath Dawnblade|r
     .turnin 42752 >>Turn in Vault of the Wardens: Vault Break-In
@@ -1692,21 +1749,17 @@ step
     .target Allari the Souleater
     .accept 42669 >>Accept Preparations for Invasion
     .turnin 42669 >>Turn in Preparations for Invasion
-
 step
     .goto 721,59.07,74.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r
     .accept 44694 >>Accept One Battle at a Time
     .target Jace Darkweaver
-
-
 step
     .goto 680,22.69,36.69
     .complete 43943,1 --1/1 Bring 400 Ancient Mana to Thalyssra
 step
     .goto 680,22.69,36.69
     .turnin 43943 >>Turn in Make Haste, Not Waste
-
 step
     .goto 680,22.63,36.09
     .accept 44176 >>Accept The Conveniences of Home
@@ -1776,8 +1829,7 @@ step
     .turnin 44721 >>Turn in Helya's Conquest
     .target Havi
     .accept 44729 >>Accept Trial of Valor: Odyn's Favor.complete 40072,1 --1/1 Claim the Aegis of Aggramar
-.complete 40072,2 --1/1 Odyn defeated
-
+    .complete 40072,2 --1/1 Odyn defeated
     .accept 43349 >>Accept The Aegis of Aggramar.complete 42733,1 --15/15 Sovereign Soul
 step
     .goto 721,59.17,74.53
@@ -1833,37 +1885,25 @@ step
     step
     .scenario 2646,1
 step
-step
     .scenario 2648,1
-step
 step
     .scenario 2652,1
 step
-step
     .scenario 2652,2
-step
 step
     .scenario 2652,3
 step
-step
     .scenario 2652,4
-step
 step
     .scenario 2654,1
 step
-step
     .scenario 2656,1
-step
 step
     .scenario 2658,1
 step
-step
     .scenario 2658,2
 step
-step
     .scenario 2660,1
-step
-
 step
     .goto 714,72.77,79.50
     >>Kill |cRXP_ENEMY_Varedis Felsoul|r
@@ -1910,7 +1950,6 @@ step
 step
     .goto 721,57.30,32.26
     .turnin 44214 >>Turn in One More Thing...
-
     .accept 43412 >>Accept A Hero's Weapon
 step
     .goto 721,58.51,31.40
@@ -1964,6 +2003,7 @@ step
 >>Kill |cRXP_ENEMY_Dargrul the Underking|r
     .complete 41865,2 --1/1 Dargrul the Underking slain
     .mob Dargrul the Underking
+
 
 
 
@@ -2430,7 +2470,6 @@ step
 step
     .spec 1
     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Holy
-
 ]])
 
 ---Paladin Intro 2
@@ -2451,6 +2490,33 @@ RXPGuides.RegisterGuide([[
 --     .accept 44250 >>Accept Champion of the Light
 --     .turnin 44250 >>Turn in Champion of the Light
 --     .target Eadric the Pure
+step
+    #requires Light's Hope
+    .goto 24,63.20,37.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .target Lord Maxwell Tyrosus
+    .accept 38566 >>Accept A United Force
+    .timer 54,RP
+step
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 24,74.71,20.51
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 38566,1 --1/1 Walk with Lord Maxwell Tyrosus
+step
+    .goto 24,74.71,20.51
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
+    .complete 38566,2 --1/1 Inscribe your name in the Libram
+    .timer 69,RP
+step
+    .goto 24,73.86,19.68
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 38566,3 --1/1 Establish the Order of the Silver Hand
+step
+    .goto 24,73.86,19.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 38566 >>Turn in A United Force
+    .target Lord Maxwell Tyrosus
+    .accept 38933 >>Accept Logistical Matters
 step
     #completewith next
     #label Logistical Matters
@@ -2490,6 +2556,7 @@ step
 step
     .goto 24,38.22,64.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
+    .accept 42881 >>Accept Champion: Lady Liadrin
     .turnin 42881 >>Turn in Champion: Lady Liadrin
     .target Lady Liadrin
     .complete 42846,1 --1/1 Enlist Lady Liadrin
