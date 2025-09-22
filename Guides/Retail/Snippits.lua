@@ -2518,7 +2518,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ah) 1
 #displayname Monk
-#chapters a) Order Hall Monk;a) Artifact Weapon: Windwalker;a) Artifact Weapon: Mistweaver;a) Artifact Weapon: Brewmaster
+#chapters b) Order Hall Monk;a) Artifact Weapon: Windwalker;a) Artifact Weapon: Mistweaver;a) Artifact Weapon: Brewmaster
 
 
 
@@ -2543,12 +2543,73 @@ RXPGuides.RegisterGuide([[
 --     .openitem 237812
 --     .openitem 243373
 step
+    .zoneskip 709
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+    .usespell 126892
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 43973
+    .isQuestAvailable 44424
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 44424 >>Accept Three Paths, Three Weapons
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 43973
+    .isQuestAvailable 44424
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .complete 44424,1 --1/1 Choose a third artifact to pursue
+    .choose 1390109
+    .skipgossipid 45061
+    .skipgossipid 45063
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 43973
+    .isQuestAvailable 44424
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 44424 >>Turn in Three Paths, Three Weapons
+    .target Li Li Stormstout
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 43973 >>Accept Two Paths, Two Weapons
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .complete 43973,1 --1/1 Choose a second artifact to pursue
+    .choose 1390109
+    .skipgossipid 45061
+    .skipgossipid 45063
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .turnin 43973 >>Turn in Two Paths, Two Weapons
+step
+    .subzoneskip 7902,1
     .isQuestAvailable 40636
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
 step
+    .subzoneskip 7902,1
     .isQuestAvailable 40636
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -2564,55 +2625,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
     .turnin 40636 >>Turn in Prepare to Strike
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 43973 >>Accept Two Paths, Two Weapons
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .complete 43973,1 --1/1 Choose a second artifact to pursue
-    .choose 1390109
-    .skipgossipid 45061
-    .skipgossipid 45063
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .turnin 43973 >>Turn in Two Paths, Two Weapons
-step
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 44424 >>Accept Three Paths, Three Weapons
-step
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .complete 44424,1 --1/1 Choose a third artifact to pursue
-    .choose 1390109
-    .skipgossipid 45061
-    .skipgossipid 45063
-step
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 44424 >>Turn in Three Paths, Three Weapons
-    .target Li Li Stormstout
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -2914,52 +2926,11 @@ RXPGuides.RegisterGuide([[
 --     .openitem 237812
 --     .openitem 243373
 step
-    .isQuestAvailable 40636
-    .goto 709,51.41,48.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .accept 40636 >>Accept Prepare To Strike
-    .target Iron-Body Ponshu
+    .zoneskip 709
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+    .usespell 126892
 step
-    .isQuestAvailable 40636
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .complete 40636,1 --1/1 Choose a artifact to pursue
-    .choose 1390110
-    .skipgossipid 45061
-    .skipgossipid 45063
-    .target Iron-Body Ponshu
-step
-    .isQuestComplete 40636
-    .isQuestAvailable 40636
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .turnin 40636 >>Turn in Prepare to Strike
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 43973 >>Accept Two Paths, Two Weapons
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .complete 43973,1 --1/1 Choose a second artifact to pursue
-    .choose 1390110
-    .skipgossipid 45061
-    .skipgossipid 45063
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .turnin 43973 >>Turn in Two Paths, Two Weapons
-step
+    .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
     .goto 709,51.42,48.41
@@ -2967,6 +2938,7 @@ step
     .target Iron-Body Ponshu
     .accept 44424 >>Accept Three Paths, Three Weapons
 step
+    .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
     .goto 709,51.42,48.41
@@ -2977,6 +2949,7 @@ step
     .skipgossipid 45061
     .skipgossipid 45063
 step
+    .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
     .goto 709,51.42,48.41
@@ -2984,6 +2957,58 @@ step
     .target Iron-Body Ponshu
     .accept 44424 >>Turn in Three Paths, Three Weapons
     .target Li Li Stormstout
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 43973 >>Accept Two Paths, Two Weapons
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .complete 43973,1 --1/1 Choose a second artifact to pursue
+    .choose 1390110
+    .skipgossipid 45061
+    .skipgossipid 45063
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .turnin 43973 >>Turn in Two Paths, Two Weapons
+step
+    .subzoneskip 7902,1
+    .isQuestAvailable 40636
+    .goto 709,51.41,48.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .accept 40636 >>Accept Prepare To Strike
+    .target Iron-Body Ponshu
+step
+    .subzoneskip 7902,1
+    .isQuestAvailable 40636
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .complete 40636,1 --1/1 Choose a artifact to pursue
+    .choose 1390110
+    .skipgossipid 45061
+    .skipgossipid 45063
+    .target Iron-Body Ponshu
+step
+    .subzoneskip 7902,1
+    .isQuestComplete 40636
+    .isQuestAvailable 40636
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .turnin 40636 >>Turn in Prepare to Strike
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -3117,7 +3142,68 @@ RXPGuides.RegisterGuide([[
 --     .use 246937
 --     .openitem 237812
 --     .openitem 243373
+
 step
+    .zoneskip 709
+    .cast 126892 >>Use |T775462:0|t[Zen Pilgrimage]
+    .usespell 126892
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 43973
+    .isQuestAvailable 44424
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 44424 >>Accept Three Paths, Three Weapons
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 43973
+    .isQuestAvailable 44424
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .complete 44424,1 --1/1 Choose a third artifact to pursue
+    .choose 1390111
+    .skipgossipid 45061
+    .skipgossipid 45063
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 43973
+    .isQuestAvailable 44424
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 44424 >>Turn in Three Paths, Three Weapons
+    .target Li Li Stormstout
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .accept 43973 >>Accept Two Paths, Two Weapons
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .complete 43973,1 --1/1 Choose a second artifact to pursue
+    .choose 1390111
+    .skipgossipid 45061
+    .skipgossipid 45063
+step
+    .subzoneskip 7902,1
+    .isQuestTurnedIn 40636
+    .isQuestAvailable 43973
+    .goto 709,51.42,48.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
+    .target Iron-Body Ponshu
+    .turnin 43973 >>Turn in Two Paths, Two Weapons
+step
+    .subzoneskip 7902,1
     .isQuestAvailable 40636
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -3140,72 +3226,11 @@ step
     .target Iron-Body Ponshu
     .turnin 40636 >>Turn in Prepare to Strike
 step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 43973 >>Accept Two Paths, Two Weapons
+    #completewith Legend of the Sands
+    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact|r.
 step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .complete 43973,1 --1/1 Choose a second artifact to pursue
-    .choose 1390111
-    .skipgossipid 45061
-    .skipgossipid 45063
-step
-    .isQuestTurnedIn 40636
-    .isQuestAvailable 43973
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .turnin 43973 >>Turn in Two Paths, Two Weapons
-step
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 44424 >>Accept Three Paths, Three Weapons
-step
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .complete 44424,1 --1/1 Choose a third artifact to pursue
-    .choose 1390111
-    .skipgossipid 45061
-    .skipgossipid 45063
-step
-    .isQuestTurnedIn 43973
-    .isQuestAvailable 44424
-    .goto 709,51.42,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .target Iron-Body Ponshu
-    .accept 44424 >>Turn in Three Paths, Three Weapons
-    .target Li Li Stormstout
-step
-    .goto 709,51.41,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .turnin 40236 >>Turn in The Dawning Light
-    .target Iron-Body Ponshu
-    .accept 40636 >>Accept Prepare To Strike
-step
-    .goto 709,51.41,48.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .complete 40636,1 --1/1 Artifact weapon chosen
-    .choose 1390111
-    .skipgossipid 45061
-    .target Iron-Body Ponshu
-step
-    #requires Prepare To Strike
     .goto 709,51.4,48.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
-    .turnin 40636 >>Turn in Prepare To Strike
     .target Iron-Body Ponshu
     .accept 40569 >>Accept The Legend of the Sands
 step
@@ -3228,6 +3253,7 @@ step
     .skipgossipid 45128
     .target Li Li Stormstout
 step
+    #label Legend of the Sands
     .goto 709,49.12,58.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 40569 >>Turn in The Legend of the Sands

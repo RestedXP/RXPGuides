@@ -847,9 +847,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#name ab) Order Hall Monk Part 1
+#name ab) Order Hall Monk Part 1 
 #displayname |cFF00CCFF3|r - Order Hall Intro 1|r
-#next ac) Order Hall Monk Part 2
+-- #next ac) Order Hall Monk Part 2
 
 << Monk
 
@@ -1048,7 +1048,13 @@ step
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
 step
-
+    .isQuestAvailable 40636
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Windwalker >> Windwalker(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Mistweaver >> Mistweaver(Healer) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Brewmaster >> Brewmaster(Tank) Questline
 -- step
 --     .spec 3
 --     .goto 627,72.46,45.90
@@ -3557,7 +3563,7 @@ step
     #include RestedXP Legion Remix\aa) Skyriding
 ]])
 
----Monk
+---Monk Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -3565,12 +3571,28 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #name bb) Order Hall Monk Part 1
 #displayname |cFF00CCFF3|r - Order Hall Intro|r
-#next bc) Infinite Bazaar
+-- #next bc) Order Hall Monk Part 1
 
 << Monk
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Monk Part 1
+]])
+
+---Monk Part 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(10-80)|r Legion Remix
+#name bc) Order Hall Monk Part 2
+#displayname |cFF00CCFF4|r - Order Hall Intro 2|r
+#next bd) Infinite Bazaar
+
+<< Monk
+
+step
+    #include RestedXP Legion Remix\ab) Order Hall Monk Part 2
 ]])
 
 ---Death Knight
