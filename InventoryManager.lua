@@ -24,6 +24,11 @@ inventoryManager.bagHook = _G.ContainerFrame_Update
 
 local GetContainerItemInfo
 
+--RXP 12x12 placeholder--
+local RXP_UPGRADE_ICON = "Interface\\AddOns\\RXPGuides\\Textures\\rxp_logo"
+local RXP_ICON_INLINE  = "|T"..RXP_UPGRADE_ICON..":12:12:0:0|t"
+
+
 if C_Container and C_Container.GetContainerItemInfo then
     GetContainerItemInfo = function(...)
         local itemTable = C_Container.GetContainerItemInfo(...)
@@ -739,4 +744,5 @@ function inventoryManager.GetNetWorth()
     local inventory = ProcessJunk()
     return GetMoney() + inventory
 end
+
 
