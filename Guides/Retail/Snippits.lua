@@ -1474,6 +1474,164 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Feral
 #next
 
+step
+    .isOnQuest 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 40646 >>Turn in Weapons of Legend
+    .accept 42428 >>Accept The Shrine of Ashamane
+    .target Rensar Greathoof
+step
+    .isOnQuest 43980
+    .goto 747,44.68,51.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 43980 >>Turn in Another Weapon of Old
+    .accept 42428 >>Accept The Shrine of Ashamane
+    .target Rensar Greathoof
+step
+    .goto 747,61.73,33.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danise Stargazer|r.
+    .complete 42428,1 --1/1 Hippogryph taken to Ashamane's Fall
+    .timer 40,Flight Duration
+    .target Danise Stargazer
+    .skipgossipid 45654
+step
+    .goto 641,70.39,46.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delandros Shimmermoon|r.
+    .turnin 42428 >>Turn in The Shrine of Ashamane
+    .target Delandros Shimmermoon
+    .accept 42439 >>Accept Aid for the Ashen
+    .accept 42438 >>Accept Seeds of Renewal
+step
+    #completewith SeedsOfRenewalA
+    >>Kill the |cRXP_ENEMY_Eredar Soul Lashers|r.
+    .complete 42439,1 --4/4 Ashen Rescued
+    .mob Eredar Soul Lasher
+step
+    #title Seed (1/3)
+    .goto 641,71.69,43.08
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_corpse|r of |cRXP_FRIENDLY_Emtheas Trueeye|r.
+    .complete 42438,1,1 --1/3 Tel'andu Seed
+    .target Emtheas Trueeye
+step
+    #title Seed (2/3)
+    .goto 641,70.04,42.44
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_corpse|r of |cRXP_FRIENDLY_Asthalor Duskmoon|r.
+    .complete 42438,1,2 --2/3 Tel'andu Seed
+    .target Asthalor Duskmoon
+step
+    #label SeedsOfRenewalA
+    #title Seed (3/3)
+    .goto 641,71.00,38.25
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_corpse|r of |cRXP_FRIENDLY_Iyseelar Dewsong|r.
+    .complete 42438,1 --3/3 Tel'andu Seed
+    .target Iyseelar Dewsong
+step
+    #loop
+    .goto 641,71.70,38.40,35,0
+    .goto 641,71.55,42.50,35,0
+    .goto 641,70.24,41.08,35,0
+    >>Kill the |cRXP_ENEMY_Eredar Soul Lashers|r.
+    .complete 42439,1 --4/4 Ashen Rescued
+    .mob Eredar Soul Lasher
+step
+    .goto 641,73.23,42.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delandros Shimmermoon|r
+    .turnin 42439 >>Turn in Aid for the Ashen
+    .turnin 42438 >>Turn in Seeds of Renewal
+    .accept 42440 >>Accept The Shrine in Peril
+    .target Delandros Shimmermoon
+step
+    .goto 641,73.75,40.59
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 42440,1 --1/1 Investigate Ashamane's Fall
+step
+    .goto 641,73.82,39.02
+    >>Kill |cRXP_ENEMY_Algromon|r
+    .complete 42440,2 --1/1 Algromon slain
+    .mob Algromon
+step
+    .goto 641,73.83,38.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delandros Shimmermoon|r
+    .turnin 42440 >>Turn in The Shrine in Peril
+    .target Delandros Shimmermoon
+    .accept 42430 >>Accept The Fangs of Ashamane
+step
+    .goto 641,73.75,38.40
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Ebonfang|r
+    .complete 42430,1 --1/1 Ebonfang Mounted
+    .target Ebonfang
+step
+    .isInScenario 1108
+    .goto 680,21.70,39.36
+    >>|cRXP_WARN_If it doesn't trigger then 
+    .scenario 2506,1 --Followed Verstok's scent
+step
+    #completewith DoorSwitchB
+    #label DoorwayOpenedA
+    .isInScenario 1108
+    .scenario 2525,1 --Doorway Opened
+step
+    .isInScenario 1108
+    .isOnQuest 42430
+    #completewith DoorwayOpenedA
+    #label DoorSwitchA
+    .goto 680,21.88,37.24
+    .cast 116401 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Door Switch|r
+step
+    #requires DoorSwitchA
+    #completewith DoorwayOpenedA
+    #label DoorSwitchB
+    .goto 680,23.14,37.77
+    .cast 116401 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Door Switch|r
+    .timer 12,Door opens in
+step
+    #requires DoorwayOpenedA
+    .isInScenario 1108
+    .goto 680,22.80,35.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the two |cRXP_PICK_Door Switches|r
+    >>|cRXP_WARN_Wait for the door to open after clicking the two switches|r
+    .scenario 2525,1 --Doorway Opened
+step
+    .isInScenario 1108
+    #completewith next
+    #label FollowVerstoksTrailA
+    >>|cRXP_WARN_Follow the arrow|r
+    .scenario 2533,1 --Follow Verstok's trail into the temple depths
+step
+    #completewith FollowVerstoksTrailA
+    .goto 692,54.48,40.91
+    .cast 214240 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Platform|r
+    *- |cRXP_WARN_Make sure to be in cat form|r
+step
+    #requires FollowVerstoksTrailA
+    .isInScenario 1108
+    .goto 692,45.45,29.90
+    >>|cRXP_WARN_Follow the arrow|r
+    .scenario 2533,1 --Follow Verstok's trail into the temple depths
+step
+    .isInScenario 1108
+    .goto 692,43.10,21.57
+    >>Defeat |cRXP_ENEMY_Verstok|r
+    .scenario 2534,1 --Defeat Verstok
+    .mob Verstok
+step
+    .isInScenario 1108
+    .goto 692,41.89,33.91,15,0
+    .goto 692,31.11,72.27,15,0
+    .goto 692,33.74,72.68
+    >>|cRXP_WARN_Follow the arrow|r
+    .scenario 2545,1 --Chase after Verstok
+step
+    .isInScenario 1108
+    .goto 693,53.19,18.21
+    >>Kill |cRXP_ENEMY_Webmistress Shinaris|r.
+    .scenario 2546,1 --Webmistress Shinaris Slain
+    .mob Webmistress Shinaris
+step
+    .isInScenario 1108
+    .goto 693,54.72,20.48
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fangs of Ashamane|r
 ]])
 --Guardian
 RXPGuides.RegisterGuide([[
