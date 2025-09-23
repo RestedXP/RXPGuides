@@ -757,6 +757,16 @@ local function CreateCleanupButton()
 
     createdCleanupBtn = true
     SetCleanupBtnEnabled(not (InCombatLockdown and InCombatLockdown()))
+    if parent.HookScript then
+        parent:HookScript("OnShow", function()
+            AnchorCleanupButton()
+                if cleanupBtn then
+                cleanupBtn:SetShown(not addon.isHidden)
+            end
+        end)
+    end
+
+
 
     if parent.HookScript then
         parent:HookScript("OnShow", function()
@@ -788,6 +798,9 @@ do
 
         elseif ev == "PLAYER_LOGIN" then
             CreateCleanupButton()
+            if cleanupBtn then
+                cleanupBtn:SetShown(not addon.isHidden)
+            end
 
             if not createdCleanupBtn and _G.ToggleQuestLog and not hookedToggle then
                 hookedToggle = true
