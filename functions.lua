@@ -5863,6 +5863,9 @@ if addon.gameVersion >= 110000 then
         if type(self) == "string" then -- on parse
             local element = {}
             local text, stage, criteriaIndex, objMax = ...
+            if stage and stage:sub(1,1) == "+" then
+                element.ignoreProgress = true
+            end
             stage = tonumber(stage)
             criteriaIndex = tonumber(criteriaIndex)
             if not (stage and criteriaIndex) then
@@ -5924,7 +5927,7 @@ if addon.gameVersion >= 110000 then
         ]]
         if not step.active then
             return
-        elseif completed or quantity >= required or (element.stagePos and (currentStage and currentStage > element.stagePos)) then
+        elseif completed or quantity >= required or (element.ignoreProgress or (element.stagePos and (currentStage and currentStage > element.stagePos))) then
             if not element.completed and element.timer then
                 addon.StartTimer(element.timer,element.timerText)
             end
