@@ -38,10 +38,28 @@ addon.defaultGuideList = {
 }
 ]]
 
-if faction == "Horde" then
-    addon.defaultGroup = "RXP Cataclysm 1-80 (H)"
+local minLevel = 1
+
+if addon.player.class == "DEATHKNIGHT" then
+    addon.defaultGroup = "RestedXP Death Knight Start"
+    minLevel = 55
+elseif faction == "Horde" then
+    addon.defaultGroup = "RXP MoP 1-60 (H)"
 elseif faction == "Alliance" then
-    addon.defaultGroup = "RXP Cataclysm 1-80 (A)"
+    addon.defaultGroup = "RXP MoP 1-60 (A)"
+end
+
+function addon.LoadDefaultGuide()
+    local login = addon.tracker.state.login
+    local played = difftime(time(),login.time) + login.totalTimePlayed
+    if played > 120 or UnitLevel('player') > minLevel then
+        return
+    end
+    local defaultGuide = addon.defaultGuide
+    if defaultGuide then
+        --print(defaultGuide)
+        addon:LoadGuideTable(addon.defaultGroup,defaultGuide)
+    end
 end
 
 addon.subzoneList = {}
