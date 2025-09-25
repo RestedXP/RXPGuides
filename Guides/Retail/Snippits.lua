@@ -1899,15 +1899,20 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
-#next ac) Order Hall Mage Part 2
+#next ac) Order Hall Mage
 
 
-
+step
+    .isQuestTurnedIn 41113
+    .zoneskip 734
+    .zoneskip 735
+    .zone 734 >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .usespell 193759
 step
     .subzoneskip 7879,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
-    .goto 709,51.42,48.41
+    .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r  
     .target Meryl Felstorm
     .accept 44310 >>Accept Thrice the Power
@@ -1916,7 +1921,7 @@ step
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
     .isOnQuest 44310
-    .goto 709,51.42,48.41
+    .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r 
     .complete 44310,1 --1/1 Choose a third artifact to pursue
     .skipgossipid 46450
@@ -1926,7 +1931,7 @@ step
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
     .isQuestComplete 44310
-    .goto 709,51.42,48.41
+    .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
     .turnin 44310 >>Turn in Thrice the Power
@@ -1934,7 +1939,7 @@ step
     .subzoneskip 7879,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
-    .goto 709,51.42,48.41
+    .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
     .accept 43441 >>Accept A Second Weapon
     .target Meryl Felstorm
@@ -1943,7 +1948,7 @@ step
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
     .isOnQuest 43441
-    .goto 709,51.42,48.41
+    .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
     .complete 43441,1 --1/1 Choose a second artifact to pursue
     .skipgossipid 46450
@@ -1953,7 +1958,7 @@ step
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
     .isQuestComplete 43441
-    .goto 709,51.42,48.41
+    .goto 735,55.21,38.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r  
     .turnin 43441 >>Turn in A Second Weapon
     .target Meryl Felstorm
@@ -1982,14 +1987,27 @@ step
     .target Meryl Felstorm
     .turnin 41085 >>Turn in A Mage's Weapon
 step
-    .goto 735,59.15,43.01
+    .isQuestAvailable 41113
+    .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
     .target Meryl Felstorm
     .accept 42001 >>Accept Aluneth, Greatstaff of the Magna
 step
-    .isOnQuest 42001
+    .isQuestTurnedIn 41113
+    .goto 735,55.32,38.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
+    .target Meryl Felstorm
+    .accept 42001 >>Accept Aluneth, Greatstaff of the Magna
+step
+    .isQuestAvailable 41113
     .goto 735,62.48,51.16
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .usespell 224869
+step
+    .isQuestTurnedIn 41113
+    .goto 734,57.36,90.36
+    .zone 627 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles] or |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .usespell 224869
 step
     #requires Greatstaff of the Magna
     .goto 627,28.54,49.87
@@ -2040,7 +2058,8 @@ step
 step
     #completewith Communication Device
     .goto 115,56.66,69.11
-    .cast 3375 >>Click on the |cRXP_PICK_Communication Device|r
+    .cast 3365 >>Click on the |cRXP_PICK_Communication Device|r
+    .timer 26,RP
 step
     #requires Communication Device
     .goto 115,56.66,69.11
@@ -2234,9 +2253,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
-#next ac) Order Hall Mage Part 2
+#next ac) Order Hall Mage 
 
-
+step
+    .isQuestTurnedIn 41113
+    .zoneskip 734
+    .zoneskip 735
+    .zone 734 >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .usespell 193759
 step
     .zoneskip 735,1
     .isQuestTurnedIn 43441
@@ -2316,7 +2340,14 @@ step
     .target Meryl Felstorm
     .turnin 41085 >>Turn in A Mage's Weapon
 step
-    .goto 735,55.24,38.05
+    .isQuestAvailable 41113
+    .goto 735,59.15,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .target Meryl Felstorm
+    .accept 40267 >>Accept An Unexpected Message
+step
+    .isQuestTurnedIn 41113
+    .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
     .accept 40267 >>Accept An Unexpected Message
@@ -2327,13 +2358,21 @@ step
     .complete 40267,1 --1/1 Discover the Crystal's Message
 step
     #completewith Crystal's Message
-    .cast 195264>>Use |T132776:0|t[Glowing Resonate Crystal]
+    .cast 195264 >>Use |T132776:0|t[Glowing Resonate Crystal]
     .timer 40,RP
     .use 130131
+-- step
+--     #requires Crystal's Message
+--     .isQuestTurnedIn 42479
+--     .goto 735,53.2,41.44
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
+--     .accept 42429 >>Accept Memories of Ebonchill
+--     .target Old Fillmaff
 step
     #requires Crystal's Message
     #completewith next
     #label Orange is the New Purple
+    .isQuestTurnedIn 41113
     .goto 735,54.59,55.34,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jackson Watkins|r
     .accept 44240 >>Accept Orange is the New Purple
@@ -2342,9 +2381,11 @@ step
 step
     #requires Crystal's Message
     #completewith Orange is the New Purple
+    .isQuestTurnedIn 41113
     .goto 735,44.66,57.89,40 >>Follow the Arrow
 step
     #requires Orange is the New Purple
+    .isQuestTurnedIn 41113
     .goto 735,44.54,57.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jackson Watkins|r
     .accept 44240 >>Accept Orange is the New Purple
@@ -2352,12 +2393,39 @@ step
     .target Jackson Watkins
 step
     #requires Crystal's Message
+    .isQuestTurnedIn 41113
     #title |cFFFCDC00Follow the Arrow|r
     .goto 735,55.6,56.06,15,0
-    .goto 735,58.03,64.14,15,0
-    .goto 734,57.28,90.47
+    .goto 734,59.95,56.3
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40267,1 --1/1 Discover the Crystal's Message
+step
+    #requires Crystal's Message
+    .isQuestAvailable 41113
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 735,62.63,51.41
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 40267,1 --1/1 Discover the Crystal's Message
+step
+    .isQuestAvailable 41113
+    .goto 735,62.63,51.41
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    .isQuestTurnedIn 41113
+    .goto 734,57.31,90.48
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+-- step
+--     .isQuestTurnedIn 42479
+--     #loop
+--     .goto 627,48.04,16.94,30,0
+--     .goto 627,24.58,50.15,30,0
+--     .goto 627,46.85,69.23,30,0
+--     .goto 627,60.1,63.38,30,0
+--     .goto 627,68.45,44.91,30,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Ar'nareth|r |cRXP_WARN_found anywhere in dalaran|r.
+--     .complete 42429,1 --Speak to a Reflection of the Council of Tirisfal
+--     .skipgossipid 45655
+--     .target Fiora Ar'nareth
 step
     #completewith next
     #label Dalaran Crater
@@ -2369,9 +2437,9 @@ step
     .zone 627 >>Click on the |cRXP_PICK_Portal|r
 step
     #requires Dalaran Crater
-    .goto 627,53.13,52.24,15,0
-    .goto 627,49.01,47.36,15,0
-    .goto 629,36.82,72.57,15,0
+    .goto 627,53.13,52.24,10,0
+    .goto 627,49.01,47.36,10,0
+    .goto 629,36.82,72.57,10,0
     .goto 629,28.76,77.32
     >>Go to the center of dalaran and |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 40267,3 --Optional: Take Portal to Dalaran Crater
@@ -2460,8 +2528,9 @@ step
     .target Archmage Modera
 step
     #completewith Frozen Flame
+    .goto 700,51.85,18.65
     .zoneskip 627
-    .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+    .cast 224869 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r or Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
     .usespell 224869
 step
     #requires Frozen Flame
@@ -2469,10 +2538,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Modera|r
     .turnin 11997 >>Turn in The Frozen Flame
     .target Archmage Modera
-step
-    .zoneskip 734
-    .cast 193759 >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
-    .usespell 193759
 ]])
 --Frost
 RXPGuides.RegisterGuide([[
@@ -2482,9 +2547,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
-#next ac) Order Hall Mage Part 2
+#next ac) Order Hall Mage
 
-
+step
+    .isQuestTurnedIn 41113
+    .zoneskip 734
+    .zoneskip 735
+    .zone 734 >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .usespell 193759
 step
     .zoneskip 735,1
     .isQuestTurnedIn 43441
@@ -2564,7 +2634,14 @@ step
     .target Meryl Felstorm
     .turnin 41085 >>Turn in A Mage's Weapon
 step
-    .goto 735,55.33,38.17
+    .isQuestAvailable 41113
+    .goto 735,59.15,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .target Meryl Felstorm
+    .accept 42452 >>Accept Finding Ebonchill
+step
+    .isQuestTurnedIn 41113
+    .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
     .accept 42452 >>Accept Finding Ebonchill
@@ -2572,6 +2649,7 @@ step
     #loop
     .goto 735,55.14,34.77,5,0
     .goto 735,52.65,41.84,10,0
+    .goto 735,66.62,40.84,10,0
     .goto 735,53.89,49.19,10,0
     .goto 735,65.02,49.44,10,0
     .goto 735,66.53,40.82,10,0
@@ -2582,11 +2660,20 @@ step
     #label Speak with Meryl
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42452,2 --1/1 Speak with Meryl
+    -- .skipgossipid 46445
 step
     #completewith Speak with Meryl
-    .goto 735,59.15,42.94
+    .isQuestAvailable 41113
+    .goto 735,59.12,43.03
     .gossipoption 45566 >>Talk to |cRXP_FRIENDLY_Meryl|r
-    .timer 55,RP
+    .timer 54,RP
+    .target Meryl
+step
+    #completewith Speak with Meryl
+    .isQuestTurnedIn 41113
+    .goto 735,55.36,38.2
+    .gossipoption 46445 >>Talk to |cRXP_FRIENDLY_Meryl|r
+    -- .timer 55,RP
     .target Meryl
 step
     #requires Speak with Meryl
@@ -2594,7 +2681,16 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42452,2 --1/1 Speak with Meryl
 step
+    .isQuestAvailable 41113
     .goto 735,59.15,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 42452 >>Turn in Finding Ebonchill
+    .target Meryl Felstorm
+    .accept 42477 >>Accept Daio the Decrepit
+    .accept 42476 >>Accept The Deadwind Site
+step
+    .isQuestTurnedIn 41113
+    .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 42452 >>Turn in Finding Ebonchill
     .target Meryl Felstorm
@@ -2606,17 +2702,40 @@ step
     .accept 42455 >>Accept Alodi's Gems
     .target Alodi
 step
+    .isQuestAvailable 41113
     #completewith next
     #hidewindow
     #label Bank of Dalaran
     .complete 42455,1 --1/1 Go to the Bank of Dalaran
 step
+    .isQuestAvailable 41113
     #completewith Bank of Dalaran
-    .goto 735,62.57,51.41
-    .zone 627 >>Click on the |cRXP_PICK_Portal|r
+    .goto 735,63.77,49.66
+    .zone 627 >>Click on the |cRXP_PICK_Portal|r or Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
     -- .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles].
     -- .usespell 224869
 step
+    .isQuestAvailable 41113
+    #requires Bank of Dalaran
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 627,51.66,22.26,20,0
+    .goto 627,52.88,19.12
+    .complete 42455,1 --1/1 Go to the Bank of Dalaran
+step
+    .isQuestTurnedIn 41113
+    #completewith next
+    #hidewindow
+    #label Bank of Dalaran
+    .complete 42455,1 --1/1 Go to the Bank of Dalaran
+step
+    .isQuestTurnedIn 41113
+    #completewith Bank of Dalaran
+    .goto 734,57.34,90.63
+    .zone 627 >>Click on the |cRXP_PICK_Portal|r or Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+    -- .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles].
+    -- .usespell 224869
+step
+    .isQuestTurnedIn 41113
     #requires Bank of Dalaran
     #title |cFFFCDC00Follow the Arrow|r
     .goto 627,51.66,22.26,20,0
@@ -2637,7 +2756,7 @@ step
     .timer 26,RP
     .target Glutonia
 step
-    #requires manager%
+    #requires manager
     .goto 627,55.08,16.45
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42455,2 --1/1 Speak with the manager
@@ -2659,6 +2778,7 @@ step
     .complete 42477,2 --1/1 Fly to the Tainted Scar and find Daio
 step
     #completewith Blasted Lands Scroll
+    .goto 627,54.22,19.39
     .cast 311800 >>Use |T254294:0|t[Blasted Lands Scroll]
     .use 173699
 step
@@ -2730,14 +2850,21 @@ step
     .turnin 42455 >>Turn in Alodi's Gems
     .target Alodi
 step
-   .goto 735,59.05,42.87
+    .isQuestAvailable 41113
+    .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 42476 >>Turn in The Deadwind Site
     .target Meryl Felstorm
     .turnin 42477 >>Turn in Daio the Decrepit
+    .accept 42479 >>Accept The Mage Hunter
+    .target Meryl Felstorm
 step
-   .goto 735,59.05,42.87
+    .isQuestTurnedIn 41113
+    .goto 735,55.32,38.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 42476 >>Turn in The Deadwind Site
+    .target Meryl Felstorm
+    .turnin 42477 >>Turn in Daio the Decrepit
     .accept 42479 >>Accept The Mage Hunter
     .target Meryl Felstorm
 step
@@ -2750,25 +2877,33 @@ step
 --     .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
 --     .usespell 224869
 step
+    .isQuestAvailable 41113
     #completewith Dalaran to Faronaar
     .goto 735,62.44,51.32
+    .zone 627 >>Click on the |cRXP_PICK_Portal|r
+step
+    .isQuestTurnedIn 41113
+    #completewith Dalaran to Faronaar
+    .goto 734,57.39,90.1
     .zone 627 >>Click on the |cRXP_PICK_Portal|r
 step
     #requires Dalaran to Faronaar
     .goto 627,69.82,51.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aludane Whitecloud|r
     .complete 42479,1 --1/1 Take the hippogryph in Dalaran to Faronaar
-    .timer 300,RP
+    .timer 200,RP
     .skipgossipid 44179
     .target Aludane Whitecloud
 step
     .isOnQuest 42479
+    .goto 630,26.79,49.02
+    #title |cFFFCDC00Follow the Arrow|r
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2526,1 --Speak with Meryl and Alodi
     .target Meryl and Alodi
 step
     .isOnQuest 42479
-    .goto 630,30.1,48.34
+    .goto 630,30.11,48.35
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fel Dampening Ward|r
     *|cRXP_WARN_Try flying sometimes some parts of this scenario allow it|r.
     .scenario 2528,1,1 --Wards set up
@@ -2838,7 +2973,7 @@ step
     .scenario 2531,1 --Slay Balaadur
     .mob Balaadur
 step
-    .goto 619,67.0,92.7
+    .goto 619,67.05,92.74
     .isInScenario 1122
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .scenario 2532,1 --Claim Ebonchill.
@@ -2862,52 +2997,91 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 42479 >>Turn in The Mage Hunter
     .target Meryl Felstorm
+-- step
+--     .goto 735,53.2,41.44
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
+--     .accept 42429 >>Accept Memories of Ebonchill
+--     .target Old Fillmaff
+-- step
+--     #completewith next
+--     #label Council of Tirisfal
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Ar'nareth|r |cRXP_WARN_found anywhere in dalaran|r.
+--     .complete 42429,1 --Speak to a Reflection of the Council of Tirisfal
+-- step
+--     #completewith Council of Tirisfal
+--     .zoneskip 627
+--     .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+--     .usespell 224869
+-- step
+--     #requires Council of Tirisfal
+--     #loop
+--     .goto 627,48.04,16.94,30,0
+--     .goto 627,24.58,50.15,30,0
+--     .goto 627,46.85,69.23,30,0
+--     .goto 627,60.1,63.38,30,0
+--     .goto 627,68.45,44.91,30,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Ar'nareth|r |cRXP_WARN_found anywhere in dalaran|r.
+--     .complete 42429,1 --Speak to a Reflection of the Council of Tirisfal
+--     .skipgossipid 45655
+--     .target Fiora Ar'nareth
+-- step
+--     #completewith next
+--     #label Memories of Ebonchill
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
+--     .turnin 42429 >>Turn in Memories of Ebonchill
+--     .target Old Fillmaff
+-- step
+--     #completewith Memories of Ebonchill
+--     .zoneskip 734
+--     .cast 193759 >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+--     .usespell 193759
+-- step
+--     #requires Memories of Ebonchill
+--     .goto 734,53.25,70.58,20,0
+--     .goto 734,59.56,56.41,20,0
+--     .goto 735,53.30,41.40
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
+--     .turnin 42429 >>Turn in Memories of Ebonchill
+--     .target Old Fillmaff
+]])
+--Arcane 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Arcane
+#displayname Artifact Weapon: Arcane
+#next ac) Order Hall Mage Part 2
+
 step
-    .goto 735,53.2,41.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
-    .accept 42429 >>Accept Memories of Ebonchill
-    .target Old Fillmaff
+    #include a) Artifact Weapon: Arcane
+]])
+--Fire 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Fire
+#displayname Artifact Weapon: Fire
+#next ac) Order Hall Mage Part 2
+
 step
-    #completewith next
-    #label Council of Tirisfal
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Ar'nareth|r |cRXP_WARN_found anywhere in dalaran|r.
-    .complete 42429,1 --Speak to a Reflection of the Council of Tirisfal
+    #include a) Artifact Weapon: Fire
+]])
+--Frost 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Frost Mage
+#displayname Artifact Weapon: Frost
+#next ac) Order Hall Mage Part 2
+
 step
-    #completewith Council of Tirisfal
-    .zoneskip 627
-    .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
-    .usespell 224869
-step
-    #requires Council of Tirisfal
-    #loop
-    .goto 627,48.04,16.94,30,0
-    .goto 627,24.58,50.15,30,0
-    .goto 627,46.85,69.23,30,0
-    .goto 627,60.1,63.38,30,0
-    .goto 627,68.45,44.91,30,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fiora Ar'nareth|r |cRXP_WARN_found anywhere in dalaran|r.
-    .complete 42429,1 --Speak to a Reflection of the Council of Tirisfal
-    .skipgossipid 45655
-    .target Fiora Ar'nareth
-step
-    #completewith next
-    #label Memories of Ebonchill
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
-    .turnin 42429 >>Turn in Memories of Ebonchill
-    .target Old Fillmaff
-step
-    #completewith Memories of Ebonchill
-    .zoneskip 734
-    .cast 193759 >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
-    .usespell 193759
-step
-    #requires Memories of Ebonchill
-    .goto 734,53.25,70.58,20,0
-    .goto 734,59.56,56.41,20,0
-    .goto 735,53.30,41.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
-    .turnin 42429 >>Turn in Memories of Ebonchill
-    .target Old Fillmaff
+    #include a) Artifact Weapon: Frost Mage
 ]])
 --Mage Intro 1
 RXPGuides.RegisterGuide([[
@@ -7125,7 +7299,8 @@ step
 step
     .isOnQuest 41105
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 18,13.5,56.65,40 >>Follow the Arrow
+    .goto 18,13.5,56.65,100 >>Follow the Arrow
+    *|cRXP_WARN_if you are stuck;relog|r
 step
     .isOnQuest 41105
     #title |cFFFCDC00Follow the Arrow|r
@@ -7421,21 +7596,21 @@ step
     *|cRXP_WARN_If the npcs gets stuck; relog|r
     .scenario 1912,1 --Defeat Vigfus Bladewind
     .mob Vigfus Bladewind
--- step
---     .isInScenario 944
---     .goto 634,58.07,44.99,10 >>Follow the Arrow
 step
     .isInScenario 944
-    .goto 694/1511,1705.2569,3440.3982,20,0 >>Defeat |cRXP_ENEMY_Vigfus Bladewind|r |cRXP_WARN_again|r.
+    .goto 694/1220,1705.2569,3440.3982
+    .goto 694/1511,1705.2569,3440.3982,20 >>Defeat |cRXP_ENEMY_Vigfus Bladewind|r |cRXP_WARN_again|r.
 step
+    .isInScenario 944
+    .goto 694/1220,1799.2506,3515.4520
     .goto 694/1511,1799.2506,3515.4520
-    .isInScenario 944
     >>|cRXP_WARN_Wait for the Roleplay|r
-    >>Kill|cRXP_ENEMY_Vigfus Bladewind|r.
+    >>Kill |cRXP_ENEMY_Vigfus Bladewind|r.
     .scenario 1913,1 --Chase and kill Vigfus
-    .mob Vigfus Bladewind
+    .mob Vigfus Bladewinds
 step
-    .goto 694,55.74,42.95
+    .goto 694/1220,1799.2506,3515.4520
+    .goto 694/1511,1799.2506,3515.4520
     .isInScenario 944
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .scenario 1914,1 --Take the Warswords
@@ -7634,9 +7809,8 @@ step
     .mob Spectral Windshaper
 step
     .isInScenario 909
-    .goto 635,49.24,87.94
-    *Kill |cRXP_ENEMY_Spectral Windshaper|r to get rid of the winds.
-    >>Kill |cRXP_ENEMY_Magnar Icebreaker|r
+    .goto 635,50.12,82.45
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 1869,1
     .mob Magnar Icebreaker
     .mob Spectral Windshaper
@@ -7644,7 +7818,7 @@ step
     .goto 635,49.95,82.61
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .complete 39191,2 --1/1 Deal with Magnar Icebreaker
-    .scenario 1833,1
+    -- .scenario 1833,1
 step
     .goto 635,49.95,82.61
     >>Use the |cRXP_WARN_ExtraActionButton|r

@@ -1484,7 +1484,6 @@ RXPGuides.RegisterGuide([[
 #name ab) Order Hall Mage Part 1
 #displayname |cFF00CCFF3|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#name ac) Order Hall Mage Part 2
 
 << Mage
 
@@ -1567,7 +1566,7 @@ step
     .goto 723,50.96,48.12
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge|r
     .complete 41036,2 --1/1 Recover the Forge of the Guardian
-    .timer 43,RP
+    .timer 41,RP
 step
     .isInScenario 1034
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -1590,7 +1589,7 @@ step
     *|cFFFF0000You can't progress if you don't select one|r.
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Fire >> Fire(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Arcane >> Arcane(DPS) Questline
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost >> Frost(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost Mage >> Frost(DPS) Questline
 -- step
 --     .spec 3
 --     .goto 735,61.25,26.07
@@ -1639,37 +1638,37 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 
--- step
---     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
---     .accept 41114 >>Accept The Champion's Return
---     .usespell 193759
--- step
---     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
---     .complete 41114,1 --1/1 Teleport to the Hall of the Guardian
---     .usespell 193759
--- step
---     #completewith next
---     #label Champion's Return
---     .goto 734,57.58,85.44,15,0
---     .goto 734,53.53,68.82,15,0
---     .goto 735,57.41,70.85,15,0
---     .goto 735,57.91,51.72,15,0
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
---     .turnin 41114 >>Turn in The Champion's Return
---     .target Meryl Felstorm
---     .accept 41112 >>Accept The Great Akazamzarak
---     .disablecheckbox
--- step
---     #completewith Champion's Return
---     #hidewindow
---     .goto 735,56.58,33.79,40 >>1
--- step
---     #requires Champion's Return
---     .goto 735,56.58,33.79
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
---     .turnin 41114 >>Turn in The Champion's Return
---     .target Meryl Felstorm
---     .accept 41112 >>Accept The Great Akazamzarak
+step
+    >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .accept 41114 >>Accept The Champion's Return
+    .usespell 193759
+step
+    >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .complete 41114,1 --1/1 Teleport to the Hall of the Guardian
+    .usespell 193759
+step
+    #completewith next
+    #label Champion's Return
+    .goto 734,57.58,85.44,15,0
+    .goto 734,53.53,68.82,15,0
+    .goto 735,57.41,70.85,15,0
+    .goto 735,57.91,51.72,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41114 >>Turn in The Champion's Return
+    .target Meryl Felstorm
+    .accept 41112 >>Accept The Great Akazamzarak
+    .disablecheckbox
+step
+    #completewith Champion's Return
+    #hidewindow
+    .goto 735,56.58,33.79,40 >>1
+step
+    #requires Champion's Return
+    .goto 735,56.58,33.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
+    .turnin 41114 >>Turn in The Champion's Return
+    .target Meryl Felstorm
+    .accept 41112 >>Accept The Great Akazamzarak
 step
     #completewith next
     #label Akazamzarak bribed
@@ -1677,7 +1676,9 @@ step
     .complete 41112,2 --1/1 Akazamzarak bribed
 step
     #completewith Akazamzarak bribed
-    .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+    .goto 734,57.29,90.56 
+    >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles] or click on the |cRXP_PICK_Portal|r.
+    .complete 41112,1 --1/1 Portal to Dalaran Taken (Optional)
     .usespell 224869
 step
     #requires Akazamzarak bribed
@@ -1690,33 +1691,34 @@ step
     .turnin 41112 >>Turn in The Great Akazamzarak
     .target The Great Akazamzarak
     .accept 41113 >>Accept The Only Way to Travel
+    .timer 8,RP
 step
     #completewith next
     #label Only Way to Travel
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 41113 >>Turn in The Only Way to Travel
-    .timer 60,RP
     .target Meryl Felstorm
 step
     #completewith Only Way to Travel
-    .zoneskip 734
-    .cast 193759>>Use |T1536440:0|t[Teleport: Hall of the Guardian].
-    .usespell 193759
+    .goto 627,48.73,63.37
+    .zone 735 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    -- .cast 193759>>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    -- .usespell 193759
 step
     #requires Only Way to Travel
-    .goto 734,57.58,85.44,15,0
-    .goto 734,53.53,68.82,15,0
-    .goto 735,57.41,70.85,15,0
+    -- .goto 734,57.58,85.44,15,0
+    -- .goto 734,53.53,68.82,15,0
+    -- .goto 735,57.41,70.85,15,0
     .goto 735,56.56,33.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 41113 >>Turn in The Only Way to Travel
-    .timer 64,RP
+    .timer 31,RP
     .target Meryl Felstorm
 step
     .goto 735,60.52,34.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .accept 41124 >>Accept The Tirisgarde Reborn
-    .timer 50,RP
+    .timer 30,RP
     .target Meryl Felstorm
 step
     #completewith next
@@ -1739,7 +1741,10 @@ step
     .turnin 41124 >>Turn in The Tirisgarde Reborn
     .target The Great Akazamzarak
     .accept 41141 >>Accept A Conjuror's Duty
----here map quest
+step
+    .goto 734,81.61,60.37
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
+    .complete 41141,1 --1/1 Zone Chosen
 step
     .goto 734,81.61,60.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
@@ -1766,7 +1771,7 @@ step
     #requires Rise, Champions
     .goto 735,55.28,38.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
-    *|cRXP_WARN_If hte npc isn't there, relog|r.
+    *|cRXP_WARN_If the npc isn't there, relog|r.
     .accept 42663 >>Accept Rise, Champions
     .target Meryl Felstorm
 step
@@ -1788,60 +1793,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 42663 >>Turn in Rise, Champions
     .target Meryl Felstorm
-    .accept 42703 >>Accept Technical Wizardry
 step
-    #completewith next
-    #label Technical Wizardry
-    .goto 735,63.15,57.27,10,0
-    .goto 734,77.67,51.46,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
-    .turnin 42703 >>Turn in Technical Wizardry
-    .target Archmage Melis
-    .accept 42126 >>Accept Archmage Omniara
-    .disablecheckbox
-step
-    #completewith Technical Wizardry
-    .goto 734,80.85,63.13,30 >>Follow the Arrow
-step
-    #requires Technical Wizardry
-    .goto 734,80.85,63.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
-    .turnin 42703 >>Turn in Technical Wizardry
-    .target Archmage Melis
-    .accept 42126 >>Accept Archmage Omniara
-step
-    #completewith next
-    #label Technical Wizardry
-    .goto 735,63.7,57.42,20,0
-    .goto 735,73.96,63.47,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
-    .turnin 42703 >>Turn in Technical Wizardry
-    .target Archmage Melis
-    .accept 42126 >>Accept Archmage Omniara
-    .disablecheckbox
-step
-    #completewith Technical Wizardry
-    #hidewindow
-    .goto 734,80.85,63.13,40 >>1
-step
-    #requires Technical Wizardry
-    .goto 734,80.85,63.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
-    .turnin 42703 >>Turn in Technical Wizardry
-    .target Archmage Melis
-    .accept 42126 >>Accept Archmage Omniara
-step
-    .goto 734,80.90,63.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
-    .turnin 42126 >>Turn in Archmage Omniara
-    .target Archmage Melis
-    .accept 42127 >>Accept Building Our Troops
-step
-    .goto 734,80.82,63.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Melis|r
-    .turnin 42127 >>Turn in Building Our Troops
-    .target Archmage Melis
-    .accept 42687 >>Accept Troops in the Field
+    .goto 734,57.31,90.57
+    .zone 627 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles] or click on the |cRXP_PICK_Portal|r.
+    .usespell 224869
 ]])
 
 ---Paladin Order Hall Intro 1
@@ -2317,28 +2272,65 @@ RXPGuides.RegisterGuide([[
 
 << Warrior
 
+38904
+
 step
+    #optional 
+    .convertquest 42815,38904 << Horde
+step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Dalton|r |cRXP_WARN_next to you|r.
     .accept 42814 >>Accept An Important Mission
     .target Sergeant Dalton
-step
+step << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r |cRXP_WARN_next to you|r.
+    .accept 41052 >>Accept A Desperate Plea
+    .target Eitrigg
+step << Horde
+    .goto 627,75.06,46.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Overlord Saurfang|r
+    .complete 41052,1 --1/1 Speak with High Overlord Saurfang
+    .skipgossipid 45801
+    .skipgossipid 45802
+    .target High Overlord Saurfang
+step << Horde
+    .goto 627,75.06,46.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Overlord Saurfang|r
+    .turnin 41052 >>Turn in A Desperate Plea
+    .accept 38904 >>Accept Return to the Broken Shore
+    .target High Overlord Saurfang
+step << Alliance
     .goto 627,74.61,45.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
     .turnin 42814 >>Turn in An Important Mission
     .target Danath Trollbane
     .accept 42815 >>Accept Return to the Broken Shore
-step
+step << Alliance
     #completewith next
     #label Broken Shore
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42815,1,1 --1/1 Take the flight to the Broken Shore
-step
+step << Alliance
     #completewith Broken Shore
     .goto 627,74.49,44.14
     .vehicle >>Click on the |cRXP_PICK_Elite Gryphon|r
     .timer 50,RP
     .target Elite Gryphon
-step
+step << Alliance
+    #requires Broken Shore
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 42815,1,1 --1/1 Take the flight to the Broken Shore
+step << Horde
+    #completewith next
+    #label Broken Shore
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 42815,1,1 --1/1 Take the flight to the Broken Shore
+step << Horde
+    #completewith Broken Shore
+    .goto 627,75.06,47.18
+    .vehicle >>Click on the |cRXP_PICK_Makka|r
+    .timer 50,RP
+    .target Makka
+step << Horde
     #requires Broken Shore
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42815,1,1 --1/1 Take the flight to the Broken Shore
