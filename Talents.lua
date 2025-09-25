@@ -486,6 +486,7 @@ function addon.talents.functions.talent(element, validate, optional)
     local talentIndex
     local name, previewRankOrRank
     local lookup
+    local tempData
 
     -- TODO handle off-plan talents
     for _, talentData in ipairs(element.talent) do
@@ -521,9 +522,8 @@ function addon.talents.functions.talent(element, validate, optional)
         end
 
         if previewRankOrRank < talentData.rank then
-            if addon.gameVersion < 20000 then
-                local d = {talentData.tab, talentIndex, name}
-                local prompt = fmt(_G.CONFIRM_LEARN_TALENT, name)
+            if addon.gameVersion < 20000 then -- Classic doesn't have Preview Talents
+                tempData = {talentData.tab, talentIndex, name}
 
                 if optional then
                     -- TODO user input timing, noop prompt informing of action/options
@@ -533,19 +533,19 @@ function addon.talents.functions.talent(element, validate, optional)
                                             _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
                                             name, _G.RANK, talentData.rank)
                 else
-                    addon.comms:ConfirmChoice("RXPTalentPrompt", prompt,
-                                              learnClassicTalent, d)
+                    addon.comms:ConfirmChoice("RXPTalentPrompt", fmt(_G.CONFIRM_LEARN_TALENT, name),
+                                              learnClassicTalent, tempData)
                 end
 
                 -- Stop as soon as first learning prompt, not a blocking dialog
                 return -1
-            elseif addon.settings.profile.previewTalents then
-                local before = GetGroupPreviewTalentPointsSpent()
+            elseif addon.settings.profile.previewTalents then -- TBC/Wrath/Cata
+                tempData = GetGroupPreviewTalentPointsSpent()
                 -- TODO if optional
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
 
                 -- Verify training actually worked, there's no return value from Preview
-                if before == GetGroupPreviewTalentPointsSpent() then
+                if tempData == GetGroupPreviewTalentPointsSpent() then
                     addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN,
                                     name))
                     return false
@@ -553,7 +553,7 @@ function addon.talents.functions.talent(element, validate, optional)
 
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
-            else
+            else -- TBC/Wrath/Cata
                 -- TODO if optional
                 if LearnTalent(talentData.tab, talentIndex) then
                     addon.comms.PrettyPrint("%s - %s (%s %d)",
