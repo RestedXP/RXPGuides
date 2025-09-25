@@ -184,7 +184,7 @@ function addon.talents:Setup()
 
     self:UpdateSelectedGuide(RXPCData.activeTalentGuide)
 
-    if tonumber(GetCVar("previewTalents")) == 0 and addon.gameVersion > 30000 and
+    if tonumber(GetCVar("previewTalents")) == 0 and addon.game == "WOTLK" and
         addon.settings.profile.previewTalents then
         -- Talents are enabled in RXP, so match client
         -- This only lasts per session, does not persist in-game setting
@@ -246,7 +246,7 @@ function addon.talents:UpdateTalentsButton()
         iconReference.point = {
             "TOPLEFT", iconReference.frame, "TOPRIGHT", -32, -65
         }
-    elseif addon.gameVersion < 20000 then
+    elseif addon.game == "CLASSIC" then
         iconReference.frame = _G.PlayerTalentFrame
         iconReference.size = 32
         iconReference.point = {
@@ -450,7 +450,7 @@ end
 
 -- { tab, talentIndex, name }
 local function learnClassicTalent(payload)
-    if addon.gameVersion > 20000 then return end
+    if addon.game ~= "CLASSIC" then return end
 
     local tab, talentIndex, name = unpack(payload)
     local result = LearnTalent(tab, talentIndex)
@@ -501,18 +501,15 @@ function addon.talents.functions.talent(element, validate, optional)
             return false
         end
 
-        -- TODO validate cataLevelLookup for overun, allow underrun for multi-spec chains
-
         talentIndex = lookup[talentData.tier][talentData.column]
 
         if talentIndex and validate then return true end
 
-        if addon.gameVersion > 40000 then
-            -- Return values don't match API docs/TWW, so used /dump GetTalentInfo(1,11) for Arms War
+        if addon.game == "CATA" then
             name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(
                                                             talentData.tab,
                                                             talentIndex)
-        elseif addon.gameVersion > 30000 then
+        elseif addon.game == "WOTLK" then
             name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
                                                                   talentData.tab,
                                                                   talentIndex)
@@ -522,7 +519,7 @@ function addon.talents.functions.talent(element, validate, optional)
         end
 
         if previewRankOrRank < talentData.rank then
-            if addon.gameVersion < 20000 then -- Classic doesn't have Preview Talents
+            if addon.game == "CLASSIC" then -- Classic doesn't have Preview Talents
                 tempData = {talentData.tab, talentIndex, name}
 
                 if optional then
@@ -573,7 +570,7 @@ function addon.talents.functions.talent(element, validate, optional)
 end
 
 function addon.talents.functions.pettalent(element, validate)
-    if addon.gameVersion < 30000 then return end
+    if addon.game ~= "WOTLK" then return end
 
     if type(element) == "string" then -- on parse
         local e = {pettalent = {}}
@@ -683,7 +680,7 @@ function addon.talents:UpdateSelectedGuide(key)
     return true
 end
 
-if addon.gameVersion < 40000 then
+if addon.game ~= "CATA" then
     talentTooltips.updateFunc = function(self)
         local tooltip = talentTooltips.data[self:GetID()]
         if not tooltip then return end
