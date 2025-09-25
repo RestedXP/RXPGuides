@@ -1031,7 +1031,7 @@ RXPGuides.RegisterGuide([[}
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
-#next ac) Order Hall Demon Hunter Part 2
+#next ac) Order Hall Demon Hunter
 
 step
     .zoneskip 720,1
@@ -1045,6 +1045,7 @@ step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
+    .isOnQuest 44383
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 44383,1 --1/1 Artifact weapon chosen
@@ -1054,6 +1055,7 @@ step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
+    .isQuestComplete 44383
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 44383 >>Turn in Pursuit of Power
@@ -1068,6 +1070,7 @@ step
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
+    .isOnQuest 40814
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 40814,1 --1/1 Artifact weapon chosen
@@ -1082,11 +1085,37 @@ step
     .turnin 40814 >>Turn in The Power to Survive
     .target Kayn Sunfury
 step
+    .isQuestAvailable 40249
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .target Kayn Sunfury
     .accept 40819 >>Accept Making Arrangements
-step}
+step
+    .isQuestTurnedIn 40249
+    .goto 720,58.61,57.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .target Kayn Sunfury
+    .accept 40819 >>Accept Making Arrangements
+step
+    .isQuestTurnedIn 40249
+    #completewith next
+    #label Making Arrangements
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 40819 >>Turn in Making Arrangements
+    .accept 39051 >>Accept By Any Means
+step
+    .isQuestTurnedIn 40249
+    #completewith Making Arrangements
+    .goto 720,59.31,91.85
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    .isQuestTurnedIn 40249
+    #requires Making Arrangements
+    .goto 627,65.63,67.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 40819 >>Turn in Making Arrangements
+    .accept 39051 >>Accept By Any Means
+step
     .goto 627,65.63,67.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 40819 >>Turn in Making Arrangements
@@ -1142,7 +1171,7 @@ step
     .scenario 1808,1
     .target Illidari Fel Bat
 step
-    .isOnQuest 39247
+    .isInScenario 900
     .goto 680,25.21,60.8,30,0
     .goto 680,25.87,61.97,30,0
     .goto 680,26.69,63.05,30,0
@@ -1152,17 +1181,18 @@ step
     .mob Felsoul Fleshcarver
     .mob Felsoul Berserker
 step
-    .isOnQuest 39247
+    .isInScenario 900
     .goto 680,28.18,64.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
     .scenario 1822,1,1
 step
-    .isOnQuest 39247
+    .isInScenario 900
+    .goto 680,29.16,61.02,10,0
     .goto 680,29.32,60.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
     .scenario 1822,1,2
 step
-    .isOnQuest 39247
+    .isInScenario 900
     #loop
     .goto 680,30.09,60.65,20,0
     .goto 680,29.97,63.95,30,0
@@ -1175,34 +1205,49 @@ step
     .mob Living Flame
     .mob Felsoul Ritualist
 step
-    .isOnQuest 39247
+    .isInScenario 900
+    .goto 680,31.25,66.26,10,0
     .goto 680,31.5,66.77
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystal|r
     .scenario 1822,1,3
 step
-    .isOnQuest 39247
+    .isInScenario 900
     .goto 680,32.96,66.96
     >>Kill |cRXP_ENEMY_Varedis Felsoul|r
     .scenario 1825,1
     .mob Varedis Felsoul
 step
-    .isOnQuest 39247
+    .isInScenario 900
     .goto 680,32.96,66.96
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Twinblades of the Deceiver|r
     .complete 39247,2 --1/1 Twinblades of the Deceiver
+    .scenario 2712,1
+step
+    .isInScenario 900
+    .zone 627 >>Leave the Instance(Right-Click your player frame) or press the macro.
+    .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
+step
+    .isQuestAvailable 40249
+    .goto 627,73.86,46.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .turnin 39247 >>Turn in The Hunt
+    .target Kor'vas Bloodthorn
 step
     #completewith next
     #label Turn in The Hunt
+    .isQuestTurnedIn 40249
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .turnin 39247 >>Turn in The Hunt
     .target Kor'vas Bloodthorn
 step
     #completewith Turn in The Hunt
-    .zone 627 >>Leave the Instance(Right-Click your player frame) or press the macro.
-    .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
+    .isQuestTurnedIn 40249
+    .goto 627,98.13,69.47
+    .zone 720 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     #requires Turn in The Hunt
-    .goto 627,73.86,46.11
+    .isQuestTurnedIn 40249
+    .goto 720,59.31,57.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .turnin 39247 >>Turn in The Hunt
     .target Kor'vas Bloodthorn
@@ -1215,7 +1260,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
-#next ac) Order Hall Demon Hunter Part 2
+#next ac) Order Hall Demon Hunter
 
 
 step
@@ -1230,15 +1275,17 @@ step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
+    .isOnQuest 44383
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 44383,1 --1/1 Artifact weapon chosen
-    .choose 1271767
+    .choose 1390101
     .skipgossipid 45738
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
+    .isQuestComplete 44383
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 44383 >>Turn in Pursuit of Power
@@ -1253,10 +1300,11 @@ step
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
+    .isOnQuest 40814
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 40814,1 --1/1 Artifact weapon chosen
-    .choose 1271767
+    .choose 1390101
     .skipgossipid 45106
 step
     .zoneskip 627,1
@@ -1272,9 +1320,34 @@ step
     .accept 40247 >>Accept Asking a Favor
     .target Kayn Sunfury
 step
+    .isQuestAvailable 39247
     .goto 627,28.53,48.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
     .turnin 40247 >>Turn in Asking a Favor
+    .accept 41804 >>Accept Ask and You Shall Receive
+    .timer 57.5,RP
+    .target Archmage Khadgar
+step
+    .isQuestTurnedIn 39247
+    #completewith next
+    #label Turn in Asking a Favor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .turnin 40247 >>Turn in Asking a Favor
+    .accept 41804 >>Accept Ask and You Shall Receive
+    .disablecheckbox
+    .target Archmage Khadgar
+step
+    #completewith Turn in Asking a Favor
+    .goto 720,59.25,91.82
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    .isQuestTurnedIn 39247
+    #requires Turn in Asking a Favor
+    .goto 627,28.53,48.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .turnin 40247 >>Turn in Asking a Favor
+    .accept 41804 >>Accept Ask and You Shall Receive
+    .timer 57.5,RP
     .target Archmage Khadgar
 step
     .goto 627,25.35,47.24,15,0
@@ -1285,6 +1358,7 @@ step
     .goto 627,26.78,44.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r
     .complete 41804,2 --1/1 Crystallized Soul
+    .timer 15.5,RP
 step
     .goto 627,28.49,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
@@ -1301,11 +1375,11 @@ step
     .goto 627,74.35,52.07
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Communicator|r
     .complete 41807,1 --1/1 Legion Communicator activated
+    .timer 19,RP
 step
-    .goto 627,74.35,52.07
+    .goto 627,74.43,51.31
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 41807,2 --1/1 Scout's report received
-    .timer 120,RP
 step
     .goto 627,74.54,51.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r
@@ -1325,7 +1399,7 @@ step
     #completewith Fly to the Broken Shore
     .goto 627,75.28,47.58
     .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Illidari Fel Bat|r
-    .timer 28
+    .timer 28,RP
     .target Illidari Fel Bat
 step
     #requires Fly to the Broken Shore
@@ -1336,7 +1410,7 @@ step
     .countdown 12 >>|cRXP_WARN_Wait for the Roleplay|r.
 step
     .goto 676,15.09,51.77
-    .isInScenario 961
+    .isOnQuest 40249
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Allari the Souleater|r
     .scenario 1939,1 --Free Allari the Souleater.
     .target Allari the Souleater
@@ -1364,7 +1438,7 @@ step
 step
     .isInScenario 961
     .goto 676,21.92,61.12
-    >>|T1247266:0|t[Spectral Sight]
+    >>Use |T1247266:0|t[Spectral Sight] infront of the cave.
     .scenario 1941,1 --Find Caria's trail.
     .usespell 188501
 step
@@ -1385,7 +1459,7 @@ step
     .goto 676,23.73,63.82,15,0
     .goto 676,24.3,64.04,15,0
     .goto 676,25.11,63.11,30 >>Follow the Arrow
-    .timer 13,RP
+    .timer 11,RP
 step
     #requires Caria Felsoul
     .goto 676,26.82,61.37
@@ -1403,10 +1477,51 @@ step
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
     .complete 40249,3 --1/1 Return to Dalaran
 step
+    .isQuestAvailable 39247
+    #completewith next
+    #label Vengeance Will Be Ours
     .goto 627,73.83,46.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .turnin 40249 >>Turn in Vengeance Will Be Ours
     .target Kor'vas Bloodthorn
+step
+    .isQuestAvailable 39247
+    #completewith Vengeance Will Be Ours
+    .goto 720,59.25,91.82
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|
+step
+    .isQuestAvailable 39247
+    #requires Vengeance Will Be Ours
+    .goto 627,73.83,46.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .turnin 40249 >>Turn in Vengeance Will Be Ours
+    .target Kor'vas Bloodthorn
+]])
+--Havoc 2 
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Havoc
+#displayname Artifact Weapon: Havoc
+#next ac) Order Hall Demon Hunter Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Havoc
+]])
+--Vengeance 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Vengeance
+#displayname Artifact Weapon: Vengeance
+#next ac) Order Hall Demon Hunter Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
 ]])
 --Demon Hunter Intro 1
 RXPGuides.RegisterGuide([[
@@ -1732,7 +1847,6 @@ RXPGuides.RegisterGuide([[
 #next
 
 ]])
-
 --Hunter Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -1801,6 +1915,7 @@ step
     .subzoneskip 7879,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
+    .isOnQuest 44310
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r 
     .complete 44310,1 --1/1 Choose a third artifact to pursue
@@ -1810,6 +1925,7 @@ step
     .subzoneskip 7879,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
+    .isQuestComplete 44310
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
@@ -1826,6 +1942,7 @@ step
     .subzoneskip 7879,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
+    .isOnQuest 43441
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
     .complete 43441,1 --1/1 Choose a second artifact to pursue
@@ -1835,6 +1952,7 @@ step
     .subzoneskip 7879,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
+    .isQuestComplete 43441
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r  
     .turnin 43441 >>Turn in A Second Weapon
@@ -1849,6 +1967,7 @@ step
 step
     .subzoneskip 7879,1
     .isQuestAvailable 41085
+    .isOnQuest 41085
     .goto 735,61.22,25.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
     .complete 41085,1 --1/1 Artifact chosen
@@ -2130,6 +2249,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
+    .isOnQuest 44310
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r 
     .complete 44310,1 --1/1 Choose a third artifact to pursue
@@ -2139,6 +2259,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
+    .isQuestComplete 44310
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
@@ -2155,6 +2276,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
+    .isOnQuest 43441
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
     .complete 43441,1 --1/1 Choose a second artifact to pursue
@@ -2164,6 +2286,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
+    .isQuestComplete 43441
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r  
     .turnin 43441 >>Turn in A Second Weapon
@@ -2178,6 +2301,7 @@ step
 step
     .zoneskip 735,1
     .isQuestAvailable 41085
+    .isOnQuest 41085
     .goto 735,61.22,25.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
     .complete 41085,1 --1/1 Artifact chosen
@@ -2373,6 +2497,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
+    .isOnQuest 44310
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .complete 44310,1 --1/1 Choose a third artifact to pursue
@@ -2382,6 +2507,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 43441
     .isQuestAvailable 44310
+    .isQuestComplete 44310
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
@@ -2398,6 +2524,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
+    .isOnQuest 43441
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .complete 43441,1 --1/1 Choose a second artifact to pursue
@@ -2407,6 +2534,7 @@ step
     .zoneskip 735,1
     .isQuestTurnedIn 41085
     .isQuestAvailable 43441
+    .isQuestComplete 43441
     .goto 735,55.3,38.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 43441 >>Turn in A Second Weapon
@@ -2421,6 +2549,7 @@ step
 step
     .zoneskip 735,1
     .isQuestAvailable 41085
+    .isOnQuest 41085
     .goto 735,61.22,25.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
     .complete 41085,1 --1/1 Artifact chosen
@@ -2860,6 +2989,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
+    .isOnQuest 44424
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -2871,6 +3001,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
+    .isQuestComplete 44424
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -2888,6 +3019,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 40636
     .isQuestAvailable 43973
+    .isOnQuest 43973
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -2899,6 +3031,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 40636
     .isQuestAvailable 43973
+    .isQuestComplete 43973
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -2913,6 +3046,7 @@ step
 step
     .subzoneskip 7902,1
     .isQuestAvailable 40636
+    .isOnQuest 40636
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .complete 40636,1 --1/1 Choose a artifact to pursue
@@ -3087,14 +3221,24 @@ step
     .target The Monkey King
     .accept 42765 >>Accept The Trial at the Temple
 step
+    #completewith next
+    #label Jade Serpent
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 42765,1 --1/1 Enter the Temple of the Jade Serpent
+step
+    #completewith Jade Serpent
+    .goto 791,34.58,43.45,10 >>Enter the Temple of the Jade Serpent
+    .timer 40,RP
+step
+    #requires Jade Serpent
     .goto 371,56.19,57.98
     #title |cFFFCDC00Follow the Arrow|r
     .complete 42765,1 --1/1 Enter the Temple of the Jade Serpent
-    .timer 43,RP
 step
     .goto 791,32.38,54.04
     .isOnQuest 42765
     >>|cRXP_WARN_Wait for the Roleplay|r.
+    *|cRXP_WARN_You can't mount in this scenario|r.
     .scenario 2613,1
 step
     .isInScenario 1137
@@ -3109,6 +3253,7 @@ step
     .scenario 2649,2,1
     .isInScenario 1137
     .mob Soulflayer of the Inquisiton
+    .mob Impling Pillager
 step
     .goto 791,30.9,60.83,15,0
     .goto 792,38.99,21.57,15,0
@@ -3118,6 +3263,7 @@ step
     .isInScenario 1137
     .mob Soulflayer of the Inquisiton
     .mob Impling Pillager
+    .mob Inquisitor's Eye
 step
     .goto 792,32.6,63.36,15,0
     .goto 792,51.17,71.47
@@ -3140,7 +3286,7 @@ step
     .goto 791,27.33,71.8
     >>Kill |cRXP_ENEMY_Belphiar|r
     .scenario 2650,1
-    .timer 19,RP
+    .timer 20,RP
     .isInScenario 1137
     .mob Belphiar
 step
@@ -3157,7 +3303,7 @@ step
     .goto 791,51.32,52.08
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2661,1
-    .timer 20,RP
+    .timer 22,RP
     .isInScenario 1137
 step
     .goto 791,51.32,52.08
@@ -3260,6 +3406,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
+    .isOnQuest 44424
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3271,6 +3418,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
+    .isQuestComplete 44424
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3288,6 +3436,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 40636
     .isQuestAvailable 43973
+    .isOnQuest 43973
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3299,6 +3448,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 40636
     .isQuestAvailable 43973
+    .isQuestComplete 43973
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3313,6 +3463,7 @@ step
 step
     .subzoneskip 7902,1
     .isQuestAvailable 40636
+    .isOnQuest 40636
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .complete 40636,1 --1/1 Choose a artifact to pursue
@@ -3482,6 +3633,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
+    .isOnQuest 44424
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3493,6 +3645,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 43973
     .isQuestAvailable 44424
+    .isQuestComplete 44424
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3510,6 +3663,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 40636
     .isQuestAvailable 43973
+    .isOnQuest 43973
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3521,6 +3675,7 @@ step
     .subzoneskip 7902,1
     .isQuestTurnedIn 40636
     .isQuestAvailable 43973
+    .isQuestComplete 43973
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .target Iron-Body Ponshu
@@ -3534,6 +3689,7 @@ step
     .target Iron-Body Ponshu
 step
     .isQuestAvailable 40636
+    .isOnQuest 40636
     .goto 709,51.42,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .complete 40636,1 --1/1 Choose a artifact to pursue
@@ -3654,17 +3810,26 @@ step
     .use 132745
 step
     .isInScenario 983
-    .goto 716,30.39,44.18
+    .goto 716,30.9,45.18
     >>Kill |cRXP_ENEMY_Howling Winds|r and |cRXP_ENEMY_Lesser Sandling|r.
     .scenario 2006,1
-    .timer 14,RP
     .mob Lesser Sandling
     .mob Howling Winds
 step
+    #completewith next
+    #label Tornadoes
+    .isInScenario 983
+    #title |cFFFCDC00Follow the Arrow|r
+    >>Avoid the tornadoes and enter the green swirls for a speed boost.
+    .scenario 2013,1
+step
+    #completewith Tornadoes
     .isInScenario 983
     .goto 716,29.91,47.18
-    .countdown 14 >>Wait infront of the Tornadoes
+    .countdown 21 >>Wait infront of the Tornadoes
+    .timer 21
 step
+    #requires Tornadoes
     .isInScenario 983
     .goto 716,29.61,50.7,15,0
     .goto 716,31.34,51.67,15,0
@@ -3679,17 +3844,24 @@ step
     .goto 716,32.58,52.54
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,1
+    .mob Lesser Sandling
+    .mob Howling Winds
 step
     .isInScenario 983
     .goto 716,29.3,54.99
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,2
+    .mob Storm Cloud
+    .mob Howling Winds
 step
     .isInScenario 983
     .goto 716,25.49,60.28
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormtouched Orb|r
     .scenario 2007,1,3
-    .timer 55
+    .timer 34,RP
+    .mob Storm Cloud
+    .mob Howling Winds
+    .mob Lesser Sandling
 step
     #completewith next
     #hidewindow
@@ -3702,48 +3874,48 @@ step
     #completewith Scion of Typhinius
     .isInScenario 983
     .goto 716,26.75,59.97
-    .countdown 55 >>Kill |cRXP_ENEMY_Scion of Typhinius|r
+    .countdown 34 >>Wait for |cRXP_ENEMY_Scion of Typhinius|r to spawn.
     .mob Scion of Typhinius
 step
     #requires Scion of Typhinius
     .isInScenario 983
     .goto 716,28.93,63.06
     #title |cFFFCDC00Follow the Arrow|r
+    >>Kill |cRXP_ENEMY_Scion of Typhinius|r
     .scenario 2007,2
-    .timer 8,RP
+    .timer 9,RP
+    .mob Scion of Typhinius
 step
     .isInScenario 983
     .goto 716,31.6,66.01
     >>Kill his |cRXP_ENEMY_Minios|r
     .scenario 2008,1,1
-    .timer 8,RP
-    .mob Storm Cloud
+    .timer 5,RP
+    .mob Kaeled
     .mob Howling Winds
-    .mob Na'ser
 step
     .isInScenario 983
     .goto 716,31.26,66.71
     >>Kill his |cRXP_ENEMY_Minios|r
     .scenario 2008,1,2
-    .timer 15,RP
+    .timer 7,RP
     .mob Storm Cloud
+    .mob Na'ser
     .mob Howling Winds
-    .mob Melezan
-    .mob Zaurac
 step
     .isInScenario 983
     .goto 716,31.88,67.53
     >>Kill his |cRXP_ENEMY_Minios|r
     .scenario 2008,1,3
-    .timer 8,RP
+    .timer 15,RP
     .mob Melezan
     .mob Storm Cloud
 step
     .isInScenario 983
-    .goto 716,31.88,67.53
-    >>Kill his |cRXP_ENEMY_Zaurac|r
+    .goto 716,32.16,66.89
+    >>Kill |cRXP_ENEMY_Zaurac|r
     .scenario 2008,1,4
-    .timer 8,RP
+    .timer 3,RP
     .mob Zaurac
 step
     .isInScenario 983
@@ -3762,8 +3934,8 @@ step
     .isInScenario 983
     .goto 716,35.76,82.93
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists|r
-    .scenario 2011,1
     .complete 40570,2 --1/1 Obtain the Fists of the Heavens
+    .scenario 2011,1
     .mob Typhinius
 step
     #completewith next
@@ -3808,7 +3980,6 @@ step
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
 --     .turnin 40570 >>Turn in Into The Heavens
 ]])
-
 --Brewmaster 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -3905,10 +4076,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
-#next ac) Order Hall Paladin Part 2
+#next ac) Order Hall Paladin
 
+-- step
+--     .subzoneskip 2268,1
+--     .goto 24,39.52,93.31,10,0
+--     .goto 24,44.67,85.24,10 >>Enter the Order Hall
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
     .goto 24,49.88,72.38
@@ -3918,9 +4092,9 @@ step
     .choose 1271766
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
+    .isOnQuest 44370
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -3928,15 +4102,14 @@ step
     .skipgossipid 45133
     .choose 1271766
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
+    .isQuestComplete 44370
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 44370 >>Turn in Completing Your Arsenal
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
     .goto 24,49.88,72.38
@@ -3946,9 +4119,9 @@ step
     .skipgossipid 45133
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
+    .isOnQuest 44063
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -3956,9 +4129,9 @@ step
     .skipgossipid 45133 -- I'm ready to make a decision.
     .choose 1271766
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
+    .isQuestComplete 44063
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 44063 >>Turn in Bolstering Your Arsenal
@@ -3975,6 +4148,7 @@ step
 step
     .subzoneskip 4564,1
     .isQuestAvailable 40408
+    .isOnQuest 40408
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
@@ -3994,6 +4168,44 @@ step
     .target Lord Maxwell Tyrosus
     .accept 42231 >>Accept The Mysterious Paladin
 step
+    .isOnQuest 42881
+    .goto 24,38.22,64.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
+    .accept 42881 >>Accept Champion: Lady Liadrin
+    .turnin 42881 >>Turn in Champion: Lady Liadrin
+    .target Lady Liadrin
+    .complete 42846,1 --1/1 Enlist Lady Liadrin
+step
+    .zoneskip 24,1
+    .goto 24,37.63,63.97
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 42231,1 --1/1 Travel to Dalaran
+step
+    .zoneskip 24,1
+    .goto 24,37.63,63.97
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 39864,1 --1/1 Travel to Dalaran
+step << Alliance
+    .goto 627,72.01,49.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Travard|r
+    .turnin 42231 >>Turn in The Mysterious Paladin
+    .target Travard
+    .accept 42377 >>Accept The Brother's Trail
+step << Horde
+    #completewith next
+    #label Mysterious Paladin
+    .goto 627,59,21.04,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Travard|r
+    .turnin 42231 >>Turn in The Mysterious Paladin
+    .target Travard
+    .accept 42377 >>Accept The Brother's Trail
+    .disablecheckbox
+step << Horde
+    #completewith Mysterious Paladin
+    #hidewindow
+    .goto 627,72.01,49.34,40 >>1
+step << Horde
+    #requires Mysterious Paladin
     .goto 627,72.01,49.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Travard|r
     .turnin 42231 >>Turn in The Mysterious Paladin
@@ -4039,7 +4251,7 @@ step
 step
     #completewith Galford's location
     .goto 115,56.57,28.64,10 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Broken Statue|r |cRXP_WARN_you might need to do it twice|r.
-    .timer 55,RP
+    .timer 53,RP
 step
     #requires Galford's location
     .goto 115,60.04,36.19
@@ -4061,8 +4273,10 @@ step
 step
     .goto 115,61.16,38.14
     >>Kill |cRXP_ENEMY_Jotun|r
+    *|cRXP_WARN_Heal |cRXP_FRIENDLY_Lanigosa|r if needed|r.
     .complete 42377,6 --1/1 Defeat Jotun
     .mob Jotun
+    .target Lanigosa
 step
     .goto 115,61.16,38.14
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Spark|r
@@ -4094,13 +4308,13 @@ step
     .use 173523
 step 
     #requires in Tirisfal Glades
-    .isInScenario 1092
+    .isOnQuest 42120
     .goto 18,13.45,56.68
     #title |cFFFCDC00Follow the Arrow|r
     .complete 42120,2 --1/1 Go to the marked location in Tirisfal Glades
     .target Travard
 step
-    .isInScenario 1092
+    .isOnQuest 42120
     .goto 18,13.45,56.68,10 >>|cRXP_WARN_Follow the Arrow|r.
     .timer 30,RP
 step 
@@ -4155,15 +4369,18 @@ step
     .timer 30,RP
     .mob Horrific Aberration
 step
+    .isInScenario 1092
     .goto 20,47.33,75.56,20,0
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2453,1,2
 step
+    .isInScenario 1092
     .goto 20,47.33,75.56,20,0
     .goto 20,41.81,82.42
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2454,1
 step
+    .isInScenario 1092
     .goto 20,42.94,84.92
     >>Cleanse |cRXP_FRIENDLY_Righteous Crusaders|r and heal |cRXP_FRIENDLY_Argent Dawnbringer|r
     .scenario 2455,1
@@ -4173,12 +4390,14 @@ step
     .target Righteous Crusader
     .target Argent Dawnbringer
 step
+    .isInScenario 1092
     .goto 20,38.63,76.01,20,0
     .goto 20,37.68,63.55
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2456,1
     .timer 180,RP
 step
+    .isInScenario 1092
     .goto 20,37.61,65.32
     >>Kill the waves of enemies |cRXP_WARN_and heal your team|r.
     .scenario 2457,1,100
@@ -4192,41 +4411,59 @@ step
     .scenario 2458,1 --Claim the Silver Hand.
     .complete 42120,3 --1/1 Claim the Silver Hand
 step
+    .isInScenario 1092
     .zone 627 >>Leave the Instance(Right-Click your player frame) or press the macro.
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
 step
+    .isQuestAvailable 44370,44063
     .goto 627,71.83,45.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42120 >>Turn in The Silver Hand
     .target Lord Maxwell Tyrosus
     .accept 38576 >>Accept We Meet at Light's Hope
+step << Horde
+    .isQuestTurnedIn 40408
+    .goto 627,58.5,20.55,10,0
+    .goto 627,61.89,13.63
+    .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step << Alliance
+    .isQuestTurnedIn 40408
+    .goto 627,36.64,65.28,15,0
+    .goto 627,32.64,69.87
+    .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
+    .isQuestTurnedIn 44370,44063
+    .goto 24,49.86,72.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 42120 >>Turn in The Silver Hand
+    .target Lord Maxwell Tyrosus
+step << Alliance
     #completewith next
     #label Light's Hope Sanctum 
     .goto 627,34.98,66.58,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
-step
+step << Alliance
     #completewith Light's Hope Sanctum 
     #hidewindow
     .goto 627,32.65,69.91,30 >>1
-step
+step << Alliance
     #requires Light's Hope Sanctum 
     .goto 627,32.65,69.91
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
-step
+step << Alliance
     #completewith next
     #label A United Force
     .goto 24,47.59,62.28,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
     .target Lord Maxwell Tyrosus
-step
+step << Alliance
     #completewith A United Force
     #hidewindow
     .goto 24,63.15,37.22,40 >>1
-step
+step << Alliance
     #requires A United Force
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -4240,12 +4477,14 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Paladin Protection 
-#displayname Artifact Weapon: Paladin Protection
-#next ac) Order Hall Paladin Part 2
+#displayname Artifact Weapon: Protection
+#next ac) Order Hall Paladin
 
-
+-- step
+--     .subzoneskip 2268,1
+--     .goto 24,39.52,93.31,10,0
+--     .goto 24,44.67,85.24,10 >>Enter the Order Hall
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
     .goto 24,49.88,72.38
@@ -4255,9 +4494,9 @@ step
     .choose 1271767
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
+    .isOnQuest 44370
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -4265,15 +4504,14 @@ step
     .skipgossipid 45133
     .choose 1271767
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
+    .isQuestComplete 44370
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 44370 >>Turn in Completing Your Arsenal
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
     .goto 24,49.88,72.38
@@ -4283,9 +4521,9 @@ step
     .skipgossipid 45133
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
+    .isOnQuest 44063
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -4293,9 +4531,9 @@ step
     .skipgossipid 45133 -- I'm ready to make a decision.
     .choose 1271767
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
+    .isQuestComplete 44063
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 44063 >>Turn in Bolstering Your Arsenal
@@ -4312,6 +4550,7 @@ step
 step
     .subzoneskip 4564,1
     .isQuestAvailable 40408
+    .isOnQuest 40408
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
@@ -4325,6 +4564,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 40408,1 >>Turn in Weapons of Legend
     .target Lord Maxwell Tyrosus
+step
+    .isOnQuest 42881
+    .goto 24,38.22,64.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
+    .accept 42881 >>Accept Champion: Lady Liadrin
+    .turnin 42881 >>Turn in Champion: Lady Liadrin
+    .target Lady Liadrin
+    .complete 42846,1 --1/1 Enlist Lady Liadrin
+step
+    .zoneskip 24,1
+    .goto 24,37.63,63.97
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 42000,1,1 --1/1 Travel to Dalaran
+-- step
+--     .zoneskip 24,1
+--     .goto 24,37.63,63.97
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+--     .complete 42000,1,1 --1/1 Travel to Dalaran
 step
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -4362,7 +4619,7 @@ step
     #completewith Argent Hippogryph
     .goto 627,72.96,50.08
     .vehicle >>Click on |cRXP_PICK_Argent Hippogryph|r
-    .timer 15,RP
+    .timer 13,RP
     .target Argent Hippogryph
 step
     #requires Argent Hippogryph
@@ -4392,7 +4649,7 @@ step
     .complete 42005,3 --1/1 Complete the ritual
 step
     .goto 627,72.52,50.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r in dalaran.
     .turnin 42005 >>Turn in The End of the Saga
     .target Orik Trueheart
     .accept 42017 >>Accept Shrine of the Truthguard
@@ -4412,13 +4669,13 @@ step
 --     .complete 42017,1 --1/1 Take the Argent Hippogryph to Stormheim
 step
     .isOnQuest 42017
-    .goto 634,85.5,10.65,40  >>|cRXP_WARN_Wait for the Roleplay|r.
+    .goto 634,85.5,10.65,40 >>|cRXP_WARN_Wait for the Roleplay|r.
     .timer 16,RP
 step
     #title |cFFFCDC00Follow the Arrow|r
     .goto 634,83.93,9.52
     .isOnQuest 42017
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2390,1 --Speak with Orik.
     .target Orik
 step
@@ -4439,6 +4696,7 @@ step
     #hidewindow
     #completewith next
     #label Inna the Cryptstalker2
+    .isInScenario 1082
     .scenario 2391,1 --Get to the shrine.
 step
     #requires Inna the Cryptstalker
@@ -4455,6 +4713,7 @@ step
     .mob Spectral Windshaper
 step
     #requires Inna the Cryptstalker2
+    .isInScenario 1082
     .goto 635,51.52,52.04
     >>|cRXP_WARN_Wait for the Roleplay near the door|r.
     .scenario 2391,1 --Get to the shrine.
@@ -4485,6 +4744,7 @@ step
     #requires magic and survive
     .goto 635,51.03,51.74
     .isInScenario 1082
+    #title |cFFFCDC00Big Defensive|r
     >>Use |T524354:0|t[Divine Shield] or another strong defensive, and heal yourself if needed.
     *|cRXP_WARN_Heavy damage hits shortly after clicking the door.|r
     .scenario 2407,1 --Activate the door's magic and survive.
@@ -4507,6 +4767,7 @@ step
     .mob Yrgrim the Truthseeker
 step
     #completewith Yrgrim the Truthseeker
+    .isInScenario 1082
     .goto 635,25.93,44.53
     .gossipoption 45218 >>Talk to |cRXP_FRIENDLY_Yrgrim the Truthseeker|r
     .timer 4.5,RP
@@ -4532,19 +4793,40 @@ step
     .turnin 42017 >>Turn in Shrine of the Truthguard
     .target Lord Maxwell Tyrosus
     .accept 38576 >>Accept We Meet at Light's Hope
-step
+-- step
+--     .goto 24,49.86,72.29
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_in Dalaran|r.
+--     .turnin 42017 >>Turn in Shrine of the Truthguard
+--     .target Lord Maxwell Tyrosus
+--     .accept 38576 >>Accept We Meet at Light's Hope
+step << Alliance
     #completewith next
     #label Light's Hope Sanctum 
     .goto 627,34.98,66.58,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
-step
+step << Alliance
     #completewith Light's Hope Sanctum 
     #hidewindow
     .goto 627,32.65,69.91,30 >>1
-step
+step << Alliance
     #requires Light's Hope Sanctum 
     .goto 627,32.65,69.91
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 38576,2 --1/1 Enter Light's Hope Sanctum
+step << Horde
+    #completewith next
+    #label Light's Hope Sanctum 
+    .goto 627,58.71,20.66,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 38576,2 --1/1 Enter Light's Hope Sanctum
+step << Horde
+    #completewith Light's Hope Sanctum 
+    #hidewindow
+    .goto 627,61.93,13.5,30 >>1
+step << Horde
+    #requires Light's Hope Sanctum 
+    .goto 627,61.93,13.5
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step
@@ -4573,11 +4855,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
-#next ac) Order Hall Paladin Part 2
+#next ac) Order Hall Paladin
 
-
+-- step
+--     .subzoneskip 2268,1
+--     .goto 24,39.52,93.31,10,0
+--     .goto 24,44.67,85.24,10 >>Enter the Order Hall
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
     .goto 24,49.88,72.38
@@ -4587,9 +4871,9 @@ step
     .choose 1271768
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
+    .isOnQuest 44370
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -4597,15 +4881,14 @@ step
     .skipgossipid 45133
     .choose 1271768
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
+    .isQuestComplete 44370
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 44370 >>Turn in Completing Your Arsenal
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
     .goto 24,49.88,72.38
@@ -4615,9 +4898,9 @@ step
     .skipgossipid 45133
     .target Lord Maxwell Tyrosus
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
+    .isOnQuest 44063
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -4625,9 +4908,9 @@ step
     .skipgossipid 45133 -- I'm ready to make a decision.
     .choose 1271768
 step
-    .subzoneskip 7638,1
     .isQuestTurnedIn 40408
     .isQuestAvailable 44063
+    .isQuestComplete 44063
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 44063 >>Turn in Bolstering Your Arsenal
@@ -4644,6 +4927,7 @@ step
 step
     .subzoneskip 4564,1
     .isQuestAvailable 40408
+    .isOnQuest 40408
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
@@ -4713,12 +4997,12 @@ step
     .mob Cannoneer Dargal
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Thel'danis|r and |cRXP_FRIENDLY_Mehlar Dawnblade|r.
-    .turnin 42771 >>Turn in Keeping the Peace
-    .goto 22,51.44,79.01
-    .target +Mehlar Dawnblade
     .turnin 42772 >>Turn in Sacred Ground
-    .goto 22,51.35,78.99
+    .goto 22,51.44,79.02
     .target +High Priest Thel'danis
+    .turnin 42771 >>Turn in Keeping the Peace
+    .goto 22,51.35,78.99
+    .target +Mehlar Dawnblade
 step
     .goto 22,51.62,81.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -4761,11 +5045,12 @@ step
     .logout >>Log out and relog for a teleport.
     .timer 20,RP
     .macro Logout,638661 >>/logout
-step
-    .isOnQuest 42774
-    .countdown 20 >>Wait for the logout timer to end, then log back in.
+-- step
+--     .isOnQuest 42774
+--     .countdown 20 >>
 step
     .goto 23,74.28,53.25
+    *|cRXP_WARN_Wait for the logout timer to end, then log back in.|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42774 >>Turn in Hope Prevails
     .accept 38376 >>Accept The Search for the Highlord
@@ -4793,8 +5078,8 @@ step
     .scenario 1488,1 --Lead the paladins of the Argent Crusade into battle
 step
     #loop
-    .goto 676,15.21,51.51,30,0
-    .goto 676,16.52,51.94,30,0
+    .goto 676,15.21,51.51,20,0
+    .goto 676,16.52,51.94,20,0
     .isInScenario 775
     >>Kill |cRXP_ENEMY_Demons|r
     .scenario 1485,1,100
@@ -4841,33 +5126,49 @@ step
     >>Kill |cRXP_ENEMY_Balnazzar|r
     .complete 38376,3 --1/1 Balnazzar slain
     .mob Balnazzar
+-- step
+--     .isInScenario 775
+--     .goto 676,25.42,61.5,15,0
+--     .goto 676,25.43,62.75,15,0
+--     .goto 676,24.02,64.03,15,0
+--     .goto 676,23.47,63.08,15,0
+--     .goto 676,23.08,61.81,15,0
+--     .goto 676,21.93,61.06,10 >>Leave the Cave
+-- step
+--     .isInScenario 775
+--     .goto 676,20.44,61.55,20 >>Follow the Arrow
+--     .timer 27,RP
+-- step
+--     .goto 676,20.44,61.55
+--     .isInScenario 775
+--     >>|cRXP_WARN_Wait for the Roleplay|r.
+--     .scenario 1854,1 --Return to Tirion Fordring
 step
     .isInScenario 775
-    .goto 676,25.42,61.5,15,0
-    .goto 676,25.43,62.75,15,0
-    .goto 676,24.02,64.03,15,0
-    .goto 676,23.47,63.08,15,0
-    .goto 676,23.08,61.81,15,0
-    .goto 676,21.93,61.06,10 >>Leave the Cave
+    .zone 23 >>Leave the Instance(Right-Click your player frame) or press the macro.
+    .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
 step
-    .isInScenario 775
-    .goto 676,20.44,61.55,20 >>Follow the Arrow
-    .timer 27,RP
-step
-    .goto 676,20.44,61.55
-    .isInScenario 775
-    >>|cRXP_WARN_Wait for the Roleplay|r.
-    .scenario 1854,1 --Return to Tirion Fordring
-step
-    .goto 676,20.44,61.55,-1
-    .goto 23,74.29,53.15,-1
+    #completewith next
+    #label Search for the Highlord
+    .goto 23,75.43,52.65,10,0
+    .goto 24,41.98,89.52,5,0
+    .goto 24,45.4,83.87,5,0
+    .goto 24,41.73,72.95,5,0
+    .goto 24,44.64,70.09,5,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38376 >>Turn in The Search for the Highlord
     .target Lord Maxwell Tyrosus
     .accept 42811 >>Accept We Meet at Light's Hope
 step
-    .zone 23 >>Leave the Instance(Right-Click your player frame) or press the macro.
-    .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
+    #completewith Search for the Highlord
+    .goto 24,49.9,72.38,20 >>Enter the Light's Hope Chapel and go through the tunnel
+step
+    #requires Search for the Highlord
+    .goto 24,49.9,72.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 38376 >>Turn in The Search for the Highlord
+    .target Lord Maxwell Tyrosus
+    .accept 42811 >>Accept We Meet at Light's Hope
 step
     #completewith next
     #label Chapel
@@ -4898,6 +5199,45 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42811 >>Turn in We Meet at Light's Hope
     .target Lord Maxwell Tyrosus
+]])
+--Holy 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Holy Paladin
+#displayname Artifact Weapon: Holy
+#next ac) Order Hall Paladin Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin
+]])
+--Protection 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Paladin Protection 
+#displayname Artifact Weapon: Paladin Protection
+#next ac) Order Hall Paladin Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection 
+]])
+--Retribution 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Retribution
+#displayname Artifact Weapon: Retribution
+#next ac) Order Hall Paladin Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Retribution
 ]])
 --Paladin Intro 1
 RXPGuides.RegisterGuide([[
@@ -5028,10 +5368,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
-#next ac) Order Hall Rogue Part 2
+#next ac) Order Hall Rogue
 
--- step
---     #include ab) Order Hall Rogue Part 1
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 44034
@@ -5114,6 +5452,23 @@ step
     .accept 42501 >>Accept Finishing the Job
     .accept 42502 >>Accept No Sanctuary
 step
+    .isOnQuest 42139
+    .goto 626,42.30,74.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
+    *|cRXP_WARN_relog if the npc's isn't there|r
+    .accept 43262 >>Accept Champion: Garona Halforcen
+    .turnin 43262 >>Turn in Champion: Garona Halforcen
+    .target Garona Halforcen
+    .complete 42139,1 --1/1 Garona Halforcen recruited
+step
+    .isOnQuest 42139
+    .goto 626,42.43,68.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vanessa VanCleef|r
+    .accept 43261 >>Accept Champion: Vanessa VanCleef
+    .turnin 43261 >>Turn in Champion: Vanessa VanCleef
+    .target Vanessa VanCleef
+    .complete 42139,2 --1/1 Vanessa VanCleef recruited
+step
     .isOnQuest 42502
     .cast 311709 >>Use |T254294:0|t[Duskwood Scroll]
     .use 173530
@@ -5144,11 +5499,11 @@ step
     .turnin 42502 >>Turn in No Sanctuary
 step
     >>Use |T254294:0|t[Blasted Lands Scroll]
-    .complete 42501,3 --1/1 Travel to Blasted Lands
+    .complete 42501,1 --1/1 Travel to Blasted Lands
     .use 173531
 step
     .goto 17,37.03,29.04
-    >>Kill |cRXP_ENEMY_Caden Shadowgaze|r. Loot him for |T666475:0|t[Coded Message]
+    >>Kill |cRXP_ENEMY_Caden Shadowgaze|r. Loot him for |T666475:0|t[|cRXP_LOOT_Coded Message|r].
     .complete 42501,2 --1/1 Caden Shadowgaze slain
     .mob Caden Shadowgaze
 step
@@ -5164,7 +5519,7 @@ step
 step
     #completewith Coded Message
     .goto 17,37.04,30.41
-    .cast 214079 >>Use |T666475:0|t[Coded Message]
+    .cast 214079 >>Use |T666475:0|t[|cRXP_LOOT_Coded Message|r]
     .timer 25,RP
     .use 138102
 step
@@ -5208,7 +5563,7 @@ step
     .goto 47,73.67,44.08,5 >>Enter the House and go upstairs
 step
     #requires Blood of the Innocent2
-    .goto 47,73.75,48.60
+    .goto 47,73.64,43.59
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bowl|r
     .complete 42539,2 --1/1 Blood of the Innocent
 step
@@ -5241,7 +5596,7 @@ step
     .goto 47,71.88,46.78,15 >>Enter the House
 step
     #requires Althea Ebonlocke2
-    .goto 47,71.88,46.78
+    .goto 47,71.94,46.43
     >>Defeat |cRXP_ENEMY_Althea Ebonlocke|r
     .complete 42539,3 --1/1 Attempt to kill Althea Ebonlocke
     .mob Althea Ebonlocke
@@ -5296,19 +5651,20 @@ step
     .isOnQuest 42504
     #completewith Confront Mathias Shaw.
     .goto 37,32.05,49.23,30 >>Follow the Arrow
-    .timer 40,RP
+    .timer 43,RP
 step
     #requires Confront Mathias Shaw.
-    .goto 37,32.0,49.3
-    .isOnQuest 42504
+    .goto 37,31.92,48.99
+    .isInScenario 1123
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2548,1 --Confront Mathias Shaw.
 step
+    .isInScenario 1123
     #completewith Obtain the Kingslayers
     +|cRXP_WARN_You can only use ground mounts in this scenario|r.
     *Enter Stealth and dodge the guards. Be especially careful of the ones with eyes on top of their heads, as they have increased stealth detection.
 step
-    .isOnQuest 42504
+    .isInScenario 1123
     .goto 84,72.35,88.62,15 >>Follow the Arrow
 step
     #completewith next
@@ -5345,7 +5701,7 @@ step
     .goto 84,65.6,74.23,5 >>Leave the House
 step
     #requires Trader's Hall
-    .goto 84,63.3,73.66,10,0
+    .goto 84,63.29,72.95,10,0
     .goto 84,61.65,72.46,10,0
     .goto 84,61.35,71.29
     .isInScenario 1123
@@ -5357,15 +5713,14 @@ step
     .goto 84,62.5,72.22,5,0
     .goto 84,62.7,68.93
     .isInScenario 1123
-    >>Use |T135975:0|t[Pick pocket] on |cRXP_ENEMY_Suspicious City Guard|r
+    >>Use |T133644:0|t[Pick pocket] on |cRXP_ENEMY_Suspicious City Guard|r
     .scenario 2711,1 --Pickpocket Guards until you find information
     .mob Suspicious City Guard
     .usespell 921
 step
     .isInScenario 1123
-    >>Use |T666475:0|t[Coded Message]. |cRXP_WARN_There is a button underneath the quest objective|r.
-    .scenario 2711,2 --Read the Coded Message
-step
+    #hidewindow
+    #completewith Garona
     .goto 84,64.1,70.02,15,0
     .goto 84,64.87,69.13,15,0
     .goto 84,64.36,66.58,15,0
@@ -5376,12 +5731,19 @@ step
     .goto 84,73.79,61.84,15,0
     .goto 84,73.96,60.64,15,0
     .goto 84,73.53,57.77,15,0
-    .goto 84,74.89,55.78
+    .goto 84,75.18,55.28
+    +1
+step
+    .isInScenario 1123
+    >>Use |T666475:0|t[Coded Message]. |cRXP_WARN_There is a button underneath the quest objective|r.
+    .scenario 2711,2 --Read the Coded Message
+step
+    #label Garona
     .isInScenario 1123
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2558,1 --Meet Garona at the Pig and Whistle Tavern in Old Town.
 step
-    .goto 84,75.1,55.4
+    .goto 84,75.18,55.28
     .isInScenario 1123
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Door|r
     .scenario 2560,1 --Open the tavern door.
@@ -5402,6 +5764,7 @@ step
     .goto 84,76.22,44.27,20,0
     .goto 84,78.73,44.86,20,0
     .goto 84,80.77,37.82,20,0
+    .goto 84,84.14,33.42,20,0
     .goto 84,83.65,30.31
     .isInScenario 1123
     #title |cFFFCDC00Follow the Arrow|r
@@ -5440,7 +5803,7 @@ step
 step
     #requires Hall of Shadows
     #hidewindow
-    #completewith 
+    #completewith Hall of Shadows 3
     .goto 626,82.39,81.21,5,0
     .goto 626,87.31,89.52,5,0
     .goto 626,90.44,85.9,5,0
@@ -5449,32 +5812,24 @@ step
     .goto 626,50.36,57.22,5,0
     .goto 626,51.77,51.68,5,0
     .goto 626,45.36,56.25,10,0 
+    .goto 626,42.89,65.78,10,0
+    .goto 626,42.49,74.68
     +1
 step
+    #requires Hall of Shadows
     #completewith next
-    #hidewindow
     #label Hall of Shadows2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
     .turnin 42504 >>Turn in The Unseen Blade
     .target Garona Halforcen
 step
+    #requires Hall of Shadows
     #completewith Hall of Shadows2
     >>Enter Hall of Shadows
     .complete 42504,2 --Return to the Hall of Shadows
 step
-    #requires Hall of Shadows2
-    #completewith next
-    #label Hall of Shadows3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
-    .turnin 42504 >>Turn in The Unseen Blade
-    .target Garona Halforcen
-step
-    #requires Hall of Shadows3
-    #completewith Hall of Shadows3
-    .goto 626,42.38,74.50,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
-step
-    #requires Hall of Shadows3
-    .goto 626,42.38,74.50
+    #requires Hall of Shadows 2
+    #label Hall of Shadows 3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
     .turnin 42504 >>Turn in The Unseen Blade
     .target Garona Halforcen
@@ -5487,10 +5842,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
-#next ac) Order Hall Rogue Part 2
+#next ac) Order Hall Rogue
 
--- step
---     #include ab) Order Hall Rogue Part 1
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 44034
@@ -5498,8 +5851,6 @@ step
     .goto 626,41.45,77.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44375 >>Accept The Final Blade
-    .skipgossipid 45233
-    .choose 1389395
     .target Lord Jorach Ravenholdt
 step
     .subzoneskip 8012,1
@@ -5509,7 +5860,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
     .complete 44375,1 --1/1 Choose a third artifact to pursue
-    .skipgossipid 45233 -- I'm ready to make a decision.
+    .skipgossipid 45233 -- I'm ready to make a decision. --3rd
+    -- .skipgossipid 45232 -- I'm ready to make a decision. 2nd
+    -- .skipgossipid 45230 -- 1st
+    .choose 1389396
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 44034
@@ -5534,7 +5888,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
     .complete 44034,1 --1/1 Choose a second artifact to pursue
-    .skipgossipid 45232 -- I'm ready to make a decision.
+    .skipgossipid 45232
+    .choose 1389396
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 40840
@@ -5556,8 +5911,8 @@ step
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .complete 40840,4 --1/1 Artifact weapon chosen
-    .choose 1389395
-    .skipgossipid 45230
+    .skipgossipid 45230 --1st
+    .choose 1389396
 step
     .subzoneskip 8012,1
     .isQuestComplete 40840
@@ -5572,6 +5927,23 @@ step
     .accept 40847 >>Accept A Friendly Accord
     .target Fleet Admiral Tethys
 step
+    .isOnQuest 42139
+    .goto 626,42.30,74.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
+    *|cRXP_WARN_relog if the npc's isn't there|r
+    .accept 43262 >>Accept Champion: Garona Halforcen
+    .turnin 43262 >>Turn in Champion: Garona Halforcen
+    .target Garona Halforcen
+    .complete 42139,1 --1/1 Garona Halforcen recruited
+step
+    .isOnQuest 42139
+    .goto 626,42.43,68.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vanessa VanCleef|r
+    .accept 43261 >>Accept Champion: Vanessa VanCleef
+    .turnin 43261 >>Turn in Champion: Vanessa VanCleef
+    .target Vanessa VanCleef
+    .complete 42139,2 --1/1 Vanessa VanCleef recruited
+step
     .isOnQuest 40847
     .cast 311705 >>Use |T413582:0|t[Gilded Hearthstone]
     .use 173528
@@ -5579,7 +5951,7 @@ step
     #completewith next
     #label Board the Crimson Veil
     #title |cFFFCDC00Follow the Arrow|r
-    .complete 40847,4 --1/1 Board the Crimson Veil
+    .complete 40847,2 --1/1 Board the Crimson Veil
 step
     #completewith Board the Crimson Veil
     .goto 210,40.95,74.28,10 >>Leave the House
@@ -5587,7 +5959,7 @@ step
     #requires Board the Crimson Veil
     .goto 210,40.77,69.12
     #title |cFFFCDC00Follow the Arrow|r
-    .complete 40847,4 --1/1 Board the Crimson Veil
+    .complete 40847,2 --1/1 Board the Crimson Veil
 step
     .goto 210,40.77,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
@@ -5611,6 +5983,7 @@ step
     .scenario 2101,1 --Commandeer the Horizon's Edge
     .mob First Mate DeGauza
 step
+    .isOnQuest 40849
     #completewith the Horizon's Edge
     .goto 630,60.73,68.3,20 >>Board the Ship
 step
@@ -5631,7 +6004,7 @@ step
     .isInScenario 1012
     #title |cFFFCDC00Follow the Arrow|r
     .scenario 2117,1 --Find the Dread Admiral Eliza
-    .timer 45,RP
+    .timer 28,RP
 step
     .goto 630,56.41,67.29
     .isInScenario 1012
@@ -5647,7 +6020,7 @@ step
     .goto 630,54.05,71.48
     .isInScenario 1012
     #title |cFFFCDC00Follow the Arrow|r
-    >>Kill |cRXP_ENEMY_Dread Squallshaper|r
+    >>Kill ALL |cRXP_ENEMY_Dread Squallshaper|r and avoid the |cRXP_WARN_water jet|r.
     .scenario 2133,1 --Pursue the Dread Admiral Eliza into the temple depths
     .mob Dread Squallshaper
 step
@@ -5673,7 +6046,7 @@ step
     .target Bloodsail Gryphon
 step
     #completewith Fly to Dalaran
-    .goto 630,56.25,67.9,20 >>Leave the Temple
+    .goto 630,56.25,67.9,35 >>Leave the Temple
 step
     #requires Fly to Dalaran
     .goto 630,56.25,67.9
@@ -5682,6 +6055,39 @@ step
     .timer 13,RP
     .target Bloodsail Gryphon
 step
+    #completewith next
+    #hidewindow
+    #label The Dreadblades
+    .goto 627,51.77,68.98,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
+    .turnin 40849 >>Turn in The Dreadblades
+    .target Fleet Admiral Tethys
+step
+    #completewith The Dreadblades
+    .goto 627,53.24,71.1
+    -- .gossipoption 45226 >>Talk to |cRXP_FRIENDLY_Ravenholdt Courier|r to open the secret door.
+    .gossipoption 45227 >>Talk to |cRXP_FRIENDLY_Ravenholdt Courier|r to open the secret door.
+    .target "Red" Jack Findle
+step
+    #requires The Dreadblades
+    #completewith next
+    #label The Dreadblades2
+    .goto 626,82.56,80.91,5,0
+    .goto 626,87.32,89.55,5,0
+    .goto 626,90.65,85.54,5,0
+    .goto 626,85.42,75.45,5,0
+    .goto 626,63.45,52.81,10,0
+    .goto 626,50.75,57.54,10,0
+    .goto 626,51.29,50.53,8,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
+    .turnin 40849 >>Turn in The Dreadblades
+    .target Fleet Admiral Tethys
+step
+    #requires The Dreadblades
+    #completewith The Dreadblades2
+    .goto 626,40.88,75.51,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
+step
+    #requires The Dreadblades2
     .goto 626,41.14,74.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
     .turnin 40849 >>Turn in The Dreadblades
@@ -5695,10 +6101,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
-#next ac) Order Hall Rogue Part 2
+#next ac) Order Hall Rogue
 
--- step
---     #include ab) Order Hall Rogue Part 1
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 44034
@@ -5707,7 +6111,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 44375 >>Accept The Final Blade
     .skipgossipid 45233
-    .choose 1389395
     .target Lord Jorach Ravenholdt
 step
     .subzoneskip 8012,1
@@ -5717,7 +6120,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
     .complete 44375,1 --1/1 Choose a third artifact to pursue
-    .skipgossipid 45233 -- I'm ready to make a decision.
+    .skipgossipid 45232 -- I'm ready to make a decision. --2nd
+    .skipgossipid 45233 -- I'm ready to make a decision. --3rd
+    .skipgossipid 45230 -- I'm ready to make a decision. --1st
+    .choose 1389397
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 44034
@@ -5742,7 +6148,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
     .complete 44034,1 --1/1 Choose a second artifact to pursue
-    .skipgossipid 45232 -- I'm ready to make a decision.
+    .skipgossipid 45232 -- I'm ready to make a decision. --2nd
+    .skipgossipid 45233 -- I'm ready to make a decision. --3rd
+    .skipgossipid 45230 -- I'm ready to make a decision. --1st
+    .choose 1389397
 step
     .subzoneskip 8012,1
     .isQuestTurnedIn 40840
@@ -5764,8 +6173,11 @@ step
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .complete 40840,4 --1/1 Artifact weapon chosen
-    .choose 1389395
-    .skipgossipid 45230
+    -- .choose 1389395
+    .choose 1389397
+    .skipgossipid 45232 -- I'm ready to make a decision. --2nd
+    .skipgossipid 45233 -- I'm ready to make a decision. --3rd
+    .skipgossipid 45230 -- I'm ready to make a decision. --1st
 step
     .subzoneskip 8012,1
     .isQuestComplete 40840
@@ -5780,6 +6192,23 @@ step
     .accept 41919 >>Accept The Shadows Reveal
     .target Valeera Sanguinar
 step
+    .isOnQuest 42139
+    .goto 626,42.30,74.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
+    *|cRXP_WARN_relog if the npc's isn't there|r
+    .accept 43262 >>Accept Champion: Garona Halforcen
+    .turnin 43262 >>Turn in Champion: Garona Halforcen
+    .target Garona Halforcen
+    .complete 42139,1 --1/1 Garona Halforcen recruited
+step
+    .isOnQuest 42139
+    .goto 626,42.43,68.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vanessa VanCleef|r
+    .accept 43261 >>Accept Champion: Vanessa VanCleef
+    .turnin 43261 >>Turn in Champion: Vanessa VanCleef
+    .target Vanessa VanCleef
+    .complete 42139,2 --1/1 Vanessa VanCleef recruited
+step
     #completewith next
     #label Desmond Gravesorrow's
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Desmond Gravesorrow|r
@@ -5787,7 +6216,7 @@ step
     .target Desmond Gravesorrow
 step
     #completewith Desmond Gravesorrow's
-    .goto 626,45.14,56.58,10,0
+    .goto 626,45.56,52.37,10,0
     .goto 626,44.24,49.53,10,0
     .goto 626,33.34,38.58,10,0
     .goto 626,9.06,68.87,10,0
@@ -5856,7 +6285,7 @@ step
     .target Val'zuun
 step
     #completewith The Shadows Reveal
-    .goto 627,60.18,48.85,5 >>Stand by the sewer exit
+    .goto 628,75.2,65.08,5 >>Stand near the sewer exit
 step
     #requires The Shadows Reveal
     .goto 628,74.05,63.8
@@ -5908,7 +6337,7 @@ step
     .complete 41920,2 --1/1 Rune of Portals delivered
 step
     #completewith Portals delivered
-    .goto 628,67.2,63.23,15 >>Enter the Sewer
+    .goto 628,67.2,63.23,5 >>Enter the Sewer
 step
     #requires Portals delivered
     .goto 628,67.2,63.23
@@ -5938,7 +6367,7 @@ step
     .goto 627,50.69,40.98,5,0
     .goto 627,49.48,41.21,5,0
     .goto 627,47.78,40.7
-    >>Kill |cRXP_ENEMY_Akaari Shadowgore|r
+    >>Enter the house and go upstaris to kill |cRXP_ENEMY_Akaari Shadowgore|r
     .complete 41921,1 --1/1 Akaari confronted
     .mob Akaari Shadowgore
 step
@@ -5959,10 +6388,10 @@ step
     .target Valeera Sanguinar
 step
     #completewith Traitor!
-    .goto 627,53.71,47.36,15 >>Enter the Sewer
+    .goto 628,67.53,62.39,5 >>Enter the Sewer
 step
     #requires Traitor!
-    .goto 627,53.71,47.36
+    .goto 628,67.53,62.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41922 >>Turn in Traitor!
     .target Valeera Sanguinar
@@ -6021,6 +6450,7 @@ step
     .isInScenario 1078
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gate|r
     .scenario 2473,3 --Open the Holding Cell door.
+    .timer 10,RP
 step
     .goto 741,51.3,52.8
     .isInScenario 1078
@@ -6069,7 +6499,7 @@ step
     #completewith Fangs of the Devourer2
     .goto 628,73.27,65.13,5,0
     .goto 628,76.51,67.51,5,0
-    .goto 627,59.37,48.12,5 >>Leave the Sewer
+    .goto 627,59.65,47.69,5 >>Leave the Sewer
 step
     #requires Fangs of the Devourer2
     #hidewindow
@@ -6083,7 +6513,7 @@ step
     #requires Fangs of the Devourer2
     #completewith Fangs of the Devourer3
     .goto 627,53.22,71.08
-    .gossipoption 45227 >>Talk to |cRXP_FRIENDLY_.target "Red" Jack Findle|r
+    .gossipoption 45227 >>Talk to |cRXP_FRIENDLY_"Red" Jack Findle|r
     .target "Red" Jack Findle
 step
     #requires Fangs of the Devourer3
@@ -6105,12 +6535,49 @@ step
     .goto 626,40.88,75.51,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires Fangs of the Devourer4
-    #completewith next
-    #label Fangs of the Devourer4
     .goto 626,40.88,75.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41924 >>Turn in Fangs of the Devourer
     .target Valeera Sanguinar
+]])
+--Assassination 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Assassination
+#displayname Artifact Weapon: Assassination
+#next ac) Order Hall Rogue Part 2
+
+step
+    #include a) Artifact Weapon: Assassination
+]])
+--Outlaw 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Outlaw
+#displayname Artifact Weapon: Outlaw
+#next ac) Order Hall Rogue Part 2
+
+step
+    #include a) Artifact Weapon: Outlaw
+]])
+--Subtlety 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Subtlety
+#displayname Artifact Weapon: Subtlety
+#next ac) Order Hall Rogue Part 2
+
+step
+    #include a) Artifact Weapon: Subtlety
 ]])
 --Rogue Intro 1
 RXPGuides.RegisterGuide([[
@@ -6549,7 +7016,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
-#next ac) Order Hall Warrior Part 2
+#next ac) Order Hall Warrior
 
 
 step
@@ -6559,23 +7026,24 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 44417 >>Accept One More Legend
-    .choose 1389404
-    .skipgossipid 45055
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 43949
     .isQuestAvailable 44417
+    .isOnQuest 44417
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .target Odyn
     .complete 44417,1 --1/1 Choose a third artifact to pursue
     .skipgossipid 45055 -- I'm ready to make a decision.
+    .skipgossipid 45058
     .choose 1389404
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 43949
     .isQuestAvailable 44417
+    .isQuestComplete 44417
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 44417 >>Turn in One More Legend
@@ -6587,23 +7055,24 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 43949 >>Accept More Weapons of Legend
-    .skipgossipid 45055
-    .choose 1389404
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 40579
     .isQuestAvailable 43949
+    .isOnQuest 43949
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .target Odyn
     .complete 43949,1 --1/1 Choose a second artifact to pursue
     .skipgossipid 45055
+    .skipgossipid 45058
     .choose 1389404
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 40579
     .isQuestAvailable 43949
+    .isQuestComplete 43949
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 43949 >>Turn in More Weapons of Legend
@@ -6614,16 +7083,16 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 40579,1 >>Accept Weapons of Legend
-    .skipgossipid 45055
-    .choose 1389404
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestAvailable 40579
+    .isOnQuest 40579
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .complete 40579,1 --1/1 Artifact weapon chosen
     .skipgossipid 45055
+    .skipgossipid 45058
     .choose 1389404
 step
     .subzoneskip 13637,1
@@ -6656,11 +7125,11 @@ step
 step
     .isOnQuest 41105
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 18,14.93,60.28,10 >>Follow the Arrow
+    .goto 18,13.5,56.65,40 >>Follow the Arrow
 step
     .isOnQuest 41105
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 18,14.93,60.28
+    .goto 18,13.5,56.65
     .scenario 2237,1 --Investigate the camp.
 step
     .isInScenario 1037
@@ -6695,6 +7164,8 @@ step
     .isInScenario 1037
     >>Interrupt & stun |cRXP_ENEMY_Void Tendril|r then kill them.
     .scenario 2211,1 --Void Tendrils killed
+    .usespell 107570
+    .usespell 6552
     .timer 8,RP
     .mob Void Tendril
 step
@@ -6758,7 +7229,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
-#next ac) Order Hall Warrior Part 2
+#next ac) Order Hall Warrior
 
 step
     .subzoneskip 13637,1
@@ -6767,23 +7238,24 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 44417 >>Accept One More Legend
-    .choose 1389404
-    .skipgossipid 45055
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 43949
     .isQuestAvailable 44417
+    .isOnQuest 44417
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .target Odyn
-    .complete 44417,1 --1/1 Choose a second artifact to pursue
+    .complete 44417,1 --1/1 Choose a third artifact to pursue
     .skipgossipid 45055 -- I'm ready to make a decision.
-    .choose 1389404
+    .skipgossipid 45058
+    .choose 1389405
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 43949
     .isQuestAvailable 44417
+    .isQuestComplete 44417
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 44417 >>Turn in One More Legend
@@ -6795,23 +7267,24 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 43949 >>Accept More Weapons of Legend
-    .skipgossipid 45055
-    .choose 1389404
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 40579
     .isQuestAvailable 43949
+    .isOnQuest 43949
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .target Odyn
-    .complete 43949,1 --1/1 Choose a third artifact to pursue
+    .complete 43949,1 --1/1 Choose a second artifact to pursue
     .skipgossipid 45055
-    .choose 1389404
+    .skipgossipid 45058
+    .choose 1389405
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 40579
     .isQuestAvailable 43949
+    .isQuestComplete 43949
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 43949 >>Turn in More Weapons of Legend
@@ -6822,17 +7295,17 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 40579,1 >>Accept Weapons of Legend
-    .skipgossipid 45055
-    .choose 1389404
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestAvailable 40579
+    .isOnQuest 40579
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .complete 40579,1 --1/1 Artifact weapon chosen
     .skipgossipid 45055
-    .choose 1389404
+    .skipgossipid 45058
+    .choose 1389405
 step
     .subzoneskip 13637,1
     .isQuestComplete 40579
@@ -6944,26 +7417,21 @@ step
 step
     .goto 634,59.54,43.82
     .isInScenario 944
-    >>Defeat |cRXP_ENEMY_Vigfus Bladewind|r  |cRXP_WARN_don't oneshot him|r.
+    >>Defeat |cRXP_ENEMY_Vigfus Bladewind|r |cRXP_WARN_don't oneshot him|r.
     *|cRXP_WARN_If the npcs gets stuck; relog|r
     .scenario 1912,1 --Defeat Vigfus Bladewind
     .mob Vigfus Bladewind
+-- step
+--     .isInScenario 944
+--     .goto 634,58.07,44.99,10 >>Follow the Arrow
 step
     .isInScenario 944
-    .goto 634,58.07,44.99,10 >>Follow the Arrow
+    .goto 694/1511,1705.2569,3440.3982,20,0 >>Defeat |cRXP_ENEMY_Vigfus Bladewind|r |cRXP_WARN_again|r.
 step
+    .goto 694/1511,1799.2506,3515.4520
     .isInScenario 944
-    .zone 694 >>Enter Helmouth Shallows
-step
-    .goto 694,57.36,44.82,15,0
-    .goto 694,55.72,42.96,20 >>Defeat |cRXP_ENEMY_Vigfus Bladewind|r again |cRXP_WARN_Wait for the Roleplay|r.
-    #title |cFFFCDC00Follow the Arrow|r
-    .timer 42,RP
-    .mob Vigfus Bladewind
-step
-    .goto 694,55.74,42.95
-    .isInScenario 944
-    >>Follow and Kill |cRXP_ENEMY_Vigfus Bladewind|r
+    >>|cRXP_WARN_Wait for the Roleplay|r
+    >>Kill|cRXP_ENEMY_Vigfus Bladewind|r.
     .scenario 1913,1 --Chase and kill Vigfus
     .mob Vigfus Bladewind
 step
@@ -6990,7 +7458,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
-#next ac) Order Hall Warrior Part 2
+#next ac) Order Hall Warrior
 
 step
     .subzoneskip 13637,1
@@ -6999,23 +7467,24 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 44417 >>Accept One More Legend
-    .choose 1389406
-    .skipgossipid 45058
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 43949
     .isQuestAvailable 44417
+    .isOnQuest 44417
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .target Odyn
     .complete 44417,1 --1/1 Choose a third artifact to pursue
     .skipgossipid 45058 -- I'm ready to make a decision.
+    .skipgossipid 45058
     .choose 1389406
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 43949
     .isQuestAvailable 44417
+    .isQuestComplete 44417
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 44417 >>Turn in One More Legend
@@ -7027,23 +7496,24 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 43949 >>Accept More Weapons of Legend
-    .skipgossipid 45058
-    .choose 1389406
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 40579
     .isQuestAvailable 43949
+    .isOnQuest 43949
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .target Odyn
     .complete 43949,1 --1/1 Choose a second artifact to pursue
     .skipgossipid 45058
+    .skipgossipid 45058
     .choose 1389406
 step
     .subzoneskip 13637,1
     .isQuestTurnedIn 40579
     .isQuestAvailable 43949
+    .isQuestComplete 43949
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 43949 >>Turn in More Weapons of Legend
@@ -7054,15 +7524,15 @@ step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 40579,1 >>Accept Weapons of Legend
-    .skipgossipid 45058
-    .choose 1389406
     .target Odyn
 step
     .subzoneskip 13637,1
     .isQuestAvailable 40579
+    .isOnQuest 40579
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .complete 40579,1 --1/1 Artifact weapon chosen
+    .skipgossipid 45058
     .skipgossipid 45058
     .choose 1389406
 step
@@ -7101,10 +7571,11 @@ step
     .target Hruthnir
 step
     #completewith Pillik
+    .isOnQuest 39191
     +|cRXP_WARN_You can skyride here|r.
 step
     .goto 634,84.34,9.52
-    .isInScenario 909
+    .isOnQuest 39191
     >>Kill |cRXP_ENEMY_Pillik|r
     .scenario 1856,1 --Defeat Pillik
     .timer 50,RP
@@ -7167,13 +7638,13 @@ step
     *Kill |cRXP_ENEMY_Spectral Windshaper|r to get rid of the winds.
     >>Kill |cRXP_ENEMY_Magnar Icebreaker|r
     .scenario 1869,1
-    .timer 30,RP
     .mob Magnar Icebreaker
     .mob Spectral Windshaper
 step
     .goto 635,49.95,82.61
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .complete 39191,2 --1/1 Deal with Magnar Icebreaker
+    .scenario 1833,1
 step
     .goto 635,49.95,82.61
     >>Use the |cRXP_WARN_ExtraActionButton|r
@@ -7184,6 +7655,45 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 39191 >>Turn in Legacy of the Icebreaker
     .target Odyn
+]])
+--Arms 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Arms
+#displayname Artifact Weapon: Arms
+#next ac) Order Hall Warrior Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Arms
+]])
+--Fury 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Fury
+#displayname Artifact Weapon: Fury
+#next ac) Order Hall Warrior Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Fury
+]])
+--Protection 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Warrior Protection
+#displayname Artifact Weapon: Protection
+#next ac) Order Hall Warrior Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection
 ]])
 --Warrior Intro 1
 RXPGuides.RegisterGuide([[
