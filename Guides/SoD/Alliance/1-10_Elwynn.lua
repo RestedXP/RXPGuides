@@ -748,7 +748,7 @@ step << Human Paladin
     .goto Elwynn Forest,50.433,42.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs
     .turnin 77617 >> Turn in Relics of the Light
-    .train >> Train your class spells
+    .trainer >> Train your class spells
     .target Brother Sammuel
     .isOnQuest 77617
 step << Human Paladin

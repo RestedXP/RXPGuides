@@ -1109,7 +1109,6 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step
-    .goto 80,43.46,85.58,10,0
     .goto 89,43.913,76.149
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Cordressa Briarbow|r up stairs
     .target Sentinel Cordressa Briarbow

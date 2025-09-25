@@ -524,7 +524,7 @@ function addon.CalculateTotalXP(flags)
                     local s = string.format("%dxp %s (%d)", xp,
                                     addon.GetQuestName(qid) or "", qid)
                     table.insert(outputString,s)
-                    print(s)
+                    print(s)--ok
             end
         end
         return isAvailable

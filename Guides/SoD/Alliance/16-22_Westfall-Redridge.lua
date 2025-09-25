@@ -82,7 +82,7 @@ step << Priest !NightElf
     .goto StormwindClassic,20.8,50.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara Meideros|r
     .target Nara Meideros
-    .train >> Train your class spells
+    .trainer >> Train your class spells
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
