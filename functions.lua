@@ -1723,7 +1723,10 @@ local vector00 = CreateVector2D(0,0)
 local function UpdateInstanceData(self,event)
 
     local element = self.element
-    if not event and element and element.step.active and element.zone then
+
+    if element.fixedMapID then
+        return
+    elseif not event and element and element.step.active and element.zone then
         local zone = element.zone
         local IID = C_Map.GetWorldPosFromMapPos(zone, vector00)
         if IID and not HBD.transforms[IID] then
@@ -1747,6 +1750,7 @@ addon.functions["goto"] = function(self, ...)
         --print(zone)
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
+            element.fixedMapID = true
             zone = addon.GetMapId(subzone) or tonumber(subzone)
             if addon.mapConversion[zone] then
                 zone = addon.mapConversion[zone]
@@ -1938,6 +1942,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         end
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
+            element.fixedMapID = true
             zone = addon.GetMapId(subzone) or tonumber(subzone)
             if addon.mapConversion[element.zone] then
                 zone = addon.mapConversion[element.zone]
@@ -2064,6 +2069,7 @@ function addon.functions.pin(self, ...)
         end
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
+            element.fixedMapID = true
             zone = addon.GetMapId(subzone) or tonumber(subzone)
             if addon.mapConversion[element.zone] then
                 zone = addon.mapConversion[element.zone]
