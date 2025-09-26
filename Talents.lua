@@ -528,7 +528,7 @@ function addon.talents.functions.talent(element, validate, optional)
                                     _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
                                     name, _G.RANK, talentData.rank)
                 -- Handle in level step processing, if return value is rank from at least one optional step, continue
-                return true
+                return true, name
             end
             -- Return -1 if not selected, check upstream to verify at least one #optional step talent chosen
             return -1
