@@ -3511,6 +3511,11 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         calculatedRate = calculatedRate + 0.1
     end
 
+    if addon.game == "MOP" and UnitLevel('player') >= 85 then
+        --5.4 xp rates
+        calculatedRate = calculatedRate + 0.55
+    end
+
     if addon.game == "RETAIL" then
         local cloakBonus = C_CurrencyInfo.GetCurrencyInfo(3001).quantity
         local warModeBonus = (C_PvP.IsWarModeActive() or CheckBuff(282559) or CheckBuff(269083) or CheckBuff(289954)) and C_PvP.GetWarModeRewardBonus() or 0
