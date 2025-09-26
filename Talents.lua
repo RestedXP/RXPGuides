@@ -518,21 +518,28 @@ function addon.talents.functions.talent(element, validate, optional)
                 GetTalentInfo(talentData.tab, talentIndex)
         end
 
+        -- TODO if more than one .talent in a step without #optional, error
+        -- TODO user input timing, noop prompt informing of action/options
+        if optional then
+            -- Avoid blocking on user action if talent exists in any optional blocks
+            if previewRankOrRank == talentData.rank then
+                addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
+                                    _G.TRADE_SKILLS_LEARNED_TAB,
+                                    _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
+                                    name, _G.RANK, talentData.rank)
+                -- Handle in level step processing, if return value is rank from at least one optional step, continue
+                return true
+            end
+            -- Return -1 if not selected, check upstream to verify at least one #optional step talent chosen
+            return -1
+        end
+
         if previewRankOrRank < talentData.rank then
             if addon.game == "CLASSIC" then -- Classic doesn't have Preview Talents
                 tempData = {talentData.tab, talentIndex, name}
 
-                if optional then
-                    -- TODO user input timing, noop prompt informing of action/options
-                    -- TODO handle replaying, avoid blocking on user action if talent exists in any optional blocks
-                    addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
-                                            _G.TRADE_SKILLS_LEARNED_TAB,
-                                            _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
-                                            name, _G.RANK, talentData.rank)
-                else
-                    addon.comms:ConfirmChoice("RXPTalentPrompt", fmt(_G.CONFIRM_LEARN_TALENT, name),
+                addon.comms:ConfirmChoice("RXPTalentPrompt", fmt(_G.CONFIRM_LEARN_TALENT, name),
                                               learnClassicTalent, tempData)
-                end
 
                 -- Stop as soon as first learning prompt, not a blocking dialog
                 return -1
@@ -550,7 +557,7 @@ function addon.talents.functions.talent(element, validate, optional)
 
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
-            else -- TBC/Wrath/Cata
+            else -- TBC/Wrath/Cata, not previewed
                 -- TODO if optional
                 if LearnTalent(talentData.tab, talentIndex) then
                     addon.comms.PrettyPrint("%s - %s (%s %d)",
