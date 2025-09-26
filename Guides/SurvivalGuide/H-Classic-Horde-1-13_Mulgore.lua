@@ -2371,7 +2371,7 @@ step << Druid
 step << Druid
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .train 8050 >> Train your class spells
+    .train 8936 >> Train your class spells
     .target Loganaar
     .xp <12,1
     .isQuestComplete 806
@@ -2912,9 +2912,9 @@ step << Druid
     .zoneskip Moonglade
     .solo
 step << Druid
-    .goto Durotar,54.42,42.59
+    .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .train 8050 >> Train your class spells
+    .train 8936 >> Train your class spells
     .target Loganaar
     .xp <12,1
     .cooldown item,6948,>0
