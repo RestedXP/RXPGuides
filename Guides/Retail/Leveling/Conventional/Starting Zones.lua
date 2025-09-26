@@ -3662,7 +3662,7 @@ step << Alliance
     .goto 84,85.75,31.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
     .turnin 44463 >>Turn in Demons Among Them
-    Anduin Wrynn
+    .target Anduin Wrynn
 step << Alliance
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r.
