@@ -466,6 +466,7 @@ end
 
 function addon.talents.functions.talent(element, validate, optional)
     if type(element) == "string" then -- on parse
+        -- TODO if more than one .talent in a step without #optional, error
         local e = {talent = {}}
         local args = element
         -- Strip whitespace
@@ -518,18 +519,17 @@ function addon.talents.functions.talent(element, validate, optional)
                 GetTalentInfo(talentData.tab, talentIndex)
         end
 
-        -- TODO if more than one .talent in a step without #optional, error
-        -- TODO user input timing, noop prompt informing of action/options
         if optional then
-            -- Avoid blocking on user action if talent exists in any optional blocks
             if previewRankOrRank == talentData.rank then
                 addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
                                     _G.TRADE_SKILLS_LEARNED_TAB,
                                     _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
                                     name, _G.RANK, talentData.rank)
+
                 -- Handle in level step processing, if return value is rank from at least one optional step, continue
                 return true, name
             end
+
             -- Return -1 if not selected, check upstream to verify at least one #optional step talent chosen
             return -1
         end
@@ -545,7 +545,6 @@ function addon.talents.functions.talent(element, validate, optional)
                 return -1
             elseif addon.settings.profile.previewTalents then -- TBC/Wrath/Cata
                 tempData = GetGroupPreviewTalentPointsSpent()
-                -- TODO if optional
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
 
                 -- Verify training actually worked, there's no return value from Preview
@@ -558,7 +557,6 @@ function addon.talents.functions.talent(element, validate, optional)
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
             else -- TBC/Wrath/Cata, not previewed
-                -- TODO if optional
                 if LearnTalent(talentData.tab, talentIndex) then
                     addon.comms.PrettyPrint("%s - %s (%s %d)",
                                             _G.TRADE_SKILLS_LEARNED_TAB, name,
@@ -1013,7 +1011,8 @@ function addon.talents:ProcessTalents(validate)
         end
     end
 
-    local stepLevel, remainingPoints
+    local stepLevel, remainingPoints, result
+    local optionalName, optionalLearned
 
     for stepNum, step in ipairs(guide.steps) do
         stepLevel = guide.minLevel + stepNum - 1
@@ -1039,15 +1038,16 @@ function addon.talents:ProcessTalents(validate)
         end
 
         -- print("Evaluating step", stepNum, "for level", stepLevel)
-        local result
+        optionalLearned = nil
 
         for _, element in ipairs(step.elements) do
+
+            -- Level steps can have multiple .talent underneath, only for #optional
             for tag, _ in pairs(element) do
                 -- print("Evaluating tag", tag)
                 if self.functions[tag] then
                     -- print("Executing tag function", tag)
-                    result = self.functions[tag](element, validate,
-                                                 step.optional)
+                    result, optionalName = self.functions[tag](element, validate, step.optional)
                 else
                     result = false
                     addon.error(L("Error parsing guide") .. " " ..
@@ -1056,13 +1056,36 @@ function addon.talents:ProcessTalents(validate)
                                     stepNum)
                 end
 
-                -- Exit processing if error found
-                -- Rely on in-tag-function error output for user communication
-                -- Explicitly require false, accept nil as truthy
-                if result == false or result == -1 then
+                if step.optional then
+                    -- .talent optional returns {true, name} if learned or {-1} if not learned
+                    if result == true and optionalName then
+                        -- Avoid blocking on user action if talent exists in any optional blocks
+                        optionalLearned = optionalName
+                        addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
+                                            _G.TRADE_SKILLS_LEARNED_TAB,
+                                            _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
+                                            optionalName)
+                    else
+                        -- Specific optional .talent not learned, check the next one
+                    end
+                elseif result == false or result == -1 then
+                    -- Exit processing if error found
+                    -- Rely on in-tag-function error output for user communication
+                    -- Explicitly require false, accept nil as truthy
                     -- print("Aborting step processing", result)
+
                     return
                 end
+            end
+
+            if step.optional and not optionalLearned then
+                addon.comms.PrettyPrint("%s %s %s at %s",
+                                    _G.ADDON_MISSING,
+                                    strlower(_G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS),
+                                    strlower(_G.TALENT_POINTS),
+                                    fmt(_G.UNIT_LEVEL_TEMPLATE, stepLevel),
+                                    optionalName)
+                return
             end
 
         end
