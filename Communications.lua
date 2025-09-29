@@ -699,7 +699,25 @@ function addon.comms:ConfirmChoice(lookup, prompt, confirmCallback, payload)
         text = prompt,
         button1 = _G.YES,
         button2 = _G.NO,
-        OnAccept = function() confirmCallback(payload) end,
+        OnAccept = function()
+            if confirmCallback then
+                confirmCallback(payload)
+            end
+        end,
+        timeout = 0,
+        whileDead = 1,
+        hideOnEscape = 1,
+        showAlert = 1
+    }
+
+    _G.StaticPopup_Show(lookup)
+end
+
+function addon.comms:PopupNotification(lookup, prompt)
+
+    StaticPopupDialogs[lookup] = {
+        text = prompt,
+        button1 = _G.OKAY,
         timeout = 0,
         whileDead = 1,
         hideOnEscape = 1,
