@@ -527,11 +527,11 @@ function addon.talents.functions.talent(element, validate, optional)
                                     name, _G.RANK, talentData.rank)
 
                 -- Handle in level step processing, if return value is rank from at least one optional step, continue
-                return true, name
+                return true, fmt("%s (%s %d)", _G.RANK, talentData.rank)
             end
 
             -- Return -1 if not selected, check upstream to verify at least one #optional step talent chosen
-            return -1
+            return false, fmt("%s (%s %d)", name, _G.RANK, talentData.rank)
         end
 
         if previewRankOrRank < talentData.rank then
@@ -1012,7 +1012,7 @@ function addon.talents:ProcessTalents(validate)
     end
 
     local stepLevel, remainingPoints, result
-    local optionalName, optionalLearned
+    local optionalName, optionalLearned, optionalNotLearned
 
     for stepNum, step in ipairs(guide.steps) do
         stepLevel = guide.minLevel + stepNum - 1
@@ -1038,7 +1038,10 @@ function addon.talents:ProcessTalents(validate)
         end
 
         -- print("Evaluating step", stepNum, "for level", stepLevel)
-        optionalLearned = nil
+        if step.optional then
+            optionalLearned = nil
+            optionalNotLearned = {}
+        end
 
         for _, element in ipairs(step.elements) do
 
@@ -1056,9 +1059,9 @@ function addon.talents:ProcessTalents(validate)
                                     stepNum)
                 end
 
-                if step.optional then
-                    -- .talent optional returns {true, name} if learned or {-1} if not learned
-                    if result == true and optionalName then
+                if step.optional and optionalName then
+                    -- .talent optional returns {true, name} if learned or {false, name} if not learned
+                    if result then
                         -- Avoid blocking on user action if talent exists in any optional blocks
                         optionalLearned = optionalName
                         addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
@@ -1066,7 +1069,8 @@ function addon.talents:ProcessTalents(validate)
                                             _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
                                             optionalName)
                     else
-                        -- Specific optional .talent not learned, check the next one
+                        -- Specific optional .talent not learned
+                        tinsert(optionalNotLearned, optionalName)
                     end
                 elseif result == false or result == -1 then
                     -- Exit processing if error found
@@ -1077,17 +1081,20 @@ function addon.talents:ProcessTalents(validate)
                     return
                 end
             end
+        end
 
-            if step.optional and not optionalLearned then
-                addon.comms.PrettyPrint("%s %s %s at %s",
-                                    _G.ADDON_MISSING,
-                                    strlower(_G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS),
-                                    strlower(_G.TALENT_POINTS),
-                                    fmt(_G.UNIT_LEVEL_TEMPLATE, stepLevel),
-                                    optionalName)
-                return
-            end
-
+        if step.optional and not optionalLearned then
+            addon.comms:PopupNotification("RXPTalentsMissingOptional",
+                fmt("%s %s %s: %s\n%s\n%s",
+                    _G.ADDON_MISSING,
+                    _G.OPTIONAL,
+                    strlower(_G.TALENT_POINTS),
+                    fmt(_G.UNIT_LEVEL_TEMPLATE, stepLevel),
+                    _G._G.TALENT_BUTTON_TOOLTIP_SELECT_INSTRUCTIONS,
+                    strjoin("\n", unpack(optionalNotLearned))
+                )
+            )
+            return
         end
 
     end
