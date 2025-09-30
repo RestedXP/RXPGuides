@@ -558,7 +558,16 @@ end
 function Frame:ShowWorldMapPins()
     WORLD_MAP_ID = GetWorldMapID()
 
-    for _, zoneData in pairs(DATA) do
+    -- Display pins for player's map if soloSelfFound
+    if addon.settings.profile.soloSelfFound then
+        for _, zoneData in pairs(DATA) do
+            for _, npcData in pairs(zoneData) do
+                self:ShowWorldMapNPC(npcData)
+            end
+        end
+    else
+        local zoneData = DATA[GetMapID()] or {}
+
         for _, npcData in pairs(zoneData) do
             self:ShowWorldMapNPC(npcData)
         end
@@ -666,6 +675,7 @@ function addon.VendorTreasures.UpdatePins()
         Frame:HideWorldMapPins()
         return
     end
+
     Frame:CheckWorldMap()
     Frame:ShowWorldMapPins()
 end
