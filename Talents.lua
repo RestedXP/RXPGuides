@@ -72,7 +72,7 @@ local function buildTalentGuidesMenu()
     local menu = {}
 
     local playerLevel = UnitLevel("player")
-    local disabled, invalidReason = false, nil
+    local disabled, invalidReason, menuData = false, nil, nil
 
     if PlayerTalentFrame.pet then
         tinsert(menu, {text = _G.PET_TALENTS, isTitle = 1, notCheckable = 1})
@@ -122,7 +122,7 @@ local function buildTalentGuidesMenu()
                 invalidReason = nil
             end
 
-            tinsert(menu, {
+            menuData = {
                 text = guide.name,
                 tooltipTitle = fmt("%s: %s", _G.LEVEL_RANGE, guide.levelRange),
                 notCheckable = 1,
@@ -136,7 +136,16 @@ local function buildTalentGuidesMenu()
 
                     if addon.talents:ProcessTalents('validate') then addon.talents:DrawTalents() end
                 end
-            })
+            }
+
+            -- Hide hardcore guides when not hardcore
+            if addon.game == "CLASSIC" and guide.hardcore then
+                if addon.settings.profile.hardcore then
+                    tinsert(menu, menuData)
+                end
+            else
+                tinsert(menu, menuData)
+            end
         end
     end
 
