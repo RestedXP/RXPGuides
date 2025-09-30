@@ -10,7 +10,7 @@
     <Script file="DB/classic/db.lua"/>
     <Script file="DB/classic/dangerousMobs.lua"/>
     <Script file="DB/classic/statWeights.lua"/>
-
+    <Script file="DB/classic/SpiritHealerDB.lua"/>
     <Script file="DB/questDB.lua"/>
 
 </Ui>
