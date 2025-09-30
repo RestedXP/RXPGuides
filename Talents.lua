@@ -1067,10 +1067,6 @@ function addon.talents:ProcessTalents(validate)
                     if result then
                         -- Avoid blocking on user action if talent exists in any optional blocks
                         optionalLearned = optionalName
-                        addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
-                                            _G.TRADE_SKILLS_LEARNED_TAB,
-                                            _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
-                                            optionalName)
                     else
                         -- Specific optional .talent not learned
                         tinsert(optionalNotLearned, optionalName)
