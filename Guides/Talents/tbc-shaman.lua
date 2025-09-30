@@ -3,9 +3,10 @@ local _, addon = ...
 if addon.player.class ~= "SHAMAN" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Enhancement Shaman 10-70
+#name Enhancement 10-70
 #minLevel 10
 #maxLevel 70
+#order 1
 
 level -- Shield Specialization (Rank 1)
     .talent 2,1,3,1
@@ -189,9 +190,10 @@ level -- Improved Fire Totems (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Elemental Shaman 10-70
+#name Elemental 10-70
 #minLevel 10
 #maxLevel 70
+#order 2
 
 level -- Convection (Rank 1)
     .talent 1,1,2,1
