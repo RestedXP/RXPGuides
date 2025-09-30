@@ -6,6 +6,7 @@ addon.talents.RegisterGuide([[
 #name Arms 10-70
 #minLevel 10
 #maxLevel 70
+#order 1
 
 level -- Improved Heroic Strike (Rank 1)
     .talent 1,1,1,1
@@ -210,6 +211,7 @@ addon.talents.RegisterGuide([[
 #name Fury 10-70
 #minLevel 10
 #maxLevel 70
+#order 2
 
 level -- Cruelty (Rank 1)
     .talent 2,1,3,1

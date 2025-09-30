@@ -7,6 +7,7 @@ addon.talents.RegisterGuide([[
 #next Shadow 10-70
 #minLevel 10
 #maxLevel 40
+#order 1
 
 level -- Wand Specialization (Rank 1)
     .talent 1,1,3,1
@@ -104,6 +105,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 70
 #reset
+#order 2
 
 level -- Spirit Tap (Rank 1)
     .talent 3,1,2,1

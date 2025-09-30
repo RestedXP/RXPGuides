@@ -6,6 +6,7 @@ addon.talents.RegisterGuide([[
 #name Enhancement 10-70
 #minLevel 10
 #maxLevel 70
+#order 1
 
 level -- Shield Specialization (Rank 1)
     .talent 2,1,3,1
@@ -192,6 +193,7 @@ addon.talents.RegisterGuide([[
 #name Elemental 10-70
 #minLevel 10
 #maxLevel 70
+#order 2
 
 level -- Convection (Rank 1)
     .talent 1,1,2,1
