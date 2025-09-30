@@ -73,6 +73,7 @@ local function buildTalentGuidesMenu()
 
     local playerLevel = UnitLevel("player")
     local disabled, invalidReason, menuData = false, nil, nil
+    local orderedGuides, unorderedGuides = {}, {}
 
     if PlayerTalentFrame.pet then
         tinsert(menu, {text = _G.PET_TALENTS, isTitle = 1, notCheckable = 1})
@@ -141,12 +142,38 @@ local function buildTalentGuidesMenu()
             -- Hide hardcore guides when not hardcore
             if addon.game == "CLASSIC" and guide.hardcore then
                 if addon.settings.profile.hardcore then
-                    tinsert(menu, menuData)
+                    if guide.order then
+                        menuData.guideOrder = guide.order
+                        orderedGuides[guide.order] = menuData
+                    else
+                        tinsert(unorderedGuides, menuData)
+                    end
                 end
             else
-                tinsert(menu, menuData)
+                if guide.order then
+                    menuData.guideOrder = guide.order
+                    orderedGuides[guide.order] = menuData
+                else
+                    tinsert(unorderedGuides, menuData)
+                end
             end
         end
+    end
+
+    -- LUA doesn't order tables well, so track sparse indices, then iterate over that
+    local orderedGuidesOrder = {}
+    for _, guideMenu in pairs(orderedGuides) do
+        tinsert(orderedGuidesOrder, guideMenu.guideOrder)
+    end
+
+    table.sort(orderedGuidesOrder, function(k1, k2) return k1 < k2 end)
+
+    for _, guideOrder in ipairs(orderedGuidesOrder) do
+        tinsert(menu, orderedGuides[guideOrder])
+    end
+
+    for _, guideMenu in ipairs(unorderedGuides) do
+        tinsert(menu, guideMenu)
     end
 
     tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
@@ -371,7 +398,7 @@ function addon.talents:ParseGuide(text)
             parseSuccess = line:gsub("^#(%S+)%s*(.*)", function(tag, value)
                 -- print("Parsing guide tag at", linenumber, tag, value)
                 -- Set metadata without overwriting
-                if tag and tag ~= "" and not guide[tag] then guide[tag] = value end
+                if tag and tag ~= "" and not guide[tag] then guide[tag] = tonumber(value) or value end
             end)
 
         end
