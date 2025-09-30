@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "HUNTER" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Beast Mastery Hunter 10-70
+#name Beast Mastery 10-70
 #minLevel 10
 #maxLevel 70
 

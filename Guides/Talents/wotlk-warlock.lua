@@ -3,8 +3,8 @@ local _, addon = ...
 if addon.player.class ~= "WARLOCK" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
-#name Warlock 10-70
-#next Warlock 71-80
+#name Affliction 10-70
+#next Affliction 71-80
 #minLevel 10
 #maxLevel 70
 
@@ -191,14 +191,13 @@ level -- Curse of Exhaustion
 level -- Death's Embrace (Rank 1)
     .talent 1,9,1,1
 
-    ]])
+]])
 
 addon.talents.RegisterGuide([[
-#name Warlock 71-80
+#name Affliction 71-80
 #minLevel 10
 #maxLevel 80
 #reset
-
 
 level -- Improved Corruption (Rank 1)
     .talent 1,1,3,1

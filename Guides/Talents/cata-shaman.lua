@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "SHAMAN" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Elemental Shaman 10-85
+#name Elemental 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -132,7 +132,7 @@ level -- Spark of Life
 ]])
 
 addon.talents.RegisterGuide([[
-#name Enhancement Shaman 10-85
+#name Enhancement 10-85
 #minLevel 10
 #maxLevel 85
 

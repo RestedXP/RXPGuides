@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "WARRIOR" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Arms Warrior 10-70
+#name Arms 10-70
 #minLevel 10
 #maxLevel 70
 
@@ -207,7 +207,7 @@ level -- Flurry (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Fury Warrior 10-70
+#name Fury 10-70
 #minLevel 10
 #maxLevel 70
 

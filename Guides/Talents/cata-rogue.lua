@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "ROGUE" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Assassination Rogue 10-85
+#name Assassination 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -132,7 +132,7 @@ level -- Relentless Strikes
 ]])
 
 addon.talents.RegisterGuide([[
-#name Combar Rogue 10-85
+#name Combat 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -261,7 +261,7 @@ level -- Quickening
 ]])
 
 addon.talents.RegisterGuide([[
-#name Subtlety Rogue 10-85
+#name Subtlety 10-85
 #minLevel 10
 #maxLevel 85
 

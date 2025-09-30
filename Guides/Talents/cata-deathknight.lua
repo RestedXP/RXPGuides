@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "DEATHKNIGHT" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Blood Death Knight 55-85
+#name Blood 55-85
 #minLevel 10
 #maxLevel 85
 
@@ -131,9 +131,8 @@ level -- Runic Power Mastery
     .talent 2,1,1,1
 ]])
 
-
 addon.talents.RegisterGuide([[
-#name Frost Death Knight 55-85
+#name Frost 55-85
 #minLevel 10
 #maxLevel 85
 
@@ -256,7 +255,7 @@ level -- Scent of Blood
 ]])
 
 addon.talents.RegisterGuide([[
-#name Unholy Death Knight 10-85
+#name Unholy 10-85
 #minLevel 10
 #maxLevel 85
 

@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "WARLOCK" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Affliction Warlock 10-85
+#name Affliction 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -132,7 +132,7 @@ level -- Mana Feed
 ]])
 
 addon.talents.RegisterGuide([[
-#name Demonology Warlock 10-85
+#name Demonology 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -261,7 +261,7 @@ level -- Siphon Life
 ]])
 
 addon.talents.RegisterGuide([[
-#name Destruction Warlock 10-85
+#name Destruction 10-85
 #minLevel 10
 #maxLevel 85
 

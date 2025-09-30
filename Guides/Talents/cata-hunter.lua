@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "HUNTER" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Beast Mastery Hunter 10-85
+#name Beast Mastery 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -128,9 +128,8 @@ level -- Careful Aim
     .talent 2,2,3,2
 ]])
 
-
 addon.talents.RegisterGuide([[
-#name Marksmanship Hunter 10-85
+#name Marksmanship 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -259,7 +258,7 @@ level -- Improved Serpent Sting
 ]])
 
 addon.talents.RegisterGuide([[
-#name Survival Hunter 10-85
+#name Survival 10-85
 #minLevel 10
 #maxLevel 85
 

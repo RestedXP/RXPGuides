@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "PALADIN" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Retribution Paladin 10-85
+#name Retribution 10-85
 #minLevel 10
 #maxLevel 85
 

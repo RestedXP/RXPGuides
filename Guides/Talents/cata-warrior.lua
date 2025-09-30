@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "WARRIOR" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Arms Warrior 10-85
+#name Arms 10-85
 #minLevel 10
 #maxLevel 85
 

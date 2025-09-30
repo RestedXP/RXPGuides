@@ -3,8 +3,8 @@ local _, addon = ...
 if addon.player.class ~= "DRUID" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
-#name Wotlk Druid 10-49
-#next Wotlk Druid 50-80
+#name Feral 10-49
+#next Feral 50-80
 #minLevel 10
 #maxLevel 49
 
@@ -127,15 +127,13 @@ level -- Heart of the Wild (Rank 3)
 
 level -- Heart of the Wild (Rank 4)
     .talent 2,6,2,4
-
-    ]])
+]])
 
 addon.talents.RegisterGuide([[
-#name Wotlk Druid 50-80
+#name Feral 50-80
 #minLevel 10
 #maxLevel 80
 #reset
-
 
 level -- Ferocity (Rank 1)
     .talent 2,1,2,1

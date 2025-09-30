@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "MAGE" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Arcane Mage 10-85
+#name Arcane 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -132,7 +132,7 @@ level -- Piercing Ice
 ]])
 
 addon.talents.RegisterGuide([[
-#name Fire Mage 10-85
+#name Fire 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -261,7 +261,7 @@ level -- Arcane Concentration
 ]])
 
 addon.talents.RegisterGuide([[
-#name Frost Mage 10-85
+#name Frost 10-85
 #minLevel 10
 #maxLevel 85
 

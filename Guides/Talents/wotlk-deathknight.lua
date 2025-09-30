@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "DEATHKNIGHT" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
-#name Death Knight 10-80
+#name Unholy 10-80
 #minLevel 10
 #maxLevel 80
 

@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "WARRIOR" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
-#name Warrior 10-58
+#name Protection 10-58
 #next Warrior 59-80
 #minLevel 10
 #maxLevel 58
@@ -157,7 +157,7 @@ level -- Vitality (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Warrior 59-80
+#name Arms 59-80
 #minLevel 10
 #maxLevel 80
 #reset

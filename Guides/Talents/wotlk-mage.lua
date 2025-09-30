@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "MAGE" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
-#name Mage AoE 10-80
+#name AoE 10-80
 #minLevel 10
 #maxLevel 80
 
@@ -222,9 +222,8 @@ level -- Spell Impact (Rank 3)
 
 ]])
 
-
 addon.talents.RegisterGuide([[
-#name Mage Single Target 10-80
+#name Frost 10-80
 #minLevel 10
 #maxLevel 80
 

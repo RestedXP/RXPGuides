@@ -3,8 +3,8 @@ local _, addon = ...
 if addon.player.class ~= "PRIEST" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Shadow Priest (Wand) 10-40
-#next Shadow Priest 10-70
+#name Shadow (Wand) 10-40
+#next Shadow 10-70
 #minLevel 10
 #maxLevel 40
 
@@ -100,7 +100,7 @@ level -- Vampiric Embrace
 ]])
 
 addon.talents.RegisterGuide([[
-#name Shadow Priest 10-70
+#name Shadow 10-70
 #minLevel 10
 #maxLevel 70
 #reset

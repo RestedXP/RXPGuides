@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "MAGE" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name AoE Mage 10-22
+#name AoE 10-22
 #minLevel 10
 #maxLevel 22
 
@@ -45,7 +45,7 @@ level -- Ignite (Rank 4)
 ]])
 
 addon.talents.RegisterGuide([[
-#name AoE Mage 22-60
+#name AoE 22-60
 #minLevel 10
 #maxLevel 60
 #reset
@@ -235,7 +235,7 @@ level -- Arcane Meditation (Rank 2)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Frost Mage 10-70
+#name Frost 10-70
 #minLevel 10
 #maxLevel 70
 

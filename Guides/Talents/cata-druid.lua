@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "DRUID" or addon.game ~= "CATA" then return end
 
 addon.talents.RegisterGuide([[
-#name Balance Druid 10-85
+#name Balance 10-85
 #minLevel 10
 #maxLevel 85
 
@@ -132,7 +132,7 @@ level -- Perseverance
 ]])
 
 addon.talents.RegisterGuide([[
-#name Feral Druid 10-85
+#name Feral 10-85
 #minLevel 10
 #maxLevel 85
 
