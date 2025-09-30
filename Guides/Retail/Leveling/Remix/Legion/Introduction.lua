@@ -96,9 +96,6 @@ step
     .macro Argussian Reach Champion's Insignia,1708496 >>1
     .macro Temporal Retreat,4571434 >>1
     .macro Unraveling Sands,4643984 >>1
-step
-
-
 ]])
 
 ---Intro
@@ -116,10 +113,38 @@ step
     #completewith Fixed Point in Time
     #hidewindow
     +test
-    .use 245925
-    .use 246937
-    .openitem 237812
-    .openitem 243373
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 -- step
 --     .goto 627,72.46,45.90
 --     .achievementComplete 42313,1
@@ -842,7 +867,7 @@ RXPGuides.RegisterGuide([[
 --     .openitem 243373
 step
     #completewith next
-    .isQuestTurnedIn account,80018
+    -- .isQuestTurnedIn account,80018
     +Select this guide to skip the skyriding intro recommended for (faster leveling).
     .clicknext RestedXP Legion Remix\aa) Skyriding Skip >> Skyriding Skip
 step
@@ -850,6 +875,7 @@ step
 
 
 ]])
+
 ---Skyriding Skip
 RXPGuides.RegisterGuide([[
 #retail
@@ -893,14 +919,42 @@ RXPGuides.RegisterGuide([[
 
 << Monk
 
--- step
---     #completewith Dalaran
---     #hidewindow
---     +test
---     .use 245925
---     .use 246937
---     .openitem 237812
---     .openitem 243373
+step
+    #completewith The Dawning Light
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     .zoneskip 627,1
     .zone 627 >>Enter Dalaran
@@ -913,11 +967,6 @@ step
     .goto 627,56.06,22.77 << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 12103,2 --1/1 Travel to Peak of Serenity by Zen Pilgrimage or Dalaran portal
--- step
---     .xp <11,1
---     >>Use |T775462:0|t[Zen Pilgrimage]
---     .complete 12103,2 --1/1 Travel to Peak of Serenity by Zen Pilgrimage or Dalaran portal
---     .macro Zen Pilgrimage,775462 >>/cast Zen Pilgrimage
 step
     .goto 424,44.88,27.75
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Master Hight|r
@@ -1077,6 +1126,7 @@ step
     .complete 40236,2 --1/1 Establish the Order of The Broken Temple
     .target Iron-Body Ponshu
 step
+    #label The Dawning Light
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 40236 >>Turn in The Dawning Light
@@ -1142,6 +1192,42 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
+    #completewith Dalaran
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
     #completewith next
     #label Matter of Planning
     .goto 709,49.99,58.69,30,0
@@ -1180,10 +1266,11 @@ step
     .accept 40795 >>Accept The Fight Begins
     .target Master Hsu
 step
-    .goto 709,52.91,60.17
+    .goto 709,52.92,60.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 40795,1 --1/1 Assault Point Chosen
---map quest    
+    .acceptmap 39718
+    .accept 39718 >>Accept The Tranquil Forest
 step
     .goto 709,52.77,59.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
@@ -1221,7 +1308,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Death Knight Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1238,7 +1325,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Death Knight Part 1
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1255,11 +1342,47 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Demon Hunter Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 
 << DemonHunter
 
+step
+    #completewith Call of the Illidari
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     .goto 627,72.07,41.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -1281,6 +1404,7 @@ step
     .accept 39261 >>Accept Call of the Illidari
     .target Kor'vas Bloodthorn
 step
+    #label Call of the Illidari
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 39261 >>Turn in Call of the Illidari
@@ -1330,12 +1454,48 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ac) Order Hall Demon Hunter Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ad) Infinite Bazaar
 
 << DemonHunter
 
+step
+    #completewith Asha Ravensong
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     .goto 627,73.86,46.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
@@ -1467,9 +1627,11 @@ step
     .target Kayn Sunfury
     .accept 41069 >>Accept Direct Our Wrath
 step
-    .goto 720,58.84,54.94
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crucible|r
-    .complete 41069,1 --1/1 Initial strike point chosen
+    .goto 720,58.56,53.23
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
+    .complete 41069,1 --1/1 Assault Point Chosen
+    .acceptmap 39718
+    .accept 39718 >>Accept The Tranquil Forest
 step
     .goto 720,58.57,57.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
@@ -1488,6 +1650,7 @@ step
     .complete 42671,1 --Kayn Sunfury recruited
     .target Kayn Sunfury
 step
+    #label Asha Ravensong
     .goto 720,56.18,38.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asha Ravensong|r
     .accept 42697 >>Accept Champion: Asha Ravensong
@@ -1507,7 +1670,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Druid Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1523,7 +1686,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Druid Part 1
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1539,7 +1702,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Hunter Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1555,7 +1718,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Hunter Part 1
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -1576,6 +1739,42 @@ RXPGuides.RegisterGuide([[
 
 << Mage
 
+step
+    #completewith Dreadlord's Prize
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     .goto 627,56.99,46.76
     >>Enter Legion Dalaran
@@ -1661,6 +1860,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 41036,3 --1/1 Listen to Meryl
 step
+    #label Dreadlord's Prize
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 41036 >>Turn in The Dreadlord's Prize
@@ -1726,7 +1926,42 @@ RXPGuides.RegisterGuide([[
 
 << Mage
 
-
+step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
     .accept 41114 >>Accept The Champion's Return
@@ -1831,9 +2066,11 @@ step
     .target The Great Akazamzarak
     .accept 41141 >>Accept A Conjuror's Duty
 step
-    .goto 734,81.61,60.37
+    .goto 734,81.37,61.1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
-    .complete 41141,1 --1/1 Zone Chosen
+    .complete 41141,1 --1/1 Assault Point Chosen
+    .acceptmap 39718
+    .accept 39718 >>Accept The Tranquil Forest
 step
     .goto 734,81.61,60.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
@@ -1871,6 +2108,7 @@ step
     .target Archmage Kalec
     .complete 42663,1 --1/1 Recruit Archmage Kalec
 step
+    #label Champion: Archmage Modera
     .goto 735,55.29,39.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Modera|r
     .accept 42685 >>Accept Champion: Archmage Modera
@@ -1899,6 +2137,42 @@ RXPGuides.RegisterGuide([[
 
 << Paladin
 
+step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_next to you|r.
     .accept 38710 >>Accept An Urgent Gathering
@@ -1985,7 +2259,42 @@ RXPGuides.RegisterGuide([[
 
 << Paladin
 
-
+step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 -- step
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r
 --     .accept 44250 >>Accept Champion of the Light
@@ -2038,6 +2347,11 @@ step
     .target Lord Grayson Shadowbreaker
     .accept 39756 >>Accept A Sound Plan
 step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
+    .complete 39756,1 --1/1 Assault Point Chosen
+    .acceptmap 39718
+    .accept 39718 >>Accept The Tranquil Forest
+step
     .goto 24,53.4,78.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 39756,1 --1/1 Initial strike point chosen
@@ -2073,7 +2387,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Priest Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2089,7 +2403,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Priest Part 1
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2110,6 +2424,42 @@ RXPGuides.RegisterGuide([[
 
 << Rogue
 
+step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenholdt Courier|r |cRXP_WARN_next to you|r.
     .accept 40832 >>Accept Call of The Uncrowned
@@ -2269,6 +2619,42 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
     .goto 626,41.48,77.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40950 >>Accept Honoring Success
@@ -2317,20 +2703,25 @@ step
     .accept 40997 >>Accept Lethal Efficiency
     .target Nikki the Gossip
 step
-    .goto 626,37.76,44.63
+    .goto 626,37.39,44.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
-    .complete 40997,1 --1/1 Initial strike point chosen
+    .complete 40997,1 --1/1 Assault Point Chosen
+    .acceptmap 39718
+    .accept 39718 >>Accept The Tranquil Forest
 step
     .goto 626,37.79,44.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .turnin 40997 >>Turn in Lethal Efficiency
     .target Nikki the Gossip
+-- step
+--     .goto 626,33.39,38.62,10,0
+--     .goto 626,24.58,51.69,10,0
+--     .goto 626,11.34,65.55,10,0
+--     .goto 626,3.02,83.45,10,0
+--     .goto 627,20.06,80.96,10 >>Leave the Sewer
 step
-    .goto 626,33.39,38.62,10,0
-    .goto 626,24.58,51.69,10,0
-    .goto 626,11.34,65.55,10,0
-    .goto 626,3.02,83.45,10,0
-    .goto 627,20.06,80.96,10 >>Leave the Sewer
+    .goto 626,39.68,21.33
+    .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
 ]])
 
 ---Shaman Order Hall Intro 1
@@ -2339,7 +2730,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Shaman Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2356,7 +2747,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Shaman Part 1
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2373,7 +2764,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Warlock Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2389,7 +2780,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Warlock Part 1
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ac) Infinite Bazaar
 
@@ -2410,8 +2801,42 @@ RXPGuides.RegisterGuide([[
 
 << Warrior
 
-38904
-
+step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
 step
     #optional 
     .convertquest 42815,38904 << Horde
@@ -2609,6 +3034,42 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
     .goto 695,59.58,83.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danica the Reclaimer|r
     .accept 39214 >>Accept The Eye of Odyn
@@ -2633,10 +3094,11 @@ step
     .target Skyseer Ghrent
     .accept 40585 >>Accept Thus Begins the War
 step
-    .goto 695,59.30,13.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicenna|r
-    .target Felicenna
-    .complete 40585,1 --1/1 Assault point chosen
+    .goto 695,59.22,13.43
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
+    .complete 40585,1 --1/1 Assault Point Chosen
+    .acceptmap 39718
+    .accept 39718 >>Accept The Tranquil Forest
 step
     .goto 695,59.77,13.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skyseer Ghrent|r
@@ -2737,7 +3199,7 @@ step
     >>Use |T242617:0|t[Curious Simulacrum]
     .accept 92688 >>Accept Bronze Simulacrum
     .use 242617
-step
+step << Warrior/Mage/Horde Paladin/Rogue/Monk
    .goto 627,72.07,40.6
    .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
 step
@@ -2833,11 +3295,6 @@ step
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
--- step
---     >>Kill |cRXP_ENEMY_Enemies|r |cRXP_ENEMY_Empowered enemies|r
---     |T135975:0|t[Temporal Retreat]
---     .complete 91061,3 --15/15 Enemies slain in Heroic World Tier
---     .complete 91061,4 --3/3 Empowered enemies slain in Heroic World Tier
 
 ]])
 
@@ -2851,7 +3308,44 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00FF006|r - First Zone|r
 
 
-
+step
+    #completewith Champion: Archmage Modera
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    .openitem 237812 -- Cache of Infinite Treasure
+    .openitem 243373 -- Timerunner's Weaponry
+    .openitem 246814 -- Bronze Cache
+    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+heroic world tier text
 ]])
 
 -- ================================================= -
