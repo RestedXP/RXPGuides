@@ -7,6 +7,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #hardcore
+#order 1
 
 level -- Improved Corruption (Rank 1)
     .talent 1,1,3,1
@@ -167,6 +168,7 @@ addon.talents.RegisterGuide([[
 #name Affliction 10-60
 #minLevel 10
 #maxLevel 60
+#order 2
 
 level -- Improved Corruption (Rank 1)
     .talent 1,1,3,1

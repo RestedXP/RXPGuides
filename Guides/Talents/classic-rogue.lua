@@ -7,6 +7,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #hardcore
+#order 1
 
 level -- Remorseless Attacks (Rank 1)
     .talent 1,1,2,1
@@ -164,6 +165,7 @@ addon.talents.RegisterGuide([[
 #name Combat 10-60
 #minLevel 10
 #maxLevel 60
+#order 2
 
 level -- Remorseless Attacks (Rank 1)
     .talent 1,1,2,1

@@ -8,6 +8,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 30
 #hardcore
+#order 1
 
 level -- Cruelty (Rank 1)
     .talent 2,1,3,1
@@ -81,6 +82,7 @@ addon.talents.RegisterGuide([[
 #maxLevel 55
 #hardcore
 #reset
+#order 2
 
 level -- Improved Rend (Rank 1)
     .talent 1,1,3,1
@@ -243,6 +245,7 @@ addon.talents.RegisterGuide([[
 #maxLevel 60
 #hardcore
 #reset
+#order 3
 
 level -- Cruelty (Rank 1)
     .talent 2,1,3,1
@@ -404,6 +407,7 @@ addon.talents.RegisterGuide([[
 #next Arms 30-55
 #minLevel 10
 #maxLevel 30
+#order 4
 
 level -- Cruelty (Rank 1)
     .talent 2,1,3,1
@@ -476,6 +480,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 55
 #reset
+#order 5
 
 level -- Improved Rend (Rank 1)
     .talent 1,1,3,1
@@ -637,6 +642,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #reset
+#order 6
 
 level -- Cruelty (Rank 1)
     .talent 2,1,3,1

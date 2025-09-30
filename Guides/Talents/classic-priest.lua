@@ -7,6 +7,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #hardcore
+#order 1
 
 level -- Wand Specialization (Rank 1)
     .talent 1,1,3,1
@@ -164,6 +165,7 @@ addon.talents.RegisterGuide([[
 #name Shadow (Wands) 10-39
 #minLevel 10
 #maxLevel 39
+#order 2
 
 level -- Wand Specialization (Rank 1)
     .talent 1,1,3,1
@@ -262,6 +264,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #reset
+#order 3
 
 level -- Spirit Tap (Rank 1)
     .talent 3,1,2,1

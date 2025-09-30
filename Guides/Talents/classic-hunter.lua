@@ -7,6 +7,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #hardcore
+#order 1
 
 level -- Improved Aspect of the Hawk (Rank 1)
     .talent 1,1,2,1
@@ -167,6 +168,7 @@ addon.talents.RegisterGuide([[
 #name Beast Mastery 10-60
 #minLevel 10
 #maxLevel 60
+#order 2
 
 level -- Improved Aspect of the Hawk (Rank 1)
     .talent 1,1,2,1

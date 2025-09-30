@@ -7,6 +7,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 40
 #hardcore
+#order 1
 
 level -- Ancestral Knowledge (Rank 1)
     .talent 2,1,2,1
@@ -166,6 +167,7 @@ addon.talents.RegisterGuide([[
 #maxLevel 60
 #hardcore
 #reset
+#order 2
 
 level -- Concussion (Rank 1)
     .talent 1,1,3,1
@@ -323,6 +325,7 @@ addon.talents.RegisterGuide([[
 #name Enhancement 10-40
 #minLevel 10
 #maxLevel 40
+#order 3
 
 level -- Ancestral Knowledge (Rank 1)
     .talent 2,1,2,1
@@ -481,6 +484,7 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 60
 #reset
+#order 4
 
 level -- Concussion (Rank 1)
     .talent 1,1,3,1
