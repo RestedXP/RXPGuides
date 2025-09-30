@@ -6,10 +6,11 @@ Creative Commons Attribution-NonCommercial 3.0 Unported https://creativecommons.
 ]] local _, addon = ...
 
 if addon.game ~= "CLASSIC" then return end
-
-local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local HBD     = LibStub("HereBeDragons-2.0")
 local HBDPins = LibStub("HereBeDragons-Pins-2.0")
+
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local GetItemQualityColor = C_Item and C_Item.GetItemQualityColor or _G.GetItemQualityColor
 
 local GameTooltip, WorldMapFrame = _G.GameTooltip, _G.WorldMapFrame
 local UnitOnTaxi, GetBestMapForUnit, GetPlayerMapPosition = _G.UnitOnTaxi,
