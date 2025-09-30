@@ -179,6 +179,7 @@ level -- Ice Floes (Rank 1)
 
 addon.talents.RegisterGuide([[
 #name AoE 10-22
+#next AoE 22-60
 #minLevel 10
 #maxLevel 22
 #order 2

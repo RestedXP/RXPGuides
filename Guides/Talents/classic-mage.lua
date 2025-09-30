@@ -328,6 +328,7 @@ level -- Ice Shards (Rank 1)
 
 addon.talents.RegisterGuide([[
 #name AoE (Survival) 10-22
+#next AoE (Survival) 22-60
 #minLevel 10
 #maxLevel 22
 #hardcore
@@ -861,6 +862,7 @@ level -- Ice Shards (Rank 1)
 
 addon.talents.RegisterGuide([[
 #name AoE 10-22
+#next AoE 22-60
 #minLevel 10
 #maxLevel 22
 #order 7

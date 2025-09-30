@@ -163,6 +163,7 @@ level -- Spell Warding (Rank 1)
 
 addon.talents.RegisterGuide([[
 #name Shadow (Wands) 10-39
+#next Shadow 40-60
 #minLevel 10
 #maxLevel 39
 #order 2

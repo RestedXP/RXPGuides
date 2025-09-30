@@ -4,6 +4,7 @@ if addon.player.class ~= "SHAMAN" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
 #name Enhancement (Survival) 10-40
+#next Elemental (Survival) 40-60
 #minLevel 10
 #maxLevel 40
 #hardcore
@@ -323,6 +324,7 @@ level -- Ancestral Knowledge (Rank 4)
 
 addon.talents.RegisterGuide([[
 #name Enhancement 10-40
+#next Elemental 40-60
 #minLevel 10
 #maxLevel 40
 #order 3
