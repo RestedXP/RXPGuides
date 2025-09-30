@@ -530,7 +530,7 @@ function addon.talents.functions.talent(element, validate, optional)
                 return true, fmt("%s (%s %d)", _G.RANK, talentData.rank)
             end
 
-            -- Return -1 if not selected, check upstream to verify at least one #optional step talent chosen
+            -- Return false if not selected, check upstream to verify at least one #optional step talent chosen
             return false, fmt("%s (%s %d)", name, _G.RANK, talentData.rank)
         end
 
