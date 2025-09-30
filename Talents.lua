@@ -1085,7 +1085,7 @@ function addon.talents:ProcessTalents(validate)
 
         if step.optional and not optionalLearned then
             addon.comms:PopupNotification("RXPTalentsMissingOptional",
-                fmt("%s %s %s: %s\n%s\n%s",
+                fmt("%s %s %s: %s\n%s\n\n%s",
                     _G.ADDON_MISSING,
                     _G.OPTIONAL,
                     strlower(_G.TALENT_POINTS),
