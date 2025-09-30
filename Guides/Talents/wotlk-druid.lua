@@ -10,19 +10,19 @@ addon.talents.RegisterGuide([[
 
 
 level -- Ferocity Rank 1
-	.talent 2,1,2,1
+    .talent 2,1,2,1
 
 level -- Ferocity Rank 2
-	.talent 2,1,2,2
+    .talent 2,1,2,2
 
 level -- Ferocity Rank 3
-	.talent 2,1,2,3
+    .talent 2,1,2,3
 
 level -- Ferocity Rank 4
-	.talent 2,1,2,4
+    .talent 2,1,2,4
 
 level -- Ferocity Rank 5
-	.talent 2,1,2,5
+    .talent 2,1,2,5
 
 level -- Savage Fury Rank 1
     .talent 2,2,2,1
@@ -139,19 +139,19 @@ addon.talents.RegisterGuide([[
 
 
 level -- Ferocity Rank 1
-	.talent 2,1,2,1
+    .talent 2,1,2,1
 
 level -- Ferocity Rank 2
-	.talent 2,1,2,2
+    .talent 2,1,2,2
 
 level -- Ferocity Rank 3
-	.talent 2,1,2,3
+    .talent 2,1,2,3
 
 level -- Ferocity Rank 4
-	.talent 2,1,2,4
+    .talent 2,1,2,4
 
 level -- Ferocity Rank 5
-	.talent 2,1,2,5
+    .talent 2,1,2,5
 
 level -- Savage Fury Rank 1
     .talent 2,2,2,1
