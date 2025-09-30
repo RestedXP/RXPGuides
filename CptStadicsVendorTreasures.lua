@@ -499,22 +499,13 @@ function Frame:HidePinTooltip()
     GameTooltip:Hide()
 end
 
+-- TODO integrate nearby targets into Active Targets .target
+-- addon.generatedSteps["treasure"] = steps
 function Frame:CheckZone()
     if not addon.settings.profile.enableVendorTreasure then return end
 
     self:CheckMiniMap()
     self:CheckWorldMap()
-    self:CheckPlayerMap()
-
-end
-
--- TODO integrate nearby targets into Active Targets .target
--- addon.generatedSteps["treasure"] = steps
-function Frame:CheckPlayerMap()
-
-    local mapID = GetMapID()
-    -- if (mapID ~= PLAYER_MAP_ID) then self:UpdateMacros() end
-    PLAYER_MAP_ID = mapID
 
 end
 
@@ -528,6 +519,7 @@ end
 
 function Frame:CheckWorldMap()
     if not IsWorldMapAvailable() then return end
+
     if GetWorldMapID() ~= WORLD_MAP_ID then self:DrawWorldMapPins() end
 end
 
@@ -552,8 +544,11 @@ function Frame:ShowWorldMapNPC(data)
 end
 
 function Frame:DrawWorldMapPins()
-    self:HideWorldMapPins()
-    self:ShowWorldMapPins()
+    Frame:HideWorldMapPins()
+
+    if GetMapID() == GetWorldMapID() then
+        self:ShowWorldMapPins()
+    end
 end
 
 function Frame:HideWorldMapPins()
