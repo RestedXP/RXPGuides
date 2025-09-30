@@ -123,7 +123,7 @@ step
 -- step
 --     .goto 627,72.46,45.90
 --     .achievementComplete 42313,1
-    .achievementskip label,achieveID,criteriaID
+--    .achievementskip label,achieveID,criteriaID
 --     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
 --     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
 --     .target Moratari
@@ -134,12 +134,10 @@ step
 --     .achievement 42313,1
 --     .skipto guide,RestedXP Legion Remix\ab) Skyriding
 step
-    #completewith placeholder
-    .isQuestAvailable 43949
-    .isQuestTurnedIn 40043
-    +|cRXP_WARN_Select a guide here if you want to pursue another weapon, or continue later(recommended for faster leveling)|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arms >> Arms(DPS) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >> Protection((TANK)) Questline
+    #completewith next
+    .achievementComplete 42313,1
+    +Select this guide to skip the intro (faster leveling).
+    .clicknext RestedXP Legion Remix\a) Intro Skip >> Intro Skip
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -337,7 +335,7 @@ step
 step
     #requires Turn in Thrift
     .goto 627,42.83,27.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 89407 >>Turn in Thrift
     .target Momentus
     .turnin 89408 >>Turn in Threadbare
@@ -457,7 +455,7 @@ step
     .complete 89411,1 --1/1 Legion Armor Scraps
     .complete 90901,1 --250/250 Infinite Power gathered
     .mob Felstalker
-    .mob Felguard Invader 
+    .mob Felguard Invader
 step
     #completewith next
     #label Legion Portal Sealed
@@ -499,7 +497,7 @@ step
 step
     #requires Legion Portal Sealed2
     #completewith Infinite Power
-    .goto 627,54.74,47.14,2 >>Portal Click Range 
+    .goto 627,54.74,47.14,2 >>Portal Click Range
 step
     #requires Infinite Power
     .goto 627,53.1,47.46
@@ -720,7 +718,7 @@ step
     .accept 89418 >>Accept A Fixed Point in Time
     .target Eternus
 step
-    #completewith next 
+    #completewith next
     #hidewindow
     #label Krasus' Landing
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
@@ -793,6 +791,26 @@ step
     .target Moratari
 ]])
 
+---Intro Skip
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#chapter
+#group RestedXP Legion Remix
+#name a) Intro Skip
+#displayname |cFF00FF001|r - Intro Skip|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next aa) Skyriding
+
+step
+    .goto 627,72.46,45.90
+    .achievementComplete 42313,1
+    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
+    .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
+    .target Moratari
+
+]])
+
 ---Skyriding
 RXPGuides.RegisterGuide([[
 #retail
@@ -823,28 +841,42 @@ RXPGuides.RegisterGuide([[
 --     .openitem 237812
 --     .openitem 243373
 step
+    #completewith next
+    .isQuestTurnedIn account,80018
+    +Select this guide to skip the skyriding intro recommended for (faster leveling).
+    .clicknext RestedXP Legion Remix\aa) Skyriding Skip >> Skyriding Skip
+step
+    #include RestedXP Legion Remix\a) Skyriding Panda
+
+
+]])
+---Skyriding Skip
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#chapter
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#name aa) Skyriding Skip
+#displayname |cFF00FF002|r - Skyriding Skip|r
+#next ab) Order Hall Death Knight Part 1 << DeathKnight
+#next ab) Order Hall Demon Hunter Part 1 << DemonHunter
+#next ab) Order Hall Druid Part 1 << Druid
+#next ab) Order Hall Hunter Part 1 << Hunter
+#next ab) Order Hall Mage Part 1 << Mage
+#next ab) Order Hall Monk Part 1 << Monk
+#next ab) Order Hall Paladin Part 1 << Paladin
+#next ab) Order Hall Priest Part 1 << Priest
+#next ab) Order Hall Rogue Part 1 << Rogue
+#next ab) Order Hall Shaman Part 1 << Shaman
+#next ab) Order Hall Warlock Part 1 << Warlock
+#next ab) Order Hall Warrior Part 1 << Warrior
+
+step
     .goto 627,72.05,41.65
     .gossipoption 133762 >>Talk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
--- step
---     #optional
---     #completewith IntroSkipEnd
---     #hidewindow
---     .isQuestTurnedIn account,80018
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 << Death Knight
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 << Demon Hunter
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Druid Part 1 << Druid
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Hunter Part 1 << Hunter
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Mage Part 1 << Mage
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Monk Part 1 << Monk
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Paladin Part 1 << Paladin
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Priest Part 1 << Priest
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Rogue Part 1 << Rogue
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Shaman Part 1 << Shaman
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Warlock Part 1 << Warlock
---     .skipto guide,RestedXP Legion Remix\ab) Order Hall Warrior Part 1 << Warrior
-step
-    #include RestedXP Legion Remix\a) Skyriding Panda
+
 
 
 ]])
