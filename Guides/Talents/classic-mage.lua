@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "MAGE" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore AoE Mage 10-22
+#name AoE (Survival) 10-22
 #minLevel 10
 #maxLevel 22
 #hardcore
@@ -50,7 +50,7 @@ level -- Ignite (Rank 5)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Hardcore AoE Mage 22-60
+#name AoE (Survival) 22-60
 #minLevel 10
 #maxLevel 60
 #hardcore
@@ -212,11 +212,10 @@ level -- Ice Shards (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Hardcore Mage 10-60
+#name Frost (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
-
 
 level -- Improved Frostbolt (Rank 1)
     .talent 3,1,2,1
@@ -374,11 +373,10 @@ level -- Improved Arcane Explosion (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Hardcore Alternative Mage 10-60
+#name Alternative (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
-
 
 level -- Improved Frostbolt (Rank 1)
     .talent 3,1,2,1
@@ -536,7 +534,7 @@ level -- Ice Shards (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore AoE Mage 10-22
+#name AoE 10-22
 #minLevel 10
 #maxLevel 22
 
@@ -582,7 +580,7 @@ level -- Ignite (Rank 5)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore AoE Mage 22-60
+#name AoE 22-60
 #minLevel 10
 #maxLevel 60
 #reset
@@ -743,7 +741,7 @@ level -- Ice Shards (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Mage 10-60
+#name Frost 10-60
 #minLevel 10
 #maxLevel 60
 
@@ -903,7 +901,7 @@ level -- Improved Arcane Explosion (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Alternative Mage 10-60
+#name Alternative 10-60
 #minLevel 10
 #maxLevel 60
 

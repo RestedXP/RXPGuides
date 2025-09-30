@@ -3,11 +3,10 @@ local _, addon = ...
 if addon.player.class ~= "DRUID" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Druid 10-60
+#name Feral (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
-
 
 level -- Ferocity (Rank 1)
     .talent 2,1,2,1
@@ -166,7 +165,7 @@ level -- Improved Enrage (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Druid 10-60
+#name Feral 10-60
 #minLevel 10
 #maxLevel 60
 

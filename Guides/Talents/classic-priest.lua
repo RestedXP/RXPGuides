@@ -3,11 +3,10 @@ local _, addon = ...
 if addon.player.class ~= "PRIEST" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Priest 10-60
+#name Shadow (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
-
 
 level -- Wand Specialization (Rank 1)
     .talent 1,1,3,1
@@ -162,10 +161,9 @@ level -- Spell Warding (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Priest 10-39
+#name Shadow (Wands) 10-39
 #minLevel 10
 #maxLevel 39
-
 
 level -- Wand Specialization (Rank 1)
     .talent 1,1,3,1
@@ -259,9 +257,8 @@ level -- Shadow Reach (Rank 2)
 
 ]])
 
-
 addon.talents.RegisterGuide([[
-#name Softcore Priest 40-60
+#name Shadow 40-60
 #minLevel 10
 #maxLevel 60
 #reset

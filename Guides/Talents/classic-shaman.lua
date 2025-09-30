@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "SHAMAN" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Shaman 10-40
+#name Enhancement (Survival) 10-40
 #minLevel 10
 #maxLevel 40
 #hardcore
@@ -161,7 +161,7 @@ level -- Elemental Devastation (Rank 3)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Hardcore Shaman 40-60
+#name Elemental (Survival) 40-60
 #minLevel 10
 #maxLevel 60
 #hardcore
@@ -320,7 +320,7 @@ level -- Ancestral Knowledge (Rank 4)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Shaman 10-40
+#name Enhancement 10-40
 #minLevel 10
 #maxLevel 40
 
@@ -477,7 +477,7 @@ level -- Elemental Devastation (Rank 3)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Shaman 40-60
+#name Elemental 40-60
 #minLevel 10
 #maxLevel 60
 #reset

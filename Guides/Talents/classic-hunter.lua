@@ -3,11 +3,10 @@ local _, addon = ...
 if addon.player.class ~= "HUNTER" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Hunter 10-60
+#name Beast Mastery (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
-
 
 level -- Improved Aspect of the Hawk (Rank 1)
     .talent 1,1,2,1
@@ -165,7 +164,7 @@ level -- Mortal Shots (Rank 5)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Hunter 10-60
+#name Beast Mastery 10-60
 #minLevel 10
 #maxLevel 60
 

@@ -3,8 +3,8 @@ local _, addon = ...
 if addon.player.class ~= "WARRIOR" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Warrior 10-30
-#next Hardcore Warrior 30-55
+#name Arms (Survival) 10-30
+#next Arms (Survival) 30-55
 #minLevel 10
 #maxLevel 30
 #hardcore
@@ -74,10 +74,9 @@ level -- Two-Handed Weapon Specialization (Rank 1)
 
 ]])
 
-
 addon.talents.RegisterGuide([[
-#name Hardcore Warrior 30-55
-#next Hardcore Warrior 55-60
+#name Arms (Survival) 30-55
+#next Fury (Survival) 55-60
 #minLevel 10
 #maxLevel 55
 #hardcore
@@ -238,9 +237,8 @@ level -- Blood Craze (Rank 2)
 
 ]])
 
-
 addon.talents.RegisterGuide([[
-#name Hardcore Warrior 55-60
+#name Fury (Survival) 55-60
 #minLevel 10
 #maxLevel 60
 #hardcore
@@ -402,8 +400,8 @@ level -- Improved Intercept (Rank 2)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Warrior 10-30
-#next Softcore Warrior 30-55
+#name Arms 10-30
+#next Arms 30-55
 #minLevel 10
 #maxLevel 30
 
@@ -473,8 +471,8 @@ level -- Two-Handed Weapon Specialization (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Warrior 30-55
-#next Softcore Warrior 55-60
+#name Arms 30-55
+#next Fury 55-60
 #minLevel 10
 #maxLevel 55
 #reset
@@ -635,7 +633,7 @@ level -- Blood Craze (Rank 3)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Warrior 55-60
+#name Fury 55-60
 #minLevel 10
 #maxLevel 60
 #reset

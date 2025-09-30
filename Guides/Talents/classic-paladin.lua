@@ -3,11 +3,10 @@ local _, addon = ...
 if addon.player.class ~= "PALADIN" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Paladin 10-60
+#name Retribution (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
-
 
 level -- Divine Intellect (Rank 1)
     .talent 1,1,3,1
@@ -166,10 +165,9 @@ level -- Guardian's Favor (Rank 2)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Paladin 10-60
+#name Retribution 10-60
 #minLevel 10
 #maxLevel 60
-
 
 level -- Benediction (Rank 1)
     .talent 3,1,3,1

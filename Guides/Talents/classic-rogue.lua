@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "ROGUE" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Rogue 10-60
+#name Combat (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
@@ -161,7 +161,7 @@ level -- Improved Poisons (Rank 4)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Rogue 10-60
+#name Combat 10-60
 #minLevel 10
 #maxLevel 60
 

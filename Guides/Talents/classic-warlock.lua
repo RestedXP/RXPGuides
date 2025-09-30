@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "WARLOCK" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
-#name Hardcore Warlock 10-60
+#name Affliction (Survival) 10-60
 #minLevel 10
 #maxLevel 60
 #hardcore
@@ -164,10 +164,9 @@ level -- Devastation (Rank 1)
 ]])
 
 addon.talents.RegisterGuide([[
-#name Softcore Warlock 10-60
+#name Affliction 10-60
 #minLevel 10
 #maxLevel 60
-
 
 level -- Improved Corruption (Rank 1)
     .talent 1,1,3,1
