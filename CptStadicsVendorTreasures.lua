@@ -373,10 +373,6 @@ function Frame:InitializeZones()
 
 end
 
-function Frame.OnUpdate()
-    Frame:CheckZone()
-end
-
 function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
     if not (faction == NEUTRAL or addon.player.faction == faction) then
         return
@@ -693,8 +689,6 @@ function addon.VendorTreasures:Setup()
     -- ZONE_CHANGED_NEW_AREA is new zone
     Frame:RegisterEvent("ZONE_CHANGED")
     Frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-
-    Frame.ticker = C_Timer.NewTicker(DELAY, Frame.OnUpdate)
 
     Frame:SetScript("OnEvent", function(this) this:CheckZone() end)
 
