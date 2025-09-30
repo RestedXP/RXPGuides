@@ -374,7 +374,6 @@ function Frame:InitializeZones()
 end
 
 function Frame.OnUpdate()
-    Frame:CheckNearby()
     Frame:CheckZone()
 end
 
@@ -523,25 +522,6 @@ function Frame:CheckPlayerMap()
 
 end
 
-function Frame:UpdateMacros()
-
-    -- print("Updating Macros");
-
-    -- local macroName = "RA1";
-    local macroContent = "";
-    local mapID = GetMapID();
-    local zoneData = Frame:GetZoneData(mapID);
-    if (zoneData ~= nil) then
-        for _, npcData in pairs(zoneData) do
-            local npcName = npcData.name;
-            macroContent = macroContent .. "/target " .. npcName .. ";";
-        end
-    end
-
-    -- local macroId = CreateMacro(macroName, "INV_MISC_QUESTIONMARK", macroContent, nil, nil);
-    -- print("Create Macro " .. macroName .. " With Content: " .. macroContent .. " And ID " .. macroId);
-end
-
 -- remove comments to re-enable minimap pins
 function Frame:CheckMiniMap()
     --local mapID = GetMapID()
@@ -553,49 +533,6 @@ end
 function Frame:CheckWorldMap()
     if not IsWorldMapAvailable() then return end
     if GetWorldMapID() ~= WORLD_MAP_ID then self:DrawWorldMapPins() end
-end
-
-function Frame:CheckNearby()
-
-    if UnitOnTaxi("player") then return end
-
-    local mapID = GetMapID()
-
-    if not mapID then return end
-
-    local nearbyNPCs = {}
-    local position = GetPlayerPosition(mapID)
-
-    if position then
-        local playerX, playerY = position:GetXY()
-        local zoneData = Frame:GetZoneData(mapID)
-
-        if zoneData ~= nil then
-            local pointX, pointY, distance
-
-            for _, npcData in pairs(zoneData) do
-                pointX = npcData.x / 100
-                pointY = npcData.y / 100
-                distance = GetDistance(playerX, playerY, pointX, pointY)
-
-                if distance <= DISTANCE_THRESHOLD then
-                    tinsert(nearbyNPCs, npcData)
-                end
-            end
-        end
-    end
-
-    -- TODO why?
-    if false and next(nearbyNPCs) ~= nil then
-        local found
-        for _, nearbyNPC in pairs(nearbyNPCs) do
-            found = false
-            for _, distanceNPC in pairs(DISTANCE_NPCS) do
-                if (distanceNPC == nearbyNPC) then found = true end
-            end
-        end
-    end
-    DISTANCE_NPCS = nearbyNPCs
 end
 
 -- World Map --
