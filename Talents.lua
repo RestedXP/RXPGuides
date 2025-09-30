@@ -184,7 +184,7 @@ function addon.talents:Setup()
 
     self:UpdateSelectedGuide(RXPCData.activeTalentGuide)
 
-    if tonumber(GetCVar("previewTalents")) == 0 and addon.gameVersion > 30000 and
+    if tonumber(GetCVar("previewTalents")) == 0 and addon.game == "WOTLK" and
         addon.settings.profile.previewTalents then
         -- Talents are enabled in RXP, so match client
         -- This only lasts per session, does not persist in-game setting
@@ -246,7 +246,7 @@ function addon.talents:UpdateTalentsButton()
         iconReference.point = {
             "TOPLEFT", iconReference.frame, "TOPRIGHT", -32, -65
         }
-    elseif addon.gameVersion < 20000 then
+    elseif addon.game == "CLASSIC" then
         iconReference.frame = _G.PlayerTalentFrame
         iconReference.size = 32
         iconReference.point = {
@@ -383,10 +383,10 @@ function addon.talents:ParseGuide(text)
         elseif currentStep > 0 then -- Parse metadata tags first
 
             -- Parse function calls
-            parseSuccess = line:gsub("^%.(%S+)%s*(.*)",
+            parseSuccess = line:gsub("^[%.#](%S+)%s*(.*)",
                                      function(command, lineArgs)
-                -- print("Processing guide command", command, "with (", lineArgs, ")")
                 if self.functions[command] then
+                    -- print("Processing guide command", command, "with (", lineArgs, ")")
                     local element = self.functions[command](lineArgs)
 
                     if not element then
@@ -396,6 +396,8 @@ function addon.talents:ParseGuide(text)
                     end
 
                     tinsert(step.elements, element)
+                elseif command == "optional" then -- Allowlisted step flags, preserve typo handling
+                    step[command] = true
                 else
                     addon.error(L("Error parsing guide") .. " " ..
                                     (guide.name or 'Unknown') ..
@@ -407,7 +409,7 @@ function addon.talents:ParseGuide(text)
         elseif line ~= "" then
             -- Parse metadata tags
             parseSuccess = line:gsub("^#(%S+)%s*(.*)", function(tag, value)
-                -- print("Parsing tag at", linenumber, tag, value)
+                -- print("Parsing guide tag at", linenumber, tag, value)
                 -- Set metadata without overwriting
                 if tag and tag ~= "" and not guide[tag] then
                     guide[tag] = value
@@ -448,7 +450,7 @@ end
 
 -- { tab, talentIndex, name }
 local function learnClassicTalent(payload)
-    if addon.gameVersion > 20000 then return end
+    if addon.game ~= "CLASSIC" then return end
 
     local tab, talentIndex, name = unpack(payload)
     local result = LearnTalent(tab, talentIndex)
@@ -462,8 +464,9 @@ local function learnClassicTalent(payload)
     return result
 end
 
-function addon.talents.functions.talent(element, validate)
+function addon.talents.functions.talent(element, validate, optional)
     if type(element) == "string" then -- on parse
+        -- TODO if more than one .talent in a step without #optional, error
         local e = {talent = {}}
         local args = element
         -- Strip whitespace
@@ -484,6 +487,7 @@ function addon.talents.functions.talent(element, validate)
     local talentIndex
     local name, previewRankOrRank
     local lookup
+    local tempData
 
     -- TODO handle off-plan talents
     for _, talentData in ipairs(element.talent) do
@@ -498,18 +502,15 @@ function addon.talents.functions.talent(element, validate)
             return false
         end
 
-        -- TODO validate cataLevelLookup for overun, allow underrun for multi-spec chains
-
         talentIndex = lookup[talentData.tier][talentData.column]
 
         if talentIndex and validate then return true end
 
-        if addon.gameVersion > 40000 then
-            -- Return values don't match API docs/TWW, so used /dump GetTalentInfo(1,11) for Arms War
+        if addon.game == "CATA" then
             name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(
                                                             talentData.tab,
                                                             talentIndex)
-        elseif addon.gameVersion > 30000 then
+        elseif addon.game == "WOTLK" then
             name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(
                                                                   talentData.tab,
                                                                   talentIndex)
@@ -518,22 +519,36 @@ function addon.talents.functions.talent(element, validate)
                 GetTalentInfo(talentData.tab, talentIndex)
         end
 
-        if previewRankOrRank < talentData.rank then
-            if addon.gameVersion < 20000 then
-                local d = {talentData.tab, talentIndex, name}
-                local prompt = fmt(_G.CONFIRM_LEARN_TALENT, name)
+        if optional then
+            if previewRankOrRank == talentData.rank then
+                addon.comms.PrettyPrint("%s - (%s) %s (%s %d)",
+                                    _G.TRADE_SKILLS_LEARNED_TAB,
+                                    _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS,
+                                    name, _G.RANK, talentData.rank)
 
-                addon.comms:ConfirmChoice("RXPTalentPrompt", prompt,
-                                          learnClassicTalent, d)
+                -- Handle in level step processing, if return value is rank from at least one optional step, continue
+                return true, fmt("%s (%s %d)", _G.RANK, talentData.rank)
+            end
+
+            -- Return false if not selected, check upstream to verify at least one #optional step talent chosen
+            return false, fmt("%s (%s %d)", name, _G.RANK, talentData.rank)
+        end
+
+        if previewRankOrRank < talentData.rank then
+            if addon.game == "CLASSIC" then -- Classic doesn't have Preview Talents
+                tempData = {talentData.tab, talentIndex, name}
+
+                addon.comms:ConfirmChoice("RXPTalentPrompt", fmt(_G.CONFIRM_LEARN_TALENT, name),
+                                              learnClassicTalent, tempData)
 
                 -- Stop as soon as first learning prompt, not a blocking dialog
                 return -1
-            elseif addon.settings.profile.previewTalents then
-                local before = GetGroupPreviewTalentPointsSpent()
+            elseif addon.settings.profile.previewTalents then -- TBC/Wrath/Cata
+                tempData = GetGroupPreviewTalentPointsSpent()
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
 
                 -- Verify training actually worked, there's no return value from Preview
-                if before == GetGroupPreviewTalentPointsSpent() then
+                if tempData == GetGroupPreviewTalentPointsSpent() then
                     addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN,
                                     name))
                     return false
@@ -541,7 +556,7 @@ function addon.talents.functions.talent(element, validate)
 
                 addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name,
                                         _G.RANK, talentData.rank)
-            else
+            else -- TBC/Wrath/Cata, not previewed
                 if LearnTalent(talentData.tab, talentIndex) then
                     addon.comms.PrettyPrint("%s - %s (%s %d)",
                                             _G.TRADE_SKILLS_LEARNED_TAB, name,
@@ -560,7 +575,7 @@ function addon.talents.functions.talent(element, validate)
 end
 
 function addon.talents.functions.pettalent(element, validate)
-    if addon.gameVersion < 30000 then return end
+    if addon.game ~= "WOTLK" then return end
 
     if type(element) == "string" then -- on parse
         local e = {pettalent = {}}
@@ -670,7 +685,7 @@ function addon.talents:UpdateSelectedGuide(key)
     return true
 end
 
-if addon.gameVersion < 40000 then
+if addon.game ~= "CATA" then
     talentTooltips.updateFunc = function(self)
         local tooltip = talentTooltips.data[self:GetID()]
         if not tooltip then return end
@@ -738,11 +753,14 @@ local function DrawTalentLevels(talentIndex, numbers)
 
     -- If 5 levels of preview, overlaps with nearby
     if #numbers == 5 then
-        ht.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
+        ht.levelHeader.text:SetFont(addon.font, 7, "OUTLINE")
         ht.levelHeader:SetPoint("TOPLEFT", ht, -3, 0)
+    elseif #numbers == 4 then
+        ht.levelHeader.text:SetFont(addon.font, 9, "OUTLINE")
+        ht.levelHeader:SetPoint("TOPLEFT", ht, -1, 0)
     else
         ht.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
-        ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
+        ht.levelHeader:SetPoint("TOPLEFT", ht, 1, 0)
     end
 
     -- Ensure single number ends up as a string
@@ -809,12 +827,17 @@ function addon.talents:DrawTalents()
     wipe(activeIndices)
     wipe(levelsForIndex)
 
+    local newHightlightTexture, tooltipPrefix
+
     -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
 
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
         if levelStep then
+            tooltipPrefix = levelStep.optional and
+                                _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS or
+                                _G.TRADE_SKILLS_LEARNED_TAB
 
             for _, element in ipairs(levelStep.elements) do
                 for _, talentData in ipairs(element.talent) do
@@ -834,25 +857,26 @@ function addon.talents:DrawTalents()
                                                                talentTooltips.data[talentIndex],
                                                                addon.colors
                                                                    .tooltip,
-                                                               _G.TRADE_SKILLS_LEARNED_TAB,
+                                                               tooltipPrefix,
                                                                _G.LEVEL,
                                                                upcomingTalent)
 
                         -- TODO Pre-seed tooltip to prevent delay
 
                         if not talentTooltips.highlights[talentIndex] then
-                            local ht = _G["PlayerTalentFrameTalent" ..
-                                           talentIndex]:CreateTexture(
-                                           "$parent_LevelPreview", "BORDER")
+                            newHightlightTexture =
+                                _G["PlayerTalentFrameTalent" .. talentIndex]:CreateTexture(
+                                    "$parent_LevelPreview", "BORDER")
 
-                            ht:SetTexture(
+                            newHightlightTexture:SetTexture(
                                 "Interface/Buttons/ButtonHilight-Square")
-                            ht:SetBlendMode("ADD")
-                            ht:SetAllPoints(
+                            newHightlightTexture:SetBlendMode("ADD")
+                            newHightlightTexture:SetAllPoints(
                                 _G["PlayerTalentFrameTalent" .. talentIndex ..
                                     "Slot"])
 
-                            talentTooltips.highlights[talentIndex] = ht
+                            talentTooltips.highlights[talentIndex] =
+                                newHightlightTexture
                         end
 
                         setHighlightColor(talentIndex,
@@ -990,7 +1014,8 @@ function addon.talents:ProcessTalents(validate)
         end
     end
 
-    local stepLevel, remainingPoints
+    local stepLevel, remainingPoints, result
+    local optionalName, optionalLearned, optionalNotLearned
 
     for stepNum, step in ipairs(guide.steps) do
         stepLevel = guide.minLevel + stepNum - 1
@@ -1016,14 +1041,19 @@ function addon.talents:ProcessTalents(validate)
         end
 
         -- print("Evaluating step", stepNum, "for level", stepLevel)
-        local result
+        if step.optional then
+            optionalLearned = nil
+            optionalNotLearned = {}
+        end
 
         for _, element in ipairs(step.elements) do
+
+            -- Level steps can have multiple .talent underneath, only for #optional
             for tag, _ in pairs(element) do
                 -- print("Evaluating tag", tag)
                 if self.functions[tag] then
                     -- print("Executing tag function", tag)
-                    result = self.functions[tag](element, validate)
+                    result, optionalName = self.functions[tag](element, validate, step.optional)
                 else
                     result = false
                     addon.error(L("Error parsing guide") .. " " ..
@@ -1032,15 +1062,38 @@ function addon.talents:ProcessTalents(validate)
                                     stepNum)
                 end
 
-                -- Exit processing if error found
-                -- Rely on in-tag-function error output for user communication
-                -- Explicitly require false, accept nil as truthy
-                if result == false or result == -1 then
+                if step.optional and optionalName then
+                    -- .talent optional returns {true, name} if learned or {false, name} if not learned
+                    if result then
+                        -- Avoid blocking on user action if talent exists in any optional blocks
+                        optionalLearned = optionalName
+                    else
+                        -- Specific optional .talent not learned
+                        tinsert(optionalNotLearned, optionalName)
+                    end
+                elseif result == false or result == -1 then
+                    -- Exit processing if error found
+                    -- Rely on in-tag-function error output for user communication
+                    -- Explicitly require false, accept nil as truthy
                     -- print("Aborting step processing", result)
+
                     return
                 end
             end
+        end
 
+        if step.optional and not optionalLearned then
+            addon.comms:PopupNotification("RXPTalentsMissingOptional",
+                fmt("%s %s %s: %s\n%s\n\n%s",
+                    _G.ADDON_MISSING,
+                    _G.OPTIONAL,
+                    strlower(_G.TALENT_POINTS),
+                    fmt(_G.UNIT_LEVEL_TEMPLATE, stepLevel),
+                    _G._G.TALENT_BUTTON_TOOLTIP_SELECT_INSTRUCTIONS,
+                    strjoin("\n", unpack(optionalNotLearned))
+                )
+            )
+            return
         end
 
     end
@@ -1093,7 +1146,8 @@ function addon.talents:ProcessPetTalents(validate)
                 -- print("Evaluating tag", tag)
                 if self.functions[tag] then
                     -- print("Executing tag function", tag)
-                    result = self.functions[tag](element, validate)
+                    result = self.functions[tag](element, validate,
+                                                 step.optional)
                 else
                     result = false
                     addon.error(L("Error parsing guide") .. " " ..

@@ -100,21 +100,33 @@ level -- Aggression (Rank 3)
 level -- Adrenaline Rush
     .talent 2,7,2,1
 
-level -- Vitality (Rank 1)
-    #optional -- TODO Sabre
-    .talent 2,7,1,1
-
-level -- Vitality (Rank 2)
+level
     #optional
-    .talent 2,7,1,2
+    .talent 2,7,1,1 -- Vitality (Rank 1)
+    .talent 2,5,1,1 -- Mace Specialization (Rank 1)
+    .talent 2,5,3,1 -- Sword Specialization (Rank 1)
+    .talent 2,5,4,1 -- Fist Weapon Specialization (Rank 1)
 
-level -- Endurance (Rank 1)
+level
     #optional
-    .talent 2,3,1,1
+    .talent 2,7,1,2 -- Vitality (Rank 2)
+    .talent 2,5,1,2 -- Mace Specialization (Rank 2)
+    .talent 2,5,3,2 -- Sword Specialization (Rank 2)
+    .talent 2,5,4,2 -- Fist Weapon Specialization (Rank 2)
 
-level -- Endurance (Rank 2)
+level
     #optional
-    .talent 2,3,1,2
+    .talent 2,3,1,1 -- Endurance (Rank 1)
+    .talent 2,5,1,3 -- Mace Specialization (Rank 3)
+    .talent 2,5,3,3 -- Sword Specialization (Rank 3)
+    .talent 2,5,4,3 -- Fist Weapon Specialization (Rank 3)
+
+level
+    #optional
+    .talent 2,3,1,2 -- Endurance (Rank 2)
+    .talent 2,5,1,4 -- Mace Specialization (Rank 4)
+    .talent 2,5,3,4 -- Sword Specialization (Rank 4)
+    .talent 2,5,4,4 -- Fist Weapon Specialization (Rank 4)
 
 level -- Combat Potency (Rank 1)
     .talent 2,8,3,1

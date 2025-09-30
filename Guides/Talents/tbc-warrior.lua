@@ -70,25 +70,35 @@ level -- Two-Handed Weapon Specialization (Rank 5)
 level -- Death Wish
     .talent 1,5,2,1
 
-level -- Poleaxe Specialization (Rank 1)
-    .talent 1,5,1,1
+level -- Weapon Specialization (Rank 1)
     #optional
+    .talent 1,5,1,1 -- Poleaxe Specialization (Rank 1)
+    .talent 1,5,3,1 -- Mace Specialization (Rank 1)
+    .talent 1,5,4,1 -- Sword Specialization (Rank 1)
 
-level -- Poleaxe Specialization (Rank 2)
-    .talent 1,5,1,2
+level -- Weapon Specialization (Rank 2)
     #optional
+    .talent 1,5,1,2 -- Poleaxe Specialization (Rank 2)
+    .talent 1,5,3,2 -- Mace Specialization (Rank 2)
+    .talent 1,5,4,2 -- Sword Specialization (Rank 2)
 
-level -- Poleaxe Specialization (Rank 3)
-    .talent 1,5,1,3
+level -- Weapon Specialization (Rank 3)
     #optional
+    .talent 1,5,1,3 -- Poleaxe Specialization (Rank 3)
+    .talent 1,5,3,3 -- Mace Specialization (Rank 3)
+    .talent 1,5,4,3 -- Sword Specialization (Rank 3)
 
-level -- Poleaxe Specialization (Rank 4)
-    .talent 1,5,1,4
+level -- Weapon Specialization (Rank 4)
     #optional
+    .talent 1,5,1,4 -- Poleaxe Specialization (Rank 4)
+    .talent 1,5,3,4 -- Mace Specialization (Rank 4)
+    .talent 1,5,4,4 -- Sword Specialization (Rank 4)
 
-level -- Poleaxe Specialization (Rank 5)
-    .talent 1,5,1,5
+level -- Weapon Specialization (Rank 5)
     #optional
+    .talent 1,5,1,5 -- Poleaxe Specialization (Rank 5)
+    .talent 1,5,3,5 -- Mace Specialization (Rank 5)
+    .talent 1,5,4,5 -- Sword Specialization (Rank 5)
 
 level -- Deep Wounds (Rank 3)
     .talent 1,3,3,3
