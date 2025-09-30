@@ -621,7 +621,7 @@ function addon.itemUpgrades:UpdateSlotMap()
     end
 end
 
--- === Bag overlay helpers (12x12 icon bottom-left on upgrades) ===
+
 local hasCCont = C_Container and C_Container.GetContainerItemLink
 local function RXP_GetBagItemLink(bag, slot)
     if hasCCont then return C_Container.GetContainerItemLink(bag, slot) end
@@ -635,7 +635,6 @@ local function RXP_GetBagNumSlots(bag)
 end
 
 
--- Decide if an itemLink is an upgrade using existing logic
 local function RXP_IsItemUpgrade(itemLink)
     local comps = addon.itemUpgrades:CompareItemWeight(itemLink)
     if not comps or #comps == 0 then return false end
@@ -648,12 +647,12 @@ local function RXP_IsItemUpgrade(itemLink)
     return false
 end
 
--- Create / reuse a small overlay texture on a bag slot button
+-- Create or reuse upgrade icon texture on bag button
 local function RXP_GetOrCreateUpgradeIcon(btn)
     if btn.RXPUpgradeIcon then return btn.RXPUpgradeIcon end
     local t = btn:CreateTexture(nil, "OVERLAY")
     t:SetTexture(RXP_UPGRADE_ICON)
-    t:SetSize(12, 12)
+    t:SetSize(18, 18)
     t:SetPoint("BOTTOMLEFT", btn, "BOTTOMLEFT", 1, 1)
     t:Hide()
     btn.RXPUpgradeIcon = t
@@ -733,7 +732,7 @@ function addon.itemUpgrades:Setup()
     -- Enable AH
     ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
     -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
-        -- Bag overlays (tiny upgrade icon in bottom-left of bag slots)
+        -- Bag overlays
     if not session.bagHooksDone then
         -- update per-slot overlay whenever Blizzard refreshes a bag button
         if type(ContainerFrameItemButton_Update) == "function" then
@@ -742,7 +741,7 @@ function addon.itemUpgrades:Setup()
             end)
         end
 
--- (nice to have) when a whole container frame refreshes, resweep all
+-- on frame reset resweep
     if type(ContainerFrame_Update) == "function" then
         hooksecurefunc("ContainerFrame_Update", function()
                 C_Timer.After(0, function()
@@ -752,7 +751,6 @@ function addon.itemUpgrades:Setup()
         end
     end
 
-        -- Refresh when bags/equipment change
         -- Refresh when bags/equipment change
     self:RegisterEvent("BAG_UPDATE_DELAYED", function()
         C_Timer.After(0.02, function()
