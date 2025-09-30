@@ -91,7 +91,6 @@ local DELAY = 5 -- Seconds
 local DATA = {}
 
 local WORLD_MAP_ID = -1
-local WORLD_MAP_PINS = {}
 local WORLD_MAP_PIN_SIZE = 18
 
 local MINI_MAP_ID = -1;
@@ -630,17 +629,14 @@ end
 
 function Frame:HideWorldMapPins()
     HBDPins:RemoveAllWorldMapIcons(PIN_OWNER)
-    wipe(WORLD_MAP_PINS)
 end
 
 function Frame:ShowWorldMapPins()
     WORLD_MAP_ID = GetWorldMapID()
 
-    wipe(WORLD_MAP_PINS)
     for _, zoneData in pairs(DATA) do
         for _, npcData in pairs(zoneData) do
             self:ShowWorldMapNPC(npcData)
-            tinsert(WORLD_MAP_PINS, npcData.worldpin)
         end
     end
 end
