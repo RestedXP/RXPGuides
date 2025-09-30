@@ -664,8 +664,6 @@ function GetWorldMapID() return WorldMapFrame:GetMapID() end
 
 function GetMapID() return GetBestMapForUnit("player") end
 
-function GetPlayerPosition(mapID) return GetPlayerMapPosition(mapID, "player") end
-
 function GetTableLength(T)
     local count = 0
     for _ in pairs(T) do count = count + 1 end
