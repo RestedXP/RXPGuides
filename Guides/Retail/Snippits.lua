@@ -5738,7 +5738,7 @@ step
 step
     #requires Blood of the Innocent2
     .goto 47,73.64,43.59
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bowl|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bowl|r upstairs.
     .complete 42539,2 --1/1 Blood of the Innocent
 step
     #completewith next
@@ -5818,18 +5818,21 @@ step
 step
     #completewith next
     #label Confront Mathias Shaw.
+    .zoneskip 37,1
     .isOnQuest 42504
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2548,1 --Confront Mathias Shaw.
 step
     .isOnQuest 42504
+    .zoneskip 37,1
     #completewith Confront Mathias Shaw.
     .goto 37,32.05,49.23,30 >>Follow the Arrow
     .timer 43,RP
 step
     #requires Confront Mathias Shaw.
     .goto 37,31.92,48.99
-    .isInScenario 1123
+    .isOnQuest 42504
+    .zoneskip 37,1
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2548,1 --Confront Mathias Shaw.
 step
@@ -5967,43 +5970,36 @@ step
 step
     #completewith next
     #label Hall of Shadows
-    >>Enter Hall of Shadows
-    .complete 42504,2 --Return to the Hall of Shadows
+    #hidewindow
+    .goto 627,44.1,29.8,15,0
+    .goto 627,45.43,26.39,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
+    .turnin 42504 >>Turn in The Unseen Blade
+    .target Garona Halforcen
 step
     #completewith Hall of Shadows
-    .goto 627,53.22,71.08
-    .gossipoption 45227 >>Talk to |cRXP_FRIENDLY_"Red" Jack Findle|r
-    .target "Red" Jack Findle
-step
-    #requires Hall of Shadows
-    #hidewindow
-    #completewith Hall of Shadows 3
-    .goto 626,82.39,81.21,5,0
-    .goto 626,87.31,89.52,5,0
-    .goto 626,90.44,85.9,5,0
-    .goto 626,64.01,53.04,5,0
-    .goto 626,54.32,56.54,10,0
-    .goto 626,50.36,57.22,5,0
-    .goto 626,51.77,51.68,5,0
-    .goto 626,45.36,56.25,10,0 
-    .goto 626,42.89,65.78,10,0
-    .goto 626,42.49,74.68
-    +1
+    .goto 627,46.57,26.96,5,0
+    .goto 627,46.62,25.77
+    #title |cFFFCDC00Enter Forge|r
+    .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
+    .gossipoption 45145 >>Talk to |cRXP_FRIENDLY_Mongar|r
+    .target Mongar
 step
     #requires Hall of Shadows
     #completewith next
     #label Hall of Shadows2
+    .goto 626,48.79,33.36,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
     .turnin 42504 >>Turn in The Unseen Blade
     .target Garona Halforcen
 step
     #requires Hall of Shadows
     #completewith Hall of Shadows2
-    >>Enter Hall of Shadows
-    .complete 42504,2 --Return to the Hall of Shadows
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 626,43.32,63.3,10 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to exit secret room.
 step
-    #requires Hall of Shadows 2
-    #label Hall of Shadows 3
+    #requires Hall of Shadows2
+    .goto 626,42.43,74.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
     .turnin 42504 >>Turn in The Unseen Blade
     .target Garona Halforcen
@@ -6226,33 +6222,29 @@ step
     .goto 630,56.25,67.9
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloodsail Gryphon|r
     .complete 40849,3 --1/1 Fly to Dalaran
-    .timer 13,RP
+    .timer 12,RP
     .target Bloodsail Gryphon
 step
     #completewith next
     #hidewindow
     #label The Dreadblades
-    .goto 627,51.77,68.98,10,0
+    .goto 627,52.61,34.02,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
     .turnin 40849 >>Turn in The Dreadblades
     .target Fleet Admiral Tethys
 step
     #completewith The Dreadblades
-    .goto 627,53.24,71.1
+    .goto 627,54.51,31.42,5,0
+    .goto 627,54.32,32.84,5,0
     -- .gossipoption 45226 >>Talk to |cRXP_FRIENDLY_Ravenholdt Courier|r to open the secret door.
-    .gossipoption 45227 >>Talk to |cRXP_FRIENDLY_Ravenholdt Courier|r to open the secret door.
-    .target "Red" Jack Findle
+    .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
+    .gossipoption 45402 >>Talk to |cRXP_FRIENDLY_Lucian Trias|r.
+    .target Lucian Trias
 step
     #requires The Dreadblades
     #completewith next
     #label The Dreadblades2
-    .goto 626,82.56,80.91,5,0
-    .goto 626,87.32,89.55,5,0
-    .goto 626,90.65,85.54,5,0
-    .goto 626,85.42,75.45,5,0
-    .goto 626,63.45,52.81,10,0
-    .goto 626,50.75,57.54,10,0
-    .goto 626,51.29,50.53,8,0
+    .goto 626,48.76,33.81,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
     .turnin 40849 >>Turn in The Dreadblades
     .target Fleet Admiral Tethys
@@ -6384,35 +6376,31 @@ step
     .complete 42139,2 --1/1 Vanessa VanCleef recruited
 step
     #completewith next
-    #label Desmond Gravesorrow's
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Desmond Gravesorrow|r
-    .complete 41919,1 --1/1 Desmond Gravesorrow's intel
-    .target Desmond Gravesorrow
-step
-    #completewith Desmond Gravesorrow's
-    .goto 626,45.56,52.37,10,0
-    .goto 626,44.24,49.53,10,0
-    .goto 626,33.34,38.58,10,0
-    .goto 626,9.06,68.87,10,0
-    .goto 627,19.98,81.1,10 >>Leave through the Sewer
-step
-    #requires Desmond Gravesorrow's
-    .goto 627,27.36,64.15
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Desmond Gravesorrow|r
-    .target Desmond Gravesorrow
-    .complete 41919,1 --1/1 Desmond Gravesorrow's intel
-    .skipgossipid 45396 -- <Search the body for clues.
-step
-    #completewith next
     #label Lucian Trias'
+    #hidewindow
+    .goto 626,45.01,57.61,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucian Trias|r
     .complete 41919,3 --1/1 Lucian Trias' intel
     .target Lucian Trias
 step
     #completewith Lucian Trias'
-    .goto 627,53.16,33.12,10 >>Enter House
+    .goto 626,29.48,22.39
+    .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
 step
-    #requires Lucian Trias'
+    #requires Lucian Trias' 
+    #completewith next
+    #label Lucian Trias'2
+    .goto 627,45.6,28.53,10,0
+    .goto 627,46.84,28.87,8,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucian Trias|r
+    .complete 41919,3 --1/1 Lucian Trias' intel
+    .target Lucian Trias
+step
+    #requires Lucian Trias' 
+    #completewith Lucian Trias'2
+    .goto 627,53.16,33.12,10 >>Follow the Arrow
+step
+    #requires Lucian Trias'2
     .goto 627,54.39,31.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucian Trias|r
     .complete 41919,3 --1/1 Lucian Trias' intel
@@ -6438,17 +6426,6 @@ step
     .gossipoption 45397 >>Talk to |cRXP_FRIENDLY_Val'zuun|r
     .timer 26,RP
     .target Val'zuun
--- step
---     #completewith next
---     #label The Shadows Reveal
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
---     .turnin 41919 >>Turn in The Shadows Reveal
---     .target Valeera Sanguinar
---     .accept 41920 >>Accept A Matter of Finesse
---     .disablecheckbox
--- step
---     #completewith The Shadows Reveal
---     .goto 627,53.71,47.36,40 >>Leave the Sewer
 step
     #completewith next
     #label The Shadows Reveal
@@ -6459,13 +6436,19 @@ step
     .target Val'zuun
 step
     #completewith The Shadows Reveal
-    .goto 628,75.2,65.08,5 >>Stand near the sewer exit
+    .goto 628,75.2,65.08,5 >>Stand near the sewer exit |cRXP_WARN_don't go too far|r
 step
     #requires The Shadows Reveal
     .goto 628,74.05,63.8
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 41919,2 --1/1 Val'zuun's intel
     .target Val'zuun
+step
+    .goto 627,27.36,64.15
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Desmond Gravesorrow|r
+    .target Desmond Gravesorrow
+    .complete 41919,1 --1/1 Desmond Gravesorrow's intel
+    .skipgossipid 45396 -- <Search the body for clues.
 step
     #completewith next
     #label The Shadows Reveal2
@@ -6494,6 +6477,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .goto 627,56.97,46.87
     .cast 1784 >>Use |T132320:0|t[Stealth] before entering the House.
+    .usespell 1784
 step
     #requires Rune of Portals
     .goto 627,53.60,47.42
@@ -6553,10 +6537,10 @@ step
 step
     #completewith next
     #label Traitor!
-    .goto 627,50.44,39.8,5,0
-    .goto 627,50.02,37.71,5,0
-    .goto 628,74.35,63.92,5,0
-    .goto 628,72.83,65.22,5,0
+    .goto 627,48.3,40.41,5,0
+    .goto 627,48.17,38.22,5,0
+    .goto 628,74.48,63.87,5,0
+    .goto 628,72.98,65.34,5,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41922 >>Turn in Traitor!
     .target Valeera Sanguinar
@@ -6679,34 +6663,32 @@ step
     #hidewindow
     #completewith next
     #label Fangs of the Devourer3
-    .goto 627,51.8,69.07,5,0
+    .goto 627,52.8,33.78,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41924 >>Turn in Fangs of the Devourer
     .target Valeera Sanguinar
 step
     #requires Fangs of the Devourer2
     #completewith Fangs of the Devourer3
-    .goto 627,53.22,71.08
-    .gossipoption 45227 >>Talk to |cRXP_FRIENDLY_"Red" Jack Findle|r
-    .target "Red" Jack Findle
-step
+    .goto 627,54.5,31.45,5,0
+    .goto 627,54.32,32.81
+    .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
+    .gossipoption 45402 >>Talk to |cRXP_FRIENDLY_Lucian Trias|r
+    .target Lucian Trias
+ step
     #requires Fangs of the Devourer3
+    #hidewindow
     #completewith next
     #label Fangs of the Devourer4
-    .goto 626,82.54,81.14,5,0
-    .goto 626,87.38,89.54,5,0
-    .goto 626,90.49,85.85,5,0
-    .goto 626,63.33,53.55,10,0
-    .goto 626,51.66,57.22,5,0
-    .goto 626,51.26,51.28,5,0
-    .goto 626,45.29,56.1,5,0
+    .goto 627,52.8,33.78,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41924 >>Turn in Fangs of the Devourer
     .target Valeera Sanguinar
 step
     #requires Fangs of the Devourer3
     #completewith Fangs of the Devourer4
-    .goto 626,40.88,75.51,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
+    .goto 626,40.88,75.51,30 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires Fangs of the Devourer4
     .goto 626,40.88,75.51

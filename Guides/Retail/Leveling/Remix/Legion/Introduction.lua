@@ -123,6 +123,7 @@ step
 -- step
 --     .goto 627,72.46,45.90
 --     .achievementComplete 42313,1
+    .achievementskip label,achieveID,criteriaID
 --     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
 --     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
 --     .target Moratari
@@ -132,6 +133,13 @@ step
 --     #hidewindow
 --     .achievement 42313,1
 --     .skipto guide,RestedXP Legion Remix\ab) Skyriding
+step
+    #completewith placeholder
+    .isQuestAvailable 43949
+    .isQuestTurnedIn 40043
+    +|cRXP_WARN_Select a guide here if you want to pursue another weapon, or continue later(recommended for faster leveling)|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arms >> Arms(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >> Protection((TANK)) Questline
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -2278,7 +2286,7 @@ step
     .target Nikki the Gossip
 step
     .goto 626,37.76,44.63
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sc outing Map|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 40997,1 --1/1 Initial strike point chosen
 step
     .goto 626,37.79,44.86
