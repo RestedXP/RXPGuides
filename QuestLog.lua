@@ -532,12 +532,11 @@ local ICON_INLINE = "|T" .. ICON_PATH .. ":14|t "  -- 14px icon inline
 -- ---------- helpers --------------------------------------------------
 
 local function GetQuestLogParent()
-    if _G.QuestLogFrame then return _G.QuestLogFrame end
     if _G.ClassicQuestLog then return _G.ClassicQuestLog end
     if _G.QuestGuru then return _G.QuestGuru end
     if _G.QuestLogEx then return _G.QuestLogEx end
     if _G.QuestLogFrameClassic then return _G.QuestLogFrameClassic end
-    return nil
+    return _G.QuestLogFrame
 end
 
 local function BuildOrphanListText(orphans)
