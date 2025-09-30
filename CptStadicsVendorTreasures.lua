@@ -94,7 +94,6 @@ local WORLD_MAP_ID = -1
 local WORLD_MAP_PIN_SIZE = 18
 
 local MINI_MAP_ID = -1;
-local MINI_MAP_PINS = {};
 local MINI_MAP_PIN_SIZE = 12;
 
 local PLAYER_MAP_ID = -1;
@@ -673,7 +672,6 @@ end
 
 function Frame:HideMiniMapPins()
     HBDPins:RemoveAllMinimapIcons(PIN_OWNER)
-    wipe(MINI_MAP_PINS)
 end
 
 function Frame:ShowMiniMapPins()
@@ -689,10 +687,8 @@ function Frame:ShowMiniMapPins()
     end
     if not zoneData then return end
 
-    wipe(MINI_MAP_PINS)
     for _, npcData in pairs(zoneData) do
         Frame:ShowMiniMapNPC(npcData)
-        tinsert(MINI_MAP_PINS, npcData.minipin)
     end
 end
 
