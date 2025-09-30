@@ -5,7 +5,7 @@ Derived from https://www.curseforge.com/wow/addons/cpt-stadics-map-of-vendor-tre
 Creative Commons Attribution-NonCommercial 3.0 Unported https://creativecommons.org/licenses/by-nc/3.0/
 ]] local _, addon = ...
 
-if addon.gameVersion > 20000 then return end
+if addon.game ~= "CLASSIC" then return end
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local HBD     = LibStub("HereBeDragons-2.0")
@@ -15,8 +15,7 @@ local GameTooltip, WorldMapFrame = _G.GameTooltip, _G.WorldMapFrame
 local UnitOnTaxi, GetBestMapForUnit, GetPlayerMapPosition = _G.UnitOnTaxi,
                                                             C_Map.GetBestMapForUnit,
                                                             C_Map.GetPlayerMapPosition
-local wipe, pairs, tinsert = table.wipe, pairs, table.insert
-local UnitLevel = _G.UnitLevel
+local pairs, tinsert = pairs, table.insert
 local HORDE, ALLIANCE, NEUTRAL = "Horde", "Alliance", "Neutral"
 
 addon.VendorTreasures = addon:NewModule("VendorTreasures")
@@ -472,10 +471,8 @@ function Frame:ShowPinTooltip(pin)
     GameTooltip:AddLine(npcClass, 0.7, 0.7, 0.7)
 
     if next(npcLoot) ~= nil then
-        -- TODO only display map pin if level range
-        -- local playerLevel = UnitLevel("player")
-        -- local lowerItemBound = playerLevel - 10
-        -- local upperItemBound = playerLevel + 5
+        local lowerItemBound = addon.player.level - 10
+        local upperItemBound = addon.player.level + 5
 
         GameTooltip:AddLine(" ")
         GameTooltip:AddLine("Notable Items:")
@@ -486,10 +483,9 @@ function Frame:ShowPinTooltip(pin)
         for _, itemID in ipairs(npcLoot) do
             itemName, _, itemRarity, _, itemMinLevel = GetItemInfo(itemID)
 
-            -- and (itemMinLevel and itemMinLevel > lowerItemBound and itemMinLevel < upperItemBound)
-            if itemName ~= nil then
-                itemRarityR, itemRarityG, itemRarityB =
-                    GetItemQualityColor(itemRarity)
+
+            if itemName ~= nil and (itemMinLevel and itemMinLevel > lowerItemBound and itemMinLevel < upperItemBound) then
+                itemRarityR, itemRarityG, itemRarityB = GetItemQualityColor(itemRarity)
 
                 GameTooltip:AddLine(itemName, itemRarityR, itemRarityG,
                                     itemRarityB)
