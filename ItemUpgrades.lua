@@ -20,9 +20,10 @@ local GetInventoryItemLink = _G.GetInventoryItemLink
 
 local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemWeaponSubclass
 
---RXP 12x12 placeholder--
-local RXP_UPGRADE_ICON = "Interface\\AddOns\\RXPGuides\\Textures\\rxp_logo"
-local RXP_ICON_INLINE  = "|T"..RXP_UPGRADE_ICON..":12:12:0:0|t"
+local ITEM_UPGRADE_LABEL = _G.ITEM_UPGRADE or "Item Upgrade"
+local RXP_UPGRADE_ICON   = "Interface\\AddOns\\"..addonName.."\\Textures\\rxp_logo-64.blp"
+local RXP_ICON_INLINE    = ("|T%s:12:12:0:0|t"):format(RXP_UPGRADE_ICON)
+
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
@@ -504,7 +505,8 @@ local function TooltipSetItem(tooltip, ...)
             enableTotalEPLines(itemData, lines)
 
             if #lines > 0 then
-                tooltip:AddLine(RXP_ICON_INLINE.." "..fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+                tooltip:AddLine(("%s - %s %s"):format(addon.title, RXP_ICON_INLINE, ITEM_UPGRADE_LABEL))
+
 
                 for _, line in ipairs(lines) do tooltip:AddLine(line) end
             end
@@ -522,7 +524,8 @@ local function TooltipSetItem(tooltip, ...)
             enableTotalEPLines(itemData, lines)
 
             if #lines > 0 then
-                tooltip:AddLine(RXP_ICON_INLINE.." "..fmt("%s - %s SC", addon.title, _G.ITEM_UPGRADE))
+                tooltip:AddLine(("%s - %s %s"):format(addon.title, RXP_ICON_INLINE, ITEM_UPGRADE_LABEL))
+
 
                 for _, line in ipairs(lines) do tooltip:AddLine(line) end
             end
@@ -587,9 +590,9 @@ local function TooltipSetItem(tooltip, ...)
     end
 
     if #lines > 0 then
-        tooltip:AddLine(RXP_ICON_INLINE.." "..fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
-
+        tooltip:AddLine(("%s - %s %s"):format(addon.title, RXP_ICON_INLINE, ITEM_UPGRADE_LABEL))
         if addon.settings.profile.enableTotalEP then enableTotalEPLines(itemData, lines) end
+
 
         for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
@@ -630,6 +633,7 @@ local function RXP_GetBagNumSlots(bag)
     end
     return GetContainerNumSlots and GetContainerNumSlots(bag) or 0
 end
+
 
 -- Decide if an itemLink is an upgrade using existing logic
 local function RXP_IsItemUpgrade(itemLink)
@@ -731,26 +735,42 @@ function addon.itemUpgrades:Setup()
     -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
         -- Bag overlays (tiny upgrade icon in bottom-left of bag slots)
     if not session.bagHooksDone then
+        -- update per-slot overlay whenever Blizzard refreshes a bag button
         if type(ContainerFrameItemButton_Update) == "function" then
             hooksecurefunc("ContainerFrameItemButton_Update", function(btn)
                 RXP_UpdateBagButton(btn)
             end)
         end
 
-        -- Refresh when bags/equipment change
-        self:RegisterEvent("BAG_UPDATE_DELAYED", function()
-            C_Timer.After(0.02, RXP_RefreshAllBagOverlays)
-        end)
-        self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function()
-            C_Timer.After(0.02, RXP_RefreshAllBagOverlays)
-        end)
-        self:RegisterEvent("UNIT_INVENTORY_CHANGED", function()
-            C_Timer.After(0.02, RXP_RefreshAllBagOverlays)
-        end)
-
-        session.bagHooksDone = true
+-- (nice to have) when a whole container frame refreshes, resweep all
+    if type(ContainerFrame_Update) == "function" then
+        hooksecurefunc("ContainerFrame_Update", function()
+                C_Timer.After(0, function()
+                    RXP_RefreshAllBagOverlays()
+                end)
+            end)
+        end
     end
 
+        -- Refresh when bags/equipment change
+        -- Refresh when bags/equipment change
+    self:RegisterEvent("BAG_UPDATE_DELAYED", function()
+        C_Timer.After(0.02, function()
+            RXP_RefreshAllBagOverlays()
+        end)
+    end)
+
+    self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function()
+        C_Timer.After(0.02, function()
+            RXP_RefreshAllBagOverlays()
+        end)
+    end)
+
+    self:RegisterEvent("UNIT_INVENTORY_CHANGED", function()
+        C_Timer.After(0.02, function()
+            RXP_RefreshAllBagOverlays()
+        end)
+    end)
 
     session.isInitialized = true
 
