@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "ROGUE" or addon.gameVersion >= 40000 then return end
+if addon.player.class ~= "ROGUE" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
 #name Rogue 10-80

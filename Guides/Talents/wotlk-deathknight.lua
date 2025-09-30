@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "DEATHKNIGHT" or addon.gameVersion >= 40000 then return end
+if addon.player.class ~= "DEATHKNIGHT" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
 #name Death Knight 10-80

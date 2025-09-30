@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "PRIEST" or addon.gameVersion >= 40000 then return end
+if addon.player.class ~= "PRIEST" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
 #name Hardcore Priest 10-60

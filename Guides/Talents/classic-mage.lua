@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "MAGE" or addon.gameVersion >= 40000 then return end
+if addon.player.class ~= "MAGE" or addon.game ~= "CLASSIC" then return end
 
 addon.talents.RegisterGuide([[
 #name Hardcore AoE Mage 10-22

@@ -1,13 +1,12 @@
 local _, addon = ...
 
-if addon.player.class ~= "DRUID" or addon.gameVersion >= 40000 then return end
+if addon.player.class ~= "DRUID" or addon.game ~= "WOTLK" then return end
 
 addon.talents.RegisterGuide([[
 #name Wotlk Druid 10-49
 #next Wotlk Druid 50-80
 #minLevel 10
 #maxLevel 49
-
 
 level -- Ferocity (Rank 1)
     .talent 2,1,2,1
