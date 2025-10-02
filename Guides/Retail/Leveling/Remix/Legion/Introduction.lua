@@ -110,7 +110,7 @@ RXPGuides.RegisterGuide([[
 #subweight 100
 
 step
-    #completewith Fixed Point in Time
+    #completewith Intro
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -810,6 +810,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
 step
+    #label Intro
     .goto 627,72.04,41.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .turnin 89418 >>Turn in A Fixed Point in Time
@@ -857,17 +858,9 @@ RXPGuides.RegisterGuide([[
 #next ab) Order Hall Warlock Part 1 << Warlock
 #next ab) Order Hall Warrior Part 1 << Warrior
 
--- step
---     #completewith Skyriding
---     #hidewindow
---     +test
---     .use 245925
---     .use 246937
---     .openitem 237812
---     .openitem 243373
 step
     #completewith next
-    -- .isQuestTurnedIn account,80018
+    .isQuestTurnedIn account,80018
     +Select this guide to skip the skyriding intro recommended for (faster leveling).
     .clicknext RestedXP Legion Remix\aa) Skyriding Skip >> Skyriding Skip
 step
@@ -2138,7 +2131,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Order Hall Paladin Part 1
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2196,6 +2189,7 @@ step
     .target Lord Maxwell Tyrosus
     .accept 40408 >>Accept Weapons of Legend
 step
+    #label Order Hall Paladin Part 1
     .isQuestAvailable 40408
     .goto 627,74.92,48.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -2260,7 +2254,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Order Hall Paladin Part 2
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2376,6 +2370,7 @@ step
     .target Lady Liadrin
     .complete 42846,1 --1/1 Enlist Lady Liadrin
 step
+    #label Order Hall Paladin Part 2
     .isOnQuest 42846
     .goto 24,37.79,63.92
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
@@ -2425,7 +2420,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Order Hall Rogue Part 1
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2547,6 +2542,7 @@ step
     .target Lord Jorach Ravenholdt
     .accept 40840 >>Accept A Worthy Blade
 step
+    #label Order Hall Rogue Part 1
     .isOnQuest 40840
     .goto 626,41.7,75.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r, |cRXP_FRIENDLY_Valeera Sanguinar|r,  and  |cRXP_FRIENDLY_Princess Tess Greymane|r.
@@ -2619,7 +2615,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Order Hall Rogue Part 2
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2720,6 +2716,7 @@ step
 --     .goto 626,3.02,83.45,10,0
 --     .goto 627,20.06,80.96,10 >>Leave the Sewer
 step
+    #label Order Hall Rogue Part 2
     .goto 626,39.68,21.33
     .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
 ]])
@@ -2802,7 +2799,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Order Hall Warrior Part 1
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2961,13 +2958,14 @@ step
     .goto 695,58.59,72.24
     #title |cFFFCDC00Follow the Arrow|r
     .complete 39654,2 --1/1 Go to the Great Mead Hall
-step
+step 
     .goto 695,58.33,84.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 39654 >>Turn in Odyn and the Valarjar
     .accept 40579 >>Accept Weapons of Legend
     .target Odyn
 step
+    #label Order Hall Warrior Part 1
     .isQuestAvailable 40579
     .goto 695,58.33,84.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r

@@ -601,7 +601,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Skyriding Panda
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -843,6 +843,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rostrum of Transformation|r |cRXP_WARN_and leave it immediately|r
     .complete 80018,1 --1/1 Rostrum of Transformation used
 step
+    #label Skyriding Panda
     .goto 371,65.07,36.97,10,0
     .goto 371,65.28,37.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
@@ -1069,7 +1070,7 @@ RXPGuides.RegisterGuide([[}
 #next ac) Order Hall Demon Hunter
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Havoc
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -1318,6 +1319,7 @@ step
 step
     #requires Turn in The Hunt
     .isQuestTurnedIn 40249
+    #label Artifact Weapon: Havoc
     .goto 720,59.31,57.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .turnin 39247 >>Turn in The Hunt
@@ -1334,7 +1336,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Demon Hunter
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Vengeance
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -1596,6 +1598,7 @@ step
     .goto 720,59.25,91.82
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|
 step
+    #label Artifact Weapon: Vengeance
     .isQuestAvailable 39247
     #requires Vengeance Will Be Ours
     .goto 627,73.83,46.05
@@ -2008,7 +2011,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Mage
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Arcane
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2380,6 +2383,7 @@ step
     .usespell 224869
 step
     #requires Nexus Vault
+    #label Artifact Weapon: Arcane
     .goto 627,28.62,49.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r inside the Violet Citadel.
     .turnin 42011 >>Turn in The Nexus Vault
@@ -2397,7 +2401,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Mage 
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Fire
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2711,6 +2715,7 @@ step
     .usespell 224869
 step
     #requires Frozen Flame
+    #label Artifact Weapon: Fire
     .goto 627,28.40,48.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Modera|r
     .turnin 11997 >>Turn in The Frozen Flame
@@ -2727,7 +2732,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Mage
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Frost Mage
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -3204,6 +3209,7 @@ step
     .usespell 193759
 step
     #requires Mage Hunter
+    #label Artifact Weapon: Frost Mage
     .goto 734,53.3,72.2,20,0
     .goto 734,59.04,56.7,20,0
     .goto 735,56.68,33.77
@@ -3352,7 +3358,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Monk
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Brewmaster
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -3780,6 +3786,7 @@ step
     .isInScenario 1137
     .target Yu'lon
 step
+    #label Artifact Weapon: Brewmaster
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 42765 >>Turn in The Trial at the Temple
@@ -3797,7 +3804,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Monk
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Mistweaver
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -4034,6 +4041,7 @@ step
     .goto 709,49.76,47.48,15 >>Enter the Temple
 step
     #requires The Emperor's Gift
+    #label Artifact Weapon: Mistweaver
     .goto 709,51.40,48.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 41003 >>Turn in The Emperor's Gift
@@ -4051,7 +4059,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Monk
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Windwalker
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -4420,6 +4428,7 @@ step
     .timer 28,RP
 step
     #requires Into The Heavens1
+    #label Artifact Weapon: Windwalker
     .goto 709,49.11,58.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
     .turnin 40570 >>Turn in Into The Heavens
@@ -4549,7 +4558,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Paladin
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Holy Paladin
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -4939,6 +4948,7 @@ step << Alliance
     .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     .isQuestTurnedIn 44370,44063
+    #label Artifact Weapon: Holy Paladin
     .goto 24,49.86,72.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42120 >>Turn in The Silver Hand
@@ -4971,6 +4981,7 @@ step << Alliance
     .goto 24,63.15,37.22,40 >>1
 step << Alliance
     #requires A United Force
+    #label Artifact Weapon: Holy Paladin
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
@@ -4987,7 +4998,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Paladin
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Paladin Protection
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -5384,6 +5395,7 @@ step
     .goto 24,63.15,37.22,40 >>1
 step
     #requires A United Force
+    #label Artifact Weapon: Paladin Protection
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
@@ -5400,7 +5412,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Paladin
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Retribution
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -5773,6 +5785,7 @@ step
     .goto 24,63.20,37.34,40 >>Follow the Arrow
 step
     #requires Light's Hope
+    #label Artifact Weapon: Retribution
     .goto 24,63.20,37.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42811 >>Turn in We Meet at Light's Hope
@@ -5949,7 +5962,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Rogue
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Assassination
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -6439,6 +6452,7 @@ step
     .goto 626,43.32,63.3,10 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to exit secret room.
 step
     #requires Hall of Shadows2
+    #label Artifact Weapon: Assassination
     .goto 626,42.43,74.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
     .turnin 42504 >>Turn in The Unseen Blade
@@ -6455,7 +6469,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Rogue
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Outlaw
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -6730,6 +6744,7 @@ step
     .goto 626,40.88,75.51,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires The Dreadblades2
+    #label Artifact Weapon: Outlaw
     .goto 626,41.14,74.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
     .turnin 40849 >>Turn in The Dreadblades
@@ -6746,7 +6761,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Rogue
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Subtlety
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -7203,6 +7218,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires Fangs of the Devourer4
+    #label Artifact Weapon: Subtlety
     .goto 626,40.88,75.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41924 >>Turn in Fangs of the Devourer
@@ -7687,7 +7703,7 @@ RXPGuides.RegisterGuide([[
 #next ac) Order Hall Warrior
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Arms
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -7920,6 +7936,7 @@ step
     .complete 41105,5 --1/1 Take Odyn's portal back to Skyhold
     .usespell 192085
 step
+    #label Artifact Weapon: Arms
     .goto 695,58.36,84.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 41105 >>Turn in The Sword of Kings
@@ -7937,7 +7954,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Fury
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -8186,6 +8203,7 @@ step
     .complete 40043,3 --1/1 Return to Skyhold
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
 step
+    #label Artifact Weapon: Fury
     .goto 695,58.35,84.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 40043 >>Turn in The Hunter of Heroes
@@ -8203,7 +8221,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Artifact Weapon: Warrior Protection
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -8428,6 +8446,7 @@ step
     .complete 39191,3 --1/1 Take Odyn's portal back to Skyhold
     .usespell 192085
 step
+    #label Artifact Weapon: Warrior Protection
     .goto 695,58.35,84.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 39191 >>Turn in Legacy of the Icebreaker
