@@ -1306,6 +1306,271 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Unholy
 #next
 
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 44401,43962
+    .zoneskip 647
+    .zone 648 >>Use |T135766:0|t[Deathgate]
+    .usespell 50977
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 44401,43962
+    .goto 648,35.01,37.23
+    .zone 647 >>Use the teleporter
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 44401 >>Accept A Weapon For Every Occasion
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .isOnQuest 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Unholy artifact|r
+    .complete 44401,1 --1/1 Choose a third artifact to pursue
+    .choose 1390099
+    .target Duke Lankral
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .isOnQuest 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 44401 >>Turn in A Weapon For Every Occasion
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .goto 648,35.01,37.23
+    .zone 647 >>Use the teleporter
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 43962 >>Accept Blades of Destiny
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .isOnQuest 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Unholy artifact|r
+    .complete 43962,1 --1/1 Choose a second artifact to pursue
+    .choose 1390099
+    .target Duke Lankral
+    .skipgossipid 46633
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .isOnQuest 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 43962 >>Turn in Blades of Destiny
+    .target Duke Lankral
+step
+    .isQuestAvailable 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 40715 >>Accept A Pact of Necessity
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40715
+    .isOnQuest 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Unholy artifact|r
+    .complete 40715,1 --1/1 Artifact weapon chosen
+    .choose 1390099
+    .target Rensar Greathoof
+    .skipgossipid 45000
+step
+    .isQuestAvailable 40715
+    .isOnQuest 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 40715 >>Turn in A Pact of Necessity
+    .target Rensar Greathoof
+step
+    >>This quest should get pushed to your quest log automatically. If not then relog.
+    .accept 40930 >>Accept Apocalypse
+step
+    .goto 47,77.42,35.89
+    >>Use |T254294:0|t[Duskwood Scroll]. |cRXP_WARN_Follow the arrow into the house.|r
+    .complete 40930,1 --1/1 Investigate Manor Mistmantle in Duskwood
+    .use 173527
+step
+    .goto 47,77.42,36.32
+    >>
+step
+    .goto 47,77.42,36.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r and defeat him.
+    .complete 40930,2 --1/1 Convince Revil to help
+    .timer 11,Revil Roleplay
+    .target Revil Kost
+    .skipgossipid 44918
+step
+    .goto 47,77.42,36.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .turnin 40930 >>Turn in Apocalypse
+    .accept 40931 >>Accept Following the Curse
+    .target Revil Kost
+step
+    --TODO: Title Color
+    .isOnQuest 40931
+    #title Stay near Ariden
+    .goto 47,77.37,35.12
+    .countdown 25 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .isOnQuest 40931
+    .goto 47,80.86,33.00,25,0
+    .goto 47,84.33,36.29,20,0
+    .goto 47,83.83,40.27,15,0
+    .goto 47,85.55,40.69,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+step
+    .isOnQuest 40931
+    .goto 47,85.55,40.69
+    .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .isOnQuest 40931
+    .goto 42,36.64,35.55,25,0
+    .goto 42,39.13,33.72,25,0
+    .goto 42,44.37,34.56,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+step
+    .isOnQuest 40931
+    .goto 47,44.33,34.54
+    .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .goto 42,47.92,33.92,20,0
+    .goto 42,48.80,38.69,20,0
+    .goto 42,50.70,40.81
+    >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+    .complete 40931,1 --1/1 Follow Revil to Ariden's Camp
+step
+    .goto 42,52.41,34.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .turnin 40931 >>Turn in Following the Curse
+    .accept 40932 >>Accept Disturbing the Past
+    .target Revil Kost
+step
+    .goto 42,52.32,33.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Battered Journal|r.
+    .complete 40932,1 --1/1 Ariden's Camp investigated
+step
+    .goto 42,52.31,33.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Battered Journal|r.
+    .turnin 40932 >>Turn in Disturbing the Past
+    .target Battered Journal
+step
+    .goto 42,52.42,34.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .accept 40933 >>Accept A Grisly Task
+    .target Revil Kost
+step
+    .goto 42,53.39,73.36
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on different |cRXP_PICK_A Shallow Graves|r until you find |cRXP_ENEMY_Laith Sha'ol|r. Kill |cRXP_ENEMY_Laith Sha'ol|r.
+    .complete 40933,1 --1/1 Learn the location of the Dark Riders
+    .mob Laith Sha'ol
+step
+    .goto 42,49.46,74.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .turnin 40933 >>Turn in A Grisly Task
+    .accept 40986 >>Accept The Dark Riders
+    .target Revil Kost
+step
+    .isOnQuest 40986
+    .goto 42,46.28,69.07
+    .enterScenario 1026 >>|cRXP_WARN_Enter the |cRXP_PICK_The Dark Riders|r scenario|r
+step
+    #completewith next
+    #label KarazhanCatacombsA
+    .isInScenario 1026
+    .scenario 2158,1 --Karazhan Catacombs infiltrated
+step
+    #completewith KarazhanCatacombsA
+    .goto 46,71.72,83.73
+    .zone 46 >>Jump down
+step
+    #requires KarazhanCatacombsA
+    .isInScenario 1026
+    .goto 46,72.09,74.41
+    >>|cRXP_WARN_Enter the catacombs|r
+    .scenario 2158,1 --Karazhan Catacombs infiltrated
+step
+    .isInScenario 1026
+    #title Use |T237532:0|t[Death Grip]
+    .goto 46,55.90,69.19
+    >>Use |T237532:0|t[Death Grip] on |cRXP_ENEMY_Ariden|r |cRXP_WARN_from the quest log|r.
+    .scenario 2159,1 --Spirit Barrier crossed
+    .mob Ariden
+    .usespell 311930
+step
+    .isInScenario 1026
+    .goto 46,56.36,69.25
+    >>Kill |cRXP_ENEMY_The Conservator|r.
+    .scenario 2160,1 --Conservator Defeated
+    .mob The Conservator
+step
+    #completewith next
+    #hidewindow
+    .cast 3365 >>1
+    .timer 25,Roleplay
+step
+    .isInScenario 1026
+    .goto 46,43.63,67.82
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Apocalypse|r. |cRXP_WARN_Wait for the roleplay|r.
+    .scenario 2161,1 --Apocalypse found
+step
+    .isInScenario 1026
+    .goto 46,58.06,64.22,15,0
+    .goto 46,55.33,49.51,10,0
+    .goto 46,67.81,44.27,10,0
+    .goto 46,68.49,37.77
+    >>|cRXP_WARN_Follow the arrow up the stairs to |cRXP_ENEMY_Ariden|r.
+    .scenario 2162,1 --Ariden followed
+    .timer 15,Ariden Roleplay
+step
+    .isInScenario 1026
+    .goto 46,68.36,24.43
+    >>Kill |cRXP_ENEMY_Ariden|r.
+    .scenario 2163,1 --Ariden defeated
+    .complete 40986,1 --1/1 Defeat the Dark Riders
+    .timer 33,Ariden Roleplay
+    .mob Ariden
+step
+    .goto 46,68.23,24.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Apocalypse|r.
+    .complete 40986,2 --1/1 Apocalypse claimed
+step
+    .goto 46,68.22,27.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    *|cRXP_WARN_Note:|r If he's still fighting then kill the mobs he is in combat with.
+    .turnin 40986 >>Turn in The Dark Riders
+    .accept 40987 >>Accept The Call of Vengeance
+    .target Revil Kost
+step
+    .goto 46,69.62,26.76
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Death Gate to the Frozen Throne|r.
+    .complete 40987,1 --1/1 Take the Death Gate to the Frozen Throne
+step
+    .isOnQuest 40987
+    .goto 701,47.57,90.74
+    .zone 648 >>Click on the |cRXP_PICK_Acherus Waygate|r after the roleplay.
+step
+    .goto 648,50.99,50.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
+    .turnin 40987 >>Turn in The Call of Vengeance
+    .target Highlord Darion Mograine
+
 ]])
 --Death Knight Intro 1
 RXPGuides.RegisterGuide([[
