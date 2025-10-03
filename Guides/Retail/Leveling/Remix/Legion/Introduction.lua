@@ -1681,12 +1681,178 @@ RXPGuides.RegisterGuide([[
 #name ab) Order Hall Druid Part 1
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
 
 << Druid
 
 step
-    +test
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r |cRXP_WARN_next to you|r.
+    *- |cRXP_WARN_Run around in Dalaran until he spawns|r
+    .accept 40643 >>Accept A Summons From Moonglade
+    .target Archdruid Hamuul Runetotem
+step
+    #completewith next
+    #label SummonsFromMoongladeA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r.
+    .turnin 40643 >>Turn in A Summons From Moonglade
+    .accept 41106 >>Accept Call of the Wilds
+    .target Archdruid Hamuul Runetotem
+step
+    .zoneskip 80
+    #completewith SummonsFromMoongladeA
+    .cast 311897 >>Use the |T413582:0|t[Mossy Hearthstone]
+    .use 173716
+step
+    #requires SummonsFromMoongladeA
+    .goto 80,56.28,31.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r.
+    .turnin 40643 >>Turn in A Summons From Moonglade
+    .accept 41106 >>Accept Call of the Wilds
+    .target Archdruid Hamuul Runetotem
+step
+    .goto 80,43.59,53.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r
+    .complete 41106,1 --1/1 Speak to Zen'tabra
+    .target Zen'tabra
+    .skipgossipid 45379
+step
+    .goto 80,55.26,71.03
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pillow|r
+    .complete 41106,2 --1/1 Find Naralex's Camp
+step
+    .goto 80,40.15,70.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Follow the arrow|r. Talk to |cRXP_FRIENDLY_Naralex|r.
+    .complete 41106,3 --1/1 Locate and Speak to Naralex
+    .target Naralex
+    .skipgossipid 45378
+step
+    .goto 80,56.26,31.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r
+    .turnin 41106 >>Turn in Call of the Wilds
+    .target Archdruid Hamuul Runetotem
+    .accept 40644 >>Accept The Dreamway
+step
+    .goto 80,65.25,60.26
+    >>|cRXP_WARN_Follow the arrow|r
+    .complete 40644,1 --1/1 Accompany Archdruid Runetotem
+    .timer 23,Malfurion Roleplay
+step
+    .goto 80,66.91,60.15
+    >>|cRXP_WARN_Wait for the roleplay|r.
+    .complete 40644,2 --1/1 Approach and listen to Malfurion
+step
+    .goto 80,66.93,60.15
+    >>Use the |T136074:0|t[|cRXP_WARN_ExtraActionButton|r]
+    .complete 40644,3 --1/1 Complete the Ritual
+    .timer 8,Ritual Roleplay
+step
+    .goto 80,66.73,60.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .turnin 40644 >>Turn in The Dreamway
+    .target Malfurion Stormrage
+    .accept 40645 >>Accept To The Dreamgrove
+step
+    .goto 80,68.05,60.27
+    >>|cRXP_WARN_Follow the arrow through the portal|r
+    .complete 40645,1 --1/1 Enter the Emerald Dreamway
+step
+    .goto 715,38.47,45.18
+    >>Ignore Remulos and follow the arrow to the next objective
+    *|cRXP_WARN_DON'T KILL the |cRXP_ENEMY_Nightmare Blight|r yet|r.
+    .complete 40645,2 --1/1 Travel with Remulos
+step
+    .goto 715,68.76,29.92
+    >>Kill the |cRXP_ENEMY_Nightmare Blight|r
+    .complete 40645,3 --1/1 Cleanse the Corruption
+    .mob Nightmare Blight
+step
+    .goto 715,47.20,29.86,15,0
+    .goto 715,45.60,23.46
+    >>|cRXP_WARN_Follow the arrow through the portal|r
+    .complete 40645,4 --1/1 Travel to the Dreamgrove
+step
+    .goto 747,44.50,51.06
+    |cRXP_WARN_Follow the arrow|r.
+    .complete 40645,5 --1/1 Meet the Archdruid
+step
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 40645 >>Turn in To The Dreamgrove
+    .accept 40646 >>Accept Weapons of Legend
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Balance Druid >> Balance(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> Feral(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardian(Tank) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restoration(Healer) Questline
+]])
+
+---Druid Order Hall Intro 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ac) Order Hall Druid Part 2
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
+
+<< Druid
+
+step
+    .goto 747,44.49,51.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .accept 41255 >>Accept Sowing The Seed
+    .target Rensar Greathoof
+step
+    .goto 747,30.89,53.66
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seed of Ages|r
+    .complete 41255,1 --1/1 Plant the Seed of Ages
+step
+    .goto 747,30.94,54.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 41255 >>Turn in Sowing The Seed
+    .accept 41332 >>Accept Ascending The Circle
+    .timer 35,Greathoof Roleplay
+    .target Rensar Greathoof
+step
+    --TODO: Title Color
+    #title Check Note
+    .goto 747,45.98,51.10
+    *|cRXP_WARN_If you can't see |cRXP_FRIENDLY_Archdruid Greathoof|r then you have to reaccept the quest|r.
+    .complete 41332,1 --1/1 Walk with Archdruid Greathoof
+step
+    .goto 747,46.00,51.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion|r
+    .complete 41332,2 --1/1 Speak with Malfurion
+    .target Malfurion
+    .skipgossipid 45222
+    .timer 28,Malfurion Roleplay
+step
+    .goto 747,46.00,51.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .turnin 41332 >>Turn in Ascending The Circle
+    .accept 40652 >>Accept Word on the Winds
+    .target Malfurion Stormrage
+step
+    .goto 747,52.56,51.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
+    .turnin 40652 >>Turn in Word on the Winds
+    .accept 40653 >>Accept Making Trails
+    .target Skylord Omnuron
+step
+    .goto 747,52.63,51.21
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Scouting Map|r
+    .acceptmap 39718
+    .complete 40653,1 --1/1 Initial strike point chosen
+step
+    .goto 747,52.53,51.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
+    .turnin 40653 >>Turn in Making Trails
+    .target Skylord Omnuron
 ]])
 
 ---Hunter Order Hall Intro 1
