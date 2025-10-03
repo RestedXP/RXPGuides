@@ -1301,24 +1301,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Death Knight Part 1
-#displayname |cFF00FF003|r - Order Hall Intro 1|r
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
-
-<< Death Knight
-
-step
-    +test
-
-]])
-
----Death Knight Order Hall Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name ab) Order Hall Death Knight Part 1
-#displayname |cFF00FF004|r - Order Hall Intro 2|r
+#displayname |cFF00FF004|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 
 << DeathKnight
@@ -1351,7 +1334,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ac) Order Hall Death Knight Part 2
-#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#displayname |cFF00CCFF3|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ad) Infinite Bazaar
 
@@ -1443,6 +1426,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siouxsie the Banshee|r
     .turnin 43264 >>Turn in Rise, Champions
     .target Siouxsie the Banshee
+step
+    .zoneskip 648,1
+    .goto 648,24.76,33.70
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 ---Demon Hunter Order Hall Intro 1
@@ -1779,23 +1766,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Druid Part 1
-#displayname |cFF00FF003|r - Order Hall Intro 1|r
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
-
-<< Druid
-
-step
-    +test
-]])
-
----Druid Order Hall Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name ab) Order Hall Druid Part 1
-#displayname |cFF00FF004|r - Order Hall Intro 2|r
+#displayname |cFF00FF004|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 
 << Druid
@@ -1912,7 +1883,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ac) Order Hall Druid Part 2
-#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#displayname |cFF00CCFF3|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ad) Infinite Bazaar
 
@@ -1969,6 +1940,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
     .turnin 40653 >>Turn in Making Trails
     .target Skylord Omnuron
+step
+    .zoneskip 747,1
+    .goto 747,56.51,43.15
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 ---Hunter Order Hall Intro 1
@@ -1979,12 +1954,106 @@ RXPGuides.RegisterGuide([[
 #name ab) Order Hall Hunter Part 1
 #displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
 
 << Hunter
 
 step
-    +test
+    .goto 627,58.61,45.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snowfeather|r.
+    *|cRXP_WARN_NOTE:|r Run around in Dalaran until it spawns next to you.
+    .accept 40384 >>Accept Needs of the Hunters
+    .target Snowfeather
+step
+    #completewith next
+    #label NeedsOfTheHuntersA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40384 >>Turn in Needs of the Hunters
+    .accept 41415 >>Accept The Hunter's Call
+    .target Emmarel Shadewarden
+step
+    --TODO: Title Color
+    #title Enter the house
+    #completewith NeedsOfTheHuntersA
+    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires NeedsOfTheHuntersA
+    .goto 627,60.03,53.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40384 >>Turn in Needs of the Hunters
+    .accept 41415 >>Accept The Hunter's Call
+    .target Emmarel Shadewarden
+step
+    #completewith next
+    #label TheHuntersCallA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
+    .complete 41415,1 --1/1 Speak to Grif Wildheart
+    .target Grif Wildheart
+    .skipgossipid 45259
+step
+    --TODO: Title Color
+    #title Enter the house
+    #completewith TheHuntersCallA
+    .goto 627,58.01,40.06,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires TheHuntersCallA
+    .goto 627,59.19,37.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
+    .complete 41415,1 --1/1 Speak to Grif Wildheart
+    .target Grif Wildheart
+    .skipgossipid 45259
+step
+    #completewith next
+    #label TheHuntersCallB    
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
+    .complete 41415,3 --1/1 Speak to Apata Highmountain
+    .target Apata Highmountain
+    .skipgossipid 45079
+step
+    --TODO: Title Color
+    #title Enter the house
+    #completewith TheHuntersCallB
+    .goto 627,53.38,61.34,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires TheHuntersCallB
+    .goto 627,55.65,63.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
+    .complete 41415,3 --1/1 Speak to Apata Highmountain
+    .target Apata Highmountain
+    .skipgossipid 45079
+step
+    .goto 627,42.32,56.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Larkspur|r.
+    .complete 41415,2 --1/1 Speak to Courier Larkspur
+    .target Courier Larkspur
+    .skipgossipid 45240
+step
+    #completewith next
+    #label TheHuntersCallC
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 41415 >>Turn in The Hunter's Call
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    --TODO: Title Color
+    #title Enter the house
+    #completewith TheHuntersCallC
+    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires TheHuntersCallC
+    .goto 627,60.03,53.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 41415 >>Turn in The Hunter's Call
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .goto 627,60.03,53.41
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Beast Mastery >> Beast Mastery(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Marksmanship >> Marksmanship(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Survival >> Survival(DPS) Questline
 ]])
 
 ---Hunter Order Hall Intro 2
@@ -1992,15 +2061,113 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name ab) Order Hall Hunter Part 1
+#name ac) Order Hall Hunter Part 2
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
+#next ad) Infinite Bazaar
 
 << Hunter
 
 step
-    +test
+    .goto 627,66.03,45.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .accept 40952 >>Accept Hunter to Hunter
+    .target Vereesa Windrunner
+step
+    #completewith next
+    #label HunterToHunterA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40952 >>Turn in Hunter to Hunter
+    .accept 40953 >>Accept On Eagle's Wings
+    .target Emmarel Shadewarden
+step
+    --TODO: Title Color
+    #title Enter the house
+    #completewith HunterToHunterA
+    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires HunterToHunterA
+    .goto 627,60.06,53.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40952 >>Turn in Hunter to Hunter
+    .accept 40953 >>Accept On Eagle's Wings
+    .target Emmarel Shadewarden
+step
+    #completewith next
+    #label OnEaglesWingsA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the flight master in Krasus' Landing|r.
+    .complete 40953,1 --1/1 Speak to the flight master in Krasus' Landing
+    .target the flight master in Krasus' Landing
+    .skipgossipid 44178
+step
+    --TODO: Title Color
+    #title Leave the house
+    #completewith OnEaglesWingsA
+    .goto 627,58.43,51.10,6 >>|cRXP_WARN_Follow the arrow out of the house.|r
+step
+    #requires OnEaglesWingsA
+    .goto 627,69.84,51.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the flight master in Krasus' Landing|r.
+    .complete 40953,1 --1/1 Speak to the flight master in Krasus' Landing
+    .target the flight master in Krasus' Landing
+    .skipgossipid 44178
+step
+    .goto 739,36.29,27.92
+    >>|cRXP_WARN_Wait for the flight.|r
+    .complete 40953,2 --1/1 Meet Emmarel Shadewarden at the Trueshot Lodge
+step
+    .goto 739,36.69,29.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40953 >>Turn in On Eagle's Wings
+    .target Emmarel Shadewarden
+step
+    .goto 739,36.85,29.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 40954 >>Accept The Unseen Path
+    .timer 73,Unseen Path Roleplay
+    .target Emmarel Shadewarden
+step
+    .goto 739,43.49,24.59
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .complete 40954,1 --1/1 Hear the tale of the Unseen Path
+step
+    .goto 739,43.49,24.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40954 >>Turn in The Unseen Path
+    .accept 40955 >>Accept Oath of Service
+    .target Emmarel Shadewarden
+step
+    .goto 739,44.20,27.03
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Visage of Ohn'ahra|r.
+    .complete 40955,1 --1/1 Take the oath
+step
+    .goto 739,43.44,24.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40955 >>Turn in Oath of Service
+    .accept 40958 >>Accept Tactical Matters
+    .target Emmarel Shadewarden
+step
+    .goto 739,48.70,41.96,15,0
+    .goto 739,45.87,47.50,15,0
+    .goto 739,42.77,46.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tactician Tinderfell|r.
+    .turnin 40958 >>Turn in Tactical Matters
+    .accept 40959 >>Accept The Campaign Begins
+    .target Tactician Tinderfell
+step
+    .goto 739,42.58,46.71
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r.
+    .complete 40959,1 --1/1 Initial strike point chosen
+    .acceptmap 39718
+step
+    .goto 739,42.84,46.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tactician Tinderfell|r.
+    .turnin 40959 >>Turn in The Campaign Begins
+    .target Tactician Tinderfell
+step
+    .zoneskip 739,1
+    .goto 739,48.63,43.48
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 ---Mage Order Hall Intro 1
@@ -2664,25 +2831,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Priest Part 1
-#displayname |cFF00FF003|r - Order Hall Intro 1|r
+#displayname |cFF00FF004|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
-
-<< Priest
-
-step
-    +test
-]])
-
----Priest Order Hall Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name ab) Order Hall Priest Part 1
-#displayname |cFF00FF004|r - Order Hall Intro 2|r
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
 
 << Priest
 
@@ -2812,6 +2962,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
     .turnin 43270 >>Turn in Rise, Champions
     .target Alonsus Faol
+step
+    .zoneskip 702,1
+    .goto 702,49.79,80.59
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 ---Rogue Order Hall Intro 1
@@ -3133,24 +3287,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Shaman Part 1
-#displayname |cFF00FF003|r - Order Hall Intro 1|r
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
-
-<< Shaman
-
-step
-    +test
-
-]])
-
----Shaman Order Hall Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name ab) Order Hall Shaman Part 1
-#displayname |cFF00FF004|r - Order Hall Intro 2|r
+#displayname |cFF00FF004|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 
 << Shaman
@@ -3232,29 +3369,63 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Shaman >> Restoration(Healer) Questline
 ]])
 
+---Shaman Order Hall Intro 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ac) Order Hall Shaman Part 2
+#displayname |cFF00FF003|r - Order Hall Intro 2|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
+
+<< Shaman
+
+step
+    .goto 726,34.04,76.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r
+    .accept 40225 >>Accept A Ring Reforged
+    .target Stormcaller Mylra
+step
+    .goto 726,30.25,77.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nobundo|r
+    .complete 40225,1 --1/1 Speak to Nobundo
+    .timer 24,Nobundo Roleplay
+    .target Nobundo
+    .skipgossipid 44785
+step
+    .goto 726,29.16,69.57
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Rockslide|r
+    .complete 40225,2 --1/1 Unearth the Heart of Azeroth
+step
+    .goto 726,28.99,69.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
+    .turnin 40225 >>Turn in A Ring Reforged
+    .accept 41510 >>Accept Azeroth Needs You
+    .target Farseer Nobundo
+step
+    .goto 726,33.49,59.38
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
+    .complete 41510,1 --1/1 Initial strike point chosen
+    .acceptmap 39718
+step
+    .goto 726,30.38,51.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
+    .turnin 41510 >>Turn in Azeroth Needs You
+    .target Farseer Nobundo
+step
+    .zoneskip 726,1
+    .goto 726,29.81,52.02
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
+]])
+
 ---Warlock Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Warlock Part 1
-#displayname |cFF00FF003|r - Order Hall Intro 1|r
-#subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
-
-<< Warlock
-
-step
-    +test
-]])
-
----Warlock Order Hall Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name ab) Order Hall Warlock Part 1
-#displayname |cFF00FF004|r - Order Hall Intro 2|r
+#displayname |cFF00FF004|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 
 << Warlock
@@ -3384,7 +3555,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Warlock Part 2
-#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#displayname |cFF00CCFF3|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ad) Infinite Bazaar
 
@@ -3484,6 +3655,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 42608 >>Turn in Rise, Champions
     .target Gakin the Darkbinder
+step
+    .zoneskip 717,1
+    .goto 717,74.71,38.14
+    .zone 628 >>|cRXP_WARN_Go through the portal to Dalaran.|r
+step
+    .zoneskip 628,1
+    .goto 628,28.84,53.19,12,0
+    .goto 628,19.50,57.61,10,0
+    .goto 627,35.02,45.56
+    .zone 627 >>|cRXP_WARN_Follow the way out of the canal.|r
 ]])
 
 ---Warrior Order Hall Intro 1

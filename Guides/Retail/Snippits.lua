@@ -2242,7 +2242,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
-#next
+#next ac) Order Hall Druid
 
 step
     #completewith next
@@ -2605,6 +2605,20 @@ step
     .turnin 40900 >>Turn in The Burden Borne
     .target Rensar Greathoof
 ]])
+--Balance 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Balance Druid
+#displayname Artifact Weapon: Balance
+#next ac) Order Hall Druid Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
+]])
+
 --Feral
 RXPGuides.RegisterGuide([[
 #retail
@@ -2613,7 +2627,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
-#next
+#next ac) Order Hall Druid
 
 step
     #completewith next
@@ -2801,17 +2815,21 @@ step
     .goto 641,73.83,38.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delandros Shimmermoon|r
     .turnin 42440 >>Turn in The Shrine in Peril
-    .target Delandros Shimmermoon
     .accept 42430 >>Accept The Fangs of Ashamane
+    .target Delandros Shimmermoon
 step
     .goto 641,73.75,38.40
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Ebonfang|r
     .complete 42430,1 --1/1 Ebonfang Mounted
     .target Ebonfang
 step
+    .isOnQuest 42430
+    .goto 641,73.75,38.40
+    .enterScenario 2506 >>Enter the |cRXP_PICK_The Fangs of Ashamane|r scenario.
+step
     .isInScenario 1108
     .goto 680,21.70,39.36
-    >>|cRXP_WARN_If it doesn't trigger then 
+    >>|cRXP_WARN_Follow the arrow.|r
     .scenario 2506,1 --Followed Verstok's scent
 step
     #completewith DoorSwitchB
@@ -2831,7 +2849,7 @@ step
     #label DoorSwitchB
     .goto 680,23.14,37.77
     .cast 116401 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Door Switch|r
-    .timer 12,Door opens in
+    .timer 15,Door opens in
 step
     #requires DoorwayOpenedA
     .isInScenario 1108
@@ -2895,6 +2913,20 @@ step
     .turnin 42430 >>Turn in The Fangs of Ashamane
     .target Rensar Greathoof
 ]])
+--Feral 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Feral Druid
+#displayname Artifact Weapon: Feral
+#next ac) Order Hall Druid Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
+]])
+
 --Guardian
 RXPGuides.RegisterGuide([[
 #retail
@@ -2903,7 +2935,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
-#next
+#next ac) Order Hall Druid
 
 step
     #completewith next
@@ -3255,6 +3287,20 @@ step
     .turnin 41918 >>Turn in The Dreamer Returns
     .target Rensar Greathoof
 ]])
+--Guardian 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Guardian Druid
+#displayname Artifact Weapon: Guardian
+#next ac) Order Hall Druid Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
+]])
+
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
@@ -3263,7 +3309,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
-#next
+#next ac) Order Hall Druid
 
 
 step
@@ -3652,6 +3698,20 @@ step
     .turnin 41689 >>Turn in Cleansing the Mother Tree
     .target Lyessa Bloomwatcher
 ]])
+--Restoration 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Restoration Druid
+#displayname Artifact Weapon: Restoration
+#next ac) Order Hall Druid Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Druid
+]])
+
 --Druid Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7655,7 +7715,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
-#next
+#next ac) Order Hall Priest
 
 step
     .isQuestTurnedIn 43935
@@ -8010,6 +8070,20 @@ step
     .turnin 41632 >>Turn in A Gift of Time
     .target Prophet Velen
 ]])
+--Discipline 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Discipline
+#displayname Artifact Weapon: Discipline
+#next ab) Order Hall Priest Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
+]])
+
 --Holy
 RXPGuides.RegisterGuide([[
 #retail
@@ -8018,7 +8092,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
-#next
+#next ac) Order Hall Priest
 
 
 step
@@ -8248,6 +8322,20 @@ step
     .turnin 42074 >>Turn in Return of the Light
     .target Prophet Velen
 ]])
+--Holy 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Holy Priest
+#displayname Artifact Weapon: Holy
+#next ab) Order Hall Priest Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
+]])
+
 --Shadow
 RXPGuides.RegisterGuide([[
 #retail
@@ -8256,7 +8344,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
-#next
+#next ac) Order Hall Priest
 
 step
     .isQuestTurnedIn 43935
@@ -8474,6 +8562,20 @@ step
     .turnin 40710 >>Turn in Blade in Twilight
     .target Moira Thaurissan
 ]])
+--Shadow 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Shadow
+#displayname Artifact Weapon: Shadow
+#next ab) Order Hall Priest Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Shadow
+]])
+
 --Priest Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -9882,7 +9984,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
-#next
+#next ac) Order Hall Shaman
 
 step
     .isQuestTurnedIn 43945
@@ -10211,7 +10313,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
-#next
+#next ac) Order Hall Shaman
 
 step
     .isQuestTurnedIn 43945
@@ -10495,7 +10597,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
-#next
+#next ac) Order Hall Shaman
 
 step
     .isQuestTurnedIn 43945
