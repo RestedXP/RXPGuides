@@ -2945,12 +2945,234 @@ RXPGuides.RegisterGuide([[
 #name ab) Order Hall Warlock Part 1
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
 
 << Warlock
 
 step
-    +test
+    .goto 627,72.79,44.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
+    .accept 40716 >>Accept The Sixth
+    .target Ritssyn Flamescowl
+step
+    .goto 627,60.17,48.28,10,0
+    .goto 627,74.22,66.56,10,0
+    .goto 627,64.44,58.55,10,0
+    .goto 628,57.87,60.00
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 40716,1 --1/1 Enter Dalaran's Underbelly
+step
+    .goto 628,57.87,60.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
+    .turnin 40716 >>Turn in The Sixth
+    .target Ritssyn Flamescowl
+    .accept 40729 >>Accept The New Blood
+    .complete 40729,1 --1/1 Ritual Perfomed
+    .timer 40,Ritssyn Roleplay
+step
+    .isOnQuest 40729
+    .goto 628,57.87,60.00
+    .enterScenario 962 >>Enter the |cRXP_PICK_Into the Mouth of the Nether|r scenario.
+step
+    .isInScenario 962
+    .goto 718,34.99,63.04
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 1944,1 --Listen to Ritssyn
+step
+    .isInScenario 962
+    #title Use the |T136154:0|t[ExtraActionButton]
+    .goto 718,34.99,63.04
+    >>Use the |T136154:0|t[|cRXP_WARN_ExtraActionButton|r] (Enslave Beshtal)
+    .scenario 1945,1 --Beshtal enslaved
+    .timer 42,Escape Roleplay
+step
+    .isInScenario 962
+    .goto 718,34.76,60.83
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 1945,2 --Escape the Jailer
+-- TODO: cast 195039 to make the waypoint update faster
+step
+    .isInScenario 962
+    .goto 718,24.43,59.90
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Jubeka Shadowbreaker|r.
+    .scenario 1949,1 --Jubeka Shadowbreaker freed
+    .target Jubeka Shadowbreaker
+step
+    .isInScenario 962
+    .goto 718,38.05,74.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Zinnin Smythe|r.
+    .scenario 1949,2 --Zinnin Smythe Freed
+    .target Zinnin Smythe
+step
+    .isInScenario 962
+    .goto 718,42.80,61.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Shinfel Blightsworn|r.
+    .scenario 1949,3 --Shinfel Blightsworn freed
+    .target Shinfel Blightsworn
+step
+    #completewith MeetWithCalydusC
+    #label MeetWithCalydusA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the two |cRXP_PICK_Barrier Controls|r and run to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_NOTE:|r Skipping the barrier doesn't work.
+    .scenario 1953,1 --Meet with Calydus
+    .isInScenario 962
+step
+    #completewith MeetWithCalydusA
+    #label MeetWithCalydusB
+    #loop
+    .goto 718,41.43,49.12,10,0
+    .goto 718,37.70,47.07,10,0
+    .cast 3365 >>Click on the |cRXP_PICK_Barrier Controls|r.
+step
+    #requires MeetWithCalydusB
+    #completewith MeetWithCalydusA
+    #label MeetWithCalydusC
+    #loop
+    .goto 718,37.70,47.07,10,0
+    .goto 718,41.43,49.12,10,0
+    .cast 3365 >>Click on the |cRXP_PICK_Barrier Controls|r.
+step
+    #requires MeetWithCalydusA
+    .isInScenario 962
+    .goto 718,41.88,41.38
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the two |cRXP_PICK_Barrier Controls|r and run to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_NOTE:|r Skipping the barrier doesn't work.
+    .scenario 1953,1 --Meet with Calydus
+step
+    .isInScenario 962
+    .goto 718,56.37,36.24
+    >>Kill |cRXP_ENEMY_Nelach, the All-Seeing|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tome of Blighted Implements|r after a short roleplay.
+    .scenario 1950,1 --Tome of Blighted Implements
+    .mob Nelach, the All-Seeing
+step
+    .isInScenario 962
+    .goto 718,56.84,23.76,20,0
+    .goto 718,67.86,36.76,20,0
+    >>Kill |cRXP_ENEMY_Xel'toth|r. |cRXP_WARN_Run through the portal.|r
+    .scenario 1952,1 --Escape from Jagganoth's Lair
+    .mob Xel'toth
+step
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 40729 >>Turn in The New Blood
+    .accept 40684 >>Accept The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Affliction >> Affliction(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Demonology >> Demonology(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Destruction >> Destruction(DPS) Questline
+]])
+
+---Warlock Order Hall Intro 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ab) Order Hall Warlock Part 2
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
+
+<< Warlock
+
+step
+    .goto 628,55.81,65.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40731 >>Accept The Heart of the Dreadscar
+    .target Calydus
+step
+    #completewith next
+    #label TheHeartOfTheDreadscarA
+    #hidewindow
+    .complete 40731,1 --1/1 Dreadscar Rift claimed
+step
+    #completewith TheHeartOfTheDreadscarA
+    .goto 628,59.27,69.68
+    .enterScenario 998 >>Enter the |cRXP_PICK_The Heart of the Dreadscar|r scenario.
+step
+    #requires TheHeartOfTheDreadscarA
+    .goto 718,56.42,36.34
+    .isInScenario 998
+    >>Kill |cRXP_ENEMY_Jagganoth|r.
+    .scenario 2057,1 --Jagganoth Defeated
+    .mob Jagganoth
+step
+    .isInScenario 998
+    .goto 718,56.42,36.34
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Jagganoth|r.
+    .scenario 2058,1 --Heart of the Overlord
+    .goto 718,55.38,49.78,35,0
+step
+    .isInScenario 998
+    .goto 718,54.60,48.57,15,0
+    .goto 718,32.42,25.75
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Heart of the Overlord|r.
+    .scenario 2059,1 --Heart placed above the altar
+    .timer 40,Roleplay Duration
+step
+    .isInScenario 998
+    .goto 718,35.97,30.99
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2059,2 --Command Jagganoth's armies
+    .complete 40731,1 --1/1 Dreadscar Rift claimed
+step
+    .goto 717,37.65,31.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    .turnin 40731 >>Turn in The Heart of the Dreadscar
+    .accept 40823 >>Accept Rebuilding the Council
+    .target Calydus
+step
+    #completewith next
+    #hidewindow
+    .cast 201060 >>1
+    .timer 25,Ritssyn Roleplay
+step
+    .goto 717,31.87,56.73
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Ritssyn Flamescowl|r.
+    .complete 40823,1 --1/1 Ritssyn Resurrected
+    .target Ritssyn Flamescowl
+step
+    .goto 717,30.89,58.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
+    .turnin 40823 >>Turn in Rebuilding the Council
+    .target Ritssyn Flamescowl
+    .accept 40824 >>Accept The Path of the Dreadscar
+step
+    .goto 717,45.15,37.72,15,0
+    .goto 717,66.24,46.98
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r.
+    .accept 39718 >>Accept Paradise Lost
+    .complete 40824,1 --1/1 Zone Chosen
+    .acceptmap 39718
+step
+    .goto 717,65.74,47.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
+    .turnin 40824 >>Turn in The Path of the Dreadscar
+    .target Ritssyn Flamescowl
+step
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    .accept 42608 >>Accept Rise, Champions
+    .accept 41750 >>Accept Champion: Calydus
+    .turnin 41750 >>Turn in Champion: Calydus
+    .complete 42608,1 --Recruit Calydus
+    .target Calydus
+step
+    .goto 717,65.69,47.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
+    .accept 41748 >>Accept Champion: Ritssyn Flamescowl
+    .turnin 41748 >>Turn in Champion: Ritssyn Flamescowl
+    .complete 42608,2 --Recruit Ritssyn Flamescowl
+    .target Ritssyn Flamescowl
+step
+    .goto 717,66.95,46.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
+    .turnin 42608 >>Turn in Rise, Champions
+    .target Gakin the Darkbinder
 ]])
 
 ---Warrior Order Hall Intro 1
