@@ -10805,6 +10805,296 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Destruction
 #next
 
+step
+    .isQuestTurnedIn 43945
+    .isQuestAvailable 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 44006 >>Accept Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Enhancement artifact|r
+    .complete 44006,1 --1/1 Chose a Third Artifact to Pursue
+    .choose 1389399
+    .target Aggramar
+    .skipgossipid 45112
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 44006 >>Turn in Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestTurnedIn 40684
+    .isQuestAvailable 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 43984 >>Accept The Tome Opens Again
+    .target Calydus
+step
+    .isQuestAvailable 43984
+    .isOnQuest 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_This will automatically pick the Destruction artifact|r
+    .complete 43984,1 --1/1 Choose a second artifact to pursue
+    .choose 1389403
+    .target Calydus
+    .skipgossipid 45111
+step
+    .isQuestAvailable 43984
+    .isOnQuest 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 43984 >>Turn in The Tome Opens Again
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40684 >>Accept The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .isOnQuest 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_This will automatically pick the Destruction artifact|r
+    .complete 40684,1 --1/1 Artifact chosen
+    --.choose 1389403
+    .target Calydus
+    .skipgossipid 45162
+step
+    .isQuestAvailable 40684
+    .isOnQuest 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 40684 >>Turn in The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestTurnedIn 40823
+    #optional
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 43100 >>Accept Finding the Scepter
+    .target Calydus
+step
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 43100 >>Accept Finding the Scepter
+    .target Calydus
+step
+    .goto 22,66.83,75.18
+    >>Use the |T254294:0|t[Caer Darrow Scroll]
+    .complete 43100,2 --1/1 Go to Caer Darrow
+    .use 173526
+step
+    #title Find information (1/3)
+    .goto 22,69.03,77.45
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Logbook of Ur'dan|r.
+    *|cRXP_WARN_NOTE:|r This quest is hardcoded which means you have to do it in this exact order otherwise the arrow will be wrong.
+    .complete 43100,3,1 --1/3 Find information on the Shadow Council
+step
+    #title Find information (2/3)
+    .goto 22,69.40,77.31
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forgotten Letter|r.
+    *|cRXP_WARN_NOTE:|r This quest is hardcoded which means you have to do it in this exact order otherwise the arrow will be wrong.
+    .complete 43100,3,2 --2/3 Find information on the Shadow Council
+step
+    #title Find information (3/3)
+    .goto 22,69.14,79.60
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Council Notice|r.
+    *|cRXP_WARN_NOTE:|r This quest is hardcoded which means you have to do it in this exact order otherwise the arrow will be wrong.
+    .complete 43100,3 --3/3 Find information on the Shadow Council
+step
+    .goto 22,69.94,74.01
+    >>Kill |cRXP_ENEMY_Jergosh the Invoker|r. Loot him for the |T133738:0|t[|cRXP_LOOT_Book of Medivh|r].
+    .complete 43100,4 --1/1 Take the Book of Medivh from Jergosh
+    .mob Jergosh the Invoker
+step
+    #completewith next
+    #hidewindow
+    .gossipoption 45857 >>1
+    .timer 25,Calydus Roleplay
+step
+    .goto 22,69.16,79.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    .complete 43100,5 --1/1 Speak with Calydus
+    .target Calydus
+    .skipgossipid 45857
+step
+    .goto 22,69.16,79.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    .turnin 43100 >>Turn in Finding the Scepter
+    .accept 43153 >>Accept An Eye for a Scepter
+    .target Calydus
+step
+    .goto 22,69.26,79.21
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Tol Barad|r.
+    .complete 43153,1 --1/1 Take the Portal to Tol Barad
+step
+    .isOnQuest 43153
+    .goto 22,69.26,79.21
+    .enterScenario 1155 >>Enter the |cRXP_PICK_An Eye for a Scepter|r scenario.
+step
+    .isInScenario 1155
+    .goto 773,42.70,40.04
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 2700,1 --Find the Shadow Council group.
+step
+    #completewith next
+    #label SpeakWithAllarisAndNagazA
+    .isInScenario 1155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allaris and Nagaz.|r
+    .scenario 2715,1 --Speak with Allaris and Nagaz.
+    .target Allaris and Nagaz.
+step
+    --TODO: Title Color
+    #title Enter the prison
+    #completewith SpeakWithAllarisAndNagazA
+    .goto 773,42.70,38.47,8 >>|cRXP_WARN_Follow the arrow into the prison.|r
+step
+    #requires SpeakWithAllarisAndNagazA
+    .isInScenario 1155
+    .goto 773,42.64,35.61,8,0
+    .goto 773,43.72,35.65,8,0
+    .goto 773,43.76,34.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allaris and Nagaz.|r
+    .scenario 2715,1 --Speak with Allaris and Nagaz.
+    .target Allaris and Nagaz.
+step
+    .isInScenario 1155
+    .goto 773,44.99,30.60,15,0
+    .goto 773,48.64,31.16
+    >>|cRXP_WARN_Follow the arrow. Wait for the roleplay.|r
+    .scenario 2716,1 --Find Tyranis in D-Block
+step
+    .isInScenario 1155
+    .goto 773,48.63,31.23
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Tyranis Malem|r.
+    .scenario 2717,1 --Break Tyranis' chain or leave him
+    .target Tyranis Malem
+step
+    .isInScenario 1155
+    .goto 773,45.07,30.73
+    >>|cRXP_WARN_Follow the arrow. Wait for the roleplay.|r
+    .scenario 2718,1 --Continue searching the rest of the cell block.
+step
+    .goto 773,43.05,26.14
+    .isInScenario 1155
+    >>Kill |cRXP_ENEMY_Nagaz|r.
+    .scenario 2719,1 --Follow then kill Nagaz.
+    .mob Nagaz
+step
+    .isInScenario 1155
+    .goto 773,43.89,26.61,12,0
+    .goto 773,42.68,30.57
+    >>|cRXP_WARN_Follow the arrow. Wait for the roleplay.|r
+    .scenario 2720,1 --Continue searching D-Block.
+step
+    .goto 773,39.53,30.76,15,0
+    .goto 773,38.99,32.85
+    .isInScenario 1155
+    >>|cRXP_WARN_Follow the arrow. Wait for the roleplay.|r
+    .scenario 2724,1 --Find the prison manifest.
+step
+    #completewith EnterBaradinHoldC
+    #label EnterBaradinHoldA
+    #hidewindow
+    .isInScenario 1155
+    .scenario 2725,1 --Enter Baradin Hold
+step
+    --TODO: Title Color
+    #title Leave the prison
+    #completewith EnterBaradinHoldA
+    #label EnterBaradinHoldB
+    .goto 773,40.19,30.27,10,0
+    .goto 773,43.79,31.78,10,0
+    .goto 773,43.64,35.79,8,0
+    .goto 773,42.73,35.83,8,0
+    .goto 773,42.68,39.66 >>|cRXP_WARN_Follow the arrow out of the prison.|r
+step
+    --TODO: Title Color
+    #title Enter Baradin Hold
+    #requires EnterBaradinHoldB
+    #completewith EnterBaradinHoldA
+    #label EnterBaradinHoldC
+    .goto 773,46.29,47.92,8,0
+    .goto 773,47.59,48.18,8,0
+    .goto 773,47.63,50.13,8 >>|cRXP_WARN_Follow the arrow into Baradin Hold.|r
+step
+    #requires EnterBaradinHoldA
+    .isInScenario 1155
+    .scenario 2725,1 --Enter Baradin Hold
+step
+    .isInScenario 1155
+    .goto 774,48.26,14.85
+    >>Kill |cRXP_ENEMY_Occul'tharon|r. |cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2726,1 --Kill Occul'tharon and find the Eye of Dalaran.
+    .complete 43153,2 --1/1 Find the Eye of Dalaran
+    .mob Occul'tharon
+step
+    .goto 774,48.10,28.74,-1
+    .goto 619,46.84,64.48,-1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Demonic Portal|r.
+    .complete 43153,3 --1/1 Return to Calydus in Dalaran
+step
+    .goto 627,74.09,42.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    .turnin 43153 >>Turn in An Eye for a Scepter
+    .target Calydus
+    .accept 43254 >>Accept Ritual Ruination
+step
+    #completewith next
+    #label RitualRuinationA
+    #hidewindow
+    .complete 43254,1 --1/1 Take the Fel Bat to the Broken Shore
+step
+    #completewith RitualRuinationA
+    .goto 627,74.70,42.78
+    .vehicle 110480 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Fel Bat|r.
+    .target Fel Bat
+step
+    #requires RitualRuinationA
+    .goto 619,55.32,63.94
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Fel Bat|r.
+    .complete 43254,1 --1/1 Take the Fel Bat to the Broken Shore
+step
+    #completewith next
+    #hidewindow
+    .goto 619,60.40,25.22,10 >>1
+    .timer 60,Gul'dan Roleplay
+step
+    .goto 619,55.79,63.01
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .complete 43254,2 --1/1 Listen to Gul'dan
+step
+    .goto 619,55.91,62.89
+    >>Kill |cRXP_ENEMY_Allaris Nassarin|r.
+    .complete 43254,3 --1/1 Slay Allaris Nassarin
+    .mob Allaris Nassarin
+step
+    .goto 646,60.17,25.43
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scepter of Sargeras|r.
+    .complete 43254,4 --1/1 Take the Scepter of Sargeras
+step
+    .goto 619,55.74,63.07
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Altar|r.
+    .complete 43254,5 --1/1 Ruin the ritual
+step
+    .goto 619,55.50,63.36
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Demonic Portal|r.
+    .complete 43254,6 --1/1 Escape to Dalaran and meet Calydus
+step
+    .goto 628,55.86,65.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    .turnin 43254 >>Turn in Ritual Ruination
+    .target Calydus
 ]])
 --Warlock Intro 1
 RXPGuides.RegisterGuide([[
