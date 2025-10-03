@@ -10213,6 +10213,279 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Enhancement
 #next
 
+step
+    .isQuestTurnedIn 43945
+    .isQuestAvailable 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 44006 >>Accept Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Enhancement artifact|r
+    .complete 44006,1 --1/1 Chose a Third Artifact to Pursue
+    .choose 1389399
+    .target Aggramar
+    .skipgossipid 45112
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 44006 >>Turn in Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestTurnedIn 41335
+    .isQuestAvailable 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 43945 >>Accept Expanding Your Horizon
+    .target Aggramar
+step
+    .isQuestAvailable 43945
+    .isOnQuest 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Enhancement artifact|r
+    .complete 43945,1 --1/1 Choose a second artifact to pursue
+    .choose 1389399
+    .target Aggramar
+    .skipgossipid 45111
+step
+    .isQuestAvailable 43945
+    .isOnQuest 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 43945 >>Turn in Expanding Your Horizon
+    .target Aggramar
+step
+    .isQuestAvailable 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 41335 >>Accept The Elements Call...
+    .target Thrall
+step
+    .isQuestAvailable 41335
+    .isOnQuest 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    *|cRXP_WARN_This will automatically pick the Enhancement artifact|r
+    .complete 41335,1 --1/1 Artifact chosen
+    .choose 1389399
+    .target Thrall
+    .skipgossipid 45219
+step
+    .isQuestAvailable 41335
+    .isOnQuest 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 41335 >>Turn in The Elements Call...
+    .target Thrall
+step
+    #optional
+    .zoneskip 726,1
+    .goto 726,34.51,76.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r.
+    .accept 42931 >>Accept Where the Hammer Falls
+    .target Stormcaller Mylra
+step
+    .goto 725,35.76,77.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r.
+    .accept 42931 >>Accept Where the Hammer Falls
+    .target Stormcaller Mylra
+step
+    #optional
+    .zoneskip 726,1
+    .goto 726,60.13,66.90
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Stormbeak|r
+    .complete 42931,1 --1/1 Use Stormbeak to Fly Into the Maelstrom
+    .target Stormbeak
+step
+    .goto 725,35.48,77.41
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Stormbeak|r
+    .complete 42931,1 --1/1 Use Stormbeak to Fly Into the Maelstrom
+    .target Stormbeak
+step
+    .goto 207,47.10,52.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 42931 >>Turn in Where the Hammer Falls
+    .target Thrall
+    .accept 42932 >>Accept What the Stonemother Knows
+step
+    .goto 207,56.35,12.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therazane|r.
+    .turnin 42932 >>Turn in What the Stonemother Knows
+    .target Therazane
+    .accept 42933 >>Accept The Troggs that Fel to Earth
+    .accept 42935 >>Accept Stone Drake Rescue
+    .accept 42936 >>Accept Clutch Play
+step
+    #completewith FelrockTroggsSlainA
+    #hidewindow
+    #loop
+    .goto 207,47.33,13.05,45,0
+    .goto 207,37.76,14.14,35,0
+    .goto 207,35.96,23.04,35,0
+    .goto 207,45.67,15.53,35,0
+    +1
+step
+    #completewith StoneDrakesRescuedA
+    >>Kill |cRXP_ENEMY_Felrock Troggs|r.
+    .complete 42933,1 --25/25 Felrock Troggs Slain
+    .mob Felrock Mystic
+    .mob Felrock Beast Tamer
+    .mob Felrock Rager
+step
+    #completewith StoneDrakesRescuedA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Disassembled Opalescent Guardians|r
+    .complete 42936,1 --5/5 Opalescent Guardians Rebuilt
+    .target Disassembled Opalescent Guardian
+step
+    #label StoneDrakesRescuedA
+    >>Kill the |cRXP_ENEMY_Felrock Troggs|r around the |cRXP_FRIENDLY_Stone Drakes|r.
+    .complete 42935,1 --6/6 Stone Drakes Rescued
+    .target Stone Drake
+step
+    #completewith OpalescentGuardiansRebuiltA
+    >>Kill |cRXP_ENEMY_Felrock Troggs|r.
+    .complete 42933,1 --25/25 Felrock Troggs Slain
+    .mob Felrock Mystic
+    .mob Felrock Beast Tamer
+    .mob Felrock Rager
+step
+    #label OpalescentGuardiansRebuiltA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Disassembled Opalescent Guardians|r
+    .complete 42936,1 --5/5 Opalescent Guardians Rebuilt
+    .target Disassembled Opalescent Guardian
+step
+    #label FelrockTroggsSlainA
+    >>Kill |cRXP_ENEMY_Felrock Troggs|r.
+    .complete 42933,1 --25/25 Felrock Troggs Slain
+    .mob Felrock Mystic
+    .mob Felrock Beast Tamer
+    .mob Felrock Rager
+step
+    .goto 207,31.22,20.94
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 42936,2 --5/5 Guardians Escorted to Aeosera
+step
+    .goto 207,56.35,12.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therazane|r.
+    .turnin 42933 >>Turn in The Troggs that Fel to Earth
+    .turnin 42935 >>Turn in Stone Drake Rescue
+    .turnin 42936 >>Turn in Clutch Play
+    .accept 42937 >>Accept Needlerock Beatdown
+    .target Therazane
+step
+    .goto 207,56.73,12.60
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Aeosera|r
+    .complete 42937,1 --1/1 Fly Aeosera to Needlerock
+    .timer 60,Flight Duration
+step
+    .goto 207,31.71,31.29
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .complete 42937,2 --1/1 Assault Needlerock with Aeosera
+step
+    .goto 207,25.24,30.33
+    >>TImer 60
+step
+    .goto 207,24.21,29.70
+    >>Kill |cRXP_ENEMY_Borlock of the Deeps|r.
+    .complete 42937,3 --1/1 Borlock of the Deeps slain
+    .mob Borlock of the Deeps
+step
+    .goto 207,56.36,12.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therazane|r.
+    .turnin 42937 >>Turn in Needlerock Beatdown
+    .target Therazane
+step
+    .goto 207,56.54,12.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 40224 >>Accept The Hammer in the Deep
+    .target Thrall
+step
+    .goto 207,56.39,12.78
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to the Crumbling Depths|r
+    .complete 40224,1 --1/1 Enter the Crumbling Depths
+step
+    .isOnQuest 40224
+    .goto 207,56.39,12.78
+    .enterScenario 950 >>Enter the |cRXP_PICK_Cleansing the Deep|r scenario.
+step
+    .isInScenario 950
+    .goto 729,33.08,72.98,35,0
+    .goto 729,37.17,72.79
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 1902,1 --Follow Geth'xun's trail of fel blood.
+step
+    .isInScenario 950
+    #loop
+    .goto 729,42.73,72.45,30,0
+    .goto 729,39.10,83.23,30,0
+    >>Kill the |cRXP_ENEMY_Devouring Imps|r.
+    .scenario 1905,1 --Defeat all the Devouring Imps.
+    .mob Devouring Imp
+step
+    .isInScenario 950
+    .goto 729,48.80,78.32,35,0
+    .goto 729,54.62,79.55,35,0
+    .goto 729,59.60,82.33
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 1906,1 --Follow Geth'xun's trail of fel blood.
+step
+    .isInScenario 950
+    .goto 729,62.77,79.31
+    >>>Kill the |cRXP_ENEMY_Corrupted Gyreworm|r.
+    .scenario 1907,1 --Slay the Corrupted Gyreworm.
+    .mob COrrupted Gyreworm
+step
+    .isInScenario 950
+    .goto 729,62.71,67.05,35,0
+    .goto 729,59.56,65.26
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 1908,1 --Follow the trail to find Geth'xun.
+step
+    .goto 729,54.30,54.58
+    .isInScenario 950
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the rocks surrounding the |cRXP_PICK_Doomhammer|r.
+    .scenario 1909,1 --Acquire the Doomhammer.
+    .complete 40224,2 --Acquire the Doomhammer
+step
+    .isInScenario 950
+    .goto 729,52.96,53.11
+    >>Kill |cRXP_ENEMY_Geth'xun|r.
+    .scenario 1910,1 --Slay Geth'xun.
+    .mob Geth'xun
+step
+    .isInScenario 950
+    .goto 729,52.72,53.79
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Stormcaller Mylra|r.
+    .scenario 1911,1 --Help Stormcaller Mylra.
+    .target Stormcaller Mylra
+step
+    .zoneskip 729,1
+    #completewith next
+    #label ReturnToTheMaelstromA
+    #hidewindow
+    .complete 40224,3 --1/1 Return to the Maelstrom
+step
+    #completewith ReturnToTheMaelstromA
+    .goto 729,53.13,55.80
+    .zone 207 >>Click on |cRXP_FRIENDLY_Stormbeak|r.
+step
+    #requires ReturnToTheMaelstromA
+    .goto 207,56.39,12.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Stormbeak|r.
+    .complete 40224,3 --1/1 Return to the Maelstrom
+    .target Stormbeak
+step
+    .goto 726,34.52,76.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r.
+    .turnin 40224 >>Turn in The Hammer in the Deep
+    .target Stormcaller Mylra
 ]])
 --Restoration
 RXPGuides.RegisterGuide([[
