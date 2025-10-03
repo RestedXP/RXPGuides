@@ -1672,7 +1672,7 @@ RXPGuides.RegisterGuide([[
 #subweight 99.6
 #name ak) 1
 #displayname Druid
-#chapters a) Order Hall Druid Part 1;ab) Order Hall Druid Part 2;ac) Order Hall Druid;a) Artifact Weapon: Balance;a) Artifact Weapon: Feral;a) Artifact Weapon: Guardian;a) Artifact Weapon: Restoration Druids
+#chapters a) Order Hall Druid Part 1;ab) Order Hall Druid Part 2;ac) Order Hall Druid;a) Artifact Weapon: Balance Druid;a) Artifact Weapon: Feral Druid;a) Artifact Weapon: Guardian Druid;a) Artifact Weapon: Restoration Druid
 
 
 
@@ -1683,10 +1683,370 @@ RXPGuides.RegisterGuide([[
 #chapter
 #version 1
 #group RestedXP Legion Remix
-#name a) Artifact Weapon: Balance
+#name a) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next
 
+step
+    #completewith next
+    #label UseDreamwalkA
+    .zoneskip 715
+    .isQuestAvailable 40646
+    .cast 193753 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    #hidewindow
+    #completewith UseDreamwalkA
+    .isQuestAvailable 40646
+    .zone 747 >>1
+step
+    .zoneskip 715,1
+    .isQuestAvailable 40646
+    .goto 715,45.60,23.46
+    .zone 747 >>Go through the portal
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44443 >>Accept Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Balance artifact|r
+    .complete 44443,1 --1/1 Choose a fourth artifact to pursue
+    .choose 1390102
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44443 >>Turn in Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44431 >>Accept More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Balance artifact|r
+    .complete 44431,1 --1/1 Choose a third artifact to pursue
+    .choose 1390102
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44431 >>Turn in More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 43980 >>Accept Another Weapon of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Balance artifact|r
+    .complete 43980,1 --1/1 Choose a second artifact to pursue
+    .choose 1390102
+    .target Rensar Greathoof
+    .skipgossipid 45119
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 43980 >>Turn in Another Weapon of Old
+    .accept 42428 >>Accept The Shrine of Ashamane
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .accept 40646 >>Accept Weapons of Legend
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Balance artifact|r
+    .complete 40646,1 --1/1 Artifact weapon chosen
+    .choose 1390102
+    .target Rensar Greathoof
+    .skipgossipid 45120
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 40646 >>Turn in Weapons of Legend
+    .target Rensar Greathoof
+step
+    .goto 747,44.52,51.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naralex|r
+    .accept 40783 >>Accept The Scythe of Elune
+    .target Naralex
+step
+    #completewith ToDuskwoodD
+    #label ToDuskwoodA
+    >>Travel to Duskwood
+    .complete 40783,1 --1/1 Travel through the Dreamway to Duskwood (Optional)
+step
+    .zoneskip 747,1
+    .isOnQuest 41782
+    #completewith ToDuskwoodA
+    #label ToDuskwoodB
+    .goto 747,55.76,21.99
+    .zone 715 >>Go through the portal to the Emeral Dreamway
+step
+    .zoneskip 715,1
+    .isOnQuest 41782
+    #requires ToDuskwoodB
+    #completewith ToDuskwoodA
+    #label ToDuskwoodC
+    .zone 715 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    .isOnQuest 41782
+    #requires ToDuskwoodC
+    #completewith ToDuskwoodA
+    #label ToDuskwoodD
+    .goto 715,31.46,26.05
+    .zone 116 >>Go through the portal to Duskwood
+step
+    #requires ToDuskwoodA
+    .goto 715,39.93,69.76
+    >>Travel to Duskwood
+    .complete 40783,1 --1/1 Travel through the Dreamway to Duskwood (Optional)
+step
+    #completewith next
+    #hidewindow
+    .goto 47,48.90,34.31,15 >>1
+    .timer 15,Valorn Roleplay
+step
+    .goto 47,48.90,34.31
+    >>|cRXP_WARN_Follow the arrow. Wait for the roleplay|r.
+    .complete 40783,2 --1/1 Meet with Valorn
+step
+    .goto 47,48.90,34.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valorn Stillbough|r
+    .turnin 40783 >>Turn in The Scythe of Elune
+    .accept 40784 >>Accept Its Rightful Place
+    .timer 4,Roleplay
+    .target Valorn Stillbough
+step
+    .goto 47,48.90,34.31
+    >>|cRXP_WARN_Wait for the roleplay|r
+    .complete 40784,1 --1/1 Scythe of Elune taken
+step
+    .goto 47,48.84,34.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r
+    .turnin 40784 >>Turn in Its Rightful Place
+    .target Belysra Starbreeze
+    .accept 40785 >>Accept A Foe of the Dark
+step
+    --TODO: Title Color
+    #title Enter the house
+    .goto 47,77.42,36.13
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 40785,2 --1/1 Investigate Manor Mistmantle in Duskwood
+step
+    .goto 47,77.42,36.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r
+    .turnin 40785 >>Turn in A Foe of the Dark
+    .accept 40834 >>Accept Following the Curse
+    .target Revil Kost
+step
+    --TODO: Title Color
+    .isOnQuest 40834
+    #title Stay near Ariden
+    .goto 47,77.37,35.12
+    .countdown 25 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .isOnQuest 40834
+    .goto 47,80.86,33.00,25,0
+    .goto 47,84.33,36.29,20,0
+    .goto 47,83.83,40.27,15,0
+    .goto 47,85.55,40.69,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+step
+    .isOnQuest 40834
+    .goto 47,85.55,40.69
+    .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .isOnQuest 40834
+    .goto 42,36.64,35.55,25,0
+    .goto 42,39.13,33.72,25,0
+    .goto 42,44.37,34.56,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+step
+    .isOnQuest 40834
+    .goto 47,44.33,34.54
+    .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .goto 42,47.92,33.92,20,0
+    .goto 42,48.80,38.69,20,0
+    .goto 42,50.70,40.81
+    >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+    .complete 40834,1 --1/1 Follow Revil to Ariden's Camp
+step
+    .goto 42,52.41,34.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r
+    .turnin 40834 >>Turn in Following the Curse
+    .accept 40835 >>Accept Disturbing the Past
+    .target Revil Kost
+step
+    .goto 42,52.31,33.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Battered Journal|r.
+    .complete 40835,1 --1/1 Ariden's Camp investigated
+step
+    .goto 42,52.32,33.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Battered Journal|r
+    .turnin 40835 >>Turn in Disturbing the Past
+    .target Battered Journal
+step
+    .goto 42,52.42,34.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r
+    .accept 40837 >>Accept The Deadwind Hunt
+    .target Revil Kost
+step
+    .goto 42,51.57,43.62
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 40837,1 --1/1 Follow the worgen tracks
+step
+    .goto 42,47.22,51.69
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 40837,2 --1/1 Continue following the worgen
+step
+    .goto 42,49.17,57.66
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 40837,3 --1/1 Continue following the worgen
+step
+    .goto 42,45.93,63.33
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 40837,4 --1/1 Continue following the worgen
+step
+    .goto 42,46.90,69.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r
+    .turnin 40837 >>Turn in The Deadwind Hunt
+    .accept 40838 >>Accept The Dark Riders
+    .target Revil Kost
+step
+    .isOnQuest 40838
+    .goto 42,46.28,69.07
+    .enterScenario 1014 >>|cRXP_WARN_Follow the arrow|r
+step
+    #completewith next
+    #label KarazhanCatacombsA
+    .isInScenario 1014
+    .scenario 2108,1 --Karazhan Catacombs infiltrated
+step
+    #completewith KarazhanCatacombsA
+    .goto 46,71.72,83.73
+    .zone 46 >>Jump down
+step
+    #requires KarazhanCatacombsA
+    .isInScenario 1014
+    .goto 46,72.09,74.41
+    >>|cRXP_WARN_Enter the catacombs|r
+    .scenario 2108,1 --Karazhan Catacombs infiltrated
+step
+    .isInScenario 1014
+    #title Use |T252188:0|t[Solar Beam]
+    .goto 46,55.90,69.19
+    >>Use |T252188:0|t[Solar Beam] on |cRXP_ENEMY_Ariden|r |cRXP_WARN_from the quest log|r.
+    .scenario 2109,1 --Spirit Barrier crossed
+    .mob Ariden
+    .usespell 311930
+step
+    .isInScenario 1014
+    .goto 46,56.36,69.25
+    >>Kill |cRXP_ENEMY_The Conservator|r.
+    .scenario 2110,1 --Conservator Defeated
+    .mob The Conservator
+step
+    #completewith next
+    #hidewindow
+    .cast 3365 >>1
+    .timer 25,Roleplay
+step
+    .isInScenario 1014
+    .goto 46,43.63,67.82
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Scythe of Elune|r. |cRXP_WARN_Wait for the roleplay|r.
+    .scenario 2111,1 --Scythe of Elune found
+step
+    .isInScenario 1014
+    .goto 46,58.06,64.22,15,0
+    .goto 46,55.33,49.51,10,0
+    .goto 46,67.81,44.27,10,0
+    .goto 46,68.49,37.77
+    >>|cRXP_WARN_Follow the arrow up the stairs to |cRXP_ENEMY_Ariden|r.
+    .scenario 2112,1 --Ariden followed
+    .timer 15,Ariden Roleplay
+step
+    .isInScenario 1014
+    .goto 46,68.36,24.43
+    >>Kill |cRXP_ENEMY_Ariden|r.
+    .scenario 2113,1 --Ariden defeated
+    .complete 40838,1 --1/1 Defeat the Dark Riders
+    .timer 33,Ariden Roleplay
+    .mob Ariden
+step
+    .goto 46,68.28,24.62
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_The Scythe of Elune|r.
+    .complete 40838,2 --1/1 The Scythe of Elune claimed
+    .timer 25,Roleplay
+step
+    .goto 46,68.27,27.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r
+    .turnin 40838 >>Turn in The Dark Riders
+    .accept 40900 >>Accept The Burden Borne
+    .target Revil Kost
+step
+    #completewith TheBurdenBorneC
+    #label TheBurdenBorneA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 40900 >>Turn in The Burden Borne
+    .target Rensar Greathoof
+step
+    #completewith TheBurdenBorneA
+    #label TheBurdenBorneB
+    .zone 715 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    #completewith TheBurdenBorneA
+    #requires TheBurdenBorneB
+    #label TheBurdenBorneC
+    .goto 715,45.60,23.46
+    .zone 747 >>Go through the portal to the Emeral Dreamway
+step
+    #requires TheBurdenBorneA
+    .goto 747,44.64,52.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 40900 >>Turn in The Burden Borne
+    .target Rensar Greathoof
 ]])
 --Feral
 RXPGuides.RegisterGuide([[
@@ -1694,29 +2054,135 @@ RXPGuides.RegisterGuide([[
 #chapter
 #version 1
 #group RestedXP Legion Remix
-#name a) Artifact Weapon: Feral
+#name a) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next
 
 step
+    #completewith next
+    #label UseDreamwalkA
+    .zoneskip 715
+    .isQuestAvailable 40646
+    .cast 193753 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    #hidewindow
+    #completewith UseDreamwalkA
+    .isQuestAvailable 40646
+    .zone 747 >>1
+step
+    .zoneskip 715,1
+    .isQuestAvailable 40646
+    .goto 715,45.60,23.46
+    .zone 747 >>Go through the portal
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44443 >>Accept Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Feral artifact|r
+    .complete 44443,1 --1/1 Choose a fourth artifact to pursue
+    .choose 1390103
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44443 >>Turn in Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44431 >>Accept More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Feral artifact|r
+    .complete 44431,1 --1/1 Choose a third artifact to pursue
+    .choose 1390103
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44431 >>Turn in More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 43980 >>Accept Another Weapon of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Feral artifact|r
+    .complete 43980,1 --1/1 Choose a second artifact to pursue
+    .choose 1390103
+    .target Rensar Greathoof
+    .skipgossipid 45119
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 43980 >>Turn in Another Weapon of Old
+    .accept 42428 >>Accept The Shrine of Ashamane
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .accept 40646 >>Accept Weapons of Legend
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Feral artifact|r
+    .complete 40646,1 --1/1 Artifact weapon chosen
+    .choose 1390103
+    .target Rensar Greathoof
+    .skipgossipid 45120
+step
+    .isQuestAvailable 40646
     .isOnQuest 40646
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .turnin 40646 >>Turn in Weapons of Legend
-    .accept 42428 >>Accept The Shrine of Ashamane
     .target Rensar Greathoof
 step
-    .isOnQuest 43980
-    .goto 747,44.68,51.95
+    .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
-    .turnin 43980 >>Turn in Another Weapon of Old
     .accept 42428 >>Accept The Shrine of Ashamane
     .target Rensar Greathoof
 step
     .goto 747,61.73,33.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danise Stargazer|r.
     .complete 42428,1 --1/1 Hippogryph taken to Ashamane's Fall
-    .timer 40,Flight Duration
+    .timer 57,Flight Duration
     .target Danise Stargazer
     .skipgossipid 45654
 step
@@ -1851,11 +2317,26 @@ step
     .goto 693,53.19,18.21
     >>Kill |cRXP_ENEMY_Webmistress Shinaris|r.
     .scenario 2546,1 --Webmistress Shinaris Slain
+    .timer 18,Verstok Roleplay
     .mob Webmistress Shinaris
 step
     .isInScenario 1108
     .goto 693,54.72,20.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fangs of Ashamane|r
+    .scenario 2547,1 --Retrieve the Fangs of Ashamane
+step
+    .isOnQuest 42430
+    .isQuestNotComplete 42430
+    .isInScenario 1108
+    .goto 693,54.76,19.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Ebonfang|r.
+    .scenario 2552,1 --Ride upon Ebonfang
+    .target Ebonfang
+step
+    .goto 747,44.52,51.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 42430 >>Turn in The Fangs of Ashamane
+    .target Rensar Greathoof
 ]])
 --Guardian
 RXPGuides.RegisterGuide([[
@@ -1863,10 +2344,359 @@ RXPGuides.RegisterGuide([[
 #chapter
 #version 1
 #group RestedXP Legion Remix
-#name a) Artifact Weapon: Guardian
+#name a) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next
 
+step
+    #completewith next
+    #label UseDreamwalkA
+    .zoneskip 715
+    .isQuestAvailable 40646
+    .cast 193753 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    #hidewindow
+    #completewith UseDreamwalkA
+    .isQuestAvailable 40646
+    .zone 747 >>1
+step
+    .zoneskip 715,1
+    .isQuestAvailable 40646
+    .goto 715,45.60,23.46
+    .zone 747 >>Go through the portal
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44443 >>Accept Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Guardian artifact|r
+    .complete 44443,1 --1/1 Choose a fourth artifact to pursue
+    .choose 1390104
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44443 >>Turn in Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44431 >>Accept More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Guardian artifact|r
+    .complete 44431,1 --1/1 Choose a third artifact to pursue
+    .choose 1390104
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44431 >>Turn in More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 43980 >>Accept Another Weapon of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Guardian artifact|r
+    .complete 43980,1 --1/1 Choose a second artifact to pursue
+    .choose 1390104
+    .target Rensar Greathoof
+    .skipgossipid 45119
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 43980 >>Turn in Another Weapon of Old
+    .accept 42428 >>Accept The Shrine of Ashamane
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .accept 40646 >>Accept Weapons of Legend
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Guardian artifact|r
+    .complete 40646,1 --1/1 Artifact weapon chosen
+    .choose 1390104
+    .target Rensar Greathoof
+    .skipgossipid 45120
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 40646 >>Turn in Weapons of Legend
+    .target Rensar Greathoof
+step
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 41468 >>Accept Mistress of the Claw
+    .target Rensar Greathoof
+step
+    #completewith next
+    #label MistressOfTheClawA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lea Stonepaw|r
+    .turnin 41468 >>Turn in Mistress of the Claw
+    .accept 41782 >>Accept To The Hills
+    .target Lea Stonepaw
+step
+    --TODO: Title Color
+    #title Enter the cave
+    #completewith MistressOfTheClawA
+    .goto 747,46.26,28.36,8,0
+    .goto 747,41.55,16.90,8,0
+    .goto 747,42.95,14.59,8,0
+    .goto 747,42.18,9.31,8,0
+    .goto 747,44.57,12.05,6,0
+    .goto 747,43.95,6.25,8 >>|cRXP_WARN_Follow the arrow into the cave|r
+step
+    #requires MistressOfTheClawA
+    .goto 641,39.27,18.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lea Stonepaw|r
+    .turnin 41468 >>Turn in Mistress of the Claw
+    .accept 41782 >>Accept To The Hills
+    .target Lea Stonepaw
+step
+    #completewith next
+    #label ToTheHillsA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flask of Moonwell Water|r
+    .complete 41782,1 --1/1 Flask of Moonwell Water
+step
+    --TODO: Title Color
+    #title Leave the cave
+    #completewith ToTheHillsA
+    .goto 747,48.08,15.56,15,0
+    .goto 747,41.99,9.50,8,0
+    .goto 747,42.72,15.91,8,0
+    .goto 747,41.27,18.72,8,0
+    .goto 747,46.66,28.99,8 >>|cRXP_WARN_Follow the arrow to leave the cave|r
+step
+    #requires ToTheHillsA
+    .goto 747,35.66,25.44
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flask of Moonwell Water|r
+    .complete 41782,1 --1/1 Flask of Moonwell Water
+step
+    #completewith ToTheHillsE
+    #label ToTheHillsB
+    >>Travel to Grizzly Hills
+    .complete 41782,2 --1/1 Travel through the Dreamway to Grizzly Hills (Optional)
+step
+    .zoneskip 747,1
+    .isOnQuest 41782
+    #completewith ToTheHillsB
+    #label ToTheHillsC
+    .goto 747,55.76,21.99
+    .zone 715 >>Go through the portal to the Emeral Dreamway
+step
+    .zoneskip 715,1
+    .isOnQuest 41782
+    #requires ToTheHillsC
+    #completewith ToTheHillsB
+    #label ToTheHillsD
+    .zone 715 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    .isOnQuest 41782
+    #requires ToTheHillsD
+    #completewith ToTheHillsB
+    #label ToTheHillsE
+    .goto 715,31.46,26.05
+    .zone 116 >>Go through the portal to Grizzly Hills
+step
+    #requires ToTheHillsB
+    >>Travel to Grizzly Hills
+    .complete 41782,2 --1/1 Travel through the Dreamway to Grizzly Hills (Optional)
+step
+    .goto 116,50.46,29.97
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Stonepaw's Hippogryph|r
+    .complete 41782,3 --1/1 Take Stonepaw's Hippogryph to Lea Stonepaw (Optional)
+    .target Stonepaw's Hippogryph
+step
+    .goto 116,50.29,37.96,25,0
+    .goto 116,50.98,37.10
+    >>|cRXP_WARN_Follow the arrow|r    
+    .complete 41782,4 --1/1 Locate Lea Stonepaw
+step
+    .goto 116,51.28,36.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lea Stonepaw|r
+    .turnin 41782 >>Turn in To The Hills
+    .target Lea Stonepaw
+step
+    --TODO: Title Color
+    #title Check Note
+    .goto 116,50.50,37.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol|r
+    *|cRXP_WARN_Note: If you can't see the roleplay or |cRXP_FRIENDLY_Ursol|r then relog|r
+    .accept 41790 >>Accept The First Trial of Ursol
+    .target Ursol
+step
+    .goto 116,50.68,37.44    
+    >>Kill the |cRXP_ENEMY_Ancestral Champion|r
+    .complete 41790,1 --1/1 Overcome Ursol's first trial
+    .mob Ancestral Champion
+step
+    .goto 116,50.52,37.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol|r
+    .turnin 41790 >>Turn in The First Trial of Ursol
+    .accept 41791 >>Accept The Second Trial of Ursol
+    .target Ursol
+step
+    .goto 116,50.70,37.37    
+    >>Kill the |cRXP_WARN_three waves|r of |cRXP_ENEMY_Ancestral Warriors|r and |cRXP_ENEMY_Shamans|r
+    .complete 41791,1 --1/1 Overcome the second of Ursol's trials
+    .mob Ancestral Warrior
+    .mob Ancestral Shaman
+step
+    .goto 116,50.53,37.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol|r.
+    .turnin 41791 >>Turn in The Second Trial of Ursol
+    .accept 41792 >>Accept The Third Trial of Ursol
+    .target Ursol
+step
+    .goto 116,50.53,37.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol to begin the third trial|r
+    .complete 41792,1 --1/1 Speak with Ursol to begin the third trial
+    .timer 50,Roleplay
+    .target Ursol to begin the third trial
+    .skipgossipid 45309
+step
+    .goto 116,51.15,36.99
+    >>Kill the spawning |cRXP_ENEMY_Ancestral Warriors|r and |cRXP_ENEMY_Shamans|r
+    *|cRXP_WARN_You can also heal her|r
+    .complete 41792,2 --1/1 Protect Lea Stonepaw
+    .mob Ancestral Warrior
+    .mob Ancestral Shaman
+step
+    .goto 116,50.51,37.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol|r
+    .turnin 41792 >>Turn in The Third Trial of Ursol
+    .target Ursol
+step
+    .goto 116,51.25,36.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lea Stonepaw|r
+    .accept 40647 >>Accept When Dreams Become Nightmares
+    .target Lea Stonepaw
+step
+    .goto 116,51.25,36.85
+    >>Use the |T236878:0|t[Flask of Moonwell]
+    .complete 40647,1 --1/1 Enter the Emerald Dream
+    .use 136414
+step
+    .isInScenario 990
+    .goto 757,47.23,81.67,25,0
+    .goto 757,48.72,51.65
+    >>|cRXP_WARN_Follow the arrow|r
+    .scenario 2029,1 --Locate the Claws of Ursoc
+step
+    .goto 757,46.86,30.53
+    .isInScenario 990
+    >>Kill the |cRXP_ENEMY_Rothoof Defiler|r and |cRXP_ENEMY_Shadowstalker|r
+    .scenario 2327,1 --Defend the Spirit of Ursoc
+    .mob Rothoof Defiler
+    .mob Rothoof Shadowstalker
+step
+    .isInScenario 990
+    .goto 757,50.13,32.38
+    >>Kill the |cRXP_ENEMY_Blightborne Sludges|r and the |cRXP_ENEMY_Rothoof Shadowstalker|r.
+    .scenario 2030,1 --Survive the first assault
+    .mob Rothoof Shadowstalker
+    .mob Blightborne Sludge
+step
+    .isInScenario 990
+    .goto 757,49.40,33.06
+    >>Kill the |cRXP_ENEMY_Rothoof Defiler|r and |cRXP_ENEMY_Shadowstalker|r.
+    .scenario 2033,1 --Survive the second assault
+    .mob Rothoof Defiler
+    .mob Rothoof Shadowstalker
+step
+    .isInScenario 990
+    .goto 757,46.32,30.25
+    >>Kill the |cRXP_ENEMY_Blightborne Sludges|r and the |cRXP_ENEMY_Corrupted Defender|r.
+    .scenario 2034,1 --Survive the third assault
+    .mob Corrupted Defender
+    .mob Blightborne Sludge
+step
+    .isInScenario 990
+    .goto 757,50.30,31.30
+    >>Kill the two |cRXP_ENEMY_Corrupted Defender|r. Wait for the 70 seconds roleplay after getting stunned.
+    .scenario 2035,1 --Survive the final assault
+    .mob Corrupted Defender
+step
+    .isInScenario 990
+    .goto 757,49.96,28.35
+    >>Kill |cRXP_ENEMY_Malithar|r.
+    .scenario 2040,1 --Defeat Malithar
+    .complete 40647,2 --1/1 Defeat the Forces of the Nightmare
+    .mob Malithar
+step
+    .isInScenario 990
+    .goto 757,50.08,26.29
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Claws of Ursoc|r
+    .scenario 2041,1 --Obtain the Claws of Ursoc
+    .complete 40647,3 --1/1 Obtain the Claws of Ursoc
+step
+    .isOnQuest 40647
+    .zoneskip 757,1
+    .zone 116 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lea Stonepaw|r
+    .skipgossipid 45251
+    .target Lea Stonepaw
+step
+    .goto 116,51.25,36.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lea Stonepaw|r.
+    .turnin 40647 >>Turn in When Dreams Become Nightmares
+    .accept 41918 >>Accept The Dreamer Returns
+    .target Lea Stonepaw
+step
+    .zoneskip 715
+    .isOnQuest 41918
+    .zone 715 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    .zoneskip 715,1
+    .isOnQuest 41918
+    .goto 715,45.60,23.46
+    .zone 747 >>|cRXP_WARN_Follow the arrow through the portal|r
+step
+    .goto 747,44.66,51.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 41918 >>Turn in The Dreamer Returns
+    .target Rensar Greathoof
 ]])
 --Restoration
 RXPGuides.RegisterGuide([[
@@ -1874,10 +2704,396 @@ RXPGuides.RegisterGuide([[
 #chapter
 #version 1
 #group RestedXP Legion Remix
-#name a) Artifact Weapon: Restoration Druids
+#name a) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next
 
+
+step
+    #completewith next
+    #label UseDreamwalkA
+    .zoneskip 715
+    .isQuestAvailable 40646
+    .cast 193753 >>Use |T135763:0|t[Dreamwalk]
+    .usespell 193753
+step
+    #hidewindow
+    #completewith UseDreamwalkA
+    .isQuestAvailable 40646
+    .zone 747 >>1
+step
+    .zoneskip 715,1
+    .isQuestAvailable 40646
+    .goto 715,45.60,23.46
+    .zone 747 >>Go through the portal
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44443 >>Accept Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 44443,1 --1/1 Choose a fourth artifact to pursue
+    .choose 1390105
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 44431
+    .isQuestAvailable 44443
+    .isOnQuest 44443
+    .goto 747,44.66,51.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44443 >>Turn in Weapons of the Ancients
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 44431 >>Accept More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 44431,1 --1/1 Choose a third artifact to pursue
+    .choose 1390105
+    .target Rensar Greathoof
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43980
+    .isQuestAvailable 44431
+    .isOnQuest 44431
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 44431 >>Turn in More Weapons of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .accept 43980 >>Accept Another Weapon of Old
+    .target Rensar Greathoof
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 43980,1 --1/1 Choose a second artifact to pursue
+    .choose 1390105
+    .target Rensar Greathoof
+    .skipgossipid 45119
+step
+    .isQuestTurnedIn 40646
+    .isQuestAvailable 43980
+    .isOnQuest 43980
+    .goto 747,44.67,51.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .turnin 43980 >>Turn in Another Weapon of Old
+    .accept 42428 >>Accept The Shrine of Ashamane
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .accept 40646 >>Accept Weapons of Legend
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 40646,1 --1/1 Artifact weapon chosen
+    .choose 1390105
+    .target Rensar Greathoof
+    .skipgossipid 45120
+step
+    .isQuestAvailable 40646
+    .isOnQuest 40646
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
+    .turnin 40646 >>Turn in Weapons of Legend
+    .target Rensar Greathoof
+step
+    .goto 747,44.61,50.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Remulos|r.
+    .accept 40649 >>Accept Meet with Mylune
+    .target Keeper Remulos
+step
+    .goto 747,52.30,52.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r.
+    .turnin 40649 >>Turn in Meet with Mylune
+    .accept 41422 >>Accept Necessary Preparations
+    .target Mylune
+step
+    .goto 747,35.66,25.50
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Empty Cup|r.
+    .complete 41422,1 --1/1 Cup of Moonwater
+step
+    .goto 747,32.79,29.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leafbeard the Storied|r.
+    .complete 41422,2 --1/1 Leafbeard's Blessing obtained
+    .target Leafbeard the Storied
+    .skipgossipid 46113
+    .skipgossipid 45260
+step
+    .goto 747,52.30,52.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mylune|r.
+    .turnin 41422 >>Turn in Necessary Preparations
+    .accept 41449 >>Accept Join the Dreamer
+    .target Mylune
+step
+    #completewith next
+    #label JoinTheDreamerA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naralex|r.
+    .turnin 41449 >>Turn in Join the Dreamer
+    .accept 41436 >>Accept In Deep Slumber
+    .target Naralex
+step
+    --TODO: Title Color
+    #title Enter the cave
+    #completewith JoinTheDreamerA
+    .goto 747,46.26,28.36,8,0
+    .goto 747,41.55,16.90,8,0
+    .goto 747,42.95,14.59,8,0
+    .goto 747,42.18,9.31,8,0
+    .goto 747,44.57,12.05,6,0
+    .goto 747,43.95,6.25,8 >>|cRXP_WARN_Follow the arrow into the cave|r
+step
+    #requires JoinTheDreamerA
+    .goto 747,40.62,1.53,10,0
+    .goto 641,39.56,18.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naralex|r.
+    .turnin 41449 >>Turn in Join the Dreamer
+    .accept 41436 >>Accept In Deep Slumber
+    .target Naralex
+step
+    .goto 641,39.63,18.09
+    >>Use the |T608949:0|t[Cup of Moonwater]
+    .complete 41436,1 --1/1 Enter the Emerald Dream
+    .use 135506
+step
+    #completewith InDeepSlumberC
+    #label InDeepSlumberA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_G'Hanir|r |cRXP_WARN_outside of the cave|r.
+    .complete 41436,2 --1/1 Corrupted G'Hanir, the Mother Tree
+step
+    --TODO: Title Color
+    #title Free Bashana
+    #completewith InDeepSlumberA
+    #label InDeepSlumberB
+    .goto 747,40.83,2.02,8,0
+    .goto 747,43.96,6.16,8,0
+    .goto 747,47.97,4.09,8,0
+    .goto 747,47.21,7.17
+    .cast 311698 >>Click on the |cRXP_PICK_Roots|r
+step
+    --TODO: Title Color
+    #title Leave cave, heal yourself
+    #requires InDeepSlumberB
+    #completewith InDeepSlumberA
+    #label InDeepSlumberC
+    .goto 747,45.81,11.47,10,0
+    .goto 747,48.95,15.49,8,0
+    .goto 747,41.96,9.58,8,0
+    .goto 747,42.55,16.10,8,0
+    .goto 747,41.20,18.49,8,0
+    .goto 747,46.76,29.02,8 >>|cRXP_WARN_Follow the arrow out of the cave|r.
+step
+    #requires InDeepSlumberA
+    .goto 747,45.12,50.91
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_G'Hanir|r
+    .complete 41436,2 --1/1 Corrupted G'Hanir, the Mother Tree
+    .timer 10,Wake up in
+step
+    .goto 641,39.62,18.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naralex|r.
+    .turnin 41436 >>Turn in In Deep Slumber
+    .accept 41690 >>Accept Reconvene
+    .target Naralex
+step
+    #completewith next
+    #label ReconveneA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyessa Bloomwatcher|r.
+    .turnin 41690 >>Turn in Reconvene
+    .accept 41689 >>Accept Cleansing the Mother Tree
+    .target Lyessa Bloomwatcher
+step
+    --TODO: Title Color
+    #title Leave the cave
+    #completewith ReconveneA
+    .goto 747,41.02,2.21,8,0
+    .goto 747,48.08,15.56,15,0
+    .goto 747,41.99,9.50,8,0
+    .goto 747,42.72,15.91,8,0
+    .goto 747,41.27,18.72,8,0
+    .goto 747,46.66,28.99,8 >>|cRXP_WARN_Follow the arrow to leave the cave|r
+step
+    #requires ReconveneA
+    .goto 747,45.20,51.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyessa Bloomwatcher|r.
+    .turnin 41690 >>Turn in Reconvene
+    .accept 41689 >>Accept Cleansing the Mother Tree
+    .target Lyessa Bloomwatcher
+step
+    .goto 747,55.74,21.91
+    >>Go through the portal to the Dreamway
+    .complete 41689,1 --1/1 Enter the Dreamway
+step
+    .goto 715,53.69,53.00
+    >>Go through the portal to Mount Hyjal    
+    .complete 41689,2 --1/1 Travel to Mount Hyjal
+step
+    #hidewindow
+    #completewith next
+    #label CleansingTheMotherTreeA
+    .complete 41689,3 --1/1 G'Hanir cleansed
+step
+    #completewith CleansingTheMotherTreeA
+    #label CleansingTheMotherTreeB
+    .enterScenario 1061 >>Enter the |cRXP_PICK_Cleansing the Mother Tree|r scenario
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    #requires CleansingTheMotherTreeB
+    #completewith next
+    #hidewindow
+    .gossipoption 45306 >>1
+    .timer 21,Omnuron Roleplay
+step
+    #requires CleansingTheMotherTreeB
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,59.51,43.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r.
+    .scenario 2259,1 --Find out what happened from Skylord Omnuron.
+    .target Skylord Omnuron
+    .skipgossipid 45306
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.52,27.09
+    >>Heal |cRXP_FRIENDLY_Celestine of the Harvest|r.
+    .scenario 2269,2 --Heal Celestine to full health.
+    .target Celestine of the Harvest
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,61.68,26.24
+    >>Heal |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r.
+    .scenario 2269,1 --Heal Hamuul to full health.
+    .target Archdruid Hamuul Runetotem
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.70,41.85
+    >>Use |T236288:0|t[Nature's Cure] on |cRXP_FRIENDLY_Zen'tabra|r.
+    .scenario 2269,3 --Cleanse Zen'tabra.
+    .target Zen'tabra
+    .macro Nature's Cure,236288 >>/target Zen'tabra\n/cast spell:88423\n/cast spell:311698
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    #hidewindow
+    #completewith next
+    .gossipoption 45261 >>1
+    .timer 6,Short Roleplay
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .goto 198,60.24,42.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyessa Bloomwatcher|r.
+    .scenario 2270,1 --Speak to Lyessa.
+    .timer 180,Fight Duration
+    .target Lyessa Bloomwatcher
+    .skipgossipid 45261
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,61.10,25.99
+    >>|cRXP_WARN_Heal your allies for ~3minutes|r.
+    .scenario 2272,1 --1
+    .scenario 2272,2 --Lyessa Must Survive
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.56,25.49
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Lyessa Bloomwatcher|r.
+    .scenario 2325,1 --Give Corrupted G'Hanir to Lyessa.
+    .target Lyessa Bloomwatcher
+step
+    .isQuestNotComplete 41689
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.56,25.49
+    >>|cRXP_WARN_Wait for the roleplay|r.
+    .scenario 2325,2 --Witness G'Hanir's rebirth.
+    .complete 41689,3 --1/1 G'Hanir cleansed
+step
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.60,25.49
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_G'Hanir|r.
+    .scenario 2372,1 --Wield G'Hanir, the Mother Tree.
+step
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.66,25.54
+    >>Use |T1115592:0|t[Call of the Mother Tree] |cRXP_WARN_in the quest log under your minimap|r.
+    .scenario 2274,1 --Call upon the souls of the forest.
+    .timer 15,Destromath Roleplay
+step
+    .isOnQuest 41689
+    .isInScenario 1061
+    .goto 198,60.82,25.68
+    >>|cRXP_WARN_Wait for the roleplay|r.
+    .scenario 2274,2 --Eliminate Destromath.
+step
+    #completewith CleansingTheMotherTreeE
+    #label CleansingTheMotherTreeC
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyessa Bloomwatcher|r.
+    .turnin 41689 >>Turn in Cleansing the Mother Tree
+    .target Lyessa Bloomwatcher
+step
+    .zoneskip 198,1
+    #completewith CleansingTheMotherTreeC
+    #label CleansingTheMotherTreeD
+    .goto 198,59.05,43.52
+    .zone 715 >>Enter the portal to the Emerald Dreamway
+step
+    #requires CleansingTheMotherTreeD
+    #completewith CleansingTheMotherTreeC
+    #label CleansingTheMotherTreeF
+    .zone 715 >>Use |T135763:0|t[Dreamwalk]
+step
+    .zoneskip 715,1
+    #requires CleansingTheMotherTreeF
+    #completewith CleansingTheMotherTreeC
+    #label CleansingTheMotherTreeE
+    .goto 715,45.60,23.46
+    .zone 747 >>Enter the portal to The Dreamgrove
+step
+    #requires CleansingTheMotherTreeC
+    .goto 747,45.20,51.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyessa Bloomwatcher|r.
+    .turnin 41689 >>Turn in Cleansing the Mother Tree
+    .target Lyessa Bloomwatcher
 ]])
 --Druid Intro 1
 RXPGuides.RegisterGuide([[
