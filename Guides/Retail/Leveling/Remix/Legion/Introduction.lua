@@ -1320,13 +1320,129 @@ RXPGuides.RegisterGuide([[
 #name ab) Order Hall Death Knight Part 1
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
 
-<< Death Knight
+<< DeathKnight
 
 step
-    +test
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaberk|r.
+    *|cRXP_WARN_Note:|r This should get pushed to your quest log automatically while in Dalaran. If not then relog.
+    .accept 40714 >>Accept The Call To War
+    .target Kaberk
+step
+    .goto 627,73.11,46.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 40714 >>Turn in The Call To War
+    .accept 40715 >>Accept A Pact of Necessity
+    .target Duke Lankral
+step
+    .isQuestAvailable 40715
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost >> Frost(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Unholy >> Unholy(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Blood >> Blood(Tank) Questline
 
+]])
+
+---Death Knight Order Hall Intro 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ac) Order Hall Death Knight Part 2
+#displayname |cFF00CCFF3|r - Order Hall Intro|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
+
+<< DeathKnight
+
+step
+    .goto 648,50.97,50.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    .accept 39832 >>Accept Plans and Preparations
+    .target Highlord Darion Mograine
+step
+    .goto 648,49.69,51.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siouxsie the Banshee|r
+    .turnin 39832 >>Turn in Plans and Preparations
+    .target Siouxsie the Banshee
+    .accept 39799 >>Accept Our Next Move
+step
+    .goto 648,49.69,51.32
+    .complete 39799,1 --1/1 Initial strike point chosen
+step
+    .goto 648,49.56,51.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siouxsie the Banshee|r
+    .turnin 39799 >>Turn in Our Next Move
+    .timer 47,Roleplay
+    .target Siouxsie the Banshee
+step
+    .goto 648,50.93,50.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    .accept 42449 >>Accept Return of the Four Horsemen
+    .target Highlord Darion Mograine
+step
+    #completewith next
+    #label ReturnOfTheFourHorsemenA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thassarian|r
+    .turnin 42449 >>Turn in Return of the Four Horsemen
+    .accept 42484 >>Accept The Firstborn Rises
+    .target Thassarian
+step
+    #completewith ReturnOfTheFourHorsemenA
+    .goto 648,51.01,49.71
+    .zone 1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Infinitely Mysterious Portal|r
+step
+    #requires ReturnOfTheFourHorsemenA
+    .goto 1,47.32,17.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thassarian|r
+    .turnin 42449 >>Turn in Return of the Four Horsemen
+    .accept 42484 >>Accept The Firstborn Rises
+    .target Thassarian
+step
+    .goto 1,47.32,17.87
+    >>Use the |T367599:0|t[|cRXP_WARN_ExtraActionButton|r]
+    .complete 42484,1 --1/1 Nazgrim raised
+step
+    #completewith next
+    #label TheFirstbornRisesA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    .turnin 42484 >>Turn in The Firstborn Rises
+    .accept 43264 >>Accept Rise, Champions
+    .target Highlord Darion Mograine
+step
+    #completewith TheFirstbornRisesA
+    #title Use your |T135766:0|t[Deathgate]
+    .goto 1,47.32,17.87
+    .zone 648 >>Use |T135766:0|t[Deathgate] and click on it
+    .macro DeathgateDK,135766 >>/cast spell:50977
+step
+    #requires TheFirstbornRisesA
+    .goto 648,50.90,50.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    .turnin 42484 >>Turn in The Firstborn Rises
+    .target Highlord Darion Mograine
+    .accept 43264 >>Accept Rise, Champions
+step
+    .goto 648,56.02,30.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thassarian|r
+    .accept 39816 >>Accept Champion: Thassarian
+    .turnin 39816 >>Turn in Champion: Thassarian
+    .complete 43264,1 --1/1 Enlist Thassarian
+    .target Thassarian
+step
+    .goto 648,39.45,68.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrim|r
+    .accept 39818 >>Accept Champion: Nazgrim
+    .turnin 39818 >>Turn in Champion: Nazgrim
+    .complete 43264,2 --1/1 Enlist Nazgrim
+    .target Nazgrim
+step
+    .goto 648,49.70,51.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siouxsie the Banshee|r
+    .turnin 43264 >>Turn in Rise, Champions
+    .target Siouxsie the Banshee
 ]])
 
 ---Demon Hunter Order Hall Intro 1
