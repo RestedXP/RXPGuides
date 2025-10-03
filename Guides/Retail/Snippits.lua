@@ -8020,6 +8020,233 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Holy
 #next
 
+
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 44407 >>Accept The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Holy artifact|r
+    .complete 44407,1 --1/1 Artifact chosen (3rd)
+    .choose 1389393
+    .target Alonsus Faol
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 44407 >>Turn in The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 43935 >>Accept A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Holy artifact|r
+    .complete 43935,1 --1/1 Artifact chosen (2nd)
+    .choose 1389393
+    .target Alonsus Faol
+    .skipgossipid 45111
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 43935 >>Turn in A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 40706 >>Accept A Legend You Can Hold
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .isOnQuest 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Holy artifact|r
+    .complete 40706,1 --1/1 Artifact chosen
+    .choose 1389393
+    .target Alonsus Faol
+    .skipgossipid 45110
+step
+    .isQuestAvailable 40706
+    .isOnQuest 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 40706 >>Turn in A Legend You Can Hold
+    .target Alonsus Faol
+step
+    #optional
+    .isQuestTurnedIn 40938
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 41957 >>Accept The Vindicator's Plea
+    .target Alonsus Faol
+step
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 41957 >>Accept The Vindicator's Plea
+    .target Alonsus Faol
+step
+    .isOnQuest 41957
+    .zoneskip 18,1
+    .goto 18,78.49,41.08
+    .zone 627 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Larry|r.
+    .target Brother Larry
+    .skipgossipid 45625
+step
+    .goto 627,37.81,36.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Boros|r.
+    .turnin 41957 >>Turn in The Vindicator's Plea
+    .accept 41966 >>Accept House Call
+    .target Vindicator Boros
+step
+    .goto 627,36.02,36.61
+    >>Use |T135894:0|t[Purify] on |cRXP_ENEMY_Defender Barrem|r and heal him. Kill the |cRXP_ENEMY_Fel Tainted Blood|r.
+    .complete 41966,1 --1/1 Defender Barrem cured
+    .usespell 527
+    .target Defender Barrem
+    .mob Fel Tainted Blood
+step
+    .goto 627,37.41,35.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Defender Barrem|r.
+    .turnin 41966 >>Turn in House Call
+    .target Defender Barrem
+    .accept 41967 >>Accept Out of the Darkness
+step
+    .goto 627,70.80,43.94
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Lightfeather|r.
+    .complete 41967,1 --1/1 Flight to Darkstone Isle secured
+    .target Lightfeather
+step
+    .goto 646,34.08,33.57
+    >>Kill the |cRXP_ENEMY_Niskaran Executor|r.
+    .complete 41967,2 --1/1 Demon Camp cleared
+    .mob Niskaran Executor
+step
+    #completewith next
+    #hidewindow
+    .cast 213109 >>1
+    .timer 5,Alora Roleplay
+step
+    .goto 646,33.99,33.93
+    >>Use |T135955:0|t[Ressurection] on |cRXP_FRIENDLY_Alora|r.
+    .complete 41967,3 --1/1 Alora resurrected
+    .macro Resurrection,135955 >>/target Alora\n/cast spell:213109
+step
+    .goto 646,33.99,33.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alora|r.
+    .turnin 41967 >>Turn in Out of the Darkness
+    .accept 41993 >>Accept Salvation From On High
+    .target Alora
+step
+    .goto 646,33.42,33.18
+    >>Kill |cRXP_ENEMY_Subjugator Valith|r.
+    .complete 41993,1 --1/1 Assist Jace Darkweaver
+    .mob Subjugator Valith
+step
+    .goto 646,33.58,33.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r.
+    .turnin 41993 >>Turn in Salvation From On High
+    .target Jace Darkweaver
+    .accept 42074 >>Accept Return of the Light
+step
+    #title Walk through the portal
+    .goto 646,32.04,31.92
+    >>|cRXP_WARN_Follow the arrow and walk through the portal.|r
+    .complete 42074,1 --1/1 Travel through the Portal on Darkstone Isle
+step
+    .isOnQuest 42074
+    .goto 646,32.04,31.92
+    .enterScenario 1085 >>Enter the |cRXP_PICK_Return of the Light|r scenario.
+step
+    .isInScenario 1085
+    .goto 714,74.57,82.82
+    >>Use |T135907:0|t[Flash Heal] on |cRXP_FRIENDLY_Vindicator Boros|r.
+    .scenario 2406,1 --Heal Vindicator Boros to full health.
+    .macro Flash Heal,135907 >>/target Vindicator Boros\n/cast spell:2061
+    .target Vindicator Boros
+step
+    .isInScenario 1085
+    .goto 714,71.02,72.40
+    >>Kill |cRXP_ENEMY_Commander Xovoth|r.
+    .scenario 2421,1 --Assist Jace Darkweaver.
+    .mob Commander Xovoth
+step
+    .isInScenario 1085
+    .goto 714,70.66,71.75
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Anchoring Crystal|r.
+    .scenario 2441,1 --Destroy the Anchoring Crystal
+step
+    .isInScenario 1085
+    .goto 714,71.35,80.38,15,0
+    .goto 714,69.37,81.00,10,0
+    .goto 714,69.34,78.01
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 2441,2 --Exit the lower levels of the Legion Ship.
+step
+    .isInScenario 1085
+    .goto 714,71.45,73.43
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Cage|r.
+    *|cRXP_WARN_Note:|r If you're still downstairs then go up first.
+    .scenario 2417,1 --Rescue Bo'ja
+step
+    .isInScenario 1085
+    .goto 714,73.07,78.86
+    >>Kill |cRXP_ENEMY_Captain Naranoth|r.
+    .scenario 2446,1 --Defeat Captain Naranoth
+    .mob Captain Naranoth
+step
+    .isInScenario 1085
+    .goto 714,70.20,70.53,15,0
+    .goto 714,62.43,59.71
+    >>Kill |cRXP_ENEMY_Lady Calindris|r.
+    .scenario 2425,1 --Defeat Lady Calindris
+step
+    .isInScenario 1085
+    .goto 714,65.35,59.02
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_T'uure|r.
+    .scenario 2426,1 --T'uure obtained.
+    .complete 42074,2 --1/1 Obtain T'uure
+step
+    .isInScenario 1085
+    .goto 714,65.51,60.06
+    >>|cRXP_WARN_Wait for |cRXP_FRIENDLY_Bo'ja|r to walk down and place a portal|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bo'ja's Mage Portal|r.
+    .scenario 2426,2 --Leave Niskara
+step
+    .isQuestTurnedIn 40938
+    .goto 702,47.75,47.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r.
+    .turnin 42074 >>Turn in Return of the Light
+    .target Prophet Velen
+step
+    #optional
+    .goto 627,46.26,20.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r.
+    .turnin 42074 >>Turn in Return of the Light
+    .target Prophet Velen
 ]])
 --Shadow
 RXPGuides.RegisterGuide([[
