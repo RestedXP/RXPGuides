@@ -1119,6 +1119,92 @@ RXPGuides.RegisterGuide([[
 #next
 
 step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 44401,43962
+    .zoneskip 647
+    .zone 648 >>Use |T135766:0|t[Deathgate]
+    .usespell 50977
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 44401,43962
+    .goto 648,35.01,37.23
+    .zone 647 >>Use the teleporter
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 44401 >>Accept A Weapon For Every Occasion
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .isOnQuest 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Frost artifact|r
+    .complete 44401,1 --1/1 Choose a third artifact to pursue
+    .choose 1390098
+    .target Duke Lankral
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .isOnQuest 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 44401 >>Turn in A Weapon For Every Occasion
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 43962 >>Accept Blades of Destiny
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .isOnQuest 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Frost artifact|r
+    .complete 43962,1 --1/1 Choose a second artifact to pursue
+    .choose 1390098
+    .target Duke Lankral
+    .skipgossipid 45119
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .isOnQuest 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 43962 >>Turn in Blades of Destiny
+    .target Duke Lankral
+step
+    .isQuestAvailable 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 40715 >>Accept A Pact of Necessity
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40715
+    .isOnQuest 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Frost artifact|r
+    .complete 40715,1 --1/1 Artifact weapon chosen
+    .choose 1390098
+    .target Rensar Greathoof
+    .skipgossipid 45000
+step
+    .isQuestAvailable 40715
+    .isOnQuest 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 40715 >>Turn in A Pact of Necessity
+    .target Rensar Greathoof
+step
     .goto 627,73.09,46.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r
     .accept 38990 >>Accept The Call of Icecrown
