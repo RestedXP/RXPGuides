@@ -3152,13 +3152,84 @@ RXPGuides.RegisterGuide([[
 #name ab) Order Hall Shaman Part 1
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ac) Infinite Bazaar
 
 << Shaman
 
 step
-    +test
-
+    .goto 627,47.31,33.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 39746 >>Accept A Ring Unbroken
+    .target Thrall
+step
+    .goto 627,73.85,43.56
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Stormbeak|r
+    .complete 39746,1 --1/1 Fly to the Maelstrom with Mylra
+    .target Stormbeak
+step
+    .isOnQuest 39746
+    .goto 627,73.85,43.56
+    .enterScenario 1038 >>Enter the |cRXP_PICK_Melee at the Maelstrom|r scenario.
+step
+    .isInScenario 1038
+    .goto 725,31.52,76.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
+    .scenario 2205,1 --1/1 Speak with Nobundo
+    .target Farseer Nobundo
+    .skipgossipid 45305
+step
+    .isInScenario 1038
+    .goto 725,30.01,77.45
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maelstrom Pillar|r
+    .scenario 2206,3 --1/1 Help Rehgar and Erunak
+step
+    .isInScenario 1038
+    .goto 725,33.66,81.85
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Screech|r
+    .scenario 2206,1 --1/1 Help the Dwarves
+step
+    .isInScenario 1038
+    .goto 725,32.06,71.57
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Damp Campfire|r
+    .scenario 2206,2 --1/1 Help the Tauren and Trolls
+step
+    #loop
+    .goto 725,31.07,70.68,25,0
+    .goto 725,30.11,84.72,25,0
+    .goto 725,35.31,77.68,25,0
+    .isInScenario 1038
+    >>Kill the |cRXP_ENEMY_Infernals|r
+    .scenario 2207,1 --5/5 Defeat the Infernals
+    .mob Infernal
+step
+    .isInScenario 1038
+    .goto 725,30.19,76.62
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Tribemother Torra|r
+    >>Use the |T135129:0|t[|cRXP_WARN_ExtraActionButton|r]
+    .scenario 2208,1 --1/1 Use Torra's Spear to Bring Down the Felbat Falthus
+    .target Tribemother Torra
+step
+    .isInScenario 1038
+    .goto 725,30.01,77.44
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maelstrom Pillar|r
+    .scenario 2209,1 --1/1 Active the Maelstrom Pillar to Defeat Geth'xun
+step
+    .goto 725,29.91,77.48
+    >>Complete the scenario
+    .complete 39746,2 --Aid Shaman at the Maelstrom
+step
+    .goto 725,36.20,74.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 39746 >>Turn in A Ring Unbroken
+    .accept 41335 >>Accept The Elements Call...
+    .target Thrall
+step
+    .isQuestAvailable 41335
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Elemental >> Elemental(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Enhancement >> Enhancement(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Shaman >> Restoration(Healer) Questline
 ]])
 
 ---Warlock Order Hall Intro 1
