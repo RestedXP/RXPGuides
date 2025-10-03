@@ -10497,6 +10497,234 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Restoration
 #next
 
+step
+    .isQuestTurnedIn 43945
+    .isQuestAvailable 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 44006 >>Accept Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 44006,1 --1/1 Chose a Third Artifact to Pursue
+    .choose 1389400
+    .target Aggramar
+    .skipgossipid 45112
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 44006 >>Turn in Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestTurnedIn 41335
+    .isQuestAvailable 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 43945 >>Accept Expanding Your Horizon
+    .target Aggramar
+step
+    .isQuestAvailable 43945
+    .isOnQuest 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 43945,1 --1/1 Choose a second artifact to pursue
+    .choose 1389400
+    .target Aggramar
+    .skipgossipid 45111
+step
+    .isQuestAvailable 43945
+    .isOnQuest 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 43945 >>Turn in Expanding Your Horizon
+    .target Aggramar
+step
+    .isQuestAvailable 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 41335 >>Accept The Elements Call...
+    .target Thrall
+step
+    .isQuestAvailable 41335
+    .isOnQuest 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    *|cRXP_WARN_This will automatically pick the Restoration artifact|r
+    .complete 41335,1 --1/1 Artifact chosen
+    .choose 1389400
+    .target Thrall
+    .skipgossipid 45219
+step
+    .isQuestAvailable 41335
+    .isOnQuest 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 41335 >>Turn in The Elements Call...
+    .target Thrall
+step
+    .goto 726,33.80,79.21,-1
+    .goto 725,31.97,74.72,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erunak Stonespeaker|r.
+    .accept 43644 >>Accept To the Deeps
+    .target Erunak Stonespeaker
+step
+    .goto 726,33.69,78.65,-1
+    .goto 725,33.81,75.85,-1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bubble of Vashj'ir|r.
+    .complete 43644,1 --1/1 Travel to Vashj'ir with Erunak
+    .target Bubble of Vashj'ir
+step
+    .goto 205,43.62,63.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erunak Stonespeaker|r.
+    .turnin 43644 >>Turn in To the Deeps
+    .target Erunak Stonespeaker
+    .accept 43645 >>Accept Wavespeaker's Trail
+step
+    .goto 205,40.50,74.98
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Adelee's Staff|r.
+    .complete 43645,1 --1/1 First Clue Found
+step
+    #completewith next
+    #label ThirdClueA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Adelee's Journal|r.
+    .complete 43645,3 --1/1 Third Clue Found
+step
+    --TODO: Title Color
+    #title Enter the room
+    #completewith ThirdClueA
+    .goto 205,33.10,68.76,10 >>|cRXP_WARN_Enter the room.|r
+step
+    #requires ThirdClueA
+    .goto 205,33.08,67.31
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Adelee's Journal|r.
+    .complete 43645,3 --1/1 Third Clue Found
+step
+    #completewith next
+    #label SecondClueA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Ancient Wavestone|r
+    .complete 43645,2 --1/1 Second Clue Found
+step
+    --TODO: Title Color
+    #title Leave the room
+    #completewith SecondClueA
+    .goto 205,33.11,69.01,10 >>|cRXP_WARN_Leave the room.|r
+step
+    #requires SecondClueA
+    .goto 205,37.31,69.81,35,0
+    .goto 205,39.15,56.54
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Ancient Wavestone|r
+    .complete 43645,2 --1/1 Second Clue Found
+step
+    .goto 205,43.60,63.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erunak Stonespeaker|r.
+    .turnin 43645 >>Turn in Wavespeaker's Trail
+    .target Erunak Stonespeaker
+    .accept 40341 >>Accept Throne of the Tides: Azshara's Power
+    .goto 204,70.71,29.33,35,0
+step
+    .goto 204,70.91,29.74
+    >>|cRXP_WARN_You can use an underwater mount like |T133936:0|t[Sea Turtle].
+    .complete 40341,1 --1/1 Travel to the Abyssal Maw
+step
+    .goto 204,69.18,25.52
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 40341,2 --1/1 Enter the Throne of Tides
+step
+    .isOnQuest 40341
+    .goto 204,69.18,25.52
+    .enterScenario 1066 >>Enter the |cRXP_PICK_The Dark Queen and the Sea|r scenario.
+step
+    .isInScenario 1066
+    .goto 742,50.09,82.31
+    >>Use |T136044:0|t[Healing Surge] on the |cRXP_FRIENDLY_Sea Giant|r.
+    .scenario 2282,1 --Heal the Sea Giant.
+    .target Grash
+    .usespell 8004
+step
+    .isInScenario 1066
+    .goto 742,49.93,82.67
+    >>Kill the |cRXP_ENEMY_Naga Brutes|r.
+    .scenario 2282,2 --Kill the Naga Brutes.
+step
+    .isInScenario 1066
+    .goto 742,50.04,82.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grash|r.
+    .scenario 2282,3 --Recruit the Sea Giant.
+    .target Grash
+    .skipgossipid 45587
+    .skipgossipid 45621
+step
+    .isInScenario 1066
+    .goto 742,49.91,55.50
+    >>Kill the |cRXP_ENEMY_Frenzied Deep Sea Makrura|r, |cRXP_ENEMY_Zithreenai Tidecaller|r, and the |cRXP_ENEMY_
+    .scenario 2283,1 --Defeat Adelee's Guards.
+step
+    .isInScenario 1066
+    .goto 742,50.05,51.93
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Wavespeaker Adelee|r.
+    .scenario 2283,2 --Rescue Adelee.
+    .target Wavespeaker Adelee
+step
+    .isInScenario 1066
+    .goto 742,49.88,54.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grash|r.
+    .scenario 2284,1 --Ask Grash to Smash the Ice Wall
+    .target Grash
+    .skipgossipid 45543
+step
+    .isInScenario 1066
+    .goto 742,49.94,42.15
+    >>Kill |cRXP_ENEMY_Kra'liss|r.
+    .scenario 2284,2 --Defeat Kra'liss
+    .mob Kra'liss
+step
+    .isInScenario 1066
+    .goto 742,49.92,30.10
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bubble Up|r.
+    .scenario 2286,1 --Use Erunak's spell to ascend the riptide.
+step
+    --TODO: Title Color
+    #title Dodge the waves
+    .isInScenario 1066
+    .goto 743,50.48,56.05
+    >>|cRXP_WARN_Dodge the waves and follow the arrow.|r
+    .scenario 2286,2 --Run through the wave gauntlet.
+step
+    .isInScenario 1066
+    .goto 743,50.64,57.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grash|r.
+    .scenario 2287,1 --Ask Grash to destroy the ice wall.
+    .target Grash
+    .skipgossipid 45472
+step
+    .goto 743,50.53,42.91
+    .isInScenario 1066
+    >>Kill |cRXP_ENEMY_Lady Zithreen|r.
+    .scenario 2287,2 --Slay Lady Zithreen.
+    .mob Lady Zithreen
+step
+    .isInScenario 1066
+    .goto 743,50.56,43.05
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sharas'dal|r.
+    .scenario 2288,1 --Pick up Sharas'dal.
+    .complete 40341,3 --1/1 Acquire Sharas'dal
+    .timer 35,Roleplay Duration
+step
+    .goto 743,50.57,42.97
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bubble to the Maelstrom|r.
+    .complete 40341,4 --1/1 Return to the Maelstrom
+step
+    .goto 726,34.53,76.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r.
+    .turnin 40341 >>Turn in Throne of the Tides: Azshara's Power
+    .target Stormcaller Mylra
 ]])
 --Shaman Intro 1
 RXPGuides.RegisterGuide([[
