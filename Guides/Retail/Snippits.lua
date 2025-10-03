@@ -898,9 +898,215 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
-#next
+#next ac) Order Hall Death Knight
 
-
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 44401,43962
+    .zoneskip 647
+    .zone 648 >>Use |T135766:0|t[Deathgate]
+    .usespell 50977
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 44401,43962
+    .goto 648,35.01,37.23
+    .zone 647 >>Use the teleporter
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 44401 >>Accept A Weapon For Every Occasion
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .isOnQuest 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Blood artifact|r
+    .complete 44401,1 --1/1 Choose a third artifact to pursue
+    .choose 1390097
+    .target Duke Lankral
+    .skipgossipid 45117
+step
+    .isQuestTurnedIn 43962
+    .isQuestAvailable 44401
+    .isOnQuest 44401
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 44401 >>Turn in A Weapon For Every Occasion
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 43962 >>Accept Blades of Destiny
+    .target Duke Lankral
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .isOnQuest 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Blood artifact|r
+    .complete 43962,1 --1/1 Choose a second artifact to pursue
+    .choose 1390097
+    .target Duke Lankral
+    .skipgossipid 45119
+step
+    .isQuestTurnedIn 40715
+    .isQuestAvailable 43962
+    .isOnQuest 43962
+    .goto 647,57.76,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 43962 >>Turn in Blades of Destiny
+    .target Duke Lankral
+step
+    .isQuestAvailable 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .accept 40715 >>Accept A Pact of Necessity
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40715
+    .isOnQuest 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    *|cRXP_WARN_This will automatically pick the Blood artifact|r
+    .complete 40715,1 --1/1 Artifact weapon chosen
+    .choose 1390097
+    .target Rensar Greathoof
+    .skipgossipid 45000
+step
+    .isQuestAvailable 40715
+    .isOnQuest 40715
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 40715 >>Turn in A Pact of Necessity
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 43962
+    .goto 627,73.10,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r.
+    .accept 40740 >>Accept The Dead and the Damned
+    .target Chakheg
+step
+    #optional
+    .goto 647,57.76,60.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r.
+    .accept 40740 >>Accept The Dead and the Damned
+    .target Chakheg
+step
+    .goto 646,31.97,31.91
+    >>|cRXP_WARN_Follow the arrow and enter the portal.|r
+    .complete 40740,2 --1/1 Enter into the Legion Portal
+step
+    .isOnQuest 40740
+    .isQuestNotComplete 40740
+    .goto 646,31.97,31.91
+    .enterScenario 940 >>Enter the |cRXP_PICK_The Fleshripper's Harvest|r scenario
+step
+    .isInScenario 940
+    .goto 714,17.60,47.83
+    >>Kill the |cRXP_ENEMY_Niskaran Jailer|r.
+    .scenario 1884,1 --Search for Baron Sliver.
+    .mob Niskaran Jailer
+step
+    .isInScenario 940
+    .goto 714,22.14,50.77
+    >>|cRXP_WARN_Follow the arrow|r.
+    .scenario 2154,1 --Follow Baron Silver
+step
+    .isInScenario 940
+    .goto 714,23.74,50.28
+    >>Kill the |cRXP_ENEMY_Niskaran Doombringer|r and |cRXP_ENEMY_Felguard Sentry|r.
+    .scenario 2135,1 --Protect Baron Sliver while he disables the Fel Barrier
+    .mob Niskaran Doombringer
+    .mob Felguard Sentry
+step
+    #title Escort Baron Silver
+    .isInScenario 940
+    .goto 714,37.70,47.45
+    >>Kill the |cRXP_ENEMY_Felguard Sentries|r on the way otherwise |cRXP_FRIENDLY_Baron Silver|r will get stuck.
+    .scenario 2136,1 --Search the Legion camp.
+    .mob Felguard Sentry
+step
+    .goto 714,43.82,38.27
+    .isInScenario 940
+    >>Kill |cRXP_PICK_Inquisitor Zalinor|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Legion Keystone|r
+    .scenario 2137,1 --Hunt down Inquisitor Zalinor and obtain his key.
+    .mob Inquisitor Zalinor
+step
+    #completewith next
+    #hidewindow
+    .cast 202595 >>1
+    .timer 55,Roleplay
+step
+    .isInScenario 940
+    .goto 714,37.12,48.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Minerva Ravensorrow|r. << Horde
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Dagnar Stonebrew|r. << Alliance
+    .scenario 2138,1 --Release your ally
+    .target Minerva Ravensorrow << Horde
+    .target Dagnar Stonebrew << Alliance
+step
+    .isInScenario 940
+    .goto 714,47.96,58.44
+    >>Use |T136120:0|t[Anti-Magic Shell] to avoid the damage from the fel voids.
+    >>|cRXP_WARN_Defend|r |cRXP_FRIENDLY_Baron Silver|r again.
+    .scenario 2139,1 --Citadel Barrier Disabled
+    .usespell 48707
+    .mob Niskaran Doombringer
+    .mob Felguard Sentry
+    .mob Voracious Felmaw
+    .mob Niskaran Houndmaster
+step
+    .isInScenario 940
+    .goto 714,61.34,59.78
+    >>Use |T136120:0|t[Anti-Magic Shell] to avoid the damage from the fel voids.
+    >>Use |T237532:0|t[Death Grip] to get in range of the |cRXP_ENEMY_Repulsion Tumor|r.
+    .scenario 2141,1 --Search within the citadel for Margrave
+    .usespell 48707
+    .usespell 49576
+step
+    .goto 714,65.10,59.87
+    .isInScenario 940
+    >>Kill |cRXP_ENEMY_Gorelix|r.
+    .scenario 2142,1 --Slay Gorelix
+    .mob Gorelix
+step
+    .isInScenario 940
+    .goto 714,64.15,60.17
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Maw of the Damned|r
+    .scenario 2143,1 --Take the Maw of the Damned
+    .complete 40740,3 --1/1 Obtain the Maw of the Damned
+step
+    .goto 714,63.06,60.82
+step
+    .isInScenario 940
+    .goto 714,63.06,60.82
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Death Gate|r.
+    .scenario 2180,1 --Use Baron Sliver's Death Gate
+step
+    .isOnQuest 40740
+    .goto 701,47.57,90.74
+    .zone 648 >>Click on the |cRXP_PICK_Acherus Waygate|r after the roleplay.
+step
+    .isQuestAvailable 39832
+    .goto 648,50.90,50.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
+    .turnin 40740 >>Turn in The Dead and the Damned
+    .timer 63,Mograine Roleplay
+    .target Highlord Darion Mograine
+step
+    #optional
+    .goto 648,50.90,50.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
+    .turnin 40740 >>Turn in The Dead and the Damned
+    .target Highlord Darion Mograine
 ]])
 --Frost
 RXPGuides.RegisterGuide([[
