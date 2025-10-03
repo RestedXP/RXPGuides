@@ -7657,6 +7657,358 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Discipline
 #next
 
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 44407 >>Accept The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
+    .complete 44407,1 --1/1 Artifact chosen (3rd)
+    .choose 1389392
+    .target Alonsus Faol
+    .skipgossipid 45112
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 44407 >>Turn in The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 43935 >>Accept A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
+    .complete 43935,1 --1/1 Artifact chosen (2nd)
+    .choose 1389392
+    .target Alonsus Faol
+    .skipgossipid 45111
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 43935 >>Turn in A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 40706 >>Accept A Legend You Can Hold
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .isOnQuest 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
+    .complete 40706,1 --1/1 Artifact chosen
+    .choose 1389392
+    .target Alonsus Faol
+    .skipgossipid 45110
+step
+    .isQuestAvailable 40706
+    .isOnQuest 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 40706 >>Turn in A Legend You Can Hold
+    .target Alonsus Faol
+step
+    #optional
+    .isQuestTurnedIn 40938
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 41625 >>Accept The Light's Wrath
+    .target Alonsus Faol
+step
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 41625 >>Accept The Light's Wrath
+    .target Alonsus Faol
+step
+    .isOnQuest 41625
+    .zoneskip 18,1
+    .goto 18,78.49,41.08
+    .zone 627 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Larry|r.
+    .target Brother Larry
+    .skipgossipid 45625
+step
+    .isOnQuest 41625
+    .zoneskip 702,1
+    .goto 702,49.79,80.78
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
+step
+    .goto 627,28.64,49.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r.
+    .turnin 41625 >>Turn in The Light's Wrath
+    .accept 41626 >>Accept A New Threat
+    .target Archmage Kalec
+step
+    .zoneskip 627,1
+    .isOnQuest 41626
+    .goto 627,49.25,47.64
+    .zone 629 >>Use the teleporter in the center of Dalaran
+step
+    .goto 629,30.85,84.43
+    >>|cRXP_WARN_Follow the arrow.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Wyrmrest Temple|r.
+    *|cRXP_WARN_Note:|r. You can find the portal after using the teleporter in the middle of Dalaran if the arrow is incorrect for whatever reason.
+    .complete 41626,1 --1/1 Take the Dalaran portal to Wyrmrest Temple
+step
+    .goto 115,55.96,65.01
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 41626,2 --1/1 Travel to the Azure Dragonshrine
+step
+    #loop
+    .goto 115,55.90,64.90,30,0
+    .goto 115,56.26,68.12,30,0
+    .goto 115,54.10,66.46,30,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Void Siphons|r, |cRXP_PICK_Strange Portals|r, and |cRXP_PICK_Void-Tainted Blades|r.    
+    .complete 41626,3 --3/3 Clues Found
+step
+    .goto 115,56.69,69.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ethereal Communication Device|r.
+    .turnin 41626 >>Turn in A New Threat
+    .target Ethereal Communication Device
+    .accept 41627 >>Accept A Forgotten Enemy
+step
+    #completewith next
+    #hidewindow
+    .cast 3365 >>1
+    .timer 37,Nexus-Prince Roleplay
+step
+    .goto 115,56.65,69.10
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Communication Device Switch|r.
+    .complete 41627,1 --1/1 Activate the communication device
+step
+    .goto 115,56.69,69.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Airictora|r.
+    .turnin 41627 >>Turn in A Forgotten Enemy
+    .accept 41628 >>Accept Eyes of the Dragon
+    .target Airictora
+step
+    #title Use the |T254294:0|t[Nexus Teleport Scroll]
+    .goto 114,29.25,28.57
+    >>Use the |T254294:0|t[Nexus Teleport Scroll]
+    .complete 41628,1 --1/1 Nexus spire scouted
+    .use 173430
+step
+    .goto 114,32.19,27.85
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 41628,2 --1/1 Surge Needle scouted
+step
+    .goto 114,29.66,27.50
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 41628,3 --1/1 Nexus foundation scouted
+step
+    >>This should get turned in and pushed to your quest log automatically. Relog if it doesn't work.
+    .turnin 41628 >>Turn in Eyes of the Dragon
+    .accept 41629 >>Accept Harnessing the Holy Fire
+step
+    #loop
+    .goto 114,27.40,23.82,35,0
+    .goto 114,25.85,26.44,35,0
+    .goto 114,27.17,29.80,35,0
+    .goto 114,29.52,27.00,35,0
+    >>Kill |cRXP_ENEMY_Wrath Embers|r.
+    .complete 41629,1 --1/1 Empowered with Unstable Holy Energy
+    .mob Wrath Ember
+step
+    .goto 114,26.60,23.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Airictora|r.
+    .turnin 41629 >>Turn in Harnessing the Holy Fire
+    .accept 41630 >>Accept Unleashing Judgment
+    .target Airictora
+step
+    .goto 114,27.32,20.43
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Focused Void|r.
+    .complete 41630,3 --1/1 North Surge Needle destroyed
+step
+    .goto 114,24.13,29.52
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Focused Void|r.
+    .complete 41630,2 --1/1 West Surge Needle destroyed
+step
+    .goto 114,32.66,27.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Focused Void|r.
+    .complete 41630,1 --1/1 East Surge Needle destroyed
+step
+    .goto 114,32.66,27.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Airictora|r.
+    .turnin 41630 >>Turn in Unleashing Judgment
+    .accept 41631 >>Accept The Nexus Vault
+    .target Airictora
+step
+    .isOnQuest 41631
+    .goto 114,27.84,28.37,30,0
+    .goto 114,27.51,26.05
+    .enterScenario 1065 >>Enter the |cRXP_PICK_X|r scenario.
+step
+    .isInScenario 1065
+    .goto 736,36.20,67.66
+    >>Kill the |cRXP_ENEMY_Scion of Fire|r, |cRXP_ENEMY_Scion of Ice|r, and |cRXP_ENEMY_Scion of Magic|r.
+    .scenario 2275,1 --Azuregos Freed
+    .mob Scion of Fire
+    .mob Scion of Ice
+    .mob Scion of Mage
+step
+    .isInScenario 1065
+    .goto 736,36.20,67.66
+    >>Use |T135907:0|t[Flash Heal] on |cRXP_FRIENDLY_Azuregos|r.
+    .scenario 2275,2 --Azuregos healed to full
+    .macro Flash Heal,135907 >>/target Azuregos\n/cast spell:2061
+step
+    .goto 736,23.51,67.53,15,0
+    .goto 736,21.20,64.39,15,0
+    .goto 736,21.93,57.90,15,0
+    .goto 736,18.86,50.68,15,0
+    .goto 736,22.01,43.34,15,0
+    .goto 736,21.56,36.26,15,0
+    .goto 736,27.49,34.52,15,0
+    .goto 736,26.65,33.90
+    .isInScenario 1065
+    >>Use |T135928:0|t[Levitate]. |cRXP_WARN_Avoid the flame geysers|r.
+    .scenario 2277,1 --Reach the Librarium
+    .usespell 1706
+step
+    .isInScenario 1065
+    .goto 736,27.59,39.89
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2277,2 --Find a way into the vault
+step
+    .isInScenario 1065
+    .goto 736,27.59,39.89
+    >>Kill the |cRXP_ENEMY_Judgement's Flame|r.
+    .scenario 2278,1 --Judgement's Flame defeated
+    .mob Judgement's Flame
+step
+    .isInScenario 1065
+    .goto 736,26.83,25.13,25,0
+    .goto 736,31.22,22.01
+    .scenario 2292,1 --Reach the Rift
+step
+    #completewith next
+    #label NexusPrinceBilaalA
+    .isInScenario 1065
+    .scenario 2279,1 --Nexus-Prince Bilaal Defeated
+step
+    #label NexusPrinceBilaalA
+    .goto 736,31.22,22.01
+    .vehicle 104546 >>Click on |cRXP_FRIENDLY_Azuregos|r
+step
+    #requires NexusPrinceBilaalA
+    .isInScenario 1065
+    .goto 736,59.24,20.32
+    >>Kill |cRXP_ENEMY_Nexus-Prince Bilaal|r.
+    .scenario 2279,1 --Nexus-Prince Bilaal Defeated
+    .complete 41631,1 --1/1 Nexus-Prince Bilaal slain
+    .mob Nexus-Prince Bilaal
+step
+    #completewith next
+    #label SubdueLightsWrathA
+    .isInScenario 1065
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Light's Wrath|r.
+    .scenario 2280,1 --Subdue Light's Wrath
+step
+    #completewith SubdueLightsWrathA
+    .goto 736,60.64,20.51
+    .subzone 8119 >>Click on the |cRXP_PICK_Portal|r.
+    --.subzone 13695
+step
+    #requires SubdueLightsWrathA
+    #completewith next
+    #hidewindow
+    .cast 207949 >>1
+    .timer 30,Subdue Duration
+step
+    #requires SubdueLightsWrathA
+    .isInScenario 1065
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Light's Wrath|r.
+    .scenario 2280,1 --Subdue Light's Wrath
+step
+    .isInScenario 1065
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Light's Wrath|r.
+    .scenario 2281,1 --Claim Light's Wrath
+    .complete 41631,2 --1/1 Light's Wrath
+step
+    #completewith next
+    #label LeaveTheNexusVaultA
+    .isInScenario 1065
+    .scenario 2281,2 --Leave the Nexus Vault
+step
+    #completewith LeaveTheNexusVaultA
+    .subzone 13695 >>Click on the |cRXP_PICK_Portal to the Nexus|r
+    .timer 50,Azuregos Roleplay
+    *|cRXP_WARN_Note:|r Coordinates don't work here
+step
+    #requires LeaveTheNexusVaultA
+    .isInScenario 1065
+    .goto 736,59.28,20.40
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2281,2 --Leave the Nexus Vault
+step
+    #completewith next
+    #label TheNexusVaultA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r.
+    .turnin 41631 >>Turn in The Nexus Vault
+    .accept 41632 >>Accept A Gift of Time
+    .target Archmage Kalec
+step
+    .zoneskip 736,1
+    #completewith TheNexusVaultA
+    .goto 736,59.28,20.40
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
+step
+    #requires TheNexusVaultA
+    .goto 627,28.64,49.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r.
+    .turnin 41631 >>Turn in The Nexus Vault
+    .accept 41632 >>Accept A Gift of Time
+    .target Archmage Kalec
+step
+    .isQuestTurnedIn 40938
+    #completewith next
+    #label AGiftOfTimeA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 41632 >>Turn in A Gift of Time
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40938
+    #completewith AGiftOfTimeA
+    .goto 627,62.99,17.68 << Horde
+    .goto 627,39.57,57.30 << Alliance
+    .zone 702 >>Click on the |cRXP_PICK_Portal to Netherlight Temple|r
+step
+    .isQuestTurnedIn 40938
+    #requires AGiftOfTimeA
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 41632 >>Turn in A Gift of Time
+    .target Alonsus Faol
+step
+    #optional
+    .goto 627,46.26,20.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r.
+    .turnin 41632 >>Turn in A Gift of Time
+    .target Prophet Velen
 ]])
 --Holy
 RXPGuides.RegisterGuide([[
