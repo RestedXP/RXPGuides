@@ -8258,6 +8258,221 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Shadow
 #next
 
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 44407 >>Accept The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Shadow artifact|r
+    .complete 44407,1 --1/1 Artifact chosen (3rd)
+    .choose 1389394
+    .target Alonsus Faol
+    .skipgossipid 45112
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 44407 >>Turn in The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 43935 >>Accept A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Shadow artifact|r
+    .complete 43935,1 --1/1 Artifact chosen (2nd)
+    .choose 1389394
+    .target Alonsus Faol
+    .skipgossipid 45111
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 43935 >>Turn in A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 40706 >>Accept A Legend You Can Hold
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .isOnQuest 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Shadow artifact|r
+    .complete 40706,1 --1/1 Artifact chosen
+    .choose 1389394
+    .target Alonsus Faol
+    .skipgossipid 45110
+step
+    .isQuestAvailable 40706
+    .isOnQuest 40706
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 40706 >>Turn in A Legend You Can Hold
+    .target Alonsus Faol
+step
+    #optional
+    .isQuestTurnedIn 40938
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 40710 >>Accept Blade in Twilight
+    .target Alonsus Faol
+step
+    .goto 18,78.96,40.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 40710 >>Accept Blade in Twilight
+    .target Alonsus Faol
+step
+    .goto 18,13.03,62.46
+    >>Use the |T254294:0|t[Tirisfal Camp Scroll].
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 40710,1 --1/1 Go to the marked location in Tirisfal Glades
+    .use 173523
+step
+    .isOnQuest 40710
+    .goto 18,13.03,62.46
+    .enterScenario 991 >>Enter the |cRXP_PICK_Blade in Twilight|r scenario
+step
+    .isInScenario 991
+    .goto 18,13.47,57.58
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Slaghammer's Notes|r.
+    .scenario 2221,1 --Find the first clue
+step
+    .isInScenario 991
+    .goto 18,13.21,55.47
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Slaghammer's Notes|r.
+    .scenario 2221,2 --Find the second clue
+step
+    .isInScenario 991
+    .goto 18,13.90,55.41
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Slaghammer's Notes|r.
+    .scenario 2221,3 --Find the third clue
+
+step
+    --TODO: Title Color
+    #title Swim down
+    .isInScenario 991
+    .goto 20,37.87,12.57,8,0
+    .goto 20,34.13,23.36
+    >>|cRXP_WARN_Swim down and into the passage.|r
+    .scenario 2031,1 --Enter the tomb at the bottom of the lake
+step
+    .isInScenario 991
+    .goto 20,37.16,41.44
+    >>Kill the |cRXP_ENEMY_Twilight Bladetwister|r and |cRXP_ENEMY_Twilight Shadowcaster|r.
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2032,1 --Defeat the guards at the door to gain access
+step
+    .isInScenario 991
+    .goto 20,37.24,44.71
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 2048,1 --Enter the Tomb of Tyr
+step
+    .isInScenario 991
+    #loop
+    .goto 20,40.97,50.29,12,0
+    .goto 20,41.22,58.63,12,0
+    .goto 20,34.05,59.87,12,0
+    .goto 20,33.64,50.57,12,0
+    >>Kill the |cRXP_ENEMY_Twilight Ritualists|r.
+    .scenario 2086,1 --Stop the dampening rituals
+    .mob Twilight Ritualist
+step
+    .isInScenario 991
+    .goto 20,37.52,55.05
+    >>Kill the |cRXP_ENEMY_Amassing Darkness|r.
+    .scenario 2171,1 --Defeat the Amassing Darkness
+    .mob Amassing Darkness
+step
+    .isInScenario 991
+    .goto 20,39.37,79.78,15,0
+    .goto 20,41.94,84.31,15,0
+    .goto 20,47.78,75.83
+    >>|cRXP_WARN_Follow the arrow.|r Use |T135739:0|t[Mass Dispel] to kill the |cRXP_ENEMY_Void Tendrils|r
+    .scenario 2089,1 --Fight to the prison chamber
+    .mob Void Tendril
+    .usespell 311663
+step
+    .isInScenario 991
+    .goto 20,58.77,75.20
+    >>Kill the |cRXP_ENEMY_Twilight Deacon Farthing|r.
+    .scenario 2099,1 --Kill the Twilight Deacon
+    .mob Twilight Deacon Farthing
+step
+    .isInScenario 991
+    .goto 20,58.66,76.66
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blade of the Black Empire|r.
+    .scenario 2115,1 --Take the Blade of the Black Empire
+step
+    .isInScenario 991
+    .goto 20,58.66,76.66
+    >>Use the |T136201:0|t[|cRXP_WARN_ExtraActionButton|r] (Dark Drain)
+    .scenario 2116,1 --Use "Dark Drain" to kill Zakajz forever
+    .complete 40710,2 --1/1 Stop the Ritual and acquire the Blade
+    .timer 15,Roleplay
+step
+    #completewith next
+    #label BladeInTwilightA
+    #hidewindow
+    .complete 40710,3 --1/1 Return to Alonsus and Moira
+step
+    #completewith BladeInTwilightA
+    .goto 20,57.38,73.35
+    .zone 627 >>Click on Portal to Dalaran City
+step
+    #requires BladeInTwilightA
+    .goto 627,47.32,22.90
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 40710,3 --1/1 Return to Alonsus and Moira
+step
+    .isQuestTurnedIn 40938
+    #completewith next
+    #label BladeInTwilightB
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r.
+    .turnin 40710 >>Turn in Blade in Twilight
+    .target Moira Thaurissan
+step
+    .isQuestTurnedIn 40938
+    #completewith BladeInTwilightB
+    .goto 627,62.99,17.68 << Horde
+    .goto 627,39.57,57.30 << Alliance
+    .zone 702 >>Click on the |cRXP_PICK_Portal to Netherlight Temple|r
+step
+    .isQuestTurnedIn 40938
+    #requires BladeInTwilightB
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r.
+    .turnin 40710 >>Turn in Blade in Twilight
+    .target Moira Thaurissan
+step
+    #optional
+    .goto 627,46.14,21.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r.
+    .turnin 40710 >>Turn in Blade in Twilight
+    .target Moira Thaurissan
 ]])
 --Priest Intro 1
 RXPGuides.RegisterGuide([[
