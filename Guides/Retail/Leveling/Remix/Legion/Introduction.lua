@@ -2687,7 +2687,131 @@ RXPGuides.RegisterGuide([[
 << Priest
 
 step
-    +test
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hooded Priestess|r |cRXP_WARN_next to you|r.
+    *|cRXP_WARN_Note:|r If she doesn't appear then try to relog.
+    .accept 40705 >>Accept Priestly Matters
+    .target Hooded Priestess
+step
+    >>Use |T413582:0|t[Faol's Hearthstone]
+    .complete 40705,1 --1/1 Faol's Hearthstone used (Optional)
+    .use 173373
+step
+    .goto 18,79.09,41.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r. << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calia|r. << Alliance
+    .complete 40705,2 --1/1 Meet with the priest at Faol's Rest in Tirisfal Glades
+    .timer 60,Alonsus Roleplay
+    .target Alonsus Faol << Horde
+    .target Calia << Alliance
+    .skipgossipid 1 << Horde
+    .skipgossipid 45465 << Alliance
+step
+    .goto 18,78.96,40.99
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .complete 40705,3 --1/1 Listen to Alonsus Faol
+step
+    .goto 18,78.96,40.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
+    .turnin 40705 >>Turn in Priestly Matters
+    .accept 40706 >>Accept A Legend You Can Hold
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .goto 18,78.96,40.99
+    +Select one of the following guides for now:
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Shadow >> Shadow(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Priest >> Holy(Healer) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Discipline >> Discipline(Healer) Questline
+]])
+
+---Priest Order Hall Intro 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name ac) Order Hall Priest Part 2
+#displayname |cFF00CCFF4|r - Order Hall Intro 2|r
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
+
+<< Priest
+
+step
+    .goto 627,46.30,20.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r
+    .accept 40938 >>Accept The Light and the Void
+    .target Prophet Velen
+step
+    .zoneskip 629
+    .isOnQuest 40938
+    .goto 627,51.83,42.85,10,0
+    .goto 627,49.25,47.64
+    .zone 629 >>Use the teleporter in the center of Dalaran
+step
+    .goto 629,36.69,73.33
+    >>|cRXP_WARN_Follow the arrow.|r
+    *|cRXP_WARN_Note:|r. You can find the portal after using the teleporter in the middle of Dalaran if the arrow is incorrect for whatever reason.
+    .complete 40938,1 --1/1 Follow Velen to the portal
+step
+    .goto 629,33.99,78.13
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Netherlight Temple|r.
+    .complete 40938,2 --1/1 Take the portal to Netherlight Temple
+step
+    .goto 702,49.77,47.42
+    >>|cRXP_WARN_Wait for the roleplay|r.
+    .complete 40938,3 --1/1 Listen to Alonsus Faol
+step
+    .goto 702,49.77,47.42
+    >>Use the |T135907:0|t[|cRXP_WARN_ExtraActionButton|r]
+    .complete 40938,4 --1/1 Complete the Ritual of Light
+    .timer 78,Roleplay
+step
+    .goto 702,49.76,31.63
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .complete 40938,5 --1/1 Be a part of the ceremony
+step
+    .goto 702,48.67,48.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
+    .turnin 40938 >>Turn in The Light and the Void
+    .accept 41019 >>Accept Actions on Azeroth
+    .target Alonsus Faol
+step
+    .goto 702,48.67,48.42
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Command Map|r.
+    .complete 41019,1 --1/1 Area chosen
+step
+    .goto 702,48.67,48.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
+    .turnin 41019 >>Turn in Actions on Azeroth
+    .target Alonsus Faol
+step
+    .goto 702,51.60,47.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
+    .accept 43270 >>Accept Rise, Champions
+    .target Alonsus Faol
+step
+    .goto 702,51.83,49.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calia Menethil|r.
+    .accept 43271 >>Accept Champion: Calia Menethil
+    .turnin 43271 >>Turn in Champion: Calia Menethil
+    .complete 43270,1 --1/1 Recruit Calia
+    .target Calia Menethil
+step
+    .goto 702,57.57,25.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Ishanah|r.
+    .accept 43272 >>Accept Champion: High Priestess Ishanah
+    .turnin 43272 >>Turn in Champion: High Priestess Ishanah
+    .complete 43270,2 --1/1 Recruit Ishanah
+    .target High Priestess Ishanah
+step
+    .isNotOnQuest 43372
+    .isQuestAvailable 43372
+    .goto 702,51.55,47.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
+    .turnin 43270 >>Turn in Rise, Champions
+    .target Alonsus Faol
 ]])
 
 ---Rogue Order Hall Intro 1
