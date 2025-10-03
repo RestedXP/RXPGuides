@@ -9884,18 +9884,95 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Elemental
 #next
 
-
 step
-    #loop
-    .goto 725,34.07,74.37,10,0
-    .goto 725,34.34,76.12,10,0
-    .goto 725,35.76,77.48,10,0
+    .isQuestTurnedIn 43945
+    .isQuestAvailable 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 44006 >>Accept Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Elemental artifact|r
+    .complete 44006,1 --1/1 Chose a Third Artifact to Pursue
+    .choose 1389398
+    .target Aggramar
+    .skipgossipid 45112
+step
+    .isQuestAvailable 44006
+    .isOnQuest 44006
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 44006 >>Turn in Your Fullest Potential
+    .target Aggramar
+step
+    .isQuestTurnedIn 41335
+    .isQuestAvailable 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .accept 43945 >>Accept Expanding Your Horizon
+    .target Aggramar
+step
+    .isQuestAvailable 43945
+    .isOnQuest 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    *|cRXP_WARN_This will automatically pick the Elemental artifact|r
+    .complete 43945,1 --1/1 Choose a second artifact to pursue
+    .choose 1389398
+    .target Aggramar
+    .skipgossipid 45111
+step
+    .isQuestAvailable 43945
+    .isOnQuest 43945
+    .goto 726,36.16,80.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
+    .turnin 43945 >>Turn in Expanding Your Horizon
+    .target Aggramar
+step
+    .isQuestAvailable 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .accept 41335 >>Accept The Elements Call...
+    .target Thrall
+step
+    .isQuestAvailable 41335
+    .isOnQuest 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    *|cRXP_WARN_This will automatically pick the Elemental artifact|r
+    .complete 41335,1 --1/1 Artifact chosen
+    .choose 1389398
+    .target Thrall
+    .skipgossipid 45219
+step
+    .isQuestAvailable 41335
+    .isOnQuest 41335
+    .goto 725,36.23,74.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
+    .turnin 41335 >>Turn in The Elements Call...
+    .target Thrall
+step
+    #optional
+    .zoneskip 726,1
+    .goto 726,34.18,77.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
     .accept 43334 >>Accept The Coming Storm
     .target Rehgar Earthfury
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Graddoc|r
-    .complete 43334,1 --1/1 Fly with Graddoc (Optional)
+    .goto 725,34.07,74.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .accept 43334 >>Accept The Coming Storm
+    .target Rehgar Earthfury
+step
+    .isOnQuest 43334
+    .goto 726,34.18,77.80,-1
+    .goto 725,34.07,74.37,-1
+    .zone 379 >>Click on |cRXP_FRIENDLY_Graddoc|r
+    .target Graddoc
 step
     .goto 379,66.90,56.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
@@ -9954,6 +10031,7 @@ step
     .isQuestNotComplete 43338
     .goto 395,64.19,66.71,15,0
     .goto 395,27.75,46.45,15,0
+    .goto 395,33.16,20.93,15,0
     .goto 395,48.87,30.24,15 >>Enter the Guo-Lai Vault
 step
     #hidewindow
@@ -9977,23 +10055,17 @@ step
     #completewith next
     .isOnQuest 43338
     .isQuestNotComplete 43338
-    #title Avoid all runes besides the blue/white ones
+    #title Check note
     .goto 395,32.94,21.14,15,0
     .goto 395,27.75,46.45,15,0
-    .goto 395,51.81,57.95,25,0
+    .goto 395,51.81,57.95,33,0
     .goto 395,56.24,48.40,15,0
     .goto 395,64.67,23.05,15,0
     .goto 395,68.78,23.98,15,0
     .goto 395,69.57,15.71,15,0
-    .goto 396,66.28,19.96,15 >>Enter the Hall of the Serpent
-step
-    #hidewindow
-    #completewith next
-    .goto 395,66.57,15.31,15 >>1
-step
-    #hidewindow
-    #completewith TheEdictOfStormA
-    .goto 395,62.79,13.12,15 >>1
+    .goto 396,66.28,19.96
+    .zone 396 >>Enter the Hall of the Serpent
+    *|cRXP_WARN_NOTE:|r The first rune in the center is the safe one, only step on those.
 step
     #requires TheEdictOfStormA
     .goto 396,57.75,50.75
@@ -10008,18 +10080,22 @@ step
     .accept 39771 >>Accept The Voice of Thunder
     .target Rehgar Earthfury
 step
-    #completewith next
-    #title Avoid all runes besides the blue/white ones
+    #completewith TheCodexofRaA
+    #title Check note
     .goto 395,67.13,14.55,15,0
     .goto 395,70.22,18.57,15,0
     .goto 395,68.17,24.88,15,0
     .goto 395,63.00,25.50,15 >>Go back upstairs
-step
-    #hidewindow
-    #completewith TheCodexofRaA
-    .goto 395,56.24,48.40,30 >>1
+    *|cRXP_WARN_NOTE:|r The first rune in the center is the safe one, only step on those.
 step
     #requires TheCodexofRaA
+    .goto 395,53.19,61.45
+    >>Kill the |cRXP_ENEMY_Mogu Spirits|r in the Guo-Lai Halls
+    *|cRXP_WARN_Avoid the |cRXP_ENEMY_Mogu Statues|r.|r
+    .complete 43338,5 --8/8 Mogu Spirits Purged
+    .mob Shao-Tien Spirit Warrior
+    .mob Shao-Tien Spirit Wraith
+step
     .goto 395,47.11,83.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
     .turnin 43338 >>Turn in The Codex of Ra
@@ -10039,6 +10115,10 @@ step
     .goto 379,68.63,57.01
     >>|cRXP_WARN_Follow the arrow|r
     .complete 39771,1 --1/1 Travel to the Temple of the White Tiger
+step
+    .isOnQuest 39771
+    .goto 379,68.6,57.0
+    .enterScenario 976 >>Enter the |cRXP_PICK_Master of Storms|r scenario.
 step
     .isInScenario 976
     .goto 379,68.6,57.0
@@ -10064,6 +10144,7 @@ step
     .goto 379,69.7,53.0
     >>Defeat |cRXP_ENEMY_Sigurd the Giantslayer|r
     .scenario 1993,1 --Defeat Sigurd the Giantslayer.
+    .timer 53,Xuen Roleplay
     .mob Sigurd the Giantslayer
 step
     .isInScenario 976
@@ -10096,17 +10177,26 @@ step
     .goto 379,68.79,43.70
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
     .scenario 2078,1 --Equip the Weapons of the Storm
+    .timer 25,Roleplay Duration
 step
     .isInScenario 976
     .goto 379,68.8,43.7
-    >>Kill |cRXP_ENEMY_Lord Kra'vos|r and the four |cRXP_ENEMY_Low Inquisitors|r
+    >>Kill |cRXP_ENEMY_Lord Kra'vos|r.
     .scenario 2079,1 --Defeat Lord Kra'vos
+    .timer 27,Roleplay Duration
     .mob Low Inquisitor
-    .mob Kra'vos
+    .mob Lord Kra'vos
 step
     .goto 379,68.79,43.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Astral Gate to the Maelstrom|r
     .complete 39771,3 --1/1 Return to the Maelstrom
+step
+    #optional
+    .isQuestTurnedIn 41510
+    .goto 726,34.15,77.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
+    .turnin 39771 >>Turn in The Voice of Thunder
+    .target Rehgar Earthfury
 step
     .goto 726,33.48,74.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rehgar Earthfury|r
