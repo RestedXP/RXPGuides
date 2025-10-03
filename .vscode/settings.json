@@ -1,7 +1,7 @@
 {
     "editor.wordWrapColumn": 120,
     "Lua.telemetry.enable": false,
-    "Lua.runtime.version": "LuaJIT",
+    "Lua.runtime.version": "Lua 5.1",
     "Lua.workspace.ignoreDir": [
         ".vscode",
         "libs",
@@ -18,8 +18,50 @@
         "cast-local-type"
     ],
     "Lua.workspace.library": [
-        "c:\\Users\\Bruger\\.vscode\\extensions\\ketho.wow-api-0.9.10\\EmmyLua\\API",
-        "c:\\Users\\Bruger\\.vscode\\extensions\\ketho.wow-api-0.9.10\\EmmyLua\\Optional",
-        "c:/Users/Bruger/.vscode/extensions/sumneko.lua-3.6.20-win32-x64/server/meta/48d85a1d"
+        "c:/Users/Bruger/.vscode/extensions/sumneko.lua-3.6.20-win32-x64/server/meta/48d85a1d",
+        "~\\.vscode\\extensions\\ketho.wow-api-0.21.0\\Annotations\\Core"
+    ],
+    "Lua.runtime.builtin": {
+        "basic": "disable",
+        "debug": "disable",
+        "io": "disable",
+        "math": "disable",
+        "os": "disable",
+        "package": "disable",
+        "string": "disable",
+        "table": "disable",
+        "utf8": "disable"
+    },
+    "Lua.diagnostics.globals": [
+        "StaticPopupDialogs",
+        "SPELL_SCHOOL2_NAME",
+        "SPELL_SCHOOL3_NAME",
+        "SPELL_SCHOOL4_NAME",
+        "SPELL_SCHOOL5_NAME",
+        "SPELL_SCHOOL6_NAME",
+        "MoneyFrame_SetType",
+        "MoneyFrame_Update",
+        "PanelTemplates_TabResize",
+        "PanelTemplates_SetNumTabs",
+        "PanelTemplates_EnableTab",
+        "ITEM_MOD_ATTACK_POWER_SHORT",
+        "ItemRefTooltip",
+        "ShoppingTooltip1",
+        "WorldFrame",
+        "ScrollUtil",
+        "AuctionCategories",
+        "CreateDataProvider",
+        "CreateScrollBoxListLinearView",
+        "PanelTemplates_SetTab",
+        "PanelTemplates_SelectTab",
+        "PanelTemplates_DeselectTab",
+        "ITEM_QUALITY_COLORS",
+        "CONFIRM_BINDER",
+        "BACKPACK_CONTAINER",
+        "NUM_BAG_FRAMES",
+        "MerchantFrame",
+        "CharacterBag0Slot",
+        "INVENTORY_FULL",
+        "LootFrame"
     ],
 }
