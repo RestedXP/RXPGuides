@@ -263,9 +263,10 @@ function addon.IsPlayerSpell(id)
         end
     end
     if C_ZoneAbility then
-        local spellName = C_Spell.GetSpellInfo(id).name
+        local spellName = C_Spell.GetSpellInfo(id)
+        spellName = spellName and spellName.name
         local activeAbilities = C_ZoneAbility.GetActiveAbilities()
-        if activeAbilities then
+        if activeAbilities and spellName then
             for _,ability in pairs(activeAbilities) do
                 local name = C_Spell.GetSpellInfo(ability.spellID).name
                 if name == spellName then
