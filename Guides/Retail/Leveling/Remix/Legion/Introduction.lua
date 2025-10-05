@@ -4072,20 +4072,20 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
-step
-    .goto 619,45.96,67.89
-    >>Use |T242617:0|t[Curious Simulacrum]
-    .accept 92688 >>Accept Bronze Simulacrum
+-- step
+--     .goto 619,45.96,67.89
+--     >>Use |T242617:0|t[Curious Simulacrum]
+--     .accept 92688 >>Accept Bronze Simulacrum
     .use 242617
 step << Warrior/Mage/Horde Paladin/Rogue/Monk
    .goto 627,72.07,40.6
    .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
-step
-    .isOnQuest 92563
-    .goto 619,45.64,67.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .turnin 92563 >>Turn in Awoken by Accessory
-    .target Moratari
+-- step
+--     .isOnQuest 92563
+--     .goto 619,45.64,67.70
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+--     .turnin 92563 >>Turn in Awoken by Accessory
+--     .target Moratari
 step
     #label Meet Nostwin2
     #completewith next
@@ -4110,8 +4110,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 91955 >>Turn in Just Between Us
     .goto 619,45.83,67.98
-    .turnin 92688 >>Turn in Bronze Simulacrum
-    .goto 619,45.78,68.02
+    -- .turnin 92688 >>Turn in Bronze Simulacrum
+    -- .goto 619,45.78,68.02
     .target Momentus
 step
     #hidewindow
