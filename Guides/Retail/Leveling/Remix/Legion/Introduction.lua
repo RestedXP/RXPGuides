@@ -3564,7 +3564,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#name ab) Order Hall Warlock Part 2
+#name ac) Order Hall Warlock Part 2
 #displayname |cFF00CCFF3|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ad) Infinite Bazaar
