@@ -898,7 +898,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Blood
 #next ac) Order Hall Death Knight
 
-<< Death Knight
+<< DeathKnight
 
 step
     .isQuestTurnedIn 40715
@@ -1118,6 +1118,8 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Blood
 #next ac) Order Hall Death Knight Part 2
 
+<< DeathKnight
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Blood
 ]])
@@ -1131,7 +1133,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Death Knight
 
-<< Death Knight
+<< DeathKnight
 
 step
     .isQuestTurnedIn 40715
@@ -1321,6 +1323,8 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Death Knight Part 2
 
+<< DeathKnight
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
 ]])
@@ -1334,7 +1338,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Unholy
 #next ac) Order Hall Death Knight
 
-<< Death Knight
+<< DeathKnight
 
 step
     .isQuestTurnedIn 40715
@@ -1608,6 +1612,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next ac) Order Hall Death Knight Part 2
+
+<< DeathKnight
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
@@ -3841,8 +3847,10 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Beast Mastery
 #next ac) Order Hall Hunter Part 2
 
+<< Hunter
+
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Hunter
+    #include RestedXP Legion Remix\a) Artifact Weapon: Beaster Mastery
 ]])
 
 --Marksmanship
@@ -3858,7 +3866,227 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    +1
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 44407 >>Accept The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
+    .complete 44407,1 --1/1 Artifact chosen (3rd)
+    .choose 1389392
+    .target Alonsus Faol
+    .skipgossipid 45112
+step
+    .isQuestTurnedIn 43935
+    .isQuestAvailable 44407
+    .isOnQuest 44407
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 44407 >>Turn in The Third Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .accept 43935 >>Accept A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
+    .complete 43935,1 --1/1 Artifact chosen (2nd)
+    .choose 1389392
+    .target Alonsus Faol
+    .skipgossipid 45111
+step
+    .isQuestTurnedIn 40706
+    .isQuestAvailable 43935
+    .isOnQuest 43935
+    .goto 702,51.61,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
+    .turnin 43935 >>Turn in A Second Legend
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .isOnQuest 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Marksmanship artifact|r
+    .complete 40618,1 --1/1 Artifact chosen
+    .choose 1390107
+    .target Emmarel Shadewarden
+    .skipgossipid 44968
+step
+    .isQuestAvailable 40618
+    .isOnQuest 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40618 >>Turn in Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    #optional
+    .isQuestTurnedIn 40959
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 41540 >>Accept Rendezvous with the Courier
+    .target Emmarel Shadewarden
+step
+    .goto 627,60.03,53.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 41540 >>Accept Rendezvous with the Courier
+    .target Emmarel Shadewarden
+step
+    #completewith next
+    #label RendezvousWithTheCourierA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Larkspur|r.
+    .turnin 41540 >>Turn in Rendezvous with the Courier
+    .accept 40392 >>Accept Call of the Marksman
+    .target Courier Larkspur
+step
+    .zoneskip 627,1
+    --TODO: Title Color
+    #title Leave the house
+    #completewith RendezvousWithTheCourierA
+    .goto 627,58.58,51.30,8 >>|cRXP_WARN_Follow the arrow out of the house.|r
+step
+    #requires RendezvousWithTheCourierA
+    .goto 627,71.43,49.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Larkspur|r.
+    .turnin 41540 >>Turn in Rendezvous with the Courier
+    .target Courier Larkspur
+    .accept 40392 >>Accept Call of the Marksman
+step
+    .goto 646,32.28,32.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .complete 40392,2 --1/1 Speak to Vereesa Windrunner
+    .target Vereesa Windrunner
+step
+    .convertquest 40402,40400 << Alliance
+    .goto 646,32.29,32.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .turnin 40392 >>Turn in Call of the Marksman
+    .accept 40402 >>Accept Clandestine Operation
+    .target Vereesa Windrunner
+step
+    #completewith next
+    #hidewindow
+    .gossipoption 47259 >>1
+    .timer 56,Vereesa Roleplay
+step
+    .goto 646,32.29,32.43    
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .complete 40402,1 --1/1 Listen to Vereesa Windrunner
+    .target Vereesa Windrunner
+    .skipgossipid 47259
+step
+    .goto 646,32.29,32.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .turnin 40402 >>Turn in Clandestine Operation
+    .accept 40419 >>Accept Rescue Mission
+    .target Vereesa Windrunner
+step
+    #completewith next
+    #hidewindow
+    .gossipoption 47260 >>1
+    .timer 14,Vereesa Roleplay
+step
+    .goto 646,32.29,32.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .complete 40419,1 --1/1 Speak to Vereesa and begin the mission
+    .target Vereesa Windrunner
+    .skipgossipid 47260
+step
+    .isOnQuest 40419
+    .goto 646,32.06,31.98
+    .enterScenario 972 >>Go through the portal to enter the |cRXP_PICK_Legacy of the Windrunners|r scenario.
+step
+    .goto 714,16.33,52.95
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 40419,2 --1/1 Travel through the portal to Niskara
+step
+    .isInScenario 972
+    .goto 714,18.47,47.36,25,0
+    .goto 714,20.07,49.91
+    |cRXP_WARN_Follow the arrow.|r
+    .scenario 1988,1 --Survey the rise ahead and elminate Legion patrols.
+step
+    .isInScenario 972
+    .goto 714,23.03,50.41
+    >>Kill the |cRXP_ENEMY_Eredar Portal Lords|r.
+    .scenario 2000,1 --Eliminate the demon summoners to close the portal.
+    .timer 12,Wall Roleplay
+    .mob Eredar Portal Lord
+step
+    .isInScenario 972
+    .goto 714,38.84,45.41
+    >>Kill the |cRXP_ENEMY_demons|r on your way to clear the way for |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .scenario 2001,1 --Advance into Legion territory and look for Alleria and Orestes.
+step
+    .isInScenario 972
+    .goto 714,40.57,45.66
+    >>Kill |cRXP_ENEMY_Mistress Torvis|r and |cRXP_WARN_wait for the roleplay|r.
+    .scenario 2002,1 --Eliminate Mistress Torvis and save Orestes.
+step
+    .isInScenario 972
+    .goto 714,41.13,54.04,25,0
+    .goto 714,50.07,57.89
+    >>Kill |cRXP_ENEMY_Herald Xarbizuld|r.
+    .scenario 2017,1 --Enter the cathedral and defeat Herald Xarbizuld.
+    .mob Herald Xarbizuld
+step
+    .isInScenario 972
+    .goto 714,64.28,60.03
+    >>Kill |cRXP_ENEMY_High Inquisitor Qormaladon|r and the |cRXP_ENEMY_Gazes of Qormaladon|r.
+    .scenario 2063,1 --Defeat High Inquisitor Qormaladon and his eyes
+    .mob Fiery Gaze of Qormaladon
+    .mob Icy Gaze of Qormaladon
+    .mob High Inquisitor Qormaladon
+step
+    #completewith next
+    #hidewindow
+    .goto 714,69.98,59.65,20,0
+    .goto 714,71.47,73.66,20 >>1
+    .timer 
+step
+    .isInScenario 972
+    .goto 714,71.47,73.66
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 2255,1 --Help Vereesa search the Inquisitor's overlook for Alleria.
+    .complete 40419,3 --1/1 Rescue Alleria Windrunner
+step
+    .isInScenario 972
+    .goto 714,71.47,73.66
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Thas'dorah, Legacy of the Windrunners|r.
+    .scenario 2061,1 --Pick up Thas'dorah, Legacy of the Windrunners.
+    .complete 40419,4 --1/1 Take Thas'dorah (Optional)
+    .timer 8,Roleplay
+step
+    .goto 714,70.91,72.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa and leave Niskara|r.
+    .complete 40419,5 --1/1 Talk to Vereesa and leave Niskara
+    .target Vereesa and leave Niskara
+    .skipgossipid 45238
+step
+    .goto 627,66.03,45.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
+    .turnin 40419 >>Turn in Rescue Mission
+    .target Vereesa Windrunner
 ]])
 --Marksmanship 2
 RXPGuides.RegisterGuide([[}
@@ -3869,6 +4097,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
 #next ac) Order Hall Hunter Part 2
+
+<< Hunter
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
@@ -3898,6 +4128,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
 #next ac) Order Hall Hunter Part 2
+
+<< Hunter
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Survival
@@ -10496,6 +10728,8 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Elemental
 #next ac) Order Hall Shaman Part 2
 
+<< Shaman
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
 ]])
@@ -10796,6 +11030,8 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Enhancement
 #next ac) Order Hall Shaman Part 2
 
+<< Shaman
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
 ]])
@@ -11051,6 +11287,8 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Shaman Part 2
 
+<< Shaman
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
 ]])
@@ -11109,6 +11347,8 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
 #next ac) Order Hall Warlock
+
+<< Warlock
 
 step
     .isQuestTurnedIn 43984
@@ -11420,6 +11660,8 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Affliction
 #next ac) Order Hall Warlock Part 2
 
+<< Warlock
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
 ]])
@@ -11434,6 +11676,8 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next ac) Order Hall Warlock
+
+<< Warlock
 
 step
     .isQuestTurnedIn 43984
@@ -11691,6 +11935,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next ac) Order Hall Warlock Part 2
+
+<< Warlock
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
@@ -12015,6 +12261,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
 #next ac) Order Hall Warlock Part 2
+
+<< Warlock
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
