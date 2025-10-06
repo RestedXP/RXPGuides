@@ -4265,7 +4265,7 @@ RXPGuides.RegisterGuide([[
 #next cb) Val'sharah Speedrun
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith AzsunaSpeedrunY
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -4700,6 +4700,7 @@ step
     .goto 630,66.06,43.45
     .turnin 40751 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
+    #label AzsunaSpeedrunY
     .isQuestAvailable 42293
     .goto 630,63.65,39.17
     .turnin 42293 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
