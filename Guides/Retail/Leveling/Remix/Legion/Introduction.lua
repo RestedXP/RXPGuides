@@ -3495,14 +3495,13 @@ RXPGuides.RegisterGuide([[
 << Warlock
 
 step
-    .goto 627,72.79,44.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .accept 40716 >>Accept The Sixth
     .target Ritssyn Flamescowl
 step
-    .goto 627,60.17,48.28,10,0
-    .goto 627,74.22,66.56,10,0
-    .goto 627,64.44,58.55,10,0
+    .goto 627,60.17,48.28,8,0
+    .goto 628,74.22,66.56,8,0
+    .goto 628,64.44,58.55,8,0
     .goto 628,57.87,60.00
     >>|cRXP_WARN_Follow the arrow.|r
     .complete 40716,1 --1/1 Enter Dalaran's Underbelly
@@ -3510,10 +3509,13 @@ step
     .goto 628,57.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .turnin 40716 >>Turn in The Sixth
-    .target Ritssyn Flamescowl
     .accept 40729 >>Accept The New Blood
-    .complete 40729,1 --1/1 Ritual Perfomed
     .timer 40,Ritssyn Roleplay
+    .target Ritssyn Flamescowl
+step
+    .goto 628,59.79,69.11
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Summoning Portal|r after the roleplay.
+    .complete 40729,1 --1/1 Ritual Perfomed
 step
     .isOnQuest 40729
     .goto 628,57.87,60.00
@@ -3533,7 +3535,7 @@ step
 step
     .isInScenario 962
     .goto 718,34.76,60.83
-    >>|cRXP_WARN_Wait for the roleplay.|r
+    >>Kill |cRXP_ENEMY_Beshtal|r. |cRXP_WARN_Wait for the roleplay.|r
     .scenario 1945,2 --Escape the Jailer
 -- TODO: cast 195039 to make the waypoint update faster
 step
@@ -3592,6 +3594,7 @@ step
     .mob Nelach, the All-Seeing
 step
     .isInScenario 962
+    .goto 718,49.05,29.56,20,0
     .goto 718,56.84,23.76,20,0
     .goto 718,67.86,36.76,20,0
     >>Kill |cRXP_ENEMY_Xel'toth|r. |cRXP_WARN_Run through the portal.|r
