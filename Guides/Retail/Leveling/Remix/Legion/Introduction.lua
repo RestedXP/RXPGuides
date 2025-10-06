@@ -6116,6 +6116,24 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Stillwater|r
     .turnin 42244 >>Turn in Fate of the Queen's Reprisal
     .target Advisor Stillwater
+step << Alliance
+    #completewith next
+    #label FateOfTheQueensReprisalB
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Surtees|r
+    .turnin 40794 >>Turn in Fate of the Queen's Reprisal
+    .target Lieutenant Surtees
+step << Alliance
+    --TODO: Title color
+    #completewith FateOfTheQueensReprisalB
+    #title Enter the enclave
+    .goto 627,34.48,66.51,15 >>|cRXP_WARN_Enter the enclave|r
+step << Alliance
+    #requires FateOfTheQueensReprisalB
+    #label MakranaFateQueenReprisalZ
+    .goto 627,29.40,75.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Surtees|r
+    .turnin 40794 >>Turn in Fate of the Queen's Reprisal
+    .target Lieutenant Surtees
 ]])
 
 -- ======================================
