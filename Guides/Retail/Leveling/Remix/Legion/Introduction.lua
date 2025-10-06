@@ -4195,7 +4195,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ae) First Zone
 #displayname |cFF00FF006|r - Azsuna|r
-
+#next cb) Val'sharah Speedrun
 
 step
     #completewith Champion: Archmage Modera
