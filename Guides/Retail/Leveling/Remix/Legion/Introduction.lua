@@ -4240,7 +4240,20 @@ step
     .goto 630,40.56,57.69
     .turnin 38316 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
-    #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesC-BehindLegionLinesZ
+    #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesC-BehindLegionLinesD
+step
+    --BONUS OBJECTIVE
+    --TODO: Title Color
+    #title Don't complete it (See Note)
+    #loop
+    .goto 630,39.05,48.22,40,0
+    .goto 630,36.90,48.19,35,0
+    .goto 630,38.66,60.14,35,0
+    .goto 630,40.24,54.23,35,0
+    >>Kill the |cRXP_ENEMY_Demons|r in the area. 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Portals|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 36811,1,75 --Lead the fight against the Legion (100%)
 step
     .goto 630,43.55,43.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r.
@@ -4265,49 +4278,49 @@ step
     .turnin 42289 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Defending Azurewing Repose@DefendingAzurewingReposeAC-DefendingAzurewingReposeB
-step
-    #completewith next
-    #label ChallianeVineyardsCustomA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
-    .accept 38203 >>Accept Challiane Vineyards
-    .target Cellarman Voodani
-step
-    --TODO: Title Color
-    #title |cFFFCDC00Leave Cave|r
-    #completewith ChallianeVineyardsCustomA
-    .goto 630,44.35,17.29,10 >>|cRXP_WARN_Follow the arrow out of the cave.|r
-step
-    #requires ChallianeVineyardsCustomA
-    .goto 630,40.78,9.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
-    .accept 38203 >>Accept Challiane Vineyards
-    .target Cellarman Voodani
-step
-    .goto 630,42.88,8.47
-    >>Kill |cRXP_ENEMY_Grand Vintner Valiana|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Nightrose Recipe: Part 3, Instructions|r].
-    .complete 38203,3 --1/1 Nightrose Recipe: Part 3, Instructions
-    .mob Grand Vintner Valiana
-step
-    .isOnQuest 38203
-    .isQuestAvailable 38367
-    .goto 630,42.63,8.09
-    .turnin 38367 >>Click on the |cRXP_PICK_Glimmering Treasure Chest|r.
-step
-    #include RestedXP Legion Remix\b) Challiane Vineyards@ChallianeVineyardsAA-ChallianeVineyardsB
-step
-    #loop
-    .goto 630,46.94,11.57,35,0
-    .goto 630,44.09,11.91,35,0
-    .goto 630,42.84,7.44,35,0
-    .goto 630,48.47,8.06,45,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kegs|r
-    >>Kill the |cRXP_ENEMY_Lost Laborer|r, |cRXP_ENEMY_Tormented Stagwings|r, |cRXP_ENEMY_Lost Tormentor|r, and |cRXP_ENEMY_Slimes|r.
-    .complete 37965,1 --Combat the Haunting (100%)
-step
-    .goto 630,40.77,9.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
-    .turnin 38203 >>Turn in Challiane Vineyards
-    .target Cellarman Voodani
+-- step
+--     #completewith next
+--     #label ChallianeVineyardsCustomA
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
+--     .accept 38203 >>Accept Challiane Vineyards
+--     .target Cellarman Voodani
+-- step
+--     --TODO: Title Color
+--     #title Leave the cave
+--     #completewith ChallianeVineyardsCustomA
+--     .goto 630,44.35,17.29,10 >>|cRXP_WARN_Follow the arrow out of the cave.|r
+-- step
+--     #requires ChallianeVineyardsCustomA
+--     .goto 630,40.78,9.32
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
+--     .accept 38203 >>Accept Challiane Vineyards
+--     .target Cellarman Voodani
+-- step
+--     .goto 630,42.88,8.47
+--     >>Kill |cRXP_ENEMY_Grand Vintner Valiana|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Nightrose Recipe: Part 3, Instructions|r].
+--     .complete 38203,3 --1/1 Nightrose Recipe: Part 3, Instructions
+--     .mob Grand Vintner Valiana
+-- step
+--     .isOnQuest 38203
+--     .isQuestAvailable 38367
+--     .goto 630,42.63,8.09
+--     .turnin 38367 >>Click on the |cRXP_PICK_Glimmering Treasure Chest|r.
+-- step
+--     #include RestedXP Legion Remix\b) Challiane Vineyards@ChallianeVineyardsAA-ChallianeVineyardsB
+-- step
+--     #loop
+--     .goto 630,46.94,11.57,35,0
+--     .goto 630,44.09,11.91,35,0
+--     .goto 630,42.84,7.44,35,0
+--     .goto 630,48.47,8.06,45,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kegs|r
+--     >>Kill the |cRXP_ENEMY_Lost Laborer|r, |cRXP_ENEMY_Tormented Stagwings|r, |cRXP_ENEMY_Lost Tormentor|r, and |cRXP_ENEMY_Slimes|r.
+--     .complete 37965,1 --Combat the Haunting (100%)
+-- step
+--     .goto 630,40.77,9.32
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
+--     .turnin 38203 >>Turn in Challiane Vineyards
+--     .target Cellarman Voodani
 step
     #include RestedXP Legion Remix\b) Defending Azurewing Repose@DefendingAzurewingReposeC-DefendingAzurewingReposeD
 step
@@ -4444,6 +4457,25 @@ step
     .turnin 37566 >>Turn in The Prince is Going Down
     .target Okuna Longtusk
 step
+    .isQuestTurnedIn 37538
+    --BONUS OBJECTIVE
+    --TODO: Title Color
+    #title Don't complete it (See Note)
+    #loop
+    .goto 630,50.57,60.91,25,0
+    .goto 630,47.95,59.20,25,0
+    .goto 630,44.36.56,47,25,0
+    .goto 630,45.18,55.53,25,0
+    .goto 632,27.02,54.02,25,0
+    .goto 632,34.43,37.92,25,0
+    .goto 632,54.97,62.45,35,0
+    .goto 632,72.48,75.05,25,0
+    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress). 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skrog Weapons|r and |cRXP_PICK_Prince's Plunder|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37495,1,70 --Plunder Oceanus Cove (100%)
+    .mob Hatecoil Slavemaster
+step
     .goto 630,56.60,59.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mr. Shackle|r.
     .accept 37654 >>Accept Maritime Law
@@ -4491,6 +4523,8 @@ step
 step
     #include RestedXP Legion Remix\b) Kirin Tor Reconnaissance@KirinTorReconnaissanceB-KirinTorReconnaissanceY
 step
+    --BONUS OBJECTIVE
+    #title Don't complete it (See Note)
     #loop
     .goto 630,55.18,45.72,35,0
     .goto 630,55.96,43.01,35,0
@@ -4498,7 +4532,8 @@ step
     .goto 630,53.13,44.79,40,0
     >>Kill the |cRXP_ENEMY_Hatecoil forces|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Bound Citizens|r.
-    .complete 37466,1 --Defend against the Hatecoil (100%)
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37466,1,75 --Defend against the Hatecoil (100%)
     .mob Hatecoil Riptail
     .mob Hatecoil Harpooner
     .mob Hatecoil Stormcaller
@@ -4541,6 +4576,23 @@ step
     .isQuestAvailable 42293
     .goto 630,63.65,39.17
     .turnin 42293 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
+step
+    --BONUS OBJECTIVE
+    #title Don't complete it (See Note)
+    #loop
+    .goto 630,64.72,40.07,35,0
+    .goto 630,62.49,44.98,45,0
+    .goto 630,58.62,40.19,45,0
+    .goto 630,62.44,36.43,45,0
+    >>Kill the |cRXP_PICK_Hatecoil Naga|r and |cRXP_PICK_Hatecoil Skrog|r. Destroy the |cRXP_PICK_Murloc Hatcheries|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Coral Tridents|r to get an ExtraActionButton that helps you kill the |cRXP_PICK_Hatecoil Skrog|r
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37779,1,70 --Disrupt the Hatecoil Warcamp (100%)
+    .mob Hatecoil Skrog
+    .mob Hatecoil Spitespeaker
+    .mob Hatecoil Fathom-Stalker
+    .mob Subjugated Murloc
+
 ]])
 
 -- ======================================
@@ -4720,11 +4772,6 @@ step
     .accept 37656 >>Accept Fel Machinations
     .target Kor'vas Bloodthorn
 step
-    #completewith ChainsUnlockedA
-    >>Kill the |cRXP_ENEMY_Demons|r in the area. 
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Portals|r.
-    .complete 36811,1 --Lead the fight against the Legion (100%)
-step
     #title Demon Hunter freed 1/6
     .goto 630,39.04,47.60
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Soul Harvester|r.
@@ -4783,6 +4830,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fel Lock|r.
     .complete 37450,3 --3/3 Chains unlocked
 step
+    #label BehindLegionLinesD
     .goto 630,37.85,57.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r next to you.
     .turnin 37450 >>Turn in Saving Stellagosa
@@ -4790,15 +4838,7 @@ step
     .accept 37449 >>Accept Dark Revelations
     .target Kor'vas Bloodthorn
 step
-    #loop
-    .goto 630,39.05,48.22,40,0
-    .goto 630,36.90,48.19,35,0
-    .goto 630,38.66,60.14,35,0
-    .goto 630,40.24,54.23,35,0
-    >>Kill the |cRXP_ENEMY_Demons|r in the area. 
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Portals|r.
-    .complete 36811,1 --Lead the fight against the Legion (100%)
-step
+    #label BehindLegionLinesE
     >>Wait for the RP. Kill |cRXP_ENEMY_Nightglaive the Traitor|r.
     .goto 630,35.46,52.96
     .complete 37449,1 --1/1 Nightglaive the Traitor slain
