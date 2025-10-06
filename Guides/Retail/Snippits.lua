@@ -869,7 +869,6 @@ step
     .target Moratari
 ]])
 
-
 -- ##################################################
 -- #                  LEGION REMIX                  #
 -- ##################################################
@@ -877,28 +876,29 @@ step
 -- ================= ARTIFACT WEAPONS ================
 
 -- --------- Death Knight ---------
---Nesting
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ai) 1
-#displayname Death Knight
-#chapters a) Order Hall Death Knight Part 1;ab) Order Hall Death Knight Part 2;ac) Order Hall Death Knight;a) Artifact Weapon: Blood;a) Artifact Weapon: Frost DK;a) Artifact Weapon: Unholy
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name ai) 1
+-- #displayname Death Knight
+-- #chapters a) Order Hall Death Knight Part 1;ab) Order Hall Death Knight Part 2;ac) Order Hall Death Knight;a) Artifact Weapon: Blood;a) Artifact Weapon: Frost DK;a) Artifact Weapon: Unholy
 
 
 
-]])
+-- ]])
 --Blood
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#chapter
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
 #next ac) Order Hall Death Knight
+
+<< Death Knight
 
 step
     .isQuestTurnedIn 40715
@@ -1111,12 +1111,13 @@ step
 --Frost
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
 #next
+
+<< Death Knight
 
 step
     .isQuestTurnedIn 40715
@@ -1299,12 +1300,13 @@ step
 --Unholy
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next
+
+<< Death Knight
 
 step
     .isQuestTurnedIn 40715
@@ -1577,11 +1579,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Death Knight Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Death Knight Part 2
+
+<< Death Knight
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Death Knight Part 1
@@ -1591,40 +1594,41 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Death Knight Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Death Knight
 
+<< Death Knight
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Death Knight Part 2
 ]])
 
 -- --------- Demon Hunter ---------
---Nesting
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name aj) 1
-#displayname Demon Hunter
-#chapters a) Order Hall Demon Hunter Part 1;ab) Order Hall Demon Hunter Part 2;ac) Order Hall Demon Hunter;a) Artifact Weapon: Havoc;a) Artifact Weapon: Vengeance
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name aj) 1
+-- #displayname Demon Hunter
+-- #chapters a) Order Hall Demon Hunter Part 1;ab) Order Hall Demon Hunter Part 2;ac) Order Hall Demon Hunter;a) Artifact Weapon: Havoc;a) Artifact Weapon: Vengeance
 
 
 
-]])
+-- ]])
 --Havoc
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter
+
+<< Demon Hunter
 
 step
     #completewith Artifact Weapon: Havoc
@@ -1885,12 +1889,13 @@ step
 --Vengeance
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter
+
+<< Demon Hunter
 
 step
     #completewith Artifact Weapon: Vengeance
@@ -2166,12 +2171,14 @@ step
 --Havoc 2 
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter Part 2
+
+<< Demon Hunter
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Havoc
@@ -2179,12 +2186,14 @@ step
 --Vengeance 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter Part 2
+
+<< Demon Hunter
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
@@ -2194,11 +2203,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Demon Hunter Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Demon Hunter Part 2
+
+<< Demon Hunter
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1
@@ -2208,41 +2218,43 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Demon Hunter Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Demon Hunter
 
+<< Demon Hunter
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2
 ]])
 
 -- --------- Druid ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #subweight 99.6
+-- #name ak) 1
+-- #displayname Druid
+-- #chapters a) Order Hall Druid Part 1;ab) Order Hall Druid Part 2;ac) Order Hall Druid;a) Artifact Weapon: Balance Druid;a) Artifact Weapon: Feral Druid;a) Artifact Weapon: Guardian Druid;a) Artifact Weapon: Restoration Druid
+
+
+
+-- ]])
+--Balance
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#subweight 99.6
-#name ak) 1
-#displayname Druid
-#chapters a) Order Hall Druid Part 1;ab) Order Hall Druid Part 2;ac) Order Hall Druid;a) Artifact Weapon: Balance Druid;a) Artifact Weapon: Feral Druid;a) Artifact Weapon: Guardian Druid;a) Artifact Weapon: Restoration Druid
-
-
-
-]])
---Balance
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next ac) Order Hall Druid
+
+<< Druid
 
 step
     #completewith next
@@ -2608,26 +2620,29 @@ step
 --Balance 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next ac) Order Hall Druid Part 2
 
+<< Druid
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
 ]])
-
 --Feral
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next ac) Order Hall Druid
+
+<< Druid
 
 step
     #completewith next
@@ -2916,26 +2931,29 @@ step
 --Feral 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next ac) Order Hall Druid Part 2
 
+<< Druid
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
 ]])
-
 --Guardian
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next ac) Order Hall Druid
+
+<< Druid
 
 step
     #completewith next
@@ -3290,27 +3308,29 @@ step
 --Guardian 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next ac) Order Hall Druid Part 2
 
+<< Druid
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
 ]])
-
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Druid
 
+<< Druid
 
 step
     #completewith next
@@ -3701,27 +3721,29 @@ step
 --Restoration 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Druid Part 2
 
+<< Druid
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Druid
 ]])
-
 --Druid Intro 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Druid Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Druid Part 2
+
+<< Druid
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Druid Part 1
@@ -3731,74 +3753,87 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Druid Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Druid
 
+<< Druid
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Druid Part 2
 ]])
 
 -- --------- Hunter ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name al) 1
+-- #displayname Hunter
+-- #chapters a) Order Hall Hunter Part 1;ab) Order Hall Hunter Part 2;ac) Order Hall Hunter;a) Artifact Weapon: Beast Mastery;a) Artifact Weapon: Marksmanship;a) Artifact Weapon: Survival
+
+
+
+-- ]])
+--Beast Mastery
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name al) 1
-#displayname Hunter
-#chapters a) Order Hall Hunter Part 1;ab) Order Hall Hunter Part 2;ac) Order Hall Hunter;a) Artifact Weapon: Beast Mastery;a) Artifact Weapon: Marksmanship;a) Artifact Weapon: Survival
-
-
-
-]])
---Beast Mastery
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
 #next
 
+<< Hunter
+
+step
+    +1
 ]])
 --Marksmanship
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
 #next
 
+<< Hunter
+
+step
+    +1
 ]])
 --Survival
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
 #next
 
+<< Hunter
+
+step
+    +1
 ]])
 --Hunter Intro 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Hunter Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Hunter Part 2
+
+<< Hunter
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Hunter Part 1
@@ -3808,40 +3843,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Hunter Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Hunter
 
+<< Hunter
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Hunter Part 2
 ]])
 
 -- --------- Mage ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name am) 1
+-- #displayname Mage
+-- #chapters a) Order Hall Mage Part 1;ab) Order Hall Mage Part 2;ac) Order Hall Mage;a) Artifact Weapon: Arcane;a) Artifact Weapon: Fire;a) Artifact Weapon: Frost Mage
+
+
+
+-- ]])
+--Arcane
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name am) 1
-#displayname Mage
-#chapters a) Order Hall Mage Part 1;ab) Order Hall Mage Part 2;ac) Order Hall Mage;a) Artifact Weapon: Arcane;a) Artifact Weapon: Fire;a) Artifact Weapon: Frost Mage
-
-
-
-]])
---Arcane
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
 #next ac) Order Hall Mage
+
+<< Mage
 
 step
     #completewith Artifact Weapon: Arcane
@@ -4226,12 +4263,14 @@ step
 --Fire
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
 #next ac) Order Hall Mage 
+
+<< Mage
 
 step
     #completewith Artifact Weapon: Fire
@@ -4557,12 +4596,14 @@ step
 --Frost
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Mage
+
+<< Mage
 
 step
     #completewith Artifact Weapon: Frost Mage
@@ -5099,12 +5140,14 @@ step
 --Arcane 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
 #next ac) Order Hall Mage Part 2
+
+<< Mage
 
 step
     #include a) Artifact Weapon: Arcane
@@ -5112,12 +5155,14 @@ step
 --Fire 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
 #next ac) Order Hall Mage Part 2
+
+<< Mage
 
 step
     #include a) Artifact Weapon: Fire
@@ -5125,12 +5170,14 @@ step
 --Frost 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Mage Part 2
+
+<< Mage
 
 step
     #include a) Artifact Weapon: Frost Mage
@@ -5140,11 +5187,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Mage Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Mage Part 2
+
+<< Mage
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Mage Part 1
@@ -5154,41 +5202,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Mage Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Mage
 
+<< Mage
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Mage Part 2
 ]])
 
 -- --------- Monk ---------
---Nesting
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ah) 1
-#displayname Monk
-#chapters a) Order Hall Monk Part 1;ab) Order Hall Monk Part 2;ac) Order Hall Monk;a) Artifact Weapon: Windwalker;a) Artifact Weapon: Mistweaver;a) Artifact Weapon: Brewmaster
+-- Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name ah) 1
+-- #displayname Monk
+-- #chapters a) Order Hall Monk Part 1;ab) Order Hall Monk Part 2;ac) Order Hall Monk;a) Artifact Weapon: Windwalker;a) Artifact Weapon: Mistweaver;a) Artifact Weapon: Brewmaster
 
+-- << Monk
 
-
-]])
+-- ]])
 --Brewmaster
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Brewmaster
 #displayname Artifact Weapon: Brewmaster
 #next ac) Order Hall Monk
+
+<< Monk
 
 step
     #completewith Artifact Weapon: Brewmaster
@@ -5630,13 +5679,14 @@ step
 --Mistweaver
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
-#name a) Artifact Weapon: Mistweaver
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
+#name a) Artifact Weapon: Mistweaver
 #displayname Artifact Weapon: Mistweaver
 #next ac) Order Hall Monk
+
+<< Monk
 
 step
     #completewith Artifact Weapon: Mistweaver
@@ -5885,13 +5935,14 @@ step
 --Windwalker
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Windwalker
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Windwalker
 #next ac) Order Hall Monk
+
+<< Monk
 
 step
     #completewith Artifact Weapon: Windwalker
@@ -6309,6 +6360,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Brewmaster
 #next ac) Order Hall Monk Part 2
 
+<< Monk
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
@@ -6324,6 +6376,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Mistweaver
 #next ac) Order Hall Monk Part 2
 
+<< Monk
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
@@ -6339,6 +6392,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Windwalker
 #next ac) Order Hall Monk Part 2
 
+<< Monk
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Windwalker
@@ -6348,11 +6402,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Monk Part 1 
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Monk Part 2 
+
+<< Monk 
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Monk Part 1
@@ -6362,39 +6417,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Monk Part 2 
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Monk
+
+<< Monk 
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Monk Part 2
 ]])
 
 -- --------- Paladin ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name an) 1
+-- #displayname Paladin
+-- #chapters a) Order Hall Paladin Part 1;ab) Order Hall Paladin Part 2;ac) Order Hall Paladin;a) Artifact Weapon: Holy Paladin;a) Artifact Weapon: Paladin Protection;a) Artifact Weapon: Retribution
+
+
+
+-- ]])
+--Holy
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name an) 1
-#displayname Paladin
-#chapters a) Order Hall Paladin Part 1;ab) Order Hall Paladin Part 2;ac) Order Hall Paladin;a) Artifact Weapon: Holy Paladin;a) Artifact Weapon: Paladin Protection;a) Artifact Weapon: Retribution
-
-
-
-]])
---Holy
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Paladin
+
+<< Paladin
 
 step
     #completewith Artifact Weapon: Holy Paladin
@@ -6829,12 +6887,14 @@ step << Alliance
 --Protection
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Paladin Protection 
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Paladin
+
+<< Paladin
 
 step
     #completewith Artifact Weapon: Paladin Protection
@@ -7243,12 +7303,14 @@ step
 --Retribution
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next ac) Order Hall Paladin
+
+<< Paladin
 
 step
     #completewith Artifact Weapon: Retribution
@@ -7634,12 +7696,13 @@ step
 --Holy 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Paladin Part 2
+
+<< Paladin
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin
@@ -7647,12 +7710,13 @@ step
 --Protection 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Paladin Protection 
 #displayname Artifact Weapon: Paladin Protection
 #next ac) Order Hall Paladin Part 2
+
+<< Paladin
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection 
@@ -7660,12 +7724,13 @@ step
 --Retribution 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next ac) Order Hall Paladin Part 2
+
+<< Paladin
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Retribution
@@ -7675,11 +7740,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Paladin Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Paladin Part 2
+
+<< Paladin
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Paladin Part 1
@@ -7689,40 +7755,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Paladin Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Paladin
 
+<< Paladin
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Paladin Part 2
 ]])
 
 -- --------- Priest ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name ao) 1
+-- #displayname Priest
+-- #chapters a) Order Hall Priest Part 1;ab) Order Hall Priest Part 2;ac) Order Hall Priest;a) Artifact Weapon: Discipline;a) Artifact Weapon: Holy Priest;a) Artifact Weapon: Shadow
+
+
+
+-- ]])
+--Discipline
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ao) 1
-#displayname Priest
-#chapters a) Order Hall Priest Part 1;ab) Order Hall Priest Part 2;ac) Order Hall Priest;a) Artifact Weapon: Discipline;a) Artifact Weapon: Holy Priest;a) Artifact Weapon: Shadow
-
-
-
-]])
---Discipline
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
 #next ac) Order Hall Priest
+
+<< Priest
 
 step
     .isQuestTurnedIn 43935
@@ -8080,27 +8148,28 @@ step
 --Discipline 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
 #next ab) Order Hall Priest Part 2
 
+<< Priest
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
 ]])
-
 --Holy
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Priest
 
+<< Priest
 
 step
     .isQuestTurnedIn 43935
@@ -8332,26 +8401,28 @@ step
 --Holy 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
 #next ab) Order Hall Priest Part 2
 
+<< Priest
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
 ]])
-
 --Shadow
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
 #next ac) Order Hall Priest
+
+<< Priest
 
 step
     .isQuestTurnedIn 43935
@@ -8572,27 +8643,28 @@ step
 --Shadow 2
 RXPGuides.RegisterGuide([[}
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
 #next ab) Order Hall Priest Part 2
 
+<< Priest
+
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Shadow
 ]])
-
 --Priest Intro 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Priest Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Priest Part 2
+
+<< Priest
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Priest Part 1
@@ -8602,40 +8674,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Priest Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Priest
 
+<< Priest
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Priest Part 2
 ]])
 
 -- --------- Rogue ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name ap) 1
+-- #displayname Rogue
+-- #chapters a) Order Hall Rogue Part 1;ab) Order Hall Rogue Part 2;ac) Order Hall Rogue;a) Artifact Weapon: Assassination;a) Artifact Weapon: Outlaw;a) Artifact Weapon: Subtlety
+
+
+
+-- ]])
+--Assassination
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ap) 1
-#displayname Rogue
-#chapters a) Order Hall Rogue Part 1;ab) Order Hall Rogue Part 2;ac) Order Hall Rogue;a) Artifact Weapon: Assassination;a) Artifact Weapon: Outlaw;a) Artifact Weapon: Subtlety
-
-
-
-]])
---Assassination
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
 #next ac) Order Hall Rogue
+
+<< Rogue
 
 step
     #completewith Artifact Weapon: Assassination
@@ -9141,12 +9215,14 @@ step
 --Outlaw
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
 #next ac) Order Hall Rogue
+
+<< Rogue
 
 step
     #completewith Artifact Weapon: Outlaw
@@ -9434,12 +9510,14 @@ step
 --Subtlety
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
 #next ac) Order Hall Rogue
+
+<< Rogue
 
 step
     #completewith Artifact Weapon: Subtlety
@@ -9910,12 +9988,14 @@ step
 --Assassination 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
 #next ac) Order Hall Rogue Part 2
+
+<< Rogue
 
 step
     #include a) Artifact Weapon: Assassination
@@ -9923,12 +10003,14 @@ step
 --Outlaw 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
 #next ac) Order Hall Rogue Part 2
+
+<< Rogue
 
 step
     #include a) Artifact Weapon: Outlaw
@@ -9936,12 +10018,14 @@ step
 --Subtlety 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
 #next ac) Order Hall Rogue Part 2
+
+<< Rogue
 
 step
     #include a) Artifact Weapon: Subtlety
@@ -9951,11 +10035,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Rogue Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Rogue Part 2
+
+<< Rogue
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Rogue Part 1
@@ -9965,40 +10050,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Rogue Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Rogue
 
+<< Rogue
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Rogue Part 2
 ]])
 
 -- --------- Shaman ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name aq) 1
+-- #displayname Shaman
+-- #chapters a) Order Hall Shaman Part 1;ab) Order Hall Shaman Part 2;ac) Order Hall Shaman;a) Artifact Weapon: Elemental;a) Artifact Weapon: Enhancement;a) Artifact Weapon: Restoration Shaman
+
+
+
+-- ]])
+--Elemental
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name aq) 1
-#displayname Shaman
-#chapters a) Order Hall Shaman Part 1;ab) Order Hall Shaman Part 2;ac) Order Hall Shaman;a) Artifact Weapon: Elemental;a) Artifact Weapon: Enhancement;a) Artifact Weapon: Restoration Shaman
-
-
-
-]])
---Elemental
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
 #next ac) Order Hall Shaman
+
+<< Shaman
 
 step
     .isQuestTurnedIn 43945
@@ -10322,12 +10409,14 @@ step
 --Enhancement
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
 #next ac) Order Hall Shaman
+
+<< Shaman
 
 step
     .isQuestTurnedIn 43945
@@ -10606,12 +10695,14 @@ step
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Shaman
+
+<< Shaman
 
 step
     .isQuestTurnedIn 43945
@@ -10847,11 +10938,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Shaman Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Shaman Part 2
+
+<< Shaman
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Shaman Part 1
@@ -10861,40 +10953,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Shaman Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Shaman
 
+<< Shaman
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Shaman Part 2
 ]])
 
 -- --------- Warlock ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name ar) 1
+-- #displayname Warlock
+-- #chapters a) Order Hall Warlock Part 1;ab) Order Hall Warlock Part 2;ac) Order Hall Warlock;a) Artifact Weapon: Affliction;a) Artifact Weapon: Demonology;a) Artifact Weapon: Destruction
+
+
+
+-- ]])
+--Affliction
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ar) 1
-#displayname Warlock
-#chapters a) Order Hall Warlock Part 1;ab) Order Hall Warlock Part 2;ac) Order Hall Warlock;a) Artifact Weapon: Affliction;a) Artifact Weapon: Demonology;a) Artifact Weapon: Destruction
-
-
-
-]])
---Affliction
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
 #next
+
+<< Warlock
 
 step
     +1
@@ -10903,23 +10997,29 @@ step
 --Demonology
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next
 
+<< Warlock
+
+step
+    +1
 ]])
 --Destruction
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
 #next
+
+<< Warlock
 
 step
     .isQuestTurnedIn 43945
@@ -11217,11 +11317,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Warlock Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Warlock Part 2
+
+<< Warlock
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Warlock Part 1
@@ -11231,40 +11332,42 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Warlock Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Warlock
 
+<< Warlock
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Warlock Part 2
 ]])
 
 -- --------- Warrior ---------
---Nesting
+-- --Nesting
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 1
+-- #group RestedXP Legion Remix
+-- #subgroup |cFFFCDC00(10-80+)|r Order Hall
+-- #name as) 1
+-- #displayname Warrior
+-- #chapters a) Order Hall Warrior Part 1;ab) Order Hall Warrior Part 2;ac) Order Hall Warrior;a) Artifact Weapon: Arms;a) Artifact Weapon: Fury;a) Artifact Weapon: Warrior Protection 
+
+
+
+-- ]])
+--Arms
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name as) 1
-#displayname Warrior
-#chapters a) Order Hall Warrior Part 1;ab) Order Hall Warrior Part 2;ac) Order Hall Warrior;a) Artifact Weapon: Arms;a) Artifact Weapon: Fury;a) Artifact Weapon: Warrior Protection 
-
-
-
-]])
---Arms
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
 #name a) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next ac) Order Hall Warrior
+
+<< Warrior
 
 step
     #completewith Artifact Weapon: Arms
@@ -11509,13 +11612,14 @@ step
 --Fury
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next ac) Order Hall Warrior
 
+<< Warrior
 
 step
     #completewith Artifact Weapon: Fury
@@ -11776,13 +11880,14 @@ step
 --Protection
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Warrior
 
+<< Warrior
 
 step
     #completewith Artifact Weapon: Warrior Protection
@@ -12019,12 +12124,13 @@ step
 --Arms 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next ac) Order Hall Warrior Part 2
+
+<< Warrior
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Arms
@@ -12032,12 +12138,13 @@ step
 --Fury 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next ac) Order Hall Warrior Part 2
+
+<< Warrior
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Fury
@@ -12045,12 +12152,13 @@ step
 --Protection 2
 RXPGuides.RegisterGuide([[
 #retail
-#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Warrior Part 2
+
+<< Warrior
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection
@@ -12060,11 +12168,12 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Warrior Part 1
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Warrior Part 2
+
+<< Warrior
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Warrior Part 1
@@ -12074,17 +12183,16 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#chapter
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name ab) Order Hall Warrior Part 2
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Warrior
 
+<< Warrior
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Warrior Part 2
 ]])
-
 
 -- --------- Random ---------
 

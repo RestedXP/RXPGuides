@@ -868,6 +868,11 @@ RXPGuides.RegisterGuide([[
 #next ab) Order Hall Warlock Part 1 << Warlock
 #next ab) Order Hall Warrior Part 1 << Warrior
 
+-- step after launch out comment so we can confirm it works
+--     #optional
+--     .isQuestAvailable 89418
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\a) Intro >>Intro
 step
     #completewith next
     .isQuestTurnedIn account,80018
@@ -1231,6 +1236,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    #optional
+    .isQuestAvailable 40636
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Monk Part 1 >>Order Hall Monk Part 1 
+step
     #completewith next
     #label Matter of Planning
     .goto 709,49.99,58.69,30,0
@@ -1350,6 +1360,11 @@ RXPGuides.RegisterGuide([[
 
 << DeathKnight
 
+step
+    #optional
+    .isQuestAvailable 40715
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 >>Order Hall Death Knight Part 1
 step
     .goto 648,50.97,50.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
@@ -1602,6 +1617,11 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
+step
+    #optional
+    .isQuestAvailable 40814
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 >>Order Hall Demon Hunter Part 1
 step
     .goto 627,73.86,46.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
@@ -1900,6 +1920,11 @@ RXPGuides.RegisterGuide([[
 << Druid
 
 step
+    #optional
+    .isQuestAvailable 40646
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>Order Hall Druid Part 1
+step
     .goto 747,44.49,51.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .accept 41255 >>Accept Sowing The Seed
@@ -2078,6 +2103,11 @@ RXPGuides.RegisterGuide([[
 
 << Hunter
 
+step
+    #optional
+    .isQuestAvailable 40618
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>Hunter Order Hall Intro 1
 step
     .goto 627,66.03,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
@@ -2378,6 +2408,11 @@ RXPGuides.RegisterGuide([[
 
 << Mage
 
+step
+    #optional
+    .isQuestAvailable 41085
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
 step
     #completewith Champion: Archmage Modera
     #hidewindow
@@ -2754,7 +2789,11 @@ step
 --     .turnin 44250 >>Turn in Champion of the Light
 --     .target Eadric the Pure
 step
-    #requires Light's Hope
+    #optional
+    .isQuestAvailable 38710
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Paladin Part 1 >>Paladin Order Hall Intro 1
+step
     .goto 24,63.20,37.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -2898,6 +2937,11 @@ RXPGuides.RegisterGuide([[
 
 << Priest
 
+step
+    #optional
+    .isQuestAvailable 40706
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1>>Priest Order Hall Intro 1
 step
     .goto 627,46.30,20.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r
@@ -3221,6 +3265,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    #optional
+    .isQuestAvailable 40840
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Rogue Part 1 >>Rogue Order Hall Intro 1
+step
     .goto 626,41.48,77.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40950 >>Accept Honoring Success
@@ -3391,6 +3440,11 @@ RXPGuides.RegisterGuide([[
 
 << Shaman
 
+step
+    #optional
+    .isQuestAvailable 41335
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>Shaman Order Hall Intro 1
 step
     .goto 726,34.04,76.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r
@@ -3571,6 +3625,11 @@ RXPGuides.RegisterGuide([[
 
 << Warlock
 
+step
+    #optional
+    .isQuestAvailable 40684
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Warlock Order Hall Intro 1
 step
     .goto 628,55.81,65.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
@@ -3959,6 +4018,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>Warrior Order Hall Intro 1
+step
     .goto 695,59.58,83.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danica the Reclaimer|r
     .accept 39214 >>Accept The Eye of Odyn
@@ -4233,6 +4297,66 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+step
+    #optional
+    .isQuestAvailable 40579
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
 step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesA-BehindLegionLinesB
 step
@@ -6567,7 +6691,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #name bb) Order Hall Monk Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #next bc) Order Hall Monk Part 2
 
 << Monk
@@ -6598,7 +6722,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Death Knight Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Death Knight Part 2
 
@@ -6615,7 +6739,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Death Knight Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6632,7 +6756,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Demon Hunter Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Demon Hunter Part 2
 
@@ -6650,7 +6774,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Demon Hunter Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6668,7 +6792,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Druid Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Druid Part 2
 
@@ -6684,7 +6808,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Druid Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6700,7 +6824,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Hunter Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Druid Part 2
 
@@ -6716,7 +6840,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Hunter Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6732,7 +6856,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Mage Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Mage Part 2
 
@@ -6748,7 +6872,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Mage Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6764,7 +6888,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Paladin Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Paladin Part 2
 
@@ -6780,7 +6904,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Paladin Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6796,7 +6920,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Priest Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Priest Part 2
 
@@ -6812,7 +6936,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Priest Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6828,7 +6952,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Rogue Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Rogue Part 2
 
@@ -6846,7 +6970,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Rogue Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6864,7 +6988,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Shaman Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Shaman Part 2
 
@@ -6880,7 +7004,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Shaman Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6896,7 +7020,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Warlock Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Warlock Part 2
 
@@ -6912,7 +7036,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Warlock Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
@@ -6928,7 +7052,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bb) Order Hall Warrior Part 1
-#displayname |cFF00FF003|r - Order Hall Intro|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Warrior Part 2
 
@@ -6944,7 +7068,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name bc) Order Hall Warrior Part 2
-#displayname |cFF00FF004|r - Order Hall Intro|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
