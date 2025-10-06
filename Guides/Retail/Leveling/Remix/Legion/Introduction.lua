@@ -3908,6 +3908,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Order Hall Warrior Part 2
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#next ad) Infinite Bazaar
 
 << Warrior
 
@@ -4176,14 +4177,14 @@ step
 
 ]])
 
----First Zone
+---Azsuna
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ae) First Zone
-#displayname |cFF00FF006|r - First Zone|r
+#displayname |cFF00FF006|r - Azsuna|r
 
 
 step
@@ -6899,14 +6900,14 @@ step
     #include RestedXP Legion Remix\ad) Infinite Bazaar
 ]])
 
----First Zone
+---Azsuna
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #name be) First Zone
-#displayname |cFF00FF006|r - First Zone|r
+#displayname |cFF00FF006|r - Azsuna|r
 
 step
     #include RestedXP Legion Remix\ad) First Zone
