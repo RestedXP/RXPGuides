@@ -1108,6 +1108,20 @@ step
     .turnin 40740 >>Turn in The Dead and the Damned
     .target Highlord Darion Mograine
 ]])
+--Blood 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Blood
+#displayname Artifact Weapon: Blood
+#next ac) Order Hall Death Knight Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Blood
+]])
+
 --Frost
 RXPGuides.RegisterGuide([[
 #retail
@@ -1115,7 +1129,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
-#next
+#next ac) Order Hall Death Knight
 
 << Death Knight
 
@@ -1297,6 +1311,20 @@ step
     .turnin 38990 >>Turn in The Call of Icecrown
     .target Highlord Darion Mograine
 ]])
+--Frost 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Frost DK
+#displayname Artifact Weapon: Frost
+#next ac) Order Hall Death Knight Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
+]])
+
 --Unholy
 RXPGuides.RegisterGuide([[
 #retail
@@ -1304,7 +1332,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name a) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
-#next
+#next ac) Order Hall Death Knight
 
 << Death Knight
 
@@ -1409,9 +1437,6 @@ step
     .use 173527
 step
     .goto 47,77.42,36.32
-    >>
-step
-    .goto 47,77.42,36.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r and defeat him.
     .complete 40930,2 --1/1 Convince Revil to help
     .timer 11,Revil Roleplay
@@ -1448,7 +1473,7 @@ step
     .goto 42,44.37,34.56,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
 step
     .isOnQuest 40931
-    .goto 47,44.33,34.54
+    .goto 42,44.33,34.54
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
     #title Stay near Ariden
@@ -1574,6 +1599,20 @@ step
     .target Highlord Darion Mograine
 
 ]])
+--Unholy 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Unholy
+#displayname Artifact Weapon: Unholy
+#next ac) Order Hall Death Knight Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
+]])
+
 --Death Knight Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -2471,7 +2510,7 @@ step
     .goto 42,44.37,34.56,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
 step
     .isOnQuest 40834
-    .goto 47,44.33,34.54
+    .goto 42,44.33,34.54
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
     #title Stay near Ariden
@@ -3786,13 +3825,26 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
-#next
+#next ac) Order Hall Hunter
 
 << Hunter
 
 step
     +1
 ]])
+--Beast Mastery 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Beast Mastery
+#displayname Artifact Weapon: Beast Mastery
+#next ac) Order Hall Hunter Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Hunter
+]])
+
 --Marksmanship
 RXPGuides.RegisterGuide([[
 #retail
@@ -3801,13 +3853,27 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
-#next
+#next ac) Order Hall Hunter
 
 << Hunter
 
 step
     +1
 ]])
+--Marksmanship 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Marksmanship
+#displayname Artifact Weapon: Marksmanship
+#next ac) Order Hall Hunter Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
+]])
+
 --Survival
 RXPGuides.RegisterGuide([[
 #retail
@@ -3816,13 +3882,27 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
-#next
+#next ac) Order Hall Hunter
 
 << Hunter
 
 step
     +1
 ]])
+--Survival 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Survival
+#displayname Artifact Weapon: Survival
+#next ac) Order Hall Hunter Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Survival
+]])
+
 --Hunter Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -8152,7 +8232,7 @@ RXPGuides.RegisterGuide([[}
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
-#next ab) Order Hall Priest Part 2
+#next ac) Order Hall Priest Part 2
 
 << Priest
 
@@ -8405,7 +8485,7 @@ RXPGuides.RegisterGuide([[}
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
-#next ab) Order Hall Priest Part 2
+#next ac) Order Hall Priest Part 2
 
 << Priest
 
@@ -8647,7 +8727,7 @@ RXPGuides.RegisterGuide([[}
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
-#next ab) Order Hall Priest Part 2
+#next ac) Order Hall Priest Part 2
 
 << Priest
 
@@ -10406,6 +10486,20 @@ step
     .turnin 39771 >>Turn in The Voice of Thunder
     .target Rehgar Earthfury
 ]])
+--Elemental 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Elemental
+#displayname Artifact Weapon: Elemental
+#next ac) Order Hall Shaman Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
+]])
+
 --Enhancement
 RXPGuides.RegisterGuide([[
 #retail
@@ -10692,6 +10786,20 @@ step
     .turnin 40224 >>Turn in The Hammer in the Deep
     .target Stormcaller Mylra
 ]])
+--Enhancement 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Enhancement
+#displayname Artifact Weapon: Enhancement
+#next ac) Order Hall Shaman Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
+]])
+
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
@@ -10933,6 +11041,20 @@ step
     .turnin 40341 >>Turn in Throne of the Tides: Azshara's Power
     .target Stormcaller Mylra
 ]])
+--Restoration 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Restoration Shaman
+#displayname Artifact Weapon: Restoration
+#next ac) Order Hall Shaman Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
+]])
+
 --Shaman Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -10986,70 +11108,37 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
-#next
-
-<< Warlock
+#next ac) Order Hall Warlock
 
 step
-    +1
-
-]])
---Demonology
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name a) Artifact Weapon: Demonology
-#displayname Artifact Weapon: Demonology
-#next
-
-<< Warlock
-
+    .isQuestTurnedIn 43984
+    .isQuestAvailable 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
+    .accept 44089 >>Accept A Greater Arsenal
+    .target Calydus
 step
-    +1
-]])
---Destruction
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name a) Artifact Weapon: Destruction
-#displayname Artifact Weapon: Destruction
-#next
-
-<< Warlock
-
+    .isQuestAvailable 44089
+    .isOnQuest 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_This will automatically pick the Affliction artifact|r
+    .complete 44089,1 --1/1 Artifact Chosen (3rd)
+    .choose 1389401
+    .target Calydus
+    .skipgossipid 45164
 step
-    .isQuestTurnedIn 43945
-    .isQuestAvailable 44006
-    .goto 726,36.16,80.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
-    .accept 44006 >>Accept Your Fullest Potential
-    .target Aggramar
-step
-    .isQuestAvailable 44006
-    .isOnQuest 44006
-    .goto 726,36.16,80.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
-    *|cRXP_WARN_This will automatically pick the Enhancement artifact|r
-    .complete 44006,1 --1/1 Chose a Third Artifact to Pursue
-    .choose 1389399
-    .target Aggramar
-    .skipgossipid 45112
-step
-    .isQuestAvailable 44006
-    .isOnQuest 44006
-    .goto 726,36.16,80.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
-    .turnin 44006 >>Turn in Your Fullest Potential
-    .target Aggramar
+    .isQuestAvailable 44089
+    .isOnQuest 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 44089 >>Turn in Your Fullest Potential
+    .target Calydus
 step
     .isQuestTurnedIn 40684
     .isQuestAvailable 43984
     .goto 717,37.63,31.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
     .accept 43984 >>Accept The Tome Opens Again
     .target Calydus
 step
@@ -11057,11 +11146,11 @@ step
     .isOnQuest 43984
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
-    *|cRXP_WARN_This will automatically pick the Destruction artifact|r
+    *|cRXP_WARN_This will automatically pick the Affliction artifact|r
     .complete 43984,1 --1/1 Choose a second artifact to pursue
-    .choose 1389403
+    .choose 1389401
     .target Calydus
-    .skipgossipid 45111
+    .skipgossipid 45163
 step
     .isQuestAvailable 43984
     .isOnQuest 43984
@@ -11080,7 +11169,605 @@ step
     .isOnQuest 40684
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    --*|cRXP_WARN_This will automatically pick the Affliction artifact|r
+    .complete 40684,1 --1/1 Artifact chosen
+    --.choose 1389401
+    .target Calydus
+    .skipgossipid 45162
+step
+    .isQuestAvailable 40684
+    .isOnQuest 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 40684 >>Turn in The Tome of Blighted Implements
+    .target Calydus
+step
+    #optional
+    .isQuestTurnedIn 40823
+    .goto 717,37.66,31.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40495 >>Accept Ulthalesh, the Deadwind Harvester
+    .target Calydus
+step
+    .goto 628,55.86,65.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40495 >>Accept Ulthalesh, the Deadwind Harvester
+    .target Calydus
+step
+    .isOnQuest 40495
+    .zone 47 >>Use the |T254294:0|t[Duskwood Scroll]
+    .use 173527
+step
+    .goto 47,77.45,35.87
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 40495,1 --1/1 Investigate Manor Mistmantle in Duskwood
+step
+    .goto 47,77.43,36.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r and defeat him
+    .complete 40495,2 --1/1 Convince Revil to help.
+    .timer 6,Revil Roleplay
+    .target Revil Kost
+    .skipgossipid 44918
+step
+    .goto 47,77.43,36.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .turnin 40495 >>Turn in Ulthalesh, the Deadwind Harvester
+    .accept 40588 >>Accept Following the Curse
+    .target Revil Kost
+step
+    --TODO: Title Color
+    .isOnQuest 40588
+    #title Stay near Ariden
+    .goto 47,77.37,35.12
+    .countdown 25 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .isOnQuest 40588
+    .goto 47,80.86,33.00,25,0
+    .goto 47,84.33,36.29,20,0
+    .goto 47,83.83,40.27,15,0
+    .goto 47,85.55,40.69,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+step
+    .isOnQuest 40588
+    .goto 47,85.55,40.69
+    .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .isOnQuest 40588
+    .goto 42,36.64,35.55,25,0
+    .goto 42,39.13,33.72,25,0
+    .goto 42,44.37,34.56,15 >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+step
+    .isOnQuest 40588
+    .goto 42,44.33,34.54
+    .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
+step
+    #title Stay near Ariden
+    .goto 42,47.92,33.92,20,0
+    .goto 42,48.80,38.69,20,0
+    .goto 42,50.70,40.81
+    >>Escort |cRXP_FRIENDLY_Revil Kost|r 
+    .complete 40588,1 --1/1 Follow Revil to Ariden's Camp
+step
+    .goto 42,52.41,34.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r
+    .turnin 40588 >>Turn in Following the Curse
+    .accept 40604 >>Accept Disturbing the Past
+    .target Revil Kost
+step
+    .goto 42,52.31,33.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Battered Journal|r.
+    .complete 40604,1 --1/1 Ariden's Camp investigated
+step
+    .goto 42,52.32,33.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Battered Journal|r
+    .turnin 40604 >>Turn in Disturbing the Past
+    .accept 40606 >>Accept To Point the Way
+    .target Battered Journal
+step
+    .goto 42,52.13,34.04
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Compass|r.
+    .complete 40606,1 --1/1 Ariden's Compass
+step
+    .goto 42,52.42,34.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .turnin 40606 >>Turn in To Point the Way
+    .accept 40611 >>Accept The Fate of Deadwind
+    .target Revil Kost
+step
+    #completewith next
+    #hidewindow
+    .cast 198335 >>1
+    .timer 20,Roleplay
+step
+    .goto 42,35.57,35.52
+    >>Use the |T338784:0|t[|cRXP_WARN_ExtraActionButton|r] (Attune the Compass).
+    .complete 40611,1 --1/1 Attuned at Deadman's Crossing
+step
+    #completewith next
+    #hidewindow
+    .cast 198335 >>1
+    .timer 15,Roleplay
+step
+    .goto 42,46.99,62.32
+    >>Use the |T338784:0|t[|cRXP_WARN_ExtraActionButton|r] (Attune the Compass).
+    .complete 40611,3 --1/1 Attuned at the bridge
+step
+    #completewith next
+    #label TheFateOfDeadwindA
+    >>Use the |T338784:0|t[|cRXP_WARN_ExtraActionButton|r] (Attune the Compass).
+    .complete 40611,2 --1/1 Attuned at the church
+step
+    --TODO: Title Color
+    #title Enter the church
+    #completewith TheFateOfDeadwindA
+    .goto 42,40.66,77.80,6 >>|cRXP_WARN_Follow the arrow into the church.|r
+step
+    #requires TheFateOfDeadwindA
+    #completewith next
+    #hidewindow
+    .cast 198335 >>1
+    .timer 13,Roleplay
+step
+    #requires TheFateOfDeadwindA
+    .goto 42,40.82,78.50
+    >>Use the |T338784:0|t[|cRXP_WARN_ExtraActionButton|r] (Attune the Compass).
+    .complete 40611,2 --1/1 Attuned at the church
+step
+    .goto 42,49.46,74.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .turnin 40611 >>Turn in The Fate of Deadwind
+    .accept 41155 >>Accept The Dark Riders
+    .target Revil Kost
+step
+    .isOnQuest 41155
+    .goto 42,46.28,69.07
+    .enterScenario 988 >>|cRXP_WARN_Enter the |cRXP_PICK_The Dark Riders|r scenario|r
+step
+    #completewith next
+    #label KarazhanCatacombsA
+    .isInScenario 988
+    .scenario 2021,1 --Karazhan Catacombs infiltrated
+step
+    #completewith KarazhanCatacombsA
+    .goto 46,71.72,83.73
+    .zone 46 >>Jump down
+step
+    #requires KarazhanCatacombsA
+    .isInScenario 988
+    .goto 46,72.09,74.41
+    >>|cRXP_WARN_Enter the catacombs|r
+    .scenario 2021,1 --Karazhan Catacombs infiltrated
+step
+    .isInScenario 988
+    #title Use |T607512:0|t[Demonic Gateway]
+    .goto 46,55.90,69.19
+    >>Use |T607512:0|t[Demonic Gateway] on |cRXP_ENEMY_Ariden|r |cRXP_WARN_from the quest log|r.
+    .scenario 2022,1 --Spirit Barrier crossed
+    .mob Ariden
+    .usespell 111771
+step
+    .isInScenario 988
+    .goto 46,56.36,69.25
+    >>Kill |cRXP_ENEMY_The Conservator|r.
+    .scenario 2023,1 --Conservator Defeated
+    .mob The Conservator
+step
+    #completewith next
+    #hidewindow
+    .cast 3365 >>1
+    .timer 25,Roleplay
+step
+    .isInScenario 988
+    .goto 46,43.63,67.82
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Ulthalesh|r. |cRXP_WARN_Wait for the roleplay|r.
+    .scenario 2024,1 --Ulthalesh found
+step
+    .isInScenario 988
+    .goto 46,58.06,64.22,15,0
+    .goto 46,55.33,49.51,10,0
+    .goto 46,67.81,44.27,10,0
+    .goto 46,68.49,37.77
+    >>|cRXP_WARN_Follow the arrow up the stairs to |cRXP_ENEMY_Ariden|r.
+    .scenario 2025,1 --Ariden followed
+    .timer 17,Ariden Roleplay
+step
+    .isInScenario 988
+    .goto 46,68.36,24.43
+    >>Kill |cRXP_ENEMY_Ariden|r.
+    .scenario 2026,1 --Ariden defeated
+    .timer 33,Ariden Roleplay
+    .mob Ariden
+step
+    .goto 46,68.23,24.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Apocalypse|r.
+    .complete 41155,1 --1/1 Complete the Dark Riders scenario
+    .complete 41155,2 --1/1 Ulthalesh claimed
+step
+    .goto 46,68.22,27.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    *|cRXP_WARN_Note:|r If he's still fighting then kill the mobs he is in combat with.
+    .turnin 41155 >>Turn in The Dark Riders
+    .target Revil Kost
+step
+    .isQuestAvailable 40823
+    .goto 46,68.22,27.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
+    .accept 41156 >>Accept The Power Possessed
+    .target Revil Kost
+step
+    .zoneskip 46,1
+    .cooldown item,250411,>0,1
+    .zone 627 >>Use the |T134419:0|t[Timerunner's Hearthstone] to get to Dalaran
+    .use 250411
+step
+    .isOnQuest 41156
+    .goto 627,60.17,48.28,8,0
+    .goto 628,74.22,66.56,8,0
+    .goto 628,64.44,58.55,8,0
+    .goto 628,55.83,65.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 41156 >>Turn in The Power Possessed
+    .target Calydus
+]])
+--Affliction 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Affliction
+#displayname Artifact Weapon: Affliction
+#next ac) Order Hall Warlock Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
+]])
+
+
+--Demonology
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
+#name a) Artifact Weapon: Demonology
+#displayname Artifact Weapon: Demonology
+#next ac) Order Hall Warlock
+
+step
+    .isQuestTurnedIn 43984
+    .isQuestAvailable 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
+    .accept 44089 >>Accept A Greater Arsenal
+    .target Calydus
+step
+    .isQuestAvailable 44089
+    .isOnQuest 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_This will automatically pick the Demonology artifact|r
+    .complete 44089,1 --1/1 Artifact Chosen (3rd)
+    .choose 1389402
+    .target Calydus
+    .skipgossipid 45164
+step
+    .isQuestAvailable 44089
+    .isOnQuest 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 44089 >>Turn in Your Fullest Potential
+    .target Calydus
+step
+    .isQuestTurnedIn 40684
+    .isQuestAvailable 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
+    .accept 43984 >>Accept The Tome Opens Again
+    .target Calydus
+step
+    .isQuestAvailable 43984
+    .isOnQuest 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_This will automatically pick the Demonology artifact|r
+    .complete 43984,1 --1/1 Choose a second artifact to pursue
+    .choose 1389402
+    .target Calydus
+    .skipgossipid 45163
+step
+    .isQuestAvailable 43984
+    .isOnQuest 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 43984 >>Turn in The Tome Opens Again
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40684 >>Accept The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .isOnQuest 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    --*|cRXP_WARN_This will automatically pick the Demonology artifact|r
+    .complete 40684,1 --1/1 Artifact chosen
+    --.choose 1389402
+    .target Calydus
+    .skipgossipid 45162
+step
+    .isQuestAvailable 40684
+    .isOnQuest 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 40684 >>Turn in The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestTurnedIn 40823
+    #optional
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 42128 >>Accept Ritual Reagents
+    .target Calydus
+step
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 42128 >>Accept Ritual Reagents
+    .target Calydus
+step
+    .isOnQuest 42128
+    .isQuestTurnedIn 40823
+    #optional
+    .zoneskip 717,1
+    .goto 717,74.71,38.14
+    .zone 628 >>|cRXP_WARN_Go through the portal to Dalaran.|r
+step
+    #optional
+    .isOnQuest 42128
+    .isQuestTurnedIn 40823
+    .zoneskip 628,1
+    .goto 628,28.84,53.19,12,0
+    .goto 628,19.50,57.61,10,0
+    .goto 627,35.02,45.56
+    .zone 627 >>|cRXP_WARN_Follow the way out of the canal.|r
+step
+    .isOnQuest 42128
+    .zoneskip 628,1
+    .goto 628,65.60,56.81,12,0
+    .goto 628,77.31,68.50,10,0
+    .goto 627,59.67,47.69
+    .zone 627 >>|cRXP_WARN_Follow the way out of the canal.|r
+step
+    .goto 627,33.41,39.56
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Freshly Dug Grave|r.
+    .complete 42128,1 --1/1 Grave Dust
+step
+    .goto 627,38.65,24.56
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Can of Overheated Oil|r.
+    .complete 42128,2 --1/1 Can of Overheated Oil
+step
+    .goto 627,48.51,38.05
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Aged Snowplum Brandy|r.
+    .complete 42128,3 --1/1 Aged Snowplum Brandy
+step
+    .goto 627,60.04,38.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Docile Stag|r.
+    .complete 42128,4 --1/1 Stag Blood Sample
+    .skipgossipid 45158
+step
+    #completewith next
+    #label RitualReagentsA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 42128 >>Turn in Ritual Reagents
+    .accept 42168 >>Accept Looking into the Darkness
+    .target Calydus
+step
+    --TODO: Title Color
+    #title Enter the room
+    #completewith RitualReagentsA
+    .goto 627,56.84,46.85,8 >>|cRXP_WARN_Follow the arrow into the room.|r
+step
+    #requires RitualReagentsA
+    .goto 627,54.39,46.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 42128 >>Turn in Ritual Reagents
+    .accept 42168 >>Accept Looking into the Darkness
+    .target Calydus
+step
+    .goto 627,53.73,47.31
+    >>Use the |T1020342:0|t[|cRXP_WARN_ExtraActionButton|r] (Dark Communion)
+    .complete 42168,1 --1/1 Scrying Ritual Perfomed
+step
+    .goto 627,53.50,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thal'kiel|r.
+    .complete 42168,2 --1/1 Skull of the Man'ari's location discovered
+    .target Thal'kiel
+    .skipgossipid 45512
+    .skipgossipid 45513
+    .skipgossipid 45546
+step
+    .goto 627,54.37,46.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 42168 >>Turn in Looking into the Darkness
+    .accept 42125 >>Accept Dark Whispers
+    .timer 9,Portal spawns in
+    .target Calydus
+step
+    .goto 627,53.74,47.26
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Calydus's Demonic Portal|r.
+    .complete 42125,1 --1/1 Enter Calydus's Demonic Portal
+step
+    .isOnQuest 42125
+    .goto 627,53.74,47.26
+    .enterScenario 1097 >>Enter the |cRXP_PICK_Dark Whispers|r scenario.
+step
+    .isInScenario 1097
+    .goto 680,25.64,61.87,20,0
+    .goto 680,27.53,64.61
+    >>Kill the |cRXP_ENEMY_Eredar Doomweavers|r
+    .scenario 2443,1 --Locate the Skull of the Man'ari
+    .mob Eredar Doomweaver
+step
+    .isInScenario 1097
+    .goto 680,27.50,64.74
+    >>Kill the |cRXP_ENEMY_Felborn Overfiend|r.
+    .scenario 2475,1 --Defeat the Felborn Overfiend
+    .mob Felborn Overfiend
+step
+    .isInScenario 1097
+    .goto 680,28.71,61.97,10,0
+    .goto 680,29.16,61.32
+    >>Use the |T607512:0|t[Demonic Gateway] over the barrier
+    .scenario 2476,1 --Mephistroth's Barrier crossed
+    .usespell 111771
+step
+    .isInScenario 1097
+    .goto 680,30.27,60.56
+    >>Kill the |cRXP_ENEMY_Demon forces|r and |cRXP_ENEMY_Pain Mistress Nikta|r and |cRXP_ENEMY_Lady Tyrana|r at the end.
+    .scenario 2477,2 --Defeat waves of enemies
+    .scenario 2477,1 --Defeat the leaders of the attackers
+    .mob Eredar Soulgrinder
+    .mob Dreadguard Sentry
+    .mob Wrathguard Hellblade
+    .mob Fel Mongrel
+    .mob Pain Mistress Nikta
+    .mob Lady Tyrana
+step
+    .isInScenario 1097
+    .goto 680,30.64,63.49
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 2478,1 --Interrupted Mephistroth's ritual
+step
+    .isInScenario 1097
+    .goto 680,31.11,65.96
+    >>Kill |cRXP_ENEMY_Mephistroth|r.
+    .scenario 2478,2 --Mephistroth Defeated
+    .mob Mephistroth
+step
+    .goto 680,31.08,65.92    
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skull of Man'ari|r.
+    .complete 42125,2 --1/1 Obtain the Skull of the Man'ari
+step
+    .goto 680,31.36,65.90
+    .isInScenario 1097
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r.
+    .scenario 2502,1 --Portal of Thal'kiel used
+step
+    #optional
+    .isQuestTurnedIn 40823
+    .isOnQuest 42125
+    .goto 627,34.87,45.45,10,0
+    .goto 628,21.20,55.73,10,0
+    .goto 628,29.53,51.96,10,0
+    .goto 628,28.55,44.40
+    .zone 717 >>Enter the Dalaran Sewer and click on the |cRXP_PICK_Portal to Dreadscar Rift|r
+step
+    #optional
+    .isQuestTurnedIn 40823
+    .goto 717,55.83,49.89,20,0
+    .goto 717,37.66,31.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 42125 >>Turn in Dark Whispers
+    .target Calydus
+step
+    .goto 627,60.17,48.28,8,0
+    .goto 628,74.22,66.56,8,0
+    .goto 628,64.44,58.55,8,0
+    .goto 628,55.83,65.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 42125 >>Turn in Dark Whispers
+    .target Calydus
+]])
+--Demonology 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Demonology
+#displayname Artifact Weapon: Demonology
+#next ac) Order Hall Warlock Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
+]])
+
+--Destruction
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
+#name a) Artifact Weapon: Destruction
+#displayname Artifact Weapon: Destruction
+#next ac) Order Hall Warlock
+
+<< Warlock
+
+step
+    .isQuestTurnedIn 43984
+    .isQuestAvailable 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
+    .accept 44089 >>Accept A Greater Arsenal
+    .target Calydus
+step
+    .isQuestAvailable 44089
+    .isOnQuest 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
     *|cRXP_WARN_This will automatically pick the Destruction artifact|r
+    .complete 44089,1 --1/1 Artifact Chosen (3rd)
+    .choose 1389403
+    .target Calydus
+    .skipgossipid 45164
+step
+    .isQuestAvailable 44089
+    .isOnQuest 44089
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 44089 >>Turn in Your Fullest Potential
+    .target Calydus
+step
+    .isQuestTurnedIn 40684
+    .isQuestAvailable 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 43984 >>Accept The Tome Opens Again
+    .target Calydus
+step
+    .isQuestAvailable 43984
+    .isOnQuest 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    *|cRXP_WARN_This will automatically pick the Destruction artifact|r
+    .complete 43984,1 --1/1 Choose a second artifact to pursue
+    .choose 1389403
+    .target Calydus
+    .skipgossipid 45163
+step
+    .isQuestAvailable 43984
+    .isOnQuest 43984
+    .goto 717,37.63,31.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 43984 >>Turn in The Tome Opens Again
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40684 >>Accept The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .isOnQuest 40684
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    --*|cRXP_WARN_This will automatically pick the Destruction artifact|r
     .complete 40684,1 --1/1 Artifact chosen
     --.choose 1389403
     .target Calydus
@@ -11307,11 +11994,33 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Demonic Portal|r.
     .complete 43254,6 --1/1 Escape to Dalaran and meet Calydus
 step
+    #optional
+    .isQuestTurnedIn 40823
+    .goto 717,37.66,31.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .turnin 43254 >>Turn in Ritual Ruination
+    .target Calydus
+step
     .goto 628,55.86,65.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
     .turnin 43254 >>Turn in Ritual Ruination
     .target Calydus
 ]])
+--Destruction 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Destruction
+#displayname Artifact Weapon: Destruction
+#next ac) Order Hall Warlock Part 2
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
+]])
+
+
 --Warlock Intro 1
 RXPGuides.RegisterGuide([[
 #retail
