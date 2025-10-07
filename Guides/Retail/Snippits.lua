@@ -3217,7 +3217,7 @@ step
     #title Check Note
     .goto 116,50.50,37.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol|r
-    *|cRXP_WARN_Note: If you can't see the roleplay or |cRXP_FRIENDLY_Ursol|r then relog|r
+    *|cRXP_WARN_Note: If you can't see the roleplay or |cRXP_FRIENDLY_Ursol|r then relog next to |cRXP_FRIENDLY_Lea Stonepaw|r.|r
     .accept 41790 >>Accept The First Trial of Ursol
     .target Ursol
 step
