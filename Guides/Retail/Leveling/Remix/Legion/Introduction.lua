@@ -290,7 +290,7 @@ step
     .complete 89408,1,4 --12/12 Frayed Temporal Threads collected
 step
     #completewith Yellow Orbs1
-    #title |cRXP_WARN_Leave Building|r
+    #title |cFFFCDC00Leave Building|r
     .goto 627,40.61,27.39,5 >>Leave the building
 step
     #requires Yellow Orbs1
@@ -320,7 +320,7 @@ step
     .complete 89408,1,8 --12/12 Frayed Temporal Threads collected
 step
     #completewith Yellow Orbs2
-    #title |cRXP_WARN_Leave Building|r
+    #title |cFFFCDC00Leave Building|r
     .goto 627,39.94,42.24,5 >>Leave the Building
 step
     #requires Yellow Orbs2
@@ -374,7 +374,7 @@ step
     .complete 89409,1 --Arrived at Tanks for Everything
 step
     #completewith Arrived at Tanks for Everything
-    #title |cRXP_WARN_Enter Building|r
+    #title |cFFFCDC00Enter Building|r
     .goto 627,43.92,29.96,10 >>Enter the Building
 step
     #requires Arrived at Tanks for Everything
@@ -437,7 +437,7 @@ step
     .target Momentus
 step
     #completewith Infinite Bronze
-    #title |cRXP_WARN_Leave Building|r
+    #title |cFFFCDC00Leave Building|r
     .goto 627,43.49,30.07,8 >>Leave the Building
 step
     #requires Infinite Bronze
@@ -516,7 +516,7 @@ step
     .goto 627,58.07,46.32,20,0
     .goto 627,56.98,46.74,8,0
     .goto 627,56.86,46.8,5 >>Jump down and Enter the building
-    #title |cRXP_WARN_Enter Building|r
+    #title |cFFFCDC00Enter Building|r
 step
     #requires Legion Portal Sealed2
     #completewith next
@@ -542,7 +542,7 @@ step
     .turnin 89411 >>Turn in Scavenger Hunting
 step
     #completewith Scavenger Hunting
-    #title |cRXP_WARN_Leave Building|r
+    #title |cFFFCDC00Leave Building|r
     .goto 627,57.66,46.35,10 >>Leave the Building
 step
     #requires Scavenger Hunting
@@ -611,7 +611,7 @@ step
 step
     #completewith Not A Memento Too Soon
     .goto 627,45.82,43.5,10 >>Enter the Building
-    #title |cRXP_WARN_Enter Building|r
+    #title |cFFFCDC00Enter Building|r
 step
     #requires Not A Memento Too Soon
     .goto 627,49,47.28
@@ -628,7 +628,7 @@ step
     .mob Fel Lord Nezmet
 step
     #completewith Fel Lord Nezmet
-    #title |cRXP_WARN_Leave Building|r
+    #title |cFFFCDC00Leave Building|r
     .goto 627,46.28,53.18,10 >>Leave the Building
 step
     #requires Fel Lord Nezmet
@@ -641,7 +641,7 @@ step
     #requires Fel Lord Nezmet
     #completewith Fel Lord Nezmet2
     .goto 627,31.54,48.93,10 >>Enter the Building
-    #title |cRXP_WARN_Enter Building|r
+    #title |cFFFCDC00Enter Building|r
 step
     #requires Fel Lord Nezmet2
     .goto 627,28.63,48.79
@@ -657,7 +657,7 @@ step
 step
     #completewith Storm the Citadel
     .goto 627,46.28,53.18,10 >>Enter the Building
-    #title |cRXP_WARN_Enter Building|r
+    #title |cFFFCDC00Enter Building|r
 step
     #requires Storm the Citadel
     .goto 627,49.54,48.02
@@ -2007,7 +2007,7 @@ step
     .target Emmarel Shadewarden
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     #completewith NeedsOfTheHuntersA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
 step
@@ -2026,7 +2026,7 @@ step
     .skipgossipid 45259
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     #completewith TheHuntersCallA
     .goto 627,58.01,40.06,6 >>|cRXP_WARN_Follow the arrow into the house.|r
 step
@@ -2045,7 +2045,7 @@ step
     .skipgossipid 45079
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     #completewith TheHuntersCallB
     .goto 627,53.38,61.34,6 >>|cRXP_WARN_Follow the arrow into the house.|r
 step
@@ -2070,7 +2070,7 @@ step
     .target Emmarel Shadewarden
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     #completewith TheHuntersCallC
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
 step
@@ -2122,7 +2122,7 @@ step
     .target Emmarel Shadewarden
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     #completewith HunterToHunterA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
 step
@@ -2141,7 +2141,7 @@ step
     .skipgossipid 44178
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Leave House|r
+    #title |cFFFCDC00Leave House|r
     #completewith OnEaglesWingsA
     .goto 627,58.43,51.10,6 >>|cRXP_WARN_Follow the arrow out of the house.|r
 step

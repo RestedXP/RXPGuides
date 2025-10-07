@@ -2481,7 +2481,7 @@ step
     .accept 40785 >>Accept A Foe of the Dark
 step
     --TODO: Title Color
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r    
     .goto 47,77.42,36.13
     >>|cRXP_WARN_Follow the arrow|r.
     .complete 40785,2 --1/1 Investigate Manor Mistmantle in Duskwood
@@ -5692,7 +5692,7 @@ step
     .target Tak-Tak
 step
     #completewith Tak-Tak
-    #title |cRXP_WARN_Leave House|r
+    #title |cFFFCDC00Leave House|r
     .goto 709,49.71,47.37,10 >>Leave the House
 step
     #requires Tak-Tak
@@ -5755,7 +5755,7 @@ step
     .mob Vadis
 step
     #completewith Vadis
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     .goto 376,51.6,64.28,10,0
     .goto 376,51.43,65.17,10,0
     .goto 376,51.11,64.98,10 >>Enter the House and and go upstairs.
@@ -6396,7 +6396,7 @@ step
     .target Li Li Stormstout
 step
     #completewith Prepare To Strike
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     .goto 709,51.28,53.77,10,0
     .goto 709,49.91,58.68,10 >>Enter the House
 step
@@ -6445,7 +6445,7 @@ step
     .mob Nader
 step
     #completewith Clue Discovered
-    #title |cRXP_WARN_Leave House|r
+    #title |cFFFCDC00Leave House|r
     .goto 249,54.92,33.66,15 >>Leave the House
 step
     #requires Clue Discovered
@@ -6464,7 +6464,7 @@ step
 step
     #completewith Thunder on the Sands
     .goto 249,54.92,33.81,15 >>Enter the Building
-    #title |cRXP_WARN_Enter Building|r
+    #title |cFFFCDC00Enter Building|r
 step
     #requires Thunder on the Sands
     .goto 249,54.91,32.73
@@ -6479,7 +6479,7 @@ step
     .complete 40570,1 --1/1 Use the Essence of the Whirlwind
 step
     #completewith Essence of the Whirlwind
-    #title |cRXP_WARN_Leave Building|r
+    #title |cFFFCDC00Leave Building|r
     .goto 249,54.93,33.94,13 >>Leave the building
 step
     #requires Essence of the Whirlwind
@@ -9248,7 +9248,7 @@ step
 step
     #requires Blood of the Innocent
     #completewith Blood of the Innocent2
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     .goto 47,73.67,44.08,5 >>Enter the House and go upstairs
 step
     #requires Blood of the Innocent2
@@ -9269,7 +9269,7 @@ step
     .goto 47,74.29,44.28,5,0
     .goto 47,73.88,45.62,5,0
     .goto 47,73.72,46.12,5 >>Leave the House
-    #title |cRXP_WARN_Leave House|r
+    #title |cFFFCDC00Leave House|r
 step
     #requires Althea Ebonlocke
     #completewith next
@@ -9284,8 +9284,7 @@ step
     .goto 47,72.5,47.26,5,0
     .goto 47,72.34,47.7,5,0
     .goto 47,71.88,46.78,15 >>Enter the House
-    #title |cRXP_WARN_Enter House|r
-step
+    #title |cFFFCDC00Enter House|rstep
     #requires Althea Ebonlocke2
     .goto 47,71.94,46.43
     >>Defeat |cRXP_ENEMY_Althea Ebonlocke|r
@@ -9393,7 +9392,7 @@ step
     .isInScenario 1123
     #completewith Trader's Hall
     .goto 84,65.6,74.23,5 >>Leave the House
-    #title |cRXP_WARN_Leave House|r
+    #title |cFFFCDC00Leave House|r
 step
     #requires Trader's Hall
     .goto 84,63.29,72.95,10,0
@@ -9682,7 +9681,7 @@ step
 step
     #completewith Board the Crimson Veil
     .goto 210,40.95,74.28,10 >>Leave the House
-    #title |cRXP_WARN_Leave House|r
+    #title |cFFFCDC00Leave House|r
 step
     #requires Board the Crimson Veil
     .goto 210,40.77,69.12
@@ -10055,7 +10054,7 @@ step
     .accept 41920 >>Accept A Matter of Finesse
 step
     #completewith The Shadows Reveal2
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r
     .goto 627,51.62,68.76,5 >>Enter the House
 step
     #requires The Shadows Reveal2
@@ -10124,7 +10123,7 @@ step
     .goto 627,49.48,41.21,5,0
     .goto 627,47.78,40.7
     >>Enter the house and go upstaris to kill |cRXP_ENEMY_Akaari Shadowgore|r
-    #title |cRXP_WARN_Enter House|r
+    #title |cFFFCDC00Enter House|r    
     .complete 41921,1 --1/1 Akaari confronted
     .mob Akaari Shadowgore
 step
