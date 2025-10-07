@@ -4329,36 +4329,36 @@ step
     .isQuestAvailable 40579
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
 step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesA-BehindLegionLinesB
 step
