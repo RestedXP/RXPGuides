@@ -2128,9 +2128,9 @@ step
 step
     #requires OnEaglesWingsA
     .goto 627,69.84,51.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the flight master in Krasus' Landing|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flight Master|r.
     .complete 40953,1 --1/1 Speak to the flight master in Krasus' Landing
-    .target the flight master in Krasus' Landing
+    .timer 157,Flight Duration
     .skipgossipid 44178
 step
     .goto 739,36.29,27.92
@@ -4354,6 +4354,7 @@ step
     --BONUS OBJECTIVE
     --TODO: Title Color
     #title Don't complete it (See Note)
+    .xp >80,1
     #loop
     .goto 630,39.05,48.22,40,0
     .goto 630,36.90,48.19,35,0
@@ -4570,10 +4571,11 @@ step
     --BONUS OBJECTIVE
     --TODO: Title Color
     #title Don't complete it (See Note)
+    .xp >80,1
     #loop
     .goto 630,50.57,60.91,25,0
     .goto 630,47.95,59.20,25,0
-    .goto 630,44.36.56,47,25,0
+    .goto 630,44.36,56,47,25,0
     .goto 630,45.18,55.53,25,0
     .goto 632,27.02,54.02,25,0
     .goto 632,34.43,37.92,25,0
@@ -4604,6 +4606,46 @@ step
     .turnin 42273 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Mak'rana and the Fate of the Queen's Reprisal@MakranaFateQueenReprisalA-MakranaFateQueenReprisalB
+step << Horde
+    #completewith next
+    #label FateOfTheQueensReprisalA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Stillwater|r
+    .turnin 42244 >>Turn in Fate of the Queen's Reprisal
+    .target Advisor Stillwater
+step << Horde
+    --TODO: Title color
+    #completewith FateOfTheQueensReprisalA
+    #title Enter the sanctum (See Note)
+    *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
+    .goto 627,58.45,20.62,10 >>|cRXP_WARN_Enter the sanctum|r
+step << Horde
+    #requires FateOfTheQueensReprisalA
+    #label MakranaFateQueenReprisalZ
+    .goto 627,61.14,16.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Stillwater|r
+    .turnin 42244 >>Turn in Fate of the Queen's Reprisal
+    .target Advisor Stillwater
+step << Alliance
+    #completewith next
+    #label FateOfTheQueensReprisalB
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Surtees|r
+    .turnin 40794 >>Turn in Fate of the Queen's Reprisal
+    .target Lieutenant Surtees
+step << Alliance
+    --TODO: Title color
+    #completewith FateOfTheQueensReprisalB
+    #title Enter the enclave (See Note)
+    *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
+    .goto 627,34.48,66.51,15 >>|cRXP_WARN_Enter the enclave|r
+step << Alliance
+    #requires FateOfTheQueensReprisalB
+    #label MakranaFateQueenReprisalZ
+    .goto 627,29.40,75.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Surtees|r
+    .turnin 40794 >>Turn in Fate of the Queen's Reprisal
+    .target Lieutenant Surtees
+step
+    #include RestedXP Legion Remix\b) Mak'rana and the Fate of the Queen's Reprisal@MakranaFateQueenReprisalC-MakranaFateQueenReprisalZ
 step
     .goto 630,55.74,48.42
     >>Kill |cRXP_ENEMY_Athissa|r
@@ -4634,6 +4676,7 @@ step
 step
     --BONUS OBJECTIVE
     #title Don't complete it (See Note)
+    .xp >80,1
     #loop
     .goto 630,55.18,45.72,35,0
     .goto 630,55.96,43.01,35,0
@@ -4668,7 +4711,7 @@ step
     .goto 631,71.68,21.74
     .turnin 42285 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
-    #include RestedXP Legion Remix\b) Azsuna versus Azshara@AzsunaVersusAzsharaJ-AzsunaVersusAzsharaI
+    #include RestedXP Legion Remix\b) Azsuna versus Azshara@AzsunaVersusAzsharaJ-AzsunaVersusAzsharaZ
 step
     .isQuestAvailable 37830
     .goto 630,58.36,43.78
@@ -4689,6 +4732,7 @@ step
 step
     --BONUS OBJECTIVE
     #title Don't complete it (See Note)
+    .xp >80,1
     #loop
     .goto 630,64.72,40.07,35,0
     .goto 630,62.49,44.98,45,0
@@ -6161,6 +6205,7 @@ step
     .goto 630,65.48,56.80,10 >>Enter the ship underwater through the hole
 step
     #requires TheCaptainsFootLocker
+    #label MakranaFateQueenReprisalB
     .goto 630,65.68,56.93
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Captain's Foot Locker|r.
     .turnin 37659 >>Turn in The Captain's Foot Locker
@@ -6168,15 +6213,15 @@ step
     .accept 40794 >>Accept Fate of the Queen's Reprisal << Alliance
 step
     #completewith next
-    #label DealWithQueenKraklaaA
+    #label MakranaFateQueenReprisalC
     >>Kill |cRXP_ENEMY_Oublion|r.
     .complete 37657,2 --1/1 Deal with Queen Kraklaa
     .mob Oublion
 step
-    #completewith DealWithQueenKraklaaA
+    #completewith MakranaFateQueenReprisalC
     .goto 630,63.06,61.75,10 >>Enter the underwater cave
 step
-    #requires DealWithQueenKraklaaA
+    #requires MakranaFateQueenReprisalC
     #label NightborneMakingtheWorldSafeforProfit
     .goto 630,63.81,63.82
     >>Kill |cRXP_ENEMY_Oublion|r.
@@ -6202,7 +6247,6 @@ step
     >>|cRXP_WARN_Click on the popup under your minimap or search for the quest in your questlog to turn it in|r
     .turnin 42268 >>Turn in Shipwrecked Sailors
 step
-    #label MakranaFateQueenReprisalB
     .goto 630,56.61,59.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mr. Shackle|r.
     .turnin 37657 >>Turn in Making the World Safe for Profit
@@ -7088,7 +7132,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00FF006|r - Azsuna|r
 
 step
-    #include RestedXP Legion Remix\ad) First Zone
+    #include RestedXP Legion Remix\ae) First Zone
 
 
 ]])
