@@ -6756,7 +6756,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Death Knight Part 2
 
-<< Death Knight
+<< DeathKnight
 
 step
     #include ab) Order Hall Death Knight Part 1
@@ -6773,7 +6773,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
-<< Death Knight
+<< DeathKnight
 
 step
     #include ac) Order Hall Death Knight Part 2

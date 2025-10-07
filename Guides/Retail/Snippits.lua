@@ -894,6 +894,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
 #next ac) Order Hall Death Knight
@@ -1129,6 +1130,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Death Knight
@@ -1334,6 +1336,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next ac) Order Hall Death Knight
@@ -1629,7 +1632,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Death Knight Part 2
 
-<< Death Knight
+<< DeathKnight
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Death Knight Part 1
@@ -1644,7 +1647,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Death Knight
 
-<< Death Knight
+<< DeathKnight
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Death Knight Part 2
