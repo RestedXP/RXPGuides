@@ -4282,11 +4282,6 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
 step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
     #optional
     .isNotOnQuest 39718
@@ -4309,26 +4304,26 @@ step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
     .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2 >>Order Hall Intro 2 << Priest
     .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2 >>Order Hall Intro 2 << Shaman
     .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2 >>Order Hall Intro 2 << Warlock
-step
+step << Warrior
     #optional
     .isQuestAvailable 40579
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+-- step
+--     #optional
+--     .isQuestAvailable 40579
+--     +|cRXP_WARN_You have to do the previous chapter first|r
+--     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
 -- step
 --     #optional
 --     .isQuestAvailable 40579
