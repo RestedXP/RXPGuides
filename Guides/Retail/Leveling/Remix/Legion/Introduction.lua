@@ -4179,6 +4179,7 @@ step
     .accept 91955 >>Accept Just Between Us
     .target Momentus
 step
+    .isQuestComplete 91955
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 91955 >>Turn in Just Between Us
     .goto 619,45.83,67.98
