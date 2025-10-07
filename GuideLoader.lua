@@ -833,7 +833,7 @@ local function parseLine(linetext,step,parsingLogic)
         -- else
         -- error('Error parsing guide at line '..linenumber..'/ '..guide.name)
     end
-    if element and (text and not element.textOnly or element.dynamicText) then
+    if element and (element.text and not element.textOnly or element.dynamicText) then
         addon.lastObjective = element
     end
 
