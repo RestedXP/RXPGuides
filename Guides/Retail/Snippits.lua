@@ -3273,6 +3273,10 @@ step
     .complete 40647,1 --1/1 Enter the Emerald Dream
     .use 136414
 step
+    .isOnQuest 40647
+    .goto 116,51.25,36.85
+    .enterScenario 990 >>Enter the |cRXP_PICK_Ursoc's Lair|r scenario.
+step
     .isInScenario 990
     .goto 757,47.23,81.67,25,0
     .goto 757,48.72,51.65
