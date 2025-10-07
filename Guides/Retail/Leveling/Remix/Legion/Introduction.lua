@@ -2109,27 +2109,8 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>Hunter Order Hall Intro 1
 step
-    .goto 627,66.03,45.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
-    .accept 40952 >>Accept Hunter to Hunter
-    .target Vereesa Windrunner
-step
-    #completewith next
-    #label HunterToHunterA
+    .goto 627,60.05,53.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
-    .turnin 40952 >>Turn in Hunter to Hunter
-    .accept 40953 >>Accept On Eagle's Wings
-    .target Emmarel Shadewarden
-step
-    --TODO: Title Color
-    #title |cFFFCDC00Enter House|r
-    #completewith HunterToHunterA
-    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
-step
-    #requires HunterToHunterA
-    .goto 627,60.06,53.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
-    .turnin 40952 >>Turn in Hunter to Hunter
     .accept 40953 >>Accept On Eagle's Wings
     .target Emmarel Shadewarden
 step

@@ -3202,7 +3202,7 @@ step
 step
     .goto 116,50.29,37.96,25,0
     .goto 116,50.98,37.10
-    >>|cRXP_WARN_Follow the arrow|r    
+    >>|cRXP_WARN_Follow the arrow|r
     .complete 41782,4 --1/1 Locate Lea Stonepaw
 step
     .goto 116,51.28,36.83
@@ -3836,11 +3836,357 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
+    .isQuestTurnedIn 44043
+    .isQuestAvailable 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 44366 >>Accept One Last Adventure
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 44366
+    .isOnQuest 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Beast Mastery artifact|r
+    .complete 44366,1 --1/1 Choose a third artifact to pursue
+    .choose 1390106
+    .target Emmarel Shadewarden
+    .skipgossipid 45112
+step
+    .isQuestAvailable 44366
+    .isOnQuest 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 44366 >>Turn in One Last Adventure
+    .target Emmarel Shadewarden
+step
+    .isQuestTurnedIn 40618
+    .isQuestAvailable 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 44043 >>Accept Continuing the Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 44043
+    .isOnQuest 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Beast Mastery artifact|r
+    .complete 44043,1 --1/1 Choose a second artifact to pursue
+    .choose 1390106
+    .target Emmarel Shadewarden
+    .skipgossipid 46492
+step
+    .isQuestAvailable 44043
+    .isOnQuest 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 44043 >>Turn in Continuing the Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .isOnQuest 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Beast Mastery artifact|r
+    .complete 40618,1 --1/1 Artifact chosen
+    .choose 1390106
+    .target Emmarel Shadewarden
+    .skipgossipid 44968
+step
+    .isQuestAvailable 40618
+    .isOnQuest 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40618 >>Turn in Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    #optional
+    .isQuestTurnedIn 40959
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 41541 >>Accept A Beastly Expedition
+    .target Emmarel Shadewarden
+step
+    .goto 627,60.03,53.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 41541 >>Accept A Beastly Expedition
+    .target Emmarel Shadewarden
+step
+    .isQuestTurnedIn 40959
+    .isOnQuest 41541
+    .goto 739,48.66,43.46
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
+step
+    .goto 627,71.39,50.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
+    .turnin 41541 >>Turn in A Beastly Expedition
+    .accept 41574 >>Accept Stolen Thunder
+    .target Grif Wildheart
+step
+    #completewith next
+    #hidewindow
+    .vehicle 106236 >>1
+    .timer 65,Flight Duration
+step
+    .goto 627,71.22,51.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Huey|r.
+    .complete 41574,1 --1/1 Fly with Grif to Shield's Rest
+    .target Huey
+step
+    #completewith next
+    #hidewindow
+    .goto 634,85.40,9.66
+    .gossipoption 45594 >>1
+    .timer 71,Grif Roleplay
+step
+    .goto 634,84.90,9.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
+    .scenario 2291,1 --1/1 Meet Prustaga with Grif.
+    .target Grif Wildheart
+    .skipgossipid 45594
+step
+    #title Dodge the small tornadoes
+    .isInScenario 1068
+    .goto 635,75.26,58.95,10,0
+    .goto 635,52.67,52.30
+    >>|cRXP_WARN_Follow the arrow into the tomb.|r
+    >>Kill |cRXP_ENEMY_Stormweaver Ingrida|r, and |cRXP_ENEMY_Spectral Windshaper|r.
+    .scenario 2300,1 --Find Warlord Volund's tomb.
+    .mob Stormweaver Ingrida
+    .mob Spectral Windshaper
+step
+    .isInScenario 1068
+    .goto 635,55.02,43.84
+    >>Kill the waves of |cRXP_ENEMY_Restless Tombguards|r and |cRXP_ENEMY_Disturbed Trackers|r.
+    .scenario 2301,1 --Protect Prustaga as she opens Volund's tomb.
+    .timer 131,Roleplay Duration
+    .mob Restless Tombguard
+    .mob Disturbed Tracker
+    .mob Disturbed Worg
+step
+    .isInScenario 1068
+    .goto 635,58.06,19.20
+    >>Kill the |cRXP_ENEMY_Automated Crusher|r. |cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2298,1 --Search for Titanstrike.
+    .mob Automated Crusher
+step
+    .isInScenario 1068
+    .goto 635,58.27,17.73
+    >>Kill |cRXP_ENEMY_Warlord Volund|r. |cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2423,1 --Defeat Warlord Volund.
+    .mob Warlord Volund
+step
+    .isInScenario 1068
+    .goto 635,58.25,17.71
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Teleportation Pad|r.
+    .scenario 2424,1 --Join Keeper Mimiron in Ulduar.
+    .complete 41574,2 --Track down Titanstrike: 1/1
+step
+    #title Avoid the bombs
+    .goto 745,44.93,37.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mimiron|r.
+    .turnin 41574 >>Turn in Stolen Thunder
+    .accept 42158 >>Accept The Creator's Workshop
+    .target Mimiron
+step
+    #completewith TheCreatorsWorkshopI
+    #label TheCreatorsWorkshopA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mimiron|r.
+    .complete 42158,1 --1/1 Mimiron assisted
+    .target Mimiron
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopB
+    .goto 745,44.93,37.33
+    .gossipoption 45357 >>Talk to |cRXP_FRIENDLY_Mimiron|r.
+    .timer 50,First Emergency
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #title Control Panel (1/2)
+    #requires TheCreatorsWorkshopB
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopC
+    #title Jump over the waves
+    .goto 745,40.46,41.42
+    .cast 6477 >>Click on the |cRXP_PICK_Control Panel|r.
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #title Control Panel (2/2)
+    #requires TheCreatorsWorkshopC
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopD
+    #title Jump over the waves
+    #loop
+    .goto 745,40.46,41.42,8,0
+    .goto 745,41.44,44.14,8,0
+    .cast 6477 >>Click on the |cRXP_PICK_Control Panel|r.
+    .timer 14,Second Emergency
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #title Stabilization Node (1/4)
+    #requires TheCreatorsWorkshopD
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopE
+    .goto 745,45.50,43.96
+    .cast 6477 >>Click on the |cRXP_PICK_Stabilization Matrix Nodes|r.
+step
+    #requires TheCreatorsWorkshopE
+    #completewith TheCreatorsWorkshopH
+    #hidewindow
+    #loop
+    .goto 745,44.84,42.86,8,0
+    .goto 745,45.49,41.13,8,0
+    .goto 745,46.52,41.41,8,0
+    .goto 745,45.50,43.96,8,0
     +1
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #title Stabilization Node (2/4)
+    #requires TheCreatorsWorkshopE
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopF
+    .cast 6477 >>Click on the |cRXP_PICK_Stabilization Matrix Nodes|r.
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #title Stabilization Node (3/4)
+    #requires TheCreatorsWorkshopF
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopG
+    .cast 6477 >>Click on the |cRXP_PICK_Stabilization Matrix Nodes|r.
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #title Stabilization Node (4/4)
+    #requires TheCreatorsWorkshopG
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopH
+    .cast 6477 >>Click on the |cRXP_PICK_Stabilization Matrix Nodes|r.
+    .timer 25,Last Emergency
+step
+    .isOnQuest 42158
+    .isQuestNotComplete 42158
+    #requires TheCreatorsWorkshopH
+    #completewith TheCreatorsWorkshopA
+    #label TheCreatorsWorkshopI
+    .goto 745,43.65,36.37
+    .cast 6477 >>Click on |cRXP_PICK_DO NOT PUSH THIS BUTTON!|r.
+    .timer 27,Quest Completion in
+step
+    #requires TheCreatorsWorkshopA
+    .goto 745,43.66,38.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mimiron|r.
+    .complete 42158,1 --1/1 Mimiron assisted
+    .target Mimiron
+    .skipgossipid 45357
+step
+    .goto 745,43.66,38.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mimiron|r.
+    .turnin 42158 >>Turn in The Creator's Workshop
+    .accept 42185 >>Accept Never Hunt Alone
+    .target Mimiron
+step
+    .isOnQuest 42185
+    .isQuestNotComplete 42185
+    .zoneskip 745,1
+    .goto 745,43.73,37.94
+    .zone 120 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Teleportation Pad|r.
+step
+    .isOnQuest 42185
+    .isQuestNotComplete 42185
+    .goto 120,25.73,47.51
+    .enterScenario 1099 >>Fly to the |cRXP_PICK_Never Hunt Alone|r scenario.
+    .timer 33,Roleplay
+step
+    .isInScenario 1099
+    #title Move once to start the roleplay
+    .goto 120,25.78,47.70
+    >>|cRXP_WARN_Wait for the roleplay.|r
+    .scenario 2452,1 --Converse with Thorim.
+step
+    .isInScenario 1099
+    .goto 120,25.90,48.55
+    >>Kill the |cRXP_ENEMY_Thunderous Proto-Drakes|r and |cRXP_ENEMY_Fervent Stormcaller|r.
+    .scenario 2474,1 --Fend off the vrykul horde.
+    .mob Thunderous Proto-Drake
+    .mob Fervant Stormcaller
+step
+    .goto 120,25.74,47.38
+    .isInScenario 1099
+    >>Kill |cRXP_ENEMY_Prustaga|r.
+    .scenario 2480,1 --Defeat Prustaga.
+    .timer 73,Roleplay
+    .mob Prustaga
+step
+    .isInScenario 1099
+    .goto 120,25.74,47.38
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Hati|r.
+    .scenario 2481,1 --Bind Hati's spirit to your own.
+    .target Hati
+step
+    .isInScenario 1099
+    .goto 120,25.74,47.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Titanstrike|r.
+    .scenario 2482,1 --Wield Titanstrike.
+    .complete 42185,2 --1/1 Titanstrike recovered
+    .timer 65,Wait for Huey
+step
+    .isInScenario 1099
+    .goto 120,26.05,47.39
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Huey|r after the roleplay.
+    .scenario 2483,1 --Ride Huey to return to Dalaran.
+    .timer 36,Flight Duration
+step
+    .isQuestTurnedIn 40959
+    .goto 627,69.68,43.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
+    .turnin 42185 >>Turn in Never Hunt Alone
+    .target Grif Wildheart
+step
+    .isQuestAvailable 40959
+    .goto 627,69.68,43.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
+    .turnin 42185 >>Turn in Never Hunt Alone
+    .accept 41009 >>Accept Hunter to Hunter
+    .target Grif Wildheart
+step
+    .isQuestAvailable 40959
+    #completewith next
+    #label HunterToHunterBMA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 41009 >>Turn in Hunter to Hunter
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40959
+    --TODO: Title Color
+    #title |cRXP_WARN_Enter House|r
+    #completewith HunterToHunterBMA
+    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    .isQuestAvailable 40959
+    #requires HunterToHunterBMA
+    .goto 627,60.06,53.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 41009 >>Turn in Hunter to Hunter
+    .target Emmarel Shadewarden
 ]])
 --Beast Mastery 2
 RXPGuides.RegisterGuide([[
 #retail
+#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Beast Mastery
@@ -3866,57 +4212,53 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .goto 702,51.61,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
-    .accept 44407 >>Accept The Third Legend
-    .target Alonsus Faol
+    .isQuestTurnedIn 44043
+    .isQuestAvailable 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 44366 >>Accept One Last Adventure
+    .target Emmarel Shadewarden
 step
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
-    .goto 702,51.61,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
-    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
-    .complete 44407,1 --1/1 Artifact chosen (3rd)
-    .choose 1389392
-    .target Alonsus Faol
+    .isQuestAvailable 44366
+    .isOnQuest 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Marksmanship artifact|r
+    .complete 44366,1 --1/1 Choose a third artifact to pursue
+    .choose 1390107
+    .target Emmarel Shadewarden
     .skipgossipid 45112
 step
-    .isQuestTurnedIn 43935
-    .isQuestAvailable 44407
-    .isOnQuest 44407
-    .goto 702,51.61,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
-    .turnin 44407 >>Turn in The Third Legend
-    .target Alonsus Faol
+    .isQuestAvailable 44366
+    .isOnQuest 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 44366 >>Turn in One Last Adventure
+    .target Emmarel Shadewarden
 step
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .goto 702,51.61,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
-    .accept 43935 >>Accept A Second Legend
-    .target Alonsus Faol
+    .isQuestTurnedIn 40618
+    .isQuestAvailable 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 44043 >>Accept Continuing the Legend
+    .target Emmarel Shadewarden
 step
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
-    .goto 702,51.61,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
-    *|cRXP_WARN_This will automatically pick the Discipline artifact|r
-    .complete 43935,1 --1/1 Artifact chosen (2nd)
-    .choose 1389392
-    .target Alonsus Faol
-    .skipgossipid 45111
+    .isQuestAvailable 44043
+    .isOnQuest 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Marksmanship artifact|r
+    .complete 44043,1 --1/1 Choose a second artifact to pursue
+    .choose 1390107
+    .target Emmarel Shadewarden
+    .skipgossipid 46492
 step
-    .isQuestTurnedIn 40706
-    .isQuestAvailable 43935
-    .isOnQuest 43935
-    .goto 702,51.61,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
-    .turnin 43935 >>Turn in A Second Legend
-    .target Alonsus Faol
+    .isQuestAvailable 44043
+    .isOnQuest 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 44043 >>Turn in Continuing the Legend
+    .target Emmarel Shadewarden
 step
     .isQuestAvailable 40618
     .goto 627,60.05,53.49
@@ -3943,6 +4285,7 @@ step
 step
     #optional
     .isQuestTurnedIn 40959
+    .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 41540 >>Accept Rendezvous with the Courier
     .target Emmarel Shadewarden
@@ -3952,6 +4295,11 @@ step
     .accept 41540 >>Accept Rendezvous with the Courier
     .target Emmarel Shadewarden
 step
+    .isQuestTurnedIn 40959
+    .isOnQuest 41540
+    .goto 739,48.66,43.46
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
+step
     #completewith next
     #label RendezvousWithTheCourierA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Larkspur|r.
@@ -3959,6 +4307,7 @@ step
     .accept 40392 >>Accept Call of the Marksman
     .target Courier Larkspur
 step
+    .isQuestAvailable 40959
     .zoneskip 627,1
     --TODO: Title Color
     #title Leave the house
@@ -4062,7 +4411,6 @@ step
     #hidewindow
     .goto 714,69.98,59.65,20,0
     .goto 714,71.47,73.66,20 >>1
-    .timer 
 step
     .isInScenario 972
     .goto 714,71.47,73.66
@@ -4086,7 +4434,25 @@ step
     .goto 627,66.03,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
     .turnin 40419 >>Turn in Rescue Mission
+    .accept 40952 >>Accept Hunter to Hunter
     .target Vereesa Windrunner
+step
+    #completewith next
+    #label HunterToHunterA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40952 >>Turn in Hunter to Hunter
+    .target Emmarel Shadewarden
+step
+    --TODO: Title Color
+    #title |cRXP_WARN_Enter House|r
+    #completewith HunterToHunterA
+    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires HunterToHunterA
+    .goto 627,60.06,53.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40952 >>Turn in Hunter to Hunter
+    .target Emmarel Shadewarden
 ]])
 --Marksmanship 2
 RXPGuides.RegisterGuide([[}
@@ -4117,7 +4483,275 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    +1
+    .isQuestTurnedIn 44043
+    .isQuestAvailable 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 44366 >>Accept One Last Adventure
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 44366
+    .isOnQuest 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Survival artifact|r
+    .complete 44366,1 --1/1 Choose a third artifact to pursue
+    .choose 1390108
+    .target Emmarel Shadewarden
+    .skipgossipid 45112
+step
+    .isQuestAvailable 44366
+    .isOnQuest 44366
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 44366 >>Turn in One Last Adventure
+    .target Emmarel Shadewarden
+step
+    .isQuestTurnedIn 40618
+    .isQuestAvailable 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 44043 >>Accept Continuing the Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 44043
+    .isOnQuest 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Survival artifact|r
+    .complete 44043,1 --1/1 Choose a second artifact to pursue
+    .choose 1390108
+    .target Emmarel Shadewarden
+    .skipgossipid 46492
+step
+    .isQuestAvailable 44043
+    .isOnQuest 44043
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 44043 >>Turn in Continuing the Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .isOnQuest 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    *|cRXP_WARN_This will automatically pick the Survival artifact|r
+    .complete 40618,1 --1/1 Artifact chosen
+    .choose 1390108
+    .target Emmarel Shadewarden
+    .skipgossipid 44968
+step
+    .isQuestAvailable 40618
+    .isOnQuest 40618
+    .goto 627,60.05,53.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40618 >>Turn in Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    #optional
+    .isQuestTurnedIn 40959
+    .goto 739,43.38,26.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 41542 >>Accept Preparation for the Hunt
+    .target Emmarel Shadewarden
+step
+    .goto 627,60.04,53.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 41542 >>Accept Preparation for the Hunt
+    .target Emmarel Shadewarden
+step
+    .isQuestTurnedIn 40959
+    .isOnQuest 41542
+    .goto 739,48.66,43.46
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
+step
+    .goto 627,71.11,50.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
+    .turnin 41542 >>Turn in Preparation for the Hunt
+    .accept 39427 >>Accept The Eagle Spirit's Blessing
+    .target Apata Highmountain
+step
+    .goto 627,71.74,50.28
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Highmountain Hippogryph|r.
+    .complete 39427,1 --1/1 Fly to Spiritwatch Point
+    .target Highmountain Hippogryph
+    --.timer 107,Flight Duration
+step
+    .goto 650,59.53,81.22
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 39427,2 --1/1 Get back to Spiritwatch Point
+step
+    .goto 650,58.91,81.14
+    >>Kill |cRXP_ENEMY_Degar Bloodtotem|r.
+    .complete 39427,3 --1/1 Kill Degar Bloodtotem
+step
+    .goto 650,60.82,80.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Ohn'ahra|r.
+    .complete 39427,4 --1/1 Receive the Eagle Spirit's blessing
+    .target Ohn'ahra
+step
+    .goto 650,60.79,80.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
+    .turnin 39427 >>Turn in The Eagle Spirit's Blessing
+    .accept 40385 >>Accept The Spear in the Shadow
+    .target Apata Highmountain
+step
+    .goto 650,60.82,80.83
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Ohn'ahra|r.
+    .complete 40385,1 --1/1 Take the Eagle Spirit flight to the harbor
+    .target Ohn'ahra
+step
+    .isOnQuest 40385
+    .goto 650,60.82,80.83
+    .enterScenario 973 >>Enter the |cRXP_PICK_The Spear in the Shadow|r.
+step
+    #completewith next
+    #hidewindow
+    .gossipoption 45080 >>1
+    .timer 27,Apata Roleplay
+step
+    .isInScenario 973
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata at the landing site.|r.
+    .scenario 1965,1 --Speak with Apata at the landing site.
+    .target Apata at the landing site.
+    .skipgossipid 45080
+step
+    .isInScenario 973
+    .goto 694,56.83,46.24
+    >>|cRXP_WARN_Follow the arrow.|r
+    .scenario 1967,1 --Investigate Tideskorn Harbor
+step
+    .isInScenario 973
+    .goto 634,57.51,46.48
+    >>Kill the |cRXP_ENEMY_Mist Warder|r or use your |T135834:0|t[Freezing Trap] on the |cRXP_ENEMY_Mist Warder|r.
+    .scenario 1968,1 --Defeat the Mist Warder using your Freezing Trap.
+    .mob Mist Warder
+    .usespell 187650
+step
+    .isInScenario 973
+    .goto 634,57.61,46.37
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runic Wardstone|r.
+    .scenario 2055,1 --Obtain the Activated Wardstone
+step
+    .isInScenario 973
+    #title Wardstone (1/3)
+    .goto 634,58.96,46.69,24,0
+    .goto 634,58.80,44.93
+    >>Kill the |cRXP_ENEMY_Mist Warder|r or use your |T135834:0|t[Freezing Trap] on the |cRXP_ENEMY_Mist Warder|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runic Wardstone|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .scenario 1969,1,1 --1/3 Obtain more Activated Wardstones
+step
+    .isInScenario 973
+    #title Wardstone (2/3)
+    .goto 634,58.62,43.48
+    >>Kill the |cRXP_ENEMY_Mist Warder|r or use your |T135834:0|t[Freezing Trap] on the |cRXP_ENEMY_Mist Warder|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runic Wardstone|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .scenario 1969,1,2 --2/3 Obtain more Activated Wardstones
+step
+    .isInScenario 973
+    #title Wardstone (3/3)
+    .goto 634,60.01,43.75
+    >>Kill the |cRXP_ENEMY_Mist Warder|r or use your |T135834:0|t[Freezing Trap] on the |cRXP_ENEMY_Mist Warder|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Runic Wardstone|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .scenario 1969,1 --3/3 Obtain more Activated Wardstones
+step
+    #completewith next
+    #hidewindow
+    .gossipoption 44907 >>1
+    .timer 13,Apata Roleplay
+step
+    .isInScenario 973
+    .goto 634,55.32,42.45,-1
+    .goto 694,55.32,42.45,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
+    .scenario 1970,1 --Speak with Apata
+    .target Apata Highmountain
+    .skipgossipid 44906
+    .skipgossipid 44907
+step
+    .isInScenario 973
+    .goto 694,55.44,42.54
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Magic Harpoon|r.
+    .scenario 1971,1 --Use the harpoon to cross the fog.
+    .timer 20,Roleplay
+step
+    .isInScenario 973
+    .goto 694,55.95,40.44
+    >>Use |T135815:0|t[Flare] and kill the |cRXP_ENEMY_Illusory Stalkers|r.
+    .scenario 1976,1 --Use Flare to reveal and defeat the illusions.
+    .mob Illusory Stalker
+    .usespell 1543
+step
+    .isInScenario 973
+    .goto 694,54.91,39.35
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mist Trap|r.
+    >>Kill the |cRXP_ENEMY_Illusory Stalkers|r and |cRXP_ENEMY_Dakarr|r.
+    .scenario 1977,1 --Place a trap in the mists to catch Dakarr.
+    .mob Dakarr
+    .mob Illusory Stalker
+step
+    .isInScenario 973
+    .goto 694,57.40,37.42
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mist Trap|r.
+    >>Kill the |cRXP_ENEMY_Illusory Stalkers|r and |cRXP_ENEMY_Dakarr|r.
+    .scenario 1985,1 --Trap Dakarr in the mist lair.
+    .mob Dakarr
+    .mob Illusory Stalker
+step
+    #completewith next
+    #label SlayDakarrA
+    .isInScenario 973
+    >>Kill |cRXP_ENEMY_Dakarr|r.
+    .scenario 1986,1 --Slay Dakarr.
+    .mob Dakarr
+step
+    --TODO: Title Color
+    #title Enter the cave
+    #completewith SlayDakarrA
+    .goto 694,57.88,34.53,8 >>|cRXP_WARN_Follow the arrow into the cave.|r
+step
+    #requires SlayDakarrA
+    .isInScenario 973
+    .goto 694,58.52,33.73
+    >>Kill |cRXP_ENEMY_Dakarr|r.
+    .scenario 1986,1 --Slay Dakarr.
+    .mob Dakarr
+step
+    .isInScenario 973
+    .goto 694,58.49,33.57
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Talonclaw|r.
+    .scenario 1987,1 --Take Talonclaw.
+    .complete 40385,2 --1/1 Slay the Highmountain's Bane and reclaim Talonclaw
+step
+    .goto 694,58.58,33.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r.
+    .complete 40385,3 --1/1 Return to Dalaran
+step
+    #completewith next
+    #label TheSpearInTheShadowA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40385 >>Turn in The Spear in the Shadow
+    .target Emmarel Shadewarden
+step
+    --TODO: Title Color
+    #title |cRXP_WARN_Enter House|r
+    #completewith TheSpearInTheShadowA
+    .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
+step
+    #requires TheSpearInTheShadowA
+    .goto 627,60.05,53.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .turnin 40385 >>Turn in The Spear in the Shadow
+    .target Emmarel Shadewarden
 ]])
 --Survival 2
 RXPGuides.RegisterGuide([[}
