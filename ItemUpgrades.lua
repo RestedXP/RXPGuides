@@ -647,17 +647,55 @@ local function RXP_IsItemUpgrade(itemLink)
     return false
 end
 
--- Create or reuse upgrade icon texture on bag button
+-- --- Add this helper near your other locals ---
+local function RXP_GetOrCreateOverlay(btn)
+    -- Create (or reuse) a child frame that always stays above the button's content,
+    -- regardless of which bag addon created the button.
+    if btn.RXPOverlay then return btn.RXPOverlay end
+
+    local f = CreateFrame("Frame", nil, btn)
+    f:SetAllPoints(btn)
+    -- Keep same strata as the button, but bump the frame level
+    f:SetFrameStrata(btn:GetFrameStrata() or "MEDIUM")
+    f:SetFrameLevel((btn:GetFrameLevel() or 0) + 50)
+
+    -- If the bag addon later changes the button's level, keep ours on top
+    if btn.HookScript then
+        btn:HookScript("OnShow", function(b)
+            f:SetFrameStrata(b:GetFrameStrata() or "MEDIUM")
+            f:SetFrameLevel((b:GetFrameLevel() or 0) + 50)
+        end)
+        btn:HookScript("OnSizeChanged", function() f:SetAllPoints(btn) end)
+    end
+    if btn.SetFrameLevel then
+        hooksecurefunc(btn, "SetFrameLevel", function(b, lvl)
+            f:SetFrameLevel((lvl or 0) + 50)
+        end)
+    end
+
+    btn.RXPOverlay = f
+    return f
+end
+
+-- --- Replace your RXP_GetOrCreateUpgradeIcon with this version ---
 local function RXP_GetOrCreateUpgradeIcon(btn)
-    if btn.RXPUpgradeIcon then return btn.RXPUpgradeIcon end
-    local t = btn:CreateTexture(nil, "OVERLAY")
+    if btn.RXPUpgradeIcon and btn.RXPUpgradeIcon:IsObjectType("Texture") then
+        return btn.RXPUpgradeIcon
+    end
+
+    -- Create the texture on our elevated overlay frame, not directly on the button
+    local overlay = RXP_GetOrCreateOverlay(btn)
+    local t = overlay:CreateTexture(nil, "OVERLAY", nil, 7) -- sublevel gives extra safety
     t:SetTexture(RXP_UPGRADE_ICON)
     t:SetSize(18, 18)
+    t:ClearAllPoints()
     t:SetPoint("BOTTOMLEFT", btn, "BOTTOMLEFT", 1, 1)
     t:Hide()
+
     btn.RXPUpgradeIcon = t
     return t
 end
+
 
 -- Update one bag button
 local function RXP_UpdateBagButton(btn)
