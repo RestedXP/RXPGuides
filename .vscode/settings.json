@@ -62,6 +62,20 @@
         "MerchantFrame",
         "CharacterBag0Slot",
         "INVENTORY_FULL",
-        "LootFrame"
+        "LootFrame",
+        "ExtraActionButton1",
+        "QuestInfo_GetRewardButton",
+        "QuestInfoFrame",
+        "StaticPopup_Show",
+        "ITEM_LEVEL_RANGE_CURRENT",
+        "POWER_TYPE_EXPERIENCE",
+        "WorldMapFrame",
+        "ADDON_ACTION_FORBIDDEN",
+        "SOUNDKIT",
+        "LE_PET_JOURNAL_FILTER_COLLECTED",
+        "LE_PET_JOURNAL_FILTER_NOT_COLLECTED",
+        "QuestUtils_IsQuestWorldQuest",
+        "MapUtil",
+        "GameTooltipTextLeft1"
     ],
 }
