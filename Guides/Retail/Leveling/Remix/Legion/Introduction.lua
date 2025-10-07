@@ -4825,6 +4825,9 @@ step
 step
     .goto 627,72.47,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
+    *You can turn off heroic mode at any time if its too challenging using Temporal Retreat in your spellbook
+    *You can collect an additional quest in the broken shore at any time by flying into the demons in the sky only do this if it's convenient.
+    --remove later bandaid fix
     .complete 41220,1 --1/1 Fly down with Khadgar
     .timer 83,Flight Duration
     .target Archmage Khadgar
