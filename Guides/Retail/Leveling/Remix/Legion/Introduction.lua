@@ -794,6 +794,7 @@ step
     .goto 627,31.57,49.39,20 >>Enter the Violet Hold
 step
     #requires The Legion Returns
+    #label Intro
     .goto 627,30.26,51.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
     .accept 40519 >>Accept Legion: The Legion Returns
@@ -820,7 +821,6 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 89418,1 --1/1 Fly with Moratari to Krasus' Landing
 step
-    #label Intro
     .goto 627,72.04,41.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .turnin 89418 >>Turn in A Fixed Point in Time
@@ -1769,6 +1769,7 @@ step
     .accept 42671 >>Accept Rise, Champions
     .target Battlelord Gaardoun
 step
+    #label Asha Ravensong
     .goto 720,58.62,57.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .accept 42695 >>Accept Champion: Kayn Sunfury
@@ -1776,7 +1777,6 @@ step
     .complete 42671,1 --Kayn Sunfury recruited
     .target Kayn Sunfury
 step
-    #label Asha Ravensong
     .goto 720,56.18,38.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asha Ravensong|r
     .accept 42697 >>Accept Champion: Asha Ravensong
@@ -2409,11 +2409,6 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #optional
-    .isQuestAvailable 41085
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
-step
     #completewith Champion: Archmage Modera
     #hidewindow
     +test
@@ -2449,6 +2444,11 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
+step
+    #optional
+    .isQuestAvailable 41085
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
 step
     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
     .accept 41114 >>Accept The Champion's Return
@@ -2677,13 +2677,13 @@ step
     .skipgossipid 45835
     .target Orik Trueheart
 step
+    #label Order Hall Paladin Part 1
     .goto 627,74.92,48.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38710 >>Turn in An Urgent Gathering
     .target Lord Maxwell Tyrosus
     .accept 40408 >>Accept Weapons of Legend
 step
-    #label Order Hall Paladin Part 1
     .isQuestAvailable 40408
     .goto 627,74.92,48.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -2861,6 +2861,7 @@ step
     .accept 42846 >>Accept The Blood Matriarch
     .target Lord Maxwell Tyrosus
 step
+    #label Order Hall Paladin Part 2
     .goto 24,38.22,64.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
     .accept 42881 >>Accept Champion: Lady Liadrin
@@ -2868,7 +2869,6 @@ step
     .target Lady Liadrin
     .complete 42846,1 --1/1 Enlist Lady Liadrin
 step
-    #label Order Hall Paladin Part 2
     .isOnQuest 42846
     .goto 24,37.79,63.92
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
@@ -3150,13 +3150,13 @@ step
     .target Lord Jorach Ravenholdt
     .accept 40840 >>Accept A Worthy Blade
 step
+    #label Order Hall Rogue Part 1
     .isQuestAvailable 40840
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .target Lord Jorach Ravenholdt
     .accept 40840 >>Accept A Worthy Blade
 step
-    #label Order Hall Rogue Part 1
     .isOnQuest 40840
     .goto 626,41.7,75.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r, |cRXP_FRIENDLY_Valeera Sanguinar|r,  and  |cRXP_FRIENDLY_Princess Tess Greymane|r.
@@ -3324,6 +3324,7 @@ step
     .acceptmap 39718
     .accept 39718 >>Accept The Tranquil Forest
 step
+    #label Order Hall Rogue Part 2
     .goto 626,37.79,44.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .turnin 40997 >>Turn in Lethal Efficiency
@@ -3335,7 +3336,6 @@ step
 --     .goto 626,3.02,83.45,10,0
 --     .goto 627,20.06,80.96,10 >>Leave the Sewer
 step
-    #label Order Hall Rogue Part 2
     .goto 626,39.68,21.33
     .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
 ]])
@@ -3911,13 +3911,13 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .complete 39654,2 --1/1 Go to the Great Mead Hall
 step 
+    #label Order Hall Warrior Part 1
     .goto 695,58.33,84.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 39654 >>Turn in Odyn and the Valarjar
     .accept 40579 >>Accept Weapons of Legend
     .target Odyn
 step
-    #label Order Hall Warrior Part 1
     .isQuestAvailable 40579
     .goto 695,58.33,84.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
@@ -3985,7 +3985,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #completewith Champion: Archmage Modera
+    #completewith Accept The Eye of Odyn
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -4087,6 +4087,7 @@ step
     .goto 695,61.44,37.76,10 >>1
 step
     #requires Finna Bjornsdottir
+    #label Accept The Eye of Odyn
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Finna Bjornsdottir|r and |cRXP_FRIENDLY_Ragnvald Drakeborn|r.
     .turnin 42606 >>Turn in Champion: Finna Bjornsdottir
     .complete 42598,2 --1/1 Recruit Finna Bjornsdottir
@@ -4240,6 +4241,7 @@ step
     .target Eternus
 step
     #requires Infinite Chaos
+    #label Heroic World Tier
     .goto 619,45.57,68.48,20,0
     .goto 619,45.69,68.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
@@ -4247,7 +4249,6 @@ step
     .accept 91061 >>Accept Infinite Chaos
     .target Eternus
 step
-    #label Heroic World Tier
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier

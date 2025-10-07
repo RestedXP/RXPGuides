@@ -5952,6 +5952,7 @@ step
     .mob Lord Korthis
 step
     .isInScenario 1137
+    #label Artifact Weapon: Brewmaster
     .goto 791,69.73,60.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     *|cRXP_WARN_More accurate arrow is not possible|r.
@@ -5982,7 +5983,6 @@ step
     .isInScenario 1137
     .target Yu'lon
 step
-    #label Artifact Weapon: Brewmaster
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 42765 >>Turn in The Trial at the Temple
@@ -6214,6 +6214,7 @@ step
     .scenario 2131,2
     .mob Aspersius
 step
+    #label Artifact Weapon: Mistweaver
     .goto 728,39.21,48.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .complete 41003,2 --1/1 Acquire Sheilun
@@ -6238,7 +6239,6 @@ step
     .goto 709,49.76,47.48,15 >>Enter the Temple
 step
     #requires The Emperor's Gift
-    #label Artifact Weapon: Mistweaver
     .goto 709,51.40,48.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .turnin 41003 >>Turn in The Emperor's Gift
@@ -6613,6 +6613,7 @@ step
 step
     .isInScenario 983
     .goto 716,35.76,82.93
+    #label Artifact Weapon: Windwalker
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists|r
     .complete 40570,2 --1/1 Obtain the Fists of the Heavens
     .scenario 2011,1
@@ -6630,7 +6631,6 @@ step
     .timer 28,RP
 step
     #requires Into The Heavens1
-    #label Artifact Weapon: Windwalker
     .goto 709,49.11,58.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
     .turnin 40570 >>Turn in Into The Heavens
@@ -7140,6 +7140,7 @@ step
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
 step
     .isQuestAvailable 44370,44063
+    #label Artifact Weapon: Holy Paladin
     .goto 627,71.83,45.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42120 >>Turn in The Silver Hand
@@ -7157,7 +7158,6 @@ step << Alliance
     .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     .isQuestTurnedIn 44370,44063
-    #label Artifact Weapon: Holy Paladin
     .goto 24,49.86,72.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42120 >>Turn in The Silver Hand
@@ -7190,7 +7190,6 @@ step << Alliance
     .goto 24,63.15,37.22,40 >>1
 step << Alliance
     #requires A United Force
-    #label Artifact Weapon: Holy Paladin
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
@@ -7552,6 +7551,7 @@ step
     .scenario 2395,1 --Take up Truthguard.
     .complete 42017,2 --1/1 Claim the Truthguard
 step
+    #label Artifact Weapon: Paladin Protection
     .goto 627,71.74,45.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_in Dalaran|r.
     .turnin 42017 >>Turn in Shrine of the Truthguard
@@ -7606,7 +7606,6 @@ step
     .goto 24,63.15,37.22,40 >>1
 step
     #requires A United Force
-    #label Artifact Weapon: Paladin Protection
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
@@ -7982,6 +7981,7 @@ step
     .goto 24,40.06,92.46,10 >>Enter the Chapel
 step
     #requires Chapel
+    #label Artifact Weapon: Retribution
     .goto 24,41.52,90.27
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Secret Door|r
     .complete 42811,2 --1/1 Enter Light's Hope Sanctum
@@ -7999,7 +7999,6 @@ step
     .goto 24,63.20,37.34,40 >>Follow the Arrow
 step
     #requires Light's Hope
-    #label Artifact Weapon: Retribution
     .goto 24,63.20,37.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 42811 >>Turn in We Meet at Light's Hope
@@ -9497,6 +9496,7 @@ step
     .target Garona Halforcen
 step
     #completewith Hall of Shadows
+    #label Artifact Weapon: Assassination
     .goto 627,46.57,26.96,5,0
     .goto 627,46.62,25.77
     #title |cFFFCDC00Enter Forge|r
@@ -9518,7 +9518,6 @@ step
     .goto 626,43.32,63.3,10 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to exit secret room.
 step
     #requires Hall of Shadows2
-    #label Artifact Weapon: Assassination
     .goto 626,42.43,74.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
     .turnin 42504 >>Turn in The Unseen Blade
@@ -9793,6 +9792,7 @@ step
     .target Fleet Admiral Tethys
 step
     #completewith The Dreadblades
+    #label Artifact Weapon: Outlaw
     .goto 627,54.51,31.42,5,0
     .goto 627,54.32,32.84,5,0
     -- .gossipoption 45226 >>Talk to |cRXP_FRIENDLY_Ravenholdt Courier|r to open the secret door.
@@ -9813,7 +9813,6 @@ step
     .goto 626,40.88,75.51,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires The Dreadblades2
-    #label Artifact Weapon: Outlaw
     .goto 626,41.14,74.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
     .turnin 40849 >>Turn in The Dreadblades
@@ -10270,6 +10269,7 @@ step
 step
     #requires Fangs of the Devourer2
     #completewith Fangs of the Devourer3
+    #label Artifact Weapon: Subtlety
     .goto 627,54.5,31.45,5,0
     .goto 627,54.32,32.81
     .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
@@ -10291,7 +10291,6 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires Fangs of the Devourer4
-    #label Artifact Weapon: Subtlety
     .goto 626,40.88,75.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41924 >>Turn in Fangs of the Devourer
@@ -12556,11 +12555,11 @@ step
 step
     .goto 20,58.01,74.18
     .isInScenario 1037
+    #label Artifact Weapon: Arms
     >>Enter the light and use the |cRXP_WARN_ExtraActionButton|r
     .complete 41105,5 --1/1 Take Odyn's portal back to Skyhold
     .usespell 192085
 step
-    #label Artifact Weapon: Arms
     .goto 695,58.36,84.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 41105 >>Turn in The Sword of Kings
@@ -12820,6 +12819,7 @@ step
     .goto 694/1220,1799.2506,3515.4520
     .goto 694/1511,1799.2506,3515.4520
     .isInScenario 944
+    #label Artifact Weapon: Fury
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .scenario 1914,1 --Take the Warswords
     .complete 40043,2 --1/1 Deal with Vigfus Bladewind and his warband
@@ -12828,7 +12828,6 @@ step
     .complete 40043,3 --1/1 Return to Skyhold
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
 step
-    #label Artifact Weapon: Fury
     .goto 695,58.35,84.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 40043 >>Turn in The Hunter of Heroes
@@ -13067,12 +13066,12 @@ step
     .complete 39191,2 --1/1 Deal with Magnar Icebreaker
     -- .scenario 1833,1
 step
+    #label Artifact Weapon: Warrior Protection
     .goto 635,49.95,82.61
     >>Use the |cRXP_WARN_ExtraActionButton|r
     .complete 39191,3 --1/1 Take Odyn's portal back to Skyhold
     .usespell 192085
 step
-    #label Artifact Weapon: Warrior Protection
     .goto 695,58.35,84.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 39191 >>Turn in Legacy of the Icebreaker
