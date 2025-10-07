@@ -4290,6 +4290,7 @@ step
 step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
     #optional
     .isNotOnQuest 39718
+    .isQuestAvailable 40646
     +|cRXP_WARN_You have to do the previous chapter first to get the quest for Azsuna|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Order Hall Intro 1 << DeathKnight
     .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>Order Hall Intro 1 << Druid
@@ -4297,6 +4298,17 @@ step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
     .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1 >>Order Hall Intro 1 << Priest
     .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>Order Hall Intro 1 << Shaman
     .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Order Hall Intro 1 << Warlock
+step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
+    #optional
+    .isNotOnQuest 39718
+    .isQuestTurnedIn 40646
+    +|cRXP_WARN_You have to do the previous chapter first to get the quest for Azsuna|r
+    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2 >>Order Hall Intro 2 << DeathKnight
+    .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2 >>Order Hall Intro 2 << Druid
+    .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2 >>Order Hall Intro 2 << Hunter
+    .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2 >>Order Hall Intro 2 << Priest
+    .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2 >>Order Hall Intro 2 << Shaman
+    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2 >>Order Hall Intro 2 << Warlock
 step
     #optional
     .isQuestAvailable 40579
