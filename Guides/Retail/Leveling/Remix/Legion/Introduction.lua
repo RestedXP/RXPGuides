@@ -1796,7 +1796,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ab) Order Hall Druid Part 1
-#displayname |cFF00FF004|r - Order Hall Intro 1|r
+#displayname |cFF00FF003|r - Order Hall Intro 1|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 
 << Druid
@@ -1913,7 +1913,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #name ac) Order Hall Druid Part 2
-#displayname |cFF00CCFF3|r - Order Hall Intro 2|r
+#displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #next ad) Infinite Bazaar
 
