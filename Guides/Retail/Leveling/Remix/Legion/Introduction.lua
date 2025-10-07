@@ -4287,11 +4287,16 @@ step
     .isQuestAvailable 40579
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
-step
+step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
     #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+    .isNotOnQuest 39718
+    +|cRXP_WARN_You have to do the previous chapter first to get the quest for Azsuna|r
+    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 1 >>Order Hall Intro 1 << DeathKnight
+    .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 1 >>Order Hall Intro 1 << Druid
+    .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 1 >>Order Hall Intro 1 << Hunter
+    .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 1 >>Order Hall Intro 1 << Priest
+    .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 1 >>Order Hall Intro 1 << Shaman
+    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 1 >>Order Hall Intro 1 << Warlock
 step
     #optional
     .isQuestAvailable 40579
