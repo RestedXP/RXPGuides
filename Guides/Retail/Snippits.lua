@@ -9096,6 +9096,7 @@ step
 --Discipline 2
 RXPGuides.RegisterGuide([[}
 #retail
+#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Discipline
@@ -9349,6 +9350,7 @@ step
 --Holy 2
 RXPGuides.RegisterGuide([[}
 #retail
+#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Holy Priest
@@ -9591,6 +9593,7 @@ step
 --Shadow 2
 RXPGuides.RegisterGuide([[}
 #retail
+#chapter
 #version 1
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Shadow
