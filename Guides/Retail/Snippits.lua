@@ -1676,7 +1676,7 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #completewith Artifact Weapon: Havoc
@@ -1943,7 +1943,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #completewith Artifact Weapon: Vengeance
@@ -2226,7 +2226,7 @@ RXPGuides.RegisterGuide([[}
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter Part 2
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Havoc
@@ -2241,7 +2241,7 @@ RXPGuides.RegisterGuide([[
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter Part 2
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
@@ -2256,7 +2256,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro 1|r
 #next ab) Order Hall Demon Hunter Part 2
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1
@@ -2271,7 +2271,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF2|r - Order Hall Intro 2|r
 #next ac) Order Hall Demon Hunter
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2
