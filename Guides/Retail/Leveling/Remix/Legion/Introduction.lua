@@ -3504,7 +3504,7 @@ step
     .goto 628,74.22,66.56,8,0
     .goto 628,64.44,58.55,8,0
     .goto 628,57.87,60.00
-    >>|cRXP_WARN_Follow the arrow.|r
+    >>Click on the |cRXP_PICK_Dark Portal|r or |cRXP_WARN_follow the arrow.|r
     .complete 40716,1 --1/1 Enter Dalaran's Underbelly
 step
     .goto 628,57.87,60.00
