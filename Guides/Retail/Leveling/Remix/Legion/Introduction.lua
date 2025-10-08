@@ -808,9 +808,9 @@ step
     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
     .use 254320
     .aura 1257698
-step
-    #completewith The Legion Returns2
-    .goto 627,33.1,49.47,20 >>Leave the Violet Hold
+-- step
+--     #completewith The Legion Returns2
+--     .goto 627,33.1,49.47,20 >>Leave the Violet Hold
 step
     #requires The Legion Returns2
     .goto 627,71.94,41.44
