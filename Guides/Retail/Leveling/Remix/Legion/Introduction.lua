@@ -454,7 +454,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .complete 90659,2 --1/1 Speak to Momentus after choosing a talent specialization
     .target Momentus
-    .skipgossipid 133562
+    -- .skipgossipid 133562
 step
     .goto 627,42.78,28.15
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Temporal Knot|r
