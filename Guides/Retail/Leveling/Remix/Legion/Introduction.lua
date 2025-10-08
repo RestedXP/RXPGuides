@@ -137,10 +137,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -957,10 +957,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -1230,10 +1230,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -1500,10 +1500,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -1614,16 +1614,17 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
 step
     #optional
+    #completewith next
     .isQuestAvailable 40814
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 >>Order Hall Demon Hunter Part 1
@@ -2237,10 +2238,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -2425,16 +2426,17 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
 step
     #optional
+    #completewith next
     .isQuestAvailable 41085
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
@@ -2641,10 +2643,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -2765,10 +2767,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -3052,10 +3054,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -3248,10 +3250,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -3772,10 +3774,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -4007,16 +4009,17 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
 step
     #optional
+    #completewith next
     .isQuestAvailable 40579
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>Warrior Order Hall Intro 1
@@ -4138,10 +4141,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -4289,86 +4292,23 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
-step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
+step
     #optional
     .isNotOnQuest 39718
-    .isQuestAvailable 40646
-    +|cRXP_WARN_You have to do the previous chapter first to get the quest for Azsuna|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Order Hall Intro 1 << DeathKnight
-    .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>Order Hall Intro 1 << Druid
-    .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>Order Hall Intro 1 << Hunter
-    .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1 >>Order Hall Intro 1 << Priest
-    .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>Order Hall Intro 1 << Shaman
-    .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Order Hall Intro 1 << Warlock
-step << DeathKnight/Druid/Hunter/Priest/Shaman/Warlock
-    #optional
-    .isNotOnQuest 39718
-    .isQuestTurnedIn 40646
-    +|cRXP_WARN_You have to do the previous chapter first to get the quest for Azsuna|r
-    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2 >>Order Hall Intro 2 << DeathKnight
-    .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2 >>Order Hall Intro 2 << Druid
-    .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2 >>Order Hall Intro 2 << Hunter
-    .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2 >>Order Hall Intro 2 << Priest
-    .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2 >>Order Hall Intro 2 << Shaman
-    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2 >>Order Hall Intro 2 << Warlock
-step << Warrior
-    #optional
-    .isQuestAvailable 40579
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
--- step
---     #optional
---     .isQuestAvailable 40579
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+    +|cRXP_WARN_You have skipped a previous chapter and have to go to your class order hall and accept the quest for Azsuna at the Scouting Map. If you have not unlocked the quest then start the Order Hall Intro 1 guide.|r
+--step << Warrior
+--    #optional
+--    .isQuestAvailable 40579
+--    +|cRXP_WARN_You have to do the previous chapter first|r
+--    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
 step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesA-BehindLegionLinesB
 step
@@ -4817,10 +4757,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -5076,10 +5016,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -5506,10 +5446,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -5974,10 +5914,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6186,10 +6126,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6362,10 +6302,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6439,10 +6379,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6582,10 +6522,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6646,10 +6586,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
