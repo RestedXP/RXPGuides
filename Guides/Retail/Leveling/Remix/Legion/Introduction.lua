@@ -110,7 +110,7 @@ RXPGuides.RegisterGuide([[
 #subweight 100
 
 step
-    #completewith Intro
+    #completewith Fixed Point in Time
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -802,17 +802,17 @@ step
 --     .accept 43926 >>Accept Legion: The Legion Returns << Horde
 --     .target Archivist Elysiana
 --     .skipgossipid 45296
-step
-    #completewith next
-    #label The Legion Returns2
-    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
-    .use 254320
-    .aura 1257698
+-- step
+--     #completewith next
+--     #label The Legion Returns2
+--     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+--     .use 254320
+--     .aura 1257698
 -- step
 --     #completewith The Legion Returns2
 --     .goto 627,33.1,49.47,20 >>Leave the Violet Hold
 step
-    #requires The Legion Returns2
+--    #requires The Legion Returns2
     .goto 627,71.94,41.44
     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
     .use 254320
