@@ -628,10 +628,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -1706,10 +1706,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -1973,10 +1973,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -4861,10 +4861,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -5253,10 +5253,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -5586,10 +5586,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6220,10 +6220,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6669,10 +6669,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -6925,10 +6925,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -7435,10 +7435,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -7876,10 +7876,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -8292,10 +8292,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -9694,10 +9694,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -10206,10 +10206,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -10501,10 +10501,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -12996,10 +12996,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -13248,10 +13248,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
@@ -13516,10 +13516,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    .openitem 237812 -- Cache of Infinite Treasure
-    .openitem 243373 -- Timerunner's Weaponry
-    .openitem 246814 -- Bronze Cache
-    .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
     -- .openitem 245553 -- Heroic Cache of Infinite Treasure
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
