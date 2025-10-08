@@ -782,26 +782,26 @@ step
     .isOnQuest 89418
     .goto 619,45.71,67.46
     .zone 627 >>Click on the |cRXP_PICK_Portal|r
-step
-    #completewith next
-    #label The Legion Returns
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
-    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
-    .accept 43926 >>Accept Legion: The Legion Returns << Horde
-    .target Archivist Elysiana
-    .skipgossipid 45296
-step
-    #completewith The Legion Returns
-    .goto 627,31.57,49.39,20 >>Enter the Violet Hold
-step
-    #requires The Legion Returns
-    #label Intro
-    .goto 627,30.26,51.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
-    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
-    .accept 43926 >>Accept Legion: The Legion Returns << Horde
-    .target Archivist Elysiana
-    .skipgossipid 45296
+-- step
+--     #completewith next
+--     #label The Legion Returns
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+--     .accept 43926 >>Accept Legion: The Legion Returns << Horde
+--     .target Archivist Elysiana
+--     .skipgossipid 45296
+-- step
+--     #completewith The Legion Returns
+--     .goto 627,31.57,49.39,20 >>Enter the Violet Hold
+-- step
+--     #requires The Legion Returns
+--     #label Intro
+--     .goto 627,30.26,51.21
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+--     .accept 43926 >>Accept Legion: The Legion Returns << Horde
+--     .target Archivist Elysiana
+--     .skipgossipid 45296
 step
     #completewith next
     #label The Legion Returns2
