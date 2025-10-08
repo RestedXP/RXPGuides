@@ -786,7 +786,8 @@ step
     #completewith next
     #label The Legion Returns
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
+    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+    .accept 43926 >>Accept Legion: The Legion Returns << Horde
     .target Archivist Elysiana
     .skipgossipid 45296
 step
@@ -797,7 +798,8 @@ step
     #label Intro
     .goto 627,30.26,51.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
+    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+    .accept 43926 >>Accept Legion: The Legion Returns << Horde
     .target Archivist Elysiana
     .skipgossipid 45296
 step
