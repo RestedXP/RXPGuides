@@ -12808,7 +12808,7 @@ step
     .goto 773,43.79,31.78,10,0
     .goto 773,43.64,35.79,8,0
     .goto 773,42.73,35.83,8,0
-    .goto 773,42.68,39.66 >>|cRXP_WARN_Follow the arrow out of the prison.|r
+    .goto 773,42.68,39.66,10 >>|cRXP_WARN_Follow the arrow out of the prison.|r
 step
     --TODO: Title Color
     #title Enter Baradin Hold
@@ -12821,6 +12821,7 @@ step
 step
     #requires EnterBaradinHoldA
     .isInScenario 1155
+    .goto 773,47.66,52.69
     .scenario 2725,1 --Enter Baradin Hold
 step
     .isInScenario 1155
@@ -12858,14 +12859,14 @@ step
 step
     #completewith next
     #hidewindow
-    .goto 619,60.40,25.22,10 >>1
+    .goto 646,60.40,25.22,10 >>1
     .timer 60,Gul'dan Roleplay
 step
-    .goto 619,55.79,63.01
+    .goto 646,55.79,63.01
     >>|cRXP_WARN_Wait for the roleplay.|r
     .complete 43254,2 --1/1 Listen to Gul'dan
 step
-    .goto 619,55.91,62.89
+    .goto 646,55.91,62.89
     >>Kill |cRXP_ENEMY_Allaris Nassarin|r.
     .complete 43254,3 --1/1 Slay Allaris Nassarin
     .mob Allaris Nassarin

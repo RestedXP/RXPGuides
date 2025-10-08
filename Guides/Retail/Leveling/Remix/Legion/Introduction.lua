@@ -3598,6 +3598,7 @@ step
     .goto 718,49.05,29.56,20,0
     .goto 718,56.84,23.76,20,0
     .goto 718,67.86,36.76,20,0
+    .goto 718,72.64,37.92
     >>Kill |cRXP_ENEMY_Xel'toth|r. |cRXP_WARN_Run through the portal.|r
     .scenario 1952,1 --Escape from Jagganoth's Lair
     .mob Xel'toth
