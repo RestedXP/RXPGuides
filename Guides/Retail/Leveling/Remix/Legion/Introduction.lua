@@ -4339,6 +4339,8 @@ step
     *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
     .complete 36811,1,75 --Lead the fight against the Legion (100%)
 step
+    #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesE-BehindLegionLinesZ
+step
     .goto 630,43.55,43.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r.
     .accept 38443 >>Accept Journey to the Repose
