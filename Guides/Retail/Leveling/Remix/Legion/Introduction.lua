@@ -1366,6 +1366,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    #completewith next
     .isQuestAvailable 40715
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 >>Order Hall Death Knight Part 1
@@ -1928,6 +1929,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    #completewith next
     .isQuestAvailable 40646
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>Order Hall Druid Part 1
@@ -2113,6 +2115,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    #completewith next
     .isQuestAvailable 40618
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>Hunter Order Hall Intro 1
@@ -2782,7 +2785,8 @@ step
 --     .target Eadric the Pure
 step
     #optional
-    .isQuestAvailable 38710
+    #completewith next
+    .isQuestAvailable 40408
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Paladin Part 1 >>Paladin Order Hall Intro 1
 step
@@ -2932,6 +2936,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    #completewith next
     .isQuestAvailable 40706
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1>>Priest Order Hall Intro 1
@@ -3437,6 +3442,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    #completewith next
     .isQuestAvailable 41335
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>Shaman Order Hall Intro 1
@@ -3626,6 +3632,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    #completewith next
     .isQuestAvailable 40684
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Warlock Order Hall Intro 1
@@ -4154,7 +4161,7 @@ step
 --     >>Use |T242617:0|t[Curious Simulacrum]
 --     .accept 92688 >>Accept Bronze Simulacrum
     .use 242617
-step << Warrior/Mage/Horde Paladin/Rogue/Monk
+step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
    .goto 627,72.07,40.6
    .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
 -- step
