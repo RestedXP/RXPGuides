@@ -4310,6 +4310,7 @@ step
 step
     #optional
     .isNotOnQuest 39718
+    .isQuestAvailable 39718
     +|cRXP_WARN_You have skipped a previous chapter and have to go to your class order hall and accept the quest for Azsuna at the Scouting Map. If you have not unlocked the quest then start the Order Hall Intro 1 guide.|r
 --step << Warrior
 --    #optional
