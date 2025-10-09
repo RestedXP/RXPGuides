@@ -301,7 +301,7 @@ local IsQuestTurnedIn = function(id,accountWide)
     local isQuestTurnedIn
     if accountWide and C_QuestLog.IsQuestFlaggedCompletedOnAccount then
         isQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompletedOnAccount(id)
-        if addon.settings.profile.debug or true then
+        if addon.settings.profile.debug then
             print(fmt("CompletedOnAccount(%d) = %s",id,tostring(isQuestTurnedIn)))
         end
     else
