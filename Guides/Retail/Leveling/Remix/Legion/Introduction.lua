@@ -4566,6 +4566,12 @@ step
     .accept 37657 >>Accept Making the World Safe for Profit
     .target Mr. Shackle
 step
+    .convertquest 42268,42220 << Alliance
+    .goto 630,57.90,58.79
+    >>|cRXP_WARN_Follow the arrow|r. The quest will pop up at the waypoint location
+    .accept 42268 >>Accept Shipwrecked Sailors << Horde
+    .accept 42220 >>Accept Shipwrecked Sailors << Alliance
+step
     .isQuestAvailable 38365
     .goto 630,55.87,56.85
     .turnin 38365 >>Click on the |cRXP_PICK_Disputed Chest|r.
@@ -4580,39 +4586,43 @@ step
 step
     #include RestedXP Legion Remix\b) Mak'rana and the Fate of the Queen's Reprisal@MakranaFateQueenReprisalA-MakranaFateQueenReprisalB
 step << Horde
+    .achievementIncomplete 42317,0
     #completewith next
-    #label FateOfTheQueensReprisalA
+    #label FateOfTheQueensReprisalCustomA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Stillwater|r
     .turnin 42244 >>Turn in Fate of the Queen's Reprisal
     .target Advisor Stillwater
 step << Horde
+    .achievementIncomplete 42317,0
     --TODO: Title color
-    #completewith FateOfTheQueensReprisalA
+    #completewith FateOfTheQueensReprisalCustomA
     #title Enter the sanctum (See Note)
     *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
     .goto 627,58.45,20.62,10 >>|cRXP_WARN_Enter the sanctum|r
 step << Horde
-    #requires FateOfTheQueensReprisalA
-    #label MakranaFateQueenReprisalZ
+    .achievementIncomplete 42317,0
+    #requires FateOfTheQueensReprisalCustomA
     .goto 627,61.14,16.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Advisor Stillwater|r
     .turnin 42244 >>Turn in Fate of the Queen's Reprisal
     .target Advisor Stillwater
 step << Alliance
+    .achievementIncomplete 42317,0
     #completewith next
-    #label FateOfTheQueensReprisalB
+    #label FateOfTheQueensReprisalCustomB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Surtees|r
     .turnin 40794 >>Turn in Fate of the Queen's Reprisal
     .target Lieutenant Surtees
 step << Alliance
+    .achievementIncomplete 42317,0
     --TODO: Title color
-    #completewith FateOfTheQueensReprisalB
+    #completewith FateOfTheQueensReprisalCustomB
     #title Enter the enclave (See Note)
     *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
     .goto 627,34.48,66.51,15 >>|cRXP_WARN_Enter the enclave|r
 step << Alliance
-    #requires FateOfTheQueensReprisalB
-    #label MakranaFateQueenReprisalZ
+    .achievementIncomplete 42317,0
+    #requires FateOfTheQueensReprisalCustomB
     .goto 627,29.40,75.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Surtees|r
     .turnin 40794 >>Turn in Fate of the Queen's Reprisal
@@ -6149,11 +6159,13 @@ step
     .accept 37657 >>Accept Making the World Safe for Profit
     .target Mr. Shackle
 step
+    .convertquest 42268,42220 << Alliance
     .goto 630,57.90,58.79
     >>|cRXP_WARN_Follow the arrow|r. The quest will pop up at the waypoint location
-    .accept 42268 >>Accept Shipwrecked Sailors
+    .accept 42268 >>Accept Shipwrecked Sailors << Horde
+    .accept 42220 >>Accept Shipwrecked Sailors << Alliance
 step
-    #completewith NightborneMakingtheWorldSafeforProfit
+    #completewith next
     >>Kill |cRXP_ENEMY_Giblins & Makruras|r.
     >>Rescue |cRXP_FRIENDLY_Queen's Reprisal Sailors|r.
     .complete 37657,1 --12/12 Giblin & Makrura slain
