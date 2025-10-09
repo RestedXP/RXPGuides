@@ -4511,11 +4511,6 @@ step
 step
     #include RestedXP Legion Remix\b) Against Giants@AgainstGiantsA-AgainstGiantsAB
 step
-    .isOnQuest 37536
-    .isQuestAvailable 42290
-    .goto 630,50.20,50.29
-    .turnin 42290 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
-step
     #include RestedXP Legion Remix\b) Against Giants@AgainstGiantsAC-AgainstGiantsB
 step
     #completewith OceanusCaveTreasureChestsA
