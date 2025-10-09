@@ -516,7 +516,7 @@ function addon.AbandonOrphanedQuests(orphans)
 end
 
 -- ====================================================================
--- Quest Log Button: Cleanup Orphaned Quests (list popup + safe fallback)
+-- Quest Log Button: Cleanup Orphaned Quests (Retail + Classic support)
 -- ====================================================================
 
 -- Localization for button/tooltip — don't shadow your global L() accessor
@@ -527,16 +527,32 @@ local CLEANUP_DESC  = (Loc and Loc.CLEANUP_ORPHANED_QUESTS_DESC)
 
 -- Icon path for button + tooltip
 local ICON_PATH = "Interface\\AddOns\\" .. addonName .. "\\Textures\\rxp_logo-64"
-local ICON_INLINE = "|T" .. ICON_PATH .. ":14|t "  -- 14px icon inline
+local ICON_INLINE = "|T" .. ICON_PATH .. ":14|t "
 
 -- ---------- helpers --------------------------------------------------
+local function GetQuestLogParentAndAbandon()
+    -- Retail
+    local qmf = _G.QuestMapFrame
+    if qmf and qmf.DetailsFrame and qmf.DetailsFrame.AbandonButton then
+        return qmf.DetailsFrame, qmf.DetailsFrame.AbandonButton, "RETAIL"
+    end
+-- ClassicQuestLog
+    if _G.QuestLogFrame and _G.QuestLogFrameAbandonButton then
+        return _G.QuestLogFrame, _G.QuestLogFrameAbandonButton, "CLASSIC"
+    end
 
-local function GetQuestLogParent()
-    if _G.ClassicQuestLog then return _G.ClassicQuestLog end
-    if _G.QuestGuru then return _G.QuestGuru end
-    if _G.QuestLogEx then return _G.QuestLogEx end
-    if _G.QuestLogFrameClassic then return _G.QuestLogFrameClassic end
-    return _G.QuestLogFrame
+    -- Popular replacements
+    if _G.ClassicQuestLog and _G.QuestLogFrameAbandonButton then
+        return _G.ClassicQuestLog, _G.QuestLogFrameAbandonButton, "CLASSIC"
+    end
+    if _G.QuestLogEx and _G.QuestLogFrameAbandonButton then
+        return _G.QuestLogEx, _G.QuestLogFrameAbandonButton, "CLASSIC"
+    end
+    if _G.QuestGuru and _G.QuestLogFrameAbandonButton then
+        return _G.QuestGuru, _G.QuestLogFrameAbandonButton, "CLASSIC"
+    end
+
+    return nil, nil, nil
 end
 
 local function BuildOrphanListText(orphans)
@@ -652,6 +668,7 @@ local function RXP_RunCleanupOrphanedQuests()
         return
     end
 
+    -- ensure GetOrphanedQuests() returns data even if UI = hidden
     local wasHidden = addon.isHidden
     addon.isHidden = false
     local orphans = addon.GetOrphanedQuests()
@@ -691,7 +708,7 @@ local function RXP_RunCleanupOrphanedQuests()
     _G.StaticPopup_Show(DLG, listText, nil, orphans)
 end
 
--- ---------- UI creation-----------------------
+-- ---------- UI creation Retail + ClassicQuestLog -------
 
 local cleanupBtn
 local createdCleanupBtn = false
@@ -709,11 +726,12 @@ end
 
 local function AnchorCleanupButton()
     if not cleanupBtn or not cleanupBtn:GetParent() then return end
-    local abandon = _G.QuestLogFrameAbandonButton
+    local _, abandon = GetQuestLogParentAndAbandon()
     if abandon and abandon:IsShown() then
         cleanupBtn:ClearAllPoints()
         cleanupBtn:SetPoint("TOPLEFT", abandon, "BOTTOMLEFT", 0, -6)
     else
+        -- Defensive fallback inside parent
         cleanupBtn:ClearAllPoints()
         cleanupBtn:SetPoint("BOTTOMLEFT", cleanupBtn:GetParent(), "BOTTOMLEFT", 20, 45)
     end
@@ -722,11 +740,13 @@ end
 local function CreateCleanupButton()
     if createdCleanupBtn then return end
 
-    if not GetQuestLogParent() and _G.UIParentLoadAddOn then
-        pcall(_G.UIParentLoadAddOn, "Blizzard_QuestLog")
+    -- Ensure the relevant Blizzard UI is loaded
+    if not GetQuestLogParentAndAbandon() and _G.UIParentLoadAddOn then
+        pcall(_G.UIParentLoadAddOn, "Blizzard_WorldMap")   -- Retail
+        pcall(_G.UIParentLoadAddOn, "Blizzard_QuestLog")   -- Classic
     end
 
-    local parent = GetQuestLogParent()
+    local parent, _, flavor = GetQuestLogParentAndAbandon()
     if not parent then return end
 
     cleanupBtn = CreateFrame("Button", "RXPQuestLogCleanupButton", parent, "UIPanelButtonTemplate")
@@ -756,20 +776,24 @@ local function CreateCleanupButton()
 
     createdCleanupBtn = true
     SetCleanupBtnEnabled(not (InCombatLockdown and InCombatLockdown()))
+    cleanupBtn:SetShown(not addon.isHidden)
+
+    -- Re-anchor
     if parent.HookScript then
         parent:HookScript("OnShow", function()
             AnchorCleanupButton()
-                if cleanupBtn then
+            if cleanupBtn then
                 cleanupBtn:SetShown(not addon.isHidden)
             end
         end)
     end
 
-
-
-    if parent.HookScript then
-        parent:HookScript("OnShow", function()
+    if flavor == "RETAIL" and _G.WorldMapFrame and _G.WorldMapFrame.HookScript then
+        _G.WorldMapFrame:HookScript("OnShow", function()
             AnchorCleanupButton()
+            if cleanupBtn then
+                cleanupBtn:SetShown(not addon.isHidden)
+            end
         end)
     end
 end
@@ -791,22 +815,31 @@ do
 
     f:SetScript("OnEvent", function(_, ev, arg1)
         if ev == "ADDON_LOADED" then
-            if arg1 == "Blizzard_QuestLog" or arg1 == addonName then
+            if arg1 == "Blizzard_QuestLog" or arg1 == "Blizzard_WorldMap" or arg1 == addonName then
                 CreateCleanupButton()
             end
 
         elseif ev == "PLAYER_LOGIN" then
             CreateCleanupButton()
-            if cleanupBtn then
-                cleanupBtn:SetShown(not addon.isHidden)
+
+            if not createdCleanupBtn and not hookedToggle then
+                if _G.ToggleQuestLog then
+                    hookedToggle = true
+                    hooksecurefunc("ToggleQuestLog", function()
+                        CreateCleanupButton()
+                        ReanchorCleanupButtonIfNeeded()
+                    end)
+                elseif _G.WorldMapFrame and _G.WorldMapFrame.HookScript then
+                    hookedToggle = true
+                    _G.WorldMapFrame:HookScript("OnShow", function()
+                        CreateCleanupButton()
+                        ReanchorCleanupButtonIfNeeded()
+                    end)
+                end
             end
 
-            if not createdCleanupBtn and _G.ToggleQuestLog and not hookedToggle then
-                hookedToggle = true
-                hooksecurefunc("ToggleQuestLog", function()
-                    CreateCleanupButton()
-                    ReanchorCleanupButtonIfNeeded()
-                end)
+            if cleanupBtn then
+                cleanupBtn:SetShown(not addon.isHidden)
             end
 
         elseif ev == "PLAYER_REGEN_DISABLED" then
