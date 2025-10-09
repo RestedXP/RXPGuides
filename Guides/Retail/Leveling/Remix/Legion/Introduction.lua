@@ -4792,6 +4792,7 @@ step
     .complete 41220,1 --1/1 Fly down with Khadgar
     .timer 83,Flight Duration
     .target Archmage Khadgar
+    .skipgossipid 42697
     .skipgossipid 42698
 step
     .isOnQuest 41220
