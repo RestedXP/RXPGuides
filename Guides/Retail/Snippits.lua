@@ -915,6 +915,8 @@ step
 step
     .isQuestTurnedIn 43962
     .isQuestAvailable 44401
+    .isQuestAvailable 40740
+    .isNotOnQuest 40740
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
     .accept 44401 >>Accept A Weapon For Every Occasion
@@ -941,6 +943,8 @@ step
 step
     .isQuestTurnedIn 40715
     .isQuestAvailable 43962
+    .isQuestAvailable 40740
+    .isNotOnQuest 40740
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
     .accept 43962 >>Accept Blades of Destiny
@@ -1151,6 +1155,8 @@ step
 step
     .isQuestTurnedIn 43962
     .isQuestAvailable 44401
+    .isQuestAvailable 38990
+    .isNotOnQuest 38990
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
     .accept 44401 >>Accept A Weapon For Every Occasion
@@ -1177,6 +1183,8 @@ step
 step
     .isQuestTurnedIn 40715
     .isQuestAvailable 43962
+    .isQuestAvailable 38990
+    .isNotOnQuest 38990
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
     .accept 43962 >>Accept Blades of Destiny
@@ -1357,6 +1365,7 @@ step
 step
     .isQuestTurnedIn 43962
     .isQuestAvailable 44401
+    .isQuestAvailable 40930
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
     .accept 44401 >>Accept A Weapon For Every Occasion
@@ -1388,6 +1397,7 @@ step
 step
     .isQuestTurnedIn 40715
     .isQuestAvailable 43962
+    .isQuestAvailable 40930
     .goto 647,57.76,60.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
     .accept 43962 >>Accept Blades of Destiny
@@ -1718,6 +1728,7 @@ step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
+    .isQuestAvailable 40819
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .accept 44383 >>Accept In Pursuit of Power
@@ -1729,7 +1740,7 @@ step
     .isOnQuest 44383
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .complete 44383,1 --1/1 Artifact weapon chosen
+    .complete 44383,1 --1/1 Choose a second artifact to pursue
     .choose 1390100
     .skipgossipid 45738
 step
@@ -1985,6 +1996,7 @@ step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
+    .isQuestAvailable 40247
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .accept 44383 >>Accept In Pursuit of Power
@@ -1996,7 +2008,7 @@ step
     .isOnQuest 44383
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .complete 44383,1 --1/1 Artifact weapon chosen
+    .complete 44383,1 --1/1 Choose a second artifact to pursue
     .choose 1390101
     .skipgossipid 45738
 step
@@ -2324,6 +2336,7 @@ step
 step
     .isQuestTurnedIn 44431
     .isQuestAvailable 44443
+    .isQuestAvailable 40783
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44443 >>Accept Weapons of the Ancients
@@ -2356,6 +2369,7 @@ step
 step
     .isQuestTurnedIn 43980
     .isQuestAvailable 44431
+    .isQuestAvailable 40783
     .isOnQuest 44431
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     *|cRXP_WARN_This will automatically pick the Balance artifact|r
@@ -2381,6 +2395,7 @@ step
 step
     .isQuestTurnedIn 40646
     .isQuestAvailable 43980
+    .isQuestAvailable 40783
     .isOnQuest 43980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     *|cRXP_WARN_This will automatically pick the Balance artifact|r
@@ -2712,6 +2727,7 @@ step
 step
     .isQuestTurnedIn 44431
     .isQuestAvailable 44443
+    .isQuestAvailable 42428
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44443 >>Accept Weapons of the Ancients
@@ -2737,6 +2753,7 @@ step
 step
     .isQuestTurnedIn 43980
     .isQuestAvailable 44431
+    .isQuestAvailable 42428
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44431 >>Accept More Weapons of Old
@@ -2762,6 +2779,7 @@ step
 step
     .isQuestTurnedIn 40646
     .isQuestAvailable 43980
+    .isQuestAvailable 42428
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 43980 >>Accept Another Weapon of Old
@@ -3023,6 +3041,7 @@ step
 step
     .isQuestTurnedIn 44431
     .isQuestAvailable 44443
+    .isQuestAvailable 41468
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44443 >>Accept Weapons of the Ancients
@@ -3048,6 +3067,7 @@ step
 step
     .isQuestTurnedIn 43980
     .isQuestAvailable 44431
+    .isQuestAvailable 41468
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44431 >>Accept More Weapons of Old
@@ -3073,6 +3093,7 @@ step
 step
     .isQuestTurnedIn 40646
     .isQuestAvailable 43980
+    .isQuestAvailable 41468
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 43980 >>Accept Another Weapon of Old
@@ -3404,6 +3425,7 @@ step
 step
     .isQuestTurnedIn 44431
     .isQuestAvailable 44443
+    .isQuestAvailable 40649
     .goto 747,44.66,51.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44443 >>Accept Weapons of the Ancients
@@ -3429,6 +3451,7 @@ step
 step
     .isQuestTurnedIn 43980
     .isQuestAvailable 44431
+    .isQuestAvailable 40649
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 44431 >>Accept More Weapons of Old
@@ -3454,6 +3477,7 @@ step
 step
     .isQuestTurnedIn 40646
     .isQuestAvailable 43980
+    .isQuestAvailable 40649
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 43980 >>Accept Another Weapon of Old
@@ -3845,6 +3869,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 44043
     .isQuestAvailable 44366
+    .isQuestAvailable 41541
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 44366 >>Accept One Last Adventure
@@ -3869,6 +3894,7 @@ step
 step
     .isQuestTurnedIn 40618
     .isQuestAvailable 44043
+    .isQuestAvailable 41541
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 44043 >>Accept Continuing the Legend
@@ -4221,6 +4247,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 44043
     .isQuestAvailable 44366
+    .isQuestAvailable 41540
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 44366 >>Accept One Last Adventure
@@ -4245,6 +4272,7 @@ step
 step
     .isQuestTurnedIn 40618
     .isQuestAvailable 44043
+    .isQuestAvailable 41540
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 44043 >>Accept Continuing the Legend
@@ -4492,6 +4520,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 44043
     .isQuestAvailable 44366
+    .isQuestAvailable 41542
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 44366 >>Accept One Last Adventure
@@ -4516,6 +4545,7 @@ step
 step
     .isQuestTurnedIn 40618
     .isQuestAvailable 44043
+    .isQuestAvailable 41542
     .goto 739,43.38,26.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 44043 >>Accept Continuing the Legend
@@ -8747,6 +8777,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43935
     .isQuestAvailable 44407
+    .isQuestAvailable 41625
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 44407 >>Accept The Third Legend
@@ -8773,6 +8804,7 @@ step
 step
     .isQuestTurnedIn 40706
     .isQuestAvailable 43935
+    .isQuestAvailable 41625
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 43935 >>Accept A Second Legend
@@ -9127,6 +9159,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43935
     .isQuestAvailable 44407
+    .isQuestAvailable 41957
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 44407 >>Accept The Third Legend
@@ -9153,6 +9186,7 @@ step
 step
     .isQuestTurnedIn 40706
     .isQuestAvailable 43935
+    .isQuestAvailable 41957
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 43935 >>Accept A Second Legend
@@ -9381,6 +9415,8 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43935
     .isQuestAvailable 44407
+    .isQuestAvailable 40710
+    .isNotOnQuest 40710
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 44407 >>Accept The Third Legend
@@ -9407,6 +9443,8 @@ step
 step
     .isQuestTurnedIn 40706
     .isQuestAvailable 43935
+    .isQuestAvailable 40710
+    .isNotOnQuest 40710
     .goto 702,51.61,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r.
     .accept 43935 >>Accept A Second Legend
@@ -11044,6 +11082,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43945
     .isQuestAvailable 44006
+    .isQuestAvailable 43334
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
     .accept 44006 >>Accept Your Fullest Potential
@@ -11068,6 +11107,7 @@ step
 step
     .isQuestTurnedIn 41335
     .isQuestAvailable 43945
+    .isQuestAvailable 43334
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
     .accept 43945 >>Accept Expanding Your Horizon
@@ -11391,6 +11431,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43945
     .isQuestAvailable 44006
+    .isQuestAvailable 42931
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
     .accept 44006 >>Accept Your Fullest Potential
@@ -11415,6 +11456,7 @@ step
 step
     .isQuestTurnedIn 41335
     .isQuestAvailable 43945
+    .isQuestAvailable 42931
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
     .accept 43945 >>Accept Expanding Your Horizon
@@ -11693,6 +11735,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43945
     .isQuestAvailable 44006
+    .isQuestAvailable 43644
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
     .accept 44006 >>Accept Your Fullest Potential
@@ -11717,6 +11760,7 @@ step
 step
     .isQuestTurnedIn 41335
     .isQuestAvailable 43945
+    .isQuestAvailable 43644
     .goto 726,36.16,80.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggramar|r.
     .accept 43945 >>Accept Expanding Your Horizon
@@ -11995,6 +12039,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43984
     .isQuestAvailable 44089
+    .isQuestAvailable 40495
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
     .accept 44089 >>Accept A Greater Arsenal
@@ -12019,6 +12064,7 @@ step
 step
     .isQuestTurnedIn 40684
     .isQuestAvailable 43984
+    .isQuestAvailable 40495
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
     .accept 43984 >>Accept The Tome Opens Again
@@ -12324,6 +12370,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43984
     .isQuestAvailable 44089
+    .isQuestAvailable 42128
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
     .accept 44089 >>Accept A Greater Arsenal
@@ -12348,6 +12395,7 @@ step
 step
     .isQuestTurnedIn 40684
     .isQuestAvailable 43984
+    .isQuestAvailable 42128
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
     .accept 43984 >>Accept The Tome Opens Again
@@ -12599,6 +12647,7 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn 43984
     .isQuestAvailable 44089
+    .isQuestAvailable 43100
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r |cRXP_WARN_in your class order hall|r.
     .accept 44089 >>Accept A Greater Arsenal
@@ -12623,6 +12672,7 @@ step
 step
     .isQuestTurnedIn 40684
     .isQuestAvailable 43984
+    .isQuestAvailable 43100
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
     .accept 43984 >>Accept The Tome Opens Again
