@@ -4270,7 +4270,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ae) First Zone
 #displayname |cFF00FF006|r - Azsuna|r
-#next cb) Val'sharah Speedrun
+#next cb) Val'sharah Speedrun 2
 
 step
     #completewith AzsunaSpeedrunY
@@ -7119,9 +7119,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #name be) First Zone
 #displayname |cFF00FF006|r - Azsuna|r
+#next cb) Val'sharah Speedrun
 
 step
     #include RestedXP Legion Remix\ae) First Zone
-
-
 ]])
