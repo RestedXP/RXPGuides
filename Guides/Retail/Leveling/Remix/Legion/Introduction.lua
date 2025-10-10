@@ -4596,7 +4596,7 @@ step << Horde
     .achievementIncomplete 42317,0
     --TODO: Title color
     #completewith FateOfTheQueensReprisalCustomA
-    #title Enter the sanctum (See Note)
+    #title Enter the sanctum in Dalaran (See Note)
     *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
     .goto 627,58.45,20.62,10 >>|cRXP_WARN_Enter the sanctum|r
 step << Horde
@@ -4617,7 +4617,7 @@ step << Alliance
     .achievementIncomplete 42317,0
     --TODO: Title color
     #completewith FateOfTheQueensReprisalCustomB
-    #title Enter the enclave (See Note)
+    #title Enter the enclave in Dalaran (See Note)
     *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
     .goto 627,34.48,66.51,15 >>|cRXP_WARN_Enter the enclave|r
 step << Alliance
