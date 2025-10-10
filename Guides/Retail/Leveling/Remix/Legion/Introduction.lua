@@ -4631,7 +4631,7 @@ step
     #include RestedXP Legion Remix\b) Mak'rana and the Fate of the Queen's Reprisal@MakranaFateQueenReprisalC-MakranaFateQueenReprisalZ
 step
     .goto 630,55.74,48.42
-    >>Kill |cRXP_ENEMY_Athissa|r
+    >>Kill |cRXP_ENEMY_Athissa|r |cRXP_WARN_inside the building.|r
     .complete 37486,1 --1/1 Athissa defeated
     .mob Athissa
 step
