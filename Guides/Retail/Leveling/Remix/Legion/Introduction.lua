@@ -6167,7 +6167,8 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Giblins & Makruras|r.
-    >>Rescue |cRXP_FRIENDLY_Queen's Reprisal Sailors|r.
+    >>Rescue |cRXP_FRIENDLY_Queen's Reprisal Sailors|r. << Horde
+    >>Kill |cRXP_ENEMY_Queen's Reprisal Sailors|r. << Alliance
     .complete 37657,1 --12/12 Giblin & Makrura slain
     .complete 42268,1 --10/10 Queen's Reprisal Sailors rescued
     .mob Bitterbrine Venomer
@@ -6222,8 +6223,9 @@ step
     .goto 630,58.93,57.40,45,0
     .goto 630,59.03,62.38,45,0
     .goto 630,63.09,63.92,45,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Queen's Reprisal Sailors|r.
     >>Kill |cRXP_ENEMY_Giblins & Makruras|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Queen's Reprisal Sailors|r. << Horde
+    >>Kill |cRXP_ENEMY_Queen's Reprisal Sailors|r. << Alliance
     .complete 37657,1 --12/12 Giblin & Makrura slain
     .complete 42268,1 --10/10 Queen's Reprisal Sailors rescued
     .mob Bitterbrine Venomer
