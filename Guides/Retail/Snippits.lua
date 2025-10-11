@@ -2914,7 +2914,7 @@ step
 step
     .isOnQuest 42430
     .goto 641,73.75,38.40
-    .enterScenario 2506 >>Enter the |cRXP_PICK_The Fangs of Ashamane|r scenario.
+    .enterScenario 1108 >>Enter the |cRXP_PICK_The Fangs of Ashamane|r scenario.
 step
     .isInScenario 1108
     .goto 680,21.70,39.36
