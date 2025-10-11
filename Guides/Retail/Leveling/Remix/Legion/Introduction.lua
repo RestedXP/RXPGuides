@@ -1148,7 +1148,13 @@ step
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40636
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -1156,6 +1162,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Windwalker >> Windwalker(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Brewmaster >> Brewmaster(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Mistweaver >> Mistweaver(Healer) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 -- step
 --     .spec 3
 --     .goto 627,72.46,45.90
@@ -1341,7 +1348,12 @@ step
     .accept 40715 >>Accept A Pact of Necessity
     .target Duke Lankral
 step
-    .isQuestAvailable 40715
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -1575,13 +1587,20 @@ step
     .target Kayn Sunfury
     .accept 40814 >>Accept The Power to Survive
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40814
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
     *|cFFFF0000You can't progress if you don't select one|r.
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Havoc >> Havoc(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Vengeance >> Vengeance(DPS) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 -- step
 --     .spec 1
 --     .goto 627,74.97,48.99
@@ -1937,7 +1956,13 @@ step
     .accept 40646 >>Accept Weapons of Legend
     .target Rensar Greathoof
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40646
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -1946,6 +1971,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> Feral(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardian(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restoration(Healer) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Druid Order Hall Intro 2
@@ -2123,7 +2149,13 @@ step
     .accept 40618 >>Accept Weapons of Legend
     .target Emmarel Shadewarden
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40618
+    .isQuestAvailable account,91955
     .goto 627,60.03,53.41
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
@@ -2132,6 +2164,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Beast Mastery >> Beast Mastery(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Marksmanship >> Marksmanship(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Survival >> Survival(DPS) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Hunter Order Hall Intro 2
@@ -2717,6 +2750,11 @@ step
     .target Lord Maxwell Tyrosus
     .accept 40408 >>Accept Weapons of Legend
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40408
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
@@ -2725,6 +2763,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Retribution >> Retribution(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Paladin Protection >> Protection(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Paladin >> Holy(Healer) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 -- step
 --     .spec 3
 --     .goto 627,74.94,48.23
@@ -2944,7 +2983,13 @@ step
     .accept 40706 >>Accept A Legend You Can Hold
     .target Alonsus Faol
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40706
+    .isQuestAvailable account,91955
     .goto 18,78.96,40.99
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
@@ -2953,6 +2998,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Shadow >> Shadow(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Priest >> Holy(Healer) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Discipline >> Discipline(Healer) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Priest Order Hall Intro 2
@@ -3201,6 +3247,11 @@ step
     .target Valeera Sanguinar
     .target Princess Tess Greymane
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40840
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
@@ -3209,6 +3260,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Assassination >> Assassination(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Outlaw >> Outlaw(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Subtlety >> Subtlety(DPS) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 -- step
 --     .spec 3
 --     .goto 626,41.37,77.96
@@ -3451,7 +3503,13 @@ step
     .accept 41335 >>Accept The Elements Call...
     .target Thrall
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 41335
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -3459,6 +3517,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Elemental >> Elemental(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Enhancement >> Enhancement(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Shaman >> Restoration(Healer) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Shaman Order Hall Intro 2
@@ -3642,7 +3701,13 @@ step
     .accept 40684 >>Accept The Tome of Blighted Implements
     .target Calydus
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40684
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -3650,6 +3715,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Affliction >> Affliction(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Demonology >> Demonology(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Destruction >> Destruction(DPS) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Warlock Order Hall Intro 2
@@ -3961,7 +4027,13 @@ step
     .accept 40579 >>Accept Weapons of Legend
     .target Odyn
 step
+    #sticky
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .isQuestAvailable 40579
+    .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -3969,6 +4041,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Arms >> Arms(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Fury >> Fury(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Warrior Protection >> Protection(Tank) Questline
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 -- step
 --     .spec 3
 --     .goto 695,58.33,84.61
