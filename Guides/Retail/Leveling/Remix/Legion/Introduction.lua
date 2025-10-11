@@ -1346,7 +1346,7 @@ step
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
     *|cFFFF0000You can't progress if you don't select one|r.
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost >> Frost(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost DK >> Frost(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Unholy >> Unholy(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Blood >> Blood(Tank) Questline
 
