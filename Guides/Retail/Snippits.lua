@@ -1684,6 +1684,7 @@ RXPGuides.RegisterGuide([[}
 #retail
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter
@@ -1691,7 +1692,7 @@ RXPGuides.RegisterGuide([[}
 << DemonHunter
 
 step
-    #completewith Artifact Weapon: Havoc
+    #completewith ArtifactWeaponHavocY
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -1727,6 +1728,7 @@ step
     -- .use 251821
     -- .use 256763
 step
+    #label ArtifactWeaponHavocA
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
@@ -1935,13 +1937,14 @@ step
     .target Kor'vas Bloodthorn
 step
     #completewith Turn in The Hunt
+    #label ArtifactWeaponHavocY
     .isQuestTurnedIn 40249
     .goto 627,98.13,69.47
     .zone 720 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     #requires Turn in The Hunt
     .isQuestTurnedIn 40249
-    #label Artifact Weapon: Havoc
+    #label ArtifactWeaponHavocZ
     .goto 720,59.31,57.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .turnin 39247 >>Turn in The Hunt
@@ -1952,6 +1955,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter
@@ -1959,7 +1963,7 @@ RXPGuides.RegisterGuide([[
 << DemonHunter
 
 step
-    #completewith Artifact Weapon: Vengeance
+    #completewith ArtifactWeaponVengeanceY
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -1995,6 +1999,7 @@ step
     -- .use 251821
     -- .use 256763
 step
+    #label ArtifactWeaponVengeanceA
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
@@ -2219,10 +2224,11 @@ step
 step
     .isQuestAvailable 39247
     #completewith Vengeance Will Be Ours
+    #label ArtifactWeaponVengeanceY
     .goto 720,59.25,91.82
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|
 step
-    #label Artifact Weapon: Vengeance
+    #label ArtifactWeaponVengeanceZ
     .isQuestAvailable 39247
     #requires Vengeance Will Be Ours
     .goto 627,73.83,46.05
