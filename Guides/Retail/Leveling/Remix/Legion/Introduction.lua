@@ -4354,7 +4354,7 @@ step
 step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesA-BehindLegionLinesB
 step
-    .isQuestAvailable 38316
+    .isQuestAvailable account,38316
     .goto 630,40.56,57.69
     .turnin 38316 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
@@ -4382,19 +4382,19 @@ step
     .target Archmage Khadgar
 step
     .isOnQuest 38443
-    .isQuestAvailable 37713
+    .isQuestAvailable account,37713
     .goto 630,44.47,39.47
     .turnin 37713 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
     .isOnQuest 38443
-    .isQuestAvailable 37831
+    .isQuestAvailable account,37831
     .goto 630,49.65,34.47
     .turnin 37831 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Defending Azurewing Repose@DefendingAzurewingReposeAA-DefendingAzurewingReposeAB
 step
     .isOnQuest 37853
-    .isQuestAvailable 42289
+    .isQuestAvailable account,42289
     .goto 630,51.52,24.33
     .turnin 42289 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
@@ -4448,14 +4448,14 @@ step
     --TODO: Title Color
     #title In the cave
     .isOnQuest 37959
-    .isQuestAvailable 44104
+    .isQuestAvailable account,44104
     .goto 630,53.61,18.14
     .turnin 44104 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
     --TODO: Title Color
     #title Top of the tower
     .isOnQuest 37959
-    .isQuestAvailable 40711
+    .isQuestAvailable account,40711
     .goto 630,55.63,18.51
     .turnin 40711 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
@@ -4464,7 +4464,7 @@ step
     --TODO: Title Color
     #title Top of the tower
     .isOnQuest 37862
-    .isQuestAvailable 37980
+    .isQuestAvailable account,37980
     .goto 630,58.38,12.27
     .turnin 37980 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
@@ -4504,12 +4504,12 @@ step
     .target Elder Aldryth
 step
     .isOnQuest 37492
-    .isQuestAvailable 42287
+    .isQuestAvailable account,42287
     .goto 630,54.40,36.35
     .turnin 42287 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     .isOnQuest 37492
-    .isQuestAvailable 37596
+    .isQuestAvailable account,37596
     .goto 630,53.03,37.27
     .turnin 37596 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
@@ -4538,7 +4538,7 @@ step
     .target +Olothil Starlance
 step
     .isOnQuest 37496
-    .isQuestAvailable 37828
+    .isQuestAvailable account,37828
     .goto 630,49.38,45.34
     .turnin 37828 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
@@ -4552,19 +4552,19 @@ step
     .use 118330
 step
     .isOnQuest 37565
-    .isQuestAvailable 37649
+    .isQuestAvailable account,37649
     .goto 632,69.54,48.02
     .turnin 37649 >>Click on the |cRXP_PICK_Glimmering Treasure Chest|r.
 step
     #label OceanusCaveTreasureChestsA
     .isOnQuest 37565
-    .isQuestAvailable 42291
+    .isQuestAvailable account,42291
     .goto 632,45.35,66.85
     .turnin 42291 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Against Giants@AgainstGiantsC-AgainstGiantsD
 step
-    .isQuestAvailable 37829
+    .isQuestAvailable account,37829
     .goto 630,53.16,64.44
     .turnin 37829 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
@@ -4605,15 +4605,15 @@ step
     .accept 42268 >>Accept Shipwrecked Sailors << Horde
     .accept 42220 >>Accept Shipwrecked Sailors << Alliance
 step
-    .isQuestAvailable 38365
+    .isQuestAvailable account,38365
     .goto 630,55.87,56.85
     .turnin 38365 >>Click on the |cRXP_PICK_Disputed Chest|r.
 step
-    .isQuestAvailable 42272
+    .isQuestAvailable account,42272
     .goto 630,59.88,63.19
     .turnin 42272 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
-    .isQuestAvailable 42273
+    .isQuestAvailable account,42273
     .goto 630,62.37,58.41
     .turnin 42273 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
@@ -4679,12 +4679,12 @@ step
     .mob Naga Brute
 step
     .isOnQuest 42693
-    .isQuestAvailable 42282
+    .isQuestAvailable account,42282
     .goto 630,53.62,44.15
     .turnin 42282 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     .isOnQuest 42693
-    .isQuestAvailable 42283
+    .isQuestAvailable account,42283
     .goto 630,53.49,45.46
     .turnin 42283 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
@@ -4716,33 +4716,33 @@ step
     #include RestedXP Legion Remix\b) Azsuna versus Azshara@AzsunaVersusAzsharaF-AzsunaVersusAzsharaG
 step
     .isOnQuest 37678
-    .isQuestAvailable 42284
+    .isQuestAvailable account,42284
     .goto 631,62.02,83.86
     .turnin 42284 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Azsuna versus Azshara@AzsunaVersusAzsharaH-AzsunaVersusAzsharaI
 step
     .isOnQuest 37469
-    .isQuestAvailable 42285
+    .isQuestAvailable account,42285
     .goto 631,71.68,21.74
     .turnin 42285 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Azsuna versus Azshara@AzsunaVersusAzsharaJ-AzsunaVersusAzsharaZ
 step
-    .isQuestAvailable 37830
+    .isQuestAvailable account,37830
     .goto 630,58.36,43.78
     .turnin 37830 >>Click on the |cRXP_PICK_Glimmering Treasure Chest|r.
 step
-    .isQuestAvailable 42294
+    .isQuestAvailable account,42294
     .goto 630,62.80,44.79
     .turnin 42294 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
-    .isQuestAvailable 40751
+    .isQuestAvailable account,40751
     .goto 630,66.06,43.45
     .turnin 40751 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
     #label AzsunaSpeedrunY
-    .isQuestAvailable 42293
+    .isQuestAvailable account,42293
     .goto 630,63.65,39.17
     .turnin 42293 >>Click on the |cRXP_PICK_Small Treasure Chest|r.
 step
