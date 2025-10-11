@@ -1314,6 +1314,7 @@ step
     >>|cRXP_WARN_Wait for the roleplay|r
     .scenario 1827,1 --Obtain the Lich King's blessing
 step
+    .zoneskip 648
     .goto 701,47.64,90.58
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Archerus Waygate|r
     .scenario 2923,1 --1/1 Acherus Waygate taken
@@ -1321,6 +1322,7 @@ step
     .goto 648,51.01,50.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 38990 >>Turn in The Call of Icecrown
+    .timer 60,Roleplay
     .target Highlord Darion Mograine
 ]])
 --Frost 2

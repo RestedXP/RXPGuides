@@ -1383,13 +1383,46 @@ step
     .accept 39799 >>Accept Our Next Move
 step
     .goto 648,49.69,51.32
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r.
     .complete 39799,1 --1/1 Initial strike point chosen
+    .acceptmap 39718
 step
     .goto 648,49.56,51.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siouxsie the Banshee|r
     .turnin 39799 >>Turn in Our Next Move
     .timer 47,Roleplay
     .target Siouxsie the Banshee
+step
+    .goto 648,51.01,50.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
+    .accept 58989 >>Accept Runeforging 101
+    .target Highlord Darion Mograine
+step
+    .goto 648,36.25,38.53    
+    .complete 58989,1 --1/1 Use the portal to the 2nd floor (Optional)
+step
+    .goto 647,44.08,66.33
+    >>Use |T237523:0|t[Runeforging] at the |cRXP_PICK_Rune Forge|r and apply a rune to your weapon
+    .complete 58989,2 --1/1 Weapon emblazoned
+    .usespell 53428
+step
+    #completewith next
+    #label RuneforgingFourHorsemenA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
+    .accept 42449 >>Accept Return of the Four Horsemen
+    .turnin 58989 >>Turn in Runeforging 101
+    .target Highlord Darion Mograine
+step
+    #completewith RuneforgingFourHorsemenA
+    .goto 647,33.79,36.01
+    .zone 648 >>|cRXP_WARN_Walk on top of the teleporter|r
+step
+    #requires RuneforgingFourHorsemenA
+    .goto 648,50.97,50.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
+    .accept 42449 >>Accept Return of the Four Horsemen
+    .turnin 58989 >>Turn in Runeforging 101
+    .target Highlord Darion Mograine
 step
     .goto 648,50.93,50.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
