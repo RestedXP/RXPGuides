@@ -4318,6 +4318,7 @@ step
     .target Eternus
 step
     .zoneskip 619
+    .zoneskip 627,1
     #completewith InfiniteChaosA
     .goto 627,72.06,40.49
     .cast 1233963 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r to the Infinite Bazaar
