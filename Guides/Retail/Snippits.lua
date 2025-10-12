@@ -2418,7 +2418,6 @@ step
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .turnin 43980 >>Turn in Another Weapon of Old
-    .accept 42428 >>Accept The Shrine of Ashamane
     .target Rensar Greathoof
 step
     .isQuestAvailable 40646
@@ -3123,7 +3122,6 @@ step
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .turnin 43980 >>Turn in Another Weapon of Old
-    .accept 42428 >>Accept The Shrine of Ashamane
     .target Rensar Greathoof
 step
     .isQuestAvailable 40646
@@ -3507,7 +3505,6 @@ step
     .goto 747,44.67,51.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .turnin 43980 >>Turn in Another Weapon of Old
-    .accept 42428 >>Accept The Shrine of Ashamane
     .target Rensar Greathoof
 step
     .isQuestAvailable 40646
