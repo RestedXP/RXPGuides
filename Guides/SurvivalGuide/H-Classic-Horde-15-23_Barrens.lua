@@ -647,24 +647,12 @@ step
     .dungeon RFC
 step
     #optional
-    .abandon 5723 >> Abandon Testing an Enemy's Strength
-    .isOnQuest 5723
+    .abandon 5723,5725,5728,5761 >> Abandon Testing an Enemy's Strength
     .dungeon RFC
-step
-    #optional
-    .abandon 5725 >> Abandon Turn in The Power to Destroy...
-    .isOnQuest 5725
-    .dungeon RFC
-step
-    #optional
-    .abandon 5728 >> Abandon Hidden Enemies
-    .isOnQuest 5728
-    .dungeon RFC
-step
-    #optional
-    .abandon 5761 >> Abandon Slaying the Beast
-    .isOnQuest 5761
-    .dungeon RFC
+    --5723 Testing an Enemy's Strength
+    --5725 The Power to Destroy...
+    --5728 Hidden Enemies
+    --5761 Slaying the Beast
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
@@ -1687,6 +1675,7 @@ step
     .mob Echeyakee
     .use 10327
 step
+    #optional
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
@@ -4137,7 +4126,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r and |cRXP_FRIENDLY_Mor'Rogal|r
     .accept 6562 >>Accept Trouble in the Deeps
-    .accept 6393 >>Accept Elemental War
+    --.accept 6393 >>Accept Elemental War
     .target +Tsunaman
     .goto Stonetalon Mountains,47.36,64.25
     .turnin 6421 >>Turn in Boulderslide Ravine
@@ -4158,7 +4147,7 @@ step
     .goto Stonetalon Mountains,47.36,64.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
     .accept 6562 >>Accept Trouble in the Deeps
-    .accept 6393 >>Accept Elemental War
+    --.accept 6393 >>Accept Elemental War
     .target Tsunaman
 step
     .goto Stonetalon Mountains,59.08,75.70
@@ -4951,58 +4940,23 @@ step << Rogue
     .target Trak'gen
 step
     #optional
-    .abandon 6421 >> Abandon Boulderslide Ravine
-    .isOnQuest 6421
+    .abandon 6421,4021,6481,6284,6641,6563
+    --6421 Boulderslide Ravine
+    --4021 Counterattack!
+    --6481 Earthen Arise
+    --6284 Arachnophobia
+    --6641 Vorsha the Lasher
+    --6563 The Essence of Aku'Mai
 step
     #optional
-    .abandon 4021 >> Abandon Counterattack!
-    .isOnQuest 4021
-step
-    #optional
-    .abandon 6481 >> Abandon Earthen Arise
-    .isOnQuest 6481
-step
-    #optional
-    .abandon 6284 >> Abandon Arachnophobia
-    .isOnQuest 6284
-step
-    #optional
-    .abandon 6641 >> Abandon Vorsha the Lasher
-    .isOnQuest 6641
-step
-    #optional
-    .abandon 6563 >> Abandon The Essence of Aku'Mai
-    .isOnQuest 6563
-step
-    #optional
-    .abandon 1486 >> Abandon Deviate Hides
-    .isOnQuest 1486
+    .abandon 1486,1487,1491,959,914,962
     .dungeon WC
-step
-    #optional
-    .abandon 1487 >> Abandon Deviate Eradication
-    .isOnQuest 1487
-    .dungeon WC
-step
-    #optional
-    .abandon 1491 >> Abandon Smart Drinks
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #optional
-    .abandon 959 >> Abandon Trouble at the Docks
-    .isOnQuest 959
-    .dungeon WC
-step
-    #optional
-    .abandon 914 >> Abandon Leaders of the Fang
-    .isOnQuest 914
-    .dungeon WC
-step
-    #optional
-    .abandon 962 >> Abandon Serpentbloom
-    .isOnQuest 962
-    .dungeon WC
+    --1486 Deviate Hides
+    --1487 Deviate Eradication
+    --1491 Smart Drinks
+    --959 Trouble at the Docks
+    --914 Leaders of the Fang
+    --962 Serpentbloom
 step
     #completewith next
     .zone Durotar >> Leave Orgrimmar

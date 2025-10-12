@@ -1691,24 +1691,12 @@ step << skip --!Tauren
     .dungeon RFC
 step
     #optional
-    .abandon 5723 >> Abandon Testing an Enemy's Strength
-    .isOnQuest 5723
+    .abandon 5723,5725,5728,5761 >> Abandon Testing an Enemy's Strength
     .dungeon RFC
-step
-    #optional
-    .abandon 5725 >> Abandon Turn in The Power to Destroy...
-    .isOnQuest 5725
-    .dungeon RFC
-step
-    #optional
-    .abandon 5728 >> Abandon Hidden Enemies
-    .isOnQuest 5728
-    .dungeon RFC
-step
-    #optional
-    .abandon 5761 >> Abandon Slaying the Beast
-    .isOnQuest 5761
-    .dungeon RFC
+    --5723 Testing an Enemy's Strength
+    --5725 The Power to Destroy...
+    --5728 Hidden Enemies
+    --5761 Slaying the Beast
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -2378,6 +2366,7 @@ step
     .mob Echeyakee
     .use 10327
 step
+    #optional
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
@@ -3059,6 +3048,7 @@ step << Druid
     .use 208687 --Rune of Lacerate (1)
     .itemcount 208687,1
 step
+    #optional
     #xprate <1.5
     #completewith CounterattackComplete
     .abandon 855 >> Abandon Centaur Bracers as you have not looted enough previously to make it worthwhile to finish
@@ -5359,34 +5349,14 @@ step
     .dungeon WC
 step
     #optional
-    .abandon 1486 >> Abandon Deviate Hides
-    .isOnQuest 1486
+    .abandon 1486,1487,1491,959,914,962
     .dungeon WC
-step
-    #optional
-    .abandon 1487 >> Abandon Deviate Eradication
-    .isOnQuest 1487
-    .dungeon WC
-step
-    #optional
-    .abandon 1491 >> Abandon Smart Drinks
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #optional
-    .abandon 959 >> Abandon Trouble at the Docks
-    .isOnQuest 959
-    .dungeon WC
-step
-    #optional
-    .abandon 914 >> Abandon Leaders of the Fang
-    .isOnQuest 914
-    .dungeon WC
-step
-    #optional
-    .abandon 962 >> Abandon Serpentbloom
-    .isOnQuest 962
-    .dungeon WC
+    --1486 Deviate Hides
+    --1487 Deviate Eradication
+    --1491 Smart Drinks
+    --959 Trouble at the Docks
+    --914 Leaders of the Fang
+    --962 Serpentbloom
 step
     #xprate <1.5
     #completewith Serena
@@ -5420,6 +5390,7 @@ step
     .isQuestComplete 855
 step
     #xprate <1.5
+    #optional
     #completewith Serena
     .abandon 855 >>Abandon Centaur Bracers
 step
@@ -6626,28 +6597,13 @@ step
     #label flytoORG
 step
     #optional
-    .abandon 6421 >> Abandon Boulderslide Ravine
-    .isOnQuest 6421
-step
-    #optional
-    .abandon 4021 >> Abandon Counterattack!
-    .isOnQuest 4021
-step
-    #optional
-    .abandon 6481 >> Abandon Earthen Arise
-    .isOnQuest 6481
-step
-    #optional
-    .abandon 6284 >> Abandon Arachnophobia
-    .isOnQuest 6284
-step
-    #optional
-    .abandon 6641 >> Abandon Vorsha the Lasher
-    .isOnQuest 6641
-step
-    #optional
-    .abandon 6563 >> Abandon The Essence of Aku'Mai
-    .isOnQuest 6563
+    .abandon 6421,4021,6481,6284,6641,6563
+    --6421 Boulderslide Ravine
+    --4021 Counterattack!
+    --6481 Earthen Arise
+    --6284 Arachnophobia
+    --6641 Vorsha the Lasher
+    --6563 The Essence of Aku'Mai
 ]])
 
 
@@ -8625,24 +8581,12 @@ step << skip --!Tauren
     .dungeon RFC
 step
     #optional
-    .abandon 5723 >> Abandon Testing an Enemy's Strength
-    .isOnQuest 5723
+    .abandon 5723,5725,5728,5761 >> Abandon Testing an Enemy's Strength
     .dungeon RFC
-step
-    #optional
-    .abandon 5725 >> Abandon Turn in The Power to Destroy...
-    .isOnQuest 5725
-    .dungeon RFC
-step
-    #optional
-    .abandon 5728 >> Abandon Hidden Enemies
-    .isOnQuest 5728
-    .dungeon RFC
-step
-    #optional
-    .abandon 5761 >> Abandon Slaying the Beast
-    .isOnQuest 5761
-    .dungeon RFC
+    --5723 Testing an Enemy's Strength
+    --5725 The Power to Destroy...
+    --5728 Hidden Enemies
+    --5761 Slaying the Beast
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate <2.1
     .goto The Barrens,51.44,30.15
@@ -8761,6 +8705,7 @@ step
     .use 10327
 step
     #xprate >2.09
+    #optional
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
@@ -9221,7 +9166,7 @@ step << Orc Rogue/Troll Rogue
 step << Rogue
     #optional
     #completewith FoodandWater2
-    +Equip the |T135342:0|t[Kris]
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
     .use 2209
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
@@ -9230,7 +9175,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FoodandWater2
-    +Equip the |T135342:0|t[Kris] once you are level 19
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris] once you are level 19
     .use 2209
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
@@ -9443,6 +9388,7 @@ step
     .mob Echeyakee
     .use 10327
 step
+    #optional
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
@@ -10113,6 +10059,7 @@ step << Druid
     .itemcount 208687,1
 step
     #xprate <2.1
+    #optional
     #completewith CounterattackComplete
     .abandon 855 >> Abandon Centaur Bracers as you have not looted enough previously to make it worthwhile to finish
     .itemcount 5030,<5 --Centaur Bracers (5)
@@ -12620,34 +12567,14 @@ step
     .dungeon WC
 step
     #optional
-    .abandon 1486 >> Abandon Deviate Hides
-    .isOnQuest 1486
+    .abandon 1486,1487,1491,959,914,962
     .dungeon WC
-step
-    #optional
-    .abandon 1487 >> Abandon Deviate Eradication
-    .isOnQuest 1487
-    .dungeon WC
-step
-    #optional
-    .abandon 1491 >> Abandon Smart Drinks
-    .isOnQuest 1491
-    .dungeon WC
-step
-    #optional
-    .abandon 959 >> Abandon Trouble at the Docks
-    .isOnQuest 959
-    .dungeon WC
-step
-    #optional
-    .abandon 914 >> Abandon Leaders of the Fang
-    .isOnQuest 914
-    .dungeon WC
-step
-    #optional
-    .abandon 962 >> Abandon Serpentbloom
-    .isOnQuest 962
-    .dungeon WC
+    --1486 Deviate Hides
+    --1487 Deviate Eradication
+    --1491 Smart Drinks
+    --959 Trouble at the Docks
+    --914 Leaders of the Fang
+    --962 Serpentbloom
 step
     #xprate <2.1
     #completewith Serena
@@ -12709,6 +12636,7 @@ step
     .isQuestComplete 855
 step
     #xprate <2.1
+    #optional
     #completewith Serena
     .abandon 855 >>Abandon Centaur Bracers
 step
@@ -13108,30 +13036,11 @@ step << Rogue
     .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #optional
-    .abandon 6421 >> Abandon Boulderslide Ravine
-    .isOnQuest 6421
-step
-    #optional
-    .abandon 4021 >> Abandon Counterattack!
-    .isOnQuest 4021
-step
-    #optional
-    .abandon 6481 >> Abandon Earthen Arise
-    .isOnQuest 6481
-step
-    #optional
-    .abandon 6284 >> Abandon Arachnophobia
-    .isOnQuest 6284
-step
-    #optional
-    .abandon 6641 >> Abandon Vorsha the Lasher
-    .isOnQuest 6641
-step
-    #optional
-    .abandon 6563 >> Abandon The Essence of Aku'Mai
-    .isOnQuest 6563
-step
-    #optional
-    .abandon 855 >>Abandon Centaur Bracers
-    .isOnQuest 855
+    .abandon 6421,4021,6481,6284,6641,6563
+    --6421 Boulderslide Ravine
+    --4021 Counterattack!
+    --6481 Earthen Arise
+    --6284 Arachnophobia
+    --6641 Vorsha the Lasher
+    --6563 The Essence of Aku'Mai
 ]])

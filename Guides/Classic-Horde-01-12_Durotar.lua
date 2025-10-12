@@ -2191,10 +2191,10 @@ step
     .goto Durotar,59.94,57.82,5,0
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
-    >>Go upstairs
+    >>|cRXP_WARN_Go upstairs in the keep|r
     >>Open |cRXP_PICK_Benedict's Chest|r. Loot it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
     >>Use the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] to start the quest
-    .collect 4881,1,830,1 --Collect Aged Envelope (1)
+    .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
 step
@@ -6965,15 +6965,12 @@ step
     #xprate <1.5
     #optional
     .abandon 806 >> Abandon Dark Storms
-    .isOnQuest 806
 step
     #optional
     .abandon 408 >> Abandon The Family Crypt
-    .isOnQuest 408
 step << Warrior
     #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
-    .isOnQuest 1821
 step 
     #optional
     #xprate >1.49
@@ -9061,10 +9058,10 @@ step
     .goto Durotar,59.94,57.82,5,0
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
-    >>Go upstairs
+    >>|cRXP_WARN_Go upstairs in the keep|r
     >>Open |cRXP_PICK_Benedict's Chest|r. Loot it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
     >>Use the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] to start the quest
-    .collect 4881,1,830,1 --Collect Aged Envelope (1)
+    .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
     .maxlevel 11
@@ -9080,10 +9077,12 @@ step
     .goto Durotar,58.99,58.30,30,0
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
-    .mob Kul Tiras Sailor
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
-    .mob Kul Tiras Marine
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
+    .mob +Kul Tiras Marine
+    .mob +Kul Tiras Sailor
     .itemcount 4870,<8 --Canvas Scraps (<8)
     .maxlevel 11
 step
