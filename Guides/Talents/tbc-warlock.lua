@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "WARLOCK" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Affliction Warlock 10-70
+#name Affliction 10-70
 #minLevel 10
 #maxLevel 70
 

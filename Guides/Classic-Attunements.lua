@@ -1161,7 +1161,7 @@ step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5801 >>Turn in Fire Plume Forged
-    .accept 5804 >>Accept Araj's Scarab
+    .accept 5803 >>Accept Araj's Scarab
     .target Alchemist Arbington
 step
     #completewith ArajTheSummoner
@@ -1172,7 +1172,7 @@ step
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
-    .complete 5804,1 --Araj's Scarab (1x)
+    .complete 5803,1 --Araj's Scarab (1x)
     .mob Araj the Summonor
     .itemcount 12650,1 --Attuned Dampener
 step
@@ -1181,7 +1181,7 @@ step
     .goto Western Plaguelands,45.60,69.28
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
-    .complete 5804,1 --Araj's Scarab (1x)
+    .complete 5803,1 --Araj's Scarab (1x)
     .mob Araj the Summonor
 step
     #hardcore
@@ -1189,7 +1189,7 @@ step
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
-    .complete 5804,1 --Araj's Scarab (1x)
+    .complete 5803,1 --Araj's Scarab (1x)
     .mob Araj the Summonor
     .itemcount 12650,1 --Attuned Dampener
 step
@@ -1198,12 +1198,12 @@ step
     .goto Western Plaguelands,45.60,69.28
     >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
-    .complete 5804,1 --Araj's Scarab (1x)
+    .complete 5803,1 --Araj's Scarab (1x)
     .mob Araj the Summonor
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
-    .turnin 5804 >>Turn in Araj's Scarab
+    .turnin 5803 >>Turn in Araj's Scarab
     .target Alchemist Arbington
 step
     .goto Western Plaguelands,42.665,83.774
@@ -1382,7 +1382,7 @@ step
     .goto Tirisfal Glades,83.28,69.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
     .turnin 964 >>Turn in Skeletal Fragments
-    .accept 5538 >>Accept Mold Rhymes With...
+    .accept 5514 >>Accept Mold Rhymes With...
 	.target Apothecary Dithers
 step
     #completewith next

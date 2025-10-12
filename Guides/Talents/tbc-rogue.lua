@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "ROGUE" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Combat Rogue 10-70
+#name Combat 10-70
 #minLevel 10
 #maxLevel 70
 

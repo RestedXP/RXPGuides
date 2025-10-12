@@ -1219,7 +1219,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "header",
                         width = "full",
-                        order = 5.0
+                        order = 5.0,
+                        hidden = addon.gameVersion >= 50000,
                     },
                     enableTalentGuides = {
                         name = L("Enable Talents Guides"), -- TODO locale
@@ -1231,6 +1232,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not (addon.talents and
                                        addon.talents:IsSupported())
                         end,
+                        hidden = addon.gameVersion >= 50000,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1248,7 +1250,7 @@ function addon.settings:CreateAceOptionsPanel()
                                        addon.settings.profile.enableTalentGuides and
                                        addon.talents:IsSupported())
                         end,
-                        hidden = addon.gameVersion < 30000
+                        hidden = addon.gameVersion < 30000 or addon.gameVersion >= 50000
                     },
                     hightlightTalentPlan = {
                         name = L("Enable Talent Plan"), -- TODO locale
@@ -1260,7 +1262,8 @@ function addon.settings:CreateAceOptionsPanel()
                             return not (addon.talents and
                                        addon.settings.profile.enableTalentGuides and
                                        addon.talents:IsSupported())
-                        end
+                        end,
+                        hidden = addon.gameVersion >= 50000
                     },
                     upcomingTalentCount = {
                         name = L("Talent Plan Number"), -- TODO locale
@@ -1280,7 +1283,8 @@ function addon.settings:CreateAceOptionsPanel()
                                        addon.settings.profile
                                            .hightlightTalentPlan and
                                        addon.talents:IsSupported())
-                        end
+                        end,
+                        hidden = addon.gameVersion >= 50000
                     }
                 }
             },

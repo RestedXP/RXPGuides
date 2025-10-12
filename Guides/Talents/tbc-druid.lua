@@ -3,7 +3,7 @@ local _, addon = ...
 if addon.player.class ~= "DRUID" or addon.game ~= "TBC" then return end
 
 addon.talents.RegisterGuide([[
-#name Feral Druid 10-70
+#name Feral 10-70
 #minLevel 10
 #maxLevel 70
 
