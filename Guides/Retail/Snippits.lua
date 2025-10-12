@@ -3730,10 +3730,11 @@ step
     .isQuestNotComplete 41689
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,61.10,25.99
+    .goto 198,60.31,42.76
     >>|cRXP_WARN_Heal your allies for ~3minutes|r.
     .scenario 2272,1 --1
     .scenario 2272,2 --Lyessa Must Survive
+    .skipgossipid 45138
 step
     .isQuestNotComplete 41689
     .isOnQuest 41689
@@ -3746,27 +3747,27 @@ step
     .isQuestNotComplete 41689
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,60.56,25.49
+    .goto 198,60.56,42.81
     >>|cRXP_WARN_Wait for the roleplay|r.
     .scenario 2325,2 --Witness G'Hanir's rebirth.
     .complete 41689,3 --1/1 G'Hanir cleansed
 step
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,60.60,25.49
+    .goto 198,60.56,42.81
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_G'Hanir|r.
     .scenario 2372,1 --Wield G'Hanir, the Mother Tree.
 step
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,60.66,25.54
+    .goto 198,60.56,42.81
     >>Use |T1115592:0|t[Call of the Mother Tree] |cRXP_WARN_in the quest log under your minimap|r.
     .scenario 2274,1 --Call upon the souls of the forest.
     .timer 15,Destromath Roleplay
 step
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,60.82,25.68
+    .goto 198,60.56,42.81
     >>|cRXP_WARN_Wait for the roleplay|r.
     .scenario 2274,2 --Eliminate Destromath.
 step
