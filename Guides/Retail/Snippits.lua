@@ -3688,7 +3688,8 @@ step
     .isQuestNotComplete 41689
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,60.52,27.09
+    --.goto 198/1,-349880.01465,493840.00000
+    .goto 198,60.52,44.54
     >>Heal |cRXP_FRIENDLY_Celestine of the Harvest|r.
     .scenario 2269,2 --Heal Celestine to full health.
     .target Celestine of the Harvest
@@ -3696,7 +3697,7 @@ step
     .isQuestNotComplete 41689
     .isOnQuest 41689
     .isInScenario 1061
-    .goto 198,61.68,26.24
+    .goto 198,61.68,43.60
     >>Heal |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r.
     .scenario 2269,1 --Heal Hamuul to full health.
     .target Archdruid Hamuul Runetotem
