@@ -509,9 +509,7 @@ end
 
 local function UpdateBagButton(button,bag,slot)
     local id = GetContainerItemID(bag, slot)
-
     local isJunk = IsJunk(id)
-    --print(bag,slot,isJunk)
     if isJunk then
         ShowJunkIcon(button)
     else
@@ -529,9 +527,7 @@ end
 
 
 local function UpdateBag(frame,name,pattern)
-    if not inventoryManager.IsJunkIconEnabled() then
-        return
-    end
+
     pattern = pattern or inventoryManager.containerPattern
     name = name or frame:GetName()
     local i = 1
@@ -545,7 +541,6 @@ local function UpdateBag(frame,name,pattern)
         if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
             local slot = button:GetID()
             bagFrame[bag][slot] = ref
-            --print(ref)
             UpdateBagButton(button,bag,slot)
         end
         i = i + 1
@@ -590,28 +585,31 @@ local function DetectBagMods()
 end
 
 
-local function UpdateAllBags(self,name,i)
-    if not inventoryManager.IsJunkIconEnabled() then
-        for _,icon in pairs(junkIcons) do
+local function UpdateAllBags(self, name, i)
+    local junkEnabled = inventoryManager.IsJunkIconEnabled()
+    if not junkEnabled then
+        for _, icon in pairs(junkIcons) do
             icon:Hide()
         end
-        return
     end
+
     DetectBagMods()
     i = i or inventoryManager.containerIndex
     name = name or inventoryManager.containerName
-    --print(name,inventoryManager.containerPattern)
-    local ref = format(name,i)
+
+    local ref = format(name, i)
     local frame = _G[ref]
     while frame or i <= 0 do
         if frame then
-            UpdateBag(frame,ref)
+            UpdateBag(frame, ref)
         end
         i = i + 1
-        ref = format(name,i)
+        ref = format(name, i)
         frame = _G[ref]
     end
 end
+
+
 inventoryManager.UpdateAllBags = UpdateAllBags
 
 local invUpdate = CreateFrame("Frame")

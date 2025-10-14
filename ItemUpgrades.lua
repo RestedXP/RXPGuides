@@ -677,24 +677,76 @@ local function RXP_GetOrCreateOverlay(btn)
     return f
 end
 
--- --- Replace your RXP_GetOrCreateUpgradeIcon with this version ---
+-- Create an elevated child frame so our icon draws above addon visuals
+local function RXP_GetOrCreateOverlay(btn)
+    if btn.RXPOverlay then return btn.RXPOverlay end
+    local f = CreateFrame("Frame", nil, btn)
+    f:SetAllPoints(btn)
+    f:SetFrameStrata(btn:GetFrameStrata() or "MEDIUM")
+    f:SetFrameLevel((btn:GetFrameLevel() or 0) + 50) -- stay on top
+
+    if btn.HookScript then
+        btn:HookScript("OnShow", function(b)
+            f:SetFrameStrata(b:GetFrameStrata() or "MEDIUM")
+            f:SetFrameLevel((b:GetFrameLevel() or 0) + 50)
+        end)
+        btn:HookScript("OnSizeChanged", function() f:SetAllPoints(btn) end)
+    end
+    if btn.SetFrameLevel then
+        hooksecurefunc(btn, "SetFrameLevel", function(b, lvl)
+            f:SetFrameLevel((lvl or 0) + 50)
+        end)
+    end
+
+    btn.RXPOverlay = f
+    return f
+end
+
 local function RXP_GetOrCreateUpgradeIcon(btn)
     if btn.RXPUpgradeIcon and btn.RXPUpgradeIcon:IsObjectType("Texture") then
         return btn.RXPUpgradeIcon
     end
-
-    -- Create the texture on our elevated overlay frame, not directly on the button
     local overlay = RXP_GetOrCreateOverlay(btn)
-    local t = overlay:CreateTexture(nil, "OVERLAY", nil, 7) -- sublevel gives extra safety
-    t:SetTexture(RXP_UPGRADE_ICON)
+    local t = overlay:CreateTexture(nil, "OVERLAY", nil, 7)
+    t:SetTexture(RXP_UPGRADE_ICON) -- you already have this constant
     t:SetSize(18, 18)
-    t:ClearAllPoints()
     t:SetPoint("BOTTOMLEFT", btn, "BOTTOMLEFT", 1, 1)
     t:Hide()
-
     btn.RXPUpgradeIcon = t
     return t
 end
+
+local function RXP_ResolveBagSlot(btn)
+    -- Try common fields used by bag addons
+    local bag = rawget(btn, "bag") or (btn.GetBagID and btn:GetBagID())
+    local slot = rawget(btn, "slot") or (btn.GetSlotAndBag and select(2, btn:GetSlotAndBag()))
+
+    -- Blizzard fallback
+    if not bag and btn:GetParent() and btn:GetParent() then
+        bag = btn:GetParent():GetID()
+    end
+    if not slot and btn.GetID then
+        slot = btn:GetID()
+    end
+    return bag, slot
+end
+
+local function RXP_UpdateKnownButton(btn, bag, slot)
+    if not btn or not bag or not slot then return end
+    if not addon.settings.profile.enableItemUpgrades then
+        if btn.RXPUpgradeIcon then btn.RXPUpgradeIcon:Hide() end
+        return
+    end
+
+    local link = RXP_GetBagItemLink(bag, slot) -- your C_Container wrapper
+    local tex = RXP_GetOrCreateUpgradeIcon(btn)
+    if link and RXP_IsItemUpgrade(link) then
+        tex:Show()
+    else
+        tex:Hide()
+    end
+end
+
 
 
 -- Update one bag button
@@ -778,6 +830,16 @@ function addon.itemUpgrades:Setup()
                 RXP_UpdateBagButton(btn)
             end)
         end
+
+    if not session.bagObserverRegistered and addon.inventoryManager and addon.inventoryManager.RegisterBagButtonObserver then
+        addon.inventoryManager.RegisterBagButtonObserver(function(button, bag, slot)
+            -- Use the supplied bag/slot, or resolve if not provided
+            bag = bag or select(1, RXP_ResolveBagSlot(button))
+            slot = slot or select(2, RXP_ResolveBagSlot(button))
+            RXP_UpdateKnownButton(button, bag, slot)
+        end)
+        session.bagObserverRegistered = true
+    end
 
 -- on frame reset resweep
     if type(ContainerFrame_Update) == "function" then
