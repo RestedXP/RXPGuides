@@ -4,6 +4,7 @@ local L = addon.locale.Get
 local inventoryManager = {}
 addon.inventoryManager = inventoryManager
 
+
 local gameVersion = select(4, GetBuildInfo())
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
@@ -23,6 +24,23 @@ local GetCoinTextureString = C_CurrencyInfo and C_CurrencyInfo.GetCoinTextureStr
 inventoryManager.bagHook = _G.ContainerFrame_Update
 
 local GetContainerItemInfo
+
+-- Bag Observers --
+inventoryManager._buttonObservers = {}
+
+function inventoryManager.RegisterBagButtonObserver(fn)
+    if type(fn) == "function" then table.insert(inventoryManager._buttonObservers, fn) end
+end
+
+local function _notifyObservers(button, bag, slot)
+    -- Call every observer safely
+    for _, fn in ipairs(inventoryManager._buttonObservers) do
+        local ok = pcall(fn, button, bag, slot)
+        -- (optional) if not ok and addon.settings.profile.debug then print("Observer error", err) end
+    end
+end
+
+
 
 
 if C_Container and C_Container.GetContainerItemInfo then
@@ -499,6 +517,7 @@ local function UpdateBagButton(button,bag,slot)
     else
         HideJunkIcon(button)
     end
+     _notifyObservers(button, bag, slot)
 end
 
 local bagFrame = {}
