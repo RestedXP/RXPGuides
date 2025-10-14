@@ -2556,7 +2556,8 @@ step
     .goto Darkshore,38.7,87.3
 .target Therylune
 >>Talk to |cRXP_FRIENDLY_Therylune|r
-    .accept 945 >> Accept Therylune's Escape. If she's not here someone else is escorting her, grind til she respawns.
+    .accept 945 >> Accept Therylune's Escape
+    >>If she's not here someone else is escorting her, grind til she respawns.
     .maxlevel 21
 step
 #xprate <1.2

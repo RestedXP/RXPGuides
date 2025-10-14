@@ -2802,7 +2802,8 @@ step
     .goto The Barrens,46.0,81.2,50,0
 .target Gann Stonespire
 >>Talk to |cRXP_FRIENDLY_Gann Stonespire|r
-    .accept 843 >> Accept Gann's Reclamation. He patrols along the road.
+    .accept 843 >> Accept Gann's Reclamation
+    >>He patrols along the road.
     .unitscan Gann Stonespire
     .maxlevel 28
 step

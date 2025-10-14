@@ -2285,7 +2285,8 @@ step
     .goto Western Plaguelands,47.5,50.4
     >>Go back to the barn and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
     .turnin 83935 >> Turn in Clearing the Path
-    .accept 83822,1 >> Accept The Fallen Knight, |cRXP_WARN_this is an escort quest|r
+    .accept 83822,1 >> Accept The Fallen Knight
+    >>|cRXP_WARN_this is an escort quest|r
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,44.6,46.6
