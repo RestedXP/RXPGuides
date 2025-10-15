@@ -969,7 +969,7 @@ step
     .zoneskip 627,1
     .zone 627 >>Enter Dalaran
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you when in dalaran|r.
     .accept 12103 >>Accept Before the Storm
     .target Initiate Da-Nel
 step
@@ -1303,7 +1303,8 @@ step << Alliance
     #label Dalaran
     .goto 709,52.4,57.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 39735,1 --1/1 Travel to Dalaran 
+    -- .complete 39735,1 --1/1 Travel to Dalaran 
+    .complete 39718,1 --1/1 Travel to Dalaran 
     .timer 8,RP
 step << Horde
     #label Dalaran
@@ -2907,12 +2908,13 @@ step
     .target Lord Grayson Shadowbreaker
     .accept 39756 >>Accept A Sound Plan
 step
+    .goto 24,53.37,78.68
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 39756,1 --1/1 Assault Point Chosen
     .acceptmap 39718
     .accept 39718 >>Accept The Tranquil Forest
 step
-    .goto 24,53.4,78.69
+    .goto 24,53.37,78.68
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 39756,1 --1/1 Initial strike point chosen
 step

@@ -876,19 +876,7 @@ step
 -- ================= ARTIFACT WEAPONS ================
 
 -- --------- Death Knight ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name ai) 1
--- #displayname Death Knight
--- #chapters a) Order Hall Death Knight Part 1;ab) Order Hall Death Knight Part 2;ac) Order Hall Death Knight;a) Artifact Weapon: Blood;a) Artifact Weapon: Frost DK;a) Artifact Weapon: Unholy
 
-
-
--- ]])
 --Blood
 RXPGuides.RegisterGuide([[
 #retail
@@ -1128,7 +1116,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Blood
 ]])
-
 --Frost
 RXPGuides.RegisterGuide([[
 #retail
@@ -1340,7 +1327,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
 ]])
-
 --Unholy
 RXPGuides.RegisterGuide([[
 #retail
@@ -1633,7 +1619,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
 ]])
-
 --Death Knight Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -1666,19 +1651,7 @@ step
 ]])
 
 -- --------- Demon Hunter ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name aj) 1
--- #displayname Demon Hunter
--- #chapters a) Order Hall Demon Hunter Part 1;ab) Order Hall Demon Hunter Part 2;ac) Order Hall Demon Hunter;a) Artifact Weapon: Havoc;a) Artifact Weapon: Vengeance
 
-
-
--- ]])
 --Havoc
 RXPGuides.RegisterGuide([[}
 #retail
@@ -2298,20 +2271,7 @@ step
 ]])
 
 -- --------- Druid ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #subweight 99.6
--- #name ak) 1
--- #displayname Druid
--- #chapters a) Order Hall Druid Part 1;ab) Order Hall Druid Part 2;ac) Order Hall Druid;a) Artifact Weapon: Balance Druid;a) Artifact Weapon: Feral Druid;a) Artifact Weapon: Guardian Druid;a) Artifact Weapon: Restoration Druid
 
-
-
--- ]])
 --Balance
 RXPGuides.RegisterGuide([[
 #retail
@@ -3613,6 +3573,7 @@ step
     .goto 747,42.55,16.10,8,0
     .goto 747,41.20,18.49,8,0
     .goto 747,46.76,29.02,8 >>|cRXP_WARN_Follow the arrow out of the cave|r.
+    *|cRXP_WARN_If the corruption ticks too hard abandon the quest and relog|r.
 step
     #requires InDeepSlumberA
     .goto 747,45.12,50.91
@@ -3848,19 +3809,7 @@ step
 ]])
 
 -- --------- Hunter ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name al) 1
--- #displayname Hunter
--- #chapters a) Order Hall Hunter Part 1;ab) Order Hall Hunter Part 2;ac) Order Hall Hunter;a) Artifact Weapon: Beast Mastery;a) Artifact Weapon: Marksmanship;a) Artifact Weapon: Survival
 
-
-
--- ]])
 --Beast Mastery
 RXPGuides.RegisterGuide([[
 #retail
@@ -4238,7 +4187,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Beaster Mastery
 ]])
-
 --Marksmanship
 RXPGuides.RegisterGuide([[
 #retail
@@ -4511,7 +4459,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
 ]])
-
 --Survival
 RXPGuides.RegisterGuide([[
 #retail
@@ -4812,7 +4759,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Survival
 ]])
-
 --Hunter Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -4845,19 +4791,7 @@ step
 ]])
 
 -- --------- Mage ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name am) 1
--- #displayname Mage
--- #chapters a) Order Hall Mage Part 1;ab) Order Hall Mage Part 2;ac) Order Hall Mage;a) Artifact Weapon: Arcane;a) Artifact Weapon: Fire;a) Artifact Weapon: Frost Mage
 
-
-
--- ]])
 --Arcane
 RXPGuides.RegisterGuide([[
 #retail
@@ -5226,6 +5160,7 @@ step
     .usespell 225025
 step
     .isInScenario 1101
+    #label Artifact Weapon: Arcane
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r in the middle.
     .complete 42011,2 --1/1 Aluneth
 step
@@ -5243,7 +5178,6 @@ step
     .usespell 224869
 step
     #requires Nexus Vault
-    #label Artifact Weapon: Arcane
     .goto 627,28.62,49.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Kalec|r inside the Violet Citadel.
     .turnin 42011 >>Turn in The Nexus Vault
@@ -5558,6 +5492,7 @@ step
     .scenario 1929,1 --Slay Lyandra Sunstrider
     .mob Lyandra Sunstrider
 step
+    #label Artifact Weapon: Fire
     .goto 700,51.8,16.4
     .isInScenario 957
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Felo'melorn|r
@@ -5577,7 +5512,6 @@ step
     .usespell 224869
 step
     #requires Frozen Flame
-    #label Artifact Weapon: Fire
     .goto 627,28.40,48.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Modera|r
     .turnin 11997 >>Turn in The Frozen Flame
@@ -5807,18 +5741,18 @@ step
     .isQuestTurnedIn 41113
     #completewith next
     #hidewindow
-    #label Bank of Dalaran
+    #label Bank of Dalaran2
     .complete 42455,1 --1/1 Go to the Bank of Dalaran
 step
     .isQuestTurnedIn 41113
-    #completewith Bank of Dalaran
+    #completewith Bank of Dalaran2
     .goto 734,57.34,90.63
     .zone 627 >>Click on the |cRXP_PICK_Portal|r or Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
     -- .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles].
     -- .usespell 224869
 step
     .isQuestTurnedIn 41113
-    #requires Bank of Dalaran
+    #requires Bank of Dalaran2
     #title |cFFFCDC00Follow the Arrow|r
     .goto 627,51.66,22.26,20,0
     .goto 627,52.88,19.12
@@ -5888,6 +5822,11 @@ step
     .mob Fiendish Trickster
     .mob Empowered Wrathguard
     .mob Eredar Mage
+step
+    #completewith next
+    >>Use |T254294:0|t[Karazhan Scroll] at |cRXP_WARN_10 SECONDS LEFT|r
+    .complete 42476,2 --1/1 Fly to the abandoned Kirin Tor camp near Karazhan
+    .use 173698
 step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42477,5 --1/1 Get the Demon Stone
@@ -6056,6 +5995,7 @@ step
     .mob Balaadur
 step
     .goto 619,67.05,92.74
+    #label Artifact Weapon: Frost Mage
     .isInScenario 1122
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon|r
     .scenario 2532,1 --Claim Ebonchill.
@@ -6073,7 +6013,6 @@ step
     .usespell 193759
 step
     #requires Mage Hunter
-    #label Artifact Weapon: Frost Mage
     .goto 734,53.3,72.2,20,0
     .goto 734,59.04,56.7,20,0
     .goto 735,56.68,33.77
@@ -6204,19 +6143,7 @@ step
 ]])
 
 -- --------- Monk ---------
--- Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name ah) 1
--- #displayname Monk
--- #chapters a) Order Hall Monk Part 1;ab) Order Hall Monk Part 2;ac) Order Hall Monk;a) Artifact Weapon: Windwalker;a) Artifact Weapon: Mistweaver;a) Artifact Weapon: Brewmaster
 
--- << Monk
-
--- ]])
 --Brewmaster
 RXPGuides.RegisterGuide([[
 #retail
@@ -7167,6 +7094,10 @@ step
     .timer 19,RP
     .use 132745
 step
+    .isOnQuest 40570
+    .goto 716,30.9,45.18
+    .enterScenario 983 >>Enter the |cRXP_PICK_Windwalker|r scenario.
+step
     .isInScenario 983
     .goto 716,30.9,45.18
     >>Kill |cRXP_ENEMY_Howling Winds|r and |cRXP_ENEMY_Lesser Sandling|r.
@@ -7419,19 +7350,7 @@ step
 ]])
 
 -- --------- Paladin ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name an) 1
--- #displayname Paladin
--- #chapters a) Order Hall Paladin Part 1;ab) Order Hall Paladin Part 2;ac) Order Hall Paladin;a) Artifact Weapon: Holy Paladin;a) Artifact Weapon: Paladin Protection;a) Artifact Weapon: Retribution
 
-
-
--- ]])
 --Holy
 RXPGuides.RegisterGuide([[
 #retail
@@ -7653,7 +7572,7 @@ step
 step
     #completewith Galford's location
     .goto 115,56.57,28.64,10 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Broken Statue|r |cRXP_WARN_you might need to do it twice|r.
-    .timer 53,RP
+    .timer 51,RP
 step
     #requires Galford's location
     .goto 115,60.04,36.19
@@ -7743,7 +7662,7 @@ step
     .goto 20,37.74,64.36
     .isInScenario 1092
     >>Kill |cRXP_ENEMY_Masterless Faceless One|r, |cRXP_ENEMY_Flesh Spawn|r and |cRXP_ENEMY_G'norz the Crazed|r
-    *|cRXP_WARN_heal your team when they’re injured|r.
+    *|cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
     .scenario 2447,1 --Tyr's Crypt cleared.
     .timer 65,RP
     .mob Masterless Faceless Corrupter
@@ -7752,21 +7671,22 @@ step
 step
     .isInScenario 1092
     .goto 20,37.64,65.74
-    >>|cRXP_WARN_Wait for the Roleplay|r  — |cRXP_WARN_heal your team when they’re injured|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r  — |cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
     .scenario 2448,1 --Listen to Travard.
 step
     .goto 20,38.77,77.48,15,0
     .goto 20,42.9,85.49,20,0 
     .goto 20,47.49,75.46,15,0
-    .goto 20,52.02,74.87
+    .goto 20,52.02,74.87,15,0
+    .goto 20,62.67,74.52
     .isInScenario 1092
-    >>Escort |cRXP_FRIENDLY_Travard|r — |cRXP_WARN_heal your team when they’re injured.|r.
+    >>Escort |cRXP_FRIENDLY_Travard|r — |cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
     .scenario 2449,1 --Find the final piece to the ritual.
     .mob Masterless Faceless Corrupter
 step
     .isInScenario 1092
     .goto 20,62.67,74.52
-    >>Kill |cRXP_ENEMY_Horrific Aberration|r — |cRXP_WARN_heal your team when they’re injured.|r.
+    >>Kill |cRXP_ENEMY_Horrific Aberration|r — |cRXP_WARN_heal your team when they’re injured, you can't continue otherwise|r.
     .scenario 2453,1,1
     .timer 30,RP
     .mob Horrific Aberration
@@ -7785,6 +7705,7 @@ step
     .isInScenario 1092
     .goto 20,42.94,84.92
     >>Cleanse |cRXP_FRIENDLY_Righteous Crusaders|r and heal |cRXP_FRIENDLY_Argent Dawnbringer|r
+    *|cRXP_WARN_There is an additional cleanse ability in the scenario objective|r.
     .scenario 2455,1
     .scenario 2455,2
     .usespell 19750
@@ -7879,7 +7800,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name a) Artifact Weapon: Paladin Protection 
+#name a) Artifact Weapon: Paladin Protection  
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Paladin
 
@@ -7931,6 +7852,7 @@ step
     .goto 24,49.88,72.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .accept 44370 >>Accept Completing Your Arsenal
+    .skipgossipid 46573
     .skipgossipid 45133
     .choose 1271767
     .target Lord Maxwell Tyrosus
@@ -7942,6 +7864,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
     .complete 44370,1 --1/1 Choose a third artifact to pursue
+    .skipgossipid 46573
     .skipgossipid 45133
     .choose 1271767
 step
@@ -7959,7 +7882,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .accept 44063 >>Accept Bolstering Your Arsenal
     .choose 1271767
-    .skipgossipid 45133
     .target Lord Maxwell Tyrosus
 step
     .isQuestTurnedIn 40408
@@ -7969,7 +7891,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
     .complete 44063,1 --1/1 Choose a second artifact to pursue
-    .skipgossipid 45133 -- I'm ready to make a decision.
+    .skipgossipid 46573
+    .skipgossipid 45133
     .choose 1271767
 step
     .isQuestTurnedIn 40408
@@ -7985,7 +7908,6 @@ step
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .accept 40408,1 >>Accept Weapons of Legend
-    .skipgossipid 45133
     .choose 1271767
     .target Lord Maxwell Tyrosus
 step
@@ -7995,6 +7917,7 @@ step
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .complete 40408,1 --1/1 Artifact weapon chosen
+    .skipgossipid 46573
     .skipgossipid 45133
     .choose 1271767
 step
@@ -8015,15 +7938,17 @@ step
     .complete 42846,1 --1/1 Enlist Lady Liadrin
 step
     .zoneskip 24,1
+    .goto 24,49.83,72.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .accept 42000 >>Accept Seeker of Truth
+    .target Lord Maxwell Tyrosus
+step
+    .zoneskip 24,1
     .goto 24,37.63,63.97
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 42000,1,1 --1/1 Travel to Dalaran
--- step
---     .zoneskip 24,1
---     .goto 24,37.63,63.97
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
---     .complete 42000,1,1 --1/1 Travel to Dalaran
 step
+    .zoneskip 627,1
     .goto 627,74.88,48.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .accept 42000 >>Accept Seeker of Truth
@@ -8060,7 +7985,7 @@ step
     #completewith Argent Hippogryph
     .goto 627,72.96,50.08
     .vehicle >>Click on |cRXP_PICK_Argent Hippogryph|r
-    .timer 13,RP
+    .timer 12,RP
     .target Argent Hippogryph
 step
     #requires Argent Hippogryph
@@ -8089,25 +8014,20 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42005,3 --1/1 Complete the ritual
 step
+    .cast 441154 >>Use|T134491:0|t[Nostwin's Voucher]
+    .itemcount 217930,1
+    .use 217930
+step
     .goto 627,72.52,50.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orik Trueheart|r in dalaran.
     .turnin 42005 >>Turn in The End of the Saga
     .target Orik Trueheart
     .accept 42017 >>Accept Shrine of the Truthguard
--- step
---     #completewith next
---     #label to Stormheim
---     >>|cRXP_WARN_Wait for the Roleplay|r.
---     .complete 42017,1 --1/1 Take the Argent Hippogryph to Stormheim
 step
-    -- #completewith to Stormheim
+    .isOnQuest 42017
     .goto 627,72.18,50.45
     .vehicle >>Click on |cRXP_PICK_Argent Hippogryph|r
     .timer 29,RP
--- step
---     #requires to Stormheim
---     >>|cRXP_WARN_Wait for the Roleplay|r.
---     .complete 42017,1 --1/1 Take the Argent Hippogryph to Stormheim
 step
     .isOnQuest 42017
     .goto 634,85.5,10.65,40 >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -8130,6 +8050,7 @@ step
     #completewith Inna the Cryptstalker
     .isInScenario 1082
     .goto 635,74.6,58.74,25 >>Kill the |cRXP_ENEMY_Gatekeepers|r
+    *If needed pickup a spear and use the ExtraActionButton to deal a lot of damage.
     .mob Inna the Cryptstalker
     .mob Shae
 step
@@ -8203,7 +8124,7 @@ step
     #completewith next
     #label Yrgrim the Truthseeker
     .isInScenario 1082
-    >>Defeat |cRXP_ENEMY_Yrgrim the Truthseeker|r |cRXP_WARN_if he is frozen kill |cRXP_ENEMY_Runeshaper Griselda|r |r
+    >>Defeat |cRXP_ENEMY_Yrgrim the Truthseeker|r |cRXP_WARN_if he is frozen kill |cRXP_ENEMY_Runeshaper Griselda|r|r then wait for the roleplay.
     .scenario 2394,1 --Yrgrim Defeated.
     .mob Yrgrim the Truthseeker
 step
@@ -8229,51 +8150,90 @@ step
     .scenario 2395,1 --Take up Truthguard.
     .complete 42017,2 --1/1 Claim the Truthguard
 step
+    .isOnQuest 42017
+    .goto 634,83.95,9.55,10,0
+    .goto 634,85.47,10.83
+    .vehicle >>Click on |cRXP_PICK_Argent Hippogryph|r
+    .target Argent Hippogryph
+    .timer 20,RP
+step
+    .isQuestAvailable 38576
+    .isOnQuest 42017
     #label Artifact Weapon: Paladin Protection
     .goto 627,71.74,45.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_in Dalaran|r.
     .turnin 42017 >>Turn in Shrine of the Truthguard
     .target Lord Maxwell Tyrosus
     .accept 38576 >>Accept We Meet at Light's Hope
--- step
---     .goto 24,49.86,72.29
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_in Dalaran|r.
---     .turnin 42017 >>Turn in Shrine of the Truthguard
---     .target Lord Maxwell Tyrosus
---     .accept 38576 >>Accept We Meet at Light's Hope
+step
+    .isQuestTurnedIn 38576
+    .isOnQuest 42017
+    #completewith next
+    #label Shrine of the Truthguard3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 42017 >>Turn in Shrine of the Truthguard
+    .target Lord Maxwell Tyrosus
 step << Alliance
+    #completewith Shrine of the Truthguard3
+    .isOnQuest 42017
+    .isQuestTurnedIn 38576
+    .goto 627,34.98,66.58,20,0
+    .goto 627,32.65,69.91
+    .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step << Horde
+    #completewith Shrine of the Truthguard3
+    .isOnQuest 42017
+    .isQuestTurnedIn 38576
+    .goto 627,58.71,20.66,20,0
+    .goto 627,61.93,13.5
+    .zone 24 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    #requires Shrine of the Truthguard3
+    .isQuestTurnedIn 38576
+    .goto 24,49.88,72.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 42017 >>Turn in Shrine of the Truthguard
+    .target Lord Maxwell Tyrosus
+step << Alliance
+    .isQuestAvailable 38576
     #completewith next
     #label Light's Hope Sanctum 
     .goto 627,34.98,66.58,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step << Alliance
+    .isQuestAvailable 38576
     #completewith Light's Hope Sanctum 
     #hidewindow
     .goto 627,32.65,69.91,30 >>1
 step << Alliance
     #requires Light's Hope Sanctum 
+    .isQuestAvailable 38576
     .goto 627,32.65,69.91
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step << Horde
     #completewith next
     #label Light's Hope Sanctum 
+    .isQuestAvailable 38576
     .goto 627,58.71,20.66,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step << Horde
     #completewith Light's Hope Sanctum 
+    .isQuestAvailable 38576
     #hidewindow
     .goto 627,61.93,13.5,30 >>1
 step << Horde
     #requires Light's Hope Sanctum 
+    .isQuestAvailable 38576
     .goto 627,61.93,13.5
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 38576,2 --1/1 Enter Light's Hope Sanctum
 step
     #completewith next
     #label A United Force
+    .isQuestAvailable 38576
     .goto 24,47.59,62.28,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
@@ -8281,9 +8241,11 @@ step
 step
     #completewith A United Force
     #hidewindow
+    .isQuestAvailable 38576
     .goto 24,63.15,37.22,40 >>1
 step
     #requires A United Force
+    .isQuestAvailable 38576
     .goto 24,63.15,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 38576 >>Turn in We Meet at Light's Hope
@@ -8517,7 +8479,8 @@ step
     .accept 42774 >>Accept Hope Prevails
 step
     .isOnQuest 42774
-    .cast 311750 >>Use |T132161:0|t[Hippogryph Whistle]
+    .goto 22,52.1,83.03
+    .cast 311750 >>Use |T132161:0|t[Hippogryph Whistle] outside.
     .timer 20,Countdown for Logout
     .use 311750
 step
@@ -8607,27 +8570,17 @@ step
     >>Kill |cRXP_ENEMY_Balnazzar|r
     .complete 38376,3 --1/1 Balnazzar slain
     .mob Balnazzar
--- step
---     .isInScenario 775
---     .goto 676,25.42,61.5,15,0
---     .goto 676,25.43,62.75,15,0
---     .goto 676,24.02,64.03,15,0
---     .goto 676,23.47,63.08,15,0
---     .goto 676,23.08,61.81,15,0
---     .goto 676,21.93,61.06,10 >>Leave the Cave
--- step
---     .isInScenario 775
---     .goto 676,20.44,61.55,20 >>Follow the Arrow
---     .timer 27,RP
--- step
---     .goto 676,20.44,61.55
---     .isInScenario 775
---     >>|cRXP_WARN_Wait for the Roleplay|r.
---     .scenario 1854,1 --Return to Tirion Fordring
 step
     .isInScenario 775
     .zone 23 >>Leave the Instance(Right-Click your player frame) or press the macro.
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
+step
+    .zoneskip 23,1
+    .goto 23,74.28,53.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
+    .turnin 38376 >>Turn in The Search for the Highlord
+    .target Lord Maxwell Tyrosus
+    .accept 42811 >>Accept We Meet at Light's Hope
 step
     #completewith next
     #label Search for the Highlord
@@ -8652,6 +8605,7 @@ step
     .accept 42811 >>Accept We Meet at Light's Hope
 step
     #completewith next
+    #hidewindow
     #label Chapel
     .complete 42811,2 --1/1 Enter Light's Hope Sanctum
 step
@@ -8687,6 +8641,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#chapter
 #name z) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Paladin Part 2
@@ -8701,6 +8656,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#chapter
 #name z) Artifact Weapon: Paladin Protection 
 #displayname Artifact Weapon: Paladin Protection
 #next ac) Order Hall Paladin Part 2
@@ -8715,6 +8671,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#chapter
 #name z) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next ac) Order Hall Paladin Part 2
@@ -8756,19 +8713,7 @@ step
 ]])
 
 -- --------- Priest ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name ao) 1
--- #displayname Priest
--- #chapters a) Order Hall Priest Part 1;ab) Order Hall Priest Part 2;ac) Order Hall Priest;a) Artifact Weapon: Discipline;a) Artifact Weapon: Holy Priest;a) Artifact Weapon: Shadow
 
-
-
--- ]])
 --Discipline
 RXPGuides.RegisterGuide([[
 #retail
@@ -9686,19 +9631,7 @@ step
 ]])
 
 -- --------- Rogue ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name ap) 1
--- #displayname Rogue
--- #chapters a) Order Hall Rogue Part 1;ab) Order Hall Rogue Part 2;ac) Order Hall Rogue;a) Artifact Weapon: Assassination;a) Artifact Weapon: Outlaw;a) Artifact Weapon: Subtlety
 
-
-
--- ]])
 --Assassination
 RXPGuides.RegisterGuide([[
 #retail
@@ -11061,19 +10994,7 @@ step
 ]])
 
 -- --------- Shaman ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name aq) 1
--- #displayname Shaman
--- #chapters a) Order Hall Shaman Part 1;ab) Order Hall Shaman Part 2;ac) Order Hall Shaman;a) Artifact Weapon: Elemental;a) Artifact Weapon: Enhancement;a) Artifact Weapon: Restoration Shaman
 
-
-
--- ]])
 --Elemental
 RXPGuides.RegisterGuide([[
 #retail
@@ -11422,7 +11343,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
 ]])
-
 --Enhancement
 RXPGuides.RegisterGuide([[
 #retail
@@ -11726,7 +11646,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
 ]])
-
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
@@ -11985,7 +11904,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
 ]])
-
 --Shaman Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -12018,19 +11936,7 @@ step
 ]])
 
 -- --------- Warlock ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name ar) 1
--- #displayname Warlock
--- #chapters a) Order Hall Warlock Part 1;ab) Order Hall Warlock Part 2;ac) Order Hall Warlock;a) Artifact Weapon: Affliction;a) Artifact Weapon: Demonology;a) Artifact Weapon: Destruction
 
-
-
--- ]])
 --Affliction
 RXPGuides.RegisterGuide([[
 #retail
@@ -12360,8 +12266,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
 ]])
-
-
 --Demonology
 RXPGuides.RegisterGuide([[
 #retail
@@ -12638,7 +12542,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
 ]])
-
 --Destruction
 RXPGuides.RegisterGuide([[
 #retail
@@ -12967,8 +12870,6 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
 ]])
-
-
 --Warlock Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -13001,19 +12902,7 @@ step
 ]])
 
 -- --------- Warrior ---------
--- --Nesting
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 1
--- #group RestedXP Legion Remix
--- #subgroup |cFFFCDC00(10-80+)|r Order Hall
--- #name as) 1
--- #displayname Warrior
--- #chapters a) Order Hall Warrior Part 1;ab) Order Hall Warrior Part 2;ac) Order Hall Warrior;a) Artifact Weapon: Arms;a) Artifact Weapon: Fury;a) Artifact Weapon: Warrior Protection 
 
-
-
--- ]])
 --Arms
 RXPGuides.RegisterGuide([[
 #retail
@@ -13782,6 +13671,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
+#chapter
 #group RestedXP Legion Remix
 #name z) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
@@ -13797,6 +13687,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#chapter
 #name z) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next ac) Order Hall Warrior Part 2
@@ -13811,6 +13702,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
+#chapter
 #name z) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Warrior Part 2
