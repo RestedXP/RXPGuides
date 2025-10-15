@@ -7512,6 +7512,7 @@ function addon.functions.skipto(self, text, arg, target)
     end
     local element = self.element
     local parent = element.parent
+    local step = element.step
     arg = element.arg
     target = element.target
     if parent and not parent.OnComplete then
@@ -7519,6 +7520,10 @@ function addon.functions.skipto(self, text, arg, target)
         if arg == "guide" then
             parent.OnComplete = function(self)
                 addon.functions.next(nil,self.skipToTarget)
+            end
+
+            if step.active and parent.completed then
+                parent:OnComplete()
             end
         elseif arg == "step" then
             parent.OnComplete = function(self)
@@ -7532,6 +7537,10 @@ function addon.functions.skipto(self, text, arg, target)
                     addon.nextStep = guide.labels[ref]
                     return
                 end
+            end
+
+            if step.active and parent.completed then
+                parent:OnComplete()
             end
         end
     end
