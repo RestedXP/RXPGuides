@@ -974,9 +974,11 @@ local corpseWP = { title = "Corpse", generated = 1, wpHash = 0 }
 local function IsDeathSkip()
     if not addon.SpiritHealerWorld then return false end
     for _, step in pairs(addon.RXPFrame.activeSteps) do
-        for _, element in pairs(step.elements) do
-            if element.tag == "deathskip" then
-                return true
+        if step.elements then
+            for _, element in pairs(step.elements) do
+                if element.tag == "deathskip" then
+                    return true
+                end
             end
         end
     end
