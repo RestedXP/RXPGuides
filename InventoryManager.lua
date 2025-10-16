@@ -4,7 +4,6 @@ local L = addon.locale.Get
 local inventoryManager = {}
 addon.inventoryManager = inventoryManager
 
-
 local gameVersion = select(4, GetBuildInfo())
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
@@ -39,9 +38,6 @@ local function _notifyObservers(button, bag, slot)
         -- (optional) if not ok and addon.settings.profile.debug then print("Observer error", err) end
     end
 end
-
-
-
 
 if C_Container and C_Container.GetContainerItemInfo then
     GetContainerItemInfo = function(...)
@@ -587,12 +583,9 @@ local function UpdateAllBags(self, name, i)
 
         safety = safety + 1
         if safety > 5000 then
-            print("UpdateAllBags: safety break", name, i)
             break
         end
     end
-
-    print("UpdateAllBags: done")
 end
 
 inventoryManager.UpdateAllBags = UpdateAllBags
