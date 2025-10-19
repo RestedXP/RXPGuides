@@ -955,7 +955,7 @@ function addon.talents:DrawTalents()
     -- If audit failed, draw the entire range
     if guide.audit == false then
         playerLevel = guide.minLevel
-        advancedWarning = guide.minLevel + addon.settings.profile.upcomingTalentCount
+        -- Keep existing player level based advancedWarning
     end
 
     -- Track state better than with Blizz frame re-use
