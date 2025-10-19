@@ -576,9 +576,8 @@ function addon.talents:Audit()
                             -- Remove learnedTalents from audit if they are identical
                             if expectedRank == talentData.rank then
                                 learnedTalents[fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column)] = nil
-                            else
-                                -- TODO document what situation this accounts for
-                                print("Else", fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column), talentData.rank)
+                            -- else -- Rank 1-4, removed above when rank 5
+                            --     print("Else", fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column), talentData.rank)
                             end
                         else
                             if addon.settings.profile.debug then
