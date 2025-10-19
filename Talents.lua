@@ -140,6 +140,7 @@ local function buildTalentGuidesMenu()
                 func = function(_, arg1)
                     addon.talents:UpdateSelectedGuide(arg1)
 
+                    -- TODO should also audit?
                     if addon.talents:ProcessTalents('validate') then addon.talents:DrawTalents() end
                 end
             }
@@ -954,7 +955,7 @@ function addon.talents:DrawTalents()
 
     -- If audit failed, draw the entire range
     if guide.audit == false then
-        playerLevel = guide.minLevel
+        playerLevel = guide.minLevel - 1
         -- Keep existing player level based advancedWarning
     end
 
@@ -1073,7 +1074,7 @@ function addon.talents:ProcessTalents(validate)
 
     local guide = self:GetCurrentGuide()
 
-    if not guide then return end
+    if not guide or guide.audit ~= false then return end
 
     if validate and addon.settings.profile.debug then addon.comms.PrettyPrint("Validating %s", guide.displayname) end
 
