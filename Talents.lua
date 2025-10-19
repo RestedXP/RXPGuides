@@ -948,7 +948,7 @@ function addon.talents:DrawTalents()
         remainingPoints = UnitCharacterPoints("player")
     end
 
-    local playerLevel = UnitLevel("player")
+    local playerLevel = addon.player.level
     local advancedWarning = playerLevel + addon.settings.profile.upcomingTalentCount
     wipe(talentTooltips.data)
 
