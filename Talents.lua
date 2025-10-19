@@ -194,7 +194,9 @@ local function buildTalentGuidesMenu()
         end
     })
 
-    tinsert(menu, {text = "Audit", notCheckable = 1, func = function() addon.talents:Audit() end})
+    if addon.settings.profile.debug then
+        tinsert(menu, {text = "Audit", notCheckable = 1, func = function() addon.talents:Audit() end})
+    end
 
     tinsert(menu, {text = _G.GAMEOPTIONS_MENU, notCheckable = 1, func = function() addon.settings.OpenSettings() end})
 
@@ -345,7 +347,9 @@ function addon.talents:HookUI()
             if click == "RightButton" then
                 EasyMenu(buildTalentGuidesMenu(), self.menuFrame, self.talentsButton, 0, 0, "MENU", 1)
             else
-                self:ProcessTalents()
+                if self:Audit() then
+                    self:ProcessTalents()
+                end
             end
         end)
     end
@@ -617,6 +621,10 @@ function addon.talents:Audit()
 
         if auditFailed then
             addon.comms.PrettyPrint('%s - %s %s', guide.displayname, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
+
+            addon.comms:PopupNotification("RXPTalentsAuditFailed",
+                                          fmt("%s\n%s %s", guide.displayname, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
+                                        )
 
             guide.audit = false
             return false
@@ -1187,7 +1195,7 @@ function addon.talents:ProcessTalents(validate)
             addon.comms:PopupNotification("RXPTalentsMissingOptional",
                                           fmt("%s %s %s: %s\n%s\n\n%s", _G.ADDON_MISSING, _G.OPTIONAL,
                                               strlower(_G.TALENT_POINTS), fmt(_G.UNIT_LEVEL_TEMPLATE, stepLevel),
-                                              _G._G.TALENT_BUTTON_TOOLTIP_SELECT_INSTRUCTIONS,
+                                              _G.TALENT_BUTTON_TOOLTIP_SELECT_INSTRUCTIONS,
                                               strjoin("\n", unpack(optionalNotLearned))))
             return
         end
