@@ -556,7 +556,8 @@ function addon.talents:Audit()
         if stepLevel > addon.player.level - remainingPoints then
             -- If no remaining learnedTalents, nothing to conflict
             -- print("Audit up to level", stepLevel, GetTableLength(learnedTalents) == 0)
-            return GetTableLength(learnedTalents) == 0
+            guide.audit = GetTableLength(learnedTalents) == 0
+            return guide.audit
         end
 
         -- print("Evaluating step", stepNum, "for level", stepLevel)
@@ -581,11 +582,11 @@ function addon.talents:Audit()
                             if expectedRank == talentData.rank then
                                 learnedTalents[fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column)] = nil
                             -- else -- Rank 1-4, removed above when rank 5
-                            --     print("Else", fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column), talentData.rank)
+                            --    print("Else", fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column), talentData.rank)
                             end
                         else
                             if addon.settings.profile.debug then
-                                addon.comms.PrettyPrint('%s - Audit failed for level %d', guide.displayname, stepLevel)
+                                addon.comms.PrettyPrint('%s - Audit failed for level %d', guide.name, stepLevel)
                             end
 
                             auditFailed = true
@@ -620,10 +621,10 @@ function addon.talents:Audit()
         end
 
         if auditFailed then
-            addon.comms.PrettyPrint('%s - %s %s', guide.displayname, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
+            addon.comms.PrettyPrint('%s - %s %s', guide.name, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
 
             addon.comms:PopupNotification("RXPTalentsAuditFailed",
-                                          fmt("%s\n%s %s", guide.displayname, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
+                                          fmt("%s\n%s %s", guide.name, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
                                         )
 
             guide.audit = false
@@ -1081,7 +1082,14 @@ function addon.talents:ProcessTalents(validate)
 
     local guide = self:GetCurrentGuide()
 
-    if not guide or guide.audit ~= false then return end
+    if not guide then return end
+
+    -- Somehow guide not audited, force an audit
+    if guide.audit == nil then
+        self:Audit()
+    end
+
+    if guide.audit ~= true then return end
 
     if validate and addon.settings.profile.debug then addon.comms.PrettyPrint("Validating %s", guide.displayname) end
 
