@@ -966,9 +966,11 @@ step
     -- .use 251821
     -- .use 256763
 step
-    .zoneskip 627,1
-    .zone 627 >>Enter Dalaran
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
+    #label MonkStart1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you when in dalaran|r.
     .accept 12103 >>Accept Before the Storm
     .target Initiate Da-Nel
@@ -1163,38 +1165,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Brewmaster >> Brewmaster(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Mistweaver >> Mistweaver(Healer) Questline
     .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
--- step
---     .spec 3
---     .goto 627,72.46,45.90
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r W
---     .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .choose 1390111
---     .skipgossipid
---     .target Iron-Body Ponshu
--- step
---     .spec 3
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Windwalker
--- step
---     .spec 2
---     .goto 627,72.46,45.90
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r M
---     .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .choose 1390110
---     .target Iron-Body Ponshu
--- step
---     .spec 2
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
--- step
---     .spec 1
---     .goto 627,72.46,45.90
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r B
---     .gossipoption 45061 >>Talk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
---     .choose 1390109
---     .target Iron-Body Ponshu
--- step
---     .spec 1
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
-
 ]])
 
 ---Monk Order Hall Intro 2
@@ -1295,6 +1265,7 @@ step
     .acceptmap 39718
     .accept 39718 >>Accept The Tranquil Forest
 step
+    #label The Fight Begins
     .goto 709,52.77,59.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Hsu|r
     .turnin 40795 >>Turn in The Fight Begins
@@ -1310,7 +1281,7 @@ step << Horde
     #label Dalaran
     .goto 709,52.4,57.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 39864,1 --1/1 Travel to Dalaran 
+    .complete 39718,1 --1/1 Travel to Dalaran 
     .timer 8,RP
 -- step
 --     >>Use |T242617:0|t[Curious Simulacrum]
@@ -1556,6 +1527,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
+    #label Future of The Fel Hammer
     .goto 627,72.07,41.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .accept 90995 >>Accept The Future of The Fel Hammer
@@ -1602,30 +1578,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Havoc >> Havoc(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Vengeance >> Vengeance(DPS) Questline
     .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
--- step
---     .spec 1
---     .goto 627,74.97,48.99
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r Sub
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
---     .complete 40814,1 --1/1 Artifact chosen
---     .skipgossipid 45106
---     .choose 1389397
---     .target Kayn Sunfury
--- step
---     .spec 1
---     .skipto guide,RestedXP Legion Remix\z) Artifact Weapon: Havoc
--- step
---     .spec 2
---     .goto 627,74.97,48.99
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r  fire
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
---     .complete 40814,1 --1/1 Artifact chosen
---     .skipgossipid 45106
---     .choose 1390101
---     .target Kayn Sunfury
--- step
---     .spec 2
---     .skipto guide,RestedXP Legion Remix\z) Artifact Weapon: Vengeance
 ]])
 
 ---Demon Hunter Order Hall Intro 2
@@ -1683,6 +1635,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 >>Order Hall Demon Hunter Part 1
 step
+    #label Eternal Vigil
     .goto 627,73.86,46.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .target Kor'vas Bloodthorn
@@ -1837,6 +1790,7 @@ step
     .complete 42671,1 --Kayn Sunfury recruited
     .target Kayn Sunfury
 step
+    #label Champion: Asha Ravensong
     .goto 720,56.18,38.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asha Ravensong|r
     .accept 42697 >>Accept Champion: Asha Ravensong
@@ -2317,6 +2271,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
+    #label OrderHallMage1
     .goto 627,56.99,46.76
     >>Enter Legion Dalaran
     .accept 41035 >>Accept Felstorm's Plea
@@ -2421,39 +2380,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Fire >> Fire(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Arcane >> Arcane(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost Mage >> Frost(DPS) Questline
--- step
---     .spec 3
---     .goto 735,61.25,26.07
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     >>Click on the |cRXP_PICK_Book|r F
---     .complete 41085,1 --1/1 Artifact chosen
---     .choose 1389391
---     .target Meryl Felstorm
--- step
---     .spec 3
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Frost Mage
--- step
---     .spec 2
---     .goto 735,61.25,26.07
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r  fire
---     >>Click on the |cRXP_PICK_Book|r
---     .complete 41085,1 --1/1 Artifact chosen
---     .target Meryl Felstorm
---     .choose 1389390
--- step
---     .spec 2
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Fire
--- step
---     .spec 1
---     .goto 735,61.25,26.07
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r arcane
---     >>Click on the |cRXP_PICK_Book|r
---     .complete 41085,1 --1/1 Artifact chosen
---     .target Meryl Felstorm
---     .choose 1389389
--- step
---     .spec 1
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Arcane
 ]])
 
 ---Mage Order Hall Intro 2
@@ -2511,6 +2437,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
 step
+    #label 
     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
     .accept 41114 >>Accept The Champion's Return
     .usespell 193759
@@ -2669,6 +2596,7 @@ step
     .turnin 42663 >>Turn in Rise, Champions
     .target Meryl Felstorm
 step
+    #label OrderHallMage3
     .goto 734,57.31,90.57
     .zone 627 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles] or click on the |cRXP_PICK_Portal|r.
     .usespell 224869
@@ -2722,6 +2650,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
+    #label An Urgent Gathering
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_next to you|r.
     .accept 38710 >>Accept An Urgent Gathering
     .target Lord Maxwell Tyrosus
@@ -2765,42 +2698,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Paladin Protection >> Protection(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Paladin >> Holy(Healer) Questline
     .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
--- step
---     .spec 3
---     .goto 627,74.94,48.23
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
---     .complete 40408,1 --1/1 Artifact weapon chosen
---     .skipgossipid 45133
---     .choose 1271768
---     .target Lord Maxwell Tyrosus
--- step
---     .spec 3
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Retribution
--- step
---     .spec 2
---     .goto 627,74.94,48.23
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
---     .complete 40408,1 --1/1 Artifact weapon chosen
---     .skipgossipid 45133
---     .choose 1271767
---     .target Lord Maxwell Tyrosus
--- step
---     .spec 2
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Protection
--- step
---     .spec 1
---     .goto 627,74.94,48.23
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
---     .complete 40408,1 --1/1 Artifact weapon chosen
---     .skipgossipid 45133
---     .choose 1271766
---     .target Lord Maxwell Tyrosus
--- step
---     .spec 1
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Holy
 ]])
 
 ---Paladin Order Hall Intro 2
@@ -2863,6 +2760,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Paladin Part 1 >>Paladin Order Hall Intro 1
 step
+    #label A United Force
     .goto 24,63.20,37.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .target Lord Maxwell Tyrosus
@@ -3149,6 +3047,11 @@ step
     -- .use 251821
     -- .use 256763
 step
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
+    #label Call of The Uncrowned
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenholdt Courier|r |cRXP_WARN_next to you|r.
     .accept 40832 >>Accept Call of The Uncrowned
     .target Ravenholdt Courier
@@ -3223,6 +3126,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40839,2 --1/1 Inducted into the Uncrowned
 step
+    #label Final Shadow
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40839 >>Turn in The Final Shadow
@@ -3263,43 +3167,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Outlaw >> Outlaw(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Subtlety >> Subtlety(DPS) Questline
     .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
--- step
---     .spec 3
---     .goto 626,41.37,77.96
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r Sub
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
---     .complete 40840,4 --1/1 Artifact chosen
---     .skipgossipid 45230
---     .choose 1389397
---     .target Lord Jorach Ravenholdt
--- step
---     .spec 3
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Sublety
--- step
---     .spec 2
---     .goto 626,41.37,77.96
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r  fire
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
---     .complete 40840,4 --1/1 Artifact chosen
---     .skipgossipid 45230
---     .choose 1389396
---     .target Lord Jorach Ravenholdt
--- step
---     .spec 2
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Outlaw
--- step
---     .spec 1
---     .goto 626,41.37,77.96
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r assa
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
---     .complete 40840,4 --1/1 Artifact chosen
---     .skipgossipid 45230
---     .choose 1389395
---     .target Lord Jorach Ravenholdt
--- step
---     .spec 1
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Assassination
-
 ]])
 
 ---Rogue Order Hall Intro 2
@@ -3356,6 +3223,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Rogue Part 1 >>Rogue Order Hall Intro 1
 step
+    #label Honoring Success
     .goto 626,41.48,77.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .accept 40950 >>Accept Honoring Success
@@ -3892,16 +3760,22 @@ step
     -- .use 251821
     -- .use 256763
 step
-    #optional 
-    .convertquest 42815,38904 << Horde
+    .isQuestTurnedIn account,91955
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step << Alliance
+    #label OrderHallWarriorA1Start
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Dalton|r |cRXP_WARN_next to you|r.
     .accept 42814 >>Accept An Important Mission
     .target Sergeant Dalton
 step << Horde
+    #label OrderHallWarriorH1Start
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r |cRXP_WARN_next to you|r.
     .accept 41052 >>Accept A Desperate Plea
     .target Eitrigg
+step
+    #optional 
+    .convertquest 42815,38904 << Horde
 step << Horde
     .goto 627,75.06,46.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Overlord Saurfang|r
@@ -3934,6 +3808,7 @@ step << Alliance
     .target Elite Gryphon
 step << Alliance
     #requires Broken Shore
+    #label OrderHallWarriorA1End
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42815,1,1 --1/1 Take the flight to the Broken Shore
 step << Horde
@@ -3948,10 +3823,12 @@ step << Horde
     .timer 50,RP
     .target Makka
 step << Horde
+    #label OrderHallWarriorH1End
     #requires Broken Shore
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42815,1,1 --1/1 Take the flight to the Broken Shore
 step
+    #label OrderHallWarrior1
     .isOnQuest 42815
     #title |cFFFCDC00Follow the Arrow|r
     .goto 676,50.86,28.18,15 >>|cRXP_WARN_Wait for the arrival at the shore|r.
@@ -4029,13 +3906,8 @@ step
     .accept 40579 >>Accept Weapons of Legend
     .target Odyn
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40579
-    .isQuestAvailable account,91955
+    -- .isQuestAvailable account,91955
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
@@ -4044,45 +3916,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Fury >> Fury(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Warrior Protection >> Protection(Tank) Questline
     .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
--- step
---     .spec 3
---     .goto 695,58.33,84.61
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r Protection
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
---     .complete 40579,1 --1/1 Artifact chosen
---     .skipgossipid 45055
---     .choose 1389406
---     .target Odyn
--- step
---     .spec 3
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Fury
--- step
---     .spec 2
---     .goto 695,58.33,84.61
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r Fury
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
---     .complete 40579,1 --1/1 Artifact chosen
---     .skipgossipid 45055
---     .choose 1389405
---     .target Odyn
--- step
---     .spec 2
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Protection
--- step
---     .spec 1
---     .goto 695,58.33,84.61
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r Arms
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
---     .complete 40579,1 --1/1 Artifact chosen
---     .skipgossipid 45055
---     .choose 1389404
---     .target Odyn
--- step
---     .spec 1
---     .skipto guide,RestedXP Legion Remix\a) Artifact Weapon: Arms
-
-
-
 ]])
 
 ---Warrior Order Hall Intro 2
@@ -4140,6 +3973,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>Warrior Order Hall Intro 1
 step
+    #label OderHallPart2Start1
     .goto 695,59.58,83.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danica the Reclaimer|r
     .accept 39214 >>Accept The Eye of Odyn
@@ -6621,6 +6455,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #name b) A Rather Long Walk
 #subgroup |cFFFCDC00(10-80+)|r Sojourner
+#subweight 99.97
 #displayname |cFF00CCFF1|r - A Rather Long Walk
 #internal
 

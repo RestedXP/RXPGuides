@@ -1549,7 +1549,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Lorewalking
 #name ac) The Lich King
 #displayname The Lich King
-#next a) Xal'atath
+#next ad) The Elves of Quel'Thalas
 
 step << Alliance
     .goto 84,64.24,16.10,-1
@@ -1956,4 +1956,15 @@ step
     .turnin 85878 >>Turn in O' Thanagor
     .turnin 85885 >>Turn in Lorewalking: No King Rules Forever
     .target Lorewalker Cho
+]])
+
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#subgroup Lorewalking
+#name ad) The Elves of Quel'Thalas
+#displayname The Lich King
+#next a) Xal'atath
+
 ]])

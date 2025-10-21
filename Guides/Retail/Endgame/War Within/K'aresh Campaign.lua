@@ -1602,6 +1602,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(80)|r 11.2 The Knife's Edge
 #name ar) Chapter 5 - The Light of K'aresh
 #displayname |cFF00CCFF5|r - The Light of K'aresh
+#next as) Chapter 1 - Radiant Visions
 
 step
     .goto 2371,42.89,21.51

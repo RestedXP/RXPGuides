@@ -7633,7 +7633,6 @@ step
 -----------------------------------------------------
 --- NEUTRAL
 -----------------------------------------------------
-
 --EarthenDwarf
 RXPGuides.RegisterGuide([[
 #retail
@@ -7649,18 +7648,479 @@ step
     +PH2
 ]])
 
---EarthenDwarf
+--Haranir
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
 #subgroup Allied Races
-#name bm) Heritage EarthenDwarf
+#name bm) Heritage Haranir
 #displayname |cFF1EFF007|r - Earthen Dwarf
 
-<< Horde
 
 step
     +PH1
 
+]])
+
+--Pandaren
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#subgroup Allied Races
+#name bn) Heritage Pandaren
+#displayname |cFF1EFF008|r - Pandaren
+
+
+step << Horde
+    .isOnQuest 84444
+    .goto 85,70.32,38.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    .turnin 84444 >>Turn in Invitation to the Spirit Festival
+    .target Ji Firepaw
+step << Horde
+    .goto 85,70.48,39.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .accept 84452 >>Accept The Wanderers
+    .target Li Li Stormstout
+step << Horde
+    #completewith next
+    #label air balloon
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 84452,1 --1/1 Ride the hot air balloon
+step << Horde
+    #completewith air balloon
+    .goto 85,70.82,38.89
+    .vehicle >>Click on the Balloon
+    .timer 65,RP
+step << Horde
+    #requires air balloon
+    .goto 2366,49.51,24.58
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 84452,1 --1/1 Ride the hot air balloon
+step << Horde
+    .goto 2366,50.68,19.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84452 >>Turn in The Wanderers
+    .target Li Li Stormstout
+step << Alliance
+    .isOnQuest 84442
+    .goto 84,68.39,16.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r
+    .turnin 84442 >>Turn in Invitation to the Spirit Festival
+    .target Aysa Cloudsinger
+step << Alliance
+    .goto 84,68.17,16.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .accept 84451 >>Accept The Wanderers
+    .target Li Li Stormstout
+step << Alliance
+    #completewith next
+    #label air balloon2
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 84451,1 --1/1 Ride the hot air balloon
+step << Alliance
+    #completewith air balloon2
+    .goto 84,68.64,17.07
+    .vehicle >>Click on the Balloon
+    .timer 63,RP
+step << Alliance
+    #requires air balloon2
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 84451,1 --1/1 Ride the hot air balloon
+step << Alliance
+    .goto 2366,50.69,19.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84451 >>Turn in The Wanderers
+    .target Li Li Stormstout
+step
+    .goto 2366,50.59,20.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chen Stormstout|r
+    .accept 84453 >>Accept To Dai-Lo Farmstead
+    .target Chen Stormstout
+step << Horde
+    .goto 2366,50.34,20.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    .accept 84457 >>Accept To Morning Breeze
+    .target Ji Firepaw
+step << Alliance
+    .goto 2366,50.36,20.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r
+    .accept 84456 >>Accept To Morning Breeze
+    .target Aysa Cloudsinger
+step << Horde
+    .goto 2366,30.13,41.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    .turnin 84457 >>Turn in To Morning Breeze
+    .accept 84459 >>Accept Scamps Ain't It!
+    .target Ji Firepaw
+step << Alliance
+    .goto 2366,30.15,41.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r
+    .turnin 84456 >>Turn in To Morning Breeze
+    .accept 84458 >>Accept Devil's in the Details
+    .target Aysa Cloudsinger
+step << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r
+    .accept 84459 >>Accept Scamps Ain't It!
+    .target Ji Firepaw
+step << Horde
+    .goto 2366,30.15,41.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r
+    .accept 84458 >>Accept Devil's in the Details
+    .target Aysa Cloudsinger
+step
+    .goto 2366,28.57,41.87
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrels|r
+    *|cRXP_WARN_Kill any |cRXP_ENEMY_Amberleaf Scamp|r that might spawn|r.
+    .complete 84459,1,2 --8/8 Wooden Barrels searched
+    .mob Amberleaf Scamp
+step
+    .goto 2366,28.47,42.72
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Clue|r inside the house.
+    .complete 84458,1,1 --3/3 Clues found
+step
+    .goto 2366,30.22,43.15
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
+    *|cRXP_WARN_Kill any |cRXP_ENEMY_Amberleaf Scamp|r that might spawn|r.
+    .complete 84459,1,4 --8/8 Wooden Barrels searched
+step
+    .goto 2366,31.61,41.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morning Breeze Witness|r
+    .complete 84458,1,2 --3/3 Clues found
+    .skipgossipid 124332
+    .target Morning Breeze Witness
+step
+    .goto 2366,32.44,42.01
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
+    *|cRXP_WARN_Kill any |cRXP_ENEMY_Amberleaf Scamp|r that might spawn|r.
+    .complete 84459,1,6 --8/8 Wooden Barrels searched
+step
+    .goto 2366,31.51,39.41
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
+    *|cRXP_WARN_Kill any |cRXP_ENEMY_Amberleaf Scamp|r that might spawn|r.
+    .complete 84459,1,7 --8/8 Wooden Barrels searched
+step
+    .goto 2366,30.44,38.02
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bananas|r
+    .complete 84458,1,3 --3/3 Clues found
+step
+    .goto 2366,30.24,37.62
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r
+    *|cRXP_WARN_Kill any |cRXP_ENEMY_Amberleaf Scamp|r that might spawn|r.
+    .complete 84459,1,8 --8/8 Wooden Barrels searched
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_next to you|r.
+    .turnin 84459 >>Turn in Scamps Ain't It!
+    .turnin 84458 >>Turn in Devil's in the Details
+    .accept 84460 >>Accept Red Hand or Herring?
+    .target Aysa Cloudsinger
+    .target Ji Firepaw
+step
+    .goto 2366,26.36,30.62
+    >>Defeat |cRXP_ENEMY_Huk Huk|r
+    .complete 84460,1 --1/1 Huk Huk the Hozen Chieftain confronted
+    .mob Huk Huk
+step
+    .goto 2366,22.43,33.79
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 84460,2 --1/1 Special Fireworks found
+step
+    .goto 2366,22.43,33.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r
+    .turnin 84460 >>Turn in Red Hand or Herring?
+    .target Aysa Cloudsinger
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chen Stormstout|r and |cRXP_FRIENDLY_Chon Po Stormstout|r
+    .turnin 84453 >>Turn in To Dai-Lo Farmstead
+    .accept 84454 >>Accept Tide of Virmen
+    .goto 2366,69.72,67.63
+    .target +Chen Stormstout
+    .accept 84455 >>Accept Big Bertha
+    .goto 2366,69.86,67.55
+    .target +Chon Po Stormstout
+step
+    #completewith Yak Eater
+    >>Kill |cRXP_ENEMY_Virmen|r and |cRXP_ENEMY_Insects|r
+    .complete 84454,1,100 --Take back the farm! (100%)
+    .mob Swarming Nymph
+    .mob Emerald Superpest
+    .mob Plump Virmen
+step
+    #completewith next
+    #label Big Bertha found
+    .goto 2366,72.14,70.68,20,0
+    #hidewindow
+    .complete 84455,1 --1/1 Big Bertha found
+step
+    #completewith Big Bertha found
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2366,74.65,73.69,50 >>Enter the Burrow
+step
+    #requires Big Bertha found
+    .goto 2366,74.65,73.69
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 84455,1 --1/1 Big Bertha found
+step
+    #label Yak Eater
+    .goto 2366,74.65,73.69
+    >>Kill |cRXP_ENEMY_Yak Eater|r
+    .complete 84455,2 --1/1 Yak Eater slain
+    .mob Yak Eater
+step
+    #completewith next
+    #label Take back the farm
+    >>Kill |cRXP_ENEMY_Virmen|r and |cRXP_ENEMY_Insects|r
+    .complete 84454,1,100 --Take back the farm! (100%)
+    .mob Swarming Nymph
+    .mob Emerald Superpest
+    .mob Plump Virmen
+step
+    #completewith Take back the farm
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2366,75.05,69.25,30 >>Leave the Burrow
+step
+    #requires Take back the farm
+    #loop
+    .goto 2366,74.56,67.01,25,0
+    .goto 2366,70.75,69.75,30,0
+    .goto 2366,67.54,75.1,30,0
+    .goto 2366,68.96,82.38,30,0
+    .goto 2366,74.57,77.23,30,0
+    .goto 2366,74.61,72,30,0
+    >>Kill |cRXP_ENEMY_Virmen|r and |cRXP_ENEMY_Insects|r
+    *>>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Objects|r
+    .complete 84454,1,100 --Take back the farm! (100%)
+    .mob Swarming Nymph
+    .mob Emerald Superpest
+    .mob Plump Virmen
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chon Po Stormstout|r and |cRXP_FRIENDLY_Chen Stormstout|r
+    .turnin 84455 >>Turn in Big Bertha
+    .goto 2366,69.85,67.52
+    .target +Chon Po Stormstout
+    .turnin 84454 >>Turn in Tide of Virmen
+    .accept 84468 >>Accept Brew You One Better
+    .goto 2366,69.73,67.6
+    .target +Chen Stormstout
+step
+    .goto 2366,69.73,67.31
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Brews|r and give it to the |cRXP_FRIENDLY_Dai-Lo Villager|r.
+    .complete 84468,1 --3/3 Chen Stormstout's Brew offered
+    .complete 84468,2 --3/3 Chon Po's Brew offered
+    .target Dai-Lo Villager
+step
+    .goto 2366,69.71,67.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chen Stormstout|r
+    .turnin 84468 >>Turn in Brew You One Better
+    .target Chen Stormstout
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mr. Crane|r |cRXP_WARN_next to you|r.
+    .accept 84461 >>Accept It's Not a Spirit Festival Without Spirits
+    .target Mr. Crane
+step
+    #completewith next
+    #label Without Spirits
+    .goto 2366,53.25,47.43,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84461 >>Turn in It's Not a Spirit Festival Without Spirits
+    .target Li Li Stormstout
+    .accept 84462 >>Accept Patterns in Static
+    .disablecheckbox
+step
+    #completewith Without Spirits
+    .goto 2366,51.51,46.25,50 >>Enter the Temple
+step
+    #requires Without Spirits
+    .goto 2366,51.51,46.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84461 >>Turn in It's Not a Spirit Festival Without Spirits
+    .target Li Li Stormstout
+    .accept 84462 >>Accept Patterns in Static
+step
+    #loop
+    .goto 2366,51.14,44.14,10,0
+    .goto 2366,49.96,45.04,10,0
+    .goto 2366,49.25,47.01,10,0
+    .goto 2366,47.55,47.14,10,0
+    .goto 2366,49.4,47.78,10,0
+    .goto 2366,49.88,49.53,10,0
+    .goto 2366,51.15,50.49,10,0
+    .goto 2366,51.4,52.34,10,0
+    .goto 2366,51.8,50.41,10,0
+    .goto 2366,53.54,48.28,10,0
+    .goto 2366,55.45,47.51,10,0
+    .goto 2366,53.75,47.05,10,0
+    >>Mount UP and Run into the Clouds
+    .complete 84462,1 --30/30 Remnants of Wind
+step
+    .goto 2366,51.51,43.96
+    >>Use the |cRXP_WARN_ExtraActionButton|r on the spot.
+    .complete 84462,2 --1/1 Cast Updraft at a windy location
+    .timer 13,RP
+    .usespell 463163
+step
+    .goto 2366,51.71,48.32
+    >>Glide to |cRXP_FRIENDLY_Dafeng|r
+    .complete 84462,3 --1/1 Dafeng, Ancient Spirit of Wind found
+    .target Dafeng
+step
+    .goto 2366,51.71,48.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r
+    .turnin 84462 >>Turn in Patterns in Static
+    .timer 20,RP
+    .target Dafeng
+step
+    .goto 2366,50.88,76.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r
+    .accept 84463 >>Accept Codependency
+    .target Jojo Ironbrow
+step
+    .goto 2366,45.70,69.90
+    >>Kill |cRXP_ENEMY_Mud Amalgam|r
+    .complete 84463,1 --1/1 Mud Amalgam slain
+    .mob Mud Amalgam
+step
+    .goto 2366,39.67,63.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84463 >>Turn in Codependency
+    .target Li Li Stormstout
+    .accept 84464 >>Accept Lost My Spark
+step
+    .goto 2366,39.97,63.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shu|r
+    .complete 84464,1 --1/1 Speak to Shu
+    .skipgossipid 131528
+    .target Shu
+step
+    .goto 2366,40.28,56.65
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 84464,2 --1/1 Steam trail followed
+step
+    .goto 2366,40.30,56.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wugou|r
+    .complete 84464,3 --1/1 Speak to Wugou
+    .skipgossipid 124540
+    .target Wugou
+step
+    .goto 2366,39.27,57.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r
+    .complete 84464,4 --1/1 Speak to Dafeng
+    .skipgossipid 124541
+    .target Dafeng
+step
+    .goto 2366,39.59,57.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84464 >>Turn in Lost My Spark
+    .target Li Li Stormstout
+    .accept 84465 >>Accept Of Water and Blood
+step
+    #completewith next
+    #label Thornbranch Scamp
+    >>Kill |cRXP_ENEMY_Thornbranch Scamp|r. Loot them for |T463856:0|t[|cRXP_LOOT_Blue Floristar|r].
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flowers|r
+    .complete 84465,2 --10/10 Thornbranch Scamp slain
+    .complete 84465,1 --10/10 Blue Floristar
+    .mob Thornbranch Scamp
+step
+    #completewith Thornbranch Scamp
+    .goto 2366,38.69,56.08,10 >>Go out of the |cRXP_WARN_NO MOUNT ZONE|r
+step
+    #requires Thornbranch Scamp
+    #loop
+    .goto 2366,24.1,64.96,30,0
+    .goto 2366,21.02,67.78,30,0
+    .goto 2366,20.06,60.7,30,0
+    .goto 2366,18.39,54.69,30,0
+    .goto 2366,24.22,60.77,30,0
+    .goto 2366,23.5,42.92,30,0
+    .goto 2366,18.52,40,30,0
+    .goto 2366,19.16,46.16,30,0
+    >>Kill |cRXP_ENEMY_Thornbranch Scamp|r. Loot them for |T463856:0|t[|cRXP_LOOT_Blue Floristar|r].
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flowers|r
+    .complete 84465,2 --10/10 Thornbranch Scamp slain
+    .complete 84465,1 --10/10 Blue Floristar
+    .mob Thornbranch Scamp
+step
+    .goto 2366,19.44,49.38
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flowers|r
+    .complete 84465,3 --1/1 Flowers placed by Strongbo's memorial
+step
+    .goto 2366,22.23,56.24
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flowers|r
+    .complete 84465,4 --1/1 Flowers placed by Xiu Li's memorial
+step
+    .goto 2366,21.88,56.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84465 >>Turn in Of Water and Blood
+    .target Li Li Stormstout
+    .accept 84466 >>Accept Thousands of Years Ago...
+step
+    .goto 2366,52.63,18.19
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 84466,2 --1/1 Return to Li Li in Wu-Song Village
+step
+    .goto 2366,52.63,18.19
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fireworks|r
+    .complete 84466,3 --1/1 Fireworks lit
+    .skipgossipid 124545
+step
+    .goto 2366,52.47,19.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Li Li Stormstout|r
+    .turnin 84466 >>Turn in Thousands of Years Ago...
+    .target Li Li Stormstout
+step
+    .goto 2366,52.35,19.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .accept 84467 >>Accept This Was Home
+    .target Lorewalker Cho
+step
+    .goto 2366,52.41,19.1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Table|r
+    .complete 84467,1,10 --Celebrate the Spirit Festival! (100%)
+step
+    .goto 2366,51.62,19.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Food|r
+    .complete 84467,1,40 --Celebrate the Spirit Festival! (100%)
+step
+    .goto 2366,50.87,21.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wugou|r
+    .complete 84467,1,50 --Celebrate the Spirit Festival! (100%)
+    .target Wugou
+step
+    .goto 2366,50.49,19.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chon Po Stormstout|r and |cRXP_FRIENDLY_Chen Stormstout|r
+    .complete 84467,1,70 --Celebrate the Spirit Festival! (100%)
+    .target Chen Stormstout
+    .target Chon Po Stormstout
+step
+    .goto 2366,49.42,19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huk Huk|r
+    .complete 84467,1,80 --Celebrate the Spirit Festival! (100%)
+    .target Huk Huk
+step
+    .goto 2366,50.36,18.7,5,0
+    .goto 2366,50.84,18.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tushui Monk|r and defeat her.
+    .complete 84467,1,90 --Celebrate the Spirit Festival! (100%)
+    .skipgossip
+    .target Tushui Monk
+step
+    .goto 2366,50.84,18.77,5,0
+    .goto 2366,52.33,19.21
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fireworks|r and use them
+    .complete 84467,1 --Celebrate the Spirit Festival! (100%)
+    .use 235818
+step
+    .goto 2366,52.33,19.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .turnin 84467 >>Turn in This Was Home
+    .target Lorewalker Cho
+    .accept 92030 >>Accept A New Tradition
+step
+    .goto 2366,50.58,19.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chon Po Stormstout|r
+    .turnin 92030 >>Turn in A New Tradition
+    .target Chon Po Stormstout
 ]])
