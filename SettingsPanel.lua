@@ -30,6 +30,13 @@ local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
 -- Unitscan functionality broken on mop, retail, and classic
 local unitscanEnabled = false -- gameVersion >= 11508 and gameVersion < 50000
 
+--Backward compatibility
+if _G.ShouldShowTargetFrame then
+    unitscanEnabled = false
+elseif (tonumber(select(3,_G.GetBuildInfo()):match("%d+$")) or 0) < 2025 then
+    unitscanEnabled = true
+end
+
 local importCache = {
     bufferString = "",
     displayString = "",
