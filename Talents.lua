@@ -477,35 +477,7 @@ function addon.talents:Audit()
 
     -- TODO consolidate with ProcessGuide
     if addon.game == "CATA" then
-        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
-            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
-        end
-        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
-        if _G.PlayerTalentFramePanel1Summary:IsShown() then
-            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
-            _G.PlayerTalentFrameToggleSummariesButton:Click()
-        end
-
-        -- then "Select a X Specialization" based on first talent chosen
-        local firstTalentTab = -1
-
-        for _, step in ipairs(guide.steps) do
-            if firstTalentTab > -1 then break end
-
-            for _, element in ipairs(step.elements) do
-                if element.talent and element.talent[1] and element.talent[1].tab then
-                    firstTalentTab = element.talent[1].tab
-                    break
-                end
-            end
-        end
-
-        local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
-        if firstTalentTabButton then
-            if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
-        else
-            -- Failure to get first tab, panic?
-        end
+        addon.talents.cata:SkipTalentSummariesPage(guide)
     end
 
     if addon.player.level < guide.minLevel then
@@ -1104,35 +1076,7 @@ function addon.talents:ProcessTalents(validate)
     end
 
     if addon.game == "CATA" then
-        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
-            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
-        end
-        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
-        if _G.PlayerTalentFramePanel1Summary:IsShown() then
-            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
-            _G.PlayerTalentFrameToggleSummariesButton:Click()
-        end
-
-        -- then "Select a X Specialization" based on first talent chosen
-        local firstTalentTab = -1
-
-        for _, step in ipairs(guide.steps) do
-            if firstTalentTab > -1 then break end
-
-            for _, element in ipairs(step.elements) do
-                if element.talent and element.talent[1] and element.talent[1].tab then
-                    firstTalentTab = element.talent[1].tab
-                    break
-                end
-            end
-        end
-
-        local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
-        if firstTalentTabButton then
-            if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
-        else
-            -- Failure to get first tab, panic?
-        end
+        addon.talents.cata:SkipTalentSummariesPage(guide)
     end
 
     local stepLevel, remainingPoints, result
@@ -1277,6 +1221,38 @@ function addon.talents:ProcessPetTalents(validate)
 end
 
 addon.talents.cata = {}
+
+function addon.talents.cata:SkipTalentSummariesPage(guide)
+        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
+            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
+        end
+        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
+        if _G.PlayerTalentFramePanel1Summary:IsShown() then
+            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
+            _G.PlayerTalentFrameToggleSummariesButton:Click()
+        end
+
+        -- then "Select a X Specialization" based on first talent chosen
+        local firstTalentTab = -1
+
+        for _, step in ipairs(guide.steps) do
+            if firstTalentTab > -1 then break end
+
+            for _, element in ipairs(step.elements) do
+                if element.talent and element.talent[1] and element.talent[1].tab then
+                    firstTalentTab = element.talent[1].tab
+                    break
+                end
+            end
+        end
+
+        local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
+        if firstTalentTabButton then
+            if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
+        else
+            -- Failure to get first tab, panic?
+        end
+end
 
 local function cataDrawTalentLevels(talentIndexFrameName, levels)
     local talentIndexFrame = _G[talentIndexFrameName]
