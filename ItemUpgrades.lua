@@ -21,7 +21,7 @@ local GetInventoryItemLink = _G.GetInventoryItemLink
 local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemWeaponSubclass
 
 local ITEM_UPGRADE_LABEL = _G.ITEM_UPGRADE or "Item Upgrade"
-local RXP_UPGRADE_ICON   = "Interface\\AddOns\\"..addonName.."\\Textures\\rxp_logo-64.blp"
+local RXP_UPGRADE_ICON   = "Interface\\PETBATTLES\\BattleBar-AbilityBadge-Strong-Small"
 local RXP_ICON_INLINE    = ("|T%s:12:12:0:0|t"):format(RXP_UPGRADE_ICON)
 
 
