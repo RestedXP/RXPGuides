@@ -1,4 +1,4 @@
-## Interface: 11507
+## Interface: 11508
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
