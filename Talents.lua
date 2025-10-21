@@ -594,7 +594,10 @@ function addon.talents:Audit()
 
         if auditFailed then
             addon.comms:PopupNotification("RXPTalentsAuditFailed",
-                                          fmt("%s - %s\n\n%s\n%s %s", addon.title, _G.TALENTS, guide.name, _G.TALENTS, _G.ADDON_INCOMPATIBLE)
+                                          fmt("%s - %s\n\n%s\n%s %s - %s", addon.title, _G.TALENTS,
+                                          guide.name, _G.TALENTS, strlower(_G.ADDON_INCOMPATIBLE),
+                                          strlower(_G.RESET_TO_DEFAULT)
+                                          )
                                         )
 
             guide.audit = false
