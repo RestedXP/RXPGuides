@@ -25,10 +25,10 @@ local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
-local gameVersion = select(4, GetBuildInfo())
+-- local gameVersion = select(4, GetBuildInfo())
 
---Unitscan functionality broken on mop and retail
-local unitscanEnabled = gameVersion < 50000
+-- Unitscan functionality broken on mop, retail, and classic
+local unitscanEnabled = false -- gameVersion >= 11508 and gameVersion < 50000
 
 local importCache = {
     bufferString = "",
@@ -398,6 +398,7 @@ function addon.settings:MigrateLegacySettings()
     end
 
     -- As of 11.1.5 TargetUnit now fires ADDON_ACTION_FORBIDDEN at execution, rather than target matches
+    -- Also applies to > 1.15.8
     -- Force disable setting, rather than gameVersion everywhere
     if db.showTargetingOnProximity and not unitscanEnabled then
         db.showTargetingOnProximity = false

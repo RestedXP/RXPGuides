@@ -2,6 +2,12 @@ local _, addon = ...
 local locale = GetLocale()
 
 if addon.game ~= "CLASSIC" then return end
+
+-- As of 1.15.8 TargetUnit now fires ADDON_ACTION_FORBIDDEN at execution, rather than target matches
+if addon.gameVersion >= 11508 then
+    return
+end
+
 if locale == "enUS" or locale == "enGB" then
 
     addon.rares = {
