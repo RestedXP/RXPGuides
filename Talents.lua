@@ -510,9 +510,9 @@ function addon.talents:Audit()
         end
     end
 
-    local stepLevel, remainingPoints, result
-    local optionalName, optionalLearned, optionalNotLearned
-    local expectedRank, auditFailed
+    local stepLevel, remainingPoints
+    local optionalLearned
+    local expectedRank, auditFailed, talentKey
 
     for stepNum, step in ipairs(guide.steps) do
         if GetUnspentTalentPoints then
@@ -535,7 +535,6 @@ function addon.talents:Audit()
         -- print("Evaluating step", stepNum, "for level", stepLevel)
         if step.optional then
             optionalLearned = nil
-            optionalNotLearned = {}
         end
 
         for _, element in ipairs(step.elements) do
@@ -543,22 +542,29 @@ function addon.talents:Audit()
             -- Level steps can have multiple .talent underneath, only for #optional
             for tag, _ in pairs(element) do
                 if tag == "talent" then
-                    -- learnedTalents[fmt("%d,%d,%d", tab, tier, column)] = previewRankOrRank
 
                     for _, talentData in ipairs(element.talent) do
-                        expectedRank = learnedTalents[fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column)]
+                        talentKey = fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column)
+
+                        -- learnedTalents[fmt("%d,%d,%d", tab, tier, column)] = previewRankOrRank
+                        expectedRank = learnedTalents[talentKey]
 
                         -- Already inventoried all talents, so reduce GetTalentData call by checking learnedTalents first
                         if expectedRank then
                             -- Remove learnedTalents from audit if they are identical
                             if expectedRank == talentData.rank then
-                                learnedTalents[fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column)] = nil
+                                learnedTalents[talentKey] = nil
                             -- else -- Rank 1-4, removed above when rank 5
-                            --    print("Else", fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column), talentData.rank)
+                            --    print("Else", talentKey), talentData.rank)
                             end
                         else
-                            if addon.settings.profile.debug then
+                            if addon.settings.profile.debug and not step.optional then
                                 addon.comms.PrettyPrint('%s - Audit failed for level %d', guide.name, stepLevel)
+                            end
+
+                            if not optionalLearned then
+                                -- Avoid blocking on user action if talent exists in any optional blocks
+                                optionalLearned = talentKey
                             end
 
                             auditFailed = true
@@ -566,30 +572,11 @@ function addon.talents:Audit()
 
                     end
                 end
-
-                -- TODO handle optional
-                if false and step.optional and optionalName then
-                    -- .talent optional returns {true, name} if learned or {false, name} if not learned
-                    if result then
-                        -- Avoid blocking on user action if talent exists in any optional blocks
-                        optionalLearned = optionalName
-                    else
-                        -- Specific optional .talent not learned
-                        tinsert(optionalNotLearned, optionalName)
-                    end
-                elseif result == false or result == -1 then
-                    -- Exit processing if error found
-                    -- Rely on in-tag-function error output for user communication
-                    -- Explicitly require false, accept nil as truthy
-                    -- print("Aborting step processing", result)
-
-                    return
-                end
             end
         end
 
-        if step.optional and not optionalLearned then
-            -- ??
+        if step.optional and optionalLearned then
+            auditFailed = false
         end
 
         if auditFailed then
