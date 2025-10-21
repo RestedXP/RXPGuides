@@ -593,10 +593,8 @@ function addon.talents:Audit()
         end
 
         if auditFailed then
-            addon.comms.PrettyPrint('%s - %s %s', guide.name, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
-
             addon.comms:PopupNotification("RXPTalentsAuditFailed",
-                                          fmt("%s\n%s %s", guide.name, L("Audit"), _G.ACTION_SPELL_CAST_FAILED)
+                                          fmt("%s - %s\n\n%s\n%s %s", addon.title, _G.TALENTS, guide.name, _G.TALENTS, _G.ADDON_INCOMPATIBLE)
                                         )
 
             guide.audit = false
