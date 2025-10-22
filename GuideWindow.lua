@@ -319,7 +319,7 @@ CurrentStepFrame:EnableMouse(1)
 local CheckStepCompletion = function(self,initialCheck)
     local stepCompleted = true
     for _,element in pairs(self.elements) do
-        if initialCheck then
+        if initialCheck and element.container and element.container.callback then
             --print('ok1',GetTime())
             element.container:callback()
         end
