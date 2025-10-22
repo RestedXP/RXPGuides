@@ -3069,6 +3069,19 @@ step
     .use 133558
 step
     #requires whispered2
+    .holiday 324
+    .goto 627,47.96,41.70
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Candy Bucket|r
+    .turnin 43055 >>Turn in Candy Bucket 
+    .target Candy Bucket
+step << Alliance
+    #requires whispered2
+    .holiday 324
+    .goto 627,41.63,64.10
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Candy Bucket|r
+    .turnin 43056 >>Turn in Candy Bucket
+step
+    #requires whispered2
     #completewith next
     #label whispered
     >>|cRXP_WARN_Wait for the Roleplay|r.

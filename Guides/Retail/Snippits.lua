@@ -10990,6 +10990,7 @@ step
     .goto 741,67.4,55.3
     .isInScenario 1078
     .cast 1784 >>Use |T132320:0|t[Stealth] and |T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Soulkeeper|r.
+    *|cRXP_WARN_There is a button underneath the quest objective|r.
     .scenario 2364,1 --Use Pick Pocket on the Soulkeeper.
     .usespell 1784
     .usespell 921
@@ -11026,7 +11027,7 @@ step
 step
     .goto 740,63.61,53.24
     .isInScenario 1078
-    >>Kill |cRXP_ENEMY_Akaari Shadowgore|r
+    >>Kill |cRXP_ENEMY_Akaari Shadowgore|r |cRXP_WARN_when she spawns clones of herself kill them first|r.
     .scenario 2368,1 --Kill Akaari Shadowgore.
     .mob Akaari Shadowgore
 step
@@ -11043,6 +11044,7 @@ step
     .target Valeera Sanguinar
 step
     #completewith Fangs of the Devourer
+    .zoneskip 740,1
     .zone 628 >>Leave the Instance(Right-Click your player frame) or press the macro.
     .macro Leave Instance,236367 >> /run C_PartyInfo.LeaveParty()
 step
@@ -11056,6 +11058,7 @@ step
 step
     #requires Fangs of the Devourer
     #completewith Fangs of the Devourer2
+    .zoneskip 626
     .goto 628,73.27,65.13,5,0
     .goto 628,76.51,67.51,5,0
     .goto 627,59.65,47.69,5 >>Leave the Sewer
@@ -11072,6 +11075,7 @@ step
     #requires Fangs of the Devourer2
     #completewith Fangs of the Devourer3
     #label Artifact Weapon: Subtlety
+    .zoneskip 626
     .goto 627,54.5,31.45,5,0
     .goto 627,54.32,32.81
     .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
@@ -11082,15 +11086,14 @@ step
     #hidewindow
     #completewith next
     #label Fangs of the Devourer4
-    .goto 627,52.8,33.78,15,0
+    .goto 626,49.45,32.64,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
     .turnin 41924 >>Turn in Fangs of the Devourer
     .target Valeera Sanguinar
 step
     #requires Fangs of the Devourer3
     #completewith Fangs of the Devourer4
-    .goto 626,40.88,75.51,30 
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
+    .goto 626,40.88,75.51,30 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Torch|r to open the door to the secret room.
 step
     #requires Fangs of the Devourer4
     .goto 626,40.88,75.51
