@@ -410,6 +410,10 @@ function addon.settings:MigrateLegacySettings()
     if db.showTargetingOnProximity and not unitscanEnabled then
         db.showTargetingOnProximity = false
     end
+
+    if db.showDangerousUnitscan and not unitscanEnabled then
+        db.showDangerousUnitscan = false
+    end
 end
 
 -- Pre 4.5.10 , settings were in RXPCSettings per character
@@ -2335,7 +2339,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.dangerousMobs or addon.gameVersion > 20000
+                            return not unitscanEnabled or not addon.dangerousMobs or addon.gameVersion > 20000
                         end
                     },
                     showRares = {
