@@ -1872,7 +1872,7 @@ function BottomFrame.UpdateFrame(self, stepn)
 
             if type(element.text) ~= "string" then
                 if addon.settings.profile.debug then
-                    print('Error text at step ' .. step.index)
+                    -- print('Error text at step ' .. step.index)
                 end
             elseif not rawtext then
                 icon = element.icon or addon.icons[element.tag] or ""
