@@ -10004,10 +10004,13 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42503,3 --1/1 Information found
     .use 138102
- step
+step
     .goto 17,36.98,29.09
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42503,1 --1/1 Read the Coded Message
+-- step
+--     .goto 17,39.52,36.49
+--     .zone 617 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     .goto 17,37.21,29.05
     >>Click the Quest Turnin Pop-Up in your Questlog.
@@ -10116,35 +10119,41 @@ step
 step
     #requires Preparation
     .goto 37,36.79,52.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garona Halforcen|r in Elwynn Forest
     .turnin 42568 >>Turn in Preparation
     .target Garona Halforcen
     .accept 42504 >>Accept The Unseen Blade
 step
+    .isOnQuest 42504
+    .isQuestNotComplete 42504
+    .goto 37,32.05,49.23
+    .enterScenario 1123 >>Enter the Scenario
+    *|cRXP_WARN_You can only use ground mounts in this scenario|r.
+--HERE
+step
     #completewith next
     #label Confront Mathias Shaw.
     .zoneskip 37,1
-    .isOnQuest 42504
+    .isInScenario 1123
     >>|cRXP_WARN_Wait for the Roleplay|r.
+    *|cRXP_WARN_You can't mount in this scenario|r
     .scenario 2548,1 --Confront Mathias Shaw.
 step
-    .isOnQuest 42504
+    .isInScenario 1123
     .zoneskip 37,1
     #completewith Confront Mathias Shaw.
-    .goto 37,32.05,49.23,30 >>Follow the Arrow
-    .timer 43,RP
+    .goto 37,32.05,49.23,40 >>Follow the Arrow
+    .timer 45,RP
 step
     #requires Confront Mathias Shaw.
     .goto 37,31.92,48.99
     .isOnQuest 42504
-    .zoneskip 37,1
+    .isInScenario 1123
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 2548,1 --Confront Mathias Shaw.
 step
-    .isInScenario 1123
     #completewith Obtain the Kingslayers
-    +|cRXP_WARN_You can only use ground mounts in this scenario|r.
-    *Enter Stealth and dodge the guards. Be especially careful of the ones with eyes on top of their heads, as they have increased stealth detection.
+    +Enter |cRXP_WARN_Stealth|r and avoid guards, especially those with eye markers they detect stealth better.
 step
     .isInScenario 1123
     .goto 84,72.35,88.62,15 >>Follow the Arrow
@@ -10173,20 +10182,20 @@ step
 step
     #completewith next
     #label Trader's Hall
-    .goto 84,63.72,72.99,15,0
+    .goto 84,66.38,73.66,5,0
     .isInScenario 1123
     >>Use the |T458733:0|t[Smoke Bomb] inside the Auction House.  |cRXP_WARN_There is a button underneath the quest objective|r.
     .scenario 2550,1 --Use the smoke bomb in the Trader's Hall.
 step
     .isInScenario 1123
     #completewith Trader's Hall
-    .goto 84,65.6,74.23,5 >>Leave the House
     #title |cFFFCDC00Leave House|r
+    .goto 84,65.6,74.23,5 >>Leave the House
 step
     #requires Trader's Hall
-    .goto 84,63.29,72.95,10,0
+    .goto 84,63.27,73.7,15,0
     .goto 84,61.65,72.46,10,0
-    .goto 84,61.35,71.29
+    .goto 84,61.65,72.38
     .isInScenario 1123
     >>Use the |T458733:0|t[Smoke Bomb] inside the Auction House. |cRXP_WARN_There is a button underneath the quest objective|r.
     .scenario 2550,1 --Use the smoke bomb in the Trader's Hall.
@@ -10259,7 +10268,7 @@ step
     .isInScenario 1123
     >>Kill |cRXP_ENEMY_Melris Malagan|r
     .scenario 2562,1 --Assassinate Melris Malagan
-    .timer 30,RP
+    .timer 29.5,RP
     .mob Melris Malagan
 step
     #label Obtain the Kingslayers
