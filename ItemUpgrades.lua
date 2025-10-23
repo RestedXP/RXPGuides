@@ -1900,6 +1900,12 @@ local function Initializer(frame, data)
     end
 end
 
+local function CustomFactory(factory, node)
+    local data = node:GetData()
+    local template = data.Template
+    factory(template, Initializer)
+end
+
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
 
@@ -1920,8 +1926,11 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     local DataProvider = CreateDataProvider()
     local ScrollView = CreateScrollBoxListLinearView()
+
+    ScrollView:SetElementFactory(CustomFactory)
     ScrollView:SetDataProvider(DataProvider)
     ScrollView:SetElementExtent(19 + 37 * 2)
+
     ahSession.displayFrame.DataProvider = DataProvider
 
     ScrollUtil.InitScrollBoxListWithScrollBar(ahSession.displayFrame.ScrollBox, ScrollBar, ScrollView)
