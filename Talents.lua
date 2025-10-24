@@ -68,6 +68,12 @@ else
     }
 end
 
+function GetTableLength(T)
+    local count = 0
+    for _ in pairs(T) do count = count + 1 end
+    return count
+end
+
 local function buildTalentGuidesMenu()
     local menu = {}
 
@@ -119,7 +125,6 @@ local function buildTalentGuidesMenu()
                 invalidReason = "> " .. guide.maxLevel
                 disabled = true
             else
-                disabled = false
                 invalidReason = nil
             end
 
@@ -135,6 +140,7 @@ local function buildTalentGuidesMenu()
                 func = function(_, arg1)
                     addon.talents:UpdateSelectedGuide(arg1)
 
+                    -- TODO should also audit?
                     if addon.talents:ProcessTalents('validate') then addon.talents:DrawTalents() end
                 end
             }
@@ -178,7 +184,19 @@ local function buildTalentGuidesMenu()
 
     tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
 
-    tinsert(menu, {text = _G.APPLY, notCheckable = 1, func = function() addon.talents:ProcessTalents() end})
+    tinsert(menu, {
+        text = _G.APPLY,
+        notCheckable = 1,
+        func = function()
+            if addon.talents:Audit() then
+                addon.talents:ProcessTalents()
+            end
+        end
+    })
+
+    if addon.settings.profile.debug then
+        tinsert(menu, {text = "Audit", notCheckable = 1, func = function() addon.talents:Audit() end})
+    end
 
     tinsert(menu, {text = _G.GAMEOPTIONS_MENU, notCheckable = 1, func = function() addon.settings.OpenSettings() end})
 
@@ -329,7 +347,9 @@ function addon.talents:HookUI()
             if click == "RightButton" then
                 EasyMenu(buildTalentGuidesMenu(), self.menuFrame, self.talentsButton, 0, 0, "MENU", 1)
             else
-                self:ProcessTalents()
+                if self:Audit() then
+                    self:ProcessTalents()
+                end
             end
         end)
     end
@@ -428,6 +448,154 @@ function addon.talents:ParseGuide(text)
     return guide
 end
 
+function GetTalentData(tab, talentIndex)
+    local name, previewRankOrRank
+
+    if addon.game == "CATA" then
+        name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(tab, talentIndex)
+    elseif addon.game == "WOTLK" then
+        name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(tab, talentIndex)
+    else
+        name, _, _, _, previewRankOrRank = GetTalentInfo(tab, talentIndex)
+    end
+
+    return name, previewRankOrRank
+end
+
+function addon.talents:Audit()
+    if PlayerTalentFrame.pet then return end
+
+    self:BuildIndexLookup()
+
+    if not indexLookup['player'].initialized then return end
+
+    local guide = self:GetCurrentGuide()
+
+    if not guide then return end
+
+    if addon.settings.profile.debug then addon.comms.PrettyPrint("Auditing %s", guide.displayname) end
+
+    -- TODO consolidate with ProcessGuide
+    if addon.game == "CATA" then
+        addon.talents.cata:SkipTalentSummariesPage(guide)
+    end
+
+    if addon.player.level < guide.minLevel then
+        addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname) --
+        return
+    end
+
+    if addon.player.level > guide.maxLevel then
+        addon.comms.PrettyPrint(L("Too high for %s"), guide.displayname) --
+        return
+    end
+
+    -- learnedTalents["1,2,3"] = 4
+    local learnedTalents = {}
+
+    local previewRankOrRank
+
+    -- Build lookup of all talents and ranks
+    for tab, tiers in pairs(indexLookup['player']) do
+        -- Exclude indexLookup['player'].initialized
+        for tier, columns in pairs(type(tiers) == "table" and tiers or {}) do
+            for column, index in pairs(columns) do
+                _, previewRankOrRank = GetTalentData(tab, index)
+
+                -- Only track decisions that may impact guide
+                if previewRankOrRank > 0 then
+                    learnedTalents[fmt("%d,%d,%d", tab, tier, column)] = previewRankOrRank
+                end
+            end
+        end
+    end
+
+    local stepLevel, remainingPoints
+    local optionalLearned
+    local expectedRank, auditFailed, talentKey
+
+    for stepNum, step in ipairs(guide.steps) do
+        if GetUnspentTalentPoints then
+            remainingPoints = GetUnspentTalentPoints() - GetGroupPreviewTalentPointsSpent()
+        else
+            remainingPoints = UnitCharacterPoints("player")
+        end
+
+        stepLevel = guide.minLevel + stepNum - 1
+
+        -- If reached exit condition, evaluate if any leftover learnedTalents
+        -- Audit up to stepLevel minus any remainingPoints, unspent points don't break Apply
+        if stepLevel > addon.player.level - remainingPoints then
+            -- If no remaining learnedTalents, nothing to conflict
+            -- print("Audit up to level", stepLevel, GetTableLength(learnedTalents) == 0)
+            guide.audit = GetTableLength(learnedTalents) == 0
+            return guide.audit
+        end
+
+        -- print("Evaluating step", stepNum, "for level", stepLevel)
+        if step.optional then
+            optionalLearned = nil
+        end
+
+        for _, element in ipairs(step.elements) do
+
+            -- Level steps can have multiple .talent underneath, only for #optional
+            for tag, _ in pairs(element) do
+                if tag == "talent" then
+
+                    for _, talentData in ipairs(element.talent) do
+                        talentKey = fmt("%d,%d,%d", talentData.tab, talentData.tier, talentData.column)
+
+                        -- learnedTalents[fmt("%d,%d,%d", tab, tier, column)] = previewRankOrRank
+                        expectedRank = learnedTalents[talentKey]
+
+                        -- Already inventoried all talents, so reduce GetTalentData call by checking learnedTalents first
+                        if expectedRank then
+                            -- Remove learnedTalents from audit if they are identical
+                            if expectedRank == talentData.rank then
+                                learnedTalents[talentKey] = nil
+                            -- else -- Rank 1-4, removed above when rank 5
+                            --    print("Else", talentKey), talentData.rank)
+                            end
+                        else
+                            if addon.settings.profile.debug and not step.optional then
+                                addon.comms.PrettyPrint('%s - Audit failed for level %d', guide.name, stepLevel)
+                            end
+
+                            if not optionalLearned then
+                                -- Avoid blocking on user action if talent exists in any optional blocks
+                                optionalLearned = talentKey
+                            end
+
+                            auditFailed = true
+                        end
+
+                    end
+                end
+            end
+        end
+
+        if step.optional and optionalLearned then
+            auditFailed = false
+        end
+
+        if auditFailed then
+            addon.comms:PopupNotification("RXPTalentsAuditFailed",
+                                          fmt("%s - %s\n\n%s\n%s %s - %s", addon.title, _G.TALENTS,
+                                          guide.name, _G.TALENTS, strlower(_G.ADDON_INCOMPATIBLE),
+                                          strlower(_G.RESET_TO_DEFAULT)
+                                          )
+                                        )
+
+            guide.audit = false
+            return false
+        end
+    end
+
+    guide.audit = true
+    return true
+end
+
 -- { tab, talentIndex, name }
 local function learnClassicTalent(payload)
     if addon.game ~= "CLASSIC" then return end
@@ -465,7 +633,6 @@ function addon.talents.functions.talent(element, validate, optional)
     local lookup
     local tempData
 
-    -- TODO handle off-plan talents
     for _, talentData in ipairs(element.talent) do
         lookup = indexLookup['player'][talentData.tab]
 
@@ -478,15 +645,7 @@ function addon.talents.functions.talent(element, validate, optional)
 
         talentIndex = lookup[talentData.tier][talentData.column]
 
-        if talentIndex and validate then return true end
-
-        if addon.game == "CATA" then
-            name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(talentData.tab, talentIndex)
-        elseif addon.game == "WOTLK" then
-            name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(talentData.tab, talentIndex)
-        else
-            name, _, _, _, previewRankOrRank = GetTalentInfo(talentData.tab, talentIndex)
-        end
+        name, previewRankOrRank = GetTalentData(talentData.tab, talentIndex)
 
         if optional then
             if previewRankOrRank == talentData.rank then
@@ -502,6 +661,8 @@ function addon.talents.functions.talent(element, validate, optional)
         end
 
         if previewRankOrRank < talentData.rank then
+            if validate then return true end
+
             if addon.game == "CLASSIC" then -- Classic doesn't have Preview Talents
                 tempData = {talentData.tab, talentIndex, name}
 
@@ -756,9 +917,15 @@ function addon.talents:DrawTalents()
         remainingPoints = UnitCharacterPoints("player")
     end
 
-    local playerLevel = UnitLevel("player")
+    local playerLevel = addon.player.level
     local advancedWarning = playerLevel + addon.settings.profile.upcomingTalentCount
     wipe(talentTooltips.data)
+
+    -- If audit failed, draw the entire range
+    if guide.audit == false then
+        playerLevel = guide.minLevel - 1
+        -- Keep existing player level based advancedWarning
+    end
 
     -- Track state better than with Blizz frame re-use
     wipe(activeIndices)
@@ -877,6 +1044,13 @@ function addon.talents:ProcessTalents(validate)
 
     if not guide then return end
 
+    -- Somehow guide not audited, force an audit
+    if guide.audit == nil then
+        self:Audit()
+    end
+
+    if guide.audit ~= true then return end
+
     if validate and addon.settings.profile.debug then addon.comms.PrettyPrint("Validating %s", guide.displayname) end
 
     if playerLevel < guide.minLevel and not validate then
@@ -890,35 +1064,7 @@ function addon.talents:ProcessTalents(validate)
     end
 
     if addon.game == "CATA" then
-        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
-            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
-        end
-        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
-        if _G.PlayerTalentFramePanel1Summary:IsShown() then
-            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
-            _G.PlayerTalentFrameToggleSummariesButton:Click()
-        end
-
-        -- then "Select a X Specialization" based on first talent chosen
-        local firstTalentTab = -1
-
-        for _, step in ipairs(guide.steps) do
-            if firstTalentTab > -1 then break end
-
-            for _, element in ipairs(step.elements) do
-                if element.talent and element.talent[1] and element.talent[1].tab then
-                    firstTalentTab = element.talent[1].tab
-                    break
-                end
-            end
-        end
-
-        local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
-        if firstTalentTabButton then
-            if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
-        else
-            -- Failure to get first tab, panic?
-        end
+        addon.talents.cata:SkipTalentSummariesPage(guide)
     end
 
     local stepLevel, remainingPoints, result
@@ -989,7 +1135,7 @@ function addon.talents:ProcessTalents(validate)
             addon.comms:PopupNotification("RXPTalentsMissingOptional",
                                           fmt("%s %s %s: %s\n%s\n\n%s", _G.ADDON_MISSING, _G.OPTIONAL,
                                               strlower(_G.TALENT_POINTS), fmt(_G.UNIT_LEVEL_TEMPLATE, stepLevel),
-                                              _G._G.TALENT_BUTTON_TOOLTIP_SELECT_INSTRUCTIONS,
+                                              _G.TALENT_BUTTON_TOOLTIP_SELECT_INSTRUCTIONS,
                                               strjoin("\n", unpack(optionalNotLearned))))
             return
         end
@@ -1063,6 +1209,38 @@ function addon.talents:ProcessPetTalents(validate)
 end
 
 addon.talents.cata = {}
+
+function addon.talents.cata:SkipTalentSummariesPage(guide)
+        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
+            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
+        end
+        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
+        if _G.PlayerTalentFramePanel1Summary:IsShown() then
+            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
+            _G.PlayerTalentFrameToggleSummariesButton:Click()
+        end
+
+        -- then "Select a X Specialization" based on first talent chosen
+        local firstTalentTab = -1
+
+        for _, step in ipairs(guide.steps) do
+            if firstTalentTab > -1 then break end
+
+            for _, element in ipairs(step.elements) do
+                if element.talent and element.talent[1] and element.talent[1].tab then
+                    firstTalentTab = element.talent[1].tab
+                    break
+                end
+            end
+        end
+
+        local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
+        if firstTalentTabButton then
+            if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
+        else
+            -- Failure to get first tab, panic?
+        end
+end
 
 local function cataDrawTalentLevels(talentIndexFrameName, levels)
     local talentIndexFrame = _G[talentIndexFrameName]
