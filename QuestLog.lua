@@ -323,7 +323,7 @@ function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
                 return addon.GetQuestLog(QL, LT, nextGuide, silent, stopGuide, stopStep)
             end
         elseif eStep and not silent then
-            print(format("Error at step %d (%s)", eStep.index or 0,guide.name))
+            addon.comms.PrettyPrint("Error at step %d (%s)", eStep.index or 0,guide.name)
         end
     end
 

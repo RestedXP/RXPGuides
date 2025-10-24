@@ -546,7 +546,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
         if n > 0 or header then
             table.insert(strbuffer,text)
         else
-            print('RXPGuides: Import Error - Invalid String Header')
+            addon.comms.PrettyPrint('Import Error - Invalid String Header')
             addon.settings.OpenSettings('Import')
             return
         end

@@ -222,14 +222,15 @@ addon.icons.acceptmultiple = addon.icons.accept
 addon.icons.turninmultiple = addon.icons.turnin
 addon.icons.xpto60 = addon.icons.xp
 
-function addon.error(text,arg1)
+function addon.error(text, arg1)
     if type(text) ~= "string" then
         text = ""
     end
-    if not arg1 then
-        print(text)--ok
+
+    if arg1 then
+        addon.comms.PrettyPrint("%s %s: %s\n%s", L("Error parsing guide"), addon.currentGuideName, arg1, text)
     else
-        print(fmt(L("Error parsing guide") .. " %s: %s\n%s" ,addon.currentGuideName,arg1,text))
+        addon.comms.PrettyPrint(text)
     end
 end
 
@@ -1435,7 +1436,7 @@ function addon.UpdateQuestCompletionData(self)
     end
 
     if type(id) ~= "number" then
-        print('Error (.' .. element.tag .. '): Invalid quest ID at step ' .. (element.step.index  or "*"))
+        addon.comms.PrettyPrint('Error (.%s): Invalid quest ID at step %s', element.tag, element.step.index  or "*")
         return
     end
 
@@ -4121,7 +4122,7 @@ function addon.GetSubZoneId(zone,x,y,ignoreOutput)
             local zoneName = C_Map.GetAreaInfo(i) or 3
             if zoneName and zoneName == subzone then
                 if not ignoreOutput then
-                    print(zoneName .. ' Subzone ID: ' .. i)
+                    addon.comms.PrettyPrint(zoneName .. ' Subzone ID: ' .. i)
                 end
                 return i
             elseif zoneText == zoneName then
@@ -4131,12 +4132,12 @@ function addon.GetSubZoneId(zone,x,y,ignoreOutput)
         end
         if bestMatchId and bestMatchText then
             if not ignoreOutput then
-                print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
+                addon.comms.PrettyPrint(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
             end
             return bestMatchId
         end
     end
-    print('ERROR: Subzone not found')
+    addon.comms.PrettyPrint('ERROR: Subzone not found')
  end
 
  function addon.functions.subzone(self, text, subZone, flags)
@@ -4810,7 +4811,7 @@ function addon.DepositItems(itemList)
             end
         end
     end
-    print(text) -- ok
+    addon.comms.PrettyPrint(text) -- ok
 
     addon.GoThroughBags(itemList, function(bag, slot, bagContents)
         PickupContainerItem(bag, slot)
@@ -4886,7 +4887,7 @@ function addon.WithdrawItems(itemList)
             end
         end
     end
-    print(text) -- ok
+    addon.comms.PrettyPrint(text) -- ok
 
     addon.GoThroughBank(itemList, function(bag, slot, bagContents)
         PickupContainerItem(bag, slot)
@@ -5040,7 +5041,7 @@ function addon.functions.buy(self, ...)
                 local name, _, _, quantity = GetMerchantItemInfo(i)
 
                 if itemID == id or name == id then
-                    print("Buying " .. name .. " x" .. total) -- ok
+                    addon.comms.PrettyPrint("Buying " .. name .. " x" .. total) -- ok
                     if quantity and quantity > 1 then
                         for n = 1, math.ceil(total / quantity) do
                             BuyMerchantItem(i, quantity)
@@ -5953,7 +5954,7 @@ else
         for i = 1, 1e6 do
             local criteria = select(9, C_Scenario.GetCriteriaInfoByStep(i, 1))
             if criteria == criteriaId then
-                print("Current Scenario Stage ID: " .. i) --ok
+                addon.comms.PrettyPrint("Current Scenario Stage ID: " .. i) --ok
             end
         end
     end
@@ -7275,7 +7276,7 @@ function addon.functions.enterScenario(self, ...)
             element.tooltipText = nil
         end
         if addon.settings.profile.debug then
-            print(scenarioInfo and scenarioInfo.scenarioID)
+            addon.comms.PrettyPrint(scenarioInfo and scenarioInfo.scenarioID)
         end
     end
 end
@@ -7548,13 +7549,13 @@ function addon.GetChoiceId()
     local choices = C_PlayerChoice.GetCurrentPlayerChoiceInfo()
     if choices and choices.options then
         for _,t in pairs(choices.options) do
-            print(t.header..":",t.choiceArtID)
+            addon.comms.PrettyPrint(t.header..":",t.choiceArtID)
         end
         return
     end
-    print('-- Chromie Time --')
+    addon.comms.PrettyPrint('-- Chromie Time --')
     for _,t in pairs(C_ChromieTime.GetChromieTimeExpansionOptions()) do
-        print(t.name..':',t.id)
+        addon.comms.PrettyPrint(t.name..':',t.id)
     end
 end
 

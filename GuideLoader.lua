@@ -887,9 +887,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             groupOrContent = text:match("^%s*#group%s+(.-)%s*[\r\n]") or
                                  text:match("[\r\n]%s*#group%s+(.-)%s*[\r\n]")
             if not groupOrContent then
-                print("\n" .. L("Error parsing guide") ..
-                                            ": Invalid guide group",
-                                        text:match("#name%s+.-%s*[\r\n]"))
+                addon.comms.PrettyPrint("\n%s: Invalid guide group %s",
+                                        text:match("#name%s+.-%s*[\r\n]"), L("Error parsing guide"))
                 return
             end
         end
