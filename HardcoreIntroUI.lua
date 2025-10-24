@@ -1574,7 +1574,6 @@ function addon.startHardcoreIntroUI(saved_var_settings)
         addon.settings.profile.soloSelfFound = not auction_house
 
         addon.settings.profile.showDangerousMobsMap = hostile_enemy_warning
-        addon.settings.profile.showDangerousUnitscan = hostile_enemy_warning
         addon.settings.profile.dungeons = {}
         for dungeon in pairs(dungeons) do
             addon.settings.profile.dungeons[dungeon] = true

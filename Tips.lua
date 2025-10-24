@@ -414,19 +414,23 @@ local function IsStepActive(self)
 end
 
 function addon.tips:LoadDangerousMobs(reloadData)
-    if not (addon.dangerousMobs) then return end
+    if not addon.dangerousMobs then return end
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
     local zoneList
+
     addon.UpdateMap()
+
     if not zone or not addon.dangerousMobs[zone] then zone = mapId end
+
     -- print(zone,addon.dangerousMobs[zone])
-    if not addon.dangerousMobs[zone] and not addon.settings.profile.debug then
+    if not addon.dangerousMobs[zone] then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
         return
     end
+
     local dangerousMobs = session.dangerousMobs[zone] or {}
     session.dangerousMobs[zone] = dangerousMobs
     zoneList = zoneList or {addon.dangerousMobs[zone]}
@@ -434,7 +438,10 @@ function addon.tips:LoadDangerousMobs(reloadData)
     -- dangerousMobs DB has nested objects, flatten and fake step data
     if not dangerousMobs.processed or reloadData == true then
         addon.currentGuideName = "Addon Tips"
+
         local steps = {}
+        local step, element, skip, prefix
+
         for _, zoneData in pairs(zoneList) do
             for name, list in pairs(zoneData) do
                 for _, mobData in ipairs(list) do
@@ -446,22 +453,27 @@ function addon.tips:LoadDangerousMobs(reloadData)
                         for line in mobData.Location:gmatch("[^\r\n;]+") do
                             line:gsub("^%s+", "")
                             line:gsub("%s+$", "")
-                            local element = addon.ParseLine(line)
-                            local skip
+
+                            element = addon.ParseLine(line)
+                            skip = false
+
                             if element then
-                                local step = {}
+                                step = {}
+
                                 if element.tag == "rare" then step.rare = true end
                                 if element.tag == "treasure" then step.treasure = true end
+
                                 element.step = step
                                 -- element.drawCenterPoint = true--Adds an icon at the center of the lines
                                 step.isActive = IsStepActive
                                 step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
+
                                 if element.wx or element.segments then
                                     -- step.linethickness = 2
                                     step.showTooltip = true -- Shows tooltip when hovering over a line
                                     step.icon = mobData.Icon or "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t" -- texture used for the icon
                                     step.alternateIcon = mobData.AltIcon
-                                    local prefix = ""
+                                    prefix = ""
 
                                     if addon.gameVersion < 20000 then
                                         prefix = _G.VOICEMACRO_1_Sc_0
@@ -480,12 +492,13 @@ function addon.tips:LoadDangerousMobs(reloadData)
                                             fmt("%s\n%s", mobData.Classification or "", mobData.Notes or "")
                                     end
                                 elseif element.targets or element.unitscan or element.mobs then
-                                    if not addon.settings.profile.showDangerousUnitscan then
+                                    if addon.settings.profile.showDangerousUnitscan then
+                                        step.isUnitscan = true
+                                    else
                                         skip = true
-                                        -- DevTools_Dump(self.elements[1].mobs)
                                     end
-                                    step.isUnitscan = true
                                 end
+
                                 if not skip then
                                     step.hideMinimap = true
                                     step.elements = {element}
@@ -497,8 +510,10 @@ function addon.tips:LoadDangerousMobs(reloadData)
                 end
             end
         end
+
         addon.currentGuideName = nil
         dangerousMobs.steps = steps
+
         addon:ScheduleTask(addon.RegisterGeneratedSteps)
     end
 
