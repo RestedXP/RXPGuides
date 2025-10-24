@@ -335,9 +335,18 @@ function addon.comms.PrettyPrint(msg, ...)
     print(fmt("%s: %s", addon.title, fmt(msg, ...)))
 end
 
+addon.comms.debugThrottle = {}
 function addon.comms.PrettyDebug(msg, ...)
     if not msg then return end
     if not addon.settings.profile.debug then return end
+
+    local now = GetTime()
+
+    if not addon.comms.debugThrottle[msg] then
+        addon.comms.debugThrottle[msg] = now
+    elseif addon.comms.debugThrottle[msg] and (now - addon.comms.debugThrottle[msg]) < 3000 then
+        return
+    end
 
     print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
 end
