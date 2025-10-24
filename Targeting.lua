@@ -462,7 +462,7 @@ function addon.targeting.CheckTargetProximity()
     -- No hits, reset everything
     if proxmityPolling.match and now - proxmityPolling.lastMatch > proxmityPolling.matchTimeout then
 
-        if addon.settings.profile.debug then addon.comms.PrettyPrint("All match expired, resetting targets") end
+        addon.comms.PrettyDebug("All match expired, resetting targets")
 
         proxmityPolling.match = false
         wipe(proxmityPolling.rareAnnounced)
@@ -475,7 +475,7 @@ function addon.targeting.CheckTargetProximity()
 
     for name, data in pairs(proxmityPolling.scannedTargets) do
         if now - data.lastMatch > proxmityPolling.matchTimeout then
-            if addon.settings.profile.debug then addon.comms.PrettyPrint("Individual match expired", name) end
+            addon.comms.PrettyDebug("Individual match expired", name)
 
             proxmityPolling.scannedTargets[name] = nil
         end

@@ -58,10 +58,7 @@ function addon.tracker:SetupTracker()
     if not self.db.profile.trackedGuid then self.db.profile.trackedGuid = addon.player.guid end
 
     if self.db.profile.trackedGuid ~= addon.player.guid then
-        if addon.settings.profile.debug then
-            addon.comms
-                .PrettyPrint("GUID changed, saving %s and resetting for %s", addon.player.name, addon.player.guid)
-        end
+        addon.comms.PrettyDebug("GUID changed, saving %s and resetting for %s", addon.player.name, addon.player.guid)
 
         local _, _, guid = strsplit('-', addon.player.guid)
 
@@ -1397,12 +1394,12 @@ end
 function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
     if prefix ~= self._commPrefix or distribution ~= 'WHISPER' then return end -- or sender == playerName then return end
     local d = addon.settings.profile.debug
-    local pp = addon.comms.PrettyPrint
+
     if UnitInBattleground("player") ~= nil then return end
 
     local status, obj = self:Deserialize(data)
 
-    if d then pp("Deserialize:status %s", tostring(status)) end
+    addon.comms.PrettyDebug("Deserialize:status %s", tostring(status))
     if not status or not obj.command then return end
 
     if obj.command == 'LEVEL_REPORT_REQ' then
@@ -1417,23 +1414,23 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
             timePlayedThisLevel = secondsSinceLogin + addon.tracker.state.login.timePlayedThisLevel
         })
 
-        if d then pp("Responding to LEVEL_REPORT_REQ, from %s", sender) end
+        addon.comms.PrettyDebug("Responding to LEVEL_REPORT_REQ, from %s", sender)
         self:SendCommMessage(self._commPrefix, sz, "WHISPER", sender)
     elseif obj.command == 'LEVEL_REPORT_RESP' then
         if sender ~= obj.playerName then
             if d then
-                pp("Invalid LEVEL_REPORT_RESP, %s != %s", sender, obj.playerName)
+                addon.comms.PrettyDebug("Invalid LEVEL_REPORT_RESP, %s != %s", sender, obj.playerName)
                 return
             end
         end
-        if d then pp("Caching LEVEL_REPORT_RESP, from %s at %s", sender, obj.compileTime) end
+        addon.comms.PrettyDebug("Caching LEVEL_REPORT_RESP, from %s at %s", sender, obj.compileTime)
 
         self.state.otherReports[sender] = obj
         self:CreateGui(_G.InspectFrame, sender)
         self:UpdateReport(obj.playerLevel, sender, _G.InspectFrame)
         self:ShowReport(_G.InspectFrame)
     else
-        if d then pp("Unknown command (%s)", obj.command) end
+        addon.comms.PrettyDebug("Unknown command (%s)", obj.command)
     end
 end
 
@@ -1446,10 +1443,8 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
     if self.state.otherReports[inspectedName] and self.state.otherReports[inspectedName].compileTime and GetServerTime() -
         self.state.otherReports[inspectedName].compileTime < 30 then
 
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("Displaying cached data for %s from %.2f seconds ago", inspectedName,
-                                    GetServerTime() - self.state.otherReports[inspectedName].compileTime)
-        end
+        addon.comms.PrettyDebug("Displaying cached data for %s from %.2f seconds ago", inspectedName,
+                                GetServerTime() - self.state.otherReports[inspectedName].compileTime)
 
         self:CreateGui(_G.InspectFrame, inspectedName)
         self:UpdateReport(UnitLevel(inspectedName), inspectedName, _G.InspectFrame)

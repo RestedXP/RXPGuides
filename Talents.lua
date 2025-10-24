@@ -461,7 +461,7 @@ function addon.talents:Audit()
 
     if not guide then return end
 
-    if addon.settings.profile.debug then addon.comms.PrettyPrint("Auditing %s", guide.displayname) end
+    addon.comms.PrettyDebug("Auditing %s", guide.displayname)
 
     -- TODO consolidate with ProcessGuide
     if addon.game == "CATA" then addon.talents.cata:SkipTalentSummariesPage(guide) end
@@ -542,8 +542,8 @@ function addon.talents:Audit()
                                 --    print("Else", talentKey), talentData.rank)
                             end
                         else
-                            if addon.settings.profile.debug and not step.optional then
-                                addon.comms.PrettyPrint('%s - Audit failed for level %d', guide.name, stepLevel)
+                            if not step.optional then
+                                addon.comms.PrettyDebug('%s - Audit failed for level %d', guide.name, stepLevel)
                             end
 
                             if not optionalLearned then
@@ -1028,7 +1028,7 @@ function addon.talents:ProcessTalents(validate)
 
     if guide.audit ~= true then return end
 
-    if validate and addon.settings.profile.debug then addon.comms.PrettyPrint("Validating %s", guide.displayname) end
+    if validate then addon.comms.PrettyDebug("Validating %s", guide.displayname) end
 
     if playerLevel < guide.minLevel and not validate then
         addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname) --
@@ -1129,7 +1129,7 @@ function addon.talents:ProcessPetTalents(validate)
 
     if not guide or not guide.pet then return end
 
-    if validate and addon.settings.profile.debug then addon.comms.PrettyPrint("Validating %s", guide.displayname) end
+    if validate then addon.comms.PrettyDebug("Validating %s", guide.displayname) end
 
     if playerLevel < guide.minLevel and not validate then
         addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname) --
@@ -1170,9 +1170,7 @@ function addon.talents:ProcessPetTalents(validate)
                 end
 
                 if result == false then
-                    if addon.settings.profile.debug then
-                        addon.comms.PrettyPrint("Aborting processing at step %d", stepNum)
-                    end
+                    addon.comms.PrettyDebug("Aborting processing at step %d", stepNum)
                     return
                 end
             end

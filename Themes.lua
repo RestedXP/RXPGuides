@@ -207,9 +207,7 @@ function addon:RegisterTheme(theme)
 
     for k, _ in pairs(themes.Default) do
         if not theme[k] and k ~= 'name' and k ~= 'author' then
-            if self.settings.profile.debug then
-                self.comms.PrettyPrint("%s theme missing %s using default", theme.name, k)
-            end
+            self.comms.PrettyDebug("%s theme missing %s using default", theme.name, k)
 
             theme[k] = themes.Default[k]
         end
