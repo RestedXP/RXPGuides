@@ -65,45 +65,43 @@ function addon.comms:UpgradeDB()
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
-    local msg, s
-
-    if addon.settings.profile.enableTracker then
-        local levelData = addon.tracker.reportData[level - 1]
-
-        if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
-            s = levelData.timestamp.finished - levelData.timestamp.started
-
-            if not s then return end
-
-            local prettyTime = addon.comms:PrettyPrintTime(s)
-
-            if not prettyTime then return end
-
-            msg = self.BuildNotification(L("I just leveled from %d to %d in %s"), level - 1, level, prettyTime)
-            announceLevelUp(msg)
-        else
-            -- Leave enough time for TIME_PLAYED to return, ish
-            C_Timer.After(5, function()
-                levelData = addon.tracker.reportData[level - 1]
-
-                if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
-
-                    s = levelData.timestamp.finished - levelData.timestamp.started
-
-                    msg = self.BuildNotification(L("I just leveled from %d to %d in %s"), level - 1, level,
-                                                 addon.comms:PrettyPrintTime(s))
-                    announceLevelUp(msg)
-                elseif addon.settings.profile.debug then
-                    self.PrettyPrint("Invalid .started or .finished %d", level)
-                end
-            end)
-        end
+    if not addon.settings.profile.enableTracker then
+        announceLevelUp(self.BuildNotification(L("I just leveled up to %d"), level))
 
         return
     end
 
-    msg = self.BuildNotification(L("I just leveled up to %d"), level)
-    announceLevelUp(msg)
+    local msg, s
+    local levelData = addon.tracker.reportData[level - 1]
+
+    if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
+        s = levelData.timestamp.finished - levelData.timestamp.started
+
+        if not s then return end
+
+        local prettyTime = addon.comms:PrettyPrintTime(s)
+
+        if not prettyTime then return end
+
+        msg = self.BuildNotification(L("I just leveled from %d to %d in %s"), level - 1, level, prettyTime)
+        announceLevelUp(msg)
+    else
+        -- Leave enough time for TIME_PLAYED to return, ish
+        C_Timer.After(5, function()
+            levelData = addon.tracker.reportData[level - 1]
+
+            if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
+
+                s = levelData.timestamp.finished - levelData.timestamp.started
+
+                msg = self.BuildNotification(L("I just leveled from %d to %d in %s"), level - 1, level,
+                                             addon.comms:PrettyPrintTime(s))
+                announceLevelUp(msg)
+            elseif addon.settings.profile.debug then
+                self.PrettyPrint("Invalid .started or .finished %d", level)
+            end
+        end)
+    end
 end
 
 function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
@@ -236,22 +234,22 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].isRxp = true
     self.players[data.player.name].lastSeen = GetTime()
 
-    if addon.settings.profile.checkVersions then
-        if not self.state.updateFound.addon and self:IsNewRelease(data.addon.release, data.player.name) then
+    if not addon.settings.profile.checkVersions then return end
 
-            self.state.updateFound.addon = true
+    if not self.state.updateFound.addon and self:IsNewRelease(data.addon.release, data.player.name) then
 
-            self.PrettyPrint(L("There's a new addon version (%s) available"), data.addon.release)
-        end
+        self.state.updateFound.addon = true
 
-        if not self.state.updateFound.guide and addon.currentGuide and data.guide and addon.currentGuide.name ==
-            data.guide.name and addon.currentGuide.version and data.guide.version and addon.currentGuide.version <
-            data.guide.version then
+        self.PrettyPrint(L("There's a new addon version (%s) available"), data.addon.release)
+    end
 
-            self.state.updateFound.guide = true
+    if not self.state.updateFound.guide and addon.currentGuide and data.guide and addon.currentGuide.name ==
+        data.guide.name and addon.currentGuide.version and data.guide.version and addon.currentGuide.version <
+        data.guide.version then
 
-            self.PrettyPrint(L("There's a new version (%s) available for %s"), data.guide.version, data.guide.name)
-        end
+        self.state.updateFound.guide = true
+
+        self.PrettyPrint(L("There's a new version (%s) available for %s"), data.guide.version, data.guide.name)
     end
 end
 
@@ -334,7 +332,14 @@ function addon.comms.BuildNotification(msg, ...) return fmt("{rt3} %s: %s", addo
 function addon.comms.PrettyPrint(msg, ...)
     if not msg then return end
 
-    print(fmt("%s%s: %s", addon.title, addon.settings.profile.debug and ' (Debug)' or '', fmt(msg, ...)))
+    print(fmt("%s: %s", addon.title, fmt(msg, ...)))
+end
+
+function addon.comms.PrettyDebug(msg, ...)
+    if not msg then return end
+    if not addon.settings.profile.debug then return end
+
+    print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
 end
 
 function addon.comms.OpenBugReport(stepNumber)
