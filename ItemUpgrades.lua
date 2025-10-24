@@ -1,7 +1,7 @@
 local addonName, addon = ...
 local L = addon.locale.Get
 
-if not (addon.game == "CLASSIC" or addon.game == "CATA") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "CATA") then return end
 
 local locale = GetLocale()
 
