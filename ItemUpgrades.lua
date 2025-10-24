@@ -562,7 +562,7 @@ local function TooltipSetItem(tooltip, ...)
                             tinsert(lines, lineText)
                         elseif statsData['SlotCompared'] == _G.INVSLOT_OFFHAND and suffix == "OH" then
                             tinsert(lines, lineText)
-                        -- else -- ignore cross-hand comparisons in tooltip
+                            -- else -- ignore cross-hand comparisons in tooltip
                         end
                     else
                         -- Add a comparison line for every statComparison, should be 1 except for 1H weapons
@@ -1213,9 +1213,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 end
 
 function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
-    if not itemData.dpsWeights then
-        return -1
-    end
+    if not itemData.dpsWeights then return -1 end
 
     for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
         if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then

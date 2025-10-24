@@ -168,30 +168,20 @@ local function buildTalentGuidesMenu()
 
     -- LUA doesn't order tables well, so track sparse indices, then iterate over that
     local orderedGuidesOrder = {}
-    for _, guideMenu in pairs(orderedGuides) do
-        tinsert(orderedGuidesOrder, guideMenu.guideOrder)
-    end
+    for _, guideMenu in pairs(orderedGuides) do tinsert(orderedGuidesOrder, guideMenu.guideOrder) end
 
     table.sort(orderedGuidesOrder, function(k1, k2) return k1 < k2 end)
 
-    for _, guideOrder in ipairs(orderedGuidesOrder) do
-        tinsert(menu, orderedGuides[guideOrder])
-    end
+    for _, guideOrder in ipairs(orderedGuidesOrder) do tinsert(menu, orderedGuides[guideOrder]) end
 
-    for _, guideMenu in ipairs(unorderedGuides) do
-        tinsert(menu, guideMenu)
-    end
+    for _, guideMenu in ipairs(unorderedGuides) do tinsert(menu, guideMenu) end
 
     tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
 
     tinsert(menu, {
         text = _G.APPLY,
         notCheckable = 1,
-        func = function()
-            if addon.talents:Audit() then
-                addon.talents:ProcessTalents()
-            end
-        end
+        func = function() if addon.talents:Audit() then addon.talents:ProcessTalents() end end
     })
 
     if addon.settings.profile.debug then
@@ -347,9 +337,7 @@ function addon.talents:HookUI()
             if click == "RightButton" then
                 EasyMenu(buildTalentGuidesMenu(), self.menuFrame, self.talentsButton, 0, 0, "MENU", 1)
             else
-                if self:Audit() then
-                    self:ProcessTalents()
-                end
+                if self:Audit() then self:ProcessTalents() end
             end
         end)
     end
@@ -476,9 +464,7 @@ function addon.talents:Audit()
     if addon.settings.profile.debug then addon.comms.PrettyPrint("Auditing %s", guide.displayname) end
 
     -- TODO consolidate with ProcessGuide
-    if addon.game == "CATA" then
-        addon.talents.cata:SkipTalentSummariesPage(guide)
-    end
+    if addon.game == "CATA" then addon.talents.cata:SkipTalentSummariesPage(guide) end
 
     if addon.player.level < guide.minLevel then
         addon.comms.PrettyPrint(L("Too low for %s"), guide.displayname) --
@@ -533,9 +519,7 @@ function addon.talents:Audit()
         end
 
         -- print("Evaluating step", stepNum, "for level", stepLevel)
-        if step.optional then
-            optionalLearned = nil
-        end
+        if step.optional then optionalLearned = nil end
 
         for _, element in ipairs(step.elements) do
 
@@ -554,8 +538,8 @@ function addon.talents:Audit()
                             -- Remove learnedTalents from audit if they are identical
                             if expectedRank == talentData.rank then
                                 learnedTalents[talentKey] = nil
-                            -- else -- Rank 1-4, removed above when rank 5
-                            --    print("Else", talentKey), talentData.rank)
+                                -- else -- Rank 1-4, removed above when rank 5
+                                --    print("Else", talentKey), talentData.rank)
                             end
                         else
                             if addon.settings.profile.debug and not step.optional then
@@ -575,17 +559,12 @@ function addon.talents:Audit()
             end
         end
 
-        if step.optional and optionalLearned then
-            auditFailed = false
-        end
+        if step.optional and optionalLearned then auditFailed = false end
 
         if auditFailed then
             addon.comms:PopupNotification("RXPTalentsAuditFailed",
-                                          fmt("%s - %s\n\n%s\n%s %s - %s", addon.title, _G.TALENTS,
-                                          guide.name, _G.TALENTS, strlower(_G.ADDON_INCOMPATIBLE),
-                                          strlower(_G.RESET_TO_DEFAULT)
-                                          )
-                                        )
+                                          fmt("%s - %s\n\n%s\n%s %s - %s", addon.title, _G.TALENTS, guide.name,
+                                              _G.TALENTS, strlower(_G.ADDON_INCOMPATIBLE), strlower(_G.RESET_TO_DEFAULT)))
 
             guide.audit = false
             return false
@@ -1045,9 +1024,7 @@ function addon.talents:ProcessTalents(validate)
     if not guide then return end
 
     -- Somehow guide not audited, force an audit
-    if guide.audit == nil then
-        self:Audit()
-    end
+    if guide.audit == nil then self:Audit() end
 
     if guide.audit ~= true then return end
 
@@ -1063,9 +1040,7 @@ function addon.talents:ProcessTalents(validate)
         return
     end
 
-    if addon.game == "CATA" then
-        addon.talents.cata:SkipTalentSummariesPage(guide)
-    end
+    if addon.game == "CATA" then addon.talents.cata:SkipTalentSummariesPage(guide) end
 
     local stepLevel, remainingPoints, result
     local optionalName, optionalLearned, optionalNotLearned
@@ -1211,35 +1186,35 @@ end
 addon.talents.cata = {}
 
 function addon.talents.cata:SkipTalentSummariesPage(guide)
-        if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
-            _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
-        end
-        -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
-        if _G.PlayerTalentFramePanel1Summary:IsShown() then
-            -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
-            _G.PlayerTalentFrameToggleSummariesButton:Click()
-        end
+    if _G.PanelTemplates_GetSelectedTab(PlayerTalentFrame) == _G.GLYPH_TALENT_TAB then
+        _G["PlayerTalentFrameTab" .. _G.TALENTS_TAB]:Click()
+    end
+    -- Cata uses gives summary of trees on fresh 10/respec "View Talent Trees"
+    if _G.PlayerTalentFramePanel1Summary:IsShown() then
+        -- Click to leverage PlayerTalentFrame_ShowOrHideSummaries to show talents
+        _G.PlayerTalentFrameToggleSummariesButton:Click()
+    end
 
-        -- then "Select a X Specialization" based on first talent chosen
-        local firstTalentTab = -1
+    -- then "Select a X Specialization" based on first talent chosen
+    local firstTalentTab = -1
 
-        for _, step in ipairs(guide.steps) do
-            if firstTalentTab > -1 then break end
+    for _, step in ipairs(guide.steps) do
+        if firstTalentTab > -1 then break end
 
-            for _, element in ipairs(step.elements) do
-                if element.talent and element.talent[1] and element.talent[1].tab then
-                    firstTalentTab = element.talent[1].tab
-                    break
-                end
+        for _, element in ipairs(step.elements) do
+            if element.talent and element.talent[1] and element.talent[1].tab then
+                firstTalentTab = element.talent[1].tab
+                break
             end
         end
+    end
 
-        local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
-        if firstTalentTabButton then
-            if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
-        else
-            -- Failure to get first tab, panic?
-        end
+    local firstTalentTabButton = _G["PlayerTalentFramePanel" .. firstTalentTab .. "SelectTreeButton"]
+    if firstTalentTabButton then
+        if firstTalentTabButton:IsShown() then firstTalentTabButton:Click() end
+    else
+        -- Failure to get first tab, panic?
+    end
 end
 
 local function cataDrawTalentLevels(talentIndexFrameName, levels)

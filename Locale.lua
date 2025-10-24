@@ -1,7 +1,6 @@
 local addonName, addon = ...
 
-local ssplit, strjoin, ipairs, unpack, next = strsplittable, strjoin, ipairs,
-                                              unpack, next
+local ssplit, strjoin, ipairs, unpack, next = strsplittable, strjoin, ipairs, unpack, next
 
 addon.locale = {}
 
