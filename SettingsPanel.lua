@@ -4047,11 +4047,6 @@ function addon.settings:SaveFramePositions()
           offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        if self.profile.debug then
-            addon.comms
-                .PrettyPrint("SaveFramePositions:frameName %s", frameName)
-        end
-
         addon.settings.profile.frameSizes[frameName] = {
             frame:GetWidth(), frame:GetHeight()
         }

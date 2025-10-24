@@ -98,7 +98,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                                              addon.comms:PrettyPrintTime(s))
                 announceLevelUp(msg)
             elseif addon.settings.profile.debug then
-                self.PrettyPrint("Invalid .started or .finished %d", level)
+                self.PrettyDebug("Invalid .started or .finished %d", level)
             end
         end)
     end
@@ -200,7 +200,7 @@ function addon.comms:IsNewRelease(theirRelease, name)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        if addon.settings.profile.debug then self.PrettyPrint("%s:theirRelease = %s", name, theirRelease) end
+        self.PrettyDebug("%s:theirRelease = %s", name, theirRelease)
         return false
     end
 
@@ -287,7 +287,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.profile.enableCompleteStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
-            self.PrettyPrint(msg)
+            self.PrettyDebug(msg)
         end
 
         guideAnnouncements.complete[data.title] = UnitLevel("Player")
@@ -304,7 +304,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.profile.enableCollectAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
-            self.PrettyPrint(msg)
+            self.PrettyDebug(msg)
         end
 
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
@@ -319,7 +319,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.profile.enableFlyStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
-            self.PrettyPrint(msg)
+            self.PrettyDebug(msg)
         end
     else
         error("Unhandled step event announce: (" .. event .. ")")

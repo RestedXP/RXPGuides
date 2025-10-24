@@ -302,9 +302,7 @@ local IsQuestTurnedIn = function(id,accountWide)
     local isQuestTurnedIn
     if accountWide and C_QuestLog.IsQuestFlaggedCompletedOnAccount then
         isQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompletedOnAccount(id)
-        if addon.settings.profile.debug then
-            print(fmt("CompletedOnAccount(%d) = %s",id,tostring(isQuestTurnedIn)))
-        end
+        addon.comms.PrettyDebug("CompletedOnAccount(%d) = %s", id, tostring(isQuestTurnedIn))
     else
         isQuestTurnedIn = IsTurnedIn(id)
     end
@@ -7250,9 +7248,7 @@ function addon.functions.isInScenario(self, ...)
         elseif step.active and not step.completed then
             element.tooltipText = nil
         end
-        if addon.settings.profile.debug then
-            print(scenarioInfo and scenarioInfo.scenarioID)
-        end
+        addon.comms.PrettyDebug(scenarioInfo and scenarioInfo.scenarioID)
     end
 end
 
