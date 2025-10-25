@@ -19,6 +19,7 @@ UI\includes.xml [AllowLoadGameType classic]
 
 Locale.lua
 Themes.lua
+Communications.lua
 RXPGuides.lua
 GuideWindow.lua
 Help.lua
@@ -36,7 +37,6 @@ QuestLog.lua
 ActiveItemFrame.lua
 LevelingTracker.lua
 Timers.lua
-Communications.lua
 Targeting.lua
 Tips.lua
 InventoryManager.lua
