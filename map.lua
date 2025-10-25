@@ -146,10 +146,9 @@ local function PinOnEnter(self)
     if self.lineData then
         showTooltip = pin.step and pin.step.showTooltip and pin.step.elements
         if addon.settings.profile.debug then
-            local line = self.lineData
             self:SetAlpha(0.5)
-            addon.comms.PrettyDebug("Line start (%s, %s), line end, %s, %s", line.sX, line.sY, line.fX, line.fY)
         end
+
         if showTooltip then
             local element = self.lineData.element
             for line in lineMapFramePool:EnumerateActive() do
