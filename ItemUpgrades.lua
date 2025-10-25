@@ -593,7 +593,6 @@ local function TooltipSetItem(tooltip, ...)
         tooltip:AddLine(("%s - %s %s"):format(addon.title, RXP_ICON_INLINE, ITEM_UPGRADE_LABEL))
         if addon.settings.profile.enableTotalEP then enableTotalEPLines(itemData, lines) end
 
-
         for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
 
@@ -684,7 +683,7 @@ local function RXP_GetOrCreateUpgradeIcon(btn)
     end
     local overlay = RXP_GetOrCreateOverlay(btn)
     local t = overlay:CreateTexture(nil, "OVERLAY", nil, 7)
-    t:SetTexture(RXP_UPGRADE_ICON) -- you already have this constant
+    t:SetTexture(RXP_UPGRADE_ICON)  -- Green up arrow icon
     t:SetSize(18, 18)
     t:SetPoint("BOTTOMLEFT", btn, "BOTTOMLEFT", 1, 1)
     t:Hide()
@@ -798,8 +797,8 @@ local function RXP_RefreshAllBagOverlays()
 end
 
 
-
 function addon.itemUpgrades:Setup()
+    -- Toggle functionality off
     if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips then return end
     if UnitLevel("player") == GetMaxPlayerLevel() then return end
 
@@ -812,11 +811,13 @@ function addon.itemUpgrades:Setup()
         self:RegisterEvent("PLAYER_LEVEL_UP")
         self:RegisterEvent("TRAINER_SHOW")
 
-        -- Build regex lookup for stat weights
         local lookup
+        -- Only load stats coming from GSheet
         for key, _ in pairs(session.activeStatWeights) do
+            -- print("Checking", key)
             lookup = KeyToRegex(key)
             if lookup then
+                -- print("Match loaded", lookup)
                 session.statsRegexes[key] = lookup
             end
         end
@@ -824,8 +825,11 @@ function addon.itemUpgrades:Setup()
             session.statsRegexes[key] = regex
         end
 
+        -- Inventory
         GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+        -- Vendor?
         ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+
         ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
 
         if type(ContainerFrameItemButton_Update) == "function" then
