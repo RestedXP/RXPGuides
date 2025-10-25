@@ -4,8 +4,6 @@ local _G = _G
 local UnitInRaid = UnitInRaid
 local fmt = string.format
 
-addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
-
 local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
