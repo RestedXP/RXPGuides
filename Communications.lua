@@ -2,19 +2,14 @@ local _, addon = ...
 
 local fmt, mrand, smatch, sbyte, tostr = string.format, math.random, string.match, string.byte, tostring
 
-local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass, UnitXP, UnitXPMax, pcall = GetNumGroupMembers,
-                                                                                                     SendChatMessage,
-                                                                                                     GetTime, UnitLevel,
-                                                                                                     UnitClass, UnitXP,
-                                                                                                     UnitXPMax, pcall
+local GetNumGroupMembers, SendChatMessage, GetTime, UnitXP, UnitXPMax, pcall = GetNumGroupMembers, SendChatMessage,
+                                                                               GetTime, UnitXP, UnitXPMax, pcall
 
 local _G = _G
 
 local L = addon.locale.Get
 
 local AceGUI = LibStub("AceGUI-3.0")
-
-local playerName = _G.UnitName("player")
 
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
 
@@ -135,7 +130,7 @@ end
 function addon.comms:TallyGroup(xp)
     if GetNumGroupMembers() < 1 then return end
 
-    local name
+    local name, diff
     for i = 1, GetNumGroupMembers() - 1 do
         name = UnitName("party" .. i)
 
@@ -146,7 +141,7 @@ function addon.comms:TallyGroup(xp)
         end
 
         if self.state.lastXPGain then
-            local diff = GetTime() - self.state.lastXPGain
+            diff = GetTime() - self.state.lastXPGain
 
             -- Only calculate < 5 minutes between XP gains
             if diff < 300 then self.players[name].timePlayed = self.players[name].timePlayed + diff end
@@ -161,9 +156,9 @@ function addon.comms:AnnounceSelf(command)
     local data = {
         command = command,
         player = {
-            name = playerName,
+            name = addon.player.name,
             class = addon.player.class,
-            level = UnitLevel("player"),
+            level = addon.player.level,
             xpPercentage = floor(100 * UnitXP("player") / UnitXPMax("player"))
         },
         addon = {release = addon.release}
@@ -175,7 +170,7 @@ function addon.comms:AnnounceSelf(command)
 end
 
 function addon.comms:OnCommReceived(prefix, data, _, sender)
-    if prefix ~= self._commPrefix or sender == playerName then return end
+    if prefix ~= self._commPrefix or sender == addon.player.name then return end
 
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
 
@@ -290,7 +285,7 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.complete[data.title] = UnitLevel("Player")
+        guideAnnouncements.complete[data.title] = addon.player.level
 
     elseif event == '.collect' then
         -- Don't handle announcements if Questie loaded
@@ -307,7 +302,7 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.collect[data.title] = UnitLevel("Player")
+        guideAnnouncements.collect[data.title] = addon.player.level
 
     elseif event == '.fly' then
         if not data.duration or data.duration <= 0 then return end
@@ -343,10 +338,7 @@ function addon.comms.PrettyDebug(msg, ...)
     local now = GetTime()
 
     if not addon.comms.debugThrottle[msg] then
-        addon.comms.debugThrottle[msg] = {
-            last = now,
-            throttled = false
-        }
+        addon.comms.debugThrottle[msg] = {last = now, throttled = false}
         print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
 
         return
@@ -375,7 +367,7 @@ function addon.comms.OpenBugReport(stepNumber)
     -- Came from dropdown menu
     if type(stepNumber) == "table" and stepNumber.arg1 then stepNumber = stepNumber.arg1 end
 
-    local character = fmt("%s / %s / level %d (%.2f%%)", UnitRace("player"), addon.player.class, UnitLevel("player"),
+    local character = fmt("%s / %s / level %d (%.2f%%)", addon.player.race, addon.player.class, addon.player.level,
                           UnitXP("player") / UnitXPMax("player") * 100)
 
     local position = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player") or -1, "player")
