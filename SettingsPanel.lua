@@ -428,10 +428,8 @@ function addon.settings:MigrateProfile()
     for profileKey, _ in pairs(_G.RXPCSettings.profileKeys or {}) do
         -- Already migrated a character with current profile name
         if p[profileKey] and p[profileKey].migrated then
-            if self.profile.debug then
-                addon.comms.PrettyPrint(
-                    "Character profile (%s) already migrated", profileKey)
-            end
+            addon.comms.PrettyDebug(
+                "Character profile (%s) already migrated", profileKey)
         else
             p[profileKey] = _G.RXPCSettings.profiles[profileKey]
             p[profileKey].migrated = true
@@ -548,7 +546,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
         if n > 0 or header then
             table.insert(strbuffer,text)
         else
-            print('RXPGuides: Import Error - Invalid String Header')
+            addon.comms.PrettyPrint('Import Error - Invalid String Header')
             addon.settings.OpenSettings('Import')
             return
         end
@@ -582,9 +580,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
 function addon.settings:CreateImportOptionsPanel()
     local function notOnline()
         if not RXPData.cache and GetTime() - importCache.lastBNetQuery > 5 then
-            if addon.settings.profile.debug then
-                addon.comms.PrettyPrint("Battle.net not cached, querying")
-            end
+            addon.comms.PrettyDebug("Battle.net not cached, querying")
             importCache.lastBNetQuery = GetTime()
             _, RXPData.cache = _G[addon.DeserializeTable(addon.base)]()
         end
@@ -3552,9 +3548,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
             if itemQuality == INV_HEIRLOOM then
                 calculatedRate = calculatedRate + 0.1
 
-                if addon.settings.profile.debug then
-                    addon.comms.PrettyPrint("Heirloom detected in Shoulder slot")
-                end
+                addon.comms.PrettyDebug("Heirloom detected in Shoulder slot")
             end
         end
 
@@ -3566,9 +3560,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
             if itemQuality == INV_HEIRLOOM then
                 calculatedRate = calculatedRate + 0.1
 
-                if addon.settings.profile.debug then
-                    addon.comms.PrettyPrint("Heirloom detected in Chest slot")
-                end
+                addon.comms.PrettyDebug("Heirloom detected in Chest slot")
             end
         end
     else
@@ -4055,11 +4047,6 @@ function addon.settings:SaveFramePositions()
           offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        if self.profile.debug then
-            addon.comms
-                .PrettyPrint("SaveFramePositions:frameName %s", frameName)
-        end
-
         addon.settings.profile.frameSizes[frameName] = {
             frame:GetWidth(), frame:GetHeight()
         }

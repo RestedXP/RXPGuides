@@ -678,7 +678,7 @@ function addon.SetStep(n, n2, loopback)
                 while req and req.requires and not RXPCData.stepSkip[req.index] and
                     not req.active do
                     if requiredSteps[req] then
-                        print('ERROR: Step requirement loop at steps %d and %d',
+                        addon.comms.PrettyPrint('ERROR: Step requirement loop at steps %d and %d',
                               step.index or 0, req.index or 0)
                         break
                     end
@@ -1479,7 +1479,7 @@ function addon.ProcessGuideTable(guide)
         local newGuide = addon:FetchGuide(group,name)
         if not newGuide then
             if name ~= "QuestDB" then
-                print(format(L"RXPGuides - Error trying to include guide: %s\\%s",group,name))
+                addon.comms.PrettyPrint(L"RXPGuides - Error trying to include guide: %s\\%s", group, name)
             end
             return
         end
@@ -1567,9 +1567,7 @@ function addon:FetchGuide(guide,arg2)
         else
             --print(guide.name,guide.group)
             --GG = guide
-            if addon.settings.profile.debug then
-                print(fmt('Error: Tried to load an invalid Guide: %s v%s',key,guide.version or 0))
-            end
+            addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
             return
         end
     end

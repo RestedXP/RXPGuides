@@ -146,11 +146,9 @@ local function PinOnEnter(self)
     if self.lineData then
         showTooltip = pin.step and pin.step.showTooltip and pin.step.elements
         if addon.settings.profile.debug then
-            local line = self.lineData
             self:SetAlpha(0.5)
-            print("Line start point:", line.sX, ",", line.sY)
-            print("Line end point:", line.fX, ",", line.fY)
         end
+
         if showTooltip then
             local element = self.lineData.element
             for line in lineMapFramePool:EnumerateActive() do
@@ -1240,9 +1238,9 @@ function addon.UpdateGotoSteps()
                         isActive = false
                     else
                         element.hidden = false
-                        if hidden and addon.settings.profile.debug then
-                            print(format("%d: Waypoint activation\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
-                                element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
+                        if hidden then
+                            addon.comms.PrettyDebug("%d: Waypoint activation\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
+                                element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy )
                         end
                     end
                 end
@@ -1297,9 +1295,9 @@ function addon.UpdateGotoSteps()
                                     addon.StartTimer(element.timer,element.timerText)
                                 end
                             end
-                            if enabled and addon.settings.profile.debug and element.skip then
-                                print(format("%d: Waypoint reached\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
-                                       element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy ))
+                            if enabled and element.skip then
+                                addon.comms.PrettyDebug("%d: Waypoint reached\n  goto = %.2f,%.2f (%d/%d,%.4f,%.4f)", i,
+                                       element.x, element.y, element.zone or 0, element.instance, element.wx, element.wy )
                             end
                         elseif element.persistent then
                             element.hidden = false

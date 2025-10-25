@@ -98,7 +98,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                                              addon.comms:PrettyPrintTime(s))
                 announceLevelUp(msg)
             elseif addon.settings.profile.debug then
-                self.PrettyPrint("Invalid .started or .finished %d", level)
+                self.PrettyDebug("Invalid .started or .finished %d", level)
             end
         end)
     end
@@ -200,7 +200,7 @@ function addon.comms:IsNewRelease(theirRelease, name)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        if addon.settings.profile.debug then self.PrettyPrint("%s:theirRelease = %s", name, theirRelease) end
+        self.PrettyDebug("%s:theirRelease = %s", name, theirRelease)
         return false
     end
 
@@ -287,7 +287,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.profile.enableCompleteStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
-            self.PrettyPrint(msg)
+            self.PrettyDebug(msg)
         end
 
         guideAnnouncements.complete[data.title] = UnitLevel("Player")
@@ -304,7 +304,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.profile.enableCollectAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
-            self.PrettyPrint(msg)
+            self.PrettyDebug(msg)
         end
 
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
@@ -319,7 +319,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if addon.settings.profile.enableFlyStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
-            self.PrettyPrint(msg)
+            self.PrettyDebug(msg)
         end
     else
         error("Unhandled step event announce: (" .. event .. ")")
@@ -335,9 +335,38 @@ function addon.comms.PrettyPrint(msg, ...)
     print(fmt("%s: %s", addon.title, fmt(msg, ...)))
 end
 
+addon.comms.debugThrottle = {}
 function addon.comms.PrettyDebug(msg, ...)
     if not msg then return end
     if not addon.settings.profile.debug then return end
+
+    local now = GetTime()
+
+    if not addon.comms.debugThrottle[msg] then
+        addon.comms.debugThrottle[msg] = {
+            last = now,
+            throttled = false
+        }
+        print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
+
+        return
+    end
+
+    local dt = addon.comms.debugThrottle[msg]
+
+    local diff = now - dt.last
+
+    if diff < 5 then
+        if not dt.throttled then
+            print(fmt("%s (Debug): ... %s", addon.title, fmt(msg, ...)))
+            dt.throttled = true
+        end
+
+        return
+    else
+        dt.throttled = false
+    end
+    dt.last = now
 
     print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
 end

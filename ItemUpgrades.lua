@@ -753,9 +753,7 @@ local function getSpec()
     if guessedSpec.index then
         specName = SPEC_MAP[addon.player.class][guessedSpec.index]
 
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("ItemUpgrades, spec guessed as %s", specName)
-        end
+        addon.comms.PrettyDebug("ItemUpgrades, spec guessed as %s", specName)
     end
 
     -- If calculated spec has no weights, then class is unsupported
@@ -786,17 +784,13 @@ function addon.itemUpgrades:ActivateSpecWeights()
 
         -- Chosen talents don't match itemUpgradeSpec
         -- Leave alone as is, don't spam user if there's a mismatch
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
-                                    addon.settings.profile.itemUpgradeSpec, spec)
-        end
+        addon.comms.PrettyDebug("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
+                                addon.settings.profile.itemUpgradeSpec, spec)
     end
 
     if not addon.settings.profile.itemUpgradeSpec then return end
 
-    if addon.settings.profile.debug then
-        addon.comms.PrettyPrint("Activating spec weights for %s", addon.settings.profile.itemUpgradeSpec)
-    end
+    addon.comms.PrettyDebug("Activating spec weights for %s", addon.settings.profile.itemUpgradeSpec)
 
     session.activeStatWeights = session.specWeights[addon.settings.profile.itemUpgradeSpec]
 
@@ -916,10 +910,8 @@ local function CalculateDPSWeight(itemData, stats, itemEquipLoc)
     if itemData.itemEquipLoc == "INVTYPE_SHIELD" then return end
 
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("itemUpgrades CalculateDPSWeight, Speed property required %s",
-                                    itemData and itemData['itemLink'])
-        end
+        addon.comms.PrettyDebug("itemUpgrades CalculateDPSWeight, Speed property required %s",
+                                itemData and itemData['itemLink'])
         return nil
     end
 

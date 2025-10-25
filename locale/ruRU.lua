@@ -125,14 +125,14 @@ L["Leatrix Maps"] = "Leatrix Maps"
 L["Narcissus"] = "Narcissus"
 
 --InventoryManager.lua
-L["RXPGuides: |c%sSorting arrows/bullets|r"] = "RXPGuides: |c%sСортировка стрел/патронов|r"
-L["RXPGuides: |c%sInventory is full, sorting arrows/bullets|r"] = "RXPGuides: |c%sИнвентарь полон, сортировка стрел/патронов|r"
+L["|c%sSorting arrows/bullets|r"] = "|c%sСортировка стрел/патронов|r"
+L["|c%sInventory is full, sorting arrows/bullets|r"] = "|c%sИнвентарь полон, сортировка стрел/патронов|r"
 L["%s: |c%sSet %s as useful|r"] = "%s: |c%sУстановить %s как полезное|r"
 L["%s: |c%sSet %s as junk|r"] = "%s: |c%sУстановить %s как хлам|r"
-L["RXPGuides: |c%sDeleting %sx%s|r"] = "RXPGuides: |c%sУдаление %sx%s|r"
-L["RXPGuides: |c%sInventory is full, deleting %sx%s|r"] = "RXPGuides: |c%sИнвентарь полон, удаление %sx%s|r"
+L["|c%sDeleting %sx%s|r"] = "|c%sУдаление %sx%s|r"
+L["|c%sInventory is full, deleting %sx%s|r"] = "|c%sИнвентарь полон, удаление %sx%s|r"
 L["Delete Cheapest Junk Item"] = "Удалить самый дешевый хлам"
-L["RXPGuides: |c%sSold junk items for|r %s"] = "RXPGuides: |c%sПроданы хлам предметы за|r %s"
+L["|c%sSold junk items for|r %s"] = "|c%sПроданы хлам предметы за|r %s"
 
 --LevelingTracker.lua
 L["Enable Leveling Report Inspections"] = "Включить проверку отчетов о прокачке"

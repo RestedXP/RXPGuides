@@ -346,7 +346,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
         end
         outputString = outputString:gsub("^\n","")
         if bit.band(output,0x1) == 0x1 then
-            print(outputString)--ok
+            addon.comms.PrettyPrint(outputString)
         end
     end
 
@@ -539,8 +539,8 @@ function addon.CalculateTotalXP(flags)
             local xp = quest.xp or 0
             totalXp = totalXp + xp
             if output then
-                    print(string.format("%dxp %s (%d)", xp,
-                                    addon.GetQuestName(qid) or "", qid))
+                    addon.comms.PrettyPrint("%dxp %s (%d)", xp,
+                                    addon.GetQuestName(qid) or "", qid)
             end
         end
         return isAvailable
@@ -605,7 +605,7 @@ function addon.ShowMissingQuests(output)
         end
     end
     if output then
-        print(t)--ok
+        addon.comms.PrettyPrint(t)--ok
     end
     return t
 end
