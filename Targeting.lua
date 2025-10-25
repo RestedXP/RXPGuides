@@ -550,7 +550,7 @@ function addon.targeting:UpdateUnitList()
     end
 
     for _, step in pairs(addon.RXPFrame.activeSteps) do
-        for _, element in pairs(step.elements) do AddUnits(element, stepUnitscan, stepMobs, stepTargets) end
+        for _, element in pairs(step.elements or {}) do AddUnits(element, stepUnitscan, stepMobs, stepTargets) end
     end
 
     local unitscanGenerated = {}
