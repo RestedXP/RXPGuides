@@ -506,6 +506,7 @@ end
 local function UpdateBagButton(button,bag,slot)
     local id = GetContainerItemID(bag, slot)
     local isJunk = IsJunk(id)
+    --print(bag,slot,isJunk)
     if isJunk then
         ShowJunkIcon(button)
     else
@@ -537,6 +538,7 @@ local function UpdateBag(frame, name, pattern)
         if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
             local slot = button:GetID()
             bagFrame[bag][slot] = ref
+            --print(ref)
 
             if junkEnabled then
                 UpdateBagButton(button, bag, slot)
@@ -552,6 +554,7 @@ local function UpdateBag(frame, name, pattern)
     end
 end
 
+--Junk icon has to hook into existing UI elements, different bag UI mods have different frame names causing compatibility issues
 local function UpdateAllBags(self, name, i)
     if inventoryManager.DetectBagMods then
         inventoryManager.DetectBagMods()
