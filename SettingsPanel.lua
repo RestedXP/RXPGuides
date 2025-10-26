@@ -2069,87 +2069,80 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Communications"),
                 order = 6,
                 args = {
+                    checkVersions = {
+                        name = L("Enable Addon Version Checks"),
+                        desc = L("Advertises and compares addon versions with all RXP users in party"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 1
+                    },
                     commsLevelUpOptionsHeader = {
                         name = L("Announcements"),
                         type = "header",
                         width = "full",
-                        order = 1
+                        order = 2.0
                     },
                     enableLevelUpAnnounceSolo = {
                         name = L("Announce Level Ups (Emote)"),
                         desc = L("Make a public emote when you level up"),
                         type = "toggle",
-                        width = "full",
-                        order = 6
+                        width = optionsWidth * 1.5,
+                        order = 2.1
                     },
                     enableLevelUpAnnounceGroup = {
                         name = L("Announce Level Ups (Party Chat)"),
                         desc = L("Announce in party chat when you level up"),
                         type = "toggle",
-                        width = "full",
-                        order = 7
+                        width = optionsWidth * 1.5,
+                        order = 2.2
                     },
                     enableLevelUpAnnounceGuild = {
                         name = L("Announce Level Ups (Guild Chat)"),
                         desc = L("Announce in guild chat when you level up"),
                         type = "toggle",
-                        width = "full",
-                        order = 8
+                        width = optionsWidth * 1.5,
+                        order = 2.3
                     },
                     groupCoordinationHeader = {
                         name = L("Group coordination"),
                         type = "header",
                         width = "full",
-                        order = 9
+                        order = 3.0
                     },
                     alwaysSendBranded = {
-                        name = L(
-                            "Send announcements without another RXP user in group"),
-                        desc = L(
-                            "Without this checked we will only send announcements if another RestedXP User is in your group"),
+                        name = L("Send announcements without another RXP user in group"),
+                        desc = L("Without this checked we will only send announcements if another RestedXP User is in your group"),
                         type = "toggle",
                         width = "full",
-                        order = 10
+                        order = 3.1
                     },
                     enableCompleteStepAnnouncements = {
                         name = L("Announce when Quest Step is completed"),
-                        desc = L(
-                            "Announce in party chat when you complete certain quests (.complete)"),
+                        desc = L("Announce in party chat when you complete certain quests (.complete)"),
                         type = "toggle",
                         width = "full",
-                        order = 11
+                        order = 3.2
                     },
                     enableCollectStepAnnouncements = {
                         name = L("Announce when all Step items are collected"),
-                        desc = L(
-                            "Announce in party chat when you collect all the items relevant to a quest (.collect)"),
+                        desc = L("Announce in party chat when you collect all the items relevant to a quest (.collect)"),
                         type = "toggle",
                         width = "full",
-                        order = 12
+                        order = 3.3
                     },
                     enableFlyStepAnnouncements = {
                         name = L("Announce Flying Step timers"),
-                        desc = L(
-                            "Announce in party chat where you're flying and how long until you arrive"),
+                        desc = L("Announce in party chat where you're flying and how long until you arrive"),
                         type = "toggle",
                         width = "full",
-                        order = 13
-                    },
-                    checkVersions = {
-                        name = L("Enable Addon Version Checks"),
-                        desc = L(
-                            "Advertises and compares addon versions with all RXP users in party"),
-                        type = "toggle",
-                        width = "full",
-                        order = 14
+                        order = 3.4
                     },
                     ignoreQuestieConflicts = {
                         name = L("Ignore Questie announcements"),
-                        desc = L(
-                            "Send quest and collect step announcements even if Questie is enabled"),
+                        desc = L("Send quest and collect step announcements even if Questie is enabled"),
                         type = "toggle",
                         width = "full",
-                        order = 15,
+                        order = 3.5,
                         hidden = not _G.Questie
                     }
                 }
