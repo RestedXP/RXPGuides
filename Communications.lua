@@ -4,8 +4,10 @@ local _G = _G
 
 local fmt, mrand, smatch, sbyte, tostr = string.format, math.random, string.match, string.byte, tostring
 
-local GetNumGroupMembers, SendChatMessage, GetTime, pcall = _G.GetNumGroupMembers, _G.SendChatMessage, _G.GetTime, _G.pcall
-local UnitXP, UnitXPMax, UnitName = _G.UnitXP, _G.UnitXPMax, _G.UnitName
+local GetNumGroupMembers, GetTime, pcall = _G.GetNumGroupMembers, _G.GetTime, _G.pcall
+local UnitXP, UnitXPMax, UnitName, UnitClassBase = _G.UnitXP, _G.UnitXPMax, _G.UnitName, _G.UnitClassBase
+
+local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
 
 local L = addon.locale.Get
 
@@ -85,7 +87,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
         s = levelData.timestamp.finished - levelData.timestamp.started
 
-        if not s then return end
+        if not s or s < 0 then return end
 
         local prettyTime = addon.comms:PrettyPrintTime(s)
 
@@ -101,6 +103,8 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
             if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
 
                 s = levelData.timestamp.finished - levelData.timestamp.started
+
+                if s < 0 then return end
 
                 msg = self.BuildNotification(L("I just leveled from %d to %d in %s"), level - 1, level,
                                              addon.comms:PrettyPrintTime(s))
@@ -118,7 +122,7 @@ function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
 
     local xpGained = tonumber(smatch(text, "%d+"))
 
-    if not xpGained or xpGained == 0 then return end
+    if not xpGained or xpGained <= 0 then return end
 
     self:TallyGroup(xpGained)
 end
