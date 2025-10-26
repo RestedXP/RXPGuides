@@ -112,13 +112,9 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     end
 end
 
+local questXPPrefix = _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED:sub(0, 5)
 function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
-    -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
-    -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
-    if addon.player.lang == 'en' then
-        if 'You' == strsub(text, 0, #'You') then return end
-        -- TODO non-en
-    end
+    if questXPPrefix == text:sub(0, #questXPPrefix) then return end
 
     local xpGained = tonumber(smatch(text, "%d+"))
 
