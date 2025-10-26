@@ -125,6 +125,7 @@ local function buildTalentGuidesMenu()
                 invalidReason = "> " .. guide.maxLevel
                 disabled = true
             else
+                disabled = true
                 invalidReason = nil
             end
 
