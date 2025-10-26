@@ -34,11 +34,16 @@ function addon.comms:Setup()
     self.db = LibStub("AceDB-3.0"):New("RXPCComms", defaults)
     self.players = self.db.profile.players
 
-    self:RegisterEvent("PLAYER_LEVEL_UP")
+    -- These shouldn't trigger at max level, but disabling for optimization
+    if addon.player.level < addon.player.maxlevel then
+        self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
+        self:RegisterEvent("QUEST_TURNED_IN")
+        self:RegisterEvent("PLAYER_LEVEL_UP")
+    end
+
+    -- Leave addon or guide version checks even if max level
     self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
-    self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
-    self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
@@ -58,6 +63,14 @@ function addon.comms:UpgradeDB()
     local abs = math.abs
     for _, data in pairs(self.players) do if data.timePlayed < 0 then data.timePlayed = abs(data.timePlayed) end end
 end
+
+function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
+    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
+end
+
+function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
+
+function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
     if not addon.settings.profile.enableTracker then
@@ -99,18 +112,13 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     end
 end
 
-function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
-
-function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
-
-function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
-    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
-end
-
 function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
     -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
     -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
-    if 'You' == strsub(text, 0, #'You') then return end
+    if addon.player.lang == 'en' then
+        if 'You' == strsub(text, 0, #'You') then return end
+        -- TODO non-en
+    end
 
     local xpGained = tonumber(smatch(text, "%d+"))
 
