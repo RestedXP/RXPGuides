@@ -1,11 +1,11 @@
 local _, addon = ...
 
+local _G = _G
+
 local fmt, mrand, smatch, sbyte, tostr = string.format, math.random, string.match, string.byte, tostring
 
-local GetNumGroupMembers, SendChatMessage, GetTime, UnitXP, UnitXPMax, pcall = GetNumGroupMembers, SendChatMessage,
-                                                                               GetTime, UnitXP, UnitXPMax, pcall
-
-local _G = _G
+local GetNumGroupMembers, SendChatMessage, GetTime, pcall = _G.GetNumGroupMembers, _G.SendChatMessage, _G.GetTime, _G.pcall
+local UnitXP, UnitXPMax, UnitName = _G.UnitXP, _G.UnitXPMax, _G.UnitName
 
 local L = addon.locale.Get
 
