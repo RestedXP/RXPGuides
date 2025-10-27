@@ -63,7 +63,18 @@ end
 
 function addon.comms:UpgradeDB()
     local abs = math.abs
-    for _, data in pairs(self.players) do if data.timePlayed < 0 then data.timePlayed = abs(data.timePlayed) end end
+    for _, data in pairs(self.players) do
+        if data.timePlayed < 0 then
+            data.timePlayed = abs(data.timePlayed)
+        end
+
+        -- Initial logic didn't calculate XP properly
+        -- Only counted the first XP chunk
+        if not data.version then
+            data.version = 1
+            data.xp = 0
+        end
+    end
 end
 
 function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
@@ -137,26 +148,32 @@ end
 
 function addon.comms:TallyGroup(xp)
     if GetNumGroupMembers() < 1 then return end
+    if not xp or not tonumber(xp) then return end
 
-    local name, diff
+    local diff = 0
+    local now = GetTime()
+    if self.state.lastXPGain then
+        diff = now - self.state.lastXPGain
+    end
+
+    self.state.lastXPGain = now
+
+    local name
     for i = 1, GetNumGroupMembers() - 1 do
         name = UnitName("party" .. i)
 
         if not name then break end
 
-        if not self.players[name] then
+        if self.players[name] then
+            self.players[name].xp = xp + self.players[name].xp
+            -- Only calculate < 5 minutes between XP gains
+            if diff < 300 then self.players[name].timePlayed = self.players[name].timePlayed + diff end
+        else
             self.players[name] = {xp = xp, timePlayed = 0, class = UnitClassBase("party" .. i)}
         end
 
-        if self.state.lastXPGain then
-            diff = GetTime() - self.state.lastXPGain
-
-            -- Only calculate < 5 minutes between XP gains
-            if diff < 300 then self.players[name].timePlayed = self.players[name].timePlayed + diff end
-        end
     end
 
-    self.state.lastXPGain = GetTime()
 end
 
 function addon.comms:AnnounceSelf(command)
