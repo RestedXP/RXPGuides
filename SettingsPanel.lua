@@ -1085,14 +1085,6 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 4.2
                     },
-                    shareQuests = {
-                        name = L("Automatic quest sharing"), -- TODO: Localize this setting
-                        desc = L(
-                            "Whenever you accept a quest in the guide, the addon tries to share it with your group"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 4.3
-                    },
                     enableTrainerAutomation = {
                         name = L("Trainer automation"),
                         desc = L(
@@ -2109,40 +2101,47 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.0
                     },
+                    shareQuests = {
+                        name = L("Automatic quest sharing"), -- TODO: Localize this setting
+                        desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.1
+                    },
                     alwaysSendBranded = {
                         name = L("Send announcements without another RXP user in group"),
                         desc = L("Without this checked we will only send announcements if another RestedXP User is in your group"),
                         type = "toggle",
                         width = "full",
-                        order = 3.1
+                        order = 3.2
                     },
                     enableCompleteStepAnnouncements = {
                         name = L("Announce when Quest Step is completed"),
                         desc = L("Announce in party chat when you complete certain quests (.complete)"),
                         type = "toggle",
                         width = "full",
-                        order = 3.2
+                        order = 3.3
                     },
                     enableCollectStepAnnouncements = {
                         name = L("Announce when all Step items are collected"),
                         desc = L("Announce in party chat when you collect all the items relevant to a quest (.collect)"),
                         type = "toggle",
                         width = "full",
-                        order = 3.3
+                        order = 3.4
                     },
                     enableFlyStepAnnouncements = {
                         name = L("Announce Flying Step timers"),
                         desc = L("Announce in party chat where you're flying and how long until you arrive"),
                         type = "toggle",
                         width = "full",
-                        order = 3.4
+                        order = 3.5
                     },
                     ignoreQuestieConflicts = {
                         name = L("Ignore Questie announcements"),
                         desc = L("Send quest and collect step announcements even if Questie is enabled"),
                         type = "toggle",
                         width = "full",
-                        order = 3.5,
+                        order = 3.6,
                         hidden = not _G.Questie
                     }
                 }
