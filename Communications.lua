@@ -355,6 +355,12 @@ function addon.comms.PrettyPrint(msg, ...)
     print(fmt("%s: %s", addon.title, fmt(msg, ...)))
 end
 
+function addon.comms.PrettyAnnounce(channel, msg, ...)
+    if not msg then return end
+
+    SendChatMessage(fmt("%s: %s", addon.title, fmt(msg, ...)), channel, nil)
+end
+
 addon.comms.debugThrottle = {}
 function addon.comms.PrettyDebug(msg, ...)
     if not msg then return end
@@ -660,4 +666,35 @@ function addon.comms:PopupNotification(lookup, prompt)
     }
 
     _G.StaticPopup_Show(lookup)
+end
+
+addon.comms.grouping = {}
+function addon.comms.grouping:ShareQuest(questId)
+    if not addon.settings.profile.shareQuests then return end
+
+    if GetNumGroupMembers() <= 1 or UnitInBattleground("player") ~= nil then return end
+
+    local questLogIndex, isPushable = addon.GetLogIndexForQuestID(questId)
+
+    if not questLogIndex then
+        addon.comms.PrettyDebug("Quest ID not in quest log", questId)
+        return
+    end
+
+    -- Do not announce shared quests, too verbose and bloated.
+    -- Will let end-user announce when they accept a shared quest
+    if isPushable then
+        -- Only required for Classic
+        if _G.SelectQuestLogEntry then
+            _G.SelectQuestLogEntry(questLogIndex)
+        end
+
+        return _G.QuestLogPushQuest(questLogIndex)
+    end
+
+    -- Retail already includes "ERR_QUEST_PUSH_..." sharing failure handling
+    -- TODO this behavior desired?
+    if addon.game ~= "RETAIL" and addon.settings.profile.announceUnshareableQuests then
+        addon.comms.PrettyAnnounce("PARTY", L("I accepted an unshareable quest %s"), addon.GetQuestName(questId))
+    end
 end

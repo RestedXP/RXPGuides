@@ -346,7 +346,7 @@ local function IsOnQuest(id)
     return quest
 end
 
-local function GetLogIndexForQuestID(questID)
+function addon.GetLogIndexForQuestID(questID)
     if C_QuestLog.GetLogIndexForQuestID then
         return C_QuestLog.GetLogIndexForQuestID(questID),C_QuestLog.IsPushableQuest(questID)
     else
@@ -1139,15 +1139,8 @@ function addon.functions.accept(self, ...)
                     addon.StartTimer(element.timer,element.timerText)
                 end
 
-                if addon.settings.profile.shareQuests then
-                    local questLogIndex,isPushable = GetLogIndexForQuestID(id);
-                    if questLogIndex and isPushable then
-                        if _G.SelectQuestLogEntry then
-                            _G.SelectQuestLogEntry(questLogIndex)
-                        end
-                        _G.QuestLogPushQuest(questLogIndex)
-                    end
-                end
+                -- TODO prevent when replaying a guide step
+                addon.comms.grouping:ShareQuest(id)
             end
         end
 

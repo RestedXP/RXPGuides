@@ -226,7 +226,10 @@ local settingsDBDefaults = {
         dungeons = {},
 
         framePositions = {},
-        frameSizes = {}
+        frameSizes = {},
+
+        -- Grouping
+        shareQuests = true,
     }
 }
 
@@ -2107,6 +2110,16 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.1
+                    },
+                    announceUnshareableQuests = {
+                        name = L("Announce unsharable quests"), -- TODO: Localize this setting
+                        desc = L("Announce in Party if a guided quest cannot be shared"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 3.2,
+                        disabled = function()
+                            return not self.profile.shareQuests
+                        end
                     },
                     alwaysSendBranded = {
                         name = L("Send announcements without another RXP user in group"),
