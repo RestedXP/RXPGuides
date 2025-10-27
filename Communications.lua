@@ -148,7 +148,7 @@ end
 
 function addon.comms:TallyGroup(xp)
     if GetNumGroupMembers() < 1 then return end
-    if not xp or not tonumber(xp) then return end
+    if not xp then return end
 
     local diff = 0
     local now = GetTime()
