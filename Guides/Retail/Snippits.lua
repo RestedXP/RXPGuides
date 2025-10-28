@@ -10282,12 +10282,13 @@ step
     .isInScenario 1123
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .scenario 2564,1 --Take the portal to Dalaran.
--- step
---     .goto 627,28.48,48.34
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
---     .accept 45727 >>Accept Uniting the Isles
---     .turnin 45727 >>Turn in Uniting the Isles
---     .target Archmage Khadgar
+step
+    .achievementComplete 42301,1
+    .goto 627,28.48,48.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .accept 45727 >>Accept Uniting the Isles
+    .turnin 45727 >>Turn in Uniting the Isles
+    .target Archmage Khadgar
 step
     #completewith next
     #label Hall of Shadows
@@ -10593,6 +10594,13 @@ step
     .complete 40849,3 --1/1 Fly to Dalaran
     .timer 12,RP
     .target Bloodsail Gryphon
+step
+    .achievementComplete 42301,1
+    .goto 627,28.71,48.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .accept 45727 >>Accept Uniting the Isles
+    .turnin 45727 >>Turn in Uniting the Isles
+    .target Archmage Khadgar
 step
     #completewith next
     #hidewindow
