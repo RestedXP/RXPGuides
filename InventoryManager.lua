@@ -198,9 +198,9 @@ local function ToggleJunk(id,bag,slot)
     local colour = addon.guideTextColors["RXP_WARN_"]
     RXPCData.discardPile[id] = not junk
     if junk then
-        addon.comms.PrettyPrint(L("%s: |c%sSet %s as useful|r"), colour, link)
+        addon.comms.PrettyPrint(L("|c%sSet %s as useful|r"), colour, link)
     else
-        addon.comms.PrettyPrint(L("%s: |c%sSet %s as junk|r"), colour, link)
+        addon.comms.PrettyPrint(L("|c%sSet %s as junk|r"), colour, link)
     end
     inventoryManager.UpdateAllBags()
     addon:SendEvent("RXP_JUNK", id, bag, slot)
@@ -709,7 +709,7 @@ local function ProcessJunk(sellWares,override)
             local value = GetMoney() - inventoryManager.sellGoods
             local colour = addon.guideTextColors["RXP_WARN_"]
             if value > 0 then
-                addon.comms.PrettyPrint(L("RXPGuides: |c%sSold junk items for|r %s"),colour,GetCoinTextureString(value))
+                addon.comms.PrettyPrint(L("|c%sSold junk items for|r %s"), colour, GetCoinTextureString(value))
             end
             inventoryManager.sellGoods = false
         end

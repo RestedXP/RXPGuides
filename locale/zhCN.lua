@@ -115,8 +115,8 @@ L["Unused Guides"] = "未使用的指南"
 L["Welcome to RestedXP Guides\nRight click to pick a guide"] = "欢迎使用 RestedXP 指南\n右键点击选择指南"
 
 -- InventoryManager.lua文件
-L["%s: |c%sSet %s as junk|r"] = "%s: |c%s将 %s 设为垃圾|r"
-L["%s: |c%sSet %s as useful|r"] = "%s: |c%s将 %s 设为有用|r"
+L["|c%sSet %s as junk|r"] = "|c%s将 %s 设为垃圾|r"
+L["|c%sSet %s as useful|r"] = "|c%s将 %s 设为有用|r"
 L["Delete Cheapest Junk Item"] = "删除最便宜的垃圾物品"
 L["|c%sDeleting %sx%s|r"] = "|c%s正在删除 %sx%s|r"
 L["|c%sInventory is full, deleting %sx%s|r"] = "|c%s背包已满,正在删除 %sx%s|r"
