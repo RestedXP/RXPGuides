@@ -2099,52 +2099,88 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.3
                     },
                     groupCoordinationHeader = {
-                        name = L("Group coordination"),
+                        name = _G.TUTORIAL_TITLE18,
                         type = "header",
                         width = "full",
                         order = 3.0
+                    },
+                    groupMode = {
+                        name = fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL),
+                        -- desc = "",
+                        order = 3.1,
+                        type = "toggle", -- type = "execute",
+                        width = optionsWidth,
+                        confirm = requiresReload,
+                        -- Leave get as is, only toggle related group settings on
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+
+                            if not value then return end
+                            local p = self.profile
+
+                            p.checkVersions = true
+                            p.alwaysSendBranded = true
+                            p.showUnusedGuides = true
+
+                            p.shareQuests = value
+
+                            p.enableLevelUpAnnounceGroup = true
+                            p.enableFlyStepAnnouncements = true
+                            p.enableCollectStepAnnouncements = true
+                            p.enableCompleteStepAnnouncements = true
+                            p.enableQuestAutomation = true
+
+                            p.autoSellJunk = true
+                            p.autoDiscardItems = true
+
+                            p.enableGroupQuests = true
+                            p.soloSelfFound = false
+
+
+                            _G.ReloadUI()
+                        end
                     },
                     shareQuests = {
                         name = L("Automatic quest sharing"), -- TODO: Localize this setting
                         desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.1
+                        order = 3.2
                     },
                     alwaysSendBranded = {
                         name = L("Send announcements without another RXP user in group"),
                         desc = L("Without this checked we will only send announcements if another RestedXP User is in your group"),
                         type = "toggle",
                         width = "full",
-                        order = 3.2
+                        order = 3.3
                     },
                     enableCompleteStepAnnouncements = {
                         name = L("Announce when Quest Step is completed"),
                         desc = L("Announce in party chat when you complete certain quests (.complete)"),
                         type = "toggle",
                         width = "full",
-                        order = 3.3
+                        order = 3.4
                     },
                     enableCollectStepAnnouncements = {
                         name = L("Announce when all Step items are collected"),
                         desc = L("Announce in party chat when you collect all the items relevant to a quest (.collect)"),
                         type = "toggle",
                         width = "full",
-                        order = 3.4
+                        order = 3.5
                     },
                     enableFlyStepAnnouncements = {
                         name = L("Announce Flying Step timers"),
                         desc = L("Announce in party chat where you're flying and how long until you arrive"),
                         type = "toggle",
                         width = "full",
-                        order = 3.5
+                        order = 3.6
                     },
                     ignoreQuestieConflicts = {
                         name = L("Ignore Questie announcements"),
                         desc = L("Send quest and collect step announcements even if Questie is enabled"),
                         type = "toggle",
                         width = "full",
-                        order = 3.6,
+                        order = 3.7,
                         hidden = not _G.Questie
                     }
                 }
