@@ -165,7 +165,7 @@ function addon.comms:TallyGroup(xp)
         if not name then break end
 
         if self.players[name] then
-            self.players[name].xp = xp + self.players[name].xp
+            self.players[name].xp = xp + (self.players[name].xp or 0)
             -- Only calculate < 5 minutes between XP gains
             if diff < 300 then self.players[name].timePlayed = self.players[name].timePlayed + diff end
         else
