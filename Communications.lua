@@ -340,6 +340,8 @@ function addon.comms.PrettyDebug(msg, ...)
     if not msg then return end
     if not addon.settings.profile.debug then return end
 
+    msg = fmt(msg, ...)
+
     local now = GetTime()
 
     if not addon.comms.debugThrottle[msg] then
@@ -347,7 +349,7 @@ function addon.comms.PrettyDebug(msg, ...)
             last = now,
             throttled = false
         }
-        print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
+        print(fmt("%s (Debug): %s", addon.title, msg))
 
         return
     end
@@ -358,7 +360,7 @@ function addon.comms.PrettyDebug(msg, ...)
 
     if diff < 5 then
         if not dt.throttled then
-            print(fmt("%s (Debug): ... %s", addon.title, fmt(msg, ...)))
+            print(fmt("%s (Debug): ... %s", addon.title, msg))
             dt.throttled = true
         end
 
@@ -368,7 +370,7 @@ function addon.comms.PrettyDebug(msg, ...)
     end
     dt.last = now
 
-    print(fmt("%s (Debug): %s", addon.title, fmt(msg, ...)))
+    print(fmt("%s (Debug): %s", addon.title, msg))
 end
 
 function addon.comms.OpenBugReport(stepNumber)
