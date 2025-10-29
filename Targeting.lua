@@ -36,7 +36,7 @@ local proxmityPolling = {
 }
 
 local targetList = {}
-local targetPlaceholder = 132150
+local targetPlaceholder = 132150 -- Ability_eyeoftheowl
 local targetIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_4.blp", -- Triangle
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_3.blp", -- Diamond
@@ -45,7 +45,7 @@ local targetIcons = {
 }
 
 local mobList = {}
-local mobPlaceholder = 14144
+local mobPlaceholder = 132212 -- Ability_hunter_snipershot
 local mobIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8.blp", -- Skull
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7.blp", -- Cross
@@ -53,7 +53,7 @@ local mobIcons = {
 }
 
 local unitscanList = {}
-local unitscanPlaceholder = 132212
+local unitscanPlaceholder = 132151 -- ability_fiegndead
 local unitscanIcons = {
     "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp" -- Moon
 }
