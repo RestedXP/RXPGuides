@@ -967,20 +967,6 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
-                    enableAddonIncompatibilityCheck = {
-                        name = L("Check for Addon Incompatibility"), -- TODO locale
-                        desc = L(
-                            "Check loaded addons for known compatibility issues with RXP"),
-                        type = "toggle",
-                        width = "full",
-                        order = 1.4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            if value then
-                                self:CheckAddonCompatibility()
-                            end
-                        end
-                    },
                     featuresHeader = {
                         name = _G.FEATURES_LABEL,
                         type = "header",
@@ -3282,6 +3268,19 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.65,
+                    },
+                    enableAddonIncompatibilityCheck = {
+                        name = L("Check for Addon Incompatibility"), -- TODO locale
+                        desc = L("Check loaded addons for known compatibility issues with RXP"),
+                        type = "toggle",
+                        width = "full",
+                        order = 1.66,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:CheckAddonCompatibility()
+                            end
+                        end
                     },
                     optimizePerformance = {
                         name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),
