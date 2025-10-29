@@ -691,10 +691,4 @@ function addon.comms.grouping:ShareQuest(questId)
 
         return _G.QuestLogPushQuest(questLogIndex)
     end
-
-    -- Retail already includes "ERR_QUEST_PUSH_..." sharing failure handling
-    -- TODO this behavior desired?
-    if addon.game ~= "RETAIL" and addon.settings.profile.announceUnshareableQuests then
-        addon.comms.PrettyAnnounce("PARTY", L("I accepted an unshareable quest %s"), addon.GetQuestName(questId))
-    end
 end
