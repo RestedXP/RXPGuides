@@ -1408,6 +1408,42 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    groupMode = {
+                        name = fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL),
+                        -- desc = "",
+                        order = 1.6,
+                        type = "toggle", -- type = "execute",
+                        width = optionsWidth,
+                        -- confirm = requiresReload,
+                        -- Leave get as is, only toggle related group settings on
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+
+                            if not value then return end
+                            local p = self.profile
+
+                            p.checkVersions = true
+                            p.alwaysSendBranded = true
+                            p.showUnusedGuides = true
+
+                            p.shareQuests = value
+
+                            p.enableLevelUpAnnounceGroup = true
+                            p.enableFlyStepAnnouncements = true
+                            p.enableCollectStepAnnouncements = true
+                            p.enableCompleteStepAnnouncements = true
+                            p.enableQuestAutomation = true
+
+                            p.autoSellJunk = true
+                            p.autoDiscardItems = true
+
+                            p.enableGroupQuests = true
+                            p.soloSelfFound = false
+
+
+                            --_G.ReloadUI()
+                        end
+                    },
                     expansionHeader = {
                         name = _G.EXPANSION_FILTER_TEXT,
                         type = "header",
@@ -2103,42 +2139,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "header",
                         width = "full",
                         order = 3.0
-                    },
-                    groupMode = {
-                        name = fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL),
-                        -- desc = "",
-                        order = 3.1,
-                        type = "toggle", -- type = "execute",
-                        width = optionsWidth,
-                        confirm = requiresReload,
-                        -- Leave get as is, only toggle related group settings on
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-
-                            if not value then return end
-                            local p = self.profile
-
-                            p.checkVersions = true
-                            p.alwaysSendBranded = true
-                            p.showUnusedGuides = true
-
-                            p.shareQuests = value
-
-                            p.enableLevelUpAnnounceGroup = true
-                            p.enableFlyStepAnnouncements = true
-                            p.enableCollectStepAnnouncements = true
-                            p.enableCompleteStepAnnouncements = true
-                            p.enableQuestAutomation = true
-
-                            p.autoSellJunk = true
-                            p.autoDiscardItems = true
-
-                            p.enableGroupQuests = true
-                            p.soloSelfFound = false
-
-
-                            _G.ReloadUI()
-                        end
                     },
                     shareQuests = {
                         name = L("Automatic quest sharing"), -- TODO: Localize this setting
