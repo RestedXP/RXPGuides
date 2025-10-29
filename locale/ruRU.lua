@@ -294,7 +294,6 @@ L["Announce Level Ups (Party Chat)"] = "Объявлять повышение у
 L["Announce in party chat when you level up"] = "Объявлять в чате группы при повышении уровня"
 L["Announce Level Ups (Guild Chat)"] = "Объявлять повышение уровня (чат гильдии)"
 L["Announce in guild chat when you level up"] = "Объявлять в чате гильдии при повышении уровня"
-L["Group coordination"] = "Координация группы"
 L["Announce when Quest Step is completed"] = "Объявлять, когда шаг задания завершен"
 L["Announce when all Step items are collected"] = "Объявлять, когда собраны все предметы шага"
 L["Announce Flying Step timers"] = "Объявлять таймеры шагов полета"
