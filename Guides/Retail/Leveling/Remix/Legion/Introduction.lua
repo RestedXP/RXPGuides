@@ -15,11 +15,12 @@ RXPGuides.RegisterGuide([[
 step
     +|cRXP_WARN_|cRXP_WARN_|T1411837:0|t[Infinite Power]|r|r is the Artifact Power of Legion Remix. It fuels your Artifact Weapon, allowing you to unlock upgrades and grow stronger as you play.
 step
-    +|cRXP_WARN_|T1411837:0|t[Infinite Power]|r is gained from most activities — looting enemies, completing quests, and opening treasures or reward boxes.
+    +|cRXP_WARN_|T1411837:0|t[Infinite Power]|r is gained from most activities e.g looting enemies, completing quests, dungeons, treasures or reward boxes.
 step
-    +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r increases the rate at which you gain |cRXP_WARN_|T1411837:0|t[Infinite Power]|r |cRXP_WARN_(Artifact Power)|r. The more ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r you have, the more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r you earn from every activity.
+    +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r increases the rate at which you gain |cRXP_WARN_|T1411837:0|t[Infinite Power]|r |cRXP_WARN_(Artifact Power)|r. 
+    *The more ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r you have, the more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r you earn from every activity.
 step
-    +Since every activity rewards more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r with each rank of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r, it’s best to unlock as much |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|ras early as possible.
+    +Since every activity rewards more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r with each rank of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r, it’s best to unlock as much |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r as early as possible.
 step
     +There are 36 total ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r. In Phase 1, you can obtain 28 of them: 20 from World Content & Quests and 8 from Dungeons & Raids.
 step
@@ -43,16 +44,15 @@ step
 step
     +Infinite Research Quests are daily quests with over 100 possible task variations. They are extremely valuable for gearing, as their rewards scale to your level.
 step
-    +If you miss a day of Infinite Research Quests, they will backlog. At the start you can store up to 6 quests, and this cap increases as you progress.
+    +If you miss a day of Infinite Research Quests, they will backlog. At the start you can store up to 6 quests, all the way up to 18 quests as you progress.
 step
     +It’s highly recommended to ignore this system until level 80, unless you’ve already reached the 6-quest backlog.
 step
-    +If you complete these quests at level 80, the rewards scale up and grant you level 80 gear.
+    +Rewards scale with your level and item level. Completing them at level 80 gives powerful gear right away—best done at the end of your play session, since rewards also scale with ilvl.
 step
     .goto 619,45.56,68.5
-    +It’s highly recommended to activate Heroic Mode at the console in the Infinite Bazaar, as monsters slain in this mode grant 500% more experience and significantly increased loot.
-step
-    +The guide will prompt you to enable Heroic Mode, but you can choose to skip it or turn it off if the difficulty becomes too challenging.
+    +It’s recommended to activate Heroic Mode at the console in the Infinite Bazaar|cRXP_WARN_at Level 20 or above|r, as monsters slain in this mode grant 500% more experience and more loot.
+    *>>You can use |T4571434:0|t[Temporal Retreat] |cRXP_WARN_at any time |rto return to the Normal Tier. You can find the spell in your spellbook.
 step
     +You can leave Heroic Mode at any time without drawbacks by using the ability |cRXP_WARN_|T4571434:0|t[Temporal Retreat]|r, found in the General tab of your spellbook.
 step
@@ -145,19 +145,6 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
--- step
---     .goto 627,72.46,45.90
---     .achievementComplete 42313,1
---    .achievementskip label,achieveID,criteriaID
---     *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
---     .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
---     .target Moratari
--- step
---     #optional
---     #completewith IntroSkipEnd
---     #hidewindow
---     .achievement 42313,1
---     .skipto guide,RestedXP Legion Remix\ab) Skyriding
 step
     #completewith next
     .achievementComplete 42313,1
@@ -468,13 +455,20 @@ step
     .complete 90659,4 --Purchase the Remix Time trait in your Artifact Weapon
     .macro Open Artifact Tree,1411839 >> /run SocketInventoryItem(16)
 step
-    #label IntroSkipEnd
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 90659 >>Turn in Something Borrowed
     .accept 89412 >>Accept Get Plenty of Exorcise
     .accept 90901 >>Accept As A Matter of Artifact
     .goto 627,42.46,28.05
     .target +Momentus
+step 
+    .isQuestComplete 90901
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .turnin 90901 >>Turn in As A Matter of Artifact
+    .goto 627,42.46,28.05
+    .target +Momentus
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Erus|r
     .accept 89411 >>Accept Scavenger Hunting
     .goto 627,42.31,27.32
     .target +Erus
@@ -774,6 +768,15 @@ step
     .home >>Set your Hearthstone to Dalaran
     .macro Leave Vehicle,6656430 >> /leavevehicle
 step
+    .goto 619,45.86,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r 
+    *|cRXP_WARN_You can skip this and do it later; completing it at level 80 with higher ilvl gives better gear, but since it’s a daily, you might not want to miss it|r.
+    .daily 92855 >>Accept in Make Haste, Not Waste
+    .dailyturnin 92855 >>Turn in Make Haste, Not Waste
+    .xp <11,1
+    .achievementComplete 42301,1
+    .target Lidamorrutu
+step
     .goto 619,45.83,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .accept 91955 >>Accept Just Between Us
@@ -782,37 +785,42 @@ step
     .isOnQuest 89418
     .goto 619,45.71,67.46
     .zone 627 >>Click on the |cRXP_PICK_Portal|r
--- step
---     #completewith next
---     #label The Legion Returns
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
---     .accept 40519 >>Accept Legion: The Legion Returns << Alliance
---     .accept 43926 >>Accept Legion: The Legion Returns << Horde
---     .target Archivist Elysiana
---     .skipgossipid 45296
--- step
---     #completewith The Legion Returns
---     .goto 627,31.57,49.39,20 >>Enter the Violet Hold
--- step
---     #requires The Legion Returns
---     #label Intro
---     .goto 627,30.26,51.21
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
---     .accept 40519 >>Accept Legion: The Legion Returns << Alliance
---     .accept 43926 >>Accept Legion: The Legion Returns << Horde
---     .target Archivist Elysiana
---     .skipgossipid 45296
--- step
---     #completewith next
---     #label The Legion Returns2
---     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
---     .use 254320
---     .aura 1257698
--- step
---     #completewith The Legion Returns2
---     .goto 627,33.1,49.47,20 >>Leave the Violet Hold
-step
---    #requires The Legion Returns2
+step <<!DemonHunter
+    #completewith next
+    #label The Legion Returns
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
+    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+    .accept 43926 >>Accept Legion: The Legion Returns << Horde
+    .target Archivist Elysiana
+    .skipgossipid 45296
+step <<!DemonHunter
+    #completewith The Legion Returns
+    .goto 627,31.57,49.39,20 >>Enter the Violet Hold
+step <<!DemonHunter
+    #requires The Legion Returns
+    #label Intro
+    .goto 627,30.26,51.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archivist Elysiana|r.
+    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+    .accept 43926 >>Accept Legion: The Legion Returns << Horde
+    .target Archivist Elysiana
+    .skipgossipid 45296
+step <<!DemonHunter
+    #completewith next
+    #label The Legion Returns2
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
+step <<!DemonHunter
+    #completewith The Legion Returns2
+    .goto 627,33.1,49.47,20 >>Leave the Violet Hold
+step <<!DemonHunter
+    #requires The Legion Returns2
+    .goto 627,71.94,41.44
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
+step <<DemonHunter
     .goto 627,71.94,41.44
     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
     .use 254320
@@ -925,7 +933,6 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
 #name ab) Order Hall Monk Part 1 
 #displayname |cFF00FF003|r - Order Hall Intro 1|r
--- #next ac) Order Hall Monk Part 2
 
 << Monk
 
@@ -1283,14 +1290,6 @@ step << Horde
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 39718,1 --1/1 Travel to Dalaran 
     .timer 8,RP
--- step
---     >>Use |T242617:0|t[Curious Simulacrum]
---     .accept 92688 >>Accept Bronze Simulacrum
---     .use 242617
--- step
---     .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
---     .use 254320
---     .aura 1257698
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r
     .accept 42186 >>Accept Growing Power
@@ -1350,7 +1349,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith next
     .isQuestAvailable 40715
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 >>Order Hall Death Knight Part 1
@@ -1630,7 +1628,6 @@ step
     -- .use 256763
 step
     #optional
-    #completewith next
     .isQuestAvailable 40814
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 >>Order Hall Demon Hunter Part 1
@@ -1943,7 +1940,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith next
     .isQuestAvailable 40646
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>Order Hall Druid Part 1
@@ -2136,7 +2132,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith next
     .isQuestAvailable 40618
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>Hunter Order Hall Intro 1
@@ -2432,7 +2427,6 @@ step
     -- .use 256763
 step
     #optional
-    #completewith next
     .isQuestAvailable 41085
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
@@ -2755,7 +2749,6 @@ step
 --     .target Eadric the Pure
 step
     #optional
-    #completewith next
     .isQuestAvailable 40408
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Paladin Part 1 >>Paladin Order Hall Intro 1
@@ -2915,7 +2908,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith next
     .isQuestAvailable 40706
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1>>Priest Order Hall Intro 1
@@ -3417,7 +3409,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith next
     .isQuestAvailable 41335
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>Shaman Order Hall Intro 1
@@ -3615,7 +3606,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith next
     .isQuestAvailable 40684
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Warlock Order Hall Intro 1
@@ -3981,7 +3971,6 @@ step
     -- .use 256763
 step
     #optional
-    #completewith next
     .isQuestAvailable 40579
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>Warrior Order Hall Intro 1
@@ -4112,20 +4101,19 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
--- step
---     .goto 619,45.96,67.89
---     >>Use |T242617:0|t[Curious Simulacrum]
---     .accept 92688 >>Accept Bronze Simulacrum
     .use 242617
 step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
    .goto 627,72.07,40.6
    .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
--- step
---     .isOnQuest 92563
---     .goto 619,45.64,67.70
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
---     .turnin 92563 >>Turn in Awoken by Accessory
---     .target Moratari
+step
+    .goto 619,45.86,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r 
+    *|cRXP_WARN_You can skip this and do it later; completing it at level 80 with higher ilvl gives better gear, but since it’s a daily, you might not want to miss it|r.
+    .daily 92855 >>Accept in Make Haste, Not Waste
+    .dailyturnin 92855 >>Turn in Make Haste, Not Waste
+    .xp <11,1
+    .achievementComplete 42301,1
+    .target Lidamorrutu
 step
     #label Meet Nostwin2
     #completewith next
@@ -4187,11 +4175,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
     .accept 91639 >>Accept Embrace Your Own Legend
     .target Eternus
--- step
---     .goto 619,45.68,68.50
---     >>
---     .daily 93112,89540,91613,90100,90112,90113,93117,89600,89679,90102,90103,93114,93116,93120,89524,89590,89678,93113,93118,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and an Infinite Research Quest. 
---     .target Eternus
+step <<!DemonHunter
+    .goto 627,30.26,51.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .accept 40519 >>Accept Legion: The Legion Returns << Alliance
+    .accept 43926 >>Accept Legion: The Legion Returns << Horde
+    .target Archivist Elysiana
+    .skipgossipid 134831
+    .skipgossipid 134865
+step
+    -- .achievementComplete 60969,1
+    .isQuestTurnedIn account,91721 
+    .isQuestAvailable account,91722
+    .goto 619,45.68,68.49
+    +Test2
+    .questcount <2,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>12345
+    *Skip this step when you've accepted all quests.
+    .target Eternus 
+step
+    -- .achievementComplete 60960,1
+    .isQuestTurnedIn account,91722
+    .goto 619,45.68,68.49
+    +Test1
+    .questcount <3,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>1234
+    *Skip this step when you've accepted all quests.
+    .target Eternus 
 step
     #completewith next
     #hidewindow
@@ -4215,7 +4223,10 @@ step
     .goto 619,45.57,68.48
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r
     .complete 91061,2 --1/1 Use the Console of Infinite Chaos to enter the Heroic World Tier
-
+step
+    .cast 1257698 >>Use |T1528676:0|t[Elixir of Remembered Sight] to reveal herbs and ores on the minimap. Collect them when nearby to gain more Infinite Might and increase your overall power.
+    .use 254320
+    .aura 1257698
 ]])
 
 ---Azsuna
@@ -4268,12 +4279,42 @@ step
     #optional
     .isNotOnQuest 39718
     .isQuestAvailable 39718
-    +|cRXP_WARN_You have skipped a previous chapter and have to go to your class order hall and accept the quest for Azsuna at the Scouting Map. If you have not unlocked the quest then start the Order Hall Intro 1 guide.|r
---step << Warrior
---    #optional
---    .isQuestAvailable 40579
---    +|cRXP_WARN_You have to do the previous chapter first|r
---    .clicknext RestedXP Legion Remix\ab) Warrior Order Hall Intro 1 >>Warrior Order Hall Intro 1
+    +|cRXP_WARN_You skipped a previous chapter. Go to your Class Order Hall and accept the Azsuna quest from the Scouting Map. If it’s not available, start the Order Hall Intro 1 guide.|r
+    .clicknext RestedXP Legion Remix\ac) Order Hall Death Knight Part 2>>Death Knight Order Hall Intro 2 << DeathKnight
+    .clicknext RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2>>Demon Hunter Order Hall Intro 2 << DemonHunter
+    .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2>>Druid Order Hall Intro 2 << Druid
+    .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2>>Hunter Order Hall Intro 2 << Hunter
+    .clicknext RestedXP Legion Remix\ac) Order Hall Mage Part 2>>Mage Order Hall Intro 2 << Mage
+    .clicknext RestedXP Legion Remix\ac) Order Hall Monk Part 2>>Monk Order Hall Intro 2 << Monk
+    .clicknext RestedXP Legion Remix\ac) Order Hall Paladin Part 2>>Paladin Order Hall Intro 2 << Paladin
+    .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2>>Priest Order Hall Intro 2 << Priest
+    .clicknext RestedXP Legion Remix\ac) Order Hall Rogue Part 2>>Rogue Order Hall Intro 2 << Rogue
+    .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
+    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
+    .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
+step
+    #completewith next
+    #label Down to Azsuna
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
+    .turnin 39718 >>Turn in Paradise Lost
+    .accept 41220 >>Accept Down to Azsuna
+    .disablecheckbox
+    .target Archmage Khadgar
+step
+    #completewith Down to Azsuna
+    .goto 619,45.57,68.48
+    .cast 1241425 >>Use |T4571434:0|t[Temporal Retreat] to return to the Normal Tier. Consider enabling it again at level 20 or higher.
+step
+    #requires Down to Azsuna
+    .goto 627,72.47,45.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
+    .turnin 39718 >>Turn in Paradise Lost
+    .accept 41220 >>Accept Down to Azsuna
+    .disablecheckbox
+    .target Archmage Khadgar
+step
+    #completewith Into the Fray
+    +You can pick up an extra quest in the Broken Shore by flying into the demons in the sky only do this if it’s convenient.
 step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesA-BehindLegionLinesB
 step
@@ -4738,18 +4779,15 @@ step
     -- .use 251821
     -- .use 256763
 step
-    #label BehindLegionLinesA
     .goto 627,72.47,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .turnin 39718 >>Turn in Paradise Lost
     .accept 41220 >>Accept Down to Azsuna
     .target Archmage Khadgar
 step
+    #label BehindLegionLinesA
     .goto 627,72.47,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
-    *You can turn off heroic mode at any time if its too challenging using Temporal Retreat in your spellbook
-    *You can collect an additional quest in the broken shore at any time by flying into the demons in the sky only do this if it's convenient.
-    --remove later bandaid fix
     .complete 41220,1 --1/1 Fly down with Khadgar
     .timer 83,Flight Duration
     .target Archmage Khadgar
@@ -4764,6 +4802,7 @@ step
     .accept 38834 >>Accept Into the Fray
     .target Archmage Khadgar
 step
+    #label Into the Fray
     .goto 630,45.10,42.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .accept 38834 >>Accept Into the Fray
@@ -6691,7 +6730,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Monk Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Monk Part 2
 ]])
 
 ---Death Knight 1
@@ -6759,7 +6798,7 @@ RXPGuides.RegisterGuide([[
 << Demon Hunter
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2
 
 
 ]])
@@ -6793,7 +6832,7 @@ RXPGuides.RegisterGuide([[
 << Druid
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Druid Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Druid Part 2
 ]])
 
 ---Hunter 1
@@ -6825,7 +6864,7 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Hunter Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Hunter Part 2
 ]])
 
 ---Mage 1
@@ -6857,7 +6896,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Mage Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Mage Part 2
 ]])
 
 ---Paladin 1
@@ -6889,7 +6928,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Paladin Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Paladin Part 2
 ]])
 
 ---Priest 1
@@ -6921,7 +6960,7 @@ RXPGuides.RegisterGuide([[
 << Priest
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Priest Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Priest Part 2
 ]])
 
 ---Rogue 1
@@ -6955,7 +6994,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Rogue Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Rogue Part 2
 
 
 ]])
@@ -6989,7 +7028,7 @@ RXPGuides.RegisterGuide([[
 <<Shaman
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Shaman Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Shaman Part 2
 ]])
 
 ---Warlock 1
@@ -7021,7 +7060,7 @@ RXPGuides.RegisterGuide([[
 << Warlock
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Warlock Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Warlock Part 2
 ]])
 
 ---Warrior 1
@@ -7053,7 +7092,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\ab) Order Hall Warrior Part 2
+    #include RestedXP Legion Remix\ac) Order Hall Warrior Part 2
 ]])
 
 ---Infinite Bazaar
