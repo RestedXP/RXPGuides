@@ -543,13 +543,15 @@ function addon.targeting:UpdateUnitList()
     local stepMobs = {}
     local stepTargets = {}
 
-    local function AddUnits(element, stepUnitscan, stepMobs, stepTargets)
+    local function AddUnits(element, stepU, stepM, stepT)
         if element.unitscan then
-            for _, t in ipairs(element.unitscan) do tinsert(stepUnitscan, addon.GetCreatureName(t)) end
+            for _, t in ipairs(element.unitscan) do tinsert(stepU, addon.GetCreatureName(t)) end
         end
-        if element.mobs then for _, t in ipairs(element.mobs) do tinsert(stepMobs, addon.GetCreatureName(t)) end end
+
+        if element.mobs then for _, t in ipairs(element.mobs) do tinsert(stepM, addon.GetCreatureName(t)) end end
+
         if element.targets then
-            for _, t in ipairs(element.targets) do tinsert(stepTargets, addon.GetCreatureName(t)) end
+            for _, t in ipairs(element.targets) do tinsert(stepT, addon.GetCreatureName(t)) end
         end
     end
 
@@ -827,6 +829,29 @@ local fOnLeave = function(self)
     GameTooltip:Hide()
 end
 
+function addon.targeting:GetMarkerIndex(kind, kindIndex)
+    local raidTargetIndex
+
+    -- kindIndex is always >= 1, but to preserve modulus do -1
+    kindIndex = kindIndex - 1
+
+    if kind == 'friendly' then
+        -- Use star 1, circle 2, diamond 3, and triangle 4
+        -- 0 % 5 = 0 + 1, 4 % 5 = 4 + 1, 5 % 5 = 0 + 1, 6 % 5 = 1 + 1
+        raidTargetIndex = (kindIndex % #targetIcons) + 1
+    elseif kind == 'unitscan' or kind == 'rare' then
+         -- Use moon 5
+         -- 0 % 1 = 0 + 5, 3 % 1 = 0 + 5
+        raidTargetIndex = (kindIndex % #unitscanIcons) + 5
+    elseif kind == 'mob' then
+        -- Use skull 8, cross 7, square 6
+        -- 0 % 3 = 8 - 0, 2 % 3 = 8 - 2
+        raidTargetIndex = 8 - (kindIndex % #mobIcons)
+    end
+
+    return raidTargetIndex
+end
+
 function addon.targeting:UpdateMarker(kind, unitId, index)
     if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then return end
 
@@ -834,18 +859,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     -- Only mark 4/8 targets, ignore later marks
     if index > 4 then return end
 
-    local markerId
-    if kind == 'friendly' then
-        -- Use star, circle, diamond, and triangle
-        markerId = index
-    elseif kind == 'unitscan' or kind == 'rare' then
-        markerId = 5 -- moon
-    elseif kind == 'mob' then
-        -- use skull, cross, square
-        markerId = 9 - index
-    end
-
-    if not markerId then return end
+    local markerId = self:GetMarkerIndex(kind, index)
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
         SetRaidTarget(unitId, markerId)
