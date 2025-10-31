@@ -1529,6 +1529,17 @@ step
     +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
     .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
+    #optional
+    .convertquest 39261,39047
+    .convertquest 39261,39047
+    .convertquest 40814,40816
+    .convertquest 41221,41033
+    .convertquest 41037,41060
+    .convertquest 41062,41070
+    .convertquest 41067,41096
+    .convertquest 41069,41099
+    .convertquest 44383,44379
+step
     #label Future of The Fel Hammer
     .goto 627,72.07,41.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -1586,7 +1597,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Order Hall Demon Hunter Part 2
 #displayname |cFF00FF004|r - Order Hall Intro 2|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#next ad) Infinite Bazaar
+#next ae) First Zone
 
 << DemonHunter
 
@@ -1779,7 +1790,6 @@ step
     .accept 42671 >>Accept Rise, Champions
     .target Battlelord Gaardoun
 step
-    #label Asha Ravensong
     .goto 720,58.62,57.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .accept 42695 >>Accept Champion: Kayn Sunfury
@@ -1787,7 +1797,6 @@ step
     .complete 42671,1 --Kayn Sunfury recruited
     .target Kayn Sunfury
 step
-    #label Champion: Asha Ravensong
     .goto 720,56.18,38.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asha Ravensong|r
     .accept 42697 >>Accept Champion: Asha Ravensong
@@ -1795,10 +1804,137 @@ step
     .target Asha Ravensong
     .complete 42671,2 --Asha Ravensong recruited
 step
-    .goto 720,58.37,16.51
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .zone 720
-
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .turnin 42671 >>Turn in Rise, Champions
+    .target Kor'vas Bloodthorn
+step
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .accept 42677 >>Accept Things Gaardroun Needs
+    .turnin 42677 >>Turn in Things Gaardroun Needs
+    .target Kor'vas Bloodthorn
+step
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .target Kor'vas Bloodthorn
+    .accept 42679 >>Accept Broken Warriors
+    .turnin 42679 >>Turn in Broken Warriors
+step
+    .goto 720,59.26,57.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
+    .target Kor'vas Bloodthorn
+    .accept 42681 >>Accept Loramus, Is That You?
+    .turnin 42681 >>Turn in Loramus, Is That You?
+    .accept 42683 >>Accept Demonic Improvements
+step
+    #label Asha Ravensong
+    .isQuestAvailable 44383
+    .isQuestNotComplete 42681
+    .goto 720,50.59,66.28,10,0
+    .goto 720,46.79,55.5,10,0
+    .goto 721,51.86,55.1,5,0
+    .goto 721,55.22,62.07
+    .gossipoption 45707 >>Talk to |cRXP_FRIENDLY_Loramus Thalipedes|r
+    .timer 83,RP
+    .target Loramus Thalipedes
+-- step
+--     #requires Loramus Thalipedes
+--     .isOnQuest 42683
+-- step
+--     #title |cFFFCDC00Follow the Arrow|r
+--     #label Asha Ravensong
+--     >>|cRXP_WARN_Wait for the Roleplay|r.
+--     .complete 42683,1 --1/1 Loramus' story
+step
+    .zoneskip 720,1
+    .isQuestTurnedIn 40814
+    .isQuestAvailable 44383
+    .isQuestAvailable 40247
+    .goto 721,51.78,55.46,10,0
+    .goto 720,46.98,56.68,10,0
+    .goto 720,50.57,66.1,10,0
+    .goto 720,58.62,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .accept 44383 >>Accept In Pursuit of Power
+    .target Kayn Sunfury
+step
+    .zoneskip 720,1
+    .isQuestTurnedIn 40814
+    .isQuestAvailable 44383
+    .isOnQuest 44383
+    .goto 720,58.62,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .complete 44383,1 --1/1 Choose a second artifact to pursue
+    .choose 1390101
+    .skipgossipid 45738
+step
+    .zoneskip 720,1
+    .isQuestTurnedIn 40814
+    .isQuestAvailable 44383
+    .isQuestComplete 44383
+    .goto 720,58.62,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 44383 >>Turn in Pursuit of Power
+    .target Kayn Sunfury
+step
+    .zoneskip 720,1
+    .isQuestTurnedIn 40814
+    .isQuestAvailable 44383
+    .isQuestAvailable 40819
+    .goto 721,51.78,55.46,10,0
+    .goto 720,46.98,56.68,10,0
+    .goto 720,50.57,66.1,10,0
+    .goto 720,58.62,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .accept 44383 >>Accept In Pursuit of Power
+    .target Kayn Sunfury
+step
+    .zoneskip 720,1
+    .isQuestTurnedIn 40814
+    .isQuestAvailable 44383
+    .isOnQuest 44383
+    .goto 720,58.62,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .complete 44383,1 --1/1 Choose a second artifact to pursue
+    .choose 1390100
+    .skipgossipid 45738
+step
+    .zoneskip 720,1
+    .isQuestTurnedIn 40814
+    .isQuestAvailable 44383
+    .isQuestComplete 44383
+    .goto 720,58.62,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .turnin 44383 >>Turn in Pursuit of Power
+    .target Kayn Sunfury
+step
+    .isQuestAvailable 40819
+    .goto 720,58.6,57.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .target Kayn Sunfury
+    .accept 40819 >>Accept Making Arrangements
+step
+    .isQuestAvailable 40247
+    .goto 720,58.6,57.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    .accept 40247 >>Accept Asking a Favor
+    .target Kayn Sunfury
+step
+    #label Champion: Asha Ravensong
+    .zoneskip 720,1
+    .goto 720,59.19,91.77
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    .isOnQuest 39718
+    .goto 627,72.09,40.72
+    .countdown 2 >>Move to the Portal
+step
+    .isOnQuest 39718
+    .goto 627,72.09,40.72
+    .zone 619 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    #include ad) Infinite Bazaar
 ]])
 
 ---Druid Order Hall Intro 1
@@ -4106,15 +4242,6 @@ step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
    .goto 627,72.07,40.6
    .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
 step
-    .goto 619,45.86,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r 
-    *|cRXP_WARN_You can skip this and do it later; completing it at level 80 with higher ilvl gives better gear, but since it’s a daily, you might not want to miss it|r.
-    .daily 92855 >>Accept in Make Haste, Not Waste
-    .dailyturnin 92855 >>Turn in Make Haste, Not Waste
-    .xp <11,1
-    .achievementComplete 42301,1
-    .target Lidamorrutu
-step
     #label Meet Nostwin2
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
@@ -4142,6 +4269,15 @@ step
     -- .turnin 92688 >>Turn in Bronze Simulacrum
     -- .goto 619,45.78,68.02
     .target Momentus
+step
+    .goto 619,45.86,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r 
+    *|cRXP_WARN_You can skip this and do it later; completing it at level 80 with higher ilvl gives better gear, but since it’s a daily, you might not want to miss it|r.
+    .daily 92855 >>Accept in Make Haste, Not Waste
+    .dailyturnin 92855 >>Turn in Make Haste, Not Waste
+    .xp <11,1
+    .achievementComplete 42301,1
+    .target Lidamorrutu
 step
     #hidewindow
     #completewith next
@@ -4292,6 +4428,10 @@ step
     .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
     .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
     .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
+step
+    .zoneskip 619,1
+    .goto 619,45.71,67.46
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 step
     #completewith next
     #label Down to Azsuna
