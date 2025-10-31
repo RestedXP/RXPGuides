@@ -1,88 +1,74 @@
-import csv, os, glob
+import csv, glob
+import sys
+import argparse
 
-classicDb = {}
-classicGlob = "./Scripts/Values leveling - * Classic Era.csv"
-cataDb = {}
-cataGlob = "./Scripts/Values leveling - * Cataclysm.csv"
+config = {
+    "classic": {
+        "glob": "./Scripts/Values leveling - * Classic Era.csv",
+        "path": 'DB/classic/statWeights.lua',
+        "classCount": 9
+    },
+    "tbc": {
+        "glob": "./Scripts/Values leveling - * TBC.csv",
+        "path": 'DB/tbc/statWeights.lua',
+        "classCount": 9
+    },
+    "cata": {
+        "glob": "./Scripts/Values leveling - * Cataclysm.csv",
+        "path": 'DB/cata/statWeights.lua',
+        "classCount": 10
+    }
+}
 
-for csvPath in glob.glob(classicGlob):
-    with open(csvPath, "r", newline="") as csvfile:
-        csvreader = csv.DictReader(csvfile)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--client', type=str, required=True, choices=['classic', 'tbc', 'cata'] )
+    args = parser.parse_args()
 
-        for row in csvreader:
-            if row["Spec"]:
-                dbTitle = f'{row["Title"]} - {row["Spec"]}'
-            else:
-                dbTitle = row["Title"]
+    config = config[args.client]
+    db = {}
 
-            classicDb[dbTitle] = {}
-            for key in row:
-                value = row[key]
-                if key == "" or row[key] == "":
+    for csvPath in glob.glob(config['glob']):
+        with open(csvPath, "r", newline="") as csvfile:
+            csvreader = csv.DictReader(csvfile)
+
+            for row in csvreader:
+                if not row["Title"]:
                     continue
 
-                classicDb[dbTitle][key] = value
+                if row["Spec"]:
+                    dbTitle = f'{row["Title"]} - {row["Spec"]}'
+                else:
+                    dbTitle = row["Title"]
 
-# print(json.dumps(db, indent=2))
+                db[dbTitle] = {}
+                for key in row:
+                    value = row[key]
+                    if key == "" or row[key] == "":
+                        continue
 
-with open(f"DB/classic/statWeights.lua", "w", newline="") as out:
-    out.write("local _, addon = ...\n\n")
+                    db[dbTitle][key] = value
 
-    out.write('if addon.game ~= "CLASSIC" then return end\n\n')
+    if len(db) < config['classCount']:
+        print(f"Missing class csv, expected {config['classCount']} got {len(db)}")
+        sys.exit(1)
 
-    out.write("addon.statWeights = {\n")
+    with open(config['path'], "w", newline="") as out:
+        out.write("local _, addon = ...\n\n")
 
-    for title in classicDb:
-        out.write(f"    ['{title}'] = {{\n")
+        out.write(f'if addon.game ~= "{args.client.upper()}" then return end\n\n')
 
-        for key in classicDb[title]:
-            if key in ["Title", "Class", "Kind", "Spec"]:
-                out.write(f"        ['{key}'] = \"{classicDb[title][key]}\",\n")
-            else:
-                out.write(f"        ['{key}'] = {classicDb[title][key]},\n")
+        out.write("addon.statWeights = {\n")
 
-        out.write("    },\n")
+        for title in db:
+            out.write(f"    ['{title}'] = {{\n")
 
-    out.write("}\n\n")
+            for key in db[title]:
+                if key in ["Title", "Class", "Kind", "Spec"]:
+                    out.write(f"        ['{key}'] = \"{db[title][key]}\",\n")
+                else:
+                    out.write(f"        ['{key}'] = {db[title][key]},\n")
 
-# TODO consolidate blocks
-for csvPath in glob.glob(cataGlob):
-    with open(csvPath, "r", newline="") as csvfile:
-        csvreader = csv.DictReader(csvfile)
+            out.write("    },\n")
 
-        for row in csvreader:
-            if not row["Title"]:
-                continue
-
-            if row["Spec"]:
-                dbTitle = f'{row["Title"]} - {row["Spec"]}'
-            else:
-                dbTitle = row["Title"]
-
-            cataDb[dbTitle] = {}
-            for key in row:
-                value = row[key]
-                if key == "" or row[key] == "":
-                    continue
-
-                cataDb[dbTitle][key] = value
-
-with open(f"DB/cata/statWeights.lua", "w", newline="") as out:
-    out.write("local _, addon = ...\n\n")
-
-    out.write('if addon.game ~= "CATA" then return end\n\n')
-
-    out.write("addon.statWeights = {\n")
-
-    for title in cataDb:
-        out.write(f"    ['{title}'] = {{\n")
-
-        for key in cataDb[title]:
-            if key in ["Title", "Class", "Kind", "Spec"]:
-                out.write(f"        ['{key}'] = \"{cataDb[title][key]}\",\n")
-            else:
-                out.write(f"        ['{key}'] = {cataDb[title][key]},\n")
-
-        out.write("    },\n")
-
-    out.write("}\n\n")
+        out.write("}\n\n")

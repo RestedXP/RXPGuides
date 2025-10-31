@@ -1,34 +1,28 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
-<Script file="Guides/Import.lua"/>
+    <Script file="Guides/Import.lua"/>
 
-<Script file="Guides/Retail/Snippits.lua"/>
+    <Script file="Guides/Retail/Snippits.lua"/>
 
-<!-- LEVELING -->
-<Script file="Guides/Retail/Leveling/Conventional/Starting Zones.lua"/>
-<!-- <Script file="Guides/Retail/Leveling/Conventional/Darkmoon Faire.lua"/> -->
-<Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Dailies.lua"/>
-<Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Jade Forest.lua"/>
-<!-- <Script file="Guides/Retail/Leveling/Remix/Legion/"/> -->
-<Script file="Guides/Retail/Leveling/Remix/Legion/Introduction.lua"/>
+    <!-- LEVELING -->
+    <Script file="Guides/Retail/Leveling/Conventional/Starting Zones.lua"/>
+    <!-- <Script file="Guides/Retail/Leveling/Conventional/Darkmoon Faire.lua"/> -->
+    <Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Dailies.lua"/>
+    <Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Jade Forest.lua"/>
+    <!-- <Script file="Guides/Retail/Leveling/Remix/Legion/"/> -->
+    <Script file="Guides/Retail/Leveling/Remix/Legion/Introduction.lua"/>
 
+    <!-- END GAME -->
+    <Script file="Guides/Retail/Endgame/War Within/Siren Isles.lua"/>
+    <Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
+    <Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
+    <Script file="Guides/Retail/Endgame/War Within/Undermine Campaign.Lua"/>
+    <Script file="Guides/Retail/Endgame/War Within/K'aresh Campaign.lua"/>
+    <!-- <Script file="Guides/Retail/Endgame/War Within/Visions of a Shadowed Sun.lua"/> -->
 
-<!-- END GAME -->
-<Script file="Guides/Retail/Endgame/War Within/Siren Isles.lua"/>
-<Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
-<Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
-<Script file="Guides/Retail/Endgame/War Within/Undermine Campaign.Lua"/>
-<Script file="Guides/Retail/Endgame/War Within/K'aresh Campaign.lua"/>
-<Script file="Guides/Retail/Endgame/War Within/Visions of a Shadowed Sun.lua"/>
+    <!-- COLLECTABLES -->
+    <Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>
+    <Script file="Guides/Retail/Collectables/Allied Races.Lua"/>
+    <Script file="Guides/Retail/Collectables/Lorewalking.Lua"/>
 
-
-
-<!-- COLLECTABLES -->
-<Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>
-<Script file="Guides/Retail/Collectables/Allied Races.Lua"/>
-<Script file="Guides/Retail/Collectables/Lorewalking.Lua"/>
-
-<!-- LOREMASTER -->
-
-
-
+    <!-- LOREMASTER -->
 </Ui>

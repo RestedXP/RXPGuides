@@ -2079,7 +2079,7 @@ step
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
-    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
@@ -2094,7 +2094,7 @@ step
     .goto The Barrens,43.9,24.4,40,0
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
-    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #softcore
@@ -5429,7 +5429,7 @@ step
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
-    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #xprate <2.1
@@ -5446,7 +5446,7 @@ step
     .goto The Barrens,43.9,24.4,40,0
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
-    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #xprate <2.1

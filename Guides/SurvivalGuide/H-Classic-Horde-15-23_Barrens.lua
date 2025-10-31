@@ -3645,10 +3645,21 @@ step
     .target +Ebru
     .dungeon WC
 step
+    #optional
+    #completewith EnterWC
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
+    .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,<1,1
+    .isOnQuest 962
+    .dungeon WC
+step
     #completewith EnterWC
     >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,1,1
     .isOnQuest 962
     .dungeon WC
 step
@@ -3686,13 +3697,26 @@ step
     .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
+    #optional
+    #completewith GlowingShard
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
+    .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,<1,1
+    .isOnQuest 962
+    .dungeon WC
+step
+    #optional
     #completewith GlowingShard
     >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,1,1
     .isOnQuest 962
     .dungeon WC
 step
+    #optional
     #completewith GlowingShard
     >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Hides|r |cRXP_WARN_for everybody|r
@@ -3726,7 +3750,6 @@ step
     .mob +Lord Serpentis
     .isOnQuest 914
     .dungeon WC
-    .dungeon WC
 step
     #requires Gems
     #completewith next
@@ -3737,24 +3760,41 @@ step
 step
     #label GlowingShard
     >>Once you have reached |cRXP_FRIENDLY_Naralex|r you will get attack by two waves of enemies and finally by |cRXP_ENEMY_Mutanus the Devourer|r
-    >>Kill him and loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r]
-    .collect 10441,1,6981,1 --Collect Glowing Shard (x1)
+    >>Kill him and loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] and use it to start the quest
+    .collect 10441,1 --Collect Glowing Shard (x1)
+    .accept 6981 >> Accept The Glowing Shard
+    .use 10441
     .mob Mutanus the Devourer
     .dungeon WC
 step
+    #optional
     #completewith DeviateRaptors
     >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     .complete 1491,1 --Wailing Essence (6)
     .isOnQuest 1491
     .dungeon WC
 step
-    #completewith DeviateRaptors
+    #optional
+    #completewith Ectoplasms
     >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
     .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,<1,1
     .isOnQuest 962
     .dungeon WC
 step
-    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r
+    #optional
+    #completewith Ectoplasms
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,1,1
+    .isOnQuest 962
+    .dungeon WC
+step
+    #optional
+    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r. . Loot them for their |cRXP_ENEMY_Hides|r
     .complete 1487,1 --Deviate Ravager (7)
     .mob +Deviate Ravager
     .complete 1487,2 --Deviate Viper (7)
@@ -3764,6 +3804,7 @@ step
     .complete 1487,4 --Deviate Dreadfang (7)
     .mob +Deviate Dreadfang
     .complete 1486,1 --Deviate Hide (20)
+    .disablecheckbox
     .isOnQuest 1487
     .isOnQuest 1486
     .dungeon WC
@@ -3781,7 +3822,7 @@ step
     .dungeon WC
 step
     #label DeviateRaptors
-    >>Kill |cRXP_ENEMY_Deviate Raptors|r
+    >>Kill |cRXP_ENEMY_Deviate Raptors|r. Loot them for their |cRXP_ENEMY_Hides|r
     .complete 1486,1 --Deviate Hide (20)
     .mob Deviate Ravager
     .mob Deviate Viper
@@ -3790,12 +3831,7 @@ step
     .isOnQuest 1486
     .dungeon WC
 step
-    #completewith next
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    .complete 962,1 --Serpentbloom (10)
-    .isOnQuest 962
-    .dungeon WC
-step
+    #label Ectoplasms
     >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     .complete 1491,1 --Wailing Essence (6)
     .mob Devouring Ectoplasm
@@ -3804,8 +3840,37 @@ step
     .isOnQuest 1491
     .dungeon WC
 step
+    #optional
+    #hardcore
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
+    .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,<1,1
+    .isOnQuest 962
+    .dungeon WC
+step
+    #hardcore
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,1,1
+    .isOnQuest 962
+    .dungeon WC
+step
+    #optional
+    #softcore
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
+    .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,<1,1
+    .isOnQuest 962
+    .dungeon WC
+step
+    #softcore
     >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
+    .skill herbalism,1,1
     .isOnQuest 962
     .dungeon WC
 step

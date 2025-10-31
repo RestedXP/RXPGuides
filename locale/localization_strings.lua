@@ -96,14 +96,14 @@ C["Leatrix Maps"] = "Leatrix Maps"
 C["Narcissus"] = "Narcissus"
 
 --InventoryManager.lua
-L["RXPGuides: |c%sSorting arrows/bullets|r"] = "RXPGuides: |c%sSorting arrows/bullets|r"
-L["RXPGuides: |c%sInventory is full, sorting arrows/bullets|r"] = "RXPGuides: |c%sInventory is full, sorting arrows/bullets|r"
-L["%s: |c%sSet %s as useful|r"] = "%s: |c%sSet %s as useful|r"
-L["%s: |c%sSet %s as junk|r"] = "%s: |c%sSet %s as junk|r"
-L["RXPGuides: |c%sDeleting %sx%s|r"] = "RXPGuides: |c%sDeleting %sx%s|r"
-L["RXPGuides: |c%sInventory is full, deleting %sx%s|r"] = "RXPGuides: |c%sInventory is full, deleting %sx%s|r"
+L["|c%sSorting arrows/bullets|r"] = "|c%sSorting arrows/bullets|r"
+L["|c%sInventory is full, sorting arrows/bullets|r"] = "|c%sInventory is full, sorting arrows/bullets|r"
+L["|c%sSet %s as useful|r"] = "|c%sSet %s as useful|r"
+L["|c%sSet %s as junk|r"] = "|c%sSet %s as junk|r"
+L["|c%sDeleting %sx%s|r"] = "|c%sDeleting %sx%s|r"
+L["|c%sInventory is full, deleting %sx%s|r"] = "|c%sInventory is full, deleting %sx%s|r"
 L["Delete Cheapest Junk Item"] = "Delete Cheapest Junk Item"
-L["RXPGuides: |c%sSold junk items for|r %s"] = "RXPGuides: |c%sSold junk items for|r %s"
+L["|c%sSold junk items for|r %s"] = "|c%sSold junk items for|r %s"
 
 --LevelingTracker.lua
 L["RestedXP Leveling Report"] = "RestedXP Leveling Report"

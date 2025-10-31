@@ -1,7 +1,8 @@
 local addonName, addon = ...
 
-local ssplit, strjoin, ipairs, unpack, next = strsplittable, strjoin, ipairs,
-                                              unpack, next
+local ssplit, strjoin, ipairs, unpack, next = strsplittable, strjoin, ipairs, unpack, next
+
+addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 addon.locale = {}
 

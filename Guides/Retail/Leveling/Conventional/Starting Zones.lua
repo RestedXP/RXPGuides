@@ -18,6 +18,426 @@ RXPGuides.RegisterGuide([[
 -- =======  NEUTRAL ZONES ==========
 -- =================================
 
+--New Exiles Reach
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) New Exiles Reach
+#internal
+
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .accept 56775 >>Accept Warming Up
+    .target Lady Jaina Proudmoore.complete 56775,1 --1/1 Destroy a Combat Dummy
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Cole|r
+    .accept 58209 >>Accept Stand Your Ground
+    .target Private Cole.complete 58209,1 --1/1 Spar with Private Cole
+
+    .accept 58208 >>Accept Brace for Impact
+
+step
+    .goto 1409,61.46,82.61
+    .complete 54951,3 --1/1 First Aid Kit used on Austin Huxworth
+step
+    .goto 1409,61.50,82.26
+    .complete 54951,1 --1/1 First Aid Kit used on Bjorn Stouthands
+step
+    .goto 1409,61.73,83.36
+    .complete 54951,2 --1/1 First Aid Kit used on Kee-La
+step
+    .goto 1409,61.81,82.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 54951 >>Turn in Emergency First Aid
+    .target Lady Jaina Proudmoore
+    .accept 54952 >>Accept Finding the Lost Expedition
+step
+    .goto 1409,58.66,76.00
+    .complete 54952,1 --Travel north to find any expedition survivors
+step
+    .goto 1409,58.41,74.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .turnin 54952 >>Turn in Finding the Lost Expedition
+    .target Captain Garrick
+    .accept 55174 >>Accept Cooking Meat
+step
+    .goto 1409,59.45,72.79
+    .complete 55174,1 --5/5 Raw Meat collected from wildlife
+step
+    .goto 1409,58.38,74.71
+    .complete 55174,2 --1/1 Cook the meat on the campfire
+step
+    .goto 1409,58.37,74.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaria|r
+    .turnin 55174 >>Turn in Cooking Meat
+    .target Alaria
+step
+    .goto 1409,58.20,74.54
+    .accept 55173 >>Accept Northbound
+step
+    .goto 1409,62.69,69.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .turnin 55173 >>Turn in Northbound
+    .target Austin Huxworth
+    .accept 59342 >>Accept Taming the Wilds
+step
+    .goto 1409,62.94,68.99
+    .complete 59342,1 --1/1 Tamed Beast learned from Austin
+step
+    .goto 1409,64.11,68.20
+    .complete 59342,2 --1/1 Any wildlife beast tamed
+step
+    .goto 1409,62.71,69.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .turnin 59342 >>Turn in Taming the Wilds
+    .target Austin Huxworth
+    .accept 55186 >>Accept Down with the Quilboar
+    .accept 55184 >>Accept Quillboar Shadow Magic
+step
+    .goto 1409,59.47,62.26
+    >>Kill |cRXP_ENEMY_Quilboar|r
+    .complete 55184,1 --7/7 Quilboar slain
+    .mob Quilboar
+step
+    .goto 1409,58.22,61.30
+    >>Kill |cRXP_ENEMY_Geolord Grek'og|r
+    .complete 55186,1 --1/1 Geolord Grek'og slain
+    .mob Geolord Grek'og
+step
+    .goto 1409,56.24,59.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .turnin 55186 >>Turn in Quillboar Shadow Magic
+    .target Austin Huxworth
+    .turnin 55184 >>Turn in Quillboar Shadow Magic
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r
+    .accept 55193 >>Accept The Scout-o-Matic 5000
+    .target Lindie Springstock
+step
+    .goto 1409,55.04,54.20
+    .complete 55193,1 --1/1 Use Scout-o-Matic 5000 to scout the area
+step
+    .goto 1409,56.17,58.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r
+    .turnin 55193 >>Turn in The Scout-o-Matic 5000
+    .target Lindie Springstock
+step
+    .goto 1409,56.16,58.94
+    .accept 56034 >>Accept Re-sizing the Situation
+step
+    .goto 1409,55.86,59.21
+    .complete 56034,1 --3/3 Re-Sizer v9.0.1 tested on Wandering Boars
+step
+    .goto 1409,56.24,59.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 56034 >>Turn in Re-sizing the Situation
+    .target Lady Jaina Proudmoore
+    .accept 55879 >>Accept Ride of the Scientifically Enhanced Boar
+step
+    .goto 1409,56.51,58.49
+    .complete 55879,1 --1/1 Ride the Giant Boar
+step
+    .goto 1409,51.67,53.08
+    >>Kill |cRXP_ENEMY_Monstrous Cadaver|r
+    .complete 55879,2 --8/8 Monstrous Cadaver slain
+    .mob Monstrous Cadaver
+step
+    .goto 1409,51.80,52.91
+    >>Kill |cRXP_ENEMY_Torgok|r
+    .complete 55879,3 --1/1 Torgok slain
+    .mob Torgok
+step
+    .goto 1409,52.59,53.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
+    .turnin 55879 >>Turn in Ride of the Scientifically Enhanced Boar
+    .target Wrathion
+step
+    .goto 1409,52.26,55.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .accept 55194 >>Accept Stocking Up on Supplies
+    .target Captain Garrick
+step
+    .goto 1409,52.24,55.35
+    .complete 55194,1 --Any item purchased from Quartermaster Richter
+    .complete 55194,2 --Any item sold to Quartermaster Richter
+step
+    .goto 1409,52.27,55.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .turnin 55194 >>Turn in Stocking Up on Supplies
+    .target Captain Garrick
+step
+    .goto 1409,53.02,55.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bjorn Stouthands|r
+    .accept 55965 >>Accept Westward Bound
+    .target Bjorn Stouthands
+step
+    .goto 1409,51.19,59.46
+    .turnin 55965 >>Turn in Westward Bound
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaria|r
+    .accept 55639 >>Accept Who Lurks in the Pit
+    .target Alaria
+step
+    .goto 1409,50.84,58.29
+    .complete 55639,1 --5/5 Trapped Expedition Member rescued from cocoons
+step
+    .goto 1409,47.95,60.22
+    .complete 55639,2 --1/1 Defeat Hrun to rescue Ralia Dreamchaser
+    .complete 55639,3 --1/1 Ride Ralia Dreamchaser to escape
+step
+    .goto 1409,52.24,55.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .turnin 55639 >>Turn in Who Lurks in the Pit
+    .target Captain Garrick
+    .accept 85678 >>Accept Repair Yourself
+step
+    .goto 1409,52.25,55.30
+
+    .complete 85678,1 --1/1 Speak With Quartmaster Richter to Repair All Items
+step
+    .goto 1409,52.26,55.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .turnin 85678 >>Turn in Repair Yourself
+    .target Captain Garrick
+step
+    .goto 1409,53.57,52.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r
+    .accept 55196 >>Accept The Harpy Problem
+    .target Henry Garrick
+step
+    .goto 1409,58.19,50.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lightspawn|r
+    .accept 54933 >>Accept Freeing the Light
+    .target Lightspawn
+step
+    .goto 1409,57.48,49.72
+    .complete 54933,1 --1/1 First necrotic energy dispersed
+step
+    .goto 1409,58.38,49.20
+    .complete 54933,2 --1/1 Second necrotic energy dispersed
+step
+    .goto 1409,58.94,50.53
+    .complete 54933,3 --1/1 Third necrotic energy dispersed
+step
+    .goto 1409,57.87,51.03
+    .complete 54933,4 --1/1 Fourth necrotic energy dispersed
+step
+    .goto 1409,58.20,50.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lightspawn|r
+    .turnin 54933 >>Turn in Freeing the Light
+    .target Lightspawn
+step
+    .goto 1409,56.82,46.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r
+    .turnin 55196 >>Turn in The Harpy Problem
+    .target Henry Garrick
+    .accept 55763 >>Accept The Rescue of Meredy Huntswell
+    .accept 55881 >>Accept Purge the Totems
+step
+    .goto 1409,57.00,46.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kee-La|r
+    .accept 55764 >>Accept Harpy Culling
+    .target Kee-La
+step
+    .goto 1409,58.44,39.96
+    >>Kill |cRXP_ENEMY_Harpies and cohorts|r
+    .complete 55764,1 --10/10 Harpies and cohorts slain
+    .mob Harpies and cohorts
+step
+    .goto 1409,57.13,42.29
+    .complete 55881,1 --5/5 Harpy Totems burned
+step
+    .goto 1409,54.32,41.42
+    .complete 55763,1 --1/1 Meredy Huntswell rescued
+step
+    .goto 1409,56.88,46.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r
+    .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
+    .target Meredy Huntswell
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kee-La|r
+    .turnin 55764 >>Turn in Harpy Culling
+    .target Kee-La
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r
+    .turnin 55881 >>Turn in Purge the Totems
+    .target Henry Garrick
+    .accept 55882 >>Accept Message to Base
+step
+    .goto 1409,52.29,55.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .turnin 55882 >>Turn in Message to Base
+    .target Captain Garrick
+step
+    .goto 1409,52.57,55.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .accept 59355 >>Accept A Hunter's Trap
+    .target Austin Huxworth
+step
+    .goto 1409,52.34,55.50
+    .complete 59355,1 --1/1 Ice mote received from Meredy Huntswell
+step
+    .goto 1409,52.18,53.17
+    .complete 59355,2 --1/1 Rusted Chain
+step
+    .goto 1409,51.85,51.80
+    .complete 59355,3 --1/1 Old Spring
+step
+    .goto 1409,52.54,55.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .turnin 59355 >>Turn in A Hunter's Trap
+    .target Austin Huxworth
+    .accept 59356 >>Accept Hunting the Stalker
+step
+    .goto 1409,52.46,54.89
+
+    .complete 59356,1 --1/1 Freezing trap used within Ogre Ruins to capture stalker
+step
+    .goto 1409,52.54,55.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .turnin 59356 >>Turn in Hunting the Stalker
+    .target Austin Huxworth
+    .accept 60168 >>Accept The Art of Taming
+step
+    .goto 1409,52.00,55.18
+    .complete 60168,1 --Use "Dismiss Pet" to temporarily dismiss your current pet
+step
+    .goto 1409,52.70,54.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin to summon and tame your new pet|r
+    .complete 60168,2 --Speak with Austin to summon and tame your new pet
+    .target Austin to summon and tame your new pet
+step
+    .goto 1409,52.52,55.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin to learn about pet stables|r
+    .complete 60168,3 --1/1 Speak with Austin to learn about pet stables
+    .target Austin to learn about pet stables
+step
+    .goto 1409,52.58,55.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r
+    .turnin 60168 >>Turn in The Art of Taming
+    .target Austin Huxworth
+step
+    .goto 1409,52.30,55.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .accept 56344 >>Accept To Darkmaul Citadel
+    .target Captain Garrick
+step
+    .goto 1409,48.91,49.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 56344 >>Turn in To Darkmaul Citadel
+    .target Lady Jaina Proudmoore
+    .accept 55981 >>Accept Right Beneath Their Eyes
+step
+    .goto 1409,49.00,49.26
+    .complete 55981,1 --1/1 Ask Meredy to perform ogre transformation spell
+step
+    .goto 1409,45.60,44.59
+    .complete 55981,2 --Enter Darkmaul Citadel
+step
+    .goto 1409,46.33,37.77
+    .complete 55981,3 --Find the ogre cooking area
+step
+    .goto 1409,46.00,37.56
+    .complete 55981,4 --Type /wave to Gor'groth.
+step
+    .goto 1409,41.14,33.20
+    .complete 55981,6 --Reach the citadel entrance
+step
+    .goto 1409,40.16,32.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 55981 >>Turn in Right Beneath Their Eyes
+    .target Lady Jaina Proudmoore
+    .accept 55990 >>Accept Controlling their Stones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .accept 55989 >>Accept Catapult Destruction
+    .target Captain Garrick
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r
+    .accept 55988 >>Accept Like Ogres to the Slaughter
+    .target Henry Garrick
+step
+    .goto 1409,44.12,37.08
+    .complete 55990,2 --1/1 Wug's ward stone recovered
+step
+    .goto 1409,44.09,42.61
+    .complete 55989,1 --4/4 Catapults destroyed
+step
+    .goto 1409,43.88,41.59
+    >>Kill |cRXP_ENEMY_Ogres|r
+    .complete 55988,1 --8/8 Ogres slain
+    .mob Ogres
+step
+    .goto 1409,43.82,41.23
+    .complete 55990,3 --1/1 Grunk's ward stone recovered
+step
+    .goto 1409,47.31,34.66
+    .complete 55990,1 --1/1 Jugnug's ward stone recovered
+step
+    .goto 1409,40.26,32.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r
+    .turnin 55989 >>Turn in Catapult Destruction
+    .target Captain Garrick
+step
+    .goto 1409,40.31,32.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r
+    .turnin 55988 >>Turn in Like Ogres to the Slaughter
+    .target Henry Garrick
+step
+    .goto 1409,40.00,32.08
+    .complete 55990,4 --3/3 Disable runes holding Captain Kelra
+step
+    .goto 1409,39.98,32.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Kelra|r
+    .turnin 55990 >>Turn in Controlling their Stones
+    .target Captain Kelra
+    .accept 55992 >>Accept Dungeon: Darkmaul Citadel.complete 55992,1 --Use the Group Finder to enter the dungeon, "Darkmaul Citadel".complete 55992,2 --1/1 Gor'groth's final ritual stopped
+step
+    .goto 1409,39.67,32.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 55992 >>Turn in Dungeon: Darkmaul Citadel
+    .target Lady Jaina Proudmoore
+    .accept 55991 >>Accept An End to Beginnings
+step
+    .goto 1409,39.98,32.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos to travel to the Dragon Isles|r
+    .complete 55991,1 --1/1 Speak to Kalecgos to travel to the Dragon Isles
+    .target Kalecgos to travel to the Dragon Isles
+step
+    .goto 2022,81.98,31.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    .turnin 55991 >>Turn in An End to Beginnings
+    .target Kalecgos
+    .accept 87547 >>Accept What's Your Specialty?
+step
+    .goto 2022,82.09,31.66
+    .complete 87547,1 --1/1 Activate a combat specialization
+step
+    .goto 2022,81.98,31.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    .turnin 87547 >>Turn in What's Your Specialty?
+    .target Kalecgos
+    .accept 87555 >>Accept Home Is Where the Hearth Is
+    .complete 87555,1 --1/1 Ride any mount from your mount collection
+step
+    .goto 2022,81.33,31.83
+    .home >>Set your Hearthstone to Wild Coast
+step
+    .goto 2022,81.33,31.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Happy Hal to get and bind your Hearthstone|r
+    .complete 87555,2 --1/1 Speak with Happy Hal to get and bind your Hearthstone
+    .target Happy Hal to get and bind your Hearthstone
+step
+    .goto 2022,81.96,31.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
+    .turnin 87555 >>Turn in Home Is Where the Hearth Is
+    .target Kalecgos
+    .accept 87562 >>Accept Aiding the Dragon Isles
+step
+    .goto 2022,82.12,31.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toddy Whiskers|r
+    .turnin 87562 >>Turn in Aiding the Dragon Isles
+    .target Toddy Whiskers
+
+]])
+
 --Beginners Exile's Reach
 RXPGuides.RegisterGuide([[
 #retail
@@ -6220,7 +6640,7 @@ step
     .complete 58903,1 << Horde --1/1 Speak with Highlord Darion Mograine
     .target Highlord Darion Morgraine
     .isQuestTurnedIn 58877 --x New Type of DK Check
-step 
+step
     .goto 1602,49.93,42.41  --clickradius
     .goto 1602,49.96,39.08 --npc location
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Death Gate|r.
@@ -6353,6 +6773,253 @@ step
 --     .target Dungar Longdrink
 --     .isQuestTurnedIn 58877 --x New DK Check
 --     .nodmf
+]])
+
+--Arathi Highlands Returning Player
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#name a) Arathi Highlands Returning Player
+
+step
+    .goto 2451,69.82,40.76 << Horde
+    .goto 2451,69.97,40.66 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .accept 90882 >>Accept Gnoll Way
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    #loop
+    .goto 2451,70.16,37.58,30,0
+    .goto 2451,68.42,36.8,30,0
+    .goto 2451,68.57,34.15,30,0
+    .goto 2451,68.22,32.18,30,0
+    .goto 2451,69.51,35.89,30,0
+    >>Kill |cRXP_ENEMY_Gnolls|r and |cRXP_ENEMY_Hyena|r
+    .complete 90882,1 --10/10 Gnoll slain
+    .mob Gnoll Bowblaster
+    .mob Gnoll Ripper
+    .mob Scavenging Hyena
+step
+    .goto 2451,69.82,40.74 << Horde
+    .goto 2451,69.97,40.65 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .turnin 90882 >>Turn in Gnoll Way
+    .accept 90883 >>Accept To Go'shek Farm
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    .goto 2451,69.82,40.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .turnin 90882 >>Turn in Gnoll Way
+    .accept 90883 >>Accept To Go'shek Farm
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    .goto 2451,56.43,59.53
+    >>Use any Flying Mount
+    .complete 90883,1 --1/1 Ride a flying mount
+    .macro Random Mount,413588 >>/use 150544
+step
+    .goto 2451,56.43,59.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Bruvk|r 
+    .turnin 90883 >>Turn in To Go'shek Farm
+    .target Farmer Bruvk
+    .accept 90885 >>Accept My Beautiful Pumpkins
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r
+    .accept 90887 >>Accept Farmer's Nemesis
+    .goto 2451,56.45,59.71
+    .target +Lady Jaina Proudmoore
+    .accept 90886 >>Accept Best Laid Plans of Kobolds and Ogres
+    .goto 2451,56.35,59.57
+    .target +Thrall
+step
+    #completewith Prized Pumpkin
+    >>Kill |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r. Loot them for |T237132:0|t[|cRXP_LOOT_Poorly Written Plans|r].
+    .complete 90886,1 --7/7 Poorly Written Plans
+    .mob Kobold Pillager
+    .mob Kobold Firetender
+    .mob Ogre Destroyer
+step
+    .goto 2451,53.98,56.86
+    >>Kill |cRXP_ENEMY_Runk|r
+    .complete 90887,1 --1/1 Runk slain
+    .mob Runk
+step
+    .goto 2451,53.06,59.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,1 --4/4 Prized Pumpkin recovered
+step
+    .goto 2451,51.44,58.8
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,2 --4/4 Prized Pumpkin recovered
+step
+    .goto 2451,52.73,60.93
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,3 --4/4 Prized Pumpkin recovered
+step
+    #label Prized Pumpkin
+    .goto 2451,53.96,60.07
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,4 --4/4 Prized Pumpkin recovered
+step
+    #loop
+    .goto 2451,54.15,63.12,40,0
+    .goto 2451,50.69,62.87,40,0
+    .goto 2451,50.98,57.75,40,0
+    .goto 2451,53.35,55.23,40,0
+    .goto 2451,55.06,59.48,40,0
+    >>Kill |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r. Loot them for |T237132:0|t[|cRXP_LOOT_Poorly Written Plans|r].
+    .complete 90886,1 --7/7 Poorly Written Plans
+    .mob Kobold Pillager
+    .mob Kobold Firetender
+    .mob Ogre Destroyer
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 90885 >>Turn in My Beautiful Pumpkins
+    .turnin 90886 >>Turn in Best Laid Plans of Kobolds and Ogres
+    .goto 2451,56.33,59.55
+    .target +Thrall
+    .turnin 90887 >>Turn in Farmer's Nemesis
+    .accept 90888 >>Accept Saving Stromgarde Keep
+    .goto 2451,56.46,59.69
+    .target +Lady Jaina Proudmoore
+step 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Colvin|r, |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r |cRXP_WARN_on the wall|r.
+    .accept 92028 >>Accept Pardon the Interruption
+    .goto 2451,19.59,57.44
+    .target +Sergeant Colvin
+    .turnin 90888 >>Turn in Saving Stromgarde Keep
+    .accept 90895 >>Accept Catapult Bombardment
+    .goto 2451,19.46,57.43
+    .target +Lady Jaina Proudmoore
+    .accept 90893 >>Accept Repelling the Siege
+    .goto 2451,19.38,57.44
+    .target +Thrall
+step << Horde
+    .goto 2451,20.94,59.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
+    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
+    .target Fightbot Version 11.2.7
+step << Horde
+    .goto 2451,20.75,61.25
+    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
+step << Horde
+    .goto 2451,20.84,59.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
+    .turnin 92028 >>Turn in Pardon the Interruption
+    .target Cindy Springstock
+step
+    #completewith Catapults destroyed
+    >>Kill |cRXP_ENEMY_Ogres|r, |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Gnolls|r.
+    *>>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Objects|r
+    .complete 90893,1,100 --Repel the Ogre Siege (100%)
+    .mob Ogre Basher
+    .mob Kobold Waxmancer
+    .mob Gnoll Prowler
+    .mob Ettin Crusher
+step
+    .goto 2451,21.68,51.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,1 --4/4 Catapults destroyed
+step
+    .goto 2451,19,50.18
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,2 --4/4 Catapults destroyed
+step
+    .goto 2451,18.61,45.59
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,3 --4/4 Catapults destroyed
+step
+    #label Catapults destroyed
+    .goto 2451,21.52,46.06
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,4 --4/4 Catapults destroyed
+step
+    #loop
+    .goto 2451,22.77,49.17,40,0
+    .goto 2451,23.63,44.36,40,0
+    .goto 2451,17.62,46.13,40,0
+    .goto 2451,18.61,52.66,40,0
+    .goto 2451,22.23,52.93,40,0
+    >>Kill |cRXP_ENEMY_Ogres|r, |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Gnolls|r
+    .complete 90893,1,100 --Repel the Ogre Siege (100%)
+    .mob Ogre Basher
+    .mob Kobold Waxmancer
+    .mob Gnoll Prowler
+    .mob Ettin Crusher
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r
+    .turnin 90895 >>Turn in Catapult Bombardment
+    .goto 2451,24.67,37.11
+    .target +Lady Jaina Proudmoore
+    .turnin 90893 >>Turn in Repelling the Siege
+    .accept 90896 >>Accept One Last Ogre
+    .goto 2451,24.6,37.05
+    .target +Thrall
+step
+    #completewith next
+    #label Ro'grok
+    .goto 2451,27.91,31.76,10,0
+    >>Kill |cRXP_ENEMY_Ro'grok|r
+    .complete 90896,1 --1/1 Ro'grok slain
+    .mob Ro'grok
+step
+    #completewith Ro'grok
+    .goto 2451,28.85,30.91,40 >>Enter the Building
+step
+    #requires Ro'grok
+    .goto 2451,28.85,30.91
+    >>Kill |cRXP_ENEMY_Ro'grok|r
+    .complete 90896,1 --1/1 Ro'grok slain
+    .mob Ro'grok
+step << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 90896 >>Turn in One Last Ogre
+    .accept 90898 >>Accept Back to Hammerfall
+    .goto 2451,24.59,37.07
+    .target Thrall
+step << Alliance
+    .goto 2451,20.94,59.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
+    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
+    .target Fightbot Version 11.2.7
+step << Alliance
+    .goto 2451,20.75,61.25
+    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
+step << Alliance
+    .goto 2451,20.84,59.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
+    .turnin 92028 >>Turn in Pardon the Interruption
+    .target Cindy Springstock
+step << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 90896 >>Turn in One Last Ogre
+    .goto 2451,24.59,37.07
+    .target +Thrall
+    .accept 90897 >>Accept Back to Stromgarde
+    .goto 2451,24.67,37.12
+    .target +Lady Jaina Proudmoore
+step << Horde
+    .goto 2451,69.20,34.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 90898 >>Turn in Back to Hammerfall
+    .target Thrall
+    .accept 90911 >>Accept Your Next Adventure
+step << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .goto 2451,19.54,61.59
+    .turnin 90897 >>Turn in Back to Stromgarde
+    .accept 90911 >>Accept Your Next Adventure
+    .target Lady Jaina Proudmoore
 ]])
 
 -- =================================

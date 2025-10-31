@@ -123,9 +123,9 @@ local function SortQuiver()
     local colour = addon.guideTextColors["RXP_WARN_"]
     if inventoryManager.manualDelete then
         inventoryManager.manualDelete = false
-        print(format(L("RXPGuides: |c%sSorting arrows/bullets|r"),colour))
+        addon.comms.PrettyPrint(L("|c%sSorting arrows/bullets|r"), colour)
     elseif t - sortTimer > 3 then
-        print(format(L("RXPGuides: |c%sInventory is full, sorting arrows/bullets|r"),colour))
+        addon.comms.PrettyPrint(L("|c%sInventory is full, sorting arrows/bullets|r"), colour)
     end
     sortTimer = t
 
@@ -198,9 +198,9 @@ local function ToggleJunk(id,bag,slot)
     local colour = addon.guideTextColors["RXP_WARN_"]
     RXPCData.discardPile[id] = not junk
     if junk then
-        print(format(L("%s: |c%sSet %s as useful|r"),addonName,colour,link))
+        addon.comms.PrettyPrint(L("|c%sSet %s as useful|r"), colour, link)
     else
-        print(format(L("%s: |c%sSet %s as junk|r"),addonName,colour,link))
+        addon.comms.PrettyPrint(L("|c%sSet %s as junk|r"), colour, link)
     end
     inventoryManager.UpdateAllBags()
     addon:SendEvent("RXP_JUNK", id, bag, slot)
@@ -311,9 +311,9 @@ local function DeleteItems()
         local _,stack,_,_,_,_,link = GetContainerItemInfo(inventoryManager.deleteBag,inventoryManager.deleteSlot)
         if link then
             if inventoryManager.manualDelete then
-                print(format(L("RXPGuides: |c%sDeleting %sx%s|r"),colour,link,stack))
+               addon.comms.PrettyPrint(L("|c%sDeleting %sx%s|r"),colour,link,stack)
             else
-                print(format(L("RXPGuides: |c%sInventory is full, deleting %sx%s|r"),colour,link,stack))
+                addon.comms.PrettyPrint(L("|c%sInventory is full, deleting %sx%s|r"),colour,link,stack)
             end
         end
         inventoryManager.deleteBag = nil
@@ -709,7 +709,7 @@ local function ProcessJunk(sellWares,override)
             local value = GetMoney() - inventoryManager.sellGoods
             local colour = addon.guideTextColors["RXP_WARN_"]
             if value > 0 then
-                print(format(L("RXPGuides: |c%sSold junk items for|r %s"),colour,GetCoinTextureString(value)))
+                addon.comms.PrettyPrint(L("|c%sSold junk items for|r %s"), colour, GetCoinTextureString(value))
             end
             inventoryManager.sellGoods = false
         end

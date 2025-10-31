@@ -1,7 +1,7 @@
 local addonName, addon = ...
 local L = addon.locale.Get
 
-if not (addon.game == "CLASSIC" or addon.game == "CATA") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "CATA") then return end
 
 local locale = GetLocale()
 
@@ -562,7 +562,7 @@ local function TooltipSetItem(tooltip, ...)
                             tinsert(lines, lineText)
                         elseif statsData['SlotCompared'] == _G.INVSLOT_OFFHAND and suffix == "OH" then
                             tinsert(lines, lineText)
-                        -- else -- ignore cross-hand comparisons in tooltip
+                            -- else -- ignore cross-hand comparisons in tooltip
                         end
                     else
                         -- Add a comparison line for every statComparison, should be 1 except for 1H weapons
@@ -753,9 +753,7 @@ local function getSpec()
     if guessedSpec.index then
         specName = SPEC_MAP[addon.player.class][guessedSpec.index]
 
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("ItemUpgrades, spec guessed as %s", specName)
-        end
+        addon.comms.PrettyDebug("ItemUpgrades, spec guessed as %s", specName)
     end
 
     -- If calculated spec has no weights, then class is unsupported
@@ -786,17 +784,13 @@ function addon.itemUpgrades:ActivateSpecWeights()
 
         -- Chosen talents don't match itemUpgradeSpec
         -- Leave alone as is, don't spam user if there's a mismatch
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
-                                    addon.settings.profile.itemUpgradeSpec, spec)
-        end
+        addon.comms.PrettyDebug("ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
+                                addon.settings.profile.itemUpgradeSpec, spec)
     end
 
     if not addon.settings.profile.itemUpgradeSpec then return end
 
-    if addon.settings.profile.debug then
-        addon.comms.PrettyPrint("Activating spec weights for %s", addon.settings.profile.itemUpgradeSpec)
-    end
+    addon.comms.PrettyDebug("Activating spec weights for %s", addon.settings.profile.itemUpgradeSpec)
 
     session.activeStatWeights = session.specWeights[addon.settings.profile.itemUpgradeSpec]
 
@@ -916,10 +910,8 @@ local function CalculateDPSWeight(itemData, stats, itemEquipLoc)
     if itemData.itemEquipLoc == "INVTYPE_SHIELD" then return end
 
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
-        if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("itemUpgrades CalculateDPSWeight, Speed property required %s",
-                                    itemData and itemData['itemLink'])
-        end
+        addon.comms.PrettyDebug("itemUpgrades CalculateDPSWeight, Speed property required %s",
+                                itemData and itemData['itemLink'])
         return nil
     end
 
@@ -1213,9 +1205,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 end
 
 function addon.itemUpgrades:CalculateWeaponWeight(itemData, slotComparisonId)
-    if not itemData.dpsWeights then
-        return -1
-    end
+    if not itemData.dpsWeights then return -1 end
 
     for suffix, dpsData in pairs(itemData.dpsWeights or {}) do
         if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then

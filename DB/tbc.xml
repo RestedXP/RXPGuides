@@ -6,6 +6,7 @@
     <Script file="DB/tbc/quest.lua"/>
     <Script file="DB/tbc/spells.lua"/>
     <Script file="DB/tbc/db.lua"/>
+    <Script file="DB/tbc/statWeights.lua"/>
 
     <Script file="DB/questDB.lua"/>
 

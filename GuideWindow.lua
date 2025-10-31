@@ -333,91 +333,102 @@ local hiddenFramePool = {}
 
 function addon.RegisterGeneratedSteps()
     local i = 1
-    local stepUnitscan, stepMobs, stepTargets = {},{},{}
-    for _,context in pairs(addon.generatedSteps) do
-    for _,step in ipairs(context) do
-    for _,element in ipairs(step.elements or {}) do
-        if element.tag then
-            local events = element.event or addon.functions.events[element.tag]
-            local container = hiddenFramePool[i] or CreateFrame("Frame",nil,addon.RXPFrame)
-            hiddenFramePool[i] = container
-            i = i + 1
-            container:Show()
-            container.callback = addon.functions[element.tag]
-            if type(events) == "string" then
-                if events == "OnUpdate" then
-                    container:SetScript("OnUpdate", container.callback)
-                else
-                    container:RegisterEvent(events)
-                    container:SetScript("OnEvent",
-                                        CurrentStepFrame.EventHandler)
-                end
-            elseif type(events) == "table" then
-                for _, event in ipairs(events) do
-                    if event == "OnUpdate" then
-                        container:SetScript("OnUpdate",
-                                            container.callback)
-                    else
-                        container:RegisterEvent(event)
-                        container:SetScript("OnEvent",
-                                            CurrentStepFrame.EventHandler)
+    local stepUnitscan, stepMobs, stepTargets = {}, {}, {}
+    local events, container
+
+    for generatedKind, context in pairs(addon.generatedSteps) do
+        for _, step in ipairs(context) do
+            for _, element in ipairs(step.elements or {}) do
+                if element.tag then
+                    events = element.event or addon.functions.events[element.tag]
+                    container = hiddenFramePool[i] or CreateFrame("Frame", nil, addon.RXPFrame)
+
+                    hiddenFramePool[i] = container
+                    i = i + 1
+
+                    container:Show()
+                    container.callback = addon.functions[element.tag]
+
+                    if type(events) == "string" then
+                        if events == "OnUpdate" then
+                            container:SetScript("OnUpdate", container.callback)
+                        else
+                            container:RegisterEvent(events)
+                            container:SetScript("OnEvent", CurrentStepFrame.EventHandler)
+                        end
+                    elseif type(events) == "table" then
+                        for _, event in ipairs(events) do
+                            if event == "OnUpdate" then
+                                container:SetScript("OnUpdate", container.callback)
+                            else
+                                container:RegisterEvent(event)
+                                container:SetScript("OnEvent", CurrentStepFrame.EventHandler)
+                            end
+                        end
                     end
-                end
-            end
-            container.element = element
-            element.container = container
-            if element.unitscan then
-                for _, t in ipairs(element.unitscan) do
-                    tinsert(stepUnitscan, addon.GetCreatureName(t))
-                end
-            end
-            if element.mobs then
-                for _, t in ipairs(element.mobs) do
-                    tinsert(stepMobs, addon.GetCreatureName(t))
-                end
-            end
-            if element.targets then
-                for _, t in ipairs(element.targets) do
-                    tinsert(stepTargets, addon.GetCreatureName(t))
+
+                    container.element = element
+                    element.container = container
+
+                    -- Crudely disable until coordinate based proxmity is implemented
+                    -- Otherwise Dangerous Mobs bloat Active Targets as a visual macro for all rares/mobs in a zone
+                    if generatedKind ~= "dangerousMobs" then
+                        if element.unitscan then
+                            for _, t in ipairs(element.unitscan) do
+                                tinsert(stepUnitscan, addon.GetCreatureName(t))
+                            end
+                        end
+
+                        if element.mobs then
+                            for _, t in ipairs(element.mobs) do
+                                tinsert(stepMobs, addon.GetCreatureName(t))
+                            end
+                        end
+
+                        if element.targets then
+                            for _, t in ipairs(element.targets) do
+                                tinsert(stepTargets, addon.GetCreatureName(t))
+                            end
+                        end
+                    end
                 end
             end
         end
     end
-    end
-    end
 
-    -- Update targets for macro
     addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
     addon.targeting:UpdateTargetList(stepTargets, true)
+    addon.targeting:UpdateUnitList()
 
     -- Don't process new targets if targeting disabled
-    if addon.settings.profile.enableTargetAutomation then
-        addon.targeting:CheckNameplates()
-    end
+    if addon.settings.profile.enableTargetAutomation then addon.targeting:CheckNameplates() end
 
-    for j = i,#hiddenFramePool do
-        local container = hiddenFramePool[j]
+    for j = i, #hiddenFramePool do
+        container = hiddenFramePool[j]
+
         container:Hide()
-        container:SetScript("OnUpdate",nil)
-        container:SetScript("OnEvent",nil)
+        container:SetScript("OnUpdate", nil)
+        container:SetScript("OnEvent", nil)
+
         container.element = nil
         container.callback = nil
     end
-    addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion,true)
+
+    addon:ScheduleTask(addon.ProcessGeneratedSteps, CheckStepCompletion, true)
     addon.UpdateMap()
 end
 
-function addon:ProcessGeneratedSteps(func,...)
+function addon:ProcessGeneratedSteps(func, ...)
     if type(func) ~= "function" then func = nil end
-    for _,context in pairs(addon.generatedSteps) do
-        for _,step in ipairs(context) do
+
+    for _, context in pairs(addon.generatedSteps) do
+        for _, step in ipairs(context) do
             if step.isActive then
                 step.active = step:isActive()
-                --print(step,GetTime(),step.active)
+                -- print(step,GetTime(),step.active)
             end
-            if step.active and func then
-                func(step,...)
-            end
+
+            if step.active and func then func(step, ...) end
         end
     end
 end
@@ -667,7 +678,7 @@ function addon.SetStep(n, n2, loopback)
                 while req and req.requires and not RXPCData.stepSkip[req.index] and
                     not req.active do
                     if requiredSteps[req] then
-                        print('ERROR: Step requirement loop at steps %d and %d',
+                        addon.comms.PrettyPrint('ERROR: Step requirement loop at steps %d and %d',
                               step.index or 0, req.index or 0)
                         break
                     end
@@ -1468,7 +1479,7 @@ function addon.ProcessGuideTable(guide)
         local newGuide = addon:FetchGuide(group,name)
         if not newGuide then
             if name ~= "QuestDB" then
-                print(format(L"RXPGuides - Error trying to include guide: %s\\%s",group,name))
+                addon.comms.PrettyPrint(L"RXPGuides - Error trying to include guide: %s\\%s", group, name)
             end
             return
         end
@@ -1556,9 +1567,7 @@ function addon:FetchGuide(guide,arg2)
         else
             --print(guide.name,guide.group)
             --GG = guide
-            if addon.settings.profile.debug then
-                print(fmt('Error: Tried to load an invalid Guide: %s v%s',key,guide.version or 0))
-            end
+            addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
             return
         end
     end
