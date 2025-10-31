@@ -858,8 +858,6 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then return end
 
     if IsInGroup() and not UnitIsGroupLeader('player') then return end
-    -- Only mark 4/8 targets, ignore later marks
-    if index > 4 then return end
 
     local markerId = self:GetMarkerIndex(kind, index)
 
