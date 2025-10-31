@@ -934,7 +934,7 @@ local function RowifyTargets(targetFrame, btn, buttons, kind)
 
     if buttonKindCount == 1 then
         if kind == "enemy" then
-            btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
+            btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -11)
         else -- Friendly
             btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
         end
@@ -950,32 +950,37 @@ local function RowifyTargets(targetFrame, btn, buttons, kind)
 end
 
 local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
-    -- Rows are 1-4 long, check first 4 targets to set width
     local friendlyWidth = 0
     local enemyWidth = 0
-    local rowCalculation
+    local topDown, bottomUp = 0, 0
 
-    -- If less than buttonsPerRow, then only one row
-    if friendlyCount <= buttonsPerRow then
-        friendlyWidth = friendlyCount * 27 + 8
+    if enemyCount == 0 then
+        topDown = 0
+    elseif enemyCount <= buttonsPerRow then
+        enemyWidth = enemyCount * 27 + 8
+        topDown = 25
     else
         -- If > buttonsPerRow, then row 1 has 4 buttons
-        friendlyWidth = buttonsPerRow* 27 + 8
+        enemyWidth = buttonsPerRow * 27 + 8
+        topDown = 25 + (25 * floor(enemyCount / buttonsPerRow))
     end
 
-    if enemyCount <= buttonsPerRow then
-        enemyWidth = enemyCount * 27 + 8
+    if friendlyCount == 0 then
+        bottomUp = 0
+    elseif friendlyCount <= buttonsPerRow then
+        friendlyWidth = friendlyCount * 27 + 8
+        bottomUp = 24
     else
-        enemyWidth = buttonsPerRow * 27 + 8
+        friendlyWidth = buttonsPerRow * 27 + 8
+        bottomUp = 24 + (24 * floor(friendlyCount / buttonsPerRow))
     end
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
 
-    if (friendlyCount > 0 and enemyCount == 0) or (enemyCount > 0 and friendlyCount == 0) then
-        targetFrame:SetHeight(40)
-    else
-        targetFrame:SetHeight(68)
-    end
+    -- print("ResizeTargetsFrame", topDown, bottomUp)
+
+    -- Header offset + rows
+    targetFrame:SetHeight(18 + topDown + bottomUp)
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
