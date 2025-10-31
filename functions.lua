@@ -365,23 +365,37 @@ addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
-local function GetQuestId(src,guide)
+local function GetQuestId(src,guide,checkMirror)
     if type(guide) ~= "table" then
         guide = addon.currentGuide or addon.guide
     end
     if not (src and guide) then
         return src
     end
-    guide = guide.questConversion
-    if guide and guide[src] then
-        --print(1,src,guide[src])
-        return guide[src]
-    elseif addon.questConversion[src] then
-        --print(1,src,addon.questConversion[src])
-        return addon.questConversion[src]
-    else
-        return src
+
+    function ConvertID(quest,guidetable)
+        guidetable = guidetable.questConversion
+        if guidetable and guidetable[quest] then
+            --print(1,src,guide[src])
+            return guidetable[quest]
+        elseif addon.questConversion[quest] then
+            --print(1,src,addon.questConversion[src])
+            return addon.questConversion[quest]
+        else
+            return quest
+        end
     end
+
+    local id = ConvertID(src,guide)
+    local mirror = checkMirror and guide.mirrorID and guide.mirrorID[id]
+    if mirror then
+        for _,quest in pairs(mirror) do
+            if IsOnQuest(quest) then
+                return quest
+            end
+        end
+    end
+    return id
 end
 addon.GetQuestId = GetQuestId
 
@@ -615,7 +629,7 @@ function addon.GetQuestName(id)
 end
 
 function addon.GetQuestObjectives(id, step, useCache)
-    id = GetQuestId(id)
+    id = GetQuestId(id,nil,true)
     if not id then return end
     local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
 
@@ -1260,7 +1274,7 @@ function addon.functions.turnin(self, ...)
         local element = self.element
         local step = element.step
         local event, questId = ...
-        local id = element.questId
+        local id = GetQuestId(element.questId,nil,true)
         local isComplete = IsQuestTurnedIn(id)
         if addon.settings.profile.debug then
             element.tooltip = id
@@ -1670,7 +1684,7 @@ function addon.functions.complete(self, ...)
     local element = self.element
     local step = element.step
     local id = self.element.questId
-
+    id = GetQuestId(id,nil,true)
     if IsQuestTurnedIn(id) then
         addon.SetElementComplete(self,true)
     end
@@ -3935,6 +3949,7 @@ function addon.functions.isQuestComplete(self, ...)
         return
     end
     local id = element.questId
+    id = GetQuestId(id,nil,true)
     local event = ...
     local isCompleted = not(IsOnQuest(id) and IsQuestComplete(id)) == not(element.reverse)
     if event ~= "WindowUpdate" and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
@@ -4042,10 +4057,12 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
 
     if element.reverse then
         for _, id in pairs(ids) do
+            id = GetQuestId(id,nil,true)
             questTurnedIn = questTurnedIn or not IsQuestTurnedIn(id,accountWide)
         end
     else
         for _, id in pairs(ids) do
+            id = GetQuestId(id,nil,true)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id,accountWide)
         end
     end
@@ -7050,6 +7067,39 @@ function addon.functions.convertquest(self, text, src, dst)
         guide.questConversion[element.src] = element.dst
     else
         guide.questConversion = {[element.src] = element.dst}
+    end
+end
+
+function addon.functions.mirrorquest(self, text, src, ...)
+    if type(self) == "string" then -- on parse
+        src = tonumber(src)
+        local ids = {...}
+        if not (src and dst) then
+            return addon.error(self,"Invalid IDs")
+        end
+
+        local dst = {}
+        for i,v in pairs(ids) do
+            local id = tonumber(v)
+            if id then
+                table.insert(dst,id)
+            end
+        end
+
+        local guide = addon.guide
+        if guide.mirrorID then
+            guide.mirrorID[src] = dst
+        else
+            guide.mirrorID = {[src] = dst}
+        end
+        return {text = text, textOnly = true, src = src, dst = dst}
+    end
+    local element = self.element
+    local guide = addon.currentGuide
+    if guide.mirrorID then
+        guide.mirrorID[element.src] = element.dst
+    else
+        guide.mirrorID = {[element.src] = element.dst}
     end
 end
 
