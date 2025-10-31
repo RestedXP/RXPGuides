@@ -37,26 +37,11 @@ local proxmityPolling = {
 
 local targetList = {}
 local targetPlaceholder = 132150 -- Ability_eyeoftheowl
-local targetIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_4.blp", -- Triangle
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_3.blp", -- Diamond
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp", -- Star
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp" -- Circle
-}
 
 local mobList = {}
 local mobPlaceholder = 132212 -- Ability_hunter_snipershot
-local mobIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8.blp", -- Skull
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7.blp", -- Cross
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6.blp" -- Square
-}
 
 local unitscanList = {}
-local unitscanPlaceholder = 132151 -- ability_fiegndead
-local unitscanIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp" -- Moon
-}
 
 local rareTargets = {}
 
@@ -119,13 +104,12 @@ end
 
 local currentTargets = ""
 local function AnnounceTargets()
-    if addon.settings.profile.notifyOnTargetUpdates then
-        addon.comms.PrettyPrint(L("Targeting macro updated with:%s"), currentTargets)
-    end
+    if not addon.settings.profile.notifyOnTargetUpdates then return end
+
+    addon.comms.PrettyPrint(L("Targeting macro updated with:%s"), currentTargets)
 end
 
 function addon.targeting:UpdateMacro(queuedTargets)
-    -- TODO add rare targets
     if not addon.settings.profile.enableTargetMacro then return end
     if not shouldTargetCheck() then return end
 
@@ -138,6 +122,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     if not GetMacroInfo(self.macroName) then
         if not self:CanCreateMacro() then return end
+
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
@@ -191,6 +176,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     if content then
         while #content > 230 do content = content:gsub("^\n?[^\n]*[\n]*", "") end
+
         content = content .. '\n/targetlasttarget [dead]'
     else
         content = fmt('//%s - %s', addon.title, L("current step has no configured targets")) -- TODO locale
@@ -411,17 +397,18 @@ function addon.targeting:GOSSIP_SHOW()
 
     if not targetUnit then return end
 
-    -- Return after first match, won't be an enemy and friendly target as the same step
-    if addon.settings.profile.enableFriendlyTargeting then
-        for i, name in ipairs(targetList) do
-            if name == targetUnit then
-                tremove(targetList, i)
-                self:UpdateTargetFrame("target")
-                self:UpdateMacro()
+    if not addon.settings.profile.enableFriendlyTargeting then return end
 
-                if GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
-                return
-            end
+    -- Return after first match, won't be an enemy and friendly target as the same step
+    for i, name in ipairs(targetList) do
+        if name == targetUnit then
+            tremove(targetList, i)
+
+            self:UpdateTargetFrame("target")
+            self:UpdateMacro()
+
+            if GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
+            return
         end
     end
 end
@@ -543,13 +530,15 @@ function addon.targeting:UpdateUnitList()
     local stepMobs = {}
     local stepTargets = {}
 
-    local function AddUnits(element, stepUnitscan, stepMobs, stepTargets)
+    local function AddUnits(element, stepU, stepM, stepT)
         if element.unitscan then
-            for _, t in ipairs(element.unitscan) do tinsert(stepUnitscan, addon.GetCreatureName(t)) end
+            for _, t in ipairs(element.unitscan) do tinsert(stepU, addon.GetCreatureName(t)) end
         end
-        if element.mobs then for _, t in ipairs(element.mobs) do tinsert(stepMobs, addon.GetCreatureName(t)) end end
+
+        if element.mobs then for _, t in ipairs(element.mobs) do tinsert(stepM, addon.GetCreatureName(t)) end end
+
         if element.targets then
-            for _, t in ipairs(element.targets) do tinsert(stepTargets, addon.GetCreatureName(t)) end
+            for _, t in ipairs(element.targets) do tinsert(stepT, addon.GetCreatureName(t)) end
         end
     end
 
@@ -827,25 +816,34 @@ local fOnLeave = function(self)
     GameTooltip:Hide()
 end
 
+function addon.targeting:GetMarkerIndex(kind, kindIndex)
+    local raidTargetIndex
+
+    -- kindIndex is always >= 1, but to preserve modulus do -1
+    kindIndex = kindIndex - 1
+
+    if kind == 'friendly' then
+        -- Use star 1, circle 2, diamond 3, and triangle 4
+        -- 0 % 4 = 0 + 1, 3 % 4 = 3 + 1, 4 % 4 = 0 + 1, 5 % 4 = 1 + 1
+        raidTargetIndex = (kindIndex % 4) + 1
+    elseif kind == 'unitscan' or kind == 'rare' then
+         -- Use moon 5
+        raidTargetIndex = 5
+    elseif kind == 'mob' then
+        -- Use skull 8, cross 7, square 6
+        -- 0 % 3 = 8 - 0, 2 % 3 = 8 - 2
+        raidTargetIndex = 8 - (kindIndex % 3)
+    end
+
+    return raidTargetIndex
+end
+
 function addon.targeting:UpdateMarker(kind, unitId, index)
     if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then return end
 
     if IsInGroup() and not UnitIsGroupLeader('player') then return end
-    -- Only mark 4/8 targets, ignore later marks
-    if index > 4 then return end
 
-    local markerId
-    if kind == 'friendly' then
-        -- Use star, circle, diamond, and triangle
-        markerId = index
-    elseif kind == 'unitscan' or kind == 'rare' then
-        markerId = 5 -- moon
-    elseif kind == 'mob' then
-        -- use skull, cross, square
-        markerId = 9 - index
-    end
-
-    if not markerId then return end
+    local markerId = self:GetMarkerIndex(kind, index)
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
         SetRaidTarget(unitId, markerId)
@@ -932,8 +930,11 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     if InCombatLockdown() then return end
 
+    -- TOOD Reduce to 4 and expand rows downward
+    local buttonsPerRow = 8
+
     local enemyTargetButtons = targetFrame.enemyTargetButtons
-    local j = 0
+    local enemyTargetButtonIndex = 0
     local enemiesList = {}
 
     if not addon.settings.profile.showTargetingOnProximity then
@@ -946,7 +947,7 @@ function addon.targeting:UpdateTargetFrame(selector)
     if addon.settings.profile.showTargetingOnProximity then
         for name, data in pairs(proxmityPolling.scannedTargets) do
             if data.kind ~= 'friendly' then
-                -- enemies row contains, unitscan, mob, and rare
+                -- enemies row contains: unitscan, mob, and rare
                 enemiesList[name] = data.kind
             end
         end
@@ -963,81 +964,76 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     table.wipe(addon.targeting.activeIcons)
 
-    local btn, n, icon, ht, fallbackTexture
-    for targetName, k in pairs(enemiesList) do
-        j = j + 1
-        btn = enemyTargetButtons[j]
+    local btn, buttonKindCount, icon, ht
+    for targetName, enemyKind in pairs(enemiesList) do
+        -- TODO restructure for multiple rows
+        if enemyTargetButtonIndex < buttonsPerRow then
+            enemyTargetButtonIndex = enemyTargetButtonIndex + 1
+            btn = enemyTargetButtons[enemyTargetButtonIndex]
 
-        if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. j, targetFrame, "SecureActionButtonTemplate")
+            if not btn then
+                btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
 
-            btn:SetAttribute("type", "macro")
-            btn:SetSize(25, 25)
+                btn:SetAttribute("type", "macro")
+                btn:SetSize(25, 25)
 
-            if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
+                if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
-            tinsert(enemyTargetButtons, btn)
+                tinsert(enemyTargetButtons, btn)
 
-            n = #enemyTargetButtons
+                buttonKindCount = #enemyTargetButtons
 
-            btn:ClearAllPoints()
+                btn:ClearAllPoints()
 
-            if n == 1 then
-                btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
-            else
-                btn:SetPoint("CENTER", enemyTargetButtons[n - 1], "CENTER", 27, 0)
+                if buttonKindCount == 1 then
+                    btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
+                else
+                    btn:SetPoint("CENTER", enemyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
+                end
+
+                btn.icon = btn:CreateTexture(nil, "BACKGROUND")
+                btn.placeholder = btn.icon
+                btn.placeholder.isDefault = true
+                btn.GetUnitTexture = GetUnitTexture
+
+                icon = btn.icon
+
+                icon.isDefault = true
+                icon:SetAllPoints(true)
+                icon:SetTexture(mobPlaceholder)
+
+                btn:SetScript("OnEnter", fOnEnter)
+                btn:SetScript("OnLeave", fOnLeave)
+
+                ht = btn:CreateTexture(nil, "HIGHLIGHT")
+
+                ht:SetAllPoints(true)
+                ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+                ht:SetBlendMode("ADD")
             end
 
-            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
-            btn.placeholder = btn.icon
-            btn.placeholder.isDefault = true
-            btn.GetUnitTexture = GetUnitTexture
+            btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
 
-            icon = btn.icon
-
-            icon.isDefault = true
-            icon:SetAllPoints(true)
-            icon:SetTexture(unitscanIcons[j] or unitscanPlaceholder)
-
-            btn:SetScript("OnEnter", fOnEnter)
-            btn:SetScript("OnLeave", fOnLeave)
-
-            ht = btn:CreateTexture(nil, "HIGHLIGHT")
-
-            ht:SetAllPoints(true)
-            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-            ht:SetBlendMode("ADD")
-        end
-
-        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
-
-        if btn.targetData and btn.targetData.name ~= targetName then
-            if k == 'unitscan' or k == 'rare' then
-                fallbackTexture = unitscanIcons[j] or unitscanPlaceholder
-            else -- mob
-                fallbackTexture = mobIcons[j] or mobPlaceholder
+            if btn.targetData and btn.targetData.name ~= targetName then
+                btn.placeholder:SetTexture(mobPlaceholder)
+                btn.placeholder.isDefault = true
             end
 
-            btn.placeholder:SetTexture(fallbackTexture)
-            btn.placeholder.isDefault = true
+            btn:GetUnitTexture(targetName, selector)
+            btn.targetData = {name = targetName, kind = enemyKind}
+
+            -- If target or mouseover, set portrait
+            if selector and UnitName(selector) == targetName and btn.icon.isDefault then
+                SetPortraitTexture(btn.placeholder, selector)
+                btn.placeholder.isDefault = false
+            end
+
+            btn:Show()
         end
-
-        btn:GetUnitTexture(targetName, selector)
-        btn.targetData = {name = targetName, kind = k}
-
-        -- If target or mouseover, set portrait
-        -- TODO cache icons, relies on button order, resets otherwise
-        -- SetPortraitTexture and SetPortraitToTexture?
-        if selector and UnitName(selector) == targetName and btn.icon.isDefault then
-            SetPortraitTexture(btn.placeholder, selector)
-            btn.placeholder.isDefault = false
-        end
-
-        btn:Show()
     end
 
     local friendlyTargetButtons = targetFrame.friendlyTargetButtons
-    local i = 0
+    local friendlyTargetButtonIndex = 0
     -- If proximity disabled, show all
     local friendlyList = addon.settings.profile.showTargetingOnProximity and {} or targetList
 
@@ -1048,83 +1044,85 @@ function addon.targeting:UpdateTargetFrame(selector)
     end
 
     for _, targetName in ipairs(friendlyList) do
-        i = i + 1
-        btn = friendlyTargetButtons[i]
+        -- TODO restructure for multiple rows
+        if friendlyTargetButtonIndex < buttonsPerRow then
+            friendlyTargetButtonIndex = friendlyTargetButtonIndex + 1
+            btn = friendlyTargetButtons[friendlyTargetButtonIndex]
 
-        if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. i, targetFrame, "SecureActionButtonTemplate")
-            btn:SetAttribute("type", "macro")
-            btn:SetSize(25, 25)
+            if not btn then
+                btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
+                btn:SetAttribute("type", "macro")
+                btn:SetSize(25, 25)
 
-            if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
+                if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
-            tinsert(friendlyTargetButtons, btn)
-            n = #friendlyTargetButtons
+                tinsert(friendlyTargetButtons, btn)
+                buttonKindCount = #friendlyTargetButtons
 
-            btn:ClearAllPoints()
+                btn:ClearAllPoints()
 
-            if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
-            else
-                btn:SetPoint("CENTER", friendlyTargetButtons[n - 1], "CENTER", 27, 0)
+                if buttonKindCount == 1 then
+                    btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+                else
+                    btn:SetPoint("CENTER", friendlyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
+                end
+                btn.icon = btn:CreateTexture(nil, "BACKGROUND")
+
+                icon = btn.icon
+
+                btn.placeholder = icon
+
+                icon.isDefault = true
+                icon:SetAllPoints(true)
+                icon:SetTexture(targetPlaceholder)
+
+                btn.GetUnitTexture = GetUnitTexture
+                btn:SetScript("OnEnter", fOnEnter)
+                btn:SetScript("OnLeave", fOnLeave)
+
+                ht = btn:CreateTexture(nil, "HIGHLIGHT")
+
+                ht:SetAllPoints(true)
+                ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+                ht:SetBlendMode("ADD")
             end
-            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
-            icon = btn.icon
+            btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
 
-            btn.placeholder = icon
-            icon.isDefault = true
-            icon:SetAllPoints(true)
-            icon:SetTexture(targetIcons[i] or targetPlaceholder)
+            if btn.targetData and btn.targetData.name ~= targetName then
+                btn.placeholder:SetTexture(targetPlaceholder)
+                btn.placeholder.isDefault = true
+            end
 
-            btn.GetUnitTexture = GetUnitTexture
-            btn:SetScript("OnEnter", fOnEnter)
-            btn:SetScript("OnLeave", fOnLeave)
+            btn:GetUnitTexture(targetName, selector)
 
-            ht = btn:CreateTexture(nil, "HIGHLIGHT")
+            btn.targetData = {name = targetName, kind = "friendly"}
 
-            ht:SetAllPoints(true)
-            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-            ht:SetBlendMode("ADD")
+            -- If target or mouseover, set portrait
+            if selector and btn.placeholder.isDefault and UnitName(selector) == targetName then
+                SetPortraitTexture(btn.placeholder, selector)
+                btn.placeholder.isDefault = false
+            end
+
+            btn:Show()
         end
-
-        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
-
-        fallbackTexture = targetIcons[i] or targetPlaceholder
-
-        if btn.targetData and btn.targetData.name ~= targetName then
-            btn.placeholder:SetTexture(fallbackTexture)
-            btn.placeholder.isDefault = true
-        end
-
-        btn:GetUnitTexture(targetName, selector)
-
-        btn.targetData = {name = targetName, kind = "friendly"}
-
-        -- If target or mouseover, set portrait
-        if selector and btn.placeholder.isDefault and UnitName(selector) == targetName then
-            SetPortraitTexture(btn.placeholder, selector)
-            btn.placeholder.isDefault = false
-        end
-
-        btn:Show()
     end
 
-    if i > 0 or j > 0 then targetFrame:SetAlpha(1) end
+    if friendlyTargetButtonIndex > 0 or enemyTargetButtonIndex > 0 then targetFrame:SetAlpha(1) end
 
-    for f = i + 1, #friendlyTargetButtons do
+    for f = friendlyTargetButtonIndex + 1, #friendlyTargetButtons do
         friendlyTargetButtons[f]:Hide()
-        friendlyTargetButtons[f].placeholder:SetTexture(targetIcons[f] or targetPlaceholder)
+        friendlyTargetButtons[f].placeholder:SetTexture(targetPlaceholder)
         friendlyTargetButtons[f].icon.isDefault = true
     end
 
-    for e = j + 1, #enemyTargetButtons do
+    for e = enemyTargetButtonIndex + 1, #enemyTargetButtons do
         enemyTargetButtons[e]:Hide()
-        enemyTargetButtons[e].placeholder:SetTexture(unitscanIcons[e] or unitscanPlaceholder)
+        enemyTargetButtons[e].placeholder:SetTexture(mobPlaceholder)
         enemyTargetButtons[e].icon.isDefault = true
     end
 
-    if (i == 0 and j == 0) or not addon.settings.profile.showEnabled then
+    if (friendlyTargetButtonIndex == 0 and enemyTargetButtonIndex == 0) or not addon.settings.profile.showEnabled then
         targetFrame:Hide()
     elseif addon.settings.profile.showTargetingOnProximity then
         if proxmityPolling.match then
@@ -1136,10 +1134,10 @@ function addon.targeting:UpdateTargetFrame(selector)
         targetFrame:Show()
     end
 
-    local width = mmax(targetFrame.title:GetWidth() + 10, i * 27 + 8, j * 27 + 8)
+    local width = mmax(targetFrame.title:GetWidth() + 10, friendlyTargetButtonIndex * 27 + 8, enemyTargetButtonIndex * 27 + 8)
     targetFrame:SetWidth(width)
 
-    if (i > 0 and j == 0) or (j > 0 and i == 0) then
+    if (friendlyTargetButtonIndex > 0 and enemyTargetButtonIndex == 0) or (enemyTargetButtonIndex > 0 and friendlyTargetButtonIndex == 0) then
         targetFrame:SetHeight(40)
     else
         targetFrame:SetHeight(68)
