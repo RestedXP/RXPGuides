@@ -923,15 +923,38 @@ local function GetUnitTexture(self, name, unit)
     end
 end
 
+local buttonsPerRow = 4
+local function RowifyTargets(targetFrame, btn, buttons, kind)
+    local buttonKindCount = #buttons
+
+    btn:ClearAllPoints()
+
+    -- isNewRow == 0 when new row
+    local isNewRow = (buttonKindCount - 1) % buttonsPerRow
+
+    if buttonKindCount == 1 then
+        if kind == "enemy" then
+            btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
+        else -- Friendly
+            btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+        end
+
+        return
+    end
+
+    if isNewRow == 0 then
+        btn:SetPoint("TOP", buttons[buttonKindCount - buttonsPerRow], "BOTTOM", 0, 0)
+    else
+        btn:SetPoint("CENTER", buttons[buttonKindCount - 1], "CENTER", 27, 0)
+    end
+end
+
 function addon.targeting:UpdateTargetFrame(selector)
     if not addon.settings.profile.enableTargetAutomation then return end
 
     local targetFrame = self.activeTargetFrame
 
     if InCombatLockdown() then return end
-
-    -- TOOD Reduce to 4 and expand rows downward
-    local buttonsPerRow = 8
 
     local enemyTargetButtons = targetFrame.enemyTargetButtons
     local enemyTargetButtonIndex = 0
@@ -980,15 +1003,7 @@ function addon.targeting:UpdateTargetFrame(selector)
 
             tinsert(enemyTargetButtons, btn)
 
-            buttonKindCount = #enemyTargetButtons
-
-            btn:ClearAllPoints()
-
-            if buttonKindCount == 1 then
-                btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
-            else
-                btn:SetPoint("CENTER", enemyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
-            end
+            RowifyTargets(targetFrame, btn, enemyTargetButtons, "enemy")
 
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
             btn.placeholder = btn.icon
@@ -1053,15 +1068,9 @@ function addon.targeting:UpdateTargetFrame(selector)
             if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
             tinsert(friendlyTargetButtons, btn)
-            buttonKindCount = #friendlyTargetButtons
 
-            btn:ClearAllPoints()
+            RowifyTargets(targetFrame, btn, friendlyTargetButtons, "friendly")
 
-            if buttonKindCount == 1 then
-                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
-            else
-                btn:SetPoint("CENTER", friendlyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
-            end
             btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
             icon = btn.icon
