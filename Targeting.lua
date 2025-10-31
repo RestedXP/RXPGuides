@@ -942,10 +942,18 @@ local function RowifyTargets(targetFrame, btn, buttons, kind)
         return
     end
 
-    if isNewRow == 0 then
-        btn:SetPoint("TOP", buttons[buttonKindCount - buttonsPerRow], "BOTTOM", 0, 0)
-    else
-        btn:SetPoint("CENTER", buttons[buttonKindCount - 1], "CENTER", 27, 0)
+    if kind == "enemy" then
+        if isNewRow == 0 then
+            btn:SetPoint("TOP", buttons[buttonKindCount - buttonsPerRow], "BOTTOM", 0, 0)
+        else
+            btn:SetPoint("CENTER", buttons[buttonKindCount - 1], "CENTER", 27, 0)
+        end
+    else -- Friendly, build from bottom up to simplify height logic
+        if isNewRow == 0 then
+            btn:SetPoint("BOTTOM", buttons[buttonKindCount - buttonsPerRow], "TOP", 0, 0)
+        else
+            btn:SetPoint("CENTER", buttons[buttonKindCount - 1], "CENTER", 27, 0)
+        end
     end
 end
 
@@ -969,15 +977,13 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
         bottomUp = 0
     elseif friendlyCount <= buttonsPerRow then
         friendlyWidth = friendlyCount * 27 + 8
-        bottomUp = 24
+        bottomUp = 25
     else
         friendlyWidth = buttonsPerRow * 27 + 8
-        bottomUp = 24 + (24 * floor(friendlyCount / buttonsPerRow))
+        bottomUp = 25 + (25 * floor(friendlyCount / buttonsPerRow))
     end
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
-
-    -- print("ResizeTargetsFrame", topDown, bottomUp)
 
     -- Header offset + rows
     targetFrame:SetHeight(18 + topDown + bottomUp)
