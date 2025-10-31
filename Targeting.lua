@@ -37,26 +37,11 @@ local proxmityPolling = {
 
 local targetList = {}
 local targetPlaceholder = 132150 -- Ability_eyeoftheowl
-local targetIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_4.blp", -- Triangle
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_3.blp", -- Diamond
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1.blp", -- Star
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_2.blp" -- Circle
-}
 
 local mobList = {}
 local mobPlaceholder = 132212 -- Ability_hunter_snipershot
-local mobIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8.blp", -- Skull
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7.blp", -- Cross
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_6.blp" -- Square
-}
 
 local unitscanList = {}
-local unitscanPlaceholder = 132151 -- ability_fiegndead
-local unitscanIcons = {
-    "Interface\\TargetingFrame\\UI-RaidTargetingIcon_5.blp" -- Moon
-}
 
 local rareTargets = {}
 
@@ -839,16 +824,15 @@ function addon.targeting:GetMarkerIndex(kind, kindIndex)
 
     if kind == 'friendly' then
         -- Use star 1, circle 2, diamond 3, and triangle 4
-        -- 0 % 5 = 0 + 1, 4 % 5 = 4 + 1, 5 % 5 = 0 + 1, 6 % 5 = 1 + 1
-        raidTargetIndex = (kindIndex % #targetIcons) + 1
+        -- 0 % 4 = 0 + 1, 3 % 4 = 3 + 1, 4 % 4 = 0 + 1, 5 % 4 = 1 + 1
+        raidTargetIndex = (kindIndex % 4) + 1
     elseif kind == 'unitscan' or kind == 'rare' then
          -- Use moon 5
-         -- 0 % 1 = 0 + 5, 3 % 1 = 0 + 5
-        raidTargetIndex = (kindIndex % #unitscanIcons) + 5
+        raidTargetIndex = 5
     elseif kind == 'mob' then
         -- Use skull 8, cross 7, square 6
         -- 0 % 3 = 8 - 0, 2 % 3 = 8 - 2
-        raidTargetIndex = 8 - (kindIndex % #mobIcons)
+        raidTargetIndex = 8 - (kindIndex % 3)
     end
 
     return raidTargetIndex
@@ -980,7 +964,7 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     table.wipe(addon.targeting.activeIcons)
 
-    local btn, buttonKindCount, icon, ht, fallbackTexture
+    local btn, buttonKindCount, icon, ht
     for targetName, enemyKind in pairs(enemiesList) do
         -- TODO restructure for multiple rows
         if enemyTargetButtonIndex < buttonsPerRow then
@@ -1016,7 +1000,7 @@ function addon.targeting:UpdateTargetFrame(selector)
 
                 icon.isDefault = true
                 icon:SetAllPoints(true)
-                icon:SetTexture(unitscanIcons[enemyTargetButtonIndex] or unitscanPlaceholder)
+                icon:SetTexture(mobPlaceholder)
 
                 btn:SetScript("OnEnter", fOnEnter)
                 btn:SetScript("OnLeave", fOnLeave)
@@ -1031,13 +1015,7 @@ function addon.targeting:UpdateTargetFrame(selector)
             btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
 
             if btn.targetData and btn.targetData.name ~= targetName then
-                if enemyKind == 'unitscan' or enemyKind == 'rare' then
-                    fallbackTexture = unitscanIcons[enemyTargetButtonIndex] or unitscanPlaceholder
-                else -- mob
-                    fallbackTexture = mobIcons[enemyTargetButtonIndex] or mobPlaceholder
-                end
-
-                btn.placeholder:SetTexture(fallbackTexture)
+                btn.placeholder:SetTexture(mobPlaceholder)
                 btn.placeholder.isDefault = true
             end
 
@@ -1096,7 +1074,7 @@ function addon.targeting:UpdateTargetFrame(selector)
 
                 icon.isDefault = true
                 icon:SetAllPoints(true)
-                icon:SetTexture(targetIcons[friendlyTargetButtonIndex] or targetPlaceholder)
+                icon:SetTexture(targetPlaceholder)
 
                 btn.GetUnitTexture = GetUnitTexture
                 btn:SetScript("OnEnter", fOnEnter)
@@ -1111,10 +1089,8 @@ function addon.targeting:UpdateTargetFrame(selector)
 
             btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
 
-            fallbackTexture = targetIcons[friendlyTargetButtonIndex] or targetPlaceholder
-
             if btn.targetData and btn.targetData.name ~= targetName then
-                btn.placeholder:SetTexture(fallbackTexture)
+                btn.placeholder:SetTexture(targetPlaceholder)
                 btn.placeholder.isDefault = true
             end
 
@@ -1136,13 +1112,13 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     for f = friendlyTargetButtonIndex + 1, #friendlyTargetButtons do
         friendlyTargetButtons[f]:Hide()
-        friendlyTargetButtons[f].placeholder:SetTexture(targetIcons[f] or targetPlaceholder)
+        friendlyTargetButtons[f].placeholder:SetTexture(targetPlaceholder)
         friendlyTargetButtons[f].icon.isDefault = true
     end
 
     for e = enemyTargetButtonIndex + 1, #enemyTargetButtons do
         enemyTargetButtons[e]:Hide()
-        enemyTargetButtons[e].placeholder:SetTexture(unitscanIcons[e] or unitscanPlaceholder)
+        enemyTargetButtons[e].placeholder:SetTexture(mobPlaceholder)
         enemyTargetButtons[e].icon.isDefault = true
     end
 
