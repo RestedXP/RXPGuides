@@ -119,13 +119,12 @@ end
 
 local currentTargets = ""
 local function AnnounceTargets()
-    if addon.settings.profile.notifyOnTargetUpdates then
-        addon.comms.PrettyPrint(L("Targeting macro updated with:%s"), currentTargets)
-    end
+    if not addon.settings.profile.notifyOnTargetUpdates then return end
+
+    addon.comms.PrettyPrint(L("Targeting macro updated with:%s"), currentTargets)
 end
 
 function addon.targeting:UpdateMacro(queuedTargets)
-    -- TODO add rare targets
     if not addon.settings.profile.enableTargetMacro then return end
     if not shouldTargetCheck() then return end
 
@@ -138,6 +137,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     if not GetMacroInfo(self.macroName) then
         if not self:CanCreateMacro() then return end
+
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
@@ -191,6 +191,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     if content then
         while #content > 230 do content = content:gsub("^\n?[^\n]*[\n]*", "") end
+
         content = content .. '\n/targetlasttarget [dead]'
     else
         content = fmt('//%s - %s', addon.title, L("current step has no configured targets")) -- TODO locale
@@ -411,17 +412,18 @@ function addon.targeting:GOSSIP_SHOW()
 
     if not targetUnit then return end
 
-    -- Return after first match, won't be an enemy and friendly target as the same step
-    if addon.settings.profile.enableFriendlyTargeting then
-        for i, name in ipairs(targetList) do
-            if name == targetUnit then
-                tremove(targetList, i)
-                self:UpdateTargetFrame("target")
-                self:UpdateMacro()
+    if not addon.settings.profile.enableFriendlyTargeting then return end
 
-                if GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
-                return
-            end
+    -- Return after first match, won't be an enemy and friendly target as the same step
+    for i, name in ipairs(targetList) do
+        if name == targetUnit then
+            tremove(targetList, i)
+
+            self:UpdateTargetFrame("target")
+            self:UpdateMacro()
+
+            if GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
+            return
         end
     end
 end
@@ -960,7 +962,7 @@ function addon.targeting:UpdateTargetFrame(selector)
     if addon.settings.profile.showTargetingOnProximity then
         for name, data in pairs(proxmityPolling.scannedTargets) do
             if data.kind ~= 'friendly' then
-                -- enemies row contains, unitscan, mob, and rare
+                -- enemies row contains: unitscan, mob, and rare
                 enemiesList[name] = data.kind
             end
         end
