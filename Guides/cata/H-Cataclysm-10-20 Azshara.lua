@@ -556,12 +556,12 @@ step
     .target Dead Soldier
     .target Sergeant Dynamo
 step
-    >>Kill |cRXP_ENEMY_Warlord Krellian|r. Loot him for the |cRXP_LOOT_SFG|r
+    >>Kill |cRXP_ENEMY_Warlord Krellian|r. Loot the |cRXP_LOOT_SFG|r on the ground after
     .complete 14470,1 --Warlord Krellian (1)
+    .mob +Warlord Krellian
     .goto 76,27.562,52.010
     .complete 14470,2 --SFG (1)
     .goto 76,27.693,51.903
-    .mob Warlord Krellian
 step
     #loop
     .goto 76,29.619,53.022,0
