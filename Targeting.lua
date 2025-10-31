@@ -966,70 +966,68 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     local btn, buttonKindCount, icon, ht
     for targetName, enemyKind in pairs(enemiesList) do
-        -- TODO restructure for multiple rows
-        if enemyTargetButtonIndex < buttonsPerRow then
-            enemyTargetButtonIndex = enemyTargetButtonIndex + 1
-            btn = enemyTargetButtons[enemyTargetButtonIndex]
 
-            if not btn then
-                btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
+        enemyTargetButtonIndex = enemyTargetButtonIndex + 1
+        btn = enemyTargetButtons[enemyTargetButtonIndex]
 
-                btn:SetAttribute("type", "macro")
-                btn:SetSize(25, 25)
+        if not btn then
+            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
 
-                if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
+            btn:SetAttribute("type", "macro")
+            btn:SetSize(25, 25)
 
-                tinsert(enemyTargetButtons, btn)
+            if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
-                buttonKindCount = #enemyTargetButtons
+            tinsert(enemyTargetButtons, btn)
 
-                btn:ClearAllPoints()
+            buttonKindCount = #enemyTargetButtons
 
-                if buttonKindCount == 1 then
-                    btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
-                else
-                    btn:SetPoint("CENTER", enemyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
-                end
+            btn:ClearAllPoints()
 
-                btn.icon = btn:CreateTexture(nil, "BACKGROUND")
-                btn.placeholder = btn.icon
-                btn.placeholder.isDefault = true
-                btn.GetUnitTexture = GetUnitTexture
-
-                icon = btn.icon
-
-                icon.isDefault = true
-                icon:SetAllPoints(true)
-                icon:SetTexture(mobPlaceholder)
-
-                btn:SetScript("OnEnter", fOnEnter)
-                btn:SetScript("OnLeave", fOnLeave)
-
-                ht = btn:CreateTexture(nil, "HIGHLIGHT")
-
-                ht:SetAllPoints(true)
-                ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-                ht:SetBlendMode("ADD")
+            if buttonKindCount == 1 then
+                btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -10)
+            else
+                btn:SetPoint("CENTER", enemyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
             end
 
-            btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
+            btn.placeholder = btn.icon
+            btn.placeholder.isDefault = true
+            btn.GetUnitTexture = GetUnitTexture
 
-            if btn.targetData and btn.targetData.name ~= targetName then
-                btn.placeholder:SetTexture(mobPlaceholder)
-                btn.placeholder.isDefault = true
-            end
+            icon = btn.icon
 
-            btn:GetUnitTexture(targetName, selector)
-            btn.targetData = {name = targetName, kind = enemyKind}
+            icon.isDefault = true
+            icon:SetAllPoints(true)
+            icon:SetTexture(mobPlaceholder)
 
-            -- If target or mouseover, set portrait
-            if selector and UnitName(selector) == targetName and btn.icon.isDefault then
-                SetPortraitTexture(btn.placeholder, selector)
-                btn.placeholder.isDefault = false
-            end
+            btn:SetScript("OnEnter", fOnEnter)
+            btn:SetScript("OnLeave", fOnLeave)
 
-            btn:Show()
+            ht = btn:CreateTexture(nil, "HIGHLIGHT")
+
+            ht:SetAllPoints(true)
+            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+            ht:SetBlendMode("ADD")
         end
+
+        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+
+        if btn.targetData and btn.targetData.name ~= targetName then
+            btn.placeholder:SetTexture(mobPlaceholder)
+            btn.placeholder.isDefault = true
+        end
+
+        btn:GetUnitTexture(targetName, selector)
+        btn.targetData = {name = targetName, kind = enemyKind}
+
+        -- If target or mouseover, set portrait
+        if selector and UnitName(selector) == targetName and btn.icon.isDefault then
+            SetPortraitTexture(btn.placeholder, selector)
+            btn.placeholder.isDefault = false
+        end
+
+        btn:Show()
     end
 
     local friendlyTargetButtons = targetFrame.friendlyTargetButtons
@@ -1044,68 +1042,65 @@ function addon.targeting:UpdateTargetFrame(selector)
     end
 
     for _, targetName in ipairs(friendlyList) do
-        -- TODO restructure for multiple rows
-        if friendlyTargetButtonIndex < buttonsPerRow then
-            friendlyTargetButtonIndex = friendlyTargetButtonIndex + 1
-            btn = friendlyTargetButtons[friendlyTargetButtonIndex]
+        friendlyTargetButtonIndex = friendlyTargetButtonIndex + 1
+        btn = friendlyTargetButtons[friendlyTargetButtonIndex]
 
-            if not btn then
-                btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
-                btn:SetAttribute("type", "macro")
-                btn:SetSize(25, 25)
+        if not btn then
+            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
+            btn:SetAttribute("type", "macro")
+            btn:SetSize(25, 25)
 
-                if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
+            if btn.RegisterForClicks then btn:RegisterForClicks("AnyUp", "AnyDown") end
 
-                tinsert(friendlyTargetButtons, btn)
-                buttonKindCount = #friendlyTargetButtons
+            tinsert(friendlyTargetButtons, btn)
+            buttonKindCount = #friendlyTargetButtons
 
-                btn:ClearAllPoints()
+            btn:ClearAllPoints()
 
-                if buttonKindCount == 1 then
-                    btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
-                else
-                    btn:SetPoint("CENTER", friendlyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
-                end
-                btn.icon = btn:CreateTexture(nil, "BACKGROUND")
-
-                icon = btn.icon
-
-                btn.placeholder = icon
-
-                icon.isDefault = true
-                icon:SetAllPoints(true)
-                icon:SetTexture(targetPlaceholder)
-
-                btn.GetUnitTexture = GetUnitTexture
-                btn:SetScript("OnEnter", fOnEnter)
-                btn:SetScript("OnLeave", fOnLeave)
-
-                ht = btn:CreateTexture(nil, "HIGHLIGHT")
-
-                ht:SetAllPoints(true)
-                ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
-                ht:SetBlendMode("ADD")
+            if buttonKindCount == 1 then
+                btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+            else
+                btn:SetPoint("CENTER", friendlyTargetButtons[buttonKindCount - 1], "CENTER", 27, 0)
             end
+            btn.icon = btn:CreateTexture(nil, "BACKGROUND")
 
-            btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+            icon = btn.icon
 
-            if btn.targetData and btn.targetData.name ~= targetName then
-                btn.placeholder:SetTexture(targetPlaceholder)
-                btn.placeholder.isDefault = true
-            end
+            btn.placeholder = icon
 
-            btn:GetUnitTexture(targetName, selector)
+            icon.isDefault = true
+            icon:SetAllPoints(true)
+            icon:SetTexture(targetPlaceholder)
 
-            btn.targetData = {name = targetName, kind = "friendly"}
+            btn.GetUnitTexture = GetUnitTexture
+            btn:SetScript("OnEnter", fOnEnter)
+            btn:SetScript("OnLeave", fOnLeave)
 
-            -- If target or mouseover, set portrait
-            if selector and btn.placeholder.isDefault and UnitName(selector) == targetName then
-                SetPortraitTexture(btn.placeholder, selector)
-                btn.placeholder.isDefault = false
-            end
+            ht = btn:CreateTexture(nil, "HIGHLIGHT")
 
-            btn:Show()
+            ht:SetAllPoints(true)
+            ht:SetTexture("Interface\\Buttons\\ButtonHilight-Square")
+            ht:SetBlendMode("ADD")
         end
+
+        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+
+        if btn.targetData and btn.targetData.name ~= targetName then
+            btn.placeholder:SetTexture(targetPlaceholder)
+            btn.placeholder.isDefault = true
+        end
+
+        btn:GetUnitTexture(targetName, selector)
+
+        btn.targetData = {name = targetName, kind = "friendly"}
+
+        -- If target or mouseover, set portrait
+        if selector and btn.placeholder.isDefault and UnitName(selector) == targetName then
+            SetPortraitTexture(btn.placeholder, selector)
+            btn.placeholder.isDefault = false
+        end
+
+        btn:Show()
     end
 
     if friendlyTargetButtonIndex > 0 or enemyTargetButtonIndex > 0 then targetFrame:SetAlpha(1) end
