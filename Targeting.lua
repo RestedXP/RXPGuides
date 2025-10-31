@@ -949,6 +949,35 @@ local function RowifyTargets(targetFrame, btn, buttons, kind)
     end
 end
 
+local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
+    -- Rows are 1-4 long, check first 4 targets to set width
+    local friendlyWidth = 0
+    local enemyWidth = 0
+    local rowCalculation
+
+    -- If less than buttonsPerRow, then only one row
+    if friendlyCount <= buttonsPerRow then
+        friendlyWidth = friendlyCount * 27 + 8
+    else
+        -- If > buttonsPerRow, then row 1 has 4 buttons
+        friendlyWidth = buttonsPerRow* 27 + 8
+    end
+
+    if enemyCount <= buttonsPerRow then
+        enemyWidth = enemyCount * 27 + 8
+    else
+        enemyWidth = buttonsPerRow * 27 + 8
+    end
+
+    targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
+
+    if (friendlyCount > 0 and enemyCount == 0) or (enemyCount > 0 and friendlyCount == 0) then
+        targetFrame:SetHeight(40)
+    else
+        targetFrame:SetHeight(68)
+    end
+end
+
 function addon.targeting:UpdateTargetFrame(selector)
     if not addon.settings.profile.enableTargetAutomation then return end
 
@@ -987,7 +1016,7 @@ function addon.targeting:UpdateTargetFrame(selector)
 
     table.wipe(addon.targeting.activeIcons)
 
-    local btn, buttonKindCount, icon, ht
+    local btn, icon, ht
     for targetName, enemyKind in pairs(enemiesList) do
 
         enemyTargetButtonIndex = enemyTargetButtonIndex + 1
@@ -1126,6 +1155,8 @@ function addon.targeting:UpdateTargetFrame(selector)
         enemyTargetButtons[e].icon.isDefault = true
     end
 
+    ResizeTargetsFrame(targetFrame, friendlyTargetButtonIndex, enemyTargetButtonIndex)
+
     if (friendlyTargetButtonIndex == 0 and enemyTargetButtonIndex == 0) or not addon.settings.profile.showEnabled then
         targetFrame:Hide()
     elseif addon.settings.profile.showTargetingOnProximity then
@@ -1136,15 +1167,6 @@ function addon.targeting:UpdateTargetFrame(selector)
         end
     else
         targetFrame:Show()
-    end
-
-    local width = mmax(targetFrame.title:GetWidth() + 10, friendlyTargetButtonIndex * 27 + 8, enemyTargetButtonIndex * 27 + 8)
-    targetFrame:SetWidth(width)
-
-    if (friendlyTargetButtonIndex > 0 and enemyTargetButtonIndex == 0) or (enemyTargetButtonIndex > 0 and friendlyTargetButtonIndex == 0) then
-        targetFrame:SetHeight(40)
-    else
-        targetFrame:SetHeight(68)
     end
 end
 
