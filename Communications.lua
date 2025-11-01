@@ -313,7 +313,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         if not data.duration or data.duration <= 0 then return end
 
         -- Questie doesn't announce flight-time, so okay to send this out
-        local msg = self.BuildNotification(L("Flying to %s ETA %s"), data.destination,
+        local msg = self.BuildNotification(L("Flying to %s ETA %s"), RXPCData.flightPaths[data.destination] or '',
                                            addon.comms:PrettyPrintTime(data.duration))
 
         if addon.settings.profile.enableFlyStepAnnouncements and GetNumGroupMembers() > 0 then
