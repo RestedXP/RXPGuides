@@ -1834,9 +1834,10 @@ step
     .target Illidari Fel Bat
 step
     .isOnQuest 39247
-    .countdown 8 >>|cRXP_WARN_Wait for the Roleplay|r.
+    .enterScenario 900 >>|cRXP_WARN_Wait for the Roleplay|r.
+    .timer 8
 step
-    .isOnQuest 39247
+    .isInScenario 900
     .goto 680,25.63,58.94
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 1808,1
@@ -2049,6 +2050,7 @@ step
     .disablecheckbox
     .target Archmage Khadgar
 step
+    .isQuestTurnedIn 39247
     #completewith Turn in Asking a Favor
     .goto 720,59.25,91.82
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
@@ -2059,7 +2061,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
     .turnin 40247 >>Turn in Asking a Favor
     .accept 41804 >>Accept Ask and You Shall Receive
-    .timer 57.5,RP
+    .timer 58.5,RP
     .target Archmage Khadgar
 step
     .goto 627,25.35,47.24,15,0
@@ -2070,7 +2072,7 @@ step
     .goto 627,26.78,44.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r
     .complete 41804,2 --1/1 Crystallized Soul
-    .timer 15.5,RP
+    .timer 12.5,RP
 step
     .goto 627,28.49,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
@@ -2111,7 +2113,7 @@ step
     #completewith Fly to the Broken Shore
     .goto 627,75.28,47.58
     .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Illidari Fel Bat|r
-    .timer 28,RP
+    .timer 24,RP
     .target Illidari Fel Bat
 step
     #requires Fly to the Broken Shore
@@ -2119,7 +2121,7 @@ step
     .complete 40249,1 --1/1 Fly to the Broken Shore
 step
     .isOnQuest 40249
-    .countdown 12 >>|cRXP_WARN_Wait for the Roleplay|r.
+    .enterScenario 961 >>|cRXP_WARN_Wait for the Roleplay|r.
 step
     .goto 676,15.09,51.77
     .isOnQuest 40249
@@ -2171,7 +2173,7 @@ step
     .goto 676,23.73,63.82,15,0
     .goto 676,24.3,64.04,15,0
     .goto 676,25.11,63.11,30 >>Follow the Arrow
-    .timer 11,RP
+    .timer 9,RP
 step
     #requires Caria Felsoul
     .goto 676,26.82,61.37
@@ -2289,6 +2291,17 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
+step
+    #optional
+    .convertquest 39261,39047
+    .convertquest 39261,39047
+    .convertquest 40814,40816
+    .convertquest 41221,41033
+    .convertquest 41037,41060
+    .convertquest 41062,41070
+    .convertquest 41067,41096
+    .convertquest 41069,41099
+    .convertquest 44383,44379
 step
     #include ab) Order Hall Demon Hunter Part 1@Future of The Fel Hammer-Call of the Illidari
 step
