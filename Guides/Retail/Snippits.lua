@@ -1021,7 +1021,7 @@ step
     .mob Niskaran Doombringer
     .mob Felguard Sentry
 step
-    #title Escort Baron Silver
+    #title |cFFFCDC00Escort Baron Silver|r
     .isInScenario 940
     .goto 714,37.70,47.45
     >>Kill the |cRXP_ENEMY_Felguard Sentries|r on the way otherwise |cRXP_FRIENDLY_Baron Silver|r will get stuck.
@@ -1456,13 +1456,12 @@ step
     .accept 40931 >>Accept Following the Curse
     .target Revil Kost
 step
-    --TODO: Title Color
     .isOnQuest 40931
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .goto 47,77.37,35.12
     .countdown 25 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .isOnQuest 40931
     .goto 47,80.86,33.00,25,0
     .goto 47,84.33,36.29,20,0
@@ -1473,7 +1472,7 @@ step
     .goto 47,85.55,40.69
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .isOnQuest 40931
     .goto 42,36.64,35.55,25,0
     .goto 42,39.13,33.72,25,0
@@ -1483,7 +1482,7 @@ step
     .goto 42,44.33,34.54
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .goto 42,47.92,33.92,20,0
     .goto 42,48.80,38.69,20,0
     .goto 42,50.70,40.81
@@ -1710,13 +1709,13 @@ step
     .isQuestAvailable 40819
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .accept 44383 >>Accept In Pursuit of Power
+    .acceptmultiple 44383,44379 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
-    .isOnQuest 44383
+    .isOnQuest 44383,44379
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 44383,1 --1/1 Choose a second artifact to pursue
@@ -1737,11 +1736,11 @@ step
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .target Kayn Sunfury
-    .accept 40814 >>Accept The Power to Survive
+    .acceptmultiple 40814,40816 >>Accept The Power to Survive
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
-    .isOnQuest 40814
+    .isOnQuest 40814,40816
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 40814,1 --1/1 Artifact weapon chosen
@@ -1982,13 +1981,13 @@ step
     .isQuestAvailable 40247
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .accept 44383 >>Accept In Pursuit of Power
+    .acceptmultiple 44383,44379 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
-    .isOnQuest 44383
+    .isOnQuest 44383,44379
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 44383,1 --1/1 Choose a second artifact to pursue
@@ -2009,11 +2008,11 @@ step
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .target Kayn Sunfury
-    .accept 40814 >>Accept The Power to Survive
+    .acceptmultiple 40814,40816 >>Accept The Power to Survive
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
-    .isOnQuest 40814
+    .isOnQuest 40814,40816
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 40814,1 --1/1 Artifact weapon chosen
@@ -2517,7 +2516,6 @@ step
     .target Belysra Starbreeze
     .accept 40785 >>Accept A Foe of the Dark
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter House|r    
     .goto 47,77.42,36.13
     >>|cRXP_WARN_Follow the arrow|r.
@@ -2529,13 +2527,12 @@ step
     .accept 40834 >>Accept Following the Curse
     .target Revil Kost
 step
-    --TODO: Title Color
     .isOnQuest 40834
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .goto 47,77.37,35.12
     .countdown 25 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .isOnQuest 40834
     .goto 47,80.86,33.00,25,0
     .goto 47,84.33,36.29,20,0
@@ -2546,7 +2543,7 @@ step
     .goto 47,85.55,40.69
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .isOnQuest 40834
     .goto 42,36.64,35.55,25,0
     .goto 42,39.13,33.72,25,0
@@ -2556,7 +2553,7 @@ step
     .goto 42,44.33,34.54
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .goto 42,47.92,33.92,20,0
     .goto 42,48.80,38.69,20,0
     .goto 42,50.70,40.81
@@ -3170,7 +3167,6 @@ step
     .accept 41782 >>Accept To The Hills
     .target Lea Stonepaw
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter Cave|r
     #completewith MistressOfTheClawA
     .goto 747,46.26,28.36,8,0
@@ -3192,7 +3188,6 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Flask of Moonwell Water|r
     .complete 41782,1 --1/1 Flask of Moonwell Water
 step
-    --TODO: Title Color
     #title |cFFFCDC00Leave Cave|r
     #completewith ToTheHillsA
     .goto 747,48.08,15.56,15,0
@@ -3252,8 +3247,7 @@ step
     .turnin 41782 >>Turn in To The Hills
     .target Lea Stonepaw
 step
-    --TODO: Title Color
-    #title Check Note
+    #title |cFFFCDC00Check Note|r
     .goto 116,50.50,37.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursol|r
     *|cRXP_WARN_Note: If you can't see the roleplay or |cRXP_FRIENDLY_Ursol|r then relog next to |cRXP_FRIENDLY_Lea Stonepaw|r.|r
@@ -3576,7 +3570,6 @@ step
     .accept 41436 >>Accept In Deep Slumber
     .target Naralex
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter Cave|r
     #completewith JoinTheDreamerA
     .goto 747,46.26,28.36,8,0
@@ -3604,8 +3597,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_G'Hanir|r |cRXP_WARN_outside of the cave|r.
     .complete 41436,2 --1/1 Corrupted G'Hanir, the Mother Tree
 step
-    --TODO: Title Color
-    #title Free Bashana
+    #title |cFFFCDC00Free Bashana|r
     #completewith InDeepSlumberA
     #label InDeepSlumberB
     .goto 747,40.83,2.02,8,0
@@ -3614,8 +3606,7 @@ step
     .goto 747,47.21,7.17
     .cast 311698 >>Click on the |cRXP_PICK_Roots|r
 step
-    --TODO: Title Color
-    #title Leave cave, heal yourself
+    #title |cFFFCDC00Leave cave, heal yourself|r
     #requires InDeepSlumberB
     #completewith InDeepSlumberA
     #label InDeepSlumberC
@@ -3646,7 +3637,6 @@ step
     .accept 41689 >>Accept Cleansing the Mother Tree
     .target Lyessa Bloomwatcher
 step
-    --TODO: Title Color
     #title |cFFFCDC00Leave Cave|r
     #completewith ReconveneA
     .goto 747,41.02,2.21,8,0
@@ -3993,7 +3983,7 @@ step
     .target Grif Wildheart
     .skipgossipid 45594
 step
-    #title Dodge the small tornadoes
+    #title |cFFFCDC00Dodge the small tornadoes|r
     .isInScenario 1068
     .goto 635,75.26,58.95,10,0
     .goto 635,52.67,52.30
@@ -4030,7 +4020,7 @@ step
     .scenario 2424,1 --Join Keeper Mimiron in Ulduar.
     .complete 41574,2 --Track down Titanstrike: 1/1
 step
-    #title Avoid the bombs
+    #title |cFFFCDC00Avoid the bombs|r
     .goto 745,44.93,37.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mimiron|r.
     .turnin 41574 >>Turn in Stolen Thunder
@@ -4212,7 +4202,6 @@ step
     .target Emmarel Shadewarden
 step
     .isQuestAvailable 40959
-    --TODO: Title Color
     #title |cRXP_WARN_Enter House|r
     #completewith HunterToHunterBMA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -4351,8 +4340,7 @@ step
 step
     .isQuestAvailable 40959
     .zoneskip 627,1
-    --TODO: Title Color
-    #title Leave the house
+    #title |cFFFCDC00Leave the house|r
     #completewith RendezvousWithTheCourierA
     .goto 627,58.58,51.30,8 >>|cRXP_WARN_Follow the arrow out of the house.|r
 step
@@ -4485,7 +4473,6 @@ step
     .turnin 40952 >>Turn in Hunter to Hunter
     .target Emmarel Shadewarden
 step
-    --TODO: Title Color
     #title |cRXP_WARN_Enter House|r
     #completewith HunterToHunterA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -4757,8 +4744,7 @@ step
     .scenario 1986,1 --Slay Dakarr.
     .mob Dakarr
 step
-    --TODO: Title Color
-    #title Enter the cave
+    #title |cFFFCDC00Enter the cave|r
     #completewith SlayDakarrA
     .goto 694,57.88,34.53,8 >>|cRXP_WARN_Follow the arrow into the cave.|r
 step
@@ -4785,7 +4771,6 @@ step
     .turnin 40385 >>Turn in The Spear in the Shadow
     .target Emmarel Shadewarden
 step
-    --TODO: Title Color
     #title |cRXP_WARN_Enter House|r
     #completewith TheSpearInTheShadowA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -9659,10 +9644,8 @@ step
     .goto 18,13.90,55.41
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Slaghammer's Notes|r.
     .scenario 2221,3 --Find the third clue
-
 step
-    --TODO: Title Color
-    #title Swim down
+    #title |cFFFCDC00Swim down|r
     .isInScenario 991
     .goto 20,37.87,12.57,8,0
     .goto 20,34.13,23.36
@@ -11441,11 +11424,10 @@ step
     .complete 43338,4 --1/1 The Edict of Storm
     .mob Thunder Serpent Nalak'Ra
 step
-    --TODO: Color title
     #completewith next
     .isOnQuest 43338
     .isQuestNotComplete 43338
-    #title Check note
+    #title |cFFFCDC00Check note|r
     .goto 395,32.94,21.14,15,0
     .goto 395,27.75,46.45,15,0
     .goto 395,51.81,57.95,33,0
@@ -11471,7 +11453,7 @@ step
     .target Rehgar Earthfury
 step
     #completewith TheCodexofRaA
-    #title Check note
+    #title |cFFFCDC00Check note|r
     .goto 395,67.13,14.55,15,0
     .goto 395,70.22,18.57,15,0
     .goto 395,68.17,24.88,15,0
@@ -12024,8 +12006,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Adelee's Journal|r.
     .complete 43645,3 --1/1 Third Clue Found
 step
-    --TODO: Title Color
-    #title Enter the room
+    #title |cFFFCDC00Enter the room|r
     #completewith ThirdClueA
     .goto 205,33.10,68.76,10 >>|cRXP_WARN_Enter the room.|r
 step
@@ -12039,8 +12020,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Ancient Wavestone|r
     .complete 43645,2 --1/1 Second Clue Found
 step
-    --TODO: Title Color
-    #title Leave the room
+    #title |cFFFCDC00Leave the room|r
     #completewith SecondClueA
     .goto 205,33.11,69.01,10 >>|cRXP_WARN_Leave the room.|r
 step
@@ -12118,8 +12098,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bubble Up|r.
     .scenario 2286,1 --Use Erunak's spell to ascend the riptide.
 step
-    --TODO: Title Color
-    #title Dodge the waves
+    #title |cFFFCDC00Dodge the waves|r
     .isInScenario 1066
     .goto 743,50.48,56.05
     >>|cRXP_WARN_Dodge the waves and follow the arrow.|r
@@ -12321,13 +12300,12 @@ step
     .accept 40588 >>Accept Following the Curse
     .target Revil Kost
 step
-    --TODO: Title Color
     .isOnQuest 40588
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .goto 47,77.37,35.12
     .countdown 25 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .isOnQuest 40588
     .goto 47,80.86,33.00,25,0
     .goto 47,84.33,36.29,20,0
@@ -12338,7 +12316,7 @@ step
     .goto 47,85.55,40.69
     .countdown 20 >>Kill the |cRXP_ENEMY_Dark Riders|r
 step
-    #title Stay near Ariden
+    #title |cFFFCDC00Stay near Ariden|r
     .isOnQuest 40588
     .goto 42,36.64,35.55,25,0
     .goto 42,39.13,33.72,25,0
@@ -12404,8 +12382,7 @@ step
     >>Use the |T338784:0|t[|cRXP_WARN_ExtraActionButton|r] (Attune the Compass).
     .complete 40611,2 --1/1 Attuned at the church
 step
-    --TODO: Title Color
-    #title Enter the church
+    #title |cFFFCDC00Enter the church|r
     #completewith TheFateOfDeadwindA
     .goto 42,40.66,77.80,6 >>|cRXP_WARN_Follow the arrow into the church.|r
 step
@@ -12676,8 +12653,7 @@ step
     .accept 42168 >>Accept Looking into the Darkness
     .target Calydus
 step
-    --TODO: Title Color
-    #title Enter the room
+    #title |cFFFCDC00Enter the room|r
     #completewith RitualReagentsA
     .goto 627,56.84,46.85,8 >>|cRXP_WARN_Follow the arrow into the room.|r
 step
@@ -12970,8 +12946,7 @@ step
     .scenario 2715,1 --Speak with Allaris and Nagaz.
     .target Allaris and Nagaz.
 step
-    --TODO: Title Color
-    #title Enter the prison
+    #title |cFFFCDC00Enter the prison|r
     #completewith SpeakWithAllarisAndNagazA
     .goto 773,42.70,38.47,8 >>|cRXP_WARN_Follow the arrow into the prison.|r
 step
@@ -13025,8 +13000,7 @@ step
     .isInScenario 1155
     .scenario 2725,1 --Enter Baradin Hold
 step
-    --TODO: Title Color
-    #title Leave the prison
+    #title |cFFFCDC00Leave the prison|r
     #completewith EnterBaradinHoldA
     #label EnterBaradinHoldB
     .goto 773,40.19,30.27,10,0
@@ -13035,8 +13009,7 @@ step
     .goto 773,42.73,35.83,8,0
     .goto 773,42.68,39.66,10 >>|cRXP_WARN_Follow the arrow out of the prison.|r
 step
-    --TODO: Title Color
-    #title Enter Baradin Hold
+    #title |cFFFCDC00Enter Baradin Hold|r
     #requires EnterBaradinHoldB
     #completewith EnterBaradinHoldA
     #label EnterBaradinHoldC

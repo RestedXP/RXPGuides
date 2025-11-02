@@ -137,19 +137,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    #completewith next
-    .achievementComplete 42313,1
-    +Select this guide to skip the intro (faster leveling).
-    .clicknext RestedXP Legion Remix\a) Intro Skip >> Intro Skip
 step
     .goto 627,72.46,45.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -169,6 +156,19 @@ step
     .target Archmage Khadgar
     .accept 89405 >>Accept Mean Streets of Dalaran
 step
+    #completewith Mean Streets of Dalaran
+    .achievementComplete 42313,1
+    +Select this guide to skip the intro (faster leveling).
+    .clicknext RestedXP Legion Remix\a) Intro Skip >> Intro Skip
+step << Alliance
+    .isOnQuest 89405
+    #title |cFFFCDC00Check Note|r
+    .goto 627,67.24,39.87,5,0
+    .goto 627,67.59,39.09,5,0
+    .goto 627,65.54,39.69,5,0
+    .goto 627,65.45,39.37,5 >>Climb the Wall and Jump Down
+    .timer 5,RP
+step << Horde
     #completewith next
     #label Legion demons purged
     >>Kill |cRXP_ENEMY_Demons|r
@@ -178,13 +178,29 @@ step
     .mob Felstalker Broodling
     .mob Imp Scout
     .mob Felfire Imp
-step
+step << Horde
+    #title |cFFFCDC00Check Note|r
     #completewith Legion demons purged
     .goto 627,61.74,41.58,10,0
     .goto 627,59.3,43.95,10 >>Enter Dalaran City
-step
+step << Horde
     #requires Legion demons purged
-    .goto 627,54.46,39,15,0
+    .goto 627,54.46,39,30,0
+    .goto 627,50.45,33.52,15,0
+    .goto 627,52.19,42.07,15,0
+    .goto 627,45.67,54.09,15,0
+    .goto 627,42.49,57.09,15,0
+    .goto 627,33.85,54.79,15,0
+    .goto 627,42.69,56.95
+    >>Kill |cRXP_ENEMY_Demons|r
+    .complete 89405,1 --Legion demons purged (100%)
+    .mob Felguard Invader
+    .mob Felstalker
+    .mob Felstalker Broodling
+    .mob Imp Scout
+    .mob Felfire Imp
+step << Alliance
+    .goto 627,54.46,39,30,0
     .goto 627,50.45,33.52,15,0
     .goto 627,52.19,42.07,15,0
     .goto 627,45.67,54.09,15,0
@@ -199,12 +215,19 @@ step
     .mob Imp Scout
     .mob Felfire Imp
 step
+    #label Mean Streets of Dalaran
     .goto 627,49.08,46.96,5,0
     .goto 627,49.29,47.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r at the center of dalaran.
     .turnin 89405 >>Turn in Mean Streets of Dalaran
     .target Archmage Khadgar
     .accept 89406 >>Accept Seal and Protect
+step
+    #completewith Storm the Citadel2
+    .achievementComplete 42313,1
+    +You have the option to reconsider your choice until you get teleported out of dalaran.
+    *|cRXP_WARN_You may manually skip this step if you prefer|r.
+    .clicknext RestedXP Legion Remix\a) Intro Skip >> Intro Skip
 step
     #completewith next
     #label Magical barriers
@@ -239,6 +262,7 @@ step
     .skipgossipid 133081
     .target Momentus
 step
+    #label Seal and Protect
     .goto 627,42.81,27.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 89406 >>Turn in Seal and Protect
@@ -367,7 +391,7 @@ step
     #requires Arrived at Tanks for Everything
     #completewith next
     #label Temporal fibers0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge|r |cRXP_WARN_on the wall|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge|r |cRXP_WARN_on the wall|r.
     .complete 89409,2 --1/1 Anchor materials prepared
 step
     #completewith Temporal fibers0
@@ -584,10 +608,11 @@ step
     .turnin 89413 >>Turn in Obliterate, Then Iterate
     .target Erus
 step
+    #label Storm the Citadel2
+    .goto 627,42.73,27.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 89412 >>Turn in Get Plenty of Exorcise
     .turnin 90901 >>Turn in As A Matter of Artifact
-    .goto 627,42.73,27.78
     .target +Momentus
 step
     .goto 627,42.75,27.82
@@ -659,7 +684,8 @@ step
     .turnin 89415 >>Turn in Storm the Citadel
     .target Archmage Khadgar
 step
-    .goto 627,51.03,48.13
+    .goto 627,51.03,48.13,-1
+    .goto 627,72.42,45.93,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .accept 89416 >>Accept Eternal Gratitude
     .target Moratari
@@ -937,6 +963,11 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     #completewith The Dawning Light
     #hidewindow
     +test
@@ -964,18 +995,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     #label MonkStart1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you when in dalaran|r.
@@ -1157,11 +1176,6 @@ step
     .accept 40636 >>Accept Prepare To Strike
     .target Iron-Body Ponshu
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40636
     .isQuestAvailable account,91955
     +Select one of the following guides for now:
@@ -1171,7 +1185,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Windwalker >> Windwalker(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Brewmaster >> Brewmaster(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Mistweaver >> Mistweaver(Healer) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Monk Order Hall Intro 2
@@ -1214,14 +1228,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #optional
     .isQuestAvailable 40636
@@ -1308,6 +1314,11 @@ RXPGuides.RegisterGuide([[
 << DeathKnight
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaberk|r.
     *|cRXP_WARN_Note:|r This should get pushed to your quest log automatically while in Dalaran. If not then relog.
     .accept 40714 >>Accept The Call To War
@@ -1318,11 +1329,6 @@ step
     .turnin 40714 >>Turn in The Call To War
     .accept 40715 >>Accept A Pact of Necessity
     .target Duke Lankral
-step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     .isQuestAvailable account,91955
     +Select one of the following guides for now:
@@ -1489,6 +1495,12 @@ RXPGuides.RegisterGuide([[
 << DemonHunter
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     #completewith Call of the Illidari
     #hidewindow
     +test
@@ -1516,18 +1528,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     #optional
     .convertquest 39261,39047
@@ -1558,7 +1558,7 @@ step
     .target Moratari
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r |cRXP_WARN_next to you|r
-    .accept 39261 >>Accept Call of the Illidari
+    .acceptmultiple 39261,39047 >>Accept Call of the Illidari
     .target Kor'vas Bloodthorn
 step
     #label Call of the Illidari
@@ -1573,11 +1573,6 @@ step
     .target Kayn Sunfury
     .accept 40814 >>Accept The Power to Survive
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40814
     .isQuestAvailable account,91955
     +Select one of the following guides for now:
@@ -1586,7 +1581,7 @@ step
     *|cFFFF0000You can't progress if you don't select one|r.
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Havoc >> Havoc(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Vengeance >> Vengeance(DPS) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Demon Hunter Order Hall Intro 2
@@ -1629,14 +1624,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #optional
     .isQuestAvailable 40814
@@ -1676,7 +1663,7 @@ step
 step
     .goto 627,95.24,66.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Mother Malevolence|r
-    .accept 41221 >>Accept Return to Mardum
+    .accept 41221,41033 >>Accept Return to Mardum
     .target Matron Mother Malevolence
 step
     .goto 627,97.66,68.89
@@ -1687,7 +1674,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 41221 >>Turn in Return to Mardum
     .target Kayn Sunfury
-    .accept 41037 >>Accept Unbridled Power
+    .accept 41037,41060 >>Accept Unbridled Power
 step
     #completewith next
     #label Fel Hammer
@@ -1708,7 +1695,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 41037 >>Turn in Unbridled Power
     .target Kayn Sunfury
-    .accept 41062 >>Accept Spoils of Victory
+    .accept 41062,41070 >>Accept Spoils of Victory
 step
     .goto 720,55.88,54.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Battlelord Gaardoun|r
@@ -1751,7 +1738,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r
     .turnin 41066 >>Turn in The Hunter's Gaze
     .target Allari the Souleater
-    .accept 41067 >>Accept Time is of the Essence
+    .accept 41067,41096 >>Accept Time is of the Essence
 step
     #completewith next
     #label Time is of the Essence
@@ -1772,7 +1759,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 41067 >>Turn in Time is of the Essence
     .target Kayn Sunfury
-    .accept 41069 >>Accept Direct Our Wrath
+    .acceptmultiple 41069,41099 >>Accept Direct Our Wrath
 step
     .goto 720,58.56,53.23
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
@@ -1838,14 +1825,6 @@ step
     .gossipoption 45707 >>Talk to |cRXP_FRIENDLY_Loramus Thalipedes|r
     .timer 83,RP
     .target Loramus Thalipedes
--- step
---     #requires Loramus Thalipedes
---     .isOnQuest 42683
--- step
---     #title |cFFFCDC00Follow the Arrow|r
---     #label Asha Ravensong
---     >>|cRXP_WARN_Wait for the Roleplay|r.
---     .complete 42683,1 --1/1 Loramus' story
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
@@ -1856,13 +1835,13 @@ step
     .goto 720,50.57,66.1,10,0
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .accept 44383 >>Accept In Pursuit of Power
+    .acceptmultiple 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
-    .isOnQuest 44383
+    .isOnQuest 44383,
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .complete 44383,1 --1/1 Choose a second artifact to pursue
@@ -1887,7 +1866,7 @@ step
     .goto 720,50.57,66.1,10,0
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .accept 44383 >>Accept In Pursuit of Power
+    .acceptmultiple 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
@@ -1948,6 +1927,11 @@ RXPGuides.RegisterGuide([[
 
 << Druid
 
+step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r |cRXP_WARN_next to you|r.
     *- |cRXP_WARN_Run around in Dalaran until he spawns|r
@@ -2044,11 +2028,6 @@ step
     .accept 40646 >>Accept Weapons of Legend
     .target Rensar Greathoof
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40646
     .isQuestAvailable account,91955
     +Select one of the following guides for now:
@@ -2059,7 +2038,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> Feral(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardian(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restoration(Healer) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Druid Order Hall Intro 2
@@ -2096,8 +2075,7 @@ step
     .timer 35,Greathoof Roleplay
     .target Rensar Greathoof
 step
-    --TODO: Title Color
-    #title Check Note
+    #title |cFFFCDC00Check Note|r
     .goto 747,45.98,51.10
     *|cRXP_WARN_If you can't see |cRXP_FRIENDLY_Archdruid Greathoof|r then you have to reaccept the quest|r.
     .complete 41332,1 --1/1 Walk with Archdruid Greathoof
@@ -2148,6 +2126,11 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .goto 627,58.61,45.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snowfeather|r.
     *|cRXP_WARN_NOTE:|r Run around in Dalaran until it spawns next to you.
@@ -2161,7 +2144,6 @@ step
     .accept 41415 >>Accept The Hunter's Call
     .target Emmarel Shadewarden
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter House|r
     #completewith NeedsOfTheHuntersA
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -2180,7 +2162,6 @@ step
     .target Grif Wildheart
     .skipgossipid 45259
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter House|r
     #completewith TheHuntersCallA
     .goto 627,58.01,40.06,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -2199,7 +2180,6 @@ step
     .target Apata Highmountain
     .skipgossipid 45079
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter House|r
     #completewith TheHuntersCallB
     .goto 627,53.38,61.34,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -2224,7 +2204,6 @@ step
     .accept 40618 >>Accept Weapons of Legend
     .target Emmarel Shadewarden
 step
-    --TODO: Title Color
     #title |cFFFCDC00Enter House|r
     #completewith TheHuntersCallC
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
@@ -2236,11 +2215,6 @@ step
     .accept 40618 >>Accept Weapons of Legend
     .target Emmarel Shadewarden
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40618
     .isQuestAvailable account,91955
     .goto 627,60.03,53.41
@@ -2251,7 +2225,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Beast Mastery >> Beast Mastery(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Marksmanship >> Marksmanship(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Survival >> Survival(DPS) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Hunter Order Hall Intro 2
@@ -2284,7 +2258,6 @@ step
     .target the flight master in Krasus' Landing
     .skipgossipid 44178
 step
-    --TODO: Title Color
     #title |cFFFCDC00Leave House|r
     #completewith OnEaglesWingsA
     .goto 627,58.43,51.10,6 >>|cRXP_WARN_Follow the arrow out of the house.|r
@@ -2366,6 +2339,11 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     #completewith Dreadlord's Prize
     #hidewindow
     +test
@@ -2393,18 +2371,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     #label OrderHallMage1
     .goto 627,56.99,46.76
@@ -2553,14 +2519,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #optional
     .isQuestAvailable 41085
@@ -2744,6 +2702,11 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     #completewith Order Hall Paladin Part 1
     #hidewindow
     +test
@@ -2771,18 +2734,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     #label An Urgent Gathering
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r |cRXP_WARN_next to you|r.
@@ -2814,11 +2765,6 @@ step
     .target Lord Maxwell Tyrosus
     .accept 40408 >>Accept Weapons of Legend
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40408
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
@@ -2827,7 +2773,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Retribution >> Retribution(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Paladin Protection >> Protection(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Paladin >> Holy(Healer) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Paladin Order Hall Intro 2
@@ -2870,14 +2816,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 -- step
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r
 --     .accept 44250 >>Accept Champion of the Light
@@ -2983,6 +2921,11 @@ RXPGuides.RegisterGuide([[
 << Priest
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hooded Priestess|r |cRXP_WARN_next to you|r.
     *|cRXP_WARN_Note:|r If she doesn't appear then try to relog.
     .accept 40705 >>Accept Priestly Matters
@@ -3012,11 +2955,6 @@ step
     .accept 40706 >>Accept A Legend You Can Hold
     .target Alonsus Faol
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40706
     .isQuestAvailable account,91955
     .goto 18,78.96,40.99
@@ -3027,7 +2965,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Shadow >> Shadow(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Priest >> Holy(Healer) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Discipline >> Discipline(Healer) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Priest Order Hall Intro 2
@@ -3139,6 +3077,11 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     #completewith Order Hall Rogue Part 1
     #hidewindow
     +test
@@ -3166,18 +3109,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     #label Call of The Uncrowned
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenholdt Courier|r |cRXP_WARN_next to you|r.
@@ -3294,11 +3225,6 @@ step
     .target Valeera Sanguinar
     .target Princess Tess Greymane
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40840
     +Select one of the following guides for now:
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
@@ -3307,7 +3233,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Assassination >> Assassination(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Outlaw >> Outlaw(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Subtlety >> Subtlety(DPS) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Rogue Order Hall Intro 2
@@ -3350,14 +3276,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #optional
     .isQuestAvailable 40840
@@ -3447,6 +3365,11 @@ RXPGuides.RegisterGuide([[
 << Shaman
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     .goto 627,47.31,33.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 39746 >>Accept A Ring Unbroken
@@ -3514,11 +3437,6 @@ step
     .accept 41335 >>Accept The Elements Call...
     .target Thrall
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 41335
     .isQuestAvailable account,91955
     +Select one of the following guides for now:
@@ -3528,7 +3446,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Elemental >> Elemental(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Enhancement >> Enhancement(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Shaman >> Restoration(Healer) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Shaman Order Hall Intro 2
@@ -3597,6 +3515,11 @@ RXPGuides.RegisterGuide([[
 
 << Warlock
 
+step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .accept 40716 >>Accept The Sixth
@@ -3711,11 +3634,6 @@ step
     .accept 40684 >>Accept The Tome of Blighted Implements
     .target Calydus
 step
-    #sticky
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
-step
     .isQuestAvailable 40684
     .isQuestAvailable account,91955
     +Select one of the following guides for now:
@@ -3725,7 +3643,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Affliction >> Affliction(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Demonology >> Demonology(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Destruction >> Destruction(DPS) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Warlock Order Hall Intro 2
@@ -3863,6 +3781,11 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
+    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+step
     #completewith Order Hall Warrior Part 1
     #hidewindow
     +test
@@ -3890,18 +3813,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    .isQuestTurnedIn account,91955
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
 step << Alliance
     #label OrderHallWarriorA1Start
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Dalton|r |cRXP_WARN_next to you|r.
@@ -4054,7 +3965,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Arms >> Arms(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Fury >> Fury(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Warrior Protection >> Protection(Tank) Questline
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
+    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
 ---Warrior Order Hall Intro 2
@@ -4097,14 +4008,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #optional
     .isQuestAvailable 40579
@@ -4229,14 +4132,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
     .use 242617
 step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
    .goto 627,72.07,40.6
@@ -4266,8 +4161,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r and |cRXP_FRIENDLY_Erus|r
     .turnin 91955 >>Turn in Just Between Us
     .goto 619,45.83,67.98
-    -- .turnin 92688 >>Turn in Bronze Simulacrum
-    -- .goto 619,45.78,68.02
     .target Momentus
 step
     .goto 619,45.86,68.00
@@ -4320,21 +4213,17 @@ step <<!DemonHunter
     .skipgossipid 134831
     .skipgossipid 134865
 step
-    -- .achievementComplete 60969,1
+    .goto 619,45.68,68.49
     .isQuestTurnedIn account,91721 
     .isQuestAvailable account,91722
-    .goto 619,45.68,68.49
-    +Test2
-    .questcount <2,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>12345
-    *Skip this step when you've accepted all quests.
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and select a quest based on your preference.
+    .questcount <3,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441,91847,92440,92442,89467,89468 >>Accept 1 of the 100 Quests.
     .target Eternus 
 step
-    -- .achievementComplete 60960,1
     .isQuestTurnedIn account,91722
     .goto 619,45.68,68.49
-    +Test1
-    .questcount <3,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,91844,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,91845,91847,92440,92442,89467,89468,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441 >>1234
-    *Skip this step when you've accepted all quests.
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and select a quest based on your preference.
+    .questcount <4,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441,91847,92440,92442,89467,89468 >>Accept 3 of the 100 Quests.
     .target Eternus 
 step
     #completewith next
@@ -4365,7 +4254,7 @@ step
     .aura 1257698
 ]])
 
----Azsuna
+---Azsuna 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -4375,6 +4264,12 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00FF006|r - Azsuna|r
 #next cb) Val'sharah Speedrun 2
 
+step
+    #optional
+    .isQuestTurnedIn account,91955
+    .achievementComplete 61108,1
+    +|cRXP_WARN_You have to do the previous chapter first|r
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>Azsuna for Alternative Characters.
 step
     #completewith AzsunaSpeedrunY
     #hidewindow
@@ -4403,31 +4298,23 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
-step
-    #optional
-    .isNotOnQuest 39718
-    .isQuestAvailable 39718
-    +|cRXP_WARN_You skipped a previous chapter. Go to your Class Order Hall and accept the Azsuna quest from the Scouting Map. If it’s not available, start the Order Hall Intro 1 guide.|r
-    .clicknext RestedXP Legion Remix\ac) Order Hall Death Knight Part 2>>Death Knight Order Hall Intro 2 << DeathKnight
-    .clicknext RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2>>Demon Hunter Order Hall Intro 2 << DemonHunter
-    .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2>>Druid Order Hall Intro 2 << Druid
-    .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2>>Hunter Order Hall Intro 2 << Hunter
-    .clicknext RestedXP Legion Remix\ac) Order Hall Mage Part 2>>Mage Order Hall Intro 2 << Mage
-    .clicknext RestedXP Legion Remix\ac) Order Hall Monk Part 2>>Monk Order Hall Intro 2 << Monk
-    .clicknext RestedXP Legion Remix\ac) Order Hall Paladin Part 2>>Paladin Order Hall Intro 2 << Paladin
-    .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2>>Priest Order Hall Intro 2 << Priest
-    .clicknext RestedXP Legion Remix\ac) Order Hall Rogue Part 2>>Rogue Order Hall Intro 2 << Rogue
-    .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
-    .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
-    .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
+-- step
+--     #optional
+--     .isNotOnQuest 39718
+--     .isQuestAvailable 39718
+--     +|cRXP_WARN_You skipped a previous chapter. Go to your Class Order Hall and accept the Azsuna quest from the Scouting Map. If it’s not available, start the Order Hall Intro 1 guide.|r
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Death Knight Part 2>>Death Knight Order Hall Intro 2 << DeathKnight
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2>>Demon Hunter Order Hall Intro 2 << DemonHunter
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2>>Druid Order Hall Intro 2 << Druid
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2>>Hunter Order Hall Intro 2 << Hunter
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Mage Part 2>>Mage Order Hall Intro 2 << Mage
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Monk Part 2>>Monk Order Hall Intro 2 << Monk
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Paladin Part 2>>Paladin Order Hall Intro 2 << Paladin
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2>>Priest Order Hall Intro 2 << Priest
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Rogue Part 2>>Rogue Order Hall Intro 2 << Rogue
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
 step
     .zoneskip 619,1
     .goto 619,45.71,67.46
@@ -4465,15 +4352,14 @@ step
     #include RestedXP Legion Remix\b) Behind Legion Lines@BehindLegionLinesC-BehindLegionLinesD
 step
     --BONUS OBJECTIVE
-    --TODO: Title Color
-    #title Don't complete it (See Note)
+    #title Don't complete it |cFFFCDC00(See Note)|r
     .xp >80,1
     #loop
     .goto 630,39.05,48.22,40,0
     .goto 630,36.90,48.19,35,0
     .goto 630,38.66,60.14,35,0
     .goto 630,40.24,54.23,35,0
-    >>Kill the |cRXP_ENEMY_Demons|r in the area. 
+    >>Kill the |cRXP_ENEMY_Demons|r in the area.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Legion Portals|r.
     *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
     .complete 36811,1,75 --Lead the fight against the Legion (100%)
@@ -4503,61 +4389,16 @@ step
     .turnin 42289 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
     #include RestedXP Legion Remix\b) Defending Azurewing Repose@DefendingAzurewingReposeAC-DefendingAzurewingReposeB
--- step
---     #completewith next
---     #label ChallianeVineyardsCustomA
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
---     .accept 38203 >>Accept Challiane Vineyards
---     .target Cellarman Voodani
--- step
---     --TODO: Title Color
---     #title Leave the cave
---     #completewith ChallianeVineyardsCustomA
---     .goto 630,44.35,17.29,10 >>|cRXP_WARN_Follow the arrow out of the cave.|r
--- step
---     #requires ChallianeVineyardsCustomA
---     .goto 630,40.78,9.32
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
---     .accept 38203 >>Accept Challiane Vineyards
---     .target Cellarman Voodani
--- step
---     .goto 630,42.88,8.47
---     >>Kill |cRXP_ENEMY_Grand Vintner Valiana|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Nightrose Recipe: Part 3, Instructions|r].
---     .complete 38203,3 --1/1 Nightrose Recipe: Part 3, Instructions
---     .mob Grand Vintner Valiana
--- step
---     .isOnQuest 38203
---     .isQuestAvailable 38367
---     .goto 630,42.63,8.09
---     .turnin 38367 >>Click on the |cRXP_PICK_Glimmering Treasure Chest|r.
--- step
---     #include RestedXP Legion Remix\b) Challiane Vineyards@ChallianeVineyardsAA-ChallianeVineyardsB
--- step
---     #loop
---     .goto 630,46.94,11.57,35,0
---     .goto 630,44.09,11.91,35,0
---     .goto 630,42.84,7.44,35,0
---     .goto 630,48.47,8.06,45,0
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Kegs|r
---     >>Kill the |cRXP_ENEMY_Lost Laborer|r, |cRXP_ENEMY_Tormented Stagwings|r, |cRXP_ENEMY_Lost Tormentor|r, and |cRXP_ENEMY_Slimes|r.
---     .complete 37965,1 --Combat the Haunting (100%)
--- step
---     .goto 630,40.77,9.32
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cellarman Voodani|r
---     .turnin 38203 >>Turn in Challiane Vineyards
---     .target Cellarman Voodani
 step
     #include RestedXP Legion Remix\b) Defending Azurewing Repose@DefendingAzurewingReposeC-DefendingAzurewingReposeD
 step
-    --TODO: Title Color
-    #title In the cave
+    #title |cFFFCDC00In the Cave|r
     .isOnQuest 37959
     .isQuestAvailable account,44104
     .goto 630,53.61,18.14
     .turnin 44104 >>Click on the |cRXP_PICK_Treasure Chest|r.
 step
-    --TODO: Title Color
-    #title Top of the tower
+    #title |cFFFCDC00Top of the Tower|r
     .isOnQuest 37959
     .isQuestAvailable account,40711
     .goto 630,55.63,18.51
@@ -4565,8 +4406,7 @@ step
 step
     #include RestedXP Legion Remix\b) Defending Azurewing Repose@DefendingAzurewingReposeE-DefendingAzurewingReposeF
 step
-    --TODO: Title Color
-    #title Top of the tower
+    #title |cFFFCDC00Top of the Tower|r
     .isOnQuest 37862
     .isQuestAvailable account,37980
     .goto 630,58.38,12.27
@@ -4679,8 +4519,7 @@ step
 step
     .isQuestTurnedIn 37538
     --BONUS OBJECTIVE
-    --TODO: Title Color
-    #title Don't complete it (See Note)
+    #title Don't complete it |cFFFCDC00(See Note)|r
     .xp >80,1
     #loop
     .goto 630,50.57,60.91,25,0
@@ -4691,7 +4530,7 @@ step
     .goto 632,34.43,37.92,25,0
     .goto 632,54.97,62.45,35,0
     .goto 632,72.48,75.05,25,0
-    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress). 
+    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skrog Weapons|r and |cRXP_PICK_Prince's Plunder|r.
     *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
     .complete 37495,1,70 --Plunder Oceanus Cove (100%)
@@ -4731,9 +4570,8 @@ step << Horde
     .target Advisor Stillwater
 step << Horde
     .achievementIncomplete 42317,0
-    --TODO: Title color
     #completewith FateOfTheQueensReprisalCustomA
-    #title Enter the sanctum in Dalaran (See Note)
+    #title |cFFFCDC00Enter the sanctum in Dalaran (See Note)|r
     *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
     .goto 627,58.45,20.62,10 >>|cRXP_WARN_Enter the sanctum|r
 step << Horde
@@ -4752,9 +4590,8 @@ step << Alliance
     .target Lieutenant Surtees
 step << Alliance
     .achievementIncomplete 42317,0
-    --TODO: Title color
     #completewith FateOfTheQueensReprisalCustomB
-    #title Enter the enclave in Dalaran (See Note)
+    #title |cFFFCDC00Enter the sanctum in Dalaran (See Note)|r
     *|cRXP_WARN_NOTE:|r We have to turn this quest in to get the 10% xp bonus at the end of the campaign.
     .goto 627,34.48,66.51,15 >>|cRXP_WARN_Enter the enclave|r
 step << Alliance
@@ -4866,6 +4703,64 @@ step
     .mob Hatecoil Spitespeaker
     .mob Hatecoil Fathom-Stalker
     .mob Subjugated Murloc
+]])
+
+---First Zone 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#chapter
+#subgroup |cFFFCDC00(10-80)|r Speedrun Route
+#name ae) First Zone 2
+#displayname |cFF00FF006|r - Azsuna|r
+#next cb) Val'sharah Speedrun 2
+
+step
+    #completewith AzsunaSpeedrunY
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+-- step
+--     #optional
+--     .isNotOnQuest 39718
+--     .isQuestAvailable 39718
+--     +|cRXP_WARN_You skipped a previous chapter. Go to your Class Order Hall and accept the Azsuna quest from the Scouting Map. If it’s not available, start the Order Hall Intro 1 guide.|r
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Death Knight Part 2>>Death Knight Order Hall Intro 2 << DeathKnight
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2>>Demon Hunter Order Hall Intro 2 << DemonHunter
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2>>Druid Order Hall Intro 2 << Druid
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2>>Hunter Order Hall Intro 2 << Hunter
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Mage Part 2>>Mage Order Hall Intro 2 << Mage
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Monk Part 2>>Monk Order Hall Intro 2 << Monk
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Paladin Part 2>>Paladin Order Hall Intro 2 << Paladin
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2>>Priest Order Hall Intro 2 << Priest
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Rogue Part 2>>Rogue Order Hall Intro 2 << Rogue
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
+--     .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
 
 ]])
 
@@ -4910,14 +4805,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     .goto 627,72.47,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
@@ -4926,6 +4813,7 @@ step
     .target Archmage Khadgar
 step
     #label BehindLegionLinesA
+
     .goto 627,72.47,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .complete 41220,1 --1/1 Fly down with Khadgar
@@ -5168,14 +5056,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label DefendingAzurewingReposeA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r.
@@ -5268,8 +5148,7 @@ step
     .accept 37855 >>Accept The Last of the Last
     .target Senegos
 step
-    --TODO: Title Color
-    #title DON'T ENTER THE CAVE
+    #title |cFFFCDC00DON'T ENTER THE CAVE|r
     .goto 630,49.18,16.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Projection of Senegos|r.
     .turnin 37855 >>Turn in The Last of the Last
@@ -5356,8 +5235,7 @@ step
     .gossipoption 43454 >>Talk to |cRXP_FRIENDLY_Runas the Shamed|r and follow him.
     .target Runas the Shamed
 step
-    --TODO: Title Color
-    #title Stay close to Runas
+    #title |cFFFCDC00Stay close to|r Runas
     .goto 630,53.65,16.79
     >>Follow |cRXP_FRIENDLY_Runas the Shamed|r. |cRXP_WARN_Stay close to him|r.
     .complete 37857,1 --1/1 Follow Runas
@@ -5598,14 +5476,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label AzsunaVersusAzsharaA
     .goto 630,47.92,26.94
@@ -5678,8 +5548,7 @@ step
     .target Prince Farondis
     .skipgossipid 43329
 step
---TODO: Title Color
-    #title Stay close to Prince Farondis
+    #title |cFFFCDC00Stay close to Prince Farondis|r
     .goto 630,47.36,40.32,18,0
     .goto 630,51.80,44.30
     >>|cRXP_WARN_Stay close to |cRXP_FRIENDLY_Prince Farondis|r.|r. Kill the spawning |cRXP_ENEMY_Ambusher|r and |cRXP_ENEMY_Murlocs|r
@@ -5953,8 +5822,7 @@ step
     .target Prince Farondis
     .skipgossipid 43333
 step
-    --TODO: Title color
-    #title Follow the arrow
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 630,54.00,41.31
     >>|cRXP_WARN_Follow the arrow, don't press any buttons while waiting for the roleplay|r
     *- Use the |T135821:0|t[Meteor Storm] (2) and |T135812:0|t[Fireball] (1) to kill enemies
@@ -5962,7 +5830,7 @@ step
     .complete 37530,2 --1/1 Approach the Academy
     .timer 16,Roleplay Duration
 step
-    #title Follow the arrow
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 630,54.43,42.63,25,0
     .goto 630,55.23,41.53
     >>|cRXP_WARN_Follow the arrow|r
@@ -5976,7 +5844,7 @@ step
     .mob Athissa
     .mob Parjesh
 step
-    #title Follow the arrow
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 630,57.79,40.85,20,0
     .goto 630,58.12,41.07
     >>|cRXP_WARN_Follow the arrow|r
@@ -6008,7 +5876,6 @@ step
     .complete 37470,1 --1/1 Athissa slain
     .mob Athissa
 step
-    --TODO: Title color
     #completewith AthissaSlainA
     #title |cFFFCDC00Leave Cave|r
     .goto 630,58.52,41.58,20 >>|cRXP_WARN_Leave the cave|r
@@ -6066,14 +5933,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label AgainstGiantsA
     #loop
@@ -6113,8 +5972,7 @@ step
     .accept 37542 >>Accept No Time for Tryouts
     .target Okuna Longtusk
 step
-    --TODO: Title color
-    #title Fly to the waypoint
+    #title |cFFFCDC00Fly to the waypoint|r
     .goto 630,49.34,50.70
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Giant's Stash of Weapons|r
     .complete 37528,1 --1/1 Giants' Stash of Weapons
@@ -6125,7 +5983,6 @@ step
     .complete 37542,1 --1/1 Give Ooker Dooker a beatdown
     .mob Ooker Dooker
 step
-    --TODO: Title color
     #completewith NoTimeForTryoutsA
     #title |cFFFCDC00Enter Cave|r
     .goto 630,49.22,47.01,10 >>|cRXP_WARN_Enter the cave|r
@@ -6156,7 +6013,6 @@ step
     .target Ooka Dooker
     .skipgossipid 42818
 step
-    --TODO: Title color
     #completewith MoraleBoosterA
     #title |cFFFCDC00Enter Cave|r
     .goto 630,50.06,49.07,12 >>|cRXP_WARN_Enter the cave|r
@@ -6278,14 +6134,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label MakranaFateQueenReprisalA
     .goto 630,56.60,59.59
@@ -6337,6 +6185,18 @@ step
     .accept 42244 >>Accept Fate of the Queen's Reprisal << Horde
     .accept 40794 >>Accept Fate of the Queen's Reprisal << Alliance
 step
+    #completewith NightborneMakingtheWorldSafeforProfit
+    >>Kill |cRXP_ENEMY_Giblins & Makruras|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Queen's Reprisal Sailors|r. << Horde
+    >>Kill |cRXP_ENEMY_Queen's Reprisal Sailors|r. << Alliance
+    .complete 37657,1 --12/12 Giblin & Makrura slain
+    .complete 42268,1 --10/10 Queen's Reprisal Sailors rescued
+    .mob Bitterbrine Venomer
+    .mob Bitterbrine Saltcaster
+    .mob Mak'rana Warrior
+    .mob Mak'rana Elder
+    .target Queen's Reprisal Sailor
+step
     #completewith next
     #label MakranaFateQueenReprisalC
     >>Kill |cRXP_ENEMY_Oublion|r.
@@ -6377,7 +6237,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mr. Shackle|r.
     .turnin 37657 >>Turn in Making the World Safe for Profit
     .target Mr. Shackle
--- TODO: Add turn in for Fate of Queen's Reprisal
 step << Horde
     #completewith next
     #label FateOfTheQueensReprisalA
@@ -6385,9 +6244,8 @@ step << Horde
     .turnin 42244 >>Turn in Fate of the Queen's Reprisal
     .target Advisor Stillwater
 step << Horde
-    --TODO: Title color
     #completewith FateOfTheQueensReprisalA
-    #title Enter the sanctum
+    #title |cFFFCDC00Enter the Sanctum|r
     .goto 627,58.45,20.62,10 >>|cRXP_WARN_Enter the sanctum|r
 step << Horde
     #requires FateOfTheQueensReprisalA
@@ -6403,9 +6261,8 @@ step << Alliance
     .turnin 40794 >>Turn in Fate of the Queen's Reprisal
     .target Lieutenant Surtees
 step << Alliance
-    --TODO: Title color
     #completewith FateOfTheQueensReprisalB
-    #title Enter the enclave
+    #title |cFFFCDC00Enter the Enclave|r
     .goto 627,34.48,66.51,15 >>|cRXP_WARN_Enter the enclave|r
 step << Alliance
     #requires FateOfTheQueensReprisalB
@@ -6458,14 +6315,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label ChallianeVineyardsA
     .goto 630,40.78,9.32
@@ -6535,14 +6384,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label KirinTorReconnaissanceA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kallistia Starlance|r and |cRXP_FRIENDLY_Olothil Starlance|r
@@ -6553,10 +6394,7 @@ step
     .goto 630,53.39,45.43
     .target +Olothil Starlance
 step
-    #loop
-    .goto 630,55.90,43.94,30,0
-    .goto 630,55.52,47.24,30,0
-    .goto 630,52.94,43.89,35,0
+    #completewith Hatecoil Glyptic2
     >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Naga Brute|r. Loot them for the |T1028990:0|t[|cRXP_LOOT_Hatecoil Glyptics|r].
     .complete 42693,1 --3/3 Hatecoil Glyptic
     .mob Hatecoil Stormcaller
@@ -6568,39 +6406,38 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Highborne Tome|r
     .complete 42692,1 --1/1 First Ancient Highborne Tome
 step
-    #completewith next
-    #label ChildrenOfNarthasA
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Highborne Tome|r
-    *|cRXP_WARN_The waypoint will be wrong if you click on the tomes in a different order|r
-    .complete 42692,2 --1/1 Second Ancient Highborne Tome
-step
-    --TODO: Title color
-    #completewith ChildrenOfNarthasA
-    #title Enter the ruins
-    .goto 630,51.99,43.85,10 >>|cRXP_WARN_Enter the ruins|r
-step
-    #requires ChildrenOfNarthasA
-    .goto 630,51.97,43.62
+    .goto 630,51.99,43.85
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Highborne Tome|r
     *|cRXP_WARN_The waypoint will be wrong if you click on the tomes in a different order|r
     .complete 42692,2 --1/1 Second Ancient Highborne Tome
 step
     #completewith next
     #label ChildrenOfNarthasB
+    .goto 630,51.89,44.02,5,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Highborne Tome|r
     *|cRXP_WARN_The waypoint will be wrong if you click on the tomes in a different order|r
     .complete 42692,3 --1/1 Third Ancient Highborne Tome
 step
-    --TODO: Title color
     #completewith ChildrenOfNarthasB
-    #title Enter the ruins
-    .goto 630,51.99,43.85,10 >>|cRXP_WARN_Enter the ruins|r
+    #title |cFFFCDC00Enter the ruins|r
+    .goto 630,52.6,44.21,10 >>|cRXP_WARN_Enter the ruins|r
 step
     #requires ChildrenOfNarthasB
+    #label Hatecoil Glyptic2
     .goto 630,53.03,43.74
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Highborne Tome|r
     *|cRXP_WARN_The waypoint will be wrong if you click on the tomes in a different order|r
     .complete 42692,3 --1/1 Third Ancient Highborne Tome
+step
+    #loop
+    .goto 630,55.90,43.94,30,0
+    .goto 630,55.52,47.24,30,0
+    .goto 630,52.94,43.89,35,0
+    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Naga Brute|r. Loot them for the |T1028990:0|t[|cRXP_LOOT_Hatecoil Glyptics|r].
+    .complete 42693,1 --3/3 Hatecoil Glyptic
+    .mob Hatecoil Stormcaller
+    .mob Hatecoil Riptail
+    .mob Naga Brute
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kallistia Starlance|r and |cRXP_FRIENDLY_Olothil Starlance|r
     .turnin 42692 >>Turn in Children of Nar'thalas
@@ -6679,14 +6516,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     .goto 630,47.05,41.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Irisse|r
@@ -6743,14 +6572,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
 step
     #label CrumbledPalaceCocktailsA
     .goto 630,47.10,41.41
