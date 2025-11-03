@@ -1,20 +1,17 @@
 local _, addon = ...
 
+local _G = _G
+
 local fmt, mrand, smatch, sbyte, tostr = string.format, math.random, string.match, string.byte, tostring
 
-local GetNumGroupMembers, SendChatMessage, GetTime, UnitLevel, UnitClass, UnitXP, UnitXPMax, pcall = GetNumGroupMembers,
-                                                                                                     SendChatMessage,
-                                                                                                     GetTime, UnitLevel,
-                                                                                                     UnitClass, UnitXP,
-                                                                                                     UnitXPMax, pcall
+local GetNumGroupMembers, GetTime, pcall = _G.GetNumGroupMembers, _G.GetTime, _G.pcall
+local UnitXP, UnitXPMax, UnitName, UnitClassBase = _G.UnitXP, _G.UnitXPMax, _G.UnitName, _G.UnitClassBase
 
-local _G = _G
+local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
 
 local L = addon.locale.Get
 
 local AceGUI = LibStub("AceGUI-3.0")
-
-local playerName = _G.UnitName("player")
 
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
 
@@ -39,11 +36,16 @@ function addon.comms:Setup()
     self.db = LibStub("AceDB-3.0"):New("RXPCComms", defaults)
     self.players = self.db.profile.players
 
-    self:RegisterEvent("PLAYER_LEVEL_UP")
+    -- These shouldn't trigger at max level, but disabling for optimization
+    if addon.player.level < addon.player.maxlevel then
+        self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
+        self:RegisterEvent("QUEST_TURNED_IN")
+        self:RegisterEvent("PLAYER_LEVEL_UP")
+    end
+
+    -- Leave addon or guide version checks even if max level
     self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
-    self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
-    self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
@@ -61,8 +63,27 @@ end
 
 function addon.comms:UpgradeDB()
     local abs = math.abs
-    for _, data in pairs(self.players) do if data.timePlayed < 0 then data.timePlayed = abs(data.timePlayed) end end
+    for _, data in pairs(self.players) do
+        if data.timePlayed < 0 then
+            data.timePlayed = abs(data.timePlayed)
+        end
+
+        -- Initial logic didn't calculate XP properly
+        -- Only counted the first XP chunk
+        if not data.version then
+            data.version = 1
+            data.xp = 0
+        end
+    end
 end
+
+function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
+    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
+end
+
+function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
+
+function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
     if not addon.settings.profile.enableTracker then
@@ -77,7 +98,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     if levelData and levelData.timestamp and levelData.timestamp.started and levelData.timestamp.finished then
         s = levelData.timestamp.finished - levelData.timestamp.started
 
-        if not s then return end
+        if not s or s < 0 then return end
 
         local prettyTime = addon.comms:PrettyPrintTime(s)
 
@@ -94,6 +115,8 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
 
                 s = levelData.timestamp.finished - levelData.timestamp.started
 
+                if s < 0 then return end
+
                 msg = self.BuildNotification(L("I just leveled from %d to %d in %s"), level - 1, level,
                                              addon.comms:PrettyPrintTime(s))
                 announceLevelUp(msg)
@@ -104,22 +127,13 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
     end
 end
 
-function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
-
-function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
-
-function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
-    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
-end
-
+local questXPPrefix = _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED:sub(0, 5)
 function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
-    -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
-    -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
-    if 'You' == strsub(text, 0, #'You') then return end
+    if questXPPrefix == text:sub(0, #questXPPrefix) then return end
 
     local xpGained = tonumber(smatch(text, "%d+"))
 
-    if not xpGained or xpGained == 0 then return end
+    if not xpGained or xpGained <= 0 then return end
 
     self:TallyGroup(xpGained)
 end
@@ -134,6 +148,15 @@ end
 
 function addon.comms:TallyGroup(xp)
     if GetNumGroupMembers() < 1 then return end
+    if not xp then return end
+
+    local diff = 0
+    local now = GetTime()
+    if self.state.lastXPGain then
+        diff = now - self.state.lastXPGain
+    end
+
+    self.state.lastXPGain = now
 
     local name
     for i = 1, GetNumGroupMembers() - 1 do
@@ -141,19 +164,16 @@ function addon.comms:TallyGroup(xp)
 
         if not name then break end
 
-        if not self.players[name] then
+        if self.players[name] then
+            self.players[name].xp = xp + (self.players[name].xp or 0)
+            -- Only calculate < 5 minutes between XP gains
+            if diff < 300 then self.players[name].timePlayed = self.players[name].timePlayed + diff end
+        else
             self.players[name] = {xp = xp, timePlayed = 0, class = UnitClassBase("party" .. i)}
         end
 
-        if self.state.lastXPGain then
-            local diff = GetTime() - self.state.lastXPGain
-
-            -- Only calculate < 5 minutes between XP gains
-            if diff < 300 then self.players[name].timePlayed = self.players[name].timePlayed + diff end
-        end
     end
 
-    self.state.lastXPGain = GetTime()
 end
 
 function addon.comms:AnnounceSelf(command)
@@ -161,9 +181,9 @@ function addon.comms:AnnounceSelf(command)
     local data = {
         command = command,
         player = {
-            name = playerName,
+            name = addon.player.name,
             class = addon.player.class,
-            level = UnitLevel("player"),
+            level = addon.player.level,
             xpPercentage = floor(100 * UnitXP("player") / UnitXPMax("player"))
         },
         addon = {release = addon.release}
@@ -175,7 +195,7 @@ function addon.comms:AnnounceSelf(command)
 end
 
 function addon.comms:OnCommReceived(prefix, data, _, sender)
-    if prefix ~= self._commPrefix or sender == playerName then return end
+    if prefix ~= self._commPrefix or sender == addon.player.name then return end
 
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
 
@@ -290,7 +310,7 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.complete[data.title] = UnitLevel("Player")
+        guideAnnouncements.complete[data.title] = addon.player.level
 
     elseif event == '.collect' then
         -- Don't handle announcements if Questie loaded
@@ -307,7 +327,7 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.collect[data.title] = UnitLevel("Player")
+        guideAnnouncements.collect[data.title] = addon.player.level
 
     elseif event == '.fly' then
         if not data.duration or data.duration <= 0 then return end
@@ -333,6 +353,12 @@ function addon.comms.PrettyPrint(msg, ...)
     if not msg then return end
 
     print(fmt("%s: %s", addon.title, fmt(msg, ...)))
+end
+
+function addon.comms.PrettyAnnounce(channel, msg, ...)
+    if not msg then return end
+
+    SendChatMessage(fmt("%s: %s", addon.title, fmt(msg, ...)), channel, nil)
 end
 
 addon.comms.debugThrottle = {}
@@ -377,7 +403,7 @@ function addon.comms.OpenBugReport(stepNumber)
     -- Came from dropdown menu
     if type(stepNumber) == "table" and stepNumber.arg1 then stepNumber = stepNumber.arg1 end
 
-    local character = fmt("%s / %s / level %d (%.2f%%)", UnitRace("player"), addon.player.class, UnitLevel("player"),
+    local character = fmt("%s / %s / level %d (%.2f%%)", addon.player.race, addon.player.class, addon.player.level,
                           UnitXP("player") / UnitXPMax("player") * 100)
 
     local position = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player") or -1, "player")
@@ -645,4 +671,29 @@ function addon.comms:PopupNotification(lookup, prompt)
     }
 
     _G.StaticPopup_Show(lookup)
+end
+
+addon.comms.grouping = {}
+function addon.comms.grouping:ShareQuest(questId)
+    if not addon.settings.profile.shareQuests then return end
+
+    if GetNumGroupMembers() <= 1 or UnitInBattleground("player") ~= nil then return end
+
+    local questLogIndex, isPushable = addon.GetLogIndexForQuestID(questId)
+
+    -- Do not announce shared quests, too verbose and bloated.
+    -- Will let end-user announce when they accept a shared quest
+    if not isPushable then return end
+
+    if not questLogIndex then
+        addon.comms.PrettyDebug("Quest ID not in quest log", questId)
+        return
+    end
+
+    -- Only required for Classic
+    if _G.SelectQuestLogEntry then
+        _G.SelectQuestLogEntry(questLogIndex)
+    end
+
+    return _G.QuestLogPushQuest(questLogIndex)
 end

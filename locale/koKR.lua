@@ -51,7 +51,7 @@ L["Flying to %s ETA %s"] = "%s로 비행 중, 예상 도착 시간: %s"
 L["Describe your issue:"] = "문제를 설명하세요:"
 L["Do not edit below this line"] = "이 라인 아래는 수정하지 마세요"
 L["RestedXP Feedback Form"] = "RestedXP 피드백 양식"
-L["Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"] = 
+L["Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"] =
    "discord.gg/RestedXP의 지원 디스코드에 가입하고 이 양식을 #bug-report에 복사 붙여넣기하세요"
 L["day"] = "일"
 L["days"] = "일"
@@ -117,7 +117,7 @@ L["RestedXP Speedrun Guide (H)"] = "RestedXP 스피드런 가이드 (H)"
 -- GuideWindow.lua file
 
 L["Step %d"] = "%d 단계"
-L["Welcome to RestedXP Guides\nRight click to pick a guide"] = 
+L["Welcome to RestedXP Guides\nRight click to pick a guide"] =
    "RestedXP 가이드에 오신 것을 환영합니다\n가이드를 선택하려면 마우스 오른쪽 버튼을 클릭하세요"
 L["Go to step"] = "단계로 이동"
 L["Select another guide"] = "다른 가이드 선택"
@@ -138,30 +138,30 @@ L["Options..."] = "환경 설정..."
 
 L["NEW FEATURE"] = "새로운 기능"
 L["ULTIMATE HARDCORE\nSURVIVAL GUIDE"] = "얼티밋 하드코어\n서바이벌 가이드"
-L["Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r"] = 
+L["Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r"] =
    "캐릭터를 최대한 안전하게 레벨업하기 위해 특별히 제작된\n새로운 얼티밋 하드코어 생존 가이드를 확인하십시오.\n|cff228B22새로운 기능을 포함합니다.|r"
-L["Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community."] = 
+L["Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community."] =
    "가장 빠르고 효율적인 레벨링 루트를 경험해 보세요.\n클래식 WoW 커뮤니티 최고의 스피드러너가\n수작업으로 만들고 유지 관리합니다."
 L["Select Speedrun Guide"] = "스피드런 가이드 선택"
 L["Select Survival Guide"] = "서바이벌 가이드 선택"
 L["Select your desired features to configure your Guide.\nLet's Go!"] = "원하는 기능을 선택하여 가이드를 구성합니다.\nLet's Go!"
 L["SPEEDRUN GUIDE"] = "스피드런 가이드"
 L["Enable Hostile Enemy Warning"] = "적대적 적 경고 사용"
-L["Alerts when a dangerous entity is nearby and shows patrolling elites on the world map."] = 
+L["Alerts when a dangerous entity is nearby and shows patrolling elites on the world map."] =
    "위험한 개체가 근처에 있을 때 경고하고 세계 지도에서 엘리트가 순찰하는 것을 보여줍니다."
 L["Enable Auction House"] = "경매장 사용"
-L["Considers quests that require items that are obtained through trading with other players."] = 
+L["Considers quests that require items that are obtained through trading with other players."] =
    "다른 플레이어와의 거래를 통해 획득한 아이템이 필요한 퀘스트를 고려합니다."
 L["Enable Group Quests"] = "그룹 퀘스트 활성화"
-L["Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."] = 
+L["Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."] =
    "엘리트 퀘스트를 보여주고 가이드 초기에 어려운 퀘스트를 수행 시킵니다. 솔로 플레이를 선호하는 경우에는 선택하지 않은 상태로 두세요."
 L["Enable Dungeons"] = "던전 활성화"
-L["Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."] = 
+L["Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."] =
    "경로에 던전 퀘스트를 추가합니다. 이는 더 긴 닥사 구간을 피하는 데 도움이 됩니다."
 L["Back"] = "뒤로"
 L["Submit & Continue"] = "수락 & 다음으로"
 L["DUNGEON\nCONFIGURATION"] = "던전 설정"
-L["Add Dungeons to your route. The guide will adjust to\n your selection accordingly."] = 
+L["Add Dungeons to your route. The guide will adjust to\n your selection accordingly."] =
    "이동 경로에 던전을 추가합니다.\n가이드는 그에 따라 선택 사항을 조정할 것입니다."
 L["Select all Dungeons"] = "모든 던전 선택"
 L["Factor all of your available Dungeons to your levelling route"] = "이용 가능한 모든 던전을 레벨링 경로로 설정합니다"
@@ -283,7 +283,7 @@ L["Number of map pins shown on the world map"] = "세계 지도에 표시된 지
 L["Map Pin Scale"] = "지도 핀 크기 조정"
 L["Adjusts the size of the world map pins"] = "세계 지도 핀의 크기를 조정"
 L["Distance Between Pins"] = "핀 사이의 거리"
-L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] = 
+L["If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."] =
    "두 단계 이상이 매우 가까우면, 이 애드온은 그것들을 지도의 단일 핀으로 그룹화합니다. 이 범위를 조정하여 두 단계가 그룹을 형성해야 하는 만큼 얼마나 가까워야 하는지 결정합니다."
 L["Map Pin Background Opacity"] = "지도 핀 배경 불투명도"
 L["The opacity of the black circles on the map and mini map"] = "지도와 미니맵의 검은 원의 불투명도"
@@ -292,11 +292,11 @@ L["Detect Rate"] = "경험치 보너스 감지"
 L["Checks for heirlooms and experience buffs"] = "계승품과 경험치 버프를 확인"
 L["Experience rates"] = "경험치 비율"
 L["Adjusts the guide routes to match increased xp rate bonuses"] = "가이드 경로를 증가된 경험치 비율 보너스에 맞게 조정"
-L["Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them"] = 
+L["Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them"] =
    "주의: 경험치 비율을 1x 이상 변경하면 일부 챕터가 숨겨지고 특정 단계는 레벨이 너무 높아져 자동으로 건너뛸 수 있습니다."
 L["Skip overleveled steps"] = "레벨이 높은 단계 건너뛰기"
 L["Skip steps you're overleveled for"] = "레벨이 너무 높은 단계 건너뛰기"
-L["Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps."] = 
+L["Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps."] =
    "경고: 가이드 중간에 이 설정을 변경하면 퀘스트 사전 요구 사항이 실패할 수 있습니다.\n가이드는 경험치를 최적화하였으며, 이 옵션을 비활성화하면 가이드 단계가 불연속적이게 됩니다."
 L["Waypoint Arrow"] = "웨이포인트 화살표"
 L["Hide waypoint arrow"] = "웨이포인트 화살표 숨기기"
@@ -312,10 +312,10 @@ L["Abandon the following quests?"] = "다음 퀘스트를 포기하시겠습니�
 L["Northrend Loremaster"] = "노스렌드 전문가"
 L["Adjust the routes to include almost every quest in the Northrend zones"] = "노스렌드 지역의 거의 모든 퀘스트를 포함하도록 경로를 조정"
 L["Show Chromie Time Guides"] = "크로미 시간 가이드 표시"
-L["Enables or disables the chromie time guides. Note that freshly created accounts without a level 60 character cannot access chromie time"] = 
+L["Enables or disables the chromie time guides. Note that freshly created accounts without a level 60 character cannot access chromie time"] =
    "크로미 시간 가이드를 활성화하거나 비활성화합니다. 레벨 60 캐릭터가 없는 새로 생성된 계정은 크로미 시간에 접근할 수 없습니다."
 L["Content phase"] = "콘텐츠 단계"
-L["Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"] = 
+L["Adjusts the guide routes to match the content phase\nPhase 2: Dire Maul quests\nPhase 3: 100% quest XP (SoM)\nPhase 4: ZG/Silithus quests\nPhase 5: AQ quests\nPhase 6: Eastern Plaguelands quests"] =
    "가이드 경로를 콘텐츠 단계에 맞게 조정합니다.\n단계 2: 다이어몰 퀘스트\n단계 3: 퀘스트 경험치 100% (SoM)\n단계 4: ZG/실리더스 퀘스트\n단계 5: AQ 퀘스트\n단계 6: 동부 역병지대 퀘스트"
 L["Hardcore mode"] = "하드코어 모드"
 L["Adjust the leveling routes to the deathless ruleset"] = "하드코어 규칙에 맞게 레벨링 경로를 조정"
@@ -331,7 +331,7 @@ L["Active Targets"] = "활성 대상"
 L["Enable Active Targets"] = "활성 대상 활성화"
 L["Automatically scan nearby targets"] = "주변 대상 자동 스캔"
 L["Only show when in range"] = "사정 거리 내에 있을 때만 표시"
-L["Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."] = 
+L["Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."] =
    "대상이 근처에 있는지 확인\n경고: 이 기능은 TargetUnit()에서 ADDON_ACTION_FORBIDDEN 오류에 의존합니다."
 L["Scan Friendly Targets"] = "우호적 대상 스캔"
 L["Scan for friendly targets"] = "우호적 대상 스캔"
@@ -377,9 +377,8 @@ L["Announce Level Ups (Party Chat)"] = "레벨 업 알림 (파티 채팅)"
 L["Announce in party chat when you level up"] = "레벨 업할 때 파티 채팅에서 알립니다"
 L["Announce Level Ups (Guild Chat)"] = "레벨 업 알림 (길드 채팅)"
 L["Announce in guild chat when you level up"] = "레벨 업할 때 길드 채팅에서 알립니다"
-L["Group coordination"] = "그룹 조정"
 L["Send announcements without another RXP user in group"] = "그룹에 다른 RXP 사용자가 없어도 공지를 보냅니다"
-L["Without this checked we will only send announcements if another RestedXP User is in your group"] = 
+L["Without this checked we will only send announcements if another RestedXP User is in your group"] =
    "이 옵션을 선택하지 않으면 RestedXP 사용자가 그룹에 있을 때만 공지를 보냅니다"
 L["Announce when Quest Step is completed"] = "퀘스트 단계 완료 시 알림"
 L["Announce in party chat when you complete certain quests (.complete)"] = "특정 퀘스트를 완료했을 때 파티 채팅에서 알립니다 (.complete)"
@@ -400,7 +399,7 @@ L["Enable Debug"] = "디버그 활성화"
 L["Batching window size (ms)"] = "배치 윈도우 크기 (ms)"
 L["Adjusts the batching window tolerance, used for hearthstone batching"] = "하스스톤 배치에 사용되는 배치 윈도우 허용 오차를 조정합니다"
 L["Skip quests with missing pre-requisites"] = "사전 요구 사항이 누락된 퀘스트 건너뛰기"
-L["Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"] = 
+L["Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"] =
    "필요한 퀘스트 사전 요구 사항이 없는 작업을 자동으로 건너뜁니다\n(Questie가 필요합니다)"
 L["Experience rate change detected, reloading guide for %.2fx"] = "경험치 비율 변경 감지, 가이드를 %.2fx로 다시 로드합니다"
 L["Run Guide Configurator"] = "가이드 마법사 열기"
@@ -452,7 +451,7 @@ L["Emergency Actions"] = "긴급 조치"
 L["No enabled RXP frames for targeting functionality"] = "대상 지정 기능에 대해 활성화된 RXP 프레임이 없습니다"
 L["Targeting macro updated with (%s)"] = "대상 지정 매크로가 (%s)(으)로 업데이트되었습니다"
 L["current step has no configured targets"] = "현재 단계에는 구성된 대상이 없습니다"
-L["A macro has been automatically built to aid in leveling. Please move %s to your action bars."] = 
+L["A macro has been automatically built to aid in leveling. Please move %s to your action bars."] =
    "레벨링을 돕기 위해 매크로가 자동으로 생성되었습니다. %s를 액션 바로 이동해 주세요."
 L["Rare Found! %s is nearby."] = "희귀 몹 발견! %s가 근처에 있습니다."
 

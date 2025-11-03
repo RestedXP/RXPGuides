@@ -226,7 +226,10 @@ local settingsDBDefaults = {
         dungeons = {},
 
         framePositions = {},
-        frameSizes = {}
+        frameSizes = {},
+
+        -- Grouping
+        shareQuests = false,
     }
 }
 
@@ -964,20 +967,6 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
-                    enableAddonIncompatibilityCheck = {
-                        name = L("Check for Addon Incompatibility"), -- TODO locale
-                        desc = L(
-                            "Check loaded addons for known compatibility issues with RXP"),
-                        type = "toggle",
-                        width = "full",
-                        order = 1.4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            if value then
-                                self:CheckAddonCompatibility()
-                            end
-                        end
-                    },
                     featuresHeader = {
                         name = _G.FEATURES_LABEL,
                         type = "header",
@@ -1063,6 +1052,43 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    groupMode = {
+                        name = fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL),
+                        -- desc = "",
+                        order = 2.7,
+                        type = "toggle", -- type = "execute",
+                        width = optionsWidth,
+                        -- confirm = requiresReload,
+                        -- Leave get as is, only toggle related group settings on
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+
+                            if not value then return end
+                            local p = self.profile
+
+                            p.checkVersions = true
+                            p.alwaysSendBranded = true
+                            p.showUnusedGuides = true
+
+                            p.shareQuests = true
+
+                            p.enableLevelUpAnnounceGroup = true
+                            p.enableFlyStepAnnouncements = true
+                            p.enableCollectStepAnnouncements = true
+                            p.enableCompleteStepAnnouncements = true
+                            p.enableQuestAutomation = true
+
+                            p.autoSellJunk = true
+                            p.autoDiscardItems = true
+
+                            p.enableGroupQuests = true
+                            p.soloSelfFound = false
+
+
+                            --_G.ReloadUI()
+                        end,
+                        hidden = isNotAdvanced
+                    },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
                         type = "header",
@@ -1084,14 +1110,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.2
-                    },
-                    shareQuests = {
-                        name = L("Automatic quest sharing"), -- TODO: Localize this setting
-                        desc = L(
-                            "Whenever you accept a quest in the guide, the addon tries to share it with your group"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 4.3
                     },
                     enableTrainerAutomation = {
                         name = L("Trainer automation"),
@@ -2069,87 +2087,87 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Communications"),
                 order = 6,
                 args = {
+                    checkVersions = {
+                        name = L("Enable Addon Version Checks"),
+                        desc = L("Advertises and compares addon versions with all RXP users in party"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 1
+                    },
                     commsLevelUpOptionsHeader = {
                         name = L("Announcements"),
                         type = "header",
                         width = "full",
-                        order = 1
+                        order = 2.0
                     },
                     enableLevelUpAnnounceSolo = {
                         name = L("Announce Level Ups (Emote)"),
                         desc = L("Make a public emote when you level up"),
                         type = "toggle",
-                        width = "full",
-                        order = 6
+                        width = optionsWidth * 1.5,
+                        order = 2.1
                     },
                     enableLevelUpAnnounceGroup = {
                         name = L("Announce Level Ups (Party Chat)"),
                         desc = L("Announce in party chat when you level up"),
                         type = "toggle",
-                        width = "full",
-                        order = 7
+                        width = optionsWidth * 1.5,
+                        order = 2.2
                     },
                     enableLevelUpAnnounceGuild = {
                         name = L("Announce Level Ups (Guild Chat)"),
                         desc = L("Announce in guild chat when you level up"),
                         type = "toggle",
-                        width = "full",
-                        order = 8
+                        width = optionsWidth * 1.5,
+                        order = 2.3
                     },
                     groupCoordinationHeader = {
-                        name = L("Group coordination"),
+                        name = _G.TUTORIAL_TITLE18,
                         type = "header",
                         width = "full",
-                        order = 9
+                        order = 3.0
+                    },
+                    shareQuests = {
+                        name = L("Automatic quest sharing"), -- TODO: Localize this setting
+                        desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.2
                     },
                     alwaysSendBranded = {
-                        name = L(
-                            "Send announcements without another RXP user in group"),
-                        desc = L(
-                            "Without this checked we will only send announcements if another RestedXP User is in your group"),
+                        name = L("Send announcements without another RXP user in group"),
+                        desc = L("Without this checked we will only send announcements if another RestedXP User is in your group"),
                         type = "toggle",
                         width = "full",
-                        order = 10
+                        order = 3.3
                     },
                     enableCompleteStepAnnouncements = {
                         name = L("Announce when Quest Step is completed"),
-                        desc = L(
-                            "Announce in party chat when you complete certain quests (.complete)"),
+                        desc = L("Announce in party chat when you complete certain quests (.complete)"),
                         type = "toggle",
                         width = "full",
-                        order = 11
+                        order = 3.4
                     },
                     enableCollectStepAnnouncements = {
                         name = L("Announce when all Step items are collected"),
-                        desc = L(
-                            "Announce in party chat when you collect all the items relevant to a quest (.collect)"),
+                        desc = L("Announce in party chat when you collect all the items relevant to a quest (.collect)"),
                         type = "toggle",
                         width = "full",
-                        order = 12
+                        order = 3.5
                     },
                     enableFlyStepAnnouncements = {
                         name = L("Announce Flying Step timers"),
-                        desc = L(
-                            "Announce in party chat where you're flying and how long until you arrive"),
+                        desc = L("Announce in party chat where you're flying and how long until you arrive"),
                         type = "toggle",
                         width = "full",
-                        order = 13
-                    },
-                    checkVersions = {
-                        name = L("Enable Addon Version Checks"),
-                        desc = L(
-                            "Advertises and compares addon versions with all RXP users in party"),
-                        type = "toggle",
-                        width = "full",
-                        order = 14
+                        order = 3.6
                     },
                     ignoreQuestieConflicts = {
                         name = L("Ignore Questie announcements"),
-                        desc = L(
-                            "Send quest and collect step announcements even if Questie is enabled"),
+                        desc = L("Send quest and collect step announcements even if Questie is enabled"),
                         type = "toggle",
                         width = "full",
-                        order = 15,
+                        order = 3.7,
                         hidden = not _G.Questie
                     }
                 }
@@ -3251,6 +3269,19 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.65,
+                    },
+                    enableAddonIncompatibilityCheck = {
+                        name = L("Check for Addon Incompatibility"), -- TODO locale
+                        desc = L("Check loaded addons for known compatibility issues with RXP"),
+                        type = "toggle",
+                        width = "full",
+                        order = 1.66,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if value then
+                                self:CheckAddonCompatibility()
+                            end
+                        end
                     },
                     optimizePerformance = {
                         name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),

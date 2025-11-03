@@ -326,7 +326,6 @@ L["Announce Level Ups (Party Chat)"] = "Annoncer montée de niveau (chat de grou
 L["Announce in party chat when you level up"] = "Annonce une montée de niveau dans le canal de groupe"
 L["Announce Level Ups (Guild Chat)"] = "Annoncer montée de niveau (chat de guilde)"
 L["Announce in guild chat when you level up"] = "Annonce une montée de niveau dans le canal de guilde"
-L["Group coordination"] = "Coordination du groupe"
 L["Send announcements without another RXP user in group"] = "Envoie les annonces même s'il n'y a pas d'autres utilisateurs de RXP dans le groupe"
 L["Without this checked we will only send announcements if another RestedXP User is in your group"] = "Si cette option est désactivée, les annonces ne seront envoyées que s'il y'a au moins un utilisateur de RestedXP dans le groupe"
 L["Announce when Quest Step is completed"] = "Annoncer les étapes de quêtes"
