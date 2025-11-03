@@ -681,19 +681,19 @@ function addon.comms.grouping:ShareQuest(questId)
 
     local questLogIndex, isPushable = addon.GetLogIndexForQuestID(questId)
 
+    -- Do not announce shared quests, too verbose and bloated.
+    -- Will let end-user announce when they accept a shared quest
+    if not isPushable then return end
+
     if not questLogIndex then
         addon.comms.PrettyDebug("Quest ID not in quest log", questId)
         return
     end
 
-    -- Do not announce shared quests, too verbose and bloated.
-    -- Will let end-user announce when they accept a shared quest
-    if isPushable then
-        -- Only required for Classic
-        if _G.SelectQuestLogEntry then
-            _G.SelectQuestLogEntry(questLogIndex)
-        end
-
-        return _G.QuestLogPushQuest(questLogIndex)
+    -- Only required for Classic
+    if _G.SelectQuestLogEntry then
+        _G.SelectQuestLogEntry(questLogIndex)
     end
+
+    return _G.QuestLogPushQuest(questLogIndex)
 end
