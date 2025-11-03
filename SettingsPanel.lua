@@ -229,7 +229,7 @@ local settingsDBDefaults = {
         frameSizes = {},
 
         -- Grouping
-        shareQuests = true,
+        shareQuests = false,
     }
 }
 
