@@ -156,10 +156,11 @@ step
     .target Archmage Khadgar
     .accept 89405 >>Accept Mean Streets of Dalaran
 step
-    #completewith Mean Streets of Dalaran
+    .goto 627,72.46,45.90
     .achievementComplete 42313,1
-    +Select this guide to skip the intro (faster leveling).
-    .clicknext RestedXP Legion Remix\a) Intro Skip >> Intro Skip
+    +|cRXP_WARN_You’ve already completed the intro before. By clicking the text below, you’ll skip the intro for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\a) Intro Skip >>CLICK HERE FOR THE GUIDE.
 step << Alliance
     .isOnQuest 89405
     #title |cFFFCDC00Check Note|r
@@ -215,7 +216,6 @@ step << Alliance
     .mob Imp Scout
     .mob Felfire Imp
 step
-    #label Mean Streets of Dalaran
     .goto 627,49.08,46.96,5,0
     .goto 627,49.29,47.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r at the center of dalaran.
@@ -227,7 +227,7 @@ step
     .achievementComplete 42313,1
     +You have the option to reconsider your choice until you get teleported out of dalaran.
     *|cRXP_WARN_You may manually skip this step if you prefer|r.
-    .clicknext RestedXP Legion Remix\a) Intro Skip >> Intro Skip
+    .clicknext RestedXP Legion Remix\a) Intro Skip >>CLICK HERE FOR THE GUIDE.
 step
     #completewith next
     #label Magical barriers
@@ -877,8 +877,8 @@ RXPGuides.RegisterGuide([[
 step
     .goto 627,72.46,45.90
     .achievementComplete 42313,1
-    *|cRXP_WARN_Make sure you have your desired spec selected before proceeding.|r
-    .gossipoption 134056 >>Talk to |cRXP_FRIENDLY_Moratari|r
+    .gossipoption 134056 >>Before talking to |cRXP_FRIENDLY_Moratari|r, make sure you have your desired specialization selected. 
+    *|cRXP_WARN_This will grant you the Artifact Weapon for your chosen spec; you can obtain others later, but there’s no immediate access|r.
     .target Moratari
 
 ]])
@@ -904,16 +904,12 @@ RXPGuides.RegisterGuide([[
 #next ab) Order Hall Warlock Part 1 << Warlock
 #next ab) Order Hall Warrior Part 1 << Warrior
 
--- step after launch out comment so we can confirm it works
---     #optional
---     .isQuestAvailable 89418
---     +|cRXP_WARN_You have to do the previous chapter first|r
---     .clicknext RestedXP Legion Remix\a) Intro >>Intro
 step
-    #completewith next
+    .goto 627,72.06,41.69
     .isQuestTurnedIn account,80018
-    +Select this guide to skip the skyriding intro recommended for (faster leveling).
-    .clicknext RestedXP Legion Remix\aa) Skyriding Skip >> Skyriding Skip
+    +|cRXP_WARN_You’ve already completed the Skyriding intro before. By clicking the text below, you’ll skip the Skyriding intro for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\aa) Skyriding Skip >>CLICK HERE FOR THE GUIDE
 step
     #include RestedXP Legion Remix\a) Skyriding Panda
 
@@ -965,8 +961,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     #completewith The Dawning Light
     #hidewindow
@@ -1316,8 +1313,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaberk|r.
     *|cRXP_WARN_Note:|r This should get pushed to your quest log automatically while in Dalaran. If not then relog.
@@ -1497,9 +1495,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     #completewith Call of the Illidari
     #hidewindow
@@ -1528,17 +1526,17 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-step
-    #optional
-    .convertquest 39261,39047
-    .convertquest 39261,39047
-    .convertquest 40814,40816
-    .convertquest 41221,41033
-    .convertquest 41037,41060
-    .convertquest 41062,41070
-    .convertquest 41067,41096
-    .convertquest 41069,41099
-    .convertquest 44383,44379
+-- step
+--     #optional
+--     .convertquest 39261,39047
+--     .convertquest 39261,39047
+--     .convertquest 40814,40816
+--     .convertquest 41221,41033
+--     .convertquest 41037,41060
+--     .convertquest 41062,41070
+--     .convertquest 41067,41096
+--     .convertquest 41069,41099
+--     .convertquest 44383,44379
 step
     #label Future of The Fel Hammer
     .goto 627,72.07,41.63
@@ -1558,7 +1556,7 @@ step
     .target Moratari
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r |cRXP_WARN_next to you|r
-    .acceptmultiple 39261,39047 >>Accept Call of the Illidari
+    .accept 39261 >>Accept Call of the Illidari
     .target Kor'vas Bloodthorn
 step
     #label Call of the Illidari
@@ -1759,7 +1757,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .turnin 41067 >>Turn in Time is of the Essence
     .target Kayn Sunfury
-    .acceptmultiple 41069,41099 >>Accept Direct Our Wrath
+    .accept 41069 >>Accept Direct Our Wrath
 step
     .goto 720,58.56,53.23
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
@@ -1835,7 +1833,7 @@ step
     .goto 720,50.57,66.1,10,0
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .acceptmultiple 44383 >>Accept In Pursuit of Power
+    .accept 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
@@ -1866,7 +1864,7 @@ step
     .goto 720,50.57,66.1,10,0
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .acceptmultiple 44383 >>Accept In Pursuit of Power
+    .accept 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
@@ -1930,8 +1928,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r |cRXP_WARN_next to you|r.
     *- |cRXP_WARN_Run around in Dalaran until he spawns|r
@@ -2128,8 +2127,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     .goto 627,58.61,45.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snowfeather|r.
@@ -2341,8 +2341,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     #completewith Dreadlord's Prize
     #hidewindow
@@ -2704,8 +2705,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     #completewith Order Hall Paladin Part 1
     #hidewindow
@@ -2923,8 +2925,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hooded Priestess|r |cRXP_WARN_next to you|r.
     *|cRXP_WARN_Note:|r If she doesn't appear then try to relog.
@@ -3079,8 +3082,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     #completewith Order Hall Rogue Part 1
     #hidewindow
@@ -3367,8 +3371,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     .goto 627,47.31,33.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -3518,8 +3523,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it.|r
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .accept 40716 >>Accept The Sixth
@@ -3783,8 +3789,9 @@ RXPGuides.RegisterGuide([[
 step
     .isQuestTurnedIn account,91955
     .achievementComplete 61108,1
-    +|cRXP_WARN_You've already received the 10% experience bonus from completing your artifact questline. Click on the following button to skip it|r.
-    .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar
+    +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
+    *Manually skip this step if you prefer to play through that content.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
 step
     #completewith Order Hall Warrior Part 1
     #hidewindow
@@ -4133,9 +4140,12 @@ step
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
     .use 242617
-step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
-   .goto 627,72.07,40.6
-   .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
+-- step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
+step
+    .isQuestAvailable 91639
+    .zoneskip 627,1
+    .goto 627,72.07,40.6
+    .cast 1233963 >>Click on the |cRXP_PICK_Portal|r.
 step
     #label Meet Nostwin2
     #completewith next
@@ -4265,12 +4275,6 @@ RXPGuides.RegisterGuide([[
 #next cb) Val'sharah Speedrun 2
 
 step
-    #optional
-    .isQuestTurnedIn account,91955
-    .achievementComplete 61108,1
-    +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>Azsuna for Alternative Characters.
-step
     #completewith AzsunaSpeedrunY
     #hidewindow
     +test
@@ -4298,23 +4302,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
--- step
---     #optional
---     .isNotOnQuest 39718
---     .isQuestAvailable 39718
---     +|cRXP_WARN_You skipped a previous chapter. Go to your Class Order Hall and accept the Azsuna quest from the Scouting Map. If it’s not available, start the Order Hall Intro 1 guide.|r
---     .clicknext RestedXP Legion Remix\ac) Order Hall Death Knight Part 2>>Death Knight Order Hall Intro 2 << DeathKnight
---     .clicknext RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2>>Demon Hunter Order Hall Intro 2 << DemonHunter
---     .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2>>Druid Order Hall Intro 2 << Druid
---     .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2>>Hunter Order Hall Intro 2 << Hunter
---     .clicknext RestedXP Legion Remix\ac) Order Hall Mage Part 2>>Mage Order Hall Intro 2 << Mage
---     .clicknext RestedXP Legion Remix\ac) Order Hall Monk Part 2>>Monk Order Hall Intro 2 << Monk
---     .clicknext RestedXP Legion Remix\ac) Order Hall Paladin Part 2>>Paladin Order Hall Intro 2 << Paladin
---     .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2>>Priest Order Hall Intro 2 << Priest
---     .clicknext RestedXP Legion Remix\ac) Order Hall Rogue Part 2>>Rogue Order Hall Intro 2 << Rogue
---     .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
---     .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
---     .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
 step
     .zoneskip 619,1
     .goto 619,45.71,67.46
@@ -4431,7 +4418,7 @@ step
     .goto 630,50.17,39.68,30,0
     .goto 630,49.63,36.25,30,0
     .goto 630,50.87,33.55,45,0
-    >>Kill the |cRXP_LOOT_Salteye murlocs|r. Loot them for the |T442733:0|t[|cRXP_LOOT_Pilfered Night Elf Bones|r] and |T461806:0|t[|cRXP_LOOT_Okuna's Message|r]
+    >>Kill |cRXP_ENEMY_Salteye Murlocs|r. Loot them for the |T442733:0|t[|cRXP_LOOT_Pilfered Night Elf Bones|r] and |T461806:0|t[|cRXP_LOOT_Okuna's Message|r]
     .complete 37257,1 --55/55 Pilfered Night Elf Bone
     .accept 38407 >>Accept Bottled Up
     .mob Salteye Spearguard
@@ -4705,7 +4692,7 @@ step
     .mob Subjugated Murloc
 ]])
 
----First Zone 2
+---Azsuna 2
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -4717,7 +4704,7 @@ RXPGuides.RegisterGuide([[
 #next cb) Val'sharah Speedrun 2
 
 step
-    #completewith AzsunaSpeedrunY
+    #completewith Let's Make A DealZ
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -4744,24 +4731,208 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
--- step
---     #optional
---     .isNotOnQuest 39718
---     .isQuestAvailable 39718
---     +|cRXP_WARN_You skipped a previous chapter. Go to your Class Order Hall and accept the Azsuna quest from the Scouting Map. If it’s not available, start the Order Hall Intro 1 guide.|r
---     .clicknext RestedXP Legion Remix\ac) Order Hall Death Knight Part 2>>Death Knight Order Hall Intro 2 << DeathKnight
---     .clicknext RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2>>Demon Hunter Order Hall Intro 2 << DemonHunter
---     .clicknext RestedXP Legion Remix\ac) Order Hall Druid Part 2>>Druid Order Hall Intro 2 << Druid
---     .clicknext RestedXP Legion Remix\ac) Order Hall Hunter Part 2>>Hunter Order Hall Intro 2 << Hunter
---     .clicknext RestedXP Legion Remix\ac) Order Hall Mage Part 2>>Mage Order Hall Intro 2 << Mage
---     .clicknext RestedXP Legion Remix\ac) Order Hall Monk Part 2>>Monk Order Hall Intro 2 << Monk
---     .clicknext RestedXP Legion Remix\ac) Order Hall Paladin Part 2>>Paladin Order Hall Intro 2 << Paladin
---     .clicknext RestedXP Legion Remix\ac) Order Hall Priest Part 2>>Priest Order Hall Intro 2 << Priest
---     .clicknext RestedXP Legion Remix\ac) Order Hall Rogue Part 2>>Rogue Order Hall Intro 2 << Rogue
---     .clicknext RestedXP Legion Remix\ac) Order Hall Shaman Part 2>>Shaman Order Hall Intro 2 << Shaman
---     .clicknext RestedXP Legion Remix\ac) Order Hall Warlock Part 2>>Warlock Order Hall Intro 2 << Warlock
---     .clicknext RestedXP Legion Remix\ac) Order Hall Warrior Part 2>>Warrior Order Hall Intro 2 << Warrior
-
+step
+    #include RestedXP Legion Remix\ad) Infinite Bazaar
+step
+    #include b) Felblaze Ingress
+step
+    --BONUS OBJECTIVE
+    #title Don't complete it (See Note)
+    .xp >80,1
+    #completewith KirinTorReconnaissanceZ
+    >>Kill the |cRXP_ENEMY_Hatecoil forces|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Bound Citizens|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37466,1,75 --Defend against the Hatecoil (100%)
+    .mob Hatecoil Riptail
+    .mob Hatecoil Harpooner
+    .mob Hatecoil Stormcaller
+    .mob Brawlgoth
+    .target Bound Citizen
+step
+    #include b) Kirin Tor Reconnaissance@KirinTorReconnaissanceB-Back from the Dead
+step
+    .goto 630,54.96,38.66
+    >>Kill the |cRXP_ENEMY_Salteye Murlocs|r
+    .complete 42694,2 --1/1 Search near the Academy
+    .accept 38407 >>Accept Bottled Up
+    .mob Salteye Hookblade
+    .mob Salteye Shoresprinter
+    .mob Salteye Tide-Shaman
+step
+    #label Back from the Dead
+    .goto 630,53.33,45.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olothil Starlance|r
+    .turnin 42694 >>Turn in Back from the Dead
+    .target Olothil Starlance
+step
+    .zoneskip 630,1
+    --BONUS OBJECTIVE
+    #title Don't complete it (See Note)
+    .xp >80,1
+    #loop
+    .goto 630,55.18,45.72,35,0
+    .goto 630,55.96,43.01,35,0
+    .goto 630,53.81,40.48,35,0
+    .goto 630,53.13,44.79,40,0
+    >>Kill the |cRXP_ENEMY_Hatecoil forces|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Bound Citizens|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37466,1,75 --Defend against the Hatecoil (100%)
+    .mob Hatecoil Riptail
+    .mob Hatecoil Harpooner
+    .mob Hatecoil Stormcaller
+    .mob Brawlgoth
+    .target Bound Citizen
+step
+    .goto 630,47.05,41.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Irisse|r
+    .turnin 38407 >>Turn in Bottled Up
+    .accept 37496 >>Accept Infiltrating Shipwreck Arena
+    .target Lady Irisse
+step
+    #completewith Making the World Safe for ProfitZZ
+    .isQuestTurnedIn 37538
+    --BONUS OBJECTIVE
+    #title Don't complete it |cFFFCDC00(See Note)|r
+    .xp >80,1
+    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37495,1,70 --Plunder Oceanus Cove (100%)
+    .mob Hatecoil Slavemaster
+step
+    #include RestedXP Legion Remix\b) Against Giants@Boss WhalebellyZ-AgainstGiantsB
+step
+    #completewith next
+    >>Use the |T1030902:0|t[|Pile of Weapons] near |cRXP_FRIENDLY_Shipwrecked Captives|r
+    .complete 37565,1 --25/25 Shipwrecked Captives armed
+    .use 118330
+step
+    .goto 632,44.11,31.58,30,0
+    .goto 632,61.58,44.74,30,0
+    .goto 632,58.36,57.69,30,0
+    .goto 632,62.43,69.11,30,0
+    .goto 632,74.03,86.4,30,0
+    .goto 630,50.34,60.48,30,0
+    .goto 630,50.34,61.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seska Seafang|r
+    .accept 38857 >>Accept A Favor for Mr. Shackle
+    .target Seska Seafang
+step
+    #completewith Grace the Green rescued
+    >>Use the |T1030902:0|t[|Pile of Weapons] near |cRXP_FRIENDLY_Shipwrecked Captives|r
+    .complete 37565,1 --25/25 Shipwrecked Captives armed
+    .use 118330
+step
+    .goto 630,46.26,59.01
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cage|r
+    .complete 38857,2 --1/1 Gentle Rosh rescued
+step
+    .goto 630,48.91,62.95
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cage|r
+    .complete 38857,1 --1/1 Cleave Thunderhill rescued
+step
+    #label Grace the Green rescued
+    .goto 630,51.38,60.99
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cage|r
+    .complete 38857,3 --1/1 Grace the Green rescued
+step
+    #completewith next
+    .isQuestTurnedIn 37538
+    --BONUS OBJECTIVE
+    #title Don't complete it |cFFFCDC00(See Note)|r
+    .xp >80,1
+    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Objects|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37495,1,70 --Plunder Oceanus Cove (100%)
+    .mob Hatecoil Slavemaster
+step
+    #loop
+    .goto 630,50.57,60.96,35,0
+    .goto 630,49.57,61.96,35,0
+    .goto 630,47.95,62.4,35,0
+    .goto 630,47.82,60.05,35,0
+    .goto 630,47.15,58.35,35,0
+    .goto 630,44.33,56.75,35,0
+    .goto 630,45.87,59.6,35,0
+    >>Use the |T1030902:0|t[|Pile of Weapons] near |cRXP_FRIENDLY_Shipwrecked Captives|r
+    .complete 37565,1 --25/25 Shipwrecked Captives armed
+    .use 118330
+step
+    .goto 630,53.44,62.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Okuna Longtusk|r
+    .turnin 37565 >>Turn in The Right Weapon for the Job
+    .accept 37566 >>Accept The Prince is Going Down
+    .target Okuna Longtusk
+step
+    .goto 630,53.66,64.06
+    >>Kill |cRXP_ENEMY_Prince Oceanus|r
+    .complete 37566,1 --1/1 Prince Oceanus slain
+    .mob Prince Oceanus
+step
+    Making the World Safe for ProfitZZ
+    .goto 630,51.93,61.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Okuna Longtusk|r
+    .turnin 37566 >>Turn in The Prince is Going Down
+    .target Okuna Longtusk
+ step
+    .isQuestTurnedIn 37538
+    --BONUS OBJECTIVE
+    .zoneskip 630,1
+    #title Don't complete it |cFFFCDC00(See Note)|r
+    .xp >80,1
+    #loop
+    .goto 630,50.57,60.91,25,0
+    .goto 630,47.95,59.20,25,0
+    .goto 630,44.36,56,47,25,0
+    .goto 630,45.18,55.53,25,0
+    .goto 632,27.02,54.02,25,0
+    .goto 632,34.43,37.92,25,0
+    .goto 632,54.97,62.45,35,0
+    .goto 632,72.48,75.05,25,0
+    >>Kill the |cRXP_ENEMY_Hatecoil Naga|r and the |cRXP_ENEMY_Cave Skrogs|r (20% progress).
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skrog Weapons|r and |cRXP_PICK_Prince's Plunder|r.
+    *|cRXP_WARN_NOTE:|r We prepare this Bonus Objective for level 70 (you get a 200% xp buff when reach level 70).
+    .complete 37495,1,70 --Plunder Oceanus Cove (100%)
+    .mob Hatecoil Slavemaster
+step
+    .goto 630,56.61,59.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mr. Shackle|r
+    .turnin 38857 >>Turn in A Favor for Mr. Shackle
+    .accept 37654 >>Accept Maritime Law
+    .accept 37657 >>Accept Making the World Safe for Profit
+    .target Mr. Shackle
+step
+    #include RestedXP Legion Remix\b) Mak'rana and the Fate of the Queen's Reprisal@MakranaFateQueenReprisalAA-Making the World Safe for ProfitZ
+step
+    #loop
+    .goto 630,61.13,50.71,20,0
+    .goto 630,62.44,51.44,20,0
+    .goto 630,63.48,51.32,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daglop|r
+    .accept 38460 >>Accept Let's Make A Deal
+    .target Daglop
+step
+    #label Let's Make A DealZ
+    #loop
+    .goto 630,61.13,50.71,20,0
+    .goto 630,62.44,51.44,20,0
+    .goto 630,63.48,51.32,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daglop|r
+    .complete 38460,1 --1/1 Daglop's Contract Signed
+    .target Daglop
+    .skipgossipid 44158
+step
+    #loop
+    .goto 630,61.13,50.71,20,0
+    .goto 630,62.44,51.44,20,0
+    .goto 630,63.48,51.32,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daglop|r
+    .turnin 38460 >>Turn in Let's Make A Deal
+    .accept 38232 >>Accept Minion! Kill Them!
+    .target Daglop
 ]])
 
 -- ======================================
@@ -5532,7 +5703,7 @@ step
     .goto 630,50.17,39.68,30,0
     .goto 630,49.63,36.25,30,0
     .goto 630,50.87,33.55,45,0
-    >>Kill the |cRXP_LOOT_Salteye murlocs|r. Loot them for the |T442733:0|t[|cRXP_LOOT_Pilfered Night Elf Bones|r]
+    >>Kill |cRXP_ENEMY_Salteye Murlocs|r. Loot them for the |T442733:0|t[|cRXP_LOOT_Pilfered Night Elf Bones|r]
     .complete 37257,1 --55/55 Pilfered Night Elf Bone
     .mob Salteye Spearguard
     .mob Salteye Beastfeeder
@@ -5939,7 +6110,7 @@ step
     .goto 630,50.17,39.68,30,0
     .goto 630,49.63,36.25,30,0
     .goto 630,50.87,33.55,45,0
-    >>Kill the |cRXP_LOOT_Salteye murlocs|r. Loot them for the |T461806:0|t[|cRXP_LOOT_Okuna's Message|r]
+    >>Kill |cRXP_ENEMY_Salteye Murlocs|r. Loot them for the |T461806:0|t[|cRXP_LOOT_Okuna's Message|r]
     .accept 38407 >>Accept Bottled Up
     .mob Salteye Spearguard
     .mob Salteye Beastfeeder
@@ -5953,6 +6124,7 @@ step
     .accept 37496 >>Accept Infiltrating Shipwreck Arena
     .target Lady Irisse
 step
+    #label Boss WhalebellyZ
     .goto 630,50.01,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Okuna Longtusk|r
     .turnin 37496 >>Turn in Infiltrating Shipwreck Arena
@@ -6142,6 +6314,7 @@ step
     .accept 37657 >>Accept Making the World Safe for Profit
     .target Mr. Shackle
 step
+    #label MakranaFateQueenReprisalAA
     .convertquest 42268,42220 << Alliance
     .goto 630,57.90,58.79
     >>|cRXP_WARN_Follow the arrow|r. The quest will pop up at the waypoint location
@@ -6233,6 +6406,7 @@ step
     >>|cRXP_WARN_Click on the popup under your minimap or search for the quest in your questlog to turn it in|r
     .turnin 42268 >>Turn in Shipwrecked Sailors
 step
+    #label Making the World Safe for ProfitZ
     .goto 630,56.61,59.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mr. Shackle|r.
     .turnin 37657 >>Turn in Making the World Safe for Profit
@@ -6457,6 +6631,7 @@ step
     .complete 42694,4 --1/1 Search near the plaza fountain
     .mob Hatecoil Riptail
 step
+    #label KirinTorReconnaissanceX
     .goto 630,56.18,42.29
     >>Kill |cRXP_ENEMY_Grulk|r
     .complete 42694,3 --1/1 Search the eastern colonnade
@@ -6602,6 +6777,112 @@ step
     .turnin 37727 >>Turn in The Magister of Mixology
     .turnin 37728 >>Turn in Presentation is Everything
     .target Magister Garuhod
+]])
+
+--Felblaze Ingress
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#chapter
+#group RestedXP Legion Remix
+#name b) Felblaze Ingress
+#subgroup |cFFFCDC00(10-80+)|r Sojourner
+#displayname |cFF00CCFF6|r - Felblaze Ingress
+#internal
+
+step
+    #label FelblazeIngressA
+    .goto 630,63.85,28.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tehd Shoemaker|r
+    .accept 42375 >>Accept Eye See You
+    .target Tehd Shoemaker
+step
+    .isOnQuest 42375
+    .goto 630,63.85,28.99
+    .aura 212754,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Eye of Kilrogg|r
+    .target Eye of Kilrogg
+step
+    .goto 630,67.16,30.27
+    >>|cRXP_WARN_The AddOn can't track your position while inside the eye|r
+    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_Eyes of Zoth|r
+    .complete 42375,3 --1/1 Commander found
+step
+    .goto 630,66.97,27.78
+    >>|cRXP_WARN_The AddOn can't track your position while inside the eye|r
+    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_Eyes of Zoth|r
+    .complete 42375,1 --1/1 Main Portal scouted
+step
+    .goto 630,67.65,24.88
+    >>|cRXP_WARN_The AddOn can't track your position while inside the eye|r
+    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_Eyes of Zoth|r
+    .complete 42375,2 --1/1 Ritual site found
+step
+    #completewith next
+    #label EyeSeeYouA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tehd Shoemaker|r
+    .turnin 42375 >>Turn in Eye See You
+    .accept 42369 >>Accept They're Doing it Wrong
+    .target Tehd Shoemaker
+step
+    #completewith EyeSeeYouA
+    .isOnQuest 42375
+    .aura -212754 >>Cancel the buff
+    .macro Cancel Bull,136155 >>/cancelaura 212754
+step
+    #requires EyeSeeYouA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tehd Shoemaker|r and |cRXP_FRIENDLY_Marius Felbane|r
+    .turnin 42375 >>Turn in Eye See You
+    .accept 42369 >>Accept They're Doing it Wrong
+    .goto 630,63.85,28.94
+    .target +Tehd Shoemaker
+    .accept 42368 >>Accept Quantity Over Quality
+    .accept 42367 >>Accept Arkethrax
+    .goto 630,63.87,28.88
+    .target +Marius Felbane
+step
+    #completewith TheyreDoingItWrongA
+    >>Kill |cRXP_ENEMY_Felblaze demons|r
+    .complete 42368,1 --10/10 Felblaze demons slain
+    .mob Felblaze demons
+    .mob Eredar Riftweaver
+    .mob Felguard Invader
+    .mob Chaos Spawn
+step
+    .goto 630,67.25,30.70
+    >>Kill |cRXP_ENEMY_Arkethrax|r
+    .complete 42367,1 --1/1 Arkethrax slain
+    .mob Arkethrax
+step
+    #loop
+    .goto 630,66.96,28.30,15,0
+    .goto 630,66.86,27.36,15,0
+    .goto 630,67.73,27.06,15,0
+    .goto 630,67.87,28.12,15,0
+    #label TheyreDoingItWrongA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sabotaged Portal Stabilizers|r
+    .complete 42369,1 --4/4 Sabotaged Portal Stabilizers placed
+step
+    #label FelblazeIngressY
+    #loop
+    .goto 630,64.92,30.74,35,0
+    .goto 630,66.09,24.49,35,0
+    .goto 630,68.35,24.41,45,0
+    >>Kill |cRXP_ENEMY_Felblaze demons|r
+    .complete 42368,1 --10/10 Felblaze demons slain
+    .mob Felblaze demons
+    .mob Eredar Riftweaver
+    .mob Felguard Invader
+    .mob Chaos Spawn
+step
+    #label FelblazeIngressZ
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marius Felbane|r and |cRXP_FRIENDLY_Tehd Shoemaker|r
+    .turnin 42368 >>Turn in Quantity Over Quality
+    .turnin 42367 >>Turn in Arkethrax
+    .goto 630,63.87,28.88
+    .target +Marius Felbane
+    .turnin 42369 >>Turn in They're Doing it Wrong
+    .goto 630,63.85,28.94
+    .target +Tehd Shoemaker
 ]])
 
 -- ================================================= -

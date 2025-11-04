@@ -6779,7 +6779,10 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(1-80)|r Default
 #name a) Arathi Highlands Returning Player
+#internal
 
 step
     .goto 2451,69.82,40.76 << Horde

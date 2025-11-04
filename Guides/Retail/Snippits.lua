@@ -1709,7 +1709,7 @@ step
     .isQuestAvailable 40819
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .acceptmultiple 44383,44379 >>Accept In Pursuit of Power
+    .accept 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
@@ -1736,7 +1736,7 @@ step
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .target Kayn Sunfury
-    .acceptmultiple 40814,40816 >>Accept The Power to Survive
+    .accept 40814 >>Accept The Power to Survive
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
@@ -1981,7 +1981,7 @@ step
     .isQuestAvailable 40247
     .goto 720,58.62,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
-    .acceptmultiple 44383,44379 >>Accept In Pursuit of Power
+    .accept 44383>>Accept In Pursuit of Power
     .target Kayn Sunfury
 step
     .zoneskip 720,1
@@ -2008,7 +2008,7 @@ step
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     .target Kayn Sunfury
-    .acceptmultiple 40814,40816 >>Accept The Power to Survive
+    .accept 40814>>Accept The Power to Survive
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
