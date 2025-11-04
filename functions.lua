@@ -159,7 +159,7 @@ events.blastedLands = events.collect
 events.daily = events.accept
 events.dailyturnin = events.turnin
 events.acceptmultiple = events.accept
-events.dailyturninmultiple = events.turnin
+events.turninmultiple = events.turnin
 
 local function GetIcon(path,index,size)
     local coords = _G.GetPOITextureCoords or C_Minimap.GetPOITextureCoords
