@@ -210,6 +210,7 @@ local settingsDBDefaults = {
         enableTips = true,
         enableItemUpgrades = true,
         enableItemUpgradesAH = true,
+        enableItemUpgradesBags = true,
         enableDrowningWarning = true,
         enableDrowningWarningSound = true,
         drowningThreshold = 0.2,
@@ -2534,7 +2535,35 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.itemUpgrades.AH:Setup()
                         end
-                    }
+                    },
+                    enableItemUpgradesBags = {
+                        name  = L("Show Bag Upgrade Icons"),
+                        desc  = L("Overlay upgrade arrows on items in your bags"),
+                        type  = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 5.7,  -- directly after Auctioneer
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableTips and self.profile.enableItemUpgrades)
+                                or UnitLevel("player") == GetMaxPlayerLevel()
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if addon.itemUpgrades then
+                                addon.itemUpgrades:Setup()
+                                if type(RXP_RefreshAllBagOverlays) == "function" then
+                                    C_Timer.After(0, RXP_RefreshAllBagOverlays)
+                                elseif addon.itemUpgrades.RefreshAllBagOverlays then
+                                    C_Timer.After(0, function()
+                                        addon.itemUpgrades:RefreshAllBagOverlays()
+                                    end)
+                                end
+                            end
+                        end,
+                    },
+
                 }
             },
             helpPanel = {
