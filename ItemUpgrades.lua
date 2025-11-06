@@ -629,7 +629,6 @@ function addon.itemUpgrades:Setup()
     if session.isInitialized then return end
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
-    self:RegisterEvent("TRAINER_SHOW")
 
     local lookup
     -- Only load stats coming from GSheet
@@ -663,13 +662,6 @@ end
 
 -- Reset cache on levelup
 function addon.itemUpgrades:PLAYER_LEVEL_UP()
-    if not addon.settings.profile.enableItemUpgrades then return end
-
-    addon.itemUpgrades:Setup()
-end
-
--- Reset cache on trainer
-function addon.itemUpgrades:TRAINER_SHOW()
     if not addon.settings.profile.enableItemUpgrades then return end
 
     addon.itemUpgrades:Setup()
