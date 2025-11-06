@@ -10,7 +10,7 @@ local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetTime, GetMirrorTimerProgress = _G.GetTime, _G.GetMirrorTimerProgress
-local UnitHealth, UnitHealthMax = UnitHealth, UnitHealthMax
+local UnitHealth, UnitHealthMax, UnitIsDead = _G.UnitHealth, _G.UnitHealthMax, _G.UnitIsDead
 local GetInventoryItemID, IsPlayerSpell = GetInventoryItemID, IsPlayerSpell
 local HasAction, GetActionInfo, GetMacroSpell = HasAction, GetActionInfo, GetMacroSpell
 local IsOnBarOrSpecialBar = C_ActionBar.IsOnBarOrSpecialBar
@@ -126,6 +126,12 @@ end
 
 function addon.tips:CheckEmergencyActions()
     if not addon.settings.profile.enableEmergencyActions then return end
+    if UnitIsDead('player') then
+        for _, border in pairs(session.highlights) do if border:IsShown() then border:Hide() end end
+
+        return
+    end
+
     local maxHP = UnitHealthMax("player")
     if maxHP > 0 and UnitHealth("player") / maxHP < addon.settings.profile.emergencyThreshold then
 
