@@ -112,40 +112,41 @@ step << Priest cata
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrols slightly|r
     .turnin 26970 >> Turn in Aiding the Injured
     .target Zalduun
-step << Mage cata
+step << Mage
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valaatu|r
-    .accept 26968 >> Accept Arcane Missiles
-	.train 5143 >> Train |T136096:0|t[Arcane Missiles]
+    .accept 26968 >> Accept Arcane Missiles << cata
+    .accept 26968 >> Accept Frost Nova << !cata
+	.train 5143 >> Train |T136096:0|t[Arcane Missiles] << cata
     .target Valaatu
-step << Paladin cata
+step << Paladin
     #loop
     .goto Azuremyst Isle,79.695,48.236,7,0
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aurelon|r
     >>|cRXP_FRIENDLY_Aurelon|r |cRXP_WARN_may patrol slightly|r
     .accept 26966 >> Accept The Light's Power
-    .train 20154 >> Train |T135960:0|t[Seal of Righteousness]
-	.train 20271 >> Train |T135959:0|t[Judgement]
+    .train 20154 >> Train |T135960:0|t[Seal of Righteousness] << cata
+	.train 20271 >> Train |T135959:0|t[Judgement] << cata
     .target Aurelon
-step << Warrior cata
+step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kore|r
     .accept 26958 >> Accept Your First Lesson
-	.train 100 >> Train |T132337:0|t[Charge]
+	.train 100 >> Train |T132337:0|t[Charge] << cata
     .target Kore
-step << Shaman cata
+step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firmanvaar|r
     .accept 26969 >> Accept Primal Strike
-    .train 8075 >> Train |T136023:0|t[Strength of Earth Totem]
-    .train 73899 >> Train |T460956:0|t[Primal Strike]
+    .train 8075 >> Train |T136023:0|t[Strength of Earth Totem] << cata
+    .train 73899 >> Train |T460956:0|t[Primal Strike] << cata
     .target Firmanvaar
-step << Hunter cata
+step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keilnei|r
 	.accept 26963 >> Accept Steadying Your Shot
-    .train 56641 >> Train |T132213:0|t[Steady Shot]
+    .train 56641 >> Train |T132213:0|t[Steady Shot] << cata
     .target Keilnei
 step
     .goto Azuremyst Isle,79.419,51.235
@@ -201,8 +202,9 @@ step
 step << Mage
     .goto Azuremyst Isle,79.662,46.427
     >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r until you get a|r |T135731:0|t[Arcane Missles!] |cRXP_WARN_proc, then cast|r |T136096:0|t[Arcane Missiles]|cRXP_WARN_. Repeat this twice|r
+    >>|cRXP_WARN_Cast|r |T135848:0|t[Frost Nova] |cRXP_WARN_on the |cRXP_ENEMY_Training Dummy|r. Repeat this twice|r
     .complete 26968,1 << cata -- Practice Arcane Missles (1)
-    .complete 26968,2 << !cata -- Practice Arcane Missles (1)
+    .complete 26968,2 << !cata -- Practice Frost Nova (1)
     .mob Training Dummy
 step << Shaman
     .goto Azuremyst Isle,79.662,46.427
@@ -259,7 +261,8 @@ step << !cata Priest
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valaatu|r
-    .turnin 26968 >> Turn in Arcane Missiles
+    .turnin 26968 >> Turn in Arcane Missiles << cata
+    .turnin 26968 >> Turn in Frost Nova << !cata
     .target Valaatu
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126

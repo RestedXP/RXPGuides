@@ -50,7 +50,7 @@ local defaultGuideList = {
     [1165] = "RestedXP Speed Leveling\\a) ZandalariTroll Intro",
     ["Vulpera"] = "RestedXP Speed Leveling\\a) Vulpera Intro", -- changed from duplicate 85 (org)
     [672]  = "RestedXP Speed Leveling\\a) DH Intro",
-    [627] = "Legion RestedXP Legion Remix\\a) Intro",
+    [627] = "RestedXP Legion Remix\\a) Intro",
 }
 
 function addon.GetDefaultGuide()

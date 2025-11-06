@@ -276,7 +276,6 @@ L["Flashes the screen corners when in danger of drowning"] = "有溺水危险时
 L["Flight Path automation"] = "飞行路线自动化"
 L["Font"] = "字体"
 L["Font Path"] = "字体路径"
-L["Group coordination"] = "小组协调"
 L["Guide Font Size"] = "指南字体大小"
 L["Guide Import"] = "指南导入"
 L["Guide Routing"] = "指南路线"
