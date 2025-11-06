@@ -36,10 +36,10 @@ local proxmityPolling = {
 }
 
 local targetList = {}
-local targetPlaceholder = 132150 -- Ability_eyeoftheowl
+local targetPlaceholder = 2056011 -- Ui_chat
 
 local mobList = {}
-local mobPlaceholder = 132212 -- Ability_hunter_snipershot
+local mobPlaceholder = 135274 -- Inv_sword_04
 
 local unitscanList = {}
 
