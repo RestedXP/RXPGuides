@@ -1396,6 +1396,7 @@ function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
 
 function addon:QUEST_TURNED_IN(_, questId, xpReward)
     -- scryer/aldor quest
+    addon.recentTurnIn[questId] = GetTime()
     if questId == 10551 or questId == 10552 then
         local mapId = addon.GetMapId('Shattrath City')
         for _, point in pairs(addon.activeWaypoints) do

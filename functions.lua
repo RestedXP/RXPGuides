@@ -310,7 +310,7 @@ local IsQuestTurnedIn = function(id,accountWide)
     if isQuestTurnedIn then
         addon.recentTurnIn[id] = nil
         return true
-    elseif recentTurnIn and GetTime() - recentTurnIn < 2 then
+    elseif recentTurnIn and GetTime() - recentTurnIn < 10 then
         return true
     end
     --if recent then print(7,recent,id) end
