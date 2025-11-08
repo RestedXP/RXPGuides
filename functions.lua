@@ -292,6 +292,15 @@ if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
     end
 end
 
+
+local SetRecentTurnIn = function(id)
+    addon.recentTurnIn[id] = GetTime()
+end
+
+local GetRecentTurnIn = function(id)
+    return addon.recentTurnIn[id]
+end
+
 local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted or
                     _G.IsQuestFlaggedCompleted or
                         function(id) return _G.GetQuestsCompleted()[id] end
@@ -299,18 +308,18 @@ local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted or
 local IsQuestTurnedIn = function(id,accountWide)
     if not id then return end
 
-    local recentTurnIn = addon.recentTurnIn[id]
-    local isQuestTurnedIn
+    local recentTurnIn = GetRecentTurnIn(id)
+    local turnedIn
     if accountWide and C_QuestLog.IsQuestFlaggedCompletedOnAccount then
-        isQuestTurnedIn = C_QuestLog.IsQuestFlaggedCompletedOnAccount(id)
-        addon.comms.PrettyDebug("CompletedOnAccount(%d) = %s", id, tostring(isQuestTurnedIn))
+        turnedIn = C_QuestLog.IsQuestFlaggedCompletedOnAccount(id)
+        addon.comms.PrettyDebug("CompletedOnAccount(%d) = %s", id, tostring(turnedIn))
     else
-        isQuestTurnedIn = IsTurnedIn(id)
+        turnedIn = IsTurnedIn(id)
     end
-    if isQuestTurnedIn then
+    if turnedIn then
         addon.recentTurnIn[id] = nil
         return true
-    elseif recentTurnIn and GetTime() - recentTurnIn < 10 then
+    elseif recentTurnIn and GetTime() - recentTurnIn < 5 then
         return true
     end
     --if recent then print(7,recent,id) end
@@ -1347,10 +1356,10 @@ function addon.functions.turnin(self, ...)
             if id == 10551 or id == 10552 then
                 return addon.ReloadGuide()
             end
-            addon.recentTurnIn[id] = GetTime()
+            SetRecentTurnIn(id)
             addon.SetElementComplete(self)
         elseif isComplete and event ~= "WindowUpdate" and step.active then
-            addon.recentTurnIn[id] = GetTime()
+            SetRecentTurnIn(id)
             addon.SetElementComplete(self, true)
         end
 
@@ -4021,7 +4030,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
         for _, v in pairs(args) do
             local id = tonumber(v)
             if id then
-                table.insert(ids,GetQuestId(v))
+                table.insert(ids,GetQuestId(id))
             elseif not arg then
                 arg = v
             end
@@ -4050,13 +4059,15 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
 
     if element.reverse then
         for _, id in pairs(ids) do
+            id = tonumber(id)
             id = GetQuestId(id,nil,true)
-            questTurnedIn = questTurnedIn or not IsQuestTurnedIn(id,accountWide)
+            questTurnedIn = questTurnedIn or not addon.IsQuestTurnedIn(id,accountWide)
         end
     else
         for _, id in pairs(ids) do
+            id = tonumber(id)
             id = GetQuestId(id,nil,true)
-            questTurnedIn = questTurnedIn or IsQuestTurnedIn(id,accountWide)
+            questTurnedIn = questTurnedIn or addon.IsQuestTurnedIn(id,accountWide)
         end
     end
     if event ~= "WindowUpdate" and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
