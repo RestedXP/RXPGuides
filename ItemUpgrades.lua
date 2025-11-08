@@ -572,10 +572,10 @@ local function TooltipSetItem(tooltip, ...)
             end
         else
             if statsData['Ratio'] then
-                lineText = fmt("  %s: %s / +%.2f stats EP", statsData['ItemLink'] or _G.UNKNOWN,
+                lineText = fmt("  %s: %s / +%.2f EP", statsData['ItemLink'] or _G.UNKNOWN,
                                prettyPrintRatio(statsData['Ratio']), statsData.WeightIncrease)
             elseif statsData['ItemLink'] == _G.EMPTY then
-                lineText = fmt("  %s: +%s stats EP", _G.EMPTY, statsData.WeightIncrease)
+                lineText = fmt("  %s: +%s EP", _G.EMPTY, statsData.WeightIncrease)
             end
 
             if lineText then tinsert(lines, lineText) end
