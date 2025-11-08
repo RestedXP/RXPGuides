@@ -1797,11 +1797,9 @@ local function prettyPrintUpgradeColumn(data)
 end
 
 local function prettyPrintBudgetColumn(data)
-    local epPerCopper = addon.Round(data.rwpc, 2)
+    if data.ratio < 0 then return fmt("%s / +%s EP (BIS)", _G.EMPTY, addon.Round(data.weightIncrease, 2)) end
 
-    if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
-
-    return fmt("%s / %s EP/c (BIS/%s)", prettyPrintRatio(data.ratio), epPerCopper, _G.ICON_TAG_RAID_TARGET_STAR3)
+    return fmt("%s / +%s EP (EP/%s)", prettyPrintRatio(data.ratio), addon.Round(data.weightIncrease, 2), _G.ICON_TAG_RAID_TARGET_STAR3)
 end
 
 function addon.itemUpgrades.AH.RowOnEnter(row)
