@@ -1794,6 +1794,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
+    .target Vrang Wildgore
     --.dungeon !RFC
 step
 	#label Samophlange
@@ -3350,8 +3351,11 @@ step << Warlock/Priest/Mage
     .group 0 << Priest/Mage
 step << Warlock/Priest/Mage
     #label Besseleth1
+    #loop
+    .goto Stonetalon Mountains,54.80,71.95,0
     .goto Stonetalon Mountains,51.89,73.81,50,0
-    .goto Stonetalon Mountains,52.46,71.67
+    .goto Stonetalon Mountains,52.46,71.67,50,0
+    .goto Stonetalon Mountains,54.80,71.95,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you. Keep her permanently feared with dots|r << Warlock
     >>|cRXP_WARN_This quest is optional. If you can't do it, skip this quest. You can try it again later|r << Warlock
@@ -3674,7 +3678,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -3731,7 +3735,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -4422,7 +4426,7 @@ step
 step
     .goto The Barrens,44.55,59.27
     >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
-    .collect 5075 --Blood Shard (1)
+    .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer
@@ -5731,8 +5735,11 @@ step << Hunter
     >>Click the |cRXP_FRIENDLY_Wanted Poster|r
     .accept 6284 >>Accept Arachnophobia
 step << Hunter
+    #loop
+    .goto Stonetalon Mountains,54.80,71.95,0
     .goto Stonetalon Mountains,51.89,73.81,50,0
-    .goto Stonetalon Mountains,52.46,71.67
+    .goto Stonetalon Mountains,52.46,71.67,50,0
+    .goto Stonetalon Mountains,54.80,71.95,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you|r
     >>|cRXP_WARN_This quest is optional. If you can't do it, skip this quest|r
@@ -8868,6 +8875,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
+    .target Vrang Wildgore
     --.dungeon !RFC
 step
     #xprate >2.09
@@ -10538,8 +10546,11 @@ step
 step
     #xprate <2.1
     #label Besseleth1
+    #loop
+    .goto Stonetalon Mountains,54.80,71.95,0
     .goto Stonetalon Mountains,51.89,73.81,50,0
-    .goto Stonetalon Mountains,52.46,71.67
+    .goto Stonetalon Mountains,52.46,71.67,50,0
+    .goto Stonetalon Mountains,54.80,71.95,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you. Keep her permanently feared with dots|r << Warlock
     >>|cRXP_WARN_This quest is hard. Skip it needed|r
@@ -10967,7 +10978,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -11021,7 +11032,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -11763,7 +11774,7 @@ step << Warlock
 step
     .goto The Barrens,44.55,59.27
     >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
-    .collect 5075 --Blood Shard (1)
+    .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer

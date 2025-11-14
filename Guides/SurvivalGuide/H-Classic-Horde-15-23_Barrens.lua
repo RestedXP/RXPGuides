@@ -2469,7 +2469,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -2526,7 +2526,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -3059,14 +3059,14 @@ step << Shaman
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to Crossroads
+    .fly Crossroads >> Fly to The Crossroads
     .target Bragok
     .subzoneskip 380
 step << !Shaman
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to Crossroads
+    .fly Crossroads >> Fly to The Crossroads
     .target Bragok
     .subzoneskip 392,1
 step
@@ -3107,7 +3107,7 @@ step << !Shaman
 step
     .goto The Barrens,44.55,59.27
     >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
-    .collect 5075 --Blood Shard (1)
+    .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer
@@ -4220,8 +4220,11 @@ step
     .accept 6284 >>Accept Arachnophobia
     .group
 step
+    #loop
+    .goto Stonetalon Mountains,54.80,71.95,0
     .goto Stonetalon Mountains,51.89,73.81,50,0
-    .goto Stonetalon Mountains,52.46,71.67
+    .goto Stonetalon Mountains,52.46,71.67,50,0
+    .goto Stonetalon Mountains,54.80,71.95,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear out the area befor you pull her. Be careful, she can web you for 10 seconds!|r
     .complete 6284,1 --Collect Besseleth's Fang (x1)

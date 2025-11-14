@@ -831,60 +831,81 @@ s["ROGUE"] = {
         1784 -- stealth
     },
     [6] = {
-        1776, -- gouge
-        1757 -- sinister strike r2
+        --1776, -- gouge
+        1757, -- sinister strike r2
+        --1784 -- stealth
+        3273 --First Aid
     },
     [8] = {
+        1776, -- gouge
+        6760, -- eviscerate r2
         5277, -- evasion
-        6760 -- eviscerate r2
+        3273, --first aid
+        1784 -- stealth
     },
     [10] = {
+            5277, -- evasion
+        1424, -- dual wield
         2983, -- sprint
-        6452, -- Anti-venom(FA)
-        1424 -- dual wield
+        201, --1h Swords
+	    2575 --mining
+        --6452 -- Anti-venom(FA)
+
     },
     [12] = {
-        1766, -- kick
-        6770, -- sap
-        5171, -- slice and dice
-        3128 -- parry
+        3128, -- parry
+        --1766, -- kick
+        5171 -- slice and dice
+        --6770, -- sap
+        --5171, -- slice and dice
     },
     [14] = {
-        703, -- garrote
-        1758 -- sinister strike r3
+        3128, -- parry
+        1758, -- sinister strike r3
+        --1766, -- kick
+        5171, -- slice and dice
+        198 --1h Maces
+        --703, -- garrote
     },
     [16] = {
-        5167, -- pick pocket
         6761, -- eviscerate r3
-        1804 -- Pick Lock
+        5167, -- pick pocket
+        198 --1h Maces
     },
     [20] = {
-        1785, -- stealth r2
-        1943, -- rupture
-        8676 -- ambush
+        5167, -- pick pocket
+        1804, -- Pick Lock
+        1785 -- stealth r2
+        --1943, -- rupture
+        --8676 -- ambush
     },
     [22] = {
+        1856, -- vanish
         1725, -- distract
         1759, -- sinister strike r4
-        1856, -- vanish
+        703, -- garrote r1
         8631 -- garrote r2
     },
     [24] = {
-        6762 -- eviscerate r4
+        6762, -- eviscerate r4
+        3420,  -- crippling poison r1
+        2836 --detect traps
     },
     [26] = {
-        1767, -- kick r2
-        1833 -- cheap shot
+        --1767 -- kick r2
     },
     [28] = {
-        8639, -- rupture r2
         8687, -- instant poison 2
-        2070 -- sap r2
+        --1943, -- rupture
+        --8639 -- rupture r2
+        --1833, -- cheap shot
+        --2070 -- sap r2
     },
     [30] = {
-        408, -- kidney shot
-        1760, -- sinister strike
-        8632 -- garrote r3
+        8687, -- instant poison 2
+        1760 -- sinister strike
+        --408, -- kidney shot
+        --8632 -- garrote r3
     },
     [32] = {
         8623 -- eviscerate r5
@@ -895,8 +916,11 @@ s["ROGUE"] = {
         8696 -- sprint r2
     },
     [36] = {
+        2094, -- blind
+        6510, -- blinding powder
+        8696, -- sprint r2
         8640, -- rupture r3
-        8691 -- instant posion 3
+        8688 -- instant posion 3
     },
     [38] = {
         8621, -- sinister strike r6
@@ -908,31 +932,34 @@ s["ROGUE"] = {
         1726 -- stealth r3
     },
     [42] = {
-        1768, -- kick r3
+        --1768, -- kick r3
         1857, -- vanish r2
         6774 -- slice and dice r2
     },
     [44] = {
         11273, -- rupture r4
-        11341, -- instant poison r4
-        1777, -- gouge r2
-        8629 -- gouge r3
+        11341 -- instant poison r4
+        --1777, -- gouge r2
+        --8629 -- gouge r3
     },
     [46] = {
         11289, -- garrote r5
         11293, -- sinister strike r7
-        11285 -- gouge r4
+        --11285 -- gouge r4
     },
     [48] = {
-        11299, -- eviscerate r7
-        11297 -- sap r3
+        11299 -- eviscerate r7
+        --11297 -- sap r3
     },
     [50] = {
-        8643 -- kidney shot r2
+        8643, -- kidney shot r2
+        11297 -- sap r3
     },
     [52] = {
         11274, -- rupture r5
-        11342 -- instant poison r5
+        11342, -- instant poison r5
+        8643, -- kidney shot r2
+        11297 -- sap r3
     },
     [54] = {
         11290, -- garrote r6
@@ -942,7 +969,7 @@ s["ROGUE"] = {
         11300 -- eviscerate r8
     },
     [58] = {
-        1769, -- kick r4
+        --1769, -- kick r4
         11305 -- sprint r3
     },
     [60] = {

@@ -3556,7 +3556,7 @@ step << Warrior/Shaman/Hunter
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
-    .target Nazgrel
+    .target Thrall
 step << Hunter
     #completewith next
     .goto Orgrimmar,68.02,38.69,30 >> Travel to the Valley of Honor
@@ -3917,6 +3917,7 @@ step << Warrior/Shaman
     >>|cRXP_WARN_Wait for the RP to finish|r
     >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >> Turn in Fungal Spores
+    .timer 7,Fungal Spores RP
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
 step << Warrior/Shaman
@@ -4466,7 +4467,7 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feathers|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
@@ -4492,7 +4493,7 @@ step << Shaman
     .goto Mulgore,30.2,19.5,0
     .goto Mulgore,31.7,28.2,40,0
     .goto Mulgore,30.2,19.5,40,0
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feathers|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
@@ -10006,7 +10007,7 @@ step << Warlock
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
-    .target Nazgrel
+    .target Thrall
 step << Shaman/Hunter
     #season 2
     .goto Orgrimmar,38.923,38.398
@@ -10176,14 +10177,14 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
     .accept 5727 >>Accept Hidden Enemies
-    .target Nazgrel
+    .target Thrall
     .isQuestComplete 5726
 step << Warlock
     #optional
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5727 >>Accept Hidden Enemies
-    .target Nazgrel
+    .target Thrall
     .isQuestTurnedIn 5726
 step << Warlock
     .goto Orgrimmar,48.246,45.281
@@ -10225,7 +10226,7 @@ step << Warlock
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
-    .target Nazgrel
+    .target Thrall
     .isQuestTurnedIn 5726
 step << Warlock
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r

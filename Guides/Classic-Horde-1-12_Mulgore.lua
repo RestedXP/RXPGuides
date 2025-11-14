@@ -1318,7 +1318,7 @@ step
     .mob Windfury Harpy
 step
     #completewith next
-    .goto Mulgore,33.37,36.52,50 >> Enter the cave just North of the Windfury Harpies
+    .goto Mulgore,33.37,36.52,50 >> Enter the cave just north of the Windfury Harpies
 step
 	#label Burial
     .goto Mulgore,32.72,36.09
@@ -1962,6 +1962,9 @@ step << Druid
     .accept 886 >>Accept The Barrens Oases
     .target Arch Druid Hamuul Runetotem
 step << Druid
+    #completewith next
+    .goto Thunder Bluff,71.60,30.15,80 >>Travel to the Elder Rise
+step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .goto Thunder Bluff,76.7,27.3
     .turnin 5928 >>Turn in Heeding the Call
@@ -1977,7 +1980,7 @@ step << Druid
     .target Turak Runetotem
 step << Druid
     #completewith next
-    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .cast 18960 >>|cRXP_WARN_Cast |r|T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -1993,7 +1996,7 @@ step << Druid
     .skipgossip
 step << Druid
     #completewith next
-    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
@@ -2131,6 +2134,7 @@ step
     >>|cRXP_WARN_Wait for the RP to finish|r
     >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >>Turn in Fungal Spores
+    .timer 7,Fungal Spores RP
     .accept 853 >>Accept Apothecary Zamah
     .target Apothecary Helbrim
     .isQuestComplete 848
@@ -2198,7 +2202,7 @@ step << Druid
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
-    .target Ansekhwas
+    .target Ansekhwa
     .money <0.1154
 step << Warrior/Hunter
     .goto Thunder Bluff,40.93,62.73
@@ -2275,6 +2279,9 @@ step
     .turnin 775 >>Turn in Journey into Thunder Bluff
     .accept 776 >>Accept Rites of the Earthmother
     .target Cairne Bloodhoof
+step << Druid
+    #completewith next
+    .goto Thunder Bluff,71.60,30.15,80 >>Travel to the Elder Rise
 step << Druid
     .goto Thunder Bluff,76.477,27.221
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
@@ -2421,7 +2428,7 @@ step
 step << Shaman
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feathers|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
@@ -2454,7 +2461,7 @@ step
     .goto Mulgore,30.2,19.5,0
     .goto Mulgore,31.7,28.2,40,0
     .goto Mulgore,30.2,19.5,40,0
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feathers|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
@@ -4573,14 +4580,12 @@ step << Druid
     .goto Thunder Bluff,76.7,27.3
     .turnin 5928 >>Turn in Heeding the Call
     .accept 5922 >>Accept Moonglade
-    .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
     .isOnQuest 5928
 step << Druid
     .goto Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .accept 5922 >>Accept Moonglade
-    .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
     .xp <10,1
 step << Druid
@@ -5482,6 +5487,7 @@ step
     >>|cRXP_WARN_Wait for the RP to finish|r
     >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >>Turn in Fungal Spores
+    .timer 7,Fungal Spores RP
     .accept 853 >>Accept Apothecary Zamah
     .target Apothecary Helbrim
     .isQuestComplete 848
@@ -5562,7 +5568,7 @@ step << Druid
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
-    .target Ansekhwas
+    .target Ansekhwa
     .money <0.1154
 step << Warrior/Hunter
     .goto Thunder Bluff,40.93,62.73
@@ -5711,7 +5717,7 @@ step << Hunter
 step << Shaman
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_s|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
@@ -5745,7 +5751,7 @@ step << Shaman
     .goto Mulgore,30.2,19.5,0
     .goto Mulgore,31.7,28.2,40,0
     .goto Mulgore,30.2,19.5,40,0
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feathers|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress
