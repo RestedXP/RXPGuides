@@ -2967,13 +2967,13 @@ step
     .goto 241,50.10,74.37,30,0
     .goto 241,53.75,71.69,30,0
 #loop
-	.line 241,48.40,65.62,46.62,63.33,44.39,67.00,45.34,67.78,50.10,74.37,53.75,71.69
-	.goto 241,48.40,65.62,35,0
-	.goto 241,46.62,63.33,35,0
-	.goto 241,44.39,67.00,35,0
-	.goto 241,45.34,67.78,35,0
-	.goto 241,50.10,74.37,35,0
-	.goto 241,53.75,71.69,35,0
+    .line 241,48.40,65.62,46.62,63.33,44.39,67.00,45.34,67.78,50.10,74.37,53.75,71.69
+    .goto 241,48.40,65.62,35,0
+    .goto 241,46.62,63.33,35,0
+    .goto 241,44.39,67.00,35,0
+    .goto 241,45.34,67.78,35,0
+    .goto 241,50.10,74.37,35,0
+    .goto 241,53.75,71.69,35,0
     .complete 53893,1 --100/100 Saber Flank
     .complete 53893,2 --100/100 Worg Meat
     .complete 53893,3 --100/100 Clucker Tidbits
@@ -2986,10 +2986,10 @@ step
     .goto 241,48.60,70.24,30,0
     .goto 241,46.42,72.89,30,0
 #loop
-	.line 241,51.13,68.58,48.60,70.24,46.42,72.89
-	.goto 241,51.13,68.58,30,0
-	.goto 241,48.60,70.24,30,0
-	.goto 241,46.42,72.89,30,0
+    .line 241,51.13,68.58,48.60,70.24,46.42,72.89
+    .goto 241,51.13,68.58,30,0
+    .goto 241,48.60,70.24,30,0
+    .goto 241,46.42,72.89,30,0
     .complete 53894,1 --15/15 Twilight Ore
 step
     .goto 241,46.81,66.23
@@ -3137,11 +3137,11 @@ step
     .goto 862,76.92,66.23,25,0
     .goto 862,77.14,63.93,25,0
 #loop
-	.line 862,74.18,65.41,75.11,66.23,76.92,66.23,77.14,63.93
-	.goto 862,74.18,65.41,30,0
-	.goto 862,75.11,66.23,30,0
-	.goto 862,76.92,66.23,30,0
-	.goto 862,77.14,63.93,30,0
+    .line 862,74.18,65.41,75.11,66.23,76.92,66.23,77.14,63.93
+    .goto 862,74.18,65.41,30,0
+    .goto 862,75.11,66.23,30,0
+    .goto 862,76.92,66.23,30,0
+    .goto 862,77.14,63.93,30,0
     .complete 53900,1 --10/10 Nazeshi Weaponry collected
     .mob Nazeshi Tempest-Wielder
     .mob Nazeshi Overseer
@@ -3296,11 +3296,11 @@ step
     .goto 680,61.06,57.61,25,0
     .goto 680,62.03,55.66,25,0
 #loop
-	.line 680,63.97,57.97,62.87,59.77,61.06,57.61,62.03,55.66
-	.goto 680,63.97,57.97,25,0
-	.goto 680,62.87,59.77,25,0
-	.goto 680,61.06,57.61,25,0
-	.goto 680,62.03,55.66,25,0
+    .line 680,63.97,57.97,62.87,59.77,61.06,57.61,62.03,55.66
+    .goto 680,63.97,57.97,25,0
+    .goto 680,62.87,59.77,25,0
+    .goto 680,61.06,57.61,25,0
+    .goto 680,62.03,55.66,25,0
     .complete 53906,1 --20/20 Silkwing Fibers
     .mob Tattered Silkwing
 step
@@ -3361,6 +3361,36 @@ step
     .isQuestTurnedIn 57448
     +Congratulations! You've unlocked the Vulpera!
 ]])
+
+-- =======================================
+-- ============== Allied Race: Haranir ==============
+-- =======================================
+
+
+--Nesting
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#subgroup |cFFFCDC00(80-90)|r Campaigns
+#name a) 1
+#displayname |cFF00FF001|r - ZONE NAME
+#chapters a) Emergence
+]])
+
+--Emergence
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#chapter
+#name a) Emergence
+#displayname |cFF00CCFF1|r - Emergence
+#next
+
+
+]])
+
 
 -- ============================================================
 -- ================    HERITAGE ARMOR   =======================
@@ -7514,7 +7544,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF1EFF007|r - Nightborne
 #next bh) Highmountain Heritage Armor
 
-<< Horde Nightborne
+<< Horde 
 
 step
     #label StartIncludePrepGuide
@@ -7538,7 +7568,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF1EFF008|r - Highmountain
 #next bi) Mag'har Orc Heritage Armor
 
-<< Horde HighmountainTauren
+<< Horde
 
 step
     #label StartIncludePrepGuide
@@ -7566,7 +7596,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF1EFF009|r - Mag'har Orc
 #next bj) Zandalari Troll Heritage Armor
 
-<< Horde MagharOrc
+<< Horde
 
 step
     #label StartIncludePrepGuide
@@ -7589,7 +7619,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF1EFF0010|r - Zandalari Troll
 #next bk) Vulpera Heritage Armor
 
-<< Horde ZandalariTroll
+<< Horde
 
 step
     #label StartIncludePrepGuide
@@ -7614,10 +7644,10 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Collectables
 #subgroup Allied Races
 #name bk) Vulpera Heritage Armor
-#displayname |cFF1EFF0012|r - Vulpera
-#next bm) Heritage EarthenDwarf
+#displayname |cFF1EFF0011|r - Vulpera
+#next bm) Heritage Haranir
 
-<< Horde Vulpera
+<< Horde
 
 step
     #label StartIncludePrepGuide
@@ -7633,19 +7663,40 @@ step
 -----------------------------------------------------
 --- NEUTRAL
 -----------------------------------------------------
+---
 --EarthenDwarf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
 #subgroup Allied Races
-#name bl) Heritage EarthenDwarf
-#displayname |cFF1EFF0012|r - Earthen Dwarf
+#name bfa) Heritage EarthenDwarf
+#displayname |cFF1EFF007|r - Earthen Dwarf
 
 << Alliance
 
 step
-    +PH2
+    >>Log into a level 50+ Earthen character to get this quest when you enter Dornogal.
+    .accept 82771 >>Accept Heritage of the Earthen
+step
+    #completewith next
+    #label Upload Experiences
+    .goto 2339,30.48,59.54,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r.
+    .complete 82771,1 --Upload Experiences
+step
+    #completewith Upload Experiences
+    .goto 2339,29.24,59.69,25 >>Enter the Building
+step
+    .goto 2339,29.24,59.69
+    #requires Upload Experiences
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r.
+    .complete 82771,1 --Upload Experiences
+step
+    .goto 2339,28.91,59.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r.
+    .turnin 82771 >>Turn in Heritage of the Earthen
+    .target Dawn
 ]])
 
 --Haranir
@@ -7655,12 +7706,18 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Collectables
 #subgroup Allied Races
 #name bm) Heritage Haranir
-#displayname |cFF1EFF007|r - Earthen Dwarf
-
+#displayname |cFF1EFF0012|r - Haranir
+#next bn) Heritage Pandaren
 
 step
-    +PH1
-
+    >>zone 2413 >>Enter Harandar
+    *|cRXP_WARN_Use|r |T5927658:0|t[Rootwalking] 
+    .use 1238686
+step
+    .goto 2413,50.84,53.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r.
+    .turnin 82771 >>Turn in Heritage of the Haranir
+    .target Orweyna
 ]])
 
 --Pandaren
@@ -7670,7 +7727,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Collectables
 #subgroup Allied Races
 #name bn) Heritage Pandaren
-#displayname |cFF1EFF008|r - Pandaren
+#displayname |cFF1EFF0013|r - Pandaren
 
 
 step << Horde

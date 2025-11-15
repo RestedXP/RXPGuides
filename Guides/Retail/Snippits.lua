@@ -1666,6 +1666,13 @@ RXPGuides.RegisterGuide([[}
 << DemonHunter
 
 step
+    #optional
+    .convertquest 40814,40816
+    .convertquest 44383,44379
+    .convertquest 40819,41120
+    .convertquest 39051,41121
+    .convertquest 39247,41119
+step
     #completewith ArtifactWeaponHavocY
     #hidewindow
     +test
@@ -1708,16 +1715,17 @@ step
     .isQuestAvailable 44383
     .isQuestAvailable 40819
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
     .isOnQuest 44383,44379
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .complete 44383,1 --1/1 Choose a second artifact to pursue
     .choose 1390100
     .skipgossipid 45738
@@ -1727,22 +1735,24 @@ step
     .isQuestAvailable 44383
     .isQuestComplete 44383
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 44383 >>Turn in Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40814 >>Accept The Power to Survive
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
     .isOnQuest 40814,40816
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .complete 40814,1 --1/1 Artifact weapon chosen
     .choose 1390100
     .skipgossipid 45106
@@ -1751,26 +1761,29 @@ step
     .isQuestAvailable 40814
     .isQuestComplete 40814
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 40814 >>Turn in The Power to Survive
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .isQuestAvailable 40249
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40819 >>Accept Making Arrangements
 step
     .isQuestTurnedIn 40249
     .goto 720,58.61,57.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40819 >>Accept Making Arrangements
 step
     .isQuestTurnedIn 40249
     #completewith next
     #label Making Arrangements
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 40819 >>Turn in Making Arrangements
     .accept 39051 >>Accept By Any Means
 step
@@ -1782,12 +1795,12 @@ step
     .isQuestTurnedIn 40249
     #requires Making Arrangements
     .goto 627,65.63,67.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 40819 >>Turn in Making Arrangements
     .accept 39051 >>Accept By Any Means
 step
     .goto 627,65.63,67.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 40819 >>Turn in Making Arrangements
     .accept 39051 >>Accept By Any Means
 step
@@ -1810,9 +1823,10 @@ step
     .mob Taldath the Destroyer
 step
     .goto 723,50.32,71.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 39051 >>Turn in By Any Means
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 39247 >>Accept The Hunt
 step
     #completewith next
@@ -1938,6 +1952,12 @@ RXPGuides.RegisterGuide([[
 << DemonHunter
 
 step
+    #optional
+    .convertquest 40814,40816
+    .convertquest 44383,44379
+    .convertquest 40247,41803
+    .convertquest 40249,41863
+step
     #completewith ArtifactWeaponVengeanceY
     #hidewindow
     +test
@@ -1980,16 +2000,17 @@ step
     .isQuestAvailable 44383
     .isQuestAvailable 40247
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 44383>>Accept In Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
     .isOnQuest 44383,44379
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .complete 44383,1 --1/1 Choose a second artifact to pursue
     .choose 1390101
     .skipgossipid 45738
@@ -1999,22 +2020,24 @@ step
     .isQuestAvailable 44383
     .isQuestComplete 44383
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 44383 >>Turn in Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40814>>Accept The Power to Survive
 step
     .zoneskip 627,1
     .isQuestAvailable 40814
     .isOnQuest 40814,40816
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .complete 40814,1 --1/1 Artifact weapon chosen
     .choose 1390101
     .skipgossipid 45106
@@ -2023,14 +2046,16 @@ step
     .isQuestAvailable 40814
     .isQuestComplete 40814
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 40814 >>Turn in The Power to Survive
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .goto 627,74.98,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 40247 >>Accept Asking a Favor
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .isQuestAvailable 39247
     .goto 627,28.53,48.31
@@ -2100,9 +2125,10 @@ step
     .target Jace Darkweaver
 step
     .goto 627,75.05,48.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 40249 >>Accept Vengeance Will Be Ours
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     #completewith next
     #label Fly to the Broken Shore
@@ -2307,8 +2333,9 @@ step
     #label Complete1
     .isQuestAvailable 40814
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40814 >>Accept The Power to Survive
 step
     .isQuestAvailable 40814

@@ -160,7 +160,7 @@ step
     .achievementComplete 42313,1
     +|cRXP_WARN_You’ve already completed the intro before. By clicking the text below, you’ll skip the intro for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\a) Intro Skip >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\a) Intro Skip >>CLICK HERE FOR GUIDE
 step << Alliance
     .isOnQuest 89405
     #title |cFFFCDC00Check Note|r
@@ -227,7 +227,7 @@ step
     .achievementComplete 42313,1
     +You have the option to reconsider your choice until you get teleported out of dalaran.
     *|cRXP_WARN_You may manually skip this step if you prefer|r.
-    .clicknext RestedXP Legion Remix\a) Intro Skip >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\a) Intro Skip >>CLICK HERE FOR GUIDE
 step
     #completewith next
     #label Magical barriers
@@ -909,7 +909,7 @@ step
     .isQuestTurnedIn account,80018
     +|cRXP_WARN_You’ve already completed the Skyriding intro before. By clicking the text below, you’ll skip the Skyriding intro for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\aa) Skyriding Skip >>CLICK HERE FOR THE GUIDE
+    .clicknext RestedXP Legion Remix\aa) Skyriding Skip >>CLICK HERE FOR GUIDE
 step
     #include RestedXP Legion Remix\a) Skyriding Panda
 
@@ -963,7 +963,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     #completewith The Dawning Light
     #hidewindow
@@ -1179,9 +1179,9 @@ step
     *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
     *|cFFFF0000You can't progress if you don't select one|r.
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Windwalker >> Windwalker(DPS) Questline
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Brewmaster >> Brewmaster(Tank) Questline
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Mistweaver >> Mistweaver(Healer) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Windwalker >>Windwalker(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Brewmaster >>Brewmaster(Tank) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Mistweaver >>Mistweaver(Healer) Questline
     -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
 
@@ -1229,7 +1229,7 @@ step
     #optional
     .isQuestAvailable 40636
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Monk Part 1 >>Order Hall Monk Part 1 
+    .clicknext RestedXP Legion Remix\ab) Order Hall Monk Part 1 >>CLICK HERE FOR GUIDE
 step
     #completewith next
     #label Matter of Planning
@@ -1315,7 +1315,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaberk|r.
     *|cRXP_WARN_Note:|r This should get pushed to your quest log automatically while in Dalaran. If not then relog.
@@ -1355,7 +1355,7 @@ step
     #optional
     .isQuestAvailable 40715
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 >>Order Hall Death Knight Part 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 >>CLICK HERE FOR GUIDE
 step
     .goto 648,50.97,50.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
@@ -1497,7 +1497,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     #completewith Call of the Illidari
     #hidewindow
@@ -1526,17 +1526,10 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
--- step
---     #optional
---     .convertquest 39261,39047
---     .convertquest 39261,39047
---     .convertquest 40814,40816
---     .convertquest 41221,41033
---     .convertquest 41037,41060
---     .convertquest 41062,41070
---     .convertquest 41067,41096
---     .convertquest 41069,41099
---     .convertquest 44383,44379
+step
+    #optional
+    .convertquest 39261,39047
+    .convertquest 40814,40816
 step
     #label Future of The Fel Hammer
     .goto 627,72.07,41.63
@@ -1561,14 +1554,16 @@ step
 step
     #label Call of the Illidari
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r
     .turnin 39261 >>Turn in Call of the Illidari
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .isQuestAvailable 40814
     .goto 627,74.97,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40814 >>Accept The Power to Survive
 step
     .isQuestAvailable 40814
@@ -1594,6 +1589,18 @@ RXPGuides.RegisterGuide([[
 
 << DemonHunter
 
+step
+    #optional
+    .convertquest 39261,39047
+    .convertquest 40814,40816
+    .convertquest 41221,41033
+    .convertquest 41037,41060
+    .convertquest 41062,41070
+    .convertquest 41067,41096
+    .convertquest 41069,41099
+    .convertquest 44383,44379
+    .convertquest 42677,44161
+    .convertquest 42671,42670
 step
     #completewith Asha Ravensong
     #hidewindow
@@ -1626,7 +1633,7 @@ step
     #optional
     .isQuestAvailable 40814
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 >>Order Hall Demon Hunter Part 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1 >>CLICK HERE FOR GUIDE
 step
     #label Eternal Vigil
     .goto 627,73.86,46.11
@@ -1661,7 +1668,7 @@ step
 step
     .goto 627,95.24,66.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Mother Malevolence|r
-    .accept 41221,41033 >>Accept Return to Mardum
+    .accept 41221 >>Accept Return to Mardum
     .target Matron Mother Malevolence
 step
     .goto 627,97.66,68.89
@@ -1669,9 +1676,10 @@ step
     .complete 41221,1 --Board the Fel Hammer
 step
     .goto 720,57.64,67.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r
     .turnin 41221 >>Turn in Return to Mardum
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 41037,41060 >>Accept Unbridled Power
 step
     #completewith next
@@ -1690,9 +1698,10 @@ step
     .complete 41037,1 --1/1 Activate the Fel Hammer
 step
     .goto 720,58.65,57.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r
     .turnin 41037 >>Turn in Unbridled Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 41062,41070 >>Accept Spoils of Victory
 step
     .goto 720,55.88,54.12
@@ -1740,9 +1749,10 @@ step
 step
     #completewith next
     #label Time is of the Essence
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r
     .turnin 41067 >>Turn in Time is of the Essence
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 41069 >>Accept Direct Our Wrath
     .disablecheckbox
 step
@@ -1754,9 +1764,10 @@ step
 step
     #requires Time is of the Essence
     .goto 720,58.59,57.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 41067 >>Turn in Time is of the Essence
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 41069 >>Accept Direct Our Wrath
 step
     .goto 720,58.56,53.23
@@ -1766,21 +1777,31 @@ step
     .accept 39718 >>Accept The Tranquil Forest
 step
     .goto 720,58.57,57.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 41069 >>Turn in Direct Our Wrath
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .goto 720,56.07,54.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Battlelord Gaardoun|r
     .accept 42671 >>Accept Rise, Champions
     .target Battlelord Gaardoun
 step
+    .isOnQuest 42671
     .goto 720,58.62,57.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.
     .accept 42695 >>Accept Champion: Kayn Sunfury
     .turnin 42695 >>Turn in Champion: Kayn Sunfury
     .complete 42671,1 --Kayn Sunfury recruited
     .target Kayn Sunfury
+step
+    .isOnQuest 42670
+    .goto 720,58.62,57.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r.
+    .accept 42695 >>Accept Champion: Kayn Sunfury
+    .turnin 42695 >>Turn in Champion: Kayn Sunfury
+    .complete 42670,1 --Kayn Sunfury recruited
+    .target Altruis the Sufferer
 step
     .goto 720,56.18,38.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asha Ravensong|r
@@ -1832,16 +1853,17 @@ step
     .goto 720,46.98,56.68,10,0
     .goto 720,50.57,66.1,10,0
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
     .isOnQuest 44383,
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .complete 44383,1 --1/1 Choose a second artifact to pursue
     .choose 1390101
     .skipgossipid 45738
@@ -1851,9 +1873,10 @@ step
     .isQuestAvailable 44383
     .isQuestComplete 44383
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 44383 >>Turn in Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
@@ -1863,16 +1886,17 @@ step
     .goto 720,46.98,56.68,10,0
     .goto 720,50.57,66.1,10,0
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 44383 >>Accept In Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .zoneskip 720,1
     .isQuestTurnedIn 40814
     .isQuestAvailable 44383
     .isOnQuest 44383
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .complete 44383,1 --1/1 Choose a second artifact to pursue
     .choose 1390100
     .skipgossipid 45738
@@ -1882,21 +1906,24 @@ step
     .isQuestAvailable 44383
     .isQuestComplete 44383
     .goto 720,58.62,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 44383 >>Turn in Pursuit of Power
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .isQuestAvailable 40819
     .goto 720,58.6,57.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .target Kayn Sunfury
+    .target Altruis the Sufferer
     .accept 40819 >>Accept Making Arrangements
 step
     .isQuestAvailable 40247
     .goto 720,58.6,57.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 40247 >>Accept Asking a Favor
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     #label Champion: Asha Ravensong
     .zoneskip 720,1
@@ -1930,7 +1957,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r |cRXP_WARN_next to you|r.
     *- |cRXP_WARN_Run around in Dalaran until he spawns|r
@@ -2056,7 +2083,7 @@ step
     #optional
     .isQuestAvailable 40646
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>Order Hall Druid Part 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>CLICK HERE FOR GUIDE
 step
     .goto 747,44.49,51.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
@@ -2129,7 +2156,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     .goto 627,58.61,45.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snowfeather|r.
@@ -2244,7 +2271,7 @@ step
     #optional
     .isQuestAvailable 40618
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>Hunter Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>CLICK HERE FOR GUIDE
 step
     .goto 627,60.05,53.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
@@ -2343,7 +2370,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     #completewith Dreadlord's Prize
     #hidewindow
@@ -2524,7 +2551,7 @@ step
     #optional
     .isQuestAvailable 41085
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>Mage Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>CLICK HERE FOR GUIDE
 step
     #label 
     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
@@ -2707,7 +2734,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     #completewith Order Hall Paladin Part 1
     #hidewindow
@@ -2827,7 +2854,7 @@ step
     #optional
     .isQuestAvailable 40408
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Paladin Part 1 >>Paladin Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Paladin Part 1 >>CLICK HERE FOR GUIDE
 step
     #label A United Force
     .goto 24,63.20,37.34
@@ -2927,7 +2954,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hooded Priestess|r |cRXP_WARN_next to you|r.
     *|cRXP_WARN_Note:|r If she doesn't appear then try to relog.
@@ -2987,7 +3014,7 @@ step
     #optional
     .isQuestAvailable 40706
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1>>Priest Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1>>CLICK HERE FOR GUIDE
 step
     .goto 627,46.30,20.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r
@@ -3084,7 +3111,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     #completewith Order Hall Rogue Part 1
     #hidewindow
@@ -3284,7 +3311,7 @@ step
     #optional
     .isQuestAvailable 40840
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Rogue Part 1 >>Rogue Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Rogue Part 1 >>CLICK HERE FOR GUIDE
 step
     #label Honoring Success
     .goto 626,41.48,77.92
@@ -3373,7 +3400,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     .goto 627,47.31,33.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -3470,7 +3497,7 @@ step
     #optional
     .isQuestAvailable 41335
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>Shaman Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>CLICK HERE FOR GUIDE
 step
     .goto 726,34.04,76.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r
@@ -3525,7 +3552,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .accept 40716 >>Accept The Sixth
@@ -3668,7 +3695,7 @@ step
     #optional
     .isQuestAvailable 40684
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>Warlock Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>CLICK HERE FOR GUIDE
 step
     .goto 628,55.81,65.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
@@ -3791,7 +3818,7 @@ step
     .achievementComplete 61108,1
     +|cRXP_WARN_You’ve already got the 10% XP bonus from the artifact questline. By clicking the text below, you’ll skip the Order Hall intro and parts of Azsuna for faster leveling|r.
     *Manually skip this step if you prefer to play through that content.
-    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR THE GUIDE.
+    .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
     #completewith Order Hall Warrior Part 1
     #hidewindow
@@ -4019,7 +4046,7 @@ step
     #optional
     .isQuestAvailable 40579
     +|cRXP_WARN_You have to do the previous chapter first|r
-    .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>Warrior Order Hall Intro 1
+    .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>CLICK HERE FOR GUIDE
 step
     #label OderHallPart2Start1
     .goto 695,59.58,83.93
@@ -5008,9 +5035,10 @@ step
     .target Archmage Khadgar
 step
     .goto 630,43.56,43.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r..
     .turnin 38834 >>Turn in Into the Fray
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r and |cRXP_FRIENDLY_Jace Darkweaver|r.
     .accept 37653 >>Accept Demon Souls
@@ -5096,9 +5124,10 @@ step
     .target Allari the Souleater
 step
     .goto 630,43.55,43.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r..
     .accept 36920 >>Accept From Within
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 step
     .goto 630,41.24,50.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r.
@@ -5184,10 +5213,11 @@ step
     .complete 37449,3 --1/1 Meet back at Illidari Stand
 step
     #label BehindLegionLinesZ
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r..
     .turnin 37449 >>Turn in Dark Revelations
     .goto 630,43.56,43.46
     .target Kayn Sunfury
+    .target Altruis the Sufferer
 ]])
 
 --Defending Azurewing Repose
