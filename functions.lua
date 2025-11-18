@@ -2769,6 +2769,24 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         return element
     end
 
+    local function GetCount(itemId)
+        local count = GetItemCount(itemId,element.includeBank)
+
+        if count == 0 then
+            if C_ToyBox and PlayerHasToy(itemId) and C_ToyBox.IsToyUsable(itemId) then
+                count = count + 1
+            end
+
+            for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+                if GetInventoryItemID("player", i) == itemId then
+                    count = count + 1
+                    break
+                end
+            end
+        end
+        return count
+    end
+
     local element = self.element
     local questId = element.questId
     local id = element.id
@@ -2799,11 +2817,17 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
                 addon.UpdateItemFrame()
             end
         elseif element.profession then
-            local skill = addon.GetSkillLevel(element.profession)
-            if skill >= 0 then
-                skill = math.max(0,skill-element.professionStart)
-                numRequired = numRequired - skill * element.multiplier
+            if element.profession == "item" then
+                local n = GetCount(element.professionStart)
+                numRequired = numRequired - n * element.multiplier
                 if numRequired < 0 then numRequired = 0 end
+            else
+                local skill = addon.GetSkillLevel(element.profession)
+                if skill >= 0 then
+                    skill = math.max(0,skill-element.professionStart)
+                    numRequired = numRequired - skill * element.multiplier
+                    if numRequired < 0 then numRequired = 0 end
+                end
             end
         elseif element.subtract or element.checkObjectives then
             local bitMask = element.objFlags
@@ -2837,23 +2861,6 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
 
     numRequired = math.max(math.ceil(numRequired),element.totalMinimum)
     --
-    local function GetCount(itemId)
-        local count = GetItemCount(itemId,element.includeBank)
-
-        if count == 0 then
-            if C_ToyBox and PlayerHasToy(itemId) and C_ToyBox.IsToyUsable(itemId) then
-                count = count + 1
-            end
-
-            for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-                if GetInventoryItemID("player", i) == itemId then
-                    count = count + 1
-                    break
-                end
-            end
-        end
-        return count
-    end
 
     local count = 0
     for itemId in string.gmatch(element.ids,"%d+") do
