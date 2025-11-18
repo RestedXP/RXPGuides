@@ -1337,7 +1337,7 @@ step << !Hunter !Rogue
 step << Druid
     .goto Darnassus,35.38,8.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
-    .turnin 5925 >>  Turn in Heeding the Call << sod
+    .turnin -5923 >> Turn in Heeding the Call
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your class spells
     .target Mathrengyl Bearwalker
@@ -1353,6 +1353,34 @@ step << !Rogue
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .accept 2518 >> Accept Tears of the Moon
+step << Druid
+	#completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_It will be in your spellbook|r
+	.zoneskip Moonglade
+step << Druid
+    .goto Moonglade,56.21,30.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r up stairs
+    .turnin 5921 >> Turn in Moonglade
+    .target Dendrite Starblaze
+    .accept 5929 >> Accept Great Bear Spirit
+step << Druid
+    .goto Moonglade,45.12,26.78,15,0
+    .goto Moonglade,39.17,27.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Great Bear Spirit|r
+    .complete 5929,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear.
+    .skipgossip
+    .target Great Bear Spirit
+step << Druid
+	#completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_This will make you return faster|r
+step << Druid
+    .goto Moonglade,56.21,30.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r up stairs
+    .turnin 5929 >> Turn in Great Bear Spirit
+    .target Dendrite Starblaze
+    .accept 5931 >> Accept Back to Darnassus
 step
 #xprate <1.99
     #requires xp10 << Rogue
