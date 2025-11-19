@@ -2769,6 +2769,15 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         return element
     end
 
+    local element = self.element
+    local questId = element.questId
+    local id = element.id
+    local name = addon.GetItemName(id)
+    local step = element.step
+    local numRequired = element.qty
+    local event = ...
+    local isComplete
+
     local function GetCount(itemId)
         local count = GetItemCount(itemId,element.includeBank)
 
@@ -2787,14 +2796,6 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         return count
     end
 
-    local element = self.element
-    local questId = element.questId
-    local id = element.id
-    local name = addon.GetItemName(id)
-    local step = element.step
-    local numRequired = element.qty
-    local event = ...
-    local isComplete
     if name then
         element.requestFromServer = nil
     else
