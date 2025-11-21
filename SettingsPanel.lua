@@ -3222,6 +3222,12 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1
                     },
+                    arrowHeader = {
+                        name = L("Debug"),
+                        type = "header",
+                        width = "full",
+                        order = 10
+                    },
                     debugGetQuests = {
                         order = 10.1,
                         name = L("Get Completed Quests"),
@@ -3238,12 +3244,21 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = not addon.settings.profile.debug
                     },
-                    debugQuestImport = {
+                    disableAutoSkip = {
+                        name = L("Disable step skips"),
+                        desc = L(
+                            "Ignores any kind of condition that causes a step to auto skip"),
+                        type = "toggle",
+                        width = optionsWidth,
                         order = 10.2,
+                        hidden = not addon.settings.profile.debug
+                    },
+                    debugQuestImport = {
+                        order = 10.3,
                         name = L("Import Completed Quests"),
                         type = 'input',
                         multiline = true,
-                        width = 3*optionsWidth,
+                        width = 'full',
                         get = function()
                             local q = addon.settings.profile.debugQuestImport
                             addon.ParseCompletedQuests(q)
@@ -3253,9 +3268,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.settings.profile.debugQuestImport = text
                             addon.ParseCompletedQuests(text)
                         end,
-                        hidden = function()
-                            return not(addon.settings and addon.settings.profile) or (not addon.settings.profile.debug)
-                        end,
+                        hidden = not addon.settings.profile.debug,
                     },
                     enableHSbatch = {
                         name = L("Hearthstone batching"),

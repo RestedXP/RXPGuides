@@ -466,7 +466,7 @@ function addon.functions.requires(self,text,mode,...)
             addon.updateSteps = true
             step.optional = nil
         end
-        if addon.settings.profile.debug then
+        if addon.settings.profile.disableAutoSkip then
             step.optional = nil
         elseif optional ~= step.optional and GetTime() - reloadTimer > 60 then
             addon:ScheduleTask(addon.ReloadGuide,true)

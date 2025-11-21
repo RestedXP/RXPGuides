@@ -3881,7 +3881,7 @@ function addon.functions.areapoiexists(self, text, zone, ...)
 
     local event = text
     local step = element.step
-    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not exists) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.disableAutoSkip and (not exists) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Quest unavailable today"
         step.completed = true
         addon.updateSteps = true
@@ -3938,7 +3938,7 @@ function addon.functions.questcount(self, text, count, ...)
     end
 
     local step = element.step
-    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (count < element.total) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.disableAutoSkip and (count < element.total) == not element.reverse and not addon.isHidden then
         --element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
@@ -3978,7 +3978,7 @@ function addon.functions.isQuestComplete(self, ...)
     id = GetQuestId(id,nil,true)
     local event = ...
     local isCompleted = not(IsOnQuest(id) and IsQuestComplete(id)) == not(element.reverse)
-    if event ~= "WindowUpdate" and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and isCompleted and not addon.settings.profile.disableAutoSkip and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
@@ -4028,7 +4028,7 @@ function addon.functions.isOnQuest(self, text, ...)
     end
 
 
-    if event ~= "WindowUpdate" and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and not addon.settings.profile.disableAutoSkip and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
@@ -4094,7 +4094,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or addon.IsQuestTurnedIn(id,accountWide)
         end
     end
-    if event ~= "WindowUpdate" and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and not questTurnedIn and not addon.settings.profile.disableAutoSkip and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
@@ -6265,7 +6265,7 @@ function addon.functions.pvp(self, ...)
     local element = self.element
     local isPvPEnabled = C_PvP and (C_PvP.IsWarModeDesired() or C_PvP.IsWarModeActive())
 
-    if element.step.active and not addon.settings.profile.debug and (not isPvPEnabled) == not element.reverse and not addon.isHidden then
+    if element.step.active and not addon.settings.profile.disableAutoSkip and (not isPvPEnabled) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -6364,7 +6364,7 @@ function addon.functions.flyable(self, text, zone, skill)
         canPlayerFly = not canPlayerFly
     end
     --print(canPlayerFly,'t')
-    if element.step.active and not addon.settings.profile.debug and (not canPlayerFly) and not addon.isHidden then
+    if element.step.active and not addon.settings.profile.disableAutoSkip and (not canPlayerFly) and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -6383,7 +6383,7 @@ function addon.functions.skyriding(self, text, label)
         canPlayerFly = not canPlayerFly
     end
 
-    if element.step.active and not addon.settings.profile.debug and (not canPlayerFly) and not addon.isHidden then
+    if element.step.active and not addon.settings.profile.disableAutoSkip and (not canPlayerFly) and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
         local guide = addon.currentGuide
@@ -7320,7 +7320,7 @@ function addon.functions.isInScenario(self, ...)
 
     if event ~= "WindowUpdate" then
         local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
-        if step.active and not addon.settings.profile.debug and not addon.isHidden and (not scenarioInfo or scenarioInfo.scenarioID ~= element.scenario) then
+        if step.active and not addon.settings.profile.disableAutoSkip and not addon.isHidden and (not scenarioInfo or scenarioInfo.scenarioID ~= element.scenario) then
             element.tooltipText = "Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
@@ -7346,7 +7346,7 @@ function addon.functions.enterScenario(self, ...)
 
     if event ~= "WindowUpdate" then
         local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
-        if step.active and not addon.settings.profile.debug and not addon.isHidden and scenarioInfo and scenarioInfo.scenarioID == element.scenario then
+        if step.active and not addon.settings.profile.disableAutoSkip and not addon.isHidden and scenarioInfo and scenarioInfo.scenarioID == element.scenario then
             element.tooltipText = "Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
@@ -7419,7 +7419,7 @@ function addon.functions.dailyhub(self, text, hub, poi, arg1)
 
     if element.arg1 then match = not match end
 
-    if not addon.settings.profile.debug and not addon.isHidden and not match then
+    if not addon.settings.profile.disableAutoSkip and not addon.isHidden and not match then
         --element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
@@ -7454,7 +7454,7 @@ function addon.functions.vale(self, text, poi, arg1)
 
     if element.arg1 then match = not match end
 
-    if not addon.settings.profile.debug and not addon.isHidden and not match then
+    if not addon.settings.profile.disableAutoSkip and not addon.isHidden and not match then
         --element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
