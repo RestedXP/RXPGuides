@@ -3222,6 +3222,41 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1
                     },
+                    debugGetQuests = {
+                        order = 10.1,
+                        name = L("Get Completed Quests"),
+                        type = 'execute',
+                        func = function()
+                            local tbl = _G.GetQuestsCompleted()
+                            local out = ""
+                            for quest in pairs(tbl) do
+                                out = out .. tostring(quest) .. ","
+                            end
+                            addon.url = out:sub(1,-2)
+                            _G.StaticPopup_Show("RXP_Link")
+                            addon.url = nil
+                        end,
+                        hidden = not addon.settings.profile.debug
+                    },
+                    debugQuestImport = {
+                        order = 10.2,
+                        name = L("Import Completed Quests"),
+                        type = 'input',
+                        multiline = true,
+                        width = 3*optionsWidth,
+                        get = function()
+                            local q = addon.settings.profile.debugQuestImport
+                            addon.ParseCompletedQuests(q)
+                            return q
+                        end,
+                        set = function(self,text)
+                            addon.settings.profile.debugQuestImport = text
+                            addon.ParseCompletedQuests(text)
+                        end,
+                        hidden = function()
+                            return not(addon.settings and addon.settings.profile) or (not addon.settings.profile.debug)
+                        end,
+                    },
                     enableHSbatch = {
                         name = L("Hearthstone batching"),
                         desc = L(

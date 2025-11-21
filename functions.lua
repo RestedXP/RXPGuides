@@ -301,6 +301,17 @@ local GetRecentTurnIn = function(id)
     return addon.recentTurnIn[id]
 end
 
+addon.ImportQuestTurnInList = {}
+function addon.ParseCompletedQuests(str)
+    str = str or addon.settings.profile.debugQuestImport
+    addon.ImportQuestTurnInList = {}
+    if not addon.settings.profile.debug and str then return end
+    for quest in str:gmatch("%d+") do
+        local id = tonumber(quest)
+        addon.ImportQuestTurnInList[id] = true
+    end
+end
+
 local IsTurnedIn = C_QuestLog.IsQuestFlaggedCompleted or
                     _G.IsQuestFlaggedCompleted or
                         function(id) return _G.GetQuestsCompleted()[id] end
@@ -316,6 +327,11 @@ local IsQuestTurnedIn = function(id,accountWide)
     else
         turnedIn = IsTurnedIn(id)
     end
+
+    if addon.settings.profile.debug and next(addon.ImportQuestTurnInList) then
+        turnedIn = turnedIn or addon.ImportQuestTurnInList[id]
+    end
+
     if turnedIn then
         addon.recentTurnIn[id] = nil
         return true
