@@ -5,9 +5,11 @@ local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 local QUEST_LOG_SIZE = 25
 local reloadTimer = 0
 
+--[[
 if addon.gameVersion < 20000 then
     QUEST_LOG_SIZE = 20
 end
+]]
 
 local function GetXPMods()
     if addon.player.season == 2 then
