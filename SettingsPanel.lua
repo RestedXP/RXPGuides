@@ -3251,7 +3251,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 10.2,
-                        hidden = not addon.settings.profile.debug
                     },
                     debugQuestImport = {
                         order = 10.3,
