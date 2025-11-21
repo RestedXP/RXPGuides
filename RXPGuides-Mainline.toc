@@ -1,4 +1,4 @@
-## Interface: 110200
+## Interface: 110200, 120000
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
