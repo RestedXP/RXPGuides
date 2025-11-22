@@ -3242,7 +3242,9 @@ function addon.settings:CreateAceOptionsPanel()
                             _G.StaticPopup_Show("RXP_Link")
                             addon.url = nil
                         end,
-                        hidden = not addon.settings.profile.debug
+                        hidden = function()
+                            return not addon.settings.profile.debug
+                        end
                     },
                     disableAutoSkip = {
                         name = L("Disable step skips"),
@@ -3267,7 +3269,9 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.settings.profile.debugQuestImport = text
                             addon.ParseCompletedQuests(text)
                         end,
-                        hidden = not addon.settings.profile.debug,
+                        hidden = function()
+                            return not addon.settings.profile.debug
+                        end,
                     },
                     enableHSbatch = {
                         name = L("Hearthstone batching"),

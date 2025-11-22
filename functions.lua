@@ -303,7 +303,7 @@ end
 
 addon.ImportQuestTurnInList = {}
 function addon.ParseCompletedQuests(str)
-    str = str or addon.settings.profile.debugQuestImport
+    str = str or addon.settings.profile.debugQuestImport or ""
     addon.ImportQuestTurnInList = {}
     if not addon.settings.profile.debug and str then return end
     for quest in str:gmatch("%d+") do
