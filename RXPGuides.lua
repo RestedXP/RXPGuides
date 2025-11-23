@@ -1206,7 +1206,6 @@ function addon:OnInitialize()
     if addon.player.season == 2 then
         addon.settings.profile.phase = 6
     end
-    addon.ParseCompletedQuests()
     addon.LoadCachedGuides()
     addon.UpdateGuideFontSize()
     addon.isHidden = not addon.settings.profile.showEnabled or addon.settings.profile.hideGuideWindow
@@ -1220,6 +1219,7 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
+    addon.ParseCompletedQuests()
     addon.LoadEmbeddedGuides()
     if addon.settings.profile.preLoadData then
         addon.LoadAllGuides()

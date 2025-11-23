@@ -602,3 +602,25 @@ function addon.ShowMissingQuests(output)
     end
     return t
 end
+
+local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
+function addon.ForceNextStep()
+    if not (_G.Settings and _G.Settings.GetCategory) then
+        return
+    end
+    for i,step in pairs(addon.RXPFrame.activeSteps) do
+        for _,element in pairs(step.elements) do
+            if element.tag == "collect" then
+                local x = element.qty
+                local id = element.id
+                SendChatMessage(format(".additem %d %d",id,x), "SAY", nil)
+            elseif element.tag == "reputation" then
+                SendChatMessage(format(".mod rep %d exalted",element.faction), "SAY", nil)
+            elseif element.tag == "complete" then
+                SendChatMessage(format(".q c %d",element.questId), "SAY", nil)
+            elseif element.tag == "accept" then
+                SendChatMessage(format(".q a %d",element.questId), "SAY", nil)
+            end
+        end
+    end
+end

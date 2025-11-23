@@ -328,8 +328,10 @@ local IsQuestTurnedIn = function(id,accountWide)
         turnedIn = IsTurnedIn(id)
     end
 
-    if addon.settings.profile.debug and next(addon.ImportQuestTurnInList) then
-        turnedIn = turnedIn or addon.ImportQuestTurnInList[id]
+    if addon.settings.profile.debug and next(addon.ImportQuestTurnInList)
+        and addon.ImportQuestTurnInList[id] then
+        --print('ok1',id)
+        return true
     end
 
     if turnedIn then
@@ -2794,6 +2796,10 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     local event = ...
     local isComplete
 
+    if addon.settings.profile.debug then
+        element.tooltip = id
+    end
+
     local function GetCount(itemId)
         local count = GetItemCount(itemId,element.includeBank)
 
@@ -3357,6 +3363,9 @@ function addon.functions.reputation(self, ...)
     local _, _, standing, bottomValue, topValue, earnedValue =
         addon.GetFactionInfoByID(element.faction)
     local relativeValue = earnedValue
+    if addon.settings.profile.debug then
+        element.tooltip = element.faction
+    end
     local replength = topValue - bottomValue
     if relativeValue < 0 then
         relativeValue = replength + earnedValue

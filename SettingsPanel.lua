@@ -65,8 +65,8 @@ function addon.settings.OpenSettings(panelName)
     if not (_G.Settings and _G.Settings.GetCategory) then
         -- Not used by Era (1.15.0), Wrath (2.5.3), nor Retail (10.1.7)
         -- Support legacy generic fall through to base settings though
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        _G.InterfaceOptionsFrame_OpenToCategory(panelName or addon.RXPOptions)
+        _G.InterfaceOptionsFrame_OpenToCategory(panelName or addon.RXPOptions)
         return
     end
 
