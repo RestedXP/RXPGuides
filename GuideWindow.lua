@@ -582,7 +582,7 @@ function addon.UpdateStepCompletion()
                 step.active = nil
             elseif step.index >= RXPCData.currentStep then
                 step.completed = true
-                RXPFrame.BottomFrame.UpdateFrame(nil, nil, step.index)
+                RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
                 if step.index == RXPCData.currentStep then
                     addon.loadNextStep = true
                 end
@@ -2028,7 +2028,7 @@ function BottomFrame.UpdateFrame(self, stepn)
 
     if guide then
         ScrollChild:SetHeight(ScrollChild.f1:GetHeight() -
-                                  BottomFrame.hiddenFrames * 4)
+                                  (BottomFrame.hiddenFrames or 1) * 4)
     end
 
     local w = RXPFrame:GetWidth() - 35

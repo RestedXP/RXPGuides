@@ -85,6 +85,7 @@ local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
 events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
+events.collectmultiple = events.collect
 events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
@@ -175,6 +176,7 @@ addon.icons = {
     dailyturnin = "|TInterface/GossipFrame/DailyActiveQuestIcon:0|t",
     turnin = "|TInterface/GossipFrame/ActiveQuestIcon:0|t",
     collect = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
+    collectmultiple = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
     equip = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
     combat = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t",
     complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
@@ -2710,6 +2712,36 @@ function addon.functions.addquestitem(self, text, id, questId)
     end
 end
 
+function addon.functions.collectmultiple(self, ...)
+    if type(self) == "string" then -- on parse
+        local _, id = ...
+        local element = addon.functions.collect(self, nil, id, 9999999)
+        element.tag = "collectmultiple"
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    local max = 0
+
+    for _,e in pairs(step.elements) do
+        --print(e.tag,e.id,element.id)
+        if e.tag == "collect" and e.id == element.id then
+            e.hideText = true
+            e.textOnly = true
+            e.text = nil
+            e.rawtext = nil
+            e.tooltipText = nil
+            e.dynamicText = false
+            max = max + e.numRequired
+        end
+    end
+
+    element.qty = max
+    --print(element.hideText,element.qty,element.id)
+    return addon.functions.collect(self, ...)
+end
+
 addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
@@ -2762,10 +2794,12 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         element.checkObjectives = bit.band(flags, 0x4) == 0x4
         element.includeBank = bit.band(flags, 0x8) == 0x8
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
+
         if arg1 and element.subtract and element.multiplier == 1 then
             element.multiplier = tonumber(arg1) or 1
         end
         element.totalMinimum = 0
+        element.numRequired = 0
         if bit.band(flags, 0x20) == 0x20 then
             element.profession = arg1
             element.multiplier = tonumber(arg2) or 1
@@ -2818,7 +2852,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         return count
     end
 
-    if name then
+    if name or element.hideText then
         element.requestFromServer = nil
     else
         name = ""
@@ -2883,6 +2917,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     end
 
     numRequired = math.max(math.ceil(numRequired),element.totalMinimum)
+    element.numRequired = numRequired
     --
 
     local count = 0
@@ -2895,9 +2930,10 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             ((element.objFlags == 0 and IsOnQuest(questId)) or (not element.ignoreTurnIn and
                 (isComplete or IsQuestTurnedIn(questId) or IsQuestComplete(questId))))) then
         count = numRequired
+        element.numRequired = 0
     end
 
-    if numRequired <= 0 then
+    if numRequired <= 0 or element.hideText then
         element.textOnly = true
         if element.text then
             element.text = nil
