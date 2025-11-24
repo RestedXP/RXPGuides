@@ -3876,6 +3876,14 @@ step
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
     .target Deathguard Dillinger
+    .isQuestComplete 404
+step
+    #optional
+    .goto Tirisfal Glades,58.20,51.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .accept 426 >>Accept The Mills Overrun
+    .target Deathguard Dillinger
+    .isQuestTurnedIn 404
 step
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
@@ -4329,6 +4337,7 @@ step
     .mob +Cracked Skull Soldier
     .complete 426,2 --Blackened Skull (3)
     .mob +Darkeye Bonecaster
+    .isOnQuest 426
 step
     #optional
     #requires MillsOverun
@@ -4616,9 +4625,9 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -4933,9 +4942,9 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766,1 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -5072,6 +5081,7 @@ step << Priest
     .xp <12,1
     .xp >14,1
 step << Priest
+    #optional
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
 	.train 6074 >> Train your class spells
@@ -5085,6 +5095,7 @@ step << Mage
     .xp <12,1
     .xp >14,1
 step << Mage
+    #optional
     .goto Tirisfal Glades,61.97,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
     .train 2137 >> Train your class spells
@@ -5098,6 +5109,7 @@ step << Warrior
     .xp <12,1
     .xp >14,1
 step << Warrior
+    #optional
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .train 1160 >> Train your class spells
@@ -5105,16 +5117,17 @@ step << Warrior
     .xp <14,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766,1 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
     .xp >14,1
 step << Rogue
+    #optional
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1758 >> Train your class spells
-    .target Rwag
+    .target Marion Call
     .xp <14,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -5124,6 +5137,7 @@ step << Warlock
     .xp <12,1
     .xp >14,1
 step << Warlock
+    #optional
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
     .train 6222 >> Train your class spells
