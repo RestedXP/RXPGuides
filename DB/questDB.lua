@@ -51,9 +51,24 @@ local function IsPreReqComplete(quest)
     end
 end
 
-local function IsQuestAvailable(quest,id,skipRepCheck)
+local function IsQuestAvailable(quest,id,skipRepCheck,nested)
     if not quest then return end
     id = id or quest.Id
+
+    local availableWith = quest.availableWith
+    if availableWith and not nested then
+        local group = addon.currentGuide.group
+        local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+        if type(availableWith) ~= "table" then
+            availableWith = {availableWith}
+            quest.availableAfter = availableWith
+        end
+        for _,completeId in pairs(availableWith) do
+            if IsQuestAvailable(QuestDB[completeId],completeId,skipRepCheck,true) then
+                return true
+            end
+        end
+    end
 
     local function ProcessRep(rep,faction)
         local _, _, standing,_,_,value = addon.GetFactionInfoByID(faction)
