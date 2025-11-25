@@ -162,13 +162,13 @@ level -- Malice (Rank 5)
     .talent 1,1,3,5
 
 level -- Ruthlessness (Rank 1)
-    .talent 1,2,3,1
+    .talent 1,2,1,1
 
 level -- Ruthlessness (Rank 2)
-    .talent 1,2,3,2
+    .talent 1,2,1,2
 
 level -- Ruthlessness (Rank 3)
-    .talent 1,2,3,3
+    .talent 1,2,1,3
 
 level -- Murder (Rank 1)
     .talent 1,2,2,1
