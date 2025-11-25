@@ -3,3 +3,4 @@ ignore:
   - Docs
   - readme.md
 
+enable-toc-creation: yes
