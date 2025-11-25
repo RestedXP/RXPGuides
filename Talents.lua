@@ -442,6 +442,8 @@ function GetTalentData(tab, talentIndex)
 
     if addon.game == "CATA" then
         name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(tab, talentIndex)
+    elseif addon.game == "TBC" then
+        name, _, _, _, _, _, _, previewRankOrRank = GetTalentInfo(tab, talentIndex)
     elseif addon.game == "WOTLK" then
         name, _, _, _, _, _, _, _, previewRankOrRank, _ = GetTalentInfo(tab, talentIndex)
     else
@@ -578,7 +580,7 @@ end
 
 -- { tab, talentIndex, name }
 local function learnClassicTalent(payload)
-    if addon.game ~= "CLASSIC" then return end
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
 
     local tab, talentIndex, name = unpack(payload)
     local result = LearnTalent(tab, talentIndex)
@@ -609,7 +611,7 @@ function addon.talents.functions.talent(element, validate, optional)
     end
 
     local talentIndex
-    local name, previewRankOrRank
+    local name, rankedName, previewRankOrRank
     local lookup
     local tempData
 
@@ -627,26 +629,31 @@ function addon.talents.functions.talent(element, validate, optional)
 
         name, previewRankOrRank = GetTalentData(talentData.tab, talentIndex)
 
+        rankedName = fmt("%s (%s %d)", name, _G.RANK, talentData.rank)
+
         if optional then
             if previewRankOrRank == talentData.rank then
-                addon.comms.PrettyPrint("%s - (%s) %s (%s %d)", _G.TRADE_SKILLS_LEARNED_TAB,
-                                        _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS, name, _G.RANK, talentData.rank)
+                addon.comms.PrettyPrint("%s - (%s) %s", _G.TRADE_SKILLS_LEARNED_TAB,
+                                        _G.COMMUNITIES_CHANNEL_DESCRIPTION_INSTRUCTIONS, rankedName)
 
                 -- Handle in level step processing, if return value is rank from at least one optional step, continue
-                return true, fmt("%s (%s %d)", _G.RANK, talentData.rank)
+                return true, rankedName
             end
 
             -- Return false if not selected, check upstream to verify at least one #optional step talent chosen
-            return false, fmt("%s (%s %d)", name, _G.RANK, talentData.rank)
+            return false, rankedName
         end
 
         if previewRankOrRank < talentData.rank then
             if validate then return true end
 
-            if addon.game == "CLASSIC" then -- Classic doesn't have Preview Talents
-                tempData = {talentData.tab, talentIndex, name}
+            -- TODO remove TBC after PTR gets Preview UI
+            if addon.game == "CLASSIC" or addon.game == "TBC" then -- Classic doesn't have Preview Talents
+                tempData = {talentData.tab, talentIndex, rankedName}
 
-                addon.comms:ConfirmChoice("RXPTalentPrompt", fmt(_G.CONFIRM_LEARN_TALENT, name), learnClassicTalent,
+                addon.comms:ConfirmChoice("RXPTalentPrompt",
+                                          fmt(_G.CONFIRM_LEARN_TALENT, rankedName),
+                                          learnClassicTalent,
                                           tempData)
 
                 -- Stop as soon as first learning prompt, not a blocking dialog
@@ -657,17 +664,16 @@ function addon.talents.functions.talent(element, validate, optional)
 
                 -- Verify training actually worked, there's no return value from Preview
                 if tempData == GetGroupPreviewTalentPointsSpent() then
-                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
+                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, rankedName))
                     return false
                 end
 
-                addon.comms.PrettyPrint("%s - %s (%s %d)", _G.PREVIEW, name, _G.RANK, talentData.rank)
+                addon.comms.PrettyPrint("%s - %s", _G.PREVIEW, rankedName)
             else -- TBC/Wrath/Cata, not previewed
                 if LearnTalent(talentData.tab, talentIndex) then
-                    addon.comms.PrettyPrint("%s - %s (%s %d)", _G.TRADE_SKILLS_LEARNED_TAB, name, _G.RANK,
-                                            talentData.rank)
+                    addon.comms.PrettyPrint("%s - %s", _G.TRADE_SKILLS_LEARNED_TAB, rankedName)
                 else
-                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
+                    addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, rankedName))
                     return false
                 end
             end
