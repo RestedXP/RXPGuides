@@ -51,8 +51,9 @@ Guides/GuideList-Mainline.xml [AllowLoadGameType mainline]
 Guides/GuideList-cata.xml [AllowLoadGameType cata,mists]
 Guides/GuideList-classic.xml [AllowLoadGameType vanilla]
 
-Talents.lua [AllowLoadGameType cata,vanilla]
+Talents.lua [AllowLoadGameType cata,vanilla,tbc]
 Guides/Talents/cata.xml [AllowLoadGameType cata]
+Guides/Talents/tbc.xml [AllowLoadGameType tbc]
 Guides/Talents/classic.xml [AllowLoadGameType vanilla]
 
 ItemUpgrades.lua [AllowLoadGameType cata,vanilla]
