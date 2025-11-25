@@ -1,6 +1,7 @@
 ## Interface: 110200, 40402, 50500, 11508
 ## Interface-Mists: 50500
 ## Interface-Cata: 40402
+## Interface-TBC: 20505
 ## Interface-Vanilla: 11508
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
