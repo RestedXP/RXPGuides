@@ -56,10 +56,10 @@ level -- Unleashed Fury (Rank 5)
     .talent 1,3,3,5
 
 level -- Improved Mend Pet (Rank 1)
-    .talent 1,4,1,1
+    .talent 1,4,2,1
 
 level -- Improved Mend Pet (Rank 2)
-    .talent 1,4,1,2
+    .talent 1,4,2,2
 
 level -- Ferocity (Rank 1)
     .talent 1,4,3,1
