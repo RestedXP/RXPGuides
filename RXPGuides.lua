@@ -1360,7 +1360,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     end
     if addon.RXPFrame:IsShown() and WOW_PROJECT_ID == WOW_PROJECT_CLASSIC and
                 UnitLevel("player") == 1 and
-                (not addon.currentGuide or addon.currentGuide.empty) then
+                (not addon.currentGuide or addon.currentGuide.empty) and addon.startHardcoreIntroUI then
         addon.startHardcoreIntroUI()
     end
     addon.targeting:Setup()

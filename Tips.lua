@@ -323,6 +323,8 @@ local ActionBars = {'Action', 'MultiBarBottomLeft', 'MultiBarBottomRight', 'Mult
 function addon.tips:CatalogActionBars()
     session.actionBarMap = {}
 
+    if not _G.ActionButton_GetPagedID or _G.ActionButton_CalculateAction then return end
+
     local button, slot, actionType, id, key
 
     for _, barName in pairs(ActionBars) do
