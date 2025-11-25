@@ -970,7 +970,7 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
     else
         -- If > buttonsPerRow, then row 1 has 4 buttons
         enemyWidth = buttonsPerRow * 27 + 8
-        topDown = 25 + (25 * floor(enemyCount / buttonsPerRow))
+        topDown = 25 * ceil(enemyCount / buttonsPerRow)
     end
 
     if friendlyCount == 0 then
@@ -980,7 +980,7 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
         bottomUp = 25
     else
         friendlyWidth = buttonsPerRow * 27 + 8
-        bottomUp = 25 + (25 * floor(friendlyCount / buttonsPerRow))
+        bottomUp = 25 * ceil(friendlyCount / buttonsPerRow)
     end
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
