@@ -2142,6 +2142,14 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 1.5,
                         order = 2.6
                     },
+                    ignoreQuestieConflicts = {
+                        name = L("Ignore Questie announcements"),
+                        desc = L("Send quest and collect step announcements even if Questie is enabled"),
+                        type = "toggle",
+                        width = "full",
+                        order = 2.7,
+                        hidden = not _G.Questie
+                    },
                     groupCoordinationHeader = {
                         name = _G.TUTORIAL_TITLE18,
                         type = "header",
@@ -2161,14 +2169,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.2
-                    },
-                    ignoreQuestieConflicts = {
-                        name = L("Ignore Questie announcements"),
-                        desc = L("Send quest and collect step announcements even if Questie is enabled"),
-                        type = "toggle",
-                        width = "full",
-                        order = 3.7,
-                        hidden = not _G.Questie
                     }
                 }
             },
