@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove, math.max
+local fmt, tinsert, tremove, mmax, mrand = string.format, table.insert, table.remove, math.max, math.random
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros = GetMacroInfo, CreateMacro, EditMacro,
                                                                              InCombatLockdown, GetNumMacros
 local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer,
@@ -20,6 +20,7 @@ local L = addon.locale.Get
 
 addon.targeting = addon:NewModule("Targeting", "AceEvent-3.0")
 addon.targeting.macroName = "RXPTargeting"
+addon.targeting.followMacroName = "RXPFollow"
 
 local announcedTargets = {}
 local macroTargets = {}
@@ -45,6 +46,8 @@ local unitscanList = {}
 
 local rareTargets = {}
 
+local pendingLeaderUpdate
+
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
 
@@ -61,6 +64,14 @@ function addon.targeting:Setup()
 
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
+
+    if addon.settings.profile.createFollowMacro then
+        self:RegisterEvent("PLAYER_ENTERING_WORLD")
+        self:RegisterEvent("GROUP_FORMED")
+        self:RegisterEvent("GROUP_LEFT")
+    else
+        DeleteMacro(self.followMacroName)
+    end
 
     if not addon.settings.profile.enableTargetAutomation then return end
 
@@ -199,10 +210,51 @@ function addon.targeting:UpdateMacro(queuedTargets)
     macroTargets = {}
 end
 
+function addon.targeting:UpdateFollowMacro(leaderName)
+    if not addon.settings.profile.createFollowMacro then return end
+
+    if InCombatLockdown() then
+        pendingLeaderUpdate = leaderName
+        return
+    end
+
+    if not GetMacroInfo(self.followMacroName) then
+        if not self:CanCreateMacro() then return end
+
+        CreateMacro(self.followMacroName, "Inv_boots_02", "")
+    end
+
+    if not IsInGroup() or leaderName == "" then
+        EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.ERR_QUEST_PUSH_NOT_IN_PARTY_S)
+
+        return
+    end
+
+    if UnitIsGroupLeader("player") then return end
+
+    if not leaderName then
+        for i = 1, GetNumGroupMembers() - 1 do
+            if UnitIsGroupLeader("party" .. i) then
+                leaderName = UnitName("party" .. i)
+            end
+        end
+    end
+
+    if not leaderName then return end
+
+    EditMacro(self.followMacroName, self.followMacroName, nil, fmt('/targetexact %s\n/follow\n', leaderName))
+
+    pendingLeaderUpdate = nil
+end
+
 function addon.targeting:PLAYER_REGEN_ENABLED()
     if macroTargets then C_Timer.After(0.5, function() self:UpdateMacro(macroTargets) end) end
 
     self:UpdateTargetFrame()
+
+    if pendingLeaderUpdate then
+        C_Timer.After(mrand(1), function() self:UpdateFollowMacro(pendingLeaderUpdate) end)
+    end
 end
 
 function addon.targeting:CheckNameplate(nameplateID)
@@ -273,6 +325,16 @@ function addon.targeting:CheckNameplates()
 
     for _, nameplate in ipairs(nameplatesArray) do self:CheckNameplate(nameplate.namePlateUnitToken) end
 end
+
+function addon.targeting:PLAYER_ENTERING_WORLD()
+    C_Timer.After(mrand(3), function() self:UpdateFollowMacro() end)
+end
+
+function addon.targeting:GROUP_FORMED()
+    C_Timer.After(3 + mrand(2), function() self:UpdateFollowMacro() end)
+end
+
+function addon.targeting:GROUP_LEFT() self:UpdateFollowMacro("") end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     if not nameplateID or not shouldTargetCheck() then return end

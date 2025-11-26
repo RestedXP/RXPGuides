@@ -1084,7 +1084,7 @@ function addon.settings:CreateAceOptionsPanel()
                             p.enableGroupQuests = true
                             p.soloSelfFound = false
 
-
+                            p.createFollowMacro = true
                             --_G.ReloadUI()
                         end,
                         hidden = isNotAdvanced
@@ -1670,6 +1670,18 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = not addon.targeting:CanCreateMacro() or
                             not self.profile.enableTargetMacro
                     },
+                    createFollowMacro = {
+                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
+                        desc = fmt("%s %s %s %s", _G.CREATE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:UpdateFollowMacro()
+                        end,
+                        disabled = not addon.targeting:CanCreateMacro()
+                    },
                     activeTargetsHeader = {
                         name = L("Active Targets"),
                         type = "header",
@@ -1722,11 +1734,22 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Mark friendly targets with star, circle, diamond, and triangle"),
                         type = "toggle",
-                        width = optionsWidth * 2,
+                        width = optionsWidth,
                         order = 2.21,
                         disabled = function()
                             return not self.profile.enableTargetAutomation
                         end
+                    },
+                    createFollowTarget = {
+                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
+                        desc = fmt("%s %s %s %s", _G.CREATE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.22,
+                        disabled = function()
+                            return not self.profile.enableTargetAutomation
+                        end,
+                        hidden = true --TODO implement /target + /follow
                     },
                     enableEnemyTargeting = {
                         name = L("Scan Enemy Targets"), -- TODO locale
