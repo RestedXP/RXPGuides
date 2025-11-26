@@ -284,6 +284,8 @@ function addon.comms:AnnounceStepEvent(event, data)
     -- Only send branded messages if in an RXP party
     if not self.state.rxpGroupDetected and not addon.settings.profile.alwaysSendBranded then return end
 
+    if addon.IsInInstance() then return end
+
     -- Probably step replay, shush
     -- currentStep == 1 is probably spam from rapid replay
     if RXPCData.currentStep == 1 or GetTime() - addon.lastStepUpdate < 1 then return end
