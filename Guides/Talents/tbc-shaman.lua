@@ -69,7 +69,7 @@ level -- Flurry (Rank 5)
     .talent 2,4,2,5
 
 level -- Parry
-    .talent 2,5,3,1
+    .talent 2,5,2,1
 
 level -- Elemental Weapons (Rank 1)
     .talent 2,5,3,1
