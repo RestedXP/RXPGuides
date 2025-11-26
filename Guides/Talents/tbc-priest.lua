@@ -255,10 +255,10 @@ level -- Improved Power Word: Shield (Rank 3)
     .talent 1,2,3,3
 
 level -- Martyrdom (Rank 1)
-    .talent 1,3,4,1
+    .talent 1,2,4,1
 
 level -- Martyrdom (Rank 2)
-    .talent 1,3,4,2
+    .talent 1,2,4,2
 
 level -- Meditation (Rank 1)
     .talent 1,3,3,1

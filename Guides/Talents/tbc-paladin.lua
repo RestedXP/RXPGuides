@@ -68,7 +68,7 @@ level -- Conviction (Rank 3)
     .talent 3,3,2,3
 
 level -- Sanctity Aura
-    .talent 3,5,5,1
+    .talent 3,5,3,1
 
 level -- Two-Handed Weapon Specialization (Rank 1)
     .talent 3,5,1,1
@@ -140,10 +140,10 @@ level -- Sanctified Seals (Rank 3)
     .talent 3,7,1,3
 
 level -- Improved Sanctity Aura (Rank 1)
-    .talent 3,6,4,1
+    .talent 3,5,4,1
 
 level -- Improved Sanctity Aura (Rank 2)
-    .talent 3,6,4,2
+    .talent 3,5,4,2
 
 level -- Divine Strength (Rank 1)
     .talent 3,1,2,1
