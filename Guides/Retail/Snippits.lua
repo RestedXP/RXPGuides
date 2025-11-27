@@ -14,7 +14,6 @@ step
     .gossipoption 124142 >>Talk to |cRXP_FRIENDLY_General Steelstrike|r inside Dawnbreaker. |cRXP_WARN_She should be visible from the entrance. Use the Active Targets frame to mark her.|r
     .target General Steelstrik
 ]])
-
 --Lost Dragonscale
 RXPGuides.RegisterGuide([[
 #retail
@@ -40,7 +39,6 @@ step
 --     .accept 65436 >>Accept The Dragon Isles Await
 --     .target Wrathion
 ]])
-
 --DMF Alliance
 RXPGuides.RegisterGuide([[
 #retail
@@ -396,7 +394,6 @@ RXPGuides.RegisterGuide([[
 --     .target Julia Stevens
 --     .isQuestComplete 31693
 ]])
-
 --Lost Dragonscale
 RXPGuides.RegisterGuide([[
 #retail
@@ -422,7 +419,6 @@ step
 --     .accept 65436 >>Accept The Dragon Isles Await
 --     .target Wrathion
 ]])
-
 --Phase Diving
 RXPGuides.RegisterGuide([[
 #retail
@@ -593,7 +589,6 @@ step
 
 
 ]])
-
 --Skyriding Panda
 RXPGuides.RegisterGuide([[
 #retail
@@ -887,7 +882,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
-#next ac) Order Hall Death Knight
+#next a) Order Hall Death Knight Part 1
 
 << DeathKnight
 
@@ -1103,21 +1098,6 @@ step
     .turnin 40740 >>Turn in The Dead and the Damned
     .target Highlord Darion Mograine
 ]])
---Blood 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Blood
-#displayname Artifact Weapon: Blood
-#next ac) Order Hall Death Knight Part 2
-
-<< DeathKnight
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Blood
-]])
 --Frost
 RXPGuides.RegisterGuide([[
 #retail
@@ -1126,7 +1106,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
-#next ac) Order Hall Death Knight
+#next a) Order Hall Death Knight Part 1
 
 << DeathKnight
 
@@ -1314,21 +1294,6 @@ step
     .timer 60,Roleplay
     .target Highlord Darion Mograine
 ]])
---Frost 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Frost DK
-#displayname Artifact Weapon: Frost
-#next ac) Order Hall Death Knight Part 2
-
-<< DeathKnight
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
-]])
 --Unholy
 RXPGuides.RegisterGuide([[
 #retail
@@ -1337,7 +1302,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
-#next ac) Order Hall Death Knight
+#next a) Order Hall Death Knight Part 1
 
 << DeathKnight
 
@@ -1605,6 +1570,36 @@ step
     .target Highlord Darion Mograine
 
 ]])
+--Blood 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Blood
+#displayname Artifact Weapon: Blood
+#next ac) Order Hall Death Knight Part 2
+
+<< DeathKnight
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Blood
+]])
+--Frost 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Frost DK
+#displayname Artifact Weapon: Frost
+#next ac) Order Hall Death Knight Part 2
+
+<< DeathKnight
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
+]])
 --Unholy 2
 RXPGuides.RegisterGuide([[}
 #retail
@@ -1620,35 +1615,81 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
 ]])
---Death Knight Intro 1
+
+--Death Knight Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Death Knight Part 1
-#displayname |cFF00CCFF1|r - Order Hall Intro 1|r
-#next ab) Order Hall Death Knight Part 2
-
-<< DeathKnight
-
-step
-    #include RestedXP Legion Remix\ab) Order Hall Death Knight Part 1
-]])
---Death Knight Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ab) Order Hall Death Knight Part 2
-#displayname |cFF00CCFF2|r - Order Hall Intro 2|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Death Knight
 
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\ac) Order Hall Death Knight Part 2
+    #completewith Enlist Nazgrim2
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaberk|r.
+    *|cRXP_WARN_Note:|r This should get pushed to your quest log automatically while in Dalaran. If not then relog.
+    .accept 40714 >>Accept The Call To War
+    .target Kaberk
+step
+    .goto 627,73.11,46.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duke Lankral|r.
+    .turnin 40714 >>Turn in The Call To War
+    .accept 40715 >>Accept A Pact of Necessity
+    .target Duke Lankral
+step
+    .isQuestAvailable account,91955
+    +Select one of the following guides for now:
+    *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost DK >> Frost(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Unholy >> Unholy(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Blood >> Blood(Tank) Questline
+step
+    #include ac) Order Hall Demon Hunter Part 2@Plans and Preparations-Enlist Nazgrim
+step
+    .zoneskip 648,1
+    .goto 648,24.76,33.70
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 -- --------- Demon Hunter ---------
@@ -2268,6 +2309,7 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
 ]])
+
 --Demon Hunter Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -2275,13 +2317,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Demon Hunter Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign Part 1|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Demon Hunter
 
 << DemonHunter
 
 step
-    #completewith Complete1
+    #completewith Champion: Asha Ravensong2
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -2330,7 +2372,6 @@ step
 step
     #include ab) Order Hall Demon Hunter Part 1@Future of The Fel Hammer-Call of the Illidari
 step
-    #label Complete1
     .isQuestAvailable 40814
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
@@ -2358,7 +2399,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
-#next ac) Order Hall Druid
+#next a) Order Hall Druid Part 1
 
 << Druid
 
@@ -2723,21 +2764,6 @@ step
     .turnin 40900 >>Turn in The Burden Borne
     .target Rensar Greathoof
 ]])
---Balance 2
-RXPGuides.RegisterGuide([[}
-#retail
-#version 1
-#chapter
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Balance Druid
-#displayname Artifact Weapon: Balance
-#next ac) Order Hall Druid Part 2
-
-<< Druid
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
-]])
 --Feral
 RXPGuides.RegisterGuide([[
 #retail
@@ -2746,7 +2772,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
-#next ac) Order Hall Druid
+#next a) Order Hall Druid Part 1
 
 << Druid
 
@@ -3037,21 +3063,6 @@ step
     .turnin 42430 >>Turn in The Fangs of Ashamane
     .target Rensar Greathoof
 ]])
---Feral 2
-RXPGuides.RegisterGuide([[}
-#retail
-#version 1
-#chapter
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Feral Druid
-#displayname Artifact Weapon: Feral
-#next ac) Order Hall Druid Part 2
-
-<< Druid
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
-]])
 --Guardian
 RXPGuides.RegisterGuide([[
 #retail
@@ -3060,7 +3071,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
-#next ac) Order Hall Druid
+#next a) Order Hall Druid Part 1
 
 << Druid
 
@@ -3281,7 +3292,7 @@ step
     .accept 41790 >>Accept The First Trial of Ursol
     .target Ursol
 step
-    .goto 116,50.68,37.44    
+    .goto 116,50.68,37.44
     >>Kill the |cRXP_ENEMY_Ancestral Champion|r
     .complete 41790,1 --1/1 Overcome Ursol's first trial
     .mob Ancestral Champion
@@ -3292,7 +3303,7 @@ step
     .accept 41791 >>Accept The Second Trial of Ursol
     .target Ursol
 step
-    .goto 116,50.70,37.37    
+    .goto 116,50.70,37.37
     >>Kill the |cRXP_WARN_three waves|r of |cRXP_ENEMY_Ancestral Warriors|r and |cRXP_ENEMY_Shamans|r
     .complete 41791,1 --1/1 Overcome the second of Ursol's trials
     .mob Ancestral Warrior
@@ -3417,21 +3428,6 @@ step
     .turnin 41918 >>Turn in The Dreamer Returns
     .target Rensar Greathoof
 ]])
---Guardian 2
-RXPGuides.RegisterGuide([[}
-#retail
-#version 1
-#chapter
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Guardian Druid
-#displayname Artifact Weapon: Guardian
-#next ac) Order Hall Druid Part 2
-
-<< Druid
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
-]])
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
@@ -3440,7 +3436,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
-#next ac) Order Hall Druid
+#next a) Order Hall Druid Part 1
 
 << Druid
 
@@ -3685,7 +3681,7 @@ step
     .complete 41689,1 --1/1 Enter the Dreamway
 step
     .goto 715,53.69,53.00
-    >>Go through the portal to Mount Hyjal    
+    >>Go through the portal to Mount Hyjal
     .complete 41689,2 --1/1 Travel to Mount Hyjal
 step
     #hidewindow
@@ -3831,6 +3827,51 @@ step
     .turnin 41689 >>Turn in Cleansing the Mother Tree
     .target Lyessa Bloomwatcher
 ]])
+--Balance 2
+RXPGuides.RegisterGuide([[}
+#retail
+#version 1
+#chapter
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Balance Druid
+#displayname Artifact Weapon: Balance
+#next ac) Order Hall Druid Part 2
+
+<< Druid
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
+]])
+--Feral 2
+RXPGuides.RegisterGuide([[}
+#retail
+#version 1
+#chapter
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Feral Druid
+#displayname Artifact Weapon: Feral
+#next ac) Order Hall Druid Part 2
+
+<< Druid
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
+]])
+--Guardian 2
+RXPGuides.RegisterGuide([[}
+#retail
+#version 1
+#chapter
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Guardian Druid
+#displayname Artifact Weapon: Guardian
+#next ac) Order Hall Druid Part 2
+
+<< Druid
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
+]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
 #retail
@@ -3846,35 +3887,79 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Druid
 ]])
---Druid Intro 1
+
+--Druid Order Hall Campaign 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Druid Part 1
-#displayname |cFF00CCFF1|r - Order Hall Intro 1|r
-#next ab) Order Hall Druid Part 2
-
-<< Druid
-
-step
-    #include RestedXP Legion Remix\ab) Order Hall Druid Part 1
-]])
---Druid Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ab) Order Hall Druid Part 2
-#displayname |cFF00CCFF2|r - Order Hall Intro 2|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Druid
 
 << Druid
 
 step
-    #include RestedXP Legion Remix\ac) Order Hall Druid Part 2
+    #completewith Making Trails2
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    #include ab) Order Hall Druid Part 1@A Summons From Moonglade-To The Dreamgrove
+step
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
+    .accept 40646 >>Accept Weapons of Legend
+    .target Rensar Greathoof
+step
+    .isQuestAvailable 40646
+    .isQuestAvailable account,91955
+    +Select one of the following guides for now:
+    *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Balance Druid >> Balance(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> Feral(DPS) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardian(Tank) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restoration(Healer) Questline
+step
+    #include ac) Order Hall Druid Part 2@Sowing The Seed-Making Trails
+step
+    .zoneskip 747,1
+    .goto 747,56.51,43.15
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 -- --------- Hunter ---------
@@ -3887,7 +3972,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
-#next ac) Order Hall Hunter
+#next a) Order Hall Hunter Part 1
 
 << Hunter
 
@@ -4240,21 +4325,6 @@ step
     .turnin 41009 >>Turn in Hunter to Hunter
     .target Emmarel Shadewarden
 ]])
---Beast Mastery 2
-RXPGuides.RegisterGuide([[
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Beast Mastery
-#displayname Artifact Weapon: Beast Mastery
-#next ac) Order Hall Hunter Part 2
-
-<< Hunter
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Beaster Mastery
-]])
 --Marksmanship
 RXPGuides.RegisterGuide([[
 #retail
@@ -4263,7 +4333,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
-#next ac) Order Hall Hunter
+#next a) Order Hall Hunter Part 1
 
 << Hunter
 
@@ -4395,7 +4465,7 @@ step
     .gossipoption 47259 >>1
     .timer 56,Vereesa Roleplay
 step
-    .goto 646,32.29,32.43    
+    .goto 646,32.29,32.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vereesa Windrunner|r.
     .complete 40402,1 --1/1 Listen to Vereesa Windrunner
     .target Vereesa Windrunner
@@ -4510,21 +4580,6 @@ step
     .turnin 40952 >>Turn in Hunter to Hunter
     .target Emmarel Shadewarden
 ]])
---Marksmanship 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Marksmanship
-#displayname Artifact Weapon: Marksmanship
-#next ac) Order Hall Hunter Part 2
-
-<< Hunter
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
-]])
 --Survival
 RXPGuides.RegisterGuide([[
 #retail
@@ -4533,7 +4588,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
-#next ac) Order Hall Hunter
+#next a) Order Hall Hunter Part 1
 
 << Hunter
 
@@ -4808,6 +4863,36 @@ step
     .turnin 40385 >>Turn in The Spear in the Shadow
     .target Emmarel Shadewarden
 ]])
+--Beast Mastery 2
+RXPGuides.RegisterGuide([[
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Beast Mastery
+#displayname Artifact Weapon: Beast Mastery
+#next ac) Order Hall Hunter Part 2
+
+<< Hunter
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery
+]])
+--Marksmanship 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Marksmanship
+#displayname Artifact Weapon: Marksmanship
+#next ac) Order Hall Hunter Part 2
+
+<< Hunter
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
+]])
 --Survival 2
 RXPGuides.RegisterGuide([[}
 #retail
@@ -4823,35 +4908,79 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Survival
 ]])
---Hunter Intro 1
+
+--Hunter Order Hall Campaign 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Hunter Part 1
-#displayname |cFF00CCFF1|r - Order Hall Intro 1|r
-#next ab) Order Hall Hunter Part 2
-
-<< Hunter
-
-step
-    #include RestedXP Legion Remix\ab) Order Hall Hunter Part 1
-]])
---Hunter Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ab) Order Hall Hunter Part 2
-#displayname |cFF00CCFF2|r - Order Hall Intro 2|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Hunter
 
 << Hunter
 
 step
-    #include RestedXP Legion Remix\ac) Order Hall Hunter Part 2
+    #completewith The Campaign Begins2
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    #include ab) Order Hall Hunter Part 1@Needs of the Hunters-The Hunter's Call
+step
+    .goto 627,60.03,53.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    .isQuestAvailable 40618
+    .isQuestAvailable account,91955
+    .goto 627,60.03,53.41
+    +Select one of the following guides for now:
+    *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery >> Beast Mastery(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Marksmanship >> Marksmanship(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Survival >> Survival(DPS) Questline
+step
+    #include ac) Order Hall Hunter Part 2@Eagle's Wings-The Campaign Begins
+step
+    .zoneskip 739,1
+    .goto 739,48.63,43.48
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 -- --------- Mage ---------
@@ -6174,6 +6303,7 @@ RXPGuides.RegisterGuide([[
 step
     #include a) Artifact Weapon: Frost Mage
 ]])
+
 --Mage Order Hall Campaign 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -6187,7 +6317,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #completewith Complete1
+    #completewith Champion: Archmage Modera
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -6225,7 +6355,6 @@ step
 step
     #include ab) Order Hall Mage Part 1@OrderHallMage1-Dreadlord's Prize
 step
-    #label Complete1
     .isQuestAvailable 41085
     .goto 735,59.15,43.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
@@ -7419,6 +7548,7 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Windwalker
 ]])
+
 --Monk Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7432,7 +7562,7 @@ RXPGuides.RegisterGuide([[
 << Monk 
 
 step
-    #completewith Complete1
+    #completewith The Fight Begins2
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -7470,7 +7600,6 @@ step
 step
     #include ab) Order Hall Monk Part 1@MonkStart1-The Dawning Light
 step
-    #label Complete1
     .isQuestAvailable 40636
     .goto 709,51.41,48.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -8834,6 +8963,7 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Retribution
 ]])
+
 --Paladin Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -8847,7 +8977,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #completewith Complete1
+    #completewith Order Hall Paladin Part 2
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -8885,7 +9015,6 @@ step
 step
     #include ab) Order Hall Paladin Part 1@An Urgent Gathering-Order Hall Paladin Part 1
 step
-    #label Complete1
     .isQuestAvailable 40408
     .goto 627,74.92,48.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -8913,7 +9042,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
-#next ac) Order Hall Priest
+#next a) Order Hall Priest Part 1
 
 << Priest
 
@@ -9272,21 +9401,6 @@ step
     .turnin 41632 >>Turn in A Gift of Time
     .target Prophet Velen
 ]])
---Discipline 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Discipline
-#displayname Artifact Weapon: Discipline
-#next ac) Order Hall Priest Part 2
-
-<< Priest
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
-]])
 --Holy
 RXPGuides.RegisterGuide([[
 #retail
@@ -9295,7 +9409,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
-#next ac) Order Hall Priest
+#next a) Order Hall Priest Part 1
 
 << Priest
 
@@ -9528,21 +9642,6 @@ step
     .turnin 42074 >>Turn in Return of the Light
     .target Prophet Velen
 ]])
---Holy 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Holy Priest
-#displayname Artifact Weapon: Holy
-#next ac) Order Hall Priest Part 2
-
-<< Priest
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
-]])
 --Shadow
 RXPGuides.RegisterGuide([[
 #retail
@@ -9551,7 +9650,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
-#next ac) Order Hall Priest
+#next a) Order Hall Priest Part 1
 
 << Priest
 
@@ -9773,6 +9872,36 @@ step
     .turnin 40710 >>Turn in Blade in Twilight
     .target Moira Thaurissan
 ]])
+--Discipline 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Discipline
+#displayname Artifact Weapon: Discipline
+#next ac) Order Hall Priest Part 2
+
+<< Priest
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
+]])
+--Holy 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Holy Priest
+#displayname Artifact Weapon: Holy
+#next ac) Order Hall Priest Part 2
+
+<< Priest
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
+]])
 --Shadow 2
 RXPGuides.RegisterGuide([[}
 #retail
@@ -9788,35 +9917,79 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Shadow
 ]])
---Priest Intro 1
+
+--Priest Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Priest Part 1
-#displayname |cFF00CCFF1|r - Order Hall Intro 1|r
-#next ab) Order Hall Priest Part 2
-
-<< Priest
-
-step
-    #include RestedXP Legion Remix\ab) Order Hall Priest Part 1
-]])
---Priest Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ab) Order Hall Priest Part 2
-#displayname |cFF00CCFF2|r - Order Hall Intro 2|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Priest
 
 << Priest
 
 step
-    #include RestedXP Legion Remix\ac) Order Hall Priest Part 2
+    #completewith Recruit Ishanah2
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    #include ab) Order Hall Priest Part 1@Priestly Matters-Alonsus Faol
+step
+    .goto 18,78.96,40.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
+    .accept 40706 >>Accept A Legend You Can Hold
+    .target Alonsus Faol
+step
+    .isQuestAvailable 40706
+    .isQuestAvailable account,91955
+    .goto 18,78.96,40.99
+    +Select one of the following guides for now:
+    *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Shadow >> Shadow(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Priest >> Holy(Healer) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Discipline >> Discipline(Healer) Questline
+step
+    #include ac) Order Hall Priest Part 2@The Light and the Void-Recruit Ishanah
+step
+    .zoneskip 702,1
+    .goto 702,49.79,80.59
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 -- --------- Rogue ---------
@@ -10313,6 +10486,14 @@ step
     .turnin 45727 >>Turn in Uniting the Isles
     .target Archmage Khadgar
 step
+    .achievementIncomplete 42301,1
+    .goto 627,28.48,48.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    *|cRXP_WARN_Requires level 30|r.
+    .accept 45727 >>Accept Uniting the Isles
+    .turnin 45727 >>Turn in Uniting the Isles
+    .target Archmage Khadgar
+step
     #completewith next
     #label Hall of Shadows
     #hidewindow
@@ -10621,6 +10802,14 @@ step
     .achievementComplete 42301,1
     .goto 627,28.71,48.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .accept 45727 >>Accept Uniting the Isles
+    .turnin 45727 >>Turn in Uniting the Isles
+    .target Archmage Khadgar
+step
+    .achievementIncomplete 42301,1
+    .goto 627,28.71,48.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    *|cRXP_WARN_Requires level 30|r.
     .accept 45727 >>Accept Uniting the Isles
     .turnin 45727 >>Turn in Uniting the Isles
     .target Archmage Khadgar
@@ -11186,6 +11375,7 @@ RXPGuides.RegisterGuide([[
 step
     #include a) Artifact Weapon: Subtlety
 ]])
+
 --Rogue Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -11199,7 +11389,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #completewith Complete1
+    #completewith Lethal Efficiency22
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -11237,7 +11427,6 @@ step
 step
     #include ab) Order Hall Rogue Part 1@Call of The Uncrowned-Final Shadow
 step
-    #label Complete1
     .isQuestAvailable 40840
     .goto 626,41.37,77.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
@@ -11265,7 +11454,7 @@ step
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Outlaw >> Outlaw(DPS) Questline
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Subtlety >> Subtlety(DPS) Questline
 step
-    #include ac) Order Hall Rogue Part 2@Honoring Success-Order Hall Rogue Part 2
+    #include ac) Order Hall Rogue Part 2@Honoring Success-Lethal Efficiency2
 ]])
 
 -- --------- Shaman ---------
@@ -11278,7 +11467,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
-#next ac) Order Hall Shaman
+#next a) Order Hall Shaman Part 1
 
 << Shaman
 
@@ -11602,21 +11791,6 @@ step
     .turnin 39771 >>Turn in The Voice of Thunder
     .target Rehgar Earthfury
 ]])
---Elemental 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Elemental
-#displayname Artifact Weapon: Elemental
-#next ac) Order Hall Shaman Part 2
-
-<< Shaman
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
-]])
 --Enhancement
 RXPGuides.RegisterGuide([[
 #retail
@@ -11625,7 +11799,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
-#next ac) Order Hall Shaman
+#next a) Order Hall Shaman Part 1
 
 << Shaman
 
@@ -11905,21 +12079,6 @@ step
     .turnin 40224 >>Turn in The Hammer in the Deep
     .target Stormcaller Mylra
 ]])
---Enhancement 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Enhancement
-#displayname Artifact Weapon: Enhancement
-#next ac) Order Hall Shaman Part 2
-
-<< Shaman
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
-]])
 --Restoration
 RXPGuides.RegisterGuide([[
 #retail
@@ -11928,7 +12087,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
-#next ac) Order Hall Shaman
+#next a) Order Hall Shaman Part 1
 
 << Shaman
 
@@ -12160,6 +12319,36 @@ step
     .turnin 40341 >>Turn in Throne of the Tides: Azshara's Power
     .target Stormcaller Mylra
 ]])
+--Elemental 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Elemental
+#displayname Artifact Weapon: Elemental
+#next ac) Order Hall Shaman Part 2
+
+<< Shaman
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
+]])
+--Enhancement 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Enhancement
+#displayname Artifact Weapon: Enhancement
+#next ac) Order Hall Shaman Part 2
+
+<< Shaman
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
+]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
 #retail
@@ -12175,35 +12364,78 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
 ]])
---Shaman Intro 1
+
+--Shaman Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Shaman Part 1
-#displayname |cFF00CCFF1|r - Order Hall Intro 1|r
-#next ab) Order Hall Shaman Part 2
-
-<< Shaman
-
-step
-    #include RestedXP Legion Remix\ab) Order Hall Shaman Part 1
-]])
---Shaman Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ab) Order Hall Shaman Part 2
-#displayname |cFF00CCFF2|r - Order Hall Intro 2|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Shaman
 
 << Shaman
 
 step
-    #include RestedXP Legion Remix\ac) Order Hall Shaman Part 2
+    #completewith Azeroth Needs You2
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    #include ab) Order Hall Shaman Part 1@A Ring Unbroken-Shaman at the Maelstrom
+step
+    .goto 725,36.20,74.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 41335 >>Accept The Elements Call...
+    .target Thrall
+step
+    .isQuestAvailable 41335
+    .isQuestAvailable account,91955
+    +Select one of the following guides for now:
+    *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Elemental >> Elemental(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Enhancement >> Enhancement(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman >> Restoration(Healer) Questline
+step
+    #include ac) Order Hall Shaman Part 2@A Ring Reforged-Azeroth Needs You
+step
+    .zoneskip 726,1
+    .goto 726,29.81,52.02
+    .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
 
 -- --------- Warlock ---------
@@ -12216,7 +12448,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
-#next ac) Order Hall Warlock
+#next a) Order Hall Warlock Part 1
 
 << Warlock
 
@@ -12520,21 +12752,6 @@ step
     .turnin 41156 >>Turn in The Power Possessed
     .target Calydus
 ]])
---Affliction 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Affliction
-#displayname Artifact Weapon: Affliction
-#next ac) Order Hall Warlock Part 2
-
-<< Warlock
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
-]])
 --Demonology
 RXPGuides.RegisterGuide([[
 #retail
@@ -12543,7 +12760,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
-#next ac) Order Hall Warlock
+#next a) Order Hall Warlock Part 1
 
 << Warlock
 
@@ -12795,21 +13012,6 @@ step
     .turnin 42125 >>Turn in Dark Whispers
     .target Calydus
 ]])
---Demonology 2
-RXPGuides.RegisterGuide([[}
-#retail
-#chapter
-#version 1
-#group RestedXP Legion Remix
-#name z) Artifact Weapon: Demonology
-#displayname Artifact Weapon: Demonology
-#next ac) Order Hall Warlock Part 2
-
-<< Warlock
-
-step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
-]])
 --Destruction
 RXPGuides.RegisterGuide([[
 #retail
@@ -12818,7 +13020,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
-#next ac) Order Hall Warlock
+#next a) Order Hall Warlock Part 1
 
 << Warlock
 
@@ -13120,6 +13322,36 @@ step
     .turnin 43254 >>Turn in Ritual Ruination
     .target Calydus
 ]])
+--Affliction 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Affliction
+#displayname Artifact Weapon: Affliction
+#next ac) Order Hall Warlock Part 2
+
+<< Warlock
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
+]])
+--Demonology 2
+RXPGuides.RegisterGuide([[}
+#retail
+#chapter
+#version 1
+#group RestedXP Legion Remix
+#name z) Artifact Weapon: Demonology
+#displayname Artifact Weapon: Demonology
+#next ac) Order Hall Warlock Part 2
+
+<< Warlock
+
+step
+    #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
+]])
 --Destruction 2
 RXPGuides.RegisterGuide([[}
 #retail
@@ -13135,35 +13367,84 @@ RXPGuides.RegisterGuide([[}
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
 ]])
---Warlock Intro 1
+
+--Warlock Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Warlock Part 1
-#displayname |cFF00CCFF1|r - Order Hall Intro 1|r
-#next ab) Order Hall Warlock Part 2
-
-<< Warlock
-
-step
-    #include RestedXP Legion Remix\ab) Order Hall Warlock Part 1
-]])
---Warlock Intro 2
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name ab) Order Hall Warlock Part 2
-#displayname |cFF00CCFF2|r - Order Hall Intro 2|r
+#displayname |cFF00CCFF1|r - Order Hall Campaign|r
 #next ac) Order Hall Warlock
 
 << Warlock
 
 step
-    #include RestedXP Legion Remix\ac) Order Hall Warlock Part 2
+    #completewith Ritssyn Flamescowl2
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    #include ab) Order Hall Warlock Part 1@The Sixth-New Blood
+step
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
+    .accept 40684 >>Accept The Tome of Blighted Implements
+    .target Calydus
+step
+    .isQuestAvailable 40684
+    .isQuestAvailable account,91955
+    +Select one of the following guides for now:
+    *|cRXP_WARN_IMPORTANT: Select the one you already have in order to gain an additional 10% xp (one time only)|r
+    *|cRXP_WARN_You’ll be able to do the other questlines later|r
+    *|cFFFF0000You can't progress if you don't select one|r.
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Affliction >> Affliction(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Demonology >> Demonology(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Destruction >> Destruction(DPS) Questline
+step
+    #include ac) Order Hall Warlock Part 2@Dreadscar-Ritssyn Flamescowl
+step
+    .zoneskip 717,1
+    .goto 717,74.71,38.14
+    .zone 628 >>|cRXP_WARN_Go through the portal to Dalaran.|r
+step
+    .zoneskip 628,1
+    .goto 628,28.84,53.19,12,0
+    .goto 628,19.50,57.61,10,0
+    .goto 627,35.02,45.56
+    .zone 627 >>|cRXP_WARN_Follow the way out of the canal.|r
 ]])
 
 -- --------- Warrior ---------
@@ -13978,7 +14259,8 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection
 ]])
---Order Hall Campaign 1
+
+--Warrior Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -13991,7 +14273,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #completewith Order Hall Warrior
+    #completewith Accept The Eye of Odyn2
     #hidewindow
     +test
     .use 245925 -- Artifactium Sand
@@ -14048,83 +14330,5 @@ step
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fury >> Fury(DPS) Questline
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >> Protection(Tank) Questline
 step
-    #include ab) Order Hall Warrior Part 2 - OderHallPart2Start1@Accept The Eye of Odyn
-]])
-
--- --------- Random ---------
-
--- Order Hall Infinite Bazaar Portal
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name a) Artifact Weapon: Protection22222222
-#displayname Artifact Weapon: Protection222222222
-#internal
-
-step << Paladin
-    .goto 23,73.06,54.03
-    .zone 619 >>Click Portal
-step << Rogue
-    .goto 17,39.5,36.47
-    .zone 619 >>Click Portal
-]])
-
--- Trial of Valor Questline
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Legion Remix
-#name a) Artifact Weapon: Protection22222222233333333333
-#displayname Artifact Weapon: Protection2222222222222222223
-#internal
-
-
-step
-    .goto 627,73.94,41.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muninn|r
-    .accept 44720 >>Accept A Call to Action
-    .target Muninn
-step
-    .goto 634,60.15,50.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Havi|r
-    .turnin 44720 >>Turn in A Call to Action
-    .target Havi
-    .accept 44771 >>Accept A Threat Rises
-step
-    .goto 634,60.23,50.88
-    .complete 44771,1 --1/1 Brought Havi Grog
-step
-    .goto 634,60.17,50.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Havi|r
-    .turnin 44771 >>Turn in A Threat Rises
-    .target Havi
-    .accept 44721 >>Accept Helya's Conquest
-step
-    .goto 634,57.31,46.52
-    .complete 44721,1 --1/1 Investigate Tideskorn Harbor
-step
-    .goto 634,55.97,41.05
-    >>Kill |cRXP_ENEMY_Vagnhild|r
-    .complete 44721,3 --1/1 Vagnhild slain
-    .mob Vagnhild
-step
-    .goto 634,55.99,40.32
-    >>Kill |cRXP_ENEMY_Helarjar Soulthief|r
-    .complete 44721,2 --4/4 Helarjar Soulthief slain
-    .mob Helarjar Soulthief
-step
-    .goto 634,60.15,50.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Havi|r
-    .complete 44721,4 --1/1 Speak with Havi
-    .target Havi
-step
-    .goto 634,60.14,50.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Havi|r
-    .turnin 44721 >>Turn in Helya's Conquest
-    .target Havi
-    .accept 44729 >>Accept Trial of Valor: Odyn's Favor
-    .complete 40072,1 --1/1 Claim the Aegis of Aggramar
-    .complete 40072,2 --1/1 Odyn defeated
-    .accept 43349 >>Accept The Aegis of Aggramar.complete 42733,1 --15/15 Sovereign Soul
+    #include ac) Order Hall Warrior Part 2@OrderHallPart2Start1-Accept The Eye of Odyn
 ]])

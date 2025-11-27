@@ -588,7 +588,7 @@ step
 step
     #completewith next
     #label Legion Armor Scraps
-    >>Click on the |T134515:0|t[Legion Armor Scraps] to put it into the Scrapper and then press scrap.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |T134515:0|t[Legion Armor Scraps] to put it into the Scrapper and then press scrap.
     .complete 89413,2 --1/1 Scrap Legion Armor Scraps
 step
     #completewith Legion Armor Scraps
@@ -862,7 +862,6 @@ step
     .turnin 89418 >>Turn in A Fixed Point in Time
     .target Moratari
 ]])
-
 ---Intro Skip
 RXPGuides.RegisterGuide([[
 #retail
@@ -877,7 +876,7 @@ RXPGuides.RegisterGuide([[
 step
     .goto 627,72.46,45.90
     .achievementComplete 42313,1
-    .gossipoption 134056 >>Before talking to |cRXP_FRIENDLY_Moratari|r, make sure you have your desired specialization selected. 
+    .gossipoption 134056 >>Before talking to |cRXP_FRIENDLY_Moratari|r, make sure you have your desired specialization selected.
     *|cRXP_WARN_This will grant you the Artifact Weapon for your chosen spec; you can obtain others later, but there’s no immediate access|r.
     .target Moratari
 
@@ -915,7 +914,6 @@ step
 
 
 ]])
-
 ---Skyriding Skip
 RXPGuides.RegisterGuide([[
 #retail
@@ -1182,9 +1180,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Windwalker >>Windwalker(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Brewmaster >>Brewmaster(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Mistweaver >>Mistweaver(Healer) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Monk Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -1269,6 +1266,7 @@ step
     .accept 40795 >>Accept The Fight Begins
     .target Master Hsu
 step
+    #label The Fight Begins2
     .goto 709,52.92,60.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 40795,1 --1/1 Assault Point Chosen
@@ -1298,7 +1296,6 @@ step
     .accept 42186 >>Accept Growing Power
     .target Initiate Da-Nel
 ]])
-
 ---Death Knight Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -1338,7 +1335,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Blood >> Blood(Tank) Questline
 
 ]])
-
 ---Death Knight Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -1357,6 +1353,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Death Knight Part 1 >>CLICK HERE FOR GUIDE
 step
+    #label Plans and Preparations
     .goto 648,50.97,50.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .accept 39832 >>Accept Plans and Preparations
@@ -1464,6 +1461,7 @@ step
     .complete 43264,1 --1/1 Enlist Thassarian
     .target Thassarian
 step
+    #label Enlist Nazgrim2
     .goto 648,39.45,68.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrim|r
     .accept 39818 >>Accept Champion: Nazgrim
@@ -1471,6 +1469,7 @@ step
     .complete 43264,2 --1/1 Enlist Nazgrim
     .target Nazgrim
 step
+    #label Enlist Nazgrim
     .goto 648,49.70,51.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siouxsie the Banshee|r
     .turnin 43264 >>Turn in Rise, Champions
@@ -1480,7 +1479,6 @@ step
     .goto 648,24.76,33.70
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
-
 ---Demon Hunter Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -1574,9 +1572,8 @@ step
     *|cFFFF0000You can't progress if you don't select one|r.
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Havoc >> Havoc(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Vengeance >> Vengeance(DPS) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Demon Hunter Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -1827,6 +1824,7 @@ step
     .accept 42679 >>Accept Broken Warriors
     .turnin 42679 >>Turn in Broken Warriors
 step
+    #label Champion: Asha Ravensong2
     .goto 720,59.26,57.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r
     .target Kor'vas Bloodthorn
@@ -1940,7 +1938,6 @@ step
 step
     #include ad) Infinite Bazaar
 ]])
-
 ---Druid Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -1959,6 +1956,7 @@ step
     *Manually skip this step if you prefer to play through that content.
     .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
+    #label A Summons From Moonglade
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archdruid Hamuul Runetotem|r |cRXP_WARN_next to you|r.
     *- |cRXP_WARN_Run around in Dalaran until he spawns|r
     .accept 40643 >>Accept A Summons From Moonglade
@@ -2045,12 +2043,17 @@ step
     .complete 40645,4 --1/1 Travel to the Dreamgrove
 step
     .goto 747,44.50,51.06
-    |cRXP_WARN_Follow the arrow|r.
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 40645,5 --1/1 Meet the Archdruid
 step
+    #label To The Dreamgrove
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .turnin 40645 >>Turn in To The Dreamgrove
+    .target Rensar Greathoof
+step
+    .goto 747,44.50,51.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .accept 40646 >>Accept Weapons of Legend
     .target Rensar Greathoof
 step
@@ -2064,9 +2067,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> Feral(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardian(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restoration(Healer) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Druid Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -2085,6 +2087,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Druid Part 1 >>CLICK HERE FOR GUIDE
 step
+    #label Sowing The Seed
     .goto 747,44.49,51.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r
     .accept 41255 >>Accept Sowing The Seed
@@ -2125,11 +2128,13 @@ step
     .accept 40653 >>Accept Making Trails
     .target Skylord Omnuron
 step
+    #label Making Trails2
     .goto 747,52.63,51.21
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Scouting Map|r
     .acceptmap 39718
     .complete 40653,1 --1/1 Initial strike point chosen
 step
+    #label Making Trails
     .goto 747,52.53,51.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
     .turnin 40653 >>Turn in Making Trails
@@ -2139,7 +2144,6 @@ step
     .goto 747,56.51,43.15
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
-
 ---Hunter Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -2158,6 +2162,7 @@ step
     *Manually skip this step if you prefer to play through that content.
     .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
+    #label Needs of the Hunters
     .goto 627,58.61,45.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snowfeather|r.
     *|cRXP_WARN_NOTE:|r Run around in Dalaran until it spawns next to you.
@@ -2229,6 +2234,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .turnin 41415 >>Turn in The Hunter's Call
     .accept 40618 >>Accept Weapons of Legend
+    .disablecheckbox
     .target Emmarel Shadewarden
 step
     #title |cFFFCDC00Enter House|r
@@ -2236,9 +2242,15 @@ step
     .goto 627,58.99,51.87,6 >>|cRXP_WARN_Follow the arrow into the house.|r
 step
     #requires TheHuntersCallC
+    #label The Hunter's Call
     .goto 627,60.03,53.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .turnin 41415 >>Turn in The Hunter's Call
+    .accept 40618 >>Accept Weapons of Legend
+    .target Emmarel Shadewarden
+step
+    .goto 627,60.03,53.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 40618 >>Accept Weapons of Legend
     .target Emmarel Shadewarden
 step
@@ -2252,9 +2264,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Beast Mastery >> Beast Mastery(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Marksmanship >> Marksmanship(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Survival >> Survival(DPS) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Hunter Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -2273,6 +2284,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Hunter Part 1 >>CLICK HERE FOR GUIDE
 step
+    #label Eagle's Wings
     .goto 627,60.05,53.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emmarel Shadewarden|r.
     .accept 40953 >>Accept On Eagle's Wings
@@ -2339,11 +2351,13 @@ step
     .accept 40959 >>Accept The Campaign Begins
     .target Tactician Tinderfell
 step
+    #label The Campaign Begins2
     .goto 739,42.58,46.71
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r.
     .complete 40959,1 --1/1 Initial strike point chosen
     .acceptmap 39718
 step
+    #label The Campaign Begins
     .goto 739,42.84,46.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tactician Tinderfell|r.
     .turnin 40959 >>Turn in The Campaign Begins
@@ -2353,7 +2367,6 @@ step
     .goto 739,48.63,43.48
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
-
 ---Mage Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -2506,7 +2519,6 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Arcane >> Arcane(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Frost Mage >> Frost(DPS) Questline
 ]])
-
 ---Mage Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -2707,17 +2719,16 @@ step
     .target Archmage Modera
     .complete 42663,2 --1/1 Recruit Archmage Modera
 step
+    #label OrderHallMage3
     .goto 735,55.35,38.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .turnin 42663 >>Turn in Rise, Champions
     .target Meryl Felstorm
 step
-    #label OrderHallMage3
     .goto 734,57.31,90.57
     .zone 627 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles] or click on the |cRXP_PICK_Portal|r.
     .usespell 224869
 ]])
-
 ---Paladin Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -2802,9 +2813,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Retribution >> Retribution(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Paladin Protection >> Protection(Tank) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Paladin >> Holy(Healer) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Paladin Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -2937,7 +2947,6 @@ step
     .goto 24,37.79,63.92
     .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
 ]])
-
 ---Priest Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -2956,6 +2965,7 @@ step
     *Manually skip this step if you prefer to play through that content.
     .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
+    #label Priestly Matters
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hooded Priestess|r |cRXP_WARN_next to you|r.
     *|cRXP_WARN_Note:|r If she doesn't appear then try to relog.
     .accept 40705 >>Accept Priestly Matters
@@ -2979,9 +2989,14 @@ step
     >>|cRXP_WARN_Wait for the roleplay.|r
     .complete 40705,3 --1/1 Listen to Alonsus Faol
 step
+    #label Alonsus Faol
     .goto 18,78.96,40.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
     .turnin 40705 >>Turn in Priestly Matters
+    .target Alonsus Faol
+step
+    .goto 18,78.96,40.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonsus Faol|r
     .accept 40706 >>Accept A Legend You Can Hold
     .target Alonsus Faol
 step
@@ -2995,9 +3010,7 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Shadow >> Shadow(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Holy Priest >> Holy(Healer) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Discipline >> Discipline(Healer) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
 ]])
-
 ---Priest Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -3016,6 +3029,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Priest Part 1>>CLICK HERE FOR GUIDE
 step
+    #label The Light and the Void
     .goto 627,46.30,20.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prophet Velen|r
     .accept 40938 >>Accept The Light and the Void
@@ -3069,6 +3083,7 @@ step
     .accept 43270 >>Accept Rise, Champions
     .target Alonsus Faol
 step
+    #label Recruit Ishanah2
     .goto 702,51.83,49.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calia Menethil|r.
     .accept 43271 >>Accept Champion: Calia Menethil
@@ -3076,6 +3091,7 @@ step
     .complete 43270,1 --1/1 Recruit Calia
     .target Calia Menethil
 step
+    #label Recruit Ishanah
     .goto 702,57.57,25.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Ishanah|r.
     .accept 43272 >>Accept Champion: High Priestess Ishanah
@@ -3094,7 +3110,6 @@ step
     .goto 702,49.79,80.59
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
-
 ---Rogue Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -3264,9 +3279,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Assassination >> Assassination(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Outlaw >> Outlaw(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Subtlety >> Subtlety(DPS) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Rogue Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -3362,13 +3376,14 @@ step
     .accept 40997 >>Accept Lethal Efficiency
     .target Nikki the Gossip
 step
+    #label Lethal Efficiency22
     .goto 626,37.39,44.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 40997,1 --1/1 Assault Point Chosen
     .acceptmap 39718
     .accept 39718 >>Accept The Tranquil Forest
 step
-    #label Order Hall Rogue Part 2
+    #label Lethal Efficiency2
     .goto 626,37.79,44.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nikki the Gossip|r
     .turnin 40997 >>Turn in Lethal Efficiency
@@ -3383,7 +3398,6 @@ step
     .goto 626,39.68,21.33
     .cast 6477 >>Click on the |cRXP_PICK_Knocker|r
 ]])
-
 ---Shaman Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -3402,6 +3416,7 @@ step
     *Manually skip this step if you prefer to play through that content.
     .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
+    #label A Ring Unbroken
     .goto 627,47.31,33.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 39746 >>Accept A Ring Unbroken
@@ -3463,9 +3478,14 @@ step
     >>Complete the scenario
     .complete 39746,2 --Aid Shaman at the Maelstrom
 step
+    #label Shaman at the Maelstrom
     .goto 725,36.20,74.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 39746 >>Turn in A Ring Unbroken
+    .target Thrall
+step
+    .goto 725,36.20,74.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 41335 >>Accept The Elements Call...
     .target Thrall
 step
@@ -3478,9 +3498,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Elemental >> Elemental(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Enhancement >> Enhancement(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Shaman >> Restoration(Healer) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Shaman Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -3499,6 +3518,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Shaman Part 1 >>CLICK HERE FOR GUIDE
 step
+    #label A Ring Reforged
     .goto 726,34.04,76.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stormcaller Mylra|r
     .accept 40225 >>Accept A Ring Reforged
@@ -3521,11 +3541,13 @@ step
     .accept 41510 >>Accept Azeroth Needs You
     .target Farseer Nobundo
 step
+    #label Azeroth Needs You2
     .goto 726,33.49,59.38
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scouting Map|r
     .complete 41510,1 --1/1 Initial strike point chosen
     .acceptmap 39718
 step
+    #label Azeroth Needs You
     .goto 726,30.38,51.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Nobundo|r
     .turnin 41510 >>Turn in Azeroth Needs You
@@ -3535,7 +3557,6 @@ step
     .goto 726,29.81,52.02
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 ]])
-
 ---Warlock Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -3554,6 +3575,7 @@ step
     *Manually skip this step if you prefer to play through that content.
     .clicknext RestedXP Legion Remix\ae) First Zone 2 >>CLICK HERE FOR GUIDE
 step
+    #label The Sixth
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .accept 40716 >>Accept The Sixth
     .target Ritssyn Flamescowl
@@ -3562,7 +3584,7 @@ step
     .goto 628,74.22,66.56,8,0
     .goto 628,64.44,58.55,8,0
     .goto 628,57.87,60.00
-    >>Click on the |cRXP_PICK_Dark Portal|r or |cRXP_WARN_follow the arrow.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dark Portal|r or |cRXP_WARN_follow the arrow.|r
     .complete 40716,1 --1/1 Enter Dalaran's Underbelly
 step
     .goto 628,57.87,60.00
@@ -3661,9 +3683,14 @@ step
     .scenario 1952,1 --Escape from Jagganoth's Lair
     .mob Xel'toth
 step
+    #label New Blood
     .goto 628,55.75,65.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
     .turnin 40729 >>Turn in The New Blood
+    .target Calydus
+step
+    .goto 628,55.75,65.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
     .accept 40684 >>Accept The Tome of Blighted Implements
     .target Calydus
 step
@@ -3676,9 +3703,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Affliction >> Affliction(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Demonology >> Demonology(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Destruction >> Destruction(DPS) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Warlock Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -3697,6 +3723,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warlock Part 1 >>CLICK HERE FOR GUIDE
 step
+    #label Dreadscar
     .goto 628,55.81,65.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r.
     .accept 40731 >>Accept The Heart of the Dreadscar
@@ -3771,6 +3798,7 @@ step
     .turnin 40824 >>Turn in The Path of the Dreadscar
     .target Ritssyn Flamescowl
 step
+    #label Ritssyn Flamescowl2
     .goto 717,37.63,31.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calydus|r
     .accept 42608 >>Accept Rise, Champions
@@ -3779,6 +3807,7 @@ step
     .complete 42608,1 --Recruit Calydus
     .target Calydus
 step
+    #label Ritssyn Flamescowl
     .goto 717,65.69,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ritssyn Flamescowl|r
     .accept 41748 >>Accept Champion: Ritssyn Flamescowl
@@ -3801,7 +3830,6 @@ step
     .goto 627,35.02,45.56
     .zone 627 >>|cRXP_WARN_Follow the way out of the canal.|r
 ]])
-
 ---Warrior Order Hall Intro 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -3999,9 +4027,8 @@ step
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Arms >> Arms(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Fury >> Fury(DPS) Questline
     .clicknext RestedXP Legion Remix\z) Artifact Weapon: Warrior Protection >> Protection(Tank) Questline
-    -- .clicknext RestedXP Legion Remix\ad) Infinite Bazaar >>Skip to the Infinite Bazaar (You loose the 10% xp bonus)
-]])
 
+]])
 ---Warrior Order Hall Intro 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -4048,7 +4075,7 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Warrior Part 1 >>CLICK HERE FOR GUIDE
 step
-    #label OderHallPart2Start1
+    #label OrderHallPart2Start1
     .goto 695,59.58,83.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danica the Reclaimer|r
     .accept 39214 >>Accept The Eye of Odyn
@@ -4090,6 +4117,7 @@ step
 --     .target Quartermaster Durnolf
 --     .turnin 44255 >>Turn in Axe and You Shall Receive
 step
+    #label Accept The Eye of Odyn2
     .goto 695,56.12,21.96,20,0
     .goto 695,58.97,34.45,20,0
     .goto 695,58.40,85.41
@@ -4168,6 +4196,12 @@ step
     .usespell 1241425 -- Temporal Retreat
     .use 242617
 -- step << Warrior/Mage/Horde Paladin/Rogue/Monk/Shaman/Hunter/Horde Priest
+step
+    .subzoneskip 4564,1
+    .goto 627,73.91,41.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muninn|r
+    .accept 44720 >>Accept A Call to Action
+    .target Muninn
 step
     .isQuestAvailable 91639
     .zoneskip 627,1
@@ -4718,7 +4752,6 @@ step
     .mob Hatecoil Fathom-Stalker
     .mob Subjugated Murloc
 ]])
-
 ---Azsuna 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -5011,7 +5044,6 @@ step
     .target Archmage Khadgar
 step
     #label BehindLegionLinesA
-
     .goto 627,72.47,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .complete 41220,1 --1/1 Fly down with Khadgar
@@ -5025,18 +5057,21 @@ step
     .goto 630,45.10,42.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .turnin 41220 >>Turn in Down to Azsuna
-    .accept 38834 >>Accept Into the Fray
+    .accept 38834 >>Accept Into the Fray << !DemonHunter
+    .accept 44137 >>Accept Into the Fray << DemonHunter
     .target Archmage Khadgar
 step
     #label Into the Fray
     .goto 630,45.10,42.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
-    .accept 38834 >>Accept Into the Fray
+    .accept 38834 >>Accept Into the Fray << !DemonHunter
+    .accept 44137 >>Accept Into the Fray << DemonHunter
     .target Archmage Khadgar
 step
     .goto 630,43.56,43.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r..
-    .turnin 38834 >>Turn in Into the Fray
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Champion|r.
+    .turnin 38834 >>Turn in Into the Fray << !DemonHunter
+    .turnin 44137 >>Turn in Into the Fray << DemonHunter
     .target Kayn Sunfury
     .target Altruis the Sufferer
 step
@@ -5054,18 +5089,18 @@ step
     .complete 37653,1 --8/8 Demon souls trapped
 step
     #title North Ward
-    >>Click on the |cRXP_PICK_Demon Ward|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Demon Ward|r.
     .goto 630,42.18,43.30
     .complete 37658,3 --1/1 North Ward reignited
 step
     #title West Ward
-    >>Click on the |cRXP_PICK_Demon Ward|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Demon Ward|r.
     .goto 630,41.84,44.93
     .complete 37658,2 --1/1 West Ward reignited
 step
     #label NightborneReignitetheWards
     #title South Ward
-    >>Click on the |cRXP_PICK_Demon Ward|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Demon Ward|r.
     .goto 630,42.38,46.47
     .complete 37658,1 --1/1 South Ward reignited
 step
@@ -5124,14 +5159,16 @@ step
     .target Allari the Souleater
 step
     .goto 630,43.55,43.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r..
-    .accept 36920 >>Accept From Within
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Champion|r.
+    .accept 36920 >>Accept From Within << !DemonHunter
+    .acceptmultiple 44140,40815 >>Accept From Within << DemonHunter
     .target Kayn Sunfury
     .target Altruis the Sufferer
 step
     .goto 630,41.24,50.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'vas Bloodthorn|r.
-    .turnin 36920 >>Turn in From Within
+    .turnin 36920 >>Turn in From Within << !DemonHunter
+    .turninmultiple 44140,40815 >>Turn in From Within << !DemonHunter
     .accept 37450 >>Accept Saving Stellagosa
     .accept 37656 >>Accept Fel Machinations
     .target Kor'vas Bloodthorn
@@ -5213,13 +5250,12 @@ step
     .complete 37449,3 --1/1 Meet back at Illidari Stand
 step
     #label BehindLegionLinesZ
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r..
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 37449 >>Turn in Dark Revelations
     .goto 630,43.56,43.46
     .target Kayn Sunfury
     .target Altruis the Sufferer
 ]])
-
 --Defending Azurewing Repose
 RXPGuides.RegisterGuide([[
 #retail
@@ -5639,7 +5675,6 @@ step
     .turnin 42756 >>Turn in Hunger's End
     .target Senegos
 ]])
-
 --Azsuna versus Azshara
 RXPGuides.RegisterGuide([[
 #retail
@@ -6096,7 +6131,6 @@ step
     .accept 38286 >>Accept Eye of Azshara: Wrath of Azshara
     .target Prince Farondis
 ]])
-
 --Against Giants
 RXPGuides.RegisterGuide([[
 #retail
@@ -6298,7 +6332,6 @@ step
     .turnin 37566 >>Turn in The Prince is Going Down
     .target Okuna Longtusk
 ]])
-
 --Mak'rana and the Fate of the Queen's Reprisal
 RXPGuides.RegisterGuide([[
 #retail
@@ -6549,7 +6582,6 @@ step
     .turnin 38203 >>Turn in Challiane Vineyards
     .target Cellarman Voodani
 ]])
-
 --Kirin Tor Reconnaissance
 RXPGuides.RegisterGuide([[
 #retail
@@ -6681,7 +6713,6 @@ step
     .turnin 42694 >>Turn in Back from the Dead
     .target Olothil Starlance
 ]])
-
 --A Rather Long Walk
 RXPGuides.RegisterGuide([[
 #retail
@@ -6738,7 +6769,6 @@ step
     .turnin 37492 >>Turn in A Rather Long Walk
     .target Lady Irisse
 ]])
-
 --Crumbled Palace Cocktails
 RXPGuides.RegisterGuide([[
 #retail
@@ -6808,7 +6838,6 @@ step
     .turnin 37728 >>Turn in Presentation is Everything
     .target Magister Garuhod
 ]])
-
 --Felblaze Ingress
 RXPGuides.RegisterGuide([[
 #retail
@@ -6988,7 +7017,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Monk Part 1
 ]])
-
 ---Monk Part 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7004,7 +7032,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Monk Part 2
 ]])
-
 ---Death Knight 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7021,7 +7048,6 @@ step
     #include ab) Order Hall Death Knight Part 1
 
 ]])
-
 ---Death Knight 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7038,7 +7064,6 @@ step
     #include ac) Order Hall Death Knight Part 2
 
 ]])
-
 ---Demon Hunter 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7049,14 +7074,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bc) Order Hall Demon Hunter Part 2
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #include RestedXP Legion Remix\ab) Order Hall Demon Hunter Part 1
 
 
 ]])
-
 ---Demon Hunter 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7067,14 +7091,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80)|r Legion Remix
 #next bd) Infinite Bazaar
 
-<< Demon Hunter
+<< DemonHunter
 
 step
     #include RestedXP Legion Remix\ac) Order Hall Demon Hunter Part 2
 
 
 ]])
-
 ---Druid 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7090,7 +7113,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Druid Part 1
 ]])
-
 ---Druid 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7106,7 +7128,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Druid Part 2
 ]])
-
 ---Hunter 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7122,7 +7143,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Hunter Part 1
 ]])
-
 ---Hunter 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7138,7 +7158,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Hunter Part 2
 ]])
-
 ---Mage 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7154,7 +7173,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Mage Part 1
 ]])
-
 ---Mage 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7170,7 +7188,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Mage Part 2
 ]])
-
 ---Paladin 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7186,7 +7203,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Paladin Part 1
 ]])
-
 ---Paladin 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7202,7 +7218,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Paladin Part 2
 ]])
-
 ---Priest 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7218,7 +7233,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Priest Part 1
 ]])
-
 ---Priest 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7234,7 +7248,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Priest Part 2
 ]])
-
 ---Rogue 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7252,7 +7265,6 @@ step
 
 
 ]])
-
 ---Rogue 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7270,7 +7282,6 @@ step
 
 
 ]])
-
 ---Shaman 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7286,7 +7297,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Shaman Part 1
 ]])
-
 ---Shaman 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7302,7 +7312,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Shaman Part 2
 ]])
-
 ---Warlock 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7318,7 +7327,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Warlock Part 1
 ]])
-
 ---Warlock 2
 RXPGuides.RegisterGuide([[
 #retail
@@ -7334,7 +7342,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ac) Order Hall Warlock Part 2
 ]])
-
 ---Warrior 1
 RXPGuides.RegisterGuide([[
 #retail
@@ -7350,7 +7357,6 @@ RXPGuides.RegisterGuide([[
 step
     #include RestedXP Legion Remix\ab) Order Hall Warrior Part 1
 ]])
-
 ---Warrior 2
 RXPGuides.RegisterGuide([[
 #retail
