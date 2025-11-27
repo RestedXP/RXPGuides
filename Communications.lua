@@ -296,15 +296,16 @@ function addon.comms:AnnounceStepEvent(event, data)
     end
 
     local guideAnnouncements = self.db.profile.announcements[data.guideName]
+    local msg
 
     if event == '.complete' then
         -- Don't handle announcements if Questie loaded
         if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then return end
 
-        -- Replay of guide, don't spam
-        if guideAnnouncements.complete[data.title] then return end
+        msg = self.BuildNotification(L("Completed step %s - %s"), data.title, data.completionText)
 
-        local msg = self.BuildNotification(L("Completed step %d - %s"), data.step, data.title)
+        -- Replay of guide, don't spam
+        if guideAnnouncements.complete[msg] then return end
 
         if addon.settings.profile.enableCompleteStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
@@ -312,7 +313,7 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.complete[data.title] = addon.player.level
+        guideAnnouncements.complete[msg] = addon.player.level
 
     elseif event == '.collect' then
         -- Don't handle announcements if Questie loaded
@@ -321,7 +322,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         -- Replay of guide, don't spam
         if guideAnnouncements.collect[data.title] then return end
 
-        local msg = self.BuildNotification(L("Collected step %d - %s"), data.step, data.title)
+        msg = self.BuildNotification(L("Collected step %d - %s"), data.step, data.title)
 
         if addon.settings.profile.enableCollectAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
@@ -335,8 +336,8 @@ function addon.comms:AnnounceStepEvent(event, data)
         if not data.duration or data.duration <= 0 then return end
 
         -- Questie doesn't announce flight-time, so okay to send this out
-        local msg = self.BuildNotification(L("Flying to %s ETA %s"), RXPCData.flightPaths[data.destination] or '',
-                                           addon.comms:PrettyPrintTime(data.duration))
+        msg = self.BuildNotification(L("Flying to %s ETA %s"), RXPCData.flightPaths[data.destination] or '',
+                                        addon.comms:PrettyPrintTime(data.duration))
 
         if addon.settings.profile.enableFlyStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
