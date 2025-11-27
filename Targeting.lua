@@ -231,7 +231,11 @@ function addon.targeting:UpdateFollowMacro(leaderName)
         return
     end
 
-    if UnitIsGroupLeader("player") then return end
+    if UnitIsGroupLeader("player") then
+        EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.PARTY_LEADER)
+
+        return
+    end
 
     if not leaderName then
         for i = 1, GetNumGroupMembers() - 1 do
