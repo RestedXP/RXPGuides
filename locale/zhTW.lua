@@ -39,8 +39,8 @@ _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
 L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "擊殺"}
 
 -- Communications.lua檔案
-L["Collected step %d - %s"] = "已收集步驟 %d - %s"
-L["Completed step %d - %s"] = "已完成步驟 %d - %s"
+L["Collected step %s - %s"] = "已收集步驟 %s - %s"
+L["Completed step %s - %s"] = "已完成步驟 %s - %s"
 L["Describe your issue:"] = "描述你的問題:"
 L["Do not edit below this line"] = "請勿編輯此行以下內容"
 L["Flying to %s ETA %s"] = "正在飛往 %s 預計到達時間 %s"
