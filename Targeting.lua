@@ -69,6 +69,7 @@ function addon.targeting:Setup()
         self:RegisterEvent("PLAYER_ENTERING_WORLD")
         self:RegisterEvent("GROUP_FORMED")
         self:RegisterEvent("GROUP_LEFT")
+        self:RegisterEvent("PARTY_LEADER_CHANGED")
     else
         DeleteMacro(self.followMacroName)
     end
@@ -335,6 +336,10 @@ function addon.targeting:GROUP_FORMED()
 end
 
 function addon.targeting:GROUP_LEFT() self:UpdateFollowMacro("") end
+
+function addon.targeting:PARTY_LEADER_CHANGED()
+    self:UpdateFollowMacro()
+end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     if not nameplateID or not shouldTargetCheck() then return end
