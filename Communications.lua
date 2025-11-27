@@ -319,10 +319,10 @@ function addon.comms:AnnounceStepEvent(event, data)
         -- Don't handle announcements if Questie loaded
         if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then return end
 
-        -- Replay of guide, don't spam
-        if guideAnnouncements.collect[data.title] then return end
+        msg = self.BuildNotification(L("Collected step %s - %s"), data.title, data.completionText)
 
-        msg = self.BuildNotification(L("Collected step %d - %s"), data.step, data.title)
+        -- Replay of guide, don't spam
+        if guideAnnouncements.collect[msg] then return end
 
         if addon.settings.profile.enableCollectAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
@@ -330,7 +330,7 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.collect[data.title] = addon.player.level
+        guideAnnouncements.collect[msg] = addon.player.level
 
     elseif event == '.fly' then
         if not data.duration or data.duration <= 0 then return end
