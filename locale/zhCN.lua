@@ -35,7 +35,6 @@ L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "击杀"}
 
 -- Communications.lua文件
 L["Collected %s - %s"] = "已收集步骤 %s - %s"
-L["Completed %s - %s"] = "已完成步骤 %s - %s"
 L["Describe your issue:"] = "描述你的问题:"
 L["Do not edit below this line"] = "请勿编辑此行以下内容"
 L["Flying to %s ETA %s"] = "正在飞往 %s 预计到达时间 %s"

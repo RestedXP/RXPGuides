@@ -40,7 +40,6 @@ L["I just leveled from %d to %d in %s"] = "Я только что повысил
 L["I just leveled up to %d"] = "Я только что повысил уровень до %d"
 L["There's a new addon version (%s) available"] = "Доступна новая версия аддона (%s)"
 L["There's a new version (%s) available for %s"] = "Доступна новая версия (%s) для %s"
-L["Completed %s - %s"] = "Завершен %s - %s"
 L["Collected %s - %s"] = "Собран %s - %s"
 L["Flying to %s ETA %s"] = "Лечу в %s, расчетное время прибытия %s"
 L["Describe your issue:"] = "Опишите вашу проблему:"

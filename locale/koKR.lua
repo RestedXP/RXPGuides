@@ -45,7 +45,6 @@ L["I just leveled from %d to %d in %s"] = "%d에서 %d로 레벨업했습니다.
 L["I just leveled up to %d"] = "%d 레벨로 레벨업했습니다"
 L["There's a new addon version (%s) available"] = "새로운 애드온 버전(%s)이 사용 가능합니다"
 L["There's a new version (%s) available for %s"] = "%s에 대해 새로운 버전(%s)이 사용 가능합니다"
-L["Completed %s - %s"] = "%s - %s 완료"
 L["Collected %s - %s"] = "%s - %s 수집됨"
 L["Flying to %s ETA %s"] = "%s로 비행 중, 예상 도착 시간: %s"
 L["Describe your issue:"] = "문제를 설명하세요:"
