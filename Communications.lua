@@ -320,7 +320,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         -- Don't handle announcements if Questie loaded
         if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then return end
 
-        msg = self.BuildNotification(L("Collected %s - %s"), data.title, data.completionText)
+        msg = self.BuildNotification(L("%s %s"), _G.COLLECTED, data.completionText)
 
         -- Replay of guide, don't spam
         if guideAnnouncements.collect[msg] then return end

@@ -45,7 +45,6 @@ L["I just leveled from %d to %d in %s"] = "Ich habe in %s von %d auf %d gelevelt
 L["I just leveled up to %d"] = "Ich habe gerade auf %d gelevelt"
 L["There's a new addon version (%s) available"] = "Eine neue Addonversion (%s) ist verfuegbar"
 L["There's a new version (%s) available for %s"] = "Eine neue Addonversion (%s) fuer %s ist verfuegbar"
-L["Collected %s - %s"] = "Aufgenommener %s - %s"
 L["Flying to %s ETA %s"] = "Fliegen nach %s verbleibende Zeit: %s"
 L["Describe your issue:"] = "Beschreib dein Problem"
 L["Do not edit below this line"] = "Bitte hier drunter nichts bearbeiten"
