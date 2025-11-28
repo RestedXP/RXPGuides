@@ -58,10 +58,10 @@ function addon.comms:Setup()
         end
     end
 
-    addon.comms:UpgradeDB()
+    addon.comms:UpdateDB()
 end
 
-function addon.comms:UpgradeDB()
+function addon.comms:UpdateDB()
     local abs = math.abs
     for _, data in pairs(self.players) do
         if data.timePlayed < 0 then
@@ -73,6 +73,19 @@ function addon.comms:UpgradeDB()
         if not data.version then
             data.version = 1
             data.xp = 0
+        end
+    end
+
+    -- self.db.profile.announcements[data.guideName] = {complete = {}, collect = {}}
+    for _, kinds in pairs(self.db.profile.announcements) do
+        -- .complete[msg] = addon.player.level
+        -- .collect[msg] = addon.player.level
+        for _, data in pairs(kinds) do
+            for msg, level in pairs(data) do
+                if level < addon.player.level - 3 then
+                    data[msg] = nil
+                end
+            end
         end
     end
 end
@@ -290,7 +303,6 @@ function addon.comms:AnnounceStepEvent(event, data)
     -- currentStep == 1 is probably spam from rapid replay
     if RXPCData.currentStep == 1 or GetTime() - addon.lastStepUpdate < 1 then return end
 
-    -- TODO purge cache at startup for announcements > 3 levels old
     if not self.db.profile.announcements[data.guideName] then
         self.db.profile.announcements[data.guideName] = {complete = {}, collect = {}}
     end
