@@ -324,7 +324,7 @@ function addon.comms:AnnounceStepEvent(event, data)
         -- Replay of guide, don't spam
         if guideAnnouncements.collect[msg] then return end
 
-        if addon.settings.profile.enableCollectAnnouncements and GetNumGroupMembers() > 0 then
+        if addon.settings.profile.enableCollectStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
             self.PrettyDebug(msg)
