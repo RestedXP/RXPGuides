@@ -620,7 +620,7 @@ end
 
 local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
 function addon.ForceNextStep()
-    if not (_G.Settings and _G.Settings.GetCategory) then
+    if _G.Settings and _G.Settings.GetCategory then
         return
     end
     for i,step in pairs(addon.RXPFrame.activeSteps) do

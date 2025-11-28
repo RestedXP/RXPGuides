@@ -37,7 +37,7 @@ map.lua
 functions.lua
 GuideLoader.lua
 
-Guides/GuideList.xml
+Guides/GuideList-tbc.xml
 
 Talents.lua
 Guides/Talents/tbc.xml
