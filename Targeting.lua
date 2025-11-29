@@ -694,7 +694,7 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
 
     self:UpdateMacro()
 
-    if not addon.settings.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetFrame then return end
 
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
@@ -757,7 +757,7 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
 
     self:UpdateMacro()
 
-    if not addon.settings.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetFrame then return end
 
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
@@ -798,7 +798,7 @@ function addon.targeting:CreateTargetFrame()
 
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
-        if not addon.settings.profile.enableTargetAutomation then return nil, true end
+        if not addon.settings.profile.enableTargetFrame then return nil, true end
 
         if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck(), true
@@ -1061,7 +1061,7 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
-    if not addon.settings.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetFrame then return end
 
     local targetFrame = self.activeTargetFrame
 
@@ -1256,7 +1256,7 @@ function addon.targeting:ZONE_CHANGED_NEW_AREA() self:LoadRares() end
 
 function addon.targeting:LoadRares()
     if not addon.settings.profile.scanForRares or not addon.settings.profile.showTargetingOnProximity or
-        not addon.settings.profile.enableTargetAutomation or not addon.rares then return end
+        not addon.settings.profile.enableTargetFrame or not addon.rares then return end
 
     -- Reset found rares
     for name, data in pairs(proxmityPolling.scannedTargets) do

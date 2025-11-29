@@ -178,6 +178,7 @@ local settingsDBDefaults = {
         enableEnemyTargeting = true,
         enableEnemyMarking = true,
         enableMobMarking = true,
+        enableTargetFrame = true,
         showTargetingOnProximity = unitscanEnabled,
         soundOnFind = 3175,
         soundOnFindChannel = 'Master',
@@ -1645,55 +1646,12 @@ function addon.settings:CreateAceOptionsPanel()
                 name = _G.BINDING_HEADER_TARGETING,
                 order = 4,
                 args = {
-                    macroHeader = {
-                        name = fmt("%s%s", L("Targeting Macro"),
-                                   addon.targeting:CanCreateMacro() and '' or
-                                       ' - ' .. L("Macro capacity reached")), -- TODO locale
-                        type = "header",
-                        width = "full",
-                        order = 1
-                    },
-                    enableTargetMacro = {
-                        name = L("Create Targeting Macro"), -- TODO locale
-                        desc = L("Automatically create a targeting macro"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.1,
-                        disabled = not addon.targeting:CanCreateMacro()
-                    },
-                    notifyOnTargetUpdates = {
-                        name = L("Notify on new target"), -- TODO locale
-                        desc = L("Notify when a new target is loaded"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.2,
-                        disabled = not addon.targeting:CanCreateMacro() or
-                            not self.profile.enableTargetMacro
-                    },
-                    createFollowMacro = {
-                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
-                        desc = fmt("%s %s %s %s", _G.CREATE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.3,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.targeting:UpdateFollowMacro()
-                        end,
-                        disabled = not addon.targeting:CanCreateMacro()
-                    },
-                    activeTargetsHeader = {
-                        name = L("Active Targets"),
-                        type = "header",
-                        width = "full",
-                        order = 2
-                    },
                     enableTargetAutomation = {
-                        name = L("Enable Active Targets"), -- TODO locale
-                        desc = L("Automatically scan nearby targets"),
+                        name = fmt("%s %s", _G.ENABLE, _G.BINDING_HEADER_TARGETING),
+                        -- desc = L("Create Active Targets frame"), -- "Automatically scan nearby targets"
                         type = "toggle",
                         width = unitscanEnabled and optionsWidth or optionsWidth * 3,
-                        order = 2.1,
+                        order = 0,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if addon.targeting.activeTargetFrame and
@@ -1702,71 +1660,18 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
-                    showTargetingOnProximity = {
-                        name = L("Only show when in range"), -- TODO locale
-                        desc = L(
-                            "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
-                        type = "toggle",
-                        width = optionsWidth * 2,
-                        order = 2.11,
-                        confirm = requiresReload,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            _G.ReloadUI()
-                        end,
-                        disabled = function()
-                            return not self.profile.enableTargetAutomation
-                        end,
-                        hidden = not unitscanEnabled
-                    },
-                    enableFriendlyTargeting = {
-                        name = L("Scan Friendly Targets"), -- TODO locale
-                        desc = L("Scan for friendly targets"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.2,
-                        disabled = function()
-                            return not self.profile.enableTargetAutomation
-                        end
-                    },
-                    enableTargetMarking = {
-                        name = L("Mark Friendly Targets"), -- TODO locale
-                        desc = L(
-                            "Mark friendly targets with star, circle, diamond, and triangle"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.21,
-                        disabled = function()
-                            return not self.profile.enableTargetAutomation
-                        end
-                    },
-                    createFollowTarget = {
-                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
-                        desc = fmt("%s %s %s %s", _G.CREATE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.22,
-                        disabled = function()
-                            return not self.profile.enableTargetAutomation
-                        end,
-                        hidden = true --TODO implement /target + /follow
-                    },
-                    enableEnemyTargeting = {
-                        name = L("Scan Enemy Targets"), -- TODO locale
-                        desc = L("Scan for enemy targets"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.3,
-                        disabled = function()
-                            return not self.profile.enableTargetAutomation
-                        end
+                    markersHeader = {
+                        name = _G.BINDING_HEADER_RAID_TARGET,
+                        type = "header",
+                        width = "full",
+                        order = 1
                     },
                     enableEnemyMarking = {
                         name = L("Mark Enemy Targets"), -- TODO locale
                         desc = L("Mark special enemy targets with moon"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.31,
+                        order = 1.1,
                         disabled = function()
                             return not self.profile.enableTargetAutomation
                         end
@@ -1776,17 +1681,121 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Mark enemy mobs with skull, cross, and square"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.32,
+                        order = 1.2,
                         disabled = function()
                             return not self.profile.enableTargetAutomation
                         end
+                    },
+                    enableTargetMarking = {
+                        name = L("Mark Friendly Targets"),
+                        desc = L("Mark friendly targets with star, circle, diamond, and triangle"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.3,
+                        disabled = function()
+                            return not self.profile.enableTargetAutomation
+                        end
+                    },
+                    macroHeader = {
+                        name = fmt("%s%s", L("Targeting Macro"),
+                                   addon.targeting:CanCreateMacro() and '' or
+                                       ' - ' .. L("Macro capacity reached")), -- TODO locale
+                        type = "header",
+                        width = "full",
+                        order = 2
+                    },
+                    enableTargetMacro = {
+                        name = L("Create Targeting Macro"), -- TODO locale
+                        desc = L("Automatically create a targeting macro"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.1,
+                        disabled = not addon.targeting:CanCreateMacro()
+                    },
+                    notifyOnTargetUpdates = {
+                        name = L("Notify on new target"), -- TODO locale
+                        desc = L("Notify when a new target is loaded"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.2,
+                        disabled = not addon.targeting:CanCreateMacro() or
+                            not self.profile.enableTargetMacro
+                    },
+                    createFollowMacro = {
+                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
+                        desc = fmt("%s %s %s %s", _G.CREATE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 2.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.targeting:UpdateFollowMacro()
+                        end,
+                        disabled = not addon.targeting:CanCreateMacro()
+                    },
+                    activeTargetsHeader = {
+                        name = fmt("%s %s",_G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION),
+                        type = "header",
+                        width = "full",
+                        order = 3
+                    },
+                    enableTargetFrame = { -- <4.8.26 Formerly enableTargetAutomation
+                        name = fmt("%s %s %s", _G.ENABLE, _G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION),
+                        -- desc = L("Create Active Targets frame"), -- "Automatically scan nearby targets"
+                        type = "toggle",
+                        width = unitscanEnabled and optionsWidth or optionsWidth * 3,
+                        order = 3.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if addon.targeting.activeTargetFrame and
+                                not InCombatLockdown() then
+                                addon.targeting.activeTargetFrame:Hide()
+                            end
+                        end
+                    },
+                    showTargetingOnProximity = {
+                        name = L("Only show when in range"),
+                        desc = L(
+                            "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 3.2,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTargetFrame
+                        end,
+                        hidden = not unitscanEnabled
+                    },
+                    enableEnemyTargeting = {
+                        name = fmt("%s %s %s", _G.SHOW, _G.ENEMY, _G.TARGET), -- L("Scan Enemy Targets"), -- TODO locale
+                        -- desc = L("Scan for enemy targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.3,
+                        disabled = function()
+                            return not self.profile.enableTargetFrame
+                        end
+                    },
+                    createFollowTarget = { --TODO implement /target + /follow
+                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.TARGET),
+                        desc = fmt("%s %s %s", _G.SHOW, strlower(_G.PARTY_LEADER), strlower(_G.TARGET)),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.4,
+                        disabled = function()
+                            return not self.profile.enableTargetFrame
+                        end,
                     },
                     scanForRares = {
                         name = L("Scan for Nearby Rares"), -- TODO locale
                         desc = L("Checks for nearby rare spawns"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 3.5,
                         disabled = function()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity
@@ -1798,7 +1807,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Notify when a new rare is found"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 2.41,
+                        order = 3.6,
                         disabled = function()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity or
@@ -1811,13 +1820,13 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.5,
+                        order = 3.7,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.targeting:RenderTargetFrameBackground()
                         end,
                         disabled = function()
-                            return not self.profile.enableTargetAutomation
+                            return not self.profile.enableTargetFrame
                         end
                     },
                     activeTargetScale = {
@@ -1825,7 +1834,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scale of the Active Targets frame"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.51,
+                        order = 3.8,
                         min = 0.8,
                         max = 3,
                         step = 0.05,
@@ -1837,18 +1846,29 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetTargetPosition = {
                         name = L("Reset Window Position"), -- TODO locale
-                        order = 2.52,
+                        order = 3.9,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
                             addon.ResetTargetPosition()
                         end
                     },
+                    enableFriendlyTargeting = {
+                        name = fmt("%s %s %s", _G.SHOW, _G.FRIENDLY, _G.TARGET), -- L("Scan Friendly Targets"),
+                        -- desc = L("Scan for friendly targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.10,
+                        disabled = function()
+                            return not self.profile.enableTargetFrame
+                        end
+                    },
                     alertHeader = {
                         name = _G.COMMUNITIES_NOTIFICATION_SETTINGS,
                         type = "header",
                         width = "full",
-                        order = 3
+                        order = 4,
+                        hidden = not unitscanEnabled
                     },
                     flashOnFind = {
                         name = L("Flash Client Icon"), -- TODO locale
@@ -1856,11 +1876,12 @@ function addon.settings:CreateAceOptionsPanel()
                             "Flashes the game icon on taskbar when enemy target found"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.1,
+                        order = 4.1,
                         disabled = function()
-                            return not self.profile.enableTargetAutomation or
+                            return not self.profile.enableTargetFrame or
                                        not self.profile.showTargetingOnProximity
-                        end
+                        end,
+                        hidden = not unitscanEnabled
                     },
                     enableTargetingFlash = {
                         name = _G.SHOW_FULLSCREEN_STATUS_TEXT,
@@ -1868,18 +1889,19 @@ function addon.settings:CreateAceOptionsPanel()
                             "Flashes the screen corners when enemy target found"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 3.2,
+                        order = 4.2,
                         disabled = function()
                             return not self.profile.enableTips or
                                        not self.profile.enableDrowningWarning
-                        end
+                        end,
+                        hidden = not unitscanEnabled
                     },
                     soundOnFind = {
                         name = L("Play Sound"), -- TODO locale
                         desc = L("Sends sound on enemy target found"),
                         type = "select",
                         width = optionsWidth,
-                        order = 3.3,
+                        order = 4.3,
                         values = {
                             ["none"] = "none",
                             [3175] = "Map Ping",
@@ -1896,13 +1918,14 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity
-                        end
+                        end,
+                        hidden = not unitscanEnabled
                     },
                     soundOnFindChannel = {
                         name = L("Sound Channel"), -- TODO locale
                         type = "select",
                         width = optionsWidth,
-                        order = 3.4,
+                        order = 4.4,
                         values = {
                             ["Master"] = _G.MASTER,
                             ["Music"] = _G.MUSIC_VOLUME,
@@ -1913,11 +1936,12 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity or
                                        self.profile.soundOnFind == "none"
-                        end
+                        end,
+                        hidden = not unitscanEnabled
                     },
                     testSoundOnFind = {
                         name = _G.EVENTTRACE_BUTTON_PLAY,
-                        order = 3.5,
+                        order = 4.5,
                         type = 'execute',
                         disabled = function()
                             return self.profile.soundOnFind == "none"
@@ -1925,7 +1949,8 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             PlaySound(self.profile.soundOnFind,
                                       self.profile.soundOnFindChannel)
-                        end
+                        end,
+                        hidden = not unitscanEnabled
                     }
                 }
             },
