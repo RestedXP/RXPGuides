@@ -1095,8 +1095,7 @@ function addon.settings:CreateAceOptionsPanel()
                             p.enableNonLeadMarking = true
 
                             --_G.ReloadUI()
-                        end,
-                        hidden = isNotAdvanced
+                        end
                     },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
