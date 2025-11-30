@@ -170,14 +170,19 @@ local settingsDBDefaults = {
         showEnabled = true,
 
         -- Targeting
+        enableTargetAutomation = true,
         enableTargetMacro = true,
         notifyOnTargetUpdates = true,
-        enableTargetAutomation = true,
+
+        --- Marking
         enableFriendlyTargeting = true,
         enableTargetMarking = true,
         enableEnemyTargeting = true,
         enableEnemyMarking = true,
         enableMobMarking = true,
+        enableNonLeadMarking = true,
+
+        --- UnitScan
         enableTargetFrame = true,
         showTargetingOnProximity = unitscanEnabled,
         soundOnFind = 3175,
@@ -1086,6 +1091,9 @@ function addon.settings:CreateAceOptionsPanel()
                             p.soloSelfFound = false
 
                             p.createFollowMacro = true
+
+                            p.enableNonLeadMarking = true
+
                             --_G.ReloadUI()
                         end,
                         hidden = isNotAdvanced
@@ -1696,6 +1704,16 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTargetAutomation
                         end
                     },
+                    enableNonLeadMarking = {
+                        name = fmt("%s %s (%s)", _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET, _G.GROUP),
+                        desc = fmt("%s %s %s", _G.ERR_TRAVEL_PASS_NOT_LEADER, _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 1.4,
+                        disabled = function()
+                            return not self.profile.enableTargetAutomation
+                        end
+                    },
                     macroHeader = {
                         name = fmt("%s%s", L("Targeting Macro"),
                                    addon.targeting:CanCreateMacro() and '' or
@@ -1744,7 +1762,7 @@ function addon.settings:CreateAceOptionsPanel()
                         -- desc = L("Create Active Targets frame"), -- "Automatically scan nearby targets"
                         type = "toggle",
                         width = unitscanEnabled and optionsWidth or optionsWidth * 3,
-                        order = 3.1,
+                        order = 3.10,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if addon.targeting.activeTargetFrame and
@@ -1759,7 +1777,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Check if targets are nearby\nWarning: This relies on ADDON_ACTION_FORBIDDEN errors from TargetUnit() to function."),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 3.2,
+                        order = 3.11,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1775,17 +1793,27 @@ function addon.settings:CreateAceOptionsPanel()
                         -- desc = L("Scan for enemy targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.3,
+                        order = 3.12,
+                        disabled = function()
+                            return not self.profile.enableTargetFrame
+                        end
+                    },
+                    enableFriendlyTargeting = {
+                        name = fmt("%s %s %s", _G.SHOW, _G.FRIENDLY, _G.TARGET), -- L("Scan Friendly Targets"),
+                        -- desc = L("Scan for friendly targets"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.13,
                         disabled = function()
                             return not self.profile.enableTargetFrame
                         end
                     },
                     createFollowTarget = { --TODO implement /target + /follow
                         name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.TARGET),
-                        desc = fmt("%s %s %s", _G.SHOW, strlower(_G.PARTY_LEADER), strlower(_G.TARGET)),
+                        desc = "TODO" .. fmt("%s %s %s", _G.SHOW, strlower(_G.PARTY_LEADER), strlower(_G.TARGET)),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.4,
+                        order = 3.14,
                         disabled = function()
                             return not self.profile.enableTargetFrame
                         end,
@@ -1795,7 +1823,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Checks for nearby rare spawns"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.5,
+                        order = 3.20,
                         disabled = function()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity
@@ -1807,7 +1835,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Notify when a new rare is found"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 3.6,
+                        order = 3.21,
                         disabled = function()
                             return not self.profile.enableTargetAutomation or
                                        not self.profile.showTargetingOnProximity or
@@ -1820,7 +1848,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.7,
+                        order = 3.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.targeting:RenderTargetFrameBackground()
@@ -1834,7 +1862,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Scale of the Active Targets frame"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.8,
+                        order = 3.31,
                         min = 0.8,
                         max = 3,
                         step = 0.05,
@@ -1846,23 +1874,14 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetTargetPosition = {
                         name = L("Reset Window Position"), -- TODO locale
-                        order = 3.9,
+                        order = 3.32,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
                             addon.ResetTargetPosition()
                         end
                     },
-                    enableFriendlyTargeting = {
-                        name = fmt("%s %s %s", _G.SHOW, _G.FRIENDLY, _G.TARGET), -- L("Scan Friendly Targets"),
-                        -- desc = L("Scan for friendly targets"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 3.10,
-                        disabled = function()
-                            return not self.profile.enableTargetFrame
-                        end
-                    },
+
                     alertHeader = {
                         name = _G.COMMUNITIES_NOTIFICATION_SETTINGS,
                         type = "header",

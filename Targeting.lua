@@ -912,7 +912,9 @@ end
 function addon.targeting:UpdateMarker(kind, unitId, index)
     if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then return end
 
-    if IsInGroup() and not UnitIsGroupLeader('player') then return end
+    if IsInGroup() and not UnitIsGroupLeader('player') then
+        if not addon.settings.profile.enableNonLeadMarking then return end
+    end
 
     local markerId = self:GetMarkerIndex(kind, index)
 
