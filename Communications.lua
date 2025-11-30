@@ -738,10 +738,20 @@ function addon.comms.grouping:ShareQuest(questId)
 end
 
 function addon.comms.grouping:UpdateParty()
-    addon.comms.state.group = {leader = nil, members = {}, hasRXP = false}
+    addon.comms.state.group = {
+        leader = nil,
+        members = {
+            [addon.player.name] = {
+                partyId = "player",
+                isRxp = true
+            }
+        },
+        hasRXP = false
+    }
 
     local name, partyId, isRXP
 
+    -- Load all party data first for hasRXP before setting markerIndex
     for i = 1, GetNumGroupMembers() - 1 do
         partyId = "party" .. i
         name = UnitName(partyId)
@@ -758,7 +768,7 @@ function addon.comms.grouping:UpdateParty()
         end
 
         addon.comms.state.group.members[name] = {
-            partyId = i,
+            partyId = partyId,
             isRxp = isRXP
         }
     end
@@ -767,17 +777,23 @@ function addon.comms.grouping:UpdateParty()
 
     local markerIndex = 1
 
-    -- Load all party data first for hasRXP before setting markerIndex
-    --- Loop over party again to preserve ordering
-    for i = 1, GetNumGroupMembers() - 1 do
-        partyId = "party" .. i
+    -- Player+party1+party2+party3+party4 is alphabetical ordering including player
+    local partyNames = {}
 
-        name = UnitName(partyId)
+    for playerName, _ in pairs(addon.comms.state.group.members) do
+        tinsert(partyNames, playerName)
+    end
 
-        if not name then break end
+    -- Alphabetically sort player names
+    table.sort(partyNames)
 
-        if addon.comms.state.group.members[name].isRxp then
-            addon.comms.state.group.members[name].markerIndex = markerIndex
+    local data
+    for _, playerName in ipairs(partyNames) do
+        print("playerName", playerName)
+        data = addon.comms.state.group.members[playerName]
+
+        if data.isRxp then
+            data.markerIndex = markerIndex
             markerIndex = markerIndex + 1
         end
     end

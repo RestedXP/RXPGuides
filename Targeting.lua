@@ -211,6 +211,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
     macroTargets = {}
 end
 
+-- TODO fix bug when promoting leader
 function addon.targeting:UpdateFollowMacro(leaderName)
     if not addon.settings.profile.createFollowMacro then return end
 
@@ -888,11 +889,11 @@ function addon.targeting:GetMarkerIndex(kind, kindIndex)
 
     if IsInGroup() and addon.settings.profile.enableNonLeadMarking and addon.comms.state.group.hasRXP then
         -- Overwrite kindIndex if party, works best for 1-3 RXP members
-        --- party1: star and skull
-        --- party2: circle and cross
-        --- party3: diamond and square
-        --- party4: triangle and skull
-        --- party5: star and cross
+        --- player: star and skull
+        --- party1: circle and cross
+        --- party2: diamond and square
+        --- party3: triangle and skull
+        --- party4: star and cross
         kindIndex = addon.comms.state.group.members[addon.player.name].markerIndex
     end
 
