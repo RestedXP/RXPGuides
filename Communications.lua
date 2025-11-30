@@ -740,7 +740,7 @@ end
 function addon.comms.grouping:UpdateParty()
     addon.comms.state.group = {leader = nil, members = {}, hasRXP = false}
 
-    local name, partyId
+    local name, partyId, isRXP
 
     for i = 1, GetNumGroupMembers() - 1 do
         partyId = "party" .. i
@@ -752,13 +752,14 @@ function addon.comms.grouping:UpdateParty()
             addon.comms.state.group.leader = name
         end
 
-        if addon.comms.players[name].isRxp then
+        isRXP = addon.comms.players[name] and addon.comms.players[name].isRxp
+        if isRXP then
             addon.comms.state.group.hasRXP = true
         end
 
         addon.comms.state.group.members[name] = {
             partyId = i,
-            isRxp = addon.comms.players[name].isRxp
+            isRxp = isRXP
         }
     end
 
