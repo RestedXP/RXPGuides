@@ -886,6 +886,16 @@ end
 function addon.targeting:GetMarkerIndex(kind, kindIndex)
     local raidTargetIndex
 
+    if IsInGroup() and addon.settings.profile.enableNonLeadMarking and addon.comms.state.group.hasRXP then
+        -- Overwrite kindIndex if party, works best for 1-3 RXP members
+        --- party1: star and skull
+        --- party2: circle and cross
+        --- party3: diamond and square
+        --- party4: triangle and skull
+        --- party5: star and cross
+        kindIndex = addon.comms.state.group.members[addon.player.name].markerIndex
+    end
+
     -- kindIndex is always >= 1, but to preserve modulus do -1
     kindIndex = kindIndex - 1
 
@@ -895,6 +905,7 @@ function addon.targeting:GetMarkerIndex(kind, kindIndex)
         raidTargetIndex = (kindIndex % 4) + 1
     elseif kind == 'unitscan' or kind == 'rare' then
          -- Use moon 5
+         -- Use Moon for all party members
         raidTargetIndex = 5
     elseif kind == 'mob' then
         -- Use skull 8, cross 7, square 6

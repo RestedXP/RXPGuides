@@ -738,9 +738,10 @@ function addon.comms.grouping:ShareQuest(questId)
 end
 
 function addon.comms.grouping:UpdateParty()
-    addon.comms.state.group = {leader = nil, members = {}}
+    addon.comms.state.group = {leader = nil, members = {}, hasRXP = false}
 
     local name, partyId
+
     for i = 1, GetNumGroupMembers() - 1 do
         partyId = "party" .. i
         name = UnitName(partyId)
@@ -751,6 +752,32 @@ function addon.comms.grouping:UpdateParty()
             addon.comms.state.group.leader = name
         end
 
-        addon.comms.state.group.members[name] = i
+        if addon.comms.players[name].isRxp then
+            addon.comms.state.group.hasRXP = true
+        end
+
+        addon.comms.state.group.members[name] = {
+            partyId = i,
+            isRxp = addon.comms.players[name].isRxp
+        }
+    end
+
+    if not addon.comms.state.group.hasRXP then return end
+
+    local markerIndex = 1
+
+    -- Load all party data first for hasRXP before setting markerIndex
+    --- Loop over party again to preserve ordering
+    for i = 1, GetNumGroupMembers() - 1 do
+        partyId = "party" .. i
+
+        name = UnitName(partyId)
+
+        if not name then break end
+
+        if addon.comms.state.group.members[name].isRxp then
+            addon.comms.state.group.members[name].markerIndex = markerIndex
+            markerIndex = markerIndex + 1
+        end
     end
 end
