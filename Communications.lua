@@ -100,25 +100,25 @@ function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
 
     self:AnnounceSelf("ANNOUNCE")
 
-    addon.comms.grouping.UpdateParty()
+    addon.comms.grouping:UpdateParty()
 end
 
 function addon.comms:GROUP_FORMED()
     C_Timer.After(5 + mrand(5), function()
         self:AnnounceSelf("ANNOUNCE")
 
-        addon.comms.grouping.UpdateParty()
+        addon.comms.grouping:UpdateParty()
     end)
 end
 
 function addon.comms:GROUP_LEFT()
     self.state.rxpGroupDetected = false
 
-    addon.comms.grouping.UpdateParty()
+    addon.comms.grouping:UpdateParty()
 end
 
 function addon.comms:GROUP_ROSTER_UPDATE()
-    addon.comms.grouping.UpdateParty()
+    addon.comms.grouping:UpdateParty()
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -737,8 +737,8 @@ function addon.comms.grouping:ShareQuest(questId)
     return _G.QuestLogPushQuest(questLogIndex)
 end
 
-function addon.comms.grouping.UpdateParty()
-    wipe(addon.comms.state.group.members)
+function addon.comms.grouping:UpdateParty()
+    addon.comms.state.group = {leader = nil, members = {}}
 
     local name
     for i = 1, GetNumGroupMembers() - 1 do
