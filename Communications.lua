@@ -16,7 +16,11 @@ local AceGUI = LibStub("AceGUI-3.0")
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
 
 addon.comms._commPrefix = "RXPGComms"
-addon.comms.state = {rxpGroupDetected = false, updateFound = {guide = false, addon = false}}
+addon.comms.state = {
+    rxpGroupDetected = false,
+    updateFound = {guide = false, addon = false},
+    group = {leader = nil, members = {}}
+}
 
 local function announceLevelUp(message)
     if not message then return end
@@ -46,6 +50,7 @@ function addon.comms:Setup()
     -- Leave addon or guide version checks even if max level
     self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
+    self:RegisterEvent("GROUP_ROSTER_UPDATE")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
@@ -91,12 +96,30 @@ function addon.comms:UpdateDB()
 end
 
 function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
-    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
+    if not (isInitialLogin or isReloadingUi) then return end
+
+    self:AnnounceSelf("ANNOUNCE")
+
+    addon.comms.grouping.UpdateParty()
 end
 
-function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
+function addon.comms:GROUP_FORMED()
+    C_Timer.After(5 + mrand(5), function()
+        self:AnnounceSelf("ANNOUNCE")
 
-function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
+        addon.comms.grouping.UpdateParty()
+    end)
+end
+
+function addon.comms:GROUP_LEFT()
+    self.state.rxpGroupDetected = false
+
+    addon.comms.grouping.UpdateParty()
+end
+
+function addon.comms:GROUP_ROSTER_UPDATE()
+    addon.comms.grouping.UpdateParty()
+end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
     if not addon.settings.profile.enableTracker then
@@ -712,4 +735,21 @@ function addon.comms.grouping:ShareQuest(questId)
     end
 
     return _G.QuestLogPushQuest(questLogIndex)
+end
+
+function addon.comms.grouping.UpdateParty()
+    wipe(addon.comms.state.group.members)
+
+    local name
+    for i = 1, GetNumGroupMembers() - 1 do
+        name = UnitName("party" .. i)
+
+        if not name then break end
+
+        if UnitIsGroupLeader("party" .. i) then
+            addon.comms.state.group.leader = name
+        end
+
+        addon.comms.state.group.members[i] = name
+    end
 end

@@ -238,11 +238,7 @@ function addon.targeting:UpdateFollowMacro(leaderName)
     end
 
     if not leaderName then
-        for i = 1, GetNumGroupMembers() - 1 do
-            if UnitIsGroupLeader("party" .. i) then
-                leaderName = UnitName("party" .. i)
-            end
-        end
+        leaderName = addon.comms.state.group.leader
     end
 
     if not leaderName then return end
