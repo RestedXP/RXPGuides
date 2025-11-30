@@ -1741,7 +1741,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     createFollowMacro = {
                         name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
-                        desc = fmt("%s %s %s %s", _G.CREATE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
+                        desc = fmt("%s %s %s %s", _G.ENABLE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 2.3,
