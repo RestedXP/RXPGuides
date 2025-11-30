@@ -740,16 +740,17 @@ end
 function addon.comms.grouping:UpdateParty()
     addon.comms.state.group = {leader = nil, members = {}}
 
-    local name
+    local name, partyId
     for i = 1, GetNumGroupMembers() - 1 do
-        name = UnitName("party" .. i)
+        partyId = "party" .. i
+        name = UnitName(partyId)
 
         if not name then break end
 
-        if UnitIsGroupLeader("party" .. i) then
+        if UnitIsGroupLeader(partyId) then
             addon.comms.state.group.leader = name
         end
 
-        addon.comms.state.group.members[i] = name
+        addon.comms.state.group.members[name] = i
     end
 end
