@@ -2,33 +2,44 @@
 -- ================    ALLIED RACE UNLOCK   =======================
 -- ================================================================
 
+--Nesting
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#subgroup Allied Races
+#name a) UNLOCKING
+#displayname Unlocking
+#chapters a) Void Elf Unlock;a) Lightforged Draenei Unlock;a) DarkIronDwarf Unlock;a) KulTiran Unlock;a) Mechagnome Unlock;a) EarthenDwarf Unlock (A) << Alliance
+#chapters a) Nightborne Unlock;a) Highmountain Tauren Unlock;a) Maghar Orc Unlock;a) Zandalari Troll Unlock;a) Vulpera Unlock;a) EarthenDwarf Unlock (H) << Horde
+]])
+
 -----------------------------------------------------
 --- ALLIANCE
 -----------------------------------------------------
-
---SEPERATOR
-RXPGuides.RegisterGuide([[
-#retail
-#group RestedXP Collectables
-#subgroup Allied Races
-#name 1a
-#displayname |cFFFCDC00UNLOCK|r
-#disabled
-
-
-]])
 
 ---VoidElf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
 #name a) Void Elf Unlock
 #displayname |cFF00CCFF1|r - Void Elf
-#next ab) Lightforged Draenei Unlock
+#next a) Lightforged Draenei Unlock
+#chapter
 
 << Alliance !VoidElf
+
+step
+    #include a) Void Elf Unlock2
+]])
+---VoidElf
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#name a) Void Elf Unlock2
+#internal
 
 step
     #completewith next
@@ -72,16 +83,26 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tCick on the |cRXP_PICK_Void Portal|r.
     .complete 49787,1 --1/1 Travel to the Ghostlands
 step
-    .goto 95,33.87,33.37,5,0
-    .goto 95,33.63,34.46
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Umbric's Notes - Sanctum of the Moon|r.
+    #label SanctumoftheMoonStart
+    #completewith next
+    .goto 95,33.8,33.52,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Notes|r.
     .complete 49787,2 --1/1 Umbric's Notes - Sanctum of the Moon
 step
-    .goto 95,33.7,33.59,5,0
-    .goto 95,34,33.19,5,0
-    .goto 95,46.88,55.00,5,0
-    .goto 95,46.88,54.95
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Umbric's Notes - Andilien Estate|r.
+    #completewith SanctumoftheMoonStart
+    .goto 95,33.63,34.46,25 >>Enter the building
+step
+    #requires SanctumoftheMoonStart
+    .goto 95,33.63,34.46
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Notes|r.
+    .complete 49787,2 --1/1 Umbric's Notes - Sanctum of the Moon
+step
+    #label SanctumoftheMoonEnd
+    .goto 95,33.79,33.39,10,0
+    .goto 95,47.11,56.39,10,0
+    .goto 95,46.65,56.13,10,0
+    .goto 95,46.88,54.96
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Notes|r.
     .complete 49787,3 --1/1 Umbric's Notes - Andilien Estate
 step
     .goto 95,46.69,56.05,5,0
@@ -90,12 +111,13 @@ step
     .goto 95,71.04,32.02,5,0
     .goto 95,79.35,16.76,5,0
     .goto 95,79.66,17.52
-    .cast 258931 >> Jump to and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Teleportation Console|r.
+    .cast 258931 >>Jump to and |TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Teleportation Console|r.
 step
+    #label SanctumoftheMoonStart2
     .goto 95,79.99,19.86,5,0
     .goto 95,79.27,20.21,5,0
     .goto 95,79.66,19.7
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Umbric's Notes - Dawnstar Spire|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Book|r.
     .complete 49787,4 --1/1 Umbric's Notes - Dawnstar Spire
 step
     .goto 95,79.68,19.60
@@ -104,72 +126,110 @@ step
     .accept 48962 >>Accept Telogrus Rift
     .target Alleria Windrunner
 step
+    .isOnQuest 48962
     .goto 95,79.64,19.8
-    .zone 972 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    .zone 972 >>Click on the |cRXP_PICK_Void Portal|r.
 step
+    .isOnQuest 48962
     .goto 972,47.84,73.88
     .gossipoption 47941 >>Talk to |cRXP_FRIENDLY_Magister Umbric|r.
     .timer 66,Duration until continuation.
     .target Magister Umbric
 step
+    .isInScenario 1410
     .goto 972,48.97,73.02
-    .scenario 3675,1 >>|cRXP_WARN_Head to the location indicated by the arrow|r.
+    >>|cRXP_WARN_Head to the location indicated by the arrow|r.
+    .scenario 3675,1
 step
+    .isInScenario 1410
     .goto 972,37.3,49.23
-    .scenario 3490,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    .scenario 3490,1
 step
+    .isInScenario 1410
     .goto 972,37.3,49.23
-    .scenario 3662,1,100 >>Kill |cRXP_ENEMY_Void Creatures|r. |cRXP_WARN_Don't go near Void Bubbles|r.
+    >>Kill |cRXP_ENEMY_Void Creatures|r. 
+    *|cRXP_WARN_Don't be close to black pulsating bubbles|r.
+    .scenario 3662,1,100
     .mob Creeping Void
     .mob Netherguard Phaseblade
     .mob Curious Voidstalker
     .mob Netherguard Transmogrifier
 step
+    .isInScenario 1410
     .goto 972,37.3,49.23
-    .scenario 3673,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    .scenario 3673,1
 step
-    .goto 972,37.3,49.23
-    .scenario 3495,1,100 >>Kill |cRXP_ENEMY_Void Creatures|r. |cRXP_WARN_Don't go near Void Bubbles|r.
+    .isInScenario 1410
+    .goto 972,28.96,40.21
+    >>Kill |cRXP_ENEMY_Void Creatures|r.
+    *|cRXP_WARN_Don't be close to black pulsating bubbles|r.
+    .scenario 3495,1,100
     .mob Dark Manifestation
     .mob Curious Voidstalker
 step
+    .isInScenario 1410
     .goto 972,28.96,40.21
-    .scenario 3496,1 >>Kill |cRXP_ENEMY_Nhr'ghesh|r.
+    >>Kill |cRXP_ENEMY_Nhr'ghesh|r.
+    .scenario 3496,1
     .mob Nhr'ghesh
 step
+    .isInScenario 1410
     .goto 972,28.89,38.2
-    .scenario 3520,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Portal|r.
+    .scenario 3520,1
 step
-    .goto 972,29.02,27.72,5,0
-    .goto 972,28.5,21.7,5,0
+    .isInScenario 1410
+    .goto 972,29.02,27.72
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Voidforge|r.
+    .scenario 3674,1,1
+step
+    .isInScenario 1410
+    .goto 972,28.5,21.7
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Voidforge|r.
+    .scenario 3674,1,2
+step
+    .isInScenario 1410
     .goto 972,26.23,24.46
-    .scenario 3674,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Voidforges|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Voidforge|r.
+    .scenario 3674,1,3
 step
+    #label SanctumoftheMoonEnd2
+    .isInScenario 1410
     .goto 972,27.78,24.1
     >>Kill |cRXP_ENEMY_Nether-Prince Durzaan|r.
     .complete 48962,1 --"Telogrus Rift" scenario complete
+    .scenario 3491,1
     .mob Nether-Prince Durzaan
 step
     #completewith next
-    .goto 972,27.98,24.48,5,0
+    #label Telogrus Rift
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    .turnin 48962 >>Turn in Telogrus Rift
+    .target Aysa Cloudsinger
+step
+    #completewith Telogrus Rift
+    .goto 972,27.98,24.48
     .cast 253691 >>Click on the |cRXP_PICK_Void Portal|r to teleport to |cRXP_WARN_Stormwind|r.
     .isOnQuest 48962
 step
+    #requires Telogrus Rift
     .goto 84,52.05,13.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 48962 >>Turn in Telogrus Rift
     .target Aysa Cloudsinger
-]])
 
+]])
 --LightforgedDraenei
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ab) Lightforged Draenei Unlock
+#name a) Lightforged Draenei Unlock
 #displayname |cFF00CCFF2|r - Lightforged Draenei
-#next ac) DarkIronDwarf Unlock
+#next a) DarkIronDwarf Unlock
+#chapter
 
 << Alliance !LightforgedDraenei
 
@@ -401,16 +461,15 @@ step
     .turnin 50071 >>Turn in For the Light!
     .target Aysa Cloudsinger
 ]])
-
 --DarkIronDwarf 
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ac) DarkIronDwarf Unlock
+#name a) DarkIronDwarf Unlock
 #displayname |cFF00CCFF3|r - Dark Iron Dwarf
-#next ad) KulTiran Unlock
+#next a) KulTiran Unlock
+#chapter
 
 << Alliance !DarkIronDwarf
 
@@ -695,16 +754,15 @@ step
     .turnin 53566 >>Turn in Dark Iron Dwarves
     .target Aysa Cloudsinger
 ]])
-
 --KulTiran
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ad) KulTiran Unlock
+#name a) KulTiran Unlock
 #displayname |cFF00CCFF4|r - Kul Tiran
-#next ae) Mechagnome Unlock
+#next a) Mechagnome Unlock
+#chapter
 
 << Alliance !KulTiran
 
@@ -1135,16 +1193,15 @@ step
     .turnin 53720 >>Turn in Allegiance of Kul Tiras
     .target Anduin Wrynn
 ]])
-
 --Mechagnome
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ae) Mechagnome Unlock
+#name a) Mechagnome Unlock
 #displayname |cFF00CCFF5|r - Mechagnome
-#next a) Void Elf Unlock
+#next a) EarthenDwarf Unlock (A)
+#chapter
 
 << Alliance !Mechagnome
 
@@ -1489,12 +1546,23 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
 #name a) Nightborne Unlock
 #displayname |cFF00CCFF1|r - Nightborne
-#next ab) Highmountain Tauren Unlock
+#next a) Highmountain Tauren Unlock
+#chapter
 
 << Horde !Nightborne
+
+step
+    #include a) Nightborne Unlock2
+]])
+--Nightborne
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#name a) Nightborne Unlock2
+#internal
 
 step
     #completewith NightborneStartQuestline
@@ -1585,58 +1653,60 @@ step
     .accept 49354 >>Accept Remember the Sunwell
     .target Lady Liadrin
 step
-    #sticky
-    #label NightborneRemembertheSunwell
-    >>Complete the "Remember the Sunwell" scenario
-    .goto 110,53.97,19.51,0,0
-    .complete 49354,1 --1/1 "Remember the Sunwell" scenario complete
-step
+    #label RemembertheSunwellStart
     .isOnQuest 49354
-    #completewith next
-    .goto 110,56.43,73.10,10,0
-    .goto 110,53.97,19.51
-    .zone 973 >>Take the Portal to Sunwell
+    .goto 110,53.95,19.49
+    .zone 973 >>Click on the |cRXP_PICK_Portal|r
 step
-    .isOnQuest 49354
-    >>Go to the waypoint location. Wait for the RP
+    .goto 973,56.85,72.72
+    .isInScenario 1443
+    #title |cFFFCDC00Follow the Arrow|r
+    .scenario 3580,1
+    .timer 60,RP
+step
+    .isInScenario 1443
+    .goto 973,49.44,65.97
+    #title |cFFFCDC00Follow the Arrow|r
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .scenario 3583,1
-    .goto 973,49.27,67.10
 step
-    .isOnQuest 49354
-    >>Kill |cRXP_ENEMY_Void Effusions|r and |cRXP_ENEMY_Creeping Void|r.
-    .goto 973,46.43,74.16,25,0
-    .goto 973,36.95,61.32,25,0
-    .goto 973,47.16,47.87,25,0
-    .goto 973,55.03,59.13,25,0
-#loop
-	.line 973,46.43,74.16,36.95,61.32,47.16,47.87,55.03,59.13
+    #loop
 	.goto 973,46.43,74.16,25,0
 	.goto 973,36.95,61.32,25,0
 	.goto 973,47.16,47.87,25,0
 	.goto 973,55.03,59.13,25,0
-    .scenario 3584,1
+    .isInScenario 1443
+    >>Kill |cRXP_ENEMY_Voidbeings|r
+    .scenario 3584,1,100
+    .mob Void Fragment
     .mob Void Effusion
     .mob Creeping Void
-    .mob Void Fragment
 step
-    .isOnQuest 49354
-    >>Kill |cRXP_ENEMY_Aruun the Darkener|r.
-    .goto 973,49.51,66.10
+    .isInScenario 1443
+    .goto 973,48.59,67.07
+    >>Kill |cRXP_ENEMY_Aruun the Darkener|r
     .scenario 3585,1
+    .timer 32,RP
     .mob Aruun the Darkener
 step
-    .isOnQuest 49354
-    >>Go to the waypoint location. Wait for the RP
-    .goto 973,62.80,66.16
-    .scenario 3663,1 --1/1 Void rift closed
+    .isInScenario 1443
+    .goto 973,48.59,67.07
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .scenario 3663,1
+    .timer 60,RP
 step
-    .isOnQuest 49354
-    #completewith NightborneRemembertheSunwell
-    >>Use the |cRXP_PICK_Silvermoon Translocator|r.
-    .goto 973,62.58,66.94
-    .scenario 3586,1 --1/1 Leave the Sunwell
+    .isInScenario 1443
+    .goto 973,62.03,67.6
+    #title |cFFFCDC00Follow the Arrow|r
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .scenario 3586,1
+    .complete 49354,1 --"Remember the Sunwell" scenario complete
 step
-    #requires NightborneRemembertheSunwell
+    #label RemembertheSunwellEnd
+    .isOnQuest 49354
+    .goto 973,62.03,67.6
+    .zone 110 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Silvermoon Translocator|r
+step
     .goto 110,58.44,19.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r.
     .turnin 49354 >>Turn in Remember the Sunwell
@@ -1683,16 +1753,15 @@ step
     .isQuestTurnedIn 49614
     +Congratulations! You've unlocked the Nightborne!
 ]])
-
 --HighmountainTauren
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ab) Highmountain Tauren Unlock
+#name a) Highmountain Tauren Unlock
 #displayname |cFF00CCFF2|r - Highmountain Tauren
-#next ac) Maghar Orc Unlock
+#next a) Maghar Orc Unlock
+#chapter
 
 << Horde !HighmountainTauren
 
@@ -2063,16 +2132,15 @@ step
     .isQuestTurnedIn 48433
     +Congratulations! You've unlocked the Highmountain Tauren!
 ]])
-
 --MagharOrc
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ac) Maghar Orc Unlock
+#name a) Maghar Orc Unlock
 #displayname |cFF00CCFF3|r - Maghar Orc
-#next ad) Zandalari Troll Unlock
+#next a) Zandalari Troll Unlock
+#chapter
 
 << Horde !MagharOrc
 
@@ -2421,16 +2489,15 @@ step
     .isQuestTurnedIn 57448
     +Congratulations! You've unlocked the Maghar Orc!
 ]])
-
 --ZandalariTroll
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ad) Zandalari Troll Unlock
+#name a) Zandalari Troll Unlock
 #displayname |cFF00CCFF4|r - Zandalari Troll
-#next ae) Vulpera Unlock
+#next a) Vulpera Unlock
+#chapter
 
 << Horde !ZandalariTroll
 
@@ -2816,16 +2883,15 @@ step
     .isQuestTurnedIn 53719
     +Congratulations! You've unlocked the Zandalari Trolls
 ]])
-
 --Vulpera
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ae) Vulpera Unlock
+#name a) Vulpera Unlock
 #displayname |cFF00CCFF5|r - Vulpera
-#next a) Nightborne Unlock
+#next a) EarthenDwarf Unlock (H)
+#chapter
 
 << Horde !Vulpera
 
@@ -3362,65 +3428,35 @@ step
     +Congratulations! You've unlocked the Vulpera!
 ]])
 
--- =======================================
--- ============== Allied Race: Haranir ==============
--- =======================================
-
+-- ============================================================
+-- ================    HERITAGE ARMOR   =======================
+-- ============================================================
 
 --Nesting
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Midnight
-#subgroup |cFFFCDC00(80-90)|r Campaigns
-#name a) 1
-#displayname |cFF00FF001|r - ZONE NAME
-#chapters a) Emergence
+#group RestedXP Collectables
+#subgroup Allied Races
+#name a) HERITAGE ARMOR
+#displayname Heritage Armors
+#chapters a) Human Heritage Armor;a) Dwarf Heritage Armor;a) Nightelf Heritage Armor;a) Gnome Heritage Armor;a) Draenei Heritage Armor;a) Worgen Heritage Armor;a) EarthenDwarf Heritage Armor;a) Void Elf Heritage Armor;a) Lightforged Draenei Heritage Armor;a) Dark Iron Dwarf Heritage Armor;a) Kul Tiran Heritage Armor;a) Heritage Pandaren;a) Haranir Heritage Armor << Alliance
+#chapters a) Orc Heritage Armor;a) Undead Heritage Armor;a) Tauren Heritage Armor;a) Troll Heritage Armor;a) Blood Elf Heritage Armor;a) Goblin Heritage Armor;a) Nightborne Heritage Armor;a) Highmountain Heritage Armor;a) Mag'har Orc Heritage Armor;a) Zandalari Troll Heritage Armor;a) Vulpera Heritage Armor;a) Heritage Pandaren;a) Haranir Heritage Armor << Horde
 ]])
-
---Emergence
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Midnight
-#chapter
-#name a) Emergence
-#displayname |cFF00CCFF1|r - Emergence
-#next
-
-
-]])
-
-
--- ============================================================
--- ================    HERITAGE ARMOR   =======================
--- ============================================================
 
 -----------------------------------------------------
 --- ALLIANCE
 -----------------------------------------------------
-
---SEPERATOR
-RXPGuides.RegisterGuide([[
-#retail
-#group RestedXP Collectables
-#subgroup Allied Races
-#name az
-#displayname |cFFFCDC00HERITAGE ARMOR|r
-#disabled
-
-
-]])
 
 --Human
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name b) Human Heritage Armor
+#name a) Human Heritage Armor
 #displayname |cFF1EFF001|r - Human
-#next ba) Dwarf Heritage Armor
+#next a) Dwarf Heritage Armor
+#chapter
 
 << Alliance
 
@@ -3860,16 +3896,15 @@ step
     .turnin 72452 >>Turn in Go with Honor, Friend
     .target General Hammond Clay
 ]])
-
 --Dwarf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ba) Dwarf Heritage Armor
+#name a) Dwarf Heritage Armor
 #displayname |cFF1EFF002|r - Dwarf
-#next bc) Nightelf Heritage Armor
+#next a) Nightelf Heritage Armor
+#chapter
 
 << Alliance
 
@@ -4149,16 +4184,15 @@ step
     .turnin 53846 >>Turn in Legacy of the Bronzebeard
     .target Muradin Bronzebeard
 ]])
-
 --Nightelf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bc) Nightelf Heritage Armor
+#name a) Nightelf Heritage Armor
 #displayname |cFF1EFF003|r - Nightelf
-#next bd) Gnome Heritage Armor
+#next a) Gnome Heritage Armor
+#chapter
 
 << Alliance
 
@@ -4481,16 +4515,15 @@ step
     .target Maiev Shadowsong
     .turnin 76213 >>Turn in Honor of the Goddess
 ]])
-
 --Gnome
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bd) Gnome Heritage Armor
+#name a) Gnome Heritage Armor
 #displayname |cFF1EFF004|r - Gnome
-#next be) Draenei Heritage Armor
+#next a) Draenei Heritage Armor
+#chapter
 
 << Alliance
 
@@ -4723,16 +4756,15 @@ step
     .turnin 54642 >>Turn in G.E.A.R. Up
     .target Captain Tread Sparknozzle
 ]])
-
 --Draenei
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name be) Draenei Heritage Armor
+#name a) Draenei Heritage Armor
 #displayname |cFF1EFF005|r - Draenei
-#next bf) Worgen Heritage Armor
+#next a) Worgen Heritage Armor
+#chapter
 
 << Alliance
 
@@ -5154,16 +5186,15 @@ step
     .turnin 78083 >>Turn in Our Path Forward
     .target Prophet Velen
 ]])
-
 --Worgen
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bf) Worgen Heritage Armor
+#name a) Worgen Heritage Armor
 #displayname  |cFF1EFF006|r - Worgen
-#next bg) Void Elf
+#next a) Void Elf Heritage Armor
+#chapter
 
 << Alliance
 
@@ -5359,16 +5390,15 @@ step
     .turnin 54990 >>Turn in The New Guard
     .target Princess Tess Greymane
 ]])
-
 --Void Elf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bg) Void Elf
+#name a) Void Elf Heritage Armor
 #displayname |cFF1EFF007|r - Void Elf
-#next bh) Lightforged Draenei
+#next a) Lightforged Draenei Heritage Armor
+#chapter
 
 << Allianc
 
@@ -5385,16 +5415,15 @@ step
     .turnin 49928 >>Turn in Heritage of the Void
     .target Alleria Windrunner
 ]])
-
 --Lightforged Draenei
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bh) Lightforged Draenei
+#name a) Lightforged Draenei Heritage Armor
 #displayname |cFF1EFF008|r - Lightforged Draeanei
-#next bi) Dark Iron Dwarf
+#next a) Dark Iron Dwarf Heritage Armor
+#chapter
 
 << Alliance
 
@@ -5411,16 +5440,15 @@ step
     .target Captain Fareeya
     .turnin 49782 >>Turn in Heritage of the Lightforged
 ]])
-
 --Dark Iron Dwarf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bi) Dark Iron Dwarf
+#name a) Dark Iron Dwarf Heritage Armor
 #displayname |cFF1EFF009|r - Dark Iron Dwarf
-#next bj) Kul Tiran
+#next a) Kul Tiran Heritage Armor
+#chapter
 
 << Alliance
 
@@ -5441,16 +5469,15 @@ step
     .turnin 51483 >>Turn in Heritage of the Dark Iron
     .target Alleria Windrunner
 ]])
-
 --Kul Tiran
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bj) Kul Tiran
+#name a) Kul Tiran Heritage Armor
 #displayname |cFF1EFF0010|r - Kul Tiran
-#next bk) Mechagnome
+#next a) Mechagnome Heritage Armor
+#chapter
 
 << Alliance
 
@@ -5464,16 +5491,15 @@ step
     .turnin 53722 >>Turn in Heritage of the Kul Tiran
     .target Katherine Proudmoore
 ]])
-
 --Mechagnome
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bk) Mechagnome
+#name a) Mechagnome Heritage Armor
 #displayname |cFF1EFF0011|r - Mechagnome
-#next bl) Heritage EarthenDwarf
+#next a) EarthenDwarf Heritage Armor
+#chapter
 
 << Alliance
 
@@ -5492,6 +5518,40 @@ step
     .turnin 58436 >>Turn in Heritage of the Mechagnome
     .target Prince Erazmin
 ]])
+--EarthenDwarf
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#name a) EarthenDwarf Heritage Armor
+#displayname |cFF1EFF007|r - Earthen Dwarf
+#chapter
+
+<< Alliance
+
+step
+    >>Log into a level 50+ Earthen character to get this quest when you enter Dornogal.
+    .accept 82771 >>Accept Heritage of the Earthen
+step
+    #completewith next
+    #label Upload Experiences
+    .goto 2339,30.48,59.54,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r.
+    .complete 82771,1 --Upload Experiences
+step
+    #completewith Upload Experiences
+    .goto 2339,29.24,59.69,25 >>Enter the Building
+step
+    .goto 2339,29.24,59.69
+    #requires Upload Experiences
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r.
+    .complete 82771,1 --Upload Experiences
+step
+    .goto 2339,28.91,59.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r.
+    .turnin 82771 >>Turn in Heritage of the Earthen
+    .target Dawn
+]])
 
 -----------------------------------------------------
 --- HORDE
@@ -5502,10 +5562,10 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name b) Orc Heritage Armor
+#name a) Orc Heritage Armor
 #displayname |cFF1EFF001|r - Orc
-#next ba) Undead Heritage Armor
+#next a) Undead Heritage Armor
+#chapter
 
 << Horde
 
@@ -5926,16 +5986,15 @@ step
     .turnin 72479 >>Turn in Aka'magosh
     .target Eitrigg
 ]])
-
 --Undead
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name ba) Undead Heritage Armor
+#name a) Undead Heritage Armor
 #displayname |cFF1EFF002|r - Undead
-#next bc) Tauren Heritage Armor
+#next a) Tauren Heritage Armor
+#chapter
 
 << Horde
 
@@ -6440,16 +6499,15 @@ step
     .turnin 72867 >>Turn in I Am Forsaken
     .target Lilian Voss
 ]])
-
 --Tauren
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bc) Tauren Heritage Armor
+#name a) Tauren Heritage Armor
 #displayname |cFF1EFF003|r - Tauren
-#next bd) Troll Heritage Armor
+#next a) Troll Heritage Armor
+#chapter
 
 << Horde
 
@@ -6575,16 +6633,15 @@ step
     .turnin 54765 >>Turn in Thank Your Guide
     .target Ceremonial Tauren Garb
 ]])
-
 --Troll
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bd) Troll Heritage Armor
+#name a) Troll Heritage Armor
 #displayname |cFF1EFF004|r - Troll
-#next be) Blood Elf Heritage Armor
+#next a) Blood Elf Heritage Armor
+#chapter
 
 << Horde
 
@@ -7042,18 +7099,28 @@ step
     .turnin 77906 >>Turn in De Darkspear Loa
     .target Master Gadrin
 ]])
-
 --BloodElf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name be) Blood Elf Heritage Armor
+#name a) Blood Elf Heritage Armor
 #displayname |cFF1EFF005|r - Blood Elf
-#next bf) Goblin Heritage Armor
+#next a) Goblin Heritage Armor
+#chapter
 
 << Horde
+
+step
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor
+]])
+--BloodElf 2
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#name a) Blood Elf Heritage Armor2
+#internal
 
 step
     #label StartIncludePrepGuide
@@ -7088,15 +7155,23 @@ step
     .goto 95,46.31,31.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|
     .turnin 53734 >>Turn in Walk Among Ghosts
+    .target Lor'themar Theron
+step
+    .goto 95,46.31,31.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|
     .accept 53882 >>Accept Writing on the Wall
     .target Lor'themar Theron
 step
     .goto 95,47.73,84.01
-    >>Click on the |cRXP_PICK_Lamp|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lamp|r
     .complete 53882,1 --1/1 Light the First Flame
 step
+    #label Writing on the Wall
+    .isOnQuest 53882
+    .goto 95,45.47,75.66,15 >>Follow the Arrow
+step
     .goto 95,37.08,65.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_which will spawn after awhile next to you.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you.|r
     .turnin 53882 >>Turn in Writing on the Wall
     .target Lor'themar Theron
     .accept 53735 >>Accept The First to Fall
@@ -7105,9 +7180,13 @@ step
     >>Use the |cRXP_WARN_ExtraActionButton|r
     .complete 53735,1 --1/1 Shed light on the first battlefield
 step
+    #label Writing on the Wall2
     .goto 95,36.61,67.25
+    *|cRXP_WARN_You can cancel the stun by pressing the macro in the "active items frame"|r
     >>Kill |cRXP_ENEMY_Undeads|r
     .complete 53735,2 --Fight back the undead (100%)
+    .timer 26,RP
+    .macro Remove Aura,461859 >>/cancelaura Light the Way
     .mob Risen Attacker
     .mob Risen Abomination
     .mob Necrotic Echo
@@ -7139,25 +7218,29 @@ step
     .accept 53737 >>Accept The Day Hope Died
 step
     .goto 95,45.42,30.52
-    .fly Fairbreeze Village >>Fly to Fairbreeze Village
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Sunwing|r
+    .fly Fairbreeze Village >>Fly to Fairbreeze Village
     .target Skymaster Sunwing
 step
     .goto 94,51.21,69.28
-    >>Use your [ExtraActionButton] when you are on position.
+    >>Use your [ExtraActionButton] on the illuminated spot.
     .complete 53737,1 --1/1 Light shed at Sylvanas' fall
 step
+    #label TheDayHopeDiedStart
     .goto 94,51.44,69.09
-    >>Click on |cRXP_PICK_Silvermoon Ballista|r
+    *|cRXP_WARN_You can cancel the stun by pressing the macro in the "active items frame"|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Silvermoon Ballista|r
     .complete 53737,2 --1/1 Man a Silvermoon Ballista
+    .macro Remove Aura,461859 >>/cancelaura Light the Way
     .target Silvermoon Ballista
 step
+    #label TheDayHopeDiedEnd
     .goto 94,51.41,68.90
-    >>Use |T132330:0|t[Throw Glaive](1) on |cRXP_ENEMY_Undead|r
+    >>Use |T132330:0|t[Throw Glaive](1) on the |cRXP_ENEMY_Undeads|r
     .complete 53737,3 --50/50 Kill undead
 step
     .goto 94,43.96,69.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you|r.
     .turnin 53737 >>Turn in The Day Hope Died
     .target Lor'themar Theron
     .accept 53738 >>Accept Defense of Quel'Danas
@@ -7176,7 +7259,7 @@ step
     .accept 53725 >>Accept A People Shattered
 step
     .goto 122,48.55,37.14
-    >>Click on the |cRXP_PICK_Lamp|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lamp|r
     .complete 53725,1 --1/1 Light the Final Flame
 step
     #loop
@@ -7195,7 +7278,7 @@ step
     .goto 122,47.4,75.11,40,0
     .goto 122,50.3,84.11,40,0
     .goto 122,53.49,87.16
-    >>Use your [ExtraActionButton] when you are on position.
+    >>Use your [ExtraActionButton] on the illuminated spot.
     .complete 53853,1 --1/1 Light shed on Anasterian's Fall
 step
     .goto 122,53.25,85.67
@@ -7215,82 +7298,106 @@ step
     .target Lady Liadrin
     .accept 54096 >>Accept The Fall of the Sunwell
 step
-    #completewith next
-    .goto 122,44.38,45.69,5 >> Enter the Sunwell
-step
+    #label SunwellStart1
     .isOnQuest 54096
+    .goto 122,44.28,45.68
+    .zone 973 >>Enter the Sunwell
+step
+    .isInScenario 1699
     .goto 973,46.64,23.88
+    >>Use your [ExtraActionButton] on the illuminated spot.
     .scenario 3999,1
-    >>Use the |cRXP_WARN_ExtraActionButton|r when on the position.
 step
-    .isOnQuest 54096
+    .isInScenario 1699
     .goto 973,46.64,23.88
-    >>Kill |cRXP_ENEMY_Decrepit Stalker,|r |cRXP_ENEMY_Elven Shambler|r and |cRXP_ENEMY_Nerubis Vanguard.|r
-    .scenario 4000,1
+    *|cRXP_WARN_You can cancel the stun by pressing the macro in the "active items frame"|r
+    >>Kill incoming waves of enemies.
+    .scenario 4000,1,100
     .mob Decrepit Stalker
     .mob Elven Shambler
     .mob Nerubis Vanguard
+    .macro Remove Aura,461859 >>/cancelaura Light the Way
 step
-    .isOnQuest 54096
+    .isInScenario 1699
     .goto 973,46.64,23.88
     >>Kill |cRXP_ENEMY_Seer Drannix.|r
     .scenario 4001,1
     .mob Seer Drannix
 step
-    .isOnQuest 54096
+    .isInScenario 1699
     #completewith next
-    .goto 973,50.25,17.25
-    .cast 284579 >> Use |T461859:0|t[Light the Way] your |cRXP_WARN_ExtraActionButton|r.
-step
-    .isOnQuest 54096
-    .goto 973,48.33,20.52
+    #label Arthas
     >>Wait until the objective completes.
     .scenario 4002,1
 step
-    .isOnQuest 54096
-    .goto 973,48.33,20.52
-    >>Use the |cRXP_WARN_ExtraActionButton|r when on the position.
-    .scenario 4039,1
+    .isInScenario 1699
+    #completewith Arthas
+    .goto 973,50.25,17.25
+    .cast 284579 >>Use |T461859:0|t[Light the Way] your |cRXP_WARN_ExtraActionButton|r.
+    .timer 22,RP
 step
-    .isOnQuest 54096
+    #requires Arthas
+    .isInScenario 1699
+    .goto 973,48.33,20.55
+    >>Wait until the objective completes.
+    .scenario 4002,1
+step
+    .isInScenario 1699
+    .goto 973,48.33,20.55
+    >>Use the |cRXP_WARN_ExtraActionButton|r on the illuminated spot.
+    .scenario 4039,1
+    .timer 50,RP
+step
+    .isInScenario 1699
+    .goto 973,52.27,13.69,10,0
     .goto 973,28.35,63.46,20,0
     .goto 973,38.12,83.64,20,0
     .goto 973,47.18,85.34,20,0
     .goto 973,46.16,61.95
+    *|cRXP_WARN_You can cancel the stun by pressing the macro in the "active items frame"|r
     >>Escort |cRXP_FRIENDLY_Kael'thas Sunstrider.|r Kill the incoming |cRXP_ENEMY_attackers.|r
     .scenario 4003,1
+    .timer 45,RP
+    .macro Remove Aura,461859 >>/cancelaura Light the Way
     .target Kael'thas Sunstrider
     .mob Risen Defender
     .mob Tormented Magister
 step
-    .isOnQuest 54096
+    .isInScenario 1699
     .goto 973,47.98,64.75
     >>Kill |cRXP_ENEMY_Necrotic Sentinel|r
     .complete 54096,1 --Complete the Fall of the Sunwell scenario
+    .scenario 4004,1
     .mob Necrotic Sentinel
 step
+    #label The Fall of the Sunwell
     #completewith next
-    .isOnQuest 54096
-    .goto 973,55.47,72.13
-    .zone 110 >>Take the |cRXP_PICK_portal|r to Silvermoon city
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r
+    .turnin 54096 >>Turn in The Fall of the Sunwell
+    .target Lor'themar Theron
 step
-    .isOnQuest 54096
+    #completewith The Fall of the Sunwell
+    .goto 973,55.47,72.13
+    .zone 110 >>Click on the |cRXP_PICK_Portal|r
+step
+    #requires The Fall of the Sunwell
+    #label SunwellEnd1
     .goto 110,68.64,35.1,10,0
+    .goto 110,63.98,31.85,10,0
     .goto 110,60.37,28.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r
     .turnin 54096 >>Turn in The Fall of the Sunwell
     .target Lor'themar Theron
 ]])
-
 --Goblin
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bf) Goblin Heritage Armor
+#name a) Goblin Heritage Armor
 #displayname |cFF1EFF006|r - Goblin
-#next bg) Nightborne Heritage Armor
+#next a) Nightborne Heritage Armor
+#chapter
 
 << Horde
 
@@ -7533,16 +7640,15 @@ step
     .accept 57080 >>Accept A Fitting Reward
     .turnin 57080 >>Turn in *undefined*
 ]])
-
 --Nightborne
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bg) Nightborne Heritage Armor
+#name a) Nightborne Heritage Armor
 #displayname |cFF1EFF007|r - Nightborne
-#next bh) Highmountain Heritage Armor
+#next a) Highmountain Heritage Armor
+#chapter
 
 << Horde 
 
@@ -7557,16 +7663,15 @@ step
     .turnin 49784 >>Turn in Heritage of the Nightborne
     .target First Arcanist Thalyssra
 ]])
-
 --HighmountainTauren
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bh) Highmountain Heritage Armor
+#name a) Highmountain Heritage Armor
 #displayname |cFF1EFF008|r - Highmountain
-#next bi) Mag'har Orc Heritage Armor
+#next a) Mag'har Orc Heritage Armor
+#chapter
 
 << Horde
 
@@ -7585,17 +7690,15 @@ step
     .turnin 49783 >>Turn in Heritage of Highmountain
     .target Mayla Highmountain
 ]])
-
 --MagharOrc
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bi) Mag'har Orc Heritage Armor
+#name a) Mag'har Orc Heritage Armor
 #displayname |cFF1EFF009|r - Mag'har Orc
-#next bj) Zandalari Troll Heritage Armor
-
+#next a) Zandalari Troll Heritage Armor
+#chapter
 << Horde
 
 step
@@ -7608,17 +7711,15 @@ step
     .turnin 51484 >>Turn in Heritage of the Mag'har
     .target Overlord Geya'rah
 ]])
-
 --ZandalariTroll
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bj) Zandalari Troll Heritage Armor
+#name a) Zandalari Troll Heritage Armor
 #displayname |cFF1EFF0010|r - Zandalari Troll
-#next bk) Vulpera Heritage Armor
-
+#next a) Vulpera Heritage Armor
+#chapter
 << Horde
 
 step
@@ -7636,16 +7737,15 @@ step
     .turnin 53721 >>Turn in Heritage of the Zandalari
     .target Alleria Windrunner
 ]])
-
 --Vulpera
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bk) Vulpera Heritage Armor
+#name a) Vulpera Heritage Armor
 #displayname |cFF1EFF0011|r - Vulpera
-#next bm) Heritage Haranir
+#next a) Heritage Pandaren
+#chapter
 
 << Horde
 
@@ -7663,72 +7763,16 @@ step
 -----------------------------------------------------
 --- NEUTRAL
 -----------------------------------------------------
----
---EarthenDwarf
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Collectables
-#subgroup Allied Races
-#name bfa) Heritage EarthenDwarf
-#displayname |cFF1EFF007|r - Earthen Dwarf
-
-<< Alliance
-
-step
-    >>Log into a level 50+ Earthen character to get this quest when you enter Dornogal.
-    .accept 82771 >>Accept Heritage of the Earthen
-step
-    #completewith next
-    #label Upload Experiences
-    .goto 2339,30.48,59.54,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r.
-    .complete 82771,1 --Upload Experiences
-step
-    #completewith Upload Experiences
-    .goto 2339,29.24,59.69,25 >>Enter the Building
-step
-    .goto 2339,29.24,59.69
-    #requires Upload Experiences
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Console|r.
-    .complete 82771,1 --Upload Experiences
-step
-    .goto 2339,28.91,59.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn|r.
-    .turnin 82771 >>Turn in Heritage of the Earthen
-    .target Dawn
-]])
-
---Haranir
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Collectables
-#subgroup Allied Races
-#name bm) Heritage Haranir
-#displayname |cFF1EFF0012|r - Haranir
-#next bn) Heritage Pandaren
-
-step
-    >>zone 2413 >>Enter Harandar
-    *|cRXP_WARN_Use|r |T5927658:0|t[Rootwalking] 
-    .use 1238686
-step
-    .goto 2413,50.84,53.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r.
-    .turnin 82771 >>Turn in Heritage of the Haranir
-    .target Orweyna
-]])
 
 --Pandaren
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Collectables
-#subgroup Allied Races
-#name bn) Heritage Pandaren
-#displayname |cFF1EFF0013|r - Pandaren
-
+#name a) Heritage Pandaren
+#displayname |cFF1EFF0012|r - Pandaren
+#next a) Haranir Heritage Armor
+#chapter
 
 step << Horde
     .isOnQuest 84444
@@ -8180,4 +8224,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chon Po Stormstout|r
     .turnin 92030 >>Turn in A New Tradition
     .target Chon Po Stormstout
+]])
+--Haranir
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Collectables
+#name a) Haranir Heritage Armor
+#displayname |cFF1EFF0013|r - Haranir
+#internal
+#chapter
+
+step
+    >>zone 2413 >>Enter Harandar
+    *|cRXP_WARN_Use|r |T5927658:0|t[Rootwalking] 
+    .use 1238686
+step
+    .goto 2413,50.84,53.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r.
+    .turnin 82771 >>Turn in Heritage of the Haranir
+    .target Orweyna
 ]])
