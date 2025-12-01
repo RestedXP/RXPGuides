@@ -2012,7 +2012,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP War Within
 #subgroup |cFFFCDC00(80)|r Campaigns
-#name a) 11.0.7: Siren Isle
+#name ab) 11.0.7: Siren Isle
 #displayname 11.0.7: Siren Isle
 #chapters a) Siren Isle Campaign;a) Siren Isle Weeklies
 
@@ -3045,7 +3045,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP War Within
 #subgroup |cFFFCDC00(80)|r Campaigns
-#name a) 11.1: Undermined
+#name ac) 11.1: Undermined
 #displayname 11.1: Undermined
 #chapters a) Trust Issues;a) Undermine Awaits;a) Uncovering the Truth;a) Breaking the Shackles;a) Ignite the Fuel of Change;a) Homecoming
 
@@ -5522,7 +5522,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP War Within
 #subgroup |cFFFCDC00(80)|r Campaigns
-#name a) 11.2: Ghosts of K'aresh
+#name ad) 11.2: Ghosts of K'aresh
 #displayname 11.2: Ghosts of K'aresh
 #chapters a) A Shadowy Invitation;a) Void Alliance;a) Desert Power;a) Shadows En Garde;a) The Light of K'aresh
 
@@ -7242,7 +7242,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP War Within
 #subgroup |cFFFCDC00(80)|r Campaigns
-#name a) 11.2.7: Radiant Visions
+#name ae) 11.2.7: Radiant Visions
 #displayname 11.2.7: Radiant Visions
 #chapters a) Radiant Visions;a) A Meeting with Minn'da;a) Paths Forward
 
