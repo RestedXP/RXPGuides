@@ -2417,6 +2417,12 @@ step
     .goto 627,56.99,46.76
     >>Enter Legion Dalaran
     .accept 41035 >>Accept Felstorm's Plea
+-- step
+--     .goto 627,55.97,47.02
+--     .trainer 96786 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Celindra|r
+--     *|cRXP_WARN_learn all teleports|r
+--     .skipgossipid 45341
+--     .target Archmage Celindra
 step
     #completewith next
     #label Felstorm's Plea
@@ -2492,7 +2498,7 @@ step
     .goto 723,50.96,48.12
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge|r
     .complete 41036,2 --1/1 Recover the Forge of the Guardian
-    .timer 41,RP
+    .timer 38,RP
 step
     .isInScenario 1034
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -2565,7 +2571,6 @@ step
     +|cRXP_WARN_You have to do the previous chapter first|r
     .clicknext RestedXP Legion Remix\ab) Order Hall Mage Part 1 >>CLICK HERE FOR GUIDE
 step
-    #label 
     >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
     .accept 41114 >>Accept The Champion's Return
     .usespell 193759
@@ -2665,6 +2670,7 @@ step
 step
     .goto 734,81.61,60.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Great Akazamzarak|r
+    *|cRXP_WARN_Relog if he doesn't spawn shortly after the timer|r.
     .turnin 41124 >>Turn in The Tirisgarde Reborn
     .target The Great Akazamzarak
     .accept 41141 >>Accept A Conjuror's Duty

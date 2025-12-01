@@ -1623,8 +1623,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Death Knight Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Death Knight
+#chapter
 
 << DeathKnight
 
@@ -2317,8 +2318,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Demon Hunter Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Demon Hunter
+#chapter
 
 << DemonHunter
 
@@ -3895,8 +3897,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Druid Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Druid
+#chapter
 
 << Druid
 
@@ -4916,8 +4919,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Hunter Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Hunter
+#chapter
 
 << Hunter
 
@@ -5161,7 +5165,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 42006,1 --1/1 Take the Dalaran portal to Wyrmrest Temple
 step
-    .goto 115,56.4,65.86
+    .goto 115,56.01,65.92
     #title |cFFFCDC00Follow the Arrow|r
     .complete 42006,2 --1/1 Travel to the Azure Dragonshrine
 step
@@ -5194,7 +5198,7 @@ step
 step
     #requires Communication Device
     .goto 115,56.66,69.11
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Communication Device|r
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 42007,1 --1/1 Activate the communication device
 step
     >>Click the Quest Turnin Pop-Up in your Questlog.
@@ -5260,9 +5264,8 @@ step
     .accept 42011 >>Accept The Nexus Vault
 step
     .isOnQuest 42011
-    .goto 114,26.36,27.6,20,0
     .goto 114,27.52,26.16 
-    .zone 736 >>Enter the Nexus
+    .enterScenario 1101 >>Enter the Nexus
 step
     #loop
     .goto 736,36.1,69.38,15,0
@@ -5288,7 +5291,7 @@ step
     >>Use |T135739:0|t[Shimmer] or |T135736:0|t[Blink] through the Barriers or jump with your back towards them to pass them.
     .usespell 1953
     .scenario 2467,1 --Reach the Librarium
-    .timer 45,RP
+    .timer 44,RP
 step
     .goto 736,27.62,39.99
     .isInScenario 1101
@@ -5367,8 +5370,9 @@ step
 step
     #completewith Nexus Vault
     .zoneskip 627
-    .cast 224869 >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+    .zone 627 >>Enter Dalaran(Check your Teleports)
     .usespell 224869
+    .usespell 193759
 step
     #requires Nexus Vault
     .goto 627,28.62,49.88
@@ -5701,8 +5705,9 @@ step
     #completewith Frozen Flame
     .goto 700,51.85,18.65
     .zoneskip 627
-    .cast 224869 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r or Use |T1535374:0|t[Teleport: Dalaran - Broken Isles]
+    .zone 627 >>Enter Dalaran(Check your Teleports)
     .usespell 224869
+    .usespell 193759
 step
     #requires Frozen Flame
     .goto 627,28.40,48.93
@@ -6311,8 +6316,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Mage Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Mage
+#chapter
 
 << Mage
 
@@ -6369,7 +6375,15 @@ step
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arcane >> Arcane(DPS) Questline
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost Mage >> Frost(DPS) Questline
 step
-    #include ac) Order Hall Mage Part 2@OrderHallMage2-OrderHallMage3
+    >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .accept 41114 >>Accept The Champion's Return
+    .usespell 193759
+step
+    >>Use |T1536440:0|t[Teleport: Hall of the Guardian].
+    .complete 41114,1 --1/1 Teleport to the Hall of the Guardian
+    .usespell 193759
+step
+    #include ac) Order Hall Mage Part 2@Champion's Return-OrderHallMage3
 ]])
 
 -- --------- Monk ---------
@@ -7556,8 +7570,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Monk Part 1 
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Monk
+#chapter
 
 << Monk 
 
@@ -8971,8 +8986,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Paladin Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Paladin
+#chapter
 
 << Paladin
 
@@ -9925,8 +9941,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Priest Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Priest
+#chapter
 
 << Priest
 
@@ -11383,8 +11400,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Rogue Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Rogue
+#chapter
 
 << Rogue
 
@@ -12372,8 +12390,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Shaman Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Shaman
+#chapter
 
 << Shaman
 
@@ -13375,8 +13394,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall Warlock Part 1
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Warlock
+#chapter
 
 << Warlock
 
@@ -14266,9 +14286,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#name a) Order Hall Campaign Intro
-#displayname |cFF00CCFF1|r - Order Hall Campaign|r
+#name a) Order Hall Warrior Part 1
+#displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Warrior
+#chapter
 
 << Warrior
 
