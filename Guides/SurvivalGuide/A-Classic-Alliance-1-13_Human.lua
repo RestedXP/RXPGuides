@@ -444,7 +444,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
     .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
-    .vendor 151 >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
+    .vendor 151 >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] |cRXP_WARN_and equip it|r
 step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs
@@ -1613,7 +1613,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    .vendor >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
+    .vendor >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] |cRXP_WARN_and equip it|r
     .target Brenwyn Wintersteel
 step
     #ah
