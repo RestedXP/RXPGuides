@@ -288,17 +288,19 @@ end
 local ncache = 0
 function addon.CacheGuide(key, guide, enabledFor, guideVersion, metadata)
     ncache = ncache + 1
+    local profileKey = key .. "|" .. ncache
     if type(guide) == "table" then
         guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
         guide.key = key
-        addon.db.profile.guides[key .. "|" .. ncache] = guide
+        addon.db.profile.guides[profileKey] = guide
     else
         guide = guide:gsub("%s-[\r\n]+%s*", "\n")
         guide = guide:gsub("[\t ][\t ]+", " ")
         guide = guide:gsub("%-%-[^\n]*", "")
         guide = "--" .. addon.ReadCacheData("string") .. "\n" .. guide
         guide = LibDeflate:CompressDeflate(guide)
-        addon.db.profile.guides[key .. "|" .. ncache] = addon.BuildCacheObject(guide, enabledFor,
+        --print(profileKey:gsub("|","||"))
+        addon.db.profile.guides[profileKey] = addon.BuildCacheObject(guide, enabledFor,
                                                              guideVersion, metadata, key)
     end
 end
@@ -1054,19 +1056,21 @@ function addon.GroupOverride(guide,arg2)
         if grp:match("RXP MoP 1%-80") then
             return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
         end
-        local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
         --local group,subgroup
         local swap
-        if faction == "Alliance" then
-            subgrp = subgrp or grp:gsub("RestedXP Alliance", "RXP Speedrun Guide")
-            grp = "RestedXP Speedrun Guide (A)"
-            swap = true
-            --print('\n',grp,subgrp,faction,type(guide) == "table" and guide.name,'\n')
-        elseif faction == "Horde" then
-            subgrp = subgrp or grp:gsub("RestedXP Horde", "RXP Speedrun Guide")
-            grp = "RestedXP Speedrun Guide (H)"
-            swap = true
-            --print(group,guide.subgroup,faction,guide.group,guide.name)
+        if addon.game == "CLASSIC" then
+            local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
+            if faction == "Alliance" then
+                subgrp = subgrp or grp:gsub("RestedXP Alliance", "RXP Speedrun Guide")
+                grp = "RestedXP Speedrun Guide (A)"
+                swap = true
+                --print('\n',grp,subgrp,faction,type(guide) == "table" and guide.name,'\n')
+            elseif faction == "Horde" then
+                subgrp = subgrp or grp:gsub("RestedXP Horde", "RXP Speedrun Guide")
+                grp = "RestedXP Speedrun Guide (H)"
+                swap = true
+                --print(group,guide.subgroup,faction,guide.group,guide.name)
+            end
         end
         return grp,subgrp,swap
     end
