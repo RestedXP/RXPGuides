@@ -137,6 +137,7 @@ step << Horde
     .target Fightbot Version 11.2.7
 step << Horde
     .goto 2451,20.75,61.25
+    >>Use your interrupt on the interruptable cast.
     .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
 step << Horde
     .goto 2451,20.84,59.65
@@ -214,19 +215,6 @@ step << Horde
     .goto 2451,24.59,37.07
     .target Thrall
 step << Alliance
-    .goto 2451,20.94,59.65
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
-    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
-    .target Fightbot Version 11.2.7
-step << Alliance
-    .goto 2451,20.75,61.25
-    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
-step << Alliance
-    .goto 2451,20.84,59.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
-    .turnin 92028 >>Turn in Pardon the Interruption
-    .target Cindy Springstock
-step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
     .turnin 90896 >>Turn in One Last Ogre
     .goto 2451,24.59,37.07
@@ -234,6 +222,20 @@ step << Alliance
     .accept 90897 >>Accept Back to Stromgarde
     .goto 2451,24.67,37.12
     .target +Lady Jaina Proudmoore
+step << Alliance
+    .goto 2451,20.94,59.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
+    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
+    .target Fightbot Version 11.2.7
+step << Alliance
+    .goto 2451,20.75,61.25
+    >>Use your interrupt on the interruptable cast
+    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
+step << Alliance
+    .goto 2451,20.84,59.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
+    .turnin 92028 >>Turn in Pardon the Interruption
+    .target Cindy Springstock
 step << Horde
     .goto 2451,69.20,34.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -246,6 +248,11 @@ step << Alliance
     .turnin 90897 >>Turn in Back to Stromgarde
     .accept 90911 >>Accept Your Next Adventure
     .target Lady Jaina Proudmoore
+step
+    .goto 2451,69.20,34.53 << Horde
+    .goto 2451,20.84,59.65 << Alliance 
+    >>Choose your next Adventure
+    .complete 90911,1
 ]])
 
 -- =================================
