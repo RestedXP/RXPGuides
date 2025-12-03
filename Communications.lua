@@ -789,7 +789,6 @@ function addon.comms.grouping:UpdateParty()
 
     local data
     for _, playerName in ipairs(partyNames) do
-        print("playerName", playerName)
         data = addon.comms.state.group.members[playerName]
 
         if data.isRxp then
