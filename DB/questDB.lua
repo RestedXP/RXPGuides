@@ -540,6 +540,7 @@ function addon.CalculateTotalXP(flags)
     local xpmod = GetXPMods()
     --print(xpmod)
     local groups = {}
+    local QList = {}
     local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
         local group = quest.group or ""
@@ -552,8 +553,9 @@ function addon.CalculateTotalXP(flags)
             if output then
                     local s = string.format("%dxp %s (%d)", xp,
                                     addon.GetQuestName(qid) or "", qid)
-                    table.insert(outputString,s)
-                    addon.comms.PrettyPrint(s)--ok
+                    --table.insert(outputString,s)
+                    table.insert(QList,{text = s, id = qid, obj = quest})
+                    --addon.comms.PrettyPrint(s)--ok
             end
         end
         return isAvailable
@@ -605,6 +607,32 @@ function addon.CalculateTotalXP(flags)
         end
     end
     if output then
+        local db
+        if _G.QuestieLoader then
+            db = _G.QuestieLoader:ImportModule("QuestieDB")
+        end
+
+        local zoneList = {}
+        for _,q in ipairs(QList) do
+            local zone = zoneList[q.id] or 0
+            if db and zone == 0 then
+                local qdb = db:GetQuest(q.id)
+                zone = qdb and qdb.Zone or 0
+            end
+            local l = zoneList[zone] or {}
+            zoneList[zone] = l
+            table.insert(l, q)
+        end
+        for zone,t in pairs(zoneList) do
+            if zone and zone ~= 0 then
+                table.insert(outputString,"\n-- "..C_Map.GetAreaInfo(zone).." --")
+            else
+                table.insert(outputString,"\n--")
+            end
+            for _,q in ipairs(t) do
+                table.insert(outputString,q.text)
+            end
+        end
         textOverride = format("Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
         if not addon.settings.gui.quest then
             CreatePanel()
