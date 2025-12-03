@@ -137,8 +137,9 @@ local function IsQuestAvailable(quest,id,skipRepCheck,nested)
 
     local activeFor = quest.appliesTo
     if activeFor then
-        activeFor = addon.applies(activeFor) or
-                        addon.GetSkillLevel(activeFor) > 0
+        activeFor = addon.applies(activeFor,nil,function(entry)
+            return addon.GetSkillLevel(entry) > 0
+        end)
     else
         activeFor = true
     end

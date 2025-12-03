@@ -26,7 +26,7 @@ addon.minGuideVersion = 0
 addon.maxGuideVersion = 0
 local aCache = {}
 
-local function applies(textEntry,customClass)
+local function applies(textEntry,customClass,func)
     if textEntry then
         --if not(textEntry:match("Alliance") or textEntry:match("Horde")) then return true end
         local function parse(text,customClass)
@@ -65,8 +65,9 @@ local function applies(textEntry,customClass)
                     elseif faction == "Neutral" and not customClass and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
                     end
+                    local customCheck = func and func(entry, uppercase)
                     v = (not(gendercheck or uppercase == class or entry == race or
-                             entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass) ==
+                             entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass or customCheck) ==
                              state)
                     if not v then
                         break
