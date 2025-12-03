@@ -856,7 +856,7 @@ step
     .collect 1205,20,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (20)
     .home >>Set your Hearthstone to Ratchet
     .target Innkeeper Wiley
-    .bindlocation 382,1
+    .bindlocation 392
     .isQuestAvailable 887
 step
     #completewith BaronLongshore
@@ -1233,7 +1233,7 @@ step << Druid
 step
     #completewith next
     .hs >>Hearth to Ratchet
-    .bindlocation 382,1
+    .bindlocation 392,1
     .subzoneskip 392
     .use 6948
 step
