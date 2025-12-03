@@ -2088,6 +2088,7 @@ function addon.stepLogic.LevelCheck(step)
 end
 
 function addon.stepLogic.DungeonCheck(step)
+    if step.disabled then return false end
     local dungeon = step.dungeon
     local dskip = step.dungeonskip
     --print(dungeon,dskip)

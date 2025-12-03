@@ -6947,11 +6947,15 @@ end
 
 addon.dungeons = {}
 function addon.functions.dungeon(self, text, instance)
-    if type(self) == "string" and addon.GetDungeonName then -- on parse
+    if type(self) == "string" then -- on parse
         local skip
         if instance and instance:sub(1,1) == "!" then
             instance = instance:sub(2,-1)
             skip = true
+        end
+        if not addon.GetDungeonName then
+            addon.step.disabled = not skip
+            return
         end
         local name, tag = addon.GetDungeonName(instance)
         if tag and not skip then
