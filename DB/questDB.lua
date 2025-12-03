@@ -152,6 +152,13 @@ function addon.GetBestQuests(refreshQuestDB,output)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     if not QuestDB then return end
+    for quest,obj in pairs(QuestDB) do
+        if obj.questLog then
+            obj.itemAmount = nil
+            obj.itemId = nil
+            obj.previousQuest = nil
+        end
+    end
     local sortfunc = function(k1, k2)
         local xc1 = k1.xpcorrection or 0
         local xc2 = k2.xpcorrection or 0
