@@ -171,6 +171,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
         local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
         local prio1 = k1.priority or 1e3
         local prio2 = k2.priority or 1e3
+        local xphr1 = k1["xp/hr"] or 0
+        local xphr2 = k2["xp/hr"] or 0
         local isQuestLog = k1.questLog and k2.questLog
         local gc1,gc2
         if QuestDB["groups"] then
@@ -194,6 +196,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
             return false
         elseif gc2 == false and gc2 ~= gc1 then
             return true
+        elseif xphr1 ~= xphr2 then
+            return xphr1 > xphr2
         elseif x1 ~= x2 then
             return x1 > x2
         elseif prev1 and not prev2 then
