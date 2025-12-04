@@ -128,8 +128,13 @@ local gossipConfirm
 if C_EventUtils and C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
     gossipConfirm = "GOSSIP_CONFIRM"
 end
+local PI_Hide
+if C_EventUtils and C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
+    PI_Hide = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
+end
+
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
-events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE",gossipConfirm}
+events.gossip = {"GOSSIP_SHOW", PI_Hide, gossipConfirm}
 events.isQuestOffered = events.gossip
 events.gossipoption = events.skipgossip
 events.skipgossipid = {"GOSSIP_SHOW",gossipConfirm}

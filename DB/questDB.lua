@@ -659,7 +659,7 @@ function addon.ShowMissingQuests(output)
 end
 
 local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
-function addon.ForceNextStep()
+function addon.CompleteStep()
     if _G.Settings and _G.Settings.GetCategory then
         return
     end
@@ -675,6 +675,25 @@ function addon.ForceNextStep()
                 SendChatMessage(format(".q c %d",element.questId), "SAY", nil)
             elseif element.tag == "accept" then
                 SendChatMessage(format(".q a %d",element.questId), "SAY", nil)
+            end
+        end
+    end
+end
+
+function addon.Goto()
+    if _G.Settings and _G.Settings.GetCategory then
+        return
+    end
+    for i,step in pairs(addon.RXPFrame.activeSteps) do
+        for _,element in pairs(step.elements) do
+            local t = element.textReplaced and element.textReplaced[1]
+            if t then
+                local name = t:match("|cRXP_FRIENDLY_(.*)|r")
+                if name then
+                    SendChatMessage(format('.go c "%s"',name), "SAY", nil)
+                    print(name)
+                    return
+                end
             end
         end
     end
