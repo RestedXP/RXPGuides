@@ -45,6 +45,10 @@ local unitscanList = {}
 
 local rareTargets = {}
 
+function addon.targeting.GetCurrentTargets()
+    return targetList,mobList,unitscanList,rareTargets
+end
+
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
 

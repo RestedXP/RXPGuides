@@ -680,21 +680,35 @@ function addon.CompleteStep()
     end
 end
 
+
+local cs
+local mobData = {}
 function addon.Goto()
     if _G.Settings and _G.Settings.GetCategory then
         return
     end
-    for i,step in pairs(addon.RXPFrame.activeSteps) do
-        for _,element in pairs(step.elements) do
-            local t = element.textReplaced and element.textReplaced[1]
-            if t then
-                local name = t:match("|cRXP_FRIENDLY_(.*)|r")
-                if name then
-                    SendChatMessage(format('.go c "%s"',name), "SAY", nil)
-                    print(name)
-                    return
-                end
+    if cs ~= RXPCData.currentStep then
+        cs = RXPCData.currentStep
+        table.wipe(mobData)
+    end
+    local targets = addon.targeting.GetCurrentTargets()
+    for index,name in ipairs(targets or {}) do
+        if not mobData[name] then
+            local p = '.go c "%s"'
+            if name:find("\"") then
+                p = ".go c '%s'"
             end
+            mobData[name] = true
+            SendChatMessage(format(p,name), "SAY", nil)
+            print(name)
+            return
         end
     end
+
+    local element = addon.arrowFrame.element
+    if element then
+        SendChatMessage(format(".go xy %.3f %.3f %d",element.wy,element.wx,element.instance), "SAY", nil)
+        return
+    end
+
 end

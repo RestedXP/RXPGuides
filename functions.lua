@@ -3039,7 +3039,9 @@ function addon.functions.destroy(self, ...)
 
         if count == 0 then
             addon.SetElementComplete(self)
+            RXPCData.discardPile[element.id] = nil
         else
+            RXPCData.discardPile[element.id] = true
             addon.SetElementIncomplete(self)
         end
     end
