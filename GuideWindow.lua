@@ -1595,6 +1595,10 @@ function addon:LoadGuide(guide, OnLoad)
         addon.HideIntroUI()
     end
 
+    if addon.game ~= "CLASSIC" then
+        guide.hardcore = nil
+        guide.softcore = nil
+    end
     if guide.hardcore then
         if not addon.settings.profile.hardcore then
             addon.settings.profile.hardcore = true
