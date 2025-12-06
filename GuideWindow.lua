@@ -1597,7 +1597,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     if addon.game ~= "CLASSIC" then
         guide.hardcore = nil
-        guide.softcore = nil
+        guide.softcore = true
     end
     if guide.hardcore then
         if not addon.settings.profile.hardcore then
