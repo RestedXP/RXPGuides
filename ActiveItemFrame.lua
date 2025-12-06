@@ -30,7 +30,7 @@ end
 local GetItemCooldown = (C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown) or function(searchItemID)
 	local searchItemName = GetItemInfo(searchItemID);
 	if not searchItemName then return end
-	for bagID = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+	for bagID = _G.KEYRING_CONTAINER, _G.NUM_BAG_FRAMES do
 		local slots = GetContainerNumSlots(bagID) or 0;
 		for slot = 1, slots do
 			local itemInfo = GetContainerItemInfo(bagID, slot);
@@ -114,7 +114,7 @@ local function GetActiveItemList(ref)
         end
     end
 
-    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+    for bag = _G.KEYRING_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)
