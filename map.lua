@@ -25,6 +25,8 @@ local function IsInInstance()
     end
 end
 
+addon.IsInInstance = IsInInstance
+
 addon.enabledFrames["arrowFrame"] = af
 af.IsFeatureEnabled = function ()
     local shown = not addon.settings.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)

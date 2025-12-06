@@ -16,7 +16,11 @@ local AceGUI = LibStub("AceGUI-3.0")
 addon.comms = addon:NewModule("Communications", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
 
 addon.comms._commPrefix = "RXPGComms"
-addon.comms.state = {rxpGroupDetected = false, updateFound = {guide = false, addon = false}}
+addon.comms.state = {
+    rxpGroupDetected = false,
+    updateFound = {guide = false, addon = false},
+    group = {leader = nil, members = {}}
+}
 
 local function announceLevelUp(message)
     if not message then return end
@@ -46,6 +50,7 @@ function addon.comms:Setup()
     -- Leave addon or guide version checks even if max level
     self:RegisterEvent("GROUP_FORMED")
     self:RegisterEvent("GROUP_LEFT")
+    self:RegisterEvent("GROUP_ROSTER_UPDATE")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
 
     self:RegisterComm(self._commPrefix)
@@ -58,10 +63,10 @@ function addon.comms:Setup()
         end
     end
 
-    addon.comms:UpgradeDB()
+    addon.comms:UpdateDB()
 end
 
-function addon.comms:UpgradeDB()
+function addon.comms:UpdateDB()
     local abs = math.abs
     for _, data in pairs(self.players) do
         if data.timePlayed < 0 then
@@ -75,15 +80,46 @@ function addon.comms:UpgradeDB()
             data.xp = 0
         end
     end
+
+    -- self.db.profile.announcements[data.guideName] = {complete = {}, collect = {}}
+    for _, kinds in pairs(self.db.profile.announcements) do
+        -- .complete[msg] = addon.player.level
+        -- .collect[msg] = addon.player.level
+        for _, data in pairs(kinds) do
+            for msg, level in pairs(data) do
+                if level < addon.player.level - 3 then
+                    data[msg] = nil
+                end
+            end
+        end
+    end
 end
 
 function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
-    if isInitialLogin or isReloadingUi then self:AnnounceSelf("ANNOUNCE") end
+    if not (isInitialLogin or isReloadingUi) then return end
+
+    self:AnnounceSelf("ANNOUNCE")
+
+    addon.comms.grouping:UpdateParty()
 end
 
-function addon.comms:GROUP_FORMED() C_Timer.After(5 + mrand(5), function() self:AnnounceSelf("ANNOUNCE") end) end
+function addon.comms:GROUP_FORMED()
+    C_Timer.After(5 + mrand(5), function()
+        self:AnnounceSelf("ANNOUNCE")
 
-function addon.comms:GROUP_LEFT() self.state.rxpGroupDetected = false end
+        addon.comms.grouping:UpdateParty()
+    end)
+end
+
+function addon.comms:GROUP_LEFT()
+    self.state.rxpGroupDetected = false
+
+    addon.comms.grouping:UpdateParty()
+end
+
+function addon.comms:GROUP_ROSTER_UPDATE()
+    addon.comms.grouping:UpdateParty()
+end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
     if not addon.settings.profile.enableTracker then
@@ -284,25 +320,28 @@ function addon.comms:AnnounceStepEvent(event, data)
     -- Only send branded messages if in an RXP party
     if not self.state.rxpGroupDetected and not addon.settings.profile.alwaysSendBranded then return end
 
+    if addon.IsInInstance() then return end
+
     -- Probably step replay, shush
     -- currentStep == 1 is probably spam from rapid replay
     if RXPCData.currentStep == 1 or GetTime() - addon.lastStepUpdate < 1 then return end
 
-    -- TODO purge cache at startup for announcements > 3 levels old
     if not self.db.profile.announcements[data.guideName] then
         self.db.profile.announcements[data.guideName] = {complete = {}, collect = {}}
     end
 
     local guideAnnouncements = self.db.profile.announcements[data.guideName]
+    local msg
 
     if event == '.complete' then
         -- Don't handle announcements if Questie loaded
         if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then return end
 
-        -- Replay of guide, don't spam
-        if guideAnnouncements.complete[data.title] then return end
+        -- "Completed %s"
+        msg = self.BuildNotification(_G.ACHIEVEMENT_META_COMPLETED_DATE, data.completionText)
 
-        local msg = self.BuildNotification(L("Completed step %d - %s"), data.step, data.title)
+        -- Replay of guide, don't spam
+        if guideAnnouncements.complete[msg] then return end
 
         if addon.settings.profile.enableCompleteStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
@@ -310,31 +349,31 @@ function addon.comms:AnnounceStepEvent(event, data)
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.complete[data.title] = addon.player.level
+        guideAnnouncements.complete[msg] = addon.player.level
 
     elseif event == '.collect' then
         -- Don't handle announcements if Questie loaded
         if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then return end
 
+        msg = self.BuildNotification(L("%s %s"), _G.COLLECTED, data.completionText)
+
         -- Replay of guide, don't spam
-        if guideAnnouncements.collect[data.title] then return end
+        if guideAnnouncements.collect[msg] then return end
 
-        local msg = self.BuildNotification(L("Collected step %d - %s"), data.step, data.title)
-
-        if addon.settings.profile.enableCollectAnnouncements and GetNumGroupMembers() > 0 then
+        if addon.settings.profile.enableCollectStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
         elseif addon.settings.profile.debug then
             self.PrettyDebug(msg)
         end
 
-        guideAnnouncements.collect[data.title] = addon.player.level
+        guideAnnouncements.collect[msg] = addon.player.level
 
     elseif event == '.fly' then
         if not data.duration or data.duration <= 0 then return end
 
         -- Questie doesn't announce flight-time, so okay to send this out
-        local msg = self.BuildNotification(L("Flying to %s ETA %s"), RXPCData.flightPaths[data.destination] or '',
-                                           addon.comms:PrettyPrintTime(data.duration))
+        msg = self.BuildNotification(L("Flying to %s ETA %s"), RXPCData.flightPaths[data.destination] or '',
+                                        addon.comms:PrettyPrintTime(data.duration))
 
         if addon.settings.profile.enableFlyStepAnnouncements and GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
@@ -696,4 +735,65 @@ function addon.comms.grouping:ShareQuest(questId)
     end
 
     return _G.QuestLogPushQuest(questLogIndex)
+end
+
+function addon.comms.grouping:UpdateParty()
+    addon.comms.state.group = {
+        leader = nil,
+        members = {
+            [addon.player.name] = {
+                partyId = "player",
+                isRxp = true
+            }
+        },
+        hasRXP = false
+    }
+
+    local name, partyId, isRXP
+
+    -- Load all party data first for hasRXP before setting markerIndex
+    for i = 1, GetNumGroupMembers() - 1 do
+        partyId = "party" .. i
+        name = UnitName(partyId)
+
+        if not name then break end
+
+        if UnitIsGroupLeader(partyId) then
+            addon.comms.state.group.leader = name
+        end
+
+        isRXP = addon.comms.players[name] and addon.comms.players[name].isRxp
+        if isRXP then
+            addon.comms.state.group.hasRXP = true
+        end
+
+        addon.comms.state.group.members[name] = {
+            partyId = partyId,
+            isRxp = isRXP
+        }
+    end
+
+    if not addon.comms.state.group.hasRXP then return end
+
+    local markerIndex = 1
+
+    -- Player+party1+party2+party3+party4 is alphabetical ordering including player
+    local partyNames = {}
+
+    for playerName, _ in pairs(addon.comms.state.group.members) do
+        tinsert(partyNames, playerName)
+    end
+
+    -- Alphabetically sort player names
+    table.sort(partyNames)
+
+    local data
+    for _, playerName in ipairs(partyNames) do
+        data = addon.comms.state.group.members[playerName]
+
+        if data.isRxp then
+            data.markerIndex = markerIndex
+            markerIndex = markerIndex + 1
+        end
+    end
 end

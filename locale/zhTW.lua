@@ -39,8 +39,6 @@ _G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
 L.words = {["Accept"] = _G.ACCEPT, ["Kill"] = "擊殺"}
 
 -- Communications.lua檔案
-L["Collected step %d - %s"] = "已收集步驟 %d - %s"
-L["Completed step %d - %s"] = "已完成步驟 %d - %s"
 L["Describe your issue:"] = "描述你的問題:"
 L["Do not edit below this line"] = "請勿編輯此行以下內容"
 L["Flying to %s ETA %s"] = "正在飛往 %s 預計到達時間 %s"
@@ -178,7 +176,7 @@ L["Allows the guide to automatically skip gossip for NPCs"] = "允許指南自�
 L["Allows the guide to buy useful leveling spells automatically"] = "允許指南自動購買有用的升級法術"
 L["Allows you to toggle items as junk by clicking on it with CTRL+RightClick or ALT+RightClick"] = "允許你通過 CTRL+右鍵點擊 或 ALT+右鍵點擊 將物品標記為垃圾"
 L["Always Open Leveling Report With Character Panel"] = "始終在打開角色面板時顯示升級報告"
-L["Announce Flying Step timers"] = "通告飛行步驟計時器"
+L["Announce Step flying timers"] = "通告飛行步驟計時器"
 L["Announce Level Ups (Emote)"] = "通告升級 (表情)"
 L["Announce Level Ups (Guild Chat)"] = "通告升級 (公會聊天)"
 L["Announce Level Ups (Party Chat)"] = "通告升級 (隊伍聊天)"
@@ -187,8 +185,8 @@ L["Announce in party chat when you collect all the items relevant to a quest (.c
 L["Announce in party chat when you complete certain quests (.complete)"] = "當你完成某些任務時在隊伍聊天中通告 (.complete)"
 L["Announce in party chat when you level up"] = "在隊伍聊天中通告你的升級"
 L["Announce in party chat where you're flying and how long until you arrive"] = "在隊伍聊天中通告你正在飛往何處以及預計到達時間"
-L["Announce when Quest Step is completed"] = "通告任務步驟完成"
-L["Announce when all Step items are collected"] = "通告所有步驟物品已收集"
+L["Announce Step completion"] = "通告任務步驟完成"
+L["Announce Step collection"] = "通告所有步驟物品已收集"
 L["Announcements"] = "通告"
 L["Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"] = "任何標記為垃圾的物品在背包中都會在物品圖示的左上角顯示一個金幣圖示"
 L["Arrow Scale"] = "箭頭縮放"

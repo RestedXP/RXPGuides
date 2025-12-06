@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-local fmt, tinsert, tremove, mmax = string.format, table.insert, table.remove, math.max
+local fmt, tinsert, tremove, mmax, mrand = string.format, table.insert, table.remove, math.max, math.random
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros = GetMacroInfo, CreateMacro, EditMacro,
                                                                              InCombatLockdown, GetNumMacros
 local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer,
@@ -20,6 +20,7 @@ local L = addon.locale.Get
 
 addon.targeting = addon:NewModule("Targeting", "AceEvent-3.0")
 addon.targeting.macroName = "RXPTargeting"
+addon.targeting.followMacroName = "RXPFollow"
 
 local announcedTargets = {}
 local macroTargets = {}
@@ -45,9 +46,8 @@ local unitscanList = {}
 
 local rareTargets = {}
 
-function addon.targeting.GetCurrentTargets()
-    return targetList,mobList,unitscanList,rareTargets
-end
+
+local pendingLeaderUpdate
 
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
@@ -65,6 +65,15 @@ function addon.targeting:Setup()
 
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
+
+    if addon.settings.profile.createFollowMacro then
+        self:RegisterEvent("PLAYER_ENTERING_WORLD")
+        self:RegisterEvent("GROUP_FORMED")
+        self:RegisterEvent("GROUP_LEFT")
+        self:RegisterEvent("PARTY_LEADER_CHANGED")
+    else
+        DeleteMacro(self.followMacroName)
+    end
 
     if not addon.settings.profile.enableTargetAutomation then return end
 
@@ -97,6 +106,10 @@ function addon.targeting:Setup()
         self:LoadRares()
         self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     end
+end
+
+function addon.targeting.GetCurrentTargets()
+    return targetList,mobList,unitscanList,rareTargets
 end
 
 local function shouldTargetCheck()
@@ -203,10 +216,52 @@ function addon.targeting:UpdateMacro(queuedTargets)
     macroTargets = {}
 end
 
+-- TODO fix bug when promoting leader
+function addon.targeting:UpdateFollowMacro(leaderName)
+    if not addon.settings.profile.createFollowMacro then return end
+
+    if InCombatLockdown() then
+        pendingLeaderUpdate = leaderName
+        return
+    end
+
+    if not GetMacroInfo(self.followMacroName) then
+        if not self:CanCreateMacro() then return end
+
+        CreateMacro(self.followMacroName, "Inv_boots_02", "")
+    end
+
+    if not IsInGroup() or leaderName == "" then
+        EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.ERR_QUEST_PUSH_NOT_IN_PARTY_S)
+
+        return
+    end
+
+    if UnitIsGroupLeader("player") then
+        EditMacro(self.followMacroName, self.followMacroName, nil, "//" .. _G.PARTY_LEADER)
+
+        return
+    end
+
+    if not leaderName then
+        leaderName = addon.comms.state.group.leader
+    end
+
+    if not leaderName then return end
+
+    EditMacro(self.followMacroName, self.followMacroName, nil, fmt('/targetexact %s\n/follow\n', leaderName))
+
+    pendingLeaderUpdate = nil
+end
+
 function addon.targeting:PLAYER_REGEN_ENABLED()
     if macroTargets then C_Timer.After(0.5, function() self:UpdateMacro(macroTargets) end) end
 
     self:UpdateTargetFrame()
+
+    if pendingLeaderUpdate then
+        C_Timer.After(mrand(1), function() self:UpdateFollowMacro(pendingLeaderUpdate) end)
+    end
 end
 
 function addon.targeting:CheckNameplate(nameplateID)
@@ -276,6 +331,20 @@ function addon.targeting:CheckNameplates()
     if not nameplatesArray then return end
 
     for _, nameplate in ipairs(nameplatesArray) do self:CheckNameplate(nameplate.namePlateUnitToken) end
+end
+
+function addon.targeting:PLAYER_ENTERING_WORLD()
+    C_Timer.After(mrand(3), function() self:UpdateFollowMacro() end)
+end
+
+function addon.targeting:GROUP_FORMED()
+    C_Timer.After(3 + mrand(2), function() self:UpdateFollowMacro() end)
+end
+
+function addon.targeting:GROUP_LEFT() self:UpdateFollowMacro("") end
+
+function addon.targeting:PARTY_LEADER_CHANGED()
+    self:UpdateFollowMacro()
 end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
@@ -627,7 +696,7 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
 
     self:UpdateMacro()
 
-    if not addon.settings.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetFrame then return end
 
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
@@ -690,7 +759,7 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
 
     self:UpdateMacro()
 
-    if not addon.settings.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetFrame then return end
 
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
@@ -731,7 +800,7 @@ function addon.targeting:CreateTargetFrame()
 
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
-        if not addon.settings.profile.enableTargetAutomation then return nil, true end
+        if not addon.settings.profile.enableTargetFrame then return nil, true end
 
         if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck(), true
@@ -823,6 +892,16 @@ end
 function addon.targeting:GetMarkerIndex(kind, kindIndex)
     local raidTargetIndex
 
+    if IsInGroup() and addon.settings.profile.enableNonLeadMarking and addon.comms.state.group.hasRXP then
+        -- Overwrite kindIndex if party, works best for 1-3 RXP members
+        --- player: star and skull
+        --- party1: circle and cross
+        --- party2: diamond and square
+        --- party3: triangle and skull
+        --- party4: star and cross
+        kindIndex = addon.comms.state.group.members[addon.player.name].markerIndex
+    end
+
     -- kindIndex is always >= 1, but to preserve modulus do -1
     kindIndex = kindIndex - 1
 
@@ -832,6 +911,7 @@ function addon.targeting:GetMarkerIndex(kind, kindIndex)
         raidTargetIndex = (kindIndex % 4) + 1
     elseif kind == 'unitscan' or kind == 'rare' then
          -- Use moon 5
+         -- Use Moon for all party members
         raidTargetIndex = 5
     elseif kind == 'mob' then
         -- Use skull 8, cross 7, square 6
@@ -845,7 +925,9 @@ end
 function addon.targeting:UpdateMarker(kind, unitId, index)
     if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then return end
 
-    if IsInGroup() and not UnitIsGroupLeader('player') then return end
+    if IsInGroup() and not UnitIsGroupLeader('player') then
+        if not addon.settings.profile.enableNonLeadMarking then return end
+    end
 
     local markerId = self:GetMarkerIndex(kind, index)
 
@@ -994,7 +1076,7 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
-    if not addon.settings.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetFrame then return end
 
     local targetFrame = self.activeTargetFrame
 
@@ -1189,7 +1271,7 @@ function addon.targeting:ZONE_CHANGED_NEW_AREA() self:LoadRares() end
 
 function addon.targeting:LoadRares()
     if not addon.settings.profile.scanForRares or not addon.settings.profile.showTargetingOnProximity or
-        not addon.settings.profile.enableTargetAutomation or not addon.rares then return end
+        not addon.settings.profile.enableTargetFrame or not addon.rares then return end
 
     -- Reset found rares
     for name, data in pairs(proxmityPolling.scannedTargets) do
