@@ -958,10 +958,20 @@ local HBD = LibStub("HereBeDragons-2.0")
 
 local function GetRequiredQuests(quest)
     local requiredQuests = {}
+    local function IsQuestTurnedInLater(id)
+        if addon.questTurnIn[id] then
+            return true
+        end
+        for _,element in pairs(addon.questTurnIn) do
+            if element.questId == id then
+                return true
+            end
+        end
+    end
     if quest.preQuestSingle then
         local preQuestSingle = -1
         for _, qID in pairs(quest.preQuestSingle) do
-            if (addon.questTurnIn[qID] and
+            if (IsQuestTurnedInLater(qID) and
                 (IsOnQuest(qID) or addon.questAccept[qID] or
                     not addon.pickUpList[qID])) or IsQuestTurnedIn(qID) then
                 preQuestSingle = 0
@@ -975,7 +985,7 @@ local function GetRequiredQuests(quest)
     end
     if quest.preQuestGroup then
         for _, qID in pairs(quest.preQuestGroup) do
-            if not ((addon.questTurnIn[qID] and
+            if not ((IsQuestTurnedInLater(qID) and
                 (IsOnQuest(qID) or addon.questAccept[qID] or
                     not addon.pickUpList[qID])) or IsQuestTurnedIn(qID)) then
                 tinsert(requiredQuests, qID)
@@ -1142,12 +1152,12 @@ function addon.functions.accept(self, ...)
                     element.tooltip = tooltip
                     element.icon = addon.icons.error
                     -- skip = RXPData.skipMissingPreReqs
-                elseif not doable then
+                --[[elseif not doable then
                     local tooltip = addon.colors.tooltip ..
                                         L("Missing pre-requisites") .. "|r"
                     element.tooltip = tooltip
                     element.icon = addon.icons.error
-                    -- skip = RXPData.skipMissingPreReqs
+                    -- skip = RXPData.skipMissingPreReqs]]
                 else
                     element.icon = icon
                     element.tooltip = nil
@@ -1303,9 +1313,7 @@ function addon.functions.turnin(self, ...)
         local event, questId = ...
         local id = GetQuestId(element.questId,nil,true)
         local isComplete = IsQuestTurnedIn(id)
-        if addon.settings.profile.debug then
-            element.tooltip = id
-        end
+
         if step.active or element.retrieveText then
             local autoTurnIn = (not element.flags or element.flags % 2 == 0) and element
             addon.questTurnIn[id] = autoTurnIn
@@ -1342,9 +1350,11 @@ function addon.functions.turnin(self, ...)
                 else
                     requiredQuests = {id}
                 end
-
-                local tooltip = addon.colors.tooltip ..
+                local tooltip
+                if requiredQuests and #requiredQuests > 0 then
+                tooltip = addon.colors.tooltip ..
                                     L("Missing pre-requisites") .. ":|r\n"
+                end
                 for i, qid in ipairs(requiredQuests) do
                     if i < #requiredQuests then
                         tooltip = format("%s\n%s%s (%d)", tooltip,
@@ -1356,8 +1366,7 @@ function addon.functions.turnin(self, ...)
                                          db:GetQuest(qid).name, qid)
                     end
                 end
-                element.tooltip = tooltip
-                element.icon = addon.icons.error
+                element.tooltip = tooltip or element.tooltip
                 -- skip = RXPData.skipMissingPreReqs
             elseif element.icon then
                 element.icon = icon
@@ -1368,6 +1377,9 @@ function addon.functions.turnin(self, ...)
             element.tooltip = nil
         end
 
+        if addon.settings.profile.debug then
+            element.tooltip = id
+        end
         --element.tooltipText = element.icon .. element.text
         addon.UpdateStepText(self)
         local completed = element.completed
