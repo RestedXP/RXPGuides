@@ -5032,7 +5032,7 @@ step
     .isQuestComplete 418
 step
     #optional
-    #competewith StormpikeO
+    #completewith StormpikeO
     .abandon 1338 >> Abandon Stormpike's Order. This is to unlock Mountaineer Stormpike's Task which will give a free 550xp turn in
 step
     #completewith next

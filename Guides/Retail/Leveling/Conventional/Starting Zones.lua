@@ -1,3 +1,260 @@
+--Arathi Highlands Returning Player
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#subgroup |cFFFCDC00(1-80)|r Default
+#name 0a) Arathi Highlands Returning Player
+#displayname Arathi Highlands Catch-Up |cRXP_ENEMY_(Alternative)|r
+
+step
+    .goto 2451,69.82,40.76 << Horde
+    .goto 2451,69.97,40.66 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .accept 90882 >>Accept Gnoll Way
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    #loop
+    .goto 2451,70.16,37.58,30,0
+    .goto 2451,68.42,36.8,30,0
+    .goto 2451,68.57,34.15,30,0
+    .goto 2451,68.22,32.18,30,0
+    .goto 2451,69.51,35.89,30,0
+    >>Kill |cRXP_ENEMY_Gnolls|r and |cRXP_ENEMY_Hyena|r
+    .complete 90882,1 --10/10 Gnoll slain
+    .mob Gnoll Bowblaster
+    .mob Gnoll Ripper
+    .mob Scavenging Hyena
+step
+    .goto 2451,69.82,40.74 << Horde
+    .goto 2451,69.97,40.65 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .turnin 90882 >>Turn in Gnoll Way
+    .accept 90883 >>Accept To Go'shek Farm
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    .goto 2451,69.82,40.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .turnin 90882 >>Turn in Gnoll Way
+    .accept 90883 >>Accept To Go'shek Farm
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    .goto 2451,56.43,59.53
+    >>Use any Flying Mount
+    .complete 90883,1 --1/1 Ride a flying mount
+    .macro Random Mount,413588 >>/use 150544
+step
+    .goto 2451,56.43,59.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Bruvk|r 
+    .turnin 90883 >>Turn in To Go'shek Farm
+    .target Farmer Bruvk
+    .accept 90885 >>Accept My Beautiful Pumpkins
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r
+    .accept 90887 >>Accept Farmer's Nemesis
+    .goto 2451,56.45,59.71
+    .target +Lady Jaina Proudmoore
+    .accept 90886 >>Accept Best Laid Plans of Kobolds and Ogres
+    .goto 2451,56.35,59.57
+    .target +Thrall
+step
+    #completewith Prized Pumpkin
+    >>Kill |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r. Loot them for |T237132:0|t[|cRXP_LOOT_Poorly Written Plans|r].
+    .complete 90886,1 --7/7 Poorly Written Plans
+    .mob Kobold Pillager
+    .mob Kobold Firetender
+    .mob Ogre Destroyer
+step
+    .goto 2451,53.98,56.86
+    >>Kill |cRXP_ENEMY_Runk|r
+    .complete 90887,1 --1/1 Runk slain
+    .mob Runk
+step
+    .goto 2451,53.06,59.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,1 --4/4 Prized Pumpkin recovered
+step
+    .goto 2451,51.44,58.8
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,2 --4/4 Prized Pumpkin recovered
+step
+    .goto 2451,52.73,60.93
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,3 --4/4 Prized Pumpkin recovered
+step
+    #label Prized Pumpkin
+    .goto 2451,53.96,60.07
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
+    *|cRXP_WARN_You can interact with them from a far|r
+    .complete 90885,1,4 --4/4 Prized Pumpkin recovered
+step
+    #loop
+    .goto 2451,54.15,63.12,40,0
+    .goto 2451,50.69,62.87,40,0
+    .goto 2451,50.98,57.75,40,0
+    .goto 2451,53.35,55.23,40,0
+    .goto 2451,55.06,59.48,40,0
+    >>Kill |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r. Loot them for |T237132:0|t[|cRXP_LOOT_Poorly Written Plans|r].
+    .complete 90886,1 --7/7 Poorly Written Plans
+    .mob Kobold Pillager
+    .mob Kobold Firetender
+    .mob Ogre Destroyer
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 90885 >>Turn in My Beautiful Pumpkins
+    .turnin 90886 >>Turn in Best Laid Plans of Kobolds and Ogres
+    .goto 2451,56.33,59.55
+    .target +Thrall
+    .turnin 90887 >>Turn in Farmer's Nemesis
+    .accept 90888 >>Accept Saving Stromgarde Keep
+    .goto 2451,56.46,59.69
+    .target +Lady Jaina Proudmoore
+step 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Colvin|r, |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r |cRXP_WARN_on the wall|r.
+    .accept 92028 >>Accept Pardon the Interruption
+    .goto 2451,19.59,57.44
+    .target +Sergeant Colvin
+    .turnin 90888 >>Turn in Saving Stromgarde Keep
+    .accept 90895 >>Accept Catapult Bombardment
+    .goto 2451,19.46,57.43
+    .target +Lady Jaina Proudmoore
+    .accept 90893 >>Accept Repelling the Siege
+    .goto 2451,19.38,57.44
+    .target +Thrall
+step << Horde
+    .goto 2451,20.94,59.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
+    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
+    .target Fightbot Version 11.2.7
+step << Horde
+    .goto 2451,20.75,61.25
+    >>Use your interrupt on the interruptable cast.
+    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
+step << Horde
+    .goto 2451,20.84,59.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
+    .turnin 92028 >>Turn in Pardon the Interruption
+    .target Cindy Springstock
+step
+    #completewith Catapults destroyed
+    >>Kill |cRXP_ENEMY_Ogres|r, |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Gnolls|r.
+    *>>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Objects|r
+    .complete 90893,1,100 --Repel the Ogre Siege (100%)
+    .mob Ogre Basher
+    .mob Kobold Waxmancer
+    .mob Gnoll Prowler
+    .mob Ettin Crusher
+step
+    .goto 2451,21.68,51.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,1 --4/4 Catapults destroyed
+step
+    .goto 2451,19,50.18
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,2 --4/4 Catapults destroyed
+step
+    .goto 2451,18.61,45.59
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,3 --4/4 Catapults destroyed
+step
+    #label Catapults destroyed
+    .goto 2451,21.52,46.06
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
+    .complete 90895,1,4 --4/4 Catapults destroyed
+step
+    #loop
+    .goto 2451,22.77,49.17,40,0
+    .goto 2451,23.63,44.36,40,0
+    .goto 2451,17.62,46.13,40,0
+    .goto 2451,18.61,52.66,40,0
+    .goto 2451,22.23,52.93,40,0
+    >>Kill |cRXP_ENEMY_Ogres|r, |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Gnolls|r
+    .complete 90893,1,100 --Repel the Ogre Siege (100%)
+    .mob Ogre Basher
+    .mob Kobold Waxmancer
+    .mob Gnoll Prowler
+    .mob Ettin Crusher
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r
+    .turnin 90895 >>Turn in Catapult Bombardment
+    .goto 2451,24.67,37.11
+    .target +Lady Jaina Proudmoore
+    .turnin 90893 >>Turn in Repelling the Siege
+    .accept 90896 >>Accept One Last Ogre
+    .goto 2451,24.6,37.05
+    .target +Thrall
+step
+    #completewith next
+    #label Ro'grok
+    .goto 2451,27.91,31.76,10,0
+    >>Kill |cRXP_ENEMY_Ro'grok|r
+    .complete 90896,1 --1/1 Ro'grok slain
+    .mob Ro'grok
+step
+    #completewith Ro'grok
+    .goto 2451,28.85,30.91,40 >>Enter the Building
+step
+    #requires Ro'grok
+    .goto 2451,28.85,30.91
+    >>Kill |cRXP_ENEMY_Ro'grok|r
+    .complete 90896,1 --1/1 Ro'grok slain
+    .mob Ro'grok
+step << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 90896 >>Turn in One Last Ogre
+    .accept 90898 >>Accept Back to Hammerfall
+    .goto 2451,24.59,37.07
+    .target Thrall
+step << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .turnin 90896 >>Turn in One Last Ogre
+    .goto 2451,24.59,37.07
+    .target +Thrall
+    .accept 90897 >>Accept Back to Stromgarde
+    .goto 2451,24.67,37.12
+    .target +Lady Jaina Proudmoore
+step << Alliance
+    .goto 2451,20.94,59.65
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
+    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
+    .target Fightbot Version 11.2.7
+step << Alliance
+    .goto 2451,20.75,61.25
+    >>Use your interrupt on the interruptable cast
+    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
+step << Alliance
+    .goto 2451,20.84,59.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
+    .turnin 92028 >>Turn in Pardon the Interruption
+    .target Cindy Springstock
+step << Horde
+    .goto 2451,69.20,34.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 90898 >>Turn in Back to Hammerfall
+    .target Thrall
+    .accept 90911 >>Accept Your Next Adventure
+step << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
+    .goto 2451,19.54,61.59
+    .turnin 90897 >>Turn in Back to Stromgarde
+    .accept 90911 >>Accept Your Next Adventure
+    .target Lady Jaina Proudmoore
+step
+    .goto 2451,69.20,34.53 << Horde
+    .goto 2451,20.84,59.65 << Alliance 
+    >>Choose your next Adventure
+    .complete 90911,1
+]])
+
 -- =================================
 -- =======  SEPERATORS =============
 -- =================================
@@ -1563,7 +1820,6 @@ step
 
 
 ]])
-
 --Exile's Reach Alliance Subset
 RXPGuides.RegisterGuide([[
 #retail
@@ -1580,7 +1836,6 @@ RXPGuides.RegisterGuide([[
 step
     #include a) Exile's Reach
 ]])
-
 --Exile's Reach Horde Subset
 RXPGuides.RegisterGuide([[
 #retail
@@ -2477,7 +2732,6 @@ step
 
 
 ]])
-
 --Death Knight Plaguelands The Scarlet Enclave
 RXPGuides.RegisterGuide([[
 #retail
@@ -3147,7 +3401,6 @@ step <<Alliance <<DK
     .nodmf
     .isQuestTurnedIn 12801 --x Traditional DK Check
 ]])
-
 --Demon Hunter Mardum
 RXPGuides.RegisterGuide([[
 #retail
@@ -3998,7 +4251,6 @@ step << Horde
     .accept 41002 >>Accept A Weapon for the Horde
     .target Lady Sylvanas Windrunner
 ]])
-
 --Dracthyr The Forbidden Reach
 RXPGuides.RegisterGuide([[
 #retail
@@ -4833,7 +5085,6 @@ step << Horde Evoker
     .goto 85,44.09,37.98
     .turnin 65613 >>Turn in An Iconic, Draconic Look
 ]])
-
 --Earthen Hall of Awakening
 RXPGuides.RegisterGuide([[
 #retail
@@ -5013,7 +5264,6 @@ step << Horde
     .turnin 81889 >>Turn in Stranger in a Strange Land
     .target Brunhold
 ]])
-
 --Haranir
 RXPGuides.RegisterGuide([[
 #retail
@@ -5024,6 +5274,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Harandar
 #next <<Alliance
 #next <<Horde
+#internal
 
 step
     .goto 2413,34.81,24.94
@@ -5237,7 +5488,6 @@ step << Horde
     .accept 94445 >>Accept Choose a Path 
     .target Ambassador Blackguard
 ]])
-
 --Pandaren The Wandering Isle
 RXPGuides.RegisterGuide([[
 #retail
@@ -6601,7 +6851,6 @@ step << Horde
     .turnin 31012 >> Turn in Joining the Horde
     .target Garrosh Hellscream
 ]])
-
 --New DK Intro The Frozen Throne
 RXPGuides.RegisterGuide([[
 #retail
@@ -6784,256 +7033,6 @@ step
 --     .target Dungar Longdrink
 --     .isQuestTurnedIn 58877 --x New DK Check
 --     .nodmf
-]])
-
---Arathi Highlands Returning Player
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
-#name a) Arathi Highlands Returning Player
-#internal
-
-step
-    .goto 2451,69.82,40.76 << Horde
-    .goto 2451,69.97,40.66 << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
-    .accept 90882 >>Accept Gnoll Way
-    .target Thrall << Horde
-    .target Lady Jaina Proudmoore << Alliance
-step
-    #loop
-    .goto 2451,70.16,37.58,30,0
-    .goto 2451,68.42,36.8,30,0
-    .goto 2451,68.57,34.15,30,0
-    .goto 2451,68.22,32.18,30,0
-    .goto 2451,69.51,35.89,30,0
-    >>Kill |cRXP_ENEMY_Gnolls|r and |cRXP_ENEMY_Hyena|r
-    .complete 90882,1 --10/10 Gnoll slain
-    .mob Gnoll Bowblaster
-    .mob Gnoll Ripper
-    .mob Scavenging Hyena
-step
-    .goto 2451,69.82,40.74 << Horde
-    .goto 2451,69.97,40.65 << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
-    .turnin 90882 >>Turn in Gnoll Way
-    .accept 90883 >>Accept To Go'shek Farm
-    .target Thrall << Horde
-    .target Lady Jaina Proudmoore << Alliance
-step
-    .goto 2451,69.82,40.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
-    .turnin 90882 >>Turn in Gnoll Way
-    .accept 90883 >>Accept To Go'shek Farm
-    .target Thrall << Horde
-    .target Lady Jaina Proudmoore << Alliance
-step
-    .goto 2451,56.43,59.53
-    >>Use any Flying Mount
-    .complete 90883,1 --1/1 Ride a flying mount
-    .macro Random Mount,413588 >>/use 150544
-step
-    .goto 2451,56.43,59.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Bruvk|r 
-    .turnin 90883 >>Turn in To Go'shek Farm
-    .target Farmer Bruvk
-    .accept 90885 >>Accept My Beautiful Pumpkins
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r
-    .accept 90887 >>Accept Farmer's Nemesis
-    .goto 2451,56.45,59.71
-    .target +Lady Jaina Proudmoore
-    .accept 90886 >>Accept Best Laid Plans of Kobolds and Ogres
-    .goto 2451,56.35,59.57
-    .target +Thrall
-step
-    #completewith Prized Pumpkin
-    >>Kill |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r. Loot them for |T237132:0|t[|cRXP_LOOT_Poorly Written Plans|r].
-    .complete 90886,1 --7/7 Poorly Written Plans
-    .mob Kobold Pillager
-    .mob Kobold Firetender
-    .mob Ogre Destroyer
-step
-    .goto 2451,53.98,56.86
-    >>Kill |cRXP_ENEMY_Runk|r
-    .complete 90887,1 --1/1 Runk slain
-    .mob Runk
-step
-    .goto 2451,53.06,59.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
-    .complete 90885,1,1 --4/4 Prized Pumpkin recovered
-step
-    .goto 2451,51.44,58.8
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
-    .complete 90885,1,2 --4/4 Prized Pumpkin recovered
-step
-    .goto 2451,52.73,60.93
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
-    .complete 90885,1,3 --4/4 Prized Pumpkin recovered
-step
-    #label Prized Pumpkin
-    .goto 2451,53.96,60.07
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r
-    *|cRXP_WARN_You can interact with them from a far|r
-    .complete 90885,1,4 --4/4 Prized Pumpkin recovered
-step
-    #loop
-    .goto 2451,54.15,63.12,40,0
-    .goto 2451,50.69,62.87,40,0
-    .goto 2451,50.98,57.75,40,0
-    .goto 2451,53.35,55.23,40,0
-    .goto 2451,55.06,59.48,40,0
-    >>Kill |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Ogres|r. Loot them for |T237132:0|t[|cRXP_LOOT_Poorly Written Plans|r].
-    .complete 90886,1 --7/7 Poorly Written Plans
-    .mob Kobold Pillager
-    .mob Kobold Firetender
-    .mob Ogre Destroyer
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .turnin 90885 >>Turn in My Beautiful Pumpkins
-    .turnin 90886 >>Turn in Best Laid Plans of Kobolds and Ogres
-    .goto 2451,56.33,59.55
-    .target +Thrall
-    .turnin 90887 >>Turn in Farmer's Nemesis
-    .accept 90888 >>Accept Saving Stromgarde Keep
-    .goto 2451,56.46,59.69
-    .target +Lady Jaina Proudmoore
-step 
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Colvin|r, |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r |cRXP_WARN_on the wall|r.
-    .accept 92028 >>Accept Pardon the Interruption
-    .goto 2451,19.59,57.44
-    .target +Sergeant Colvin
-    .turnin 90888 >>Turn in Saving Stromgarde Keep
-    .accept 90895 >>Accept Catapult Bombardment
-    .goto 2451,19.46,57.43
-    .target +Lady Jaina Proudmoore
-    .accept 90893 >>Accept Repelling the Siege
-    .goto 2451,19.38,57.44
-    .target +Thrall
-step << Horde
-    .goto 2451,20.94,59.65
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
-    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
-    .target Fightbot Version 11.2.7
-step << Horde
-    .goto 2451,20.75,61.25
-    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
-step << Horde
-    .goto 2451,20.84,59.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
-    .turnin 92028 >>Turn in Pardon the Interruption
-    .target Cindy Springstock
-step
-    #completewith Catapults destroyed
-    >>Kill |cRXP_ENEMY_Ogres|r, |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Gnolls|r.
-    *>>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Objects|r
-    .complete 90893,1,100 --Repel the Ogre Siege (100%)
-    .mob Ogre Basher
-    .mob Kobold Waxmancer
-    .mob Gnoll Prowler
-    .mob Ettin Crusher
-step
-    .goto 2451,21.68,51.86
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
-    .complete 90895,1,1 --4/4 Catapults destroyed
-step
-    .goto 2451,19,50.18
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
-    .complete 90895,1,2 --4/4 Catapults destroyed
-step
-    .goto 2451,18.61,45.59
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
-    .complete 90895,1,3 --4/4 Catapults destroyed
-step
-    #label Catapults destroyed
-    .goto 2451,21.52,46.06
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r
-    .complete 90895,1,4 --4/4 Catapults destroyed
-step
-    #loop
-    .goto 2451,22.77,49.17,40,0
-    .goto 2451,23.63,44.36,40,0
-    .goto 2451,17.62,46.13,40,0
-    .goto 2451,18.61,52.66,40,0
-    .goto 2451,22.23,52.93,40,0
-    >>Kill |cRXP_ENEMY_Ogres|r, |cRXP_ENEMY_Kobolds|r and |cRXP_ENEMY_Gnolls|r
-    .complete 90893,1,100 --Repel the Ogre Siege (100%)
-    .mob Ogre Basher
-    .mob Kobold Waxmancer
-    .mob Gnoll Prowler
-    .mob Ettin Crusher
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r and |cRXP_FRIENDLY_Thrall|r
-    .turnin 90895 >>Turn in Catapult Bombardment
-    .goto 2451,24.67,37.11
-    .target +Lady Jaina Proudmoore
-    .turnin 90893 >>Turn in Repelling the Siege
-    .accept 90896 >>Accept One Last Ogre
-    .goto 2451,24.6,37.05
-    .target +Thrall
-step
-    #completewith next
-    #label Ro'grok
-    .goto 2451,27.91,31.76,10,0
-    >>Kill |cRXP_ENEMY_Ro'grok|r
-    .complete 90896,1 --1/1 Ro'grok slain
-    .mob Ro'grok
-step
-    #completewith Ro'grok
-    .goto 2451,28.85,30.91,40 >>Enter the Building
-step
-    #requires Ro'grok
-    .goto 2451,28.85,30.91
-    >>Kill |cRXP_ENEMY_Ro'grok|r
-    .complete 90896,1 --1/1 Ro'grok slain
-    .mob Ro'grok
-step << Horde
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 90896 >>Turn in One Last Ogre
-    .accept 90898 >>Accept Back to Hammerfall
-    .goto 2451,24.59,37.07
-    .target Thrall
-step << Alliance
-    .goto 2451,20.94,59.65
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Robot|r
-    .complete 92028,1 --1/1 Fightbot Version 11.2.7 activated
-    .target Fightbot Version 11.2.7
-step << Alliance
-    .goto 2451,20.75,61.25
-    .complete 92028,2 --3/3 Fightbot Version 11.2.7 abilities interrupted
-step << Alliance
-    .goto 2451,20.84,59.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cindy Springstock|r
-    .turnin 92028 >>Turn in Pardon the Interruption
-    .target Cindy Springstock
-step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .turnin 90896 >>Turn in One Last Ogre
-    .goto 2451,24.59,37.07
-    .target +Thrall
-    .accept 90897 >>Accept Back to Stromgarde
-    .goto 2451,24.67,37.12
-    .target +Lady Jaina Proudmoore
-step << Horde
-    .goto 2451,69.20,34.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 90898 >>Turn in Back to Hammerfall
-    .target Thrall
-    .accept 90911 >>Accept Your Next Adventure
-step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
-    .goto 2451,19.54,61.59
-    .turnin 90897 >>Turn in Back to Stromgarde
-    .accept 90911 >>Accept Your Next Adventure
-    .target Lady Jaina Proudmoore
 ]])
 
 -- =================================
@@ -7715,7 +7714,6 @@ step
     .accept 9313 >>Accept Travel to Azure Watch
 	.target Technician Zhanaa
 ]])
-
 --Draenei Azuremyst Isle
 RXPGuides.RegisterGuide([[
 #retail
@@ -9436,7 +9434,6 @@ step
 -- 	.target Darkmoon Faire Mystic Mage
 --     .dmf
 ]])
-
 --Dwarf Coldridge Vallley
 RXPGuides.RegisterGuide([[
 #retail
@@ -10205,7 +10202,6 @@ step
 --   .timer 10,Start to Logout when timer ends --New Tinkertown
 --   .timer 83.5,Pack Your Bags RP
 ]])
-
 --Gnome New Tinkertown
 RXPGuides.RegisterGuide([[
 #retail
@@ -11402,7 +11398,6 @@ step
 -- 	.target Ciara Deepstone
 -- --XX Doable by other races but simpler to do for gnomes only
 ]])
-
 --Dwarf & Gnome Dun Morogh
 RXPGuides.RegisterGuide([[
 #retail
@@ -11941,7 +11936,6 @@ step
 
 
 ]])
-
 --Human Northshire Valley
 RXPGuides.RegisterGuide([[
 #retail
@@ -12388,7 +12382,6 @@ step
     .accept 37112 >>Accept Rest and Relaxation
     .target Falkhaan Isenstrider
 ]])
-
 --Human Elwynn Forest
 RXPGuides.RegisterGuide([[
 #retail
@@ -13401,7 +13394,6 @@ step
     .turnin 59 >> Turn in Cloth and Leather Armor
     .target Sara Timberlain
 ]])
-
 --Night Elf Shadowglen
 RXPGuides.RegisterGuide([[
 #retail
@@ -13837,7 +13829,6 @@ step
     .accept 2159 >>Accept Dolanaar Delivery
 	.target Porthannius
 ]])
-
 --Night Elf Teldrassil
 RXPGuides.RegisterGuide([[
 #retail
@@ -15004,7 +14995,6 @@ step
 --     .fp >>Get the Goldshire Flight Path
 -- 	.target Bartlett the Brave
 ]])
-
 --Worgen Gilneas
 RXPGuides.RegisterGuide([[
 #retail
@@ -17248,7 +17238,6 @@ step
     .dmf
     .target Darkmoon Faire Mystic Mage
 ]])
-
 --DarkIronDwarf Shadowforge City
 RXPGuides.RegisterGuide([[
 #retail
@@ -17299,7 +17288,6 @@ step
 --     .isQuestTurnedIn 51486
 --     .target Hero's Herald
 ]])
-
 --KulTiran Boralus
 RXPGuides.RegisterGuide([[
 #retail
@@ -17354,7 +17342,6 @@ step
 --     .isQuestTurnedIn 55142
 --     .target Hero's Herald
 ]])
-
 --LightforgedDraenei The Vindicaar
 RXPGuides.RegisterGuide([[
 #retail
@@ -17406,7 +17393,6 @@ step
 --     .isQuestTurnedIn 49772
 --     .target Hero's Herald
 ]])
-
 --Mechagnome Mechagon City
 RXPGuides.RegisterGuide([[
 #retail
@@ -17457,7 +17443,6 @@ step
 --     .isQuestTurnedIn 58146
 --     .target Hero's Herald
 ]])
-
 --VoidElf Telogrus Rift
 RXPGuides.RegisterGuide([[
 #retail
@@ -17512,8 +17497,6 @@ step
 -- ====================================
 -- =======  HORDE  ZONES ==============
 -- ====================================
-
-
 
 --Blood Elf Sunstrider Isle
 RXPGuides.RegisterGuide([[
@@ -17776,7 +17759,6 @@ step
     .accept 8347 >>Accept Aiding the Outrunners
     .target Lanthan Perilon
 ]])
-
 --Blood Elf Eversong Woods
 RXPGuides.RegisterGuide([[
 #retail
@@ -18089,7 +18071,6 @@ step
     .goto 110,58.55,18.65
     .zone 85 >>|cRXP_WARN_Mount up|r Take the portal to Orgrimmar.
 ]])
-
 --Orc Valley of Trials
 RXPGuides.RegisterGuide([[
 #retail
@@ -18467,7 +18448,6 @@ step << Troll
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Burok
 ]])
-
 --Orc Echo Isles
 RXPGuides.RegisterGuide([[
 #retail
@@ -19184,7 +19164,6 @@ step << Orc
     .goto 1,55.38,63.34,-1
     .fly Orgrimmar >>Fly to Orgrimmar
 ]])
-
 --Tauren Camp Narache
 RXPGuides.RegisterGuide([[
 #retail
@@ -19408,7 +19387,6 @@ step
     .accept 26188 >>Accept Mazzranache
     .target Maur Raincaller
 ]])
-
 --Tauren Camp Mulgore
 RXPGuides.RegisterGuide([[
 #retail
@@ -19894,7 +19872,6 @@ step
     .goto 88,15.27,25.72
     .zone 85 >>Take the zeppelin
 ]])
-
 --Undead Deathknell
 RXPGuides.RegisterGuide([[
 #retail
@@ -20147,7 +20124,6 @@ step
     .accept 24972 >>Accept Vital Intelligence
     .target Shadow Priest Sarvis
 ]])
-
 --Undead Eversong Woods
 RXPGuides.RegisterGuide([[
 #retail
@@ -20510,7 +20486,6 @@ step
     .goto 18,60.73,58.68
     .zone 85 >>1) Climb the tower and take the portal to Orgrimmar
 ]])
-
 --Goblin Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
 #retail
@@ -21988,7 +21963,6 @@ step
     .turnin 25267 >>Turn in Message for Saurfang
     .target Saurfang
 ]])
-
 --HighmountainTauren Highmountain
 RXPGuides.RegisterGuide([[
 #retail
@@ -22029,7 +22003,6 @@ step
 --     .turnin 50319 >>Turn in Stranger in a Strange Land 
 --     .target Halian Shlavahawk 
 ]])
-
 --Nightborne The Nighthold
 RXPGuides.RegisterGuide([[
 #retail
@@ -22069,7 +22042,6 @@ step
 --     .turnin 50303 >>Turn in Stranger in a Strange Land
 --     .target Melitier Vahlouran 
 ]])
-
 --ZandalariTroll Dazar'alor
 RXPGuides.RegisterGuide([[
 #retail
@@ -22110,7 +22082,6 @@ step
 --     .turnin 55138 >>Turn in Stranger in a Strange Land
 --     .target Natal'hakata
 ]])
-
 --MagharOrc Orgrimmar
 RXPGuides.RegisterGuide([[
 #retail
@@ -22148,7 +22119,6 @@ step
 --     .turnin 53502 >>Turn in Stranger in a Strange Land
 --     .target Limbflayer Lasha 
 ]])
-
 --Vulpera Orgrimmar
 RXPGuides.RegisterGuide([[
 #retail

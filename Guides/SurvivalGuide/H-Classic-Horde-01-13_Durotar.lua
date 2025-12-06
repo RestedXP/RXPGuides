@@ -2897,6 +2897,7 @@ step << Shaman
     .isQuestTurnedIn 806
     .group
 step << Shaman
+    #loop
     .goto Durotar,53.18,29.15,0
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0

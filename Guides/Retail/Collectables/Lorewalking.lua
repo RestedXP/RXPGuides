@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 
 
 step << Alliance
+    .isOnQuest 90705
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -16,6 +17,7 @@ step << Alliance
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
 step << Horde
+    .isOnQuest 90705
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -637,6 +639,7 @@ RXPGuides.RegisterGuide([[
 
 
 step << Alliance
+    .isOnQuest 90705
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -644,6 +647,7 @@ step << Alliance
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
 step << Horde
+    .isOnQuest 90705
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -920,10 +924,144 @@ step
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
 step
     #requires Throwing Shade
+    #label Throwing Shade
     .goto 882,35.34,59.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 47203 >>Accept Throwing Shade
     .target Alleria Windrunner
+
+-
+
+step
+    .goto 882,35.33,59.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_after the roleplay|r.
+    .accept 47203 >>Accept Throwing Shade
+    .target Alleria Windrunner
+step
+    .goto 882,36.83,52.64
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 47203,1 --1/1 Meet Alleria in Umbra Hollows
+    .timer 19,Roleplay
+step
+    .goto 882,37.11,52.36
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Tear|r.
+    .complete 47203,2 --1/1 Enter the Void Tear
+step
+    .goto 882,37.11,52.36,0
+    #title |cFFFCDC00Avoid the Void Effusions|r
+    .goto 882,39.66,48.19
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dismantled Portal|r.
+    .complete 47203,3 --1/1 Dismantled Portal examined
+step
+    #title |cFFFCDC00Avoid the Void Effusions|r
+    .goto 882,35.51,43.67
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Image of Saprish|r.
+    .complete 47203,4 --1/1 Image of Saprish examined
+step
+    #title |cFFFCDC00Avoid the Void Effusions/Voidcasters|r
+    .goto 882,36.06,38.67
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Voidforge|r.
+    .complete 47203,5 --1/1 Voidforge examined
+step
+    #title |cFFFCDC00Avoid the Void Effusions/Voidcasters|r
+    .goto 882,32.11,37.79
+    >>Follow the Arrow
+    .complete 47203,6 --1/1 Meet Alleria and Locus-Walker
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
+    .turnin 47203 >>Turn in Throwing Shade
+    .accept 47217 >>Accept Sources of Darkness
+    .goto 882,31.87,37.47
+    .target +Alleria Windrunner
+    .accept 47218 >>Accept The Shadowguard Incursion
+    .goto 882,31.93,37.33
+    .target +Locus-Walker
+step
+    #completewith SourcesOfDarknessA
+    >>Kill the |cRXP_ENEMY_Shadowguard forces|r.
+    .complete 47218,1 --15/15 Shadowguard Ethereals slain
+    .mob Enthralled Voidstalker
+    .mob Shadowguard Phaseblade
+    .mob Shadowguard Adept
+step
+    #title Harversters deactivated (1/5) |cFFFCDC00(Read Note)|r
+    .goto 882,32.07,34.9,15,0
+    .goto 882,31.67,34.4
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Harvesters|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .complete 47217,1,1 --1/5 Void Harvesters deactivated
+step
+    #title Harversters deactivated (2/5) |cFFFCDC00(Read Note)|r
+    .goto 882,28.36,34.24
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Harvesters|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .complete 47217,1,2 --2/5 Void Harvesters deactivated
+step
+    #title Harversters deactivated (3/5) |cFFFCDC00(Read Note)|r
+    .goto 882,25.59,32.15
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Harvesters|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .complete 47217,1,3 --3/5 Void Harvesters deactivated
+step
+    #title Harversters deactivated (4/5) |cFFFCDC00(Read Note)|r
+    .goto 882,24.65,33.37
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Harvesters|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .complete 47217,1,4 --4/5 Void Harvesters deactivated
+step
+    #label SourcesOfDarknessA
+    #title Harversters deactivated (5/5) |cFFFCDC00(Read Note)|r
+    .goto 882,25.06,35.76
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Harvesters|r.
+    *|cRXP_WARN_NOTE:|r The order is hardcoded. If you do the quest in a different order then the waypoint will be wrong.
+    .complete 47217,1 --5/5 Void Harvesters deactivated
+step
+    #loop
+    .goto 882,23.26,41.08,40,0
+    .goto 882,27.67,38.10,35,0
+    .goto 882,29.15,32.40,35,0
+    .goto 882,25.26,32.01,35,0
+    >>Kill the |cRXP_ENEMY_Shadowguard forces|r.
+    .complete 47218,1 --15/15 Shadowguard Ethereals slain
+    .mob Enthralled Voidstalker
+    .mob Shadowguard Phaseblade
+    .mob Shadowguard Adept
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r and |cRXP_FRIENDLY_Locus-Walker|r.
+    .turnin 47217 >>Turn in Sources of Darkness
+    .goto 882,31.88,37.48
+    .target +Alleria Windrunner
+    .turnin 47218 >>Turn in The Shadowguard Incursion
+    .accept 47219 >>Accept A Vessel Made Ready
+    .timer 19,Void Tear Spawn
+    .goto 882,31.93,37.33
+    .target +Locus-Walker
+step
+    .goto 882,31.94,37.03
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Void Tear|r.
+    .complete 47219,1 --1/1 Enter the Void Tear
+step
+    .goto 882,26.68,44.99
+    >>Kill the |cRXP_ENEMY_Shadowguard Abyss Caller|r and |cRXP_ENEMY_Nhal'atoth|r.
+    .complete 47219,2 --1/1 Defeat Nhal'athoth
+    .mob Shadowguard Abyss Caller
+    .mob Nhal'atoth
+step
+    .goto 882,26.68,44.99
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Heart of Nhal'atoth|r.
+    .complete 47219,3 --1/1 Heart of Nhal'athoth
+    .timer 15,Alleria Roleplay
+step
+    .goto 882,28.44,47.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r.
+    .turnin 47219 >>Turn in A Vessel Made Ready
+    .timer 5,Alleria Roleplay
+    .target Alleria Windrunner
+
+
+
+
+-
 step
     .goto 882,37.13,52.32
     #title |cFFFCDC00Follow the Arrow|r
@@ -1038,6 +1176,7 @@ step
     .mob Shadowguard Abyss Caller
     .mob Nhal'athoth
 step
+    #label A Vessel Made Ready
     .goto 882,28.43,47.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .turnin 47219 >>Turn in A Vessel Made Ready
@@ -1552,6 +1691,7 @@ RXPGuides.RegisterGuide([[
 #next ad) The Elves of Quel'Thalas
 
 step << Alliance
+    .isOnQuest 90705
     .goto 84,64.24,16.10,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
@@ -1559,6 +1699,7 @@ step << Alliance
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
 step << Horde
+    .isOnQuest 90705
     .goto 85,54.24,56.59,-1
     .goto 2339,49.62,31.52,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
@@ -1964,7 +2105,175 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Collectables
 #subgroup Lorewalking
 #name ad) The Elves of Quel'Thalas
-#displayname The Lich King
+#displayname The Elves of Quel'Thalas
 #next a) Xal'atath
 
+step << Alliance
+    .isOnQuest 90705
+    .goto 84,64.24,16.10,-1
+    .goto 2339,49.62,31.52,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Stormwind|r.
+    .accept 90705 >>Accept Lorewalking
+    .turnin 90705 >>Turn in Lorewalking
+    .target Lorewalker Cho
+step << Horde
+    .isOnQuest 90705
+    .goto 85,54.24,56.59,-1
+    .goto 2339,49.62,31.52,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r |cRXP_WARN_in Dornogal or Orgrimmar|r.
+    .accept 90705 >>Accept Lorewalking
+    .turnin 90705 >>Turn in Lorewalking
+    .target Lorewalker Cho
+step
+    .goto 85,54.35,56.66,-1
+    .goto 84,64.19,16.26,-1
+    .goto 2339,49.6,31.63,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .accept 85252 >>Accept Lorewalking: Children of the Blood
+    .skipgossipid 124311
+    .choose 6403386
+    .target Lorewalker Cho
+step
+    .goto 85,54.35,56.66,-1
+    .goto 2339,49.6,31.63,-1
+    .goto 84,64.19,16.26,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85252,1 --1/1 Talk to Cho
+    .timer 8,RP
+    .skipgossipid 131412
+    .target Cho
+step
+    .goto 95,46.31,31.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r
+    .accept 53882 >>Accept Writing on the Wall
+    .target Lor'themar Theron
+step
+    #completewith next
+    #label First Flame
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lamp|r
+    .complete 53882,1 --1/1 Light the First Flame
+step
+    #completewith First Flame
+    .goto 95,46.41,32.86
+    >>Click on the |cRXP_PICK_Dragon|r
+    .complete 85252,3 --1/1 Ride Mishi (Optional)
+    .mob Mishi
+    .timer 27,RP
+step
+    #requires First Flame
+    .goto 95,47.73,84.01
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lamp|r
+    .complete 53882,1 --1/1 Light the First Flame
+step
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor2@Writing on the Wall-Writing on the Wall2
+step
+    .goto 95,37.47,64.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you|r
+    .turnin 53735 >>Turn in The First to Fall
+    .target Lor'themar Theron
+    .accept 53737 >>Accept The Day Hope Died
+step
+    #completewith next
+    #label Sylvanas' fall
+    >>Use your [ExtraActionButton] on the illuminated spot.
+    .complete 53737,1 --1/1 Light shed at Sylvanas' fall
+step
+    #completewith Sylvanas' fall
+    .goto 95,37.49,64.54
+    >>Click on the |cRXP_PICK_Dragon|r
+    .complete 85252,5 --1/1 Ride Mishi (Optional)
+    .timer 45,RP
+step
+    #requires Sylvanas' fall
+    .goto 94,51.21,69.28
+    >>Use your [ExtraActionButton] on the illuminated spot.
+    .complete 53737,1 --1/1 Light shed at Sylvanas' fall
+step
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor2@TheDayHopeDiedStart-TheDayHopeDiedEnd
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you|r.
+    .turnin 53737 >>Turn in The Day Hope Died
+    .complete 85252,6 --1/1 Accompany Lor'themar
+    .target Lor'themar Theron
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r |cRXP_WARN_next to you|r.
+    .complete 85252,7 --1/1 Talk to Cho
+    .skipgossipid 136429
+    .target Cho
+step
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor2@SunwellStart1-SunwellEnd1
+step
+    .goto 85,54.35,56.66,-1
+    .goto 84,64.19,16.26,-1
+    .goto 2339,49.6,31.63,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .turnin 85252 >>Turn in Lorewalking: Children of the Blood
+    .target Lorewalker Cho
+    .accept 85254 >>Accept Lorewalking: Children of the Void
+step
+    .goto 85,54.35,56.66,-1
+    .goto 84,64.19,16.26,-1
+    .goto 2339,49.6,31.63,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r
+    .complete 85254,1 --1/1 Talk to Cho
+    .timer 8,RP
+    .skipgossipid 131413
+    .target Cho
+step
+    .goto 110,58.12,19.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
+    .accept 49354 >>Accept Remember the Sunwell
+    .complete 85254,2 --1/1 Accept "Remember the Sunwell" from Lady Liadrin
+    .target Lady Liadrin
+step
+    #include RestedXP Collectables\a) Nightborne Unlock2@RemembertheSunwellStart-RemembertheSunwellEnd
+step
+    .goto 110,58.47,19.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
+    .turnin 49354 >>Turn in Remember the Sunwell
+    .target Lady Liadrin
+    .complete 85254,3 --1/1 Learn about Alleria's incident at the Sunwell
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cho|r |cRXP_WARN_next to you|r.
+    .complete 49787,1 --1/1 Travel to the Ghostlands
+    .timer 8,RP
+    .skipgossipid 136404
+    .target Cho
+step
+    #include RestedXP Collectables\a) Void Elf Unlock2@SanctumoftheMoonStart-SanctumoftheMoonEnd
+step
+    .isOnQuest 49787
+    .goto 95,46.5,56.74
+    .vehicle >>Click on the |cRXP_PICK_Dragon|r
+    .timer 35,RP
+step
+    .goto 95,79.15,16.5,7,0
+    .goto 95,79.65,17.52
+    .isOnQuest 49787
+    .cast 258931 >>Jump and click on the |cRXP_PICK_Teleportation Console|r midair.
+step
+    #include RestedXP Collectables\a) Void Elf Unlock2@SanctumoftheMoonStart2-SanctumoftheMoonEnd2
+step
+    #completewith next
+    #label Telogrus Rift1
+    .goto 84,52.05,13.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r.
+    .turnin 48962 >>Turn in Telogrus Rift
+    .target Lorewalker Cho
+step
+    #completewith Telogrus Rift1
+    .cast 1242675 >>Use the macro in the "Active Items Frame" to talk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .macro Open Lorewalking,2056011>>/use ask a question
+step
+    #requires Telogrus Rift1
+    .goto 84,52.05,13.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r.
+    .turnin 48962 >>Turn in Telogrus Rift
+    .complete 85254,5 --1/1 Complete the Void Elf Quests
+    .target Lorewalker Cho
+step
+    .goto 972,27.94,24.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
+    .turnin 85254 >>Turn in Lorewalking: Children of the Void
+    .target Lorewalker Cho
 ]])

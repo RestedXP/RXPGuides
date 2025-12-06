@@ -137,8 +137,9 @@ local function IsQuestAvailable(quest,id,skipRepCheck,nested)
 
     local activeFor = quest.appliesTo
     if activeFor then
-        activeFor = addon.applies(activeFor) or
-                        addon.GetSkillLevel(activeFor) > 0
+        activeFor = addon.applies(activeFor,nil,function(entry)
+            return addon.GetSkillLevel(entry) > 0
+        end)
     else
         activeFor = true
     end
@@ -152,6 +153,13 @@ function addon.GetBestQuests(refreshQuestDB,output)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     if not QuestDB then return end
+    for quest,obj in pairs(QuestDB) do
+        if obj.questLog then
+            obj.itemAmount = nil
+            obj.itemId = nil
+            obj.previousQuest = nil
+        end
+    end
     local sortfunc = function(k1, k2)
         local xc1 = k1.xpcorrection or 0
         local xc2 = k2.xpcorrection or 0
@@ -163,6 +171,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
         local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
         local prio1 = k1.priority or 1e3
         local prio2 = k2.priority or 1e3
+        local xphr1 = k1["xp/hr"] or 0
+        local xphr2 = k2["xp/hr"] or 0
         local isQuestLog = k1.questLog and k2.questLog
         local gc1,gc2
         if QuestDB["groups"] then
@@ -186,6 +196,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
             return false
         elseif gc2 == false and gc2 ~= gc1 then
             return true
+        elseif xphr1 ~= xphr2 then
+            return xphr1 > xphr2
         elseif x1 ~= x2 then
             return x1 > x2
         elseif prev1 and not prev2 then
@@ -528,6 +540,7 @@ function addon.CalculateTotalXP(flags)
     local xpmod = GetXPMods()
     --print(xpmod)
     local groups = {}
+    local QList = {}
     local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
         local group = quest.group or ""
@@ -540,8 +553,9 @@ function addon.CalculateTotalXP(flags)
             if output then
                     local s = string.format("%dxp %s (%d)", xp,
                                     addon.GetQuestName(qid) or "", qid)
-                    table.insert(outputString,s)
-                    addon.comms.PrettyPrint(s)--ok
+                    --table.insert(outputString,s)
+                    table.insert(QList,{text = s, id = qid, obj = quest})
+                    --addon.comms.PrettyPrint(s)--ok
             end
         end
         return isAvailable
@@ -593,6 +607,32 @@ function addon.CalculateTotalXP(flags)
         end
     end
     if output then
+        local db
+        if _G.QuestieLoader then
+            db = _G.QuestieLoader:ImportModule("QuestieDB")
+        end
+
+        local zoneList = {}
+        for _,q in ipairs(QList) do
+            local zone = zoneList[q.id] or 0
+            if db and zone == 0 then
+                local qdb = db:GetQuest(q.id)
+                zone = qdb and qdb.Zone or 0
+            end
+            local l = zoneList[zone] or {}
+            zoneList[zone] = l
+            table.insert(l, q)
+        end
+        for zone,t in pairs(zoneList) do
+            if zone and zone ~= 0 then
+                table.insert(outputString,"\n-- "..C_Map.GetAreaInfo(zone).." --")
+            else
+                table.insert(outputString,"\n--")
+            end
+            for _,q in ipairs(t) do
+                table.insert(outputString,q.text)
+            end
+        end
         textOverride = format("Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
         if not addon.settings.gui.quest then
             CreatePanel()
@@ -619,8 +659,8 @@ function addon.ShowMissingQuests(output)
 end
 
 local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
-function addon.ForceNextStep()
-    if not (_G.Settings and _G.Settings.GetCategory) then
+function addon.CompleteStep()
+    if _G.Settings and _G.Settings.GetCategory then
         return
     end
     for i,step in pairs(addon.RXPFrame.activeSteps) do
@@ -638,4 +678,37 @@ function addon.ForceNextStep()
             end
         end
     end
+end
+
+
+local cs
+local mobData = {}
+function addon.Goto()
+    if _G.Settings and _G.Settings.GetCategory then
+        return
+    end
+    if cs ~= RXPCData.currentStep then
+        cs = RXPCData.currentStep
+        table.wipe(mobData)
+    end
+    local targets = addon.targeting.GetCurrentTargets()
+    for index,name in ipairs(targets or {}) do
+        if not mobData[name] then
+            local p = '.go c "%s"'
+            if name:find("\"") then
+                p = ".go c '%s'"
+            end
+            mobData[name] = true
+            SendChatMessage(format(p,name), "SAY", nil)
+            print(name)
+            return
+        end
+    end
+
+    local element = addon.arrowFrame.element
+    if element then
+        SendChatMessage(format(".go xy %.3f %.3f %d",element.wy,element.wx,element.instance), "SAY", nil)
+        return
+    end
+
 end

@@ -2,16 +2,15 @@
 -- ==========   DF ============
 -- ============================
 
---SEPERATOR
+--Nesting
 RXPGuides.RegisterGuide([[
 #retail
+#version 1
 #group RestedXP Collectables
 #subgroup Skyriding Glyphs
-#name 0
-#displayname |cFFFCDC00DRAGONFLIGHT|r
-#disabled
-
-
+#name a) Dragonflight Glyphs
+#displayname Dragonflight Glyphs
+#chapters a) Waking Shores Glyphs;a) Ohn'ahran Plains Glyphs;a) Azure Span Glyphs;a) Thaldraszus Glyphs;a) Forbidden Reach Glyphs;a) Zaralek Cavern Glyphs;a) Emerald Dream Dragon Glyphs
 ]])
 
 --Waking Shores
@@ -19,10 +18,10 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 3
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
 #name a) Waking Shores Glyphs
 #displayname |cFF00CCFF1|r - Waking Shores
-#next b) Ohn'ahran Plains Glyphs
+#next a) Ohn'ahran Plains Glyphs
+#chapter
 
 step
     #completewith WakingShoreDragonGlyphs
@@ -157,16 +156,15 @@ step
     .goto 2022,48.82,86.64
     .achievement 16576,11 >>Pick up the Dragon Glyph: Rubyscale Outpost a few yards above the ground
 ]])
-
 --Ohn'ahran Plains
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name b) Ohn'ahran Plains Glyphs
+#name a) Ohn'ahran Plains Glyphs
 #displayname |cFF00CCFF2|r - Ohn'ahran Plains
-#next c) Azure Span Glyphs
+#next a) Azure Span Glyphs
+#chapter
 
 step
     #title Dragon Glyph: Mirewood Fen
@@ -265,16 +263,15 @@ step
     .goto 2023,84.57,77.79
     .achievement 16576,8 >>Pick up the Dragon Glyph: Dragonsprings Summit in the air above the small sea
 ]])
-
 --Azure Span
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name c) Azure Span Glyphs
+#name a) Azure Span Glyphs
 #displayname |cFF00CCFF3|r - Azure Span
-#next d) Thaldraszus Glyphs
+#next a) Thaldraszus Glyphs
+#chapter
 
 step
     #title Dragon Glyph: Forkriver Crossing
@@ -395,16 +392,15 @@ step
     .goto 2024,45.83,25.73
     .achievement 16577,1 >>Pick up the Dragon Glyph: Cobalt Assembly above the tower
 ]])
-
 --Thaldraszus
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name d) Thaldraszus Glyphs
+#name a) Thaldraszus Glyphs
 #displayname |cFF00CCFF4|r - Thaldraszus
-#next e) Forbidden Reach Glyphs
+#next a) Forbidden Reach Glyphs
+#chapter
 
 step
     #title Dragon Glyph: South Hold Gate
@@ -507,16 +503,15 @@ step
     .goto 2025,66.0,82.3
     .achievement 16578,1 >>Pick up the Dragon Glyph: Temporal Conflux on top of the tower
 ]])
-
 --Forbidden Reach
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name e) Forbidden Reach Glyphs
+#name a) Forbidden Reach Glyphs
 #displayname |cFF00CCFF5|r - Forbidden Reach
-#next f) Zaralek Cavern Glyphs
+#next a) Zaralek Cavern Glyphs
+#chapter
 
 step
     #completewith next
@@ -623,17 +618,15 @@ step
     .goto 2151,20.6,91.4
     .achievement 17411,2 >> Pick up the Dragon Glyph: Talon's Watch hidden within the bottom of the tower on an island
 ]])
-
 --Zaralek Cavern
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name f) Zaralek Cavern Glyphs
+#name a) Zaralek Cavern Glyphs
 #displayname |cFF00CCFF6|r - Zaralek Cavern
-#next g) Emerald Dream Dragon Glyphs
-
+#next a) Emerald Dream Dragon Glyphs
+#chapter
 
 step
     .zoneskip 2200
@@ -714,17 +707,15 @@ step
     .goto 2200,48.0,4.4
     .achievement 19306,8 >> Pick up the Dragon Glyph: Aberrus Approach behind the raid instance |cRXP_WARN_at the top of the lava waterfall|r.
 ]])
-
 --Emerald Dream
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name g) Emerald Dream Dragon Glyphs
+#name a) Emerald Dream Dragon Glyphs
 #displayname |cFF00CCFF7|r - Emerald Dream
-#next h) Isle of the Dorn Glyphs
-
+#next a) Isle of the Dorn Glyphs
+#chapter
 
 step
     .zoneskip 2200
@@ -783,16 +774,15 @@ step
 -- ==========   TWW ============
 -- =============================
 
---SEPERATOR
+--Nesting
 RXPGuides.RegisterGuide([[
 #retail
+#version 1
 #group RestedXP Collectables
 #subgroup Skyriding Glyphs
-#name ga
-#displayname |cFFFCDC00THE WAR WITHIN|r
-#disabled
-
-
+#name a) The War Within Glyphs
+#displayname The War Within Glyphs
+#chapters a) Isle of the Dorn Glyphs;a) The Ringing Deeps Glyphs;a) Hallowfall Glyphs;a) Azj-Kahet Glyphs;a) K'aresh Glyphs
 ]])
 
 --Isle of the Dorn
@@ -800,10 +790,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 #retail
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name h) Isle of the Dorn Glyphs
+#name a) Isle of the Dorn Glyphs
 #displayname |cFF1EFF001|r - Isle of the Dorn
-#next i) The Ringing Deeps Glyphs
+#next a) The Ringing Deeps Glyphs
+#chapter
 
 step
     #completewith
@@ -880,17 +870,15 @@ step
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,2 >>Pick up the Skyriding Glyph: Dhar Oztan
 ]])
-
 --The Ringing Deeps
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name i) The Ringing Deeps Glyphs
+#name a) The Ringing Deeps Glyphs
 #displayname |cFF1EFF002|r - The Ringing Deeps
-#next j) Hallowfall Glyphs
-
+#next a) Hallowfall Glyphs
+#chapter
 
 step
     #title Skyriding: The Stonevault Exterior
@@ -956,16 +944,15 @@ step
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,9 >>Pick up the Skyriding Glyph: The Waterworks
 ]])
-
 --Hallowfall
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
-#name j) Hallowfall Glyphs
+#name a) Hallowfall Glyphs
 #displayname |cFF1EFF003|r - Hallowfall
-#next k) Azj-Kahet Glyphs
+#next a) Azj-Kahet Glyphs
+#chapter
 
 step
     #title Skyriding: The Fangs
@@ -1038,16 +1025,15 @@ step
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,10 >>Pick up the Skyriding Glyph: Tenir's Ascent
 ]])
-
 --Azj-Kahet
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
 #displayname |cFF1EFF004|r - Azj-Kahet
-#name k) Azj-Kahet Glyphs
-#next l) K'aresh Glyphs
+#name a) Azj-Kahet Glyphs
+#next a) K'aresh Glyphs
+#chapter
 
 step
     #title Skyriding: Trickling Abyss
@@ -1127,16 +1113,15 @@ step
     *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40705,9 >>Pick up the Skyriding Glyph: Silken Ward
 ]])
-
 --K'aresh Glyph Hunter
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
 #group RestedXP Collectables
-#subgroup Skyriding Glyphs
 #displayname |cFF1EFF005|r - K'aresh
-#name l) K'aresh Glyphs
+#name a) K'aresh Glyphs
 #next a) Waking Shores Glyphs
+#chapter
 
 step
     #title Skyriding: Tazavesh

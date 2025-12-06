@@ -46,6 +46,7 @@ local unitscanList = {}
 
 local rareTargets = {}
 
+
 local pendingLeaderUpdate
 
 function addon.targeting:Setup()
@@ -105,6 +106,10 @@ function addon.targeting:Setup()
         self:LoadRares()
         self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     end
+end
+
+function addon.targeting.GetCurrentTargets()
+    return targetList,mobList,unitscanList,rareTargets
 end
 
 local function shouldTargetCheck()
