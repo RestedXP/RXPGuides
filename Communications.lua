@@ -63,7 +63,9 @@ function addon.comms:Setup()
         end
     end
 
-    addon.comms:UpdateDB()
+    self:UpdateDB()
+
+    self.grouping:Setup()
 end
 
 function addon.comms:UpdateDB()
@@ -713,6 +715,18 @@ function addon.comms:PopupNotification(lookup, prompt)
 end
 
 addon.comms.grouping = {}
+function addon.comms.grouping:Setup()
+    local frequencySec
+    if addon.settings.profile and addon.settings.profile.updateFrequency then
+        -- 75ms * 200 = 15s
+        frequencySec = addon.settings.profile.updateFrequency * 200
+    else
+        frequencySec = 10 -- 10s
+    end
+
+    self.ticker = C_Timer.NewTicker(frequencySec / 1000, self.Advertise)
+end
+
 function addon.comms.grouping:ShareQuest(questId)
     if not addon.settings.profile.shareQuests then return end
 
@@ -797,3 +811,17 @@ function addon.comms.grouping:UpdateParty()
         end
     end
 end
+
+function addon.comms.grouping.Advertise()
+    if addon.settings.profile.lookForMore then
+
+    end
+
+    if addon.settings.profile.lookForMoreGuild then
+
+    end
+end
+-- fmt("%s %s", _G.LOOKING_FOR_GROUP_LABEL, addon.currentGuide.name
+-- "I'm looking for a group for: 43 - 44 Feralas"
+
+-- PARTY_QUEST_STATUS_ON	Nearby party members that are on this quest:

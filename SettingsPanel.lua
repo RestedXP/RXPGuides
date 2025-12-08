@@ -2229,13 +2229,28 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.1
                     },
+                    lookForMoreGuild = {
+                        name = fmt("%s (%s)", _G.LOOK_FOR_MORE, _G.GUILD),
+                        -- desc = "Check guild",-- TODO localize
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.21
+                    },
+                    lookForMore = {
+                        name = fmt("%s (%s %s)", _G.LOOK_FOR_MORE, _G.NEAR, _G.PLAYER),
+                        -- desc = "Check nearby",-- TODO localize
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 3.22
+                    },
                     shareQuests = {
                         name = L("Automatic quest sharing"), -- TODO: Localize this setting
                         desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.2
-                    }
+                        order = 3.3
+                    },
+
                 }
             },
             tipsPanel = {
