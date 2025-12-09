@@ -536,22 +536,22 @@ local function GetQuestLogParentAndAbandon()
     if qmf and qmf.DetailsFrame and qmf.DetailsFrame.AbandonButton then
         return qmf.DetailsFrame, qmf.DetailsFrame.AbandonButton, "RETAIL"
     end
--- ClassicQuestLog
-    if _G.QuestLogFrame and _G.QuestLogFrameAbandonButton then
-        return _G.QuestLogFrame, _G.QuestLogFrameAbandonButton, "CLASSIC"
-    end
 
     -- Popular replacements
     if _G.ClassicQuestLog and _G.QuestLogFrameAbandonButton then
         return _G.ClassicQuestLog, _G.QuestLogFrameAbandonButton, "CLASSIC"
     end
-    if _G.QuestLogEx and _G.QuestLogFrameAbandonButton then
-        return _G.QuestLogEx, _G.QuestLogFrameAbandonButton, "CLASSIC"
+    if _G.QuestLogExFrame and _G.QuestLogFrameAbandonButton then
+        return _G.QuestLogExFrame, _G.QuestLogExFrameAbandonButton, "CLASSIC"
     end
     if _G.QuestGuru and _G.QuestLogFrameAbandonButton then
         return _G.QuestGuru, _G.QuestLogFrameAbandonButton, "CLASSIC"
     end
 
+    --Default Quest Log
+    if _G.QuestLogFrame and _G.QuestLogFrameAbandonButton then
+        return _G.QuestLogFrame, _G.QuestLogFrameAbandonButton, "CLASSIC"
+    end
     return nil, nil, nil
 end
 
@@ -561,7 +561,7 @@ local function BuildOrphanListText(orphans)
         local q = orphans[i]
         local name = q.questLogTitleText or "Unknown"
         local lvl  = q.level and (" (level " .. q.level .. ")") or ""
-        t[#t+1] = name .. lvl
+        table.insert(t,name .. lvl)
     end
     return table.concat(t, "\n")
 end
@@ -726,10 +726,12 @@ end
 
 local function AnchorCleanupButton()
     if not cleanupBtn or not cleanupBtn:GetParent() then return end
+    cleanupBtn.AnchorCleanupButton = AnchorCleanupButton
     local _, abandon = GetQuestLogParentAndAbandon()
     if abandon and abandon:IsShown() then
         cleanupBtn:ClearAllPoints()
-        cleanupBtn:SetPoint("TOPLEFT", abandon, "BOTTOMLEFT", 0, -6)
+        cleanupBtn:SetParent(abandon:GetParent())
+        cleanupBtn:SetPoint("TOPLEFT", abandon, "BOTTOMLEFT", 0, -1)
     else
         -- Defensive fallback inside parent
         cleanupBtn:ClearAllPoints()
@@ -752,7 +754,7 @@ local function CreateCleanupButton()
     cleanupBtn = CreateFrame("Button", "RXPQuestLogCleanupButton", parent, "UIPanelButtonTemplate")
     cleanupBtn:SetText(ICON_INLINE .. CLEANUP_LABEL)
     cleanupBtn:SetSize(200, 22)
-
+    addon.cleanupBtn = cleanupBtn
     AnchorCleanupButton()
 
     cleanupBtn:SetScript("OnClick", function()
@@ -807,7 +809,7 @@ end
 do
     local f = CreateFrame("Frame")
     f:RegisterEvent("ADDON_LOADED")
-    f:RegisterEvent("PLAYER_LOGIN")
+    f:RegisterEvent("PLAYER_ENTERING_WORLD")
     f:RegisterEvent("PLAYER_REGEN_DISABLED")
     f:RegisterEvent("PLAYER_REGEN_ENABLED")
 
@@ -819,22 +821,21 @@ do
                 CreateCleanupButton()
             end
 
-        elseif ev == "PLAYER_LOGIN" then
+        elseif ev == "PLAYER_ENTERING_WORLD" then
             CreateCleanupButton()
+            cleanupBtn.hook = function()
+                CreateCleanupButton()
+                ReanchorCleanupButtonIfNeeded()
+            end
 
-            if not createdCleanupBtn and not hookedToggle then
+            if not hookedToggle then
                 if _G.ToggleQuestLog then
                     hookedToggle = true
-                    hooksecurefunc("ToggleQuestLog", function()
-                        CreateCleanupButton()
-                        ReanchorCleanupButtonIfNeeded()
-                    end)
+                    cleanupBtn.hookedToggle = hookedToggle
+                    hooksecurefunc("ToggleQuestLog", cleanupBtn.hook)
                 elseif _G.WorldMapFrame and _G.WorldMapFrame.HookScript then
                     hookedToggle = true
-                    _G.WorldMapFrame:HookScript("OnShow", function()
-                        CreateCleanupButton()
-                        ReanchorCleanupButtonIfNeeded()
-                    end)
+                    _G.WorldMapFrame:HookScript("OnShow", cleanupBtn.hook)
                 end
             end
 
