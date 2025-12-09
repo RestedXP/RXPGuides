@@ -235,7 +235,7 @@ end
 function addon.comms:OnCommReceived(prefix, data, _, sender)
     if prefix ~= self._commPrefix or sender == addon.player.name then return end
 
-    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
+    if UnitInBattleground("player") ~= nil then return end
 
     local status, obj = self:Deserialize(data)
 
@@ -312,7 +312,7 @@ function addon.comms:HandleAnnounce(data)
 end
 
 function addon.comms:Broadcast(data)
-    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
+    if UnitInBattleground("player") ~= nil then return end
 
     local sz = self:Serialize(data)
     self:SendCommMessage(self._commPrefix, sz, "PARTY")
