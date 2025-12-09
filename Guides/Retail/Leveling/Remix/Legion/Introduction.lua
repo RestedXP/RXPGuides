@@ -1147,6 +1147,12 @@ step
     .accept 40236 >>Accept The Dawning Light
     .timer 42,RP
 step
+    .goto 709,50.35,59.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caydori Brightstar|r
+    .accept 44249 >>Accept Inner Sanctuary
+    .target Caydori Brightstar
+    .turnin 44249 >>Turn in Inner Sanctuary
+step
     .goto 709,51.41,48.41
     #title |cFFFCDC00Follow the Arrow|r
     >>|cRXP_WARN_Wait for the Roleplay|r.

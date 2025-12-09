@@ -977,6 +977,9 @@ step
     .turnin 40715 >>Turn in A Pact of Necessity
     .target Rensar Greathoof
 step
+    #completewith Baron Sliver
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r
+step
     .isQuestAvailable 43962
     .goto 627,73.10,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r.
@@ -1009,6 +1012,7 @@ step
     >>|cRXP_WARN_Follow the arrow|r.
     .scenario 2154,1 --Follow Baron Silver
 step
+    #label Baron Sliver
     .isInScenario 940
     .goto 714,23.74,50.28
     >>Kill the |cRXP_ENEMY_Niskaran Doombringer|r and |cRXP_ENEMY_Felguard Sentry|r.
@@ -1201,6 +1205,9 @@ step
     .turnin 40715 >>Turn in A Pact of Necessity
     .target Rensar Greathoof
 step
+    #completewith Fragments of Frostmourne
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 627,73.09,46.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r
     .accept 38990 >>Accept The Call of Icecrown
@@ -1221,6 +1228,7 @@ step
     #completewith next
     +|cRXP_WARN_To open the door, kill the |cRXP_ENEMY_Stoneskin Gatekeeper|r on top of at least one button (or use |T237532:0|t|r[Death Grip] |cRXP_WARN_to grip them onto one) and stand on top of the second one.
 step
+    #label Fragments of Frostmourne
     .goto 700,52.16,66.08
     .isInScenario 901
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragments of Frostmourne|r
@@ -1400,6 +1408,9 @@ step
     .turnin 40715 >>Turn in A Pact of Necessity
     .target Rensar Greathoof
 step
+    #completewith Apocalypse
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     >>This quest should get pushed to your quest log automatically. If not then relog.
     .accept 40930 >>Accept Apocalypse
 step
@@ -1415,6 +1426,7 @@ step
     .target Revil Kost
     .skipgossipid 44918
 step
+    #label Apocalypse
     .goto 47,77.42,36.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
     .turnin 40930 >>Turn in Apocalypse
@@ -1808,6 +1820,9 @@ step
     .target Kayn Sunfury
     .target Altruis the Sufferer
 step
+    #completewith By Any Means
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .isQuestAvailable 40249
     .goto 627,74.97,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
@@ -1841,6 +1856,7 @@ step
     .turnin 40819 >>Turn in Making Arrangements
     .accept 39051 >>Accept By Any Means
 step
+    #label By Any Means
     .goto 627,65.63,67.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .turnin 40819 >>Turn in Making Arrangements
@@ -2093,6 +2109,9 @@ step
     .target Kayn Sunfury
     .target Altruis the Sufferer
 step
+    #completewith Crystallized Soul
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 627,74.98,48.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Follower|r.
     .accept 40247 >>Accept Asking a Favor
@@ -2135,6 +2154,7 @@ step
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 41804,1 --1/1 Follow Archmage Khadgar
 step
+    #label Crystallized Soul
     .goto 627,26.78,44.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r
     .complete 41804,2 --1/1 Crystallized Soul
@@ -2523,6 +2543,9 @@ step
     .turnin 40646 >>Turn in Weapons of Legend
     .target Rensar Greathoof
 step
+    #completewith Scythe of Elune
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 747,44.52,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naralex|r
     .accept 40783 >>Accept The Scythe of Elune
@@ -2569,6 +2592,7 @@ step
     >>|cRXP_WARN_Follow the arrow. Wait for the roleplay|r.
     .complete 40783,2 --1/1 Meet with Valorn
 step
+    #label Scythe of Elune
     .goto 47,48.90,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valorn Stillbough|r
     .turnin 40783 >>Turn in The Scythe of Elune
@@ -2897,6 +2921,9 @@ step
     .turnin 40646 >>Turn in Weapons of Legend
     .target Rensar Greathoof
 step
+    #completewith Aid for the Ashen
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .accept 42428 >>Accept The Shrine of Ashamane
@@ -2948,6 +2975,7 @@ step
     .complete 42439,1 --4/4 Ashen Rescued
     .mob Eredar Soul Lasher
 step
+    #label Aid for the Ashen
     .goto 641,73.23,42.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delandros Shimmermoon|r
     .turnin 42439 >>Turn in Aid for the Ashen
@@ -3194,6 +3222,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
     .turnin 40646 >>Turn in Weapons of Legend
     .target Rensar Greathoof
+step
+    #completewith ToTheHillsA
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 747,44.50,51.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rensar Greathoof|r.
@@ -3560,6 +3591,9 @@ step
     .turnin 40646 >>Turn in Weapons of Legend
     .target Rensar Greathoof
 step
+    #completewith Leafbeard the Storied
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 747,44.61,50.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Remulos|r.
     .accept 40649 >>Accept Meet with Mylune
@@ -3575,6 +3609,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Empty Cup|r.
     .complete 41422,1 --1/1 Cup of Moonwater
 step
+    #label Leafbeard the Storied
     .goto 747,32.79,29.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leafbeard the Storied|r.
     .complete 41422,2 --1/1 Leafbeard's Blessing obtained
@@ -4053,6 +4088,9 @@ step
     .turnin 40618 >>Turn in Weapons of Legend
     .target Emmarel Shadewarden
 step
+    #completewith Beastly Expedition
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40959
     .goto 739,43.38,26.36
@@ -4070,6 +4108,7 @@ step
     .goto 739,48.66,43.46
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 step
+    #label Beastly Expedition
     .goto 627,71.39,50.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r.
     .turnin 41541 >>Turn in A Beastly Expedition
@@ -4414,6 +4453,9 @@ step
     .turnin 40618 >>Turn in Weapons of Legend
     .target Emmarel Shadewarden
 step
+    #completewith RendezvousWithTheCourierA
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40959
     .goto 739,43.38,26.36
@@ -4669,6 +4711,9 @@ step
     .turnin 40618 >>Turn in Weapons of Legend
     .target Emmarel Shadewarden
 step
+    #completewith Preparation for the Hunt
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40959
     .goto 739,43.38,26.36
@@ -4686,6 +4731,7 @@ step
     .goto 739,48.66,43.46
     .zone 627 >>Click on the |cRXP_PICK_Portal to Dalaran|r.
 step
+    #label Preparation for the Hunt
     .goto 627,71.11,50.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
     .turnin 41542 >>Turn in Preparation for the Hunt
@@ -5122,6 +5168,9 @@ step
     .target Meryl Felstorm
     .turnin 41085 >>Turn in A Mage's Weapon
 step
+    #completewith Wyrmrest Temple
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .isQuestAvailable 41113
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r   
@@ -5514,6 +5563,9 @@ step
     .target Meryl Felstorm
     .turnin 41085 >>Turn in A Mage's Weapon
 step
+    #completewith Crystal's Message
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .isQuestAvailable 41113
     .goto 735,59.15,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
@@ -5535,13 +5587,6 @@ step
     .cast 195264 >>Use |T132776:0|t[Glowing Resonate Crystal]
     .timer 40,RP
     .use 130131
--- step
---     #requires Crystal's Message
---     .isQuestTurnedIn 42479
---     .goto 735,53.2,41.44
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Fillmaff|r
---     .accept 42429 >>Accept Memories of Ebonchill
---     .target Old Fillmaff
 step
     #requires Crystal's Message
     #completewith next
@@ -5847,6 +5892,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meryl Felstorm|r
     .target Meryl Felstorm
     .turnin 41085 >>Turn in A Mage's Weapon
+step
+    #completewith Speak with Meryl
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .isQuestAvailable 41113
     .goto 735,59.15,42.94
@@ -6527,7 +6575,7 @@ step
     .turnin 40636 >>Turn in Prepare to Strike
 step
     #completewith The Wanderer's Companion
-    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact|r.
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -6976,13 +7024,13 @@ step
     .target Iron-Body Ponshu
     .turnin 40636 >>Turn in Prepare to Strike
 step
+    #completewith Taran Zhu
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 709,51.41,48.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
     .accept 41003 >>Accept The Emperor's Gift
     .target Iron-Body Ponshu
-step
-    #completewith Taran Zhu
-    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact|r.
 step
     #completewith next
     #label MistweaverScenario
@@ -7231,7 +7279,7 @@ step
     .turnin 40636 >>Turn in Prepare to Strike
 step
     #completewith Legend of the Sands
-    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact|r.
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 709,51.4,48.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iron-Body Ponshu|r
@@ -7696,10 +7744,6 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
--- step
---     .subzoneskip 2268,1
---     .goto 24,39.52,93.31,10,0
---     .goto 24,44.67,85.24,10 >>Enter the Order Hall
 step
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
@@ -7780,6 +7824,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 40408,1 >>Turn in Weapons of Legend
     .target Lord Maxwell Tyrosus
+step
+    #completewith Lanigosa
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 627,74.99,48.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -8139,10 +8186,6 @@ step
     -- .openitem 253224 -- Mote of a Broken Time
     -- .use 251821
     -- .use 256763
--- step
---     .subzoneskip 2268,1
---     .goto 24,39.52,93.31,10,0
---     .goto 24,44.67,85.24,10 >>Enter the Order Hall
 step
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
@@ -8225,6 +8268,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 40408,1 >>Turn in Weapons of Legend
     .target Lord Maxwell Tyrosus
+step
+    #completewith Orik and Tahu
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .isOnQuest 42881
     .goto 24,38.22,64.73
@@ -8588,18 +8634,6 @@ step
     .use 249784 -- Legionfall Champion's Insignia
     .use 249788 -- Argussian Reach Champion's Insignia
     .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
--- step
---     .subzoneskip 2268,1
---     .goto 24,39.52,93.31,10,0
---     .goto 24,44.67,85.24,10 >>Enter the Order Hall
 step
     .isQuestTurnedIn 44063
     .isQuestAvailable 44370
@@ -8680,6 +8714,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
     .turnin 40408,1 >>Turn in Weapons of Legend
     .target Lord Maxwell Tyrosus
+step
+    #completewith Spirits exorcised
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 627,74.92,48.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Maxwell Tyrosus|r
@@ -9140,6 +9177,9 @@ step
     .turnin 40706 >>Turn in A Legend You Can Hold
     .target Alonsus Faol
 step
+    #completewith the Azure Dragonshrine
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40938
     .goto 702,51.61,47.88
@@ -9181,6 +9221,7 @@ step
     *|cRXP_WARN_Note:|r. You can find the portal after using the teleporter in the middle of Dalaran if the arrow is incorrect for whatever reason.
     .complete 41626,1 --1/1 Take the Dalaran portal to Wyrmrest Temple
 step
+    #label the Azure Dragonshrine
     .goto 115,55.96,65.01
     >>|cRXP_WARN_Follow the arrow|r.
     .complete 41626,2 --1/1 Travel to the Azure Dragonshrine
@@ -9507,6 +9548,9 @@ step
     .turnin 40706 >>Turn in A Legend You Can Hold
     .target Alonsus Faol
 step
+    #completewith House Call
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40938
     .goto 702,51.61,47.88
@@ -9526,6 +9570,7 @@ step
     .target Brother Larry
     .skipgossipid 45625
 step
+    #label House Call
     .goto 627,37.81,36.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Boros|r.
     .turnin 41957 >>Turn in The Vindicator's Plea
@@ -9750,6 +9795,9 @@ step
     .turnin 40706 >>Turn in A Legend You Can Hold
     .target Alonsus Faol
 step
+    #completewith Amassing Darkness
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40938
     .goto 702,51.61,47.88
@@ -9815,6 +9863,7 @@ step
     .scenario 2086,1 --Stop the dampening rituals
     .mob Twilight Ritualist
 step
+    #label Amassing Darkness
     .isInScenario 991
     .goto 20,37.52,55.05
     >>Kill the |cRXP_ENEMY_Amassing Darkness|r.
@@ -10134,6 +10183,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40840 >>Turn in A Worthy Blade
     .target Lord Jorach Ravenholdt
+step
+    #completewith Felcaller Whitley
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 626,42.37,76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Tess Greymane|r
@@ -10682,6 +10734,9 @@ step
     .turnin 40840 >>Turn in A Worthy Blade
     .target Lord Jorach Ravenholdt
 step
+    #completewith Board the Crimson Veil
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 626,41.28,74.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fleet Admiral Tethys|r
     .accept 40847 >>Accept A Friendly Accord
@@ -10997,6 +11052,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Jorach Ravenholdt|r
     .turnin 40840 >>Turn in A Worthy Blade
     .target Lord Jorach Ravenholdt
+step
+    #completewith Lucian Trias'
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 626,41.04,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valeera Sanguinar|r
@@ -11563,6 +11621,9 @@ step
     .turnin 41335 >>Turn in The Elements Call...
     .target Thrall
 step
+    #completewith The Coming Storm
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .zoneskip 726,1
     .goto 726,34.18,77.80
@@ -11581,6 +11642,7 @@ step
     .zone 379 >>Click on |cRXP_FRIENDLY_Graddoc|r
     .target Graddoc
 step
+    #label The Coming Storm
     .goto 379,66.90,56.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .turnin 43334 >>Turn in The Coming Storm
@@ -11895,6 +11957,9 @@ step
     .turnin 41335 >>Turn in The Elements Call...
     .target Thrall
 step
+    #completewith Where the Hammer Falls
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .zoneskip 726,1
     .goto 726,34.51,76.15
@@ -11919,6 +11984,7 @@ step
     .complete 42931,1 --1/1 Use Stormbeak to Fly Into the Maelstrom
     .target Stormbeak
 step
+    #label Where the Hammer Falls
     .goto 207,47.10,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 42931 >>Turn in Where the Hammer Falls
@@ -12182,6 +12248,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 41335 >>Turn in The Elements Call...
     .target Thrall
+step
+    #completewith ThirdClueA
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 726,33.80,79.21,-1
     .goto 725,31.97,74.72,-1
@@ -12545,6 +12614,9 @@ step
     .turnin 40684 >>Turn in The Tome of Blighted Implements
     .target Calydus
 step
+    #completewith Following the Curse
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     #optional
     .isQuestTurnedIn 40823
     .goto 717,37.66,31.20
@@ -12572,6 +12644,7 @@ step
     .target Revil Kost
     .skipgossipid 44918
 step
+    #label Following the Curse
     .goto 47,77.43,36.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Revil Kost|r.
     .turnin 40495 >>Turn in Ulthalesh, the Deadwind Harvester
@@ -12857,6 +12930,9 @@ step
     .turnin 40684 >>Turn in The Tome of Blighted Implements
     .target Calydus
 step
+    #completewith Grave Dust
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .isQuestTurnedIn 40823
     #optional
     .goto 717,37.63,31.14
@@ -12892,6 +12968,7 @@ step
     .goto 627,59.67,47.69
     .zone 627 >>|cRXP_WARN_Follow the way out of the canal.|r
 step
+    #label Grave Dust
     .goto 627,33.41,39.56
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Freshly Dug Grave|r.
     .complete 42128,1 --1/1 Grave Dust
@@ -13117,6 +13194,9 @@ step
     .turnin 40684 >>Turn in The Tome of Blighted Implements
     .target Calydus
 step
+    #completewith Caer Darrow
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .isQuestTurnedIn 40823
     #optional
     .goto 717,37.63,31.14
@@ -13129,6 +13209,7 @@ step
     .accept 43100 >>Accept Finding the Scepter
     .target Calydus
 step
+    #label Caer Darrow
     .goto 22,66.83,75.18
     >>Use the |T254294:0|t[Caer Darrow Scroll]
     .complete 43100,2 --1/1 Go to Caer Darrow
@@ -13602,6 +13683,9 @@ step
     .turnin 40579,1 >>Turn in Weapons of Legend
     .target Odyn
 step
+    #completewith Tirisfal Glades
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
+step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 41105 >>Accept The Sword of Kings
@@ -13853,6 +13937,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .turnin 40579,1 >>Turn in Weapons of Legend
     .target Odyn
+step
+    #completewith Aerylia 
+    +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact.|r
 step
     .goto 695,58.35,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
@@ -14122,6 +14209,9 @@ step
     .turnin 40579,1 >>Turn in Weapons of Legend
     .target Odyn
 step
+    #completewith Axe and You Shall Receive
+    +|cRXP_WARN_Check you have a usable weapon equipped; if not, equip one until you get your artifact or switch to spec you have already artifact from|r.
+step
     .goto 695,58.36,85.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
     .accept 39191 >>Accept Legacy of the Icebreaker
@@ -14137,6 +14227,7 @@ step
     .accept 44255 >>Accept Axe and You Shall Receive
     .target Quartermaster Durnolf
 step
+    #label Axe and You Shall Receive
     .goto 695,56.06,27.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Durnolf|r
     .turnin 44255 >>Turn in Axe and You Shall Receive
