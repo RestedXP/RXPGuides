@@ -474,12 +474,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Lady Jaina Proudmoore
-step
-    .isQuestAvailable 55122
-    #label HousingSelect
-    +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
-    *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
-    .clicknext RestedXP Speed Leveling\a) Neighbourhood Skip >>CLICK HERE FOR GUIDE
+-- step -- reactivate in midnight prepatch
+--     .isQuestAvailable 55122
+--     #label HousingSelect
+--     +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
+--     *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
+--     .clicknext RestedXP Speed Leveling\a) Neighbourhood Skip >>CLICK HERE FOR GUIDE
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -2111,8 +2111,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Thrall
-step
-    #include a) Exile's Reach@HousingSelect-HousingSelect
+-- step -- reactivate in midnight prepatch
+--     #include a) Exile's Reach@HousingSelect-HousingSelect
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -2849,25 +2849,25 @@ step
     .turnin 90843 >>Turn in Aiding the Dragon Isles
     .target Naleidea Rivergleam
 ]])
---Neighbour Hood Skip
-RXPGuides.RegisterGuide([[
-#retail
-#version 2
-#group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
-#name a) Neighbourhood Skip
-#displayname |cFF00CCFF1|r - Welcome to the Neighbourhood
-#chapter
+-- --Neighbour Hood Skip -- reactivate in midnight prepatch
+-- RXPGuides.RegisterGuide([[
+-- #retail
+-- #version 2
+-- #group RestedXP Speed Leveling
+-- #subgroup |cFFFCDC00(1-80)|r Default
+-- #name a) Neighbourhood Skip
+-- #displayname |cFF00CCFF1|r - Welcome to the Neighbourhood
+-- #chapter
 
-step << Horde
-    .zone 2351 >>Enter Housing Area
-    .choose 7338835
-step << Alliance
-    .zone 2352 >>Enter Housing Area
-    .choose 7338835
-]])
+-- step << Horde
+--     .zone 2351 >>Enter Housing Area
+--     .choose 7338835
+-- step << Alliance
+--     .zone 2352 >>Enter Housing Area
+--     .choose 7338835
+-- ]])
 
---Death Knight Plaguelands The Scarlet Enclave
+--Death Knight Plaguelands: The Scarlet Enclave
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -4633,7 +4633,7 @@ step << Horde
 --     .nodmf
 --     .isQuestTurnedIn 12801 --x Traditional DK Check
 ]])
---Allied Race/Pandaren DK Intro
+--Allied Race/Pandaren: DK Intro
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
@@ -4816,7 +4816,7 @@ step << Alliance
 --     .isQuestTurnedIn 58877 --x New DK Check
 --     .nodmf
 ]])
---Demon Hunter Mardum
+--Demon Hunter: Mardum
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
@@ -6309,7 +6309,7 @@ step << Horde
 --     .isQuestTurnedIn 31450 --x dh check
 --     .target Darkmoon Faire Mystic Mage
 ]])
---Haranir
+--Haranir:
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -6533,7 +6533,7 @@ step << Horde
     .accept 94445 >>Accept Choose a Path 
     .target Ambassador Blackguard
 ]])
---Dracthyr The Forbidden Reach
+--Dracthyr: The Forbidden Reach
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
@@ -7387,7 +7387,7 @@ step << Horde Evoker
     .goto 85,44.09,37.98
     .turnin 65613 >>Turn in An Iconic, Draconic Look
 ]])
---Pandaren The Wandering Isle
+--Pandaren: The Wandering Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
