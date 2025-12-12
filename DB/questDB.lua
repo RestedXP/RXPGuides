@@ -1,9 +1,10 @@
 local _,addon = ...
 
-local showAllQs
+local showAllQs = true
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 local QUEST_LOG_SIZE = 25
 local reloadTimer = 0
+local L = addon.locale.Get
 
 --[[
 if addon.gameVersion < 20000 then
@@ -25,13 +26,16 @@ local function IsPreReqComplete(quest)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local t = type(quest.previousQuest)
+    local function IsPreReqFulfilled(id)
+        return addon.IsQuestComplete(id) or addon.IsQuestTurnedIn(id)
+    end
     if t == "table" then
         local state = not quest.preQuestAny
         for _, id in ipairs(quest.previousQuest) do
             if quest.preQuestAny then
-                state = state or addon.IsQuestTurnedIn(id)
+                state = state or IsPreReqFulfilled(id)
             else
-                state = state and addon.IsQuestTurnedIn(id)
+                state = state and IsPreReqFulfilled(id)
             end
         end
         return state
@@ -41,11 +45,11 @@ local function IsPreReqComplete(quest)
             local prevQuest = QuestDB[quest.previousQuest]
             if prevQuest and prevQuest.uniqueWith then
                 for _,uniqueId in pairs(prevQuest.uniqueWith) do
-                    preReqComplete = preReqComplete or addon.IsQuestTurnedIn(uniqueId)
+                    preReqComplete = preReqComplete or IsPreReqFulfilled(uniqueId)
                 end
             end
         end
-        return preReqComplete or addon.IsQuestTurnedIn(quest.previousQuest)
+        return preReqComplete or IsPreReqFulfilled(quest.previousQuest)
     else
         return true
     end
@@ -293,6 +297,9 @@ function addon.GetBestQuests(refreshQuestDB,output)
             requestFromServer = qname and requestFromServer
             local xp = v.xp or 0
             xp = xp * xpmod
+            if k == 26 then
+                outputString = outputString .. L('\n\n--- Backup Quests ---')
+            end
             outputString = string.format("%s\n%d: %dxp %s (%d)",outputString, k, xp,
                                              qname or "", id)
         end
@@ -340,7 +347,7 @@ local SetText = function(self,refresh)
         t = questText
     end
     if refresh and t ~= currentText and addon.settings.gui.quest then
-        addon.settings.OpenSettings('Quest Data')
+        addon.settings.OpenSettings(L'Quest Data')
     end
     currentText = t
     return t
@@ -351,7 +358,7 @@ local function OnClick(self)
         CreatePanel()
     end
     textOverride = nil
-    addon.settings.OpenSettings('Quest Data')
+    addon.settings.OpenSettings(L'Quest Data')
 end
 
 function addon.functions.show25quests(self,text,flags)
@@ -372,7 +379,7 @@ function CreatePanel()
 
     local questDataTable = {
         type = "group",
-        name = "RestedXP Quest Data",
+        name = L"RestedXP Quest Data",
         args = {
             importBox = {
                 order = 10,
@@ -380,7 +387,7 @@ function CreatePanel()
                 name = format('List of %d best quests',QUEST_LOG_SIZE),
                 width = "full",
                 multiline = QUEST_LOG_SIZE,
-                confirmText = "Refresh",
+                confirmText = L"Refresh",
                 -- usage = "Usage string",
                 get = SetText,
                 set = SetText,
@@ -389,7 +396,7 @@ function CreatePanel()
 
             showAvailable = {
                 order = 14,
-                name = format("Show %d Best Quests",QUEST_LOG_SIZE),
+                name = format(L("Show %d Best Quests"),QUEST_LOG_SIZE),
                 type = 'execute',
                 func = function()
                     mode = "quests"
@@ -398,22 +405,22 @@ function CreatePanel()
                         showAllQs = false
                         questText,requestText = addon.GetBestQuests(true,2)
                     end
-                    addon.settings.OpenSettings('Quest Data')
+                    addon.settings.OpenSettings(L'Quest Data')
                 end,
             },
             showMissing = {
                 order = 15,
-                name = "Show Missing Quests",
+                name = L"Show Missing Quests",
                 type = 'execute',
                 func = function()
                     mode = "missing"
                     textOverride = nil
-                    addon.settings.OpenSettings('Quest Data')
+                    addon.settings.OpenSettings(L'Quest Data')
                 end,
             },
             showAllQs = {
                 order = 16,
-                name = "Show All Available",
+                name = L"Show All Available",
                 type = 'execute',
                 func = function()
                     mode = "quests"
@@ -429,10 +436,10 @@ function CreatePanel()
 
     }
 
-    LibStub("AceConfig-3.0"):RegisterOptionsTable(addon.title .. "/Quest Data", questDataTable)
+    LibStub("AceConfig-3.0"):RegisterOptionsTable(addon.title .. "/".. L"Quest Data", questDataTable)
 
     addon.settings.gui.quest = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                                    addon.title .. "/Quest Data", "Quest Data", addon.title)
+                                    addon.title .. "/" .. L"Quest Data", L"Quest Data", addon.title)
 
 end
 
@@ -486,7 +493,7 @@ function addon.functions.requires(self,text,mode,...)
                 --step.hidewindow = true
                 step.optional = true
                 addon.updateSteps = true
-                element.text = "Step skipped: This is part of a quest you don't have"
+                element.text = L"Step skipped: This is part of a quest you don't have"
             end
         elseif optional then
             --step.hidewindow = false
@@ -505,13 +512,17 @@ end
 
 function addon.functions.showtotalxp(self,text,flags)
     if type(self) == "string" then
-        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE"}
+        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE", xpupdate = 0}
     end
-
+    local t = GetTime()
     local element = self.element
-
-    local xp = addon.CalculateTotalXP(element.flags)
+    if t - element.xpupdate > 10 and not InCombatLockdown() or not element.xp then
+        element.xp = addon.CalculateTotalXP(element.flags)
+        element.xpupdate = t
+    end
+    local xp = element.xp or addon.CalculateTotalXP(element.flags)
     text = format("%s %s",element.rawtext,addon.FormatNumber(xp))
+
     if text ~= element.text then
         element.text = text
         addon.UpdateStepText(element)
@@ -523,6 +534,7 @@ addon.questsDone = {}
 addon.questsAvailable = {}
 
 function addon.CalculateTotalXP(flags)
+
     local grp = addon.currentGuide.group
     local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy or {}
     local totalXp = 0
@@ -551,7 +563,7 @@ function addon.CalculateTotalXP(flags)
             xp = xp * xpmod
             totalXp = totalXp + xp
             if output then
-                    local s = string.format("%dxp %s (%d)", xp,
+                    local s = string.format(L"%dxp %s (%d)", xp,
                                     addon.GetQuestName(qid) or "", qid)
                     --table.insert(outputString,s)
                     table.insert(QList,{text = s, id = qid, obj = quest})
@@ -633,11 +645,11 @@ function addon.CalculateTotalXP(flags)
                 table.insert(outputString,q.text)
             end
         end
-        textOverride = format("Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
+        textOverride = format(L"Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
         if not addon.settings.gui.quest then
             CreatePanel()
         end
-        addon.settings.OpenSettings('Quest Data')
+        addon.settings.OpenSettings(L'Quest Data')
     end
     return math.floor(totalXp)
 end
