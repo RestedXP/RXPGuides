@@ -2947,7 +2947,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             ((element.objFlags == 0 and IsOnQuest(questId)) or (not element.ignoreTurnIn and
                 (isComplete or IsQuestTurnedIn(questId) or IsQuestComplete(questId))))) then
         count = numRequired
-        element.numRequired = 0
+        element.numRequired = count
     end
 
     if numRequired <= 0 or element.hideText then
