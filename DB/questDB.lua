@@ -26,16 +26,17 @@ local function IsPreReqComplete(quest)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local t = type(quest.previousQuest)
-    local function IsPreReqFulfilled(id)
-        return addon.IsQuestComplete(id) or addon.IsQuestTurnedIn(id)
+    local function IsPreReqFulfilled(id,isQLog)
+        return not isQLog and addon.IsQuestComplete(id) or addon.IsQuestTurnedIn(id)
     end
+    local qLog = quest.questLog
     if t == "table" then
         local state = not quest.preQuestAny
         for _, id in ipairs(quest.previousQuest) do
             if quest.preQuestAny then
-                state = state or IsPreReqFulfilled(id)
+                state = state or IsPreReqFulfilled(id,qLog)
             else
-                state = state and IsPreReqFulfilled(id)
+                state = state and IsPreReqFulfilled(id,qLog)
             end
         end
         return state
@@ -45,11 +46,11 @@ local function IsPreReqComplete(quest)
             local prevQuest = QuestDB[quest.previousQuest]
             if prevQuest and prevQuest.uniqueWith then
                 for _,uniqueId in pairs(prevQuest.uniqueWith) do
-                    preReqComplete = preReqComplete or IsPreReqFulfilled(uniqueId)
+                    preReqComplete = preReqComplete or IsPreReqFulfilled(uniqueId,qLog)
                 end
             end
         end
-        return preReqComplete or IsPreReqFulfilled(quest.previousQuest)
+        return preReqComplete or IsPreReqFulfilled(quest.previousQuest,qLog)
     else
         return true
     end
@@ -161,7 +162,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
         if obj.questLog then
             obj.itemAmount = nil
             obj.itemId = nil
-            obj.previousQuest = nil
+            --obj.previousQuest = nil
         end
     end
     local sortfunc = function(k1, k2)
