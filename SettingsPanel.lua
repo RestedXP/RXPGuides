@@ -1094,6 +1094,9 @@ function addon.settings:CreateAceOptionsPanel()
 
                             p.enableNonLeadMarking = true
 
+                            p.lookForMoreNearby = true
+                            p.lookForMoreGuild = true
+
                             --_G.ReloadUI()
                         end
                     },
@@ -2236,7 +2239,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.21
                     },
-                    lookForMore = {
+                    lookForMoreNearby = {
                         name = fmt("%s (%s %s)", _G.LOOK_FOR_MORE, _G.NEAR, _G.PLAYER),
                         -- desc = "Check nearby",-- TODO localize
                         type = "toggle",
