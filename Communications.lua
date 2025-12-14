@@ -1,6 +1,7 @@
 local _, addon = ...
 
 local _G = _G
+local LibDeflate = LibStub("LibDeflate")
 
 local fmt, mrand, smatch, sbyte, tostr = string.format, math.random, string.match, string.byte, tostring
 
@@ -232,23 +233,48 @@ function addon.comms:AnnounceSelf(command)
     self:Broadcast(data)
 end
 
+function addon.comms:DeserializeComm(data, sender)
+    local status, obj = self:Deserialize(data)
+
+    if status and obj.command then
+        return status, obj
+    end
+
+    local decoded = LibDeflate:DecodeForPrint(data)
+
+    if not decoded then
+        addon.comms.PrettyDebug("Invalid data from", sender)
+        return
+    end
+
+    status, obj = addon.comms:Deserialize(LibDeflate:DecompressDeflate(decoded))
+
+    return status, obj
+end
+
 function addon.comms:OnCommReceived(prefix, data, _, sender)
-    if prefix ~= self._commPrefix or sender == addon.player.name then return end
+    if prefix ~= self._commPrefix then return end
+    --if prefix ~= self._commPrefix or sender == addon.player.name then return end
 
     if UnitInBattleground("player") ~= nil then return end
 
-    local status, obj = self:Deserialize(data)
+    local status, obj = self:DeserializeComm(data, sender)
 
-    if not status or not obj.command then return end
-
-    self.state.rxpGroupDetected = true
+    if not (status and obj and obj.command) then return end
 
     if obj.command == 'ANNOUNCE' then
         self:HandleAnnounce(obj)
         self:AnnounceSelf("REPLY")
+
+        self.state.rxpGroupDetected = true
     elseif obj.command == 'REPLY' then
         self:HandleAnnounce(obj)
+        self.state.rxpGroupDetected = true
         -- Don't respond on REPLY
+    elseif obj.command == 'LFM-BROADCAST' then
+        print("Received LFM-Broadcast", sender, data)
+    elseif obj.command == 'LFM-REPLY' then
+        print("Received LFM-Broadcast", sender, data)
     end
 
 end
@@ -311,11 +337,11 @@ function addon.comms:HandleAnnounce(data)
     end
 end
 
-function addon.comms:Broadcast(data)
+function addon.comms:Broadcast(data, channel, priority)
     if UnitInBattleground("player") ~= nil then return end
 
     local sz = self:Serialize(data)
-    self:SendCommMessage(self._commPrefix, sz, "PARTY")
+    self:SendCommMessage(self._commPrefix, sz, channel or "PARTY", nil, priority or "BULK")
 end
 
 function addon.comms:AnnounceStepEvent(event, data)
@@ -719,9 +745,9 @@ function addon.comms.grouping:Setup()
     local frequencySec
     if addon.settings.profile and addon.settings.profile.updateFrequency then
         -- 75ms * 200 = 15s
-        frequencySec = addon.settings.profile.updateFrequency * 200
+        frequencySec = 5000 --addon.settings.profile.updateFrequency * 200
     else
-        frequencySec = 10 -- 10s
+        frequencySec = 1000 -- 10s
     end
 
     self.ticker = C_Timer.NewTicker(frequencySec / 1000, self.Advertise)
@@ -812,14 +838,51 @@ function addon.comms.grouping:UpdateParty()
     end
 end
 
+-- LFM workflow:
+-- 1) LFM-BROADCAST (YELL/SAY/GUILD),
+-- 2) LFM-REPLY (Whisper)
+-- 3)
 function addon.comms.grouping.Advertise()
-    if addon.settings.profile.lookForMore then
+    if not addon.currentGuide then return end
 
+    local data = {
+        command = 'LFM-BROADCAST'
+    }
+
+    if addon.settings.profile.lookForMoreNearby then
+        -- Ensure YELL is protected against special character limitations, encorde first
+        local sz = LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(addon.comms:Serialize(data)))
+
+        addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "YELL", nil, "BULK")
     end
 
-    if addon.settings.profile.lookForMoreGuild then
-
+    if addon.settings.profile.lookForMoreGuild and IsInGuild() then
+        addon.comms:Broadcast(data, "GUILD")
     end
+end
+
+function addon.comms.grouping:Reply(requester)
+    if not addon.currentGuide then return end
+    if not (addon.settings.profile.lookForMoreNearby or addon.settings.profile.lookForMoreGuild) then
+        return
+    end
+
+    local data = {
+        command = 'LFM-Reply',
+        player = {
+            name = addon.player.name,
+            level = addon.player.level,
+        },
+        guide = {
+            name = addon.currentGuide.name,
+            version = addon.currentGuide.version,
+            guideId = addon.currentGuide.guideId
+        }
+    }
+
+    local sz = self:Serialize(data)
+    self:SendCommMessage(self._commPrefix, sz, "WHISPER", requester, "BULK")
+    -- LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(addon.comms:Serialize(reportSplitsData)))
 end
 -- fmt("%s %s", _G.LOOKING_FOR_GROUP_LABEL, addon.currentGuide.name
 -- "I'm looking for a group for: 43 - 44 Feralas"
