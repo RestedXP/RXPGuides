@@ -20,7 +20,8 @@ addon.comms._commPrefix = "RXPGComms"
 addon.comms.state = {
     rxpGroupDetected = false,
     updateFound = {guide = false, addon = false},
-    group = {leader = nil, members = {}}
+    group = {leader = nil, members = {}},
+    lookingForMore = {lookingForGroup = {}, replied = {}}
 }
 
 local function announceLevelUp(message)
@@ -252,6 +253,14 @@ function addon.comms:DeserializeComm(data, sender)
     return status, obj
 end
 
+function addon.comms:SerializeComm(data, encode)
+    if not encode then
+        return self:Serialize(data)
+    end
+
+    return LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(self:Serialize(data)))
+end
+
 function addon.comms:OnCommReceived(prefix, data, _, sender)
     if prefix ~= self._commPrefix then return end
     --if prefix ~= self._commPrefix or sender == addon.player.name then return end
@@ -272,9 +281,10 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         self.state.rxpGroupDetected = true
         -- Don't respond on REPLY
     elseif obj.command == 'LFM-BROADCAST' then
-        print("Received LFM-Broadcast", sender, data)
+        print("Received LFM-BROADCAST", sender, data)
+        self.grouping:Reply(sender)
     elseif obj.command == 'LFM-REPLY' then
-        print("Received LFM-Broadcast", sender, data)
+        print("Received LFM-REPLY", sender, data)
     end
 
 end
@@ -340,7 +350,7 @@ end
 function addon.comms:Broadcast(data, channel, priority)
     if UnitInBattleground("player") ~= nil then return end
 
-    local sz = self:Serialize(data)
+    local sz = self:SerializeComm(data)
     self:SendCommMessage(self._commPrefix, sz, channel or "PARTY", nil, priority or "BULK")
 end
 
@@ -745,12 +755,13 @@ function addon.comms.grouping:Setup()
     local frequencySec
     if addon.settings.profile and addon.settings.profile.updateFrequency then
         -- 75ms * 200 = 15s
-        frequencySec = 5000 --addon.settings.profile.updateFrequency * 200
+        frequencySec = addon.settings.profile.updateFrequency * 200
     else
         frequencySec = 1000 -- 10s
     end
 
     self.ticker = C_Timer.NewTicker(frequencySec / 1000, self.Advertise)
+    self.state = addon.comms.state
 end
 
 function addon.comms.grouping:ShareQuest(questId)
@@ -849,26 +860,37 @@ function addon.comms.grouping.Advertise()
         command = 'LFM-BROADCAST'
     }
 
-    if addon.settings.profile.lookForMoreNearby then
-        -- Ensure YELL is protected against special character limitations, encorde first
-        local sz = LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(addon.comms:Serialize(data)))
+    -- Ensure YELL is protected against special character limitations, encorde first
+    local sz = addon.comms:SerializeComm(data, true)
 
+    if addon.settings.profile.lookForMoreNearby then
         addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "YELL", nil, "BULK")
     end
 
     if addon.settings.profile.lookForMoreGuild and IsInGuild() then
-        addon.comms:Broadcast(data, "GUILD")
+        addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "GUILD", nil, "BULK")
     end
 end
 
 function addon.comms.grouping:Reply(requester)
     if not addon.currentGuide then return end
-    if not (addon.settings.profile.lookForMoreNearby or addon.settings.profile.lookForMoreGuild) then
+    if not (addon.settings.profile.lookForMoreNearby and addon.settings.profile.lookForMoreGuild) then
         return
     end
 
+    local now = GetTime()
+    self.state.lookingForMore.lookingForGroup[requester] = now
+
+    -- lookingForMore = {lookingForGroup = {}, replied = {}}
+    if self.state.lookingForMore.replied[requester] then
+        local diff = now - self.state.lookingForMore.replied[requester]
+
+        -- Only reply every 90+ seconds
+        if diff < 90 then return end
+    end
+
     local data = {
-        command = 'LFM-Reply',
+        command = 'LFM-REPLY',
         player = {
             name = addon.player.name,
             level = addon.player.level,
@@ -880,10 +902,12 @@ function addon.comms.grouping:Reply(requester)
         }
     }
 
-    local sz = self:Serialize(data)
-    self:SendCommMessage(self._commPrefix, sz, "WHISPER", requester, "BULK")
-    -- LibDeflate:EncodeForPrint(LibDeflate:CompressDeflate(addon.comms:Serialize(reportSplitsData)))
+    local sz = addon.comms:SerializeComm(data, true)
+    addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "WHISPER", requester, "BULK")
+
+    self.state.lookingForMore.replied[requester] = now
 end
+
 -- fmt("%s %s", _G.LOOKING_FOR_GROUP_LABEL, addon.currentGuide.name
 -- "I'm looking for a group for: 43 - 44 Feralas"
 
