@@ -6569,7 +6569,7 @@ step << !Evoker Horde
     .turnin 84424 >>Turn in Forward, To Adventure!
     .accept 85026 >>Accept Where Legends are Made
     .target Chromie
-step
+step << !Evoker Horde
     .goto 85,40.79,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
     .turnin 85026 >>Turn in Where Legends are Made
@@ -6580,7 +6580,7 @@ step << !Evoker Alliance
     .turnin 84424 >>Turn in Forward, To Adventure!
     .accept 85026 >>Accept Where Legends are Made
     .target Chromie
-step  << !Evoker
+step << !Evoker
     .goto 84,56.14,17.29 << Alliance
     .goto 85,40.83,80.11 << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r
@@ -6588,13 +6588,7 @@ step  << !Evoker
     .turnin 85026 >>Turn in Where Legends are Made
     .skipgossipid 51901
     .target Chromie
-step << Evoker
-    .goto 2109,42.97,91.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r
-    .accept 64864 >>Accept Awaken, Dracthyr
-    .target Kodethi
-step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_FRIENDLY_Kodethi|r or |cRXP_FRIENDLY_Dervishian|r in front of you. Wait for your Disintegrate to complete.
+step << Evoker Horde
     .goto 2109,47.50,84.52,-1
     .goto 2109,46.28,79.52,-1
     .goto 2109,42.91,77.49,-1
@@ -6602,101 +6596,269 @@ step << Evoker
     .goto 2109,38.20,84.72,-1
     .goto 2109,43.03,91.77,-1
     .goto 2109,46.34,89.49,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r
+    .accept 64864 >>Accept Awaken, Dracthyr
+    .target Kodethi
+step << Evoker Alliance
+    .goto 2109,47.50,84.52,-1
+    .goto 2109,46.28,79.52,-1
+    .goto 2109,42.91,77.49,-1
+    .goto 2109,39.59,79.71,-1
+    .goto 2109,38.20,84.72,-1
+    .goto 2109,43.03,91.77,-1
+    .goto 2109,46.34,89.49,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r
+    .accept 64864 >>Accept Awaken, Dracthyr
+    .target Dervishian
+step << Evoker Horde
+    #completewith next
+    #label Kodethi
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
     .complete 64864,1 --1/1 Dracthyr ally awakened
     .target Kodethi
+step << Evoker Horde
+    #completewith Kodethi
+    .goto 2109,47.50,84.52,-1
+    .goto 2109,46.28,79.52,-1
+    .goto 2109,42.91,77.49,-1
+    .goto 2109,39.59,79.71,-1
+    .goto 2109,38.20,84.72,-1
+    .goto 2109,43.03,91.77,-1
+    .goto 2109,46.34,89.49,-1
+    .cast 362355 >>Click on |cRXP_PICK_Kodethi|r.
+    .timer 3,RP
+step << Evoker Horde
+    #requires Kodethi
+    .goto 2109,47.50,84.52,-1
+    .goto 2109,46.28,79.52,-1
+    .goto 2109,42.91,77.49,-1
+    .goto 2109,39.59,79.71,-1
+    .goto 2109,38.20,84.72,-1
+    .goto 2109,43.03,91.77,-1
+    .goto 2109,46.34,89.49,-1
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
+    .complete 64864,1 --1/1 Dracthyr ally awakened
+    .target Kodethi
+step << Evoker Alliance
+    #completewith next
+    #label Dervishian
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
+    .complete 64864,1 --1/1 Dracthyr ally awakened
+    .target Dervishian
+step << Evoker Alliance
+    #completewith Dervishian
+    .goto 2109,47.50,84.52,-1
+    .goto 2109,46.28,79.52,-1
+    .goto 2109,42.91,77.49,-1
+    .goto 2109,39.59,79.71,-1
+    .goto 2109,38.20,84.72,-1
+    .goto 2109,43.03,91.77,-1
+    .goto 2109,46.34,89.49,-1
+    .cast 362355 >>Click on |cRXP_PICK_Dervishian|r.
+    .timer 3,RP
+step << Evoker Alliance
+    #requires Dervishian
+    .goto 2109,47.50,84.52,-1
+    .goto 2109,46.28,79.52,-1
+    .goto 2109,42.91,77.49,-1
+    .goto 2109,39.59,79.71,-1
+    .goto 2109,38.20,84.72,-1
+    .goto 2109,43.03,91.77,-1
+    .goto 2109,46.34,89.49,-1
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
+    .complete 64864,1 --1/1 Dracthyr ally awakened
     .target Dervishian
 step << Evoker
     #completewith TheForbiddenReachAwakenDracthyr
     +|cRXP_WARN_Spamming Space while moving is faster than moving normally|r.
 step << Evoker
-    >>Jump down and interact with |cRXP_FRIENDLY_Tethalash|r. Wait for your Disintegrate to complete.
-    .goto 2109,44.36,85.54
+    #completewith next
+    #label Tethalash awakened
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
     .complete 64864,3 --1/1 Tethalash awakened
     .target Tethalash
 step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_bones|r on the bed.
+    #completewith Tethalash awakened
+    .goto 2109,44.21,85.34
+    #title |cFFFCDC00Face him|r
+    .cast 362355 >>Click on |cRXP_PICK_Tethalash|r.
+    .timer 3,RP
+step << Evoker
+    #requires Tethalash awakened
+    .goto 2109,44.21,85.34
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
+    .complete 64864,3 --1/1 Tethalash awakened
+    .target Tethalash
+step << Evoker
     .goto 2109,47.95,79.94
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skeleton|r.
     .complete 64864,2 --1/1 Kethahn found
 step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_FRIENDLY_Azurathel|r. Wait for your Disintegrate to complete.
-    .goto 2109,46.83,81.83,5,0
-    .goto 2109,39.18,82.11,5,0
-    .goto 2109,34.26,81.08,5,0
-    .goto 2109,32.15,82.73
+    #completewith next
+    #label Azurathel
+    .goto 2109,46.48,82.1,5,0
+    .goto 2109,39.05,82.24,5,0
+    .goto 2109,34.24,80.95,5,0
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
     .complete 64864,4 --1/1 Azurathel awakened
     .target Azurathel
 step << Evoker
+    #completewith Azurathel
+    .goto 2109,31.89,83.07
+    .cast 362355 >>Click on |cRXP_PICK_Azurathel|r.
+    .timer 3,RP
+step << Evoker
+    #requires Azurathel
+    .goto 2109,31.89,83.07
+    >>Wait for the |T4622451:0|t[Disintegrate] cast to finish.
+    .complete 64864,4 --1/1 Azurathel awakened
+    .timer 8.5,RP
+    .target Azurathel
+step << Evoker
     #label TheForbiddenReachAwakenDracthyr
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r after a short roleplay
+    .goto 2109,32.92,81.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 64864 >>Turn in Awaken, Dracthyr
     .accept 64865 >>Accept Gear Up
-    .goto 2109,32.92,81.57
-    .accept 64863 >>Accept Arcane Guardians
-    .goto 2109,33.08,80.67
     .target Scalecommander Azurathel
+step << Evoker Alliance
+    .goto 2109,33.08,80.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
+    .accept 64863 >>Accept Arcane Guardians
     .target Dervishian
+step << Evoker Horde
+    .goto 2109,33.08,80.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r.
+    .accept 64863 >>Accept Arcane Guardians
+    .target Kodethi
 step << Evoker
     #completewith next
+    #label Mysterious Wand
+    #hidewindow
+    .turnin 66010
+step << Evoker
+    #completewith Mysterious Wand
     .goto 2109,35.81,73.85
-    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r and place it into the Crystal Focus next to it
+    .cast 6478 >>Click on the |cRXP_PICK_Crystal|r
 step << Evoker
+    #requires Mysterious Wand
+    #completewith next
+    #label Mysterious Wand2
+    .turnin 66010 >>Click on the |cRXP_PICK_Mysterious Wand|r on the table.
+step << Evoker
+    #requires Mysterious Wand
+    #completewith Mysterious Wand2
+    .goto 2109,35.89,74.17
+    .cast 6478 >>Click on the |cRXP_PICK_Crystal Focus|r
+step << Evoker
+    #requires Mysterious Wand2
     .goto 2109,38.29,74.52
-    .turnin 66010 >>Pick up the |cRXP_PICK_Mysterious Wand|r on the table.
+    .turnin 66010 >>Click on the |cRXP_PICK_Mysterious Wand|r on the table.
 step << Evoker
-    #sticky
-    #label TheForbiddenReachArcaneGuardians
-    >>Focus |cRXP_ENEMY_Ancient Constructs|r. Run away when they hit 40% (they splinter and spawn two small adds).
+    #completewith
+    >>Kill |cRXP_ENEMY_Ancient Guardians|r and |cRXP_ENEMY_Ancient Constructs|r
     .complete 64863,1 --4/4 Guardians or Constructs slain
     .mob Ancient Guardian
     .mob Ancient Construct
 step << Evoker
-    >>Pick up the |cRXP_PICK_Stack of Weapons|r.
-    .goto 2109,38.05,65.56,6,0
-    .goto 2109,43.27,63.85,6,0
-    .goto 2109,45.04,66.23
-    .complete 64865,1 --1/1 Stack of Weapons
-step << Evoker
-    >>Pick up the |cRXP_PICK_Rations|r.
-    .goto 2109,43.54,63.77,6,0
-    .goto 2109,43.54,63.77,6,0
-    .goto 2109,34.25,61.10
+    #completewith next
+    #label Bundle of Rations
+    .goto 2109,35.63,74.03,10,0
+    .goto 2109,37.97,64.06,10,0
+    .goto 2109,36.63,61.43,5,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rations|r.
     .complete 64865,3 --1/1 Bundle of Rations collected
 step << Evoker
-    >>Pick up the |cRXP_PICK_Crate|r.
-    .goto 2109,36.45,61.32,6,0
-    .goto 2109,39.54,54.9,6,0
-    .goto 2109,38.78,51.35
+    #hidewindow
+    #completewith Bundle of Rations
+    .goto 2109,34.2,61.06,25 >>Follow the Arrow
+step << Evoker
+    #requires Bundle of Rations
+    .goto 2109,34.2,61.06
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rations|r.
+    .complete 64865,3 --1/1 Bundle of Rations collected
+step << Evoker
+    #completewith next
+    #label Stack of Weapons
+    .goto 2109,36.62,60.97,5,0
+    .goto 2109,39.43,54.31,5,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
     .complete 64865,2 --1/1 Crate of Warscales
 step << Evoker
-    #requires TheForbiddenReachArcaneGuardians
-    #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
+    #hidewindow
+    #completewith Stack of Weapons
+    .goto 2109,38.67,51.35,25 >>Follow the Arrow
 step << Evoker
-    #requires TheForbiddenReachArcaneGuardians
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
-    .goto 2109,39.75,54.98,6,0
-    .goto 2109,43.89,59.14,6,0
+    #requires Stack of Weapons
+    .goto 2109,38.67,51.35
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate|r.
+    .complete 64865,2 --1/1 Crate of Warscales
+step << Evoker
+    .goto 2109,44.98,66.15
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
+    .complete 64865,1 --1/1 Stack of Weapons
+step << Evoker
+    #completewith next
+    #label Turn in Arcane Guardians
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2109,43.17,63.03,10,0
+    .goto 2109,44.15,59.34,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
     .turnin 64863 >>Turn in Arcane Guardians
+    .target Dervishian
+step << Evoker
+    #hidewindow
+    #completewith Turn in Arcane Guardians
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2109,45.82,58.56,20 >>You can kill enemies on your way |cRXP_WARN_but without slowing down|r.
+step << Evoker
+    #requires Turn in Arcane Guardians
     .goto 2109,45.82,58.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
+    .turnin 64863 >>Turn in Arcane Guardians
+    .target Dervishian
+step << Evoker
+    .goto 2109,46.45,57.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 64865 >>Turn in Gear Up
     .accept 64866 >>Accept Into the Cauldron
-    .goto 2109,46.45,57.07
-    .target Dervishian
     .target Scalecommander Azurathel
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
-step << Evoker
-    >>Use |T4622464:0|t[Living Flame] to heal injured Drakthyr's in the area
-    .goto 2109,55.54,45.41,15,0
-    .goto 2109,53.46,39.05,25,0
-    .goto 2109,59.21,50.57,25,0
-    .goto 2109,62.73,50.29,25,0
-    .goto 2109,64.09,43.09,25,0
-    .goto 2109,58.3,41.21
+    .goto 2109,50.69,46.72
+    >>Glide down
     .complete 64866,1 --1/1 Glide into the Earth-Warder's Cauldron
-    .complete 64866,2 --5/5 Dracthyr rescued or healed with Living Flame
+    .target Dracthyr Talon
 step << Evoker
+    #loop
+    .goto 2109,50.69,46.72,30,0
+    .goto 2109,54.53,47.54,30,0
+    .goto 2109,54.95,44.49,30,0
+    .goto 2109,52.23,39.44,30,0
+    .goto 2109,55.61,39.82,15,0
+    .goto 2109,59.18,50.51,15,0
+    .goto 2109,62.14,54.09,15,0
+    .goto 2109,63.16,49.98,15,0
+    .goto 2109,68.39,46.15,30,0
+    >>Use |T4622464:0|t[Living Flame] to heal |cRXP_FRIENDLY_Dracthyr Talons|r.
+    *|cRXP_WARN_You can do this from range|r.
+    .complete 64866,2 --5/5 Dracthyr rescued or healed with Living Flame
+    .usespell 361469
+    .target Dracthyr Talon
+step << Evoker
+    #completewith next
+    #label Into the Cauldron
+    .goto 2109,61.47,39.14,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
+    .turnin 64866 >>Turn in Into the Cauldron
+    .accept 64871 >>Accept The Dragon at the Door
+    .disablecheckbox
+    .target Scalecommander Azurathel
+    .target Scalecommander Cindrethresh
+step << Evoker
+    #completewith Into the Cauldron
+    .goto 2109,61.98,36.25,23 >>You can kill enemies on your way |cRXP_WARN_but without slowing down|r.
+step << Evoker
+    #requires Into the Cauldron
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 64866 >>Turn in Into the Cauldron
     .goto 2109,61.98,36.25
@@ -6705,20 +6867,17 @@ step << Evoker
     .target Scalecommander Azurathel
     .target Scalecommander Cindrethresh
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
-step << Evoker
-    >>Make sure to complete 'Exit reached' before killing the dragon
-    .goto 2109,66.4,10.69
+    .goto 2109,66,13.22
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 64871,1 --Exit reached
 step << Evoker
-    >>Kill |cRXP_ENEMY_Lapisagos|r. The small elementals give you a damage buff on death.
     .goto 2109,66.4,10.69
+    >>Kill |cRXP_ENEMY_Lapisagos|r.
     .complete 64871,2 --1/1 Lapisagos slain
+    .timer 10,RP
     .mob Lapisagos
 step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
-    >>|cRXP_WARN_Cancel the "Chocking Buff" to increase movement speed|r.
     .turnin 64871 >>Turn in The Dragon at the Door
     .accept 64872 >>Accept The Fire Within
     .goto 2118,44.39,61.51
@@ -6727,142 +6886,166 @@ step << Evoker
     .target Scalecommander Cindrethresh
     .target Scalecommander Azurathel
 step << Evoker
-    #completewith TheForbiddenReachTheFireWithin3
-    +Check your bags for new equipment
-step << Evoker
-    #completewith TheForbiddenReachTheFireWithin
-    +|cRXP_WARN_You can |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fire Breath Infusers|r to reset your Fire Breath cooldown|r.
-step << Evoker
-    #label TheForbiddenReachTheFireWithin3
-    >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the last empowerement section
     .goto 2118,43.78,61.29
-    .complete 64872,3 --Cast an Empowered III Fire Breath
-step << Evoker
-    >>Cast |T4622458:0|t[Fire Breath] and hold it until you reach the |cRXP_WARN_second|r empowerement section.
-    .goto 2118,43.78,61.29
+    >>Use |T4622458:0|t[Fire Breath] and |cRXP_WARN_hold it|r until |cRXP_WARN_Empowerment 1-3|r.
+    *>>|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Stone|r to reset it's cooldown.
+    .complete 64872,1 --Cast an Empowered I Fire Breath
     .complete 64872,2 --Cast an Empowered II Fire Breath
+    .complete 64872,3 --Cast an Empowered III Fire Breath
+    .usespell 357208
 step << Evoker
     #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
+    +You can now Skyride
 step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Beacon|r.
     .goto 2118,45.42,53.71
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Beacon|r.
     .complete 65615,1 --1/1 Beacon investigated
-step << Evoker
-    #label TheForbiddenReachTheFireWithin
-    >>Cast |T4622458:0|t[Fire Breath] (don't hold down the button)
-    .goto 2118,44.41,57.63
-    .complete 64872,1 --Cast an Empowered I Fire Breath
 step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 64872 >>Turn in The Fire Within
     .goto 2118,44.40,61.50
     .turnin 65615 >>Turn in Arcane Intrusion
+    .timer 9,RP
     .goto 2118,44.09,61.36
     .target Scalecommander Cindrethresh
     .target Azurathel
 step << Evoker
     #completewith next
-    #sticky
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fusethrian|r.
-	.target Fusethrian
-    .goto 2118,43.42,60.80
-    .home >>Set your Hearthstone to The Old Weyrn Grounds
+    #label The Old Weyrn Grounds
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
+    .accept 64873 >>Accept Stretch Your Wings
+	.target Scalecommander Emberthal
 step << Evoker
+    #completewith The Old Weyrn Grounds
+    .goto 2118,43.42,60.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fusethrian|r.
+    .home >>Set your Hearthstone to The Old Weyrn Grounds
+    .skipgossipid 107078
+	.target Fusethrian
+step << Evoker
+    #requires The Old Weyrn Grounds
     .goto 2118,44.54,61.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .accept 64873 >>Accept Stretch Your Wings
 step << Evoker
     #completewith next
-    +Check your Bags for new Equipment
-step << Evoker
-    >>Use the [ExtraActionButton] to teleport right infront of the NPC
+    #label coasting
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
-	.target Dervishian
-    .goto 2118,44.73,57.65
-    .use 195044
     .complete 64873,1 --1/1 Learn about coasting
+	.target Dervishian
 step << Evoker
-    #completewith next
-    +Check your Spellbook for |T4622485:0|t[Soar]
+    #completewith coasting
+    .cast 378452 >>Use the [ExtraActionButton] to teleport infront of |cRXP_FRIENDLY_Dervishian|r
+    .use 195044
+step << Evoker
+    #requires coasting
+    .goto 2118,44.73,57.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
+    .complete 64873,1 --1/1 Learn about coasting
+	.target Dervishian
 step << Evoker
     >>Use |T4622485:0|t[Soar]
     .complete 64873,2 --Cast Soar
+    .usespell 369536
 step << Evoker
-    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r.
-    .goto 2118,50.53,45.29
+    #loop
+    .goto 2118,45.94,54.6,10,0
+    .goto 2118,46.8,52.38,10,0
+    .goto 2118,47.24,51.12,10,0
+    .goto 2118,48.84,48.05,10,0
+    .goto 2118,50.4,45.44,10,0
+    >>Pass through the rings.
     .complete 64873,3 --5/5 Soared through rings
+    .timer 1,RP
 step << Evoker
-    #completewith next
-    .cast 369536 >>Cast Soar
-step << Evoker
-    .goto 2118,42.12,34.36
-    .turnin 65909 >> Pick up the |cRXP_PICK_Bag of Enchanted Wind|r for a Movement Speed Buff
-step << Evoker
-    #completewith next
-    +Use the [ExtraActionButton] to get back
-step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r.
-	.target Kodethi
-    .use 195044
     .goto 2118,41.42,48.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kodethi|r.
     .complete 64873,4 --1/1 Learn about diving
+	.target Kodethi
 step << Evoker
-    #completewith next
-    .cast 369536 >> Cast Soar
-step << Evoker
-    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r.
-    .goto 2118,34.59,49.58
+    #loop
+    .goto 2118,39.02,48.57,10,0
+    .goto 2118,38.76,49.47,10,0
+    .goto 2118,36.77,49.35,10,0
+    .goto 2118,34.49,49.64,10,0
+    .goto 2118,39.73,48.38,10,0
+    #title |cFFFCDC00Skyride; not Soar|r
+    >>Pass through the rings.
     .complete 64873,5 --5/5 Diving through rings
+    .timer 1,RP
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
-	.target Dervishian
     .goto 2118,44.71,57.64
-    .complete 64873,6 --1/1 Learn about Advanced Flying
-step << Evoker
-    #completewith next
-    .cast 369536 >> Cast Soar
-step << Evoker
-    >>Use the Soaring Abilties |T2103880:0|t[Surge Forward] (1) and |T2103876:0|t[Skyward Ascent] (2). |cRXP_WARN_Make sure to fly through the rings|r.
-    .goto 2118,52.78,35.59
-    .complete 64873,7 --3/3 Soar through rings
-step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
+    .complete 64873,6 --1/1 Learn about Advanced Flying
 	.target Dervishian
+step << Evoker
+    #loop
+    .goto 2118,48.46,47.11,10,0
+    .goto 2118,52.55,35.93,10,0
+    .goto 2118,52.43,36.46,10,0
+    #title |cFFFCDC00Skyride; not Soar|r
+    >>Pass through the rings.
+    .complete 64873,7 --3/3 Soar through rings
+    .timer 1,RP
+step << Evoker
     .goto 2118,44.71,57.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r.
     .turnin 64873 >>Turn in Stretch Your Wings
     .accept 65036 >>Accept Train Like We Fight
+	.target Dervishian
 step << Evoker
     >>Use |T4622485:0|t[Soar]
     .complete 65036,1 --Practice Soar
+    .usespell 369536
 step << Evoker
+    #completewith next
+    #label Train Like We Fight
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
-	.target Scalecommander Emberthal
-    .goto 2118,44.23,61.16
     .turnin 65036 >>Turn in Train Like We Fight
     .accept 65060 >>Accept Caldera of the Menders
+    .disablecheckbox
+	.target Scalecommander Emberthal
 step << Evoker
-    #completewith next
-    .cast 369536 >> Cast Soar and follow the arrow
+    #completewith Train Like We Fight
+    .cast 378452 >>Use the [ExtraActionButton] to teleport infront of |cRXP_FRIENDLY_Dervishian|r
+    .use 195044
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
-	.target Scalecommander Cindrethresh
+    #requires Train Like We Fight
+    .goto 2118,44.23,61.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
+    .turnin 65036 >>Turn in Train Like We Fight
+    .accept 65060 >>Accept Caldera of the Menders
+	.target Scalecommander Emberthal
+step << Evoker
+    .goto 2118,42.12,34.39
+    .turnin 65909 >>Click on the |cRXP_PICK_Bag|r
+step << Evoker
+    #title |cFFFCDC00Skyride; not Soar|r
     .goto 2118,36.46,32.54
-    .skipgossip 1
-    .complete 65060,1 --1/1 Meet Cindrethresh at the Caldera of the Menders
-step << Evoker
-    #completewith next
-    .cast 369536 >> Cast Soar and follow the arrow
-step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
-    .goto 2118,18.81,15.82
+    .complete 65060,1 --1/1 Meet Cindrethresh at the Caldera of the Menders
+    .skipgossipid 54978
+	.target Scalecommander Cindrethresh
+step << Evoker
+    .goto 2118,18.81,15.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 65060 >>Turn in Caldera of the Menders
     .accept 65063 >>Accept Into the Hive
 	.target Scalecommander Cindrethresh
 step << Evoker
-    >>|cRXP_WARN_DON'T FOLLOW HIM|r. Just follow the arrow to fill the progress bar by standing in the gas.
+    #completewith next
+    #label Follow Cindrethresh
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 65063,1 --1/1 Follow Cindrethresh
+step << Evoker
+    #completewith Follow Cindrethresh
+    .goto 2110,84.71,77.11,5 >>Go into the gas and wait.
+    .timer 23,RP
+step << Evoker
+    #requires Follow Cindrethresh
     .goto 2110,84.91,77.00
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 65063,1 --1/1 Follow Cindrethresh
 step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
@@ -6874,55 +7057,41 @@ step << Evoker
 	.target Scalecommander Viridia
 	.target Scalecommander Cindrethresh
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
+    #hidewindow
+    #completewith Toxin Glands collected
+    #loop
+    .goto 2118,30,21.05,25,0
+    .goto 2118,31.49,24.55,25,0
+    .goto 2118,34.06,21.87,25,0
+    .goto 2118,35.5,23.8,25,0
+    .goto 2118,35.03,28.27,25,0
+    .goto 2118,30.38,26.64,25,0
+    .goto 2118,27.48,28.02,25,0
+    .goto 2118,29.74,32.56,25,0
+    +1
 step << Evoker
     #completewith next
-    +Spamming Space is faster than walking normally
-step << Evoker
-    #completewith next
-    >>Kill |cRXP_ENEMY_Scythid|r in the Area.
-    .complete 65074,1 --4/4 Scythid slain
-    .mob Scythid Steamstalker
-    .mob Deatheater Scythid
-step << Evoker
-    >>Kill |cRXP_ENEMY_Scalerenders|r in the area. Loot them for the [|cRXP_LOOT_glands|r].
-#loop
-	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
-	.goto 2118,24.77,30.11,20,0
-	.goto 2118,26.89,32.41,20,0
-	.goto 2118,28.52,30.33,20,0
-	.goto 2118,30.39,29.45,20,0
-	.goto 2118,33.84,29.78,20,0
-	.goto 2118,36.97,24.44,20,0
-	.goto 2118,30.60,20.52,20,0
+    >>Kill |cRXP_ENEMY_Scalerenders|r.
+    *Loot them for |T134343:0|t[|cRXP_LOOT_Toxin Glands|r].
     .complete 65073,1 --6/6 Toxin Glands collected
     .mob Mature Scalerender
     .mob Scalerender Beetle
     .mob Deatheater Scythid
 step << Evoker
-    >>Kill |cRXP_ENEMY_Scythid|r in the Area.
-    .goto 2118,35.21,24.52,30,0
-    .goto 2118,31.33,24.79,30,0
-#loop
-	.line 2118,24.77,30.11,26.89,32.41,28.52,30.33,30.39,29.45,33.84,29.78,36.97,24.44,30.60,20.52
-	.goto 2118,24.77,30.11,20,0
-	.goto 2118,26.89,32.41,20,0
-	.goto 2118,28.52,30.33,20,0
-	.goto 2118,30.39,29.45,20,0
-	.goto 2118,33.84,29.78,20,0
-	.goto 2118,36.97,24.44,20,0
-	.goto 2118,30.60,20.52,20,0
+    >>Kill |cRXP_ENEMY_Scythids|r.
     .complete 65074,1 --4/4 Scythid slain
     .mob Scythid Steamstalker
     .mob Deatheater Scythid
 step << Evoker
-    #completewith next
-    .cooldown spell,369536,>0,1
-    .cast 369536 >> Cast Soar and follow the arrow
+    #label Toxin Glands collected
+    >>Kill |cRXP_ENEMY_Scalerenders|r.
+    *Loot them for |T134343:0|t[|cRXP_LOOT_Toxin Glands|r].
+    .complete 65073,1 --6/6 Toxin Glands collected
+    .mob Mature Scalerender
+    .mob Scalerender Beetle
+    .mob Deatheater Scythid
 step << Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Scalecommander Viridia|r.
-    .goto 2118,20.59,17.44,30,0
     .turnin 65074 >>Turn in Easy Prey
     .goto 2118,20.23,19.01
     .turnin 65073 >>Turn in A Toxic Problem
@@ -6931,110 +7100,139 @@ step << Evoker
 	.target Scalecommander Cindrethresh
     .target Scalecommander Viridia
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
-    *Check your Spellbook for Emerald Blossom and Fury of the Aspect(if you are 60)
-step << Evoker
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r to reset your cooldown
-    *Alternatively use |T4622464:0:0|t[Living Flame]
-    .complete 65307,3 --1/1 Atrenosh Hailstone healed
-    .goto 2118,24.90,13.59
-    .complete 65307,2 --4/4 Injured drakonid healed
-    .goto 2118,24.90,13.59
-    .target Injured Drakonid
-step << Evoker
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Talon|r. Interact with the |cRXP_PICK_Emerald Blossom Infuser|r to reset your cooldown
-    *Alternatively use |T4622464:0:0|t[Living Flame]
-    .goto 2118,25.77,17.75,15,0
-    .goto 2118,25.89,18.55,15,0
-    .goto 2118,24.03,22.16,15,0
-    .goto 2118,21.89,22.21
+    #loop
+    .goto 2118,21.85,22.57,10,0
+    .goto 2118,24.06,22.95,10,0
+    .goto 2118,26,18.41,10,0
+    .goto 2118,25.86,20.49,10,0
+    .goto 2118,21.41,23.86,10,0
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. 
+    *|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Stone|r to reset it's cooldown.
     .complete 65307,1 --10/10 Injured dracthyr healed
     .target Injured Talon
+    .usespell 355913
+    .usespell 361469
 step << Evoker
-    #requires Area3
-    .goto 2118,21.76,18.36,15,0
-    .goto 2118,20.61,17.41,15,0
+    .goto 2118,24.94,12.72
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r.
+    *|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Stone|r to reset it's cooldown.
+    .complete 65307,3 --1/1 Atrenosh Hailstone healed
+    .complete 65307,2 --4/4 Injured drakonid healed
+    .target Injured Drakonid
+    .usespell 355913
+    .usespell 361469
+step << Evoker
     .goto 2118,20.06,19.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r.
-	.target Scalecommander Viridia
     .turnin 65307 >>Turn in Mercy First
     .accept 66324 >>Accept Never Forgotten
+	.target Scalecommander Viridia
 step << Evoker
-    #completewith TheForbiddenReachNeverForgotten3
-    +|cRXP_WARN_Use the [ExtraActionButton] almost on cooldown to reduce toxicity levels|r.
-step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Report: Infestation|r on the Ground.
-    .goto 2110,66.63,67.70
+    #completewith next
+    #label Report: Infestation
+    .goto 2110,84.02,83.73,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Report: Infestation|r.
     .complete 66324,2 --1/1 Clues discovered
     .use 191729
 step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tSearch |cRXP_FRIENDLY_Karinasa|r.
-    .goto 2110,39.43,28.74
+    #completewith Report: Infestation
+    .goto 2110,66.63,67.70,80 >>Enter the building
+step << Evoker
+    #requires Report: Infestation
+    #completewith TheForbiddenReachNeverForgotten3
+    +Use the [ExtraActionButton] frequently to reduce toxicity.
+step << Evoker
+    #requires Report: Infestation
+    #title |cFFFCDC00Use ExtraActionButton|r
+    .goto 2110,66.63,67.70
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Report: Infestation|r.
+    .complete 66324,2 --1/1 Clues discovered
+    .use 191729
+step << Evoker
+    #completewith next
+    #label Horn signets1
+    #title |cFFFCDC00Use ExtraActionButton|r
+    .goto 2110,44.42,49.33,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Karinasa|r.
     .complete 66324,1,1 --3/3 Horn signets collected
     .use 191729
     .target Karinasa
 step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tSearch |cRXP_FRIENDLY_Rethenash|r.
+    #hidewindow
+    #completewith Horn signets1
+    #title |cFFFCDC00Use ExtraActionButton|r
+    .goto 2110,39.43,28.74,50 >>Follow the Arrow
+step << Evoker
+    #requires Horn signets1
+    #title |cFFFCDC00Use ExtraActionButton|r
+    .goto 2110,39.43,28.74
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Karinasa|r.
+    .complete 66324,1,1 --3/3 Horn signets collected
+    .use 191729
+    .target Karinasa
+step << Evoker
+    #title |cFFFCDC00Use ExtraActionButton|r
     .goto 2110,34.49,38.6
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rethenash|r
     .complete 66324,1,2 --3/3 Horn signets collected
     .use 191729
     .target Rethenash
 step << Evoker
+    #completewith next
+    #label 10/10 Survivors Rescued
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tenezeth|r.
+    .complete 66324,1,3 --3/3 Horn signets collected
+    .target Tenezeth
+step << Evoker
+    #completewith 10/10 Survivors Rescued
+    .goto 2110,27.74,45.67
+    .cast 6478 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
+step << Evoker
+    #requires 10/10 Survivors Rescued
     #label TheForbiddenReachNeverForgotten3
-    >>|TInterface/cursor/crosshair/interact.blp:20|tSearch |cRXP_FRIENDLY_Tenezeth|r.
     .goto 2110,18.66,50.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tenezeth|r.
     .complete 66324,1,3 --3/3 Horn signets collected
     .use 191729
     .target Tenezeth
 step << Evoker
-    #completewith TheForbiddenReachNeverForgotten10
-    +|cRXP_WARN_Only use the |cffffff00[ExtraActionButton]|r to stay at like 50-60%|r.
-step << Evoker
-    #completewith next
-    .goto 2110,27.74,45.67
-    .cast 6478 >>Pick up the |cRXP_PICK_Crystal Key|r on the ground.
-step << Evoker
-    #label TheForbiddenReachNeverForgotten10
-    >>Place the Crystal Key in the |cRXP_PICK_Crystal Lock|r.
     .goto 2110,25.6,33.76
+    *|cRXP_WARN_Let toxicity gradually approach 100%; this enables a teleport we’ll use shortly.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lock|r.
     .complete 66324,3 --10/10 Survivors Rescued
     .use 191729
 step << Evoker
     #completewith next
-    .goto 2110,32.46,40.74,10,0
-    +|cRXP_WARN_Stop using the [ExtraActionButton]. Just let it happen!|r. Step into a Gascloud to generate more toxicity.
-step << Evoker
+    #label Gascloud
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r.
-	.target Scalecommander Viridia
-    .goto 2118,20.07,19.08
     .turnin 66324 >>Turn in Never Forgotten
     .accept 65075 >>Accept The Healing Wings
+    .disablecheckbox
+	.target Scalecommander Viridia
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
-    *Check your Spellbook for Hover
+    #completewith Gascloud
+    .goto 2110,32.46,40.74
+    .subzone 13809 >>Step into the gas cloud and let the bar reach 100% to teleport.
 step << Evoker
-    >>Step into the Air Swirl to return to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
-    .goto 2118,20.4,19.6,5,0
+    #requires Gascloud
+    .goto 2118,20.07,19.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Viridia|r.
+    .turnin 66324 >>Turn in Never Forgotten
+    .accept 65075 >>Accept The Healing Wings
+	.target Scalecommander Viridia
+step << Evoker
     .goto 2118,44.24,61.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
     .turnin 65075 >>Turn in The Healing Wings
     .accept 65045 >>Accept Stormsunder Crater
     .target Scalecommander Emberthal
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Treysh|r. Choose any mount of you like (Ctrl+|TInterface/cursor/crosshair/interact.blp:20|tClick for a preview)
     .goto 2118,45.31,61.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Treysh|r. 
+    .accept 72263 >>Accept Cavalry Has its Place
     .turnin 72263 >>Turn in Cavalry Has its Place
+    .target Treysh
 step << Evoker
-    #completewith TheForbiddenReachStormsunderCrater
-    +|cRXP_WARN_Use the mount in your bags and drag a mount to your action bars|r.
-step << Evoker
-    #completewith next
-    .cooldown spell,369536,>0,1
-    .cast 369536 >>Cast Soar and follow the arrow
-step << Evoker
-    #label TheForbiddenReachStormsunderCrater
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r and |cRXP_FRIENDLY_Dervishian|r.
     .turnin 65045 >>Turn in Stormsunder Crater
     .accept 65049 >>Accept Tangle with the Tarasek
@@ -7045,155 +7243,140 @@ step << Evoker
     .target Scalecommander Azurathel
     .target Dervishian
 step << Evoker
-    #completewith TheForbiddenReachThePrimalists1
-    +Reminder: You can mount up now
-step << Evoker
-    #sticky
-    #label TheForbiddenReachConjuredArmy
-    >>Kill |cRXP_ENEMY_Conjured Elementals|r.
-    .goto 2118,76.04,66.83,0,0
+    #completewith Primalist motivations
+    >>Kill |cRXP_ENEMY_Conjured Elementals|r and |cRXP_ENEMY_Taraseks|r.
     .complete 65050,1 --12/12 Conjured elementals slain
-    .mob Conjured Stormling
-step << Evoker
-    #completewith next
-    >>Kill |cRXP_ENEMY_Taraseks|r.
     .complete 65049,1 --7/7 Tarasek slain
+    .mob Conjured Stormling
     .mob Infused Tarasek
     .mob Tarasek Shockbringer
     .mob Tarasek Shockshaman
 step << Evoker
-    #label TheForbiddenReachThePrimalists1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the floating |cRXP_PICK_stones|r.
     .goto 2118,71.87,60.20
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
     .complete 65046,1 --1/1 Primalist intentions discovered
 step << Evoker
-    #completewith TheForbiddenReachThePrimalists
-    >>Kill |cRXP_ENEMY_Taraseks|r.
-    .complete 65049,1 --7/7 Tarasek slain
-    .mob Infused Tarasek
-    .mob Tarasek Shockbringer
-    .mob Tarasek Shockshaman
-step << Evoker
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the floating |cRXP_PICK_stones|r.
     .goto 2118,71.93,54.52
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
     .complete 65046,3 --1/1 Primalist leaders discovered
 step << Evoker
-    #completewith next
-    .cast 369536 >>Cast Soar and follow the arrow
-step << Evoker
-    #label TheForbiddenReachThePrimalists
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the floating |cRXP_PICK_stones|r.
+    #label Primalist motivations
     .goto 2118,78.25,66.47
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
     .complete 65046,2 --1/1 Primalist motivations discovered
 step << Evoker
-    >>Kill |cRXP_ENEMY_Taraseks|r.
-    .goto 2118,77.71,68.82,30,0
-    .goto 2118,74.28,68.59,30,0
-    .goto 2118,73.49,65.82,20,0
-    .goto 2118,70.78,60.33,30,0
-    .goto 2118,74.91,56.79
+    #loop
+    .goto 2118,78.7,69.73,35,0
+    .goto 2118,76.97,70.47,35,0
+    .goto 2118,74.07,66.61,35,0
+    .goto 2118,72.54,61.92,35,0
+    .goto 2118,75.96,58.32,35,0
+    .goto 2118,78.38,59.79,35,0
+    >>Kill |cRXP_ENEMY_Conjured Elementals|r and |cRXP_ENEMY_Taraseks|r.
+    .complete 65050,1 --12/12 Conjured elementals slain
     .complete 65049,1 --7/7 Tarasek slain
+    .mob Conjured Stormling
     .mob Infused Tarasek
     .mob Tarasek Shockbringer
     .mob Tarasek Shockshaman
 step << Evoker
-    #requires TheForbiddenReachConjuredArmy
-    .goto 2118,79.42,62.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dervishian|r and |cRXP_FRIENDLY_Scalecommander Azurathel|r.
     .turnin 65046 >>Turn in The Primalists
+    .goto 2118,79.39,62.06
     .turnin 65049 >>Turn in Tangle with the Tarasek
     .turnin 65050 >>Turn in Conjured Army
     .accept 65052 >>Accept The Ebon Scales
+    .goto 2118,79.55,62.32
     .target Dervishian
     .target Scalecommander Azurathel
 step << Evoker
-    #completewith next
-    +Check your Bag for new Equipment
-    *Check your Spellbook for new Spells
-step << Evoker
-    #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
-step << Evoker
-    >>As soon as you can see the [ExtraActionButon], press it.
     .goto 2118,81.32,56.81
+    >>Use the [ExtraActionButton] on the waypoint location.
     .complete 65052,1 --1/1 Attack on Ekrazathal signaled
 step << Evoker
-    #completewith next
-    +Check your Bag for new Equipment
-step << Evoker
+    .goto 2118,81.22,53.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
 	.target Scalecommander Sarkareth
-    .goto 2118,81.22,53.96
     .turnin 65052 >>Turn in The Ebon Scales
     .accept 65057 >>Accept Rally to Emberthal
 step << Evoker
     #completewith next
+    #label Rally to Emberthal
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
+    .turnin 65057 >>Turn in Rally to Emberthal
+	.target Scalecommander Emberthal
+step << Evoker
+    #completewith Rally to Emberthal
+    .goto 2118,81.22,53.96
     .hs >>Hearth to The Forbidden Reach
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
-	.target Scalecommander Emberthal
+    #requires Rally to Emberthal
     .goto 2118,44.22,61.17
-    *You can skip the next cutscene (Esc -> Yes)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
     .turnin 65057 >>Turn in Rally to Emberthal
-step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
-    .goto 2118,44.83,57.69
-    .accept 65701 >>Accept Preservation or Devastation
 step << Evoker
-    >>Choose Devastation (DPS) or Preservation (Heal)
+    .goto 2118,44.83,57.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
+    .accept 65701 >>Accept Preservation, Augmentation, or Devastation
+	.target Scalecommander Emberthal
+step << Evoker
+    >>Choose |T4511811:0|t[Devastation](DPS),|T4511812:0|t[Preservation](Heal) or |T5198700:0|t[Augmentation](DPS)
+    *|cRXP_WARN_Recommended: |T4511811:0|t[Devastation](DPS)|r
     .complete 65701,1 --1/1 Activate a Talent Spec
+    .skipgossipid 55597
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
-	.target Scalecommander Emberthal
     .goto 2118,44.83,57.69
-    .turnin 65701 >>Turn in Preservation or Devastation
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
+    .turnin 65701 >>Turn in Preservation, Augmentation, or Devastation
     .accept 65084 >>Accept The Froststone Vault
+	.target Scalecommander Emberthal
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
-    *Check your Spellbook for new spells
-step << Evoker
-    #completewith next
-    .cast 369536 >>Cast Soar and follow the arrow
-step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
-	.target Scalecommander Sarkareth
     .goto 2118,56.72,28.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
     .turnin 65084 >>Turn in The Froststone Vault
     .accept 65087 >>Accept The Prize Inside
-step << Evoker
-    >>Use Emerald Blossom and Living Flame to heal NPCs and kill enemies
-    *The best way is to find a |cRXP_FRIENDLY_Azuresworn Drakonid|r. with very low HP and heal him.
-    .goto 2118,54.52,31.64
-    .complete 65087,1 --Froststone Vault defended (100%)
-step << Evoker
-    #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
-step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
 	.target Scalecommander Sarkareth
+step << Evoker
+    #loop
+    .goto 2118,54.08,32.15,25,0
+    .goto 2118,53.13,28.27,25,0
+    .goto 2118,55.99,33.62,25,0
+    >>Kill |cRXP_ENEMY_Monsters|r and heal |cRXP_FRIENDLY_NPCs|r
+    *The best way is to find a |cRXP_FRIENDLY_Azuresworn Drakonid|r. with very low HP and heal him.
+    .complete 65087,1,100 --Froststone Vault defended (100%)
+    .mob Trueborn Tempest-Warrior
+    .mob Trueborn Rainmaker
+    .mob Tarasek Shockbringer
+step << Evoker
     .goto 2118,56.35,28.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Sarkareth|r.
     .turnin 65087 >>Turn in The Prize Inside
+	.target Scalecommander Sarkareth
+step << Evoker
+    #completewith Final Orders
+    +For the remainder of the starting zone, mounting is not possible.
 step << Evoker
     .goto 2118,54.10,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Emberthal|r.
 	.target Scalecommander Emberthal
     .accept 65097 >>Accept Run!
 step << Evoker
-    #completewith TheForbiddenReachFinalOrders
-    +|cRXP_WARN_Reminder: Spamming Space is faster than walking normally|r.
-step << Evoker
-    >>Immediately start running and get to |cRXP_FRIENDLY_Wrathion|r.
-    .goto 2118,47.02,35.52
+    .goto 2118,53.19,33.04,20,0
+    .goto 2118,51.39,33.16,20,0
+    .goto 2118,49.27,33.74,20,0
+    .goto 2118,47.62,35.05
+    >>Immediately run away from |cRXP_ENEMY_Avatar of the Storm|r.
     .complete 65097,1 --1/1 Outrun the Avatar of the Storm
+    .mob Avatar of the Storm
 step << Evoker
-    >>Get to |cRXP_FRIENDLY_Wrathion|r.
-    .goto 2118,47.75,34.69
+    .goto 2118,47.04,35.49
+    >>Go to |cRXP_FRIENDLY_Wrathion|r.
     .complete 65097,2 --Wrathion found
+    .target Wration
 step << Evoker
+    .goto 2118,47.04,35.49
     >>Heal |cRXP_FRIENDLY_Wrathion|r with Living Flame and Emerald Blossom.
-    .goto 2118,47.09,35.38
     .complete 65097,3 --1/1 Wrathion healed
     .target Wrathion
 step << Evoker
@@ -7203,13 +7386,27 @@ step << Evoker
     .turnin 65097 >>Turn in Run!
     .accept 65098 >>Accept The Consequence of Courage
 step << Evoker
-    >>Avoid pulling mobs. Follow the arrow
-    .goto 2118,45.96,40.26
+    #completewith next
+    #label Ebyssian
+    .goto 2118,44.06,38.28,20,0
+    .goto 2118,44.98,39.69,20,0
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 65098,1 --1/1 Ebyssian found
 step << Evoker
-    >>Heal |cRXP_FRIENDLY_Ebyssian|r above 90% HP with Living Flame and Emerald Blossom.
+    #completewith Ebyssian
+    .goto 2118,46.16,40.38,20 >>Trigger the Roleplay.
+    .timer 3.5,RP
+step << Evoker
+    #requires Ebyssian
     .goto 2118,43.22,38.26
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 65098,1 --1/1 Ebyssian found
+step << Evoker
+    .goto 2118,43.22,38.26
+    >>Heal |cRXP_FRIENDLY_Ebyssian|r above 90% HP.
     .complete 65098,2 --1/1 Ebyssian healed
+    .usespell 355913
+    .usespell 361469
     .target Ebyssian
 step << Evoker
     .goto 2118,41.68,44.52
@@ -7218,99 +7415,132 @@ step << Evoker
     .turnin 65098 >>Turn in The Consequence of Courage
     .accept 65100 >>Accept Final Orders
 step << Evoker
-    #completewith next
-    +Check your Bags for new Equipment
-step << Evoker
-    >>Follow the arrow
-    .goto 2118,41.79,53.44
+    .goto 2118,42.19,54.55
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 65100,1 --1/1 Reach the Old Weyrn Grounds
 step << Evoker
     #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
-step << Evoker
+    #label Nozdormu
+    .goto 2118,43.21,59.74,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nozdormu|r.
-    .goto 2118,42.98,59.63,25,0
-    .goto 2118,43.57,59.68
     .complete 65100,2 --1/1 Speak with Nozdormu
     .target Nozdormu
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viridia|r.
-	.target Viridia
+    #completewith Nozdormu
+    #hidewindow
+    .goto 2118,43.75,59.21,20 >>Follow the Arrow
+step << Evoker
+    #requires Nozdormu
+    .goto 2118,43.75,59.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nozdormu|r.
+    .complete 65100,2 --1/1 Speak with Nozdormu
+    .target Nozdormu
+step << Evoker
     .goto 2118,43.47,54.15
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viridia|r.
     .complete 65100,4 --1/1 Viridia spoken to
+    .skipgossipid 51849
+	.target Viridia
 step << Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarkareth|r.
-	.target Sarkareth
     .goto 2118,47.06,55.88
-    .skipgossip 1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarkareth|r.
     .complete 65100,3 --1/1 Sarkareth spoken to
+    .skipgossipid 51850
+	.target Sarkareth
 step << Evoker
-    #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
-step << Evoker
-    --x .goto 2118,44.65,55.16 --x maybe talent choice based?
-    #label TheForbiddenReachFinalOrders
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
-	.target Scalecommander Azurathel
+    #label Final Orders
     .goto 2118,44.64,55.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 65100 >>Turn in Final Orders
+    .target Scalecommander Cindrethresh
+step << Evoker
+    #label Final Orders
+    .goto 2118,46.95,55.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
+    .turnin 65100 >>Turn in Final Orders
+	.target Scalecommander Azurathel
 step << Alliance Evoker
-    #completewith next
-    +Check your Bags for new Equipment
+    #completewith Draconic Connections
+    +|cRXP_WARN_Reminder: You can mount up again|r.
 step << Alliance Evoker
     .goto 37,32.26,49.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
-	.target Wrathion
     .accept 65286 >>Accept Draconic Connections
+	.target Wrathion
 step << Alliance Evoker
+    #label Draconic Connections
     .goto 37,32.26,49.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
 	.target Scalecommander Azurathel
     .turnin 65286 >>Turn in Draconic Connections
     .accept 66513 >>Accept Ground Leave
 step << Alliance Evoker
-    >>Follow the Waypoint
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 84,62.63,77.65
+    >>Enter the Bank
     .complete 66513,2 --Visit the Bank
 step << Alliance Evoker
-    >>Follow the Waypoint
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 84,61.60,72.29
+    >>Enter the Auction House
     .complete 66513,1 --Visit the Auction House
 step << Alliance Evoker
-    >>Follow the Waypoint
-    .goto 84,49.05,87.11
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 84,49.05,87.11,5,0
+    .goto 84,48.96,87.84,5,0
+    .goto 84,48.69,87.19,5,0
+    .goto 84,49.2,87.08,5,0
+    .goto 84,49.13,87.7,5,0
+    .goto 84,48.76,88.05
+    >>Enter the Portal Room
     .complete 66513,4 --Visit the Portal Room
 step << Alliance Evoker
-    >>Follow the Waypoint
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 84,52.39,13.83
+    >>Enter the Embassy
     .complete 66513,3 --Visit the Embassy
 step << Alliance Evoker
     .goto 84,79.93,26.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Azurathel|r.
-	.target Scalecommander Azurathel
     .turnin 66513 >>Turn in Ground Leave
+	.target Scalecommander Azurathel
 step << Alliance Evoker
     .goto 84,79.84,27.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
 	.target Wrathion
     .accept 66577 >>Accept Aspectral Invitation
+step << Alliance Evoker
+    .goto 84,79.83,27.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .complete 66577,1 --1/1 Speak to Wrathion
+    .skipgossipid 55659
+	.target Wrathion
+step << Alliance Evoker
+    .goto 84,79.84,27.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+	.target Wrathion
     .turnin 66577 >>Turn in Aspectral Invitation
     .accept 65101 >>Accept An Iconic, Draconic Look
 step << Alliance Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
-	.target Wrathion
-    .complete 65101,1 --1/1 Speak to Wrathion
-step << Alliance Evoker
-    >>Follow Wrathion and Use the ExtraActionButon as soon as you can
     .goto 84,82.61,23.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .complete 65101,1 --1/1 Speak to Wrathion
+    .timer 32,RP
+    .skipgossipid 55882
+    .target Wrathion
+step << Alliance Evoker
+    .goto 84,82.53,23.96
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 65101,2 --1/1 Learn about visage form
+step << Alliance Evoker
+    .goto 84,82.53,23.96
+    >>Use the [ExtraActionButon]
     .complete 65101,3 --1/1 Assume your mortal visage
 step << Alliance Evoker
-    .goto 84,82.58,23.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
-	.target Wrathion
+    .goto 84,82.53,23.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r
     .turnin 65101 >>Turn in An Iconic, Draconic Look
+    .target Wrathion
 step << Horde Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r and |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .accept 66237 >>Accept Spiritual Allies
@@ -7322,70 +7552,73 @@ step << Horde Evoker
     .target Scalecommander Cindrethresh
 step << Horde Evoker
     #completewith next
-    +|cRXP_WARN_Reminder: You can mount up again!|r.
+    +|cRXP_WARN_Reminder: You can mount up again|r.
 step << Horde Evoker
-    >>Follow the arrow
-    .complete 66534,4 --Visit the Portal Room
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 85,50.07,91.25,15,0
     .goto 85,55.77,90.01
-    .complete 66534,2 --Visit the Bank
+    >>Enter the Portal Room
+    .complete 66534,4 --Visit the Portal Room
+step
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 85,52.92,90.16,15,0
+    .goto 85,51.97,86.07,15,0
+    .goto 85,49.51,81.29,10,0
     .goto 85,48.97,82.67
-    .complete 66534,1 --Visit the Auction House
+    >>Enter the Bank
+    .complete 66534,2 --Visit the Bank
+step
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 85,53.45,74.25
-    .complete 66534,3 --Visit the Embassy
+    >>Enter the Auction House
+    .complete 66534,1 --Visit the Auction House
+step
+    #title |cFFFCDC00Follow the Arrow|r
     .goto 85,38.26,80.72
+    >>Enter the Embassy
+    .complete 66534,3 --Visit the Embassy
 step << Horde Evoker
-    #completewith DracthyrHordeTrainRiding
-    .cooldown spell,369536,>20,1
-    .cast 369536 >>Cast Soar and follow the arrow
-step << Horde Evoker
-    #completewith DracthyrHordeTrainRiding
-    .noflyable 85
-    .cooldown spell,369536,<1,1
-    .goto 85,43.70,67.46,5 >>Take the elevator
-step << Horde Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
-	.target Scalecommander Cindrethresh
     .goto 85,44.02,38.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r.
     .turnin 66534 >>Turn in Ground Leave
+	.target Scalecommander Cindrethresh
 step << Horde Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
-	.target Ebyssian
     .goto 85,44.06,37.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
     .accept 65437 >>Accept Aspectral Invitation
-step << Horde Evoker
-    #completewith next
-    +You can skip the next cutscene (Esc -> Yes)
-step << Horde Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
+step << Horde Evoker
     .goto 85,44.06,37.93
-    .skipgossip 190239,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
     .complete 65437,1 --1/1 Speak with Ebyssian
+    .skipgossipid
+	.target Ebyssian
 step << Horde Evoker
     .goto 85,44.07,37.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
-	.target Ebyssian
     .turnin 65437 >>Turn in Aspectral Invitation
     .accept 65613 >>Accept An Iconic, Draconic Look
-step << Horde Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
 	.target Ebyssian
-    .goto 85,44.07,37.96
-    .skipgossip 190239,1
-    .complete 65613,1 --1/1 Ask Ebyssian about Visage Form
 step << Horde Evoker
-    >>Wait for |cRXP_FRIENDLY_Ebyssian|r to finish his story.
+    .goto 85,44.07,37.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
+    .complete 65613,1 --1/1 Ask Ebyssian about Visage Form
+    .timer 25,RP
+    .skipgossipid 55863
+	.target Ebyssian
+step << Horde Evoker
     .goto 85,44.06,37.96
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 65613,2 --1/1 Learn about Visage Form
 step << Horde Evoker
-    >>Use the [ExtraActionButon]
     .goto 85,44.06,37.96
+    >>Use the [ExtraActionButon]
     .complete 65613,3 --1/1 Adopt a Visage Form
 step << Horde Evoker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
-	.target Ebyssian
     .goto 85,44.09,37.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
     .turnin 65613 >>Turn in An Iconic, Draconic Look
+	.target Ebyssian
 ]])
 --Pandaren: The Wandering Isle
 RXPGuides.RegisterGuide([[
@@ -7404,81 +7637,152 @@ step
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .accept 30034 >>Accept The Lesson of the Iron Bough << Hunter
-    .accept 30027 >>Accept The Lesson of the Iron Bough << Priest/Monk
+    .accept 30027 >>Accept The Lesson of the Iron Bough << Monk
+    .accept 30035 >>Accept The Lesson of the Iron Bough << Priest
     .accept 30033 >>Accept The Lesson of the Iron Bough << Mage
     .accept 30037 >>Accept The Lesson of the Iron Bough << Shaman
     .accept 30038 >>Accept The Lesson of the Iron Bough << Warrior
     .accept 30036 >>Accept The Lesson of the Iron Bough << Rogue
 	.target Master Shang Xi
 step << Hunter
-    .isOnQuest 30034
+    #completewith next
+    #label HunterWeapon
+    >>Equip the Weapon.
+    .complete 30034,1 --1/1 Loot and Equip a Trainee's Crossbow
+    .use 73211 --Trainee's Crossbow
+step << Hunter
+    #completewith HunterWeapon
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r for the |T537025:0|t[Trainee's Crossbow].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
     .collect 73211,1 --Trainee's Crossbow (1)
 step << Hunter
-    .goto 378,57.22,19.22
-    >>Equip the |T537025:0|t[Trainee's Crossbow].
+    #requires HunterWeapon
+    .goto 378,56.67,18.20
+    >>Equip the Weapon.
     .complete 30034,1 --1/1 Loot and Equip a Trainee's Crossbow
     .use 73211 --Trainee's Crossbow
 step << Mage
-    .isOnQuest 30033
-    .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r for the |T537771:0|t[Trainee's Spellblade] and |T654237:0|t[Trainee's Hand Fan].
-    .collect 76390,1 --Trainee's Spellblade (1)
-    .collect 76392,1, --Trainee's Hand Fan (1)
-step << Mage
-    .goto 378,57.22,19.22
-    >>Equip the |T537771:0|t[Trainee's Spellblade] and |T654237:0|t[Trainee's Hand Fan].
+    #completewith next
+    #label MageWeapon
+    >>Equip the Weapons.
     .complete 30033,1 --Loot and Equip a Trainee's Spellblade (1)
     .complete 30033,2 --Loot and Equip a Trainee's Hand Fan (1)
     .use 76390 --Trainee's Spellblade
     .use 76392 --Trainee's Hand Fan
-step << Monk/Priest
-    .isOnQuest 30027
+step << Mage
+    #completewith MageWeapon
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r for the |T537770:0|t[Trainee's Staff].
-    .collect 73209,1 -Trainee's Staff (1)
-step << Monk/Priest
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
+    .collect 76390,1 --Trainee's Spellblade (1)
+    .collect 76392,1, --Trainee's Hand Fan (1)
+step << Mage
+    #requires MageWeapon
     .goto 378,56.67,18.20
-    >>Equip the |T537770:0|t[Trainee's Staff].
+    >>Equip the Weapons.
+    .complete 30033,1 --Loot and Equip a Trainee's Spellblade (1)
+    .complete 30033,2 --Loot and Equip a Trainee's Hand Fan (1)
+    .use 76390 --Trainee's Spellblade
+    .use 76392 --Trainee's Hand Fan
+step << Monk
+    #completewith next
+    #label MonkWeapon
+    >>Equip the Weapon.
     .complete 30027,1 --Loot and Equip a Trainee's Staff
     .use 73209
-step << Shaman
-    .isOnQuest 30037
+step << Monk
+    #completewith MonkWeapon
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r for the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
+    .collect 73209,1 -Trainee's Staff (1)
+step << Monk
+    #requires MonkWeapon
+    .goto 378,56.67,18.20
+    >>Equip the Weapon.
+    .complete 30027,1 --Loot and Equip a Trainee's Staff
+    .use 73209
+step << Priest
+    #completewith next
+    #label PriestWeapon
+    >>Equip the Weapon.
+    .complete 30035,1 --Loot and Equip a Trainee's Staff
+    .use 76393
+    .use 73207
+step << Priest
+    #completewith PriestWeapon
+    .goto 378,57.22,19.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
+    .collect 73207,1 -Trainee's Mace
+    .collect 76393,1 -Trainee's Book of Prayers
+step << Priest
+    #requires PriestWeapon
+    .goto 378,56.67,18.20
+    >>Equip the Weapon.
+    .complete 30035,1 --Loot and Equip a Trainee's Mace
+    .complete 30035,2 --Trainee's Book of Prayers
+    .use 76393
+    .use 73207
+step << Shaman
+    #completewith next
+    #label ShamanWeapon
+    >>Equip the Weapons.
+    .complete 30037,1 --Loot and Equip a Trainee's Axe
+    .complete 30037,2 --Loot and Equip a Trainee's Shield
+    .use 76391 --Trainee's Axe
+    .use 73213 --Trainee's Shield
+step << Shaman
+    #completewith ShamanWeapon
+    .goto 378,57.22,19.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
     .collect 76391,1  --Trainee's Axe (1)
     .collect 73213,1 --Trainee's Shield (1)
 step << Shaman
-    .goto 378,57.22,19.22
-    >>Equip the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
+    #requires ShamanWeapon
+    .goto 378,56.67,18.20
+    >>Equip the Weapons.
     .complete 30037,1 --Loot and Equip a Trainee's Axe
     .complete 30037,2 --Loot and Equip a Trainee's Shield
     .use 76391 --Trainee's Axe
     .use 73213 --Trainee's Shield
 step << Warrior
-    .isOnQuest 30038
+    #completewith next
+    #label WarriorWeapon
+    >>Equip the Weapons.
+    .complete 30038,1 --Loot and Equip a Trainee's Axe
+    .complete 30038,2 --Loot and Equip a Trainee's Shield
+    .use 76391 --Trainee's Axe
+    .use 73213 --Trainee's Shield
+step << Warrior
+    #completewith WarriorWeapon
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r for the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
     .collect 76391,1  --Trainee's Axe (1)
     .collect 73213,1  --Trainee's Shield (1)
 step << Warrior
-    .isOnQuest 30038
-    .goto 378,57.22,19.22
-    >>Equip the |T537205:0|t[Trainee's Axe] and |T537769:0|t[Trainee's Shield].
+    #requires WarriorWeapon
+    .goto 378,56.67,18.20
+    >>Equip the Weapons.
     .complete 30038,1 --Loot and Equip a Trainee's Axe
     .complete 30038,2 --Loot and Equip a Trainee's Shield
     .use 76391 --Trainee's Axe
     .use 73213 --Trainee's Shield
 step << Rogue
-    .isOnQuest 30036
+    #completewith next
+    #label RogueWeapon
+    >>Equip the Weapon.
+    .complete 30036,1 --Loot and Equip a Trainee's Dagger
+    .complete 30036,2 --Loot and Equip a Second Trainee's Dagger
+    .use 73208 --Trainee's Dagger (ID 1)
+    .use 73212 --Trainee's Dagger (ID 2)
+step << Rogue
+    #completewith RogueWeapon
     .goto 378,57.22,19.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r for the |T537767:0|t[Trainee's Daggers].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Weapon Rack|r.
     .collect 73208,1,30036,1,1 --Trainee's Dagger (ID 1)
     .collect 73212,1,30036,1,1 --Trainee's Dagger (ID 2)
 step << Rogue
-    .goto 378,57.22,19.22
-    >>Equip the |T537767:0|t[Trainee's Daggers].
+    #requires RogueWeapon
+    .goto 378,56.67,18.20
+    >>Equip the Weapon.
     .complete 30036,1 --Loot and Equip a Trainee's Dagger
     .complete 30036,2 --Loot and Equip a Second Trainee's Dagger
     .use 73208 --Trainee's Dagger (ID 1)
@@ -7495,26 +7799,51 @@ step
     .accept 29406 >>Accept The Lesson of the Sandy Fist
 	.target Master Shang Xi
 step
-    .goto 378,57.49,18.64,10,0
-    .goto 378,57.12,19.43,10,0
-    .goto 378,57.49,18.64,10,0
-    .goto 378,57.12,19.43,10,0
-    .goto 378,57.31,18.97
-    >>Kill |cRXP_ENEMY_Training Targets|r.
+    #loop
+    .goto 378,57.42,18.62,15,0
+    .goto 378,57.03,19.53,15,0
+    .goto 378,58.49,19.46,15,0
+    .goto 378,58.69,17.77,15,0
+    .goto 378,57.83,16.51,15,0
+    >>Kill the |cRXP_ENEMY_Training Targets|r.
     .complete 29406,1 --5/5 Training Targets destroyed
 	.mob Training Target
 step
+    #completewith next
+    #label Lesson of the Sandy Fist
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    .turnin 29406 >>Turn in The Lesson of the Sandy Fist
+    .accept 29524 >>Accept The Lesson of Stifled Pride
+    .disablecheckbox
+	.target Master Shang Xi
+step
+    #hidewindow
+    #completewith Lesson of the Sandy Fist
+    .goto 378,56.79,18.77,15 >>Follow the Arrow
+step
+    #requires Lesson of the Sandy Fist
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .turnin 29406 >>Turn in The Lesson of the Sandy Fist
     .accept 29524 >>Accept The Lesson of Stifled Pride
 	.target Master Shang Xi
 step
-    .goto 378,59.53,19.03,15,0
-    .goto 378,60.30,19.00,10,0
-    .goto 378,60.13,19.77,10,0
-    .goto 378,60.44,19.47
-    >>Go inside the |cRXP_WARN_building|r and defeat |cRXP_ENEMY_Sparring Trainees|r.
+    #completewith next
+    #label Sparring Trainees
+    >>Defeat |cRXP_ENEMY_Sparring Trainees|r.
+    .complete 29524,1 --6/6 Sparring Trainees defeated
+	.mob Tushui Trainee
+	.mob Huojin Trainee
+step
+    #completewith Sparring Trainees
+    .goto 378,59.71,19.21,20 >>Enter the House
+step
+    #requires Sparring Trainees
+    #loop
+    .goto 378,59.71,19.21,5,0
+    .goto 378,60.33,20,5,0
+    .goto 378,60.33,18.58,5,0
+    >>Defeat |cRXP_ENEMY_Sparring Trainees|r.
     .complete 29524,1 --6/6 Sparring Trainees defeated
 	.mob Tushui Trainee
 	.mob Huojin Trainee
@@ -7525,41 +7854,113 @@ step
     .accept 29408 >>Accept The Lesson of the Burning Scroll
 	.target Master Shang Xi
 step
-    .isOnQuest 29408
-    .goto 378,59.97,18.58,8,0
-    .goto 378,60.48,18.85,5,0
-    .goto 378,60.20,18.89,5,0
-    .goto 378,59.98,18.69,5,0
-	.goto 378,60.46,19.60,8 >>|cRXP_WARN_Take the shortcut to the top floor by jumping through the gap under the second set of stairs|r.
-step
-    .goto 378,59.95,20.39
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r to burn it.
+    #completewith next
+    #label Edict of Temperance
+    .goto 378,60.02,18.59,5,0
+    .goto 378,60.55,18.88,5,0
+    .goto 378,60.08,18.83,3,0
+    .goto 378,60.06,18.48,4,0
+    .goto 378,60.64,19.14,5,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r.
     .complete 29408,2 --1/1 Burn the Edict of Temperance
 step
-	#completewith next
-    .goto 378,60.19,19.35,6 >> |cRXP_WARN_Jump downstairs|r.
+    #completewith Edict of Temperance
+	.goto 378,59.95,20.39,10 >>|cRXP_WARN_Jump through the gap under the second stairs to reach the top floor faster|r.
 step
+    #requires Edict of Temperance
+    .goto 378,59.95,20.39
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banner|r.
+    .complete 29408,2 --1/1 Burn the Edict of Temperance
+step
+    #completewith next
+    #label Lesson of the Burning Scroll
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    .turnin 29408 >>Turn in The Lesson of the Burning Scroll
+    .accept 29409 >>Accept The Disciple's Challenge
+    .disablecheckbox
+	.target Master Shang Xi
+step
+	#completewith Lesson of the Burning Scroll
+    .goto 378,59.97,19.3,5 >> |cRXP_WARN_Jump downstairs|r.
+step
+    #requires Lesson of the Burning Scroll
     .goto 378,59.67,19.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .turnin 29408 >>Turn in The Lesson of the Burning Scroll
     .accept 29409 >>Accept The Disciple's Challenge
 	.target Master Shang Xi
 step
-    .goto 378,67.78,22.75
-    >>Defeat |cRXP_ENEMY_Jaomin|r.
+    .goto 378,67.77,22.77
+    >>Defeat |cRXP_ENEMY_Jaomin Ro|r.
+    *|cRXP_WARN_While fighting, move him to the bridge’s peak for a quick turn-in|r.
     .complete 29409,1 --1/1 Defeat Jaomin Ro
 	.mob Jaomin Ro
-step << Warrior
-	#completewith Lorvo
-    +Use |T132337:0|tCharge on critters to move faster
 step
     .goto 378,65.97,22.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .turnin 29409 >>Turn in The Disciple's Challenge
     .accept 29410 >>Accept Aysa of the Tushui
 	.target Master Shang Xi
-step
-	#label Lorvo
+step << Hunter
+    #completewith next
+    #hidewindow
+    #label Aysa of the Tushui2
+    .goto 378,65.62,19.65,10,0
+    .goto 378,66.01,19.88,5,0
+    .goto 378,66.13,19.06,3,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
+    .turnin 29410 >>Turn in Aysa of the Tushui
+    .accept 29419 >>Accept The Missing Driver
+    .disablecheckbox
+	.target Merchant Lorvo
+step << Hunter
+    #completewith Aysa of the Tushui2
+    .goto 378,67.49,14.83
+    .cast 781 >>Use |T132294:0|t[Disengage] to jump off the mountain.
+step << Hunter
+    #requires Aysa of the Tushui2
+    #completewith next
+    #ignorecorpse
+    #label Aysa of the Tushui3
+    #title |cFFFCDC00Rez at Spirit Healer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
+    .turnin 29410 >>Turn in Aysa of the Tushui
+    .accept 29419 >>Accept The Missing Driver
+    .disablecheckbox
+    .accept 29424 >>Accept Items of Utmost Importance
+    .disablecheckbox
+	.target Merchant Lorvo
+step << Hunter
+    #requires Aysa of the Tushui2
+    #completewith Aysa of the Tushui3
+    #title |cFFFCDC00Rez at Spirit Healer|r
+    #ignorecorpse
+    .goto 378,53.12,30.87
+    .deathskip >> Die and respawn at the Spirit Healer.
+	.target Spirit Healer
+step << Hunter
+    #requires Aysa of the Tushui3
+    .goto 378,55.09,32.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
+    .turnin 29410 >>Turn in Aysa of the Tushui
+    .accept 29419 >>Accept The Missing Driver
+    .accept 29424 >>Accept Items of Utmost Importance
+	.target Merchant Lorvo
+step << !Hunter
+    #completewith next
+    #label Aysa of the Tushui
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
+    .turnin 29410 >>Turn in Aysa of the Tushui
+    .accept 29419 >>Accept The Missing Driver
+    .disablecheckbox
+    .accept 29424 >>Accept Items of Utmost Importance
+    .disablecheckbox
+	.target Merchant Lorvo
+step << !Hunter
+    #completewith Aysa of the Tushui
+    .goto 378,55.09,32.83,60 >>|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
+step << !Hunter
+    #requires Aysa of the Tushui
     .goto 378,55.09,32.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
     .turnin 29410 >>Turn in Aysa of the Tushui
@@ -7568,96 +7969,170 @@ step
 	.target Merchant Lorvo
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r 
+    *Loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.mob Amberleaf Scamp
 step
     .goto 378,54.11,20.90
-    >>|cRXP_WARN_Follow the Arrow|r.
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 29419,1 --1/1 Rescue the Cart Driver
 	.target Min Dimwind
 step
-    .goto 378,54.03,20.93,15,0
-    .goto 378,54.02,17.44,15,0
-    .goto 378,53.00,20.17,15,0
-    .goto 378,54.03,20.93,15,0
-    .goto 378,54.02,17.44
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r and loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
+    #loop
+    .goto 378,53.08,20.51,25,0
+    .goto 378,52.67,24.82,25,0
+    .goto 378,55.35,25.22,25,0
+    .goto 378,53.92,22.52,25,0
+    .goto 378,53.95,17.26,25,0
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r 
+    *Loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.target Amberleaf Scamp
 step
-    .isOnQuest 29424
-    .goto 378,54.03,20.93,15,0
-    .goto 378,54.02,17.44,15,0
-    .goto 378,53.00,20.17,15,0
-    .goto 378,54.03,20.93
-    >>|cRXP_WARN_1./sit increases your damage taken|r.
-    >>|cRXP_WARN_2.Unequipping your gear increases your damage taken|r.
-    .deathskip >> Die and respawn |cRXP_WARN_at the Spirit Healer|r.
-	.target Spirit Healer
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    #completewith next
+    #label Missing Driver
+    #hidewindow
+    .goto 378,53.08,20.51,25,0
+    .goto 378,52.67,24.82,25,0
+    .goto 378,55.35,25.22,25,0
+    .goto 378,53.92,22.52,25,0
+    .goto 378,53.95,17.26,25,0
+    .goto 378,53.08,20.51,25,0
+    .goto 378,52.67,24.82,25,0
+    .goto 378,55.35,25.22,25,0
+    .goto 378,53.92,22.52,25,0
+    .goto 378,53.95,17.26,25,0
+    .goto 378,53.08,20.51,25,0
+    .goto 378,52.67,24.82,25,0
+    .goto 378,55.35,25.22,25,0
+    .goto 378,53.92,22.52,25,0
+    .goto 378,53.95,17.26,25,0
+    .goto 378,53.08,20.51,25,0
+    .goto 378,52.67,24.82,25,0
+    .goto 378,55.35,25.22,25,0
+    .goto 378,53.92,22.52,25,0
+    .goto 378,53.95,17.26,25,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
     .turnin 29419,2 >>Turn in The Missing Driver
     .turnin 29424 >>Turn in Items of Utmost Importance
-    .goto 378,55.11,32.40
-    .accept 29414 >>Accept The Way of the Tushui
-    .goto 378,55.10,32.55
 	.target Merchant Lorvo
 	.target Aysa Cloudsinger
-step << Hunter
-    .isOnQuest 29414
-    .goto 378,56.25,30.34,30,0
-    .goto 378,57.97,30.62
-    .tame 57797 >> |cRXP_WARN_Tame a Corsac Fox|r.
-	.target Corsac Fox
 step
-	.isOnQuest 29414
-    .goto 378,55.61,30.90,15,0 << !Hunter
-    .goto 378,55.94,30.96,10,0
-    .goto 378,56.58,31.98,10,0
-    .goto 378,57.89,36.55,15 >> Enter the |cRXP_WARN_cave|r.
-	.timer 87,Cave RP
+    #completewith Missing Driver
+    #title |cFFFCDC00Rez at Spirit Healer|r
+    .goto 378,53.12,30.86,50 >>|cRXP_WARN_Die and respawn at the Spirit Healer|r.
+    *Pull as many |cRXP_ENEMY_monsters|r as possible
+    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
+	.target Spirit Healer
+    .macro Sit, >>/sit
+    .mob Amberleaf Scamp
+    .mob Corsac Fox
 step
-    #sticky
-    .goto 378,57.89,36.55,10,0
-    >>Defend |cRXP_FRIENDLY_Aysa|r from the incoming |cRXP_ENEMY_Amberleaf Troublemakers|r.
+    #requires Missing Driver
+    #label Items of Utmost Importance
+    #completewith next
+    #title |cFFFCDC00Rez at Spirit Healer|r
+    #ignorecorpse
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
+    .turnin 29419,2 >>Turn in The Missing Driver
+    .turnin 29424 >>Turn in Items of Utmost Importance
+	.target Merchant Lorvo
+step
+    #requires Missing Driver
+    #ignorecorpse
+    #completewith Items of Utmost Importance
+    #title |cFFFCDC00Rez at Spirit Healer|r
+    .goto 378,53.12,30.87
+    .deathskip >>Die and respawn at the Spirit Healer.
+	.target Spirit Healer
+    .macro Sit, >>/sit
+    .mob Amberleaf Scamp
+    .mob Corsac Fox
+step
+    #requires Items of Utmost Importance
+    .goto 378,55.11,32.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merchant Lorvo|r.
+    .turnin 29419,2 >>Turn in The Missing Driver
+    .turnin 29424 >>Turn in Items of Utmost Importance
+	.target Merchant Lorvo
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    .accept 29414 >>Accept The Way of the Tushui
+    .goto 378,55.12,32.56
+	.target Aysa Cloudsinger
+step 
+    #completewith next
+    #label DefendAysa2
+    .goto 378,55.86,30.11,20,0
+    >>Defend |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .complete 29414,1 --1/1 Protect Aysa while she meditates
 	.mob Amberleaf Troublemaker
 step
-    #title Advanced
-    .isOnQuest 29414
-    >>|cFFFF0000Try out find out|r.
-    .goto 378,57.52,34.59,5 >>|cRXP_WARN_Staying near the entrance is faster but more dangerous|r.
+    #completewith DefendAysa2
+    .goto 378,57.88,36.52,30 >>Enter the |cRXP_WARN_Cave|r.
+	.timer 88,Cave RP
 step
-    .goto 378,57.54,34.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    #requires DefendAysa2
+    .goto 378,57.88,36.52
+    >>Defend |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    .complete 29414,1 --1/1 Protect Aysa while she meditates
+	.mob Amberleaf Troublemaker
+step
+    .goto 378,57.54,34.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r
     .turnin 29414 >>Turn in The Way of the Tushui
+    .target Master Shang Xi
     .accept 29522 >>Accept Ji of the Huojin
-	.target Master Shang Xi
-step << Hunter
-    .isOnQuest 29522
-    .hs >> Hearth |cRXP_WARN_to the Shang Xi Training Grounds|r.
-step
+step << !Hunter
+    #completewith next
+    #label Ji of the Huojin1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 29522 >>Turn in Ji of the Huojin
+    .accept 29417 >>Accept The Way of the Huojin
+    .disablecheckbox
+	.target Ji Firepaw
+step << !Hunter
+    #completewith Ji of the Huojin1
+    .goto 378,50.24,21.26,80 >>|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
+step << !Hunter
+    #requires Ji of the Huojin1
     .goto 378,50.24,21.26
-    >>Go on the root of the tree and Disengage up onto the Wall to your left << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 29522 >>Turn in Ji of the Huojin
+    .accept 29417 >>Accept The Way of the Huojin
+	.target Ji Firepaw
+step << Hunter
+    #completewith next
+    #label Ji of the Huojin2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 29522 >>Turn in Ji of the Huojin
+    .accept 29417 >>Accept The Way of the Huojin
+    .disablecheckbox
+	.target Ji Firepaw
+step << Hunter
+    #completewith Ji of the Huojin2
+    #loop
+    .goto 378,50.24,21.26,80,0
+    .goto 378,56.24,30.96,80,0
+    .cast 1515 >>Use |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Corsac Fox|r.
+    .usespell 1515
+	.target Corsac Fox
+step << Hunter
+    #requires Ji of the Huojin2
+    .goto 378,50.24,21.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29522 >>Turn in Ji of the Huojin
     .accept 29417 >>Accept The Way of the Huojin
 	.target Ji Firepaw
 step
-    .goto 378,51.18,17.71,20,0
-    .goto 378,49.56,18.31,20,0
-    .goto 378,49.49,20.13,20,0
-    .goto 378,48.27,22.97,20,0
-    .goto 378,49.23,24.48,20,0
-    .goto 378,49.90,23.37,20,0
-    .goto 378,51.18,17.71,20,0
-    .goto 378,49.56,18.31,20,0
-    .goto 378,49.49,20.13,20,0
-    .goto 378,48.27,22.97,20,0
-    .goto 378,49.23,24.48,20,0
-    .goto 378,49.90,23.37
-    >>Kill |cRXP_ENEMY_Hozen|r.
+    #loop
+    .goto 378,51.12,19.3,20,0
+    .goto 378,49.45,20.13,20,0
+    .goto 378,50.08,23.2,20,0
+    .goto 378,49.33,24.01,20,0
+    .goto 378,48.65,21.9,20,0
+    >>Kill |cRXP_ENEMY_Hozens|r.
     .complete 29417,1 --8/8 Fe-Feng attackers slain
 	.mob Fe-Feng Hozen
     .mob Fe-Feng Brewthief
@@ -7670,41 +8145,72 @@ step
     .accept 29523 >>Accept Fanning the Flames
 	.target Ji Firepaw
 step
-    .isOnQuest 29523
-    #completewith Fluttering Breeze
-    +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key|r.
-    *[2] Select |cRXP_WARN_Options|r.
-    *[3] Navigate to |cRXP_WARN_Keybindings|r.
-    *[4] Within |cRXP_WARN_Keybindings|r,find |cRXP_WARN_RestedXP Guides|r.
-    *[5] Select and bind the |cRXP_WARN_Active Buttons|r.
-step
-    #completewith Fluttering Breeze
+    #completewith next
+    #label Dry Dogwood Root
+    .goto 378,49.99,23.5,15,0
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Roots|r.
-    .complete 29418,1 --5/5 Dry Dogwood Root
+    .complete 29418,1,1 --5/5 Dry Dogwood Root
 step
-    .isOnQuest 29523
-    .goto 378,48.63,29.43,10,0
-    .goto 378,47.98,31.94,10,0
-    .goto 378,47.29,31.43
-	.cast 106299 >>Use the |T519378:0|t[Wind Stone] |cRXP_WARN_at the Shrine|r.
-    .use 72109
+    #completewith Dry Dogwood Root
+    .goto 378,48.4,29.47,50 >>|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
-    #label Fluttering Breeze
-    .goto 378,46.73,30.32,10,0
-    >>Kill the |cRXP_ENEMY_Living Air|r and loot him for the |T463565:0|t[|cRXP_LOOT_Fluttering Breeze|r].
+    #requires Dry Dogwood Root
+    #completewith Living Air 2
+    .goto 378,49.16,30.51,15,0
+    .goto 378,50.33,30.88,15,0
+	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Roots|r.
+    .complete 29418,1--5/5 Dry Dogwood Root
+step
+    #requires Dry Dogwood Root
+    #completewith next
+    #label Living Air
+    >>Kill the |cRXP_ENEMY_Living Air|r
+    *Loot him for the |T463565:0|t[|cRXP_LOOT_Fluttering Breeze|r].
     .complete 29523,1 --1/1 Fluttering Breeze
     .use 72109
 	.mob Living Air
 step
-    .goto 378,46.07,27.94,10,0
-    .goto 378,48.99,30.16,10,0
-    .goto 378,46.83,34.88,10,0
-    .goto 378,46.04,33.12,10,0
-    .goto 378,47.39,29.11
+    #requires Dry Dogwood Root
+    #completewith Living Air
+    .goto 378,47.29,31.27
+	.cast 106299 >>Use the |T519378:0|t[Wind Stone] at the Shrine.
+    .timer 2,RP
+    .use 72109
+step
+    #requires Living Air
+    #label Living Air 2
+    .goto 378,47.29,31.27
+    >>Kill the |cRXP_ENEMY_Living Air|r
+    *Loot him for the |T463565:0|t[|cRXP_LOOT_Fluttering Breeze|r].
+    .complete 29523,1 --1/1 Fluttering Breeze
+    .use 72109
+	.mob Living Air
+step
+    #loop
+    .goto 378,46.88,29.78,20,0
+    .goto 378,45.31,30.06,20,0
+    .goto 378,46.22,27.04,20,0
+    .goto 378,48.78,29.92,20,0
+    .goto 378,49.55,30.8,20,0
+    .goto 378,50.33,30.79,20,0
+    .goto 378,45.95,33.16,20,0
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Roots|r.
     .complete 29418,1 --5/5 Dry Dogwood Root
 step
+    #completewith next
+    #label Fanning the Flames
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r and |cRXP_FRIENDLY_Shang Xi|r.
+    .turnin 29418 >>Turn in Kindling the Fire
+    .turnin 29523 >>Turn in Fanning the Flames
+    .accept 29420 >>Accept The Spirit's Guardian
+    .disablecheckbox
+	.target Ji Firepaw
+	.target Master Shang Xi
+step
+    #completewith Fanning the Flames
+    .goto 378,50.24,21.26,80 >>|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires Fanning the Flames
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r and |cRXP_FRIENDLY_Shang Xi|r.
     .turnin 29418 >>Turn in Kindling the Fire
     .turnin 29523 >>Turn in Fanning the Flames
@@ -7714,23 +8220,51 @@ step
 	.target Ji Firepaw
 	.target Master Shang Xi
 step
-	.isOnQuest 29420
-    .goto 378,41.09,24.83,10 >> Enter the |cRXP_WARN_cave|r.
-step
-    .goto 378,40.75,23.86,10,0
-    .goto 378,40.84,22.19,10,0
-    .goto 378,40,22.77,10,0
-    .goto 378,38.81,25.50
+    #completewith next
+    #label Spirit's Guardian
+    .goto 378,49.54,21.47,5,0
+    .goto 378,46.27,23.51,30,0
+    .goto 378,44.49,24.06,15,0
+    .goto 378,42.23,24.79,20,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
     .turnin 29420 >>Turn in The Spirit's Guardian
     .accept 29664 >>Accept The Challenger's Fires
+    .disablecheckbox
 	.target Master Li Fei
 step
-    .goto 378,38.71,25.39
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Brazier|r.
-    .complete 29664,1 --1/1 Challenger Torch lit
- step
+    #completewith Spirit's Guardian
+    .goto 378,38.81,25.50,75 >>Enter the |cRXP_WARN_Cave|r.
+    *|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires Spirit's Guardian
+    #completewith next
+    #label Challenger's Fires
+    .goto 378,40.82,23.92,10,0
+    .goto 378,40.4,22.3,10,0
+    .goto 378,39.54,24.04,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
+    .turnin 29420 >>Turn in The Spirit's Guardian
+	.target Master Li Fei
+step
+    #requires Spirit's Guardian
+    #hidewindow
+    #completewith Challenger's Fires
+    .goto 378,38.81,25.50,30 >>Follow the Arrow
+step
+    #requires Challenger's Fires
+    .goto 378,38.81,25.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
+    .turnin 29420 >>Turn in The Spirit's Guardian
+	.target Master Li Fei
+step
+    .goto 378,38.81,25.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
+    .accept 29664 >>Accept The Challenger's Fires
+	.target Master Li Fei
+step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Braziers|r.
+    .complete 29664,1 --1/1 Challenger Torch lit
+    .goto 378,38.71,25.39
     .complete 29664,4 --1/1 Violet Brazier lit
     .goto 378,38.25,24.87
     .complete 29664,2 --1/1 Red Brazier lit
@@ -7742,29 +8276,38 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
     .turnin 29664 >>Turn in The Challenger's Fires
     .accept 29421 >>Accept Only the Worthy Shall Pass
+    .timer 3,RP
 	.target Master Li Fei
 step
-    .goto 378,38.88,24.64,10,0
-    .goto 378,38.81,25.51
-    >>Defeat |cRXP_FRIENDLY_Master Li Fei|r by reducing his health to 20%.
+    .goto 378,38.88,24.64,5,0
+    .goto 378,38.81,25.50
+    >>Damage |cRXP_ENEMY_Master Li Fei|r below 20%.
     .complete 29421,1 --1/1 Defeat Master Li Fei
 	.mob Master Li Fei
 step
     .goto 378,38.81,25.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Li Fei|r.
-    .turnin 29421,2 >>Turn in Only the Worthy Shall Pass
+    .turnin 29421 >>Turn in Only the Worthy Shall Pass
     .accept 29422 >>Accept Huo, the Spirit of Fire
 	.target Master Li Fei
 step
-	.isOnQuest 29422
-    .goto 378,39.45,29.65
-	.cast 102522 >>Use |T133662:0|t[Huo's Offerings] on |cRXP_FRIENDLY_Huo|r.
+    #completewith next
+    #label Spirit of Fire
+    .goto 378,38.78,26.76,10,0
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 29422,1 --1/1 Reignite the Spirit of Fire
+    .target Huo
+step
+    #completewith Spirit of Fire
+    .goto 378,39.32,29.25
+	.cast 102522 >>Use |T133662:0|t[Huo's Offerings] near |cRXP_FRIENDLY_Huo|r.
 	.timer 11, Huo the Spirit of Fire RP
 	.use 72583
     .target Huo
 step
+    #requires Spirit of Fire
     .goto 378,39.45,29.65
-    >>|cRXP_WARN_Wait for the brief roleplay, which will be completed when the timer runs out|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 29422,1 --1/1 Reignite the Spirit of Fire
     .use 72583
     .target Huo
@@ -7775,13 +8318,28 @@ step
     .accept 29423 >>Accept The Passion of Shen-zin Su
 	.target Huo
 step
-	.isOnQuest 29423
-    .goto 378,40.12,25.50,20,0
-    .goto 378,41.48,25.05,20,0
-    .goto 378,51.04,30.62,20,0
-    .goto 378,51.89,35.93,20,0
-    .goto 378,50.32,37.48,20,0
-    .goto 378,51.58,40.46,20 >> Travel |cRXP_WARN_to the Temple of Five Dawns|r.
+    #completewith next
+    #label Travel to Spirit of Fire
+    >>Travel to Spirit of Fire
+    .complete 29423,1 --1/1 Bring the Spirit of Fire to the Temple of Five Dawns
+step
+    #completewith Travel to Spirit of Fire
+    .goto 378,40.25,25.79,15,0
+    .goto 378,41,24.88,15,0
+    .goto 378,41.79,25.7,15,0
+    .goto 378,43.5,27.26,15,0
+    .goto 378,44.88,28.01,15,0
+    .goto 378,49.09,29.54,15,0
+    .goto 378,51.07,30.77,15,0
+    .goto 378,51.75,36.4,15,0
+    .goto 378,50.35,39.21,15,0
+    .goto 378,51.54,40.27,15,0
+    .goto 378,51.41,46.40,50 >>|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires Travel to Spirit of Fire
+    .goto 378,51.41,46.40
+    >>Travel to Spirit of Fire
+    .complete 29423,1 --1/1 Bring the Spirit of Fire to the Temple of Five Dawns
 step
     .goto 378,51.41,46.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
@@ -7789,87 +8347,160 @@ step
     .accept 29521 >>Accept The Singing Pools
 	.target Master Shang Xi
 step
-    .isOnQuest 29521
-    .goto 378,51.83,46.08
-    .home >>Set Hearthstone to |cRXP_WARN_the Temple of Five Dawns|r.
-	.target Cheng Dawnscrive
-step
-    .isOnQuest 29521
-    .goto 378,53.22,47.45,10,0
-    .goto 378,57.12,46.63,10,0
-    .goto 378,63.12,41.44
-    .skipgossip 57620,1,1
-    .gossipoption 38919 >> Herbalism Window
-    .train 2366 >> Train Herbalism from |cRXP_FRIENDLY_Dewei|r.
+    #completewith next
+    #label PandaHerbalism
+    .train 2366 >>Train Herbalism from |cRXP_FRIENDLY_Whittler Dewei|r. 
     .target Whittler Dewei
 step
-    .isOnQuest 29521
+    #completewith PandaHerbalism
+    .subzoneskip 5820,1
+    .goto 378,51.83,46.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cheng Dawnscrive|r.
+    .home >>Set Hearthstone to the Temple of Five Dawns.
+    .skipgossipid 40580
+    .target Cheng Dawnscrive
+step
+    #requires PandaHerbalism
+    #completewith next
+    #label PandaHerbalism2
+    .goto 378,53.12,47.44,15,0
+    .goto 378,57.62,46.51,15,0
+    .train 2366 >>Train Herbalism from |cRXP_FRIENDLY_Whittler Dewei|r.
+    .target Whittler Dewei
+step
+    #completewith PandaHerbalism2
+    .goto 378,63.12,41.44,180 >>Leave the Temple Grounds
+step
+    #requires PandaHerbalism2
     .goto 378,63.12,41.44
-    .skipgossip 57620,2,3
-    .gossipoption 38872 >> Mining Window
-    .train 2575 >> Train Mining from |cRXP_FRIENDLY_Dewei|r.
+    .train 2366 >>Train Herbalism from |cRXP_FRIENDLY_Whittler Dewei|r.
+    .skipgossipid 41947
+    .skipgossipid 38871
+    .skipgossipid 38919
+    .target Whittler Dewei
+step
+    .goto 378,63.12,41.44
+    .train 2575 >>Train Mining from |cRXP_FRIENDLY_Whittler Dewei|r.
+    .skipgossipid 41947
+    .skipgossipid 38872
+    .skipgossipid 38987
 	.target Whittler Dewei
 step
-    #completewith next
-    +|cRXP_WARN_In this area, some water turns you into an animal, boosting your movement speed|r.
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
-    .accept 29662 >>Accept Stronger Than Reeds
     .goto 378,63.50,41.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r
+    .accept 29662 >>Accept Stronger Than Reeds
+	.target Jojo Ironbrow
+step << Warrior/Rogue/Monk
+    #completewith MeleeRouteBell1
+    +Gather ore and herbs whenever they’re directly in your path for XP.
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #completewith RangeRouteBell1
+    +Gather ore and herbs whenever they’re directly in your path for XP.
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 29521 >>Turn in The Singing Pools
     .accept 29661 >>Accept The Lesson of Dry Fur
     .accept 29663 >>Accept The Lesson of the Balanced Rock
     .goto 378,65.59,42.61
-	.target Jojo Ironbrow
 	.target Aysa Cloudsinger
-step
-    .isOnQuest 29663
-    #completewith next
-    +|cRXP_WARN_In this area, some water turns you into an animal, boosting your movement speed|r.
-step
-    .isOnQuest 29663
-	#completewith Shrine
-    .goto 378,63.37,45.17
-	.vehicle >> |TInterface/cursor/crosshair/interact.blp:20|tClick a |cRXP_FRIENDLY_Balance Pole|r while you are not in the water.
-step
-    #completewith Shrine
-	>>Defeat the |cRXP_ENEMY_Tushui Monks|r on the poles.
+step << Warrior/Rogue/Monk
+    #completewith MeleeRouteBell1
+	>>Kill |cRXP_ENEMY_Tushui Monks|r.
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
-step
-    .isOnQuest 29661
-	#label Shrine
-    .goto 378,61.39,47.87,5 >>Navigate towards the |cRXP_WARN_Shrine|r by hopping onto the poles that are nearest to it.
-step
-    .goto 378,61.41,47.81
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bell|r.
+step << Warrior/Rogue/Monk
+    #completewith next
+    #label MeleeRouteBell2
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shrine|r.
     .complete 29661,1 --1/1 Ring the Training Bell
-step
+step << Warrior/Rogue/Monk
+    #completewith MeleeRouteBell2
+    .goto 378,63.72,44.92
+    .vehicle >>Click on the |cRXP_PICK_Pole|r |cRXP_WARN_from outside the Water|r
+step << Warrior/Rogue/Monk
+    #requires MeleeRouteBell2
+    #label MeleeRouteBell1
+    .goto 378,61.41,47.81
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shrine|r.
+    *|cRXP_WARN_Jump across the poles to reach the bell|r.
+    .complete 29661,1 --1/1 Ring the Training Bell
+step << Warrior/Rogue/Monk
     #completewith next
-	>>Defeat the |cRXP_ENEMY_Tushui Monks|r on the poles.
+    #label MeleeRouteBell3
+	>>Kill |cRXP_ENEMY_Tushui Monks|r.
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
-step
-    .goto 378,61.08,46.43,15,0
-    .goto 378,61.16,45.27,15,0
-    .goto 378,61.94,44.44,15,0
-    .goto 378,62.77,44.86,15,0
-    .goto 378,62.76,46.36,15,0
-    .goto 378,62.68,48.46,15,0
-    .goto 378,62.25,50,15,0
-    .goto 378,60.43,48.97
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Hard Tearwood Reed|r.
+step << Warrior/Rogue/Monk
+    #completewith MeleeRouteBell3
+    .goto 378,61.61,47.99
+    .vehicle >>Click on the |cRXP_PICK_Pole|r |cRXP_WARN_from outside the Water|r
+step << Warrior/Rogue/Monk
+    #requires MeleeRouteBell3
+    #loop
+    .goto 378,62.28,48.76,30,0
+    .goto 378,62.87,49.25,30,0
+    .goto 378,61.37,49.66,30,0
+    .goto 378,60.55,48.83,30,0
+    .goto 378,61.29,46.2,30,0
+    .goto 378,61.34,45.16,30,0
+    .goto 378,62.61,44.63,30,0
+    .goto 378,63.02,45.02,30,0
+    .goto 378,62.39,46.94,30,0
+	>>Kill |cRXP_ENEMY_Tushui Monks|r.
+    .complete 29663,1 --6/6 Defeat Tushui Monks
+	.mob Tushui Monk
+step << Warrior/Rogue/Monk
+    #loop
+    .goto 378,60.75,45.17,30,0
+    .goto 378,62.78,43.9,30,0
+    .goto 378,63.38,44.65,30,0
+    .goto 378,62.37,47.93,30,0
+    .goto 378,62.88,49.57,30,0
+    .goto 378,60.28,49.52,30,0
+    .goto 378,61.13,47.43,30,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hard Tearwood Reed|r.
+    *|cRXP_WARN_If you are on a pole press the macro in the "Active Items Frame"|r
     .complete 29662,1 --8/8 Hard Tearwood Reed
-step
-    .goto 378,62.77,44.86,15,0
-    .goto 378,62.76,46.36,15,0
-    .goto 378,62.68,48.46,15,0
-    .goto 378,62.25,50,15,0
-    .goto 378,60.43,48.97,15,0
-    .goto 378,62.22,44.33
-	>>Defeat the |cRXP_ENEMY_Tushui Monks|r on the poles.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #completewith RangeRouteBell1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hard Tearwood Reed|r.
+    .complete 29662,1 --8/8 Hard Tearwood Reed
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #completewith RangeRouteBell1
+	>>Kill |cRXP_ENEMY_Tushui Monks|r.
     .complete 29663,1 --6/6 Defeat Tushui Monks
 	.mob Tushui Monk
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #label RangeRouteBell1
+    .goto 378,61.39,47.68
+    #title |cFFFCDC00Don't use Poles; It's slow|r
+    >>|cRXP_WARN_Jump in front of the stone and click the |cRXP_PICK_Shrine|r in mid-air|r.
+    .complete 29661,1 --1/1 Ring the Training Bell
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #hidewindow
+    #completewith RangeRouteBell2
+    #loop
+    .goto 378,60.75,45.17,30,0
+    .goto 378,62.78,43.9,30,0
+    .goto 378,63.38,44.65,30,0
+    .goto 378,62.37,47.93,30,0
+    .goto 378,62.88,49.57,30,0
+    .goto 378,60.28,49.52,30,0
+    .goto 378,61.13,47.43,30,0
+    +1
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hard Tearwood Reed|r.
+    .complete 29662,1 --8/8 Hard Tearwood Reed
+step << Hunter/Mage/Priest/Warlock/Shaman
+	>>Kill |cRXP_ENEMY_Tushui Monks|r.
+    .complete 29663,1 --6/6 Defeat Tushui Monks
+	.mob Tushui Monk
+step << Hunter/Mage/Priest/Warlock/Shaman
+    #label RangeRouteBell2
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hard Tearwood Reed|r.
+    .complete 29662,1 --8/8 Hard Tearwood Reed
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 29662 >>Turn in Stronger Than Reeds
@@ -7882,9 +8513,20 @@ step
 	.target Aysa Cloudsinger
 step
     #completewith next
-    +|cRXP_WARN_In this area, some water turns you into an animal, boosting your movement speed|r.
+    #label Finding an Old Friend
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Liang|r.
+    .turnin 29676 >>Turn in Finding an Old Friend
+    .accept 29666 >>Accept The Sting of Learning
+    .disablecheckbox
+    .accept 29677 >>Accept The Sun Pearl
+    .disablecheckbox
+	.target Old Man Liang
 step
-    .goto 378,72.15,37.88,13,0
+    #hidewindow
+    #completewith Finding an Old Friend
+    .goto 378,71.93,38.09,30 >>Follow the Arrow
+step
+    #requires Finding an Old Friend
     .goto 378,70.62,38.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Liang|r.
     .turnin 29676 >>Turn in Finding an Old Friend
@@ -7892,36 +8534,85 @@ step
     .accept 29677 >>Accept The Sun Pearl
 	.target Old Man Liang
 step
-    .goto 378,73.86,40.37,30,0
-    .goto 378,72.67,42.89,30,0
-    .goto 378,75.41,37.59,30,0
-    .goto 378,73.86,40.37,30,0
-    .goto 378,72.67,42.89,30,0
-    .goto 378,75.41,37.59
+    #loop
+    .goto 378,73,42.66,25,0
+    .goto 378,74.19,40.41,25,0
+    .goto 378,75.55,37.67,25,0
+    .goto 378,72.49,46.76,35,0
+    .goto 378,70.6,46.75,35,0
+    .goto 378,71.97,51.31,35,0
     >>Kill |cRXP_ENEMY_Water Pincers|r.
     .complete 29666,1 --6/6 Water Pincer slain
     .mob Water Pincer
 step
     .goto 378,76.21,46.87
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Clam|r |cRXP_WARN_underwater|r.
-    >>|cRXP_WARN_You don't need to kill|r |cRXP_ENEMY_Fang-she|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Clam|r underwater.
     .complete 29677,1 --1/1 Sun Pearl
     .mob Fang-she
 step
-    .goto 378,78.48,42.86
+    #completewith next
+    #label Sting of Learning
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Liang|r.
+    .turnin 29666 >>Turn in The Sting of Learning
+    .turnin 29677 >>Turn in The Sun Pearl
+    .accept 29678 >>Accept Shu, the Spirit of Water
+    .disablecheckbox
+	.target Old Man Liang
+step
+    #hidewindow
+    #completewith Sting of Learning
+    .goto 378,71.14,41.01,15,0
+    .goto 378,71.83,38.22,15 >>Follow the Arrow
+step
+    #requires Sting of Learning
+    .goto 378,70.62,38.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Liang|r.
     .turnin 29666 >>Turn in The Sting of Learning
     .turnin 29677 >>Turn in The Sun Pearl
     .accept 29678 >>Accept Shu, the Spirit of Water
 	.target Old Man Liang
-step
-	.isOnQuest 29678
-    .goto 378,79.66,41.83,4,0
-    .goto 378,79.61,38.72
-    >>Position yourself |cRXP_WARN_on the Blue Circle|r. This will allow you to jump |cRXP_WARN_toward the Pool|r.
+step << Hunter
+    #completewith next
+    #label Pool of Reflection
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 378,73.32,38.35,15,0
+    .goto 378,77.28,36.48,15,0
+    >>Use |T132294:0|t[Disengage] to jump over the mountain.
+    .complete 29678,1 --1/1 Cross to the Pool of Reflection
+step << Hunter
+    #hidewindow
+    #completewith Pool of Reflection
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 378,78.9,37.81,65 >>Follow the Arrow
+step << Hunter
+    #requires Pool of Reflection
+    .goto 378,77.54,36.66,10,0
+    .goto 378,78.9,37.81
+    >>Use |T132294:0|t[Disengage] to jump over the mountain.
+    .complete 29678,1 --1/1 Cross to the Pool of Reflection
+step << !Hunter
+    #completewith next
+    #label Pool of Reflection
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 378,73.32,38.35,15,0
+    .goto 378,77.28,36.48,15,0
+    >>Jump into the gap of the mountain and then over.
+    *|cRXP_WARN_This can take multiple attempts but it's still worth it|r.
+    .complete 29678,1 --1/1 Cross to the Pool of Reflection
+step << !Hunter
+    #hidewindow
+    #completewith Pool of Reflection
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 378,78.9,37.81,65 >>Follow the Arrow
+step << !Hunter
+    #requires Pool of Reflection
+    .goto 378,77.54,36.66,10,0
+    .goto 378,78.9,37.81
+    >>Jump into the gap of the mountain and then over.
+    *|cRXP_WARN_This can take multiple attempts but it's still worth it|r.
     .complete 29678,1 --1/1 Cross to the Pool of Reflection
 step
-    .goto 378,79.59,38.58
+    .goto 378,78.27,37.37
     >>Use the |T463854:0|t[Sun Pearl] on the |cRXP_WARN_Water's Surface|r.
     .complete 29678,2 --1/1 Coax Shu, the Water Spirit
     .use 73791
@@ -7935,10 +8626,13 @@ step
     .accept 29679 >>Accept A New Friend
 	.target Aysa Cloudsinger
 step
-    --x shiek : no go to here, as i think it would only be confusing here.
-    >>Follow |cRXP_FRIENDLY_Shu|r closely as he moves around. He'll cast a Spout |cRXP_WARN_in the nearby water|r. Make sure to position yourself |cRXP_WARN_on top of it|r.
-    >>Use Disengage after you get launched in the air for the last Spout  << Hunter
-    >>Use Blink after you get launched in the air for the last Spout << Mage
+    >>Stand |cRXP_WARN_directly on the bubbling water|r that |cRXP_FRIENDLY_Shu|r creates.
+    .complete 29679,1,4 --5/5 Play with the Spirit of Water
+	.target Shu
+step
+    >>Stand |cRXP_WARN_directly on the bubbling water|r that |cRXP_FRIENDLY_Shu|r creates.
+    *On the final launch, Use |T132294:0|t[Disengage] toward the questgiver.  << Hunter
+    *On the final launch, Use |T135736:0|t[Blink] early to shorten your airtime. << Mage
     .complete 29679,1 --5/5 Play with the Spirit of Water
 	.target Shu
 step
@@ -7948,9 +8642,23 @@ step
     .accept 29680 >>Accept The Source of Our Livelihood
 	.target Aysa Cloudsinger
 step
-    .goto 378,76.57,57.36,40,0
+    #completewith next
+    #label Source of Our Livelihood
+    .goto 378,76.1,57.93,25,0
+    .goto 378,74.63,61.33,25,0
+    .goto 378,71.15,63.57,25,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 29680 >>Turn in The Source of Our Livelihood
+    .accept 29769 >>Accept Rascals
+    .disablecheckbox
+    .target Ji Firepaw
+step
+    #completewith Source of Our Livelihood
+    #title |cFFFCDC00Ignore the Cart|r
+    .goto 378,68.89,64.98,90 >>|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires Source of Our Livelihood
     .goto 378,68.89,64.98
-	>>|cRXP_WARN_Disregard the|r |cRXP_FRIENDLY_Delivery Cart|r.; |cRXP_WARN_traveling on foot will get you to your destination faster|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29680 >>Turn in The Source of Our Livelihood
     .accept 29769 >>Accept Rascals
@@ -7961,103 +8669,90 @@ step
     .accept 29770 >>Accept Still Good!
 	.target Gao Summerdraft
 step
-	#completewith Carrots
-    >>Kill |cRXP_ENEMY_Plump Virmens|r.
+    #completewith
+    >>Kill |cRXP_ENEMY_Virmens|r 
     .complete 29769,1 --10/10 Plump Virmen slain
-	.mob Plump Virmen
-    .mob Plump Carrotcatcher
+    .mob Plump Virmen
 step
-    .goto 378,70.11,77.63,15,0
-    .goto 378,69.55,79.23,15,0
-    .goto 378,70.84,80.41,15,0
-    .goto 378,71.46,78.11,15,0
-#loop
-	.line 378,70.11,77.63,69.55,79.23,70.84,80.41,71.46,78.11
-	.goto 378,70.11,77.63,10,0
-	.goto 378,69.55,79.23,10,0
-	.goto 378,70.84,80.41,10,0
-	.goto 378,71.46,78.11,10,0
+    #loop
+    .goto 378,67.07,77.5,25,0
+    .goto 378,68.3,77.52,25,0
+    .goto 378,68.78,79.33,25,0
+    .goto 378,70.15,79.34,25,0
+    .goto 378,70.13,77.48,25,0
+    .goto 378,71.31,78,25,0
+    .goto 378,70.72,80.89,25,0
+    .goto 378,70.76,82.38,25,0
+    .goto 378,68.42,81.47,25,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Turnips|r.
     .complete 29770,1 --3/3 Uprooted Turnip
 step
-    .goto 378,75.54,72.25,20,0
-    .goto 378,77.79,71.81,20,0
-    .goto 378,78.01,72.56,15,0
-    .goto 378,78.85,70.76,20,0
-    .goto 378,78.6,69.74,20,0
-#loop
-	.line 378,77.35,70.51,78.12,72.61,78.82,70.88,78.6,69.75
-	.goto 378,77.35,70.51,10,0
-	.goto 378,78.12,72.61,10,0
-	.goto 378,78.82,70.88,10,0
-	.goto 378,78.60,69.75,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkin|r.
+    #completewith next
+    .goto 378,75.55,72.22,20,0
+    >>Kill |cRXP_ENEMY_Plump Carrotcruncher|r 
+    *Loot them for |T134010:0|t[|cRXP_LOOT_Carrots|r].
+    .complete 29770,2 --3/3 Stolen Carrot
+    .mob Plump Carrotcruncher
+step
+    #loop
+    .goto 378,77.42,71.47,20,0
+    .goto 378,78.13,72.72,20,0
+    .goto 378,78.83,70.38,20,0
+    .goto 378,78.34,69.58,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pumpkins|r.
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
-	.isOnQuest 29770
-    .goto 378,77.05,71.02,10 >> Enter |cRXP_WARN_the cave|r.
-step
-	#label Carrots
-    .goto 378,76.1,71.26,15,0
-    .goto 378,75.57,72.94,15,0
-    .goto 378,73.97,72.58,15,0
-    .goto 378,73.94,70.86,15,0
-    .goto 378,74.7,74.76,15,0
-#loop
-	.line 378,73.97,72.58,73.94,70.86,74.7,74.76
-	.goto 378,73.97,72.58,5,0
-	.goto 378,73.94,70.86,5,0
-	.goto 378,74.70,74.76,5,0
-    >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r and loot them for their [|cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Carrots|r]. on the ground.
+    #completewith next
+    #label Carrotcruncher
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Carrots|r.
+    *Loot |cRXP_ENEMY_Carrotcruncher|r for |T134010:0|t[|cRXP_LOOT_Carrots|r].
     .complete 29770,2 --3/3 Stolen Carrot
-	.mob Plump Carrotcatcher
+    .mob Plump Carrotcruncher
 step
-	.isOnQuest 29770
-    .goto 378,74.99,69.42,10 >> Leave |cRXP_WARN_the cave|r.
+    #completewith Carrotcruncher
+    .goto 378,76.79,71.1,20 >>Enter the Cave
 step
-    .goto 378,74.73,67.2,15,0
-    .goto 378,72.67,69.48,15,0
-    .goto 378,70.75,71.61,15,0
-    .goto 378,69.4,69.74,15,0
-#loop
-	.line 378,77.89,70.13,77.36,70.49,77.85,71.75
-	.goto 378,77.89,70.13,10,0
-	.goto 378,77.36,70.49,10,0
-	.goto 378,77.85,71.75,10,0
-    >>Kill |cRXP_ENEMY_Plump Virmens|r.
-    .complete 29769,1 --10/10 Plump Virmen slain
-	.mob Plump Virmen
+    #requires Carrotcruncher
+    #loop
+    .goto 378,75.98,71.47,25,0
+    .goto 378,75.52,72.95,25,0
+    .goto 378,73.95,72.5,25,0
+    .goto 378,73.93,70.85,25,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Carrots|r.
+    *Loot |cRXP_ENEMY_Carrotcatchers|r for |T134010:0|t[|cRXP_LOOT_Carrots|r].
+    .complete 29770,2 --3/3 Stolen Carrot
+	.mob Plump Carrotcruncher
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gao Summerdraft|r, |cRXP_FRIENDLY_Ji Firepaw|r, and |cRXP_FRIENDLY_Jojo Ironbrow|r.
-    .turnin 29770 >>Turn in Still Good!
     .goto 378,68.13,66.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gao Summerdraft|r.
+    .turnin 29770 >>Turn in Still Good!
+	.target Gao Summerdraft
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29769 >>Turn in Rascals
     .accept 29768 >>Accept Missing Mallet
 	.goto 378,68.89,64.98
     .accept 29771 >>Accept Stronger Than Wood
     .goto 378,69.16,66.71
-	.target Gao Summerdraft
 	.target Ji Firepaw
 	.target Jojo Ironbrow
 step
 	#completewith next
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wood Planks|r.
+	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wood|r.
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
     .goto 378,62.63,77.05
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mallet|r |cRXP_WARN_on the barrel|r.
-    >>|cRXP_WARN_You don't have to kill |cRXP_ENEMY_Raggis|r. if you can avoid it|r.
     .complete 29768,1 --1/1 Dai-Lo Recess Mallet
 step
-    .goto 378,63.77,77.19,15,0
-    .goto 378,63.27,79.16,15,0
-    .goto 378,62.94,79.04,15,0
-    .goto 378,62.19,81.08,15,0
-    .goto 378,63.77,77.19,15,0
-    .goto 378,63.27,79.16,15,0
-    .goto 378,62.94,79.04,15,0
-    .goto 378,62.19,81.08
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wood Planks|r |cRXP_WARN_on the floor|r.
+	#loop
+    .goto 378,62.22,77.28,10,0
+    .goto 378,62.69,76.95,10,0
+    .goto 378,63.09,77.12,10,0
+    .goto 378,63.65,77.4,10,0
+    .goto 378,63.31,79.1,10,0
+    .goto 378,62.86,79.2,10,0
+	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wood Planks|r.
     .complete 29771,1 --12/12 Discarded Wood Plank
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r and |cRXP_FRIENDLY_Ji Firepaw|r.
@@ -8079,26 +8774,64 @@ step
     .accept 29774 >>Accept Not In the Face!
 	.target Ji Firepaw
 step
+    #completewith next
+    #label Ask Shu for help
+    .goto 378,68.71,64.51,8,0
+    .goto 378,68.82,64.04,8,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shu|r.
+    .complete 29774,1 --1/1 Ask Shu for help
+	.target Shu
+step
+    #hidewindow
+    #completewith Ask Shu for help
+    .goto 378,68.98,62.93,20 >>Follow the Arrow
+step
+    #requires Ask Shu for help
     .goto 378,68.98,62.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shu|r.
     .complete 29774,1 --1/1 Ask Shu for help
-    .skipgossip
+    .skipgossipid 39250
 	.timer 15,Not In the Face! RP
 	.target Shu
 step
+    #completewith next
+    #label Not In the Face!
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 29774 >>Turn in Not In the Face!
+    .accept 29775 >>Accept The Spirit and Body of Shen-zin Su
+    .disablecheckbox
+	.target Ji Firepaw
+step
+    #completewith Not In the Face!
+    .goto 378,69.55,67.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jun Steelbreath|r.
+    .vendor >>Repair and sell Items to free up inventory space.
+    .target Jun Steelbreath
+step
+    #requires Not In the Face!
     .goto 378,68.89,64.98
-    >>|cRXP_WARN_Wait for the brief roleplay, which will be completed when the timer runs out|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29774 >>Turn in Not In the Face!
     .accept 29775 >>Accept The Spirit and Body of Shen-zin Su
 	.target Ji Firepaw
 step
-	.isOnQuest 29775
-    .goto 378,58.86,63.38,40,0
-    .goto 378,55.23,58.57,40,0
-    .goto 378,51.48,57.40,20 >>Travel to the Temple of the Five Dawns
-	>>|cRXP_WARN_Disregard the|r |cRXP_FRIENDLY_Delivery Cart|r.; |cRXP_WARN_traveling on foot will get you to your destination faster|r.
+    #completewith next
+    #label Shen-zin Su
+    .goto 378,59.19,63.67,30,0
+    .goto 378,54.89,58.53,30,0
+    .goto 378,51.58,57.48,30,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
+    .accept 29776 >>Accept Morning Breeze Village
+	.disablecheckbox
+	.target Master Shang Xi
 step
+    #completewith Shen-zin Su
+    #title |cFFFCDC00Ignore the Cart|r
+    .goto 378,51.59,48.32,150 >>Travel to the Temple of Five Dawns.
+    *or Hearthstone |cRXP_WARN_to the Temple of Five Dawns|r.
+step
+    #requires Shen-zin Su
     .goto 378,51.59,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
@@ -8106,97 +8839,88 @@ step
 	.timer 20,Morning Breeze Village RP
 	.target Master Shang Xi
 step
-    .isOnQuest 29776
-    .goto 378,51.46,48.93,7 >>|cRXP_WARN_Wait for the brief roleplay, which will be completed when the timer runs out|r.
+    #completewith next
+    #label Breeze Village
+    .goto 378,51.21,49.15,8,0
+    .goto 378,50.14,48.8,15,0
+    .goto 378,47.16,50.9,15,0
+    .goto 378,41.13,50.89,15,0
+    .goto 378,40.03,50.92,15,0
+    .goto 378,35.15,50.8,15,0
+    .goto 378,33.79,45.17,15,0
+    .goto 378,32.6,40.07,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 29776 >>Turn in Morning Breeze Village
+    .accept 29778 >>Accept Rewritten Wisdoms
+    .disablecheckbox
+	.target Ji Firepaw
 step
-	.isOnQuest 29776
-    .goto 378,51.01,49.05,10,0
-    .goto 378,40.19,50.79,20,0
-    .goto 378,34.91,50.73,15,0
-    .goto 378,33.1,42.6,15,0
-    .goto 378,30.42,37.50,20 >>Travel to |cRXP_WARN_Morning Breeze Village|r.
+    #hidewindow
+    #completewith Breeze Village
+    .goto 378,30.97,36.74,80 >>Follow the Arrow
 step
+    #requires Breeze Village
     .goto 378,30.97,36.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29776 >>Turn in Morning Breeze Village
     .accept 29778 >>Accept Rewritten Wisdoms
 	.target Ji Firepaw
 step
-    .goto 378,30.17,39.01,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
-    .accept 29777 >>Accept Tools of the Enemy
-    .goto 378,31.78,39.71
-    .accept 29783 >>Accept Stronger Than Stone
     .goto 378,29.90,39.76
-	.target Elder Shaopai
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    .accept 29783 >>Accept Stronger Than Stone
 	.target Jojo Ironbrow
 step
-    .isOnQuest 29777
-    #completewith Defaced Scroll of Wisdom burned
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shen Stonecarver|r.
-    .vendor >>|cRXP_WARN_Sell and repair if you need to|r.
-    .target Shen Stonecarver
+    .goto 378,31.78,39.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Shaopai|r.
+    .accept 29777 >>Accept Tools of the Enemy
+	.target Elder Shaopai
 step
-    #completewith Defaced Scroll of Wisdom burned
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their [|cRXP_LOOT_Brushes|r].
+    #hidewindow
+    #completewith Paint Soaked Brush
+    #loop
+    .goto 378,32.5,46.65,25,0
+    .goto 378,33.16,46.36,10,0
+    .goto 378,33.65,47.51,25,0
+    .goto 378,33.87,50.96,25,0
+    .goto 378,32.99,51.17,25,0
+    .goto 378,32.44,54.08,25,0
+    .goto 378,31.16,50.9,10,0
+    .goto 378,31.86,50.44,10,0
+    .goto 378,31.44,49.73,10,0
+    .goto 378,29.35,44.99,25,0
+    .goto 378,27.64,45.25,25,0
+    .goto 378,29.29,48.59,25,0
+    .goto 378,28.08,50.01,15,0
+    .goto 378,29.25,51.5,15,0
+    +1
+step
+    #completewith Scroll of Wisdom
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r
+    *Loot them for |T237156:0|t[|cRXP_LOOT_Brushes|r].
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
-    #completewith Defaced Scroll of Wisdom burned
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone Blocks|r.
+    #completewith Scroll of Wisdom
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stones|r.
     .complete 29783,1 --12/12 Abandoned Stone Block
 step
-    .goto 378,30.3,42.95,15,0
-    .goto 378,29.49,45.36,15,0
-    .goto 378,29.11,47.53,15,0
-    .goto 378,29.78,47.67,15,0
-    .goto 378,29.21,48.57,15,0
-    .goto 378,28.37,49.37,15,0
-    .goto 378,27.16,49.67,15,0
-    .goto 378,28.54,49.93,15,0
-    .goto 378,29.12,51.09,15,0
-    .goto 378,31.19,47.97,15,0
-    .goto 378,32.49,46.63,15,0
-    .goto 378,33.13,46.32,15,0
-#loop
-	.line 378,33.42,50.88,32.57,53.31,28.71,50.23
-	.goto 378,33.42,50.88,15,0
-	.goto 378,32.57,53.31,15,0
-	.goto 378,28.71,50.23,15,0
-    #label Defaced Scroll of Wisdom burned
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banners|r on the monuments.
+    #label Scroll of Wisdom
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Banners|r.
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their [|cRXP_LOOT_Brushes|r].
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r
+    *Loot them for |T237156:0|t[|cRXP_LOOT_Brushes|r].
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
-    .goto 378,31.18,47.97,15,0
-    .goto 378,32.57,46.43,15,0
-    .goto 378,33.66,47.21,15,0
-    .goto 378,33.99,50.9,15,0
-    .goto 378,33.06,52.27,15,0
-    .goto 378,32.16,50.53,15,0
-    .goto 378,31.32,52.22,15,0
-#loop
-	.line 378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
-	.goto 378,31.18,47.90,15,0
-	.goto 378,32.57,46.43,15,0
-	.goto 378,33.99,50.90,15,0
-	.goto 378,32.16,50.53,15,0
-	.goto 378,31.32,52.22,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone Blocks|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stones|r.
     .complete 29783,1 --12/12 Abandoned Stone Block
 step
-#loop
-	.line 378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
-	.goto 378,31.18,47.90,15,0
-	.goto 378,32.57,46.43,15,0
-	.goto 378,33.99,50.90,15,0
-	.goto 378,32.16,50.53,15,0
-	.goto 378,31.32,52.22,15,0
-    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their [|cRXP_LOOT_Brushes|r].
+    #label Paint Soaked Brush
+    >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r
+    *Loot them for |T237156:0|t[|cRXP_LOOT_Brushes|r].
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
 step
@@ -8214,46 +8938,49 @@ step
 	.target Jojo Ironbrow
 	.target Ji Firepaw
 step
-	.isOnQuest 29779
-    .goto 378,29.28,39.98,15,0
-    .goto 378,27.42,36.25,30,0
-    .goto 378,26.42,33.68,30 >> Travel to the |cRXP_WARN_Jade Pillar|r.
+    #completewith next
+    #label Ruk-Ruk slain
+    #hidewindow
+    .goto 378,29.88,38.52,10,0
+    .goto 378,28.84,39.16,15,0
+    .goto 378,25.99,35.44,15,0
+	>>Kill |cRXP_ENEMY_Fe-Feng Hozen|r.
+    .complete 29779,1 --20/20 Fe-Feng Hozen slain
 step
-	#completewith next
+    #completewith Ruk-Ruk slain
+    .goto 378,20.94,34.43,100 >>Go over the small mountain and Follow the Arrow.
+step
+    #requires Ruk-Ruk slain
+    #completewith next
 	>>Kill |cRXP_ENEMY_Fe-Feng Hozen|r.
     .complete 29779,1 --20/20 Fe-Feng Hozen slain
 	.mob Fe-Feng Firethief
 	.mob Fe-Feng Ruffian
 step
-    .goto 378,26.42,33.68
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Jade Pillar|r.
-    .accept 29782 >>Accept Stronger Than Bone
-step
+    #requires Ruk-Ruk slain
     #completewith next
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Firework Bundles|r.
     .complete 29781,1 --8/8 Stolen Firework Bundle
 step
-    .goto 378,26.75,31.86,15,0
-    .goto 378,27.49,29.61,15,0
-    .goto 378,25.72,29.91,15,0
-    .goto 378,24.24,30.84,15,0
-    .goto 378,20.52,34.6,10,0
-#loop
-	.line 378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
-	.goto 378,24.24,30.84,10,0
-	.goto 378,25.72,29.91,10,0
-	.goto 378,27.49,29.61,10,0
-	.goto 378,26.75,31.86,10,0
-	>>Kill |cRXP_ENEMY_Fe-Feng Hozen|r.
-    .complete 29779,1 --20/20 Fe-Feng Hozen slain
-	.mob Fe-Feng Firethief
-	.mob Fe-Feng Ruffian
-step
-    .goto 378,26.08,35.17,15,0
+    #requires Ruk-Ruk slain
+    #label Ruk-Ruk
     .goto 378,20.94,34.43
 	>>Kill |cRXP_ENEMY_Ruk-Ruk|r.
     .complete 29780,1 --1/1 Ruk-Ruk slain
 	.mob Ruk-Ruk
+step
+    #hidewindow
+    #completewith Stolen Firework Bundle
+    #loop
+    .goto 378,20.74,34.34,8,0
+    .goto 378,24.47,32.09,15,0
+    .goto 378,26.29,32.61,20,0
+    .goto 378,27.02,31.49,20,0
+    .goto 378,27.25,30.35,20,0
+    .goto 378,27.77,29.11,20,0
+    .goto 378,25.52,28.52,20,0
+    .goto 378,25.28,29.98,20,0
+    +1
 step
     #completewith next
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Firework Bundles|r.
@@ -8264,28 +8991,28 @@ step
 	.mob Fe-Feng Firethief
 	.mob Fe-Feng Ruffian
 step
-#loop
-	.line 378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
-	.goto 378,24.24,30.84,10,0
-	.goto 378,25.72,29.91,10,0
-	.goto 378,27.49,29.61,10,0
-	.goto 378,26.75,31.86,10,0
+    #label Stolen Firework Bundle
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Firework Bundles|r.
     .complete 29781,1 --8/8 Stolen Firework Bundle
 step
-	#completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw, who should be next to you. |cFFFF0000If he isn't there, skip this step|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r |cRXP_WARN_next to you|r.
     .turnin 29779 >>Turn in The Direct Solution
     .turnin 29780 >>Turn in Do No Evil
     .turnin 29781 >>Turn in Monkey Advisory Warning
     .accept 29784 >>Accept Balanced Perspective
 	.target Ji Firepaw
 step
+    .goto 378,26.42,33.68
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Jade Pillar|r.
+    .accept 29782 >>Accept Stronger Than Bone
+step
+    #requires Stronger Than Bone
     .goto 378,29.90,39.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29782 >>Turn in Stronger Than Bone
 	.target Jojo Ironbrow
 step
+    .isOnQuest 29779,29780,29781
     .goto 378,30.97,36.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 29779 >>Turn in The Direct Solution
@@ -8294,38 +9021,57 @@ step
     .accept 29784 >>Accept Balanced Perspective
 	.target Ji Firepaw
 step
-	#completewith next
-    .goto 378,31.14,36.79,5,0
-    .goto 378,32.17,36.36,8,0
-    .goto 378,32.88,37.16,8,0
-    .goto 378,32.94,35.61,8 >>|cRXP_WARN_Carefully|r walk over the rope.
+    #completewith next
+    #label Balanced Perspective
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    .turnin 29784 >>Turn in Balanced Perspective
+    .accept 29785 >>Accept Dafeng, the Spirit of Air
+    .disablecheckbox
+	.target Aysa Cloudsinger
 step
-	#label BalancedP
+    #completewith Balanced Perspective
+    #title |cFFFCDC00Don't Fall|r
+    .goto 378,30.57,37.49,10,0
+    .goto 378,31.09,36.82,10,0
+    .goto 378,32.19,36.35,5,0
+    .goto 378,32.9,37.18,5,0
+    .goto 378,32.94,35.61,15 >>Move across the Rope.
+step
+    #requires Balanced Perspective
     .goto 378,32.94,35.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 29784 >>Turn in Balanced Perspective
     .accept 29785 >>Accept Dafeng, the Spirit of Air
 	.target Aysa Cloudsinger
 step
-	#sticky
-	#label Temple1
-    .goto 378,30.21,38.57,20,0
-    .goto 378,28.94,62.89,20 >>Travel |cRXP_WARN_to the Temple|r.
-	.isOnQuest 29785
+    #completewith next
+    #label Locate Dafeng
+    #title |cFFFCDC00Follow |cFF00FF00Aysa Cloudsinger|r|r
+    >>The winds inside the Temple will kill you within seconds. 
+    *|cRXP_WARN_It's recommended to stay with |cFF00FF00Aysa Cloudsinger|r
+    *|cRXP_WARN_If you dare go when the storm settles|r.
+    .complete 29785,1 --1/1 Locate Dafeng
+    .target Aysa Cloudsinger
 step
-	#sticky
-	#label Temple2
-	#requires Temple1
-    .goto 378,26.64,66.63,10 >> Run in between the sets of stairs after the first time the winds subside
-	.isOnQuest 29785
+    #completewith Locate Dafeng
+    .goto 378,33.53,44.29,30,0
+    .goto 378,32.27,51.76,30,0
+    .goto 378,28.66,62.78,15,0
+    .goto 378,28,64.26,15,0 
+    .goto 378,24.65,69.80,150 >>Swim to the Shore and wait infront of the Temple.
+    *|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+    .timer 30,RP
 step
-	#sticky
-	#label Temple3
-	#requires Temple2
-    .goto 378,26.64,66.63,10 >> Run toward |cRXP_FRIENDLY_Dafeng|r after the winds in the next room subside.
-	.isOnQuest 29785
+    #requires Locate Dafeng
+    #title |cFFFCDC00Follow |cFF00FF00Aysa Cloudsinger|r|r
+    .goto 378,24.65,69.80
+    >>The winds inside the Temple will kill you within seconds.
+    *|cRXP_WARN_It's recommended to stay with |cFF00FF00Aysa Cloudsinger|r
+    *|cRXP_WARN_If you dare go when the storm settles|r.
+    .complete 29785,1 --1/1 Locate Dafeng
+    .target Aysa Cloudsinger
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r and |cRXP_FRIENDLY_Aysa|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dafeng|r and |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 29785 >>Turn in Dafeng, the Spirit of Air
     .goto 378,24.65,69.80
     .accept 29786 >>Accept Battle for the Skies
@@ -8333,58 +9079,118 @@ step
 	.target Dafeng
 	.target Aysa Cloudsinger
 step
-    .goto 378,29.54,60.74,5,0
-    .goto 378,30.18,61.88,5,0
-    .goto 378,30.93,61.59,5,0
-    .goto 378,31.37,60.05,5,0
-    .goto 378,29.78,58.93,5,0
-    .goto 378,29.54,60.74,5,0
-    .goto 378,30.18,61.88,5,0
-    .goto 378,30.93,61.59,5,0
-    .goto 378,31.37,60.05,5,0
-    .goto 378,29.78,58.93,5,0
-    .goto 378,30.52,59.72
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Firework Launchers|r when |cRXP_ENEMY_Zhao-Ren|r is over them to damage him. He circles counter-clockwise. |cRXP_WARN_Avoid his Lightning puddles|r. Damage him when he lands. Kill him when he lands the second time
+    #completewith next
+    #label Zhao-Ren slain
+    .goto 378,28.12,63.81,15,0
+    >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him. 
+    *Use any ranged abilities while moving |cRXP_WARN_if you can|r.
+    *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r. 
+    *Push him |cRXP_WARN_below 25%|r during this to chain the stun and finish him.
+    *If he gets back up, |cRXP_WARN_repeat the process|r.
     .complete 29786,1 --1/1 Zhao-Ren slain
-	.target Zhao-Ren
+	.mob  Zhao-Ren
 step
-    .goto 378,29.99,60.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    #completewith Zhao-Ren slain
+    .goto 378,29.56,60.75
+    .cast 125961 >>Click on the |cRXP_PICK_Firework Launcher|r
+step
+    #requires Zhao-Ren slain
+    #loop
+    .goto 378,30.2,61.88,5,0
+    .goto 378,30.94,61.6,5,0
+    .goto 378,31.39,60.04,5,0
+    .goto 378,30.87,58.41,5,0
+    .goto 378,29.78,58.95,5,0
+    .goto 378,29.54,60.75,5,0
+    >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him. 
+    *Use any ranged abilities while moving |cRXP_WARN_if you can|r.
+    *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r. 
+    *Push him |cRXP_WARN_below 25%|r during this to chain the stun and finish him.
+    *If he gets back up, |cRXP_WARN_repeat the process|r.
+    .complete 29786,1 --1/1 Zhao-Ren slain
+	.mob Zhao-Ren
+step
+    .goto 378,29.98,60.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r
     .turnin 29786 >>Turn in Battle for the Skies
+    .target Master Shang Xi
     .accept 29787 >>Accept Worthy of Passing
-	.target Master Shang Xi
 step
-	#completewith next
-    .goto 378,26.32,52.83,20,0
-    .goto 378,22.70,52.80,40 >>Travel |cRXP_WARN_to The Elders' Path|r.
+    #completewith next
+    #label Guardian of the Elders
+    .goto 378,29.56,55.88,20,0
+    .goto 378,28.06,54.08,20,0
+    .goto 378,26.18,52.98,20,0
+	>>Kill the |cRXP_ENEMY_Guardian of the Elders|r.
+    .complete 29787,1 --1/1 Guardian of the Elders slain
+	.timer 22,RP
+	.target Guardian of the Elders
 step
+    #completewith Guardian of the Elders
+    .goto 378,22.70,52.80,100 >>Travel |cRXP_WARN_to The Elders' Path|r.
+step
+    #requires Guardian of the Elders
     .goto 378,22.70,52.80
 	>>Kill the |cRXP_ENEMY_Guardian of the Elders|r.
     .complete 29787,1 --1/1 Guardian of the Elders slain
-	.timer 19,Worthy of Passing RP
+	.timer 22,RP
 	.target Guardian of the Elders
 step
-    .goto 378,19.45,51.22
-	>>Wait out the RP
+    #completewith next
+    #label Passing
+    .goto 378,21.37,52.69,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    .turnin 29787 >>Turn in Worthy of Passing
+    .accept 29788 >>Accept Unwelcome Nature
+    .disablecheckbox
+    .accept 29789 >>Accept Small, But Significant
+    .disablecheckbox
+	.target Master Shang Xi
+step
+    #hidewindow
+    #completewith Passing
+    .goto 378,19.46,51.22,80 >>Follow the Arrow
+step
+    #requires Passing
+    .goto 378,19.46,51.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .turnin 29787 >>Turn in Worthy of Passing
     .accept 29788 >>Accept Unwelcome Nature
     .accept 29789 >>Accept Small, But Significant
 	.target Master Shang Xi
 step
-    .goto 378,18.84,51.88,15,0
-    .goto 378,18.43,49.88,15,0
-    .goto 378,18.37,48.13,15,0
-    .goto 378,21.57,49.29,15,0
-    .goto 378,22.50,48.95,15,0
-    .goto 378,24.22,45.72,30,0
-    .goto 378,18.18,44.52,30,0
-    .goto 378,24.22,45.72,30,0
-    .goto 378,18.18,44.52
-	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r and loot the |cRXP_PICK_Charms|r hanging from the trees.
+    #hidewindow
+    #completewith Scamp
+    #loop
+    .goto 378,18.86,51.89,15,0
+    .goto 378,18.08,51.09,15,0
+    .goto 378,18.52,49.84,15,0
+    .goto 378,18.87,48.03,15,0
+    .goto 378,19.73,48.8,15,0
+    .goto 378,22.6,49.08,15,0
+    .goto 378,21.7,51.15,15,0
+    .goto 378,21.6,54.78,15,0
+    .goto 378,23.04,55.79,15,0
+    .goto 378,22.9,57.76,15,0
+    .goto 378,21.42,57.88,15,0
+    .goto 378,18.77,57.23,15,0
+    .goto 378,17.93,55.79,15,0
+    +1
+step
+    #completewith next
+	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r.
+    *|cRXP_WARN_Don't overpull, they multiply quickly|r.
     .complete 29788,1 --8/8 Thornbranch Scamp slain
+	.mob Thornbranch Scamp
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Charms|r
     .complete 29789,1 --8/8 Kun-Pai Ritual Charm
-	.target Thornbranch Scamp
+step
+    #label Scamp
+	>>Kill |cRXP_ENEMY_Thornbranch Scamps|r.
+    *|cRXP_WARN_Don't overpull, they multiply quickly|r.
+    .complete 29788,1 --8/8 Thornbranch Scamp slain
+	.mob Thornbranch Scamp
 step
     .goto 378,19.46,51.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
@@ -8394,13 +9200,21 @@ step
 	.timer 83,Passing Wisdom RP
 	.target Master Shang Xi
 step
-	#completewith next
-	.cast 108034 >>Eat the |T571818:0|t[Small Sugarcane Stalk] for 10 seconds to get a buff
-    .use 77272
-	.itemcount 77272,1
+    #completewith next
+    #label Listen to Master Shang Xi
+    >>|cRXP_WARN_Wait at the arrow location for the roleplay to finish|r.
+    .complete 29790,1 --1/1 Listen to Master Shang Xi
 step
-    .goto 378,17.29,50.78
-    >>|cRXP_WARN_Wait out the RP at the arrow location|r.
+    #completewith Listen to Master Shang Xi
+    .goto 378,17.28,50.76
+	.cast 108034 >>Eat |T571818:0|t[Small Sugarcane Stalk] (10s buff)
+    .timer 10,Food Buff
+	.itemcount 77272,1
+    .use 77272
+step
+    .goto 378,17.28,50.76
+    #requires Listen to Master Shang Xi
+    >>|cRXP_WARN_Wait at the arrow location for the roleplay to finish|r.
     .complete 29790,1 --1/1 Listen to Master Shang Xi
 step
     .goto 378,15.79,49.10
@@ -8410,35 +9224,93 @@ step
 	.target Aysa Cloudsinger
 step
     .goto 378,15.55,48.91
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Air Balloon|r to Board it.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Air Balloon|r.
     .complete 29791,1 --1/1 Board the Hot Air Balloon
-	.timer 191,The Suffering of Shen-zin Su RP
+	.timer 220,The Suffering of Shen-zin Su RP
+    --191 until complete
 step
     .goto 378,30.8,92.9
-	>>|cRXP_WARN_Wait out the RP|r.
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 29791,2 --1/1 Uncover the source of Shen-zin Su's pain
-step
+step << Hunter
+    #completewith next
+    #hidewindow
+    #label Bidden to Greatness1
+    .goto 378,49.65,57.62,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaopai|r.
+    .turnin 29791 >>Turn in The Suffering of Shen-zin Su
+	.target Elder Shaopai
+step << Hunter
+    #completewith Bidden to Greatness1
+    .goto 378,50.21,56.28
+    .cast 781 >>[Disengage] over the gap.
+step << Hunter
+    #requires Bidden to Greatness1
+    #completewith next
+    #label Bidden to Greatness2
+    .goto 378,51.16,55.38,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaopai|r.
+    .turnin 29791 >>Turn in The Suffering of Shen-zin Su
+    .accept 29792 >>Accept Bidden to Greatness
+    .disablecheckbox
+	.target Elder Shaopai
+step << Hunter
+    #requires Bidden to Greatness1
+    #completewith Bidden to Greatness2
+    .goto 378,51.31,48.28,120 >>Enter the Temple of Five Dawns
+step << Hunter
+    #requires Bidden to Greatness2
     .goto 378,51.31,48.28
-    >>When falling off the Balloon, Disengage to the stairs to the north-east to save time << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaopai|r.
+    .turnin 29791 >>Turn in The Suffering of Shen-zin Su
+    .accept 29792 >>Accept Bidden to Greatness
+	.target Elder Shaopai
+step << !Hunter
+    #completewith next
+    #label Bidden to Greatness3
+    .goto 378,51.31,57.5,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaopai|r.
+    .turnin 29791 >>Turn in The Suffering of Shen-zin Su
+    .accept 29792 >>Accept Bidden to Greatness
+    .disablecheckbox
+	.target Elder Shaopai
+step << !Hunter
+    #completewith Bidden to Greatness3
+    .goto 378,51.31,48.28,120 >>Enter the Temple of Five Dawns
+step << !Hunter
+    #requires Bidden to Greatness3
+    .goto 378,51.31,48.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaopai|r.
     .turnin 29791 >>Turn in The Suffering of Shen-zin Su
     .accept 29792 >>Accept Bidden to Greatness
 	.target Elder Shaopai
 step
-    .goto 378,51.60,61.39
-    >>Run to the gate to open it. Wait out the RP
+    .goto 378,51.55,61.47
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 29792,1 --1/1 Open the Mandori Village Gate
+    .timer 32,RP
 step
-	#completewith next
-    .goto 378,50.66,65.62,20,0
-    .goto 378,52.28,68.43,30 >>Travel |cRXP_WARN_to the Pei-Wu Gate|r.
-	.timer 28,Pei-Wu Gate RP
-step
-    .goto 378,52.28,68.43
-    >>Run to the gate to open it. Wait out the RP
+    #completewith next
+    #label Pei-Wu Forest Gate
+    .goto 378,51.42,63.15,15,0
+    .goto 378,50.76,65.2,15,0
+    >>Jump from the mountain and onto the Wall.
     .complete 29792,2 --1/1 Open the Pei-Wu Forest Gate
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei|r and |cRXP_FRIENDLY_Korga|r.
+    #completewith Pei-Wu Forest Gate
+    .goto 378,51.85,67.84,10 >>Trigger the Roleplay.
+    .timer 31.5,RP
+step
+    #requires Pei-Wu Forest Gate
+    .goto 378,50.07,66.5,15,0
+    .goto 378,50.57,68.19,10,0
+    .goto 378,51.63,70.04,15,0
+    .goto 378,51.22,72.72
+    >>Jump on the Gate and wait behind it. 
+    *|cRXP_WARN_Don't go further than the arrow indicates|r
+    .complete 29792,2 --1/1 Open the Pei-Wu Forest Gate
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei Palerage|r and |cRXP_FRIENDLY_Korga Strongmane|r.
     .turnin 29792 >>Turn in Bidden to Greatness
     .accept 30591 >>Accept Preying on the Predators
     .goto 378,50.07,76.63
@@ -8447,25 +9319,37 @@ step
 	.target Wei Palerage
 	.target Korga Strongmane
 step
-    .goto 378,50.62,78.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Drog|r.
-    .vendor 67186 >> Sell your trash and repair
-	.target Provisioner Drog
-	.isOnQuest 29795
+    #hidewindow
+    #completewith Tigers
+    #loop
+    .goto 378,48.44,74.94,25,0
+    .goto 378,47.13,74.41,25,0
+    .goto 378,46.01,73.14,25,0
+    .goto 378,45.91,71.06,25,0
+    .goto 378,46.62,69.05,25,0
+    .goto 378,49.33,69.54,25,0
+    .goto 378,49.81,73.52,25,0
+    .goto 378,51.44,72.89,25,0
+    .goto 378,51.02,69.75,25,0
+    .goto 378,52.92,70.93,25,0
+    .goto 378,53.44,72.99,25,0
+    .goto 378,53.2,76.08,25,0
+    .goto 378,51.85,74.32,25,0
+    +1
 step
-#loop
-	.line 378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
-	.goto 378,54.51,85.54,40,0
-	.goto 378,45.05,85.81,40,0
-	.goto 378,45.89,71.57,40,0
-	.goto 378,55.62,69.49,40,0
-	.goto 378,54.51,85.54,40,0
-    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r. Loot the |cRXP_PICK_Bamboo Stalks|r |cRXP_WARN_on the ground|r.
+    #completewith next
+    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r.
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bamboo|r
     .complete 29795,1 --10/10 Broken Bamboo Stalk
 	.mob Pei-Wu Tiger
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei|r and |cRXP_FRIENDLY_Korga|r.
+    #label Tigers
+    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r.
+    .complete 30591,1 --9/9 Pei-Wu Tiger slain
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei Palerage|r and |cRXP_FRIENDLY_Korga Strongmane|r.
     .turnin 30591 >>Turn in Preying on the Predators
     .goto 378,50.07,76.63
     .turnin 29795 >>Turn in Stocking Stalks
@@ -8474,7 +9358,22 @@ step
 	.target Wei Palerage
 	.target Korga Strongmane
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael|r and |cRXP_FRIENDLY_Ji|r.
+    #completewith next
+    #label the Wreck
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael Bay|r and |cRXP_FRIENDLY_Ji Firepaw|r.
+    .turnin 30589 >>Turn in Wrecking the Wreck
+    .accept 30590 >>Accept Handle With Care
+    .disablecheckbox
+    .accept 29793 >>Accept Evil from the Seas
+    .disablecheckbox
+	.target Makael Bay
+	.target Ji Firepaw
+step
+    #completewith the Wreck
+    .goto 378,36.32,72.36,100 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires the Wreck
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael Bay|r and |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 30589 >>Turn in Wrecking the Wreck
     .accept 30590 >>Accept Handle With Care
     .goto 378,36.32,72.36
@@ -8483,18 +9382,31 @@ step
 	.target Makael Bay
 	.target Ji Firepaw
 step
-    .goto 378,36.06,76.73,40,0
-    .goto 378,35.41,79.00,40,0
-    .goto 378,40.14,78.79,40,0
-    .goto 378,38.29,74.01,40,0
-    .goto 378,36.06,76.73,40,0
-    .goto 378,35.41,79.00,40,0
-    .goto 378,40.14,78.79,40,0
-    .goto 378,38.29,74.01
-    >>Kill |cRXP_ENEMY_Darkened Horrors|r and |cRXP_ENEMY_Terrors|r. |cRXP_WARN_Be careful of the Horrors' Shadow Geysers|r.
-	>>Loot the Explosion Charges on the ground
+    #hidewindow
+    #completewith Darkened Horrors
+    #loop
+    .goto 378,38.33,74.05,30,0
+    .goto 378,38.1,75.62,30,0
+    .goto 378,37.7,77.34,30,0
+    .goto 378,36.23,76.71,30,0
+    .goto 378,36.55,75.55,15,0
+    .goto 378,35.49,79,30,0
+    .goto 378,35.6,80.76,30,0
+    .goto 378,36.67,78.69,30,0
+    +1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Horrors|r and |cRXP_ENEMY_Terrors|r.
     .complete 29793,1 --8/8 Darkened Horrors or Darkened Terrors slain
+	.mob Darkened Horror
+	.mob Darkened Terror
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Explosives|r
     .complete 30590,1 --6/6 Packed Explosion Charge
+step
+    #label Darkened Horrors
+    >>Kill |cRXP_ENEMY_Horrors|r and |cRXP_ENEMY_Terrors|r.
+    .complete 29793,1 --8/8 Darkened Horrors or Darkened Terrors slain
 	.mob Darkened Horror
 	.mob Darkened Terror
 step
@@ -8507,6 +9419,20 @@ step
 	.target Makael Bay
 	.target Ji Firepaw
 step
+    #completewith next
+    #label Medical Supplies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
+    .turnin 29796 >>Turn in Urgent News
+    .accept 29794 >>Accept None Left Behind
+    .accept 29797 >>Accept Medical Supplies
+    .accept 29665 >>Accept From Bad to Worse
+	.target Delora Lionheart
+	.target Jojo Ironbrow
+step
+    #completewith Medical Supplies
+    .goto 378,42.21,86.54,100 >>|cRXP_WARN_If you can’t mount and are able to efficiently kill monsters while walking, you should kill them as you travel|r.
+step
+    #requires Medical Supplies
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29796 >>Turn in Urgent News
     .accept 29794 >>Accept None Left Behind
@@ -8517,77 +9443,133 @@ step
 	.target Delora Lionheart
 	.target Jojo Ironbrow
 step
-	#completewith Sailor2
-    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r. Loot the |cRXP_PICK_Medical Supplies|r on the ground.
+    #completewith LastSoldier
+    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r.
     .complete 29665,1 --8/8 Deepscale Tormentor slain
+step 
+    #completewith LastSoldier
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Supplies|r
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
 step
-    #optional
-	#completewith next
-    .goto 378,40.18,87.69
-	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r.
-	.isOnQuest 29794
-	.target Injured Sailor
---XXZ Zarant Function
-step
-    #optional
-    .goto 378,42.27,86.80
-    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora's|r Camp.
+    #completewith next
+    #label Sailor1
+    >>Return them to the Camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
+    .target Delora Lionheart
 step
-    #optional
-	#completewith next
-    .goto 378,39.41,87.98
-	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r.
-	.isOnQuest 29794
-	.target Injured Sailor
+    #completewith Sailor1
+    .goto 378,40,84.4,10,0
+    .goto 378,40.17,87.67,15,0
+    .goto 378,39.31,88.01,15,0
+    .goto 378,38.26,87.3,15,0
+    .goto 378,36.93,87.68,15,0
+    .goto 378,36.12,87.43,15,0
+    .goto 378,36.25,84.85,15,0
+    .goto 378,36.37,86.85,15,0
+    .goto 378,36,85.44,15,0
+    .goto 378,36.89,88.62,15,0
+    .goto 378,37.57,86.37,15,0
+    .goto 378,38.46,83.17,15,0
+    .goto 378,38.53,85.1,15,0
+    .goto 378,39.46,85.41,15,0
+    .goto 378,40.06,84.4,15,0
+    .cast 56685 >>Click on an |cRXP_PICK_Injured Sailor|r
+    .target Injured Sailor
 step
-    #optional
-	#label Sailor2
-    .goto 378,42.27,86.80
-    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora's|r Camp.
+    #requires Sailor1
+    .goto 378,42.22,86.53
+    >>Return him to the Camp
+    .complete 29794,1,1 --3/3 Injured Sailors rescued
+    .target Delora Lionheart
+step
+    #requires Sailor1
+    #completewith next
+    #label Sailor2
+    >>Return him to the Camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
+    .target Delora Lionheart
 step
-    #optional
-    .goto 378,38.36,87.60,20,0
-    .goto 378,37.04,87.93,20,0
-    .goto 378,35.77,86.77,20,0
-    .goto 378,36.40,83.30,20,0
-    .goto 378,37.92,81.39,20,0
-    .goto 378,37.86,83.22,20,0
-    .goto 378,36.41,85.51,10,0
-    .goto 378,36.82,89.24,20,0
-    .goto 378,38.36,87.60,20,0
-    .goto 378,37.04,87.93,20,0
-    .goto 378,35.77,86.77,20,0
-    .goto 378,36.40,83.30,20,0
-    .goto 378,37.92,81.39,20,0
-    .goto 378,37.86,83.22,20,0
-    .goto 378,36.41,85.51,10,0
-    .goto 378,36.82,89.24
-	>>|cRXP_WARN_Don't pick up a new Sailor yet|r.
-    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r. Loot the |cRXP_PICK_Medical Supplies|r on the ground.
+    #requires Sailor1
+    #completewith Sailor2
+    .goto 378,40.17,87.67,15,0
+    .goto 378,39.31,88.01,15,0
+    .goto 378,38.26,87.3,15,0
+    .goto 378,36.93,87.68,15,0
+    .goto 378,36.12,87.43,15,0
+    .goto 378,36.25,84.85,15,0
+    .goto 378,36.37,86.85,15,0
+    .goto 378,36,85.44,15,0
+    .goto 378,36.89,88.62,15,0
+    .goto 378,37.57,86.37,15,0
+    .goto 378,38.46,83.17,15,0
+    .goto 378,38.53,85.1,15,0
+    .goto 378,39.46,85.41,15,0
+    .goto 378,40.06,84.4,15,0
+    .cast 56685 >>Click on an |cRXP_PICK_Injured Sailor|r
+    .target Injured Sailor
+step
+    #requires Sailor2
+    .goto 378,42.22,86.53
+    >>Return him to the Camp
+    .complete 29794,1,2 --3/3 Injured Sailors rescued
+    .target Delora Lionheart
+step
+    #hidewindow
+    #completewith Deepscale Tormentors
+    #loop
+    .goto 378,40.17,87.67,15,0
+    .goto 378,39.31,88.01,15,0
+    .goto 378,38.26,87.3,15,0
+    .goto 378,36.93,87.68,15,0
+    .goto 378,36.12,87.43,15,0
+    .goto 378,36.25,84.85,15,0
+    .goto 378,36.37,86.85,15,0
+    .goto 378,36,85.44,15,0
+    .goto 378,36.89,88.62,15,0
+    .goto 378,37.57,86.37,15,0
+    .goto 378,38.46,83.17,15,0
+    .goto 378,38.53,85.1,15,0
+    .goto 378,39.46,85.41,15,0
+    .goto 378,40.06,84.4,15,0
+    +1
+step
+    #completewith next
+    #label Sailor3
+    >>Return him to the Camp
+    .complete 29794,1,3 --3/3 Injured Sailors rescued
+    .target Delora Lionheart
+step
+    #completewith Sailor3
+    #label LastSoldier
+    .cast 56685 >>Click on an |cRXP_PICK_Injured Sailor|r
+    .timer 180,RP
+    .target Injured Sailor
+step
+    #requires Sailor3
+    #completewith 3/3 Injured Sailors
+    +|cRXP_WARN_If the timer expires before all other quests are done, pick up a new soldier.|r
+step
+    #requires Sailor3
+    #completewith next
+    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r.
     .complete 29665,1 --8/8 Deepscale Tormentor slain
+step 
+    #requires Sailor3
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Supplies|r
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
 step
-	#completewith next
-    .goto 378,38.36,87.43,-1
-    .goto 378,37.66,87.22,-1
-    .goto 378,36.17,87.63,-1
-    .goto 378,35.49,83.80,-1
-    .goto 378,37.60,81.44,-1
-    .goto 378,38.41,83.09,-1
-    .goto 378,38.08,84.73,-1
-    .goto 378,40.01,84.36,-1
-	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r.
-	.isOnQuest 29794
-	.target Injured Sailor
+    #label Deepscale Tormentors
+    >>Kill |cRXP_ENEMY_Deepscale Tormentors|r.
+    .complete 29665,1 --8/8 Deepscale Tormentor slain
 step
-    .goto 378,42.27,86.80
-    >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora Lionheart's|r Camp.
-    .complete 29794,1 --3/3 Injured Sailors rescued
+    #requires Sailor3
+    #label 3/3 Injured Sailors
+    .goto 378,42.22,86.53
+    >>Return them to the Camp
+    .complete 29794,1,3 --3/3 Injured Sailors rescued
+    .target Delora Lionheart
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29794 >>Turn in None Left Behind
@@ -8601,26 +9583,25 @@ step
 step
     .goto 378,36.50,84.23
     >>Kill |cRXP_ENEMY_Vordraka, The Deep Sea Nightmare|r.
-    >>|cRXP_WARN_Dodge his Deep Sea Smash|r. Kill |cRXP_ENEMY_Deepscale Aggressors|r when they spawn.
+    >>|cRXP_WARN_Dodge his Deep Sea Smash|r. 
+    *Kill |cRXP_ENEMY_Deepscale Aggressors|r when they spawn.
     .complete 29798,1 --1/1 Vordraka, the Deep Sea Nightmare slain
 	.mob Vordraka, The Deep Sea Nightmare
     .mob Deepscale Aggressor
 step
     .goto 378,36.50,84.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_after a short roleplay|r.
     .turnin 29798 >>Turn in An Ancient Evil
     .accept 30767 >>Accept Risking It All
+    .skipgossipid 32291
     .timer 77,Risking It All RP
 	.target Aysa Cloudsinger
-	.skipgossip
 step
-    .goto 378,36.35,86.08,10,0 << skip
-    .goto 378,36.27,86.99,10,0 << skip
-    .goto 378,36.90,85.50,5,0 << skip
-    .goto 378,36.36,87.2,10,0 << skip
-    .goto 378,36.38,87.12 << skip
-    >>Wait out the RP (you can take a break in this time)
-	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r.
+    .goto 378,36.34,86.99,5,0
+    .goto 378,36.75,87.02,5,0
+    .goto 378,36.93,85.52,5,0
+    .goto 378,36.37,87.11
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 30767,1 --1/1 Shen-zin Su's Thorn Removed
 step
     .goto 378,39.30,86.22
@@ -8629,48 +9610,62 @@ step
     .accept 29799 >>Accept The Healing of Shen-zin Su
 	.target Ji Firepaw
 step
-    .goto 378,39.08,88.32,5,0
-    .goto 378,39.04,88.87,5,0
-    .goto 378,39.89,88.62,5,0
-    .goto 378,42.92,87.31,5,0
-    .goto 378,42.85,85.16,5,0
-    .goto 378,42.01,84.89,5,0
-    .goto 378,42.31,83.89,5,0
-    .goto 378,41.21,83.78,5,0
-    .goto 378,40.55,82.45,5,0
-    .goto 378,40.26,83.35,5,0
-    .goto 378,40.12,84.37,5,0
-    .goto 378,38.44,86.07
-    >>Free |cRXP_FRIENDLY_Alliance Priests|r and |cRXP_FRIENDLY_Horde Druids|r from the Wreckages, then talk to them. Kill |cRXP_ENEMY_Dampscale Fleshrippers|r. If they're attacking them.
+    #loop
+    .goto 378,39.03,89.05,10,0
+    .goto 378,39.91,88.89,10,0
+    .goto 378,41.16,87.59,10,0
+    .goto 378,42.94,87.28,10,0
+    .goto 378,42.83,85,10,0
+    .goto 378,42.12,84.74,10,0
+    .goto 378,42.07,81.85,10,0
+    .goto 378,40.28,82.63,10,0
+    .goto 378,39.95,84.42,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alliance Priests|r and |cRXP_FRIENDLY_Horde Druids|r.
+    *Kill the |cRXP_ENEMY_Lizards|r keeping them in combat and click on the |cRXP_PICK_Wreckages|r
     .complete 29799,1 --1/1 Protect the healers
 	.target Alliance Priest
 	.target Horde Druid
-	.mob Dampscale Fleshripper
+    .mob Deepscale Fleshripper
+    .mob Deepscale Ravager
 step
     .goto 378,39.30,86.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
-	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r.
     .turnin 29799 >>Turn in The Healing of Shen-zin Su
 	.timer 18,The Healing of Shen-zin Su RP
 	.target Ji Firepaw
 step
-    >>|cRXP_WARN_Wait out the RP|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .goto 378,38.77,86.32
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 29800 >>Accept New Allies
 	.target Ji Firepaw
 step
     #completewith next
-    .hs >> Hearthstone |cRXP_WARN_to the Temple of Five Dawns|r.
+    #label Turn in New Allies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Shang Xi|r and select your Faction.
+    .turnin 29800 >>Turn in New Allies
+step
+    #completewith Turn in New Allies
+    .hs >>Hearthstone |cRXP_WARN_to the Temple of Five Dawns|r.
+step
+    #requires Turn in New Allies
+    .goto 378,51.45,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Shang Xi|r.
+    .turnin 29800 >>Turn in New Allies
+	.target Spirit of Shang Xi
 step
     .goto 378,51.45,48.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Shang Xi|r and select your Faction.
-	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r.
-    .turnin 29800 >>Turn in New Allies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit of Shang Xi|r
     .accept 31450 >>Accept A New Fate
+    .target Spirit of Shang Xi
+step
+    .goto 378,51.45,48.28
+    >>Select your Faction.
     .complete 31450,1 --1/1 Choose your faction
-    .skipgossip
+    .skipgossipid 36586
 	.target Spirit of Shang Xi
+step
+    #hidewindow
+    .countdown 2 >>1
 step << Alliance
     .goto 84,74.19,91.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
@@ -8678,63 +9673,21 @@ step << Alliance
 	.accept 30987 >>Accept Joining the Alliance
 	.target Aysa Cloudsinger
 step << Alliance
-    .goto 84,63.77,73.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r.
-    .accept 332 >>Accept Wine Shop Advert
-    .target Renato Gallina
-step << Alliance
-    .goto 84,62.81,71.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
-    .accept 46727 >>Accept Battle for Azeroth: Tides of War
-    .target Hero's Herald
-step << Alliance
-    #veteran
-	>>Unlearn your professions by copying then pasting the link below into chat
-    .link /run AbandonSkill(186); AbandonSkill(182);>> |TInterface/cursor/crosshair/interact.blp:20|tClick HERE
-	.train 2366,1 >>Unlearn Herbalism
-	.train 2575,1 >>Unlearn Mining
-    .dmf
-step
-    #veteran
-    .goto 84,61.11,70.6
-    +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r. You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r. If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r. However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Auctioneer|r.
-    .collect 71715,1
-    .collect 71638,1
-    .collect 71637,1
-    .collect 71636,1
-    .collect 71635,1
-    .collect 71952,1
-    .collect 71951,1
-    .collect 71953,1
-    .collect 71716,1
-    .target Auctioneer Fitch
-    .target Auctioneer Jaxon
-    .target Auctioneer Chilton
-    .dmf
-step
-    #fresh
-    #completewith DarkMoonFaire
-    +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r.
-step
     #completewith next
-    .link /run AbandonSkill(186); AbandonSkill(182);>> |cRXP_WARN_Click this text to receive a macro that will unlearn your professions|r.
-    .dmf
+    #label Joining the Alliance
+    .goto 84,80.57,37.95,15,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .turnin 30987 >>Turn in Joining the Alliance
+    .target Anduin Wrynn
 step << Alliance
-    #label DarkMoonFaire
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
-    .goto 84,62.25,72.96
-    .accept 7905 >>Accept The Darkmoon Faire
-	.zone 407 >> Travel to the Darkmoon Faire
-	.target Darkmoon Faire Mystic Mage
-	.skipgossip
-    .dmf
-step << Horde
-    .dmf
-	>>Unlearn your professions by copying then pasting the link below into chat
-    .link /run AbandonSkill(186); AbandonSkill(182);>> |TInterface/cursor/crosshair/interact.blp:20|tClick HERE
-	.train 2366,1 >>Unlearn Herbalism
-	.train 2575,1 >>Unlearn Mining
+    #completewith Joining the Alliance
+    .goto 84,85.90,31.60,100 >>Enter the Castle
+step << Alliance
+    #requires Joining the Alliance
+    .goto 84,85.90,31.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .turnin 30987 >>Turn in Joining the Alliance
+    .target Anduin Wrynn
 step << Horde
     .goto 1,45.58,12.61
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
@@ -8743,12 +9696,92 @@ step << Horde
     .target Ji Firepaw
 step << Horde
     #completewith next
-    .goto 85,49.87,75.52,20 >> Go |cRXP_WARN_inside Grommash Hold|r.
-step << Horde
-    .goto 85,48.76,70.77
+    #label Joining the Horde
+    .goto 85,49.87,75.52,20,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrosh Hellscream|r.
     .turnin 31012 >> Turn in Joining the Horde
     .target Garrosh Hellscream
+step << Horde
+    #completewith Joining the Horde
+    .goto 85,48.76,70.77,80 >>Go |cRXP_WARN_inside Grommash Hold|r.
+step << Horde
+    #requires Joining the Horde
+    .goto 85,48.76,70.77
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrosh Hellscream|r.
+    .turnin 31012 >> Turn in Joining the Horde
+    .accept 31013 >>Accept The Horde Way
+    .timer 120,RP
+    .target Garrosh Hellscream
+step << Horde
+    .goto 85,48.77,70.75
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 31013,1 --1/1 Walk with Garrosh Hellscream
+step << Horde
+    .goto 85,48.77,70.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrosh Hellscream|r
+    .turnin 31013 >>Turn in The Horde Way
+    .target Garrosh Hellscream
+
+
+
+    -- step << Alliance
+--     .goto 84,63.77,73.59
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r.
+--     .accept 332 >>Accept Wine Shop Advert
+--     .target Renato Gallina
+-- step << Alliance
+--     .goto 84,62.81,71.75
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald|r.
+--     .accept 46727 >>Accept Battle for Azeroth: Tides of War
+--     .target Hero's Herald
+-- step << Alliance
+--     #veteran
+-- 	>>Unlearn your professions by copying then pasting the link below into chat
+--     .link /run AbandonSkill(186); AbandonSkill(182);>> |TInterface/cursor/crosshair/interact.blp:20|tClick HERE
+-- 	.train 2366,1 >>Unlearn Herbalism
+-- 	.train 2575,1 >>Unlearn Mining
+--     .dmf
+-- step
+--     #veteran
+--     .goto 84,61.11,70.6
+--     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r. You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r. If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r. However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Auctioneer|r.
+--     .collect 71715,1
+--     .collect 71638,1
+--     .collect 71637,1
+--     .collect 71636,1
+--     .collect 71635,1
+--     .collect 71952,1
+--     .collect 71951,1
+--     .collect 71953,1
+--     .collect 71716,1
+--     .target Auctioneer Fitch
+--     .target Auctioneer Jaxon
+--     .target Auctioneer Chilton
+--     .dmf
+-- step
+--     #fresh
+--     #completewith DarkMoonFaire
+--     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r.
+-- step
+--     #completewith next
+--     .link /run AbandonSkill(186); AbandonSkill(182);>> |cRXP_WARN_Click this text to receive a macro that will unlearn your professions|r.
+--     .dmf
+-- step << Alliance
+--     #label DarkMoonFaire
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
+--     .goto 84,62.25,72.96
+--     .accept 7905 >>Accept The Darkmoon Faire
+-- 	.zone 407 >> Travel to the Darkmoon Faire
+-- 	.target Darkmoon Faire Mystic Mage
+-- 	.skipgossip
+--     .dmf
+-- step << Horde
+--     .dmf
+-- 	>>Unlearn your professions by copying then pasting the link below into chat
+--     .link /run AbandonSkill(186); AbandonSkill(182);>> |TInterface/cursor/crosshair/interact.blp:20|tClick HERE
+-- 	.train 2366,1 >>Unlearn Herbalism
+-- 	.train 2575,1 >>Unlearn Mining
 ]])
 
 -- =================================
@@ -16508,7 +17541,7 @@ step
 --     .accept 13527 >>Accept No Accounting for Taste
 -- step
 --     .goto 62,55.1,21.0
---     >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_ENEMY_Decomposing Thistle Bear|r.
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|r|cRXP_ENEMY_Decomposing Thistle Bear|r.
 --     .complete 13527,1 --1/1 Foul Bear Carcass Sample
 -- 	.target Decomposing Thistle Bear
 -- step
@@ -19820,7 +20853,7 @@ step
     .accept 8472 >>Accept Major Malfunction
     .target Magister Jaronis
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the wanted board
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|rwanted board
     .goto 94,48.16,46.31
     .accept 8468 >>Accept WANTED: Thaelis the Hungerer
 step
@@ -22281,7 +23314,7 @@ step
     .accept 8472 >>Accept Major Malfunction
     .target Magister Jaronis
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the wanted board
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|rwanted board
     .goto 94,48.16,46.31
     .accept 8468 >>Accept WANTED: Thaelis the Hungerer
 step
@@ -22725,7 +23758,7 @@ step
     .accept 24488 >>Accept The Replacements
     .target Coach Crosscheck
 step
-    >>Pick up the |cRXP_PICK_Replacements Parts|r from the ground while on the Hot Rod.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Replacements Parts|r from the ground while on the Hot Rod.
 #loop
 	.line 194,50.99,57.96,51.22,61.01,49.78,66.39,48.17,66.87,46.08,68.18,44.49,65.76,44.23,63.11,43.75,59.25
 	.goto 194,50.99,57.96,20,0
@@ -22912,12 +23945,12 @@ step
     #completewith KezanWaltzRightIn
     +|cRXP_WARN_Avoid |cRXP_ENEMY_Villa Mooks|r and |cRXP_ENEMY_Keesnout Potbellys|r because they can detect and kill you|r.
 step
-    >>Pick up the [|cRXP_LOOT_bomb|r].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_LOOT_bomb|r].
     .goto 194,24.20,40.67,30,0
     .goto 194,19.9,30.7
     .complete 14123,3 --1/1 The Ultimate Bomb
 step
-    >>Pick up the [|cRXP_LOOT_painting|r].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_LOOT_painting|r].
     .goto 194,13.1,35.2
     .complete 14123,2 --1/1 The Goblin Lisa
 step
@@ -23760,7 +24793,7 @@ step
     .accept 25125 >>Accept Light at the End of the Tunnel
     .target Assistant Greely
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Mine Cart|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|r|cRXP_PICK_Mine Cart|r.
     .goto 174,56.29,27.33
     .turnin 25125 >>Turn in Light at the End of the Tunnel
     .accept 25184 >>Accept Wild Mine Cart Ride
@@ -23787,7 +24820,7 @@ step
     .complete 25200,1 --8/8 Steamwheedle Shark slain
     .mob Steamwheedle Shark
 step
-    >>Pick up the [|cRXP_LOOT_Spare Shredder Parts|r].
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the [|cRXP_LOOT_Spare Shredder Parts|r].
     .goto 174,53.24,19.55,20,0
     .goto 174,52.16,20.68,20,0
     .goto 174,51.85,19.17,20,0
@@ -23849,7 +24882,7 @@ step
     .goto 174,50.2,11.8
     .complete 25204,2 --1/1 Valve #2 released
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Platform Control Panel|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|r|cRXP_PICK_Platform Control Panel|r.
     .goto 174,51.4,13.1
     .turnin 25204 >>Turn in Release the Valves
     .accept 25207 >>Accept Good-bye, Sweet Oil
