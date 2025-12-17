@@ -1,6 +1,7 @@
 --
 -- ActiveItemFrame.lua file
 
+L["Active Items"] = ""
 
 -- Communications.lua file
 
@@ -29,33 +30,41 @@ L["seconds"] = ""
 
 -- functions.lua file
 
+L[", "] = ""
 L["Error parsing guide"] = ""
 L["Objective Complete"] = ""
 L["Missing pre-requisites"] = ""
 L["Retrieving quest data"] = ""
+L["Step skipped: This step requires a quest available that is already complete"] = ""
 L["Go to"] = ""
 L["Set your Hearthstone to "] = ""
 L["Get the %s flight path"] = ""
 L["Fly to"] = ""
 L["Die and respawn at the graveyard"] = ""
+L["Spirit Healer"] = ""
 L["Throw away %s%s from your bags"] = ""
 L["Grind until you are %d xp away from level %s"] = ""
 L["Grind until you are %s xp into level %s"] = ""
 L["Grind until you are %.0f%% into level %s"] = ""
 L["Level requirements not met - Skip to step %d"] = ""
+L["Step skipped: XP requirements are not met"] = ""
 L["Grind until you are %d away from %s with %s"] = ""
 L["Grind until you are %s into %s with %s"] = ""
 L["Grind until you are %.0f%% into %s with %s"] = ""
 L["Sell junk/resupply"] = ""
 L["Train skills"] = ""
 L["Stable your pet"] = ""
+L["Step skipped: missing required spell"] = ""
 L["Click to view the link"] = ""
 L["Collect the following items:"] = ""
 L["Do the Blasted Lands collection quests"] = ""
 L["Attempting to deposit"] = ""
 L["Attempting to withdraw"] = ""
+L[" or event == "] = ""
 L["Skip to step %d if you are level %d or above"] = ""
 L["(Skip this step if you are level %d or above)"] = ""
+L["Do NOT attempt this quest unless you are in a group of at least %d"] = ""
+L["This step is meant to be completed as a group, be careful"] = ""
 
 -- GuideLoader.lua file
 
@@ -64,6 +73,7 @@ L["Incomplete or invalid encoded string"] = ""
 L["Total guides loaded: %d/%s"] = ""
 L["Loading Guides"] = ""
 L["Guides Loaded Successfully"] = ""
+L[" and u:find("] = ""
 L["Unable to decode cached guide (%s), removed"] = ""
 L["Error parsing "] = ""
 L["Guide has no name"] = ""
@@ -76,6 +86,7 @@ L["Step %d"] = ""
 L["Go to step"] = ""
 L["Select another guide"] = ""
 L["Reload Guide"] = ""
+L["RXPGuides - Error trying to include guide: %s\\%s"] = ""
 L["Available Guides"] = ""
 L["Gold Farming Guides"] = ""
 L["Unused Guides"] = ""
@@ -89,6 +100,33 @@ L["Open Feedback Form"] = ""
 
 -- HardcoreIntroUI.lua file
 
+L["Location: "] = ""
+L["\n\nProfessions that benefit:"] = ""
+L["Select Survival Guide"] = ""
+L["NEW FEATURE"] = ""
+L["ULTIMATE HARDCORE\nSURVIVAL GUIDE"] = ""
+L["Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r"] = ""
+L["SPEEDRUN GUIDE"] = ""
+L["Experience the fastest and most efficient Leveling Routes.\nHand-crafted and maintained by the best Speedrunners in\nthe Classic WoW Community."] = ""
+L["Select Speedrun Guide"] = ""
+L["Submit & Continue"] = ""
+L["Back"] = ""
+L["WELCOME\nADVENTURER"] = ""
+L["Select your desired features to configure your Guide.\nLet's Go!"] = ""
+L["Enable Hostile Enemy Warning"] = ""
+L["Alerts when a dangerous entity is nearby and shows patrolling elites on the world map."] = ""
+L["Enable Auction House"] = ""
+L["Considers quests that require items that are obtained through trading with other players."] = ""
+L["Enable Group Quests"] = ""
+L["Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."] = ""
+L["Enable Dungeons"] = ""
+L["Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."] = ""
+L["DUNGEON\nCONFIGURATION"] = ""
+L["Add Dungeons to your route. The guide will adjust to\n your selection accordingly."] = ""
+L["Select all Dungeons"] = ""
+L["Factor all of your available Dungeons to your levelling route"] = ""
+L["Select Recommended Dungeons"] = ""
+L["Factor only the high impact dungeons into the route"] = ""
 
 -- Help.lua file
 
@@ -162,9 +200,11 @@ L["Level %d time"] = ""
 
 -- QuestLog.lua file
 
+L[" (Group)"] = ""
 L["Quest is being picked up at"] = ""
 L["Quest is being turned in at"] = ""
 L["Quest is not part of any guide"] = ""
+L["Item used in guide:\n"] = ""
 
 -- RXPGuides.lua file
 
@@ -263,6 +303,9 @@ L["Hardcore mode"] = ""
 L["Adjust the leveling routes to the deathless ruleset"] = ""
 L["Season"] = ""
 L["Adjust the leveling routes to the current season"] = ""
+L["None"] = ""
+L["Season of Mastery"] = ""
+L["Season of Discovery"] = ""
 L["Dungeons"] = ""
 L["Professions"] = ""
 L["Quest Cleanup"] = ""
@@ -409,7 +452,6 @@ L["Scale of the Waypoint Arrow"] = ""
 L["Arrow Text Size"] = ""
 L["Size of the waypoint arrow text"] = ""
 L["Reset Arrow Position"] = ""
-L["Active Items"] = ""
 L["Active Item Scale"] = ""
 L["Scale of the Active Item frame"] = ""
 L["Hide Background"] = ""
@@ -478,7 +520,15 @@ L["Rare Found! %s is nearby."] = ""
 -- DB\questDB.lua file
 
 L["\n\n--- Backup Quests ---"] = ""
+L["Quest Data"] = ""
+L["RestedXP Quest Data"] = ""
+L["Refresh"] = ""
 L["Show %d Best Quests"] = ""
+L["Show Missing Quests"] = ""
+L["Show All Available"] = ""
+L["Step skipped: This is part of a quest you don't have"] = ""
+L["%dxp %s (%d)"] = ""
+L["Total XP: %d\n%s"] = ""
 
 -- DB\shared.lua file
 
@@ -506,7 +556,23 @@ L["Show %d Best Quests"] = ""
 
 -- DB\classic\db.lua file
 
-L["None"] = ""
+L["Mining & Engineering"] = ""
+L["Mining & Blacksmithing"] = ""
+L["Herbalism & Alchemy"] = ""
+L["Skinning & Leatherworking"] = ""
+L["Mining & Skinning"] = ""
+L["Mining & Herbalism"] = ""
+L["Herbalism & Skinning"] = ""
+L["Skinning"] = ""
+L["Herbalism"] = ""
+L["Mining "] = ""
+L["Loot: %s"] = ""
+L["Quest XP: %s"] = ""
+L["Travel Speed: %s"] = ""
+L["Terrible"] = ""
+L["Bad"] = ""
+L["Good"] = ""
+L["Excellent"] = ""
 
 -- DB\classic\flightData.lua file
 

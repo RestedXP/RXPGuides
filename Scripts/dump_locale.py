@@ -57,17 +57,13 @@ for file in files_list:
                 f.write(f"-- {p} file") # Write each filename
                 f.write('\n\n')
                 for match in locales:
-                    if match.group(1):
-                        h = hash(match.group(1))
-                        if h not in seen:
-                            f.write(f"L[\"{match.group(1)}\"] = \"\"")
-                            seen.add(h)
-                            f.write('\n')
-                    if match.group(2):
-                        h = hash(match.group(2))
-                        if h not in seen:
-                            f.write(f"L[\"{match.group(2)}\"] = \"\"")
-                            seen.add(h)
-                            f.write('\n')
+                    for grp in range(1,5):
+                        if match.group(grp):
+                            h = hash(match.group(grp))
+                            if h not in seen:
+                                f.write(f"L[\"{match.group(grp)}\"] = \"\"")
+                                seen.add(h)
+                                f.write('\n')
+
         except:
             print('Error')
