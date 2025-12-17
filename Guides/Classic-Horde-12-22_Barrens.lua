@@ -1227,7 +1227,8 @@ step
     .goto The Barrens,64.21,47.14,50,0
     .goto The Barrens,63.57,49.14,50,0
     .goto The Barrens,62.64,49.72,50,0
-    >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r He can be found in one of the camps
+    >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_He can be found in one of the camps|r
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step
@@ -2234,7 +2235,7 @@ step << Troll Warrior/Tauren Warrior/Undead Warrior
 step << Hunter
     .goto Orgrimmar,81.17,18.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from him|r
-    .collect 3026,1,3281,1 --Collect Laminated Recurve Bow (1)
+    .collect 3026,1,3281,1 --Collect Reinforced Bow (1)
     .money <0.3588
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
@@ -6426,7 +6427,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logmar|r
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
-    .target Grunt Logma
+    .target Grunt Logmar
 step << Warlock
     .goto The Barrens,43.31,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dogran|r
@@ -6442,7 +6443,6 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
-    .trainer >> Train your class spells
     .turnin 1512 >>Turn in Love's Gift
     .accept 1513 >>Accept The Binding
     .target Gan'rul Bloodeye
@@ -6461,6 +6461,20 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
     .turnin 1513 >>Turn in The Binding
     .target Gan'rul Bloodeye
+step << Warlock
+    .goto Orgrimmar,48.62,46.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
+    .train 6202 >> Train your class spells
+    .target Mirket
+    .xp <22,1
+    .xp >24,1
+step << Warlock
+    #optional
+    .goto Orgrimmar,48.62,46.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
+    .train 6223 >> Train your class spells
+    .target Mirket
+    .xp <24,1
 step << Rogue
     #completewith next
     .goto Orgrimmar,45.64,55.95
@@ -8146,7 +8160,8 @@ step
     .goto The Barrens,64.21,47.14,50,0
     .goto The Barrens,63.57,49.14,50,0
     .goto The Barrens,62.64,49.72,50,0
-    >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r He can be found in one of the camps
+    >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_He can be found in one of the camps|r
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
     .isOnQuest 895
@@ -11770,7 +11785,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logmar|r
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
-    .target Grunt Logma
+    .target Grunt Logmar
 step
     .goto The Barrens,44.55,59.27
     >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
@@ -13096,7 +13111,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logmar|r
     .turnin 1511 >>Turn in Ken'zigla's Draught
     .accept 1515 >>Accept Dogran's Captivity
-    .target Grunt Logma
+    .target Grunt Logmar
 step << Warlock
     #xprate <2.1
     .goto The Barrens,43.31,47.88
