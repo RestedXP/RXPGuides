@@ -12,11 +12,8 @@
     <Script file="Guides/Retail/Leveling/Remix/Legion/Introduction.lua"/>
 
     <!-- END GAME -->
-    <Script file="Guides/Retail/Endgame/War Within/Siren Isles.lua"/>
     <Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
     <Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
-    <Script file="Guides/Retail/Endgame/War Within/Undermine Campaign.Lua"/>
-    <Script file="Guides/Retail/Endgame/War Within/K'aresh Campaign.lua"/>
     <!-- <Script file="Guides/Retail/Endgame/War Within/Visions of a Shadowed Sun.lua"/> -->
 
     <!-- COLLECTABLES -->
