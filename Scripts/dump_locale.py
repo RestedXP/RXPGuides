@@ -21,15 +21,21 @@ exceptions = [
     r'\\locale\\',
     r'\\Scripts\\',
 ]
+allowed = [
+    re.escape('enUS.lua')
+]
 
 def check_exceptions(dir):
+    for entry in allowed:
+        if re.search(entry,dir):
+            return False
     for entry in exceptions:
         if re.search(entry,dir):
             return True
     return False
 
 def locale_dump(input_text):
-    pattern = re.compile("L\(\s*\"(.*?)\"\)|L\(\'(.*?)\'\)|L\'(.*?)\'|L\"(.*?)\"")
+    pattern = re.compile(r"L\(\s*\"(.*?)\"\)|L\(\'(.*?)\'\)|L\'(.*?)\'|L\"(.*?)\"|\"CLICK RXP.*?\] =\s*.*?\"(.*?%d)\"")
     return pattern.finditer(input_text)
 
 # Looping through files list and extracting locale
@@ -57,7 +63,7 @@ for file in files_list:
                 f.write(f"-- {p} file") # Write each filename
                 f.write('\n\n')
                 for match in locales:
-                    for grp in range(1,5):
+                    for grp in range(1,6):
                         if match.group(grp):
                             h = hash(match.group(grp))
                             if h not in seen:

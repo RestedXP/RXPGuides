@@ -650,3 +650,9 @@ L["Displays Pandaria treasures on your map"] = ""
 
 -- DB\wotlk\spells.lua file
 
+
+-- locale\enUS.lua file
+
+L["Active Item Button %d"] = ""
+L["Active Friendly Target Button %d"] = ""
+L["Active Enemy Target Button %d"] = ""
