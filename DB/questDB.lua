@@ -26,8 +26,8 @@ local function IsPreReqComplete(quest)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local t = type(quest.previousQuest)
-    local function IsPreReqFulfilled(id,isQLog,prevQuest)
-        return not isQLog and addon.IsQuestComplete(id) or addon.IsQuestTurnedIn(id) or prevQuest and IsPreReqComplete(prevQuest)
+    local function IsPreReqFulfilled(id,isQLog)
+        return not isQLog and addon.IsQuestComplete(id) or addon.questsDone[id] or addon.IsQuestTurnedIn(id)
     end
     local qLog = quest.questLog
     if t == "table" then
@@ -42,11 +42,11 @@ local function IsPreReqComplete(quest)
         return state
     elseif t == "number" then
         local preReqComplete
-        local prevQuest = QuestDB[quest.previousQuest]
         if quest.uniqueWith then
+            local prevQuest = QuestDB[quest.previousQuest]
             if prevQuest and prevQuest.uniqueWith then
                 for _,uniqueId in pairs(prevQuest.uniqueWith) do
-                    preReqComplete = preReqComplete or IsPreReqFulfilled(uniqueId,qLog,prevQuest)
+                    preReqComplete = preReqComplete or IsPreReqFulfilled(uniqueId,qLog)
                 end
             end
         end
