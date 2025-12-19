@@ -5,6 +5,7 @@ local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 local QUEST_LOG_SIZE = 25
 local reloadTimer = 0
 local L = addon.locale.Get
+local panelTitle = "-"
 
 --[[
 if addon.gameVersion < 20000 then
@@ -330,13 +331,24 @@ local mode
 local missingQs
 local textOverride
 local currentText = ""
+local debugText
+local currentFlag = 0
 
 local SetText = function(self,refresh)
     local ctime = GetTime()
-    if requestText and ctime - requestTimer > 0.2 then
+    local delay = 0.2
+    if currentFlag > 1 then
+        delay = 5
+    end
+    if requestText and ctime - requestTimer > delay then
         requestTimer = ctime
         questText,requestText = addon.GetBestQuests(false,2)
         missingQs = addon.ShowMissingQuests()
+        --print(currentFlag)
+        if currentFlag > 1 then
+            _,requestText = addon.CalculateTotalXP(currentFlag,true)
+            print(requestText)
+        end
     end
 
     local t
@@ -385,9 +397,9 @@ function CreatePanel()
             importBox = {
                 order = 10,
                 type = 'input',
-                name = format('List of %d best quests',QUEST_LOG_SIZE),
+                name = function() return panelTitle end,
                 width = "full",
-                multiline = QUEST_LOG_SIZE,
+                multiline = QUEST_LOG_SIZE + 1,
                 confirmText = L"Refresh",
                 -- usage = "Usage string",
                 get = SetText,
@@ -397,11 +409,13 @@ function CreatePanel()
 
             showAvailable = {
                 order = 14,
-                name = format(L("Show %d Best Quests"),QUEST_LOG_SIZE),
+                name = format(L("%d Best Quests"),QUEST_LOG_SIZE),
                 type = 'execute',
                 func = function()
+                    panelTitle = format(L("%d Best Quest Log Quests"),QUEST_LOG_SIZE)
                     mode = "quests"
                     textOverride = nil
+                    currentFlag = 0
                     if showAllQs then
                         showAllQs = false
                         questText,requestText = addon.GetBestQuests(true,2)
@@ -414,7 +428,9 @@ function CreatePanel()
                 name = L"Show Missing Quests",
                 type = 'execute',
                 func = function()
+                    panelTitle = L"Missing Quest Log Quests"
                     mode = "missing"
+                    currentFlag = 0
                     textOverride = nil
                     addon.settings.OpenSettings(L'Quest Data')
                 end,
@@ -424,14 +440,86 @@ function CreatePanel()
                 name = L"Show All Available",
                 type = 'execute',
                 func = function()
+                    panelTitle = L"Available Quest Log Quests"
                     mode = "quests"
                     textOverride = nil
+                    currentFlag = 0
                     if not showAllQs then
                         showAllQs = true
                         questText,requestText = addon.GetBestQuests(true,2)
                     end
                     addon.settings.OpenSettings('Quest Data')
                 end,
+            },
+            arrowHeader = {
+                name = L("Quest Log"),
+                type = "header",
+                width = "full",
+                order = 13
+            },
+            showPrep = {
+                order = 11,
+                name = L"Prepared Quests",
+                type = 'execute',
+                func = function()
+                    panelTitle = 'Prepared Quests'
+                    textOverride = nil
+                    currentFlag = 2
+                    _,requestText = addon.CalculateTotalXP(2)
+
+                    addon.settings.OpenSettings('Quest Data')
+                end,
+            },
+            showTotal = {
+                order = 12,
+                name = L"All Quests",
+                type = 'execute',
+                func = function()
+                    panelTitle = L"All Quests"
+                    textOverride = nil
+                    currentFlag = 3
+                    _,requestText = addon.CalculateTotalXP(3)
+
+                    addon.settings.OpenSettings('Quest Data')
+                end,
+            },
+            debugBox = {
+                order = 99,
+                type = 'input',
+                name = "Debug",
+                width = "full",
+                multiline = 6,
+                hidden = function()
+                    return not addon.settings.profile.debug
+                end,
+                confirmText = L"Refresh",
+                -- usage = "Usage string",
+                get = function() return debugText end,
+                set = function(self,text)
+                    local group = addon.currentGuide.group
+                    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+                    local p = "([\r\n]%s*%[)(%d+)(%] = {)"
+                    local db
+                    if _G.QuestieLoader then
+                        db = _G.QuestieLoader:ImportModule("QuestieDB")
+                    end
+                    debugText = text:gsub(p,function(prefix,ids,suffix)
+                        local id = tonumber(ids)
+                        local q = QuestDB[id]
+                        local zone
+                        local qdb = db and db:GetQuest(id)
+                        if q and q.zone then
+                            zone = q.zone
+                        elseif db then
+                            zone = qdb and qdb.Zone or 0
+                        end
+                        --print(zone,id,ids,qdb and qdb.Zone)
+                        if q and zone and zone ~= 0 then
+                            return format('%s%s%s\n    ["zone"] = %d,',prefix,ids,suffix,zone)
+                        end
+                    end)
+                end,
+                --validate = function() return true,SetText() end,
             },
         }
 
@@ -534,13 +622,15 @@ end
 addon.questsDone = {}
 addon.questsAvailable = {}
 
-function addon.CalculateTotalXP(flags)
+function addon.CalculateTotalXP(flags,refresh)
 
     local grp = addon.currentGuide.group
     local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy or {}
     local totalXp = 0
+    local requestFromServer = true
     flags = flags or 0
     local output = bit.band(flags,0x2) == 0x2
+    local reverse = bit.band(flags,0x4) == 0x4
     local ignorePreReqs
     local outputString = {}
     if bit.band(flags,0x1) == 0x1 then
@@ -558,14 +648,21 @@ function addon.CalculateTotalXP(flags)
         qid = qid or quest.Id
         local group = quest.group or ""
         local isAvailable = IsQuestAvailable(quest,qid,ignorePreReqs)
-        if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and (ignorePreReqs or (IsPreReqComplete(quest))) then
+        local preReqCheck = IsPreReqComplete(quest)
+        if reverse then preReqCheck = not preReqCheck end
+        if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and (ignorePreReqs or preReqCheck) then
             groups[group] = true
             local xp = quest.xp or 0
             xp = xp * xpmod
             totalXp = totalXp + xp
             if output then
+                    local qname = ""
+                    if not quest.zone or C_Map.GetAreaInfo(quest.zone) then
+                        qname = addon.GetQuestName(qid)
+                    end
+                    requestFromServer = qname and requestFromServer
                     local s = string.format(L"%dxp %s (%d)", xp,
-                                    addon.GetQuestName(qid) or "", qid)
+                                    qname or "", qid)
                     --table.insert(outputString,s)
                     table.insert(QList,{text = s, id = qid, obj = quest})
                     --addon.comms.PrettyPrint(s)--ok
@@ -628,17 +725,27 @@ function addon.CalculateTotalXP(flags)
         local zoneList = {}
         for _,q in ipairs(QList) do
             local zone = zoneList[q.id] or 0
-            if db and zone == 0 then
-                local qdb = db:GetQuest(q.id)
-                zone = qdb and qdb.Zone or 0
+            if zone == 0 then
+                if q.obj.zone then
+                    zone = q.obj.zone
+                elseif db then
+                    local qdb = db:GetQuest(q.id)
+                    zone = qdb and qdb.Zone or 0
+                    q.obj.zone = zone
+                end
             end
             local l = zoneList[zone] or {}
             zoneList[zone] = l
             table.insert(l, q)
         end
+        local zNotFound = ""
+        if addon.game == "CLASSIC" then
+            zNotFound = L"TBC"
+        end
         for zone,t in pairs(zoneList) do
             if zone and zone ~= 0 then
-                table.insert(outputString,"\n-- "..C_Map.GetAreaInfo(zone).." --")
+                local zt = C_Map.GetAreaInfo(zone) or zNotFound
+                table.insert(outputString,"\n-- "..zt.." --")
             else
                 table.insert(outputString,"\n--")
             end
@@ -646,13 +753,16 @@ function addon.CalculateTotalXP(flags)
                 table.insert(outputString,q.text)
             end
         end
-        textOverride = format(L"Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
+        textOverride = format(L"Total XP: %s\n%s",addon.FormatNumber(totalXp),table.concat(outputString,'\n'))
         if not addon.settings.gui.quest then
             CreatePanel()
         end
-        addon.settings.OpenSettings(L'Quest Data')
+        if not refresh then
+            addon.settings.OpenSettings(L'Quest Data')
+            currentFlag = flags
+        end
     end
-    return math.floor(totalXp)
+    return math.floor(totalXp), not requestFromServer
 end
 
 function addon.ShowMissingQuests(output)

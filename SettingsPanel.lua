@@ -75,6 +75,8 @@ function addon.settings.OpenSettings(panelName)
         local optionsName = fmt("%s/%s", addon.RXPOptions.name, panelName)
 
         -- If sub category, open dedicated standalone window
+        local s = AceConfigDialog:GetStatusTable(optionsName)
+        s.height = 565
         AceConfigDialog:Open(optionsName)
 
         local acdFrame = AceConfigDialog.OpenFrames and

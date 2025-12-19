@@ -592,6 +592,13 @@ end
 
 function addon.GetQuestName(id)
     local questNameCache = RXPCData.questNameCache
+    local keepData
+    if addon.questsDone and addon.questsDone[id] then
+        keepData = true
+        if not questNameCache[id] then
+            questNameCache[id] = RXPData.questNames[id]
+        end
+    end
     if type(id) ~= "number" then return end
     id = GetQuestId(id)
     local name
@@ -599,6 +606,15 @@ function addon.GetQuestName(id)
         "function" then
         local quest = db:GetQuest(id)
         if quest and quest.name then return quest.name end
+    end
+
+    local function CacheQuestName(id,name)
+        if name then
+            questNameCache[id] = name
+            if keepData then
+                RXPData.questNames[id] = name
+            end
+        end
     end
 
     if IsOnQuest(id) then
@@ -609,13 +625,13 @@ function addon.GetQuestName(id)
                     GetQuestLogTitle(i);
                 if questID == id then
                     name = questLogTitleText
-                    if name then questNameCache[id] = name end
+                    CacheQuestName(id,name)
                     return name
                 end
             end
         else
             local name = C_QuestLog.GetTitleForQuestID(id)
-            if name then questNameCache[id] = name end
+            CacheQuestName(id,name)
             return name
         end
     else
@@ -641,11 +657,11 @@ function addon.GetQuestName(id)
                 requests[id] = 0
                 if C_QuestLog.GetQuestInfo then
                     name = C_QuestLog.GetQuestInfo(id)
-                    if name then questNameCache[id] = name end
+                    CacheQuestName(id,name)
                     return questNameCache[id]
                 else
                     name = C_QuestLog.GetTitleForQuestID(id)
-                    if name then questNameCache[id] = name end
+                    CacheQuestName(id,name)
                     return questNameCache[id]
                 end
             elseif not requests[id] then

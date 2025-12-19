@@ -1153,6 +1153,7 @@ function addon:OnInitialize()
     addon.realmData = realmData
 
 
+    RXPData.questNames = RXPData.questNames or {}
     RXPCData.questNameCache = RXPCData.questNameCache or {}
     RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}
     RXPCData.questObjectivesCache[0] = RXPCData.questObjectivesCache[0] or 0
