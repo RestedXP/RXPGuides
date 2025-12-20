@@ -1044,8 +1044,12 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return itemData
     end
 
-    -- itemLevel is generally 5 levels highter than required
-    if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
+    if addon.game == "CLASSIC" then
+        -- Classic: itemLevel is generally 5 levels highter than required
+        if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then print("Ineligible items") return end
+    else
+        if itemMinLevel > addon.player.level + 5 then return end
+    end
 
     -- Need itemID for easier code lookups
     local itemID = GetItemInfoInstant(itemLink)
