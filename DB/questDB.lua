@@ -12,6 +12,7 @@ local PREPGUIDE_HEADER = L"Preparation Guide"
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local backlog = {}
 local preReqCache = {}
+local sortTable = {}
 
 local function OpenSettings(panelName)
     local close
@@ -394,6 +395,30 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
     return outputString,not requestFromServer
 end
 
+local function Get25Quests()
+    if not addon.questLogQuests then
+        addon.GetBestQuests(true)
+    end
+    local qp = addon.settings.profile.questPrio
+    local index = addon.settings.profile.questPrioIndex
+    local t = {}
+    table.wipe(sortTable)
+    local setPrio
+    if not next(qp) then
+        setPrio = true
+    end
+    for i,v in ipairs(addon.questLogQuests) do
+        local text = format("%s (%d)",addon.GetQuestName(v.Id) or "",v.Id)
+        --print(v.Id,text)
+        t[v.Id] = text
+        table.insert(sortTable,v.Id)
+        if setPrio then
+            index[i] = v.Id
+            qp[v.Id] = i
+        end
+    end
+    return t
+end
 
 local CreatePanel
 local requestText = true
@@ -405,7 +430,6 @@ local textOverride
 local currentText = ""
 local debugText
 local currentFlag = 0
-local sortTable = {}
 
 local SetText = function(self,refresh)
     local ctime = GetTime()
@@ -648,30 +672,7 @@ function CreatePanel()
             }
         }
     }
-    local function GetValues()
-        if not addon.questLogQuests then
-            addon.GetBestQuests(true)
-        end
-        local qp = addon.settings.profile.questPrio
-        local index = addon.settings.profile.questPrioIndex
-        local t = {}
-        table.wipe(sortTable)
-        local setPrio
-        if not next(qp) then
-            setPrio = true
-        end
-        for i,v in ipairs(addon.questLogQuests) do
-            local text = format("%s (%d)",addon.GetQuestName(v.Id) or "",v.Id)
-            --print(v.Id,text)
-            t[v.Id] = text
-            table.insert(sortTable,v.Id)
-            if setPrio then
-                index[i] = v.Id
-                qp[v.Id] = i
-            end
-        end
-        return t
-    end
+
     for i = 1,QUEST_LOG_SIZE do
         local d = {
                 order = 10+i,
@@ -680,7 +681,7 @@ function CreatePanel()
                 sorting = sortTable,
                 name = "   " .. i,
                 width = 1.3,
-                values = GetValues,
+                values = Get25Quests,
                 get = function(self)
                     return addon.questLogQuests[i].Id
                 end,
@@ -737,6 +738,9 @@ function addon.functions.requires(self,text,mode,...)
     local step = element.step
     if element.mode == "quest" then
         --local id = tonumber(args[1])
+        if not (addon.settings.profile.questPrio and next(addon.settings.profile.questPrio)) then
+            Get25Quests()
+        end
         local optional = step.optional
         local pass = false
         for _,v in pairs(args) do
