@@ -593,7 +593,9 @@ end
 function addon.GetQuestName(id)
     local questNameCache = RXPCData.questNameCache
     local keepData
-    if addon.questsDone and addon.questsDone[id] then
+    local grp = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy
+    if QuestDB and QuestDB[id] then
         keepData = true
         if not questNameCache[id] then
             questNameCache[id] = RXPData.questNames[id]
