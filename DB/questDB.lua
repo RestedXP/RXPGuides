@@ -211,6 +211,9 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
             obj.itemId = nil
             --obj.previousQuest = nil
         end
+        if (quest == 8309 or quest == 8310) and addon.player.faction == "Horde" and obj["xp/hr"] == 40 then
+            obj["xp/hr"] = 24
+        end
     end
     if not addon.settings.profile.questPrio then
         addon.settings.profile.questPrio = {}
@@ -799,6 +802,7 @@ end
 
 addon.questsDone = {}
 addon.questsAvailable = {}
+addon.preparedQuests = {}
 
 function addon.CalculateTotalXP(flags,refresh)
     preReqCache = {}
@@ -812,7 +816,10 @@ function addon.CalculateTotalXP(flags,refresh)
     local requestFromServer = true
     flags = flags or 0
     local output = bit.band(flags,0x2) == 0x2
-    local reverse = bit.band(flags,0x4) == 0x4
+    local missing = bit.band(flags,0x4) == 0x4
+    if missing and not next(addon.preparedQuests) then
+        addon.CalculateTotalXP(0,true)
+    end
     local ignorePreReqs
     local outputString = {}
     if bit.band(flags,0x1) == 0x1 then
@@ -821,6 +828,7 @@ function addon.CalculateTotalXP(flags,refresh)
         ignorePreReqs = aldor or scryer or 932
     else
         addon.questsDone = {}
+        addon.preparedQuests = {}
     end
     local xpmod = GetXPMods()
     --print(xpmod)
@@ -831,13 +839,16 @@ function addon.CalculateTotalXP(flags,refresh)
         local group = quest.group or ""
         local isAvailable = IsQuestAvailable(quest,qid,ignorePreReqs)
         local preReqCheck = IsPreReqComplete(quest)
-        if reverse then preReqCheck = not preReqCheck end
+        --if reverse then preReqCheck = not preReqCheck end
         preReqCheck = preReqCheck or ignorePreReqs
         if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and preReqCheck then
             groups[group] = true
             local xp = quest.xp or 0
             xp = xp * xpmod
             totalXp = totalXp + xp
+            if not ignorePreReqs then
+                addon.preparedQuests[qid] = totalXp
+            end
             if output then
                     local qname = ""
                     if not quest.zone or C_Map.GetAreaInfo(quest.zone) then
@@ -851,7 +862,9 @@ function addon.CalculateTotalXP(flags,refresh)
                     local s = string.format(L"%dxp %s (%d)", xp,
                                     qname, qid)
                     --table.insert(outputString,s)
-                    table.insert(QList,{text = s, id = qid, obj = quest})
+                    if not missing or not addon.preparedQuests[qid] then
+                        table.insert(QList,{text = s, id = qid, obj = quest})
+                    end
                     --addon.comms.PrettyPrint(s)--ok
             end
         end
