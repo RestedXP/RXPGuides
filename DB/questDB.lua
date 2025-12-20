@@ -5,11 +5,13 @@ local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 local QUEST_LOG_SIZE = 25
 local reloadTimer = 0
 local L = addon.locale.Get
-local panelTitle = "-"
+local defaultTitle = L"Showing expected Quest Log, scroll down to view backup quests"
+local panelTitle = defaultTitle
 local QPRIO_HEADER = L"Quest Priority"
 local PREPGUIDE_HEADER = L"Preparation Guide"
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local backlog = {}
+local preReqCache = {}
 
 local function OpenSettings(panelName)
     local close
@@ -46,6 +48,10 @@ local function GetXPMods()
 end
 
 local function IsPreReqComplete(quest)
+    local qid = quest.Id
+    if preReqCache[qid] ~= nil then
+        return preReqCache[qid]
+    end
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local t = type(quest.previousQuest)
@@ -62,6 +68,7 @@ local function IsPreReqComplete(quest)
                 state = state and IsPreReqFulfilled(id,qLog)
             end
         end
+        preReqCache[qid] = state
         return state
     elseif t == "number" then
         local preReqComplete
@@ -73,8 +80,11 @@ local function IsPreReqComplete(quest)
                 end
             end
         end
-        return preReqComplete or IsPreReqFulfilled(quest.previousQuest,qLog)
+        local state = preReqComplete or IsPreReqFulfilled(quest.previousQuest,qLog)
+        preReqCache[qid] = state
+        return state
     else
+        preReqCache[qid] = true
         return true
     end
 end
@@ -190,6 +200,10 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     if not QuestDB then return end
+    preReqCache = {}
+    if not addon.settings.profile.skipQuest then
+        addon.settings.profile.skipQuest = {}
+    end
     for quest,obj in pairs(QuestDB) do
         if obj.questLog then
             obj.itemAmount = nil
@@ -219,6 +233,9 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
         local xphr2 = k2["xp/hr"] or 0
         local isQuestLog = k1.questLog and k2.questLog
         local gc1,gc2
+        local skip1 = addon.settings.profile.skipQuest[k1.Id]
+        local skip2 = addon.settings.profile.skipQuest[k2.Id]
+
         if QuestDB["groups"] then
             local g1 = QuestDB["groups"][k1.Id]
             local g2 = QuestDB["groups"][k2.Id]
@@ -242,6 +259,10 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
             return true
         elseif qp1 and qp2 and qp1 ~= qp2 and (qp1 <26 or qp2 <26) then
             return qp1 < qp2
+        elseif skip1 and skip1 ~= skip2 then
+            return false
+        elseif skip2 and skip1 ~= skip2 then
+            return true
         elseif xphr1 ~= xphr2 then
             return xphr1 > xphr2
         elseif x1 ~= x2 then
@@ -273,8 +294,16 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
                 if grp and not groups[grp] then
                     groups[grp] = {}
                 end
+                local preReq = true
+                if v.forcePreReq then
+                    preReq = IsPreReqComplete(v)
+                    if not preReq then
+                        addon.settings.profile.skipQuest[v.Id] = 1
+                    end
+                end
+
                 if IsQuestAvailable(v,id) and not v.itemId and
-                    v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
+                    v.questLog and preReq then
                     if QuestDB["groups"] and QuestDB["groups"][id] then
                         local questGroup = QuestDB["groups"][id]
                         if groupCount[questGroup] then
@@ -377,7 +406,6 @@ local currentText = ""
 local debugText
 local currentFlag = 0
 local sortTable = {}
-local defaultTitle = L"Showing expected Quest Log, scroll down to view backup quests"
 
 local SetText = function(self,refresh)
     local ctime = GetTime()
@@ -508,27 +536,15 @@ function CreatePanel()
                     OpenSettings(PREPGUIDE_HEADER)
                 end,
             },
-            showMissing = {
-                order = 15,
-                name = L"Show Missing Quests",
-                type = 'execute',
-                func = function()
-                    panelTitle = L"Missing Quest Log Quests"
-                    mode = "missing"
-                    currentFlag = 0
-                    textOverride = nil
-                    OpenSettings(PREPGUIDE_HEADER)
-                end,
-            },
-            showAllQs = {
+            editPrio = {
                 order = 16,
-                name = L"Set Priority",
+                name = _G.EDIT,
                 type = 'execute',
                 func = function()
                     OpenSettings(QPRIO_HEADER)
                 end,
             },
-            arrowHeader = {
+            Qheader = {
                 name = QUEST_LOG,
                 type = "header",
                 width = "full",
@@ -623,6 +639,7 @@ function CreatePanel()
                 name = L"Use Recommended",
                 type = 'execute',
                 func = function()
+                    table.wipe(addon.settings.profile.skipQuest)
                     table.wipe(addon.settings.profile.questPrio)
                     table.wipe(addon.settings.profile.questPrioIndex)
                     questText,requestText = addon.GetBestQuests(true,2)
@@ -661,7 +678,7 @@ function CreatePanel()
                 type = 'select',
                 style = 'dropdown',
                 sorting = sortTable,
-                name = tostring(i),
+                name = "   " .. i,
                 width = 1.3,
                 values = GetValues,
                 get = function(self)
@@ -780,6 +797,7 @@ addon.questsDone = {}
 addon.questsAvailable = {}
 
 function addon.CalculateTotalXP(flags,refresh)
+    preReqCache = {}
     if not refresh then
         addon.GetBestQuests(true)
     end

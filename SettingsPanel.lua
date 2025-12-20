@@ -677,6 +677,9 @@ function addon.settings:CreateImportOptionsPanel()
                 --Let people purge the data even without any installed guides in case they experience caching issues
                 func = function()
                     addon.db.profile.guides = {}
+                    addon.settings.profile.skipQuest = {}
+                    addon.settings.profile.questPrio = {}
+                    addon.settings.profile.questPrioIndex = {}
                     addon:CreateMetaDataTable(true)
                 end
             },
