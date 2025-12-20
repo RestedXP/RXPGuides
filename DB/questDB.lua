@@ -882,7 +882,7 @@ function addon.CalculateTotalXP(flags,refresh)
     end
     for id, quest in pairs(QuestDB) do
         if type(id) == "number" then
-            if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
+            if not ignorePreReqs and quest.questLog and (addon.IsQuestComplete(id) or quest.completed and addon.IsOnQuest(id)) then
                 if ProcessQuest(quest,id) then
                     addon.questsDone[id] = true
                 end
