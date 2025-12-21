@@ -918,10 +918,9 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Run Guide Configurator"),
                 type = "execute",
                 width = 1.2,
-                func = addon.startHardcoreIntroUI,
-                hidden = addon.game ~= "CLASSIC"
+                func = addon.LaunchConfigurator,
+                hidden = not addon.LaunchConfigurator
             },
-
             generalSettings = {
                 type = "group",
                 name = _G.GENERAL,
@@ -4274,4 +4273,8 @@ function addon.settings:IsEnabled(...)
     end
 
     return true
+end
+
+function addon.settings.LaunchConfigurator()
+    if addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
 end
