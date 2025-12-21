@@ -4276,5 +4276,10 @@ function addon.settings:IsEnabled(...)
 end
 
 function addon.settings.LaunchConfigurator()
-    if addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
+    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
+
+    if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then return end
+
+    if isFirstRun and addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
+
 end
