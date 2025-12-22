@@ -991,13 +991,13 @@ function addon.CompleteStep()
             if element.tag == "collect" then
                 local x = element.qty
                 local id = element.id
-                SendChatMessage(format(".additem %d %d",id,x), "SAY", nil)
+                SendChatMessage(format(".additem %d %d",id,x), "WHISPER", nil, addon.player.name)
             elseif element.tag == "reputation" then
-                SendChatMessage(format(".mod rep %d exalted",element.faction), "SAY", nil)
+                SendChatMessage(format(".mod rep %d exalted",element.faction), "WHISPER", nil, addon.player.name)
             elseif element.tag == "complete" then
-                SendChatMessage(format(".q c %d",element.questId), "SAY", nil)
+                SendChatMessage(format(".q c %d",element.questId), "WHISPER", nil, addon.player.name)
             elseif element.tag == "accept" then
-                SendChatMessage(format(".q a %d",element.questId), "SAY", nil)
+                SendChatMessage(format(".q a %d",element.questId), "WHISPER", nil, addon.player.name)
             end
         end
     end
@@ -1014,15 +1014,22 @@ function addon.Goto()
         cs = RXPCData.currentStep
         table.wipe(mobData)
     end
-    local targets = addon.targeting.GetCurrentTargets()
-    for index,name in ipairs(targets or {}) do
+    local t1,t2,t3 = addon.targeting.GetCurrentTargets()
+    local targetList = {}
+    for _,t in ipairs({t1,t2,t3}) do
+        for _,name in ipairs(t) do
+            table.insert(targetList,name)
+        end
+    end
+
+    for index,name in ipairs(targetList) do
         if not mobData[name] then
             local p = '.go c "%s"'
             if name:find("\"") then
                 p = ".go c '%s'"
             end
             mobData[name] = true
-            SendChatMessage(format(p,name), "SAY", nil)
+            SendChatMessage(format(p,name), "WHISPER", nil, addon.player.name)
             print(name)
             return
         end
@@ -1030,7 +1037,7 @@ function addon.Goto()
 
     local element = addon.arrowFrame.element
     if element then
-        SendChatMessage(format(".go xy %.3f %.3f %d",element.wy,element.wx,element.instance), "SAY", nil)
+        SendChatMessage(format(".go xy %.3f %.3f %d",element.wy,element.wx,element.instance), "WHISPER", nil, addon.player.name)
         return
     end
 

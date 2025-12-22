@@ -84,6 +84,10 @@ function addon.settings.OpenSettings(panelName)
             -- Successfully opened sub menu
             return
         end -- else, fall through to generic handling
+    elseif not _G.Settings then
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        return
     end
 
     local category = _G.Settings.GetCategory(addon.RXPOptions.name)

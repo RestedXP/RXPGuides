@@ -2768,7 +2768,10 @@ function addon.functions.collectmultiple(self, ...)
             e.rawtext = nil
             e.tooltipText = nil
             e.dynamicText = false
-            max = max + e.numRequired
+            local questId = e.questId
+            if not (questId and IsQuestTurnedIn(questId)) then
+                max = max + e.numRequired
+            end
         end
     end
 
@@ -3814,6 +3817,11 @@ function addon.functions.abandon(self, text, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         -- element.tag = "abandon"
+
+        if text and text:sub(1,1) == "*" then
+            text = text:sub(2,-1)
+            element.icon = addon.icons.turnin
+        end
         local ids = {...}
         element.ids = {}
         for n,id in ipairs(ids) do
