@@ -918,8 +918,8 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Run Guide Configurator"),
                 type = "execute",
                 width = 1.2,
-                func = addon.LaunchConfigurator,
-                hidden = not addon.LaunchConfigurator
+                func = addon.ui.v2.LaunchConfigurator,
+                hidden = not (addon.ui and addon.ui.v2)
             },
             generalSettings = {
                 type = "group",
@@ -4273,26 +4273,4 @@ function addon.settings:IsEnabled(...)
     end
 
     return true
-end
-
-function addon.settings.LaunchConfigurator()
-    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
-
-    if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then return end
-
-    if isFirstRun and addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
-
-    -- Set softcore or hardcore
-    -- Proxmity Scanning (deprecated)
-    -- Auction House
-    -- Group Quests (turn into Group Settings)
-    -- Dungeon selector
-    --- Dungeons with bonuses and weighting
-    --- Recommendations
-
-    if addon.settings.profile.hardcore then
-        addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
-    else
-        addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
-    end
 end

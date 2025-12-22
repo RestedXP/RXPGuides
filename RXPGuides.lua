@@ -1360,7 +1360,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         end)
     end
 
-    addon.settings.LaunchConfigurator()
+    addon.ui.v2.LaunchConfigurator()
 
     addon.targeting:Setup()
 end
