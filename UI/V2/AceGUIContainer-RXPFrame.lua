@@ -1,3 +1,5 @@
+local addonName, addon = ...
+
 local AceGUI = LibStub("AceGUI-3.0")
 
 -- Copied from libs\AceGUI-3.0\widgets\AceGUIContainer-Window.lua, version 8
@@ -81,7 +83,7 @@ do
 
     local function OnAcquire(self)
         self.frame:SetParent(UIParent)
-        self.frame:SetFrameStrata("FULLSCREEN_DIALOG")
+        self.frame:SetFrameStrata("BACKGROUND")
 
         self:ApplyStatus()
         self:EnableResize(true)
@@ -174,7 +176,7 @@ do
         frame:EnableMouse()
         frame:SetMovable(true)
         frame:SetResizable(true)
-        frame:SetFrameStrata("FULLSCREEN_DIALOG")
+        frame:SetFrameStrata("BACKGROUND")
         frame:SetScript("OnMouseDown", frameOnMouseDown)
 
         frame:SetScript("OnShow", frameOnShow)
@@ -188,77 +190,90 @@ do
 
         frame:SetToplevel(true)
 
-        local titlebg = frame:CreateTexture(nil, "BACKGROUND")
-        titlebg:SetTexture(251966) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Title-Background
-        titlebg:SetPoint("TOPLEFT", 9, -6)
-        titlebg:SetPoint("BOTTOMRIGHT", frame, "TOPRIGHT", -28, -24)
+        -- local titlebg = frame:CreateTexture("RXPAce-titlebg", "BACKGROUND")
+        -- titlebg:SetTexture(251966) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Title-Background
+        -- titlebg:SetPoint("TOPLEFT", 9, -6)
+        -- titlebg:SetPoint("BOTTOMRIGHT", frame, "TOPRIGHT", -28, -24)
 
-        local dialogbg = frame:CreateTexture(nil, "BACKGROUND")
-        dialogbg:SetTexture(137056) -- Interface\\Tooltips\\UI-Tooltip-Background
-        dialogbg:SetPoint("TOPLEFT", 8, -24)
-        dialogbg:SetPoint("BOTTOMRIGHT", -6, 8)
-        dialogbg:SetVertexColor(0, 0, 0, .75)
+        -- local dialogbg = frame:CreateTexture("RXPAce-dialogbg", "BACKGROUND")
+        -- dialogbg:SetTexture(137056) -- Interface\\Tooltips\\UI-Tooltip-Background
+        -- dialogbg:SetPoint("TOPLEFT", 8, -24)
+        -- dialogbg:SetPoint("BOTTOMRIGHT", -6, 8)
+        -- dialogbg:SetVertexColor(0, 0, 0, .75)
 
-        local topleft = frame:CreateTexture(nil, "BORDER")
-        topleft:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
-        topleft:SetWidth(64)
-        topleft:SetHeight(64)
-        topleft:SetPoint("TOPLEFT")
-        topleft:SetTexCoord(0.501953125, 0.625, 0, 1)
+        local topleft = frame:CreateTexture("RXPAce-topleft", "BORDER")
+        topleft:SetTexture("Interface\\FriendsFrame\\UI-FriendsFrame-TopLeft")
+        -- topleft:SetWidth(64)
+        -- topleft:SetHeight(64)
+        topleft:SetPoint("TOPLEFT", -29, 18)
+        --topleft:SetTexCoord(0, 1, 0.064, 1)
 
-        local topright = frame:CreateTexture(nil, "BORDER")
-        topright:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
-        topright:SetWidth(64)
-        topright:SetHeight(64)
-        topright:SetPoint("TOPRIGHT")
-        topright:SetTexCoord(0.625, 0.75, 0, 1)
+        local topLeftIcon = frame:CreateTexture("RXPAce-topLeftIcon", "OVERLAY", nil, -1)
+        topLeftIcon:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
+        topLeftIcon:SetWidth(42)
+        topLeftIcon:SetHeight(42)
+        topLeftIcon:SetPoint("TOPLEFT", topleft, 16, -11)
 
-        local top = frame:CreateTexture(nil, "BORDER")
-        top:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
-        top:SetHeight(64)
-        top:SetPoint("TOPLEFT", topleft, "TOPRIGHT")
-        top:SetPoint("TOPRIGHT", topright, "TOPLEFT")
-        top:SetTexCoord(0.25, 0.369140625, 0, 1)
+        local topLeftIconBg = frame:CreateTexture("RXPAce-topLeftIconbg", "BACKGROUND", nil)
+        topLeftIconBg:SetTexture(addon.GetTexture("rxp-btn-blank-32"))
+        topLeftIconBg:SetWidth(66)
+        topLeftIconBg:SetHeight(66)
+        topLeftIconBg:SetPoint("CENTER", topLeftIcon, 0, -3)
 
-        local bottomleft = frame:CreateTexture(nil, "BORDER")
+        local topright = frame:CreateTexture("RXPAce-topright", "BORDER")
+        topright:SetTexture("Interface\\FriendsFrame\\UI-FriendsFrame-TopRight")
+        topright:SetPoint("TOPRIGHT", 29, 18)
+        -- TODO maybe Trim out empty space around border, messes up circular icon for TopLeft
+        -- topright:SetTexCoord(0, 0.77, 0.064, 1)
+
+        -- local top = frame:CreateTexture("RXPAce-top", "BORDER")
+        -- top:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
+        -- top:SetHeight(64)
+        -- top:SetPoint("TOPLEFT", topleft, "TOPRIGHT")
+        -- top:SetPoint("TOPRIGHT", topright, "TOPLEFT")
+        -- top:SetTexCoord(0.25, 0.369140625, 0, 1)
+
+        local bottomleft = frame:CreateTexture("RXPAce-bottomleft", "BORDER")
         bottomleft:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
         bottomleft:SetWidth(64)
         bottomleft:SetHeight(64)
         bottomleft:SetPoint("BOTTOMLEFT")
         bottomleft:SetTexCoord(0.751953125, 0.875, 0, 1)
 
-        local bottomright = frame:CreateTexture(nil, "BORDER")
+        local bottomright = frame:CreateTexture("RXPAce-bottomright", "BORDER")
         bottomright:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
         bottomright:SetWidth(64)
         bottomright:SetHeight(64)
         bottomright:SetPoint("BOTTOMRIGHT")
         bottomright:SetTexCoord(0.875, 1, 0, 1)
 
-        local bottom = frame:CreateTexture(nil, "BORDER")
-        bottom:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
-        bottom:SetHeight(64)
-        bottom:SetPoint("BOTTOMLEFT", bottomleft, "BOTTOMRIGHT")
-        bottom:SetPoint("BOTTOMRIGHT", bottomright, "BOTTOMLEFT")
-        bottom:SetTexCoord(0.376953125, 0.498046875, 0, 1)
+        -- local bottom = frame:CreateTexture("RXPAce-bottom", "BORDER")
+        -- bottom:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
+        -- bottom:SetHeight(64)
+        -- bottom:SetPoint("BOTTOMLEFT", bottomleft, "BOTTOMRIGHT")
+        -- bottom:SetPoint("BOTTOMRIGHT", bottomright, "BOTTOMLEFT")
+        -- bottom:SetTexCoord(0.376953125, 0.498046875, 0, 1)
 
-        local left = frame:CreateTexture(nil, "BORDER")
-        left:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
-        left:SetWidth(64)
-        left:SetPoint("TOPLEFT", topleft, "BOTTOMLEFT")
-        left:SetPoint("BOTTOMLEFT", bottomleft, "TOPLEFT")
-        left:SetTexCoord(0.001953125, 0.125, 0, 1)
+        -- local left = frame:CreateTexture("RXPAce-left", "BORDER")
+        -- left:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
+        -- left:SetWidth(64)
+        -- left:SetPoint("TOPLEFT", topleft, "BOTTOMLEFT")
+        -- left:SetPoint("BOTTOMLEFT", bottomleft, "TOPLEFT")
+        -- left:SetTexCoord(0.001953125, 0.125, 0, 1)
 
-        local right = frame:CreateTexture(nil, "BORDER")
-        right:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
-        right:SetWidth(64)
-        right:SetPoint("TOPRIGHT", topright, "BOTTOMRIGHT")
-        right:SetPoint("BOTTOMRIGHT", bottomright, "TOPRIGHT")
-        right:SetTexCoord(0.1171875, 0.2421875, 0, 1)
+        -- local right = frame:CreateTexture("RXPAce-right", "BORDER")
+        -- right:SetTexture(251963) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Border
+        -- right:SetWidth(64)
+        -- right:SetPoint("TOPRIGHT", topright, "BOTTOMRIGHT")
+        -- right:SetPoint("BOTTOMRIGHT", bottomright, "TOPRIGHT")
+        -- right:SetTexCoord(0.1171875, 0.2421875, 0, 1)
 
         local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
         close:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-UP")
         close:SetPushedTexture("Interface\\Buttons\\UI-MinusButton-Down")
-        close:SetPoint("TOPRIGHT", 2, 1)
+        close:SetWidth(26)
+        close:SetHeight(26)
+        close:SetPoint("TOPRIGHT", 0, 0)
         close:SetScript("OnClick", closeOnClick)
         self.closebutton = close
         close.obj = self
