@@ -5,7 +5,9 @@ function addon.ui.v2.LaunchConfigurator()
 
     if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then return end
 
-    if isFirstRun and addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
+    if false and isFirstRun and addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
+
+    addon.ui.v2:GetBrandedFrame("RXPConfigurator")
 
     -- Set softcore or hardcore
     -- Proxmity Scanning (deprecated)

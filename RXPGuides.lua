@@ -1184,6 +1184,7 @@ function addon:OnInitialize()
         pcall(_G.RXPOnInitialize)
     end
 
+    addon.ui.v2:Initialize()
     addon:ImportCustomThemes()
     addon:LoadActiveTheme()
     addon.settings:UpdateMinimapButton()
