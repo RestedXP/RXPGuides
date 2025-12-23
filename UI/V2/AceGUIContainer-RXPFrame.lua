@@ -34,14 +34,18 @@ do
 
     local function titleOnMouseDown(this)
         this:GetParent():StartMoving()
+
         AceGUI:ClearFocus()
     end
 
     local function frameOnMouseUp(this)
         local frame = this:GetParent()
+
         frame:StopMovingOrSizing()
+
         local self = frame.obj
         local status = self.status or self.localstatus
+
         status.width = frame:GetWidth()
         status.height = frame:GetHeight()
         status.top = frame:GetTop()
@@ -78,6 +82,7 @@ do
     local function OnAcquire(self)
         self.frame:SetParent(UIParent)
         self.frame:SetFrameStrata("FULLSCREEN_DIALOG")
+
         self:ApplyStatus()
         self:EnableResize(true)
         self:Show()
@@ -85,12 +90,14 @@ do
 
     local function OnRelease(self)
         self.status = nil
+
         for k in pairs(self.localstatus) do self.localstatus[k] = nil end
     end
 
     -- called to set an external table to store status in
     local function SetStatusTable(self, status)
         assert(type(status) == "table")
+
         self.status = status
         self:ApplyStatus()
     end
@@ -98,8 +105,10 @@ do
     local function ApplyStatus(self)
         local status = self.status or self.localstatus
         local frame = self.frame
+
         self:SetWidth(status.width or 700)
         self:SetHeight(status.height or 500)
+
         if status.top and status.left then
             frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
             frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
@@ -111,7 +120,9 @@ do
     local function OnWidthSet(self, width)
         local content = self.content
         local contentwidth = width - 34
+
         if contentwidth < 0 then contentwidth = 0 end
+
         content:SetWidth(contentwidth)
         content.width = contentwidth
     end
@@ -119,13 +130,16 @@ do
     local function OnHeightSet(self, height)
         local content = self.content
         local contentheight = height - 57
+
         if contentheight < 0 then contentheight = 0 end
+
         content:SetHeight(contentheight)
         content.height = contentheight
     end
 
     local function EnableResize(self, state)
         local func = state and "Show" or "Hide"
+
         self.sizer_se[func](self.sizer_se)
         self.sizer_s[func](self.sizer_s)
         self.sizer_e[func](self.sizer_e)
@@ -134,6 +148,7 @@ do
     local function Constructor()
         local frame = CreateFrame("Frame", nil, UIParent)
         local self = {}
+
         self.type = "Window"
 
         self.Hide = Hide
@@ -151,6 +166,7 @@ do
         self.localstatus = {}
 
         self.frame = frame
+
         frame.obj = self
         frame:SetWidth(700)
         frame:SetHeight(500)
@@ -163,11 +179,13 @@ do
 
         frame:SetScript("OnShow", frameOnShow)
         frame:SetScript("OnHide", frameOnClose)
+
         if frame.SetResizeBounds then -- WoW 10.0
             frame:SetResizeBounds(240, 240)
         else
             frame:SetMinResize(240, 240)
         end
+
         frame:SetToplevel(true)
 
         local titlebg = frame:CreateTexture(nil, "BACKGROUND")
