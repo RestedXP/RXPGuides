@@ -106,6 +106,7 @@ addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
 local cacheVersion = 27
 local L = addon.locale.Get
+local locale = GetLocale()
 
 if string.match(addon.release, 'project') then
     addon.release = L('Development')
@@ -1155,6 +1156,11 @@ function addon:OnInitialize()
 
     RXPData.questNames = RXPData.questNames or {}
     RXPCData.questNameCache = RXPCData.questNameCache or {}
+    if locale ~= RXPData.questNames['locale'] then
+        RXPData.questNames = {}
+        RXPData.questNames['locale'] = locale
+        RXPCData.questNameCache = {}
+    end
     RXPCData.questObjectivesCache = RXPCData.questObjectivesCache or {}
     RXPCData.questObjectivesCache[0] = RXPCData.questObjectivesCache[0] or 0
 

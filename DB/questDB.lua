@@ -571,6 +571,14 @@ function CreatePanel()
                     OpenSettings(QPRIO_HEADER)
                 end,
             },
+            misingQLog = {
+                order = 15.5,
+                name = L"Missing",
+                type = 'execute',
+                func = function()
+                    RXP.CalculateTotalXP(15)
+                end,
+            },
             Qheader = {
                 name = QUEST_LOG,
                 type = "header",
@@ -588,6 +596,14 @@ function CreatePanel()
                     _,requestText = addon.CalculateTotalXP(2)
 
                     OpenSettings("Preparation Guide")
+                end,
+            },
+            notPrep = {
+                order = 11.5,
+                name = L"Not Prepared",
+                type = 'execute',
+                func = function()
+                    RXP.CalculateTotalXP(7)
                 end,
             },
             showTotal = {
@@ -682,7 +698,7 @@ function CreatePanel()
                 type = 'select',
                 style = 'dropdown',
                 sorting = sortTable,
-                name = "   " .. i,
+                name = "  " .. i,
                 width = 1.3,
                 values = Get25Quests,
                 get = function(self)
@@ -817,6 +833,7 @@ function addon.CalculateTotalXP(flags,refresh)
     flags = flags or 0
     local output = bit.band(flags,0x2) == 0x2
     local missing = bit.band(flags,0x4) == 0x4
+    local qLogOnly = bit.band(flags,0x8) == 0x8
     if missing and not next(addon.preparedQuests) then
         addon.CalculateTotalXP(0,true)
     end
@@ -841,7 +858,7 @@ function addon.CalculateTotalXP(flags,refresh)
         local preReqCheck = IsPreReqComplete(quest)
         --if reverse then preReqCheck = not preReqCheck end
         preReqCheck = preReqCheck or ignorePreReqs
-        if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and preReqCheck then
+        if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and preReqCheck and (not qLogOnly or quest.questLog) then
             groups[group] = true
             local xp = quest.xp or 0
             xp = xp * xpmod
@@ -862,7 +879,7 @@ function addon.CalculateTotalXP(flags,refresh)
                     local s = string.format(L"%dxp %s (%d)", xp,
                                     qname, qid)
                     --table.insert(outputString,s)
-                    if not missing or not addon.preparedQuests[qid] then
+                    if not (missing and addon.preparedQuests[qid]) then
                         table.insert(QList,{text = s, id = qid, obj = quest})
                     end
                     --addon.comms.PrettyPrint(s)--ok
@@ -953,7 +970,16 @@ function addon.CalculateTotalXP(flags,refresh)
                 table.insert(outputString,q.text)
             end
         end
-        textOverride = format(L"Total XP: %s\n%s",addon.FormatNumber(totalXp),table.concat(outputString,'\n'))
+        if missing then
+            if qLogOnly then
+                panelTitle = L"Quest Log Quests not yet prepared"
+            else
+                panelTitle = L"Quests not yet prepared"
+            end
+            textOverride = table.concat(outputString,'\n')
+        else
+            textOverride = format(L"Total XP: %s\n%s",addon.FormatNumber(totalXp),table.concat(outputString,'\n'))
+        end
         if not addon.settings.gui.quest then
             CreatePanel()
         end
