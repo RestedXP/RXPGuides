@@ -256,6 +256,8 @@ do
         right:SetTexCoord(0.1171875, 0.2421875, 0, 1)
 
         local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+        close:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-UP")
+        close:SetPushedTexture("Interface\\Buttons\\UI-MinusButton-Down")
         close:SetPoint("TOPRIGHT", 2, 1)
         close:SetScript("OnClick", closeOnClick)
         self.closebutton = close
