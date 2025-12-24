@@ -205,15 +205,22 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
     if not addon.settings.profile.skipQuest then
         addon.settings.profile.skipQuest = {}
     end
+    QuestDB[addon.player.faction] = QuestDB[addon.player.faction] or {}
     for quest,obj in pairs(QuestDB) do
         if obj.questLog then
             obj.itemAmount = nil
             obj.itemId = nil
             --obj.previousQuest = nil
         end
-        if (quest == 8309 or quest == 8310) and addon.player.faction == "Horde" and obj["xp/hr"] == 40 then
-            obj["xp/hr"] = 24
+        if QuestDB[addon.player.faction] then
+            local fquest = QuestDB[addon.player.faction][quest]
+            if fquest then
+                for k,v in pairs(fquest) do
+                    obj[k] = v
+                end
+            end
         end
+
     end
     if not addon.settings.profile.questPrio then
         addon.settings.profile.questPrio = {}
@@ -368,7 +375,7 @@ function addon.GetBestQuests(refreshQuestDB,output,silent)
     if output ~= 0 then
         for k, v in ipairs(qDB) do
             local id = v.Id
-            local qname = addon.GetQuestName(id)
+            local qname = addon.GetQuestName(id) or v.name
             if not qname then
                 backlog[v.Id] = true
                 requestFromServer = false
@@ -411,7 +418,7 @@ local function Get25Quests()
         setPrio = true
     end
     for i,v in ipairs(addon.questLogQuests) do
-        local text = format("%s (%d)",addon.GetQuestName(v.Id) or "",v.Id)
+        local text = format("%s (%d)",addon.GetQuestName(v.Id) or v.name or "",v.Id)
         --print(v.Id,text)
         t[v.Id] = text
         table.insert(sortTable,v.Id)
@@ -438,16 +445,21 @@ local SetText = function(self,refresh)
     local ctime = GetTime()
     local delay = 0.5
     if currentFlag > 1 then
-        delay = 5
+        delay = 1.5
     end
 
     if next(backlog) and ctime - requestTimer > delay then
         requestTimer = ctime
         local d = {}
+        local c = 0
         for quest in pairs(backlog) do
             local n = addon.GetQuestName(quest)
+            c = c + 1
             if n then
                 table.insert(d,quest)
+            end
+            if c > 3 then
+                break
             end
         end
         local update
@@ -644,6 +656,7 @@ function CreatePanel()
                         local q = QuestDB[id]
                         local zone
                         local qdb = db and db:GetQuest(id)
+                        local name = addon.GetQuestName(id)
                         if q and q.zone then
                             zone = q.zone
                         elseif db then
@@ -651,8 +664,13 @@ function CreatePanel()
                         end
                         --print(zone,id,ids,qdb and qdb.Zone)
                         if q and zone and zone ~= 0 then
-                            return format('%s%s%s\n    ["zone"] = %d,',prefix,ids,suffix,zone)
+                            --return format('%s%s%s\n    ["zone"] = %d,',prefix,ids,suffix,zone)
                         end
+                        local separator = "'"
+                        if name:find("'") then
+                            separator = '"'
+                        end
+                        return format('%s%s%s\n    ["name"] = %s%s%s,',prefix,ids,suffix,separator,name,separator)
                     end)
                 end,
                 --validate = function() return true,SetText() end,
@@ -869,7 +887,7 @@ function addon.CalculateTotalXP(flags,refresh)
             if output then
                     local qname = ""
                     if not quest.zone or C_Map.GetAreaInfo(quest.zone) then
-                        qname = addon.GetQuestName(qid)
+                        qname = addon.GetQuestName(qid) or quest.name
                     end
                     if not qname then
                         requestFromServer = false

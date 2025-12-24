@@ -119,20 +119,25 @@ events.zoneskip = zoneEvents
 events.subzone = zoneEvents
 events.subzoneskip = zoneEvents
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-
-if C_EventUtils and C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
-   tinsert(zoneEvents,"ZONE_CHANGED_INDOORS")
-end
-
 local gossipConfirm
-if C_EventUtils and C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
-    gossipConfirm = "GOSSIP_CONFIRM"
-end
 local PI_Hide
-if C_EventUtils and C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
-    PI_Hide = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
-end
+local LSIT
+if C_EventUtils then
+    if C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
+        tinsert(zoneEvents,"ZONE_CHANGED_INDOORS")
+    end
 
+    if C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
+        gossipConfirm = "GOSSIP_CONFIRM"
+    end
+    if C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
+        PI_Hide = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
+    end
+
+    if C_EventUtils.IsEventValid("LEARNED_SPELL_IN_TAB") then
+        LSIT = "LEARNED_SPELL_IN_TAB"
+    end
+end
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
 events.gossip = {"GOSSIP_SHOW", PI_Hide, gossipConfirm}
 events.isQuestOffered = events.gossip
@@ -140,7 +145,7 @@ events.gossipoption = events.skipgossip
 events.skipgossipid = {"GOSSIP_SHOW",gossipConfirm}
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.exitvehicle = events.vehicle
-events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
+events.skill = {"SKILL_LINES_CHANGED", LSIT}
 events.emote = "PLAYER_TARGET_CHANGED"
 events.collectmount = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.collecttoy = "TOYS_UPDATED"
@@ -595,11 +600,9 @@ function addon.GetQuestName(id)
     local keepData
     local grp = addon.currentGuide.group
     local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy
+
     if QuestDB and QuestDB[id] then
         keepData = true
-        if not questNameCache[id] then
-            questNameCache[id] = RXPData.questNames[id]
-        end
     end
     if type(id) ~= "number" then return end
     id = GetQuestId(id)
@@ -612,11 +615,16 @@ function addon.GetQuestName(id)
 
     local function CacheQuestName(id,name)
         if name then
-            questNameCache[id] = name
             if keepData then
                 RXPData.questNames[id] = name
+            else
+                questNameCache[id] = name
             end
         end
+    end
+
+    local function GetCachedName(id)
+        return RXPData.questNames[id] or RXPCData.questNameCache[id]
     end
 
     if IsOnQuest(id) then
@@ -660,23 +668,23 @@ function addon.GetQuestName(id)
                 if C_QuestLog.GetQuestInfo then
                     name = C_QuestLog.GetQuestInfo(id)
                     CacheQuestName(id,name)
-                    return questNameCache[id]
+                    return GetCachedName(id)
                 else
                     name = C_QuestLog.GetTitleForQuestID(id)
                     CacheQuestName(id,name)
-                    return questNameCache[id]
+                    return GetCachedName(id)
                 end
             elseif not requests[id] then
                 requests[id] = GetTime()
             elseif ctime - requests[id] <= 3 then
-                return questNameCache[id]
+                return GetCachedName(id)
             else
                 requests[id] = GetTime()
             end
             nrequests = nrequests + 1
 
         end
-        return questNameCache[id]
+        return GetCachedName(id)
     end
 end
 

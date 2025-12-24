@@ -3,3 +3,4 @@ Guides/Import.lua
 .vscode/settings.json
 Scripts/*.csv
 .vscode/
+.github/copilot-instructions.md

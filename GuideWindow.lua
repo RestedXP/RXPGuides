@@ -769,7 +769,7 @@ function addon.SetStep(n, n2, loopback)
                 stepframe:SetPoint("BOTTOMLEFT", UIParent, 0, 0)
             end
             --TODO: Save window position
-            stepframe:SetWidth(200)
+            stepframe:SetWidth(230)
             stepframe:SetMovable(true)
             stepframe:EnableMouse(true)
             stepframe:SetClampedToScreen(true)
