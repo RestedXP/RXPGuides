@@ -767,12 +767,14 @@ function addon.functions.requires(self,text,mode,...)
             element.reverse = true
             element.mode = "quest"
         end
+        element.optional = addon.step.optional
         return element
     end
 
     local element = self.element
     local args = element.args
     local step = element.step
+    local guide = addon.currentGuide
     if element.mode == "quest" then
         --local id = tonumber(args[1])
         if not (addon.settings.profile.questPrio and next(addon.settings.profile.questPrio)) then
@@ -783,28 +785,34 @@ function addon.functions.requires(self,text,mode,...)
         for _,v in pairs(args) do
             local id = tonumber(v)
             id = addon.GetQuestId(id)
+            local isActive = addon.IsGuideQuestActive(id)
             if id then
-                pass = pass or addon.IsGuideQuestActive(id)
+                if element.reverse then
+                    addon.disabledQuests[id] = isActive
+                else
+                    addon.disabledQuests[id] = not isActive
+                end
+                pass = pass or isActive
             end
         end
         if element.reverse then
             pass = not pass
         end
-
+--addon.disabledQuests[id]
         if not pass then
-            if not (optional and step.completed) then
+            if not step.completed then
                 step.completed = true
                 --step.hidewindow = true
                 step.optional = true
                 addon.updateSteps = true
                 element.text = L"Step skipped: This is part of a quest you don't have"
             end
-        elseif optional then
+        elseif optional and not element.optional then
             --step.hidewindow = false
             addon.updateSteps = true
             step.optional = nil
         end
-        if addon.settings.profile.disableAutoSkip then
+        if addon.settings.profile.disableAutoSkip and not element.optional then
             step.optional = nil
         elseif optional ~= step.optional and GetTime() - reloadTimer > 60 then
             addon:ScheduleTask(addon.ReloadGuide,true)

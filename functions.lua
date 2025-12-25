@@ -3354,9 +3354,9 @@ function addon.functions.mountcount(self, ...)
             addon.updateSteps = true
             step.completed = true
             if operator < 0 then
-                element.tooltipText = "Step skipped: You already have the required item for this step"
+                element.tooltipText = L"Step skipped: You already have the required item for this step"
             else
-                element.tooltipText = "Step skipped: You don't have the required item for this step"
+                element.tooltipText = L"Step skipped: You don't have the required item for this step"
             end
         end
     elseif step.active then
@@ -3474,7 +3474,7 @@ function addon.functions.reputation(self, ...)
         elseif step.active and not addon.isHidden then
             addon.updateSteps = true
             step.completed = true
-             self.element.tooltipText = "Step skipped: Reputation condition not met"
+             self.element.tooltipText = L"Step skipped: Reputation condition not met"
         end
     end
 end
@@ -3761,9 +3761,9 @@ function addon.functions.train(self, ...)
             addon.updateSteps = true
             if not element.text then
                 if element.reverse then
-                    element.tooltipText = fmt("Step skipped: You don't have the required spell or ability (%s)",element.title or "")
+                    element.tooltipText = fmt(L"Step skipped: You don't have the required spell or ability (%s)",element.title or "")
                 else
-                    element.tooltipText = fmt("Step skipped: You already have the required spell or ability (%s)",element.title or "")
+                    element.tooltipText = fmt(L"Step skipped: You already have the required spell or ability (%s)",element.title or "")
                 end
             end
         else
@@ -3946,7 +3946,7 @@ function addon.functions.petfamily(self, text, ...)
     if self.element.step.active and not pass then
         self.element.step.completed = true
         addon.updateSteps = true
-        self.element.tooltipText = "Step skipped: Your pet family can't learn this spell"
+        self.element.tooltipText = L"Step skipped: Your pet family can't learn this spell"
     end
 end
 
@@ -3980,7 +3980,7 @@ function addon.functions.areapoiexists(self, text, zone, ...)
     local event = text
     local step = element.step
     if event ~= "WindowUpdate" and step.active and not addon.settings.profile.disableAutoSkip and (not exists) == not element.reverse and not addon.isHidden then
-        element.tooltipText = "Step skipped: Quest unavailable today"
+        element.tooltipText = L"Step skipped: Quest unavailable today"
         step.completed = true
         addon.updateSteps = true
     elseif step.active and not step.completed then
@@ -4037,7 +4037,7 @@ function addon.functions.questcount(self, text, count, ...)
 
     local step = element.step
     if event ~= "WindowUpdate" and step.active and not addon.settings.profile.disableAutoSkip and (count < element.total) == not element.reverse and not addon.isHidden then
-        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        --element.tooltipText = L"Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
     elseif step.active and not step.completed then
@@ -4079,7 +4079,7 @@ function addon.functions.isQuestComplete(self, ...)
     if event ~= "WindowUpdate" and isCompleted and not addon.settings.profile.disableAutoSkip and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
-        element.tooltipText = "Step skipped: Missing pre-requisites"
+        element.tooltipText = L"Step skipped: Missing pre-requisites"
     elseif not step.completed then
         element.tooltipText = nil
     end
@@ -4127,7 +4127,7 @@ function addon.functions.isOnQuest(self, text, ...)
 
 
     if event ~= "WindowUpdate" and not addon.settings.profile.disableAutoSkip and (not onQuest) == not element.reverse and not addon.isHidden then
-        element.tooltipText = "Step skipped: Missing pre-requisites"
+        element.tooltipText = L"Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
     elseif not step.completed then
@@ -4195,7 +4195,11 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     if event ~= "WindowUpdate" and not questTurnedIn and not addon.settings.profile.disableAutoSkip and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
-        element.tooltipText = "Step skipped: Missing pre-requisites"
+        if element.reverse then
+            element.tooltipText = L"Step skipped: Quest already turned in"
+        else
+            element.tooltipText = L"Step skipped: Missing pre-requisites"
+        end
     elseif not step.completed then
         element.tooltipText = nil
     end
@@ -5747,9 +5751,9 @@ function addon.functions.itemcount(self, ...)
             addon.updateSteps = true
             step.completed = true
             if operator < 0 then
-                element.tooltipText = "Step skipped: You already have the required item for this step"
+                element.tooltipText = L"Step skipped: You already have the required item for this step"
             else
-                element.tooltipText = "Step skipped: You don't have the required item for this step"
+                element.tooltipText = L"Step skipped: You don't have the required item for this step"
             end
         end
     elseif step.active then
@@ -7423,7 +7427,7 @@ function addon.functions.isInScenario(self, ...)
     if event ~= "WindowUpdate" then
         local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
         if step.active and not addon.settings.profile.disableAutoSkip and not addon.isHidden and (not scenarioInfo or scenarioInfo.scenarioID ~= element.scenario) then
-            element.tooltipText = "Step skipped: Wrong scenario"
+            element.tooltipText = L"Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
         elseif step.active and not step.completed then
@@ -7449,7 +7453,7 @@ function addon.functions.enterScenario(self, ...)
     if event ~= "WindowUpdate" then
         local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
         if step.active and not addon.settings.profile.disableAutoSkip and not addon.isHidden and scenarioInfo and scenarioInfo.scenarioID == element.scenario then
-            element.tooltipText = "Step skipped: Wrong scenario"
+            element.tooltipText = L"Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
         elseif step.active and not step.completed then
@@ -7522,7 +7526,7 @@ function addon.functions.dailyhub(self, text, hub, poi, arg1)
     if element.arg1 then match = not match end
 
     if not addon.settings.profile.disableAutoSkip and not addon.isHidden and not match then
-        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        --element.tooltipText = L"Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
     elseif not step.completed then
@@ -7557,7 +7561,7 @@ function addon.functions.vale(self, text, poi, arg1)
     if element.arg1 then match = not match end
 
     if not addon.settings.profile.disableAutoSkip and not addon.isHidden and not match then
-        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        --element.tooltipText = L"Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
     elseif not step.completed then
@@ -7621,7 +7625,7 @@ function addon.functions.isQuestOffered(self, text, npc, ...)
                 end
             end
             if not match then
-                element.tooltipText = not element.found and "Step skipped: Quest is not being offered"
+                element.tooltipText = not element.found andL"Step skipped: Quest is not being offered"
                 step.completed = true
                 addon.updateSteps = true
             end
