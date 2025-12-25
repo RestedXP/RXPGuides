@@ -408,6 +408,7 @@ end
 local function Get25Quests()
     if not addon.questLogQuests then
         addon.GetBestQuests(true)
+        addon.CalculateTotalXP(0,true)
     end
     local qp = addon.settings.profile.questPrio
     local index = addon.settings.profile.questPrioIndex
