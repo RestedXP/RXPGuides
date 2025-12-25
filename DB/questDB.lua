@@ -897,6 +897,8 @@ function addon.CalculateTotalXP(flags,refresh)
                     local qname = ""
                     if not quest.zone or C_Map.GetAreaInfo(quest.zone) then
                         qname = addon.GetQuestName(qid) or quest.name
+                    else
+                        qname = quest.name or ""
                     end
                     if not qname then
                         requestFromServer = false
@@ -1021,11 +1023,15 @@ end
 function addon.ShowMissingQuests(output)
     addon.CalculateTotalXP(1)
     addon.CalculateTotalXP(0)
+
+    local grp = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy or {}
     local t = ""
     for qid,v in pairs(addon.questsAvailable) do
         if not addon.questsDone[qid] and qid > 0 then
+            local entry = QuestDB[qid].name
             t = string.format("%s\n%s (%d)", t,
-                addon.GetQuestName(qid) or "", qid)
+                addon.GetQuestName(qid) or entry or "", qid)
         end
     end
     if output then
