@@ -540,7 +540,7 @@ function addon.functions.show25quests(self,text,flags)
 
 end
 
-
+local questPrioChanged
 function CreatePanel()
 
     local questDataTable = {
@@ -697,7 +697,7 @@ function CreatePanel()
                 width = 0.2,
             },
             defaultValues = {
-                order = 99,
+                order = 99.1,
                 name = L"Use Recommended",
                 type = 'execute',
                 func = function()
@@ -706,7 +706,24 @@ function CreatePanel()
                     table.wipe(addon.settings.profile.questPrioIndex)
                     questText,requestText = addon.GetBestQuests(true,2)
                     panelTitle = defaultTitle
+                    questPrioChanged = true
                 end,
+            },
+            spacer2 = {
+                order = 99.2,
+                name = ' ',
+                type = 'description',
+                width = 0.2,
+            },
+            apply = {
+                order = 99.3,
+                name = L"Apply Changes",
+                desc = L"This will reload the UI to apply changes",
+                type = 'execute',
+                disabled = function()
+                    return not questPrioChanged
+                end,
+                func = _G.ReloadUI,
             }
         }
     }
@@ -724,6 +741,7 @@ function CreatePanel()
                     return addon.questLogQuests[i].Id
                 end,
                 set = function(self, newQ)
+                    questPrioChanged = true
                     local qp = addon.settings.profile.questPrio
                     local index = addon.settings.profile.questPrioIndex
                     local oldQ = index[i]
