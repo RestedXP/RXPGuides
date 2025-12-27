@@ -583,7 +583,9 @@ function addon.UpdateStepCompletion()
             elseif step.index >= RXPCData.currentStep then
                 step.completed = true
                 RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
-                if step.index == RXPCData.currentStep then
+
+                if step.index == RXPCData.currentStep or
+                      (step.index > RXPCData.currentStep and not step.sticky) then
                     addon.loadNextStep = true
                 end
                 return
