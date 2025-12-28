@@ -1359,9 +1359,9 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         C_Timer.After(20, function()
             addon.settings:CheckAddonCompatibility()
         end)
-    end
 
-    addon.ui.v2.LaunchConfigurator()
+        addon.ui.v2.LaunchConfigurator(true)
+    end
 
     addon.targeting:Setup()
 end
