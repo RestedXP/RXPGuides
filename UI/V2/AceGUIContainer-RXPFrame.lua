@@ -19,7 +19,7 @@ local CreateFrame, UIParent = CreateFrame, UIParent
 		OnClose
 
 ]]
-do
+function addon.ui.v2.RegisterRXPFrame()
     local Type = "RXPFrame"
     local Version = 1
 
@@ -188,7 +188,7 @@ do
             frame:SetMinResize(240, 240)
         end
 
-        frame:SetToplevel(true)
+        frame:SetToplevel(false)
 
         -- local titlebg = frame:CreateTexture("RXPAce-titlebg", "BACKGROUND")
         -- titlebg:SetTexture(251966) -- Interface\\PaperDollInfoFrame\\UI-GearManager-Title-Background

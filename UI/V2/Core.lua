@@ -16,30 +16,30 @@ function addon.ui.v2:Initialize()
     L = addon.locale.Get
 end
 
-
-function addon.ui.v2:GetBrandedFrame(frameTitle, attachment)
-    attachment = attachment or _G.CharacterFrame
+-- LFGParentFrameMixin
+function addon.ui.v2:GetBrandedFrame(template, frameTitle, attachment)
+    attachment = attachment or _G.UIParent
 
     if not attachment then return end
     local attachmentName = attachment.GetName and attachment:GetName()
     if not attachmentName then return end
 
-    local frame = AceGUI:Create("RXPFrame")
+    local frame = AceGUI:Create(template)
     RXPD = frame
     frame:SetLayout("Fill")
     --frame:Hide()
-    frame:EnableResize(false)
+    -- frame:EnableResize(true)
 
     --frame.statustext:GetParent():Hide() -- Hide the statustext bar
     frame:SetTitle(frameTitle)
     -- frame.frame:ClearAllPoints()
     -- frame.frame:SetPoint("TOPLEFT", attachment, "TOPRIGHT", offset.x, offset.y)
-    frame:SetWidth(attachment:GetWidth() * 0.7)
-    frame:SetHeight(attachment:GetHeight()) -- + offset.y - 8 - offset.tabsHeight * 2)
+    -- frame:SetWidth(attachment:GetWidth() * 0.7)
+    -- frame:SetHeight(attachment:GetHeight()) -- + offset.y - 8 - offset.tabsHeight * 2)
 
-    frame.scrollContainer = AceGUI:Create("ScrollFrame")
-    frame.scrollContainer:SetLayout("Flow")
-    frame:AddChild(frame.scrollContainer)
+    -- frame.scrollContainer = AceGUI:Create("ScrollFrame")
+    -- frame.scrollContainer:SetLayout("Flow")
+    -- frame:AddChild(frame.scrollContainer)
 
     -- frame.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     -- frame.frame:SetBackdropColor(unpack(addon.colors.background))

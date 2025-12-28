@@ -1,14 +1,32 @@
 local addonName, addon = ...
 
-function addon.ui.v2.LaunchConfigurator()
-    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
+local AceGUI = LibStub("AceGUI-3.0")
 
-    if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then return end
+local guideConfigurator
 
-    if false and isFirstRun and addon.startHardcoreIntroUI then return addon.startHardcoreIntroUI() end
+function addon.ui.v2:CreateConfigurator()
+    if guideConfigurator then return guideConfigurator end
 
-    addon.ui.v2:GetBrandedFrame("RXPConfigurator")
+    addon.ui.v2.RegisterRXPGuideConfigurator()
 
+    local frame = AceGUI:Create("RXPGuideConfigurator")
+    RXPD = frame
+    -- frame:SetLayout("Fill")
+    --frame:Hide()
+    -- frame:EnableResize(true)
+
+    --frame.statustext:GetParent():Hide() -- Hide the statustext bar
+    frame:SetTitle(addon.title or addonName)
+
+    guideConfigurator = frame
+
+    return frame
+end
+
+function addon.ui.v2.LaunchConfigurator(login)
+    local f = addon.ui.v2:CreateConfigurator()
+
+    f:Show()
     -- Set softcore or hardcore
     -- Proxmity Scanning (deprecated)
     -- Auction House
@@ -16,10 +34,13 @@ function addon.ui.v2.LaunchConfigurator()
     -- Dungeon selector
     --- Dungeons with bonuses and weighting
     --- Recommendations
+    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
 
-    if addon.settings.profile.hardcore then
-        addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
-    else
-        addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
+    if isFirstRun and login then
+        if addon.settings.profile.hardcore then
+            addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
+        else
+            addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
+        end
     end
 end

@@ -1,5 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
-    <Include file="AceGUIContainer-RXPFrame.lua" />
     <Include file="Core.lua" />
+    <Include file="AceGUIContainer-RXPFrame.lua" />
+    <Include file="AceGUIContainer-RXPGuideConfigurator.lua" />
     <Include file="GuideConfigurator.lua" />
 </Ui>
