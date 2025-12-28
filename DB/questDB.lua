@@ -444,9 +444,15 @@ local currentFlag = 0
 
 local SetText = function(self,refresh)
     local ctime = GetTime()
-    local delay = 0.5
+    local delay = 0.85
     if currentFlag > 1 then
-        delay = 1.5
+        delay = 2.0
+    end
+    local fps = _G.GetFramerate()
+    if fps < 15 then
+        delay = 10.0
+    elseif fps < 30 then
+        delay = 5.0
     end
 
     if next(backlog) and ctime - requestTimer > delay then
@@ -470,7 +476,8 @@ local SetText = function(self,refresh)
         end
         if update then
             if currentFlag > 1 then
-                _,requestText = addon.CalculateTotalXP(currentFlag,true)
+                addon:ScheduleTask(addon.CalculateTotalXP,currentFlag,true)
+                --_,requestText = addon.CalculateTotalXP(currentFlag,true)
                 --print(requestText)
             else
                 questText,requestText = addon.GetBestQuests(false,2)
@@ -518,6 +525,11 @@ local function OnClick(self)
     if not addon.settings.gui.quest then
         CreatePanel()
     end
+    for _,element in pairs(self.step.elements) do
+        if element.tag == "showtotalxp" then
+            element.update = true
+        end
+    end
     textOverride = nil
     mode = "quests"
     textOverride = nil
@@ -529,12 +541,18 @@ end
 
 function addon.functions.show25quests(self,text,flags)
     if type(self) == "string" then
-        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = format("Click to view the %d best quests",QUEST_LOG_SIZE), icon = addon.icons.link, textOnly = true}
+        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = format("Click to view the %d best quests",QUEST_LOG_SIZE), icon = addon.icons.link, textOnly = true, updateTimer = 0}
     end
-    if self and self.highlight and not self.highlight:IsShown() then
+    local element = self.element
+    if not element.hook and self.highlight and not self.highlight:IsShown() then
+        element.hook = true
         self.highlight:Show()
         self:SetScript("OnMouseDown", OnClick)
     end
+    if element.updateTimer - GetTime() < 0.3 then
+        return
+    end
+    element.updateTimer = GetTime()
 
     SetText(self,true)
 
@@ -843,15 +861,20 @@ end
 
 function addon.functions.showtotalxp(self,text,flags)
     if type(self) == "string" then
-        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE", xpupdate = 0}
+        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE", update = true}
     end
-    local t = GetTime()
     local element = self.element
-    if t - element.xpupdate > 10 and not InCombatLockdown() or not element.xp then
-        element.xp = addon.CalculateTotalXP(element.flags)
-        element.xpupdate = t
+    if not element.loadQuestList then
+        element.loadQuestList = true
+        addon.GetBestQuests(true)
+        return
     end
-    local xp = element.xp or addon.CalculateTotalXP(element.flags)
+
+    if element.update then
+        element.xp = addon.CalculateTotalXP(element.flags,true)
+        element.update = false
+    end
+    local xp = element.xp
     text = format("%s %s",element.rawtext,addon.FormatNumber(xp))
 
     if text ~= element.text then

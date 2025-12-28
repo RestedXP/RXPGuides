@@ -1507,7 +1507,9 @@ addon.scheduledTasks = {}
 function addon.UpdateScheduledTasks()
     local cTime = GetTime()
     local processTable = {}
+    --local update = false
     for ref, args in pairs(addon.scheduledTasks) do
+        --update = true
         processTable[ref] = args
     end
     for ref, args in pairs(processTable) do
@@ -1532,6 +1534,7 @@ function addon.UpdateScheduledTasks()
             end
         end
     end
+    --return update
 end
 
 function addon.ScheduleTask(self, ref, ...)
@@ -1562,12 +1565,13 @@ addon.updateInactiveQuest = {}
 local stepCounter = 1
 local batchSize = 5
 local updateTimer = GetTime()
---local cycleStart = GetTime()
+local skipframe = false
 
 local skip = 0
 local updateError
 local errorCount = 0
 local event = ""
+local busy = 0
 
 function addon.LegacyUpdateLoop()
     -- NewTicker calls function every updateFrequency, making diff/updateTick/tickRate logic obsolete
@@ -1575,15 +1579,26 @@ function addon.LegacyUpdateLoop()
         errorCount = errorCount + 1
     end
 
+    local framerate = GetFramerate()
     local shouldContinue = addon.tickers:ShouldContinue()
 
     if not shouldContinue then return shouldContinue end
 
+    --Only update every other frame if framerate is low
+    if framerate <= addon.tickers.tickRate and skipframe then
+        updateError = false
+        skipframe = false
+        return
+    end
+
+    skipframe = true
     updateError = true
     local guideLoaded
     local activeQuestUpdate = 0
     skip = skip + 1
+    local cycle2 = skip % 2
     event = ""
+    local start = debugprofilestop()
 
     if not addon.loadNextStep then
         for ref, func in pairs(addon.updateActiveQuest) do
@@ -1615,7 +1630,7 @@ function addon.LegacyUpdateLoop()
             event = event .. "/stepComplete"
 
             addon.UpdateStepCompletion()
-        elseif addon.updateStepText and addon.currentGuide and skip % 2 == 0 then
+        elseif addon.updateStepText and addon.currentGuide and cycle2 == 0 then
             event = event .. "/textsingle"
 
             addon.updateStepText = false
@@ -1653,18 +1668,17 @@ function addon.LegacyUpdateLoop()
             skip = 1
 
             return 'bottomFrame'
-        elseif skip % 2 == 1 and next(addon.guideCache) then
+        elseif cycle2 == 1 and next(addon.guideCache) then
             event = event .. "/cache"
-            local length = 0
             local loadGuide = true
 
             for _,guide in pairs(addon.guides) do
                 if (loadGuide or guide.disablecaching) and not guide.steps then
                     addon:FetchGuide(guide)
                     guideLoaded = true
-                    length = length + (tonumber(guide.length) or 0)
                     --print('f',not guide.steps and guide.name)
-                    if length > 45000 or GetFramerate() < 60 then
+                    local elapsed = debugprofilestop() - start
+                    if elapsed > 20 or framerate < 50 then
                         loadGuide = false
                     end
                 end
@@ -1678,7 +1692,22 @@ function addon.LegacyUpdateLoop()
         end
     end
 
-    if not guideLoaded and addon.currentGuide then
+    local cycle4 = skip % 4
+    local cycle16 = skip % 16
+    local cycle32 = skip % 32
+
+    if cycle4 == 0 then
+        addon.tickers.CycleZero()
+    elseif cycle4 == 2 then
+        addon.tickers.CycleThree()
+    elseif cycle4 == 3 then
+        addon.tickers.CycleFour()
+    elseif cycle16 == 1 then
+        addon.tickers.CycleSixteen()
+    elseif cycle32 == 29 then
+        addon.tickers.CycleThirty()
+    elseif skip ~= 1 and not guideLoaded and addon.currentGuide then
+
         event = event .. "/istep"
         local max = #addon.currentGuide.steps
         local offset = RXPCData.currentStep + 1
@@ -1718,9 +1747,11 @@ function addon.tickers:SetupTickerLoops()
     local updateFrequency = 0.075
 
     if addon.settings.profile and addon.settings.profile.updateFrequency then
-        updateFrequency = addon.settings.profile.updateFrequency / 1000
+        updateFrequency = math.max(addon.settings.profile.updateFrequency / 1000, 0.005)
     end
+    self.tickRate = 1/updateFrequency
 
+    --[[
     local jitter = {
         [0] = updateFrequency + math.random(0.001, 0.01),
         [3] = updateFrequency * 3 + math.random(0.003, 0.03),
@@ -1728,11 +1759,11 @@ function addon.tickers:SetupTickerLoops()
         [16] = updateFrequency * 16 + math.random(0.016, 0.16),
         [30] = updateFrequency * 30 + math.random(0.03, 0.3)
     }
-
+    ]]
     if not self.legacy then
         self.legacy = NewTicker(updateFrequency, addon.LegacyUpdateLoop)
     end
-
+    --[[
     if not self.cycleZero then
         -- skip % 4 == 0
         self.cycleZero = NewTicker(jitter[0], self.CycleZero)
@@ -1757,10 +1788,10 @@ function addon.tickers:SetupTickerLoops()
         -- skip % 32 == 29
         self.cycleThirty = NewTicker(jitter[30], self.CycleThirty)
     end
-
+    ]]
 end
 
-function addon.tickers:ShouldContinue()
+function addon.tickers:ShouldContinue(ticker)
     if addon.isHidden then
         updateError = false
         --print('hidden')
@@ -1776,14 +1807,21 @@ function addon.tickers:ShouldContinue()
         -- print('error')
         return false, 'error'
     end
-
+    local gt = GetTime()
+    if ticker and busy == gt then
+        busy = gt
+        --In case 2 tickers happen at the same time, skip it and run next frame
+        C_Timer.After(0,ticker)
+        return false, 'busy'
+    end
+    busy = gt
     return true
 end
 
 function addon.tickers.CycleZero()
-    local shouldContinue = addon.tickers:ShouldContinue()
+    --local shouldContinue = addon.tickers:ShouldContinue(addon.tickers.CycleZero)
 
-    if not shouldContinue then return shouldContinue end
+    --if not shouldContinue then return shouldContinue end
 
     event = event .. "/goto"
     addon.UpdateGotoSteps()
@@ -1791,9 +1829,9 @@ function addon.tickers.CycleZero()
 end
 
 function addon.tickers.CycleThree()
-    local shouldContinue = addon.tickers:ShouldContinue()
+    --local shouldContinue = addon.tickers:ShouldContinue(addon.tickers.CycleThree)
 
-    if not shouldContinue then return shouldContinue end
+    --if not shouldContinue then return shouldContinue end
 
     if addon.questAutoAccept then
         addon.questAutoAccept = false
@@ -1808,9 +1846,9 @@ function addon.tickers.CycleThree()
 end
 
 function addon.tickers.CycleFour()
-    local shouldContinue = addon.tickers:ShouldContinue()
+    --local shouldContinue = addon.tickers:ShouldContinue(addon.tickers.CycleFour)
 
-    if not shouldContinue then return shouldContinue end
+    --if not shouldContinue then return shouldContinue end
 
     if addon.ProcessMessageQueue() then return end
 
@@ -1820,9 +1858,9 @@ function addon.tickers.CycleFour()
 end
 
 function addon.tickers.CycleSixteen()
-    local shouldContinue = addon.tickers:ShouldContinue()
+    --local shouldContinue = addon.tickers:ShouldContinue(addon.tickers.CycleSixteen)
 
-    if not shouldContinue then return shouldContinue end
+    --if not shouldContinue then return shouldContinue end
 
     event = event .. "/inactiveQ"
     local activeQuestUpdate = 0
@@ -1848,9 +1886,9 @@ function addon.tickers.CycleSixteen()
 end
 
 function addon.tickers.CycleThirty()
-    local shouldContinue = addon.tickers:ShouldContinue()
+    --local shouldContinue = addon.tickers:ShouldContinue(addon.tickers.CycleThirty)
 
-    if not shouldContinue then return shouldContinue end
+    --if not shouldContinue then return shouldContinue end
 
     event = event .. "/toptext"
     addon.RXPFrame.CurrentStepFrame.UpdateText()
