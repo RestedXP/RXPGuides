@@ -315,18 +315,14 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
 end
 
 local function selectDefaultGuide(isHardcore)
-    addon.settings.profile.hardcore = isHardcore
-    addon.RenderFrame(true, true)
+    if UnitLevel("player") > 1 then return end
 
-    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
+    if addon.currentGuide and not addon.currentGuide.empty then return end
 
-    if isFirstRun then
-
-        if addon.settings.profile.hardcore then
-            addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
-        else
-            addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
-        end
+    if addon.settings.profile.hardcore or isHardcore then
+        addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
+    else
+        addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
     end
 end
 
@@ -368,14 +364,15 @@ function addon.ui.v2:CreateConfigurator()
     return frame
 end
 
-function addon.ui.v2.LaunchConfigurator()
+function addon.ui.v2.LaunchConfigurator(login)
+    if addon.currentGuide and not addon.currentGuide.empty then return end
+    if not (login and UnitLevel("player") == 1) then return end
+
     local f = addon.ui.v2:CreateConfigurator()
 
     f:SetPoint("TOP", UIParent, "TOP", 420, -60)
 
     f:Show()
-    -- Set softcore or hardcore
-    -- Proxmity Scanning (deprecated)
     -- Auction House
     -- Group Quests (turn into Group Settings)
     -- Dungeon selector
