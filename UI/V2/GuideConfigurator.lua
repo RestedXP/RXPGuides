@@ -40,13 +40,11 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
     end
 
     local function Title_OnMouseDown(frame)
-        frame:GetParent():StartMoving()
         AceGUI:ClearFocus()
     end
 
     local function MoverSizer_OnMouseUp(mover)
         local frame = mover:GetParent()
-        frame:StopMovingOrSizing()
         local self = frame.obj
         local status = self.status or self.localstatus
         status.width = frame:GetWidth()
@@ -129,7 +127,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
         frame:Hide()
 
         frame:EnableMouse(true)
-        frame:SetMovable(true)
+        frame:SetMovable(false)
         frame:SetResizable(false)
         frame:SetFrameStrata("MEDIUM")
         frame:SetFrameLevel(100)
@@ -170,12 +168,12 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
         topLeftIcon:SetScript("OnMouseDown", Title_OnMouseDown)
         topLeftIcon:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
 
-        local welcometext = frame:CreateFontString(nil, "ARTWORK")
-        welcometext:SetFontObject(GameFontNormal)
-        welcometext:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
-        welcometext:SetTextColor(1, 1, 1)
-        welcometext:SetFont(addon.font, 14, "")
-        welcometext:SetText(L("Welcome, select a guide."))
+        local description = frame:CreateFontString(nil, "ARTWORK")
+        description:SetFontObject(GameFontNormal)
+        description:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
+        description:SetTextColor(1, 1, 1)
+        description:SetFont(addon.font, 14, "")
+        description:SetText(L("Welcome, select a guide."))
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
@@ -347,13 +345,11 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
     end
 
     local function Title_OnMouseDown(frame)
-        frame:GetParent():StartMoving()
         AceGUI:ClearFocus()
     end
 
     local function MoverSizer_OnMouseUp(mover)
         local frame = mover:GetParent()
-        frame:StopMovingOrSizing()
         local self = frame.obj
         local status = self.status or self.localstatus
         status.width = frame:GetWidth()
@@ -376,6 +372,10 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         ["OnRelease"] = function(self)
             self.status = nil
             wipe(self.localstatus)
+        end,
+
+        ["SetDescription"] = function(self, text)
+            self.description:SetText(text)
         end,
 
         ["OnWidthSet"] = function(self, width)
@@ -436,7 +436,7 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         frame:Hide()
 
         frame:EnableMouse(true)
-        frame:SetMovable(true)
+        frame:SetMovable(false)
         frame:SetResizable(false)
         frame:SetFrameStrata("MEDIUM")
         frame:SetFrameLevel(100)
@@ -477,22 +477,29 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         topLeftIcon:SetScript("OnMouseDown", Title_OnMouseDown)
         topLeftIcon:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
 
-        local welcometext = frame:CreateFontString(nil, "ARTWORK")
-        welcometext:SetFontObject(GameFontNormal)
-        welcometext:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
-        welcometext:SetTextColor(1, 1, 1)
-        welcometext:SetFont(addon.font, 14, "")
-        welcometext:SetText(L("Welcome, select a guide."))
+        local description = frame:CreateFontString(nil, "ARTWORK")
+        description:SetFontObject(GameFontNormal)
+        description:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
+        description:SetTextColor(1, 1, 1)
+        description:SetFont(addon.font, 14, "")
+        description:SetText()
+
+        local backButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+        backButton:SetSize(116, 24)
+        backButton:SetPoint("BOTTOMLEFT", 24, 82)
+        backButton:SetText(_G.BACK)
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
         -- Move content to usable area, background image is way bigger
-        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 10, -6)
-        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 82)
+        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
+        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 108)
 
         local widget = {
             localstatus = {},
             titletext   = titletext,
+            description = description,
+            backbutton  = backButton,
             content     = content,
             frame       = frame,
             type        = Type
@@ -549,12 +556,17 @@ function addon.ui.v2:CreateConfigurator()
 
     addon.ui.v2.RegisterRXPGuideConfigurator()
     local configurator = AceGUI:Create("RXPGuideConfigurator")
+    configurator:SetDescription(L("Configure your guide.")) -- TODO locale
 
     local function page1to2()
-        page1:Hide()
-        configurator:ClearAllPoints()
         configurator:SetPoint("TOPLEFT", page1.frame, "TOPLEFT")
+        page1:Hide()
         configurator:Show()
+    end
+
+    local function page2to1()
+        configurator:Hide()
+        page1:Show()
     end
 
     speedrunGroup:SetCallback("OnClick", function()
@@ -565,6 +577,10 @@ function addon.ui.v2:CreateConfigurator()
     survivalGroup:SetCallback("OnClick", function()
         selectDefaultGuide(true)
         page1to2()
+    end)
+
+    configurator.backbutton:SetScript("OnClick", function()
+        page2to1()
     end)
 
     return page1
