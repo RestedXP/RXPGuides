@@ -371,6 +371,8 @@ end
 function addon.ui.v2.LaunchConfigurator()
     local f = addon.ui.v2:CreateConfigurator()
 
+    f:SetPoint("TOP", UIParent, "TOP", 420, -60)
+
     f:Show()
     -- Set softcore or hardcore
     -- Proxmity Scanning (deprecated)
