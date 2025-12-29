@@ -3,6 +3,8 @@ local addonName, addon = ...
 -- Copied from libs\AceGUI-3.0\widgets\AceGUIContainer-Frame.lua, version 8
 
 function addon.ui.v2.RegisterRXPGuideConfigurator()
+    local L = addon.locale.Get
+
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
@@ -54,14 +56,6 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         status.left = frame:GetLeft()
     end
 
-    local function StatusBar_OnEnter(frame)
-        frame.obj:Fire("OnEnterStatusBar")
-    end
-
-    local function StatusBar_OnLeave(frame)
-        frame.obj:Fire("OnLeaveStatusBar")
-    end
-
     --[[-----------------------------------------------------------------------------
     Methods
     -------------------------------------------------------------------------------]]
@@ -70,7 +64,6 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
             self.frame:SetParent(UIParent)
             self.frame:SetFrameStrata("MEDIUM")
             self.frame:SetFrameLevel(100) -- Lots of room to draw under it
-            self:SetTitle()
             self:ApplyStatus()
             self:Show()
         end,
@@ -98,10 +91,6 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
             end
             content:SetHeight(contentheight)
             content.height = contentheight
-        end,
-
-        ["SetTitle"] = function(self, title)
-            self.titletext:SetText(title)
         end,
 
         ["Hide"] = function(self)
@@ -158,15 +147,6 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         background:SetAllPoints()
         background:SetTexCoord(0, 0.75, 0, 1)
 
-        local topLeftIcon = frame:CreateTexture(nil, "BACKGROUND", nil, -1)
-        topLeftIcon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow")
-        topLeftIcon:SetWidth(60)
-        topLeftIcon:SetHeight(60)
-        topLeftIcon:SetPoint("TOPLEFT", background, 12, -6)
-        topLeftIcon:EnableMouse(true)
-        topLeftIcon:SetScript("OnMouseDown", Title_OnMouseDown)
-        topLeftIcon:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
-
         local closebutton = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
         closebutton:SetNormalTexture("Interface\\Buttons\\UI-MinusButton-UP")
         closebutton:SetPushedTexture("Interface\\Buttons\\UI-MinusButton-Down")
@@ -181,6 +161,23 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         titletext:EnableMouse(true)
         titletext:SetScript("OnMouseDown", Title_OnMouseDown)
         titletext:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
+        titletext:SetText(addon.title or addonName)
+
+        local topLeftIcon = frame:CreateTexture(nil, "BACKGROUND", nil, -1)
+        topLeftIcon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow")
+        topLeftIcon:SetWidth(60)
+        topLeftIcon:SetHeight(60)
+        topLeftIcon:SetPoint("TOPLEFT", background, 12, -6)
+        topLeftIcon:EnableMouse(true)
+        topLeftIcon:SetScript("OnMouseDown", Title_OnMouseDown)
+        topLeftIcon:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
+
+        local welcometext = frame:CreateFontString(nil, "ARTWORK")
+        welcometext:SetFontObject(GameFontNormal)
+        welcometext:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
+        welcometext:SetTextColor(1, 1, 1)
+        welcometext:SetFont(addon.font, 14, "")
+        welcometext:SetText(L("Welcome, select a guide."))
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)

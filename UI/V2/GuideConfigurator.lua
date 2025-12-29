@@ -11,12 +11,6 @@ function addon.ui.v2:CreateConfigurator()
 
     local frame = AceGUI:Create("RXPGuideConfigurator")
     RXPD = frame
-    -- frame:SetLayout("Fill")
-    --frame:Hide()
-    -- frame:EnableResize(true)
-
-    --frame.statustext:GetParent():Hide() -- Hide the statustext bar
-    frame:SetTitle(addon.title or addonName)
 
     guideConfigurator = frame
 
