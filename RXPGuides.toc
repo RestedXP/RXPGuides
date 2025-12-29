@@ -48,7 +48,8 @@ GuideLoader.lua
 HardcoreIntroUI.lua [AllowLoadGameType vanilla]
 
 Guides/GuideList-Mainline.xml [AllowLoadGameType mainline]
-Guides/GuideList-cata.xml [AllowLoadGameType cata,mists]
+Guides/GuideList-cata.xml [AllowLoadGameType cata]
+Guides/GuideList-mop.xml [AllowLoadGameType mists]
 Guides/GuideList-classic.xml [AllowLoadGameType vanilla]
 Guides/GuideList-tbc.xml [AllowLoadGameType tbc]
 
