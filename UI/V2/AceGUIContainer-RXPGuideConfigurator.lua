@@ -181,8 +181,9 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", 17, -27)
-        content:SetPoint("BOTTOMRIGHT", -17, 40)
+        -- Move content to usable area, background image is way bigger
+        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 10, -6)
+        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 82)
 
         local widget = {
             localstatus = {},
@@ -196,7 +197,9 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         end
         closebutton.obj = widget
 
-        return AceGUI:RegisterAsContainer(widget)
+        local container = AceGUI:RegisterAsContainer(widget)
+
+        return container
     end
 
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
