@@ -3267,9 +3267,15 @@ step
     .isOnQuest 1002
 step
     #season 0
-    #completewith OnuGrove
+    #loop
+    .waypoint Darkshore,39.03,67.32,0
+    .waypoint Darkshore,42.54,67.76,0
+    .waypoint Darkshore,39.99,78.46,0
+    .waypoint Darkshore,39.03,67.32,70,0
+    .waypoint Darkshore,42.54,67.76,70,0
+    .waypoint Darkshore,39.99,78.46,70,0
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r in southern Darkshore
-    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces all health regeneration by 50% for 10 minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step << Druid
