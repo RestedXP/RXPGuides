@@ -314,6 +314,22 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
+local function selectDefaultGuide(isHardcore)
+    addon.settings.profile.hardcore = isHardcore
+    addon.RenderFrame(true, true)
+
+    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
+
+    if isFirstRun then
+
+        if addon.settings.profile.hardcore then
+            addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
+        else
+            addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
+        end
+    end
+end
+
 function addon.ui.v2:CreateConfigurator()
     if guideConfigurator then return guideConfigurator end
     local L = addon.locale.Get
@@ -331,7 +347,9 @@ function addon.ui.v2:CreateConfigurator()
     speedrunGroup:SetLabel(L("Select Speedrun Guide"))
     speedrunGroup:SetDescription(L("This guide delivers the fastest path from level 1 to 70 for every class and zone. Optimized for minimal downtime, it includes the best quest routes, grinding spots, and dungeon segments to reach max level quickly and efficiently."))
     speedrunGroup:SetImage("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-speedrun-guide")
-    speedrunGroup:SetCallback("OnClick", function() print("speedrunIcon Click!") end)
+    speedrunGroup:SetCallback("OnClick", function()
+        selectDefaultGuide(false)
+    end)
 
     guideConfigurator:AddChild(speedrunGroup)
 
@@ -341,14 +359,16 @@ function addon.ui.v2:CreateConfigurator()
     survivalGroup:SetLabel(L("Select Survival Guide"))
     survivalGroup:SetDescription(L("This guide delivers the safest path from level 1 to 70 for every class and zone. Optimized for maximum survivability it includes the best quest routes, grinding spots, and dungeon segments to reach max level safely and efficiently."))
     survivalGroup:SetImage("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-survival-guide")
-    survivalGroup:SetCallback("OnClick", function() print("survival Click!") end)
+    survivalGroup:SetCallback("OnClick", function()
+        selectDefaultGuide(true)
+    end)
 
     guideConfigurator:AddChild(survivalGroup)
 
     return frame
 end
 
-function addon.ui.v2.LaunchConfigurator(login)
+function addon.ui.v2.LaunchConfigurator()
     local f = addon.ui.v2:CreateConfigurator()
 
     f:Show()
@@ -359,13 +379,4 @@ function addon.ui.v2.LaunchConfigurator(login)
     -- Dungeon selector
     --- Dungeons with bonuses and weighting
     --- Recommendations
-    local isFirstRun = addon.RXPFrame:IsShown() and UnitLevel("player") == 1 and (not addon.currentGuide or addon.currentGuide.empty)
-
-    if isFirstRun and login then
-        if addon.settings.profile.hardcore then
-            addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
-        else
-            addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
-        end
-    end
 end
