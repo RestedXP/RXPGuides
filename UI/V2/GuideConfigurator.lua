@@ -538,21 +538,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     local CreateFrame, UIParent = CreateFrame, UIParent
 
     --[[-----------------------------------------------------------------------------
-    Support functions
-    -------------------------------------------------------------------------------]]
-    local function AlignImage(self)
-        local img = self.image:GetTexture()
-        self.text:ClearAllPoints()
-        if not img then
-            self.text:SetPoint("LEFT", self.checkbg, "RIGHT")
-            self.text:SetPoint("RIGHT")
-        else
-            self.text:SetPoint("LEFT", self.image, "RIGHT", 1, 0)
-            self.text:SetPoint("RIGHT")
-        end
-    end
-
-    --[[-----------------------------------------------------------------------------
     Scripts
     -------------------------------------------------------------------------------]]
     local function Control_OnEnter(frame)
@@ -580,14 +565,13 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         if not self.disabled then
             self:ToggleChecked()
 
-            if self.checked then
-                PlaySound(856) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
-            else -- for both nil and false (tristate)
-                PlaySound(857) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF
-            end
+            -- if self.checked then
+            --     PlaySound(856) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
+            -- else -- for both nil and false (tristate)
+            --     PlaySound(857) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF
+            -- end
 
             self:Fire("OnValueChanged", self.checked)
-            AlignImage(self)
         end
     end
 
@@ -602,7 +586,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
             -- height is calculated from the width and required space for the description
             self:SetWidth(200)
             self:SetImage()
-            self:SetDisabled(nil)
             self:SetDescription(nil)
         end,
 
@@ -613,29 +596,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
                 self.desc:SetWidth(width - 30)
                 if self.desc:GetText() and self.desc:GetText() ~= "" then
                     self:SetHeight(28 + self.desc:GetStringHeight())
-                end
-            end
-        end,
-
-        ["SetDisabled"] = function(self, disabled)
-            self.disabled = disabled
-            if disabled then
-                self.frame:Disable()
-                self.text:SetTextColor(0.5, 0.5, 0.5)
-                SetDesaturation(self.check, true)
-                if self.desc then
-                    self.desc:SetTextColor(0.5, 0.5, 0.5)
-                end
-            else
-                self.frame:Enable()
-                self.text:SetTextColor(1, 1, 1)
-                if self.tristate and self.checked == nil then
-                    SetDesaturation(self.check, true)
-                else
-                    SetDesaturation(self.check, false)
-                end
-                if self.desc then
-                    self.desc:SetTextColor(1, 1, 1)
                 end
             end
         end,
@@ -656,7 +616,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
                     check:Hide()
                 end
             end
-            self:SetDisabled(self.disabled)
         end,
 
         ["GetValue"] = function(self)
@@ -755,7 +714,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
                     image:SetTexCoord(0, 1, 0, 1)
                 end
             end
-            AlignImage(self)
         end
     }
 
@@ -869,7 +827,7 @@ function addon.ui.v2:CreateConfigurator()
 
     local page2Options = {
         ["AuctionHouse"] = {
-            icon = "INV_Misc_Coin_02",
+            icon = "Interface\\Icons\\inv_misc_coin_02",
             description = L("Enable Auction House"),
             setting = 'soloSelfFound'
         }
@@ -878,6 +836,10 @@ function addon.ui.v2:CreateConfigurator()
     addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     for option, data in pairs(page2Options) do
         data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
+
+        data.frame:SetValue(addon.settings.profile[data.setting])
+        data.frame:SetLabel(data.description)
+        data.frame:SetImage(data.icon)
 
         configurator.scrollContainer:AddChild(data.frame)
     end
