@@ -489,6 +489,16 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         backButton:SetPoint("BOTTOMLEFT", 24, 82)
         backButton:SetText(_G.BACK)
 
+        local resetButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+        resetButton:SetSize(104, 24)
+        resetButton:SetPoint("LEFT", backButton, "RIGHT", 0, 0)
+        resetButton:SetText(_G.RESET)
+
+        local submitButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+        submitButton:SetSize(105, 24)
+        submitButton:SetPoint("LEFT", resetButton, "RIGHT", 0, 0)
+        submitButton:SetText(_G.SUBMIT)
+
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
         -- Move content to usable area, background image is way bigger
@@ -496,17 +506,21 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 108)
 
         local widget = {
-            localstatus = {},
-            titletext   = titletext,
-            description = description,
-            backbutton  = backButton,
-            content     = content,
-            frame       = frame,
-            type        = Type
+            localstatus  = {},
+            titletext    = titletext,
+            description  = description,
+            backbutton   = backButton,
+            resetbutton  = resetButton,
+            submitbutton = submitButton,
+            content      = content,
+            frame        = frame,
+            type         = Type
         }
+
         for method, func in pairs(methods) do
             widget[method] = func
         end
+
         closebutton.obj = widget
 
         return AceGUI:RegisterAsContainer(widget)
@@ -580,6 +594,10 @@ function addon.ui.v2:CreateConfigurator()
     end)
 
     configurator.backbutton:SetScript("OnClick", function()
+        page2to1()
+    end)
+
+    configurator.resetbutton:SetScript("OnClick", function()
         page2to1()
     end)
 
