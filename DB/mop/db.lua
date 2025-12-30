@@ -50,8 +50,11 @@ elseif faction == "Alliance" then
 end
 
 function addon.LoadDefaultGuide()
-    local login = addon.tracker.state.login
-    local played = difftime(time(),login.time) + login.totalTimePlayed
+    local played = 0
+    if not addon.tracker.waitingForTimePlayed then
+        local login = addon.tracker.state.login
+        played = difftime(time(),login.time) + login.totalTimePlayed
+    end
     if played > 120 or UnitLevel('player') > minLevel then
         return
     end
@@ -59,6 +62,8 @@ function addon.LoadDefaultGuide()
     if defaultGuide then
         --print(defaultGuide)
         addon:LoadGuideTable(addon.defaultGroup,defaultGuide)
+    elseif played == 0 then
+        C_Timer.After(5,addon.LoadDefaultGuide)
     end
 end
 
