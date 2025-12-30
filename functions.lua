@@ -5702,6 +5702,10 @@ function addon.functions.itemcount(self, ...)
         --flags = tonumber(flags) or 0
         --element.enableBank = bit.band(flags, 0x1) == 0x1
         element.enableBank = flags
+        element.ids = {}
+        for n in string.gmatch(id, "%d+") do
+            table.insert(element.ids, tonumber(n))
+        end
         element.id = tonumber(id)
         element.total = tonumber(total)
         if not (element.total and element.id) then
@@ -5730,21 +5734,24 @@ function addon.functions.itemcount(self, ...)
     local operator = element.operator
     local eq = element.eq
     local total = element.total
-    local id = element.id
-    local count = GetItemCount(id,element.enableBank)
-    if count == 0 then
-        if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
-            count = count + 1
-        end
 
-        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-            if GetInventoryItemID("player", i) == id then
+    local count = 0
+
+    for _,id in ipairs(element.ids) do
+        count = count + GetItemCount(id,element.enableBank)
+        if count == 0 then
+            if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
                 count = count + 1
-                break
+            end
+
+            for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+                if GetInventoryItemID("player", i) == id then
+                    count = count + 1
+                    break
+                end
             end
         end
     end
-
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then
         if step.active and not step.completed then
