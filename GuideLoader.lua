@@ -917,6 +917,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     local skip
     local skipGuide
     local linenumber = 0
+    local game = strlower(addon.game)
 
     for line in string.gmatch(text, "[^\n\r]+") do
         linenumber = linenumber + 1
