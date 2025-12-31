@@ -279,10 +279,12 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
         label:SetHeight(18)
 
         local highlight = frame:CreateTexture(nil, "HIGHLIGHT")
-        highlight:SetTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight")
+        highlight:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-guide-shine") --"Interface\\QuestFrame\\UI-QuestTitleHighlight"
+        highlight:SetTexCoord(0, 0.829, 0, 0.90)
         highlight:SetBlendMode("ADD")
-        highlight:SetPoint("TOPLEFT", frame, 0, -11)
+        highlight:SetPoint("TOPLEFT", frame, -11, 2)
         highlight:SetPoint("BOTTOMRIGHT", frame, 0, 0)
+        highlight:SetAlpha(0.16)
 
         local description = frame:CreateFontString(nil, "OVERLAY")
         description:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
@@ -492,7 +494,7 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         local resetButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         resetButton:SetSize(104, 24)
         resetButton:SetPoint("LEFT", backButton, "RIGHT", 0, 0)
-        resetButton:SetText(_G.RESTART) -- TODO page 3 _G.RESET for dungeons
+        resetButton:SetText(_G.RESET)
 
         local submitButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         submitButton:SetSize(105, 24)
@@ -551,6 +553,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     end
 
     local function CheckBox_OnMouseDown(frame)
+        frame.obj.highlight:SetAlpha(0.25)
         AceGUI:ClearFocus()
     end
 
@@ -559,6 +562,8 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         if not self.profile then return end
 
         self:ToggleChecked()
+
+        frame.obj.highlight:SetAlpha(0.16)
 
         self:Fire("OnValueChanged", self.profile[self.settingkey])
     end
@@ -569,7 +574,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     local methods = {
         ["OnAcquire"] = function(self)
             self:SetWidth(200)
-            self:SetHeight(32)
+            self:SetHeight(42)
             self:SetImage()
             self:SetLabel(nil)
         end,
@@ -639,7 +644,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
 
         local image = frame:CreateTexture(nil, "OVERLAY")
-        image:SetSize(32, 32)
+        image:SetSize(42, 42)
         image:SetPoint("LEFT", 0, 0)
 
         local imageBackdrop = {
@@ -649,7 +654,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
 
         local imageborder = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         imageborder:SetBackdrop(imageBackdrop)
-        imageborder:SetSize(36, 36)
+        imageborder:SetSize(44, 44)
         imageborder:SetPoint("CENTER", image, "CENTER")
 
         local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
@@ -669,9 +674,11 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         check:SetBlendMode("BLEND")
 
         local highlight = frame:CreateTexture(nil, "HIGHLIGHT")
-        highlight:SetTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight") -- "Interface\\BUTTONS\\ButtonHilight-Square"
+        highlight:SetTexture("Interface\\Buttons\\UI-Common-MouseHilight")
+        highlight:SetColorTexture(2 / 255, 255, 36, 1)
+        highlight:SetAlpha(0.16)
         highlight:SetBlendMode("ADD")
-        highlight:SetAllPoints(frame)
+        highlight:SetAllPoints()
 
         local frameBackdrop = {
 	        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
@@ -762,7 +769,7 @@ function addon.ui.v2:CreateConfigurator()
     local page2Options = {
         [1] = {
             icon = "Interface\\Icons\\inv_misc_coin_02",
-            description = L("Enable Auction House"),
+            description = L("Solo Self Found Mode"),
             setting = 'soloSelfFound',
         },
         [2] = {
@@ -775,6 +782,11 @@ function addon.ui.v2:CreateConfigurator()
             description = L("Enable Dungeons"),
             setting = 'enableDungeons',
             profile = configuratorSettings
+        },
+        [4] = {
+            icon = "Interface\\Icons\\Ability_Vehicle_LaunchPlayer",
+            description = L("Skip overleveled steps"),
+            setting = 'enableXpStepSkipping',
         }
     }
 
@@ -820,6 +832,7 @@ function addon.ui.v2:CreateConfigurator()
     end)
 
     configurator.submitbutton:SetScript("OnClick", function()
+        -- TODO if configuratorSettings["enableDungeons"] was selected, change this to _G.NEXT
         selectDefaultGuide(configuratorSettings["hardcore"])
         configurator:Hide()
     end)
@@ -836,6 +849,7 @@ function addon.ui.v2.LaunchConfigurator(login)
     f:SetPoint("TOP", UIParent, "TOP", 420, -60)
 
     f:Show()
+    -- RXPFrame:Hide()
     -- Dungeon selector
     --- Dungeons with bonuses and weighting
     --- Recommendations
