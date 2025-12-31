@@ -582,6 +582,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
             self:SetHeight(42)
             self:SetImage()
             self:SetLabel(nil)
+            self:SetTooltip()
         end,
 
         -- ["OnRelease"] = nil,
@@ -621,6 +622,10 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
             self.text:SetText(label)
         end,
 
+        ["SetTooltip"] = function(self, text)
+            self.tooltip.tooltipText = text or ""
+        end,
+
         ["SetImage"] = function(self, path, ...)
             local image = self.image
             image:SetTexture(path)
@@ -635,6 +640,27 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
             end
         end
     }
+
+    local function tpOnEnter(self)
+        if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+            return
+        end
+        if not self.tooltipText or self.tooltipText == "" then return end
+
+        _G.GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", 5, 50)
+        _G.GameTooltip:ClearLines()
+        _G.GameTooltip:AddLine(self.tooltipText, 1, 1, 1)
+        _G.GameTooltip:Show()
+
+    end
+
+    local function tpOnLeave(self)
+        if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
+            return
+        end
+        _G.GameTooltip:Hide()
+    end
+
 
     --[[-----------------------------------------------------------------------------
     Constructor
@@ -668,6 +694,13 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         text:SetPoint("LEFT", image, "RIGHT", 10, 0)
         text:SetTextColor(229 / 255, 195 / 255, 66 / 255)
 
+        local tooltip = frame:CreateTexture(nil, "OVERLAY")
+        tooltip:SetTexture("Interface\\COMMON\\help-i")
+        tooltip:SetSize(24, 24)
+        tooltip:SetPoint("LEFT", text, "RIGHT", 0, 0)
+        tooltip:SetScript("OnEnter", tpOnEnter)
+        tooltip:SetScript("OnLeave", tpOnLeave)
+
         local checkbg = frame:CreateTexture(nil, "ARTWORK")
         checkbg:SetPoint("RIGHT", -15, 0)
         checkbg:SetTexture(130755) -- Interface\\Buttons\\UI-CheckBox-Up
@@ -700,6 +733,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
             checkbg   = checkbg,
             check     = check,
             text      = text,
+            tooltip   = tooltip,
             highlight = highlight,
             image     = image,
             frame     = frame,
@@ -839,23 +873,27 @@ function addon.ui.v2:CreateConfigurator()
     local page2Options = {
         [1] = {
             icon = "Interface\\Icons\\inv_misc_coin_02",
-            description = L("Solo Self Found Mode"),
+            label = L("Solo Self Found Mode"),
+            tooltip = L("If this option is enabled, it disables all steps involving trading or Auction House"),
             setting = 'soloSelfFound',
         },
         [2] = {
             icon = "Interface\\Icons\\spell_holy_prayerofhealing",
-            description = L("Show Group Quests"),
+            label = L("Show Group Quests"),
+            tooltip = L("Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."),
             setting = 'enableGroupQuests'
         },
         [3] = {
             icon = "Interface\\Icons\\spell_frost_stun",
-            description = L("Enable Dungeons"),
+            label = L("Enable Dungeons"),
+            tooltip = L("Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."),
             setting = 'enableDungeons',
             profile = configuratorSettings
         },
         [4] = {
             icon = "Interface\\Icons\\Ability_Vehicle_LaunchPlayer",
-            description = L("Skip overleveled steps"),
+            label = L("Skip overleveled steps"),
+            tooltip = L("Skip steps you're overleveled for"),
             setting = 'enableXpStepSkipping',
         }
     }
@@ -884,8 +922,10 @@ function addon.ui.v2:CreateConfigurator()
         data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
         data.frame:SetFullWidth(true)
         data.frame:SetSetting(data.profile or addon.settings.profile, data.setting)
-        data.frame:SetLabel(data.description)
         data.frame:SetImage(data.icon)
+        data.frame:SetLabel(data.label)
+        data.frame:SetTooltip(data.tooltip)
+
         data.padding:AddChild(data.frame)
 
         configurator.scrollContainer:AddChild(data.padding)
