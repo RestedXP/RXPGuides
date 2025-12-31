@@ -492,7 +492,7 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         local resetButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         resetButton:SetSize(104, 24)
         resetButton:SetPoint("LEFT", backButton, "RIGHT", 0, 0)
-        resetButton:SetText(_G.RESET)
+        resetButton:SetText(_G.RESTART) -- TODO page 3 _G.RESET for dungeons
 
         local submitButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         submitButton:SetSize(105, 24)
@@ -502,7 +502,9 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
         -- Move content to usable area, background image is way bigger
-        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
+        -- TODO remove hackery to padd right
+        -- content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
+        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 22, -10)
         content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 108)
 
         local widget = {
@@ -567,9 +569,9 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     local methods = {
         ["OnAcquire"] = function(self)
             self:SetWidth(200)
-            self:SetHeight(64)
+            self:SetHeight(32)
             self:SetImage()
-            self:SetDescription(nil)
+            self:SetLabel(nil)
         end,
 
         -- ["OnRelease"] = nil,
@@ -601,14 +603,12 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         ["SetSetting"] = function(self, profile, settingkey)
             self.profile = profile
             self.settingkey = settingkey
+
+            self:SetValue(self.profile[settingkey])
         end,
 
         ["SetLabel"] = function(self, label)
             self.text:SetText(label)
-        end,
-
-        ["SetDescription"] = function(self, desc)
-            self.desc:SetText(desc)
         end,
 
         ["SetImage"] = function(self, path, ...)
@@ -630,8 +630,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     Constructor
     -------------------------------------------------------------------------------]]
     local function Constructor()
-        local frame = CreateFrame("Button", nil, UIParent)
-        frame:Hide()
+        local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 
         frame:EnableMouse(true)
         frame:SetScript("OnEnter", Control_OnEnter)
@@ -639,60 +638,62 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
         frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
 
-        local checkbg = frame:CreateTexture(nil, "ARTWORK")
-        checkbg:SetWidth(24)
-        checkbg:SetHeight(24)
-        checkbg:SetPoint("TOPLEFT")
-        checkbg:SetTexture(130755) -- Interface\\Buttons\\UI-CheckBox-Up
-        checkbg:SetTexture(130755) -- Interface\\Buttons\\UI-CheckBox-Up
-        checkbg:SetTexCoord(0, 1, 0, 1)
-        checkbg:SetHeight(24)
-        checkbg:SetWidth(24)
+        local image = frame:CreateTexture(nil, "OVERLAY")
+        image:SetSize(32, 32)
+        image:SetPoint("LEFT", 0, 0)
 
-        local check = frame:CreateTexture(nil, "OVERLAY")
-        check:SetAllPoints(checkbg)
-        check:SetTexture(130751) -- Interface\\Buttons\\UI-CheckBox-Check
-        check:SetTexture(130751) -- Interface\\Buttons\\UI-CheckBox-Check
-        check:SetTexCoord(0, 1, 0, 1)
-        check:SetBlendMode("BLEND")
+        local imageBackdrop = {
+            edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+            edgeSize = 16
+        }
+
+        local imageborder = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        imageborder:SetBackdrop(imageBackdrop)
+        imageborder:SetSize(36, 36)
+        imageborder:SetPoint("CENTER", image, "CENTER")
 
         local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
         text:SetJustifyH("LEFT")
         text:SetHeight(18)
-        text:SetPoint("LEFT", checkbg, "RIGHT")
-        text:SetPoint("RIGHT")
-        --text:SetPoint("LEFT", image,"RIGHT", 2, -1)
+        text:SetPoint("LEFT", image, "RIGHT", 10, 0)
+        text:SetTextColor(229 / 255, 195 / 255, 66 / 255)
 
-        local description = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-        description:ClearAllPoints()
-        description:SetPoint("TOPLEFT", checkbg, "TOPRIGHT", 5, -21)
-        -- description:SetWidth(frame.width - 30)
-        description:SetPoint("RIGHT", frame, "RIGHT", -30, 0)
-        description:SetJustifyH("LEFT")
-        description:SetJustifyV("TOP")
+        local checkbg = frame:CreateTexture(nil, "ARTWORK")
+        checkbg:SetPoint("RIGHT", -15, 0)
+        checkbg:SetTexture(130755) -- Interface\\Buttons\\UI-CheckBox-Up
+        checkbg:SetSize(24, 24)
+
+        local check = frame:CreateTexture(nil, "OVERLAY")
+        check:SetAllPoints(checkbg)
+        check:SetTexture(130751) -- Interface\\Buttons\\UI-CheckBox-Check
+        check:SetBlendMode("BLEND")
 
         local highlight = frame:CreateTexture(nil, "HIGHLIGHT")
-        highlight:SetTexture(130753) -- Interface\\Buttons\\UI-CheckBox-Highlight
+        highlight:SetTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight") -- "Interface\\BUTTONS\\ButtonHilight-Square"
         highlight:SetBlendMode("ADD")
-        highlight:SetAllPoints(checkbg)
-        highlight:SetTexture(130753) -- Interface\\Buttons\\UI-CheckBox-Highlight
-        highlight:SetTexCoord(0, 1, 0, 1)
+        highlight:SetAllPoints(frame)
 
-        local image = frame:CreateTexture(nil, "OVERLAY")
-        image:SetHeight(16)
-        image:SetWidth(16)
-        image:SetPoint("LEFT", checkbg, "RIGHT", 1, 0)
+        local frameBackdrop = {
+	        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
+            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+            tile = true, tileSize = 16, edgeSize = 16,
+            insets = { left = 3, right = 3, top = 5, bottom = 3 }
+        }
+
+        frame:SetBackdrop(frameBackdrop)
+        frame:SetBackdropColor(30 / 255, 30 / 255, 30 / 255, 1)
+        frame:SetBackdropBorderColor(112 / 255, 112 / 255, 112 / 255)
 
         local widget = {
             checkbg   = checkbg,
             check     = check,
             text      = text,
-            desc      = description,
             highlight = highlight,
             image     = image,
             frame     = frame,
             type      = Type
         }
+
         for method, func in pairs(methods) do
             widget[method] = func
         end
@@ -753,19 +754,37 @@ function addon.ui.v2:CreateConfigurator()
     configurator.scrollContainer:SetLayout("Flow")
     configurator:AddChild(configurator.scrollContainer)
 
+    local configuratorSettings = {
+        enableDungeons = false,
+        hardcore = false,
+    }
+
     local page2Options = {
-        ["AuctionHouse"] = {
+        [1] = {
             icon = "Interface\\Icons\\inv_misc_coin_02",
             description = L("Enable Auction House"),
-            setting = 'soloSelfFound'
+            setting = 'soloSelfFound',
+        },
+        [2] = {
+            icon = "Interface\\Icons\\spell_holy_prayerofhealing",
+            description = L("Show Group Quests"),
+            setting = 'enableGroupQuests'
+        },
+        [3] = {
+            icon = "Interface\\Icons\\spell_frost_stun",
+            description = L("Enable Dungeons"),
+            setting = 'enableDungeons',
+            profile = configuratorSettings
         }
     }
 
     addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
-    for option, data in pairs(page2Options) do
+
+    for _, data in pairs(page2Options) do
         data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
 
-        data.frame:SetSetting(addon.settings.profile, data.setting)
+        data.frame:SetRelativeWidth(0.9)
+        data.frame:SetSetting(data.profile or addon.settings.profile, data.setting)
         data.frame:SetLabel(data.description)
         data.frame:SetImage(data.icon)
 
@@ -783,13 +802,12 @@ function addon.ui.v2:CreateConfigurator()
         page1:Show()
     end
 
-    local survivalSelected = false
     speedrunGroup:SetCallback("OnClick", function()
         page1to2()
     end)
 
     survivalGroup:SetCallback("OnClick", function()
-        survivalSelected = true
+        configuratorSettings["hardcore"] = true
         page1to2()
     end)
 
@@ -802,7 +820,7 @@ function addon.ui.v2:CreateConfigurator()
     end)
 
     configurator.submitbutton:SetScript("OnClick", function()
-        selectDefaultGuide(survivalSelected)
+        selectDefaultGuide(configuratorSettings["hardcore"])
         configurator:Hide()
     end)
 
@@ -818,8 +836,6 @@ function addon.ui.v2.LaunchConfigurator(login)
     f:SetPoint("TOP", UIParent, "TOP", 420, -60)
 
     f:Show()
-    -- Auction House
-    -- Group Quests (turn into Group Settings)
     -- Dungeon selector
     --- Dungeons with bonuses and weighting
     --- Recommendations
