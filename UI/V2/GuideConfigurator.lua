@@ -511,10 +511,7 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
-        -- Move content to usable area, background image is way bigger
-        -- TODO remove hackery to padd right
-        -- content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
-        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 22, -10)
+        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
         content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 108)
 
         local widget = {
@@ -720,6 +717,71 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
 
 end
 
+function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
+    local Type, Version = "RXPGuideConfiguratorSettingPadding", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    -- WoW APIs
+    local CreateFrame, UIParent = CreateFrame, UIParent
+
+    --[[-----------------------------------------------------------------------------
+    Methods
+    -------------------------------------------------------------------------------]]
+    local methods = {
+        ["OnAcquire"] = function(self)
+            self:SetWidth(200)
+            self:SetHeight(52) -- 48 + 4
+        end,
+
+        -- ["OnRelease"] = nil,
+
+        ["LayoutFinished"] = function(self, width, height)
+            if self.noAutoHeight then return end
+            self:SetHeight(height or 0)
+        end,
+
+        ["OnWidthSet"] = function(self, width)
+            local content = self.content
+            content:SetWidth(width)
+            content.width = width
+        end,
+
+        ["OnHeightSet"] = function(self, height)
+            local content = self.content
+            content:SetHeight(height)
+            content.height = height
+        end
+    }
+
+    --[[-----------------------------------------------------------------------------
+    Constructor
+    -------------------------------------------------------------------------------]]
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:SetFrameStrata("MEDIUM")
+
+        --Container Support
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetPoint("TOPLEFT", 10, 00)
+        content:SetPoint("BOTTOMRIGHT")
+
+        local widget = {
+            frame        = frame,
+            content      = content,
+            type         = Type,
+            noAutoHeight = true
+        }
+        for method, func in pairs(methods) do
+            widget[method] = func
+        end
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+
+end
+
 local function selectDefaultGuide(isHardcore)
     if UnitLevel("player") > 1 then return end
 
@@ -799,16 +861,34 @@ function addon.ui.v2:CreateConfigurator()
     }
 
     addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
+    addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
+
+    local settingsIntroGroup = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
+    settingsIntroGroup:SetFullWidth(true)
+    settingsIntroGroup:SetHeight(64)
+
+    local settingDesc = AceGUI:Create("Label")
+    settingDesc:SetFullWidth(true)
+    settingDesc:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
+    settingDesc:SetColor(186 / 255, 186 / 255, 186 / 255)
+    --TODO locale
+    settingDesc:SetText('\n' .. L("Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."))
+    settingsIntroGroup:AddChild(settingDesc)
+
+    configurator.scrollContainer:AddChild(settingsIntroGroup)
 
     for _, data in pairs(page2Options) do
-        data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
+        data.padding = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
+        data.padding:SetFullWidth(true)
 
+        data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
         data.frame:SetRelativeWidth(0.9)
         data.frame:SetSetting(data.profile or addon.settings.profile, data.setting)
         data.frame:SetLabel(data.description)
         data.frame:SetImage(data.icon)
+        data.padding:AddChild(data.frame)
 
-        configurator.scrollContainer:AddChild(data.frame)
+        configurator.scrollContainer:AddChild(data.padding)
     end
 
     local function page1to2()
