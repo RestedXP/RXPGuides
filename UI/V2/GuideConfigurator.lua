@@ -286,6 +286,14 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
         highlight:SetPoint("BOTTOMRIGHT", frame, 0, 0)
         highlight:SetAlpha(0.16)
 
+        local pushedHighlight = frame:CreateTexture(nil, "HIGHLIGHT")
+        pushedHighlight:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-guide-shine") --"Interface\\QuestFrame\\UI-QuestTitleHighlight"
+        pushedHighlight:SetTexCoord(0, 0.829, 0, 0.90)
+        pushedHighlight:SetBlendMode("ADD")
+        pushedHighlight:SetAllPoints(highlight)
+        pushedHighlight:SetAlpha(0.25)
+        frame:SetPushedTexture(pushedHighlight)
+
         local description = frame:CreateFontString(nil, "OVERLAY")
         description:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
         description:SetJustifyH("LEFT")
