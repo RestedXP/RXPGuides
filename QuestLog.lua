@@ -164,6 +164,11 @@ local stepIndex = 0
 local guideKey,qLogCache,futureTurnInsCache
 function addon.GetExpectedQuestLog()
     local guide = addon.currentGuide
+    local grp = guide and guide.group
+    local isPrepGuide = grp and strlower(grp):find("prep")
+    if isPrepGuide then
+        return {},{}
+    end
     local startGuide
     local currentStep = RXPCData.currentStep
     local scanQuests
@@ -178,7 +183,8 @@ function addon.GetExpectedQuestLog()
             startGuide = guide
         else
             local group = guide.group
-            local name = addon.guideList[group].defaultGuide_
+            local list = addon.guideList[group]
+            local name = list.defaultGuide_
             startGuide = addon:FetchGuide(group,name)
         end
         startGuide = addon.ProcessGuideTable(startGuide)
@@ -785,7 +791,10 @@ local function CreateCleanupButton()
         parent:HookScript("OnShow", function()
             AnchorCleanupButton()
             if cleanupBtn then
-                cleanupBtn:SetShown(not addon.isHidden)
+                local enabled = addon.currentGuide and not addon.currentGuide.empty
+                local grp = addon.currentGuide.group
+                local isPrepGuide = grp and strlower(grp):find("prep")
+                cleanupBtn:SetShown(not addon.isHidden and enabled and not isPrepGuide)
             end
         end)
     end
