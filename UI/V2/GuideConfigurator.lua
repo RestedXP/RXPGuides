@@ -762,8 +762,8 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", 10, 00)
-        content:SetPoint("BOTTOMRIGHT")
+        content:SetPoint("TOPLEFT", 10, 0)
+        content:SetPoint("BOTTOMRIGHT", -20, 0)
 
         local widget = {
             frame        = frame,
@@ -882,7 +882,7 @@ function addon.ui.v2:CreateConfigurator()
         data.padding:SetFullWidth(true)
 
         data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
-        data.frame:SetRelativeWidth(0.9)
+        data.frame:SetFullWidth(true)
         data.frame:SetSetting(data.profile or addon.settings.profile, data.setting)
         data.frame:SetLabel(data.description)
         data.frame:SetImage(data.icon)
