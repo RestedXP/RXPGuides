@@ -544,15 +544,17 @@ function addon.functions.show25quests(self,text,flags)
         return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = format("Click to view the %d best quests",QUEST_LOG_SIZE), icon = addon.icons.link, textOnly = true, updateTimer = 0}
     end
     local element = self.element
-    if not element.hook and self.highlight and not self.highlight:IsShown() then
-        element.hook = true
-        self.highlight:Show()
-        self:SetScript("OnMouseDown", OnClick)
-    end
-    if element.updateTimer - GetTime() < 0.3 then
+    if element and GetTime() - element.updateTimer < 0.5 then
         return
     end
     element.updateTimer = GetTime()
+    if self.SetScript then
+        self:SetScript("OnMouseDown", OnClick)
+    end
+    if not element.hook and self.highlight and not self.highlight:IsShown() then
+        element.hook = true
+        self.highlight:Show()
+    end
 
     SetText(self,true)
 
