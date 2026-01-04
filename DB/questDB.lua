@@ -48,12 +48,17 @@ local function GetXPMods()
     end
 end
 
+local function GetGroup()
+    local group = addon.currentGuide.group or ""
+    return group:gsub("^*","")
+end
+
 local function IsPreReqComplete(quest)
     local qid = quest.Id
     if preReqCache[qid] ~= nil then
         return preReqCache[qid]
     end
-    local group = addon.currentGuide.group
+    local group = GetGroup()
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local t = type(quest.previousQuest)
     local function IsPreReqFulfilled(id,isQLog)
@@ -96,7 +101,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck,nested)
 
     local availableWith = quest.availableWith
     if availableWith and not nested then
-        local group = addon.currentGuide.group
+        local group = GetGroup()
         local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
         if type(availableWith) ~= "table" then
             availableWith = {availableWith}
@@ -111,7 +116,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck,nested)
 
     local req = quest.requires
     if req then
-        local group = addon.currentGuide.group
+        local group = GetGroup()
         local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
         if QuestDB[req].questLog and not (QuestDB[req].isActive or addon.IsQuestTurnedIn(req)) then
             return false
@@ -198,7 +203,7 @@ local groupCount
 local questQueryTimer = 0
 function addon.GetBestQuests(refreshQuestDB,output,silent)
     output = output or 0
-    local group = addon.currentGuide.group
+    local group = GetGroup()
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     if not QuestDB then return end
     preReqCache = {}
@@ -665,7 +670,7 @@ function CreatePanel()
                 -- usage = "Usage string",
                 get = function() return debugText end,
                 set = function(self,text)
-                    local group = addon.currentGuide.group
+                    local group = GetGroup()
                     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
                     local p = "([\r\n]%s*%[)(%d+)(%] = {)"
                     local db
@@ -785,7 +790,7 @@ end
 
 
 function addon.IsGuideQuestActive(id)
-    local group = addon.currentGuide.group
+    local group = GetGroup()
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     if not (QuestDB and QuestDB[id]) then
         return false
@@ -896,7 +901,7 @@ function addon.CalculateTotalXP(flags,refresh)
         addon.GetBestQuests(true)
     end
 
-    local grp = addon.currentGuide.group
+    local grp = GetGroup()
     local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy or {}
     local totalXp = 0
     local requestFromServer = true
@@ -1067,7 +1072,7 @@ function addon.ShowMissingQuests(output)
     addon.CalculateTotalXP(1)
     addon.CalculateTotalXP(0)
 
-    local grp = addon.currentGuide.group
+    local grp = GetGroup()
     local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy or {}
     local t = ""
     for qid,v in pairs(addon.questsAvailable) do

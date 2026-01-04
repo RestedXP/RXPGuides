@@ -5703,12 +5703,13 @@ function addon.functions.itemcount(self, ...)
         --element.enableBank = bit.band(flags, 0x1) == 0x1
         element.enableBank = flags
         element.ids = {}
-        for n in string.gmatch(id, "%d+") do
-            table.insert(element.ids, tonumber(n))
+        if type(id) == "string" then
+            for n in string.gmatch(id, "%d+") do
+                table.insert(element.ids, tonumber(n))
+            end
         end
-        element.id = tonumber(id)
         element.total = tonumber(total)
-        if not (element.total and element.id) then
+        if not (element.total and next(element.ids)) then
             return addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
                             ": Invalid item ID/count\n" .. self)
         end
