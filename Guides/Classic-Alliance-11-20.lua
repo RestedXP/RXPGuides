@@ -733,7 +733,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #name 14-16 Darkshore
 #displayname 11-16 Darkshore << NightElf
-#displayname 15-16 Darkshore << !NightElf
+#displayname 13-16 Darkshore << Dwarf Hunter
+#displayname 15-16 Darkshore << !NightElf/!Dwarf Hunter
 #next 16-19 Darkshore
 
 
