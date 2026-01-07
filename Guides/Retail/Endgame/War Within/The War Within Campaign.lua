@@ -3089,7 +3089,7 @@ step
 step
     #hidewindow
     #completewith skip the campaign
-    .goto 2346,43.53,51.7,60 >>1
+    .goto 2346,43.53,51.7,60 >>Follow the Arrow
 step
     #requires skip the campaign
     .isQuestAvailable 86417
@@ -4482,7 +4482,7 @@ step
     #hidewindow
     #completewith EmergencyExit
     #label TooFarFromTeleporter
-    .goto 862,23.49,60.19,80 >>1
+    .goto 862,23.49,60.19,80 >>Follow the Arrow
 step
     #requires TooFarFromTeleporter
     #completewith next
@@ -5668,7 +5668,7 @@ step
 step
     #hidewindow
     #completewith StolenBarrierProjectorA
-    .goto 2472,53.43,44.91,15 >>1
+    .goto 2472,53.43,44.91,15 >>Follow the Arrow
 step
     #requires StolenBarrierProjectorA
     #hidewindow
@@ -5741,7 +5741,7 @@ step
 step
     #completewith CompromisedUnboundA
     #hidewindow
-    .goto 2472,56.74,72.91,20 >>1
+    .goto 2472,56.74,72.91,20 >>Follow the Arrow
 step
     #requires CompromisedUnboundA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xy'bin|r and |cRXP_FRIENDLY_Ta'ka|r
@@ -5944,11 +5944,11 @@ step
 step
     #hidewindow
     #completewith next
-    .goto 2472,40.82,65.83,10 >>1
+    .goto 2472,40.82,65.83,10 >>Follow the Arrow
 step
     #hidewindow
     #completewith TalkToInkeeperA
-    .goto 2472,41.12,25.09,120 >>1
+    .goto 2472,41.12,25.09,120 >>Follow the Arrow
 step
     #requires TalkToInkeeperA
     #completewith next
@@ -5964,7 +5964,7 @@ step
 step
     #hidewindow
     #completewith TalkToInkeeperB
-    .goto 2472,41.12,25.09,50 >>1
+    .goto 2472,41.12,25.09,50 >>Follow the Arrow
 step
     #requires TalkToInkeeperB
     .goto 2472,41.12,25.09
@@ -5993,7 +5993,7 @@ step
 step
     #completewith TalkToFlightMasterA
     #hidewindow
-    .goto 2472,34.76,9.96,50 >>1
+    .goto 2472,34.76,9.96,50 >>Follow the Arrow
 step
     #requires TalkToFlightMasterA
     .goto 2472,34.75,10.05
@@ -6101,7 +6101,7 @@ step
 step
     #hidewindow
     #completewith Turn in Eco-Dome: Primus
-    .goto 2371,47.73,52.56,20 >>1
+    .goto 2371,47.73,52.56,20 >>Follow the Arrow
 step
     #requires Turn in Eco-Dome: Primus
     .goto 2371,47.08,54.53
@@ -6502,7 +6502,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 131611 >>1
+    .gossipoption 131611 >>Follow the Arrow
     .timer 29,RP
 step
     .goto 2371,68.54,53.87

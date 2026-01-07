@@ -478,6 +478,7 @@ step
     #completewith next
     --#title |cFFFCDC00Exit the vehicle|r
     .exitvehicle >>|cRXP_WARN_Exit the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #loop
     .goto 378,62.85,49.06,0

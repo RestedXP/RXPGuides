@@ -4687,7 +4687,7 @@ step
     .isOnQuest 54640
     .exitvehicle >> |cRXP_WARN_Dismount the Gnomeregan Assault Tank by pressing the |r[Exit] |cRXP_WARN_button on your action bars.|r
     *|cRXP_WARN_Alternatively, you can use this macro;|r
-    .link /leavevehicle>> CLICK HERE FOR MACRO.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #loop
     .goto 120,38.23,59.93,40,0
@@ -4725,7 +4725,7 @@ step
     #completewith next
     .exitvehicle >> |cRXP_WARN_Dismount the First Squadron Prototype by pressing the |r[Exit] |cRXP_WARN_button on your action bars.|r
     *|cRXP_WARN_Alternatively, you can use this macro;|r
-    .link /leavevehicle>> CLICK HERE FOR MACRO.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     .goto 120,56.13,51.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cog Captain Winklespring|r

@@ -2224,7 +2224,7 @@ step
     #completewith next
     .exitvehicle >> |cRXP_WARN_Dismount the Skyfire Gyrocopter by pressing the |r.[Exit] |cRXP_WARN_button on your action bars|r.
     *|cRXP_WARN_Alternatively, you can use this macro;|r.
-    .link /leavevehicle>> CLICK HERE FOR MACRO.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
     *|cRXP_WARN_It's recommended to safe this macro for future use|r.
 step
     .goto 371,42.04,92.75
@@ -2240,7 +2240,7 @@ step
     #completewith next
     .exitvehicle >> |cRXP_WARN_Dismount the Skyfire Gyrocopter by pressing the |r.[Exit] |cRXP_WARN_button on your action bars|r.
     *|cRXP_WARN_Alternatively, you can use this macro;|r.
-    .link /leavevehicle>> CLICK HERE FOR MACRO.
+    .macro Leave Vehicle,6656430 >>/leavevehicle
     *|cRXP_WARN_It's recommended to safe this macro for future use|r.
 step
     .goto 371,43.58,90.64

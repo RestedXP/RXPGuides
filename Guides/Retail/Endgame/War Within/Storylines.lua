@@ -988,8 +988,7 @@ step
     .zone 2339 >>Enter Dornogal
 step
     #requires Faerin
-    .goto 2339,46.02,49.4 --clickradius
-    .goto 2339,46.07,49.60 --npc location
+    .goto 2339,46.02,49.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
     .accept 84638 >>Accept Trouble in the Highlands
     .target Faerin Lothar
@@ -1007,28 +1006,27 @@ step
 --     .accept 84638 >>Accept Trouble in the Highlands
 --     .target Faerin Lothar
 step
-    .goto 2339,46.02,49.4 --clickradius
-    .goto 2339,45.96,49.19 --npc location
+    .goto 2339,46.02,49.4
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 84638,1 --1/1 Take the portal to the Arathi Highlands
 step
-    .goto 2372,21.62,38.53 --npc location
+    .goto 2372,21.62,38.53
     #title |cFFFCDC00Follow the Arrow|r
     .complete 84638,2 --1/1 Follow Faerin
     .target Faerin
 step
-    .goto 2372,21.62,38.53 --npc location
+    .goto 2372,21.62,38.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin|r
     .complete 84638,3 --1/1 Speak to Faerin
     .skipgossipid 132093
     .target Faerin
 step
-    .goto 2372,20.46,39.30 --npc location
+    .goto 2372,20.46,39.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
     .turnin 84638 >>Turn in Trouble in the Highlands
     .target Danath Trollbane
 step
-    .goto 2372,20.42,39.5 --clickradius
+    .goto 2372,20.42,39.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walker Gresham|r and |cRXP_FRIENDLY_Maggie Wiltshire|r
     .accept 84639 >>Accept Torches and Tar
     .goto 2372,20.5,39.4
@@ -1068,8 +1066,7 @@ step
     .goto 2372,14.65,42.17,5 >>Enter the barn
 step
     #requires Barn
-    .goto 2372,14.75,42.72 --clickradius
-    .goto 2372,14.77,42.89 --npc location
+    .goto 2372,14.75,42.72
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Marshall Wiltshire|r
     .complete 84658,1 --1/1 Marshall Wiltshire found
     .target Marshall Wiltshire
@@ -1086,8 +1083,7 @@ step
     .goto 2372,14.27,41.89,5 >>Enter the house
 step
     #requires Ellie
-    .goto 2372,14.24,41.88 --clickradius
-    .goto 2372,14.08,41.84 --npc location
+    .goto 2372,14.24,41.88
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Ellie|r   
     .complete 84658,3 --1/1 Ellie found
     .target Ellie
@@ -1111,21 +1107,20 @@ step
     .mob Defias Lookout
     .mob Defias Ringleader
 step
-    .goto 2372,20.51,39.51 --clickradius
+    .goto 2372,20.51,39.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walker Gresham|r, |cRXP_FRIENDLY_Maggie Wiltshire|r and |cRXP_FRIENDLY_Danath Trollbane|r.
     .turnin 84639 >>Turn in Torches and Tar
-    .goto 2372,20.47,39.59 --npc location
+    .goto 2372,20.47,39.59
     .target +Walker Gresham
     .turnin 84658 >>Turn in Finding Family
-    .goto 2372,20.50,39.39 --npc location
+    .goto 2372,20.50,39.39
     .target +Maggie Wiltshire
     .turnin 84640 >>Turn in Emblematic of Things to Come
     .accept 84641 >>Accept Ill Tidings
-    .goto 2372,20.46,39.29 --npc location
+    .goto 2372,20.46,39.29
     .target +Danath Trollbane
 step
-    .goto 2372,19.4,56.42 --clickradius
-    .goto 2372,19.41,56.18 --npc location
+    .goto 2372,19.4,56.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danath Trollbane|r
     .turnin 84641 >>Turn in Ill Tidings
     .target Danath Trollbane
@@ -1258,7 +1253,7 @@ step
     .goto 2372,17.53,60.55,10 >>Enter the house
 step
     #requires Curfew Kerfuffle
-    .goto 2372,17.51,59.73 --clickradius
+    .goto 2372,17.51,59.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Roderick Brewston|r and |cRXP_FRIENDLY_Colonel Veronica Nials|r
     .turnin 84643 >>Turn in Curfew Kerfuffle
     .turnin 84645 >>Turn in Deputy Delivery
@@ -1274,8 +1269,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .complete 84649,1 --1/1 Follow Colonel Nials downstairs
 step
-    .goto 2372,17.79,60.33 --clickradius
-    .goto 2372,17.73,60.18 --npc location
+    .goto 2372,17.79,60.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin|r
     .complete 84649,2 --1/1 Speak to Faerin
     .timer 63,RP
@@ -1284,8 +1278,7 @@ step
 step
     .goto 2372,17.9,60.45,5,0
     .goto 2372,17.96,59.45,5,0
-    .goto 2372,17.55,59.79 --clickradius
-    .goto 2372,17.54,59.58 --npc location
+    .goto 2372,17.55,59.79
     #title |cFFFCDC00Follow the Arrow|r
     >>|cRXP_WARN_Go back upstairs and wait for the Roleplay|r.
     .complete 84649,3 --1/1 Listen to the conversation
@@ -1303,8 +1296,7 @@ step
 --     .goto 2372,17.96,59.37,8 >>Go back upstairs
 step
     -- #requires MarranRefuge
-    .goto 2372,17.55,59.79 --clickradius
-    .goto 2372,17.54,59.58 --npc location
+    .goto 2372,17.55,59.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colonel Veronica Nials|r
     .turnin 84649 >>Turn in Marran Trollbane
     .accept 84650 >>Accept Finding Refuge at Refuge Pointe
@@ -1324,26 +1316,23 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .complete 84650,1 --1/1 Meet Faerin at Refuge Pointe
 step
-    .goto 2372,38.04,52.41 --clickradius
-    .goto 2372,37.97,52.24 --npc location
+    .goto 2372,38.04,52.41
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Corpse|r.
     .complete 84650,2 --1/1 Search the body for clues
     .skipgossipid 131607
     .mob Unknown Soldier
 step
-    .goto 2372,40.84,53.42 --clickradius
-    .goto 2372,40.95,53.55 --npc location
+    .goto 2372,40.84,53.42
     #title |cFFFCDC00Follow the Arrow|r
     .complete 84650,3 --1/1 Follow Faerin up the hill
 step
-    .goto 2372,40.84,53.42 --clickradius
-    .goto 2372,40.95,53.54 --npc location
+    .goto 2372,40.84,53.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karga Bloodfury|r
     .complete 84650,4 --1/1 Speak to Karga
     .skipgossipid 131610
     .target Karga Bloodfury
 step
-    .goto 2372,40.84,53.42 --clickradius
+    .goto 2372,40.84,53.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r and |cRXP_FRIENDLY_Karga Bloodfury|r
     .turnin 84650 >>Turn in Finding Refuge at Refuge Pointe
     .goto 2372,40.81,53.56
@@ -1380,14 +1369,12 @@ step
     .goto 2372,40.83,53.57
     .target +Faerin Lothar
 step
-    .goto 2372,69.71,39.22 --clickradius
-    .goto 2372,69.71,39.37 --npc location
+    .goto 2372,69.71,39.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r.
     .turnin 84656 >>Turn in Onward to Hammerfall
     .target Faerin Lothar
 step
-    .goto 2372,69.71,39.22 --clickradius
-    .goto 2372,69.70,39.15 --npc location
+    .goto 2372,69.71,39.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r
     .accept 84704 >>Accept A Different Point of View
     .target Eitrigg
@@ -1414,8 +1401,7 @@ step
     .goto 2372,69.14,33.07,5 >>Enter the house
 step
     #requires To See a Troll
-    .goto 2372,69.45,32.95 --clickradius
-    .goto 2372,69.57,32.88 --npc location
+    .goto 2372,69.45,32.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faerin Lothar|r
     .turnin 84704 >>Turn in A Different Point of View
     .target Faerin Lothar
@@ -1450,23 +1436,20 @@ step
     .mob Witherbark Axe Thrower
     .mob Witherbark Shadow Hunter
 step
-    .goto 2372,66.49,61.46 --clickradius
-    .goto 2372,66.53,61.31 --npc location
+    .goto 2372,66.49,61.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crestor|r
     .complete 84706,3 --1/1 Crestor saved
     .skipgossipid 124871
     .target Crestor
 step
-    .goto 2372,68.08,67.41 --clickradius
-    .goto 2372,68.21,67.52 --npc location
+    .goto 2372,68.08,67.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holt|r
     .complete 84706,2 --1/1 Holt saved
     .skipgossipid 124867
     .target Holt
 step
     #label Perry
-    .goto 2372,63.95,72.43 --clickradius
-    .goto 2372,64.00,72.61 --npc location
+    .goto 2372,63.95,72.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Perry|r
     .complete 84706,1 --1/1 Perry saved
     .skipgossipid 124855
@@ -1494,14 +1477,13 @@ step
     .accept 84708 >>Accept The Syndicate Strikes Back
     .target Overlord Geya'rah
 step
-    .goto 2372,69.72,40.93 --clickradius
-    .goto 2372,69.60,41.06 --npc location
+    .goto 2372,69.72,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overlord Geya'rah|r
     .turnin 84708 >>Turn in The Syndicate Strikes Back
     .accept 85451 >>Accept The Burning of Hammerfall
     .mob Overlord Geya'rah
 step
-    .goto 2372,69.72,40.93 --clickradius
+    .goto 2372,69.72,40.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r and |cRXP_FRIENDLY_Faerin Lothar|r
     .accept 84709 >>Accept Hammerfall Down
     .goto 2372,69.72,40.93
@@ -1706,7 +1688,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .goto 2372,14.29,64.92,3,0
     .goto 2372,14.3,64.55,3,0
-    .goto 2372,14.78,64.49,5 >>1
+    .goto 2372,14.78,64.49,5 >>Follow the Arrow
 step
     #requires Inn basement2
     .goto 2372,14.47,64.96
