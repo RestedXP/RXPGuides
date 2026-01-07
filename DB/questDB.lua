@@ -1,7 +1,7 @@
 local _,addon = ...
 
 local showAllQs = true
-local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
+local GIC = C_Item and C_Item.GetItemCount or _G.GetItemCount
 local QUEST_LOG_SIZE = 25
 local reloadTimer = 0
 local L = addon.locale.Get
@@ -13,6 +13,24 @@ local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local backlog = {}
 local preReqCache = {}
 local sortTable = {}
+
+local GetItemCount = function(id,includeBank)
+    local c = 0
+    if _G.Syndicator then
+        local s = Syndicator.API.GetInventoryInfoByItemID(id,true,true)
+        if s then
+            local chars = s.characters
+            for i,char in pairs(chars) do
+                --local char = t
+                c = c + (char.bags or 0) + (char.mail or 0) + (char.bank or 0)
+            end
+        end
+    end
+    if c == 0 then
+        c = GIC(id,includeBank)
+    end
+    return c
+end
 
 local function OpenSettings(panelName)
     local close
@@ -893,6 +911,8 @@ end
 
 addon.questsDone = {}
 addon.questsAvailable = {}
+
+addon.questsToPrepare = {}
 addon.preparedQuests = {}
 
 function addon.CalculateTotalXP(flags,refresh)
@@ -922,6 +942,7 @@ function addon.CalculateTotalXP(flags,refresh)
         addon.questsDone = {}
         addon.preparedQuests = {}
     end
+    addon.questsToPrepare = {}
     local xpmod = GetXPMods()
     --print(xpmod)
     local groups = {}
@@ -938,7 +959,9 @@ function addon.CalculateTotalXP(flags,refresh)
             local xp = quest.xp or 0
             xp = xp * xpmod
             totalXp = totalXp + xp
-            if not ignorePreReqs then
+            if ignorePreReqs then
+                addon.questsToPrepare[qid] = totalXp
+            else
                 addon.preparedQuests[qid] = totalXp
             end
             if output then
