@@ -558,7 +558,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     end
 
     local function CheckBox_OnMouseDown(frame)
-        frame.obj.highlight:SetAlpha(0.25)
         AceGUI:ClearFocus()
     end
 
@@ -567,8 +566,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         if not self.profile then return end
 
         self:ToggleChecked()
-
-        frame.obj.highlight:SetAlpha(0.16)
 
         self:Fire("OnValueChanged", self.profile[self.settingkey])
     end
@@ -712,11 +709,15 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         check:SetBlendMode("BLEND")
 
         local highlight = frame:CreateTexture(nil, "HIGHLIGHT")
-        highlight:SetTexture("Interface\\Buttons\\UI-Common-MouseHilight")
-        highlight:SetColorTexture(2 / 255, 255, 36, 1)
-        highlight:SetAlpha(0.16)
-        highlight:SetBlendMode("ADD")
-        highlight:SetAllPoints()
+        highlight:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover")
+        highlight:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
+        highlight:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -2, -2)
+        highlight:SetPoint("LEFT", imageborder, "RIGHT", -2, 0)
+
+        local pushedHighlight = frame:CreateTexture(nil, "HIGHLIGHT")
+        pushedHighlight:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-press")
+        pushedHighlight:SetAllPoints(highlight)
+        frame:SetPushedTexture(pushedHighlight)
 
         local frameBackdrop = {
 	        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
