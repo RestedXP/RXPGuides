@@ -599,6 +599,8 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
                 SetDesaturation(check, false)
                 check:Hide()
             end
+
+            if self.callback then return self.callback() end
         end,
 
         ["GetValue"] = function(self)
@@ -609,9 +611,10 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
             self:SetValue(not self:GetValue())
         end,
 
-        ["SetSetting"] = function(self, profile, settingkey)
+        ["SetSetting"] = function(self, profile, settingkey, callback)
             self.profile = profile
             self.settingkey = settingkey
+            self.callback = callback
 
             self:SetValue(self.profile[settingkey])
         end,
@@ -818,12 +821,12 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
 
 end
 
-local function selectDefaultGuide(isHardcore)
+local function selectDefaultGuide(survival)
     if UnitLevel("player") > 1 then return end
 
     if addon.currentGuide and not addon.currentGuide.empty then return end
 
-    if addon.settings.profile.hardcore or isHardcore then
+    if addon.settings.profile.hardcore or survival then
         addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
     else
         addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
@@ -869,35 +872,42 @@ function addon.ui.v2:CreateConfigurator()
 
     local configuratorSettings = {
         enableDungeons = false,
-        hardcore = false,
+        survival = false,
     }
 
     local page2Options = {
-        [1] = {
+        {
             icon = "Interface\\Icons\\inv_misc_coin_02",
             label = L("Solo Self Found Mode"),
             tooltip = L("If this option is enabled, it disables all steps involving trading or Auction House"),
             setting = 'soloSelfFound',
         },
-        [2] = {
+        {
             icon = "Interface\\Icons\\spell_holy_prayerofhealing",
             label = L("Show Group Quests"),
             tooltip = L("Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."),
             setting = 'enableGroupQuests'
         },
-        [3] = {
-            icon = "Interface\\Icons\\spell_frost_stun",
-            label = L("Enable Dungeons"),
-            tooltip = L("Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."),
-            setting = 'enableDungeons',
-            profile = configuratorSettings
-        },
-        [4] = {
+        {
             icon = "Interface\\Icons\\Ability_Vehicle_LaunchPlayer",
             label = L("Skip overleveled steps"),
             tooltip = L("Skip steps you're overleveled for"),
             setting = 'enableXpStepSkipping',
-        }
+        },
+        {
+            icon = "Interface\\Icons\\spell_frost_stun",
+            label = L("Enable Dungeons"),
+            tooltip = L("Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."),
+            setting = 'enableDungeons',
+            profile = configuratorSettings,
+            callback = function ()
+                if configuratorSettings['enableDungeons'] then
+                    configurator.submitbutton:SetText(_G.NEXT)
+                else
+                    configurator.submitbutton:SetText(_G.SUBMIT)
+                end
+            end
+        },
     }
 
     addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
@@ -923,7 +933,7 @@ function addon.ui.v2:CreateConfigurator()
 
         data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
         data.frame:SetFullWidth(true)
-        data.frame:SetSetting(data.profile or addon.settings.profile, data.setting)
+        data.frame:SetSetting(data.profile or addon.settings.profile, data.setting, data.callback or nil)
         data.frame:SetImage(data.icon)
         data.frame:SetLabel(data.label)
         data.frame:SetTooltip(data.tooltip)
@@ -944,12 +954,17 @@ function addon.ui.v2:CreateConfigurator()
         page1:Show()
     end
 
+    local function page3to1()
+        configurator:Hide()
+        page1:Show()
+    end
+
     speedrunGroup:SetCallback("OnClick", function()
         page1to2()
     end)
 
     survivalGroup:SetCallback("OnClick", function()
-        configuratorSettings["hardcore"] = true
+        configuratorSettings["survival"] = true
         page1to2()
     end)
 
@@ -958,13 +973,18 @@ function addon.ui.v2:CreateConfigurator()
     end)
 
     configurator.resetbutton:SetScript("OnClick", function()
-        page2to1()
+        page3to1()
+        configurator.resetbutton:Disable()
     end)
 
     configurator.submitbutton:SetScript("OnClick", function()
-        -- TODO if configuratorSettings["enableDungeons"] was selected, change this to _G.NEXT
-        selectDefaultGuide(configuratorSettings["hardcore"])
-        configurator:Hide()
+        if configuratorSettings["enableDungeons"] then
+            configurator.submitbutton:SetText(_G.SUBMIT)
+            configurator.resetbutton:Enable()
+        else
+            selectDefaultGuide(configuratorSettings["survival"])
+            configurator:Hide()
+        end
     end)
 
     return page1
