@@ -2725,6 +2725,7 @@ step
     .mob +Cracked Skull Soldier
     .complete 426,2 --Blackened Skull (3)
     .mob +Darkeye Bonecaster
+    .isOnQuest 426
 step
     #label KillDevlin
     .goto Tirisfal Glades,47.34,40.78
@@ -2767,6 +2768,7 @@ step
     .mob +Cracked Skull Soldier
     .complete 426,2 --Blackened Skull (3)
     .mob +Darkeye Bonecaster
+    .isOnQuest 426
 step
     #requires MillsOverun
     #completewith MaggotEye

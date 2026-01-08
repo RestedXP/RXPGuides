@@ -583,7 +583,9 @@ function addon.UpdateStepCompletion()
             elseif step.index >= RXPCData.currentStep then
                 step.completed = true
                 RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
-                if step.index == RXPCData.currentStep then
+
+                if step.index == RXPCData.currentStep or
+                      (step.index > RXPCData.currentStep and not step.sticky) then
                     addon.loadNextStep = true
                 end
                 return
@@ -769,7 +771,7 @@ function addon.SetStep(n, n2, loopback)
                 stepframe:SetPoint("BOTTOMLEFT", UIParent, 0, 0)
             end
             --TODO: Save window position
-            stepframe:SetWidth(200)
+            stepframe:SetWidth(230)
             stepframe:SetMovable(true)
             stepframe:EnableMouse(true)
             stepframe:SetClampedToScreen(true)

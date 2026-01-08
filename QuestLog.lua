@@ -55,21 +55,33 @@ function addon.UpdateQuestButton(index)
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete,
           frequency, questID = _G.GetQuestLogTitle(index);
     local showButton
-    local function GetGuideList(list,qid)
+    local function GetGuideList(list,qid,mode)
         -- local guides = {}
         local output = ""
         local groups = {}
         local guides = {}
         for _, entry in pairs(list) do
             local step = entry.step
-            if not entry.guide.lowPrio and
+            local prepCheck = true
+            local group = entry.group
+            local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+            local isActive = QuestDB[qid] and QuestDB[qid].isActive
+            local isPrepGuide = strlower(group):find("prep")
+            if isPrepGuide and not next(addon.questsToPrepare) and not entry.guide.lowPrio then
+                RXP.CalculateTotalXP(1,1)
+            end
+            if mode == "turnin" and isPrepGuide and
+                 (isActive or addon.questsToPrepare[qid]) then
+                prepCheck = false
+            end
+            if prepCheck and not entry.guide.lowPrio and
                  addon.IsGuideActive(entry.guide) and
                   addon.IsStepShown(step,"GroupCheck") and
                   (step.group or addon.stepLogic.GroupCheck(step)) then
                     --print(entry.guide.name,entry.guide.lowPrio)
-                if not guides[entry.group] then
-                    guides[entry.group] = {}
-                    table.insert(groups, entry.group)
+                if not guides[group] then
+                    guides[group] = {}
+                    table.insert(groups, group)
                 end
                 local solo = step.solo or not step.group
                 local grpTbl = guides[entry.group]
@@ -100,7 +112,7 @@ function addon.UpdateQuestButton(index)
         local tooltip = ""
         local separator = ""
         if addon.pickUpList[questID] then
-            local pickUpList = GetGuideList(addon.pickUpList[questID],questID)
+            local pickUpList = GetGuideList(addon.pickUpList[questID],questID,"accept")
             if pickUpList ~= "" then
                 tooltip = format("%s%s%s%s|r%s", tooltip, addon.icons.accept,
                                  addon.colors.tooltip,
@@ -110,7 +122,7 @@ function addon.UpdateQuestButton(index)
             end
         end
         if addon.turnInList[questID] then
-            local turnInList = GetGuideList(addon.turnInList[questID],questID)
+            local turnInList = GetGuideList(addon.turnInList[questID],questID,"turnin")
             if turnInList ~= "" then
                 tooltip = format("%s%s%s%s%s|r%s", tooltip, separator,
                                  addon.icons.turnin, addon.colors.tooltip,
@@ -164,6 +176,11 @@ local stepIndex = 0
 local guideKey,qLogCache,futureTurnInsCache
 function addon.GetExpectedQuestLog()
     local guide = addon.currentGuide
+    local grp = guide and guide.group
+    local isPrepGuide = grp and strlower(grp):find("prep")
+    if isPrepGuide then
+        return {},{}
+    end
     local startGuide
     local currentStep = RXPCData.currentStep
     local scanQuests
@@ -178,7 +195,8 @@ function addon.GetExpectedQuestLog()
             startGuide = guide
         else
             local group = guide.group
-            local name = addon.guideList[group].defaultGuide_
+            local list = addon.guideList[group]
+            local name = list.defaultGuide_
             startGuide = addon:FetchGuide(group,name)
         end
         startGuide = addon.ProcessGuideTable(startGuide)
@@ -785,7 +803,10 @@ local function CreateCleanupButton()
         parent:HookScript("OnShow", function()
             AnchorCleanupButton()
             if cleanupBtn then
-                cleanupBtn:SetShown(not addon.isHidden)
+                local enabled = addon.currentGuide and not addon.currentGuide.empty
+                local grp = addon.currentGuide.group
+                local isPrepGuide = grp and strlower(grp):find("prep")
+                cleanupBtn:SetShown(not addon.isHidden and enabled and not isPrepGuide)
             end
         end)
     end

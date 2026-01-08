@@ -22,25 +22,25 @@ level -- Ferocity (Rank 4)
 level -- Ferocity (Rank 5)
     .talent 2,1,2,5
 
-level -- Thick Hide (Rank 1)
-    .talent 2,2,3,1
+level -- Feral Aggression (Rank 1)
+    .talent 2,1,3,1
 
-level -- Thick Hide (Rank 2)
-    .talent 2,2,3,2
+level -- Feral Aggression (Rank 2)
+    .talent 2,1,3,2
 
-level -- Thick Hide (Rank 3)
-    .talent 2,2,3,3
+level -- Feral Aggression (Rank 3)
+    .talent 2,1,3,3
 
-level -- Brutal Impact (Rank 1)
-    .talent 2,2,3,1
+level -- Feral Aggression (Rank 4)
+    .talent 2,1,3,4
 
-level -- Brutal Impact (Rank 2)
-    .talent 2,2,3,2
+level -- Feral Aggression (Rank 5)
+    .talent 2,1,3,5
 
-level -- Feline Swiftness (Rank 1)
+level -- Feral Swiftness (Rank 1)
     .talent 2,3,1,1
 
-level -- Feline Swiftness (Rank 2)
+level -- Feral Swiftness (Rank 2)
     .talent 2,3,1,2
 
 level -- Sharpened Claws (Rank 1)
@@ -61,11 +61,11 @@ level -- Predatory Strikes (Rank 2)
 level -- Predatory Strikes (Rank 3)
     .talent 2,4,2,3
 
+level -- Feral Charge
+    .talent 2,3,2,1
+
 level -- Primal Fury (Rank 1)
     .talent 2,4,3,1
-
-level -- Primal Fury (Rank 2)
-    .talent 2,4,3,2
 
 level -- Faerie Fire (Feral)
     .talent 2,5,3,1
@@ -76,11 +76,11 @@ level -- Savage Fury (Rank 1)
 level -- Savage Fury (Rank 2)
     .talent 2,5,1,2
 
+level -- Primal Fury (Rank 2)
+    .talent 2,4,3,2
+
 level -- Nurturing Instinct (Rank 1)
     .talent 2,5,3,1
-
-level -- Nurturing Instinct (Rank 2)
-    .talent 2,5,3,2
 
 level -- Heart of the Wild (Rank 1)
     .talent 2,6,2,1
@@ -112,20 +112,20 @@ level -- Survival of the Fittest (Rank 1)
 level -- Survival of the Fittest (Rank 2)
     .talent 2,6,3,2
 
+level -- Survival of the Fittest (Rank 3)
+    .talent 2,6,3,3
+
+level -- Nurturing Instinct (Rank 2)
+    .talent 2,5,3,2
+
+level -- Shredding Attacks (Rank 1)
+    .talent 2,4,1,1
+
+level -- Shredding Attacks (Rank 2)
+    .talent 2,4,1,2
+
 level -- Predatory Instincts (Rank 1)
     .talent 2,8,3,1
-
-level -- Predatory Instincts (Rank 2)
-    .talent 2,8,3,2
-
-level -- Predatory Instincts (Rank 3)
-    .talent 2,8,3,3
-
-level -- Predatory Instincts (Rank 4)
-    .talent 2,8,3,4
-
-level -- Predatory Instincts (Rank 5)
-    .talent 2,8,3,5
 
 level -- Mangle
     .talent 2,9,2,1
@@ -172,21 +172,21 @@ level -- Natural Shapeshifter (Rank 2)
 level -- Natural Shapeshifter (Rank 3)
     .talent 3,3,3,3
 
-level -- Survival of the Fittest (Rank 3)
-    .talent 2,6,3,3
+level -- Nature's Grasp
+    .talent 1,1,2,1
 
-level -- Feral Charge
-    .talent 2,3,2,1
+level -- Predatory Instincts (Rank 2)
+    .talent 2,8,3,2
 
-level -- Shredding Attacks (Rank 1)
-    .talent 2,4,1,1
+level -- Predatory Instincts (Rank 3)
+    .talent 2,8,3,3
 
-level -- Shredding Attacks (Rank 2)
-    .talent 2,4,1,2
+level -- Predatory Instincts (Rank 4)
+    .talent 2,8,3,4
+
+level -- Predatory Instincts (Rank 5)
+    .talent 2,8,3,5
 
 level -- Feral Instinct (Rank 1)
     .talent 2,2,1,1
-
-level -- Feral Instinct (Rank 2)
-    .talent 2,2,1,2
 ]])

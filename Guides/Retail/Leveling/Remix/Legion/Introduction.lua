@@ -72,30 +72,30 @@ step
 step
     +The Active Items window gives you quick access to specific items & spells used in Legion Remix, so you don’t need to open your full inventory.
     *In this test, all items and spells are shown, but during gameplay only the items you possess and the relevant spells will be displayed.
-    .macro Artifactium Sand,4548903 >>1
-    .macro Mound of Artifactium Sand,4548902 >>1
-    .macro Mound of Artifactium Sand,4548902 >>1
-    .macro Perfected Epoch Memento,3193843 >>1
-    .macro Memento of Epoch Legends,1551372 >>1
-    .macro Drake Treat,132165 >>1
-    .macro Timeless Scroll of Chaos,4549163 >>1
-    .macro Timeless Scroll of Fortitude,4549167 >>1
-    .macro Timeless Scroll of Mystic Power,4549162 >>1
-    .macro Timeless Scroll of Battle Shout,4549164 >>1
-    .macro Timeless Scroll of the Wild,4549165 >>1
-    .macro Timeless Scroll of Cleansing,4549192 >>1
-    .macro Timeless Drums,4559222 >>1
-    .macro Dreamweaver Champion's Insignia,1394953 >>1
-    .macro Court of Farondis Champion's Insignia,1394952 >>1
-    .macro Highmountain Tribe Champion's Insignia,1394954 >>1
-    .macro Nightfallen Champion's Insignia,1394956 >>1
-    .macro Wardens Champion's Insignia,1394958 >>1
-    .macro Army of the Light Champion's Insignia,1708497 >>1
-    .macro Valarjar Champion's Insignia,1394957 >>1
-    .macro Legionfall Champion's Insignia,1585421 >>1
-    .macro Argussian Reach Champion's Insignia,1708496 >>1
-    .macro Temporal Retreat,4571434 >>1
-    .macro Unraveling Sands,4643984 >>1
+    .macro Artifactium Sand,4548903 >>Follow the Arrow
+    .macro Mound of Artifactium Sand,4548902 >>Follow the Arrow
+    .macro Mound of Artifactium Sand,4548902 >>Follow the Arrow
+    .macro Perfected Epoch Memento,3193843 >>Follow the Arrow
+    .macro Memento of Epoch Legends,1551372 >>Follow the Arrow
+    .macro Drake Treat,132165 >>Follow the Arrow
+    .macro Timeless Scroll of Chaos,4549163 >>Follow the Arrow
+    .macro Timeless Scroll of Fortitude,4549167 >>Follow the Arrow
+    .macro Timeless Scroll of Mystic Power,4549162 >>Follow the Arrow
+    .macro Timeless Scroll of Battle Shout,4549164 >>Follow the Arrow
+    .macro Timeless Scroll of the Wild,4549165 >>Follow the Arrow
+    .macro Timeless Scroll of Cleansing,4549192 >>Follow the Arrow
+    .macro Timeless Drums,4559222 >>Follow the Arrow
+    .macro Dreamweaver Champion's Insignia,1394953 >>Follow the Arrow
+    .macro Court of Farondis Champion's Insignia,1394952 >>Follow the Arrow
+    .macro Highmountain Tribe Champion's Insignia,1394954 >>Follow the Arrow
+    .macro Nightfallen Champion's Insignia,1394956 >>Follow the Arrow
+    .macro Wardens Champion's Insignia,1394958 >>Follow the Arrow
+    .macro Army of the Light Champion's Insignia,1708497 >>Follow the Arrow
+    .macro Valarjar Champion's Insignia,1394957 >>Follow the Arrow
+    .macro Legionfall Champion's Insignia,1585421 >>Follow the Arrow
+    .macro Argussian Reach Champion's Insignia,1708496 >>Follow the Arrow
+    .macro Temporal Retreat,4571434 >>Follow the Arrow
+    .macro Unraveling Sands,4643984 >>Follow the Arrow
 ]])
 
 ---Intro
@@ -1074,7 +1074,7 @@ step
     .isInScenario 943
     #completewith Morvath the Reaver
     #hidewindow
-    .goto 424,45.53,25.6,50 >>1
+    .goto 424,45.53,25.6,50 >>Follow the Arrow
 step
     .isInScenario 943
     #requires Morvath the Reaver
@@ -1244,7 +1244,7 @@ step
 step
     #completewith Matter of Planning
     #hidewindow
-    .goto 709,51.41,48.4,60 >>1
+    .goto 709,51.41,48.4,60 >>Follow the Arrow
 step
     #requires Matter of Planning
     .goto 709,51.42,48.40
@@ -1263,7 +1263,7 @@ step
     #completewith Turn in A Matter of Planning2
     #hidewindow
     .goto 709,51.46,54.08,20,0
-    .goto 709,52.77,59.79,50 >>1
+    .goto 709,52.77,59.79,50 >>Follow the Arrow
 step
     #requires Turn in A Matter of Planning2
     .goto 709,52.77,59.79
@@ -1763,7 +1763,7 @@ step
     #completewith Time is of the Essence
     .goto 720,70.06,55.41,15,0
     .goto 720,67.12,65.49,15,0
-    .goto 720,58.59,57.91,5 >>1
+    .goto 720,58.59,57.91,5 >>Follow the Arrow
 step
     #requires Time is of the Essence
     .goto 720,58.59,57.91
@@ -2599,7 +2599,7 @@ step
 step
     #completewith Champion's Return
     #hidewindow
-    .goto 735,56.58,33.79,40 >>1
+    .goto 735,56.58,33.79,40 >>Follow the Arrow
 step
     #requires Champion's Return
     .goto 735,56.58,33.79
@@ -2707,7 +2707,7 @@ step
 step
     #completewith Rise, Champions
     #hidewindow
-    .goto 735,55.31,38.13,40 >>1
+    .goto 735,55.31,38.13,40 >>Follow the Arrow
 step
     #requires Rise, Champions
     .goto 735,55.28,38.19
@@ -2915,7 +2915,7 @@ step
     #completewith Logistical Matters
     #hidewindow
     .goto 24,46.35,65.51,20,0
-    .goto 24,52.29,78.12,40 >>1
+    .goto 24,52.29,78.12,40 >>Follow the Arrow
 step
     #requires Logistical Matters
     .goto 24,52.38,78.15
@@ -3784,7 +3784,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 201060 >>1
+    .cast 201060 >>Follow the Arrow
     .timer 25,Ritssyn Roleplay
 step
     .goto 717,31.87,56.73
@@ -4103,7 +4103,7 @@ step
 step
     #hidewindow
     #completewith The Eye of Odyn
-    .goto 695,62.05,21.15,20 >>1
+    .goto 695,62.05,21.15,20 >>Follow the Arrow
 step
     #requires The Eye of Odyn
     .goto 695,59.75,13.38
@@ -4147,7 +4147,7 @@ step
 step
     #completewith Finna Bjornsdottir
     #hidewindow
-    .goto 695,61.44,37.76,10 >>1
+    .goto 695,61.44,37.76,10 >>Follow the Arrow
 step
     #requires Finna Bjornsdottir
     #label Accept The Eye of Odyn

@@ -4739,6 +4739,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    >>|cRXP_WARN_NOTE: There is a small chance of dying using this method. You can also walk to the Mage Tower normally if you wish|r
     .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Jennea|r
 step
@@ -5321,12 +5322,18 @@ step
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
-    #completewith next
+    #completewith GrainSample
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
 step
+    .goto Darkshore,44.18,36.29
+    >>Talk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 957,3 >>Turn in Bashal'Aran
+    .target Asterion
+step
+    #label GrainSample
     .goto Darkshore,50.66,34.98
     >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |cRXP_LOOT_Blackwood Grain Sample|r
     >>|cRXP_WARN_Aggro the Mobs protecting it, cast|r |T135848:0|t[Frost Nova]|cRXP_WARN_, loot the |cRXP_LOOT_Blackwood Grain Sample|r, then run away toward |cRXP_ENEMY_Den Mother|r from the mobs that spawn|r
@@ -5503,11 +5510,6 @@ step
     .subzone 442 >> Travel to Auberdine
     .isOnQuest 4763
 step
-    .goto Darkshore,44.18,36.29
-    >>Talk to |cRXP_FRIENDLY_Asterion|r
-    .turnin 957,3 >>Turn in Bashal'Aran
-    .target Asterion
-step
     .goto Darkshore,37.39,40.13
     >>Talk to |cRXP_FRIENDLY_Thundris|r
     .turnin 4763,1 >> Turn in The Blackwood Corrupted
@@ -5522,6 +5524,7 @@ step
     .goto Darkshore,38.84,43.42
     >>Talk to |cRXP_FRIENDLY_Tharnariun|r
     .turnin 2139,1 >>Turn in Tharnariun's Hope
+    .target Tharnariun Treetender
 step
     >>Talk to |cRXP_FRIENDLY_Glynda|r, |cRXP_FRIENDLY_Barithras|r, and the |cRXP_PICK_Wanted Poster|r
     .turnin 4813,2 >>Turn in The Fragments Within
@@ -5608,6 +5611,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    >>|cRXP_WARN_NOTE: There is a small chance of dying using this method. You can also walk to the Mage Tower normally if you wish|r
     .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Jennea|r
 step
@@ -6161,6 +6165,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    >>|cRXP_WARN_NOTE: There is a small chance of dying using this method. You can also walk to the Mage Tower normally if you wish|r
     .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Jennea|r
 step
@@ -6862,11 +6867,13 @@ step
     >>|cRXP_ENEMY_Grizzled Thistle Bears|r share spawns with |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
+    .use 13536
 step
     #label 525
     .goto Darkshore,41.40,80.56
     >>Click |cRXP_PICK_Buzzbox 525|r
     .turnin 1003 >> Turn in Buzzbox 525
+    .use 13536
 step
     .goto Darkshore,41.10,84.17,70,0
     .goto Darkshore,40.38,90.49,70,0
@@ -6887,6 +6894,7 @@ step
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
     .unitscan Moonstalker Matriarch
+    .use 13536
 step
     #completewith Sleeper
     .xp 19+4635 >> Grind to 4635+/21300xp
@@ -6902,6 +6910,7 @@ step
     >>Talk to |cRXP_FRIENDLY_Liladris|r
     .turnin 5321,1 >>Turn in The Sleeper Has Awakened
     .target Liladris Moonriver
+    .use 13536
     .isOnQuest 5321
 step
     #label Delgren
@@ -6946,7 +6955,7 @@ step
 step
     >>Talk to |cRXP_FRIENDLY_Terenthis|r and |cRXP_FRIENDLY_Gershala|r
     .turnin 986 >>Turn in A Lost Master
-    .accept 993 >>Accept A Lost Master
+    --.accept 993 >>Accept A Lost Master
     .target +Terenthis
     .goto Darkshore,39.37,43.48
     .turnin 3765 >> Turn in The Corruption Abroad
@@ -7122,11 +7131,12 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cRXP_WARN_Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cRXP_WARN_With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    >>|cRXP_WARN_NOTE: There is a small chance of dying using this method. You can also walk to the Mage Tower normally if you wish|r
     .link https://youtu.be/gV8-wgQEomc >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cRXP_FRIENDLY_Larimaine|r
 step
     #requires Bank1
-    .goto Stormwind City,38.61,79.39
+    .goto Stormwind City,39.69,79.56
     >>Talk to |cRXP_FRIENDLY_Larimaine|r
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     >>Total Cost: 20s

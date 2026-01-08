@@ -3419,7 +3419,7 @@ step << Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
     .turnin 6386 >> Turn in Return to the Crossroads
     .target +Zargh
-    .goto The Barrens,51.50,30.87
+    .goto The Barrens,52.62,29.84
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
     .target +Sergra Darkthorn

@@ -1,3 +1,4 @@
+--Xal'atath
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -64,6 +65,7 @@ step
     #completewith Blade in Twilight
     .goto 18,12.82,59.21
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires Blade in Twilight
     .goto 18,12.79,59.01
@@ -121,7 +123,7 @@ step
     .isOnQuest 40710
     #hidewindow
     #completewith Twilight Shadowcaster
-    .goto 20,37.18,43.08,30 >>1
+    .goto 20,37.18,43.08,30 >>Follow the Arrow
     .timer 30,RP
 step
     .isOnQuest 40710
@@ -226,7 +228,8 @@ step << Horde
 step << Horde 
     #completewith Every Little Death Helps H
     .goto 862,78.07,36.72
-    .exitvehicle >>|cRXP_WARN_Leave the vehicle|r    
+    .exitvehicle >>|cRXP_WARN_Leave the vehicle|r 
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step << Alliance
     #completewith next
     #label Every Little Death Helps A
@@ -236,6 +239,7 @@ step << Alliance
     #completewith Every Little Death Helps A
     .goto 942,34.18,31.8
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step << Horde
     #requires Every Little Death Helps H
     .goto 862,78.07,36.72
@@ -500,6 +504,7 @@ step
     #completewith The Blade's Past
     .goto 2381,52.58,72.86
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires The Blade's Past
     .goto 2381,52.58,72.86
@@ -627,7 +632,7 @@ step
     .turnin 84789 >>Turn in Lorewalking: The Blade's Downfall
     .target Lorewalker Cho
 ]])
-
+--Ethereals
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -691,6 +696,7 @@ step
     #completewith The Ethereum
     .goto 109,59.50,32.39
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires The Ethereum
     .goto 109,59.50,32.39
@@ -872,7 +878,7 @@ step
 step
     #hidewindow
     #completewith Dimensius the All-Devouring
-    .goto 109,61.33,39.81,10 >>1
+    .goto 109,61.33,39.81,10 >>Follow the Arrow
 step
     #requires Dimensius the All-Devouring
     #loop
@@ -929,9 +935,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r
     .accept 47203 >>Accept Throwing Shade
     .target Alleria Windrunner
-
--
-
 step
     .goto 882,35.33,59.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alleria Windrunner|r |cRXP_WARN_after the roleplay|r.
@@ -1204,6 +1207,7 @@ step
     #completewith The Al'ley Cat of Oribos
     .goto 2381,52.58,72.86
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires The Al'ley Cat of Oribos
     .goto 1670,67.50,50.28
@@ -1220,7 +1224,7 @@ step
     #hidewindow
     #completewith Al'ley Cat of Oribos
     .goto 1670,69.38,42.87,10,0
-    .goto 1672,57.5,27.72,10 >>1
+    .goto 1672,57.5,27.72,10 >>Follow the Arrow
 step
     #requires Al'ley Cat of Oribos
     .goto 1672,56.72,31.37
@@ -1242,7 +1246,7 @@ step
     .goto 1670,65.54,49.48,10,0
     .goto 1670,62.26,51.5,10,0
     .goto 1670,60.5,62.23,10,0
-    .goto 1670,64.37,68.31,40 >>1
+    .goto 1670,64.37,68.31,40 >>Follow the Arrow
 step
     #requires Cartel Ta
     .goto 1670,64.37,68.31
@@ -1261,7 +1265,7 @@ step
     #hidewindow
     .goto 1670,54.69,73.83,10,0
     .goto 1670,50.28,73.85,20,0
-    .goto 1670,47.36,73.16,20 >>1
+    .goto 1670,47.36,73.16,20 >>Follow the Arrow
 step
     #requires Cartel Ba
     .goto 1670,47.70,72.61
@@ -1280,7 +1284,7 @@ step
     #completewith Cartel Zo
     .goto 1670,44.81,70.91,10,0
     .goto 1670,36.99,60.16,10,0
-    .goto 1670,34.48,57.49,30 >>1
+    .goto 1670,34.48,57.49,30 >>Follow the Arrow
 step
     #requires Cartel Zo
     .goto 1670,34.48,57.49
@@ -1299,7 +1303,7 @@ step
     #completewith Cartel Au
     .goto 1670,35.59,54.03,10,0
     .goto 1670,37.48,41.83,10,0
-    .goto 1670,40.37,32.59,50 >>1
+    .goto 1670,40.37,32.59,50 >>Follow the Arrow
 step
     #requires Cartel Au
     .goto 1670,40.37,32.59
@@ -1322,7 +1326,7 @@ step
     .goto 1670,51.11,17.5,10,0
     .goto 1670,48.04,15.84,10,0
     .goto 1670,38.31,22.55,10,0
-    .goto 1670,38.53,25.27,30 >>1
+    .goto 1670,38.53,25.27,30 >>Follow the Arrow
 step
     #requires Shipping Manifest
     #completewith next
@@ -1354,7 +1358,7 @@ step
 step
     #hidewindow
     #completewith Insider Trading
-    .goto 1670,76.91,50.29,40 >>1
+    .goto 1670,76.91,50.29,40 >>Follow the Arrow
 step
     #hidewindow
     #requires Insider Trading
@@ -1362,7 +1366,7 @@ step
     #completewith Insider Trading
     .goto 1670,72.65,47.65,10,0
     .goto 1670,68.15,45.72,10,0
-    .goto 1672,57.37,27.76,10 >>1
+    .goto 1672,57.37,27.76,10 >>Follow the Arrow
 step
     #requires Insider Trading
     .goto 1672,56.70,31.96
@@ -1399,6 +1403,7 @@ step
     #completewith Seeking Smugglers
     .goto 1525,51.34,82.71
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires Seeking Smugglers
     .goto 1525,51.34,82.71
@@ -1547,6 +1552,7 @@ step
     #completewith Ease of Passage
     .goto 1961,65.98,23.12
     .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
+    .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires Ease of Passage
     .goto 1961,65.91,22.91
@@ -1590,7 +1596,7 @@ step
     #completewith Ease of Passage
     #hidewindow
     .goto 1543,46.63,42.04,10,0
-    .goto 1543,46.91,41.7,20 >>1
+    .goto 1543,46.91,41.7,20 >>Follow the Arrow
 step
     #requires Ease of Passage
     .goto 1543,46.91,41.7
@@ -1680,7 +1686,7 @@ step
     .turnin 85036 >>Turn in Veni Vidi Ve'nari
     .target Lorewalker Cho
 ]])
-
+--The Lich King
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -1741,7 +1747,7 @@ step
 step
     #completewith Train soldiers
     #hidewindow
-    .goto 2418,48.06,70.12,30 >>1
+    .goto 2418,48.06,70.12,30 >>Follow the Arrow
 step
     #requires Train soldiers
     .goto 2418,48.62,51.24
@@ -1763,7 +1769,7 @@ step
 step
     #completewith Muradin
     #hidewindow
-    .goto 2418,54.50,29.96,20 >>1
+    .goto 2418,54.50,29.96,20 >>Follow the Arrow
 step
     #requires Muradin
     .goto 2418,54.50,29.96
@@ -2098,7 +2104,7 @@ step
     .turnin 85885 >>Turn in Lorewalking: No King Rules Forever
     .target Lorewalker Cho
 ]])
-
+--The Elves of Quel'Thalas
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -2276,4 +2282,32 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
     .turnin 85254 >>Turn in Lorewalking: Children of the Void
     .target Lorewalker Cho
+]])
+--War Within Recap
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Speed Leveling
+#name a) War Within Recap
+#internal
+
+step
+    .goto 2112,59.55,41.46
+    .accept 72560 >>Accept Climbing
+step
+    .goto 2112,47.31,59.15
+    .complete 93929,1 --Visit the Tome of History in Valdrakken
+step
+    .goto 2112,46.38,60.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tome of History|r
+    .turnin 93929 >>Turn in The War Within Recap
+    .target Tome of History
+    .accept 91843 >>Accept Recap: The Harbinger
+    .complete 91843,1 --1/1 Consult the Tome of History to learn about the Harbinger
+step
+    .goto 2112,46.27,60.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tome of History|r
+    .turnin 91843 >>Turn in Recap: The Harbinger
+    .target Tome of History
+    .accept 91864 >>Accept Recap: Fractured Visions
 ]])

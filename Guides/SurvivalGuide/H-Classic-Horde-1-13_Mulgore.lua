@@ -1713,7 +1713,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to the Crossroads
     .target Tal
-    .zoneskip The barrens
+    .zoneskip The Barrens
 step << Hunter/Druid
     #label ReturntoJahan
     .goto The Barrens,51.2,29.1

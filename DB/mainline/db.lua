@@ -54,9 +54,14 @@ local defaultGuideList = {
 }
 
 function addon.GetDefaultGuide()
-    local login = addon.tracker.state.login
-    local played = difftime(time(),login.time) + login.totalTimePlayed
-    if played < 120 then
+    local played
+    if not addon.tracker.waitingForTimePlayed then
+        local login = addon.tracker.state.login
+        played = difftime(time(),login.time) + login.totalTimePlayed
+    end
+    if not played then
+        C_Timer.After(5,addon.LoadDefaultGuide)
+    elseif played < 120 then
         local HBD = LibStub("HereBeDragons-2.0")
         local zone = HBD:GetPlayerZone()
         local exilesreach = C_Map.GetAreaInfo(3455)

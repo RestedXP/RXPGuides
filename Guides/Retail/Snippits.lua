@@ -19,386 +19,6 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 4
 #group RestedXP Speed Leveling
-#name a) Lost Dragonscale Alliance
-#internal
-
-<< Alliance
-
-step
-    .accept 65436 >>Accept The Dragon Isles Await
-step
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .use 205456
-step
-    .isOnQuest 65436
-    .abandon 65436,1
--- step
---     .goto 84,79.83,27.08
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r to receive another |T134309:0|t[Lost Dragonscale] for future use.
---     .accept 65436 >>Accept The Dragon Isles Await
---     .target Wrathion
-]])
---DMF Alliance
-RXPGuides.RegisterGuide([[
-#retail
-#version 4
-#group RestedXP Speed Leveling
-#name a) DMF Alliance
-#internal
-
-<< Alliance
-
--- step
---     #veteran
---     .goto 84,61.11,70.6
---     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r. You'll need to purchase |cRXP_WARN_certain items from the auction house to take full advantage of this|r. If necessary,|cRXP_WARN_you can transfer gold from your other characters to make these purchases|r. However, if you find that you can't afford everything, |cRXP_WARN_It's still worthwhile to visit the Darkmoon Faire for the temporary experience buff and to buy only some of the items|r.
---     >>|cRXP_WARN_It is recommended to log in with a different character possessing at least 10,000 gold. Use this character to purchase the items and then send them over|r.
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Auctioneer Fitch|r.
---     .collect 71715,1
---     .collect 71638,1
---     .collect 71637,1
---     .collect 71636,1
---     .collect 71635,1
---     .collect 71952,1
---     .collect 71951,1
---     .collect 71953,1
---     .collect 71716,1
---     .target Auctioneer Fitch
---     .target Auctioneer Jaxon
---     .target Auctioneer Chilton
---     .dmf
--- step
---     #fresh
---     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost|r.
---     .dmf
--- step
---     #veteran
---     .goto 37,41.95,67.16
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
---     >>|cRXP_WARN_These professions are used for Darkmoon Faire quests later. If you don't want to do this, skip this step|r.
---     .train 2259 >> Train |T4620669:0|t[Alchemy] and |T4620676:0|t[Inscription]
---     .skipgossip 47384,2,1,1
---     .target Lien Farmer
---     .dmf
--- step
---     #veteran
---     .goto 37,41.95,67.16
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
---     .train 45357 >> Train |T4620676:0|t[Inscription]
---     .skipgossip 47384,3,6,2
---     .target Lien Farmer
---     .dmf
---     .train 2259,3 --Only show if you have Alchemy
--- step
---     #veteran
---     .goto 37,41.89,67.10
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharynn Bouden|r. Buy the following items from him:
--- --    .collect 2604,1,29520,1 --Red Dye (1)
--- --    .collect 6260,1,29520,1 --Blue Dye (1)
--- --  .collect 2320,1,29520,1 --Coarse Thread (1)
---     .collect 30817,5,29509,1 --Simple Flour (5)
---     .collect 39354,5,29515,1 --Light Parchment (1)
---     .target Tharynn Bouden
---     .dmf
---     .train 45357,3 --Only show if you have Inscription
--- --XX 29520 needs to be added
--- --XX DMF section needs a polish at some point. Coords to 3dp, new formatting, #optional on steps
--- step
---     #veteran
---     .goto 37,41.89,67.10
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharynn Bouden|r. Buy the following items from him:
--- --    .collect 2604,1,29520,1 --Red Dye (1)
--- --    .collect 6260,1,29520,1 --Blue Dye (1)
--- --  .collect 2320,1,29520,1 --Coarse Thread (1)
---     .collect 30817,5,29509,1 --Simple Flour (5)
---     .target Tharynn Bouden
---     .dmf
--- --XX 29520 needs to be added
--- --XX DMF section needs a polish at some point. Coords to 3dp, new formatting, #optional on steps
--- step
---     .goto 37,43.2,65.99,5,0
---     .goto 37,43.2,65.63,5,0
---     .goto 37,42.9,65.7,5,0
---     .goto 37,41.78,69.55
---     .zone 407 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r |cRXP_WARN_to the Darkmoon Island|r.
---     .dmf
--- step
---     #completewith next
---     +|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Strider|r |cRXP_WARN_only if you don't have a level 1 mount|r.
---     .dmf
--- step
---     #veteran
---     .goto 407,51.57,24.84,10,0
---     .goto 407,55.83,53.02,15,0
---     .goto 407,50.44,59.33
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kae Ti|r and buy a |T133734:0|t[Ride Ticket Book] from her.
---     *|cRXP_WARN_buy the cheaper version |cRXP_WARN_on the left in the window|r|r.
---     .collect 92788,1,92794,1 --Ride Ticket Book (1)
---     .target Kae Ti
---     .dmf
--- step
---     #completewith next
---     .goto 407,49.45,57.5
---     .cast 107829 >> |cRXP_WARN_Open Ride Ticket Book|r.
---     .dmf
---     .use 92788
---     .use 92794
--- step
---     #veteran
---     .goto 407,49.45,57.5
---     >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r|r.
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the quest items in your bag |cRXP_WARN_and skip the ones you don't have)|
---     --x insert macro to accept quests here
---     .accept 29464 >>Accept Tools of Divination
---     .accept 29451 >>Accept The Master Strategist
---     .accept 29456 >>Accept A Captured Banner
---     .accept 29457 >>Accept The Enemy's Insignia
---     .accept 29458 >>Accept The Captured Journal
---     .accept 29443 >>Accept A Curious Crystal
---     .accept 29444 >>Accept An Exotic Egg
---     .accept 29445 >>Accept An Intriguing Grimoire
---     .accept 29446 >>Accept A Wondrous Weapon
---     .zoneskip 407,1
---     .dmf
--- step
---     #fresh
---     .goto 407,49.45,57.5
---     >>|cRXP_WARN_Stand on the Carousel and |cRXP_WARN_wait for the Experience Buff to reach 60minutes|r|r.
---     .zoneskip 407,1
---     .dmf
--- step
---     #veteran
---     .goto 407,51.91,60.94
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
---     .turnin -29464 >>Turn in Tools of Divination
---     .turnin -29451 >>Turn in The Master Strategist
---     .turnin -29456 >>Turn in A Captured Banner
---     .turnin -29457 >>Turn in The Enemy's Insignia
---     .turnin -29458 >>Turn in The Captured Journal
---     .turnin -29443 >>Turn in A Curious Crystal
---     .turnin -29446 >>Turn in A Wondrous Weapon
---     .zoneskip 407,1
---     .dmf
--- step
---     #veteran
---     .goto 407,47.76,64.76
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r and buy as many |T669449:0|t[Darkmoon Top Hats] from him as you can.
---     .turnin 7905 >>Turn in The Darkmoon Faire
---     .collect 171364,1,29506,1 --Darkmoon Top Hat (1)
---     .target Gelvas Grimegate
---     .zoneskip 407,1
---     .dmf
--- step
---     #fresh
---     .goto 407,47.76,64.76
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r.
---     .turnin 7905 >>Turn in The Darkmoon Faire
---     .target Gelvas Grimegate
---     .zoneskip 407,1
---     .dmf
--- step
---     .goto 407,52.89,67.96
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r.
---     .accept 29509 >>Accept Putting the Crunch in the Frog
---     .target Stamp Thunderhorn
---     .zoneskip 407,1
---     .dmf
--- step
---     .goto 407,52.88,67.96
---     >>Use the |T133642:0|t[Plump Frogs] to turn them into |T237579:0|t[Breaded Frogs].
---     .collect 72056,5,29509,1,-1 --Plump Frogs (5)
---     .collect 30817,5,29509,1,-1 --Simple Flour (5)
---     .collect 72057,5,29509,1 --Breaded Frog (5)
---     .use 72056 --Plump Frog
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29509
--- step
---     .goto 407,52.88,67.96
---     >>Use the |T237579:0|t[Breaded Frogs] near |cRXP_FRIENDLY_Stamp Thunderhorn|r.
---     .collect 72057,5,29509,1,-1 --Breaded Frog (5)
---     .complete 29509,1 --5/5 Crunchy Frog
---     .use 72057 --Breaded Frog
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29509
--- step
---     .goto 407,52.88,67.96
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r.
---     .turnin 29509 >>Turn in Putting the Crunch in the Frog
---     .target Stamp Thunderhorn
---     .zoneskip 407,1
---     .dmf
--- step
---     .goto 407,50.54,69.56
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r and buy |T132792:0|t[Fizzy Faire Drinks] from her.
---     .accept 29506 >>Accept A Fizzy Fusion
---     .collect 19299,5,29506,1 --Fizzy Faire Drinks (5)
---     .target Sylannia
---     .zoneskip 407,1
---     .dmf
---     .train 2259,3 --Only show if you have Alchemy
--- step
---     .goto 407,50.54,69.56
---     >>Use the |T132793:0|t[Cocktail Shaker] to make |T463532:0|t[Moonberry Fizz]
---     .collect 1645,5,29506,1,-1 --Moonberry Juice (5)
---     .collect 19299,5,29506,1,-1 --Fizzy Faire Drinks (5)
---     .complete 29506,1 --5/5 Moonberry Fizz
---     .use 72043 --Cocktail Shaker
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29506
--- step
---     .goto 407,50.53,69.56
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r.
---     .turnin 29506 >>Turn in A Fizzy Fusion
---     .target Sylannia
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29506
--- step
---     .goto 407,53.23,75.82
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
---     .turnin 29445 >>Turn in An Intriguing Grimoire
---     .accept 29515 >>Accept Writing the Future
---     .target Sayge
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29445
---     .train 45357,3 --Only show if you have Inscription
--- step
---     #optional
---     .goto 407,53.23,75.82
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
---     .turnin 29445 >>Turn in An Intriguing Grimoire
---     .target Sayge
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29445
--- step
---     #optional
---     .goto 407,53.23,75.82
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
---     .accept 29515 >>Accept Writing the Future
---     .target Sayge
---     .zoneskip 407,1
---     .dmf
---     .train 45357,3 --Only show if you have Inscription
--- step
---     .goto 407,53.23,75.82
---     >>Use the |T413571:0|t[Bundle of Exotic Herbs] to make |T237061:0|t[Prophetic Ink]
---     .collect 71972,1,29515,1
---     .use 71971
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29515
--- step
---     .goto 407,53.23,75.82
---     >>Use the |T237061:0|t[Prophetic Ink] to make |T134943:0|t[Fortunes]
---     .collect 39354,5,29515,1,-1 --Light Parchment
---     .complete 29515,1 --5/5 Fortune
---     .use 71972
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29515
--- step
---     .goto 407,53.23,75.82
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
---     .turnin 29515 >>Turn in Writing the Future
---     .target Sayge
---     .skipgossip
---     .zoneskip 407,1
---     .dmf
--- step
---     #veteran
---     .goto 407,51.11,82.04
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yebb Neblegear|r.
---     .turnin 29444 >>Turn in An Exotic Egg
---     .target Yebb Neblegear
---     .zoneskip 407,1
---     .dmf
---     .isOnQuest 29444
--- step
---     .goto 407,50.56,90.80
---     .zone 37 >>Take the |cRXP_PICK_Darkmoon Faire Portal|r |cRXP_WARN_to Elwynn Forest|r.
---     .zoneskip 407,1
---     .dmf
--- step
---     #completewith next
---     +|cRXP_WARN_Abandon your Professions|r
---     .link /run AbandonSkill(773); AbandonSkill(171); >> |cRXP_WARN_Click this text to receive a macro that will unlearn your professions|r.
---     --x .skill 773,<1 >>Unlearn Inscription
---     --x .skill 171,<1 >>Unlearn Alchemy
---     --x add unlearn logic
---     .isOnQuest 60
---     .dmf
--- step
---     #sticky
---     #label Professions1
---     #completewith Professions3
---     .goto 37,41.95,67.16
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
---     >>|cRXP_WARN_Herbing Herbs and Mining Veins provides XP. Only gather resources in your direct path|r.
---     >>|cRXP_WARN_If you don't want to do this, skip this step|r.
---     .train 2366 >> Train |T4620675:0|t[Herbalism]
---     .train 2575 >> Train |T4620679:0|t[Mining]
---     .target Lien Farmer
---     .skipgossip 47396,1,1,1
---     .train 2366,1 --Herbalism
---     .train 2575,1 --Mining
--- step
---     #optional
---     #requires Professions1
---     #label Professions2
---     #completewith Professions3
---     .goto 37,41.95,67.16
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
---     >>|cRXP_WARN_Herbing Herbs provides XP. Only gather resources in your direct path|r.
---     >>|cRXP_WARN_If you don't want to do this, skip this step|r.
---     .train 2366 >> Train |T4620675:0|t[Herbalism]
---     .target Lien Farmer
---     .skipgossip 47396,2,2,2
---     .train 2575,3 --Mining
--- step
---     #optional
---     #requires Professions2
---     #label Professions3
---     .goto 37,41.95,67.16
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
---     >>|cRXP_WARN_Mining Veins provides XP. Only gather resources in your direct path|r.
---     >>|cRXP_WARN_If you don't want to do this, skip this step|r.
---     .train 2575 >> Train |T4620679:0|t[Mining]
---     .target Lien Farmer
---     .skipgossip 47396,2,3,2
---     .train 2366,3 --Herbalism
--- step
---     #veteran
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
---     >>|cRXP_WARN_Skip this step if you don't have level 25 Pet Battle Pets|r.
---     .goto 37,41.65,83.67
---     .accept 31693 >>Accept Julia Stevens
---     .target Julia Stevens
---     .isQuestTurnedIn 31903 --x Pet Battle Check
--- step
---     #veteran
---     >>Defeat |cRXP_ENEMY_Julia Stevens|r in a Pet Battle.
---     .complete 31693,1 --Defeat Julia Stevens
---     .target Julia Stevens
---     .isOnQuest 31693
--- step
---     #veteran
---     .goto 37,41.66,83.66
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
---     .turnin 31693 >>Turn in Julia Stevens
---     .target Julia Stevens
---     .isQuestComplete 31693
-]])
---Lost Dragonscale
-RXPGuides.RegisterGuide([[
-#retail
-#version 4
-#group RestedXP Speed Leveling
 #name a) Lost Dragonscale Horde
 #internal
 
@@ -559,7 +179,7 @@ step
 step
     #completewith TheUntetheredHorrorA
     #hidewindow
-    .goto 2371,50.36,36.31,20 >>1
+    .goto 2371,50.36,36.31,20 >>Follow the Arrow
 step
     #requires TheUntetheredHorrorA
     .goto 2371,50.36,36.31
@@ -657,7 +277,7 @@ step
 step
     .goto 371,65.27,37.18
     >>Right-click to learn your mount.
-    .complete 90754,3 --1/1 Learn your new skyriding mount from your 
+    .complete 90754,3 --1/1 Learn your new skyriding mount from your
     .use 194034
     .use 194521
     .use 194106
@@ -865,6 +485,390 @@ step
     .turnin 90755 >>Turn in Time Flies
     .target Moratari
 ]])
+--Darkmoon Faire
+RXPGuides.RegisterGuide([[
+#retail
+#version 4
+#group RestedXP Speed Leveling
+#name a) DMF
+#internal
+
+step << Alliance
+    #completewith next
+    #label ProfessionsDmf1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    .train 2259 >>Train |T4620669:0|t[Alchemy]
+    .dmf
+step << Alliance
+    #completewith ProfessionsDmf1
+    .goto 37,41.95,67.16
+    >>Use the macro in the "Active Items Frame" to unlearn |T4620679:0|t[Mining]
+    .macro Unlearn Mining,4620679 >>/run AbandonSkill(186)
+    .train 2575,3
+    .subzoneskip 37,1
+    .isOnQuest 7905
+step << Alliance
+    #requires ProfessionsDmf1
+    .goto 37,41.95,67.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    .train 2259 >>Train |T4620669:0|t[Alchemy]
+    .target Lien Farmer
+    .skipgossipid 38859
+    .skipgossipid 38886
+    .skipgossipid 39726
+    .subzoneskip 37,1
+    .isOnQuest 7905
+    .dmf
+step << Alliance
+    #completewith next
+    #label ProfessionsDmf2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    .train 45357 >>Train |T4620676:0|t[Inscription]
+    .dmf
+step << Alliance
+    #completewith ProfessionsDmf2
+    .goto 37,41.95,67.16
+    >>Use the macro in the "Active Items Frame" to unlearn |T4620675:0|t[Herbalism].
+    .macro Unlearn Herbalism,4620675 >>/run AbandonSkill(182)
+    .subzoneskip 37,1
+    .isOnQuest 7905
+    .train 2366,3
+step << Alliance
+    #requires ProfessionsDmf2
+    .goto 37,41.95,67.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    .train 45357 >>Train |T4620676:0|t[Inscription]
+    .skipgossipid 38859
+    .skipgossipid 38890
+    .skipgossipid 39321
+    .target Lien Farmer
+    .subzoneskip 37,1
+    .isOnQuest 7905
+    .dmf
+step << Alliance
+    .goto 37,41.89,67.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharynn Bouden|r.
+    .collect 2604,1 --Red Dye (1)
+    .buy 2604,1
+    .collect 6260,1 --Blue Dye (1)
+    .buy 6260,1
+    .collect 2320,1 --Coarse Thread (1)
+    .buy 2320,1
+    .collect 30817,5 --Simple Flour (5)
+    .buy 30817,5
+    .collect 39354,5 --Light Parchment (1)
+    .buy 39354,5
+    .target Tharynn Bouden
+    .subzoneskip 37,1
+    .isOnQuest 7905
+    .dmf
+step << Alliance
+    .goto 37,41.78,69.55
+    .zone 407 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .subzoneskip 37,1
+    .isOnQuest 7905
+    .dmf
+-- step << Human
+--     .goto 407,51.62,24.66
+--     .aura 134931 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Darkmoon Strider|r for a mount.
+--     add chauffeur command
+--    .target Darkmoon Strider
+--    .subzoneskip 37,1
+--    .isOnQuest 7905
+--     .dmf
+step
+    .goto 407,52.78,28.82,20,0
+    .goto 407,52.99,38.99,20,0
+    .goto 407,53.37,45.81,20,0
+    .goto 407,55.66,52.34,20,0
+    .goto 407,50.44,59.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kae Ti|r.
+    .collect 81055,1 --
+    .buy 92794
+    .target Kae Ti
+    .isOnQuest 7905
+    .zoneskip 407,1
+    .dmf
+-- step
+--     .goto 407,49.44,57.4,7 
+--     .aura >>Stand on the platform and wait 15 seconds to get the full duration of |T237554:0|t[WHEE!](10% XP for 60 min).
+--     .timer 13,Time until full duration
+--     .openitem 92794
+--     .zoneskip 407,1
+--     .dmf
+step
+--accept makro
+    >>Press the macro "In the Active Items Frame"
+    .accept 29464 >>Accept Tools of Divination
+    .macro >>/use Soothsayer's Runes
+    .itemcount 71716,1
+    .zoneskip 407,1
+    .isQuestAvailable 29464
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29451 >>Accept The Master Strategist
+    .macro >>/use A Treatise on Strategy
+    .isQuestAvailable 29451
+    .itemcount 71715,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29456 >>Accept A Captured Banner
+    .macro >>/use Banner of the Fallen
+    .itemcount 71951,1
+    .zoneskip 407,1
+    .isQuestAvailable 29456
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29457 >>Accept The Enemy's Insignia
+    .macro >>/use Captured Insignia
+    .isQuestAvailable 29457
+    .itemcount 71952,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29458 >>Accept The Captured Journal
+    .macro >>/use Fallen Adventurer's Journal
+    .isQuestAvailable 29458
+    .itemcount 71953,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29443 >>Accept A Curious Crystal
+    .macro >>/use Imbued Crystal
+    .isQuestAvailable 29443
+    .itemcount 71635,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29444 >>Accept An Exotic Egg
+    .macro >>/use Monstrous Egg
+    .isQuestAvailable 29444
+    .itemcount 71636,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29445 >>Accept An Intriguing Grimoire
+    .macro >>/use Mysterious Grimoire
+    .isQuestAvailable 29445
+    .itemcount 71637,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>Press the macro "In the Active Items Frame"
+    .accept 29446 >>Accept A Wondrous Weapon
+    .macro >>/use Ornate Weapon
+    .isQuestAvailable 29446
+    .itemcount 71638,1
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29451 >>Turn in The Master Strategist
+    .isOnQuest 29451
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29456 >>Turn in A Captured Banner
+    .isOnQuest 29456
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29457 >>Turn in The Enemy's Insignia
+    .isOnQuest 29457
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29458 >>Turn in The Captured Journal
+    .isOnQuest 29458
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29443 >>Turn in A Curious Crystal
+    .isOnQuest 29443
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29444 >>Turn in An Exotic Egg
+    .isOnQuest 29444
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29445 >>Turn in An Intriguing Grimoire
+    .isOnQuest 29445
+    .zoneskip 407,1
+    .dmf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
+    .turnin 29446 >>Turn in A Wondrous Weapon
+    .isOnQuest 29446
+    .zoneskip 407,1
+    .dmf
+-- step
+--     #completewith next
+--     #label DarkmoonTopHat1
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r |cRXP_WARN_[2]|r
+--     .turnin 7905 >>Turn in The Darkmoon Faire
+--     .target Gelvas Grimegate
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     #completewith DarkmoonTopHat1
+--     .isQuestTurnedIn 29446,29445,29444,29443,29458,29457,29456,29451
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r |cRXP_WARN_[1]|r
+--     .collect 171364,1 --Darkmoon Top Hat (1)
+--     .buy 171364
+-- --currencency command
+step
+    -- #requires DarkmoonTopHat1
+    .goto 407,47.76,64.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r
+    .turnin 7905 >>Turn in The Darkmoon Faire
+    .target Gelvas Grimegate
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,52.89,67.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r.
+    .accept 29509 >>Accept Putting the Crunch in the Frog
+    .target Stamp Thunderhorn
+    .train 2550,3
+    .itemcount 30817,5
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,52.88,67.96
+    >>Use |T133642:0|t[Plump Frogs].
+    .collect 72056,5,29509,1,-1 --Plump Frogs (5)
+    .collect 30817,5,29509,1,-1 --Simple Flour (5)
+    .collect 72057,5,29509,1 --Breaded Frog (5)
+    .train 2550,3
+    .use 72056 --Plump Frog
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,52.88,67.96
+    >>Use |T237579:0|t[Breaded Frogs].
+    .collect 72057,5,29509,1,-1 --Breaded Frog (5)
+    .complete 29509,1 --5/5 Crunchy Frog
+    .use 72057 --Breaded Frog
+    .train 2550,3
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,52.88,67.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r.
+    .turnin 29509 >>Turn in Putting the Crunch in the Frog
+    .target Stamp Thunderhorn
+    .train 2550,3
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,50.54,69.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r.
+    .accept 29506 >>Accept A Fizzy Fusion
+    .collect 19299,5,29506,1 --Fizzy Faire Drinks (5)
+    .buy 29506,5
+    .target Sylannia
+    .zoneskip 407,1
+    .dmf
+    .train 2259,3
+step
+    .goto 407,50.54,69.56
+    >>Use |T132793:0|t[Cocktail Shaker].
+    .collect 1645,5,29506,1,-1 --Moonberry Juice (5)
+    .collect 19299,5,29506,1,-1 --Fizzy Faire Drinks (5)
+    .complete 29506,1 --5/5 Moonberry Fizz
+    .use 72043 --Cocktail Shaker
+    .itemcount 1645,5
+    .zoneskip 407,1
+    .dmf
+    .isOnQuest 29506
+step
+    .goto 407,50.53,69.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r.
+    .turnin 29506 >>Turn in A Fizzy Fusion
+    .target Sylannia
+    .zoneskip 407,1
+    .dmf
+    .isOnQuest 29506
+step
+    .goto 407,53.23,75.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r [|cRXP_WARN_1|r].
+    .turnin 29445 >>Turn in An Intriguing Grimoire
+    .target Sayge
+    .zoneskip 407,1
+    .isOnQuest 29445
+    .dmf
+step
+    .goto 407,53.23,75.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r [|cRXP_WARN_2|r].
+    .accept 29515 >>Accept Writing the Future
+    .target Sayge
+    .zoneskip 407,1
+    .dmf
+    .train 45357,3
+step
+    .goto 407,53.23,75.82
+    .aura 23768 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r [|cRXP_WARN_3|r].
+    .skipgossipid 31569
+    .skipgossipid 31565
+    .skipgossipid 30027
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,53.23,75.82
+    >>Use |T413571:0|t[Bundle of Exotic Herbs].
+    .collect 71972,1,29515,1
+    .use 71971
+    .zoneskip 407,1
+    .dmf
+    .isOnQuest 29515
+step
+    .goto 407,53.23,75.82
+    >>Use |T237061:0|t[Prophetic Ink].
+    .collect 39354,5,29515,1,-1 --Light Parchment
+    .complete 29515,1 --5/5 Fortune
+    .use 71972
+    .zoneskip 407,1
+    .dmf
+    .isOnQuest 29515
+step
+    .goto 407,53.23,75.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r.
+    .turnin 29515 >>Turn in Writing the Future
+    .target Sayge
+    .zoneskip 407,1
+    .dmf
+step
+    .goto 407,51.11,82.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yebb Neblegear|r.
+    .turnin 29444 >>Turn in An Exotic Egg
+    .target Yebb Neblegear
+    .zoneskip 407,1
+    .dmf
+    .isOnQuest 29444
+step
+        --     .link /run AbandonSkill(773); AbandonSkill(171);
+step
+    .goto 407,50.56,90.80
+    .zone 37 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r  << Alliance
+    .zoneskip 407,1
+    .dmf
+]])
 
 -- ##################################################
 -- #                  LEGION REMIX                  #
@@ -1036,7 +1040,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 202595 >>1
+    .cast 202595 >>Follow the Arrow
     .timer 55,Roleplay
 step
     .isInScenario 940
@@ -1256,7 +1260,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 186253 >>1
+    .cast 186253 >>Follow the Arrow
     .timer 24,Roleplay
 step
     .goto 701,49.82,51.71
@@ -1532,7 +1536,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>1
+    .cast 3365 >>Follow the Arrow
     .timer 25,Roleplay
 step
     .isInScenario 1026
@@ -2436,7 +2440,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>1
+    .zone 747 >>Follow the Arrow
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -2585,7 +2589,7 @@ step
 step
     #completewith next
     #hidewindow
-    .goto 47,48.90,34.31,15 >>1
+    .goto 47,48.90,34.31,15 >>Follow the Arrow
     .timer 15,Valorn Roleplay
 step
     .goto 47,48.90,34.31
@@ -2731,7 +2735,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>1
+    .cast 3365 >>Follow the Arrow
     .timer 25,Roleplay
 step
     .isInScenario 1014
@@ -2813,7 +2817,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>1
+    .zone 747 >>Follow the Arrow
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -3116,7 +3120,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>1
+    .zone 747 >>Follow the Arrow
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -3484,7 +3488,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>1
+    .zone 747 >>Follow the Arrow
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -3735,7 +3739,7 @@ step
     #requires CleansingTheMotherTreeB
     #completewith next
     #hidewindow
-    .gossipoption 45306 >>1
+    .gossipoption 45306 >>Follow the Arrow
     .timer 21,Omnuron Roleplay
 step
     #requires CleansingTheMotherTreeB
@@ -3778,7 +3782,7 @@ step
     .isOnQuest 41689
     #hidewindow
     #completewith next
-    .gossipoption 45261 >>1
+    .gossipoption 45261 >>Follow the Arrow
     .timer 6,Short Roleplay
 step
     .isQuestNotComplete 41689
@@ -4117,7 +4121,7 @@ step
 step
     #completewith next
     #hidewindow
-    .vehicle 106236 >>1
+    .vehicle 106236 >>Follow the Arrow
     .timer 65,Flight Duration
 step
     .goto 627,71.22,51.77
@@ -4128,7 +4132,7 @@ step
     #completewith next
     #hidewindow
     .goto 634,85.40,9.66
-    .gossipoption 45594 >>1
+    .gossipoption 45594 >>Follow the Arrow
     .timer 71,Grif Roleplay
 step
     .goto 634,84.90,9.67
@@ -4507,7 +4511,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 47259 >>1
+    .gossipoption 47259 >>Follow the Arrow
     .timer 56,Vereesa Roleplay
 step
     .goto 646,32.29,32.43
@@ -4524,7 +4528,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 47260 >>1
+    .gossipoption 47260 >>Follow the Arrow
     .timer 14,Vereesa Roleplay
 step
     .goto 646,32.29,32.43
@@ -4582,7 +4586,7 @@ step
     #completewith next
     #hidewindow
     .goto 714,69.98,59.65,20,0
-    .goto 714,71.47,73.66,20 >>1
+    .goto 714,71.47,73.66,20 >>Follow the Arrow
 step
     .isInScenario 972
     .goto 714,71.47,73.66
@@ -4774,7 +4778,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 45080 >>1
+    .gossipoption 45080 >>Follow the Arrow
     .timer 27,Apata Roleplay
 step
     .isInScenario 973
@@ -4827,7 +4831,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 44907 >>1
+    .gossipoption 44907 >>Follow the Arrow
     .timer 13,Apata Roleplay
 step
     .isInScenario 973
@@ -6692,7 +6696,7 @@ step
     #completewith Journey to the East2
     #hidewindow
     #requires Journey to the East
-    .goto 371,55.03,60.75,30 >>1
+    .goto 371,55.03,60.75,30 >>Follow the Arrow
 step
     #requires Journey to the East2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Monkey King|r
@@ -7041,7 +7045,7 @@ step
     #completewith MistweaverScenario
     #hidewindow
     .goto 709,50.49,47.67,15,0
-    .goto 709,49.36,47.43,15 >>1
+    .goto 709,49.36,47.43,15 >>Follow the Arrow
 step
     #requires MistweaverScenario
     .goto 709,47.16,47.76
@@ -7868,7 +7872,7 @@ step << Horde
 step << Horde
     #completewith Mysterious Paladin
     #hidewindow
-    .goto 627,72.01,49.34,40 >>1
+    .goto 627,72.01,49.34,40 >>Follow the Arrow
 step << Horde
     #requires Mysterious Paladin
     .goto 627,72.01,49.34
@@ -8114,7 +8118,7 @@ step << Alliance
 step << Alliance
     #completewith Light's Hope Sanctum 
     #hidewindow
-    .goto 627,32.65,69.91,30 >>1
+    .goto 627,32.65,69.91,30 >>Follow the Arrow
 step << Alliance
     #requires Light's Hope Sanctum 
     .goto 627,32.65,69.91
@@ -8130,7 +8134,7 @@ step << Alliance
 step << Alliance
     #completewith A United Force
     #hidewindow
-    .goto 24,63.15,37.22,40 >>1
+    .goto 24,63.15,37.22,40 >>Follow the Arrow
 step << Alliance
     #requires A United Force
     .goto 24,63.15,37.22
@@ -8548,7 +8552,7 @@ step << Alliance
     .isQuestAvailable 38576
     #completewith Light's Hope Sanctum 
     #hidewindow
-    .goto 627,32.65,69.91,30 >>1
+    .goto 627,32.65,69.91,30 >>Follow the Arrow
 step << Alliance
     #requires Light's Hope Sanctum 
     .isQuestAvailable 38576
@@ -8566,7 +8570,7 @@ step << Horde
     #completewith Light's Hope Sanctum 
     .isQuestAvailable 38576
     #hidewindow
-    .goto 627,61.93,13.5,30 >>1
+    .goto 627,61.93,13.5,30 >>Follow the Arrow
 step << Horde
     #requires Light's Hope Sanctum 
     .isQuestAvailable 38576
@@ -8585,7 +8589,7 @@ step
     #completewith A United Force
     #hidewindow
     .isQuestAvailable 38576
-    .goto 24,63.15,37.22,40 >>1
+    .goto 24,63.15,37.22,40 >>Follow the Arrow
 step
     #requires A United Force
     .isQuestAvailable 38576
@@ -9241,7 +9245,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>1
+    .cast 3365 >>Follow the Arrow
     .timer 37,Nexus-Prince Roleplay
 step
     .goto 115,56.65,69.10
@@ -9384,7 +9388,7 @@ step
     #requires SubdueLightsWrathA
     #completewith next
     #hidewindow
-    .cast 207949 >>1
+    .cast 207949 >>Follow the Arrow
     .timer 30,Subdue Duration
 step
     #requires SubdueLightsWrathA
@@ -9602,7 +9606,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 213109 >>1
+    .cast 213109 >>Follow the Arrow
     .timer 5,Alora Roleplay
 step
     .goto 646,33.99,33.93
@@ -11680,7 +11684,7 @@ step
 step
     #hidewindow
     #completewith TheEdictOfFireA
-    .goto 395,74.25,53.19,50 >>1
+    .goto 395,74.25,53.19,50 >>Follow the Arrow
 step
     #requires TheEdictOfFireA
     .goto 395,74.83,51.02
@@ -11705,7 +11709,7 @@ step
 step
     #hidewindow
     #completewith TheEdictOfStoneA
-    .goto 395,48.87,30.24,50 >>1
+    .goto 395,48.87,30.24,50 >>Follow the Arrow
 step
     #requires TheEdictOfStoneA
     .goto 395,48.87,30.24
@@ -12712,7 +12716,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 198335 >>1
+    .cast 198335 >>Follow the Arrow
     .timer 20,Roleplay
 step
     .goto 42,35.57,35.52
@@ -12721,7 +12725,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 198335 >>1
+    .cast 198335 >>Follow the Arrow
     .timer 15,Roleplay
 step
     .goto 42,46.99,62.32
@@ -12740,7 +12744,7 @@ step
     #requires TheFateOfDeadwindA
     #completewith next
     #hidewindow
-    .cast 198335 >>1
+    .cast 198335 >>Follow the Arrow
     .timer 13,Roleplay
 step
     #requires TheFateOfDeadwindA
@@ -12789,7 +12793,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>1
+    .cast 3365 >>Follow the Arrow
     .timer 25,Roleplay
 step
     .isInScenario 988
@@ -13240,7 +13244,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 45857 >>1
+    .gossipoption 45857 >>Follow the Arrow
     .timer 25,Calydus Roleplay
 step
     .goto 22,69.16,79.16
@@ -13386,7 +13390,7 @@ step
 step
     #completewith next
     #hidewindow
-    .goto 646,60.40,25.22,10 >>1
+    .goto 646,60.40,25.22,10 >>Follow the Arrow
     .timer 60,Gul'dan Roleplay
 step
     .goto 646,55.79,63.01
