@@ -503,6 +503,7 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         resetButton:SetSize(104, 24)
         resetButton:SetPoint("LEFT", backButton, "RIGHT", 0, 0)
         resetButton:SetText(_G.RESET)
+        resetButton:Disable()
 
         local submitButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         submitButton:SetSize(105, 24)
