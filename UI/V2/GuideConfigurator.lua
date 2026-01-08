@@ -599,8 +599,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
                 SetDesaturation(check, false)
                 check:Hide()
             end
-
-            if self.callback then return self.callback() end
         end,
 
         ["GetValue"] = function(self)
@@ -609,6 +607,8 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
 
         ["ToggleChecked"] = function(self)
             self:SetValue(not self:GetValue())
+
+            if self.callback then return self.callback() end
         end,
 
         ["SetSetting"] = function(self, profile, settingkey, callback)
@@ -624,7 +624,13 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         end,
 
         ["SetTooltip"] = function(self, text)
-            self.tooltip.tooltipText = text or ""
+            self.tooltip.tooltipText = text or nil
+
+            if self.tooltip.tooltipText then
+                self.tooltip:Show()
+            else
+                self.tooltip:Hide()
+            end
         end,
 
         ["SetImage"] = function(self, path, ...)
@@ -701,6 +707,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
         tooltip:SetPoint("LEFT", text, "RIGHT", 0, 0)
         tooltip:SetScript("OnEnter", tpOnEnter)
         tooltip:SetScript("OnLeave", tpOnLeave)
+        tooltip:Hide()
 
         local checkbg = frame:CreateTexture(nil, "ARTWORK")
         checkbg:SetPoint("RIGHT", -15, 0)
@@ -862,7 +869,6 @@ function addon.ui.v2:CreateConfigurator()
 
     addon.ui.v2.RegisterRXPGuideConfigurator()
     local configurator = AceGUI:Create("RXPGuideConfigurator")
-    configurator:SetDescription(L("Configure your guide.")) -- TODO locale
 
     configurator.scrollContainer = AceGUI:Create("ScrollFrame")
     configurator.scrollContainer:SetFullWidth(true)
@@ -875,116 +881,212 @@ function addon.ui.v2:CreateConfigurator()
         survival = false,
     }
 
-    local page2Options = {
-        {
-            icon = "Interface\\Icons\\inv_misc_coin_02",
-            label = L("Solo Self Found Mode"),
-            tooltip = L("If this option is enabled, it disables all steps involving trading or Auction House"),
-            setting = 'soloSelfFound',
-        },
-        {
-            icon = "Interface\\Icons\\spell_holy_prayerofhealing",
-            label = L("Show Group Quests"),
-            tooltip = L("Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."),
-            setting = 'enableGroupQuests'
-        },
-        {
-            icon = "Interface\\Icons\\Ability_Vehicle_LaunchPlayer",
-            label = L("Skip overleveled steps"),
-            tooltip = L("Skip steps you're overleveled for"),
-            setting = 'enableXpStepSkipping',
-        },
-        {
-            icon = "Interface\\Icons\\spell_frost_stun",
-            label = L("Enable Dungeons"),
-            tooltip = L("Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."),
-            setting = 'enableDungeons',
-            profile = configuratorSettings,
-            callback = function ()
-                if configuratorSettings['enableDungeons'] then
-                    configurator.submitbutton:SetText(_G.NEXT)
-                else
-                    configurator.submitbutton:SetText(_G.SUBMIT)
-                end
-            end
-        },
-    }
+    local activePage = 1
 
     addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
 
-    local settingsIntroGroup = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
-    settingsIntroGroup:SetFullWidth(true)
-    settingsIntroGroup:SetHeight(64)
-
-    local settingDesc = AceGUI:Create("Label")
-    settingDesc:SetFullWidth(true)
-    settingDesc:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
-    settingDesc:SetColor(186 / 255, 186 / 255, 186 / 255)
     --TODO locale
-    settingDesc:SetText('\n' .. L("Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."))
-    settingsIntroGroup:AddChild(settingDesc)
+    local pageDescriptions = {
+        [2] = L("Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."),
+        [3] = "Add dungeons to your journey. The guide will adjust to your selection accordingly and include dungeon quests to your route."
+    }
 
-    configurator.scrollContainer:AddChild(settingsIntroGroup)
+    local pageOptions = {
+        [2] = {
+            {
+                icon = "Interface\\Icons\\inv_misc_coin_02",
+                label = L("Solo Self Found Mode"),
+                tooltip = L("If this option is enabled, it disables all steps involving trading or Auction House"),
+                setting = 'soloSelfFound',
+            },
+            {
+                icon = "Interface\\Icons\\spell_holy_prayerofhealing",
+                label = L("Show Group Quests"),
+                tooltip = L("Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."),
+                setting = 'enableGroupQuests'
+            },
+            {
+                icon = "Interface\\Icons\\Ability_Vehicle_LaunchPlayer",
+                label = L("Skip overleveled steps"),
+                tooltip = L("Skip steps you're overleveled for"),
+                setting = 'enableXpStepSkipping',
+            },
+            {
+                icon = "Interface\\Icons\\spell_frost_stun",
+                label = L("Enable Dungeons"),
+                tooltip = L("Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."),
+                setting = 'enableDungeons',
+                profile = configuratorSettings,
+                callback = function ()
+                    if configuratorSettings['enableDungeons'] then
+                        configurator.submitbutton:SetText(_G.NEXT)
+                    else
+                        configurator.submitbutton:SetText(_G.SUBMIT)
+                    end
+                end
+            }
+        },
+        [3] = {
+            {
+                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
+                label = "Fastest Leveling Speed",
+                tooltip = nil,
+                setting = 'dungeons_fastest',
+                profile = configuratorSettings,
+                callback = function ()
+                    print("Fastest")
+                end
+            },
+            {
+                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-upgrades",
+                label = "Best Item Upgrades",
+                tooltip = nil,
+                setting = 'dungeons_best',
+                profile = configuratorSettings,
+                callback = function ()
+                    print("Upgrades")
+                end
+            },
+            {
+                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-all",
+                label = "Select All Dungeons",
+                tooltip = nil,
+                setting = 'dungeons_all',
+                profile = configuratorSettings,
+                callback = function ()
+                    print("All")
+                end
+            },
+            {
+                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-customize",
+                label = "Customize Dungeons",
+                tooltip = nil,
+                setting = 'dungeons_customize',
+                profile = configuratorSettings,
+                callback = function ()
+                    print("Customize")
+                end
+            },
+        }
+    }
 
-    for _, data in pairs(page2Options) do
-        data.padding = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
-        data.padding:SetFullWidth(true)
+    local function updatePageIntro(description)
+        local settingsIntroGroup = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
+        settingsIntroGroup:SetFullWidth(true)
+        settingsIntroGroup:SetHeight(68)
 
-        data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
-        data.frame:SetFullWidth(true)
-        data.frame:SetSetting(data.profile or addon.settings.profile, data.setting, data.callback or nil)
-        data.frame:SetImage(data.icon)
-        data.frame:SetLabel(data.label)
-        data.frame:SetTooltip(data.tooltip)
+        local settingDesc = AceGUI:Create("Label")
+        settingDesc:SetFullWidth(true)
+        settingDesc:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
+        settingDesc:SetColor(186 / 255, 186 / 255, 186 / 255)
 
-        data.padding:AddChild(data.frame)
+        settingDesc:SetText('\n' .. description)
+        settingsIntroGroup:AddChild(settingDesc)
 
-        configurator.scrollContainer:AddChild(data.padding)
+        configurator.scrollContainer:AddChild(settingsIntroGroup)
     end
 
-    local function page1to2()
-        configurator:SetPoint("TOPLEFT", page1.frame, "TOPLEFT")
-        page1:Hide()
-        configurator:Show()
+    local function updatePageOptions()
+        configurator.scrollContainer:ReleaseChildren()
+
+        updatePageIntro(pageDescriptions[activePage] or '\n')
+
+        for _, data in pairs(pageOptions[activePage] or {}) do
+            data.padding = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
+            data.padding:SetFullWidth(true)
+            data.padding:SetHeight(52)
+
+            data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
+            data.frame:SetFullWidth(true)
+            data.frame:SetSetting(data.profile or addon.settings.profile, data.setting, data.callback or nil)
+            data.frame:SetImage(data.icon)
+            data.frame:SetLabel(data.label)
+            data.frame:SetTooltip(data.tooltip)
+
+            data.padding:AddChild(data.frame)
+
+            configurator.scrollContainer:AddChild(data.padding)
+        end
+
+        configurator.scrollContainer:DoLayout()
     end
 
-    local function page2to1()
+    local function pageForward()
+        print("pageForward", activePage)
+
+        if activePage == 1 then
+            configurator:SetPoint("TOPLEFT", page1.frame, "TOPLEFT")
+
+            activePage = activePage + 1
+
+            configurator:SetDescription(L("Configure your guide."))
+            updatePageOptions()
+
+            page1:Hide()
+            configurator:Show()
+
+            return
+        elseif activePage == 2 then
+            activePage = activePage + 1
+
+            if configuratorSettings["enableDungeons"] then
+                configurator:SetDescription(_G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS)
+                configurator.submitbutton:SetText(_G.SUBMIT)
+                updatePageOptions()
+
+                return
+            end
+        end
+
+        selectDefaultGuide(configuratorSettings["survival"])
         configurator:Hide()
-        page1:Show()
     end
 
-    local function page3to1()
-        configurator:Hide()
-        page1:Show()
+    local function pageBackward()
+        if activePage == 2 then
+            activePage = activePage - 1
+
+            configurator.scrollContainer:ReleaseChildren()
+            configurator:SetDescription(L("Configure your guide."))
+            updatePageOptions()
+
+            configurator.resetbutton:Disable()
+            configurator:Hide()
+            page1:Show()
+
+        elseif activePage == 3 then
+            activePage = activePage - 1
+
+            updatePageOptions()
+        end
     end
 
     speedrunGroup:SetCallback("OnClick", function()
-        page1to2()
+        pageForward()
     end)
 
     survivalGroup:SetCallback("OnClick", function()
         configuratorSettings["survival"] = true
-        page1to2()
+        pageForward()
     end)
 
     configurator.backbutton:SetScript("OnClick", function()
-        page2to1()
+        pageBackward()
     end)
 
     configurator.resetbutton:SetScript("OnClick", function()
-        page3to1()
+        activePage = 1
+        pageBackward()
         configurator.resetbutton:Disable()
     end)
 
     configurator.submitbutton:SetScript("OnClick", function()
-        if configuratorSettings["enableDungeons"] then
-            configurator.submitbutton:SetText(_G.SUBMIT)
-            configurator.resetbutton:Enable()
-        else
-            selectDefaultGuide(configuratorSettings["survival"])
-            configurator:Hide()
+        if activePage == 2 then
+
         end
+
+        pageForward()
     end)
 
     return page1
