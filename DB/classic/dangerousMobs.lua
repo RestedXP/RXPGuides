@@ -2665,7 +2665,7 @@ local dangerousMobs = {
         MinLevel = 70,
         MaxLevel = 70,
         Classification = "Elite",
-        Movement = "Fast Patrol",
+        Movement = "Idle",
         Notes = "Hits extremely hard. extremely dangerous",
         Location = ".pin Blade's Edge Mountains,60.92,47.60;.mob Grulloc"
         },
@@ -5563,7 +5563,7 @@ local dangerousMobs = {
         MinLevel = 70,
         MaxLevel = 70,
         Classification = "Elite",
-        Movement = "Fast Patrol",
+        Movement = "Idle",
         Notes = "Hits extremely hard. extremely dangerous",
         Location = ".pin Blade's Edge Mountains,60.92,47.60;.mob Grulloc"
         },
