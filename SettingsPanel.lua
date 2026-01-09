@@ -2379,7 +2379,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     dangerousMobsHeader = {
-                        name = addon.gameVersion < 20000 and L("Dangerous Mobs Tracking") or L("Rare Tracker"),
+                        name = addon.gameVersion < 30000 and L("Dangerous Mobs Tracking") or L("Rare Tracker"),
                         type = "header",
                         width = "full",
                         order = 4.0,
@@ -2403,7 +2403,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.dangerousMobs or addon.gameVersion > 20000
+                            return not addon.dangerousMobs or addon.gameVersion > 30000
                         end
                     },
                     showDangerousUnitscan = {
@@ -2422,7 +2422,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return not unitscanEnabled or not addon.dangerousMobs or addon.gameVersion > 20000
+                            return not unitscanEnabled or not addon.dangerousMobs or addon.gameVersion > 30000
                         end
                     },
                     showRares = {
@@ -2491,8 +2491,8 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     enableItemUpgrades = {
                         name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
-                        desc = L(
-                            "Calculates item upgrades with Tactics' effective power weights"),
+                        desc =
+                            L("Calculates item upgrades with Tactics' effective power weights"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.1,

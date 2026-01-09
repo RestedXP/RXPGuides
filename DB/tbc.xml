@@ -9,5 +9,6 @@
     <Script file="DB/tbc/statWeights.lua"/>
 
     <Script file="DB/questDB.lua"/>
-
+    <Script file="DB/classic/dangerousMobs.lua"/>
+	
 </Ui>

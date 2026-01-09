@@ -36,6 +36,7 @@ InventoryManager.lua
 map.lua
 functions.lua
 GuideLoader.lua
+CptStadicsVendorTreasures.lua
 
 Guides/GuideList-tbc.xml
 

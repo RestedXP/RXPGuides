@@ -60,4 +60,4 @@ Guides/Talents/classic.xml [AllowLoadGameType vanilla]
 
 ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,cata]
 
-CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla]
+CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,tbc,wrath]

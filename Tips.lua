@@ -406,7 +406,7 @@ local function IsStepActive(self)
     local levelBuffer = 1000
     local profile = addon.settings.profile
     local active
-    if addon.gameVersion < 20000 then
+    if addon.gameVersion < 40000 then
         active = profile.showDangerousMobsMap
     else
         active = profile.showRares and self.rare or profile.showTreasures and self.treasure
