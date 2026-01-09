@@ -2659,6 +2659,28 @@ local dangerousMobs = {
         },
       },
     },
+    ["Blade's Edge Mountains"] = {
+      ["Grulloc"] = {
+        {
+        MinLevel = 70,
+        MaxLevel = 70,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "Hits extremely hard. extremely dangerous",
+        Location = ".pin Blade's Edge Mountains,60.92,47.60;.mob Grulloc"
+        },
+      },
+      ["Maggoc"] = {
+        {
+        MinLevel = 70,
+        MaxLevel = 70,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Hits extremely hard. extremely dangerous",
+        Location = ".line Blade's Edge Mountains,58.06,64.98,57.98,62.98,58.49,60.96,58.75,59.05,59.27,57.22,59.73,56.17,61.08,54.74,62.34,55.09,63.44,55.38,64.23,55.33,65.34,54.82,66.54,56.21,67.51,58.10,67.85,59.58,68.06,61.57,68.35,62.78,67.98,64.20,67.86,66.44,68.08,67.80,68.05,70.16,68.24,71.99,68.06,74.56,67.98,75.06;.mob Maggoc"
+        },
+      },
+    },
     ["Hellfire Peninsula"] = {
       ["Fel Reaver"] = {
         {
@@ -5532,6 +5554,28 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "High damage frost shock + bleed",
         Location = ".pin Winterspring,54.6,51.6;.pin Winterspring,57.6,50.2;.pin Winterspring,60.4,49.8;.mob Cobalt Whelp"
+        },
+      },
+    },
+    ["Blade's Edge Mountains"] = {
+      ["Grulloc"] = {
+        {
+        MinLevel = 70,
+        MaxLevel = 70,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "Hits extremely hard. extremely dangerous",
+        Location = ".pin Blade's Edge Mountains,60.92,47.60;.mob Grulloc"
+        },
+      },
+      ["Maggoc"] = {
+        {
+        MinLevel = 70,
+        MaxLevel = 70,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Hits extremely hard. extremely dangerous",
+        Location = ".line Blade's Edge Mountains,58.06,64.98,57.98,62.98,58.49,60.96,58.75,59.05,59.27,57.22,59.73,56.17,61.08,54.74,62.34,55.09,63.44,55.38,64.23,55.33,65.34,54.82,66.54,56.21,67.51,58.10,67.85,59.58,68.06,61.57,68.35,62.78,67.98,64.20,67.86,66.44,68.08,67.80,68.05,70.16,68.24,71.99,68.06,74.56,67.98,75.06;.mob Maggoc"
         },
       },
     },
