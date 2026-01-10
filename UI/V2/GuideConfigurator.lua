@@ -879,6 +879,8 @@ function addon.ui.v2:CreateConfigurator()
     local configuratorSettings = {
         enableDungeons = false,
         survival = false,
+
+        dungeons_fastest = true,
     }
 
     local activePage = 1
