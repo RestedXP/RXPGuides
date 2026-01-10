@@ -1058,6 +1058,12 @@ function addon.ui.v2:CreateConfigurator()
         elseif activePage == 3 then
             activePage = activePage - 1
 
+            if configuratorSettings["enableDungeons"] then
+                configurator.submitbutton:SetText(_G.NEXT)
+            else
+                configurator.submitbutton:SetText(_G.SUBMIT)
+            end
+
             updatePageOptions()
         end
     end
