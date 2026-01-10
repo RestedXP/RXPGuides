@@ -1190,6 +1190,7 @@ function addon:OnInitialize()
         pcall(_G.RXPOnInitialize)
     end
 
+    addon.ui.v2:Initialize()
     addon:ImportCustomThemes()
     addon:LoadActiveTheme()
     addon.settings:UpdateMinimapButton()
@@ -1364,12 +1365,10 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         C_Timer.After(20, function()
             addon.settings:CheckAddonCompatibility()
         end)
+
+        addon.ui.v2.LaunchConfigurator(true)
     end
-    if addon.RXPFrame:IsShown() and WOW_PROJECT_ID == WOW_PROJECT_CLASSIC and
-                UnitLevel("player") == 1 and
-                (not addon.currentGuide or addon.currentGuide.empty) and addon.startHardcoreIntroUI then
-        addon.startHardcoreIntroUI()
-    end
+
     addon.targeting:Setup()
 end
 --addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)

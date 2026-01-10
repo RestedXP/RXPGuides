@@ -922,10 +922,9 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Run Guide Configurator"),
                 type = "execute",
                 width = 1.2,
-                func = addon.startHardcoreIntroUI,
-                hidden = addon.game ~= "CLASSIC"
+                func = addon.ui.v2.LaunchConfigurator,
+                hidden = not (addon.ui and addon.ui.v2)
             },
-
             generalSettings = {
                 type = "group",
                 name = _G.GENERAL,
@@ -1541,8 +1540,41 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    dungeonsHeader = {
+                        name = _G.DUNGEONS,
+                        type = "header",
+                        width = "full",
+                        order = 3.0
+                    },
+                    dungeonsSetFastest = {
+                        name = L("Fastest Leveling Speed"),
+                        order = 3.1,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetFastest()
+                        end
+                    },
+                    dungeonsSetUpgrades = {
+                        name = L("Best Item Upgrades"),
+                        order = 3.2,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetUpgrades()
+                        end
+                    },
+                    dungeonsSetAll = {
+                        name = L("Select all Dungeons"),
+                        order = 3.3,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetAll()
+                        end
+                    },
                     dungeons = {
-                        name = L("Dungeons"), -- TODO locale
+                        name = _G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS,
                         desc = function()
                             local out =
                                 L "Routes in quests for the selected dungeon\nGuides that support this feature:\n"
@@ -1554,9 +1586,10 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "multiselect",
                         width = optionsWidth,
-                        order = 2.9,
-                        values = RXPCData.guideMetaData.enabledDungeons[addon.player
-                            .faction] or {},
+                        order = 3.9,
+                        values = function()
+                            return addon.settings.dungeons:GetDungeons()
+                        end,
                         get = function(_, key)
                             return addon.settings.profile.dungeons[key]
                         end,
@@ -1565,9 +1598,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(
-                                       RXPCData.guideMetaData.enabledDungeons[addon.player
-                                           .faction])
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     professions = {
@@ -1591,7 +1622,7 @@ function addon.settings:CreateAceOptionsPanel()
                         values = addon.GenerateProfessionTable or {},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
-                        order = 2.91,
+                        order = 9,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
@@ -4279,3 +4310,15 @@ function addon.settings:IsEnabled(...)
 
     return true
 end
+
+addon.settings.dungeons = {}
+
+function addon.settings.dungeons:GetDungeons()
+    return RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
+end
+
+function addon.settings.dungeons:SetFastest() end
+
+function addon.settings.dungeons:SetUpgrades() end
+
+function addon.settings.dungeons:SetAll() end
