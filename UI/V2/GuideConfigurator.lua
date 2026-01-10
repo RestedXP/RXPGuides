@@ -25,8 +25,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
     local function Button_OnClick(frame)
         PlaySound(799) -- SOUNDKIT.GS_TITLE_OPTION_EXIT
         frame.obj:Hide()
-
-        if addon.RXPFrame then addon.RXPFrame:Show() end
     end
 
     local function Frame_OnShow(frame)
@@ -1045,7 +1043,6 @@ function addon.ui.v2:CreateConfigurator()
 
         selectDefaultGuide(configuratorSettings["survival"])
         configurator:Hide()
-        addon.RXPFrame:Show()
     end
 
     local function pageBackward()
@@ -1111,7 +1108,6 @@ function addon.ui.v2.LaunchConfigurator(login)
 
     f:SetPoint("TOP", UIParent, "TOP", 420, -60)
 
-    addon.RXPFrame:Hide()
     f:Show()
     --
     -- Dungeon selector
