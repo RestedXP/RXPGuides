@@ -174,8 +174,16 @@ local exceptions = {
     [6196] = true,
 }
 
+local exclusions = {
+    [6948] = true,
+    [184871] = true,
+    [260221] = true,
+}
+
 local function IsJunk(id)
-    if not id then return end
+    if not id or exclusions[id] then
+        return false
+    end
     local discard = RXPCData.discardPile[id]
     if discard == nil then
         local _, _, quality = GetItemInfo(id)
