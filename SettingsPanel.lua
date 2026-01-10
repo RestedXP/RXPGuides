@@ -1546,6 +1546,33 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.0
                     },
+                    dungeonsSetFastest = {
+                        name = L("Fastest Leveling Speed"),
+                        order = 3.1,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetFastest()
+                        end
+                    },
+                    dungeonsSetUpgrades = {
+                        name = L("Best Item Upgrades"),
+                        order = 3.2,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetUpgrades()
+                        end
+                    },
+                    dungeonsSetAll = {
+                        name = L("Select all Dungeons"),
+                        order = 3.3,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetAll()
+                        end
+                    },
                     dungeons = {
                         name = _G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS,
                         desc = function()
@@ -1559,7 +1586,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "multiselect",
                         width = optionsWidth,
-                        order = 3.1,
+                        order = 3.9,
                         values = function()
                             return addon.settings.dungeons:GetDungeons()
                         end,
@@ -4289,3 +4316,9 @@ addon.settings.dungeons = {}
 function addon.settings.dungeons:GetDungeons()
     return RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
 end
+
+function addon.settings.dungeons:SetFastest() end
+
+function addon.settings.dungeons:SetUpgrades() end
+
+function addon.settings.dungeons:SetAll() end

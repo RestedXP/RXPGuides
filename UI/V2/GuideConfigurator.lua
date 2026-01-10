@@ -932,22 +932,22 @@ function addon.ui.v2:CreateConfigurator()
         [3] = {
             {
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
-                label = "Fastest Leveling Speed",
+                label = L("Fastest Leveling Speed"),
                 tooltip = nil,
                 setting = 'dungeons_fastest',
                 profile = configuratorSettings,
                 callback = function ()
-                    print("Fastest")
+                    addon.settings.dungeons:SetFastest()
                 end
             },
             {
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-upgrades",
-                label = "Best Item Upgrades",
+                label = L("Best Item Upgrades"),
                 tooltip = nil,
                 setting = 'dungeons_best',
                 profile = configuratorSettings,
                 callback = function ()
-                    print("Upgrades")
+                    addon.settings.dungeons:SetUpgrades()
                 end
             },
             {
@@ -957,7 +957,8 @@ function addon.ui.v2:CreateConfigurator()
                 setting = 'dungeons_all',
                 profile = configuratorSettings,
                 callback = function ()
-                    print("All")
+                    addon.settings.dungeons:SetAll()
+                    -- TODO redraw
                 end
             },
             {
