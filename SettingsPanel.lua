@@ -1540,8 +1540,14 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    dungeonsHeader = {
+                        name = _G.DUNGEONS,
+                        type = "header",
+                        width = "full",
+                        order = 3.0
+                    },
                     dungeons = {
-                        name = L("Dungeons"), -- TODO locale
+                        name = _G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS,
                         desc = function()
                             local out =
                                 L "Routes in quests for the selected dungeon\nGuides that support this feature:\n"
@@ -1553,9 +1559,10 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "multiselect",
                         width = optionsWidth,
-                        order = 2.9,
-                        values = RXPCData.guideMetaData.enabledDungeons[addon.player
-                            .faction] or {},
+                        order = 3.1,
+                        values = function()
+                            return addon.settings.dungeons:GetDungeons()
+                        end,
                         get = function(_, key)
                             return addon.settings.profile.dungeons[key]
                         end,
@@ -1564,9 +1571,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(
-                                       RXPCData.guideMetaData.enabledDungeons[addon.player
-                                           .faction])
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     professions = {
@@ -1590,7 +1595,7 @@ function addon.settings:CreateAceOptionsPanel()
                         values = addon.GenerateProfessionTable or {},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
-                        order = 2.91,
+                        order = 9,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
@@ -4277,4 +4282,10 @@ function addon.settings:IsEnabled(...)
     end
 
     return true
+end
+
+addon.settings.dungeons = {}
+
+function addon.settings.dungeons:GetDungeons()
+    return RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
 end
