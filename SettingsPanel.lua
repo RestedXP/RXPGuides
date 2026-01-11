@@ -1212,6 +1212,21 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.86,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
+                    maxSoulShards = {
+                        name = L("Soul Shard Maximum"), -- TODO locale
+                        desc = L("Automatically set Soul Shard as junk if you have more than the amount specified"),
+                        type = "input",
+                        get = function() return tostring(addon.settings.profile.maxSoulShards or 100) end,
+                        set = function(_,value)
+                            addon.settings.profile.maxSoulShards = tonumber(value) or 100
+                        end,
+                        pattern = "^%d+$",
+                        usage = L"You must input an integer number",
+                        width = optionsWidth * 0.7,
+                        order = 4.875,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
+                    },
+
                     sellKeybind = {
                         name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
                         desc = L("Click to set a keybind"),
