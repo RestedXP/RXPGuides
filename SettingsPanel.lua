@@ -1571,6 +1571,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         func = function()
                             self.dungeons:SetAll()
+                            addon.ReloadGuide()
                         end
                     },
                     dungeons = {
@@ -4321,4 +4322,8 @@ function addon.settings.dungeons:SetFastest() end
 
 function addon.settings.dungeons:SetUpgrades() end
 
-function addon.settings.dungeons:SetAll() end
+function addon.settings.dungeons:SetAll()
+    for key, name in pairs(self:GetDungeons()) do
+        addon.settings.profile.dungeons[key] = true
+    end
+end
