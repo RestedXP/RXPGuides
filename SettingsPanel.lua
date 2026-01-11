@@ -1546,30 +1546,41 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.0
                     },
-                    dungeonsSetFastest = {
-                        name = L("Fastest Leveling Speed"),
+                    dungeonsSetRecommended = {
+                        name = L("Select Recommended Dungeons"),
                         desc = L("Factor only the high impact dungeons into the route"),
                         order = 3.1,
+                        type = "execute",
+                        width = optionsWidth * 1.5,
+                        func = function()
+                            self.dungeons:SetRecommended()
+                        end,
+                        hidden = not addon.dungeonStats
+                    },
+                     -- TODO revive as fastest+upgrades
+                    dungeonsSetFastest = {
+                        name = L("Fastest Leveling Speed"),
+                        order = 3.2,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
                             self.dungeons:SetFastest()
                         end,
-                        hidden = not addon.dungeonStats
+                        hidden = true -- not addon.dungeonStats
                     },
                     dungeonsSetUpgrades = {
                         name = L("Best Item Upgrades"),
-                        order = 3.2,
+                        order = 3.3,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
                             self.dungeons:SetUpgrades()
                         end,
-                        hidden = true -- TODO revive after integration
+                        hidden = true -- not addon.dungeonStats
                     },
                     dungeonsSetAll = {
                         name = L("Select all Dungeons"),
-                        order = 3.3,
+                        order = 3.4,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -4357,6 +4368,19 @@ end
 
 function addon.settings.dungeons:GetDungeons()
     return RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
+end
+
+function addon.settings.dungeons:SetRecommended()
+    addon.settings.dungeons:ScoreDungeons()
+
+    for key, name in pairs(self:GetDungeons()) do
+        if (self.dungeonScore[key] or 0) > 7 then
+            addon.settings.profile.dungeons[key] = true
+        else
+            addon.settings.profile.dungeons[key] = false
+        end
+    end
+
 end
 
 function addon.settings.dungeons:SetFastest()
