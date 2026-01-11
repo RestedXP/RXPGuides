@@ -880,7 +880,7 @@ function addon.ui.v2:CreateConfigurator()
         survival = false,
 
         dungeonSettings = {
-            ["fastest"] = true,
+            ["recommended"] = true,
         },
         dungeonSettingFrames = {}
     }
@@ -944,15 +944,27 @@ function addon.ui.v2:CreateConfigurator()
         [3] = {
             {
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
-                label = L("Fastest Leveling Speed"),
+                label = L("Select Recommended Dungeons"), -- L("Fastest Leveling Speed"), -- TODO re-enable as Fastest+Best
                 tooltip = nil,
-                setting = 'fastest',
+                setting = 'recommended',
                 profile = configuratorSettings.dungeonSettings,
                 callback = function ()
                     uncheckDungeonOptions('fastest')
                     addon.settings.dungeons:SetFastest()
                 end
             },
+             -- TODO re-enable as Fastest+Best
+            -- {
+            --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
+            --     label = L("Fastest Leveling Speed"),
+            --     tooltip = nil,
+            --     setting = 'fastest',
+            --     profile = configuratorSettings.dungeonSettings,
+            --     callback = function ()
+            --         uncheckDungeonOptions('fastest')
+            --         addon.settings.dungeons:SetFastest()
+            --     end
+            -- },
             -- TODO revive later, disabled during MVP
             -- {
             --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-upgrades",
