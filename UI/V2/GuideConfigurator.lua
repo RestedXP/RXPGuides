@@ -879,7 +879,10 @@ function addon.ui.v2:CreateConfigurator()
         enableDungeons = false,
         survival = false,
 
-        dungeons_fastest = true,
+        dungeonSettings = {
+            ["fastest"] = true,
+        },
+        dungeonSettingFrames = {}
     }
 
     local activePage = 1
@@ -892,6 +895,16 @@ function addon.ui.v2:CreateConfigurator()
         [2] = L("Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."),
         [3] = "Add dungeons to your journey. The guide will adjust to your selection accordingly and include dungeon quests to your route."
     }
+
+    local function uncheckDungeonOptions(activeSetting)
+        for _, data in pairs(configuratorSettings.pageOptions[activePage] or {}) do
+            if data.setting ~= activeSetting then
+                if data.frame and data.frame.check then
+                    data.frame:SetValue(false)
+                end
+            end
+        end
+    end
 
     local pageOptions = {
         [2] = {
@@ -933,9 +946,10 @@ function addon.ui.v2:CreateConfigurator()
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
                 label = L("Fastest Leveling Speed"),
                 tooltip = nil,
-                setting = 'dungeons_fastest',
-                profile = configuratorSettings,
+                setting = 'fastest',
+                profile = configuratorSettings.dungeonSettings,
                 callback = function ()
+                    uncheckDungeonOptions('fastest')
                     addon.settings.dungeons:SetFastest()
                 end
             },
@@ -943,9 +957,10 @@ function addon.ui.v2:CreateConfigurator()
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-upgrades",
                 label = L("Best Item Upgrades"),
                 tooltip = nil,
-                setting = 'dungeons_best',
-                profile = configuratorSettings,
+                setting = 'best',
+                profile = configuratorSettings.dungeonSettings,
                 callback = function ()
+                    uncheckDungeonOptions('best')
                     addon.settings.dungeons:SetUpgrades()
                 end
             },
@@ -953,9 +968,10 @@ function addon.ui.v2:CreateConfigurator()
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-all",
                 label = L("Select all Dungeons"),
                 tooltip = nil,
-                setting = 'dungeons_all',
-                profile = configuratorSettings,
+                setting = 'all',
+                profile = configuratorSettings.dungeonSettings,
                 callback = function ()
+                    uncheckDungeonOptions('all')
                     addon.settings.dungeons:SetAll()
                     -- TODO redraw
                 end
@@ -964,14 +980,17 @@ function addon.ui.v2:CreateConfigurator()
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-customize",
                 label = "Customize Dungeons",
                 tooltip = nil,
-                setting = 'dungeons_customize',
-                profile = configuratorSettings,
+                setting = 'customize',
+                profile = configuratorSettings.dungeonSettings,
                 callback = function ()
+                    uncheckDungeonOptions('customize')
                     print("Customize")
                 end
             },
         }
     }
+
+    configuratorSettings.pageOptions = pageOptions
 
     local function updatePageIntro(description)
         local settingsIntroGroup = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
