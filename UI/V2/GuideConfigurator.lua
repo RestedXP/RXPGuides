@@ -827,6 +827,166 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
 
 end
 
+
+function addon.ui.v2.RegisterRXPGuideConfiguratorDungeonList()
+    local L = addon.locale.Get
+
+    --[[-----------------------------------------------------------------------------
+    Frame Container
+    -------------------------------------------------------------------------------]]
+    local Type, Version = "RXPGuideConfiguratorDungeonList", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    -- WoW APIs
+    local CreateFrame, UIParent = CreateFrame, UIParent
+
+    --[[-----------------------------------------------------------------------------
+    Scripts
+    -------------------------------------------------------------------------------]]
+    local function Frame_OnShow(frame)
+        frame.obj:Fire("OnShow")
+    end
+
+    local function Frame_OnClose(frame)
+        frame.obj:Fire("OnClose")
+    end
+
+
+    --[[-----------------------------------------------------------------------------
+    Methods
+    -------------------------------------------------------------------------------]]
+    local methods = {
+        ["OnAcquire"] = function(self)
+            self.frame:SetFrameStrata("MEDIUM")
+            self.frame:SetFrameLevel(90)
+            self:ApplyStatus()
+
+            self:Hide()
+        end,
+
+        ["OnRelease"] = function(self)
+            self.status = nil
+            wipe(self.localstatus)
+        end,
+
+        ["SetDescription"] = function(self, text)
+            self.description:SetText(text)
+        end,
+
+        ["OnWidthSet"] = function(self, width)
+            local content = self.content
+            local contentwidth = width - 34
+            if contentwidth < 0 then
+                contentwidth = 0
+            end
+            content:SetWidth(contentwidth)
+            content.width = contentwidth
+        end,
+
+        ["OnHeightSet"] = function(self, height)
+            local content = self.content
+            local contentheight = height - 57
+            if contentheight < 0 then
+                contentheight = 0
+            end
+            content:SetHeight(contentheight)
+            content.height = contentheight
+        end,
+
+        ["Hide"] = function(self)
+            self.frame:Hide()
+        end,
+
+        ["Show"] = function(self)
+            self.frame:Show()
+        end,
+
+        -- called to set an external table to store status in
+        ["SetStatusTable"] = function(self, status)
+            assert(type(status) == "table")
+            self.status = status
+            self:ApplyStatus()
+        end,
+
+        ["ApplyStatus"] = function(self)
+            local status = self.status or self.localstatus
+            local frame = self.frame
+            self:SetWidth(status.width or 256)
+            self:SetHeight(status.height or 512)
+            frame:ClearAllPoints()
+        end
+    }
+
+    --[[-----------------------------------------------------------------------------
+    Constructor
+    -------------------------------------------------------------------------------]]
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
+        frame:Hide()
+
+        frame:EnableMouse(true)
+        frame:SetMovable(false)
+        frame:SetResizable(false)
+        frame:SetSize(256, 512)
+
+        frame:SetScript("OnShow", Frame_OnShow)
+        frame:SetScript("OnHide", Frame_OnClose)
+
+        local topLeftBg = frame:CreateTexture(nil, "BACKGROUND", nil, -2)
+        topLeftBg:SetTexture("Interface\\HelpFrame\\HelpFrame-TopLeft")
+        topLeftBg:SetSize(256, 256)
+        topLeftBg:SetPoint("TOPLEFT")
+
+        local bottomLeftBg = frame:CreateTexture(nil, "BACKGROUND", nil, -2)
+        bottomLeftBg:SetTexture("Interface\\HelpFrame\\HelpFrame-BotLeft")
+        bottomLeftBg:SetSize(256, 256 * 0.65)
+        bottomLeftBg:SetPoint("TOPLEFT", topLeftBg, "BOTTOMLEFT", 0, 0)
+        bottomLeftBg:SetTexCoord(0, 1, 0.35, 1)
+
+        local topLeftIcon = frame:CreateTexture(nil, "OVERLAY", nil, -1)
+        topLeftIcon:SetTexture("Interface\\Icons\\spell_frost_stun")
+        topLeftIcon:SetWidth(48)
+        topLeftIcon:SetHeight(48)
+        topLeftIcon:SetPoint("TOPLEFT", frame, 6, -4)
+
+        local imageBackdrop = {
+            edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+            edgeSize = 16
+        }
+
+        local imageborder = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        imageborder:SetBackdrop(imageBackdrop)
+        imageborder:SetSize(50, 50)
+        imageborder:SetPoint("CENTER", topLeftIcon, "CENTER")
+
+        local titletext = frame:CreateFontString(nil, "ARTWORK")
+        titletext:SetFontObject(GameFontNormal)
+        titletext:SetPoint("LEFT", topLeftIcon, "RIGHT", 0, 0)
+        titletext:SetText(_G.DUNGEONS)
+
+        --Container Support
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
+        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 108)
+
+        local widget = {
+            localstatus  = {},
+            titletext    = titletext,
+            content      = content,
+            frame        = frame,
+            type         = Type
+        }
+
+        for method, func in pairs(methods) do
+            widget[method] = func
+        end
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
 local function selectDefaultGuide(survival)
     if UnitLevel("player") > 1 then return end
 
@@ -889,6 +1049,13 @@ function addon.ui.v2:CreateConfigurator()
 
     addon.ui.v2.RegisterRXPGuideConfiguratorSetting()
     addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
+    addon.ui.v2.RegisterRXPGuideConfiguratorDungeonList()
+
+    local dungeonPane = AceGUI:Create("RXPGuideConfiguratorDungeonList")
+    dungeonPane:SetPoint("TOPRIGHT", configurator.frame, "TOPLEFT", 22, -28)
+    dungeonPane:SetHeight(configurator.frame:GetHeight() - 90)
+    dungeonPane.frame:SetParent(configurator.frame)
+    dungeonPane.frame:SetFrameLevel(configurator.frame:GetFrameLevel() - 1)
 
     --TODO locale
     local pageDescriptions = {
@@ -949,7 +1116,7 @@ function addon.ui.v2:CreateConfigurator()
                 setting = 'recommended',
                 profile = configuratorSettings.dungeonSettings,
                 callback = function ()
-                    uncheckDungeonOptions('fastest')
+                    uncheckDungeonOptions('recommended')
                     addon.settings.dungeons:SetFastest()
                 end
             },
@@ -997,7 +1164,11 @@ function addon.ui.v2:CreateConfigurator()
                 profile = configuratorSettings.dungeonSettings,
                 callback = function ()
                     uncheckDungeonOptions('customize')
-                    print("Customize")
+                    if configuratorSettings.dungeonSettings["customize"] then
+                        dungeonPane:Show()
+                    else
+                        dungeonPane:Hide()
+                    end
                 end
             },
         }
@@ -1060,6 +1231,8 @@ function addon.ui.v2:CreateConfigurator()
             page1:Hide()
             configurator:Show()
 
+            dungeonPane:Show()
+
             return
         elseif activePage == 2 then
             activePage = activePage + 1
@@ -1069,6 +1242,11 @@ function addon.ui.v2:CreateConfigurator()
                 configurator.submitbutton:SetText(_G.SUBMIT)
                 updatePageOptions()
 
+                if configuratorSettings.dungeonSettings["customize"] then
+                    dungeonPane:Show()
+                else
+                    dungeonPane:Hide()
+                end
                 return
             end
         end
@@ -1096,6 +1274,10 @@ function addon.ui.v2:CreateConfigurator()
                 configurator.submitbutton:SetText(_G.NEXT)
             else
                 configurator.submitbutton:SetText(_G.SUBMIT)
+            end
+
+            if dungeonPane and dungeonPane:IsShown() then
+                dungeonPane:Hide()
             end
 
             updatePageOptions()
