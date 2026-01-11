@@ -827,7 +827,6 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
 
 end
 
-
 function addon.ui.v2.RegisterRXPGuideConfiguratorDungeonList()
     local L = addon.locale.Get
 
@@ -961,13 +960,13 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorDungeonList()
 
         local titletext = frame:CreateFontString(nil, "ARTWORK")
         titletext:SetFontObject(GameFontNormal)
-        titletext:SetPoint("LEFT", topLeftIcon, "RIGHT", 0, 0)
-        titletext:SetText(_G.DUNGEONS)
+        titletext:SetPoint("LEFT", topLeftIcon, "RIGHT", 10, -2)
+        titletext:SetText(_G.SPECIFIC_DUNGEONS)
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 12, -8)
-        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -38, 108)
+        content:SetPoint("TOPLEFT", topLeftIcon, "BOTTOMLEFT", 14, -2)
+        content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -8, 50)
 
         local widget = {
             localstatus  = {},
@@ -1231,7 +1230,7 @@ function addon.ui.v2:CreateConfigurator()
             page1:Hide()
             configurator:Show()
 
-            dungeonPane:Show()
+            -- dungeonPane:Show()
 
             return
         elseif activePage == 2 then
