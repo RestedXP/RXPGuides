@@ -953,17 +953,18 @@ function addon.ui.v2:CreateConfigurator()
                     addon.settings.dungeons:SetFastest()
                 end
             },
-            {
-                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-upgrades",
-                label = L("Best Item Upgrades"),
-                tooltip = nil,
-                setting = 'best',
-                profile = configuratorSettings.dungeonSettings,
-                callback = function ()
-                    uncheckDungeonOptions('best')
-                    addon.settings.dungeons:SetUpgrades()
-                end
-            },
+            -- TODO revive later, disabled during MVP
+            -- {
+            --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-upgrades",
+            --     label = L("Best Item Upgrades"),
+            --     tooltip = nil,
+            --     setting = 'best',
+            --     profile = configuratorSettings.dungeonSettings,
+            --     callback = function ()
+            --         uncheckDungeonOptions('best')
+            --         addon.settings.dungeons:SetUpgrades()
+            --     end
+            -- },
             {
                 icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-all",
                 label = L("Select all Dungeons"),
