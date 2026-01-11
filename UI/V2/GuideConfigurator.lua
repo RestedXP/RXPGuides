@@ -980,7 +980,7 @@ function addon.ui.v2:CreateConfigurator()
         settingsIntroGroup:SetHeight(68)
 
         local settingDesc = AceGUI:Create("Label")
-        settingDesc:SetFullWidth(true)
+        settingDesc:SetRelativeWidth(0.95)
         settingDesc:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
         settingDesc:SetColor(186 / 255, 186 / 255, 186 / 255)
 
