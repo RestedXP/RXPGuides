@@ -776,14 +776,15 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
     local methods = {
         ["OnAcquire"] = function(self)
             self:SetWidth(200)
-            self:SetHeight(52) -- 48 + 4
+            self.fixedHeight = 52 -- 48 + 4
+            self:SetHeight(self.fixedHeight)
         end,
 
         -- ["OnRelease"] = nil,
 
         ["LayoutFinished"] = function(self, width, height)
             if self.noAutoHeight then return end
-            self:SetHeight(height or 0)
+            self:SetHeight(self.fixedHeight)
         end,
 
         ["OnWidthSet"] = function(self, width)
@@ -793,9 +794,7 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
         end,
 
         ["OnHeightSet"] = function(self, height)
-            local content = self.content
-            content:SetHeight(height)
-            content.height = height
+            self.content:SetHeight(self.fixedHeight)
         end
     }
 
