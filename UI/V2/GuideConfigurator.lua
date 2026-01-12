@@ -7,20 +7,20 @@ local wipe = table.wipe
 local guideConfigurator
 
 local dungeonIcons = {
-    ["RFC"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
-    ["DM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\deadmines.tga",
-    ["WC"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
-    ["SFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\shadowfangkeep.tga",
     ["BFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\blackfathomdeeps.tga",
-    ["STOCKS"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
+    ["DM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\deadmines.tga",
     ["GNOMER"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\gnomeregan.tga",
-    ["RFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
-    ["SM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\scarletmonastery.tga",
-    ["RFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfendowns.tga",
-    ["ULDA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\uldaman.tga",
-    ["ZF"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\zulfarrak.tga",
     ["MARA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\maraudon.tga",
+    ["RFC"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
+    ["RFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfendowns.tga",
+    ["RFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
+    ["SFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\shadowfangkeep.tga",
+    ["SM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\scarletmonastery.tga",
     ["ST"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\sunkentemple.tga",
+    ["STOCKS"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
+    ["ULDA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\uldaman.tga",
+    ["WC"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
+    ["ZF"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\zulfarrak.tga",
 }
 
 function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
