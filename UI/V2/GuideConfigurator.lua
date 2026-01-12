@@ -6,6 +6,23 @@ local wipe = table.wipe
 
 local guideConfigurator
 
+local dungeonIcons = {
+    ["RFC"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
+    ["DM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\deadmines.tga",
+    ["WC"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
+    ["SFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\shadowfangkeep.tga",
+    ["BFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\blackfathomdeeps.tga",
+    ["STOCKS"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
+    ["GNOMER"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\gnomeregan.tga",
+    ["RFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
+    ["SM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\scarletmonastery.tga",
+    ["RFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfendowns.tga",
+    ["ULDA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\uldaman.tga",
+    ["ZF"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\zulfarrak.tga",
+    ["MARA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\maraudon.tga",
+    ["ST"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\sunkentemple.tga",
+}
+
 function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
     local L = addon.locale.Get
 
@@ -1038,10 +1055,11 @@ function addon.ui.v2:CreateConfigurator()
         enableDungeons = false,
         survival = false,
 
-        dungeonSettings = {
-            ["recommended"] = true,
-        },
-        dungeonSettingFrames = {}
+        -- dungeonSettings = {
+        --     ["recommended"] = true,
+        -- },
+        dungeonSettingFrames = {},
+        dungeonsInitialized = false
     }
 
     local activePage = 1
@@ -1050,11 +1068,11 @@ function addon.ui.v2:CreateConfigurator()
     addon.ui.v2.RegisterRXPGuideConfiguratorSettingPadding()
     addon.ui.v2.RegisterRXPGuideConfiguratorDungeonList()
 
-    local dungeonPane = AceGUI:Create("RXPGuideConfiguratorDungeonList")
-    dungeonPane:SetPoint("TOPRIGHT", configurator.frame, "TOPLEFT", 22, -28)
-    dungeonPane:SetHeight(configurator.frame:GetHeight() - 90)
-    dungeonPane.frame:SetParent(configurator.frame)
-    dungeonPane.frame:SetFrameLevel(configurator.frame:GetFrameLevel() - 1)
+    -- local dungeonPane = AceGUI:Create("RXPGuideConfiguratorDungeonList")
+    -- dungeonPane:SetPoint("TOPRIGHT", configurator.frame, "TOPLEFT", 22, -28)
+    -- dungeonPane:SetHeight(configurator.frame:GetHeight() - 90)
+    -- dungeonPane.frame:SetParent(configurator.frame)
+    -- dungeonPane.frame:SetFrameLevel(configurator.frame:GetFrameLevel() - 1)
 
     --TODO locale
     local pageDescriptions = {
@@ -1062,15 +1080,17 @@ function addon.ui.v2:CreateConfigurator()
         [3] = "Add dungeons to your journey. The guide will adjust to your selection accordingly and include dungeon quests to your route."
     }
 
-    local function uncheckDungeonOptions(activeSetting)
-        for _, data in pairs(configuratorSettings.pageOptions[activePage] or {}) do
-            if data.setting ~= activeSetting then
-                if data.frame and data.frame.check then
-                    data.frame:SetValue(false)
-                end
-            end
-        end
-    end
+    -- local function uncheckDungeonOptions(activeSetting)
+    --     for _, data in pairs(configuratorSettings.pageOptions[activePage] or {}) do
+    --         if data.setting ~= activeSetting then
+    --             if data.frame and data.frame.check then
+    --                 data.frame:SetValue(false)
+    --             end
+    --         end
+    --     end
+    -- end
+
+
 
     local pageOptions = {
         [2] = {
@@ -1108,17 +1128,17 @@ function addon.ui.v2:CreateConfigurator()
             }
         },
         [3] = {
-            {
-                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
-                label = L("Select Recommended Dungeons"), -- L("Fastest Leveling Speed"), -- TODO re-enable as Fastest+Best
-                tooltip = nil,
-                setting = 'recommended',
-                profile = configuratorSettings.dungeonSettings,
-                callback = function ()
-                    uncheckDungeonOptions('recommended')
-                    addon.settings.dungeons:SetFastest()
-                end
-            },
+            -- {
+            --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
+            --     label = L("Select Recommended Dungeons"), -- L("Fastest Leveling Speed"), -- TODO re-enable as Fastest+Best
+            --     tooltip = nil,
+            --     setting = 'recommended',
+            --     profile = configuratorSettings.dungeonSettings,
+            --     callback = function ()
+            --         uncheckDungeonOptions('recommended')
+            --         addon.settings.dungeons:SetFastest()
+            --     end
+            -- },
              -- TODO re-enable as Fastest+Best
             -- {
             --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-fastest",
@@ -1143,35 +1163,50 @@ function addon.ui.v2:CreateConfigurator()
             --         addon.settings.dungeons:SetUpgrades()
             --     end
             -- },
-            {
-                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-all",
-                label = L("Select all Dungeons"),
-                tooltip = nil,
-                setting = 'all',
-                profile = configuratorSettings.dungeonSettings,
-                callback = function ()
-                    uncheckDungeonOptions('all')
-                    addon.settings.dungeons:SetAll()
-                    -- TODO redraw
-                end
-            },
-            {
-                icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-customize",
-                label = "Customize Dungeons",
-                tooltip = nil,
-                setting = 'customize',
-                profile = configuratorSettings.dungeonSettings,
-                callback = function ()
-                    uncheckDungeonOptions('customize')
-                    if configuratorSettings.dungeonSettings["customize"] then
-                        dungeonPane:Show()
-                    else
-                        dungeonPane:Hide()
-                    end
-                end
-            },
+            -- {
+            --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-all",
+            --     label = L("Select all Dungeons"),
+            --     tooltip = nil,
+            --     setting = 'all',
+            --     profile = configuratorSettings.dungeonSettings,
+            --     callback = function ()
+            --         uncheckDungeonOptions('all')
+            --         addon.settings.dungeons:SetAll()
+            --         -- TODO redraw
+            --     end
+            -- },
+            -- {
+            --     icon = "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-customize",
+            --     label = "Customize Dungeons",
+            --     tooltip = nil,
+            --     setting = 'customize',
+            --     profile = configuratorSettings.dungeonSettings,
+            --     callback = function ()
+            --         uncheckDungeonOptions('customize')
+            --         -- if configuratorSettings.dungeonSettings["customize"] then
+            --         --     dungeonPane:Show()
+            --         -- else
+            --         --     dungeonPane:Hide()
+            --         -- end
+            --     end
+            -- },
         }
     }
+
+    if not configuratorSettings.dungeonsInitialized then
+        addon.settings.dungeons:SetRecommended()
+        configuratorSettings.dungeonsInitialized = true
+    end
+
+    for key, name in pairs(addon.settings.dungeons:GetDungeons()) do
+        table.insert(pageOptions[3], {
+            icon = dungeonIcons[key] or "Interface\\Icons\\spell_frost_stun",
+            label = name,
+            tooltip = nil,
+            setting = key,
+            profile = addon.settings.profile.dungeons
+        })
+    end
 
     configuratorSettings.pageOptions = pageOptions
 
@@ -1230,8 +1265,6 @@ function addon.ui.v2:CreateConfigurator()
             page1:Hide()
             configurator:Show()
 
-            -- dungeonPane:Show()
-
             return
         elseif activePage == 2 then
             activePage = activePage + 1
@@ -1239,13 +1272,12 @@ function addon.ui.v2:CreateConfigurator()
             if configuratorSettings["enableDungeons"] then
                 configurator:SetDescription(_G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS)
                 configurator.submitbutton:SetText(_G.SUBMIT)
+                configurator.resetbutton:SetText(_G.ALL)
+                configurator.resetbutton:Enable()
                 updatePageOptions()
 
-                if configuratorSettings.dungeonSettings["customize"] then
-                    dungeonPane:Show()
-                else
-                    dungeonPane:Hide()
-                end
+                -- dungeonPane:Show()
+
                 return
             end
         end
@@ -1271,13 +1303,15 @@ function addon.ui.v2:CreateConfigurator()
 
             if configuratorSettings["enableDungeons"] then
                 configurator.submitbutton:SetText(_G.NEXT)
+                configurator.resetbutton:SetText(_G.RESET)
+                configurator.resetbutton:Disable()
             else
                 configurator.submitbutton:SetText(_G.SUBMIT)
             end
 
-            if dungeonPane and dungeonPane:IsShown() then
-                dungeonPane:Hide()
-            end
+            -- if dungeonPane and dungeonPane:IsShown() then
+            --     dungeonPane:Hide()
+            -- end
 
             updatePageOptions()
         end
@@ -1297,9 +1331,13 @@ function addon.ui.v2:CreateConfigurator()
     end)
 
     configurator.resetbutton:SetScript("OnClick", function()
-        activePage = 1
-        pageBackward()
-        configurator.resetbutton:Disable()
+        if activePage == 3 then
+            for _, data in pairs(configuratorSettings.pageOptions[activePage] or {}) do
+                if data.frame and data.frame.check then
+                    data.frame:SetValue(true)
+                end
+            end
+        end
     end)
 
     configurator.submitbutton:SetScript("OnClick", function()
