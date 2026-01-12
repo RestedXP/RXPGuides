@@ -1116,6 +1116,7 @@ function addon.ui.v2:CreateConfigurator()
                 icon = "Interface\\Icons\\spell_frost_stun",
                 label = L("Enable Dungeons"),
                 tooltip = L("Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."),
+                hidden = not next(addon.settings.dungeons:GetDungeons()),
                 setting = 'enableDungeons',
                 profile = configuratorSettings,
                 callback = function ()
@@ -1232,20 +1233,22 @@ function addon.ui.v2:CreateConfigurator()
         updatePageIntro(pageDescriptions[activePage] or '\n')
 
         for _, data in pairs(pageOptions[activePage] or {}) do
-            data.padding = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
-            data.padding:SetFullWidth(true)
-            data.padding:SetHeight(52)
+            if not data.hidden then
+                data.padding = AceGUI:Create("RXPGuideConfiguratorSettingPadding")
+                data.padding:SetFullWidth(true)
+                data.padding:SetHeight(52)
 
-            data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
-            data.frame:SetFullWidth(true)
-            data.frame:SetSetting(data.profile or addon.settings.profile, data.setting, data.callback or nil)
-            data.frame:SetImage(data.icon)
-            data.frame:SetLabel(data.label)
-            data.frame:SetTooltip(data.tooltip)
+                data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
+                data.frame:SetFullWidth(true)
+                data.frame:SetSetting(data.profile or addon.settings.profile, data.setting, data.callback or nil)
+                data.frame:SetImage(data.icon)
+                data.frame:SetLabel(data.label)
+                data.frame:SetTooltip(data.tooltip)
 
-            data.padding:AddChild(data.frame)
+                data.padding:AddChild(data.frame)
 
-            configurator.scrollContainer:AddChild(data.padding)
+                configurator.scrollContainer:AddChild(data.padding)
+            end
         end
 
         configurator.scrollContainer:DoLayout()
@@ -1360,8 +1363,4 @@ function addon.ui.v2.LaunchConfigurator(login)
     f:SetPoint("TOP", UIParent, "TOP", 420, -60)
 
     f:Show()
-    --
-    -- Dungeon selector
-    --- Dungeons with bonuses and weighting
-    --- Recommendations
 end
