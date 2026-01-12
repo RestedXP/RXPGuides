@@ -1557,27 +1557,6 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = not addon.dungeonStats
                     },
-                     -- TODO revive as fastest+upgrades
-                    dungeonsSetFastest = {
-                        name = L("Fastest Leveling Speed"),
-                        order = 3.2,
-                        type = "execute",
-                        width = optionsWidth,
-                        func = function()
-                            self.dungeons:SetFastest()
-                        end,
-                        hidden = true -- not addon.dungeonStats
-                    },
-                    dungeonsSetUpgrades = {
-                        name = L("Best Item Upgrades"),
-                        order = 3.3,
-                        type = "execute",
-                        width = optionsWidth,
-                        func = function()
-                            self.dungeons:SetUpgrades()
-                        end,
-                        hidden = true -- not addon.dungeonStats
-                    },
                     dungeonsSetAll = {
                         name = L("Select all Dungeons"),
                         order = 3.4,
