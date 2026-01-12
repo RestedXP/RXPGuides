@@ -15,7 +15,7 @@
 libs\embeds_Mainline.xml [AllowLoadGameType mainline]
 libs\embeds.xml [AllowLoadGameType classic]
 locale\locales.xml
-UI\includes.xml [AllowLoadGameType classic]
+UI\includes.xml
 
 Locale.lua
 Themes.lua
