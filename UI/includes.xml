@@ -1,3 +1,4 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+    <Include file="V2\Manifest.xml"/>
     <Include file="AH\Manifest.xml"/>
 </Ui>

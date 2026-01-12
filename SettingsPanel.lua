@@ -922,10 +922,9 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Run Guide Configurator"),
                 type = "execute",
                 width = 1.2,
-                func = addon.startHardcoreIntroUI,
-                hidden = addon.game ~= "CLASSIC"
+                func = addon.ui.v2.LaunchConfigurator,
+                hidden = not (addon.ui and addon.ui.v2)
             },
-
             generalSettings = {
                 type = "group",
                 name = _G.GENERAL,
@@ -1556,8 +1555,35 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    dungeonsHeader = {
+                        name = _G.DUNGEONS,
+                        type = "header",
+                        width = "full",
+                        order = 3.0
+                    },
+                    dungeonsSetRecommended = {
+                        name = L("Select Recommended Dungeons"),
+                        desc = L("Factor only the high impact dungeons into the route"),
+                        order = 3.1,
+                        type = "execute",
+                        width = optionsWidth * 1.5,
+                        func = function()
+                            self.dungeons:SetRecommended()
+                        end,
+                        hidden = not addon.dungeonStats
+                    },
+                    dungeonsSetAll = {
+                        name = L("Select all Dungeons"),
+                        order = 3.4,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            self.dungeons:SetAll()
+                            addon.ReloadGuide()
+                        end
+                    },
                     dungeons = {
-                        name = L("Dungeons"), -- TODO locale
+                        name = _G.LFG_LIST_SELECT .. ' ' ..  _G.DUNGEONS,
                         desc = function()
                             local out =
                                 L "Routes in quests for the selected dungeon\nGuides that support this feature:\n"
@@ -1569,9 +1595,10 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "multiselect",
                         width = optionsWidth,
-                        order = 2.9,
-                        values = RXPCData.guideMetaData.enabledDungeons[addon.player
-                            .faction] or {},
+                        order = 3.9,
+                        values = function()
+                            return addon.settings.dungeons:GetDungeons()
+                        end,
                         get = function(_, key)
                             return addon.settings.profile.dungeons[key]
                         end,
@@ -1580,9 +1607,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(
-                                       RXPCData.guideMetaData.enabledDungeons[addon.player
-                                           .faction])
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     professions = {
@@ -1606,7 +1631,7 @@ function addon.settings:CreateAceOptionsPanel()
                         values = addon.GenerateProfessionTable or {},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
-                        order = 2.91,
+                        order = 9,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.ReloadGuide()
@@ -4293,4 +4318,65 @@ function addon.settings:IsEnabled(...)
     end
 
     return true
+end
+
+addon.settings.dungeons = {}
+
+function addon.settings.dungeons:ScoreDungeons()
+    if self.dungeonScore and self.dungeonScoreSC then return end
+    if not addon.dungeonStats then return end
+
+    self.dungeonScore = {}
+    self.dungeonScoreSC = {}
+
+    local score
+
+    for tag, dungeon in pairs(addon.dungeonStats[addon.player.faction]) do
+        score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
+        self.dungeonScore[tag] = score
+        -- print(tag, self.dungeonScore[tag])
+    end
+
+    for tag, dungeon in pairs(addon.dungeonStatsSC[addon.player.faction]) do
+        score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
+        self.dungeonScoreSC[tag] = score
+        -- print(tag .. "-SC", self.dungeonScore[tag])
+    end
+
+    if addon.player.faction == "Alliance" then
+        self.dungeonScore["STOCKS"] = 9
+        self.dungeonScoreSC["STOCKS"] = 9
+        self.dungeonScore["ULDA"] = 9
+        self.dungeonScoreSC["ULDA"] = 9
+
+        if addon.player.class == "PALADIN" or addon.player.class == "WARRIOR" then
+            self.dungeonScore["SM"] = 9
+            self.dungeonScoreSC["SM"] = 9
+        end
+    end
+end
+
+function addon.settings.dungeons:GetDungeons()
+    return RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
+end
+
+function addon.settings.dungeons:SetRecommended()
+    addon.settings.dungeons:ScoreDungeons()
+
+    if not self.dungeonScore or not self.dungeonScoreSC then return end
+
+    for key, name in pairs(self:GetDungeons()) do
+        if (self.dungeonScore[key] or 0) > 7 then
+            addon.settings.profile.dungeons[key] = true
+        else
+            addon.settings.profile.dungeons[key] = false
+        end
+    end
+
+end
+
+function addon.settings.dungeons:SetAll()
+    for key, name in pairs(self:GetDungeons()) do
+        addon.settings.profile.dungeons[key] = true
+    end
 end

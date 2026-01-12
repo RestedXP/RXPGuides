@@ -1593,8 +1593,6 @@ function addon:LoadGuide(guide, OnLoad)
     guide = addon:FetchGuide(guide)
     if not guide or not guide.steps then
         return addon:LoadGuide(addon.emptyGuide)
-    elseif addon.HideIntroUI and not guide.empty then
-        addon.HideIntroUI()
     end
 
     if addon.game ~= "CLASSIC" then
