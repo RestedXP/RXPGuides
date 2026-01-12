@@ -4340,13 +4340,13 @@ function addon.settings.dungeons:ScoreDungeons()
     for tag, dungeon in pairs(addon.dungeonStats[addon.player.faction]) do
         score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
         self.dungeonScore[tag] = score
-        print(tag, self.dungeonScore[tag])
+        -- print(tag, self.dungeonScore[tag])
     end
 
     for tag, dungeon in pairs(addon.dungeonStatsSC[addon.player.faction]) do
         score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
         self.dungeonScoreSC[tag] = score
-        print(tag .. "-SC", self.dungeonScore[tag])
+        -- print(tag .. "-SC", self.dungeonScore[tag])
     end
 
     if addon.player.faction == "Alliance" then
@@ -4354,16 +4354,12 @@ function addon.settings.dungeons:ScoreDungeons()
         self.dungeonScoreSC["STOCKS"] = 9
         self.dungeonScore["ULDA"] = 9
         self.dungeonScoreSC["ULDA"] = 9
+
         if addon.player.class == "PALADIN" or addon.player.class == "WARRIOR" then
             self.dungeonScore["SM"] = 9
             self.dungeonScoreSC["SM"] = 9
         end
     end
-
-    RXPD = {
-        dungeonScore = self.dungeonScore,
-        dungeonScoreSC = self.dungeonScoreSC
-    }
 end
 
 function addon.settings.dungeons:GetDungeons()
@@ -4373,18 +4369,7 @@ end
 function addon.settings.dungeons:SetRecommended()
     addon.settings.dungeons:ScoreDungeons()
 
-    for key, name in pairs(self:GetDungeons()) do
-        if (self.dungeonScore[key] or 0) > 7 then
-            addon.settings.profile.dungeons[key] = true
-        else
-            addon.settings.profile.dungeons[key] = false
-        end
-    end
-
-end
-
-function addon.settings.dungeons:SetFastest()
-    addon.settings.dungeons:ScoreDungeons()
+    if not self.dungeonScore or not self.dungeonScoreSC then return end
 
     for key, name in pairs(self:GetDungeons()) do
         if (self.dungeonScore[key] or 0) > 7 then
@@ -4395,8 +4380,6 @@ function addon.settings.dungeons:SetFastest()
     end
 
 end
-
-function addon.settings.dungeons:SetUpgrades() end
 
 function addon.settings.dungeons:SetAll()
     for key, name in pairs(self:GetDungeons()) do
