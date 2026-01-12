@@ -45,7 +45,6 @@ InventoryManager.lua
 map.lua
 functions.lua
 GuideLoader.lua
-HardcoreIntroUI.lua [AllowLoadGameType vanilla]
 
 Guides/GuideList-Mainline.xml [AllowLoadGameType mainline]
 Guides/GuideList-cata.xml [AllowLoadGameType cata]
