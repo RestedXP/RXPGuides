@@ -39,6 +39,44 @@ step
 --     .accept 65436 >>Accept The Dragon Isles Await
 --     .target Wrathion
 ]])
+--Lost Dragonscale
+RXPGuides.RegisterGuide([[
+#retail
+#version 4
+#group RestedXP Speed Leveling
+#name a) Lost Dragonscale Horde
+#internal
+
+
+
+step
+    .goto 84,63.79,73.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina|r
+    .accept 332 >>Accept Wine Shop Advert
+    .target Renato Gallina
+step
+    .goto 84,62.32,67.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlan Bagley|r
+    .accept 333 >>Accept Harlan Needs a Resupply
+    .target Harlan Bagley
+step
+    .goto 84,58.10,67.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rema Schneider|r
+    .turnin 333 >>Turn in Harlan Needs a Resupply
+    .target Rema Schneider
+    .accept 334 >>Accept Package for Thurman
+step
+    .goto 84,60.26,76.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suzetta Gallina|r
+    .turnin 332 >>Turn in Wine Shop Advert
+    .target Suzetta Gallina
+step
+    .goto 84,52.58,83.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Schneider|r
+    .turnin 334 >>Turn in Package for Thurman
+    .target Thurman Schneider
+
+]])
 --Phase Diving
 RXPGuides.RegisterGuide([[
 #retail
@@ -861,13 +899,38 @@ step
     .zoneskip 407,1
     .dmf
     .isOnQuest 29444
-step
-        --     .link /run AbandonSkill(773); AbandonSkill(171);
-step
-    .goto 407,50.56,90.80
-    .zone 37 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r  << Alliance
-    .zoneskip 407,1
+step << Alliance KulTiran
+    .zoneskip 1161
+    .hs >>Use |T134414:0|t[Hearthstone] to Boralus.
+step << Alliance !KulTiran
+    .isOnQuest 40519
+    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .use 132120
     .dmf
+step << Alliance !KulTiran
+    .isNotOnQuest 40519
+    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+    .dmf
+step << Alliance !KulTiran
+    .isNotOnQuest 40519
+    .goto 2352,57.44,26.63
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r
+    .dmf
+step << Alliance !Kultiran
+    .isNotOnQuest 40519
+    .goto 84,46.05,92.1,8,0
+    .goto 84,44.95,92.12,8,0
+    .goto 84,42.96,93.78,10,0
+    .goto 84,40.89,92.74
+    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .dmf
+-- step
+--     .goto 407,50.56,90.80
+--     .zone 37 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r  << Alliance
+--     .zoneskip 407,1
+--     .dmf
 ]])
 
 -- ##################################################
@@ -13560,7 +13623,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
-#subweight 1
 #name a) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next a) Order Hall Campaign Intro

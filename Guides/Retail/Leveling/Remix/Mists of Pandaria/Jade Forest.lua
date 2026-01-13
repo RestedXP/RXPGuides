@@ -1411,7 +1411,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
-#subweight -1
+
 #title Jade Forest
 #name 3) Jade Forest Horde
 #displayname |cFF00CCFF2|r - Jade Forest
@@ -2175,7 +2175,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
-#subweight -1
+
 #name 3) Jade Forest Alliance
 #displayname |cFF00CCFF2|r - Jade Forest
 #title Jade Forest

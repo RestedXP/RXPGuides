@@ -4,7 +4,6 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP War Within
 #subgroup |cFFFCDC00(80)|r Storylines
-#subweight 999.4
 #name a) Fate of Kirin Tor
 #displayname Fate of Kirin Tor
 #next a) Horrific Visions
@@ -771,7 +770,6 @@ RXPGuides.RegisterGuide([[
 #version 3
 #group RestedXP War Within
 #subgroup |cFFFCDC00(80)|r Storylines
-#subweight 999.59
 #name a) Nightfall Radiance
 #displayname Nightfall Radiance
 
