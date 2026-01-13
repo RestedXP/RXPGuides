@@ -1976,6 +1976,11 @@ step << Priest/Rogue
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 131
+step << Priest
+    .goto Dun Morogh,47.342,52.190
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
+    .trainer >> Train your class spells
+    .target Maxan Anvol
 step << Rogue
     .goto Dun Morogh,47.563,52.608
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
