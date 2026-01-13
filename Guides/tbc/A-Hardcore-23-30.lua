@@ -1005,9 +1005,10 @@ step
     .isQuestTurnedIn 174
 step
 	#completewith HistoryBook1
-    >>|cRXP_WARN_If you loot |T133741:0|t[|cRXP_LOOT_An Old History Book|r] start the quest. This is a zone-wide drop in Duskwood|r
-	.collect 2794,1,337 --An Old History Book (1)
-	.accept 337 >> Accept An Old History Book
+    >>|cRXP_WARN_Keep an eye out for |T133741:0|t[|cRXP_LOOT_An Old History Book|r]. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_Don't start the quest it begins yet|r
+	.collect 2794,1,337,1 --An Old History Book (1)
+	--.accept 337 >> Accept An Old History Book
     .use 2794 --An Old History Book
 step
 	#completewith next
@@ -1532,9 +1533,10 @@ step
     .target Blind Mary
 step
 	#completewith next
-    >>|cRXP_WARN_If you loot |T133741:0|t[|cRXP_LOOT_An Old History Book|r] start the quest. This is a zone-wide drop in Duskwood|r
-	.collect 2794,1,337 --An Old History Book (1)
-	.accept 337 >> Accept An Old History Book
+    >>|cRXP_WARN_Keep an eye out for |T133741:0|t[|cRXP_LOOT_An Old History Book|r]. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_Don't start the quest it begins yet|r
+	.collect 2794,1,337,1 --An Old History Book (1)
+	--.accept 337 >> Accept An Old History Book
     .use 2794 --An Old History Book
 step
     .goto Duskwood,79.73,70.64,30,0
@@ -1868,9 +1870,10 @@ step
     .target Felicia Maline
 step
 	#completewith HistoryB3
-    >>|cRXP_WARN_If you loot |T133741:0|t[|cRXP_LOOT_An Old History Book|r] start the quest. This is a zone-wide drop in Duskwood|r
-	.collect 2794,1,337 --An Old History Book (1)
-	.accept 337 >> Accept An Old History Book
+    >>|cRXP_WARN_Keep an eye out for |T133741:0|t[|cRXP_LOOT_An Old History Book|r]. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_Don't start the quest it begins yet|r
+	.collect 2794,1,337,1 --An Old History Book (1)
+	--.accept 337 >> Accept An Old History Book
     .use 2794 --An Old History Book
 step
     .goto Duskwood,18.37,56.36

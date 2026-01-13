@@ -680,6 +680,7 @@ step << Paladin
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
+    .turnin -5626 >> Turn In In Favor of the Light << Dwarf
     .accept 5625 >> Accept Garments of the Light
     .target Maxan Anvol
 step << Priest
@@ -1975,12 +1976,6 @@ step << Priest/Rogue
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 131
-step << Priest
-    .goto Dun Morogh,47.342,52.190
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
-    .accept 5637 >> Accept Desperate Prayer << Human/Dwarf
-    .trainer >> Train your class spells
-    .target Maxan Anvol
 step << Rogue
     .goto Dun Morogh,47.563,52.608
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
