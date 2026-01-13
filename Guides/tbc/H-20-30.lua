@@ -1502,7 +1502,6 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >>Accept Shredding Machines
     .target +Seereth Stonebreak
     .goto The Barrens,35.26,27.88
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
@@ -1519,7 +1518,6 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >>Accept Shredding Machines
     .target +Seereth Stonebreak
     .goto The Barrens,35.26,27.88
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
@@ -1533,7 +1531,6 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >>Accept Shredding Machines
     .target +Seereth Stonebreak
     .goto The Barrens,35.26,27.88
     .turnin 6523 >>Turn in Protect Kaya
@@ -1548,7 +1545,6 @@ step
     .turnin 1062 >>Turn in Goblin Invaders
     .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >>Accept Shredding Machines
     .goto The Barrens,35.26,27.88
     .target Seereth Stonebreak
 step

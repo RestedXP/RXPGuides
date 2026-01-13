@@ -3674,6 +3674,11 @@ step
     .accept 9158 >> Accept Bearers of the Plague
     .target Farstrider Sedina
 step
+    .goto Ghostlands,72.21,29.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krenn'an|r
+    .accept 9274 >>Accept Spirits of the Drowned
+    .target Ranger Krenn'an
+step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heron|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
@@ -3896,18 +3901,6 @@ step
     .goto Ghostlands,48.35,31.67
     .target Arcanist Vandril
     .group
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r and the |cRXP_FRIENDLY_Wanted Poster|r
-    .turnin 9315 >>Turn in Anok'suten
-    .turnin 9138 >>Turn in Suncrown Village
-    .accept 9139 >>Accept Goldenmist Village
-    .goto Ghostlands,46.55,28.38,10,0 << !Priest !Mage !Warlock !Rogue !Druid
-    .goto Ghostlands,46.08,28.33 << !Priest !Mage !Warlock !Rogue !Druid
-    .goto Ghostlands,46.08,28.33,10,0 << Priest/Mage/Warlock/Rogue/Druid
-    .goto Ghostlands,46.55,28.38 << Priest/Mage/Warlock/Rogue/Druid
-    .target Arcanist Vandril
-    .isQuestComplete 9315
-    .solo
 step
     #label SuncrownTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r and the |cRXP_FRIENDLY_Wanted Poster|r
@@ -5125,11 +5118,6 @@ step
     .turnin 9192 >> Turn in Trouble at the Underlight Mines
     .target Deathstalker Maltendis
 step
-    .goto Ghostlands,44.77,32.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mavren|r
-    .accept 9173 >> Accept Retaking Windrunner Spire
-    .target High Executor Mavren
-step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mouldier|r
     .accept 9171 >> Accept Culinary Crunch
     .turnin 9171 >> Turn in Culinary Crunch
@@ -5222,7 +5210,7 @@ RXPGuides.RegisterGuide([[
 #name 18-21 Ghostlands
 #version 7
 #subgroup RestedXP Survival Guide 1-30
-#next 21-23 Stonetalon/The Barrens
+#next 21-24 Stonetalon/The Barrens
 
 step << Rogue
     .goto Ghostlands,47.20,34.31
@@ -6564,6 +6552,7 @@ step
     .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
     .target Deathstalker Rathiel
     .isQuestComplete 9156
+    .group
 step << Rogue wotlk
     #completewith Eralan6
     .goto Ghostlands,47.20,34.31
@@ -7086,6 +7075,7 @@ step
     .turnin 9156 >> Turn in Wanted: Knucklerot and Luzran
     .target Deathstalker Rathiel
     .isQuestComplete 9156
+    .group
 step
     #completewith next
     .subzone 3488 >> Travel to Tranquillien
@@ -7590,8 +7580,11 @@ step << Paladin
     .xp <24,1
 step
     #optional
-    .abandon 9156,9167
+    .abandon 9156
     --9156 Wanted: Knucklerot and Luzran
+step
+    #optional
+    .abandon 9167
     --9167 The Traitor's Destruction
 step
     #label ExitUC

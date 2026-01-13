@@ -3492,6 +3492,7 @@ step << Shaman/Hunter
     .turnin 813 >>Turn in Finding the Antidote
     .target Kor'ghan
     .isQuestComplete 813
+    .isQuestAvailable 812
 step << Shaman
     #label Shaman12training
     .goto Orgrimmar,38.82,36.41

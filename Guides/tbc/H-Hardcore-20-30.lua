@@ -1821,6 +1821,7 @@ step
     .turnin 1487 >> Turn in Deviate Eradication
     .target Ebru
     .isQuestComplete 1487
+    .dungeon WC
 step
     #label WCTurnins
     .goto Kalimdor,51.91,55.42
@@ -1860,6 +1861,7 @@ step
     .turnin 4021 >>Turn in Counterattack!
     .target Regthar Deathgate
     .isQuestComplete 4021
+    .group
 step
     #label EnterSTM2
     #completewith STMturnins1
@@ -2796,13 +2798,14 @@ step
     .target +Mura Runetotem
     .goto Silverpine Forest,42.90,41.99
     .isOnQuest 3301
+    .dungeon WC
 step
-    #label JourneytoHillsbrad
     .goto Silverpine Forest,42.90,40.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renferrel|r
     .accept 493 >> Accept Journey to Hillsbrad Foothills
     .target Apothecary Renferrel
 step
+    #label JourneytoHillsbrad
     .goto Silverpine Forest,44.18,42.68
     >>Interact with |cRXP_PICK_Yuriv's Tombstone|r on the ground
     .turnin 264 >> Turn in Until Death Do Us Part

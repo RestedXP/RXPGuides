@@ -56,9 +56,8 @@ step << BloodElf/Undead
 step << BloodElf/Undead
     .goto Durotar,55.94,74.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
-    >>|cRXP_WARN_This is a low level quest that rewards 10x|r |T134712:0|t[Really Sticky Glue] |cRXP_WARN_(10 second instant root on enemy). This is extremely valuable dangerous situations!|r
     >>|cRXP_WARN_Skip this step if you do not wish to get it|r
-    .accept 818 >>Accept A Solvent Spirit
+    .turnin 818 >>Turn in A Solvent Spirit
     .target Master Vornal
     .isQuestComplete 818
 step << BloodElf/Undead
