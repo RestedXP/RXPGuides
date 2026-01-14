@@ -1098,12 +1098,15 @@ function addon.ui.v2:CreateConfigurator()
 end
 
 function addon.ui.v2.LaunchConfigurator(login)
-    if addon.currentGuide and not addon.currentGuide.empty then return end
-    if not (login and UnitLevel("player") == 1) then return end
+    if login then
+        if addon.currentGuide and not addon.currentGuide.empty then return end
+
+        if not (addon.player.level == 1) then return end
+    end
 
     local f = addon.ui.v2:CreateConfigurator()
 
-    f:SetPoint("TOP", UIParent, "TOP", 420, -60)
+    f:SetPoint("TOP", UIParent, "TOP", 400, -60)
 
     f:Show()
 end
