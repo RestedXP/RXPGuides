@@ -1,4 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+	<Script file="Guides/Import.lua"/>
+
 	<Script file="Guides/tbc/A-11-23.lua"/>
 	<Script file="Guides/tbc/A-23-30.lua"/>
 	<Script file="Guides/tbc/A-58Boost.lua"/>
