@@ -1561,7 +1561,10 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.DUNGEONS,
                         type = "header",
                         width = "full",
-                        order = 3.0
+                        order = 3.0,
+                        hidden = function()
+                            return not next(addon.settings.dungeons:GetDungeons())
+                        end
                     },
                     dungeonsSetRecommended = {
                         name = L("Select Recommended Dungeons"),
@@ -1572,7 +1575,9 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             self.dungeons:SetRecommended()
                         end,
-                        hidden = not addon.dungeonStats
+                        hidden = function()
+                            return not next(addon.settings.dungeons:GetDungeons()) or not addon.dungeonStats
+                        end
                     },
                     dungeonsSetAll = {
                         name = L("Select all Dungeons"),
@@ -1582,6 +1587,9 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             self.dungeons:SetAll()
                             addon.ReloadGuide()
+                        end,
+                        hidden = function()
+                            return not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeons = {
