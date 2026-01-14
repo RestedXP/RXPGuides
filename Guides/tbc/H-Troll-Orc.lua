@@ -989,7 +989,8 @@ step
     .goto Durotar,54.20,73.36,25,0
     .goto Durotar,54.09,76.31,25,0
     .goto Durotar,54.52,74.83,25,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r
+    >>|cRXP_WARN_He patrols a little|r
     .accept 786 >>Accept Thwarting Kolkar Aggression
     .target Lar Prowltusk
 step
@@ -1168,7 +1169,8 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0
-    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
+    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>|cRXP_WARN_You do not have to finish this step here|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2347,6 +2349,14 @@ step
 	.goto Durotar,43.30,40.40,30,0
     .xp 9+5870 >>Grind to 5870+/6500xp
 step
+    #softcore
+    #completewith next
+    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step
+    #hardcore
+    #completewith next
+    .subzone 362 >>Travel to Razor Hill
+step
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
@@ -2560,7 +2570,7 @@ step << Warlock
     #softcore
     #completewith SkullRockWarlock
     .goto Durotar,47.05,17.58
-    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 1501
 step << Warlock
     #hardcore
@@ -2594,7 +2604,7 @@ step << Warlock
 step << Warlock
     #softcore
     .goto Durotar,47.05,17.58
-    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 1501
 step << Warlock
     .goto Orgrimmar,48.97,92.84,50,0
@@ -3239,6 +3249,11 @@ step << !Tauren
     .timer 7,Fungal Spores RP
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
+step
+    #sticky
+    #completewith ZamahTurnin
+    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 20-30 minutes after pick-up|r
+    .isOnQuest 853
 step << !Tauren
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barg|r
@@ -3316,7 +3331,59 @@ step << !Tauren
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
-    .turnin 751 >> Turn in The Ravaged Caravan
+    .accept 764 >> Accept The Venture Co
+    .accept 765 >> Accept Supervisor Fizsprocket
+	.unitscan Morin Cloudstalker
+step << !Tauren
+    #completewith next
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
+    .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
+    .complete 764,2 --Venture Co. Supervisor (6)
+    .mob +Venture Co. Supervisor
+step << !Tauren
+    #label Fizsprocket1
+    .goto Mulgore,64.95,43.33
+    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
+    >>|cRXP_WARN_Run into the mine and hug the right/east side to each him|r
+    .complete 765,1 --Fizsprocket's Clipboard (1)
+    .mob Supervisor Fizsprocket
+step << !Tauren
+    #label VentureCoKills
+    #loop
+	.goto Mulgore,61.35,47.55,0
+	.goto Mulgore,61.35,47.55,25,0
+	.goto Mulgore,60.10,47.84,25,0
+	.goto Mulgore,59.50,48.21,25,0
+	.goto Mulgore,59.68,48.85,25,0
+	.goto Mulgore,60.14,49.14,25,0
+	.goto Mulgore,62.01,48.74,25,0
+	.goto Mulgore,61.89,47.84,25,0
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
+    .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
+    .complete 764,2 --Venture Co. Supervisor (6)
+    .mob +Venture Co. Supervisor
+step << !Tauren
+    #completewith next
+    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
+    .mob Adult Plainstrider
+    .mob Elder Plainstrider
+step << !Tauren
+    #loop
+    .goto Mulgore,55.14,60.65,0
+    .goto Mulgore,51.50,59.23,50,0
+    .goto Mulgore,53.00,60.24,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .goto Mulgore,57.47,61.26,50,0
+    .goto Mulgore,59.65,62.40,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
+    >>|cRXP_WARN_He patrols along the eastern road|r
+    .turnin 764 >>Turn in The Venture Co.
+    .turnin 765 >>Turn in Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
 step << !Tauren
     #loop
@@ -3371,22 +3438,32 @@ step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 	.target Tal
-step
+step << !Tauren
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >>Travel to the Spirit Rise and enter the pools of vision
-step
+step << !Tauren
+    #label ZamahTurnin
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
     .target Apothecary Zamah
 step << !Tauren
-    #completewith next
+    #completewith LostPickup
     .hs >>Hearth to Razor Hill
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
+    .cooldown item,6948,>0
+step << !Tauren
+    #completewith LostPickup
+    .hs >>Grind outside Thunder Bluff until your hearthstone is back up, then hearthstone to Razor Hill
+    .use 6948
+    .subzoneskip 362
+    .bindlocation 362,1
+    .cooldown item,6948,<0
 step
+    #label LostPickup
     .goto Durotar,43.11,30.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha|r
     .accept 816 >>Accept Lost But Not Forgotten
@@ -3467,6 +3544,18 @@ step
     >>|cRXP_WARN_Abandon Need for a Cure. This will remove the timer on the quest but you will still be able to do it|r
     .abandon 812 >>Abandon Need for a Cure
 step
+    #softcore
+    #completewith FizzleKill
+    .goto Orgrimmar,53.03,48.78
+    .subzone 2437 >> Enter Ragefire Chasm
+    .zoneskip Durotar
+step
+    #softcore
+    #completewith FizzleKill
+    .goto Durotar,47.05,17.58
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step
+    #hardcore
     #completewith FizzleKill
     .goto Durotar,45.54,12.14
     .zone Durotar >>Exit Orgrimmar
@@ -3508,17 +3597,30 @@ step << Warrior
 step << !Warrior
     .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
     .isQuestComplete 806
-step
-    #loop
+step << !Troll Shaman !Orc Shaman
     .goto Durotar,34.71,42.30,0
     .goto Durotar,34.44,44.53,50,0
     .goto Durotar,34.27,47.02,50,0
-    .goto Durotar,34.71,42.30,50,0
+    .goto Durotar,34.71,42.30
     >>|cRXP_WARN_Travel south alongside the river toward Far Watch Post|r
     >>Kill |cRXP_ENEMY_Dreadmaw Crocolisks|r on the way. Loot them for |cRXP_LOOT_Kron's Amulet|r
     >>|cRXP_WARN_Skip this quest for now if it won't drop|r
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk
+step << Troll Shaman/Orc Shaman
+    #completewith next
+    .goto Durotar,34.71,42.30,0
+    .goto Durotar,34.44,44.53,50,0
+    .goto Durotar,34.27,47.02,50,0
+    .goto Durotar,34.71,42.30,50,0
+    >>|cRXP_WARN_Travel south alongside the river|r
+    >>Kill |cRXP_ENEMY_Dreadmaw Crocolisks|r on the way. Loot them for |cRXP_LOOT_Kron's Amulet|r
+    >>|cRXP_WARN_Skip this quest for now if it won't drop|r
+    .complete 816,1 --Kron's Amulet (1)
+    .mob Dreadmaw Crocolisk
+step << Troll Shaman/Orc Shaman
+    .goto Durotar,35.53,56.89,100 >>Arrive at the southern point of the river
+    .isOnQuest 1524
 step << Troll Shaman/Orc Shaman
     #completewith next
     .goto Durotar,36.74,57.78,10,0
@@ -3611,7 +3713,7 @@ step
     >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]
     >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r] to start the quest|r
     >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_Voidwalker|r |cRXP_WARN_after killing|r |cRXP_ENEMY_Gazz'uz|r
-    >>|cRXP_WARN_Be careful as he is  difficult. You can skip this quest if you need|r
+    >>|cRXP_WARN_Be careful as he is difficult. You can skip this quest if you need|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
     .use 4903
@@ -3701,6 +3803,7 @@ step
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .isQuestComplete 813 --don't want ress sickness if more Scorpids need to get killed before entering ORG
 step
     #hardcore
     #completewith next
@@ -3724,6 +3827,7 @@ step
     .complete 813,1 --Venomtail Poison Sac (4)
     .mob Venomtail Scorpid
     .itemcount 4904,<1 --Venomtail Antidote
+    .isOnQuest 813
 step
     #completewith NeeruFireblade
     .goto Orgrimmar,48.97,92.84,50,0
@@ -3741,7 +3845,6 @@ step
     .target Kor'ghan
     .itemcount 4904,<1 --Venomtail Antidote
 step
-    #optional
     .goto Orgrimmar,49.49,50.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru|r
     .turnin 829 >>Turn in Neeru Fireblade
@@ -3760,17 +3863,17 @@ step
     #hardcore
     #completewith FoundtheCure
     .zone Durotar >> Leave Orgrimmar
-    .zoneskip Durotar
 step
     #softcore
     #completewith next
     .goto Orgrimmar,53.03,48.78
     .subzone 2437 >> Enter Ragefire Chasm
+    .zoneskip Durotar
 step
     #softcore
     #completewith FoundtheCure
     .goto Durotar,47.05,17.58
-    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #label FoundtheCure
     .goto Durotar,41.54,18.59
@@ -3779,13 +3882,24 @@ step
     .turnin 812 >>Turn in Need for a Cure
     .target Rhinag
 step
+    #label AmuletFound
+    #completewith FarWatchP
+    .goto Durotar,34.71,42.30,0
+    .goto Durotar,34.44,44.53,50,01
+    >>Kill |cRXP_ENEMY_Dreadmaw Crocolisks|r on the way to Far Watch Post. Loot them for |cRXP_LOOT_Kron's Amulet|r
+    >>|cRXP_WARN_Skip this quest if it won't drop|r
+    .complete 816,1 --Kron's Amulet (1)
+    .mob Dreadmaw Crocolisk
+    .isOnQuest 816
+step
+    #requires AmuletFound
+    #completewith FarWatchP
     .goto Durotar,43.11,30.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha|r
     .turnin 816 >>Turn in Lost But Not Forgotten
     .target Misha Tor'kren
-    .isQuestComplete 816
 step
-    #completewith next
+    #label FarWatchP
     .goto The Barrens,62.26,19.38 
     .subzone 379 >>Travel to Far Watch Post
     .zoneskip The Barrens
@@ -3806,4 +3920,10 @@ step << Warrior
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
     .target Uzzek
+step
+    #optional
+    .abandon 816 >>Abandon Lost But Not Forgotten
+step
+    #optional
+    .abandon 5726 >>Abandon Hidden Enemies
 ]])

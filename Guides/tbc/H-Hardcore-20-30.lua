@@ -398,7 +398,7 @@ step
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
     >>|cRXP_WARN_Skip this step if you can't find him|r
-	.collect 5099,1,883,1 --Collect Hoof of Lakota'Mani
+	.collect 5099,1,883 --Collect Hoof of Lakota'Mani
 	.accept 883 >>Accept Lakota'Mani
     .use 5099
     .unitscan Lakota'mani
@@ -650,6 +650,11 @@ step
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
+    #completewith BluePrints
+    >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
+    .complete 1062,1 --Kill Venture Co. Logger (x15)
+    .mob Venture Co. Logger
+step
     #loop
     .goto Stonetalon Mountains,59.25,61.55,0
     .goto Stonetalon Mountains,59.25,61.55,50,0
@@ -703,11 +708,6 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
-    .complete 1062,1 --Kill Venture Co. Logger (x15)
-    .mob Venture Co. Logger
 step
     #label BluePrints
     #loop
@@ -1426,46 +1426,24 @@ step
     #label WCcavepickups
 step
     #optional
-    #hardcore
     #completewith EnterWC
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
     >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
     .isOnQuest 962
-    .dungeon WC
 step
-    #hardcore
     #completewith EnterWC
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
-    .dungeon WC
-step
-    #optional
-    #softcore
-    #completewith EnterWC
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,<1,1
-    .isOnQuest 962
-    .dungeon WC
-step
-    #softcore
-    #completewith EnterWC
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    .complete 962,1 --Serpentbloom (10)
-    .skill herbalism,1,1
-    .isOnQuest 962
-    .dungeon WC
 step
     #completewith EnterWC
     >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 1486,1 --Deviate Hide (20)
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
     .isOnQuest 1486
 step
     #completewith EnterWC
@@ -1476,14 +1454,17 @@ step
 step
     #label MadMagg
     #loop
+    .goto Kalimdor,51.97,55.23,0
+    .goto Kalimdor,51.82,54.86,0
+    .goto Kalimdor,52.01,55.02,0
     .goto Kalimdor,52.15,55.15,0
-    .goto Kalimdor,51.90,55.43,30,0
     .goto Kalimdor,51.97,55.23,30,0
     .goto Kalimdor,51.82,54.86,30,0
     .goto Kalimdor,52.01,55.02,30,0
     .goto Kalimdor,52.15,55.15,30,0
     >>Kill |cRXP_ENEMY_Mad Magglish|r. Loot him for the |cRXP_LOOT_99-Year-Old Port|r
     >>|cRXP_WARN_He is stealthed and has multiple spawn locations|r
+    >>|cRXP_WARN_He has a long respawn timer. Skip this step if you cannot find him|r
     .complete 959,1 --99-Year-Old Port (1)
     .mob Mad Magglish
     .maxlevel 23
@@ -1500,8 +1481,8 @@ step
     #optional
     #hardcore
     #completewith DeviateRaptors
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_PICK_Serpentbloom|r |cRXP_WARN_for everybody|r
     >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
@@ -1511,8 +1492,8 @@ step
     #optional
     #hardcore
     #completewith DeviateRaptors
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_PICK_Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
@@ -1521,7 +1502,7 @@ step
     #optional
     #softcore
     #completewith DeviateRaptors
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
     >>|cRXP_WARN_Cast|r |T133939:0|t[Find Herbs] |cRXP_WARN_to see them on your minimap|r
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,<1,1
@@ -1531,7 +1512,7 @@ step
     #optional
     #softcore
     #completewith DeviateRaptors
-    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>Loot the |cRXP_PICK_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
     .skill herbalism,1,1
     .isOnQuest 962
@@ -1647,7 +1628,8 @@ step
     .goto Kalimdor,52.33,54.70,30,0
     >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 1486,1 --Deviate Hide (20)
-    .mob Devouring Ectoplasm
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
     .isOnQuest 1486
     .maxlevel 23
     .dungeon !WC
@@ -1689,6 +1671,9 @@ step
     .goto Kalimdor,52.33,54.70,30,0
     >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 1486,1 --Deviate Hide (20)
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
+    .isOnQuest 1486
     .dungeon WC
 step
     #label EssenceHides
@@ -1790,7 +1775,6 @@ step
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
     .subzoneskip 392,1
-    .isQuestComplete 1486
     .dungeon WC
 step
     #completewith next
@@ -2187,6 +2171,9 @@ step << Druid
     .target Tajarri
 step
     #completewith JourneytoTM
+    .destroy 16784>>|cRXP_WARN_Delete your remaining|r |T134133:0|t[|cRXP_LOOT_Sapphire of Aku'Mai|r] |cRXP_WARN_as they're no longer needed|r
+step
+    #completewith JourneytoTM
     .hs >> Hearth to Thunder Bluff
     .use 6948
     .bindlocation 1638,1
@@ -2347,7 +2334,7 @@ step << Shaman
     .accept 1536 >>Accept Call of Water
     .target Brine
 step << Shaman
-    #completewith next
+    #completewith FlyOrg
     .hs >> Hearth to Camp Taurajo
     .use 6948
     .bindlocation 378,1
@@ -2356,7 +2343,7 @@ step << Shaman
 step << Shaman
     #completewith FlyOrg
     .goto The Barrens,44.85,59.14,200 >>Travel back to Camp Taurajo
-    .subzoneskip 178
+    .subzoneskip 378
     .cooldown item,6948,<0
 step << Shaman
     #label FlyOrg
@@ -2679,11 +2666,19 @@ step
     #label BarrensEnd
 step
     #optional
-    .abandon 1486,1487,914
-    .dungeon WC
-    --1486 Deviate Hides
-    --1487 Deviate Eradication
-    --914 Leaders of the Fang
+    .abandon 1486 >>Abandon Deviate Hides
+step
+    #optional
+    .abandon 1487 >>Abandon Deviate Eradication
+step
+    #optional
+    .abandon 914 >>Abandon Leaders of the Fang
+step
+    #optional
+    .abandon 855 >>Abandon Centaur Bracers
+step
+    #optional
+    .abandon 959 >>Abandon Trouble at the Docks
 
 
 ]])
@@ -3809,11 +3804,16 @@ step
     .bindlocation 1638,1
 step
     #optional
-    .abandon 1013,1014,1098
+    .abandon 1013 >>Abandon The Book of Ur
     .dungeon SFK
-    --1013 The Book of Ur
-    --1014 Arugal Must Die
-    --1098 Deathstalkers in Shadowfang
+step
+    #optional
+    .abandon 1014 >>Abandon Arugal Must Die
+    .dungeon SFK
+step
+    #optional
+    .abandon 1098 >>Abandon Deathstalkers in Shadowfang
+    .dungeon SFK
 
     ]])
 
@@ -5832,11 +5832,19 @@ step << Hunter
     .itemcount 3030,<1400
 step
     #optional
-    .abandon 6561,6565,6563,6921
-    --6561 Blackfathom Villainy
-    --6565 Allegiance to the Old Gods
-    --6563 The Essence of Aku'Mai
-    --6921 Amongst the Ruins
+    .abandon 6561 >>Abandon Blackfathom Villainy
+    .dungeon BFD
+step
+    #optional
+    .abandon 6565 >>Abandon Allegiance to the Old Gods
+    .dungeon BFD
+step
+    #optional
+    .abandon 6563 >>Abandon The Essence of Aku'Mai
+    .dungeon BFD
+step
+    #optional
+    .abandon 6921 >>Abandon Amongst the Ruins
     .dungeon BFD
 step
     #completewith Elevators
@@ -7304,12 +7312,19 @@ step
     .xp 30 >> Grind to level 30
 step
     #optional
-    .abandon 1151,5147,5064,5088,1152
-    --1151 Test of Strength
-    --5147 Wanted - Arnak Grimtotem
-    --5064 Grimtotem Spying
-    --5088 Arikara
-    --1152 Test of Lore
+    .abandon 1151 >>Abandon Test of Strength
+step
+    #optional
+    .abandon 5147 >>Abandon Wanted - Arnak Grimtotem
+step
+    #optional
+    .abandon 5064 >>Abandon Grimtotem Spying
+step
+    #optional
+    .abandon 5088 >>Abandon Arikara
+step
+    #optional
+    .abandon 1152 >>Abandon Test of Lore
 step
     #label ShimmeringF
     #completewith next

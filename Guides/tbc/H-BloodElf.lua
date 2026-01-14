@@ -8596,9 +8596,10 @@ step << Paladin
     .xp <24,1
 step
     #optional
-    .abandon 9156,9167
-    --9156 Wanted: Knucklerot and Luzran
-    --9167 The Traitor's Destruction
+    .abandon 9167 >>Abandon The Traitor's Destruction
+step
+    #optional
+    .abandon 9156 >>Abandon Wanted: Knucklerot and Luzran
 step
     #label ExitUC
     .goto Undercity,66.21,4.90,15,0

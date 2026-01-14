@@ -1615,9 +1615,11 @@ step << Warrior/Shaman
 step << !Warrior !Shaman
     #optional
     #completewith CampTFP
-    .abandon 765,764
-    --765 Supervisor Fizsprocket
-    --64 The Venture Co.
+    .abandon 765 >>Supervisor Fizsprocket
+step << !Warrior !Shaman
+    #optional
+    #completewith CampTFP
+    .abandon 764 >>Abandon The Venture Co.
 step
     #completewith CampTFP
     .goto Mulgore,69.6,60.4,100,0
