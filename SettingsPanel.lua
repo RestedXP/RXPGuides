@@ -922,7 +922,9 @@ function addon.settings:CreateAceOptionsPanel()
                 name = L("Run Guide Configurator"),
                 type = "execute",
                 width = 1.2,
-                func = addon.ui.v2.LaunchConfigurator,
+                func = function ()
+                    addon.ui.v2.LaunchConfigurator()
+                end,
                 hidden = not (addon.ui and addon.ui.v2)
             },
             generalSettings = {
