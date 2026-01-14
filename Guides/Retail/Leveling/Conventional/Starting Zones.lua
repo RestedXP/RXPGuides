@@ -1703,14 +1703,24 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
+    #completewith next
+    #label The Legion Returns
+    .goto 84,49.29,86.85,5,0
+    .goto 84,49.05,87.82,5,0
+    .goto 84,48.85,86.89,5,0
+    .goto 84,49.05,87.75,5,0
+    .goto 84,49.52,86.63,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
 step << Alliance
+    #completewith The Legion Returns
+    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+step << Alliance
+    #requires The Legion Returns
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
     .accept 40519 >>Accept Legion: The Legion Returns
@@ -1733,6 +1743,25 @@ step << Alliance
     .dmf
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
+step << Alliance
+    .isOnQuest 40519
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
+    .use 132120
+    .nodmf
+step << Alliance
+    .isNotOnQuest 40519
+    .goto 84,49.33,86.94,5,0
+    .goto 84,48.8,87.77,5,0
+    .goto 84,48.91,86.91,5,0
+    .goto 84,49.21,87.61,5,0
+    .goto 84,48.76,88.09,2,0
+    .goto 84,46.86,89.81,8,0
+    .goto 84,46.05,92.1,8,0
+    .goto 84,44.95,92.12,8,0
+    .goto 84,42.96,93.78,10,0
+    .goto 84,40.89,92.74
+    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .nodmf  
 ]])
 
 --Death Knight Plaguelands: The Scarlet Enclave
@@ -3452,7 +3481,7 @@ step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -3598,7 +3627,7 @@ step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -5106,7 +5135,7 @@ step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -6391,7 +6420,7 @@ step << Alliance
     .dmf
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -7293,7 +7322,7 @@ step
     #requires PandaHerbalism2
     .goto 378,63.12,41.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whittler Dewei|r.
-    .train 2366 >>Train |T135975:0|t[Herbalism].
+    .train 2366 >>Train |T134418:0|t[Herbalism].
     .skipgossipid 41947
     .skipgossipid 38871
     .skipgossipid 38919
@@ -8646,7 +8675,7 @@ step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -8989,7 +9018,7 @@ step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -9288,7 +9317,7 @@ step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step << Alliance
@@ -9374,8 +9403,10 @@ RXPGuides.RegisterGuide([[
 #name a) Arathi Highlands Returning Player
 #displayname Arathi Highlands Catch-Up |cRXP_ENEMY_(Alternative)|r
 #next ba) Tiragarde Sound Midnight (A) << Alliance
-#internal
 
+step
+    .zone 2451 >>Press the macro "In the Active Items Frame"
+    .macro >>/run C_EncounterJournal.StartArathiRPE()
 step
     .goto 2451,69.82,40.76 << Horde
     .goto 2451,69.97,40.66 << Alliance
@@ -16592,7 +16623,7 @@ step
     .target Chromie
 step
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
 step
     .isNotOnQuest 40519
@@ -21414,7 +21445,7 @@ step
     #include RestedXP Speed Leveling\a) DMF
 step
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step
@@ -21587,7 +21618,7 @@ step
     #include RestedXP Speed Leveling\a) DMF
 step
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step
@@ -21671,7 +21702,7 @@ step
     #include RestedXP Speed Leveling\a) DMF
 step
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step
@@ -21764,7 +21795,7 @@ step
     #include RestedXP Speed Leveling\a) DMF
 step
     .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
     .use 132120
     .nodmf
 step
