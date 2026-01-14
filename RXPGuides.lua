@@ -1369,7 +1369,9 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
             addon.settings:CheckAddonCompatibility()
         end)
 
-        addon.ui.v2.LaunchConfigurator(true)
+        if addon.gameVersion < 20000 then
+            addon.ui.v2.LaunchConfigurator(true)
+        end
     end
 
     addon.targeting:Setup()
