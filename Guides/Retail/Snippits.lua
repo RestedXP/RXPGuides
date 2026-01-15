@@ -899,33 +899,38 @@ step
     .zoneskip 407,1
     .dmf
     .isOnQuest 29444
-step << Alliance KulTiran
-    .zoneskip 1161
-    .hs >>Use |T134414:0|t[Hearthstone] to Boralus.
-step << Alliance !KulTiran
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
-    .use 132120
+step << Alliance
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .dmf
-step << Alliance !KulTiran
-    .isNotOnQuest 40519
-    .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
-    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
-    .dmf
-step << Alliance !KulTiran
-    .isNotOnQuest 40519
-    .goto 2352,57.44,26.63
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r
-    .dmf
-step << Alliance !Kultiran
-    .isNotOnQuest 40519
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
-    .dmf
+-- step << Alliance KulTiran
+--     .zoneskip 1161
+--     .hs >>Use |T134414:0|t[Hearthstone] to Boralus.
+-- step << Alliance !KulTiran
+--     .isOnQuest 40519
+--     .subzone 10523 >>Use |T135975:0|t[Stormwind Portal Stone]
+--     .use 132120
+--     .dmf
+-- step << Alliance !KulTiran
+--     .isNotOnQuest 40519
+--     .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+--     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+--     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+--     .dmf
+-- step << Alliance !KulTiran
+--     .isNotOnQuest 40519
+--     .goto 2352,57.44,26.63
+--     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r
+--     .dmf
+-- step << Alliance !Kultiran
+--     .isNotOnQuest 40519
+--     .goto 84,46.05,92.1,8,0
+--     .goto 84,44.95,92.12,8,0
+--     .goto 84,42.96,93.78,10,0
+--     .goto 84,40.89,92.74
+--     .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+--     .dmf
 -- step
 --     .goto 407,50.56,90.80
 --     .zone 37 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r  << Alliance

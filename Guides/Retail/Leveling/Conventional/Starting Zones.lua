@@ -1744,24 +1744,10 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
-    .nodmf  
 ]])
 
 --Death Knight Plaguelands: The Scarlet Enclave
@@ -3480,23 +3466,9 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 step << Horde
     #completewith next
@@ -5134,23 +5106,9 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 step << Horde
     .goto 84,56.257,17.311
@@ -6419,24 +6377,10 @@ step << Alliance
     .zoneskip 84,1
     .dmf
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
-    .nodmf  
 step << Horde
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
@@ -8674,23 +8618,9 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 step << Horde
     .goto 1,45.58,12.61
@@ -9017,24 +8947,10 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
-    .nodmf
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf   
 step << Horde
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
@@ -9316,23 +9232,9 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 step << Horde
     #completewith next
@@ -9403,10 +9305,11 @@ RXPGuides.RegisterGuide([[
 #name a) Arathi Highlands Returning Player
 #displayname Arathi Highlands Catch-Up |cRXP_ENEMY_(Alternative)|r
 #next ba) Tiragarde Sound Midnight (A) << Alliance
+#internal
 
 step
     .zone 2451 >>Press the macro "In the Active Items Frame"
-    .macro >>/run C_EncounterJournal.StartArathiRPE()
+    .macro Teleport to Arathi,236712 >>/run C_EncounterJournal.StartArathiRPE()
 step
     .goto 2451,69.82,40.76 << Horde
     .goto 2451,69.97,40.66 << Alliance
@@ -9667,7 +9570,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Exile's Reach Alliance
 #displayname |cFF00CCFF1|r - Exile's Reach
-#next ba) Tiragarde Sound Midnight (A)
+#next a) DF Alliance Intro Midnight (A)
 
 << Alliance !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
@@ -11168,24 +11071,42 @@ step
     .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
-step
-    --portal
-step
-    --mage tower
+step << Alliance
+    .goto 2352,57.43,26.65
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .zoneskip 2352,1
+step << Alliance
+    #completewith next
+    #label The Legion Returns
+    .goto 84,49.29,86.85,5,0
+    .goto 84,49.05,87.82,5,0
+    .goto 84,48.85,86.89,5,0
+    .goto 84,49.05,87.75,5,0
+    .goto 84,49.52,86.63,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step << Alliance
+    #completewith The Legion Returns
+    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+step << Alliance
+    #requires The Legion Returns
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
     -- .complete 50305,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
@@ -14839,24 +14760,42 @@ step
     .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
-step
-    --portal
-step
-    --mage tower
+step << Alliance
+    .goto 2352,57.43,26.65
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .zoneskip 2352,1
+step << Alliance
+    #completewith next
+    #label The Legion Returns
+    .goto 84,49.29,86.85,5,0
+    .goto 84,49.05,87.82,5,0
+    .goto 84,48.85,86.89,5,0
+    .goto 84,49.05,87.75,5,0
+    .goto 84,49.52,86.63,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step << Alliance
+    #completewith The Legion Returns
+    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+step << Alliance
+    #requires The Legion Returns
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
     -- .complete 50305,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
@@ -16622,22 +16561,9 @@ step
     .skipgossipid 51902
     .target Chromie
 step
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-step
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
 --Night Elf: Shadowglen
@@ -18275,24 +18201,42 @@ step
     .zone 2352 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
-step
-    --portal
-step
-    --mage tower
+step << Alliance
+    .goto 2352,57.43,26.65
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .zoneskip 2352,1
+step << Alliance
+    #completewith next
+    #label The Legion Returns
+    .goto 84,49.29,86.85,5,0
+    .goto 84,49.05,87.82,5,0
+    .goto 84,48.85,86.89,5,0
+    .goto 84,49.05,87.75,5,0
+    .goto 84,49.52,86.63,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step << Alliance
+    #completewith The Legion Returns
+    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+step << Alliance
+    #requires The Legion Returns
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
     -- .complete 50305,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
@@ -21444,23 +21388,9 @@ step
 step
     #include RestedXP Speed Leveling\a) DMF
 step
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
 --KulTiran: Boralus
@@ -21539,9 +21469,14 @@ step
     .dmf
 step
     #include RestedXP Speed Leveling\a) DMF
+-- step
+--     .zoneskip 1161
+--     .hs >>Use |T134414:0|t[Hearthstone] to Boralus.
+--     .nodmf
 step
-    .zoneskip 1161
-    .hs >>Use |T134414:0|t[Hearthstone] to Boralus.
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
 --LightforgedDraenei: The Vindicaar
@@ -21617,23 +21552,9 @@ step
 step
     #include RestedXP Speed Leveling\a) DMF
 step
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
 --Mechagnome: Mechagon City
@@ -21701,23 +21622,9 @@ step
 step
     #include RestedXP Speed Leveling\a) DMF
 step
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]]) 
 --VoidElf: Telogrus Rift
@@ -21794,23 +21701,9 @@ step
 step
     #include RestedXP Speed Leveling\a) DMF
 step
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,42.96,93.78,10,0
-    .goto 84,40.89,92.74
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Boralus
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
 
