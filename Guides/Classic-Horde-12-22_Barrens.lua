@@ -3,6 +3,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 12-17 The Barrens
@@ -3206,6 +3207,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
@@ -6769,6 +6771,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Horde
 #xprate >1.99
 #name 13-20 The Barrens
@@ -10377,6 +10380,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate >1.99
 << Horde
 #name 20-24 Stonetalon/Barrens

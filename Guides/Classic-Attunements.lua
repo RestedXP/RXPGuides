@@ -1,5 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 << Alliance
 #group RestedXP Endgame Guides
 #subgroup Attunements
@@ -335,6 +337,8 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 << Horde
 #group RestedXP Endgame Guides
 #subgroup Attunements
@@ -725,7 +729,7 @@ step
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
-    .isQuestTurnedIn 6601 
+    .isQuestTurnedIn 6601
     >>Kill |cRXP_ENEMY_General Drakkisath|r. Loot him for |cRXP_LOOT_Blood of the Black Dragon Champion|r
     .complete 6602,1 --Blood of the Black Dragon Champion 1/1
     .mob General Drakkisath
@@ -784,6 +788,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 #subgroup Attunements
 #group RestedXP Endgame Guides
 #name Molten Core Attunement
@@ -828,6 +834,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 #group RestedXP Endgame Guides
 #subgroup Attunements
 #name Blackwing Lair Attunement
@@ -871,6 +879,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 #group RestedXP Endgame Guides
 #subgroup Keys
 #name Upper Blackrock Spire Key
@@ -960,6 +970,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 << Alliance
 #group RestedXP Endgame Guides
 #subgroup Keys
@@ -1217,6 +1229,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 << Horde
 #group RestedXP Endgame Guides
 #subgroup Keys
@@ -1301,7 +1315,7 @@ step
 step
 	.goto Western Plaguelands,26.55,56.18
 	>>Click the |cRXP_PICK_Box of Incendiaries|r by the fire
-	.collect 12814,1,5095,1 --Flame in a Bottle (1)	
+	.collect 12814,1,5095,1 --Flame in a Bottle (1)
     .isOnQuest 5095
 step
     #label ScarletDiversionsPU
@@ -1472,6 +1486,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 #group RestedXP Endgame Guides
 #subgroup Keys
 #name Blackrock Depths Key
@@ -1534,6 +1550,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 #group RestedXP Endgame Guides
 #subgroup Keys
 #name Dire Maul Key
@@ -1561,6 +1579,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
+
 #group RestedXP Endgame Guides
 #name Demon Fall Canyon Attunement
 #subgroup Attunements

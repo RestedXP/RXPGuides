@@ -104,7 +104,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 28
+local cacheVersion = 29
 local L = addon.locale.Get
 local locale = GetLocale()
 

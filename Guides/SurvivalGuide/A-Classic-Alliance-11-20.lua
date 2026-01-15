@@ -5,6 +5,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 13-15 Westfall
 #version 1
@@ -539,6 +540,7 @@ step << NightElf
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 15-18 Darkshore
 #version 1
@@ -1646,6 +1648,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 20-21 Darkshore/Ashenvale
 #version 1

@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 << Alliance
 #defaultfor Draenei
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 1-20
 #name 1-12 Azuremyst Isle
 #next 12-14 Darkshore
@@ -53,7 +53,7 @@ step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r
     .accept 10302 >> Accept Volatile Mutations
-    .target Botanist Taerix  
+    .target Botanist Taerix
 step
     #loop
     .goto Azuremyst Isle,80.14,41.70,0
@@ -101,7 +101,7 @@ step
     .goto Azuremyst Isle,72.94,52.21,50,0
     .goto Azuremyst Isle,72.26,49.29,50,0
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. Loot them for their |cRXP_LOOT_Lasher Samples|r
-    >>Loot the |cRXP_LOOT_Corrupted Flowers|r on the ground 
+    >>Loot the |cRXP_LOOT_Corrupted Flowers|r on the ground
     .complete 9293,1 --Collect Lasher Sample (x10)
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .mob Mutated Root Lasher
@@ -751,7 +751,7 @@ step
     .goto Azuremyst Isle,48.392,51.482
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -952,7 +952,7 @@ step
     .use 23792
 step
     >>|cRXP_WARN_Wait out the RP|r
-    .complete 9531,1 -- The Traitor Uncovered 
+    .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_Click off the|r |T132288:0|t[Tree Disguise] |cRXP_WARN_buff|r
     .aura -30298
@@ -1097,7 +1097,7 @@ step
     .accept 9623 >> Accept Coming of Age
     .target Exarch Menelaous
 step
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -1138,7 +1138,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruada|r
     .trainer >> Train your class spells
     .accept 9582 >> Accept Strength of One
-    .target Ruada  
+    .target Ruada
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntress Kella Nightbow|r
@@ -1329,7 +1329,7 @@ step
     .goto Azuremyst Isle,47.453,16.078,10 >> Head to the upper section of the cave
 step
 	.goto Azuremyst Isle,47.394,14.121
-    >>Kill |cRXP_ENEMY_Chieftain Oomooroo|r 
+    >>Kill |cRXP_ENEMY_Chieftain Oomooroo|r
     >>Kill |cRXP_ENEMY_Crazed Wildkins|r << !Shaman
     >>Kill |cRXP_ENEMY_Crazed Wildkins|r. Loot them for their |cRXP_LOOT_Ritual Torch|r << Shaman
     .complete 9573,1 --Kill Chieftain Oomooroo (x1)
@@ -1388,7 +1388,7 @@ step
 step
 	.goto Azuremyst Isle,46.964,22.011
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parkat Steelfur|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] 
+    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch]
     .target Parkat Steelfur
     .subzoneskip 3572,1
 step
@@ -1430,7 +1430,7 @@ step << Shaman
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
     .accept 9622 >> Accept Warn Your People
-    .target High Chief Stillpine   
+    .target High Chief Stillpine
 step
 	#label end
     .goto Azuremyst Isle,44.762,23.906
@@ -1703,7 +1703,7 @@ step
 step
 	#completewith next
 	>>Loot a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #loop
@@ -1755,7 +1755,7 @@ step
 step << !Shaman
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Chief Stillpine|r
-    .accept 9622 >> Accept Warn Your People 
+    .accept 9622 >> Accept Warn Your People
     .target High Chief Stillpine
 step
     .goto Azuremyst Isle,49.25,49.53
@@ -1824,14 +1824,14 @@ step
     .itemcount 23910,1
 step
     #optional
-    .isOnQuest 9616  
+    .isOnQuest 9616
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9616 >> Turn in Bandits!
     .target Exarch Menelaous
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -1853,7 +1853,7 @@ step
 step << !Shaman
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
-    .turnin 9622 >> Turn in Warn Your People 
+    .turnin 9622 >> Turn in Warn Your People
     .target Exarch Menelaous
 step
     #completewith next
@@ -2017,7 +2017,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,10,1 -- shows if cooking is <10
-    .skill cooking,<1,1 -- shows if cooking is >1   
+    .skill cooking,<1,1 -- shows if cooking is >1
 step
     #completewith DarkshoreBoat
     #requires Cooking1

@@ -1,11 +1,11 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 1-6 Durotar
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Orc/Troll
 #next 6-10 Durotar
 
@@ -962,11 +962,11 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 6-10 Durotar
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Orc/Troll
 #next 10-12 Eversong Woods
 
@@ -2544,7 +2544,7 @@ step
     .accept 844 >>Accept Plainstrider Menace
 step
     .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .bindlocation 380

@@ -2,6 +2,7 @@
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 19-20 Redridge
 #version 1
@@ -37,7 +38,7 @@ step
     .isOnQuest 1338
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 2040 >> Accept Underground Assault
     .target +Shoni the Shilent
     .goto StormwindClassic,55.510,12.504
@@ -64,7 +65,7 @@ step << Hunter
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .target Frederick Stover
     .money <0.6722
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20  
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
 step << Hunter
     .goto StormwindClassic,49.990,57.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frederick Stover|r
@@ -277,7 +278,7 @@ step
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,10 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r 
+    .goto StormwindClassic,78.67,60.13,10 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
 step
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
@@ -318,7 +319,7 @@ step
     .target Captain Grayson
 step
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 103 >> Turn in Keeper of the Flame
     .itemcount 814,5 -- Flask of Oil (5)
     .target Captain Grayson
@@ -331,7 +332,7 @@ step
     .unitscan Old Murk-Eye
 step
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 104 >> Turn in The Coastal Menace
     .target Captain Grayson
 step
@@ -374,13 +375,13 @@ step
     >>Click the |cRXP_PICK_Broken Barrel|r
     .turnin 138 >> Turn in Captain Sander's Treasure Map
     .accept 139 >> Accept Captain Sander's Treasure Map
-    .isQuestTurnedIn 136 
+    .isQuestTurnedIn 136
 step
     .goto Westfall,40.63,17.03
     >>Click the |cRXP_PICK_Old Jug|r
     .turnin 139 >> Turn in Captain Sander's Treasure Map
     .accept 140 >> Accept Captain Sander's Treasure Map
-    .isQuestTurnedIn 138 
+    .isQuestTurnedIn 138
 step
     #completewith next
     .goto Westfall,25.97,16.90,30 >> Swim out to the Island
@@ -422,7 +423,7 @@ step
     .complete 214,1 -- Red Silk Bandana (10)
 step
 .dungeon DM
-    #completewith next 
+    #completewith next
     >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
     >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
     .complete 168,1 -- Miners' Union Card (4)
@@ -742,7 +743,7 @@ step
     .mob +Great Goretusk
 step
     #label Toolbox
-    >>|cRXP_WARN_Jump into the Lake. Be aware of the patrolling Elite |cRXP_ENEMY_Lake Thresher|r in the water|r 
+    >>|cRXP_WARN_Jump into the Lake. Be aware of the patrolling Elite |cRXP_ENEMY_Lake Thresher|r in the water|r
     >>Open the |cRXP_PICK_Sunken Chest|r. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
@@ -916,7 +917,7 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
@@ -1236,7 +1237,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r

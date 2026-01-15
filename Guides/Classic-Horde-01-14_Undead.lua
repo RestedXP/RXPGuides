@@ -3,6 +3,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #version 11
@@ -780,6 +781,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 6-11 Tirisfal Glades
@@ -2794,7 +2796,7 @@ step << skip -- !Mage !Warlock
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the stack of barrels, then logging out and back in|r << Priest/Warrior
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the grinder of the Meat Wagon, then logging out and back in|r << Rogue
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-    .zoneskip Undercity,1     
+    .zoneskip Undercity,1
 step
     #xprate <1.5 << Priest
     #completewith AtWarS
@@ -3843,7 +3845,7 @@ step << skip --Warrior/Rogue
     .goto Undercity,61.10,54.11
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the stack of barrels, then logging out and back in|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-    .zoneskip Undercity,1 
+    .zoneskip Undercity,1
     .itemcount 7231,<1 << Rogue --Astor's Letter of Introduction (0)
 step << Warrior
     #season 2
@@ -4096,6 +4098,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #classic
+#tbc
 #era/som--h
 #name 12-14 Silverpine Forest
 #next 12-17 The Barrens
@@ -5444,6 +5447,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Horde
 #xprate >1.99
 #version 1
@@ -5731,7 +5735,7 @@ step << Rogue/Priest/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r
     >>|cRXP_BUY_Buy a|r |T132513:0|t[Tattered Cloth Belt] |cRXP_BUY_from him to engrave a rune on|r << Rogue/Priest
     >>|cRXP_BUY_Buy a|r |T132606:0|t[Tattered Cloth Bracers] |cRXP_BUY_from him to engrave a rune on|r << Warlock
-    .collect 3596,1 << Warlock --Tattered Cloth Bracers 
+    .collect 3596,1 << Warlock --Tattered Cloth Bracers
     .collect 3595,1 << Rogue/Priest --Tattered Cloth Belt
     .target Archibald Kava
 step << Warlock
@@ -5752,7 +5756,7 @@ step << Priest
     .use 3595
     .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt
     .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves
-    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants 
+    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants
 step << Priest
     #season 2
     #optional
@@ -6509,6 +6513,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate >1.99
 << Horde
 #name 7-13 Tirisfal Glades

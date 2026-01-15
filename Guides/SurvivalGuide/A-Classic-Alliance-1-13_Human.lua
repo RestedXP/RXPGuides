@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 1-6 Northshire
 #version 1
@@ -67,7 +68,7 @@ step << Warrior
     .train 6673 >>Train |T132333:0|t[Battle Shout]
     .target +Llane Beshere
     .goto Elwynn Forest,50.242,42.287
-    .mob Young Wolf   
+    .mob Young Wolf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .target Marshal McBride
@@ -367,6 +368,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 #era/som
 << Alliance
 #name 6-11 Elwynn Forest
@@ -1849,6 +1851,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 #era/som--h
 << Alliance
 #name 11-13 Loch Modan

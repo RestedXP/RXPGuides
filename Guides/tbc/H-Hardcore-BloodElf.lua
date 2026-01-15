@@ -1,11 +1,11 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 1-6 Eversong Woods
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor BloodElf
 #next 6-10 Eversong Woods
 
@@ -536,7 +536,7 @@ step
     .goto Eversong Woods,34.17,20.59,40,0
     >>|cRXP_WARN_Cast |r|T135738:0|t[Mana Tap] |cRXP_WARN_on|r |cRXP_ENEMY_Mana Wyrms|r
     .complete 8346,1 --Mana Tap creature (x6)
-    .mob Mana Wyrm 
+    .mob Mana Wyrm
 step
     #completewith next
     .goto Eversong Woods,38.56,20.98,10,0
@@ -557,7 +557,7 @@ step << Rogue
     .turnin 8336 >> Turn in A Fistful of Slivers
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
-    .isQuestComplete 8336 
+    .isQuestComplete 8336
 step
     #label SolanianB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helion|r
@@ -614,12 +614,12 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 6-10 Eversong Woods
 #defaultfor BloodElf/Undead
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #next 10-12 Eversong Woods
 
 step
@@ -2083,12 +2083,12 @@ step << Mage
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 10-12 Eversong Woods
 #defaultfor !Tauren
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #next 12-14 Ghostlands
 
 step << Orc Hunter/Troll Hunter
@@ -3092,7 +3092,7 @@ step << BloodElf !Hunter
     .target Skymaster Sunwing
 
     --Silvermoon segment 2
-    
+
 step
     #completewith FlyGhostlands
     .goto Ghostlands,45.42,30.52
@@ -3546,11 +3546,11 @@ step << BloodElf !Hunter
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 12-14 Ghostlands
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #next 14-16 The Barrens
 
 
@@ -4598,11 +4598,11 @@ step << Orc/Troll/Tauren
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 16-18 Ghostlands
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #next 18-21 Ghostlands
 
 
@@ -5205,11 +5205,11 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 18-21 Ghostlands
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #next 21-24 Stonetalon/The Barrens
 
 step << Rogue

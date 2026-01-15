@@ -2,7 +2,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 20-32
 #name 23-24 Wetlands
 #next 24-27 Redridge/Duskwood
@@ -552,7 +552,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 20-32
 #name 24-27 Redridge/Duskwood
 #next 27-29 Wetlands
@@ -569,7 +569,7 @@ step << Draenei
     .goto Stormwind City,71.68,25.60,40 >> Travel to the Stormwind Keep
 step << Draenei
     .goto Stormwind City,78.508,18.312
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Taluun|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Taluun|r
     .accept 9429 >> Accept Travel to Darkshire
     .target Emissary Taluun
 step << Rogue
@@ -664,7 +664,7 @@ step << Warlock
     .isQuestComplete 1738
     .goto StormwindClassic,25.665,77.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r
-    .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your|r |T136220:0|t[Succubus]|cRXP_BUY_ which you will have in a second. If you have extra gold also buy them for your|r |T136221:0|t[Voidwalker]   
+    .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoires] |cRXP_BUY_for your|r |T136220:0|t[Succubus]|cRXP_BUY_ which you will have in a second. If you have extra gold also buy them for your|r |T136221:0|t[Voidwalker]
     .target Spackle Thornberry
 step << Warlock
     .isOnQuest 1738
@@ -960,7 +960,7 @@ step
     .target Clerk Daltry
 step << Draenei
     .goto Duskwood,71.815,46.373
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anchorite Delan|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anchorite Delan|r
     .turnin 9429 >> Turn in Travel to Darkshire
     .target Anchorite Delan
 step
@@ -1240,7 +1240,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -1311,14 +1311,14 @@ step << Druid
     .target Mathrengyl Bearwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
     .turnin 5061 >> Turn in Aquatic Form
-step 
+step
     .isOnQuest 68,225,148,95,56
     .isQuestTurnedIn 2359 << Rogue -- going straight to duskwood if already completed poison quest earlier
 	.hs >> Hearth to Darkshire
     >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
 	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
 	.cooldown item,6948,>0,1
-step 
+step
     .isQuestTurnedIn 2359 << Rogue -- going straight to duskwood if already completed poison quest earlier
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -1569,7 +1569,7 @@ step
     .goto Duskwood,49.85,77.71
     >>Click the |cRXP_PICK_Mound of loose dirt|r on the ground
     .turnin 95 >> Turn in Sven's Revenge
-    .accept 230 >> Accept Sven's Camp   
+    .accept 230 >> Accept Sven's Camp
 step
     .goto Duskwood,28.108,31.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
@@ -1700,7 +1700,7 @@ step
 step
     #label Gath
 step
-    .goto Redridge Mountains,66.68,56.26    
+    .goto Redridge Mountains,66.68,56.26
     >>Kill |cRXP_ENEMY_Blackrock Shadowcasters|r. Loot them for their |cRXP_LOOT_Orbs|r
     .complete 115,1 -- Midnight Orb (3)
     .mob Blackrock Shadowcaster
@@ -2038,7 +2038,7 @@ step
     .isOnQuest 69
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r   
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .trainer >> Train your class spells
     .target Lyria Du Lac
 step << Paladin
@@ -2880,7 +2880,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 20-32
 #name 27-29 Wetlands
 #next 29-30 Ashenvale
@@ -2948,7 +2948,7 @@ step
     .turnin 306 >> Turn in In Search of The Excavation Team
 step
     .isOnQuest 943
-    #loop    
+    #loop
     .goto Wetlands,22.4,50.0,0
     .goto Wetlands,23.0,55.2,0
     .goto Wetlands,26.2,47.7,0
@@ -2971,7 +2971,7 @@ step
     .mob +Mottled Raptor
     .mob +Mottled Screecher
 step
-    #loop    
+    #loop
     .goto Wetlands,22.4,50.0,0
     .goto Wetlands,23.0,55.2,0
     .goto Wetlands,26.2,47.7,0
@@ -3015,7 +3015,7 @@ step
     .complete 289,2 -- Cursed Marine slain (5)
     .mob +Cursed Marine
     .complete 289,3 -- Snellig's Snuffbox
-    .mob +First Mate Snellig  
+    .mob +First Mate Snellig
 step
     #loop
     .isOnQuest 471
@@ -3049,7 +3049,7 @@ step
     .mob Crimson Ooze
     .mob Monstrous Ooze
     .mob Black Ooze
-step    
+step
     #loop
     .goto Wetlands,30.8,31.0,0
     .goto Wetlands,37.8,29.6,0
@@ -3307,7 +3307,7 @@ step
     .goto Wetlands,48.8,37.2,0
     .goto Wetlands,54.8,37.8,0
     .goto Wetlands,20.72,28.74,50,0
-    >>Kill |cRXP_ENEMY_Fen Creepers|r 
+    >>Kill |cRXP_ENEMY_Fen Creepers|r
     >>|cRXP_ENEMY_Fen Creepers|r |cRXP_WARN_are in|r |T132320:0|t[Stealth] |cRXP_WARN_along the river streams|r
     .complete 275,1 --12/12 Fen Creeper
     .mob Fen Creeper
@@ -3424,7 +3424,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 20-32
 #name 29-30 Ashenvale
 #next 30-31 Wetlands
@@ -3448,7 +3448,7 @@ step
     .zoneskip The Barrens
 step
     .goto 1440/1,-300.900,2796.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .target Shindrell Swiftfire
     .accept 4581 >>Accept Kayneth Stillwind
 step
@@ -3478,35 +3478,35 @@ step
     .accept 9519 >>Accept The Lost Chalice
 step
     .goto 1440/1,-3260.400,2966.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Luciel Starwhisper|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Luciel Starwhisper|r
     .target Sentinel Luciel Starwhisper
     .accept 9518 >>Accept Agents of Destruction
 step
     .goto 1440/1,-3286.700,2996.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Vedaar|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Vedaar|r
     .target Vindicator Vedaar
     .accept 9516 >>Accept Destroy the Legion
 step
     .goto 1440/1,-3323.700,3001.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illiyana|r
     .target Illiyana
     .accept 1021 >>Accept Vile Satyr! Dryads in Danger!
 step
     #label ShamefulWaste
     .goto 1440/1,-3307.000,2949.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Architect Nemos|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Architect Nemos|r
     .target Architect Nemos
     .accept 9517 >>Accept A Shameful Waste
 step
     .goto Azshara,11.90,77.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarrodenus|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarrodenus|r
     .fp Azshara>> Get the Azshara flight path
     .target Jarrodenus
     .isOnQuest 1017
 step
     #completewith next
     .goto Azshara,11.90,77.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarrodenus|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarrodenus|r
     .fly Forest Song>> Fly to Forest Song
     .target Jarrodenus
     .subzoneskip 2358
@@ -3571,7 +3571,7 @@ step
 step
 #label dirtmound
 #sticky
-#loop    
+#loop
     .goto 1440/1,-3122.900,2067.800,40,0
     .goto 1440/1,-2950.700,2155.900,40,0
     .goto 1440/1,-2993.200,1968.600,40,0
@@ -3731,7 +3731,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1035 >> Turn in Fallen Sky Lake
 step
-    .goto Ashenvale,49.79,67.21    
+    .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .turnin 1017 >> Turn in Mage Summoner
 	>>|cRXP_WARN_This quest will reward you with the|r |T134754:0|t[Light of Elune]
@@ -3760,7 +3760,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 20-32
 #name 30-31 Wetlands
 #next 31-32 Duskwood/STV
@@ -4024,7 +4024,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 20-32
 #name 31-32 Duskwood/STV
 #next 32-33 Shimmering Flats
@@ -4053,7 +4053,7 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
@@ -4172,7 +4172,7 @@ step
     .turnin 175 >> Turn in Look To The Stars
     .accept 177 >> Accept Look To The Stars
     .isQuestTurnedIn 174
-    .target Blind Mary 
+    .target Blind Mary
 step
     .goto Duskwood,79.73,70.64,30,0
     .goto Duskwood,80.98,71.65
@@ -4249,8 +4249,8 @@ step
     .accept 1244 >> Accept The Missing Diplomat
     .target Watcher Backus
 step
-    #completewith next 
-    .goto Elwynn Forest,84.60,69.37,100 >> Travel to the Eastvale Logging Camp 
+    #completewith next
+    .goto Elwynn Forest,84.60,69.37,100 >> Travel to the Eastvale Logging Camp
 step
     .goto Elwynn Forest,84.60,69.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Haggard|r
@@ -4813,7 +4813,7 @@ step << Mage
     .bankwithdraw 2784,5849 >> Withdraw the following items from your bank:
     >>|T134187:0|t[Musquash Root] -- 2784
     >>|T132765:0|t[Crate of Crash Helmets] -- 5849
-    .target Newton Burnside    
+    .target Newton Burnside
 step << Shaman
 	.goto Stormwind City,61.822,83.991
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Umbrua|r
@@ -4918,10 +4918,10 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
-    .target Brother Joshua    
+    .target Brother Joshua
 step
     .goto Stormwind City,75.226,31.670
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Baurles K. Wishock|r
@@ -4954,7 +4954,7 @@ step
     >>Buy the following items for faster turn ins at Southshore soon
     >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
     >>10 |T134026:0|t[Turtle Meat]
-    .collect 3712,10,555,1 
+    .collect 3712,10,555,1
     .target Auctioneer Jaxon
 step << Druid
     #completewith DruidMount
@@ -5015,7 +5015,7 @@ step << !Mage
     .zoneskip Wetlands
 step << Mage
     #completewith FlyWetlands
-    .zone Ironforge >> |cRXP_WARN_Cast|r |T135757:0|t[Teleport: Ironforge]  
+    .zone Ironforge >> |cRXP_WARN_Cast|r |T135757:0|t[Teleport: Ironforge]
 step << Gnome !Warlock/Dwarf !Paladin
     #completewith next
     .zone Dun Morogh >>|cRXP_WARN_Travel to Kharanos and buy your|r |T132247:0|t[Mechanostrider] << Gnome !Warlock

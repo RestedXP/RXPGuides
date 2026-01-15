@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 11-13 Darkshore (Night Elf)
 #version 1
@@ -532,6 +533,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 13-13 Loch Modan (Night Elf)
 #version 1
@@ -739,7 +741,7 @@ step
     .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
     .target +Senator Mehr Stonehallow
-    .goto Dun Morogh,68.671,55.969    
+    .goto Dun Morogh,68.671,55.969
 step
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.892,39.188

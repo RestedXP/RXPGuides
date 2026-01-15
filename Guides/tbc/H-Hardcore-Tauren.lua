@@ -1,11 +1,11 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 1-6 Mulgore
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Tauren
 #next 6-12 Mulgore
 
@@ -442,11 +442,11 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 6-12 Mulgore
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Tauren
 #next 12-14 Ghostlands
 

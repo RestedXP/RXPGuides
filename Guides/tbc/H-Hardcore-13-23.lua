@@ -2,10 +2,10 @@ RXPGuides.RegisterGuide([[
 #tbc
 << skip
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 13-18 The Barrens
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Shaman/Warrior
 #next 18-23 Stonetalon/The Barrens
 
@@ -1799,10 +1799,10 @@ RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << skip
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 18-23 Stonetalon/The Barrens
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Shaman/Warrior
 #next 23-25 Hillsbrad Foothills
 

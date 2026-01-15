@@ -1,11 +1,11 @@
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 14-16 The Barrens
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #next 16-18 Ghostlands
 
 step << BloodElf/Undead

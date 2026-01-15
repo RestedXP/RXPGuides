@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 << Alliance
 #defaultfor Human
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 1-20
 #name 1-11 Elwynn Forest
 #next 11-12 Dun Morogh/Loch Modan
@@ -64,7 +64,7 @@ step << Warrior
     .train 6673 >>Train |T132333:0|t[Battle Shout]
     .target +Llane Beshere
     .goto Elwynn Forest,50.242,42.287
-    .mob Young Wolf   
+    .mob Young Wolf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .target Marshal McBride
@@ -1605,7 +1605,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 << Alliance
 #defaultfor Human
-#group RestedXP Survival Guide (A)
+#group RXP TBC Survival Guide (A)
 #subgroup RXP Survival Guide 1-20
 #name 11-12 Dun Morogh/Loch Modan
 #next 12-14 Darkshore

@@ -1011,6 +1011,19 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     guide.group = guide.group or groupOrContent
     groupOrContent = addon.GroupOverride(guide) or groupOrContent
 
+    if addon.game == "TBC" and guide.classic and not groupOrContent:find("TBC") and groupOrContent:sub(1,1) ~= "+" then
+        if guide.subgroup then
+            local range = guide.subgroup:match("( %d+%-%d+)$")
+            if range then
+                guide.subgroup = L"Classic"..range
+            end
+        end
+        if groupOrContent:sub(1,8) == "RestedXP" then
+            groupOrContent = "C-"..groupOrContent
+            guide.group = groupOrContent
+        end
+        defaultFor = "!tbc"
+    end
     if defaultFor then
         local boost58
         if defaultFor == "58Boost" then
@@ -1055,16 +1068,13 @@ end
 
 function addon.GroupOverride(guide,arg2)
     local function SwapGroup(grp,subgrp)
-        if grp:match("RXP MoP 1%-80") then
-            return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
-        end
         local prefix = ""
         if grp:sub(1,1) == "*" then
             prefix = "*"
         end
         --local group,subgroup
         local swap
-        if addon.game == "CLASSIC" then
+        if addon.game == "CLASSIC" or guide.classic then
             local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
             if faction == "Alliance" then
                 subgrp = subgrp or grp:gsub("RestedXP Alliance", "RXP Speedrun Guide")
@@ -1076,13 +1086,29 @@ function addon.GroupOverride(guide,arg2)
                 grp = prefix .. "RestedXP Speedrun Guide (H)"
                 swap = true
                 --print(group,guide.subgroup,faction,guide.group,guide.name)
-
             end
         elseif addon.game == "TBC" then
-            local range = subgrp and subgrp:match("^RestedXP [AH][lo][lr][id][ea]( %d+%-%d+)")
-            if range then
-                subgrp = "Speedrun Guide"..range
-                swap = true
+            if not guide.classic then
+                local range = subgrp and subgrp:match("^RestedXP Survival.-( %d+%-%d+)$")
+                if range then
+                    subgrp = "TBC Survival Guide"..range
+                    swap = true
+                else
+                    range = subgrp and subgrp:match("^RestedXP [AH][lo][lr][id][ea]%w*( %d+%-%d+)")
+                    if range then
+                        subgrp = "TBC Speedrun Guide"..range
+                        swap = true
+                    end
+                end
+                local SG = grp:match("^RestedXP Survival Guide(.*)")
+                if SG then
+                    swap = true
+                    grp = "RXP TBC Survival Guide"..SG
+                end
+            end
+        else
+            if grp:match("RXP MoP 1%-80") then
+                return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
             end
         end
         return grp,subgrp,swap

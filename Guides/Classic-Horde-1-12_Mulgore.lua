@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 #era/som--h
 << Horde
@@ -577,6 +578,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 6-12 Mulgore
@@ -2937,6 +2939,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Horde
 #xprate >1.99
 #version 1
@@ -3633,6 +3636,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Horde
 #xprate >1.99
 #version 1

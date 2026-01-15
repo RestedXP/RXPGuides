@@ -3,6 +3,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Human Mage
 #name 1-10 ADV Elwynn Forest Human Mage AoE
 #version 2
@@ -872,7 +873,7 @@ step
     .goto Elwynn Forest,42.105,65.927
     .accept 1097 >> Accept Elmore's Task
     .target +Smith Argus
-    .goto Elwynn Forest,41.706,65.544   
+    .goto Elwynn Forest,41.706,65.544
 step
     .goto Elwynn Forest,43.16,89.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell|r inside
@@ -1158,6 +1159,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Human Mage
 #name 10-11 ADV Dun Morogh Human Mage AoE
 #version 2
@@ -1449,6 +1451,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Gnome Mage AoE
 #version 2
@@ -1528,7 +1531,7 @@ step
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3114 >> Accept Glyphic Memorandum
     .target Sten Stoutarm
-step 
+step
     #season 2
     #xprate <1.1
     #completewith EnterAnvilmar
@@ -1610,7 +1613,7 @@ step
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob +Burly Rockjaw Trogg 
+    .mob +Burly Rockjaw Trogg
     .isOnQuest 170
 step
     #label Talin
@@ -3008,6 +3011,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 10-12 ADV Darkshore 1 Mage AoE
 #version 2
@@ -3564,6 +3568,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 10-12 LAUNCH ADV Darkshore 1 Mage AoE
 #version 2
@@ -4131,6 +4136,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 12-14 ADV Loch Modan Mage AoE
 #version 2
@@ -4911,6 +4917,7 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 14-16 ADV Darkshore 2 Mage AoE
 #version 2
@@ -5559,6 +5566,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 16-18 ADV Westfall Mage AoE
 #version 2
@@ -6289,6 +6297,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 18-20 ADV Darkshore 3 Mage AoE
 #version 2
@@ -7067,6 +7076,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 20-22 ADV Redridge 1 Mage AoE
 #version 2

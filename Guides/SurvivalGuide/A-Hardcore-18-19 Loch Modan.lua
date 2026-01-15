@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#tbc
 << Alliance
 #name 18-19 Loch Modan
 #version 1

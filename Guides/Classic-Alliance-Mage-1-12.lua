@@ -3,6 +3,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Human Mage
 #name 1-10 Elwynn Forest Mage AoE
 #version 1
@@ -809,6 +810,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Gnome Mage
 #name 1-10 Dun Morogh Mage AoE
 #version 1
@@ -1458,6 +1460,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Alliance Mage
 #name 10-12 Loch Modan Mage AoE
 #version 1

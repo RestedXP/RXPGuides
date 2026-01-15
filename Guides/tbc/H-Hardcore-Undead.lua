@@ -1,10 +1,10 @@
 RXPGuides.RegisterGuide([[
 #tbc
-#group RestedXP Survival Guide (H)
+#group RXP TBC Survival Guide (H)
 << Horde
 #name 1-6 Tirisfal Glades
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup RXP TBC Survival Guide 1-30
 #defaultfor Scourge
 #next 6-10 Eversong Woods
 

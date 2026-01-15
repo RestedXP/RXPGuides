@@ -1,5 +1,6 @@
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #group RestedXP Endgame Guides
 #subgroup Feralheart Set Guide << Druid
 #subgroup Beastmaster Set Guide << Hunter
@@ -215,6 +216,7 @@ step << Horde
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #group RestedXP Endgame Guides
 #subgroup Feralheart Set Guide << Druid
 #subgroup Beastmaster Set Guide << Hunter
@@ -658,6 +660,7 @@ step << Horde
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #group RestedXP Endgame Guides
 #subgroup Feralheart Set Guide << Druid
 #subgroup Beastmaster Set Guide << Hunter
@@ -1139,6 +1142,7 @@ step << Horde
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #group RestedXP Endgame Guides
 #subgroup Feralheart Set Guide << Druid
 #subgroup Beastmaster Set Guide << Hunter

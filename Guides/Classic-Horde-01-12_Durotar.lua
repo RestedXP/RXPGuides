@@ -3,6 +3,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 1-6 Durotar
@@ -1538,6 +1539,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 6-10 Durotar
@@ -2987,7 +2989,7 @@ step
     .complete 837,2 --Razormane Scout (4)
     .mob +Razormane Scout
 step
-    #xprate <1.5 
+    #xprate <1.5
     #loop
     .goto Durotar,44.45,39.74,0
     .goto Durotar,44.45,39.74,50,0
@@ -3004,7 +3006,7 @@ step
     .mob +Razormane Battleguard
 step << Hunter
     #optional
-    #xprate <1.5 
+    #xprate <1.5
     #loop
 	.goto Durotar,47.52,48.67,0
 	.goto Durotar,47.52,48.67,50,0
@@ -3292,7 +3294,7 @@ step << Hunter/Shaman/Warrior
     .goto Durotar,43.11,30.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha|r
     .accept 816 >>Accept Lost But Not Forgotten
-    .target Misha Tor'kren 
+    .target Misha Tor'kren
 step << Warrior
     #xprate >1.49
     #loop
@@ -3774,6 +3776,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate <1.99
 << Horde
 #name 10-12 Durotar
@@ -3854,7 +3857,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #xprate >1.49
     .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
@@ -5183,6 +5186,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 << Horde
 #xprate <1.99
 #name 10-12 Tirisfal
@@ -6973,7 +6977,7 @@ step
 step << Warrior
     #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
-step 
+step
     #optional
     #xprate >1.49
     .abandon 830 >> Abandon The Admiral's Orders
@@ -7003,6 +7007,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate >1.99
 << Horde
 #name 1-7 Durotar
@@ -7191,7 +7196,7 @@ step << Priest
     .use 3595
     .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your belt
     .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves
-    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants 
+    .engrave 7 >> Engrave |T237570:0|t[Homunculi] on your pants
 step << Mage
     #season 2
     #requires Galgar
@@ -8477,6 +8482,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#tbc
 #xprate >1.99
 << Horde
 #name 7-13 Durotar
