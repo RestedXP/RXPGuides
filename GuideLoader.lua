@@ -1076,6 +1076,13 @@ function addon.GroupOverride(guide,arg2)
                 grp = prefix .. "RestedXP Speedrun Guide (H)"
                 swap = true
                 --print(group,guide.subgroup,faction,guide.group,guide.name)
+
+            end
+        elseif addon.game == "TBC" then
+            local range = subgrp and subgrp:match("^RestedXP [AH][lo][lr][id][ea]( %d+%-%d+)")
+            if range then
+                subgrp = "Speedrun Guide"..range
+                swap = true
             end
         end
         return grp,subgrp,swap
