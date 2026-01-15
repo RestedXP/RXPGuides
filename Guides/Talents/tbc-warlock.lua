@@ -195,7 +195,7 @@ level -- Master Summoner (Rank 1)
 
 addon.talents.RegisterGuide([[
 #name Felguard 50-70
-#minLevel 50
+#minLevel 10
 #maxLevel 70
 #order 2
 
