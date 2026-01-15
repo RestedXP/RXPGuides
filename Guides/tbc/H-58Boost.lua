@@ -238,31 +238,31 @@ step << Warlock
     .goto Orgrimmar,47.99,45.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grol'dar|r
     .turnin 64052 >>Turn in Talented
-    .accept 64063 >> Accept The Dark Portal
+    --.accept 64063 >> Accept The Dark Portal
     .target Grol'dar
 step << Rogue
     .goto Orgrimmar,43.90,54.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
     .turnin 64052 >>Turn in Talented
-    .accept 64063 >> Accept The Dark Portal
+    --.accept 64063 >> Accept The Dark Portal
     .target Ormok
 step << Shaman
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .turnin 64052 >>Turn in Talented
-    .accept 64063 >> Accept The Dark Portal
+    --.accept 64063 >> Accept The Dark Portal
     .target Kardris Dreamseeker
 step << Warrior
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .turnin 64052 >>Turn in Talented
-    .accept 64063 >> Accept The Dark Portal
+    --.accept 64063 >> Accept The Dark Portal
     .target Grezz Ragefist
 step << Hunter
     .goto Orgrimmar,67.24,20.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xor'juul|r
     .turnin 64052 >>Turn in Talented
-    .accept 64063 >> Accept The Dark Portal
+    --.accept 64063 >> Accept The Dark Portal
     .target Xor'juul
 step << Mage
     .goto Orgrimmar,38.45,86.12
@@ -274,13 +274,13 @@ step << Priest
     .goto Orgrimmar,35.73,86.89
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zayus|r upstairs
     .turnin 64052 >>Turn in Talented
-    .accept 64063 >> Accept The Dark Portal
+    --.accept 64063 >> Accept The Dark Portal
 	.target Zayus
 step << Druid
     .goto Thunder Bluff,76.79,31.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kym|r
     .turnin 64053 >>Turn in Talented
-	.accept 64217 >>Accept The Dark Portal
+	--.accept 64217 >>Accept The Dark Portal
     .target Kym Wildmane
 step << Druid
     .goto Thunder Bluff,47.00,49.82
@@ -1076,33 +1076,34 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .turnin 5238 >>Turn in Mission Accomplished!
 	.target High Executor Derrington
-step
+step << skip
     .goto Tirisfal Glades,61.87,59.11
     >>|cRXP_WARN_Go up the Zeppelin Tower|r
     .zone Stranglethorn Vale >>Take the Zeppelin to Stranglethorn
-step
+step << skip
     .goto Stranglethorn Vale,32.5,29.3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thysta|r
     .complete 64217,2 << Druid--Speak to Thysta at Grom'gol Base Camp (1)
     .complete 64063,2 << !Druid--Speak to Thysta at Grom'gol Base Camp (1)
 	.target Thysta
-step
+step << skip
     .goto Stranglethorn Vale,32.5,29.3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thysta|r
 	.fly Stonard >> Fly to Stonard
 	.target Thysta
     .subzoneskip 75
-step
+step << skip
 	#completewith next
 	.goto Swamp of Sorrows,33.4,71.9,60,0
 	.goto Swamp of Sorrows,33.2,68.4,60,0
 	.zone Blasted Lands >> Travel to Blasted Lands
-step
+
+step << skip
     .goto Blasted Lands,58.1,56.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Dar'toon|r
-    .turnin 64063 >>Turn in The Dark Portal << !Druid
-    .turnin 64217 >>Turn in The Dark Portal << Druid
-    .accept 9407 >>Accept Through the Dark Portal
+    --.turnin 64063 >>Turn in The Dark Portal << !Druid
+    --.turnin 64217 >>Turn in The Dark Portal << Druid
+    --.accept 9407 >>Accept Through the Dark Portal
     .target Warlord Dar'toon
 
 ]])

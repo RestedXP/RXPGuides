@@ -44,7 +44,7 @@ step << Warrior
     .goto Stormwind City,78.211,47.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ander Germaine|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Ander Germaine
 step << Paladin
     .goto Stormwind City,37.142,33.266
@@ -80,7 +80,7 @@ step << Paladin
     .goto Stormwind City,37.142,33.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Grayson Shadowbreaker|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Lord Grayson Shadowbreaker
 step << Rogue
     .goto Stormwind City,78.326,57.038
@@ -117,7 +117,7 @@ step << Rogue
     .goto Stormwind City,78.326,57.038
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Tony Romano|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Lord Tony Romano
 step << Priest
     .goto Stormwind City,38.572,26.005
@@ -154,7 +154,7 @@ step << Priest
     .goto Stormwind City,38.572,26.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target High Priestess Laurena
 step << Mage
     .goto Stormwind City,38.528,79.328
@@ -191,7 +191,7 @@ step << Mage
     .goto Stormwind City,38.528,79.328
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Jennea Cannon
 step << Warlock
     .goto Stormwind City,26.116,77.200
@@ -228,7 +228,7 @@ step << Warlock
     .goto Stormwind City,26.116,77.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Ursula Deline
 step << Hunter
     .goto Stormwind City,61.576,15.188
@@ -266,7 +266,7 @@ step << Hunter
     .goto Stormwind City,61.576,15.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Einris Brightspear
 step << Druid
     .goto Stormwind City,21.236,51.677
@@ -303,7 +303,7 @@ step << Druid
     .goto Stormwind City,21.236,51.677
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
     .turnin 64035 >>Turn in Talented
-    .accept 64038 >>Accept The Dark Portal
+    --.accept 64038 >>Accept The Dark Portal
     .target Theridran
 step
     .isOnQuest 64038
