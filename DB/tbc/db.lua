@@ -109,6 +109,61 @@ addon.mapId = {
 	["Outland"] = 1945 --987?
 }
 
+local dungeonList = {
+    ["RFC"] = 2437,
+    ["DM"] = 1581,
+    ["WC"] = 718,
+    ["SFK"] = 209,
+    ["BFD"] = 719,
+    ["STOCKS"] = 717,
+    ["GNOMER"] = 133,
+    ["RFK"] = 491,
+    ["SM"] = 796,
+    ["RFD"] = 722,
+    ["ULDA"] = 1337,
+    ["ZF"] = 978,
+    ["MARA"] = 2100,
+    ["ST"] = 1417,
+    ["BRD"] = 1584,
+    ["DME"] = 2557,
+    ["SCHOLO"] = 2057,
+    ["STRAT"] = 2017,
+    ["LBRS"] = 1583,
+}
+
+local alternateNames = {
+    ["DEADMINES"] = "DM",
+    ["VC"] = "DM",
+    ["STOCKADES"] = "STOCKS",
+    ["TEMPLE OF ATAL'HAKKAR"] = "ST",
+    ["DMW"] = "DME",
+    ["DMN"] = "DME",
+}
+
+for tag,name in pairs(dungeonList) do
+    alternateNames[strupper(name)] = tag
+end
+
+local L = addon.locale.Get
+
+function addon.GetDungeonName(instance)
+    local upper = strupper(instance)
+    if dungeonList[upper] then
+        local name = dungeonList[upper]
+        if type(name) == "number" then
+            name = C_Map.GetAreaInfo(name)
+        end
+        return L(name),upper
+    elseif alternateNames[upper] then
+        local tag = alternateNames[upper] or false
+        local name = dungeonList[tag]
+        if type(name) == "number" then
+            name = C_Map.GetAreaInfo(name)
+        end
+        return L(name),tag
+    end
+end
+
 addon.FPbyZone = {
     ["Horde"] = {
         [1448] = 48,
