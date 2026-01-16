@@ -240,6 +240,9 @@ addon.professionID = {
     lockpicking = {1804},
 }
 
+-- Unused functionality, prevent invalid function parsing errors
+function addon.functions.xpto60(...) end
+
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding

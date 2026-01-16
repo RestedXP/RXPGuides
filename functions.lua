@@ -7034,9 +7034,13 @@ function addon.functions.dungeon(self, text, instance)
         elseif tag and skip then
             addon.step.dungeonskip = tag
         else
-            return addon.error(
-                L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                   ': Invalid dungeon name\n' .. self)
+            if addon.game == "TBC" then
+                return
+            else
+                return addon.error(
+                    L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                    ': Invalid dungeon name\n' .. self)
+            end
         end
 
         if text and text ~= "" then
