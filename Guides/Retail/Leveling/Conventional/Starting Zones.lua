@@ -1639,9 +1639,23 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Neighbourhood
 #displayname |cFF00CCFF1|r - Welcome to the Neighbourhood
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A) << Alliance
 #chapter
 
+step << Alliance
+    #hidewindow
+    #completewith HousingEquip
+    +test
+    .usespell 1231411
+    .use 175204
+    .use 175177
+    .use 175196
+    .use 178941
+    .use 175175
+    .use 175185
+    .use 175199
+    .use 175191
+    .use 175180
 step << Horde
     .zoneskip 1409,1
     .zone 2351 >>Enter Housing Area
@@ -1705,7 +1719,7 @@ step << Alliance
 step << Alliance
     #completewith next
     #label The Legion Returns
-    .goto 84,49.29,86.85,5,0
+    .goto 84,49.48,86.65,2,0
     .goto 84,49.05,87.82,5,0
     .goto 84,48.85,86.89,5,0
     .goto 84,49.05,87.75,5,0
@@ -1718,9 +1732,10 @@ step << Alliance
     .target Chromie
 step << Alliance
     #completewith The Legion Returns
-    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+    .goto 84,56.257,17.311,812 >>Leave Mage Tower
 step << Alliance
     #requires The Legion Returns
+    #label HousingEquip
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
     .accept 40519 >>Accept Legion: The Legion Returns
@@ -1743,10 +1758,11 @@ step << Alliance
     .dmf
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65435
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+step
+    .isOnQuest 40519
+    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
+    .cooldown item,132120,>0,1
+    .use 132120
     .nodmf
 ]])
 
@@ -1758,7 +1774,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) DK Intro
 #displayname |cFF00CCFF1|r - Plaguelands
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 
@@ -3525,7 +3541,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) New DK Intro
 #displayname |cFF00CCFF1|r - The Frozen Throne
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
@@ -3598,23 +3614,9 @@ step << Alliance
 step << Alliance
     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .use 132120
-    .nodmf
-step << Alliance
-    .isNotOnQuest 40519
-    .goto 84,49.33,86.94,5,0
-    .goto 84,48.8,87.77,5,0
-    .goto 84,48.91,86.91,5,0
-    .goto 84,49.21,87.61,5,0
-    .goto 84,48.76,88.09,2,0
-    .goto 84,46.86,89.81,8,0
-    .goto 84,46.05,92.1,8,0
-    .goto 84,44.95,92.12,8,0
-    .goto 84,43.22,94.19,10,0
-    .goto 84,43.27,97.53 
-    .zone 2239 >>Go to Stormwind's Mage Tower and take the portal to Bel'ameth
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 step << Horde
     .goto 84,56.257,17.311
@@ -3660,7 +3662,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) DH Intro
 #displayname |cFF00CCFF1|r - Mardum
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 << DemonHunter
@@ -5149,7 +5151,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Dracthyr Intro
 #displayname |cFF00CCFF1|r - The Forbidden Reach
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 << Dracthyr
@@ -6419,7 +6421,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Pandaren Intro
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 << Pandaren !DK
@@ -8588,7 +8590,7 @@ step << Alliance
 step << Alliance
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50305,1 --Talk to Chromie (1)
+
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -8690,7 +8692,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Haranir Intro
 #displayname |cFF00CCFF1|r - Harandar
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 
@@ -8976,7 +8978,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) EarthenDwarf Intro
 #displayname |cFF00CCFF1|r - Hall of Awakening
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
 
 << EarthenDwarf
@@ -9304,13 +9306,23 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #name a) Arathi Highlands Returning Player
 #displayname Arathi Highlands Catch-Up |cRXP_ENEMY_(Alternative)|r
-#next ba) Tiragarde Sound Midnight (A) << Alliance
+#next ba) DF Alliance Intro (A) << Alliance
 #internal
 
 step
+    #completewith next
+    #label Gnoll Way
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r << Alliance
+    .accept 90882 >>Accept Gnoll Way
+    .target Thrall << Horde
+    .target Lady Jaina Proudmoore << Alliance
+step
+    #completewith Gnoll Way
     .zone 2451 >>Press the macro "In the Active Items Frame"
     .macro Teleport to Arathi,236712 >>/run C_EncounterJournal.StartArathiRPE()
 step
+    #requires Gnoll Way
     .goto 2451,69.82,40.76 << Horde
     .goto 2451,69.97,40.66 << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r << Horde
@@ -10240,7 +10252,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Draenei Azuremyst Isle
 #displayname |cFF00CCFF2|r - Azuremyst Isle
 #defaultfor Draenei !DK
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A)
 
 << Alliance
 
@@ -11078,7 +11090,7 @@ step << Alliance
 step << Alliance
     #completewith next
     #label The Legion Returns
-    .goto 84,49.29,86.85,5,0
+    .goto 84,49.48,86.65,2,0
     .goto 84,49.05,87.82,5,0
     .goto 84,48.85,86.89,5,0
     .goto 84,49.05,87.75,5,0
@@ -11091,7 +11103,7 @@ step << Alliance
     .target Chromie
 step << Alliance
     #completewith The Legion Returns
-    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+    .goto 84,56.257,17.311,812 >>Leave Mage Tower
 step << Alliance
     #requires The Legion Returns
     .goto 84,56.257,17.311
@@ -11104,7 +11116,6 @@ step << Alliance
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50305,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -11153,6 +11164,11 @@ step
     .dmf
 step
     #include RestedXP Speed Leveling\a) DMF
+step << Alliance
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf
 ]])
     --Azuremyst Isle >1.3 XP Rate
 RXPGuides.RegisterGuide([[
@@ -13587,7 +13603,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Dwarf & Gnome Dun Morogh
 #displayname |cFF00CCFF2|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
-#next ba) Tiragarde Sound Midnight (A) 
+#next ba) DF Alliance Intro (A) 
 
 << Alliance
 
@@ -14767,7 +14783,7 @@ step << Alliance
 step << Alliance
     #completewith next
     #label The Legion Returns
-    .goto 84,49.29,86.85,5,0
+    .goto 84,49.48,86.65,2,0
     .goto 84,49.05,87.82,5,0
     .goto 84,48.85,86.89,5,0
     .goto 84,49.05,87.75,5,0
@@ -14780,7 +14796,7 @@ step << Alliance
     .target Chromie
 step << Alliance
     #completewith The Legion Returns
-    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+    .goto 84,56.257,17.311,812 >>Leave Mage Tower
 step << Alliance
     #requires The Legion Returns
     .goto 84,56.257,17.311
@@ -14793,7 +14809,6 @@ step << Alliance
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50305,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -14841,7 +14856,11 @@ step
 --     .dmf
 step
     #include RestedXP Speed Leveling\a) DMF
-
+step << Alliance
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf
 
 
 
@@ -15428,7 +15447,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Elwynn Forest 1
 #displayname |cFF00CCFF2|r - Elwynn Forest
 #defaultfor Human !DK
-#next ba) Tiragarde Sound Midnight (A) 
+#next ba) DF Alliance Intro (A) 
 
 << Alliance
 
@@ -17037,7 +17056,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Night Elf Teldrassil
 #displayname |cFF00CCFF2|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
-#next ba) Tiragarde Sound Midnight (A) 
+#next ba) DF Alliance Intro (A) 
 
 << Alliance
 
@@ -18208,7 +18227,7 @@ step << Alliance
 step << Alliance
     #completewith next
     #label The Legion Returns
-    .goto 84,49.29,86.85,5,0
+    .goto 84,49.48,86.65,2,0
     .goto 84,49.05,87.82,5,0
     .goto 84,48.85,86.89,5,0
     .goto 84,49.05,87.75,5,0
@@ -18221,7 +18240,7 @@ step << Alliance
     .target Chromie
 step << Alliance
     #completewith The Legion Returns
-    .goto 84,56.257,17.311,810 >>Leave Mage Tower
+    .goto 84,56.257,17.311,812 >>Leave Mage Tower
 step << Alliance
     #requires The Legion Returns
     .goto 84,56.257,17.311
@@ -18234,7 +18253,6 @@ step << Alliance
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50305,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -18282,6 +18300,11 @@ step
 --     .dmf
 step
     #include RestedXP Speed Leveling\a) DMF
+step << Alliance
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
@@ -18291,7 +18314,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ab) Worgen Intro
 #displayname Gilneas |cRXP_ENEMY_(Alternative)|r
-#next ba) Tiragarde Sound Midnight (A) 
+#next ba) DF Alliance Intro (A) 
 
 << Alliance Worgen !DK
 
@@ -21305,15 +21328,70 @@ step
 --     .zoneskip 89,1
 --     .dmf
 step
+    #completewith next
+    #label The Legion Returns0
+    #hidewindow
+    .accept 40519 >>Accept Legion: The Legion Returns
+step
+    #completewith The Legion Returns0
     .goto 57,55.03,93.72
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r.
+step << Alliance
+    #requires The Legion Returns0
+    #completewith next
+    #label The Legion Returns
+    .goto 84,49.48,86.65,2,0
+    .goto 84,49.05,87.82,5,0
+    .goto 84,48.85,86.89,5,0
+    .goto 84,49.05,87.75,5,0
+    .goto 84,49.52,86.63,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step << Alliance
+    #requires The Legion Returns0
+    #completewith The Legion Returns
+    .goto 84,56.257,17.311,812 >>Leave Mage Tower
+step << Alliance
+    #requires The Legion Returns
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .chromietime 10
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
-    --mage tower
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .chromietime 16
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
 step
-    --accept chromietime
-    --dmf teleports
+    .goto 84,62.10,32.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
+    .accept 7905 >>Accept The Darkmoon Faire
+    .target Darkmoon Faire Mystic Mage 
+    .dmf
+step
+    .goto 84,62.1,32.2
+    .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
+    .skipgossipid 40457
+    .target Darkmoon Faire Mystic Mage 
+    .zoneskip 84,1
+    .dmf
 step
     #include RestedXP Speed Leveling\a) DMF
+step << Alliance
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf
 ]])
 --DarkIronDwarf: Shadowforge City
 RXPGuides.RegisterGuide([[
@@ -21323,7 +21401,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) DarkIronDwarf Intro
 #displayname |cFF00CCFF1|r - Shadowforge City
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A)
 
 << Alliance DarkIronDwarf !DK
 
@@ -21401,7 +21479,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) KulTiran Intro
 #displayname |cFF00CCFF1|r - Boralus
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A)
 
 << Alliance KulTiran !DK
 
@@ -21435,7 +21513,6 @@ step
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 55146,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -21487,7 +21564,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) LightforgedDraenei Intro
 #displayname |cFF00CCFF1|r - The Vindicaar
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A)
 
 << Alliance LightforgedDraenei !DK
 
@@ -21565,7 +21642,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Mechagnome Intro
 #displayname |cFF00CCFF1|r - Mechagon City
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A)
 
 << Alliance Mechagnome !DK
 
@@ -21635,7 +21712,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) VoidElf Intro
 #displayname |cFF00CCFF1|r - Telogrus Rift
-#next ba) Tiragarde Sound Midnight (A)
+#next ba) DF Alliance Intro (A)
 
 << Alliance VoidElf !DK
 
@@ -21666,7 +21743,7 @@ step
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50305,1 --Talk to Chromie (1)
+
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -21909,8 +21986,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Thrall
--- step -- reactivate in midnight prepatch
---     #include a) Exile's Reach@HousingSelect-HousingSelect
+step
+    #include a) Exile's Reach@HousingSelect-HousingSelect
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22666,10 +22743,12 @@ step
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
     *After getting off the boat, choose the housing option to receive an instant boost to level 10.
 step
+    #optional
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the |cfff78300Blood Elf Starting Zone|r.
     +Please choose the Exiles Reach Guide.
 step
+    #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
@@ -22908,7 +22987,7 @@ step
     .accept 8347 >>Accept Aiding the Outrunners
     .target Lanthan Perilon
 ]])
---Blood Elf: Eversong Woods
+--Blood Elf: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
@@ -23242,6 +23321,7 @@ step << Orc
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
     *After getting off the boat, choose the housing option to receive an instant boost to level 10.
 step << Orc
+    #optional
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the Orc Starting Zone.
     +Please choose the Exiles Reach Guide.
@@ -23259,6 +23339,7 @@ step << Troll
     .goto 461,67.01,74.53,6,0
     .goto 461,64.89,71.70,12 >>Hug the left wall and climb the mountain
 step << Orc
+    #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
@@ -23620,14 +23701,15 @@ step << Orc
 step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
-    +Welcome to the |cfff78300Troll Starting Zone|r. Guide of RestedXP.
-    *Without consumables/heirlooms this route is roughly 5 minutes slower than |cfff78300Exiles Reach|r. For faster leveling recreate your character and choose |cfff78300Exiles Reach|r instead.
-    *With consumbales/heirlooms this route is just as fast or up to 15% faster.
+    +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
 step << Troll
+    #optional
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the Troll Starting Zone.
     +Please choose the Exiles Reach Guide.
 step << Troll
+    #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
@@ -24333,10 +24415,12 @@ step << Tauren
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
     *After getting off the boat, choose the housing option to receive an instant boost to level 10.
 step << Tauren
+    #optional
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the |cfff78300Undead Starting Zone|r.
     +Please choose the |cfff78300Exiles Reach Guide|r.
 step
+    #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
@@ -25041,10 +25125,12 @@ step << Undead
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
     *After getting off the boat, choose the housing option to receive an instant boost to level 10.
 step << Undead
+    #optional
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the Undead Starting Zone.
     +Please choose the Exiles Reach Guide.
 step
+    #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
@@ -25274,7 +25360,7 @@ step
     .accept 24972 >>Accept Vital Intelligence
     .target Shadow Priest Sarvis
 ]])
---Undead: Eversong Woods
+--Undead: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
@@ -25656,10 +25742,12 @@ step << Goblin
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
     *After getting off the boat, choose the housing option to receive an instant boost to level 10.
 step << Goblin
+    #optional
     .zoneskip 1727,1
     +You are in Exiles Reach but the current Guide is for the |cRXP_WARN_Goblin Starting Zone|r.
     +Please choose the |cRXP_WARN_Exiles Reach|r Guide.
 step
+    #optional
     #completewith next
     +|cRXP_WARN_If you want to make the most of RXP; Press Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4. You can also do this with Targets|r.
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
@@ -27188,7 +27276,6 @@ step
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50319,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -27260,7 +27347,6 @@ step
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50303,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -27332,7 +27418,6 @@ step
 step
     .goto 85,40.834,80.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 55138,1 --Talk to Chromie (1)
     .accept 65435 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -27393,7 +27478,6 @@ step
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 53502,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
@@ -27455,7 +27539,6 @@ step
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 58124,1 --Talk to Chromie (1)
     .accept 65436 >>Accept The Dragon Isles Await
     .chromietime 16
     .skipgossipid 51901
