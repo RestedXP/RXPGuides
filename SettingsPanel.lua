@@ -925,7 +925,7 @@ function addon.settings:CreateAceOptionsPanel()
                 func = function ()
                     addon.ui.v2.LaunchConfigurator()
                 end,
-                hidden = not (addon.ui and addon.ui.v2 and (addon.gameVersion < 20000))
+                hidden = not (addon.ui and addon.ui.v2 and (addon.gameVersion < 30000))
             },
             generalSettings = {
                 type = "group",
