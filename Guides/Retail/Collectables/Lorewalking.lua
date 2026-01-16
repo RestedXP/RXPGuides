@@ -26,6 +26,7 @@ step << Horde
     .turnin 90705 >>Turn in Lorewalking
     .target Lorewalker Cho
 step
+    #label LoreWalkingPrepStart
     .goto 85,54.19,56.75,-1 << Horde
     .goto 84,64.24,16.10,-1 << Alliance
     .goto 2339,49.6,31.63,-1
@@ -200,6 +201,7 @@ step
     .cast 201904 >>Use the |cRXP_WARN_ExtraActionButton|r
     .timer 10,RP
 step
+    #label LoreWalkingPrepEnd
     .goto 20,58.79,76.87
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 40710,2 --1/1 Stop the Ritual and acquire the Blade
