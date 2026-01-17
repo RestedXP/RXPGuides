@@ -3669,6 +3669,19 @@ step
     .dungeon WC
     --WC users still have HS in Ratchet
 step
+    #completewith JourneytoTM
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bluff Runner Windstrider|r
+	>>|cRXP_WARN_He patrols the terraces, so you may have to look around for him|r
+    .accept 742 >>Accept The Ashenvale Hunt
+	.unitscan Bluff Runner Windstrider
+    .isNotOnQuest 6382
+    .isNotOnQuest 235
+step
+    .goto Thunder Bluff,54.96,51.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
+    .accept 1195 >> Accept The Sacred Flame
+    .target Zangen Stonehoof
+step
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
 step
@@ -3724,6 +3737,18 @@ step
     .target Innkeeper Pala
     .bindlocation 1638
     .dungeon WC
+step
+    #loop
+    .goto Thunder Bluff,41.54,57.87,70,0
+    .goto Thunder Bluff,52.76,62.07,30,0
+    .goto Thunder Bluff,55.63,50.08,70,0
+    .goto Thunder Bluff,41.54,57.87,0
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bluff Runner Windstrider|r
+	>>|cRXP_WARN_He patrols the terraces, so you may have to look around for him|r
+    .accept 742 >>Accept The Ashenvale Hunt
+	.unitscan Bluff Runner Windstrider
+    .isNotOnQuest 6382
+    .isNotOnQuest 235
 step << Warlock
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r

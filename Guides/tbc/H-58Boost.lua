@@ -96,6 +96,17 @@ step
     .turnin 5405 >>Turn in Argent Dawn Commission
 	.target Argent Officer Garush
 step
+    .goto Tirisfal Glades,83.2,71.4
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mehlar Dawnblade|r
+    .accept 9443 >>Accept in The So-Called Mark of the Lightbringer
+    .target Mehlar Dawnblade
+step
+    .goto Tirisfal Glades,83.29,72.34
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mickey|r
+    .turnin 5901 >>Turn in A Plague Upon Thee
+    .accept 5902 >>Accept A Plague Upon Thee
+	.target Mickey Levine
+step
     #completewith next
     .use 12846 >>|cRXP_WARN_Equip your|r |T133440:0|t[Argent Dawn Commission] |cRXP_WARN_trinket|r
 step

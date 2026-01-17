@@ -3073,11 +3073,6 @@ step << BloodElf Hunter
     .turnin 9130 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
 step << !BloodElf/!Hunter
-    .goto Ghostlands,47.23,28.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
-    .accept 9152 >> Accept Tomber's Supplies
-    .target Rathis Tomber
-step << !BloodElf/!Hunter
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r
@@ -3539,6 +3534,11 @@ step << BloodElf !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Quartermaster Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
+step << !BloodElf/!Hunter
+    .goto Ghostlands,47.23,28.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
+    .accept 9152 >> Accept Tomber's Supplies
+    .target Rathis Tomber
 
 ]])
 

@@ -454,21 +454,18 @@ step
 	#completewith BloodhoofHome
     .subzone 222 >> Run to Bloodhoof Village
 step
-    .goto Mulgore,48.2,53.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
-    .accept 11129 >>Accept Kyle's Gone Missing!
-    .target Ahab Wheathoof
+    .goto Mulgore,47.35,62.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r
+    .accept 743 >>Accept Dangers of the Windfury
+    .target Ruul Eagletalon
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r and |cRXP_FRIENDLY_Ruul|r
+    .goto Mulgore,47.51,60.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r
     .turnin 763 >>Turn in Rites of the Earthmother
     .accept 745 >>Accept Sharing the Land
     .accept 767 >>Accept Rite of Vision
     .accept 746 >>Accept Dwarven Digging
-    .target +Baine Bloodhoof
-    .accept 743 >>Accept Dangers of the Windfury
-    .target +Ruul Eagletalon
-    .goto Mulgore,47.36,62.01
-    .goto Mulgore,47.51,60.16
+    .target Baine Bloodhoof
 step
     #label BloodhoofHome
     .goto Mulgore,46.63,61.09
@@ -553,33 +550,32 @@ step << Hunter
     .itemcount 2509,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
+step
+    .goto Mulgore,46.97,57.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
+    .accept 766 >>Accept Mazzranache
+    .target Maur Raincaller
+step
+    .goto Mulgore,47.76,57.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Zarlman|r
+    .turnin 767 >>Turn in Rite of Vision
+    .accept 771 >>Accept Rite of Vision
+    .target Zarlman Two-Moons
+step
+    .goto Mulgore,48.2,53.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
+    .accept 11129 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
+step
+    .goto Mulgore,48.71,59.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Harken|r
+    .accept 761 >>Accept Swoop Hunting
+    .target Harken Windtotem
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r, |cRXP_FRIENDLY_Harken|r and |cRXP_FRIENDLY_Mull|r
-    .accept 766 >>Accept Mazzranache
-    .target +Maur Raincaller
-    .goto Mulgore,46.97,57.07
-    .turnin 767 >>Turn in Rite of Vision
-    .accept 771 >>Accept Rite of Vision
-    .target +Zarlman Two-Moons
-    .goto Mulgore,47.76,57.53
-    .accept 761 >>Accept Swoop Hunting
-    .target +Harken Windtotem
-    .goto Mulgore,48.71,59.32
-    .accept 748 >>Accept Poison Water
-    .target +Mull Thunderhorn
     .goto Mulgore,48.53,60.40
-step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r and |cRXP_FRIENDLY_Harken|r
-    .accept 766 >>Accept Mazzranache
-    .target +Maur Raincaller
-    .goto Mulgore,46.97,57.07
-    .turnin 767 >>Turn in Rite of Vision
-    .accept 771 >>Accept Rite of Vision
-    .target +Zarlman Two-Moons
-    .goto Mulgore,47.76,57.53
-    .accept 761 >>Accept Swoop Hunting
-    .target +Harken Windtotem
-    .goto Mulgore,48.71,59.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
+    .accept 748 >>Accept Poison Water
+    .target Mull Thunderhorn
 step
     #sticky
     #completewith Well
@@ -2619,7 +2615,7 @@ step
     .target Arcanist Vandril
 step
     .goto Ghostlands,47.23,28.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathis|r
     .accept 9152 >> Accept Tomber's Supplies
     .target Rathis Tomber
 

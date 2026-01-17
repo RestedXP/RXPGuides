@@ -2385,11 +2385,6 @@ step << BloodElf Hunter
     .accept 9130 >> Accept Goods from Silvermoon City
     .target Quartermaster Lymel
 step << BloodElf Hunter
-    .goto Ghostlands,47.23,28.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
-    .accept 9152 >> Accept Tomber's Supplies
-    .target Rathis Tomber
-step << BloodElf Hunter
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r
@@ -2402,6 +2397,11 @@ step << BloodElf Hunter
     .turnin 9130 >> Turn in Goods from Silvermoon City
     .accept 9133 >> Accept Fly to Silvermoon City
     .target Skymaster Sunwing
+step << BloodElf Hunter
+    .goto Ghostlands,47.23,28.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathis|r
+    .accept 9152 >> Accept Tomber's Supplies
+    .target Rathis Tomber
 step << BloodElf Hunter
     #label FlySMC
     #completewith FairBreezeHunter1
@@ -3400,11 +3400,6 @@ step << BloodElf !Hunter
     .turnin 9329 >> Turn in The Forsaken << !BloodElf
     .accept 9758 >> Accept Return to Arcanist Vandril
     .target High Executor Mavren
-step << !BloodElf/!Hunter
-    .goto Ghostlands,47.23,28.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
-    .accept 9152 >> Accept Tomber's Supplies
-    .target Rathis Tomber
 step << BloodElf !Hunter
     .goto Ghostlands,47.34,29.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lymel|r
@@ -3498,11 +3493,17 @@ step << BloodElf Warlock
     .turnin 9619 >>Turn in The Rune of Summoning
     .target Talionia
 step << BloodElf Warlock
-    #completewith next
+    #completewith AnokPickup
     .hs >> Hearth to Tranquillien
     .bindlocation 3488,1
     .subzoneskip 3488
+step << !BloodElf/!Hunter
+    .goto Ghostlands,47.23,28.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathis|r
+    .accept 9152 >> Accept Tomber's Supplies
+    .target Rathis Tomber
 step
+    #label AnokPickup
     .goto Ghostlands,57.54,14.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dying Blood Elf|r on the ground
     .accept 9315 >> Accept Anok'suten

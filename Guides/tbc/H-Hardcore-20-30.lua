@@ -938,7 +938,7 @@ step << !Tauren
     .train 5118,1 << Hunter --skip step if aspect of the cheetah trained
     .train 2645,1 << Shaman --skips this step if ghost wolf is trained
     .target Mangletooth
-step
+step << skip
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
     .accept 6382 >>Accept The Ashenvale Hunt
@@ -959,6 +959,14 @@ step << Tauren
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Omusa Thunderhorn
     .zoneskip Thunder Bluff
+step
+    #completewith TBvisit1
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bluff Runner Windstrider|r
+	>>|cRXP_WARN_He patrols the terraces, so you may have to look around for him|r
+    .accept 742 >>Accept The Ashenvale Hunt
+	.unitscan Bluff Runner Windstrider
+    .isNotOnQuest 6382
+    .isNotOnQuest 235
 step << !Tauren
     .goto Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
@@ -1127,10 +1135,23 @@ step << Warrior
     .accept 1823 >> Accept Speak with Ruga
     .target Torm Ragetotem
 step
+    #label TBvisit1
     .goto Thunder Bluff,54.96,51.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
     .accept 1195 >> Accept The Sacred Flame
     .target Zangen Stonehoof
+step
+    #loop
+    .goto Thunder Bluff,41.54,57.87,70,0
+    .goto Thunder Bluff,52.76,62.07,30,0
+    .goto Thunder Bluff,55.63,50.08,70,0
+    .goto Thunder Bluff,41.54,57.87,0
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bluff Runner Windstrider|r
+	>>|cRXP_WARN_He patrols the terraces, so you may have to look around for him|r
+    .accept 742 >>Accept The Ashenvale Hunt
+	.unitscan Bluff Runner Windstrider
+    .isNotOnQuest 6382
+    .isNotOnQuest 235
 step
     #completewith next
     .goto Thunder Bluff,47.00,49.82
@@ -4383,6 +4404,7 @@ step
 	.goto The Barrens,47.21,79.35,60,0
 	.goto The Barrens,44.76,74.79,60,0
     >>Kill |cRXP_ENEMY_Washte Pawne|r. Loot him for |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r]. Use it to start the quest
+    >>|cRXP_WARN_He has 4 different spawn locations, skip this step if you cannot find him|r
     .collect 5103,1,885 --Collect Washte Pawne's Feather
     .accept 885 >>Accept Washte Pawne
     .use 5103
@@ -4692,16 +4714,30 @@ step
     .subzoneskip 431
     .isQuestAvailable 6503
 step
-    .goto Ashenvale,73.78,61.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
-    .dailyturnin 235,742,6382 >> Turn in The Ashenvale Hunt
-    .turnin 6383 >> Turn in The Ashenvale Hunt
-    .target Senani Thunderheart
-step
     #optional
     .goto Ashenvale,73.78,61.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
     .turnin 6382 >> Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+    .isOnQuest 6382 --Camp T pickup
+step
+    #optional
+    .goto Ashenvale,73.78,61.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
+    .turnin 742 >> Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+    .isOnQuest 742 --TB pickup
+step
+    #optional
+    .goto Ashenvale,73.78,61.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
+    .turnin 235 >> Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+    .isOnQuest 235 --Org Pickup
+step
+    .goto Ashenvale,73.78,61.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
+    .turnin 6383 >> Turn in The Ashenvale Hunt
     .target Senani Thunderheart
 step
     .goto Ashenvale,74.00,60.64
@@ -5147,7 +5183,8 @@ step
     .goto Ashenvale,71.46,70.10,45,0
     .line Ashenvale,71.46,70.10,72.08,70.47,72.50,70.60,72.94,70.67,73.33,70.61,74.36,70.10,74.86,70.06,75.26,69.96,75.94,69.80,76.11,68.95,76.93,68.04,77.35,66.96,77.60,66.33,77.93,65.93,78.24,65.72
     >>Kill |cRXP_ENEMY_Sharptalon|r. Loot him for |T136063:0|t[|cRXP_LOOT_Sharptalon's Claw|r] and use it to start the quest
-    >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Sharptalon|r |cRXP_WARN_is level 31 and patrols around. You can kite him back to Splintertree Post or the Forsaken Camp if you're struggling to kill him. If you do this, make sure you do 50%+ damage to get credit. You can also do this quest later|r
+    >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Sharptalon|r |cRXP_WARN_is level 31 and patrols around. You can kite him back to Splintertree Post or the Forsaken Camp if you're struggling to kill him. If you do this, make sure you do 50%+ damage to get credit|r
+    >>|cRXP_WARN_Skip this if you are unable to kill him|r
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >> Accept Sharptalon's Claw
     .unitscan Sharptalon
@@ -5444,7 +5481,6 @@ step << Druid
     .xp <28,1
     .dungeon !BFD
 step
-    #completewith FlyTB
     .hs >> Hearth to Splintertree Post
     .use 6948
     .bindlocation 431,1
@@ -5961,7 +5997,7 @@ step
     .isQuestAvailable 4821,4841,1149
 step
     .goto Thousand Needles,46.1,50.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elosai|r
     .accept 9431 >> Accept A Different Approach
     .target Magistrix Elosai
 step
@@ -6148,7 +6184,6 @@ step
     .turnin 1149 >> Turn in Test of Faith
     .accept 1150 >> Accept Test of Endurance
     .target Dorn Plainstalker
-    .group
 step
     .goto Thousand Needles,53.95,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorn|r
@@ -6255,20 +6290,16 @@ step
     .goto Thousand Needles,27.59,49.86,12,0
     .goto Thousand Needles,28.65,51.30,12,0
     .goto Thousand Needles,27.29,51.30,12 >>Enter Roguefeather Den
-    .group 3
     .isOnQuest 1150
 step
     #completewith Grenka
     +|cRXP_WARN_Be careful as |cRXP_ENEMY_Screeching Windcallers|r cast|r |T136022:0|t[Gust of Wind]|cRXP_WARN_, a 4-second AoE stun within 10 yards of the |cRXP_ENEMY_Screeching Windcaller|r
-    +|cRXP_ENEMY_Screeching Harpies|r cast|r |T136122:0|t[Deafening Screech]|cRXP_WARN_, an 8 second silence|r << Mage/Warlock/Priest/Druid/Shaman
-    .group
+    +|cRXP_ENEMY_Screeching Harpies|r cast|r |T136122:0|t[Deafening Screech]|cRXP_WARN_, an 8 second silence|r << Mage/Warlock/Priest/Druid/Shaman/Paladin
     .isOnQuest 1150
 step
     #completewith next
     .goto Thousand Needles,25.84,54.78
     +Open the |cRXP_PICK_Harpy Foodstuffs|r on the ground in the back of the cave to summon |cRXP_ENEMY_Grenka|r
-    >>|cRXP_WARN_Be careful, multiple packs of |cRXP_ENEMY_Harpies|r |cRXP_WARN_will spawn one after another|r
-    .group
     .isOnQuest 1150
 step
     #label Grenka
@@ -6276,9 +6307,9 @@ step
     .goto Thousand Needles,26.69,55.62,15,0
     .goto Thousand Needles,25.90,55.23
     >>Kill |cRXP_ENEMY_Grenka Bloodscreech|r. Loot her for |cRXP_LOOT_Grenka's Claw|r
+    >>|cRXP_WARN_This quest was nerfed in TBC. No adds will spawn|r
     .complete 1150,1 --Collect Grenka's Claw (x1)
     .mob Grenka Bloodscreech
-    .group 3
     .isOnQuest 1150
 step
     #completewith next
@@ -7014,13 +7045,11 @@ step << Warrior/Shaman
     .target Zulrg
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<25.6
-    .zoneskip Dustwallow Marsh,1
 step
     .goto Dustwallow Marsh,36.49,30.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balai|r
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134937:0|t[Scrolls] |cRXP_BUY_from her if they're up|r
     .target Balai Lok'Wein
-    .zoneskip Dustwallow Marsh,1
 step
     .goto Dustwallow Marsh,36.49,30.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balai|r
@@ -7029,7 +7058,6 @@ step
     .collect 16113,1,873,1 >> Manual: Mageweave Bandage (1)
     .collect 16084,1,873,1 >> Manual: Expert First Aid - Under Wraps (1)
     .target Balai Lok'Wein
-    .zoneskip Dustwallow Marsh,1
     .skill firstaid,<1,1
 step
     #label FlyFreewind
@@ -7039,15 +7067,7 @@ step
     .fp Brackenwall >> Get the Brackenwall Village Flight Path
     .fly Freewind Post >>Fly to Freewind Post
     .target Shardi
-    .zoneskip Dustwallow Marsh,1
-step
-    #optional
-    #completewith FreewindHome
-    .goto The Barrens,44.45,59.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
-    .fly Freewind Post >>Fly to Freewind Post
-    .target Omusa Thunderhorn
-    .zoneskip The Barrens,1
+    .zoneskip Thousand Needles
 step
     .goto Thousand Needles,44.90,48.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elu|r
