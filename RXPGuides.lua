@@ -1108,14 +1108,21 @@ function addon:CreateMetaDataTable(wipe)
         RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
         local deleteIndexes = {}
+        local insertItems = {}
         local guides = addon.db.profile.guides
         for key,v in pairs(guides) do
             --print(i,v)
-            local grp = addon.GroupOverride(key)
-            if grp ~= key then
-                guides[grp] = v
+            local group,subgroup,name = key:match("^(.-)|([^|]*)|(.-)")
+
+            local newgrp,newsubgrp = addon.GroupOverride(group,subgroup)
+            if newgrp ~= group or newsubgrp ~= subgroup then
+                local newkey = addon.BuildGuideKey(newgrp,newsubgrp,name)
+                insertItems[newkey] = v
                 table.insert(deleteIndexes,key)
             end
+        end
+        for i,v in pairs(insertItems) do
+            guides[i] = v
         end
         for _,i in ipairs(deleteIndexes) do
             guides[i] = nil
