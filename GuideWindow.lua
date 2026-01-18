@@ -1459,7 +1459,7 @@ function addon.ProcessGuideTable(guide)
     function IncludeGuide(group,name)
         local startAt, stopAt
         if type(group) == "table" then
-            if not group.include then
+            if not group.include or group.include:sub(1,1) == "*" then
                 return
             end
             local step = group
@@ -1495,6 +1495,20 @@ function addon.ProcessGuideTable(guide)
     function ProcessSteps(guide,startAt,stopAt)
         for _, step in ipairs(guide.steps) do
             local isShown = addon.IsStepShown(step)
+            if step.inlcude and step.include:sub(1,1) == "*" then
+                step.include = false
+                local stepToInclude = addon.labels[step.include]
+                if stepToInclude then
+                    for i,v in pairs(stepToInclude) do
+                        if not step[i] then
+                            step[i] = v
+                        end
+                    end
+                    for _,element in ipairs(stepToInclude.elements) do
+                        table.insert(step.elements,element)
+                    end
+                end
+            end
             if isShown and startAt and (step.label == startAt or startAt == step.stepId) then
                 startAt = nil
             end

@@ -938,6 +938,14 @@ function addon.SetElementIncomplete(self)
     end
 end
 
+addon.labels = {}
+
+addon.functions.label = function(self,text,label)
+    if type(self) == "string" and label then
+        addon.labels["*"..label] = addon.step
+    end
+end
+
 function addon.UpdateStepText(self)
     local index
     if not self.step then
