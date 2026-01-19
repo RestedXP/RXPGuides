@@ -5197,13 +5197,8 @@ function addon.functions.buy(self, ...)
 
                 if itemID == id or name == id then
                     addon.comms.PrettyPrint("Buying " .. name .. " x" .. total) -- ok
-                    if quantity and quantity > 1 then
-                        for n = 1, math.ceil(total / quantity) do
-                            BuyMerchantItem(i, quantity)
-                            element.closeWindow = true
-                        end
-                    elseif quantity == 1 then
-                        local stack = select(8, GetItemInfo(id))
+                    local stack = select(8, GetItemInfo(id))
+                    if quantity then
                         while total > 0 do
                             local purchase = math.min(stack, total)
                             total = total - purchase
