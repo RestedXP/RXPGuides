@@ -634,79 +634,79 @@ step
 --     .openitem 92794
 --     .zoneskip 407,1
 --     .dmf
-step
---accept makro
-    >>Press the macro "In the Active Items Frame"
-    .accept 29464 >>Accept Tools of Divination
-    .macro >>/use Soothsayer's Runes
-    .itemcount 71716,1
-    .zoneskip 407,1
-    .isQuestAvailable 29464
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29451 >>Accept The Master Strategist
-    .macro >>/use A Treatise on Strategy
-    .isQuestAvailable 29451
-    .itemcount 71715,1
-    .zoneskip 407,1
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29456 >>Accept A Captured Banner
-    .macro >>/use Banner of the Fallen
-    .itemcount 71951,1
-    .zoneskip 407,1
-    .isQuestAvailable 29456
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29457 >>Accept The Enemy's Insignia
-    .macro >>/use Captured Insignia
-    .isQuestAvailable 29457
-    .itemcount 71952,1
-    .zoneskip 407,1
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29458 >>Accept The Captured Journal
-    .macro >>/use Fallen Adventurer's Journal
-    .isQuestAvailable 29458
-    .itemcount 71953,1
-    .zoneskip 407,1
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29443 >>Accept A Curious Crystal
-    .macro >>/use Imbued Crystal
-    .isQuestAvailable 29443
-    .itemcount 71635,1
-    .zoneskip 407,1
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29444 >>Accept An Exotic Egg
-    .macro >>/use Monstrous Egg
-    .isQuestAvailable 29444
-    .itemcount 71636,1
-    .zoneskip 407,1
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29445 >>Accept An Intriguing Grimoire
-    .macro >>/use Mysterious Grimoire
-    .isQuestAvailable 29445
-    .itemcount 71637,1
-    .zoneskip 407,1
-    .dmf
-step
-    >>Press the macro "In the Active Items Frame"
-    .accept 29446 >>Accept A Wondrous Weapon
-    .macro >>/use Ornate Weapon
-    .isQuestAvailable 29446
-    .itemcount 71638,1
-    .zoneskip 407,1
-    .dmf
+-- step
+-- --accept makro
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29464 >>Accept Tools of Divination
+--     .macro >>/use Soothsayer's Runes
+--     .itemcount 71716,1
+--     .zoneskip 407,1
+--     .isQuestAvailable 29464
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29451 >>Accept The Master Strategist
+--     .macro >>/use A Treatise on Strategy
+--     .isQuestAvailable 29451
+--     .itemcount 71715,1
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29456 >>Accept A Captured Banner
+--     .macro >>/use Banner of the Fallen
+--     .itemcount 71951,1
+--     .zoneskip 407,1
+--     .isQuestAvailable 29456
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29457 >>Accept The Enemy's Insignia
+--     .macro >>/use Captured Insignia
+--     .isQuestAvailable 29457
+--     .itemcount 71952,1
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29458 >>Accept The Captured Journal
+--     .macro >>/use Fallen Adventurer's Journal
+--     .isQuestAvailable 29458
+--     .itemcount 71953,1
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29443 >>Accept A Curious Crystal
+--     .macro >>/use Imbued Crystal
+--     .isQuestAvailable 29443
+--     .itemcount 71635,1
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29444 >>Accept An Exotic Egg
+--     .macro >>/use Monstrous Egg
+--     .isQuestAvailable 29444
+--     .itemcount 71636,1
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29445 >>Accept An Intriguing Grimoire
+--     .macro >>/use Mysterious Grimoire
+--     .isQuestAvailable 29445
+--     .itemcount 71637,1
+--     .zoneskip 407,1
+--     .dmf
+-- step
+--     >>Press the macro "In the Active Items Frame"
+--     .accept 29446 >>Accept A Wondrous Weapon
+--     .macro >>/use Ornate Weapon
+--     .isQuestAvailable 29446
+--     .itemcount 71638,1
+--     .zoneskip 407,1
+--     .dmf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r.
     .turnin 29451 >>Turn in The Master Strategist

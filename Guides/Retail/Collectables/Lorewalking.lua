@@ -8,7 +8,6 @@ RXPGuides.RegisterGuide([[
 #displayname Xal'atath
 #next ab) Ethereals
 
-
 step << Alliance
     .isOnQuest 90705
     .goto 84,64.24,16.10,-1
@@ -2173,7 +2172,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lamp|r
     .complete 53882,1 --1/1 Light the First Flame
 step
-    #include RestedXP Collectables\a) Blood Elf Heritage Armor2@Writing on the Wall-Writing on the Wall2
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor@Writing on the Wall-Writing on the Wall2
 step
     .goto 95,37.47,64.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you|r
@@ -2197,7 +2196,7 @@ step
     >>Use your [ExtraActionButton] on the illuminated spot.
     .complete 53737,1 --1/1 Light shed at Sylvanas' fall
 step
-    #include RestedXP Collectables\a) Blood Elf Heritage Armor2@TheDayHopeDiedStart-TheDayHopeDiedEnd
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor@TheDayHopeDiedStart-TheDayHopeDiedEnd
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lor'themar Theron|r |cRXP_WARN_next to you|r.
     .turnin 53737 >>Turn in The Day Hope Died
@@ -2209,7 +2208,7 @@ step
     .skipgossipid 136429
     .target Cho
 step
-    #include RestedXP Collectables\a) Blood Elf Heritage Armor2@SunwellStart1-SunwellEnd1
+    #include RestedXP Collectables\a) Blood Elf Heritage Armor@SunwellStart1-SunwellEnd1
 step
     .goto 85,54.35,56.66,-1
     .goto 84,64.19,16.26,-1
@@ -2234,7 +2233,7 @@ step
     .complete 85254,2 --1/1 Accept "Remember the Sunwell" from Lady Liadrin
     .target Lady Liadrin
 step
-    #include RestedXP Collectables\a) Nightborne Unlock2@RemembertheSunwellStart-RemembertheSunwellEnd
+    #include RestedXP Collectables\a) Nightborne Unlock@RemembertheSunwellStart-RemembertheSunwellEnd
 step
     .goto 110,58.47,19.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Liadrin|r
@@ -2248,7 +2247,7 @@ step
     .skipgossipid 136404
     .target Cho
 step
-    #include RestedXP Collectables\a) Void Elf Unlock2@SanctumoftheMoonStart-SanctumoftheMoonEnd
+    #include RestedXP Collectables\a) Void Elf Unlock@SanctumoftheMoonStart-SanctumoftheMoonEnd
 step
     .isOnQuest 49787
     .goto 95,46.5,56.74
@@ -2260,7 +2259,7 @@ step
     .isOnQuest 49787
     .cast 258931 >>Jump and click on the |cRXP_PICK_Teleportation Console|r midair.
 step
-    #include RestedXP Collectables\a) Void Elf Unlock2@SanctumoftheMoonStart2-SanctumoftheMoonEnd2
+    #include RestedXP Collectables\a) Void Elf Unlock@SanctumoftheMoonStart2-SanctumoftheMoonEnd2
 step
     #completewith next
     #label Telogrus Rift1

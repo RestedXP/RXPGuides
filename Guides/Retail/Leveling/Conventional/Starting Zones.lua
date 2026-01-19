@@ -2214,6 +2214,7 @@ step
     .mob Scarlet Miner
     .target Gothik the Harvester
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Returned
     .goto 124,58.42,30.91,10 >>Enter the Cave
 step
@@ -3792,6 +3793,7 @@ step
     .target Allari the Souleater
     .target Sevis Brightflame
 step
+    #title |cFFFCDC00Enter Cave|r
     .goto 672,34.73,70.18,2,0
     .goto 672,34.86,70.21
     .turnin 39970 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r in the cave.
@@ -3804,6 +3806,7 @@ step
     .complete 38759,1 --1/1 Soulwrought Key
     .mob Anguish Jailer
 step
+    #title |cFFFCDC00Leave Cave|r
     #completewith Anguish Jailer
     .goto 672,34.55,71.71,15 >>Leave the cave
 step
@@ -3874,6 +3877,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cage|r.
     .complete 38759,4 --1/1 Izal Whitemoon freed
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Izal Whitemoon
     .goto 672,38.58,67.85,25 >>Enter the Cave
 step
@@ -3891,6 +3895,7 @@ step
     .turnin 40379 >>Turn in Enter the Illidari: Coilskar
     .target Jace Darkweaver
 step
+    #title |cFFFCDC00Leave Cave|r
     #completewith Set Them Free
     .goto 672,39.62,68.61,15 >>Leave the Cave
 step
@@ -4050,6 +4055,7 @@ step
     .complete 39495,1 --1/1 Caza slain & power taken
     .target Fel Lord Caza
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Caza slain
     .goto 673,43.2,27.72,10,0
     .goto 673,44.24,51.08,8,0
@@ -4160,6 +4166,7 @@ step
     .complete 40222,1 --1/1 Tome of Fel Secrets
     .mob Prolifica
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Prolifica
     .goto 672,77.05,28.04,130 >>Enter the Cave
 step
@@ -4178,6 +4185,7 @@ step
     .goto 672,73.61,32.16,15,0
     .complete 38727,3 --1/1 Soul Engine Devastator
 step
+    #title |cFFFCDC00Leave Cave|r
     #completewith Soul Engine Devastator1
     .goto 672,66.42,30.41,275 >>Leave the Cave
 step
@@ -6962,6 +6970,7 @@ step
 	.mob Amberleaf Troublemaker
 step
     #completewith DefendAysa2
+    #title |cFFFCDC00Enter Cave|r
     .goto 378,57.88,36.52,30 >>Enter the |cRXP_WARN_Cave|r.
 	.timer 88,Cave RP
 step
@@ -7125,6 +7134,7 @@ step
 	.target Master Li Fei
 step
     #completewith Spirit's Guardian
+    #title |cFFFCDC00Enter Cave|r
     .goto 378,38.81,25.50,75 >>Enter the |cRXP_WARN_Cave|r.
     *|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
@@ -7606,6 +7616,7 @@ step
     .mob Plump Carrotcruncher
 step
     #completewith Carrotcruncher
+    #title |cFFFCDC00Enter Cave|r
     .goto 378,76.79,71.1,20 >>Enter the Cave
 step
     #requires Carrotcruncher
@@ -8694,7 +8705,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Harandar
 #next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
-
+#internal
 
 step
     #hidewindow
@@ -12558,6 +12569,7 @@ step
 step
     .xp >10,1
     #completewith Ice and Fire
+    #title |cFFFCDC00Leave Cave|r
     .goto 427,42.72,62.23,155 >>Exit the Cave
     *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
 step
@@ -14085,6 +14097,7 @@ step
 step
     .xp >10,1
     #completewith Wendigo Cave
+    #title |cFFFCDC00Enter Cave|r
     .goto 29,51.81,48.44,185 >>Enter the Cave
 step
     .xp >10,1
@@ -23753,7 +23766,7 @@ step
     >>Loot [|cRXP_LOOT_Thazz'ril's Pick|r]. on the ground
     .complete 25135,1 --1/1 Thazz'ril's Pick
 step
-    #title Enter the cave
+    #title |cFFFCDC00Enter Cave|r
     #completewith ThazzrilsPickA
     .goto 1,45.37,56.22,15 >>Enter the cave
 step
