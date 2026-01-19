@@ -2160,7 +2160,7 @@ function RXPFrame:GenerateMenuTable(menu)
 
     local menuIndex = 1
     local function ProcessChapters(guide,tbl,activeChapters)
-        if guide.chapters then
+        if guide.chapters and addon.IsGuideActive(guide) then
             if not activeChapters then activeChapters = {} end
             for chapterName in string.gmatch(guide.chapters,"%s*([^;]+)%s*") do
                 local chapter = addon.GetGuideTable(guide.group, chapterName)
