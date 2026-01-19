@@ -1557,6 +1557,26 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    multibox = {
+                        name = L("Multibox mode"),
+                        desc = function()
+                            local out =
+                                L"Removes sections that require attention from all clients\nGuides that support this feature:\n"
+                            for guide in pairs(
+                                             RXPCData.guideMetaData.multibox) do
+                                out = fmt("%s\n%s", out, guide)
+                            end
+                            return out
+                        end,
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.4,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.RenderFrame()
+                        end,
+                        hidden = addon.game ~= "RETAIL" or not next(RXPCData.guideMetaData.multibox)
+                    },
                     dungeonsHeader = {
                         name = _G.DUNGEONS,
                         type = "header",

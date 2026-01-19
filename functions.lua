@@ -7018,6 +7018,33 @@ function addon.functions.collectcurrency(self, ...)
     end
 end
 
+function addon.functions.multibox(self)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        RXPCData.guideMetaData.multibox[guide] = true
+    end
+    local element = self.element
+    local step = element.step
+    if step.active and not addon.settings.profile.multibox then
+        step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+function addon.functions.singlebox(self)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        RXPCData.guideMetaData.multibox[guide] = true
+    end
+    local element = self.element
+    local step = element.step
+    if step.active and addon.settings.profile.multibox then
+        step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+
 addon.dungeons = {}
 function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" then -- on parse
