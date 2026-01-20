@@ -27743,7 +27743,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) HighmountainTauren
-#displayname |cFF00CCFF1|r - Highmountain
+#displayname |cFF00CCFF1|r - Highmountain Tauren
 #next b1) BfA Intro
 
 << Horde HighmountainTauren !DK
@@ -28442,7 +28442,10 @@ step
 step
     .isNotOnQuest 44184
     #requires Kirin Tor Emissary
-    .goto 85,58.26,90.01
+    .goto 85,54.82,89.78,8,0
+    .goto 85,54.75,86.91,8,0
+    .goto 85,56.10,87.18,8,0
+    .goto 85,57.85,89.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
@@ -28450,9 +28453,9 @@ step
     .isNotOnQuest 44184
     #completewith next
     #label Witnessed
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r.
     .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
-    .target Kirin Tor Emissary
+    .target Archmage Khadgar
 step
     .isNotOnQuest 44184
     #completewith Witnessed
@@ -28461,10 +28464,11 @@ step
 step
     .isNotOnQuest 44184
     #requires Witnessed
-    .goto 41,49.58,47.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r at the center of dalaran.
+    .goto 41,49.81,48.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r at the center of dalaran.
     .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
-    .target Kirin Tor Emissary
+    .target Archmage Khadgar
+    .skipgossipid 45530
 step
     .isNotOnQuest 44184
     #label Launch Event 1
