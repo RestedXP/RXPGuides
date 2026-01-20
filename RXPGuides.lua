@@ -1138,6 +1138,8 @@ function addon:CreateMetaDataTable(wipe)
     guideMetaData.enabledDungeons.Alliance = guideMetaData.enabledDungeons.Alliance or {}
     guideMetaData.enableGroupQuests = guideMetaData.enableGroupQuests or {}
 
+    guideMetaData.multibox = guideMetaData.multibox or {}
+
     guideMetaData.professionGuides = guideMetaData.professionGuides or {}
     guideMetaData.enabledProfessions = guideMetaData.enabledProfessions or {}
     guideMetaData.enabledProfessions.Horde = guideMetaData.enabledProfessions.Horde or {}

@@ -5197,13 +5197,8 @@ function addon.functions.buy(self, ...)
 
                 if itemID == id or name == id then
                     addon.comms.PrettyPrint("Buying " .. name .. " x" .. total) -- ok
-                    if quantity and quantity > 1 then
-                        for n = 1, math.ceil(total / quantity) do
-                            BuyMerchantItem(i, quantity)
-                            element.closeWindow = true
-                        end
-                    elseif quantity == 1 then
-                        local stack = select(8, GetItemInfo(id))
+                    local stack = select(8, GetItemInfo(id))
+                    if quantity then
                         while total > 0 do
                             local purchase = math.min(stack, total)
                             total = total - purchase
@@ -7017,6 +7012,33 @@ function addon.functions.collectcurrency(self, ...)
         addon.SetElementIncomplete(self)
     end
 end
+
+function addon.functions.multibox(self)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        RXPCData.guideMetaData.multibox[guide] = true
+    end
+    local element = self.element
+    local step = element.step
+    if step.active and not addon.settings.profile.multibox then
+        step.completed = true
+        addon.updateSteps = true
+    end
+end
+
+function addon.functions.singlebox(self)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        RXPCData.guideMetaData.multibox[guide] = true
+    end
+    local element = self.element
+    local step = element.step
+    if step.active and addon.settings.profile.multibox then
+        step.completed = true
+        addon.updateSteps = true
+    end
+end
+
 
 addon.dungeons = {}
 function addon.functions.dungeon(self, text, instance)

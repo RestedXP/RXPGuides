@@ -901,6 +901,7 @@ step << !Draenei
 step
     .goto Bloodmyst Isle,63.5,88.8
 	.zone Bloodmyst Isle >> Travel north to Bloodmyst Isle
+    >>|cRXP_WARN_As you quest through Bloodmyst Isle, remember to keep 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_as you will need it for a class quest around level 24|r << Paladin !Draenei
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kessel|r

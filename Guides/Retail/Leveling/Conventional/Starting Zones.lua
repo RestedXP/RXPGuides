@@ -2214,6 +2214,7 @@ step
     .mob Scarlet Miner
     .target Gothik the Harvester
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Returned
     .goto 124,58.42,30.91,10 >>Enter the Cave
 step
@@ -3792,6 +3793,7 @@ step
     .target Allari the Souleater
     .target Sevis Brightflame
 step
+    #title |cFFFCDC00Enter Cave|r
     .goto 672,34.73,70.18,2,0
     .goto 672,34.86,70.21
     .turnin 39970 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r in the cave.
@@ -3804,6 +3806,7 @@ step
     .complete 38759,1 --1/1 Soulwrought Key
     .mob Anguish Jailer
 step
+    #title |cFFFCDC00Leave Cave|r
     #completewith Anguish Jailer
     .goto 672,34.55,71.71,15 >>Leave the cave
 step
@@ -3874,6 +3877,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cage|r.
     .complete 38759,4 --1/1 Izal Whitemoon freed
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Izal Whitemoon
     .goto 672,38.58,67.85,25 >>Enter the Cave
 step
@@ -3891,6 +3895,7 @@ step
     .turnin 40379 >>Turn in Enter the Illidari: Coilskar
     .target Jace Darkweaver
 step
+    #title |cFFFCDC00Leave Cave|r
     #completewith Set Them Free
     .goto 672,39.62,68.61,15 >>Leave the Cave
 step
@@ -4050,6 +4055,7 @@ step
     .complete 39495,1 --1/1 Caza slain & power taken
     .target Fel Lord Caza
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Caza slain
     .goto 673,43.2,27.72,10,0
     .goto 673,44.24,51.08,8,0
@@ -4160,6 +4166,7 @@ step
     .complete 40222,1 --1/1 Tome of Fel Secrets
     .mob Prolifica
 step
+    #title |cFFFCDC00Enter Cave|r
     #completewith Prolifica
     .goto 672,77.05,28.04,130 >>Enter the Cave
 step
@@ -4178,6 +4185,7 @@ step
     .goto 672,73.61,32.16,15,0
     .complete 38727,3 --1/1 Soul Engine Devastator
 step
+    #title |cFFFCDC00Leave Cave|r
     #completewith Soul Engine Devastator1
     .goto 672,66.42,30.41,275 >>Leave the Cave
 step
@@ -6962,6 +6970,7 @@ step
 	.mob Amberleaf Troublemaker
 step
     #completewith DefendAysa2
+    #title |cFFFCDC00Enter Cave|r
     .goto 378,57.88,36.52,30 >>Enter the |cRXP_WARN_Cave|r.
 	.timer 88,Cave RP
 step
@@ -7125,6 +7134,7 @@ step
 	.target Master Li Fei
 step
     #completewith Spirit's Guardian
+    #title |cFFFCDC00Enter Cave|r
     .goto 378,38.81,25.50,75 >>Enter the |cRXP_WARN_Cave|r.
     *|cRXP_WARN_If you |cRXP_WARN_can’t|r mount and |cRXP_WARN_are able|r to efficiently kill monsters while walking, you should kill them as you travel|r.
 step
@@ -7606,6 +7616,7 @@ step
     .mob Plump Carrotcruncher
 step
     #completewith Carrotcruncher
+    #title |cFFFCDC00Enter Cave|r
     .goto 378,76.79,71.1,20 >>Enter the Cave
 step
     #requires Carrotcruncher
@@ -8694,7 +8705,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Harandar
 #next ba) DF Alliance Intro (A) << Alliance
 #next << Horde
-
+#internal
 
 step
     #hidewindow
@@ -12558,6 +12569,7 @@ step
 step
     .xp >10,1
     #completewith Ice and Fire
+    #title |cFFFCDC00Leave Cave|r
     .goto 427,42.72,62.23,155 >>Exit the Cave
     *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
 step
@@ -14085,6 +14097,7 @@ step
 step
     .xp >10,1
     #completewith Wendigo Cave
+    #title |cFFFCDC00Enter Cave|r
     .goto 29,51.81,48.44,185 >>Enter the Cave
 step
     .xp >10,1
@@ -23753,7 +23766,7 @@ step
     >>Loot [|cRXP_LOOT_Thazz'ril's Pick|r]. on the ground
     .complete 25135,1 --1/1 Thazz'ril's Pick
 step
-    #title Enter the cave
+    #title |cFFFCDC00Enter Cave|r
     #completewith ThazzrilsPickA
     .goto 1,45.37,56.22,15 >>Enter the cave
 step
@@ -25343,6 +25356,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ab) Deathknell
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
+#title Deathknell
 #next ac) Undead Eversong Woods
 #defaultfor Undead !DK
 
@@ -25365,84 +25379,102 @@ step
     *This will allow you to press a Keybind to use a Quest Items/target a relevant mob
 step
     #label TirisfalFistQuestCheck
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agatha|r.
     .goto 465,40.8,78.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agatha|r.
     .accept 24959 >>Accept Fresh out of the Grave
     .target Agatha
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
     .goto 465,43.4,79.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
     .turnin 24959 >>Turn in Fresh out of the Grave
     .accept 28608 >>Accept The Shadow Grave
     .target Undertaker Mordo
 step
-    >>|cRXP_WARN_Follow the arrow down into the grave|r and loot the [|cRXP_LOOT_twine|r and the |cRXP_LOOT_fluid|r].
-    .goto 18,30.33,72.24,4,0
-    .goto 18,30.32,72.84,4,0
-    .goto 18,30.00,72.84,4,0
+    >>|cRXP_WARN_Follow the arrow down into the grave|r
+    >>|TInterface/cursor/crosshair/interact.blp:15|tClick on the [|cRXP_PICK_Twine|r and the |cRXP_PICK_Fluid|r.
+    .goto 18,30.33,72.24,5,0
+    .goto 18,30.32,72.84,5,0
+    .goto 18,30.00,72.84,5,0
     .goto 18,29.7,72.0
     .complete 28608,2 --1/1 Corpse-Stitching Twine
     .complete 28608,1 --1/1 Thick Embalming Fluid
 step
     #completewith next
+    #label TheShadowGraveA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    .turnin 28608 >>Turn in The Shadow Grave
+    .accept 26799 >>Accept Those That Couldn't Be Saved
+    .target Undertaker Mordo
+step
+    #completewith TheShadowGraveA
     .goto 18,30.00,72.84,4,0
     .goto 18,30.32,72.84,4 >>Leave the grave
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    #requires TheShadowGraveA
     .goto 465,43.4,79.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
     .turnin 28608 >>Turn in The Shadow Grave
     .accept 26799 >>Accept Those That Couldn't Be Saved
+    .target Undertaker Mordo
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Caice|r.
     .goto 465,45.91,80.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Caice|r.
     .accept 24960 >>Accept The Wakening
+    .target Caretaker Caice
 step
-    #sticky
-    #label tirisfal26799
-    >>Kill |cRXP_ENEMY_Mindless Zombies|r while speaking with the undead.
-    .goto 465,44.4,73.9,0,0
+    #completewith TheWakeningA
+    >>Kill |cRXP_ENEMY_Mindless Zombies|r.
     .complete 26799,1 --6/6 Mindless Zombie slain
     .mob Mindless Zombie
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r.
     .goto 465,46.6,71.1
-    .skipgossip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Redpath|r.
     .complete 24960,2 --1/1 Speak with Marshal Redpath
     .target Marshal Redpath
+    .skipgossipid 39165
+    .skipgossipid 39166
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r.
     .goto 465,44.2,70.6
-    .skipgossip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r.
     .complete 24960,1 --1/1 Speak with Lilian Voss
     .target Lilian Voss
+    .skipgossipid 39163
+    .skipgossipid 39164
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valdred Moray|r.
+    #label TheWakeningA
     .goto 465,40.7,73.0
-    .skipgossip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valdred Moray|r.
     .complete 24960,3 --1/1 Speak with Valdred Moray
     .target Valdred Moray
+    .skipgossipid 39542
+    .skipgossipid 39543
+    .skipgossipid 39803
 step
-    #requires tirisfal26799
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
+    .goto 465,43.25,73.81
+    >>Kill |cRXP_ENEMY_Mindless Zombies|r.
+    .complete 26799,1 --6/6 Mindless Zombie slain
+    .mob Mindless Zombie
+step
     .goto 465,43.43,79.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Undertaker Mordo|r.
     .turnin 26799 >>Turn in Those That Couldn't Be Saved
     .target Undertaker Mordo
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Caice|r.
     .goto 465,45.9,80.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Caice|r.
     .turnin 24960 >>Turn in The Wakening
     .accept 25089 >>Accept Beyond the Graves
     .target Caretaker Caice
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
-    .goto 465,49.08,58.83,5,0
+    .goto 465,49.08,58.83,8,0
     .goto 465,46.6,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
     .accept 26801 >>Accept Scourge on our Perimeter
     .target Shadow Priest Sarvis
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r.
-    .goto 465,49.08,58.83,5,0
+    .goto 465,49.08,58.83,8,0
     .goto 465,49.90,56.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r.
     .turnin 25089 >>Turn in Beyond the Graves
     .accept 26800 >>Accept Recruitment
     .target Deathguard Saltain
@@ -25452,60 +25484,58 @@ step << Warlock
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r.
-    .goto 465,51.61,47.23,0,0
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Wretched Ghoul
     .mob Rattlecage Skeleton
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darneli to pick up the corpse before clicking on the next one|r.
+    #loop
     .goto 465,47.58,48.29,15,0
     .goto 465,54.14,43.99,15,0
     .goto 465,53.74,51.00,10,0
-    .goto 465,47.58,48.29
+    .goto 465,47.58,48.29,15,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darneli to pick up the corpse before clicking on the next one|r.
     .complete 26800,1 --6/6 Scarlet Corpses gathered
     .target Scarlet Corpse
 step
+    .goto 465,52.47,46.45
     >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r.
-    .goto 465,51.61,47.23
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Wretched Ghoul
     .mob Rattlecage Skeleton
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r.
     .goto 465,49.9,56.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r.
     .turnin 26800 >>Turn in Recruitment
     .target Deathguard Saltain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
     .goto 465,46.6,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
     .turnin 26801 >>Turn in Scourge on our Perimeter
     .accept 28651 >>Accept Novice Elreth
     .target Shadow Priest Sarvis
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Elreth|r.
     .goto 465,46.8,58.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Elreth|r.
     .turnin 28651 >>Turn in Novice Elreth
     .accept 24961 >>Accept The Truth of the Grave
     .target Novice Elreth
 step
-    --TODO: Add gossipoption
-    .goto 465,52.38,56.41,2,0
-    .goto 465,54.36,56.96,6,0
-    .goto 465,46.75,58.20
+    .goto 465,52.38,56.41,5,0
+    .goto 465,54.36,56.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEnter the house and talk to |cRXP_FRIENDLY_Lilian Voss|r.
     >>|cRXP_WARN_She can be down or upstairs. After talking to her (during the roleplay) you can already leave the house and return to |cRXP_FRIENDLY_Novice Elreth|r|r.
-    .skipgossip
     .complete 24961,1 --1/1 Show Lilian her reflection
     .target Lilian Voss
+    .skipgossipid 38950
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Elreth|r.
     .goto 465,46.7,58.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Novice Elreth|r.
     .turnin 24961 >>Turn in The Truth of the Grave
     .accept 28672 >>Accept The Executor In the Field
     .target Novice Elreth
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
     .goto 465,55.5,37.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
     .turnin 28672 >>Turn in The Executor In the Field
     .accept 26802 >>Accept The Damned
     .target Executor Arren
@@ -25514,82 +25544,94 @@ step << Hunter
     .cast 1515 >>Tame a |cRXP_ENEMY_Ragged Scavenger|r.
     .mob Ragged Scavenger
 step
-    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r around you. Loot them for their [|cRXP_LOOT_paws|r and |cRXP_LOOT_wings|r].
+    #loop
     .goto 465,63.26,27.68,15,0
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
-    .goto 465,49.41,21.94
+    .goto 465,49.41,21.94,25,0
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r around you. Loot them for the |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] and |T134360:0|t[|cRXP_LOOT_Duskbat Wings|r].
     .complete 26802,1 --4/4 Scavenger Paw
     .complete 26802,2 --4/4 Duskbat Wing
     .mob Mangy Duskbat
     .mob Ragged Scavenger
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
     .goto 465,55.5,37.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
     .turnin 26802 >>Turn in The Damned
     .accept 24973 >>Accept Night Web's Hollow
     .target Executor Arren
 step
     #completewith next
-    >>On your way to the mine kill some |cRXP_ENEMY_Young Night Web Spiders|r.
+    >>Kill the |cRXP_ENEMY_Young Night Web Spiders|r.
     .complete 24973,1 --8/8 Young Night Web Spider slain
     .mob Young Night Web Spider
 step
-    >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the mine.
+    #loop
     .goto 465,30.18,30.58,10,0
     .goto 466,62.9,58.0,10,0
     .goto 466,45.27,69.84,10,0
     .goto 466,48.41,51.43,10,0
     .goto 466,62.09,58.59,10,0
+    >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the mine.
     .complete 24973,2 --5/5 Night Web Spider slain
     .mob Night Web Spider
 step
-    >>Leave the mine and kill the remaining |cRXP_ENEMY_Young Night Web Spiders|r.
     .goto 465,37.36,26.16
+    >>Kill the |cRXP_ENEMY_Young Night Web Spiders|r.
     .complete 24973,1 --8/8 Young Night Web Spider slain
     .mob Young Night Web Spider
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
     .goto 465,55.5,37.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r.
     .turnin 24973 >>Turn in Night Web's Hollow
     .accept 24970 >>Accept No Better Than the Zombies
     .target Executor Arren
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnell|r.
     .goto 465,67.1,42.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnell|r.
     .turnin 24970 >>Turn in No Better Than the Zombies
     .accept 24971 >>Accept Assault on the Rotbrain Encampment
     .target Darnell
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r. |cRXP_WARN_Focus undeads that are already fighting|r.
-    .goto 465,74.1,66.0,0,0
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
     .mob Robrain Magus
 step
-    >>Kill |cRXP_ENEMY_Marshal Redpath|r.
     .goto 465,70.08,69.65
+    >>Kill |cRXP_ENEMY_Marshal Redpath|r.
     .complete 24971,1 --1/1 Marshal Redpath slain
     .mob Marshal Redpath
 step
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r. |cRXP_WARN_Focus undeads that are already fighting|r.
     .goto 465,74.1,66.0
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r. 
+    *|cRXP_WARN_NOTE:|r Focus undeads that are already fighting.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
     .mob Robrain Magus
 step
-    .isOnQuest 24971
-    >>Follow the arrow, look out for the rare Fangor. Loot him for a [|cRXP_LOOT_bag|r].
+    #completewith next
+    #label AssaultOnTheRotbrainEncampmentA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
-    .goto 465,61.88,82.00,5,0
+    .turnin 24971 >>Turn in Assault on the Rotbrain Encampment
+    .accept 24972 >>Accept Vital Intelligence
+    .target Shadow Priest Sarvis
+step
+    #completewith AssaultOnTheRotbrainEncampmentA
+    #title You will get phased
+    .goto 465,61.88,82.00,5 >>Follow the arrow, look out for the rare |cRXP_ENEMY_Fangor|r. Loot him for a [|cRXP_LOOT_bag|r].
+    .mob Fangor
+step
+    #requires AssaultOnTheRotbrainEncampmentA
     .goto 465,62.58,78.73,5,0
     .goto 465,46.6,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Priest Sarvis|r.
     .turnin 24971 >>Turn in Assault on the Rotbrain Encampment
     .accept 24972 >>Accept Vital Intelligence
     .target Shadow Priest Sarvis
 ]])
---Undead: Eversong Woods(xp tag)
+--Undead: Tirisfal Glades
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
@@ -25603,24 +25645,24 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
+    #optional
     .itemcount 132516,1
     #completewith next
     .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tRun and talk to |cRXP_FRIENDLY_Deathguard Simmer|r.
-    .isQuestComplete 24972
     .goto 465,77.35,17.75,20,0
     .goto 18,44.75,53.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r.
     .turnin 24972 >>Turn in Vital Intelligence
     .target Deathguard Simmer
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
     .accept 24978 >>Accept Reaping the Reapers
     .goto 18,44.75,53.67
+    .target +Deathguard Simmer
     .accept 24975 >>Accept Fields of Grief
     .goto 18,44.61,53.79
-    .target Deathguard Simmer
-    .target Apothecary Johaan
+    .target +Apothecary Johaan
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo upstairs and talk to |cRXP_FRIENDLY_Sedrick Calston|r.
     .goto 18,44.48,53.86,4,0
@@ -25641,317 +25683,492 @@ step
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tPick up the [|cRXP_LOOT_Tirifal Pumpkins|r].
+    #loop
     .goto 18,36.82,51.45,20,0
     .goto 18,35.57,51.12,20,0
     .goto 18,36.68,49.50,20,0
-    .goto 18,36.48,50.85
+    .goto 18,36.48,50.85,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tirifal Pumpkins|r.
     .complete 24975,1 --10/10 Tirisfal Pumpkin
 step
-    >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
-    >>Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
+    .goto 18,37.91,51.27
     .goto 18,40.33,51.42,0
-    .goto 18,37.91,51.27,0,0
+    >>Kill |cRXP_ENEMY_Tirisfal Farmers|r.
+    *Look out for the rares |cRXP_ENEMY_Shadowstalker|r and |cRXP_ENEMY_Farmer Solliden|r.
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
+    .mob Shadowstalker
+    .mob Farmer Solliden
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
+    .turnin 24978 >>Turn in Reaping the Reapers
+    .accept 24980 >>Accept The Scarlet Palisade
+    .goto 18,44.75,53.68
+    .target +Deathguard Simmer
+    .turnin 24975 >>Turn in Fields of Grief
+    .accept 24976 >>Accept Variety is the Spice of Death
+    .goto 18,44.61,53.78
+    .target +Apothecary Johaan
+step
+    #loop
+    .goto 18,37.74,39.50,25,0
+    .goto 18,36.83,43.38,25,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Xavren's Thorns|r.
+    .complete 24976,2 --4/4 Xavren's Thorn
+step
+    #loop
+    .goto 18,35.23,39.75,30,0
+    .goto 18,33.57,42.92,30,0
 step << Warlock/Hunter
     #completewith next
     +|cfff78300Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r.
 step
-    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r until it runs away then use the |T133802:0|t[Murloc Leash]. |cRXP_WARN_You mustn't kill it|r.
-    >>Look out for the rare |cRXP_ENEMY_Muad|r.
-    .use 52059
     .goto 18,35.8,43.4
+    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r until it runs away then use the |T133802:0|t[Murloc Leash]. 
+    *|cRXP_WARN_NOTE:|r You mustn't kill it.
+    *Look out for the rare |cRXP_ENEMY_Muad|r.
     .complete 24974,1 --1/1 Vile Fin captured
     .mob Vile Fin Minor Oracle
     .mob Vile Fin Puddlejumper
+    .mob Muad
+    .use 52059
 step << Warlock/Hunter
     #completewith next
     +|cRXP_WARN_Reminder:Set your pet to back to 'Assist'|r.
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r and |cRXP_FRIENDLY_Apothecary Johaan|r.
-    >>Look out for |cRXP_ENEMY_Bayne|r on your way back.
-    .goto 18,45.30,49.37,15,0
-    .unitscan Bayne
-    .turnin 24978 >>Turn in Reaping the Reapers
+    #completewith AScarletLetterA
+    >>Kill |cRXP_ENEMY_Scarlet Warrior|r.
+    .complete 24980,1 --10/10 Scarlet Warrior slain
+    .mob Scarlet Warrior
+step
+    .goto 18,35.37,48.26,30,0
+    .goto 18,32.45,47.92
+    >>Kill the |cRXP_WARN_Scarlet Warriors|r. Loot them for |T237451:0|t[A Scarlet Letter].
+    .accept 24979 >>Accept A Scarlet Letter
+    .mob Scarlet Warrior
+step
+    #completewith next
+    #hidewindow
+    .gossipoption 38512 >>1
+    .timer 50,Roleplay Duration
+step
+    #label AScarletLetterA
+    .goto 18,31.74,46.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian Voss|r.
+    .complete 24979,1 --1/1 Find the Scarlet Prisoner
+    .target Lilian Voss
+    .skipgossipid 38511
+    .skipgossipid 38021
+step
+    >>Kill |cRXP_ENEMY_Scarlet Warrior|r.
+    .complete 24980,1 --10/10 Scarlet Warrior slain
+    .mob Scarlet Warrior
+step
+    #completewith next
+    #label VarietyIsTheSpiceOfDeathA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Marrowpetal Stalks|r.
+    .complete 24976,1 --4/4 Marrowpetal
+step
+    #completewith VarietyIsTheSpiceOfDeathA
+    #title Check rare position
+    .goto 18,45.30,49.37,35 >>Look out for |cRXP_ENEMY_Bayne|r on your way back.
+    .mob Bayne
+step
+    #requires VarietyIsTheSpiceOfDeathA
+    .goto 18,49.58,54.21
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Marrowpetal Stalks|r.
+    .complete 24976,1 --4/4 Marrowpetal
+step
     .goto 18,44.75,53.68
-    .turnin 24975 >>Turn in Fields of Grief
-    .goto 18,44.61,53.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Simmer|r.
+    .turnin 24979 >>Turn in A Scarlet Letter
+    .turnin 24980 >>Turn in The Scarlet Palisade
     .target Deathguard Simmer
+step
+    .goto 18,44.61,53.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Johaan|r.
+    .turnin 24976 >>Turn in Variety is the Spice of Death
+    .accept 24977 >>Accept Johaan's Experiment
     .target Apothecary Johaan
 step
-    >>Go upstairs to return the murloc
     .goto 18,44.48,53.86,4,0
     .goto 18,44.76,53.56
+    >>Go upstairs to return the murloc
     .complete 24974,2 --1/1 Vile Fin returned
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedrick Calston|r.
     .goto 18,44.75,53.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedrick Calston|r.
     .turnin 24974 >>Turn in Ever So Lonely
     .target Sedrick Calston
 step
-    #completewith next
-    .goto 18,44.46,53.30,5,0
-    .goto 18,44.07,58.24
-    .deathskip >>Pull some mobs and deathskip to Brill
+    .goto 18,44.70,52.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r.
+    .turnin 24977 >>Turn in Johaan's Experiment
+    .target Captured Scarlet Zealot
+step
+    #title Patrolling
+    .goto 18,44.28,53.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r.
+    .accept 25038 >>Accept Gordo's Task
+    .target Gordo
+step
+    .goto 18,52.55,54.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r.
+    .accept 25090 >>Accept A Putrid Task
+    .accept 24982 >>Accept The New Forsaken
+    .target Deathguard Dillinger
+step
+    #completewith GordosTaskA
+    #hidewindow
+    #loop
+    .goto 18,51.53,50.70,35,0
+    .goto 18,54.18,58.33,35,0
+    .goto 18,54.39,52.87,35,0
+    +1
 step
     #completewith next
-    .goto 18,60.81,51.93,5,0
-    .goto 18,60.87,51.51
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
+    .complete 25038,1 --3/3 Gloom Weed
+step
+    >>Kill the |cRXP_ENEMY_Ravaged Corpses|r and |cRXP_ENEMY_Rotten Dead|r. Loot them for the |T1:0|t[|cRXP_LOOT_Putric Claw|r].
+    .complete 25090,1 --7/7 Putrid Claw
+    .mob Ravaged Corpse
+    .mob Rotten Dead
+step
+    #label GordosTaskA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
+    .complete 25038,1 --3/3 Gloom Weed
+step
+    .goto 18,52.54,54.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Dillinger|r.
+    .turnin 25090 >>Turn in A Putrid Task
+    .target Deathguard Dillinger
+step
+    .goto 18,60.13,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Morris|r.
+    .accept 6321 >>Accept Supplying Brill
+    .target Deathguard Morris
+step
+    .goto 18,60.13,52.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r.
+    .turnin 25038 >>Turn in Gordo's Task
+    .accept 24990 >>Accept Darkhound Pounding
+    .target Junior Apothecary Holland
+step
+    .goto 18,60.54,51.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r.
+    .accept 24981 >>Accept A Thorn in our Side
+    .target Executor Zygand
+step
+    .goto 18,60.87,51.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r.
     .home >>Set your Hearthstone to Brill
+    .target Innkeeper Renee
 step
-    .zoneskip 18,1
-    >>To Silvermoon:
-    .goto 18,60.98,58.84,6,0
-    .goto 18,61.52,59.01,6,0
-    .goto 18,60.73,58.68
-    .zone 85 >>Follow the Arrow) Climb the tower and take the portal to Orgrimmar
+    #loop
+    .goto 18,59.58,56.85,25,0
+    .goto 18,53.61,64.63,35,0
+    #title DON'T KILL THE DARKHOUND
+    >>Attack a |cRXP_ENEMY_Darkhound|r. Wait for the Worgen to spawn.
+    .accept 24992 >>Accept Escaped From Gilneas
 step
-    .goto 85,56.03,88.28
-    .zone 110 >>2) Take the portal to Silvermoon
-step
-    .itemcount 132516,1
-    #completewith next
-    .cast 202844 >>Use |T1405809:0|t[Gunshoes] in Silvermoon
+    #completewith UrgentScarletMemorandumA
+    >>Kill the |cRXP_ENEMY_Darkhounds|r. Loot them for the |T134719:0|t[|cRXP_LOOT_Darkhound Blood|r.].
+    .complete 24990,1 --5/5 Darkhound Blood
 step
     #completewith next
-    .goto 110,57.57,24.59,5,0
-    .goto 110,75.57,59.24,15,0
-    .goto 110,73.52,59.20,15,0
-    .goto 94,56.43,50.12
-    .goto 94,54.4,50.7
-    .fp >>Get the Eversong Woods Flight Path
+    >>Kill |cRXP_ENEMY_Scarlet Zealots|r and the |cRXP_ENEMY_Scarlet Missionaries|r.
+    .complete 24981,1 --3/3 Scarlet Zealot slain
+    .complete 24981,2 --3/3 Scarlet Missionary slain
+    .mob Scarlet Zealotstep
+    .mob Scarlet Missionary
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Jaela|r.
-    .goto 94,50.33,50.77
-    .accept 8475 >>Accept The Dead Scar
-    .target 8475
-step << Warlock/Hunter
-    #completewith next
-    +|cRXP_WARN_Reminder: Resummon your pet after a deathskip|r.
+    #label UrgentScarletMemorandumA
+    .goto 18,51.19,67.71
+    >>Kill |cRXP_ENEMY_Captain Perrine|r. Loot him for the |T1:0|t[|cRXP_LOOT_Urgent Scarlet Memorandum|r].
+    .complete 24981,3 --1/1 Urgent Scarlet Memorandum
 step
-    >>Kill |cRXP_ENEMY_Plaguebone Pillagers|r.
-    .goto 94,50.17,55.05
-    .complete 8475,1 --8/8 Plaguebone Pillager slain
-    .mob Plaguebone Pillager
+    #loop
+    .goto 18,53.60,68.23,35,0
+    .goto 18,51.56,66.00,35,0
+    .goto 18,49.79,67.94,35,0
+    >>Kill |cRXP_ENEMY_Scarlet Zealots|r and the |cRXP_ENEMY_Scarlet Missionaries|r.
+    .complete 24981,1 --3/3 Scarlet Zealot slain
+    .complete 24981,2 --3/3 Scarlet Missionary slain
+    .mob Scarlet Zealotstep
+    .mob Scarlet Missionary
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Jaela|r.
-    .goto 94,50.33,50.77
-    .turnin 8475 >>Turn in The Dead Scar
-    .target Ranger Jaela
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Skyles|r.
-    .goto 94,46.55,49.08,10,0
-    .goto 94,46.24,46.79
-    .fp >>Get the Falconwing Square Flight Path
-    .target Skymaster Skyles
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Jaronis|r.
-    .goto 94,47.26,46.32
-    .accept 8472 >>Accept Major Malfunction
-    .target Magister Jaronis
-step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_|rwanted board
-    .goto 94,48.16,46.31
-    .accept 8468 >>Accept WANTED: Thaelis the Hungerer
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
-    .goto 94,48.17,46.0
-    .accept 8463 >>Accept Unstable Mana Crystals
-    .target Aeldon Sunbrand
-step
-    #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r]. to collect them
-    .complete 8463,1 --6/6 Unstable Mana Crystal
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their [|cRXP_LOOT_cores|r].
-    .goto 94,46.94,44.59,15,0
-    .goto 94,47.69,39.02,15,0
-    .goto 94,47.11,37.44,15,0
-    .goto 94,46.53,35.16,30,0
-    .complete 8472,1 --6/6 Arcane Core
-    .mob Arcane Patroller
-step
-    >>Kill |cRXP_ENEMY_Thaelis|r. Loot him for his [|cRXP_LOOT_head|r].
-    .goto 94,45.36,38.12,5,0
-    .goto 94,45.01,37.68
-    .complete 8468,1 --1/1 Thaelis' Head
-    .mob Thaelis
-step
-    >>Kill |cRXP_ENEMY_Acrane Patrollers|r. Loot them for their [|cRXP_LOOT_cores|r].
-    .goto 94,45.39,40.64,20,0
-    .goto 94,42.18,40.59
-    .complete 8472,1 --6/6 Arcane Cores
-    .mob Arcane Patroller
-step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on [|cRXP_LOOT_Unstable Mana Crystal Crates|r]. to collect them
-    .goto 94,45.13,40.71,18,0
-    .goto 94,46.01,43.29,25,0
-    .goto 94,46.92,44.57,10,0
-    .complete 8463,1 --6/6 Unstable Mana Crystal
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
-    .goto 94,48.17,46.0
-    .turnin 8463 >>Turn in Unstable Mana Crystals
-    .accept 9352 >>Accept Darnassian Intrusions
-    .target Aeldon Sunbrand
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Kan'ren|r.
-    .goto 94,47.77,46.58
-    .turnin 8468 >>Turn in WANTED: Thaelis the Hungerer
-    .target Sergeant Kan'ren
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Jaronis|r.
-    .goto 94,47.26,46.30
-    .turnin 8472 >>Turn in Major Malfunction
-    .accept 8895 >>Accept Delivery to the North Sanctum
-    .target Magister Jaronis
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Caidanis|r.
-    .goto 94,44.63,53.13
-    .turnin 8895 >>Turn in Delivery to the North Sanctum
-    .accept 9119 >>Accept Malfunction at the West Sanctum
-    .target Ley-Keeper Caidanis
-step
-    .itemcount 132516,1
-    #completewith next
-    .cast 202844 >>Use |T1405809:0|t[Gunshoes]
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Caidanis|r.
-    .goto 94,36.7,57.44
-    .turnin 9119 >>Turn in Malfunction at the West Sanctum
-    .accept 8486 >>Accept Arcane Instability
-    .target Ley-Keeper Caidanis
-    step
-    #completewith next
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the [|cRXP_LOOT_Incriminating Documents|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
-    .goto 94,36.4,60.7,20,0
-    .goto 94,34.65,62.03,20,0
-    .collect 20765,1,8482,1
-    .accept 8482 >>Accept Incriminating Documents
-    .complete 9352,1 --1/1 Intruder Defeated
-    .mob Darnassian Scout
-step
-    >>Kill |cRXP_ENEMY_Mana Stalker|r and |cRXP_ENEMY_Manawraiths|r.
-    .goto 94,33.69,61.69,15,0
-    .goto 94,34.50,57.84,20,0
-    .goto 94,35.66,58.00
-    .complete 8486,2 --5/5 Mana Stalker slain
-    .complete 8486,1 --5/5 Manawraith slain
-    .mob Mana Stalker
-    .mob Manawraith
-step
-    >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for the [|cRXP_LOOT_Incriminating Documents|r]. |TInterface/cursor/crosshair/interact.blp:20|tClick it in your bags
-    .goto 94,36.4,60.7,20,0
-    .goto 94,34.65,62.03,20,0
-    .collect 20765,1,8482,1
-    .accept 8482 >>Accept Incriminating Documents
-    .complete 9352,1 --1/1 Intruder Defeated
-    .mob Darnassian Scout
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Velania|r.
-    .goto 94,36.7,57.44
-    .turnin 8486 >>Turn in Arcane Instability
-    .turnin 9352 >>Turn in Darnassian Intrusions
-    .target Ley-Keeper Velania
-step << Warlock/Hunter
-    #completewith next
-    +|cRXP_WARN_Set your pet to 'Passive'|r.
-step
-    #completewith next
-    .goto 94,35.46,57.41
-    .deathskip >>Pull some mobs, die and ress at the spirit healer
-step
-    .xp <10-1600,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r.
-    .goto 94,44.03,70.76
-    .accept 9254 >>Accept The Wayward Apprentice
-    .target Magistrix Landra Dawnstrider
-    step << Hunter/Warlock
-    #completewith next
-    +|cRXP_WARN_Reminder: Resummon your pet and set it to 'Assist'|r.
-step
-    .isOnQuest 9254
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
-    .goto 94,54.28,70.98
-    .turnin 9254 >>Turn in The Wayward Apprentice
-    .accept 8487 >>Accept Corrupted Soil
-    .target Apprentice Mirveda
-step
-    .isOnQuest 8487
-    >>|TInterface/cursor/crosshair/interact.blp:20|tPick up the [|cRXP_LOOT_Tainted Soil Samples|r]. from the ground
-    .goto 94,52.34,71.77,20,0
-    .goto 94,51.92,68.47,20,0
-    .goto 94,52.59,69.60,10,0
-    .goto 94,53.75,69.89,10,0
-    .goto 94,52.36,69.80
-    .complete 8487,1 --8/8 Tainted Soil Sample
-step
-    .isQuestComplete 8487
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
-    .goto 94,54.28,70.98
-    .turnin 8487 >>Turn in Corrupted Soil
-    .target Apprentice Mirveda
-step
-    .isQuestTurnedIn 8487
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for around 5 seconds and talk to |cRXP_FRIENDLY_Apprentice Mirveda|r again.
-    .goto 94,54.28,70.98
-    .accept 8488 >>Accept Unexpected Results
-    .target Apprentice Mirveda
-step
-    .isOnQuest 8488
-    >>Kill |cRXP_ENEMY_Gharsul the Remorseless|r. You can kite him back to |cRXP_FRIENDLY_Apprentice Mirveda|r.
-    .goto 94,53.68,69.76
-    .complete 8488,2 --1/1 Gharsul the Remorseless slain
-    .mob Gharsul the Remorseless
-step
-    .isQuestComplete 8488
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
-    .goto 94,54.28,70.98
-    .turnin 8488 >>Turn in Unexpected Results
-    .accept 9255 >>Accept Research Notes
-    .target Apprentice Mirveda
-step << Warlock/Hunter
-    #completewith next
-    +|cRXP_WARN_Set your pet to 'Passive'|r.
-step
-    .isOnQuest 9255
-    #completewith next
-    .goto 94,51.47,80.11,20,0
-    .deathskip >>Pull some mobs and die
-step
-    .isOnQuest 9255
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r.
-    .goto 94,44.02,70.77
-    .turnin 9255 >>Turn in Research Notes
-    .target Magistrix Landra Dawnstrider
-step
-    #completewith next
-    .goto 94,43.95,69.98
-    .fp >>Get the Fairbreeze Village Flight Path
-step
-    #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skymaster Brightdawn|r.
-    .goto 94,43.95,69.98
-    .fly Falconwing Square >>Fly to Falconwing Square
-    .target Skymaster Brightdawn
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeldon Sunbrand|r.
-    .goto 94,48.17,46.00
-    .turnin 8482 >>Turn in Incriminating Documents
-    .target Aeldon Sunbrand
+    #loop
+    .goto 18,59.58,56.85,25,0
+    .goto 18,53.61,64.63,35,0
+    >>Kill the |cRXP_ENEMY_Darkhounds|r. Loot them for the |T134719:0|t[|cRXP_LOOT_Darkhound Blood|r.].
+    .complete 24990,1 --5/5 Darkhound Blood
 step
     #completewith next
     .hs >>Hearth to Brill
     .cooldown item,6948,>0,1
     .use 6948
 step
-    >>To Orgrimmar:
-    .goto 18,60.98,58.84,6,0
-    .goto 18,61.52,59.01,6,0
-    .goto 18,60.73,58.68
-    .zone 85 >>Follow the Arrow) Climb the tower and take the portal to Orgrimmar
+    .goto 18,60.54,51.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r.
+    .turnin 24992 >>Turn in Escaped From Gilneas
+    .turnin 24981 >>Turn in A Thorn in our Side
+    .accept 24993 >>Accept Annihilate the Worgen
+    .target Executor Zygand
+step
+    #loop
+    .goto 18,61.25,53.30,30,0
+    .goto 18,60.02,51.73,30,0
+    .goto 18,58.07,49.02,35,0
+    >>Kill |cRXP_ENEMY_Worgen Infiltrator|r.
+    *|cRXP_WARN_NOTE:|r Look for dust particles appearing on the ground.
+    .complete 24993,1 --5/5 Worgen Infiltrator slain
+    .mob Worgen Infiltrator
+step
+    .goto 18,60.54,51.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Zygand|r.
+    .turnin 24993 >>Turn in Annihilate the Worgen
+    .target Executor Zygand
+step
+    .goto 18,60.13,52.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junior Apothecary Holland|r.
+    .turnin 24990 >>Turn in Darkhound Pounding
+    .accept 24996 >>Accept Holland's Experiment
+    .target Junior Apothecary Holland
+step
+    .goto 18,59.74,53.69,6,0
+    .goto 18,59.94,53.75,6,0
+    .goto 18,60.04,52.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Mountaineer|r.
+    .turnin 24996 >>Turn in Holland's Experiment
+    .target Captured Mountaineer
+step
+    .goto 18,61.65,34.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Jerrod|r.
+    .accept 24994 >>Accept Doom Weed
+    .target Apothecary Jerrod
+step
+    .goto 18,61.61,34.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Crispin|r.
+    .accept 24997 >>Accept Graverobbers
+    .target Apprentice Crispin
+step
+    #completewith RotHideGraverobbersA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Doom Weed|r.
+    .complete 24994,1 --10/10 Doom Weed
+step
+    #completewith RotHideGraverobbersA
+    >>Kill the |cRXP_ENEMY_Rot Hides|r. Loot them for the |T134717:0|t[|cRXP_LOOT_Embalming Ichors|r].
+    .complete 24997,2 --5/5 Rot Hide Mongrel slain
+    .complete 24997,3 --6/6 Embalming Ichor
+    .mob Rot Hide Mongrel
+step
+    #label RotHideGraverobbersA
+    .goto 18,55.25,42.59
+    >>Kill |cRXP_ENEMY_Rot Hide Graverobber|r.
+    .complete 24997,1 --8/8 Rot Hide Graverobber slain
+    .mob Rot Hide Graverobber
+step
+    #completewith next
+    >>Kill the |cRXP_ENEMY_Rot Hides|r. Loot them for the |T134717:0|t[|cRXP_LOOT_Embalming Ichors|r].
+    .complete 24997,2 --5/5 Rot Hide Mongrel slain
+    .complete 24997,3 --6/6 Embalming Ichor
+    .mob Rot Hide Mongrel
+step
+    #loop
+    .goto 18,56.28,43.99,35,0
+    .goto 18,54.85,38.74,35,0
+    .goto 18,58.39,38.14,35,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Doom Weed|r.
+    .complete 24994,1 --10/10 Doom Weed
+step
+    #loop
+    .goto 18,58.62,36.52,30,0
+    .goto 18,60.07,31.69,35,0
+    .goto 18,57.86,31.28,40,0
+    >>Kill the |cRXP_ENEMY_Rot Hide Mongrels|r. Loot them for the |T134717:0|t[|cRXP_LOOT_Embalming Ichors|r].
+    .complete 24997,2 --5/5 Rot Hide Mongrel slain
+    .complete 24997,3 --6/6 Embalming Ichor
+    .mob Rot Hide Mongrel
+step
+    .goto 18,61.65,34.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Jerrod|r.
+    .turnin 24994 >>Turn in Doom Weed
+    .accept 24995 >>Accept Off the Scales
+    .target Apothecary Jerrod
+step
+    .goto 18,61.60,34.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Crispin|r.
+    .turnin 24997 >>Turn in Graverobbers
+    .accept 24998 >>Accept Maggot Eye
+    .accept 24999 >>Accept Planting the Seed of Fear
+    .target Apprentice Crispin
+step
+    #completewith OffTheScalesA
+    #hidewindow
+    #loop
+    .goto 18,65.55,28.52,45,0
+    .goto 18,59.44,27.66,35,0
+    +1
+step
+    #completewith next
+    >>Kill the |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for the |T134304:0|t[|cRXP_LOOT_Vile Fin Scales|r].
+    .complete 24995,1 --5/5 Vile Fin Scale
+    .mob Vile Fin Murloc
+    .mob Vile Fin Oracle
+    .mob Vile Fin Muckdweller
+step
+    >>Run on top of the |cRXP_FRIENDLY_Vile Fin Tadpoles.|r
+    *|cRXP_WARN_NOTE:|r Follow the until they count for the quest.
+    .complete 24999,1 --12/12 Vile Fin Tadpoles frightened
+    .target Vile Fin Tadpole
+step
+    #label OffTheScalesA
+    >>Kill the |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for the |T134304:0|t[|cRXP_LOOT_Vile Fin Scales|r].
+    .complete 24995,1 --5/5 Vile Fin Scale
+    .mob Vile Fin Murloc
+    .mob Vile Fin Oracle
+    .mob Vile Fin Muckdweller
+step
+    .goto 18,58.68,30.85
+    >>Kill |cRXP_ENEMY_Maggot Eye|r. Loot him for |T134296:0|t[|cRXP_LOOT_Maggot Eye's Paw|r].
+    .complete 24998,1 --1/1 Maggot Eye's Paw
+    .mob Maggot Eye
+step
+    .goto 18,61.60,34.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Crispin|r.
+    .turnin 24999 >>Turn in Planting the Seed of Fear
+    .turnin 24998 >>Turn in Maggot Eye
+    .target Apprentice Crispin
+step
+    .goto 18,61.65,34.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Jerrod|r.
+    .turnin 24995 >>Turn in Off the Scales
+    .accept 25031 >>Accept Head for the Mills
+    .target Apothecary Jerrod
+step
+    .goto 18,56.24,27.50,30,0
+    .goto 18,54.60,29.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r.
+    .turnin 25031 >>Turn in Head for the Mills
+    .accept 25003 >>Accept The Family Crypt
+    .target Coleman Farthing
+step
+    #completewith next
+    #label TheHauntedMillsA
+    >>Kill |cRXP_ENEMY_Captain Dargol|r. Loot him for the |T133730:0|t[|cRXP_LOOT_Dargol's Skull|r].
+    .accept 25030 >>Accept The Haunted Mills
+    .mob Captain Dargol
+step
+    #completewith TheHauntedMillsA
+    #title Enter the crypt
+    .goto 18,52.26,26.89,10,0
+    .goto 18,52.25,26.32,8 >>|cRXP_WARN_Follow the arrow into the crypt|r.
+step
+    #requires TheHauntedMillsA
+    .goto 18,52.75,26.36
+    >>Kill |cRXP_ENEMY_Captain Dargol|r. Loot him for the |T133730:0|t[|cRXP_LOOT_Dargol's Skull|r].
+    .accept 25030 >>Accept The Haunted Mills
+    .mob Captain Dargol
+step
+    #completewith next
+    #label TheFamilyCryptA
+    >>Kill |cRXP_ENEMY_Wailing Ancestor|r and |cRXP_ENEMY_Rotting Ancestor|r.
+    .complete 25003,1 --5/5 Wailing Ancestor slain
+    .complete 25003,2 --5/5 Rotting Ancestor slain
+    .mob Wailing Ancestor
+    .mob Rotting Ancestor
+step
+    #completewith TheFamilyCryptA
+    #title Leave the crypt
+    .goto 18,52.26,26.89,10 >>|cRXP_WARN_Leave the crypt.|r
+step
+    #requires TheFamilyCryptA
+    #loop
+    .goto 18,49.76,29.28,35,0
+    .goto 18,51.06,31.86,35,0
+    .goto 18,54.60,29.91,50,0
+    .goto 18,52.26,26.89,20,0
+    >>Kill |cRXP_ENEMY_Wailing Ancestor|r and |cRXP_ENEMY_Rotting Ancestor|r.
+    .complete 25003,1 --5/5 Wailing Ancestor slain
+    .complete 25003,2 --5/5 Rotting Ancestor slain
+    .mob Wailing Ancestor
+    .mob Rotting Ancestor
+step
+    .goto 18,54.59,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r.
+    .turnin 25003 >>Turn in The Family Crypt
+    .turnin 25030 >>Turn in The Haunted Mills
+    .accept 25029 >>Accept Deaths in the Family
+    .accept 25004 >>Accept The Mills Overrun
+    .target Coleman Farthing
+step
+    #completewith DeathsInTheFamilyA
+    >>Kill the |cRXP_ENEMY_Darkeye Bonecaster|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Blackened Skulls|r].
+    >>Kill the |cRXP_ENEMY_Cracked Skull Soldier|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Notched Ribs|r].
+    .complete 25004,2 --3/3 Blackened Skull
+    .complete 25004,1 --5/5 Notched Rib
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
+step
+    .goto 18,45.97,30.21
+    >>Kill the |cRXP_ENEMY_Thurman Agamand|r. Loot him for |T237274:0|t[|cRXP_LOOT_Thurman's Remains|r].
+    .complete 25029,3 --1/1 Thurman's Remains
+    .mob Thurman Agamand
+step
+    .goto 18,45.58,29.54
+    >>Kill the |cRXP_ENEMY_Gregor Agamand|r. Loot him for |T133729:0|t[|cRXP_LOOT_Gregor's Remains|r].
+    .complete 25029,2 --1/1 Gregor's Remains
+    .mob Gregor Agamand
+step
+    .goto 18,48.95,33.91
+    >>Kill the |cRXP_ENEMY_Devlin Agamand|r. Loot him for |T133730:0|t[|cRXP_LOOT_Devlin's Remains|r].
+    .complete 25029,4 --1/1 Devlin's Remains
+    .mob Devlin Agamand
+step
+    #label DeathsInTheFamilyA
+    .goto 18,49.34,36.03
+    >>Kill the |cRXP_ENEMY_Nissa Agamand|r. Loot him for |T134437:0|t[|cRXP_LOOT_Nissa's Remains|r].
+    .complete 25029,1 --1/1 Nissa's Remains
+    .mob Nissa Agamand
+step
+    .goto 18,48.39,34.29
+    >>Kill the |cRXP_ENEMY_Darkeye Bonecaster|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Blackened Skulls|r].
+    >>Kill the |cRXP_ENEMY_Cracked Skull Soldier|r. Loot them for the |T133730:0|t[|cRXP_LOOT_Notched Ribs|r].
+    .complete 25004,2 --3/3 Blackened Skull
+    .complete 25004,1 --5/5 Notched Rib
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
+step
+    .goto 18,54.59,29.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman Farthing|r.
+    .turnin 25004 >>Turn in The Mills Overrun
+    .turnin 25029 >>Turn in Deaths in the Family
+    .accept 25005 >>Accept Speak with Sevren
+    .target Coleman Farthing
+step
+    #completewith next
+    #label SpeakWithSevrenA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r.
+    .turnin 25005 >>Turn in Speak with Sevren
+    .turnin 24982 >>Turn in The New Forsaken
+    .target Magistrate Sevren
+step
+    #completewith SpeakWithSevrenA
+    #title Enter the inn
+    .goto 18,60.82,51.87,10 >>|cRXP_WARN_Follow the arrow into the inn.|r
+step
+    #requires SpeakWithSevrenA
+    .goto 18,60.91,51.10,8,0
+    .goto 18,61.36,51.27,8,0
+    .goto 18,61.00,50.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Sevren|r.
+    .turnin 25005 >>Turn in Speak with Sevren
+    .turnin 24982 >>Turn in The New Forsaken
+    .target Magistrate Sevren
+step
+    .goto 18,60.74,58.67
+    .zone 85 >>Click on the |cRXP_PICK_Portal to Orgrimmar|r.
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.

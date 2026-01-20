@@ -820,6 +820,43 @@ step << Paladin
     .goto Stormwind City,41.385,31.547,15,0
     .goto Stormwind City,39.810,29.788,15,0
     .goto Stormwind City,42.51,33.51,20 >> Travel to |cRXP_FRIENDLY_Duthorian Rall|r inside the Stormwind Cathedral
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .accept 1641 >> Accept The Tome of Divinity
+    .turnin 1641 >> Turn in The Tome of Divinity
+    .target Duthorian Rall
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .accept 1642 >>Accept The Tome of Divinity
+    .use 6775
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1642 >>Turn in The Tome of Divinity
+    .accept 1643 >>Accept The Tome of Divinity
+    .target Duthorian Rall
+step << Human Paladin
+    .goto StormwindClassic,57.08,61.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanie Turner|r
+    .turnin 1643 >> Turn in The Tome of Divinity
+    .accept 1644 >> Accept The Tome of Divinity
+    .turnin 1644 >> Turn in The Tome of Divinity
+    .accept 1780 >> Accept The Tome of Divinity
+    .target Stephanie Turner
+step << Human Paladin
+    .goto StormwindClassic,40.1,29.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1780 >>Turn in The Tome of Divinity
+    .target Duthorian Rall
+    .accept 1781 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto StormwindClassic,38.7,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazin Tenorm|r
+    .turnin 1781 >>Turn in The Tome of Divinity
+    .target Gazin Tenorm
+    .accept 1786 >>Accept The Tome of Divinity
 step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r. He will give you the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r]
@@ -843,10 +880,11 @@ step
     #optional
     .goto Stormwind City,64.201,60.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Gump|r
+    >>|cRXP_WARN_If you do not plan on leveling your |T133971:0|t[Cooking] to at least 50, skip this step|r
     >>|cRXP_BUY_Buy|r |T133849:0|t[Stormwind Seasoning Herbs]
     .collect 2665,1,90,1 --Stormwind Seasoning Herbs (1)
     .target Felicia Gump
-    .skill cooking,<50,1 -- step only displays if skill is 50 or higher than 50
+    --.skill cooking,<50,1 -- step only displays if skill is 50 or higher than 50
 step << Warlock
     #sticky
     #completewith next
@@ -4182,19 +4220,25 @@ step << Shaman
     .goto Duskwood,77.49,44.28
     .fly Westfall>> Fly to Westfall
     .target Felicia Maline
-
---xx
 step << Human Paladin
-    .goto Elwynn Forest,72.7,51.5
-    >>Use the Symbol of Life on Henze Faulk
+    .goto 1429/0,-983.900,-9129.800
+    .use 6866 >> |cRXP_WARN_Use the|r |T133439:0|t[Symbol of Life] |cRXP_WARN_on|r |cRXP_FRIENDLY_Henze Faulk|r
+    .complete 1786,1 -- resurrect Henze Faulk in Elwynn.
+    .target Henze Faulk
+step << Human Paladin
+    .goto 1429/0,-983.900,-9129.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henze Faulk|r
     .turnin 1786 >>Turn in The Tome of Divinity
     .accept 1787 >>Accept The Tome of Divinity
+    .target Henze Faulk
 step << Human Paladin
-    .goto Elwynn Forest,73.5,51.3
-    >>Kill Defias Wizards around the island
+    #loop
+    .goto Elwynn Forest,74.2,46.8,60,0
+    .goto Elwynn Forest,76.6,53.6,60,0
+    .goto Elwynn Forest,73.0,54.2,60,0
+    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r. Loot them for the |cRXP_LOOT_Defias Script|r
     .complete 1787,1 --Defias Script (1)
---xx
-
+    .mob Defias Rogue Wizard
 step << !Shaman
     #completewith next
     .goto Duskwood,28.10,31.46,100 >> Travel towards |cRXP_FRIENDLY_Abercrombie|r in Duskwood
@@ -4385,9 +4429,8 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
     .accept 98 >> Accept The Legend of Stalvan
-    .turnin 101 >> Turn in The Totem of Infliction
     .target Commander Althea Ebonlocke
-step << Shaman
+step
     .goto Duskwood,75.81,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r inside
     .turnin 101 >> Turn in The Totem of Infliction
@@ -4729,10 +4772,17 @@ step << Warlock
 step << Priest/Paladin
     #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step << Human Paladin
+    .goto StormwindClassic,38.7,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazin Tenorm|r
+    .turnin 1787 >>Turn in The Tome of Divinity
+    .target Gazin Tenorm
+    .accept 1788 >>Accept The Tome of Divinity
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
-    .goto StormwindClassic,38.82,31.27,10,0
+    .goto StormwindClassic,38.82,31.27,10,0 << !Human
     .goto StormwindClassic,38.67,32.82
+    .turnin 1788 >>Turn in The Tome of Divinity << Human
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
@@ -4774,19 +4824,6 @@ step
     >>10 |T134026:0|t[Turtle Meat]
     .collect 3712,10,555,1 
     .target Auctioneer Jaxon
-
-
---xx
-step << Human Paladin
-    .goto Stormwind City,38.6,26.7
-    .turnin 1787 >>Turn in The Tome of Divinity
-    .accept 1788 >>Accept The Tome of Divinity
-step << Human Paladin
-    .goto Stormwind City,39.9,29.8
-    .turnin 1788 >>Turn in The Tome of Divinity
---xx
-
-
 step << Druid
     #completewith DruidMount
 	.cast 18960 >> |cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]

@@ -480,7 +480,7 @@ function addon.targeting:GOSSIP_SHOW()
             self:UpdateTargetFrame("target")
             self:UpdateMacro()
 
-            if GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
+            if addon.gameVersion < 120000 and GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
             return
         end
     end
@@ -931,7 +931,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
 
     local markerId = self:GetMarkerIndex(kind, index)
 
-    if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
+    if addon.gameVersion < 120000 and GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
         SetRaidTarget(unitId, markerId)
     end
 end
