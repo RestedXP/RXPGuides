@@ -3473,6 +3473,7 @@ step
     .goto Ashenvale,34.14,53.61,50,0
     .goto Ashenvale,18.43,32.94,50,0
     .goto Ashenvale,11.96,34.28,80 >>Travel toward the Zoram'gar Outpost
+    .subzoneskip 2897
     >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
     .unitscan Astranaar Sentinel
 step
@@ -3482,6 +3483,23 @@ step
     .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
     .target Andruk
     .isQuestAvailable 6442
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
+    .turnin 6562 >>Turn in Trouble in the Deeps
+    .accept 6563 >>Accept The Essence of Aku'Mai
+    .accept 6921 >>Accept Amongst The Ruins
+    .target +Je'neu Sancrea
+    .goto Ashenvale,11.56,34.29
+    .accept 216 >>Accept Between a Rock and a Thistlefur
+    .target +Karang Amakkar
+    .goto Ashenvale,11.90,34.53
+    .accept 6462 >>Accept Troll Charm
+    .target +Mitsuwa
+    .goto Ashenvale,11.65,34.85
+    .accept 6442 >>Accept Naga at the Zoram Strand
+    .target +Marukai
+    .goto Ashenvale,11.69,34.90
+    .dungeon BFD
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
     .turnin 6562 >>Turn in Trouble in the Deeps
@@ -3497,6 +3515,7 @@ step
     .accept 6442 >>Accept Naga at the Zoram Strand
     .target +Marukai
     .goto Ashenvale,11.69,34.90
+    .dungeon !BFD
 step
     #softcore
     .goto Ashenvale,12.06,34.63
@@ -3540,34 +3559,39 @@ step
     .complete 6641,1 --Defeat Vorsha the Lasher
     .mob Vorsha the Lasher
 step
+    #sticky
+    #completewith EnterBFD
+    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps
+    .dungeon BFD
+step
     #loop
-	.goto Ashenvale,10.86,26.99,0
-	.goto Ashenvale,10.86,26.99,50,0
-	.goto Ashenvale,11.23,25.73,50,0
-	.goto Ashenvale,11.83,25.75,50,0
-	.goto Ashenvale,12.51,24.09,50,0
-	.goto Ashenvale,14.18,24.03,50,0
-	.goto Ashenvale,14.85,23.08,50,0
-	.goto Ashenvale,14.13,20.77,50,0
-	.goto Ashenvale,14.73,19.56,50,0
-	.goto Ashenvale,14.59,17.90,50,0
-	.goto Ashenvale,13.38,16.39,50,0
-	.goto Ashenvale,13.62,14.48,50,0
-	.goto Ashenvale,14.15,15.31,50,0
-	.goto Ashenvale,15.88,15.42,50,0
-	.goto Ashenvale,15.40,16.96,50,0
-	.goto Ashenvale,15.22,18.81,50,0
-	.goto Ashenvale,15.33,20.78,50,0
-	.goto Ashenvale,15.33,22.51,50,0
-	.goto Ashenvale,15.32,24.90,50,0
-	.goto Ashenvale,14.76,25.52,50,0
-	.goto Ashenvale,14.62,26.49,50,0
-	.goto Ashenvale,14.52,28.25,50,0
-	.goto Ashenvale,13.55,29.36,50,0
-	.goto Ashenvale,12.41,29.15,50,0
-	.goto Ashenvale,11.22,31.04,50,0
-	.goto Ashenvale,10.38,29.60,50,0
-	.goto Ashenvale,11.01,28.57,50,0
+    .goto Ashenvale,10.86,26.99,0
+    .goto Ashenvale,10.86,26.99,50,0
+    .goto Ashenvale,11.23,25.73,50,0
+    .goto Ashenvale,11.83,25.75,50,0
+    .goto Ashenvale,12.51,24.09,50,0
+    .goto Ashenvale,14.18,24.03,50,0
+    .goto Ashenvale,14.85,23.08,50,0
+    .goto Ashenvale,14.13,20.77,50,0
+    .goto Ashenvale,14.73,19.56,50,0
+    .goto Ashenvale,14.59,17.90,50,0
+    .goto Ashenvale,13.38,16.39,50,0
+    .goto Ashenvale,13.62,14.48,50,0
+    .goto Ashenvale,14.15,15.31,50,0
+    .goto Ashenvale,15.88,15.42,50,0
+    .goto Ashenvale,15.40,16.96,50,0
+    .goto Ashenvale,15.22,18.81,50,0
+    .goto Ashenvale,15.33,20.78,50,0
+    .goto Ashenvale,15.33,22.51,50,0
+    .goto Ashenvale,15.32,24.90,50,0
+    .goto Ashenvale,14.76,25.52,50,0
+    .goto Ashenvale,14.62,26.49,50,0
+    .goto Ashenvale,14.52,28.25,50,0
+    .goto Ashenvale,13.55,29.36,50,0
+    .goto Ashenvale,12.41,29.15,50,0
+    .goto Ashenvale,11.22,31.04,50,0
+    .goto Ashenvale,10.38,29.60,50,0
+    .goto Ashenvale,11.01,28.57,50,0
     >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
     .complete 6442,1 --Wraithtail Head (20)
     .mob Wrathtail Razortail
@@ -3600,6 +3624,13 @@ step
     .mob Blackfathom Tide Priestess
     .use 16790
 step
+    #completewith EnterBFD
+    .goto Ashenvale,11.56,34.29,0
+    >>|cRXP_WARN_Optionally talk to|r |cRXP_FRIENDLY_Je'neu Sancrea|r |cRXP_WARN_back at Zoram'gar Outpost to get another BFD follow-up quest|r
+    .turnin 6564 >>Turn in Allegiance to the Old Gods
+    .accept 6565 >>Accept Allegiance to the Old Gods
+    .target Je'neu Sancrea
+step
     #label Sapphires
     #loop
     .goto Kalimdor,44.34,35.11,0
@@ -3612,9 +3643,56 @@ step
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,44.34,35.11,20,0
     >>Loot |cRXP_LOOT_Sapphire of Aku'Mai|r from the wall
-    .complete 6563,1 --Sapphire of Aku'Mai (20)
+    .complete 6563,1 --Sapphire of Aku'Mai (20
+step
+    #label EnterBFD
+    .goto Kalimdor,44.36,34.86
+    .subzone 2797,2 >> Make your way to the BFD Instance Portal. Zone in
+    .dungeon BFD
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Guard Thaelrid|r
+    .accept 6561 >>Accept Blackfathom Villainy
+    .target Argent Guard Thaelrid
+    .dungeon BFD
+step
+    >>Kill |cRXP_ENEMY_Lorguss Jett |r
+    .complete 6565,1 --Lorguss Jett slain (1)
+    .mob Lorguss Jett
+    .isOnQuest 6565
+    .dungeon BFD
 step
     #completewith next
+    >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
+    >>|cRXP_WARN_Looting this will spawn|r |cRXP_ENEMY_Baron Aquanis|r
+    .complete 6921,1 --Fathom Core (1)
+    .isOnQuest 6921
+    .dungeon BFD
+step
+    >>Kill |cRXP_ENEMY_Baron Aquanis|r. Loot him for a |T136222:0|t[|cRXP_LOOT_Strange Water Globe|r]. Use it to accept the quest
+    .collect 16782,1,6782 --Strange Water Globe (1)
+    .accept 6922 >>Accept Baron Aquanis
+    .mob Baron Aquanis
+    .use 16782
+    .dungeon BFD
+step
+    >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
+    .complete 6921,1 --Fathom Core (1)
+    .isOnQuest 6921
+    .dungeon BFD
+step
+    >>Kill |cRXP_ENEMY_Twilight Lord Kelris|r. Loot him for his |cRXP_LOOT_Head|r
+    .complete 6561,1 --Head of Kelris (1)
+    .mob Twilight Lord Kelris
+    .isOnQuest 6561
+    .dungeon BFD
+step
+    #completewith BFDTurnins
+    .zone Ashenvale >>Exit the dungeon
+    >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_first if you wish. This is the last boss of the dungeon|r
+    .dungeon BFD
+step
+    #optional
+    #completewith ZoramTurnins
     .subzone 2897 >>Travel to Zoram''gar Outpost
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r and |cRXP_FRIENDLY_Marukai|r
@@ -3630,6 +3708,31 @@ step
     .turnin 6563 >>Turn in The Essence of Aku'Mai
     .turnin 6564 >>Turn in Allegiance to the Old Gods
     .target Je'neu Sancrea
+step
+    .goto Ashenvale,11.56,34.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 6565 >>Turn in Allegiance to the Old Gods
+    .target Je'neu Sancrea
+    .dungeon BFD
+    .isQuestComplete 6565
+step
+    .goto Ashenvale,11.56,34.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 6921 >>Turn in Amongst The Ruins
+    .target Je'neu Sancrea
+    .dungeon BFD
+    .isQuestComplete 6521
+step
+    #label BFDTurnins
+    .goto Ashenvale,11.56,34.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 6922 >>Turn in Baron Aquanis
+    .target Je'neu Sancrea
+    .dungeon BFD
+    .isQuestComplete 6922
+step
+    #optional
+    #label ZoramTurnins
 step << Druid
     #completewith DruidTraining3
     .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
@@ -3709,6 +3812,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha|r
     .accept 1064 >>Accept Forsaken Aid
     .target Magatha Grimtotem
+step
+    .goto Thunder Bluff,71.04,34.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bashana|r
+    .turnin 6561 >>Turn in Blackfathom Villainy
+    .target Bashana Runetotem
+    .isQuestComplete 6561
+    .dungeon BFD
 step
     #label JourneytoTM
     .goto Thunder Bluff,22.82,20.88
