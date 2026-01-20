@@ -26166,9 +26166,14 @@ step
     .turnin 25005 >>Turn in Speak with Sevren
     .turnin 24982 >>Turn in The New Forsaken
     .target Magistrate Sevren
+-- step
+--     .goto 18,60.74,58.67
+--     .zone 85 >>Click on the |cRXP_PICK_Portal to Orgrimmar|r.
 step
-    .goto 18,60.74,58.67
-    .zone 85 >>Click on the |cRXP_PICK_Portal to Orgrimmar|r.
+    .zoneskip 18,1
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
