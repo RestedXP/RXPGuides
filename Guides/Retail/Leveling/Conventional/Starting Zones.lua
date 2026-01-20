@@ -25638,7 +25638,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Undead Eversong Woods
-#displayname |cFF00CCFF2|r - Eversong Woods
+#displayname |cFF00CCFF2|r - Tirisfal Glades
 #next b1) BfA Intro
 #defaultfor Undead !DK
 
