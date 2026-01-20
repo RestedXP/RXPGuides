@@ -28450,7 +28450,7 @@ step
     .goto 85,54.82,89.78,8,0
     .goto 85,54.75,86.91,8,0
     .goto 85,56.10,87.18,8,0
-    .goto 85,57.85,89.81
+    .goto 85,57.01,89.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
