@@ -614,6 +614,7 @@ step << Alliance
 --    .subzoneskip 37,1
 --    .isOnQuest 7905
 --     .dmf
+step << Horde
 step
     .goto 407,52.78,28.82,20,0
     .goto 407,52.99,38.99,20,0
@@ -900,10 +901,15 @@ step
     .dmf
     .isOnQuest 29444
 step << Alliance
-    .isOnQuest 65435
+    .isOnQuest 65436
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .dmf
+step << Horde
+    .isOnQuest 65435
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Orgrimmar.
+    .complete 65435,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf
 -- step << Alliance KulTiran
 --     .zoneskip 1161
 --     .hs >>Use |T134414:0|t[Hearthstone] to Boralus.

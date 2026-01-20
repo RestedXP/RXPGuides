@@ -53,6 +53,15 @@ local defaultGuideList = {
     [627] = "RestedXP Legion Remix\\a) Intro",
 }
 
+do
+    local faction = UnitFactionGroup("player")
+    if faction == "Alliance" then
+        defaultGuideList[3445] = "RestedXP Speed Leveling\\a) Exile's Reach Alliance"
+    elseif faction == "Horde" then
+        defaultGuideList[3445] = "RestedXP Speed Leveling\\a) Exile's Reach Horde"
+    end
+end
+
 function addon.GetDefaultGuide()
     local played
     if not addon.tracker.waitingForTimePlayed then
