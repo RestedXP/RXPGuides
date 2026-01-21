@@ -3575,6 +3575,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loremaster Dibbs|r
     .turnin 538 >> Turn in Southshore
     .target Loremaster Dibbs
+step
+    #completewith SSFP
+    .subzone 271 >> Travel to Southshore
 step << Hunter
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wesley|r
@@ -3668,11 +3671,11 @@ step << Hunter
     .accept 563 >> Accept Reassignment
     .target Lieutenant Farren Orinelle
 step
+    #label SSFP
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
     .goto Hillsbrad Foothills,49.338,52.272
     .fp Southshore >>Get the Southshore Flight Path
     .target Darla Harris
-    .zoneskip Hillsbrad Foothills,1
 step
     #completewith next
     .goto Hillsbrad Foothills,56.8,50.2,85,0

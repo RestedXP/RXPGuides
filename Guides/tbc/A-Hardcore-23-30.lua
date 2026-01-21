@@ -3861,6 +3861,14 @@ step
     .target Cedrik Prose
     .zoneskip Arathi Highlands,1
 step
+    #completewith SSFP
+    .goto 1417/0,-2382.900,-1451.500,70,0
+    .goto 1417/0,-1775.100,-1275.000,70,0
+    .goto 1424/0,-1548.300,-804.400,70,0
+    .subzone 271 >> Travel to Southshore
+    >>|cRXP_WARN_NOTE: As you travel there along the road, watch out for the |cRXP_ENEMY_Forsaken Courier|r. It is a 5 pack of mobs which patrols the road you will be on. Avoid them if you see them|r
+    .mob Forsaken Courier
+step
     .goto Hillsbrad Foothills,50.71,58.76,15,0
     .goto Hillsbrad Foothills,52.09,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmeister Bilger|r in the basement
@@ -3876,11 +3884,11 @@ step
     .turnin 538 >> Turn in Southshore
     .target Loremaster Dibbs
 step
+    #label SSFP
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
     .goto Hillsbrad Foothills,49.338,52.272
     .fp Southshore >>Get the Southshore Flight Path
     .target Darla Harris
-    .zoneskip Hillsbrad Foothills,1
 step
     #completewith next
     .goto Hillsbrad Foothills,56.8,50.2,85,0
