@@ -2802,15 +2802,5 @@ step << Paladin
     .trainer >>Train your class spells
 	.target Ithelis
 	.target Osselan
-step
-    #completewith next
-    .goto Silvermoon City,78.28,59.34,8,0
-    .goto Silvermoon City,78.36,60.14,8 >> Go inside the Inn
-step
-    .goto Silvermoon City,79.50,58.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suntouched|r
-    >>|cRXP_BUY_Buy the|r |T132798:0|t[Suntouched Special Reserve] |cRXP_BUY_from him|r
-    .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
-    .target Vinemaster Suntouched
 
 ]])

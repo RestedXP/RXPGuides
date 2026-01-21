@@ -162,7 +162,7 @@ step << Warlock
     .goto Orgrimmar,48.25,45.27
     .turnin 1507 >> Turn in Devourer of Souls
     .accept 1508 >> Accept Blind Cazul
-    .accept 65601 >> Accept Love Hurts
+    --.accept 65601 >> Accept Love Hurts
     .target +Cazul
     .goto Orgrimmar,47.05,46.43
 step << Warlock
@@ -179,14 +179,14 @@ step << Warlock
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
     .target Zankaja
-step << Warlock
+step << skip --Warlock
     #completewith next
     .goto Orgrimmar,42.01,63.34,30,0
     .goto Orgrimmar,52.99,57.59,30,0
     .goto Orgrimmar,55.88,56.81,30,0
     .goto Orgrimmar,61.49,50.55,15,0
     .goto Orgrimmar,63.65,49.93,15 >> Travel toward |cRXP_FRIENDLY_Magar|r
-step << Warlock
+step << skip --Warlock
     .goto Orgrimmar,63.65,49.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magar|r
     .turnin 65601 >> Turn in Love Hurts
@@ -1810,6 +1810,7 @@ step
     .turnin 6564 >>Turn in Allegiance to the Old Gods
     .accept 6565 >>Accept Allegiance to the Old Gods
     .target Je'neu Sancrea
+    .dungeon BFD
 step
     #label Sapphires
     #loop

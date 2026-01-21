@@ -2031,7 +2031,7 @@ step
     .accept 9402 >> Accept Fetch! << Mage
     .target Instructor Antheol
 step << Mage
-    .goto Eversong Woods,54.98,56.43
+    .goto Eversong Woods,54.87,56.37
     >>Loot the |cRXP_PICK_Azure Phial|r underwater
     .complete 9402,1 --Azure Phial (1)
 step << Mage
@@ -2155,10 +2155,10 @@ step << Orc/Troll/Tauren
 step << Troll Mage
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antheol|r
-    .accept 9403 >>Accept The Purest Water
+    .accept 9402 >>Accept Fetch!
     .target Instructor Antheol
 step << Troll Mage
-    .goto Eversong Woods,54.69,56.23
+    .goto Eversong Woods,54.87,56.37
     >>Loot the |cRXP_PICK_Azure Phial|r underwater
     .complete 9402,1 --Azure Phial (1)
 step << Troll Mage
@@ -2423,7 +2423,7 @@ step
     #label AmaniTurnins
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 8476 >> Turn in Amani Encroachment
+    .turnin 8476 >> Turn in Amani Encroachment << !Troll
     .turnin 9360 >> Turn in Amani Invasion
     .accept 9363 >> Accept Warning Fairbreeze Village
     .turnin 9485 >> Turn in Taming the Beast << BloodElf Hunter
@@ -2655,7 +2655,6 @@ step << Druid
 	.xp <12,1
 	.xp >14,1
 step << Druid
-    #label SMtraining01
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harene|r
@@ -2702,7 +2701,6 @@ step << Priest
 	.xp <12,1
 	.xp >14,1
 step << Priest
-    #label SMtraining01
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 8122 >> Train your class spells
@@ -2719,7 +2717,6 @@ step << Mage
 	.xp <12,1
 	.xp >14,1
 step << Mage
-    #label SMtraining01
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
     .train 1460 >> Train your class spells
@@ -2800,7 +2797,6 @@ step << Rogue
     .goto Silvermoon City,78.28,59.34,8,0
     .goto Silvermoon City,78.36,60.14,8 >> Go inside the Inn
 step << Rogue
-    #label SMtraining01
     .goto Silvermoon City,79.50,58.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suntouched|r
     >>|cRXP_BUY_Buy a|r |T132798:0|t[Suntouched Special Reserve] |cRXP_BUY_from him|r
@@ -2908,7 +2904,6 @@ step << BloodElf Hunter
     .train 4187 >> Train your pet spells
     .target Halthenis
 step << Hunter
-    #label SMtraining01
     .goto Silvermoon City,82.39,26.09 << BloodElf
     .goto Silvermoon City,84.71,28.05 << !BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tana|r << BloodElf
@@ -3049,6 +3044,9 @@ step << BloodElf Hunter
     .accept 9135 >> Accept Return to Quartermaster Lymel
     .target Skymistress Gloaming
     .zoneskip Ghostlands
+step
+    #optional
+    #label SMtraining01
 step << BloodElf !Hunter !Warlock/Undead
     #completewith Defending
     .hs >> Hearth to Falconwing Square
@@ -3392,7 +3390,7 @@ step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwing|r
     .fp Tranquillien >> Get the Tranquillien flight path
     .target Skymaster Sunwing
-step << BloodElf !Hunter
+step
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.77,32.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mavren|r
@@ -3413,7 +3411,7 @@ step << BloodElf Warlock
     .home >> Set your Hearthstone to Tranquillien
     .target Innkeeper Kalarin
     .bindlocation 3488
-step << !BloodElf/!Hunter
+step
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r
@@ -3497,7 +3495,7 @@ step << BloodElf Warlock
     .hs >> Hearth to Tranquillien
     .bindlocation 3488,1
     .subzoneskip 3488
-step << !BloodElf/!Hunter
+step
     .goto Ghostlands,47.23,28.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathis|r
     .accept 9152 >> Accept Tomber's Supplies
@@ -3614,6 +3612,9 @@ step
     .complete 9143,1 --Collect Zeb'Sora Troll Ear (x6)
     .mob Shadowpine Ripper
     .mob Shadowpine Witch
+step
+    #completewith next
+    .subzone 3496 >>Travel to Farstrider Enclave
 step
     .goto Ghostlands,73.48,32.15,15,0
     .goto Ghostlands,72.50,32.14
@@ -4155,29 +4156,7 @@ step << Rogue
     .accept 9150 >>Accept Salvaging the Past
     .target +Magister Darenis
     .goto Ghostlands,46.02,31.95
-step << Druid
-	#completewith DruidTrain1
-	.cast 18960 >> Cast Teleport: Moonglade
-	.zoneskip Moonglade
-	.xp <14,1
-step << Druid
-    #optional
-    .goto Moonglade,52.53,40.57
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .train 782 >> Train your class spells
-	.target Loganaar
-    .cooldown item,6948,>0
-	.xp <14,1
-    .xp >16,1
-step << Druid
-    #label DruidTrain1
-    .goto Moonglade,52.53,40.57
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .train 8925 >> Train your class spells
-	.target Loganaar
-    .cooldown item,6948,>0
-	.xp <16,1
-step << !Shaman !Warrior !Druid !BloodElf/!Warlock !Rogue
+step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock !Rogue
     #completewith SMTraining2
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwing|r
@@ -4199,7 +4178,6 @@ step << Rogue
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cRXP_FRIENDLY_Zelanis|r
     .xp <16,1
 step << Rogue
-    #label SMTraining2
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     .accept 10372 >> Accept A Discreet Inquiry
@@ -4363,7 +4341,6 @@ step << Priest
 	.xp <14,1
 	.xp >16,1
 step << Priest
-    #label SMTraining2
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 8102 >> Train your class spells
@@ -4378,7 +4355,6 @@ step << Mage
 	.xp <14,1
 	.xp >16,1
 step << Mage
-    #label SMtraining2
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
     .train 2120 >> Train your class spells
@@ -4392,7 +4368,6 @@ step << !BloodElf Warlock
     .goto Silvermoon City,75.65,45.04,15,0
     .goto Silvermoon City,76.33,43.33,12 >>Go inside the building, then go downstairs
 step << !BloodElf Warlock
-    #label SMTraining2
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 6222 >> Train your class spells
@@ -4409,7 +4384,7 @@ step << BloodElf Priest
     .accept 9135 >> Accept Return to Quartermaster Lymel
     .target Skymistress Gloaming
     .zoneskip Ghostlands
-step << !Shaman !Warrior !BloodElf/!Warlock !Paladin !Rogue
+step << !Paladin !Shaman !Warrior !BloodElf/!Warlock !Paladin !Rogue
     #completewith ManaEssence
     .hs >> Hearth to Tranquillien
     .zoneskip Ghostlands
@@ -4418,7 +4393,10 @@ step << !Shaman !Warrior !BloodElf/!Warlock !Paladin !Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
     .bindlocation 3488,1
     .subzoneskip 3488
-step << !Shaman !Warrior !Druid !BloodElf/!Warlock !Paladin !Rogue
+step
+    #optional
+    #label SMTraining2
+step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock !Paladin !Rogue
     #completewith next
     .goto Eversong Woods,56.52,49.83
     .zone Eversong Woods >> Exit Silvermoon
@@ -4426,7 +4404,7 @@ step << !Shaman !Warrior !Druid !BloodElf/!Warlock !Paladin !Rogue
     .cooldown item,6948,<0
     .itemStat 16,QUALITY,<7 << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8 << Rogue
-step << !Shaman !Warrior !Druid !BloodElf/!Warlock !Paladin
+step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock !Paladin
     #completewith ManaEssence
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gloaming|r
@@ -4827,7 +4805,45 @@ step
     .mob +Risen Hungerer
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .mob +Gangled Cannibal
-    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)d
+    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+
+
+
+step
+    .xp 16-5510
+step
+    .xp 16-6560
+    .itemcount 22644,5
+    .isQuestAvailable 9171
+step
+    .xp 16-8010
+    .isQuestComplete 9156
+step
+    .xp 16-9060
+    .isQuestComplete 9156
+    .itemcount 22644,5
+    .isQuestAvailable 9171
+
+
+
+    5510
+
+    6560
+    
+    8010
+
+    9060
+
+
+
+
+
+
+    #optional
+    1050 --9171
+    2500 --9156
+
+
 step
     #completewith TranqVisit3
     .subzone 3488 >> Travel to Tranquillien
@@ -5061,6 +5077,11 @@ step
     #completewith Clearing
     #optional
     .destroy 22580 >>|cRXP_WARN_Destroy|r |T134137:0|t[Crystallized Mana Essence] |cRXP_WARN_as it's no longer needed for anything|r
+step
+    #optional
+    .xp 16 >>Grind until you are level 16 now if you wish
+    >>|cRXP_WARN_This will allow you to train level 16 skills in Silvermoon momentarily|r << !Druid
+    >>|cRXP_WARN_This will allow you to train level 16 skills momentarily|r << Druid
 step << Druid
 	#completewith DruidTrain2
 	.cast 18960 >> Cast Teleport: Moonglade
@@ -5124,7 +5145,6 @@ step << Rogue
     .target Zelanis
     .train 1804,1
 step << Rogue
-    #label SMTraining3
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     .turnin 9618 >> Turn in Return the Reports << BloodElf
@@ -5239,7 +5259,6 @@ step << Priest
 	.xp <16,1
 	.xp >18,1
 step << Priest
-    #label SMTraining3
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 970 >> Train your class spells
@@ -5247,7 +5266,14 @@ step << Priest
     .train 8102,1
 	.xp <18,1
 step << Mage
-    #label SMTraining3
+    #optional
+    .goto Silvermoon City,57.16,18.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
+    .train 2120 >> Train your class spells
+    .target Zaedana
+	.xp <16,1
+	.xp >18,1
+step << Mage
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
     .train 3140 >> Train your class spells
@@ -5292,7 +5318,6 @@ step << Hunter
 	.xp <16,1
 	.xp >18,1
 step << Hunter
-    #label SMTraining3
     .goto Silvermoon City,84.71,28.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zandine|r
     .train 14318 >> Train your class spells
@@ -5321,10 +5346,9 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 6222 >> Train your class spells
     .target Talionia
-    .xp <14,1
+    .xp <16,1
     .xp >18,1
 step << Warlock
-    #label SMTraining3
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 1014 >> Train your class spells
@@ -5353,7 +5377,6 @@ step << Paladin
     .xp <14,1
     .xp >16,1
 step << Paladin
-    #label SMTraining3
     .goto Silvermoon City,91.74,35.35,12,0
     .goto Silvermoon City,92.20,37.52
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bachi|r
@@ -5411,7 +5434,6 @@ step << Paladin
     .xp <14,1
     .xp >16,1
 step << Paladin
-    #label SMTraining3
     .goto Silvermoon City,91.19,36.94,-1
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cRXP_WARN_Jump onto one of the benches below to avoid walking up the stairs|r
@@ -5437,6 +5459,31 @@ step << Paladin
     .complete 9685,1 --Resurrect Sangrias Stillblade (1)
     .target Blood Knight Stillblade
     .use 24184
+step
+    #optional
+    #label SMTraining3
+step << Druid
+	#completewith DruidTrain1
+	.cast 18960 >> Cast Teleport: Moonglade
+	.zoneskip Moonglade
+	.xp <14,1
+step << Druid
+    #optional
+    .goto Moonglade,52.53,40.57
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 782 >> Train your class spells
+	.target Loganaar
+    .cooldown item,6948,>0
+	.xp <14,1
+    .xp >16,1
+step << Druid
+    #label DruidTrain1
+    .goto Moonglade,52.53,40.57
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 8925 >> Train your class spells
+	.target Loganaar
+    .cooldown item,6948,>0
+	.xp <16,1
 step << !Shaman !Warrior !Rogue
     #completewith Clearing
     .hs >> Hearth to Tranquillien
@@ -5896,7 +5943,6 @@ step << Rogue
     .train 1804,1
     .xp <16,1
 step << Rogue
-    #label SMTraining4
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     .turnin 9618 >> Turn in Return the Reports << BloodElf
@@ -6021,7 +6067,6 @@ step << Priest
 	.xp <16,1
 	.xp >18,1
 step << Priest
-    #label SMTraining4
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 970 >> Train your class spells
@@ -6029,7 +6074,6 @@ step << Priest
     .train 8102,1
 	.xp <18,1
 step << Mage
-    #label SMTraining4
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
     .train 3140 >> Train your class spells
@@ -6073,7 +6117,6 @@ step << Hunter
 	.xp <16,1
 	.xp >18,1
 step << Hunter
-    #label SMTraining4
     .goto Silvermoon City,84.71,28.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zandine|r
     .train 14318 >> Train your class spells
@@ -6156,7 +6199,6 @@ step << Warlock
     .xp <14,1
     .xp >18,1
 step << Warlock
-    #label SMTraining4
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 1014 >> Train your class spells
@@ -6190,7 +6232,6 @@ step << Paladin
     .xp <14,1
     .xp >16,1
 step << Paladin
-    #label SMTraining4
     .goto Silvermoon City,91.19,36.94,-1
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cRXP_WARN_Jump onto one of the benches below to avoid walking up the stairs|r
@@ -6200,6 +6241,9 @@ step << Paladin
 	.target Ithelis
 	.target Osselan
 	.xp <16,1
+step
+    #optional
+    #label SMTraining4
 step << !Rogue
     .hs >> Hearth to Tranquillien
     .cooldown item,6948,>0
@@ -8249,7 +8293,6 @@ step << Priest/Mage
     .goto Silvermoon City,55.38,26.76,12 >> Travel toward |cRXP_FRIENDLY_Lotheolan|r << Priest
     .goto Silvermoon City,57.16,18.85,12 >> Travel toward |cRXP_FRIENDLY_Zaedana|r << Mage
 step << Priest
-    #label SMTraining5
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 7128 >> Train your class spells
@@ -8260,7 +8303,6 @@ step << Mage
     .train 1953 >> Train your class spells
     .target Zaedana
 step << Mage
-    #label SMTraining5
     .goto Silvermoon City,58.07,20.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narinth|r
     .train 32272 >> Train |T135761:0|t[Teleport: Silvermoon]
@@ -8274,7 +8316,6 @@ step << Hunter
     .goto Silvermoon City,83.45,28.56,15,0
     .goto Silvermoon City,84.71,28.05,15 >>Travel toward |cRXP_FRIENDLY_Zandine|r
 step << Hunter
-    #label SMTraining5
     .goto Silvermoon City,84.71,28.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zandine|r
     .train 14282 >> Train your class spells
@@ -8310,7 +8351,6 @@ step << Warlock TBC
     .itemcount 16346,1
     .train 20317,1
 step << Warlock
-    #label SMTraining5
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 5784 >> Train |T136103:0|t[Summon Felsteed] << wotlk
@@ -8388,7 +8428,6 @@ step << Rogue
     .xp <22,1
     .xp >24,1
 step << Rogue
-    #label SMTraining5
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Make sure you've trained|r |T132282:0|t[Ambush] |cRXP_WARN_and|r |T132302:0|t[Rupture] |cRXP_WARN_for a quest later|r << tbc
@@ -8589,13 +8628,13 @@ step << Paladin
     .xp <22,1
     .xp >24,1
 step << Paladin
-    #label SMTraining5
     .goto Undercity,58.00,90.46
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyssa|r
     .train 5588 >>Train your class spells
 	.target Champion Cyssa Dawnrose
     .xp <24,1
 step
+    #label SMTraining5
     #optional
     .abandon 9167 >>Abandon The Traitor's Destruction
 step
