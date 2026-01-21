@@ -69,7 +69,7 @@ level -- Arctic Reach (Rank 2)
     .talent 3,4,1,2
 
 level -- Cold Snap
-    .talent 3,3,2,1
+    .talent 3,5,2,1
 
 level -- Shatter (Rank 1)
     .talent 3,4,3,1
