@@ -64,6 +64,8 @@ local function applies(textEntry,customClass,func)
                         entry = "RETAIL"
                     elseif faction == "Neutral" and not customClass and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
+                    elseif uppercase == "Haranir" then
+                        entry = "Harronir"
                     end
                     local customCheck = func and func(entry, uppercase)
                     v = (not(gendercheck or uppercase == class or entry == race or

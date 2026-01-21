@@ -170,6 +170,7 @@ local settingsDBDefaults = {
 
         -- Targeting
         enableTargetAutomation = true,
+        enableMaxNameplateDistance = true,
         enableTargetMacro = true,
         notifyOnTargetUpdates = true,
 
@@ -1738,6 +1739,16 @@ function addon.settings:CreateAceOptionsPanel()
                                 not InCombatLockdown() then
                                 addon.targeting.activeTargetFrame:Hide()
                             end
+                        end
+                    },
+                    enableMaxNameplateDistance = {
+                        name = L("Maximize Nameplate Distance"),
+                        desc = L("Automatically maximize nameplate visibility distance for better target detection (Requires reload)"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 0.1,
+                        disabled = function()
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     markersHeader = {
@@ -3755,6 +3766,29 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         local warbandBuff = C_UnitAuras.GetPlayerAuraBySpellID(430191)
         --1,2: xp buff, 3: max level
         local warbandBonus = warbandBuff and warbandBuff.points[1] or 0
+        local function AchComplete(id)
+            local _, _, _, completed = GetAchievementInfo(id)
+            return completed
+        end
+        if addon.game == "RETAIL" and warbandBonus == 0 then
+            --TODO: fix it from the midnight beta
+            if UnitLevel('player') <= 80 then
+                warbandBonus =
+            --Midnight:
+                        AchComplete(42332) and 25 or
+                        AchComplete(42331) and 20 or
+                        AchComplete(42330) and 15 or
+                        AchComplete(42329) and 10 or
+                        AchComplete(42328) and 5 or
+            --War within:
+                        AchComplete(19477) and 25 or
+                        AchComplete(19476) and 20 or
+                        AchComplete(19475) and 15 or
+                        AchComplete(19460) and 10 or
+                        AchComplete(19470) and 5 or
+                        0
+            end
+        end
         local legionRemix = C_UnitAuras.GetPlayerAuraBySpellID(1232454)
         legionRemix = legionRemix and legionRemix.points[10] or 0
         calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus + legionRemix)/100
