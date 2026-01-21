@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Allied Races
 #name a) UNLOCKING
 #displayname Unlocking
-#chapters a) Void Elf Unlock 1;a) Lightforged Draenei Unlock 1;a) DarkIronDwarf Unlock 1;a) KulTiran Unlock 1;a) Mechagnome Unlock 1 << Alliance
+#chapters a) Void Elf Unlock 1;a) Lightforged Draenei Unlock 1;a) DarkIronDwarf Unlock 1;a) KulTiran Unlock 1;a) Mechagnome Unlock 1;a) Void Elf DH << Alliance
 #chapters a) Nightborne Unlock 1;a) Highmountain Tauren Unlock 1;a) Maghar Orc Unlock 1;a) Zandalari Troll Unlock 1;a) Vulpera Unlock 1 << Horde
 ]])
 
@@ -1030,6 +1030,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Miscellaneous
 #name a) Mechagnome Unlock 1
 #displayname |cFF00CCFF5|r - Mechagnome
+#next a) Void Elf DH
 #chapter
 
 << Alliance !Mechagnome
@@ -1398,6 +1399,419 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 57497 >>Turn in Propagate the News
     .target Aysa Cloudsinger
+]])
+---VoidElf DH
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Miscellaneous
+#name a) Void Elf DH
+#displayname |cFF00CCFF6|r - Void Elf Demon Hunter
+#chapter
+
+step
+    #completewith next
+    #label Shadowy Invitation
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r in Dornogal.
+    .accept 84956 >>Accept A Shadowy Invitation
+    .turnin 84956 >>Turn in A Shadowy Invitation
+    .target Locus-Walker
+    .accept 84957 >>Accept Return to the Veiled Market
+    .disablecheckbox
+step
+    #completewith Shadowy Invitation
+    .zone 2339 >>Enter Dornogal
+step
+    #requires Shadowy Invitation
+    .goto 2339,42.11,26.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r in Dornogal.
+    .accept 84956 >>Accept A Shadowy Invitation
+    .turnin 84956 >>Turn in A Shadowy Invitation
+    .target Locus-Walker
+    .accept 84957 >>Accept Return to the Veiled Market
+    .timer 23,RP
+step
+    .goto 2339,40.41,22.89
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 84957,1 --1/1 Follow Locus-Walker
+step
+    .goto 2339,40.30,22.71
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 84957,2 --1/1 Take the Spatial Rift to Tazavesh
+step
+    .isQuestAvailable 90972
+    .isQuestTurnedIn account,84959
+    .goto 2371,75.87,33.11,-1 -- The Oasis
+    .goto 2371,77.17,48.93,-1 -- North Sufaad
+    .goto 2472,46.79,56.86,-1 -- Tazavesh, the Veiled Market
+    .goto 2371,45.21,23.91,-1 -- Shadow Point
+    .goto 2371,56.20,21.51,-1 -- Fracture of Laacuna
+    .goto 2371,53.92,26.75,-1 -- Untethered Space
+    .goto 2371,50.41,36.40,-1 -- Overlook Zo'Shuul
+    .goto 2371,51.21,48.56,-1 -- Serrated Peaks
+    .goto 2371,60.21,29.05,-1 -- Shan'dorah
+    .goto 2371,58.90,57.89,-1 -- Naakroa
+    .goto 2371,53.85,63.61,-1 -- Hosaas' Rest
+    .goto 2371,51.38,67.14,-1 -- Ruins of Yaathron
+    .goto 2371,65.44,47.98,-1 -- Lunnall River
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r.
+    .fly Shan'dorah >>Fly to Shan'dorah
+    .target Phase Conduit
+step
+    .goto 2371,60.93,27.74
+    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
+    .macro Remove Aura,135752 >>/cancelaura Phase Diving
+step
+    .goto 2371,60.93,27.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Umbric|r
+    .accept 90972 >>Accept A Common Cause
+    .target Magister Umbric
+step
+    .goto 2371,60.12,29.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adarus Duskblaze|r
+    .complete 90972,1 --1/1 Ask Adarus about Leona's whereabouts
+    .skipgossipid 134065
+    .target Adarus Duskblaze
+step
+    .goto 2371,59.33,24.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 90972 >>Turn in A Common Cause
+    .target Leona Darkstrider
+    .accept 86786 >>Accept The Void Hunter
+step
+    #label startdarkness1
+    #loop
+    .goto 2371,59.52,21.91,50,0
+    .goto 2371,58.29,22.31,40,0
+    .goto 2371,57.94,21.04,40,0
+    .goto 2371,57.4,20.13,40,0
+    .goto 2371,56.84,22.69,40,0
+    .goto 2371,55.38,21.88,40,0
+    .goto 2371,56.18,26.42,40,0
+    .goto 2371,57.2,24.92,40,0
+    .goto 2371,55.15,28.54,40,0
+    >>Kill |cRXP_ENEMY_Void Tempest|r and use |T5976941:0|t[Void Lure] on the corpse.
+    .complete 86786,1 --3/3 Ramon'ta the Insatiable fed
+    .mob Void Tempest
+    .use 239074
+step
+    .goto 2371,57.28,18.37
+    >>Use |T5976941:0|t[Void Lure] and aim it below the floating arrow.
+    .complete 86786,2 --1/1 Ramon'ta the Insatiable lured
+    .timer 12,RP
+    .use 239074
+step
+    .goto 2371,57.28,18.37
+    >>Kill |cRXP_ENEMY_Ramon'ta the Insatiable|r |cRXP_WARN_after the roleplay|r.
+    .complete 86786,3 --1/1 Ramon'ta the Insatiable defeated
+    .mob Ramon'ta the Insatiable
+step
+    .isQuestAvailable 90972
+    .isQuestTurnedIn account,84959
+    .isOnQuest 86786
+    .goto 2371,56.21,21.51
+    .cast 1239390 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r.
+step
+    .isQuestAvailable 90972
+    .isQuestTurnedIn account,84959
+    .isOnQuest 86786
+    .goto 2371,56.21,21.51
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r.
+    .fly Shan'dorah >>Fly to Shan'dorah
+    .target Phase Conduit
+step
+    .isQuestAvailable 90972
+    .isQuestTurnedIn account,84959
+    .isOnQuest 86786
+    .goto 2371,60.11,29.67
+    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
+    .macro Remove Aura,135752 >>/cancelaura Phase Diving
+step
+    #label enddarkness1
+    .goto 2371,60.11,29.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adarus Duskblaze|r
+    .skipgossipid 133876
+    .complete 86786,4 --1/1 Report back to Adarus in Shan'dorah
+    .timer 25,RP
+    .target Adarus Duskblaze
+step
+    .goto 2371,60.12,29.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adarus Duskblaze|r |cRXP_WARN_after the roleplay|r
+    .turnin 86786 >>Turn in The Void Hunter
+    .target Adarus Duskblaze
+    .accept 89323 >>Accept Wasted Lands
+step
+    .goto 2371,78.96,53.46
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 89323,1 --K'areshi Fragment Location Reached
+    .timer 15,RP
+step
+    .goto 2371,78.95,53.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adarus Duskblaze|r |cRXP_WARN_after the roleplay|r
+    .turnin 89323 >>Turn in Wasted Lands
+    .target Adarus Duskblaze
+    .accept 89324 >>Accept A Piece of Something Greater
+step
+    #loop
+    .goto 2371,79.89,51.26,40,0
+    .goto 2371,80.81,50.49,40,0
+    >>Kill |cRXP_ENEMY_Relictor Qunash'i|r. 
+    *Loot him for |T5872055:0|t[|cRXP_LOOT_Key of the Waning Moon|r].
+    .complete 89324,2 --1/1 Key of the Waning Moon Recovered
+    .mob Relictor Qunash'i
+step
+    #loop
+    .goto 2371,79.74,47.4,40,0
+    .goto 2371,79,47.32,40,0
+    >>Kill |cRXP_ENEMY_Relictor Lay'sha|r. 
+    *Loot him for |T5872061:0|t[|cRXP_LOOT_Key of the Eternal Night|r].
+    .complete 89324,1 --1/1 Key of the Eternal Night Recovered
+    .mob Relictor Lay'sha
+step
+    #loop
+    .goto 2371,76.08,49.27,40,0
+    .goto 2371,77.23,50.16,40,0
+    .goto 2371,76.67,52.1,40,0
+    >>Kill |cRXP_ENEMY_Relictor Efrat|r. 
+    *Loot him for |T5872057:0|t[|cRXP_LOOT_Key of the Dark Sun|r].
+    .complete 89324,3 --1/1 Key of the Dark Sun Recovered
+    .mob Relictor Efrat
+step
+    .goto 2371,78.85,53.6
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 89324,4 --Return to the Relic Chamber
+step
+    #title Pylons deactivated (1/3)
+    .goto 2371,78.85,53.6
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r
+    .complete 89324,5,1 --3/3 Pylons Deactivated
+step
+    #title Pylons deactivated (2/3)
+    .goto 2371,79.13,53.55
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r
+    .complete 89324,5,2 --3/3 Pylons Deactivated
+step
+    #title Pylons deactivated (3/3)
+    .goto 2371,79.11,53.14
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pylon|r
+    .complete 89324,5,3 --3/3 Pylons Deactivated
+step
+    .goto 2371,79.02,53.37
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragment|r
+    .complete 89324,6 --1/1 Fragment Retrieved
+step
+    .goto 2371,78.98,53.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adarus Duskblaze|r
+    .turnin 89324 >>Turn in A Piece of Something Greater
+    .target Adarus Duskblaze
+    .accept 89325 >>Accept The Void Confluence
+step
+    #completewith next
+    #hidewindow
+    #label VoidConfluenceA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 89325 >>Turn in The Void Confluence
+    .target Leona Darkstrider
+    .accept 89326 >>Accept Distilled Darkness
+    .disablecheckbox
+step
+    #completewith VoidConfluenceA
+    .goto 2371,56.82,24.13,15,0
+    .goto 2477,33.6,83.46,10 >>Enter Cave
+step
+    #completewith next
+    #label VoidConfluenceB
+    #requires VoidConfluenceA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 89325 >>Turn in The Void Confluence
+    .target Leona Darkstrider
+    .accept 89326 >>Accept Distilled Darkness
+    .disablecheckbox
+step
+    #title Go up the ramp
+    #completewith next
+    #label VoidConfluenceC
+    #requires VoidConfluenceA
+    .goto 2477,61.89,30.11,15 >>Go up the ramp
+    *|cRXP_WARN_You can also try to jump up using the crystals but it's not recommended|r
+step
+    #hidewindow
+    #requires VoidConfluenceA
+    #completewith VoidConfluenceB
+    .goto 2477,62.03,53.16,3 >>1
+step
+    #requires VoidConfluenceB
+    .goto 2477,62.03,53.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 89325 >>Turn in The Void Confluence
+    .target Leona Darkstrider
+    .accept 89326 >>Accept Distilled Darkness
+step
+    #completewith next
+    #label Fragment1
+    .goto 2477,60.99,76.16,20,0
+    >>Kill the waves of enemies
+    .complete 89326,2 --1/1 Southern Fragment location aligned
+step
+    #completewith Fragment1
+    .goto 2477,47.53,73.94
+    .cast 1228273 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragment|r
+step
+    #requires Fragment1
+    .goto 2477,52.55,76.33
+    >>Kill the waves of enemies
+    .complete 89326,2 --1/1 Southern Fragment location aligned
+    .mob Void Tunneler
+    .mob Void Stalker
+    .mob Relnath the Merciless
+step
+    #completewith next
+    #label Fragment2
+    .goto 2477,35.69,63.47,20,0
+    .goto 2477,31.59,52.91,20,0
+    >>Kill the waves of enemies
+    .complete 89326,1 --1/1 Northern Fragment location aligned
+step
+    #completewith Fragment2
+    .goto 2477,37.78,34.78
+    .cast 1228273 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragment|r
+    .mob Void Tunneler
+    .mob Void Stalker
+    .mob Void Tunneler
+    .mob Void Stalker
+    .mob Relnath the Merciless
+step
+    #requires Fragment2
+    .goto 2477,33.04,44.35
+    >>Kill the waves of enemies
+    .complete 89326,1 --1/1 Northern Fragment location aligned
+    .mob Void Tunneler
+    .mob Void Stalker
+    .mob Ekisath the Prideful
+step
+    #completewith next
+    #label Distilled Darkness
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 89326 >>Turn in Distilled Darkness
+    .target Leona Darkstrider
+    .accept 89327 >>Accept Chaos
+    .disablecheckbox
+step
+    #hidewindow
+    #completewith Distilled Darkness
+    .goto 2477,44.62,26.91,15,0
+    .goto 2477,55.03,20.06,15,0
+    .goto 2477,63.4,29.23,15,0
+    .goto 2477,59.85,39.85,15,0
+    .goto 2477,59.85,39.85,40 >>1
+step
+    #requires Distilled Darkness
+    .goto 2477,61.98,53.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 89326 >>Turn in Distilled Darkness
+    .target Leona Darkstrider
+    .accept 89327 >>Accept Chaos
+step
+    .goto 2477,63.79,53.04
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fragment|r
+    .complete 89327,1 --1/1 K'areshi Fragment Placed
+step
+    .goto 2477,63.64,52.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adarus|r
+    .complete 89327,2 --1/1 Speak to Adarus
+    .timer 51,RP
+    .skipgossipid 132974
+    .target Adarus
+step
+    .goto 2477,63.64,52.76
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 89327,3 --1/1 Ritual Witnessed
+step
+    #completewith next
+    #label Adarus Kicked
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 89327,4 --1/1 Adarus Kicked
+    .target Adarus Duskblaze
+step
+    #completewith Adarus Kicked
+    .goto 2477,62.82,52.96
+    .cast 1228731 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Adarus|r
+    .target Adarus Duskblaze
+step
+    #requires Adarus Kicked
+    .goto 2477,61.99,54.49
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 89327,4 --1/1 Adarus Kicked
+    .target Adarus Duskblaze
+step
+    .goto 2477,61.94,53.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 89327 >>Turn in Chaos
+    .target Leona Darkstrider
+    .accept 91044 >>Accept Hunger of the Void
+step
+    #completewith Magister Umbric
+    #hidewindow
+    #label Hunger of the Void
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Umbric|r
+    .turnin 91044 >>Turn in Hunger of the Void
+step
+    #completewith Hunger of the Void
+    #label Hunger of the Void1
+    .goto 2477,61.96,74.14,20,0
+    .goto 2371,56.81,24.3,15 >>Leave Cave
+step
+    #requires Hunger of the Void1
+    #label Magister Umbric
+    .goto 2371,60.92,27.74
+    .gossipoption 134092 >>Talk to |cRXP_FRIENDLY_Magister Umbric|r
+    .target Magister Umbric
+step
+    .goto 2371,60.91,27.73
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 91044,1 --1/1 Report back to Umbric
+step
+    .goto 2371,60.92,27.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Umbric|r
+    .turnin 91044 >>Turn in Hunger of the Void
+    .accept 92630 >>Accept The Pursuit Continues
+    .target Magister Umbric
+step
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2371,65.03,40.63
+    .complete 92630,2 --Leona and Allari found
+step
+    .goto 2371,65.03,40.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leona Darkstrider|r
+    .turnin 92630 >>Turn in The Pursuit Continues
+    .accept 92631 >>Accept Abhorrent Gauntlet
+    .target Leona Darkstrider
+step
+    #loop
+    .goto 2371,68.04,40.04,30,0
+    .goto 2371,66.5,42.88,30,0
+    .goto 2371,63.77,45.13,30,0
+    >>Kill |cRXP_ENEMY_Voidbeings|r.
+    *Loot them for |T3004126:0|t[|cRXP_LOOT_Aberration Part|r].
+    .complete 92631,1 --24/24 Aberration Part
+    .mob Void Terror
+    .mob Observling
+step
+    .goto 2371,65.02,40.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r
+    .turnin 92631 >>Turn in Abhorrent Gauntlet
+    .target Allari the Souleater
+    .accept 92632 >>Accept Trial of Wrath
+step
+    .goto 2371,65.09,49.90
+    >>Kill |cRXP_ENEMY_Vraxik|r
+    .complete 92632,1 --1/1 Vraxik slain
+    .mob Vraxik
+step
+    .goto 2371,60.91,27.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r
+    .turnin 92632 >>Turn in Trial of Wrath
+    .target Allari the Souleater
 ]])
 
 ---Allied Choice

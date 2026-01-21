@@ -3700,7 +3700,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
-<< DemonHunter
+<< DemonHunter !VoidElf
 
 step
     #hidewindow

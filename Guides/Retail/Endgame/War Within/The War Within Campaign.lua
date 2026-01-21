@@ -5544,7 +5544,8 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     #label Shadowy Invitation
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r in Dornogal.
+    .accept 84956 >>Accept A Shadowy Invitation
     .turnin 84956 >>Turn in A Shadowy Invitation
     .target Locus-Walker
     .accept 84957 >>Accept Return to the Veiled Market
@@ -5555,7 +5556,8 @@ step
 step
     #requires Shadowy Invitation
     .goto 2339,42.11,26.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locus-Walker|r in Dornogal.
+    .accept 84956 >>Accept A Shadowy Invitation
     .turnin 84956 >>Turn in A Shadowy Invitation
     .target Locus-Walker
     .accept 84957 >>Accept Return to the Veiled Market
