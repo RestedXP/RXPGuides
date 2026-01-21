@@ -557,7 +557,7 @@ step
     .target Maur Raincaller
 step
     .goto Mulgore,47.76,57.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Zarlman|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarlman|r
     .turnin 767 >>Turn in Rite of Vision
     .accept 771 >>Accept Rite of Vision
     .target Zarlman Two-Moons

@@ -163,10 +163,10 @@ step << Warlock
     .goto Orgrimmar,48.25,45.27
     .turnin 1507 >> Turn in Devourer of Souls
     .accept 1508 >> Accept Blind Cazul
-    .accept 65601 >> Accept Love Hurts
+    --.accept 65601 >> Accept Love Hurts
     .target +Cazul
     .goto Orgrimmar,47.05,46.43
-    --TODO: Test if 65601 is available on launch or not until Black Temple release
+    --TODO: Add 65601 on Black Temple release
 step << Warlock
     #completewith next
     .goto Orgrimmar,45.37,51.02,15,0
@@ -181,14 +181,14 @@ step << Warlock
     .turnin 1508 >>Turn in Blind Cazul
     .accept 1509 >>Accept News of Dogran
     .target Zankaja
-step << Warlock
+step << skip --Warlock
     #completewith next
     .goto Orgrimmar,42.01,63.34,30,0
     .goto Orgrimmar,52.99,57.59,30,0
     .goto Orgrimmar,55.88,56.81,30,0
     .goto Orgrimmar,61.49,50.55,15,0
     .goto Orgrimmar,63.65,49.93,15 >> Travel toward |cRXP_FRIENDLY_Magar|r
-step << Warlock
+step << skip --Warlock
     .goto Orgrimmar,63.65,49.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magar|r
     .turnin 65601 >> Turn in Love Hurts
@@ -2143,6 +2143,7 @@ step
     .turnin 6564 >>Turn in Allegiance to the Old Gods
     .accept 6565 >>Accept Allegiance to the Old Gods
     .target Je'neu Sancrea
+    .dungeon BFD
 step
     #label Sapphires
     #loop
@@ -4581,6 +4582,13 @@ step
     .itemcount 5138,1
     .target Jorn Skyseer
 step
+    #optional
+    .goto The Barrens,44.85,59.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .accept 874 >>Accept Mahren Skyseer
+    .target Jorn Skyseer
+    .isQuestTurnedIn 913
+step
     .goto The Barrens,44.54,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .turnin 879 >> Turn in Betrayal from Within
@@ -4654,6 +4662,7 @@ step
     .turnin 874 >>Turn in Mahren Skyseer
     .accept 873 >>Accept Isha Awak
     .target Mahren Skyseer
+    .isQuestTurnedIn 913
 step
     #loop
     .goto The Barrens,65.67,46.63,0
@@ -4667,18 +4676,29 @@ step
     >>|cRXP_WARN_He has four different spawn locations alongside the coast|r
     .complete 873,1 --Heart of Isha Awak
     .unitscan Isha Awak
+    .isQuestTurnedIn 913
 step
     #label IshaAwak
     .goto The Barrens,65.84,43.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mahren|r
     .turnin 873 >> Turn in Isha Awak
     .target Mahren Skyseer
+    .isQuestTurnedIn 913
 step << !Mage
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .target Bragok
     .zoneskip Orgrimmar
+    .isQuestTurnedIn 873
+step << !Mage
+    #optional
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Orgrimmar >> Fly to Orgrimmar
+    .zoneskip Orgrimmar
+    .target Devrak
+    .isQuestAvailable 873
 step << Mage
     .cast 3567 >>|cRXP_WARN_Cast|r |T135759:0|t[Teleport: Orgrimmar]
     .zoneskip Orgrimmar

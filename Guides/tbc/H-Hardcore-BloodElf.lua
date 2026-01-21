@@ -1622,6 +1622,7 @@ step << Undead Warlock/Undead Warrior
     >>|cRXP_BUY_Buy a|r |T132798:0|t[Suntouched Special Reserve] |cRXP_BUY_from him|r
     .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
     .target Vinemaster Suntouched
+    .isOnQuest 9067
 step << Undead Warrior
     #completewith next
     .goto Silvermoon City,83.52,48.68,30,0
@@ -2026,6 +2027,7 @@ step << BloodElf Warlock
     >>|cRXP_BUY_Buy a|r |T132798:0|t[Suntouched Special Reserve] |cRXP_BUY_from him|r
     .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
     .target Vinemaster Suntouched
+    .isOnQuest 9067
 step << BloodElf Warlock
     #completewith TheStone
     .goto Silvermoon City,75.95,52.92,30,0
@@ -2068,7 +2070,7 @@ step
     .accept 9402 >> Accept Fetch! << Mage
     .target Instructor Antheol
 step << Mage
-    .goto Eversong Woods,54.98,56.43
+    .goto Eversong Woods,54.87,56.37
     >>Loot the |cRXP_PICK_Azure Phial|r underwater
     .complete 9402,1 --Azure Phial (1)
 step << Mage
@@ -2114,10 +2116,10 @@ step << Orc/Troll/Tauren
 step << Troll Mage
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antheol|r
-    .accept 9403 >>Accept The Purest Water
+    .accept 9402 >>Accept Fetch!
     .target Instructor Antheol
 step << Troll Mage
-    .goto Eversong Woods,54.69,56.23
+    .goto Eversong Woods,54.87,56.37
     >>Loot the |cRXP_PICK_Azure Phial|r underwater
     .complete 9402,1 --Azure Phial (1)
 step << Troll Mage
@@ -2138,6 +2140,7 @@ step
     >>|cRXP_BUY_Buy the|r |T133974:0|t[Springpaw Appetizers] |cRXP_BUY_from her|r
     .collect 22776,1,9067,1 --Collect Springpaw Appetizers
     .target Zalene Firstlight
+    .isOnQuest 9067
 step << !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
@@ -2383,7 +2386,7 @@ step
     #label AmaniTurnins
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 8476 >> Turn in Amani Encroachment
+    .turnin 8476 >> Turn in Amani Encroachment << !Troll
     .turnin 9360 >> Turn in Amani Invasion
     .accept 9363 >> Accept Warning Fairbreeze Village
     .turnin 9485 >> Turn in Taming the Beast << BloodElf Hunter
@@ -2611,6 +2614,7 @@ step << BloodElf !Warlock/Undead !Warlock
     >>|cRXP_BUY_Buy the|r |T132798:0|t[Suntouched Special Reserve] |cRXP_BUY_from him|r
     .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
     .target Vinemaster Suntouched
+    .isOnQuest 9067
 step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
     #completewith next
     .goto Silvermoon City,83.52,48.68,30,0
@@ -2821,6 +2825,7 @@ step
     >>|cRXP_BUY_Buy the|r |T134285:0|t[Bundle of Fireworks] |cRXP_BUY_from him|r
     .collect 22777,1,9067,1 --Bundle of Fireworks (1)
     .target Halis Dawnstrider
+    .isOnQuest 9067
 step << Undead/BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landra|r, |cRXP_FRIENDLY_Degolien|r, and |cRXP_FRIENDLY_Ardeyn|r upstairs
     .accept 9144 >>Accept Missing in the Ghostlands
@@ -2850,9 +2855,9 @@ step
     #label PartyisOver
     .goto Eversong Woods,38.14,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltheril|r
-    .accept 9067 >>Accept The Party Never Ends
     .turnin 9067 >>Turn in The Party Never Ends
     .target Lord Saltheril
+    .isOnQuest 9067
 step
     #completewith next
     .destroy 23500 >> |cRXP_WARN_Delete|r |T133461:0|t[Saltheril's Haven Party Invitation] |cRXP_WARN_from your bags, as it's no longer needed|r
@@ -3072,7 +3077,7 @@ step << BloodElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lymel|r
     .turnin 9130 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
-step << !BloodElf/!Hunter
+step
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r
@@ -3115,7 +3120,6 @@ step << Druid
 	.xp <12,1
 	.xp >14,1
 step << Druid
-    #label SMtraining01
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harene|r
@@ -3123,7 +3127,7 @@ step << Druid
     .target Harene Plainwalker
 	.xp <14,1
 step << Priest/Mage
-    #completewith SMtraining01
+    #completewith SMtraining02
     .goto Silvermoon City,75.95,52.92,30,0
     .goto Silvermoon City,62.89,31.26,30,0
     .goto Silvermoon City,57.45,24.46,15,0
@@ -3142,7 +3146,6 @@ step << Priest
 	.xp <12,1
 	.xp >14,1
 step << Priest
-    #label SMtraining01
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 8122 >> Train your class spells
@@ -3159,7 +3162,6 @@ step << Mage
 	.xp <12,1
 	.xp >14,1
 step << Mage
-    #label SMtraining01
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
     .train 1460 >> Train your class spells
@@ -3167,7 +3169,7 @@ step << Mage
     .cooldown item,6948,<0
 	.xp <14,1
 step << Rogue
-    #completewith SMtraining01
+    #completewith SMtraining02
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,76.55,52.05,20,0
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cRXP_FRIENDLY_Zelanis|r
@@ -3228,7 +3230,6 @@ step << !BloodElf Rogue
     .xp <10,1
     .xp >14,1
 step << !BloodElf Rogue
-    #label SMtraining01
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     .train 1758 >>Train your class spells
@@ -3276,7 +3277,6 @@ step << Paladin
     .target Knight-Lord Bloodvalor
 step << Paladin
     #optional
-    #label SMtraining01
     .goto Silvermoon City,91.19,36.94,-1
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cRXP_WARN_Jump onto one of the benches below to avoid walking up the stairs|r
@@ -3311,7 +3311,7 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
 step << Hunter
-    #completewith SMtraining01
+    #completewith SMtraining02
     .goto Silvermoon City,83.45,30.13,15,0
     .goto Silvermoon City,83.45,28.56,15,0
     .goto Silvermoon City,82.20,28.06,15 >>Travel toward |cRXP_FRIENDLY_Halthenis|r << BloodElf
@@ -3327,7 +3327,6 @@ step << Hunter
     .goto Silvermoon City,84.71,28.05,15 >>Travel toward |cRXP_FRIENDLY_Zandine|r << !BloodElf
     .itemcount 3026,<1
 step << Hunter
-    #label SMtraining01
     .goto Silvermoon City,82.39,26.09 << BloodElf
     .goto Silvermoon City,84.71,28.05 << !BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tana|r << BloodElf
@@ -3523,18 +3522,21 @@ step << BloodElf !Hunter
     .target Skymistress Gloaming
     .zoneskip Ghostlands
 step
+    #optional
+    #label SMtraining02
+step
     #label FlyGhostlands
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gloaming|r
     .fly Tranquillien >> Fly to Tranquillien
     .target Skymistress Gloaming
     .zoneskip Ghostlands
-step << BloodElf !Hunter
+step
     .goto Ghostlands,47.34,29.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Quartermaster Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
-step << !BloodElf/!Hunter
+step
     .goto Ghostlands,47.23,28.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
     .accept 9152 >> Accept Tomber's Supplies
@@ -3667,6 +3669,9 @@ step
     .complete 9143,1 --Collect Zeb'Sora Troll Ear (x6)
     .mob Shadowpine Ripper
     .mob Shadowpine Witch
+step
+    #completewith next
+    .subzone 3496 >>Travel to Farstrider Enclave
 step
     .goto Ghostlands,73.48,32.15,15,0
     .goto Ghostlands,72.50,32.14
@@ -4616,7 +4621,7 @@ step
 step
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r and the |cRXP_FRIENDLY_Wanted Poster|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r
     .accept 9193 >> Accept Investigate the Amani Catacombs
     .target Advisor Valwyn
 step
@@ -7213,7 +7218,6 @@ step << Priest/Mage
     .goto Silvermoon City,55.38,26.76,12 >> Travel toward |cRXP_FRIENDLY_Lotheolan|r << Priest
     .goto Silvermoon City,57.16,18.85,12 >> Travel toward |cRXP_FRIENDLY_Zaedana|r << Mage
 step << Priest
-    #label SMTraining5
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 7128 >> Train your class spells
@@ -7224,7 +7228,6 @@ step << Mage
     .train 1953 >> Train your class spells
     .target Zaedana
 step << Mage
-    #label SMTraining5
     .goto Silvermoon City,58.07,20.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narinth|r
     .train 32272 >> Train |T135761:0|t[Teleport: Silvermoon]
@@ -7238,7 +7241,6 @@ step << Hunter
     .goto Silvermoon City,83.45,28.56,15,0
     .goto Silvermoon City,84.71,28.05,15 >>Travel toward |cRXP_FRIENDLY_Zandine|r
 step << Hunter
-    #label SMTraining5
     .goto Silvermoon City,84.71,28.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zandine|r
     .train 14282 >> Train your class spells
@@ -7274,7 +7276,6 @@ step << Warlock TBC
     .itemcount 16346,1
     .train 20317,1
 step << Warlock
-    #label SMTraining5
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 5784 >> Train |T136103:0|t[Summon Felsteed] << wotlk
@@ -7352,7 +7353,6 @@ step << Rogue
     .xp <22,1
     .xp >24,1
 step << Rogue
-    #label SMTraining5
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Make sure you've trained|r |T132282:0|t[Ambush] |cRXP_WARN_and|r |T132302:0|t[Rupture] |cRXP_WARN_for a quest later|r << tbc
@@ -7572,13 +7572,13 @@ step << Paladin
     .xp <22,1
     .xp >24,1
 step << Paladin
-    #label SMTraining5
     .goto Undercity,58.00,90.46
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cyssa|r
     .train 5588 >>Train your class spells
 	.target Champion Cyssa Dawnrose
     .xp <24,1
 step
+    #label SMTraining5
     #optional
     .abandon 9156
     --9156 Wanted: Knucklerot and Luzran

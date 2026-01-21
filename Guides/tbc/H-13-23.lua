@@ -3630,6 +3630,7 @@ step
     .turnin 6564 >>Turn in Allegiance to the Old Gods
     .accept 6565 >>Accept Allegiance to the Old Gods
     .target Je'neu Sancrea
+    .dungeon BFD
 step
     #label Sapphires
     #loop
