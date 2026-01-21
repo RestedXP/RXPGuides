@@ -146,19 +146,19 @@ level -- Crusade (Rank 3)
     .talent 3,4,4,3
 
 level -- Divine Strength (Rank 1)
-    .talent 3,1,2,1
+    .talent 1,1,2,1
 
 level -- Divine Strength (Rank 2)
-    .talent 3,1,2,2
+    .talent 1,1,2,2
 
 level -- Divine Strength (Rank 3)
-    .talent 3,1,2,3
+    .talent 1,1,2,3
 
 level -- Divine Strength (Rank 4)
-    .talent 3,1,2,4
+    .talent 1,1,2,4
 
 level -- Divine Strength (Rank 5)
-    .talent 3,1,2,5
+    .talent 1,1,2,5
 
 level -- Improved Seal of the Crusader (Rank 1)
     .talent 3,2,2,1
