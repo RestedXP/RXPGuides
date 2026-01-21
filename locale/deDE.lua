@@ -278,6 +278,8 @@ L["Mark Friendly Targets"] = "Freundliche Ziele Markieren"
 L["Mark friendly targets with star, circle, diamond, and triangle"] = "Markiert freundliche Ziele mit Stern, Kreis, Diamant und Dreieck"
 L["Scan Enemy Targets"] = "Feindliche Ziele scannen"
 L["Scan for enemy targets"] = "Sucht nach feindlichen Zielen"
+L["Maximize Nameplate Distance"] = "Maximiere Namensplattendistanz"
+L["Automatically maximize nameplate visibility distance for better target detection (Requires reload)"] = "Maximiert automatisch die Sichtbarkeitsdistanz der Namensplaketten für eine bessere Zielerkennung (Erfordert einen Reload)"
 L["Mark Enemy Targets"] = "Feinliche Ziele Markieren"
 L["Mark enemy targets with skull, cross, square, and moon"] = "Markiert feindliche Ziele mit Totenkopf, Kreuz, Quadrat und Mond"
 L["Scan for Nearby Rares"] = "Nach Seltenen NPCs in der naehe scannen"
@@ -347,4 +349,3 @@ L["A macro has been automatically built to aid in leveling. Please move %s to yo
 L["Rare Found! %s is nearby."] = "Seltener Mob gefunden! %s ist in der Naehe."
 
 -- Timers.lua file
-
