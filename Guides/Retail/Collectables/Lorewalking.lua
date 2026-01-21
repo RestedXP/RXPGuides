@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Lorewalking
 #name a) Xal'atath
 #displayname Xal'atath
@@ -637,7 +637,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Lorewalking
 #name ab) Ethereals
 #displayname Ethereals
@@ -1691,7 +1691,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Lorewalking
 #name ac) The Lich King
 #displayname The Lich King
@@ -2109,7 +2109,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Lorewalking
 #name ad) The Elves of Quel'Thalas
 #displayname The Elves of Quel'Thalas

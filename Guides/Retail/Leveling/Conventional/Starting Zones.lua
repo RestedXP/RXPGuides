@@ -6,11 +6,16 @@
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
+#groupweight 1000
 #subgroup |cFFFCDC00(1-80)|r Default
 #name 1a
 #displayname |cFFFCDC00LEVEL 1-10|r
 #disabled
 
+<< !Harronir/!Nightborne/!HighmountainTauren/!MagharOrc/!EarthenDwarf/!ZandalariTroll/!Vulpera/!Dracthyr/!VoidElf/!KulTiran/!LightforgedDraenei/!Mechagnome/!Pandaren DK
+
+step
++1
 
 ]])
 
@@ -218,12 +223,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Lady Jaina Proudmoore
-step
-    .isQuestAvailable 55122
-    #label HousingSelect
-    +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
-    *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
-    .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
+-- step
+--     .isQuestAvailable 55122
+--     #label HousingSelect
+--     +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
+--     *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
+--     .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -8781,7 +8786,8 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Harandar
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
-#internal
+
+<< Harronir
 
 step
     #hidewindow
@@ -8997,12 +9003,13 @@ step << Alliance
     .goto 84,53.08,15.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
     .turnin 90961 >>Turn in Stranger in a New Land
-    .accept 94444 >>Accept Choose a Path
+    -- .accept 94445 >>Accept Choose a Path
     .target Ambassador Moorgard
 step << Horde
     .goto 85,39.39,79.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
-    .accept 94445 >>Accept Choose a Path
+    .turnin 90961 >>Turn in Stranger in a New Land
+    -- .accept 94444 >>Accept Choose a Path
     .target Ambassador Blackguard
 step << Alliance
     .goto 84,56.257,17.311
@@ -9020,6 +9027,11 @@ step << Alliance
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
+-- step << Alliance
+--     .goto 84,53.86,12.37
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Envoy Manat|r
+--     .turnin 94445 >>Turn in Choose a Path
+--     .target Envoy Manat
 -- step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
@@ -9064,6 +9076,21 @@ step << Horde
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
+-- step << Horde
+--     .goto 84,62.10,32.19
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
+--     .accept 7905 >>Accept The Darkmoon Faire
+--     .target Darkmoon Faire Mystic Mage 
+--     .dmf
+-- step << Horde
+--     .goto 84,62.1,32.2
+--     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
+--     .skipgossipid 40457
+--     .target Darkmoon Faire Mystic Mage 
+--     .zoneskip 84,1
+--     .dmf
+-- step << Horde
+--     #include RestedXP Speed Leveling\a) DMF
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
@@ -9689,7 +9716,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Exile's Reach
 #next a) DF Alliance Intro Midnight (A)
 
-<< Alliance !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
+<< Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
     #include a) Exile's Reach
@@ -21801,7 +21828,7 @@ RXPGuides.RegisterGuide([[
 #next b1) BfA Intro
 
 
-<<Horde !Dracthyr !DemonHunter !DK !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
+<< Horde !Harronir !Dracthyr !DemonHunter !DK !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
     #completewith ExilesEnd
@@ -21988,8 +22015,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Thrall
-step
-    #include a) Exile's Reach@HousingSelect-HousingSelect
+-- step
+--     #include a) Exile's Reach@HousingSelect-HousingSelect
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.

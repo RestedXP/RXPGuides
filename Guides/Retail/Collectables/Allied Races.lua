@@ -6,7 +6,8 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
+#groupweight 996
 #subgroup Allied Races
 #name a) UNLOCKING
 #displayname Unlocking
@@ -18,7 +19,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Allied Choice
 #displayname |cFF00CCFF1|r - Void Elf
 #next a) Allied Choice
@@ -66,7 +67,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Void Elf Unlock 1
 #displayname |cFF00CCFF1|r - Void Elf
 #next a) Lightforged Draenei Unlock 1
@@ -80,7 +81,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Lightforged Draenei Unlock 1
 #displayname |cFF00CCFF2|r - Lightforged Draenei
 #next a) DarkIronDwarf Unlock 1
@@ -302,7 +303,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) DarkIronDwarf Unlock 1
 #displayname |cFF00CCFF3|r - Dark Iron Dwarf
 #next a) KulTiran Unlock 1
@@ -599,7 +600,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) KulTiran Unlock 1
 #displayname |cFF00CCFF4|r - Kul Tiran
 #next a) Mechagnome Unlock 1
@@ -1026,7 +1027,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Mechagnome Unlock 1
 #displayname |cFF00CCFF5|r - Mechagnome
 #chapter
@@ -1398,30 +1399,16 @@ step
     .turnin 57497 >>Turn in Propagate the News
     .target Aysa Cloudsinger
 ]])
---Nightborne
+
+---Allied Choice
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
-#name a) Nightborne Unlock 1
-#displayname |cFF00CCFF1|r - Nightborne
-#next a) Highmountain Tauren Unlock 1
-#chapter
-
-step
-    #include ad) The Elves of Quel'Thalas
-]])
---HighmountainTauren
-RXPGuides.RegisterGuide([[
-#retail
-#version 1
-#group RestedXP Collectables
-#name a) Highmountain Tauren Unlock 1
-#displayname |cFF00CCFF2|r - Highmountain Tauren
-#next a) Maghar Orc Unlock 1
-#chapter
-
-<< Horde !HighmountainTauren
+#group RestedXP Miscellaneous
+#name a) Allied Choice
+#displayname |cFF00CCFF1|r - Void Elf
+#next a) Allied Choice
+#internal
 
 -- step
 --     #completewith HighmountainStartQuestline
@@ -1455,56 +1442,72 @@ RXPGuides.RegisterGuide([[
 --     .goto 85,37.65,81.44
 --     .turnin 50242 >>Turn in A Choice of Allies
 --     .target Ji Firepaw
+]])
+--Nightborne
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Miscellaneous
+#name a) Nightborne Unlock 1
+#displayname |cFF00CCFF1|r - Nightborne
+#next a) Highmountain Tauren Unlock 1
+#chapter
+
 step
-    -- #label HighmountainStartQuestline
-    -- .isQuestTurnedIn 50242
-    .goto 85,37.65,81.43
+    #include ad) The Elves of Quel'Thalas
+]])
+--HighmountainTauren
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Miscellaneous
+#name a) Highmountain Tauren Unlock 1
+#displayname |cFF00CCFF2|r - Highmountain Tauren
+#next a) Maghar Orc Unlock 1
+#chapter
+
+<< Horde !HighmountainTauren
+
+step
+    .goto 85,37.78,81.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 48066 >>Accept A Feast for Our Kin
     .target Ji Firepaw
 step
-    .isOnQuest 48066
-    .goto 85,53.40,90.43,10,0
-    .goto 85,58.51,91.26
-    .zone 1163 >>Take the portal to Zuldazar
-step
-    .isOnQuest 48066
-    .goto 1163,73.72,77.17
-    .zone 88 >>Take the portal to Thunderbluff
-step
-    .isOnQuest 48066
-    #completewith next
-    .goto 88,30.21,30.05,10 >>Leave the cave
-step
-    .isOnQuest 48066
+    .goto 88,59.65,51.68,10,0
     .goto 88,61.61,52.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r.
-    .turnin 48066>>Turn in A Feast for Our Kin
-    .target Bain Bloodhoof
+    .turnin 48066 >>Turn in A Feast for Our Kin
+    .timer 30,RP
+    .target Baine Bloodhoof
 step
-    .isQuestTurnedIn 48066
     .goto 88,61.52,51.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r after a short roleplay.
     .accept 48067 >>Accept Shadow Over Thunder Bluff
     .target Bain Bloodhoof
 step
+    #loop
+    .goto 88,59.82,51.38,30,0
+    .goto 88,55.16,48.65,30,0
+    .goto 88,48.93,51.59,30,0
+    .goto 88,43.51,58.36,30,0
+    .goto 88,38.41,49.99,30,0
+    .goto 88,37.78,63.22,30,0
     >>Kill |cRXP_ENEMY_Dark Tendrils|r or |cRXP_ENEMY_Shadow of Uul|r.
-    .goto 88,56.02,48.32,25,0
-    .goto 88,49.64,50.90,25,0
-    .goto 88,49.82,36.89,25,0
-    .goto 88,42.96,57.80,25,0
-    .goto 88,38.18,53.12
     .complete 48067,1 --4/4 Dark Tendril slain
     .complete 48067,2 --12/12 Shadow of Uul slain
 step
-    .goto 88,42.18,57.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r next to you.
-    .turnin 48066>>Turn in Shadow Over Thunder Bluff
+    .turnin 48067 >>Turn in Shadow Over Thunder Bluff
     .accept 49756 >>Accept Dark Forces
     .target Bain Bloodhoof
 step
+    #title |cFFFCDC00NPC Patrols|r
+    #loop
+    .goto 88,43.21,57.36,30,0
+    .goto 88,37.71,51.6,30,0
+    .goto 88,37.35,60.68,30,0
     >>Kill |cRXP_ENEMY_Qy'telek|r.
-    .goto 88,41.76,59.89
     .complete 49756,1 --1/1 Qy'telek slain
 step
     .goto 88,42.18,57.57
@@ -1512,27 +1515,8 @@ step
     .turnin 49756 >>Turn in Dark Forces
     .accept 48079 >>Accept Return to Highmountain
     .target Bain Bloodhoof
-step << Mage
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
 step
-    .zoneskip 85
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
-step
-    .zoneskip 85
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step
-    .zoneskip 627,1
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the portal to Orgrimmar
-step
-    .zoneskip 85,1
-    .goto 85,58.86,89.52
-    .zone 630>>Use the portal to Azsuna
-step
-    .goto 652,54.92,63.21
+    .goto 652,68.78,71.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r.
     .turnin 48079 >>Turn in Return to Highmountain
     .target Mayla Highmountain
@@ -1542,32 +1526,47 @@ step
     .accept 41884 >>Accept Dark Tales
     .target Spiritwalker Graysky
 step
+    #completewith next
+    #label Dark Tales
+    .goto 652,41.56,74.33,10,0
+    .goto 652,25.91,80.53,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r.
+    .turnin 41884 >>Turn in Dark Tales
+    .accept 41764 >>Accept Walking in Their Footsteps
+    .disablecheckbox
+    .target Spiritwalker Graysky
+step
+    #completewith Dark Tales
+    .goto 650,38.51,69.10,595 >>Leave the building
+step
+    #requires Dark Tales
     .goto 650,38.51,69.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r in Riverbend.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r.
     .turnin 41884 >>Turn in Dark Tales
     .accept 41764 >>Accept Walking in Their Footsteps
     .target Spiritwalker Graysky
 step
     .goto 650,38.53,69.18
-    >>Interact with the Water of Vision
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pot|r
     .complete 41764,1 --1/1 Water of Vision used
 step
-    >>Kill |cRXP_ENEMY_Shadow Lurkers|r and |cRXP_ENEMY_Shadows of Uul|r.eturned
+    #loop
     .goto 650,40.12,71.59,25,0
     .goto 650,41.51,72.60,25,0
     .goto 650,43.75,74.11,12,0
     .goto 650,44.23,75.17,15,0
     .goto 650,45.21,76.24,20,0
+    >>Kill |cRXP_ENEMY_Shadow Lurkers|r and |cRXP_ENEMY_Shadows of Uul|r.
     .complete 41764,2 --8/8 Shadow Lurker slain
     .complete 41764,3 --15/15 Shadow of Uul slain
     .mob Shadow Lurker
     .mob Shadow of Uul
 step
-    >>Place the Bitestone Ward upstairs
     .goto 650,44.23,75.17,15,0
     .goto 650,45.21,76.24,20,0
     .goto 650,46.29,74.35,20,0
     .goto 650,46.16,73.68
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ward|r
     .complete 41764,4 --1/1 Bitestone Ward placed
 step
     .goto 650,38.51,69.10
@@ -1583,41 +1582,49 @@ step
     .target Spiritwalker Graysky
 step
     .goto 650,57.05,46.16
-    >>Interact with the Water of Vision
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pot|r
     .complete 41799,1 --1/1 Water of Vision used
 step
-    >>Kill |cRXP_ENEMY_Dark Spirits|r.
-    >>Spam |T132312:0|t[Fury of the Phoenix] (1) or use |T1029585:0|t[Cyclonic Vortex] (2) when multiple mobs are around you
-    .complete 41799,2 --12/12 Dark Spirit slain
+    #loop
     .goto 650,56.02,44.26,25,0
     .goto 650,54.76,45.12,25,0
     .goto 650,57.05,46.16,30,0
-#loop
-	.line 650,56.02,44.26,54.76,45.12,57.05,46.16
-	.goto 650,56.02,44.26,30,0
-	.goto 650,54.76,45.12,30,0
-	.goto 650,57.05,46.16,30,0
-    .mob Dark Spirit
+    >>Kill |cRXP_ENEMY_Dark Spirits|r.
+    *Spam |T132312:0|t[Fury of the Phoenix] (1) or use |T1029585:0|t[Cyclonic Vortex] (2) when multiple mobs are around you
+    .complete 41799,2 --12/12 Dark Spirit slain
+    .mob Dark Spirits
 step
     #completewith next
-    .goto 650,54.98,44.11,10 >>Enter the cave
-step
+    #label Shadowy Tendril
     >>Kill |cRXP_ENEMY_Shadowy Tendrils|r.
     >>Spam |T132312:0|t[Fury of the Phoenix] (1)
-    .goto 650,54.43,43.16,15,0
-    .goto 650,55.07,41.90
     .complete 41799,3 --6/6 Shadowy Tendril slain
     .mob Shadowy Tendril
 step
-    >>Kill the |cRXP_ENEMY_Shadow of the Darkness|r.
-    >>Keep up 3 stacks of the dot with |T132312:0|t[Fury of the Phoenix] (1) and use |T1029585:0|t[Cyclonic Vortex] (2) on cooldown
-    .complete 41799,4 --1/1 Shadow of the Darkness slain
+    #completewith Shadowy Tendril
+    .goto 650,54.98,44.11,10 >>Enter the cave
+step
+    #requires Shadowy Tendril
+    #loop
+    .goto 650,54.47,43.12,25,0
+    .goto 650,55.14,42.43,25,0
+    .goto 650,55.22,41.85,25,0
+    .goto 650,55.35,41.69,25,0
+    .goto 650,54.37,42.28,25,0
+    >>Kill |cRXP_ENEMY_Shadowy Tendrils|r.
+    >>Spam |T132312:0|t[Fury of the Phoenix] (1)
+    .complete 41799,3 --6/6 Shadowy Tendril slain
+    .mob Shadowy Tendril
+step
     .goto 650,55.47,40.99
+    >>Kill the |cRXP_ENEMY_Shadow of the Darkness|r.
+    *Keep up 3 stacks of the dot with |T132312:0|t[Fury of the Phoenix] (1) and use |T1029585:0|t[Cyclonic Vortex] (2) on cooldown.
+    .complete 41799,4 --1/1 Shadow of the Darkness slain
     .mob Shadow of the Darkness
 step
-    >>Place the Sepulcher Ward
-    .complete 41799,5 --1/1 Sepulcher Ward placed
     .goto 650,54.74,40.63
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ward|r
+    .complete 41799,5 --1/1 Sepulcher Ward placed
 step
     .goto 650,57.02,46.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r.
@@ -1625,48 +1632,56 @@ step
     .accept 48190 >>Accept Huln's Mountain
     .target Spiritwalker Graysky
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r in Snowblind Mesa.
+    .goto 650,56.75,46.07,5,0
     .goto 650,53.33,64.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r.
     .turnin 48190 >>Turn in Huln's Mountain
     .accept 41800 >>Accept Servants of the Darkness
     .target Spiritwalker Graysky
 step
     .goto 650,53.32,64.00
-    >>Interact with |cRXP_FRIENDLY_Spiritwalker Graysky|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pot|r.
     .complete 41800,1 --1/1 Water of Vision used
 step
-    >>Kill the |cRXP_ENEMY_Necrotic Defilers|r.
-    >>Use |T134174:0|t[Gore Charge] (3) on cooldown and spam |T644382:0|t[Wild Carve] (1)
+    #loop
     .goto 650,53.70,66.32,25,0
     .goto 650,52.99,66.76,25,0
     .goto 650,51.50,66.64,25,0
-#loop
-	.line 650,53.70,66.32,52.99,66.76,,51.50,66.64
-	.goto 650,53.70,66.32,30,0
-	.goto 650,52.99,66.76,30,0
-	.goto 650,51.50,66.64,30,0
+    >>Kill |cRXP_ENEMY_Necrotic Defilers|r.
+    *Use |T134174:0|t[Gore Charge] (3) on cooldown and spam |T644382:0|t[Wild Carve] (1)
     .complete 41800,2 --10/10 Necrotic Defiler slain
     .mob Necrotic Defiler
 step
-    >>Kill |cRXP_ENEMY_Necrogg the Darkspear|r. He's patrolling down the mountain.
-    >>Use |T135127:0|t[Harpoon Stomp] (2) after the knockback
+    #title |cFFFCDC00NPC Patrols|r
     .goto 650,53.00,69.40
+    >>Kill |cRXP_ENEMY_Necrogg the Darkspear|r.
+    *Use |T135127:0|t[Harpoon Stomp] (2) after the knockback
     .complete 41800,3 --1/1 Necrogg the Darkspear slain
     .mob Necrogg the Darkspear
 step
-    >>Place the Snowmane Ward
     .goto 650,53.32,69.47
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ward|r
     .complete 41800,4 --1/1 Snowmane Ward placed
 step
-    .goto 650,57.02,46.22
+    .goto 650,53.32,64.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Graysky|r.
     .turnin 41800 >>Turn in Servants of the Darkness
     .accept 48434 >>Accept How Fares Ebonhorn?
     .target Spiritwalker Graysky
 step
     #completewith next
-    .goto 750,49.30,46.09,5 >>Take the elevator
+    #label How Fares Ebonhorn?
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r and |cRXP_FRIENDLY_Mayla Highmountain|r.
+    .turnin 48434 >>Turn in How Fares Ebonhorn?
+    .accept 41815 >>Accept Curse of the Necrodark
+    .disablecheckbox
+    .target Spiritwalker Ebonhorn
+    .target Mayla Highmountain
 step
+    #completewith How Fares Ebonhorn?
+    .goto 652,26.24,79.84,15 >>Enter the lowest level in Thunder Totem
+step
+    #requires How Fares Ebonhorn?
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r and |cRXP_FRIENDLY_Mayla Highmountain|r.
     .turnin 48434 >>Turn in How Fares Ebonhorn?
     .goto 652,67.69,71.39
@@ -1675,6 +1690,23 @@ step
     .target Spiritwalker Ebonhorn
     .target Mayla Highmountain
 step
+    #completewith next
+    #label Curse of the Necrodark
+    .goto 652,57.53,79,10,0
+    .goto 652,41.55,74.31,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r and |cRXP_FRIENDLY_Jale Rivermane|r on top of the mountain.
+    .turnin 41815 >>Turn in Curse of the Necrodark
+    .accept 41840 >>Accept Ice and Shadow
+    .disablecheckbox
+    .accept 41882 >>Accept Whispers of the Darkness
+    .disablecheckbox
+    .target Baine Bloodhoof
+    .target Jale Rivermane
+step
+    #completewith Curse of the Necrodark
+    .goto 652,26.09,80.31,10 >>Leave the building
+step
+    #requires Curse of the Necrodark
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r and |cRXP_FRIENDLY_Jale Rivermane|r on top of the mountain.
     .turnin 41815 >>Turn in Curse of the Necrodark
     .accept 41840 >>Accept Ice and Shadow
@@ -1685,51 +1717,61 @@ step
     .target Jale Rivermane
 step
     #completewith HighmountainTaurenWhispersoftheDarkness
-    >>Kill |cRXP_ENEMY_Necrodarks|r or |cRXP_ENEMY_Frozen Mists|r. Loot them for the [|cRXP_LOOT_Shadowice Shards|r].
+    >>Kill |cRXP_ENEMY_Necrodarks|r or |cRXP_ENEMY_Frozen Mists|r.
+    *Loot them for |T237235:0|t[|cRXP_LOOT_Shadowice Shard|r].
     .complete 41840,1 --20/20 Shadowice Shard
 step
     #title Protector freed 1/6
-    >>Free the |cRXP_FRIENDLY_Highmountain Protector|r |cRXP_WARN_They may attack you|r.
     .goto 650,56.92,89.68
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highmountain Protector|r
+    *|cRXP_WARN_They may attack you|r
     .complete 41882,1,1 --1/6 Highmountain Protector freed
+    .target Highmountain Protector
 step
     #title Protector freed 2/6
-    >>Free the |cRXP_FRIENDLY_Highmountain Protector|r |cRXP_WARN_They may attack you|r.
     .goto 650,56.83,88.47
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highmountain Protector|r
+    *|cRXP_WARN_They may attack you|r
     .complete 41882,1,2 --2/6 Highmountain Protector freed
+    .target Highmountain Protector
 step
     #title Protector freed 3/6
-    >>Free the |cRXP_FRIENDLY_Highmountain Protector|r |cRXP_WARN_They may attack you|r.
     .goto 650,57.49,88.95
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highmountain Protector|r
+    *|cRXP_WARN_They may attack you|r
     .complete 41882,1,3 --3/6 Highmountain Protector freed
+    .target Highmountain Protector
 step
     #title Protector freed 4/6
-    >>Free the |cRXP_FRIENDLY_Highmountain Protector|r |cRXP_WARN_They may attack you|r.
     .goto 650,57.36,90.01
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highmountain Protector|r
+    *|cRXP_WARN_They may attack you|r
     .complete 41882,1,4 --4/6 Highmountain Protector freed
+    .target Highmountain Protector
 step
     #title Protector freed 5/6
-    >>Free the |cRXP_FRIENDLY_Highmountain Protector|r |cRXP_WARN_They may attack you|r.
     .goto 650,58.16,90.67
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highmountain Protector|r
+    *|cRXP_WARN_They may attack you|r
     .complete 41882,1,5 --5/6 Highmountain Protector freed
+    .target Highmountain Protector
 step
     #label HighmountainTaurenWhispersoftheDarkness
     #title Protector freed 6/6
-    >>Free the |cRXP_FRIENDLY_Highmountain Protector|r |cRXP_WARN_They may attack you|r.
     .goto 650,57.61,91.11
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Highmountain Protector|r
+    *|cRXP_WARN_They may attack you|r
     .complete 41882,1 --6/6 Highmountain Protector freed
+    .target Highmountain Protector
 step
-    >>Kill |cRXP_ENEMY_Necrodarks|r or |cRXP_ENEMY_Frozen Mists|r. Loot them for the [|cRXP_LOOT_Shadowice Shards|r].
-    >>|cRXP_WARN_|cRXP_ENEMY_Frozen Mists|r are the best source|r.
-    .complete 41840,1 --20/20 Shadowice Shard
+    #loop
+    .goto 650,57.14,90.96,25,0
     .goto 650,57.15,94.63,30,0
     .goto 650,54.48,91.85,30,0
     .goto 650,58.22,91.49,30,0
-#loop
-	.line 650,57.15,94.63,54.48,91.85,,58.22,91.49
-	.goto 650,57.15,94.63,30,0
-	.goto 650,54.48,91.85,30,0
-	.goto 650,58.22,91.49,30,0
+    >>Kill |cRXP_ENEMY_Necrodarks|r or |cRXP_ENEMY_Frozen Mists|r.
+    *Loot them for |T237235:0|t[|cRXP_LOOT_Shadowice Shard|r].
+    .complete 41840,1 --20/20 Shadowice Shard
 step
     .goto 650,57.55,92.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiritwalker Ebonhorn|r.
@@ -1739,10 +1781,17 @@ step
     .target Spiritwalker Ebonhorn
 step
     #completewith next
-    .goto 650,57.28,92.23,10 >>Enter the cave
+    #label The Final Ward
+    .goto 650,57.11,92.09,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ward|r
+    .complete 41841,1 --1/1 Place the Summit Ward
 step
-    >>Place the Summit Ward
+    #completewith The Final Ward
+    .goto 650,56.50,91.45,52 >>Enter the cave
+step
+    #requires The Final Ward
     .goto 650,56.50,91.45
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ward|r
     .complete 41841,1 --1/1 Place the Summit Ward
 step
     .goto 650,56.82,92.03
@@ -1752,10 +1801,18 @@ step
     .target Spiritwalker Ebonhorn
 step
     #completewith next
-    .goto 650,57.28,92.23,10 >>Leave the cave
+    #label Uul'gyneth
+    .goto 650,57.54,92.31,10,0
+    >>Kill |cRXP_ENEMY_Uul'gyneth|r.
+    .complete 48403,1 --1/1 Uul'gyneth slain
+    .mob Uul'gyneth
 step
-    >>Kill |cRXP_ENEMY_Uul'gyneth|r. |cRXP_WARN_You can pick up Baines Totem and throw it|r.
-    .goto 650,57.94,90.84
+    #completewith Uul'gyneth
+    .goto 650,57.92,91.43,70 >>Leave the cave
+step
+    #requires Uul'gyneth
+    .goto 650,57.92,91.43
+    >>Kill |cRXP_ENEMY_Uul'gyneth|r.
     .complete 48403,1 --1/1 Uul'gyneth slain
     .mob Uul'gyneth
 step
@@ -1766,24 +1823,9 @@ step
     .goto 650,56.70,92.77
     .target Mayla Highmountain
     .target Baine Bloodhoof
-step << Mage
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
-step
-    .zoneskip 85
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
-step
-    .zoneskip 85
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step
-    .zoneskip 627,1
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the portal to Orgrimmar
 step
     .goto 85,37.78,81.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r in Orgrimmar.
     .turnin 48433 >>Turn in Together We Are the Horde!
     .target Ji Firepaw
 ]])
@@ -1791,7 +1833,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Maghar Orc Unlock 1
 #displayname |cFF00CCFF3|r - Maghar Orc
 #next a) Zandalari Troll Unlock 1
@@ -1799,121 +1841,111 @@ RXPGuides.RegisterGuide([[
 
 << Horde !MagharOrc
 
--- step
---     #completewith MagharOrcStartQuestline
---     .zone 85 >>Get to Orgrimmar
--- step
---     .isOnQuest 49930
---     .isQuestAvailable 49930
---     .goto 85,37.76,81.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r in Orgrimmar.
---     .turnin 49930 >>Turn in The Call for Allies
---     .target Ji Firepaw
--- step
---     .isQuestAvailable 50242
---     .goto 85,37.76,81.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .accept 50242 >>Accept A Choice of Allies
---     .target Ji Firepaw
--- step
---     .isOnQuest 50242
---     >>Interact with the banners in any order
---     .goto 85,37.65,81.43
---     .complete 50242,1 -- Learn more about the Highmountain Tauren
---     .complete 50242,2 -- Learn more about the nightborne
---     .complete 50242,3 -- Learn more about the Maghar Orcs
---     .complete 50242,4 -- Learn more about the Zandalari trolls
---     .complete 50242,5 -- Learn more about the Vulpera
--- step
---     .isQuestComplete 50242
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .goto 85,37.65,81.44
---     .turnin 50242 >>Turn in A Choice of Allies
---     .target Ji Firepaw
 step
-    -- #label MagharOrcStartQuestline
-    .goto 85,37.77,81.16
+    .goto 85,37.78,81.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 53466 >>Accept Vision of Time
     .target Ji Firepaw
 step
     #completewith next
-    #title Take the Portal to Zuldazar
-    .goto 85,53.46,90.42,10,0
-    .goto 85,58.56,91.31
-    .zone 1163 >>Take the Portal to Zuldazar
-step
-    .goto 1163,67.03,73.49
+    #label Vision of Time
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r.
+    .turnin 53466 >>Turn in Vision of Time
+    .accept 53467 >>Accept Caverns of Time
+    .disablecheckbox
+    .target Chief Telemancer Oculeth
+step
+    #completewith Vision of Time
+    #title Take the Portal to Zuldazar
+    .goto 85,52.35,86.28,15,0
+    .goto 85,53.47,90.38,15,0
+    .goto 85,54.72,89.1,5,0
+    .goto 85,54.67,87.18,5,0
+    .goto 85,55.95,87.09,5,0
+    .goto 85,57.58,89.86
+    .zone 862 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Zuldazar|r
+step
+    #requires Vision of Time
+    .goto 1165,49.92,41.71,15,0
+    .goto 1163,53.85,70,15,0
+    .goto 1163,67.03,73.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r inside the building.
     .turnin 53466 >>Turn in Vision of Time
     .accept 53467 >>Accept Caverns of Time
     .target Chief Telemancer Oculeth
 step
     #completewith next
-    #title Take the Portal to Orgrimmar
-    .goto 1163,73.83,69.92
-    .zone 85 >>Take the Portal to Orgrimmar
-step
-    #completewith next
-    #title Take the Portal to Caverns of Time downstairs
-    .goto 85,54.78,89.74,7,0
-    .goto 85,54.64,87.12,7,0
-    .goto 85,56.02,86.85,7,0
-    .goto 85,56.41,92.56
-    .zone 74 >>Take the Portal to Caverns of Time downstairs
-step
-    .goto 74,66.05,28.47,20,0
-    .goto 74,61.50,16.78,20,0
-    .goto 74,65.75,26.35,20,0
-    .goto 74,66.66,16.11,20,0
-    .goto 74,50.46,19.50,30,0
-    .goto 74,39.19,50.42,30,0
-    .goto 75,41.74,49.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the path down. Talk to |cRXP_FRIENDLY_Anachronos|r.
+    #label Caverns of Time
+    #hidewindow
     .turnin 53467 >>Turn in Caverns of Time
+    .target Anachronos
+step
+    #completewith Caverns of Time
+    .goto 1163,73.6,70.03
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Orgrimmar|r
+step
+    #requires Caverns of Time
+    #completewith next
+    #label Caverns of Time 2
+    #hidewindow
+    .turnin 53467 >>Turn in Caverns of Time
+    .target Anachronos
+step
+    #requires Caverns of Time
+    #completewith Caverns of Time 2
+    .goto 85,54.85,90.02,5,0
+    .goto 85,54.79,87.14,5,0
+    .goto 85,55.91,87.15,5,0
+    .goto 85,56.42,92.49
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Caverns of Time|r
+step
+    #requires Caverns of Time 2
+    #completewith next
+    #label Caverns of Time 3
+    .goto 74,64.59,24,20,0
+    .goto 74,60.63,22.3,20,0
+    .goto 74,66.4,24.16,20,0
+    .goto 74,64.54,17.01,20,0
+    .goto 74,48.59,22.87,20,0
+    .goto 74,39.95,48.87,20,0
+    .goto 74,37.81,71.5,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r
+    .turnin 53467 >>Turn in Caverns of Time
+    .target Anachronos
     .accept 53354 >>Accept Echo of Gul'dan
     .target Anachronos
-step << Mage
-    .isOnQuest 53354
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
 step
-    .zoneskip 85
-    .isOnQuest 53354
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
+    #requires Caverns of Time 2
+    #completewith Caverns of Time 3
+    .goto 75,41.81,49.81,100 >>Follow the Arrow
 step
-    .zoneskip 85
-    .isOnQuest 53354
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
+    #requires Caverns of Time 3
+    .goto 75,41.81,49.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r
+    .turnin 53467 >>Turn in Caverns of Time
+    .target Anachronos
+    .accept 53354 >>Accept Echo of Gul'dan
+    .target Anachronos
 step
-    .zoneskip 627,1
-    .isOnQuest 53354
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the portal to Orgrimmar
-step
-    .zoneskip 85
-    .isOnQuest 53354
     #completewith next
-    .goto 74,39.19,50.42,30,0
-    .goto 74,50.46,19.50,30,0
-    .goto 74,66.66,16.11,20,0
-    .goto 74,65.75,26.35,20,0
-    .goto 74,61.50,16.78,20,0
-    .goto 74,66.05,28.47,20,0
-    .goto 74,58.17,26.73
-    .zone 85 >>Take the Portal to Orgrimmar
+    #label Echo of Gul'dan
+    #hidewindow
+    .complete 53354,1 --1/1 Echo of Gul'dan slain
+    .mob Echo of Gul'dan
 step
-    .isOnQuest 53354
-    #completewith next
-    .goto 85,53.20,90.46,10,0
-    .goto 85,52.69,52.84
-    .zone 50 >>Take the Zeppelin to Stranglethorn Vale
+    #completewith Echo of Gul'dan
+    .goto 74,39.76,74.9,15,0
+    .goto 74,42.21,62.3,15,0
+    .goto 74,41.18,39.03,15,0
+    .goto 74,54.13,18.71,15,0
+    .goto 74,64.11,17.75,15,0
+    .goto 74,66.6,23.85,15,0
+    .goto 74,62.86,17.89,15,0
+    .goto 74,63.49,29.61,15,0
+    .goto 74,58.1,26.64
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Orgrimmar|r
 step
-    >>Fly to the Time Rift and |TInterface/cursor/crosshair/interact.blp:20|tClick on it. Kill the |cRXP_ENEMY_Echo of Gul'dan|r.
-    >>Dodge Liquid Hellfire. Sidestep Fel Efflux. Interrupt Death Coil
-    .goto 17,54.42,50.49
+    #requires Echo of Gul'dan
     .complete 53354,1 --1/1 Echo of Gul'dan slain
     .mob Echo of Gul'dan
 step
@@ -1947,48 +1979,20 @@ step
     .turnin 53353 >>Turn in Echo of Warlord Zaela
     .accept 53355 >>Accept Echo of Garrosh Hellscream
     .target Anachronos
-step << Mage
-    .isOnQuest 53355
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
 step
-    .zoneskip 85
-    .isOnQuest 53355
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
-step
-    .zoneskip 85
-    .isOnQuest 53355
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step
-    .zoneskip 627,1
-    .isOnQuest 53355
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the portal to Orgrimmar
-step
-    .zoneskip 85
-    .isOnQuest 53355
-    #completewith next
-    .goto 371,28.52,14.02
-    .zone 85 >>Take the Portal to Orgrimmar
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave Orgrimmar. Talk to |cRXP_FRIENDLY_Anachronos|r.
     .goto 1,40.80,16.36
-    .skipgossip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anachronos|r.
     .complete 53355,1 --1/1 Meet Anachronos outside Orgrimmar
     .target Anachronos
 step
-    >>(No arrow possible) Jump down. |TInterface/cursor/crosshair/interact.blp:20|tClick on the Time Rift. Kill the |cRXP_ENEMY_Echo of Garrosh Hellscream|r.
-    >>Move away during his Whirlwind. Dodge the Ironstars (Machines of War cast)
     .complete 53355,2 --1/1 Echo of Garrosh Hellscream slain
     .mob Echo of Garrosh Hellscream
 step
     #completewith next
     #title Take the Portal to Zuldazar
-    >>Leave the instance group (Right-|TInterface/cursor/crosshair/interact.blp:20|tClick your character frame)
     .goto 85,53.44,90.45,10,0
     .goto 85,58.59,91.32
+    >>Leave the instance group (Right-|TInterface/cursor/crosshair/interact.blp:20|tClick your character frame)
     .zone 1163 >>Take the Portal to Zuldazar
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Telemancer Oculeth|r and |cRXP_FRIENDLY_Eitrigg|r.
@@ -2005,9 +2009,9 @@ step
     .skipgossip 131443,1
     .target Chief Telemancer Oculeth
 step
-    >>Cross the bridge. You may have to wait for an RP
     .goto 1170,44.07,55.07,20,0
     .goto 1170,44.87,53.20
+    >>Cross the bridge. You may have to wait for an RP
     .complete 52942,2 --Meet the Overlord
 step
     .goto 1170,44.94,53.12
@@ -2016,16 +2020,16 @@ step
     .accept 52943 >>Accept Calling Out the Clans
     .target Eitrigg
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,45.17,52.64
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .complete 52943,1 --1/1 Blackrock
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,45.48,51.94
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .complete 52943,2 --1/1 Warsong
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .goto 1170,44.82,52.00
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blackrock banner|r. Relog if you can't |TInterface/cursor/crosshair/interact.blp:20|tClick on it
     .complete 52943,3 --1/1 Frostwolf
 step
     .goto 1170,45.14,52.14
@@ -2038,12 +2042,12 @@ step
     .accept 52945 >>Accept Bonds Forged Through Battle
     .target Grommash Hellscream
 step
-    >>Kill |cRXP_ENEMY_Kor'gall Defectors|r and |cRXP_ENEMY_Kor'gall Agitators|r.
     .goto 1170,40.23,65.14,25,0
     .goto 1170,39.10,65.72,25,0
     .goto 1170,38.81,67.47,25,0
     .goto 1170,38.25,67.48,25,0
     .goto 1170,37.73,68.32
+    >>Kill |cRXP_ENEMY_Kor'gall Defectors|r and |cRXP_ENEMY_Kor'gall Agitators|r.
     .complete 52945,1 --10/10 Kor'gall Defector slain
     .mob Kor'gall Defector
     .mob Kor'gall Agitator
@@ -2070,14 +2074,14 @@ step
     #completewith next
     .goto 1170,38.59,67.38,10 >>Leave the cave
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Follow the arrow to Beastwatch
     .goto 1170,41.39,66.92,20,0
     .goto 1170,43.02,67.09,30,0
     .goto 1170,43.89,69.46
     .scenario 3973,1
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Destroy |cRXP_ENEMY_Lightbound Batteries|r and kill |cRXP_ENEMY_Lighbounds|r.
     .goto 1170,44.76,75.62,15,0
     .goto 1170,45.18,76.10,15,0
@@ -2089,41 +2093,41 @@ step
     .mob Lightbound Battery
     .scenario 3974,1
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Follow the arrow to |cRXP_ENEMY_Exarch Orelis|r.
     .goto 1170,45.49,78.58
     .scenario 3975,1
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Kill |cRXP_ENEMY_Exarch Orelis|r.
     >>Side-step and dodge the Prometheus Ray. Interrupt Holy Light
     .goto 1170,45.26,80.33
     .scenario 3976,1
     .mob Exarch Orelis
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Run back to Beastwatch and meet |cRXP_FRIENDLY_Grommash Hellscream|r.
     .goto 1170,44.55,71.37
     .scenario 3977,1
     .timer 55,Order RP
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Wait for the RP
     .goto 1170,43.89,70.89
     .scenario 3980,1
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Climb the tower. Mount the Mag'har Turrent. Use |T879998:0|t[Iron Lightseeker] (2) on cooldown, otherwise spam |T252185:0|t[Turret Blast] to kill the incoming mobs
     .goto 1170,43.48,71.38,10,0
     .goto 1170,43.63,71.48
     .scenario 3978,1
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Jump down. Run to the Warchief. Wait for the RP
     .goto 1170,44.55,71.37
     .scenario 3981,1
 step
-    .isOnQuest 52955
+    .isInScenario
     >>Follow the arrow
     .goto 1170,44.13,69.99
     .scenario 3979,1
@@ -2145,7 +2149,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Zandalari Troll Unlock 1
 #displayname |cFF00CCFF4|r - Zandalari Troll
 #next a) Vulpera Unlock 1
@@ -2153,40 +2157,7 @@ RXPGuides.RegisterGuide([[
 
 << Horde !ZandalariTroll
 
--- step
---     #completewith ZandalariTrollStartQuestline
---     .zone 85 >>Get to Orgrimmar
--- step
---     .isOnQuest 49930
---     .isQuestAvailable 49930
---     .goto 85,53.23,90.47,10,0
---     .goto 85,37.76,81.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .turnin 49930 >>Turn in The Call for Allies
---     .target Ji Firepaw
--- step
---     .isQuestAvailable 50242
---     .goto 85,37.76,81.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .accept 50242 >>Accept A Choice of Allies
---     .target Ji Firepaw
--- step
---     .isOnQuest 50242
---     >>Interact with the banners in any order
---     .goto 85,37.65,81.43
---     .complete 50242,1 -- Learn more about the Highmountain Tauren
---     .complete 50242,2 -- Learn more about the nightborne
---     .complete 50242,3 -- Learn more about the Maghar Orcs
---     .complete 50242,4 -- Learn more about the Zandalari trolls
---     .complete 50242,5 -- Learn more about the Vulpera
--- step
---     .isQuestComplete 50242
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .goto 85,37.65,81.44
---     .turnin 50242 >>Turn in A Choice of Allies
---     .target Ji Firepaw
 step
-    -- #label ZandalariTrollStartQuestline
     .goto 85,37.75,81.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .accept 53831 >>Accept A Royal Occasion
@@ -2209,7 +2180,7 @@ step
     .target Natal'hakata
 step << !DemonHunter !Dracthyr
     #completewith next
-    .noflyable 862
+
     .goto 1165,48.51,38.00,15,0
     .goto 1165,45.15,47.02,20,0
     .goto 1165,42.06,26.50,20 >>Jump down the pyramid carefully
@@ -2271,7 +2242,7 @@ step
     .mob Rioting Zocalo Druges
 step
     #completewith next
-    .noflyable 862
+
     .goto 1165,42.61,22.91,12,0
     .goto 1165,41.41,18.05,12 >>Go back up
 step
@@ -2503,7 +2474,7 @@ step
     .target Lady Sylvanas Windrunner
 step
     #completewith next
-    .noflyable 862
+
     >>Jump down carefully
     .goto 1165,46.06,16.57,15,0
     .goto 1165,47.06,19.23,15,0
@@ -2512,14 +2483,14 @@ step
     .fly The Great Seal >>Fly to The Great Seal
 step
     #completewith ZandalariTrollAllegianceoftheZandalari
-    .noflyable 862
+
     .isQuestTurnedIn 47436
     .isOnQuest 53719
     .vehicle 131154 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the Totem of Pa'ku
     .goto 1165,51.37,40.95
 step
     #completewith ZandalariTrollAllegianceoftheZandalari
-    .noflyable 862
+
     .isQuestTurnedIn 47443
     .isOnQuest 53719
     .goto 1165,49.93,42.24,10,0
@@ -2536,48 +2507,15 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Vulpera Unlock 1
 #displayname |cFF00CCFF5|r - Vulpera
 #chapter
 
 << Horde !Vulpera
 
--- step
---     #completewith VulperaStartQuestline
---     .zone 85 >>Get to Orgrimmar
--- step
---     .isOnQuest 49930
---     .isQuestAvailable 49930
---     .goto 85,53.23,90.47,10,0
---     .goto 85,37.76,81.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .turnin 49930 >>Turn in The Call for Allies
---     .target Ji Firepaw
--- step
---     .isQuestAvailable 50242
---     .goto 85,37.76,81.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .accept 50242 >>Accept A Choice of Allies
---     .target Ji Firepaw
--- step
---     .isOnQuest 50242
---     >>Interact with the banners in any order
---     .goto 85,37.65,81.43
---     .complete 50242,1 -- Learn more about the Highmountain Tauren
---     .complete 50242,2 -- Learn more about the nightborne
---     .complete 50242,3 -- Learn more about the Maghar Orcs
---     .complete 50242,4 -- Learn more about the Zandalari trolls
---     .complete 50242,5 -- Learn more about the Vulpera
--- step
---     .isQuestComplete 50242
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
---     .goto 85,37.65,81.44
---     .turnin 50242 >>Turn in A Choice of Allies
---     .target Ji Firepaw
 step
-    -- #label VulperaStartQuestline
-    .goto 85,37.77,81.16
+    .goto 85,37.78,81.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Ji Firepaw
     .accept 53870 >>Accept Guests at Grommash Hold
     .target Ji Firepaw
@@ -2591,20 +2529,19 @@ step
     .accept 53889 >>Accept A Declaration of Intent
     .target Kiro
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Kiro|r.
     .goto 85,48.89,72.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kiro|r.
     .turnin 53889 >>Turn in A Declaration of Intent
     .accept 53890 >>Accept New Allies, New Problems
     .target Kiro
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Commander Dresh|r, |cRXP_FRIENDLY_Bladeguard Sonji|r and |cRXP_FRIENDLY_First Arcanist Thalyssra|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Dresh|r, |cRXP_FRIENDLY_Bladeguard Sonji|r and |cRXP_FRIENDLY_First Arcanist Thalyssra|r.
     .complete 53890,1 --1/1 Commander Dresh questioned
     .goto 85,48.23,71.76
     .complete 53890,2 --1/1 Bladeguard Sonji questioned
     .goto 85,48.69,71.63
     .complete 53890,3 --1/1 First Arcanist Thalyssra questioned
     .goto 85,48.65,71.25
-    .skipgossip
     .target Commander Dresh
     .target Bladeguard Sonji
     .target First Arcanist Thalyssra
@@ -2622,27 +2559,26 @@ step
     .goto 85,50.22,39.46
     .zone 241 >>Take the Portal to Twilight Highlands
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kiro|r.
     .goto 241,44.11,73.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kiro|r.
     .turnin 53891 >>Turn in No Problem Too Small
     .accept 53892 >>Accept Where Are the Workers?
     .target Kiro
 step
-    >>Follow the arrow to the waypoint
     .goto 241,46.81,66.22
+    #title |cFFFCDC00Follow the Arrow|r
     .complete 53892,1 --1/1 Follow Kiro
     .target Kiro
 step
     #completewith next
     .goto 241,46.62,65.95,8 >>Enter the house
 step
-    >>Wait for the RP
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .goto 241,46.05,65.60
     .complete 53892,2 --1/1 Peon Hideout investigated
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crushblow Peons|r.
     .goto 241,46.05,65.60
-    .skipgossip
     .complete 53892,3 --3/3 Peons questioned
     .target Crushblow Peon
 step
@@ -2662,7 +2598,6 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crushblow Peons|r.
     .goto 241,46.09,65.59
-    .skipgossip 1
     .complete 53895,1 --3/3 Peons promoted
     .target Crushblow Peon
 step
@@ -2673,21 +2608,14 @@ step
     >>Pick up |cRXP_PICK_Twilight Ore|r from the veins.
     .complete 53894,1 --15/15 Twilight Ore
 step
-    >>Use the |T310733:0|t[Enlarging Totem] before killing |cRXP_ENEMY_beasts|r around the area. Loot them for their [|cRXP_LOOT_flanks|r], [|cRXP_LOOT_meat|r], and [|cRXP_LOOT_tidbits|r].
-    .goto 241,48.40,65.62,30,0
-    .goto 241,46.62,63.33,30,0
-    .goto 241,44.39,67.00,30,0
-    .goto 241,45.34,67.78,30,0
-    .goto 241,50.10,74.37,30,0
-    .goto 241,53.75,71.69,30,0
-#loop
-    .line 241,48.40,65.62,46.62,63.33,44.39,67.00,45.34,67.78,50.10,74.37,53.75,71.69
+    #loop
     .goto 241,48.40,65.62,35,0
     .goto 241,46.62,63.33,35,0
     .goto 241,44.39,67.00,35,0
     .goto 241,45.34,67.78,35,0
     .goto 241,50.10,74.37,35,0
     .goto 241,53.75,71.69,35,0
+    >>Use the |T310733:0|t[Enlarging Totem] before killing |cRXP_ENEMY_beasts|r around the area. Loot them for their [|cRXP_LOOT_flanks|r], [|cRXP_LOOT_meat|r], and [|cRXP_LOOT_tidbits|r].
     .complete 53893,1 --100/100 Saber Flank
     .complete 53893,2 --100/100 Worg Meat
     .complete 53893,3 --100/100 Clucker Tidbits
@@ -2695,12 +2623,9 @@ step
     .mob Twilight Prowler
     .mob Highlands Clucker
 step
+    #loop
     >>Pick up |cRXP_PICK_Twilight Ore|r from the veins.
-    .goto 241,51.13,68.58,30,0
-    .goto 241,48.60,70.24,30,0
-    .goto 241,46.42,72.89,30,0
-#loop
-    .line 241,51.13,68.58,48.60,70.24,46.42,72.89
+ 
     .goto 241,51.13,68.58,30,0
     .goto 241,48.60,70.24,30,0
     .goto 241,46.42,72.89,30,0
@@ -2720,7 +2645,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r and defeat him
     .goto 241,45.93,65.50
     .complete 53897,1 --1/1 Foreman Magrok invited
-    .skipgossip
     .target Foreman Magrok
 step
     #completewith next
@@ -2736,7 +2660,6 @@ step
     .goto 241,45.67,76.42
     .complete 53898,1 --1/1 Foreman Magrok confronted
     .complete 53898,2 --1/1 Foreman Magrok defeated
-    .skipgossip
     .target Foreman Magrok
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kiro|r.
@@ -2744,26 +2667,6 @@ step
     .turnin 53898 >>Turn in Strength and Honor
     .accept 54026 >>Accept Job's Done
     .target Kiro
-step << Mage
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
-step
-    .zoneskip 85
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
-step
-    .zoneskip 85
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step
-    .zoneskip 627,1
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the portal to Orgrimmar
-step
-    .isOnQuest 54026
-    .zoneskip 85
-    .goto 18,60.74,58.67
-    .zone 85 >> Take the portal to Orgrimmar
 step
     #completewith next
     .goto 85,49.88,75.57,10 >>Enter Grommash Hold
@@ -2788,11 +2691,6 @@ step
 step
     #completewith VulperaOntheOutskirts
     .goto 1165,49.94,42.02,10 >>Leave The Great Seal
-step
-    #completewith next
-    .noflyable 862
-    .goto 1165,51.91,41.20
-    .fly Seeker's Outpost >>Fly to Seeker's Outpost
 step
     #label VulperaOntheOutskirts
     .goto 862,74.86,63.02
@@ -2845,13 +2743,8 @@ step
     .goto 862,73.71,66.84
     .complete 53901,1 --8/8 Explosives placed
 step
-    >>Kill |cRXP_ENEMY_Nazeshi Overseer|r or |cRXP_ENEMY_Nazeshi Tempest-Wielder|r. Loot them for their [|cRXP_LOOT_weaponry|r].
-    .goto 862,74.18,65.41,20,0
-    .goto 862,75.11,66.23,20,0
-    .goto 862,76.92,66.23,25,0
-    .goto 862,77.14,63.93,25,0
 #loop
-    .line 862,74.18,65.41,75.11,66.23,76.92,66.23,77.14,63.93
+    >>Kill |cRXP_ENEMY_Nazeshi Overseer|r or |cRXP_ENEMY_Nazeshi Tempest-Wielder|r. Loot them for their [|cRXP_LOOT_weaponry|r].
     .goto 862,74.18,65.41,30,0
     .goto 862,75.11,66.23,30,0
     .goto 862,76.92,66.23,30,0
@@ -2882,28 +2775,6 @@ step
     .turnin 53902 >>Turn in Taking Out the Tidecaller
     .accept 54027 >>Accept Threat Contained
     .target Nisha
-step << Mage
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
-step
-    .zoneskip 85
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
-step
-    .zoneskip 85
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step
-    .zoneskip 627,1
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the portal to Orgrimmar
-step
-    .zoneskip 85
-    #completewith next
-    .isOnQuest 54027
-    .noflyable 862
-    .goto 862,70.45,65.30
-    .fly The Great Seal >>Fly to The Great Seal
 step
     .zoneskip 85
     .isOnQuest 54027
@@ -2966,19 +2837,16 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss Mida|r.
     .goto 680,60.69,56.38
-    .skipgossip 1
     .complete 53905,2 --1/1 Boss Mida assigned
     .target Boss Mida
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Micah Broadhoof|r inside the house.
     .goto 680,61.22,55.15
-    .skipgossip 2
     .complete 53905,1 --1/1 Micah assigned
     .target Micah Broadhoof
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nomi|r.
     .goto 680,62.42,57.65
-    .skipgossip 1
     .complete 53905,3 --1/1 Nomi assigned
     .target Nomi
 step
@@ -3004,13 +2872,8 @@ step
     .complete 53906,2 --10/10 Fermented Firebloom
     .target Boss Mida
 step
+    #loop
     >>Kill |cRXP_ENEMY_Tattered Silkwings|r. Loot them for their [|cRXP_LOOT_Fibers|r].
-    .goto 680,63.97,57.97,25,0
-    .goto 680,62.87,59.77,25,0
-    .goto 680,61.06,57.61,25,0
-    .goto 680,62.03,55.66,25,0
-#loop
-    .line 680,63.97,57.97,62.87,59.77,61.06,57.61,62.03,55.66
     .goto 680,63.97,57.97,25,0
     .goto 680,62.87,59.77,25,0
     .goto 680,61.06,57.61,25,0
@@ -3026,9 +2889,8 @@ step
     .goto 680,60.59,56.34
     .target Nomi
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vintner Iltheux|r and wait for the RP
     .goto 680,58.79,55.42
-    .skipgossip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vintner Iltheux|r and wait for the RP
     .complete 53907,2 --1/1 Deliver the sample to Vintner Iltheux
     .target Vintner Iltheux
 step
@@ -3037,25 +2899,6 @@ step
     .turnin 53907 >>Turn in Sip and Savor
     .accept 53908 >>Accept Awaiting Our Arrival
     .target Meerah
-step << Mage
-    .isOnQuest 53908
-    .zoneskip 85
-    .cast 3567>>Use Teleport: Orgrimmar
-step
-    .isOnQuest 53908
-    .zoneskip 85
-    .itemcount 65274,1
-    .cooldown item,65274,>0,1
-    .cast 89158>>Use the Cloak of Coordination
-step
-    .isOnQuest 53908
-    .zoneskip 85
-    .zone 627 >>Use the Dalaran Hearthstone if you have one (in your toy box)
-step
-    .isOnQuest 53908
-    .zoneskip 85
-    .goto 627,55.27,23.97
-    .zone 85 >>Use the Portal to Orgrimmar in Dalaran
 step
     #completewith next
     .goto 85,49.88,75.57,10 >>Enter Grommash Hold
@@ -3076,7 +2919,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Earth
 #displayname |cFF00CCFF5|r - Vulpera
 #next a) Earth
@@ -3094,7 +2937,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Allied Races
 #name a) HERITAGE ARMOR
 #displayname Heritage Armors
@@ -3106,7 +2949,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Human Heritage Armor
 #displayname |cFF1EFF001|r - Human
 #next a) Dwarf Heritage Armor
@@ -3617,7 +3460,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Dwarf Heritage Armor
 #displayname |cFF1EFF002|r - Dwarf
 #next a) Nightelf Heritage Armor
@@ -4026,7 +3869,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Nightelf Heritage Armor
 #displayname |cFF1EFF003|r - Nightelf
 #next a) Gnome Heritage Armor
@@ -4355,7 +4198,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Gnome Heritage Armor
 #displayname |cFF1EFF004|r - Gnome
 #next a) Draenei Heritage Armor
@@ -4586,7 +4429,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Draenei Heritage Armor
 #displayname |cFF1EFF005|r - Draenei 
 #next a) Worgen Heritage Armor
@@ -5082,7 +4925,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Worgen Heritage Armor
 #displayname  |cFF1EFF006|r - Worgen
 #next a) Void Elf Heritage Armor
@@ -5290,7 +5133,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Void Elf Heritage Armor
 #displayname |cFF1EFF007|r - Void Elf
 #next a) Lightforged Draenei Heritage Armor
@@ -5315,7 +5158,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Lightforged Draenei Heritage Armor
 #displayname |cFF1EFF008|r - Lightforged Draeanei
 #next a) Dark Iron Dwarf Heritage Armor
@@ -5340,7 +5183,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Dark Iron Dwarf Heritage Armor
 #displayname |cFF1EFF009|r - Dark Iron Dwarf
 #next a) Kul Tiran Heritage Armor
@@ -5369,7 +5212,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Kul Tiran Heritage Armor
 #displayname |cFF1EFF0010|r - Kul Tiran
 #next a) Mechagnome Heritage Armor
@@ -5391,7 +5234,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Mechagnome Heritage Armor
 #displayname |cFF1EFF0011|r - Mechagnome
 #next a) EarthenDwarf Heritage Armor
@@ -5418,7 +5261,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) EarthenDwarf Heritage Armor
 #displayname |cFF1EFF007|r - Earthen Dwarf
 #chapter
@@ -5452,7 +5295,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Orc Heritage Armor
 #displayname |cFF1EFF001|r - Orc
 #next a) Undead Heritage Armor
@@ -5920,7 +5763,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Undead Heritage Armor
 #displayname |cFF1EFF002|r - Undead
 #next a) Tauren Heritage Armor
@@ -6592,7 +6435,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Tauren Heritage Armor
 #displayname |cFF1EFF003|r - Tauren
 #next a) Troll Heritage Armor
@@ -6726,7 +6569,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Troll Heritage Armor
 #displayname |cFF1EFF004|r - Troll
 #next a) Blood Elf Heritage Armor
@@ -7183,7 +7026,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Blood Elf Heritage Armor
 #displayname |cFF1EFF005|r - Blood Elf
 #next a) Goblin Heritage Armor
@@ -7460,7 +7303,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Goblin Heritage Armor
 #displayname |cFF1EFF006|r - Goblin
 #next a) Nightborne Heritage Armor
@@ -7703,7 +7546,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Nightborne Heritage Armor
 #displayname |cFF1EFF007|r - Nightborne
 #next a) Highmountain Heritage Armor
@@ -7726,7 +7569,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Highmountain Heritage Armor
 #displayname |cFF1EFF008|r - Highmountain
 #next a) Mag'har Orc Heritage Armor
@@ -7753,7 +7596,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Mag'har Orc Heritage Armor
 #displayname |cFF1EFF009|r - Mag'har Orc
 #next a) Zandalari Troll Heritage Armor
@@ -7774,7 +7617,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Zandalari Troll Heritage Armor
 #displayname |cFF1EFF0010|r - Zandalari Troll
 #next a) Vulpera Heritage Armor
@@ -7800,7 +7643,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Vulpera Heritage Armor
 #displayname |cFF1EFF0011|r - Vulpera
 #next a) Heritage Pandaren
@@ -7822,7 +7665,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Heritage Pandaren
 #displayname |cFF1EFF0012|r - Pandaren
 #next a) Haranir Heritage Armor
@@ -8283,7 +8126,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Haranir Heritage Armor
 #displayname |cFF1EFF0013|r - Haranir
 #internal
@@ -8306,7 +8149,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Nightborne Unlock 112213
 #displayname |cFF00CCFF1|r - Nightborne
 #next a) Highmountain Tauren Unlock 12123123
@@ -8502,7 +8345,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Void Elf Unlock 1hjkjh
 #displayname |cFF00CCFF1|r - Void Elf
 #next a) Lightforged Draenei Unlock 1hgjjg

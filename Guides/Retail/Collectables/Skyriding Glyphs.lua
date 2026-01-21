@@ -6,7 +6,7 @@
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Skyriding Glyphs
 #name a) Dragonflight Glyphs
 #displayname Dragonflight Glyphs
@@ -17,7 +17,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Waking Shores Glyphs
 #displayname |cFF00CCFF1|r - Waking Shores
 #next a) Ohn'ahran Plains Glyphs
@@ -160,7 +160,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Ohn'ahran Plains Glyphs
 #displayname |cFF00CCFF2|r - Ohn'ahran Plains
 #next a) Azure Span Glyphs
@@ -267,7 +267,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Azure Span Glyphs
 #displayname |cFF00CCFF3|r - Azure Span
 #next a) Thaldraszus Glyphs
@@ -396,7 +396,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Thaldraszus Glyphs
 #displayname |cFF00CCFF4|r - Thaldraszus
 #next a) Forbidden Reach Glyphs
@@ -507,7 +507,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Forbidden Reach Glyphs
 #displayname |cFF00CCFF5|r - Forbidden Reach
 #next a) Zaralek Cavern Glyphs
@@ -622,7 +622,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Zaralek Cavern Glyphs
 #displayname |cFF00CCFF6|r - Zaralek Cavern
 #next a) Emerald Dream Dragon Glyphs
@@ -711,7 +711,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Emerald Dream Dragon Glyphs
 #displayname |cFF00CCFF7|r - Emerald Dream
 #next a) Isle of the Dorn Glyphs
@@ -778,7 +778,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #subgroup Skyriding Glyphs
 #name a) The War Within Glyphs
 #displayname The War Within Glyphs
@@ -789,7 +789,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Isle of the Dorn Glyphs
 #displayname |cFF1EFF001|r - Isle of the Dorn
 #next a) The Ringing Deeps Glyphs
@@ -874,7 +874,7 @@ step
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) The Ringing Deeps Glyphs
 #displayname |cFF1EFF002|r - The Ringing Deeps
 #next a) Hallowfall Glyphs
@@ -948,7 +948,7 @@ step
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #name a) Hallowfall Glyphs
 #displayname |cFF1EFF003|r - Hallowfall
 #next a) Azj-Kahet Glyphs
@@ -1029,7 +1029,7 @@ step
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #displayname |cFF1EFF004|r - Azj-Kahet
 #name a) Azj-Kahet Glyphs
 #next a) K'aresh Glyphs
@@ -1117,7 +1117,7 @@ step
 RXPGuides.RegisterGuide([[
 #version 1
 #retail
-#group RestedXP Collectables
+#group RestedXP Miscellaneous
 #displayname |cFF1EFF005|r - K'aresh
 #name a) K'aresh Glyphs
 #next a) Waking Shores Glyphs
