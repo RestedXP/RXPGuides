@@ -4806,44 +4806,6 @@ step
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .mob +Gangled Cannibal
     .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
-
-
-
-step
-    .xp 16-5510
-step
-    .xp 16-6560
-    .itemcount 22644,5
-    .isQuestAvailable 9171
-step
-    .xp 16-8010
-    .isQuestComplete 9156
-step
-    .xp 16-9060
-    .isQuestComplete 9156
-    .itemcount 22644,5
-    .isQuestAvailable 9171
-
-
-
-    5510
-
-    6560
-    
-    8010
-
-    9060
-
-
-
-
-
-
-    #optional
-    1050 --9171
-    2500 --9156
-
-
 step
     #completewith TranqVisit3
     .subzone 3488 >> Travel to Tranquillien
