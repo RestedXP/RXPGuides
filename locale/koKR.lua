@@ -337,6 +337,9 @@ L["Mark Friendly Targets"] = "우호적 대상 표시"
 L["Mark friendly targets with star, circle, diamond, and triangle"] = "별, 원, 다이아몬드, 삼각형으로 우호적 대상 표시"
 L["Scan Enemy Targets"] = "적 대상 스캔"
 L["Scan for enemy targets"] = "적 대상 스캔"
+L["Maximize Nameplate Distance"] = "이름표 거리 최대화"
+L["Automatically maximize nameplate visibility distance for better target detection (Requires reload)"] =
+   "더 나은 대상 감지를 위해 이름표 가시성 거리를 자동으로 최대화합니다 (다시 로드 필요)"
 L["Mark Enemy Targets"] = "적 대상 표시"
 L["Mark enemy targets with skull, cross, square, and moon"] = "해골, 십자가, 사각형, 달로 적 대상 표시"
 L["Scan for Nearby Rares"] = "근처의 희귀 몹 스캔"
@@ -454,4 +457,3 @@ L["A macro has been automatically built to aid in leveling. Please move %s to yo
 L["Rare Found! %s is nearby."] = "희귀 몹 발견! %s가 근처에 있습니다."
 
 -- Timers.lua file
-

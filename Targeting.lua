@@ -82,11 +82,13 @@ function addon.targeting:Setup()
     -- Only works when nameplates are enabled
     self:RegisterEvent("NAME_PLATE_UNIT_ADDED")
 
-    -- Increase nameplate scanning distance to max allowed
-    if addon.gameVersion > 40000 then
-        SetCVar("nameplateMaxDistance", "100")
-    else
-        SetCVar("nameplateMaxDistance", "41")
+    -- If enabled, increase nameplate scanning distance to max allowed
+    if addon.settings.profile.enableMaxNameplateDistance then
+        if addon.gameVersion > 40000 then
+            SetCVar("nameplateMaxDistance", "100")
+        else
+            SetCVar("nameplateMaxDistance", "41")
+        end
     end
 
     if addon.settings.profile.showTargetingOnProximity then

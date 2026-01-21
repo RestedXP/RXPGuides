@@ -104,3 +104,7 @@ L["Development"] = "Desarrollo"
 -- SettingsPanel.lua
 L["Please restart your game client and try again"] = "Por favor, reinicia el juego e inténtalo de nuevo"
 L["Failed to Import Guides: Invalid Import String"] = "Error al importar guías: cadena de importación inválida"
+
+-- Targeting
+L["Maximize Nameplate Distance"] = "Maximizar Distancia de Placas de Nombre"
+L["Automatically maximize nameplate visibility distance for better target detection (Requires reload)"] = "Maximiza automáticamente la distancia de visibilidad de las placas de nombre para una mejor detección de objetivos (Requiere recarga)"

@@ -170,6 +170,7 @@ local settingsDBDefaults = {
 
         -- Targeting
         enableTargetAutomation = true,
+        enableMaxNameplateDistance = true,
         enableTargetMacro = true,
         notifyOnTargetUpdates = true,
 
@@ -1738,6 +1739,16 @@ function addon.settings:CreateAceOptionsPanel()
                                 not InCombatLockdown() then
                                 addon.targeting.activeTargetFrame:Hide()
                             end
+                        end
+                    },
+                    enableMaxNameplateDistance = {
+                        name = L("Maximize Nameplate Distance"),
+                        desc = L("Automatically maximize nameplate visibility distance for better target detection (Requires reload)"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 0.1,
+                        disabled = function()
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     markersHeader = {
