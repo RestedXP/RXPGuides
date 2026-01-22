@@ -1774,11 +1774,16 @@ step << Alliance
 --     .dmf
 -- step << Alliance
 --     #include RestedXP Speed Leveling\a) DMF
-step
-    .isOnQuest 40519
-    .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
-    .cooldown item,132120,>0,1
-    .use 132120
+-- step << Alliance !VoidElf
+--     .isOnQuest 40519
+--     .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
+--     .cooldown item,132120,>0,1
+--     .use 132120
+--     .nodmf
+step << Alliance
+    .isOnQuest 65436
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
 
@@ -5067,6 +5072,25 @@ step << Alliance
     .turnin 44473 >>Turn in A Weapon of the Alliance
     .target Elerion Bladedancer
     .accept 44663 >>Accept In the Blink of an Eye
+step << Alliance
+    .goto 84,49.47,86.79,10,0
+    .goto 84,49.01,87.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r
+    .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
+    .skipgossipid 51032
+    .target Kirin Tor Emissary 
+step << Alliance
+    .goto 41,53.15,52.29,5,0
+    .goto 41,49.84,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
+    .skipgossipid 45530
+    .target Archmage Khadgar
+step << Alliance
+    .goto 627,57.60,45.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Auldbridge|r
+    .turnin 44663 >>Turn in In the Blink of an Eye
+    .target Emissary Auldbridge
 step << Horde
     .goto 85,50.0,76.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saurfang|r.
@@ -21778,7 +21802,7 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
-step
+step << !DemonHunter VoidElf
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
     .accept 40519 >>Accept Legion: The Legion Returns
@@ -21791,6 +21815,95 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keira Onyxraven|r.
     .turnin 50305 >>Turn in Stranger in a Strange Land 
     .target Keira Onyxraven
+step << DemonHunter VoidElf
+    >>Use |T237449:0|t[Scroll of Reflection] and choose a follower.
+    .complete 95215,1 --1/1 Use the Scroll of Reflection to choose between Kayn and Altruis
+    .use 268551
+step << DemonHunter VoidElf
+    .goto 84,72.55,47.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .turnin 95215 >>Turn in A New Direction
+    .target Archmage Khadgar
+    .accept 39691 >>Accept The Call of War
+step << DemonHunter VoidElf
+    .goto 84,84.39,33.74
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 39691,1 --1/1 Enter |cRXP_WARN_the Throne Room|r.
+step << DemonHunter VoidElf
+    .goto 84,84.39,33.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r.
+    .turnin 39691 >>Turn in The Call of War
+    .accept 44471 >>Accept Second Sight
+    .target Jace Darkweaver
+step << DemonHunter VoidElf
+    >>|cRXP_WARN_Use Spectral Sight|r.
+    .complete 44471,1 --1/1 Spectral Sight used
+    .usespell 188501
+step << DemonHunter VoidElf
+    .goto 84,84.39,33.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r.
+    .turnin 44471 >>Turn in Second Sight
+    .accept 44463 >>Accept Demons Among Them
+    .target Jace Darkweaver
+step << DemonHunter VoidElf
+    .goto 84,85.90,31.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
+    .complete 44463,1 --1/1 Warn Anduin Wrynn 
+    .skipgossipid 45043
+    .target Anduin Wrynn
+step << DemonHunter VoidElf
+    #loop
+    .goto 84,86.03,34.8,25,0
+    .goto 84,83.69,34.19,25,0
+    .goto 84,84.07,30.96,25,0
+    >>Kill |cRXP_ENEMY_Demons|r.
+    .complete 44463,2 --5/5 Demons slain
+    .mob Felblade Assassin
+step << DemonHunter VoidElf
+    .goto 84,85.75,31.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
+    .turnin 44463 >>Turn in Demons Among Them
+    .accept 44473 >>Accept A Weapon of the Alliance
+    .target Anduin Wrynn
+step << DemonHunter VoidElf
+    #completewith next
+    #label Weapon of the Alliance
+    .goto 84,83.9,30.47,10,0
+    .goto 84,83.11,29.25,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
+    .turnin 44473 >>Turn in A Weapon of the Alliance
+    .target Elerion Bladedancer
+    .accept 44663 >>Accept In the Blink of an Eye
+    .disablecheckbox#
+step << DemonHunter VoidElf
+    #completewith Weapon of the Alliance
+   .goto 84,40.28,77.68,250 >>Leave the Castle
+step << DemonHunter VoidElf
+    #requires Weapon of the Alliance
+    .goto 84,40.28,77.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
+    .turnin 44473 >>Turn in A Weapon of the Alliance
+    .target Elerion Bladedancer
+    .accept 44663 >>Accept In the Blink of an Eye
+step << DemonHunter VoidElf
+    .goto 84,49.47,86.79,10,0
+    .goto 84,49.01,87.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r
+    .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
+    .skipgossipid 51032
+    .target Kirin Tor Emissary 
+step << DemonHunter VoidElf
+    .goto 41,53.15,52.29,5,0
+    .goto 41,49.84,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Khadgar|r
+    .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
+    .skipgossipid 45530
+    .target Archmage Khadgar
+step << DemonHunter VoidElf
+    .goto 627,57.60,45.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Auldbridge|r
+    .turnin 44663 >>Turn in In the Blink of an Eye
+    .target Emissary Auldbridge
 -- step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
