@@ -2528,7 +2528,7 @@ step
     .target Stephanos
     .zoneskip Bloodmyst Isle
 step
-    .goto The Exodar,68.351,63.490
+    .goto Bloodmyst Isle,55.843,59.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r
     .turnin -9606 >> Turn in Return to Topher Loaal
     .target Caregiver Topher Loaal
