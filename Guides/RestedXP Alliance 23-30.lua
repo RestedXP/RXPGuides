@@ -109,7 +109,7 @@ step << wotlk
     .vendor 5519>> Check Billibub in the Dwarven District for a Bronze Tube. Buy one if it's available
     .collect 4371,1,175,1,1
     .bronzetube
-step << wotlk
+step << skip -- wotlk
     #label exit1
     .goto StormwindClassic,63.9,8.3
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
@@ -1368,7 +1368,7 @@ RXPGuides.RegisterGuide([[
 #next 30-32 Duskwood/STV
 #xprate <1.5
 
-step
+step << skip
     .goto StormwindClassic,60.5,12.3,40,0
     .goto StormwindClassic,60.5,12.3,0
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
@@ -1943,7 +1943,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 20-32
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
 #xprate <1.5
-step << !Mage
+step << skip !Mage
 	.goto Ironforge,74.5,50.5,20,0
 	.goto StormwindClassic,51.7,12.3
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
@@ -3377,7 +3377,7 @@ step
 	.unitscan Zzarc' Vul
     .isOnQuest 181
     .complete 181,1 --Collect Ogre's Monocle (x1)
-step
+step << skip
     .goto Stranglethorn Vale,38.2,4.1
     >>Head out of the cave and then south to STV. Alternatively do the logout skip by hopping on the banner.
     .link https://www.youtube.com/watch?v=i5dIhfOmyd8 >> Click here for a video on how to do the logout skip
@@ -3795,7 +3795,7 @@ step << Draenei !Shaman !Paladin wotlk
 	.goto Wetlands,5.2,63.3,50,0
 	.money <5.00
 	.skill riding,75 >> Take the boat to Darkshore then the boat to the Exodar and buy your mount. Then hearth to Stormwind
-step
+step << skip
     #sticky
 	#completewith next
     .goto StormwindClassic,60.5,12.3,40,0

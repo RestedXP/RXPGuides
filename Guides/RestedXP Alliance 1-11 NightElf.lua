@@ -273,7 +273,7 @@ step
     .goto Teldrassil,56.80,26.45
 	>>Loot a Webwood Egg at the back of the cave
     .complete 917,1 --Collect Webwood Egg (x1)
-step
+step << skip
 	#completewith next
 	.deathskip >>Die and respawn at the Spirit Healer, or do the logout skip.
     .link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference on how to do the logout skip

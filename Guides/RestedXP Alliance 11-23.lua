@@ -2342,7 +2342,7 @@ step << Draenei tbc/NightElf tbc
     .zoneskip Elwynn Forest
 
 
-step << Draenei tbc/NightElf tbc
+step << skip -- Draenei tbc/NightElf tbc
 #xprate >1.499
    #completewith next
    .goto Wetlands,63.9,78.6
@@ -2362,7 +2362,7 @@ step << NightElf tbc/Draenei tbc
     #completewith next
     .goto Loch Modan,21.30,68.60,40,0
     .zone Dun Morogh>> Run to Dun Morogh
-step << NightElf tbc/Draenei tbc
+step << skip -- NightElf tbc/Draenei tbc
 #xprate >1.499
 	>>Go inside the South-eastern Trogg cave. Perform a logout skip
     .goto Dun Morogh,70.63,56.70,60,0

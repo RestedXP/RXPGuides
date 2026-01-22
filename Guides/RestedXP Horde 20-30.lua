@@ -6338,7 +6338,7 @@ step << Troll Mage
     .zoneskip Orgrimmar
     .itemcount 17031,1
     .train 3567,3
-step << !Shaman !Warrior
+step << skip --!Shaman !Warrior
     #completewith Durotar
     .goto Undercity,46.26,72.32
     .goto Undercity,67.88,14.97,30 >>|cRXP_WARN_Run onto the bookshelf. Perform a Logout Skip by logging out and back in|r
@@ -7775,7 +7775,7 @@ step << Rogue tbc
 	.goto The Barrens,60.90,3.82,10,0
 	.goto The Barrens,60.51,3.80,10,0 >>Travel toward the Boulder Lode Mine
     .zoneskip Orgrimmar
-step << Rogue tbc
+step << skip --Rogue tbc
     #label LogoutSkipRogue
     #completewith PoisonCleanse
     .zone Orgrimmar >>|cRXP_WARN_Jump onto the wooden beam above the |cRXP_PICK_Brazier|r. Perform a Logout Skip by logging out on top of the beam, then logging back in|r

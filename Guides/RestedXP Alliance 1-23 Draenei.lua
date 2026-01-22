@@ -823,7 +823,7 @@ step << Hunter
 	.goto The Exodar,51.1,80.5,40,0
     .goto The Exodar,53.3,85.7
     .train 202 >>Train 2h swords
-step << Hunter
+step << skip -- Hunter
 	#completewith murloc1
 	>>Jump down and head out of The Exodar
 	.goto The Exodar,57.9,61.5,50,0
@@ -2909,7 +2909,7 @@ step << Draenei tbc/NightElf tbc
 #xprate >1.499
     .goto Wetlands,9.5,59.7
     .fp Menethil >> Get the Menethil Harbor flight path
-step << Draenei tbc/NightElf tbc
+step << skip -- Draenei tbc/NightElf tbc
 #xprate >1.499
     #completewith next
     .goto Wetlands,63.9,78.6
@@ -2929,7 +2929,7 @@ step << NightElf tbc/Draenei tbc
     #completewith next
     .goto Loch Modan,21.30,68.60,40,0
     .zone Dun Morogh>> Run to Dun Morogh
-step << NightElf tbc/Draenei tbc
+step << skip -- NightElf tbc/Draenei tbc
 #xprate >1.499
     >>Go inside the South-eastern Trogg cave. Perform a logout skip
     .goto Dun Morogh,70.63,56.70,60,0

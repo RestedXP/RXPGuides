@@ -1433,7 +1433,7 @@ step << tbc/Warlock wotlk
 #xprate >1.119 << Warlock wotlk
     #completewith next
     .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
-step << tbc/Warlock wotlk
+step << skip -- tbc/Warlock wotlk
 #xprate >1.119 << Warlock wotlk
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
@@ -1595,7 +1595,7 @@ step
 #xprate <1.2
     #completewith next
     .goto StormwindClassic,63.9,8.3,25 >>Enter the Deeprun Tram
-step
+step << skip
 #xprate <1.2
     >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> Click here for a logout skip inside the tram
