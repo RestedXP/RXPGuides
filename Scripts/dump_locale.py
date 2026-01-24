@@ -35,7 +35,7 @@ def check_exceptions(dir):
     return False
 
 def locale_dump(input_text):
-    pattern = re.compile(r"L\(\s*\"(.*?)\"\)|L\(\'(.*?)\'\)|L\'(.*?)\'|L\"(.*?)\"|\"CLICK RXP.*?\] =\s*.*?\"(.*?%d)\"")
+    pattern = re.compile(r"L\([\s\r\n]*\"(.*?)\"\)|L\([\s\r\n]*\'(.*?)\'\)|L\'(.*?)\'|L\"(.*?)\"|\"CLICK RXP.*?\] =\s*.*?\"(.*?%d)\"")
     return pattern.finditer(input_text)
 
 # Looping through files list and extracting locale
