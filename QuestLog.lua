@@ -357,11 +357,14 @@ function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
     return QL
 end
 
+local tooltipProcessorWorking = false
+
 local function SetItemTooltip(tooltip, tooltipInfo)
     if tooltip:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
 
     local id
     if tooltipInfo then
+        tooltipProcessorWorking = true
         id = tooltipInfo.id
     else
         local _, link = tooltip:GetItem()
@@ -394,9 +397,11 @@ local function SetItemTooltip(tooltip, tooltipInfo)
     end
 end
 
-if _G.TooltipDataProcessor and _G.TooltipDataProcessor.AddTooltipPostCall then
+if _G.TooltipDataProcessor then
     _G.TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, SetItemTooltip)
-else
+end
+
+if tooltipProcessorWorking == false then
     _G.GameTooltip:HookScript("OnTooltipSetItem", SetItemTooltip)
 end
 
