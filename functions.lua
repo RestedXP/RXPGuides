@@ -6294,7 +6294,8 @@ end
 function addon.functions.dmf(self, ...)
     if type(self) == "string" then
         local element = {}
-        local text = ...
+        local text,skipTo = ...
+        element.skipTo = skipTo
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         element.eventName = _G.CALENDAR_FILTER_DARKMOON
@@ -6306,7 +6307,8 @@ end
 function addon.functions.nodmf(self, ...)
     if type(self) == "string" then
         local element = {}
-        local text = ...
+        local text,skipTo = ...
+        element.skipTo = skipTo
         element.reverse = true
         element.eventName = _G.CALENDAR_FILTER_DARKMOON
         if text and text ~= "" then element.text = text end
@@ -6320,7 +6322,7 @@ function addon.functions.holiday(self, text, eventId, reverse)
     if type(self) == "string" then
         local element = {}
         if text and text ~= "" then element.text = text end
-        element.eventId = tonumber(eventId)
+        element.eventId = tonumber(eventId) or eventId
         if not eventId then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
@@ -6351,7 +6353,7 @@ function addon.functions.holiday(self, text, eventId, reverse)
     for i = 1, GetNumDayEvents(0, monthDay) do
         event = GetDayEvent(0, monthDay, i)
 
-        if event and (element.eventId and element.eventId == event.eventID or (event.title == element.eventName)) then
+        if event and element.eventId and (element.eventId == event.eventID or event.title == element.eventId) then
             eventFound = true
             break
         end
@@ -6360,6 +6362,12 @@ function addon.functions.holiday(self, text, eventId, reverse)
     if (not eventFound == not element.reverse) and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
+        local ref = element.skipTo
+        local guide = addon.currentGuide
+        if ref and guide.labels[ref] then
+            --local n = guide.labels[ref]
+            addon.nextStep = guide.labels[ref]
+        end
     end
 end
 
@@ -6968,24 +6976,37 @@ function addon.functions.collectcurrency(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id, qty = ...
+        local text, id, qty, silent = ...
         id = tonumber(id)
+        local operator, total
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ': No currency ID provided\n' .. self)
         end
+
+        if qty then
+            qty = qty:gsub(" ", "")
+            operator, total = qty:match("([<>]?)=?(%d+)")
+        end
+
+        if operator == "<" then
+            element.operator = -1
+        end
+        element.silent = silent
         element.id = id
-        qty = tonumber(qty)
+        qty = tonumber(total)
         element.qty = qty or 1
         element.currencyName = addon.GetCurrencyName(element.id)
 
-        if text and text ~= "" then
-            element.rawtext = text
-            element.tooltipText = addon.icons.collect .. element.rawtext
-        else
-            element.requestFromServer = true
-            element.text = " "
+        if not silent then
+            if text and text ~= "" then
+                element.rawtext = text
+                element.tooltipText = addon.icons.collect .. element.rawtext
+            else
+                element.requestFromServer = true
+                element.text = " "
+            end
         end
         return element
     end
@@ -6998,16 +7019,26 @@ function addon.functions.collectcurrency(self, ...)
     local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(element.id)
     local count = currencyInfo and currencyInfo.quantity or 0
 
-    element.text = fmt("%d/%d %s", count, numRequired, element.currencyName)
-    element.tooltipText = addon.icons.collect .. element.text
-
-    if element.lastCount ~= count then addon.UpdateStepText(self) end
+    if not element.silent then
+        element.text = fmt("%d/%d %s", count, numRequired, element.currencyName)
+        element.tooltipText = addon.icons.collect .. element.text
+        if element.lastCount ~= count then addon.UpdateStepText(self) end
+    end
     element.lastCount = count
+    local op = element.operator or 1
 
-    if numRequired > 0 and count >= numRequired then
+    if (numRequired > 0 and count*op >= numRequired*op) then
         addon.SetElementComplete(self, true)
-    elseif numRequired == 0 and count == 0 then
+        if element.silent then
+            element.step.completed = true
+            addon.updateSteps = true
+        end
+    elseif (numRequired == 0 and count == 0) then
         addon.SetElementComplete(self)
+        if element.silent then
+            element.step.completed = true
+            addon.updateSteps = true
+        end
     elseif not element.textOnly then
         addon.SetElementIncomplete(self)
     end
@@ -7303,7 +7334,8 @@ function addon.functions.aura(self, ...)
         else
             element.duration = 0
         end
-
+        element.expirationTime = 0
+        element.endTime = 0
         if id < 0 then
             id = -id
             element.reverse = not element.reverse
@@ -7316,12 +7348,18 @@ function addon.functions.aura(self, ...)
     local event, target = ...
     if (target == "player" or event ~= "UNIT_AURA") and step.active then
         local buffFound = false
-
+        local partialMatch = false
         local function CheckBuffs(func)
+            if addon.gameVersion >= 120000 and InCombatLockdown() then
+                return
+            end
+
             for i = 1, 32 do
                 local name, icon, count, _, duration, expirationTime, _, _, _, spellId = func(element.unit, i)
                 if spellId == element.id then
+                    partialMatch = true
                     local remaining = expirationTime - GetTime()
+                    element.expirationTime = expirationTime
                     --print(remaining,duration,expirationTime)
                     if (not element.stacks or count >= element.stacks) and (remaining > element.duration or (duration == expirationTime and duration == 0)) then
                         element.icon = "|T" .. icon .. ":0|t"
@@ -7333,6 +7371,17 @@ function addon.functions.aura(self, ...)
         end
         CheckBuffs(UnitDebuff)
         CheckBuffs(UnitBuff)
+        if not partialMatch then
+            element.expirationTime = 0
+        end
+
+        local t = GetTime()
+        if event == "UNIT_AURA" and element.duration > 0 and element.expirationTime > 0 and element.endTime < t then
+            local remaining = element.expirationTime - t
+            element.endTime = t + remaining-element.duration + 0.5
+            addon.ScheduleTask(element.endTime, element)
+            element.frame = self
+        end
         if buffFound == not element.reverse then
             if element.text then
                 addon.SetElementComplete(self)
@@ -7456,9 +7505,10 @@ events.isInScenario = {"SCENARIO_UPDATE"}
 function addon.functions.isInScenario(self, ...)
     if type(self) == "string" then
         local element = {}
-        local text, scenario = ...
+        local text, scenario, skipTo = ...
         element.scenario = tonumber(scenario)
         element.textOnly = true
+        element.skipTo = skipTo
         return element
     end
 
@@ -7472,6 +7522,12 @@ function addon.functions.isInScenario(self, ...)
             element.tooltipText = L"Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
+            local ref = element.skipTo
+            local guide = addon.currentGuide
+            if ref and guide.labels[ref] then
+                --local n = guide.labels[ref]
+                addon.nextStep = guide.labels[ref]
+            end
         elseif step.active and not step.completed then
             element.tooltipText = nil
         end
