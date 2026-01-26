@@ -2827,6 +2827,7 @@ flags:
 8   (0x8): Includes items in your bank into the item count
 16 (0x10): Element doesn't complete itself if the quest is turned in
 32 (0x20): Subtracts from the given skill or profession given by arg1
+64 (0x40): Set the number of items required to 0 if you have 0 of that item
 negative sign: same as 3 (0x2+0x1), -5 subtracts 5 units for each quest item
 
 By default, the element will complete itself if the quest ID provided is turned in
@@ -2848,6 +2849,10 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         element.checkObjectives = bit.band(flags, 0x4) == 0x4
         element.includeBank = bit.band(flags, 0x8) == 0x8
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
+        if bit.band(flags, 0x40) == 0x40 then
+            element.ignoreIfNone = true
+            element.includeBank = not element.includeBank
+        end
 
         if arg1 and element.subtract and element.multiplier == 1 then
             element.multiplier = tonumber(arg1) or 1
@@ -2978,7 +2983,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     for itemId in string.gmatch(element.ids,"%d+") do
         count = count + GetCount(tonumber(itemId))
     end
-
+    if count == 0 and element.ignoreIfNone then
+        numRequired = 0
+    end
     if (numRequired > 0 and count > numRequired) or
         (questId and
             ((element.objFlags == 0 and IsOnQuest(questId)) or (not element.ignoreTurnIn and
