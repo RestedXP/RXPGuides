@@ -3533,7 +3533,7 @@ step
     .zoneskip Ghostlands
 step
     .goto Ghostlands,47.34,29.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Quartermaster Lymel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
 step
@@ -7580,12 +7580,10 @@ step << Paladin
 step
     #label SMTraining5
     #optional
-    .abandon 9156
-    --9156 Wanted: Knucklerot and Luzran
+    .abandon 9156 >>Abandon Wanted: Knucklerot and Luzran
 step
     #optional
-    .abandon 9167
-    --9167 The Traitor's Destruction
+    .abandon 9167 >>Abandon The Traitor's Destruction
 step
     #label ExitUC
     .goto Undercity,66.21,4.90,15,0

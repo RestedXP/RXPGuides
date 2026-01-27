@@ -1349,6 +1349,7 @@ step << Rogue
     .accept 10372 >> Accept A Discreet Inquiry
     .train 6761 >>Train your class spells
     .target Zelanis
+    .xp <16,1
 step << !BloodElf !Undead
     #completewith next
     .goto Eversong Woods,56.43,49.91

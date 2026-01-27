@@ -4459,7 +4459,7 @@ step
     .xp >30,1
 step << BloodElf Priest
     .goto Ghostlands,47.34,29.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Quartermaster Lymel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
     .target Quartermaster Lymel
 step
@@ -5091,26 +5091,17 @@ step << Rogue
     #optional
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
-    .turnin 9618 >> Turn in Return the Reports << BloodElf
-    .accept 10372 >> Accept A Discreet Inquiry
-    .train 6761 >>Train your class spells
-    .target Zelanis
-    .train 6761,1
-step << Rogue
-    #optional
-    .goto Silvermoon City,79.70,52.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[Pick Lock] |cRXP_WARN_for a quest later|r
     .turnin 9618 >> Turn in Return the Reports << BloodElf
     .accept 10372 >> Accept A Discreet Inquiry
     .train 1804 >>Train your class spells
     .target Zelanis
     .train 1804,1
+    .xp <16,1
 step << Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     .turnin 9618 >> Turn in Return the Reports << BloodElf
-    .accept 10372 >> Accept A Discreet Inquiry
     .target Zelanis
 step << Rogue
     #completewith Scimitars

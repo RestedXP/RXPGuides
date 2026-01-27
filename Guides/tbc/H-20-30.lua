@@ -2013,13 +2013,6 @@ step
     .turnin 962 >>Turn in Serpentbloom
     .target Apothecary Zamah
 step
-    .goto Thunder Bluff,45.83,64.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
-    .home >>Set your Hearthstone to Thunder Bluff
-    .target Innkeeper Pala
-    .bindlocation 1638
-    .dungeon WC
-step
     #completewith DockTrouble << !Shaman
     #completewith CallofWater << Shaman
     .goto Thunder Bluff,47.00,49.82
