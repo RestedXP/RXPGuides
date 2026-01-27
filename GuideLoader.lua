@@ -6,6 +6,7 @@ addon.guideIds = {}
 local class = addon.player.class
 local race = addon.player.race
 
+local locale = GetLocale()
 local fmt, tremove, tinsert = string.format, tremove, table.insert
 local strchar = string.char
 local strbyte = string.byte
@@ -64,12 +65,12 @@ local function applies(textEntry,customClass,func)
                         entry = "RETAIL"
                     elseif faction == "Neutral" and not customClass and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
-                    elseif uppercase == "Haranir" then
+                    elseif entry == "Haranir" then
                         entry = "Harronir"
                     end
                     local customCheck = func and func(entry, uppercase)
                     v = (not(gendercheck or uppercase == class or entry == race or
-                             entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass or customCheck) ==
+                             entry == faction or playerLevel >= level or uppercase == addon.game or entry == customClass or entry == locale or customCheck) ==
                              state)
                     if not v then
                         break
