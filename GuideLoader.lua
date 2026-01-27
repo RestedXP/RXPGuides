@@ -1,4 +1,4 @@
-local _, addon = ...
+local addonName, addon = ...
 addon.guides = {}
 addon.guideList = {}
 addon.guideIds = {}
@@ -281,8 +281,8 @@ local function CheckDataIntegrity(str, h1, mode)
 
             if str then return h1 % 4294967296 == addon.A32(str), str end
 
-            return false, L(
-                       'Account mismatch, import string does not apply to current account') -- TODO locale
+            return false,
+                       L'Account mismatch, import string does not apply to current account' -- TODO locale
         end
     else
         return addon.A32(str)
@@ -335,7 +335,7 @@ end
 
 function addon.RegisterGuide(groupOrContent, text, defaultFor)
     if not groupOrContent then
-        return error('Guide has no contents')
+        return error(L'Error: Guide has no contents')
     elseif addon.addonLoaded then
         local importedGuide, errorMsg = addon.ParseGuide(groupOrContent, text,
                                                         defaultFor)
@@ -459,26 +459,33 @@ end
 
 local importBuffer = {}
 addon.importBufferSize = 0
-function addon.ImportString(str, workerFrame)
+local showConfigFrame = false
+local importIndex = 0
+local guideContent,guideLength,guideId
+function addon.ImportString(str, workerFrame, showFrame)
+    showConfigFrame = showFrame
+    importIndex = 0
     local errorMsg
+    str = str:gsub("^%D+", "")
+    str = str:gsub("%D+$", "")
     local nGuides = str:match("^(%d+)|")
     local validHash = str:match("|(%d+):")
     local base = str:match("|(%d+)$")
     if not nGuides or not base or not validHash then
-        addon.settings:UpdateImportStatusHistory(L(
-                                                     "Incomplete or invalid encoded string"))
+        addon.settings:UpdateImportStatusHistory(
+                                                     L"Incomplete or invalid encoded string")
         return false, L("Incomplete or invalid encoded string")
     end
 
     if tonumber(base) < addon.version then
         addon.settings:UpdateImportStatusHistory(
-            "Incompatible guide game %d version vs %d", tonumber(base),
+            L"Incompatible guide game %d version vs %d", tonumber(base),
             addon.version)
-        return false, fmt("Incompatible guide, for %d version vs %d",
+        return false, fmt(L"Incompatible guide, for %d version vs %d",
                           tonumber(base), addon.version)
     end
 
-    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([%w%+%/%=]+)") do
+    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([A-Za-z0-9%+%/%=]+)%%") do
         local validData, dataOrError = CheckDataIntegrity(content,
                                                           tonumber(hash),
                                                           strbyte(mode))
@@ -487,7 +494,7 @@ function addon.ImportString(str, workerFrame)
                 tinsert(importBuffer, v)
             end
         else
-            errorMsg = (dataOrError or 'Failed integrity check') .. '\n' ..
+            errorMsg = (dataOrError or L'Failed integrity check') .. '\n' ..
                            L("Total guides loaded: %d/%s") -- TODO locale
             break
         end
@@ -514,7 +521,10 @@ function addon.ProcessInputBuffer(workerFrame)
     if #importBuffer > 0 then
         parseGuide = tremove(importBuffer)
         parseGuide = RXPGuides.ImportGuide(parseGuide)
-
+        if importIndex == 0 and showConfigFrame then
+            addon.settings.OpenSettings('Import')
+        end
+        importIndex = importIndex + 1
         if type(parseGuide) == "table" and parseGuide.name then
             addon.settings:UpdateImportStatusHistory(
                 L("Loading Guides") .. "... (%d/%d)",
@@ -522,7 +532,15 @@ function addon.ProcessInputBuffer(workerFrame)
         end
         return true
     elseif workerFrame then
+        showConfigFrame = false
+        importIndex = 0
         workerFrame:SetScript("OnUpdate", nil)
+        if guideContent or guideLength or guideId then
+            addon.db.profile.guideContent = guideContent
+            addon.db.profile.guideLength = guideLength
+            addon.db.profile.guideId = guideId
+            guideContent,guideLength,guideId = nil,nil,nil
+        end
     end
 
     if addon.importBufferSize > 0 then
@@ -675,6 +693,27 @@ function addon.LoadCachedGuides()
     if not addon.db then
         error('Initialization error, db not set')
         return
+    end
+
+    if addon.string then
+        local header = addon.string:sub(1,30)
+        local n,id,content = header:match("^(%d+)|(%-?%d+):(.*)")
+        n = tonumber(n)
+        id = tonumber(id)
+        if n and n ~= addon.db.profile.guideLength or id and id ~= addon.db.profile.guideId or content and content ~= addon.db.profile.guideContent then
+            guideId = id
+            guideLength = n
+            guideContent = content
+
+            local isValid =
+                    addon.ImportString(addon.string,addon.RXPFrame,true)
+            if isValid then
+                addon.RXPFrame:Show()
+                addon.db.profile.guides = {}
+            end
+            --print(addon.string:len())
+            return
+        end
     end
 
     for key, guideData in pairs(addon.db.profile.guides) do
