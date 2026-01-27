@@ -732,7 +732,12 @@ local function getSpec()
 
     for tabIndex = 1, _G.GetNumTalentTabs(false) do
         -- id, name, description, icon, pointsSpent, background, previewPointsSpent, isUnlocked
-        _, _, _, _, pointsSpent = _G.GetTalentTabInfo(tabIndex)
+        local arg3
+        _, _, arg3, _, pointsSpent = _G.GetTalentTabInfo(tabIndex)
+
+        if type(arg3) == "number" then
+            pointsSpent = arg3
+        end
 
         if pointsSpent > guessedSpec.count then
             guessedSpec.index = tabIndex
