@@ -685,6 +685,9 @@ function addon.settings:CreateImportOptionsPanel()
                     addon.settings.profile.skipQuest = {}
                     addon.settings.profile.questPrio = {}
                     addon.settings.profile.questPrioIndex = {}
+                    addon.db.profile.guideId = nil
+                    addon.db.profile.guideLength = nil
+                    addon.db.profile.guideContent = nil
                     addon:CreateMetaDataTable(true)
                 end
             },
