@@ -5129,6 +5129,51 @@ function addon.functions.bankwithdraw(self, text, ...)
     end
 end
 
+local function RetrieveItem(id,qty)
+   local itemsToRetrieve = {}
+   qty = qty or 1e6
+   for i = 1, GetInboxNumItems() do
+      local n = select(8,GetInboxHeaderInfo(i))
+      --print(i,n)
+      for j = 1, n do
+         local name, itemID, texture, count, quality, canUse = GetInboxItem(i,j)
+         if id == itemID and qty > 0 then
+            table.insert(itemsToRetrieve,i+j*1024)
+            qty = qty - count
+         end
+
+      end
+
+   end
+   for _,item in ipairs(itemsToRetrieve) do
+      local i = item % 1024
+      local j = (item - i) / 1024
+      --print(i,j)
+      TakeInboxItem(i,j)
+   end
+end
+
+events.retrieveitem = {"BAG_UPDATE_DELAYED","MAIL_SHOW"}
+function addon.functions.retrieveitem(self, text, ...)
+
+    if type(self) == "string" then
+        local element = {}
+        local item,qty = ...
+        element.qty = tonumber(qty)
+        element.id = item
+        element.text = text
+        return element
+    end
+
+    local element = self.element
+    if not element.step.active then return end
+    local id = tonumber(element.id)
+    local qty = element.qty
+    if MailFrame:IsShown() then
+        RetrieveItem(id,qty)
+    end
+end
+
 function addon.functions.bronzetube(self, text, rev)
     if type(self) == "string" then -- on parse
         local element = {}
