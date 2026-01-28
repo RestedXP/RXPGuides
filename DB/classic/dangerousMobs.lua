@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.game ~= "CLASSIC" then return end
+if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
 local dangerousMobs = {
   ["Alliance"] = {
     ["Elwynn Forest"] = {
@@ -2690,6 +2690,66 @@ local dangerousMobs = {
         Movement = "Fast Patrol",
         Notes = "5 second stun + knockback; hits extremely hard. extremely dangerous",
         Location = ".line Hellfire Peninsula,24.77,65.13,22.78,56.54,18.97,55.85,17.32,50.72,18.81,47.42,17.51,43.18,20.58,46.76,25.89,47.71,28.73,51.07,31.51,50.03,28.99,45.68,27.29,42.60,27.55,40.19,30.17,39.40,32.26,45.02,35.31,47.13,38.44,43.85,40.81,43.33,43.37,45.74,46.32,44.25,46.24,39.72,47.12,35.78,47.97,33.05,48.47,28.23;.line Hellfire Peninsula,71.38,44.04,68.23,40.89,66.69,38.28,65.06,37.84,63.24,34.39,61.19,35.13,59.74,40.22,63.05,48.70,62.61,51.93,61.61,53.83,62.50,56.44,63.91,56.84,66.30,55.58,68.55,56.51,69.40,61.81,66.84,62.03,65.94,63.03,63.25,69.83,61.01,74.72,59.15,74.73,57.71,71.42,54.07,71.88,52.23,72.18,50.60,77.07,49.13,80.31,47.92,76.11,47.77,73.75,46.59,71.67,47.18,69.19,50.19,68.85,49.82,64.17;.mob Fel Reaver"
+        },
+      },
+      ["Drillmaster Zurok"] = {
+        {
+        MinLevel = 62,
+        MaxLevel = 62,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Very large knockback; hits hard",
+        Location = ".pin Hellfire Peninsula,48.07,56.17;.mob Drillmaster Zurok"
+        },
+      },
+      ["Tagar Spinebreaker"] = {
+        {
+        MinLevel = 61,
+        MaxLevel = 61,
+        Classification = "Elite",
+        Movement = "Slow patrol",
+        Notes = "8 second stun + knockback; hits extremely hard",
+        Location = ".line Hellfire Peninsula,53.09,48.42,53.43,46.83,54.19,46.22,54.92,46.08,55.32,47.91,56.38,47.83,56.80,47.77,57.47,47.24,58.02,47.33,58.41,48.20,58.95,48.17,58.90,46.82,59.25,46.43,59.99,47.11,60.43,47.66,60.85,48.37,61.48,47.89,62.16,48.07,62.50,49.87,62.35,50.37,61.85,51.26,61.52,51.06,61.18,51.09,60.76,50.96,60.41,51.57,60.15,51.52,59.72,51.61,59.35,51.47,59.27,52.58,59.17,53.77,58.98,54.17,58.35,53.44,58.36,51.70,57.70,51.76,57.51,52.51,57.16,52.25,56.80,52.19,56.58,52.68,55.95,53.38,54.78,52.46,54.29,52.54,54.33,54.30,54.18,55.58,53.63,56.80,52.70,56.58;.mob Tagar Spinebreaker"
+        },
+      },
+      ["Arazzius the Cruel"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Hits extremely hard. extremely dangerous. casts multiple dangerous spells. avoid at all cost",
+        Location = ".pin Hellfire Peninsula,43.81,31.56;.mob Arazzius the Cruel"
+        },
+      },
+      ["Raging Colossus"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "2 second stun. hits hard. splits into more mobs as it loses health",
+        Location = ".pin Hellfire Peninsula,13.2,45.8;.pin Hellfire Peninsula,18.0,44.2;.pin Hellfire Peninsula,17.8,40.8;.mob Raging Colossus"
+        },
+      },
+      ["Blacktalon the Savage"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Hits hard; applies stacking armor debuff",
+        Location = ".pin Hellfire Peninsula,33.34,65.16;.mob Blacktalon the Savage"
+        },
+      },
+      ["Mekthorg the Wild"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Enrages; patrols slighty",
+        Location = ".pin Hellfire Peninsula,43.0,63.8;.pin Hellfire Peninsula,50.8,51.6;.pin Hellfire Peninsula,46.6,43.4;.pin Hellfire Peninsula,68.0,71.8;.mob Mekthorg the Wild"
         },
       },
     },
@@ -5579,6 +5639,7 @@ local dangerousMobs = {
         },
       },
     },
+    --Hellfire Peninsula
     ["Hellfire Peninsula"] = {
       ["Fel Reaver"] = {
         {
@@ -5588,6 +5649,66 @@ local dangerousMobs = {
         Movement = "Fast Patrol",
         Notes = "5 second stun + knockback; hits extremely hard. extremely dangerous",
         Location = ".line Hellfire Peninsula,24.77,65.13,22.78,56.54,18.97,55.85,17.32,50.72,18.81,47.42,17.51,43.18,20.58,46.76,25.89,47.71,28.73,51.07,31.51,50.03,28.99,45.68,27.29,42.60,27.55,40.19,30.17,39.40,32.26,45.02,35.31,47.13,38.44,43.85,40.81,43.33,43.37,45.74,46.32,44.25,46.24,39.72,47.12,35.78,47.97,33.05,48.47,28.23;.line Hellfire Peninsula,71.38,44.04,68.23,40.89,66.69,38.28,65.06,37.84,63.24,34.39,61.19,35.13,59.74,40.22,63.05,48.70,62.61,51.93,61.61,53.83,62.50,56.44,63.91,56.84,66.30,55.58,68.55,56.51,69.40,61.81,66.84,62.03,65.94,63.03,63.25,69.83,61.01,74.72,59.15,74.73,57.71,71.42,54.07,71.88,52.23,72.18,50.60,77.07,49.13,80.31,47.92,76.11,47.77,73.75,46.59,71.67,47.18,69.19,50.19,68.85,49.82,64.17;.mob Fel Reaver"
+        },
+      },
+      ["Drillmaster Zurok"] = {
+        {
+        MinLevel = 62,
+        MaxLevel = 62,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Very large knockback; hits hard",
+        Location = ".pin Hellfire Peninsula,48.07,56.17;.mob Drillmaster Zurok"
+        },
+      },
+      ["Tagar Spinebreaker"] = {
+        {
+        MinLevel = 61,
+        MaxLevel = 61,
+        Classification = "Elite",
+        Movement = "Slow patrol",
+        Notes = "8 second stun + knockback; hits extremely hard",
+        Location = ".line Hellfire Peninsula,53.09,48.42,53.43,46.83,54.19,46.22,54.92,46.08,55.32,47.91,56.38,47.83,56.80,47.77,57.47,47.24,58.02,47.33,58.41,48.20,58.95,48.17,58.90,46.82,59.25,46.43,59.99,47.11,60.43,47.66,60.85,48.37,61.48,47.89,62.16,48.07,62.50,49.87,62.35,50.37,61.85,51.26,61.52,51.06,61.18,51.09,60.76,50.96,60.41,51.57,60.15,51.52,59.72,51.61,59.35,51.47,59.27,52.58,59.17,53.77,58.98,54.17,58.35,53.44,58.36,51.70,57.70,51.76,57.51,52.51,57.16,52.25,56.80,52.19,56.58,52.68,55.95,53.38,54.78,52.46,54.29,52.54,54.33,54.30,54.18,55.58,53.63,56.80,52.70,56.58;.mob Tagar Spinebreaker"
+        },
+      },
+      ["Arazzius the Cruel"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Hits extremely hard. extremely dangerous. casts multiple dangerous spells. avoid at all cost",
+        Location = ".pin Hellfire Peninsula,43.81,31.56;.mob Arazzius the Cruel"
+        },
+      },
+      ["Raging Colossus"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "2 second stun. hits hard. splits into more mobs as it loses health",
+        Location = ".pin Hellfire Peninsula,13.2,45.8;.pin Hellfire Peninsula,18.0,44.2;.pin Hellfire Peninsula,17.8,40.8;.mob Raging Colossus"
+        },
+      },
+      ["Blacktalon the Savage"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Hits hard; applies stacking armor debuff",
+        Location = ".pin Hellfire Peninsula,33.34,65.16;.mob Blacktalon the Savage"
+        },
+      },
+      ["Mekthorg the Wild"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Enrages; patrols slighty",
+        Location = ".pin Hellfire Peninsula,43.0,63.8;.pin Hellfire Peninsula,50.8,51.6;.pin Hellfire Peninsula,46.6,43.4;.pin Hellfire Peninsula,68.0,71.8;.mob Mekthorg the Wild"
         },
       },
     },
