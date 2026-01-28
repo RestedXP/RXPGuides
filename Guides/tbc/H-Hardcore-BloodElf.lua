@@ -184,10 +184,6 @@ step << Warlock
     .goto Eversong Woods,31.98,27.94,30,0
     .goto Eversong Woods,31.54,29.52,30,0
     .xp 3+200 >> Grind to 200+/1400xp
---step << Warlock
---   #softcore
---   #completewith FistfulTI
---   .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Warlock
     #hardcore
     #completewith FistfulTI

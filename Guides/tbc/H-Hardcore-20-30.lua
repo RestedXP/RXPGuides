@@ -2711,12 +2711,6 @@ step << Rogue
     >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r.
     .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
 step << Rogue/Druid
-    #softcore
-    #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run to Orgrimmar through the western entrance
-    .isOnQuest 30 << Druid
-step << Rogue/Druid
-    #hardcore
     #completewith next
     .goto Kalimdor,56.80,45.50,20,0
     .goto Orgrimmar,15.54,62.86

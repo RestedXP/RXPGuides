@@ -463,12 +463,6 @@ step
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
 step
-    #softcore
-    #completewith Scavenging
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r or run back to Deathknell
-    .target Spirit Healer
-step
-    #hardcore
     #completewith Scavenging
     .goto Tirisfal Glades,31.61,65.62,80 >>Return to Deathknell
 step
@@ -532,12 +526,6 @@ step
     .collect 16333,1,6395,1 --Collect Samuel's Remains
     .mob Samuel Fipps
 step
-    #softcore
-    #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
-step
-    #hardcore
     #completewith next
     .goto Tirisfal Glades,31.17,65.08,80 >>Return to Deathknell
 step
@@ -611,12 +599,6 @@ step
     .accept 8 >>Accept A Rogue's Deal
     .target Calvin Montague
 step
-    #softcore
-    #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r or run to Brill
-    .target Spirit Healer
-step
-    #hardcore
     #completewith next
     .subzone 159 >>Travel to Brill
 step

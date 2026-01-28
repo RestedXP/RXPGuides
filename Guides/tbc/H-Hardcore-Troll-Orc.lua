@@ -53,13 +53,6 @@ step << Warrior/Shaman
     .target Frang << Warrior
     .target Shikrik << Shaman
 step << Warlock
-    #completewith Nartok
-    .goto Durotar,41.52,68.36,12,0
-    .goto Durotar,41.24,68.16,12,0
-    .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.65,68.52,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
-    .money <0.01
-step << Warlock
     #completewith next
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
@@ -72,6 +65,13 @@ step << Warlock
     .vendor >>Vendor Trash
     .target Hraug
     .money >0.01
+step << Warlock
+    #completewith Nartok
+    .goto Durotar,41.52,68.36,12,0
+    .goto Durotar,41.24,68.16,12,0
+    .goto Durotar,40.82,68.03,12,0
+    .goto Durotar,40.65,68.52,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
+    .money <0.01
 step << Warlock
     #label Nartok
     .goto Durotar,40.65,68.52
@@ -301,7 +301,6 @@ step << Warlock
     .train 172 >> Train |T136118:0|t[Corruption]
     .target Nartok
 step
-    #sticky
     #label Galgar
     .goto Durotar,42.73,67.23,0,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
