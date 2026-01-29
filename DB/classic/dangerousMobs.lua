@@ -2753,6 +2753,120 @@ local dangerousMobs = {
         },
       },
     },
+    ["Zangarmarsh"] = {
+      ["Boglash"] = {
+        {
+        MinLevel = 61,
+        MaxLevel = 61,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Casts tether on player, can run away to break",
+        Location = ".line Zangarmarsh,83.89,78.58,82.63,77.98,81.72,75.58,82.11,73.88,81.73,72.94,81.75,72.20;.mob Boglash"
+        },
+      },
+      ["Rajis Fyashe"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Frostbolt, water spout, summons adds. Creates freezing circles",
+        Location = ".pin Zangarmarsh,65.142,40.906;.mob Rajis Fyashe"
+        },
+      },
+      ["Rajah Haghazed"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Charge, cleave, mortal strike, shield wall. Hits hard",
+        Location = ".pin Zangarmarsh,65.10,68.67;.mob Rajah Haghazed"
+        },
+      },
+      ["Mal'druk the Soulrender"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Mind flay, shadowfury. Creates images",
+        Location = ".pin Zangarmarsh,20.0,7.6;.mob Mal'druk the Soulrender"
+        },
+      },
+    },
+    ["Terokkar Forest"] = {
+      ["Okrek"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "Fireball, scorch, shadow bolt, shadow nova. Spells hit hard",
+        Location = ".pin Terokkar Forest,31.0,43.0;.pin Terokkar Forest,49.8,18.6;.pin Terokkar Forest,58.6,23.8;.pin Terokkar Forest,56.4,68.4;;.mob Okrek"
+        },
+      },
+      ["Doomsayer Jurim"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "Fear, corruption, shadow bolt, incinerate",
+        Location = ".pin Terokkar Forest,36.0,36.6;.pin Terokkar Forest,47.6,26.8;.pin Terokkar Forest,64.6,39.4;.mob Doomsayer Jurim"
+        },
+      },
+      ["Crippler"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "Piece armor, bone armor, debilitating strike (reduces phys damage dealt by 75%). Hits hard",
+        Location = ".pin Terokkar Forest,31.4,59.4;.pin Terokkar Forest,41.6,54.2;.pin Terokkar Forest,49.2,73.4;.mob Crippler"
+        },
+      },
+      ["Deathskitter"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Poisons. Deals heavy damage",
+        Location = ".pin Terokkar Forest,53.8,62.4;.mob Deathskitter"
+        },
+      },
+      ["Luanga the Imprisoner"] = {
+        {
+        MinLevel = 65,
+        MaxLevel = 65,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Chain lightning, shock, lightning cloud. Deals significant damage",
+        Location = ".pin Terokkar Forest,55.6,69.6;.mob Luanga the Imprisoner"
+        },
+      },
+      ["Stonegazer"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Elite",
+        Movement = "Slow patrol",
+        Notes = "6 second stun. Hits hard",
+        Location = ".line Terokkar Forest,71.26,28.70,70.35,29.82,69.63,30.88,69.16,31.22,68.35,31.31,67.93,30.85,66.31,30.54,64.54,30.01,63.72,29.37,63.32,28.38,62.77,27.68,62.10,27.12,61.46,25.43,60.97,24.34,60.77,23.14;.mob Stonegazer"
+        },
+      },
+      ["Terokkarantula"] = {
+        {
+        MinLevel = 65,
+        MaxLevel = 65,
+        Classification = "Elite",
+        Movement = "Slow patrol",
+        Notes = "Poisons and slows. Hits hard",
+        Location = ".pin Terokkar Forest,54.2,81.8;.mob Terokkarantula"
+        },
+      },
+    },
   },
   ["Horde"] = {
     ["Alterac Mountains"] = {
@@ -5639,7 +5753,6 @@ local dangerousMobs = {
         },
       },
     },
-    --Hellfire Peninsula
     ["Hellfire Peninsula"] = {
       ["Fel Reaver"] = {
         {
@@ -5709,6 +5822,120 @@ local dangerousMobs = {
         Movement = "Slow Patrol",
         Notes = "Enrages; patrols slighty",
         Location = ".pin Hellfire Peninsula,43.0,63.8;.pin Hellfire Peninsula,50.8,51.6;.pin Hellfire Peninsula,46.6,43.4;.pin Hellfire Peninsula,68.0,71.8;.mob Mekthorg the Wild"
+        },
+      },
+    },
+    ["Zangarmarsh"] = {
+      ["Boglash"] = {
+        {
+        MinLevel = 61,
+        MaxLevel = 61,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Casts tether on player, can run away to break",
+        Location = ".line Zangarmarsh,83.89,78.58,82.63,77.98,81.72,75.58,82.11,73.88,81.73,72.94,81.75,72.20;.mob Boglash"
+        },
+      },
+      ["Rajis Fyashe"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Frostbolt, water spout, summons adds. Creates freezing circles",
+        Location = ".pin Zangarmarsh,65.142,40.906;.mob Rajis Fyashe"
+        },
+      },
+      ["Rajah Haghazed"] = {
+        {
+        MinLevel = 63,
+        MaxLevel = 63,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Charge, cleave, mortal strike, shield wall. Hits hard",
+        Location = ".pin Zangarmarsh,65.10,68.67;.mob Rajah Haghazed"
+        },
+      },
+      ["Mal'druk the Soulrender"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Mind flay, shadowfury. Creates images",
+        Location = ".pin Zangarmarsh,20.0,7.6;.mob Mal'druk the Soulrender"
+        },
+      },
+    },
+    ["Terokkar Forest"] = {
+      ["Okrek"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "Fireball, scorch, shadow bolt, shadow nova. Spells hit hard",
+        Location = ".pin Terokkar Forest,31.0,43.0;.pin Terokkar Forest,49.8,18.6;.pin Terokkar Forest,58.6,23.8;.pin Terokkar Forest,56.4,68.4;;.mob Okrek"
+        },
+      },
+      ["Doomsayer Jurim"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "Fear, corruption, shadow bolt, incinerate",
+        Location = ".pin Terokkar Forest,36.0,36.6;.pin Terokkar Forest,47.6,26.8;.pin Terokkar Forest,64.6,39.4;.mob Doomsayer Jurim"
+        },
+      },
+      ["Crippler"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "Piece armor, bone armor, debilitating strike (reduces phys damage dealt by 75%). Hits hard",
+        Location = ".pin Terokkar Forest,31.4,59.4;.pin Terokkar Forest,41.6,54.2;.pin Terokkar Forest,49.2,73.4;.mob Crippler"
+        },
+      },
+      ["Deathskitter"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Poisons. Deals heavy damage",
+        Location = ".pin Terokkar Forest,53.8,62.4;.mob Deathskitter"
+        },
+      },
+      ["Luanga the Imprisoner"] = {
+        {
+        MinLevel = 65,
+        MaxLevel = 65,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Chain lightning, shock, lightning cloud. Deals significant damage",
+        Location = ".pin Terokkar Forest,55.6,69.6;.mob Luanga the Imprisoner"
+        },
+      },
+      ["Stonegazer"] = {
+        {
+        MinLevel = 64,
+        MaxLevel = 64,
+        Classification = "Elite",
+        Movement = "Slow patrol",
+        Notes = "6 second stun. Hits hard",
+        Location = ".line Terokkar Forest,71.26,28.70,70.35,29.82,69.63,30.88,69.16,31.22,68.35,31.31,67.93,30.85,66.31,30.54,64.54,30.01,63.72,29.37,63.32,28.38,62.77,27.68,62.10,27.12,61.46,25.43,60.97,24.34,60.77,23.14;.mob Stonegazer"
+        },
+      },
+      ["Terokkarantula"] = {
+        {
+        MinLevel = 65,
+        MaxLevel = 65,
+        Classification = "Elite",
+        Movement = "Slow patrol",
+        Notes = "Poisons and slows. Hits hard",
+        Location = ".pin Terokkar Forest,54.2,81.8;.mob Terokkarantula"
         },
       },
     },
