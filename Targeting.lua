@@ -269,9 +269,11 @@ end
 function addon.targeting:CheckNameplate(nameplateID)
     if not nameplateID then return end
 
-    local unitName = UnitName(nameplateID)
+    local unitName
 
-    if not unitName then return end
+    unitName = UnitName(nameplateID)
+
+    if not unitName or addon.gameVersion >= 120000 then return end
 
     if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
@@ -930,10 +932,12 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if IsInGroup() and not UnitIsGroupLeader('player') then
         if not addon.settings.profile.enableNonLeadMarking then return end
     end
-
+    if addon.gameVersion >= 120000 then
+        return
+    end
     local markerId = self:GetMarkerIndex(kind, index)
 
-    if addon.gameVersion < 120000 and GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
+    if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
         SetRaidTarget(unitId, markerId)
     end
 end
