@@ -15,7 +15,7 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .zoneskip Orgrimmar
     .zoneskip Shattrath City
     .skill skinning,75,1
@@ -59,7 +59,7 @@ step << Mage
     .skill skinning,125,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,125,1
     .zoneskip Orgrimmar
 step << !Mage
@@ -75,7 +75,7 @@ step
 step
     #completewith next
     .goto Orgrimmar,45.120,63.889
-    .fly Crossroads >> Fly to The Crossroads
+    .fly Crossroads >>Fly to 十字路口，北贫瘠之地
     .zoneskip The Barrens
     .skill skinning,125,1
 step
@@ -92,7 +92,7 @@ step
 step
     #completewith next
     .goto Thousand Needles,32.1,22.7
-    .zone Thousand Needles >> Ride to Thousand Needles
+    .zone Thousand Needles >>前往千针石林
     .skill skinning,205,1
 step
     .skill skinning,205 >> Level your Skinning from 165-205 in Thousand Needles
@@ -100,13 +100,13 @@ step
 step
     .goto Feralas,88.8,41.4,-1
     .goto Tanaris,51.3,21.4,-1
-    .zone Tanaris >> Travel to either Feralas or Tanaris, whichever is closer
+    .zone Tanaris >>前往暴风城大教堂内，与 either Feralas or Tanaris, whichever is closer
     .skill skinning,230,1
     .zoneskip Feralas
 step
     #completewith next
     .goto Tanaris,51.6,25.4
-    .fly Camp Mojache >> Fly to Camp Mojache
+    .fly Camp Mojache >>Fly to 莫沙彻营地，菲拉斯
     .skill skinning,230,1
     .zoneskip Feralas
 step
@@ -118,18 +118,18 @@ step
     .skill skinning,230 >> Level your Skinning from 205-230 in Feralas
     .loop 45,Feralas,72.3,44.4,71.1,41.5,74.4,40.7,76.7,39.4,76.7,39.4,79.2,38.3,79.7,39.9,79.2,44.1,78.9,46.2,78.3,47.8,76.5,48.7,75.4,51.9,73.1,54.6,
 step
-    >>Kill the Yetis in the cave or the Hippogryphs outside, then skin them
+    >>消灭那些试图阻止仪式的 Yetis in the cave or the Hippogryphs outside,then skin them
     .skill skinning,260 >> Level your Skinning from 230-260 in Feralas
     .loop 45,Feralas,58.7,55.0,57.2,56.4,55.3,56.3,56.2,58.3,55.5,62.1,56.1,63.9,54.6,65.4,53.4,68.5,53.8,70.0,54.5,73.6,56.3,73.5,55.5,69.9
 step
-    >>Kill the Yetis in the cave or the beasts outside, then skin them
+    >>消灭那些试图阻止仪式的 Yetis in the cave or the beasts outside,then skin them
     .skill skinning,280 >> Level your Skinning from 260-280 in Feralas
     .loop 45,Feralas,48.4,37.9,49.9,33.7,52.,31.8,49.4,31.5,49.5,29.3,50.1,26.4,47.6,24.5,45.8,24.6,46.5,27.5,46.3,29.9
 step
     #completewith next
     .goto Feralas,75.4,44.4
     >>Ride back to Camp Mojache
-    .fly Marshal's Refuge >> Fly to Marshal's Refuge
+    .fly Marshal's Refuge >>Fly to 马绍尔营地，安戈洛环形山
     .zoneskip Un'Goro Crater
     .skill skinning,300,1
 step
@@ -142,13 +142,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,305,1
     .zoneskip Hellfire Peninsula
 step
     #completewith Moorutu
     .goto Shattrath City,64.1,41.1
-    .fly Thrallmar >> Fly to Thrallmar
+    .fly Thrallmar >>Fly to 萨尔玛，地狱火半岛
     .skill skinning,305,1
     .skill riding,300,1
     .zoneskip Hellfire Peninsula
@@ -161,19 +161,19 @@ step
 step
     #label Moorutu
     .goto Hellfire Peninsula,56.3,38.6
-    .train 32678 >> Train Master Skinning (300-375) from Moorutu in Thrallmar
+    .train 32678 >>学习锤类武器 Skinning (300-375) from Moorutu in Thrallmar
     .skill skinning,305,1
 step
-    >>Kill Starving Helboars, then skin them
-    .skill skinning,305 >> Level your Skinning from 300-305 in Hellfire Peninsula
+    >>击杀 Starving Helboars,then skin them
+    .skill skinning,305 >>Level your Skinning from 300-59-61 地狱火半岛
     .loop 45,Hellfire Peninsula,61.6,57.2,63.3,61.3,65.3,61.8,68.9,62.0,70.1,64.5,68.1,66.2,65.1,66.6,63.8,69.4,63.6,73.1,63.4,77.2,60.9,77.7,59.0,74.1,56.6,71.8
 step
-    >>Kill Deranged Helboars, then skin them
-    .skill skinning,310 >> Level your Skinning from 305-310 in Hellfire Peninsula
+    >>击杀 Deranged Helboars,then skin them
+    .skill skinning,310 >>Level your Skinning from 305-59-61 地狱火半岛
     .loop 45,Hellfire Peninsula, 47.7,77.9,47.5,73.2,48.6,69.8,49.3,66.7,51.0,66.1,52.4,69.7,53.2,74.0,51.6,78.0,49.6,79.5,47.7,77.9
 step
-    >>Kill Razorfang Hatchlings and Razorfang Ravagers, then skin them
-    .skill skinning,330 >> Level your Skinning from 310-330 in Hellfire Peninsula
+    >>击杀 Razorfang Hatchlings 和 Razorfang Ravagers,then skin them
+    .skill skinning,330 >>Level your Skinning from 310-59-61 地狱火半岛
     .loop 45,Hellfire Peninsula,41.1,82.5,35.2,87.4,34.7,91.1,37.2,91.8,40.3,88.5,42.4,85.3,41.1,82.5
 step << Mage
     #completewith next
@@ -182,7 +182,7 @@ step << Mage
     .zoneskip Nagrand
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,375,1
     .zoneskip Nagrand
     .cooldown item,6948,>0,1
@@ -192,7 +192,7 @@ step
     .zone Nagrand >> Fly to Nagrand on your flying mount
     .skill skinning,375,1
 step
-    >>Kill Talbuks and Clefthoofs, then skin them
+    >>击杀 Talbuks 和 Clefthoofs,then skin them
     .skill skinning,375 >> Level your Skinning from 330-375 in Nagrand
     .loop 45,Nagrand,51.3,37.6,52.3,33.6,54.1,30.0,52.8,26.1,50.6,25.3,48.4,26.8,46.6,27.2,46.6,33.6,46.5,40.3,47.0,45.1,49.2,49.2,53.5,53.8,55.3,52.8,57.3,49.8,60.1,48.4,62.0,46.1,60.6,43.4,57.9,42.5,54.7,42.5,52.7,40.7,51.3,37.6
 step
@@ -210,16 +210,16 @@ RXPGuides.RegisterGuide([[
 
 step << Mage
     #completewith Maris
-    .zone Stormwind City >> Teleport to Stormwind
+    .zone Stormwind City >>飞往暴风城
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,75,1
     .zoneskip Stormwind City
 step << !Mage
     .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .zone Stormwind City >>In Shattrath, 乘坐地铁前往暴风城 City
     .skill skinning,75,1
 step
     #sticky
@@ -238,7 +238,7 @@ step
     #requires Shank
     #completewith next
     .goto Elwynn Forest,32.3,49.9
-    .zone Elwynn Forest >> Exit Stormwind into Elwynn Forest
+    .zone Elwynn Forest >>离开暴风城 into Elwynn Forest
     .skill skinning,75,1
 step
     #requires Shank
@@ -247,26 +247,26 @@ step
 	.loop 25,Elwynn Forest,32.6,83.0,31.0,85.6,32.6,87.8,33.6,85.4,32.6,83.0
 step << Mage
     #completewith next
-    .zone Ironforge >> Teleport to Ironforge
+    .zone Ironforge >>飞往铁炉堡
     .skill skinning,125,1
 step << !Mage
     .goto Stormwind City,68.2,72.9,20,0
     .goto Stormwind City,70.954,72.512
-    >>Return to Stormwind
+    >>Return to 暴风城，艾尔文森林
     .fly Ironforge
-    .zone Ironforge >> Travel to Ironforge
+    .zone Ironforge >>Travel to 铁炉堡，丹莫罗
     .zoneskip Ironforge
     .skill skinning,125,1
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,125,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
     .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .zone Ironforge >>In Shattrath, take 将炉石使用回铁炉堡
     .skill skinning,125,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -277,7 +277,7 @@ step
 step
     #completewith next
     .goto Ironforge,55.501,47.742
-    .fly Thelsamar >> Fly to Thelsamar
+    .fly Thelsamar >>Fly to 塞尔萨玛，洛克莫丹
     .skill skinning,125,1
     .zoneskip Loch Modan
 step
@@ -288,25 +288,25 @@ step
     .loop 45,Loch Modan,61.5,40.9,72.4,41.8,76.8,47.9,77.4,41.4,59.9,28.0,61.5,40.9
 step << Mage
     #completewith next
-    .zone Ironforge >> Teleport to Ironforge
+    .zone Ironforge >>飞往铁炉堡
     .skill skinning,155,1
 step << !Mage
     .goto Loch Modan,33.938,50.954
-    >>Return to Thelsamar
+    >>Return to 塞尔萨玛，洛克莫丹
     .fly Ironforge
-    .zone Ironforge >> Travel to Ironforge
+    .zone Ironforge >>Travel to 铁炉堡，丹莫罗
     .zoneskip Ironforge
     .skill skinning,155,1
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,155,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
     .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .zone Ironforge >>In Shattrath, take 将炉石使用回铁炉堡
     .skill skinning,155,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -317,7 +317,7 @@ step
 step
     #completewith next
     .goto Ironforge,55.501,47.742
-    .fly Menethil >> Fly to Menethil Harbor
+    .fly Menethil >>Fly to 米奈希尔港，湿地
     .skill skinning,155,1
     .zoneskip Wetlands
 step
@@ -327,35 +327,35 @@ step
     #completewith next
     .goto Wetlands,9.5,59.7
     >>Ride back to Menethil
-    .fly Refuge Pointe >> Fly to Refuge Pointe
+    .fly Refuge Pointe >>Fly to 避难谷地，阿拉希高地
     .zoneskip Arathi Highlands
 step
-    .skill skinning,185 >> Level your Skinning from 155-185 in Arathi Highlands
+    .skill skinning,185 >>Level your Skinning from 155-飞往阿拉希高地
     .loop 45,Arathi Highlands,44.9,52.8,47.0,54.9,49.7,50.6,52.4,46.0,55.2,48.3,59.4,45.1,64.4,45.4,68.6,39.1,66.8,34.3,64.3,38.0,59.6,38.4,55.5,42.9,51.3,40.4,46.5,41.1,43.3,38.7,42.0,43.4,40.7,48.4,36.2,49.8
 step
-    .skill skinning,205 >> Level your Skinning from 185-205 in Arathi Highlands
+    .skill skinning,205 >>Level your Skinning from 185-飞往阿拉希高地
     .loop 45,Arathi Highlands,47.2,69.9,46.8,73.0,45.7,76.4,45.6,81.2,48.2,82.6,51.1,74.4,54.1,69.9,56.6,68.0,54.9,62.9,48.7,60.6,47.2,69.9
 step << Mage
     #completewith next
-    .zone Ironforge >> Teleport to Ironforge
+    .zone Ironforge >>飞往铁炉堡
     .skill skinning,230,1
 step << !Mage
     .goto Arathi Highlands,45.8,46.1
-    >>Return to Refuge Pointe
+    >>Return to 避难谷地，阿拉希高地
     .fly Ironforge
-    .zone Ironforge >> Travel to Ironforge
+    .zone Ironforge >>Travel to 铁炉堡，丹莫罗
     .zoneskip Ironforge
     .skill skinning,230,1
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,230,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
     .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .zone Ironforge >>In Shattrath, take 将炉石使用回铁炉堡
     .skill skinning,230,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -365,12 +365,12 @@ step
     .skill skinning,230,1
 step << Mage
     #completewith next
-    .zone Dustwallow Marsh >> Teleport to Theramore
+    .zone Dustwallow Marsh >>飞往塞拉摩
     .skill skinning,230,1
 step << !Mage
     #completewith next
     .goto Ironforge,55.501,47.742
-    .fly Menethil >> Fly to Menethil Harbor. Alternatively, pay a mage for a portal to Theramore
+    .fly Menethil >>Fly to Menethil Harbor. Alternatively, pay a mage for a 飞往塞拉摩
     .skill skinning,230,1
     .zoneskip Dustwallow Marsh
     .zoneskip Feralas
@@ -382,30 +382,30 @@ step << !Mage
 step
     #completewith next
     .goto Dustwallow Marsh,67.5,51.3
-    .fly Thalanaar >> Fly to Thalanaar
+    .fly Thalanaar >>Fly to 萨兰纳尔，千针石林
     .skill skinning,230,1
     .zoneskip Feralas
 step
     .skill skinning,230 >> Level your Skinning from 205-230 in Feralas
     .loop 45,Feralas,72.3,44.4,71.1,41.5,74.4,40.7,76.7,39.4,76.7,39.4,79.2,38.3,79.7,39.9,79.2,44.1,78.9,46.2,78.3,47.8,76.5,48.7,75.4,51.9,73.1,54.6,
 step
-    >>Kill the Yetis in the cave or the Hippogryphs outside, then skin them
+    >>消灭那些试图阻止仪式的 Yetis in the cave or the Hippogryphs outside,then skin them
     .skill skinning,260 >> Level your Skinning from 230-260 in Feralas
     .loop 45,Feralas,58.7,55.0,57.2,56.4,55.3,56.3,56.2,58.3,55.5,62.1,56.1,63.9,54.6,65.4,53.4,68.5,53.8,70.0,54.5,73.6,56.3,73.5,55.5,69.9
 step
-    >>Kill the Yetis in the cave or the beasts outside, then skin them
+    >>消灭那些试图阻止仪式的 Yetis in the cave or the beasts outside,then skin them
     .skill skinning,280 >> Level your Skinning from 260-280 in Feralas
     .loop 45,Feralas,48.4,37.9,49.9,33.7,52.,31.8,49.4,31.5,49.5,29.3,50.1,26.4,47.6,24.5,45.8,24.6,46.5,27.5,46.3,29.9
 step << Mage
     #completewith next
-    .zone Dustwallow Marsh >> Teleport to Theramore
+    .zone Dustwallow Marsh >>飞往塞拉摩
     .skill skinning,300,1
 step
     #completewith next
     .goto Dustwallow Marsh,67.5,51.3 << Mage
     .goto Feralas,30.2,43.2 << !Mage
-    >>Travel to Feathermoon Stronghold << !Mage
-    .fly Marshal's Refuge >> Fly to Marshal's Refuge
+    >>前往暴风城大教堂内，与 Feathermoon Stronghold << !Mage
+    .fly Marshal's Refuge >>Fly to 马绍尔营地，安戈洛环形山
     .skill skinning,300,1
     .zoneskip Un'Goro Crater
 step
@@ -418,20 +418,20 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,330,1
     .zoneskip Hellfire Peninsula
 step
     #completewith Jelena
     .goto Shattrath City,64.1,41.1
-    .fly Honor Hold >> Fly to Honor Hold
+    .fly Honor Hold >>Fly to 荣耀堡，地狱火半岛
     .skill skinning,330,1
     .skill riding,300,1
     .zoneskip Hellfire Peninsula
 step
     #completewith next
     .goto Hellfire Peninsula,56.7,63.8
-    .zone Hellfire Peninsula >> Fly to Honor Hold in Hellfire Peninsula on your flying mount
+    .zone Hellfire Peninsula >>Fly to Honor 59-61 地狱火半岛 on your flying mount
     .skill skinning,330,1
     .skill riding,<300,1
 step
@@ -441,16 +441,16 @@ step
     .train 32678 >> Train Master Skinning (300-375) from Jelena in the Inn in Honor Hold
     .skill skinning,305,1
 step
-    >>Kill Starving Helboars, then skin them
-    .skill skinning,305 >> Level your Skinning from 300-305 in Hellfire Peninsula
+    >>击杀 Starving Helboars,then skin them
+    .skill skinning,305 >>Level your Skinning from 300-59-61 地狱火半岛
     .loop 45,Hellfire Peninsula,61.6,57.2,63.3,61.3,65.3,61.8,68.9,62.0,70.1,64.5,68.1,66.2,65.1,66.6,63.8,69.4,63.6,73.1,63.4,77.2,60.9,77.7,59.0,74.1,56.6,71.8
 step
-    >>Kill Deranged Helboars, then skin them
-    .skill skinning,310 >> Level your Skinning from 305-310 in Hellfire Peninsula
+    >>击杀 Deranged Helboars,then skin them
+    .skill skinning,310 >>Level your Skinning from 305-59-61 地狱火半岛
     .loop 45,Hellfire Peninsula, 47.7,77.9,47.5,73.2,48.6,69.8,49.3,66.7,51.0,66.1,52.4,69.7,53.2,74.0,51.6,78.0,49.6,79.5,47.7,77.9
 step
-    >>Kill Razorfang Hatchlings and Razorfang Ravagers, then skin them
-    .skill skinning,330 >> Level your Skinning from 310-330 in Hellfire Peninsula
+    >>击杀 Razorfang Hatchlings 和 Razorfang Ravagers,then skin them
+    .skill skinning,330 >>Level your Skinning from 310-59-61 地狱火半岛
     .loop 45,Hellfire Peninsula,41.1,82.5,35.2,87.4,34.7,91.1,37.2,91.8,40.3,88.5,42.4,85.3,41.1,82.5
 step << Mage
     #completewith next
@@ -459,7 +459,7 @@ step << Mage
     .zoneskip Nagrand
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >>Hearth to 沙塔斯城，塔拉多
     .skill skinning,375,1
     .zoneskip Nagrand
     .cooldown item,6948,>0,1
@@ -469,7 +469,7 @@ step
     .zone Nagrand >> Fly to Nagrand on your flying mount
     .skill skinning,375,1
 step
-    >>Kill Talbuks and Clefthoofs, then skin them
+    >>击杀 Talbuks 和 Clefthoofs,then skin them
     .skill skinning,375 >> Level your Skinning from 330-375 in Nagrand
     .loop 45,Nagrand,51.3,37.6,52.3,33.6,54.1,30.0,52.8,26.1,50.6,25.3,48.4,26.8,46.6,27.2,46.6,33.6,46.5,40.3,47.0,45.1,49.2,49.2,53.5,53.8,55.3,52.8,57.3,49.8,60.1,48.4,62.0,46.1,60.6,43.4,57.9,42.5,54.7,42.5,52.7,40.7,51.3,37.6
 step

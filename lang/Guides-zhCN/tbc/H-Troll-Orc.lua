@@ -2,7 +2,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP TBC Guide (H)
+#group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
 #name 1-6 Durotar
 #version 7
@@ -15,40 +15,40 @@ step << !Orc !Troll
     +|cRXP_WARN_You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r
 step
     .goto Durotar,43.29,68.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
-    .accept 4641 >>Accept Your Place In The World
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔图克|r
+    .accept 4641 >>接受任务《物归己用》 你的位置
     .target Kaltunk
 step << Warrior/Shaman/Warlock
     #completewith next
-    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
-    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
+    |cRXP_WARN_Kill |cRXP_ENEMY_杂斑野猪|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
+    |cRXP_WARN_Kill |cRXP_ENEMY_杂斑野猪|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
     .goto Durotar,43.85,71.73,30,0 << Warlock
     .goto Durotar,44.19,65.34,30,0 << Warrior/Shaman
     .mob Mottled Boar
     .money >0.01
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruzan|r
-    .accept 1485 >>Accept Vile Familiars
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r
+    .accept 1485 >>接受任务《物归己用》 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
     .goto Durotar,42.59,67.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.01
 step
     .goto Durotar,42.06,68.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
-    .turnin 4641 >>Turn in Your Place In The World
-    .accept 788 >>Accept Cutting Teeth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r
+    .turnin 4641 >>交任务《 前往熔光镇》 你的位置
+    .accept 788 >>接受任务《物归己用》 小试身手
     .target Gornek
 step << Warrior/Shaman
     .goto Durotar,42.28,68.48,10,0
     .goto Durotar,42.89,69.44 << Warrior
     .goto Durotar,42.39,69.00 << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r << Shaman
     .train 6673 >>Train |T132333:0|t[Battle Shout] << Warrior
     .train 8017 >>Train |T136086:0|t[Rockbiter Weapon] << Shaman
     .target Frang << Warrior
@@ -58,32 +58,32 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.65,68.52,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
+    .goto Durotar,40.65,68.52,12 >>前去找 |cRXP_FRIENDLY_纳托克|r
     .money <0.01
 step << Warlock
     #completewith next
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>前去找 |cRXP_FRIENDLY_赫劳格|r
     .money >0.01
 step << Warlock
     .goto Durotar,40.56,68.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r
     .vendor >>Vendor Trash
     .target Hraug
     .money >0.01
 step << Warlock
     #label Nartok
     .goto Durotar,40.65,68.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳托克|r
     .train 348 >>Train |T135817:0|t[Immolate]
     .target Nartok
 step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows]|cRXP_BUY_from her|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target Duokna
@@ -91,7 +91,7 @@ step << !Warrior !Rogue
     .money <0.0040 << Hunter
 step << Warlock
     .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r
     .collect 159,5,6394,1 --Refreshing Spring Water (5)
     .target Duokna
@@ -99,12 +99,12 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto Durotar,43.57,67.28,35,0
-    >>Kill |cRXP_ENEMY_Mottled Boars|r en route to the Burning Blade Coven
+    >>击杀 the Burning Blade Coven
     >>|cRXP_WARN_Try to get to level 2 before getting there|r
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step << Warlock
-    .goto Durotar,45.30,56.42,100 >> Travel toward the Burning Blade Coven
+    .goto Durotar,45.30,56.42,100 >>前去找 the Burning Blade Coven
     .isOnQuest 1485
 step << Warlock
     #loop
@@ -124,32 +124,32 @@ step << Warlock
 	.goto Durotar,44.58,56.10,35,0
 	.goto Durotar,44.27,56.59,35,0
 	.goto Durotar,43.85,55.52,35,0
-    >>Kill |cRXP_ENEMY_Vile Familiars|r. Loot them for |cRXP_LOOT_Vile Familiar Heads|r
+    >>击杀 for |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob Vile Familiar
 step
     #completewith Sarkoth
     .goto Durotar,43.57,67.28,35,0 << !Warlock
     .goto Durotar,43.89,65.84,45,0 << !Warlock
-    >>Kill |cRXP_ENEMY_Mottled Boars|r
+    >>击杀 |cRXP_ENEMY_杂斑野猪|r
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step
     .goto Durotar,40.59,62.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r
-    .accept 790 >>Accept Sarkoth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳祖|r
+    .accept 790 >>接受任务《物归己用》 萨科斯
     .target Hana'zua
 step
     #label Sarkoth
     .goto Durotar,40.60,66.80
-    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r
+    >>击杀 for |cRXP_LOOT_萨科斯的爪子|r
     .complete 790,1 --Sarkoth's Mangled Claw (1)
     .mob Sarkoth
 step
     .goto Durotar,40.59,62.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hana'zua|r
-    .turnin 790 >>Turn in Sarkoth
-    .accept 804 >>Accept Sarkoth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳祖|r
+    .turnin 790 >>交任务《 前往熔光镇》 萨科斯
+    .accept 804 >>接受任务《物归己用》 萨科斯
     .target Hana'zua
 step
     #loop
@@ -176,7 +176,7 @@ step
 	.goto Durotar,42.02,62.15,35,0
 	.goto Durotar,42.00,62.92,35,0
 	.goto Durotar,41.99,64.03,35,0
-    >>Kill |cRXP_ENEMY_Mottled Boars|r
+    >>击杀 |cRXP_ENEMY_杂斑野猪|r
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step << Warlock
@@ -203,66 +203,66 @@ step << Warlock
 	.goto Durotar,42.02,62.15,35,0
 	.goto Durotar,42.00,62.92,35,0
 	.goto Durotar,41.99,64.03,35,0
-    .xp 3+850 >> Grind to 850+/1400xp on the way back to town
+    .xp 3+850 >>击杀 to 850+/1400xp on the way back to town
     .mob Mottled Boar
 step << Warlock
     #completewith Ruzan2
-	>>|cRXP_WARN_Grind |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 1 silver worth of vendor items|r
+	>>|cRXP_WARN_Grind |cRXP_ENEMY_杂斑野猪|r. Loot them until you have 1 silver worth of vendor items|r
     .mob Mottled Boar
 	.money >0.01
 step << Rogue
     .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     .vendor >> Vendor Trash
     .target Duokna
 step << Warlock
     #label Ruzan2
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruzan|r
-    .turnin 1485 >>Turn in Vile Familiars
-    .accept 1499 >>Accept Vile Familiars
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r
+    .turnin 1485 >>交任务《 前往熔光镇》 邪灵劣魔
+    .accept 1499 >>接受任务《物归己用》 邪灵劣魔
     .target Ruzan
 step << Warlock
     #completewith Gornek2
-    .cast 688 >>|cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
+    .cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[Summon Imp]
 step << Warlock
 	.goto Durotar,42.85,69.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-    .turnin 1499 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zureetha|r
+    .turnin 1499 >>交任务《 前往熔光镇》 邪灵劣魔
+    .accept 794 >>接受任务《物归己用》 火刃奖章
     .target Zureetha Fargaze
 step
     #label Gornek2
     .goto Durotar,42.28,68.48,12,0 << Warlock
     .goto Durotar,42.29,68.39,12,0 << !Warlock
     .goto Durotar,42.06,68.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
-    .turnin 788,2 >>Turn in Cutting Teeth << Shaman
-    .turnin 788 >>Turn in Cutting Teeth << !Shaman
-    .accept 789 >>Accept Sting of the Scorpid
-    .accept 2383 >>Accept Simple Parchment << Orc Warrior
-    .accept 3065 >>Accept Simple Tablet << Troll Warrior
-    .accept 3082 >>Accept Etched Tablet << Troll Hunter
-    .accept 3083 >>Accept Encrypted Tablet << Troll Rogue
-    .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
-    .accept 3085 >>Accept Hallowed Tablet << Troll Priest
-    .accept 3086 >>Accept Glyphic Tablet << Troll Mage
-    .accept 3087 >>Accept Etched Parchment << Orc Hunter
-    .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
-    .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
-    .accept 3090 >>Accept Tainted Parchment << Orc Warlock
-    .turnin 804,1 >>Turn in Sarkoth << Shaman
-    .turnin 804 >>Turn in Sarkoth << !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r
+    .turnin 788,2 >>交任务《 前往熔光镇》 小试身手 << Shaman
+    .turnin 788 >>交任务《 前往熔光镇》 小试身手 << !Shaman
+    .accept 789 >>接受任务《物归己用》 工蝎的尾巴
+    .accept 2383 >>接受任务《物归己用》 简易羊皮纸 << Orc Warrior
+    .accept 3065 >>接受任务《物归己用》 普通石板 << Troll Warrior
+    .accept 3082 >>接受任务《物归己用》 风蚀石板 << Troll Hunter
+    .accept 3083 >>接受任务《物归己用》 密文石板 << Troll Rogue
+    .accept 3084 >>接受任务《物归己用》 符文石板 << Troll Shaman
+    .accept 3085 >>接受任务《物归己用》 神圣石板 << Troll Priest
+    .accept 3086 >>接受任务《物归己用》 雕文石板 << Troll Mage
+    .accept 3087 >>接受任务《物归己用》 风蚀羊皮纸 << Orc Hunter
+    .accept 3088 >>接受任务《物归己用》 密文羊皮纸 << Orc Rogue
+    .accept 3089 >>接受任务《物归己用》 符文羊皮纸 << Orc Shaman
+    .accept 3090 >>接受任务《物归己用》 被污染的羊皮纸 << Orc Warlock
+    .turnin 804,1 >>交任务《 前往熔光镇》 萨科斯 << Shaman
+    .turnin 804 >>交任务《 前往熔光镇》 萨科斯 << !Shaman
     .target Gornek
 step << Rogue
     #completewith Rwag
     .goto Durotar,41.52,68.36,12,0
-    .goto Durotar,41.27,68.00,12 >>Travel toward |cRXP_FRIENDLY_Rwag|r
+    .goto Durotar,41.27,68.00,12 >>前去找 |cRXP_FRIENDLY_鲁瓦格|r
 step << Rogue
     .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁瓦格|r
+    .turnin 3083 >>交任务《 前往熔光镇》 密文石板 << Troll Rogue
+    .turnin 3088 >>交任务《 前往熔光镇》 密文羊皮纸 << Orc Rogue
     .train 53 >> Train |T132090:0|t[Backstab]
     .target Rwag
     .money <0.04
@@ -270,49 +270,49 @@ step << Rogue
 step << Rogue
     #label Rwag
     .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
-    .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁瓦格|r
+    .turnin 3083 >>交任务《 前往熔光镇》 密文石板 << Troll Rogue
+    .turnin 3088 >>交任务《 前往熔光镇》 密文羊皮纸 << Orc Rogue
     .target Rwag
 step << Warlock
     #completewith Nartok2
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.65,68.52,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
+    .goto Durotar,40.65,68.52,12 >>前去找 |cRXP_FRIENDLY_纳托克|r
     .money <0.01
 step << Warlock
     #completewith next
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>前去找 |cRXP_FRIENDLY_赫劳格|r
     .money >0.01
 step << Warlock
     .goto Durotar,40.56,68.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r
     .vendor >>Vendor Trash
     .target Hraug
     .money >0.01
 step << Warlock
     #label Nartok2
     .goto Durotar,40.65,68.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Turn in Tainted Parchment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳托克|r
+    .turnin 3090 >>交任务《 前往熔光镇》 被污染的羊皮纸
     .train 172 >> Train |T136118:0|t[Corruption]
     .target Nartok
 step
     #sticky
     #label Galgar
     .goto Durotar,42.73,67.23,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
-    .accept 4402 >>Accept Galgar's Cactus Apple Surprise
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈加尔|r
+    .accept 4402 >>接受任务《物归己用》 戈加尔的清凉果
     .target Galgar
 step << !Rogue
     .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows]|cRXP_BUY_from her|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
@@ -322,64 +322,64 @@ step << !Rogue
 step << Shaman
     #requires Galgar
     .goto Durotar,42.39,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
-    .turnin 3084 >>Turn in Rune-Inscribed Tablet << Troll
-    .turnin 3089 >>Turn in Rune-Inscribed Parchment << Orc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r
+    .turnin 3084 >>交任务《 前往熔光镇》 符文石板 << Troll
+    .turnin 3089 >>交任务《 前往熔光镇》 符文羊皮纸 << Orc
     .target Shikrik
 step << Mage
     #requires Galgar
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
-    .turnin 3086 >>Turn in Glyphic Tablet << Troll
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈安|r
+    .turnin 3086 >>交任务《 前往熔光镇》 雕文石板 << Troll
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .target Mai'ah
 step << Hunter
     #requires Galgar
     .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
-    .turnin 3082 >>Turn in Etched Tablet << Troll
-    .turnin 3087 >>Turn in Etched Parchment << Orc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基沙|r
+    .turnin 3082 >>交任务《 前往熔光镇》 风蚀石板 << Troll
+    .turnin 3087 >>交任务《 前往熔光镇》 风蚀羊皮纸 << Orc
     .target Jen'shan
 step << Warrior
     #requires Galgar
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .turnin 2383 >>Turn in Simple Parchment << Orc
-    .turnin 3065 >>Turn in Simple Tablet << Troll
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r
+    .turnin 2383 >>交任务《 前往熔光镇》 简易羊皮纸 << Orc
+    .turnin 3065 >>交任务《 前往熔光镇》 普通石板 << Troll
     .target Frang
 step << Priest
     #requires Galgar
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-    .turnin 3085 >>Turn in Hallowed Tablet
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯杰|r
+    .turnin 3085 >>交任务《 前往熔光镇》 神圣石板
     .target Ken'jai
 step << !Warlock
     #requires Galgar
 	.goto Durotar,42.85,69.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-    .accept 792 >>Accept Vile Familiars
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zureetha|r
+    .accept 792 >>接受任务《物归己用》 邪灵劣魔
     .target Zureetha Fargaze
 step
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
-    .accept 5441 >>Accept Lazy Peons
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Thazz'ril|r
+    .accept 5441 >>接受任务《物归己用》 懒惰的苦工
     .target Foreman Thazz'ril
 step
     #completewith Sting
-    >>Loot the |cRXP_LOOT_Cactus Apples|r near the Cacti
+    >>拾取散发绿光的 |cRXP_LOOT_Cactus Apples|r near the Cacti
     .complete 4402,1 --Cactus Apple (10)
 step
     #completewith Tails
     .goto Durotar,44.98,69.13,45,0
     .goto Durotar,45.64,65.70,45,0
     .goto Durotar,47.37,65.67,45,0
-    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_懒惰的苦工|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
 step << !Warlock
     #completewith Imps
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |cRXP_LOOT_Scorpid Worker Tails|r
+    >>击杀 for |cRXP_LOOT_工蝎的尾巴|r
     .complete 789,1 --Scorpid Worker Tail (10)
     .mob Scorpid Worker
 step << !Warlock
@@ -401,7 +401,7 @@ step << !Warlock
 	.goto Durotar,44.58,56.10,35,0
 	.goto Durotar,44.27,56.59,35,0
 	.goto Durotar,43.85,55.52,35,0
-    >>Kill |cRXP_ENEMY_Vile Familiars|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
 step
@@ -455,7 +455,7 @@ step
 	.goto Durotar,45.81,59.30,35,0
 	.goto Durotar,45.15,59.46,35,0
 	.goto Durotar,43.91,59.33,35,0
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |cRXP_LOOT_Scorpid Worker Tails|r
+    >>击杀 for |cRXP_LOOT_工蝎的尾巴|r
     .complete 789,1 --Scorpid Worker Tail (10)
     .mob Scorpid Worker
 step
@@ -471,7 +471,7 @@ step
 	.goto Durotar,40.91,60.41,35,0
 	.goto Durotar,38.83,61.84,35,0
 	.goto Durotar,44.98,69.13,35,0
-    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_懒惰的苦工|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -500,21 +500,21 @@ step
 	.goto Durotar,42.00,62.92,35,0
 	.goto Durotar,41.99,64.03,35,0
 	.goto Durotar,41.30,65.03,35,0
-    .xp 4 >> Grind to level 4
+    .xp 4 >>击杀 to level 4
     .mob Mottled Boar
     .mob Scorpid Worker
     .mob Vile Familiar
 step
     .goto Durotar,42.73,67.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
-    .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈加尔|r
+    .turnin 4402 >>交任务《 前往熔光镇》 戈加尔的清凉果
     .target Galgar
     .isQuestComplete 4402
 step
     .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows]|cRXP_BUY_from her|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
@@ -526,51 +526,51 @@ step
     #label Sting
     .goto Durotar,42.29,68.39,12,0
     .goto Durotar,42.06,68.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
-    .turnin 789 >>Turn in Sting of the Scorpid
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高内克|r
+    .turnin 789 >>交任务《 前往熔光镇》 工蝎的尾巴
     .target Gornek
 step << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_Canaga|r
     .train 8042 >> Train |T136026:0|t[Earth Shock]
     .target +Shikrik
     .goto Durotar,42.39,69.00
-    .accept 1516 >>Accept Call of Earth
+    .accept 1516 >>接受任务《物归己用》 大地的召唤
     .target +Canaga Earthcaller
     .goto Durotar,42.40,69.17
 step << Mage
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈安|r
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Mai'ah
 step << Priest
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯杰|r
     .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
     .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
     .money <0.011
     .target Ken'jai
 step << Priest
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯杰|r
     .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
     .money <0.01
     .target Ken'jai
 step << !Warlock
 	.goto Durotar,42.85,69.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-    .turnin 792 >>Turn in Vile Familiars
-    .accept 794 >>Accept Burning Blade Medallion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zureetha|r
+    .turnin 792 >>交任务《 前往熔光镇》 邪灵劣魔
+    .accept 794 >>接受任务《物归己用》 火刃奖章
     .target Zureetha Fargaze
 step << Hunter
     .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基沙|r
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
     .xp <4,1
     .money <0.01
 step << Warrior
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r
     .train 100 >> Train |T132337:0|t[Charge]
     .train 772 >> Train |T132155:0|t[Rend]
     .target Frang
@@ -578,24 +578,24 @@ step << Warrior
     .train 772,1
 step << Warrior
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r
     .train 772 >> Train |T132155:0|t[Rend]
     .target Frang
 step << Warrior
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r
     .train 100 >> Train |T132337:0|t[Charge]
     .target Frang
     .money <0.01
 step
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
-    .turnin 5441 >>Turn in Lazy Peons
-    .accept 6394 >>Accept Thazz'ril's Pick
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Thazz'ril|r
+    .turnin 5441 >>交任务《 前往熔光镇》 懒惰的苦工
+    .accept 6394 >>接受任务《物归己用》 塔兹利尔的镐
     .target Foreman Thazz'ril
 step
     #completewith next
-    .xp 4+1720 >> Grind to 1720+/2100xp
+    .xp 4+1720 >>击杀 to 1720+/2100xp
     .mob Mottled Boar
     .mob Scorpid Worker
     .mob Vile Familiar
@@ -614,7 +614,7 @@ step
 	.goto Durotar,47.28,62.80,25,0
 	.goto Durotar,46.08,62.98,25,0
 	.goto Durotar,44.67,64.92,25,0
-    >>Loot the |cRXP_LOOT_Cactus Apples|r near the Cacti
+    >>拾取散发绿光的 |cRXP_LOOT_Cactus Apples|r near the Cacti
     .complete 4402,1 --Cactus Apple (10)
 step << !Warrior !Rogue !Shaman
     #optional
@@ -635,7 +635,7 @@ step << !Warrior !Rogue !Shaman
 	.goto Durotar,44.27,56.59,25,0
 	.goto Durotar,43.85,55.52,25,0
 	.goto Durotar,43.87,58.42,25,0
-    .xp 4+1720 >> Grind to 1720+/2100xp
+    .xp 4+1720 >>击杀 to 1720+/2100xp
     .mob Vile Familiar
     .isOnQuest 4402
 step << !Warrior !Rogue !Shaman
@@ -656,36 +656,36 @@ step << !Warrior !Rogue !Shaman
 	.goto Durotar,44.27,56.59,25,0
 	.goto Durotar,43.85,55.52,25,0
 	.goto Durotar,43.87,58.42,25,0
-    .xp 5 >> Grind to level 5
+    .xp 5 >>击杀 to level 5
     .mob Vile Familiar
     .isQuestTurnedIn 4402
 step
 	#completewith Thazz
     #label Cave
-    .goto Durotar,45.35,56.27,30 >>Enter the cave
+    .goto Durotar,45.35,56.27,30 >>进入 cave
     .isOnQuest 6394
 step
 	#completewith Thazz
     #requires Cave
     .goto Durotar,45.37,55.39,15,0
     .goto Durotar,44.43,54.51,15,0
-    .goto Durotar,43.72,53.79,10 >>Travel toward |cRXP_LOOT_Thazz'ril's Pick|r
+    .goto Durotar,43.72,53.79,10 >>前去找 |cRXP_LOOT_塔兹利尔的镐|r
     .isOnQuest 6394
 step << Shaman
     #completewith Yarrog
     #requires Cave
-    >>Kill |cRXP_ENEMY_Felstalkers|r. Loot them for |cRXP_LOOT_Felstalker Hooves|r
+    >>击杀 for |cRXP_LOOT_Felstalker Hooves|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
 step
     #label Thazz
     .goto Durotar,43.72,53.79
-    >>Loot |cRXP_LOOT_Thazz'ril's Pick|r against the wall
+    >>拾取地上的 
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
     #label Yarrog
     .goto Durotar,42.70,52.99
-    >>Kill |cRXP_ENEMY_Yarrog Baneshadow|r. Loot him for the |cRXP_LOOT_Burning Blade Medallion|r
+    >>击杀 |cRXP_ENEMY_亚罗格·刺影|r。拾取他的 |cRXP_LOOT_火刃奖章|r
     .complete 794,1 --Burning Blade Medallion (1)
 	.mob Yarrog Baneshadow
 step << Shaman
@@ -711,7 +711,7 @@ step << Shaman
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
 	.goto Durotar,42.70,52.99,25,0
-    >>Kill |cRXP_ENEMY_Felstalkers|r. Loot them for |cRXP_LOOT_Felstalker Hooves|r
+    >>击杀 for |cRXP_LOOT_Felstalker Hooves|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
 step
@@ -738,8 +738,8 @@ step
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
 	.goto Durotar,42.70,52.99,25,0
-    .xp 5+1635 >> Grind to 1635+/2800xp << !Shaman
-    .xp 5+645 >> Grind to 645+/2800xp << Shaman
+    .xp 5+1635 >>击杀 to 1635+/2800xp << !Shaman
+    .xp 5+645 >>击杀 to 645+/2800xp << Shaman
     .isQuestTurnedIn 4402
 step
     #loop
@@ -764,8 +764,8 @@ step
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
 	.goto Durotar,42.70,52.99,25,0
-    .xp 5+1255 >> Grind to 1255+/2800xp << !Shaman
-    .xp 5+265 >> Grind to 265+/2800xp << Shaman
+    .xp 5+1255 >>击杀 to 1255+/2800xp << !Shaman
+    .xp 5+265 >>击杀 to 265+/2800xp << Shaman
     .isOnQuest 4402
 step << Orc/Troll
     #completewith BurningBladeTurnin
@@ -773,36 +773,36 @@ step << Orc/Troll
 step << !Orc !Troll
     #softcore
     #completewith BurningBladeTurnin
-    .deathskip >> Die at the start of the cave and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run back Valley of Trials
+    .deathskip >>Die at the start of the cave and respawn at the |cRXP_FRIENDLY_灵魂医者|r, or run back Valley of Trials
 step << !Orc !Troll
     #hardcore
     #completewith BurningBladeTurnin
     .goto Durotar,44.63,68.65,120 >>Travel back to the Valley of Trials
 step
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
-    .turnin 6394 >>Turn in Thazz'ril's Pick
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Thazz'ril|r
+    .turnin 6394 >>交任务《 前往熔光镇》 塔兹利尔的镐
     .target Foreman Thazz'ril
 step
     .goto Durotar,42.73,67.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
-    .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈加尔|r
+    .turnin 4402 >>交任务《 前往熔光镇》 戈加尔的清凉果
     .target Galgar
 step
     .goto Durotar,42.59,67.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.03
 step
     #label BurningBladeTurnin
     .goto Durotar,42.85,69.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
-    .turnin 794 >>Turn in Burning Blade Medallion
-    .accept 805 >>Accept Report to Sen'jin Village
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zureetha|r
+    .turnin 794 >>交任务《 前往熔光镇》 火刃奖章
+    .accept 805 >>接受任务《物归己用》 去森金村报到
     .target Zureetha Fargaze
 step << !Shaman
-    .xp 6 >> Grind to level 6
+    .xp 6 >>击杀 to level 6
     #loop
     .goto Durotar,42.70,52.99,0
 	.goto Durotar,42.97,51.14,25,0
@@ -827,65 +827,65 @@ step << !Shaman
 	.goto Durotar,42.70,52.99,25,0
 step << Priest
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-	.accept 5649 >> Accept In Favor of Spirituality
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯杰|r
+	.accept 5649 >>接受任务《物归己用》 部族的传统
 	.train 591 >>Train |T135924:0|t[Smite]
     .train 17 >>Train |T135940:0|t[Power Word: Shield]
     .target Ken'jai
 step << Mage
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈安|r
     .train 143 >> Train |T135812:0|t[Fireball]
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Mai'ah
 step << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_Canaga|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
     .goto Durotar,42.39,69.00
-    .turnin 1516 >>Turn in Call of Earth
-    .accept 1517 >>Accept Call of Earth
+    .turnin 1516 >>交任务《 前往熔光镇》 大地的召唤
+    .accept 1517 >>接受任务《物归己用》 大地的召唤
     .goto Durotar,42.40,69.17
     .target Shikrik
     .target Canaga Earthcaller
     .xp <6,1
 step << Shaman
     .goto Durotar,42.40,69.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga|r
-    .turnin 1516 >>Turn in Call of Earth
-    .accept 1517 >>Accept Call of Earth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Canaga|r
+    .turnin 1516 >>交任务《 前往熔光镇》 大地的召唤
+    .accept 1517 >>接受任务《物归己用》 大地的召唤
     .target Canaga Earthcaller
 step << Hunter
     .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基沙|r
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
     .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .target Jen'shan
     .money <0.02
 step << Hunter
     .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基沙|r
     .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .target Jen'shan
 step << Warrior
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r
     .train 3127 >>Train |T132269:0|t[Parry]
     .train 6343 >>Train |T136105:0|t[Thunder Clap]
     .target Frang
     .money <0.02
 step << Warrior
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r
     .train 3127 >>Train |T132269:0|t[Parry]
     .target Frang
 step << Rogue
     #completewith RogueTraining
     .goto Durotar,42.13,68.41,15,0
     .goto Durotar,41.52,68.36,12,0
-    .goto Durotar,41.27,68.00,12 >>Travel toward |cRXP_FRIENDLY_Rwag|r
+    .goto Durotar,41.27,68.00,12 >>前去找 |cRXP_FRIENDLY_鲁瓦格|r
 step << Rogue
     .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁瓦格|r
     .train 1757 >> Train |T136189:0|t[Sinister Strike]
     .train 1776 >> Train |T132155:0|t[Gouge]
     .target Rwag
@@ -893,7 +893,7 @@ step << Rogue
 step << Rogue
     #label RogueTraining
     .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁瓦格|r
     .train 1757 >> Train |T136189:0|t[Sinister Strike]
     .target Rwag
 step << Warlock
@@ -902,12 +902,12 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>前去找 |cRXP_FRIENDLY_赫劳格|r
 step << Warlock
     #label Hraug3
     .goto Durotar,40.56,68.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
-    >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r
+    >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Blood Pact]|cRXP_BUY_from him|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>Vendor Trash
     .target Hraug
@@ -926,7 +926,7 @@ step << Shaman
     .goto Durotar,40.82,74.37,8,0
     .goto Durotar,42.71,75.18,10,0
     .goto Durotar,43.57,75.51,15,0
-    .goto Durotar,44.13,76.36,25 >>Travel toward the |cRXP_PICK_Shaman Shrine|r
+    .goto Durotar,44.13,76.36,25 >>前去找 the |cRXP_PICK_Shaman Shrine|r
     .isOnQuest 1517
 step << Shaman
     #completewith next
@@ -936,25 +936,25 @@ step << Shaman
 step << Shaman
     #label CallOE1
     .goto Durotar,44.03,76.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Manifestation|r
-    .turnin 1517 >>Turn in Call of Earth
-    .accept 1518 >>Accept Call of Earth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Manifestation|r
+    .turnin 1517 >>交任务《 前往熔光镇》 大地的召唤
+    .accept 1518 >>接受任务《物归己用》 大地的召唤
     .target Minor Manifestation of Earth
 step << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Canaga|r
     .goto Durotar,42.40,69.17
-    .turnin 1518 >>Turn in Call of Earth
+    .turnin 1518 >>交任务《 前往熔光镇》 大地的召唤
     .target Canaga Earthcaller
 step << Shaman
     .goto Durotar,42.39,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
     .target Shikrik
 step
     #xprate >1.49
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
-    .turnin 6394 >>Turn in Thazz'ril's Pick
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Thazz'ril|r
+    .turnin 6394 >>交任务《 前往熔光镇》 塔兹利尔的镐
     .target Foreman Thazz'ril
 step
     #label Leave
@@ -969,7 +969,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP TBC Guide (H)
+#group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
 #name 6-10 Durotar
 #version 7
@@ -980,70 +980,70 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Durotar,52.06,68.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ukor|r
-    .accept 2161 >>Accept A Peon's Burden
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌克尔|r
+    .accept 2161 >>接受任务《物归己用》 苦工的重担
     .target Ukor
 step
     #completewith SenjinPickups
-    .subzone 367 >>Travel to Sen'Jin Village
+    .subzone 367 >>前往暴风城大教堂内，与 Sen'Jin Village
 step
     .goto Durotar,54.20,73.36,0
     .goto Durotar,54.20,73.36,25,0
     .goto Durotar,54.09,76.31,25,0
     .goto Durotar,54.52,74.83,25,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
-    .accept 786 >>Accept Thwarting Kolkar Aggression
+    .accept 786 >>接受任务《物归己用》 科卡尔半人马的进攻
     .target Lar Prowltusk
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
-    .accept 817 >>Accept Practical Prey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r 和 |cRXP_FRIENDLY_Gadrin|r
+    .accept 817 >>接受任务《物归己用》 生活所需的虎皮
     .goto Durotar,55.95,73.93
     .target +Vel'rin Fang
-    .accept 818 >>Accept A Solvent Spirit
+    .accept 818 >>接受任务《物归己用》 沃纳尔大师
     .goto Durotar,55.94,74.40
     .target +Master Vornal
-    .turnin 805 >>Turn in Report to Sen'jin Village
-    .accept 808 >>Accept Minshina's Skull
-    .accept 826 >>Accept Zalazane
-    .accept 823 >>Accept Report to Orgnil
+    .turnin 805 >>交任务《 前往熔光镇》 去森金村报到
+    .accept 808 >>接受任务《物归己用》 明希纳的徽记
+    .accept 826 >>接受任务《物归己用》 扎拉赞恩
+    .accept 823 >>接受任务《物归己用》 向奥戈尼尔报告
     .goto Durotar,55.94,74.72
     .target +Master Gadrin
 step
     #completewith next
     .goto Durotar,56.16,74.43,8,0
-    .goto Durotar,56.31,73.8,8 >> Enter the big hut
+    .goto Durotar,56.31,73.8,8 >>进入磨坊 hut
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_克瓦埃|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_克瓦埃|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (20)
     .collect 159,20,786,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_克瓦埃|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (10)
     .collect 159,10,786,1
     .target K'waii
     .money <0.0050
 step << Shaman
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,786,1 --Collect Walking Stick (1)
     .target Trayexir
     .money <0.0504
@@ -1051,14 +1051,14 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (4s 01c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
     .collect 2494,1,786,1 --Collect Stiletto (1)
     .target Trayexir
     .money <0.0401
@@ -1066,14 +1066,14 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T132401:0|t[Large Axe] (4s 84c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Orc Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
     .collect 2491,1,786,1 --Collect Large Axe (1)
     .target Trayexir
     .money <0.0484
@@ -1081,14 +1081,14 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135421:0|t[Tomahawk] (5s 40c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Troll Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
     .collect 2490,1,786,1 --Collect Tomahawk (1)
     .target Trayexir
     .money <0.0540
@@ -1096,14 +1096,14 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Hunter
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135499:0|t[Hornwood Recurve Bow] (2s 83c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
     .collect 2506,1,786,1 --Collect Hornwood Recurve Bow (1)
     .target Trayexir
     .money <0.0283
@@ -1159,7 +1159,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Mage
     .goto Durotar,56.30,75.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安苏瓦|r
     .train 143 >> Train |T135812:0|t[Fireball]
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Un'Thuwa
@@ -1170,7 +1170,7 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0
-    >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
+    >>Run down the beach. Kill |cRXP_ENEMY_海蟹|r and |cRXP_ENEMY_龙虾人|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -1181,7 +1181,7 @@ step
     .goto Durotar,52.20,83.00,75 >> Reach the end of the beach
     .isOnQuest 818
 step
-    .goto Durotar,50.9,79.2,30 >>Enter the Kolkar base
+    .goto Durotar,50.9,79.2,30 >>进入 Kolkar base
     .isOnQuest 786
 step
     #sticky
@@ -1190,7 +1190,7 @@ step
     .unitscan Warlord Kolkanis
 step
     .goto Durotar,49.81,81.29
-    >>Burn the |cRXP_PICK_Attack Plan|r inside the tent on the ground
+    >>Burn the |cRXP_PICK_Attack Plan|r 对话，NPC在里面 the tent on the ground
     .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
 step
     >>Burn the |cRXP_PICK_Attack Plan|r on the ground
@@ -1206,7 +1206,7 @@ step
     #completewith TurninKolkar
     .goto Durotar,46.43,79.25,-1
     .goto Durotar,57.50,73.26,-1
-    .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die at the Bonfire 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
     .isQuestComplete 786
 step
     #hardcore
@@ -1215,14 +1215,14 @@ step
     .isQuestComplete 786
 step << Shaman
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,823,1 --Collect Walking Stick (1)
     .target Trayexir
     .money <0.0504
@@ -1230,14 +1230,14 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (4s 01c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
     .collect 2494,1,823,1 --Collect Stiletto (1)
     .target Trayexir
     .money <0.0401
@@ -1245,14 +1245,14 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T132401:0|t[Large Axe] (4s 84c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Orc Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
     .collect 2491,1,823,1 --Collect Large Axe (1)
     .target Trayexir
     .money <0.0484
@@ -1260,14 +1260,14 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135421:0|t[Tomahawk] (5s 40c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Troll Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
     .collect 2490,1,823,1 --Collect Tomahawk (1)
     .target Trayexir
     .money <0.0540
@@ -1275,14 +1275,14 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Hunter
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135499:0|t[Hornwood Recurve Bow] (2s 83c). You'll come back later if you don't have enough yet
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_特莱耶克|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
     .collect 2506,1,823,1 --Collect Hornwood Recurve Bow (1)
     .target Trayexir
     .money <0.0283
@@ -1339,13 +1339,13 @@ step << Hunter
 step
     #optional
     .goto Durotar,55.95,74.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
-    .turnin 818 >>Turn in A Solvent Spirit
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vornal|r
+    .turnin 818 >>交任务《 前往熔光镇》 沃纳尔大师
     .target Master Vornal
     .isQuestComplete 818
 step << Warrior/Rogue/Shaman
     .goto Durotar,55.62,73.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海赞|r
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r
     .vendor >> Vendor trash
     .collect 2287,10,823,1 --Haunch of Meat (10)
@@ -1353,14 +1353,14 @@ step << Warrior/Rogue/Shaman
     .target Hai'zan
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_克瓦埃|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (20)
     .collect 159,20,784,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_克瓦埃|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (10)
     .collect 159,10,784,1
     .target K'waii
@@ -1373,43 +1373,43 @@ step
     .goto Durotar,54.09,76.31,25,0
     .goto Durotar,54.52,74.83,25,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
-    .turnin 786 >>Turn in Thwarting Kolkar Aggression
+    .turnin 786 >>交任务《 前往熔光镇》 科卡尔半人马的进攻
     .target Lar Prowltusk
 step
     #hardcore
     #label RazorHill1
     #completewith next
-    .subzone 362 >>Travel to Razor Hill
+    .subzone 362 >>前往暴风城大教堂内，与 Razor Hill
 step
     #softcore
     #label RazorHill1
     #completewith next
     .goto Durotar,54.53,58.69
-    .deathskip >>Travel to the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>前往 Halfhill the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_灵魂医者|r
 step << Shaman/Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
-    .turnin 823 >>Turn in Report to Orgnil
-    .accept 806 >>Accept Dark Storms
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_加索克|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 823 >>交任务《 前往熔光镇》 向奥戈尼尔报告
+    .accept 806 >>接受任务《物归己用》 黑暗风暴
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
-    .accept 784 >>Accept Vanquish the Betrayers
-    .accept 837 >>Accept Encroachment
+    .accept 784 >>接受任务《物归己用》 背信弃义的人类
+    .accept 837 >>接受任务《物归己用》 野猪人的进犯
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .accept 815 >>Accept Break a Few Eggs
+    .accept 815 >>接受任务《物归己用》 恐龙蛋大餐
     .target +Cook Torka
     .goto Durotar,51.09,42.49
 step << !Shaman !Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
-    .turnin 823 >>Turn in Report to Orgnil
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_加索克|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 823 >>交任务《 前往熔光镇》 向奥戈尼尔报告
     --.accept 806 >>Accept Dark Storms
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
-    .accept 784 >>Accept Vanquish the Betrayers
-    .accept 837 >>Accept Encroachment
+    .accept 784 >>接受任务《物归己用》 背信弃义的人类
+    .accept 837 >>接受任务《物归己用》 野猪人的进犯
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .accept 815 >>Accept Break a Few Eggs
+    .accept 815 >>接受任务《物归己用》 恐龙蛋大餐
     .target +Cook Torka
     .goto Durotar,51.09,42.49
 step
@@ -1418,7 +1418,7 @@ step
     .goto Durotar,50.09,42.97,8,0
     .goto Durotar,50.20,42.30,12,0
     .goto Durotar,49.96,40.96,12,0
-    .goto Durotar,49.67,40.42,10 >>Travel toward the tower
+    .goto Durotar,49.67,40.42,10 >>前去找 the tower
 step
     #completewith next
     .goto Durotar,49.75,40.38,6,0
@@ -1430,37 +1430,37 @@ step
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
-    .accept 791 >>Accept Carry Your Weight
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Furl|r
+    .accept 791 >>接受任务《物归己用》 新的背包
     .target Furl Scornbrow
 step << Warrior/Rogue/Paladin
     .goto Durotar,51.81,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克鲁恩|r
     .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue/Paladin
     .goto Durotar,51.90,41.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
-    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_Wuark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_沃克|r
     .collect 2901,1,784,1 --Mining Pick (1)
     .target Wuark
 step << Warrior/Rogue/Paladin
     .goto Durotar,52.05,40.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜克|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Shaman
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,784,1 --Collect Walking Stick (1)
     .target Uhgar
     .money <0.0504
@@ -1468,14 +1468,14 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (4s 01c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
     .collect 2494,1,784,1 --Collect Stiletto (1)
     .target Uhgar
     .money <0.0401
@@ -1483,14 +1483,14 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T132401:0|t[Large Axe] (4s 84c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Orc Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
     .collect 2491,1,784,1 --Collect Large Axe (1)
     .target Uhgar
     .money <0.0484
@@ -1498,14 +1498,14 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135421:0|t[Tomahawk] (5s 40c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Troll Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
     .collect 2490,1,784,1 --Collect Tomahawk (1)
     .target Uhgar
     .money <0.0540
@@ -1553,14 +1553,14 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghrawt|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格劳特|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135499:0|t[Hornwood Recurve Bow] (2s 83c). You'll come back later if you don't have enough yet
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_格劳特|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
     .collect 2506,1,818,1 --Collect Hornwood Recurve Bow (1)
     .target Ghrawt
     .money <0.0283
@@ -1576,21 +1576,21 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_格劳特|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
     .collect 2512,1000,818,1 << Hunter --Rough Arrow (1000)
     .target Ghrawt
     .itemcount 2512,<600 << Hunter
 step
     #optional
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     >>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest
     .vendor >> Vendor Trash
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
+    .home >>将你的炉石设置为暮色森林 Hill
+    .turnin 2161 >>交任务《 前往熔光镇》 苦工的重担
     .target Innkeeper Grosk
     .train 6760,1 << Rogue
     .train 139,1 << Priest
@@ -1601,24 +1601,24 @@ step
     .xp <8,1
 step
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
+    .home >>将你的炉石设置为暮色森林 Hill
+    .turnin 2161 >>交任务《 前往熔光镇》 苦工的重担
     .target Innkeeper Grosk
     .bindlocation 362
     .xp >8,1
 step << !Mage !Hunter !Druid !Paladin
     #optional
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
+    .home >>将你的炉石设置为暮色森林 Hill
+    .turnin 2161 >>交任务《 前往熔光镇》 苦工的重担
     .target Innkeeper Grosk
     .train 6760,3 << Rogue
     .train 139,3 << Priest
@@ -1628,26 +1628,26 @@ step << !Mage !Hunter !Druid !Paladin
     .bindlocation 362
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .train 284 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tarshaw|r
+    .train 284 >>训练你的职业技能
     .target Tarshaw Jaggedscar
     .xp <8,1
 step << Shaman
     .goto Durotar,54.42,42.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
-    .train 8044 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r
+    .train 8044 >>训练你的职业技能
     .target Swart
     .xp <8,1
 step << Warlock
     .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .train 1120 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dhugru|r
+    .train 1120 >>训练你的职业技能
     .target Dhugru Gorelust
     .xp <8,1
 step << Warlock
     #completewith next
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_基萨|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,784,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
@@ -1659,22 +1659,22 @@ step << Warlock
     .xp <8,1
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .train 5116 >> Train your class spells
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .train 5116 >>训练你的职业技能
     .target Thotar
     .xp <8,1
 step << Rogue
     .goto Durotar,51.98,43.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r
+    .train 6760 >>训练你的职业技能
     .target Kaplak
     .xp <8,1
 step << Priest
     .goto Durotar,54.26,42.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5649 >> Turn in In Favor of Spirituality
-    .accept 5648 >> Accept Garments of Spirituality
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r
+    .turnin 5649 >>交任务《 前往熔光镇》 部族的传统
+    .accept 5648 >>接受任务《物归己用》 灵魂之衣
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -1683,38 +1683,38 @@ step << Priest
     .target Grunt Kor'ja
 step << Priest
     .goto Durotar,54.26,42.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5648 >>Turn in Garments of Spirituality
-    .trainer >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r
+    .turnin 5648 >>交任务《 前往熔光镇》 灵魂之衣
+    .trainer >>训练你的职业技能
     .target Tai'jin
 step << Rogue/Warrior
     .goto Durotar,54.17,41.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rawrk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉乌克|r
     .train 3273 >>Train |T135966:0|t[First Aid]
     .money <0.01
     .target Rawrk
 step
     .goto Durotar,54.39,42.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔克|r
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_BUY_him|r
     .collect 4496,1,784,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
 step << Warrior/Rogue/Paladin
     #completewith TiragardeArrive
-    +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
+    |cRXP_WARN_施放|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,784,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
 step
     #label TiragardeArrive
     .goto Durotar,57.26,54.69,60,0
-    .subzone 372 >>Travel to Tiragarde Keep
+    .subzone 372 >>前往塔纳利斯 Keep
     .isOnQuest 784
 step
     #sticky
     #completewith AgedEnvelope
-    +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Watch Commander Zalaphil|r |cRXP_WARN_is up, as he is a level 9 rare. You may have to use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have one|r
+    |cRXP_WARN_Be careful if|r |cRXP_ENEMY_科提斯中士|r |cRXP_WARN_is up, as he is a level 9 rare. You may have to use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have one|r
     .unitscan Watch Commander Zalaphil
 step
     #completewith Benedict
@@ -1725,7 +1725,7 @@ step
     .goto Durotar,59.29,57.89,8 >> Move toward the second floor of the keep
 step
     #completewith AgedEnvelope
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -1734,7 +1734,7 @@ step
 step
     #label Benedict
     .goto Durotar,59.75,58.27
-    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r. Loot him for his |cRXP_LOOT_Key|r
+    >>击杀 for his |cRXP_LOOT_Key|r
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1,830 --Collect Benedict's Key (1)
     .mob Lieutenant Benedict
@@ -1747,10 +1747,10 @@ step
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
     >>|cRXP_WARN_Go upstairs in the keep|r
-    >>Open |cRXP_PICK_Benedict's Chest|r. Loot it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
+    >>打开 |cRXP_PICK_Benedict's Chest|r. 拾取地上的 it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
     >>Use the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] to start the quest
     .collect 4881,1,830 --Collect Aged Envelope (1)
-    .accept 830 >>Accept The Admiral's Orders
+    .accept 830 >>接受任务《物归己用》 将军的命令
     .use 4881
 step
     #loop
@@ -1762,7 +1762,7 @@ step
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -1782,7 +1782,7 @@ step
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -1799,7 +1799,7 @@ step
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
@@ -1811,25 +1811,25 @@ step << !Mage
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97,50,0
-    .xp 7+2610 >> Grind to 2610+/4500xp
+    .xp 7+2610 >>击杀 to 2610+/4500xp
 step
     #softcore
     #completewith next
     .goto Durotar,57.3,53.5,120,0
-    .deathskip >> Die at the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die at the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_灵魂医者|r
 step
     #hardcore
     #completewith next
-    .goto Durotar,52.38,43.77,120 >> Travel to Razor Hill
+    .goto Durotar,52.38,43.77,120 >>前往暴风城大教堂内，与 Razor Hill
 step
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
-    .turnin 784 >>Turn in Vanquish the Betrayers
-    .turnin 830 >>Turn in The Admiral's Orders
-    .accept 825 >>Accept From The Wreckage....
-    .accept 831 >>Accept The Admiral's Orders << Warrior/Shaman/Hunter/Warlock
-    .accept 837 >>Accept Encroachment
+    .turnin 784 >>交任务《 前往熔光镇》 背信弃义的人类
+    .turnin 830 >>交任务《 前往熔光镇》 将军的命令
+    .accept 825 >>接受任务《物归己用》 海底沉船
+    .accept 831 >>接受任务《物归己用》 将军的命令 << Warrior/Shaman/Hunter/Warlock
+    .accept 837 >>接受任务《物归己用》 野猪人的进犯
     .target Gar'thok
 step
     #completewith next
@@ -1837,7 +1837,7 @@ step
     .goto Durotar,50.09,42.97,8,0
     .goto Durotar,50.20,42.30,12,0
     .goto Durotar,49.96,40.96,12,0
-    .goto Durotar,49.67,40.42,10 >>Travel toward the tower
+    .goto Durotar,49.67,40.42,10 >>前去找 the tower
 step
     #completewith next
     .goto Durotar,49.75,40.38,6,0
@@ -1849,37 +1849,37 @@ step
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
 step
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
-    .turnin 791 >>Turn in Carry Your Weight
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Furl|r
+    .turnin 791 >>交任务《 前往熔光镇》 新的背包
     .target Furl Scornbrow
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克鲁恩|r
     .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
-    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_Wuark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_沃克|r
     .collect 2901,1,825,1 --Mining Pick (1)
     .target Wuark
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜克|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Shaman
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,825,1 --Collect Walking Stick (1)
     .target Uhgar
     .money <0.0504
@@ -1887,14 +1887,14 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Rogue
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (4s 01c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
     .collect 2494,1,825,1 --Collect Stiletto (1)
     .target Uhgar
     .money <0.0401
@@ -1902,14 +1902,14 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Orc Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T132401:0|t[Large Axe] (4s 84c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Orc Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
     .collect 2491,1,825,1 --Collect Large Axe (1)
     .target Uhgar
     .money <0.0484
@@ -1917,14 +1917,14 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Troll Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤加尔|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135421:0|t[Tomahawk] (5s 40c). You'll come back later if you don't have enough yet
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Troll Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_尤加尔|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
     .collect 2490,1,825,1 --Collect Tomahawk (1)
     .target Uhgar
     .money <0.0540
@@ -1972,14 +1972,14 @@ step << Troll Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghrawt|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格劳特|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135499:0|t[Hornwood Recurve Bow] (2s 83c). You'll come back later if you don't have enough yet
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_格劳特|r|cRXP_BUY_. Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_from him|r
     .collect 2506,1,818,1 --Collect Hornwood Recurve Bow (1)
     .target Ghrawt
     .money <0.0283
@@ -1995,29 +1995,29 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_格劳特|r. Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from him|r
     .collect 2512,1000,825,1 << Hunter --Rough Arrow (1000)
     .target Ghrawt
     .itemcount 2512,<600 << Hunter
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .train 284 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tarshaw|r
+    .train 284 >>训练你的职业技能
     .target Tarshaw Jaggedscar
 step << Shaman
     .goto Durotar,54.42,42.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
-    .train 8044 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r
+    .train 8044 >>训练你的职业技能
     .target Swart
 step << Warlock
     .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .train 1120 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dhugru|r
+    .train 1120 >>训练你的职业技能
     .target Dhugru Gorelust
 step << Warlock
     #completewith next
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_基萨|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
@@ -2027,36 +2027,36 @@ step << Warlock
     .use 16302
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .train 5116 >> Train your class spells
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .train 5116 >>训练你的职业技能
     .target Thotar
 step << Rogue
     .goto Durotar,51.98,43.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r
+    .train 6760 >>训练你的职业技能
     .target Kaplak
 step << Priest
     .goto Durotar,54.26,42.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .train 139 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r
+    .train 139 >>训练你的职业技能
     .target Tai'jin
 step << Rogue/Warrior
     .goto Durotar,54.17,41.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rawrk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉乌克|r
     .train 3273 >>Train |T135966:0|t[First Aid]
     .money <0.01
     .target Rawrk
 step
     .goto Durotar,54.39,42.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔克|r
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_BUY_him|r
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
 step
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r
     .vendor >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
     .vendor >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .target Innkeeper Grosk
@@ -2064,14 +2064,14 @@ step
     .money <0.0125
 step << Warrior/Rogue/Paladin
     #completewith Tools
-    +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
+    |cRXP_WARN_施放|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,784,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
+    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2089,20 +2089,20 @@ step
     .goto Durotar,62.09,60.68,20,0
     .goto Durotar,62.51,60.56,20,0
     .goto Durotar,63.24,58.10,20,0
-    >>Loot the |cRXP_PICK_Gnomish Toolboxes|r inside and around the boats
+    >>拾取散发绿光的 |cRXP_PICK_Gnomish Toolboxes|r 对话，NPC在里面 和 around the boats
     .complete 825,1 --Gnomish Tools (3)
 step
     #completewith TaillasherEggs
     .goto Durotar,67.10,69.29,100 >> Swim to the Island
 step
     #completewith MinshinasSkull
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
+    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2123,13 +2123,13 @@ step
     .goto Durotar,69.69,70.35,40,0
     .goto Durotar,69.21,69.69,40,0
     .goto Durotar,67.74,69.86,40,0
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
-    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    >>拾取散发绿光的 |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_血爪鞭尾龙|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r。拾取他们的 |cRXP_LOOT_Mucus|r 和 |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2141,14 +2141,14 @@ step
     .isOnQuest 826
 step
     #completewith MinshinasSkull
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
     .mob +Voodoo Troll
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 for his |cRXP_LOOT_头部|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
     .complete 826,3 --Zalazane's Head (1)
@@ -2156,19 +2156,19 @@ step
 step
     #label MinshinasSkull
     .goto Durotar,67.4,87.8
-    >>Loot one of the |cRXP_LOOT_Skulls|r on the ground
+    >>拾取地上的 one of the |cRXP_LOOT_骷髅|ron the ground
     .complete 808,1 --Minshina's Skull (1)
 step
     #label ZalazaneKill
     .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 for his |cRXP_LOOT_头部|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
@@ -2185,15 +2185,15 @@ step
 	.goto Durotar,68.50,84.32,40,0
 	.goto Durotar,68.47,86.77,40,0
 	.goto Durotar,67.23,88.00,40,0
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
     .mob +Voodoo Troll
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
+    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2219,7 +2219,7 @@ step
     .goto Durotar,60.37,91.36,50,0
     .goto Durotar,59.04,90.51,50,0
     .goto Durotar,59.79,83.44,50,0
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
@@ -2230,8 +2230,8 @@ step
     .goto Durotar,57.27,79.38,60,0
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
-    >>Kill |cRXP_ENEMY_Pygmy Surf Crawlers|r and |cRXP_ENEMY_Surf Crawlers|r. Loot them for their |cRXP_LOOT_Mucus|r
-    >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
+    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
@@ -2243,34 +2243,34 @@ step
     #softcore
     #completewith Zalazaneturnin
     .goto Durotar,57.50,73.26,50,0
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run back
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r,or run back
 step
     #hardcore
     #completewith Zalazaneturnin
-    .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
+    .goto Durotar,56.06,74.72,150 >>前往暴风城大教堂内，与 Sen'Jin Village
 step
     .goto Durotar,56.48,73.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     >>|cRXP_WARN_Jump into the hut|r
-    .vendor >> Vendor trash and repair
+    .vendor >>Vendor trash 和 repair
     .target Trayexir
     .isOnQuest 808
 step << Mage
     .goto Durotar,56.3,75.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 118 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安苏瓦|r
+    .train 118 >>训练你的职业技能
     .target Un'Thuwa
 step
     #label Zalazaneturnin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Vel'rin|r
-    .turnin 808 >>Turn in Minshina's Skull
-    .turnin 826 >>Turn in Zalazane
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gadrin|r, |cRXP_FRIENDLY_Vornal|r 和 |cRXP_FRIENDLY_Vel'rin|r
+    .turnin 808 >>交任务《 前往熔光镇》 明希纳的徽记
+    .turnin 826 >>交任务《 前往熔光镇》 扎拉赞恩
     .goto Durotar,55.95,74.73
     .target +Master Gadrin
-    .turnin 818 >>Turn in A Solvent Spirit
+    .turnin 818 >>交任务《 前往熔光镇》 沃纳尔大师
     .goto Durotar,55.95,74.39
     .target +Master Vornal
-    .turnin 817 >>Turn in Practical Prey
+    .turnin 817 >>交任务《 前往熔光镇》 生活所需的虎皮
     .goto Durotar,55.95,73.93
     .target +Vel'rin Fang
 step
@@ -2278,7 +2278,7 @@ step
     #optional
     #label RazorHill1
     #completewith RazorHill3
-    .subzone 362 >>Travel to Razor Hill
+    .subzone 362 >>前往暴风城大教堂内，与 Razor Hill
     .cooldown item,6948,<0
 step
     #softcore
@@ -2286,22 +2286,22 @@ step
     #label RazorHill1
     #completewith RazorHill3
     .goto Durotar,54.53,58.69
-    .deathskip >>Travel to the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>前往 Halfhill the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_灵魂医者|r
     .cooldown item,6948,<0
 step
     #completewith RazorHill3
-    .hs >> Hearth to Razor Hill
+    .hs >>Hearth to 剃刀岭，杜隆塔尔
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
     .cooldown item,6948,>2,1
 step
     #label RazorHill3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
-    .turnin 825 >>Turn in From The Wreckage....
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_加索克|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 825 >>交任务《 前往熔光镇》 海底沉船
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .turnin 815 >>Turn in Break a Few Eggs
+    .turnin 815 >>交任务《 前往熔光镇》 恐龙蛋大餐
     .target +Cook Torka
     .goto Durotar,51.12,42.46
 step
@@ -2317,7 +2317,7 @@ step
     .goto Durotar,47.06,49.53,30,0
     .goto Durotar,46.90,48.11,30,0
     .goto Durotar,49.22,48.96,30,0
-    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
+    >>击杀 |cRXP_ENEMY_钢鬃野猪人|r 和 |cRXP_ENEMY_钢鬃斥候|r
     .complete 837,1 --Razormane Quilboar (4)
     .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
@@ -2332,7 +2332,7 @@ step
 	.goto Durotar,41.64,38.27,30,0
 	.goto Durotar,41.94,40.46,30,0
 	.goto Durotar,43.30,40.40,30,0
-    >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
+    >>击杀 |cRXP_ENEMY_钢鬃传令兵|r 和 |cRXP_ENEMY_钢鬃卫兵|r
     .complete 837,3 --Razormane Dustrunner (4)
     .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
@@ -2347,11 +2347,11 @@ step
 	.goto Durotar,41.64,38.27,30,0
 	.goto Durotar,41.94,40.46,30,0
 	.goto Durotar,43.30,40.40,30,0
-    .xp 9+5870 >>Grind to 5870+/6500xp
+    .xp 9+5870 >>击杀 to 5870+/6500xp
 step
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r
-    .turnin 837 >>Turn in Encroachment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_加索克|r
+    .turnin 837 >>交任务《 前往熔光镇》 野猪人的进犯
     .target Gar'Thok
 step
     #loop
@@ -2363,30 +2363,30 @@ step
 	.goto Durotar,41.64,38.27,30,0
 	.goto Durotar,41.94,40.46,30,0
 	.goto Durotar,43.30,40.40,30,0
-    .xp 10 >>Grind to 10
+    .xp 10 >>击杀 to 10
 step << Shaman
     .goto Durotar,54.42,42.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
-    .train 8050 >>Train your class spells
-    .accept 2983 >>Accept Call of Fire
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r
+    .train 8050 >>训练你的职业技能
+    .accept 2983 >>接受任务《物归己用》 火焰的召唤
     .target Swart
     .isNotOnQuest 1522
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .accept 1505 >>Accept Veteran Uzzek
-    .trainer >>Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tarshaw|r
+    .accept 1505 >>接受任务《物归己用》 老兵犹塞克
+    .trainer >>训练你的职业技能
     .target Tarshaw Jaggedscar
 step << Warlock
     .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .accept 1506 >>Accept Gan'rul's Summons
-    .train 1120 >>Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dhugru|r
+    .accept 1506 >>接受任务《物归己用》 甘鲁尔的召唤
+    .train 1120 >>训练你的职业技能
     .target Dhugru Gorelust
 step << Warlock
     #completewith next
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_基萨|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,1501,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
@@ -2395,31 +2395,31 @@ step << Warlock
     .use 16302
 step << Priest
     .goto Durotar,54.26,42.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .train 8092 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r
+    .train 8092 >>训练你的职业技能
     .target Tai'jin
 step << Rogue
     .goto Durotar,51.98,43.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 674 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r
+    .train 674 >>训练你的职业技能
     .target Kaplak
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .accept 6062 >>Accept Taming the Beast
-    .trainer >> Train your class spells
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .accept 6062 >>接受任务《物归己用》 驯服野兽
+    .trainer >>训练你的职业技能
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_格劳特|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
     .collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
     .money <0.1300
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_格劳特|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
     .target Ghrawt
     .itemcount 2515,<600 --Sharp Arrow (600)
@@ -2432,25 +2432,25 @@ step << Hunter
     .goto Durotar,51.80,53.18,40,0
     .goto Durotar,50.82,53.65,40,0
     .goto Durotar,51.65,56.51,40,0
-    .use 15917 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Dire Mottled Boar|r |cRXP_WARN_at max range|r
+    .use 15917 >>|cRXP_WARN_Use your|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_可怕的杂斑野猪|r|cRXP_WARN_at max range|r
     .complete 6062,1 --Tame a Dire Mottled Boar
     .mob Dire Mottled Boar
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .turnin 6062 >>Turn in Taming the Beast
-    .accept 6083 >>Accept Taming the Beast
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .turnin 6062 >>交任务《 前往熔光镇》 驯服野兽
+    .accept 6083 >>接受任务《物归己用》 驯服野兽
     .target Thotar
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .accept 6083 >>Accept Taming the Beast
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .accept 6083 >>接受任务《物归己用》 驯服野兽
     .target Thotar
 step << Hunter
     #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Dire Mottled Boar|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame a|r |cRXP_ENEMY_Surf Crawler|r
+    |cRXP_WARN_Dismiss your |cRXP_ENEMY_可怕的杂斑野猪|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame a|r |cRXP_ENEMY_海浪蟹|r
 step << Hunter
     #loop
     .goto Durotar,59.63,23.38,0
@@ -2458,20 +2458,20 @@ step << Hunter
     .goto Durotar,59.89,26.42,40,0
     .goto Durotar,60.04,24.79,40,0
     .goto Durotar,59.63,23.38,40,0
-    >>|cRXP_WARN_Don't kill the|r |cRXP_ENEMY_Armored Scorpids|r |cRXP_WARN_you see. You'll need them later|r
-    .use 15919 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Surf Crawler|r |cRXP_WARN_at max range|r
+    >>|cRXP_WARN_Don't kill the|r |cRXP_ENEMY_硬甲蝎|r |cRXP_WARN_you see. You'll need them later|r
+    .use 15919 >>|cRXP_WARN_Use your|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_海浪蟹|r|cRXP_WARN_at max range|r
     .complete 6083,1 --Tame a Surf Crawler
     .mob Surf Crawler
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .turnin 6083 >>Turn in Taming the Beast
-    .accept 6082 >>Accept Taming the Beast
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .turnin 6083 >>交任务《 前往熔光镇》 驯服野兽
+    .accept 6082 >>接受任务《物归己用》 驯服野兽
     .target Thotar
 step << Hunter
     #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Surf Crawler|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Armored Scorpid|r
+    |cRXP_WARN_Dismiss your |cRXP_ENEMY_海浪蟹|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_硬甲蝎|r
 step << Hunter
     #loop
     .goto Durotar,54.84,36.94,0
@@ -2482,22 +2482,22 @@ step << Hunter
     .goto Durotar,56.19,29.28,40,0
     .goto Durotar,56.95,27.28,40,0
     .goto Durotar,57.15,25.59,40,0
-    .use 15920 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Armored Scorpid|r |cRXP_WARN_at max range|r
+    .use 15920 >>|cRXP_WARN_Use your|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on an|r|cRXP_ENEMY_硬甲蝎|r|cRXP_WARN_at max range|r
     .complete 6082,1 --Tame an Armored Scorpid
     .mob Armored Scorpid
 step << Hunter
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    .turnin 6082 >>Turn in Taming the Beast
-    .accept 6081 >>Accept Training the Beast
+    >>进入小屋
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索塔尔|r 对话，NPC在里面
+    .turnin 6082 >>交任务《 前往熔光镇》 驯服野兽
+    .accept 6081 >>接受任务《物归己用》 训练野兽
     .target Thotar
 step << Hunter
     #completewith ConscriptH
-    +|cRXP_WARN_Put|r |T132164:0|t[Tame Beast]|cRXP_WARN_,|r |T136095:0|t[Dismiss Pet]|cRXP_WARN_, and|r |T132161:0|t[Call Pet] |cRXP_WARN_onto your Action Bars|r
+    |cRXP_WARN_Put|r |T132164:0|t[Tame Beast]|cRXP_WARN_，|r |T136095:0|t[Dismiss Pet]|cRXP_WARN_, and|r |T132161:0|t[Call Pet] |cRXP_WARN_onto your Action Bars|r
 step << Hunter
     .goto Durotar,51.13,42.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimtak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞姆塔克|r
     >>|cRXP_BUY_Buy|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from him|r. |cRXP_BUY_You will use this to feed your pet later|r
     .vendor >> Vendor Trash
     .collect 117,5,828,1 --Tough Jerky (5)
@@ -2505,14 +2505,14 @@ step << Hunter
     .isQuestAvailable 834 --Winds in the Desert
 step << !Hunter
     .goto Durotar,51.13,42.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimtak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞姆塔克|r
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Grimtak
 step << Hunter
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .accept 834 >>Accept Winds in the Desert
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .accept 834 >>接受任务《物归己用》 沙漠之风
     .target Rezlak
 step << Warlock/Hunter
     .goto Orgrimmar,48.97,92.84,50,0
@@ -2522,16 +2522,16 @@ step << Warlock/Hunter
     .isOnQuest 1506 << Warlock
 step << Hunter
     #completewith next
-    .goto Orgrimmar,68.02,38.69,30 >> Travel to the Valley of Honor
+    .goto Orgrimmar,68.02,38.69,30 >>前往暴风城大教堂内，与 the Valley of Honor
 step << Hunter
     .goto Orgrimmar,66.05,18.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
-    .turnin 6081 >>Turn in Training the Beast
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ormak|r
+    .turnin 6081 >>交任务《 前往熔光镇》 训练野兽
     .target Ormak Grimshot
 step << Hunter
     .goto Orgrimmar,66.34,14.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
-    .train 24547 >>Train your pet spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肖祖|r
+    .train 24547 >>训练你的宠物技能
     .target Xao'tsu
 step << Hunter
     #completewith next
@@ -2539,19 +2539,19 @@ step << Hunter
     >>|cRXP_WARN_Remember to train your pet whenever they get Training Points for|r |T132162:0|t[Beast Training]
 step << Warlock/Hunter
     .goto Orgrimmar,34.37,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'Jin|r
-    .turnin 831 >>Turn in The Admiral's Orders
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃金|r
+    .turnin 831 >>交任务《 前往熔光镇》 将军的命令
     .target Vol'Jin
 step << Warlock
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Accept Hidden Enemies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r
+    .accept 5726 >>接受任务《物归己用》 隐藏的敌人
     .target Thrall
 step << Warlock
     .goto Orgrimmar,48.246,45.281
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gan'rul Bloodeye|r
-    .turnin 1506 >>Turn in Gan'rul's Summons
-    .accept 1501 >>Accept Creature of the Void
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_甘鲁尔·血眼|r
+    .turnin 1506 >>交任务《 前往熔光镇》 甘鲁尔的召唤
+    .accept 1501 >>接受任务《物归己用》 虚空中的生物
     .target Gan'rul Bloodeye
 step << Warlock
     #softcore
@@ -2562,7 +2562,7 @@ step << Warlock
     #softcore
     #completewith SkullRockWarlock
     .goto Durotar,47.05,17.58
-    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die 和 Respawn at the |cRXP_FRIENDLY_灵魂医者|r
     .isOnQuest 1501
 step << Warlock
     #hardcore
@@ -2572,17 +2572,17 @@ step << Warlock
 step << Warlock
     #label SkullRockWarlock
     .goto Durotar,54.95,9.61
-    .subzone 817 >>Travel to Skull Rock
+    .subzone 817 >>前往暴风城大教堂内，与 Skull Rock
     .isOnQuest 1501
 step << Warlock
     #completewith VergaTablet
-    >>Kill |cRXP_ENEMY_Gazz'uz|r if he is up. Loot him for |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]. Use it to start the quest
+    >>击杀 |cRXP_ENEMY_加祖兹|r if he is up. Loot him for |T134085:0|t[|cRXP_LOOT_燃影之眼|r]. Use it to start the quest
     .collect 4903,1,832 --Collect Eye of Burning Shadow
-    .accept 832 >>Accept Burning Shadows
+    .accept 832 >>接受任务《物归己用》 燃影之眼
     .unitscan Gazz'uz
 step << Warlock
     #completewith next
-    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r. Loot them for a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>击杀 |cRXP_ENEMY_Burning Blade Orcs|r. 拾取地上的 them for a |cRXP_LOOT_Lieutenant's Insignia|r
     >>|cRXP_WARN_Skip this if you're unlucky with the drop|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
@@ -2591,12 +2591,12 @@ step << Warlock
     #label VergaTablet
     .goto Durotar,54.16,8.95,15,0
     .goto Durotar,51.62,9.76
-    >>Loot the |cRXP_PICK_Burning Blade Stash|r in the back of the cave for |cRXP_LOOT_Tablet of Verga|r
+    >>拾取散发绿光的 |cRXP_PICK_Burning Blade Stash|r in the back of the cave for |cRXP_LOOT_Tablet of Verga|r
     .complete 1501,1 --Tablet of Verga (1)
 step << Warlock
     #softcore
     .goto Durotar,47.05,17.58
-    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die 和 Respawn at the |cRXP_FRIENDLY_灵魂医者|r
     .isQuestComplete 1501
 step << Warlock
     .goto Orgrimmar,48.97,92.84,50,0
@@ -2605,35 +2605,35 @@ step << Warlock
     .isQuestComplete 1501
 step << Warlock
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >>Turn in Hidden Enemies
-    .accept 5727 >>Accept Hidden Enemies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r
+    .turnin 5726 >>交任务《 前往熔光镇》 隐藏的敌人
+    .accept 5727 >>接受任务《物归己用》 隐藏的敌人
     .target Thrall
     .isQuestComplete 5726
 step << Warlock
     #optional
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 5727 >>Accept Hidden Enemies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r
+    .accept 5727 >>接受任务《物归己用》 隐藏的敌人
     .target Thrall
     .isQuestTurnedIn 5726
 step << Warlock
     .goto Orgrimmar,48.246,45.281
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gan'rul Bloodeye|r
-    .turnin 1501 >>Turn in Creature of the Void
-    .accept 1504 >>Accept The Binding
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_甘鲁尔·血眼|r
+    .turnin 1501 >>交任务《 前往熔光镇》 虚空中的生物
+    .accept 1504 >>接受任务《物归己用》 誓缚
     .target Gan'rul Bloodeye
 step << Warlock
     .goto Orgrimmar,49.49,50.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
-    .accept 832 >>Accept Burning Shadows
-    .turnin 832 >>Turn in Burning Shadows
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r
+    .accept 832 >>接受任务《物归己用》 燃影之眼
+    .turnin 832 >>交任务《 前往熔光镇》 燃影之眼
     .target Neeru Fireblade
     .skipgossip
     .itemcount 4903,1
 step << Warlock
     .goto Orgrimmar,49.6,50.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
@@ -2644,19 +2644,19 @@ step << Warlock
     .use 6284
 step << Warlock
     .goto Orgrimmar,49.45,50.02
-    >>Kill the |cRXP_ENEMY_Summoned Voidwalker|r
+    >>消灭那些试图阻止仪式的 |cRXP_ENEMY_虚空行者|r
     .complete 1504,1 --Summoned Voidwalker (1)
     .mob Summoned Voidwalker
     .use 6284
 step << Warlock
     .goto Orgrimmar,48.246,45.281
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gan'rul Bloodeye|r
-    .turnin 1504 >>Turn in The Binding
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_甘鲁尔·血眼|r
+    .turnin 1504 >>交任务《 前往熔光镇》 誓缚
     .target Gan'rul Bloodeye
 step << Warlock
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5727 >>Turn in Hidden Enemies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r
+    .turnin 5727 >>交任务《 前往熔光镇》 隐藏的敌人
     .target Thrall
     .isQuestTurnedIn 5726
 step << Warlock
@@ -2680,14 +2680,14 @@ step << Hunter
     .goto Durotar,43.73,16.42,50,0
     .goto Durotar,41.52,20.06,50,0
     .goto Durotar,38.43,17.65,50,0
-    .cast 1515 >>Tame a |cRXP_ENEMY_Venomtail Scorpid|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    .cast 1515 >>Tame a |cRXP_ENEMY_毒尾蝎|r
+    >>|cRXP_WARN_This will allow you to train|r 用它攻击怪物以学习[Claw Rank 2]
     .mob Venomtail Scorpid
     .train 16828,1 --Claw rank 2
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .accept 834 >>Accept Winds in the Desert
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .accept 834 >>接受任务《物归己用》 沙漠之风
     .target Rezlak
 step << !Shaman !Warrior !Warlock
     #label SupplySacks
@@ -2704,13 +2704,13 @@ step << !Shaman !Warrior !Warlock
     .goto Durotar,47.35,33.40,40,0
     .goto Durotar,48.49,32.01,40,0
     .goto Durotar,47.19,30.87,40,0
-    >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
+    >>拾取散发绿光的 |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .turnin 834 >>Turn in Winds in the Desert
-    .accept 835 >>Accept Securing the Lines
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .turnin 834 >>交任务《 前往熔光镇》 沙漠之风
+    .accept 835 >>接受任务《物归己用》 保卫商路
     .target Rezlak
 step << !Shaman !Warrior !Warlock
     #completewith next
@@ -2725,7 +2725,7 @@ step << !Shaman !Warrior !Warlock
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70,40,0
-    >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r
+    >>击杀 |cRXP_ENEMY_尘风暴徒|r 和 |cRXP_ENEMY_尘风雷巫|r
     .complete 835,1 --Dustwind Savage (12)
     .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
@@ -2733,17 +2733,17 @@ step << !Shaman !Warrior !Warlock
 step << !Shaman !Warrior !Warlock
     #softcore
     #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r or run back
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|ror run back
 step << !Shaman !Warrior !Warlock
     #hardcore
     #completewith next
     .goto Durotar,53.75,27.74,60,0
     .goto Durotar,51.75,27.40,60,0
-    .goto Durotar,46.37,22.94,60 >> Travel through the cave toward |cRXP_FRIENDLY_Rezlak|r
+    .goto Durotar,46.37,22.94,60 >>Travel through the cave toward |cRXP_FRIENDLY_雷兹拉克|r
 step << !Shaman !Warrior !Warlock
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .turnin 835 >>Turn in Securing the Lines
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .turnin 835 >>交任务《 前往熔光镇》 保卫商路
     .target Rezlak
 step << !Shaman !Warrior
     #label ZeptoUC1
@@ -2761,12 +2761,12 @@ step << !Shaman !Warrior
 step << !Shaman !Warrior
     #label PorttoSilvermoon
     .goto Undercity,54.9,11.3
-    .zone Silvermoon City >>Use the |cRXP_PICK_Orb of Translocation|r
+    .zone Silvermoon City >>使用炮台来击沉从东方驶来的小艇 the |cRXP_PICK_传送宝珠|r
 step << Paladin
     .goto Silvermoon City,91.19,36.94,-1
     .goto Silvermoon City,91.14,38.10,-1
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ithelis|r or |cRXP_FRIENDLY_Osselan|r
-    .trainer >>Train your class spells
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊瑟里斯|r or |cRXP_FRIENDLY_欧塞兰|r
+    .trainer >>训练你的职业技能
 	.target Ithelis
 	.target Osselan
 ]])
@@ -2775,7 +2775,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP TBC Guide (H)
+#group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
 #name 10-13 Durotar
 #displayname 6-13 Durotar << Undead Warrior
@@ -2786,28 +2786,28 @@ RXPGuides.RegisterGuide([[
 
 step << Undead Warrior
     #completewith next
-    .subzone 362 >>Travel to Razor Hill
+    .subzone 362 >>前往暴风城大教堂内，与 Razor Hill
 step << Undead Warrior
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    .home >> Set your Hearthstone to Razor Hill
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r
+    .home >>将你的炉石设置为暮色森林 Hill
     .target Innkeeper Grosk
     .isQuestAvailable 784
     .bindlocation 362
 step << Undead Warrior
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r
-    .accept 784 >>Accept Vanquish the Betrayers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_加索克|r
+    .accept 784 >>接受任务《物归己用》 背信弃义的人类
     .target Gar'Thok
 step << Undead Warrior
     .goto Durotar,51.09,42.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
-    .accept 815 >>Accept Break a Few Eggs
+    .accept 815 >>接受任务《物归己用》 恐龙蛋大餐
     .target Cook Torka
 step
     .goto Durotar,50.8,43.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin|r
-    .accept 840 >>Accept Conscript of the Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Takrin|r
+    .accept 840 >>接受任务《物归己用》 部落的新兵
     .target Takrin Pathseeker
 step << Undead Warrior
     #completewith next
@@ -2815,7 +2815,7 @@ step << Undead Warrior
     .goto Durotar,50.09,42.97,8,0
     .goto Durotar,50.20,42.30,12,0
     .goto Durotar,49.96,40.96,12,0
-    .goto Durotar,49.67,40.42,10 >>Travel toward the tower
+    .goto Durotar,49.67,40.42,10 >>前去找 the tower
 step << Undead Warrior
     #completewith next
     .goto Durotar,49.75,40.38,6,0
@@ -2827,42 +2827,42 @@ step << Undead Warrior
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
 step << Undead Warrior
     .goto Durotar,49.89,40.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
-    .accept 791 >>Accept Carry Your Weight
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Furl|r
+    .accept 791 >>接受任务《物归己用》 新的背包
     .target Furl Scornbrow
 step << Undead Warrior
     .goto Durotar,51.81,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克鲁恩|r
     .train 2575 >> Train |T136248:0|t[Mining]
     >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
     .target Krunn
 step << Undead Warrior
     .goto Durotar,51.90,41.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
-    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_Wuark|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_沃克|r
     .collect 2901,1,784,1 --Mining Pick (1)
     .target Wuark
 step << Undead Warrior
     .goto Durotar,52.05,40.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜克|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Undead Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .accept 1505 >>Accept Veteran Uzzek
-    .trainer >>Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tarshaw|r
+    .accept 1505 >>接受任务《物归己用》 老兵犹塞克
+    .trainer >>训练你的职业技能
     .target Tarshaw Jaggedscar
 step << Undead Warrior
     #completewith TiragardeArrive
-    +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
+    |cRXP_WARN_施放|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,784,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
 step << Undead Warrior
     #label TiragardeArrive
-    .subzone 372 >>Travel to Tiragarde Keep
+    .subzone 372 >>前往塔纳利斯 Keep
     .isOnQuest 784
 step << Undead Warrior
     #completewith Benedict
@@ -2873,7 +2873,7 @@ step << Undead Warrior
     .goto Durotar,59.29,57.89,8 >> Move toward the second floor of the keep
 step << Undead Warrior
     #completewith AgedEnvelope
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -2882,7 +2882,7 @@ step << Undead Warrior
 step << Undead Warrior
     #label Benedict
     .goto Durotar,59.75,58.27
-    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r. Loot him for his |cRXP_LOOT_Key|r
+    >>击杀 for his |cRXP_LOOT_Key|r
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1,830,1 --Collect Benedict's Key (1)
     .mob Lieutenant Benedict
@@ -2895,10 +2895,10 @@ step << Undead Warrior
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
     >>|cRXP_WARN_Go upstairs in the keep|r
-    >>Open |cRXP_PICK_Benedict's Chest|r. Loot it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
+    >>打开 |cRXP_PICK_Benedict's Chest|r. 拾取地上的 it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
     >>Use the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] to start the quest
     .collect 4881,1,830 --Collect Aged Envelope (1)
-    .accept 830 >>Accept The Admiral's Orders
+    .accept 830 >>接受任务《物归己用》 将军的命令
     .use 4881
 step << Undead Warrior
     #loop
@@ -2910,7 +2910,7 @@ step << Undead Warrior
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -2930,7 +2930,7 @@ step << Undead Warrior
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -2947,34 +2947,34 @@ step << Undead Warrior
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
 step << Undead Warrior
     #completewith SenjinPickups
-    .subzone 367 >>Travel to Sen'Jin Village
+    .subzone 367 >>前往暴风城大教堂内，与 Sen'Jin Village
 step << Undead Warrior
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r and |cRXP_FRIENDLY_Gadrin|r
-    .accept 817 >>Accept Practical Prey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vel'rin|r 和 |cRXP_FRIENDLY_Gadrin|r
+    .accept 817 >>接受任务《物归己用》 生活所需的虎皮
     .goto Durotar,55.95,73.93
     .target +Vel'rin Fang
-    .turnin 805 >>Turn in Report to Sen'jin Village
-    .accept 808 >>Accept Minshina's Skull
-    .accept 826 >>Accept Zalazane
-    .accept 823 >>Accept Report to Orgnil
+    .turnin 805 >>交任务《 前往熔光镇》 去森金村报到
+    .accept 808 >>接受任务《物归己用》 明希纳的徽记
+    .accept 826 >>接受任务《物归己用》 扎拉赞恩
+    .accept 823 >>接受任务《物归己用》 向奥戈尼尔报告
     .goto Durotar,55.94,74.72
     .target +Master Gadrin
 step << Undead Warrior
     #completewith MainIsland
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
-    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    >>拾取散发绿光的 |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_血爪鞭尾龙|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step << Undead Warrior
     #completewith MainIsland
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step << Undead Warrior
@@ -2983,36 +2983,36 @@ step << Undead Warrior
     .isOnQuest 826
 step << Undead Warrior
     #completewith MinshinasSkull
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
     .mob +Voodoo Troll
 step << Undead Warrior
     #completewith next
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 for his |cRXP_LOOT_头部|r
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step << Undead Warrior
     #label MinshinasSkull
     .goto Durotar,67.4,87.8
-    >>Loot one of the |cRXP_LOOT_Skulls|r on the ground
+    >>拾取地上的 one of the |cRXP_LOOT_骷髅|ron the ground
     .complete 808,1 --Minshina's Skull (1)
 step << Undead Warrior
     #label ZalazaneKill
     .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 for his |cRXP_LOOT_头部|r
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step << Undead Warrior
     #completewith IslandTrolls
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step << Undead Warrior
     #completewith Fur
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
-    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    >>拾取散发绿光的 |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_血爪鞭尾龙|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step << Undead Warrior
@@ -3029,7 +3029,7 @@ step << Undead Warrior
 	.goto Durotar,68.50,84.32,40,0
 	.goto Durotar,68.47,86.77,40,0
 	.goto Durotar,67.23,88.00,40,0
-    >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -3054,7 +3054,7 @@ step << Undead Warrior
     .goto Durotar,60.37,91.36,50,0
     .goto Durotar,59.04,90.51,50,0
     .goto Durotar,59.79,83.44,50,0
-    >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step << Undead Warrior
@@ -3070,34 +3070,34 @@ step << Undead Warrior
     .goto Durotar,69.69,70.35,40,0
     .goto Durotar,69.21,69.69,40,0
     .goto Durotar,67.74,69.86,40,0
-    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
-    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    >>拾取散发绿光的 |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_血爪鞭尾龙|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
 step << Undead Warrior
     #softcore
     #completewith Zalazaneturnin2
     .goto Durotar,57.50,73.26,50,0
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run back
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r,or run back
 step << Undead Warrior
     #hardcore
     #completewith Zalazaneturnin2
-    .goto Durotar,56.06,74.72,150 >> Travel to Sen'Jin Village
+    .goto Durotar,56.06,74.72,150 >>前往暴风城大教堂内，与 Sen'Jin Village
 step << Undead Warrior
     .goto Durotar,56.48,73.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
     >>|cRXP_WARN_Jump into the hut|r
-    .vendor >> Vendor trash and repair
+    .vendor >>Vendor trash 和 repair
     .target Trayexir
     .isOnQuest 808
 step << Undead Warrior
     #label Zalazaneturnin2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r and |cRXP_FRIENDLY_Vel'rin|r
-    .turnin 808 >>Turn in Minshina's Skull
-    .turnin 826 >>Turn in Zalazane
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gadrin|r 和 |cRXP_FRIENDLY_Vel'rin|r
+    .turnin 808 >>交任务《 前往熔光镇》 明希纳的徽记
+    .turnin 826 >>交任务《 前往熔光镇》 扎拉赞恩
     .goto Durotar,55.95,74.73
     .target +Master Gadrin
-    .turnin 817 >>Turn in Practical Prey
+    .turnin 817 >>交任务《 前往熔光镇》 生活所需的虎皮
     .goto Durotar,55.95,73.93
     .target +Vel'rin Fang
 step << Undead Warrior
@@ -3105,112 +3105,112 @@ step << Undead Warrior
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull]|cRXP_WARN_. Save it for later|r
 step << Undead Warrior
     #completewith RazorHill2UD
-    .goto Durotar,52.38,43.77,120 >>Travel to Razor Hill
+    .goto Durotar,52.38,43.77,120 >>前往暴风城大教堂内，与 Razor Hill
 step << Undead Warrior
     #label RazorHill2UD
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
-    .turnin 823 >>Turn in Report to Orgnil
-    .accept 806 >>Accept Dark Storms
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_加索克|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 823 >>交任务《 前往熔光镇》 向奥戈尼尔报告
+    .accept 806 >>接受任务《物归己用》 黑暗风暴
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
-    .turnin 784 >>Turn in Vanquish the Betrayers
-    .turnin 830 >>Turn in The Admiral's Orders
-    .accept 831 >>Accept The Admiral's Orders
+    .turnin 784 >>交任务《 前往熔光镇》 背信弃义的人类
+    .turnin 830 >>交任务《 前往熔光镇》 将军的命令
+    .accept 831 >>接受任务《物归己用》 将军的命令
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
-    .turnin 815 >>Turn in Break a Few Eggs
+    .turnin 815 >>交任务《 前往熔光镇》 恐龙蛋大餐
     .target +Cook Torka
     .goto Durotar,51.09,42.49
 step
     #completewith next
-    .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
+    .goto The Barrens,62.26,19.38,40 >>前往暴风城大教堂内，与 Far Watch Post
     .zoneskip The Barrens
 step
     .goto The Barrens,62.27,19.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal|r
-    .turnin 840 >>Turn in Conscript of the Horde
-    .accept 842 >>Accept Crossroads Conscription
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kargal|r
+    .turnin 840 >>交任务《 前往熔光镇》 部落的新兵
+    .accept 842 >>接受任务《物归己用》 十字路口征兵
     .target Kargal Battlescar
 step << Warrior
     .goto The Barrens,61.4,21.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .turnin 1505 >>Turn in Veteran Uzzek
-    .accept 1498 >>Accept Path of Defense
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_犹塞克|r
+    .turnin 1505 >>交任务《 前往熔光镇》 老兵犹塞克
+    .accept 1498 >>接受任务《物归己用》 防御之道
     .target Uzzek
 step << Orc Shaman/Troll Shaman
     .goto The Barrens,55.86,19.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal|r
-    .turnin 2983 >>Turn in Call of Fire
-    .accept 1524 >>Accept Call of Fire
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kranal|r
+    .turnin 2983 >>交任务《 前往熔光镇》 火焰的召唤
+    .accept 1524 >>接受任务《物归己用》 火焰的召唤
     .target Kranal Fiss
 step << !Tauren
     #softcore
     #completewith Xroads1
     .goto The Barrens,50.72,32.61
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
     .subzoneskip 380
 step << !Tauren
     #hardcore
     #completewith Xroads1
-    .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
+    .goto The Barrens,52.34,29.27,150 >>前往暴风城大教堂内，与 The Crossroads
 step << !Tauren
     .goto The Barrens,52.26,31.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
-    .accept 870 >>Accept The Forgotten Pools
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tonga|r
+    .accept 870 >>接受任务《物归己用》 遗忘之池
     .target Tonga Runetotem
 step << !Tauren
     .goto The Barrens,52.24,31.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
-    .turnin 842 >>Turn in Crossroads Conscription
-    .accept 844 >>Accept Plainstrider Menace
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Sergra|r
+    .turnin 842 >>交任务《 前往熔光镇》 十字路口征兵
+    .accept 844 >>接受任务《物归己用》 平原陆行鸟的威胁
     .target Sergra Darkthorn
 step << Orc/Troll
     .goto The Barrens,52.62,29.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
-    .accept 6365 >>Accept Meats to Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r
+    .accept 6365 >>接受任务《物归己用》 送往奥格瑞玛的肉
     .target Zargh
 step << !Tauren
     .goto The Barrens,51.93,30.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
-    .accept 869 >>Accept Raptor Thieves
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加兹罗格|r
+    .accept 869 >>接受任务《物归己用》 追踪窃贼
     .target Gazrog
 step << !Tauren
     .goto The Barrens,51.50,30.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
-    .accept 871 >>Accept Disrupt the Attacks
-    .accept 5041 >>Accept Supplies for the Crossroads
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r
+    .accept 871 >>接受任务《物归己用》 保卫前沿哨所
+    .accept 5041 >>接受任务《物归己用》 十字路口的补给品
     .target Thork
 step << !Tauren
     .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
     .fp The Crossroads >> Get the The Crossroads flight path
     .target Devrak
     .subzoneskip 380,1
 step << Orc/Troll
     .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
-    .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
+    .turnin 6365 >>交任务《 前往熔光镇》 送往奥格瑞玛的肉
+    .accept 6384 >>接受任务《物归己用》 飞往奥格瑞玛
     .target Devrak
     .zoneskip Orgrimmar
 step << !Tauren
     #label Xroads1
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    .accept 848 >>Accept Fungal Spores
-    .accept 1492 >>Accept Wharfmaster Dizzywig
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Helbrim|r
+    .accept 848 >>接受任务《物归己用》 菌类孢子
+    .accept 1492 >>接受任务《物归己用》 码头主管迪兹维格
     .target Apothecary Helbrim
 step << !Tauren
     #completewith next
-    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
+    >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
-    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_锅炉搅拌器|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive 对话 to the |cRXP_PICK_Bubble Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
     #loop
@@ -3219,32 +3219,32 @@ step << !Tauren
     .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
-    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
+    >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
-    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_锅炉搅拌器|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
     #hardcore
     #completewith PoolsTurnin
     .goto The Barrens,52.34,29.27,150,0
-    .subzone 380 >> Travel to The Crossroads
+    .subzone 380 >>前往暴风城大教堂内，与 The Crossroads
 step << !Tauren
     #softcore
     #completewith PoolsTurnin
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
 step << !Tauren
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Helbrim|r
     >>|cRXP_WARN_Wait for the RP to finish|r
     >>|cRXP_WARN_This starts a 45-minute timed quest|r
-    .turnin 848 >> Turn in Fungal Spores
+    .turnin 848 >>交任务《 前往熔光镇》 菌类孢子
     .timer 7,Fungal Spores RP
-    .accept 853 >> Accept Apothecary Zamah
+    .accept 853 >>接受任务《物归己用》 [DEPRECATED] 药剂师扎玛
     .target Apothecary Helbrim
 step << !Tauren
     .goto The Barrens,51.67,29.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔格|r
     >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_BUY_him|r
     .collect 4496,1,853,1 --Small Brown Pouch (1)
     .target Jark
@@ -3252,16 +3252,16 @@ step << !Tauren
 step << !Tauren
     #label PoolsTurnin
     .goto The Barrens,52.26,31.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
-    .turnin 870 >> Turn in The Forgotten Pools
-    .accept 877 >>Accept The Stagnant Oasis
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tonga|r
+    .turnin 870 >>交任务《 前往熔光镇》 遗忘之池
+    .accept 877 >>接受任务《物归己用》 死水绿洲
     .target Tonga Runetotem
 step << Warrior/Shaman
     #softcore
     #completewith next
     .goto The Barrens,49.75,49.54
     .subzone 378 >>Travel south down the road toward Camp Taurajo
-    >>|cRXP_WARN_Once you are at the waypoint arrow (or further south of it), die and respawn at the|r |cRXP_FRIENDLY_Spirit Healer|r
+    >>|cRXP_WARN_Once you are at the waypoint arrow (or further south of it), die and respawn at the|r |cRXP_FRIENDLY_灵魂医者|r
 step << Warrior/Shaman
     #hardcore
     #completewith next
@@ -3269,12 +3269,12 @@ step << Warrior/Shaman
     .subzone 378 >>Travel south down the road toward Camp Taurajo
 step << Warrior/Shaman
     .goto The Barrens,44.45,59.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
     .target Omusa Thunderhorn
 step << Warrior/Shaman
     #completewith next
-    .zone Mulgore >>Travel to Mulgore
+    .zone Mulgore >>前往暴风城大教堂内，与 Mulgore
 step << Warrior/Shaman
     #loop
     .goto Mulgore,55.14,60.65,0
@@ -3284,29 +3284,29 @@ step << Warrior/Shaman
     .goto Mulgore,57.47,61.26,50,0
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
-    .accept 749 >>Accept The Ravaged Caravan
+    .accept 749 >>接受任务《物归己用》 被破坏的货车
 	.unitscan Morin Cloudstalker
 step << !Tauren
     #completewith next
-    .subzone 222 >>Travel to Bloodhoof Village
+    .subzone 222 >>前往暴风城大教堂内，与 Bloodhoof Village
 step << !Tauren
     .goto Mulgore,48.2,53.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
-    .accept 11129 >>Accept Kyle's Gone Missing!
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ahab|r
+    .accept 11129 >>接受任务《物归己用》 凯雷失踪了！
     .target Ahab Wheathoof
 step << !Tauren
     #completewith RavagedCaravanTI
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    >>击杀 a |cRXP_ENEMY_平原陆行鸟|r.拾取地上的 it for |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
     .mob Elder Plainstrider
 step << !Tauren
     .goto Mulgore,53.74,48.17
-    >>Click the |cRXP_PICK_Sealed Supply Crate|r
-    .turnin 749 >>Turn in The Ravaged Caravan
-    .accept 751 >>Accept The Ravaged Caravan
+    >>点击地上的 |cRXP_PICK_Sealed Supply Crate|r
+    .turnin 749 >>交任务《 前往熔光镇》 被破坏的货车
+    .accept 751 >>接受任务《物归己用》 被破坏的货车
 step << !Tauren
     #label RavagedCaravanTI
     #loop
@@ -3317,9 +3317,9 @@ step << !Tauren
     .goto Mulgore,57.47,61.26,50,0
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
-    .turnin 751 >> Turn in The Ravaged Caravan
+    .turnin 751 >>交任务《 前往熔光镇》 被破坏的货车
 	.unitscan Morin Cloudstalker
 step << !Tauren
     #loop
@@ -3329,7 +3329,7 @@ step << !Tauren
     .goto Mulgore,44.47,70.52,70,0
     .goto Mulgore,42.32,66.98,70,0
     .goto Mulgore,38.78,66.30,70,0
-    >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    >>击杀 a |cRXP_ENEMY_平原陆行鸟|r.拾取地上的 it for |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
     .mob Elder Plainstrider
@@ -3340,15 +3340,15 @@ step << !Tauren
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
-    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
     --TODO: Test beta, bugged on pserver
 step << !Tauren
     .goto Mulgore,48.2,53.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
-    .turnin 11129 >>Turn in Kyle's Gone Missing!
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ahab|r
+    .turnin 11129 >>交任务《 前往熔光镇》 凯雷失踪了！
     .target Ahab Wheathoof
 step << !Tauren
     #completewith TBFP
@@ -3356,13 +3356,13 @@ step << !Tauren
     .goto Thunder Bluff,36.17,62.76,20 >>Take the lift up to Thunder Bluff
 step << !Tauren !Paladin !Shaman
     .goto Thunder Bluff,40.93,62.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
-    .train 227 >>Train Staves
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安塞瓦|r
+    .train 227 >>学习锤类武器
     .target Ansekhwa
 step << Paladin/Shaman
     .goto Thunder Bluff,40.93,62.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
-    .train 199 >>Train 2h Maces
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安塞瓦|r
+    .train 199 >>学习双手锤
     .target Ansekhwa
     .money <0.1
 step << !Tauren
@@ -3371,33 +3371,33 @@ step << !Tauren
 step << !Tauren
     #label TBFP
     .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r
     .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 	.target Tal
 step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
-    .goto Thunder Bluff,28.51,28.95,10 >>Travel to the Spirit Rise and enter the pools of vision
+    .goto Thunder Bluff,28.51,28.95,10 >>前往暴风城大教堂内，与 the Spirit Rise 和 enter the pools of vision
 step
     .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zamah|r
+    .turnin 853 >>交任务《 前往熔光镇》 [DEPRECATED] 药剂师扎玛
     .target Apothecary Zamah
 step << !Tauren
     #completewith next
-    .hs >>Hearth to Razor Hill
+    .hs >>Hearth to 剃刀岭，杜隆塔尔
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
 step
     .goto Durotar,43.11,30.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha|r
-    .accept 816 >>Accept Lost But Not Forgotten
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莎|r
+    .accept 816 >>接受任务《物归己用》 刻骨铭心的伤痛
     .target Misha Tor'kren 
 step
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .accept 834 >>Accept Winds in the Desert
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .accept 834 >>接受任务《物归己用》 沙漠之风
     .target Rezlak
 step
     #loop
@@ -3413,19 +3413,19 @@ step
     .goto Durotar,47.35,33.40,40,0
     .goto Durotar,48.49,32.01,40,0
     .goto Durotar,47.19,30.87,40,0
-    >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
+    >>拾取散发绿光的 |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
 step
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .turnin 834 >>Turn in Winds in the Desert
-    .accept 835 >>Accept Securing the Lines
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .turnin 834 >>交任务《 前往熔光镇》 沙漠之风
+    .accept 835 >>接受任务《物归己用》 保卫商路
     .target Rezlak
 step
     .goto Durotar,41.54,18.59
     >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
-    .accept 812 >>Accept Need for a Cure
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_林纳格|r
+    .accept 812 >>接受任务《物归己用》 救命如救火
     .target Rhinag
 step
     #completewith FindingAntidote
@@ -3435,35 +3435,35 @@ step
 step << Orc/Troll
     .goto Orgrimmar,54.097,68.407
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gryshka|r
-    .turnin 6384 >>Turn in Ride to Orgrimmar
-    .accept 6385 >>Accept Doras the Wind Rider Master
+    .turnin 6384 >>交任务《 前往熔光镇》 飞往奥格瑞玛
+    .accept 6385 >>接受任务《物归己用》 双足飞龙驭手多拉斯
     .target Innkeeper Gryshka
 step << Orc/Troll
     .goto Orgrimmar,45.120,63.889
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
-    .turnin 6385 >> Turn in Doras the Wind Rider Master
-    .accept 6386 >> Accept Return to the Crossroads
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_多拉斯|r
+    .turnin 6385 >>交任务《 前往熔光镇》 双足飞龙驭手多拉斯
+    .accept 6386 >>接受任务基特斯的美餐 Crossroads
     .target Doras
 step << Orc/Troll
     .goto Orgrimmar,34.37,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'Jin|r
-    .turnin 831 >>Turn in The Admiral's Orders
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃金|r
+    .turnin 831 >>交任务《 前往熔光镇》 将军的命令
     .target Vol'Jin
 step
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Accept Hidden Enemies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r
+    .accept 5726 >>接受任务《物归己用》 隐藏的敌人
     .target Thrall
 step << Paladin
     .goto Orgrimmar,32.3,35.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Pyreanor|r
-    .trainer >>Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_派雷亚诺|r
+    .trainer >>训练你的职业技能
     .target Master Pyreanor
 step
     #label FindingAntidote
     .goto Orgrimmar,47.24,53.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'ghan|r in the Cleft of Shadow
-    .accept 813 >>Accept Finding the Antidote
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_考格汉|r in the Cleft of Shadow
+    .accept 813 >>接受任务《物归己用》 寻找解毒剂
     .target Kor'ghan
 step
     #completewith FizzleKill
@@ -3476,16 +3476,16 @@ step
 step
     #completewith next
     .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge
-    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dismiss your|r |T136218:0|t[Imp] |cRXP_WARN_or|r |T136221:0|t[Voidwalker] |cRXP_WARN_by right clicking its unit frame and clicking dismiss|r << Warlock
+    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dismiss your|r |T136218:0|t[Imp] |cRXP_WARN_或者|r |T136221:0|t[Voidwalker] |cRXP_WARN_by right clicking its unit frame and clicking dismiss|r << Warlock
     .cast 2641 |cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
 step
     #label FizzleKill
     .goto Durotar,42.13,26.67
-    >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r and loot him for his |cRXP_LOOT_Claw|r
-    >>|cRXP_WARN_Be careful. Kill the patrolling|r |cRXP_ENEMY_Burning Blade Fanatic|r |cRXP_WARN_before you pull him|r
+    >>击杀 |cRXP_ENEMY_Fizzle Darkstorm|r 和 loot him for his |cRXP_LOOT_Claw|r
+    >>|cRXP_WARN_Be careful. Kill the patrolling|r |cRXP_ENEMY_火刃狂热者|r |cRXP_WARN_before you pull him|r
     >>|cRXP_WARN_Kill the imp first. Use|r |T132155:0|t[Gouge] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Rogue
     >>|cRXP_WARN_Kill the imp first. Use|r |T136026:0|t[Earth Shock] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Shaman
-    >>|cRXP_WARN_You can cast|r |T136071:0|t[Polymorph] |cRXP_WARN_on|r |cRXP_ENEMY_Fizzle|r |cRXP_WARN_and kill the|r |cRXP_ENEMY_Imp|r |cRXP_WARN_first|r << Mage
+    >>|cRXP_WARN_You can cast|r |T136071:0|t[Polymorph] |cRXP_WARN_on|r |cRXP_ENEMY_Fizzle|r |cRXP_WARN_and kill the|r |cRXP_ENEMY_小鬼|r |cRXP_WARN_first|r << Mage
     >>|cRXP_WARN_Kill the imp first|r << Warrior/Warlock/Priest
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << !Warlock
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion], |T133728:0|t[Minor Healthstone] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << Warlock
@@ -3505,7 +3505,7 @@ step << Warrior
     .goto Durotar,39.43,24.94,40,0
     .goto Durotar,41.39,24.28,40,0
     .goto Durotar,43.19,24.34,40,0
-    >>Kill |cRXP_ENEMY_Lightning Hides|r. Loot them for their |cRXP_ENEMY_Scales|r
+    >>击杀 |cRXP_ENEMY_闪电蜥蜴|r。拾取他们的 |cRXP_ENEMY_大鳞|r
     .complete 1498,1 --Singed Scale (5)
     .mob Lightning Hide
 step << !Warrior
@@ -3518,7 +3518,7 @@ step
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.71,42.30,50,0
     >>|cRXP_WARN_Travel south alongside the river toward Far Watch Post|r
-    >>Kill |cRXP_ENEMY_Dreadmaw Crocolisks|r on the way. Loot them for |cRXP_LOOT_Kron's Amulet|r
+    >>击杀 .拾取地上的 them for |cRXP_LOOT_Kron's Amulet|r
     >>|cRXP_WARN_Skip this quest for now if it won't drop|r
     .complete 816,1 --Kron's Amulet (1)
     .mob Dreadmaw Crocolisk
@@ -3538,57 +3538,57 @@ step << Troll Shaman/Orc Shaman
     >>|cRXP_WARN_Be careful to not fall of the mountain, the path is very narrow. You could die if you fall|r
 step << Troll Shaman/Orc Shaman
     .goto Durotar,38.52,58.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telf|r
-    .turnin 1524 >>Turn in Call of Fire
-    .accept 1525 >>Accept Call of Fire
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Telf|r
+    .turnin 1524 >>交任务《 前往熔光镇》 火焰的召唤
+    .accept 1525 >>接受任务《物归己用》 火焰的召唤
     .target Telf Joolam
 step
     #softcore
     #completewith next
-    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run to Razor Hill
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r,or run to Razor Hill
 step
     #hardcore
     #completewith next
-    .subzone 362 >>Travel to Razor Hill
+    .subzone 362 >>前往暴风城大教堂内，与 Razor Hill
     .subzoneskip 362
 step
     .goto Durotar,52.24,43.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r
-    .turnin 806 >>Turn in Dark Storms
-    .accept 828 >>Accept Margoz
+    .turnin 806 >>交任务《 前往熔光镇》 黑暗风暴
+    .accept 828 >>接受任务《物归己用》 玛高兹
     .target Orgnil Soulscar
 step << Shaman
     .goto Durotar,54.42,42.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
-    .train 547 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r
+    .train 547 >>训练你的职业技能
     .target Swart
     .xp <12,1
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .train 7384 >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tarshaw|r
+    .train 7384 >>训练你的职业技能
     .target Tarshaw Jaggedscar
     .xp <12,1
 step
     #completewith next
     .goto Durotar,56.30,27.91,80,0
-    .goto Durotar,56.41,20.04,50 >> Travel to |cRXP_FRIENDLY_Margoz|r
+    .goto Durotar,56.41,20.04,50 >>前往 Halfhill |cRXP_FRIENDLY_玛高兹|r
 step
     .goto Durotar,56.41,20.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Margoz|r
-    .turnin 828 >>Turn in Margoz
-    .accept 827 >>Accept Skull Rock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛高兹|r
+    .turnin 828 >>交任务《 前往熔光镇》 玛高兹
+    .accept 827 >>接受任务《物归己用》 骷髅石
     .target Margoz
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Venomtail Scorpids|r. Loot them for their |cRXP_LOOT_Poison Sacs|r
+    >>击杀 |cRXP_ENEMY_毒尾蝎|r。拾取他们的 |cRXP_LOOT_Poison Sacs|r
     .complete 813,1 --Venomtail Poison Sac (4)
     .mob Venomtail Scorpid
     .itemcount 4904,<1 --Venomtail Antidote
 step
     #label EnterGazzuzCave
     #completewith Gazzuz
-    .goto Durotar,55.09,9.91,20 >>Enter the cave
+    .goto Durotar,55.09,9.91,20 >>进入 cave
 step
     #requires EnterGazzuzCave
     #completewith Gazzuz
@@ -3601,7 +3601,7 @@ step
     .goto Durotar,51.65,8.19,15,0
     .goto Durotar,51.39,8.71,15,0
     .goto Durotar,51.48,9.71,15,0
-    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r. Loot them for their |cRXP_LOOT_Collars|r and for a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>击杀 |cRXP_ENEMY_Burning Blade Orcs|r. 拾取地上的 them for their |cRXP_LOOT_Collars|r 和 for a |cRXP_LOOT_Lieutenant's Insignia|r
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
@@ -3611,12 +3611,12 @@ step
     #softcore
     #label Gazzuz
     .goto Durotar,51.8,10.0
-    >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]
-    >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r] to start the quest|r
-    >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_Voidwalker|r |cRXP_WARN_after killing|r |cRXP_ENEMY_Gazz'uz|r
+    >>击杀 for his |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
+    >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_燃影之眼|r] to start the quest|r
+    >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_虚空行者|r |cRXP_WARN_after killing|r |cRXP_ENEMY_加祖兹|r
     >>|cRXP_WARN_Be careful as he is  difficult. You can skip this quest if you need|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
-    .accept 832 >>Accept Burning Shadows
+    .accept 832 >>接受任务《物归己用》 燃影之眼
     .use 4903
 	.unitscan Gazz'uz
 step
@@ -3624,12 +3624,12 @@ step
     #hardcore
     #label Gazzuz
     .goto Durotar,51.8,10.0
-    >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]
-    >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r] to start the quest|r
-    >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_Voidwalker|r |cRXP_WARN_after killing|r |cRXP_ENEMY_Gazz'uz|r
+    >>击杀 for his |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
+    >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_燃影之眼|r] to start the quest|r
+    >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_虚空行者|r |cRXP_WARN_after killing|r |cRXP_ENEMY_加祖兹|r
     >>|cRXP_WARN_This quest is VERY difficult to solo. Skip it if you can't find a group|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
-    .accept 832 >>Accept Burning Shadows
+    .accept 832 >>接受任务《物归己用》 燃影之眼
     .use 4903
 	.unitscan Gazz'uz
     .group 2
@@ -3646,7 +3646,7 @@ step
     .goto Durotar,51.65,8.19,15,0
     .goto Durotar,51.39,8.71,15,0
     .goto Durotar,51.48,9.71,15,0
-    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r. Loot them for their |cRXP_LOOT_Collars|r and for a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>击杀 |cRXP_ENEMY_Burning Blade Orcs|r. 拾取地上的 them for their |cRXP_LOOT_Collars|r 和 for a |cRXP_LOOT_Lieutenant's Insignia|r
     >>|cRXP_WARN_Skip the|r |cRXP_LOOT_Lieutenant's Insignia|r |cRXP_WARN_if you're unlucky with the drop|r
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
@@ -3654,19 +3654,19 @@ step
     .mob Burning Blade Apprentice
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Venomtail Scorpids|r. Loot them for their |cRXP_LOOT_Poison Sacs|r
+    >>击杀 |cRXP_ENEMY_毒尾蝎|r。拾取他们的 |cRXP_LOOT_Poison Sacs|r
     .complete 813,1 --Venomtail Poison Sac (4)
     .mob Venomtail Scorpid
     .itemcount 4904,<1 --Venomtail Antidote
 step
     .goto Durotar,56.41,20.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Margoz|r
-    .turnin 827 >>Turn in Skull Rock
-    .accept 829 >>Accept Neeru Fireblade
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛高兹|r
+    .turnin 827 >>交任务《 前往熔光镇》 骷髅石
+    .accept 829 >>接受任务《物归己用》 尼尔鲁·火刃
     .target Margoz
 step << Shaman
     #completewith next
-    .subzone 371 >>Travel toward Dustwind Cave
+    .subzone 371 >>前去找 Dustwind Cave
 step << Shaman
     .goto Durotar,51.90,25.70,0
     .goto Durotar,53.18,29.15,20,0
@@ -3676,7 +3676,7 @@ step << Shaman
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,51.90,25.70,12,0
-    >>Kill |cRXP_ENEMY_Burning Blade Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
+    >>击杀 for a |cRXP_LOOT_Reagent Pouch|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
 step << !Shaman
@@ -3695,7 +3695,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70,40,0
-    >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r
+    >>击杀 |cRXP_ENEMY_尘风暴徒|r 和 |cRXP_ENEMY_尘风雷巫|r
     .complete 835,1 --Dustwind Savage (12)
     .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
@@ -3703,17 +3703,17 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
 step
     #hardcore
     #completewith next
     .goto Durotar,53.75,27.74,60,0
     .goto Durotar,51.75,27.40,60,0
-    .goto Durotar,46.37,22.94,60 >> Travel through the cave toward |cRXP_FRIENDLY_Rezlak|r
+    .goto Durotar,46.37,22.94,60 >>Travel through the cave toward |cRXP_FRIENDLY_雷兹拉克|r
 step
     .goto Durotar,46.37,22.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
-    .turnin 835 >>Turn in Securing the Lines
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
+    .turnin 835 >>交任务《 前往熔光镇》 保卫商路
     .target Rezlak
 step
     #loop
@@ -3723,7 +3723,7 @@ step
     .goto Durotar,41.22,16.82,50,0
     .goto Durotar,44.14,17.17,50,0
     .goto Durotar,36.75,25.47,50,0
-    >>Kill |cRXP_ENEMY_Venomtail Scorpids|r. Loot them for their |cRXP_LOOT_Poison Sacs|r
+    >>击杀 |cRXP_ENEMY_毒尾蝎|r。拾取他们的 |cRXP_LOOT_Poison Sacs|r
     .complete 813,1 --Venomtail Poison Sac (4)
     .mob Venomtail Scorpid
     .itemcount 4904,<1 --Venomtail Antidote
@@ -3733,31 +3733,31 @@ step
     .zone Orgrimmar >>Enter Orgrimmar
 step
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .turnin 5726 >>Turn in Hidden Enemies
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r
+    .turnin 5726 >>交任务《 前往熔光镇》 隐藏的敌人
     .target Thrall
     .isQuestComplete 5726
 step
     .goto Orgrimmar,47.24,53.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Kor'ghan|r
-    .turnin 813 >>Turn in Finding the Antidote
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_考格汉|r
+    .turnin 813 >>交任务《 前往熔光镇》 寻找解毒剂
     .target Kor'ghan
     .itemcount 4904,<1 --Venomtail Antidote
 step
     #optional
     .goto Orgrimmar,49.49,50.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru|r
-    .turnin 829 >>Turn in Neeru Fireblade
-    .turnin 832 >>Turn in Burning Shadows
-    .accept 809 >>Accept Ak'Zeloth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Neeru|r
+    .turnin 829 >>交任务《 前往熔光镇》 尼尔鲁·火刃
+    .turnin 832 >>交任务《 前往熔光镇》 燃影之眼
+    .accept 809 >>接受任务《物归己用》 雅克塞罗斯
     .target Neeru Fireblade
     .isOnQuest 832
 step
     #label NeeruFireblade
     .goto Orgrimmar,49.49,50.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru|r
-    .turnin 829 >>Turn in Neeru Fireblade
-    .accept 809 >>Accept Ak'Zeloth
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Neeru|r
+    .turnin 829 >>交任务《 前往熔光镇》 尼尔鲁·火刃
+    .accept 809 >>接受任务《物归己用》 雅克塞罗斯
     .target Neeru Fireblade
 step
     #hardcore
@@ -3773,40 +3773,40 @@ step
     #softcore
     #completewith FoundtheCure
     .goto Durotar,47.05,17.58
-    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Die 和 Respawn at the |cRXP_FRIENDLY_灵魂医者|r
 step
     #label FoundtheCure
     .goto Durotar,41.54,18.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
-    .accept 812 >>Accept Need for a Cure
-    .turnin 812 >>Turn in Need for a Cure
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_林纳格|r
+    .accept 812 >>接受任务《物归己用》 救命如救火
+    .turnin 812 >>交任务《 前往熔光镇》 救命如救火
     .target Rhinag
 step
     .goto Durotar,43.11,30.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha|r
-    .turnin 816 >>Turn in Lost But Not Forgotten
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莎|r
+    .turnin 816 >>交任务《 前往熔光镇》 刻骨铭心的伤痛
     .target Misha Tor'kren
     .isQuestComplete 816
 step
     #completewith next
     .goto The Barrens,62.26,19.38 
-    .subzone 379 >>Travel to Far Watch Post
+    .subzone 379 >>前往暴风城大教堂内，与 Far Watch Post
     .zoneskip The Barrens
 step
     .goto The Barrens,62.34,20.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
-    .turnin 809 >>Turn in Ak'Zeloth
-    .accept 924 >>Accept The Demon Seed
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克塞罗斯|r
+    .turnin 809 >>交任务《 前往熔光镇》 雅克塞罗斯
+    .accept 924 >>接受任务《物归己用》 恶魔之种
     .target Ak'Zeloth
 step
     .goto The Barrens,62.34,20.03
-    >>|cRXP_WARN_Loot the|r |T134095:0|t[Flawed Power Stone] |cRXP_WARN_next to|r |cRXP_FRIENDLY_Ak'Zeloth|r|cRXP_WARN_. This item has a 30 minute timer, so be sure to be quick|r
-    .turnin 926 >>Turn in Flawed Power Stone
+    >>|cRXP_WARN_Loot the|r |T134095:0|t[Flawed Power Stone] |cRXP_WARN_next to|r |cRXP_FRIENDLY_雅克塞罗斯|r|cRXP_WARN_. This item has a 30 minute timer, so be sure to be quick|r
+    .turnin 926 >>交任务《 前往熔光镇》 有瑕疵的能量石
     .isOnQuest 924
 step << Warrior
     .goto The Barrens,61.4,21.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
-    .turnin 1498 >>Turn in Path of Defense
-    .accept 1502 >>Accept Thun'grim Firegaze
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_犹塞克|r
+    .turnin 1498 >>交任务《 前往熔光镇》 防御之道
+    .accept 1502 >>接受任务《物归己用》 索恩格瑞姆·火眼
     .target Uzzek
 ]])
