@@ -254,6 +254,7 @@ function addon.settings:InitializeDatabase()
     settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
     loadedProfileKey = settingsDB.keys.profile
+    addon.GetQuestDBDefaults()
 end
 
 function addon.settings:InitializeSettings()

@@ -167,6 +167,7 @@ addon.activeItems = {}
 addon.activeSpells = {}
 addon.activeMacros = {}
 addon.functions = {}
+addon.separators = {}
 addon.enabledFrames = {} -- Hold all enabled frame/features for Hide/Show
 addon.player = {
     localeClass = select(1, UnitClass("player")),

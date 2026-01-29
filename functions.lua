@@ -80,7 +80,6 @@ end
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
-addon.separators = {}
 local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
@@ -7286,22 +7285,6 @@ function addon.functions.addtoquestdb(self,text,index,...)
             --print(k,v)
         end
 
-    end
-end
-
-addon.separators.setquestdb = function(t,args)
-    table.insert(t,args)
-end
-
-function addon.functions.setquestdb(self,text,str)
-    if type(self) == "string" then
-        local group = addon.guide.group
-        if not group or addon.QuestDB[group] then
-            return
-        end
-        local t = assert(loadstring("return " .. str))
-        setfenv(t, {})
-        addon.QuestDB[group] = t()
     end
 end
 

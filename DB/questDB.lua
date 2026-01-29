@@ -8,11 +8,19 @@ local L = addon.locale.Get
 local defaultTitle = L"Showing expected Quest Log, scroll down to view backup quests"
 local panelTitle = defaultTitle
 local QPRIO_HEADER = L"Quest Priority"
+local TURNIN_ROUTE = L"Turn-in Route"
 local PREPGUIDE_HEADER = L"Preparation Guide"
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local backlog = {}
 local preReqCache = {}
 local sortTable = {}
+
+
+addon.questsDone = {}
+addon.questsAvailable = {}
+
+addon.questsToPrepare = {}
+addon.preparedQuests = {}
 
 local GetItemCount = function(id,includeBank)
     local c = 0
@@ -564,7 +572,7 @@ end
 
 function addon.functions.show25quests(self,text,flags)
     if type(self) == "string" then
-        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = format("Click to view the %d best quests",QUEST_LOG_SIZE), icon = addon.icons.link, textOnly = true, updateTimer = 0}
+        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = format(L"Click to view the %d best quests",QUEST_LOG_SIZE), icon = addon.icons.link, textOnly = true, updateTimer = 0}
     end
     local element = self.element
     if self.SetScript then
@@ -581,6 +589,42 @@ function addon.functions.show25quests(self,text,flags)
 
     SetText(self,true)
 
+end
+
+local currentGuide
+function addon.functions.turninconfig(self)
+    if type(self) == "table" and self.name and self.group then
+        currentGuide = self
+        if not addon.settings.gui.quest then
+            CreatePanel()
+        end
+       OpenSettings(TURNIN_ROUTE)
+    end
+end
+
+function addon:GetQuestDBDefaults(wipe)
+    if wipe then
+        addon.settings.profile.gnomeTele = nil
+        addon.settings.profile.goblinTele = nil
+        addon.settings.profile.portalTele = nil
+        addon.settings.profile.tbcWBF = nil
+        addon.settings.profile.tbcStart = nil
+    end
+    if addon.settings.profile.gnomeTele == nil then
+        addon.settings.profile.gnomeTele = addon.IsPlayerSpell(20219)
+    end
+    if addon.settings.profile.portalTele == nil then
+        addon.settings.profile.portalTele = addon.IsPlayerSpell(10059)
+    end
+    if addon.settings.profile.goblinTele == nil then
+        addon.settings.profile.goblinTele = addon.IsPlayerSpell(20222)
+    end
+    if addon.settings.profile.tbcWBF == nil then
+        addon.settings.profile.tbcWBF = not addon.IsQuestTurnedIn(5162)
+    end
+    if addon.settings.profile.tbcStart == nil then
+        addon.settings.profile.tbcStart = ((addon.IsOnQuest(8310) or addon.IsOnQuest(8309)) and 1) or 2
+    end
 end
 
 local questPrioChanged
@@ -804,8 +848,321 @@ function CreatePanel()
     addon.settings.gui.quest = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                                     addon.title .. "/" .. QPRIO_HEADER, QPRIO_HEADER, addon.title)
 
+    local turninSettings = {
+        type = "group",
+        name = L"RestedXP Preparation Guide: Turn in route",
+        args = {
+            spacer = {
+                order = 99,
+                name = ' ',
+                type = 'description',
+                width = 0.2,
+            },
+            defaultValues = {
+                order = 99.1,
+                name = L"Use Recommended",
+                type = 'execute',
+                func = function()
+                    local group = currentGuide and currentGuide.group or addon.currentGuide.group or ""
+                    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+                    questPrioChanged = true
+                    if QuestDB["TBC"] then
+                        addon:GetQuestDBDefaults(true)
+                    end
+                end,
+            },
+            spacer2 = {
+                order = 99.2,
+                name = ' ',
+                type = 'description',
+                width = 1,
+            },
+            apply = {
+                order = 99.3,
+                name = L"Apply Changes",
+                desc = L"This will reload the UI to apply changes",
+                type = 'execute',
+                disabled = function()
+                    return not questPrioChanged
+                end,
+                func = function()
+                    for _,group in pairs(addon.QuestDB) do
+                        addon.functions.setturninroute(nil,addon.FetchGuide(group,L"Turn in Route"))
+                    end
+                    _G.ReloadUI()
+                end,
+            },
+            gnomeTele = {
+                name = L("Gnomish Engineering"),
+                type = "toggle",
+                width = 1,
+                order = 4.1,
+                get = function (info)
+                    --print(addon.settings.profile[info[#info]],info[#info])
+                    return addon.settings.profile.gnomeTele
+                end,
+                set = function(info, value)
+                    addon.settings.profile[info[#info]] = value
+                    questPrioChanged = true
+                    if value then
+                        addon.settings.profile.goblinTele = false
+                        --print("Value set to ",value)
+                    end
+                end
+            },
+            goblinTele = {
+                name = L("Goblin Engineering"),
+                type = "toggle",
+                width = 1,
+                order = 4.2,
+                get = function (info)
+                    --print(addon.settings.profile[info[#info]],info[#info])
+                    return addon.settings.profile.goblinTele
+                end,
+                set = function(info, value)
+                    addon.settings.profile[info[#info]] = value
+                    questPrioChanged = true
+                    if value then
+                        addon.settings.profile.gnomeTele = false
+                        --print("Value set to ",value)
+                    end
+                end
+            },
+            portalTele = {
+                name = L("Mage Portals"),
+                type = "toggle",
+                width = 1,
+                order = 4.3,
+                get = function(info)
+                    --print(addon.settings.profile[info[#info]],info[#info])
+                    return addon.settings.profile[info[#info]]
+                end,
+                set = function(info, value)
+                    addon.settings.profile[info[#info]] = value
+                    questPrioChanged = true
+                    --print("Value set to ",value)
+                end
+            },
+            tbcWBF = {
+                name = L("Wrath of the Blue Flight Teleport"),
+                desc = L("If you have this quest available you get a free teleport from Winterspring to Western Plaguelands"),
+                type = "toggle",
+                width = 1.3,
+                order = 4.4,
+                get = function (info)
+                    --print(addon.settings.profile[info[#info]],info[#info])
+                    if addon.IsQuestTurnedIn(5162) then
+                        addon.settings.profile.tbcWBF = false
+                    end
+                    return addon.settings.profile.tbcWBF
+                end,
+                set = function(info, value)
+                    addon.settings.profile[info[#info]] = value
+                    questPrioChanged = true
+                    --print("Value set to ",value)
+                end,
+                disabled = function()
+                    return addon.IsQuestTurnedIn(5162)
+                end,
+                hidden = function()
+                    local group = currentGuide and currentGuide.group or addon.currentGuide.group or ""
+                    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+                    --print(QuestDB["TBC"])
+                    return not QuestDB["TBC"]
+                end,
+            },
+            tbcStart = {
+                order = 1,
+                type = 'select',
+                style = 'dropdown',
+                --sorting = sortTable,
+                name = "Start Area",
+                width = 1,
+                values = {
+                    [1] = L"Silithus Start",
+                    [2] = L"Burning Steppes Start",
+                },
+                get = function(info)
+                    return addon.settings.profile[info[#info]]
+                end,
+                set = function(info, value)
+                    addon.settings.profile[info[#info]] = value
+                    questPrioChanged = true
+                end,
+                hidden = function()
+                    local group = currentGuide and currentGuide.group or addon.currentGuide.group or ""
+                    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+                    return not QuestDB["TBC"] or addon.player.faction == "Horde" end,
+            }
+        }
+    }
+
+    LibStub("AceConfig-3.0"):RegisterOptionsTable(addon.title .. "/".. TURNIN_ROUTE, turninSettings)
+
+    addon.settings.gui.quest = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                    addon.title .. "/" .. TURNIN_ROUTE, TURNIN_ROUTE, addon.title)
+
+
 end
 
+
+addon.separators.setquestdb = function(t,args)
+    table.insert(t,args)
+end
+
+function addon.functions.setquestdb(self,text,str)
+    if type(self) == "string" then
+        local group = addon.guide.group
+        if not group or addon.QuestDB[group] then
+            return
+        end
+        local t = assert(loadstring("return " .. str))
+        setfenv(t, {})
+        addon.QuestDB[group] = t()
+        addon:FetchGuide(group,L"Turn in Route")
+    end
+end
+
+function addon.functions.setturninroute(self,guide)
+    if type(self) ~= "string" and type(guide) ~= "table" then
+        return
+    end
+    guide = guide or addon.guide
+    local group = guide.group or ""
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+    local chapters = ""
+if QuestDB["TBC"] then
+    local n = 0
+    local suffix = ""
+    local lastchapter
+    local function AddChapter(name,suffix)
+        if not suffix then suffix = "" end
+        if n > 0 then
+            chapters = format("%s;%s%s", chapters, name,suffix)
+        else
+            chapters = name .. suffix
+        end
+        n = n + 1
+        local m = RXPCData.guideMetaData
+        local g = addon:FetchGuide(group,name..suffix)
+        local new = g and format("%d - %s",n,g.title or g.name)
+        if g then
+            g.displayname = new
+            g = m[g.group.."||"..g.name]
+        end
+
+        if g then g.displayname = new end
+
+        local lg = addon:FetchGuide(group,lastchapter)
+        if lg then lg.next = name..suffix end
+        lastchapter = name
+    end
+    if addon.settings.profile.portalTele then
+        if addon.player.faction == "Horde" then
+            AddChapter("Burning Steppes Start (P)")
+            if addon.settings.profile.gnomeTele then
+                AddChapter("Tanaris to Un'Goro (P)")
+                AddChapter("Silithus CH Start (P)")
+                AddChapter("Felwood to Winterspring (P)")
+                if addon.settings.profile.tbcWBF then
+                    AddChapter("Plaguelands (P)")
+                else
+                    AddChapter("Silvermoon to EPL (P)")
+                end
+            else
+                AddChapter("Silithus CH Start (P)")
+                AddChapter("Un'Goro to Tanaris (P)")
+                if addon.settings.profile.tbcWBF then
+                    AddChapter("Felwood to Winterspring (P)")
+                    AddChapter("Plaguelands (P)")
+                else
+                    if addon.settings.profile.goblinTele then
+                        AddChapter("Winterspring to Felwood (P)")
+                    else
+                        AddChapter("Felwood to Winterspring (P)")
+                    end
+                    AddChapter("Silvermoon to EPL (P)")
+                end
+            end
+        else--Alliance Portals
+            if addon.settings.profile.tbcStart == 1 then
+                AddChapter("Silithus Start (P)")
+                AddChapter("Un'Goro to Tanaris (P)")
+            else
+                AddChapter("Burning Steppes Start (P)")
+                if addon.settings.profile.gnomeTele then
+                    AddChapter("Tanaris to Un'Goro (P)")
+                    AddChapter("Silithus CH Start (P)")
+                else
+                    AddChapter("Silithus CH Start (P)")
+                    AddChapter("Un'Goro to Tanaris (P)")
+                end
+            end
+            if addon.settings.profile.tbcWBF or not addon.settings.profile.goblinTele then
+                AddChapter("Felwood to Winterspring (P)")
+            else
+                AddChapter("Winterspring to Felwood (P)")
+            end
+            AddChapter("Plaguelands (P)")
+        end
+        AddChapter("STV to Blasted Lands (P)")
+    else
+        if addon.player.faction == "Horde" then
+            AddChapter("Burning Steppes Start")
+            if addon.settings.profile.gnomeTele then
+                AddChapter("Tanaris to Un'Goro")
+                AddChapter("Silithus CH Start")
+            else
+                AddChapter("Silithus CH Start")
+                AddChapter("Un'Goro to Tanaris")
+            end
+
+            if addon.settings.profile.goblinTele then
+                AddChapter("Winterspring to Felwood")
+            elseif addon.settings.profile.tbcWBF then
+                AddChapter("Felwood to Winterspring")
+            else
+                AddChapter("Winterspring to Felwood")
+            end
+            if addon.settings.profile.tbcWBF then
+                AddChapter("Plaguelands")
+            else
+                AddChapter("Tirisfal to Plaguelands")
+            end
+        else
+            if addon.settings.profile.tbcStart == 1 then
+                AddChapter("Silithus Start")
+                AddChapter("Un'Goro to Tanaris")
+                if addon.settings.profile.tbcWBF then
+                    AddChapter("Felwood to Winterspring")
+                else
+                    AddChapter("Winterspring to Felwood")
+                end
+            else
+                AddChapter("Burning Steppes Start")
+                if addon.settings.profile.gnomeTele then
+                    AddChapter("Tanaris to Un'Goro")
+                    AddChapter("Silithus CH Start")
+                else
+                    AddChapter("Silithus CH Start")
+                    AddChapter("Un'Goro to Tanaris")
+                end
+                if addon.settings.profile.tbcWBF then
+                    AddChapter("Felwood to Winterspring")
+                else
+                    AddChapter("Winterspring to Felwood")
+                end
+            end
+            AddChapter("Plaguelands")
+        end
+        AddChapter("STV to Blasted Lands")
+    end
+
+    guide.chapters = chapters
+    --print(chapters)
+end
+addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+end
 
 function addon.IsGuideQuestActive(id)
     local group = GetGroup()
@@ -909,11 +1266,6 @@ function addon.functions.showtotalxp(self,text,flags)
 
 end
 
-addon.questsDone = {}
-addon.questsAvailable = {}
-
-addon.questsToPrepare = {}
-addon.preparedQuests = {}
 
 function addon.CalculateTotalXP(flags,refresh)
     preReqCache = {}

@@ -2130,7 +2130,15 @@ function RXPFrame:GenerateMenuTable(menu)
     local farmGuides = {}
     local unusedGuides = {}
     local defaultGuide, defaultGuideHC
-
+    local function OnClick(self,...)
+        local guide = addon.GetGuideTable(...)
+        local func = guide.OnClick
+        if func then
+            addon.functions[func](guide)
+        else
+            addon:LoadGuide(guide)
+        end
+    end
     for group in pairs(addon.guideList) do
         local firstChar = group:sub(1, 1)
         if RXPCData and RXPCData.GA then
@@ -2175,7 +2183,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     local item = {
                         arg1 = guide.group,
                         arg2 = chapterName,
-                        func = addon.LoadGuideTable,
+                        func = OnClick,
                         text = addon.GetGuideName(chapter),
                         notCheckable = 1,
                     }
@@ -2235,7 +2243,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     if guide.disabled then
                         subitem.isTitle = 1
                     else
-                        subitem.func = addon.LoadGuideTable
+                        subitem.func = OnClick
                         subitem.arg1 = guide.group
                         subitem.arg2 = guideName
                     end
@@ -2252,7 +2260,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     if guide.disabled then
                         subitem.isTitle = 1
                     else
-                        subitem.func = addon.LoadGuideTable
+                        subitem.func = OnClick
                         subitem.arg1 = guide.group
                         subitem.arg2 = guideName
                     end
