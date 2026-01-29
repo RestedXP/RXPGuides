@@ -2838,6 +2838,7 @@ step
     .zone Ironforge >> Travel to Ironforge
 step
 .dungeon Gnomer
+    .goto Ironforge,36.377,3.614
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talvash del Kissel|r
     .turnin 2947 >> Turn in Return of the Ring
     .accept 2948 >> Accept Gnome Improvement
@@ -2845,6 +2846,7 @@ step
     .isOnQuest 2947
 step
 .dungeon Gnomer
+    .goto Ironforge,36.377,3.614
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talvash del Kissel|r
     >>|cRXP_WARN_If you are able to obtain a|r |T133215:0|t[Silver Bar] |cRXP_WARN_and a|r |T134105:0|t[Moss Agate] |cRXP_WARN_finish this quest. If not, abandon it|r
     .collect 2842,1,2948,1 -- Silver Bar (1)
