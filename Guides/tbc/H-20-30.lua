@@ -2467,6 +2467,11 @@ RXPGuides.RegisterGuide([[
 #subgroup RestedXP Horde 1-30
 #next 25-27 Ashenvale
 
+step
+    #sticky
+    #completewith EnterSFK
+    .subzone 209,2 >> Now you should be looking for a group to Shadowfang Keep
+    .dungeon SFK
 step << !Mage
     #optional
     #completewith next
@@ -2512,7 +2517,7 @@ step
     .accept 1013 >>Accept The Book of Ur
     .target Keeper Bel'dugur
     .dungeon SFK
-step << !Mage
+step
     #completewith JourneytoHillsbrad
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
@@ -2526,19 +2531,6 @@ step << !Mage
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Silverpine Forest
     .dungeon SFK << !Shaman !Warrior !Mage
-step << Mage
-    #completewith JourneytoHillsbrad
-    .goto Undercity,47.25,39.12,50,0
-    .goto Undercity,46.35,43.86,10,0
-    .goto Undercity,45.24,39.35,10,0
-    .goto Undercity,41.32,38.40,10,0
-    .goto Undercity,40.74,33.95,10,0
-    .goto Undercity,34.80,33.19,15,0
-    .goto Undercity,27.39,30.23,35,0
-    .goto Undercity,21.89,43.35,35,0
-    .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Leave Undercity through the Sewers
-    .zoneskip Silverpine Forest
 step
     #completewith next
     .goto Silverpine Forest,66.69,5.09,80,0
@@ -2551,7 +2543,7 @@ step << Druid
     >>Loot the |cRXP_PICK_Strange Lockbox|r in the water for the |T133442:0|t[|cRXP_LOOT_Half Pendant of Aquatic Endurance|r]
     .collect 15882,1,30,1 --Half Pendant of Aquatic Agility (1)
 step
-    #completewith next
+    #completewith JourneytoHillsbrad
     .subzone 228 >>Travel to The Sepulcher
 step
     .goto Silverpine Forest,45.62,42.58
@@ -2559,27 +2551,84 @@ step
     .fp Sepulcher >> Get The Sepulcher flight path
     .target Karos Razok
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renferrel|r and |cRXP_FRIENDLY_Mura|r
-    .accept 493 >> Accept Journey to Hillsbrad Foothills
-    .target +Apothecary Renferrel
-    .goto Silverpine Forest,42.90,40.86
-    .turnin 3301 >> Turn in Mura Runetotem
-    .target +Mura Runetotem
-    .goto Silverpine Forest,42.90,41.99
-    .isOnQuest 3301
-    .dungeon WC << !Warrior !Shaman
+    .goto Silverpine Forest,44.22,39.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
+    .accept 1014 >>Accept Arugal Must Die
+    .target Dalar Dawnweaver
+    .dungeon SFK
 step
-    #label JourneytoHillsbrad
     .goto Silverpine Forest,42.90,40.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renferrel|r
     .accept 493 >> Accept Journey to Hillsbrad Foothills
     .target Apothecary Renferrel
 step
+    .goto Silverpine Forest,43.43,40.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r downstairs in the crypt
+    .accept 1098 >>Accept Deathstalkers in Shadowfang
+    .target High Executor Hadrec
+    .dungeon SFK
+step
+    .goto Silverpine Forest,42.90,41.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura|r
+    .turnin 3301 >> Turn in Mura Runetotem
+    .target Mura Runetotem
+    .isOnQuest 3301
+    .dungeon WC << !Warrior !Shaman
+step
+    #label JourneytoHillsbrad
     .goto Silverpine Forest,44.18,42.68
     >>Interact with |cRXP_PICK_Yuriv's Tombstone|r on the ground
     .turnin 264 >> Turn in Until Death Do Us Part
     .target Clarice Foster
     .isOnQuest 264
+step
+    #label EnterSFK
+    .goto Silverpine Forest,44.87,67.86
+    .subzone 209,2 >> Enter the SFK Instance portal. Zone in
+    .dungeon SFK
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vincent|r
+    .turnin 1098 >> Turn in Deathstalkers in Shadowfang
+    .target Deathstalker Vincent
+    .dungeon SFK
+    .isOnQuest 1098
+step
+    >>Loot the |cRXP_PICK_Book of Ur|r from the bookshelf in |cRXP_ENEMY_Fenrus the Devourer's|r room
+    .complete 1013,1 --Book of Ur(1)
+    .dungeon SFK
+    .isOnQuest 1013
+step
+    >>Kill |cRXP_ENEMY_Archmage Arugal|r. Loot him for his |cRXP_LOOT_Head|r
+    .complete 1014,1 --Head of Arugal (1)
+    .mob Archmage Arugal
+    .dungeon SFK
+    .isOnQuest 1014
+step
+    #hardcore
+    #completewith SFKTurnins
+    .goto Silverpine Forest,45.51,41.26,150,0 
+    .subzone 228 >>Travel to The Sepulcher
+    .dungeon SFK
+step
+    #softcore
+    #completewith SFKTurnins
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .dungeon SFK
+step
+    .goto Silverpine Forest,43.43,40.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
+    .turnin 1098 >>Turn in Deathstalkers in Shadowfang
+    .target High Executor Hadrec
+    .dungeon SFK
+    .isQuestComplete 1098
+step
+    #label SFKTurnins
+    .goto Silverpine Forest,44.22,39.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
+    .turnin 1014 >>Turn in Arugal Must Die
+    .target Dalar Dawnweaver
+    .dungeon SFK
+    .isQuestComplete 1014
 step
     #completewith next
     .zone Hillsbrad Foothills >> Travel to Hillsbrad Foothills
@@ -3529,191 +3578,6 @@ step
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
 	.mob +Hillsbrad Apprentice Blacksmith
     .isQuestTurnedIn 528
-step
-    #sticky
-    #completewith EnterSFK
-    .subzone 209,2 >> Now you should be looking for a group to Shadowfang Keep
-    .dungeon SFK
-step
-    .goto Hillsbrad Foothills,62.37,20.32
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darthalia|r
-    .turnin 529 >> Turn in Battle of Hillsbrad
-	.target High Executor Darthalia
-    .isQuestComplete 529
-    .dungeon SFK
-    .zoneskip Hillsbrad Foothills,1
-step
-    .goto Hillsbrad Foothills,60.14,18.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarise|r
-    .fly The Sepulcher>> Fly to The Sepulcher
-    .target Zarise
-    .zoneskip Hillsbrad Foothills,1
-    .dungeon SFK
-step
-    .goto Silverpine Forest,43.43,40.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
-    .accept 1098 >>Accept Deathstalkers in Shadowfang
-    .target High Executor Hadrec
-    .dungeon SFK
-step
-    .goto Silverpine Forest,44.22,39.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
-    .accept 1014 >>Accept Arugal Must Die
-    .target Dalar Dawnweaver
-    .dungeon SFK
-step
-    #label EnterSFK
-    .goto Silverpine Forest,44.87,67.86
-    .subzone 209,2 >> Enter the SFK Instance portal. Zone in
-    .dungeon SFK
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vincent|r
-    .turnin 1098 >> Turn in Deathstalkers in Shadowfang
-    .target Deathstalker Vincent
-    .dungeon SFK
-    .isOnQuest 1098
-step
-    >>Loot the |cRXP_PICK_Book of Ur|r from the bookshelf in |cRXP_ENEMY_Fenrus the Devourer's|r room
-    .complete 1013,1 --Book of Ur(1)
-    .dungeon SFK
-    .isOnQuest 1013
-step
-    >>Kill |cRXP_ENEMY_Archmage Arugal|r. Loot him for his |cRXP_LOOT_Head|r
-    .complete 1014,1 --Head of Arugal (1)
-    .mob Archmage Arugal
-    .dungeon SFK
-    .isOnQuest 1014
-step
-    #hardcore
-    #completewith FlytoUC
-    .goto Silverpine Forest,45.51,41.26,150,0 
-    .subzone 228 >>Travel to The Sepulcher
-    .dungeon SFK
-step
-    #softcore
-    #completewith FlytoUC
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .dungeon SFK
-step
-    .goto Silverpine Forest,43.43,40.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r
-    .turnin 1098 >>Turn in Deathstalkers in Shadowfang
-    .target High Executor Hadrec
-    .dungeon SFK
-    .isQuestComplete 1098
-step
-    .goto Silverpine Forest,44.22,39.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
-    .turnin 1014 >>Turn in Arugal Must Die
-    .target Dalar Dawnweaver
-    .dungeon SFK
-    .isQuestComplete 1014
-step << Mage
-    #completewith OrgFood1
-    .cast 3563 >>|cRXP_WARN_Cast|r |T135766:0|t[Teleport: Undercity]
-    .zoneskip Undercity
-    .dungeon SFK
-step << Mage
-    .goto Undercity,85.15,10.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
-    .train 2121 >> Train your class spells
-    .target Anastasia Hartwell
-    .xp <24,1
-    .xp >26,1
-    .dungeon SFK
-step << Mage
-    #optional
-    .goto Undercity,85.15,10.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
-    .train 120 >> Train your class spells
-    .target Anastasia Hartwell
-    .xp <26,1
-    .dungeon SFK
-step << Mage
-    .goto Undercity,82.79,15.82
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannah Akeley|r
-    >>|cRXP_BUY_Buy at least two|r |T134419:0|t[Rune of Teleportation] |cRXP_BUY_from her|r
-    .collect 17031,2,6503,1 --Rune of Teleportation (2)
-	.target Hannah Akeley
-    .dungeon SFK
- step << !Mage
-    #label FlytoUC
-    #completewith OrgFood1
-    .goto Silverpine Forest,45.62,42.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
-    .fly Undercity >> Fly to the Undercity
-    .target Karos Razok
-    .zoneskip Undercity
-    .dungeon SFK
-step
-    #label BookofUrTurnin
-    .goto Undercity,53.74,54.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bel'dugur|r
-    .turnin 1013 >>Turn in The Book of Ur
-    .target Keeper Bel'dugur
-    .dungeon SFK
-    .isQuestComplete 1013
-step << Warrior
-    .goto Undercity,48.32,15.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angela|r
-    .train 5308 >> Train your class spells
-    .target Angela Curthas
-    .xp <24,1
-    .xp >26,1
-    .dungeon SFK
-step << Warrior
-    #optional
-    .goto Undercity,48.32,15.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angela|r
-    .train 6178 >> Train your class spells
-    .target Angela Curthas
-    .xp <26,1
-    .dungeon SFK
-step << Rogue
-    .goto Undercity,75.19,51.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ezekiel|r|cRXP_BUY_. Buy |r |T133849:0|t[Dust of Decay] |cRXP_BUY_and|r |T132793:0|t[Empty Vials] |cRXP_BUY_from him|r
-    .collect 2928,40,1067,1 --Collect Dust of Decay (40)
-    .collect 3371,40,1067,1 --Collect Empty Vial (40)
-    .target Ezekiel Graves
-    .zoneskip Undercity,1
-    .dungeon SFK
-step << Rogue    
-    #completewith OrgFood1
-    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] 
-    .collect 6947,40,1067,1 --Collect Instant Poison (40)
-    .dungeon SFK
-step << Rogue
-    .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 6762 >> Train your class spells
-    .target Carolyn Ward
-    .xp <24,1
-    .xp >26,1
-    .dungeon SFK
- step << Rogue
-    #optional
-    .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1833 >> Train your class spells
-    .target Carolyn Ward
-    .xp <26,1
-    .dungeon SFK
-step << Warlock
-    .goto Undercity,88.93,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 6223 >> Train your class spells
-    .target Richard Kerwin
-    .xp <24,1
-    .xp >26,1
-    .dungeon SFK
-step << Warlock
-    #optional
-    .goto Undercity,88.93,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 1456 >> Train your class spells
-    .target Richard Kerwin
-    .xp <26,1
-    .dungeon SFK
 step << Druid
     #completewith AquaticFormQ
     .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
@@ -3884,7 +3748,6 @@ step << Rogue
 	.vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and|r |T132273:0|t[Poisons]
     .target Rekkul
     .zoneskip Orgrimmar,1
-    .dungeon !SFK
 step << Warlock
     #optional
     .goto Orgrimmar,48.62,46.95
@@ -3978,7 +3841,6 @@ step << Rogue
     #completewith Splintertree1
     >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] 
     .collect 6947,40,1067,1 --Collect Instant Poison (40)
-    .dungeon !SFK
 step
     #completewith next
     .goto Orgrimmar,26.22,61.58,80,0
