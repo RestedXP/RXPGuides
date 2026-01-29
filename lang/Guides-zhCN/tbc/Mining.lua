@@ -14,7 +14,7 @@ step << Mage
     .skill mining,65,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .zoneskip Orgrimmar
     .skill mining,65,1
 step << !Mage
@@ -55,7 +55,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .zoneskip Orgrimmar
     .skill mining,125,1
 step << !Mage
@@ -70,7 +70,7 @@ step
 step
     #completewith next
     .goto Orgrimmar,45.120,63.889
-    .fly Crossroads >>Fly to 十字路口，北贫瘠之地
+    .fly Crossroads >> Fly to The Crossroads
     .zoneskip The Barrens
 step
     .skill mining,125 >> Level your Mining from 65-125 in The Barrens [Route 1]
@@ -90,7 +90,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,175,1
     .zoneskip Orgrimmar
 step << !Mage
@@ -127,16 +127,16 @@ step
     #completewith next
     .goto Undercity,65.9,44.1,50,0
     .goto Undercity,63.254,48.559
-    .fly Hammerfall >>Fly to 落锤镇，阿拉希高地
+    .fly Hammerfall >> Fly to Hammerfall
     .skill mining,175,1
     .zoneskip Arathi Highlands
 step
-    .skill mining,175 >>Level your Mining from 125-飞往阿拉希高地
+    .skill mining,175 >> Level your Mining from 125-175 in Arathi Highlands
     .loop 60,Arathi Highlands,71.9,31.0,66.4,27.7,63.4,32.6,59.9,36.2,60.9,41.7,53.9,47.8,49.0,51.3,52.0,45.5,52.6,35.4,48.2,38.5,42.4,42.8,40.4,46.6,35.5,44.3,39.1,35.6,42.8,31.6,34.6,22.8,28.8,18.7,29.6,32.0,24.7,30.7,23.9,35.5,21.0,34.1,22.9,42.7,27.5,49.7,30.1,51.4,32.8,62.1,34.3,65.4,39.8,70.7,44.2,75.7,45.6,75.5,52.5,77.3,54.6,74.9,55.1,71.7,59.5,70.6,63.2,72.8,66.1,73.1,68.2,74.4,71.1,68.2,72.0,59.9,69.8,56.7,73.7,45.9,79.2,40.3,81.7,35.8,82.6,39.0,76.6,33.2,75.2,28.8,71.9,31.0
 step
     #completewith next
     .goto Arathi Highlands,73.1,32.7
-    .fly Revantusk Village >>Fly to 恶齿村，辛特兰
+    .fly Revantusk Village >> Fly to Revantusk Village
     .skill mining,225,1
 step
     .skill mining,225 >> Level your Mining from 175-225 in The Hinterlands
@@ -147,7 +147,7 @@ step << Mage
     .skill mining,245,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,245,1
     .zoneskip Orgrimmar
 step << !Mage
@@ -174,11 +174,11 @@ step << Mage
 step
     #completewith next
     .goto Orgrimmar,45.120,63.889
-    .fly Gadgetzan >>Fly to 加基森，塔纳利斯
+    .fly Gadgetzan >> Fly to Gadgetzan
     .skill mining,245,1
     .zoneskip Tanaris
 step
-    >>Enter the Silithid Hives for veins of ore if there are any 对话，NPC在里面
+    >>Enter the Silithid Hives for veins of ore if there are any inside
     .skill mining,245 >> Level your Mining from 225-245 in Tanaris
     .loop 60,Tanaris,55.9,24.3,54.1,24.6,47.1,23.9,46.7,29.8,43.9,26.0,34.3,26.1,34.3,31.7,36.7,33.4,33.4,37.7,32.8,42.1,29.9,46.4,27.8,56.7,28.2,61.0,30.4,62.8,30.9,67.3,28.2,74.0,30.8,77.2,34.7,80.3,41.7,76.7,44.3,76.1,51.3,79.0,57.8,69.3,58.8,63.2,61.8,53.9,65.3,56.7,69.1,54.6,73.3,53.9,72.3,49.1,71.0,43.6,69.0,41.7,67.0,41.5,55.9,24.3
 step
@@ -201,13 +201,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step
     #completewith Krugosh
     .goto Shattrath City,64.1,41.1
-    .fly Thrallmar >>Fly to 萨尔玛，地狱火半岛
+    .fly Thrallmar >> Fly to Thrallmar
     .skill mining,325,1
     .skill riding,300,1
     .zoneskip Hellfire Peninsula
@@ -220,10 +220,10 @@ step
 step
     #label Krugosh
     .goto Hellfire Peninsula,55.4,37.6
-    .train 29354 >>学习锤类武器 Mining (300-375) from Krugosh in Thrallmar
+    .train 29354 >> Train Master Mining (300-375) from Krugosh in Thrallmar
     .skill mining,325
 step
-    .skill mining,325 >>Level your Mining from 300-59-61 地狱火半岛
+    .skill mining,325 >> Level your Mining from 300-325 in Hellfire Peninsula
     .loop 60,Hellfire Peninsula,48.0,58.4,51.5,54.4,53.3,56.4,57.1,52.7,60.4,51.7,59.9,47.9,49.8,48.1,46.6,43.9,48.5,35.8,54.5,30.0,51.8,23.7,49.1,28.3,44.0,29.5,42.1,33.0,40.7,30.0,37.3,30.6,34.6,30.5,33.3,33.9,37.0,39.4,40.0,43.0,41.4,47.8,43.1,55.3,38.8,52.9,37.4,50.0,31.6,48.0,31.1,43.1,28.8,40.8,25.4,46.0,16.6,45.1,16.8,38.9,13.2,37.2,11.2,48.2,7.6,49.9,14.8,60.2,20.6,54.7,23.9,56.5,22.0,63.0,26.2,78.2,28.7,78.7,30.3,71.5,27.4,66.2,30.2,64.3,30.9,60.9,35.5,59.6,35.5,64.2,36.4,69.5,41.5,64.4,43.9,66.9,47.1,65.7,47.2,61.2,48.0,58.4
 step << Mage
     #completewith next
@@ -237,7 +237,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,350,1
     .zoneskip Terokkar Forest
 step
@@ -255,7 +255,7 @@ step << Mage
     .zoneskip Nagrand
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,375,1
     .zoneskip Nagrand
     .cooldown item,6948,>0,1
@@ -282,23 +282,23 @@ RXPGuides.RegisterGuide([[
 
 step << Mage
     #completewith Gelman
-    .zone Stormwind City >>飞往暴风城
+    .zone Stormwind City >> Teleport to Stormwind
     .skill mining,65,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,65,1
     .zoneskip Stormwind City
 step << !Mage
     .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >>In Shattrath, 乘坐地铁前往暴风城 City
+    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
     .skill mining,65,1
 step
     #sticky
     #label Pick
     .goto Stormwind City,60.2,37.0,20,0
     .goto Stormwind City,59.1,37.5,0,0
-     >>Buy a Mining Pick from Brooke 对话 in the house in Stormwind
+     >> Buy a Mining Pick from Brooke downstairs in the house in Stormwind
     .collect 2901,1 --Mining Pick (1)
     .skill mining,65,1
 step
@@ -310,7 +310,7 @@ step
     #requires Pick
     #completewith next
     .goto Elwynn Forest,32.3,49.9
-    .zone Elwynn Forest >>离开暴风城 into Elwynn Forest
+    .zone Elwynn Forest >> Exit Stormwind into Elwynn Forest
     .skill mining,65,1
 step
     #requires Pick
@@ -319,22 +319,22 @@ step
     .loop 60,Elwynn Forest,37.9,52.6,41.0,52.9,43.8,50.4,50.8,58.8,51.4,65.6,54.7,62.1,60.6,63.4,58.6,57.7,61.8,54.2,65.5,58.6,69.0,68.6,65.8,72.8,58.5,77.5,51.2,85.3,51.0,75.7,46.7,72.6,43.5,76.0,39.1,82.6,38.2,84.6,36.7,81.6,40.5,73.7,37.2,72.2,34.1,71.9,26.7,69.9,27.0,67.4,29.4,63.6,29.3,60.1,31.2,54.9,37.9,52.6
 step << Mage
     #completewith next
-    .zone Stormwind City >>飞往暴风城
+    .zone Stormwind City >> Teleport to Stormwind
     .skill mining,125,1
 step << !Mage
     .goto Stormwind City,73.0,89.9
-    .zone Stormwind City >>Ride 前往暴风城
+    .zone Stormwind City >> Ride back to Stormwind City
     .skill mining,125,1
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,125,1
     .zoneskip Stormwind City
 step << !Mage
     #completewith next
     .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >>In Shattrath, 乘坐地铁前往暴风城 City
+    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
     .skill mining,125,1
 step
     .goto Stormwind City,60.2,37.0,20,0
@@ -345,31 +345,31 @@ step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
     .goto Stormwind City,70.954,72.512
-    .fly Lakeshire >>Fly to 湖畔镇，赤脊山
+    .fly Lakeshire >> Fly to Lakeshire
     .skill mining,125,1
     .zoneskip Redridge Mountains
 step
-    .skill mining,125 >>Level your Mining from 65-飞往赤脊山
+    .skill mining,125 >> Level your Mining from 65-125 in Redridge Mountains
     .loop 60,Redridge Mountains,39.8,39.6,47.5,38.8,54.9,44.7,60.7,44.8,71.5,50.0,67.6,52.2,65.7,60.9,61.2,65.1,53.1,76.1,65.0,75.9,70.2,74.4,74.4,83.6,77.4,67.6,81.6,69.5,86.9,61.4,84.2,50.1,80.3,42.7,76.5,36.9,66.6,42.8,60.5,39.7,51.6,40.4,46.1,23.0,41.5,14.4,37.4,13.2,33.6,7.8,37.4,13.2,41.5,14.4,46.1,23.0,45.0,31.5,40.3,32.1,29.5,22.0,24.4,25.5,23.5,32.1,19.8,34.1,20.7,28.2,20.7,37.7,29.1,36.8,39.8,39.6
 step << Mage
     #completewith next
-    .zone Stormwind City >>飞往暴风城
+    .zone Stormwind City >> Teleport to Stormwind
     .skill mining,175,1
 step << !Mage
     .goto Redridge Mountains,30.6,59.4
     .fly Stormwind
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> Travel to Stormwind City
     .skill mining,175,1
     .zoneskip Stormwind City
     .cooldown item,6948,<0,1
 step << !Mage
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,175,1
     .zoneskip Stormwind City
 step << !Mage
     #completewith next
     .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >>In Shattrath, 乘坐地铁前往暴风城 City
+    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
     .skill mining,175,1
 step
     .goto Stormwind City,60.2,37.0,20,0
@@ -380,16 +380,16 @@ step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
     .goto Stormwind City,70.954,72.512
-    .fly Refuge Pointe >>Fly to 避难谷地，阿拉希高地
+    .fly Refuge Pointe >> Fly to Refuge Pointe
     .skill mining,175,1
     .zoneskip Arathi Highlands
 step
-    .skill mining,175 >>Level your Mining from 125-飞往阿拉希高地
+    .skill mining,175 >> Level your Mining from 125-175 in Arathi Highlands
     .loop 60,Arathi Highlands,71.9,31.0,66.4,27.7,63.4,32.6,59.9,36.2,60.9,41.7,53.9,47.8,49.0,51.3,52.0,45.5,52.6,35.4,48.2,38.5,42.4,42.8,40.4,46.6,35.5,44.3,39.1,35.6,42.8,31.6,34.6,22.8,28.8,18.7,29.6,32.0,24.7,30.7,23.9,35.5,21.0,34.1,22.9,42.7,27.5,49.7,30.1,51.4,32.8,62.1,34.3,65.4,39.8,70.7,44.2,75.7,45.6,75.5,52.5,77.3,54.6,74.9,55.1,71.7,59.5,70.6,63.2,72.8,66.1,73.1,68.2,74.4,71.1,68.2,72.0,59.9,69.8,56.7,73.7,45.9,79.2,40.3,81.7,35.8,82.6,39.0,76.6,33.2,75.2,28.8,71.9,31.0
 step
     #completewith next
     .goto Arathi Highlands,45.8,46.1
-    .fly Aerie Peak >>Fly to 鹰巢山，辛特兰
+    .fly Aerie Peak >> Fly to Aerie Peak
     .skill mining,225,1
     .zoneskip The Hinterlands
 step
@@ -397,17 +397,17 @@ step
     .loop 60,The Hinterlands,70.9,63.3,73.9,58.0,72.9,53.0,76.5,52.4,77.6,48.8,72.9,48.5,64.6,43.0,60.6,38.5,61.7,34.3,67.5,36.2,69.3,27.4,66.1,21.8,67.2,16.5,68.7,14.2,64.2,16.1,58.6,20.7,59.0,28.3,57.3,35.2,57.6,38.3,51.8,47.3,47.6,38.5,46.7,35.7,45.0,41.1,40.7,45.6,38.9,47.4,34.2,42.2,32.2,43.3,32.1,48.8,28.9,53.5,24.9,59.5,26.6,68.0,30.9,62.4,35.8,64.0,34.2,68.5,31.4,70.4,31.5,72.6,34.2,74.0,36.1,68.7,39.7,65.9,45.7,70.0,49.0,65.4,50.7,67.3,52.7,58.3,58.0,51.6,65.7,54.8,66.0,60.7,70.9,63.3
 step << Mage
     #completewith next
-    .zone Ironforge >>飞往铁炉堡
+    .zone Ironforge >> Teleport to Ironforge
     .skill mining,245,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .zoneskip Ironforge
     .skill mining,245,1
 step << !Mage
     #completewith next
     .goto Shattrath City,56.3,36.9
-    .zone Ironforge >>In Shattrath, take 将炉石使用回铁炉堡
+    .zone Ironforge >> In Shattrath, take the portal to Ironforge
     .skill mining,245,1
 step
     .goto Ironforge,51.8,29.5,15,0
@@ -428,13 +428,13 @@ step << Mage
     .reputation 989,revered,<0,1
 step << Mage
     #completewith next
-    .zone Dustwallow Marsh >>飞往塞拉摩
+    .zone Dustwallow Marsh >> Teleport to Theramore
     .skill mining,245,1
     .zoneskip Tanaris
 step << !Mage
     #completewith next
     .goto Ironforge,55.501,47.742
-    .fly Wetlands >>Fly to 米奈希尔港，湿地
+    .fly Wetlands >> Fly to Menethil Harbor
     .skill mining,245,1
     .zoneskip Tanaris
 step << !Mage
@@ -445,11 +445,11 @@ step << !Mage
 step
     #completewith next
     .goto Dustwallow Marsh,67.5,51.3
-    .fly Gadgetzan >>Fly to 加基森，塔纳利斯
+    .fly Gadgetzan >> Fly to Gadgetzan
     .skill mining,245,1
     .zoneskip Tanaris
 step
-    >>Enter the Silithid Hives for veins of ore if there are any 对话，NPC在里面
+    >>Enter the Silithid Hives for veins of ore if there are any inside
     .skill mining,245 >> Level your Mining from 225-245 in Tanaris
     .loop 60,Tanaris,55.9,24.3,54.1,24.6,47.1,23.9,46.7,29.8,43.9,26.0,34.3,26.1,34.3,31.7,36.7,33.4,33.4,37.7,32.8,42.1,29.9,46.4,27.8,56.7,28.2,61.0,30.4,62.8,30.9,67.3,28.2,74.0,30.8,77.2,34.7,80.3,41.7,76.7,44.3,76.1,51.3,79.0,57.8,69.3,58.8,63.2,61.8,53.9,65.3,56.7,69.1,54.6,73.3,53.9,72.3,49.1,71.0,43.6,69.0,41.7,67.0,41.5,55.9,24.3
 step
@@ -472,20 +472,20 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step
     #completewith Hurnak
     .goto Shattrath City,64.1,41.1
-    .fly Honor Hold >>Fly to 荣耀堡，地狱火半岛
+    .fly Honor Hold >> Fly to Honor Hold
     .skill mining,325,1
     .skill riding,300,1
     .zoneskip Hellfire Peninsula
 step
     #completewith next
     .goto Hellfire Peninsula,56.7,63.8
-    .zone Hellfire Peninsula >>Fly to Honor 59-61 地狱火半岛 on your flying mount
+    .zone Hellfire Peninsula >> Fly to Honor Hold in Hellfire Peninsula on your flying mount
     .skill herbalism,325,1
     .skill riding,<300,1
 step
@@ -494,7 +494,7 @@ step
     .train 29354 >> Train Master Mining (300-375) from Hurnak inside the blacksmith at Honor Hold
     .skill mining,325
 step
-    .skill mining,325 >>Level your Mining from 300-59-61 地狱火半岛
+    .skill mining,325 >> Level your Mining from 300-325 in Hellfire Peninsula
     .loop 60,Hellfire Peninsula,48.0,58.4,51.5,54.4,53.3,56.4,57.1,52.7,60.4,51.7,59.9,47.9,49.8,48.1,46.6,43.9,48.5,35.8,54.5,30.0,51.8,23.7,49.1,28.3,44.0,29.5,42.1,33.0,40.7,30.0,37.3,30.6,34.6,30.5,33.3,33.9,37.0,39.4,40.0,43.0,41.4,47.8,43.1,55.3,38.8,52.9,37.4,50.0,31.6,48.0,31.1,43.1,28.8,40.8,25.4,46.0,16.6,45.1,16.8,38.9,13.2,37.2,11.2,48.2,7.6,49.9,14.8,60.2,20.6,54.7,23.9,56.5,22.0,63.0,26.2,78.2,28.7,78.7,30.3,71.5,27.4,66.2,30.2,64.3,30.9,60.9,35.5,59.6,35.5,64.2,36.4,69.5,41.5,64.4,43.9,66.9,47.1,65.7,47.2,61.2,48.0,58.4
 step << Mage
     #completewith next
@@ -509,7 +509,7 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,350,1
     .zoneskip Terokkar Forest
 step
@@ -527,7 +527,7 @@ step << Mage
     .zoneskip Nagrand
 step << !Mage
     #completewith next
-    .hs >>Hearth to 沙塔斯城，塔拉多
+    .hs >> Hearth to Shattrath City
     .skill mining,375,1
     .zoneskip Nagrand
     .cooldown item,6948,>0,1
