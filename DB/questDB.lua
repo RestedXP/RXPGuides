@@ -14,7 +14,7 @@ local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local backlog = {}
 local preReqCache = {}
 local sortTable = {}
-
+local questTurnIns = {}
 
 addon.questsDone = {}
 addon.questsAvailable = {}
@@ -1047,6 +1047,13 @@ if QuestDB["TBC"] then
         local g = addon:FetchGuide(group,name..suffix)
         local new = g and format("%d - %s",n,g.title or g.name)
         if g then
+            for _,step in pairs(g.steps) do
+                for _,element in pairs(step.elements) do
+                    if element.tag == "turnin" then
+                        questTurnIns[element.questId] = true
+                    end
+                end
+            end
             g.displayname = new
             g = m[g.group.."||"..g.name]
         end
@@ -1328,8 +1335,12 @@ function addon.CalculateTotalXP(flags,refresh)
                         backlog[qid] = true
                         qname = ""
                     end
+                    local prefix = ""
+                    if not questTurnIns[qid] then
+                        prefix = "*"
+                    end
                     local s = string.format(L"%dxp %s (%d)", xp,
-                                    qname, qid)
+                                    prefix..qname, qid)
                     --table.insert(outputString,s)
                     if not (missing and addon.preparedQuests[qid]) then
                         table.insert(QList,{text = s, id = qid, obj = quest})
