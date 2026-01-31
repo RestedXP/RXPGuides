@@ -3,6 +3,7 @@ local L = addon.locale.Get
 local fmt = string.format
 
 local themes = {}
+local UnitName = addon.GetUnitName
 addon.themes = themes
 
 themes['RXP Blue'] = {
@@ -96,7 +97,7 @@ themes['RXP Green'] = {
 addon.customThemeBase = CopyTable(themes.Default)
 addon.customThemeBase.name = "Custom"
 addon.customThemeBase.applicable = true
-addon.customThemeBase.author = _G.UnitName("player")
+addon.customThemeBase.author = UnitName("player") or L"Unknown"
 addon.customThemeBase.bgTextures.guideName = "Interface/BUTTONS/WHITE8X8"
 
 addon.guideTextColors = {}

@@ -19,6 +19,7 @@ local EasyMenu = function(...)
         LibDD:EasyMenu(...)
     end
 end
+local UnitName = addon.GetUnitName
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
 
@@ -29,7 +30,7 @@ addon.tracker.ui = {}
 addon.tracker._commPrefix = "RXPLTComms"
 addon.tracker.fonts = {["splits"] = "Fonts\\ARIALN.ttf"}
 
-local playerName = _G.UnitName("player")
+local playerName = UnitName("player")
 
 -- Silence our /played yellow text
 local ReportPlayedTimeToChat = false

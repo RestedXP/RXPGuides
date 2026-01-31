@@ -22,6 +22,15 @@ if C_Spell and C_Spell.GetSpellInfo then
 else
     GetSpellInfo = _G.GetSpellInfo
 end
+
+addon.GetUnitName = function(unit)
+    local n = _G.UnitName(unit)
+    if issecretvalue and issecretvalue(n) then
+        return
+    end
+    return n
+end
+
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
@@ -1106,8 +1115,8 @@ end
 
 function addon:CreateMetaDataTable(wipe)
     if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() or addon.settings.profile.preLoadData then
-        RXPCData.guideMetaData = nil
-        RXPCData.guideDisabled = nil
+        RXPCData.guideMetaData = {}
+        RXPCData.guideDisabled = {}
         local deleteIndexes = {}
         local insertItems = {}
         local guides = addon.db.profile.guides
