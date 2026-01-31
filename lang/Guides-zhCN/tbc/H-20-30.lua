@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith MeetingTW
     .goto Orgrimmar,48.97,92.84,50,0
-    .zone Orgrimmar >> Enter Orgrimmar
+    .zone Orgrimmar >>进入奥格瑞玛
     .zoneskip Orgrimmar
 step << Mage
     #completewith Horthus
@@ -51,7 +51,7 @@ step << Troll Mage
     .goto Orgrimmar,38.78,54.87,25,0
     .goto Orgrimmar,40.94,45.20,25,0
     .goto Orgrimmar,42.30,37.44,30,0
-    .goto Orgrimmar,39.50,37.17,20 >>Travel up the tower, then toward Grommash Hold
+    .goto Orgrimmar,39.50,37.17,20 >>沿着塔向上前进，然后朝格罗玛什要塞方向前往
     .zoneskip Durotar
     .isOnQuest 9813
 step << !Troll Mage
@@ -123,7 +123,7 @@ step << Mage
 step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r  |cRXP_FRIENDLY_索乌|r 对话
-    .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
+    .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
     .target Thuul
 step << Priest
     .goto Orgrimmar,35.59,87.80
@@ -156,7 +156,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto Orgrimmar,48.25,45.27
-    .abandon 10605 >>Abandon Carendin Summons
+    .abandon 10605 >>放弃任务凯伦丁的召唤
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gan'rul|r 和 |cRXP_FRIENDLY_卡祖尔|r 对话
     .accept 1507 >>接受任务噬魂者
@@ -202,7 +202,7 @@ step << Mage
 step << Mage
     .goto Orgrimmar,38.64,85.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索乌|r 对话
-    .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
+    .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
     .money <0.2000
     .target Thuul
 step << Hunter

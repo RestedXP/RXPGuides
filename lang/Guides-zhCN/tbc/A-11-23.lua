@@ -3,12 +3,12 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP TBC Guide (A)
+#group RestedXP 《《魔兽世界： 燃烧的远征》》入门指南 (A)
 << Alliance !Warlock
 #name 12-14 黑海岸
 #displayname 10-14 黑海岸 << Dwarf Hunter
 #displayname 11-14 黑海岸 << !Human
-#subgroup RestedXP Alliance 1-20
+#subgroup RestedXP 联盟 1-20级
 #defaultfor !Draenei !Warlock
 #next 14-20 Bloodmyst
 
@@ -22,7 +22,7 @@ step << !NightElf
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_尼尔·奥雷|r on the bottom floor of the barracks
     >>|cRXP_BUY_买一个|r [Simple Wood] |cRXP_BUY_和一个|r [Flint and Tinder] |cRXP_BUY_从他|r << Hunter
-    .vendor 1448 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
+    .vendor 1448 >>|cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
 	.target Neal Allen
     .money <0.08 << !Hunter
 step << !NightElf
@@ -33,7 +33,7 @@ step << !NightElf
 step << !NightElf
     #completewith DarkshoreBoat
     .goto Wetlands,7.10,57.96,30,0
-    .goto Wetlands,4.61,57.26,15 >> Travel to the dock for the boat to Auberdine
+    .goto Wetlands,4.61,57.26,15 >>抵达码头，登船到
     .zoneskip Darkshore
 step << !NightElf
     #optional
@@ -122,7 +122,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
     .goto Darkshore,36.096,44.931
     .accept 1141 >>接受任务《物归己用》 钓鱼世家
-    .turnin 1141 >>交任务《 前往熔光镇》 钓鱼世家
+    .turnin 1141 >>交任务《钓鱼世家》
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target Gubber Blump
 step
