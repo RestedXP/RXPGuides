@@ -2669,7 +2669,7 @@ step << Warlock
 step << Warlock
     #softcore
     #completewith ZeptoUC1
-    .goto Orgrimmar,36.0,37.7 
+    .goto Orgrimmar,36.0,37.7
     .deathskip >>|cRXP_WARN_Remove your|r |T136185:0|t[Demon Skin] |cRXP_WARN_buff. Run on top of the brazier, and use|r |T136126:0|t[Life Tap] |cRXP_WARN_to deathskip out of Orgrimmar|r
 step << Warlock
     #hardcore
@@ -3344,7 +3344,7 @@ step << !Tauren
     #label Fizsprocket1
     .goto Mulgore,64.95,43.33
     >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
-    >>|cRXP_WARN_Run into the mine and hug the right/east side to each him|r
+    >>|cRXP_WARN_Run into the mine and hug the right/east side to reach him|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
 step << !Tauren
@@ -3466,7 +3466,7 @@ step
     .goto Durotar,43.11,30.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Misha|r
     .accept 816 >>Accept Lost But Not Forgotten
-    .target Misha Tor'kren 
+    .target Misha Tor'kren
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -3899,7 +3899,7 @@ step
     .target Misha Tor'kren
 step
     #label FarWatchP
-    .goto The Barrens,62.26,19.38 
+    .goto The Barrens,62.26,19.38
     .subzone 379 >>Travel to Far Watch Post
     .zoneskip The Barrens
 step
