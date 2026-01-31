@@ -2850,7 +2850,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
         if bit.band(flags, 0x40) == 0x40 then
             element.ignoreIfNone = true
-            element.includeBank = not element.includeBank
+            element.ignoreBank = arg1
         end
 
         if arg1 and element.subtract and element.multiplier == 1 then
@@ -2979,11 +2979,16 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     --
 
     local count = 0
+    local bankCount = 0
     for itemId in string.gmatch(element.ids,"%d+") do
-        count = count + GetCount(tonumber(itemId))
+        local id = tonumber(itemId)
+        count = count + GetCount(id)
+        bankCount = bankCount + GetItemCount(id,true)
     end
     if count == 0 and element.ignoreIfNone then
-        numRequired = 0
+        if element.ignoreBank or bankCount == 0 then
+            numRequired = 0
+        end
     end
     if (numRequired > 0 and count > numRequired) or
         (questId and
