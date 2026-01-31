@@ -60,7 +60,7 @@ step
     #completewith DeleteHS
 	.destroy 6948 >> Destroy your |T134414:0|t[Hearthstone] from your bags, as you don't need it yet
 step
-    #laebl ATW
+    #label ATW
     .goto Elwynn Forest,48.17,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Deputy Willem|r
     .accept 783 >>接受任务《物归己用》 身边的危机
