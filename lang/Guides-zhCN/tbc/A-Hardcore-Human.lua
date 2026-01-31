@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -65,7 +66,7 @@ step << Warrior
     .train 6673 >>Train |T132333:0|t[Battle Shout]
     .target +Llane Beshere
     .goto Elwynn Forest,50.242,42.287
-    .mob Young Wolf   
+    .mob Young Wolf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r
     .target Marshal McBride
@@ -297,7 +298,7 @@ step << Rogue
     .turnin 3102 >>交任务《 前往熔光镇》 密文信件
     >>|cRXP_WARN_You don't need to train any spells|r
 step << Priest/Mage
-    >>拾取地上的 
+    >>拾取地上的
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step

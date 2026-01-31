@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #cata
 #version 1
@@ -19,7 +20,7 @@ step
 step
     #label OpeningtheDoor
     .goto 198/1,-2082.800,4424.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
     .target Matoclaw
     .accept 29145 >>Accept Opening the Door
 step
@@ -84,12 +85,12 @@ step
     .turnin 29198 >>Turn in The Sanctuary Must Not Fall
 step
     .goto 198/1,-2080.200,4417.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r
     .target Arch Druid Hamuul Runetotem
     .accept 29199 >>Accept Calling for Reinforcements
 step
     .goto 198/1,-2082.700,4424.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r
     .target Matoclaw
     .daily 29123,29149,29127,29163,29166 >>Accept whichever random daily quest is offered
 step
@@ -494,7 +495,7 @@ step
     .dailyturnin 29163 >>Turn in Rage Against the Flames
 step
     .goto 198/1,-2080.200,4417.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r
     .target Arch Druid Hamuul Runetotem
     .turnin 29199 >>Turn in Calling for Reinforcements
     .accept 29200 >>Accept Leyara
@@ -510,7 +511,7 @@ step
     .turnin 29200 >>Turn in Leyara
 step
     .goto 198/1,-2076.300,4420.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
     .target Malfurion Stormrage
     .accept 29201 >>Accept Through the Gates of Hell
 step
@@ -524,7 +525,7 @@ step
 step
     #label GatesofHell
     .goto 338,47.151,90.502
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
     .target Malfurion Stormrage
     .turnin 29201 >>Turn in Through the Gates of Hell
 ]])
@@ -546,17 +547,17 @@ step
     .zone 338 >> Go through the Portal to the Firelands
 step
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .daily 29139,29143 >>Accept whichever random daily quest is offered
     .target Rayne Feathersong
 step
     .goto 338,45.626,86.144
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r
     .daily 29138 >>Accept Burn Victims
     .target Captain Irontree
 step
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .daily 29179 >>Accept Hostile Elements
     .daily 29304,29141,29142,29137 >> Accept whichever random daily quest is offered
     .target General Taldris Moonfall
@@ -700,49 +701,49 @@ step
 step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29179 >>Turn in Hostile Elements
     .target General Taldris Moonfall
 step
     .isQuestComplete 29304
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29304 >> Turn in The Dogs of War
     .target General Taldris Moonfall
 step
     .isQuestComplete 29141
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29141 >> Turn in The Harder They Fall
     .target General Taldris Moonfall
 step
     .isQuestComplete 29142
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29142 >> Turn in Traitors Return
     .target General Taldris Moonfall
 step
     .isQuestComplete 29137
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29137 >> Turn in Breach in the Defenses
     .target General Taldris Moonfall
 step
     .isQuestComplete 29138
     .goto 338,45.626,86.144
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r
     .dailyturnin 29138 >>Turn in Burn Victims
     .target Captain Irontree
 step
     .isQuestComplete 29139
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .dailyturnin 29139 >>Turn in Aggressive Growth
     .target Rayne Feathersong
 step
     .isQuestComplete 29143
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .dailyturnin 29143 >>Turn in Wisp Away
     .target Rayne Feathersong
 
@@ -750,14 +751,14 @@ step
 
 
 --Hyjal quests
-    
+
 step
     #completewith HyjalQuests
     .goto 338,53.026,83.693
     .zone 198 >> Take the Portal to Mount Hyjal
 step --accepted back at sanctuary of malorne
     .goto 198/1,-2088.800,4452.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Soren Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Soren Moonfall|r
     .target Captain Soren Moonfall
     .daily 29128 >>Accept The Protectors of Hyjal
 step
@@ -1255,13 +1256,13 @@ step
 step
     .isQuestComplete 29128
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29128 >>Turn in The Protectors of Hyjal
     .target General Taldris Moonfall
 step
     #completewith FinishDruids
     .goto 338,47.017,91.361
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
     .accept 29181 >>Accept Druids of the Talon
     --.accept 29214 >>Accept The Shadow Wardens
     .target Malfurion Stormrage
@@ -1272,7 +1273,7 @@ step
 step
     .isQuestComplete 29181
     .goto 198,47.017,91.361
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
     .turnin 29181 >>Turn in Druids of the Talon
     .target Skylord Omnuron
 step
@@ -1284,7 +1285,7 @@ step
 step
     .isQuestTurnedIn 29181
     .goto 198/1,-2740.000,4902.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isara Riverstride|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isara Riverstride|r
     .target Isara Riverstride
     .accept 29182 >>Accept Flight of the Storm Crows
 step
@@ -1295,13 +1296,13 @@ step
 step
     .isQuestComplete 29181
     .goto 338,43.028,80.598
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skylord Omnuron|r
     .turnin 29182 >>Turn in Flight of the Storm Crows
     .target Skylord Omnuron
 step
     .isQuestTurnedIn 29181
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .daily 29206 >>Accept Into the Fire
     .target General Taldris Moonfall
 step
@@ -1584,7 +1585,7 @@ step
     .target Tholo Whitehoof
 step
     .goto 338,47.017,91.361
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
     --.accept 29181 >>Accept Druids of the Talon
     .accept 29214 >>Accept The Shadow Wardens
     .target Malfurion Stormrage
@@ -1632,7 +1633,7 @@ step
     .zoneskip 338,1
 step --accepted back at sanctuary of malorne
     .goto 198/1,-2088.800,4452.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Soren Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Soren Moonfall|r
     .target Captain Soren Moonfall
     .daily 29128 >>Accept The Protectors of Hyjal
 step
@@ -2130,13 +2131,13 @@ step
 step
     .isQuestTurnedIn 29215 -- If turned in quest to unlock Wardens
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .daily 29255,29257,29299 >>Accept whichever random daily quest is offered
     .target Avrilla
 step
     #label RayneFeathersong
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .daily 29139,29143 >>Accept whichever random daily quest is offered
     .target Rayne Feathersong
 step
@@ -2148,19 +2149,19 @@ step
     .target Ricket
 step
     .goto 338,45.626,86.144
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r
     .daily 29138 >>Accept Burn Victims
     .target Captain Irontree
 step
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .daily 29179 >>Accept Hostile Elements
     .daily 29304,29141,29142,29137 >> Accept whichever random daily quest is offered
     .target General Taldris Moonfall
 step
     .isQuestComplete 29128
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29128 >>Turn in The Protectors of Hyjal
     .target General Taldris Moonfall
 step -- 29138 Burn Victims
@@ -2341,13 +2342,13 @@ step -- 29143 Wisp Away
     >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
     .complete 29143,1 -- Close a Fire Portal 1/1
 step
-    #optional 
+    #optional
     #requires MagmaWorm
 step
-    #optional 
+    #optional
     #requires ObsidiumMeteorite
 step
-    #optional 
+    #optional
     #requires Embergris
 step
     #optional
@@ -2382,31 +2383,31 @@ step
 step
     .isQuestComplete 29255
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29255 >>Turn in Embergris
     .target Avrilla
 step
     .isQuestComplete 29257
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29257 >>Turn in Steal Magmolias
     .target Avrilla
 step
     .isQuestComplete 29299
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29299 >>Turn in Some Like It Hot
     .target Avrilla
 step
     .isQuestComplete 29139
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .dailyturnin 29139 >>Turn in Aggressive Growth
     .target Rayne Feathersong
 step
     .isQuestComplete 29143
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .dailyturnin 29143 >>Turn in Wisp Away
     .target Rayne Feathersong
 step
@@ -2436,44 +2437,44 @@ step
 step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29179 >>Turn in Hostile Elements
     .target General Taldris Moonfall
 step
     .isQuestComplete 29304
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29304 >> Turn in The Dogs of War
     .target General Taldris Moonfall
 step
     .isQuestComplete 29141
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29141 >> Turn in The Harder They Fall
     .target General Taldris Moonfall
 step
     .isQuestComplete 29142
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29142 >> Turn in Traitors Return
     .target General Taldris Moonfall
 step
     .isQuestComplete 29137
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29137 >> Turn in Breach in the Defenses
     .target General Taldris Moonfall
 step
     .isQuestComplete 29138
     .goto 338,45.626,86.144
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r
     .dailyturnin 29138 >>Turn in Burn Victims
     .target Captain Irontree
 
 -- Checking if can turn in The Shadow Wardens before starting Druids quests for the day
 step
     .goto 338,47.017,91.361
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
     .accept 29214 >>Accept The Shadow Wardens
     .target Malfurion Stormrage
 step
@@ -2483,7 +2484,7 @@ step
 step
     .isQuestComplete 29214
     .goto 198,26.799,62.157
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
     .turnin 29214 >>Turn in The Shadow Wardens
     .target Captain Saynna Stormrunner
 
@@ -2503,7 +2504,7 @@ step
 step
     .isOnQuest 29215
     .goto 338,47.584,90.558
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Saynna Stormrunner|r
     .turnin 29215 >>Turn in The Hunt Begins
     .target Captain Saynna Stormrunner
 step
@@ -2522,7 +2523,7 @@ step
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .turnin 29245 >> Turn in The Mysterious Seed
     .accept 29249 >> Accept Planting Season
     .target Avrilla
@@ -2545,13 +2546,13 @@ step
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .turnin 29254 >> Turn in Little Lasher
     .target Avrilla
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .daily 29255,29257,29299 >>Accept whichever random daily quest is offered
     .target Avrilla
 step -- Embergris 29255
@@ -2595,26 +2596,26 @@ step -- Some Like It Hot 29299
 step
     .isQuestComplete 29255
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29255 >>Turn in Embergris
     .target Avrilla
 step
     .isQuestComplete 29257
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29257 >>Turn in Steal Magmolias
     .target Avrilla
 step
     .isQuestComplete 29299
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29299 >>Turn in Some Like It Hot
     .target Avrilla
 step
     #label ITF
     .isQuestTurnedIn 29181
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .daily 29206 >>Accept Into the Fire
     .target General Taldris Moonfall
 step
@@ -3317,7 +3318,7 @@ step
     .zoneskip 338,1
 step --accepted back at sanctuary of malorne
     .goto 198/1,-2088.800,4452.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Soren Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Soren Moonfall|r
     .target Captain Soren Moonfall
     .daily 29128 >>Accept The Protectors of Hyjal
 step
@@ -3338,7 +3339,7 @@ step
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matoclaw|r or |cRXP_FRIENDLY_Dorda'en Nightweaver|r
     .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> Accept whichever random daily quest is offered
     .disablecheckbox
-    .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248 
+    .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
     .target Dorda'en Nightweaver
 step
@@ -3815,13 +3816,13 @@ step
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .daily 29255,29257,29299 >>Accept whichever random daily quest is offered
     .target Avrilla
 step
     #label RayneFeathersong
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .daily 29139,29143 >>Accept whichever random daily quest is offered
     .target Rayne Feathersong
 step
@@ -3833,19 +3834,19 @@ step
     .target Ricket
 step
     .goto 338,45.626,86.144
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r
     .daily 29138 >>Accept Burn Victims
     .target Captain Irontree
 step
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .daily 29179 >>Accept Hostile Elements
     .daily 29304,29141,29142,29137 >> Accept whichever random daily quest is offered
     .target General Taldris Moonfall
 step
     .isQuestComplete 29128
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29128 >>Turn in The Protectors of Hyjal
     .target General Taldris Moonfall
 step -- 29138 Burn Victims
@@ -4026,13 +4027,13 @@ step -- 29143 Wisp Away
     >>|cRXP_WARN_Kill the mobs that come out of it. Ensure the |cRXP_FRIENDLY_Hyjal Wisp|r doesn't die!|r
     .complete 29143,1 -- Close a Fire Portal 1/1
 step
-    #optional 
+    #optional
     #requires MagmaWorm
 step
-    #optional 
+    #optional
     #requires ObsidiumMeteorite
 step
-    #optional 
+    #optional
     #requires Embergris
 step
     #optional
@@ -4067,31 +4068,31 @@ step
 step
     .isQuestComplete 29255
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29255 >>Turn in Embergris
     .target Avrilla
 step
     .isQuestComplete 29257
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29257 >>Turn in Steal Magmolias
     .target Avrilla
 step
     .isQuestComplete 29299
     .goto 338,50.644,87.244
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avrilla|r
     .dailyturnin 29299 >>Turn in Some Like It Hot
     .target Avrilla
 step
     .isQuestComplete 29139
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .dailyturnin 29139 >>Turn in Aggressive Growth
     .target Rayne Feathersong
 step
     .isQuestComplete 29143
     .goto 338,48.513,86.257
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rayne Feathersong|r
     .dailyturnin 29143 >>Turn in Wisp Away
     .target Rayne Feathersong
 step
@@ -4121,37 +4122,37 @@ step
 step
     .isQuestComplete 29179
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29179 >>Turn in Hostile Elements
     .target General Taldris Moonfall
 step
     .isQuestComplete 29304
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29304 >> Turn in The Dogs of War
     .target General Taldris Moonfall
 step
     .isQuestComplete 29141
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29141 >> Turn in The Harder They Fall
     .target General Taldris Moonfall
 step
     .isQuestComplete 29142
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29142 >> Turn in Traitors Return
     .target General Taldris Moonfall
 step
     .isQuestComplete 29137
     .goto 338,45.589,85.822
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Taldris Moonfall|r
     .dailyturnin 29137 >> Turn in Breach in the Defenses
     .target General Taldris Moonfall
 step
     .isQuestComplete 29138
     .goto 338,45.626,86.144
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Irontree|r
     .dailyturnin 29138 >>Turn in Burn Victims
     .target Captain Irontree
 step
@@ -4213,7 +4214,7 @@ step -- The Wardens are Watching 29192
     #loop
     .goto 338,71.6,44.6,30,0
     .goto 338,72.0,37.4,30,0
-    .goto 338,68.8,41.4,30,0 
+    .goto 338,68.8,41.4,30,0
     >>Attack a |cRXP_ENEMY_Druid of the Flame|r until it is weakened, then walk it into the |cRXP_FRIENDLY_Shadow Wardens|r trap
     .complete 29192,1 -- Druid of the Flame captured 1/1
     .mob Druid of the Flame
@@ -4280,7 +4281,7 @@ step
     #optional
     #requires SolarCore
 step
-    #optional 
+    #optional
     #requires WardensWatching
 step
     #optional

@@ -1,4 +1,5 @@
 --Xal'atath
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -29,7 +30,7 @@ step
     .goto 85,54.19,56.75,-1 << Horde
     .goto 84,64.24,16.10,-1 << Alliance
     .goto 2339,49.6,31.63,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
     .accept 84371 >>Accept Lorewalking: The Blade and the High Priest
     .skipgossipid 124311
     .choose 6403389
@@ -41,7 +42,7 @@ step
     .goto 2339,49.6,31.63,-1
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 84371,1 --1/1 Talk to Lorewalker Cho to learn about the Legion invasion
-    .target Lorewalker Cho 
+    .target Lorewalker Cho
 step
     .goto 85,54.19,56.75,-1 << Horde
     .goto 84,64.24,16.10,-1 << Alliance
@@ -220,16 +221,16 @@ step
     .goto 20,58.79,76.87
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 84779,1 --1/1 Talk to Lorewalker Cho to learn of Xal'atath's gambit
-    .target Lorewalker Cho 
+    .target Lorewalker Cho
 step << Horde
     #completewith next
-    #label Every Little Death Helps H 
+    #label Every Little Death Helps H
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Xal'atath, Blade of the Black Empire|r
     .accept 54118 >>Accept Every Little Death Helps
-step << Horde 
+step << Horde
     #completewith Every Little Death Helps H
     .goto 862,78.07,36.72
-    .exitvehicle >>|cRXP_WARN_Leave the vehicle|r 
+    .exitvehicle >>|cRXP_WARN_Leave the vehicle|r
     .macro Leave Vehicle,6656430 >>/leavevehicle
 step << Alliance
     #completewith next
@@ -386,7 +387,7 @@ step
     .complete 53762,2 --1/1 Toatana slain
     .complete 53762,3 --1/1 Retrieve the Tempest Caller
     .mob Toatana
-step << Alliance 
+step << Alliance
     #loop
     .goto 864,53.02,13.68,15,0
     .goto 864,52.55,14.2,10,0
@@ -406,12 +407,12 @@ step << Horde
     .turnin 53762 >>Turn in The Tempest Crown
     .target Xal'atath
     .accept 53763 >>Accept Twist the Knife
-step 
+step
     #completewith next
     #label Xal'atath found
     #hidewindow
     >>|cRXP_WARN_Wait for the Roleplay|r.
-    .complete 53763,1 << Horde --1/1 Xal'atath found 
+    .complete 53763,1 << Horde --1/1 Xal'atath found
     .complete 54126,1 << Alliance--1/1 Xal'atath found
 step
     #completewith Xal'atath found
@@ -422,7 +423,7 @@ step
 step << Horde
     #requires Xal'atath found
     >>|cRXP_WARN_Wait for the Roleplay|r.
-    .complete 53763,1 --1/1 Xal'atath found 
+    .complete 53763,1 --1/1 Xal'atath found
 step <<Alliance
     #requires Xal'atath found
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -719,7 +720,7 @@ step
     .complete 10339,3 --2/2 Ethereum Researcher slain
     .mob +Ethereum Researcher
     .complete 10339,4 --1/1 Captain Zovax slain
-    .mob +Captain Zovax 
+    .mob +Captain Zovax
 -- step
 --     #completewith next
 --     #label Ethereum
@@ -733,7 +734,7 @@ step
 --     .cast 3365 >>Click on the |cRXP_PICK_Ethereum Transponder Zeta|r
 step
     .goto 109,56.82,38.70
-    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ethereum Transponder Zeta|r if necessary, 
+    *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ethereum Transponder Zeta|r if necessary,
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Image of Commander Ameer|r
     .turnin 10339 >>Turn in The Ethereum
     .accept 10384 >>Accept Ethereum Data
@@ -750,7 +751,7 @@ step
     .accept 10385 >>Accept Potential for Brain Damage = High
 step
     #hidewindow
-    #completewith Ethereum Relay Data 
+    #completewith Ethereum Relay Data
     #loop
     .goto 109,56.49,41.09,40,0
     .goto 109,55.99,42.73,40,0
@@ -786,7 +787,7 @@ step
     .target Image of Commander Ameer
 step
     >>Escort and Protect |cRXP_FRIENDLY_Protectorate Demolitionist|r.
-    .complete 10406,1 --Sabotage 
+    .complete 10406,1 --Sabotage
     .target Protectorate Demolitionist
     .mob Ethereum Archon
     .mob Ethereum Overlord
@@ -1632,7 +1633,7 @@ step
     .target Projection of Ve'nari
 step
     .goto 1543,61.67,59.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r   
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorewalker Cho|r
     .complete 85028,14 --1/1 Thank Lorewalker Cho
     .skipgossipid 125268
     .target Lorewalker Cho

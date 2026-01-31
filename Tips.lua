@@ -445,7 +445,7 @@ function addon.tips:LoadDangerousMobs(reloadData)
 
     -- dangerousMobs DB has nested objects, flatten and fake step data
     if not dangerousMobs.processed or reloadData == true then
-        addon.currentGuideName = "Addon Tips"
+        addon.currentGuideName = L"Addon Tips"
 
         local steps = {}
         local step, element, skip, prefix

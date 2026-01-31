@@ -1,8 +1,9 @@
 local addonName, addon = ...
-
+local L = addon.locale.Get
 local fmt = string.format
 
 local themes = {}
+local UnitName = addon.GetUnitName
 addon.themes = themes
 
 themes['RXP Blue'] = {
@@ -96,7 +97,7 @@ themes['RXP Green'] = {
 addon.customThemeBase = CopyTable(themes.Default)
 addon.customThemeBase.name = "Custom"
 addon.customThemeBase.applicable = true
-addon.customThemeBase.author = _G.UnitName("player")
+addon.customThemeBase.author = UnitName("player") or L"Unknown"
 addon.customThemeBase.bgTextures.guideName = "Interface/BUTTONS/WHITE8X8"
 
 addon.guideTextColors = {}
@@ -201,7 +202,7 @@ function addon:RegisterTheme(theme)
     if not theme then return end
 
     if not theme['name'] or not theme['author'] then
-        self.comms.PrettyPrint("Theme missing name or author")
+        self.comms.PrettyPrint(L"Theme missing name or author")
         return
     end
 
@@ -214,7 +215,7 @@ function addon:RegisterTheme(theme)
     end
 
     if not themeApplies(theme.applicable) then
-        self.comms.PrettyPrint("%s does not apply to current mode, importing anyway", theme.name)
+        self.comms.PrettyPrint(L"%s does not apply to current mode, importing anyway", theme.name)
     end
 
     themes[theme.name] = theme

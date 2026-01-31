@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #season 2
@@ -501,7 +502,7 @@ step
     #season 2
     .goto Ashenvale,89.60,40.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Kyleen|r
-    .vendor >>|cRXP_BUY_Buy up to 5|r |T236885:0|t[Major Healing Potions] |cRXP_BUY_from her if you want|r 
+    .vendor >>|cRXP_BUY_Buy up to 5|r |T236885:0|t[Major Healing Potions] |cRXP_BUY_from her if you want|r
     >>|cRXP_WARN_These can only be used within the incursion zones|r
     .target Quartermaster Kyleen
     .maxlevel 53
@@ -521,7 +522,7 @@ step
     .complete 81770,1 --Wyrmkin Nightstalker slain: 3/3
     .mob +Wyrmkin Nightstalker
     .complete 81770,2 --Terror Whelp slain: 10/10
-    .mob +Terror Whelp 
+    .mob +Terror Whelp
     .maxlevel 53
 step
     #season 2
@@ -689,7 +690,7 @@ step
     .complete 81770,1 --Wyrmkin Nightstalker slain: 3/3
     .mob +Wyrmkin Nightstalker
     .complete 81770,2 --Terror Whelp slain: 10/10
-    .mob +Terror Whelp 
+    .mob +Terror Whelp
     .maxlevel 53
 step
     #season 2
@@ -779,7 +780,7 @@ step
     .goto The Hinterlands,60.81,37.86,20 >> Head to the bridge leading to Seradane
     .maxlevel 53
 step
-    .goto The Hinterlands,61.4,34.6 
+    .goto The Hinterlands,61.4,34.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Alandra|r
     .target Quartermaster Alandra
     .collect 221480,1 << Mage --Spell Notes: Molten Armor
@@ -903,7 +904,7 @@ step
     .target Field Captain Korlian
     .maxlevel 53
 step
-    .goto The Hinterlands,61.4,34.6 
+    .goto The Hinterlands,61.4,34.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Alandra|r
     .vendor >> |cRXP_BUY_Buy up to 5|r |T236885:0|t[Major Healing Potions] |cRXP_BUY_from her if you want.|r |cRXP_WARN_These can only be used within the incursion zones|r
     .target Quartermaster Alandra
@@ -925,7 +926,7 @@ step
 step
     >>Enter the cave and clear up the ramp leading to the right. Loot the chest there for the |T133247:0|t[|cRXP_PICK_Elunar Relic|r]
     .goto 1425/0,-3799.300,354.700
-    .complete 81830,1 --|Elunar Relic: 1/1 
+    .complete 81830,1 --|Elunar Relic: 1/1
     .maxlevel 53
 step
     .solo
@@ -951,7 +952,7 @@ step
 step
     .group 3
     .goto The Hinterlands,56.6,44.6
-    >>Kill the |cRXP_ENEMY_Doomkin|r boss in the big room at the bottom of the cave. 
+    >>Kill the |cRXP_ENEMY_Doomkin|r boss in the big room at the bottom of the cave.
     >>|cRXP_WARN_Be careful as he casts|r |T136096:0|t[Moonfire] |cRXP_WARN_and|r |T136006:0|t[Wrath] |cRXP_WARN_dealing high damage and has an AoE|r |T136183:0|t[Fear]
     .complete 81838,1 --Defeat Doomkin
     .mob Doomkin
@@ -1186,7 +1187,7 @@ step
     .train 429261,1 << Paladin
     .train 427080,1 << Warrior
     .maxlevel 53
-step 
+step
     #season 2
     #optional
     .goto Feralas,48.49,12.44
@@ -1199,7 +1200,7 @@ step
     .itemcount 219515,10 --Greater Moonstone
     .target Field Captain Arunnel
     .maxlevel 53
-step 
+step
     #season 2
     #optional
     .goto Feralas,48.49,12.44
@@ -1208,7 +1209,7 @@ step
     .itemcount 219514,10 --Moonroot
     .target Field Captain Arunnel
     .maxlevel 53
-step 
+step
     #season 2
     #optional
     .goto Feralas,48.49,12.44
@@ -1217,7 +1218,7 @@ step
     .itemcount 219515,10 --Greater Moonstone
     .target Field Captain Arunnel
     .maxlevel 53
-step 
+step
     #season 2
     #optional
     .goto Feralas,48.49,12.44
@@ -1226,7 +1227,7 @@ step
     .itemcount 219517,10 --Moondragon Scale
     .target Field Captain Arunnel
     .maxlevel 53
-step 
+step
     #season 2
     #optional
     .goto Feralas,48.49,12.44
@@ -1236,7 +1237,7 @@ step
     .turnin -81867 >> Turn in Feralas Mission XII: Greater Moondragon Scales
     .target Field Captain Arunnel
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Field Captain Arunnel|r
@@ -1266,7 +1267,7 @@ step
     .accept 81871 >> Accept Feralas Mission XV: Defeat Slirena
     .target Field Captain Arunnel
     .maxlevel 53
-step 
+step
     #season 2
     #completewith IncursionsComplete3
     .goto Feralas,50.95,11.67,30,0
@@ -1274,8 +1275,8 @@ step
     >>|cRXP_WARN_Run straight past the |cRXP_ENEMY_Satyr's|r, |cRXP_ENEMY_Felhounds|r and |cRXP_ENEMY_Imps|r. They will reset agro as you enter the portal|r
     .aura 444762
     .maxlevel 53
-step 
-    #season 2 
+step
+    #season 2
     #completewith DreamWardenGorlas
     >>Kill |cRXP_ENEMY_Frenzied Whelps|r and |cRXP_ENEMY_Wyrmkin Berserkers|r
     >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_Wyrmkin Berserkers|r |cRXP_WARN_are elite. They can be difficult to solo|r
@@ -1284,7 +1285,7 @@ step
     .complete 81857,2 --Wyrmkin Berserker slain 10/10
     .mob +Wyrmkin Berserker
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,49.64,15.44
     .gossipoption 122147 >>Talk to |cRXP_FRIENDLY_Mellias Earthtender|r. She should start following you around
@@ -1296,7 +1297,7 @@ step
     +|cRXP_WARN_Be careful, if you die all of escort NPCs following you will return to where you picked them up and you will have to find them again|r
     >>|cRXP_WARN_The escort NPC will also stop following you 15 minutes after you pick them up so try to be quick!|r
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,50.71,17.17
     >>Loot a |cRXP_LOOT_Moonglow Dragon Egg|r on the ground
@@ -1311,7 +1312,7 @@ step
     .complete 81868,1 --Tyrannikus slain
     .mob Tyrannikus
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,50.73,19.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dreamwarden Sheldryn|r
@@ -1337,7 +1338,7 @@ step
     .complete 81870,1 --Alondrius Slain
     .unitscan Alondrius
     .maxlevel 53
-step 
+step
     #season 2
     #label DreamWardenGorlas
     .goto Feralas,47.14,21.63
@@ -1346,7 +1347,7 @@ step
     .target Dreamwarden Gorlas
     .skipgossip
     .maxlevel 53
-step 
+step
     #season 2
     #completewith RuinsofRav
     #requires Alondrius
@@ -1356,14 +1357,14 @@ step
     .complete 81855,2 --Vengeful Son slain 10/10
     .mob +Vengeful Son
     .maxlevel 53
-step 
+step
     #season 2
     #requires Alondrius
     .goto Feralas,46.63,18.94
     >>Loot the |cRXP_LOOT_Mad Keeper's Notes|r on the ground
     .complete 81863,1 --Mad Keeper's Notes: 1/1
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,45.81,16.47
     .gossipoption 122148 >>Talk to |cRXP_FRIENDLY_Nerene Brooksinger|r. She should start following you around
@@ -1371,13 +1372,13 @@ step
     .skipgossip
     .isOnQuest 81873
     .maxlevel 53
-step 
+step
     #season 2
     #label RuinsofRav
     .goto Feralas,41.94,12.93
     .subzone 1114 >>Travel to the Ruins of Ravenwind
     .maxlevel 53
-step 
+step
     #season 2
     #completewith IncursionsComplete3
     >>Kill |cRXP_ENEMY_Dreamspring Roguefeathers|r and |cRXP_ENEMY_Dreamspring Stormcallers|r
@@ -1386,7 +1387,7 @@ step
     .complete 81856,2 --Dreamspring Stormcaller 10/10
     .mob +Dreamspring Stormcaller
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,38.94,13.13
     >>Loot the |cRXP_LOOT_Harpy Screed|r on the ground
@@ -1402,7 +1403,7 @@ step
     .complete 81871,1 --Slirena slain
     .mob Slirena
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,37.71,12.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dreamwarden Anadelle|r
@@ -1410,7 +1411,7 @@ step
     .target Dreamwarden Anadelle
     .skipgossip
     .maxlevel 53
-step 
+step
     #season 2
     #label IncursionsComplete3
     .goto Feralas,40.58,8.09
@@ -1418,7 +1419,7 @@ step
     .target Jamniss Treemender
     .isOnQuest 81874
     .maxlevel 53
-step 
+step
     #season 2
     #loop
     .goto Feralas,42.11,9.07,0
@@ -1438,7 +1439,7 @@ step
     .complete 81856,2 --Dreamspring Stormcaller 10/10
     .mob +Dreamspring Stormcaller
     .maxlevel 53
-step 
+step
     #season 2
     #loop
     .goto Feralas,46.44,15.89,0
@@ -1454,8 +1455,8 @@ step
     .complete 81855,2 --Vengeful Son slain 10/10
     .mob +Vengeful Son
     .maxlevel 53
-step 
-    #season 2 
+step
+    #season 2
     #loop
     .goto Feralas,49.81,15.80,0
     .goto Feralas,53.85,12.74,0
@@ -1473,7 +1474,7 @@ step
     .complete 81857,2 --Wyrmkin Berserker slain 10/10
     .mob +Wyrmkin Berserker
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,51.00,11.69
     >>Travel toward the |cRXP_PICK_Emerald Dream Portal|r
@@ -1490,14 +1491,14 @@ step
     .target
     .target +Jamniss Treemender
     .maxlevel 53
-step 
+step
     #season 2
     #completewith next
     .goto Feralas,50.95,11.67,30,0
     .goto Feralas,51.28,10.64,20 >>Exit the |cRXP_PICK_Emerald Dream Portal|r
     .aura -444762
     .maxlevel 53
-step 
+step
     #season 2
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Field Captain Arunnel|r

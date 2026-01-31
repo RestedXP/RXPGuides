@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -246,7 +247,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It can be used from any range as long as you have one targeted|r
-    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r 
+    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -300,7 +301,7 @@ step << !Dwarf/!Hunter
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
-    .target Sentinel Glynda Nal'Shea   
+    .target Sentinel Glynda Nal'Shea
 step
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
@@ -1015,7 +1016,7 @@ step
 step
 	#completewith RuinousPolyspore
 	>>Loot a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These are all throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These are all throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #completewith SatyrFelsworn
@@ -1023,7 +1024,7 @@ step
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] 
+    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r]
     .use 23900 >> |cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] |cRXP_WARN_to start the quest|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >> Accept Signs of the Legion
@@ -1035,7 +1036,7 @@ step
 step
     .goto Bloodmyst Isle,36.498,71.338,30,0
     .goto Bloodmyst Isle,38.416,82.003
-    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] 
+    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r]
     .use 23900 >> |cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_WARN_If you do not see him patrolling through the camps, wait for him to spawn at the purple sigil on the ground at the south. It can take 3-6 minutes for him to spawn|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
@@ -1653,7 +1654,7 @@ step
     .mob Royal Blue Flutterer
 step
     #completewith GCorpse
-    .subzone 3588 >> Travel to The Cyro-Core 
+    .subzone 3588 >> Travel to The Cyro-Core
 step
     #label GCorpse
     .goto Bloodmyst Isle,37.502,61.239
@@ -1670,7 +1671,7 @@ step
     .goto Bloodmyst Isle,35.61,61.49,60,0
     >>Kill |cRXP_ENEMY_Sunhawk Reclaimers|r. Loot them for |cRXP_LOOT_Galaen's Amulet|r and their |cRXP_LOOT_Medical Supplies|r
     >>You can also loot the |cRXP_LOOT_Medical Supplies|r on the ground
-	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_casts|r  
+	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_casts|r
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
     .mob Sunhawk Reclaimer
@@ -2296,7 +2297,7 @@ step << Hunter
 step << Priest
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oss|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better one|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better one|r
     .goto The Exodar,46.386,61.499
     .goto The Exodar,63.363,58.999,0
     .collect 5210,1 --Burning Wand (1)
@@ -2306,7 +2307,7 @@ step << Priest
 step << Priest
     #ssf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oss|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r
     .goto The Exodar,46.386,61.499
     .collect 5210,1 --Burning Wand (1)
     .target Oss
@@ -2508,7 +2509,7 @@ step << Paladin/Warrior
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step << !NightElf !Draenei
 .dungeon DM
     #optional
@@ -2687,7 +2688,7 @@ step
 .dungeon DM
     #label CollectingMemories
     .goto StormwindClassic,65.438,21.175
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
     .target Wilder Thistlenettle
@@ -3400,7 +3401,7 @@ step
     .goto Darkshore,37.78,44.06
     .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the|r |cRXP_PICK_Auberdine Moonwell|r
     .collect 12347,1,4763,1
-    .isOnQuest 4763 
+    .isOnQuest 4763
 step
     #optional
     #completewith MistVeil
@@ -3787,7 +3788,7 @@ step << Rogue
 step
     #optional
     #completewith next
-    .isOnQuest 1138  
+    .isOnQuest 1138
     >>Kill |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Reef Crawler
@@ -5120,7 +5121,7 @@ step
     .complete 1025,1 -- Foulweald Den Watcher slain
     .mob +Foulweald Den Watcher
 step
-    .goto Ashenvale,49.79,67.21    
+    .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .accept 1016 >> Accept Elemental Bracers
     .target Sentinel Velene Starstrike
@@ -5182,7 +5183,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fp Ratchet >> Get the Ratchet Flight Path
     .fly Astranaar>> Fly to Astranaar
-    .target Bragok  
+    .target Bragok
 step
 .dungeon WC
     .goto The Barrens,63.084,37.163
@@ -5395,7 +5396,7 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     >>|cRXP_WARN_Ensure you die on the east side of the |cRXP_ENEMY_Murloc|r lake so you are sent to Astranaar|r
 step
-    .goto Ashenvale,49.79,67.21    
+    .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .turnin 1017 >> Turn in Mage Summoner
 	>>|cRXP_WARN_This quest will reward you with the|r |T134754:0|t[Light of Elune]

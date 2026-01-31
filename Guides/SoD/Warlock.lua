@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
@@ -1594,7 +1595,7 @@ step
     .goto Azshara,25.0,81.4,0
     .goto Azshara,30.2,79.8,0
     .goto Azshara,33.0,81.4,0
-    
+
     .collect 221499,1 --Rune of the felguard
     .use 223148 --Otherworldy Treasure
     .unitscan Fel Sliver
@@ -1620,7 +1621,7 @@ step
     #completewith next
     .zone Feralas >> Travel to Feralas
 step
-    .goto Feralas,69.6,43.3 
+    .goto Feralas,69.6,43.3
     >>Head to the marked location west of Camp Mojache. Look for a |cRXP_ENEMY_Dead Diseased Grimtotem Shaman|r laying next to a tree. Next to the corpse you will find a |cRXP_PICK_Grimtotem Chest|r, loot it for |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r
     .collect 221974,1 --Grimtotem Necklace 1/1
     .unitscan Dead Diseased Grimtotem Shaman
@@ -1785,7 +1786,7 @@ step
     .goto Blasted Lands,68.050,28.667
     >>Head to the |cRXP_PICK_Altar|r at the back of the cave
     >>|cRXP_WARN_Before clicking the |cRXP_PICK_Altar|r, ensure you have used your|r |T134131:0|t[Greater Spellstone]|cRXP_WARN_,|r |T136121:0|t[Shadow Ward] |cRXP_WARN_and|r |T136190:0|t[Sacrifice] |cRXP_WARN_as you are about to take substantial damage upon clicking the |cRXP_PICK_Altar|r, and summoning |cRXP_ENEMY_Heliath|r in the process. |cRXP_ENEMY_Heliath|r is a level 56 elite|r
-    >>Kill |cRXP_ENEMY_Heliath|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Infernal Armor|r] 
+    >>Kill |cRXP_ENEMY_Heliath|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Infernal Armor|r]
     .collect 225687,1
     .mob Heliath
 step

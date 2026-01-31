@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -2090,7 +2091,7 @@ step
     .goto Kalimdor,43.98,35.30,40 >>前往暴风城大教堂内，与 the entrance of Blackfathom Deeps
 step
     #completewith next
-    >>拾取地上的 
+    >>拾取地上的
     .complete 6563,1 --Sapphire of Aku'Mai (20)
 step
     #loop
@@ -2119,7 +2120,7 @@ step
     .goto Kalimdor,43.94,34.86,20,0
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,44.34,35.11,20,0
-    >>拾取地上的 
+    >>拾取地上的
     .complete 6563,1 --Sapphire of Aku'Mai (20)
 step
     #completewith Zoram2
@@ -2551,7 +2552,7 @@ step << Rogue
 step << Rogue
     #label roguetowerq
     .goto The Barrens,54.72,5.74
-    >>Run into the Rogue Tower 和 kill |cRXP_ENEMY_Drones|r,|cRXP_ENEMY_Patrollers|r和 
+    >>Run into the Rogue Tower 和 kill |cRXP_ENEMY_Drones|r,|cRXP_ENEMY_Patrollers|r和
     .complete 2478,1 --Mutated Venture Co. Drone (2)
     .mob +Mutated Venture Co. Drone
     .complete 2478,3 --Venture Co. Patroller (2)
@@ -2842,17 +2843,17 @@ step << Rogue
     .goto Hillsbrad Foothills,61.55,19.19
     >>等待 the cure
     .complete 2480,1 --Cure Completed (1)
-step << Rogue  
-    .goto Hillsbrad Foothills,61.64,19.19 
+step << Rogue
+    .goto Hillsbrad Foothills,61.64,19.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hinott|r
-    .turnin 2480 >>交任务《 前往熔光镇》 希诺特的帮助 
+    .turnin 2480 >>交任务《 前往熔光镇》 希诺特的帮助
     .target Serge Hinott
 step << Rogue
     #completewith TarrenMillPickups
     .cast 10723 >>|cRXP_WARN_使用|r |T134807:0|t[Hinott's Oil] |cRXP_WARN_to cure yourself of the|r |T136230:0|t[Touch of Zanzil]
-step << Rogue    
+step << Rogue
     #completewith TarrenMillPickups
-    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] 
+    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons]
     .collect 6947,20,1067,1 --Collect Instant Poison (20)
 step
     .goto Hillsbrad Foothills,61.44,19.05
@@ -2924,7 +2925,7 @@ step
 step << Shaman/Warrior
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -2934,7 +2935,7 @@ step << Shaman/Warrior
 step << Rogue
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -2969,12 +2970,12 @@ step << Rogue
     .itemcount 6947,2
 step
 	#completewith next
-    >>击杀 route.拾取地上的 them for their |cRXP_LOOT_Tongues|r和 
+    >>击杀 route.拾取地上的 them for their |cRXP_LOOT_Tongues|r和
     >>|cRXP_WARN_Avoid|r |cRXP_ENEMY_Elder Gray Bears|r |cRXP_WARN_and|r |cRXP_ENEMY_被驯养的食苔蛛|r |cRXP_WARN_as they're high level and not worth killing|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob +Gray Bear
     .mob +Vicious Gray Bear
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
     .mob +Forest Moss Creeper
     .isOnQuest 496
 step
@@ -2983,7 +2984,7 @@ step
     .isOnQuest 549,1066,498
 step
     #completewith Drull
-    >>击杀 和  
+    >>击杀 和
     >>拾取地上的 the |cRXP_ENEMY_Shadow Mages|rfor their |cRXP_LOOT_Vials of Innocent Blood|r
     .complete 549,1 --Kill Syndicate Rogue (x10)
     .mob +Syndicate Rogue
@@ -3001,7 +3002,7 @@ step
 step
     #loop
     .goto Hillsbrad Foothills,79.45,40.57,0
-	.goto Hillsbrad Foothills,77.99,40.19,0   
+	.goto Hillsbrad Foothills,77.99,40.19,0
     .goto Hillsbrad Foothills,79.45,40.57,15,0
 	.goto Hillsbrad Foothills,77.99,40.19,15,0
 	>>击杀 for his |cRXP_LOOT_Gold Key|r
@@ -3048,7 +3049,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    |cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r] |cRXP_WARN_and|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
+    |cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r] |cRXP_WARN_and|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r]
     .use 4831
     .use 4794
     .itemcount 4831,1
@@ -3061,7 +3062,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    |cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r] 
+    |cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r]
     .use 4831
     .itemcount 4831,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<76
@@ -3070,7 +3071,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    |cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
+    |cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3144,7 +3145,7 @@ step
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob +Gray Bear
     .mob +Vicious Gray Bear
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
     .mob +Forest Moss Creeper
     .isOnQuest 496
 step
@@ -3243,7 +3244,7 @@ step
 	>>击杀 和 around the fields
     >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_希尔斯布莱德农夫|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_你|r << Rogue/Warrior/Shaman
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
-    .mob +Hillsbrad Farmer 
+    .mob +Hillsbrad Farmer
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
     .mob +Hillsbrad Farmhand
 step
@@ -3279,9 +3280,9 @@ step
     .goto Hillsbrad Foothills,33.81,40.91,40,0
     .goto Hillsbrad Foothills,35.49,40.36,40,0
 	>>击杀 和 around the fields
-    >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_希尔斯布莱德农夫|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_你|r << Rogue/Warrior/Shaman 
+    >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_希尔斯布莱德农夫|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_你|r << Rogue/Warrior/Shaman
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
-    .mob +Hillsbrad Farmer 
+    .mob +Hillsbrad Farmer
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
     .mob +Hillsbrad Farmhand
 step
@@ -3574,7 +3575,7 @@ step << Hunter
 step << Shaman/Warrior
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -3584,7 +3585,7 @@ step << Shaman/Warrior
 step << Rogue
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -3639,7 +3640,7 @@ step
     .isOnQuest 1014
 step
     #completewith FlytoUC
-    .goto Silverpine Forest,45.51,41.26,150,0 
+    .goto Silverpine Forest,45.51,41.26,150,0
     .subzone 228 >>Travel to 瑟伯切尔，银松森林
     .dungeon SFK
 step
@@ -3725,9 +3726,9 @@ step << Rogue
     .target Ezekiel Graves
     .zoneskip Undercity,1
     .dungeon SFK
-step << Rogue    
+step << Rogue
     #completewith OrgFood1
-    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] 
+    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons]
     .collect 6947,40,1067,1 --Collect Instant Poison (40)
     .dungeon SFK
 step << Rogue
@@ -3834,7 +3835,7 @@ RXPGuides.RegisterGuide([[
 step << Shaman/Warrior
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Delgo|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -3979,7 +3980,7 @@ step << Warrior
 step
     #label CampTHS2
     .goto The Barrens,45.58,59.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比鲁拉|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比鲁拉|r
     .home >>Set your Hearthstone to Camp Taurajo
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
@@ -4033,7 +4034,7 @@ step
     .accept 897 >>接受任务《物归己用》 收割者
     .use 5138
     .unitscan Silithid Harvester
-step 
+step
     #label SilithidEggs
     #loop
     .goto The Barrens,42.91,69.86,0
@@ -4458,21 +4459,21 @@ step
     .destroy 5058 >>|cRXP_WARN_Destroy any extra|r |T132834:0|t[Silithid Eggs] |cRXP_WARN_you still have|r
 step
     .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Innkeeper Boorand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>将你的炉石设置为暮色森林
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .isQuestAvailable 1096
 step << Rogue
     .goto The Barrens,51.39,30.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈拉玛|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈拉玛|r
     .vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and supplies for|r |T132273:0|t[Instant Poison]
     .target Hula'mahi
     .subzoneskip 380,1
 step << Hunter
     #completewith next
     .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
     .fly Orgrimmar >>Fly to 奥格瑞玛，杜隆塔尔
     .zoneskip Orgrimmar
     .target Devrak
@@ -4493,7 +4494,7 @@ step << Hunter
 step << !Hunter
     #completewith IshaAwak
     .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
     .fly Ratchet >>Fly to 棘齿城，北贫瘠之地
     .target Devrak
     .subzoneskip 392
@@ -4708,7 +4709,7 @@ step
     .target Senani Thunderheart
 step
     .goto Ashenvale,74.00,60.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯利斯克|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯利斯克|r
     .home >>将你的炉石设置为铁炉堡 Post
     .target Innkeeper Kaylisk
     .bindlocation 431
@@ -4835,7 +4836,7 @@ step
     .goto Ashenvale,64.28,75.33,10,0
     .goto Ashenvale,64.81,75.34
     >>跟随 |cRXP_FRIENDLY_托雷克|r
-    >>Let |cRXP_FRIENDLY_托雷克|r和 his |cRXP_FRIENDLY_Splintertree Raiders|rtank the |cRXP_ENEMY_银翼战士|r和 
+    >>Let |cRXP_FRIENDLY_托雷克|r和 his |cRXP_FRIENDLY_Splintertree Raiders|rtank the |cRXP_ENEMY_银翼战士|r和
     >>|cRXP_WARN_When you clear the building, run toward the Balcony. When |cRXP_ENEMY_杜瑞尔·月火|r comes, let |cRXP_FRIENDLY_托雷克|r and his |cRXP_FRIENDLY_Splintertree Raiders|r take aggro before you deal damage|r
     .complete 6544,1 --Take Silverwing Outpost
     .mob Silverwing Warrior
@@ -4963,7 +4964,7 @@ step
     .complete 216,2 --Kill Thistlefur Shaman (x8)
     .mob +Thistlefur Shaman
 	.complete 216,1 --Kill Thistlefur Avenger (x8)
-    .mob +Thistlefur Avenger 
+    .mob +Thistlefur Avenger
 step
     #label EntertheHold
     .goto Ashenvale,38.67,30.62,40 >>Enter Thistlefur Hold
@@ -5014,7 +5015,7 @@ step
     .complete 216,2 --Kill Thistlefur Shaman (x8)
     .mob +Thistlefur Shaman
 	.complete 216,1 --Kill Thistlefur Avenger (x8)
-    .mob +Thistlefur Avenger 
+    .mob +Thistlefur Avenger
 step << Shaman
     .goto Ashenvale,33.55,67.47
     >>|cRXP_WARN_Use the|r |T132821:0|t[Empty Blue Waterskin] |cRXP_WARN_under the Gazebo|r
@@ -5287,7 +5288,7 @@ step
     .dungeon BFD
 step
     #completewith next
-    >>拾取地上的 
+    >>拾取地上的
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .dungeon BFD
     .isOnQuest 6563
@@ -5318,7 +5319,7 @@ step
     .goto Kalimdor,43.94,34.86,20,0
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,44.34,35.11,20,0
-    >>拾取地上的 
+    >>拾取地上的
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .dungeon BFD
     .isOnQuest 6563
@@ -5619,7 +5620,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche] 
+    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche]
     .use 2526
     .itemcount 2526,1
     .itemStat 17,QUALITY,<7
@@ -5767,10 +5768,10 @@ step << Mage
     .train 8412 >>训练你的职业技能
     .target Archmage Shymm
     .xp <30,1
-step << Mage    
+step << Mage
     .goto Thunder Bluff,22.48,16.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Birgitte|r
-    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff] 
+    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff]
     .target Birgitte Cranston
     .xp <30,1
 step << Shaman
@@ -6226,10 +6227,10 @@ step
     .goto Thousand Needles,14.01,40.27,15,0
     .goto Thousand Needles,14.92,39.63,15,0
     .goto Thousand Needles,16.46,41.09,25,0
-    .goto Thousand Needles,17.89,40.57,20 >>Run up the path.前去找 
+    .goto Thousand Needles,17.89,40.57,20 >>Run up the path.前去找
 step
     #completewith PaokaEscort
-    >>拾取地上的 
+    >>拾取地上的
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
 step
     #label Paoka1
@@ -6254,7 +6255,7 @@ step
     .goto Thousand Needles,10.68,40.95,50,0
     .goto Thousand Needles,11.98,36.72,50,0
     .goto Thousand Needles,13.91,39.11,50,0
-    >>拾取地上的 
+    >>拾取地上的
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
 step
     #completewith Messenger
@@ -6648,10 +6649,10 @@ step << Mage
     .train 8422 >>训练你的职业技能
     .target Archmage Shymm
     .xp <32,1
-step << Mage    
+step << Mage
     .goto Thunder Bluff,22.48,16.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Birgitte|r
-    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff] 
+    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff]
     .target Birgitte Cranston
     .xp <30,1
 step << Shaman
@@ -6756,7 +6757,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith TearMoons
-    +|cRXP_WARN_Equip the|r |T135275:0|t[Broadsword] 
+    +|cRXP_WARN_Equip the|r |T135275:0|t[Broadsword]
     .use 2520
     .itemcount 2520,1
     .itemStat 16,QUALITY,<7
@@ -6787,7 +6788,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche] 
+    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche]
     .use 2526
     .itemcount 2526,1
     .itemStat 17,QUALITY,<7
@@ -6949,7 +6950,7 @@ step
     #label FlyFreewind
     #completewith FreewindHome
     .goto Dustwallow Marsh,35.57,31.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙尔迪|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙尔迪|r
     .fp Brackenwall >> Get the Brackenwall Village Flight Path
     .fly Freewind Post >>Fly to 乱风岗 ，千针石林
     .target Shardi
@@ -7075,7 +7076,7 @@ step
     .goto Thousand Needles,35.68,39.25,20,0
     .goto Thousand Needles,34.32,35.74,20,0
     .goto Thousand Needles,35.56,30.94,20,0
-    .goto Thousand Needles,36.97,31.97,20 >>前去找 the |cRXP_PICK_篝火|ron the northern/eastern plateau 
+    .goto Thousand Needles,36.97,31.97,20 >>前去找 the |cRXP_PICK_篝火|ron the northern/eastern plateau
 step
     >>Clear the |cRXP_ENEMY_Grimtotems|r和 then light the |cRXP_PICK_篝火|r
 	>>击杀 for her |cRXP_LOOT_Skin|r
@@ -7466,7 +7467,7 @@ step
 step << Warrior
     #completewith next
     .goto The Barrens,65.09,47.81,90,0
-    .goto The Barrens,68.61,49.16,100 >>前往弗雷岛 
+    .goto The Barrens,68.61,49.16,100 >>前往弗雷岛
 step << Warrior
     .goto The Barrens,68.62,49.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Klannoc|r
@@ -7475,7 +7476,7 @@ step << Warrior
     .target Klannoc Macleod
 step << Warrior
 	>>Step onto the grate behind you. Quickly kill the |cRXP_ENEMY_挑衅者|r that come one by one
-    >>击杀 
+    >>击杀
     .goto The Barrens,68.59,48.76
     .complete 1719,1 --Step on the grate to begin the Affray (1)
     .complete 1719,2 --Big Will (1)

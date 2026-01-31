@@ -12,6 +12,7 @@ local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_SpellBook and C_SpellBook.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
+local UnitName = addon.GetUnitName
 
 -- start, duration, enabled, modRate = GetSpellCooldown(spell)
 local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
@@ -2826,7 +2827,7 @@ flags:
 8   (0x8): Includes items in your bank into the item count
 16 (0x10): Element doesn't complete itself if the quest is turned in
 32 (0x20): Subtracts from the given skill or profession given by arg1
-64 (0x40): Set the number of items required to 0 if you have 0 of that item
+64 (0x40): Set the number of items required to 0 if you have 0 of that item, arg1 has to be 1
 negative sign: same as 3 (0x2+0x1), -5 subtracts 5 units for each quest item
 
 By default, the element will complete itself if the quest ID provided is turned in
@@ -2850,7 +2851,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
         if bit.band(flags, 0x40) == 0x40 then
             element.ignoreIfNone = true
-            element.includeBank = not element.includeBank
+            element.ignoreBank = arg1
         end
 
         if arg1 and element.subtract and element.multiplier == 1 then
@@ -2979,11 +2980,16 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     --
 
     local count = 0
+    local bankCount = 0
     for itemId in string.gmatch(element.ids,"%d+") do
-        count = count + GetCount(tonumber(itemId))
+        local id = tonumber(itemId)
+        count = count + GetCount(id)
+        bankCount = bankCount + GetItemCount(id,true)
     end
     if count == 0 and element.ignoreIfNone then
-        numRequired = 0
+        if element.ignoreBank or bankCount == 0 then
+            numRequired = 0
+        end
     end
     if (numRequired > 0 and count > numRequired) or
         (questId and
@@ -3142,7 +3148,7 @@ function addon.functions.xp(self, ...)
                     element.rawtext = element.text
                 end
             else
-                element.text = "Grind to level " .. tostring(level)
+                element.text = L"Grind to level " .. tostring(level)
             end
         end
         element.skipstep = skipstep
@@ -3448,7 +3454,7 @@ function addon.functions.reputation(self, ...)
                                        factionname)
                 end
             else
-                element.text = fmt("Grind to %s with %s",
+                element.text = fmt(L"Grind to %s with %s",
                                              standinglabel, factionname)
             end
         end
@@ -4316,7 +4322,7 @@ function addon.GetSubZoneId(zone,x,y,ignoreOutput)
         if text and text ~= "" then
             element.text = text
         else
-            element.text = "Go to " .. subZone
+            element.text = L"Go to " .. subZone
         end
 
         return element
@@ -4397,7 +4403,7 @@ function addon.functions.zone(self, ...)
         if text and text ~= "" then
             element.text = text
         else
-            element.text = "Go to " .. zone
+            element.text = L"Go to " .. zone
         end
         element.tooltipText = element.icon .. text
         return element
@@ -4502,7 +4508,7 @@ function addon.functions.link(self, ...)
 end
 
 _G.StaticPopupDialogs["RXP_Link"] = {
-    text = "Press Ctrl+C to copy the URL to your clipboard",
+    text = L"Press Ctrl+C to copy the URL to your clipboard",
     hasEditBox = 1,
     button1 = _G.OKAY,
     OnShow = function(self)
@@ -4738,8 +4744,18 @@ function addon.functions.blastedLands(self)
 
     if type(self) == "string" then -- on parse
         local element = {}
+        local gizzard = GetItemInfo(8396)
+        local brain = GetItemInfo(8394)
+        local pincer = GetItemInfo(8393)
+        local lung = GetItemInfo(8392)
+        local jowl = GetItemInfo(8391)
         element.text =
-            "Collect the following items:\n14 Vulture Gizzard\n11 Basilisk Brain\n6 Scorpok Pincer\n6 Blasted Boar Lung\n5 Snickerfang Jowl"
+            format("Collect the following items:\n14 %s\n11 %s\n6 %s\n6 %s\n5 %s",
+                              gizzard or L"Vulture Gizzard",
+                              brain or L"Basilisk Brain",
+                              pincer or L"Scorpok Pincer",
+                              lung or L"Blasted Boar Lung",
+                              jowl or L"Snickerfang Jowl")
         element.icon = addon.icons.collect
         element.dynamicText = true
         return element
@@ -4750,9 +4766,17 @@ function addon.functions.blastedLands(self)
     local step = self.element.step
 
     local id = {8396, 8394, 8392, 8393, 8391}
+    local gizzard = GetItemInfo(8396)
+    local brain = GetItemInfo(8394)
+    local pincer = GetItemInfo(8393)
+    local lung = GetItemInfo(8392)
+    local jowl = GetItemInfo(8391)
     local name = {
-        "Vulture Gizzard", "Basilisk Brain", "Blasted Boar Lung",
-        "Scorpok Pincer", "Snickerfang Jowl"
+        gizzard or L"Vulture Gizzard",
+        brain or L"Basilisk Brain",
+        lung or L"Blasted Boar Lung",
+        pincer or L"Scorpok Pincer",
+        jowl or L"Snickerfang Jowl"
     }
 
     for n, item in pairs(id) do

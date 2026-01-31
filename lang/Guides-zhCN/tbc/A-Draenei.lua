@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -55,7 +56,7 @@ step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
     .accept 10302 >>接受任务《物归己用》 暴躁的变异体
-    .target Botanist Taerix  
+    .target Botanist Taerix
 step
     #loop
     .goto Azuremyst Isle,80.14,41.70,0
@@ -103,7 +104,7 @@ step
     .goto Azuremyst Isle,72.94,52.21,50,0
     .goto Azuremyst Isle,72.26,49.29,50,0
     >>击杀 |cRXP_ENEMY_变异的根须鞭笞者|r。拾取他们的 |cRXP_LOOT_Lasher Samples|r
-    >>拾取散发绿光的 |cRXP_LOOT_Corrupted Flowers|r on the ground 
+    >>拾取散发绿光的 |cRXP_LOOT_Corrupted Flowers|r on the ground
     .complete 9293,1 --Collect Lasher Sample (x10)
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .mob Mutated Root Lasher
@@ -747,7 +748,7 @@ step
     .goto Azuremyst Isle,48.392,51.482
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9612 >>交任务《 前往熔光镇》 非常感谢！
@@ -949,7 +950,7 @@ step
     .use 23792
 step
     >>|cRXP_WARN_等待剧情演出完成|r
-    .complete 9531,1 -- The Traitor Uncovered 
+    .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_Click off the|r |T132288:0|t[Tree Disguise] |cRXP_WARN_buff|r
     .aura -30298
@@ -1067,7 +1068,7 @@ step
     .accept 9623 >>接受任务《物归己用》 成年
     .target Exarch Menelaous
 step
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9612 >>交任务《 前往熔光镇》 非常感谢！
@@ -1284,7 +1285,7 @@ step
     .goto Azuremyst Isle,47.453,16.078,10 >> Head to the upper section of the cave
 step
 	.goto Azuremyst Isle,47.394,14.121
-    >>击杀 |cRXP_ENEMY_欧莫鲁酋长|r 
+    >>击杀 |cRXP_ENEMY_欧莫鲁酋长|r
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r << !Shaman
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r。拾取他们的 |cRXP_LOOT_Ritual Torch|r << Shaman
     .complete 9573,1 --Kill Chieftain Oomooroo (x1)
@@ -1343,7 +1344,7 @@ step
 step
 	.goto Azuremyst Isle,46.964,22.011
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕卡特·钢皮|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] 
+    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch]
     .target Parkat Steelfur
     .subzoneskip 3572,1
 step
@@ -1612,7 +1613,7 @@ step
 step
 	#completewith next
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #loop
@@ -1779,14 +1780,14 @@ step
     .itemcount 23910,1
 step
     #optional
-    .isOnQuest 9616  
+    .isOnQuest 9616
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9616 >>交任务《 前往熔光镇》 强盗！
     .target Exarch Menelaous
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9612 >>交任务《 前往熔光镇》 非常感谢！
@@ -1947,7 +1948,7 @@ step
 step
 	#completewith FelConeFungus
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #completewith SatyrFelsworn
@@ -1955,7 +1956,7 @@ step
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
     #completewith next
-    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
+    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r]
     .use 23900 >>|cRXP_WARN_使用|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >>接受任务《物归己用》 军团的徽记
@@ -1967,7 +1968,7 @@ step
 step
     .goto Bloodmyst Isle,36.498,71.338,30,0
     .goto Bloodmyst Isle,38.416,82.003
-    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
+    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r]
     .use 23900 >>|cRXP_WARN_使用|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_WARN_If you do not see him patrolling through the camps, wait for him to spawn at the purple sigil on the ground at the south. It can take 3-6 minutes for him to spawn|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
@@ -2028,7 +2029,7 @@ step
     .goto Bloodmyst Isle,54.1,67.6,15,0
     .goto Bloodmyst Isle,58.9,61.8,15,0
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #optional
@@ -2246,7 +2247,7 @@ step
     .target Prince Toreth
 step
 	#completewith next
-	>>拾取地上的 
+	>>拾取地上的
     >>|cRXP_WARN_These look like small green mushrooms|r
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step
@@ -2309,7 +2310,7 @@ step
     .goto Bloodmyst Isle,71.5,11.5,35,0
     .goto Bloodmyst Isle,75.1,8.4,35,0
     .goto Bloodmyst Isle,74.9,16.3,35,0
-	>>拾取地上的 
+	>>拾取地上的
     >>|cRXP_WARN_These look like small green mushrooms|r
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step << !Warrior
@@ -2803,7 +2804,7 @@ step
     .mob Royal Blue Flutterer
 step
     #completewith GCorpse
-    .subzone 3588 >>前往暴风城大教堂内，与 The Cyro-Core 
+    .subzone 3588 >>前往暴风城大教堂内，与 The Cyro-Core
 step
     #label GCorpse
     .goto Bloodmyst Isle,37.502,61.239
@@ -2820,7 +2821,7 @@ step
     .goto Bloodmyst Isle,35.61,61.49,60,0
     >>击杀 for |cRXP_LOOT_Galaen's Amulet|r和 their |cRXP_LOOT_医疗物资|r
     >>You can also loot the |cRXP_LOOT_医疗物资|r on the ground
-	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_施放|r  
+	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_施放|r
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
     .mob Sunhawk Reclaimer
@@ -3385,7 +3386,7 @@ step << Hunter
 step << Priest
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧斯|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better one|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better one|r
     .goto The Exodar,46.386,61.499
     .goto The Exodar,63.363,58.999,0
     .collect 5210,1 --Burning Wand (1)
@@ -3395,7 +3396,7 @@ step << Priest
 step << Priest
     #ssf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧斯|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r
     .goto The Exodar,46.386,61.499
     .collect 5210,1 --Burning Wand (1)
     .target Oss
@@ -3504,7 +3505,7 @@ step << Paladin/Warrior
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step
 .dungeon DM
     .goto Wetlands,9.490,59.694
@@ -3646,7 +3647,7 @@ step
 .dungeon DM
     #label CollectingMemories
     .goto StormwindClassic,65.438,21.175
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r
     .accept 167 >>接受任务《物归己用》 我的兄弟……
     .accept 168 >>接受任务《物归己用》 收集记忆
     .target Wilder Thistlenettle
@@ -4223,7 +4224,7 @@ step
 .dungeon BFD
     #completewith BFDAccept
     .goto Teldrassil,55.95,89.88
-    .zone Darnassus >>进入通往达纳苏斯的紫色传送门   
+    .zone Darnassus >>进入通往达纳苏斯的紫色传送门
 step
 .dungeon BFD
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_银月守卫玛纳杜斯|r 和 |cRXP_FRIENDLY_哨兵山德拉斯|r 交谈
@@ -4237,7 +4238,7 @@ step << Hunter
 #ah
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰德瑞亚|r
-    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_if you can afford it or check the Auction House for a better one|r 
+    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_if you can afford it or check the Auction House for a better one|r
     >>|cRXP_WARN_Stock up on|r |T132382:0|t[Sharp Arrows]
     .collect 3027,1
     .target Landria
@@ -4256,7 +4257,7 @@ step << Hunter
     +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
     .use 3027
     .itemcount 3027,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.71    
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.71
 step << Hunter
     #label TrainWeps
     .goto Darnassus,57.56,46.72
@@ -4494,7 +4495,7 @@ step
 step
 .dungeon WC
     .goto Ashenvale,46.37,46.38
-    >>拾取地上的 
+    >>拾取地上的
     .complete 1033,1
     .zoneskip The Barrens
 step
@@ -4684,7 +4685,7 @@ step
     .zoneskip Ashenvale
 step
     .goto Ashenvale,46.37,46.38
-    >>拾取地上的 
+    >>拾取地上的
     .complete 1033,1
 step
     .goto Ashenvale,36.06,36.59,0

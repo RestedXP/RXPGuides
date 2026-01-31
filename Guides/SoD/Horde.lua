@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD/Horde Hunter SoD

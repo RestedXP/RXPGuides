@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -292,7 +293,7 @@ step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_索乌|r 在小屋顶部对话
     .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
-    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛] 
+    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛]
     .target Thuul
 step << Warlock
     .goto Orgrimmar,47.52,46.73
@@ -452,9 +453,9 @@ step
     .goto Western Plaguelands,47.8,50.6
 	>>点击地上的 |cRXP_PICK_达尔松夫人的日记|r
     .turnin 5058 >>交任务 达尔松夫人的日记
-step	
+step
     .goto Western Plaguelands,47.49,51.00
-	>>击杀 |cRXP_ENEMY_游荡的骷髅|r 拾取它身上掉落的 |cRXP_LOOT_达尔松厕所钥匙|r 
+	>>击杀 |cRXP_ENEMY_游荡的骷髅|r 拾取它身上掉落的 |cRXP_LOOT_达尔松厕所钥匙|r
 	>>|cRXP_WARN_如果骷髅没刷新，就去刷白骨碎片|r
 	.collect 12738,1 -- Dalson Outhouse Key (x1)
 	.unitscan Wandering Skeleton
@@ -475,7 +476,7 @@ step
 step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
-    .accept 6004 >>接受任务 未完的任务	
+    .accept 6004 >>接受任务 未完的任务
 	.target Kirsta Deepshadow
 step
 	#completewith next
@@ -517,13 +518,13 @@ step
 	.target Kirsta Deepshadow
 step
     .goto Western Plaguelands,57.83,36.10
-	>>击杀 |cRXP_ENEMY_猎人莱德雷|r 
+	>>击杀 |cRXP_ENEMY_猎人莱德雷|r
 	>>|cRXP_WARN_她周围的怪很容易连锁拉怪。缚法者会施放冰霜新星|r
     .complete 6023,1 --Huntsman Radley (1)
 	.unitscan Huntsman Radley
 step
     .goto Western Plaguelands,54.64,23.71
-	>>击杀 |cRXP_ENEMY_骑士杜尔根|r 
+	>>击杀 |cRXP_ENEMY_骑士杜尔根|r
 	>>|cRXP_WARN_等他巡逻出塔后再开怪会让整个战斗安全得多。他有一个瞬发的5秒昏迷技能|r
     .complete 6023,2 --Cavalier Durgen (1)
 	.unitscan Cavalier Durgen
@@ -763,7 +764,7 @@ step
 	.subzone 2264 >>前往考林路口
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。 
+	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。
 	>>|cRXP_WARN_北边和东边的道路上有多组精英怪巡逻。科林路口里面有隐形怪巡逻，所以尽量把怪拉出来打|r
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
@@ -1097,7 +1098,7 @@ step
 	.goto Swamp of Sorrows,33.4,71.9,60,0
 	.goto Swamp of Sorrows,33.2,68.4,60,0
 	.zone Blasted Lands >>前往诅咒之地
-step	
+step
     .goto Blasted Lands,58.1,56.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_督军达图恩|r 对话
     .turnin 64063 >>交任务 黑暗之门 << !Druid

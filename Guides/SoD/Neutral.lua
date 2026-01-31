@@ -1,5 +1,6 @@
 local _,addon = ...
 if addon.GetSeason() ~= 2 then return end
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
@@ -1539,7 +1540,7 @@ step
     >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Occult Poison]|r requires level 54 to use|r << Rogue
     >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Numbing Poison]|r, |cRXP_LOOT_[Manual of Sebacious Poison]|r and |cRXP_LOOT_[Manual of Atrophic Poison]|r requires level 60 to use|r << Rogue
     >>|cRXP_WARN_Note: |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r and |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r require level 25 to use|r << Priest
-    >>|cRXP_WARN_Note: |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r|cRXP_WARN_,|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_and |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r require level 25 to use|r << Druid   
+    >>|cRXP_WARN_Note: |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r|cRXP_WARN_,|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_and |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r require level 25 to use|r << Druid
     >>|cRXP_WARN_Note: |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r requires level 25 to use|r << Warrior
     >>|cRXP_WARN_Note: |T133741:0|t|cRXP_LOOT_[Handbook of Meathook]|r requires level 40 to use|r << Warrior
     >>|cRXP_WARN_Note: |T133747:0|t|cRXP_LOOT_[Revelation of Shamanistic Rage]|r requires level 10 to use|r << Shaman

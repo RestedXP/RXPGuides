@@ -3,6 +3,7 @@
 ----------------------------
 
 -- Jade Forest Tian Monastery
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -1152,7 +1153,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name 0
 #displayname |cFFFCDC00LEVELING|r
 #disabled
@@ -1162,11 +1163,11 @@ RXPGuides.RegisterGuide([[
 ]])
 
 -- Pandaria Remix Leveling Guide: How to Use & Essential Tips
-RXPGuides.RegisterGuide([[ 
+RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
 #displayname |cFF00CCFF0|r - How to Use & Essential Tips |cRXP_ENEMY_(Optional)|r
@@ -1250,7 +1251,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name 2) Pandaria Remix Introduction
 #displayname |cFF00CCFF1|r - Timeless Isle Introduction
 #title Timeless Isle Introduction
@@ -1410,7 +1411,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 
 #title Jade Forest
 #name 3) Jade Forest Horde
@@ -2174,7 +2175,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 
 #name 3) Jade Forest Alliance
 #displayname |cFF00CCFF2|r - Jade Forest

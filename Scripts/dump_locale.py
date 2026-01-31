@@ -35,7 +35,7 @@ def check_exceptions(dir):
     return False
 
 def locale_dump(input_text):
-    pattern = re.compile(r"[^I]L\([\s\r\n]*\"(.*?)\"\)|[^I]L\([\s\r\n]*\'(.*?)\'\)|[^I]L\'(.*?)\'|[^I]L\"(.*?)\"|\"CLICK RXP.*?\] =\s*.*?\"(.*?%d)\"")
+    pattern = re.compile(r"[^I]L\([\s\r\n]*\"(.*?)\"\)|[^I]L\([\s\r\n]*\'(.*?)\'\)|[^I]L\'(.*?)\'|[^I]L\"(.*?)\"|\"CLICK RXP.*?\] =\s*.*?\"(.*?%d)\"|[^I]L\[\[([\d\D]*?)\]\]")
     return pattern.finditer(input_text)
 
 # Looping through files list and extracting locale
@@ -63,11 +63,12 @@ for file in files_list:
                 f.write(f"-- {p} file") # Write each filename
                 f.write('\n\n')
                 for match in locales:
-                    for grp in range(1,6):
+                    for grp in range(1,7):
                         if match.group(grp):
                             h = hash(match.group(grp))
                             if h not in seen:
-                                f.write(f"L[\"{match.group(grp)}\"] = \"\"")
+                                entry = re.sub(r'[\r\n]+', '\\\\n', match.group(grp))
+                                f.write(f"L[\"{entry}\"] = \"\"")
                                 seen.add(h)
                                 f.write('\n')
 

@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7

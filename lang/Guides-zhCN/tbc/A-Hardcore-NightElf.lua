@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -7,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Survival Guide (A)
 #subgroup RXP Survival Guide 1-20
 #name 1-11 Teldrassil
-#next 12-14 黑海岸 
+#next 12-14 黑海岸
 
 step << !NightElf
     #sticky

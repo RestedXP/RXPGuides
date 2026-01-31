@@ -19,6 +19,7 @@ local EasyMenu = function(...)
         LibDD:EasyMenu(...)
     end
 end
+local UnitName = addon.GetUnitName
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
 
@@ -29,7 +30,7 @@ addon.tracker.ui = {}
 addon.tracker._commPrefix = "RXPLTComms"
 addon.tracker.fonts = {["splits"] = "Fonts\\ARIALN.ttf"}
 
-local playerName = _G.UnitName("player")
+local playerName = UnitName("player")
 
 -- Silence our /played yellow text
 local ReportPlayedTimeToChat = false
@@ -141,7 +142,7 @@ function addon.tracker:UpgradeDB()
         -- Repair started or finished timestamps if surrounding data exists
         if not levelDB[l].timestamp.started and levelDB[l - 1] and levelDB[l - 1].timestamp.finished then
 
-            addon.comms.PrettyPrint("Repairing level %d started timestamp", l)
+            addon.comms.PrettyPrint(L"Repairing level %d started timestamp", l)
 
             levelDB[l].timestamp.started = levelDB[l - 1].timestamp.finished + 1
         end
@@ -150,7 +151,7 @@ function addon.tracker:UpgradeDB()
         if l < addon.tracker.playerLevel and not levelDB[l].timestamp.finished and levelDB[l + 1] and
             levelDB[l + 1].timestamp.started then
 
-            addon.comms.PrettyPrint("Repairing level %d finished timestamp", l)
+            addon.comms.PrettyPrint(L"Repairing level %d finished timestamp", l)
 
             levelDB[l].timestamp.finished = levelDB[l + 1].timestamp.started - 1
         end
@@ -258,7 +259,7 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
 
             elseif levelDB[l].timestamp.finished and not levelDB[l].timestamp.started then
 
-                addon.comms.PrettyPrint("Repairing level %d started timestamp", l)
+                addon.comms.PrettyPrint(L"Repairing level %d started timestamp", l)
                 levelDB[l].timestamp.started = remainingTime - levelDB[l].timestamp.finished
                 break
             else
@@ -748,29 +749,29 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
         end
 
         trackerUi.speedContainer.data:SetText(addon.comms:PrettyPrintTime(
-                                                  self.state.levelReportData.timePlayedThisLevel or "Missing data"))
+                                                  self.state.levelReportData.timePlayedThisLevel or L"Missing data"))
 
         if selectedLevel == 1 or (selectedLevel == 55 and addon.player.class == "DEATHKNIGHT") then
             trackerUi.reachedContainer.data:SetText(addon.tracker.reportData[selectedLevel].timestamp.dateStarted or
-                                                        "Missing data")
+                                                        L"Missing data")
         elseif addon.tracker.reportData[selectedLevel - 1] then
             trackerUi.reachedContainer.data:SetText(
-                addon.tracker.reportData[selectedLevel - 1].timestamp.dateFinished or "Missing data")
+                addon.tracker.reportData[selectedLevel - 1].timestamp.dateFinished or L"Missing data")
         else
-            trackerUi.reachedContainer.data:SetText("Missing data")
+            trackerUi.reachedContainer.data:SetText(L"Missing data")
         end
     else
         trackerUi.levelButton:SetText(fmt(L("%d to %d"), selectedLevel, selectedLevel + 1))
         trackerUi.reachedContainer.label:SetText(L("Reached Level ") .. selectedLevel + 1)
 
-        trackerUi.reachedContainer.data:SetText(report.timestamp.dateFinished or "Missing data")
+        trackerUi.reachedContainer.data:SetText(report.timestamp.dateFinished or L"Missing data")
 
         if report.timestamp and report.timestamp.started and report.timestamp.finished then
             local s = report.timestamp.finished - report.timestamp.started
 
             trackerUi.speedContainer.data:SetText(addon.comms:PrettyPrintTime(s))
         else
-            trackerUi.speedContainer.data:SetText("Missing data")
+            trackerUi.speedContainer.data:SetText(L"Missing data")
         end
 
     end
@@ -818,7 +819,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
     trackerUi.zonesContainer.data:SetText(zonesBlock)
 
     local extrasBlock = ""
-    extrasBlock = fmt("%s* %s: %s\n", extrasBlock, L("Deaths"), report.deaths or L("Missing data"))
+    extrasBlock = fmt("%s* %s: %s\n", extrasBlock, L("Deaths"), report.deaths or L(L"Missing data"))
 
     if report.timestamp and report.timestamp.started and report.timestamp.finished and selectedLevel ~=
         addon.tracker.maxLevel then
@@ -833,7 +834,7 @@ function addon.tracker:UpdateReport(selectedLevel, target, attachment)
 
         local xpPerHour = report.totalXP / (levelSeconds / 60 / 60)
 
-        extrasBlock = fmt("%s* %s: %d\n", extrasBlock, L("Experience/hour"), xpPerHour or "Missing data")
+        extrasBlock = fmt("%s* %s: %d\n", extrasBlock, L("Experience/hour"), xpPerHour or L"Missing data")
     end
 
     trackerUi.extrasContainer.data:SetText(extrasBlock)
@@ -908,8 +909,8 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
         text = L("Export"),
         notCheckable = 1,
         func = function()
-            addon.comms.OpenBrandedExport("Export Level Splits",
-                                          "Export string for Importing into another character's comparison data",
+            addon.comms.OpenBrandedExport(L"Export Level Splits",
+                                          L"Export string for Importing into another character's comparison data",
                                           addon.tracker:BuildSplitsExport(), 20, 200)
             _G.CloseDropDownMenus()
         end
@@ -919,7 +920,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
         text = L("Import"),
         notCheckable = 1,
         func = function()
-            addon.comms.OpenBrandedExport("Import Level Splits", "Import string from another character", "", 20, 200,
+            addon.comms.OpenBrandedExport(L"Import Level Splits", L"Import string from another character", "", 20, 200,
                                           addon.tracker.ImportSplits)
             -- Regenerate menu on next load
             addon.tracker.state.splitsMenu = nil
@@ -1058,7 +1059,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
     f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText("Level splits")
+    f.title.text:SetText(L"Level splits")
     f.title.text:SetPoint("CENTER", f.title, 0, 1)
 
     f.history = AceGUI:Create("Label")
@@ -1373,7 +1374,7 @@ function addon.tracker.ImportSplits(encodedText)
     local decoded = LibDeflate:DecodeForPrint(encodedText)
 
     if not decoded then
-        addon.comms.PrettyPrint("Invalid data")
+        addon.comms.PrettyPrint(L"Invalid data")
         return
     end
     local decompressed = LibDeflate:DecompressDeflate(decoded)
@@ -1381,11 +1382,11 @@ function addon.tracker.ImportSplits(encodedText)
     local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
 
     if not deserializeResult then
-        addon.comms.PrettyPrint("Error Importing: " .. deserialized)
+        addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
         return
     end
 
-    addon.comms.PrettyPrint("Importing %s", deserialized.title)
+    addon.comms.PrettyPrint(L"Importing %s", deserialized.title)
     addon.db.profile.reports.splits[deserialized.reportKey] = deserialized
 
     return true

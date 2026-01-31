@@ -1,0 +1,37 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+
+	<Script file="tbc\Attunements.lua"/>
+
+	<Script file="tbc\A-11-23.lua"/>
+	<Script file="tbc\A-23-30.lua"/>
+	<Script file="tbc\A-58Boost.lua"/>
+	<Script file="tbc\A-Draenei.lua"/>
+	<Script file="tbc\A-Dwarf-Gnome.lua"/>
+	<Script file="tbc\A-Hardcore-11-23.lua"/>
+	<Script file="tbc\A-Hardcore-23-30.lua"/>
+	<Script file="tbc\A-Hardcore-Draenei.lua"/>
+	<Script file="tbc\A-Hardcore-Dwarf-Gnome.lua"/>
+	<Script file="tbc\A-Hardcore-Human.lua"/>
+	<Script file="tbc\A-Hardcore-NightElf.lua"/>
+	<Script file="tbc\A-Human.lua"/>
+	<Script file="tbc\A-NightElf.lua"/>
+	<Script file="tbc\H-13-23.lua"/>
+	<Script file="tbc\H-20-30.lua"/>
+	<Script file="tbc\H-58Boost.lua"/>
+	<Script file="tbc\H-BloodElf.lua"/>
+	<Script file="tbc\H-Hardcore-20-30.lua"/>
+	<Script file="tbc\H-Hardcore-Barrens-14-16.lua"/>
+	<Script file="tbc\H-Hardcore-BloodElf.lua"/>
+	<Script file="tbc\H-Hardcore-Tauren.lua"/>
+	<Script file="tbc\H-Hardcore-Troll-Orc.lua"/>
+	<Script file="tbc\H-Hardcore-Undead.lua"/>
+	<Script file="tbc\H-Tauren.lua"/>
+	<Script file="tbc\H-Troll-Orc.lua"/>
+	<Script file="tbc\H-Undead.lua"/>
+	<!-- <Script file="tbc\Herbalism.lua"/> -->
+	<!-- <Script file="tbc\Mining.lua"/> -->
+	<!-- <Script file="tbc\Skinning.lua"/> -->
+	
+	
+	
+</Ui>

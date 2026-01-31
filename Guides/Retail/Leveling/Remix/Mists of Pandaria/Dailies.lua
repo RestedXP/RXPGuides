@@ -3,10 +3,11 @@
 ----------------------------
 
 --SEPERATOR
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name 9ha
 #displayname |cFFFCDC00DAILIES|r
 #disabled
@@ -20,7 +21,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name a) Cloud Serpent Dailies
 #displayname |cFF1EFF001|r - Cloud Serpent
 #next ab) The Klaxxi Daillies
@@ -661,9 +662,9 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name ab) The Klaxxi Daillies
-#displayname |cFF1EFF002|r - The Klaxxi 
+#displayname |cFF1EFF002|r - The Klaxxi
 #title The Klaxxi Dailies
 #next ac) August Celestial Daillies
 
@@ -1101,7 +1102,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name ac) August Celestial Daillies
 #displayname |cFF1EFF003|r - August Celestial
 #title August Celestial Daillies
@@ -2066,7 +2067,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name ad) Domination Point Dailies
 #displayname |cFF1EFF004|r - Domination Point
 #next ae) Landfall Daillies Alliance
@@ -2484,7 +2485,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name ae) Landfall Daillies Alliance
 #displayname |cFF1EFF005|r - Landfall
 #next af) Shado-Pan Daillies
@@ -2963,7 +2964,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name af) Shado-Pan Daillies
 #displayname |cFF1EFF006|r - Shado-Pan
 #title Shado-Pan Dailies
@@ -3767,7 +3768,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(10-70)|r Pandaria Remix 
+#subgroup |cFFFCDC00(10-70)|r Pandaria Remix
 #name X) Vale Dailies 1
 #internal
 

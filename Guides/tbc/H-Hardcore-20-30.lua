@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -2979,7 +2980,7 @@ step
 step
     #hardcore
     #completewith SFKTurnins
-    .goto Silverpine Forest,45.51,41.26,150,0 
+    .goto Silverpine Forest,45.51,41.26,150,0
     .subzone 228 >>Travel to The Sepulcher
     .dungeon SFK
 step

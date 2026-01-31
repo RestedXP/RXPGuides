@@ -1,24 +1,24 @@
 local _, addon = ...
-
+local L = addon.locale.Get
 local H = {}
 
-H["I'm missing a lot of exp, why?"] = [[
+H[L"I'm missing a lot of exp, why?"] = L[[
 You should be grinding mobs between quests, not just moving from objective to objective.
 
 This guide is based on speed - which means less quests to turn in. Grinding from quest to quest makes up for the lost xp.
 ]]
 
-H["Why is my guide missing levels?"] = [[
+H[L"Why is my guide missing levels?"] = L[[
 The level ranges on our guides are intended for standard exp rates, do not worry about following the leveling brackets while on 20% or 50% exp.
 
 Just follow the guide the best you can.
 ]]
 
-H["Why is my guide skipping lots of steps or zones?"] = [[
+H[L"Why is my guide skipping lots of steps or zones?"] = L[[
 These are inefficient areas that we skip if you are missing quest chains or if you are ahead in levels compared to the guide.
 ]]
 
-H["What are command the line options?"] = [[
+H[L"What are command the line options?"] = L[[
 |cff909090/rxp|r - Open general addon settings
 |cff909090/rxp import|r - Open Import Guide interface
 |cff909090/rxp debug|r - enable debugging output
@@ -33,16 +33,16 @@ addon.help = H
 local C = {}
 
 C["TomTom"] = {
-    ["Reason"] = "has known incompatibilities with the Waypoint Arrow.",
-    ["Recommendation"] = "Disable it if you're experiencing navigation issues."
+    ["Reason"] = L"has known incompatibilities with the Waypoint Arrow.",
+    ["Recommendation"] = L"Disable it if you're experiencing navigation issues."
 }
 C["SilverDragon"] = C["TomTom"]
 C["TotemTimers"] = C["TomTom"]
 C["Leatrix Maps"] = C["TomTom"]
 
 C["Narcissus"] = {
-    ["Reason"] = "has known incompatibilities with Proximity targeting TargetUnit() calls.",
-    ["Recommendation"] = "Install BugSack or disable Targeting -> 'Only show when in range'."
+    ["Reason"] = L"has known incompatibilities with Proximity targeting TargetUnit() calls.",
+    ["Recommendation"] = L"Install BugSack or disable Targeting -> 'Only show when in range'."
 }
 
 addon.compatibility = C

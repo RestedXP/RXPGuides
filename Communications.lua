@@ -6,6 +6,7 @@ local fmt, mrand, smatch, sbyte, tostr = string.format, math.random, string.matc
 
 local GetNumGroupMembers, GetTime, pcall = _G.GetNumGroupMembers, _G.GetTime, _G.pcall
 local UnitXP, UnitXPMax, UnitName, UnitClassBase = _G.UnitXP, _G.UnitXPMax, _G.UnitName, _G.UnitClassBase
+UnitName = addon.GetUnitName
 
 local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
 

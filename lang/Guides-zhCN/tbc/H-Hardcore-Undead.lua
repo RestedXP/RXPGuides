@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #group RestedXP Survival Guide (H)
@@ -460,7 +461,7 @@ step
     .goto Tirisfal Glades,23.23,59.91,20,0
     .goto Tirisfal Glades,23.89,58.36,20,0
     .goto Tirisfal Glades,24.68,59.54,20,0
-    >>击杀 
+    >>击杀
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
 step

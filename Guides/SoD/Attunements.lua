@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #season 2
@@ -160,7 +161,7 @@ step
     >>|cRXP_WARN_Avoid fighting the elite demons in the area. You can just run past them|r
     .complete 86969,3 --Enthusiastic Wisp
     .isOnQuest 86969
-    .itemcount 235788,<1 
+    .itemcount 235788,<1
 step
     #label Hypothesis
     >>Collect the |T132839:0|t[Flame of Life]. It drops from |cRXP_ENEMY_Elite Dragonkin|r near |cRXP_LOOT_Grim Batol|r in |cRXP_PICK_Wetlands|r
@@ -310,7 +311,7 @@ step
 step
     >>Enter Tyr's Hand and travel to the Cathedral in the center
     .goto Eastern Plaguelands,85.27,83.98
-    .complete 87502,1 --Scout the Cathedral in Tyr's Hand: 1/1 
+    .complete 87502,1 --Scout the Cathedral in Tyr's Hand: 1/1
 step
     .goto Eastern Plaguelands,89.76,81.41,30 >>Take the left path leading into New Avalon
 step
@@ -344,7 +345,7 @@ step
     .accept 90510 >> Accept New Avalon
     .use 237020 --Scarlet Insignia
 step
-    >>Enter Tyr's Hand and look for |cRXP_ENEMY_Scarlet Siege Commanders|r 
+    >>Enter Tyr's Hand and look for |cRXP_ENEMY_Scarlet Siege Commanders|r
     >>|cRXP_WARN_They can be found more commonly near siege weapons or on the walls|r
     .complete 87506,1 --Scarlet Siege Commander (3)
     .target Scarlet Siege Commander

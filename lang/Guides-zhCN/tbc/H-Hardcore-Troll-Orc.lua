@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -680,7 +681,7 @@ step << Shaman
 step
     #label Thazz
     .goto Durotar,43.72,53.79
-    >>拾取地上的 
+    >>拾取地上的
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
     #label Yarrog
@@ -2546,7 +2547,7 @@ step
     .accept 844 >>接受任务《物归己用》 平原陆行鸟的威胁
 step
     .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Innkeeper Boorand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>将你的炉石设置为暮色森林
     .target Innkeeper Boorand Plainswind
     .bindlocation 380

@@ -1,6 +1,7 @@
 local _, class = UnitClass("player")
 if class ~= "DEATHKNIGHT" then return end
 
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #version 6
 #wotlk

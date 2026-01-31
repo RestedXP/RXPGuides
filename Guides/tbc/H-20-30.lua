@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -2606,7 +2607,7 @@ step
 step
     #hardcore
     #completewith SFKTurnins
-    .goto Silverpine Forest,45.51,41.26,150,0 
+    .goto Silverpine Forest,45.51,41.26,150,0
     .subzone 228 >>Travel to The Sepulcher
     .dungeon SFK
 step
@@ -2659,17 +2660,17 @@ step << Rogue
     .goto Hillsbrad Foothills,61.55,19.19
     >>Wait for |cRXP_FRIENDLY_Hinott|r to complete the cure
     .complete 2480,1 --Cure Completed (1)
-step << Rogue  
-    .goto Hillsbrad Foothills,61.64,19.19 
+step << Rogue
+    .goto Hillsbrad Foothills,61.64,19.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hinott|r
-    .turnin 2480 >>Turn in Hinott's Assistance 
+    .turnin 2480 >>Turn in Hinott's Assistance
     .target Serge Hinott
 step << Rogue
     #completewith TarrenMillPickups
     .cast 10723 >>|cRXP_WARN_Use|r |T134807:0|t[Hinott's Oil] |cRXP_WARN_to cure yourself of the|r |T136230:0|t[Touch of Zanzil]
-step << Rogue    
+step << Rogue
     #completewith TarrenMillPickups
-    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] 
+    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons]
     .collect 6947,20,1067,1 --Collect Instant Poison (20)
 step
     .goto Hillsbrad Foothills,61.44,19.05
@@ -2741,7 +2742,7 @@ step
 step << Shaman/Warrior
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -2751,7 +2752,7 @@ step << Shaman/Warrior
 step << Rogue
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -2791,7 +2792,7 @@ step
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob +Gray Bear
     .mob +Vicious Gray Bear
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
     .mob +Forest Moss Creeper
     .isOnQuest 496
 step
@@ -2800,7 +2801,7 @@ step
     .isOnQuest 549,1066,498
 step
     #completewith Drull
-    >>Kill |cRXP_ENEMY_Syndicate Rogues|r, |cRXP_ENEMY_Watchmen|r, and |cRXP_ENEMY_Shadow Mages|r. 
+    >>Kill |cRXP_ENEMY_Syndicate Rogues|r, |cRXP_ENEMY_Watchmen|r, and |cRXP_ENEMY_Shadow Mages|r.
     >>Loot the |cRXP_ENEMY_Shadow Mages|r for their |cRXP_LOOT_Vials of Innocent Blood|r
     .complete 549,1 --Kill Syndicate Rogue (x10)
     .mob +Syndicate Rogue
@@ -2818,7 +2819,7 @@ step
 step
     #loop
     .goto Hillsbrad Foothills,79.45,40.57,0
-	.goto Hillsbrad Foothills,77.99,40.19,0   
+	.goto Hillsbrad Foothills,77.99,40.19,0
     .goto Hillsbrad Foothills,79.45,40.57,15,0
 	.goto Hillsbrad Foothills,77.99,40.19,15,0
 	>>Kill |cRXP_ENEMY_Jailor Marlgen|r. Loot him for his |cRXP_LOOT_Gold Key|r
@@ -2865,7 +2866,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_WARN_and|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] 
+    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_WARN_and|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4831
     .use 4794
     .itemcount 4831,1
@@ -2878,7 +2879,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] 
+    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r]
     .use 4831
     .itemcount 4831,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<76
@@ -2887,7 +2888,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] 
+    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -2961,7 +2962,7 @@ step
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob +Gray Bear
     .mob +Vicious Gray Bear
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
     .mob +Forest Moss Creeper
     .isOnQuest 496
 step
@@ -3047,7 +3048,7 @@ step
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob +Gray Bear
     .mob +Vicious Gray Bear
-    .complete 496,2 --Collect Creeper Ichor (x1) 
+    .complete 496,2 --Collect Creeper Ichor (x1)
     .mob +Forest Moss Creeper
     .isOnQuest 496
 step
@@ -3060,7 +3061,7 @@ step
 	>>Kill |cRXP_ENEMY_Hillsbrad Farmers|r and |cRXP_ENEMY_Hillsbrad Farmhands|r in and around the fields
     >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_Hillsbrad Farmers|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you|r << Rogue/Warrior/Shaman/Paladin
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
-    .mob +Hillsbrad Farmer 
+    .mob +Hillsbrad Farmer
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
     .mob +Hillsbrad Farmhand
     .isOnQuest 527
@@ -3101,7 +3102,7 @@ step
 	>>Kill |cRXP_ENEMY_Hillsbrad Farmers|r and |cRXP_ENEMY_Hillsbrad Farmhands|r in and around the fields
     >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_Hillsbrad Farmers|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you|r << Rogue/Warrior/Shaman/Paladin
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
-    .mob +Hillsbrad Farmer 
+    .mob +Hillsbrad Farmer
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
     .mob +Hillsbrad Farmhand
     .isOnQuest 527
@@ -3517,7 +3518,7 @@ step << Shaman/Warrior
     #optional
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -3528,7 +3529,7 @@ step << Rogue
     #optional
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ott|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -3839,7 +3840,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #optional
     #completewith Splintertree1
-    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons] 
+    >>|cRXP_WARN_Craft|r |T132273:0|t[Instant Poisons]
     .collect 6947,40,1067,1 --Collect Instant Poison (40)
 step
     #completewith next
@@ -3891,7 +3892,7 @@ step
     .target Senani Thunderheart
 step
     .goto Ashenvale,74.00,60.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kaylisk|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kaylisk|r
     .home >>Set your Hearthstone to Splintertree Post
     .target Innkeeper Kaylisk
     .bindlocation 431
@@ -4170,7 +4171,7 @@ step
     .complete 216,2 --Kill Thistlefur Shaman (x8)
     .mob +Thistlefur Shaman
 	.complete 216,1 --Kill Thistlefur Avenger (x8)
-    .mob +Thistlefur Avenger 
+    .mob +Thistlefur Avenger
 step
     #label EntertheHold
     .goto Ashenvale,38.67,30.62,40 >>Enter Thistlefur Hold
@@ -4221,7 +4222,7 @@ step
     .complete 216,2 --Kill Thistlefur Shaman (x8)
     .mob +Thistlefur Shaman
 	.complete 216,1 --Kill Thistlefur Avenger (x8)
-    .mob +Thistlefur Avenger 
+    .mob +Thistlefur Avenger
 step << Shaman
     .goto Ashenvale,33.55,67.47
     >>|cRXP_WARN_Use the|r |T132821:0|t[Empty Blue Waterskin] |cRXP_WARN_under the Gazebo|r
@@ -4635,7 +4636,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche] 
+    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche]
     .use 2526
     .itemcount 2526,1
     .itemStat 17,QUALITY,<7
@@ -4793,10 +4794,10 @@ step << Mage
     .train 8412 >> Train your class spells
     .target Archmage Shymm
     .xp <30,1
-step << Mage    
+step << Mage
     .goto Thunder Bluff,22.48,16.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Birgitte|r
-    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff] 
+    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff]
     .target Birgitte Cranston
     .xp <30,1
 step << Shaman
@@ -6116,10 +6117,10 @@ step << Mage
     .train 8422 >> Train your class spells
     .target Archmage Shymm
     .xp <32,1
-step << Mage    
+step << Mage
     .goto Thunder Bluff,22.48,16.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Birgitte|r
-    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff] 
+    .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff]
     .target Birgitte Cranston
     .xp <30,1
 step << Shaman
@@ -6224,7 +6225,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135275:0|t[Broadsword] 
+    +|cRXP_WARN_Equip the|r |T135275:0|t[Broadsword]
     .use 2520
     .itemcount 2520,1
     .itemStat 16,QUALITY,<7
@@ -6255,7 +6256,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche] 
+    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche]
     .use 2526
     .itemcount 2526,1
     .itemStat 17,QUALITY,<7
@@ -6421,7 +6422,7 @@ step
     #label FlyFreewind
     #completewith FreewindHome
     .goto Dustwallow Marsh,35.57,31.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shardi|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shardi|r
     .fp Brackenwall >> Get the Brackenwall Village Flight Path
     .fly Freewind Post >>Fly to Freewind Post
     .target Shardi
@@ -6539,7 +6540,7 @@ step
     .goto Thousand Needles,35.68,39.25,20,0
     .goto Thousand Needles,34.32,35.74,20,0
     .goto Thousand Needles,35.56,30.94,20,0
-    .goto Thousand Needles,36.97,31.97,20 >> Travel toward the |cRXP_PICK_Bonfire|r on the northern/eastern plateau 
+    .goto Thousand Needles,36.97,31.97,20 >> Travel toward the |cRXP_PICK_Bonfire|r on the northern/eastern plateau
 step
     >>Clear the |cRXP_ENEMY_Grimtotems|r and then light the |cRXP_PICK_Bonfire|r
 	>>Kill |cRXP_ENEMY_Arikara|r. Loot her for her |cRXP_LOOT_Skin|r
@@ -6943,7 +6944,7 @@ step
 step << Warrior
     #completewith next
     .goto The Barrens,65.09,47.81,90,0
-    .goto The Barrens,68.61,49.16,100 >> Travel to Fray Island 
+    .goto The Barrens,68.61,49.16,100 >> Travel to Fray Island
 step << Warrior
     .goto The Barrens,68.62,49.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Klannoc|r

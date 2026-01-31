@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -99,7 +100,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
     .turnin 9829 >> Turn in Khadgar
     .accept 9831 >> Accept Entry Into Karazhan
     .target Khadgar
@@ -118,7 +119,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
     .turnin 9831 >> Turn in Entry Into Karazhan
     .accept 9832 >> Accept The Second and Third Fragments
     .target Khadgar
@@ -135,7 +136,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
     .turnin 9832 >> Turn in The Second and Third Fragments
     .accept 9836 >> Accept The Master's Touch
     .target Khadgar
@@ -161,7 +162,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
     .turnin 9837 >> Turn in Return to Khadgar
     .accept 9838 >> Accept The Violet Eye
     .target Khadgar
@@ -183,7 +184,7 @@ step
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     .subzone 3717 >> |cRXP_WARN_Find a group for HEROIC: Slave Pens in Zangarmarsh. Once you have found a group, zone into the Slave Pens|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skar'this the Heretic|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skar'this the Heretic|r
     .accept 10901 >> Accept The Cudgel of Kar'desh
     .target Skar'this the Heretic
 step
@@ -404,7 +405,7 @@ step
     #loop
     .goto Shadowmoon Valley,30.2,56.8,0
     .goto Shadowmoon Valley,32.0,50.4,0
-    .goto Shadowmoon Valley,27.2,52.6,0  
+    .goto Shadowmoon Valley,27.2,52.6,0
     .goto Shadowmoon Valley,30.2,56.8,70,0
     .goto Shadowmoon Valley,32.0,50.4,70,0
     .goto Shadowmoon Valley,27.2,52.6,70,0
@@ -564,7 +565,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r
     .accept 10883 >> Accept The Tempest Key
     .target Khadgar
 step

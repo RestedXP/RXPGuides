@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -100,7 +101,7 @@ step
     .zone Shattrath City >>前往暴风城大教堂内，与 Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话
     .turnin 9829 >>交任务《 前往熔光镇》 卡德加
     .accept 9831 >>接受任务《物归己用》 卡拉赞的钥匙
     .target Khadgar
@@ -119,7 +120,7 @@ step
     .zone Shattrath City >>前往暴风城大教堂内，与 Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话
     .turnin 9831 >>交任务《 前往熔光镇》 卡拉赞的钥匙
     .accept 9832 >>接受任务《物归己用》 第二块和第三块
     .target Khadgar
@@ -136,7 +137,7 @@ step
     .zone Shattrath City >>前往暴风城大教堂内，与 Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话
     .turnin 9832 >>交任务《 前往熔光镇》 第二块和第三块
     .accept 9836 >>接受任务《物归己用》 麦迪文的触摸
     .target Khadgar
@@ -162,7 +163,7 @@ step
     .zone Shattrath City >>前往暴风城大教堂内，与 Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加的仆从|r 对话
     .turnin 9837 >>交任务《 前往熔光镇》 返回卡德加身边
     .accept 9838 >>接受任务《物归己用》 紫罗兰之眼
     .target Khadgar
@@ -184,7 +185,7 @@ step
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     .subzone 3717 >> |cRXP_WARN_Find a group for HEROIC: Slave Pens in Zangarmarsh. Once you have found a group, zone into the Slave Pens|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_异教徒斯卡希斯|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_异教徒斯卡希斯|r 对话
     .accept 10901 >>接受任务《物归己用》 卡达什圣杖
     .target Skar'this the Heretic
 step
@@ -232,7 +233,7 @@ step
     .accept 10458 >>接受任务《物归己用》 愤怒的火灵和地灵
 	.target Earthmender Torlok
 step
-    .use 30094 >>|cRXP_WARN_Use the|r|T135462:0|t[Totem of Spirits]|cRXP_WARN_and kill|r|cRXP_ENEMY_愤怒的火灵|r和 
+    .use 30094 >>|cRXP_WARN_Use the|r|T135462:0|t[Totem of Spirits]|cRXP_WARN_and kill|r|cRXP_ENEMY_愤怒的火灵|r和
     >>|cRXP_WARN_Ensure you kill them while they are beside the|r |T135462:0|t[Totem of Spirits]
     .complete 10458,1 --Earthen Soul Captured (x8)
     .goto Shadowmoon Valley,45.8,47.6,70,0
@@ -405,7 +406,7 @@ step
     #loop
     .goto Shadowmoon Valley,30.2,56.8,0
     .goto Shadowmoon Valley,32.0,50.4,0
-    .goto Shadowmoon Valley,27.2,52.6,0  
+    .goto Shadowmoon Valley,27.2,52.6,0
     .goto Shadowmoon Valley,30.2,56.8,70,0
     .goto Shadowmoon Valley,32.0,50.4,70,0
     .goto Shadowmoon Valley,27.2,52.6,70,0
@@ -565,7 +566,7 @@ step
     .zone Shattrath City >>前往暴风城大教堂内，与 Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德加|r 对话
     .accept 10883 >>接受任务《物归己用》 风暴钥匙
     .target Khadgar
 step

@@ -49,6 +49,8 @@ local rareTargets = {}
 
 local pendingLeaderUpdate
 
+UnitName = addon.GetUnitName
+
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
 
@@ -273,7 +275,7 @@ function addon.targeting:CheckNameplate(nameplateID)
 
     unitName = UnitName(nameplateID)
 
-    if not unitName or addon.gameVersion >= 120000 then return end
+    if not unitName then return end
 
     if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
@@ -845,7 +847,7 @@ function addon.targeting:CreateTargetFrame()
     f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
     f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText(L "Active Targets")
+    f.title.text:SetText(L"Active Targets")
 
     f.title:SetSize(f.title.text:GetStringWidth() + 14, 19)
 
@@ -986,6 +988,7 @@ local function GetUnitTexture(self, name, unit)
     if f and f.anchor then f.anchor:Show() end
 
     -- unit = unit or 'target'
+
     if unit and name and UnitName(unit) == name then
         f = GetIcon(name)
 

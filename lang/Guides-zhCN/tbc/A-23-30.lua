@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -195,7 +196,7 @@ step
     .complete 943,2 -- Flagongut's Fossil (1)
 step
     .isOnQuest 943
-    #loop    
+    #loop
     .goto Wetlands,22.4,50.0,0
     .goto Wetlands,23.0,55.2,0
     .goto Wetlands,26.2,47.7,0
@@ -218,7 +219,7 @@ step
     .mob +Mottled Raptor
     .mob +Mottled Screecher
 step
-    #loop    
+    #loop
     .goto Wetlands,22.4,50.0,0
     .goto Wetlands,23.0,55.2,0
     .goto Wetlands,26.2,47.7,0
@@ -445,7 +446,7 @@ step << skip --logout skip NightElf/Draenei
 	#completewith next
 	.goto Wetlands,63.9,78.6
     >>前往湿地东部水坝底部的洞穴
-	.zone Loch Modan >>在洞穴最里面的蘑菇顶部下线。 
+	.zone Loch Modan >>在洞穴最里面的蘑菇顶部下线。
     >>重新上线后，你会被传送到塞尔萨玛
 	.link https://www.youtube.com/watch?v=21CuGto26Mk >>https://www.youtube.com/watch?v=21CuGto26Mk >> |cRXP_WARN_点击此处查看参考视频|r
 step << NightElf/Draenei
@@ -781,7 +782,7 @@ step << Draenei
     .goto Stormwind City,71.68,25.60,40 >>前往暴风要塞
 step << Draenei
     .goto Stormwind City,78.508,18.312
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_塔卢恩大使|r 交谈  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_塔卢恩大使|r 交谈
     .accept 9429 >>接受任务前往夜色镇
     .target Emissary Taluun
 step << Rogue
@@ -861,7 +862,7 @@ step << Warlock
 step << Warlock
     .goto StormwindClassic,25.665,77.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_斯巴克尔|r 交谈
-    .vendor >>|cRXP_BUY_购买|r |T133738:0|t[魔典] |cRXP_BUY_给你的|r |T136220:0|t[魅魔]|cRXP_BUY_使用，你马上就会获得她。如果你还有多余的金币，也给你的|r |T136221:0|t[虚空行者] |cRXP_BUY_买一些|r   
+    .vendor >>|cRXP_BUY_购买|r |T133738:0|t[魔典] |cRXP_BUY_给你的|r |T136220:0|t[魅魔]|cRXP_BUY_使用，你马上就会获得她。如果你还有多余的金币，也给你的|r |T136221:0|t[虚空行者] |cRXP_BUY_买一些|r
     .target Spackle Thornberry
 step << Warlock
     .goto Stormwind City,25.25,78.55
@@ -1147,7 +1148,7 @@ step
     .target Clerk Daltry
 step << Draenei
     .goto Duskwood,71.815,46.373
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_学者德尔兰|r 交谈  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_学者德尔兰|r 交谈
     .turnin 9429 >>交任务前往夜色镇
     .target Anchorite Delan
 step
@@ -1410,7 +1411,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_前往塔楼的第2层顶楼。在|r |T132320:0|t[潜行] |cRXP_WARN_状态下，并且 |cRXP_ENEMY_迪菲亚哨兵|r 不在你身旁时，跳到椅子上，再跳到灯上，最后跳到路径点位置顶部的书架上|r
     >>|cRXP_WARN_手动|r |T132320:0|t[取消潜行]|cRXP_WARN_，然后按下你的 "与目标互动" 快捷键来打开 |cRXP_PICK_暮色森林宝箱|r。拾取其中的|r |cRXP_LOOT_克拉文·摩特维克的日志|r
-    >>|cRXP_WARN_注意：你的|r |T132320:0|t[潜行] |cRXP_WARN_在拾取|r |cRXP_LOOT_克拉文·摩特维克的日志|r 后会暂时失效 
+    >>|cRXP_WARN_注意：你的|r |T132320:0|t[潜行] |cRXP_WARN_在拾取|r |cRXP_LOOT_克拉文·摩特维克的日志|r 后会暂时失效
     >>|cRXP_WARN_如果你在第2层没有击杀 |cRXP_ENEMY_迪菲亚哨兵|r，请做好逃跑的准备。当你站在书架顶部时，他们很可能会一直对你产生仇恨 (但不会攻击你) ，因为那里是一个脱战点|r
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
@@ -1481,14 +1482,14 @@ step << Druid
     .target Mathrengyl Bearwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .turnin 5061 >>交任务水栖形态
-step 
+step
     .isOnQuest 68,225,148,95,56
     .isQuestTurnedIn 2359 << Rogue -- going straight to duskwood if already completed poison quest earlier
 	.hs >>将炉石使用回夜色镇
     >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
 	.cooldown item,6948,>0,1
-step 
+step
     .isQuestTurnedIn 2359 << Rogue -- going straight to duskwood if already completed poison quest earlier
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
@@ -1739,7 +1740,7 @@ step
     .goto Duskwood,49.85,77.71
     >>点击地上的 |cRXP_PICK_松散的泥土堆|r
     .turnin 95 >>交任务斯温的复仇
-    .accept 230 >>接受任务斯温的营地   
+    .accept 230 >>接受任务斯温的营地
 step
     .goto Duskwood,28.108,31.469
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚伯克隆比|r 交谈
@@ -1934,7 +1935,7 @@ step
     .mob Gath'Ilzogg
     .isOnQuest 169
 step
-    .goto Redridge Mountains,66.68,56.26    
+    .goto Redridge Mountains,66.68,56.26
     >>击杀 |cRXP_ENEMY_黑石暗影法师|r。拾取他们的 |cRXP_LOOT_宝珠|r
     .complete 115,1 -- Midnight Orb (3)
     .mob Blackrock Shadowcaster
@@ -2238,7 +2239,7 @@ step
     .isOnQuest 69
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话   
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话
     .trainer >>训练你的职业技能
     .target Lyria Du Lac
 step << Paladin
@@ -3141,7 +3142,7 @@ step
     .mob Crimson Ooze
     .mob Monstrous Ooze
     .mob Black Ooze
-step    
+step
     #loop
     .goto Wetlands,30.8,31.0,0
     .goto Wetlands,37.8,29.6,0
@@ -3369,7 +3370,7 @@ step
     .goto Wetlands,48.8,37.2,0
     .goto Wetlands,54.8,37.8,0
     .goto Wetlands,20.72,28.74,50,0
-    >>击杀 |cRXP_ENEMY_沼泽爬行者|r 
+    >>击杀 |cRXP_ENEMY_沼泽爬行者|r
     >>|cRXP_ENEMY_沼泽爬行者|r |cRXP_WARN_在|r |T132320:0|t[潜行] |cRXP_WARN_状态下沿着河流巡逻|r
     .complete 275,1 --12/12 Fen Creeper
     .mob Fen Creeper
@@ -3860,7 +3861,7 @@ step << Paladin
     .trainer >>训练你的职业技能
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒修士|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒修士|r 对话
     .goto StormwindClassic,38.54,26.86
     .trainer >>训练你的职业技能
     .target Brother Joshua
@@ -4023,7 +4024,7 @@ step
     .turnin 175 >>交任务眺望群星
     .accept 177 >>接受任务眺望群星
     .isQuestTurnedIn 174
-    .target Blind Mary 
+    .target Blind Mary
 step
     .goto Duskwood,79.73,70.64,30,0
     .goto Duskwood,80.98,71.65
@@ -4095,8 +4096,8 @@ step
     .accept 1244 >>接受任务失踪的使节
     .target Watcher Backus
 step
-    #completewith next 
-    .goto Elwynn Forest,84.60,69.37,100 >>前往东谷伐木场 
+    #completewith next
+    .goto Elwynn Forest,84.60,69.37,100 >>前往东谷伐木场
 step
     .goto Elwynn Forest,84.60,69.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官哈迦德|r 对话
@@ -4627,7 +4628,7 @@ step << Mage
     .bankwithdraw 2784,5849,23750 >>从你的银行中取出以下物品：
     >>|T134187:0|t[麝鼠根] -- 2784
     >>|T132765:0|t[一箱防撞头盔] -- 5849
-    .target Newton Burnside    
+    .target Newton Burnside
 step << Shaman
 	.goto Stormwind City,61.822,83.991
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知安布洛尔|r 对话
@@ -4689,7 +4690,7 @@ step << !Mage
     .bankwithdraw 2784,5849,23750 >>从你的银行中取出以下物品：
     >>|T134187:0|t[麝鼠根] -- 2784
     >>|T132765:0|t[一箱防撞头盔] -- 5849
-    >>|T132824:0|t[装满的波涛之袋] << Shaman -- 23750 
+    >>|T132824:0|t[装满的波涛之袋] << Shaman -- 23750
     .target Newton Burnside
 step << !Mage
     .goto Stormwind City,39.843,81.446
@@ -4737,10 +4738,10 @@ step << Paladin
     .trainer >>训练你的职业技能
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒修士|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒修士|r 对话
     .goto StormwindClassic,38.54,26.86
     .trainer >>训练你的职业技能
-    .target Brother Joshua    
+    .target Brother Joshua
 step
     .goto Stormwind City,75.226,31.670
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲍雷斯·维沙克公爵|r 对话
@@ -4773,7 +4774,7 @@ step
     >>购买以下物品，以便稍后在南海镇更快交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>10 |T134026:0|t[海龟肉]
-    .collect 3712,10,555,1 
+    .collect 3712,10,555,1
     .target Auctioneer Jaxon
 
 
@@ -4847,7 +4848,7 @@ step << !Mage
     .zoneskip Wetlands
 step << Mage
     #completewith FlyWetlands
-    .zone Ironforge >>|cRXP_WARN_施放|r |T135757:0|t[传送：铁炉堡]  
+    .zone Ironforge >>|cRXP_WARN_施放|r |T135757:0|t[传送：铁炉堡]
 step << Gnome !Warlock/Dwarf !Paladin
     #completewith next
     .zone Dun Morogh >>|cRXP_WARN_前往卡拉诺斯并购买你的|r |T132247:0|t[机械陆行鸟] << Gnome !Warlock
