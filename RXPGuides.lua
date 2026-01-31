@@ -23,13 +23,6 @@ else
     GetSpellInfo = _G.GetSpellInfo
 end
 
-addon.GetUnitName = function(unit)
-    local n = _G.UnitName(unit)
-    if issecretvalue and issecretvalue(n) then
-        return
-    end
-    return n
-end
 
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
