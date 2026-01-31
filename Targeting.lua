@@ -988,10 +988,7 @@ local function GetUnitTexture(self, name, unit)
     if f and f.anchor then f.anchor:Show() end
 
     -- unit = unit or 'target'
-    local unitName = UnitName(unit)
-    if issecretvalue and issecretvalue(unitName) then
-        unitName = nil
-    end
+
     if unit and name and UnitName(unit) == name then
         f = GetIcon(name)
 
