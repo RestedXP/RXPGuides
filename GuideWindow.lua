@@ -1517,7 +1517,7 @@ function addon.ProcessGuideTable(guide)
                     if step.tip then
                         tinsert(currentGuide.tips,step)
                         lastTip = step
-                        step.title = step.title or "Tip"
+                        step.title = step.title or L"Tip"
                     else
                         tinsert(currentGuide.steps, step)
                         step.tipWindow = lastTip
@@ -2334,7 +2334,7 @@ function RXPFrame:GenerateMenuTable(menu)
     local tips = addon.currentGuide and addon.currentGuide.tips
     if tips and #tips > 0 then
         tinsert(menuList, {
-            text = "Display Tips",
+            text = L"Display Tips",
             func = addon.ShowTips,
             arg1 = "toggle",
             checked = function()

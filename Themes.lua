@@ -1,5 +1,5 @@
 local addonName, addon = ...
-
+local L = addon.locale.Get
 local fmt = string.format
 
 local themes = {}
@@ -201,7 +201,7 @@ function addon:RegisterTheme(theme)
     if not theme then return end
 
     if not theme['name'] or not theme['author'] then
-        self.comms.PrettyPrint("Theme missing name or author")
+        self.comms.PrettyPrint(L"Theme missing name or author")
         return
     end
 
@@ -214,7 +214,7 @@ function addon:RegisterTheme(theme)
     end
 
     if not themeApplies(theme.applicable) then
-        self.comms.PrettyPrint("%s does not apply to current mode, importing anyway", theme.name)
+        self.comms.PrettyPrint(L"%s does not apply to current mode, importing anyway", theme.name)
     end
 
     themes[theme.name] = theme

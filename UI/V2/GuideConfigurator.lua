@@ -907,7 +907,7 @@ function addon.ui.v2:CreateConfigurator()
     --TODO locale
     local pageDescriptions = {
         [2] = L("Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."),
-        [3] = "Add dungeons to your journey. The guide will adjust to your selection accordingly and include dungeon quests to your route."
+        [3] = L"Add dungeons to your journey. The guide will adjust to your selection accordingly and include dungeon quests to your route."
     }
 
     local pageOptions = {

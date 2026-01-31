@@ -487,7 +487,7 @@ function addon.AbandonOrphanedQuests(orphans)
     orphans = orphans or addon.GetOrphanedQuests()
 
     local function abandonQuest(questInfo)
-        addon.comms.PrettyPrint("Abandoning %s", questInfo.questLogTitleText)
+        addon.comms.PrettyPrint(L"Abandoning %s", questInfo.questLogTitleText)
 
         if C_QuestLog.SetSelectedQuest then
             C_QuestLog.SetSelectedQuest(questInfo.questID)
@@ -539,9 +539,9 @@ end
 
 -- Localization for button/tooltip — don't shadow your global L() accessor
 local Loc = addon and addon.L or nil
-local CLEANUP_LABEL = (Loc and Loc.CLEANUP_ORPHANED_QUESTS) or "Cleanup Orphaned Quests"
+local CLEANUP_LABEL = (Loc and Loc.CLEANUP_ORPHANED_QUESTS) or L"Cleanup Orphaned Quests"
 local CLEANUP_DESC  = (Loc and Loc.CLEANUP_ORPHANED_QUESTS_DESC)
-    or "Abandons quests that aren't referenced by your current RestedXP guide."
+    or L"Abandons quests that aren't referenced by your current RestedXP guide."
 
 -- Icon path for button + tooltip
 local ICON_PATH = "Interface\\AddOns\\" .. addonName .. "\\Textures\\rxp_logo-64"
@@ -577,8 +577,8 @@ local function BuildOrphanListText(orphans)
     local t = {}
     for i = 1, #orphans do
         local q = orphans[i]
-        local name = q.questLogTitleText or "Unknown"
-        local lvl  = q.level and (" (level " .. q.level .. ")") or ""
+        local name = q.questLogTitleText or L"Unknown"
+        local lvl  = q.level and format(L" (level %d)", q.level) or ""
         table.insert(t,name .. lvl)
     end
     return table.concat(t, "\n")
@@ -606,11 +606,11 @@ end
 
 function addon.BeginAbandonOrphans(orphans)
     if not (type(orphans) == "table" and #orphans > 0) then
-        addon.comms.PrettyPrint("Cleanup: no orphaned quests to abandon.")
+        addon.comms.PrettyPrint(L"Cleanup: no orphaned quests to abandon.")
         return
     end
 
-    addon.comms.PrettyPrint("Cleanup: abandoning %d orphaned quest(s)...", #orphans)
+    addon.comms.PrettyPrint(L"Cleanup: abandoning %d orphaned quest(s)...", #orphans)
 
     local i = #orphans
     local function step()
@@ -673,16 +673,16 @@ local function VerifyThenFallback(originalOrphans)
     addon.isHidden = wasHidden
 
     if still and #still > 0 then
-        addon.comms.PrettyPrint("Cleanup: Settings handler did not complete; using fallback.")
+        addon.comms.PrettyPrint(L"Cleanup: Settings handler did not complete; using fallback.")
         addon.BeginAbandonOrphans(originalOrphans)
     else
-        addon.comms.PrettyPrint("Cleanup: completed via Settings handler.")
+        addon.comms.PrettyPrint(L"Cleanup: completed via Settings handler.")
     end
 end
 
 local function RXP_RunCleanupOrphanedQuests()
     if not (addon.currentGuide and addon.currentGuide.key) then
-        addon.comms.PrettyPrint("Cleanup: no active guide detected.")
+        addon.comms.PrettyPrint(L"Cleanup: no active guide detected.")
         return
     end
 
@@ -694,7 +694,7 @@ local function RXP_RunCleanupOrphanedQuests()
 
     local count = (orphans and #orphans) or 0
     if count == 0 then
-        addon.comms.PrettyPrint("Cleanup: no orphaned quests found.")
+        addon.comms.PrettyPrint(L"Cleanup: no orphaned quests found.")
         return
     end
 
@@ -702,7 +702,7 @@ local function RXP_RunCleanupOrphanedQuests()
     local DLG = "RXP_CONFIRM_ORPHANED_CLEANUP_LIST"
     if not _G.StaticPopupDialogs[DLG] then
         _G.StaticPopupDialogs[DLG] = {
-            text = "Abandon the following quests?\n%s",
+            text = L"Abandon the following quests?\n%s",
             button1 = ACCEPT,
             button2 = CANCEL,
             OnAccept = function(_, data)
@@ -777,7 +777,7 @@ local function CreateCleanupButton()
 
     cleanupBtn:SetScript("OnClick", function()
         if InCombatLockdown and InCombatLockdown() then
-            addon.comms.PrettyPrint("You can't do that in combat.")
+            addon.comms.PrettyPrint(L"You can't do that in combat.")
             return
         end
         RXP_RunCleanupOrphanedQuests()

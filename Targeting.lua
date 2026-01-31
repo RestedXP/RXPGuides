@@ -845,7 +845,7 @@ function addon.targeting:CreateTargetFrame()
     f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
     f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText(L "Active Targets")
+    f.title.text:SetText(L"Active Targets")
 
     f.title:SetSize(f.title.text:GetStringWidth() + 14, 19)
 
