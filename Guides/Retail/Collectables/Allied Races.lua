@@ -3,6 +3,7 @@
 -- ================================================================
 
 --Nesting
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -26,14 +27,14 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    .isQuestAvailable 49929 
+    .isQuestAvailable 49929
     .goto 84,52.05,13.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .accept 49929 >>Accept The Call for Allies
     .turnin 49929 >>Turn in The Call for Allies
     .target Aysa Cloudsinger
 step
-    .isQuestAvailable 49929 
+    .isQuestAvailable 49929
     .goto 84,52.05,13.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_inside the Stormwind Embassy|r.
     .accept 50239 >>Accept A Choice of Allies
@@ -111,7 +112,7 @@ step
 step
     .goto 933,87.87,43.29
     >>Follow the Arrow
-    .scenario 3547,1 
+    .scenario 3547,1
     .isInScenario 1434
 step
     >>Follow |cRXP_FRIENDLY_T'paartos|r
@@ -121,12 +122,12 @@ step
 step
     .goto 933,75.78,31.33
     >>Go to the waypoint location and wait for the roleplay.
-    .scenario 3550,1 
+    .scenario 3550,1
     .isInScenario 1434
 step
     .goto 933,84.26,31.18
     >>Go to the waypoint location and wait for the roleplay.
-    .scenario 3551,1 
+    .scenario 3551,1
     .isInScenario 1434
 step
     .goto 933,66.87,29.96
@@ -136,7 +137,7 @@ step
 step
     .goto 933,66.87,29.96
     >>Kill |cRXP_ENEMY_Swamp Serpent|r after the roleplay.
-    .scenario 3553,1 
+    .scenario 3553,1
     .mob Swamp Serpent
     .isInScenario 1434
 step
@@ -183,7 +184,7 @@ step
     .goto 933,41.85,58.85,20,0
     .goto 933,43.19,58.96,25,0
     >>Go to the waypoint location and wait for the roleplay.
-    .scenario 3572,1 
+    .scenario 3572,1
     .isInScenario 1434
 step
     .goto 933,46.79,65.98
@@ -200,7 +201,7 @@ step
     #label Cliff
     .goto 933,68.89,76.11,5,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_T'paartos|r.
-    .scenario 3574,1 
+    .scenario 3574,1
     .target T'paartos
     .isInScenario 1434
 step
@@ -210,7 +211,7 @@ step
     #requires Cliff
     .goto 933,68.36,77.08
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_T'paartos|r.
-    .scenario 3574,1 
+    .scenario 3574,1
     .target T'paartos
     .isInScenario 1434
 step
@@ -219,14 +220,14 @@ step
     .goto 933,62.76,78.06,20,0
     .goto 933,65.75,73.65
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_T'paartos|r.
-    .scenario 3574,2 
+    .scenario 3574,2
     .target T'paartos
     .isInScenario 1434
 step
     .goto 933,72.31,86.51,10,0
     .goto 933,67.79,82.86
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_T'paartos|r.
-    .scenario 3574,3 
+    .scenario 3574,3
     .target T'paartos
     .isInScenario 1434
 step
@@ -299,7 +300,7 @@ step
     .turnin 50071 >>Turn in For the Light!
     .target Aysa Cloudsinger
 ]])
---DarkIronDwarf 
+--DarkIronDwarf
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -449,7 +450,7 @@ step
     .goto 84,51.89,14.07
     .zone 1160 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan|r.
     .zoneskip 84,1
-    .skipgossipid 48179 
+    .skipgossipid 48179
     .target Moira Thaurissan
 step
     .goto 1160,29.17,26.27
@@ -457,7 +458,7 @@ step
     .target The Tank
     .isOnQuest 53342
 step
-    .goto 1160,33.04,21.38,5 >>Use |T1032476:0|t[Afterburn](2) to sprint |cRXP_WARN_of the edge|r. 
+    .goto 1160,33.04,21.38,5 >>Use |T1032476:0|t[Afterburn](2) to sprint |cRXP_WARN_of the edge|r.
     *|cRXP_WARN_Aim to land on the mountain cliff|r.
     .isOnQuest 53342
 step
@@ -710,7 +711,7 @@ step
     .target Dorian Atwater
     .accept 54721 >>Accept I'm Too Old for This Ship
 step
-    .goto 942,50.23,49.88  
+    .goto 942,50.23,49.88
     #title |cFFFCDC00Follow the Arrow|r
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 54708,3 --1/1 Meet the actual shipwright
@@ -900,7 +901,7 @@ step
     .goto 896,59.11,65.05,40,0
     .goto 896,62.43,63.31,40,0
     .goto 896,60.11,69.55,40,0
-    >>Kill |cRXP_ENEMY_Vengeful Bones|r and |cRXP_ENEMY_Awoken Guardian|r. 
+    >>Kill |cRXP_ENEMY_Vengeful Bones|r and |cRXP_ENEMY_Awoken Guardian|r.
     *|cRXP_WARN_In addition, clicking on the stones near them will help you further fill your Drust Vessel|r.
     .complete 54730,1 --1/1 Drust Vessel filled
     .mob Awoken Guardian
@@ -1555,7 +1556,7 @@ step
     #loop
     .goto 2371,79.89,51.26,40,0
     .goto 2371,80.81,50.49,40,0
-    >>Kill |cRXP_ENEMY_Relictor Qunash'i|r. 
+    >>Kill |cRXP_ENEMY_Relictor Qunash'i|r.
     *Loot him for |T5872055:0|t[|cRXP_LOOT_Key of the Waning Moon|r].
     .complete 89324,2 --1/1 Key of the Waning Moon Recovered
     .mob Relictor Qunash'i
@@ -1563,7 +1564,7 @@ step
     #loop
     .goto 2371,79.74,47.4,40,0
     .goto 2371,79,47.32,40,0
-    >>Kill |cRXP_ENEMY_Relictor Lay'sha|r. 
+    >>Kill |cRXP_ENEMY_Relictor Lay'sha|r.
     *Loot him for |T5872061:0|t[|cRXP_LOOT_Key of the Eternal Night|r].
     .complete 89324,1 --1/1 Key of the Eternal Night Recovered
     .mob Relictor Lay'sha
@@ -1572,7 +1573,7 @@ step
     .goto 2371,76.08,49.27,40,0
     .goto 2371,77.23,50.16,40,0
     .goto 2371,76.67,52.1,40,0
-    >>Kill |cRXP_ENEMY_Relictor Efrat|r. 
+    >>Kill |cRXP_ENEMY_Relictor Efrat|r.
     *Loot him for |T5872057:0|t[|cRXP_LOOT_Key of the Dark Sun|r].
     .complete 89324,3 --1/1 Key of the Dark Sun Recovered
     .mob Relictor Efrat
@@ -3039,7 +3040,7 @@ step
 step
     #loop
     >>Pick up |cRXP_PICK_Twilight Ore|r from the veins.
- 
+
     .goto 241,51.13,68.58,30,0
     .goto 241,48.60,70.24,30,0
     .goto 241,46.42,72.89,30,0
@@ -3735,7 +3736,7 @@ step
     .mob Defias Mage
 step
     .goto 425,35.61,61.23
-    >>Kill |cRXP_ENEMY_Enforcer Grant|r 
+    >>Kill |cRXP_ENEMY_Enforcer Grant|r
     *Loot him for |T1011899:0|t[|cRXP_LOOT_Enforcer Grant's Signet|r].
     .complete 72449,1 --1/1 Enforcer Grant's Signet
     .mob Enforcer Grant
@@ -3747,14 +3748,14 @@ step
     .mob Enforcer Jennive
 step
     .goto 425,35.32,39.05
-    >>Kill |cRXP_ENEMY_Enforcer Tera|r 
+    >>Kill |cRXP_ENEMY_Enforcer Tera|r
     *Loot her for |T1011900:0|t[|cRXP_LOOT_Enforcer Tera's Signet|r].
     .complete 72449,3 --1/1 Enforcer Tera's Signet
     .mob Enforcer Tera
 step
     #label Enforcer Horb's Signet
     .goto 425,31.25,19.24
-    >>Kill |cRXP_ENEMY_Enforcer Horb|r 
+    >>Kill |cRXP_ENEMY_Enforcer Horb|r
     *Loot them for |T1011901:0|t[|cRXP_LOOT_Enforcer Horb's Signet|r].
     .complete 72449,4 --1/1 Enforcer Horb's Signet
     .mob Enforcer Horb
@@ -4731,7 +4732,7 @@ step
     .accept 54582 >>Accept Smarter Than Your Average Trogg
 step
     .goto 114,64.62,23.02
-    >>Kill |cRXP_ENEMY_Krugg the Smart|r 
+    >>Kill |cRXP_ENEMY_Krugg the Smart|r
     *Loot them for |T465876:0|t[|cRXP_LOOT_Broken Communication Device|r].
     .complete 54582,1 --1/1 Krugg the Smart slain
     .complete 54582,2 --1/1 Broken Communication Device
@@ -4845,7 +4846,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Miscellaneous
 #name a) Draenei Heritage Armor
-#displayname |cFF1EFF005|r - Draenei 
+#displayname |cFF1EFF005|r - Draenei
 #next a) Worgen Heritage Armor
 #chapter
 
@@ -5467,7 +5468,7 @@ step
     .goto 1577,57.05,25.14,20,0
     .goto 1577,60.77,28.22,20,0
     .goto 1577,57.96,39.49,20,0
-    >>Kill |cRXP_ENEMY_Forsakens|r 
+    >>Kill |cRXP_ENEMY_Forsakens|r
     *|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Plague Throwers|r
     .scenario 4187,1,100 --Fight back the Forsaken
     .mob Plague Thrower
@@ -5536,7 +5537,7 @@ step
     .complete 54990,1 --1/1 Speak with Tess at Stormwind Keep
     .skipgossipid 49931
     .timer 15,RP
-    .target Tess 
+    .target Tess
 step
     .goto 84,82.51,27.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Princess Tess Greymane|r |cRXP_WARN_after the roleplay|r.
@@ -5840,7 +5841,7 @@ step
 step
     .isInScenario 2137
     >>Use the ExtraActionButton.
-    .scenario 5422 
+    .scenario 5422
 step
     .goto 85,54.37,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -7966,7 +7967,7 @@ RXPGuides.RegisterGuide([[
 #next a) Highmountain Heritage Armor
 #chapter
 
-<< Horde 
+<< Horde
 
 step
     #label StartIncludePrepGuide
@@ -8841,7 +8842,7 @@ step
 step
     .isInScenario 1410
     .goto 972,37.3,49.23
-    >>Kill |cRXP_ENEMY_Void Creatures|r. 
+    >>Kill |cRXP_ENEMY_Void Creatures|r.
     *|cRXP_WARN_Don't be close to black pulsating bubbles|r.
     .scenario 3662,1,100
     .mob Creeping Void

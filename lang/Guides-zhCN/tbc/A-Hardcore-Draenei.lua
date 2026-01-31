@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -54,7 +55,7 @@ step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
     .accept 10302 >>接受任务《物归己用》 暴躁的变异体
-    .target Botanist Taerix  
+    .target Botanist Taerix
 step
     #loop
     .goto Azuremyst Isle,80.14,41.70,0
@@ -102,7 +103,7 @@ step
     .goto Azuremyst Isle,72.94,52.21,50,0
     .goto Azuremyst Isle,72.26,49.29,50,0
     >>击杀 |cRXP_ENEMY_变异的根须鞭笞者|r。拾取他们的 |cRXP_LOOT_Lasher Samples|r
-    >>拾取散发绿光的 |cRXP_LOOT_Corrupted Flowers|r on the ground 
+    >>拾取散发绿光的 |cRXP_LOOT_Corrupted Flowers|r on the ground
     .complete 9293,1 --Collect Lasher Sample (x10)
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .mob Mutated Root Lasher
@@ -752,7 +753,7 @@ step
     .goto Azuremyst Isle,48.392,51.482
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9612 >>交任务《 前往熔光镇》 非常感谢！
@@ -953,7 +954,7 @@ step
     .use 23792
 step
     >>|cRXP_WARN_等待剧情演出完成|r
-    .complete 9531,1 -- The Traitor Uncovered 
+    .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_Click off the|r |T132288:0|t[Tree Disguise] |cRXP_WARN_buff|r
     .aura -30298
@@ -1098,7 +1099,7 @@ step
     .accept 9623 >>接受任务《物归己用》 成年
     .target Exarch Menelaous
 step
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9612 >>交任务《 前往熔光镇》 非常感谢！
@@ -1139,7 +1140,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁安达|r 对话
     .trainer >>训练你的职业技能
     .accept 9582 >>接受任务《物归己用》 一人之力
-    .target Ruada  
+    .target Ruada
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手凯拉·夜弓|r 对话
@@ -1330,7 +1331,7 @@ step
     .goto Azuremyst Isle,47.453,16.078,10 >> Head to the upper section of the cave
 step
 	.goto Azuremyst Isle,47.394,14.121
-    >>击杀 |cRXP_ENEMY_欧莫鲁酋长|r 
+    >>击杀 |cRXP_ENEMY_欧莫鲁酋长|r
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r << !Shaman
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r。拾取他们的 |cRXP_LOOT_Ritual Torch|r << Shaman
     .complete 9573,1 --Kill Chieftain Oomooroo (x1)
@@ -1389,7 +1390,7 @@ step
 step
 	.goto Azuremyst Isle,46.964,22.011
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕卡特·钢皮|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] 
+    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch]
     .target Parkat Steelfur
     .subzoneskip 3572,1
 step
@@ -1431,7 +1432,7 @@ step << Shaman
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
     .accept 9622 >>接受任务《物归己用》 警告你的人民
-    .target High Chief Stillpine   
+    .target High Chief Stillpine
 step
 	#label end
     .goto Azuremyst Isle,44.762,23.906
@@ -1704,7 +1705,7 @@ step
 step
 	#completewith next
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #loop
@@ -1756,7 +1757,7 @@ step
 step << !Shaman
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
-    .accept 9622 >>接受任务《物归己用》 警告你的人民 
+    .accept 9622 >>接受任务《物归己用》 警告你的人民
     .target High Chief Stillpine
 step
     .goto Azuremyst Isle,49.25,49.53
@@ -1825,14 +1826,14 @@ step
     .itemcount 23910,1
 step
     #optional
-    .isOnQuest 9616  
+    .isOnQuest 9616
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9616 >>交任务《 前往熔光镇》 强盗！
     .target Exarch Menelaous
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
     .turnin 9612 >>交任务《 前往熔光镇》 非常感谢！
@@ -1854,7 +1855,7 @@ step
 step << !Shaman
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9622 >>交任务《 前往熔光镇》 警告你的人民 
+    .turnin 9622 >>交任务《 前往熔光镇》 警告你的人民
     .target Exarch Menelaous
 step
     #completewith next
@@ -2018,7 +2019,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,10,1 -- shows if cooking is <10
-    .skill cooking,<1,1 -- shows if cooking is >1   
+    .skill cooking,<1,1 -- shows if cooking is >1
 step
     #completewith DarkshoreBoat
     #requires Cooking1

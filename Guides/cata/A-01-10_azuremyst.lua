@@ -1,6 +1,7 @@
 local _,addon = ...
 if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
 --TODO: skip the furbolg quests if xp rate is greater than 1x
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 << Alliance
 #name 1-10 Azuremyst Isle

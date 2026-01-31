@@ -39,6 +39,7 @@ GuideLoader.lua
 CptStadicsVendorTreasures.lua
 
 Guides/GuideList-tbc.xml
+lang/Guides-zhCN/GuideList-tbc.xml
 
 Talents.lua
 Guides/Talents/tbc.xml

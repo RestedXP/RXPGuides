@@ -3,6 +3,7 @@
 -- ============================
 
 --Nesting
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1

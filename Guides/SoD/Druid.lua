@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
@@ -869,7 +870,7 @@ step
     #loop
     .goto Feralas,61.8,55.6,35,0
     .goto Feralas,58.6,66.2,35,0
-    >>Attack a |cRXP_ENEMY_Gordunni Warlock|r. |cRXP_WARN_Wait until they use|r |T136121:0|t[Shrink] |cRXP_WARN_on you.|r 
+    >>Attack a |cRXP_ENEMY_Gordunni Warlock|r. |cRXP_WARN_Wait until they use|r |T136121:0|t[Shrink] |cRXP_WARN_on you.|r
     .cast 2728 >>|cRXP_WARN_Use|r |T135952:0|t[Remove Curse] |cRXP_WARN_to remove the|r |T136121:0|t[Shrink] |cRXP_WARN_debuff|r
     .mob Gordunni Warlock
 step
@@ -948,7 +949,7 @@ step
     .itemcount 220360,1
     .use 220360
     .train 431468 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Efflorescence|r] to learn |T134222:0|t[Efflorescence]
-    
+
 ]])
 
 
@@ -979,7 +980,7 @@ step
     .train 431451,1
     >>Kill |cRXP_ENEMY_Namida Grimtotem|r. Loot her for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r]
     .goto Feralas,66.8,38.6
-    .collect 220754,1 
+    .collect 220754,1
     .mob Namida Grimtotem
 step
     .itemcount 220754,1
@@ -1030,7 +1031,7 @@ step
     .mob Thunderhead Hyppogryph
 step
     .train 416051,1
-    >>|cRXP_WARN_Use the|r |T236868:0|t[Satyrweed Tincture] |cRXP_WARN_on the |cRXP_ENEMY_Thunderhead Hyppogryph|r to remove the|r |T136134:0|t[Satyr Corruption] |cRXP_WARN_debuff|r and get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Moon Goddess|r] 
+    >>|cRXP_WARN_Use the|r |T236868:0|t[Satyrweed Tincture] |cRXP_WARN_on the |cRXP_ENEMY_Thunderhead Hyppogryph|r to remove the|r |T136134:0|t[Satyr Corruption] |cRXP_WARN_debuff|r and get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Moon Goddess|r]
     .itemcount 221199,1
     .use 221199
     .collect 221020,1
@@ -1039,7 +1040,7 @@ step
     .itemcount 221020,1
     .use 221020
     .train 416051 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r] |cRXP_WARN_to train|r |T236163:0|t[Elune's Fires]
-]]) 
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -1081,7 +1082,7 @@ step
     .equip 18,220915 >>|cRXP_WARN_Equip the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r]
     .train 431449,1
 step
-    .aura 408828 >>Kill |cRXP_WARN_five enemies with a Nature spell (e.g. Wrath) while under the effect of |T136097:0|t[Barkskin].|r 
+    .aura 408828 >>Kill |cRXP_WARN_five enemies with a Nature spell (e.g. Wrath) while under the effect of |T136097:0|t[Barkskin].|r
     *|cRXP_WARN_Use |T136097:0|t[Barkskin] when the enemy is at low HP and finish him with a Wrath or another Nature spell|r
     .train 431449,1
 step
@@ -1124,7 +1125,7 @@ step
     >>|cRXP_WARN_Repeat this process 5 times|r
     .mob Venomhide Ravasaur
     .mob Ravasaur Hunter
-    .mob Ravasaur   
+    .mob Ravasaur
 step
     .itemcount 227444,1
     .use 227444
@@ -1154,7 +1155,7 @@ step
     >>|cRXP_WARN_The |cRXP_FRIENDLY_Vengeful Wisp|r has multiple spawn locations. If you see another Druid already with the |cRXP_FRIENDLY_Vengeful Wisp|r, you can help them and still receive credit|r
     >>Once completed, the |cRXP_FRIENDLY_Vengeful Wisp|r will drop the |cRXP_PICK_Gift of the Wisp|r on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the World Tree|r]
     .collect 227746,1
-    .unitscan Vengeful Wisp  
+    .unitscan Vengeful Wisp
 step
     .itemcount 227746,1
     .use 227746

@@ -1,5 +1,6 @@
 local _,addon = ...
 if addon.gameVersion < 40000 or addon.player.faction == 'Horde' then return end
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 
 #version 1
@@ -236,7 +237,7 @@ step << !cata Druid/Priest
     .complete 14279,2 << Priest --Cast Shadow Word: Pain (1)
     .complete 14283,2 << Druid --Cast Moonfire (2)
     .mob Bloodfang Worgen
-step << cata Priest/Druid 
+step << cata Priest/Druid
     #loop
     .goto 202,70.421,65.541,0
     .goto 202,71.003,66.538,8,0
@@ -699,7 +700,7 @@ step << Druid cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
     .trainer >> Train your class spells
     .target Celestine of the Harvest
-step << Mage cata 
+step << Mage cata
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
     .trainer >> Train your class spells

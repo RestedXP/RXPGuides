@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -568,7 +569,7 @@ step
     .accept 5904 >>接受任务 瘟疫与你
     .target Nathaniel Dumah
 step
-    .goto Western Plaguelands,40.116,71.561,-1    
+    .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,1 --Tower One marked
@@ -584,18 +585,18 @@ step
     .turnin 5216 >>交任务 目标：费尔斯通农场
     .accept 5217 >>接受任务 返回冰风岗
 step
-    .goto Western Plaguelands,42.326,66.105,-1    
+    .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,2 --Tower Two marked
 step
-    .goto Western Plaguelands,44.217,63.319,-1    
+    .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,3 --Tower Three marked
 step
     #label ADC
-    .goto Western Plaguelands,46.681,71.135,-1    
+    .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,4 --Tower Four marked
@@ -660,7 +661,7 @@ step
     .goto Western Plaguelands,47.39,51.77,25,0
     .goto Western Plaguelands,46.64,49.21,25,0
     .goto Western Plaguelands,47.86,49.88
-    >>消灭那些 |cRXP_LOOT_游荡的骷髅|r. 从他们身上拾取 |cRXP_LOOT_达尔松厕所钥匙|r 
+    >>消灭那些 |cRXP_LOOT_游荡的骷髅|r. 从他们身上拾取 |cRXP_LOOT_达尔松厕所钥匙|r
     >>|cRXP_WARN_那些 |cRXP_LOOT_游荡的骷髅|r 在达尔松之泪谷仓和屋子周围巡逻|r
     .collect 12738,1,5060,1 --Collect Dalson Outhouse Key (x1)
     .unitscan Wandering Skeleton

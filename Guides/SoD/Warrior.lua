@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
@@ -1952,7 +1953,7 @@ step
     .zone Tanaris >>Travel to Tanaris
 step
     .train 440496,1
-    .goto Tanaris,59.2,91.5 
+    .goto Tanaris,59.2,91.5
     >>|cRXP_WARN_Head to southern Tanaris along the coastline|r
     >>Click the |cRXP_PICK_Half-Buried Mech|r and |cRXP_PICK_Access Hatch|r on the ground
     .accept 84135 >> Accept Beach Bot

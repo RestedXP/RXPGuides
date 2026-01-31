@@ -3,6 +3,7 @@
 -- ================================================ -
 
 ---Tips & Tricks
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -18,7 +19,7 @@ step
 step
     +|cRXP_WARN_|T1411837:0|t[Infinite Power]|r is gained from most activities e.g looting enemies, completing quests, dungeons, treasures or reward boxes.
 step
-    +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r increases the rate at which you gain |cRXP_WARN_|T1411837:0|t[Infinite Power]|r |cRXP_WARN_(Artifact Power)|r. 
+    +|cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r increases the rate at which you gain |cRXP_WARN_|T1411837:0|t[Infinite Power]|r |cRXP_WARN_(Artifact Power)|r.
     *The more ranks of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r you have, the more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r you earn from every activity.
 step
     +Since every activity rewards more |cRXP_WARN_|T1411837:0|t[Infinite Power]|r with each rank of |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r, it’s best to unlock as much |cRXP_WARN_|T1411833:0|t[Infinite Knowledge]|r as early as possible.
@@ -485,7 +486,7 @@ step
     .accept 90901 >>Accept As A Matter of Artifact
     .goto 627,42.46,28.05
     .target +Momentus
-step 
+step
     .isQuestComplete 90901
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .turnin 90901 >>Turn in As A Matter of Artifact
@@ -795,7 +796,7 @@ step
     .macro Leave Vehicle,6656430 >> /leavevehicle
 step
     .goto 619,45.86,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
     *|cRXP_WARN_You can skip this and do it later; completing it at level 80 with higher ilvl gives better gear, but since it’s a daily, you might not want to miss it|r.
     .daily 92855 >>Accept in Make Haste, Not Waste
     .dailyturnin 92855 >>Turn in Make Haste, Not Waste
@@ -951,7 +952,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Legion Remix
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
-#name ab) Order Hall Monk Part 1 
+#name ab) Order Hall Monk Part 1
 #displayname |cFF00FF003|r - Order Hall Intro 1|r
 
 << Monk
@@ -1288,14 +1289,14 @@ step << Alliance
     #label Dalaran
     .goto 709,52.4,57.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    -- .complete 39735,1 --1/1 Travel to Dalaran 
-    .complete 39718,1 --1/1 Travel to Dalaran 
+    -- .complete 39735,1 --1/1 Travel to Dalaran
+    .complete 39718,1 --1/1 Travel to Dalaran
     .timer 8,RP
 step << Horde
     #label Dalaran
     .goto 709,52.4,57.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 39718,1 --1/1 Travel to Dalaran 
+    .complete 39718,1 --1/1 Travel to Dalaran
     .timer 8,RP
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Initiate Da-Nel|r |cRXP_WARN_next to you|r
@@ -1387,7 +1388,7 @@ step
     .accept 58989 >>Accept Runeforging 101
     .target Highlord Darion Mograine
 step
-    .goto 648,36.25,38.53    
+    .goto 648,36.25,38.53
     .complete 58989,1 --1/1 Use the portal to the 2nd floor (Optional)
 step
     .goto 647,44.08,66.33
@@ -1742,7 +1743,7 @@ step
 step
     #requires Burning Legion
     >>|cRXP_WARN_Wait for the Roleplay|r.
-    .complete 41066,1 --1/1 Gaze upon the Burning Legion    
+    .complete 41066,1 --1/1 Gaze upon the Burning Legion
 step
     .goto 721,59.34,51.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r
@@ -2212,7 +2213,7 @@ step
     .skipgossipid 45259
 step
     #completewith next
-    #label TheHuntersCallB    
+    #label TheHuntersCallB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apata Highmountain|r.
     .complete 41415,3 --1/1 Speak to Apata Highmountain
     .target Apata Highmountain
@@ -2614,7 +2615,7 @@ step
     .complete 41112,2 --1/1 Akazamzarak bribed
 step
     #completewith Akazamzarak bribed
-    .goto 734,57.29,90.56 
+    .goto 734,57.29,90.56
     >>Use |T1535374:0|t[Teleport: Dalaran - Broken Isles] or click on the |cRXP_PICK_Portal|r.
     .complete 41112,1 --1/1 Portal to Dalaran Taken (Optional)
     .usespell 224869
@@ -3189,7 +3190,7 @@ step
     .holiday 324
     .goto 627,47.96,41.70
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Candy Bucket|r
-    .turnin 43055 >>Turn in Candy Bucket 
+    .turnin 43055 >>Turn in Candy Bucket
     .target Candy Bucket
 step << Alliance
     #requires whispered2
@@ -3898,7 +3899,7 @@ step << Horde
     .accept 41052 >>Accept A Desperate Plea
     .target Eitrigg
 step
-    #optional 
+    #optional
     .convertquest 42815,38904 << Horde
 step << Horde
     .goto 627,75.06,46.25
@@ -4016,7 +4017,7 @@ step
     .goto 695,58.59,72.24
     #title |cFFFCDC00Follow the Arrow|r
     .complete 39654,2 --1/1 Go to the Great Mead Hall
-step 
+step
     #label Order Hall Warrior Part 1
     .goto 695,58.33,84.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Odyn|r
@@ -4247,7 +4248,7 @@ step
     .target Momentus
 step
     .goto 619,45.86,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
     *|cRXP_WARN_You can skip this and do it later; completing it at level 80 with higher ilvl gives better gear, but since it’s a daily, you might not want to miss it|r.
     .daily 92855 >>Accept in Make Haste, Not Waste
     .dailyturnin 92855 >>Turn in Make Haste, Not Waste
@@ -4297,17 +4298,17 @@ step <<!DemonHunter
     .skipgossipid 134865
 step
     .goto 619,45.68,68.49
-    .isQuestTurnedIn account,91721 
+    .isQuestTurnedIn account,91721
     .isQuestAvailable account,91722
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and select a quest based on your preference.
     .questcount <3,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441,91847,92440,92442,89467,89468 >>Accept 1 of the 100 Quests.
-    .target Eternus 
+    .target Eternus
 step
     .isQuestTurnedIn account,91722
     .goto 619,45.68,68.49
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r and select a quest based on your preference.
     .questcount <4,89540,91613,90100,90112,90113,89600,89679,90102,90103,89524,89590,89678,89541,89607,90114,89521,89539,89683,90109,89528,89543,89544,89545,89550,89553,89554,89556,89558,89597,92439,89465,89469,89476,89523,89527,89533,89538,89549,89552,89592,89594,89599,89601,89605,89680,90101,90108,90110,90111,89464,89466,89516,89518,89519,89522,89525,89526,89529,89530,89531,89532,89534,89535,89542,89546,89547,89548,89551,89555,89557,89591,89593,89595,89598,89602,89604,89606,89665,89676,89677,89682,90096,90098,90099,90115,91439,91441,91449,89517,89520,89536,89537,89644,89681,90097,91438,91443,91446,91612,91848,91849,89596,89603,89622,91440,91444,91445,91447,91448,92441,91847,92440,92442,89467,89468 >>Accept 3 of the 100 Quests.
-    .target Eternus 
+    .target Eternus
 step
     #completewith next
     #hidewindow

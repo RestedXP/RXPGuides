@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -425,7 +426,7 @@ step
     .mob Large Crag Boar
 step
     #completewith next
-    .goto Dun Morogh,46.726,53.826,30 >>Travel to Kharanos.击杀 
+    .goto Dun Morogh,46.726,53.826,30 >>Travel to Kharanos.击杀
     .mob Crag Boar
     .mob Large Crag Boar
 step
@@ -2096,7 +2097,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #completewith next
     .goto Ironforge,25.27,1.53,9,0
-    .goto Ironforge,24.35,11.90,10 >>前去找 
+    .goto Ironforge,24.35,11.90,10 >>前去找
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒂萨·热炉|r

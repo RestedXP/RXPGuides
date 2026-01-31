@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
@@ -1545,7 +1546,7 @@ step
     .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
 step
     .goto Eastern Plaguelands,83.6,78.2
-    >>|cRXP_WARN_The rune of|r |T237537:0|t[Holy Specialization] |cRXP_WARN_is also located in Tyr's Hand, if you don't want to get it now skip this step|r 
+    >>|cRXP_WARN_The rune of|r |T237537:0|t[Holy Specialization] |cRXP_WARN_is also located in Tyr's Hand, if you don't want to get it now skip this step|r
     >>|cRXP_WARN_If you want to get it head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
     >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
     .collect 226418,1 --Rune of Holy Specialization
@@ -1874,11 +1875,11 @@ step
     +|cRXP_WARN_Click here if you want to see the recommended efficient order of steps you can take to complete this quest. You can always go back to this step to read the clues again if you need to|r
 step
     >>|cRXP_WARN_The efficient order of business while doing this quest is as follows:|r
-    >>1. Start in the Living side of the dungeon 
-    >>2. Loot three [|cRXP_PICK_Postbox Parcels|r] for the |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r], the jars are unique so have a different player pick up each one 
-    >>3. Clear to the pedestal room and figure out which bosses have the essences in your ID 
-    >>4. Collect all the essences as you progress through the dungeon 
-    >>5. Return to the pedestal room and activate each one with its essence 
+    >>1. Start in the Living side of the dungeon
+    >>2. Loot three [|cRXP_PICK_Postbox Parcels|r] for the |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r], the jars are unique so have a different player pick up each one
+    >>3. Clear to the pedestal room and figure out which bosses have the essences in your ID
+    >>4. Collect all the essences as you progress through the dungeon
+    >>5. Return to the pedestal room and activate each one with its essence
     >>6. Loot the orb that spawns for your rune
     .collect 228124,1 --Oneiric Epiphany
 step

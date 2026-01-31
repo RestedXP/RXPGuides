@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -1284,7 +1285,7 @@ step
 step
     #optional
     #completewith next
-    >>击杀 拾取地上的 them for the |cRXP_LOOT_Spells of Shadow|r和 
+    >>击杀 拾取地上的 them for the |cRXP_LOOT_Spells of Shadow|r和
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -1298,7 +1299,7 @@ step
     .isOnQuest 5761
     .dungeon RFC
 step
-    >>击杀 拾取地上的 them for the |cRXP_LOOT_Spells of Shadow|r和 
+    >>击杀 拾取地上的 them for the |cRXP_LOOT_Spells of Shadow|r和
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist

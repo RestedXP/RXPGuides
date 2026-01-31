@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -1432,7 +1433,7 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
-step    
+step
     #completewith ElmoresTask
     .hs >> Hearth to Goldshire
 step
@@ -1485,12 +1486,12 @@ step << Warlock
 step << Warlock
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r and |cRXP_FRIENDLY_Remen Marcot|r
-    .train 980 >> |T136139:0|t[Curse of Agony] 
-    .train 5782 >> |T136183:0|t[Fear] 
-    .train 6201 >> |T135230:0|t[Create Healthstone (Minor)] 
-    .train 696 >> |T136185:0|t[Demon Skin (Rank 2)] 
-    .train 1120 >> |T136163:0|t[Drain Soul] 
-    .train 707 >> |T135817:0|t[Immolate (Rank 2)] 
+    .train 980 >> |T136139:0|t[Curse of Agony]
+    .train 5782 >> |T136183:0|t[Fear]
+    .train 6201 >> |T135230:0|t[Create Healthstone (Minor)]
+    .train 696 >> |T136185:0|t[Demon Skin (Rank 2)]
+    .train 1120 >> |T136163:0|t[Drain Soul]
+    .train 707 >> |T135817:0|t[Immolate (Rank 2)]
     .goto Elwynn Forest,44.392,66.240
     .target +Maximillian Crowe
     .accept 1685 >> Accept Gakin's Summons
@@ -3150,7 +3151,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It can be used from any range as long as you have one targeted|r
-    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r 
+    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO BEAR NEARBY==|r
     >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear

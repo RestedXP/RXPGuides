@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -1936,7 +1937,7 @@ step
     .goto 1426,72.570,53.488,30,0
     .goto 1426,71.790,52.278,30,0
     .goto 1426,71.591,51.831,30,0
-    >>击杀 
+    >>击杀
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
 step
@@ -2190,7 +2191,7 @@ step << Rogue/Warrior/Warlock
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
     .skill cooking,<1,1 -- shows if cooking is >1
-    .money <1 -- don't want them buying etc, unless rich alts, money too tight later 
+    .money <1 -- don't want them buying etc, unless rich alts, money too tight later
 step << skip
     #loop
     .goto Loch Modan,36.72,41.97,15,0
@@ -2887,10 +2888,10 @@ step
 step
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .train 1120 >> Train |T136163:0|t[Drain Soul] 
+    .train 1120 >> Train |T136163:0|t[Drain Soul]
     .train 6201 >> Train |T135230:0|t[Create Healthstone (Minor)]
-    .train 696 >>学习 |T136185:0|t[恶魔皮肤 (等级 2)] 
-    .train 707 >>学习 |T135817:0|t[献祭 (等级 2)] 
+    .train 696 >>学习 |T136185:0|t[恶魔皮肤 (等级 2)]
+    .train 707 >>学习 |T135817:0|t[献祭 (等级 2)]
     .target Ursula Deline
 step
     #completewith GoldshireQuests
@@ -3401,7 +3402,7 @@ step << Warlock
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 755 >>Train |T136168:0|t[Health Funnel]
-    .train 705 >>学习 |T136197:0|t[暗影箭 (等级 3)]  
+    .train 705 >>学习 |T136197:0|t[暗影箭 (等级 3)]
     .target Ursula Deline
     .xp <12,1
 step << Warlock
@@ -3775,7 +3776,7 @@ step << Warlock
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞尔索恩|r 对话
-    .train 6222 >>学习 |T136118:0|t[腐蚀术 (等级 2)] 
+    .train 6222 >>学习 |T136118:0|t[腐蚀术 (等级 2)]
     .train 689 >>Train |T136169:0|t[Drain Life]
     .target Briarthorn
 step << Warlock
@@ -3991,7 +3992,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_使用|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_狂暴蓟熊|r. It can be used from any range as long as you have one targeted|r
-    >>==如果附近没有熊，请不要使用该任务物品== 
+    >>==如果附近没有熊，请不要使用该任务物品==
     >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -4059,7 +4060,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     #completewith SenirEnd
-    >>击杀 for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r和 
+    >>击杀 for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r和
     >>|cRXP_WARN_Save all the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_you get for Stocking Jetsteam and then for leveling your|r |T133971:0|t[Cooking]|cRXP_WARN_稍后|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking]|cRXP_WARN_for a quest in Auberdine later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking]|cRXP_WARN_for a quest in Darkshire later|r
@@ -4767,7 +4768,7 @@ step
     .waypoint 1426,23.373,51.385,30,0
     .waypoint 1426,23.568,50.924,30,0
     .waypoint 1426,24.301,50.898,30,0
-    >>击杀 
+    >>击杀
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
@@ -4871,7 +4872,7 @@ step << Hunter
     .collect 2511,1
     .money <0.1324
     .target Thalgus Thunderfist
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00  
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
 step << Hunter
     #completewith next
     +|cRXP_WARN_Equip the|r |T135613:0|t[Hunter's Boomstick]

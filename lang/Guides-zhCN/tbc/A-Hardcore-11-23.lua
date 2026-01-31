@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -388,7 +389,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_使用|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_狂暴蓟熊|r. It can be used from any range as long as you have one targeted|r
-    >>==如果附近没有熊，请不要使用该任务物品== 
+    >>==如果附近没有熊，请不要使用该任务物品==
     >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
@@ -453,7 +454,7 @@ step
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r
     .accept 4811 >>接受任务《物归己用》 红色水晶
-    .target Sentinel Glynda Nal'Shea   
+    .target Sentinel Glynda Nal'Shea
 step
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r
@@ -743,7 +744,7 @@ step
     .itemcount 6889,1 -- Small Egg (1+)
     .skill cooking,10,1 --XX Shows if cooking skill is <10
     .skill cooking,<1,1 -- shows if cooking is >1
-    .isQuestAvailable 2178   
+    .isQuestAvailable 2178
 step
     .goto 1439,37.511,41.670
     >>|cRXP_WARN_朝地面上的 |cRXP_PICK_Campfire|r 前进|r
@@ -813,7 +814,7 @@ step
     .complete 958,1
     .mob Cursed Highborne
     .mob Writhing Highborne
-    .mob Wailing Highborne  
+    .mob Wailing Highborne
 step
 #map Darkshore
     .goto Felwood,25.98,40.62
@@ -888,7 +889,7 @@ step
     .waypoint Darkshore,39.03,67.32,70,0
     .waypoint Darkshore,42.54,67.76,70,0
     .waypoint Darkshore,39.99,78.46,70,0
-    >>击杀 
+    >>击杀
     >>|cRXP_WARN_Be careful as they cast|r 注意，如果你没有足够快地击杀它们，它们会施放[Rabies]|cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces all health regeneration by 50% for 10 minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -1420,7 +1421,7 @@ step
 step
 	#completewith RuinousPolyspore
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These are all throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These are all throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #completewith SatyrFelsworn
@@ -1428,7 +1429,7 @@ step
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
     #completewith next
-    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
+    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r]
     .use 23900 >>|cRXP_WARN_使用|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >>接受任务《物归己用》 军团的徽记
@@ -1440,7 +1441,7 @@ step
 step
     .goto Bloodmyst Isle,36.498,71.338,30,0
     .goto Bloodmyst Isle,38.416,82.003
-    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
+    >>击杀 for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r]
     .use 23900 >>|cRXP_WARN_使用|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_WARN_If you do not see him patrolling through the camps, wait for him to spawn at the purple sigil on the ground at the south. It can take 3-6 minutes for him to spawn|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
@@ -2214,7 +2215,7 @@ step
     .mob Royal Blue Flutterer
 step
     #completewith GCorpse
-    .subzone 3588 >>前往暴风城大教堂内，与 The Cyro-Core 
+    .subzone 3588 >>前往暴风城大教堂内，与 The Cyro-Core
 step
     #label GCorpse
     .goto Bloodmyst Isle,37.502,61.239
@@ -2231,7 +2232,7 @@ step
     .goto Bloodmyst Isle,35.61,61.49,60,0
     >>击杀 for |cRXP_LOOT_Galaen's Amulet|r和 their |cRXP_LOOT_医疗物资|r
     >>You can also loot the |cRXP_LOOT_医疗物资|r on the ground
-	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_施放|r  
+	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_施放|r
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
     .mob Sunhawk Reclaimer
@@ -2649,7 +2650,7 @@ step
     #completewith next
     .subzone 3598 >>前往弗雷岛
     .xp >20,1
-step 
+step
     .goto Bloodmyst Isle,74.7,33.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托雷斯王子|r
     >>|cRXP_FRIENDLY_托雷斯王子|r |cRXP_WARN_walks around slightly|r
@@ -2767,7 +2768,7 @@ step
     .waypoint Bloodmyst Isle,71.5,11.5,35,0
     .waypoint Bloodmyst Isle,75.1,8.4,35,0
     .waypoint Bloodmyst Isle,74.9,16.3,35,0
-	>>拾取地上的 
+	>>拾取地上的
     >>|cRXP_WARN_These look like small green mushrooms|r
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step
@@ -2931,7 +2932,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏兰|r
     .accept 9502 >>接受任务《物归己用》 水之召唤
     .trainer >>训练你的职业技能
-    .target Sulaa  
+    .target Sulaa
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >>前去找 ramp
@@ -2999,7 +3000,7 @@ step << NightElf Hunter
 step << Priest
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧斯|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better/cheaper one|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better/cheaper one|r
     .goto The Exodar,46.386,61.499
     .goto The Exodar,63.363,58.999,0
     .collect 5210,1 --Burning Wand (1)
@@ -3009,7 +3010,7 @@ step << Priest
 step << Priest
     #ssf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧斯|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r
     .goto The Exodar,46.386,61.499
     .collect 5210,1 --Burning Wand (1)
     .target Oss
@@ -3388,7 +3389,7 @@ step << Paladin/Warrior
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step << !NightElf !Draenei
 .dungeon DM
     #optional
@@ -3567,7 +3568,7 @@ step
 .dungeon DM
     #label CollectingMemories
     .goto StormwindClassic,65.438,21.175
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r
     .accept 167 >>接受任务《物归己用》 我的兄弟……
     .accept 168 >>接受任务《物归己用》 收集记忆
     .target Wilder Thistlenettle
@@ -4301,7 +4302,7 @@ step
     >>击杀 |cRXP_ENEMY_暗礁蟹|r 和 |cRXP_ENEMY_硬壳潮行蟹|r。拾取他们的 |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
-    .mob Reef Crawler  
+    .mob Reef Crawler
 step
     .isQuestTurnedIn 4681
     .goto Darkshore,44.18,20.60
@@ -4973,7 +4974,7 @@ step
 step
 .dungeon WC
     .goto Ashenvale,46.37,46.38
-    >>拾取地上的 
+    >>拾取地上的
     .complete 1033,1
     .zoneskip The Barrens
 step
@@ -5173,7 +5174,7 @@ step
     .zoneskip Ashenvale
 step
     .goto Ashenvale,46.37,46.38
-    >>拾取地上的 
+    >>拾取地上的
     .complete 1033,1
 step
     .goto Ashenvale,37.36,51.79
@@ -5582,7 +5583,7 @@ step
     .goto Ashenvale,37.36,51.79
     .turnin 1034 >>交任务《 前往熔光镇》 星尘废墟
 
-    
+
 --Stonetalon section. skipping if 24 or not already in Stonetalon Mountains
 step
     .goto Ashenvale,42.50,71.70
@@ -5809,7 +5810,7 @@ step << Warlock
     .isOnQuest 65602
     .goto 1440/1,160.600,3806.100
     .cast 367062 >>|cRXP_WARN_Use the|r |T135432:0|t[|cRXP_LOOT_燃烧的火炬|r] |cRXP_WARN_on the|r |cRXP_PICK_Archaeologist's Cart|r
-    .use 190308 
+    .use 190308
 step << Warlock
     .isOnQuest 65602
     .goto 1440/1,183.700,3819.500,8,0
@@ -5841,7 +5842,7 @@ step
     .mob Foulweald Ursa
     .mob Foulweald Den Watcher
 step
-    .goto Ashenvale,49.79,67.21    
+    .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵维尔莉妮·星坠|r
     .accept 1016 >>接受任务《物归己用》 元素护腕
     .target Sentinel Velene Starstrike

@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -262,7 +263,7 @@ step << Mage
     .goto 1429,49.595,40.673,6,0
     .goto 1429,49.324,40.492,6,0
     .goto 1429,49.436,39.881,10,0
-    .goto Elwynn Forest,49.661,39.402,12 >>前去找 
+    .goto Elwynn Forest,49.661,39.402,12 >>前去找
 step << Mage
     .goto Elwynn Forest,49.661,39.402
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_凯尔登·布雷门|r inside upstairs
@@ -273,7 +274,7 @@ step << Priest
     #optional
     #completewith next
     .goto Elwynn Forest,49.3,40.7,15,0
-    .goto Elwynn Forest,49.8,40.2,10 >>前去找 
+    .goto Elwynn Forest,49.8,40.2,10 >>前去找
 step << Priest
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_女牧师安妮塔|r inside downstairs
@@ -405,7 +406,7 @@ step << Priest/Mage
     .goto Elwynn Forest,55.09,49.00,30,0
     .goto Elwynn Forest,55.43,45.87,30,0
     .goto Elwynn Forest,53.86,47.05,30,0
-    >>拾取地上的 
+    >>拾取地上的
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto 1429,57.518,48.253
@@ -1433,7 +1434,7 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r
     .fp Redridge Mountains >>获取赤脊山的飞行路径
     .target Ariena Stormfeather
-step    
+step
     #completewith ElmoresTask
     .hs >>将炉石使用回夜色镇
 step
@@ -1486,12 +1487,12 @@ step << Warlock
 step << Warlock
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛克西米利安·克洛文|r 和 |cRXP_FRIENDLY_雷门·玛考特|r
-    .train 980 >> |T136139:0|t[Curse of Agony] 
-    .train 5782 >> |T136183:0|t[Fear] 
-    .train 6201 >> |T135230:0|t[Create Healthstone (Minor)] 
-    .train 696 >> |T136185:0|t[Demon Skin (Rank 2)] 
-    .train 1120 >> |T136163:0|t[Drain Soul] 
-    .train 707 >> |T135817:0|t[Immolate (Rank 2)] 
+    .train 980 >> |T136139:0|t[Curse of Agony]
+    .train 5782 >> |T136183:0|t[Fear]
+    .train 6201 >> |T135230:0|t[Create Healthstone (Minor)]
+    .train 696 >> |T136185:0|t[Demon Skin (Rank 2)]
+    .train 1120 >> |T136163:0|t[Drain Soul]
+    .train 707 >> |T135817:0|t[Immolate (Rank 2)]
     .goto Elwynn Forest,44.392,66.240
     .target +Maximillian Crowe
     .accept 1685 >>接受任务《物归己用》 加科因的召唤
@@ -3151,7 +3152,7 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_使用|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_狂暴蓟熊|r. It can be used from any range as long as you have one targeted|r
-    >>==如果附近没有熊，请不要使用该任务物品== 
+    >>==如果附近没有熊，请不要使用该任务物品==
     >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear

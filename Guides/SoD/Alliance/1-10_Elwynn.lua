@@ -1,6 +1,7 @@
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance
@@ -1111,7 +1112,7 @@ step << Warrior
     #sticky
     #completewith next
     >>Be on the lookout for |cRXP_FRIENDLY_Wandering Swordsman|r. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time|r  
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time|r
     >>|cRXP_WARN_You will most likely be unable to solo him at this level, skip this step if there's no one around to help you, you can come back after you get level 10 and check if he's still there|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
@@ -1434,7 +1435,7 @@ step << Rogue
     .waypoint Elwynn Forest,37.81,85.40,35,0
     .waypoint Elwynn Forest,36.76,83.19,35,0
     .waypoint Elwynn Forest,38.02,81.70,35,0
-    .xp 9+2000 >> Grind kobolds untill you're 2000 xp into level 9. 
+    .xp 9+2000 >> Grind kobolds untill you're 2000 xp into level 9.
     >> |cRXP_WARN_If you're not close you can turn in the goldtooth quest but grinding mobs is more efficient|r
 step << Warrior
     #season 2
@@ -2220,7 +2221,7 @@ step << Warrior
     #sticky
     #completewith GoldtoothEnd
     >>Be on the lookout for |cRXP_FRIENDLY_Wandering Swordsman|r while running. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 412507,1
@@ -2251,7 +2252,7 @@ step << Warrior
     #season 2
     .goto Elwynn Forest,30.0,73.4
     >>Checked the marked spot for the |cRXP_FRIENDLY_Wandering Swordsman|r. If he's there challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 412507,1
@@ -2305,7 +2306,7 @@ step << Warrior
     #season 2
     .goto Elwynn Forest,25.3,70.2
     >>Checked the marked spot for the |cRXP_FRIENDLY_Wandering Swordsman|r. If he's there challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 412507,1
@@ -2313,7 +2314,7 @@ step << Warrior
     #season 2
     .goto Elwynn Forest,22.3,73.3
     >>Checked the marked spot for the |cRXP_FRIENDLY_Wandering Swordsman|r. If he's there challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
-    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 412507,1

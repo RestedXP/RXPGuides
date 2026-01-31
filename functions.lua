@@ -2826,7 +2826,7 @@ flags:
 8   (0x8): Includes items in your bank into the item count
 16 (0x10): Element doesn't complete itself if the quest is turned in
 32 (0x20): Subtracts from the given skill or profession given by arg1
-64 (0x40): Set the number of items required to 0 if you have 0 of that item
+64 (0x40): Set the number of items required to 0 if you have 0 of that item, arg1 has to be 1
 negative sign: same as 3 (0x2+0x1), -5 subtracts 5 units for each quest item
 
 By default, the element will complete itself if the quest ID provided is turned in

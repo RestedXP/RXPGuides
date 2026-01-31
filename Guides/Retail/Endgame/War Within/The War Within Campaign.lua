@@ -1,4 +1,5 @@
 --Nesting
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -1765,7 +1766,7 @@ step
     .target +Orweyna
 step
     .goto 2215,58.83,46.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannan|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hannan|r
     .complete 82694,1 --1/1 Find Hannan beneath the Fangs in Hallowfall
 step
     .goto 2215,58.84,46.2
@@ -1929,7 +1930,7 @@ step
     .goto 2214,60.30,79.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orweyna|r
     .complete 82701,1 --1/1 Speak to Orweyna
-    .skipgossipid 123172 
+    .skipgossipid 123172
     .target Orweyna
 step
     #title Fly to the top of the tower
@@ -1941,28 +1942,28 @@ step
     .complete 82701,2,1 --4/4 "Listen In" to Gather Intel
 step
     .goto 2214,58.94,80.78
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_on the Bridge near the Circle|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,2 --4/4 "Listen In" to Gather Intel
 step
     .goto 2214,59.30,78.82
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,3 --4/4 "Listen In" to Gather Intel
 step
     .goto 2214,61.33,77.27
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the building near the Circle|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
     .complete 82701,2,4 ----4/4 "Listen In" to Gather Intel
 step
     .goto 2214,62.52,78.42
-    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r. 
+    >>Use |T135788:0|t[Flap] |cRXP_WARN_for more movement speed|r.
     *Use |T252188:0|t[Listen In] |cRXP_WARN_near the Cave Wall|r.
     *Use |T132320:0|t[Sneak] |cRXP_WARN_to avoid detection|r
     *|cRXP_WARN_Be aware that goblins will try to kill you|r.
@@ -3073,7 +3074,7 @@ step
     .zone 2339 >>Enter Dornogal
 step
     .goto 2339,52.61,50.14
-    .achievement 40900,6 
+    .achievement 40900,6
     .zone 2346 >>Enter Undermine by taking the portal.
 step
     .isQuestAvailable 86417
@@ -3400,7 +3401,7 @@ step
     .target Monte Gazlowe
 step
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greedy Turncoat|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greedy Turncoat|r.
     >>Afterwards kill the hostile |cRXP_ENEMY_Greedy Turncoat|r
     .complete 85409,1 --6/6 Greedy Turncoat slain
     .mob Greedy Turncoat
@@ -3418,7 +3419,7 @@ step
     .goto 2214,70.54,84.97,20,0
     .goto 2214,71.32,84.04,20,0
     .goto 2214,72.02,84.25,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greedy Turncoat|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greedy Turncoat|r.
     >>Afterwards kill the hostile |cRXP_ENEMY_Greedy Turncoat|r
     .complete 85409,1 --6/6 Greedy Turncoat slain
     .mob Greedy Turncoat
@@ -4681,7 +4682,7 @@ step
     .target Monte Gazlowe
 step
     #completewith HostagesRescued
-    >>Kill the |cRXP_ENEMY_Ethereal Heartseeker|r by using the |T458733:0|t[|cRXP_WARN_ExtraActionButton|r] on them. 
+    >>Kill the |cRXP_ENEMY_Ethereal Heartseeker|r by using the |T458733:0|t[|cRXP_WARN_ExtraActionButton|r] on them.
     *- |cRXP_WARN_Running into the hidden |cRXP_ENEMY_Ethereal Heartseeker|r will stun you|r
     .complete 83128,2 --10/10 Ethereal Heartseeker slain
     .mob Ethereal Heartseeker
@@ -4742,7 +4743,7 @@ step
     .goto 2346,57.99,63.45,30,0
     .goto 2346,54.93,59.30,30,0
     .goto 2346,58.98,56.15,30,0
-    >>Kill the |cRXP_ENEMY_Ethereal Heartseeker|r by using the |T458733:0|t[|cRXP_WARN_ExtraActionButton|r] on them. 
+    >>Kill the |cRXP_ENEMY_Ethereal Heartseeker|r by using the |T458733:0|t[|cRXP_WARN_ExtraActionButton|r] on them.
     *- |cRXP_WARN_Running into the hidden |cRXP_ENEMY_Ethereal Heartseeker|r will stun you|r
     .complete 83128,2 --10/10 Ethereal Heartseeker slain
     .mob Ethereal Heartseeker
@@ -6084,10 +6085,10 @@ step
     -- Fix RP Duration
 step
     #completewith next
-    #title |cFFFCDC00Leave Vehicle Fast|r 
+    #title |cFFFCDC00Leave Vehicle Fast|r
     +This only works if you are fast saving 30seconds.
 step
-    #title |cFFFCDC00Leave Vehicle Fast|r 
+    #title |cFFFCDC00Leave Vehicle Fast|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xal'atath|r and |cRXP_FRIENDLY_Locus-Walker|r
     .turnin 84856 >>Turn in Where the Void Gathers
     .goto 2371,48.17,36.64
@@ -6215,7 +6216,7 @@ step
 step
     #requires Biome D-28 stabilized
     .goto 2371,48.80,59.08
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rod of Activation|r 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rod of Activation|r
     .complete 84860,3 --1/1 Biome D-28 stabilized
 step
     #label startchapter22
@@ -6868,7 +6869,7 @@ step
     .accept 84899 >>Accept Shadowguard Diffusion
     .goto 2371,60.74,27.94
     .target +Alleria Windrunner
-step 
+step
     #completewith Shadowguard Weapons
     >>Kill |cRXP_ENEMY_Shadowguard Phaseblade|r, |cRXP_ENEMY_Shadowguard Adept|r, and |cRXP_ENEMY_Shadowguard Voidtamer|r
     .complete 84899,1 --6/6 Shadowguard Phaseblade slain
@@ -6877,12 +6878,12 @@ step
     .mob +Shadowguard Adept
     .complete 84899,3 --3/3 Shadowguard Voidtamer slain
     .mob +Shadowguard Voidtamer
-step 
+step
     .goto 2371,58.93,30.5,30,0
     .goto 2371,58.68,29.55
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sand Piles|r appearing after you are close enough to their position
     .complete 84898,1,1 --3/3 Shadowguard Weapons
-step 
+step
     .goto 2371,59.12,28.51
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sand Piles|r appearing after you are close enough to their position
     .complete 84898,1,2 --3/3 Shadowguard Weapons
@@ -6891,7 +6892,7 @@ step
     .goto 2371,58.35,26.31
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Sand Piles|r appearing after you are close enough to their position
     .complete 84898,1,3 --3/3 Shadowguard Weapons
-step 
+step
     #loop
     .goto 2371,58.56,25.13,40,0
     .goto 2371,59.73,26.45,40,0
@@ -7309,7 +7310,7 @@ step
     .turnin 84997 >>Turn in What Might Come
     .target Vereesa Windrunner
     .accept 84998 >>Accept Bringer of the Void
-step 
+step
     .goto 2248,26.57,42.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arator|r
     .accept 85001 >>Accept Blessings Be Upon You

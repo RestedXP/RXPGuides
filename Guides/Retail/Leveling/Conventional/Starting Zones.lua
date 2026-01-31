@@ -3,6 +3,7 @@
 -- =================================
 
 --LEVEL 1-10
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
@@ -1387,7 +1388,7 @@ step
 step
     #label DarkmaulCitadelEnd
     .goto 1409,45.68,37.55
-    >>Target |cRXP_FRIENDLY_Gor'groth|r to automatically wave at him. 
+    >>Target |cRXP_FRIENDLY_Gor'groth|r to automatically wave at him.
     *If this doesn't work, type /wave at |cRXP_FRIENDLY_Gor'groth|r.
     .complete 55981,4 --Type /wave to Gor'groth
     .emote WAVE,153580
@@ -1409,7 +1410,7 @@ step
     .timer 8.5, RP
 step
     #requires Right Beneath Their Eyes
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
     .turnin 55981 >>Turn in Right Beneath Their Eyes
     .accept 55990 >>Accept Controlling their Stones
     .goto 1409,40.16,32.35
@@ -1426,7 +1427,7 @@ step
     #completewith next
     #label Wug's ward
     .goto 1409,43.95,35.21,15,0
-    >>Kill |cRXP_ENEMY_Wug|r. 
+    >>Kill |cRXP_ENEMY_Wug|r.
     *Loot him for|T134422:0|t[|cRXP_LOOT_Ward Stone|r].
     .complete 55990,2 --1/1 Wug's ward stone recovered
     .mob Wug
@@ -1436,7 +1437,7 @@ step
 step
     #requires Wug's ward
     .goto 1409,44.13,37.29
-    >>Kill |cRXP_ENEMY_Wug|r. 
+    >>Kill |cRXP_ENEMY_Wug|r.
     *Loot him for|T134422:0|t[|cRXP_LOOT_Ward Stone|r].
     .complete 55990,2 --1/1 Wug's ward stone recovered
     .mob Wug
@@ -1450,7 +1451,7 @@ step
 step
     #completewith next
     #label Jugnug's ward
-    >>Kill |cRXP_ENEMY_Jugnug|r. 
+    >>Kill |cRXP_ENEMY_Jugnug|r.
     *Loot him for |T134424:0|t[|cRXP_LOOT_Ward Stone|r].
     .complete 55990,1 --1/1 Jugnug's ward stone recovered
     .mob Jugnug
@@ -1479,7 +1480,7 @@ step
 step
     #completewith next
     #label Grunk's ward
-    >>Kill |cRXP_ENEMY_Grunk|r. 
+    >>Kill |cRXP_ENEMY_Grunk|r.
     *Loot him for |T134424:0|t[|cRXP_LOOT_Ward Stone|r].
     .complete 55990,3 --1/1 Grunk's ward stone recovered
     .mob Grunk
@@ -1489,7 +1490,7 @@ step
 step
     #requires Grunk's ward
     .goto 1409,42.80,41.00
-    >>Kill |cRXP_ENEMY_Grunk|r. 
+    >>Kill |cRXP_ENEMY_Grunk|r.
     *Loot him for |T134424:0|t[|cRXP_LOOT_Ward Stone|r].
     .complete 55990,3 --1/1 Grunk's ward stone recovered
     .mob Grunk
@@ -1601,7 +1602,7 @@ step
     .accept 87547 >>Accept What's Your Specialty?
 step
     .goto 2022,81.98,31.46
-    >>Open your Talents(Default: N) and Select any specialization. 
+    >>Open your Talents(Default: N) and Select any specialization.
     *|cRXP_WARN_If you already have your desired one, switch to another and back|r.
     .complete 87547,1 --1/1 Activate a combat specialization
     .macro Open Talents,611426 >>/run ToggleTalentFrame()
@@ -1645,7 +1646,7 @@ RXPGuides.RegisterGuide([[
 #name a) Neighbourhood
 #displayname |cFF00CCFF1|r - Welcome to the Neighbourhood
 #next ba) DF Alliance Intro (A) << Alliance
-#next b1) BfA Intro << Horde 
+#next b1) BfA Intro << Horde
 #chapter
 
 step << Alliance
@@ -1713,13 +1714,13 @@ step << Horde
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step << Horde
@@ -1763,13 +1764,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -3492,13 +3493,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -3553,13 +3554,13 @@ step << Horde
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 ]])
@@ -3632,13 +3633,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -3682,13 +3683,13 @@ step << Horde
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Horde
@@ -4588,7 +4589,7 @@ step
     .target Kayn Sunfury
 step
     .goto 677,50.75,72.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.   
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r.
     .accept 39682 >>Accept Grand Theft Felbat
     .target Kayn Sunfury
 step
@@ -4603,7 +4604,7 @@ step
     .goto 677,49.76,37.36,20,0
     .goto 677,43.61,29.01,15,0
     .goto 677,54.39,28.65,15,0
-    .goto 677,54.04,29.34,15,0 
+    .goto 677,54.04,29.34,15,0
     .goto 677,48.51,20.14,30 >>|cRXP_WARN_Follow the Arrow|r.
 step
     #loop
@@ -4642,7 +4643,7 @@ step
 step
     .goto 678,41.12,47.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r.
-    .acceptmultiple 39683,40254 >>Accept Forged in Fire 
+    .acceptmultiple 39683,40254 >>Accept Forged in Fire
     .target Allari the Souleater
 step
     #completewith next
@@ -4974,7 +4975,7 @@ step << Horde
     #completewith next
     #label Between Us and Freedom2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r.
-    .turninmultiple 40256,39694 >>Turn in Between Us and Freedom 
+    .turninmultiple 40256,39694 >>Turn in Between Us and Freedom
     .target Altruis the Sufferer
 step << Horde
     #completewith Between Us and Freedom2
@@ -4988,7 +4989,7 @@ step << Horde
     #requires Between Us and Freedom2
     .goto 679,83.98,82.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altruis the Sufferer|r.
-    .turninmultiple 40256,39694 >>Turn in Between Us and Freedom 
+    .turninmultiple 40256,39694 >>Turn in Between Us and Freedom
     .target Altruis the Sufferer
 step << Alliance
     .goto 679,85.98,84.31
@@ -5035,7 +5036,7 @@ step << Alliance
 step << Alliance
     .goto 84,85.90,31.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
-    .complete 44463,1 --1/1 Warn Anduin Wrynn 
+    .complete 44463,1 --1/1 Warn Anduin Wrynn
     .skipgossipid 45043
     .target Anduin Wrynn
 step << Alliance
@@ -5078,7 +5079,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
-    .target Kirin Tor Emissary 
+    .target Kirin Tor Emissary
 step << Alliance
     .goto 41,53.15,52.29,5,0
     .goto 41,49.84,48.28
@@ -5162,13 +5163,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -5206,13 +5207,13 @@ step << Horde
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Horde
@@ -5853,7 +5854,7 @@ step << Evoker
     .goto 2118,26,18.41,10,0
     .goto 2118,25.86,20.49,10,0
     .goto 2118,21.41,23.86,10,0
-    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r. 
+    >>Use |T4622457:0:0|t[Emerald Blossom] on any |cRXP_FRIENDLY_Injured Drakonid|r.
     *|TInterface/cursor/crosshair/interact.blp:17|tClick on the |cRXP_PICK_Stone|r to reset it's cooldown.
     .complete 65307,1 --10/10 Injured dracthyr healed
     .target Injured Talon
@@ -5975,7 +5976,7 @@ step << Evoker
     .target Scalecommander Emberthal
 step << Evoker
     .goto 2118,45.31,61.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Treysh|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Treysh|r.
     .accept 72263 >>Accept Cavalry Has its Place
     .turnin 72263 >>Turn in Cavalry Has its Place
     .target Treysh
@@ -6460,13 +6461,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 step << Alliance
@@ -6502,13 +6503,13 @@ step << Horde
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
     -- step << Horde
@@ -6960,7 +6961,7 @@ step << !Hunter
 	.target Merchant Lorvo
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r 
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r
     *Loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.mob Amberleaf Scamp
@@ -6976,7 +6977,7 @@ step
     .goto 378,55.35,25.22,25,0
     .goto 378,53.92,22.52,25,0
     .goto 378,53.95,17.26,25,0
-    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r 
+    >>Kill |cRXP_ENEMY_Amberleaf Scamps|r
     *Loot them for their |T132622:0|t[|cRXP_LOOT_Supplies|r].
     .complete 29424,1 --6/6 Stolen Training Supplies
 	.target Amberleaf Scamp
@@ -7054,7 +7055,7 @@ step
     .accept 29414 >>Accept The Way of the Tushui
     .goto 378,55.12,32.56
 	.target Aysa Cloudsinger
-step 
+step
     #completewith next
     #label DefendAysa2
     .goto 378,55.86,30.11,20,0
@@ -7669,7 +7670,7 @@ step
 	.target Gao Summerdraft
 step
     #completewith
-    >>Kill |cRXP_ENEMY_Virmens|r 
+    >>Kill |cRXP_ENEMY_Virmens|r
     .complete 29769,1 --10/10 Plump Virmen slain
     .mob Plump Virmen
 step
@@ -7688,7 +7689,7 @@ step
 step
     #completewith next
     .goto 378,75.55,72.22,20,0
-    >>Kill |cRXP_ENEMY_Plump Carrotcruncher|r 
+    >>Kill |cRXP_ENEMY_Plump Carrotcruncher|r
     *Loot them for |T134010:0|t[|cRXP_LOOT_Carrots|r].
     .complete 29770,2 --3/3 Stolen Carrot
     .mob Plump Carrotcruncher
@@ -8047,7 +8048,7 @@ step
     #completewith next
     #label Locate Dafeng
     #title |cFFFCDC00Follow |cFF00FF00Aysa Cloudsinger|r|r
-    >>The winds inside the Temple will kill you within seconds. 
+    >>The winds inside the Temple will kill you within seconds.
     *|cRXP_WARN_It's recommended to stay with |cFF00FF00Aysa Cloudsinger|r
     *|cRXP_WARN_If you dare go when the storm settles|r.
     .complete 29785,1 --1/1 Locate Dafeng
@@ -8057,7 +8058,7 @@ step
     .goto 378,33.53,44.29,30,0
     .goto 378,32.27,51.76,30,0
     .goto 378,28.66,62.78,15,0
-    .goto 378,28,64.26,15,0 
+    .goto 378,28,64.26,15,0
     .goto 378,24.65,69.80,150 >>Swim to the Shore and wait infront of the Temple.
     *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
     .timer 30,RP
@@ -8082,9 +8083,9 @@ step
     #completewith next
     #label Zhao-Ren slain
     .goto 378,28.12,63.81,15,0
-    >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him. 
+    >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him.
     *Use any ranged abilities while moving |cRXP_WARN_if you can|r.
-    *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r. 
+    *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r.
     *Push him |cRXP_WARN_below 25%|r during this to chain the stun and finish him.
     *If he gets back up, |cRXP_WARN_repeat the process|r.
     .complete 29786,1 --1/1 Zhao-Ren slain
@@ -8102,9 +8103,9 @@ step
     .goto 378,30.87,58.41,5,0
     .goto 378,29.78,58.95,5,0
     .goto 378,29.54,60.75,5,0
-    >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him. 
+    >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him.
     *Use any ranged abilities while moving |cRXP_WARN_if you can|r.
-    *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r. 
+    *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r.
     *Push him |cRXP_WARN_below 25%|r during this to chain the stun and finish him.
     *If he gets back up, |cRXP_WARN_repeat the process|r.
     .complete 29786,1 --1/1 Zhao-Ren slain
@@ -8306,7 +8307,7 @@ step
     .goto 378,50.57,68.19,10,0
     .goto 378,51.63,70.04,15,0
     .goto 378,51.22,72.72
-    >>Jump on the Gate and wait behind it. 
+    >>Jump on the Gate and wait behind it.
     *|cRXP_WARN_Don't go further than the arrow indicates|r
     .complete 29792,2 --1/1 Open the Pei-Wu Forest Gate
 step
@@ -8446,7 +8447,7 @@ step
     #completewith LastSoldier
     >>Kill |cRXP_ENEMY_Deepscale Tormentors|r.
     .complete 29665,1 --8/8 Deepscale Tormentor slain
-step 
+step
     #completewith LastSoldier
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Supplies|r
     .complete 29797,1 --8/8 Alliance Medical Supplies
@@ -8554,7 +8555,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Deepscale Tormentors|r.
     .complete 29665,1 --8/8 Deepscale Tormentor slain
-step 
+step
     #requires Sailor3
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Supplies|r
     .complete 29797,1 --8/8 Alliance Medical Supplies
@@ -8583,7 +8584,7 @@ step
 step
     .goto 378,36.50,84.23
     >>Kill |cRXP_ENEMY_Vordraka, The Deep Sea Nightmare|r.
-    >>|cRXP_WARN_Dodge his Deep Sea Smash|r. 
+    >>|cRXP_WARN_Dodge his Deep Sea Smash|r.
     *Kill |cRXP_ENEMY_Deepscale Aggressors|r when they spawn.
     .complete 29798,1 --1/1 Vordraka, the Deep Sea Nightmare slain
 	.mob Vordraka, The Deep Sea Nightmare
@@ -8717,7 +8718,7 @@ step << Alliance
 --     .goto 84,62.11,32.18
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -8794,7 +8795,7 @@ step << Horde
 --     .goto 84,62.11,32.18
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
     -- step << Horde
@@ -9060,13 +9061,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -9075,7 +9076,7 @@ step << Alliance
     .isOnQuest 65436
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf   
+    .nodmf
 step << Horde
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -9104,13 +9105,13 @@ step << Horde
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Horde
@@ -9153,7 +9154,7 @@ step
     #completewith next
     #label Anomaly Scan
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Disc|r.
-    .complete 79200,2 --1/1 Cognitive Scan completed 
+    .complete 79200,2 --1/1 Cognitive Scan completed
 step
     #completewith Anomaly Scan
     .goto 2322,83.72,60.39,30 >>Step on the scanner
@@ -9162,7 +9163,7 @@ step
     .goto 2322,83.72,60.39,5,0
     .goto 2322,83.71,60.94
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Disc|r.
-    .complete 79200,2 --1/1 Cognitive Scan completed 
+    .complete 79200,2 --1/1 Cognitive Scan completed
 step
     #completewith next
     #label Cognitive Scan2
@@ -9368,13 +9369,13 @@ step << Alliance
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Alliance
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Alliance
@@ -9442,13 +9443,13 @@ step << Horde
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Horde
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step << Horde
@@ -9757,7 +9758,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Draenei !DK
 #next ac) Draenei Azuremyst Isle
 
-<< Alliance 
+<< Alliance
 
 step
     #completewith Blood Elf Plans
@@ -9816,7 +9817,7 @@ step
     .goto 468,53.47,25.15,30,0
     .goto 468,54.91,28.56,30,0
     .goto 468,54.47,31.88,30,0
-    >>Kill |cRXP_ENEMY_Moths|r. 
+    >>Kill |cRXP_ENEMY_Moths|r.
     *Loot them for |T134844:0|t[|cRXP_LOOT_Vial of Moth Blood|r].
     .complete 9280,1 --6/6 Vial of Moth Blood << Draenei
     .complete 9369,1 --6/6 Vial of Moth Blood << !Draenei
@@ -10089,7 +10090,7 @@ step
     #hidewindow
     .goto 468,53.76,55.91,15,0
     .goto 468,55.98,60.78,60 >>Follow the Arrow
-step 
+step
     .xp >10,1
     #requires Emitter Spare Part
     #hidewindow
@@ -10213,7 +10214,7 @@ step
     #requires Turn in Spare Parts2
     .goto 468,49.82,47.54,10,0
     .goto 468,49.98,47.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mura|r
     .vendor >>Repair and sell items to free up bag space.
     .target Mura
 step
@@ -10314,7 +10315,7 @@ step
     .xp >10,1
     #requires Surveyor Candress
     .goto 468,27.8,80.41
-    >>Kill |cRXP_ENEMY_Surveyor Candress|r. 
+    >>Kill |cRXP_ENEMY_Surveyor Candress|r.
     *Loot her for |T132319:0|t[|cRXP_LOOT_Blood Elf Plans|r].
     .complete 9311,1 --1/1 Surveyor Candress slain
     .accept 9798 >>Accept Blood Elf Plans
@@ -10328,7 +10329,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r.
     .turnin 9294 >>Turn in Healing the Lake
 	.target Botanist Taerix
-step 
+step
     .xp >10,1
     #completewith Healing the Lake
     .goto 468,26.97,76.13,40,0
@@ -10948,7 +10949,7 @@ step
     .xp >10,1
     .xp <9.8,1
     .isNotOnQuest 9506
-    >>Kill |cRXP_ENEMY_Skittering Crawlers|r. 
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r.
     *Loot them for |T134007:0|t[|cRXP_LOOT_Skittering Crawler Meat|r].
     .complete 9512,1 --6/6 Skittering Crawler Meat
     .mob Skittering Crawler
@@ -10970,7 +10971,7 @@ step
     .xp >10,1
     #completewith next
     #label Skittering Crawler Meat2
-    >>Kill |cRXP_ENEMY_Skittering Crawlers|r. 
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r.
     *Loot them for |T134007:0|t[|cRXP_LOOT_Skittering Crawler Meat|r].
     .complete 9512,1 --6/6 Skittering Crawler Meat
     .mob Skittering Crawler
@@ -11002,7 +11003,7 @@ step
     .goto 97,50.8,69.66,40,0
     .goto 97,49.76,73.69,40,0
     .goto 97,48.37,71.99,40,0
-    >>Kill |cRXP_ENEMY_Skittering Crawlers|r. 
+    >>Kill |cRXP_ENEMY_Skittering Crawlers|r.
     *Loot them for |T134007:0|t[|cRXP_LOOT_Skittering Crawler Meat|r].
     .complete 9512,1 --6/6 Skittering Crawler Meat
     .mob Skittering Crawler
@@ -11199,7 +11200,7 @@ step
     #completewith Turn in Tree's Company1
     .goto 97,47.87,56.19,15 >>Die to the |cRXP_ENEMY_Owlbeasts|r.
     *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>/sit 
+    .macro Sit, >>/sit
 step
     .isQuestComplete 9527
     #requires Turn in Tree's Company1
@@ -11282,13 +11283,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -11307,7 +11308,7 @@ RXPGuides.RegisterGuide([[
 #name a) Azuremyst Isle >1.3 XP Rate
 #internal
 
-<< Alliance 
+<< Alliance
 
 -- ====================================
 -- ===        XPRATE: >1.30        ====
@@ -11575,7 +11576,7 @@ RXPGuides.RegisterGuide([[
 #name a) Azuremyst Isle <1.3 XP Rate
 #internal
 
-<< Alliance 
+<< Alliance
 
 
 -- =====================================
@@ -11681,7 +11682,7 @@ RXPGuides.RegisterGuide([[
 #name a) Azuremyst Isle 1.25-1.3 XP XP Rate
 #internal
 
-<< Alliance 
+<< Alliance
 
 
 -- ===========================================
@@ -11849,7 +11850,7 @@ RXPGuides.RegisterGuide([[
 #name a) Azuremyst Isle <1.25 XP Rate
 #internal
 
-<< Alliance 
+<< Alliance
 
 
 -- =====================================
@@ -12282,8 +12283,8 @@ step
     .xp >10,1
     #completewith next
     #label Priceless Rockjaw Artifact (5)
-    .goto 427,61.71,28.85,10,0 
-    >>Kill |cRXP_ENEMY_Rockjaw Scavengers|r. 
+    .goto 427,61.71,28.85,10,0
+    >>Kill |cRXP_ENEMY_Rockjaw Scavengers|r.
     *Loot them for |T135238:0|t[|cRXP_LOOT_Rockjaw Artifacts|r].
     *|cRXP_WARN_You can get extra artifacts by letting their cast hit you|r.
     *|cRXP_WARN_They only cast once, and only from range|r.
@@ -12308,7 +12309,7 @@ step
     .xp >10,1
     #requires Priceless Rockjaw Artifact (5)
     #completewith Priceless Rockjaw Artifact
-    >>Kill |cRXP_ENEMY_Wolves|r. 
+    >>Kill |cRXP_ENEMY_Wolves|r.
     *Loot them for |T134366:0|t[|cRXP_LOOT_Ragged Wolf Hide|r].
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
@@ -12333,7 +12334,7 @@ step
 step
     .xp >10,1
     #completewith next
-    >>Kill |cRXP_ENEMY_Wolves|r. 
+    >>Kill |cRXP_ENEMY_Wolves|r.
     *Loot them for |T134366:0|t[|cRXP_LOOT_Ragged Wolf Hide|r].
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
@@ -12346,7 +12347,7 @@ step
 step
     .xp >10,1
     #label Ragged Wolf Hide
-    >>Kill |cRXP_ENEMY_Wolves|r. 
+    >>Kill |cRXP_ENEMY_Wolves|r.
     *Loot them for |T134366:0|t[|cRXP_LOOT_Ragged Wolf Hide|r].
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
@@ -12447,7 +12448,7 @@ step
 step
     .xp >10,1
     #completewith Felix's Box
-    .goto 27,27.759,75.195,11 >>Being within 10 yards of the arrow's location triggers an event. 
+    .goto 27,27.759,75.195,11 >>Being within 10 yards of the arrow's location triggers an event.
     *|cRXP_WARN_Once it starts, quickly grab the box, then head inside the hut|r.
     .timer 12.3,RP
 step
@@ -12894,18 +12895,18 @@ step
 step
     .xp >10,1
     #completewith next
-    #label Crazed Leper Gnome 
+    #label Crazed Leper Gnome
     >>Kill |cRXP_ENEMY_Crazed Leper Gnomes|r.
     .complete 27670,1 --Crazed Leper Gnome (6)
 	.mob Crazed Leper Gnome
 step
     .xp >10,1
-    #completewith Crazed Leper Gnome 
+    #completewith Crazed Leper Gnome
     .goto 30,42.21,32.17,20 >>|cRXP_WARN_Usually, the best move is to kill the gnomes near the 4 npcs and wait on respawns|r.
     .target S.A.F.E. Operative
 step
     .xp >10,1
-    #requires Crazed Leper Gnome 
+    #requires Crazed Leper Gnome
     #loop
     .goto 30,43.59,33.64,10,0
     .goto 30,40.53,31.95,20,0
@@ -13219,7 +13220,7 @@ step
     .accept 26265 >>Accept Dealing with the Fallout
 	.target Corporal Fizzwhistle
 step
-    .xp >10,1 
+    .xp >10,1
     #completewith Dealing with the Fallout
     #hidewindow
     .goto 469,38.43,40.48,20 >>Follow the Arrow
@@ -13268,7 +13269,7 @@ step
 step
     .xp >10,1
     #completewith GS-9x Multi-Bot
-    >>Kill |cRXP_ENEMY_Toxic Sludges|r. 
+    >>Kill |cRXP_ENEMY_Toxic Sludges|r.
     *Loot them for their |T133151:0|t[|cRXP_LOOT_Recovered Possessions|r].
     .complete 26264,1 --Recovered Possession (6)
     .mob Toxic Sludge
@@ -13329,7 +13330,7 @@ step
     .turnin 26205 >>Turn in A Job for the Multi-Bot
 	.target Engineer Grindspark
 step
-    .xp >10,1 
+    .xp >10,1
     #completewith Turn in A Job for the Multi-Bot
     #hidewindow
     .goto 469,40.4,28.22,40 >>Follow the Arrow
@@ -13421,7 +13422,7 @@ step
 step
     .xp >10,1
     #completewith next
-    >>Kill |cRXP_ENEMY_Rockjaws|r. 
+    >>Kill |cRXP_ENEMY_Rockjaws|r.
     *Loot them for the |T132622:0|t[|cRXP_LOOT_Stolen Powder Kegs|r].
     .complete 26285,1 --Stolen Powder Keg (7)
 	.mob Rockjaw Bonepicker
@@ -13433,7 +13434,7 @@ step
 step
     .xp >10,1
     #label Stolen Powder Keg
-    >>Kill |cRXP_ENEMY_Rockjaws|r. 
+    >>Kill |cRXP_ENEMY_Rockjaws|r.
     *Loot them for the |T132622:0|t[|cRXP_LOOT_Stolen Powder Kegs|r].
     .complete 26285,1 --Stolen Powder Keg (7)
 	.mob Rockjaw Bonepicker
@@ -13733,7 +13734,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Dwarf & Gnome Dun Morogh
 #displayname |cFF00CCFF2|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
-#next ba) DF Alliance Intro (A) 
+#next ba) DF Alliance Intro (A)
 
 << Alliance
 
@@ -13885,7 +13886,7 @@ step
     #completewith next
     #label Honor Students
     .goto 27,54.06,50.23,5,0
-    .goto 27,54.28,50.27,5,0 
+    .goto 27,54.28,50.27,5,0
     .goto 27,54.52,50.71,5,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r.
     .accept 6387 >>Accept Honor Students
@@ -14049,7 +14050,7 @@ step
     .complete 25724,1 --Frostmane Seer slain (5)
     .disablecheckbox
 step
-    .xp >10,1 
+    .xp >10,1
     #completewith Shimmerweed2
     .goto 27,49.29,41.25,100 >>Navigate up the hill
 step
@@ -14077,7 +14078,7 @@ step
     .complete 25724,1 --Frostmane Seer slain (5)
     .complete 315,1 --Shimmerweed (7)
     .mob Frostmane Seer
-    .mob Frostmane Snowstrider 
+    .mob Frostmane Snowstrider
 step << Dwarf
     .xp >10,1
     #completewith next
@@ -14188,7 +14189,7 @@ step
     .goto 27,49.77,58.57,30,0
     .goto 27,51.33,57.33,30,0
     .goto 27,53.34,57.9,30,0
-    >>Kill |cRXP_ENEMY_Crag Boars|r. 
+    >>Kill |cRXP_ENEMY_Crag Boars|r.
     *Loot them for their |T133972:0|t[|cRXP_LOOT_Tender Boar Ribs|r].
     .complete 384,1 --Tender Boar Ribs (4)
     .mob Crag Boar
@@ -14422,7 +14423,7 @@ step
 step
     .xp >10,1
     #completewith next
-    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r. 
+    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r.
     *|cRXP_WARN_NO Scouts|r.
     *Loot them for |T134063:0|t[|cRXP_LOOT_Gyromechanic Gear|r].
     .complete 412,1 --Gyromechanic Gear (8)
@@ -14437,7 +14438,7 @@ step
 step
     .xp >10,1
     #label Frostmane Scavengers
-    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r. 
+    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r.
     *Loot them for |T134304:0|t[|cRXP_LOOT_Gyromechanic Gear|r].
     .complete 412,1 --Gyromechanic Gear (8)
 	.mob Frostmane Scavenger
@@ -14950,13 +14951,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -15394,13 +15395,13 @@ step
     >>Use and then channel |T308321:0|t[Milly's Fire Extinguisher] near the |cRXP_PICK_Vineyard Fires|r.
     .complete 26391,1 --Vineyard Fire extinguished (8)
 step
-    .xp >10,1 
+    .xp >10,1
     #completewith Vineyard Fire extinguished
     .goto 425,49.53,76.72,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
     .mob Blackrock Worg
     .mob Blackrock Spy
 -- step << Hunter
---     .xp >10,1 
+--     .xp >10,1
 --     #completewith Vineyard Fire extinguished
 --     .goto 425,40.24,64.95,20,0
 --     .goto 425,49.53,76.72,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
@@ -15552,7 +15553,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Elwynn Forest 1
 #displayname |cFF00CCFF2|r - Elwynn Forest
 #defaultfor Human !DK
-#next ba) DF Alliance Intro (A) 
+#next ba) DF Alliance Intro (A)
 
 << Alliance
 
@@ -15821,7 +15822,7 @@ step
 step
     .xp >10,1
     #completewith next
-    >>Kill |cRXP_ENEMY_Kobolds|r. 
+    >>Kill |cRXP_ENEMY_Kobolds|r.
     *Loot them for |T133848:0|t[|cRXP_LOOT_Gold Dust|r] and |T133750:0|t[|cRXP_LOOT_Large Candles|r].
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
@@ -15886,7 +15887,7 @@ step
     .xp >10,1
     #completewith next
     #label Large Candle
-    >>Kill |cRXP_ENEMY_Kobolds|r. 
+    >>Kill |cRXP_ENEMY_Kobolds|r.
     *Loot them for |T133848:0|t[|cRXP_LOOT_Gold Dust|r] and |T133750:0|t[|cRXP_LOOT_Large Candles|r].
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
@@ -15904,7 +15905,7 @@ step
     .xp >10,1
     #requires Large Candle
     #completewith next
-    >>Kill |cRXP_ENEMY_Kobolds|r. 
+    >>Kill |cRXP_ENEMY_Kobolds|r.
     *Loot them for |T133848:0|t[|cRXP_LOOT_Gold Dust|r] and |T133750:0|t[|cRXP_LOOT_Large Candles|r].
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
@@ -15924,7 +15925,7 @@ step
     .goto 39,78.6,29.79,20,0
     .goto 39,58.12,83.78,20,0
     .goto 39,42.72,67.38,20,0
-    >>Kill |cRXP_ENEMY_Kobolds|r. 
+    >>Kill |cRXP_ENEMY_Kobolds|r.
     *Loot them for |T133848:0|t[|cRXP_LOOT_Gold Dust|r] and |T133750:0|t[|cRXP_LOOT_Large Candles|r].
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
@@ -15985,7 +15986,7 @@ step
     .xp >10,1
     #completewith next
     #label Princess
-    >>Kill |cRXP_ENEMY_Princess|r. 
+    >>Kill |cRXP_ENEMY_Princess|r.
     *Loot her for her |T133345:0|t[|cRXP_LOOT_Brass Collar|r].
     .complete 88,1 --1/1 Brass Collar
 	.mob Princess
@@ -15999,7 +16000,7 @@ step
     .xp >10,1
     #requires Princess
     .goto 37,32.57,85.16
-    >>Kill |cRXP_ENEMY_Princess|r. 
+    >>Kill |cRXP_ENEMY_Princess|r.
     *Loot her for her |T133345:0|t[|cRXP_LOOT_Brass Collar|r].
     .complete 88,1 --1/1 Brass Collar
 	.mob Princess
@@ -16338,7 +16339,7 @@ step
 step
     .xp >10,1
     #completewith Find the Lost Guards
-    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Bears|r. 
+    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Bears|r.
     *|cRXP_WARN_Priotize |cRXP_ENEMY_Bears|r|r.
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .complete 52,2 --Kill Young Forest Bear (5)
@@ -16500,7 +16501,7 @@ step
 step
     .xp >10,1
     #completewith next
-    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Bears|r. 
+    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Bears|r.
     *|cRXP_WARN_Priotize |cRXP_ENEMY_Bears|r|r
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .complete 52,2 --Kill Young Forest Bear (5)
@@ -16514,7 +16515,7 @@ step
 step
     .xp >10,1
     #label WolvesBears
-    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Bears|r. 
+    >>Kill |cRXP_ENEMY_Wolves|r and |cRXP_ENEMY_Bears|r.
     *|cRXP_WARN_Priotize |cRXP_ENEMY_Bears|r|r
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
     .complete 52,2 --Kill Young Forest Bear (5)
@@ -16568,7 +16569,7 @@ step
     #completewith next
     #label Morgan the Collector
     .goto 37,71.18,81.13,20,0
-    >>Kill |cRXP_ENEMY_Morgan the Collector|r 
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r
     *|cRXP_WARN_Beaware you'll might aggro the entire house|r.
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
@@ -16592,7 +16593,7 @@ step
     .xp >10,1
     #completewith next
     #label Snoot the Rooter
-    >>Kill |cRXP_ENEMY_Bandits|r. 
+    >>Kill |cRXP_ENEMY_Bandits|r.
     *Loot them for |T134304:0|t[|cRXP_LOOT_Linen Scraps|r].
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
@@ -16610,7 +16611,7 @@ step
     .goto 37,68.25,77.27,25,0
     .goto 37,70.89,77.55,25,0
     .goto 37,70.81,80.39,25,0
-    >>Kill |cRXP_ENEMY_Bandits|r. 
+    >>Kill |cRXP_ENEMY_Bandits|r.
     *Loot them for |T134304:0|t[|cRXP_LOOT_Linen Scraps|r].
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
@@ -16772,7 +16773,7 @@ step
     #optional
     #hidewindow
     #label Fel Moss
-    >>Kill |cRXP_ENEMY_Imps|r. 
+    >>Kill |cRXP_ENEMY_Imps|r.
     *Loot them for |T134186:0|t[|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 step
@@ -16801,7 +16802,7 @@ step
     #optional
     #requires Fel Moss
     #completewith next
-    >>Kill |cRXP_ENEMY_Imps|r. 
+    >>Kill |cRXP_ENEMY_Imps|r.
     *Loot them for |T134186:0|t[|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 	.mob Grell
@@ -16814,7 +16815,7 @@ step
 step
     .xp >10,1
     #label Grell
-    >>Kill |cRXP_ENEMY_Imps|r. 
+    >>Kill |cRXP_ENEMY_Imps|r.
     *Loot them for |T134186:0|t[|cRXP_LOOT_Fel Moss|r].
     .complete 28714,1 --6/6 Fel Moss
 	.mob Grell
@@ -16904,7 +16905,7 @@ step
     #optional
     #completewith next
     #label Woodland Protector
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r. 
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r.
     *|cRXP_WARN_She will appear at the entrance of the cave|r.
     .turnin 28725 >>Turn in The Woodland Protector
     .accept 28726 >>Accept Webwood Corruption
@@ -16949,8 +16950,8 @@ step
     .goto 58,39.62,34.28,10 >>Position yourself with your back at the edge of the cliff. << Hunter
     .goto 58,41.28,28.46,10 >>Use |T132294:0|t[Disengage] to jump to the nearest platform. << Hunter
 step << Hunter
-    .xp >10,1 
-    #requires Webwood Spider 
+    .xp >10,1
+    #requires Webwood Spider
     .goto 58,41.19,16.74,20,0
     .goto 58,51.51,27.33,20,0
     .goto 58,56.8,26.03,10,0
@@ -16963,7 +16964,7 @@ step << Hunter
     .complete 28726,1 --12/12 Webwood Spider slain
 	.mob Webwood Spider
 step <<!Hunter
-    .xp >10,1 
+    .xp >10,1
     #requires Webwood Spider
     #loop
     .goto 58,41.6,34.04,20,0
@@ -17011,7 +17012,7 @@ step
     .complete 28729,1 --1/1 Filled Crystal Phial
     .use 5185
 step << !Hunter
-    .xp >10,1 
+    .xp >10,1
 	#completewith Filled Crystal Phial
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,49.97,34.37,60 >>Head to the Objective.
@@ -17022,7 +17023,7 @@ step << !Hunter
 	.mob Grellkin
     .mob Thistle Boar
 step << Hunter
-    .xp >10,1 
+    .xp >10,1
 	#completewith Filled Crystal Phial
     .goto 460,49.97,34.37
 	*|cRXP_WARN_Drag|r |T132161:0|t[Call Pet] |cRXP_WARN_and|r |T132179:0|t[Pet Utility] |cRXP_WARN_onto your Action Bars|r.
@@ -17161,13 +17162,13 @@ RXPGuides.RegisterGuide([[
 #name ac) Night Elf Teldrassil
 #displayname |cFF00CCFF2|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
-#next ba) DF Alliance Intro (A) 
+#next ba) DF Alliance Intro (A)
 
 << Alliance
 
 step
     #hidewindow
-    #completewith Ursal the Mauler 
+    #completewith Ursal the Mauler
     +test
     .usespell 1231411
     .use 60239 --foul-bag
@@ -17225,7 +17226,7 @@ step
     .goto 57,57.41,53.02,40,0
     .goto 57,57.14,48.36,40,0
     .goto 57,59.54,47.9,40,0
-    >>Kill |cRXP_ENEMY_Spiders|r, |cRXP_ENEMY_Cats|r and |cRXP_ENEMY_Owls|r. 
+    >>Kill |cRXP_ENEMY_Spiders|r, |cRXP_ENEMY_Cats|r and |cRXP_ENEMY_Owls|r.
     *Loot them for |T133725:0|t[|cRXP_LOOT_Nightsaber Fang|r], |T132926:0|t[|cRXP_LOOT_Strigid Owl Feather|r] and |T136113:0|t[|cRXP_LOOT_Webwood Spider Silk|r] as you follow the route.
     .complete 488,1 --2/2 Nightsaber Fang
     .complete 488,2 --2/2 Strigid Owl Feather
@@ -17486,7 +17487,7 @@ step
     .mob Gnarlpine Warrior
     .mob Gnarlpine Ursa
 step
-    .xp >10,1    
+    .xp >10,1
     #requires in A Troubling Breeze
     .goto 57,64.6,51.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaerolas Talvethren|r.
@@ -17743,7 +17744,7 @@ step
     #label Fel Rock3
     #optional
     .xp >10,1
-    >>Kill |cRXP_ENEMY_Lord Melenas|r. 
+    >>Kill |cRXP_ENEMY_Lord Melenas|r.
     *Loot him for |T134161:0|t[|cRXP_LOOT_Melenas' Head|r].
     *|cRXP_WARN_(You can still use|r |T134217:0|t[Ireroot Seeds] |cRXP_WARN_on |cRXP_ENEMY_Sprites|r|r.
     .complete 932,1 --1/1 Melenas' Head
@@ -17752,9 +17753,9 @@ step
     #requires Fel Rock2
     #completewith Fel Rock3
     #title |cFFFCDC00[RARE CHEST]|r
-    .goto 59,42.35,81.29,20,0 
+    .goto 59,42.35,81.29,20,0
     .goto 59,32.5,81.69,20,0
-    .goto 59,31.01,60.8,10,0 
+    .goto 59,31.01,60.8,10,0
     .goto 59,26.74,47.21,5,0
     .goto 59,23.34,46.51,5,0
     .goto 59,20.76,43.33,8 >>Check for the |cRXP_PICK_Chest|r along the way, then jump up to |cRXP_ENEMY_Malenas|r.
@@ -17768,7 +17769,7 @@ step
     #title |cFFFCDC00[RARE CHEST]|r
     #label Ireroot Seeds
     .goto 59,20.76,43.33
-    >>Kill |cRXP_ENEMY_Lord Melenas|r. 
+    >>Kill |cRXP_ENEMY_Lord Melenas|r.
     *Loot him for |T134161:0|t[|cRXP_LOOT_Melenas' Head|r].
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r; move on if it isn't there.
     *|cRXP_WARN_(1x quest XP)|r.
@@ -18010,7 +18011,7 @@ step
     .target Priestess A'moora
 step
     .xp >10,1
-    #completewith 
+    #completewith
     >>Kill |cRXP_ENEMY_Bloodfeathers|r
     *Loot them for |T132496:0|t[|cRXP_LOOT_Bloodfeather Belt|r].
     .complete 937,1 --6/6 Bloodfeather Belt
@@ -18241,7 +18242,7 @@ step
     >>Kill |cRXP_ENEMY_Rageclaw|r
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rageclaw's corpse|r.
     .complete 2561,1
-    .use 8149 
+    .use 8149
     .mob Rageclaw
 step
     .isQuestComplete 2561
@@ -18279,7 +18280,7 @@ step
 step
     .isQuestComplete 13945
     .goto 57,55.70,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r.   
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong|r.
     .turnin 13945 >>Turn in Resident Danger
     .target Sentinel Kyra Starsong
 step
@@ -18368,13 +18369,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -18393,7 +18394,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ab) Worgen Intro
 #displayname Gilneas |cRXP_ENEMY_(Alternative)|r
-#next ba) DF Alliance Intro (A) 
+#next ba) DF Alliance Intro (A)
 
 << Alliance Worgen !DK
 
@@ -18792,7 +18793,7 @@ step
     #label Old Divisions
     .goto 202,59.79,71.67,10,0
     .goto 202,57.73,73.29,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r
     .turnin 14157 >>Turn in Old Divisions
     .accept 28850 >>Accept The Prison Rooftop
 	.target Captain Broderick
@@ -18802,7 +18803,7 @@ step
 step
     #requires Old Divisions
     .goto 202,57.925,75.584
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r
     .turnin 14157 >>Turn in Old Divisions
     .accept 28850 >>Accept The Prison Rooftop
 	.target Captain Broderick
@@ -19253,7 +19254,7 @@ step
     .skipgossipid 38872
     .skipgossipid 38987
     .target Jack "All Trades" Derrington
-step 
+step
     #completewith next
     +Gather ore and herbs whenever they’re directly in your path for XP.
 step
@@ -19438,7 +19439,7 @@ step
     #label Ashley1
     .goto 179,28.27,63.86,5,0
     .goto 179,28.45,64.38,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r
     .complete 14368,2 --Ashley rescued (1)
 step
     #completewith Ashley1
@@ -19457,7 +19458,7 @@ step
     .goto 179,27.5,66.59,5,0
     .goto 179,27.85,66.84,5,0
     .goto 179,27.96,66.08,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ashley|r
     .complete 14368,2 --Ashley rescued (1)
 step
     #requires Ashley1
@@ -19496,7 +19497,7 @@ step
     .complete 14368,3 --James rescued (1)
 step
     #requires James1
-    #completewith James2   
+    #completewith James2
     #title |cFFFCDC00NPC Patrols|r
     .goto 179,28.55,66.73
     .cast 68596 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James|r
@@ -19605,7 +19606,7 @@ step
     #completewith next
     #label Save the Children!
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melinda Hammond|r and |cRXP_FRIENDLY_Lord Godfrey|r
     .turnin 14368 >>Turn in Save the Children!
 	.target +Melinda Hammond
     .turnin 14369 >>Turn in Unleash the Beast
@@ -19891,7 +19892,7 @@ step
 step
     .isOnQuest 14416
     *|cRXP_WARN_Horse [1]|r;
-    .cast 68903 >>Use |T134326:0|t[Round Up Horse] (1) on |cRXP_FRIENDLY_Mountain Horses|r to make them follow you. 
+    .cast 68903 >>Use |T134326:0|t[Round Up Horse] (1) on |cRXP_FRIENDLY_Mountain Horses|r to make them follow you.
 step
     .isOnQuest 14416
     *|cRXP_WARN_Horse [2]|r;
@@ -20148,7 +20149,7 @@ step
     #label Greymane Manor
     .goto 179,30.29,51.96,10,0
     .goto 181,70.28,61.69,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r
     .turnin 14465 >>Turn in To Greymane Manor
     .accept 14466 >>Accept The King's Observatory
     .disablecheckbox
@@ -20160,7 +20161,7 @@ step
     #requires Greymane Manor
     #label Greymane Manor2
     .goto 181,62.10,49.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r
     .turnin 14465 >>Turn in To Greymane Manor
     .accept 14466 >>Accept The King's Observatory
 	.target Queen Mia Greymane
@@ -20361,7 +20362,7 @@ step
     .goto 179,54.85,86.85,10,0
     .goto 179,58.43,91.38,10,0
     .goto 179,59.84,92.03,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
     .turnin 24483 >>Turn in Stormglen
     .accept 24484 >>Accept Pest Control
     .disablecheckbox
@@ -20372,26 +20373,26 @@ step
 step
     #requires Stormglen
     .goto 179,59.86,91.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
     .turnin 24483 >>Turn in Stormglen
     .accept 24484 >>Accept Pest Control
 	.target Gwen Armstead
 step
     #completewith next
     #label Pieces of the Past
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
     .accept 24495 >>Accept Pieces of the Past
 	.target Lorna Crowley
 step
     #completewith Pieces of the Past
     .goto 179,60.07,91.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Willa Arnes|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Willa Arnes|r
     .home >>Set your Hearthstone to Stormglen Village
     .target Willa Arnes
 step
     #requires Pieces of the Past
     .goto 179,60.26,91.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
     .accept 24495 >>Accept Pieces of the Past
 	.target Lorna Crowley
 step
@@ -20439,7 +20440,7 @@ step
     #completewith next
     #label Pieces of the Past2
     .goto 179,60.37,91.46,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r
     .turnin 24495 >>Turn in Pieces of the Past
     .turnin 24484 >>Turn in Pest Control
     .accept 24501 >>Accept Queen-Sized Troubles
@@ -20450,7 +20451,7 @@ step
     .goto 179,60.26,91.85,10 >>Enter the House
 step
     #requires Pieces of the Past2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r and |cRXP_FRIENDLY_Gwen Armstead|r
     .turnin 24495 >>Turn in Pieces of the Past
     .goto 179,60.26,91.85
 	.target +Lorna Crowley
@@ -20494,7 +20495,7 @@ step
     .goto 179,59.86,91.71,15 >>Enter the House
 step
     #requires Queen-Sized Troubles
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r and |cRXP_FRIENDLY_Lorna Crowley|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r and |cRXP_FRIENDLY_Lorna Crowley|r.
     .turnin 24501 >>Turn in Queen-Sized Troubles
     .goto 179,59.86,91.71
 	.target +Gwen Armstead
@@ -20702,7 +20703,7 @@ step
 step
     #completewith next
     #label Return to Stormglen1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
     .turnin 24673 >>Turn in Return to Stormglen
     .accept 24672 >>Accept Onwards and Upwards
 	.target Gwen Armstead
@@ -20725,7 +20726,7 @@ step
     .goto 179,64.78,84.92,15,0
     .goto 179,60.98,90.63,15,0
     .goto 179,60.4,91.44,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r.
     .turnin 24673 >>Turn in Return to Stormglen
     .accept 24672 >>Accept Onwards and Upwards
 	.target Gwen Armstead
@@ -20922,13 +20923,13 @@ step
     .goto 179,77.93,35.81,30,0
     .goto 179,78.38,48.36,30,0
     .goto 179,73.25,47.61,30,0
-    >>Kill |cRXP_ENEMY_Stags|r. 
+    >>Kill |cRXP_ENEMY_Stags|r.
     *Loot them for |T133970:0|t[|cRXP_LOOT_Side of Stag Meat|r].
     .complete 24675,1 --Side of Stag Meat (10)
 	.mob Brown Stag
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Forsakens|r. 
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     *Loot them for |T134247:0|t[|cRXP_LOOT_Slaver's Keys|r] |cRXP_WARN_(required to use the chains)|r.
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chains|r
     .collect 49881,5,24575,1,-1 --Slaver's Key (5)
@@ -20944,7 +20945,7 @@ step
     .goto 180,42.77,30.23,15,0
     .goto 180,46.88,34.62,15,0
     .goto 180,54.23,81.14
-    >>Kill |cRXP_ENEMY_Brothogg the Slavemaster|r 
+    >>Kill |cRXP_ENEMY_Brothogg the Slavemaster|r
     .complete 24674,1 --Brothogg the Slavemaster slain (1)
 	.mob Brothogg the Slavemaster
 step
@@ -20954,7 +20955,7 @@ step
     .goto 180,72.84,40.23,25,0
     .goto 180,66.89,30.62,25,0
     .goto 180,46.03,30.71,25,0
-    >>Kill |cRXP_ENEMY_Forsakens|r. 
+    >>Kill |cRXP_ENEMY_Forsakens|r.
     *Loot them for |T134247:0|t[|cRXP_LOOT_Slaver's Keys|r] |cRXP_WARN_(required to use the chains)|r.
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chains|r
     .collect 49881,5,24575,1,-1 --Slaver's Key (5)
@@ -21087,7 +21088,7 @@ step
     .goto 202,36.23,62.52,40 >>Follow the Arrow
 step
     #requires Battle for Gilneas City Complete
-    .goto 202,36.23,62.52 
+    .goto 202,36.23,62.52
     >>Kill the |cRXP_ENEMY_Banshees|r, then damage |cRXP_ENEMY_Lady Sylvanas Windrunner|r to below 30%.
     *Use the |T135340:0|t[Rapier] on teammates to boost their power.
     .complete 24904,2 --Battle for Gilneas City Complete (1)
@@ -21118,7 +21119,7 @@ step
 step
     #completewith next
     #label Hunt for Sylvanas
-    #title |cRXP_WARN_IGNORE THE ARROW|r 
+    #title |cRXP_WARN_IGNORE THE ARROW|r
     >>|cFFFCDC00Follow |cFF00FF00Tobias Mistmantle|r
     .complete 24902,1 --Hunt for Sylvanas (1)
 	.target Tobias Mistmantle
@@ -21126,7 +21127,7 @@ step
 step
     #completewith Hunt for Sylvanas
     #hidewindow
-    #title |cRXP_WARN_IGNORE THE ARROW|r 
+    #title |cRXP_WARN_IGNORE THE ARROW|r
     .goto 202,45.14,52.5,5 >>Ignore the Arrow
 step
     #requires Hunt for Sylvanas
@@ -21141,11 +21142,11 @@ step
     .goto 202,39.36,59.11
     >>Wait infront of the Door(|cRXP_WARN_don't enter the house|r).
     .complete 24902,1 --Hunt for Sylvanas (1)
-	.target Tobias Mistmantle 
+	.target Tobias Mistmantle
 	.target Lorna Crowley
 step
     .goto 202,38.62,60.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
     .turnin 24902 >>Turn in The Hunt For Sylvanas
     .accept 24903 >>Accept Vengeance or Survival
 	.target Lorna Crowley
@@ -21179,7 +21180,7 @@ step
     .mob Forsaken Catapult
     .mob Invading Forsaken
 step
-    #completewith Invading Forsaken 
+    #completewith Invading Forsaken
     .goto 202,30.24,60.96
     .vehicle >>Click on the |cRXP_PICK_Bat|r.
     .timer 21,Slowing the Inevitable RP
@@ -21430,13 +21431,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -21469,7 +21470,7 @@ step
     #label For the Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
     .turnin 51486 >>Turn in For the Alliance
-    .accept 53500 >>Accept Stranger in a Strange Land 
+    .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
     #completewith For the Alliance
@@ -21480,7 +21481,7 @@ step
     .goto 84,53.059,15.259
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
     .turnin 51486 >>Turn in For the Alliance
-    .accept 53500 >>Accept Stranger in a Strange Land 
+    .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
     .goto 84,56.257,17.311
@@ -21508,13 +21509,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -21595,7 +21596,7 @@ step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -21629,20 +21630,20 @@ step
     .target Captain Fareeya
 step
     #completewith next
-    #label For the Alliance 
+    #label For the Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
-    .turnin 49772 >>Turn in For the Alliance 
+    .turnin 49772 >>Turn in For the Alliance
     .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
-    #completewith For the Alliance 
+    #completewith For the Alliance
     .goto 941,43.180,24.938
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r.
 step
-    #requires For the Alliance 
+    #requires For the Alliance
     .goto 84,53.059,15.259
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
-    .turnin 49772 >>Turn in For the Alliance 
+    .turnin 49772 >>Turn in For the Alliance
     .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
@@ -21671,13 +21672,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -21713,7 +21714,7 @@ step
     .goto 84,53.059,15.259
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
     .turnin 58146 >>Turn in For the Alliance
-    .accept 58147 >>Accept Stranger in a Strange Land 
+    .accept 58147 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
 step
     .goto 84,56.257,17.311
@@ -21741,13 +21742,13 @@ step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -21757,7 +21758,7 @@ step
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
-]]) 
+]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
 #retail
@@ -21813,7 +21814,7 @@ step << !DemonHunter VoidElf
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keira Onyxraven|r.
-    .turnin 50305 >>Turn in Stranger in a Strange Land 
+    .turnin 50305 >>Turn in Stranger in a Strange Land
     .target Keira Onyxraven
 step << DemonHunter VoidElf
     >>Use |T237449:0|t[Scroll of Reflection] and choose a follower.
@@ -21848,7 +21849,7 @@ step << DemonHunter VoidElf
 step << DemonHunter VoidElf
     .goto 84,85.90,31.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r.
-    .complete 44463,1 --1/1 Warn Anduin Wrynn 
+    .complete 44463,1 --1/1 Warn Anduin Wrynn
     .skipgossipid 45043
     .target Anduin Wrynn
 step << DemonHunter VoidElf
@@ -21891,7 +21892,7 @@ step << DemonHunter VoidElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirin Tor Emissary|r
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
-    .target Kirin Tor Emissary 
+    .target Kirin Tor Emissary
 step << DemonHunter VoidElf
     .goto 41,53.15,52.29,5,0
     .goto 41,49.84,48.28
@@ -21908,13 +21909,13 @@ step << DemonHunter VoidElf
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
 -- step
@@ -23409,7 +23410,7 @@ step
 step
     .goto 94,53.69,69.71,10,0
     .goto 94,54.28,70.98
-    >>Kill |cRXP_ENEMY_Gharsul the Remorseless|r. 
+    >>Kill |cRXP_ENEMY_Gharsul the Remorseless|r.
     *|cRXP_WARN_NOTE:|r Wait until he attacks |cRXP_FRIENDLY_Apprentice Mirveda|r until attacking if you're weak.
     .complete 8488,2 --1/1 Gharsul the Remorseless slain
     .mob Gharsul the Remorseless
@@ -23480,7 +23481,7 @@ step
     .goto 94,34.06,80.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larianna Riverwind|r.
     .turnin 8473 >>Turn in A Somber Task
-    .turnin 8474 >>Turn in Old Whitebark's Pendant    
+    .turnin 8474 >>Turn in Old Whitebark's Pendant
     .accept 10166 >>Accept Whitebark's Memory
     .target Larianna Riverwind
 step
@@ -23588,13 +23589,13 @@ step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -23993,13 +23994,13 @@ step << Troll
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Troll
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step << Troll
@@ -24014,9 +24015,9 @@ RXPGuides.RegisterGuide([[
 #name ac) Echo Isles1 << Troll
 #name ac) Echo Isles2 << !Troll --Orc
 #displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
-#displayname |cFF00CCFF2|r - Echo Isles << !Troll 
+#displayname |cFF00CCFF2|r - Echo Isles << !Troll
 #next ab) Valley of Trials2 << Troll
-#next b1) BfA Intro << !Troll 
+#next b1) BfA Intro << !Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
@@ -24732,13 +24733,13 @@ step << Orc
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step << Orc
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step << Orc
@@ -25476,13 +25477,13 @@ step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -25745,7 +25746,7 @@ step
     .mob Marshal Redpath
 step
     .goto 465,74.1,66.0
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r. 
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r.
     *|cRXP_WARN_NOTE:|r Focus undeads that are already fighting.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
@@ -25864,7 +25865,7 @@ step << Warlock/Hunter
     +|cfff78300Set your pet to passive by clicking on 'Passive' in your pet bar or in your spell book in the Pet tab|r.
 step
     .goto 18,35.8,43.4
-    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r until it runs away then use the |T133802:0|t[Murloc Leash]. 
+    >>Attack a |cRXP_ENEMY_Vile Fin Murloc|r until it runs away then use the |T133802:0|t[Murloc Leash].
     *|cRXP_WARN_NOTE:|r You mustn't kill it.
     *Look out for the rare |cRXP_ENEMY_Muad|r.
     .complete 24974,1 --1/1 Vile Fin captured
@@ -26344,13 +26345,13 @@ step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -27869,13 +27870,13 @@ step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -27898,7 +27899,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r.
     .accept 49773 >>Accept For the Horde
     .target Mayla Highmountain
-step 
+step
     #completewith next
     #label For the Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
@@ -27908,7 +27909,7 @@ step
     #completewith For the Horde
     .goto 652,46.02,63.78
     .zone 85 >>Take to portal to Orgrimmar
-step 
+step
     #requires For the Horde
     .goto 85,39.40,79.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
@@ -27943,21 +27944,21 @@ step
 step
     .goto 85,40.777,80.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halian Shlavahawk|r.
-    .turnin 50319 >>Turn in Stranger in a Strange Land 
-    .target Halian Shlavahawk 
+    .turnin 50319 >>Turn in Stranger in a Strange Land
+    .target Halian Shlavahawk
 step
     #include a) Horde Legion Intro
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -28026,20 +28027,20 @@ step
     .goto 85,40.777,80.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melitier Vahlouran|r.
     .turnin 50303 >>Turn in Stranger in a Strange Land
-    .target Melitier Vahlouran 
+    .target Melitier Vahlouran
 step
     #include a) Horde Legion Intro
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -28114,13 +28115,13 @@ step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -28178,20 +28179,20 @@ step
     .goto 85,40.777,80.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Limbflayer Lasha|r.
     .turnin 53502 >>Turn in Stranger in a Strange Land
-    .target Limbflayer Lasha 
+    .target Limbflayer Lasha
 step
     #include a) Horde Legion Intro
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step
@@ -28208,7 +28209,7 @@ RXPGuides.RegisterGuide([[
 #next b1) BfA Intro
 
 << Horde Vulpera !DK
- 
+
 
 step
     .goto 85,64.647,46.514
@@ -28219,7 +28220,7 @@ step
     .goto 85,39.40,79.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Blackguard|r.
     .turnin 58122 >>Turn in For the Horde
-    .accept 58124 >>Accept Stranger in a Strange Land 
+    .accept 58124 >>Accept Stranger in a Strange Land
     .target Ambassador Blackguard
 step
     .goto 85,40.82,80.13
@@ -28250,20 +28251,20 @@ step
     .goto 85,40.777,80.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r.
     .turnin 58124 >>Turn in Stranger in a Strange Land
-    .target Nilsa 
+    .target Nilsa
 step
     #include a) Horde Legion Intro
 -- step
 --     .goto 85,48.23,62.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .dmf
 -- step
 --     .goto 85,48.23,62.19
 --     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage 
+--     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 85,1
 --     .dmf
 -- step

@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 ----Start of <1.5x Westfall----
 ----Night Elves and Hunters stay in Darkshore and Grind----
 
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic

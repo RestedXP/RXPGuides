@@ -1,3 +1,4 @@
+if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -54,7 +55,7 @@ step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Botanist Taerix|r
     .accept 10302 >> Accept Volatile Mutations
-    .target Botanist Taerix  
+    .target Botanist Taerix
 step
     #loop
     .goto Azuremyst Isle,80.14,41.70,0
@@ -102,7 +103,7 @@ step
     .goto Azuremyst Isle,72.94,52.21,50,0
     .goto Azuremyst Isle,72.26,49.29,50,0
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r. Loot them for their |cRXP_LOOT_Lasher Samples|r
-    >>Loot the |cRXP_LOOT_Corrupted Flowers|r on the ground 
+    >>Loot the |cRXP_LOOT_Corrupted Flowers|r on the ground
     .complete 9293,1 --Collect Lasher Sample (x10)
     .complete 9799,1 --Collect Corrupted Flower (x3)
     .mob Mutated Root Lasher
@@ -746,7 +747,7 @@ step
     .goto Azuremyst Isle,48.392,51.482
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -948,7 +949,7 @@ step
     .use 23792
 step
     >>|cRXP_WARN_Wait out the RP|r
-    .complete 9531,1 -- The Traitor Uncovered 
+    .complete 9531,1 -- The Traitor Uncovered
 step
     +|cRXP_WARN_Click off the|r |T132288:0|t[Tree Disguise] |cRXP_WARN_buff|r
     .aura -30298
@@ -1066,7 +1067,7 @@ step
     .accept 9623 >> Accept Coming of Age
     .target Exarch Menelaous
 step
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -1283,7 +1284,7 @@ step
     .goto Azuremyst Isle,47.453,16.078,10 >> Head to the upper section of the cave
 step
 	.goto Azuremyst Isle,47.394,14.121
-    >>Kill |cRXP_ENEMY_Chieftain Oomooroo|r 
+    >>Kill |cRXP_ENEMY_Chieftain Oomooroo|r
     >>Kill |cRXP_ENEMY_Crazed Wildkins|r << !Shaman
     >>Kill |cRXP_ENEMY_Crazed Wildkins|r. Loot them for their |cRXP_LOOT_Ritual Torch|r << Shaman
     .complete 9573,1 --Kill Chieftain Oomooroo (x1)
@@ -1342,7 +1343,7 @@ step
 step
 	.goto Azuremyst Isle,46.964,22.011
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parkat Steelfur|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] 
+    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch]
     .target Parkat Steelfur
     .subzoneskip 3572,1
 step
@@ -1611,7 +1612,7 @@ step
 step
 	#completewith next
 	>>Loot a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #loop
@@ -1778,14 +1779,14 @@ step
     .itemcount 23910,1
 step
     #optional
-    .isOnQuest 9616  
+    .isOnQuest 9616
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9616 >> Turn in Bandits!
     .target Exarch Menelaous
 step
     #optional
-    .isOnQuest 9612  
+    .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
@@ -1946,7 +1947,7 @@ step
 step
 	#completewith FelConeFungus
 	>>Loot a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #completewith SatyrFelsworn
@@ -1954,7 +1955,7 @@ step
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] 
+    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r]
     .use 23900 >> |cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] |cRXP_WARN_to start the quest|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >> Accept Signs of the Legion
@@ -1966,7 +1967,7 @@ step
 step
     .goto Bloodmyst Isle,36.498,71.338,30,0
     .goto Bloodmyst Isle,38.416,82.003
-    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] 
+    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r]
     .use 23900 >> |cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_Tzerak's Armor Plate|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_WARN_If you do not see him patrolling through the camps, wait for him to spawn at the purple sigil on the ground at the south. It can take 3-6 minutes for him to spawn|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
@@ -2027,7 +2028,7 @@ step
     .goto Bloodmyst Isle,54.1,67.6,15,0
     .goto Bloodmyst Isle,58.9,61.8,15,0
 	>>Loot a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #optional
@@ -2842,7 +2843,7 @@ step
     .mob Royal Blue Flutterer
 step
     #completewith GCorpse
-    .subzone 3588 >> Travel to The Cyro-Core 
+    .subzone 3588 >> Travel to The Cyro-Core
 step
     #label GCorpse
     .goto Bloodmyst Isle,37.502,61.239
@@ -2859,7 +2860,7 @@ step
     .goto Bloodmyst Isle,35.61,61.49,60,0
     >>Kill |cRXP_ENEMY_Sunhawk Reclaimers|r. Loot them for |cRXP_LOOT_Galaen's Amulet|r and their |cRXP_LOOT_Medical Supplies|r
     >>You can also loot the |cRXP_LOOT_Medical Supplies|r on the ground
-	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_casts|r  
+	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[Fireball] |cRXP_WARN_casts|r
     .complete 9579,1 --Collect Galaen's Amulet (x1)
     .complete 9703,1 --Collect Medical Supplies (x12)
     .mob Sunhawk Reclaimer
@@ -3424,7 +3425,7 @@ step << Hunter
 step << Priest
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oss|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better one|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him or check the Auction House for a better one|r
     .goto The Exodar,46.386,61.499
     .goto The Exodar,63.363,58.999,0
     .collect 5210,1 --Burning Wand (1)
@@ -3434,7 +3435,7 @@ step << Priest
 step << Priest
     #ssf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oss|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from him|r
     .goto The Exodar,46.386,61.499
     .collect 5210,1 --Burning Wand (1)
     .target Oss
@@ -3543,7 +3544,7 @@ step << Paladin/Warrior
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8 
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step
 .dungeon DM
     .goto Wetlands,9.490,59.694
@@ -3685,7 +3686,7 @@ step
 .dungeon DM
     #label CollectingMemories
     .goto StormwindClassic,65.438,21.175
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
     .target Wilder Thistlenettle
@@ -4262,7 +4263,7 @@ step
 .dungeon BFD
     #completewith BFDAccept
     .goto Teldrassil,55.95,89.88
-    .zone Darnassus >> Take the purple portal into Darnassus   
+    .zone Darnassus >> Take the purple portal into Darnassus
 step
 .dungeon BFD
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Guard Manados|r and |cRXP_FRIENDLY_Dawnwatcher Shaedlass|r up stairs
@@ -4276,7 +4277,7 @@ step << Hunter
 #ah
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
-    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_if you can afford it or check the Auction House for a better one|r 
+    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_if you can afford it or check the Auction House for a better one|r
     >>|cRXP_WARN_Stock up on|r |T132382:0|t[Sharp Arrows]
     .collect 3027,1
     .target Landria
@@ -4295,7 +4296,7 @@ step << Hunter
     +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
     .use 3027
     .itemcount 3027,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.71    
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.71
 step << Hunter
     #label TrainWeps
     .goto Darnassus,57.56,46.72

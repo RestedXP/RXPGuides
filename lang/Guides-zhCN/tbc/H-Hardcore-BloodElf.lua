@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -538,7 +539,7 @@ step
     .goto Eversong Woods,34.17,20.59,40,0
     >>|cRXP_WARN_施放|r|T135738:0|t[Mana Tap] |cRXP_WARN_on|r |cRXP_ENEMY_法力浮龙|r
     .complete 8346,1 --Mana Tap creature (x6)
-    .mob Mana Wyrm 
+    .mob Mana Wyrm
 step
     #completewith next
     .goto Eversong Woods,38.56,20.98,10,0
@@ -559,7 +560,7 @@ step << Rogue
     .turnin 8336 >> Turn in A Fistful of Slivers
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
-    .isQuestComplete 8336 
+    .isQuestComplete 8336
 step
     #label SolanianB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Helion|r
@@ -3096,7 +3097,7 @@ step << BloodElf !Hunter
     .target Skymaster Sunwing
 
     --Silvermoon segment 2
-    
+
 step
     #completewith FlyGhostlands
     .goto Ghostlands,45.42,30.52
@@ -4975,7 +4976,7 @@ step
     .goto Ghostlands,28.23,58.65,50,0
     .goto Ghostlands,23.38,59.90,50,0
     .goto Ghostlands,18.75,60.74,50,0
-    >>击杀 拾取地上的 
+    >>击杀 拾取地上的
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
@@ -5056,7 +5057,7 @@ step
     .goto Ghostlands,28.23,58.65,50,0
     .goto Ghostlands,30.77,60.23,50,0
     .goto Ghostlands,34.06,57.57,50,0
-    >>击杀 拾取地上的 
+    >>击杀 拾取地上的
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
@@ -5094,7 +5095,7 @@ step
     .goto Ghostlands,40.23,31.75,40,0
     .goto Ghostlands,38.77,29.82,40,0
     .goto Ghostlands,40.76,28.98,40,0
-    >>击杀 拾取地上的 
+    >>击杀 拾取地上的
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_施放|r |T136224:0|t[Enrage] |cRXP_WARN_(increased damage and attack speed) at low health|r
     >>|cRXP_WARN_Be careful as|r|cRXP_ENEMY_复生的饥饿者|r|cRXP_WARN_施放|r |T132278:0|t[Blood Leech]|cRXP_WARN_(10 damage lifesteal)|r
     >>|cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_and |cRXP_ENEMY_复生的饥饿者|r share spawns with each other. Kill both to spawn the ones you need|r
@@ -6934,7 +6935,7 @@ step
 step
     .goto Ghostlands,32.25,82.18,10,0
     .goto Ghostlands,32.80,82.45,10,0
-    .goto Ghostlands,32.65,83.15,8 >>Go 对话，NPC在里面 the central Ziggurat.击杀 all the |cRXP_ENEMY_Eyes of Dar'Khan|r和 
+    .goto Ghostlands,32.65,83.15,8 >>Go 对话，NPC在里面 the central Ziggurat.击杀 all the |cRXP_ENEMY_Eyes of Dar'Khan|r和
     .mob Eye of Dar'Khan
     .mob Deatholme Necromancer
     .isOnQuest 9167

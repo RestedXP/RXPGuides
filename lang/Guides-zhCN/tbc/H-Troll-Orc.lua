@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -681,7 +682,7 @@ step << Shaman
 step
     #label Thazz
     .goto Durotar,43.72,53.79
-    >>拾取地上的 
+    >>拾取地上的
     .complete 6394,1 --Thazz'ril's Pick (1)
 step
     #label Yarrog
@@ -2663,7 +2664,7 @@ step << Warlock
 step << Warlock
     #softcore
     #completewith ZeptoUC1
-    .goto Orgrimmar,36.0,37.7 
+    .goto Orgrimmar,36.0,37.7
     .deathskip >>|cRXP_WARN_Remove your|r |T136185:0|t[Demon Skin] |cRXP_WARN_buff. Run on top of the brazier, and use|r |T136126:0|t[Life Tap] |cRXP_WARN_to deathskip out of Orgrimmar|r
 step << Warlock
     #hardcore
@@ -3394,7 +3395,7 @@ step
     .goto Durotar,43.11,30.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莎|r
     .accept 816 >>接受任务《物归己用》 刻骨铭心的伤痛
-    .target Misha Tor'kren 
+    .target Misha Tor'kren
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r
@@ -3790,7 +3791,7 @@ step
     .isQuestComplete 816
 step
     #completewith next
-    .goto The Barrens,62.26,19.38 
+    .goto The Barrens,62.26,19.38
     .subzone 379 >>前往暴风城大教堂内，与 Far Watch Post
     .zoneskip The Barrens
 step
