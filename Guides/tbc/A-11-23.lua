@@ -2007,8 +2007,16 @@ step << Druid
     .accept 29 >> Accept Trial of the Lake
     .target Dendrite Starblaze
 step << Druid
+    #loop
+    .goto Moonglade,54.2,55.6,0
+    .goto Moonglade,53.1,48.4,60,0
+    .goto Moonglade,54.2,55.6,60,0
+    .goto Moonglade,60.5,58.5,60,0
+    >>Open a |cRXP_PICK_Bauble Container|r in the lake. Loot it for the |T134125:0|t[|cRXP_LOOT_Shrine Bauble|r]
+    .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
     .goto Moonglade,36.026,41.374
-    >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
+    >>|cRXP_WARN_Use the|r |T134125:0|t[|cRXP_LOOT_Shrine Bauble|r] |cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
@@ -2328,7 +2336,7 @@ step << Druid
     .usespell 18960
 	.zoneskip Moonglade
 step << Druid
-    .goto Moonglade,56.21,30.63
+    .goto Moonglade,52.53,40.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
