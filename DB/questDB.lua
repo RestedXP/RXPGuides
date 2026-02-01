@@ -725,7 +725,7 @@ function addon:GetQuestDBDefaults(wipe)
         addon.settings.profile.gnomeTele = addon.IsPlayerSpell(20219)
     end
     if addon.settings.profile.portalTele == nil then
-        addon.settings.profile.portalTele = addon.IsPlayerSpell(10059)
+        addon.settings.profile.portalTele = addon.player.class == "Mage"
     end
     if addon.settings.profile.goblinTele == nil then
         addon.settings.profile.goblinTele = addon.IsPlayerSpell(20222)
