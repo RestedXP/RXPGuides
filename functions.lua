@@ -2577,12 +2577,14 @@ end
 function addon.functions.fp(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, location, skipStep = ...
+        local text, location, args = ...
         element.tag = "fp"
         element.confirm = 0
-        if skipStep then
+        local args = tonumber(args)
+        if args then
             element.text = text
-            element.textOnly = true
+            element.textOnly = args % 2 == 1
+            element.ignoreOnClick = bit.band(args,2) == 2
         elseif text and text ~= "" then
             element.text = text
         else
@@ -2621,7 +2623,7 @@ function addon.functions.fp(self, ...)
         elseif fpDiscovered or fpId and (addon.flightInfo.lastFlightSrc == fpId or
                                   addon.flightInfo.lastFlightDest == fpId) then
             addon.SetElementComplete(self)
-        elseif event == "UI_INFO_MESSAGE" and (arg2 == _G.ERR_NEWTAXIPATH or arg2 == _G.ERR_TAXINOPATHS) then
+        elseif event == "UI_INFO_MESSAGE" and (arg2 == _G.ERR_NEWTAXIPATH or arg2 == _G.ERR_TAXINOPATHS) and not element.ignoreOnClick then
             local currentMap = C_Map.GetBestMapForUnit("player")
             local validFP = false
             if addon.FPbyZone then
