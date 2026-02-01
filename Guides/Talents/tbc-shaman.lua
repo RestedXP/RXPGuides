@@ -23,12 +23,6 @@ level -- Ancestral Knowledge (Rank 4)
 level -- Ancestral Knowledge (Rank 5)
     .talent 2,1,2,5
 
-level -- Improved Ghost Wolf (Rank 1)
-    .talent 2,2,3,1
-
-level -- Improved Ghost Wolf (Rank 2)
-    .talent 2,2,3,2
-
 level -- Thundering Strikes (Rank 1)
     .talent 2,2,2,1
 
@@ -37,6 +31,12 @@ level -- Thundering Strikes (Rank 2)
 
 level -- Thundering Strikes (Rank 3)
     .talent 2,2,2,3
+
+level -- Improved Ghost Wolf (Rank 1)
+    .talent 2,2,3,1
+
+level -- Improved Ghost Wolf (Rank 2)
+    .talent 2,2,3,2
 
 level -- Shamanistic Focus
     .talent 2,3,3,1
