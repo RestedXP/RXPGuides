@@ -5136,7 +5136,11 @@ function addon.functions.bankwithdraw(self, text, ...)
         for n, item in pairs(items) do items[n] = tonumber(item) or item end
 
         element.items = items
-        element.text = text
+        if not text then
+            element.textOnly = true
+        else
+            element.text = text
+        end
         element.icon = addon.icons.vendor
         return element
     end

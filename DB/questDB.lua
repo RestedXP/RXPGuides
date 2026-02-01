@@ -602,6 +602,117 @@ function addon.functions.turninconfig(self)
     end
 end
 
+local locations = {
+	[1] = {name = L'Southshore', z = '.goto Hillsbrad Foothills,51.0,58.8', sz = 271 },
+	[2] = {name = L'Darnassus', z = '.goto Darnassus,67.2,15.8', sz = 1657 },
+	[3] = {name = L'Cenarion Hold', z = '.goto Silithus,51.893,39.163', sz = 3425 },
+	[4] = {name = L'Everlook', z = '.goto Winterspring,61.358,38.837', sz = 2255},
+	[5] = {name = L"Grom'gol Base Camp", z = '.goto Stranglethorn Vale,31.49,29.75', sz = 117},
+	[6] = {name = L'Orgrimmar', z = '.goto Orgrimmar,54.10,68.42', sz = 1637},
+}
+
+local HSloc = {
+[0] = 1,
+[1] = 2,
+[2] = 1,
+[3] = 1,
+[4] = 1,
+[5] = 2,
+[6] = 1,
+[7] = 1,
+[8] = 1,
+[9] = 2,
+[10] = 1,
+[11] = 1,
+[16] = 3,
+[17] = 3,
+[18] = 3,
+[19] = 3,
+[20] = 1,
+[21] = 2,
+[22] = 1,
+[23] = 1,
+[24] = 3,
+[25] = 3,
+[26] = 3,
+[27] = 3,
+[48] = 3,
+[49] = 3,
+[50] = 3,
+[51] = 3,
+[52] = 4,
+[53] = 6,
+[54] = 5,
+[55] = 5,
+[56] = 3,
+[57] = 3,
+[58] = 3,
+[59] = 3,
+[80] = 3,
+[84] = 1,
+[81] = 3,
+[112] = 3,
+[116] = 5,
+[113] = 3,
+}
+
+local function GetHSLoc()
+    local index = 0
+
+    if addon.settings.profile.tbcWBF then
+        index = index + 1
+    end
+
+    if addon.settings.profile.portalTele then
+        index = index + 2
+    end
+
+    if addon.settings.profile.gnomeTele then
+        index = index + 4
+    end
+
+    if addon.settings.profile.goblinTele then
+        index = index + 8
+    end
+
+    if addon.settings.profile.tbcStart == 2 then
+        index = index + 16
+    end
+
+    if addon.player.faction == "Horde" then
+        index = index + 32
+    end
+
+    if addon.player.class == "Druid" then
+        index = index + 64
+    end
+    local hsLoc = HSloc[index] or HSloc[bit.band(index,63)] or HSloc[bit.band(index,51)] or HSloc[bit.band(index,49)] or 3
+
+    return locations[hsLoc]
+end
+
+function addon.functions.setturninhs(self)
+    if type(self) == "string" then
+        local loc = GetHSLoc()
+        local step = addon.step
+        local wp = addon.ParseLine(loc.z)
+        local home = addon.ParseLine(format(".home >>"..L"Set your Hearthstone to |cRXP_WARN_%s|r",loc.name))
+        local hloc = addon.ParseLine(".bindlocation "..loc.sz)
+        wp.step = step
+        home.step = step
+        hloc.step = step
+        if type(wp) == "table" then
+            table.insert(step.elements,wp)
+        end
+        if type(home) == "table" then
+            table.insert(step.elements,home)
+        end
+        if type(hloc) == "table" then
+            table.insert(step.elements,hloc)
+        end
+    end
+end
+
 function addon:GetQuestDBDefaults(wipe)
     if wipe then
         addon.settings.profile.gnomeTele = nil
@@ -1042,7 +1153,6 @@ if QuestDB["TBC"] then
         else
             chapters = name .. suffix
         end
-        n = n + 1
         local m = RXPCData.guideMetaData
         local g = addon:FetchGuide(group,name..suffix)
         local new = g and format("%d - %s",n,g.title or g.name)
@@ -1055,17 +1165,29 @@ if QuestDB["TBC"] then
                 end
             end
             g.displayname = new
+
+            local lg = lastchapter
+            if lg then
+                lg.next = g.name
+                local cg = addon.currentGuide
+                if cg and cg.name == lg.name and cg.group == lg.group then
+                    cg.next = g.name
+                end
+            end
+            lastchapter = g
+
             g = m[g.group.."||"..g.name]
         end
 
-        if g then g.displayname = new end
+        if g then
+            g.displayname = new
+        end
 
-        local lg = addon:FetchGuide(group,lastchapter)
-        if lg then lg.next = name..suffix end
-        lastchapter = name
+        n = n + 1
     end
     if addon.settings.profile.portalTele then
         if addon.player.faction == "Horde" then
+            AddChapter("Prep-Burning Steppes Start")
             AddChapter("Burning Steppes Start (P)")
             if addon.settings.profile.gnomeTele then
                 AddChapter("Tanaris to Un'Goro (P)")
@@ -1076,7 +1198,7 @@ if QuestDB["TBC"] then
                 else
                     AddChapter("Silvermoon to EPL (P)")
                 end
-            else
+            else--no gadget portal
                 AddChapter("Silithus CH Start (P)")
                 AddChapter("Un'Goro to Tanaris (P)")
                 if addon.settings.profile.tbcWBF then
@@ -1093,9 +1215,11 @@ if QuestDB["TBC"] then
             end
         else--Alliance Portals
             if addon.settings.profile.tbcStart == 1 then
+                AddChapter("Prep-Silithus Start")
                 AddChapter("Silithus Start (P)")
                 AddChapter("Un'Goro to Tanaris (P)")
             else
+                AddChapter("Prep-Burning Steppes Start")
                 AddChapter("Burning Steppes Start (P)")
                 if addon.settings.profile.gnomeTele then
                     AddChapter("Tanaris to Un'Goro (P)")
@@ -1113,8 +1237,9 @@ if QuestDB["TBC"] then
             AddChapter("Plaguelands (P)")
         end
         AddChapter("STV to Blasted Lands (P)")
-    else
+    else--Solo route
         if addon.player.faction == "Horde" then
+            AddChapter("Prep-Burning Steppes Start")
             AddChapter("Burning Steppes Start")
             if addon.settings.profile.gnomeTele then
                 AddChapter("Tanaris to Un'Goro")
@@ -1123,8 +1248,13 @@ if QuestDB["TBC"] then
                 AddChapter("Silithus CH Start")
                 AddChapter("Un'Goro to Tanaris")
             end
-
-            if addon.settings.profile.goblinTele then
+            if addon.player.class == "Druid" then
+                if addon.settings.profile.tbcWBF then
+                    AddChapter("Felwood to Winterspring")
+                else
+                    AddChapter("Winterspring to Felwood")
+                end
+            elseif addon.settings.profile.goblinTele then
                 AddChapter("Winterspring to Felwood")
             elseif addon.settings.profile.tbcWBF then
                 AddChapter("Felwood to Winterspring")
@@ -1138,6 +1268,7 @@ if QuestDB["TBC"] then
             end
         else
             if addon.settings.profile.tbcStart == 1 then
+                AddChapter("Prep-Silithus Start")
                 AddChapter("Silithus Start")
                 AddChapter("Un'Goro to Tanaris")
                 if addon.settings.profile.tbcWBF then
@@ -1146,6 +1277,7 @@ if QuestDB["TBC"] then
                     AddChapter("Winterspring to Felwood")
                 end
             else
+                AddChapter("Prep-Burning Steppes Start")
                 AddChapter("Burning Steppes Start")
                 if addon.settings.profile.gnomeTele then
                     AddChapter("Tanaris to Un'Goro")
