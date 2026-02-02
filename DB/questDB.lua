@@ -1157,11 +1157,21 @@ if QuestDB["TBC"] then
         local g = addon:FetchGuide(group,name..suffix)
         local new = g and format("%d - %s",n,g.title or g.name)
         if g then
-            for _,step in pairs(g.steps) do
-                for _,element in pairs(step.elements) do
-                    if element.tag == "turnin" then
-                        questTurnIns[element.questId] = true
+            local function CheckTurnIns(checkGuide)
+                for _,step in pairs(checkGuide.steps) do
+                    for _,element in pairs(step.elements) do
+                        if element.tag == "turnin" then
+                            questTurnIns[element.questId] = true
+                        end
                     end
+                end
+            end
+            CheckTurnIns(g)
+            local inc = g.steps[1].include
+            if inc then
+                local incGuide = addon:FetchGuide(group,inc)
+                if incGuide then
+                    CheckTurnIns(incGuide)
                 end
             end
             g.displayname = new

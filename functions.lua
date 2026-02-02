@@ -2787,6 +2787,9 @@ function addon.functions.collectmultiple(self, ...)
             e.tooltipText = nil
             e.dynamicText = false
             local questId = e.questId
+            if e.ignoreIfNone then
+                element.ignoreIfNone = true
+            end
             if not (questId and IsQuestTurnedIn(questId)) then
                 max = max + e.numRequired
             end
