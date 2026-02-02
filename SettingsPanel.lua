@@ -2568,7 +2568,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     itemUpgradesHeader = {
-                        name = _G.ITEM_UPGRADE,
+                        name = addon.player.level ~= _G.GetMaxPlayerLevel() and
+                            _G.ITEM_UPGRADE or fmt("%s - %s", _G.ITEM_UPGRADE, _G.GUILD_RECRUITMENT_MAXLEVEL),
                         type = "header",
                         width = "full",
                         order = 5.0,
@@ -2592,8 +2593,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function()
                             return not self.profile.enableTips or
-                                       UnitLevel("player") ==
-                                       GetMaxPlayerLevel()
+                                       addon.player.level == addon.player.maxlevel
                         end
                     },
                     itemUpgradeSpec = {
@@ -2619,8 +2619,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades) or
-                                       UnitLevel("player") ==
-                                       GetMaxPlayerLevel() or
+                                       addon.player.level == addon.player.maxlevel or
                                        addon.itemUpgrades:GetSpecWeights() ==
                                        nil
                         end
@@ -2636,7 +2635,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades) or
-                                       UnitLevel("player") == GetMaxPlayerLevel()
+                                       addon.player.level == addon.player.maxlevel
                         end
                     },
                     enableQuestChoiceRecommendation = {
@@ -2651,7 +2650,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades) or
-                                       UnitLevel("player") == GetMaxPlayerLevel()
+                                       addon.player.level == addon.player.maxlevel
                         end
                     },
                     enableQuestChoiceAutomation = {
@@ -2668,7 +2667,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades and
                                        self.profile.enableQuestChoiceRecommendation) or
-                                       UnitLevel("player") == GetMaxPlayerLevel()
+                                       addon.player.level == addon.player.maxlevel
                         end
                     },
                     enableItemUpgradesAH = {
@@ -2684,7 +2683,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades) or
-                                       UnitLevel("player") == GetMaxPlayerLevel()
+                                       addon.player.level == addon.player.maxlevel
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
