@@ -3630,7 +3630,7 @@ step
     .subzoneskip 2257
 step
 .dungeon DM
-    #可选 << NightElf/Draenei
+    #optional << NightElf/Draenei
     #completewith CollectingMemories
     .zone Stormwind City >>乘坐地铁前往暴风城
     .zoneskip Wetlands << NightElf/Draenei

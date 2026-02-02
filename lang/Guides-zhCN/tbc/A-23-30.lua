@@ -429,7 +429,7 @@ step << Dwarf Paladin
     考古学家弗拉冈特
     .subzoneskip 150,1
 step << !NightElf !Draenei
-    #可选 << Dwarf Paladin
+    #optional << Dwarf Paladin
     .isOnQuest 277,464,294,279,484
 	.hs >>将炉石使用回米奈希尔港
     .cooldown item,6948,>2,1

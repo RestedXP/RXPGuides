@@ -126,7 +126,7 @@ step
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target Gubber Blump
 step
-    #可选 << !NightElf
+    #optional << !NightElf
     #completewith BuzzBox1 << !NightElf
     .goto 1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r
@@ -2663,7 +2663,7 @@ step << NightElf/Draenei
     .subzoneskip 2257
 step
 .dungeon DM
-    #可选 << NightElf/Draenei
+    #optional << NightElf/Draenei
     #completewith CollectingMemories
     .zone Stormwind City >>乘坐地铁前往暴风城
     .zoneskip Wetlands << NightElf/Draenei

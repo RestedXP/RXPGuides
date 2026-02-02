@@ -7027,7 +7027,7 @@ step << Shaman
 	.collect 6637,1 --Water Sapta (1)
     水之先知伊斯伦
 step
-    #可选 << !Warrior !Shaman
+    #optional << !Warrior !Shaman
     .goto The Barrens,65.84,43.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛伦|r 对话
     .turnin 874 >>交任务玛伦·星眼
@@ -7042,7 +7042,7 @@ step
     玛伦·星眼
     .isQuestTurnedIn 874
 step
-    #可选 << !Warrior !Shaman
+    #optional << !Warrior !Shaman
     #loop
     .goto The Barrens,65.67,46.63,0
     .goto The Barrens,64.74,50.35,0
@@ -7081,7 +7081,7 @@ step << Warrior
     .accept 1791 >>接受任务捕风者
     克兰诺克·马克雷德
 step
-    #可选 << !Warrior !Shaman
+    #optional << !Warrior !Shaman
     .goto The Barrens,65.84,43.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛伦|r 对话
     .turnin 873 >>交任务依沙瓦克
@@ -7093,7 +7093,7 @@ step
     .subzone 491,2 >>现在你应该开始寻找剃刀沼泽的小队
     .dungeon RFK
 step << !Mage
-    #可选 << !Warrior !Shaman
+    #optional << !Warrior !Shaman
     #completewith FlyOrg2
     .goto The Barrens,62.81,37.91,200 >>返回棘齿城
     .subzoneskip 392

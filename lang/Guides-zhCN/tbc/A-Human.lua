@@ -935,7 +935,7 @@ step
     .accept 35 >>接受任务 卫兵托马斯
     .target Marshal Dughan
 step
-    #可选 << Warrior/Rogue/Paladin
+    #optional << Warrior/Rogue/Paladin
     #completewith CandlesEnd
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
@@ -1833,7 +1833,7 @@ step
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
     .target Morgan Pestle
 step
-    #可选 << Warlock/Mage/Warrior
+    #optional << Warlock/Mage/Warrior
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r 对话
     .trainer >>Train 1h Swords 和 Staves << Warlock/Mage
