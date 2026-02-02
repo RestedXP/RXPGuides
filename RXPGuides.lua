@@ -1380,10 +1380,10 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         C_Timer.After(20, function()
             addon.settings:CheckAddonCompatibility()
         end)
+    end
 
-        if addon.gameVersion < 30000 then
-            addon.ui.v2.LaunchConfigurator(true)
-        end
+    if addon.gameVersion < 30000 then
+        addon.ui.v2.LaunchConfigurator(true)
     end
 
     addon.targeting:Setup()
