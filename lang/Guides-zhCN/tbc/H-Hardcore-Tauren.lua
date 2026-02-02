@@ -1,13 +1,12 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP Survival Guide (H)
+#group 选择生存向指南 (H)
 << Horde
 #name 1-6 Mulgore
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup 选择生存向指南 1-30
 #defaultfor Tauren
 #next 6-12 Mulgore
 
@@ -29,19 +28,19 @@ step
 step << Warrior/Shaman
     #completewith next
     .goto Mulgore,46.05,75.32,30,0
-    |cRXP_WARN_Kill |cRXP_ENEMY_平原陆行鸟|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
+    +|cRXP_WARN_Kill |cRXP_ENEMY_平原陆行鸟|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
     .mob Plainstrider
     .money >0.01
 step << Warrior/Shaman
     .goto Mulgore,45.30,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie|r
-    .vendor >> Vendor Trash
+    .vendor >>把垃圾物品卖给商人
     .target Kawnie Softbreeze
     .money >0.01
 step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
-    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .train 6673 >>训练 |T132333:0|t[战斗怒吼]
     .target Harutt Thunderhorn
 step << Shaman
     .goto Mulgore,45.01,75.95
@@ -93,9 +92,9 @@ step
 step
     .goto Mulgore,45.30,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie|r
-    >>|cRXP_BUY_Buy|r |T132384:0|t[Light Shots] |cRXP_BUY_from her|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸] |cRXP_BUY_from her|r << Hunter
     .collect 2516,1000,750,1 << Hunter --Light Shot (1000)
-    .vendor >> Vendor Trash
+    .vendor >>把垃圾物品卖给商人
     .target Kawnie Softbreeze
     .isQuestAvailable 750
 step
@@ -106,7 +105,7 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto Mulgore,44.07,77.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Marjak|r|cRXP_BUY_. Buy a|r |T135139:0|t[Short Staff] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Marjak|r|cRXP_BUY_. Buy a|r |T135139:0|t[学徒法杖] |cRXP_BUY_from him|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
     .itemStat 16,QUALITY,<7
@@ -115,7 +114,7 @@ step << Shaman
 step << Shaman
     #optional
     #completewith RitesoftheEarthmother
-    +|cRXP_WARN_Equip the|r |T135139:0|t[Short Staff]
+    +|cRXP_WARN_Equip the|r |T135139:0|t[学徒法杖]
     .use 2132
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
@@ -174,12 +173,12 @@ step
     .mob Plainstrider
 step << Warrior/Druid
     #completewith GrullTurnin2
-    |cRXP_WARN_Grind |cRXP_ENEMY_平原陆行鸟|r. Loot them until you have 2 silver worth of vendor items|r
+    +|cRXP_WARN_Grind |cRXP_ENEMY_平原陆行鸟|r. Loot them until you have 2 silver worth of vendor items|r
     .mob Plainstrider
 	.money >0.02
 step << !Warrior !Druid
     #completewith next
-    |cRXP_WARN_Grind |cRXP_ENEMY_平原陆行鸟|r. Loot them until you have 1 silver worth of vendor items|r
+    +|cRXP_WARN_Grind |cRXP_ENEMY_平原陆行鸟|r. Loot them until you have 1 silver worth of vendor items|r
     .mob Plainstrider
     .money >0.01
 step
@@ -192,7 +191,7 @@ step
 step
     .goto Mulgore,45.30,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie|r
-    .vendor >> Vendor Trash
+    .vendor >>把垃圾物品卖给商人
     .target Kawnie Softbreeze
     .isQuestAvailable 3376
 step
@@ -204,21 +203,21 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>交任务《 前往熔光镇》 简易便笺
-    .train 100 >>Train |T132337:0|t[Charge]
-    .train 772 >>Train |T132155:0|t[Rend]
+    .train 100 >>Train |T132337:0|t[冲锋]
+    .train 772 >>学习 |T132155:0|t[撕裂]
     .target Harutt Thunderhorn
     .money <0.02
 step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>交任务《 前往熔光镇》 简易便笺
-    .train 772 >>Train |T132155:0|t[Rend]
+    .train 772 >>学习 |T132155:0|t[撕裂]
     .target Harutt Thunderhorn
 step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>交任务《 前往熔光镇》 风化便笺
-    .train 1978 >>Train |T132204:0|t[Serpent Sting]
+    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
     .target Lanka Farshot
 step << Druid
     .goto Mulgore,45.09,75.93
@@ -274,7 +273,7 @@ step
     .goto Mulgore,62.35,81.27,35,0
     .goto Mulgore,62.49,78.78,35,0
     .goto Mulgore,64.71,77.67
-    >>击杀 hut.拾取地上的 him for his |cRXP_LOOT_头部|r
+    >>Kill |cRXP_ENEMY_Chief Sharptusk Thornmantle|r inside the big hut. Loot him for his |cRXP_LOOT_Head|r
     .complete 3376,1 --Chief Sharptusk Thornmantle's Head (1)
     .mob Chief Sharptusk Thornmantle
 step
@@ -339,7 +338,7 @@ step
     --1930
 step
     #completewith next
-    .hs >> Hearth to Camp Narache
+    .hs >>使用炉石返回陶拉祖营地
     .use 6948
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Grull|r, |cRXP_FRIENDLY_Brave|r 和 |cRXP_FRIENDLY_Hawkwind|r << !Shaman
@@ -362,7 +361,7 @@ step
 step
     .goto Mulgore,45.30,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie|r
-    .vendor >> Vendor Trash
+    .vendor >>把垃圾物品卖给商人
     .target Kawnie Softbreeze
 step << Shaman
     #completewith CallofEarth
@@ -395,34 +394,34 @@ step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Lanka|r
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
-    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .train 3044 >>训练 |T132218:0|t[奥术射击]
     .target Lanka Farshot
     .money <0.02
 step << Hunter
     #optional
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Lanka|r
-    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .train 3044 >>训练 |T132218:0|t[奥术射击]
     .target Lanka Farshot
     .money <0.01
 step << Druid
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gart|r
     .train 467 >>Train |T136104:0|t[Thorns]
-    .train 5177 >>Train |T136006:0|t[Wrath]
+    .train 5177 >>Train |T136006:0|t[愤怒]
     .target Gart Mistrunner
     .money <0.02
 step << Druid
     #optional
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gart|r
-    .train 5177 >>Train |T136006:0|t[Wrath]
+    .train 5177 >>Train |T136006:0|t[愤怒]
     .target Gart Mistrunner
     .money <0.01
 step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[招架]
     .train 6343 >>Train |T136105:0|t[Thunder Clap]
     .target Harutt Thunderhorn
     .money <0.02
@@ -430,12 +429,12 @@ step << Warrior
     #optional
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[招架]
     .target Harutt Thunderhorn
     .money <0.01
 step
     .goto Mulgore,38.51,81.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Antur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安图尔·荒野|r
     .accept 1656 >>接受任务《物归己用》 未完的任务
     .target Antur Fallow
 
@@ -445,11 +444,11 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP Survival Guide (H)
+#group 选择生存向指南 (H)
 << Horde
 #name 6-12 Mulgore
 #version 7
-#subgroup RestedXP Survival Guide 1-30
+#subgroup 选择生存向指南 1-30
 #defaultfor Tauren
 #next 12-14 Ghostlands
 
@@ -458,7 +457,7 @@ step
     .subzone 222 >>Run to 血蹄村，莫高雷
 step
     .goto Mulgore,48.2,53.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ahab|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿哈布·麦蹄 <老牛仔>|r
     .accept 11129 >>接受任务《物归己用》 凯雷失踪了！
     .target Ahab Wheathoof
 step
@@ -484,13 +483,13 @@ step
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[学徒短杖] (5s 04c). You'll come back later if you don't have enough yet
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T135145:0|t[学徒短杖] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Mahnott Roughwound
     .money <0.0504
@@ -499,13 +498,13 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (7s 1c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[木槌棒] (7s 1c). You'll come back later if you don't have enough yet
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Warrior
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T133053:0|t[木槌棒] |cRXP_BUY_from him|r
     .collect 2493,1,761,1 --Collect Wooden Mallet (1)
     .target Mahnott Roughwound
     .money <0.0701
@@ -514,13 +513,13 @@ step << Warrior
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kennah|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135611:0|t[Ornate Blunderbuss] (4s 14c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T135611:0|t[精制短枪] (4s 14c). You'll come back later if you don't have enough yet
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Buy a|r |T135611:0|t[Ornate Blunderbuss] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Buy a|r |T135611:0|t[精制短枪] |cRXP_BUY_from him|r
     .collect 2509,1,761,1 --Collect Ornate Blunderbuss (1)
     .target Kennah Hawkseye
     .money <0.0414
@@ -529,13 +528,13 @@ step << Hunter
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Buy|r |T132384:0|t[Light Shots] |cRXP_BUY_from him|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸] |cRXP_BUY_from him|r << Hunter
     .collect 2516,1000,750,1 << Hunter --Light Shot (1000)
     .target Kennah Hawkseye
 step << Shaman/Druid
     #optional
     #completewith Well
-    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    +|cRXP_WARN_Equip the|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
@@ -543,7 +542,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith Well
-    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    +|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -551,7 +550,7 @@ step << Warrior
 step << Hunter
     #optional
     #completewith Well
-    +|cRXP_WARN_Equip the|r |T135611:0|t[Ornate Blunderbuss]
+    +|cRXP_WARN_Equip the|r |T135611:0|t[精制短枪]
     .use 2509
     .itemcount 2509,1
     .itemStat 18,QUALITY,<7
@@ -593,8 +592,8 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>击杀 them for their |cRXP_LOOT_Paws|r
-    >>击杀 |cRXP_ENEMY_成年平原陆行鸟|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_泰爪|r
+    >>击杀 |cRXP_ENEMY_草原狼|r and . Loot them for their |cRXP_LOOT_Paws|r
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
@@ -602,7 +601,7 @@ step << Tauren
     .mob +Adult Plainstrider
 step << !Tauren
     #completewith Ambercorns
-    >>击杀 for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step
@@ -618,7 +617,7 @@ step
     .complete 771,2 --Ambercorn (2)
 step
 	#completewith next
-	>>击杀 拾取地上的 them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -638,8 +637,8 @@ step << Tauren
 	.goto Mulgore,48.60,69.43,60,0
 	.goto Mulgore,45.98,69.70,60,0
 	.goto Mulgore,48.58,67.37,60,0
-    >>击杀 them for their |cRXP_LOOT_Paws|r
-    >>拾取地上的 |cRXP_ENEMY_成年平原陆行鸟|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_泰爪|r
+    >>击杀 |cRXP_ENEMY_草原狼|r and . Loot them for their |cRXP_LOOT_Paws|r
+    >>Loot |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
@@ -661,12 +660,12 @@ step << !Tauren
 	.goto Mulgore,48.60,69.43,60,0
 	.goto Mulgore,45.98,69.70,60,0
 	.goto Mulgore,48.58,67.37,60,0
-    >>击杀 for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step << Tauren
     #completewith next
-    .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
+    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -684,7 +683,7 @@ step << Tauren
 step << Tauren
     #label Well
     .goto Mulgore,53.68,66.28
-    >>|cRXP_WARN_Use the|r |T135139:0|t[Winterhoof Cleansing Totem] |cRXP_WARN_at the Well|r
+    >>|cRXP_WARN_Use the|r |T135139:0|t[Winterhoof Cleansing Totem]|cRXP_WARN_at the Well|r
     .complete 754,1 --Cleanse the Winterhoof Water Well (1)
 step
     #label Stones
@@ -709,7 +708,7 @@ step
     .goto Mulgore,48.3,72.0,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0,90,0
-    >>Go back 和 forth between the two camps.击杀 |cRXP_ENEMY_白鬃偷猎者|r
+    >>Go back 和 forth between the two camps. 击杀 |cRXP_ENEMY_白鬃制革工|r,|cRXP_ENEMY_白鬃剥皮工|r 和 |cRXP_ENEMY_白鬃偷猎者|r
     >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_断矛|r |cRXP_WARN_(Level 9 rare). He's too difficult to kill.|r
     .unitscan Snagglespear
     .complete 745,1 --Palemane Tanner (10)
@@ -720,16 +719,16 @@ step
     .mob +Palemane Poacher
 step
     #completewith KyleFed
-    .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
+    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     .goto Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Jhwana|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
-    .vendor >> Vendor trash
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Warrior
+    .vendor >>把垃圾物品卖给商人
     .collect 1179,10,749,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,749,1 << Warrior --Freshly Baked Bread (10)
     .target Jhawna Oatwind
@@ -752,19 +751,19 @@ step << !Tauren
 step << Warrior
     .goto Mulgore,46.80,60.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vira|r
-    .train 3273 >>Train |T135966:0|t[First Aid]
+    .train 3273 >>训练 |T135966:0|t[急救]
     .money <0.01
     .target Vira Younghoof
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[学徒短杖] (5s 04c). You'll come back later if you don't have enough yet
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T135145:0|t[学徒短杖] |cRXP_BUY_from him|r
     .collect 2495,1,749,1 --Collect Walking Stick (1)
     .target Mahnott Roughwound
     .money <0.0504
@@ -773,13 +772,13 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (7s 1c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[木槌棒] (7s 1c). You'll come back later if you don't have enough yet
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Warrior
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T133053:0|t[木槌棒] |cRXP_BUY_from him|r
     .collect 2493,1,749,1 --Collect Wooden Mallet (1)
     .target Mahnott Roughwound
     .money <0.0701
@@ -788,13 +787,13 @@ step << Warrior
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kennah|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135611:0|t[Ornate Blunderbuss] (4s 14c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T135611:0|t[精制短枪] (4s 14c). You'll come back later if you don't have enough yet
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Buy a|r |T135611:0|t[Ornate Blunderbuss] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Buy a|r |T135611:0|t[精制短枪] |cRXP_BUY_from him|r
     .collect 2509,1,749,1 --Collect Ornate Blunderbuss (1)
     .money <0.0414
     .target Kennah Hawkseye
@@ -803,7 +802,7 @@ step << Hunter
 step << Shaman/Druid
     #optional
     #completewith Clawsx
-    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    +|cRXP_WARN_Equip the|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
@@ -811,7 +810,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith Clawsx
-    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    +|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -866,13 +865,13 @@ step
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
-    .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
+    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     .goto Mulgore,48.2,53.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ahab|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿哈布·麦蹄 <老牛仔>|r
     .turnin 11129 >>交任务《 前往熔光镇》 凯雷失踪了！
     .target Ahab Wheathoof
 step
@@ -897,7 +896,7 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
 	#completewith Clawsx
-	>>击杀 拾取地上的 them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -929,7 +928,7 @@ step << Tauren
     .mob +Flatland Cougar
 step
     #completewith Thunderhorn
-    .subzone 222 >> Travel back to Bloodhoof Village
+    .subzone 222 >>前往血蹄村
 step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Yaw|r
@@ -946,13 +945,13 @@ step
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[Walking Stick] (5s 04c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T135145:0|t[学徒短杖] (5s 04c). You'll come back later if you don't have enough yet
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Shaman/Druid
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T135145:0|t[学徒短杖] |cRXP_BUY_from him|r
     .collect 2495,1,743,1 --Collect Walking Stick (1)
     .target Mahnott Roughwound
     .money <0.0504
@@ -961,13 +960,13 @@ step << Shaman/Druid
 step << Warrior
     .goto Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mahnott|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (7s 1c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[木槌棒] (7s 1c). You'll come back later if you don't have enough yet
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Warrior
     .goto Mulgore,45.66,58.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mahnott|r|cRXP_BUY_. Buy a|r |T133053:0|t[木槌棒] |cRXP_BUY_from him|r
     .collect 2493,1,743,1 --Collect Wooden Mallet (1)
     .target Mahnott Roughwound
     .money <0.0701
@@ -976,13 +975,13 @@ step << Warrior
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kennah|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135611:0|t[Ornate Blunderbuss] (4s 14c). You'll come back later if you don't have enough yet
+    .vendor >>Vendor trash. Sell your weapon if it gives you enough money for a |T135611:0|t[精制短枪] (4s 14c). You'll come back later if you don't have enough yet
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Buy a|r |T135611:0|t[Ornate Blunderbuss] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r|cRXP_BUY_. Buy a|r |T135611:0|t[精制短枪] |cRXP_BUY_from him|r
     .collect 2509,1,743,1 --Collect Ornate Blunderbuss (1)
     .target Kennah Hawkseye
     .money <0.0414
@@ -997,7 +996,7 @@ step << Hunter
 step << Shaman/Druid
     #optional
     #completewith ThunderhornCleanse
-    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    +|cRXP_WARN_Equip the|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
     .itemStat 16,QUALITY,<7
@@ -1005,7 +1004,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith ThunderhornCleanse
-    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    +|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -1013,7 +1012,7 @@ step << Warrior
 step << Hunter
     #optional
     #completewith ThunderhornCleanse
-    +|cRXP_WARN_Equip the|r |T135611:0|t[Ornate Blunderbuss]
+    +|cRXP_WARN_Equip the|r |T135611:0|t[精制短枪]
     .use 2509
     .itemcount 2509,1
     .itemStat 18,QUALITY,<7
@@ -1066,9 +1065,9 @@ step << Hunter
 step
     .goto Mulgore,46.63,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板考乌斯|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from him|r << Warrior
-    .vendor >> Vendor Trash << !Hunter
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from him|r << Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from him|r << Warrior
+    .vendor >>把垃圾物品卖给商人 << !Hunter
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,746,1 << Warrior --Freshly Baked Bread (10)
     .target Innkeeper Kauth
@@ -1083,14 +1082,14 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
 	#completewith Burial
-	>>击杀 拾取地上的 them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
 step << Tauren
     #label ThunderhornCleanse
     .goto Mulgore,44.49,45.36
-    >>|cRXP_WARN_Use the|r |T135139:0|t[Thunderhorn Cleansing Totem] |cRXP_WARN_at the Well|r
+    >>|cRXP_WARN_Use the|r |T135139:0|t[Thunderhorn Cleansing Totem]|cRXP_WARN_at the Well|r
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     .goto Mulgore,31.27,49.87
@@ -1142,15 +1141,15 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #completewith SacredBurial
-    >>Keep an eye out for |cRXP_ENEMY_鬼嚎|r. Loot him for his |T134358:0|t[|cRXP_LOOT_恶魔之伤|r]. Use it to start the quest
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_鬼嚎|r is difficult due to being level 12|r
+    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_鬼嚎|r is difficult due to being 等级 12|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>接受任务《物归己用》 恶魔之伤
     .use 4854
     .unitscan Ghost Howl
 step
 	#completewith next
-	>>击杀 拾取地上的 them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -1164,7 +1163,7 @@ step
 step << Warrior
     #season 2
     #completewith RiteofWisdom
-    >>击杀 for a |cRXP_LOOT_Severed Quilboar Head|r
+    >>击杀 |cRXP_ENEMY_刺背干涉者|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
     .train 403475,1
@@ -1348,12 +1347,12 @@ step << !Druid
     .subzoneskip 222
 step << Druid
     #completewith Bloodhoofturnins1
-    .goto Mulgore,47.33,57.17,120 >> Travel back to Bloodhoof Village
+    .goto Mulgore,47.33,57.17,120 >>前往血蹄村
     .subzoneskip 222
 step
     .goto Mulgore,46.62,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板考乌斯|r
-    .vendor >> Vendor trash
+    .vendor >>把垃圾物品卖给商人
     .target Innkeeper Kauth
     .isQuestAvailable 765
 step
@@ -1423,7 +1422,7 @@ step
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Buy|r |T132384:0|t[Heavy Shots] |cRXP_BUY_from him|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132384:0|t[重弹丸] |cRXP_BUY_from him|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step
@@ -1469,7 +1468,7 @@ step << Hunter
     .goto Mulgore,42.87,54.88,50,0
     .goto Mulgore,40.73,55.60,50,0
     .goto Mulgore,39.38,57.43,50,0
-    .use 15914 >>|cRXP_WARN_Use your|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on an|r|cRXP_ENEMY_成年平原陆行鸟|r|cRXP_WARN_at max range|r
+    .use 15914 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_成年平原陆行鸟|r |cRXP_WARN_at max range|r
     .complete 6061,1 --Tame an Adult Plainstrider (1)
     .mob Adult Plainstrider
 step << Hunter
@@ -1485,7 +1484,7 @@ step << Hunter
     .goto Mulgore,46.65,47.22,50,0
     .goto Mulgore,48.18,45.27,50,0
     .goto Mulgore,49.49,42.27,50,0
-    .use 15915 >>|cRXP_WARN_Use your|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_草原捕食者|r|cRXP_WARN_at max range|r
+    .use 15915 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_草原捕食者|r |cRXP_WARN_at max range|r
     .complete 6087,1 --Tame a Prairie Stalker (1)
     .mob Prairie Stalker
 step << Hunter
@@ -1500,7 +1499,7 @@ step << Hunter
     .goto Mulgore,47.25,41.33,80,0
     .goto Mulgore,45.41,40.29,80,0
     .goto Mulgore,51.57,44.40,80,0
-    .use 15916 >>|cRXP_WARN_Use your|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_猛鹫|r|cRXP_WARN_at max range and re-cast it immediately if they knock you down|r
+    .use 15916 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_飞飞|r |cRXP_WARN_at max range and re-cast it immediately if they knock you down|r
     >>|cRXP_WARN_If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back|r
     .complete 6088,1 --Tame a Swoop (1)
     .mob Swoop
@@ -1513,8 +1512,8 @@ step << Hunter
 step << !Hunter
     .goto Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Jhwana|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
     .collect 4541,20,818,1 << Warrior --Freshly Baked Bread (20)
     .target Innkeeper Grosk
@@ -1535,7 +1534,7 @@ step
     >>|cRXP_WARN_He patrols along the eastern road|r
     .turnin 751 >>交任务《 前往熔光镇》 被破坏的货车
     .accept 764 >> The Venture Co
-    .accept 765 >> Supervisor Fizsprocket
+    .accept 765 >>菲兹普罗克主管
 	.unitscan Morin Cloudstalker
     .group
 step
@@ -1567,8 +1566,8 @@ step
 step
     #label Fizsprocket
     .goto Mulgore,64.95,43.33
-    >>击杀 for his |cRXP_LOOT_Clipboard|r
-    >>|cRXP_WARN_Run into the mine and hug the right/east side to reach him|r
+    >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
+    >>|cRXP_WARN_Run into the mine and hug the right/east side to each him|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
     .group 2
@@ -1617,7 +1616,7 @@ step << Hunter
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
     .cast 1515 >>Tame a |cRXP_ENEMY_草原狼前锋|r
-    >>|cRXP_WARN_This will allow you to train|r 用它攻击怪物以学习[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
     .mob Prairie Wolf Alpha
 step
     #completewith next
@@ -1700,7 +1699,7 @@ step << Hunter
     .target Hesuwa Thunderhorn
 step << Hunter
     #completewith ReturntoJahan
-    |cRXP_WARN_拖曳|r |T132162:0|t[Beast Training] |cRXP_WARN_onto your Action Bars. Teach skills to your pet|r
+    +|cRXP_WARN_Drag|r |T132162:0|t[野兽训练] |cRXP_WARN_onto your Action Bars. Teach skills to your pet|r
 step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Turak|r
     .goto Thunder Bluff,76.7,27.3
@@ -1773,7 +1772,7 @@ step << Druid/Hunter
     .goto Thunder Bluff,44.43,43.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫兰塔|r
     >>|cRXP_WARN_This will unlock an easy quest. If you already have 2 professions, skip this step|r
-    .train 8613 >>Train |T134366:0|t[Skinning]
+    .train 8613 >>Train |T134366:0|t[剥皮]
     .target Mooranta
 step << Druid/Hunter
     #ah
@@ -1813,7 +1812,7 @@ step << Druid
 step << Druid
     .goto The Barrens,42.00,60.86
     .use 15710 >>|cRXP_WARN_使用|r |T132857:0|t[Cenarion Lunardust] |cRXP_WARN_at the|r |cRXP_PICK_Moonkin Stone|r
-    >>击杀 .与
+    >>击杀 |cRXP_ENEMY_月爪枭兽|r as he spawns. Talk to the |cRXP_FRIENDLY_月爪枭兽的灵魂|r afterwards
     >>|cRXP_WARN_Be careful! |cRXP_ENEMY_月爪枭兽|r casts|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     >>|cRXP_WARN_Steer clear of the|r |cRXP_ENEMY_电角蜥蜴|r |cRXP_WARN_in the area|r
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
@@ -1853,7 +1852,7 @@ step
     .bindlocation 380
 step << Shaman/Druid
     .goto The Barrens,51.24,29.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T135154:0|t[Quarter Staff] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T135154:0|t[短杖] |cRXP_BUY_from him|r
     .collect 854,1,784,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Nargal Deatheye
@@ -1862,14 +1861,14 @@ step << Shaman/Druid
 step << Shaman/Druid
     #optional
     #completewith MulgoreEnd
-    +|cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff] |cRXP_WARN_when you are level 11|r
+    +|cRXP_WARN_Equip the|r |T135154:0|t[短杖] |cRXP_WARN_when you are level 11|r
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Warrior
     .goto The Barrens,51.24,29.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T133477:0|t[Giant Mace] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T133477:0|t[巨棒] |cRXP_BUY_from him|r
     .collect 1197,1,784,1 --Collect Giant Mace (1)
     .money <0.2666
     .target Nargal Deatheye
@@ -1878,7 +1877,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith MulgoreEnd
-    +|cRXP_WARN_Equip the|r |T133477:0|t[Giant Mace]
+    +|cRXP_WARN_Equip the|r |T133477:0|t[巨棒]
     .use 1197
     .itemcount 1197,1
     .itemStat 16,QUALITY,<7
@@ -1886,10 +1885,10 @@ step << Warrior
 step << Tauren Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_阿瑟罗克|r
-    >>|cRXP_BUY_Buy a lot of|r |T132384:0|t[Heavy Shots] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a lot of|r |T132384:0|t[重弹丸] |cRXP_BUY_from him|r
     >>|cRXP_WARN_You won't be able to buy more for a while!|r
     .collect 2519,1600,6061,1 --Heavy Shot (1600)
-    .vendor >> Vendor trash
+    .vendor >>把垃圾物品卖给商人
     .target Uthrok
     --Tauren Hunter gun not worth? Making them train bows in Org
 step << Shaman
@@ -1968,7 +1967,7 @@ step
     .goto Durotar,49.68,40.30,6,0
     .goto Durotar,49.78,40.34,6,0
     .goto Durotar,49.79,39.96,6,0
-    .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
+    .goto Durotar,49.60,40.04,8 >>沿着塔楼向上前往 Furl
 step
     #label FurlScornbrow
     .goto Durotar,49.89,40.39
@@ -1996,7 +1995,7 @@ step
     .goto Durotar,59.81,58.22,8,0
     .goto Durotar,59.64,58.44,8,0
     .goto Durotar,59.55,57.89,8,0
-    .goto Durotar,59.29,57.89,8 >> Move toward the second floor of the keep
+    .goto Durotar,59.29,57.89,8 >>Move toward the 秒 floor of the keep
 step
     #completewith AgedEnvelope
     >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r
@@ -2008,7 +2007,7 @@ step
 step
     #label Benedict
     .goto Durotar,59.75,58.27
-    >>击杀 for his |cRXP_LOOT_Key|r
+    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r. Loot him for his |cRXP_LOOT_Key|r
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1 --Collect Benedict's Key (1)
     .mob Lieutenant Benedict
@@ -2111,7 +2110,7 @@ step
     .mob +Makrura Clacker
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r. This does not have to be finished now
+    >>击杀 |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r. This does not have to be finished now
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
 step
@@ -2156,10 +2155,10 @@ step
     .mob +Voodoo Troll
 step
     #completewith next
-    >>击杀 for his |cRXP_LOOT_头部|r
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
-    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[Healing Wave]|cRXP_WARN_. Use your|r |T134829:0|t[Potion] |cRXP_WARN_if needed|r << !Shaman !Rogue
+    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[Healing Wave]|cRXP_WARN_. Use your|r |T134829:0|t[药水] |cRXP_WARN_if needed|r << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2169,10 +2168,10 @@ step
     .complete 808,1 --Minshina's Skull (1)
 step
     .goto Durotar,67.4,87.8
-    >>击杀 for his |cRXP_LOOT_头部|r
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
-    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[Healing Wave]|cRXP_WARN_. Use your|r |T134829:0|t[Potion] |cRXP_WARN_if needed|r << !Shaman !Rogue
+    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[Healing Wave]|cRXP_WARN_. Use your|r |T134829:0|t[药水] |cRXP_WARN_if needed|r << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2312,7 +2311,7 @@ step
     .mob +Razormane Battleguard
 step
     #completewith next
-    .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
+    .goto Durotar,49.60,40.04,8 >>沿着塔楼向上前往 Furl
 step
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Furl|r
@@ -2325,7 +2324,7 @@ step
     .target Takrin Pathseeker
     .xp <10,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_加索克|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r 和 |cRXP_FRIENDLY_加索克|r
     .turnin 815 >>交任务《 前往熔光镇》 恐龙蛋大餐
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2346,7 +2345,7 @@ step << Hunter
     .xp <12,1
 step
     .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_旅店老板格罗斯克|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_旅店老板格罗斯克|r
     .turnin 2161 >>交任务《 前往熔光镇》 苦工的重担
     .target Innkeeper Grosk
 step
@@ -2380,7 +2379,7 @@ step << Shaman
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,51.90,25.70,12,0
-    >>击杀 for a |cRXP_LOOT_Reagent Pouch|r
+    >>击杀 |cRXP_ENEMY_火刃祭司|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
 step
@@ -2430,7 +2429,7 @@ step
 step
     #completewith Admiralorders1
     .goto Orgrimmar,48.97,92.84,50,0
-    .zone Orgrimmar >> Enter Orgrimmar
+    .zone Orgrimmar >>进入奥格瑞玛
 step << !Orc !Troll
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多拉斯|r
@@ -2470,16 +2469,16 @@ step << Hunter
 step
     #completewith ZeptoUC1
     .goto Durotar,45.54,12.14
-    .zone Durotar >>Exit Orgrimmar
+    .zone Durotar >>离开奥格瑞玛
 step
     #label ZeptoUC1
-    .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
-    .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
+    .goto Durotar,50.8,13.8,40 >>登上飞艇塔
+    .zone Tirisfal Glades >>做飞艇去提瑞斯法林地
     .zoneskip Tirisfal Glades
 step
     #completewith PorttoSilvermoon
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Enter Undercity
+    .zone Undercity >>进入幽暗城
     .zoneskip Undercity
 step
     #completewith RFCPowerPickup
@@ -2488,7 +2487,7 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Take the lift down to the Undercity
+    .goto Undercity,65.53,43.62,15 >>乘电梯下去到幽暗城
     .dungeon RFC
 step
     #completewith next

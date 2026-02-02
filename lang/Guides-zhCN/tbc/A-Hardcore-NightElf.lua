@@ -1,19 +1,18 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 << Alliance
 #defaultfor NightElf
-#group RestedXP Survival Guide (A)
+#group 选择生存向指南 (A)
 #subgroup RXP Survival Guide 1-20
 #name 1-11 Teldrassil
-#next 12-14 黑海岸
+#next 12-14 黑海岸 
 
 step << !NightElf
     #sticky
     #completewith next
-    +You have selected a guide meant for Night Elves. You should choose the same starter zone that you start in
+    +你选择的是侏儒和矮人专用的指南，请确保你的选择与你角色出生地一致
 step
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
@@ -123,7 +122,7 @@ step
 step
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r
-	.vendor >> |cRXP_BUY_Buy 3 stacks of|r |T132382:0|t[Rough Arrows] << Hunter
+	.vendor >>|cRXP_BUY_Buy 3 stacks of|r |T132382:0|t[劣质箭] << Hunter
 	.vendor >>出售垃圾物品 << !Hunter
     .target Keina
 step
@@ -139,7 +138,7 @@ step << Hunter
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿亚娜·远途|r
     .turnin 3117 >>交任务《 前往熔光镇》 风化符记
-    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
     .target Ayanna Everstride
 step
     #loop
@@ -180,7 +179,7 @@ step << !Priest !Druid
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奇娜|r
 	.vendor >>出售垃圾物品 << !Hunter
-	.vendor >> |cRXP_BUY_Buy 3 or 4 stacks of|r |T132382:0|t[Rough Arrows] << Hunter
+	.vendor >>|cRXP_BUY_Buy 3 or 4 stacks of|r |T132382:0|t[劣质箭] << Hunter
     .target Keina
 step << Druid
     .goto Teldrassil,59.602,40.696
@@ -352,8 +351,8 @@ step
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r
-    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows]|cRXP_BUY_until your Quiver is full|r
+    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[角木弯弓]
+    >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭] |cRXP_BUY_until your Quiver is full|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Jeena Featherbow
     .money <0.0285
@@ -361,23 +360,23 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r
-    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows]|cRXP_BUY_until your Quiver is full|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭] |cRXP_BUY_until your Quiver is full|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    .equip 18,2506 >>|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
+    .equip 18,2506 >>|cRXP_WARN_Equip the|r |T135499:0|t[角木弯弓]
     .use 2506
     .itemcount 2506,1
 step << Warrior
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[步兵剑] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
-    .equip 16,2488 >>|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .equip 16,2488 >>|cRXP_WARN_Equip the|r |T135321:0|t[步兵剑]
     .use 2488
     .itemcount 2488,1
 step << Warrior
@@ -393,27 +392,27 @@ step << Rogue
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]|cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
-    .equip 16,2494 >>|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .equip 16,2494 >>|cRXP_WARN_Equip the|r |T135641:0|t[卷刃的剑]
     .use 2494
     .itemcount 2494,1
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[学徒短杖] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << Druid
     #completewith next
-    .equip 16,2495 >>|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    .equip 16,2495 >>|cRXP_WARN_Equip the|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
 step
@@ -464,17 +463,17 @@ step << Druid
 #ah
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛洛尼·刃叶|r
-    >>|T136065:0|t[Herbalism]|cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    >>|T136065:0|t[草药学]|cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
     >>|cRXP_WARN_If you would rather purchase 5|r |T134187:0|t[Earthroot]|cRXP_WARN_from the Auction House later, skip this step|r
-    .train 2366 >> Train |T136065:0|t[Herbalism]
+    .train 2366 >>Train |T136065:0|t[草药学]
     .target Malorne Bladeleaf
     .itemcount 2449,<5 --Earthroot (<5)
 step << Druid
 #ssf
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛洛尼·刃叶|r
-    >>|T136065:0|t[Herbalism]|cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
-    .train 2366 >> Train |T136065:0|t[Herbalism]
+    >>|T136065:0|t[草药学]|cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    .train 2366 >>Train |T136065:0|t[草药学]
     .target Malorne Bladeleaf
     .itemcount 2449,<5 --Earthroot (<5)
 step << Druid
@@ -482,7 +481,7 @@ step << Druid
     #completewith end
     #label GatheringQ
     #season 0
-    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[Herbalism]|cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[草药学]|cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
     .itemcount 2449,<5 --Earthroot (<5)
@@ -491,13 +490,13 @@ step << Druid
     #completewith end
     #requires GatheringQ
     #season 0
-    >>|cRXP_WARN_Collect 5 |T134187:0|t[Earthroot] via |T136065:0|t[Herbalism] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
+    >>|cRXP_WARN_Collect 5 |T134187:0|t[Earthroot] via |T136065:0|t[草药学] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .skill herbalism,<15,1
 step << Priest
     .goto Teldrassil,57.242,63.511
-    >>Target |cRXP_FRIENDLY_哨兵莎恩雅|r
-    >>|cRXP_WARN_施放|r |T135929:0|t[Lesser Heal (Rank 2)] |cRXP_WARN_and|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_on|r |cRXP_FRIENDLY_哨兵莎恩雅|r
+    >>选中 |cRXP_FRIENDLY_哨兵莎恩雅|r
+    >>|cRXP_WARN_施放|r |T135929:0|t[Lesser Heal (Rank 2)]|cRXP_WARN_and|r |T135987:0|t[Power Word: Fortitude]|cRXP_WARN_on|r|cRXP_FRIENDLY_哨兵莎恩雅|r
     .complete 5621,1 --Heal and fortify Sentinel Shaya
     .target Sentinel Shaya
 step
@@ -577,7 +576,7 @@ step
     >>击杀 |cRXP_ENEMY_夜刃豹|r。拾取他们的 |cRXP_LOOT_毒牙|r
     >>击杀 |cRXP_ENEMY_巨翼枭|r。拾取他们的 |cRXP_LOOT_乱羽|r
     >>击杀 |cRXP_ENEMY_树林潜伏者|r。拾取他们的 |cRXP_LOOT_Silk|r
-    >>|cRXP_WARN_Save any|r 直到用完[Small Eggs]|cRXP_WARN_and|r |T134321:0|t[Small Spider Legs]|cRXP_WARN_to use for leveling|r |T133971:0|t[Cooking]|cRXP_WARN_稍后|r
+    >>|cRXP_WARN_Save any|r |T132832:0|t[小蛋] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling|r |T133971:0|t[烹饪] |cRXP_WARN_later|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .mob +Nightsaber
     .goto Teldrassil,66.10,52.43,60,0
@@ -649,7 +648,7 @@ step << Priest
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r
-    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_if you can afford it (2s 85c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[角木弯弓] |cRXP_BUY_if you can afford it (2s 85c), if not skip this step|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Jeena Featherbow
     .money <0.0285
@@ -657,11 +656,11 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r
-	.vendor >>|cRXP_BUY_Buy up to 800|r |T132382:0|t[Rough Arrows]
+	.vendor >>|cRXP_BUY_Buy up to 800|r |T132382:0|t[劣质箭]
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    .equip 18,2506 >>|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
+    .equip 18,2506 >>|cRXP_WARN_Equip the|r |T135499:0|t[角木弯弓]
     .use 2506
     .itemcount 2506,1
 step << Hunter
@@ -677,14 +676,14 @@ step << Rogue
 step << Warrior
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[步兵剑] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .money <0.0536
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
-    .equip 16,2488 >>|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .equip 16,2488 >>|cRXP_WARN_Equip the|r |T135321:0|t[步兵剑]
     .use 2488
     .itemcount 2488,1
 step << Warrior
@@ -695,27 +694,27 @@ step << Warrior
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]|cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
-    .equip 16,2494 >>|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .equip 16,2494 >>|cRXP_WARN_Equip the|r |T135641:0|t[卷刃的剑]
     .use 2494
     .itemcount 2494,1
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[学徒短杖] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << Druid
     #completewith next
-    .equip 16,2495 >>|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    .equip 16,2495 >>|cRXP_WARN_Equip the|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
 step << Druid
@@ -766,8 +765,8 @@ step
     .mob Gnarlpine Mystic
 step
 	.goto Teldrassil,69.37,53.41
-	>>击杀 |cRXP_ENEMY_噬梦者菲罗斯塔|r. Loot him for the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r]. |cRXP_WARN_Be careful as he can|r |T132152:0|t[Thrash] |cRXP_WARN_hitting you up to three times at once|r
-    .use 8049 >>|cRXP_WARN_Use the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r] to loot|r |cRXP_LOOT_塔隆凯的珠宝|r
+	>>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r. Loot him for the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r]. |cRXP_WARN_Be careful as he can|r |T132152:0|t[Thrash] |cRXP_WARN_hitting you up to three times at once|r
+    .use 8049 >>|cRXP_WARN_Use the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r] to loot|r |cRXP_LOOT_Tallonkai's Jewel|r
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
     .mob Ferocitas the Dream Eater
 step
@@ -811,7 +810,7 @@ step
     .goto Teldrassil,54.42,51.19,15 >>前往暴风城大教堂内，与 Fel Rock
 step
     .goto Teldrassil,51.2,50.6
-    >>击杀 for his |cRXP_LOOT_头部|r
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_迈雷纳斯|r may be located in many different spawn locations throughout Fel Rock
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan Lord Melenas
@@ -866,14 +865,14 @@ step
 step
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎瑞恩|r
-    .train 2550 >>Train |T133971:0|t[Cooking]
+    .train 2550 >>Train |T133971:0|t[烹饪]
     .accept 4161 >>接受任务《物归己用》 卡多雷的菜谱
     .turnin 4161 >>交任务《 前往熔光镇》 卡多雷的菜谱
     .target Zarrin
 step << Warrior/Rogue
     .goto Teldrassil,55.29,56.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拜恩希|r
-    .train 3273 >> Train |T135966:0|t[First Aid]
+    .train 3273 >>训练 |T135966:0|t[急救]
     .target Byancie
 step
     .goto Teldrassil,55.574,56.948
@@ -886,7 +885,7 @@ step
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .accept 487 >>接受任务《物归己用》 达纳苏斯之路
     .target Moon Priestess Amara
@@ -900,7 +899,7 @@ step << Druid
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .turnin 487 >>交任务《 前往熔光镇》 达纳苏斯之路
     .target Moon Priestess Amara
@@ -914,7 +913,7 @@ step
     .accept 937 >>接受任务《物归己用》 神谕林地
 step
     .goto Teldrassil,38.43,34.03
-    .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial] |cRXP_WARN_at The Oracle Glade moonwell|r
+    .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial]|cRXP_WARN_at The Oracle Glade moonwell|r
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
     #completewith harpies
@@ -979,7 +978,7 @@ step << !Rogue
     .accept 923 >> Accept Tumors
 step << !Rogue
     .goto Darnassus,34.96,9.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_大德鲁伊范达尔·鹿盔|r atop the Tree
     .turnin 940 >>交任务《 前往熔光镇》 泰达希尔
     .target Arch Druid Fandral Staghelm
 step << Druid
@@ -1055,7 +1054,7 @@ step << Hunter
 	.trainer >>训练你的职业技能
 step << Hunter
     .goto Teldrassil,59.9,58.8
-    .use 15921 >>|cRXP_WARN_Use the|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_树林潜伏者|r
+    .use 15921 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_树林潜伏者|r
     .complete 6063,1 --Tame a Webwood Lurker
     .mob Webwood Lurker
 step << Hunter
@@ -1080,7 +1079,7 @@ step << !Rogue
     .itemcount 5179,1
 step << Hunter
     .goto Teldrassil,62.6,72.2
-    .use 15922 >>|cRXP_WARN_Use the|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_夜刃捕食者|r
+    .use 15922 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_夜刃捕食者|r
     >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
     .complete 6101,1 --Tame a Nightsaber Stalker
     .mob Nightsaber Stalker
@@ -1095,7 +1094,7 @@ step << Hunter
     .accept 6102 >>接受任务《物归己用》 驯服野兽
 step << Hunter
     .goto Teldrassil,64.7,66.7
-    .use 15923 >>|cRXP_WARN_Use the|r |cRXP_WARN_对[Taming Rod]|cRXP_WARN_on a|r|cRXP_ENEMY_巨翼恶枭|r
+    .use 15923 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_巨翼恶枭|r
     >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
     .complete 6102,1 --Tame a Strigid Screecher
     .mob Strigid Screecher
@@ -1111,7 +1110,7 @@ step << !Druid
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .turnin 487 >>交任务《 前往熔光镇》 达纳苏斯之路
     .target Moon Priestess Amara
@@ -1121,7 +1120,7 @@ step << Hunter
 	.goto Teldrassil,44.2,39.8,0
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
-    >>|cRXP_WARN_施放|r |cRXP_WARN_对[Tame Beast] |cRXP_WARN_施放 |T132164:0|t |cRXP_ENEMY_巨翼猎枭|r |r 以驯服它|r -- .tame 1997
+    >>|cRXP_WARN_施放|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_巨翼猎枭|r to tame it|r -- .tame 1997
     .train 2981 >>用它攻击怪物以学习 [Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan Strigid Hunter
@@ -1166,7 +1165,7 @@ step << Rogue
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .turnin 487 >>交任务《 前往熔光镇》 达纳苏斯之路
     .target Moon Priestess Amara
@@ -1182,7 +1181,7 @@ step << Rogue
     .accept 923 >> Accept Tumors
 step << Rogue
     .goto Darnassus,34.96,9.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_大德鲁伊范达尔·鹿盔|r atop the Tree
     .turnin 940 >>交任务《 前往熔光镇》 泰达希尔
     .turnin 935 >>交任务《 前往熔光镇》 泰达希尔：传递信息
     .target Arch Druid Fandral Staghelm
@@ -1222,10 +1221,10 @@ step
     .goto Teldrassil,37.9,25.1,30,0
     .goto Teldrassil,40.7,25.4,30,0
     .line Teldrassil,41.70,41.82,41.97,39.03,42.20,35.71,43.33,33.27,43.79,30.65,44.18,27.80,46.09,26.55,47.72,25.57,46.25,25.62,44.42,26.09,42.83,26.15,42.0,25.6,39.6,25.6
-    >>击杀 for her |cRXP_LOOT_Spinnerets|r
+    >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot her for her |cRXP_LOOT_Spinnerets|r
     >>|cRXP_ENEMY_萨丝拉|r |cRXP_WARN_can spawn in 3 different locations, check your map for a recomended path to take|r
-    >>|cRXP_WARN_Head north along the river and check the easternmost spawn point first. Work on the|r |T134339:0|t[Tumors] |cRXP_WARN_quest as you go|r
-    >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors] |cRXP_WARN_quest before heading west|r
+    >>|cRXP_WARN_Head north along the river and check the easternmost spawn point first. Work on the|r |T134339:0|t[Tumors]|cRXP_WARN_quest as you go|r
+    >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors]|cRXP_WARN_quest before heading west|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
 step
@@ -1290,7 +1289,7 @@ step << Warrior
     .goto 1438/1,1315.000,9632.000,15 >>前去找 |cRXP_ENEMY_沃鲁斯·邪蹄|r
 step << Warrior
     .goto Teldrassil,47.2,63.7
-    >>击杀 for his |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Vorlus Vilehoof|r. Loot him for his |cRXP_LOOT_Horn|r
     .complete 1683,1 --Collect Horn of Vorlus (x1)
     .mob Vorlus Vilehoof
 step << Warrior
@@ -1313,14 +1312,14 @@ step << Hunter/Warrior/Priest
 step << Hunter
     #optional
     #completewith end
-    .equip 16,2495 >>|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    .equip 16,2495 >>|cRXP_WARN_Equip the|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
 step << Hunter
 #ah
     .goto Darnassus,58.76,44.48
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_or check the Auction House for something better/cheaper|r
+    >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[多层弯弓] |cRXP_BUY_or check the Auction House for something better/cheaper|r
     .collect 2507,1
     .target Ariyell Skyshadow
     .money <0.1751
@@ -1329,7 +1328,7 @@ step << Hunter
 #ssf
     .goto Darnassus,58.76,44.48
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[Laminated Recurve Bow]
+    >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[多层弯弓]
     .collect 2507,1
     .target Ariyell Skyshadow
     .money <0.1751
@@ -1337,17 +1336,17 @@ step << Hunter
 step << Hunter
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-	.vendor >>|cRXP_BUY_购买|r |T132382:0|t[锋利的箭]
+	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]
     .target Ariyell Skyshadow
 step << Hunter
     #completewith next
-    .equip 18,2507 >> |cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
+    .equip 18,2507 >>|cRXP_WARN_Equip the|r |T135489:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
 step << Warrior
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy a|r |T135147:0|t[Gnarled Staff]|cRXP_BUY_. Equip it at level 15|r
+    >>|cRXP_BUY_Buy a|r |T135147:0|t[法师之杖]|cRXP_BUY_. Equip it at level 15|r
 	.collect 2030,1
     .target Ariyell Skyshadow
     .money <0.5022
@@ -1356,7 +1355,7 @@ step << Warrior
 #ah
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy a|r |T135154:0|t[Quarter Staff]|cRXP_BUY_ or check the Auction House for something better/cheaper. Equip it at level 11|r
+    >>|cRXP_BUY_Buy a|r |T135154:0|t[短杖]|cRXP_BUY_ or check the Auction House for something better/cheaper. Equip it at level 11|r
 	.collect 854,1
     .target Ariyell Skyshadow
     .money <0.3022
@@ -1365,7 +1364,7 @@ step << Warrior
 #ssf
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy a|r |T135154:0|t[Quarter Staff]|cRXP_BUY_. Equip it at level 11|r
+    >>|cRXP_BUY_Buy a|r |T135154:0|t[短杖]|cRXP_BUY_. Equip it at level 11|r
 	.collect 854,1
     .target Ariyell Skyshadow
     .money <0.3022
@@ -1374,7 +1373,7 @@ step << Warrior
 #ah
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-	>>|cRXP_BUY_Buy and equip a|r |T135346:0|t[Cutlass] |cRXP_BUY_if you can't afford a|r |T135154:0|t[Quarter Staff] |cRXP_BUY_或者|r check the Auction House for something better/cheaper|r
+	>>|cRXP_BUY_Buy and equip a|r |T135346:0|t[斗士短剑] |cRXP_BUY_if you can't afford a|r |T135154:0|t[短杖] |cRXP_BUY_or|r check the Auction House for something better/cheaper|r
 	.collect 851,1
     .target Ariyell Skyshadow
     .money <0.2023
@@ -1383,27 +1382,27 @@ step << Warrior
 #ssf
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-	>>|cRXP_BUY_Buy and equip a|r |T135346:0|t[Cutlass] |cRXP_BUY_if you can't afford a|r |T135154:0|t[Quarter Staff]
+	>>|cRXP_BUY_Buy and equip a|r |T135346:0|t[斗士短剑] |cRXP_BUY_if you can't afford a|r |T135154:0|t[短杖]
 	.collect 851,1
     .target Ariyell Skyshadow
     .money <0.2023
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
 step << Warrior
     #sticky
-    .equip 16,851 >> |cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
+    .equip 16,851 >>|cRXP_WARN_Equip the|r |T135346:0|t[斗士短剑]
     .use 851
     .itemcount 851,1
 step << Warrior
     #sticky
     #optional
-    .equip 16,854 >> |cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff]
+    .equip 16,854 >>|cRXP_WARN_Equip the|r |T135154:0|t[短杖]
     .use 854
     .itemcount 854,1
     .xp <11,1
 step << Rogue
     .goto Darnassus,62.68,65.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_雷利亚·绿树|r on the second floor
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[平衡飞刀]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
 step
@@ -1411,9 +1410,9 @@ step
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133912:0|t[黑海岸石斑鱼]
     >>|T134187:0|t[Earthroot] << Druid
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid
@@ -1426,10 +1425,10 @@ step
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133972:0|t[陆行鸟肉]
+    >>|T133912:0|t[黑海岸石斑鱼]
     >>|T134187:0|t[Earthroot] << Druid
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
@@ -1441,7 +1440,7 @@ step << Hunter
     .goto Darnassus,64.2,63.0
     .line Darnassus,60.65,66.47,61.68,63.73,62.36,58.91,62.32,55.22,65.77,55.75,67.88,57.48,68.35,59.98,65.14,68.14,64.34,71.36,62.28,68.79,60.65,66.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_加伊娜|r, she patrols around the Tradesmen's Terrace
-    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky]|cRXP_BUY_from her|r
     >>|cRXP_WARN_You will need it to feed your |cRXP_FRIENDLY_Owl|r, they only eat meat and there's no meat vendor in Darkshore|r
     .collect 117,15
     .target Jaeana
@@ -1464,7 +1463,7 @@ step << Hunter
     .target Silvaria
 step << !Rogue
     .goto Darnassus,34.96,9.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_大德鲁伊范达尔·鹿盔|r atop the Tree
     .turnin 935 >>交任务《 前往熔光镇》 泰达希尔：传递信息
     .target Arch Druid Fandral Staghelm
 step << Rogue
@@ -1488,7 +1487,7 @@ step
     .accept 2520 >>接受任务《物归己用》 萨丝拉的祭品
 step
     .goto Darnassus,39.7,85.8
-	.use 8155 >>|cRXP_WARN_使用|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
+	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[萨丝拉的祭品] |cRXP_WARN_at the fountain|r
     .complete 2520,1 --Offer the sacrifice at the fountain
 step
     #label end
@@ -1526,7 +1525,7 @@ step
 step << Warrior
     #sticky
     #optional
-    .equip 16,854 >> |cRXP_WARN_Equip the|r |T135154:0|t[Quarter Staff]
+    .equip 16,854 >>|cRXP_WARN_Equip the|r |T135154:0|t[短杖]
     .use 854
     .itemcount 854,1
     .xp <11,1

@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -72,18 +71,18 @@ step << Rogue
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Hunter
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135130:0|t[共济手杖] and |T135490:0|t[共济之弓]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[共济手杖] and |T135490:0|t[Communal Bow]
     .use 186055
     .use 186056
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Mage/Warlock/Priest
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
     .use 186051
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Druid
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135130:0|t[共济手杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[共济手杖]
     .use 186055
     .complete 64049,1 --1/1 Open the Survival Kit (1)
     .complete 64049,2 --1/1 Equip a Weapon (1)
@@ -293,7 +292,7 @@ step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_索乌|r 在小屋顶部对话
     .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
-    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛]
+    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛] 
     .target Thuul
 step << Warlock
     .goto Orgrimmar,47.52,46.73
@@ -357,10 +356,10 @@ step
 	.target Argent Officer Garush
 step
     #completewith next
-    .use 12846 >>|cRXP_WARN_装备|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_饰品|r
+    .use 12846 >>|cRXP_WARN_Equip your|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_trinket|r
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>点击 |cRXP_PICK_指挥官帐篷|r，然后使用你的 |T132484:0|t[天灾战旗]
+    .use 12807 >>Click the |cRXP_PICK_Command Tent|r, then use your |T132484:0|t[天灾战旗]
 	>>|cRXP_WARN_这些怪物比较难打，而且容易引到周围的怪，小心点|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
@@ -410,12 +409,12 @@ step
 step
 	#sticky
 	#completewith wplbf
-	|cRXP_WARN_确保在每座塔之间杀怪并拾取|r |T133724:0|t[白骨碎片]
+	+|cRXP_WARN_确保在每座塔之间杀怪并拾取|r |T133724:0|t[白骨碎片]
     .collect 22526,30,91261 --Bone Fragments
 step
     #label TowerOne
     .goto Western Plaguelands,40.15,71.50
-    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
+    .use 12815 >>Use your |T135432:0|t[信号火炬] on the outside corner of the tower's doorway
 	>>|cRXP_WARN_不要招惹里面的精英怪|r
     .complete 5098,1 --Tower One marked (1)
 step
@@ -425,18 +424,18 @@ step
 	.target Chromie
 step
     .goto Western Plaguelands,44.24,63.06
-    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
+    .use 12815 >>Use your |T135432:0|t[信号火炬] on the outside corner of the tower's doorway
 	>>|cRXP_WARN_不要招惹里面的精英怪|r
     .complete 5098,3 --Tower Three marked (1)
 step
     .goto Western Plaguelands,45.8,63.3
-	.use 12627 >>刷新 |cRXP_ENEMY_时光寄生虫|r 用你的 |T134229:0|t[时光置换器] 在发光的粮仓旁边
+	.use 12627 >>Spawn the |cRXP_ENEMY_Temporal Parasites|r by using your |T134229:0|t[时光置换器] near the glowing silos
 	>>|cRXP_WARN_时光寄生虫移动缓慢，死后还会分裂出更多寄生虫。如果怪太多扛不住了，准备往水里跑；它们不会游泳。|r
     .complete 4971,1 --Temporal Parasite (10)
 	.mob Temporal Parasite
 step
     .goto Western Plaguelands,46.73,71.14
-    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
+    .use 12815 >>Use your |T135432:0|t[信号火炬] on the outside corner of the tower's doorway
 	>>|cRXP_WARN_不要招惹里面的精英怪|r
     .complete 5098,4 --Tower Four marked (1)
 step
@@ -453,9 +452,9 @@ step
     .goto Western Plaguelands,47.8,50.6
 	>>点击地上的 |cRXP_PICK_达尔松夫人的日记|r
     .turnin 5058 >>交任务 达尔松夫人的日记
-step
+step	
     .goto Western Plaguelands,47.49,51.00
-	>>击杀 |cRXP_ENEMY_游荡的骷髅|r 拾取它身上掉落的 |cRXP_LOOT_达尔松厕所钥匙|r
+	>>击杀 |cRXP_ENEMY_游荡的骷髅|r 拾取它身上掉落的 |cRXP_LOOT_达尔松厕所钥匙|r 
 	>>|cRXP_WARN_如果骷髅没刷新，就去刷白骨碎片|r
 	.collect 12738,1 -- Dalson Outhouse Key (x1)
 	.unitscan Wandering Skeleton
@@ -476,7 +475,7 @@ step
 step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
-    .accept 6004 >>接受任务 未完的任务
+    .accept 6004 >>接受任务 未完的任务	
 	.target Kirsta Deepshadow
 step
 	#completewith next
@@ -518,13 +517,13 @@ step
 	.target Kirsta Deepshadow
 step
     .goto Western Plaguelands,57.83,36.10
-	>>击杀 |cRXP_ENEMY_猎人莱德雷|r
+	>>击杀 |cRXP_ENEMY_猎人莱德雷|r 
 	>>|cRXP_WARN_她周围的怪很容易连锁拉怪。缚法者会施放冰霜新星|r
     .complete 6023,1 --Huntsman Radley (1)
 	.unitscan Huntsman Radley
 step
     .goto Western Plaguelands,54.64,23.71
-	>>击杀 |cRXP_ENEMY_骑士杜尔根|r
+	>>击杀 |cRXP_ENEMY_骑士杜尔根|r 
 	>>|cRXP_WARN_等他巡逻出塔后再开怪会让整个战斗安全得多。他有一个瞬发的5秒昏迷技能|r
     .complete 6023,2 --Cavalier Durgen (1)
 	.unitscan Cavalier Durgen
@@ -647,8 +646,8 @@ step
 	.target Marlene Redpath
 step
     .goto Western Plaguelands,52.1,83.3
-    .use 23691 >>|cRXP_WARN_装备|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_到你的副手|r
-    >>|cRXP_WARN_使用|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_在乌瑟尔之墓|r
+    .use 23691 >>|cRXP_WARN_Equip the|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_in your off-hand|r
+    >>|cRXP_WARN_Use the|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_at Uther's Tomb|r
     .complete 9444,1 --Uther's Tomb Defiled (1)
     .isQuestTurnedIn 9443
 step
@@ -764,7 +763,7 @@ step
 	.subzone 2264 >>前往考林路口
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。
+	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。 
 	>>|cRXP_WARN_北边和东边的道路上有多组精英怪巡逻。科林路口里面有隐形怪巡逻，所以尽量把怪拉出来打|r
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
@@ -783,7 +782,7 @@ step
 	.goto Eastern Plaguelands,61.40,66.40,25,0
 	.goto Eastern Plaguelands,59.40,66.40,25,0
 	.goto Eastern Plaguelands,58.00,67.60,25,0
-	.use 15454 >>|cRXP_WARN_使用|r |T133748:0|t[研钵和捣杵] |cRXP_WARN_在 |cRXP_LOOT_生命腐质|r 过期之前|r
+	.use 15454 >>|cRXP_WARN_Use the|r |T133748:0|t[研钵和捣杵] |cRXP_WARN_before the |cRXP_LOOT_Living Rot|r expires|r
     .complete 6022,1 --Coagulated Rot (1)
 step
 	#completewith LHFP
@@ -963,7 +962,7 @@ step
 step
 	#optional
     .isQuestTurnedIn 5901
-    .destroy 15043 >>摧毁所有剩下的 |T134321:0|t[瘟疫白蚁]
+    .destroy 15043 >>Delete any left over |T134321:0|t[天灾白蚁]
 step
     .goto Western Plaguelands,38.40,54.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 爬到建筑的顶层然后与 |cRXP_FRIENDLY_詹妮丝|r 对话
@@ -1098,7 +1097,7 @@ step
 	.goto Swamp of Sorrows,33.4,71.9,60,0
 	.goto Swamp of Sorrows,33.2,68.4,60,0
 	.zone Blasted Lands >>前往诅咒之地
-step
+step	
     .goto Blasted Lands,58.1,56.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_督军达图恩|r 对话
     .turnin 64063 >>交任务 黑暗之门 << !Druid

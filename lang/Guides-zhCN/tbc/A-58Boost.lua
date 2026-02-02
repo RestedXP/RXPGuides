@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -127,7 +126,7 @@ step << Priest
     .accept 64031 >>接任务 生存工具
     .target High Priestess Laurena
 step << Priest
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -164,7 +163,7 @@ step << Mage
     .accept 64031 >>接任务 生存工具
     .target Jennea Cannon
 step << Mage
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -196,12 +195,12 @@ step << Mage
     .target Jennea Cannon
 step << Warlock
     .goto Stormwind City,26.116,77.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 在'已宰的羔羊'里对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 在“已宰的羔羊”里对话
     .turnin 64028 >>交任务 新的开始
     .accept 64031 >>接任务 生存工具
     .target Ursula Deline
 step << Warlock
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -238,7 +237,7 @@ step << Hunter
     .accept 64031 >>接任务 生存工具
     .target Einris Brightspear
 step << Hunter
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135130:0|t[共济手杖] and |T135490:0|t[共济之弓]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[共济手杖] and |T135490:0|t[Communal Bow]
     .use 186055
     .use 186056
     .complete 64031,1 --1/1 Open the Survival Kit (1)
@@ -276,7 +275,7 @@ step << Druid
     .accept 64031 >>接任务 生存工具
     .target Theridran
 step << Druid
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135130:0|t[共济手杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[共济手杖]
     .use 186055
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -374,7 +373,7 @@ step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Stormwind City,47.87,31.31,8,0
-    .goto Stormwind City,47.87,31.31,6 >>前去找楼上的 |cRXP_FRIENDLY_Royal Factor Bathrilor|r
+    .goto Stormwind City,47.87,31.31,6 >>前去找楼上的 |cRXP_FRIENDLY_皇家代理人巴瑟罗尔|r
 step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
@@ -461,7 +460,7 @@ step
     .target Argent Officer Pureheart
 step
     #completewith ADC
-    .cast 17670 >>|cRXP_WARN_装备|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_开始收集|r |T133447:0|t[天灾石]
+    .cast 17670 >>|cRXP_WARN_Equip the|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_to start collecting|r |T133447:0|t[Scourgestones]
     .use 12846
 step
     .goto Western Plaguelands,43.419,84.834
@@ -569,9 +568,9 @@ step
     .accept 5904 >>接受任务 瘟疫与你
     .target Nathaniel Dumah
 step
-    .goto Western Plaguelands,40.116,71.561,-1
+    .goto Western Plaguelands,40.116,71.561,-1    
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,1 --Tower One marked
 step
     .goto Western Plaguelands,37.015,57.145
@@ -585,20 +584,20 @@ step
     .turnin 5216 >>交任务 目标：费尔斯通农场
     .accept 5217 >>接受任务 返回冰风岗
 step
-    .goto Western Plaguelands,42.326,66.105,-1
+    .goto Western Plaguelands,42.326,66.105,-1    
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,2 --Tower Two marked
 step
-    .goto Western Plaguelands,44.217,63.319,-1
+    .goto Western Plaguelands,44.217,63.319,-1    
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,3 --Tower Three marked
 step
     #label ADC
-    .goto Western Plaguelands,46.681,71.135,-1
+    .goto Western Plaguelands,46.681,71.135,-1    
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,4 --Tower Four marked
 step
     #completewith next
@@ -613,7 +612,7 @@ step
     #sticky
     #optional
     .isQuestTurnedIn 5097
-    .destroy 12815 >>摧毁 |T135432:0|t[信号火炬]
+    .destroy 12815 >>Destroy the |T135432:0|t[信号火炬]
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_化学家阿尔比顿|r 对话
@@ -661,7 +660,7 @@ step
     .goto Western Plaguelands,47.39,51.77,25,0
     .goto Western Plaguelands,46.64,49.21,25,0
     .goto Western Plaguelands,47.86,49.88
-    >>消灭那些 |cRXP_LOOT_游荡的骷髅|r. 从他们身上拾取 |cRXP_LOOT_达尔松厕所钥匙|r
+    >>消灭那些 |cRXP_LOOT_游荡的骷髅|r. 从他们身上拾取 |cRXP_LOOT_达尔松厕所钥匙|r 
     >>|cRXP_WARN_那些 |cRXP_LOOT_游荡的骷髅|r 在达尔松之泪谷仓和屋子周围巡逻|r
     .collect 12738,1,5060,1 --Collect Dalson Outhouse Key (x1)
     .unitscan Wandering Skeleton
@@ -709,7 +708,7 @@ step
     .goto Western Plaguelands,50.85,40.68
     >>击杀 |cRXP_ENEMY_血色医护员|r, |cRXP_ENEMY_血色猎人|r, |cRXP_ENEMY_血色法师|r 和 |cRXP_ENEMY_血色骑士|r
     >>|cRXP_ENEMY_血色医护员|r |cRXP_WARN_和 |cRXP_ENEMY_血色猎人|r 共享刷新|r
-    >>|cRXP_ENEMY_血色法师|r |cRXP_WARN_and |cRXP_ENEMY_血色骑士|r share spawns|r
+    >>|cRXP_ENEMY_血色法师|r |cRXP_WARN_和 |cRXP_ENEMY_血色骑士|r 共享刷新|r
     .complete 6004,1 --Scarlet Medic (2)
     .mob +Scarlet Medic
     .complete 6004,2 --Scarlet Hunter (2)
@@ -809,7 +808,7 @@ step
     .goto Western Plaguelands,48.10,63.92,20,0
     .goto Western Plaguelands,48.06,66.18
     >>击杀 |cRXP_ENEMY_时光寄生虫|r
-    .use 12627 >>|cRXP_WARN_使用|r |T134229:0|t[时光置换器] |cRXP_WARN_在仓库附近让虫子刷新 只有闪烁蓝光的仓库才能刷新|r |cRXP_ENEMY_时光寄生虫|r
+    .use 12627 >>|cRXP_WARN_Use the|r |T134229:0|t[时光置换器] |cRXP_WARN_at the silos to make them spawn. If the silo isn't pulsing blue then it cannot spawn any|r |cRXP_ENEMY_Temporal Parasites|r
     >>|cRXP_WARN_多只 |cRXP_ENEMY_时光寄生虫|r 会同时刷新，而且一旦一只死掉，另外一只就会瞬间刷新。他们会不断对你释放|r |T136091:0|t[减速术] |cRXP_WARN_大幅降低你的移动和攻击速度|r
     >>|cRXP_WARN_这些 |cRXP_ENEMY_寄生虫|r 不会游泳！如果数量太多让你难以招架，你可以尝试跑进|r |T135861:0|t[|cRXP_LOOT_水里|r] |cRXP_WARN_让它们脱战|r
     .complete 4971,1 -- Temporal Parasite slain (15)
