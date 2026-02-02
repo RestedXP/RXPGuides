@@ -694,9 +694,9 @@ function addon.LoadCachedGuides()
         error('Initialization error, db not set')
         return
     end
-    addon.string = addon.string or RXPString
+    local string  = addon.string or RXPString
     if addon.string then
-        local header = addon.string:sub(1,30)
+        local header = string:sub(1,30)
         local n,id,content = header:match("^(%d+)|(%-?%d+):(.*)")
         n = tonumber(n)
         id = tonumber(id)
@@ -705,8 +705,7 @@ function addon.LoadCachedGuides()
             guideLength = n
             guideContent = content
 
-            local isValid =
-                    addon.ImportString(addon.string,addon.RXPFrame,true)
+            local isValid = addon.ImportString(string,addon.RXPFrame,true)
             if isValid then
                 addon.RXPFrame:Show()
                 addon.db.profile.guides = {}
