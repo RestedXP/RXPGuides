@@ -1367,6 +1367,8 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
 
     C_Timer.After(2, function()
+        addon.player.maxlevel = _G.GetMaxPlayerLevel()
+
         if addon.LoadDefaultGuide and addon.currentGuide.empty then
             addon.LoadDefaultGuide()
         end
