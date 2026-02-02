@@ -976,7 +976,7 @@ step
     .subzone 136 >>前往灰色洞穴
     .isOnQuest 313
 step
-    #可选 << Warrior/Paladin/Rogue
+    #optional << Warrior/Paladin/Rogue
     #loop
     .goto 1426,42.982,54.755,0
     .goto 1426,41.918,54.053,0

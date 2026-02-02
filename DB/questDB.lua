@@ -683,7 +683,7 @@ local function GetHSLoc()
         index = index + 32
     end
 
-    if addon.player.class == "Druid" then
+    if addon.player.class == "DRUID" then
         index = index + 64
     end
     local hsLoc = HSloc[index] or HSloc[bit.band(index,63)] or HSloc[bit.band(index,51)] or HSloc[bit.band(index,49)] or 3
@@ -725,7 +725,7 @@ function addon:GetQuestDBDefaults(wipe)
         addon.settings.profile.gnomeTele = addon.IsPlayerSpell(20219)
     end
     if addon.settings.profile.portalTele == nil then
-        addon.settings.profile.portalTele = addon.player.class == "Mage"
+        addon.settings.profile.portalTele = addon.player.class == "MAGE"
     end
     if addon.settings.profile.goblinTele == nil then
         addon.settings.profile.goblinTele = addon.IsPlayerSpell(20222)
@@ -1248,7 +1248,7 @@ if QuestDB["TBC"] then
                 AddChapter("Silithus CH Start")
                 AddChapter("Un'Goro to Tanaris")
             end
-            if addon.player.class == "Druid" then
+            if addon.player.class == "DRUID" then
                 if addon.settings.profile.tbcWBF then
                     AddChapter("Felwood to Winterspring")
                 else

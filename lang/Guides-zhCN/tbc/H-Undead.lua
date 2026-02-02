@@ -4,12 +4,12 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
-#name 1-6 Tirisfal Glades
+#name 1-6 提瑞斯法林地
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Scourge
-#next 6-10 Eversong Woods << !Warrior
-#next 6-13 Durotar << Warrior
+#next 6-10 永歌森林 << !Warrior
+#next 6-13 杜隆塔尔 << Warrior
 
 
 step << !Undead

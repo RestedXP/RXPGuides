@@ -359,7 +359,7 @@ step
     .target Magistrate Solomon
 step << Mage
     .isOnQuest 4184
-    .cast 3561 >>|cRXP_WARN_施放|r |T135763:0|t[传送: 暴风城]
+    .cast 3561 >>|cRXP_WARN_施放|r |T135763:0|t[传送：暴风城]
     .usespell 3561
     .zoneskip Stormwind City
 step << !Mage
@@ -517,8 +517,8 @@ step
     .target Egan
 step
     .hs >>炉石回南海镇
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_按需购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Western Plaguelands
     .bindlocation 271,1
@@ -708,7 +708,7 @@ step
     .goto Western Plaguelands,50.85,40.68
     >>击杀 |cRXP_ENEMY_血色医护员|r, |cRXP_ENEMY_血色猎人|r, |cRXP_ENEMY_血色法师|r 和 |cRXP_ENEMY_血色骑士|r
     >>|cRXP_ENEMY_血色医护员|r |cRXP_WARN_和 |cRXP_ENEMY_血色猎人|r 共享刷新|r
-    >>|cRXP_ENEMY_血色法师|r |cRXP_WARN_和 |cRXP_ENEMY_血色骑士|r 共享刷新|r
+    >>|cRXP_ENEMY_血色法师|r |cRXP_WARN_和 |cRXP_ENEMY_血色骑士|r 共用刷新点|r
     .complete 6004,1 --Scarlet Medic (2)
     .mob +Scarlet Medic
     .complete 6004,2 --Scarlet Hunter (2)
@@ -719,9 +719,9 @@ step
     .mob +Scarlet Knight
 step
     .goto Western Plaguelands,51.923,28.062
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔·迪普沙东|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔·迪普沙东|r 对话
     .turnin 6004 >>交任务 未完的任务
-    .accept 6023 >>接受任务《物归己用》 未完的任务
+    .accept 6023 >>接受任务 未完的任务
     .target Kirsta Deepshadow
 step
     .goto Western Plaguelands,56.38,34.11,50,0
@@ -733,12 +733,12 @@ step
     #completewith next
     >>击杀 |cRXP_ENEMY_骑士杜尔根|r
     .complete 6023,2 --Kill Cavalier Durgen (x1)
-    *|cRXP_WARN_There is a level 63 elite mob that can spawn at the tower, if that's the case just be patient and wait for |cRXP_ENEMY_骑士杜尔根|r to come down|r
+    *|cRXP_WARN_塔上可能会刷新一只 63 级的精英怪，如果发生这种情况，请耐心等待 |cRXP_ENEMY_骑士杜尔根|r 走下来|r
     .unitscan Cavalier Durgen
 step
     .isOnQuest 9474
     .goto Western Plaguelands,55.192,23.511
-    >>打开 |cRXP_PICK_Holy Coffer|r at the top of the tower. 拾取地上的 it for the |cRXP_LOOT_Mark of the Lightbringer|r
+    >>打开塔顶的 |cRXP_PICK_神圣箱子|r 拾取 |cRXP_LOOT_光明使者的印记|r
     .complete 9474,1 --Collect Mark of the Lightbringer (x1)
 step
     #completewith next
@@ -749,14 +749,14 @@ step
     .unitscan Cavalier Durgen
 step
     .goto Western Plaguelands,51.923,28.062
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔·迪普沙东|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔·迪普沙东|r 对话
     .turnin 6023 >>交任务 未完的任务
     .accept 6025 >>接受任务 未完的任务
     .target Kirsta Deepshadow
 step
     #completewith next
     .goto Western Plaguelands,45.7,18.8
-    .subzone 190 >>前往暴风城大教堂内，与 Hearthglen
+    .subzone 190 >>前往壁炉谷
 step
     .goto Western Plaguelands,45.7,18.8
     >>登上壁炉谷哨塔
@@ -937,8 +937,8 @@ step
     .target Pamela Redpath
 step
     .hs >>炉石回南海镇
-    >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
+    >>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_按需购买食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Western Plaguelands
     .bindlocation 271,1
@@ -1065,7 +1065,7 @@ step
     .turnin 5181 >>交任务 达隆郡的恶魔
     .target Carlin Redpath
 step << Mage
-    .cast 3561 >>|cRXP_WARN_施放|r |T135763:0|t[传送: 暴风城]
+    .cast 3561 >>|cRXP_WARN_施放|r |T135763:0|t[传送：暴风城]
     .usespell 3561
     .zoneskip Stormwind City
 step << !Mage

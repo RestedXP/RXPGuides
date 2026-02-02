@@ -5,11 +5,11 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
-#name 1-6 Durotar
+#name 1-6 杜隆塔尔
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Orc/Troll
-#next 6-10 Durotar
+#next 6-10 杜隆塔尔
 
 step << !Orc !Troll
     #completewith next
@@ -972,12 +972,12 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
-#name 6-10 Durotar
+#name 6-10 杜隆塔尔
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Orc/Troll
-#next 10-13 Durotar << Warrior/Shaman
-#next 10-12 Eversong Woods << !Warrior !Shaman
+#next 10-13 杜隆塔尔 << Warrior/Shaman
+#next 10-12 永歌森林 << !Warrior !Shaman
 
 step
     .goto Durotar,52.06,68.30
@@ -2568,7 +2568,7 @@ step << Warlock
 step << Warlock
     #hardcore
     #completewith SkullRockWarlock
-    .zone Durotar >> Leave Orgrimmar
+    .zone Durotar >>离开 奥格瑞玛
     .zoneskip Durotar
 step << Warlock
     #label SkullRockWarlock
@@ -2778,8 +2778,8 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（联盟版）
 << Horde
-#name 10-13 Durotar
-#displayname 6-13 Durotar << Undead Warrior
+#name 10-13 杜隆塔尔
+#displayname 6-13 杜隆塔尔 << Undead Warrior
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Warrior !Tauren/Shaman !Tauren
@@ -3763,7 +3763,7 @@ step
 step
     #hardcore
     #completewith FoundtheCure
-    .zone Durotar >> Leave Orgrimmar
+    .zone Durotar >>离开 奥格瑞玛
     .zoneskip Durotar
 step
     #softcore
