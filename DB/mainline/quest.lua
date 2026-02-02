@@ -34,6 +34,120 @@ addon.disabledQuestList = {
     13177,
     13179,
     55510,
+
+
+7162, -- Proving Grounds
+7168, -- Rise and Be Recognized
+7169, -- Honored Amongst the Guard
+7170, -- Earned Reverence
+7171, -- Legendary Heroes
+7172, -- The Eye of Command
+31973, -- Bordin Steadyfist
+31972, -- Brok
+31971, -- Grand Master Obalis
+80384, -- A Keg-Stamped Package
+31925, -- Morulu the Elder
+53722, -- Heritage of the Kul Tiran
+78069, -- Reviving Tradition
+26153,26183,26190,26177,26192, -- the Cooking Daily
+66858, -- Tour the Trading Post
+26414,26420,26442,26488,26536, -- the Fishing Daily
+72446, -- What's Their Problem?
+72449, -- Knock It Off!
+72450, -- The Clessington Will
+29412, -- Blown Away
+32470, -- Light Camera Action
+49782, -- Heritage of the Lightforged
+49928, -- Heritage of the Void
+51483, -- Heritage of the Dark Iron
+58436, -- Heritage of the Mechagnome
+76212, -- A Mark For A Protector
+76213, -- Honor of the Goddess
+32863, -- What We've Been Training For
+31974, -- Goz Banefury
+83493, -- Warbands: Rift Reader
+83494, -- Warbands: Space Ghosts by the Coast
+54981, -- Cry to the Moon
+54982, -- The Spirit of the Hunter
+54983, -- Waking a Dreamer
+53845, -- Forging the Armor
+53846, -- Legacy of the Bronzebeard
+31935, -- Grand Master Payne
+31926, -- Grand Master Antari
+31932, -- Nearly Headless Jacob
+31934, -- Gutretch
+64237, -- Gurgl and the Bandit
+54096, -- The Fall of the Sunwell
+53721, -- Heritage of the Zandalari
+66959, -- Tour the Trading Post
+49783, -- Heritage of Highmountain
+49784, -- Heritage of the Nightborne
+29401, -- Blown Away
+51484, -- Heritage of the Mag'har
+72857, -- Boom Weed
+57079, -- Beat The Crapopolis Outta Him!
+77901, -- Retraining the Trainees
+77902, -- Ritual Recovery
+77903, -- De Power of Death
+77905, -- Avatar of Mueh'zala
+77906, -- De Darkspear Loa
+72467, -- The Blessing of the Clan
+74415, -- A Worthy Offering
+72475, -- Cornering Gor'krosh
+72478, -- Honor and Glory
+54766, -- Answer the Call
+54765, -- Thank Your Guide
+58435, -- Heritage of the Vulpera
+24997, -- Graverobbers
+25030, -- The Haunted Mills
+24999, -- Planting the Seed of Fear
+24998, -- Maggot Eye
+24995, -- Off the Scales
+24992, -- Escaped From Gilneas
+24993, -- Annihilate the Worgen
+24990, -- Darkhound Pounding
+24996, -- Holland's Experiment
+25090, -- A Putrid Task
+25005, -- Speak with Sevren
+25004, -- The Mills Overrun
+24988, -- The Chill of Death
+24980, -- The Scarlet Palisade
+24981, -- A Thorn in our Side
+92572, -- Furniture Favor
+28172, -- Done Nothing Wrong
+28179, -- Mud Hunter
+28177, -- Stocking Up
+28178, -- A Future Project
+28180, -- The Sand, the Cider, and the Orb
+28181, -- Warlocks Have the Neatest Stuff
+28183, -- Return to Keeshan
+38934, -- Silas' Secret Stash
+31889, -- Battle Pet Tamers: Kalimdor Alliance
+31919, -- Battle Pet Tamers: Outland Alliance
+31927, -- Battle Pet Tamers: Northend Alliance
+31966, -- Battle Pet Tamers: Cataclysm Alliance
+31930, -- Battle Pet Tamers: Pandaria Alliance
+31952, -- Battle Pet Tamers: Pandaria Horde
+31780, -- Old Macdonald
+31850, -- Eric Davidson
+31819, -- Dagra the Fierce
+31851, -- Bill Buckler
+54850, -- Operation: Troggageddon
+31781, -- Lindsay
+82809, -- Gryphons of a Feather
+83770, -- Delver's Call: Spiral Weave
+83768, -- Delver's Call: The Skittering Breach
+83767, -- Delver's Call: The Sinkhole
+83769, -- Delver's Call: Mycomancer Cavern
+85664, -- Delver's Call: Nightfall Sanctum
+85648, -- Delver's Call: Earthcrawl Mines
+83758, -- Delver's Call: Fungal Folly
+83759, -- Delver's Call: Kriegval's Rest
+83766, -- Delver's Call: Dread Pit
+85649, -- Delver's Call: The Waterworks
+83771, -- Delver's Call: Tak'Rethan Abyss
+85667, -- Delver's Call: The Underkeep
+85666, -- Delver's Call: Spiral Weave
 }
 
 addon.skipPreReq = {
@@ -469,7 +583,7 @@ addon.questTurnInItems = {
     [10773] = 31310, -- Breaching the Path // Wildhammer Flare Gun
     [10774] = 31310, -- Blood Elf + Giant = ??? // Wildhammer Flare Gun
     [10775] = 31310, -- Tabards of the Illidari // Wildhammer Flare Gun
-    [2458] = 8051 -- Deep Cover // Flare Gun
+    [2458] = 8051, -- Deep Cover // Flare Gun
 }
 
 -- Items required to accept the quest
@@ -493,5 +607,5 @@ addon.questAcceptItems = {
     [3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
     [2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
     [949] = 5251, -- The Twilight Camp // Phial of Scrying
-    [2478] = 8051 -- Mission: Possible But Not Probable // Flare Gun
+    [2478] = 8051, -- Mission: Possible But Not Probable // Flare Gun
 }
