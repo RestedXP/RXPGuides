@@ -865,20 +865,22 @@ function addon.ui.v2:CreateConfigurator()
 
     local page1 = AceGUI:Create("RXPGuideConfiguratorPage1")
 
+    local groupDescription = L("This guide delivers the fastest path from level 1 to %s for every class and zone. Optimized for minimal downtime, it includes the best quest routes, grinding spots, and dungeon segments to reach max level quickly and efficiently.")
     local speedrunGroup = AceGUI:Create("RXPGuideConfiguratorOption")
     speedrunGroup:SetFullWidth(true)
     speedrunGroup:SetHeight(172)
     speedrunGroup:SetLabel(L("Select Speedrun Guide"))
-    speedrunGroup:SetDescription(L("This guide delivers the fastest path from level 1 to 70 for every class and zone. Optimized for minimal downtime, it includes the best quest routes, grinding spots, and dungeon segments to reach max level quickly and efficiently."))
+    speedrunGroup:SetDescription(string.format(groupDescription, addon.player.maxlevel))
     speedrunGroup:SetImage("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-speedrun-guide")
 
     page1:AddChild(speedrunGroup)
 
+    groupDescription = L("This guide delivers the safest path from level 1 to %s for every class and zone. Optimized for maximum survivability it includes the best quest routes, grinding spots, and dungeon segments to reach max level safely and efficiently.")
     local survivalGroup = AceGUI:Create("RXPGuideConfiguratorOption")
     survivalGroup:SetFullWidth(true)
     survivalGroup:SetHeight(172)
     survivalGroup:SetLabel(L("Select Survival Guide"))
-    survivalGroup:SetDescription(L("This guide delivers the safest path from level 1 to 70 for every class and zone. Optimized for maximum survivability it includes the best quest routes, grinding spots, and dungeon segments to reach max level safely and efficiently."))
+    survivalGroup:SetDescription(string.format(groupDescription, addon.player.maxlevel))
     survivalGroup:SetImage("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-survival-guide")
 
     page1:AddChild(survivalGroup)
