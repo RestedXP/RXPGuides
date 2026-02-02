@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+local locale = _G.GetLocale()
+
 local AceGUI = LibStub("AceGUI-3.0")
 local pairs, assert, type = pairs, assert, type
 local wipe = table.wipe
@@ -189,7 +191,9 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
         description:SetFontObject(GameFontNormal)
         description:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
         description:SetTextColor(1, 1, 1)
-        description:SetFont(addon.font, 14, "")
+        if locale == "enUS" then
+            description:SetFont(addon.font, 14, "")
+        end
         description:SetText(L("Welcome, select a guide."))
 
         --Container Support
@@ -290,7 +294,11 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
         image:SetPoint("TOPLEFT", 12,  -15)
 
         local label = frame:CreateFontString(nil, "OVERLAY")
-        label:SetFont("Fonts\\FRIZQT__.TTF", 15, "")
+        if locale == "enUS" then
+            label:SetFont("Fonts\\FRIZQT__.TTF", 15, "")
+        else
+            label:SetFontObject(GameFontNormal)
+        end
 	    label:SetTextColor(unpack(addon.activeTheme.textColor))
         label:SetPoint("LEFT", image, "RIGHT", 12, 0)
         label:SetHeight(18)
@@ -312,7 +320,11 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
         frame:SetPushedTexture(pushedHighlight)
 
         local description = frame:CreateFontString(nil, "OVERLAY")
-        description:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
+        if locale == "enUS" then
+            description:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
+        else
+            description:SetFontObject(GameFontNormal)
+        end
         description:SetJustifyH("LEFT")
 	    description:SetTextColor(186 / 255, 186 / 255, 186 / 255)
         description:SetPoint("TOPLEFT", frame, "TOPLEFT", 30, -30)
@@ -508,7 +520,11 @@ function addon.ui.v2.RegisterRXPGuideConfigurator()
         description:SetFontObject(GameFontNormal)
         description:SetPoint("BOTTOMLEFT", topLeftIcon, "BOTTOMRIGHT", 12, 6)
         description:SetTextColor(1, 1, 1)
-        description:SetFont(addon.font, 14, "")
+        if locale == "enUS" then
+            description:SetFont(addon.font, 14, "")
+        else
+            description:SetFontObject(GameFontNormal)
+        end
         description:SetText()
 
         local backButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
@@ -975,7 +991,11 @@ function addon.ui.v2:CreateConfigurator()
 
         local settingDesc = AceGUI:Create("Label")
         settingDesc:SetRelativeWidth(0.95)
-        settingDesc:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
+        if locale == "enUS" then
+            settingDesc:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
+        else
+            settingDesc:SetFontObject(GameFontNormal)
+        end
         settingDesc:SetColor(186 / 255, 186 / 255, 186 / 255)
 
         settingDesc:SetText('\n' .. description)
