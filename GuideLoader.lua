@@ -694,7 +694,7 @@ function addon.LoadCachedGuides()
         error('Initialization error, db not set')
         return
     end
-
+    addon.string = addon.string or RXPString
     if addon.string then
         local header = addon.string:sub(1,30)
         local n,id,content = header:match("^(%d+)|(%-?%d+):(.*)")

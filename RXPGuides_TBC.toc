@@ -4,7 +4,7 @@
 ## Author: RestedXP
 ## Version: @project-version@
 ## OptionalDeps: Questie, RXPGuides_Themes
-## SavedVariables: RXPData, RXPDB, RXPSettings
+## SavedVariables: RXPData, RXPDB, RXPSettings, RXPString
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
