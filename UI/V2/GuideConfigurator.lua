@@ -943,7 +943,7 @@ function addon.ui.v2:CreateConfigurator()
                 setting = 'enableGroupQuests'
             },
             {
-                icon = "Interface\\Icons\\Ability_Vehicle_LaunchPlayer",
+                icon = addon.game == "CLASSIC" and "Interface\\Icons\\Ability_Vehicle_LaunchPlayer" or "Interface\\Icons\\Inv_misc_missilesmall_red",
                 label = L("Skip overleveled steps"),
                 tooltip = L("Skip steps you're overleveled for"),
                 setting = 'enableXpStepSkipping',
