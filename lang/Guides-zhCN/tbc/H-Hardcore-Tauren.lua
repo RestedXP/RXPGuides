@@ -370,7 +370,7 @@ step << Shaman
 step << Shaman
     #completewith next
     #requires Rock
-    .cast 8202 >>|cRXP_WARN_Use the|r |T134743:0|t[大地灵契]
+    .cast 8202 >>|cRXP_WARN_Use the|r |T133970:0|t[大地灵契]
     .use 6635
 step << Shaman
     .goto Mulgore,53.74,80.15
@@ -542,7 +542,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith Well
-    +|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
+    +|cRXP_WARN_装备买来的|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -810,7 +810,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith Clawsx
-    +|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
+    +|cRXP_WARN_装备买来的|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -1004,7 +1004,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith ThunderhornCleanse
-    +|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
+    +|cRXP_WARN_装备买来的|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7

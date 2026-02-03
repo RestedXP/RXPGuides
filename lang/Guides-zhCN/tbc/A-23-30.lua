@@ -767,7 +767,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 24-27级 赤脊山/暮色森林
 #subgroup RestedXP 联盟 20-32 级
-#next 27–30 湿地/希尔斯布莱德
+#next 27-30 湿地/希尔斯布莱德
 
 step
     .goto Stormwind City,55.21,7.04
@@ -3018,9 +3018,9 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》练级指南(联盟版)
 << Alliance
-#name 27–30 湿地/希尔斯布莱德
+#name 27-30 湿地/希尔斯布莱德
 #subgroup RestedXP 联盟 20-32 级
-#next 30–32 暮色森林/荆棘谷
+#next 30-32 暮色森林/荆棘谷
 
 step
     .isQuestComplete 279
@@ -3755,9 +3755,9 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》练级指南 (联盟版)
 << Alliance
-#name 30–32 暮色森林/荆棘谷
+#name 30-32 暮色森林/荆棘谷
 #subgroup RestedXP 联盟 20-32 级
-#next 32–33 闪光平原
+#next 32-33 闪光平原
 
 step
     .goto Ironforge,67.844,42.499

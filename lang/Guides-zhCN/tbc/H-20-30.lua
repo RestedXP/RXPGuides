@@ -405,7 +405,7 @@ step
     .goto Stonetalon Mountains,64.95,83.88,100,0
     .goto Stonetalon Mountains,61.47,81.51,100,0
     >>击杀每个你看到的 |cRXP_ENEMY_深苔爬行者|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
+    >>|cRXP_WARN_保存你拾取的任何|r |T134339:0|t[小毒囊] |cRXP_WARN_|r << Rogue
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob 深苔爬行者
 step
@@ -415,7 +415,7 @@ step
 step
     #completewith Besseleth1
     >>击杀 |cRXP_ENEMY_深苔毒蜘蛛|r 和 |cRXP_ENEMY_深苔爬行者|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
+    >>|cRXP_WARN_保存你拾取的任何|r |T134339:0|t[小毒囊] |cRXP_WARN_|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob 深苔毒蜘蛛
@@ -437,7 +437,7 @@ step
 step
     .goto Stonetalon Mountains,54.99,76.03
     >>击杀 |cRXP_ENEMY_深苔爬行者|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
+    >>|cRXP_WARN_保存你拾取的任何|r |T134339:0|t[小毒囊] |cRXP_WARN_|r << Rogue
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob 深苔爬行者
 step
@@ -473,12 +473,12 @@ step
     .goto Stonetalon Mountains,60.96,63.99,50,0
     .goto Stonetalon Mountains,60.25,63.21,50,0
     >>击杀 |cRXP_ENEMY_深苔毒蜘蛛|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
+    >>|cRXP_WARN_保存你拾取的任何|r |T134339:0|t[小毒囊] |cRXP_WARN_|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob 深苔毒蜘蛛
 step << Warrior/Paladin/Shaman
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135423:0|t[Battle Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_交谈。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
     .collect 926,1,899,1 --Collect Battle Axe (1)
     .money <1.021
     .target 维尼克斯
@@ -487,14 +487,14 @@ step << Warrior/Paladin/Shaman
 step << Warrior/Paladin/Shaman
     #optional
     #completewith BluePrints
-    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe]
+    +|cRXP_WARN_装备|r |T135423:0|t[大型战斧]
     .use 926
     .itemcount 926,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Rogue
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_交谈。购买一把|r |T135324:0|t[长剑] |cRXP_BUY_从他那里|r
     .collect 923,1,899,1 --Collect Longsword (1)
     .money <0.8743
     .target 维尼克斯
@@ -503,7 +503,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith BluePrints
-    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    +|cRXP_WARN_装备|r |T135324:0|t[长剑]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
@@ -589,7 +589,7 @@ step
     .goto Stonetalon Mountains,64.95,83.88,80,0
     .goto Stonetalon Mountains,68.59,88.34,80,0
     >>杀掉 |cRXP_ENEMY_深苔爬行者|r
-    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
+    >>|cRXP_WARN_保存你拾取的任何|r |T134339:0|t[小毒囊] |cRXP_WARN_|r << Rogue
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob 深苔爬行者
 step << Druid
@@ -725,8 +725,8 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
-    >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
+	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+    >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
 	.collect 5099,1,883,1 --Collect Hoof of Lakota'Mani
@@ -984,9 +984,9 @@ step
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_潘德|r 对话
-    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 80 skill|r
+    >>|cRXP_WARN_如果你没有足够的|r |T132889:0|t[亚麻布] |cRXP_WARN_将技能提升到 80，请跳过此步骤|r
     .train 3277 >>学习 |T133684:0|t[绒线绷带]
-    .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
+    .train 7934 >>学习 |T134437:0|t[抗毒药剂] << Rogue
     .target 潘德·缚石
     .skill firstaid,<1,1
 step << Rogue
@@ -1069,7 +1069,7 @@ step
 step << Warrior/Paladin
     .goto The Barrens,62.20,38.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格拉利克斯|r 对话
-    .vendor >>Buy |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] from him if it's up
+    .vendor >>如果他有出售的话，从他那里购买 |T134583:0|t[|cRXP_FRIENDLY_强力锁甲护腿|r]
     .target 格拉利克斯
     .money <0.619
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
@@ -1077,7 +1077,7 @@ step << Warrior/Paladin
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维克斯宾德|r 对话
-    .vendor >> Buy |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] from him if they're up
+    .vendor >>如果他有出售的话，从他那里购买 |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r]
     .target 维克斯宾德
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -1093,7 +1093,7 @@ step << Warrior/Paladin
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #optional
     #completewith FlytoXroads
-    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
+    +|cRXP_WARN_装备|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -1308,7 +1308,7 @@ step
 step
     #label GlowingShard
     >>一旦到达 |cRXP_FRIENDLY_纳拉雷克斯|r，你将遭遇两波敌人攻击，最终面对 |cRXP_ENEMY_吞噬者穆塔努斯|r
-    >>Kill him and loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] and use it to start the quest
+    >>击杀他并拾取 |T135229:0|t[|cRXP_LOOT_发光的碎片|r]，用它来开始任务
     .collect 10441,1 --Collect Glowing Shard (x1)
     .accept 6981 >>接受任务发光的碎片
     .use 10441
@@ -1579,7 +1579,7 @@ step
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在旅店二楼与 |cRXP_FRIENDLY_基达|r 对话
     .vendor >>如果有出售的话，|cRXP_BUY_从她那里|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|r << !Warrior
-    .vendor >>|cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
+    .vendor >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134413:0|t[活根草] |cRXP_BUY_如果有的话从她那里购买|r << Warrior
     .target 基达
     .isQuestAvailable 6641
 step
@@ -1816,11 +1816,11 @@ step << Druid
 step << Druid
     #completewith next
     .goto Moonglade,54.30,55.68
-    .collect 15877,1,30,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a |T134125:0|t[|cRXP_LOOT_Shrine Bauble|r]
+    .collect 15877,1,30,1 >>在湖底拾取 |cRXP_PICK_小饰物容器|r，以获得 |T134125:0|t[|cRXP_LOOT_神龛小饰物|r]
     >>|cRXP_WARN_在到达饰品正上方之前不要下水|r
 step << Druid
     .goto Moonglade,36.40,42.01
-    .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
+    .cast 19719 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
     .complete 30,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
@@ -1973,7 +1973,7 @@ step << Shaman
     .target 布瑞恩
 step << Shaman
     .goto The Barrens,44.22,76.75
-    .use 7766 >> |cRXP_WARN_Fill your|r |T132825:0|t[Empty Brown Waterskin] |cRXP_WARN_in the watering hole below Brine's hut|r
+    .use 7766 >>|cRXP_WARN_在布瑞恩的小屋下方的水坑中填满你的|r |T132825:0|t[空的棕色水囊] |cRXP_WARN_|r
     .complete 1535,1 --Filled Brown Waterskin (1)
 step << Shaman
     .goto The Barrens,43.42,77.41
@@ -2055,7 +2055,7 @@ step << Warlock
 step << Rogue
     #completewith next
     .goto Orgrimmar,45.64,55.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kareth|r|cRXP_BUY_. Buy a|r |T135640:0|t[Jambiya] |cRXP_BUY_from him if you do not have a dagger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡雷斯|r |cRXP_BUY_对话。购买一把|r |T135640:0|t[双刃弯刀] |cRXP_BUY_如果你还没有匕首的话|r
     .collect 2207,1 --Collect Jambiya (1)
     .target 卡雷斯
 step << Rogue
@@ -2063,7 +2063,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .train 921 >>学习 |T133644:0|t[偷窃技能]
     .train 8676 >>学习 |T132282:0|t[伏击]
-    .train 1943 >> Train |T132302:0|t[Rupture]
+    .train 1943 >>学习 |T132302:0|t[撕裂]
     .train 1856 >>学习 |T132331:0|t[消失]
     .train 1725 >>学习 |T132289:0|t[扰乱]
     .train 1785 >>学习 |T132320:0|t[潜行 等级2]
@@ -2082,7 +2082,7 @@ step << Rogue
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,42.10,49.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_雷库尔|r |cRXP_BUY_对话。购买|r |T134387:0|t[闪光粉] |cRXP_BUY_从他那里|r
     .collect 2928,40,2479,1 --Collect Dust of Decay (40)
     .collect 3371,40,2479,1 --Collect Empty Vial (40)
     .collect 5140,20,2479,1 --Collect Flash Powder (20)
@@ -2181,8 +2181,8 @@ step << Rogue
     #completewith roguetowerq
     +|cRXP_WARN_这里的每个怪物对某些技能造成的伤害会增加|r
     >>对 |cRXP_ENEMY_变异风险投资公司工人|r 使用 |T132282:0|t[伏击]
-    >>Use |T132302:0|t[Rupture] on the |cRXP_ENEMY_Venture Co. Patrollers|r
-    >>Use |T132292:0|t[Eviscerate] on the |cRXP_ENEMY_Venture Co. Lookouts|r once (1 combo point)
+    >>对 |cRXP_ENEMY_风险投资公司巡逻员|r 使用 |T132302:0|t[割裂]
+    >>对 |cRXP_ENEMY_风险投资公司看守|r 使用一次 |T132292:0|t[刺骨]（1 连击点）
 step << Rogue
     #label roguetowerq
     .goto The Barrens,54.72,5.74
@@ -2232,7 +2232,7 @@ step << Rogue
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,42.10,49.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_雷库尔|r |cRXP_BUY_对话。购买|r |T134387:0|t[闪光粉] |cRXP_BUY_从他那里|r
     .collect 2928,40,2479,1 --Collect Dust of Decay (40)
     .collect 3371,40,2479,1 --Collect Empty Vial (40)
     .collect 5140,20,2479,1 --Collect Flash Powder (20)
@@ -2287,7 +2287,7 @@ step << Hunter
     .xp <24,1
 step << Rogue
     .goto Orgrimmar,48.12,80.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_特拉克根|r |cRXP_BUY_对话。购买|r |T135423:0|t[致命飞斧] |cRXP_BUY_从他那里|r
     .collect 3137,200,493,1 --Deadly Throwing Axe (200)
     .target 特拉克根
 step << Rogue
@@ -2296,7 +2296,7 @@ step << Rogue
     .aura 9991
     .aura 9810
 step << Rogue
-    .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 8051 >>|cRXP_WARN_从你的背包中删除|r |T134536:0|t[信号枪] |cRXP_WARN_，因为已经不再需要|r
     .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
 step << !Shaman
     .goto Orgrimmar,54.10,68.42
@@ -2475,7 +2475,7 @@ step
     .target 药剂师林度恩
 step << Shaman
     .goto Hillsbrad Foothills,62.18,20.78
-    .use 7768 >>|cRXP_WARN_Use the|r |T132829:0|t[Empty Red Waterskin] |cRXP_WARN_at the well in the middle of Tarren Mill|r
+    .use 7768 >>|cRXP_WARN_在塔伦米尔中央的水井使用|r |T132829:0|t[空的红色水囊] |cRXP_WARN_|r
     .complete 1536,1 --Filled Red Waterskin (1)
 step
     .goto Hillsbrad Foothills,62.37,20.32
@@ -2534,7 +2534,7 @@ step
 step << Shaman/Warrior
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >>|cRXP_BUY_购买一把|r |T132408:0|t[无情战斧] |cRXP_BUY_如果有货且你还没有的话|r 
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -2544,7 +2544,7 @@ step << Shaman/Warrior
 step << Rogue
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >>|cRXP_BUY_购买一把|r |T135640:0|t[宽刃小刀] |cRXP_BUY_如果有货且你还没有的话|r 
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -2575,7 +2575,7 @@ step << Hunter
     .target 塞多蒙·克莱尔
 step << Rogue
     #completewith Durnholde1
-    .cast 8679 >>|cRXP_WARN_Use the|r |T132273:0|t[Instant Poison] |cRXP_WARN_on your weapons|r
+    .cast 8679 >>|cRXP_WARN_在你的武器上使用|r |T132273:0|t[速效药膏] |cRXP_WARN_|r
     .itemcount 6947,2
 step
 	#completewith next
@@ -2658,7 +2658,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_Stalking Pants|r] |cRXP_WARN_and|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] 
+    +|cRXP_WARN_装备|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r] |cRXP_WARN_和|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
     .use 4831
     .use 4794
     .itemcount 4831,1
@@ -2680,7 +2680,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] 
+    +|cRXP_WARN_装备|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -2823,11 +2823,11 @@ step
 step
     #optional
     #completewith FarmerRay
-    .destroy 3499 >>|cRXP_WARN_Delete the|r |T134238:0|t[Burnished Gold Key] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 3499 >>|cRXP_WARN_从你的背包中删除|r |T134238:0|t[抛光的金钥匙] |cRXP_WARN_，因为已经不再需要|r
 step
     #optional
     #completewith FarmerRay
-    .destroy 3467 >>|cRXP_WARN_Delete the|r |T134237:0|t[Dull Iron Key] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 3467 >>|cRXP_WARN_从你的背包中删除|r |T134237:0|t[灰暗的铁钥匙] |cRXP_WARN_，因为已经不再需要|r
 step
 	#completewith Fields1
     >>击杀 |cRXP_ENEMY_饥饿的山地狮|r。拾取他们的 |cRXP_LOOT_山地狮的血液|r
@@ -3310,7 +3310,7 @@ step << Shaman/Warrior
     #optional
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >>|cRXP_BUY_购买一把|r |T132408:0|t[无情战斧] |cRXP_BUY_如果有货且你还没有的话|r 
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -3321,7 +3321,7 @@ step << Rogue
     #optional
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T135640:0|t[Broad Bladed Knife] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >>|cRXP_BUY_购买一把|r |T135640:0|t[宽刃小刀] |cRXP_BUY_如果有货且你还没有的话|r 
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -3346,7 +3346,7 @@ step
     #hardcore
     #completewith HillsbradBlacksmith
     +|cRXP_WARN_铁匠铺内最多有 4 个怪，外面还有更多。将它们安全地拉走，直到清理完铁匠铺|r
-    >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Hillsbrad Councilman|r as they cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_which makes escape difficult|r
+    >>|cRXP_WARN_小心 |cRXP_ENEMY_希尔斯布莱德议员|r，他们会施放 |r |T135846:0|t[寒冰箭]，|cRXP_WARN_会让你很难逃脱|r
 step
     #completewith next
 	>>击杀 |cRXP_ENEMY_铁匠维林坦|r 和 |cRXP_ENEMY_希尔斯布莱德见习铁匠|r
@@ -3357,7 +3357,7 @@ step
     .isQuestTurnedIn 528
 step
     .goto Hillsbrad Foothills,32.02,45.45
-    >>Loot the |cRXP_PICK_Shipment of Iron|r for the |T132761:0|t[|cRXP_LOOT_Shipment of Iron|r]
+    >>拾取 |cRXP_PICK_一箱铁材|r，以获得 |T132761:0|t[|cRXP_LOOT_一箱铁材|r]
     .complete 529,3 --Collect Shipment of Iron (x1)
     .isQuestTurnedIn 528
 step
@@ -3642,8 +3642,8 @@ step << !Mage !Shaman
 step
     .goto Orgrimmar,49.57,69.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
-    .bankdeposit 3692 >> Deposit your |T133730:0|t[|cRXP_LOOT_Hillsbrad Human Skulls|r] if you have them
-    .bankdeposit 3564 >> Deposit |T132761:0|t[|cRXP_LOOT_Shipment of Iron|r]
+    .bankdeposit 3692 >>如果你有 |T133730:0|t [|cRXP_LOOT_希尔斯布莱德人类头骨|r]，请将它们存入银行
+    .bankdeposit 3564 >>存入|T132761:0|t[|cRXP_LOOT_一箱铁材|r]
     .target 卡鲁斯
 step << Paladin
     #optional
@@ -3920,7 +3920,7 @@ step << BloodElf
 step
     #completewith Outrunners
     .line Ashenvale,71.46,70.10,72.08,70.47,72.50,70.60,72.94,70.67,73.33,70.61,74.36,70.10,74.86,70.06,75.26,69.96,75.94,69.80,76.11,68.95,76.93,68.04,77.35,66.96,77.60,66.33,77.93,65.93,78.24,65.72
-    >>Kill |cRXP_ENEMY_Sharptalon|r. Loot him for |T136063:0|t[|cRXP_LOOT_Sharptalon's Claw|r] and use it to start the quest
+    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     >>|cRXP_WARN_小心！|r |cRXP_ENEMY_锐爪鹰|r |cRXP_WARN_是 31 级，会在周围巡逻。如果你难以击杀，可以将它引回 碎木岗哨或 亡灵营地。如果采用这种方法，确保对它造成 50%以上伤害才能获得任务进度。你也可以稍后再完成此任务|r
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >>接受任务尖爪的爪子
@@ -3928,7 +3928,7 @@ step
     .use 16305
 step << Hunter
     #completewith next
-    .cast 19885 >>|cRXP_WARN_Cast|r |T132320:0|t[Track Hidden] |cRXP_WARN_to find the |cRXP_ENEMY_Ashenvale Outrunners|r more easily|r
+    .cast 19885 >>|cRXP_WARN_施放|r |T132320:0|t[追踪隐藏] |cRXP_WARN_以更容易找到 |cRXP_ENEMY_灰谷先驱者|r|r
     .train 19885,3
 step
     #label Outrunners
@@ -3974,7 +3974,7 @@ step
     .goto Ashenvale,72.08,70.47,45,0
     .goto Ashenvale,71.46,70.10,45,0
     .line Ashenvale,71.46,70.10,72.08,70.47,72.50,70.60,72.94,70.67,73.33,70.61,74.36,70.10,74.86,70.06,75.26,69.96,75.94,69.80,76.11,68.95,76.93,68.04,77.35,66.96,77.60,66.33,77.93,65.93,78.24,65.72
-    >>Kill |cRXP_ENEMY_Sharptalon|r. Loot him for |T136063:0|t[|cRXP_LOOT_Sharptalon's Claw|r] and use it to start the quest
+    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     >>|cRXP_WARN_小心！|r |cRXP_ENEMY_锐爪鹰|r |cRXP_WARN_是 31 级，会在周围巡逻。如果你难以击杀，可以将它引回 碎木岗哨或 亡灵营地。如果采用这种方法，确保对它造成 50%以上伤害才能获得任务进度。你也可以稍后再完成此任务|r
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >>接受任务尖爪的爪子
@@ -4057,7 +4057,7 @@ step
     .goto Ashenvale,54.06,54.91,40,0
     .goto Ashenvale,52.68,54.42,40,0
     .goto Ashenvale,52.24,54.38,40,0
-    >>Kill |cRXP_ENEMY_Shadumbra|r. Loot her for |T132225:0|t[|cRXP_LOOT_Shadumbra's Head|r] and use it to start the quest
+    >>击杀 |cRXP_ENEMY_夏杜布拉|r，并拾取她的 |T132225:0|t[|cRXP_LOOT_夏杜布拉的头颅|r]，使用它来接取任务
     >>|cRXP_ENEMY_夏杜布拉|r |cRXP_WARN_会在周围安静地巡逻|r
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >>接受任务猎影的头
@@ -4102,7 +4102,7 @@ step
     .goto Ashenvale,52.68,54.42,40,0
     .goto Ashenvale,52.24,54.38,40,0
     .goto Ashenvale,62.39,49.80,40,0
-    >>Kill |cRXP_ENEMY_Shadumbra|r. Loot her for |T132225:0|t[|cRXP_LOOT_Shadumbra's Head|r] and use it to start the quest
+    >>击杀 |cRXP_ENEMY_夏杜布拉|r，并拾取她的 |T132225:0|t[|cRXP_LOOT_夏杜布拉的头颅|r]，使用它来接取任务
     >>|cRXP_ENEMY_夏杜布拉|r |cRXP_WARN_会在周围安静地巡逻|r
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >>接受任务猎影的头
@@ -4173,7 +4173,7 @@ step
     .mob 蓟皮复仇者 
 step << Shaman
     .goto Ashenvale,33.55,67.47
-    >>|cRXP_WARN_Use the|r |T132821:0|t[Empty Blue Waterskin] |cRXP_WARN_under the Gazebo|r
+    >>|cRXP_WARN_在|r |T132821:0|t[空的蓝色水囊] |cRXP_WARN_在露台下方使用|r
     .complete 1534,1 --Filled Blue Waterskin (1)
     .use 7767
 step
@@ -4305,7 +4305,7 @@ step
     .goto Ashenvale,72.08,70.47,45,0
     .goto Ashenvale,71.46,70.10,45,0
     .line Ashenvale,71.46,70.10,72.08,70.47,72.50,70.60,72.94,70.67,73.33,70.61,74.36,70.10,74.86,70.06,75.26,69.96,75.94,69.80,76.11,68.95,76.93,68.04,77.35,66.96,77.60,66.33,77.93,65.93,78.24,65.72
-    >>Kill |cRXP_ENEMY_Sharptalon|r. Loot him for |T136063:0|t[|cRXP_LOOT_Sharptalon's Claw|r] and use it to start the quest
+    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     >>|cRXP_WARN_小心！|r |cRXP_ENEMY_锐爪鹰|r |cRXP_WARN_是 31 级，会在周围巡逻。如果你难以击杀，可以将它引回 碎木岗哨或 亡灵营地。如果采用这种方法，确保对它造成 50%以上伤害才能获得任务进度。你也可以稍后再完成此任务|r
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >>接受任务尖爪的爪子
@@ -4669,7 +4669,7 @@ step << Warlock
 step << Warlock
     #ah
     .goto Orgrimmar,44.16,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Katis|r|cRXP_BUY_. Buy a|r |T135466:0|t[Pestilent Wand] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡提斯|r |cRXP_BUY_对话。购买一把|r |T135466:0|t[致命魔杖] |cRXP_BUY_从她那里|r
     >>|cRXP_WARN_或者你也可以查看拍卖行，看看是否有更好的选择|r
     .collect 5347,1 --Collect Pestilent Wand (1)
     .money <1.5713
@@ -4680,7 +4680,7 @@ step << Warlock
 step << Warlock
     #ssf
     .goto Orgrimmar,44.16,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Katis|r|cRXP_BUY_. Buy a|r |T135466:0|t[Pestilent Wand] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡提斯|r |cRXP_BUY_对话。购买一把|r |T135466:0|t[致命魔杖] |cRXP_BUY_从她那里|r
     .collect 5347,1 --Collect Pestilent Wand (1)
     .money <1.5713
     .itemStat 18,QUALITY,<7
@@ -4730,7 +4730,7 @@ step << Shaman/Warrior
     #ah
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_德尔贡|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
+    .vendor >>|cRXP_BUY_购买一把|r |T132408:0|t[无情战斧] |cRXP_BUY_如果有货且你还没有的话|r
     >>|cRXP_WARN_或者你也可以查看拍卖行，看看是否有更好的选择|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
@@ -4742,7 +4742,7 @@ step << Shaman/Warrior
     #ssf
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_德尔贡|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's up and you don't have it yet|r
+    .vendor >>|cRXP_BUY_购买一把|r |T132408:0|t[无情战斧] |cRXP_BUY_如果有货且你还没有的话|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -4775,7 +4775,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche] 
+    +|cRXP_WARN_装备|r |T135651:0|t[钝刺] 
     .use 2526
     .itemcount 2526,1
     .itemStat 17,QUALITY,<7
@@ -4971,7 +4971,7 @@ step
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_潘德|r 对话
-    .train 3278 >> Train |T133687:0|t[Heavy Wool Bandage]
+    .train 3278 >>学习 |T133687:0|t[厚绒线绷带]
     .target Pand Stonebinde
     .skill firstaid,<1,1
 step
@@ -4981,7 +4981,7 @@ step
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_潘德|r 对话
-    .train 7928 >> Train |T133671:0|t[Silk Bandage]
+    .train 7928 >>学习 |T133671:0|t[丝质绷带]
     >>|cRXP_WARN_如果你没有足够的毛料将技能提升到 150，请跳过此步骤|r
     .target 潘德·缚石
     .skill firstaid,<1,1
@@ -5017,7 +5017,7 @@ step
     .zoneskip The Barrens
 step
     #completewith next
-    +|cRXP_WARN_Use your remaining|r |T134128:0|t[Blood Shards] |cRXP_WARN_to get buffs|r
+    +|cRXP_WARN_使用你剩余的|r |T134128:0|t[血岩碎片] |cRXP_WARN_来获得增益|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
     .itemcount 5075,4
 step
@@ -5042,7 +5042,7 @@ step
     .goto The Barrens,45.78,63.09,80,0
     .goto The Barrens,49.21,61.42,80,0
     .goto The Barrens,49.57,59.36,80,0
-    >>Find & kill |cRXP_ENEMY_Owatanka|r (Blue Thunder Lizard) around this area. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]. Use it to start the quest
+    >>在该区域找到并击杀 |cRXP_ENEMY_奥瓦坦卡|r（蓝色雷霆蜥蜴）。拾取他的 |T133723:0|t[|cRXP_LOOT_奥瓦坦卡的尾刺|r]，用它来开始任务
     >>|cRXP_WARN_如果找不到他，请跳过此任务|r
     .collect 5102,1,884 --Collect Owatanka's Tailspike
     .accept 884 >>接受任务奥瓦坦卡
@@ -5163,7 +5163,7 @@ step
     .mob 洛克·奥克班恩
 step
     #completewith NakSkull
-    >>Kill |cRXP_ENEMY_Razormane Stalkers|r and |cRXP_ENEMY_Razormane Pathfinders|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
+    >>击杀 |cRXP_ENEMY_钢鬃捕猎者|r and |cRXP_ENEMY_钢鬃探路者|r. 拾取它们以获得|T135640:0|t[|cRXP_LOOT_钢鬃背刺匕首|r]
     >>|cRXP_WARN_这些 |cRXP_ENEMY_钢鬓捕猎者|r 是潜行状态|r
     .collect 5093,1,893,1 --Collect Razormane Backstabber
     .mob 钢鬃捕猎者
@@ -5181,8 +5181,8 @@ step
 	.goto The Barrens,41.62,80.92,50,0
 	.goto The Barrens,41.54,82.28,50,0
 	.goto The Barrens,42.48,82.28,50,0
-    >>Kill |cRXP_ENEMY_Razormane Seers|r. Loot them for a |T135139:0|t[|cRXP_LOOT_Charred Razormane Wand|r]
-    >>Kill |cRXP_ENEMY_Razormane Warfrenzies|r. Loot them for a |T134955:0|t[|cRXP_LOOT_Razormane War Shield|r]
+    >>击杀 |cRXP_ENEMY_钢鬃先知|r，并拾取他们的 |T135139:0|t[|cRXP_LOOT_烧焦的钢鬃魔杖|r]
+    >>击杀 |cRXP_ENEMY_钢鬃战士|r，并拾取他们的 |T134955:0|t[|cRXP_LOOT_钢鬃大盾|r]
     .collect 5092,1,893,1 --Charred Razormane Wand
     .mob 钢鬃先知
     .collect 5094,1,893,1 --Collect Razormane War Shield
@@ -5209,7 +5209,7 @@ step
     .goto The Barrens,44.66,81.18,40,0
     .goto The Barrens,45.08,80.34,40,0
     .goto The Barrens,45.48,79.89,40,0
-    >>Kill |cRXP_ENEMY_Razormane Stalkers|r and |cRXP_ENEMY_Razormane Pathfinders|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
+    >>击杀 |cRXP_ENEMY_钢鬃捕猎者|r and |cRXP_ENEMY_钢鬃探路者|r. 拾取它们以获得|T135640:0|t[|cRXP_LOOT_钢鬃背刺匕首|r]
     >>|cRXP_WARN_这些 |cRXP_ENEMY_钢鬓捕猎者|r 是潜行状态|r
     .collect 5093,1,893,1 --Collect Razormane Backstabber
     .mob 钢鬃捕猎者
@@ -6276,7 +6276,7 @@ step
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_潘德|r 对话
-    .train 7928 >> Train |T133671:0|t[Silk Bandage]
+    .train 7928 >>学习 |T133671:0|t[丝质绷带]
     >>|cRXP_WARN_如果你没有足够的毛料将技能提升到 150，请跳过此步骤|r
     .target 潘德·缚石
     .skill firstaid,<1,1
@@ -6306,7 +6306,7 @@ step << Shaman/Warrior
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_德尔贡|r 对话
     .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's available|r
-    >>|cRXP_WARN_Alternatively you can also buy a|r |T135576:0|t[Bullova]
+    >>|cRXP_WARN_或者你也可以购买一把|r |T135576:0|t[巨型战斧]
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -6318,7 +6318,7 @@ step << Shaman/Warrior
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_德尔贡|r 对话
     .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's available|r
-    >>|cRXP_WARN_Alternatively you can also buy a|r |T135576:0|t[Bullova] |cRXP_WARN_or check the Auction House if something better is available|r
+    >>|cRXP_WARN_或者你也可以购买一把|r |T135576:0|t[巨型战斧] |cRXP_WARN_，或者查看拍卖行是否有更好的选择|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<21.0
@@ -6349,7 +6349,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith TearMoons
-    +|cRXP_WARN_Equip the|r |T135275:0|t[Broadsword] 
+    +|cRXP_WARN_装备|r |T135275:0|t[骑士长剑] 
     .use 2520
     .itemcount 2520,1
     .itemStat 16,QUALITY,<7
@@ -6380,7 +6380,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith FreewindHome
-    +|cRXP_WARN_Equip the|r |T135651:0|t[Main Gauche] 
+    +|cRXP_WARN_装备|r |T135651:0|t[钝刺] 
     .use 2526
     .itemcount 2526,1
     .itemStat 17,QUALITY,<7
@@ -6515,7 +6515,7 @@ step
 step << Warrior/Shaman
     .goto Dustwallow Marsh,36.17,31.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_祖尔格|r 对话
-    .vendor >>|cRXP_BUY_Buy a|r |T135158:0|t[Big Stick] |cRXP_BUY_from him if it's up|r
+    .vendor >>|cRXP_BUY_购买一根|r |T135158:0|t[大棍子]|cRXP_BUY_如果有货的话从他那里|r
     --.collect 12251,1,873,1 --Collect Big Stick (1)
     .money <4.3117
     .target 祖尔格
@@ -6768,7 +6768,7 @@ step
 step
     .goto Feralas,76.06,43.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布隆克|r 对话
-    .vendor >> |cRXP_BUY_Buy|r |T134833:0|t[Superior Healing Potions] |cRXP_BUY_from him if they're up|r
+    .vendor >>|cRXP_BUY_购买|r |T134833:0|t[优质治疗药水] |cRXP_BUY_如果有货的话从他那里|r
     .target 布隆克
     .isQuestAvailable 1151
 step
@@ -7123,7 +7123,7 @@ step << Mage
     .xp <32,1
 step << Mage
     .goto Orgrimmar,45.43,56.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Horthus|r|cRXP_BUY_. Buy two or more|r |T134419:0|t[Rune of Teleportation] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_霍苏斯|r |cRXP_BUY_对话。购买两枚或更多|r |T134419:0|t[传送符文] |cRXP_BUY_从他那里|r
     .collect 17031,2 --Rune of Teleportation (2)
     .target 霍苏斯
 step << Rogue
@@ -7155,7 +7155,7 @@ step << Shaman
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .train 5784 >> Train |T136103:0|t[Summon Felsteed]
+    .train 5784 >>学习 |T136103:0|t[召唤地狱战马]
     .target 米尔科特
     .xp <30,1
     .xp >32,1
@@ -7175,7 +7175,7 @@ step << Warlock
 step << Priest/Warlock
     #ah
     .goto Orgrimmar,44.16,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Katis|r|cRXP_BUY_. Buy a|r |T135466:0|t[Pestilent Wand] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡提斯|r |cRXP_BUY_对话。购买一把|r |T135466:0|t[致命魔杖] |cRXP_BUY_从她那里|r
     .collect 5347,1 --Collect Pestilent Wand (1)
     .money <1.5713
     .itemStat 18,QUALITY,<7
@@ -7185,7 +7185,7 @@ step << Priest/Warlock
 step << Priest/Warlock
     #ssf
     .goto Orgrimmar,44.16,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Katis|r|cRXP_BUY_. Buy a|r |T135466:0|t[Pestilent Wand] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡提斯|r |cRXP_BUY_对话。购买一把|r |T135466:0|t[致命魔杖] |cRXP_BUY_从她那里|r
     >>|cRXP_WARN_或者你也可以查看拍卖行，看看是否有更好的选择|r
     .collect 5347,1 --Collect Pestilent Wand (1)
     .money <1.5713

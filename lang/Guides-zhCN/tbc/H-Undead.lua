@@ -49,7 +49,7 @@ step << Priest/Mage
     #label Vendor
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .vendor >>把垃圾物品卖给商人
 	.collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
@@ -77,7 +77,7 @@ step << Mage
     #requires Percing
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊莎贝拉|r
-    .train 1459 >>Train |T135932:0|t[奥术智慧]
+    .train 1459 >>学习 |T135932:0|t[奥术智慧]
     .target Isabella
 step << Warlock
     #label Vendor
@@ -145,7 +145,7 @@ step << Warlock
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
 	.collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .target Joshua Kien
     .isOnQuest 1470
@@ -191,7 +191,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien
@@ -203,7 +203,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien
@@ -354,7 +354,7 @@ step << Warlock
 step << Mage
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊莎贝拉|r
-    .train 116 >>Train |T135846:0|t[寒冰箭]
+    .train 116 >>学习 |T135846:0|t[寒冰箭]
     .target Isabella
 step
     .goto Tirisfal Glades,31.35,66.21,10,0
@@ -393,7 +393,7 @@ step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_David|r
     .turnin 3096 >>交任务《 前往熔光镇》 密文卷轴
-    .train 53 >> Train |T132090:0|t[Backstab]
+    .train 53 >>训练 |T132090:0|t[背刺]
     .money <0.04
     .target David Trias
 step << Rogue

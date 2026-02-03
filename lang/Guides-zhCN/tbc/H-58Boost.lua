@@ -77,12 +77,12 @@ step << Hunter
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Mage/Warlock/Priest
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
     .use 186051
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Druid
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[Communal Stave]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135130:0|t[共济手杖]
     .use 186055
     .complete 64049,1 --1/1 Open the Survival Kit (1)
     .complete 64049,2 --1/1 Equip a Weapon (1)
@@ -356,7 +356,7 @@ step
 	.target Argent Officer Garush
 step
     #completewith next
-    .use 12846 >>|cRXP_WARN_Equip your|r |T133440:0|t[Argent Dawn Commission] |cRXP_WARN_trinket|r
+    .use 12846 >>|cRXP_WARN_装备|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_饰品|r
 step
     .goto Western Plaguelands,40.5,51.8
     .use 12807 >>Click the |cRXP_PICK_Command Tent|r, then use your |T132484:0|t[Scourge Banner]
@@ -429,7 +429,7 @@ step
     .complete 5098,3 --Tower Three marked (1)
 step
     .goto Western Plaguelands,45.8,63.3
-	.use 12627 >>Spawn the |cRXP_ENEMY_Temporal Parasites|r by using your |T134229:0|t[Temporal Displacer] near the glowing silos
+	.use 12627 >>刷新 |cRXP_ENEMY_时光寄生虫|r 用你的 |T134229:0|t[时光置换器] 在发光的粮仓旁边
 	>>|cRXP_WARN_时光寄生虫移动缓慢，死后还会分裂出更多寄生虫。如果怪太多扛不住了，准备往水里跑；它们不会游泳。|r
     .complete 4971,1 --Temporal Parasite (10)
 	.mob Temporal Parasite
@@ -647,7 +647,7 @@ step
 step
     .goto Western Plaguelands,52.1,83.3
     .use 23691 >>|cRXP_WARN_Equip the|r |T135160:0|t[Corrupted Mark of the Lightbringer] |cRXP_WARN_in your off-hand|r
-    >>|cRXP_WARN_Use the|r |T135160:0|t[Corrupted Mark of the Lightbringer] |cRXP_WARN_at Uther's Tomb|r
+    >>|cRXP_WARN_使用|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_在乌瑟尔之墓|r
     .complete 9444,1 --Uther's Tomb Defiled (1)
     .isQuestTurnedIn 9443
 step
@@ -962,7 +962,7 @@ step
 step
 	#optional
     .isQuestTurnedIn 5901
-    .destroy 15043 >>Delete any left over |T134321:0|t[Plagueland Termites]
+    .destroy 15043 >>摧毁所有剩下的 |T134321:0|t[瘟疫白蚁]
 step
     .goto Western Plaguelands,38.40,54.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 爬到建筑的顶层然后与 |cRXP_FRIENDLY_詹妮丝|r 对话

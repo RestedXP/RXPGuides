@@ -1969,7 +1969,7 @@ step
     .goto Bloodmyst Isle,38.416,82.003
     >>击杀 |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
     .use 23900 >>|cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
-    >>|cRXP_WARN_如果你没有看到他在营地中巡逻，请在南侧地面上的紫色符文处等待他刷新。他可能需要 3–6 分钟才会出现|r
+    >>|cRXP_WARN_如果你没有看到他在营地中巡逻，请在南侧地面上的紫色符文处等待他刷新。他可能需要 3-6 分钟才会出现|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >>接受任务《物归己用》 军团的徽记
     .unitscan Tzerak

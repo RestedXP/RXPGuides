@@ -5056,7 +5056,7 @@ step
     .goto Ghostlands,28.23,58.65,50,0
     .goto Ghostlands,30.77,60.23,50,0
     .goto Ghostlands,34.06,57.57,50,0
-    >>Kill |cRXP_ENEMY_巨型纺丝蜘蛛|r and |cRXP_ENEMY_鬼爪破坏者|r. Loot |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
+    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r and |cRXP_ENEMY_鬼爪破坏者|r. Loot |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
@@ -5094,7 +5094,7 @@ step
     .goto Ghostlands,40.23,31.75,40,0
     .goto Ghostlands,38.77,29.82,40,0
     .goto Ghostlands,40.76,28.98,40,0
-    >>Kill |cRXP_ENEMY_笨拙的食尸者|r and |cRXP_ENEMY_复生的饥饿者|r. Loot |cRXP_ENEMY_复生的饥饿者|r for their |cRXP_LOOT_腐烂精华|r
+    >>击杀 |cRXP_ENEMY_笨拙的食尸者|r and |cRXP_ENEMY_复生的饥饿者|r. Loot |cRXP_ENEMY_复生的饥饿者|r for their |cRXP_LOOT_腐烂精华|r
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_施放|r |T136224:0|t[激怒] |cRXP_WARN_(increased damage and attack speed) at low health|r
     >>|cRXP_WARN_Be careful as|r|cRXP_ENEMY_复生的饥饿者|r|cRXP_WARN_施放|r |T132278:0|t[Blood Leech]|cRXP_WARN_(10 damage lifesteal)|r
     >>|cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_and |cRXP_ENEMY_复生的饥饿者|r share spawns with each other. Kill both to spawn the ones you need|r
@@ -5248,7 +5248,7 @@ step << Rogue wotlk
     #completewith Clearing
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
     .xp <19,1
@@ -5268,7 +5268,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     .vendor 16268 >>把垃圾物品卖给商人
     .target Eralan
     .money <0.6947 << BloodElf/Undead

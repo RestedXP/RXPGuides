@@ -3753,7 +3753,7 @@ RXPGuides.RegisterGuide([[
 #group 选择生存向指南 (A)
 #subgroup RXP Survival Guide 20-32
 #name 30-31 Wetlands
-#next 30–32 暮色森林/荆棘谷
+#next 30-32 暮色森林/荆棘谷
 
 step
     #optional
@@ -4016,8 +4016,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group 选择生存向指南 (A)
 #subgroup RXP Survival Guide 20-32
-#name 30–32 暮色森林/荆棘谷
-#next 32–33 闪光平原
+#name 30-32 暮色森林/荆棘谷
+#next 32-33 闪光平原
 
 step << !Mage
 .dungeon Gnomer

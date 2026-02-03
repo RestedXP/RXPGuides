@@ -232,8 +232,8 @@ step
     .accept 10458 >>接受任务《物归己用》 愤怒的火灵和地灵
 	.target 大地治愈者托洛克
 step
-    .use 30094 >>|cRXP_WARN_Use the|r |T135462:0|t[灵魂图腾] |cRXP_WARN_and kill|r |cRXP_ENEMY_Enraged Fire Spirits|r and |cRXP_ENEMY_Enraged Earth Spirits|r
-    >>|cRXP_WARN_Ensure you kill them while they are beside the|r |T135462:0|t[灵魂图腾]
+    .use 30094 >>|cRXP_WARN_使用|r |T135462:0|t[灵魂图腾] |cRXP_WARN_击杀|r |cRXP_ENEMY_愤怒的火灵|r 和 |cRXP_ENEMY_愤怒的地灵|r
+    >>|cRXP_WARN_确保在|r |T135462:0|t[灵魂图腾]旁边杀掉它们
     .complete 10458,1 --Earthen Soul Captured (x8)
     .goto Shadowmoon Valley,45.8,47.6,70,0
     .goto Shadowmoon Valley,51.6,53.8,70,0
@@ -269,7 +269,7 @@ step
     .goto Shadowmoon Valley,50.2,23.8,70,0
     .goto Shadowmoon Valley,52.4,27.4,70,0
     .use 30094 >>|cRXP_WARN_Use the|r |T135462:0|t[灵魂图腾] |cRXP_WARN_and kill|r |cRXP_ENEMY_Enraged Water Spirits|r
-    >>|cRXP_WARN_Ensure you kill them while they are beside the|r |T135462:0|t[灵魂图腾]
+    >>|cRXP_WARN_确保在|r |T135462:0|t[灵魂图腾]旁边杀掉它们
     .complete 10480,1 --Watery Soul Captured (x5)
 	.mob 愤怒的水灵
 step
@@ -288,7 +288,7 @@ step
     .goto Shadowmoon Valley,62.4,63.6,70,0
     .goto Shadowmoon Valley,59.6,70.2,70,0
     .use 30094 >>|cRXP_WARN_Use the|r |T135462:0|t[灵魂图腾] |cRXP_WARN_and kill|r |cRXP_ENEMY_Enraged Air Spirits|r
-    >>|cRXP_WARN_Ensure you kill them while they are beside the|r |T135462:0|t[灵魂图腾]
+    >>|cRXP_WARN_确保在|r |T135462:0|t[灵魂图腾]旁边杀掉它们
     .complete 10481,1 --Airy Soul Captured (x10)
 	.mob 愤怒的气灵
 step

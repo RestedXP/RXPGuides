@@ -1133,7 +1133,7 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_巨翼猎枭|r to tame it|r -- .tame 1997
-    .train 2981 >>用它攻击怪物以学习 [Claw (Rank 2)]
+    .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step << Rogue

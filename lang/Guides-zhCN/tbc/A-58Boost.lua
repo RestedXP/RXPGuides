@@ -126,7 +126,7 @@ step << Priest
     .accept 64031 >>接任务 生存工具
     .target High Priestess Laurena
 step << Priest
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -163,7 +163,7 @@ step << Mage
     .accept 64031 >>接任务 生存工具
     .target Jennea Cannon
 step << Mage
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -200,7 +200,7 @@ step << Warlock
     .accept 64031 >>接任务 生存工具
     .target Ursula Deline
 step << Warlock
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -275,7 +275,7 @@ step << Druid
     .accept 64031 >>接任务 生存工具
     .target Theridran
 step << Druid
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[Communal Stave]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135130:0|t[共济手杖]
     .use 186055
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -483,7 +483,7 @@ step
 step << Hunter
     #sticky
     .tame 8602 >>|cRXP_WARN_如果你的宠物没有其他技能除了|r |T132270:0|t[低吼]|cRXP_WARN_, 扔掉你的宠物然后去驯服一只58级的 |cRXP_ENEMY_蝙蝠|r 在你去病木林的路上|r
-    >>|cRXP_WARN_Buy some|r |T134526:0|t[Dried King Bolete] |cRXP_WARN_to feed your new pet|r
+    >>|cRXP_WARN_买一些|r |T134526:0|t[晒干的牛肝菌] |cRXP_WARN_喂你的宠物|r
     .collect 8948,20
     .goto Eastern Plaguelands,79.5,64.0
 step
@@ -612,7 +612,7 @@ step
     #sticky
     #optional
     .isQuestTurnedIn 5097
-    .destroy 12815 >> Destroy the |T135432:0|t[Beacon Torch]
+    .destroy 12815 >>摧毁 |T135432:0|t[信号火炬]
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_化学家阿尔比顿|r 对话

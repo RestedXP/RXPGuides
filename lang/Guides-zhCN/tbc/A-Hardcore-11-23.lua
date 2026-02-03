@@ -77,7 +77,7 @@ step << !NightElf !Draenei
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|T133972:0|t[陆行鸟肉]
@@ -175,7 +175,7 @@ step << !NightElf !Draenei
 step << !NightElf !Draenei
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -187,7 +187,7 @@ step << !NightElf !Draenei
 step << !NightElf !Draenei
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -199,7 +199,7 @@ step << !NightElf !Draenei
 step << !NightElf !Draenei
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -247,7 +247,7 @@ step << !NightElf !Draenei
     #optional
     .goto 1437,4.370,56.762
     .zone Darkshore >>乘船前往黑海岸
-    >>在等待前往 Darkshore 的船时提升你的 [急救]
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore|r
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << !NightElf !Draenei
@@ -271,7 +271,7 @@ step
     #completewith BuzzBox1 << !NightElf
     .goto 1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r
-    >>从他那里购买最多 20 个 [Longjaw Mud Snappers]
+    >>|cRXP_WARN_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him|r
     .turnin 6342 >> Turn in Flight to Auberdine << NightElf
     .collect 4592,15 --Longjaw Mud Snapper
     .target Laird
@@ -341,7 +341,7 @@ step << Dwarf Hunter
     .goto Darkshore,40.77,78.56,40,0
     .goto Darkshore,38.21,73.32,40,0
     >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_蓟熊|r. Once your pet is stunned by the |cRXP_ENEMY_蓟熊|r, abandon your pet and start taming it|r
-    .train 2981 >>用它攻击怪物以学习 [Claw (Rank 2)]
+    .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
     .target Thistle Bear
 step
@@ -526,7 +526,7 @@ step << NightElf
 step
     #completewith bears1
     >>击杀 |cRXP_ENEMY_狂暴蓟熊|r
-    >>注意，如果你没有足够快地击杀它们，它们会施放 [Rabies] (瞬发普攻：10 分钟内使所有生命回复效果降低 50%)
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     >>|cRXP_WARN_Don't go out of your way to complete this quest now. You will finish it later|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -609,7 +609,7 @@ step << Druid
     #completewith next
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    >>进入 Moonkin Cave
+    >>|cRXP_WARN_Enter the Moonkin Cave|r
     .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon|r |cRXP_ENEMY_月爪枭兽|r
     .use 15208
 step << Druid
@@ -624,7 +624,7 @@ step << Druid
 step << !Draenei !Warlock
     #completewith CliffspringRiverSample
     >>击杀 |cRXP_ENEMY_狂暴蓟熊|r
-    >>注意，如果你没有足够快地击杀它们，它们会施放 [Rabies] (瞬发普攻：10 分钟内使所有生命回复效果降低 50%)
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     >>|cRXP_WARN_Don't go out of your way to complete this quest now. You will finish it later|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -1138,7 +1138,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto 1437,4.370,56.762
-    >>在等待前往 Darkshore 的船时提升你的 [急救]
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore|r
     .zone Darkshore >>乘船前往黑海岸
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
@@ -3589,7 +3589,7 @@ step << Rogue
 .dungeon DM
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r
-    >>|cRXP_WARN_Make sure you train|r |T136058:0|t[开锁] |cRXP_WARN_as you'll need it later|r
+    >>|cRXP_WARN_务必学习|r |T136058:0|t[开锁] |cRXP_WARN_，因为之后会用到|r
     .train 1804 >>Train |T136058:0|t[开锁]
     .trainer >>训练你的职业技能
     .target Osborne the Night Man
@@ -3946,7 +3946,7 @@ step << Rogue
 .dungeon DM
     #optional
     #completewith Mortwake
-    +|cRXP_WARN_Equip the|r |T135641:0|t[曲木匕首] |cRXP_WARN_for this quest if you don't already have a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped|r
+    +|cRXP_WARN_如果你还没有装备|r |T135641:0|t[弯曲木匕首] |cRXP_WARN_，并且当前没有装备|r |T135641:0|t[匕首] |cRXP_WARN_，请在此任务中装备它|r
     .use 15396
     .itemcount 15396,1
 step << Rogue
@@ -4010,7 +4010,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r
-    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -4019,8 +4019,8 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r
-    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
-    .train 7934 >>|cRXP_WARN_Train|r |T134437:0|t[抗毒药剂]
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
+    .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -5794,7 +5794,7 @@ step << Warlock
 step << Warlock
     .isOnQuest 65602
     .goto 1440/1,848.800,3470.900
-    >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .use 190307 >>|cRXP_WARN_Use the|r |T135434:0|t[|cRXP_LOOT_Unlit Torch|r]|cRXP_WARN_to create a|r |T135432:0|t[|cRXP_LOOT_燃烧的火炬|r]
     >>|cRXP_WARN_If you are unable to do this here, head west to |cRXP_FRIENDLY_塔尔伦|r and light it at the Campfire beside him|r
     .collect 190308,1 --Collect Burning Torch

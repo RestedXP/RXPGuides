@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 #group 选择生存向指南 (A)
 #subgroup RXP Survival Guide 1-20
-#name 1–6级 丹莫罗
+#name 1-6级 丹莫罗
 #next 10-12 Elwynn Forest
 
 step << !Gnome !Dwarf
@@ -531,7 +531,7 @@ step << Dwarf Warrior
     .collect 2491,1 --Collect Large Axe (1)
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格劳恩·索姆温|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑]
+    >>|cRXP_BUY_购买并装备一把|r |T135641:0|t[卷刃的剑]
     .target Grawn Thromwyn
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
@@ -547,7 +547,7 @@ step << Warrior/Rogue/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托格努斯·燧火|r
     .target Tognus Flintfire
     .goto Dun Morogh,45.3,51.9
-    .trainer >>Train |T136241:0|t[锻造]
+    .trainer >>学习 |T136241:0|t[锻造]
     >>|cRXP_WARN_This will allow you to make |T135248:0|t[劣质磨刀石] which increase melee hits by +2 Damage. This is very significant early on|r << Warrior/Rogue
     >>|cRXP_WARN_This will allow you to make |T135255:0|t[劣质平衡石] which increase melee hits by +2 Damage. This is very significant early on|r << Paladin
 step
@@ -588,7 +588,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.01,50.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚尔·锤石|r
-    .trainer >>Train |T134708:0|t[采矿]
+    .trainer >>学习 |T134708:0|t[采矿]
     .target Yarr Hammerstone
 step << Warrior/Paladin/Rogue
     .cast 2580 >>|cRXP_WARN_施放|r |T136025:0|t[寻找矿物]
@@ -670,8 +670,8 @@ step
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
     >>击杀 |cRXP_ENEMY_雪怪|r 和 |cRXP_ENEMY_雪怪幼崽|r。拾取他们的 |cRXP_LOOT_Manes|r
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135255:0|t[劣质平衡石] << Paladin
+    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob Wendigo
     .mob Young Wendigo
@@ -767,7 +767,7 @@ step << Dwarf Warrior
     .collect 2491,1 --Collect Large Axe (1)
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格劳恩·索姆温|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑]
+    >>|cRXP_BUY_购买并装备一把|r |T135641:0|t[卷刃的剑]
     .target Grawn Thromwyn
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
@@ -1012,7 +1012,7 @@ step << Dwarf Warrior
     .collect 2491,1 --Collect Large Axe (1)
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格劳恩·索姆温|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑]
+    >>|cRXP_BUY_购买并装备一把|r |T135641:0|t[卷刃的剑]
     .target Grawn Thromwyn
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
@@ -2106,7 +2106,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183
-    .use 6916>>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_圣洁之书|r] to start the quest|r
+    .use 6916>>|cRXP_WARN_使用 |T133739:0|t[|cRXP_LOOT_圣洁之书|r] 来激发任务|r
     .accept 1646 >>接受任务《物归己用》 圣洁之书
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183

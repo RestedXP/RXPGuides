@@ -2934,7 +2934,7 @@ step << Shaman/Warrior
 step << Rogue
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r
-    .vendor >>|cRXP_BUY_Buy a|r |T135640:0|t[宽刃小刀] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >>|cRXP_BUY_购买一把|r |T135640:0|t[宽刃小刀] |cRXP_BUY_如果有货且你还没有的话|r 
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -3048,7 +3048,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r] |cRXP_WARN_and|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
+    +|cRXP_WARN_装备|r |T134590:0|t[|cRXP_FRIENDLY_捕猎短裤|r] |cRXP_WARN_和|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
     .use 4831
     .use 4794
     .itemcount 4831,1
@@ -3070,7 +3070,7 @@ step << Rogue/Hunter/Shaman/Druid
 step << Rogue/Hunter/Shaman/Druid
     #optional
     #completewith Drull
-    +|cRXP_WARN_Equip the|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
+    +|cRXP_WARN_装备|r |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r] 
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -3584,7 +3584,7 @@ step << Shaman/Warrior
 step << Rogue
     .goto Hillsbrad Foothills,60.43,26.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥特|r
-    .vendor >>|cRXP_BUY_Buy a|r |T135640:0|t[宽刃小刀] |cRXP_BUY_from him if it's up and you don't have it yet|r 
+    .vendor >>|cRXP_BUY_购买一把|r |T135640:0|t[宽刃小刀] |cRXP_BUY_如果有货且你还没有的话|r 
     .money <2.8372
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.7
@@ -4097,8 +4097,8 @@ step
 step
     #completewith Lok
     >>击杀 |cRXP_ENEMY_Razormane Stalkers|r and |cRXP_ENEMY_Razormane Pathfinders|r. Loot them for the |T135640:0|t[|cRXP_LOOT_钢鬃背刺匕首|r]
-    >>Kill |cRXP_ENEMY_Razormane Seers|r. Loot them for a |T135139:0|t[|cRXP_LOOT_烧焦的钢鬃魔杖|r]
-    >>Kill |cRXP_ENEMY_Razormane Warfrenzies|r. Loot them for a |T134955:0|t[|cRXP_LOOT_钢鬃大盾|r]
+    >>击杀 |cRXP_ENEMY_钢鬃先知|r，并拾取他们的 |T135139:0|t[|cRXP_LOOT_烧焦的钢鬃魔杖|r]
+    >>击杀 |cRXP_ENEMY_钢鬃战士|r，并拾取他们的 |T134955:0|t[|cRXP_LOOT_钢鬃大盾|r]
     >>|cRXP_WARN_这些 |cRXP_ENEMY_钢鬓捕猎者|r 是潜行状态|r
     .collect 5093,1,893,1 --Collect Razormane Backstabber
     .mob +Razormane Stalker
@@ -4168,8 +4168,8 @@ step
 	.goto The Barrens,41.54,82.28,50,0
 	.goto The Barrens,42.48,82.28,50,0
 	.goto The Barrens,42.57,78.81,50,0
-    >>Kill |cRXP_ENEMY_Razormane Seers|r. Loot them for a |T135139:0|t[|cRXP_LOOT_烧焦的钢鬃魔杖|r]
-    >>Kill |cRXP_ENEMY_Razormane Warfrenzies|r. Loot them for a |T134955:0|t[|cRXP_LOOT_钢鬃大盾|r]
+    >>击杀 |cRXP_ENEMY_钢鬃先知|r，并拾取他们的 |T135139:0|t[|cRXP_LOOT_烧焦的钢鬃魔杖|r]
+    >>击杀 |cRXP_ENEMY_钢鬃战士|r，并拾取他们的 |T134955:0|t[|cRXP_LOOT_钢鬃大盾|r]
     .collect 5092,1,893,1 --Charred Razormane Wand
     .mob +Razormane Seer
     .collect 5094,1,893,1 --Collect Razormane War Shield
@@ -5815,7 +5815,7 @@ step
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_Pand|r
-    .train 7928 >>Train |T133671:0|t[丝质绷带]
+    .train 7928 >>学习 |T133671:0|t[丝质绷带]
     >>|cRXP_WARN_Skip this step if you did not have enough Wool Cloth to reach 150 skill|r
     .target Pand Stonebinder
     .skill firstaid,<1,1
@@ -6683,7 +6683,7 @@ step
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_Pand|r
-    .train 7928 >>Train |T133671:0|t[丝质绷带]
+    .train 7928 >>学习 |T133671:0|t[丝质绷带]
     >>|cRXP_WARN_Skip this step if you did not have enough Wool Cloth to reach 150 skill|r
     .target Pand Stonebinder
     .skill firstaid,<1,1
@@ -7163,7 +7163,7 @@ step
     #completewith next
     .goto Thousand Needles,12.51,13.83,80,0
     .goto Thousand Needles,11.21,22.09,80,0
-    >>击杀 |cRXP_ENEMY_砂齿勘探员|r and |cRXP_ENEMY_Gravelsnout Diggers|r. Loot them for an |cRXP_LOOT_Ore Sample|r
+    >>击杀 |cRXP_ENEMY_砂齿勘探员|r 和 |cRXP_ENEMY_砂齿掘地工|r。拾取他们以获取 |cRXP_LOOT_矿石样本|r
     >>|cRXP_WARN_Skip this step for now if it does not drop|r
     .complete 1153,1 --Unrefined Ore Sample (1)
     .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
@@ -7175,7 +7175,7 @@ step
 step
     .goto Feralas,76.06,43.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布隆克|r
-    .vendor >>|cRXP_BUY_Buy|r |T134833:0|t[优质治疗药水] |cRXP_BUY_from him if they're up|r
+    .vendor >>|cRXP_BUY_购买|r |T134833:0|t[优质治疗药水] |cRXP_BUY_如果有货的话从他那里|r
     .target Bronk
     .isQuestAvailable 1151
 step
@@ -7284,7 +7284,7 @@ step
     .subzoneskip 439
 step
     .goto Thousand Needles,77.79,77.26
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克拉维尔·浓须|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克拉维尔|r 对话
     .accept 1111 >>接受任务《物归己用》 码头主管迪兹维格
 	.accept 5762 >>接受任务赫米特·奈辛瓦里二世
 	.target Kravel Koalbeard
@@ -7530,7 +7530,7 @@ step << Mage
     .xp <32,1
 step << Mage
     .goto Orgrimmar,45.43,56.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Horthus|r|cRXP_BUY_. Buy two or more|r |T134419:0|t[传送符文] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_霍苏斯|r |cRXP_BUY_对话。购买两枚或更多|r |T134419:0|t[传送符文] |cRXP_BUY_从他那里|r
     .collect 17031,2 --Rune of Teleportation (2)
     .target Horthus
 step << Rogue
@@ -7562,7 +7562,7 @@ step << Shaman
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r
-    .train 5784 >>Train |T136103:0|t[召唤地狱战马]
+    .train 5784 >>学习 |T136103:0|t[召唤地狱战马]
     .target Mirket
     .xp <30,1
     .xp >32,1
@@ -7582,7 +7582,7 @@ step << Warlock
 step << Priest/Warlock
     #ah
     .goto Orgrimmar,44.16,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Katis|r|cRXP_BUY_. Buy a|r |T135466:0|t[致命魔杖] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡提斯|r |cRXP_BUY_对话。购买一把|r |T135466:0|t[致命魔杖] |cRXP_BUY_从她那里|r
     .collect 5347,1 --Collect Pestilent Wand (1)
     .money <1.5713
     .itemStat 18,QUALITY,<7

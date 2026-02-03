@@ -75,7 +75,7 @@ step << Mage
     #requires Percing
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊莎贝拉|r
-    .train 1459 >>Train |T135932:0|t[奥术智慧]
+    .train 1459 >>学习 |T135932:0|t[奥术智慧]
     .target Isabella
 step << Warlock
     #label Vendor
@@ -352,7 +352,7 @@ step << Warlock
 step << Mage
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊莎贝拉|r
-    .train 116 >>Train |T135846:0|t[寒冰箭]
+    .train 116 >>学习 |T135846:0|t[寒冰箭]
     .target Isabella
 step
     .goto Tirisfal Glades,31.35,66.21,10,0
@@ -391,7 +391,7 @@ step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_David|r
     .turnin 3096 >>交任务《 前往熔光镇》 密文卷轴
-    .train 53 >>Train |T132090:0|t[背刺]
+    .train 53 >>训练 |T132090:0|t[背刺]
     .money <0.04
     .target David Trias
 step << Rogue
