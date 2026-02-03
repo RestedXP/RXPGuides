@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南 (联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 1-6级 丹莫罗
 #subgroup RestedXP 联盟 1-20 级

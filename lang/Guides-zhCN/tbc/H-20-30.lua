@@ -5725,7 +5725,7 @@ step << Hunter
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯塔恩|r 对话
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他处|cRXP_BUY_购买|r |T132382:0|t[锐锋箭]|r
     .collect 3030,1800,4767,1 --Razor Arrow (1800)
     .target 斯塔恩
     .subzoneskip 484,1
@@ -5733,7 +5733,7 @@ step
     .goto Thousand Needles,45.15,50.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫塔尔|r 对话
     .vendor >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134831:0|t[卷轴] |cRXP_BUY_如果有货的话从他那里购买|r << !Warrior
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions]|cRXP_BUY_, |r|T134937:0|t[Scrolls] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from him if they're up|r << Warrior
+    .vendor >>|cRXP_BUY_如果有出售的话，从他那里|cRXP_BUY_购买|r |T134831:0|t[治疗药水]、|cRXP_BUY_购买|r|T134937:0|t[卷轴]和 |cRXP_BUY_购买|r|T134413:0|t[活根草]|r << Warrior
     .target 莫塔尔
     .subzoneskip 484,1
     .isQuestAvailable 4767
@@ -5908,7 +5908,7 @@ step
 step
     #completewith MoonWellWater
     .line Thousand Needles,39.51,33.43,39.34,32.31,38.81,31.73,37.34,29.29,36.57,29.47,35.84,28.59,35.19,28.11,34.25,29.49,33.89,29.77,33.81,30.12,33.27,30.86,32.73,30.68,32.29,30.52,31.55,30.61,30.69,32.43,29.51,33.89,29.24,33.96,28.64,33.43,28.24,33.37,27.34,34.02,25.29,34.23,24.56,32.76,22.05,30.61,20.83,28.26,20.45,27.87,19.96,27.67,19.46,27.04,18.98,26.71,18.63,26.19,18.70,24.42,18.47,23.06,18.72,22.53,18.32,22.10,19.14,22.81,19.06,23.80,18.60,25.14
-    >>Kill the |cRXP_ENEMY_Galak Messenger|r. Loot him for the |T133473:0|t[|cRXP_LOOT_Assassination Note|r]. Use it to start the quest
+    >>击杀 |cRXP_ENEMY_加拉克信使|r，并拾取他身上的 |T133473:0|t[|cRXP_LOOT_刺杀便笺|r]，使用它来接取任务
     >>|cRXP_WARN_他会巡逻，并在裂蹄峭壁（东部半人马营地）刷新|r
     >>|cRXP_WARN_如果你已经学会了|r |T132172:0|t[鹰眼术] |cRXP_WARN_，可以用它来侦查他的位置|r << Hunter
     >>|cRXP_WARN_如果你已经学会了|r |T136034:0|t[视界术] |cRXP_WARN_，可以用它来侦查他的位置|r << Shaman
@@ -5965,7 +5965,7 @@ step
     .goto Thousand Needles,37.34,29.29,40,0
     .goto Thousand Needles,38.81,31.73,40,0
     .goto Thousand Needles,39.51,33.43,40,0
-    >>Kill the |cRXP_ENEMY_Galak Messenger|r. Loot him for the |T133473:0|t[|cRXP_LOOT_Assassination Note|r]. Use it to start the quest
+    >>击杀 |cRXP_ENEMY_加拉克信使|r，并拾取他身上的 |T133473:0|t[|cRXP_LOOT_刺杀便笺|r]，使用它来接取任务
     >>|cRXP_WARN_他会巡逻，并在裂蹄峭壁（东部半人马营地）刷新|r
     >>|cRXP_WARN_如果你已经学会了|r |T132172:0|t[鹰眼术] |cRXP_WARN_，可以用它来侦查他的位置|r << Hunter
     >>|cRXP_WARN_如果你已经学会了|r |T136034:0|t[视界术] |cRXP_WARN_，可以用它来侦查他的位置|r << Shaman
@@ -6271,7 +6271,7 @@ step << Shaman
     .xp <32,1
 step
     #completewith next
-    .skill firstaid,150 >> |cRXP_WARN_Create|r |T133687:0|t[Heavy Wool Bandages] |cRXP_WARN_until your skill is 150|r
+    .skill firstaid,150 >>|cRXP_WARN_制造 |r|T133687:0|t[厚绒线绷带]，|cRXP_WARN_直到你的技能达到 150|r
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
@@ -6298,14 +6298,14 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_库纳|r |cRXP_BUY_交谈|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_从她那里|cRXP_BUY_购买 |r|T132382:0|t[锐锋箭]|r
     .collect 3030,1800,1153,1 --Razor Arrow (1800)
     .target 库纳·雷角
 step << Shaman/Warrior
     #ssf
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_德尔贡|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's available|r
+    .vendor >>|cRXP_BUY_购买一把|r |T132408:0|t[无情战斧] |cRXP_BUY_如果有货的话从他那里|r
     >>|cRXP_WARN_或者你也可以购买一把|r |T135576:0|t[巨型战斧]
     .money <3.0195
     .itemStat 16,QUALITY,<7
@@ -6317,7 +6317,7 @@ step << Shaman/Warrior
     #ah
     .goto Thunder Bluff,54.06,57.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_德尔贡|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T132408:0|t[Merciless Axe] |cRXP_BUY_from him if it's available|r
+    .vendor >>|cRXP_BUY_购买一把|r |T132408:0|t[无情战斧] |cRXP_BUY_如果有货的话从他那里|r
     >>|cRXP_WARN_或者你也可以购买一把|r |T135576:0|t[巨型战斧] |cRXP_WARN_，或者查看拍卖行是否有更好的选择|r
     .money <3.0195
     .itemStat 16,QUALITY,<7
@@ -6328,7 +6328,7 @@ step << Shaman/Warrior
 step << Rogue
     #ah
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135275:0|t[Broadsword] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡德|r |cRXP_BUY_对话。购买一把|r |T135275:0|t[骑士长剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以查看拍卖行，看看是否有更好的选择|r
     .collect 2520,1,1153,1 --Collect Broadsword (1)
     .money <2.5924
@@ -6339,7 +6339,7 @@ step << Rogue
 step << Rogue
     #ssf
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135275:0|t[Broadsword] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡德|r |cRXP_BUY_对话。购买一把|r |T135275:0|t[骑士长剑] |cRXP_BUY_从他那里|r
     .collect 2520,1,1153,1 --Collect Broadsword (1)
     .money <2.5924
     .target 卡德·暴怒图腾
@@ -6357,7 +6357,7 @@ step << Rogue
 step << Rogue
     #ah
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135651:0|t[Main Gauche] |cRXP_BUY_from him for your off-hand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡德|r |cRXP_BUY_对话。购买一把|r |T135651:0|t[钝刺] |cRXP_BUY_作为你的副手武器|r
     >>|cRXP_WARN_或者你也可以查看拍卖行，看看是否有更好的选择|r
     .collect 2526,1,1153,1 --Collect Main Gauche (1)
     .money <2.0353
@@ -6369,7 +6369,7 @@ step << Rogue
 step << Rogue
     #ssf
     .goto Thunder Bluff,53.00,56.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135651:0|t[Main Gauche] |cRXP_BUY_from him for your off-hand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_卡德|r |cRXP_BUY_对话。购买一把|r |T135651:0|t[钝刺] |cRXP_BUY_作为你的副手武器|r
     .collect 2526,1,1153,1 --Collect Main Gauche (1)
     .money <2.0353
     .target 卡德·暴怒图腾
@@ -6432,7 +6432,7 @@ step << Tauren
     #label KodoRiding
     .goto Mulgore,47.64,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克萨尔迪|r 和 |cRXP_FRIENDLY_祖尼尔|r 对话
-    .train 132245 >>Train |T136103:0|t[Kodo Riding]
+    .train 132245 >>学习 |T136103:0|t[骑术：科多兽]
     .vendor >>|cRXP_BUY_购买一只|r |T132253:0|t[|cFF0070FF科多兽|r]
     .xp <30,1
     .money <38
@@ -6563,7 +6563,7 @@ step
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯塔恩|r 对话
-    .vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up|r
+    .vendor >>如果有出售的话，|cRXP_BUY_f从他那里|cRXP_BUY_购买|r |T135495:0|t[|cRXP_FRIENDLY_致密短弓|r]|r
     .target 斯塔恩
     .money <2.7172
     .itemStat 18,QUALITY,<7
@@ -6574,7 +6574,7 @@ step
     .goto Thousand Needles,45.15,50.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫塔尔|r 对话
     .vendor >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134831:0|t[卷轴] |cRXP_BUY_如果有货的话从他那里购买|r << !Warrior
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions]|cRXP_BUY_, |r|T134937:0|t[Scrolls] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from him if they're up|r << Warrior
+    .vendor >>|cRXP_BUY_如果有出售的话，从他那里|cRXP_BUY_购买|r |T134831:0|t[治疗药水]、|cRXP_BUY_购买|r|T134937:0|t[卷轴]和 |cRXP_BUY_购买|r|T134413:0|t[活根草]|r << Warrior
     .target 莫塔尔
     .isQuestAvailable 4904,1151,5088,5147
     .subzoneskip 484,1
@@ -6795,13 +6795,13 @@ step
     .goto Thousand Needles,45.15,50.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫塔尔|r 对话
     .vendor >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134831:0|t[卷轴] |cRXP_BUY_如果有货的话从他那里购买|r << !Warrior
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions]|cRXP_BUY_, |r|T134937:0|t[Scrolls] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from him if they're up|r << Warrior
+    .vendor >>|cRXP_BUY_如果有出售的话，从他那里|cRXP_BUY_购买|r |T134831:0|t[治疗药水]、|cRXP_BUY_购买|r|T134937:0|t[卷轴]和 |cRXP_BUY_购买|r|T134413:0|t[活根草]|r << Warrior
     .target 莫塔尔
     .subzoneskip 484,1
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯塔恩|r 对话
-    .vendor >>|cRXP_BUY_Buy a|r |T135495:0|t[|cRXP_FRIENDLY_Dense Shortbow|r] |cRXP_BUY_from him if it's up and fill your quiver with arrows|r
+    .vendor >>如果有出售的话，|cRXP_BUY_从他那里|cRXP_BUY_购买 |r|T135495:0|t[|cRXP_FRIENDLY_笨重的短弓|r]，并用箭填满你的箭袋|r
     .collect 3030,1800,1151,1 --Razor Arrow (1800)
     .target 斯塔恩
     .money <2.7172
@@ -6811,7 +6811,7 @@ step << Hunter
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯塔恩|r 对话
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他处|cRXP_BUY_购买|r |T132382:0|t[锐锋箭]|r
     .collect 3030,1800,1151,1 --Razor Arrow (1800)
     .target 斯塔恩
     .subzoneskip 484,1
@@ -6933,7 +6933,7 @@ step << Tauren
     #label KodoRiding
     .goto Mulgore,47.64,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克萨尔迪|r 和 |cRXP_FRIENDLY_祖尼尔|r 对话
-    .train 132245 >>Train |T136103:0|t[Kodo Riding]
+    .train 132245 >>学习 |T136103:0|t[骑术：科多兽]
     .vendor >>|cRXP_BUY_购买一只|r |T132253:0|t[|cFF0070FF科多兽|r]
     .xp <30,1
     .money <38
@@ -7109,7 +7109,7 @@ step << Mage
     .zoneskip Orgrimmar
 step << Mage
     .goto Orgrimmar,38.36,85.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
     .train 8412 >>训练你的职业技能
     .target 皮菲瑞多
     .xp <30,1
@@ -7117,7 +7117,7 @@ step << Mage
 step << Mage
     #optional
     .goto Orgrimmar,38.36,85.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
     .train 8422 >>训练你的职业技能
     .target 皮菲瑞多
     .xp <32,1
@@ -7143,7 +7143,7 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,42.10,49.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_雷库尔|r 对话
-	.vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and|r |T132273:0|t[Poisons]
+	.vendor >>|cRXP_BUY_补充|r |T134387:0|t[闪光粉] |cRXP_BUY_和|r |T132273:0|t[毒药]
     .target 雷库尔
     .zoneskip Orgrimmar,1
 step << Shaman
@@ -7235,8 +7235,8 @@ step << Hunter
     .xp <30,1
 step << Hunter
     .goto Orgrimmar,78.11,38.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jin'sora|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Razor Arrows] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_金索拉|r 对话
+    >>|cRXP_BUY_从他处|cRXP_BUY_购买|r |T132382:0|t[锐锋箭]|r
     .collect 3030,1800,549,1 << Hunter --Razor Arrow (1800)
     .target 金索拉
 step << Hunter
@@ -7294,7 +7294,7 @@ step << Troll
     #optional
     .goto Durotar,55.28,75.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克萨尔迪|r 和 |cRXP_FRIENDLY_祖尼尔|r 对话
-    .train 10861 >>Train |T136103:0|t[Raptor Riding]
+    .train 10861 >>学习 |T136103:0|t[骑术：迅猛龙]
     .vendor >>|cRXP_BUY_购买一只|r |T132253:0|t[|cFF0070FF迅猛龙|r]
     .xp <30,1
     .money <38

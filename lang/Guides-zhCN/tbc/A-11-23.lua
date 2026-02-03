@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《《魔兽世界： 燃烧的远征》》入门指南 (A)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance !Warlock
 #name 12-14 黑海岸
 #displayname 10-14 黑海岸 << Dwarf Hunter
@@ -75,8 +75,8 @@ step << !NightElf
     #optional
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -87,7 +87,7 @@ step << !NightElf
 step << !NightElf
     #optional
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -98,7 +98,7 @@ step << !NightElf
 step << !NightElf
     #optional
     +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -129,7 +129,7 @@ step
     #optional << !NightElf
     #completewith BuzzBox1 << !NightElf
     .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r 对话
     >>|cRXP_WARN_从他那里|r|cRXP_WARN_购买最多 20 条|r |T133918:0|t[长嘴泥鳅]
     .turnin 6342 >>交任务 飞往奥伯丁 << NightElf
     .collect 4592,15 --Longjaw Mud Snapper
@@ -137,32 +137,32 @@ step
 step
     #optional
     #completewith next
-    .goto Darkshore,36.70,43.78,8 >>下楼 toward |cRXP_FRIENDLY_维兹班恩·曲针|r
+    .goto Darkshore,36.70,43.78,8 >>下楼前往 |cRXP_FRIENDLY_维兹班恩·曲针|r
 step
     .goto 1439,36.976,44.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 交谈
-    .accept 983 >>接受任务《物归己用》 传声盒827号
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 对话
+    .accept 983 >>接受任务 传声盒827号
     .target Wizbang Cranktoggle
 step
     .goto Darkshore,37.04,44.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板莎希因|r 交谈
-    .home >>将你的炉石设置为暮色森林
+    .home >>将你的炉石设为奥伯丁
     .target Innkeeper Shaussiy
     .bindlocation 442
 step
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r
-    .accept 2118 >>接受任务《物归己用》 瘟疫蔓延
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
+    .accept 2118 >>接受任务 瘟疫蔓延
     .target Tharnariun Treetender
 step
     .goto 1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r
-    .accept 984 >>接受任务《物归己用》 熊怪的威胁
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
+    .accept 984 >>接受任务 熊怪的威胁
     .target Terenthis
 step
     #optional
     .goto Darkshore,37.70,40.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰达利亚·夜歌|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰达利亚·夜歌|r 对话
     .accept 2178 >>接受任务 炖陆行鸟
     .turnin 2178 >>交任务 炖陆行鸟
     .target Alanndarian Nightsong
@@ -171,20 +171,20 @@ step
 step
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .accept 3524 >>接受任务 搁浅的巨兽
     .target Gwennyth Bly'Leggonde
 step << !NightElf
     .goto Darkshore,36.336,45.574
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯莱斯·月羽|r
-    .fp Auberdine >>获取鹰巢山飞行路径
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯莱斯·月羽|r 对话
+    .fp Auberdine >>开启奥伯丁飞行点
     .target Caylais Moonfeather
     .zoneskip Darkshore,1
 step
     #optional
     #completewith Auber1
-    >>击杀 |cRXP_ENEMY_森林陆行鸟雏鸟|r 和 |cRXP_ENEMY_森林陆行鸟|r。拾取他们的 |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful|r|cRXP_ENEMY_森林陆行鸟雏鸟|r |T132307:0|t[Flee]|cRXP_WARN_at <30% health|r
+    >>击杀 |cRXP_ENEMY_森林陆行鸟雏鸟|r 和 |cRXP_ENEMY_森林陆行鸟|r，拾取它们的 |cRXP_LOOT_陆行鸟肉|r
+    >>|cRXP_WARN_注意|r|cRXP_ENEMY_森林陆行鸟雏鸟|r |T132307:0|t[逃跑]|cRXP_WARN_会在生命值低于 30% 时触发|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
     .mob Foreststrider
@@ -199,7 +199,7 @@ step << Dwarf Hunter
     .goto Darkshore,40.75,70.49,40,0
     .goto Darkshore,40.77,78.56,40,0
     .goto Darkshore,38.21,73.32,40,0
-    >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_蓟熊|r. Once your pet is stunned by the |cRXP_ENEMY_蓟熊|r, abandon your pet and start taming it|r
+    >>|cRXP_WARN_让你的宠物去攻击一只 |cRXP_ENEMY_蓟熊|r。当你的宠物被 |cRXP_ENEMY_蓟熊|r 击晕后，解散你的宠物并开始驯服它|r
     .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
     .link https://www.wow-petopia.com/classic/training.php >>点击此处获取更多关于宠物训练的信息：https://www.wow-petopia.com/classic/training.php
     .target Thistle Bear
@@ -224,7 +224,7 @@ step
     .waypoint 1439,35.902,47.145,60,0
     .waypoint 1439,35.759,45.455,60,0
     .waypoint 1439,36.051,44.757,60,0
-    >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r。拾取他们的 |cRXP_LOOT_Crawler Legs|r
+    >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r，拾取它们的 |cRXP_LOOT_蟹腿|r
     >>你可能需要下水才能获得它们
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
@@ -232,7 +232,7 @@ step
     .isOnQuest 983
 step
     .goto 1439,36.371,50.920
-    >>Open the |cRXP_PICK_搁浅的海洋生物|r.拾取地上的 it for the |cRXP_LOOT_Sea Creature Bones|r
+    >>打开 |cRXP_PICK_搁浅的海洋生物|r，拾取地上的物品以获得 |cRXP_LOOT_海洋生物骨骼|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     #sticky
@@ -246,7 +246,7 @@ step
     .goto 1439,38.095,58.395,50,0
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
-    >>|cRXP_WARN_Use|r |T134335:0|t[萨纳瑞恩的希望] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It can be used from any range as long as you have one targeted|r
+    >>|cRXP_WARN_对 |cRXP_ENEMY_狂暴蓟熊|r 使用|r |T134335:0|t[萨纳瑞恩的希望] |cRXP_WARN_。只要选中了目标，无论距离多远都可以使用|r
     >>==如果附近没有熊，请不要使用该任务物品== 
     >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
@@ -267,19 +267,19 @@ step
 step
     #requires BuzzBox1
     .goto 1439,36.634,46.250
-    >>点击地上的 |cRXP_PICK_Buzzbox 827|r on the ground
-    .turnin 983 >>交任务《 前往熔光镇》 传声盒827号
+    >>点击地上的 |cRXP_PICK_传声盒827号|r
+    .turnin 983 >>交任务 传声盒827号
 step
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 3524 >>交任务 搁浅的巨兽
     .accept 4681 >>接受任务 搁浅的巨兽
     .target Gwennyth Bly'Leggonde
 step
     .goto 1439,35.743,43.710
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞利恩·白爪|r
-    .accept 963 >>接受任务《物归己用》 永志不渝
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞利恩·白爪|r 对话
+    .accept 963 >>接受任务 永志不渝
     .target Cerellean Whiteclaw
 step
     #optional
@@ -292,38 +292,38 @@ step
 step
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温尼斯·布莱葛|r 对话
     .turnin 4681 >>交任务 搁浅的巨兽
     .target Gwennyth Bly'Leggonde
 step << !Dwarf/!Hunter
     .xp 12
 step << !Dwarf/!Hunter
     .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r
-    .accept 4811 >>接受任务《物归己用》 红色水晶
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵戈琳达·纳希恩|r 对话
+    .accept 4811 >>接受任务 红色水晶
     .target Sentinel Glynda Nal'Shea   
 step
     .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
     .turnin 2118 >>交任务 瘟疫蔓延
-    .accept 2138 >>接受任务《物归己用》 清除疫病
+    .accept 2138 >>接受任务 清除疫病
     .target Tharnariun Treetender
 step
     .goto 1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
     .turnin 984 >>交任务 熊怪的威胁
     .target Terenthis
 step
     .goto 1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
     .turnin 984 >>交任务 熊怪的威胁
     .accept 985 >>接受任务 熊怪的威胁
-    .accept 4761 >>接受任务《物归己用》 桑迪斯·织风
+    .accept 4761 >>接受任务 桑迪斯·织风
     .target Terenthis
 step
     #optional
     .goto Darkshore,37.70,40.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰达利亚·夜歌|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰达利亚·夜歌|r 对话
     .accept 2178 >>接受任务 炖陆行鸟
     .turnin 2178 >>交任务 炖陆行鸟
     .target Alanndarian Nightsong
@@ -331,17 +331,17 @@ step
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step
     .goto 1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r
-    .turnin 4761 >>交任务《 前往熔光镇》 桑迪斯·织风
-    .accept 4762 >>接受任务《物归己用》 壁泉河
-    .accept 954 >>接受任务《物归己用》 巴莎兰
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_桑迪斯·织风|r 对话
+    .turnin 4761 >>交任务 桑迪斯·织风
+    .accept 4762 >>接受任务 壁泉河
+    .accept 954 >>接受任务 巴莎兰
     .accept 958 >>接受任务《物归己用》 上层精灵的工具
     .target Thundris Windweaver
 step
     #optional
     #completewith HSAuber
-    >>击杀 |cRXP_ENEMY_森林陆行鸟雏鸟|r 和 |cRXP_ENEMY_森林陆行鸟|r。拾取他们的 |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful|r|cRXP_ENEMY_森林陆行鸟雏鸟|r |T132307:0|t[Flee]|cRXP_WARN_at <30% health|r
+    >>击杀 |cRXP_ENEMY_森林陆行鸟雏鸟|r 和 |cRXP_ENEMY_森林陆行鸟|r，拾取它们的 |cRXP_LOOT_陆行鸟肉|r
+    >>|cRXP_WARN_注意|r|cRXP_ENEMY_森林陆行鸟雏鸟|r |T132307:0|t[逃跑]|cRXP_WARN_会在生命值低于 30% 时触发|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
     .mob Foreststrider
@@ -352,12 +352,12 @@ step << Druid
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
     >>|cRXP_WARN_进入枭兽洞穴|r
-    .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon|r |cRXP_ENEMY_月爪枭兽|r
+    .cast 18974 >>|cRXP_WARN_使用|r |T132857:0|t[塞纳里奥月尘] |cRXP_WARN_在洞穴内的 |cRXP_PICK_月夜枭兽之石|r 处使用以召唤|r |cRXP_ENEMY_月爪枭兽|r
     .use 15208
 step << Druid
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    .use 15208 >>击杀 |cRXP_ENEMY_月爪枭兽|r与屋子里的 |cRXP_FRIENDLY_月爪枭兽的灵魂|r
+    .use 15208 >>击杀 |cRXP_ENEMY_月爪枭兽|r与屋子里的 |cRXP_FRIENDLY_月爪枭兽的灵魂|r 对话
     .skipgossip
     .complete 6001,1 --Defeat Lunaclaw (x1)
     .mob Lunaclaw
@@ -365,7 +365,7 @@ step << Druid
 step << !Dwarf/!Hunter
     .goto 1439,47.314,48.676
     >>前往 |cRXP_PICK_神秘的红色水晶|r 处
-    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    >>|cRXP_WARN_注意 |cRXP_PICK_神秘的红色水晶|r 西侧的两组各 2 只 |cRXP_ENEMY_狂暴的月夜枭兽|r，彼此距离最近的那两组是联动仇恨的|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step
     #loop
@@ -375,7 +375,7 @@ step
     .goto Darkshore,42.93,50.82,55,0
     .goto Darkshore,45.51,48.93,55,0
     .goto Darkshore,42.47,45.36,55,0
-    >>击杀 |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[小蛋]|r
+    >>击杀 |cRXP_ENEMY_枭兽|r，拾取它们的 |T132832:0|t|cRXP_LOOT_[小蛋]|r
     >>|cRXP_WARN_这将在之后用于将你的|r |T133971:0|t[烹饪] |cRXP_WARN_提升至 10 级|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
@@ -385,10 +385,10 @@ step
     .skill cooking,10,1 --XX Shows if cooking skill is <10
 step
     .goto 1439,44.168,36.289
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
     >>|cRXP_WARN_Avoid killing |cRXP_ENEMY_野生劣魔|r 和 |cRXP_ENEMY_恶灵劣魔|r en-route|r
     .turnin 954 >>交任务《 前往熔光镇》 巴莎兰
-    .accept 955 >>接受任务《物归己用》 巴莎兰
+    .accept 955 >>接受任务 巴莎兰
     .target Asterion
 step
     #loop
@@ -428,7 +428,7 @@ step
     #optional
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r
-    .accept 956 >>接受任务《物归己用》 巴莎兰
+    .accept 956 >>接受任务 巴莎兰
     .target Asterion
     .isQuestTurnedIn 955
 step
@@ -459,7 +459,7 @@ step
 step
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r
-    .accept 957 >>接受任务《物归己用》 巴莎兰
+    .accept 957 >>接受任务 巴莎兰
     .target Asterion
     .isQuestTurnedIn 956
 step
@@ -489,7 +489,7 @@ step << Druid
 step << Druid
     .isQuestComplete 6001
     .goto Moonglade,44.1444,45.227
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦·菲纳雯斯|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦·菲纳雯斯|r 对话
     .skipgossip
     .fly Teldrassil >>飞往鲁瑟兰村，泰达希尔
     .target Silva Fil'naveth

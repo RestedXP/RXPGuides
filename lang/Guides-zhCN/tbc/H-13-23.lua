@@ -287,7 +287,7 @@ step
 step
     #label KreenigSnarlsnout
     .goto The Barrens,58.69,27.08
-    >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
+    >>击杀 |cRXP_ENEMY_克里尼格·糟鼻|r，拾取他的 |cRXP_LOOT_獠牙|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
 step
@@ -360,7 +360,7 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
+    .goto Durotar,39.16,58.56,10 >>沿着山路向上前往 |cRXP_FRIENDLY_泰尔夫|r
 step << Shaman
     #label CallofFire3
     #requires ShamanDurotar
@@ -405,7 +405,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.78,20.00
     .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r from the ground 和 start the quest
-    >>|cRXP_WARN_Wait for the respawn if it's not up|r
+    >>|cRXP_WARN_如果没有刷新，请等待其重新出现|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >>接受任务《物归己用》 老陈的空酒桶
 step
@@ -580,9 +580,9 @@ step
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板维尔雷|r
-    >>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里购买|r |T133918:0|t[长嘴泥鳅] |cRXP_BUY_|r
     >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
-    >>|T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_are extremely cheap, buy as many as you want|r
+    >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜，想买多少都可以|r
     .vendor >>把垃圾物品卖给商人
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid/Paladin --Melon Juice (10)
@@ -606,8 +606,8 @@ step
     .goto The Barrens,64.21,47.14,50,0
     .goto The Barrens,63.57,49.14,50,0
     .goto The Barrens,62.64,49.72,50,0
-    >>Kill |cRXP_ENEMY_Baron Longshore|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_He can be found in one of the camps|r
+    >>击杀 |cRXP_ENEMY_巴隆·朗绍尔|r，拾取他的 |cRXP_LOOT_头颅|r
+    >>|cRXP_WARN_他可以在其中一个营地中找到|r
     .complete 895,1 --Baron Longshore's Head (1)
     .unitscan Baron Longshore
 step
@@ -865,7 +865,7 @@ step
 step
     #completewith Barak
     >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
-    >>|cRXP_WARN_This quest does not have to be completed now|r
+    >>|cRXP_WARN_这个任务不必现在完成|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
@@ -903,7 +903,7 @@ step
 step
     #completewith next
     >>击杀 every |cRXP_ENEMY_Raptor|ryou see.拾取地上的 them for their |cRXP_LOOT_头部|r
-    >>|cRXP_WARN_This quest does not have to be completed now|r
+    >>|cRXP_WARN_这个任务不必现在完成|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
@@ -960,12 +960,12 @@ step
 step
     .goto The Barrens,52.33,11.57
     >>点击地上的 |cRXP_PICK_Valve|r
-    >>|cRXP_WARN_Be careful! Two mobs will spawn after you shut off the Valve|r
+    >>|cRXP_WARN_小心！关闭阀门后会刷新两个怪物|r
     .complete 900,2 --Shut off Fuel Control Valve (1)
 step
     .goto The Barrens,52.29,11.40
     >>点击地上的 |cRXP_PICK_Valve|r
-    >>|cRXP_WARN_One mob will spawn after you shut off the Valve|r
+    >>|cRXP_WARN_关闭阀门后会刷新一个怪物|r
     .complete 900,3 --Shut off Regulator Valve (1)
 step
     .goto The Barrens,52.40,11.40
@@ -978,7 +978,7 @@ step
     .accept 901 >>接受任务《物归己用》 什么什么平衡器
 step
     .goto The Barrens,52.84,10.40
-    >>Kill |cRXP_ENEMY_Tinkerer Sniggles|r in the building. Loot him for his |cRXP_LOOT_Console Key|r
+    >>在建筑内击杀 |cRXP_ENEMY_工匠斯尼格斯|r，拾取他的 |cRXP_LOOT_控制台钥匙|r
     .complete 901,1 --Console Key (1)
     .mob Tinkerer Sniggles
 step
@@ -1008,7 +1008,7 @@ step
     #optional
     .goto The Barrens,56.5,7.5
     .xp 16 >>击杀 to level 16
-    >>|cRXP_WARN_This is important, due to the next 3 quests being quite hard|r
+    >>|cRXP_WARN_这一点很重要，因为接下来的 3 个任务都相当困难|r
 step
     #label Ignition
     .goto The Barrens,56.52,7.45
@@ -1028,7 +1028,7 @@ step
     .goto The Barrens,56.05,8.49,12,0
     .goto The Barrens,56.13,8.56,12,0
     .goto The Barrens,56.34,8.24
-    >>Kill |cRXP_ENEMY_Supervisor Lugwizzle|r. Loot him for his |cRXP_LOOT_Key|r. He patrols up and down the platform
+    >>击杀 |cRXP_ENEMY_鲁格维兹主管|r，拾取他的 |cRXP_LOOT_钥匙|r。他会在平台上来回巡逻
     .complete 858,1 --Ignition Key (1)
     .mob Supervisor Lugwizzle
     .isOnQuest 858
@@ -1036,7 +1036,7 @@ step
     .goto The Barrens,56.52,7.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_维兹克兰克的伐木机|r
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
-    >>|cRXP_WARN_This will begin an escort. Make sure you're at full health|r
+    >>|cRXP_WARN_这将开始一个护送任务。请确保你的生命值是满的|r
     .turnin 858 >>交任务《 前往熔光镇》 点火
     .accept 863,1 >>接受任务《物归己用》 梅贝尔的隐形水
     .target Wizzlecrank's Shredder
@@ -1046,7 +1046,7 @@ step
     .goto The Barrens,56.52,7.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_维兹克兰克的伐木机|r
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
-    >>|cRXP_WARN_This will begin an escort. Make sure you're at full health|r
+    >>|cRXP_WARN_这将开始一个护送任务。请确保你的生命值是满的|r
     .accept 863,1 >>接受任务《物归己用》 梅贝尔的隐形水
     .target Wizzlecrank's Shredder
     .isQuestTurnedIn 858
@@ -1054,7 +1054,7 @@ step
     #label Slugs
     .goto The Barrens,55.80,7.76,30,0
     .goto The Barrens,55.51,7.13
-    >>|cRXP_WARN_Two|r |cRXP_ENEMY_Venture Co. Mercenaries|r |cRXP_WARN_will spawn when the shredder moves onto the higher ground. Kill them then wait for his RP event at the end|r
+    >>|cRXP_WARN_当伐木机移动到高处时，会刷新两个|r |cRXP_ENEMY_风险投资公司雇佣兵|r |cRXP_WARN_。击杀他们后，等待他在终点的剧情事件|r
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
     .mob Venture Co. Mercenary
     .mob Venture Co. Drudger
@@ -1080,7 +1080,7 @@ step
     .goto The Barrens,61.17,5.05,40,0
     .goto The Barrens,61.51,4.43,40,0
     >>击杀 |cRXP_ENEMY_风险投资公司执行者|r 和 |cRXP_ENEMY_风险投资公司监督|r. 拾取 |cRXP_LOOT_Cats Eye Emerald|r
-    >>|cRXP_WARN_If it hasn't dropped after 25+ mobs, feel free to skip this quest|r
+    >>|cRXP_WARN_如果击杀 25 个以上怪物仍未掉落，可以放心跳过这个任务|r
     .complete 896,1 -- Cats Eye Emerald (1)
     .mob Venture Co. Enforcer
     .mob Venture Co. Overseer
@@ -1096,7 +1096,7 @@ step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_阿诺克|r
     >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[亚麻布]|cRXP_WARN_to reach 40 skill|r
-    .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
+    .train 3276 >>学习 |T133688:0|t[厚亚麻绷带]
     .target Arnok
     .skill firstaid,<1,1
 step
@@ -1107,7 +1107,7 @@ step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_阿诺克|r
     >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[亚麻布]|cRXP_WARN_to reach 50 skill|r
-    .train 3274 >> Train Journeyman First Aid
+    .train 3274 >>学习 中级急救
     .target Arnok
     .skill firstaid,<40,1
 step << Priest
@@ -1141,7 +1141,7 @@ step << Mage
 step << !Orc !Troll
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多拉斯|r
-    >>|cRXP_WARN_Don't fly anywhere!|r
+    >>|cRXP_WARN_不要乘坐飞行路线前往任何地方！|r
     .fp Orgrimmar >>获取塞尔萨玛的飞行路径
     .zoneskip The Barrens
     .target Doras
@@ -1266,7 +1266,7 @@ step << Tauren Hunter
 step << Warrior/Shaman/Paladin
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳什|r
-    .train 172 >>Train Two-Handed Axes << Orc !Warrior
+    .train 172 >>训练 双手斧 << Orc !Warrior
     .train 227 >>学习锤类武器 << !Paladin !Shaman
     .target Hanashi
 step << Hunter
@@ -1342,7 +1342,7 @@ step
 step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Darsok|r
-    >>|cRXP_WARN_He is at the top of the tower|r
+    >>|cRXP_WARN_他在塔顶|r
     .turnin 867 >>交任务《 前往熔光镇》 鹰身强盗
     .accept 875 >>接受任务《物归己用》 鹰身人首领
     .target Darsok Swiftdagger
@@ -1446,9 +1446,9 @@ step
 step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Darsok|r
-    >>|cRXP_WARN_He is at the top of the tower|r
+    >>|cRXP_WARN_他在塔顶|r
     .turnin 875 >>交任务《 前往熔光镇》 鹰身人首领
-    .accept 876 >>Accept Serena Bloodfeather
+    .accept 876 >>接受任务 塞瑞娜·血羽
     .target Darsok Swiftdagger
 step << Hunter
     .goto The Barrens,51.67,29.95
@@ -1523,9 +1523,9 @@ step
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_旅店老板维尔雷|r
-    >>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里购买|r |T133918:0|t[长嘴泥鳅] |cRXP_BUY_|r
     >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
-    >>|T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_are extremely cheap, buy as many as you want|r
+    >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜，想买多少都可以|r
     .vendor >>把垃圾物品卖给商人
     .collect 4592,20,888,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,888,1 << Mage/Warlock/Priest/Shaman/Druid/Paladin --Melon Juice (10)
@@ -1537,7 +1537,7 @@ step << Rogue
     +|cRXP_WARN_跳上船只，下到第2层，并将你的开锁技能提升到至少 70|r
 step << Rogue
     .goto The Barrens,64.95,45.44
-    >>Once your lockpicking is 70, go to the bottom floor of the ship and open |cRXP_PICK_The Jewel of the Southsea|r
+    >>当你的开锁技能达到 70 后，前往船只的底层并打开 |cRXP_PICK_南海宝珠|r
     >>|cRXP_WARN_Use the|r |T134059:0|t[大饼干]|cRXP_WARN_on|r|cRXP_ENEMY_Polly|r
     .complete 2381,1 --Southsea Treasure (1)
     .use 7970
@@ -1599,9 +1599,9 @@ step
 step
     #label Verog
     .goto The Barrens,52.95,41.75
-    >>Kill |cRXP_ENEMY_Verog|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_He has a chance of spawning every time a |cRXP_ENEMY_Kolkar|r is killed|r
-    >>|cRXP_WARN_On a highly populated server or fresh launch, your best option is camping his spawnpoint|r
+    >>击杀 |cRXP_ENEMY_维罗戈|r，拾取他的 |cRXP_LOOT_头颅|r
+    >>|cRXP_WARN_每次击杀一个 |cRXP_ENEMY_科卡尔|r 都有几率刷新他|r
+    >>|cRXP_WARN_在高人口服务器或新服开启时，最好的做法是在他的刷新点蹲守|r
     .complete 851,1 --Verog's Head (1)
     .unitscan Verog the Dervish
     .isOnQuest 851
@@ -1748,7 +1748,7 @@ step
     .goto The Barrens,51.93,30.32
 step
     #completewith StonetalonPickups
-    .destroy 5165 >>|cRXP_WARN_Delete any leftover|r |T132914:0|t[Sunscale Feathers] |cRXP_WARN_you may still have|r
+    .destroy 5165 >>|cRXP_WARN_删除你可能仍然留着的任何|r |T132914:0|t[赤鳞迅猛龙的羽毛] |cRXP_WARN_|r
     .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.11,29.07
@@ -1786,7 +1786,7 @@ step
 step
     #label Serena
     .goto The Barrens,39.16,12.16
-    >>Kill |cRXP_ENEMY_Serena Bloodfeather|r. Loot her for her |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_塞瑞娜·血羽|r，拾取她的 |cRXP_LOOT_头颅|r
     .complete 876,1 --Serena's Head (1)
     .mob Serena Bloodfeather
 step
@@ -2278,7 +2278,7 @@ step
 step
     .goto The Barrens,59.87,30.41
     .use 10338 >>|cRXP_WARN_Use the|r |T134368:0|t[|cRXP_LOOT_新鲜的斑马肉|r]|cRXP_WARN_at the dead tree|r
-    >>Kill |cRXP_ENEMY_Ishamuhale|r as he spawns. Loot him for his |cRXP_LOOT_Fang|r
+    >>在他刷新时击杀 |cRXP_ENEMY_伊沙姆哈尔|r，拾取他的 |cRXP_LOOT_尖牙|r
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob Ishamuhale
 step
@@ -2365,8 +2365,8 @@ step
 step
     .goto The Barrens,51.62,30.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Darsok|r
-    >>|cRXP_WARN_He is at the top of the tower|r
-    .turnin 876 >>Turn in Serena Bloodfeather
+    >>|cRXP_WARN_他在塔顶|r
+    .turnin 876 >>交任务 塞瑞娜·血羽
     .accept 1060 >>接受任务《物归己用》 [DEPRECATED] 写给金吉尔的信
     .target Darsok Swiftdagger
 step
@@ -2382,7 +2382,7 @@ step
     .goto The Barrens,52.26,31.93
 step
     #completewith TribesTurnin
-    .destroy 5085 >>|cRXP_WARN_Delete any leftover|r |T133721:0|t[Bristleback Quilboar Tusks] |cRXP_WARN_you may still have|r
+    .destroy 5085 >>|cRXP_WARN_删除你可能仍然留着的任何|r |T133721:0|t[刺背野猪人的獠牙] |cRXP_WARN_|r
     .itemcount 5085,1
 step << Warlock
     #completewith next
@@ -2448,7 +2448,7 @@ step << !Tauren !Warrior !Shaman
 step << !Tauren !Warrior !Shaman
     #sticky
     #completewith ZamahTurnin
-    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned 20-30 minutes after pick-up|r
+    +|cRXP_WARN_这是一个限时任务，请不要离开键盘。接取后 20–30 分钟就会失效|r
     .isOnQuest 853
 step
     #completewith TribesTurnin
@@ -2601,7 +2601,7 @@ step << !Tauren !Shaman !Warrior
     #completewith DeathDUPpickup
     .goto Thunder Bluff,31.78,65.92
     .zone Thunder Bluff >>Take the 飞往雷霆崖
-    >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
+    >>|cRXP_WARN_如果你已经解锁雷霆崖的飞行点，可以直接飞过去|r
 step << Tauren/Shaman/Warrior
     #completewith DeathDUPpickup
     .goto The Barrens,44.45,59.16
@@ -2625,7 +2625,7 @@ step
 step << Warrior !Tauren/Shaman/Paladin
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安塞瓦|r
-    .train 199 >>Train Two-Handed Maces
+    .train 199 >>训练 双手锤
     .target Ansekhwa
 step << Troll Hunter/Orc Hunter/Warrior/Warlock/Priest
     .goto Thunder Bluff,40.93,62.73
@@ -2868,7 +2868,7 @@ step << Rogue
 step << Warrior/Shaman/Paladin
     #completewith next
     #ah
-    +|cRXP_FRIENDLY_If it's cheaper you can buy a green weapon from the auction house instead|r
+    +|cRXP_FRIENDLY_如果更便宜的话，你也可以改从拍卖行购买一把绿色武器|r
 step << Warrior/Paladin/Shaman
     .goto Thunder Bluff,53.21,58.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Etu|r|cRXP_BUY_. Buy a|r |T135423:0|t[大型战斧] |cRXP_BUY_from him|r
@@ -3316,13 +3316,13 @@ step
     .goto The Barrens,46.08,40.68,50,0
     .goto The Barrens,45.71,40.56,50,0
     .goto The Barrens,45.64,38.16,50,0
-    >>Find & kill |cRXP_ENEMY_Hezrul Bloodmark|r, he patrols around the lake. Loot him for his |cRXP_LOOT_Head|r
+    >>寻找并击杀 |cRXP_ENEMY_赫兹鲁尔·血印|r，他会在湖周围巡逻。拾取他的 |cRXP_LOOT_头颅|r
     .complete 852,1 --Hezrul's Head
     .unitscan Hezrul Bloodmark
     .isQuestTurnedIn 851
 step
     #completewith CounterattackComplete
-    .abandon 855 >> Abandon Centaur Bracers as you have not looted enough previously to make it worthwhile to finish
+    .abandon 855 >>放弃任务 半人马护腕，因为你之前拾取的数量不足，不值得继续完成
     .itemcount 5030,<5 --Centaur Bracers (5)
 step
     .goto The Barrens,45.35,28.41
@@ -3353,7 +3353,7 @@ step
     #hardcore
     #completewith CounterattackComplete
     +|cRXP_WARN_This next quest is very hard & grouping up is recommended. You can kite |cRXP_ENEMY_督军克罗姆扎|r around using the building where the quest giver is|r
-    >>|cRXP_WARN_There is a high risk of dying when solo and not familiar with this quest|r
+    >>|cRXP_WARN_如果你是单人进行且不熟悉该任务，死亡风险会很高|r
     .isQuestTurnedIn 852
 step
     .goto The Barrens,45.35,28.41
@@ -3367,8 +3367,8 @@ step
     #label CounterattackComplete
     .goto The Barrens,44.48,28.15
     >>击杀 |cRXP_ENEMY_督军克罗姆扎|r .拾取地上的 the |cRXP_PICK_旗帜|rthat he drops on the ground
-    >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
-    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
+    >>|cRXP_WARN_小心！他是一个强力精英，并且至少有两个|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_怪物守卫|r
+    >>|cRXP_WARN_他可能需要最长 3 分钟才会刷新|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -3531,7 +3531,7 @@ step
     #hardcore
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r
-    >>|cRXP_WARN_This will start an escort quest. Be VERY careful! |cRXP_ENEMY_Vorsha|r hits very hard. Grouping up is recommended|r
+    >>|cRXP_WARN_这将开始一个护送任务。非常小心！|cRXP_ENEMY_Vorsha|r 攻击力极高，建议组队进行|r
     .accept 6641,1 >>接受任务《物归己用》 鞭笞者沃尔沙
     .target Muglash
 step
@@ -4144,7 +4144,7 @@ step << Shaman
 step << Troll Warrior/Undead Warrior/Tauren Warrior
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈纳什|r
-    .train 197 >>Train Two-Handed Axes
+    .train 197 >>训练 双手斧
     .target Hanashi
 step << Warrior
     .goto Orgrimmar,79.91,31.36

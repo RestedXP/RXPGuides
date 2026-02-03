@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南(部落版)
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 直升人物 58-60
 #subgroup RestedXP 部落直升 58-60

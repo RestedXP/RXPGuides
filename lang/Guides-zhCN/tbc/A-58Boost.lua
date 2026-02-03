@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 直升人物 58-60
 #subgroup RestedXP 联盟直升 58-60
