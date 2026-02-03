@@ -31,7 +31,7 @@ local dungeonIcons = {
 
     ["RAMPARTS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-HellfireCitadel",
     ["BF"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-HellfireCitadel",
-    -- ["SP"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CoilfangReservoir",
+    ["SP"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CoilfangReservoir",
     ["UB"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CoilfangReservoir",
     ["MT"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Auchindoun",
     ["CRYPTS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Auchindoun",
