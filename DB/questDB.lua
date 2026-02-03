@@ -997,8 +997,10 @@ function CreatePanel()
                     return not questPrioChanged
                 end,
                 func = function()
-                    for _,group in pairs(addon.QuestDB) do
-                        addon.functions.setturninroute(nil,addon.FetchGuide(group,L"Turn in Route"))
+                    for group in pairs(addon.QuestDB) do
+                        local g = addon.guides[group.."||QuestDB"]
+                        --print(g)
+                        addon.functions.setturninroute(nil,g)
                     end
                     _G.ReloadUI()
                 end,
@@ -1130,22 +1132,56 @@ function addon.functions.setquestdb(self,text,str)
         local t = assert(loadstring("return " .. str))
         setfenv(t, {})
         addon.QuestDB[group] = t()
-        addon:FetchGuide(group,L"Turn in Route")
+        addon:FetchGuide(group,"Turn in Route")
     end
 end
 
-function addon.functions.setturninroute(self,guide)
-    if type(self) ~= "string" and type(guide) ~= "table" then
-        return
+function addon.functions.setturninroute(self,arg)
+    if type(self) == "string" then
+        --print('ok0',addon.guide.chapters,1)
+        local e = {textOnly = true, name = addon.guide.name, group = addon.guide.group, tag = "setturninroute" }
+        addon:ScheduleTask(e)
+        addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+        return e
     end
-    guide = guide or addon.guide
+    --print(self,arg)
+    local guide
+    local element = self and self.element or self
+    if type(arg) == "table" then
+        guide = arg
+    elseif arg ~= "TaskUpdate" then
+        --print(arg,1)
+        return
+    elseif element then
+        guide = addon:FetchGuide(element.group,element.name)
+    end
+    if not guide then print('no guide') return end
     local group = guide.group or ""
+    if element and not element.init then
+        element.init = true
+        addon:FetchGuide(group,"QuestDB")
+    end
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local chapters = ""
+    local m = RXPCData.guideMetaData
+
 if QuestDB["TBC"] then
+    guide = QuestDB["TurnInGuide"] or guide
+    QuestDB["TurnInGuide"] = guide
+    if not addon.settings.profile.tbcTurnInOrder and element then
+        addon.ScheduleTask(GetTime()+5,element)
+    end
+    --print('ok1')
     local n = 0
     local suffix = ""
     local lastchapter
+    local guideList = {}
+    for _,v in pairs(addon.db.profile.guides) do
+        if v.metadata and v.metadata.group == group then
+            --print(v.metadata.group,v.metadata.name)
+            guideList[v.metadata.group.."||"..v.metadata.name] = v
+        end
+    end
     local function AddChapter(name,suffix)
         if not suffix then suffix = "" end
         if n > 0 then
@@ -1153,7 +1189,7 @@ if QuestDB["TBC"] then
         else
             chapters = name .. suffix
         end
-        local m = RXPCData.guideMetaData
+        local key = ""
         local g = addon:FetchGuide(group,name..suffix)
         local new = g and format("%d - %s",n,g.title or g.name)
         if g then
@@ -1185,12 +1221,17 @@ if QuestDB["TBC"] then
                 end
             end
             lastchapter = g
-
-            g = m[g.group.."||"..g.name]
+            key = g.group.."||"..g.name
+            g = m[key]
         end
 
         if g then
             g.displayname = new
+        end
+
+        g = guideList[key]
+        if g then
+            g.metadata.displayname = new
         end
 
         n = n + 1
@@ -1261,8 +1302,10 @@ if QuestDB["TBC"] then
             if addon.player.class == "DRUID" then
                 if addon.settings.profile.tbcWBF then
                     AddChapter("Felwood to Winterspring")
+                    --print('d-fw')
                 else
                     AddChapter("Winterspring to Felwood")
+                    --print('d-wf')
                 end
             elseif addon.settings.profile.goblinTele then
                 AddChapter("Winterspring to Felwood")
@@ -1306,11 +1349,42 @@ if QuestDB["TBC"] then
         end
         AddChapter("STV to Blasted Lands")
     end
+    local ag = addon:FetchGuide(group,"Set Turn In Route-A")
+    local hg = addon:FetchGuide(group,"Set Turn In Route-H")
+    local faction
+    if not ag and addon.player.faction == "Alliance" then
+        faction = "Horde"
+        --print('not ag')
+    elseif not hg and addon.player.faction == "Horde" then
+        faction = "Alliance"
+        --print('not hg')
+    end
 
+    addon.settings.profile.tbcTurnInOrder = chapters
     guide.chapters = chapters
+    guide.defaultFor = faction
     --print(chapters)
+    local v = guideList[guide.group.."||"..guide.name]
+    if v then
+        local g = v.metadata
+        g.chapters = chapters
+        v.enabledFor = faction
+        g.defaultFor = faction
+        --print('ok3')
+    end
+
+    local g = m[guide.group.."||"..guide.name]
+    if g then
+        g.chapters = chapters
+        g.defaultFor = faction
+    end
+
 end
 addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
+end
+
+addon.functions.getTBCchapters = function()
+    return addon.settings.profile.tbcTurnInOrder or ""
 end
 
 function addon.IsGuideQuestActive(id)

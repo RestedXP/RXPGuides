@@ -1546,7 +1546,7 @@ function addon.UpdateScheduledTasks()
                 addon.scheduledTasks[ref] = nil
                 local element = ref.element or ref
                 if element and addon.functions[element.tag] then
-                    addon.Call(element.tag,addon.functions[element.tag],ref)
+                    addon.Call(element.tag,addon.functions[element.tag],ref,"TaskUpdate")
                 end
                 return
             end

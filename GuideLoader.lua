@@ -1031,7 +1031,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                         -- print(tag,string.len(tag))
                         if tag and tag ~= "" and not guide[tag] then
                             if assignment == "=" then
-                                guide[tag] = addon.functions[value]
+                                local func = addon.functions[value]
+                                guide[tag] = func and func() or value
                             else
                                 guide[tag] = value
                             end

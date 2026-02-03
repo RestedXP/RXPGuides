@@ -938,6 +938,8 @@ function addon.SetElementIncomplete(self)
     end
 end
 
+addon.functions.noop = function() end
+
 addon.labels = {}
 
 addon.functions.label = function(self,text,label)
