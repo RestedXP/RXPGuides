@@ -843,6 +843,26 @@ function CreatePanel()
                 -- usage = "Usage string",
                 get = function() return debugText end,
                 set = function(self,text)
+                    --[[local out = ""
+                    if bagAE then
+                        for _,v in pairs(bagAE) do
+                            out = format("%s\n{%d,%d},",out,v[1],v[2])
+                        end
+                        debugText = out
+                        return
+                    end
+                    local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
+                         _G.GetNumQuestLogEntries
+                    addon.ExpandQuestHeaders()
+                    for i = 1, GetNumQuests() do
+                        local _, _, _, _, _,
+                            isComplete, _, questID = GetQuestLogTitle(i);
+                        if questID and questID > 0 then
+                            out = format("%s\n%d,",out,questID)
+                        end
+                    end
+                    debugText = out
+                    if true then return end]]
                     local group = GetGroup()
                     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
                     local p = "([\r\n]%s*%[)(%d+)(%] = {)"
@@ -1002,7 +1022,8 @@ function CreatePanel()
                         --print(g)
                         addon.functions.setturninroute(nil,g)
                     end
-                    _G.ReloadUI()
+                    addon:LoadGuide(addon.emptyGuide)
+                    C_Timer.After(1,_G.ReloadUI())
                 end,
             },
             gnomeTele = {
@@ -1197,8 +1218,19 @@ if QuestDB["TBC"] then
         g = g or addon.guides[group.."||"..name]
         local new = g and format("%d - %s",n,g.title or g.name)
         if g then
-            local function CheckTurnIns(checkGuide)
+            local function CheckTurnIns(checkGuide,incList)
+                incList = incList or {}
                 for _,step in pairs(checkGuide.steps) do
+                    local inc = step.include
+                    if inc then
+                        inc = inc:gsub("@.*","")
+                        local incGuide = addon:FetchGuide(group,inc)
+                        if incGuide and not incList[incGuide] then
+                            incList[incGuide] = true
+                            --print(incGuide.name)
+                            CheckTurnIns(incGuide,incList)
+                        end
+                    end
                     for _,element in pairs(step.elements) do
                         if element.tag == "turnin" then
                             questTurnIns[element.questId] = true
@@ -1207,13 +1239,6 @@ if QuestDB["TBC"] then
                 end
             end
             CheckTurnIns(g)
-            local inc = g.steps[1].include
-            if inc then
-                local incGuide = addon:FetchGuide(group,inc)
-                if incGuide then
-                    CheckTurnIns(incGuide)
-                end
-            end
             g.displayname = new
 
             local lg = lastchapter
@@ -1353,14 +1378,16 @@ if QuestDB["TBC"] then
         end
         AddChapter("STV to Blasted Lands")
     end
-    local ag = addon:FetchGuide(group,"Set Turn In Route-A")
-    local hg = addon:FetchGuide(group,"Set Turn In Route-H")
+    local ag = guideList[group.."||Set Turn In Route-A"] or addon:FetchGuide(group,"Set Turn In Route-A")
+    local hg = guideList[group.."||Set Turn In Route-H"] or addon:FetchGuide(group,"Set Turn In Route-H")
     local faction
     if not ag and addon.player.faction == "Alliance" then
         faction = "Horde"
+        guide.chapter = true
         --print('not ag')
     elseif not hg and addon.player.faction == "Horde" then
         faction = "Alliance"
+        guide.chapter = true
         --print('not hg')
     end
 
@@ -1702,9 +1729,12 @@ function addon.CompleteStep()
     for i,step in pairs(addon.RXPFrame.activeSteps) do
         for _,element in pairs(step.elements) do
             if element.tag == "collect" then
-                local x = element.qty
+                local x = math.max(0,element.numRequired - element.count)
+                --print(x,element.tag)
                 local id = element.id
-                SendChatMessage(format(".additem %d %d",id,x), "WHISPER", nil, addon.player.name)
+                if x > 0 then
+                    SendChatMessage(format(".additem %d %d",id,x), "WHISPER", nil, addon.player.name)
+                end
             elseif element.tag == "reputation" then
                 SendChatMessage(format(".mod rep %d exalted",element.faction), "WHISPER", nil, addon.player.name)
             elseif element.tag == "complete" then

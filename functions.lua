@@ -3036,7 +3036,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
 
     if element.lastCount ~= count then addon.UpdateStepText(self) end
     element.lastCount = count
-
+    element.count = count
     if numRequired > 0 and count >= numRequired then
         if not element.completed and step.active == true then
             addon.comms:AnnounceStepEvent('.collect', {
