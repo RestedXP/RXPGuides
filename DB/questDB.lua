@@ -1132,7 +1132,8 @@ function addon.functions.setquestdb(self,text,str)
         local t = assert(loadstring("return " .. str))
         setfenv(t, {})
         addon.QuestDB[group] = t()
-        addon:FetchGuide(group,"Turn in Route")
+        addon:FetchGuide(group,L"Turn in Route")
+        --print('loaded QuestDB for',group)
     end
 end
 
@@ -1140,13 +1141,16 @@ function addon.functions.setturninroute(self,arg)
     if type(self) == "string" then
         --print('ok0',addon.guide.chapters,1)
         local e = {textOnly = true, name = addon.guide.name, group = addon.guide.group, tag = "setturninroute" }
-        addon:ScheduleTask(e)
+        C_Timer.After(0.5,function() addon.functions.setturninroute(e,"TaskUpdate") end)
         addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
         return e
     end
-    --print(self,arg)
     local guide
+    if type(self) == "number" then
+        self = guide
+    end
     local element = self and self.element or self
+    --print(self,arg)
     if type(arg) == "table" then
         guide = arg
     elseif arg ~= "TaskUpdate" then
@@ -1158,19 +1162,18 @@ function addon.functions.setturninroute(self,arg)
     if not guide then print('no guide') return end
     local group = guide.group or ""
     if element and not element.init then
-        element.init = true
-        addon:FetchGuide(group,"QuestDB")
+        element.init = addon:FetchGuide(group,"QuestDB")
     end
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     local chapters = ""
     local m = RXPCData.guideMetaData
 
+    if element and not (addon.settings.profile.tbcTurnInOrder and element.init) then
+        addon.ScheduleTask(GetTime()+5,element)
+    end
 if QuestDB["TBC"] then
     guide = QuestDB["TurnInGuide"] or guide
     QuestDB["TurnInGuide"] = guide
-    if not addon.settings.profile.tbcTurnInOrder and element then
-        addon.ScheduleTask(GetTime()+5,element)
-    end
     --print('ok1')
     local n = 0
     local suffix = ""
@@ -1191,6 +1194,7 @@ if QuestDB["TBC"] then
         end
         local key = ""
         local g = addon:FetchGuide(group,name..suffix)
+        g = g or addon.guides[group.."||"..name]
         local new = g and format("%d - %s",n,g.title or g.name)
         if g then
             local function CheckTurnIns(checkGuide)
