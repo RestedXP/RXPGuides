@@ -1068,7 +1068,7 @@ step << !Hunter
 step << !Hunter
     #optional
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides Hollow' cave
     .subzoneskip 3569,1
 step << !Hunter
 	#completewith next
@@ -1165,7 +1165,7 @@ step << Hunter
     .mob Warlord Sriss'tiz
 step << Hunter
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides Hollow' cave
     .subzoneskip 3569,1
 step << Hunter
     .goto Azuremyst Isle,47.131,70.289

@@ -1534,7 +1534,7 @@ step << Gnome Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135321:0|t[步兵剑]
+    +|cRXP_WARN_装备|r |T135321:0|t[步兵剑]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
@@ -1548,7 +1548,7 @@ step << Dwarf Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
-    +|cRXP_WARN_Equip the|r |T132401:0|t[双刃战斧]
+    +|cRXP_WARN_装备|r |T132401:0|t[双刃战斧]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
@@ -1713,7 +1713,7 @@ step
 step
     #optional
     .goto 1426,24.975,50.473,20,0
-    .goto 1426,24.682,50.836,20 >>Run up the side of the cave entrance. 交任务 霜鬃巨魔要塞
+    .goto 1426,24.682,50.836,20 >>沿着洞口坡道上行，然后跳入霜鬃巨魔要塞
     .isOnQuest 287
 step
     #requires Headhunters
@@ -1842,7 +1842,7 @@ step
     .goto 1426,62.434,48.989,40,0
     .goto 1426,62.538,46.195
     >>击杀 |cRXP_ENEMY_瓦加什|r。拾取他的 |cRXP_LOOT_利牙|r
-    >>|cRXP_WARN_将他引到农场南边的守卫处。确保对他造成 51% 以上的伤害|r
+    >>|cRXP_WARN_风筝他到农场南边的守卫处。确保对他造成 51% 以上的伤害|r
     >>|cRXP_WARN_请先看以下的短视频，然后再击杀 |cRXP_ENEMY_瓦加什|r。任何职业都可以单刷它|r
     .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
@@ -2097,7 +2097,7 @@ step << !Rogue !Warrior !Warlock
     #optional
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
-    .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
+    .goto Loch Modan,23.73,75.52,15 >>沿土路上行，然后跳入地堡
 step << !Rogue !Warrior !Warlock
     .goto Loch Modan,23.233,73.675
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地堡里与 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
@@ -2229,7 +2229,7 @@ step << Mage/Rogue/Warrior/Warlock
     #label Algaz
     #completewith Stormpike1
     .goto 1432,23.490,18.008
-    .subzone 925 >>前往暴风城大教堂内，与 Algaz Station
+    .subzone 925 >>前往奥加兹岗哨
 step << Mage/Rogue/Warrior/Warlock
     #optional
     #requires Algaz
@@ -2288,7 +2288,7 @@ step << Mage
     #label MinersGear
     .goto Loch Modan,35.93,22.55
     >>打开 |cRXP_PICK_矿工联盟的储物箱|r。拾取里面的 |cRXP_LOOT_矿工装备|r
-    >>|cRXP_WARN_The |cRXP_PICK_Miners' League Crates|r can be found all throughout the Mine|r
+    >>|cRXP_WARN_|cRXP_PICK_矿工联盟的储物箱|r 散布在整个矿井中|r
     .complete 307,1 -- Miners' Gear (4)
 step << Mage
     #optional
@@ -2324,7 +2324,7 @@ step << Mage
     #completewith next
     .goto Loch Modan,24.134,18.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高索·布鲁姆|r 对话
-    .vendor >>|cRXP_WARN_Vendor and repair if needed|r
+    .vendor >>|cRXP_WARN_如果需要，出售物品并修理装备|r
     .target Gothor Brumn
 step << Mage
     #label FilthyMountaineer
@@ -2336,7 +2336,7 @@ step << Mage
 step << Mage
     >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
     >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
-    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_Ichor|r
+    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_毒液|r
     .collect 3173,3,418,1 --Bear Meat (3)
     .mob +Elder Black Bear
     .goto Loch Modan,26.9,10.7,90,0
@@ -2498,10 +2498,10 @@ step << Warrior skip
     #optional
     #completewith next
     .goto Dun Morogh,53.28,35.17
-    .zone Dun Morogh >> |cRXP_WARN_Exit Ironforge|r
+    .zone Dun Morogh >>|cRXP_WARN_离开铁炉堡|r
 step << Warrior skip
     .goto Dun Morogh,27.8,58.0
-    >>Kill |cRXP_ENEMY_Vejrek|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_维吉雷克|r，拾取他的 |cRXP_LOOT_头颅|r
     .complete 1678,1 --Vejrek's Head (1)
     .mob Vejrek
 step << Warrior skip
@@ -2583,7 +2583,7 @@ step << Rogue/Warrior/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话
     .target Monty
     .turnin 6661 >>交任务 捕捉矿道老鼠
-    .timer 11,Deeprun Rat Roundup RP
+    .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >>接受任务 我的兄弟，尼普希
 step << Rogue/Warrior/Warlock
     #completewith next
@@ -2611,7 +2611,7 @@ step << Rogue/Warrior/Warlock
 step << Warrior
     #optional
     #sticky
-    .abandon 1678 >> Abandon Vejrek. You will complete the quest for Defensive Stance in Stormwind instead
+    .abandon 1678 >>放弃任务 维吉雷克。你将前往暴风城，完成防御姿态学习任务
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊尔萨·考宾|r 对话
     .goto StormwindClassic,73.33,52.43,20,0
@@ -2652,7 +2652,7 @@ step << Warrior
 step << Rogue/Warrior
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r 对话
-    .trainer >>Train 1h Swords << Rogue
+    .trainer >>学习单手剑 << Rogue
     .trainer >>学习双手剑 << Warrior
     .target Woo Ping
     .money <0.1000 << Warrior
@@ -2923,11 +2923,11 @@ step
 step
     #optional
     #sticky
-    .abandon 109 >> Abandon Report to Gryan Stoutmantle
+    .abandon 109 >>放弃任务 向格里安·斯托曼报到
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
-    >>|cRXP_WARN_Some mobs may turn gray during this quest. Still finish it as you need to complete this quest to unlock the follow up's|r
+    >>|cRXP_WARN_任务中部分怪物可能会变为灰色。即便如此，请务必完成任务，以便解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -2935,7 +2935,7 @@ step
 step
     .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
-    >>|cRXP_WARN_Enter and explore Fargodeep Mine|r
+    >>|cRXP_WARN_进入并探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     .goto Elwynn Forest,40.5,82.3,25,0
@@ -2944,7 +2944,7 @@ step
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3
     >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
-    >>|cRXP_WARN_Some mobs may turn gray during this quest. Still finish it as you need to complete this quest to unlock the follow up's|r
+    >>|cRXP_WARN_任务中部分怪物可能会变为灰色。即便如此，请务必完成任务，以便解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -2978,10 +2978,10 @@ step
     .goto Elwynn Forest,25.2,92.7,70,0
     .goto Elwynn Forest,27.0,93.9,70,0
     .goto Elwynn Forest,25.9,93.9
-    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
+    >>击杀 |cRXP_ENEMY_霍格|r。拾取他的 |cRXP_LOOT_人爪|r
     >>|cRXP_ENEMY_霍格|r |cRXP_WARN_can spawn in multiple locations|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[恐惧] |cRXP_WARN_on |cRXP_ENEMY_Hogger|r continously and use your regular DoTs to kill him|r
-    >>|cRXP_WARN_You can kite him back to the guard tower, ensure you deal at least 51% damage to him|r
+    >>|cRXP_WARN_你可以风筝他到守卫塔。确保对他造成 51% 以上的伤害|r
     >>|cRXP_WARN_这个任务有点难。如有需要请组队完成。如果你找不到队伍或无法单刷，就跳过这一步|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
@@ -2997,7 +2997,7 @@ step
     #optional
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    >>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick] |cRXP_WARN_reward from Hogger|r
+    >>|cRXP_WARN_从霍格的奖励中|r|cRXP_WARN_选择|r |T135145:0|t[平衡长棍]
     .turnin 176 >>交任务 通缉：霍格
     .turnin 123 >>交任务 收货人
     .turnin 40 >>交任务 鱼人的威胁
@@ -3010,7 +3010,7 @@ step
     #label HoggerTurnin
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    >>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick] |cRXP_WARN_reward from Hogger|r
+    >>|cRXP_WARN_从霍格的奖励中|r|cRXP_WARN_选择|r |T135145:0|t[平衡长棍]
     .turnin 176 >>交任务 通缉：霍格
     .turnin 40 >>交任务 鱼人的威胁
     .accept 35 >>接受任务 卫兵托马斯
@@ -3069,14 +3069,14 @@ step
 step
     #optional
     #completewith Find
-    .goto 1429,61.820,53.871,15 >> Exit Jasperlode Mine
+    .goto 1429,61.820,53.871,15 >>退出玉石矿洞
     .subzoneskip 54,1
 step
     #optional
     #completewith Find
     +|cRXP_WARN_将一只 |cRXP_ENEMY_森林熊幼崽|r 风筝拉至|r |cRXP_FRIENDLY_卫兵托马斯|r
     >>|cRXP_WARN_试图与 |cRXP_FRIENDLY_卫兵托马斯|r 对话，在 |cRXP_ENEMY_森林熊幼崽|r 死在 |cRXP_FRIENDLY_暴风城卫兵|r 的手里之前，这样可获得任务计数|r
-    >>|cRXP_WARN_Make sure to deal 51%+ damage to get credit|r
+    >>|cRXP_WARN_确保对他造成 51% 以上的伤害，以获得击杀判定|r
     .mob Young Forest Bear
 step
     #label Find
@@ -3213,7 +3213,7 @@ step
 step << Warlock
     .isOnQuest 147
     .goto Elwynn Forest,71.10,80.66
-    >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
+    >>击杀 |cRXP_ENEMY_苏伦娜·凯尔东|r，拾取她的 |cRXP_LOOT_项圈|r
     >>击杀 |cRXP_ENEMY_收货人莫根|r。拾取他的 |cRXP_LOOT_The Collector's Ring|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_苏伦娜·凯尔东|r very quickly|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[恐惧] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
@@ -3223,7 +3223,7 @@ step << Warlock
     .mob +Morgan the Collector
 step << Warlock
     .goto Elwynn Forest,71.10,80.66
-    >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
+    >>击杀 |cRXP_ENEMY_苏伦娜·凯尔东|r，拾取她的 |cRXP_LOOT_项圈|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_苏伦娜·凯尔东|r very quickly|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[恐惧] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
     .complete 1688,1 --Surena's Choker (1)
@@ -3231,7 +3231,7 @@ step << Warlock
 step
     #label PrincessCollar
     .goto Elwynn Forest,69.3,79.0
-    >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
+    >>击杀 |cRXP_ENEMY_公主|r。并拾取她的 |cRXP_LOOT_项圈|r
     >>|cRXP_ENEMY_公主|r |cRXP_WARN_will agro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
     >>|cRXP_ENEMY_公主|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
     .complete 88,1
@@ -3290,7 +3290,7 @@ step
 step
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
-    >>|cRXP_WARN_Be careful of high level mobs en route|r
+    >>|cRXP_WARN_小心前进，途中有高等级怪物|r
     .turnin 244 >>交任务 豺狼人的入侵
     .target Deputy Feldon
 step
@@ -3303,8 +3303,8 @@ step
     .goto StormwindClassic,56.201,64.585
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩根·匹斯特|r 对话
     .turnin 61,1 >>交任务 送往暴风城的货物
-    >>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
+    >>|cRXP_WARN_我们选择的奖励是|r |T132383:0|t[爆破火箭] |cRXP_WARN_它能造成不错的伤害，还可以用于"仇恨分离"，非常实用|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >>https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_点击此处查看"仇恨分离"技巧的视频参考。这是一个简短却非常有价值的教学视频|r
     .target Morgan Pestle
 step
 #ah
@@ -3312,7 +3312,7 @@ step
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133912:0|t[黑海岸石斑鱼]
     .zoneskip Stormwind City,1
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
@@ -3326,7 +3326,7 @@ step
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>|cRXP_BUY_购买以下物品，以便稍后在洛克莫丹与黑海岸更快交任务|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T134342:0|t[猪大肠]
     >>|T134027:0|t[熊肉]
     >>|T134437:0|t[蜘蛛的毒液]
@@ -3348,7 +3348,7 @@ step
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在洛克莫丹与黑海岸更快交任务|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T134342:0|t[猪大肠]
     >>|T134027:0|t[熊肉]
     >>|T134437:0|t[蜘蛛的毒液]
@@ -3377,7 +3377,7 @@ step
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133972:0|t[陆行鸟肉]
     >>|T133912:0|t[黑海岸石斑鱼]
     >>|T133970:0|t|cRXP_LOOT_[大块野猪肉]|r
@@ -3488,8 +3488,8 @@ step
 step
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
-    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
-    >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_too from her if needed|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
+    >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包]
     >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
@@ -3564,7 +3564,7 @@ step
     #label MinersGear
     .goto Loch Modan,35.93,22.55
     >>Open the |cRXP_PICK_Miners' League Crates|r.拾取地上的 them for the |cRXP_LOOT_Miners' Gear|r
-    >>|cRXP_WARN_The |cRXP_PICK_Miners' League Crates|r can be found all throughout the Mine|r
+    >>|cRXP_WARN_|cRXP_PICK_矿工联盟的储物箱|r 散布在整个矿井中|r
     .complete 307,1 -- Miners' Gear (4)
 step
     #optional
@@ -3600,7 +3600,7 @@ step
     #completewith next
     .goto Loch Modan,24.134,18.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高索·布鲁姆|r 对话
-    .vendor >>|cRXP_WARN_Vendor and repair if needed|r
+    .vendor >>|cRXP_WARN_如果需要，出售物品并修理装备|r
     .target Gothor Brumn
 step
     #label FilthyMountaineer
@@ -3688,7 +3688,7 @@ step
     .goto Loch Modan,26.67,56.94
     >>击杀 |cRXP_ENEMY_碎石穴居人|r 和 |cRXP_ENEMY_碎石怪斥候|r。拾取他们的 |cRXP_LOOT_Trogg Stone Teeth|r
     >>|cRXP_WARN_小心 |cRXP_ENEMY_碎石怪斥候|r，他们会施放|r |T132222:0|t[射击] |cRXP_WARN_(远程攻击：造成14-20点伤害)|r
-    >>|cRXP_WARN_This is a hyperspawn area. You should not need to move from here|r
+    >>|cRXP_WARN_这是一个超级刷怪点，你无需离开这里|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
@@ -3705,7 +3705,7 @@ step
     #optional
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
-    .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
+    .goto Loch Modan,23.73,75.52,15 >>沿土路上行，然后跳入地堡
 step
     .goto Loch Modan,23.233,73.675
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
@@ -3883,7 +3883,7 @@ step
 step
     #optional
     .goto 1437,4.370,56.762
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore|r
+    >>|cRXP_WARN_在等待前往黑海岸的船时|r|cRXP_WARN_提升你的|r |T135966:0|t[急救]
     .zone Darkshore >>乘船前往黑海岸
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
@@ -3904,7 +3904,7 @@ step
     #completewith BuzzBox1
     .goto 1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r 对话
-    >>|cRXP_WARN_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him|r
+    >>|cRXP_WARN_从他那里|r|cRXP_WARN_购买最多 20 条|r |T133918:0|t[长嘴泥鳅]
     .collect 4592,15 --Longjaw Mud Snapper (40)
     .target Laird
 step
@@ -4029,7 +4029,7 @@ step
 step
     #optional
     #sticky
-    .abandon 1001 >> Abandon Buzzbox 411. You won't complete this quest
+    .abandon 1001 >>放弃任务 传声盒411号。无需完成此任务
 step
     #optional
     #sticky
@@ -4258,7 +4258,7 @@ step
 step
     .goto Dun Morogh,38.517,53.927
     >>Open |cRXP_PICK_MacGrann's Meat Locker|r.拾取地上的 it for |cRXP_LOOT_MacGrann's Dried Meats|r
-    >>|cRXP_WARN_Wait until |cRXP_ENEMY_Old Icebeard|r patrols out of the Cave. Once he patrols out of the Cave you can enter and loot|r |cRXP_PICK_MacGrann's Meat Locker|r
+    >>|cRXP_WARN_等|cRXP_ENEMY_冰须|r 巡逻出洞穴。一旦他离开洞穴， 你就可以偷偷进入并打开|r |cRXP_PICK_马克格拉恩的储肉柜|r
     .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>https://www.youtube.com/watch?v=o55Y3LjgKoE >> |cRXP_WARN_点击此处查看视频参考|r
     .complete 312,1 --MacGrann's Dried Meats (1)
 step
@@ -4308,7 +4308,7 @@ step
     .waypoint 1426,33.832,48.153,60,0
     .waypoint 1426,31.691,46.837,60,0
     >>击杀 |cRXP_ENEMY_冰爪熊|r, |cRXP_ENEMY_老峭壁野猪|r, and |cRXP_ENEMY_雪豹|r
-    >>|cRXP_WARN_Skip this step once you've met the XP threshold. You'll complete it later|r
+    >>|cRXP_WARN_达到经验值要求之后可跳过此步骤，你会尽快回来完成它|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -4397,7 +4397,7 @@ step
     .waypoint 1426,31.691,46.837,60,0
     >>击杀 |cRXP_ENEMY_大峭壁野猪|r 和 |cRXP_ENEMY_峭壁野猪|r。拾取他们的 |cRXP_LOOT_峭壁野猪肋排|r
     >>击杀 |cRXP_ENEMY_冰爪熊|r 和 |cRXP_ENEMY_雪豹|r
-    >>|cRXP_WARN_Prioritize |cRXP_ENEMY_Boars|r for their|r |cRXP_LOOT_Ribs|r
+    >>|cRXP_WARN_优先击杀 |cRXP_ENEMY_野猪|r 以获取|r |cRXP_LOOT_猪排|r
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob +Elder Crag Boar
     .mob +Crag Boar
@@ -4456,7 +4456,7 @@ step
     #optional
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和一杯|r |T132800:0|t[雷霆麦酒]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm
@@ -4522,13 +4522,13 @@ step
     #completewith Rudra
     #label Dirt
     .goto Dun Morogh,59.84,49.56,40,0
-    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .goto Dun Morogh,61.36,47.07,40 >>沿土路上行
     .isQuestAvailable 314
 step
     #completewith next
     #requires Dirt
     +|cRXP_WARN_ 风筝 |cRXP_ENEMY_瓦加什|r 下行至|r |cRXP_FRIENDLY_鲁德拉·冻石|r
-    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>|cRXP_WARN_CLICK HERE If you're struggling|r << Mage
+    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
     .mob Vagash
 step
@@ -4542,7 +4542,7 @@ step
     .goto 1426,62.434,48.989,40,0
     .goto 1426,62.538,46.195
     >>击杀 |cRXP_ENEMY_瓦加什|r。拾取他的 |cRXP_LOOT_利牙|r
-    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
+    >>|cRXP_WARN_风筝他到农场南边的守卫处。确保对他造成 51% 以上的伤害|r
     >>|cRXP_WARN_请先看以下的短视频，然后再击杀 |cRXP_ENEMY_瓦加什|r。任何职业都可以单刷它|r
     .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
@@ -4571,7 +4571,7 @@ step
 step
     .goto Dun Morogh,68.379,54.492
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师格瑞姆|r 对话
-    .train 2550 >> Train |T133971:0|t[Cooking]
+    .train 2550 >>学习 |T133971:0|t[烹饪]
     .target Cook Ghilm
     .money <0.0100
 step
@@ -4656,7 +4656,7 @@ step
     #optional
     #label RidgeRamp
     .goto 1426,42.935,45.216,20,0
-    .goto 1426,42.254,45.301,15 >> Travel up the ramp to Shimmer Ridge
+    .goto 1426,42.254,45.301,15 >>跑上斜坡，前往闪光岭
 step
     #optional
     #requires RidgeRamp
@@ -4777,8 +4777,8 @@ step
     .isOnQuest 287
 step
     .goto Dun Morogh,22.86,52.16
-    >>|cRXP_WARN_Drop down into the small dead-end room of the cave|r
-    >>|cRXP_WARN_Don't worry about dying to do this as you're about to deathskip back to Kharanos|r
+    >>|cRXP_WARN_跳入洞穴里的小死胡同|r
+    >>|cRXP_WARN_不必担心死亡，你即将通过死亡回到卡拉诺斯|r
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #optional
@@ -4853,7 +4853,7 @@ step << Hunter
     .goto Dun Morogh,49.0,44.6,30,0
     .goto Dun Morogh,45.7,42.2,30,0
     +|cRXP_WARN_施放|r |T132164:0|t[Tame Beast] |cRXP_WARN_on an |cRXP_ENEMY_冰爪熊|r or |cRXP_ENEMY_冬狼|r to tame it on the way to Ironforge|r
-    >>|cRXP_WARN_It isn't important which one you tame as you'll tame a new pet shortly in Darkshore. Skip this step once you've tamed a pet|r
+    >>|cRXP_WARN_不必在意当前驯服哪只宠物，你很快将在黑海岸驯服新宠。完成后跳过此步骤。|r
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan Ice Claw Bear
     .unitscan Winter Wolf

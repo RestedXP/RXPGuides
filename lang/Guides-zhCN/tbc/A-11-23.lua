@@ -21,7 +21,7 @@ step << !NightElf
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r on the bottom floor of the barracks
-    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r << Hunter
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒] << Hunter
     .vendor 1448 >>|cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
 	.target Neal Allen
     .money <0.08 << !Hunter
@@ -73,7 +73,7 @@ step << !NightElf
     .skill cooking,<1,1 -- shows if cooking is >1
 step << !NightElf
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
@@ -86,7 +86,7 @@ step << !NightElf
     .skill cooking,<1,1 -- shows if cooking is >1
 step << !NightElf
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
@@ -97,7 +97,7 @@ step << !NightElf
     .skill cooking,<1,1 -- shows if cooking is >1
 step << !NightElf
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     .usespell 2550
     .zoneskip Darkshore
@@ -109,14 +109,14 @@ step << !NightElf
 step << !NightElf
     #optional
     .goto 1437,4.370,56.762
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore|r
-    .zone Darkshore >> Take the boat to Darkshore
+    >>|cRXP_WARN_在等待前往黑海岸的船只时提升你的|r |T135966:0|t[急救] |cRXP_WARN_技能|r
+    .zone Darkshore >>乘船前往黑海岸
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << !NightElf
     #label DarkshoreBoat
     .goto 1437,4.370,56.762
-    .zone Darkshore >> Take the boat to Darkshore
+    .zone Darkshore >>乘船前往黑海岸
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
@@ -130,7 +130,7 @@ step
     #completewith BuzzBox1 << !NightElf
     .goto 1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r
-    >>|cRXP_WARN_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him|r
+    >>|cRXP_WARN_从他那里|r|cRXP_WARN_购买最多 20 条|r |T133918:0|t[长嘴泥鳅]
     .turnin 6342 >>交任务 飞往奥伯丁 << NightElf
     .collect 4592,15 --Longjaw Mud Snapper
     .target Laird
@@ -145,7 +145,7 @@ step
     .target Wizbang Cranktoggle
 step
     .goto Darkshore,37.04,44.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板莎希因|r 交谈
     .home >>将你的炉石设置为暮色森林
     .target Innkeeper Shaussiy
     .bindlocation 442
@@ -200,7 +200,7 @@ step << Dwarf Hunter
     .goto Darkshore,40.77,78.56,40,0
     .goto Darkshore,38.21,73.32,40,0
     >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_蓟熊|r. Once your pet is stunned by the |cRXP_ENEMY_蓟熊|r, abandon your pet and start taming it|r
-    .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
+    .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
     .link https://www.wow-petopia.com/classic/training.php >>点击此处获取更多关于宠物训练的信息：https://www.wow-petopia.com/classic/training.php
     .target Thistle Bear
 step
@@ -254,7 +254,7 @@ step
     .use 7586
 step
     .goto Darkshore,38.90,53.59
-    >>Run toward the edge of the Furbolg Camp
+    >>朝熊怪营地的边缘跑去
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #optional
@@ -263,7 +263,7 @@ step
 step
     #label Auber1
     #completewith next
-    .subzone 442 >> Travel to Auberdine
+    .subzone 442 >>前往奥伯丁
 step
     #requires BuzzBox1
     .goto 1439,36.634,46.250
@@ -287,7 +287,7 @@ step
     .goto 1439,32.432,43.744,15 >>前往码头尽头，然后跳入水中
 step
     .goto 1439,31.841,46.304
-    >>Open the |cRXP_PICK_Skeletal Sea Turtle|r. Loot it for the |cRXP_LOOT_Sea Turtle Remains|r
+    >>打开 |cRXP_PICK_海龟骨头|r，拾取其中的 |cRXP_LOOT_海龟的残骸|r
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     .goto 1439,36.701,45.122,8,0
@@ -351,7 +351,7 @@ step << Druid
     #completewith next
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    >>|cRXP_WARN_Enter the Moonkin Cave|r
+    >>|cRXP_WARN_进入枭兽洞穴|r
     .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon|r |cRXP_ENEMY_月爪枭兽|r
     .use 15208
 step << Druid
@@ -364,7 +364,7 @@ step << Druid
     .target Lunaclaw Spirit
 step << !Dwarf/!Hunter
     .goto 1439,47.314,48.676
-    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
+    >>前往 |cRXP_PICK_神秘的红色水晶|r 处
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step
@@ -376,7 +376,7 @@ step
     .goto Darkshore,45.51,48.93,55,0
     .goto Darkshore,42.47,45.36,55,0
     >>击杀 |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[小蛋]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 10 later|r
+    >>|cRXP_WARN_这将在之后用于将你的|r |T133971:0|t[烹饪] |cRXP_WARN_提升至 10 级|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -464,7 +464,7 @@ step
     .isQuestTurnedIn 956
 step
     #optional
-    .abandon 956 >> Abandon Bashal'Aran
+    .abandon 956 >>放弃任务 巴莎兰
 step << !Draenei
     .goto 1439,53.4,28.8,0
     .goto 1439,54.8,22.8,0
@@ -472,14 +472,14 @@ step << !Draenei
     .goto 1439,49.8,32.8,0
     #completewith HSAuber
     >>击杀 |cRXP_ENEMY_狂暴蓟熊|r
-    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    >>|cRXP_WARN_小心，它们会施放|r |T135914:0|t[狂犬病] |cRXP_WARN_如果你没有足够快击杀它们（瞬发近战：在 10 分钟内减少所有生命恢复 50%）|r
     >>|cRXP_WARN_如果你没有 |cRXP_ENEMY_狂暴蓟熊|r 可击杀，请跳过此步骤，稍后会完成。|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
     .zoneskip Darkshore,1 << Druid
 step << !Draenei
     .goto Darkshore,50.81,25.50
-    .use 12350 >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
+    .use 12350 >>|cRXP_WARN_使用|r |T134865:0|t[空的水样试管] |cRXP_WARN_在峭壁之泉河的河底使用|r
     .complete 4762,1 --Cliffspring River Sample (1)
 step << Druid
 	#completewith next
@@ -497,7 +497,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >> Take the purple portal into Darnassus
+    .zone Darnassus >>进入通往达纳苏斯的紫色传送门
 step << Druid
     .isQuestComplete 6001
     .goto Darnassus,35.375,8.405
@@ -528,7 +528,7 @@ step
     #optional
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔博德·钢手|r
-    .vendor 6301 >>|cRXP_BUY_Buy|r |T134059:0|t[Mild Spices] |cRXP_BUY_from him until you have|r |T134059:0|t[Mild Spices] |cRXP_BUY_equal or more than the amount of|r |T132832:0|t[Small Eggs] |cRXP_BUY_that you currently have|r
+    .vendor 6301 >>|cRXP_BUY_从他那里购买|r |T134059:0|t[甜香料] |cRXP_BUY_，直到你拥有的|r |T134059:0|t[甜香料] |cRXP_BUY_数量等于或多于你当前拥有的|r |T132832:0|t[小蛋] |cRXP_BUY_数量|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
     .collect 6889,50,90,1,0x20,cooking --Small Egg (1-50)
@@ -540,10 +540,10 @@ step
     .isQuestAvailable 2178
 step
     .goto 1439,37.511,41.670
-    >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r
+    >>|cRXP_WARN_朝地面上的 |cRXP_PICK_营火|r 前进|r
     +|cRXP_WARN_Start|r |T133971:0|t[烹饪] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[烹饪]|cRXP_WARN_has reached at least level 10|r
-    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_ until you run out of|r |T132832:0|t[Small Eggs] << !sod
-    >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r << !sod
+    >>|cRXP_WARN_继续提升你的|r |T133971:0|t[烹饪] |cRXP_WARN_技能，直到你用完|r |T132832:0|t[小蛋] << !sod
+    >>|cRXP_WARN_之后在暮色森林有一个任务需要你的|r |T133971:0|t[烹饪] |cRXP_WARN_达到 50 或更高。你也可以在稍后上船时烹饪这些|r << !sod
     .skill cooking,50,1
     .skill cooking,<1,1 -- shows if cooking is >1
     .itemcount 6889,1 -- Small Egg (1+)
@@ -581,17 +581,17 @@ step
     .skill cooking,<10,1
 step << Dwarf Hunter
     .goto 1439,47.314,48.676
-    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
+    >>前往 |cRXP_PICK_神秘的红色水晶|r 处
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << !Dwarf/!Hunter
     .goto 1439,37.767,44.001
-    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
+    >>|cRXP_WARN_使用|r |T134865:0|t[空水瓶] |cRXP_WARN_在奥伯丁的月亮井处使用|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
 step << !Dwarf/!Hunter
     .goto 1439,47.314,48.676
-    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
+    >>点击 |cRXP_PICK_神秘的红色水晶|r
     >>|cRXP_WARN_Be careful of the two groups of |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r when you click it as they can agro together|r
     .turnin 4812 >>交任务《 前往熔光镇》 清洗水晶
     .accept 4813 >>接受任务《物归己用》 水晶中的碎骨
@@ -613,7 +613,7 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>击杀 |cRXP_ENEMY_安娜雅·晨路|r，从她身上拾取 |cRXP_LOOT_吊坠|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawn locations in Ameth'Aran|r
+    >>|cRXP_WARN_注意她在阿梅斯阿兰有 7–8 分钟的刷新时间，并且有 4 个不同的刷新位置|r
     >>如果你找不到她，可以考虑与附近的玩家组队。在综合频道 (/1) 询问是否有其他也在找她的人一起组队。如果实在找不到她，请跳过此步骤
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
@@ -653,7 +653,7 @@ step
     .isOnQuest 953
 step
     .goto 1439,42.373,61.815
-    >>Click the |cRXP_PICK_Ancient Flame|r
+    >>点击 |cRXP_PICK_远古之焰|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
     .isOnQuest 957
 step
@@ -810,7 +810,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南 （联盟版）
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 14-20秘血岛
 #subgroup RestedXP 联盟 1-20 级
@@ -854,7 +854,7 @@ step << Hunter
     .goto The Exodar,44.240,86.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_甘纳尔|r 对话
 	.train 4188 >>训练 |T136112:0|t[持久耐力]
-    .train 24549 >> Train |T136094:0|t[Natural Armor]
+    .train 24549 >>训练 |T136094:0|t[自然护甲]
     .target Ganaar
 step << Shaman
     .goto The Exodar,32.450,23.996
@@ -2835,7 +2835,7 @@ step
     #optional
     #completewith DeadminesEnd
     .goto 1436,38.909,84.014
-    .subzone 920 >>Exit the Deadmines via the back exit east of |cRXP_ENEMY_Edwin VanCleef|r
+    .subzone 920 >>从 |cRXP_ENEMY_艾德温·范克里夫|r 东侧的后门离开死亡矿井
     .zoneskip Stormwind City
     .zoneskip Westfall
     .zoneskip 1415

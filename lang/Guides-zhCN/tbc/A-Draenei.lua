@@ -356,7 +356,7 @@ step
 step
 	#completewith next
     .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
-    >>Stand on top of nearby bonfires to take addition damage if required
+    >>如果需要，站在附近的篝火上承受额外伤害
 step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
@@ -485,14 +485,14 @@ step
 step
     .isOnQuest 9452
     .goto Azuremyst Isle,62.38,51.93,40,0
-    .goto Azuremyst Isle,61.87,41.62,60 >> |cRXP_WARN_Swim north up the river|r
+    .goto Azuremyst Isle,61.87,41.62,60 >>|cRXP_WARN_沿着河向北游|r
     .use 23654 >>|cRXP_WARN_Use the|r |T134325:0|t[Draenei Fishing Net]|cRXP_WARN_on|r|cRXP_PICK_Schools of Red Snapper|r|cRXP_WARN_you see along the way. Skip this step once you get to the top of the river, you'll complete it later|r
 	.collect 23614,10 -- Red Snapper (10)
     .disablecheckbox
 step
 	#completewith next
     >>|cRXP_WARN_Keep an eye out for a|r |cRXP_FRIENDLY_年幼的德莱尼人|r
-    >>|cRXP_WARN_While they are in combat, cast|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on them, then accept the quest|r
+    >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
 	.accept 9612 >>接受任务《物归己用》 非常感谢！
 	.unitscan Draenei Youngling
 step
@@ -506,7 +506,7 @@ step
 	#completewith NightstalkerCleanUp
     .goto Azuremyst Isle,56.1,39.3
     .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
-    >>|cRXP_WARN_Ensure to die near the pond close to the mountain side|r
+    >>|cRXP_WARN_确保死在靠山一侧的池塘附近|r
 step
     #completewith NightstalkerCleanUp
     .subzone 3576 >>前往血环堡
@@ -612,7 +612,7 @@ step << Warrior/Paladin
 step
 	#completewith level8
     >>|cRXP_WARN_Keep an eye out for a|r |cRXP_FRIENDLY_年幼的德莱尼人|r
-    >>|cRXP_WARN_While they are in combat, cast|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on them, then accept the quest|r
+    >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
 	.accept 9612 >>接受任务《物归己用》 非常感谢！
 	.unitscan Draenei Youngling
 step
@@ -717,12 +717,12 @@ step
 step
     #label level8
 	.xp 8-950 >>击杀 ，直到 you are 950xp away from level 8 (3550/4500)
-    >>|cRXP_WARN_Try to finish near Azure Watch|r
+    >>|cRXP_WARN_尽量在碧蓝岗哨附近完成|r
 step
 	#completewith next
     .goto Azuremyst Isle,49.780,51.938
     .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
-    >>|cRXP_WARN_Skip this step if you are already close to Azure Watch|r
+    >>|cRXP_WARN_如果你已经离碧蓝岗哨很近了，就跳过这一步|r
     .subzoneskip 3576
 step
 	.goto Azuremyst Isle,49.780,51.938
@@ -769,7 +769,7 @@ step
     .accept 9538 >>接受任务《物归己用》 学外语……
     .target Cryptographer Aurren
 step
-	.use 23818 >>|cRXP_WARN_Use the|r |T133741:0|t[Stillpine Furbolg Language Primer]
+	.use 23818 >>|cRXP_WARN_使用|r |T133741:0|t[止松熊怪语言入门]
     .complete 9538,1 --Stillpine Furbolg Language Primer Read
 step
     .goto Azuremyst Isle,49.439,50.977
@@ -804,7 +804,7 @@ step << Warrior
 step
 	#completewith AncientRelics
     >>|cRXP_WARN_Keep an eye out for a|r |cRXP_FRIENDLY_年幼的德莱尼人|r
-    >>|cRXP_WARN_While they are in combat, cast|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on them, then accept the quest|r
+    >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
 	.accept 9612 >>接受任务《物归己用》 非常感谢！
 	.unitscan Draenei Youngling
 step
@@ -824,7 +824,7 @@ step
     .target Totem of Coo
 step
     #completewith next
-    .goto Azuremyst Isle,54.531,40.493,10 >> |cRXP_WARN_Carefully drop down the side of the mountain here|r
+    .goto Azuremyst Isle,54.531,40.493,10 >>|cRXP_WARN_沿着山边小心下落|r
 step
     #loop
     .goto Azuremyst Isle,51.9,32.4,0
@@ -839,7 +839,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提克提图腾|r 对话
     .turnin 9540 >>交任务《 前往熔光镇》 提克提图腾
     .accept 9541 >>接受任务《物归己用》 尤尔图腾
-    .timer 30,Totem of Yor RP
+    .timer 30,尤尔图腾剧情演出
     .target Totem of Tikti
 step
     .isOnQuest 9541
@@ -861,7 +861,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与水底下的 |cRXP_FRIENDLY_尤尔图腾|r 对话
     .turnin 9541 >>交任务《 前往熔光镇》 尤尔图腾
     .accept 9542 >>接受任务《物归己用》 瓦克图腾
-    .timer 71,Totem of Vark RP
+    .timer 71,瓦克图腾剧情演出
     .target Totem of Yor
 step
     .isOnQuest 9542
@@ -869,7 +869,7 @@ step
     .aura 30448 >>|cRXP_WARN_跟随|r |cRXP_FRIENDLY_Stillpine Ancestor Yor|r|cRXP_WARN_. He will buff you with|r |T132142:0|t[Shadow of the Forest] |cRXP_WARN_which grants increased movement speed and invisibility|r
 step
     #completewith next
-    .goto Azuremyst Isle,28.115,62.391,30 >> |cRXP_WARN_Travel to western Azuremyst Isle|r
+    .goto Azuremyst Isle,28.115,62.391,30 >>|cRXP_WARN_前往秘蓝岛西部|r
 step
     .goto Azuremyst Isle,28.115,62.391
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦克图腾|r 对话
@@ -878,7 +878,7 @@ step
     .target Totem of Vark
 step
     .aura -30448
-    +|cRXP_WARN_Click off the|r |T132142:0|t[Shadow of the Forest] |cRXP_WARN_buff|r
+    +|cRXP_WARN_点掉|r |T132142:0|t[森林之影] |cRXP_WARN_buff|r
 step
     #loop
     .goto Azuremyst Isle,27.43,63.24,0
@@ -940,18 +940,18 @@ step
     .complete 9523,1 --Collect Ancient Relic (x8)
 step
     #completewith next
-    .subzone 3579 >> Swim across to Traitor's Cove
+    .subzone 3579 >>游往叛徒湾
 step
     .isOnQuest 9531
     .goto Azuremyst Isle,18.473,84.349
-    .cast 30298 >> |cRXP_WARN_Use the|r |T132288:0|t[Tree Disguise Kit] |cRXP_WARN_at the naga flag|r
-    .timer 73,Tree's Company RP
+    .cast 30298 >>|cRXP_WARN_在娜迦旗帜处|r|cRXP_WARN_使用|r |T132288:0|t[树伪装工具包]|r
+    .timer 73,间谍之树剧情表演
     .use 23792
 step
     >>|cRXP_WARN_等待剧情演出完成|r
     .complete 9531,1 -- The Traitor Uncovered 
 step
-    +|cRXP_WARN_Click off the|r |T132288:0|t[Tree Disguise] |cRXP_WARN_buff|r
+    +|cRXP_WARN_点掉|r |T132288:0|t[大树伪装] |cRXP_WARN_增益|r
     .aura -30298
 step
     .goto Azuremyst Isle,16.587,94.450
@@ -999,7 +999,7 @@ step
     #completewith next
     .goto Azuremyst Isle,46.219,70.983
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛根·丹尼尔|r 对话
-    .vendor >> |cRXP_WARN_Vendor trash while waiting for the RP to finish|r << !Hunter
+    .vendor >>|cRXP_WARN_剧情播放期间，出售垃圾物品|r << !Hunter
     >>|cRXP_BUY_Buy more stacks of|r |T132382:0|t[劣质箭]|cRXP_BUY_from him while waiting for the RP to finish|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Logan Daniel
@@ -1134,7 +1134,7 @@ step << Hunter
     .mob Warlord Sriss'tiz
 step << Hunter
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
+    .goto Azuremyst Isle,26.75,75.84,10 >>离开海潮洞窟
     .subzoneskip 3569,1
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
@@ -1175,7 +1175,7 @@ step << Hunter
     .target Huntress Kella Nightbow
 step << Hunter
     .isOnQuest 9675
-    .goto Azuremyst Isle,24.6,49.0,20 >>Enter The Exodar through the backdoor
+    .goto Azuremyst Isle,24.6,49.0,20 >>从后门进入埃索达
 step << Hunter
 	.goto The Exodar,53.79,86.11,30,0
     .goto The Exodar,44.240,86.612
@@ -1281,7 +1281,7 @@ step
 step
     #completewith next
     .isOnQuest 9573,9565
-    .goto Azuremyst Isle,47.453,16.078,10 >> Head to the upper section of the cave
+    .goto Azuremyst Isle,47.453,16.078,10 >>前往洞穴的上层
 step
 	.goto Azuremyst Isle,47.394,14.121
     >>击杀 |cRXP_ENEMY_欧莫鲁酋长|r 
@@ -1316,7 +1316,7 @@ step
     #completewith next
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r << !Shaman
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r。拾取他们的 |cRXP_LOOT_Ritual Torch|r << Shaman
-    >>|cRXP_WARN_You will finish this shortly if you havn't yet|r
+    >>|cRXP_WARN_如果你还没完成，很快就会完成|r
     .complete 9573,2 --Kill Crazed Wildkin (x9)
     .complete 9465,1 << Shaman --Collect Ritual Torch (x1)
     .mob Crazed Wildkin
@@ -1339,11 +1339,11 @@ step
     .goto Azuremyst Isle,46.972,22.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_启示者库尔兹|r 对话
     .target Kurz the Revelator
-    .accept 9570 >> Accept The Kurken is Lurkin'
+    .accept 9570 >>接受任务 可怕的库肯
 step
 	.goto Azuremyst Isle,46.964,22.011
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕卡特·钢皮|r 对话
-    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] 
+    .vendor >>|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] 
     .target Parkat Steelfur
     .subzoneskip 3572,1
 step
@@ -1359,7 +1359,7 @@ step
 step
     .goto Azuremyst Isle,48.26,13.78,10,0
     .goto Azuremyst Isle,49.9,12.8
-	>>Kill |cRXP_ENEMY_The Kurken|r. Loot him for his |cRXP_LOOT_Hide|r
+	>>击杀 |cRXP_ENEMY_库肯|r，拾取他的 |cRXP_LOOT_毛皮|r
     .complete 9570,1 --Collect The Kurken's Hide (x1)
     .mob The Kurken
 step
@@ -1379,7 +1379,7 @@ step
     .goto Azuremyst Isle,46.972,22.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_启示者库尔兹|r 对话
     .target Kurz the Revelator
-    .turnin 9570 >> Turn in The Kurken is Lurkin'
+    .turnin 9570 >>交任务 可怕的库肯
     .accept 9571 >>接受任务《物归己用》 库肯的毛皮
 step << Shaman
     .goto Azuremyst Isle,46.685,20.617
@@ -1411,7 +1411,7 @@ step << Shaman
     .subzone 3639 >>前往暴风城大教堂内，与 Silvermyst Isle
 step << Shaman
     #completewith Wickerman
-    .use 24336 >>Open the |T133655:0|t[Fireproof Satchel] for the |T135432:0|t[Ritual Torch]
+    .use 24336 >>打开 |T133655:0|t[防火背包]，获取 |T135432:0|t[仪祭火炬]
     .complete 9467,2 --Collect Ritual Torch (x1)
 step << Shaman
     #completewith Wickerman
@@ -1420,12 +1420,12 @@ step << Shaman
 step << Shaman
     #label Wickerman
     .goto Azuremyst Isle,11.442,82.273
-    >>Kill |cRXP_ENEMY_Hauteur|r. Loot him for his |cRXP_LOOT_Ashes|r
+    >>击杀 |cRXP_ENEMY_赫图尔|r。拾取他的 |cRXP_LOOT_灰烬|r
     .complete 9467,1 --Collect Hauteur's Ashes (x1)
     .mob Hauteur
 step << Shaman
     #completewith next
-    .cast 31613 >>|cRXP_WARN_Use the|r |T134337:0|t[Orb of Returning] |cRXP_WARN_to teleport back to Emberglade|r
+    .cast 31613 >>|cRXP_WARN_使用|r |T134337:0|t[回归宝珠] |cRXP_WARN_传送回灰烬林地|r
     .use 24335
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
@@ -1515,10 +1515,10 @@ step
     .goto Bloodmyst Isle,63.5,83.8,60,0
     .goto Bloodmyst Isle,67.7,87.6,60,0
     .goto Bloodmyst Isle,72.7,80.9,60,0
-    .xp 12-2000 >> |cRXP_WARN_Grind until you are 2000xp away from level 12 (6800/8800)|r
+    .xp 12-2000 >>|cRXP_WARN_练怪直到距离 12 级还有2000 经验 (6800/8800)|r
     >>击杀 |cRXP_ENEMY_秘血幼崽|r
 	>>拾取散发绿光的 |cRXP_LOOT_Sand Pears|r on the ground
-    >>|cRXP_WARN_Once you have reached the xp needed, continue with the guide|r
+    >>|cRXP_WARN_满足经验要求后，请继续跟随指南|r
     .complete 9634,1 --Kill Bloodmyst Hatchling (x10)
     .mob Bloodmyst Hatchling
     .disablecheckbox
@@ -1536,7 +1536,7 @@ step
     .goto Bloodmyst Isle,55.843,59.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托菲尔·罗阿|r 对话
     .target Caregiver Topher Loaal
-    >>|cRXP_BUY_Buy up to 40|r |T133918:0|t[Longjaw Mud Snapper] |cRXP_BUY_from him|r << Warrior
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买最多 40 条|r |T133918:0|t[长嘴泥鳅] << Warrior
     >>|cRXP_BUY_从他那里购买40杯|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少买多少|r << Mage/Priest/Hunter
     >>|cRXP_BUY_Buy up to 40|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133918:0|t[Longjaw Mud Snapper] |cRXP_BUY_from him|r << Paladin/Shaman
     .collect 1179,35 << !Warrior !Rogue --Ice Cold Milk (35)
@@ -1641,10 +1641,10 @@ step
     .goto Bloodmyst Isle,63.5,83.8,60,0
     .goto Bloodmyst Isle,67.7,87.6,60,0
     .goto Bloodmyst Isle,72.7,80.9,60,0
-    .xp 12-2000 >> |cRXP_WARN_Grind until you are 2000xp away from level 12 (6800/8800)|r
+    .xp 12-2000 >>|cRXP_WARN_练怪直到距离 12 级还有2000 经验 (6800/8800)|r
     >>击杀 |cRXP_ENEMY_秘血幼崽|r
 	>>拾取散发绿光的 |cRXP_LOOT_Sand Pears|r on the ground
-    >>|cRXP_WARN_Once you have reached the xp needed, continue with the guide|r
+    >>|cRXP_WARN_满足经验要求后，请继续跟随指南|r
     .complete 9634,1 --Kill Bloodmyst Hatchling (x10)
     .mob Bloodmyst Hatchling
     .disablecheckbox
@@ -1653,7 +1653,7 @@ step
 step
 	#completewith grind3800
 	>>拾取散发绿光的 |cRXP_LOOT_Sand Pears|r on the ground
-    >>|cRXP_WARN_They can be hard to spot, check around trees|r
+    >>|cRXP_WARN_它们不易被发现，查看树周围|r
     .complete 9624,1 --Collect Sand Pear (x10)
 step
     #loop
@@ -1695,7 +1695,7 @@ step
     .goto Bloodmyst Isle,67.7,87.6,60,0
     .goto Bloodmyst Isle,72.7,80.9,60,0
 	>>拾取散发绿光的 |cRXP_LOOT_Sand Pears|r on the ground
-    >>|cRXP_WARN_They can be hard to spot, check around trees|r
+    >>|cRXP_WARN_它们不易被发现，查看树周围|r
     .complete 9624,1 --Collect Sand Pear (x10)
 step
     .goto Bloodmyst Isle,63.426,88.787
@@ -1720,7 +1720,7 @@ step
     .goto Azuremyst Isle,49.40,23.09,80,0
     .goto Azuremyst Isle,46.685,20.617
 	.subzone 3572 >>|cRXP_WARN_不要与任何怪物交战、攻击或施放任何法术，否则你会被强制下坐骑！如果被身后攻击触发迷惑，同样也会被强制下坐骑！|r
-    *|cRXP_WARN_This is also a timed quest! You have 15 minutes to complete it and turn it in|r
+    *|cRXP_WARN_这也是一个限时任务！你有 15 分钟来完成并提交它|r
     *|cRXP_WARN_Follow the road south to get to |cRXP_FRIENDLY_止松老酋长|r safely|r
 step
     .goto Azuremyst Isle,46.685,20.617
@@ -1737,7 +1737,7 @@ step
 step
     .goto Azuremyst Isle,49.25,49.53
     .isOnQuest 9663
-    .subzone 3576 >> |cRXP_WARN_Continue following the road south to Azure Watch|r
+    .subzone 3576 >>|cRXP_WARN_继续沿路南行，前往碧蓝岗哨|r
 step << Mage
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞米德|r 对话
@@ -1800,7 +1800,7 @@ step
 step
     #completewith next
     .isOnQuest 9663
-    .subzone 3573 >> |cRXP_WARN_Continue following the road south to Odesyus' Landing|r
+    .subzone 3573 >>|cRXP_WARN_继续沿路南行，前往奥德修斯营地|r
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
@@ -1814,7 +1814,7 @@ step
 step << Paladin
     #completewith next
     .goto Azuremyst Isle,24.6,49.0,20,0
-    .goto The Exodar,42.90,67.67,15 >>Enter The Exodar through the backdoor
+    .goto The Exodar,42.90,67.67,15 >>从后门进入埃索达
 step << Paladin
     .goto The Exodar,38.367,82.564
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
@@ -2064,7 +2064,7 @@ step
 	.goto Bloodmyst Isle,53.319,56.672
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比迦|r
     .target Beega
-	.vendor >> |cRXP_WARN_Vendor and Repair|r << !Hunter
+	.vendor >>|cRXP_WARN_出售物品并修理装备|r << !Hunter
 	.vendor >>|cRXP_BUY_Buy a|r |T134410:0|t[Medium Quiver] |cRXP_WARN_and restock on|r |T132382:0|t[锋利的箭] << Hunter
     .collect 11362,1 << Hunter
     .subzoneskip 3584,1
@@ -2219,7 +2219,7 @@ step
     .goto Bloodmyst Isle,55.843,59.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托菲尔·罗阿|r 对话
     .target Caregiver Topher Loaal
-    >>|cRXP_BUY_Buy up to 40|r |T133918:0|t[Longjaw Mud Snapper] |cRXP_BUY_from him|r << Warrior
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买最多 40 条|r |T133918:0|t[长嘴泥鳅] << Warrior
     >>|cRXP_BUY_Buy up to 40|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Mage/Priest/Hunter
     >>|cRXP_BUY_Buy up to 40|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133918:0|t[Longjaw Mud Snapper] |cRXP_BUY_from him|r << Paladin/Shaman
     .collect 1205,35 << !Warrior !Rogue --Melon Juice (35)
@@ -2314,7 +2314,7 @@ step
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step << !Warrior
     #completewith Atoph
-    .subzone 3612 >> Swim south to Bloodcurse Isle
+    .subzone 3612 >>向南游，前往血咒岛
 step << !Warrior
     #completewith Atoph
     .goto Bloodmyst Isle,83.58,55.21,20,0
@@ -3263,10 +3263,10 @@ step
     .target Prince Toreth
 step
     #optional
-	.abandon 9711 >> Abandon Matis the Cruel if you did not complete it
+	.abandon 9711 >>如果你没有完成 残忍的玛提斯，请放弃该任务
 step
     #optional
-	.abandon 9689 >> Abandon Razormaw if you did not complete it
+	.abandon 9689 >>如果你没有完成 刺喉，请放弃该任务
 step << Hunter/Shaman/Mage
     .xp 20 >>击杀 to level 20
 step
@@ -3681,7 +3681,7 @@ step
     .goto StormwindClassic,66.276,62.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r
     .fp Stormwind >>获取暴风城的飞行路径 << !Human
-    .fly Westfall >> Fly to Westfall if you just came from Westfall, otherwise run there
+    .fly Westfall >>如果你刚从西部荒野来，就飞回去，否则就跑过去
     .disablecheckbox
     .target Dungar Longdrink
     .zoneskip Westfall
@@ -4018,13 +4018,13 @@ step
 step
     .goto Darkshore,38.83,29.37,10,0
     .goto Darkshore,38.236,28.800
-    >>|cRXP_WARN_Enter the wrecked Silver Dawning ship through the broken hull on the bottom. Make sure you have a full breath bar before diving down and entering|r
+    >>|cRXP_WARN_从破损船底进入 “银色清晨号”。潜入前确保你的呼吸条已满|r
     >>拾取散发绿光的 |cRXP_LOOT_Silver Dawning's Lockbox|r on the ground
     .complete 982,1 --Collect Silver Dawning's Lockbox (x1)
 step
     .goto Darkshore,40.30,27.56,10,0
     .goto Darkshore,39.633,27.459
-    >>|cRXP_WARN_Enter the wrecked Mist Veil ship through the broken hull on the bottom. Make sure you have a full breath bar before diving down and entering|r
+    >>|cRXP_WARN_从破损船底进入 “迷雾之纱号”。潜入前确保你的呼吸条已满|r
     >>拾取散发绿光的 |cRXP_LOOT_Mist Veil's Lockbox|r on the ground
     .complete 982,2 --Collect Mist Veil's Lockbox (x1)
 step
@@ -4148,8 +4148,8 @@ step
     .goto 1439,55.108,33.600,40 >>前往暴风城大教堂内，与 the Cliffspring River Cave
 step
     >>拾取散发绿光的 |cRXP_LOOT_Scaber Stalks|r 和 a |cRXP_LOOT_Death Cap|r on the ground
-    >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
+    >>|cRXP_WARN_待在上层区域。如果上侧尽头没有 |cRXP_LOOT_毒帽蘑菇|r，就跳下去到下方南侧的房间获取一个|r
+    >>|cRXP_WARN_小心 |cRXP_ENEMY_雷鳞御浪者|r 会施放|r |T135836:0|t[水流喷射] |cRXP_WARN_（远程瞬发：对附近敌人造成伤害并将其击退）——确保你站在不会被击退到洞穴下层的位置|r
     .complete 947,1 --Scaber Stalk (5)
     .goto Darkshore,55.04,33.34,8,0
     .goto Darkshore,55.28,34.00,8,0
@@ -4318,7 +4318,7 @@ step
 step
     .goto Darkshore,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r
-    >>|cRXP_WARN_This will start an escort. You may have to wait for him to respawn or for others to finish the escort|r
+    >>|cRXP_WARN_这将开始一个护送任务。你可能需要等待他重新刷新，或等其他玩家完成护送|r
     .turnin 729 >>交任务《 前往熔光镇》 健忘的勘察员
     .accept 731,1 >>接受任务《物归己用》 健忘的勘察员
     .target Prospector Remtravel
@@ -4331,7 +4331,7 @@ step
 step
     #optional
     #completewith next
-    .cast 5809 >> |cRXP_WARN_Use the|r |T134715:0|t[Phial of Scrying] |cRXP_WARN_and place it on the ground|r
+    .cast 5809 >>|cRXP_WARN_使用|r |T134715:0|t[占卜之水] |cRXP_WARN_并将其放置在地面上|r
     .use 5251
 step
     .goto Darkshore,38.537,86.050
@@ -4346,7 +4346,7 @@ step
 step
     #optional
     #sticky
-    .destroy 5251 >> Delete the |T134715:0|t[Phial of Scrying], as it's no longer needed
+    .destroy 5251 >>删除 |T134715:0|t[占卜之水]，你已不再需要
 step
     .goto Darkshore,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_瑟瑞露尼|r. This will start an escort
@@ -4400,7 +4400,7 @@ step
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
     >>Open the |cRXP_PICK_Plant Bundles|ron the ground.拾取地上的 them for |cRXP_LOOT_巴斯兰的头发|r
-    >>|cRXP_WARN_They look like small brown sacks. They can be hard to see|r
+    >>|cRXP_WARN_它们看起来像小棕色袋子，不容易看见|r
     .complete 1010,1
     .isOnQuest 1010
 step
@@ -4723,7 +4723,7 @@ step << Shaman
     .complete 1034,1
 step << Shaman
     .goto Ashenvale,33.547,67.474
-    .use 23749 >> |cRXP_WARN_Use the|r |T132825:0|t[Empty Bota Bag] |cRXP_WARN_at the Ruins of Stardust small fountain|r
+    .use 23749 >>|cRXP_WARN_在星尘废墟的小喷泉处|r|cRXP_WARN_使用|r |T132825:0|t[空的波涛之袋]
     .complete 9504,1 --Collect Filled Bota Bag (x1)
 step
     .goto Ashenvale,33.30,67.79
