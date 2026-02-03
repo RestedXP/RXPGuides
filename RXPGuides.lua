@@ -2060,7 +2060,7 @@ function addon.stepLogic.SeasonCheck(step)
 end
 
 function addon.stepLogic.HardcoreCheck(step)
-    local hc = addon.settings.profile.hardcore
+    local hc = addon.settings.profile.hardcore or (step.elements and addon.currentGuide and addon.currentGuide.hardcore)
     local hcserver = C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()
     if step.softcoreserver and hcserver or step.hardcoreserver and not hcserver then return false end
     if step.softcore and hc or step.hardcore and not hc then return false end
