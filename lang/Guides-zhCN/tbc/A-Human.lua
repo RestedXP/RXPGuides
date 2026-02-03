@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 1-11级 艾尔文森林
 #subgroup RestedXP 联盟 1-20 级
@@ -2432,7 +2432,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 11-12级 洛克莫丹 << !Warlock
 #name 12-14级 洛克莫丹 << Warlock
@@ -3045,7 +3045,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance Warlock
 #name 12-14 黑海岸
 #subgroup RestedXP 联盟 1-20 级

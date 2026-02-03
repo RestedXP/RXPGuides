@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 1-6 Mulgore
 #version 7
@@ -445,7 +445,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 6-10 Mulgore
 #version 7
@@ -1951,7 +1951,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 10-13 Mulgore
 #version 7

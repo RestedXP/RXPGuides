@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-#group RestedXP 《燃烧的远征》升级指南(部落版)
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 1-6 提瑞斯法林地
 #version 7

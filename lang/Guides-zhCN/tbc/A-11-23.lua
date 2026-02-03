@@ -810,7 +810,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南 （联盟版）
 << Alliance
 #name 14-20秘血岛
 #subgroup RestedXP 联盟 1-20 级
@@ -3308,7 +3308,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance !Warlock
 #name 12-14 黑海岸
 #subgroup RestedXP 联盟 20-32 级
@@ -3916,7 +3916,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance !Warlock
 #name 21-23级 灰谷
 #subgroup RestedXP 联盟 20-32 级
@@ -4649,7 +4649,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance Warlock
 #name 20-23 黑海岸/灰谷
 #subgroup RestedXP 联盟 20-32 级

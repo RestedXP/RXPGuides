@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 1-6 杜隆塔尔
 #version 7
@@ -970,7 +970,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 6-10 杜隆塔尔
 #version 7
@@ -2776,7 +2776,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 10-13 杜隆塔尔
 #displayname 6-13 杜隆塔尔 << Undead Warrior

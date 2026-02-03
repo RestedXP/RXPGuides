@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南 (联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 23-24级 湿地
 #subgroup RestedXP 联盟 20-32 级
@@ -763,7 +763,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 24-27级 赤脊山/暮色森林
 #subgroup RestedXP 联盟 20-32 级
@@ -3016,7 +3016,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance
 #name 27-30 湿地/希尔斯布莱德
 #subgroup RestedXP 联盟 20-32 级

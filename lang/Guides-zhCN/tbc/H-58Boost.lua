@@ -26,7 +26,7 @@ step << Rogue
     .target Ormok
 step << Shaman
     .goto Orgrimmar,38.82,36.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
     .turnin 64046 >>交任务 新的开始
     .accept 64048 >>接任务 生存工具
     .target Kardris Dreamseeker
@@ -66,12 +66,12 @@ step << Warrior
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Rogue
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135357:0|t[Communal Blade]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135357:0|t[共济之刃]
     .use 186061
     .complete 64048,1 --1/1 Open the Survival Kit (1)
     .complete 64048,2 --1/1 Equip a Weapon (1)
 step << Hunter
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[Communal Stave] and |T135490:0|t[Communal Bow]
+    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135130:0|t[共济手杖] 和 |T135490:0|t[共济之弓]
     .use 186055
     .use 186056
     .complete 64048,1 --1/1 Open the Survival Kit (1)
@@ -351,7 +351,7 @@ step
 	.collect 12814,1,5096,1 --Flame in a Bottle (1)
 step
     .goto Tirisfal Glades,83.19,68.45
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garush|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加鲁什|r 对话
     .turnin 5405 >>交任务 银色黎明委任徽章
 	.target Argent Officer Garush
 step
@@ -359,7 +359,7 @@ step
     .use 12846 >>|cRXP_WARN_装备|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_饰品|r
 step
     .goto Western Plaguelands,40.5,51.8
-    .use 12807 >>Click the |cRXP_PICK_Command Tent|r, then use your |T132484:0|t[Scourge Banner]
+    .use 12807 >>点击 |cRXP_PICK_指挥官帐篷|r，然后使用你的 |T132484:0|t[天灾战旗]
 	>>|cRXP_WARN_这些怪物比较难打，而且容易引到周围的怪，小心点|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
@@ -402,7 +402,7 @@ step
 	.subzone 152 >>回到亡灵壁垒，提瑞斯法
 step
     .goto Tirisfal Glades,83.03,71.91
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandis|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_范蒂丝|r 对话
     .turnin 5230 >>交任务 返回亡灵壁垒
     .accept 5231 >>接受任务 目标：达尔松之泪
 	.target Shadow Priestess Vandis
@@ -414,7 +414,7 @@ step
 step
     #label TowerOne
     .goto Western Plaguelands,40.15,71.50
-    .use 12815 >>Use your |T135432:0|t[Beacon Torch] on the outside corner of the tower's doorway
+    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
 	>>|cRXP_WARN_不要招惹里面的精英怪|r
     .complete 5098,1 --Tower One marked (1)
 step
@@ -424,7 +424,7 @@ step
 	.target Chromie
 step
     .goto Western Plaguelands,44.24,63.06
-    .use 12815 >>Use your |T135432:0|t[Beacon Torch] on the outside corner of the tower's doorway
+    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
 	>>|cRXP_WARN_不要招惹里面的精英怪|r
     .complete 5098,3 --Tower Three marked (1)
 step
@@ -435,7 +435,7 @@ step
 	.mob Temporal Parasite
 step
     .goto Western Plaguelands,46.73,71.14
-    .use 12815 >>Use your |T135432:0|t[Beacon Torch] on the outside corner of the tower's doorway
+    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
 	>>|cRXP_WARN_不要招惹里面的精英怪|r
     .complete 5098,4 --Tower Four marked (1)
 step
@@ -511,7 +511,7 @@ step
 	.mob +Scarlet Knight
 step
     .goto Western Plaguelands,51.92,28.07
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
     .turnin 6004 >>交任务 未完的任务
     .accept 6023 >>接受任务 未完的任务
 	.target Kirsta Deepshadow
@@ -537,7 +537,7 @@ step
 step
 	#label Businessman
     .goto Western Plaguelands,51.92,28.07
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
     .turnin 6023 >>交任务 未完的任务
     .accept 6025 >>接受任务 未完的任务
 	.target Kirsta Deepshadow
@@ -560,13 +560,13 @@ step
 	.subzone 152 >>回到亡灵壁垒，提瑞斯法
 step
     .goto Tirisfal Glades,83.03,71.91
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandis|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_范蒂丝|r 对话
     .turnin 5232 >>交任务 返回亡灵壁垒
     .accept 5233 >>接受任务 目标：嚎哭鬼屋
 	.target Shadow Priestess Vandis
 step
     .goto Tirisfal Glades,83.15,68.92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德灵顿|r 对话
     .turnin 5098 >>交任务 标记哨塔
     .accept 838 >>接受任务 通灵学院
 	.target High Executor Derrington
@@ -646,7 +646,7 @@ step
 	.target Marlene Redpath
 step
     .goto Western Plaguelands,52.1,83.3
-    .use 23691 >>|cRXP_WARN_Equip the|r |T135160:0|t[Corrupted Mark of the Lightbringer] |cRXP_WARN_in your off-hand|r
+    .use 23691 >>|cRXP_WARN_装备|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_到你的副手|r
     >>|cRXP_WARN_使用|r |T135160:0|t[被玷污的光明使者印记] |cRXP_WARN_在乌瑟尔之墓|r
     .complete 9444,1 --Uther's Tomb Defiled (1)
     .isQuestTurnedIn 9443
@@ -782,7 +782,7 @@ step
 	.goto Eastern Plaguelands,61.40,66.40,25,0
 	.goto Eastern Plaguelands,59.40,66.40,25,0
 	.goto Eastern Plaguelands,58.00,67.60,25,0
-	.use 15454 >>|cRXP_WARN_Use the|r |T133748:0|t[Mortar and Pestle] |cRXP_WARN_before the |cRXP_LOOT_Living Rot|r expires|r
+	.use 15454 >>|cRXP_WARN_使用|r |T133748:0|t[研钵和捣杵] |cRXP_WARN_在 |cRXP_LOOT_生命腐质|r 过期之前|r
     .complete 6022,1 --Coagulated Rot (1)
 step
 	#completewith LHFP

@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 13-18 贫瘠之地
 #subgroup RestedXP 部落 1-30级
@@ -1798,7 +1798,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 18-23 石爪山脉/贫瘠之地
 #subgroup RestedXP 部落 1-30级

@@ -3,13 +3,13 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 1-6 Eversong Woods
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor BloodElf
-#next 6-10 Eversong Woods
+#next 6-10 永歌森林
 
 
 step << !BloodElf
@@ -617,7 +617,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 6-10 Eversong Woods
 #defaultfor BloodElf/Undead !Warrior
@@ -2125,7 +2125,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #defaultfor !Shaman !Warrior
 #name 10-12 Eversong Woods
@@ -3294,7 +3294,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 12-16 Ghostlands
 #defaultfor !Shaman !Warrior
@@ -6260,7 +6260,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（联盟版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 16-20 Ghostlands
 #defaultfor !Shaman !Warrior

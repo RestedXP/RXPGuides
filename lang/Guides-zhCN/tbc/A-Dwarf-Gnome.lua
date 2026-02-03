@@ -17,7 +17,7 @@ step << !Gnome !Dwarf
     +你选择的是侏儒和矮人专用的指南，请确保你的选择与你角色出生地一致
 step << !Warrior !Warlock
     #completewith WolfMeat
-	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
+	.destroy 6948 >>删除包里的 |T134414:0|t[炉石] 你已不再需要它了
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
@@ -49,12 +49,12 @@ step << Warrior/Warlock
 step << Warrior
     .goto 1426,28.831,67.238
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话，NPC在里面
-    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .train 6673 >>学习 |T132333:0|t[战斗怒吼]
     .target Thran Khorman
 step << Warlock
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话，NPC在里面
-    .train 348 >> Train |T135817:0|t[Immolate]
+    .train 348 >>学习 |T135817:0|t[献祭]
     .accept 1599 >>接受任务开端
     .target Alamar Grimm
 step << Warrior/Warlock
@@ -67,7 +67,7 @@ step << Warrior/Warlock
     #optional
     #requires WarriorHS
     #completewith WolfMeat
-	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
+	.destroy 6948 >>删除包里的 |T134414:0|t[炉石] 你已不再需要它了
 step << Warlock
     #optional
     #completewith next
@@ -111,7 +111,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     .vendor >>|cRXP_WARN_出售垃圾物品|r
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r << Priest/Mage/Warlock
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 15瓶|r |T132794:0|t[清凉的泉水] << Priest/Mage/Warlock
     >>|cRXP_WARN_如果你钱不够的话，额外刷 |cRXP_ENEMY_蓬毛幼狼|r |r << Priest/Mage/Warlock
     .collect 159,15 << Priest/Mage/Warlock --Collect Refreshing Spring Water (x15)
     .collect 2516,600 << Hunter --Light Shot (600)
@@ -328,7 +328,7 @@ step << Hunter
     .target Thorgas Grimson
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索加斯·格瑞姆森|r 对话
     .turnin 3108 >>交任务 风蚀符文 << Dwarf
-    .train 1978 >>Train |T132204:0|t[Serpent Sting]
+    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
 step << Paladin
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗莫斯·格鲁诺尔|r 对话，NPC在里面
@@ -339,7 +339,7 @@ step << Paladin
 step << Warlock
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
-    .train 172 >>Train |T136118:0|t[Corruption]
+    .train 172 >>学习 |T136118:0|t[腐蚀术]
     .target Alamar Grimm
 step << Paladin/Warlock/Hunter
     #optional
@@ -354,7 +354,7 @@ step << Paladin/Warlock/Hunter
 step << Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
 step << !Paladin !Warlock !Hunter
@@ -511,7 +511,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话
     .turnin 3106 >>交任务 简易符文 << Dwarf
     .turnin 3112 >>交任务 简易备忘录 << Gnome
-    .train 100 >> Train |T132337:0|t[Charge]
+    .train 100 >>学习 |T132337:0|t[冲锋]
     .train 772 >>学习 |T132155:0|t[撕裂]
     .target Thran Khorman
 step << !Paladin !Warlock !Hunter
@@ -562,7 +562,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance !Hunter
 #name 6-11级 丹莫罗 << !Hunter
 #displayname 6-12级 丹莫罗 << Mage
@@ -698,7 +698,7 @@ step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
     .home >>将你的炉石设置到雷酒酿制厂
-    .vendor >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_as you can afford|r << Priest/Mage/Warlock
+    .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_就买多少|r << Priest/Mage/Warlock
     .target Innkeeper Belm
     .bindlocation 2102
 step << Warrior
@@ -720,7 +720,7 @@ step << Gnome Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    +|cRXP_WARN_装备|r |T135321:0|t[步兵剑]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
@@ -734,7 +734,7 @@ step << Dwarf Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
-    +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
+    +|cRXP_WARN_装备|r |T132401:0|t[双刃战斧]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
@@ -748,7 +748,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    +|cRXP_WARN_装备|r |T135641:0|t[卷刃的剑]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
@@ -772,7 +772,7 @@ step << Warrior/Rogue/Paladin
     .goto 1426,45.344,51.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托格努斯·燧火|r 对话
     >>|cRXP_WARN_这能让你制作|r |T135248:0|t[劣质磨刀石] |cRXP_WARN_使你的近战伤害增加 2|r << Warrior/Rogue
-    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
+    >>|cRXP_WARN_这能让你制作|r |T135255:0|t[劣质平衡石] |cRXP_WARN_使你的近战伤害增加 2|r << Paladin
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
     .train 2018 >>学习 |T136241:0|t[锻造]
     .target Tognus Flintfire
@@ -891,7 +891,7 @@ step << Gnome Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    +|cRXP_WARN_装备|r |T135321:0|t[步兵剑]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
@@ -905,7 +905,7 @@ step << Dwarf Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
-    +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
+    +|cRXP_WARN_装备|r |T132401:0|t[双刃战斧]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
@@ -919,7 +919,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    +|cRXP_WARN_装备|r |T135641:0|t[卷刃的剑]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
@@ -1085,7 +1085,7 @@ step << Warrior/Paladin/Rogue
     #optional
     .goto Dun Morogh,50.084,49.420
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
-    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄]
     .collect 2901,1 --Mining Pick (1)
     .target Loslor Rudge
     .train 2018,3 --Blacksmithing
@@ -1152,7 +1152,7 @@ step << Gnome Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith Tundra
-    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    +|cRXP_WARN_装备|r |T135321:0|t[步兵剑]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
@@ -1166,7 +1166,7 @@ step << Dwarf Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith Tundra
-    +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
+    +|cRXP_WARN_装备|r |T132401:0|t[双刃战斧]
     .use 2491
     .itemcount 2491,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
@@ -1180,7 +1180,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith Tundra
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    +|cRXP_WARN_装备|r |T135641:0|t[卷刃的剑]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
@@ -1216,7 +1216,7 @@ step << Paladin/Warrior/Rogue
     #completewith Tundra
     #label Chillbreeze
     .goto 1426,41.054,47.492
-    .subzone 801 >> Travel to Chill Breeze Valley
+    .subzone 801 >>前往寒风峡谷
 step << Paladin/Warrior/Rogue
     #optional
     #completewith Tundra
@@ -1243,7 +1243,7 @@ step << Priest/Mage/Warlock
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    >>|cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里购买20杯|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少买多少|r
     .collect 1179,20
     .target Keeg Gibn
     .isOnQuest 318
@@ -1431,7 +1431,7 @@ step
     #optional
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和一杯|r |T132800:0|t[雷霆麦酒]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm
@@ -1517,7 +1517,7 @@ step << Warrior
 step << Mage
     .goto Dun Morogh,47.498,52.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_玛济斯·石衣|r 对话
-    .train 118 >> Train |T136071:0|t[Polymorph]
+    .train 118 >>学习 |T136071:0|t[变形术]
     .target Magis Sparkmantle
 step << Priest
     .goto Dun Morogh,47.342,52.190
@@ -1562,7 +1562,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    +|cRXP_WARN_装备|r |T135641:0|t[卷刃的剑]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
@@ -1620,7 +1620,7 @@ step
     #optional
     #label RidgeRamp
     .goto 1426,42.935,45.216,20,0
-    .goto 1426,42.254,45.301,15 >> Travel up the ramp to Shimmer Ridge
+    .goto 1426,42.254,45.301,15 >>跑上斜坡，前往闪光岭
 step
     #optional
     #requires RidgeRamp
@@ -1646,9 +1646,9 @@ step
 step
     .goto Dun Morogh,38.517,53.927
     >>|cRXP_WARN_对|r |cRXP_ENEMY_冰须|r |cRXP_WARN_施放|r |T136071:0|t[变形术] << Mage
-    >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on|r |cRXP_ENEMY_Old Icebeard|r << Warlock
+    >>|cRXP_WARN_对|r |cRXP_WARN_冰须|r |cRXP_ENEMY_施放|r |T136183:0|t[恐惧] << Warlock
     >>打开 |cRXP_PICK_马克格拉恩的储肉柜|r。拾取里面的 |cRXP_LOOT_马克格拉恩的干肉|r
-    >>|cRXP_WARN_Wait until |cRXP_ENEMY_Old Icebeard|r patrols out of the Cave. Once he patrols out of the Cave you can enter and loot|r |cRXP_PICK_MacGrann's Meat Locker|r << !Mage !Warlock
+    >>|cRXP_WARN_等|cRXP_ENEMY_冰须|r 巡逻出洞穴。一旦他离开洞穴， 你就可以偷偷进入并打开|r |cRXP_PICK_马克格拉恩的储肉柜|r << !Mage !Warlock
     .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>https://www.youtube.com/watch?v=o55Y3LjgKoE >> |cRXP_WARN_点击此处查看视频参考|r << !Mage !Warlock
     .complete 312,1 --MacGrann's Dried Meats (1)
 step
@@ -1718,8 +1718,8 @@ step
 step
     #requires Headhunters
     .goto Dun Morogh,22.86,52.16
-    >>|cRXP_WARN_Drop down into the small dead-end room of the cave|r
-    >>|cRXP_WARN_Don't worry about dying to do this as you're about to deathskip back to Kharanos|r
+    >>|cRXP_WARN_跳入洞穴里的小死胡同|r
+    >>|cRXP_WARN_不必担心死亡，你即将通过死亡回到卡拉诺斯|r
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #optional
@@ -1753,7 +1753,7 @@ step
 step << Warrior
     #optional
     #completewith next
-    +|cRXP_WARN_Grind until you have 10s30c worth of vendorables|r
+    +|cRXP_WARN_持续刷怪，直到你拥有价值10银30铜的垃圾物品|r
     .money >0.1030
 step << Warrior
     .goto Dun Morogh,47.58,41.58,40,0
@@ -1805,8 +1805,8 @@ step << Warrior
 step << skip --logout skip << Warrior
     #optional
     .goto 1455,48.046,83.707
-    >>|cRXP_WARN_Walk onto the edge of the metal floor on top of the waypoint arrow|r
-    .zone Dun Morogh >>|cRXP_WARN_Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
+    >>|cRXP_WARN_走到金属地板的边缘，站在箭头所在的位置上|r
+    .zone Dun Morogh >>|cRXP_WARN_慢慢调整角色位置（可以切换为走动），直到你看起来像在漂浮。然后登出并重新登录，以执行一次小退出洞|r
     .zoneskip Ironforge,1
 step
     #optional
@@ -1822,14 +1822,14 @@ step
     #completewith Rudra
     #label Dirt
     .goto Dun Morogh,59.84,49.56,40,0
-    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .goto Dun Morogh,61.36,47.07,40 >>沿土路上行
     .isQuestAvailable 314
 step
     #completewith next
     #requires Dirt
     +|cRXP_WARN_ 风筝 |cRXP_ENEMY_瓦加什|r 下行至|r |cRXP_FRIENDLY_鲁德拉·冻石|r
-    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>|cRXP_WARN_CLICK HERE If you're struggling|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
     .mob Vagash
 step
     #label Rudra
@@ -1842,10 +1842,10 @@ step
     .goto 1426,62.434,48.989,40,0
     .goto 1426,62.538,46.195
     >>击杀 |cRXP_ENEMY_瓦加什|r。拾取他的 |cRXP_LOOT_利牙|r
-    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
+    >>|cRXP_WARN_将他引到农场南边的守卫处。确保对他造成 51% 以上的伤害|r
     >>|cRXP_WARN_请先看以下的短视频，然后再击杀 |cRXP_ENEMY_瓦加什|r。任何职业都可以单刷它|r
-    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_Click here for video reference|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
@@ -1856,7 +1856,7 @@ step
 step << Warrior/Paladin
     #sticky
     #optional
-    .equip 16,3103 >> |cRXP_WARN_Equip the|r |T133052:0|t[|cRXP_FRIENDLY_Coldridge Hammer|r]
+    .equip 16,3103 >>|cRXP_WARN_装备|r |T133052:0|t[|cRXP_FRIENDLY_寒脊之锤|r]
     .use 3103
     .itemcount 3103,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.3
@@ -1879,7 +1879,7 @@ step
 step
     .goto Dun Morogh,68.379,54.492
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师格瑞姆|r 对话
-    .train 2550 >> Train |T133971:0|t[Cooking]
+    .train 2550 >>学习 |T133971:0|t[烹饪]
     .target Cook Ghilm
     .money <0.0100
 step
@@ -1918,7 +1918,7 @@ step
 step
     #optional
     #completewith next
-    .goto 1426,70.750,56.219,20 >>Enter the Gol'Bolar Quarry Mine
+    .goto 1426,70.750,56.219,20 >>进入古博拉采掘场
     .isOnQuest 433
 step
     #loop
@@ -1956,7 +1956,7 @@ step
     #optional
     .goto Dun Morogh,68.379,54.492
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师格瑞姆|r 对话
-    .train 2550 >> Train |T133971:0|t[Cooking]
+    .train 2550 >>学习 |T133971:0|t[烹饪]
     .target Cook Ghilm
 step
     #optional
@@ -2063,8 +2063,8 @@ step
     .goto 1432,21.106,65.007,20,0
     .goto 1432,21.388,66.357,20,0
     .goto 1432,21.498,67.840
-    .subzone 924 >> Travel through the South Gate Pass into Loch Modan << !Rogue !Warrior
-    .zone Loch Modan >> Travel through South Gate Pass into Loch Modan << Rogue/Warrior
+    .subzone 924 >>穿过南门小径，进入洛克莫丹 << !Rogue !Warrior
+    .zone Loch Modan >>穿过丹奥加兹，进入洛克莫丹 << Rogue/Warrior
 step << !Rogue !Warrior
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人库伯弗林特|r 对话
@@ -2078,14 +2078,14 @@ step << !Rogue !Warrior
     .goto Loch Modan,23.12,73.93,12 >>进入地堡。登上顶楼
 step << !Rogue !Warrior
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r inside the bunker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地堡里与 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
     .accept 267 >>接受任务 穴居人的威胁
     .target Captain Rugelfuss
 step << !Rogue !Warrior !Warlock
     .goto Loch Modan,26.67,56.94
     >>击杀 |cRXP_ENEMY_碎石穴居人|r 和 |cRXP_ENEMY_碎石怪斥候|r。拾取他们的 |cRXP_LOOT_穴居人的石牙|r
     >>|cRXP_WARN_小心 |cRXP_ENEMY_碎石怪斥候|r，他们会施放|r |T132222:0|t[射击] |cRXP_WARN_(远程攻击：造成14-20点伤害)|r
-    >>|cRXP_WARN_This is a hyperspawn area. You should not need to move from here|r
+    >>|cRXP_WARN_这是一个超级刷怪点，你无需离开这里|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
@@ -2154,7 +2154,7 @@ step << !Mage !Rogue !Warrior !Warlock
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
     >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
@@ -2185,7 +2185,7 @@ step << Rogue/Warrior/Warlock
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包]
     >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
@@ -2236,7 +2236,7 @@ step << Mage/Rogue/Warrior/Warlock
     #completewith Stormpike1
     .goto Loch Modan,24.13,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高索·布鲁姆|r 对话
-    .vendor >>|cRXP_WARN_Vendor Trash|r
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     .target Gothor Brumn
     .isOnQuest 1339
 step << Mage/Rogue/Warrior/Warlock
@@ -2847,7 +2847,7 @@ step << Rogue/Warrior
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance Warlock
 #name 11-14级 艾尔文森林/丹莫罗
 #next 14-20秘血岛
@@ -4049,7 +4049,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RestedXP 《燃烧的远征》练级指南(联盟版)
+#group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance Hunter
 #name 6-10级 丹莫罗 (猎人)
 #next 12-14 黑海岸

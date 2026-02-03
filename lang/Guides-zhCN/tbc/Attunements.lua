@@ -2,9 +2,9 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RXP 燃烧的远征 Attunement Guide
-#name 1. Karazhan
-#title Karazhan
+#group RXP 燃烧的远征 团本前置任务
+#name 1. 卡拉赞
+#title 卡拉赞
 
 step
     #optional
@@ -18,7 +18,7 @@ step
 step
     #requires Deadwind1
     #completewith Kara1
-    .subzone 2562 >>前往暴风城大教堂内，与 Karazhan
+    .subzone 2562 >>前往暴风城大教堂内，与 卡拉赞
 step
     .goto Deadwind Pass,47.0,75.6
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师奥图鲁斯|r 对话
@@ -174,7 +174,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RXP 燃烧的远征 Attunement Guide
+#group RXP 燃烧的远征 团本前置任务
 #name 2. Serpentshrine Cavern
 #title Serpentshrine Cavern
 
@@ -207,7 +207,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RXP 燃烧的远征 Attunement Guide
+#group RXP 燃烧的远征 团本前置任务
 #name 3. Tempest Keep
 #title Tempest Keep
 
@@ -611,7 +611,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RXP 燃烧的远征 Attunement Guide
+#group RXP 燃烧的远征 团本前置任务
 #name 4. Mount Hyjal
 #title Mount Hyjal
 
@@ -652,7 +652,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RXP 燃烧的远征 Attunement Guide
+#group RXP 燃烧的远征 团本前置任务
 #name 5. Black Temple
 #title Black Temple
 

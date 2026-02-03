@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南(部落版)
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde !Warrior !Shaman
 #name 20-23 石爪山脉/贫瘠之地
 #version 7
@@ -2322,7 +2322,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南(部落版)
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 23-25级 希尔斯布莱德丘陵
 #version 7
@@ -3790,7 +3790,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南(部落版)
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 25-27 灰谷
 #version 7
@@ -4719,7 +4719,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南(部落版)
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 27-30级 南贫瘠之地/千针石林
 #version 7
