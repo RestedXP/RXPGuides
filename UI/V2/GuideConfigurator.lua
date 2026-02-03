@@ -9,20 +9,42 @@ local wipe = table.wipe
 local guideConfigurator
 
 local dungeonIcons = {
-    ["BFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\blackfathomdeeps.tga",
-    ["DM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\deadmines.tga",
-    ["GNOMER"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\gnomeregan.tga",
-    ["MARA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\maraudon.tga",
+    ["BFD"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",
+    ["DM"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Deadmines",
+    ["GNOMER"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Gnomeregan",
+    ["MARA"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Maraudon",
     ["RFC"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
-    ["RFD"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfendowns.tga",
-    ["RFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\razorfenkraul.tga",
-    ["SFK"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\shadowfangkeep.tga",
-    ["SM"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\scarletmonastery.tga",
-    ["ST"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\sunkentemple.tga",
-    ["STOCKS"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\stockade.tga",
-    ["ULDA"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\uldaman.tga",
-    ["WC"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\wailingcaverns.tga",
-    ["ZF"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\zulfarrak.tga",
+    ["RFD"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RazorfenDowns",
+    ["RFK"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-RazorfenKraul",
+    ["SFK"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-ShadowFangKeep",
+    ["SM"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
+    ["ST"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-SunkenTemple",
+    ["STOCKS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-TheStockade",
+    ["ULDA"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Uldaman",
+    ["WC"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-WailingCaverns",
+    ["ZF"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-ZulFarrak",
+    ["BRD"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-BlackrockDepths",
+    ["LBRS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
+    ["UBRS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-UpperBlackrockSpire",
+    ["SCHOLO"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Scholomance",
+    ["STRAT"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Stratholme",
+
+    ["RAMPARTS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-HellfireCitadel",
+    ["BF"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-HellfireCitadel",
+    -- ["SP"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CoilfangReservoir",
+    ["UB"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CoilfangReservoir",
+    ["MT"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Auchindoun",
+    ["CRYPTS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Auchindoun",
+    ["OHF"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CavernsOfTime",
+    ["SH"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Auchindoun",
+    ["BM"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CavernsOfTime",
+    ["MECH"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-TempestKeep",
+    ["MGT"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-MagistersTerrace",
+    ["SLABS"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-Auchindoun",
+    ["ARCATRAZ"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-TempestKeep",
+    ["BOTANICA"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-TempestKeep",
+    ["SHH"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-HellfireCitadel",
+    ["SV"] = "Interface\\ENCOUNTERJOURNAL\\UI-EJ-DUNGEONBUTTON-CoilfangReservoir",
 }
 
 function addon.ui.v2.RegisterRXPGuideConfiguratorPage1()
@@ -1018,7 +1040,13 @@ function addon.ui.v2:CreateConfigurator()
                 data.frame = AceGUI:Create("RXPGuideConfiguratorSetting")
                 data.frame:SetFullWidth(true)
                 data.frame:SetSetting(data.profile or addon.settings.profile, data.setting, data.callback or nil)
-                data.frame:SetImage(data.icon)
+
+                if string.find(data.icon, "Interface\\ENCOUNTERJOURNAL") then
+                    data.frame:SetImage(data.icon, 0, 0.75, 0, 0.75)
+                else
+                    data.frame:SetImage(data.icon, 0, 1, 0, 1)
+                end
+
                 data.frame:SetLabel(data.label)
                 data.frame:SetTooltip(data.tooltip)
 
