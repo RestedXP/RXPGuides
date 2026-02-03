@@ -130,22 +130,22 @@ local dungeonList = {
     ["STRAT"] = 2017,
     ["LBRS"] = 1583,
 
-    ["Ramparts"] = 3562,
+    ["RAMPARTS"] = 3562,
     ["BF"] = 3713,
     ["SP"] = 3717,
     ["UB"] = 3716,
     ["MT"] = 3792,
-    ["Crypts"] = 3790,
+    ["CRYPTS"] = 3790,
     ["OHF"] = 2367,
     ["SH"] = 3791,
     ["BM"] = 2366,
-    ["Mech"] = 3849,
+    ["MECH"] = 3849,
     ["MGT"] = 4131,
-    ["Slabs"] = 3789,
-    ["Arcatraz"] = 3848,
-    ["Botanica"] = 3847,
+    ["SLABS"] = 3789,
+    ["ARCATRAZ"] = 3848,
+    ["BOTANICA"] = 3847,
     ["SHH"] = 3714,
-    ["Steamvault"] = 3715
+    ["SV"] = 3715
 }
 
 local alternateNames = {
