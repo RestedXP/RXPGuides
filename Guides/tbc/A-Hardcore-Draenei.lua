@@ -1054,7 +1054,7 @@ step
 step << !Hunter
     .isOnQuest 9515
     .goto Azuremyst Isle,26.75,75.84
-    .subzone 3569 >> Enter the Tides Hollow' cave
+    .subzone 3569 >> Enter the Tides' Hollow cave
 step << !Hunter
     #completewith next
     .goto Azuremyst Isle,26.33,73.79,15 >> Drop down to the lower level
@@ -1068,7 +1068,7 @@ step << !Hunter
 step << !Hunter
     #optional
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides Hollow' cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
     .subzoneskip 3569,1
 step << !Hunter
 	#completewith next
@@ -1154,7 +1154,7 @@ step << Hunter
 step << Hunter
     .isOnQuest 9515
     .goto Azuremyst Isle,26.75,75.84
-    .subzone 3569 >> Enter the Tides Hollow' cave
+    .subzone 3569 >> Enter the Tides' Hollow cave
 step << Hunter
     #completewith next
     .goto Azuremyst Isle,26.33,73.79,15 >> Drop down to the lower level
@@ -1165,7 +1165,7 @@ step << Hunter
     .mob Warlord Sriss'tiz
 step << Hunter
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides Hollow' cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
     .subzoneskip 3569,1
 step << Hunter
     .goto Azuremyst Isle,47.131,70.289
