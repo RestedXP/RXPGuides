@@ -132,7 +132,7 @@ step
     .mob +Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
-    .use 4926 >>Loot |cRXP_PICK_老陈的空酒桶|r from the ground and start the quest
+    .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r from the ground 和 start the quest
     >>|cRXP_WARN_If it's not up you'll get it later|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >>接受任务《物归己用》 老陈的空酒桶
@@ -206,7 +206,7 @@ step
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >>Loot |cRXP_PICK_老陈的空酒桶|r from the ground and start the quest
+    .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r from the ground 和 start the quest
     >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >>接受任务《物归己用》 老陈的空酒桶
@@ -321,11 +321,11 @@ step << Shaman
 step << Shaman
     #completewith next
     .goto Durotar,38.18,58.58
-    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
+    .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[火焰灵契]
     .use 6636
 step << Shaman
     .goto Durotar,38.96,58.22
-    >>Kill the |cRXP_ENEMY_火焰之魂|r. Loot him for a |cRXP_LOOT_Glowing Ember|r
+    >>击杀 the |cRXP_ENEMY_火焰之魂|r. Loot him for a |cRXP_LOOT_Glowing Ember|r
     .complete 1526,1 --Glowing Ember (1)
     .mob Minor Manifestation of Fire
 step << Shaman
@@ -355,7 +355,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
-    .use 4926 >>Loot |cRXP_PICK_老陈的空酒桶|r from the ground and start the quest
+    .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r from the ground 和 start the quest
     >>|cRXP_WARN_Wait for the respawn if it's not up|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >>接受任务《物归己用》 老陈的空酒桶
@@ -535,7 +535,7 @@ step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板维尔雷|r
     >>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
     >>|T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_are extremely cheap, buy as many as you want|r
     .home >>将你的炉石设置为夜色镇 << !BloodElf !Undead
     .vendor >>把垃圾物品卖给商人
@@ -788,7 +788,7 @@ step
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_巴尔格|r
-    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭] |cRXP_BUY_or|r |T132384:0|t[重弹丸] |cRXP_BUY_from him|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]|cRXP_BUY_or|r |T132384:0|t[重弹丸]|cRXP_BUY_from him|r
     .target Barg
 step
     #completewith RegtharDeathgate1
@@ -895,16 +895,16 @@ step
     .mob Sunscale Scytheclaw
 step
     .goto The Barrens,55.80,17.03
-    >>Use the |T134227:0|t[埃其亚基的号角] to summon |cRXP_ENEMY_Echeyakee|r
-    >>击杀 |cRXP_ENEMY_埃其亚基|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
-    >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[埃其亚基的号角]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
+    >>Use the |T134227:0|t[埃其亚基的号角] to summon |cRXP_ENEMY_埃其亚基|r
+    >>击杀 |cRXP_ENEMY_埃其亚基|r。拾取他的 |cRXP_LOOT_Echeyakee's Hide|r
+    >>|cRXP_WARN_If |cRXP_ENEMY_埃其亚基|r doesn't spawn after using the|r |T134227:0|t[埃其亚基的号角]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
     .complete 881,1 --Echeyakee's Hide (1)
     .mob Echeyakee
     .use 10327
 step
     #optional
     .goto The Barrens,52.23,31.00
-    .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[埃其亚基的号角]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
+    .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_埃其亚基|r didn't spawn after using the|r |T134227:0|t[埃其亚基的号角]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
     .goto The Barrens,52.24,31.01
@@ -914,8 +914,8 @@ step
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
     .goto The Barrens,55.80,17.03
-    >>Use the |T134227:0|t[埃其亚基的号角] to summon |cRXP_ENEMY_Echeyakee|r
-    >>击杀 |cRXP_ENEMY_埃其亚基|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
+    >>Use the |T134227:0|t[埃其亚基的号角] to summon |cRXP_ENEMY_埃其亚基|r
+    >>击杀 |cRXP_ENEMY_埃其亚基|r。拾取他的 |cRXP_LOOT_Echeyakee's Hide|r
     .complete 881,1 --Echeyakee's Hide (1)
     .mob Echeyakee
     .use 10327
@@ -1115,7 +1115,7 @@ step
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_阿诺克|r
-    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 40 skill|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[亚麻布]|cRXP_WARN_to reach 40 skill|r
     .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
     .target Arnok
     .skill firstaid,<1,1
@@ -1126,7 +1126,7 @@ step
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_阿诺克|r
-    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 50 skill|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[亚麻布]|cRXP_WARN_to reach 50 skill|r
     .train 3274 >> Train Journeyman First Aid
     .target Arnok
     .skill firstaid,<40,1
@@ -1284,7 +1284,7 @@ step
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_燃刃信徒|r and |cRXP_ENEMY_燃刃术士|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
+    >>击杀 |cRXP_ENEMY_燃刃信徒|r and |cRXP_ENEMY_燃刃术士|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -1298,7 +1298,7 @@ step
     .isOnQuest 5761
     .dungeon RFC
 step
-    >>Kill |cRXP_ENEMY_燃刃信徒|r and |cRXP_ENEMY_燃刃术士|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
+    >>击杀 |cRXP_ENEMY_燃刃信徒|r and |cRXP_ENEMY_燃刃术士|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -1347,7 +1347,7 @@ step << !Undead !BloodElf
 step << Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟兰尼斯|r
-    >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[Pick Lock]|cRXP_WARN_for a quest later|r
+    >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[开锁]|cRXP_WARN_for a quest later|r
     .accept 10372 >>接受任务《物归己用》 谨慎的询问
     .train 6761 >>训练你的职业技能
     .target Zelanis

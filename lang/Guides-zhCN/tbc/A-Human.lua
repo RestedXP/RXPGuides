@@ -26,7 +26,7 @@ step << Warlock
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
     .accept 1598 >>接受任务 失窃的典籍
-    .train 348 >>训练 |T135817:0|t[献祭]
+    .train 348 >> Train |T135817:0|t[Immolate]
     .target Drusilla La Salle
 step << Warlock
 --  .goto Elwynn Forest,52.9,44.3,60,0
@@ -34,7 +34,7 @@ step << Warlock
     >>|cRXP_WARN_闯入迪菲亚营地里的帐篷|r
     >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
     >>|cRXP_WARN_你可以在帐篷内安全地拾取 |cRXP_LOOT_虚空灵能|r！请观看提供的小视频，了解具体操作方法|r
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_Click here for video reference|r
+    .link https://www.youtube.com/watch?v=_-KEke9Yeik >>https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_点击此处查看视频参考|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #completewith next
@@ -47,7 +47,7 @@ step << Warlock
 step << Warlock
     #optional
     #completewith ATW
-    .cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[召唤小鬼]
+    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
     .usespell 688
 step << Warlock
     #optional
@@ -57,7 +57,7 @@ step << Warlock
     .aura 687
 step
     #completewith DeleteHS
-	.destroy 6948 >>Destroy your |T134414:0|t[炉石] from your bags, as you don't need it yet
+	.destroy 6948 >> Destroy your |T134414:0|t[Hearthstone] from your bags, as you don't need it yet
 step
     #laebl ATW
     .goto Elwynn Forest,48.17,42.94
@@ -67,13 +67,13 @@ step
 step << Warrior
     .goto Elwynn Forest,46.4,40.3,35,0
     >>一直击杀 |cRXP_ENEMY_幼狼|r 直到你拥有价值10铜币以上的垃圾物品
-    >>|cRXP_WARN_You will train|r |T132333:0|t[Battle Shout] |cRXP_WARN_which increases early leveling speeds|r
+    >>|cRXP_WARN_You will train|r |T132333:0|t[战斗怒吼] |cRXP_WARN_which increases early leveling speeds|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
     .vendor >>出售垃圾物品
     .target +Brother Danil
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在屋内的楼下与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
-    .train 6673 >>训练 |T132333:0|t[战斗怒吼]
+    .train 6673 >>Train |T132333:0|t[战斗怒吼]
     .target +Llane Beshere
     .goto Elwynn Forest,50.242,42.287
     .mob Young Wolf
@@ -92,7 +92,7 @@ step
     .goto Elwynn Forest,48.941,40.166
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊根·派特斯金纳|r 对话
     .turnin 5261 >>交任务 伊根·派特斯金纳
-    .accept 33 >> Accept Wolves Across The Border
+    .accept 33 >>Accept 林中的群狼
     .target Eagan Peltskinner
 step << Priest/Mage/Warlock
     #completewith next
@@ -101,7 +101,7 @@ step << Priest/Mage/Warlock
     >>|cRXP_WARN_当你拥有价值50铜币的垃圾物品:|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
     >>把垃圾物品卖给商人
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
+    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -152,14 +152,14 @@ step
     #requires WolfMeatEnd
     .goto Elwynn Forest,48.941,40.166
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊根·派特斯金纳|r 对话
-    .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
-    .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
+    .turnin 33,2 >>Turn in 林中的群狼 << Warrior/Paladin/Rogue
+    .turnin 33,1 >>Turn in 林中的群狼 << !Warrior !Paladin !Rogue
     .target Eagan Peltskinner
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼尔修士|r 对话
     >>把垃圾物品卖给商人
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_再买 10瓶|r |T132794:0|t[清凉的泉水]
+    >>|cRXP_BUY_Buy 10 more|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
     >>|cRXP_WARN_请至少保留 10 铜币，后续要用|r << Priest/Mage
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
@@ -171,14 +171,14 @@ step << !Priest !Mage !Warlock !Rogue
 step << Rogue
     .goto Elwynn Forest,47.240,41.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚努斯·哈默纳克|r 对话
-    .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[简易匕首] |cRXP_BUY_from him if you can afford it|r
+    .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_from him if you can afford it|r
     .collect 2139,1 -- Dirk (1)
     .disablecheckbox
     .target Janos Hammerknuckle
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
 step << Rogue
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135650:0|t[简易匕首]
+    +|cRXP_WARN_Equip the|r |T135650:0|t[Dirk]
     .use 2139
     .itemcount 2139,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
@@ -186,7 +186,7 @@ step
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
     .turnin 7 >>交任务 狗头人的蜡烛
-    .accept 15 >> Accept Investigate Echo Ridge
+    .accept 15 >>Accept 回音山调查行动
     .accept 3100 >>接受任务 简要的信件 << Warrior
     .accept 3101 >>接受任务 圣洁信件 << Paladin
     .accept 3102 >>接受任务 密文信件 << Rogue
@@ -249,7 +249,7 @@ step
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
     .turnin 15 >>交任务 调查营地
-    .accept 21 >> Accept Skirmish at Echo Ridge
+    .accept 21 >>Accept 回音山清剿行动
     .target Marshal McBride
 step << Mage
     #optional
@@ -300,14 +300,14 @@ step << Paladin
     .target Brother Sammuel
 step
     .goto Elwynn Forest,48.171,42.943
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维里副队长|r 对话
     .accept 18 >>接受任务 盗贼兄弟会
     .target Deputy Willem
 step << Warlock
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
     .turnin 3105 >>交任务 被污染的信件
-    .train 172 >>Train |T136118:0|t[腐蚀]
+    .train 172 >>Train |T136118:0|t[腐蚀术]
     .target Drusilla La Salle
 step
     #loop
@@ -335,19 +335,19 @@ step
     .target Deputy Willem
 step << Paladin
     #completewith RestandR
-    .equip 16,5579 >>|cRXP_WARN_Equip the|r |T133052:0|t[民兵战锤]
+    .equip 16,5579 >> |cRXP_WARN_Equip the|r |T133052:0|t[Militia Warhammer]
     .use 5579
     .itemcount 5579,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
 step << Rogue
     #completewith RestandR
-    .equip 16,2224 >>Equip the |T135641:0|t[民兵匕首]
+    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
     .use 2224
     .itemcount 2224,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step << Warrior
     #completewith RestandR
-    .equip 16,1161 >>Equip the |T135274:0|t[民兵短剑]
+    .equip 16,1161 >> Equip the |T135274:0|t[Militia Shortsword]
     .use 1161
     .itemcount 1161,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
@@ -385,7 +385,7 @@ step
 step
     .goto Elwynn Forest,50.692,39.347
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莉·奥斯沃斯|r 对话
-    >>|cRXP_WARN_Skip the followup|r << !Priest !Mage
+    >>|cRXP_WARN_跳过后续任务|r << !Priest !Mage
     .turnin 3903 >>交任务 米莉·奥斯沃斯
     .accept 3904 >>接受任务 米莉的葡萄 << Priest/Mage
     .target Milly Osworth
@@ -394,7 +394,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
     .turnin 3102 >>交任务 密文信件
     .train 1784 >>学习 |T132320:0|t[潜行]
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .train 921 >>学习 |T133644:0|t[偷窃技能]
     .target Jorik Kerridan
 step << Priest/Mage
     #loop
@@ -445,9 +445,9 @@ step
     #label RestandR
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话，NPC在里面
-    .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
-    .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
-    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue
+    .turnin 21,1 >>Turn in 回音山清剿行动 << Rogue
+    .turnin 21,2 >>Turn in 回音山清剿行动 << Warrior/Paladin
+    .turnin 21,3 >>Turn in 回音山清剿行动 << !Warrior !Paladin !Rogue
     .accept 54 >>接受任务 去闪金镇报到
     .target Marshal McBride
 step << Priest/Mage
@@ -472,15 +472,15 @@ step
 step << Warrior/Rogue/Paladin
     .goto Elwynn Forest,41.706,65.544
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁匠阿古斯|r 对话
-    >>|cRXP_WARN_这能让你制作|r |T135248:0|t[劣质磨刀石] |cRXP_WARN_使你的近战伤害增加 2|r << Warrior/Rogue
-    >>|cRXP_WARN_这能让你制作|r |T135255:0|t[劣质平衡石] |cRXP_WARN_使你的近战伤害增加 2|r << Paladin
+    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[劣质磨刀石] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
+    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[劣质平衡石] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
     .train 2018 >>Train |T136241:0|t[锻造]
     .target Smith Argus
 step << Warrior
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_from her if you can afford it|r
     .collect 2488,1 --Collect Gladius (1)
     .disablecheckbox
     .target Corina Steele
@@ -495,7 +495,7 @@ step << Warrior
 step << Rogue
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
@@ -510,7 +510,7 @@ step << Rogue
 step << Paladin
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor 54 >>|cRXP_WARN_Buy a|r |T133053:0|t[木槌棒] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_WARN_Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from her if you can afford it|r
     .collect 2493,1 --Collect Wooden Mallet (1)
     .disablecheckbox
     .target Corina Steele
@@ -557,7 +557,7 @@ step
 step << Rogue
     .goto Elwynn Forest,43.96,65.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布洛葛·哈姆菲斯特|r 对话
-    .vendor 151 >>|cRXP_BUY_Buy the|r |T135641:0|t[平衡飞刀] |cRXP_BUY_from him if you can afford it|r
+    .vendor 151 >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him if you can afford it|r
     .collect 2946,1 --Collect Balanced Throwing Dagger (1)
     .disablecheckbox
     .target Brog Hamfist
@@ -604,8 +604,8 @@ step << Rogue
 step << Warrior/Rogue
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
-    .vendor 295 >> |cRXP_BUY_Buy|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him until you're down to 1 Silver|r << Warrior
-    .vendor 295 >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him|r << Rogue
+    .vendor 295 >>|cRXP_BUY_Buy|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_from him until you're down to 1 Silver|r << Warrior
+    .vendor 295 >>|cRXP_BUY_Buy up to 20|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_from him|r << Rogue
     .collect 414,20 --Dalaran Sharp (20)
     .disablecheckbox
     .target Innkeeper Farley
@@ -644,7 +644,7 @@ step
     .waypoint Elwynn Forest,33.08,86.64,40,0
     .waypoint Elwynn Forest,33.51,85.22,40,0
     .waypoint Elwynn Forest,32.17,83.88,40,0
-    >>击杀 |cRXP_ENEMY_石牙野猪|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>击杀 |cRXP_ENEMY_石牙野猪|r。拾取它们的 |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r
     .collect 769,4,86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
 step
@@ -659,8 +659,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone1
     #completewith NecklaceStart
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r << Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -671,8 +671,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone1
     #label RoughStoneCraft1
     #completewith NecklaceStart
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -689,8 +689,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #requires RoughStoneCraft1
     #completewith NecklaceStart
-    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone]|cRXP_WARN_on your current weapon|r << Warrior/Rogue
-    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone]|cRXP_WARN_on your current weapon|r << Paladin
+    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone] |cRXP_WARN_on your current weapon|r << Warrior/Rogue
+    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone] |cRXP_WARN_on your current weapon|r << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -702,7 +702,7 @@ step
     #optional
     #completewith NecklaceStart
     .goto Elwynn Forest,37.81,85.40,0
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_狗头人的蜡烛|r 和 |cRXP_LOOT_Gold Dust|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -724,7 +724,7 @@ step
     #completewith Lovers
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
-    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_as you can afford|r << Priest/Warlock/Mage
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_WARN_as you can afford|r << Priest/Warlock/Mage
     .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
     .target Joshua Maclure
     .subzoneskip 64,1 --The Maclure Vineyards
@@ -732,8 +732,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone2
     #completewith Lovers
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r << Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -744,8 +744,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone2
     #label RoughStoneCraft2
     #completewith Lovers
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -762,8 +762,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #requires RoughStoneCraft2
     #completewith Lovers
-    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone]|cRXP_WARN_on your current weapon|r << Warrior/Rogue
-    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone]|cRXP_WARN_on your current weapon|r << Paladin
+    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone] |cRXP_WARN_on your current weapon|r << Warrior/Rogue
+    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone] |cRXP_WARN_on your current weapon|r << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -775,7 +775,7 @@ step
     #optional
     #completewith Lovers
     .goto Elwynn Forest,37.81,85.40,0
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_狗头人的蜡烛|r 和 |cRXP_LOOT_Gold Dust|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -804,8 +804,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone3
     #completewith Exchange
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r << Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -817,8 +817,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone3
     #label RoughStoneCraft3
     #completewith Exchange
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -836,8 +836,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #requires RoughStoneCraft3
     #completewith Exchange
-    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone]|cRXP_WARN_on your current weapon|r << Warrior/Rogue
-    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone]|cRXP_WARN_on your current weapon|r << Paladin
+    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone] |cRXP_WARN_on your current weapon|r << Warrior/Rogue
+    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone] |cRXP_WARN_on your current weapon|r << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -856,7 +856,7 @@ step
     .waypoint Elwynn Forest,37.81,85.40,35,0
     .waypoint Elwynn Forest,36.76,83.19,35,0
     .waypoint Elwynn Forest,38.02,81.70,35,0
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_狗头人的蜡烛|r 和 |cRXP_LOOT_Gold Dust|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -874,8 +874,8 @@ step
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     .goto 1429,41.732,78.024
-    >>击杀 |cRXP_ENEMY_金牙|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r
-    >>|cRXP_WARN_Be careful as he usually pulls 和 |cRXP_ENEMY_狗头人矿工|r next to him|r
+    >>击杀 |cRXP_ENEMY_金牙|r。拾取他的 |cRXP_LOOT_波尼斯的项链|r
+    >>|cRXP_WARN_小心，他通常会拉到旁边的|r |cRXP_ENEMY_狗头人矿工|r
     .complete 87,1 --Bernice's Necklace (1)
     .mob Goldtooth
 step << Warrior
@@ -893,7 +893,7 @@ step
     .goto Elwynn Forest,37.81,85.40,35,0
     .goto Elwynn Forest,36.76,83.19,35,0
     .goto Elwynn Forest,38.02,81.70,35,0
-    .xp 7+1800 >>击杀 to 1800+/4500xp
+    .xp 7+1800 >>刷怪达到 1800+/4500 经验
     .mob Kobold Tunneler
     .mob Kobold Miner
 step << Priest
@@ -906,7 +906,7 @@ step << Priest
     .goto Elwynn Forest,37.81,85.40,35,0
     .goto Elwynn Forest,36.76,83.19,35,0
     .goto Elwynn Forest,38.02,81.70,35,0
-    .xp 7+1460 >>击杀 to 1460+/4500xp << Priest
+    .xp 7+1460 >>刷怪达到 1460+/4500 经验 << Priest
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
@@ -922,7 +922,7 @@ step
     #label Exchange
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
-    >>|cRXP_WARN_不要出售给商人|r |T133581:0|t[弹珠袋] |cRXP_WARN_奖励。这是一件非常有价值的道具，一直到 70 级都很有用|r
+    >>|cRXP_WARN_不要出售|r |T133581:0|t[弹珠袋] |cRXP_WARN_这个任务奖励是一件非常有价值的道具，一直到 70 级都很有用|r
     .turnin 47 >>交任务 金砂交易
     .accept 40 >>接受任务 鱼人的威胁
     .target Remy "Two Times"
@@ -947,7 +947,7 @@ step
 step << Warrior
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_from her if you can afford it|r
     .collect 2488,1 --Collect Gladius (1)
     .disablecheckbox
 --  .money <0.0536
@@ -962,7 +962,7 @@ step << Warrior
 step << Rogue
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
@@ -977,7 +977,7 @@ step << Rogue
 step << Paladin
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T133053:0|t[木槌棒] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from her if you can afford it|r
     .collect 2493,1 --Collect Wooden Mallet (1)
     .disablecheckbox
     .target Corina Steele
@@ -1014,7 +1014,7 @@ step
     .accept 112 >>接受任务 收集海藻
     .target William Pestle
 step
-    .xp 8 >>击杀 to 8
+    .xp 8 >>刷怪到8级
 step << Mage/Priest/Rogue/Warrior/Paladin
     #optional
     #completewith next
@@ -1045,7 +1045,7 @@ step << Paladin/Warrior/Rogue
 step << Warlock
     #optional
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >>Travel 对话 in the Inn
+    .goto Elwynn Forest,44.1,66.0,10 >>前往旅店楼下
 step << Warlock
     .goto Elwynn Forest,44.392,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛克西米利安·克洛文|r 对话
@@ -1054,7 +1054,7 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞琳娜·达克哈特|r 对话
-    .vendor >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)]|cRXP_BUY_from her if you can afford it. If not you can buy it later|r
+    .vendor >>|cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：火焰箭(等级 2)] |cRXP_BUY_如果钱不够，可以今后再来买|r
     .target Cylina Darkheart
     .money <0.100
     .itemcount 16302,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1069,9 +1069,9 @@ step
     #completewith next
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
-    .vendor >>|cRXP_BUY_Buy up to 20|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from him if you can afford it|r << !Warrior !Rogue !Paladin
-    .vendor >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him if you can afford it|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_and 10|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from him if you can afford it|r << Paladin
+    .vendor >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << !Warrior !Rogue !Paladin
+    .vendor >>|cRXP_BUY_Buy up to 20|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_from him if you can afford it|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_and 10|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << Paladin
     .target Innkeeper Farley
 step << Paladin
     .goto Elwynn Forest,41.096,66.041
@@ -1102,7 +1102,7 @@ step
     .goto 1429,55.523,66.707,50,0
     .goto 1429,55.203,66.171,50,0
     .goto 1429,54.236,66.888,50,0
-    >>击杀 |cRXP_ENEMY_鱼人|r and |cRXP_ENEMY_鱼人士兵|r. Loot them for |cRXP_LOOT_Crystal Kelp Fronds|r
+    >>击杀 |cRXP_ENEMY_鱼人|r 和 |cRXP_ENEMY_鱼人士兵|r. 拾取 |cRXP_LOOT_Crystal Kelp Fronds|r
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
 	.mob Murloc
 	.mob Murloc Streamrunner
@@ -1110,8 +1110,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone4
     #completewith JasperlodeExplore
-    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r << Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -1123,8 +1123,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone4
     #label RoughStoneCraft4
     #completewith JasperlodeExplore
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1141,8 +1141,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #requires RoughStoneCraft4
     #completewith JasperlodeExplore
-    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone]|cRXP_WARN_on your current weapon|r << Warrior/Rogue
-    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone]|cRXP_WARN_on your current weapon|r << Paladin
+    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone] |cRXP_WARN_on your current weapon|r << Warrior/Rogue
+    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone] |cRXP_WARN_on your current weapon|r << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1154,20 +1154,20 @@ step
     #optional
     #requires MurlocRune << Warrior/Rogue --Season 2
     #completewith JasperlodeExplore
-    .goto Elwynn Forest,61.654,53.608,15 >>进入 Jasperlode Mine
+    .goto Elwynn Forest,61.654,53.608,15 >>进入玉石矿洞
 step
     #label JasperlodeExplore
     .goto Elwynn Forest,61.20,51.46,15,0
     .goto Elwynn Forest,60.72,50.85,15,0
     .goto Elwynn Forest,60.39,50.16
-    >>跟随 the path through middle to explore Jasperlode Mine
+    >>沿中路前进，探察玉石矿洞
     .complete 76,1 --Scout through the Jasperlode Mine
 step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone5
     #completewith Find
-    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r << Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[劣质的石头]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r << Warrior/Rogue
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Open |cRXP_PICK_Battered Chests|r. Loot them for their |T135232:0|t|cRXP_LOOT_[Rough Stones]|r and |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r << Paladin
     .collect 2835,1 --Rough Stone (1+)
     .collect 2589,1 << Paladin --Linen Cloth (1+)
     .itemcount 2862,<1 << Rogue/Warrior --Rough Sharpening Stone (<1)
@@ -1180,8 +1180,8 @@ step << Warrior/Paladin/Rogue
     #requires RoughStone5
     #label RoughStoneCraft5
     #completewith Find
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    +|T136241:0|t[Blacksmith] |cRXP_WARN_the|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_and|r |T132889:0|t|cRXP_LOOT_[Linen Cloth]|r |cRXP_WARN_into|r |T135255:0|t[Rough Weightstones] << Paladin
     .collect 2862,5 << Rogue/Warrior --Rough Sharpening Stone (5)
     .disablecheckbox
     .collect 3239,5 << Paladin --Rough Weightstone (5)
@@ -1199,8 +1199,8 @@ step << Warrior/Paladin/Rogue
     #optional
     #requires RoughStoneCraft5
     #completewith Find
-    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[Rough Sharpening Stone]|cRXP_WARN_on your current weapon|r << Warrior/Rogue
-    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[Rough Weightstone]|cRXP_WARN_on your current weapon|r << Paladin
+    .cast 2828 >>|cRXP_WARN_Use the|r |T135248:0|t[劣质磨刀石] |cRXP_WARN_on your current weapon|r << Warrior/Rogue
+    .cast 3112 >>|cRXP_WARN_Use the|r |T135255:0|t[劣质平衡石] |cRXP_WARN_on your current weapon|r << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1217,7 +1217,7 @@ step
 step
     #optional
     #completewith Find
-    +|cRXP_WARN_Kite a |cRXP_ENEMY_森林熊幼崽|r toward|r |cRXP_FRIENDLY_卫兵托马斯|r
+    +|cRXP_WARN_将一只 |cRXP_ENEMY_森林熊幼崽|r 风筝拉至|r |cRXP_FRIENDLY_卫兵托马斯|r
     >>|cRXP_WARN_试图与 |cRXP_FRIENDLY_卫兵托马斯|r 对话，在 |cRXP_ENEMY_森林熊幼崽|r 死在 |cRXP_FRIENDLY_暴风城卫兵|r 的手里之前，这样可获得任务计数|r
     >>|cRXP_WARN_Make sure to deal 51%+ damage to get credit|r
     .mob Young Forest Bear
@@ -1232,14 +1232,14 @@ step
 step
     #completewith AcceptBundle
     >>击杀 |cRXP_ENEMY_觅食的灰狼|r 和 |cRXP_ENEMY_森林熊幼崽|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_森林熊幼崽|r you see|r
+    >>|cRXP_WARN_优先击杀任何看到的|r |cRXP_ENEMY_森林熊幼崽|r
     .complete 52,1 --Kill Prowler (x8)
     .mob +Prowler
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
 step
     .goto Elwynn Forest,72.656,60.334
-    >>点击地上的 |cRXP_PICK_A half-eaten body|r on the ground
+    >>点击地上的 |cRXP_PICK_被吃掉一半的尸体|r
     .turnin 37 >>交任务 失踪的卫兵
     .accept 45 >>接受任务 罗尔夫的下落
 step
@@ -1286,8 +1286,8 @@ step << !Paladin
     >>|cRXP_WARN_施放|r |T135953:0|t[Renew] |cRXP_WARN_and|r |T135940:0|t[Power Word: Shield] |cRXP_WARN_then get full mana. Pull the 2 |cRXP_ENEMY_鱼人|r in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other|r << Priest
     >>|cRXP_WARN_Pull the 2|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_in front of the huts, move away and|r |T136071:0|t[Polymorph]|cRXP_WARN_one whilst killing the other. Kill the|r |T136071:0|t[变形]|cRXP_WARN_one after|r << Mage
     >>|cRXP_WARN_Pool 100 Rage. Pull the 2|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_in front of the huts, move away and keep|r |T132316:0|t[Hamstring]|cRXP_WARN_on one whilst killing the other. Also use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_on the one you're killing. Run away and reset the one being kited with|r |T132316:0|t[Hamstring]|cRXP_WARN_after you've killed one|r << Warrior
-    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_鱼人|r |cRXP_WARN_in front of the huts, move away and focus killing one of them. Use|r |T136205:0|t[Evasion] |cRXP_WARN_once they're both attacking you. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Rogue
-    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and cast|r |T136183:0|t[恐惧] |cRXP_WARN_on one of them constantly, and try to keep DoTs on both|r << Warlock
+    >>|cRXP_WARN_Pull the 2|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_in front of the huts, move away and focus killing one of them. Use|r |T136205:0|t[Evasion]|cRXP_WARN_once they're both attacking you. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Rogue
+    >>|cRXP_WARN_Pull the 2|r|cRXP_ENEMY_Murlocs|r|cRXP_WARN_in front of the huts, move away and cast|r |T136183:0|t[恐惧]|cRXP_WARN_on one of them constantly, and try to keep DoTs on both|r << Warlock
     .turnin 45 >>交任务 罗尔夫的下落
     .accept 71 >>接受任务 回复托马斯
 step
@@ -1370,9 +1370,9 @@ step
 step
     #completewith Deed << !Warlock
     #completewith WarlockPrincess << Warlock
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_西部荒野地契|r]
-    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_西部荒野地契|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_西部荒野地契|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
+    .use 1972>>|cRXP_WARN_使用 |T134939:0|t[|cRXP_LOOT_西部荒野地契|r] 来激发任务|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_西部荒野地契|r]|cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
     .collect 1972,1,184 --Collect Westfall Deed (x1)
     .accept 184 >>接受任务 法布隆的地契
 step
@@ -1389,8 +1389,8 @@ step
     >>|cRXP_ENEMY_公主|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
     >>|cRXP_WARN_Pool 100 Rage before you engage|r |cRXP_ENEMY_公主|r << Warrior
     >>|cRXP_WARN_Be sure |T136205:0|t[Evasion] |cRXP_WARN_is ready. If you're struggling, you can use the Fence with Throwing Weapons to abuse pathing and buy time|r << Rogue
-    >>|cRXP_WARN_Be ready to use a|r |T134830:0|t[Lesser Healing Potion]
-    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Click here for video reference|r << !Warrior
+    >>|cRXP_WARN_Be ready to use a|r |T134830:0|t[次级治疗药水]
+    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >>https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_点击此处查看视频参考|r << !Warrior
     .complete 88,1 --Collect Brass Collar (x1)
     .mob Princess
 step
@@ -1489,9 +1489,9 @@ step << Warlock
     .train 980 >>|T136139:0|t[痛苦诅咒] 
     .train 5782 >>|T136183:0|t[恐惧] 
     .train 6201 >> |T135230:0|t[Create Healthstone (Minor)] 
-    .train 696 >> |T136185:0|t[Demon Skin (Rank 2)] 
-    .train 1120 >> |T136163:0|t[Drain Soul] 
-    .train 707 >> |T135817:0|t[Immolate (Rank 2)] 
+    .train 696 >>学习 |T136185:0|t[恶魔皮肤 (等级 2)] 
+    .train 1120 >>训练 |T136163:0|t[吸取灵魂] 
+    .train 707 >>学习 |T135817:0|t[献祭 (等级 2)] 
     .goto Elwynn Forest,44.392,66.240
     .target +Maximillian Crowe
     .accept 1685 >>接受任务 加科因的召唤
@@ -1644,9 +1644,9 @@ step << !Warlock
     .goto Elwynn Forest,24.548,74.672,-1
 step
     #completewith GnollEnd
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for the |T134939:0|t[|cRXP_LOOT_采金日程表|r]
-    .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_采金日程表|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_采金日程表|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    >>击杀 |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for the |T134939:0|t[|cRXP_LOOT_采金日程表|r]
+    .use 1307 >>|cRXP_WARN_使用|T134939:0|t[|cRXP_LOOT_采金日程表|r] 来激发任务|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_采金日程表|r]|cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
     >>|cRXP_ENEMY_格拉夫·疾齿|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >>接受任务 收货人
@@ -1750,7 +1750,7 @@ step << Warrior/Rogue
     .goto Elwynn Forest,25.9,93.9
 step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    >>|cRXP_WARN_Choose the|r |T134583:0|t[|cRXP_FRIENDLY_暴风城卫兵护腿|r] |cRXP_WARN_as your reward. You will get a 2H Mace very soon|r
+    >>|cRXP_WARN_Choose the|r |cRXP_WARN_装备 |T134583:0|t[|cRXP_FRIENDLY_暴风城卫兵护腿|r]|cRXP_WARN_as your reward. You will get a 2H Mace very soon|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 176 >>交任务 通缉：霍格
@@ -1770,7 +1770,7 @@ step
 step
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫法布隆|r 和 |cRXP_FRIENDLY_弗娜·法布隆|r 对话
-    >>|cRXP_WARN_Do not accept the other quests|r
+    >>|cRXP_WARN_暂时不要接受其他任务|r
     .turnin 184 >>交任务 法布隆的地契
     .goto Westfall,59.95,19.35
     .target +Farmer Furlbrow
@@ -1780,14 +1780,14 @@ step
     .isOnQuest 184
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗娜·法布隆|r 对话
-    >>|cRXP_WARN_Do not accept the other quests|r
+    >>|cRXP_WARN_暂时不要接受其他任务|r
     .accept 36 >>接受任务 杂味炖肉
     .goto Westfall,59.92,19.42
 	.target +Verna Furlbrow
 step
     .goto Westfall,56.416,30.519
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔玛·萨丁|r 对话，NPC在里面
-    >>|cRXP_WARN_Do not accept the other quests|r
+    >>|cRXP_WARN_暂时不要接受其他任务|r
     .turnin 36 >>交任务 杂味炖肉
     .target Salma Saldean
 step
@@ -1837,9 +1837,9 @@ step
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r 对话
     .trainer >>Train 1h Swords 和 Staves << Warlock/Mage
-    .trainer >>Train 1h Swords << Rogue
+    .trainer >>学习单手剑 << Rogue
     .trainer >>学习锤类武器 << Priest
-    .trainer >>Train 2h Swords << Warrior/Paladin
+    .trainer >>学习双手剑 << Warrior/Paladin
     .target Woo Ping
     .money <0.2 << Warlock/Mage
     .money <0.3 << Warrior
@@ -1850,7 +1850,7 @@ step << Rogue
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
     >>|cRXP_BUY_Buy a|r |T135346:0|t[斗士短剑] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     >>|cRXP_WARN_Make sure you save 6s for training later|r
     .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
@@ -1901,7 +1901,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #optional
-    .equip 17,2494 >>|cRXP_WARN_Equip the|r |T135641:0|t[卷刃的剑] |cRXP_WARN_in your offhand|r
+    .equip 17,2494 >>|cRXP_WARN_Equip the|r |T135641:0|t[卷刃的剑]|cRXP_WARN_in your offhand|r
     .use 2494
     .itemcount 2494,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -2040,7 +2040,7 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>|cRXP_WARN_前往屠宰场的最底层|r
-    .cast 7728 >>|cRXP_WARN_Use the|r |T133292:0|t[Bloodstone Choker] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_虚空行者|r
+    .cast 7728 >>|cRXP_WARN_Use the|r |T133292:0|t[血石颈环] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Voidwalker|r
     .use 6928
 step << Warlock
     .goto StormwindClassic,25.154,77.406
@@ -2126,7 +2126,7 @@ step << Warrior/Paladin/Rogue
     .goto Stormwind City,51.192,17.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉尔曼·石手|r 对话
     .train 2575 >>Train |T134708:0|t[采矿]
-    >>|cRXP_WARN_This is used in conjunction with|r |T136241:0|t[锻造] |cRXP_WARN_to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_and|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_to increase your weapon damage|r
+    >>|cRXP_WARN_This is used in conjunction with|r |T136241:0|t[Blacksmithing] |cRXP_WARN_to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_and|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_to increase your weapon damage|r
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
     .target Gelman Stonehand
     .train 2018,3 --Blacksmithing
@@ -2141,7 +2141,7 @@ step << Warrior/Paladin/Rogue
     #optional
     .goto Stormwind City,51.021,16.862
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布鲁克·石衣|r 对话
-    .collect 2901,1 >>|cRXP_BUY_Buy a|r |T134708:0|t[矿工锄] |cRXP_BUY_from her|r
+    .collect 2901,1 >>|cRXP_BUY_Buy a|r |T134708:0|t[矿工锄]|cRXP_BUY_from her|r
     .target Brooke Stonebraid
     .train 2575,3 --Blacksmithing
     .money <0.2100 << Warrior -- needs to train 2h mace + thrown + buy throwing weps in IF
@@ -2206,7 +2206,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
-    >>|cRXP_BUY_Buy the|r |T135425:0|t[锐利的飞刀] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,1 --Collect Keen Throwing Knife (1)
     .target Brenwyn Wintersteel
     .xp <10+7405,1
@@ -2216,7 +2216,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
-    >>|cRXP_BUY_Buy the|r |T135641:0|t[平衡飞刀] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T135641:0|t[平衡飞刀]
     .collect 2946,1 --Collect Balanced Throwing Dagger (1)
     .target Brenwyn Wintersteel
     .xp >10+7405,1
@@ -2224,7 +2224,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
-    >>|cRXP_BUY_Buy the|r |T135425:0|t[锐利的飞刀] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
     .collect 3107,200 --Collect Keen Throwing Knife (200)
     .target Brenwyn Wintersteel
     .xp <10+7310,1
@@ -2233,7 +2233,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
-    >>|cRXP_BUY_Buy the|r |T135641:0|t[平衡飞刀] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T135641:0|t[平衡飞刀]
     .collect 2946,200 --Collect Balanced Throwing Dagger (200)
     .target Brenwyn Wintersteel
     .xp >10+7310,1
@@ -2241,7 +2241,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Rudra
-    +|cRXP_WARN_Equip the|r |T135425:0|t[锐利的飞刀]
+    +|cRXP_WARN_装备|r |T135425:0|t[锐利的飞刀]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2323,7 +2323,7 @@ step << Warrior/Rogue
     #optional
     #requires Dirt
     #completewith VagashEnd
-    +|cRXP_WARN_Equip the|r |T135425:0|t[锐利的飞刀]
+    +|cRXP_WARN_装备|r |T135425:0|t[锐利的飞刀]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2344,7 +2344,7 @@ step
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_请先看以下的短视频，然后再击杀 |cRXP_ENEMY_瓦加什|r。任何职业都可以单刷它|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
@@ -2376,7 +2376,7 @@ step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
-    >>击杀 |cRXP_ENEMY_石腭击颅者|r and |cRXP_ENEMY_石腭断骨者|r inside the cave
+    >>击杀 |cRXP_ENEMY_石腭击颅者|r 和 |cRXP_ENEMY_石腭断骨者|r 对话，NPC在里面 the cave
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob +Rockjaw Skullthumper
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
@@ -2414,7 +2414,7 @@ step
     .accept 417 >>接受任务 驾驶员的复仇
 step
     .goto Dun Morogh,78.97,37.14
-    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
+    >>击杀 |cRXP_ENEMY_癞爪|r。拾取他的 |cRXP_LOOT_肮脏的爪子|r
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
 step
@@ -2434,8 +2434,8 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》练级指南(联盟版)
 << Alliance
-#name 11-12 Loch Modan << !Warlock
-#name 12-14 Loch Modan << Warlock
+#name 11-12级 洛克莫丹 << !Warlock
+#name 12-14级 洛克莫丹 << Warlock
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Human
 #next 12-14 黑海岸 << Warlock
@@ -2482,16 +2482,16 @@ step << Warlock/Mage/Rogue
 step << Warlock/Mage/Rogue
     #optional
     #completewith StormpikeO
-    >>击杀 |cRXP_ENEMY_Elder Black Bears|r。拾取他们的 |cRXP_LOOT_Bear Meat|r
-    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_Boar Intestines|r
-    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_Spider Ichor|r
+    >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
+    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
+    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_蜘蛛的毒液|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .mob +Elder Black Bear
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob +Forest Lurker
-    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling|r |T133971:0|t[烹饪] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_to use for leveling|r |T133971:0|t[烹饪]|cRXP_WARN_later|r
     .subzoneskip 144
 step << Warlock/Mage/Rogue
     .goto Loch Modan,34.757,48.618
@@ -2506,7 +2506,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板纳克罗·壁炉|r 对话
     .vendor 6734 >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_. Aim to have about 20|r << Rogue
-    .vendor 6734 >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_and|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_. Aim to have about 10|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_and 20|r |T132815:0|t[冰镇牛奶] << Mage/Warlock
+    .vendor 6734 >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_and|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_. Aim to have about 10|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_and 20|r |T132815:0|t[冰镇牛奶] << Mage/Warlock
     .target Innkeeper Hearthstove
     .subzoneskip 144,1
 step << Warlock/Mage/Rogue
@@ -2527,9 +2527,9 @@ step << Warlock/Mage/Rogue
 step << Warlock/Mage/Rogue
     #optional
     #completewith SilverStream
-    >>击杀 |cRXP_ENEMY_Elder Black Bears|r。拾取他们的 |cRXP_LOOT_Bear Meat|r
-    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_Boar Intestines|r
-    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_Spider Ichor|r
+    >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
+    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
+    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_蜘蛛的毒液|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -2560,9 +2560,9 @@ step << Warlock/Mage/Rogue
 step << Warlock/Mage/Rogue
     #optional
     #completewith FilthyMountaineer
-    >>击杀 |cRXP_ENEMY_Elder Black Bears|r。拾取他们的 |cRXP_LOOT_Bear Meat|r
-    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_Boar Intestines|r
-    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_Spider Ichor|r
+    >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
+    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
+    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_蜘蛛的毒液|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -2601,8 +2601,8 @@ step << Warlock/Mage/Rogue
     .turnin 1339 >>交任务 巡山人雷矛的任务
     .target Mountaineer Stormpike
 step << Warlock/Mage/Rogue
-    >>击杀 |cRXP_ENEMY_Elder Black Bears|r。拾取他们的 |cRXP_LOOT_Bear Meat|r
-    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_Boar Intestines|r
+    >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
+    >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
     >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_Ichor|r
     .collect 3173,3,418,1 --Bear Meat (3)
     .mob +Elder Black Bear
@@ -2666,8 +2666,8 @@ step << Warlock/Mage/Rogue
 step
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
-    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2807,9 +2807,9 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[烹饪] |cRXP_BUY_with later|r
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Darkshire later|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|T133972:0|t[陆行鸟肉]
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -2835,7 +2835,7 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|T133912:0|t[黑海岸石斑鱼]
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
@@ -2933,7 +2933,7 @@ step
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与军营底楼的 |cRXP_FRIENDLY_尼尔·奥雷|r 对话
-    .vendor 1448 >>|cRXP_WARN_Buy a|r |T133024:0|t[青铜管] |cRXP_BUY_from him (if it's up)|r
+    .vendor 1448 >>|cRXP_WARN_Buy a|r |T133024:0|t[青铜管]|cRXP_BUY_from him (if it's up)|r
 	.target Neal Allen
     .bronzetube
     .money <0.08
@@ -2960,7 +2960,7 @@ step
 step
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -2972,7 +2972,7 @@ step
 step
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -2984,7 +2984,7 @@ step
 step
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[烹饪用火] |cRXP_WARN_(under the General Tab of your Spellbook)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -2998,7 +2998,7 @@ step
     +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[烹饪] 以下物品：
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -3009,7 +3009,7 @@ step
 step
     #optional
     +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -3050,7 +3050,7 @@ RXPGuides.RegisterGuide([[
 #name 12-14 黑海岸
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor Human Warlock
-#next 14-20 Bloodmyst
+#next 14-20秘血岛
 
 step
     #optional
@@ -3070,7 +3070,7 @@ step
 step
     #optional
     #completewith next
-    .goto Darkshore,36.70,43.78,8 >>Travel up stairs toward |cRXP_FRIENDLY_维兹班恩·曲针|r
+    .goto Darkshore,36.70,43.78,8 >>下楼 toward |cRXP_FRIENDLY_维兹班恩·曲针|r
 step
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 对话

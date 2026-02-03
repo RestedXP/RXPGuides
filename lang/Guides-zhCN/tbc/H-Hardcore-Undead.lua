@@ -47,7 +47,7 @@ step << Priest/Mage
     #label Vendor
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .vendor >>把垃圾物品卖给商人
 	.collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
@@ -75,7 +75,7 @@ step << Mage
     #requires Percing
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊莎贝拉|r
-    .train 1459 >>学习 |T135932:0|t[奥术智慧]
+    .train 1459 >>Train |T135932:0|t[奥术智慧]
     .target Isabella
 step << Warlock
     #label Vendor
@@ -87,7 +87,7 @@ step << Warlock
 step << Warlock
     .goto Tirisfal Glades,30.91,66.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克希米林|r
-    .train 348 >>训练 |T135817:0|t[献祭]
+    .train 348 >>Train |T135817:0|t[献祭]
     .target Maximillion
 step << !Warlock !Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
@@ -115,7 +115,7 @@ step << Warrior
     #label Training1
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dannal|r
-    .train 6673 >>训练 |T132333:0|t[战斗怒吼]
+    .train 6673 >>Train |T132333:0|t[战斗怒吼]
     .target Dannal Stern
 step << Warlock
     #requires Piercing
@@ -143,7 +143,7 @@ step << Warlock
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
 	.collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .target Joshua Kien
     .isOnQuest 1470
@@ -155,7 +155,7 @@ step << Warlock
     .target Venya Marthand
 step << Warlock
     #completewith next
-    .cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[Summon Imp]
+    .cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[召唤小鬼]
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
@@ -189,7 +189,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien
@@ -201,7 +201,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien
@@ -239,7 +239,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
     .isOnQuest 364
@@ -301,7 +301,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.25,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     >>|cRXP_WARN_Do NOT go below 1 Silver|r << Mage/Warlock/Priest
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien
@@ -347,12 +347,12 @@ step << Priest
 step << Warlock
     .goto Tirisfal Glades,30.91,66.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克希米林|r
-    .train 172 >>Train |T136118:0|t[腐蚀]
+    .train 172 >>Train |T136118:0|t[腐蚀术]
     .target Maximillion
 step << Mage
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊莎贝拉|r
-    .train 116 >>学习 |T135846:0|t[寒冰箭]
+    .train 116 >>Train |T135846:0|t[寒冰箭]
     .target Isabella
 step
     .goto Tirisfal Glades,31.35,66.21,10,0
@@ -391,7 +391,7 @@ step << Rogue
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_David|r
     .turnin 3096 >>交任务《 前往熔光镇》 密文卷轴
-    .train 53 >> Train |T132090:0|t[Backstab]
+    .train 53 >>Train |T132090:0|t[背刺]
     .money <0.04
     .target David Trias
 step << Rogue
@@ -443,7 +443,7 @@ step
 	.goto Tirisfal Glades,27.30,57.97,40,0
 	.goto Tirisfal Glades,26.94,56.42,40,0
 	.goto Tirisfal Glades,27.51,56.00,40,0
-    >>Kill |cRXP_ENEMY_小夜行蜘蛛|r close to the cave entrance
+    >>击杀 |cRXP_ENEMY_小夜行蜘蛛|r close to the cave entrance
     .complete 380,1 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
 step
@@ -460,7 +460,7 @@ step
     .goto Tirisfal Glades,23.23,59.91,20,0
     .goto Tirisfal Glades,23.89,58.36,20,0
     .goto Tirisfal Glades,24.68,59.54,20,0
-    >>Kill |cRXP_ENEMY_夜行蜘蛛|r inside the cave
+    >>击杀 |cRXP_ENEMY_夜行蜘蛛|r inside the cave
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
 step
@@ -494,7 +494,7 @@ step << Rogue/Warrior
 step << Warlock/Mage/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
 	.collect 159,15,383,1 << Warlock/Mage/Priest --Collect Refreshing Spring Water (15)
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien

@@ -48,7 +48,7 @@ step
     .goto Eversong Woods,38.66,20.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Shara|r
     >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭] |cRXP_BUY_from her until your|r |T134409:0|t[Quiver] |cRXP_BUY_is full|r << Hunter
-    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << Warlock/Mage/Priest
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << Warlock/Mage/Priest
     .vendor >>把垃圾物品卖给商人
     .collect 159,10,8336,1 << Warlock/Mage/Priest --Collect Refreshing Spring Water (x10)
     .target Shara Sunwing
@@ -56,14 +56,14 @@ step << Mage
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Julia|r
     .turnin 8328 >>交任务《 前往熔光镇》 法师训练
-    .accept 10068 >> Accept Well Watcher Solanian
+    .accept 10068 >>Accept 护井者索兰尼亚
     .train 1459 >>训练你的职业技能
     .target Julia Sunstriker
 step << Warlock
     .goto Eversong Woods,38.93,21.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Teli'Larien|r
     .turnin 8563 >>交任务《 前往熔光镇》 术士训练
-    .accept 10073 >> Accept Well Watcher Solanian
+    .accept 10073 >>Accept 护井者索兰尼亚
     .accept 8344 >>接受任务《物归己用》 力量之源
     .trainer>> Train your class spells
     .target Summoner Teli'Larien
@@ -71,26 +71,26 @@ step << Priest
     .goto Eversong Woods,39.42,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_竞技场|r
     .turnin 8564 >>交任务《 前往熔光镇》 牧师训练
-    .accept 10072 >> Accept Well Watcher Solanian
+    .accept 10072 >>Accept 护井者索兰尼亚
     .train 1243 >>训练你的职业技能
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kariel|r
     .turnin 9392 >>交任务《 前往熔光镇》 潜行者训练
-    .accept 10071 >> Accept Well Watcher Solanian
+    .accept 10071 >>Accept 护井者索兰尼亚
     .target Pathstalker Kariel
 step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Sallina|r
     .turnin 9393 >>交任务《 前往熔光镇》 猎人训练
-    .accept 10070 >> Accept Well Watcher Solanian
+    .accept 10070 >>Accept 护井者索兰尼亚
     .target Ranger Sallina
 step << Paladin
     .goto Eversong Woods,39.47,20.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Jesthenis|r
     .turnin 9676 >>交任务《 前往熔光镇》 圣骑士训练
-    .accept 10069 >> Accept Well Watcher Solanian
+    .accept 10069 >>Accept 护井者索兰尼亚
     .target Jesthenis Sunstriker
 step
     #completewith next
@@ -108,13 +108,13 @@ step
     .turnin 10072 >>交任务 巨魔巫术 Solanian << Priest
     .turnin 10073 >>交任务 巨魔巫术 Solanian << Warlock
     .accept 8330 >> Accept Solanian's Belongings
-    .accept 8345 >> Accept The Shrine of Dath'Remar
+    .accept 8345 >>Accept 达斯雷玛的神龛
     .target +Well Watcher Solanian
     .goto Eversong Woods,38.76,19.36
     .accept 8336 >>Accept 奥术薄片
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
-    .accept 8346 >> Accept Thirst Unending
+    .accept 8346 >>Accept 无尽的渴求
     .target +Arcanist Helion
     .goto Eversong Woods,37.18,18.94
 step << Warlock
@@ -153,7 +153,7 @@ step << Warlock
     .goto Eversong Woods,30.90,27.66,30,0
     .goto Eversong Woods,30.55,26.98,30,0
     .goto Eversong Woods,31.10,26.83,30,0
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |cRXP_LOOT_Essence|r and |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r].
+    >>击杀 a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |cRXP_LOOT_Essence|r and |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r].
     >>|cRXP_WARN_Use the |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r] to start the quest|r
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
@@ -219,7 +219,7 @@ step << Warlock
     .goto Eversong Woods,38.56,20.98,10,0
     .goto Eversong Woods,38.66,20.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Shara|r
-    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r
     .vendor >>把垃圾物品卖给商人
     .collect 159,10,8327,1 --Collect Refreshing Spring Water (10)
     .target Shara Sunwing
@@ -237,7 +237,7 @@ step << Warlock
     .target Summoner Teli'Larien
 step << Warlock
 	#completewith Measures
-	.cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[Summon Imp]
+	.cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[召唤小鬼]
 step << Warlock
     .goto Eversong Woods,38.86,21.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Yasmine|r
@@ -442,7 +442,7 @@ step << Mage/Priest
     .goto Eversong Woods,38.56,20.98,10,0
     .goto Eversong Woods,38.66,20.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Shara|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[清凉的泉水] |cRXP_BUY_from her|r
     .vendor >>把垃圾物品卖给商人
     .collect 159,10,8336,1 --Collect Refreshing Spring Water (10)
     .target Shara Sunwing
@@ -494,7 +494,7 @@ step
     .mob Arcane Wraith
 step << !Warlock
     #completewith Academy
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r].
+    >>击杀 a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r].
     >>|cRXP_WARN_Use the |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >>接受任务《物归己用》 被污染的奥术薄片
@@ -510,7 +510,7 @@ step
     .goto Eversong Woods,30.09,27.41,10,0
     .goto Eversong Woods,30.48,27.90,10,0
     .goto Eversong Woods,30.84,27.13
-    >>击杀 |cRXP_ENEMY_奥术怨灵|r and |cRXP_ENEMY_被污染的奥术怨灵|r whilst heading up the Academy
+    >>击杀 |cRXP_ENEMY_奥术怨灵|r 和 |cRXP_ENEMY_被污染的奥术怨灵|r whilst heading up the Academy
     >>Kill |cRXP_ENEMY_Felendren the Banished|r at the top. Loot him for his |cRXP_LOOT_Head|r
     .complete 8335,1 --Kill Arcane Wraith (x8)
     .mob +Arcane Wraith
@@ -520,7 +520,7 @@ step
     .mob +Felendren the Banished
 step << !Warlock
     .goto Eversong Woods,30.84,27.13
-    >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r].
+    >>击杀 a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r].
     >>|cRXP_WARN_Use the |T132884:0|t[|cRXP_LOOT_被污染的奥术薄片|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
     .accept 8338 >>接受任务《物归己用》 被污染的奥术薄片
@@ -552,7 +552,7 @@ step
     .goto Eversong Woods,38.76,19.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Solanian|r
     .turnin 8330 >>交任务塞克隆尼亚's Belongings
-    .turnin 8345 >> Turn in The Shrine of Dath'Remar
+    .turnin 8345 >>Turn in 达斯雷玛的神龛
     .target Well Watcher Solanian
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ithanas|r
@@ -677,7 +677,7 @@ step << Warrior/Rogue
 step << Mage/Warlock/Priest
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Delaniel|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r
     .collect 1179,5,8468,1 --Ice Cold Milk (5)
     .money <0.0119
     .target Innkeeper Delaniel
@@ -725,7 +725,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑]|cRXP_BUY_from him|r
     .collect 2488,1,8476,1 --Gladius (1)
     .target Geron
     .money <0.0509
@@ -743,7 +743,7 @@ step << Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑]|cRXP_BUY_from him|r
     .collect 2494,1,8476,1 --Collect Stiletto
     .target Geron
     .money <0.0382
@@ -778,7 +778,7 @@ step
 step
     #label Thaelis
     .goto Eversong Woods,45.02,37.68
-    >>击杀 |cRXP_ENEMY_饥饿者泰里斯|r. Loot him for |cRXP_LOOT_Thaelis's Head|r
+    >>击杀 |cRXP_ENEMY_饥饿者泰里斯|r。拾取他的 |cRXP_LOOT_Thaelis's Head|r
     .complete 8468,1 --Collect Thaelis's Head (x1)
     .mob Thaelis the Hungerer
 step
@@ -878,7 +878,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑]|cRXP_BUY_from him|r
     .collect 2488,1,8491,1 --Gladius (1)
     .target Geron
     .money <0.0509
@@ -896,7 +896,7 @@ step << Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑]|cRXP_BUY_from him|r
     .collect 2494,1,8491,1 --Collect Stiletto
     .target Geron
     .money <0.0382
@@ -926,9 +926,9 @@ step
 step
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Delaniel|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_and|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << Paladin
     .collect 1179,20,8491,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (20)
     .collect 4541,20,8491,1 << !Priest !Mage !Warlock !Druid !Paladin --Freshly Baked Bread (20)
     .collect 4541,10,8491,1 << Paladin --Freshly Baked Bread (10)
@@ -939,9 +939,9 @@ step
     #label BuyFood1
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Delaniel|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_and|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << Paladin
     .collect 1179,10,8491,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (10)
     .collect 4541,10,8491,1 << !Priest !Mage !Warlock !Druid !Paladin --Freshly Baked Bread (10)
     .collect 4541,5,8491,1 << Paladin --Freshly Baked Bread (10)
@@ -1104,8 +1104,8 @@ step
     .goto Eversong Woods,25.70,60.50,40,0
     .goto Eversong Woods,25.36,62.88,40,0
     .goto Eversong Woods,25.61,64.29,40,0
-    >>Kill |cRXP_ENEMY_Grimscale Foragers|r and |cRXP_ENEMY_Grimscale Seers|r. Loot them for their |cRXP_LOOT_Heads|r and |T134939:0|t[|cRXP_LOOT_凯莉森德拉船长的航海图|r]
-    >>|cRXP_WARN_Use |T134939:0|t[|cRXP_LOOT_凯莉森德拉船长的航海图|r] to start the quest|r
+    >>击杀 |cRXP_ENEMY_Grimscale Foragers|r and |cRXP_ENEMY_Grimscale Seers|r. Loot them for their |cRXP_LOOT_Heads|r and |T134939:0|t[|cRXP_LOOT_凯莉森德拉船长的航海图|r]
+    >>|cRXP_WARN_使用 |T134939:0|t[|cRXP_LOOT_凯莉森德拉船长的航海图|r] 来激发任务|r
     .complete 8884,1 --Collect Grimscale Murloc Head (x8)
     .collect 21776,1,8887 --Captain Kelisendra's Lost Rutters
     .accept 8887 >>接受任务《物归己用》 凯莉森德拉船长的航海图
@@ -1206,7 +1206,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑]|cRXP_BUY_from him|r
     .collect 2488,1,8491,1 --Gladius (1)
     .target Geron
     .money <0.0509
@@ -1223,7 +1223,7 @@ step << Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑]|cRXP_BUY_from him|r
     .collect 2494,1,8491,1 --Collect Stiletto
     .target Geron
     .money <0.0382
@@ -1375,7 +1375,7 @@ step
 step
     #label Aldaron
     .goto Eversong Woods,32.80,69.40
-    >>击杀 |cRXP_ENEMY_鲁莽的奥尔达隆|r at the top. Loot him his |cRXP_LOOT_头部|r
+    >>击杀 |cRXP_ENEMY_鲁莽的奥尔达隆|r at the top. 拾取地上的 him his |cRXP_LOOT_头部|r
     .complete 9076,1 --Collect Aldaron's Head (x1)
     .mob Aldaron the Reckless
 step
@@ -1434,7 +1434,7 @@ step
     .goto Eversong Woods,24.36,72.66,40,0
     >>击杀 |cRXP_ENEMY_呜啦哇啦|r。拾取他的 |cRXP_LOOT_Ring of Mmmrrrggglll|r
     >>|cRXP_WARN_He patrols around slightly|r
-    >>|cRXP_WARN_使用|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_to interrupt|r |cRXP_ENEMY_呜啦哇啦|r's |T136052:0|t[Healing Wave] << BloodElf
+    >>|cRXP_WARN_Use|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_to interrupt|r |cRXP_ENEMY_Mmmrrrggglll|r's |T136052:0|t[治疗波] << BloodElf
     .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
 step
@@ -1477,7 +1477,7 @@ step
 step << Hunter
     .goto Eversong Woods,44.04,70.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Halis|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭] |cRXP_BUY_and|r |T132382:0|t[锋利的箭] |cRXP_BUY_from him|r. |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from her|r |cRXP_BUY_if you need bags|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭]|cRXP_BUY_and|r |T132382:0|t[锋利的箭]|cRXP_BUY_from him|r. |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches]|cRXP_BUY_from her|r|cRXP_BUY_if you need bags|r
     .collect 2512,200,9252,1 << Hunter --Rough Arrow (200)
     .collect 2515,1000,9252,1 << Hunter --Sharp Arrow (1000)
     .target Halis Dawnstrider
@@ -1486,7 +1486,7 @@ step << Hunter
 step << Hunter
     .goto Eversong Woods,44.04,70.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Halis|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭] |cRXP_BUY_from her|r. |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from him|r |cRXP_BUY_if you need bags|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]|cRXP_BUY_from her|r. |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches]|cRXP_BUY_from him|r|cRXP_BUY_if you need bags|r
     .collect 2515,1000,9252,1 << Hunter --Sharp Arrow (1000)
     .target Halis Dawnstrider
 step << !Hunter
@@ -1568,7 +1568,7 @@ step
 step
     .goto Eversong Woods,53.66,69.74,20,0
     .goto Eversong Woods,54.28,70.97
-    >>击杀 |cRXP_ENEMY_冷酷的加苏尔|r and the |cRXP_ENEMY_愤怒之影|r to protect |cRXP_FRIENDLY_Mirveda|r
+    >>击杀 |cRXP_ENEMY_冷酷的加苏尔|r 与 |cRXP_ENEMY_愤怒之影|r 以保护 |cRXP_FRIENDLY_Mirveda|r
     .complete 8488,1 --Protect Apprentice Mirveda
     .mob Gharsul the Remorseless
     .mob Angershade
@@ -1756,9 +1756,9 @@ step << Undead Warlock
 step
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Delaniel|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_and|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << Paladin
     .collect 1179,20,8491,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (20)
     .collect 4541,20,8491,1 << !Priest !Mage !Warlock !Druid !Paladin --Freshly Baked Bread (20)
     .collect 4541,10,8491,1 << Paladin --Freshly Baked Bread (10)
@@ -1769,9 +1769,9 @@ step
     #label Buyfood1
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Delaniel|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_and|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << Paladin
     .collect 1179,10,8491,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (10)
     .collect 4541,10,8491,1 << !Priest !Mage !Warlock !Druid !Paladin --Freshly Baked Bread (10)
     .collect 4541,5,8491,1 << Paladin --Freshly Baked Bread (10)
@@ -1838,7 +1838,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135321:0|t[步兵剑]|cRXP_BUY_from him|r
     .collect 2488,1,8476,1 --Gladius (1)
     .target Geron
     .money <0.0509
@@ -1855,7 +1855,7 @@ step << Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[卷刃的剑]|cRXP_BUY_from him|r
     .collect 2494,1,8476,1 --Collect Stiletto
     .target Geron
     .money <0.0382
@@ -2223,7 +2223,7 @@ step
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉瑟尔|r
     .train 2018 >>Train |T136241:0|t[锻造]. You'll get |T136248:0|t[采矿] later which will allow you to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 1 hour) << Paladin/BloodElf Rogue/Undead Rogue
-    >>|cRXP_WARN_You can skip|r |T136241:0|t[锻造] |cRXP_WARN_if you wish|r << Paladin/BloodElf Rogue/Undead Rogue
+    >>|cRXP_WARN_You can skip|r |T135232:0|t[锻造]|cRXP_WARN_if you wish|r << Paladin/BloodElf Rogue/Undead Rogue
     .accept 8477 >>接受任务《物归己用》 制矛师之锤
     .target Arathel Sunforge
 step << BloodElf Hunter
@@ -2822,13 +2822,13 @@ step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
 step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
     .goto Silvermoon City,78.90,43.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利尔|r
-    .train 2580 >>Train |T136248:0|t[采矿]. This will allow you to find |T135232:0|t|cRXP_LOOT_[劣质的石头]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 1 hour) << Paladin/BloodElf Rogue/Undead Rogue
+    .train 2580 >>Train |T136248:0|t[采矿]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 1 hour) << Paladin/BloodElf Rogue/Undead Rogue
     .target Belil
     .skill blacksmithing,1
 step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
     .goto Silvermoon City,78.41,42.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泽兰|r
-    >>|cRXP_BUY_Buy a|r |T134708:0|t[矿工锄] |cRXP_BUY_from|r |cRXP_FRIENDLY_Zelan|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[矿工锄]|cRXP_BUY_from|r|cRXP_FRIENDLY_Zelan|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target Zelan
     .skill blacksmithing,1
@@ -3227,7 +3227,7 @@ step
 step
     .goto Eversong Woods,35.10,84.05,10,0
     .goto Eversong Woods,34.91,84.34
-    >>Kill |cRXP_ENEMY_Old Whitebark|r. Loot him for |T133280:0|t[|cRXP_LOOT_怀特巴克的坠饰|r]
+    >>击杀 |cRXP_ENEMY_Old Whitebark|r. Loot him for |T133280:0|t[|cRXP_LOOT_怀特巴克的坠饰|r]
     >>|cRXP_WARN_Use |T133280:0|t[|cRXP_LOOT_怀特巴克的坠饰|r] to start the quest|r
     >>|cRXP_ENEMY_怀特巴克|r |cRXP_WARN_has a 7 minute 30 second respawn time|r
     .collect 23228,1,8474,1 --Collect Old Whitebark's Pendant (x1)
@@ -3627,7 +3627,7 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r << Paladin
     .collect 1179,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (20)
@@ -3642,7 +3642,7 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_and|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r << Paladin
     .collect 1179,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (10)
@@ -3657,9 +3657,9 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133970:0|t[Mutton Chops] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133970:0|t[羊排]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133970:0|t[羊排] |cRXP_BUY_from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
     .collect 3770,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (20)
     .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
@@ -3671,9 +3671,9 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133970:0|t[Mutton Chops] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133970:0|t[羊排]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133970:0|t[羊排] |cRXP_BUY_from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 3770,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (10)
     .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
@@ -3786,8 +3786,8 @@ step
     >>|cRXP_WARN_He is immune to|r |T136183:0|t[恐惧] << !BloodElf Warlock
     >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_and|r |T136184:0|t[Psychic Scream] << BloodElf Priest
     >>|cRXP_WARN_He is immune to|r |T136184:0|t[Psychic Scream] << !BloodElf Priest
-    >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent], |T135846:0|t[Frostbolt], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << BloodElf Mage
-    >>|cRXP_WARN_He is immune to|r |T135846:0|t[Frostbolt], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << !BloodElf Mage
+    >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent], |T135846:0|t[寒冰箭], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << BloodElf Mage
+    >>|cRXP_WARN_He is immune to|r |T135846:0|t[寒冰箭], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << !BloodElf Mage
     >>|cRXP_WARN_Be sure buff yourself with|r |T136006:0|t[Dampen Magic]|cRXP_WARN_before summoning him|r << Mage
     >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_and|r |T132155:0|t[Gouge] << BloodElf Rogue
     >>|cRXP_WARN_He is immune to|r |T132155:0|t[Gouge] << !BloodElf Rogue
@@ -3804,8 +3804,8 @@ step << Priest/Mage
     >>击杀 |cRXP_ENEMY_阿奎艾森|r
     >>|cRXP_WARN_He has elite-level health and deals frost damage|r
     >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent] << BloodElf Priest
-    >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent], |T135846:0|t[Frostbolt], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << BloodElf Mage
-    >>|cRXP_WARN_He is immune to|r |T135846:0|t[Frostbolt], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << !BloodElf Mage
+    >>|cRXP_WARN_He is immune to|r |T136222:0|t[Arcane Torrent], |T135846:0|t[寒冰箭], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << BloodElf Mage
+    >>|cRXP_WARN_He is immune to|r |T135846:0|t[寒冰箭], |T135848:0|t[冰霜新星], |cRXP_WARN_and|r |T135843:0|t[Frost Armor] << !BloodElf Mage
     .complete 9174,1 --Kill Aquantion (x1)
     .mob Aquantion
 step
@@ -3948,7 +3948,7 @@ step << Paladin
 step << Paladin
     .goto Ghostlands,47.71,32.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vredigar|r
-    >>|cRXP_BUY_Buy the|r |T132535:0|t[志愿者胫甲] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy the|r |T132535:0|t[志愿者胫甲]|cRXP_BUY_from him|r
     .collect 22993,1,9281,1 --Collect Volunteer's Greaves (1)
     .target Provisioner Vredigar
     .itemStat 8,LEVEL,<15
@@ -4057,7 +4057,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     .vendor 16268 >>把垃圾物品卖给商人
     .target Eralan
     .money <0.6947 << BloodElf/Undead
@@ -4443,9 +4443,9 @@ step << !Shaman !Warrior !Druid !BloodElf/!Warlock !Paladin
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
     .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -4458,9 +4458,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
     .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -4472,9 +4472,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -4495,7 +4495,7 @@ step
     .mob Luzran
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_笨拙的食尸者|r and |cRXP_ENEMY_复生的饥饿者|r. Loot the |cRXP_ENEMY_复生的饥饿者|r for their |cRXP_LOOT_腐烂精华|r
+    >>击杀 |cRXP_ENEMY_笨拙的食尸者|r 和 |cRXP_ENEMY_复生的饥饿者|r. 拾取散发绿光的 |cRXP_ENEMY_复生的饥饿者|r for their |cRXP_LOOT_腐烂精华|r
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_施放|r |T136224:0|t[激怒] |cRXP_WARN_(increased damage and attack speed) at low health|r
     >>|cRXP_WARN_Be careful as|r|cRXP_ENEMY_复生的饥饿者|r|cRXP_WARN_施放|r |T132278:0|t[Blood Leech]|cRXP_WARN_(10 damage lifesteal)|r
     .complete 9155,1 --Kill Risen Hungerer (x10)
@@ -4823,7 +4823,7 @@ step
     .goto Ghostlands,40.23,31.75,40,0
     .goto Ghostlands,38.77,29.82,40,0
     .goto Ghostlands,40.76,28.98,40,0
-    >>击杀 |cRXP_ENEMY_笨拙的食尸者|r and |cRXP_ENEMY_复生的饥饿者|r. Loot |cRXP_ENEMY_复生的饥饿者|r for their |cRXP_LOOT_腐烂精华|r
+    >>击杀 |cRXP_ENEMY_笨拙的食尸者|r 和 |cRXP_ENEMY_复生的饥饿者|r. 拾取地上的 |cRXP_ENEMY_复生的饥饿者|r for their |cRXP_LOOT_腐烂精华|r
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_施放|r |T136224:0|t[激怒] |cRXP_WARN_(increased damage and attack speed) at low health|r
     >>|cRXP_WARN_Be careful as|r|cRXP_ENEMY_复生的饥饿者|r|cRXP_WARN_施放|r |T132278:0|t[Blood Leech]|cRXP_WARN_(10 damage lifesteal)|r
     >>|cRXP_ENEMY_笨拙的食尸者|r |cRXP_WARN_and |cRXP_ENEMY_复生的饥饿者|r share spawns with each other. Kill both to spawn the ones you need|r
@@ -4867,9 +4867,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
     .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -4882,9 +4882,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
     .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -4896,9 +4896,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -4958,7 +4958,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     .vendor 16268 >>把垃圾物品卖给商人
     .target Eralan
     .money <0.6947 << BloodElf/Undead
@@ -5121,7 +5121,7 @@ step << Rogue
     #optional
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟兰尼斯|r
-    >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[Pick Lock]|cRXP_WARN_for a quest later|r
+    >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[开锁]|cRXP_WARN_for a quest later|r
     .turnin 9618 >>交任务《 前往熔光镇》 交回报告 << BloodElf
     .accept 10372 >>接受任务《物归己用》 谨慎的询问
     .train 1804 >>训练你的职业技能
@@ -5505,7 +5505,7 @@ step
     .target Apprentice Vor'el
 step
     #completewith SpireT01
-    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r and |cRXP_ENEMY_鬼爪破坏者|r. Loot |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
+    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r 和 |cRXP_ENEMY_鬼爪破坏者|r. 拾取地上的 |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
@@ -5531,7 +5531,7 @@ step
     #completewith SpireT01
     >>击杀 |cRXP_ENEMY_复生的游荡者|r。拾取他们的 |cRXP_LOOT_腐烂精华|r
     >>击杀 |cRXP_ENEMY_凶骨哨兵|r 和 |cRXP_ENEMY_亡骨巫师|r。拾取他们的 |cRXP_LOOT_脊骨之尘|r
-    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_凶骨哨兵|r cast |r |T132357:0|t[Shield Bash] |cRXP_WARN_(Interrupt)|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Dreadbone Sentinels|r cast |r |T132357:0|t[盾击] |cRXP_WARN_(Interrupt)|r
     .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
     .mob +Risen Stalker
     .collect 22642,10,9218,1 --Collect Spinal Dust (x10)
@@ -5553,7 +5553,7 @@ step
     .goto Ghostlands,28.23,58.65,50,0
     .goto Ghostlands,23.38,59.90,50,0
     .goto Ghostlands,18.75,60.74,50,0
-    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r and |cRXP_ENEMY_鬼爪破坏者|r. Loot |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
+    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r 和 |cRXP_ENEMY_鬼爪破坏者|r. 拾取地上的 |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
@@ -5581,7 +5581,7 @@ step
     .isOnQuest 9173
 step
     #completewith next
-    >>Loot |cRXP_ENEMY_Fallen Rangers|r and |cRXP_ENEMY_Deatholme Acolytes|r for |T133303:0|t[|cRXP_LOOT_女王的项链|r]
+    >>拾取地上的 |cRXP_ENEMY_Fallen Rangers|r 和 |cRXP_ENEMY_Deatholme Acolytes|r for |T133303:0|t[|cRXP_LOOT_女王的项链|r]
     >>|cRXP_WARN_Use |T133303:0|t[|cRXP_LOOT_女王的项链|r] to start the quest|r
     .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
     .accept 9175 >>接受任务《物归己用》 女王的项链
@@ -5620,7 +5620,7 @@ step
     .goto Ghostlands,13.69,58.59,20,0
     .goto Ghostlands,12.66,58.98,15,0
     .goto Ghostlands,12.24,57.47,15,0
-    >>Kill |cRXP_ENEMY_Fallen Rangers|r and |cRXP_ENEMY_Deatholme Acolytes|r. Loot them for |T133303:0|t[|cRXP_LOOT_女王的项链|r]
+    >>击杀 |cRXP_ENEMY_Fallen Rangers|r and |cRXP_ENEMY_Deatholme Acolytes|r. Loot them for |T133303:0|t[|cRXP_LOOT_女王的项链|r]
     >>|cRXP_WARN_Use |T133303:0|t[|cRXP_LOOT_女王的项链|r] to start the quest|r
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
     .accept 9175 >>接受任务《物归己用》 女王的项链
@@ -5633,7 +5633,7 @@ step
     .goto Ghostlands,28.23,58.65,50,0
     .goto Ghostlands,30.77,60.23,50,0
     .goto Ghostlands,34.06,57.57,50,0
-    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r and |cRXP_ENEMY_鬼爪破坏者|r. Loot |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
+    >>击杀 |cRXP_ENEMY_巨型纺丝蜘蛛|r 和 |cRXP_ENEMY_鬼爪破坏者|r. 拾取地上的 |cRXP_ENEMY_巨型纺丝蜘蛛|r for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
@@ -5688,7 +5688,7 @@ step
     .mob +Stonewing Slayer
 step
     #completewith next
-    .cast 7840 >> |cRXP_WARN_Use the|r |T134754:0|t[Swim Speed Potion] |cRXP_WARN_in the water to swim across it faster|r
+    .cast 7840 >>|cRXP_WARN_Use the|r |T134754:0|t[速游药水]|cRXP_WARN_in the water to swim across it faster|r
     .use 6372
     .itemcount 6372,1
 step
@@ -5765,7 +5765,7 @@ step
     .isOnQuest 10372 << BloodElf Rogue
 step
     #completewith WindrunnerV
-    .cast 7840 >> |cRXP_WARN_Use the|r |T134754:0|t[Swim Speed Potion] |cRXP_WARN_in the water to swim back faster|r
+    .cast 7840 >>|cRXP_WARN_Use the|r |T134754:0|t[速游药水]|cRXP_WARN_in the water to swim back faster|r
     .use 6372
     .itemcount 6372,1
     .cooldown item,6948,<0
@@ -5892,7 +5892,7 @@ step << Rogue
     #optional
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟兰尼斯|r
-    >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[Pick Lock]|cRXP_WARN_for a quest later|r
+    >>|cRXP_WARN_Make sure you've trained|r |T136058:0|t[开锁]|cRXP_WARN_for a quest later|r
     .turnin 9618 >>交任务《 前往熔光镇》 交回报告 << BloodElf
     .accept 10372 >>接受任务《物归己用》 谨慎的询问
     .train 1804 >>训练你的职业技能
@@ -6213,9 +6213,9 @@ step << !Rogue
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
     .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -6228,9 +6228,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
     .collect 4538,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (20)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -6242,9 +6242,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -6285,7 +6285,7 @@ step << Rogue wotlk
     #completewith Clearing
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效药膏] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
     .xp <19,1
@@ -6305,7 +6305,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     .vendor 16268 >>把垃圾物品卖给商人
     .target Eralan
     .money <0.6947 << BloodElf/Undead
@@ -6435,7 +6435,7 @@ step << Hunter
 step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳瑞娜|r
-    >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]|cRXP_BUY_from her|r
     .collect 2515,2000,9252,1 << Hunter --Sharp Arrow (2000)
     .target Narina
     .money <0.0480 << BloodElf
@@ -6509,7 +6509,7 @@ step << Rogue
     .goto Ghostlands,59.31,30.79,15,0
     .goto Ghostlands,59.31,27.71,15,0
     .goto Ghostlands,61.68,28.58,15,0
-    >>|T136058:0|t[Pick Lock] the |cRXP_PICK_Burial Chests|r on the ground inside the Crypt. Loot them for the |cRXP_LOOT_Gold Band|r
+    >>|T136058:0|t[开锁] the |cRXP_PICK_Burial Chests|r on the ground inside the Crypt. Loot them for the |cRXP_LOOT_Gold Band|r
     >>点击地上的 |cRXP_PICK_Mummified Troll Remains|r on the ground to burn them
     .skill lockpicking,18 >>等级 your |T136058:0|t[Lockpicking] skill to 18
     .complete 9491,1 --Pitted Gold Band (1)
@@ -6578,7 +6578,7 @@ step
 step << Rogue
     #label PittedG
     #completewith Lilatha
-    >>|T136058:0|t[Pick Lock] the |cRXP_PICK_Burial Chests|r on the ground inside the Crypt. Loot them for the |cRXP_LOOT_Pitted Gold Band|r
+    >>|T136058:0|t[开锁] the |cRXP_PICK_Burial Chests|r on the ground inside the Crypt. Loot them for the |cRXP_LOOT_Pitted Gold Band|r
     >>点击地上的 |cRXP_PICK_Mummified Troll Remains|r on the ground to burn them
     >>|cRXP_WARN_MAKE SURE you finish this before leaving the Catacombs|r
     .skill lockpicking,20 >>等级 your |T136058:0|t[Lockpicking] skill to 20
@@ -6587,7 +6587,7 @@ step << Rogue
 step << Rogue
     #requires PittedG
     #completewith Lilatha
-    >>|T136058:0|t[Pick Lock]|cRXP_WARN_the|r|cRXP_PICK_Burial Chests|r|cRXP_WARN_on the ground inside the Crypt when you're waiting for|r|cRXP_FRIENDLY_Lilatha|r|cRXP_WARN_. These can contain Food, Potions, and Throwing Knives|r
+    >>|T136058:0|t[开锁]|cRXP_WARN_the|r|cRXP_PICK_Burial Chests|r|cRXP_WARN_on the ground inside the Crypt when you're waiting for|r|cRXP_FRIENDLY_Lilatha|r|cRXP_WARN_. These can contain Food, Potions, and Throwing Knives|r
 step << !Rogue
     #completewith Lilatha
     >>点击地上的 |cRXP_PICK_Mummified Troll Remains|r on the ground to burn them
@@ -6623,7 +6623,7 @@ step << Rogue
     .goto Ghostlands,59.31,30.79,15,0
     .goto Ghostlands,59.31,27.71,15,0
     .goto Ghostlands,61.68,28.58,15,0
-    >>|T136058:0|t[Pick Lock] the |cRXP_PICK_Burial Chests|r on the ground inside the Crypt. Loot them for the |cRXP_LOOT_Pitted Gold Band|r
+    >>|T136058:0|t[开锁] the |cRXP_PICK_Burial Chests|r on the ground inside the Crypt. Loot them for the |cRXP_LOOT_Pitted Gold Band|r
     >>点击地上的 |cRXP_PICK_Mummified Troll Remains|r on the ground to burn them
     .skill lockpicking,20 >>等级 your |T136058:0|t[Lockpicking] skill to 20
     .complete 9491,1 --Pitted Gold Band (1)
@@ -6715,7 +6715,7 @@ step << Rogue wotlk
     #completewith Truth
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效药膏] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
     .xp <19,1
@@ -6748,7 +6748,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     .vendor 16268 >>把垃圾物品卖给商人
     .target Eralan
     .money <0.6947 << BloodElf/Undead
@@ -6819,7 +6819,7 @@ step
     .accept 9162 >>接受任务《物归己用》 往日的线索
 step << Rogue
     #completewith next
-    >>|T136058:0|t[Pick Lock] the |cRXP_PICK_Primitive Chests|r on the ground near the ruins. Loot them for the |cRXP_LOOT_Archaeologist's Shrunken Head|r
+    >>|T136058:0|t[开锁] the |cRXP_PICK_Primitive Chests|r on the ground near the ruins. Loot them for the |cRXP_LOOT_Archaeologist's Shrunken Head|r
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     #loop
@@ -6845,9 +6845,9 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133970:0|t[Mutton Chops] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133970:0|t[羊排]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133970:0|t[羊排] |cRXP_BUY_from him|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
     .collect 3770,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (20)
     .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
@@ -6860,9 +6860,9 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133970:0|t[Mutton Chops] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T133970:0|t[羊排]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133970:0|t[羊排] |cRXP_BUY_from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 3770,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Mutton Chop (10)
     .collect 3770,10,9281,1 << Paladin --Mutton Chop (10)
@@ -6893,7 +6893,7 @@ step
     .target Ranger Vynna
 step << Rogue
     #completewith KelGash
-    >>|T136058:0|t[Pick Lock] the |cRXP_PICK_Primitive Chests|r on the ground. Loot them for the |cRXP_LOOT_Archaeologist's Shrunken Head|r
+    >>|T136058:0|t[开锁] the |cRXP_PICK_Primitive Chests|r on the ground. Loot them for the |cRXP_LOOT_Archaeologist's Shrunken Head|r
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     #completewith KelGash
@@ -6998,7 +6998,7 @@ step << Rogue
     .goto Ghostlands,64.70,67.70,10,0
     .goto Ghostlands,65.42,66.39,10,0
     .goto Ghostlands,64.66,64.07,10,0
-    >>|T136058:0|t[Pick Lock] the |cRXP_PICK_Primitive Chests|r on the ground near the ruins. Loot them for the |cRXP_LOOT_Archaeologist's Shrunken Head|r
+    >>|T136058:0|t[开锁] the |cRXP_PICK_Primitive Chests|r on the ground near the ruins. Loot them for the |cRXP_LOOT_Archaeologist's Shrunken Head|r
     .complete 10548,1 --Archaeologist's Shrunken Head (1)
 step
     #loop
@@ -7032,7 +7032,7 @@ step
 	.goto Ghostlands,57.24,63.00,30,0
 	.goto Ghostlands,56.35,65.01,30,0
 	.goto Ghostlands,56.49,68.12,30,0
-    >>击杀 |cRXP_ENEMY_哨兵部队渗透者|r. Loot them for the |cRXP_LOOT_Controlling Orb|r
+    >>击杀 |cRXP_ENEMY_哨兵部队渗透者|r。拾取他们的 |cRXP_LOOT_Controlling Orb|r
     .collect 23191,1,9169,1 --Collect Crystal Controlling Orb (x1)
     .mob Sentinel Infiltrator
 step
@@ -7113,7 +7113,7 @@ step << Rogue wotlk
     #completewith Truth
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效药膏] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
     .xp <19,1
@@ -7138,7 +7138,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     >>|cRXP_WARN_Keep the|r |T135662:0|t[柳叶刀] |cRXP_WARN_for later as you'll need it for a quest|r << tbc
     .turnin 10548,1 >>交任务《 前往熔光镇》 悲伤的事实 << tbc
     .turnin 10548 >>交任务《 前往熔光镇》 悲伤的事实 << wotlk
@@ -7443,7 +7443,7 @@ step
     #completewith next
     >>击杀 |cRXP_ENEMY_复生的游荡者|r。拾取他们的 |cRXP_LOOT_腐烂精华|r
     >>击杀 |cRXP_ENEMY_凶骨哨兵|r 和 |cRXP_ENEMY_亡骨巫师|r。拾取他们的 |cRXP_LOOT_脊骨之尘|r
-    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_凶骨哨兵|r cast |r |T132357:0|t[Shield Bash] |cRXP_WARN_(Interrupt)|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Dreadbone Sentinels|r cast |r |T132357:0|t[盾击] |cRXP_WARN_(Interrupt)|r
     .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
     .mob +Risen Stalker
     .collect 22642,10,9218,1 --Collect Spinal Dust (x10)
@@ -7510,9 +7510,9 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
+    >>|cRXP_BUY_Buy|r |T132796:0|t[果汁] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
     .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
     .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
@@ -7605,7 +7605,7 @@ step << Rogue wotlk
     #completewith Eralan6
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效药膏] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
     .xp <19,1
@@ -7628,7 +7628,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     >>|cRXP_WARN_Keep the|r |T135662:0|t[柳叶刀] |cRXP_WARN_for later as you'll need it for a quest|r << tbc
     .turnin 10548,1 >>交任务《 前往熔光镇》 悲伤的事实 << tbc
     .turnin 10548 >>交任务《 前往熔光镇》 悲伤的事实 << wotlk
@@ -7750,7 +7750,7 @@ step
     #completewith Luzran
     >>击杀 |cRXP_ENEMY_复生的游荡者|r。拾取他们的 |cRXP_LOOT_腐烂精华|r
     >>击杀 |cRXP_ENEMY_凶骨哨兵|r 和 |cRXP_ENEMY_亡骨巫师|r。拾取他们的 |cRXP_LOOT_脊骨之尘|r
-    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_凶骨哨兵|r cast |r |T132357:0|t[Shield Bash] |cRXP_WARN_(Interrupt)|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Dreadbone Sentinels|r cast |r |T132357:0|t[盾击] |cRXP_WARN_(Interrupt)|r
     .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
     .mob +Risen Stalker
     .collect 22642,10,9218,1 --Collect Spinal Dust (x10)
@@ -7848,7 +7848,7 @@ step
     .goto Ghostlands,36.25,70.35,50,0
     >>击杀 |cRXP_ENEMY_复生的游荡者|r。拾取他们的 |cRXP_LOOT_腐烂精华|r
     >>击杀 |cRXP_ENEMY_凶骨哨兵|r 和 |cRXP_ENEMY_亡骨巫师|r。拾取他们的 |cRXP_LOOT_脊骨之尘|r
-    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_凶骨哨兵|r cast |r |T132357:0|t[Shield Bash] |cRXP_WARN_(Interrupt)|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Dreadbone Sentinels|r cast |r |T132357:0|t[盾击] |cRXP_WARN_(Interrupt)|r
     .collect 22641,10,9216,1 --Collect Rotting Heart (x10)
     .mob +Risen Stalker
     .collect 22642,10,9218,1 --Collect Spinal Dust (x10)
@@ -7934,7 +7934,7 @@ step
     .goto Ghostlands,29.28,88.89,8,0
     .goto Ghostlands,35.24,88.23,10,0
     .goto Ghostlands,35.77,89.13,8,0
-    >>击杀 |cRXP_ENEMY_黑衣玛索菲特|r inside the either of the Ziggurats
+    >>击杀 |cRXP_ENEMY_黑衣玛索菲特|r 对话，NPC在里面 the either of the Ziggurats
     .complete 9170,4 --Kill Masophet the Black (x1)
     .mob Masophet the Black
 step
@@ -7945,7 +7945,7 @@ step
     .goto Ghostlands,32.67,90.30,8,0
     .goto Ghostlands,40.09,83.34,10,0
     .goto Ghostlands,41.24,83.04,8,0
-    >>击杀 |cRXP_ENEMY_放血者鲍尔古斯|r inside either of the Slaughterhouses
+    >>击杀 |cRXP_ENEMY_放血者鲍尔古斯|r 对话，NPC在里面 either of the Slaughterhouses
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .mob Borgoth the Bloodletter
 step
@@ -7959,8 +7959,8 @@ step
     .goto Ghostlands,32.80,82.39,10,0
     .goto Ghostlands,33.04,81.25
     >>击杀 |cRXP_ENEMY_达尔坎·德拉希尔|r at the bottom of the Ziggurat
-    >>|cRXP_WARN_LoS his|r |T136118:0|t[腐蚀] |cRXP_WARN_and|r |T136197:0|t[Shadow Bolts] |cRXP_WARN_by kiting him around the Ziggurat|r
-    >>|cRXP_WARN_Make sure there are no other mobs around for when he casts|r |T136183:0|t[恐惧] |cRXP_WARN_on you|r
+    >>|cRXP_WARN_LoS his|r |T136118:0|t[腐蚀术] |cRXP_WARN_and|r |T136197:0|t[Shadow Bolts] |cRXP_WARN_by kiting him around the Ziggurat|r
+    >>|cRXP_WARN_Make sure there are no other mobs around for when he casts|r |T136183:0|t[恐惧]|cRXP_WARN_on you|r
     >>|cRXP_WARN_使用|r |T135738:0|t[Mana Tap] |cRXP_WARN_to pull the|r |cRXP_ENEMY_Necromancers|r |cRXP_WARN_out of the room|r << BloodElf Paladin tbc/BloodElf Rogue tbc
     >>|cRXP_WARN_Find a group for him if needed|r << !Hunter !Warlock
     .complete 9167,1 --Collect Dar'Khan's Head (x1)
@@ -8028,7 +8028,7 @@ step << Rogue wotlk
     #completewith SMTraining5
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效药膏] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Eralan
     .xp <19,1
@@ -8048,7 +8048,7 @@ step << Rogue
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾拉兰|r
-    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀] |cRXP_BUY_from her if it's up|r
+    >>|cRXP_BUY_Buy the|r |T135344:0|t[邪恶军刀]|cRXP_BUY_from her if it's up|r
     .vendor 16268 >>把垃圾物品卖给商人
     .target Eralan
     .money <0.6947 << BloodElf/Undead
@@ -8318,7 +8318,7 @@ step << Warlock
     #label SMTraining5
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔莱尼娅|r
-    .train 5784 >>Train |T136103:0|t[召唤地狱战马] << wotlk
+    .train 5784 >>学习 |T136103:0|t[召唤地狱战马] << wotlk
     .train 706 >>训练你的职业技能 << tbc
     .target Talionia
 step << Warlock wotlk
@@ -8375,7 +8375,7 @@ step << Rogue
     >>|cRXP_WARN_Make sure you've trained|r |T132282:0|t[Ambush] |cRXP_WARN_and|r |T132302:0|t[撕裂] |cRXP_WARN_for a quest later|r << tbc
     .accept 10794 >>接受任务《物归己用》 碎手盗贼
     .train 8676 >>Train |T132282:0|t[Ambush] << tbc
-    .train 1943 >>Train |T132302:0|t[撕裂] << tbc
+    .train 1943 >>学习 |T132302:0|t[撕裂] << tbc
     .train 1943 >>训练你的职业技能 << wotlk
     .target Zelanis
     .xp <20,1
@@ -8387,7 +8387,7 @@ step << Rogue
     >>|cRXP_WARN_Make sure you've trained|r |T132282:0|t[Ambush] |cRXP_WARN_and|r |T132302:0|t[撕裂] |cRXP_WARN_for a quest later|r << tbc
     .accept 10794 >>接受任务《物归己用》 碎手盗贼
     .train 8676 >>Train |T132282:0|t[Ambush] << tbc
-    .train 1943 >>Train |T132302:0|t[撕裂] << tbc
+    .train 1943 >>学习 |T132302:0|t[撕裂] << tbc
     .train 1759 >>训练你的职业技能
     .target Zelanis
     .xp <22,1
@@ -8399,14 +8399,14 @@ step << Rogue
     >>|cRXP_WARN_Make sure you've trained|r |T132282:0|t[Ambush] |cRXP_WARN_and|r |T132302:0|t[撕裂] |cRXP_WARN_for a quest later|r << tbc
     .accept 10794 >>接受任务《物归己用》 碎手盗贼
     .train 8676 >>Train |T132282:0|t[Ambush] << tbc
-    .train 1943 >>Train |T132302:0|t[撕裂] << tbc
+    .train 1943 >>学习 |T132302:0|t[撕裂] << tbc
     .train 6762 >>训练你的职业技能 << wotlk
     .target Zelanis
     .xp <24,1
 step << Rogue wotlk
     .goto Silvermoon City,80.47,51.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔莉亚|r
-    >>|cRXP_BUY_Buy|r |T132273:0|t[速效药膏] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy|r |T132273:0|t[速效毒药]|cRXP_BUY_from her|r
     .collect 6947,10,496,1 --Instant Poison (10)
     .target Darlia
 step << Druid
@@ -8497,7 +8497,7 @@ step << Mage
 step << Mage
     .goto Undercity,82.77,15.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hannah|r
-    >>|cRXP_BUY_Buy a|r |T134419:0|t[传送符文] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T134419:0|t[传送符文]|cRXP_BUY_from her|r
     .collect 17031,1,496,1 --Rune of Teleportation (1)
     .money <0.3000 << Troll
     .money <0.2850 << !Troll
@@ -8512,7 +8512,7 @@ step << Mage
 step << Rogue
     .goto Undercity,77.49,49.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Nathaniel|r
-    >>|cRXP_BUY_Buy the|r |T135423:0|t[致命飞斧] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy the|r |T135423:0|t[致命的飞斧]|cRXP_BUY_from him|r
     .collect 25875,1,496,1 --Deadly Throwing Axe (1)
     .target Nathaniel Steenwick
     .itemStat 18,QUALITY,<2
@@ -8520,7 +8520,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135423:0|t[致命飞斧]
+    +|cRXP_WARN_Equip the|r |T135423:0|t[致命的飞斧]
     .use 25875
     .itemcount 25875,1
     .itemStat 18,QUALITY,<2
@@ -8620,7 +8620,7 @@ step << !Warlock Undead wotlk
 step << !Warlock Undead wotlk
     .goto Tirisfal Glades,59.87,52.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zachariah|r
-    +|cRXP_BUY_Buy any|r |T132264:0|t[骸骨军马] |cRXP_BUY_that you like from him|r
+    +|cRXP_BUY_Buy any|r |T132264:0|t[骸骨军马]|cRXP_BUY_that you like from him|r
 	.target Zachariah Post
     .itemcount 13331,<1 --Red Skeletal Horse
     .itemcount 13332,<1 --Blue Skeletal Horse

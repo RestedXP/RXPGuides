@@ -59,7 +59,7 @@ step << Druid/Priest
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r
     .vendor >>出售垃圾物品
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
+    >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Dellylah
 step
@@ -138,7 +138,7 @@ step << Hunter
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿亚娜·远途|r
     .turnin 3117 >>交任务《 前往熔光镇》 风化符记
-    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
+    .train 1978 >>Train |T132204:0|t[毒蛇钉刺]
     .target Ayanna Everstride
 step
     #loop
@@ -185,7 +185,7 @@ step << Druid
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r
     .vendor >>出售垃圾物品
-    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
+    >>|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
 step << Warrior
@@ -200,7 +200,7 @@ step << Priest
     .goto Teldrassil,59.521,40.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_琳莱尔|r
     .vendor >>出售垃圾物品
-    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
+    >>|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Lyrai
 step << Priest
@@ -340,7 +340,7 @@ step << Priest
 step << Rogue
     .goto Teldrassil,55.508,57.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥蒂亚|r 交谈
-    .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
+    .vendor >>|cRXP_BUY_Buy and equip a|r |T135426:0|t[小飞刀]
     .target Aldia
 step
     .goto Teldrassil,55.574,56.948
@@ -352,7 +352,7 @@ step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r
     >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[角木弯弓]
-    >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭] |cRXP_BUY_until your Quiver is full|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭]|cRXP_BUY_until your Quiver is full|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Jeena Featherbow
     .money <0.0285
@@ -360,7 +360,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉娜·羽弓|r
-    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭] |cRXP_BUY_until your Quiver is full|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭]|cRXP_BUY_until your Quiver is full|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -370,7 +370,7 @@ step << Hunter
 step << Warrior
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[步兵剑] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[步兵剑]|cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
@@ -392,7 +392,7 @@ step << Rogue
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑]|cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
@@ -405,7 +405,7 @@ step << Rogue
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[学徒短杖] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[学徒短杖]|cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
@@ -463,8 +463,8 @@ step << Druid
 #ah
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛洛尼·刃叶|r
-    >>|T136065:0|t[草药学]|cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
-    >>|cRXP_WARN_If you would rather purchase 5|r |T134187:0|t[Earthroot]|cRXP_WARN_from the Auction House later, skip this step|r
+    >>|T136065:0|t[Herbalism]|cRXP_WARN_is required to gather 5|r |T134187:0|t[地根草]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    >>|cRXP_WARN_If you would rather purchase 5|r |T134187:0|t[地根草]|cRXP_WARN_from the Auction House later, skip this step|r
     .train 2366 >>Train |T136065:0|t[草药学]
     .target Malorne Bladeleaf
     .itemcount 2449,<5 --Earthroot (<5)
@@ -472,7 +472,7 @@ step << Druid
 #ssf
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛洛尼·刃叶|r
-    >>|T136065:0|t[草药学]|cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    >>|T136065:0|t[Herbalism]|cRXP_WARN_is required to gather 5|r |T134187:0|t[地根草]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
     .train 2366 >>Train |T136065:0|t[草药学]
     .target Malorne Bladeleaf
     .itemcount 2449,<5 --Earthroot (<5)
@@ -481,7 +481,7 @@ step << Druid
     #completewith end
     #label GatheringQ
     #season 0
-    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[草药学]|cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[Earthroot]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[Herbalism]|cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[地根草]|cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
     .itemcount 2449,<5 --Earthroot (<5)
@@ -490,7 +490,7 @@ step << Druid
     #completewith end
     #requires GatheringQ
     #season 0
-    >>|cRXP_WARN_Collect 5 |T134187:0|t[Earthroot] via |T136065:0|t[草药学] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
+    >>|cRXP_WARN_Collect 5 |T134187:0|t[地根草] via |T136065:0|t[Herbalism] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .skill herbalism,<15,1
 step << Priest
@@ -563,7 +563,7 @@ step
     .accept 476 >>接受任务《物归己用》 瘤背熊怪的堕落
 step
     .goto Teldrassil,63.38,58.10
-    .use 5619 >>|cRXP_WARN_Use the|r |T134721:0|t[Jade Phial] |cRXP_WARN_at the Starbreeze Village Moonwell|r
+    .use 5619 >>|cRXP_WARN_Use the|r |T134721:0|t[翡翠瓶] |cRXP_WARN_at the Starbreeze Village Moonwell|r
     .complete 929,1 --Collect Filled Jade Phial (x1)
 step
 	#completewith SeekRedemption
@@ -576,7 +576,7 @@ step
     >>击杀 |cRXP_ENEMY_夜刃豹|r。拾取他们的 |cRXP_LOOT_毒牙|r
     >>击杀 |cRXP_ENEMY_巨翼枭|r。拾取他们的 |cRXP_LOOT_乱羽|r
     >>击杀 |cRXP_ENEMY_树林潜伏者|r。拾取他们的 |cRXP_LOOT_Silk|r
-    >>|cRXP_WARN_Save any|r |T132832:0|t[小蛋] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling|r |T133971:0|t[烹饪] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T132832:0|t[Small Eggs] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling|r |T133971:0|t[烹饪] |cRXP_WARN_later|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .mob +Nightsaber
     .goto Teldrassil,66.10,52.43,60,0
@@ -676,7 +676,7 @@ step << Rogue
 step << Warrior
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[步兵剑] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[步兵剑]|cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .money <0.0536
@@ -694,7 +694,7 @@ step << Warrior
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑] |cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[卷刃的剑]|cRXP_BUY_if you can afford it (4s 1c), if not skip this step|r
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
@@ -707,7 +707,7 @@ step << Rogue
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沙洛蒙|r
-    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[学徒短杖] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[学徒短杖]|cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
     .collect 2495,1 --Walking Stick (1)
     .target Shalomon
     .money <0.0504
@@ -753,7 +753,7 @@ step
     .isOnQuest 489
 step
 	#completewith jewel
-    >>拾取散发绿光的 |cRXP_LOOT_Fel Cones|r on the ground
+    >>拾取散发绿光的 |cRXP_LOOT_魔锥果|r on the ground
     >>|cRXP_WARN_They are usually located next to tree trunks|r
     .complete 489,1 --Collect Fel Cone (x3)
     .isOnQuest 489
@@ -765,8 +765,8 @@ step
     .mob Gnarlpine Mystic
 step
 	.goto Teldrassil,69.37,53.41
-	>>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r. Loot him for the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r]. |cRXP_WARN_Be careful as he can|r |T132152:0|t[Thrash] |cRXP_WARN_hitting you up to three times at once|r
-    .use 8049 >>|cRXP_WARN_Use the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r] to loot|r |cRXP_LOOT_Tallonkai's Jewel|r
+	>>击杀 |cRXP_ENEMY_噬梦者菲罗斯塔|r. Loot him for the |T133288:0|t[|cRXP_LOOT_Gnarlpine Necklace|r]. |cRXP_WARN_Be careful as he can|r |T132152:0|t[痛击] |cRXP_WARN_hitting you up to three times at once|r
+    .use 8049 >>|cRXP_WARN_Use the |T133288:0|t[|cRXP_LOOT_瘤背熊怪的项链|r] to loot|r |cRXP_LOOT_塔隆凯的珠宝|r
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
     .mob Ferocitas the Dream Eater
 step
@@ -794,7 +794,7 @@ step
     .goto Teldrassil,53.0,59.5,50,0
     .goto Teldrassil,63.6,62.3,50,0
     .goto Teldrassil,58.7,55.7,50,0
-    >>拾取散发绿光的 |cRXP_LOOT_Fel Cones|r on the ground
+    >>拾取散发绿光的 |cRXP_LOOT_魔锥果|r on the ground
     >>|cRXP_WARN_They are usually located next to tree trunks|r
     .complete 489,1 --Collect Fel Cone (x3)
     .isOnQuest 489
@@ -918,7 +918,7 @@ step
 step
     #completewith harpies
     >>击杀 |cRXP_ENEMY_血羽鹰身人|r。拾取他们的 |cRXP_LOOT_Belts|r
-    >>|cRXP_ENEMY_血羽女族长|r |cRXP_WARN_施放|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[治疗波] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -946,7 +946,7 @@ step
 step
     .goto Teldrassil,33.619,29.819
     >>击杀 |cRXP_ENEMY_血羽鹰身人|r。拾取他们的 |cRXP_LOOT_Belts|r
-    >>|cRXP_ENEMY_血羽女族长|r |cRXP_WARN_施放|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[治疗波] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1073,7 +1073,7 @@ step << !Rogue
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r
-    .use 5179 >>|cRXP_WARN_Use the|r |T134339:0|t[|cRXP_LOOT_布满苔藓的心脏|r] |cRXP_WARN_to start the quest|r
+    .use 5179 >>|cRXP_WARN_Use the|r |T134339:0|t[|cRXP_LOOT_布满苔藓的心脏|r]|cRXP_WARN_to start the quest|r
     .accept 927 >>接受任务《物归己用》 布满苔藓的心脏
 	.turnin 927 >>交任务《 前往熔光镇》 布满苔藓的心脏
     .itemcount 5179,1
@@ -1121,7 +1121,7 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_巨翼猎枭|r to tame it|r -- .tame 1997
-    .train 2981 >>用它攻击怪物以学习 [Claw (Rank 2)]
+    .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan Strigid Hunter
 step << Rogue
@@ -1144,7 +1144,7 @@ step << Rogue
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r
-    .use 5179 >>|cRXP_WARN_Use the|r |T134339:0|t[|cRXP_LOOT_布满苔藓的心脏|r] |cRXP_WARN_to start the quest|r
+    .use 5179 >>|cRXP_WARN_Use the|r |T134339:0|t[|cRXP_LOOT_布满苔藓的心脏|r]|cRXP_WARN_to start the quest|r
     .accept 927 >>接受任务《物归己用》 布满苔藓的心脏
 	.turnin 927 >>交任务《 前往熔光镇》 布满苔藓的心脏
     .itemcount 5179,1
@@ -1413,7 +1413,7 @@ step
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|T133912:0|t[黑海岸石斑鱼]
-    >>|T134187:0|t[Earthroot] << Druid
+    >>|T134187:0|t[地根草] << Druid
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid
     .target Auctioneer Tolon
@@ -1429,7 +1429,7 @@ step
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|T133972:0|t[陆行鸟肉]
     >>|T133912:0|t[黑海岸石斑鱼]
-    >>|T134187:0|t[Earthroot] << Druid
+    >>|T134187:0|t[地根草] << Druid
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid
@@ -1440,7 +1440,7 @@ step << Hunter
     .goto Darnassus,64.2,63.0
     .line Darnassus,60.65,66.47,61.68,63.73,62.36,58.91,62.32,55.22,65.77,55.75,67.88,57.48,68.35,59.98,65.14,68.14,64.34,71.36,62.28,68.79,60.65,66.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_加伊娜|r, she patrols around the Tradesmen's Terrace
-    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky]|cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[硬肉干]|cRXP_BUY_from her|r
     >>|cRXP_WARN_You will need it to feed your |cRXP_FRIENDLY_Owl|r, they only eat meat and there's no meat vendor in Darkshore|r
     .collect 117,15
     .target Jaeana

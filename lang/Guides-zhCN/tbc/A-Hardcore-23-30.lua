@@ -197,7 +197,7 @@ step
     .goto Wetlands,50.200,37.734
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉克斯勒|r
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_Buy|r |T134413:0|t[Liferoot] |cRXP_WARN_if |cRXP_FRIENDLY_Kixxle|r has any in stock. You need them for the|r |T132403:0|t[|cFF0070FF旋风之斧|r] |cRXP_WARN_quest later|r << Warrior
+    >>|cRXP_WARN_购买|r |T134413:0|t[活根草] |cRXP_WARN_如果 |cRXP_FRIENDLY_吉克斯勒|r 有库存。你之后的|r |T132403:0|t[|cFF0070FF旋风之斧|r] |cRXP_WARN_任务需要用到|r << Warrior
 --    >>|cRXP_WARN_If you are planning on running Scarlet Monastery for the|r |T132395:0|t[|cFF0070FFBonebiter|r]|cRXP_WARN_, you may skip this step|r << Warrior
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_吉克斯勒|r 没有库存，请跳过此步骤|r << Warrior
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_吉克斯勒|r 没有库存，请跳过此步骤|r << !Warrior
@@ -418,7 +418,7 @@ step
     #ah
     #optional
     .goto Ironforge,24.94,73.66,0
-    >>Gather 4 |T134850:0|t[Minor Mana Potions] and 2 |T134822:0|t[Elixir of Minor Fortitudes]
+    >>Gather 4 |T134850:0|t[初级法力药水] and 2 |T134822:0|t[初级坚韧药剂]
     >>|cRXP_WARN_You can buy these from the Auction House, trade players for them or use|r |T136240:0|t[炼金术] |cRXP_WARN_if you have it to make them|r
     >>|cRXP_WARN_If you are unable to acquire them, skip this step|r
     .skill alchemy,<1,1 -- step only displays if skill is 1 or higher
@@ -429,7 +429,7 @@ step
     #ah
     #optional
     .goto Ironforge,24.94,73.66,0
-    >>Gather 4 |T134850:0|t[Minor Mana Potions] and 2 |T134822:0|t[Elixir of Minor Fortitudes]
+    >>Gather 4 |T134850:0|t[初级法力药水] and 2 |T134822:0|t[初级坚韧药剂]
     >>|cRXP_WARN_You can buy these from the Auction House or trade players for them|r
     >>|cRXP_WARN_If you are unable to acquire them, skip this step|r
     .collect 2455,4,1073,1 -- Minor Mana Potion (4)
@@ -438,7 +438,7 @@ step
 step
     #ssf
     #optional
-    >>Gather 4 |T134850:0|t[Minor Mana Potions] and 2 |T134822:0|t[Elixir of Minor Fortitudes]
+    >>Gather 4 |T134850:0|t[初级法力药水] and 2 |T134822:0|t[初级坚韧药剂]
     >>|cRXP_WARN_Use your|r |T136240:0|t[炼金术] |cRXP_WARN_profession to craft them if possible|r
     >>|cRXP_WARN_If you are unable to acquire them, skip this step|r
     .collect 2455,4,1073,1 -- Minor Mana Potion (4)
@@ -577,7 +577,7 @@ step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r
     >>|cRXP_WARN_务必学习|r |T136058:0|t[开锁] |cRXP_WARN_，因为之后会用到|r
-    .train 1804 >>学习 |T136058:0|t[开锁]
+    .train 1804 >>Train |T136058:0|t[开锁]
     .trainer >>训练你的职业技能
     .target Osborne the Night Man
 step << Rogue
@@ -612,8 +612,8 @@ step << Paladin
     .goto Stormwind City,42.51,33.51,20 >>Travel to |cRXP_FRIENDLY_达索瑞恩·拉尔|r对话，NPC在里面 the Stormwind Cathedral
 step << Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 交谈。他会给你 |T133739:0|t[|cRXP_LOOT_勇气之书|r]
-    .use 6776 >>|cRXP_WARN_使用 |T133739:0|t[|cRXP_LOOT_勇气之书|r] 来激发任务|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r. He will give you the |T133739:0|t[|cRXP_LOOT_勇气之书|r]
+    .use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_勇气之书|r] to start the quest|r
     .collect 6776,1,1649 --Tome of Valor (1)
     .accept 1649 >>接受任务《物归己用》 勇气之书
     .target Duthorian Rall
@@ -633,7 +633,7 @@ step
     #optional
     .goto Stormwind City,64.201,60.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲利希亚·加姆|r
-    >>|cRXP_BUY_购买|r |T133849:0|t[暴风城特产调料]
+    >>|cRXP_BUY_Buy|r |T133849:0|t[暴风城特产调料]
     .collect 2665,1,90,1 --Stormwind Seasoning Herbs (1)
     .target Felicia Gump
     .skill cooking,<50,1 -- step only displays if skill is 50 or higher than 50
@@ -702,7 +702,7 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>|cRXP_WARN_前往屠宰场的最底层|r
-    .cast 8674 >>|cRXP_WARN_Use the|r |T136065:0|t[同心树之核] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Succubus|r
+    .cast 8674 >>|cRXP_WARN_使用|r |T136065:0|t[同心树之核] |cRXP_WARN_来召唤一只|r |cRXP_ENEMY_魅魔|r
     .use 6913
 step << Warlock
     .isOnQuest 1739
@@ -719,8 +719,8 @@ step << Warlock
     .mob Summoned Incubus
 step << Warlock
     #completewith next
-    +|cRXP_WARN_You may now use either the|r |T136220:0|t[魅魔] |cRXP_WARN_or|r |T136221:0|t[虚空行者] |cRXP_WARN_as your pet|r
-    >>|cRXP_WARN_The|r |T136220:0|t[魅魔] |cRXP_WARN_deals significant damage whereas the|r |T136221:0|t[虚空行者] |cRXP_WARN_provides more survivability|r
+    +|cRXP_WARN_你现在可以使用|r |T136220:0|t[魅魔] |cRXP_WARN_或|r |T136221:0|t[虚空行者] |cRXP_WARN_作为你的宠物|r
+    >>|cRXP_WARN_|r |T136220:0|t[魅魔] |cRXP_WARN_输出伤害很高，而|r |T136221:0|t[虚空行者] |cRXP_WARN_则提供更强的生存能力|r
 step << Warlock
     .isOnQuest 1739,65603
     .goto Stormwind City,25.25,78.55
@@ -750,7 +750,7 @@ step
     >>|cRXP_WARN_Note: You should also level your|r |T133971:0|t[烹饪] |cRXP_WARN_to 50 for an easy 2,000XP quest in Duskwood. Buy as many|r |T133970:0|t[Chunk of Boar Meat] |cRXP_WARN_or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_as you need to level it to 50. You can cook them once you get to the Inn at Duskwood|r
     >>|T133024:0|t[青铜管]
     >>|T133970:0|t[狼肋排]
-    >>|T134321:0|t[黏糊的蜘蛛腿]
+    >>|T134321:0|t[粘糊的蜘蛛腿]
     .collect 4371,1,174,1 -- Bronze Tube (1)
     .collect 1015,10,90,1 -- Lean Wolf Flank (10)
     .collect 2251,6,93,1 -- Gooey Spider Leg (6)
@@ -764,7 +764,7 @@ step
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133024:0|t[青铜管]
     >>|T133970:0|t[狼肋排]
-    >>|T134321:0|t[黏糊的蜘蛛腿]
+    >>|T134321:0|t[粘糊的蜘蛛腿]
     .collect 4371,1,174,1 -- Bronze Tube (1)
     .collect 1015,10,90,1 -- Lean Wolf Flank (10)
     .collect 2251,6,93,1 -- Gooey Spider Leg (6)
@@ -797,7 +797,7 @@ step
     .goto Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_当恩·布赖特斯塔|r
     .vendor >>|cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[药水] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
-    .vendor >>|cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134830:0|t[药水] |cRXP_BUY_as well, which you should buy if available|r << Warrior/Rogue
+    .vendor >>|cRXP_FRIENDLY_当恩·布赖特斯塔|r |cRXP_BUY_也有一些限量供应物品，例如|r |T134938:0|t|T134937:0|t|T134943:0|t[卷轴] |cRXP_BUY_以及|r |T134830:0|t[药水] |cRXP_BUY_，如果有库存应当购买|r << Warrior/Rogue
     .target Dawn Brightstar
     .subzoneskip 91,1
 step
@@ -1006,7 +1006,7 @@ step
     .isQuestTurnedIn 174
 step
 	#completewith HistoryBook1
-    >>|cRXP_WARN_If you loot |T133741:0|t[|cRXP_LOOT_一本破旧的历史书|r] start the quest. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_如果你拾取到 |T133741:0|t[|cRXP_LOOT_一本破旧的历史书|r]，就开始该任务。这是暮色森林全区域掉落的物品|r
 	.collect 2794,1,337 --An Old History Book (1)
 	.accept 337 >>接受任务《物归己用》 一本破旧的历史书
     .use 2794 --An Old History Book
@@ -1014,7 +1014,7 @@ step
 	#completewith next
     >>击杀 |cRXP_ENEMY_骷髅战士|r 和 |cRXP_ENEMY_骷髅法师|r
     >>|cRXP_ENEMY_骷髅战士|r |cRXP_WARN_会施放|r |T132316:0|t[断筋]
-    >>|cRXP_ENEMY_骷髅法师|r |cRXP_WARN_施放|r |T135846:0|t[寒冰箭] |cRXP_WARN_并且还会用|r |T135843:0|t[冰霜护甲] |cRXP_WARN_减速你|r
+    >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[寒冰箭] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
     .complete 56,2 -- Skeletal Mage slain (6)
     .mob Skeletal Warrior
@@ -1036,7 +1036,7 @@ step
 	#label HistoryBook1
     >>击杀 |cRXP_ENEMY_骷髅战士|r 和 |cRXP_ENEMY_骷髅法师|r
     >>|cRXP_ENEMY_骷髅战士|r |cRXP_WARN_会施放|r |T132316:0|t[断筋]
-    >>|cRXP_ENEMY_骷髅法师|r |cRXP_WARN_施放|r |T135846:0|t[寒冰箭] |cRXP_WARN_并且还会用|r |T135843:0|t[冰霜护甲] |cRXP_WARN_减速你|r
+    >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[寒冰箭] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
     .complete 56,2 -- Skeletal Mage slain (6)
     .mob Skeletal Warrior
@@ -1232,7 +1232,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Mortwake
-    +|cRXP_WARN_Equip the|r |T135641:0|t[曲木匕首] |cRXP_WARN_for this quest if you don't already have a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped|r
+    +|cRXP_WARN_如果你还没有装备|r |T135641:0|t[弯曲木匕首] |cRXP_WARN_，并且当前没有装备|r |T135641:0|t[匕首] |cRXP_WARN_，请在此任务中装备它|r
     .use 15396
     .itemcount 15396,1
 step << Rogue
@@ -1283,7 +1283,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,36.0,41.4
-    .use 15883 >>|cRXP_WARN_Use the|r |T133443:0|t[水兽敏捷坠饰] |cRXP_WARN_to combine it with the|r |T133442:0|t[Half Pendant of Aquatic Endurance] |cRXP_WARN_at the Shrine of Remulos|r
+    .use 15883 >>|cRXP_WARN_使用|r |T133443:0|t[水兽敏捷坠饰] |cRXP_WARN_将其与|r |T133442:0|t[水兽耐力坠饰] |cRXP_WARN_在雷姆洛斯神殿合并|r
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
 step << Druid
     #completewith next
@@ -1353,7 +1353,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r
-    >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -1361,14 +1361,14 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r
-    >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >>制作 |T134437:0|t[抗毒药剂]
+    .collect 6452,1 >>Craft an |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -1376,7 +1376,7 @@ step << !Dwarf Rogue
     #sticky
     #requires AntiVenomStart2
     #label AntiVenomEnd2
-    .cast 7932 >>|cRXP_WARN_使用你背包里的 |T134437:0|t[抗毒药剂] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[赞吉尔之触] debuff|r
     .use 6452
     .aura -9991
     .itemcount 6452,1 --Anti-Venom (1)
@@ -1491,7 +1491,7 @@ step
     .target Commander Althea Ebonlocke
 step
     #sticky
-    .destroy 2154 >>Delete the |T133741:0|t[摩根·拉迪莫尔的故事]
+    .destroy 2154 >>删除 |T133741:0|t[摩根·拉迪莫尔的故事]
 step
     .goto Duskwood,75.81,45.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊瓦夫人|r
@@ -1533,7 +1533,7 @@ step
     .target Blind Mary
 step
 	#completewith next
-    >>|cRXP_WARN_If you loot |T133741:0|t[|cRXP_LOOT_一本破旧的历史书|r] start the quest. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_如果你拾取到 |T133741:0|t[|cRXP_LOOT_一本破旧的历史书|r]，就开始该任务。这是暮色森林全区域掉落的物品|r
 	.collect 2794,1,337 --An Old History Book (1)
 	.accept 337 >>接受任务《物归己用》 一本破旧的历史书
     .use 2794 --An Old History Book
@@ -1861,7 +1861,7 @@ step
     .target Felicia Maline
 step
 	#completewith HistoryB3
-    >>|cRXP_WARN_If you loot |T133741:0|t[|cRXP_LOOT_一本破旧的历史书|r] start the quest. This is a zone-wide drop in Duskwood|r
+    >>|cRXP_WARN_如果你拾取到 |T133741:0|t[|cRXP_LOOT_一本破旧的历史书|r]，就开始该任务。这是暮色森林全区域掉落的物品|r
 	.collect 2794,1,337 --An Old History Book (1)
 	.accept 337 >>接受任务《物归己用》 一本破旧的历史书
     .use 2794 --An Old History Book
@@ -2230,7 +2230,7 @@ step << Hunter
 step << Mage
     .goto Stormwind City,43.500,26.971
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡苏斯修士|r
-    >>|cRXP_BUY_Buy 2|r |T134419:0|t[传送符文] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 2 枚|r |T134419:0|t[传送符文]
     .collect 17031,2 --Rune of Teleportation (2)
     .target Brother Cassius
 step
@@ -2436,7 +2436,7 @@ step
     >>|cRXP_WARN_此步骤已关闭自动接取任务。注意：如果有其他人正在进行该任务，你可能无法接取|r
     .turnin 2746 >>交任务《 前往熔光镇》 必备物品
     .accept 434,1 >>接受任务《物归己用》 伏击！
-    进攻！剧情
+    .timer 124,进攻！剧情
     .target Tyrion
     .isQuestTurnedIn 391
 step -- Note both of these guys are level 30 and 31
@@ -2637,7 +2637,7 @@ step
 .dungeon Gnomer
     .goto 1415/0,733.8032,-4996.5115,70,0
     .goto 1415/0,828.8429,-4926.1117
-    >>击杀 |cRXP_ENEMY_穴居人|r and |cRXP_ENEMY_Gnomes|r. Loot them for a |T133215:0|t[|cRXP_LOOT_White Punch Card|r]
+    >>Kill |cRXP_ENEMY_Troggs|r and |cRXP_ENEMY_Gnomes|r. Loot them for a |T133215:0|t[|cRXP_LOOT_白色穿孔卡片|r]
     .collect 9279,1,2930,1,1 -- White Punch Card (1)
     >>击杀 |cRXP_ENEMY_泰克巴特|r。拾取他的 |cRXP_LOOT_记忆核心|r
     >>|cRXP_WARN_这个任务是在副本外完成的|r
@@ -2650,7 +2650,7 @@ step
     .goto 1415/0,818.2830,-5055.1780,50,0
     .goto 1415/0,730.2832,-4956.6183,50,0
     .goto 1415/0,723.2432,-5066.9113
-    >>击杀 |cRXP_ENEMY_穴居人|r and |cRXP_ENEMY_Gnomes|r. Loot them for a |T133215:0|t[|cRXP_LOOT_White Punch Card|r]
+    >>Kill |cRXP_ENEMY_Troggs|r and |cRXP_ENEMY_Gnomes|r. Loot them for a |T133215:0|t[|cRXP_LOOT_白色穿孔卡片|r]
     .collect 9279,1 -- White Punch Card (1)
     >>|cRXP_WARN_这个任务是在副本外完成的|r
     .isOnQuest 2930
@@ -2660,7 +2660,7 @@ step
     .goto 1415/0,719.3712,-4946.7623,-1
     .goto 1415/0,722.5392,-4893.7278,-1
     .goto 1415/0,712.6833,-4894.4318,-1
-    >>|cRXP_WARN_使用|r |T133215:0|t[|cRXP_LOOT_白色穿孔卡片|r] |cRXP_WARN_在|r |cRXP_PICK_矩阵打孔机 3005-A|r
+    >>|cRXP_WARN_Use the|r |T133215:0|t[|cRXP_LOOT_白色穿孔卡片|r] |cRXP_WARN_at the|r |cRXP_PICK_Matrix Punchograph 3005-A|r
     >>|cRXP_WARN_这个任务是在副本外完成的|r
     .collect 9280,1,2930,1 -- Yellow Punch Card (1)
     .itemcount 9279,1 -- White Punch Card (1)
@@ -2723,7 +2723,7 @@ step
     .unitscan Electrocutioner 6000
 step
 .dungeon Gnomer
-    >>|cRXP_WARN_使用|r |T133215:0|t[|cRXP_LOOT_红色打孔卡|r] |cRXP_WARN_在|r |cRXP_PICK_矩阵打孔机 3005-D|r
+    >>|cRXP_WARN_Use the|r |T133215:0|t[|cRXP_LOOT_红色穿孔卡片|r] |cRXP_WARN_at the|r |cRXP_PICK_Matrix Punchograph 3005-D|r
     .complete 2930,1 -- Prismatic Punch Card (1)
     .itemcount 9281,1 -- Red Punch Card (1)
     .skipgossip
@@ -2836,7 +2836,7 @@ step
 step
 .dungeon Gnomer
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔瓦斯德·基瑟尔|r
-    >>|cRXP_WARN_如果你能够获得|r |T133215:0|t[银锭] |cRXP_WARN_和|r |T134105:0|t[绿玛瑙] |cRXP_WARN_就完成这个任务。如果没有，就放弃它|r
+    >>|cRXP_WARN_If you are able to obtain a|r |T133215:0|t[银锭] |cRXP_WARN_and a|r |T134105:0|t[绿玛瑙] |cRXP_WARN_finish this quest. If not, abandon it|r
     .collect 2842,1,2948,1 -- Silver Bar (1)
     .collect 1206,1 -- Moss Agate (1)
     .turnin 2948,2948,1 >>交任务《 前往熔光镇》 侏儒的手艺
@@ -3549,7 +3549,7 @@ step
     .complete 9517,1 --|Warsong Lumber: 15/15
 step
     #completewith demons
-    >>Kill |cRXP_ENEMY_Mannoroc Lashers|r, |cRXP_ENEMY_Roaming Felguards|r and |cRXP_ENEMY_Searing Infernals|r. Loot them for the |T134943:0|t[|cRXP_LOOT_恶魔的计划|r]
+    >>击杀 |cRXP_ENEMY_Mannoroc Lashers|r, |cRXP_ENEMY_Roaming Felguards|r and |cRXP_ENEMY_Searing Infernals|r. Loot them for the |T134943:0|t[|cRXP_LOOT_恶魔的计划|r]
     .use 23777 >>|cRXP_WARN_Use the|r |T134943:0|t[|cRXP_LOOT_恶魔的计划|r] |cRXP_WARN_to begin the quest|r
     >>|cRXP_WARN_This item has a very low drop rate, don't go out of your way to get it|r
     .collect 23777,1,9520
@@ -3601,7 +3601,7 @@ step
     .complete 1011,1 -- Bottle of Disease (1)
 step
     .goto Ashenvale,66.649,82.189
-    >>击杀 the |cRXP_ENEMY_沼泽兽智者|r. Loot it for the |cRXP_LOOT_Fallen Moonstone|r
+    >>击杀 the |cRXP_ENEMY_沼泽兽智者|r. 拾取地上的 it for the |cRXP_LOOT_Fallen Moonstone|r
     .complete 1035,1
     .mob Shadethicket Oracle
 step
@@ -3725,7 +3725,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵维尔莉妮·星坠|r
     .turnin 1017 >>交任务《 前往熔光镇》 召唤者
 	>>|cRXP_WARN_This quest will reward you with the|r |T134754:0|t[艾露恩之光号]
-    >>|T134754:0|t[艾露恩之光号] |cRXP_WARN_- Grants immunity from all damage and spells for 10 sec.|r
+    >>|T134754:0|t[艾露恩之光号]|cRXP_WARN_- Grants immunity from all damage and spells for 10 sec.|r
     >>|cRXP_WARN_This is a ONE time use only. Use it in an emergency|r
     .target Sentinel Velene Starstrike
 step << Druid
@@ -3921,7 +3921,7 @@ step
     .goto Ironforge,63.50,67.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·巴鲁|r
     .turnin 637 >>交任务《 前往熔光镇》 苏利·巴鲁的信
-    苏利·巴鲁的信剧情
+    .timer 17,苏利·巴鲁的信剧情
     .accept 683 >>接受任务《物归己用》 萨拉·巴鲁的请求
     .target Sara Balloo
 step << Hunter/Warrior
@@ -3942,7 +3942,7 @@ step << Hunter
     .goto Ironforge,61.442,88.232,15,0
 	.goto Ironforge,61.549,89.432
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼下与 |cRXP_FRIENDLY_萨古斯·雷拳|r 对话
-    >>|cRXP_BUY_购买一个|r |T134402:0|t[|cRXP_FRIENDLY_重型箭袋|r]
+    >>|cRXP_BUY_Buy a|r |T134402:0|t[|cRXP_FRIENDLY_重型箭袋|r]
 	.collect 7371,1
     .target Thalgus Thunderfist
 step
@@ -4432,8 +4432,8 @@ step
     .group 3
     #completewith next
     >>清理沿途敌人，前往房屋的2楼
-    .cast 8913 >>|cRXP_WARN_Equip|r |T135142:0|t[摩本特的克星] |cRXP_WARN_in your off-hand|r
-    >>|cRXP_WARN_Use|r |T135142:0|t[摩本特的克星] |cRXP_WARN_on|r |cRXP_ENEMY_Morbent Fel|r |cRXP_WARN_to weaken him|r
+    .cast 8913 >>|cRXP_WARN_装备|r |T135142:0|t[摩本特的克星] |cRXP_WARN_在你的副手|r
+    >>|cRXP_WARN_使用|r |T135142:0|t[摩本特的克星] |cRXP_WARN_对|r |cRXP_ENEMY_摩本特·费尔|r |cRXP_WARN_使用以削弱他|r
     >>|cRXP_WARN_在削弱他之后，记得重新装备你的主手/副手武器|r
     .use 7297
 step
@@ -4717,7 +4717,7 @@ step
     .goto Duskwood,28.864,30.765
     >>点击地上的 |cRXP_PICK_Eliza's Grave Dirt|r to summon |cRXP_ENEMY_伊莉莎|r
     >>击杀 |cRXP_ENEMY_伊莉莎|r。拾取她的 |cRXP_LOOT_防腐师之心|r
-    >>|cRXP_ENEMY_Eliza|r |cRXP_WARN_will cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and|r |T135848:0|t[冰霜新星] |cRXP_WARN_along with summoning multiple|r |cRXP_ENEMY_Guards|r
+    >>|cRXP_ENEMY_Eliza|r |cRXP_WARN_will cast|r |T135846:0|t[寒冰箭] |cRXP_WARN_and|r |T135848:0|t[冰霜新星] |cRXP_WARN_along with summoning multiple|r |cRXP_ENEMY_Guards|r
     .complete 253,1 --1/1 The Embalmer's Heart
     .mob Eliza
 step
@@ -5218,7 +5218,7 @@ step << Shaman
     .goto Bloodmyst Isle,45.63,32.36,80,0
     .goto Bloodmyst Isle,25.968,40.854
     .cast 30408 >>点击 |cRXP_PICK_污秽之桶|r 以召唤 |cRXP_ENEMY_污染者塔希恩|r
-    水之召唤剧情
+    .timer 3,水之召唤剧情
 step << Shaman
     .goto Bloodmyst Isle,25.942,40.969
 	>>击杀 |cRXP_ENEMY_污染者塔希恩|r。拾取他的 |cRXP_LOOT_头部|r
@@ -5271,7 +5271,7 @@ step << Shaman
     .target Susurrus
 step << Shaman
     .gossip 17435,0 >>再次与 |cRXP_FRIENDLY_苏苏鲁斯|r 对话以返回埃索达
-    风之召唤剧情
+    .timer 89,风之召唤剧情
     .skipgossip
     .subzoneskip 3581,1
     .target Susurrus

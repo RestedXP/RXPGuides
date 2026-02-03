@@ -40,12 +40,12 @@ step << Warrior/Shaman
 step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
-    .train 6673 >>训练 |T132333:0|t[战斗怒吼]
+    .train 6673 >>Train |T132333:0|t[战斗怒吼]
     .target Harutt Thunderhorn
 step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Meela|r
-    .train 8017 >>Train |T136086:0|t[Rockbiter Weapon]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target Meela Dawnstrider
 step
     #completewith next
@@ -92,7 +92,7 @@ step
 step
     .goto Mulgore,45.30,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kawnie|r
-    >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸] |cRXP_BUY_from her|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸]|cRXP_BUY_from her|r << Hunter
     .collect 2516,1000,750,1 << Hunter --Light Shot (1000)
     .vendor >>把垃圾物品卖给商人
     .target Kawnie Softbreeze
@@ -217,7 +217,7 @@ step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>交任务《 前往熔光镇》 风化便笺
-    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
+    .train 1978 >>Train |T132204:0|t[毒蛇钉刺]
     .target Lanka Farshot
 step << Druid
     .goto Mulgore,45.09,75.93
@@ -234,7 +234,7 @@ step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Meela|r
     .turnin 3093 >>交任务《 前往熔光镇》 符文便笺
-    .train 8042 >>Train |T136026:0|t[Earth Shock]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .target Meela Dawnstrider
 step
     #loop
@@ -370,7 +370,7 @@ step << Shaman
 step << Shaman
     #completewith next
     #requires Rock
-    .cast 8202 >>|cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta]
+    .cast 8202 >>|cRXP_WARN_Use the|r |T134743:0|t[大地灵契]
     .use 6635
 step << Shaman
     .goto Mulgore,53.74,80.15
@@ -386,7 +386,7 @@ step << Shaman
 step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Meela|r
-    .train 332 >>Train |T136052:0|t[Healing Wave]
+    .train 332 >>训练 |T136052:0|t[治疗波]
     .target Shikrik
     .money <0.01
     .target Meela Dawnstrider
@@ -528,7 +528,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸] |cRXP_BUY_from him|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸]|cRXP_BUY_from him|r << Hunter
     .collect 2516,1000,750,1 << Hunter --Light Shot (1000)
     .target Kennah Hawkseye
 step << Shaman/Druid
@@ -592,8 +592,8 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>击杀 |cRXP_ENEMY_草原狼|r and . Loot them for their |cRXP_LOOT_Paws|r
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_Talons|r
+    >>击杀 |cRXP_ENEMY_草原狼|r 和 . 拾取 their |cRXP_LOOT_Paws|r
+    >>击杀 |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
@@ -601,7 +601,7 @@ step << Tauren
     .mob +Adult Plainstrider
 step << !Tauren
     #completewith Ambercorns
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
+    >>击杀 |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step
@@ -617,7 +617,7 @@ step
     .complete 771,2 --Ambercorn (2)
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. 拾取 their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -637,7 +637,7 @@ step << Tauren
 	.goto Mulgore,48.60,69.43,60,0
 	.goto Mulgore,45.98,69.70,60,0
 	.goto Mulgore,48.58,67.37,60,0
-    >>击杀 |cRXP_ENEMY_草原狼|r and . Loot them for their |cRXP_LOOT_Paws|r
+    >>击杀 |cRXP_ENEMY_草原狼|r 和 . 拾取 their |cRXP_LOOT_Paws|r
     >>Loot |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
@@ -660,12 +660,12 @@ step << !Tauren
 	.goto Mulgore,48.60,69.43,60,0
 	.goto Mulgore,45.98,69.70,60,0
 	.goto Mulgore,48.58,67.37,60,0
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
+    >>击杀 |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step << Tauren
     #completewith next
-    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
+    .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -719,15 +719,15 @@ step
     .mob +Palemane Poacher
 step
     #completewith KyleFed
-    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
+    .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
 step
     .goto Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Jhwana|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Shaman/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Warrior
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r << Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << Warrior
     .vendor >>把垃圾物品卖给商人
     .collect 1179,10,749,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,749,1 << Warrior --Freshly Baked Bread (10)
@@ -865,7 +865,7 @@ step
     .goto Mulgore,49.4,63.9,30,0
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
-    .use 33009>>Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
+    .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
     >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -896,7 +896,7 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
 	#completewith Clawsx
-	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. 拾取 their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -1065,8 +1065,8 @@ step << Hunter
 step
     .goto Mulgore,46.63,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板考乌斯|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from him|r << Shaman/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from him|r << Warrior
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from him|r << Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from him|r << Warrior
     .vendor >>把垃圾物品卖给商人 << !Hunter
     .collect 1179,10,746,1 << Shaman/Druid --Ice Cold Milk (10)
     .collect 4541,10,746,1 << Warrior --Freshly Baked Bread (10)
@@ -1082,7 +1082,7 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
 	#completewith Burial
-	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. 拾取 their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -1149,7 +1149,7 @@ step
     .unitscan Ghost Howl
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
+	>>击杀 |cRXP_ENEMY_飞飞|r throughout Mulgore. 拾取 their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
@@ -1163,7 +1163,7 @@ step
 step << Warrior
     #season 2
     #completewith RiteofWisdom
-    >>击杀 |cRXP_ENEMY_刺背干涉者|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
+    >>击杀 |cRXP_ENEMY_刺背干涉者|r. 拾取并获得 |cRXP_LOOT_Severed Quilboar Head|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
     .train 403475,1
@@ -1422,7 +1422,7 @@ step
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
-    >>|cRXP_BUY_Buy|r |T132384:0|t[重弹丸] |cRXP_BUY_from him|r << Hunter
+    >>|cRXP_BUY_Buy|r |T132384:0|t[重弹丸]|cRXP_BUY_from him|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target Kennah Hawkseye
 step
@@ -1512,8 +1512,8 @@ step << Hunter
 step << !Hunter
     .goto Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Jhwana|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_from her|r << Shaman/Druid
-    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_from her|r << Warrior
+    >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from her|r << Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_from her|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
     .collect 4541,20,818,1 << Warrior --Freshly Baked Bread (20)
     .target Innkeeper Grosk
@@ -1785,7 +1785,7 @@ step << Druid/Hunter
     #ah
     .goto Thunder Bluff,40.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r
-    .collect 2318,12,768,1 >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[Light Leather] |cRXP_BUY_from the Auction House|r
+    .collect 2318,12,768,1 >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[轻皮] |cRXP_BUY_from the Auction House|r
     .target Auctioneer Stampi
     .skill skinning,1,1
 step << Druid/Hunter
@@ -1812,8 +1812,8 @@ step << Druid
 step << Druid
     .goto The Barrens,42.00,60.86
     .use 15710 >>|cRXP_WARN_使用|r |T132857:0|t[Cenarion Lunardust] |cRXP_WARN_at the|r |cRXP_PICK_Moonkin Stone|r
-    >>击杀 |cRXP_ENEMY_月爪枭兽|r as he spawns. Talk to the |cRXP_FRIENDLY_月爪枭兽的灵魂|r afterwards
-    >>|cRXP_WARN_Be careful! |cRXP_ENEMY_月爪枭兽|r casts|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
+    >>击杀 |cRXP_ENEMY_月爪枭兽|r as he spawns. 与 |cRXP_FRIENDLY_月爪枭兽的灵魂|r 对话
+    >>|cRXP_WARN_Be careful! |cRXP_ENEMY_Lunaclaw|r casts|r |T132152:0|t[痛击] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     >>|cRXP_WARN_Steer clear of the|r |cRXP_ENEMY_电角蜥蜴|r |cRXP_WARN_in the area|r
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
     .mob Lunaclaw
@@ -1885,7 +1885,7 @@ step << Warrior
 step << Tauren Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_阿瑟罗克|r
-    >>|cRXP_BUY_Buy a lot of|r |T132384:0|t[重弹丸] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a lot of|r |T132384:0|t[重弹丸]|cRXP_BUY_from him|r
     >>|cRXP_WARN_You won't be able to buy more for a while!|r
     .collect 2519,1600,6061,1 --Heavy Shot (1600)
     .vendor >>把垃圾物品卖给商人
@@ -2035,7 +2035,7 @@ step
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_帆布脚料|r
     .complete 784,1 --Kul Tiras Sailor (10)
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
@@ -2071,7 +2071,7 @@ step
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30,30,0
-    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_Canvas Scraps|r
+    >>击杀 |cRXP_ENEMY_库尔提拉斯水手|r 和 |cRXP_ENEMY_库尔提拉斯水兵|r。拾取他们的 |cRXP_LOOT_帆布脚料|r
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
@@ -2148,7 +2148,7 @@ step
 step
     #completewith MinshinasSkull
     >>击杀 |cRXP_ENEMY_妖术巨魔|r 和 |cRXP_ENEMY_巫毒巨魔|r.
-    >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_巫毒巨魔|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
+    >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[治疗波]
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
@@ -2156,9 +2156,9 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
-    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
-    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[Healing Wave]|cRXP_WARN_. Use your|r |T134829:0|t[药水] |cRXP_WARN_if needed|r << !Shaman !Rogue
+    >>|cRXP_WARN_Save your|r |T136026:0|t[大地震击] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Shaman
+    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Rogue
+    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[治疗波]|cRXP_WARN_. Use your|r |T134829:0|t[药水] |cRXP_WARN_if needed|r << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2169,9 +2169,9 @@ step
 step
     .goto Durotar,67.4,87.8
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
-    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
-    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[Healing Wave]|cRXP_WARN_. Use your|r |T134829:0|t[药水] |cRXP_WARN_if needed|r << !Shaman !Rogue
+    >>|cRXP_WARN_Save your|r |T136026:0|t[大地震击] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Shaman
+    >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Rogue
+    >>|cRXP_WARN_Be careful. He can cast|r |T136052:0|t[治疗波]|cRXP_WARN_. Use your|r |T134829:0|t[药水] |cRXP_WARN_if needed|r << !Shaman !Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
 step
@@ -2379,7 +2379,7 @@ step << Shaman
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,51.90,25.70,12,0
-    >>击杀 |cRXP_ENEMY_火刃祭司|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
+    >>击杀 |cRXP_ENEMY_火刃祭司|r. 拾取并获得 |cRXP_LOOT_Reagent Pouch|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
 step

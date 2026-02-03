@@ -25,7 +25,7 @@ step << Shaman/Warrior
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_费曼瓦尔|r 对话
-	.train 8017 >>Train |T136086:0|t[Rockbiter Weapon]
+	.train 8017 >>影袭 |T136086:0|t[石化武器]
     .target Firmanvaar
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
@@ -47,7 +47,7 @@ step << Priest/Mage
     .goto Azuremyst Isle,79.253,50.884
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗约什|r 对话
     .vendor >>出售垃圾物品
-    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
+    >>|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Ryosh
 step
@@ -65,7 +65,7 @@ step
     .goto Azuremyst Isle,73.4,51.4,50,0
     >>击杀 |cRXP_ENEMY_暴躁的变异体|r
     >>击杀 |cRXP_ENEMY_峡谷蛾|r。拾取他们的 |cRXP_LOOT_Blood|r
-    >>|cRXP_WARN_Prioritize |cRXP_ENEMY_暴躁的变异体|r as you will turn in the quest and complete |cRXP_ENEMY_峡谷蛾|r after|r
+    >>|cRXP_WARN_Prioritize |cRXP_ENEMY_Volatile Mutations|r as you will turn in the quest and complete |cRXP_ENEMY_Vale Moths|r after|r
     .complete 10302,1 --Kill Volatile Mutation (x8)
     .mob +Volatile Mutation
     .complete 9280,1 --Collect Vial of Moth Blood (x8)
@@ -224,7 +224,7 @@ step << Shaman
     .accept 9421 >>接受任务《物归己用》 萨满祭司训练
 	.turnin 9421 >>交任务《 前往熔光镇》 萨满祭司训练
     .accept 9449 >>接受任务《物归己用》 大地的召唤
-	.train 8042 >> Train |T136026:0|t[Earth Shock]
+	.train 8042 >>影袭 |T136026:0|t[大地震击]
     .target Firmanvaar
 step << Shaman
     #completewith next
@@ -284,7 +284,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔尼|r 对话
 	.accept 9288 >>接受任务《物归己用》 猎人训练
 	.turnin 9288 >>交任务《 前往熔光镇》 猎人训练
-    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
+    .train 1978 >>Train |T132204:0|t[毒蛇钉刺]
     .target Keilnei
 
 
@@ -293,7 +293,7 @@ step << Hunter
 step << Priest
 	.goto Azuremyst Isle,79.254,50.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗约什|r 对话
-    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_from him|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x15)
     .target Ryosh
     .xp >5,1
@@ -306,7 +306,7 @@ step << Shaman/Hunter
 	.goto Azuremyst Isle,79.188,50.928
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_姆拉|r 对话
 	.vendor >>把垃圾物品卖给商人
-    >>|cRXP_BUY_Buy 5 stacks of|r |T132382:0|t[劣质箭] |cRXP_BUY_from her|r << Hunter
+    >>|cRXP_BUY_Buy 5 stacks of|r |T132382:0|t[劣质箭]|cRXP_BUY_from her|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Mura
 step
@@ -321,7 +321,7 @@ step
     .target Vindicator Aldar
 step
     #completewith Owlkininoculated
-    .usespell 28880 >>|cRXP_WARN_施放|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on a|r |cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_. They're scattered all around the starting zone|r
+    .usespell 28880 >>|cRXP_WARN_施放|r |T135923:0|t[Gift of the Naaru]|cRXP_WARN_on a|r|cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_. They're scattered all around the starting zone|r
     .complete 9283,1 --Draenei Survivors Saved
     .unitscan Draenei Survivor
     .subzoneskip 3559 -- Nestlewood Hills
@@ -399,7 +399,7 @@ step
     .target Botanist Taerix
 step
     #completewith SurveyorCandress
-    .usespell 28880 >>|cRXP_WARN_施放|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on a|r |cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_. They're scattered all around the starting zone|r
+    .usespell 28880 >>|cRXP_WARN_施放|r |T135923:0|t[Gift of the Naaru]|cRXP_WARN_on a|r|cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_. They're scattered all around the starting zone|r
     .complete 9283,1 --Draenei Survivors Saved
     .unitscan Draenei Survivor
 step
@@ -422,7 +422,7 @@ step
 step
     #label SurveyorCandress
     .goto Azuremyst Isle,69.271,65.772
-    >>Kill |cRXP_ENEMY_Surveyor Candress|r. Loot her for the |T132319:0|t[|cRXP_LOOT_血精灵计划书|r]
+    >>击杀 |cRXP_ENEMY_Surveyor Candress|r. Loot her for the |T132319:0|t[|cRXP_LOOT_血精灵计划书|r]
     .use 24414 >>|cRXP_WARN_Use the|r |T132319:0|t[|cRXP_LOOT_血精灵计划书|r] |cRXP_WARN_to start the quest|r
     .complete 9311,1 --Kill Surveyor Candress (x1)
     .collect 24414,1,9798,1 -- Blood Elf Plans
@@ -438,7 +438,7 @@ step
     .goto Azuremyst Isle,77.6,56.0,80,0
     .goto Azuremyst Isle,74.8,43.4,80,0
     .goto Azuremyst Isle,80.2,42.6,80,0
-    >>|cRXP_WARN_施放|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on a|r |cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_. They're scattered all around the starting zone|r
+    >>|cRXP_WARN_施放|r |T135923:0|t[Gift of the Naaru]|cRXP_WARN_on a|r|cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_. They're scattered all around the starting zone|r
     .complete 9283,1 --Draenei Survivors Saved
     .unitscan Draenei Survivor
 step
@@ -504,7 +504,7 @@ step
 	.unitscan Draenei Youngling
 step
     .goto Azuremyst Isle,53.9,34.4
-    >>Kill |cRXP_ENEMY_Infected Nightstalker Runts|r. Loot them for a |T134072:0|t[|cRXP_LOOT_微微发光的水晶|r]
+    >>击杀 |cRXP_ENEMY_Infected Nightstalker Runts|r. Loot them for a |T134072:0|t[|cRXP_LOOT_微微发光的水晶|r]
     .use 23678 >>|cRXP_WARN_Use the|r |T134072:0|t[|cRXP_LOOT_微微发光的水晶|r] |cRXP_WARN_to start the quest|r
 	.collect 23678,1,9455,1 -- Faintly Glowing Crystal (1)
     .accept 9455 >>接受任务《物归己用》 奇怪的发现
@@ -587,20 +587,20 @@ step << Shaman/Warrior
 step << Paladin
     .goto Azuremyst Isle,49.579,53.107
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳贝克|r 对话
-    >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[木槌棒]
+    >>|cRXP_BUY_购买并装备一梗|r |T133053:0|t[木槌棒]
     .collect 2493,1 --Collect Wooden Mallet (1)
     .target Nabek
     .money <0.0666
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
 step << Paladin
     #sticky
-    .equip 16,2493 >>|cRXP_WARN_Equip the|r |T133053:0|t[木槌棒]
+    .equip 16,2493 >>|cRXP_WARN_装备买来的|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
 step << Warrior/Paladin
     .goto Azuremyst Isle,48.957,51.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜尔维|r 对话
-    .train 2575 >>Train |T134708:0|t[采矿]
+    .train 2575 >>学习 |T134708:0|t[采矿]
     .target Dulvi
 step << Warrior/Paladin
     .goto Azuremyst Isle,48.767,52.403
@@ -648,8 +648,8 @@ step
 step << Warrior/Paladin
     .goto Azuremyst Isle,46.355,71.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁匠卡里普索|r 对话
-    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones]|cRXP_WARN_and|r |T135255:0|t[Rough Weightstones]|cRXP_WARN_which increase your melee damage by 2|r
-    .train 2018 >>Train |T136241:0|t[锻造]
+    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[劣质磨刀石]|cRXP_WARN_and|r |T135255:0|t[劣质平衡石]|cRXP_WARN_which increase your melee damage by 2|r
+    .train 2018 >>学习 |T136241:0|t[锻造]
     .target Blacksmith Calypso
     .train 2575,3 --Mining
 step
@@ -735,7 +735,7 @@ step
 step
     #completewith TenderloinRecipe
     +|cRXP_WARN_Do NOT vendor the|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin]
-    >>|cRXP_WARN_You will learn it soon once you've trained|r |T133971:0|t[烹饪] |cRXP_WARN_which is required for a quest in Darkshore later|r
+    >>|cRXP_WARN_You will learn it soon once you've trained|r |T133971:0|t[烹饪]|cRXP_WARN_which is required for a quest in Darkshore later|r
 step << Hunter
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
@@ -921,7 +921,7 @@ step
     .goto Azuremyst Isle,28.9,79.5,55,0
     .goto Azuremyst Isle,31.9,76.5,55,0
     .goto Azuremyst Isle,35.8,79.0,55,0
-    >>Kill |cRXP_ENEMY_Wrathscale Nagas|r, |cRXP_ENEMY_Wrathscale Myrmidons|r and |cRXP_ENEMY_Wrathscale Sirens|r. Loot them for the |T134462:0|t[|cRXP_LOOT_写满符文的石板|r]
+    >>击杀 |cRXP_ENEMY_Wrathscale Nagas|r, |cRXP_ENEMY_Wrathscale Myrmidons|r and |cRXP_ENEMY_Wrathscale Sirens|r. Loot them for the |T134462:0|t[|cRXP_LOOT_写满符文的石板|r]
     .use 23759 >>|cRXP_WARN_Use the|r |T134462:0|t[|cRXP_LOOT_写满符文的石板|r] |cRXP_WARN_to start the quest|r
     .collect 23759,1,9514 --Collect Rune Covered Tablet (x1)
     .accept 9514>>写满符文的石板
@@ -1027,7 +1027,7 @@ step
     .goto Azuremyst Isle,46.219,70.983
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛根·丹尼尔|r 对话
     .vendor >> |cRXP_WARN_Vendor trash while waiting for the RP to finish|r << !Hunter
-    >>|cRXP_BUY_Buy more stacks of|r |T132382:0|t[劣质箭] |cRXP_BUY_from him while waiting for the RP to finish|r << Hunter
+    >>|cRXP_BUY_Buy more stacks of|r |T132382:0|t[劣质箭]|cRXP_BUY_from him while waiting for the RP to finish|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Logan Daniel
 step
@@ -1040,10 +1040,10 @@ step
     .goto Azuremyst Isle,45.7,73.2,40,0
     .goto Azuremyst Isle,50.2,70.6
     >>与 |cRXP_FRIENDLY_Engineer "Spark" Overgrind|r patrolling the beach
-    >>击杀 |cRXP_ENEMY_工程师欧格林德|r after the short RP. Loot him for the |cRXP_LOOT_Traitor's Communication|r
+    >>击杀 |cRXP_ENEMY_工程师欧格林德|r 剧情表演之后. 拾取地上的 him for the |cRXP_LOOT_Traitor's Communication|r
     .complete 9537,1 --Collect Traitor's Communication (x1)
     .skipgossip 17243
-    Traitor's 通讯
+    .timer 18,Traitor's 通讯
     .unitscan Engineer "Spark" Overgrind
 step
     .goto Azuremyst Isle,47.038,70.206
@@ -1087,7 +1087,7 @@ step << !Hunter
     .train 2550 >>Train |T133971:0|t[烹饪]
     .target "Cookie" McWeaksauce
 step << !Hunter
-    .cast 33277 >>|cRXP_WARN_Use the|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin] |cRXP_WARN_to learn the|r |T133971:0|t[烹饪] |cRXP_WARN_recipe|r
+    .cast 33277 >>|cRXP_WARN_Use the|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin]|cRXP_WARN_to learn the|r |T133971:0|t[烹饪]|cRXP_WARN_recipe|r
     .use 27686
     .itemcount 27686,1
     .skill cooking,<1,1 -- shows if cooking is >1
@@ -1178,7 +1178,7 @@ step << Hunter
     .train 2550 >>Train |T133971:0|t[烹饪]
     .target "Cookie" McWeaksauce
 step << Hunter
-    .cast 33277 >>|cRXP_WARN_Use the|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin] |cRXP_WARN_to learn the|r |T133971:0|t[烹饪] |cRXP_WARN_recipe|r
+    .cast 33277 >>|cRXP_WARN_Use the|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin]|cRXP_WARN_to learn the|r |T133971:0|t[烹饪]|cRXP_WARN_recipe|r
     .use 27686
     .itemcount 27686,1
     .skill cooking,<1,1 -- shows if cooking is >1
@@ -1493,7 +1493,7 @@ step
     .goto Azuremyst Isle,34.6,25.0,50,0
     .goto Azuremyst Isle,34.6,20.2,50,0
     .goto Azuremyst Isle,34.6,15.2,50,0
-    >>Kill |cRXP_ENEMY_Murgurgula|r. Loot him for |T134350:0|t[|cRXP_LOOT_古尔弗的尊严|r]
+    >>击杀 |cRXP_ENEMY_Murgurgula|r. Loot him for |T134350:0|t[|cRXP_LOOT_古尔弗的尊严|r]
     .use 23850 >>|cRXP_WARN_Use|r |T134350:0|t[|cRXP_LOOT_古尔弗的尊严|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_ENEMY_咕噜咕拉|r |cRXP_WARN_patrols along the coast|r
 	.collect 23850,1,9564,1 --Gurf's Dignity (1)
@@ -1590,8 +1590,8 @@ step
     .target Princess Stillpine
 step
     .goto Bloodmyst Isle,64.2,76.8
-    >>击杀 |cRXP_ENEMY_刺臂战士|r and |cRXP_ENEMY_刺臂萨满祭司|r until |cRXP_ENEMY_刺臂酋长|r spawns
-    >>击杀 |cRXP_ENEMY_刺臂酋长|r. Loot him for |cRXP_LOOT_The High Chief's Key|r
+    >>击杀 |cRXP_ENEMY_刺臂战士|r 和 |cRXP_ENEMY_刺臂萨满祭司|r until |cRXP_ENEMY_刺臂酋长|r spawns
+    >>击杀 |cRXP_ENEMY_刺臂酋长|r。拾取他的 |cRXP_LOOT_The High Chief's Key|r
     .collect 24099,1,9667,1 --Collect The High Chief's Key (x1)
     .mob Bristlelimb Warrior
     .mob Bristlelimb Shaman
@@ -1845,7 +1845,7 @@ step
 step
     .goto 1943/1,5143.700,6130.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Otonambusi|r
-    >>|cRXP_BUY_买一个|r [Simple Wood] |cRXP_BUY_和一个|r [Flint and Tinder] |cRXP_BUY_从他|r
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_too from him if needed|r << !Warrior !Shaman !Paladin -- saving money for weps soon
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2011,7 +2011,7 @@ step
     #label Cooking1
     #optional
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 23676,1 --Moongraze Stag Tenderloin (1+)

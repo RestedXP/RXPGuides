@@ -20,9 +20,9 @@ step << !NightElf
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_尼尔·奥雷|r on the bottom floor of the barracks
-    >>|cRXP_BUY_买一个|r [Simple Wood] |cRXP_BUY_和一个|r [Flint and Tinder] |cRXP_BUY_从他|r << Hunter
-    .vendor 1448 >>|cRXP_BUY_Buy a|r |T133024:0|t[青铜管] |cRXP_BUY_from him (if it's up)|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r on the bottom floor of the barracks
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r << Hunter
+    .vendor 1448 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 	.target Neal Allen
     .money <0.08 << !Hunter
 step << !NightElf
@@ -73,10 +73,10 @@ step << !NightElf
     .skill cooking,<1,1 -- shows if cooking is >1
 step << !NightElf
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[烹饪] 以下物品：
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -86,8 +86,8 @@ step << !NightElf
     .skill cooking,<1,1 -- shows if cooking is >1
 step << !NightElf
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -97,7 +97,7 @@ step << !NightElf
     .skill cooking,<1,1 -- shows if cooking is >1
 step << !NightElf
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     .usespell 2550
     .zoneskip Darkshore
@@ -109,14 +109,14 @@ step << !NightElf
 step << !NightElf
     #optional
     .goto 1437,4.370,56.762
-    >>在等待前往 Darkshore 的船时提升你的 [急救]
-    .zone Darkshore >>乘船前往 Darkshore
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore|r
+    .zone Darkshore >> Take the boat to Darkshore
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << !NightElf
     #label DarkshoreBoat
     .goto 1437,4.370,56.762
-    .zone Darkshore >>乘船前往 Darkshore
+    .zone Darkshore >> Take the boat to Darkshore
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
@@ -130,14 +130,14 @@ step
     #completewith BuzzBox1 << !NightElf
     .goto 1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r
-    >>从他那里购买最多 20 个 [Longjaw Mud Snappers]
-    .turnin 6342 >> Turn in Flight to Auberdine << NightElf
+    >>|cRXP_WARN_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him|r
+    .turnin 6342 >>交任务 飞往奥伯丁 << NightElf
     .collect 4592,15 --Longjaw Mud Snapper
     .target Laird
 step
     #optional
     #completewith next
-    .goto Darkshore,36.70,43.78,8 >>Travel up stairs toward |cRXP_FRIENDLY_维兹班恩·曲针|r
+    .goto Darkshore,36.70,43.78,8 >>下楼 toward |cRXP_FRIENDLY_维兹班恩·曲针|r
 step
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 交谈
@@ -145,7 +145,7 @@ step
     .target Wizbang Cranktoggle
 step
     .goto Darkshore,37.04,44.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Shaussiy|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r
     .home >>将你的炉石设置为暮色森林
     .target Innkeeper Shaussiy
     .bindlocation 442
@@ -200,7 +200,7 @@ step << Dwarf Hunter
     .goto Darkshore,40.77,78.56,40,0
     .goto Darkshore,38.21,73.32,40,0
     >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_蓟熊|r. Once your pet is stunned by the |cRXP_ENEMY_蓟熊|r, abandon your pet and start taming it|r
-    .train 2981 >>用它攻击怪物以学习 [Claw (Rank 2)]
+    .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >>点击此处获取更多关于宠物训练的信息：https://www.wow-petopia.com/classic/training.php
     .target Thistle Bear
 step
@@ -254,7 +254,7 @@ step
     .use 7586
 step
     .goto Darkshore,38.90,53.59
-    >>朝着 Furbolg Camp 的边缘跑去
+    >>Run toward the edge of the Furbolg Camp
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #optional
@@ -263,7 +263,7 @@ step
 step
     #label Auber1
     #completewith next
-    .subzone 442 >>前往 Auberdine
+    .subzone 442 >> Travel to Auberdine
 step
     #requires BuzzBox1
     .goto 1439,36.634,46.250
@@ -287,7 +287,7 @@ step
     .goto 1439,32.432,43.744,15 >>前往码头尽头，然后跳入水中
 step
     .goto 1439,31.841,46.304
-    >>打开 |cRXP_PICK_Skeletal Sea Turtle|r。并从中拾取 |cRXP_LOOT_Sea Turtle Remains|r
+    >>Open the |cRXP_PICK_Skeletal Sea Turtle|r. Loot it for the |cRXP_LOOT_Sea Turtle Remains|r
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     .goto 1439,36.701,45.122,8,0
@@ -351,20 +351,20 @@ step << Druid
     #completewith next
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    >>进入 Moonkin Cave
+    >>|cRXP_WARN_Enter the Moonkin Cave|r
     .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon|r |cRXP_ENEMY_月爪枭兽|r
     .use 15208
 step << Druid
     .goto Darkshore,42.97,45.47,15,0
     .goto Darkshore,43.50,45.97
-    .use 15208 >>击杀 |cRXP_ENEMY_月爪枭兽|r. Talk to the |cRXP_FRIENDLY_月爪枭兽的灵魂|r
+    .use 15208 >>击杀 |cRXP_ENEMY_月爪枭兽|r与屋子里的 |cRXP_FRIENDLY_月爪枭兽的灵魂|r
     .skipgossip
     .complete 6001,1 --Defeat Lunaclaw (x1)
     .mob Lunaclaw
     .target Lunaclaw Spirit
 step << !Dwarf/!Hunter
     .goto 1439,47.314,48.676
-    >>前往 |cRXP_PICK_Mysterious Red Crystal|r
+    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step
@@ -375,8 +375,8 @@ step
     .goto Darkshore,42.93,50.82,55,0
     .goto Darkshore,45.51,48.93,55,0
     .goto Darkshore,42.47,45.36,55,0
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[小蛋]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[烹饪] |cRXP_WARN_to 10 later|r
+    >>击杀 |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[小蛋]|r
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 10 later|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -444,7 +444,7 @@ step
     .goto 1439,47.262,37.674,45,0
     .goto 1439,47.920,37.228,45,0
     .goto 1439,47.368,36.774,45,0
-    >>击杀 |cRXP_ENEMY_戴瑟雷萨特|r. Loot them for the |cRXP_LOOT_Ancient Moonstone Seal|r
+    >>击杀 |cRXP_ENEMY_戴瑟雷萨特|r。拾取他们的 |cRXP_LOOT_Ancient Moonstone Seal|r
     >>|cRXP_WARN_They do not have dynamic respawns. Skip this step if you can't find any|r |cRXP_ENEMY_戴瑟雷萨特|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
@@ -464,7 +464,7 @@ step
     .isQuestTurnedIn 956
 step
     #optional
-    .abandon 956 >>放弃 Bashal'Aran
+    .abandon 956 >> Abandon Bashal'Aran
 step << !Draenei
     .goto 1439,53.4,28.8,0
     .goto 1439,54.8,22.8,0
@@ -472,14 +472,14 @@ step << !Draenei
     .goto 1439,49.8,32.8,0
     #completewith HSAuber
     >>击杀 |cRXP_ENEMY_狂暴蓟熊|r
-    >>注意，如果你没有足够快地击杀它们，它们会施放 [Rabies] (瞬发普攻：10 分钟内使所有生命回复效果降低 50%)
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     >>|cRXP_WARN_如果你没有 |cRXP_ENEMY_狂暴蓟熊|r 可击杀，请跳过此步骤，稍后会完成。|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
     .zoneskip Darkshore,1 << Druid
 step << !Draenei
     .goto Darkshore,50.81,25.50
-    .use 12350 >>在 Cliffspring River 的河岸使用 [Empty Sampling Tube]
+    .use 12350 >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
     .complete 4762,1 --Cliffspring River Sample (1)
 step << Druid
 	#completewith next
@@ -497,7 +497,7 @@ step << Druid
 step << Druid
     #completewith next
     .goto Teldrassil,55.889,89.456
-    .zone Darnassus >>进入通往 Darnassus 的紫色传送门
+    .zone Darnassus >> Take the purple portal into Darnassus
 step << Druid
     .isQuestComplete 6001
     .goto Darnassus,35.375,8.405
@@ -528,7 +528,7 @@ step
     #optional
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔博德·钢手|r
-    .vendor 6301 >>|cRXP_BUY_Buy|r |T134059:0|t[Mild Spices] |cRXP_BUY_from him until you have|r |T134059:0|t[Mild Spices] |cRXP_BUY_equal or more than the amount of|r |T132832:0|t[小蛋] |cRXP_BUY_that you currently have|r
+    .vendor 6301 >>|cRXP_BUY_Buy|r |T134059:0|t[Mild Spices] |cRXP_BUY_from him until you have|r |T134059:0|t[Mild Spices] |cRXP_BUY_equal or more than the amount of|r |T132832:0|t[Small Eggs] |cRXP_BUY_that you currently have|r
     .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
     .collect 6889,50,90,1,0x20,cooking --Small Egg (1-50)
@@ -540,10 +540,10 @@ step
     .isQuestAvailable 2178
 step
     .goto 1439,37.511,41.670
-    >>|cRXP_WARN_朝地面上的 |cRXP_PICK_Campfire|r 前进|r
-    +|cRXP_WARN_Start|r |T133971:0|t[烹饪] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[烹饪] |cRXP_WARN_has reached at least level 10|r
-    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[烹饪] |cRXP_WARN_ until you run out of|r |T132832:0|t[小蛋] << !sod
-    >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[烹饪] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r << !sod
+    >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r
+    +|cRXP_WARN_Start|r |T133971:0|t[烹饪] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[烹饪]|cRXP_WARN_has reached at least level 10|r
+    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_ until you run out of|r |T132832:0|t[Small Eggs] << !sod
+    >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r << !sod
     .skill cooking,50,1
     .skill cooking,<1,1 -- shows if cooking is >1
     .itemcount 6889,1 -- Small Egg (1+)
@@ -581,17 +581,17 @@ step
     .skill cooking,<10,1
 step << Dwarf Hunter
     .goto 1439,47.314,48.676
-    >>前往 |cRXP_PICK_Mysterious Red Crystal|r
+    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << !Dwarf/!Hunter
     .goto 1439,37.767,44.001
-    >>在 Auberdine 的月亮井使用 [Empty Water Tube]
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
 step << !Dwarf/!Hunter
     .goto 1439,47.314,48.676
-    >>点击 |cRXP_PICK_Mysterious Red Crystal|r
+    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two groups of |cRXP_ENEMY_狂暴的月夜枭兽|r west of the |cRXP_PICK_Mysterious Red Crystal|r when you click it as they can agro together|r
     .turnin 4812 >>交任务《 前往熔光镇》 清洗水晶
     .accept 4813 >>接受任务《物归己用》 水晶中的碎骨
@@ -612,8 +612,8 @@ step
     .waypoint 1439,43.104,62.563,50,0
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>注意：她的刷新时间为 7–8 分钟，并且在 Ameth'Aran 有 4 个不同的刷新点
+    >>击杀 |cRXP_ENEMY_安娜雅·晨路|r，从她身上拾取 |cRXP_LOOT_吊坠|r
+    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawn locations in Ameth'Aran|r
     >>如果你找不到她，可以考虑与附近的玩家组队。在综合频道 (/1) 询问是否有其他也在找她的人一起组队。如果实在找不到她，请跳过此步骤
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
@@ -653,7 +653,7 @@ step
     .isOnQuest 953
 step
     .goto 1439,42.373,61.815
-    >>点击 |cRXP_PICK_Ancient Flame|r
+    >>Click the |cRXP_PICK_Ancient Flame|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
     .isOnQuest 957
 step
@@ -685,7 +685,7 @@ step
     .goto Darkshore,42.54,67.76,70,0
     .goto Darkshore,39.99,78.46,70,0
     >>击杀 |cRXP_ENEMY_狂暴蓟熊|r in southern Darkshore
-    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces all health regeneration by 50% for 10 minutes)|r
+    >>|cRXP_WARN_小心，它们会施放|r |T135914:0|t[狂犬病] |cRXP_WARN_如果你没有足够快击杀它们（瞬发近战：在 10 分钟内减少所有生命恢复 50%）|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
@@ -777,7 +777,7 @@ step
 step
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞利恩·白爪|r
-    >>|cRXP_WARN_You may need to wait out his RP if someone else just turned in|r
+    >>|cRXP_WARN_如果有人刚交了任务，你可能需要等待他完成 RP|r
     .turnin 963 >>交任务《 前往熔光镇》 永志不渝
     .target Cerellean Whiteclaw
 step << !Draenei
@@ -799,10 +799,10 @@ step << Draenei
     .target Asterion
 step << Draenei
     .goto Darkshore,50.81,25.50
-    .use 12350 >>在 Cliffspring River 的河岸使用 [Empty Sampling Tube]
+    .use 12350 >>|cRXP_WARN_Use the|r |T134865:0|t[空的水样试管] |cRXP_WARN_at the base of the Cliffspring River|r
     .complete 4762,1 --Cliffspring River Sample (1)
 step << Draenei
-    .hs >> Hearth to Bloodmyst Isle
+    .hs >>炉石回秘血岛
     .zoneskip Bloodmyst Isle
 ]])
 
@@ -816,7 +816,7 @@ RXPGuides.RegisterGuide([[
 #subgroup RestedXP 联盟 1-20 级
 #defaultfor !Draenei
 #next 12-14 黑海岸 << !Warlock
-#next 20-23 Darkshore/Ashenvale << Warlock
+#next 20-23 黑海岸/灰谷 << Warlock
 
 step << Druid
     .goto Azuremyst Isle,24.450,54.556
@@ -839,11 +839,11 @@ step << Warrior
 step << Warrior/Paladin/Hunter/Rogue
     .goto The Exodar,53.362,85.753
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_韩迪尔|r 对话
-    .train 202 >> Train 2h Swords << Paladin/Warrior
+    .train 202 >>学习双手剑 << Paladin/Warrior
     .train 199 >>训练双手锤 << Paladin/Warrior
     .train 198 >>学习双手锤 << Rogue
-    .train 201 >> Train 1h Swords << Rogue
-    .train 5011 >> Train Crossbows << Hunter
+    .train 201 >>学习单手剑 << Rogue
+    .train 5011 >>训练 弩 << Hunter
     .target Handiir
 step << Hunter
 	.goto The Exodar,47.573,88.340
@@ -854,7 +854,7 @@ step << Hunter
     .goto The Exodar,44.240,86.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_甘纳尔|r 对话
 	.train 4188 >>训练 |T136112:0|t[持久耐力]
-    .train 24549 >>Train |T136094:0|t[天然的护甲]
+    .train 24549 >> Train |T136094:0|t[Natural Armor]
     .target Ganaar
 step << Shaman
     .goto The Exodar,32.450,23.996
@@ -878,8 +878,8 @@ step
     .goto The Exodar,63.007,59.264,-1
     .goto The Exodar,63.695,58.664,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Exodar Auctioneer|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins in Bloodmyst Isle shortly:|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_购买以下物品，以便稍后在秘血岛更快地交任务：|r
+    >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T134082:0|t[辐射水晶碎片]
     .collect 23984,10
     .target Auctioneer Iressa
@@ -901,7 +901,7 @@ step << !Draenei
     .target Stephanos
 step
     .goto Bloodmyst Isle,63.5,88.8
-	.zone Bloodmyst Isle >> Travel north to Bloodmyst Isle
+	.zone Bloodmyst Isle >>向北前往秘血岛
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯希尔|r 对话
@@ -912,9 +912,9 @@ step
     .goto Bloodmyst Isle,61.06,69.97,20,0
     .goto Bloodmyst Isle,55.252,59.121
     .subzone 3584 >>前往血环堡
-    >>|cRXP_WARN_Follow the arrow closely! Ensure you do not cross the bridge otherwise you will be dismounted!|r
-    >>|cRXP_WARN_Do not engage any mobs, attack, or cast any spells as doing so will dismount you! You will also be dismounted if dazed by an attack from behind!|r
-    >>|cRXP_WARN_If you become dismounted, abandon the quest "The Kessel Run"|r
+    >>|cRXP_WARN_紧跟箭头前进！务必不要穿过桥梁，否则你会被强制下坐骑！|r
+    >>|cRXP_WARN_不要与任何怪物交战、攻击或施放任何法术，否则你会被强制下坐骑！如果被身后攻击触发迷惑，同样也会被强制下坐骑！|r
+    >>|cRXP_WARN_如果你被强制下坐骑，请放弃任务"凯希尔的信使"|r
 step
     #optional
     #completewith next
@@ -933,7 +933,7 @@ step
 step
     #optional
     #sticky
-    .abandon 9663 >> Abandon The Kessel Run
+    .abandon 9663 >>放弃任务 凯希尔的信使
 step
     .goto Bloodmyst Isle,55.083,57.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官艾蕾希亚|r
@@ -1015,7 +1015,7 @@ step
 step
 	#completewith RuinousPolyspore
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These are all throughout Bloodmyst Isle|r 
+    >>|cRXP_WARN_这些分布在整个秘血岛各处|r 
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #completewith SatyrFelsworn
@@ -1023,7 +1023,7 @@ step
     .complete 9648,4 --Collect Fel Cone Fungus (x1)
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
+    >>击杀 |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
     .use 23900 >>|cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >>接受任务《物归己用》 军团的徽记
@@ -1035,9 +1035,9 @@ step
 step
     .goto Bloodmyst Isle,36.498,71.338,30,0
     .goto Bloodmyst Isle,38.416,82.003
-    >>Kill |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
+    >>击杀 |cRXP_ENEMY_Tzerak|r. Loot him for |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] 
     .use 23900 >>|cRXP_WARN_Use|r |T134518:0|t[|cRXP_LOOT_瑟拉克的护甲块|r] |cRXP_WARN_to start the quest|r
-    >>|cRXP_WARN_If you do not see him patrolling through the camps, wait for him to spawn at the purple sigil on the ground at the south. It can take 3-6 minutes for him to spawn|r
+    >>|cRXP_WARN_如果你没有看到他在营地中巡逻，请在南侧地面上的紫色符文处等待他刷新。他可能需要 3–6 分钟才会出现|r
     .collect 23900,1,9594,1 --Tzerak's Armor Plate
     .accept 9594 >>接受任务《物归己用》 军团的徽记
     .unitscan Tzerak
@@ -1056,7 +1056,7 @@ step
     .goto Bloodmyst Isle,38.72,73.66,70,0
     .goto Bloodmyst Isle,33.68,72.42,70,0
 	>>击杀 |cRXP_ENEMY_纳兹维安萨特|r 和 |cRXP_ENEMY_纳兹维安魔誓者|r
-    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Nazzivus Rogues|r if you aren't seeing |cRXP_ENEMY_Satyrs|r or |cRXP_ENEMY_Felsworns|r to make them respawn|r
+    >>|cRXP_WARN_如果你没有看到 |cRXP_ENEMY_萨特|r 或 |cRXP_ENEMY_魔誓者|r，你可能需要击杀 |cRXP_ENEMY_纳兹维安盗贼|r 来促使它们重新刷新|r
     .complete 9594,1 --Kill Nazzivus Satyr (x8)
     .mob +Nazzivus Satyr
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
@@ -1089,7 +1089,7 @@ step
     .goto Bloodmyst Isle,36.82,95.03,70,0
     .goto Bloodmyst Isle,43.70,94.43,70,0
     .goto Bloodmyst Isle,49.26,94.16,70,0
-	>>Kill |cRXP_ENEMY_Cruelfin|r. Loot him for the |T133339:0|t[|cRXP_LOOT_红色水晶坠饰|r]
+	>>击杀 |cRXP_ENEMY_Cruelfin|r. Loot him for the |T133339:0|t[|cRXP_LOOT_红色水晶坠饰|r]
     .use 23870 >>|cRXP_WARN_Use the|r |T133339:0|t[|cRXP_LOOT_红色水晶坠饰|r] |cRXP_WARN_to start the quest|r
     >>|cRXP_ENEMY_克鲁芬|r |cRXP_WARN_patrols along the shoreline|r
 	.collect 23870,1,9576,1 --Red Crystal Pendant (1)
@@ -1109,7 +1109,7 @@ step
     .target Blacksilt Scout
 step
 	.goto Bloodmyst Isle,58.175,83.415
-	.use 23875 >>|cRXP_WARN_Use the|r |T134709:0|t[Crystal Mining Pick] |cRXP_WARN_on the|r |cRXP_PICK_Impact Site Crystal|r
+	.use 23875 >>|cRXP_WARN_使用|r |T134709:0|t[水晶矿锄] |cRXP_WARN_对|r |cRXP_PICK_坠毁点水晶|r 使用
     .complete 9581,1 --Collect Impact Site Crystal Sample (x1)
 step
     #loop
@@ -1210,7 +1210,7 @@ step
     .goto Bloodmyst Isle,46.7,48.3,50,0
     .goto Bloodmyst Isle,50.8,47.0,50,0
     .goto Bloodmyst Isle,47.4,43.8,50,0
-	>>击杀 |cRXP_ENEMY_炎鹰间谍|r. Loot them for the |cRXP_LOOT_Sunhawk Missive|r
+	>>击杀 |cRXP_ENEMY_炎鹰间谍|r。拾取他们的 |cRXP_LOOT_Sunhawk Missive|r
     .complete 9779,1 --Collect Sunhawk Missive (x1)
     .mob Sunhawk Spy
 step
@@ -1225,7 +1225,7 @@ step
 step
 	#completewith next
 	>>拾取地上的 a |cRXP_LOOT_Ruinous Polyspore|r on the ground
-    >>|cRXP_WARN_It looks like a small blue mushroom found around the Naga ruins|r
+    >>|cRXP_WARN_它看起来像是在娜迦遗迹附近可以找到的小型蓝色蘑菇|r
     .complete 9648,3 --Collect Ruinous Polyspore (x1)
 step
     #loop
@@ -1233,7 +1233,7 @@ step
     .goto Bloodmyst Isle,61.24,48.37,40,0
     .goto Bloodmyst Isle,61.40,43.51,40,0
     .goto Bloodmyst Isle,63.36,47.93,40,0
-	>>击杀 |cRXP_ENEMY_怒鳞掠夺者|r and |cRXP_ENEMY_怒鳞巫师|r. Loot them for the |cRXP_LOOT_Survey Data Crystal|r
+	>>击杀 |cRXP_ENEMY_怒鳞掠夺者|r 和 |cRXP_ENEMY_怒鳞巫师|r。拾取他们的 |cRXP_LOOT_Survey Data Crystal|r
     .complete 9628,1 --Collect Survey Data Crystal (x1)
     .mob Wrathscale Marauder
     .mob Wrathscale Sorceress
@@ -1249,7 +1249,7 @@ step
     .goto Bloodmyst Isle,68.58,65.18,8,0
     .goto Bloodmyst Isle,68.71,71.59,8,0
 	>>拾取地上的 a |cRXP_LOOT_Ruinous Polyspore|r on the ground
-    >>|cRXP_WARN_It looks like a small blue mushroom found around the Naga ruins|r
+    >>|cRXP_WARN_它看起来像是在娜迦遗迹附近可以找到的小型蓝色蘑菇|r
     .complete 9648,3 --Collect Ruinous Polyspore (x1)
 step
     #loop
@@ -1267,7 +1267,7 @@ step
     .goto Bloodmyst Isle,50.2,72.5,10,0
     .goto Bloodmyst Isle,53.5,75.7,10,0
 	>>拾取地上的 a |cRXP_LOOT_Blood Mushroom|r on the ground
-    >>|cRXP_WARN_These appear throughout Bloodmyst Isle|r
+    >>|cRXP_WARN_这些会在秘血岛各处出现|r
     .complete 9648,2 --Collect Blood Mushroom (x1)
 step
     #completewith next
@@ -1370,7 +1370,7 @@ step
     .itemcount 23984,>9
 step
     .goto Bloodmyst Isle,45.669,47.827
-	.use 23876 >>|cRXP_WARN_Use the|r |T134709:0|t[Crystal Mining Pick] |cRXP_WARN_at the|r |cRXP_PICK_Altered Bloodmyst Crystal|r
+	.use 23876 >>|cRXP_WARN_使用|r |T134709:0|t[水晶矿锄] |cRXP_WARN_在|r |cRXP_PICK_变异的秘血水晶|r 处使用
     .complete 9584,1 --Collect Altered Crystal Sample (x1)
 step
     .goto Bloodmyst Isle,52.588,53.207
@@ -1385,7 +1385,7 @@ step
     .subzone 3593 >>前往暴风城大教堂内，与 Axxarien
     >>击杀 |cRXP_ENEMY_变异的缠绕者|r。拾取他们的 |cRXP_LOOT_Thorny Constrictor Vines|r
     >>击杀 |cRXP_ENEMY_老年棕熊|r。拾取他们的 |cRXP_LOOT_老年棕熊的肉|r
-    >>|cRXP_WARN_Kill any you see on the way to Axxarien|r
+    >>|cRXP_WARN_前往阿克萨林的路上看到的都可以击杀|r
     .complete 9643,1 --Collect Thorny Constrictor Vine (x6)
     .mob +Mutated Constrictor
     .disablecheckbox
@@ -1409,7 +1409,7 @@ step
 step
     #label CrystalSample
     .goto Bloodmyst Isle,41.069,30.660
-	.use 23877 >>|cRXP_WARN_Use the|r |T134709:0|t[Crystal Mining Pick] |cRXP_WARN_on the|r |cRXP_PICK_Axxarien Crystal|r
+	.use 23877 >>|cRXP_WARN_使用|r |T134709:0|t[水晶矿锄] |cRXP_WARN_对|r |cRXP_PICK_阿克萨林水晶|r 使用
     .complete 9585,1 --Collect Axxarien Crystal Sample (x1)
 step
     #completewith ShadowstalkerHellcaller
@@ -1464,7 +1464,7 @@ step
     .mob +Elder Brown Bear
 step
     .goto Bloodmyst Isle,37.45,30.53
-    >>击杀 |cRXP_ENEMY_死爪|r. Loot him for |cRXP_LOOT_Deathclaw's Paw|r
+    >>击杀 |cRXP_ENEMY_死爪|r。拾取他的 |cRXP_LOOT_Deathclaw's Paw|r
     .complete 9646,1 --Collect Deathclaw's Paw (x1)
     .mob Deathclaw
 step
@@ -1478,7 +1478,7 @@ step
     .goto Bloodmyst Isle,42.147,21.223
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克劳伯·维兹班|r
     .vendor >>|cRXP_BUY_Buy a|r |T133024:0|t[青铜管]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if he doesn't have one|r
+    >>|cRXP_WARN_这是限量供应物品，如果他没有出售，请跳过此步骤|r
     .bronzetube
     .target Clopper Wizbang
     .subzoneskip 3906,1
@@ -1504,7 +1504,7 @@ step
 	.goto Bloodmyst Isle,46.4,20.5,30,0
 	.goto Bloodmyst Isle,40.4,20.4,30,0
     >>拾取地上的 |cRXP_LOOT_Clopper's Equipment|r on the ground
-    >>|cRXP_WARN_It can spawn in any of the murloc camps|r
+    >>|cRXP_WARN_它可能会在任意一个鱼人营地刷新|r
     .complete 9548,1 --Collect Clopper's Equipment (x1)
 step
     #loop
@@ -1537,7 +1537,7 @@ step
 step
     #label VoidAnomaly
     .goto Bloodmyst Isle,52.741,21.161
-	>>击杀 |cRXP_ENEMY_虚空畸能|r and explore the Sun Portal Site
+	>>击杀 |cRXP_ENEMY_虚空畸能|r 和 explore the Sun Portal Site
     .complete 9700,2 --Kill Void Anomaly (x5)
     .mob +Void Anomaly
     .complete 9700,1 --Sun Portal Site Confirmed (1)
@@ -1574,7 +1574,7 @@ step
     .goto Bloodmyst Isle,57.0,34.3,25,0
     .goto Bloodmyst Isle,56.1,40.2,25,0
 	>>拾取地上的 the |cRXP_LOOT_龙骨|r on the ground
-    >>|cRXP_WARN_These can be difficult to see and are normally found around the small camps|r
+    >>|cRXP_WARN_这些目标不太容易发现，通常位于小型营地周围|r
     .complete 9687,1 --Collect Dragon Bone (x8)
 step
     .goto Bloodmyst Isle,61.156,41.893
@@ -1639,7 +1639,7 @@ step
 	#completewith GCorpse
 	>>击杀 |cRXP_ENEMY_鲜艳的蓝翼巨蛾|r
     >>击杀 |cRXP_ENEMY_老年棕熊|r。拾取他们的 |cRXP_LOOT_老年棕熊的肉|r
-    >>|cRXP_WARN_Look out for these as you head to The Cyro-Core|r
+    >>|cRXP_WARN_前往冷却核心的途中注意留意这些目标|r
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
     .mob +Royal Blue Flutterer
 	.complete 9580,1 --Elder Brown Bear Flank (8)
@@ -1648,7 +1648,7 @@ step
 	.isQuestTurnedIn 9580
 	#completewith GCorpse
 	>>击杀 |cRXP_ENEMY_鲜艳的蓝翼巨蛾|r
-    >>|cRXP_WARN_Look out for these as you head to The Cyro-Core|r
+    >>|cRXP_WARN_前往冷却核心的途中注意留意这些目标|r
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
     .mob Royal Blue Flutterer
 step
@@ -1668,7 +1668,7 @@ step
     .goto Bloodmyst Isle,39.69,62.77,60,0
     .goto Bloodmyst Isle,38.59,57.40,60,0
     .goto Bloodmyst Isle,35.61,61.49,60,0
-    >>击杀 |cRXP_ENEMY_炎鹰回收者|r. Loot them for |cRXP_LOOT_Galaen's Amulet|r and their |cRXP_LOOT_医疗物资|r
+    >>击杀 |cRXP_ENEMY_炎鹰回收者|r. 拾取 |cRXP_LOOT_Galaen's Amulet|r 和 their |cRXP_LOOT_医疗物资|r
     >>你也可以拾取地上的 the |cRXP_LOOT_医疗物资|r on the ground
 	>>|cRXP_WARN_Use the pillars and structures to LoS if needed to avoid their|r |T135812:0|t[火球术] |cRXP_WARN_施放|r  
     .complete 9579,1 --Collect Galaen's Amulet (x1)
@@ -1679,7 +1679,7 @@ step
 	#completewith GFate
 	>>击杀 |cRXP_ENEMY_鲜艳的蓝翼巨蛾|r
     >>击杀 |cRXP_ENEMY_老年棕熊|r。拾取他们的 |cRXP_LOOT_老年棕熊的肉|r
-    >>|cRXP_WARN_Look out for these as you head to Blood Watch|r
+    >>|cRXP_WARN_前往秘血岗哨的途中注意留意这些目标|r
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
     .mob +Royal Blue Flutterer
 	.complete 9580,1 --Elder Brown Bear Flank (8)
@@ -1688,7 +1688,7 @@ step
 	.isQuestTurnedIn 9580
 	#completewith GFate
 	>>击杀 |cRXP_ENEMY_鲜艳的蓝翼巨蛾|r
-    >>|cRXP_WARN_Look out for these as you head to Blood Watch|r
+    >>|cRXP_WARN_前往秘血岗哨的途中注意留意这些目标|r
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
     .mob Royal Blue Flutterer
 step
@@ -1746,11 +1746,11 @@ step << Draenei
     .goto Bloodmyst Isle,52.684,53.214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_主教埃德门图斯|r 对话
     .turnin 9753 >>交任务《 前往熔光镇》 我们所知道的……
-    .accept 9756 >> Acccept What We Don't Know...
+    .accept 9756 >>接受任务 我们不知道的
     .target Exarch Admetius
 step << Draenei
     .goto Bloodmyst Isle,54.312,54.215
-    >>与 the |cRXP_ENEMY_被抓住的炎鹰间谍|r inside the |cRXP_PICK_Makeshift Prison|r
+    >>与 the |cRXP_ENEMY_被抓住的炎鹰间谍|r 对话，NPC在里面 the |cRXP_PICK_Makeshift Prison|r
     .complete 9756,1 -- Sunhawk Information Recovered 1/1
     .skipgossip
     .target Captured Sunhawk Agent
@@ -1765,7 +1765,7 @@ step
 	.isOnQuest 9647
 	#completewith MatistheCruel
 	>>击杀 |cRXP_ENEMY_鲜艳的蓝翼巨蛾|r
-    >>|cRXP_WARN_Look out for these as you complete other objectives|r
+    >>|cRXP_WARN_在完成其他目标的过程中注意留意这些目标|r
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
     .mob Royal Blue Flutterer
 step
@@ -1773,7 +1773,7 @@ step
 	.isOnQuest 9580
 	#completewith MatistheCruel
     >>击杀 |cRXP_ENEMY_老年棕熊|r。拾取他们的 |cRXP_LOOT_老年棕熊的肉|r
-    >>|cRXP_WARN_Look out for these as you complete other objectives|r
+    >>|cRXP_WARN_在完成其他目标的过程中注意留意这些目标|r
 	.complete 9580,1 --Elder Brown Bear Flank (8)
     .mob Elder Brown Bear
 step
@@ -1804,7 +1804,7 @@ step
     .goto Bloodmyst Isle,32.55,48.08,80,0
     .goto Bloodmyst Isle,42.27,44.12,80,0
 	.line Bloodmyst Isle,43.1,43.7,36.5,47.2,33.5,47.1,29.9,51.8,27.7,51.8,25.1,54.1,22.0,54.3
-    .use 24278 >>|cRXP_WARN_Use the|r |T134536:0|t[Flare Gun] |cRXP_WARN_on|r |cRXP_ENEMY_残忍的玛提斯|r
+    .use 24278 >>|cRXP_WARN_Use the|r |T134536:0|t[信号枪]|cRXP_WARN_on|r|cRXP_ENEMY_残忍的玛提斯|r
     >>|cRXP_WARN_This will summon a |cRXP_FRIENDLY_Tracker of the Hand|r which will capture him once his health reaches 50%. Try not to get agro as |cRXP_ENEMY_残忍的玛提斯|r hits very hard|r
     >>|cRXP_ENEMY_残忍的玛提斯|r |cRXP_WARN_patrols a large section of the road. His patrol path is marked on your map|r
     .complete 9711,1 --Capture Matis the Cruel
@@ -1825,7 +1825,7 @@ step
 	.isOnQuest 9647
 	#completewith MutatedTanglers
 	>>击杀 |cRXP_ENEMY_鲜艳的蓝翼巨蛾|r
-    >>|cRXP_WARN_Look out for these as you complete other objectives|r
+    >>|cRXP_WARN_在完成其他目标的过程中注意留意这些目标|r
     .complete 9647,1 --Kill Royal Blue Flutterer (x10)
     .mob Royal Blue Flutterer
 step
@@ -1833,7 +1833,7 @@ step
 	.isOnQuest 9580
 	#completewith MutatedTanglers
     >>击杀 |cRXP_ENEMY_老年棕熊|r。拾取他们的 |cRXP_LOOT_老年棕熊的肉|r
-    >>|cRXP_WARN_Look out for these as you complete other objectives|r
+    >>|cRXP_WARN_在完成其他目标的过程中注意留意这些目标|r
 	.complete 9580,1 --Elder Brown Bear Flank (8)
     .mob Elder Brown Bear
 step
@@ -1942,7 +1942,7 @@ step
     .goto Bloodmyst Isle,21.4,36.0,60,0
     .goto Bloodmyst Isle,17.2,28.4,40,0
     .goto Bloodmyst Isle,18.2,38.0
-	>>击杀 |cRXP_ENEMY_秘网吸血者|r, |cRXP_ENEMY_秘网编织者|r and |cRXP_ENEMY_萨拉肯|r atop Amberweb Pass
+	>>击杀 |cRXP_ENEMY_秘网吸血者|r,|cRXP_ENEMY_秘网编织者|r 和 |cRXP_ENEMY_萨拉肯|r atop Amberweb Pass
     .complete 9669,1 --Kill Myst Leecher (x8)
     .mob +Myst Leecher
     .complete 9669,2 --Kill Myst Spinner (x8)
@@ -1964,7 +1964,7 @@ step
     .target Researcher Cornelius
 step
     .goto Bloodmyst Isle,34.373,33.742
-	.use 24318 >>|cRXP_WARN_Use the|r |T134870:0|t[Water Sample Flask] |cRXP_WARN_at the base of the waterfall|r
+	.use 24318 >>|cRXP_WARN_使用|r |T134870:0|t[水样瓶] |cRXP_WARN_在瀑布底部|r
     .complete 9748,1 --Collect Bloodmyst Water Sample (x1)
 step << Druid
     .isQuestAvailable 26,6121
@@ -2008,7 +2008,7 @@ step << Druid
     .target Dendrite Starblaze
 step << Druid
     .goto Moonglade,36.026,41.374
-    >>|cRXP_WARN_Use the|r |T134125:0|t[神殿灵珠] |cRXP_WARN_at the Shrine of Remulos tree|r
+    >>|cRXP_WARN_Use the|r |T134125:0|t[神殿灵珠]|cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
     .use 15877
 step << Druid
@@ -2091,7 +2091,7 @@ step
 step
 	#completewith TurninRazormaw
 	>>拾取地上的 |cRXP_LOOT_伊瑟拉之泪|r on the ground
-    >>|cRXP_WARN_These look like small green mushrooms|r
+    >>|cRXP_WARN_这些看起来像小型的绿色蘑菇|r
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step
     #loop
@@ -2122,13 +2122,13 @@ step
     #completewith next
     .goto Bloodmyst Isle,72.650,21.006
     .cast 31268 >>点击地上的 |cRXP_PICK_永燃火堆|r atop the mountain to summon |cRXP_ENEMY_刺喉|r
-    .timer 36,Razormaw RP
+    .timer 36,刺喉 剧情
 step
     .goto Bloodmyst Isle,73.129,20.587
     >>击杀 |cRXP_ENEMY_刺喉|r
     >>|cRXP_ENEMY_刺喉|r |cRXP_WARN_is a level 20 Elite. It takes roughly 35 seconds for him to land|r
     >>|cRXP_WARN_这个任务非常困难。如有需要请组队完成。如果你找不到队伍或无法单刷，就跳过这一步|r
-    >>|cRXP_WARN_Remember to cast|r |T135923:0|t[Gift of the Naaru] |cRXP_WARN_on yourself or a party member if required|r << Draenei
+    >>|cRXP_WARN_记得在需要时对自己或队友施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_|r << Draenei
     .complete 9689,1 --Kill Razormaw (x1)
     .mob Razormaw
 step
@@ -2158,7 +2158,7 @@ step
     .goto Bloodmyst Isle,75.1,8.4,35,0
     .goto Bloodmyst Isle,74.9,16.3,35,0
 	>>拾取地上的 |cRXP_LOOT_伊瑟拉之泪|r on the ground
-    >>|cRXP_WARN_These look like small green mushrooms|r
+    >>|cRXP_WARN_这些看起来像小型的绿色蘑菇|r
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step << Hunter/Shaman/Mage/Warlock
     .isOnQuest 9746
@@ -2170,7 +2170,7 @@ step << Hunter/Shaman/Mage/Warlock
     .goto Bloodmyst Isle,23.8,56.0,70,0
     .goto Bloodmyst Isle,23.8,60.8,70,0
     >>击杀 |cRXP_ENEMY_炎鹰火法师|r 和 |cRXP_ENEMY_炎鹰防御者|r
-    >>|cRXP_WARN_Complete this only if you are less than 90% through level 19. It is important you hit level 20 before leaving Bloodmyst Isle|r
+    >>|cRXP_WARN_仅当你在 19 级进度未超过 90% 时才完成此步骤。务必在离开秘血岛前升到 20 级|r
     .complete 9746,1 --Kill Sunhawk Pyromancer (x10)
     .mob +Sunhawk Pyromancer
     .complete 9746,2 --Kill Sunhawk Defender (x10)
@@ -2243,7 +2243,7 @@ step << Mage
 step << Mage
     .goto The Exodar,44.765,63.202
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆萨尔|r
-    >>|cRXP_BUY_Buy at least one|r |T134419:0|t[传送符文] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy at least one|r |T134419:0|t[传送符文]|cRXP_BUY_from her|r
     .collect 17031,1 --Rune of Teleportation (1)
     .target Musal
 step << Hunter
@@ -2261,7 +2261,7 @@ step << Hunter
     .goto The Exodar,47.911,89.801
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾维尔琳|r 对话
     >>|cRXP_BUY_Buy a|r |T135489:0|t[重型弯弓] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
-    >>|cRXP_WARN_Equip it later once you've trained Bows|r << !NightElf
+    >>|cRXP_WARN_等你学会弓类武器技能后再装备它|r << !NightElf
     .collect 3027,1 -- Heavy Recurve Bow
     .money <0.5397
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
@@ -2271,7 +2271,7 @@ step << Hunter
     .goto The Exodar,47.911,89.801
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾维尔琳|r 对话
     >>|cRXP_BUY_Buy a|r |T135489:0|t[重型弯弓]
-    >>|cRXP_WARN_Equip it later once you've trained Bows|r << !NightElf
+    >>|cRXP_WARN_等你学会弓类武器技能后再装备它|r << !NightElf
     .collect 3027,1 -- Heavy Recurve Bow
     .money <0.5397
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
@@ -2288,7 +2288,7 @@ step << Hunter
 step << Priest
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧斯|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[燃烧魔杖] |cRXP_BUY_from him or check the Auction House for a better one|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[燃烧魔杖]|cRXP_BUY_from him or check the Auction House for a better one|r 
     .goto The Exodar,46.386,61.499
     .goto The Exodar,63.363,58.999,0
     .collect 5210,1 --Burning Wand (1)
@@ -2298,7 +2298,7 @@ step << Priest
 step << Priest
     #ssf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧斯|r
-    >>|cRXP_BUY_Buy a|r |T135139:0|t[燃烧魔杖] |cRXP_BUY_from him|r 
+    >>|cRXP_BUY_Buy a|r |T135139:0|t[燃烧魔杖]|cRXP_BUY_from him|r 
     .goto The Exodar,46.386,61.499
     .collect 5210,1 --Burning Wand (1)
     .target Oss
@@ -2368,7 +2368,7 @@ step << !NightElf Hunter
 step << !NightElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r
     .goto Darnassus,57.56,46.72
-    .train 264 >> Train Bows
+    .train 264 >>学习 弩
     .train 227 >>学习锤类武器
     .target Ilyenia Moonfire
 step << !NightElf Hunter
@@ -2414,7 +2414,7 @@ step << Rogue
     .goto 1457,56.367,51.819,0
     .goto 1457,58.774,44.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy a|r |T135324:0|t[长剑] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    >>|cRXP_BUY_Buy a|r |T135324:0|t[长剑]|cRXP_BUY_from her or check the Auction House for something better/cheaper|r
     .collect 923,1 --Longsword (1)
     .target Ariyell Skyshadow
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
@@ -2430,7 +2430,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith DarkshoreEnd
-    +|cRXP_WARN_Equip the|r |T135324:0|t[长剑]
+    +|cRXP_WARN_装备|r |T135324:0|t[长剑]
     .use 923
     .itemcount 923,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
@@ -2467,7 +2467,7 @@ step
 .dungeon DM
     #optional
     .goto Darkshore,32.29,44.05
-    >>|cRXP_WARN_You will now begin to travel to The Deadmines|r
+    >>|cRXP_WARN_你现在将开始前往死亡矿井|r
     .zone Wetlands >>乘船前往米奈希尔港
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
@@ -2479,7 +2479,7 @@ step << Paladin/Warrior
     .goto 1437,11.435,59.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉克·唐纳德|r 对话，NPC在里面
     .vendor 1441 >>|cRXP_BUY_Buy a|r |T135329:0|t[刽子手之剑] |cRXP_BUY_from him (if its up and you can afford it)|r
-    >>|cRXP_WARN_Alternatively, you can check the Auction House soon for something better or cheaper|r
+    >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 4818,1 --Collect Executioner's Sword (1)
     .target Brak Durnad
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
@@ -2568,9 +2568,9 @@ step << NightElf/Draenei
     .goto Wetlands,2.433,78.689,-1
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>使用角色脱困自助功能直接跳转到铁炉堡。你需要先在指定位置下线，然后用另一个角色进入帮助菜单 (或者把下面的脱困链接粘贴到浏览器中)，向下滚动找到自助服务。选择你的角色并点击移动。如果无法成功脱困，请跳过此步骤，沿着山脉游泳前往西部荒野
-    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >> |cRXP_WARN_Click here for video reference|r
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> |cRXP_WARN_Click here for the unstuck link for US servers|r
-    .link https://eu.battle.net/support/en/article/32275 >> |cRXP_WARN_Click here for the unstuck link for EU servers|r
+    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> |cRXP_WARN_点击此处查看视频参考|r
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> |cRXP_WARN_点击此处查看美服角色卡住（脱困）链接|r
+    .link https://eu.battle.net/support/en/article/32275 >>https://eu.battle.net/support/en/article/32275 >> |cRXP_WARN_点击此处查看欧服角色卡住（脱困）链接|r
     .subzoneskip 809 --IF Gates
     .subzoneskip 2257 --Deeprun Tram
     .zoneskip Elwynn Forest
@@ -2701,17 +2701,17 @@ step << Rogue
 .dungeon DM
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r
-    >>|cRXP_WARN_务必学习|r |T136058:0|t[开锁] |cRXP_WARN_，因为之后会用到|r
-    .train 1804 >>学习 |T136058:0|t[开锁]
+    >>|cRXP_WARN_Make sure you train|r |T136058:0|t[开锁] |cRXP_WARN_as you'll need it later|r
+    .train 1804 >>Train |T136058:0|t[开锁]
     .trainer >>训练你的职业技能
     .target Osborne the Night Man
 step
 .dungeon DM
     .goto StormwindClassic,57.12,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r
-    .train 201 >> Train 1h Swords << Mage/Rogue/Warlock
-    .train 1180 >> Train Daggers << Mage/Druid/Priest
-    .train 202 >> Train 2h Swords << Warrior/Paladin/Hunter
+    .train 201 >>学习单手剑 << Mage/Rogue/Warlock
+    .train 1180 >>学习 匕首 << Mage/Druid/Priest
+    .train 202 >>学习双手剑 << Warrior/Paladin/Hunter
     .target Woo Ping
 step
 .dungeon DM
@@ -2756,24 +2756,24 @@ step
     .goto 1436,63.594,72.862,0
     .goto 1436,63.825,70.125,0
     .goto 1436,42.649,71.376
-    >>|cRXP_WARN_Grind |cRXP_ENEMY_豺狼人|r south of Sentinel Hill whilst assembling a Deadmines group|r
+    >>|cRXP_WARN_Grind |cRXP_ENEMY_豺狼人|r south of Sentinel Hill whilst assembling a Deadmines .group|r
     .subzone 20 >>When your group has been assembled, 前往月溪镇
 step
 .dungeon DM
     .goto Westfall,42.55,71.69
-    .subzone 1581 >> Enter the Defias Hideout with your group
+    .subzone 1581 >>与小队一起进入迪菲亚斯藏身处
 step
 .dungeon DM
     #completewith EnterDM
     >>消灭那些试图阻止仪式的 |cRXP_ENEMY_Defias|r。拾取他们的 |cRXP_LOOT_红色丝质面罩|r
-    >>|cRXP_WARN_You can also complete this inside the Deadmines|r
+    >>|cRXP_WARN_你也可以在死亡矿井副本内完成这个|r
     .complete 214,1 -- Red Silk Bandana (10)
     .isOnQuest 214
 step
 .dungeon DM
     #completewith next
     >>击杀 |cRXP_ENEMY_骷髅矿工|r, |cRXP_ENEMY_亡灵爆破者|r 和 |cRXP_ENEMY_亡灵挖掘者|r。拾取他们的 |cRXP_LOOT_Cards|r
-    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    >>|cRXP_WARN_该任务需要在副本外完成|r
     .complete 168,1 -- Miners' Union Card (4)
     .mob Skeletal Miner
     .mob Undead Dynamiter
@@ -2784,8 +2784,8 @@ step
     .goto 1415/0,1557.4809,-11297.2937,25,0
     .goto 1415/0,1596.2008,-11318.4137,25,0
     .goto 1415/0,1539.8809,-11332.4936
-    >>Kill |cRXP_ENEMY_Foreman Thistlenettle|r. Loot him for his |cRXP_LOOT_Badge|r
-    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    >>击杀 |cRXP_ENEMY_工头希斯耐特|r，拾取他的 |cRXP_LOOT_徽章|r
+    >>|cRXP_WARN_该任务需要在副本外完成|r
     .complete 167,1 -- Thistlenettle's Badge (1)
     .unitscan Foreman Thistlenettle
 step
@@ -2795,7 +2795,7 @@ step
     .goto 1415/0,1596.2008,-11318.4137,25,0
     .goto 1415/0,1539.8809,-11332.4936
     >>击杀 |cRXP_ENEMY_骷髅矿工|r, |cRXP_ENEMY_亡灵爆破者|r 和 |cRXP_ENEMY_亡灵挖掘者|r。拾取他们的 |cRXP_LOOT_Cards|r
-    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    >>|cRXP_WARN_该任务需要在副本外完成|r
     .complete 168,1 -- Miners' Union Card (4)
     .mob Skeletal Miner
     .mob Undead Dynamiter
@@ -2806,13 +2806,13 @@ step
     .goto 1415/0,1589.1608,-11250.3605,25,0
     .goto 1415/0,1617.3207,-11217.5073,20,0
     .goto 1415/0,1681.3845,-11207.6513
-    .subzone 1581,2 >> Enter The Deadmines Dungeon
+    .subzone 1581,2 >>进入死亡矿井副本
 step
 .dungeon DM
     #softcore
     #optional
     #completewith VanCleef
-    >>击杀 the |cRXP_ENEMY_Defias|r inside The Deadmines. Loot them for their |cRXP_LOOT_红色丝质面罩|r
+    >>击杀 the |cRXP_ENEMY_Defias|r 对话，NPC在里面 The Deadmines. 拾取 their |cRXP_LOOT_红色丝质面罩|r
     .complete 214,1 -- Red Silk Bandana (10)
     .isOnQuest 214
 step
@@ -2821,14 +2821,14 @@ step
     .complete 2040,1 -- Gnoam Sprecklesprocket (1)
 step
 .dungeon DM
-    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for his |cRXP_LOOT_Head|r and |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r]
+    >>击杀 |cRXP_ENEMY_艾德温·范克里夫|r，拾取他的 |cRXP_LOOT_头颅|r 以及 |T133471:0|t[|cRXP_LOOT_未寄出的信|r]
     .collect 2874,1,373,1 -- An Unsent Letter (1)
     .complete 166,1 -- Head of VanCleef (1)
     .isOnQuest 166
 step
 .dungeon DM
     #label VanCleef
-    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for |T133471:0|t[|cRXP_LOOT_穆拉克·冰角 <萨满祭司训练师>|r]
+    >>击杀 |cRXP_ENEMY_Edwin VanCleef|r. Loot him for |T133471:0|t[|cRXP_LOOT_未寄出的信|r]
     .collect 2874,1,373,1 -- An Unsent Letter (1)
 step
 .dungeon DM
@@ -3009,7 +3009,7 @@ step << Rogue
 .dungeon DM
     .goto 1433,51.846,45.116
     >>|cRXP_WARN_你必须完成这一步，才能进行之后的|r |T132290:0|t[毒药] |cRXP_WARN_任务|r
-    >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
+    >>|cRXP_WARN_站在路径点位置。调整你的镜头和鼠标位置，使你无需移动即可一次性点击 3 个 |cRXP_PICK_练习用保险箱|r|r
     .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔磨坊打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
 step << Rogue
 .dungeon DM
@@ -3079,7 +3079,7 @@ step << !Dwarf Rogue
 .dungeon DM
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >>制作 |T134437:0|t[抗毒药剂]
+    .collect 6452,1 >>Craft an |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -3088,7 +3088,7 @@ step << !Dwarf Rogue
     #optional
     #requires AntiVenomStart
     #label AntiVenomEnd
-    .cast 7932 >>|cRXP_WARN_使用你背包里的 |T134437:0|t[抗毒药剂] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[赞吉尔之触] debuff|r
     .use 6452
     .aura -9991
     .itemcount 6452,1 --Anti-Venom (1)
@@ -3097,7 +3097,7 @@ step << Dwarf Rogue
     #optional
     #sticky
     #label AntiVenomEnd2
-    .cast 20594 >>|cRXP_WARN_Cast |T136225:0|t[Stoneform] to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .cast 20594 >>|cRXP_WARN_施放 |T136225:0|t[石像形态] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
     .aura -9991
 step << Rogue
 .dungeon DM
@@ -3122,7 +3122,7 @@ step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r
-    >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
@@ -3131,15 +3131,15 @@ step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r
-    >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
-    .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_for you instead|r
+    .train 7934 >>|cRXP_WARN_Train|r |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
 .dungeon DM
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >>制作 |T134437:0|t[抗毒药剂]
+    .collect 6452,1 >>Craft an |T134437:0|t[抗毒药剂]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -3148,7 +3148,7 @@ step << !Dwarf Rogue
     #sticky
     #requires AntiVenomStart2
     #label AntiVenomEnd2
-    .cast 7932 >>|cRXP_WARN_使用你背包里的 |T134437:0|t[抗毒药剂] 来移除 |T136230:0|t[赞吉尔之触] 的减益效果|r
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[赞吉尔之触] debuff|r
     .use 6452
     .aura -9991
     .itemcount 6452,1 --Anti-Venom (1)
@@ -3170,7 +3170,7 @@ step << Rogue
 .dungeon DM
     .goto Stormwind City,78.2,58.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_贾斯伯·菲尔|r on the ground floor of the building
-    >>Buy reagents for crafting |T132273:0|t[|cRXP_FRIENDLY_速效药膏|r] and |T132331:0|t[|cRXP_FRIENDLY_Vanish|r] from him
+    >>Buy reagents for crafting |T132273:0|t[|cRXP_FRIENDLY_速效毒药|r] and |T132331:0|t[|cRXP_FRIENDLY_Vanish|r] from him
     .collect 3371,20 --Empty Vial (20)
     .collect 2928,20 -Dust of Decay (20)
     .collect 5140,20 --Flash Powder (20)
@@ -3200,7 +3200,7 @@ step
     .goto StormwindClassic,48.079,30.913,10,0
     .goto StormwindClassic,49.193,30.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴隆斯·阿历克斯顿|r
-    .use 2874 >>|cRXP_WARN_Use |T133471:0|t[|cRXP_LOOT_穆拉克·冰角 <萨满祭司训练师>|r] to start the quest|r
+    .use 2874 >>|cRXP_WARN_Use |T133471:0|t[|cRXP_LOOT_未寄出的信|r] to start the quest|r
     .accept 373 >>接受任务《物归己用》 未寄出的信
     .turnin 373 >>交任务《 前往熔光镇》 未寄出的信
     .accept 389 >>接受任务《物归己用》 巴基尔·斯瑞德
@@ -3238,7 +3238,7 @@ step
 .dungeon DM
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r
-    .vendor 5519 >>|cRXP_BUY_Buy a|r |T133024:0|t[青铜管] |cRXP_BUY_from him (if its up)|r
+    .vendor 5519 >>|cRXP_BUY_Buy a|r |T133024:0|t[青铜管]|cRXP_BUY_from him (if its up)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
@@ -3340,7 +3340,7 @@ step
 .dungeon BFD
     .goto Darkshore,38.327,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈沙拉·夜语|r
-    >>|cRXP_WARN_If you cannot accept this quest, skip this step|r
+    >>|cRXP_WARN_如果你无法接取该任务，请跳过此步骤|r
     .accept 1275 >>接受任务《物归己用》 研究堕落
     .target Gershala Nightwhisper
 step
@@ -3390,7 +3390,7 @@ step
     .target Archaeologist Hollee
 step
     .goto Darkshore,37.78,44.06
-    .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl]|cRXP_WARN_at the|r|cRXP_PICK_Auberdine Moonwell|r
+    .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[空的净化碗]|cRXP_WARN_at the|r|cRXP_PICK_Auberdine Moonwell|r
     .collect 12347,1,4763,1
     .isOnQuest 4763 
 step
@@ -3401,20 +3401,20 @@ step
 step
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Silver Dawning's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Silver Dawning's Lockbox|r inside|r
+    >>|cRXP_WARN_==注意你的呼吸条==|r
+    >>|cRXP_WARN_潜入水下，游到船只后方的外侧|r
+    >>|cRXP_WARN_在箭头指示位置，按下你的"与目标互动"快捷键，从船外拾取 |cRXP_LOOT_银色黎明的保险箱|r|r
+    >>|cRXP_WARN_如果你不想这样做，可以潜入水下游到船只的底层，然后在里面拾取 |cRXP_LOOT_银色黎明的保险箱|r|r
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Mist Veil's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Mist Veil's Lockbox|r inside|r
+    >>|cRXP_WARN_==注意你的呼吸条==|r
+    >>|cRXP_WARN_潜入水下，游到船只后方的外侧|r
+    >>|cRXP_WARN_在箭头指示位置，按下你的"与目标互动"快捷键，从船外拾取 |cRXP_LOOT_迷雾面纱的保险箱|r|r
+    >>|cRXP_WARN_如果你不想这样做，可以潜入水下游到船只的底层，然后在里面拾取 |cRXP_LOOT_迷雾面纱的保险箱|r|r
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
@@ -3431,7 +3431,7 @@ step
     .accept 4725 >>接受任务《物归己用》 搁浅的海龟
 step << Druid
     .goto Darkshore,48.87,11.32
-    >>|cRXP_WARN_Swim out in the water|r
+    >>|cRXP_WARN_游到水中|r
     >>打开 |cRXP_PICK_Strange Lockbox|r。并从中拾取 |cRXP_LOOT_水兽敏捷坠饰|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
 step
@@ -3448,15 +3448,15 @@ step
     #optional
     #completewith next
     .goto Darkshore,56.10,16.88,0
-    >>击杀 |cRXP_ENEMY_狂暴暗礁蟹|r and |cRXP_ENEMY_硬壳潮行蟹|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_狂暴暗礁蟹|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
+    >>击杀 |cRXP_ENEMY_狂暴暗礁蟹|r 和 |cRXP_ENEMY_硬壳潮行蟹|r。拾取他们的 |cRXP_LOOT_Bottom of Gelkak's Key|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[痛击] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
     .complete 2098,3 -- Bottom of Gelkak's Key (1)
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
 step
     .goto Darkshore,54.93,12.19
-    >>击杀 |cRXP_ENEMY_灰雾智者|r and |cRXP_ENEMY_灰雾潮行者|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_灰雾智者|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage and they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>击杀 |cRXP_ENEMY_灰雾智者|r 和 |cRXP_ENEMY_灰雾潮行者|r。拾取他们的 |cRXP_LOOT_Middle of Gelkak's Key|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage and they can also heal with|r |T136052:0|t[治疗波]|r
     >>|cRXP_WARN_You can LoS (Line of Sight) the |cRXP_ENEMY_灰雾智者|r'|r  |T136048:0|t[Lightning Bolts] |cRXP_WARN_around the sunken ship to avoid taking its damage|r
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Tidehunter
@@ -3467,8 +3467,8 @@ step
     .goto Darkshore,53.76,18.96,45,0
     .goto Darkshore,51.34,22.00,45,0
     .goto Darkshore,56.63,12.08
-    >>击杀 |cRXP_ENEMY_狂暴暗礁蟹|r and |cRXP_ENEMY_硬壳潮行蟹|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_狂暴暗礁蟹|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
+    >>击杀 |cRXP_ENEMY_狂暴暗礁蟹|r 和 |cRXP_ENEMY_硬壳潮行蟹|r。拾取他们的 |cRXP_LOOT_Bottom of Gelkak's Key|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[痛击] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
     .complete 2098,3 -- Bottom of Gelkak's Key (1)
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
@@ -3480,7 +3480,7 @@ step
     .goto Darkshore,61.51,12.66,50,0
     .goto Darkshore,61.24,15.38,50,0
     .goto Darkshore,61.40,9.40
-    >>击杀 |cRXP_ENEMY_凶猛的森林陆行鸟|r. Loot them for the |cRXP_LOOT_Top of Gelkak's Key|r
+    >>击杀 |cRXP_ENEMY_凶猛的森林陆行鸟|r。拾取他们的 |cRXP_LOOT_Top of Gelkak's Key|r
     .complete 2098,1 -- Top of Gelkak's Key (1)
     .mob Giant Foreststrider
 step
@@ -3506,7 +3506,7 @@ step
     .isOnQuest 2078
     #completewith next
     .goto 1439,55.802,18.290
-    .gossip 6669,0 >>与 |cRXP_FRIENDLY_机械打手4100型|r to start the escort
+    .gossip 6669,0 >>与 |cRXP_FRIENDLY_机械打手4100型|r 对话以开始护送任务
     .skipgossip
     .target The Threshwackonator 4100
 step
@@ -3559,15 +3559,15 @@ step
     .goto 1439,55.108,33.600,40 >>前往暴风城大教堂内，与 the Cliffspring River Cave
 step << Druid
     .goto Darkshore,54.99,33.41
-    >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
+    >>|cRXP_WARN_使用|r |T134776:0|t[空的峭壁之泉取样器] |cRXP_WARN_在峭壁之泉河洞入口处的水中使用|r
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
     .goto Darkshore,55.45,36.23,12,0
     .goto Darkshore,55.70,36.30,12,0
     .goto Darkshore,55.89,35.40,12,0
     >>拾取散发绿光的 |cRXP_LOOT_Scaber Stalks|r 和 a |cRXP_LOOT_Death Cap|r on the ground
-    >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
+    >>|cRXP_WARN_待在上层区域。如果上侧尽头没有 |cRXP_LOOT_毒帽蘑菇|r，就跳下去到下方南侧的房间获取一个|r
+    >>|cRXP_WARN_小心 |cRXP_ENEMY_雷鳞御浪者|r 会施放|r |T135836:0|t[水流喷射] |cRXP_WARN_（远程瞬发：对附近敌人造成伤害并将其击退）——确保你站在不会被击退到洞穴下层的位置|r
     .complete 947,1 --Scaber Stalk (5)
     .goto Darkshore,55.04,33.34,8,0
     .goto Darkshore,55.28,34.00,8,0
@@ -3587,9 +3587,9 @@ step
     .isOnQuest 4763
     .goto Darkshore,52.38,33.39,0
     .goto Darkshore,52.86,33.41
-    >>Open the |cRXP_PICK_Blackwood Fruit Stores|r. Loot it for the |T134013:0|t|cRXP_LOOT_[黑木水果]|r
-    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run towards you. Be ready to fight them or reset them|r
-    >>|cRXP_WARN_If you see |cRXP_ENEMY_萨巴克希斯|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
+    >>打开 |cRXP_PICK_Blackwood Fruit Stores|r. 拾取地上的 it for the |T134013:0|t|cRXP_LOOT_[黑木水果]|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_萨巴克希斯|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_堕落护符|r
     .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
@@ -3602,9 +3602,9 @@ step
     .isOnQuest 4763
     .goto Darkshore,52.38,33.39,0
     .goto Darkshore,51.83,33.50
-    >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for the |T133944:0|t|cRXP_LOOT_[黑木坚果]|r
-    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run towards you. Be ready to fight them or reset them|r
-    >>|cRXP_WARN_If you see |cRXP_ENEMY_萨巴克希斯|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
+    >>打开 |cRXP_PICK_Blackwood Nut Stores|r. 拾取地上的 it for the |T133944:0|t|cRXP_LOOT_[黑木坚果]|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_萨巴克希斯|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_堕落护符|r
     .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
@@ -3617,9 +3617,9 @@ step
     .isOnQuest 4763
     .goto Darkshore,52.38,33.39,0
     .goto Darkshore,50.66,34.94
-    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |T134059:0|t|cRXP_LOOT_[黑木谷物]|r
-    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run towards you. Be ready to fight them or reset them|r
-    >>|cRXP_WARN_If you see |cRXP_ENEMY_萨巴克希斯|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
+    >>打开 |cRXP_PICK_Blackwood Grain Stores|r. 拾取地上的 it for the |T134059:0|t|cRXP_LOOT_[黑木谷物]|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_萨巴克希斯|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_堕落护符|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
@@ -3630,15 +3630,15 @@ step
     #completewith Xabraxxis
     .isOnQuest 4763
     .goto Darkshore,52.38,33.39
-    .cast 16072 >>|cRXP_WARN_Use the|r |T134712:0|t[Filled Cleansing Bowl] |cRXP_WARN_at the |cRXP_PICK_篝火|r to summon|r |cRXP_ENEMY_萨巴克希斯|r
-    .timer 17,The Blackwood Corrupted RP
+    .cast 16072 >>|cRXP_WARN_Use the|r |T134712:0|t[装满水的净化碗] |cRXP_WARN_at the |cRXP_PICK_Bonfire|r to summon|r |cRXP_ENEMY_Xabraxxis|r
+    .timer 17,黑木熊怪的堕落 剧情
     .use 12347
 step
     #requires Blackwood3
     #label Xabraxxis
     .isOnQuest 4763
     .goto Darkshore,52.38,33.39
-    >>击杀 |cRXP_ENEMY_萨巴克希斯|r. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the |cRXP_LOOT_Talisman of Corruption|r
+    >>击杀 |cRXP_ENEMY_萨巴克希斯|r. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the |cRXP_LOOT_堕落护符|r
     .use 12347
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
@@ -3730,7 +3730,7 @@ step << Rogue
     .goto 1457,56.367,51.819,0
     .goto 1457,58.774,44.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r
-    >>|cRXP_BUY_Buy a|r |T135324:0|t[长剑] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    >>|cRXP_BUY_Buy a|r |T135324:0|t[长剑]|cRXP_BUY_from her or check the Auction House for something better/cheaper|r
     .collect 923,1 --Longsword (1)
     .target Ariyell Skyshadow
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
@@ -3746,7 +3746,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith DarkshoreEnd
-    +|cRXP_WARN_Equip the|r |T135324:0|t[长剑]
+    +|cRXP_WARN_装备|r |T135324:0|t[长剑]
     .use 923
     .itemcount 923,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
@@ -3788,7 +3788,7 @@ step
     .goto 1439,35.429,76.566,60,0
     .goto Darkshore,36.64,76.53
     >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_莫克迪普|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_灰雾猎人|r in the wave that he spawns with alive)|r
-    >>击杀 the |cRXP_ENEMY_灰雾战士|r and |cRXP_ENEMY_灰雾猎人|r in the camp
+    >>击杀 the |cRXP_ENEMY_灰雾战士|r 和 |cRXP_ENEMY_灰雾猎人|r in the camp
     >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_莫克迪普|r encounter:|r
     >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_灰雾滩行者|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_灰雾战士|r, and Wave 3 has a level 19 |cRXP_ENEMY_莫克迪普|r and a level 16-17 |cRXP_ENEMY_灰雾猎人|r. You can move away from the Bonfire to avoid aggroing the next wave|r
     .complete 4740,1 -- Murkdeep (1)
@@ -3812,18 +3812,18 @@ step
     #optional
     #completewith TheryluneEnd
     >>击杀 |cRXP_ENEMY_暮光信徒|r and |cRXP_ENEMY_暮光暴徒|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
-    >>|cRXP_WARN_This item has a very low drop chance and will most likely not drop. Skip this step once you've completed other objectives|r
+    >>|cRXP_WARN_该物品掉率极低，很可能不会掉落。完成其他目标后即可跳过此步骤|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
 step
     #optional
     .goto Darkshore,38.54,86.05
-    >>Discover The Master's Glaive
+    >>发现主宰之剑
     .complete 944,1 --Enter the Master's Glaive (1)
 step
     #completewith next
-    .cast 5809 >> |cRXP_WARN_Use the|r |T134715:0|t[Phial of Scrying] |cRXP_WARN_and place it on the ground|r
+    .cast 5809 >>|cRXP_WARN_使用|r |T134715:0|t[占卜之水] |cRXP_WARN_并将其放置在地面上|r
     .use 5251
 step
     .goto Darkshore,38.54,86.05
@@ -3838,7 +3838,7 @@ step
 step
     .goto 1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_瑟瑞露尼|r. This will start an escort
-    >>|cRXP_WARN_This will begin an escort. Skip this step if she is not there|r
+    >>|cRXP_WARN_这将开始一个护送任务。如果她不在，请跳过此步骤|r
     .accept 945 >>接受任务《物归己用》 护送瑟瑞露尼
     .target Therylune
 step
@@ -3850,7 +3850,7 @@ step
 step
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r
-    >>|cRXP_WARN_This will begin an escort. You may have to wait for him to respawn or for others to finish the escort|r
+    >>|cRXP_WARN_这将开始一个护送任务。你可能需要等待他重新刷新，或等其他玩家完成护送|r
     .turnin 729 >>交任务《 前往熔光镇》 健忘的勘察员
     .accept 731,1 >>接受任务《物归己用》 健忘的勘察员
     .target Prospector Remtravel
@@ -3874,7 +3874,7 @@ step
     .goto 1439,35.033,72.432,60,0
     .goto 1439,35.195,71.864,60,0
     >>击杀 |cRXP_ENEMY_硬壳潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹|r。拾取他们的 |cRXP_LOOT_Fine Crab Chunks|r
-    >>|cRXP_WARN_Skip this step and abandon "Fruit of the Sea" if you are unlucky with the drop rates|r
+    >>|cRXP_WARN_如果掉率运气不佳，请跳过此步骤并放弃任务"海中的水果"|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -3882,7 +3882,7 @@ step
     .isOnQuest 993
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃科尔|r
-    >>|cRXP_WARN_This will begin an escort. Clear the |cRXP_ENEMY_Furbolgs|r near the cave before talking to him|r
+    >>|cRXP_WARN_这将开始一个护送任务。在与他交谈前，先清理洞穴附近的 |cRXP_ENEMY_熊怪|r|r
     .turnin 993 >>交任务《 前往熔光镇》 丢失的主人
     .accept 994,1 >>接受任务《物归己用》 杀出重围
     .target Volcor
@@ -3891,7 +3891,7 @@ step
     #optional
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃科尔|r
-    >>|cRXP_WARN_This will begin an escort. Clear the |cRXP_ENEMY_Furbolgs|r near the cave before talking to him|r
+    >>|cRXP_WARN_这将开始一个护送任务。在与他交谈前，先清理洞穴附近的 |cRXP_ENEMY_熊怪|r|r
     .accept 994,1 >>接受任务《物归己用》 杀出重围
     .target Volcor
 step
@@ -3908,7 +3908,7 @@ step
     .target Volcor
 step
     .isOnQuest 967,10752,945,4740,994,731
-    .zone Ashenvale >> Travel south to Ashenvale
+    .zone Ashenvale >>向南前往灰谷
     .goto Ashenvale,29.7,13.6
 ]])
 
@@ -3937,7 +3937,7 @@ step
 step
     .isOnQuest 970
     .goto Ashenvale,31.25,30.70
-    >>击杀 |cRXP_ENEMY_暗滩祭司|r, |cRXP_ENEMY_Dark Strand Adepts|r, |cRXP_ENEMY_暗滩执行者|r and |cRXP_ENEMY_暗滩挖掘者|r. Loot them for the |cRXP_LOOT_Glowing Soul Gem|r
+    >>击杀 |cRXP_ENEMY_暗滩祭司|r, |cRXP_ENEMY_Dark Strand Adepts|r, |cRXP_ENEMY_暗滩执行者|r 和 |cRXP_ENEMY_暗滩挖掘者|r。拾取他们的 |cRXP_LOOT_Glowing Soul Gem|r
     .complete 970,1
     .mob Dark Strand Cultist
     .mob Dark Strand Adept
@@ -3950,8 +3950,8 @@ step
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
     >>Open the |cRXP_PICK_Plant Bundles|rin the ground.拾取地上的 them for |cRXP_LOOT_巴斯兰的头发|r
-    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
-    >>|cRXP_WARN_Make sure you have|r |T134916:0|t[Track Herbs] |cRXP_WARN_enabled to see them on the minimap|r
+    >>|cRXP_WARN_它们看起来像小型的棕色袋子，可能会半埋在地面中，因此不太容易发现|r
+    >>|cRXP_WARN_请确保已启用|r |T134916:0|t[寻找草药] |cRXP_WARN_，这样才能在小地图上看到它们|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,<1,1
 step
@@ -3960,7 +3960,7 @@ step
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
     >>Open the |cRXP_PICK_Plant Bundles|rin the ground.拾取地上的 them for |cRXP_LOOT_巴斯兰的头发|r
-    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
+    >>|cRXP_WARN_它们看起来像小型的棕色袋子，可能会半埋在地面中，因此不太容易发现|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,1,1
 step
@@ -4025,12 +4025,12 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_皮尔图拉斯·怀特姆恩|r
 	.target Pelturas Whitemoon
     .turnin 1020 >>交任务《 前往熔光镇》 奥雷迪尔的药剂
-    .timer 24,Orendil's Cure RP
+    .timer 24,奥雷迪尔的药剂 剧情
     .accept 1033 >>接受任务《物归己用》 月神之泪
 step
 .dungeon WC
     #completewith TravelRatchet
-    +|cRXP_WARN_Begin looking for a Wailing Caverns group while you complete the next two steps. Very soon you'll be heading to The Barrens to run Wailing Caverns|r
+    +|cRXP_WARN_在完成接下来的两个步骤时开始寻找哀嚎洞穴的小队。很快你就会前往贫瘠之地刷哀嚎洞穴|r
     .zoneskip The Barrens
 step
 .dungeon WC
@@ -4044,7 +4044,7 @@ step
     .goto Ashenvale,35.88,31.90,60,0
     .goto Ashenvale,38.73,36.32,60,0
     .goto Ashenvale,39.595,36.309
-    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>击杀 |cRXP_ENEMY_达尔·血爪|r，拾取他的 |cRXP_LOOT_颅骨|r
     >>|cRXP_ENEMY_达尔·血爪|r |cRXP_WARN_patrols Thistlefur Village|r
     .complete 1054,1
     .unitscan Dal Bloodclaw
@@ -4098,7 +4098,7 @@ step
 .dungeon WC
     #completewith EnterWC
     >>击杀 all types of |cRXP_ENEMY_Deviate|rcreatures.拾取地上的 them for their |cRXP_LOOT_变异皮革|r
-    >>|cRXP_WARN_This can be completed INSIDE and OUTSIDE of Wailing Caverns|r
+    >>|cRXP_WARN_此任务可以在哀嚎洞穴副本内或副本外完成|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -4114,7 +4114,7 @@ step
     .goto 1414/1,-2003.0622,-656.5599
     >>击杀 |cRXP_ENEMY_疯狂的马格利什|r。拾取他的 |cRXP_LOOT_99-Year-Old Port|r
     >>|cRXP_ENEMY_疯狂的马格利什|r |cRXP_WARN_can spawn in a few locations|r
-    >>|cRXP_WARN_This quest is completed OUTSIDE of Wailing Caverns|r
+    >>|cRXP_WARN_此任务需要在哀嚎洞穴副本外完成|r
     .complete 959,1 -- 99-Year-Old Port (1)
     .isOnQuest 959
     .mob Mad Magglish
@@ -4122,7 +4122,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414/1,-2205.4612,-742.4261
-    +Zone into The Wailing Caverns
+    +进入哀嚎洞穴
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC
@@ -4153,7 +4153,7 @@ step
 .dungeon WC
     >>击杀 |cRXP_ENEMY_考布莱恩|r, |cRXP_ENEMY_皮萨斯|r, |cRXP_ENEMY_瑟芬迪斯|r and |cRXP_ENEMY_安娜科德拉|r then talk to the |cRXP_FRIENDLY_Disciple of Naralex|r at the start of the instance to start his escort
     >>护送 the |cRXP_FRIENDLY_Disciple of Naralex|r through Wailing Caverns 和 complete the ritual of awakening
-    >>击杀 |cRXP_ENEMY_吞噬者穆坦努斯|r. Loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r]
+    >>击杀 |cRXP_ENEMY_吞噬者穆坦努斯|r，拾取他以获得 |T135229:0|t[|cRXP_LOOT_发光的碎片|r]
     >>|cRXP_WARN_Use the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] to start the quest|r
     .collect 10441,1,6981,1 -- Glowing Shard (1)
     .accept 6981 >>接受任务《物归己用》 发光的碎片
@@ -4164,7 +4164,7 @@ step
 step
 .dungeon WC
     >>击杀 all types of |cRXP_ENEMY_Deviate|rcreatures.拾取地上的 them for their |cRXP_LOOT_变异皮革|r
-    >>|cRXP_WARN_This can be completed INSIDE and OUTSIDE of Wailing Caverns|r
+    >>|cRXP_WARN_此任务可以在哀嚎洞穴副本内或副本外完成|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -4194,7 +4194,7 @@ step
     #completewith next
     .goto The Barrens,50.11,35.21,35,0
     .goto The Barrens,48.60,33.34,35,0
-    .goto The Barrens,48.184,32.781,15 >> Ascend the steep mountain above The Wailing Caverns. Follow the Arrow
+    .goto The Barrens,48.184,32.781,15 >>沿着哀嚎洞穴上方的陡峭山坡向上攀爬，跟随箭头前进
     .isQuestComplete 6981
 step
 .dungeon WC
@@ -4258,7 +4258,7 @@ step
     .goto Ashenvale,35.88,31.90,60,0
     .goto Ashenvale,38.73,36.32,60,0
     .goto Ashenvale,39.595,36.309
-    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>击杀 |cRXP_ENEMY_达尔·血爪|r，拾取他的 |cRXP_LOOT_颅骨|r
     >>|cRXP_ENEMY_达尔·血爪|r |cRXP_WARN_patrols Thistlefur Village|r
     .complete 1054,1
     .unitscan Dal Bloodclaw
@@ -4275,22 +4275,22 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_皮尔图拉斯·怀特姆恩|r
 	.target Pelturas Whitemoon
     .turnin 1033 >>交任务《 前往熔光镇》 月神之泪
-    .timer 17,Elune's Tear RP
+    .timer 17,月神之泪 剧情
     .accept 1034 >>接受任务《物归己用》 星尘废墟
 step
     .goto Ashenvale,33.30,67.79
     >>拾取散发绿光的 |cRXP_PICK_Stardust Covered Bushes|r for the |cRXP_LOOT_Handful of Stardust|r
-    >>|cRXP_WARN_Their spawn locations are scattered throughout the island|r
+    >>|cRXP_WARN_它们的刷新点分布在整个岛屿各处|r
     .complete 1034,1
 step
     #completewith ToA973
-    .goto Ashenvale,31.67,64.24,15 >> Head to the base of the mountain
-    .goto Ashenvale,31.21,61.60,15 >>Run straight north while climbing the mountain
+    .goto Ashenvale,31.67,64.24,15 >>前往山脚下
+    .goto Ashenvale,31.21,61.60,15 >>在攀爬山体时径直向北跑
 step
     .isOnQuest 973
     .goto Ashenvale,27.40,63.03,70,0
     .goto Ashenvale,25.27,60.68
-    >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r. Loot him for his |cRXP_LOOT_Tome|r
+    >>击杀 |cRXP_ENEMY_伊克鲁德·玛格苏尔|r，拾取他的 |cRXP_LOOT_典籍|r
     >>|cRXP_ENEMY_Ilkrud Magthrull|r |cRXP_WARN_will cast|r |T136221:0|t[Ilkrud's Guardians] |cRXP_WARN_which is a 5 second long cast and will summon 2 |cRXP_ENEMY_虚空行者|r. Stop this cast if you're able to|r
     .complete 973,1
     .mob Ilkrud Magthrull
@@ -4334,11 +4334,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔伦|r
 	.target Talen
     .goto Ashenvale,14.79,31.29
-    .accept 1007 >> Accept The Ancient Statuette
+    .accept 1007 >>接受任务 远古雕像
 step
     #completewith nagas
     >>击杀 |cRXP_ENEMY_Wrathtail Nagas|r。拾取他们的 |cRXP_LOOT_头部|r
-    >>|cRXP_WARN_Don't go out of your way to complete this yet|r
+    >>|cRXP_WARN_暂时不要特意绕路去完成这个|r
 	.mob Wrathtail Wave Rider
 	.mob Wrathtail Sorceress
     .complete 1008,1
@@ -4351,15 +4351,15 @@ step
 	.target Talen
     .goto Ashenvale,14.79,31.29
     .turnin 1007 >>交任务誓缚 Statuette
-    .timer 22,The Ancient Statuette RP
+    .timer 22,远古雕像 剧情
     .accept 1009 >>接受任务《物归己用》 卢泽尔
 step
     .goto Ashenvale,6.528,13.361
-    >>击杀 |cRXP_ENEMY_卢泽尔|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>击杀 |cRXP_ENEMY_卢泽尔|r。拾取她的 |cRXP_LOOT_Ring of Zoram|r
     >>|cRXP_ENEMY_卢泽尔|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_怒尾侍从|r and |cRXP_ENEMY_怒尾海巫|r. Kill one of them and then reset them if needed|r
     >>|cRXP_WARN_If you have any|r |T133717:0|t[Bombs]|cRXP_WARN_/|r[Grenades] |cRXP_WARN_you can also use them to split pull|r |cRXP_ENEMY_卢泽尔|r
     >>|cRXP_ENEMY_薇丝比娅|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling"|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >>https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_点击此处查看"仇恨分离"技巧的视频参考|r
 	.unitscan Lady Vespia
 	.mob Ruuzel
     .complete 1009,1
@@ -4367,7 +4367,7 @@ step
 step
     #label nagas
     .goto Ashenvale,6.528,13.361
-    >>击杀 |cRXP_ENEMY_卢泽尔|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>击杀 |cRXP_ENEMY_卢泽尔|r。拾取她的 |cRXP_LOOT_Ring of Zoram|r
     >>|cRXP_ENEMY_卢泽尔|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_怒尾侍从|r and |cRXP_ENEMY_怒尾海巫|r. Kill one of them and then reset them if needed|r
     >>|cRXP_ENEMY_薇丝比娅|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
 	.unitscan Lady Vespia
@@ -4376,7 +4376,7 @@ step
 step
 .dungeon BFD
     #completewith RuuzelTurnin
-    +|cRXP_WARN_Begin looking for a Blackfathom Deeps group while you complete the next steps. Very soon you'll be running Blackfathom Deeps|r
+    +|cRXP_WARN_在完成接下来的步骤时开始寻找黑暗深渊的小队。很快你就会去刷黑暗深渊|r
 step
     .goto Ashenvale,7.00,15.20,0
     .goto Ashenvale,14.46,17.15,0
@@ -4410,7 +4410,7 @@ step
 .dungeon BFD
     .goto Ashenvale,15.5,19.0,0
     .goto Ashenvale,14.230,14.618
-    +Grind |cRXP_ENEMY_Naga|r while you assemble a group for BFD. Head to BFD once you have a group
+    +在组建黑暗深渊小队的同时刷 |cRXP_ENEMY_娜迦|r，组好队伍后前往黑暗深渊
     .subzoneskip 2797--BFD
 step
 .dungeon BFD
@@ -4436,8 +4436,8 @@ step
     .goto 1414/1,904.1228,4321.2264,25,0
     .goto 1414/1,867.3230,4318.7731,25,0
     .goto 1414/1,749.5636,4252.5334
-    .subzone 2797,2 >> Make your way to the BFD Instance Portal. Zone in
-    >>|cRXP_WARN_See if anyone in your group can share the quest "Knowledge in the Deeps" from Ironforge with you|r
+    .subzone 2797,2 >>前往黑暗深渊副本入口并进入副本
+    >>|cRXP_WARN_看看你的小队中是否有人可以从铁炉堡与你共享任务"深渊中的知识"|r
 step
 .dungeon BFD
     #completewith Kelris
@@ -4455,7 +4455,7 @@ step
 .dungeon BFD
     #label Thaelrid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斥候塞尔瑞德|r
-    .turnin -1198 >> Turn in Search of Thaelrid
+    .turnin -1198 >>交任务 寻找塞尔瑞德
     .accept 1200 >>接受任务《物归己用》 黑暗深渊中的恶魔
 step
 #requires manuscript
@@ -4480,7 +4480,7 @@ step
 .dungeon BFD
     #label FinalStem
     >>击杀 |cRXP_ENEMY_Nagas|r 和 |cRXP_ENEMY_Satyrs|r。拾取他们的 |cRXP_LOOT_Corrupted Brain Stems|r
-    >>If you haven't completed this quest yet, click on the altar at the end of the dungeon to teleport you to the entrance. The mobs outside of the instance can also drop it.
+    >>如果你还没有完成该任务，请点击副本尽头的祭坛将你传送回入口。副本外的怪物也有几率掉落该任务物品。
     .complete 1275,1 -- Corrupted Brain Stem (8)
     .isOnQuest 1275
 step << Druid
@@ -4580,7 +4580,7 @@ step << NightElf/Hunter/Rogue
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯莱斯·月羽|r
     .fly Teldrassil >>飞往泰达希尔
-    >>|cRXP_WARN_If you do not have the flight path yet for Teldrassil, take the boat from the dock there|r << !NightElf
+    >>|cRXP_WARN_如果你还没有泰达希尔的飞行点，请从那里的码头乘船前往|r << !NightElf
 	.target Caylais Moonfeather
 step
 .dungeon BFD
@@ -4651,7 +4651,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》练级指南(联盟版)
 << Alliance Warlock
-#name 20-23 Darkshore/Ashenvale
+#name 20-23 黑海岸/灰谷
 #subgroup RestedXP 联盟 20-32 级
 #next 23-24级 湿地
 
@@ -4707,8 +4707,8 @@ step
 step
     #optional
     .goto StormwindClassic,39.834,54.360
-    .zone Darkshore>> Ghetto Hearth to Darkshore. To do this, enter The Stockades, then copy paste the link below into chat. Wait out the 1 minute countdown
-    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> CLICK HERE
+    .zone Darkshore>>使用 卡炉石 返回黑海岸。操作方式：进入监狱副本，然后将下面的链接复制并粘贴到聊天栏中，等待 1 分钟倒计时结束
+    .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >>运行 InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> 点击这里
 step
     .goto Darkshore,37.219,44.227
     >>点击 |cRXP_PICK_通缉告示|r
@@ -4741,7 +4741,7 @@ step
 .dungeon BFD
     .goto Darkshore,38.327,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈沙拉·夜语|r
-    >>|cRXP_WARN_If you cannot accept this quest, skip this step|r
+    >>|cRXP_WARN_如果你无法接取该任务，请跳过此步骤|r
     .accept 1275 >>接受任务《物归己用》 研究堕落
     .target Gershala Nightwhisper
 step
@@ -4749,7 +4749,7 @@ step
     .goto 1439,35.429,76.566,60,0
     .goto Darkshore,36.64,76.53
     >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_莫克迪普|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_灰雾猎人|r in the wave that he spawns with alive)|r
-    >>击杀 the |cRXP_ENEMY_灰雾战士|r and |cRXP_ENEMY_灰雾猎人|r in the camp
+    >>击杀 the |cRXP_ENEMY_灰雾战士|r 和 |cRXP_ENEMY_灰雾猎人|r in the camp
     >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_莫克迪普|r encounter:|r
     >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_灰雾滩行者|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_灰雾战士|r, and Wave 3 has a level 19 |cRXP_ENEMY_莫克迪普|r and a level 16-17 |cRXP_ENEMY_灰雾猎人|r. You can move away from the Bonfire to avoid aggroing the next wave|r
     .complete 4740,1 -- Murkdeep (1)
@@ -4760,7 +4760,7 @@ step
 step
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r
-    >>|cRXP_WARN_This will begin an escort. You may have to wait for him to respawn or for others to finish the escort|r
+    >>|cRXP_WARN_这将开始一个护送任务。你可能需要等待他重新刷新，或等其他玩家完成护送|r
     .turnin 729 >>交任务《 前往熔光镇》 健忘的勘察员
     .accept 731,1 >>接受任务《物归己用》 健忘的勘察员
     .target Prospector Remtravel
@@ -4772,7 +4772,7 @@ step
 step
     .goto 1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_瑟瑞露尼|r. This will start an escort
-    >>|cRXP_WARN_This will begin an escort. Skip this step if she is not there|r
+    >>|cRXP_WARN_这将开始一个护送任务。如果她不在，请跳过此步骤|r
     .accept 945 >>接受任务《物归己用》 护送瑟瑞露尼
     .target Therylune
 step
@@ -4782,7 +4782,7 @@ step
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
     .isOnQuest 10752,945,4740,731
-    .zone Ashenvale >> Travel south to Ashenvale
+    .zone Ashenvale >>向南前往灰谷
     .goto Ashenvale,29.7,13.6
 step
     .goto Ashenvale,26.43,38.59
@@ -4796,8 +4796,8 @@ step
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
     >>Open the |cRXP_PICK_Plant Bundles|rin the ground.拾取地上的 them for |cRXP_LOOT_巴斯兰的头发|r
-    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
-    >>|cRXP_WARN_Make sure you have|r |T134916:0|t[Track Herbs] |cRXP_WARN_enabled to see them on the minimap|r
+    >>|cRXP_WARN_它们看起来像小型的棕色袋子，可能会半埋在地面中，因此不太容易发现|r
+    >>|cRXP_WARN_请确保已启用|r |T134916:0|t[寻找草药] |cRXP_WARN_，这样才能在小地图上看到它们|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,<1,1
 step
@@ -4806,7 +4806,7 @@ step
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
     >>Open the |cRXP_PICK_Plant Bundles|rin the ground.拾取地上的 them for |cRXP_LOOT_巴斯兰的头发|r
-    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
+    >>|cRXP_WARN_它们看起来像小型的棕色袋子，可能会半埋在地面中，因此不太容易发现|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,1,1
 step
@@ -4858,7 +4858,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_皮尔图拉斯·怀特姆恩|r
 	.target Pelturas Whitemoon
     .turnin 1020 >>交任务《 前往熔光镇》 奥雷迪尔的药剂
-    .timer 24,Orendil's Cure RP
+    .timer 24,奥雷迪尔的药剂 剧情
     .accept 1033 >>接受任务《物归己用》 月神之泪
 step
     .goto Ashenvale,46.37,46.38
@@ -4869,18 +4869,18 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_皮尔图拉斯·怀特姆恩|r
 	.target Pelturas Whitemoon
     .turnin 1033 >>交任务《 前往熔光镇》 月神之泪
-    .timer 17,Elune's Tear RP
+    .timer 17,月神之泪 剧情
     .accept 1034 >>接受任务《物归己用》 星尘废墟
 step
     .goto Ashenvale,33.30,67.79
     >>拾取散发绿光的 |cRXP_PICK_Stardust Covered Bushes|r for the |cRXP_LOOT_Handful of Stardust|r
-    >>|cRXP_WARN_Their spawn locations are scattered throughout the island|r
+    >>|cRXP_WARN_它们的刷新点分布在整个岛屿各处|r
     .complete 1034,1
 step
     #optional
     #completewith next
-    .goto Ashenvale,31.67,64.24,15 >> Head to the base of the mountain
-    .goto Ashenvale,31.21,61.60,15 >>Run straight north while climbing the mountain
+    .goto Ashenvale,31.67,64.24,15 >>前往山脚下
+    .goto Ashenvale,31.21,61.60,15 >>在攀爬山体时径直向北跑
 step
     #optional
     .isQuestComplete 945
@@ -4913,11 +4913,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔伦|r
 	.target Talen
     .goto Ashenvale,14.79,31.29
-    .accept 1007 >> Accept The Ancient Statuette
+    .accept 1007 >>接受任务 远古雕像
 step
     #completewith nagas
     >>击杀 |cRXP_ENEMY_Wrathtail Nagas|r。拾取他们的 |cRXP_LOOT_头部|r
-    >>|cRXP_WARN_Don't go out of your way to complete this yet|r
+    >>|cRXP_WARN_暂时不要特意绕路去完成这个|r
 	.mob Wrathtail Wave Rider
 	.mob Wrathtail Sorceress
     .complete 1008,1
@@ -4930,15 +4930,15 @@ step
 	.target Talen
     .goto Ashenvale,14.79,31.29
     .turnin 1007 >>交任务誓缚 Statuette
-    .timer 22,The Ancient Statuette RP
+    .timer 22,远古雕像 剧情
     .accept 1009 >>接受任务《物归己用》 卢泽尔
 step
     .goto Ashenvale,6.528,13.361
-    >>击杀 |cRXP_ENEMY_卢泽尔|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>击杀 |cRXP_ENEMY_卢泽尔|r。拾取她的 |cRXP_LOOT_Ring of Zoram|r
     >>|cRXP_ENEMY_卢泽尔|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_怒尾侍从|r and |cRXP_ENEMY_怒尾海巫|r. Kill one of them and then reset them if needed|r
     >>|cRXP_WARN_If you have any|r |T133717:0|t[Bombs]|cRXP_WARN_/|r[Grenades] |cRXP_WARN_you can also use them to split pull|r |cRXP_ENEMY_卢泽尔|r
     >>|cRXP_ENEMY_薇丝比娅|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling"|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >>https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_点击此处查看"仇恨分离"技巧的视频参考|r
 	.unitscan Lady Vespia
 	.mob Ruuzel
     .complete 1009,1
@@ -4946,7 +4946,7 @@ step
 step
     #label nagas
     .goto Ashenvale,6.528,13.361
-    >>击杀 |cRXP_ENEMY_卢泽尔|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>击杀 |cRXP_ENEMY_卢泽尔|r。拾取她的 |cRXP_LOOT_Ring of Zoram|r
     >>|cRXP_ENEMY_卢泽尔|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_怒尾侍从|r and |cRXP_ENEMY_怒尾海巫|r. Kill one of them and then reset them if needed|r
     >>|cRXP_ENEMY_薇丝比娅|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
 	.unitscan Lady Vespia
@@ -4955,7 +4955,7 @@ step
 step
 .dungeon BFD
     #completewith RuuzelTurnin
-    +|cRXP_WARN_Begin looking for a Blackfathom Deeps group while you complete the next steps. Very soon you'll be running Blackfathom Deeps|r
+    +|cRXP_WARN_在完成接下来的步骤时开始寻找黑暗深渊的小队。很快你就会去刷黑暗深渊|r
 step
     .goto Ashenvale,7.00,15.20,0
     .goto Ashenvale,14.46,17.15,0
@@ -4988,7 +4988,7 @@ step
 .dungeon BFD
     .goto Ashenvale,15.5,19.0,0
     .goto Ashenvale,14.230,14.618
-    +Grind |cRXP_ENEMY_Naga|r while you assemble a group for BFD. Head to BFD once you have a group
+    +在组建黑暗深渊小队的同时刷 |cRXP_ENEMY_娜迦|r，组好队伍后前往黑暗深渊
     .subzoneskip 2797--BFD
 step
 .dungeon BFD
@@ -5014,8 +5014,8 @@ step
     .goto 1414/1,904.1228,4321.2264,25,0
     .goto 1414/1,867.3230,4318.7731,25,0
     .goto 1414/1,749.5636,4252.5334
-    .subzone 2797,2 >> Make your way to the BFD Instance Portal. Zone in
-    >>|cRXP_WARN_See if anyone in your group can share the quest "Knowledge in the Deeps" from Ironforge with you|r
+    .subzone 2797,2 >>前往黑暗深渊副本入口并进入副本
+    >>|cRXP_WARN_看看你的小队中是否有人可以从铁炉堡与你共享任务"深渊中的知识"|r
 step
 .dungeon BFD
     #completewith Kelris
@@ -5033,7 +5033,7 @@ step
 .dungeon BFD
     #label Thaelrid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斥候塞尔瑞德|r
-    .turnin -1198 >> Turn in Search of Thaelrid
+    .turnin -1198 >>交任务 寻找塞尔瑞德
     .accept 1200 >>接受任务《物归己用》 黑暗深渊中的恶魔
 step
 #requires manuscript
@@ -5058,7 +5058,7 @@ step
 .dungeon BFD
     #label FinalStem
     >>击杀 |cRXP_ENEMY_Nagas|r 和 |cRXP_ENEMY_Satyrs|r。拾取他们的 |cRXP_LOOT_Corrupted Brain Stems|r
-    >>If you haven't completed this quest yet, click on the altar at the end of the dungeon to teleport you to the entrance. The mobs outside of the instance can also drop it.
+    >>如果你还没有完成该任务，请点击副本尽头的祭坛将你传送回入口。副本外的怪物也有几率掉落该任务物品。
     .complete 1275,1 -- Corrupted Brain Stem (8)
     .isOnQuest 1275
 step
@@ -5091,7 +5091,7 @@ step
 step
     #optional
     #sticky
-    .destroy 5505 >> Destroy |T133741:0|t[Teronis' Journal]. You no longer need it
+    .destroy 5505 >>摧毁 |T133741:0|t[泰洛尼斯的日记]。你已经不再需要它了
 step
     #loop
     .goto Ashenvale,50.08,59.94,0
@@ -5150,7 +5150,7 @@ step
     .goto The Barrens,47.96,18.82,5 >>Ascend Dreadmist Peak. 跟随 the Arrow to the top
 step
     .goto The Barrens,48.22,19.15
-    >>Kill |cRXP_ENEMY_Sarilus Foulborne|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_萨瑞鲁斯·法伯尼|r，拾取他的 |cRXP_LOOT_头颅|r
     >>|cRXP_WARN_The surrounding |cRXP_ENEMY_Burning Blade|r are only 等级 10-12|r
     .complete 1017,1 -- Sarilus Foulborne's Head (1)
     .mob Sarilus Foulborne
@@ -5161,7 +5161,7 @@ step
 step
 .dungeon WC
     #completewith TroubleDocks
-    +|cRXP_WARN_Begin looking for a Wailing Caverns group. You will shortly run Wailing Caverns|r
+    +|cRXP_WARN_开始寻找哀嚎洞穴的小队。你很快就会去刷哀嚎洞穴|r
 step << Warlock
     .goto The Barrens,49.307,57.095
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知塔卡尔|r
@@ -5209,7 +5209,7 @@ step
 .dungeon WC
     #completewith EnterWC
     >>击杀 all types of |cRXP_ENEMY_Deviate|rcreatures.拾取地上的 them for their |cRXP_LOOT_变异皮革|r
-    >>|cRXP_WARN_This can be completed INSIDE and OUTSIDE of Wailing Caverns|r
+    >>|cRXP_WARN_此任务可以在哀嚎洞穴副本内或副本外完成|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -5225,7 +5225,7 @@ step
     .goto 1414/1,-2003.0622,-656.5599
     >>击杀 |cRXP_ENEMY_疯狂的马格利什|r。拾取他的 |cRXP_LOOT_99-Year-Old Port|r
     >>|cRXP_ENEMY_疯狂的马格利什|r |cRXP_WARN_can spawn in a few locations|r
-    >>|cRXP_WARN_This quest is completed OUTSIDE of Wailing Caverns|r
+    >>|cRXP_WARN_此任务需要在哀嚎洞穴副本外完成|r
     .complete 959,1 -- 99-Year-Old Port (1)
     .isOnQuest 959
     .mob Mad Magglish
@@ -5233,7 +5233,7 @@ step
 .dungeon WC
     #label EnterWC
     .goto 1414/1,-2205.4612,-742.4261
-    +Zone into The Wailing Caverns
+    +进入哀嚎洞穴
     .zoneskip 1414,1 -- similar to stockades, no subzone for WC
 step
 .dungeon WC
@@ -5264,8 +5264,8 @@ step
 .dungeon WC
     >>击杀 |cRXP_ENEMY_考布莱恩|r, |cRXP_ENEMY_皮萨斯|r, |cRXP_ENEMY_瑟芬迪斯|r and |cRXP_ENEMY_安娜科德拉|r then talk to the |cRXP_FRIENDLY_Disciple of Naralex|r at the start of the instance to start his escort
     >>护送 the |cRXP_FRIENDLY_Disciple of Naralex|r through Wailing Caverns 和 complete the ritual of awakening
-    >>击杀 |cRXP_ENEMY_吞噬者穆坦努斯|r. Loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r]
-    >>|cRXP_WARN_Use the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] to start the quest|r
+    >>击杀 |cRXP_ENEMY_吞噬者穆坦努斯|r，拾取他以获得 |T135229:0|t[|cRXP_LOOT_发光的碎片|r]
+    >>|cRXP_WARN_使用 |T135229:0|t[|cRXP_LOOT_发光的碎片|r] 来开始该任务|r
     .collect 10441,1,6981,1 -- Glowing Shard (1)
     .accept 6981 >>接受任务《物归己用》 发光的碎片
     .use 10441 -- Glowing Shard
@@ -5275,7 +5275,7 @@ step
 step
 .dungeon WC
     >>击杀 all types of |cRXP_ENEMY_Deviate|rcreatures.拾取地上的 them for their |cRXP_LOOT_变异皮革|r
-    >>|cRXP_WARN_This can be completed INSIDE and OUTSIDE of Wailing Caverns|r
+    >>|cRXP_WARN_此任务可以在哀嚎洞穴副本内或副本外完成|r
     .complete 1486,1 -- Deviate Hide (20)
     .isOnQuest 1486
 step
@@ -5305,7 +5305,7 @@ step
     #completewith next
     .goto The Barrens,50.11,35.21,35,0
     .goto The Barrens,48.60,33.34,35,0
-    .goto The Barrens,48.184,32.781,15 >> Ascend the steep mountain above The Wailing Caverns. Follow the Arrow
+    .goto The Barrens,48.184,32.781,15 >>沿着哀嚎洞穴上方的陡峭山坡向上攀爬，跟随箭头前进
     .isQuestComplete 6981
 step
 .dungeon WC
@@ -5370,7 +5370,7 @@ step
     .goto Ashenvale,35.88,31.90,60,0
     .goto Ashenvale,38.73,36.32,60,0
     .goto Ashenvale,39.595,36.309
-    >>Kill |cRXP_ENEMY_Dal Bloodclaw|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>击杀 |cRXP_ENEMY_达尔·血爪|r，拾取他的 |cRXP_LOOT_颅骨|r
     >>|cRXP_ENEMY_达尔·血爪|r |cRXP_WARN_patrols Thistlefur Village|r
     .complete 1054,1
     .unitscan Dal Bloodclaw
@@ -5391,8 +5391,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵维尔莉妮·星坠|r
     .turnin 1017 >>交任务《 前往熔光镇》 召唤者
 	>>|cRXP_WARN_This quest will reward you with the|r |T134754:0|t[艾露恩之光号]
-    >>|T134754:0|t[艾露恩之光号] |cRXP_WARN_- Grants immunity from all damage and spells for 10 sec.|r
-    >>|cRXP_WARN_This is a ONE time use only. Use it in an emergency|r
+    >>|T134754:0|t[艾露恩之光号]|cRXP_WARN_- Grants immunity from all damage and spells for 10 sec.|r
+    >>|cRXP_WARN_这是一次性消耗品，仅在紧急情况下使用|r
     .target Sentinel Velene Starstrike
 step
     #completewith FlyAuber
@@ -5495,7 +5495,7 @@ step
 step
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维斯派塔斯|r
-    .fp Rut'theran >> Get the Rut'theran Village flight path
+    .fp Rut'theran >>获取鲁瑟兰村的飞行点
     .fly Auberdine >>飞往奥伯丁，黑海岸
     .target Vesprystus
     .zoneskip Teldrassil,1

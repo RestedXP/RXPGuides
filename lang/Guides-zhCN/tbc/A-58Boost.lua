@@ -89,7 +89,7 @@ step << Rogue
     .accept 64031 >>接任务 生存工具
     .target Lord Tony Romano
 step << Rogue
-    .use 185964 >>Open the |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135357:0|t[共济之刃]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135357:0|t[Communal Blade]
     .use 186061
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -126,7 +126,7 @@ step << Priest
     .accept 64031 >>接任务 生存工具
     .target High Priestess Laurena
 step << Priest
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -163,7 +163,7 @@ step << Mage
     .accept 64031 >>接任务 生存工具
     .target Jennea Cannon
 step << Mage
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -200,7 +200,7 @@ step << Warlock
     .accept 64031 >>接任务 生存工具
     .target Ursula Deline
 step << Warlock
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[共济法杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135160:0|t[Communal Staff]
     .use 186051
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -237,7 +237,7 @@ step << Hunter
     .accept 64031 >>接任务 生存工具
     .target Einris Brightspear
 step << Hunter
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[共济手杖] and |T135490:0|t[Communal Bow]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[Communal Stave] and |T135490:0|t[Communal Bow]
     .use 186055
     .use 186056
     .complete 64031,1 --1/1 Open the Survival Kit (1)
@@ -275,7 +275,7 @@ step << Druid
     .accept 64031 >>接任务 生存工具
     .target Theridran
 step << Druid
-    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[共济手杖]
+    .use 185964 >>Open the |T133651:0|t[Azeroth Survival Kit] and equip the |T135130:0|t[Communal Stave]
     .use 186055
     .complete 64031,1 --1/1 Open the Survival Kit (1)
     .complete 64031,2 --1/1 Equip a Weapon (1)
@@ -460,7 +460,7 @@ step
     .target Argent Officer Pureheart
 step
     #completewith ADC
-    .cast 17670 >>|cRXP_WARN_Equip the|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_to start collecting|r |T133447:0|t[Scourgestones]
+    .cast 17670 >> |cRXP_WARN_Equip the|r |T133440:0|t[Argent Dawn Commission] |cRXP_WARN_to start collecting|r |T133447:0|t[Scourgestones]
     .use 12846
 step
     .goto Western Plaguelands,43.419,84.834
@@ -483,7 +483,7 @@ step
 step << Hunter
     #sticky
     .tame 8602 >>|cRXP_WARN_如果你的宠物没有其他技能除了|r |T132270:0|t[低吼]|cRXP_WARN_, 扔掉你的宠物然后去驯服一只58级的 |cRXP_ENEMY_蝙蝠|r 在你去病木林的路上|r
-    >>|cRXP_WARN_买一些|r |T134526:0|t[晒干的牛肝菌] |cRXP_WARN_喂你的宠物|r
+    >>|cRXP_WARN_Buy some|r |T134526:0|t[Dried King Bolete] |cRXP_WARN_to feed your new pet|r
     .collect 8948,20
     .goto Eastern Plaguelands,79.5,64.0
 step
@@ -570,7 +570,7 @@ step
 step
     .goto Western Plaguelands,40.116,71.561,-1    
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,1 --Tower One marked
 step
     .goto Western Plaguelands,37.015,57.145
@@ -586,18 +586,18 @@ step
 step
     .goto Western Plaguelands,42.326,66.105,-1    
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,2 --Tower Two marked
 step
     .goto Western Plaguelands,44.217,63.319,-1    
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,3 --Tower Three marked
 step
     #label ADC
     .goto Western Plaguelands,46.681,71.135,-1    
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_Use the|r |T135432:0|t[信号火炬] |cRXP_WARN_next to the Tower entrance|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
     .complete 5097,4 --Tower Four marked
 step
     #completewith next
@@ -612,7 +612,7 @@ step
     #sticky
     #optional
     .isQuestTurnedIn 5097
-    .destroy 12815 >>Destroy the |T135432:0|t[信号火炬]
+    .destroy 12815 >> Destroy the |T135432:0|t[Beacon Torch]
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_化学家阿尔比顿|r 对话
@@ -808,7 +808,7 @@ step
     .goto Western Plaguelands,48.10,63.92,20,0
     .goto Western Plaguelands,48.06,66.18
     >>击杀 |cRXP_ENEMY_时光寄生虫|r
-    .use 12627 >>|cRXP_WARN_Use the|r |T134229:0|t[时光置换器] |cRXP_WARN_at the silos to make them spawn. If the silo isn't pulsing blue then it cannot spawn any|r |cRXP_ENEMY_Temporal Parasites|r
+    .use 12627 >>|cRXP_WARN_Use the|r |T134229:0|t[Temporal Displacer] |cRXP_WARN_at the silos to make them spawn. If the silo isn't pulsing blue then it cannot spawn any|r |cRXP_ENEMY_Temporal Parasites|r
     >>|cRXP_WARN_多只 |cRXP_ENEMY_时光寄生虫|r 会同时刷新，而且一旦一只死掉，另外一只就会瞬间刷新。他们会不断对你释放|r |T136091:0|t[减速术] |cRXP_WARN_大幅降低你的移动和攻击速度|r
     >>|cRXP_WARN_这些 |cRXP_ENEMY_寄生虫|r 不会游泳！如果数量太多让你难以招架，你可以尝试跑进|r |T135861:0|t[|cRXP_LOOT_水里|r] |cRXP_WARN_让它们脱战|r
     .complete 4971,1 -- Temporal Parasite slain (15)
