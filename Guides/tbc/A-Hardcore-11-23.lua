@@ -2317,7 +2317,7 @@ step << Draenei
     .goto Bloodmyst Isle,52.684,53.214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Exarch Admetius|r
     .turnin 9753 >> Turn in What We Know...
-    .accept 9756 >> Acccept What We Don't Know...
+    .accept 9756 >> Accept What We Don't Know...
     .target Exarch Admetius
 step << Draenei
     .goto Bloodmyst Isle,54.312,54.215
@@ -3894,7 +3894,7 @@ step << Rogue
     #label RedridgeRendevous
     .goto Redridge Mountains,28.07,52.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
-    .turnin 2281 >> Turn in Redridge Rendevous
+    .turnin 2281 >> Turn in Redridge Rendezvous
     .accept 2282 >> Accept Alther's Mill
     .target Lucius
 step << Rogue
