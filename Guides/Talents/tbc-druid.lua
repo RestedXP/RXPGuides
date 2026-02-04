@@ -80,7 +80,7 @@ level -- Primal Fury (Rank 2)
     .talent 2,4,3,2
 
 level -- Nurturing Instinct (Rank 1)
-    .talent 2,5,3,1
+    .talent 2,5,4,1
 
 level -- Heart of the Wild (Rank 1)
     .talent 2,6,2,1
@@ -116,7 +116,7 @@ level -- Survival of the Fittest (Rank 3)
     .talent 2,6,3,3
 
 level -- Nurturing Instinct (Rank 2)
-    .talent 2,5,3,2
+    .talent 2,5,4,2
 
 level -- Shredding Attacks (Rank 1)
     .talent 2,4,1,1
