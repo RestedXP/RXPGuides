@@ -174,6 +174,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
+    .xp <11,1
 step << !NightElf
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
@@ -231,6 +232,7 @@ step
     .mob Young Reef Crawler
     .isOnQuest 983
 step
+    .isOnQuest 3524
     .goto 1439,36.371,50.920
     >>Open the |cRXP_PICK_Beached Sea Creature|r. Loot it for the |cRXP_LOOT_Sea Creature Bones|r
     .complete 3524,1 --Sea Creature Bones (1)
@@ -261,6 +263,9 @@ step
     #requires RabidThistle
 --XXREQ Placeholder invis step until multiple requires per step
 step
+#optional
+    .xp 10+6760 >> Grind to 6760+/7600xp
+step
     #label Auber1
     #completewith next
     .subzone 442 >> Travel to Auberdine
@@ -269,6 +274,19 @@ step
     .goto 1439,36.634,46.250
     >>Click the |cRXP_PICK_Buzzbox 827|r on the ground
     .turnin 983 >> Turn in Buzzbox 827
+step
+#optional
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .accept 3524 >> Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step
+#optional
+    .isOnQuest 3524
+    .goto 1439,36.371,50.920
+    >>Open the |cRXP_PICK_Beached Sea Creature|r. Loot it for the |cRXP_LOOT_Sea Creature Bones|r
+    .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
