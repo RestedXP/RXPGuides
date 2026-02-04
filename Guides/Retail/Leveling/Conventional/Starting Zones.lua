@@ -1,7 +1,7 @@
 -- =================================
 -- =======    SEPERATORS    ========
 -- =================================
-
+--group RestedXP Speed Leveling
 --LEVEL 1-10
 if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
@@ -1644,7 +1644,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Neighbourhood
-#displayname |cFF00CCFF1|r - Welcome to the Neighbourhood
+#displayname |cFF1EFF001|r - Welcome to the Neighbourhood
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
@@ -1795,7 +1795,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) DK Intro
-#displayname |cFF00CCFF1|r - Plaguelands
+#displayname |cFF1EFF001|r - Plaguelands
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
@@ -3571,7 +3571,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) New DK Intro
-#displayname |cFF00CCFF1|r - The Frozen Throne
+#displayname |cFF1EFF001|r - The Frozen Throne
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
@@ -3702,7 +3702,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) DH Intro
-#displayname |cFF00CCFF1|r - Mardum
+#displayname |cFF1EFF001|r - Mardum
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
@@ -5226,7 +5226,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Dracthyr Intro
-#displayname |cFF00CCFF1|r - The Forbidden Reach
+#displayname |cFF1EFF001|r - The Forbidden Reach
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
@@ -6623,7 +6623,7 @@ step
 step
     #completewith Lesson of the Sandy Fist
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
     *This is especially faster for Pandaren, since their starting zone keeps you until level 17 and does not allow mounting and skyriding.
 step
     .goto 378,56.67,18.20
@@ -8808,7 +8808,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Haranir Intro
-#displayname |cFF00CCFF1|r - Harandar
+#displayname |cFF1EFF001|r - Harandar
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
@@ -9124,7 +9124,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) EarthenDwarf Intro
-#displayname |cFF00CCFF1|r - Hall of Awakening
+#displayname |cFF1EFF001|r - Hall of Awakening
 #next ba) DF Alliance Intro (A) << Alliance
 #next b1) BfA Intro << Horde
 
@@ -9738,7 +9738,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Exile's Reach Alliance
-#displayname |cFF00CCFF1|r - Exile's Reach
+#displayname |cFF1EFF001|r - Exile's Reach
 #next a) DF Alliance Intro Midnight (A)
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
@@ -9789,7 +9789,7 @@ step
 step
     #completewith Urgent Delivery!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step
     .xp >10,1
     .goto 468,61.21,29.63
@@ -10407,7 +10407,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Draenei Azuremyst Isle
-#displayname |cFF00CCFF2|r - Azuremyst Isle
+#displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
 #next ba) DF Alliance Intro (A)
 
@@ -10883,16 +10883,16 @@ step
 
 step
     #xprate >1.3
-    #include a) Azuremyst Isle >1.3 XP Rate
+    #include RestedXP Speed Leveling\a) Azuremyst Isle >1.3 XP Rate
 step
     #xprate <1.3
-    #include a) Azuremyst Isle <1.3 XP Rate
+    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.3 XP Rate
 step
     #xprate 1.25-1.3
-    #include a) Azuremyst Isle 1.25-1.3 XP XP Rate
+    #include RestedXP Speed Leveling\a) Azuremyst Isle 1.25-1.3 XP XP Rate
 step
     #xprate <1.25
-    #include a) Azuremyst Isle <1.25 XP Rate
+    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.25 XP Rate
 
 -- ******************** ROUTES INTERSECT HERE ********************--
 
@@ -12035,7 +12035,7 @@ step
     .xp >10,1
     #completewith Aid for the Wounded
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step
     .xp >10,1
     .goto 427,67.28,41.62
@@ -12886,7 +12886,7 @@ step
     .xp >10,1
     #completewith Withdraw to the Loading Room!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step
     .xp >10,1
     .goto 30,34.101,32.243
@@ -13732,7 +13732,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Dwarf & Gnome Dun Morogh
-#displayname |cFF00CCFF2|r - Dun Morogh
+#displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
 #next ba) DF Alliance Intro (A)
 
@@ -15069,7 +15069,7 @@ step
     .xp >10,1
     #completewith Beating Them Back!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step
     .xp >10,1
     .goto 425,33.18,53.23
@@ -15551,7 +15551,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Elwynn Forest 1
-#displayname |cFF00CCFF2|r - Elwynn Forest
+#displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
 #next ba) DF Alliance Intro (A)
 
@@ -16734,7 +16734,7 @@ step
 step
     #completewith Balance of Nature
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step
     .xp >10,1
     .goto 460,45.54,74.7
@@ -17160,7 +17160,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Night Elf Teldrassil
-#displayname |cFF00CCFF2|r - Teldrassil
+#displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
 #next ba) DF Alliance Intro (A)
 
@@ -18469,7 +18469,7 @@ step
 step
     #completewith Market Homes1
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
     *This is especially faster for Worgen, since their starting zone keeps you until level 17 and does not allow skyriding.
 step
     .goto 202,59.130,23.865
@@ -21455,7 +21455,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) DarkIronDwarf Intro
-#displayname |cFF00CCFF1|r - Shadowforge City
+#displayname |cFF1EFF001|r - Shadowforge City
 #next ba) DF Alliance Intro (A)
 
 << Alliance DarkIronDwarf !DK
@@ -21533,7 +21533,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) KulTiran Intro
-#displayname |cFF00CCFF1|r - Boralus
+#displayname |cFF1EFF001|r - Boralus
 #next ba) DF Alliance Intro (A)
 
 << Alliance KulTiran !DK
@@ -21618,7 +21618,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) LightforgedDraenei Intro
-#displayname |cFF00CCFF1|r - The Vindicaar
+#displayname |cFF1EFF001|r - The Vindicaar
 #next ba) DF Alliance Intro (A)
 
 << Alliance LightforgedDraenei !DK
@@ -21696,7 +21696,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Mechagnome Intro
-#displayname |cFF00CCFF1|r - Mechagon City
+#displayname |cFF1EFF001|r - Mechagon City
 #next ba) DF Alliance Intro (A)
 
 << Alliance Mechagnome !DK
@@ -21766,7 +21766,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) VoidElf Intro
-#displayname |cFF00CCFF1|r - Telogrus Rift
+#displayname |cFF1EFF001|r - Telogrus Rift
 #next ba) DF Alliance Intro (A)
 
 << Alliance VoidElf !DK
@@ -21937,8 +21937,9 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
+#subweight 999
 #name a) Exile's Reach Horde
-#displayname |cFF00CCFF1|r - Exile's Reach
+#displayname |cFF1EFF001|r - Exile's Reach 
 #next b1) BfA Intro
 
 
@@ -22884,7 +22885,7 @@ step
     .zoneskip 1727
     #completewith SunstriderIsleFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step
     #optional
     .zoneskip 1727,1
@@ -23143,7 +23144,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Blood Elf Eversong Woods
-#displayname |cFF00CCFF2|r - Eversong Woods
+#displayname |cFF1EFF002|r - Eversong Woods
 #next b1) BfA Intro
 #defaultfor BloodElf !DK
 
@@ -23610,7 +23611,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ab) Valley of Trials1  << !Troll --Orc
 #name ab) Valley of Trials2  << Troll
-#displayname |cFF00CCFF2|r - Valley of Trials << Troll
+#displayname |cFF1EFF002|r - Valley of Trials << Troll
 #displayname Valley of Trials |cRXP_ENEMY_(Alternative)|r << !Troll --Orc
 #next ac) Echo Isles2 << !Troll --Orc
 #next a) BfA Intro << Troll
@@ -23622,7 +23623,7 @@ step << Orc
     .zoneskip 1727
     #completewith DurotarFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step << Orc
     #optional
     .zoneskip 1727,1
@@ -24015,7 +24016,7 @@ RXPGuides.RegisterGuide([[
 #name ac) Echo Isles1 << Troll
 #name ac) Echo Isles2 << !Troll --Orc
 #displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
-#displayname |cFF00CCFF2|r - Echo Isles << !Troll
+#displayname |cFF1EFF002|r - Echo Isles << !Troll
 #next ab) Valley of Trials2 << Troll
 #next b1) BfA Intro << !Troll
 #defaultfor Orc !DK/Troll !DK
@@ -24031,7 +24032,7 @@ step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step << Troll
     #optional
     .zoneskip 1727,1
@@ -24762,7 +24763,7 @@ step << Tauren
     .zoneskip 1727
     #completewith MulgoreFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step << Tauren
     #optional
     .zoneskip 1727,1
@@ -24977,7 +24978,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Tauren Camp Mulgore
-#displayname |cFF00CCFF2|r - Mulgore
+#displayname |cFF1EFF002|r - Mulgore
 #next b1) BfA Intro
 #defaultfor Tauren !DK
 
@@ -25507,7 +25508,7 @@ step << Undead
     .zoneskip 1727
     #completewith TirisfalFistQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step << Undead
     #optional
     .zoneskip 1727,1
@@ -25779,7 +25780,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name ac) Undead Eversong Woods
-#displayname |cFF00CCFF2|r - Tirisfal Glades
+#displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) BfA Intro
 #defaultfor Undead !DK
 
@@ -26373,7 +26374,7 @@ step << Goblin
     .zoneskip 1727
     #completewith KezanFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.
+    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
 step << Goblin
     #optional
     .zoneskip 1727,1
@@ -27889,7 +27890,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) HighmountainTauren
-#displayname |cFF00CCFF1|r - Highmountain Tauren
+#displayname |cFF1EFF001|r - Highmountain Tauren
 #next b1) BfA Intro
 
 << Horde HighmountainTauren !DK
@@ -27971,7 +27972,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Nightborne Intro
-#displayname |cFF00CCFF1|r - The Nighthold
+#displayname |cFF1EFF001|r - The Nighthold
 #next b1) BfA Intro
 
 << Horde Nightborne !DK
@@ -28053,7 +28054,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) ZandalariTroll Intro
-#displayname |cFF00CCFF1|r - Dazar'alor
+#displayname |cFF1EFF001|r - Dazar'alor
 #next b1) BfA Intro
 
 << Horde ZandalariTroll !DK
@@ -28134,7 +28135,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) MagharOrc Intro
-#displayname |cFF00CCFF1|r - Orgrimmar
+#displayname |cFF1EFF001|r - Orgrimmar
 #next b1) BfA Intro
 
 << Horde MagharOrc !DK
@@ -28205,7 +28206,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-80)|r Default
 #name a) Vulpera Intro
-#displayname |cFF00CCFF1|r - Orgrimmar
+#displayname |cFF1EFF001|r - Orgrimmar
 #next b1) BfA Intro
 
 << Horde Vulpera !DK
@@ -28627,9 +28628,694 @@ step
     .goto 627,57.60,45.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emissary Auldbridge|r.
     .turnin 44184 >>Turn in In the Blink of an Eye
-	.target Emissary Auldbridge
+    .target Emissary Auldbridge
 step
     .zoneskip 627,1
     .goto 627,55.24,24.01
     .zone 85 >>Take the portal to Orgrimmar
+]])
+
+-- =================================
+-- =======    SEPERATORS    ========
+-- =================================
+--group RestedXP Midnight
+--LEVEL 1-10
+RXPGuides.RegisterGuide([[
+#retail
+#group RestedXP Midnight
+#groupweight 1000
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name 1a 2
+#displayname |cFFFCDC00LEVEL 1-10|r
+#disabled
+
+<< !Harronir/!Nightborne/!HighmountainTauren/!MagharOrc/!EarthenDwarf/!ZandalariTroll/!Vulpera/!Dracthyr/!VoidElf/!KulTiran/!LightforgedDraenei/!Mechagnome/!Pandaren DK
+
+step
++1
+
+]])
+
+-- =================================
+-- =======   NEUTRAL ZONES   =======
+-- =================================
+
+--Neighbourhood
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Neighbourhood 2
+#displayname |cFF1EFF001|r - Welcome to the Neighbourhood
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+#chapter
+
+step
+    #include RestedXP Speed Leveling\a) Neighbourhood
+]])
+
+--Death Knight Plaguelands: The Scarlet Enclave
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) DK Intro 2
+#displayname |cFF1EFF001|r - Plaguelands
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+
+
+<< DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
+
+step
+    #include RestedXP Speed Leveling\a) DK Intro
+]])
+--Allied Race/Pandaren: The Frozen Throne
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) New DK Intro 2
+#displayname |cFF1EFF001|r - The Frozen Throne
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+
+<< DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
+
+step
+    #include RestedXP Speed Leveling\a) New DK Intro
+]])
+--Demon Hunter: Mardum
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) DH Intro 2
+#displayname |cFF1EFF001|r - Mardum
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+
+<< DemonHunter !VoidElf
+
+step
+    #include RestedXP Speed Leveling\a) DH Intro
+]])
+--Dracthyr: The Forbidden Reach
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Dracthyr Intro 2
+#displayname |cFF1EFF001|r - The Forbidden Reach
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+
+<< Dracthyr
+
+step
+    #include RestedXP Speed Leveling\a) Dracthyr Intro
+]])
+--Pandaren: The Wandering Isle
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Pandaren Intro 2
+#displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+
+<< Pandaren !DK
+
+step
+    #include RestedXP Speed Leveling\a) Pandaren Intro
+]])
+--Haranir: Harandar
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Haranir Intro 2
+#displayname |cFF1EFF001|r - Harandar
+#next ba) DF Alliance Intro (A) 2 << Alliance
+#next b1) BfA Intro 2 << Horde
+
+<< Harronir
+
+step
+    #include RestedXP Speed Leveling\a) Haranir Intro
+]])
+--Earthen: Hall of Awakening
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) EarthenDwarf Intro 2
+#displayname |cFF1EFF001|r - Hall of Awakening
+#next ba) DF Alliance Intro (A) << Alliance
+#next b1) BfA Intro << Horde
+
+<< EarthenDwarf
+
+step
+    #include RestedXP Speed Leveling\a) EarthenDwarf Intro
+]])
+--Arathi Highlands Returning Player
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#name a) Arathi Highlands Returning Player 2
+#displayname Arathi Highlands Catch-Up |cRXP_ENEMY_(Alternative)|r
+#next ba) DF Alliance Intro (A) << Alliance
+#next b1) BfA Intro << Horde
+#internal
+
+step
+    #include RestedXP Speed Leveling\a) Arathi Highlands Returning Player
+]])
+
+-- =================================
+-- ======   ALLIANCE ZONES   =======
+-- =================================
+
+--Exile's Reach
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subweight 999
+#name a) Exile's Reach Alliance 2
+#displayname |cFF1EFF001|r - Exile's Reach
+#next a) DF Alliance Intro Midnight (A) 2
+
+<< Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
+
+step
+    #include RestedXP Speed Leveling\a) Exile's Reach
+]])
+--Draenei: Ammen Vale
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Ammen Vale 2
+#displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
+#defaultfor Draenei !DK
+#next ac) Draenei Azuremyst Isle 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ab) Ammen Vale
+]])
+--Draenei: Azuremyst Isle
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Draenei Azuremyst Isle 2
+#displayname |cFF1EFF002|r - Azuremyst Isle
+#defaultfor Draenei !DK
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ac) Draenei Azuremyst Isle
+]])
+--Dwarf: Coldridge Vallley
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Dwarf Coldridge Vallley 2
+#displayname Coldridge Vallley |cRXP_ENEMY_(Alternative)|r
+#defaultfor Dwarf !DK
+#next ac) Dwarf & Gnome Dun Morogh 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ab) Dwarf Coldridge Vallley
+]])
+--Gnome: New Tinkertown
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) New Tinkertown 2
+#displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
+#defaultfor Gnome !DK
+#next ac) Dwarf & Gnome Dun Morogh 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ab) New Tinkertown
+]])
+--Dwarf & Gnome: Dun Morogh
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Dwarf & Gnome Dun Morogh 2
+#displayname |cFF1EFF002|r - Dun Morogh
+#defaultfor Dwarf Gnome !DK
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ac) Dwarf & Gnome Dun Morogh
+]])
+--Human: Northshire Valley
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Northshire Valley 2
+#displayname Northshire Valley |cRXP_ENEMY_(Alternative)|r
+#defaultfor Human !DK
+#next ac) Elwynn Forest 1 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ab) Northshire Valley
+]])
+--Human: Elwynn Forest
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Elwynn Forest 1 2
+#displayname |cFF1EFF002|r - Elwynn Forest
+#defaultfor Human !DK
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ac) Elwynn Forest 1
+]])
+--Night Elf: Shadowglen
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Shadowglen 2
+#displayname Shadowglen |cRXP_ENEMY_(Alternative)|r
+#defaultfor NightElf !DemonHunter !DK
+#next ac) Night Elf Teldrassil 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ab) Shadowglen
+]])
+--Night Elf: Teldrassil
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Night Elf Teldrassil 2
+#displayname |cFF1EFF002|r - Teldrassil
+#defaultfor NightElf !DemonHunter !DK
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance
+
+step
+    #include RestedXP Speed Leveling\ac) Night Elf Teldrassil
+]])
+--Worgen: Gilneas
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Worgen Intro 2
+#displayname Gilneas |cRXP_ENEMY_(Alternative)|r
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance Worgen !DK
+
+step
+    #include RestedXP Speed Leveling\ab) Worgen Intro
+]])
+--DarkIronDwarf: Shadowforge City
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) DarkIronDwarf Intro 2
+#displayname |cFF1EFF001|r - Shadowforge City
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance DarkIronDwarf !DK
+
+step
+    #include RestedXP Speed Leveling\a) DarkIronDwarf Intro
+]])
+--KulTiran: Boralus
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) KulTiran Intro 2
+#displayname |cFF1EFF001|r - Boralus
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance KulTiran !DK
+
+step
+    #include RestedXP Speed Leveling\a) KulTiran Intro
+]])
+--LightforgedDraenei: The Vindicaar
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) LightforgedDraenei Intro 2
+#displayname |cFF1EFF001|r - The Vindicaar
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance LightforgedDraenei !DK
+
+step
+    #include RestedXP Speed Leveling\a) LightforgedDraenei Intro
+]])
+--Mechagnome: Mechagon City
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Mechagnome Intro 2
+#displayname |cFF1EFF001|r - Mechagon City
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance Mechagnome !DK
+
+step
+    #include RestedXP Speed Leveling\a) Mechagnome Intro
+]])
+--VoidElf: Telogrus Rift
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) VoidElf Intro 2
+#displayname |cFF1EFF001|r - Telogrus Rift
+#next ba) DF Alliance Intro (A) 2
+
+<< Alliance VoidElf !DK
+
+step
+    #include RestedXP Speed Leveling\a) VoidElf Intro
+]])
+
+-- ====================================
+-- =======    HORDE ZONES    ==========
+-- ====================================
+
+--Exile's Reach
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Exile's Reach Horde 2
+#displayname |cFF1EFF001|r - Exile's Reach
+#next b1) BfA Intro 2
+
+
+<< Horde !Harronir !Dracthyr !DemonHunter !DK !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
+
+step
+    #include RestedXP Speed Leveling\a) Exile's Reach Horde
+]])
+--Blood Elf: Sunstrider Isle
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Sunstrider Isle 2
+#displayname Sunstrider Isle |cRXP_ENEMY_(Alternative)|r
+#next ac) Blood Elf Eversong Woods 2
+#defaultfor BloodElf !DK
+
+<< Horde
+
+step
+    #include RestedXP Speed Leveling\ab) Sunstrider Isle
+]])
+--Blood Elf: Eversong Woods(xp tag)
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Blood Elf Eversong Woods 2
+#displayname |cFF1EFF002|r - Eversong Woods
+#next b1) BfA Intro 2
+#defaultfor BloodElf !DK
+
+<< Horde
+
+step
+    #include RestedXP Speed Leveling\ac) Blood Elf Eversong Woods
+]])
+--Orc: Valley of Trials
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Valley of Trials1 2 << !Troll --Orc
+#name ab) Valley of Trials2 2 << Troll
+#displayname |cFF1EFF002|r - Valley of Trials << Troll
+#displayname Valley of Trials |cRXP_ENEMY_(Alternative)|r << !Troll --Orc
+#next ac) Echo Isles2 2 << !Troll --Orc
+#next a) BfA Intro 2 << Troll
+#defaultfor Orc !DK/Troll !DK
+
+<< Horde
+
+step << !Troll
+    #include RestedXP Speed Leveling\ab) Valley of Trials1
+step << Troll
+    #include RestedXP Speed Leveling\ab) Valley of Trials2
+]])
+--Orc: Echo Isles
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Echo Isles1 2 << Troll
+#name ac) Echo Isles2 2 << !Troll --Orc
+#displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
+#displayname |cFF1EFF002|r - Echo Isles << !Troll
+#next ab) Valley of Trials2 2 << Troll
+#next b1) BfA Intro 2 << !Troll
+#defaultfor Orc !DK/Troll !DK
+
+<< Horde
+
+step << !Troll
+    #include RestedXP Speed Leveling\ac) Echo Isles1
+step << Troll
+    #include RestedXP Speed Leveling\ac) Echo Isles2
+]])
+--Tauren: Camp Narache
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Camp Narache 2
+#displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
+#next ac) Tauren Camp Mulgore 2
+#defaultfor Tauren !DK
+
+<< Horde
+
+step
+    #include RestedXP Speed Leveling\ab) Camp Narache
+]])
+--Tauren: Camp Mulgore
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Tauren Camp Mulgore 2
+#displayname |cFF1EFF002|r - Mulgore
+#next b1) BfA Intro 2
+#defaultfor Tauren !DK
+
+<< Horde
+
+step
+    #include RestedXP Speed Leveling\ac) Tauren Camp Mulgore
+]])
+--Undead: Deathknell
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Deathknell 2
+#displayname Deathknell |cRXP_ENEMY_(Alternative)|r
+#title Deathknell
+#next ac) Undead Eversong Woods 2
+#defaultfor Undead !DK
+
+<< Horde
+
+step
+    #include RestedXP Speed Leveling\ab) Deathknell
+]])
+--Undead: Tirisfal Glades
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ac) Undead Eversong Woods 2
+#displayname |cFF1EFF002|r - Tirisfal Glades
+#next b1) BfA Intro 2
+#defaultfor Undead !DK
+
+<< Horde
+
+step
+    #include RestedXP Speed Leveling\ac) Undead Eversong Woods
+]])
+--Goblin: Kezan & The Lost Isles
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name ab) Goblin Intro 2
+#displayname Kezan & The Lost Isles |cRXP_ENEMY_(Alternative)|r
+#next b1) BfA Intro 2
+
+<< Horde Goblin !DK
+
+step
+    #include RestedXP Speed Leveling\ab) Goblin Intro
+]])
+--HighmountainTauren: Highmountain
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) HighmountainTauren 2
+#displayname |cFF1EFF001|r - Highmountain Tauren
+#next b1) BfA Intro 2
+
+<< Horde HighmountainTauren !DK
+
+step
+    #include RestedXP Speed Leveling\a) HighmountainTauren
+]])
+--Nightborne: The Nighthold
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Nightborne Intro 2
+#displayname |cFF1EFF001|r - The Nighthold
+#next b1) BfA Intro 2
+
+<< Horde Nightborne !DK
+
+step
+    #include RestedXP Speed Leveling\a) Nightborne Intro
+]])
+--ZandalariTroll: Dazar'alor
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) ZandalariTroll Intro 2
+#displayname |cFF1EFF001|r - Dazar'alor
+#next b1) BfA Intro 2
+
+<< Horde ZandalariTroll !DK
+
+step
+    #include RestedXP Speed Leveling\a) ZandalariTroll Intro
+]])
+--MagharOrc: Orgrimmar
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) MagharOrc Intro 2
+#displayname |cFF1EFF001|r - Orgrimmar
+#next b1) BfA Intro 2
+
+<< Horde MagharOrc !DK
+
+step
+    #include RestedXP Speed Leveling\a) MagharOrc Intro
+]])
+--Vulpera: Orgrimmar
+RXPGuides.RegisterGuide([[
+#retail
+#version 2
+#group RestedXP Midnight
+#subgroup |cFF1EFF00(1-90)|r Speedrun
+#name a) Vulpera Intro 2
+#displayname |cFF1EFF001|r - Orgrimmar
+#next b1) BfA Intro 2
+
+<< Horde Vulpera !DK
+
+step
+    #include RestedXP Speed Leveling\a) Vulpera Intro
+]])
+--Legion Intro
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Midnight
+#name a) Horde Legion Intro 2
+#internal
+
+step
+    #include RestedXP Speed Leveling\a) Horde Legion Intro
 ]])
