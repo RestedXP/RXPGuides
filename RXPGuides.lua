@@ -1590,6 +1590,7 @@ local updateError
 local errorCount = 0
 local event = ""
 local busy = 0
+local updateStepIndex = 0
 
 function addon.LegacyUpdateLoop()
     -- NewTicker calls function every updateFrequency, making diff/updateTick/tickRate logic obsolete
@@ -1728,25 +1729,39 @@ function addon.LegacyUpdateLoop()
 
         event = event .. "/istep"
         local max = #addon.currentGuide.steps
-        local offset = RXPCData.currentStep + 1
-        if stepCounter == offset then
-            stepCounter = stepCounter + 8
+
+        if stepCounter == RXPCData.currentStep then
+            stepCounter = stepCounter + 4
+        end
+        local batchMax = 10
+        if addon.settings.profile.updateFrequency > 75 then
+            batchMax = 2
         end
 
-        addon.RXPFrame.BottomFrame.UpdateFrame(nil,offset + stepCounter % 8)
-
-        for n = stepCounter,stepCounter + batchSize - 1 do
-            addon.RXPFrame.BottomFrame.UpdateFrame(nil,n)
+        if updateStepIndex < 5 then
+            addon.RXPFrame.BottomFrame.UpdateFrame(nil,RXPCData.currentStep + updateStepIndex)
         end
+
         stepCounter = stepCounter + batchSize
+
+        for n = stepCounter,stepCounter + batchSize do
+            if n <= max then
+                C_Timer.After(0,function()
+                    addon.RXPFrame.BottomFrame.UpdateFrame(nil,n)
+                end)
+            end
+        end
+        updateStepIndex = (updateStepIndex + 1) % 8
+        --print(stepCounter,updateStepIndex)
+        --updateStepList[offset + stepCounter % 8] = true
         if stepCounter > max then
+            stepCounter = 1
             local time = GetTime()
             local tdiff = time - updateTimer
-            stepCounter = 1
             --print(tdiff,batchSize)
 
             if tdiff > 10 then
-                batchSize = math.min(batchSize + 1*(math.ceil(tdiff/8)),10)
+                batchSize = math.min(batchSize + 1*(math.ceil(tdiff/8)),batchMax)
             elseif batchSize > 2 then
                 batchSize = batchSize - 1
             end
@@ -1754,7 +1769,6 @@ function addon.LegacyUpdateLoop()
             updateTimer = time
             skip = skip % 4096
         end
-
     end
 
     updateError = false
