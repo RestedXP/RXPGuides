@@ -1854,7 +1854,7 @@ function addon:ReloadGuide(keepStep)
     return guide and addon:LoadGuide(guide,keepStep)
 end
 
-function BottomFrame.UpdateFrame(self, stepn)
+function BottomFrame.UpdateFrame(self, stepn, startFrom)
     local level = UnitLevel("player")
 
     if stepPos[0] and ((not self and stepn) or (self and self.step)) and IsFrameShown(self,self and self.step) then
@@ -1875,8 +1875,17 @@ function BottomFrame.UpdateFrame(self, stepn)
 
         local text, rawtext, icon
         local stepDiff
-
-        for _, element in ipairs(frame.step.elements or {}) do
+        local start = startFrom or 1
+        local n = 0
+        for i = start,#frame.step.elements do
+            if n == 12 then
+                C_Timer.After(0,function()
+                    BottomFrame.UpdateFrame(self, stepn, i)
+                end)
+                return
+            end
+            n = n + 1
+            local element = frame.step.elements[i]
             stepDiff = element.step.index - RXPCData.currentStep
             element.element = element
 
