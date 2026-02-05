@@ -302,9 +302,11 @@ function Frame:InitializeZones()
         Frame:SetZoneNPCData(addon.mapId["Silvermoon City"], L"Yatheon", 75.614, 40.713, CLASS_GEAR, HORDE,
         {23811})
 
-
         Frame:SetZoneNPCData(addon.mapId["Zangarmarsh"], L"Seer Janidi", 32.379, 51.960, CLASS_GEAR, HORDE,
         {22901,22902})
+        Frame:SetZoneNPCData(addon.mapId["Zangarmarsh"], 19383, 32.40, 48.00, CLASS_GEAR, HORDE,
+        {23811})
+
         Frame:SetZoneNPCData(addon.mapId["Terokkar Forest"], L"Leeli Longhaggle", 57.740, 53.367, CLASS_GEAR, ALLIANCE,
         {22901,22911})
         --
@@ -341,7 +343,11 @@ function Frame:SetZoneNPCData(zone, name, x, y, cl, faction, loot)
     -- Loot Data for this NPC
     local npcData = {}
     npcData.zone = zone
-    npcData.name = name
+    if type(name) == "number" then
+        npcData.name = addon.GetNpcName(name)
+    else
+        npcData.name = name
+    end
     npcData.x = x
     npcData.y = y
     npcData.kind = cl
