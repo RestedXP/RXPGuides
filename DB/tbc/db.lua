@@ -2,6 +2,8 @@ local addonName, addon = ...
 
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
+local faction = UnitFactionGroup("player")
+
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,
@@ -40,6 +42,14 @@ addon.heirlooms = {
     [12] = true,--ring1
     [13] = true,--ring2
 }
+
+if faction == "Horde" then
+    addon.defaultGroup = "RestedXP TBC Guide (H)"
+    addon.defaultGroupHC = "RXP TBC Survival Guide (H)"
+elseif faction == "Alliance" then
+    addon.defaultGroup = "RestedXP TBC Guide (A)"
+    addon.defaultGroupHC = "RXP TBC Survival Guide (A)"
+end
 
 addon.mapId = {
 	["Durotar"] = 1411,
