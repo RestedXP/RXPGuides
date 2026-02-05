@@ -297,6 +297,15 @@ function addon.ui.v2.RegisterRXPGuideConfiguratorOption()
                 end
             end
         end,
+
+        ["SetEnabled"] = function(self, enabled)
+            if enabled then
+                self.frame:Enable()
+            else
+                self.frame:Disable()
+            end
+
+        end,
     }
 
     --[[-----------------------------------------------------------------------------
@@ -920,6 +929,12 @@ function addon.ui.v2:CreateConfigurator()
     survivalGroup:SetLabel(L("Select Survival Guide"))
     survivalGroup:SetDescription(string.format(groupDescription, addon.player.maxlevel))
     survivalGroup:SetImage("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-survival-guide")
+
+    -- TODO removbe on release of zhCN survival guide
+    if locale == "zhCN" then
+        survivalGroup:SetEnabled(false)
+        survivalGroup:SetDescription("即将上线")
+    end
 
     page1:AddChild(survivalGroup)
 
