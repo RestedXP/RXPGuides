@@ -1854,7 +1854,7 @@ function addon:ReloadGuide(keepStep)
     return guide and addon:LoadGuide(guide,keepStep)
 end
 
-function BottomFrame.UpdateFrame(self, stepn, startFrom)
+function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
     local level = UnitLevel("player")
 
     if stepPos[0] and ((not self and stepn) or (self and self.step)) and IsFrameShown(self,self and self.step) then
@@ -1881,14 +1881,9 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom)
         local nElements = elements and #elements or 0
 
         for i = start,nElements do
-            if n == 12 then
-                C_Timer.After(0,function()
-                    BottomFrame.UpdateFrame(self, stepn, i)
-                end)
-                return
-            end
-            n = n + 1
             local element = elements[i]
+            if element.text or element.tooltipText or element.requestFromServer or step.active then
+
             stepDiff = element.step.index - RXPCData.currentStep
             element.element = element
 
@@ -1926,6 +1921,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom)
                     text = text .. "\n   " .. rawtext
                 end
             end
+            end
         end
 
         if hideStep then
@@ -1940,9 +1936,11 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom)
         end
 
         if hideStep then
+            frame.text:Hide()
             fheight = 1
             frame:SetAlpha(0)
         else
+            frame.text:Show()
             fheight = math.ceil(frame.text:GetStringHeight() + 8)
             frame:SetAlpha(1)
         end
