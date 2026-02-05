@@ -29,12 +29,14 @@ local function getForeign(text)
     if DEBUG then print("Phrase not found, looking for words") end
 
     -- Direct text doesn't match, so iterate over phrase and lazy translate
-    local words = ssplit(delim, text)
+    local _ssplit = ssplit or _G.strsplittable or function(d, t) return {strsplit(d, t)} end
+    local _strjoin = strjoin or _G.strjoin or _G.string.join
+    local words = _ssplit(delim, text)
 
     -- TODO string insensitive lookups
     for i, w in ipairs(words) do if L.words[w] then words[i] = L.words[w] end end
 
-    local lazyPhrase = strjoin(delim, unpack(words))
+    local lazyPhrase = _strjoin(delim, unpack(words))
     lazyTranslationCache[text] = lazyPhrase
 
     return lazyPhrase
