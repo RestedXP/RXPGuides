@@ -2935,8 +2935,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.92
                     },
                     previewFramePositions = {
-                        name = fmt("%s Frame Positions", _G.PREVIEW),
-                        desc = fmt("%s Frame Positions", _G.PREVIEW),
+                        name = fmt(L("%s Frame Positions"), _G.PREVIEW),
+                        desc = fmt(L("%s Frame Positions"), _G.PREVIEW),
                         type = 'execute',
                         width = optionsWidth,
                         order = 1.93,
