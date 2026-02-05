@@ -380,7 +380,4 @@ level -- Piercing Ice (Rank 2)
 
 level -- Piercing Ice (Rank 3)
     .talent 3,3,1,3
-
-level -- Arctic Winds (Rank 1)
-    .talent 3,7,3,1
 ]])
