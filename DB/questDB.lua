@@ -1418,6 +1418,20 @@ addon.functions.getTBCchapters = function()
     return addon.settings.profile.tbcTurnInOrder or ""
 end
 
+addon.functions.tbcWBF = function(self,text,arg1)
+    if type(self) == "string" then
+        addon.step.optional = not addon.settings.profile.tbcWBF == not arg1
+        return {textOnly = true, arg1 = arg1}
+    end
+    local step = self.element.step
+    if step.active and not addon.settings.profile.tbcWBF == not arg1 then
+        step.completed = true
+        --step.hidewindow = true
+        step.optional = true
+        addon.updateSteps = true
+    end
+end
+
 function addon.IsGuideQuestActive(id)
     local group = GetGroup()
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
