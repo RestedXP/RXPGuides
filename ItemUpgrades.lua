@@ -1403,6 +1403,9 @@ local ahSession = {
     scanPage = 0,
     scanResults = 0,
     scanType = AuctionFilterButtons["Armor"],
+    scanStatus = {
+        scanType = _G.AUCTION_CATEGORY_ARMOR
+    },
 
     selectedRow = nil
 }
@@ -1432,6 +1435,7 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
     ahSession.scanPage = 0
     ahSession.scanResults = 0
     ahSession.scanType = AuctionFilterButtons["Armor"]
+    ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
 end
 
 -- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
@@ -1535,21 +1539,27 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     if not ahSession.sentQuery then return end
 
     local resultCount, totalAuctions = GetNumAuctionItems("list")
+    ahSession.scanStatus.totalAuctions = totalAuctions
     -- print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
 
     ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
 
     if resultCount == 0 or totalAuctions == 0 then
         ahSession.sentQuery = false
-        ahSession.scanPage = 0 -- TODO show scanPage on UI
+        ahSession.scanPage = 0
 
         if ahSession.scanType == AuctionFilterButtons["Armor"] then
             ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
+
+            ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_WEAPONS
             self:Scan()
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
+            ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
             self:Analyze()
             ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
+            _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
+
             self:DisplayEmbeddedResults()
         end
 
@@ -1590,6 +1600,12 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
     ahSession.scanResults = ahSession.scanResults + resultCount
 
+    if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 then
+        local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 1) * 100
+
+        _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
+    end
+
     self:Scan()
 end
 
@@ -1608,15 +1624,10 @@ function addon.itemUpgrades.AH:Scan()
     end
     -- print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
 
-    -- TODO remove debugging +15
-    -- TODO reset usable = true
-
-    local maxLevel = UnitLevel("player") -- + 15
-
     ahSession.sentQuery = true
 
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems("", maxLevel - 5, maxLevel, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
+    QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
                       AuctionCategories[ahSession.scanType].filters)
 end
 
@@ -1908,7 +1919,8 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
     ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
 
-    _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER))
+    ahSession.scanStatus.baseTitle = fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER)
+    _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
 
     local ScrollBar = ahSession.displayFrame.ScrollBox.ScrollBar
     ScrollBar:SetHideIfUnscrollable(false)
