@@ -1424,6 +1424,8 @@ addon.functions.tbcWBF = function(self,text,arg1)
         return {textOnly = true, arg1 = arg1}
     end
     local step = self.element.step
+    local element = self.element
+    arg1 = element.arg1
     if step.active and not addon.settings.profile.tbcWBF == not arg1 then
         step.completed = true
         --step.hidewindow = true
