@@ -695,7 +695,7 @@ function addon.LoadCachedGuides()
         return
     end
     local string  = addon.string or RXPString
-    if addon.string then
+    if string then
         local header = string:sub(1,30)
         local n,id,content = header:match("^(%d+)|(%-?%d+):(.*)")
         n = tonumber(n)
