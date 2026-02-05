@@ -2318,7 +2318,7 @@ step << Priest
 step
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手凯拉·夜弓|r 对话
-    >>|cRXP_FRIENDLY_女猎手凯拉·夜弓|r |cRXP_WARN_is located outside the back entrance of The Exodar|r
+    >>|cRXP_FRIENDLY_女猎手凯拉·夜弓|r |cRXP_WARN_is located outside the back enterance of The Exodar|r
     .turnin 9632 >>交任务《 前往熔光镇》 新的盟友
     .accept 9633 >>接受任务《物归己用》 前往奥伯丁
     .target Huntress Kella Nightbow
@@ -3310,7 +3310,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》练级指南（联盟版）
 << Alliance !Warlock
-#name 12-14 黑海岸
+#name 20-21 黑海岸
 #subgroup RestedXP 联盟 20-32 级
 #defaultfor !Draenei
 #next 21-23级 灰谷

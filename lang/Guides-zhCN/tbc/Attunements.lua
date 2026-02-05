@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    +|cRXP_WARN_You must be at least level 68 to begin the Karazhan attunement questline|r
+    +|cRXP_WARN_你必须至少达到 68 级才能开始卡拉赞钥匙任务线|r
     .xp >68,1
 step
     #label Deadwind1
@@ -28,7 +28,7 @@ step
 step
     #completewith PondReading
     .goto Deadwind Pass,47.710,78.267
-    .subzone 2837 >> Go down the stairs into the Master's Cellar
+    .subzone 2837 >>下楼梯，进入麦迪文的酒窖
 step
     #optional
     #completewith Reading2
@@ -41,7 +41,7 @@ step
 step
     #label PondReading
     .goto Deadwind Pass,42.910,78.275
-    .use 24474 >> |cRXP_WARN_Use the|r |T134075:0|t[Violet Scrying Crystal] |cRXP_WARN_while standing in the|r |cRXP_PICK_Underground Pond|r
+    .use 24474 >>|cRXP_WARN_站在|r|cRXP_PICK_地下池塘|r|cRXP_WARN_中使用|r |T134075:0|t[紫罗兰占卜水晶]
     .complete 9824,2 -- Underground Pond Reading (1)
 step
     .isOnQuest 9824
@@ -50,17 +50,17 @@ step
     .goto Deadwind Pass,46.84,74.90,25,0
     .goto Deadwind Pass,45.84,78.04,15,0
     .goto Deadwind Pass,48.74,78.87,10,0
-    .subzone 2562 >> |cRXP_WARN_Head back the way you came from to exit the Master's Cellar. You will shortly enter another enterance into the Master's Callar again|r
+    .subzone 2562 >>|cRXP_WARN_原路返回，离开麦迪文的酒窖。很快你将抵达进入麦迪文酒窖的另一个入口|r
     .subzoneskip 2837,1
 step
     #completewith next
     .goto Deadwind Pass,48.887,78.881
-    .subzone 2837 >> Go down the other set of stairs into the Master's Cellar
+    .subzone 2837 >>沿另一组楼梯下楼，进入麦迪文的酒窖
 step
     #label Reading2
     .goto Deadwind Pass,54.56,82.09,25,0
     .goto Deadwind Pass,53.200,90.211
-    .use 24474 >> |cRXP_WARN_Use the|r |T134075:0|t[Violet Scrying Crystal] |cRXP_WARN_next to the|r |cRXP_PICK_Underground Well|r
+    .use 24474 >>|cRXP_WARN_站在|r|cRXP_PICK_地下水井|r|cRXP_WARN_旁使用|r |T134075:0|t[紫罗兰占卜水晶]
     .complete 9824,1 -- Underground Well Reading (1)
 step
     #loop
@@ -107,7 +107,7 @@ step
 step
     .isOnQuest 9831
     .goto Terokkar Forest,39.634,73.553
-    .subzone 3789 >> |cRXP_WARN_Find a group for the Shadow Labyrinth dungeon in Terokkar Forest. Once you have found a group, zone into the Shadow Labyrinth|r
+    .subzone 3789 >>|cRXP_WARN_在泰罗卡森林寻找一个暗影迷宫地下城队伍。找到队伍后，进入暗影迷宫|r
 step
     .isOnQuest 9831
     >>|cRXP_WARN_After you kill |cRXP_ENEMY_Murmur|r, open the |cRXP_PICK_Arcane Container|r on the ground to spawn the|r |cRXP_ENEMY_第一块碎片的守护者|r
@@ -124,7 +124,7 @@ step
     .accept 9832 >>接受任务《物归己用》 第二块和第三块
     .target 卡德加
 step
-    >>You must now run the Steamvault and the Arcatraz. It does not matter which you do first
+    >>你现在必须完成蒸汽地窟和禁魔监狱。这两个副本先打哪一个都可以
     >>Once 对话，NPC在里面 either dungeon, open the |cRXP_PICK_Arcane Container|r to spawn the |cRXP_ENEMY_Fragment Guardian|r
     >>消灭那些试图阻止仪式的 |cRXP_ENEMY_Fragment Guardian|r。拾取他们的 |cRXP_LOOT_Second Key Fragment|r 和 |cRXP_LOOT_Third Key Fragment|r
     .complete 9832,1 -- Second Key Fragment (1) The Steamvault
@@ -143,13 +143,13 @@ step
 step
     #optional
     .isQuestAvailable 10284
-    +|cRXP_WARN_You must now complete the Black Morass, however in order to enter the Black Morass, you must complete the quest Escape from Durnholde by completing the Old Hillsbrad dungeon in Caverns of Time|r
+    +|cRXP_WARN_你现在必须完成黑色沼泽。不过要进入黑色沼泽，你必须先完成任务 逃离敦霍尔德，也就是在时光之穴中完成旧希尔斯布莱德丘陵副本|r
 step
     .isOnQuest 9836
     .goto Tanaris,57.270,62.872
-    .subzone 2300 >> |cRXP_WARN_Find a group for the Black Morass dungeon. Once you have found a group, zone into the Black Morass|r
+    .subzone 2300 >>|cRXP_WARN_寻找一个黑色沼泽地下城队伍。找到队伍后，进入黑色沼泽|r
 step
-    >>Complete the Black Morass
+    >>完成副本黑色沼泽
     >>|cRXP_WARN_Ensure you are standing beside |cRXP_FRIENDLY_麦迪文|r once you have killed|r |cRXP_ENEMY_埃欧努斯|r
     .complete 9836,1
 step
@@ -168,27 +168,27 @@ step
     .target 卡德加
 step
     .isQuestTurnedIn 9837
-    +|cRXP_WARN_Congratulations! You are now attuned for Karazhan|r
+    +|cRXP_WARN_恭喜你卡拉赞开门成功！|r
 ]])
 
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
-#name 2. Serpentshrine Cavern
-#title Serpentshrine Cavern
+#name 2. 毒蛇神殿
+#title 毒蛇神殿
 
 step
     #completewith next
     .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir enterance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
-    .subzone 3717 >> |cRXP_WARN_Find a group for HEROIC: Slave Pens in Zangarmarsh. Once you have found a group, zone into the Slave Pens|r
+    .subzone 3717 >>|cRXP_WARN_在赞加沼泽寻找一个英雄难度：奴隶围栏的队伍。找到队伍后，进入奴隶围栏|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_异教徒斯卡希斯|r 对话 
     .accept 10901 >>接受任务《物归己用》 卡达什圣杖
     .target 异教徒斯卡希斯
 step
-    >>|cRXP_WARN_Find raids for both Gruul the Dragonslayer and Karazhan|r
+    >>|cRXP_WARN_寻找屠龙者格鲁尔和卡拉赞的团队|r
     >>击杀 |cRXP_ENEMY_格鲁尔|r. Loot him for the |cRXP_LOOT_Earthen Signet|r
     >>击杀 |cRXP_ENEMY_Nightbane|r。拾取他的 |cRXP_LOOT_Blazing Signet|r
     .complete 10901,1 -- Earthen Signet (1)
@@ -201,15 +201,15 @@ step
     .target 异教徒斯卡希斯
 step
     .isQuestTurnedIn 10901
-    +|cRXP_WARN_Congratulations! You are now attuned for Serpentshrine Cavern|r
+    +|cRXP_WARN_恭喜！你现在已经完成毒蛇神殿的进入资格任务|r
 ]])
 
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
-#name 3. Tempest Keep
-#title Tempest Keep
+#name 3. 风暴要塞
+#title 风暴要塞
 
 step
     #completewith next
@@ -447,7 +447,7 @@ step
     .goto Shadowmoon Valley,43.7,60.7,55,0
     .goto Shadowmoon Valley,46.1,59.2,55,0
     >>拾取散发绿光的 |cRXP_PICK_Rotten Arakkoa Eggs|r on the ground
-    >>|cRXP_WARN_Be careful because they can damage you upon looting|r
+    >>|cRXP_WARN_小心，因为在拾取时它们会对你造成伤害|r
     .complete 10547,1 --Collect Rotten Arakkoa Egg (x1)
 step
     #completewith next
@@ -577,9 +577,9 @@ step
     .accept 10886 >>接受任务《物归己用》 纳鲁的试炼：坚韧
     .target 阿达尔
 step
-    >>|cRXP_WARN_You now have the 3 Trial quests. These quests all require to be completed while running the dungeons on HEROIC difficulty|r
-    >>|cRXP_WARN_The dungeons you must complete are: Shattered Halls, Steamvaults, Arcatraz and the Shadow Labyrinth|r
-    >>Complete Shattered Halls within 55 minutes after killing |cRXP_ENEMY_Grand Warlock Nethekurse|r. You must kill the |cRXP_ENEMY_Shattered Hand Executioner|r at the end of the dungeon within the time limit. Loot him for the |cRXP_LOOT_Unused Axe of the Executioner|r
+    >>|cRXP_WARN_你现在已经接到了 3 个试炼任务。这些任务都必须在英雄难度的地下城中完成|r
+    >>|cRXP_WARN_你必须完成的地下城有：破碎大厅、蒸汽地窟、禁魔监狱和暗影迷宫|r
+    >>在击杀 |cRXP_ENEMY_高阶术士奈瑟库斯|r 后的 55 分钟内完成破碎大厅。你必须在时限内击杀副本末尾的 |cRXP_ENEMY_碎手刽子手|r，并拾取他的 |cRXP_LOOT_未使用的刽子手之斧|r
     >>击杀 |cRXP_ENEMY_Warlord Kalithresh|r in the Steamvaults. 拾取地上的 him for |cRXP_LOOT_Kalithresh's Trident|r
     >>击杀 |cRXP_ENEMY_Murmur|r in the Shadow Labyrinth. 拾取地上的 him for |cRXP_LOOT_Murmur's Essence|r
     >>Complete the Arcatraz. Ensure |cRXP_FRIENDLY_米尔豪斯·法力风暴|r stays alive after defeating the final boss, |cRXP_ENEMY_Harbinger Skyriss|r
@@ -605,15 +605,15 @@ step
     .target 阿达尔
 step
     .isQuestTurnedIn 10888
-    +|cRXP_WARN_Congratulations! You are now attuned for The Eye: Tempest Keep|r
+    +|cRXP_WARN_恭喜！你现在已经完成风暴要塞：风暴之眼的进入资格任务|r
 ]])
 
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
-#name 4. Mount Hyjal
-#title Mount Hyjal
+#name 4. 海加尔山
+#title 海加尔山
 
 step
     #completewith next
@@ -634,7 +634,7 @@ step
     .complete 10445,2 -- Kael's Vial Remnant (1)
 step
     #completewith next
-    .goto Tanaris,65.669,49.940,50 >> Return to the Caverns of Time
+    .goto Tanaris,65.669,49.940,50 >>返回时光之穴
     .subzoneskip 1941
 step
     #loop
@@ -646,15 +646,15 @@ step
     .target 索莉多米
 step
     .isQuestTurnedIn 10445
-    +|cRXP_WARN_Congratulations! You are now attuned for Mount Hyjal|r
+    +|cRXP_WARN_恭喜！你现在已经完成海加尔山的进入资格任务|r
 ]])
 
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
 #group RXP 燃烧的远征 团本前置任务
-#name 5. Black Temple
-#title Black Temple
+#name 5. 黑暗神殿
+#title 黑暗神殿
 
 step
 #aldor
@@ -863,7 +863,7 @@ step
     .goto Shadowmoon Valley,71.597,35.508
     >>|cRXP_WARN_Kill the three |cRXP_ENEMY_Shadowmoon Soulstealers|r to make |cRXP_ENEMY_暗影领主达斯维尔|r land on the ground|r
     >>击杀 |cRXP_ENEMY_暗影领主达斯维尔|r。拾取他的 |cRXP_LOOT_愤怒之心|r
-    >>|cRXP_WARN_It is recommended you complete this with a full group including a tank and healer|r
+    >>|cRXP_WARN_建议你在包含坦克和治疗的完整队伍中完成此内容|r
     .complete 10707,1 -- Heart of Fury (1)
     .mob 暗影领主达斯维尔
 step
@@ -885,7 +885,7 @@ step
 	.target 阿达尔
 step
     #completewith next
-    .subzone 3607 >> |cRXP_WARN_Enter the Serpentshrine Cavern raid. You must defeat the boss |cRXP_ENEMY_Fathom-Lord Karathress|r, then talk to |cRXP_FRIENDLY_Seer Olum|r who is located behind him|r
+    .subzone 3607 >>|cRXP_WARN_进入毒蛇神殿团队副本。你必须击败首领 |cRXP_ENEMY_深水领主卡拉瑟雷斯|r，然后与位于其身后的 |cRXP_FRIENDLY_先知奥鲁姆|r 对话|r
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Seer Olum|r
     .accept 10944 >>接受任务《物归己用》 危险的秘密
@@ -946,7 +946,7 @@ step
 step
     .goto Shadowmoon Valley,65.233,43.956
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克希利|r
-    >>|cRXP_WARN_If you are in a group, ensure other party members have turned in before accepting the next quest. Auto accept has been turned off for this step|r
+    >>|cRXP_WARN_如果你在队伍中，确保其他队员已经交付任务后再接受下一个任务。本步骤已关闭自动接受|r
     .turnin 10949 >>交任务《 前往熔光镇》 进入黑暗神殿
     .accept 10985,1 >>接受任务《物归己用》 帮助阿卡玛
     .target 克希利
@@ -965,5 +965,5 @@ step
     .target 克希利
 step
     .isQuestTurnedIn 10985
-    +|cRXP_WARN_Congratulations! You are now attuned for Black Temple|r
+    +|cRXP_WARN_恭喜！你现在已经完成黑暗神殿的进入资格任务|r
 ]])

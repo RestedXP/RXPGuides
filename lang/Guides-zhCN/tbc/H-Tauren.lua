@@ -5,17 +5,17 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
-#name 1-6 Mulgore
+#name 1-6 莫高雷
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Tauren
-#next 6-10 Mulgore
+#next 6-10 莫高雷
 
 
 step << !Tauren
     #completewith next
     .goto Mulgore,44.92,77.12
-    +|cRXP_WARN_You have selected a guide meant for Tauren. This zone will NOT work well for you due to missing one of the main questlines that are gated for Tauren only. It is recommended you choose the same starter zone that you start in|r
+    +|cRXP_WARN_你选择的是为牛头人准备的攻略。由于缺少仅对牛头人开放的主线任务之一，这个区域并不适合你。建议你选择与你起始区域相同的初始区域攻略|r
 step
     .goto Mulgore,44.92,77.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Grull|r
@@ -129,7 +129,7 @@ step
     #label RitesoftheEarthmother
     .goto Mulgore,42.58,92.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_灰舌先知|r
-    >>|cRXP_WARN_Grind mobs on the way|r
+    >>|cRXP_WARN_途中击杀怪物升级|r
     .turnin 755 >>交任务《 前往熔光镇》 大地母亲的仪式
     .accept 757 >>接受任务《物归己用》 力量仪祭
     .target 灰舌先知
@@ -224,7 +224,7 @@ step << Druid
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gart|r
     .turnin 3094 >>交任务《 前往熔光镇》 绿色便笺
-    .train 8921 >> Train |T136096:0|t[Moonfire]
+    .train 8921 >>学习 |T136096:0|t[月火术]
     .target 加尔特·迷雾行者
 step << Shaman
     .goto Mulgore,44.73,76.18
@@ -258,7 +258,7 @@ step
     .mob 斗猪
 step
     #completewith BristlebackBelts
-    .goto Mulgore,59.67,83.33,30 >>Travel through the cave
+    .goto Mulgore,59.67,83.33,30 >>穿过洞穴前进
 step
     #completewith DirtyMap
     >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r。拾取他们的 |cRXP_LOOT_Belts|r
@@ -274,7 +274,7 @@ step
     .goto Mulgore,62.35,81.27,35,0
     .goto Mulgore,62.49,78.78,35,0
     .goto Mulgore,64.71,77.67
-    >>Kill |cRXP_ENEMY_Chief Sharptusk Thornmantle|r inside the big hut. Loot him for his |cRXP_LOOT_Head|r
+    >>在大帐篷内击杀 |cRXP_ENEMY_刺鬃酋长|r。拾取他的 |cRXP_LOOT_头颅|r
     .complete 3376,1 --Chief Sharptusk Thornmantle's Head (1)
     .mob 锋牙·刺鬃酋长
 step
@@ -283,7 +283,7 @@ step
 step
     #label DirtyMap
     .goto Mulgore,63.24,82.70
-    >>Loot the |T134269:0|t[|cRXP_LOOT_Dirt-stained Map|r] on the ground. Use it to start the quest
+    >>拾取地上的 |T134269:0|t[|cRXP_LOOT_沾满泥土的地图|r]。使用它以开始任务
     .collect 4851,1,781 --Collect Dirt-Stained Map
     .accept 781 >>接受任务《物归己用》 纳拉其营地的危机
     .use 4851
@@ -394,7 +394,7 @@ step << Shaman
 step << Hunter
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Lanka|r
-    .train 1130 >>Train |T132212:0|t[Hunter's Mark]
+    .train 1130 >>训练 |T132212:0|t[猎人印记]
     .train 3044 >>训练 |T132218:0|t[奥术射击]
     .target 兰卡·远箭
     .money <0.02
@@ -408,7 +408,7 @@ step << Hunter
 step << Druid
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gart|r
-    .train 467 >>Train |T136104:0|t[Thorns]
+    .train 467 >>学习 |T136104:0|t[荆棘术]
     .train 5177 >>Train |T136006:0|t[愤怒]
     .target 加尔特·迷雾行者
     .money <0.02
@@ -423,7 +423,7 @@ step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Harutt|r
     .train 3127 >>Train |T132269:0|t[招架]
-    .train 6343 >>Train |T136105:0|t[Thunder Clap]
+    .train 6343 >>学习 |T136105:0|t[雷霆一击]
     .target 哈鲁特·雷角
     .money <0.02
 step << Warrior
@@ -447,12 +447,12 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
-#name 6-10 Mulgore
+#name 6-10 莫高雷
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Tauren
-#next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
-#next 10-13 Mulgore << Warrior/Shaman
+#next 10-20 永歌森林 / 幽魂之地 << !Warrior !Shaman
+#next 10-13 莫高雷 << Warrior/Shaman
 
 step
     #softcore
@@ -540,7 +540,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_肯纳|r |cRXP_BUY_对话|r
     >>|cRXP_BUY_Buy|r |T132384:0|t[轻弹丸]|cRXP_BUY_from him|r << Hunter
     .collect 2516,1000,750,1 << Hunter --Light Shot (1000)
     .target 肯纳·鹰眼
@@ -598,7 +598,7 @@ step << !Tauren
 step
     #sticky
     #completewith Well
-    >>|cRXP_WARN_Get the items for Mazzranache as you quest throughout the zone|r
+    >>|cRXP_WARN_在该区域做任务的过程中收集 马兹拉纳其 所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -626,7 +626,7 @@ step
     .goto Mulgore,51.92,63.85,15,0
     .goto Mulgore,51.13,71.06,15,0
     >>收集地上的 the |cRXP_PICK_Ambercorns|r
-    >>|cRXP_WARN_They can be found under the trees on the ground|r
+    >>|cRXP_WARN_它们可以在树下的地面上找到|r
     .complete 771,2 --Ambercorn (2)
 step
 	#completewith next
@@ -679,7 +679,7 @@ step << !Tauren
 step << Tauren
     #completewith next
     .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
-    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    >>|cRXP_WARN_他会沿顺时针方向绕着血蹄村巡逻|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
 step << Tauren
@@ -709,7 +709,7 @@ step
     .complete 771,1 --Well Stone (2)
 step
     #completewith Gnolls
-    >>|cRXP_WARN_Get the items for Mazzranache as you quest throughout the zone|r
+    >>|cRXP_WARN_在该区域做任务的过程中收集 马兹拉纳其 所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -733,7 +733,7 @@ step
 step
     #completewith KyleFed
     .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
-    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    >>|cRXP_WARN_他会沿顺时针方向绕着血蹄村巡逻|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
 step
@@ -840,7 +840,7 @@ step
     #label Vision
     .goto Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Zarlman|r
-    >>|cRXP_WARN_Do not follow the wolf that spawns|r
+    >>|cRXP_WARN_不要跟随刷新的那只狼|r
     .turnin 771 >>交任务《 前往熔光镇》 幻象仪祭
     .accept 772 >>接受任务《物归己用》 幻象仪祭
     .target 扎尔曼·双月
@@ -879,7 +879,7 @@ step
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
     .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
-    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    >>|cRXP_WARN_他会沿顺时针方向绕着血蹄村巡逻|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
 step
@@ -897,12 +897,12 @@ step
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .accept 749 >>接受任务《物归己用》 被破坏的货车
 	.unitscan 摩林·云行者
 step
     #completewith Clawsx
-    >>|cRXP_WARN_Get the items for Mazzranache as you quest throughout the zone|r
+    >>|cRXP_WARN_在该区域做任务的过程中收集 马兹拉纳其 所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1007,7 +1007,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Loorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_洛拉特|r |cRXP_BUY_对话|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target 姆拉特·远行
     .itemcount 2512,<800 << Hunter
@@ -1093,7 +1093,7 @@ step
     .isQuestAvailable 746
 step
     #completewith Burial
-    >>|cRXP_WARN_Finish getting the items for Mazzranache|r
+    >>|cRXP_WARN_完成收集马兹拉纳其所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1112,7 +1112,7 @@ step << Tauren
 step
     .goto Mulgore,31.27,49.87
     >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r and |cRXP_ENEMY_巴尔丹鉴定官|r. Loot them for their |T134707:0|t[|cRXP_LOOT_Prospector's Picks|r]
-    .use 4702 >> |cRXP_WARN_Smash the|r |T134707:0|t[|cRXP_LOOT_Prospector's Picks|r] |cRXP_WARN_at the|r |cRXP_PICK_Forge|r
+    .use 4702 >>|cRXP_WARN_在|r |cRXP_PICK_熔炉|r |cRXP_WARN_处敲碎|r |T134707:0|t[|cRXP_LOOT_勘察员的锄头|r]
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_巴尔丹鉴定官|r cast|r |T135929:0|t[Lesser Heal] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% health for about 75 health)|r
     .collect 4702,5,746,7,3
     .complete 746,1 --Broken Tools (5)
@@ -1152,14 +1152,14 @@ step
     .destroy 4823 >>|cRXP_WARN_删除|r |T134712:0|t[Water of the Seers] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #completewith SacredBurial
-    >>|cRXP_WARN_Finish getting the items for Mazzranache|r
+    >>|cRXP_WARN_完成收集马兹拉纳其所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
     #completewith SacredBurial
-    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
+    >>留意 |cRXP_ENEMY_鬼嚎|r。拾取他掉落的 |T134358:0|t[|cRXP_LOOT_恶魔之伤|r]，并使用它以开始任务
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_鬼嚎|r is difficult due to being 等级 12|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>接受任务《物归己用》 恶魔之伤
@@ -1220,7 +1220,7 @@ step
     .target 博学者诺拉·暴雨图腾
 step
     #completewith next
-    >>|cRXP_WARN_Finish getting the items for Mazzranache|r
+    >>|cRXP_WARN_完成收集马兹拉纳其所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1268,7 +1268,7 @@ step
 	.goto Mulgore,57.77,30.48,60,0
 	.goto Mulgore,58.79,28.52,60,0
 	.goto Mulgore,60.56,25.88,60,0
-    >>|cRXP_WARN_Finish getting the items for Mazzranache|r
+    >>|cRXP_WARN_完成收集马兹拉纳其所需的物品|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
@@ -1441,10 +1441,10 @@ step
 step
     #optional
     #completewith AlphaTeeth
-    .destroy 4702 >> |cRXP_WARN_Delete the|r |T134707:0|t[Prospector's Picks] |cRXP_WARN_from your bags, as they're no longer needed|r
+    .destroy 4702 >>|cRXP_WARN_从你的背包中删除|r |T134707:0|t[勘察员的锄头] |cRXP_WARN_，因为已经不再需要|r
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_肯纳|r |cRXP_BUY_对话|r
     >>|cRXP_BUY_Buy|r |T132384:0|t[重弹丸]|cRXP_BUY_from him|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
     .target 肯纳·鹰眼
@@ -1523,7 +1523,7 @@ step << Hunter
     .goto Mulgore,45.41,40.29,80,0
     .goto Mulgore,51.57,44.40,80,0
     .use 15916 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_飞飞|r |cRXP_WARN_at max range and re-cast it immediately if they knock you down|r
-    >>|cRXP_WARN_If you fail and run out of Taming Rod Charges, abandon the quest, then pick it up again and come back|r
+    >>|cRXP_WARN_如果你失败并用完了驯兽棒的充能次数，放弃任务后重新接取，再回来尝试|r
     .complete 6088,1 --Tame a Swoop (1)
     .mob 猛鹫
 step << Hunter
@@ -1558,7 +1558,7 @@ step << Warrior/Shaman
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .turnin 751 >>交任务《 前往熔光镇》 被破坏的货车
     .accept 764 >>接受任务拯救行动 Co
     .accept 765 >>接受任务《物归己用》 菲兹普罗克主管
@@ -1573,7 +1573,7 @@ step << !Warrior !Shaman
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .turnin 751 >>交任务《 前往熔光镇》 被破坏的货车
 	.unitscan 摩林·云行者
 step << Shaman/Warrior
@@ -1584,7 +1584,7 @@ step << Shaman/Warrior
 step << Hunter
     #completewith next
     .cast 1515 >>Tame a |cRXP_ENEMY_草原狼前锋|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_这将使你能够学习|r |T132140:0|t[爪击（等级 2）]
     .mob 草原狼前锋
 step
     #label AlphaTeeth
@@ -1628,13 +1628,13 @@ step
 step << !Druid
     .goto The Barrens,44.45,59.15
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Omusa|r
-    .fp Camp Taurajo >> Get the Camp Taurajo flight path
+    .fp Camp Taurajo >>获得陶拉祖营地的飞行点
 	.target 欧姆萨·雷角
     .isQuestAvailable 854
 step << Druid
     .goto The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Omusa|r
-    .fp Camp Taurajo >> Get the Camp Taurajo flight path
+    .fp Camp Taurajo >>获得陶拉祖营地的飞行点
     .fly Thunder Bluff >>飞往雷霆崖，莫高雷
     .target 欧姆萨·雷角
     .zoneskip Thunder Bluff
@@ -1737,8 +1737,8 @@ step << Tauren
     .target 基尔格·锐角
 step
     #completewith next
-    .subzone 380 >>Travel north toward The Crossroads
-    >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may agro high level mobs|r
+    .subzone 380 >>向北前往十字路口
+    >>|cRXP_WARN_务必沿着道路前进，否则可能会引到高等级怪物的仇恨|r
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tonga|r
@@ -1758,7 +1758,7 @@ step
 step
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
-    .fp The Crossroads >> Get the The Crossroads flight path
+    .fp The Crossroads >>获得十字路口的飞行点
     .target 迪弗拉克
     .isQuestAvailable 848,870
 step
@@ -1769,7 +1769,7 @@ step
 step
     #completewith next
     >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
-    >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
+    >>|cRXP_WARN_在采集蘑菇时尽量与|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_保持最大距离。他们的等级为 12-14 级|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
@@ -1783,7 +1783,7 @@ step
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
-    >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
+    >>|cRXP_WARN_在该区域内尽量与|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_保持最大距离。他们的等级为 12-14 级|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     #softcore
@@ -1809,16 +1809,16 @@ step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish|r
-    >>|cRXP_WARN_This starts a 45-minute timed quest|r
+    >>|cRXP_WARN_等待剧情事件结束|r
+    >>|cRXP_WARN_这将开启一个 45 分钟的限时任务|r
     .turnin 848 >>交任务《 前往熔光镇》 菌类孢子
-    .timer 7,Fungal Spores RP
+    .timer 7,菌类孢子 剧情
     .accept 853 >>接受任务《物归己用》 [DEPRECATED] 药剂师扎玛
     .target 药剂师赫布瑞姆
 step
     #sticky
     #completewith CauldronStirrer
-    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in around 5-10 minutes after pick-up|r
+    +|cRXP_WARN_你正在进行一个限时任务，不要离开键盘。该任务会在接取后约 5–10 分钟内交付完成|r
     .isOnQuest 853
 step
     .goto The Barrens,51.50,30.34
@@ -1846,7 +1846,7 @@ step << Warrior/Shaman
 step << Druid
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安塞瓦|r
-    .train 199 >>Train Two-Handed Maces
+    .train 199 >>训练 双手锤
     .target 安塞瓦
     .money <0.100
 step << Warrior/Hunter
@@ -1917,7 +1917,7 @@ step << !Warrior !Shaman
     .target 加翰·鹰翼
 step << !Shaman !Warrior
     #completewith ZeptoUC1
-    +|cRXP_WARN_Abandon any leftover quests you have|r
+    +|cRXP_WARN_放弃你当前剩余的所有任务|r
 step << !Shaman !Warrior
     #completewith next
     .zone Durotar >>前往暴风城大教堂内，与 Durotar
@@ -1933,7 +1933,7 @@ step << !Shaman !Warrior
     .zoneskip Undercity
 step << !Shaman !Warrior
     #completewith PorttoSilvermoon
-    .goto Undercity,62.0,11.3,18 >>Go up the stairs here
+    .goto Undercity,62.0,11.3,18 >>从这里上楼梯
 step << !Shaman !Warrior
     #label PorttoSilvermoon
     .goto Undercity,54.9,11.3
@@ -1953,11 +1953,11 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
-#name 10-13 Mulgore
+#name 10-13 莫高雷
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Tauren
-#next 13-18 The Barrens
+#next 13-18 贫瘠之地
 
 step
     .goto Thunder Bluff,60.0,51.7
@@ -1972,7 +1972,7 @@ step
 step
     #sticky
     #completewith ThunderBluff
-    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
+    >>留意 |cRXP_ENEMY_鬼嚎|r。拾取他掉落的 |T134358:0|t[|cRXP_LOOT_恶魔之伤|r]，并使用它以开始任务
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>接受任务《物归己用》 恶魔之伤
     .use 4854
@@ -2007,8 +2007,8 @@ step
     .goto Mulgore,48.6,16.1,90,0
     .goto Mulgore,51.8,33.8,90,0
     .goto Mulgore,56.2,32.9,90,0
-    >>Kill |cRXP_ENEMY_Arra'Chea|r (Big black kodo). Kill and loot him for his |cRXP_LOOT_Horn|r
-    >>|cRXP_WARN_He patrols clockwise around northern Mulgore|r
+    >>击杀 |cRXP_ENEMY_阿兰其亚|r（大型黑色科多兽）。击杀并拾取他的 |cRXP_LOOT_角|r
+    >>|cRXP_WARN_他会沿顺时针方向在莫高雷北部巡逻|r
     .complete 776,1 --Horn of Arra'chea (1)
     .unitscan 阿兰其亚
 step
@@ -2090,7 +2090,7 @@ step << Hunter
     .xp <12,1
 step << Hunter
     .goto Mulgore,45.50,58.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_肯纳|r |cRXP_BUY_对话|r
     >>|cRXP_BUY_Buy|r |T132384:0|t[重弹丸]|cRXP_BUY_from him|r << Hunter
     .collect 2519,1000,764,1 << Hunter --Heavy Shot (1000)
     .target 肯纳·鹰眼
@@ -2108,9 +2108,9 @@ step
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
-    .accept 764 >>Accept in The Venture Co.
-    .accept 765 >>Accept in Supervisor Fizsprocket
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
+    .accept 764 >>接受任务 风险投资公司
+    .accept 765 >>接受任务 菲兹普罗克主管
 	.unitscan 摩林·云行者
 step
     #completewith Fizsprocket
@@ -2126,15 +2126,15 @@ step
     #softcore
     #label Fizsprocket
     .goto Mulgore,64.95,43.33
-    >>Run into the mine and hug the right/east side. Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
+    >>跑进矿洞并贴着右侧（东侧）前进。击杀 |cRXP_ENEMY_工头菲兹斯普罗基特|r。拾取他的 |cRXP_LOOT_记事板|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob 菲兹普罗克主管
 step
     #hardcore
     #label Fizsprocket
     .goto Mulgore,64.95,43.33
-    >>Run into the mine and hug the right/east side. Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
-    >>|cRXP_WARN_Be very careful! It is easy too overpull in this mine and escape is difficult|r
+    >>跑进矿洞并贴着右侧（东侧）前进。击杀 |cRXP_ENEMY_工头菲兹斯普罗基特|r。拾取他的 |cRXP_LOOT_记事板|r
+    >>|cRXP_WARN_务必小心！这个矿洞里很容易引到过多敌人，而且脱身非常困难|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob 菲兹普罗克主管
 step
@@ -2173,7 +2173,7 @@ step
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .turnin 764 >>交任务《 前往熔光镇》 风险投资公司
     .turnin 765 >>交任务《 前往熔光镇》 菲兹普罗克主管
 	.unitscan 摩林·云行者
@@ -2209,7 +2209,7 @@ step
 step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Darsok|r
-    >>|cRXP_WARN_He is at the top of the tower|r
+    >>|cRXP_WARN_他在塔顶|r
     .accept 867 >>接受任务《物归己用》 鹰身强盗
     .target 达索克·快刀
 step
@@ -2232,7 +2232,7 @@ step
 step << Shaman
     #completewith next
     .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r from the ground 和 start the quest
-    >>|cRXP_WARN_If it's not up you'll get it later|r
+    >>|cRXP_WARN_如果现在没有刷新，之后再来获取即可|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >>接受任务《物归己用》 老陈的空酒桶
 step << Shaman
@@ -2253,8 +2253,8 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain to |cRXP_FRIENDLY_Telf|r
-    >>|cRXP_WARN_Be careful to not fall of the mountain, the path is very narrow. You could die if you fall|r
+    .goto Durotar,39.16,58.56,10 >>沿着山路向上前往 |cRXP_FRIENDLY_泰尔夫|r
+    >>|cRXP_WARN_注意不要从山上掉下去，路径非常狭窄，跌落可能会导致死亡|r
 step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93

@@ -40,7 +40,7 @@ step
     .target 麦利萨尔·鹿盔
 step << Hunter
     .goto Teldrassil,59.8,34.1
-    .xp 4-610 >> Grind en route until you are 610xp away from level 4 (790/1400)
+    .xp 4-610 >>沿途刷怪，直到距离 4 级还差 610 点经验（790/1400）
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r
@@ -49,7 +49,7 @@ step << Hunter
     .accept 3519 >>接受任务《物归己用》 需要帮助的朋友
 step << Hunter
     #completewith next
-    .hs >> Hearth to Shadowglen
+    .hs >>炉石返回影遁谷
 step << Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔琳德拉|r
@@ -102,7 +102,7 @@ step << !Hunter
     .accept 3519 >>接受任务《物归己用》 需要帮助的朋友
 step << !Hunter
     #completewith next
-    .hs >> Hearth to Shadowglen
+    .hs >>炉石返回影遁谷
 step << !Hunter
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔琳德拉|r
@@ -130,13 +130,13 @@ step
     .goto Teldrassil,57.807,41.653
     .target 基尔沙兰·风行者
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔沙兰·踏风|r
-    .accept 916 >> Accept Webwood Venom
+    .accept 916 >>接受任务 树林蜘蛛的毒囊
 step << Hunter
     .xp 4-40
 step << Hunter
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.659,40.449
-    >>Ascend the Aldrassil Tree
+    >>爬上奥达希尔之树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿亚娜·远途|r
     .turnin 3117 >>交任务《 前往熔光镇》 风化符记
     .train 1978 >>Train |T132204:0|t[毒蛇钉刺]
@@ -196,7 +196,7 @@ step << Warrior
     .target 奥莉希亚
 step << Priest
     #completewith next
-    .goto Teldrassil,59.89,41.67,10 >> Head up the ramp
+    .goto Teldrassil,59.89,41.67,10 >>沿坡道向上走
 step << Priest
     .goto Teldrassil,59.521,40.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_琳莱尔|r
@@ -213,17 +213,17 @@ step << Priest
 step
     .goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔沙兰·踏风|r
-    .turnin 916 >> Turn in Webwood Venom
+    .turnin 916 >>交任务 树林蜘蛛的毒囊
     .target 基尔沙兰·风行者
     .accept 917 >>接受任务《物归己用》 树林蜘蛛的卵
 step << Druid
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.626,40.287
-    >>Ascend the Aldrassil Tree
+    >>爬上奥达希尔之树
     .target 玛丹特·硬木
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛丹特·硬木|r
 	.turnin 3120 >>交任务《 前往熔光镇》 绿色符记
-    .train 8921 >> Train |T136096:0|t[Moonfire]
+    .train 8921 >>学习 |T136096:0|t[月火术]
 step
     .goto Teldrassil,54.593,32.992
     .target 埃沃隆
@@ -248,7 +248,7 @@ step
 step
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,59.062,39.448
-    >>Ascend the Aldrassil Tree
+    >>爬上奥达希尔之树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特纳隆·雷拳|r
     .turnin 920 >>交任务《 前往熔光镇》 特纳隆的召唤
     .target 特纳隆·雷拳
@@ -257,7 +257,7 @@ step
     #sticky
     #label vial1
     .goto Teldrassil,59.9,33.0
-	.use 5185 >> |cRXP_WARN_Use the|r |T134776:0|t[Crystal Phial] |cRXP_WARN_at the Moonwell|r
+	.use 5185 >>|cRXP_WARN_在月亮井使用|r |T134776:0|t[水晶瓶] |cRXP_WARN_|r
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter
     .goto Teldrassil,59.8,34.1
@@ -286,7 +286,7 @@ step
     #requires vial1
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,59.062,39.448
-    >>Ascend the Aldrassil Tree
+    >>爬上奥达希尔之树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特纳隆·雷拳|r
     .turnin 921 >>交任务《 前往熔光镇》 泰达希尔：传递信息
     .target 特纳隆·雷拳
@@ -328,7 +328,7 @@ step
 step
 	#completewith DenlansEarth
     >>击杀 |cRXP_ENEMY_树林潜伏者|r 和 |cRXP_ENEMY_树林毒蜘蛛|r。拾取他们的 |cRXP_LOOT_Small Spider Legs|r
-    >>|cRXP_WARN_You need these for a later quest|r
+    >>|cRXP_WARN_你之后的任务会用到这些物品|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob 树林潜伏者
     .mob 树林毒蜘蛛
@@ -337,7 +337,7 @@ step
     .goto Teldrassil,56.08,57.72
     .target 塞拉尔·刃叶
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞拉尔·刃叶|r
-    >>|cRXP_WARN_Make sure you have 1 empty bagspace slot before accepting this quest|r
+    >>|cRXP_WARN_在接受这个任务前，确保你的背包里有 1 个空位|r
     .accept 997 >>接受任务《物归己用》 德纳兰的泥土
 step
     .goto Teldrassil,55.954,57.272
@@ -469,7 +469,7 @@ step
 step
 	#completewith DenlanStart
     >>击杀 |cRXP_ENEMY_树林潜伏者|r 和 |cRXP_ENEMY_树林毒蜘蛛|r。拾取他们的 |cRXP_LOOT_Small Spider Legs|r
-    >>|cRXP_WARN_You need these for a later quest|r
+    >>|cRXP_WARN_你之后的任务会用到这些物品|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob 树林潜伏者
     .mob 树林毒蜘蛛
@@ -556,7 +556,7 @@ step
 step
 	#completewith Starbreeze
     >>击杀 |cRXP_ENEMY_树林潜伏者|r 和 |cRXP_ENEMY_树林毒蜘蛛|r。拾取他们的 |cRXP_LOOT_Small Spider Legs|r
-    >>|cRXP_WARN_You need these for a later quest|r
+    >>|cRXP_WARN_你之后的任务会用到这些物品|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob 树林潜伏者
     .mob 树林毒蜘蛛
@@ -582,7 +582,7 @@ step
 step
 	#completewith SeekRedemption
     >>击杀 |cRXP_ENEMY_树林潜伏者|r 和 |cRXP_ENEMY_树林毒蜘蛛|r。拾取他们的 |cRXP_LOOT_Small Spider Legs|r
-    >>|cRXP_WARN_You need these for a later quest|r
+    >>|cRXP_WARN_你之后的任务会用到这些物品|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob 树林潜伏者
     .mob 树林毒蜘蛛
@@ -745,17 +745,17 @@ step << Druid
 step
 	#completewith jewel
     >>击杀 |cRXP_ENEMY_树林潜伏者|r 和 |cRXP_ENEMY_树林毒蜘蛛|r。拾取他们的 |cRXP_LOOT_Small Spider Legs|r
-    >>|cRXP_WARN_You need these for a later quest|r
+    >>|cRXP_WARN_你之后的任务会用到这些物品|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob 树林潜伏者
     .mob 树林毒蜘蛛
 step
     #loop
-    .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
-    .goto 1438/1,822.200,9948.500,6 >>On the small hill
-    .goto 1438/1,809.800,9926.400,6 >>Next to the massive tree
+    .goto 1438/1,854.400,9952.500,6 >>在一棵小树旁边
+    .goto 1438/1,822.200,9948.500,6 >>在小山丘上
+    .goto 1438/1,809.800,9926.400,6 >>在那棵巨大的树旁边
     >>拾取散发绿光的 3 felcones from the locations marked on your map.
-    >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
+    >>|cRXP_WARN_如果其中任何一个不在场且你无法完成目标，请跳过此步骤|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489
 step
@@ -768,7 +768,7 @@ step
 step
 	#completewith jewel
     >>拾取散发绿光的 |cRXP_LOOT_魔锥果|r on the ground
-    >>|cRXP_WARN_They are usually located next to tree trunks|r
+    >>|cRXP_WARN_它们通常位于树干旁边|r
     .complete 489,1 --Collect Fel Cone (x3)
     .isOnQuest 489
 step
@@ -798,7 +798,7 @@ step
     #label jewel
     .goto Teldrassil,56.2,60.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰诺尔·鹰月|r
-    .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
+    .vendor >>|cRXP_BUY_如有需要，出售物品并修理装备|r
     .target 布兰诺尔·鹰月
     .isQuestTurnedIn 489
 step
@@ -809,7 +809,7 @@ step
     .goto Teldrassil,63.6,62.3,50,0
     .goto Teldrassil,58.7,55.7,50,0
     >>拾取散发绿光的 |cRXP_LOOT_魔锥果|r on the ground
-    >>|cRXP_WARN_They are usually located next to tree trunks|r
+    >>|cRXP_WARN_它们通常位于树干旁边|r
     .complete 489,1 --Collect Fel Cone (x3)
     .isOnQuest 489
 step
@@ -824,7 +824,7 @@ step
     .goto Teldrassil,54.42,51.19,15 >>前往暴风城大教堂内，与 Fel Rock
 step
     .goto Teldrassil,51.2,50.6
-    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_迈雷纳斯|r。拾取他的 |cRXP_LOOT_头颅|r
     >>|cRXP_ENEMY_迈雷纳斯|r may be located in many different spawn locations throughout Fel Rock
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan 迈雷纳斯
@@ -840,7 +840,7 @@ step << !Druid
 step
 	#completewith spiderLegs
     >>击杀 |cRXP_ENEMY_树林潜伏者|r 和 |cRXP_ENEMY_树林毒蜘蛛|r。拾取他们的 |cRXP_LOOT_Small Spider Legs|r
-    >>|cRXP_WARN_You need these for a later quest|r
+    >>|cRXP_WARN_你之后的任务会用到这些物品|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob 树林潜伏者
     .mob 树林毒蜘蛛
@@ -857,7 +857,7 @@ step
 step
 	#label spiderLegs
 	.goto Teldrassil,42.41,67.07
-    .use 5621 >>|cRXP_WARN_Use the|r |T134765:0|t[Tourmaline Phial] |cRXP_WARN_at the Pools of Arlithrien moonwell|r
+    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井使用|r |T134765:0|t[红玉瓶] |cRXP_WARN_|r
 	.complete 933,1
 step
     .goto Teldrassil,44.69,70.52,40,0
@@ -869,7 +869,7 @@ step
 step
 	#completewith next
     .goto Teldrassil,43.50,68.42
-    .deathskip >> Die and respawn at the Dolanaar graveyard, make sure to die east of the moonwell, otherwise you might end up in Darnassus
+    .deathskip >>死亡并在多兰纳尔墓地复活，务必在月亮井以东死亡，否则你可能会被送到达纳苏斯
 step
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞萨斯·月怒|r
@@ -899,7 +899,7 @@ step
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_在多兰纳尔以西的道路上巡逻。她也可能正在与熊怪伏击战斗，如果是这样，你需要等她战斗结束|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .accept 487 >>接受任务《物归己用》 达纳苏斯之路
     .target 哨兵阿玛拉·夜行者
@@ -913,7 +913,7 @@ step << Druid
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_在多兰纳尔以西的道路上巡逻。她也可能正在与熊怪伏击战斗，如果是这样，你需要等她战斗结束|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .turnin 487 >>交任务《 前往熔光镇》 达纳苏斯之路
     .target 哨兵阿玛拉·夜行者
@@ -947,7 +947,7 @@ step
 step
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密斯特|r
-    >>|cRXP_WARN_This will start an escort quest. Skip this quest if the NPC is not there|r
+    >>|cRXP_WARN_这将开启一个护送任务。如果该 NPC 不在场，请跳过这个任务|r
     .accept 938 >>接受任务《物归己用》 密斯特
     .target 雾气
 step
@@ -955,7 +955,7 @@ step
     .goto Teldrassil,38.32,34.36
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r
-    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
+    >>|cRXP_WARN_请注意这是一个限时任务，你需要在接受后的 9 分钟内完成并交付|r
     .turnin 938 >>交任务《 前往熔光镇》 密斯特
 step
     .goto Teldrassil,33.619,29.819
@@ -986,7 +986,7 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r
     .turnin 922 >>交任务《 前往熔光镇》 雷利亚·绿树
     .target 雷利亚·绿树
-    .accept 923 >> Accept Tumors
+    .accept 923 >>接受任务 青苔之瘤
 step << !Rogue
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_大德鲁伊范达尔·鹿盔|r atop the Tree
@@ -1027,7 +1027,7 @@ step << Druid
 	#completewith next
 	.cast 18960 >>|cRXP_WARN_施放|r |T135758:0|t[传送：月光林地]
     .usespell 18960
-    >>|cRXP_WARN_This will make you return faster|r
+    >>|cRXP_WARN_这样可以让你更快返回|r
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 交谈
@@ -1092,7 +1092,7 @@ step << !Rogue
 step << Hunter
     .goto Teldrassil,62.6,72.2
     .use 15922 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_夜刃捕食者|r
-    >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
+    >>|cRXP_WARN_在驯服新的宠物之前，你必须右键点击宠物框体并解散你的宠物|r
     .complete 6101,1 --Tame a Nightsaber Stalker
     .mob 夜刃捕食者
 step << !Rogue
@@ -1107,7 +1107,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,64.7,66.7
     .use 15923 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_巨翼恶枭|r
-    >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
+    >>|cRXP_WARN_在驯服新的宠物之前，你必须右键点击宠物框体并解散你的宠物|r
     .complete 6102,1 --Tame a Strigid Screecher
     .mob 巨翼恶枭
 step << Hunter
@@ -1116,13 +1116,13 @@ step << Hunter
     .turnin 6102 >>交任务《 前往熔光镇》 驯服野兽
     .target 达扎拉
     .accept 6103 >>接受任务《物归己用》 训练野兽
-    .train 1130 >> |cRXP_WARN_Make sure you have trained Hunter's Mark. You will need it to get a rune soon|r
+    .train 1130 >>|cRXP_WARN_确保你已经学习了猎人印记。你很快会需要它来获取一个符文|r
 step << !Druid
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_在多兰纳尔以西的道路上巡逻。她也可能正在与熊怪伏击战斗，如果是这样，你需要等她战斗结束|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .turnin 487 >>交任务《 前往熔光镇》 达纳苏斯之路
     .target 哨兵阿玛拉·夜行者
@@ -1133,7 +1133,7 @@ step << Hunter
 	.goto Teldrassil,45.6,31.4,0
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_巨翼猎枭|r to tame it|r -- .tame 1997
-    .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
+    .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step << Rogue
@@ -1169,7 +1169,7 @@ step << Rogue
     .accept 2241 >>接受任务《物归己用》 詹诺克的花
 	.trainer >>训练你的职业技能
     .train 5171 >>训练 |T132306:0|t[切割]
-    .train 921 >> Train |T133644:0|t[Pick Pocket] as well which is needed for your level 10 Rogue quest
+    .train 921 >>同时学习 |T133644:0|t[偷窃]，这是你 10 级潜行者任务所必需的
     .target 詹诺克·柔歌
 step << Rogue
     #label RogueRoad
@@ -1177,20 +1177,20 @@ step << Rogue
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
+    >>|cRXP_FRIENDLY_哨兵阿玛拉·夜行者|r |cRXP_WARN_在多兰纳尔以西的道路上巡逻。她也可能正在与熊怪伏击战斗，如果是这样，你需要等她战斗结束|r
     .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
     .turnin 487 >>交任务《 前往熔光镇》 达纳苏斯之路
     .target 哨兵阿玛拉·夜行者
 step << Rogue
     #completewith TotM
     .goto Teldrassil,44.0,54.6
-    .deathskip >>Once you get past the furbolg area, die on purpose and respawn at the Darnassus graveyard
+    .deathskip >>通过熊怪区域后，故意死亡并在达纳苏斯墓地复活
 step << Rogue
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r
     .turnin 922 >>交任务《 前往熔光镇》 雷利亚·绿树
     .target 雷利亚·绿树
-    .accept 923 >> Accept Tumors
+    .accept 923 >>接受任务 青苔之瘤
 step << Rogue
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_大德鲁伊范达尔·鹿盔|r atop the Tree
@@ -1202,7 +1202,7 @@ step << Rogue
     .goto Darnassus,31.21,17.72,8,0
     .goto Darnassus,36.99,21.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞尤娜|r
-    >>|cRXP_WARN_Head down into the Cenarion Enclave|r
+    >>|cRXP_WARN_前往塞纳里奥区内部|r
     .turnin 2241 >>交任务《 前往熔光镇》 詹诺克的花
     .target 塞尤娜
     .accept 2242 >>接受任务《物归己用》 命运的召唤
@@ -1234,7 +1234,7 @@ step
     .goto Teldrassil,37.9,25.1,30,0
     .goto Teldrassil,40.7,25.4,30,0
     .line Teldrassil,41.70,41.82,41.97,39.03,42.20,35.71,43.33,33.27,43.79,30.65,44.18,27.80,46.09,26.55,47.72,25.57,46.25,25.62,44.42,26.09,42.83,26.15,42.0,25.6,39.6,25.6
-    >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot her for her |cRXP_LOOT_Spinnerets|r
+    >>击杀 |cRXP_ENEMY_萨丝拉|r。拾取她的 |cRXP_LOOT_丝囊|r
     >>|cRXP_ENEMY_萨丝拉|r |cRXP_WARN_can spawn in 3 different locations, check your map for a recomended path to take|r
     >>|cRXP_WARN_Head north along the river and check the easternmost spawn point first. Work on the|r |T134339:0|t[Tumors]|cRXP_WARN_quest as you go|r
     >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors]|cRXP_WARN_quest before heading west|r
@@ -1264,7 +1264,7 @@ step << Rogue
 step
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密斯特|r
-    >>|cRXP_WARN_This will start an escort quest. Skip this quest if the NPC is not there|r
+    >>|cRXP_WARN_这将开启一个护送任务。如果该 NPC 不在场，请跳过这个任务|r
     .accept 938 >>接受任务《物归己用》 密斯特
     .target 雾气
 step
@@ -1272,20 +1272,20 @@ step
     .goto Teldrassil,38.32,34.36
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r
-    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
+    >>|cRXP_WARN_请注意这是一个限时任务，你需要在接受后的 9 分钟内完成并交付|r
     .turnin 938 >>交任务《 前往熔光镇》 密斯特
 step
 	#completewith next
     .deathskip >>死亡并在 Darnassus graveyard
-    >>|cRXP_WARN_Make sure you're on the west side of the river or you might end up going the wrong way|r
+    >>|cRXP_WARN_确保你在河流的西侧，否则可能会走错方向|r
 step
     .goto Darnassus,70.679,45.379
     .target 迈德兰努尔
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈德兰努尔|r
-    .accept 6344 >> Accept Nessa Shadowsong
+    .accept 6344 >>接受任务 尼莎·影歌
 step
     #optional
-	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in past here
+	.abandon 927 >>放弃 布满苔藓的心脏。之后将再也没有机会交付这个任务
 step << Warrior
     .goto Darnassus,57.305,34.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾兰娜瑞|r
@@ -1299,7 +1299,7 @@ step << Warrior
     .goto 1438/1,1315.000,9632.000,15 >>前去找 |cRXP_ENEMY_沃鲁斯·邪蹄|r
 step << Warrior
     .goto Teldrassil,47.2,63.7
-    >>Kill |cRXP_ENEMY_Vorlus Vilehoof|r. Loot him for his |cRXP_LOOT_Horn|r
+    >>击杀 |cRXP_ENEMY_沃鲁斯·邪蹄|r。拾取他的 |cRXP_LOOT_号角|r
     .complete 1683,1 --Collect Horn of Vorlus (x1)
     .mob 沃鲁斯·邪蹄
 step << Warrior
@@ -1416,7 +1416,7 @@ step
     #ah
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达纳苏斯拍卖师|r 交谈
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -1431,7 +1431,7 @@ step
     #ah
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达纳苏斯拍卖师|r 交谈
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133972:0|t[陆行鸟肉]
@@ -1448,7 +1448,7 @@ step << Hunter
     .line Darnassus,60.65,66.47,61.68,63.73,62.36,58.91,62.32,55.22,65.77,55.75,67.88,57.48,68.35,59.98,65.14,68.14,64.34,71.36,62.28,68.79,60.65,66.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_加伊娜|r, she patrols around the Tradesmen's Terrace
     >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[硬肉干]|cRXP_BUY_from her|r
-    >>|cRXP_WARN_You will need it to feed your |cRXP_FRIENDLY_Owl|r, they only eat meat and there's no meat vendor in Darkshore|r
+    >>|cRXP_WARN_你需要用它来喂养你的 |cRXP_FRIENDLY_猫头鹰|r，它们只吃肉类，而黑海岸没有出售肉类的商人|r
     .collect 117,15
     .target 加伊娜
 step << Druid
@@ -1478,13 +1478,13 @@ step << Rogue
     .goto Darnassus,36.99,21.91
     .target 塞尤娜
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞尤娜|r
-    >>|cRXP_WARN_Head down into the Cenarion Enclave|r
+    >>|cRXP_WARN_前往塞纳里奥区内部|r
     .turnin 2242 >>交任务《 前往熔光镇》 命运的召唤
 step
     .goto Darnassus,38.184,21.639
     .target 雷利亚·绿树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r
-    .turnin 923 >> Turn in Tumors
+    .turnin 923 >>交任务 青苔之瘤
 step
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
@@ -1512,9 +1512,9 @@ step
 step
     .goto Teldrassil,56.25,92.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼莎·影歌|r
-    .turnin 6344 >> Turn in Nessa Shadowsong
+    .turnin 6344 >>交任务 尼莎·影歌
     .target 尼莎·影歌
-    .accept 6341 >> Accept The Bounty of Teldrassil
+    .accept 6341 >>接受任务 泰达希尔的渔业
 step
     #label NessaShadowsong
     #optional
@@ -1526,9 +1526,9 @@ step
 step
     .goto Teldrassil,58.399,94.016
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维斯派塔斯|r
-    .turnin 6341 >> Turn in The Bounty of Teldrassil
+    .turnin 6341 >>交任务 泰达希尔的渔业
     .target 维斯派塔斯
-    .accept 6342 >> Accept Flight to Auberdine
+    .accept 6342 >>接受任务 飞往奥伯丁
 step << Warrior
     #sticky
     #optional

@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 
 step << !Orc !Troll
     #completewith next
-    +|cRXP_WARN_You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r
+    +|cRXP_WARN_你选择的是为兽人和巨魔准备的攻略。你应该选择与你起始区域相同的初始区域攻略|r
 step
     .goto Durotar,43.29,68.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔图克|r
@@ -51,7 +51,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r << Shaman
     .train 6673 >>Train |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>Train |T136086:0|t[Rockbiter Weapon] << Shaman
+    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
     .target 弗朗恩 << Warrior
     .target 史克里克 << Shaman
 step << Warlock
@@ -83,7 +83,7 @@ step << Warlock
 step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter !Shaman
     >>|cRXP_BUY_Buy|r |T132382:0|t[劣质箭]|cRXP_BUY_from her|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -93,7 +93,7 @@ step << !Warrior !Rogue
 step << Warlock
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
     .collect 159,5,6394,1 --Refreshing Spring Water (5)
     .target 多克纳
     .money <0.0025
@@ -101,7 +101,7 @@ step << Warlock
     #completewith next
     .goto Durotar,43.57,67.28,35,0
     >>击杀 |cRXP_ENEMY_杂斑野猪|r en route to the Burning Blade Coven
-    >>|cRXP_WARN_Try to get to level 2 before getting there|r
+    >>|cRXP_WARN_尽量在到达那里之前升到 2 级|r
     .complete 788,1 --Mottled Boar (10)
     .mob 杂斑野猪
 step << Warlock
@@ -264,7 +264,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁瓦格|r
     .turnin 3083 >>交任务《 前往熔光镇》 密文石板 << Troll Rogue
     .turnin 3088 >>交任务《 前往熔光镇》 密文羊皮纸 << Orc Rogue
-    .train 53 >> Train |T132090:0|t[Backstab]
+    .train 53 >>训练 |T132090:0|t[背刺]
     .target 鲁瓦格
     .money <0.04
     .xp <4,1
@@ -532,7 +532,7 @@ step
     .target 高内克
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_Canaga|r
-    .train 8042 >> Train |T136026:0|t[Earth Shock]
+    .train 8042 >>学习 |T136026:0|t[大地震击]
     .target 史克里克
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务《物归己用》 大地的召唤
@@ -770,7 +770,7 @@ step
     .isOnQuest 4402
 step << Orc/Troll
     #completewith BurningBladeTurnin
-    .hs >>Hearth to Valley of Trials
+    .hs >>炉石返回试炼谷
 step << !Orc !Troll
     #softcore
     #completewith BurningBladeTurnin
@@ -841,7 +841,7 @@ step << Mage
     .target 迈安
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_Canaga|r
-    .train 332 >>Train |T136052:0|t[Healing Wave]
+    .train 332 >>训练 |T136052:0|t[治疗波]
     .goto Durotar,42.39,69.00
     .turnin 1516 >>交任务《 前往熔光镇》 大地的召唤
     .accept 1517 >>接受任务《物归己用》 大地的召唤
@@ -949,7 +949,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r
-    .train 332 >>Train |T136052:0|t[Healing Wave]
+    .train 332 >>训练 |T136052:0|t[治疗波]
     .target 史克里克
 step
     #xprate >1.49
@@ -961,7 +961,7 @@ step
     #label Leave
     .goto Durotar,47.09,69.21,25,0
     .goto Durotar,49.02,69.13,20,0
-    .goto Durotar,49.90,68.43,25 >>Exit the Valley of Trials
+    .goto Durotar,49.90,68.43,25 >>离开试炼谷
     .isOnQuest 805
 
     ]])
@@ -992,7 +992,7 @@ step
     .goto Durotar,54.20,73.36,25,0
     .goto Durotar,54.09,76.31,25,0
     .goto Durotar,54.52,74.83,25,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉尔|r 对话。他会稍微巡逻
     .accept 786 >>接受任务《物归己用》 科卡尔半人马的进攻
     .target 拉尔·猎齿
 step
@@ -1179,7 +1179,7 @@ step
     .mob 厚壳龙虾人
     .mob 巨钳龙虾人
 step
-    .goto Durotar,52.20,83.00,75 >> Reach the end of the beach
+    .goto Durotar,52.20,83.00,75 >>到达海滩尽头
     .isOnQuest 818
 step
     .goto Durotar,50.9,79.2,30 >>进入 Kolkar base
@@ -1187,19 +1187,19 @@ step
 step
     #sticky
     #completewith Bonfire
-    +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Kolkanis|r |cRXP_WARN_is up, he is a level 9 rare. You may have to use a |r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it|r
+    +|cRXP_WARN_如果|r |cRXP_ENEMY_科卡尼斯|r |cRXP_WARN_在场要小心，他是 9 级稀有怪。必要时如果你有的话，可能需要使用|r |T134829:0|t[初级治疗药水] |cRXP_WARN_|r
     .unitscan 科卡尼斯
 step
     .goto Durotar,49.81,81.29
     >>Burn the |cRXP_PICK_Attack Plan|r 对话，NPC在里面 the tent on the ground
     .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
 step
-    >>Burn the |cRXP_PICK_Attack Plan|r on the ground
+    >>烧毁地上的 |cRXP_PICK_攻击计划|r
     .goto Durotar,47.66,77.34
     .complete 786,2 --Attack Plan: Sen'jin Village destroyed (1)
 step
     #label Bonfire
-    >>Burn the |cRXP_PICK_Attack Plan|r on the ground
+    >>烧毁地上的 |cRXP_PICK_攻击计划|r
     .goto Durotar,46.23,78.94
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step
@@ -1212,7 +1212,7 @@ step
 step
     #hardcore
     #completewith TurninKolkar
-    .goto Durotar,50.95,79.14,30 >>Leave the Kolkar base
+    .goto Durotar,50.95,79.14,30 >>离开科卡尔营地
     .isQuestComplete 786
 step << Shaman
     .goto Durotar,56.47,73.12
@@ -1373,7 +1373,7 @@ step
     .goto Durotar,54.20,73.36,25,0
     .goto Durotar,54.09,76.31,25,0
     .goto Durotar,54.52,74.83,25,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉尔|r 对话。他会稍微巡逻
     .turnin 786 >>交任务《 前往熔光镇》 科卡尔半人马的进攻
     .target 拉尔·猎齿
 step
@@ -1587,8 +1587,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid/Paladin
     >>|cRXP_BUY_Buy|r |T133974:0|t[肉排]|cRXP_BUY_from him|r << Rogue/Warrior
-    >>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock
-    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest
+    >>|cRXP_WARN_为你的职业法术预留 4 银币！|r << Rogue/Warrior/Shaman/Warlock
+    >>|cRXP_WARN_为你的职业法术预留 2 银币！|r << Priest
     .vendor >>把垃圾物品卖给商人
     .home >>将你的炉石设置为暮色森林 Hill
     .turnin 2161 >>交任务《 前往熔光镇》 苦工的重担
@@ -1679,7 +1679,7 @@ step << Priest
     .target 泰金
 step << Priest
     .goto Durotar,53.10,46.46
-    >>Cast |T135929:0|t[Lesser Heal] and |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Kor'ja|r
+    >>对 |cRXP_FRIENDLY_科雅|r 施放 |T135929:0|t[次级治疗术] 和 |T135987:0|t[真言术：韧]
     .complete 5648,1 --Heal and fortify Grunt Kor'ja
     .target 步兵科雅
 step << Priest
@@ -1697,7 +1697,7 @@ step << Rogue/Warrior
 step
     .goto Durotar,54.39,42.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔克|r
-    >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_BUY_him|r
+    >>|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] |cRXP_BUY_向|r |cRXP_BUY_他|r
     .collect 4496,1,784,1 --Small Brown Pouch (1)
     .target 加尔克
     .money <0.05
@@ -1735,7 +1735,7 @@ step
 step
     #label Benedict
     .goto Durotar,59.75,58.27
-    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r. Loot him for his |cRXP_LOOT_Key|r
+    >>击杀 |cRXP_ENEMY_本尼迪克上尉|r。拾取他的 |cRXP_LOOT_钥匙|r
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1,830 --Collect Benedict's Key (1)
     .mob 本尼迪克上尉
@@ -1747,9 +1747,9 @@ step
     .goto Durotar,59.94,57.82,5,0
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
-    >>|cRXP_WARN_Go upstairs in the keep|r
+    >>|cRXP_WARN_前往要塞的楼上|r
     >>打开 |cRXP_PICK_Benedict's Chest|r. 拾取地上的 it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
-    >>Use the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] to start the quest
+    >>使用 |T133471:0|t[|cRXP_LOOT_旧信封|r] 来开始任务
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>接受任务《物归己用》 将军的命令
     .use 4881
@@ -1825,7 +1825,7 @@ step
 step
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r
-    >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
+    >>|cRXP_WARN_你可以在外面或在碉堡顶部与他对话|r
     .turnin 784 >>交任务《 前往熔光镇》 背信弃义的人类
     .turnin 830 >>交任务《 前往熔光镇》 将军的命令
     .accept 825 >>接受任务《物归己用》 海底沉船
@@ -2051,7 +2051,7 @@ step << Rogue/Warrior
 step
     .goto Durotar,54.39,42.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔克|r
-    >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_BUY_him|r
+    >>|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] |cRXP_BUY_向|r |cRXP_BUY_他|r
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target 加尔克
     .money <0.05
@@ -2094,7 +2094,7 @@ step
     .complete 825,1 --Gnomish Tools (3)
 step
     #completewith TaillasherEggs
-    .goto Durotar,67.10,69.29,100 >> Swim to the Island
+    .goto Durotar,67.10,69.29,100 >>游到岛上
 step
     #completewith MinshinasSkull
     >>击杀 |cRXP_ENEMY_杜隆塔尔猛虎|r。拾取他们的 |cRXP_LOOT_Fur|r
@@ -2138,7 +2138,7 @@ step
     .mob 厚壳龙虾人
     .mob 巨钳龙虾人
 step
-    .goto Durotar,66.94,84.41,150 >>Swim to the main island
+    .goto Durotar,66.94,84.41,150 >>游到主岛上
     .isOnQuest 826
 step
     #completewith MinshinasSkull
@@ -2149,7 +2149,7 @@ step
     .mob 巫毒巨魔
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_扎拉赞恩|r。拾取他的 |cRXP_LOOT_头颅|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[大地震击] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Rogue
     .complete 826,3 --Zalazane's Head (1)
@@ -2162,7 +2162,7 @@ step
 step
     #label ZalazaneKill
     .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_扎拉赞恩|r。拾取他的 |cRXP_LOOT_头颅|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[大地震击] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[治疗波] << Rogue
     .complete 826,3 --Zalazane's Head (1)
@@ -2252,7 +2252,7 @@ step
 step
     .goto Durotar,56.48,73.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
-    >>|cRXP_WARN_Jump into the hut|r
+    >>|cRXP_WARN_跳进小屋里|r
     .vendor >>Vendor trash 和 repair
     .target 特莱耶克
     .isOnQuest 808
@@ -2507,8 +2507,8 @@ step << Hunter
 step << !Hunter
     .goto Durotar,51.13,42.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞姆塔克|r
-	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
-    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+	.vendor >>|cRXP_BUY_出售你的垃圾物品，如有需要补充食物和水|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_出售你的垃圾物品，如有需要补充食物|r << Rogue/Warrior
     .target 格瑞姆塔克
 step << Hunter
     .goto Durotar,46.37,22.94
@@ -2558,7 +2558,7 @@ step << Warlock
     #softcore
     #completewith next
     .goto Orgrimmar,53.03,48.78
-    .subzone 2437 >> Enter Ragefire Chasm
+    .subzone 2437 >>进入怒焰裂谷
 step << Warlock
     #softcore
     #completewith SkullRockWarlock
@@ -2584,7 +2584,7 @@ step << Warlock
 step << Warlock
     #completewith next
     >>击杀 |cRXP_ENEMY_Burning Blade Orcs|r. 拾取地上的 them for a |cRXP_LOOT_Lieutenant's Insignia|r
-    >>|cRXP_WARN_Skip this if you're unlucky with the drop|r
+    >>|cRXP_WARN_如果掉落运气不好，可以跳过这一步|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
     .mob 火刃学徒
@@ -2641,7 +2641,7 @@ step << Warlock
     .isQuestTurnedIn 5726
 step << Warlock
     #completewith next
-    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Glyphs of Summoning] |cRXP_WARN_at the Summoning Circle|r
+    .cast 9221 >>|cRXP_WARN_在召唤法阵处使用|r |T134416:0|t[召唤符文] |cRXP_WARN_|r
     .use 6284
 step << Warlock
     .goto Orgrimmar,49.45,50.02
@@ -2664,7 +2664,7 @@ step << Warlock
     #softcore
     #completewith ZeptoUC1
     .goto Orgrimmar,36.0,37.7 
-    .deathskip >>|cRXP_WARN_Remove your|r |T136185:0|t[Demon Skin] |cRXP_WARN_buff. Run on top of the brazier, and use|r |T136126:0|t[Life Tap] |cRXP_WARN_to deathskip out of Orgrimmar|r
+    .deathskip >>|cRXP_WARN_移除你的|r |T136185:0|t[恶魔皮肤] |cRXP_WARN_增益效果。跑到火盆上方，并使用|r |T136126:0|t[生命分流] |cRXP_WARN_通过死亡跳出奥格瑞玛|r
 step << Warlock
     #hardcore
     #completewith ZeptoUC1
@@ -2682,7 +2682,7 @@ step << Hunter
     .goto Durotar,41.52,20.06,50,0
     .goto Durotar,38.43,17.65,50,0
     .cast 1515 >>Tame a |cRXP_ENEMY_毒尾蝎|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_这将使你能够学习|r |T132140:0|t[爪击（等级 2）]
     .mob 毒尾蝎
     .train 16828,1 --Claw rank 2
 step << !Shaman !Warrior !Warlock
@@ -2715,7 +2715,7 @@ step << !Shaman !Warrior !Warlock
     .target 雷兹拉克
 step << !Shaman !Warrior !Warlock
     #completewith next
-    .goto Durotar,51.9,27.4,20 >>Go through the cave
+    .goto Durotar,51.9,27.4,20 >>穿过洞穴
 step << !Shaman !Warrior !Warlock
     #loop
     .goto Durotar,54.02,27.23,0
@@ -2758,7 +2758,7 @@ step << !Shaman !Warrior
     .zoneskip Undercity
 step << !Shaman !Warrior
     #completewith PorttoSilvermoon
-    .goto Undercity,62.0,11.3,18 >>Go up the stairs here
+    .goto Undercity,62.0,11.3,18 >>从这里上楼梯
 step << !Shaman !Warrior
     #label PorttoSilvermoon
     .goto Undercity,54.9,11.3
@@ -2783,7 +2783,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #subgroup RestedXP 部落 1-30级
 #defaultfor Warrior !Tauren/Shaman !Tauren
-#next 13-18 The Barrens
+#next 13-18 贫瘠之地
 
 step << Undead Warrior
     #completewith next
@@ -2883,7 +2883,7 @@ step << Undead Warrior
 step << Undead Warrior
     #label Benedict
     .goto Durotar,59.75,58.27
-    >>Kill |cRXP_ENEMY_Lieutenant Benedict|r. Loot him for his |cRXP_LOOT_Key|r
+    >>击杀 |cRXP_ENEMY_本尼迪克上尉|r。拾取他的 |cRXP_LOOT_钥匙|r
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1,830,1 --Collect Benedict's Key (1)
     .mob 本尼迪克上尉
@@ -2895,9 +2895,9 @@ step << Undead Warrior
     .goto Durotar,59.94,57.82,5,0
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
-    >>|cRXP_WARN_Go upstairs in the keep|r
+    >>|cRXP_WARN_前往要塞的楼上|r
     >>打开 |cRXP_PICK_Benedict's Chest|r. 拾取地上的 it for the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r]
-    >>Use the |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] to start the quest
+    >>使用 |T133471:0|t[|cRXP_LOOT_旧信封|r] 来开始任务
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>接受任务《物归己用》 将军的命令
     .use 4881
@@ -2980,7 +2980,7 @@ step << Undead Warrior
     .mob 杜隆塔尔猛虎
 step << Undead Warrior
     #label MainIsland
-    .goto Durotar,66.94,84.41,350 >>Swim to the main island
+    .goto Durotar,66.94,84.41,350 >>游到主岛上
     .isOnQuest 826
 step << Undead Warrior
     #completewith MinshinasSkull
@@ -2991,7 +2991,7 @@ step << Undead Warrior
     .mob 巫毒巨魔
 step << Undead Warrior
     #completewith next
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_扎拉赞恩|r。拾取他的 |cRXP_LOOT_头颅|r
     .complete 826,3 --Zalazane's Head (1)
     .mob 扎拉赞恩
 step << Undead Warrior
@@ -3002,7 +3002,7 @@ step << Undead Warrior
 step << Undead Warrior
     #label ZalazaneKill
     .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>击杀 |cRXP_ENEMY_扎拉赞恩|r。拾取他的 |cRXP_LOOT_头颅|r
     .complete 826,3 --Zalazane's Head (1)
     .mob 扎拉赞恩
 step << Undead Warrior
@@ -3087,7 +3087,7 @@ step << Undead Warrior
 step << Undead Warrior
     .goto Durotar,56.48,73.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r
-    >>|cRXP_WARN_Jump into the hut|r
+    >>|cRXP_WARN_跳进小屋里|r
     .vendor >>Vendor trash 和 repair
     .target 特莱耶克
     .isOnQuest 808
@@ -3103,7 +3103,7 @@ step << Undead Warrior
     .target 维尔林·长牙
 step << Undead Warrior
     #completewith RazorHill2UD
-    +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull]|cRXP_WARN_. Save it for later|r
+    +|cRXP_WARN_绑定你的|r |T133728:0|t[微光颅骨]|cRXP_WARN_。留着以后用|r
 step << Undead Warrior
     #completewith RazorHill2UD
     .goto Durotar,52.38,43.77,120 >>前往暴风城大教堂内，与 Razor Hill
@@ -3184,14 +3184,14 @@ step << !Tauren
 step << !Tauren
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
-    >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
-    .fp The Crossroads >> Get the The Crossroads flight path
+    >>|cRXP_WARN_不要飞往奥格瑞玛！|r
+    .fp The Crossroads >>获得十字路口的飞行点
     .target 迪弗拉克
     .subzoneskip 380,1
 step << Orc/Troll
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r
-    >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
+    >>|cRXP_WARN_不要飞往奥格瑞玛！|r
     .turnin 6365 >>交任务《 前往熔光镇》 送往奥格瑞玛的肉
     .accept 6384 >>接受任务《物归己用》 飞往奥格瑞玛
     .target 迪弗拉克
@@ -3206,7 +3206,7 @@ step << !Tauren
 step << !Tauren
     #completewith next
     >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
-    >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
+    >>|cRXP_WARN_在采集蘑菇时尽量与|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_保持最大距离。他们的等级为 12-14 级|r
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_锅炉搅拌器|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
@@ -3221,7 +3221,7 @@ step << !Tauren
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     >>收集地上的 |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
-    >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
+    >>|cRXP_WARN_在该区域内尽量与|r |cRXP_ENEMY_科卡尔|r |cRXP_WARN_保持最大距离。他们的等级为 12-14 级|r
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_锅炉搅拌器|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
@@ -3237,16 +3237,16 @@ step << !Tauren
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish|r
-    >>|cRXP_WARN_This starts a 45-minute timed quest|r
+    >>|cRXP_WARN_等待剧情事件结束|r
+    >>|cRXP_WARN_这将开启一个 45 分钟的限时任务|r
     .turnin 848 >>交任务《 前往熔光镇》 菌类孢子
-    .timer 7,Fungal Spores RP
+    .timer 7,菌类孢子 剧情
     .accept 853 >>接受任务《物归己用》 [DEPRECATED] 药剂师扎玛
     .target 药剂师赫布瑞姆
 step << !Tauren
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔格|r
-    >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_BUY_him|r
+    >>|cRXP_BUY_购买一个或多个|r |T133634:0|t[棕色小包] |cRXP_BUY_向|r |cRXP_BUY_他|r
     .collect 4496,1,853,1 --Small Brown Pouch (1)
     .target 加尔克
     .money <0.05
@@ -3261,13 +3261,13 @@ step << Warrior/Shaman
     #softcore
     #completewith next
     .goto The Barrens,49.75,49.54
-    .subzone 378 >>Travel south down the road toward Camp Taurajo
+    .subzone 378 >>沿着道路向南前往陶拉霍营地
     >>|cRXP_WARN_Once you are at the waypoint arrow (or further south of it), die and respawn at the|r |cRXP_FRIENDLY_灵魂医者|r
 step << Warrior/Shaman
     #hardcore
     #completewith next
     .goto The Barrens,47.44,56.48,70,0
-    .subzone 378 >>Travel south down the road toward Camp Taurajo
+    .subzone 378 >>沿着道路向南前往陶拉霍营地
 step << Warrior/Shaman
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Omusa|r
@@ -3286,7 +3286,7 @@ step << Warrior/Shaman
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .accept 749 >>接受任务《物归己用》 被破坏的货车
 	.unitscan 摩林·云行者
 step << !Tauren
@@ -3319,7 +3319,7 @@ step << !Tauren
     .goto Mulgore,59.65,62.40,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Morin|r
-    >>|cRXP_WARN_He patrols along the eastern road|r
+    >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .turnin 751 >>交任务《 前往熔光镇》 被破坏的货车
 	.unitscan 摩林·云行者
 step << !Tauren
@@ -3342,7 +3342,7 @@ step << !Tauren
     .goto Mulgore,50.2,60.2,30,0
     .goto Mulgore,46.8,59.6,30,0
     .use 33009>>找到 |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] to feed him
-    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    >>|cRXP_WARN_他会沿顺时针方向绕着血蹄村巡逻|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
     --TODO: Test beta, bugged on pserver
@@ -3368,12 +3368,12 @@ step << Paladin/Shaman
     .money <0.1
 step << !Tauren
     #completewith next
-    .goto Thunder Bluff,45.6,52.0,15 >>Go up the tower
+    .goto Thunder Bluff,45.6,52.0,15 >>上塔
 step << !Tauren
     #label TBFP
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r
-    .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
+    .fp Thunder Bluff >>开启雷霆崖飞行点
 	.target 塔尔
 step
     #completewith next
@@ -3468,28 +3468,28 @@ step
     .target 考格汉
 step
     #completewith FizzleKill
-    >>|cRXP_WARN_Abandon Need for a Cure. This will remove the timer on the quest but you will still be able to do it|r
-    .abandon 812 >>Abandon Need for a Cure
+    >>|cRXP_WARN_放弃 救命如救火。这将移除该任务的计时限制，但你仍然可以完成它|r
+    .abandon 812 >>放弃任务 救命如救火
 step
     #completewith FizzleKill
     .goto Durotar,45.54,12.14
     .zone Durotar >>离开奥格瑞玛
 step
     #completewith next
-    .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge
+    .goto Durotar,41.66,25.68,20 >>跳入雷霆山脊
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dismiss your|r |T136218:0|t[小鬼]|cRXP_WARN_or|r |T136221:0|t[虚空行者]|cRXP_WARN_by right clicking its unit frame and clicking dismiss|r << Warlock
-    .cast 2641 |cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
+    |cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
 step
     #label FizzleKill
     .goto Durotar,42.13,26.67
-    >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r and loot him for his |cRXP_LOOT_Claw|r
+    >>击杀 |cRXP_ENEMY_费索·暗雷|r，并拾取他的 |cRXP_LOOT_爪子|r
     >>|cRXP_WARN_Be careful. Kill the patrolling|r |cRXP_ENEMY_火刃狂热者|r |cRXP_WARN_before you pull him|r
-    >>|cRXP_WARN_Kill the imp first. Use|r |T132155:0|t[Gouge] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Rogue
+    >>|cRXP_WARN_先击杀小鬼。在他施放|r |T136169:0|t[灵魂汲取] |cRXP_WARN_时使用|r |T132155:0|t[凿击] << Rogue
     >>|cRXP_WARN_Kill the imp first. Use|r |T136026:0|t[大地震击] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Shaman
     >>|cRXP_WARN_You can cast|r |T136071:0|t[Polymorph]|cRXP_WARN_on|r|cRXP_ENEMY_Fizzle|r|cRXP_WARN_and kill the|r|cRXP_ENEMY_小鬼|r|cRXP_WARN_first|r << Mage
-    >>|cRXP_WARN_Kill the imp first|r << Warrior/Warlock/Priest
-    >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << !Warlock
-    >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion], |T133728:0|t[Minor Healthstone] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << Warlock
+    >>|cRXP_WARN_先击杀小鬼|r << Warrior/Warlock/Priest
+    >>|cRXP_WARN_如果你有的话，使用一个|r |T134829:0|t[初级治疗药水] |cRXP_WARN_，并在需要时使用你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_|r << !Warlock
+    >>|cRXP_WARN_如果你有的话，使用一个|r |T134829:0|t[初级治疗药水]、|T133728:0|t[初级治疗石] |cRXP_WARN_，并在需要时使用你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_|r << Warlock
     .complete 806,1 --Fizzle's Claw (1)
     .mob Fizzle Darkstorm
     .mob 小鬼爪牙
@@ -3497,7 +3497,7 @@ step
     .mob 闪电蜥蜴
 step << Warrior
     #completewith next
-    .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
+    .goto Durotar,39.2,32.3,30 >>离开雷霆山脊
 step << Warrior
     #loop
     .goto Durotar,43.19,24.34,0
@@ -3510,7 +3510,7 @@ step << Warrior
     .complete 1498,1 --Singed Scale (5)
     .mob 闪电蜥蜴
 step << !Warrior
-    .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
+    .goto Durotar,39.2,32.3,30 >>离开雷霆山脊
     .isQuestComplete 806
 step
     #loop
@@ -3518,9 +3518,9 @@ step
     .goto Durotar,34.44,44.53,50,0
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.71,42.30,50,0
-    >>|cRXP_WARN_Travel south alongside the river toward Far Watch Post|r
+    >>|cRXP_WARN_沿着河流向南前往远望岗哨|r
     >>击杀 |cRXP_ENEMY_巨齿鳄鱼|r on the way. Loot them for |cRXP_LOOT_Kron's Amulet|r
-    >>|cRXP_WARN_Skip this quest for now if it won't drop|r
+    >>|cRXP_WARN_如果任务物品没有掉落，暂时跳过这个任务|r
     .complete 816,1 --Kron's Amulet (1)
     .mob 巨齿鳄鱼
 step << Troll Shaman/Orc Shaman
@@ -3535,8 +3535,8 @@ step << Troll Shaman/Orc Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
-    >>|cRXP_WARN_Be careful to not fall of the mountain, the path is very narrow. You could die if you fall|r
+    .goto Durotar,39.16,58.56,10 >>沿着山路向上前往 |cRXP_FRIENDLY_泰尔夫|r
+    >>|cRXP_WARN_注意不要从山上掉下去，路径非常狭窄，跌落可能会导致死亡|r
 step << Troll Shaman/Orc Shaman
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Telf|r
@@ -3612,10 +3612,10 @@ step
     #softcore
     #label Gazzuz
     .goto Durotar,51.8,10.0
-    >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]
+    >>击杀 |cRXP_ENEMY_加祖兹|r。拾取他的 |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
     >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_燃影之眼|r] to start the quest|r
     >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_虚空行者|r |cRXP_WARN_after killing|r |cRXP_ENEMY_加祖兹|r
-    >>|cRXP_WARN_Be careful as he is  difficult. You can skip this quest if you need|r
+    >>|cRXP_WARN_注意他比较难对付，如有需要可以跳过这个任务|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>接受任务《物归己用》 燃影之眼
     .use 4903
@@ -3625,10 +3625,10 @@ step
     #hardcore
     #label Gazzuz
     .goto Durotar,51.8,10.0
-    >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]
+    >>击杀 |cRXP_ENEMY_加祖兹|r。拾取他的 |T134085:0|t[|cRXP_LOOT_燃影之眼|r]
     >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_燃影之眼|r] to start the quest|r
     >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_虚空行者|r |cRXP_WARN_after killing|r |cRXP_ENEMY_加祖兹|r
-    >>|cRXP_WARN_This quest is VERY difficult to solo. Skip it if you can't find a group|r
+    >>|cRXP_WARN_这个任务单人完成非常困难，如果找不到队伍就跳过|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>接受任务《物归己用》 燃影之眼
     .use 4903
@@ -3648,7 +3648,7 @@ step
     .goto Durotar,51.39,8.71,15,0
     .goto Durotar,51.48,9.71,15,0
     >>击杀 |cRXP_ENEMY_Burning Blade Orcs|r. 拾取地上的 them for their |cRXP_LOOT_Collars|r 和 for a |cRXP_LOOT_Lieutenant's Insignia|r
-    >>|cRXP_WARN_Skip the|r |cRXP_LOOT_Lieutenant's Insignia|r |cRXP_WARN_if you're unlucky with the drop|r
+    >>|cRXP_WARN_如果掉落运气不好，可以跳过|r |cRXP_LOOT_军官的徽章|r |cRXP_WARN_|r
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob 火刃狂热者
@@ -3682,10 +3682,10 @@ step << Shaman
     .mob 火刃祭司
 step << !Shaman
     #completewith next
-    .goto Durotar,53.41,27.81,15 >>Travel through the cave
+    .goto Durotar,53.41,27.81,15 >>穿过洞穴前进
 step << Shaman
     #completewith next
-    .goto Durotar,53.94,27.85,30 >>Jump down into Drygulch Ravine
+    .goto Durotar,53.94,27.85,30 >>跳下进入枯水谷
 step
     #loop
     .goto Durotar,54.02,27.23,0
@@ -3769,7 +3769,7 @@ step
     #softcore
     #completewith next
     .goto Orgrimmar,53.03,48.78
-    .subzone 2437 >> Enter Ragefire Chasm
+    .subzone 2437 >>进入怒焰裂谷
 step
     #softcore
     #completewith FoundtheCure

@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 
 step << !Undead
     #completewith next
-    +|cRXP_WARN_You have selected a guide meant for Undead. It is recommended you choose the same starter zone that you start in|r
+    +|cRXP_WARN_你选择的是为亡灵准备的攻略。建议你选择与你起始区域相同的初始区域攻略|r
 step
     #completewith Zombies
 	.destroy 6948 >>Destroy the |T134414:0|t[炉石] in your bags, as it's no longer needed
@@ -22,7 +22,7 @@ step
     #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0
-    .goto Tirisfal Glades,30.22,71.65,10 >> Run up out of the crypt toward |cRXP_FRIENDLY_Mordo|r
+    .goto Tirisfal Glades,30.22,71.65,10 >>跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
 step
     .goto Tirisfal Glades,30.22,71.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mordo|r
@@ -304,7 +304,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水]
-    >>|cRXP_WARN_Do NOT go below 1 Silver|r << Mage/Warlock/Priest
+    >>|cRXP_WARN_不要让你的钱低于 1 银币|r << Mage/Warlock/Priest
     .vendor >>把垃圾物品卖给商人
     .target Joshua Kien
     .money >0.1
@@ -473,7 +473,7 @@ step
 step
     #hardcore
     #completewith Scavenging
-    .goto Tirisfal Glades,31.61,65.62,80 >>Return to Deathknell
+    .goto Tirisfal Glades,31.61,65.62,80 >>返回丧钟镇
 step
     #label Scavenging
     .goto Tirisfal Glades,31.61,65.62
@@ -542,7 +542,7 @@ step
 step
     #hardcore
     #completewith next
-    .goto Tirisfal Glades,31.17,65.08,80 >>Return to Deathknell
+    .goto Tirisfal Glades,31.17,65.08,80 >>返回丧钟镇
 step
     .goto Tirisfal Glades,31.17,65.08
 	>>点击地上的 |cRXP_PICK_Marla's Grave|r on the ground
@@ -690,7 +690,7 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在二楼与 |cRXP_FRIENDLY_凯恩|r 对话
     .train 143 >>Train |T135812:0|t[火球术]
     .train 2136 >>Train |T135807:0|t[火焰冲击]
     .target Cain Firesong
@@ -702,7 +702,7 @@ step << Warrior
     .money <0.01
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在二楼与 |cRXP_FRIENDLY_玛瑞恩|r 对话
     .train 1757 >>背刺 |T136189:0|t[影袭]
     .target Marion Call
     .money <0.01
@@ -780,7 +780,7 @@ step << Priest
 step << Priest
     #completewith next
     .goto Tirisfal Glades,61.75,52.72,8,0
-    .goto Tirisfal Glades,61.58,52.99,8 >>Exit the Inn
+    .goto Tirisfal Glades,61.58,52.99,8 >>离开旅店
 step << Priest
     .goto Tirisfal Glades,59.18,46.49,50 >>前去找 |cRXP_FRIENDLY_Kel|r
     .isOnQuest 5650
@@ -816,7 +816,7 @@ step << Priest
 step
     #completewith next
     .goto Tirisfal Glades,61.75,52.72,8,0
-    .goto Tirisfal Glades,61.58,52.99,8 >>Exit the Inn
+    .goto Tirisfal Glades,61.58,52.99,8 >>离开旅店
 step << !Warrior
     #completewith next
     .goto Undercity,65.87,1.48,15,0
@@ -856,5 +856,5 @@ step << Warrior
     .goto Tirisfal Glades,60.51,58.69,-1
     .goto Tirisfal Glades,60.94,46.35,-1
     >>登上飞艇塔
-    .zone Durotar >>Take the Zeppelin to Durotar
+    .zone Durotar >>乘坐飞艇前往杜隆塔尔
 ]])
