@@ -3,7 +3,7 @@ if addon.gameVersion < 40000 or addon.player.faction == 'Alliance' then return e
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" or GetLocale() == "ruRU" then return end
 RXPGuides.RegisterGuide([[
 #cata
 #mop

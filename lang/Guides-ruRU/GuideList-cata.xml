@@ -1,0 +1,4 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="cata/H-Cataclysm-01-10 Durotar.lua"/>
+    <Script file="cata/H-Cataclysm-20-25 Ashenvale.lua"/>
+</Ui>

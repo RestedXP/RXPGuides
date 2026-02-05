@@ -48,6 +48,7 @@ GuideLoader.lua
 
 Guides/GuideList-Mainline.xml [AllowLoadGameType mainline]
 Guides/GuideList-cata.xml [AllowLoadGameType cata]
+lang/Guides-ruRU/GuideList-cata.xml [AllowLoadGameType cata]
 Guides/GuideList-mop.xml [AllowLoadGameType mists]
 Guides/GuideList-classic.xml [AllowLoadGameType vanilla]
 Guides/GuideList-tbc.xml [AllowLoadGameType tbc]
