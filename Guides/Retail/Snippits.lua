@@ -20,7 +20,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 4
 #group RestedXP Speed Leveling
-#name a) Lost Dragonscale Horde
+#name a) Lost Dragonscale Horde 12232233232
 #internal
 
 << Horde
@@ -45,7 +45,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 4
 #group RestedXP Speed Leveling
-#name a) Lost Dragonscale Horde
+#name a) Lost Dragonscale Horde 232332322323
 #internal
 
 

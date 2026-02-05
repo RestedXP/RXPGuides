@@ -5841,7 +5841,7 @@ step
 step
     .isInScenario 2137
     >>Use the ExtraActionButton.
-    .scenario 5422
+    .scenario 5422,2
 step
     .goto 85,54.37,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
