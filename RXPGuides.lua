@@ -1,4 +1,4 @@
-﻿local addonName, addon = ...
+local addonName, addon = ...
 
 local _G = _G
 local UnitInRaid = UnitInRaid
@@ -1734,7 +1734,7 @@ function addon.LegacyUpdateLoop()
             stepCounter = stepCounter + 4
         end
         local batchMax = 10
-        if addon.settings.profile.updateFrequency > 75 then
+        if (addon.settings.profile.updateFrequency or 0) > 75 then
             batchMax = 2
         end
 
