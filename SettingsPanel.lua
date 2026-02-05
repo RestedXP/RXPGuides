@@ -3107,7 +3107,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc =
                             L"Sets the current step frame to grow from bottom to top or top to bottom",
                         type = "select",
-                        values = {top = "Top", bottom = "Bottom"},
+                        values = {top = _G.TRACK_QUEST_TOP_SORTING, bottom = L("Bottom")},
                         sorting = {"top", "bottom"},
                         width = optionsWidth,
                         order = 3.3,
