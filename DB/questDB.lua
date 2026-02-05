@@ -1427,10 +1427,11 @@ addon.functions.tbcWBF = function(self,text,arg1)
     local element = self.element
     arg1 = element.arg1
     if step.active and not addon.settings.profile.tbcWBF == not arg1 then
-        step.completed = true
-        --step.hidewindow = true
         step.optional = true
-        addon.updateSteps = true
+        if not arg1 then
+            step.completed = true
+            addon.updateSteps = true
+        end
     end
 end
 
