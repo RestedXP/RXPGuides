@@ -1877,7 +1877,10 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom)
         local stepDiff
         local start = startFrom or 1
         local n = 0
-        for i = start,#frame.step.elements do
+        local elements = frame.step.elements
+        local nElements = elements and #elements or 0
+
+        for i = start,nElements do
             if n == 12 then
                 C_Timer.After(0,function()
                     BottomFrame.UpdateFrame(self, stepn, i)
@@ -1885,7 +1888,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom)
                 return
             end
             n = n + 1
-            local element = frame.step.elements[i]
+            local element = elements[i]
             stepDiff = element.step.index - RXPCData.currentStep
             element.element = element
 
