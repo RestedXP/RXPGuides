@@ -3,6 +3,7 @@
 ## Interface-TBC: 20505
 ## Interface-Classic: 11508
 ## Title: RestedXP Guides
+## Title-zhCN: RestedXP 指南
 ## Notes: In-game leveling guides
 ## Author: RestedXP
 ## Version: @project-version@
