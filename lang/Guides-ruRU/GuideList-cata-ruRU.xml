@@ -1,0 +1,14 @@
+<!-- Cataclysm Guide for Russian Localization -->
+
+<guides>
+    <guide>
+        <title>Cataclysm Guide 1</title>
+        <description>This is a description of the first Cataclysm guide.</description>
+        <file>path/to/cataclysm-guide-1.ruRU.xml</file>
+    </guide>
+    <guide>
+        <title>Cataclysm Guide 2</title>
+        <description>This is a description of the second Cataclysm guide.</description>
+        <file>path/to/cataclysm-guide-2.ruRU.xml</file>
+    </guide>
+</guides>
