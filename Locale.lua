@@ -20,7 +20,7 @@ local function getForeign(text)
 
     if lazyTranslationCache[text] then return lazyTranslationCache[text] end
 
-    if next(L.words) == nil then
+    if not L.words or next(L.words) == nil then
         -- No custom words added
         lazyTranslationCache[text] = text
         return text
@@ -34,7 +34,13 @@ local function getForeign(text)
     local words = _ssplit(delim, text)
 
     -- TODO string insensitive lookups
-    for i, w in ipairs(words) do if L.words[w] then words[i] = L.words[w] end end
+    for i, w in ipairs(words) do
+        -- Extract word while preserving surrounding tags (icons, colors, punctuation)
+        local prefix, word, suffix = w:match("^(.-)([%w']+)(.-)$")
+        if word and L.words[word] then
+            words[i] = prefix .. L.words[word] .. suffix
+        end
+    end
 
     local lazyPhrase = _strjoin(delim, unpack(words))
     lazyTranslationCache[text] = lazyPhrase
