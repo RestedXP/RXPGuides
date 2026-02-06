@@ -1054,7 +1054,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.5,
-                        hidden = addon.game ~= "CLASSIC"
+                        hidden = not addon.VendorTreasures
                     },
                     showFlightTimers = {
                         name = L("Show Flight Timers"),
