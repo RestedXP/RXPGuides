@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" or GetLocale() == "ruRU" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
