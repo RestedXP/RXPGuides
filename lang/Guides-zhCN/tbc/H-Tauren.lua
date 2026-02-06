@@ -263,7 +263,7 @@ step
     #completewith DirtyMap
     >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r。拾取他们的 |cRXP_LOOT_Belts|r
     .complete 757,1 --Bristleback Belt (12)
-    .mob Bristleback Quilboar
+    .mob 刺背野猪人
 step << Shaman
     #completewith DirtyMap
     >>击杀 |cRXP_ENEMY_刺背萨满祭司|r。拾取他们的 |cRXP_LOOT_Salves|r
@@ -306,7 +306,7 @@ step
     .goto Mulgore,63.93,78.34,40,0
     >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r。拾取他们的 |cRXP_LOOT_Belts|r
     .complete 757,1 --Bristleback Belt (12)
-    .mob Bristleback Quilboar
+    .mob 刺背野猪人
 step << Shaman
     #loop
     .goto Mulgore,63.86,80.14,0

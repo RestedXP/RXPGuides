@@ -3491,7 +3491,7 @@ step
     >>|cRXP_WARN_如果你有的话，使用一个|r |T134829:0|t[初级治疗药水] |cRXP_WARN_，并在需要时使用你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_|r << !Warlock
     >>|cRXP_WARN_如果你有的话，使用一个|r |T134829:0|t[初级治疗药水]、|T133728:0|t[初级治疗石] |cRXP_WARN_，并在需要时使用你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_|r << Warlock
     .complete 806,1 --Fizzle's Claw (1)
-    .mob Fizzle Darkstorm
+    .mob 费索·暗雷
     .mob 小鬼爪牙
     .mob 火刃狂热者
     .mob 闪电蜥蜴

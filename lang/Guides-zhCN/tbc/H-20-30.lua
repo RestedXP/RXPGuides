@@ -974,7 +974,7 @@ step << Shaman
     .goto Thunder Bluff,25.21,20.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尼斯|r 对话
     .accept 1529 >>接受任务水之召唤
-    .target Xanis Flameweaver
+    .target 萨尼斯·织火
     .isQuestAvailable 1530
     .isNotOnQuest 1528,2985,2986
 step
@@ -1302,7 +1302,7 @@ step
     #requires Gems
     #completewith next
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t在 哀嚎洞穴入口处与 |cRXP_FRIENDLY_纳拉雷克斯的信徒|r 对话，将他安全护送到 |cRXP_FRIENDLY_纳拉雷克斯|r
-    .target Disciple of Naralex
+    .target 纳拉雷克斯的信徒
     .skipgossip
     .dungeon WC
 step
@@ -2566,8 +2566,8 @@ step << Hunter
     .train 16829 >>|cRXP_WARN_对 |cRXP_ENEMY_灰熊|r |cRXP_WARN_施放|r |T132164:0|t[驯服野兽]。使用它攻击怪物以学习 |T132140:0|t[爪击(等级3)]|r
     .train 17263 >>|cRXP_WARN_对 |cRXP_ENEMY_森林潜伏者|r |cRXP_WARN_施放 |r |T132164:0|t[驯服野兽]。使用它攻击怪物以学习 |T132278:0|t[撕咬(等级3)]|r
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
-    .mob Gray Bear
-    .mob Forest Most Creeper
+    .mob 邪恶的灰熊
+    .mob 森林食苔蛛
 step << Hunter
     .goto Hillsbrad Foothills,62.31,19.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_西奥多|r 对话
@@ -2582,7 +2582,7 @@ step
     >>途中击杀 |cRXP_ENEMY_熊|r 和 |cRXP_ENEMY_蜘蛛|r，并拾取它们掉落的 |cRXP_LOOT_舌头|r 和 |cRXP_LOOT_毒液|r
     >>|cRXP_WARN_避开|r |cRXP_ENEMY_老灰熊|r |cRXP_WARN_和 |r|cRXP_ENEMY_被驯养的食苔蛛|r |cRXP_WARN_，因为它们等级较高，不值得击杀|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob +Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
     .complete 496,2 --Collect Creeper Ichor (x1) 
     .mob 森林爬行者
@@ -2752,7 +2752,7 @@ step
     >>在返回塔伦米尔的途中，击杀 |cRXP_ENEMY_熊|r 和 |cRXP_ENEMY_蜘蛛|r，并拾取它们掉落的 |cRXP_LOOT_舌头|r 和 |cRXP_LOOT_毒液|r
     >>|cRXP_WARN_避开|r |cRXP_ENEMY_老灰熊|r |cRXP_WARN_和 |r|cRXP_ENEMY_被驯养的食苔蛛|r |cRXP_WARN_，因为它们等级较高，不值得击杀|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob +Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
     .complete 496,2 --Collect Creeper Ichor (x1) 
     .mob 森林爬行者
@@ -2838,7 +2838,7 @@ step
     >>在返回塔伦米尔的途中，击杀 |cRXP_ENEMY_熊|r 和 |cRXP_ENEMY_蜘蛛|r，并拾取它们掉落的 |cRXP_LOOT_舌头|r 和 |cRXP_LOOT_毒液|r
     >>|cRXP_WARN_避开|r |cRXP_ENEMY_老灰熊|r |cRXP_WARN_和 |r|cRXP_ENEMY_被驯养的食苔蛛|r |cRXP_WARN_，因为它们等级较高，不值得击杀|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob +Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
     .complete 496,2 --Collect Creeper Ichor (x1) 
     .mob 森林爬行者
@@ -2902,7 +2902,7 @@ step
 	#completewith TarrenMillTurnins2
     >>击杀 |cRXP_ENEMY_灰熊|r 和 |cRXP_ENEMY_饥饿的山地狮|r。拾取他们的 |cRXP_LOOT_灰熊的舌头|r 和 |cRXP_LOOT_山地狮的血液|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob +Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
 	.complete 501,1 --Collect Mountain Lion Blood (x10)
     .mob 饥饿的山地狮
@@ -3002,7 +3002,7 @@ step
 	#completewith Fields2
     >>击杀 |cRXP_ENEMY_灰熊|r 和 |cRXP_ENEMY_饥饿的山地狮|r。拾取他们的 |cRXP_LOOT_灰熊的舌头|r 和 |cRXP_LOOT_山地狮的血液|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob +Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
 	.complete 501,1 --Collect Mountain Lion Blood (x10)
     .mob 饥饿的山地狮
@@ -3012,7 +3012,7 @@ step
 	#completewith Fields2
     >>击杀 |cRXP_ENEMY_灰熊|r. 拾取它们的 |cRXP_LOOT_灰熊的舌头|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
     .isQuestTurnedIn 501
     .isOnQuest 496
@@ -3145,7 +3145,7 @@ step
 	.goto Hillsbrad Foothills,66.52,34.52,60,0
     >>杀掉 |cRXP_ENEMY_熊|r。拾取他们的 |cRXP_LOOT_舌头|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
-    .mob Gray Bear
+    .mob 邪恶的灰熊
     .mob 邪恶的灰熊
     .isOnQuest 496
 step
@@ -4061,7 +4061,7 @@ step
     >>|cRXP_ENEMY_夏杜布拉|r |cRXP_WARN_会在周围安静地巡逻|r
     .collect 16304,1,24 --Collect Shadumbra's Head
 	.accept 24 >>接受任务猎影的头
-	.unitscan Shadu
+	.unitscan 萨杜布拉
 step
     #loop
     .goto Ashenvale,58.08,56.06,0
@@ -4491,7 +4491,7 @@ step
 step
     >>击杀 |cRXP_ENEMY_洛古斯·杰特 |r
     .complete 6565,1 --Lorguss Jett slain (1)
-    .mob Lorguss Jett
+    .mob 洛古斯·杰特
     .isOnQuest 6565
     .dungeon BFD
 step
@@ -4541,7 +4541,7 @@ step
     .goto Ashenvale,73.18,61.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌尔格拉|r 对话
     .fly Zoram'gar >>飞往佐拉姆加前哨站
-    .target Vhulgr
+    .target 乌尔格拉 <双足飞龙管理员>
     .subzoneskip 2897
     .dungeon BFD
 step
@@ -4972,7 +4972,7 @@ step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_潘德|r 对话
     .train 3278 >>学习 |T133687:0|t[厚绒线绷带]
-    .target Pand Stonebinde
+    .target 潘德·缚石 <急救训练师>
     .skill firstaid,<1,1
 step
     #completewith next
@@ -5544,7 +5544,7 @@ step
     .goto Thousand Needles,44.90,48.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾鲁|r 对话
     .accept 4767 >>接受任务驭风者
-    .target Elu
+    .target 艾鲁
 step
     .goto Thousand Needles,45.14,49.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈瑟|r 对话
@@ -6559,7 +6559,7 @@ step
     .goto Thousand Needles,44.90,48.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾鲁|r 对话
     .turnin 4767 >>交任务驭风者
-    .target Elu
+    .target 艾鲁
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯塔恩|r 对话

@@ -907,7 +907,7 @@ step << Warlock
     >>|cRXP_WARN_前往屠宰场的最底层|r
     .use 190186 >>|cRXP_WARN_使用|r |T136065:0|t[木制雕像] |cRXP_WARN_来召唤一个|r |cRXP_ENEMY_被召唤的魅魔|r
     .complete 65603,1 --Kill Summoned Succubus (x1)
-    .mob Summoned Incubus
+    .mob 召唤的夜魔
     .isQuestTurnedIn 65602
 step << Warlock
     #completewith next
@@ -993,7 +993,7 @@ step
     .zoneskip Elwynn Forest,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
-	.target Guard Parker
+	.target 卫兵帕克
     .goto Redridge Mountains,15.30,71.50
     .accept 244 >>接受任务豺狼人的入侵
 step
@@ -1236,9 +1236,9 @@ step
     #completewith Level25
     >>在暮色森林击杀 |cRXP_ENEMY_蜘蛛|r。拾取它们的 |cRXP_LOOT_粘糊的蜘蛛腿|r
     .collect 2251,6,93,1 -- Gooey Spider Leg (6)
-    .mob Pygmy Venom Web Spider
+    .mob 小型结网毒蜘蛛
     .mob 结网毒蜘蛛
-    .mob Green Recluse
+    .mob 绿色独行蛛
     .mob 小型黑寡妇蜘蛛
 step
     #completewith next
@@ -1268,8 +1268,8 @@ step
     .complete 226,2 -- Rabid Dire Wolf (8)
     .collect 1015,10,90,1 -- Lean Wolf Flank (10)
     .skill cooking,<50,1 -- step only displays if skill is 50 or higher than 50
-    .mob Starving Dire Wolf
-    .mob Rabid Dire Wolf
+    .mob 饥饿的恐狼
+    .mob 疯狂的恐狼
     .isOnQuest 226
 step
     #completewith SFD
@@ -1277,8 +1277,8 @@ step
     .complete 226,1 -- Starving Dire Wolf (12)
     .complete 226,2 -- Rabid Dire Wolf (8)
     .skill cooking,50,1 -- step only displays if skill is less than 50
-    .mob Starving Dire Wolf
-    .mob Rabid Dire Wolf
+    .mob 饥饿的恐狼
+    .mob 疯狂的恐狼
     .isOnQuest 226
 step
     #label SFD
@@ -1306,8 +1306,8 @@ step
     .complete 226,2 -- Rabid Dire Wolf (8)
     .collect 1015,10,90,1 -- Lean Wolf Flank (10)
     .skill cooking,<50,1 -- step only displays if skill is 50 or higher than 50
-    .mob Starving Dire Wolf
-    .mob Rabid Dire Wolf
+    .mob 饥饿的恐狼
+    .mob 疯狂的恐狼
     .isOnQuest 226
 step
     #loop
@@ -1327,8 +1327,8 @@ step
     .complete 226,1 -- Starving Dire Wolf (12)
     .complete 226,2 -- Rabid Dire Wolf (8)
     .skill cooking,50,1 -- step only displays if skill is less than 50
-    .mob Starving Dire Wolf
-    .mob Rabid Dire Wolf
+    .mob 饥饿的恐狼
+    .mob 疯狂的恐狼
     .isOnQuest 226
 step
     .isQuestComplete 226
@@ -1353,9 +1353,9 @@ step
 	.goto Duskwood,29.6,50.4,70,0
     >>在暮色森林击杀 |cRXP_ENEMY_蜘蛛|r。拾取它们的 |cRXP_LOOT_粘糊的蜘蛛腿|r
     .collect 2251,6,93,1 -- Gooey Spider Leg (6)
-    .mob Pygmy Venom Web Spider
+    .mob 小型结网毒蜘蛛
     .mob 结网毒蜘蛛
-    .mob Green Recluse
+    .mob 绿色独行蛛
     .mob 小型黑寡妇蜘蛛
 step
     >>点击 |cRXP_PICK_一座风化的坟墓|r
@@ -1880,7 +1880,7 @@ step
     >>|cRXP_ENEMY_范高雷中尉|r |cRXP_WARN_对暗影伤害免疫。确保你有队友可以协助，否则可以跳过这一步|r << Warlock/Priest
     .complete 180,1 -- Fangore's Paw (1)
     .isOnQuest 180
-    .mob Lieutenant Fangore
+    .mob 范高雷中尉
 step
     .goto Redridge Mountains,84.50,46.80
     >>点击 |cRXP_PICK_古老的狮子雕像|r
@@ -2849,7 +2849,7 @@ step
     >>|cRXP_WARN_注意：你必须在获得|r |T136006:0|t[高强度放射性残留物] 后的 2 小时内交付该任务|r
     .complete 2962,1 -- High Potency Radioactive Fallout (1)
     .mob 辐射泥浆怪
-    .mob Irradiated Lurker
+    .mob 辐射入侵者
     .mob 辐射水元素
     .isOnQuest 2962
 step

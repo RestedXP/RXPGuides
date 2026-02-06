@@ -16,7 +16,7 @@ step << !NightElf
     +你选择的是侏儒和矮人专用的指南，请确保你的选择与你角色出生地一致
 step
     .goto Teldrassil,58.695,44.266
-    .target Conservator Ilthalaine
+    .target 管理员伊尔萨莱恩
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .accept 456 >>接受任务《物归己用》 自然的平衡
 step
@@ -69,7 +69,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 456,1 >>交任务《 前往熔光镇》 自然的平衡 << Hunter
     .turnin 456 >>交任务《 前往熔光镇》 自然的平衡 << !Hunter
-    .target Conservator Ilthalaine
+    .target 管理员伊尔萨莱恩
     .accept 457 >>接受任务《物归己用》 自然的平衡
 	.accept 3116 >>接受任务《物归己用》 简易符记 << Warrior
 	.accept 3117 >>接受任务《物归己用》 风化符记 << Hunter
@@ -111,7 +111,7 @@ step << !Hunter
     .accept 459 >>接受任务《物归己用》 森林守护者
 step << !Hunter
     .goto Teldrassil,58.6,44.3
-    .target Conservator Ilthalaine
+    .target 管理员伊尔萨莱恩
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 457 >>交任务《 前往熔光镇》 自然的平衡
 step
@@ -273,7 +273,7 @@ step
 step << Hunter
     #requires vial1
     .goto Teldrassil,58.6,44.3
-    .target Conservator Ilthalaine
+    .target 管理员伊尔萨莱恩
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 457,2 >>交任务《 前往熔光镇》 自然的平衡
 step << Priest
