@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #name 12-14 黑海岸
 #displayname 10-14 黑海岸 << Dwarf Hunter
 #displayname 11-14 黑海岸 << !Human
-#subgroup RestedXP 联盟 1-20级
+#subgroup RestedXP 联盟 1-20 级
 #defaultfor !Draenei !Warlock
 #next 14-20秘血岛
 

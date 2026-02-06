@@ -2324,7 +2324,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
-#name 23-25级 希尔斯布莱德丘陵
+#name 23-25 级 希尔斯布莱德丘陵
 #version 7
 #subgroup RestedXP 部落 1-30级
 #next 25-27级 灰谷
@@ -4721,7 +4721,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
-#name 27-30级 南贫瘠之地/千针石林
+#name 27-30 级 南贫瘠之地/千针石林
 #version 7
 #subgroup RestedXP 部落 1-30级
 #next 30-33 希尔斯布莱德 / 阿拉希
