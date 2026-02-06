@@ -148,6 +148,14 @@ addon.disabledQuestList = {
 83771, -- Delver's Call: Tak'Rethan Abyss
 85667, -- Delver's Call: The Underkeep
 85666, -- Delver's Call: Spiral Weave
+
+7161,
+7164,
+7163,
+7165,
+7166,
+7167,
+
 }
 
 addon.skipPreReq = {
