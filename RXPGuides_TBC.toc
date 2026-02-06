@@ -1,5 +1,6 @@
 ## Interface: 20505
 ## Title: RestedXP Guides
+## Title-ruRU: RestedXP Гайды
 ## Notes: In-game leveling guides
 ## Author: RestedXP
 ## Version: @project-version@
@@ -40,6 +41,7 @@ CptStadicsVendorTreasures.lua
 
 Guides/GuideList-tbc.xml
 lang/Guides-zhCN/GuideList-tbc.xml
+lang/Guides-ruRU/GuideList-tbc.xml
 
 Talents.lua
 Guides/Talents/tbc.xml

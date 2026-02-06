@@ -4,6 +4,7 @@
 ## Interface-Classic: 11508
 ## Title: RestedXP Guides
 ## Title-zhCN: RestedXP 指南
+## Title-ruRU: RestedXP Гайды
 ## Notes: In-game leveling guides
 ## Author: RestedXP
 ## Version: @project-version@
@@ -53,6 +54,7 @@ Guides/GuideList-mop.xml [AllowLoadGameType mists]
 Guides/GuideList-classic.xml [AllowLoadGameType vanilla]
 Guides/GuideList-tbc.xml [AllowLoadGameType tbc]
 lang/Guides-zhCN/GuideList-tbc.xml [AllowLoadGameType tbc]
+lang/Guides-ruRU/GuideList-tbc.xml [AllowLoadGameType tbc]
 
 Talents.lua [AllowLoadGameType cata,vanilla,tbc]
 Guides/Talents/cata.xml [AllowLoadGameType cata]
