@@ -165,13 +165,13 @@ level -- Omen of Clarity
     .talent 3,3,3,1
 
 level -- Natural Shapeshifter (Rank 1)
-    .talent 3,3,3,1
+    .talent 3,2,3,1
 
 level -- Natural Shapeshifter (Rank 2)
-    .talent 3,3,3,2
+    .talent 3,2,3,2
 
 level -- Natural Shapeshifter (Rank 3)
-    .talent 3,3,3,3
+    .talent 3,2,3,3
 
 level -- Nature's Grasp
     .talent 1,1,2,1
@@ -358,13 +358,13 @@ level -- Omen of Clarity
     .talent 3,3,3,1
 
 level -- Natural Shapeshifter (Rank 1)
-    .talent 3,3,3,1
+    .talent 3,2,3,1
 
 level -- Natural Shapeshifter (Rank 2)
-    .talent 3,3,3,2
+    .talent 3,2,3,2
 
 level -- Natural Shapeshifter (Rank 3)
-    .talent 3,3,3,3
+    .talent 3,2,3,3
 
 level -- Naturalist (Rank 1)
     .talent 3,2,2,1
