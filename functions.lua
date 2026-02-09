@@ -6672,6 +6672,9 @@ function addon.functions.collecttoy(self, ...)
         if args % 2 == 1 then
             element.textOnly = true
         end
+        if bit.band(args,2) == 2 then
+            element.reverse = true
+        end
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -6707,11 +6710,13 @@ function addon.functions.collecttoy(self, ...)
 
     if not element.step.active then return end
 
-    if isCollected then
-        addon.SetElementComplete(self)
-    elseif not element.textOnly then
-        element.step.completed = true
-        addon.updateSteps = true
+    if isCollected == not element.reverse then
+        if element.textOnly then
+            element.step.completed = true
+            addon.updateSteps = true
+        else
+            addon.SetElementComplete(self)
+        end
     end
 end
 
