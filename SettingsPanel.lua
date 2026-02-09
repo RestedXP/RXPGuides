@@ -513,7 +513,7 @@ function addon.settings:UpdateImportStatusHistory(data, ...)
         tinsert(self.gui.importStatusHistory, 1, fmt(data, ...))
     end
 
-    AceConfigRegistry:NotifyChange(addon.title .. "/Import")
+    AceConfigRegistry:NotifyChange(addon.RXPOptions.name .. "/Import")
 end
 
 --importCache.widget.obj.button:GetScript("OnClick")
