@@ -2978,15 +2978,9 @@ step
     .dungeon SFK
     .isOnQuest 1014
 step
-    #hardcore
     #completewith SFKTurnins
     .goto Silverpine Forest,45.51,41.26,150,0
     .subzone 228 >>Travel to The Sepulcher
-    .dungeon SFK
-step
-    #softcore
-    #completewith SFKTurnins
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .dungeon SFK
 step
     .goto Silverpine Forest,43.43,40.85

@@ -5851,29 +5851,6 @@ step
     .accept 9180 >> Accept Journey to Undercity << BloodElf
     .target +High Executor Mavren
     .goto Ghostlands,44.77,32.44
-step << Druid
-	#completewith DruidTrain3
-	.cast 18960 >> Cast Teleport: Moonglade
-	.zoneskip Moonglade
-	.xp <16,1
-step << Druid
-    #optional
-    .goto Moonglade,52.53,40.57
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .train 783 >> Train your class spells << wotlk
-    .train 8925 >> Train your class spells << TBC
-	.target Loganaar
-    .cooldown item,6948,>0
-	.xp <16,1
-    .xp >18,1
-step << Druid
-    #label DruidTrain3
-    .goto Moonglade,52.53,40.57
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .train 8938 >> Train your class spells
-	.target Loganaar
-    .cooldown item,6948,>0
-	.xp <18,1
 step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
     #completewith next
     .goto Ghostlands,45.42,30.52
@@ -6222,12 +6199,163 @@ step << Paladin
 step
     #optional
     #label SMTraining4
-step << !Rogue
+step
+    #sticky
+    #completewith EnterRFC
+    .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
+    .dungeon RFC
+step
+    #completewith UCPortRFC
+    .goto Ghostlands,45.42,30.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwing|r
+    .fly Silvermoon >> Fly to Silvermoon City
+    .target Skymaster Sunwing
+    .dungeon RFC
+step
+    #completewith UCPortRFC
+    .goto Eversong Woods,56.51,49.61,25,0
+    .goto Silvermoon City,73.39,59.65
+    .zone Silvermoon City >>Enter Silvermoon
+    .dungeon RFC
+step
+    #label UCPortRFC
+    .goto Silvermoon City,62.89,31.26,30,0
+    .goto Silvermoon City,51.83,17.91,30,0
+    .goto Silvermoon City,49.45,15.00
+    .zone Undercity >>Take the |cRXP_PICK_Orb of Translocation|r to Undercity
+    .zoneskip Tirisfal Glades
+    .zoneskip Undercity
+    .zoneskip Tirisfal Glades
+    .zoneskip Durotar
+    .zoneskip Orgrimmar
+    .dungeon RFC
+step
+    #completewith RFCPowerPickup
+    .goto Undercity,66.09,20.06,35,0
+    .goto Undercity,64.37,23.94,35,0
+    .goto Undercity,65.93,26.71,10,0
+    .goto Undercity,65.89,34.03,10,0
+    .goto Undercity,64.22,39.77,10,0
+    .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
+    .dungeon RFC
+step
+    #completewith next
+    .goto Undercity,51.99,64.54,10,0
+    .goto Undercity,46.25,73.22,10,0
+    .goto Undercity,45.32,78.32,10,0
+    .goto Undercity,46.26,83.91,10,0
+    .goto Undercity,49.03,87.92,10,0
+    .goto Undercity,52.94,89.60,10 >>Enter the Royal Quarter
+    .dungeon RFC
+step
+    #label RFCPowerPickup
+    .goto Undercity,56.2,96.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
+    .accept 5725 >>Accept The Power to Destroy...
+    .target Varimathras
+    .zoneskip Durotar
+    .zoneskip Orgrimmar
+    .dungeon RFC
+step
+    #completewith Durotar
+    .zone Tirisfal Glades >>Take the elevator back to the upper level and exit Undercity
+    .dungeon RFC
+step
+    #label Durotar
+    .goto Tirisfal Glades,61.06,58.86,12,0
+    .goto Tirisfal Glades,61.51,59.01,10,0
+    .goto Tirisfal Glades,61.27,59.22,8,0
+    .goto Tirisfal Glades,61.13,58.84,8,0
+    .goto Tirisfal Glades,61.38,58.71,8,0
+    .goto Tirisfal Glades,61.34,59.17,8,0
+    .goto Tirisfal Glades,60.51,58.69,-1
+    .goto Tirisfal Glades,60.94,46.35,-1
+    >>Go up the Zeppelin Tower
+    .zone Durotar >>Take the Zeppelin to Durotar
+    .zoneskip Orgrimmar
+    .dungeon RFC
+step
+    #completewith EnterRFC
+    .goto Orgrimmar,48.97,92.84,50,0
+    .zone Orgrimmar >> Enter Orgrimmar
+    .dungeon RFC
+step << !Troll !Orc
+    .goto Orgrimmar,45.12,63.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    .fp Orgrimmar >>Get the Orgrimmar flight path
+    .target Doras
+    .dungeon RFC
+step
+    .goto Orgrimmar,49.6,50.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .accept 5761 >>Accept Slaying the Beast
+    .target Neeru Fireblade
+    .dungeon RFC
+step
+    #label EnterRFC
+    .goto Orgrimmar,52.77,48.97
+    .subzone 2437 >> Enter the RFC Instance portal. Zone in
+    .dungeon RFC
+step
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
+    .complete 5725,1 --Spells of Shadow (1)
+    .complete 5725,2 --	Incantations from the Nether (1)
+    .mob Searing Blade Cultist
+    .mob Searing Blade Warlock
+    .isOnQuest 5725
+    .dungeon RFC
+step
+    >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
+    .complete 5761,1 -- Taragaman the Hungerer's Heart
+    .mob Taragaman the Hungerer
+    .isOnQuest 5761
+    .dungeon RFC
+step
+    >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
+    .complete 5725,1 --Spells of Shadow (1)
+    .complete 5725,2 --	Incantations from the Nether (1)
+    .mob Searing Blade Cultist
+    .mob Searing Blade Warlock
+    .isOnQuest 5725
+    .dungeon RFC
+step
+    .goto Orgrimmar,49.6,50.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .turnin 5761 >>Turn in Slaying the Beast
+    .target Neeru Fireblade
+    .isQuestComplete 5761
+    .dungeon RFC
+step << Druid
+	#completewith DruidTrain3
+	.cast 18960 >> Cast Teleport: Moonglade
+	.zoneskip Moonglade
+	.xp <16,1
+step << Druid
+    #optional
+    .goto Moonglade,52.53,40.57
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 783 >> Train your class spells << wotlk
+    .train 8925 >> Train your class spells << TBC
+	.target Loganaar
+    .cooldown item,6948,>0
+	.xp <16,1
+    .xp >18,1
+step << Druid
+    #label DruidTrain3
+    .goto Moonglade,52.53,40.57
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 8938 >> Train your class spells
+	.target Loganaar
+    .cooldown item,6948,>0
+	.xp <18,1
+step
     .hs >> Hearth to Tranquillien
     .cooldown item,6948,>0
     .zoneskip Ghostlands
     .bindlocation 3488,1
-    .subzoneskip 3488
+    .zoneskip Ghostlands
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalarin|r
@@ -8626,6 +8754,12 @@ step
     .target +Ambassador Sunsorrow << BloodElf
     .goto Undercity,57.77,90.57 << BloodElf
     --TODO: Beta check if 9180 turns in properly
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
+    .turnin 5725 >>Turn in The Power to Destroy...
+    .target Varimathras
+    .isQuestComplete 5725
+    .dungeon RFC
 step << Paladin
     #optional
     .goto Undercity,58.00,90.46

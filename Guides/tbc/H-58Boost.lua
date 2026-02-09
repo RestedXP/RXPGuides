@@ -208,7 +208,7 @@ step
 step
     .goto Western Plaguelands,47.49,51.00
 	>>Kill the |cRXP_ENEMY_Wandering Skeleton|r. Loot it for its |cRXP_LOOT_Outhouse Key|r
-	>>|cRXP_WARN_Grind Bone Fragments if the skeleton isn't spawned|r
+	>>|cRXP_WARN_Grind|r |T133724:0|t[Bone Fragments] |cRXP_WARN_if the |cRXP_ENEMY_Wandering Skeleton|r hasn't spawned|r
 	.collect 12738,1 -- Dalson Outhouse Key (x1)
 	.unitscan Wandering Skeleton
 step
