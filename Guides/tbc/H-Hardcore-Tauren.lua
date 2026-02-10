@@ -668,9 +668,9 @@ step << Tauren
     .goto Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .turnin 748 >>Turn in Poison Water
+    .timer 8,Poison Water RP
     .accept 754 >>Accept Winterhoof Cleansing
     .target Mull Thunderhorn
-    --TODO: RP timer 748 turnin
 step << Tauren
     #completewith next
     >>Collect the |cRXP_PICK_Well Stones|r around the Well

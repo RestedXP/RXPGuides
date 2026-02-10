@@ -695,9 +695,9 @@ step << Tauren
     .goto Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .turnin 748 >>Turn in Poison Water
+    .timer 8,Poison Water RP
     .accept 754 >>Accept Winterhoof Cleansing
     .target Mull Thunderhorn
-    --TODO: RP timer 748 turnin
 step << Tauren
     #completewith next
     >>Collect the |cRXP_PICK_Well Stones|r around the Well
@@ -1402,6 +1402,7 @@ step << Tauren
     .target +Ruul Eagletalon
     .goto Mulgore,47.35,62.02
     .turnin 758 >>Turn in Thunderhorn Cleansing
+    .timer 8,Thunderhorn Cleansing RP
     .accept 759 >>Accept Wildmane Totem
     .target +Mull Thunderhorn
     .goto Mulgore,48.54,60.38
@@ -1409,7 +1410,6 @@ step << Tauren
     .target +Harken Windtotem
     .goto Mulgore,48.71,59.32
     .isQuestComplete 761
-    --TODO: Add RP timer 758
 step << Tauren
     #label Bloodhoofturnins1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r, and |cRXP_FRIENDLY_Mull|r
@@ -1420,10 +1420,10 @@ step << Tauren
     .target +Ruul Eagletalon
     .goto Mulgore,47.35,62.02
     .turnin 758 >>Turn in Thunderhorn Cleansing
+    .timer 8,Thunderhorn Cleansing RP
     .accept 759 >>Accept Wildmane Totem
     .target +Mull Thunderhorn
     .goto Mulgore,48.54,60.38
-    --TODO: Add RP timer 758
 step << !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r and |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Turn in Dwarven Digging
