@@ -2119,8 +2119,8 @@ step
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
-    .accept 764 >>Accept in The Venture Co.
-    .accept 765 >>Accept in Supervisor Fizsprocket
+    .accept 764 >>Accept The Venture Co.
+    .accept 765 >>Accept Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
 step
     #completewith Fizsprocket
