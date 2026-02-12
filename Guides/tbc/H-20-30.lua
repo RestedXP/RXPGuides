@@ -3837,6 +3837,24 @@ RXPGuides.RegisterGuide([[
 #next 27-30 South Barrens/Thousand Needles
 
 
+step
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy the|r |T134332:0|t[Shredder Operating Manual Pages] |cRXP_BUY_from the Auction House if they're available|r --Shredder Operating Manual Page 1-12
+	.target Auctioneer Thathung
+	.collect 16645,1,6504,1 -- Page 1
+    .collect 16646,1,6504,1 -- Page 2
+    .collect 16647,1,6504,1 -- Page 3
+    .collect 16648,1,6504,1 -- Page 4
+    .collect 16649,1,6504,1 -- Page 5
+    .collect 16650,1,6504,1 -- Page 6
+    .collect 16651,1,6504,1 -- Page 7
+    .collect 16652,1,6504,1 -- Page 8
+    .collect 16653,1,6504,1 -- Page 9
+    .collect 16654,1,6504,1 -- Page 10
+    .collect 16655,1,6504,1 -- Page 11
+    .collect 16656,1,6504,1 -- Page 12
 step << Rogue
     #optional
     #completewith Splintertree1
@@ -3969,6 +3987,15 @@ step << BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuray'bin|r
     .accept 6503 >> Accept Ashenvale Outrunners
     .target Kuray'bin
+step
+    #ah
+    #completewith Outrunners
+    .goto Ashenvale,70.01,71.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurda|r
+    >>|cRXP_WARN_Skip this step if you do not have (all the) pages|r
+    .accept 6504 >> Accept The Lost Pages
+    .turnin 6504 >> Turn in The Lost Pages
+    .target Gurda Ragescar
 step
     #completewith Outrunners
     .line Ashenvale,71.46,70.10,72.08,70.47,72.50,70.60,72.94,70.67,73.33,70.61,74.36,70.10,74.86,70.06,75.26,69.96,75.94,69.80,76.11,68.95,76.93,68.04,77.35,66.96,77.60,66.33,77.93,65.93,78.24,65.72
