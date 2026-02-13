@@ -2101,7 +2101,7 @@ step
 step
     #completewith TaillasherEggs
     >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
-    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_Makrura Shellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2138,7 +2138,7 @@ step
 step
     #completewith MinshinasSkull
     >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
-    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_Makrura Shellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2201,7 +2201,7 @@ step
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
-    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_Makrura Shellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     >>|cRXP_WARN_Go to the southern islands if you're not almost done with this quest at this point. Many|r |cRXP_ENEMY_海蟹|r |cRXP_WARN_and|r |cRXP_ENEMY_龙虾人|r |cRXP_WARN_can be found there|r
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
@@ -2240,7 +2240,7 @@ step
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
     >>击杀 |cRXP_ENEMY_小海浪蟹|r 和 |cRXP_ENEMY_海浪蟹|r。拾取他们的 |cRXP_LOOT_Mucus|r
-    >>击杀 |cRXP_ENEMY_Makrura Spellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
+    >>击杀 |cRXP_ENEMY_Makrura Shellhides|r 和 |cRXP_ENEMY_巨钳龙虾人|r。拾取他们的 |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
