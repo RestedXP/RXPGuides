@@ -7611,11 +7611,13 @@ function addon.functions.isInScenario(self, ...)
 end
 
 events.enterScenario = {"SCENARIO_UPDATE", "SCENARIO_CRITERIA_UPDATE"}
-function addon.functions.enterScenario(self, ...)
+function addon.functions.enterScenario(self, text, ...)
     if type(self) == "string" then
-        local text, scenario = ...
-        local element = {text = text}
-        element.scenario = tonumber(scenario)
+        local scenarios = {...}
+        local element = {text = text, scenarios = scenarios}
+        if not text then
+            element.textOnly = true
+        end
         return element
     end
 
@@ -7624,8 +7626,16 @@ function addon.functions.enterScenario(self, ...)
     local step = element.step
 
     if event ~= "WindowUpdate" then
-        local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
-        if step.active and not addon.settings.profile.disableAutoSkip and not addon.isHidden and scenarioInfo and scenarioInfo.scenarioID == element.scenario then
+        local pass = false
+        for i,v in pairs(element.scenarios) do
+            local id = tonumber(v)
+            local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
+            if scenarioInfo and scenarioInfo.scenarioID == id then
+                pass = true
+                break
+            end
+        end
+        if step.active and not addon.settings.profile.disableAutoSkip and not addon.isHidden and pass then
             element.tooltipText = L"Step skipped: Wrong scenario"
             step.completed = true
             addon.updateSteps = true
