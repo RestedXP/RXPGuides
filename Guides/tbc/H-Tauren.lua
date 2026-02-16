@@ -449,7 +449,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #subgroup RestedXP Horde 1-30
 #defaultfor Tauren
-#next 10-20 Eversong Woods/Ghostlands << !Warrior !Shaman
+#next 10-12 Eversong Woods << !Warrior !Shaman
 #next 10-13 Mulgore << Warrior/Shaman
 
 step
