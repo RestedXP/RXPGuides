@@ -123,6 +123,16 @@ step
     .turnin 9831 >> Turn in Entry Into Karazhan
     .accept 9832 >> Accept The Second and Third Fragments
     .target Khadgar
+step << !Druid
+    #completewith next
+    +|cRXP_WARN_NOTE: To get to Arcatraz you must have purchased flying training as well as a flying mount from Shadowmoon Valley|r
+    .skill riding,225,1
+    .goto Shadowmoon Valley,37.6,56.0,0 << Alliance
+    .goto Shadowmoon Valley,29.2,29.4,0 << Horde
+    .target Brunn Flamebeard << Alliance
+    .target Ilsa Blusterbrew << Alliance
+    .target Dama Wildmane << Horde
+    .target Olrokk << Horde
 step
     >>You must now run the Steamvault and the Arcatraz. It does not matter which you do first
     >>Once inside either dungeon, open the |cRXP_PICK_Arcane Container|r to spawn the |cRXP_ENEMY_Fragment Guardian|r
