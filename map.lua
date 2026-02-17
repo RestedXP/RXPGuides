@@ -1013,9 +1013,6 @@ local function updateArrowData()
                 and not addon.hideArrow
                 and addon.settings.profile.showEnabled
             )
-            if step.arrowtext then
-               step.arrowtext:gsub("\\n",'\n')
-            end
 
             af.dist, af.orientation, af.element = 0, 0, element
             af.forceUpdate = true

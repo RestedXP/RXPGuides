@@ -1711,6 +1711,9 @@ function addon:LoadGuide(guide, OnLoad)
         if not step.elements or #step.elements == 0 then
             step.optional = true
         end
+        if step.arrowtext then
+            step.arrowtext = step.arrowtext:gsub("\\n",'\n')
+        end
         --BottomFrame.stepList[n] = n
         if step.completewith and not step.tip then step.sticky = true end
         if step.requires then
