@@ -22867,6 +22867,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleidea Rivergleam|r.
     .turnin 90843 >>Turn in Aiding the Dragon Isles
     .target Naleidea Rivergleam
+step
+    .zoneskip 2022,1
+    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 ]])
 --Blood Elf: Sunstrider Isle
 RXPGuides.RegisterGuide([[
