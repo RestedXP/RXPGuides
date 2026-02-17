@@ -7,13 +7,13 @@ if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
-#groupweight 1000
-#subgroup |cFFFCDC00(1-80)|r Default
+#groupweight 1001
+#subgroup |cFFFCDC00(1-90)|r Default
 #name 1a
 #displayname |cFFFCDC00LEVEL 1-10|r
 #disabled
 
-<< !Harronir/!Nightborne/!HighmountainTauren/!MagharOrc/!EarthenDwarf/!ZandalariTroll/!Vulpera/!Dracthyr/!VoidElf/!KulTiran/!LightforgedDraenei/!Mechagnome/!Pandaren DK
+<< !Harronir !Nightborne !HighmountainTauren !MagharOrc !EarthenDwarf !ZandalariTroll !Vulpera !Dracthyr !VoidElf !KulTiran !LightforgedDraenei !Mechagnome !Pandaren DK
 
 step
 +1
@@ -29,7 +29,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Exile's Reach
 #internal
 
@@ -224,12 +224,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Lady Jaina Proudmoore
--- step
---     .isQuestAvailable 55122
---     #label HousingSelect
---     +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
---     *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
---     .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
+step
+    .isQuestAvailable 55122
+    #label HousingSelect
+    +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
+    *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
+    .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -1642,7 +1642,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Neighbourhood
 #displayname |cFF1EFF001|r - Welcome to the Neighbourhood
 #next ba) DF Alliance Intro (A) << Alliance
@@ -1793,7 +1793,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) DK Intro
 #displayname |cFF1EFF001|r - Plaguelands
 #next ba) DF Alliance Intro (A) << Alliance
@@ -3569,7 +3569,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) New DK Intro
 #displayname |cFF1EFF001|r - The Frozen Throne
 #next ba) DF Alliance Intro (A) << Alliance
@@ -3700,7 +3700,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) DH Intro
 #displayname |cFF1EFF001|r - Mardum
 #next ba) DF Alliance Intro (A) << Alliance
@@ -5224,7 +5224,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Dracthyr Intro
 #displayname |cFF1EFF001|r - The Forbidden Reach
 #next ba) DF Alliance Intro (A) << Alliance
@@ -6520,7 +6520,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Pandaren Intro
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
 #next ba) DF Alliance Intro (A) << Alliance
@@ -8806,7 +8806,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Haranir Intro
 #displayname |cFF1EFF001|r - Harandar
 #next ba) DF Alliance Intro (A) << Alliance
@@ -9122,7 +9122,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) EarthenDwarf Intro
 #displayname |cFF1EFF001|r - Hall of Awakening
 #next ba) DF Alliance Intro (A) << Alliance
@@ -9736,7 +9736,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Exile's Reach Alliance
 #displayname |cFF1EFF001|r - Exile's Reach
 #next a) DF Alliance Intro Midnight (A)
@@ -9752,7 +9752,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Ammen Vale
 #displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
@@ -10405,7 +10405,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Draenei Azuremyst Isle
 #displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
@@ -11996,7 +11996,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Dwarf Coldridge Vallley
 #displayname Coldridge Vallley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
@@ -12852,7 +12852,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) New Tinkertown
 #displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
@@ -13730,7 +13730,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Dwarf & Gnome Dun Morogh
 #displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
@@ -15026,7 +15026,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Northshire Valley
 #displayname Northshire Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Human !DK
@@ -15549,7 +15549,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Elwynn Forest 1
 #displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
@@ -16696,7 +16696,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Shadowglen
 #displayname Shadowglen |cRXP_ENEMY_(Alternative)|r
 #defaultfor NightElf !DemonHunter !DK
@@ -17158,7 +17158,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Night Elf Teldrassil
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
@@ -18391,7 +18391,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Worgen Intro
 #displayname Gilneas |cRXP_ENEMY_(Alternative)|r
 #next ba) DF Alliance Intro (A)
@@ -21453,7 +21453,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) DarkIronDwarf Intro
 #displayname |cFF1EFF001|r - Shadowforge City
 #next ba) DF Alliance Intro (A)
@@ -21531,7 +21531,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) KulTiran Intro
 #displayname |cFF1EFF001|r - Boralus
 #next ba) DF Alliance Intro (A)
@@ -21616,7 +21616,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) LightforgedDraenei Intro
 #displayname |cFF1EFF001|r - The Vindicaar
 #next ba) DF Alliance Intro (A)
@@ -21694,7 +21694,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Mechagnome Intro
 #displayname |cFF1EFF001|r - Mechagon City
 #next ba) DF Alliance Intro (A)
@@ -21764,7 +21764,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) VoidElf Intro
 #displayname |cFF1EFF001|r - Telogrus Rift
 #next ba) DF Alliance Intro (A)
@@ -21936,14 +21936,14 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #subweight 999
 #name a) Exile's Reach Horde
 #displayname |cFF1EFF001|r - Exile's Reach 
 #next b1) BfA Intro
 
 
-<< Horde !Harronir !Dracthyr !DemonHunter !DK !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
+<< Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
     #completewith ExilesEnd
@@ -22130,8 +22130,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Thrall
--- step
---     #include a) Exile's Reach@HousingSelect-HousingSelect
+step
+    #include a) Exile's Reach@HousingSelect-HousingSelect
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22873,7 +22873,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Sunstrider Isle
 #displayname Sunstrider Isle |cRXP_ENEMY_(Alternative)|r
 #next ac) Blood Elf Eversong Woods
@@ -23142,7 +23142,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Blood Elf Eversong Woods
 #displayname |cFF1EFF002|r - Eversong Woods
 #next b1) BfA Intro
@@ -23608,7 +23608,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Valley of Trials1  << !Troll --Orc
 #name ab) Valley of Trials2  << Troll
 #displayname |cFF1EFF002|r - Valley of Trials << Troll
@@ -24012,7 +24012,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Echo Isles1 << Troll
 #name ac) Echo Isles2 << !Troll --Orc
 #displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
@@ -24751,7 +24751,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Camp Narache
 #displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
 #next ac) Tauren Camp Mulgore
@@ -24976,7 +24976,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Tauren Camp Mulgore
 #displayname |cFF1EFF002|r - Mulgore
 #next b1) BfA Intro
@@ -25495,7 +25495,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Deathknell
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
 #title Deathknell
@@ -25778,7 +25778,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ac) Undead Eversong Woods
 #displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) BfA Intro
@@ -26363,7 +26363,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name ab) Goblin Intro
 #displayname Kezan & The Lost Isles |cRXP_ENEMY_(Alternative)|r
 #next b1) BfA Intro
@@ -27888,7 +27888,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) HighmountainTauren
 #displayname |cFF1EFF001|r - Highmountain Tauren
 #next b1) BfA Intro
@@ -27970,7 +27970,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Nightborne Intro
 #displayname |cFF1EFF001|r - The Nighthold
 #next b1) BfA Intro
@@ -28052,7 +28052,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) ZandalariTroll Intro
 #displayname |cFF1EFF001|r - Dazar'alor
 #next b1) BfA Intro
@@ -28133,7 +28133,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) MagharOrc Intro
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) BfA Intro
@@ -28204,7 +28204,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
-#subgroup |cFFFCDC00(1-80)|r Default
+#subgroup |cFFFCDC00(1-90)|r Default
 #name a) Vulpera Intro
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) BfA Intro
@@ -28643,13 +28643,13 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Midnight
-#groupweight 1000
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#groupweight 1001
+#subgroup |cFF1EFF00(1-90)|r Default
 #name 1a 2
 #displayname |cFFFCDC00LEVEL 1-10|r
 #disabled
 
-<< !Harronir/!Nightborne/!HighmountainTauren/!MagharOrc/!EarthenDwarf/!ZandalariTroll/!Vulpera/!Dracthyr/!VoidElf/!KulTiran/!LightforgedDraenei/!Mechagnome/!Pandaren DK
+<< !Harronir !Nightborne !HighmountainTauren !MagharOrc !EarthenDwarf !ZandalariTroll !Vulpera !Dracthyr !VoidElf !KulTiran !LightforgedDraenei !Mechagnome !Pandaren DK
 
 step
 +1
@@ -28665,7 +28665,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Neighbourhood 2
 #displayname |cFF1EFF001|r - Welcome to the Neighbourhood
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28681,7 +28681,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) DK Intro 2
 #displayname |cFF1EFF001|r - Plaguelands
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28698,7 +28698,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) New DK Intro 2
 #displayname |cFF1EFF001|r - The Frozen Throne
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28714,7 +28714,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) DH Intro 2
 #displayname |cFF1EFF001|r - Mardum
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28730,7 +28730,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Dracthyr Intro 2
 #displayname |cFF1EFF001|r - The Forbidden Reach
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28746,7 +28746,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Pandaren Intro 2
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28762,7 +28762,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Haranir Intro 2
 #displayname |cFF1EFF001|r - Harandar
 #next ba) DF Alliance Intro (A) 2 << Alliance
@@ -28778,7 +28778,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) EarthenDwarf Intro 2
 #displayname |cFF1EFF001|r - Hall of Awakening
 #next ba) DF Alliance Intro (A) << Alliance
@@ -28813,7 +28813,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #subweight 999
 #name a) Exile's Reach Alliance 2
 #displayname |cFF1EFF001|r - Exile's Reach
@@ -28829,7 +28829,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Ammen Vale 2
 #displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
@@ -28845,7 +28845,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Draenei Azuremyst Isle 2
 #displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
@@ -28861,7 +28861,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Dwarf Coldridge Vallley 2
 #displayname Coldridge Vallley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
@@ -28877,7 +28877,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) New Tinkertown 2
 #displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
@@ -28893,7 +28893,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Dwarf & Gnome Dun Morogh 2
 #displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
@@ -28909,7 +28909,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Northshire Valley 2
 #displayname Northshire Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Human !DK
@@ -28925,7 +28925,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Elwynn Forest 1 2
 #displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
@@ -28941,7 +28941,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Shadowglen 2
 #displayname Shadowglen |cRXP_ENEMY_(Alternative)|r
 #defaultfor NightElf !DemonHunter !DK
@@ -28957,7 +28957,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Night Elf Teldrassil 2
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
@@ -28973,7 +28973,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Worgen Intro 2
 #displayname Gilneas |cRXP_ENEMY_(Alternative)|r
 #next ba) DF Alliance Intro (A) 2
@@ -28988,7 +28988,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) DarkIronDwarf Intro 2
 #displayname |cFF1EFF001|r - Shadowforge City
 #next ba) DF Alliance Intro (A) 2
@@ -29003,7 +29003,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) KulTiran Intro 2
 #displayname |cFF1EFF001|r - Boralus
 #next ba) DF Alliance Intro (A) 2
@@ -29018,7 +29018,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) LightforgedDraenei Intro 2
 #displayname |cFF1EFF001|r - The Vindicaar
 #next ba) DF Alliance Intro (A) 2
@@ -29033,7 +29033,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Mechagnome Intro 2
 #displayname |cFF1EFF001|r - Mechagon City
 #next ba) DF Alliance Intro (A) 2
@@ -29048,7 +29048,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) VoidElf Intro 2
 #displayname |cFF1EFF001|r - Telogrus Rift
 #next ba) DF Alliance Intro (A) 2
@@ -29068,13 +29068,13 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Exile's Reach Horde 2
 #displayname |cFF1EFF001|r - Exile's Reach
 #next b1) BfA Intro 2
 
 
-<< Horde !Harronir !Dracthyr !DemonHunter !DK !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
+<< Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
     #include RestedXP Speed Leveling\a) Exile's Reach Horde
@@ -29084,7 +29084,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Sunstrider Isle 2
 #displayname Sunstrider Isle |cRXP_ENEMY_(Alternative)|r
 #next ac) Blood Elf Eversong Woods 2
@@ -29100,7 +29100,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Blood Elf Eversong Woods 2
 #displayname |cFF1EFF002|r - Eversong Woods
 #next b1) BfA Intro 2
@@ -29116,7 +29116,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Valley of Trials1 2 << !Troll --Orc
 #name ab) Valley of Trials2 2 << Troll
 #displayname |cFF1EFF002|r - Valley of Trials << Troll
@@ -29137,7 +29137,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Echo Isles1 2 << Troll
 #name ac) Echo Isles2 2 << !Troll --Orc
 #displayname Echo Isles |cRXP_ENEMY_(Alternative)|r << Troll
@@ -29158,7 +29158,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Camp Narache 2
 #displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
 #next ac) Tauren Camp Mulgore 2
@@ -29174,7 +29174,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Tauren Camp Mulgore 2
 #displayname |cFF1EFF002|r - Mulgore
 #next b1) BfA Intro 2
@@ -29190,7 +29190,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Deathknell 2
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
 #title Deathknell
@@ -29207,7 +29207,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ac) Undead Eversong Woods 2
 #displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) BfA Intro 2
@@ -29223,7 +29223,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name ab) Goblin Intro 2
 #displayname Kezan & The Lost Isles |cRXP_ENEMY_(Alternative)|r
 #next b1) BfA Intro 2
@@ -29238,7 +29238,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) HighmountainTauren 2
 #displayname |cFF1EFF001|r - Highmountain Tauren
 #next b1) BfA Intro 2
@@ -29253,7 +29253,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Nightborne Intro 2
 #displayname |cFF1EFF001|r - The Nighthold
 #next b1) BfA Intro 2
@@ -29268,7 +29268,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) ZandalariTroll Intro 2
 #displayname |cFF1EFF001|r - Dazar'alor
 #next b1) BfA Intro 2
@@ -29283,7 +29283,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) MagharOrc Intro 2
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) BfA Intro 2
@@ -29298,7 +29298,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
-#subgroup |cFF1EFF00(1-90)|r Speedrun
+#subgroup |cFF1EFF00(1-90)|r Default
 #name a) Vulpera Intro 2
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) BfA Intro 2
