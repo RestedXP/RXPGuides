@@ -4428,9 +4428,13 @@ end
 function addon.functions.zoneskip(self, text, zone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
-        local mapID = addon.GetMapId(zone) or tonumber(zone)
-        mapID = addon.mapConversion[mapID] or mapID
-        if not mapID then
+        local ids = {}
+        for id in zone:gmatch("[^%+/]+") do
+            local mapID = addon.GetMapId(id) or tonumber(id)
+            mapID = addon.mapConversion[mapID] or mapID
+            table.insert(ids,mapID)
+        end
+        if not next(ids) then
             return addon.error(
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
                 ": map name/ID\n" .. self)
@@ -4439,7 +4443,7 @@ function addon.functions.zoneskip(self, text, zone, flags)
         if bit.band(flags,0x1) == 0x1 then
             element.reverse = true
         end
-        element.map = mapID
+        element.map = ids
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
@@ -4449,8 +4453,11 @@ function addon.functions.zoneskip(self, text, zone, flags)
     local step = element.step
     local currentMap = C_Map.GetBestMapForUnit("player")
     if not step.active or addon.isHidden or (type(currentMap) ~= "number" and not text) then return end
-    local zone = element.map
-    if (zone == currentMap) == not element.reverse then
+    local pass
+    for i,zone in pairs(element.map) do
+        pass = pass or (zone == currentMap)
+    end
+    if pass == not element.reverse then
         step.completed = true
         addon.updateSteps = true
     end
