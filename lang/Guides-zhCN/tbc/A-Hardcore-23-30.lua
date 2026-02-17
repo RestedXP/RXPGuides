@@ -2698,7 +2698,7 @@ step
     .isOnQuest 2904
 step
 .dungeon Gnomer
-    .use 9364 >>|cRXP_WARN_Use the|r |T132788:0|t[沉重的铅瓶] |cRXP_WARN_on a |cRXP_ENEMY_Irradiated Slime|r, |cRXP_ENEMY_Irradiated Lurker|r or|r |cRXP_ENEMY_Irradiated Horror|r
+    .use 9364 >>|cRXP_WARN_Use the|r |T132788:0|t[沉重的铅瓶] |cRXP_WARN_on a |cRXP_ENEMY_Irradiated Slime|r or|r |cRXP_ENEMY_Irradiated Horror|r
     >>|cRXP_WARN_使用时，|cRXP_ENEMY_辐射泥浆怪|r、|cRXP_ENEMY_辐射潜伏者|r 或 |cRXP_ENEMY_辐射恐兽|r 必须存活|r
     >>|cRXP_WARN_注意：你必须在获得|r |T136006:0|t[高强度放射性残留物] 后的 2 小时内交付该任务|r
     .complete 2962,1 -- High Potency Radioactive Fallout (1)
