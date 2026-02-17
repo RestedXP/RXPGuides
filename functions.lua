@@ -6141,6 +6141,7 @@ if addon.gameVersion >= 110000 then
 
         local element = self.element
         local step = element.step
+        if not step.active then return end
         local criteriaIndex = element.criteriaIndex
         local criteriaInfoByStep = C_ScenarioInfo.GetCriteriaInfoByStep(element.stage, criteriaIndex)
         if not criteriaInfoByStep then return end
@@ -7590,6 +7591,7 @@ function addon.functions.isInScenario(self, ...)
     local event, newStep = ...
     local element = self.element
     local step = element.step
+    if not step.active then return end
 
     if event ~= "WindowUpdate" then
         local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
