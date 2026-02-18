@@ -1487,49 +1487,66 @@ function addon.ProcessGuideTable(guide)
         end
         if not guideRef[newGuide] and guide ~= newGuide then
             guideRef[newGuide] = true
-            ProcessSteps(newGuide,startAt,stopAt)
+            ProcessSteps(newGuide,startAt,stopAt,true)
             guideRef[newGuide] = false
         end
     end
     local lastTip
-    function ProcessSteps(guide,startAt,stopAt)
-        for _, step in ipairs(guide.steps) do
+    function ProcessSteps(guide,startAt,stopAt,isInclude)
+        for n, step in ipairs(guide.steps) do
             local isShown = addon.IsStepShown(step)
-            if step.inlcude and step.include:sub(1,1) == "*" then
-                step.include = false
-                local stepToInclude = addon.labels[step.include]
-                if stepToInclude then
-                    for i,v in pairs(stepToInclude) do
-                        if not step[i] then
-                            step[i] = v
-                        end
-                    end
-                    for _,element in ipairs(stepToInclude.elements) do
-                        table.insert(step.elements,element)
-                    end
-                end
-            end
             if isShown and startAt and (step.label == startAt or startAt == step.stepId) then
                 startAt = nil
             end
             if isShown and not startAt then
-                if not(step.include and step.elements and #step.elements == 0 and not step.requires and not step.label) then
-                    if step.tip then
-                        tinsert(currentGuide.tips,step)
-                        lastTip = step
-                        step.title = step.title or L"Tip"
-                    else
-                        tinsert(currentGuide.steps, step)
-                        step.tipWindow = lastTip
+                if step.inlcude and step.include:sub(1,1) == "*" then
+                    step.include = false
+                    local stepToInclude = addon.labels[step.include]
+                    if stepToInclude then
+                        for i,v in pairs(stepToInclude) do
+                            if not step[i] then
+                                step[i] = v
+                            end
+                        end
+                        for _,element in ipairs(stepToInclude.elements) do
+                            table.insert(step.elements,element)
+                        end
                     end
-                    if step.elements then
-                        for _,element in pairs(step.elements) do
+                end
+                local iStep = step
+                if not(step.include and step.elements and #step.elements == 0 and not step.requires and not step.label) then
+                    if isInclude then
+                        local t = {}
+                        for i,v in pairs(step) do
+                            t[i] = v
+                        end
+                        if t.elements then
+                            local e = {}
+                            for i,element in ipairs(t.elements) do
+                                local v = CopyTable(element,true)
+                                e[i] = v
+                                v.step = t
+                            end
+                            t.elements = e
+                        end
+                        iStep = t
+                    end
+                    if step.tip then
+                        tinsert(currentGuide.tips,iStep)
+                        lastTip = iStep
+                        iStep.title = iStep.title or L"Tip"
+                    else
+                        tinsert(currentGuide.steps, iStep)
+                        iStep.tipWindow = lastTip
+                    end
+                    if iStep.elements then
+                        for _,element in pairs(iStep.elements) do
                             addon.settings.ReplaceColors(element)
                         end
                     end
                 end
-                IncludeGuide(step)
-                if stopAt and (step.label == stopAt or stopAt == step.stepId) then
+                IncludeGuide(iStep)
+                if stopAt and (iStep.label == stopAt or stopAt == iStep.stepId) then
                     break
                 end
             end
@@ -1706,7 +1723,7 @@ function addon:LoadGuide(guide, OnLoad)
         end
     end
 
-    for n, step in ipairs(guide.steps) do
+    for n, step in ipairs(addon.currentGuide.steps) do
         step.index = n
         if not step.elements or #step.elements == 0 then
             step.optional = true
