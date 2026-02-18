@@ -7343,7 +7343,7 @@ step << Paladin wotlk
 	.target Ithelis
 	.target Osselan
     .train 34769,1
-step << Paladin
+step << Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Press "Shift+P" to open your Mount tab|r
     >>|cRXP_WARN_Drag the|r |T136103:0|t[Thalassian Warhorse] |cRXP_WARN_onto your Action Bars|r

@@ -7333,7 +7333,7 @@ step << Paladin wotlk
 	.target 伊瑟里斯
 	.target 欧塞兰
     .train 34769,1
-step << Paladin
+step << Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Press "Shift+P" to open your Mount tab|r
     >>|cRXP_WARN_Drag the|r |T136103:0|t[Thalassian Warhorse] |cRXP_WARN_onto your Action Bars|r
