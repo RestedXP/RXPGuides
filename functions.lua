@@ -7161,6 +7161,7 @@ function addon.functions.singlebox(self)
     if type(self) == "string" then
         local guide = addon.guide or addon.currentGuide
         RXPCData.guideMetaData.multibox[guide] = true
+        return
     end
     local element = self.element
     local step = element.step

@@ -1521,13 +1521,23 @@ function addon.ProcessGuideTable(guide)
                             t[i] = v
                         end
                         if t.elements then
+                            local refs = {}
                             local e = {}
                             for i,element in ipairs(t.elements) do
                                 local v = CopyTable(element,true)
+                                refs[element] = v
                                 e[i] = v
                                 v.step = t
                             end
                             t.elements = e
+                            for _,element in ipairs(t.elements) do
+                                for i,v in pairs(element) do
+                                    local new = refs[v]
+                                    if new then
+                                        element[i] = new
+                                    end
+                                end
+                            end
                         end
                         iStep = t
                     end
