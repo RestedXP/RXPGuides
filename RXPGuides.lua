@@ -1158,6 +1158,7 @@ function addon:OnInitialize()
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
+    RXPCData.exploredZones = RXPCData.exploredZones or {}
 
     local realm = _G.GetRealmName()
     RXPData.realmData = RXPData.realmData or {}
@@ -1276,6 +1277,7 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
     self:RegisterEvent("PLAYER_LOGOUT")
+    self:RegisterEvent("UI_INFO_MESSAGE")
 
     if IsAddOnLoadOnDemand("Blizzard_Calendar") then
         self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
@@ -1400,6 +1402,18 @@ function addon:PLAYER_LOGOUT() addon.settings:SaveFramePositions() end
 function addon:CALENDAR_UPDATE_EVENT_LIST()
     -- Required by .dmf
     addon.calendarLoaded = true
+end
+
+addon.explorationText = _G.ERR_ZONE_EXPLORED:gsub("1%$", ""):gsub("2%$", ""):gsub("%%s", "(.+)"):gsub("%%d", "(%%d+)")
+function addon:UI_INFO_MESSAGE(_,arg1,arg2)
+    local currentMap = C_Map.GetBestMapForUnit("player")
+    if not (currentMap and arg1 == 408) then return end
+    local subzoneExplored = arg2:match(addon.explorationText)
+    if subzoneExplored then
+        print(currentMap,subzoneExplored)
+        RXPCData.exploredZones[currentMap] = RXPCData.exploredZones[currentMap] or {}
+        RXPCData.exploredZones[currentMap][subzoneExplored] = true
+    end
 end
 
 function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)

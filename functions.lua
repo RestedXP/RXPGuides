@@ -4425,6 +4425,47 @@ function addon.functions.zone(self, ...)
     end
 end
 
+addon.icons.explore = addon.icons["goto"]
+events.explore = {"MAP_EXPLORATION_UPDATED","UI_INFO_MESSAGE"}
+function addon.functions.explore(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, subZone, zone = ...
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
+        mapID = addon.mapConversion[mapID] or mapID
+        element.subzoneID = tonumber(subZone)
+        subZone = C_Map.GetAreaInfo(element.subzoneID or -1)
+        print(mapID, text, subZone)
+        if not (mapID and text and subZone) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid text/zone ID\n" .. self)
+        end
+        element.text = text .. "1"
+        element.mapid = mapID
+        element.subzone = subZone
+        element.textOnly = false
+        return element
+    end
+    local currentMap = C_Map.GetBestMapForUnit("player")
+    local element = self.element
+    if not element.step.active or addon.isHidden or type(currentMap) ~= "number" then return end
+    local zone = element.mapid
+    local subzone = element.subzone
+    local event, arg1, arg2 = ...
+    --if zone == currentMap and event == "" then
+    --CHAT_MSG_SYSTEM: ERR_ZONE_EXPLORED_XP - arg1
+    if event == "UI_INFO_MESSAGE" and arg1 == 408 then
+        local subzoneExplored = arg2:match(addon.explorationText)
+        if subzoneExplored == subzone then
+            RXPCData.exploredZones[currentMap][element.subzoneID] = true
+        end
+    end
+    if RXPCData.exploredZones[zone] and (RXPCData.exploredZones[zone][subzone] or RXPCData.exploredZones[zone][element.subzoneID]) then
+        addon.SetElementComplete(self)
+    end
+end
+
 function addon.functions.zoneskip(self, text, zone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
