@@ -1568,10 +1568,18 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Multibox mode"),
                         desc = function()
                             local out =
-                                L"Removes sections that require attention from all clients\nGuides that support this feature:\n"
+                                L"Removes sections that require attention from all clients\nGuides that support this feature:"
+                            local groups = {}
                             for guide in pairs(
                                              RXPCData.guideMetaData.multibox) do
-                                out = fmt("%s\n%s", out, guide)
+                                local g = addon.GetGuideTable(guide)
+                                if g then
+                                    groups[g.group] = groups[g.group] or fmt("\n(%s)",g.group)
+                                    groups[g.group] = fmt("%s\n%s",groups[g.group],g.displayname or g.name)
+                                end
+                            end
+                            for _,text in pairs(groups) do
+                                out = fmt("%s\n%s", out, text)
                             end
                             return out
                         end,

@@ -4435,7 +4435,7 @@ function addon.functions.explore(self, ...)
         mapID = addon.mapConversion[mapID] or mapID
         element.subzoneID = tonumber(subZone)
         subZone = C_Map.GetAreaInfo(element.subzoneID or -1)
-        print(mapID, text, subZone)
+        --print(mapID, text, subZone)
         if not (mapID and text and subZone) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -7187,7 +7187,9 @@ end
 function addon.functions.multibox(self)
     if type(self) == "string" then
         local guide = addon.guide or addon.currentGuide
-        RXPCData.guideMetaData.multibox[guide] = true
+        local name = guide.name
+        local group = guide.group
+        RXPCData.guideMetaData.multibox[group .. "||" .. name] = true
         return
     end
     local element = self.element
@@ -7201,7 +7203,9 @@ end
 function addon.functions.singlebox(self)
     if type(self) == "string" then
         local guide = addon.guide or addon.currentGuide
-        RXPCData.guideMetaData.multibox[guide] = true
+        local name = guide.name
+        local group = guide.group
+        RXPCData.guideMetaData.multibox[group .. "||" .. name] = true
         return
     end
     local element = self.element
