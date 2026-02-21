@@ -1881,6 +1881,13 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .turnin 6002 >>Turn in Body and Heart
     .target Turak Runetotem
+step
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .accept 5722 >>Accept Searching for the Lost Satchel
+    .accept 5723 >>Accept Testing an Enemy's Strength
+    .target Rahauro
+    .dungeon RFC
 step << Warrior/Shaman
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r

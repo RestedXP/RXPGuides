@@ -882,9 +882,33 @@ step << Troll Hunter/Orc Hunter/Warrior/Warlock/Priest
     .train 227 >>Train Staves
     .target Ansekhwa
 step
-    #completewith next
+    #completewith WCRFCTUrnins
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
-    .dungeon WC << !Druid
+step
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >>Turn in Returning the Lost Satchel
+    .turnin 5723 >>Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >>Turn in Returning the Lost Satchel
+    .target Rahauro
+    .isOnQuest 5724
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5723 >>Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isQuestComplete 5723
+    .dungeon RFC
 step
     .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r
@@ -904,6 +928,9 @@ step << Druid
     .trainer >> Train your class spells
     .accept 27 >> Accept A Lesson to Learn
     .target Turak Runetotem
+step
+    #optional
+    #label WCRFCTUrnins
 step
     #completewith ZamahTurnin
     .goto Thunder Bluff,28.14,32.97,40,0
@@ -1508,13 +1535,14 @@ step
     .isQuestComplete 1487
     .dungeon WC
 step
-    #label WCTurnins
     .goto Kalimdor,51.91,55.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r
     >>|cRXP_WARN_He is located above the the Wailing Caverns cave entrance|r
     .turnin 1486 >>Turn in Deviate Hides
     .target Nalpak
+    .isQuestComplete 1486
 step
+    #label WCTurnins
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders

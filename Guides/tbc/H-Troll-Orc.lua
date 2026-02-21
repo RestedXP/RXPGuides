@@ -3640,6 +3640,13 @@ step << !Tauren
     .turnin 853 >> Turn in Apothecary Zamah
     .target Apothecary Zamah
 step << !Tauren
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .accept 5722 >>Accept Searching for the Lost Satchel
+    .accept 5723 >>Accept Testing an Enemy's Strength
+    .target Rahauro
+    .dungeon RFC
+step << !Tauren
     #completewith LostPickup
     .hs >>Hearth to Razor Hill
     .use 6948

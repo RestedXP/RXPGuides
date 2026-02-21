@@ -1172,7 +1172,7 @@ step
     .goto Mulgore,61.45,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ancestral Spirit|r
     .turnin 773 >>Turn in Rite of Wisdom
-    .accept 775 >>Accept Journey into Thunder Bluff
+    .accept 775 >>Accept Journey into Thunder Bluff << Hunter/Druid
     .target Ancestral Spirit
 step
     #loop
@@ -1657,13 +1657,14 @@ step
     .turnin 6361 >>Turn in A Bundle of Hides
     .accept 6362 >>Accept Ride to Thunder Bluff
     .target Devrak
-step << Hunter/Druid
-    #completewith next
+step
+    #completewith RFCTB
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
     .zoneskip Thunder Bluff
+    .dungeon RFC !Hunter !Druid
 step << Hunter/Druid
     .goto Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
@@ -1756,6 +1757,14 @@ step << Druid
     .turnin 5932 >>Turn in Back to Thunder Bluff
     .accept 6002 >>Accept Body and Heart
     .target Turak Runetotem
+step
+    #label RFCTB
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .accept 5722 >>Accept Searching for the Lost Satchel
+    .accept 5723 >>Accept Testing an Enemy's Strength
+    .target Rahauro
+    .dungeon RFC
 step << Druid/Hunter
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r

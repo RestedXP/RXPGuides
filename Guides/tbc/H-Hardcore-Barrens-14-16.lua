@@ -1270,19 +1270,120 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
 step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    >>|cRXP_WARN_This is a prerequisite quest for Ragefire Chasm. Skip this step if you do not wish to do it|r
+    .accept 5726 >>Accept Hidden Enemies
+    .target Thrall
+    .dungeon RFC
+step
+    #completewith next
+    .zone Durotar >>Leave Orgrimmar
+    .dungeon RFC
+step
+    .goto Durotar,53.08,9.19
+    >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
+    >>|cRXP_WARN_This is a prerequisite quest for Ragefire Chasm. Skip this step if you do not wish to do it|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .isOnQuest 5726
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5726 >>Turn in Hidden Enemies
+    .accept 5727 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestComplete 5726
+    .dungeon RFC
+step
+    #optional
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5727 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5726
+    .dungeon RFC
+step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 5761 >>Accept Slaying the Beast
     .target Neeru Fireblade
     .dungeon RFC
 step
-    #label EnterRFC
-    .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >> Enter the RFC Instance portal. Zone in
+    .goto Orgrimmar,49.6,50.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
+    .skipgossip
+    .target Neeru Fireblade
+    .isOnQuest 5727
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5727 >>Turn in Hidden Enemies
+    .accept 5728 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestComplete 5727
     .dungeon RFC
 step
     #optional
+    #label OrgPickups
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5728 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5727
+    .dungeon RFC
+step
+    #completewith EnterRFC
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
+step
+    #label EnterRFC
+    .goto Orgrimmar,52.77,48.97
+    .subzone 2437,2 >> Enter the RFC Instance portal. Zone in
+    .dungeon RFC
+step
+    >>|cRXP_WARN_If possible, have party members share the following quests|r
+    >>|cRXP_WARN_Skip this step if nobody has these quests|r
+    .accept 5722 >>Accept Searching for the Lost Satchel
+    .accept 5723 >>Accept Testing an Enemy's Strength
+    .dungeon RFC
+step
     #completewith next
+    >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
+    .complete 5723,1 --Ragefire Trogg (8)
+    .mob +Ragefire Trogg
+    .complete 5723,2 --Ragefire Shaman (8)
+    .mob +Ragefire Shaman
+    .isOnQuest 5723
+    .dungeon RFC
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
+    .turnin 5722 >>Turn in Searching for the Lost Satchel
+    .accept 5724 >>Accept Returning the Lost Satchel
+    .target Maur Grimtotem
+    .isOnQuest 5722
+    .dungeon RFC
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
+    .accept 5724 >>Accept Returning the Lost Satchel
+    .target Maur Grimtotem
+    .isQuestTurnedIn 5722
+    .dungeon RFC
+step
+    #label TroggsShamans
+    >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
+    .complete 5723,1 --Ragefire Trogg (8)
+    .mob +Ragefire Trogg
+    .complete 5723,2 --Ragefire Shaman (8)
+    .mob +Ragefire Shaman
+    .isOnQuest 5723
+    .dungeon RFC
+step
+    #requires TroggsShamans
+    #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
@@ -1295,6 +1396,15 @@ step
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
+    .dungeon RFC
+step
+    #label BazzalanandJergosh
+    >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
+    .complete 5728,1 --Bazzalan (1)
+    .mob +Bazzalan
+    .complete 5728,2 --Jergosh the Invoker (1)
+    .mob +Jergosh the Invoker
+    .isOnQuest 5728
     .dungeon RFC
 step
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -1310,6 +1420,36 @@ step
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
     .isQuestComplete 5761
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5728 >>Turn in Hidden Enemies
+    .accept 5729 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestComplete 5728
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5729 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5728
+    .dungeon RFC
+step
+    .goto Orgrimmar,49.6,50.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .turnin 5729 >>Turn in Hidden Enemies
+    .accept 5730 >>Accept Hidden Enemies
+    .target Neeru Fireblade
+    .isQuestTurnedIn 5728
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5730 >>Turn in Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step
     #optional

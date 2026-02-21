@@ -1005,6 +1005,31 @@ step << Druid
     .accept 27 >> Accept A Lesson to Learn
     .target Turak Runetotem
 step
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >>Turn in Returning the Lost Satchel
+    .turnin 5723 >>Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >>Turn in Returning the Lost Satchel
+    .target Rahauro
+    .isOnQuest 5724
+    .dungeon RFC
+step
+    #optional
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5723 >>Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isQuestComplete 5723
+    .dungeon RFC
+step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >>Travel to the Spirit Rise and enter the pools of vision
