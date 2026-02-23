@@ -7471,21 +7471,6 @@ step
     .goto Thousand Needles,43.12,36.86
     .xp 30 >> Grind to level 30
 step
-    #optional
-    .abandon 1151 >>Abandon Test of Strength
-step
-    #optional
-    .abandon 5147 >>Abandon Wanted - Arnak Grimtotem
-step
-    #optional
-    .abandon 5064 >>Abandon Grimtotem Spying
-step
-    #optional
-    .abandon 5088 >>Abandon Arikara
-step
-    #optional
-    .abandon 1152 >>Abandon Test of Lore
-step
     #label ShimmeringF
     #completewith next
     .goto Thousand Needles,70.58,62.69,200 >> Travel to the Shimmering Flats
@@ -7575,6 +7560,21 @@ step << Hunter
     .collect 3030,1800,1111,1 --Razor Arrow (1800)
     .target Starn
     .subzoneskip 484,1
+step
+    #optional
+    .abandon 1151 >>Abandon Test of Strength
+step
+    #optional
+    .abandon 5147 >>Abandon Wanted - Arnak Grimtotem
+step
+    #optional
+    .abandon 5064 >>Abandon Grimtotem Spying
+step
+    #optional
+    .abandon 5088 >>Abandon Arikara
+step
+    #optional
+    .abandon 1152 >>Abandon Test of Lore
 step
     #completewith OreSampleTI
     .goto Thousand Needles,45.15,49.11

@@ -6166,14 +6166,10 @@ step << Paladin
     .goto Silvermoon City,84.65,43.43,25,0
     .goto Silvermoon City,89.00,36.95,15,0
     .goto Silvermoon City,89.26,35.20,15 >>Travel toward |cRXP_FRIENDLY_Bloodvalor|r
-    .train 647,1 << Paladin tbc
-    .train 62124,1 << Paladin wotlk
 step << Paladin
     .goto Silvermoon City,89.26,35.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bloodvalor|r
     .turnin 9685 >>Turn in Redeeming the Dead
-    .train 647,1 << Paladin tbc
-    .train 62124,1 << Paladin wotlk
     .target Knight-Lord Bloodvalor
 step << Paladin
     #optional

@@ -3529,11 +3529,6 @@ step
     .target Skymistress Gloaming
     .zoneskip Ghostlands
 step
-    .goto Ghostlands,47.34,29.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to cRXP_FRIENDLY_Quartermaster Lymel|r
-    .turnin 9135 >> Turn in Return to Quartermaster Lymel
-    .target Quartermaster Lymel
-step
     .goto Ghostlands,47.23,28.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathi|r
     .accept 9152 >> Accept Tomber's Supplies
@@ -4516,11 +4511,16 @@ step << Paladin
     .target Blood Knight Stillblade
     .use 24184
 step << Paladin
+    #completewith next
+    .goto Silvermoon City,82.03,68.36,25,0
+    .goto Silvermoon City,84.63,48.65,25,0
+    .goto Silvermoon City,84.65,43.43,25,0
+    .goto Silvermoon City,89.00,36.95,15,0
+    .goto Silvermoon City,89.26,35.20,15 >>Travel toward |cRXP_FRIENDLY_Bloodvalor|r
+step << Paladin
     .goto Silvermoon City,89.26,35.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bloodvalor|r
     .turnin 9685 >>Turn in Redeeming the Dead
-    .train 647,1 << Paladin tbc
-    .train 62124,1 << Paladin wotlk
     .target Knight-Lord Bloodvalor
 step
     #optional

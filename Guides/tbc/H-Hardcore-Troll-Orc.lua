@@ -737,8 +737,8 @@ step
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
 	.goto Durotar,42.70,52.99,25,0
-    .xp 5+1635 >> Grind to 1635+/2800xp << !Shaman
-    .xp 5+645 >> Grind to 645+/2800xp << Shaman
+    .xp 5+1680 >> Grind to 1680+/2800xp << !Shaman
+    .xp 5+690 >> Grind to 690+/2800xp << Shaman
     .isQuestTurnedIn 4402
 step
     #loop
@@ -763,8 +763,8 @@ step
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
 	.goto Durotar,42.70,52.99,25,0
-    .xp 5+1255 >> Grind to 1255+/2800xp << !Shaman
-    .xp 5+265 >> Grind to 265+/2800xp << Shaman
+    .xp 5+1300 >> Grind to 1300+/2800xp << !Shaman
+    .xp 5+310 >> Grind to 310+/2800xp << Shaman
     .isOnQuest 4402
 step << Orc/Troll
     #completewith BurningBladeTurnin

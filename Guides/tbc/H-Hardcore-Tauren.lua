@@ -899,8 +899,7 @@ step << Tauren
     #completewith next
     >>Kill |cRXP_ENEMY_Stalkers|r and |cRXP_ENEMY_Cougars|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 756,1 --Stalker Claws (6)
-    .mob +Prairie Wolf
-    .mob +Prairie Wolf Alpha
+    .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
 step
@@ -917,8 +916,7 @@ step << Tauren
     .goto Mulgore,46.4,50.7,60,0
     >>Kill |cRXP_ENEMY_Stalkers|r and |cRXP_ENEMY_Cougars|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 756,1 --Stalker Claws (6)
-    .mob +Prairie Wolf
-    .mob +Prairie Wolf Alpha
+    .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
 step

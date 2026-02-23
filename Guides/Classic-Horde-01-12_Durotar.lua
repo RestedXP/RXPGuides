@@ -1261,7 +1261,7 @@ step
 	.goto Durotar,42.38,54.22,25,0
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
-    .xp 5+1230 >> Grind to 1230+/2800xp << !Shaman
+    .xp 5+1300 >> Grind to 1300+/2800xp << !Shaman
     .xp 5+310 >> Grind to 310+/2800xp << Shaman
     .isOnQuest 4402
 step << skip
