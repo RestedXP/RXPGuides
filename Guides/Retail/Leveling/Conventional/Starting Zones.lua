@@ -27926,14 +27926,14 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+-- step
+--     .goto 85,40.82,80.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+--     .accept 51443 >>Accept Battle for Azeroth: Mission Statement
+--     .chromietime 15
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -27947,6 +27947,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halian Shlavahawk|r.
     .turnin 50319 >>Turn in Stranger in a Strange Land
     .target Halian Shlavahawk
+step
+    .goto 85,40.82,80.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    .accept 60126 >>Accept Mists of Pandaria: To Pandaria!
+    .chromietime 8
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step
+    .goto 85,49.88,75.57
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 60126,1 --1/1 Visit Grommash Hold
+step
+    >>Click on the quest popup under your minimap.
+    .turnin 60126 >>Turn in Mists of Pandaria: To Pandaria!
+    .target Nedaridea
 step
     #include a) Horde Legion Intro
 -- step
@@ -28008,14 +28024,14 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+-- step
+--     .goto 85,40.82,80.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+--     .accept 51443 >>Accept Battle for Azeroth: Mission Statement
+--     .chromietime 15
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -28029,6 +28045,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melitier Vahlouran|r.
     .turnin 50303 >>Turn in Stranger in a Strange Land
     .target Melitier Vahlouran
+step
+    .goto 85,40.82,80.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    .accept 60126 >>Accept Mists of Pandaria: To Pandaria!
+    .chromietime 8
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step
+    .goto 85,49.88,75.57
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 60126,1 --1/1 Visit Grommash Hold
+step
+    >>Click on the quest popup under your minimap.
+    .turnin 60126 >>Turn in Mists of Pandaria: To Pandaria!
+    .target Nedaridea
 step
     #include a) Horde Legion Intro
 -- step
@@ -28089,14 +28121,14 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+--     .accept 51443 >>Accept Battle for Azeroth: Mission Statement
+--     .chromietime 15
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 84,56.257,17.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -28110,6 +28142,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Natal'hakata|r.
     .turnin 55138 >>Turn in Stranger in a Strange Land
     .target Natal'hakata
+step
+    .goto 85,40.82,80.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    .accept 60126 >>Accept Mists of Pandaria: To Pandaria!
+    .chromietime 8
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step
+    .goto 85,49.88,75.57
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 60126,1 --1/1 Visit Grommash Hold
+step
+    >>Click on the quest popup under your minimap.
+    .turnin 60126 >>Turn in Mists of Pandaria: To Pandaria!
+    .target Nedaridea
 step
     #include a) Horde Legion Intro
 -- step
@@ -28160,14 +28208,14 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+-- step
+--     .goto 85,40.82,80.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+--     .accept 51443 >>Accept Battle for Azeroth: Mission Statement
+--     .chromietime 15
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -28181,6 +28229,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Limbflayer Lasha|r.
     .turnin 53502 >>Turn in Stranger in a Strange Land
     .target Limbflayer Lasha
+step
+    .goto 85,40.82,80.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    .accept 60126 >>Accept Mists of Pandaria: To Pandaria!
+    .chromietime 8
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step
+    .goto 85,49.88,75.57
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 60126,1 --1/1 Visit Grommash Hold
+step
+    >>Click on the quest popup under your minimap.
+    .turnin 60126 >>Turn in Mists of Pandaria: To Pandaria!
+    .target Nedaridea
 step
     #include a) Horde Legion Intro
 -- step
@@ -28232,14 +28296,14 @@ step
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+-- step
+--     .goto 85,40.82,80.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+--     .accept 51443 >>Accept Battle for Azeroth: Mission Statement
+--     .chromietime 15
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -28253,6 +28317,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nilsa|r.
     .turnin 58124 >>Turn in Stranger in a Strange Land
     .target Nilsa
+step
+    .goto 85,40.82,80.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    .accept 60126 >>Accept Mists of Pandaria: To Pandaria!
+    .chromietime 8
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+step
+    .goto 85,49.88,75.57
+    >>|cRXP_WARN_Follow the arrow.|r
+    .complete 60126,1 --1/1 Visit Grommash Hold
+step
+    >>Click on the quest popup under your minimap.
+    .turnin 60126 >>Turn in Mists of Pandaria: To Pandaria!
+    .target Nedaridea
 step
     #include a) Horde Legion Intro
 -- step
