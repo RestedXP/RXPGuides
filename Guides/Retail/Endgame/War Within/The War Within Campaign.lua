@@ -4,7 +4,6 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP War Within
-#groupweight 997
 #subgroup |cFFFCDC00(80)|r Campaigns
 #name a) 11.0: War Within
 #displayname 11.0: War Within

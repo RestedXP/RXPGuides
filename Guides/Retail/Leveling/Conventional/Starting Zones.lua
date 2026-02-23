@@ -7,7 +7,6 @@ if GetLocale() == "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
-#groupweight 1001
 #subgroup |cFFFCDC00(1-90)|r Default
 #name 1a
 #displayname |cFFFCDC00LEVEL 1-10|r
@@ -1642,6 +1641,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Speed Leveling
+#groupweight 999
 #subgroup |cFFFCDC00(1-90)|r Default
 #name a) Neighbourhood
 #displayname |cFF1EFF001|r - Welcome to the Neighbourhood
@@ -5062,7 +5062,7 @@ step << Alliance
     .turnin 44473 >>Turn in A Weapon of the Alliance
     .target Elerion Bladedancer
     .accept 44663 >>Accept In the Blink of an Eye
-    .disablecheckbox#
+    .disablecheckbox
 step << Alliance
     #completewith Weapon of the Alliance
    .goto 84,40.28,77.68,250 >>Leave the Castle
@@ -21875,7 +21875,7 @@ step << DemonHunter VoidElf
     .turnin 44473 >>Turn in A Weapon of the Alliance
     .target Elerion Bladedancer
     .accept 44663 >>Accept In the Blink of an Eye
-    .disablecheckbox#
+    .disablecheckbox
 step << DemonHunter VoidElf
     #completewith Weapon of the Alliance
    .goto 84,40.28,77.68,250 >>Leave the Castle
@@ -21937,7 +21937,6 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-90)|r Default
-#subweight 999
 #name a) Exile's Reach Horde
 #displayname |cFF1EFF001|r - Exile's Reach 
 #next b1) BfA Intro
@@ -28728,7 +28727,6 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Midnight
-#groupweight 1001
 #subgroup |cFF1EFF00(1-90)|r Default
 #name 1a 2
 #displayname |cFFFCDC00LEVEL 1-10|r
@@ -28750,6 +28748,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Midnight
+#groupweight 1000
 #subgroup |cFF1EFF00(1-90)|r Default
 #name a) Neighbourhood 2
 #displayname |cFF1EFF001|r - Welcome to the Neighbourhood
@@ -28899,7 +28898,6 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP Midnight
 #subgroup |cFF1EFF00(1-90)|r Default
-#subweight 999
 #name a) Exile's Reach Alliance 2
 #displayname |cFF1EFF001|r - Exile's Reach
 #next a) DF Alliance Intro Midnight (A) 2

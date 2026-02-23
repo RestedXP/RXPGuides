@@ -8,7 +8,6 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Miscellaneous
-#groupweight 996
 #subgroup Allied Races
 #name a) UNLOCKING
 #displayname Unlocking

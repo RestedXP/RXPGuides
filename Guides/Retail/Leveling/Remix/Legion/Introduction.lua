@@ -8,7 +8,6 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Legion Remix
-#groupweight 998
 #name 1a) Tips & Tricks
 #displayname |cFF8888880|r - Tips & Tricks|r
 #subgroup |cFFFCDC00(10-80)|r Speedrun Route
