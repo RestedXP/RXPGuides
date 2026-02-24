@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Miscellaneous
 #subgroup Skyriding Glyphs
-#name a) Dragonflight Glyphs
+#name a) CDragonflight Glyphs
 #displayname Dragonflight Glyphs
 #chapters a) Waking Shores Glyphs;a) Ohn'ahran Plains Glyphs;a) Azure Span Glyphs;a) Thaldraszus Glyphs;a) Forbidden Reach Glyphs;a) Zaralek Cavern Glyphs;a) Emerald Dream Dragon Glyphs
 ]])
@@ -853,7 +853,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Miscellaneous
 #subgroup Skyriding Glyphs
-#name a) The War Within Glyphs
+#name a) BThe War Within Glyphs
 #displayname The War Within Glyphs
 #chapters a) Isle of the Dorn Glyphs;a) The Ringing Deeps Glyphs;a) Hallowfall Glyphs;a) Azj-Kahet Glyphs;a) K'aresh Glyphs
 ]])
@@ -1310,7 +1310,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Miscellaneous
 #subgroup Skyriding Glyphs
-#name a) Midnight Glyphs
+#name a) AMidnight Glyphs
 #displayname Midnight Glyphs
 #chapters a) Eversong Woods Glyphs;a) Zul'aman Glyphs;a) Harandar Glyphs;a) Voidstorm Glyphs
 
@@ -1331,43 +1331,82 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    .goto 2393,48.37,6.68
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,1
 step
+    .goto 2395,58.95,19.59
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,3
 step
+    .goto 2395,65.23,32.62
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,2
 step
+    .goto 2395,49.46,48.04
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,5
 step
-    *Use |T4640477:0|t[Whirling Surge] on cooldown.
-    .achievement 61576,6
-step
+    .goto 2395,43.17,46.39
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,11
 step
+    .goto 2395,39.45,45.66
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
+    *Use |T4640477:0|t[Whirling Surge] on cooldown.
+    .achievement 61576,6
+step
+    .goto 2395,39.97,59.62
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,4
 step
+    .goto 2395,33.42,65.4
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,9
 step
+    .goto 2395,52.45,67.59
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,8
 step
+    .goto 2395,58.48,58.22
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,10
 step
+    .goto 2395,62.62,62.82
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61576,7
-
-
-
-
-
 ]])
 --Zul'aman
 RXPGuides.RegisterGuide([[
@@ -1380,36 +1419,80 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    .goto 2395,63.81,81.9
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,9
 step
+    .goto 2437,19.16,70.66
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,1
 step
+    .goto 2437,30.44,84.79
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,7
 step
+    .goto 2437,42.72,80.15
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,11
 step
+    .goto 2437,46.72,82.22
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,10
 step
+    .goto 2437,53.6,80.48
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,3
 step
+    .goto 2437,53.21,54.45
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,5
 step
+    .goto 2437,42.94,34.34
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,2
 step
+    .goto 2437,51.5,23.6
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,4
 step
+    .goto 2437,39.57,19.7
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,6
 step
+    .goto 2437,27.95,28.62
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61581,8
 
@@ -1426,30 +1509,63 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    .goto 2413,47.04,53.24
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,2
 step
+    .goto 2413,44.57,62.78
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,7
 step
+    .goto 2413,26.57,61.4
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,8
 step
+    .goto 2413,34.58,23.15
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,3
 step
+    .goto 2413,54.71,35.36
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,5
 step
+    .goto 2413,73.08,25.87
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,1
 step
+    .goto 2413,69.37,45.83
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,6
+-- step
+--     .goto 2413,65.09,61.74
+--     *Use |T4640477:0|t[Whirling Surge] on cooldown.
+--     .achievement 61582,4
 step
-    *Use |T4640477:0|t[Whirling Surge] on cooldown.
-    .achievement 61582,4
-step
+    .goto 2413,61.86,67.53
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61582,9
 ]])
@@ -1463,43 +1579,80 @@ RXPGuides.RegisterGuide([[
 #chapter
 
 step
+    .goto 2405,49.25,87.48
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,11
 step
+    .goto 2405,65.07,71.88
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,9
 step
+    .goto 2405,51.33,62.68
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,1
 step
+    .goto 2405,45.3,52.26
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,8
 step
+    .goto 2405,54.97,45.55
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,5
 step
+    .goto 2444,36.18,44.95
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,6
 step
+    .goto 2405,36.09,37.25
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,10
 step
+    .goto 2405,37.19,49.97
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,2
 step
+    .goto 2405,35.67,61.13
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,3
 step
+    .goto 2405,39.92,71
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,4
 step
+    .goto 2405,38.89,76.2
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost
+    *Use |T4640498:0|t[Skyward Ascent] for an uplift.
+    *Use |T4640489:0|t[Second Wind] to renew vigor charges.
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
     .achievement 61583,7
-
-
-
-
-
-
-
 ]])
