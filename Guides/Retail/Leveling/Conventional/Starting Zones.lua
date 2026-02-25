@@ -22096,7 +22096,7 @@ step
     .accept 56775 >>Accept Warming Up
     .target Thrall
 step
-    #include a) Exile's Reach@CombatDummy-CombatDummy
+    #include RestedXP Speed Leveling\a) Exile's Reach@CombatDummy-CombatDummy
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 56775 >>Turn in Warming Up
@@ -22131,7 +22131,7 @@ step
     .turnin 58208 >>Turn in Brace for Impact
     .target Thrall
 step
-    #include a) Exile's Reach@HousingSelect-HousingSelect
+    #include RestedXP Speed Leveling\a) Exile's Reach@HousingSelect-HousingSelect
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22139,7 +22139,7 @@ step
     .choose 7338834
     .target Thrall
 step
-    #include a) Exile's Reach@Murlocs-Murlocs
+    #include RestedXP Speed Leveling\a) Exile's Reach@Murlocs-Murlocs
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22165,7 +22165,7 @@ step
     .accept 54952 >>Accept Finding the Lost Expedition
     .target Thrall
 step
-    #include a) Exile's Reach@expedition survivors-expedition survivors
+    #include RestedXP Speed Leveling\a) Exile's Reach@expedition survivors-expedition survivors
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
     .turnin 54952 >>Turn in Finding the Lost Expedition
@@ -22173,7 +22173,7 @@ step
     .goto 1409,58.39,74.57
     .target +Warlord Breka Grimaxe
 step
-    #include a) Exile's Reach@Raw Meat-campfire
+    #include RestedXP Speed Leveling\a) Exile's Reach@Raw Meat-campfire
 step << Hunter
     .goto 1409,58.36,74.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r.
@@ -22195,7 +22195,7 @@ step << !Hunter
     .goto 1409,58.38,74.63
     .target +Captain Garrick
 step
-    #include a) Exile's Reach@ClassQuests-ClassQuests
+    #include RestedXP Speed Leveling\a) Exile's Reach@ClassQuests-ClassQuests
 step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r and |cRXP_FRIENDLY_Won'sa|r |cRXP_WARN_after the roleplay|r.
     .turnin 59339 >>Turn in Enhanced Combat Tactics <<Monk
@@ -22214,7 +22214,7 @@ step
     .accept 55186 >>Accept Down with the Quilboar <<!Hunter
     .target Mithdran Dawntracker
 step
-    #include a) Exile's Reach@HunterTameStart-HunterTameEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@HunterTameStart-HunterTameEnd
 step << Hunter
     .goto 1409,62.72,69.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
@@ -22223,7 +22223,7 @@ step << Hunter
     .accept 55186 >>Accept Down with the Quilboar
     .target Mithdran Dawntracker
 step
-    #include a) Exile's Reach@Quilboar Shadow Magic-QuilboarEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@Quilboar Shadow Magic-QuilboarEnd
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r and |cRXP_FRIENDLY_Cork Fizzlepop|r.
     .turnin 55184 >>Turn in Forbidden Quilboar Necromancy
@@ -22296,7 +22296,7 @@ step
     .timer 12.5,RP
     .mob Monstrous Cadaver
 step
-    #include a) Exile's Reach@GiantBoarEnd-GiantBoarEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@GiantBoarEnd-GiantBoarEnd
 step
     .goto 1409,52.59,53.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
@@ -22328,7 +22328,7 @@ step << Warrior/Warlock/Paladin/Priest/Rogue
     .accept 58962 >>Accept A Warlock's Bargain << Warlock
     .target Grunt Throg
 step << Shaman
-    #include a) Exile's Reach@GhostWolf-GhostWolf
+    #include RestedXP Speed Leveling\a) Exile's Reach@GhostWolf-GhostWolf
 step
     .goto 1409,52.89,56.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Jordan|r.
@@ -22341,11 +22341,11 @@ step
     .timer 33,RP
     .target Shuja Grimaxe
 step << Shaman
-    #include a) Exile's Reach@VeilBlossomStart-VeilBlossomEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@VeilBlossomStart-VeilBlossomEnd
 step << Warlock
-    #include a) Exile's Reach@WarlockClassStart-WarlockClassEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@WarlockClassStart-WarlockClassEnd
 step << Warrior
-    #include a) Exile's Reach@Hjalmar's Final Execution-Execute
+    #include RestedXP Speed Leveling\a) Exile's Reach@Hjalmar's Final Execution-Execute
 step << !Shaman\!Warlock\!Warrior
     .goto 1409,55.71,48.32,15,0
     .goto 1409,58.20,50.22
@@ -22367,7 +22367,7 @@ step
     .goto 1409,56.83,46.18
     .target +Shuja Grimaxe
 step
-    #include a) Exile's Reach@HarpiesAreaStart-HarpiesAreaEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaStart-HarpiesAreaEnd
 step
     .goto 1409,54.29,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
@@ -22377,7 +22377,7 @@ step
     .target Herbert Gloomburst
     .mob Bloodbeak
 step
-    #include a) Exile's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
+    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r, |cRXP_FRIENDLY_Bo|r, and |cRXP_FRIENDLY_Shuja Grimaxe|r.
     .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
@@ -22391,15 +22391,15 @@ step
     .goto 1409,56.83,46.18
     .target +Shuja Grimaxe
 step
-    #include a) Exile's Reach@LightspawnStart1-LightspawnEnd2
+    #include RestedXP Speed Leveling\a) Exile's Reach@LightspawnStart1-LightspawnEnd2
 step << Priest
-    #include a) Exile's Reach@PriestClass1-PriestClass1
+    #include RestedXP Speed Leveling\a) Exile's Reach@PriestClass1-PriestClass1
 step << Paladin
-    #include a) Exile's Reach@PaladinClass1Start-PaladinClass1End
+    #include RestedXP Speed Leveling\a) Exile's Reach@PaladinClass1Start-PaladinClass1End
 step
-    #include a) Exile's Reach@Freeing the Light-Freeing the Light
+    #include RestedXP Speed Leveling\a) Exile's Reach@Freeing the Light-Freeing the Light
 step << Shaman
-    #include a) Exile's Reach@Capturedghostwolves1-Capturedghostwolves2
+    #include RestedXP Speed Leveling\a) Exile's Reach@Capturedghostwolves1-Capturedghostwolves2
 step << Priest
     .goto 1409,56.12,53.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sha'zul|r.
@@ -22407,7 +22407,7 @@ step << Priest
     .accept 58960 >>Accept Resurrecting the Recruits
     .target Sha'zul
 step << Priest
-    #include a) Exile's Reach@PriestsEnd1-PriestsEnd1
+    #include RestedXP Speed Leveling\a) Exile's Reach@PriestsEnd1-PriestsEnd1
 step << Priest
     .goto 1409,56.12,53.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sha'zul|r.
@@ -22436,7 +22436,7 @@ step << Rogue
     .skipgossipid 52645
     .target Drizza Sidestabber
 step << Rogue
-    #include a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
+    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
     .goto 1409,45.66,56.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizza Sidestabber|r.
@@ -22444,7 +22444,7 @@ step << Rogue
     .accept 58933 >>Accept The Deadliest of Poisons
     .target Drizza Sidestabber
 step << Rogue
-    #include a) Exile's Reach@RogueExilesStart2-RogueExilesEnd2
+    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart2-RogueExilesEnd2
 step << Hunter
     .goto 1409,52.56,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
@@ -22457,7 +22457,7 @@ step << Hunter
     .skipgossipid 52664
     .target Herbert Gloomburst
 step << Hunter
-    #include a) Exile's Reach@Rusted Chain-Old Spring
+    #include RestedXP Speed Leveling\a) Exile's Reach@Rusted Chain-Old Spring
 step << Hunter
     .goto 1409,52.56,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
@@ -22465,7 +22465,7 @@ step << Hunter
     .accept 59356 >>Accept Hunting the Stalker
     .target Mithdran Dawntracker
 step << Hunter
-    #include a) Exile's Reach@Freezing trap-Freezing trap
+    #include RestedXP Speed Leveling\a) Exile's Reach@Freezing trap-Freezing trap
 step << Hunter
    .goto 1409,52.56,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r |cRXP_WARN_after a short roleplay|r.
@@ -22473,7 +22473,7 @@ step << Hunter
     .accept 60168 >>Accept The Art of Taming
     .target Mithdran Dawntracker
 step << Hunter
-    #include a) Exile's Reach@DismissPet-DismissPet
+    #include RestedXP Speed Leveling\a) Exile's Reach@DismissPet-DismissPet
 step << Hunter
     #completewith next
     #label Art of Taming
@@ -22565,7 +22565,7 @@ step << Mage
     .accept 59352 >>Accept A Mage's Knowledge
     .target Herbert Gloomburst
 step << Mage
-    #include a) Exile's Reach@Spell Book-Spell Book
+    #include RestedXP Speed Leveling\a) Exile's Reach@Spell Book-Spell Book
 step << Mage
     .goto 1409,52.16,55.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
@@ -22619,7 +22619,7 @@ step
     .goto 1409,51.11,59.52
     .target +Lana Jordan
 step
-    #include a) Exile's Reach@Trapped Expedition-Expedition Member4
+    #include RestedXP Speed Leveling\a) Exile's Reach@Trapped Expedition-Expedition Member4
 step
     #completewith next
     #label Hrun
@@ -22694,7 +22694,7 @@ step << Druid
     .accept 59350 >>Accept A Druid's Form
     .target Crenna Earth-Daughter
 step
-    #include a) Exile's Reach@DruidStone-DruidStone
+    #include RestedXP Speed Leveling\a) Exile's Reach@DruidStone-DruidStone
 step << Druid
     .goto 1409,45.51,49.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crenna Earth-Daughter|r.
@@ -22743,7 +22743,7 @@ step
     .skipgossipid 54297
     .target Herbert Gloomburst
 step
-    #include a) Exile's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
+    #include RestedXP Speed Leveling\a) Exile's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
 step
     #completewith next
     #label Right Beneath Their Eyes
@@ -22775,7 +22775,7 @@ step
     .goto 1409,40.3,32.7
     .target +.target Shuja Grimaxe
 step
-    #include a) Exile's Reach@Wug's ward-Ogres
+    #include RestedXP Speed Leveling\a) Exile's Reach@Wug's ward-Ogres
 step
     #completewith next
     #label Catapult Destruction
@@ -22817,7 +22817,7 @@ step
     .accept 55992 >>Accept Dungeon: Darkmaul Citadel
     .target Warlord Mulgrin Thunderwalker
 step
-    #include a) Exile's Reach@Controlling their Stones-Darkmaul Citadel
+    #include RestedXP Speed Leveling\a) Exile's Reach@Controlling their Stones-Darkmaul Citadel
 step
     .goto 1409,39.65,31.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22825,7 +22825,7 @@ step
     .accept 55991 >>Accept An End to Beginnings
     .target Thrall
 step
-    #include a) Exile's Reach@Kalecgos1-Kalecgos1
+    #include RestedXP Speed Leveling\a) Exile's Reach@Kalecgos1-Kalecgos1
 step
     .goto 2022,81.23,28.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r.
