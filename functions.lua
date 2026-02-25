@@ -7190,7 +7190,7 @@ function addon.functions.multibox(self)
         local name = guide.name
         local group = guide.group
         RXPCData.guideMetaData.multibox[group .. "||" .. name] = true
-        return
+        return {}
     end
     local element = self.element
     local step = element.step
@@ -7206,7 +7206,7 @@ function addon.functions.singlebox(self)
         local name = guide.name
         local group = guide.group
         RXPCData.guideMetaData.multibox[group .. "||" .. name] = true
-        return
+        return {}
     end
     local element = self.element
     local step = element.step
