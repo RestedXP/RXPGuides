@@ -7009,12 +7009,12 @@ function addon.functions.isWorldQuestAvailable(self, ...)
     end
 
     local element = self.element
-    local taskInfo = C_TaskQuest.GetQuestsForPlayerByMapID(element.mapId)
+    local taskInfo = C_TaskQuest.GetQuestsOnMap(element.mapId)
 
     local available = false
 
     for i=1, #taskInfo do
-        local questId = taskInfo[i].questId
+        local questId = taskInfo[i].questID
         if questId == element.questId and QuestUtils_IsQuestWorldQuest(questId) then
             local timeLeft = C_TaskQuest.GetQuestTimeLeftMinutes(questId)
             if (element.duration < 0 or timeLeft >= element.duration) then
