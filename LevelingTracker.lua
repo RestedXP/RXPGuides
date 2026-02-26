@@ -41,12 +41,24 @@ local function RequestTimePlayed()
     return _G.RequestTimePlayed()
 end
 
--- Overwrite default handler
+-- Overwrite old default played handler
 ChatFrame_DisplayTimePlayed = function(...)
     if ReportPlayedTimeToChat then return hookedChatFrame_DisplayTimePlayed(...) end
 
     -- Delay clearing /played output to account for other addons queueing
     C_Timer.After(3, function() ReportPlayedTimeToChat = true end)
+end
+
+-- Overwrite new default played handler
+if ChatFrameUtil and ChatFrameUtil.DisplayTimePlayed then
+    local hookedChatFrameUtil_DisplayTimePlayed = ChatFrameUtil.DisplayTimePlayed
+
+    ChatFrameUtil.DisplayTimePlayed = function(...)
+        if ReportPlayedTimeToChat then return hookedChatFrameUtil_DisplayTimePlayed(...) end
+
+        -- Delay clearing /played output to account for other addons queueing
+        C_Timer.After(3, function() ReportPlayedTimeToChat = true end)
+    end
 end
 
 function addon.tracker:SetupTracker()
