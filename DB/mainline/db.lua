@@ -65,10 +65,14 @@ end
 
 function addon.GetDefaultGuide()
     local played
-    if not addon.tracker.waitingForTimePlayed then
-        local login = addon.tracker.state.login
-        played = difftime(time(),login.time) + login.totalTimePlayed
+
+    if addon.tracker.state and addon.tracker.state.login then
+        if not addon.tracker.waitingForTimePlayed then
+            local login = addon.tracker.state.login
+            played = difftime(time(), login.time) + login.totalTimePlayed
+        end
     end
+
     local HBD = LibStub("HereBeDragons-2.0")
     local zone = HBD:GetPlayerZone()
     if not played then
