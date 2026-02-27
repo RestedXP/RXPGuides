@@ -5366,11 +5366,16 @@ function addon.functions.skipgossip(self, text, ...)
         return element
     end
 
-    if not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() then return end
-
     local element = self.element
+    if not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() or not element.step.active then
+        return
+    end
+    local currentMap = C_Map.GetBestMapForUnit("player")
     local args = element.args or {}
     local nArgs = #args
+    if nArgs == 0 and addon.arrowFrame:IsShown() and addon.arrowFrame.element.zone ~= currentMap then
+        return
+    end
     local event = text
     local id = tonumber(args[1])
     if (event == nil and element.step.active) then
