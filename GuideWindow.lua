@@ -285,11 +285,12 @@ function BottomFrame:StepScroll(n)
             break
         end
     end]]
-    if n == 1 or not stepPos[n] then
+    local height = ScrollChild.f1:GetHeight()
+    if n == 1 or not (stepPos[n] and stepPos[0] and height) then
         value = 0
     else
-        value = stepPos[n] / stepPos[0] * ScrollChild.f1:GetHeight() - 2
-        local smax = ScrollChild.f1:GetHeight() - BottomFrame:GetHeight() + 10
+        value = stepPos[n] / stepPos[0] * height - 2
+        local smax = height - BottomFrame:GetHeight() + 10
         if value > smax then value = smax end
     end
     ScrollFrame.ScrollBar:SetValue(value)
