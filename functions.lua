@@ -6711,7 +6711,7 @@ function addon.functions.collectmount(self, ...)
 
     if isCollected then
         addon.SetElementComplete(self)
-    elseif not element.textOnly then
+    elseif element.textOnly then
         element.step.completed = true
         addon.updateSteps = true
     end
