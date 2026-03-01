@@ -6439,7 +6439,7 @@ function addon.functions.dmf(self, ...)
         element.skipTo = skipTo
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.eventName = _G.CALENDAR_FILTER_DARKMOON
+        element.eventId = _G.CALENDAR_FILTER_DARKMOON
         return element
     end
     return addon.functions.holiday(self, ...)
@@ -6451,7 +6451,7 @@ function addon.functions.nodmf(self, ...)
         local text,skipTo = ...
         element.skipTo = skipTo
         element.reverse = true
-        element.eventName = _G.CALENDAR_FILTER_DARKMOON
+        element.eventId = _G.CALENDAR_FILTER_DARKMOON
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         return element
@@ -6493,13 +6493,13 @@ function addon.functions.holiday(self, text, eventId, reverse)
 
     for i = 1, GetNumDayEvents(0, monthDay) do
         event = GetDayEvent(0, monthDay, i)
-
+        --print(event and event.title, element.eventId)
         if event and element.eventId and (element.eventId == event.eventID or event.title == element.eventId) then
             eventFound = true
             break
         end
     end
-    --print('dmf',isDmfInTown,element.reverse)
+    --print('dmf',eventFound,element.reverse)
     if (not eventFound == not element.reverse) and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
