@@ -106,6 +106,16 @@ function addon.HideTimers()
     RXPFrame.Footer.cog:SetAlpha(1)
 end
 
+function addon.StopTimer(label)
+    local bar = BarContainer.bars[label]
+    if not bar then
+        return
+    end
+
+    bar:Stop()
+    addon:SortTimers()
+end
+
 function addon.StartTimer(duration,label,options)
     if type(duration) ~= "number" or duration <= 0 or not RXPFrame:IsShown() then return end
     label = label or ""
