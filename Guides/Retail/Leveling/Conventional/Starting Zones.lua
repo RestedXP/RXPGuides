@@ -229,6 +229,7 @@ step
     +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
     *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
     .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
+    #veteran
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -22843,6 +22844,11 @@ step
     .target Kalecgos
     .accept 87555 >>Accept Home Is Where the Hearth Is
 step
+    .itemcount 25474,1
+    .goto 2022,81.97,31.47
+    .collectmount 133 >>Use the |T298596:0|t[Tawny Wind Rider]
+    .use 25474
+step
     .goto 2022,80.41,27.83
     >>Mount up on any mount. |cRXP_WARN_Not Travelform|r.
     .complete 87555,1 --1/1 Ride any mount from your mount collection
@@ -22871,6 +22877,629 @@ step
     .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+    .skyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleidea Rivergleam|r, |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Boss Magor|r.
+    .accept 65452 >>Accept Explorers in Peril
+    .goto 2022,80.62,27.60
+    .target +Naleidea Rivergleam
+    .accept 65453 >>Accept Primal Pests
+    .goto 2022,80.65,27.60
+    .target +Scalecommander Cindrethresh
+    .accept 65451 >>Accept Practice Materials
+    .goto 2022,80.60,27.65
+    .target +Boss Magor
+    .noskyriding
+step
+    #completewith WakingShoresExplorersInPeril
+    .goto 2022,79.24,25.84,0,0
+    >>Kill |cRXP_ENEMY_Primal Proto-Drakes|r.
+    .complete 65453,1 --10/10 Primal Proto-drakes slain
+    .mob Primal Proto-Drake
+    .noskyriding
+step
+    #completewith WakingShoresExplorersInPeril
+    >>Kill |cRXP_ENEMY_Primal Proto-Whelps|r.
+    *Loot them for |T134309:0|t[|cRXP_LOOT_Proto-Whelp Scale|r].
+    .complete 65451,1 --20/20 Primal Proto-Whelp Scales collected
+    .mob Primal Proto-Whelp
+    .noskyriding
+step
+    .goto 2022,80.05,28.48,25,0
+    .goto 2022,80.37,26.34
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rib Cage|r.
+    .complete 65452,1 --1/1 Pathfinder Poppy rescued
+    .noskyriding
+step
+    .goto 2022,78.71,24.52
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Archivist Spearblossom|r.
+    .complete 65452,2 --1/1 Archivist Spearblossom rescued
+    .target Archivist Spearblossom
+    .noskyriding
+step
+    #label WakingShoresExplorersInPeril
+    .goto 2022,77.37,29.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spelunker Lazee|r hanging on the chain.
+    .complete 65452,3 --1/1 Spelunker Lazee rescued
+    .target Spelunker Lazee
+    .noskyriding
+step
+    #hidewindow
+    #completewith Primal Proto-drakesH
+    #loop
+    .goto 2022,77.9,30.8,20,0
+    .goto 2022,78.56,28.70,20,0
+    .goto 2022,78.11,27.76,20,0
+    .goto 2022,77.03,28.74,20,0
+    .goto 2022,79.39,29.93,20,0
+    .goto 2022,80.31,28.77,20,0
+    .goto 2022,77.7,26.4,20,0
+    +1
+    .noskyriding
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Primal Proto-Drakes|r.
+    .complete 65453,1 --10/10 Primal Proto-drakes slain
+    .mob Primal Proto-Drake
+    .noskyriding
+step
+    >>Kill |cRXP_ENEMY_Primal Proto-Whelps|r.
+    *Loot them for |T134309:0|t[|cRXP_LOOT_Proto-Whelp Scale|r].
+    .complete 65451,1 --20/20 Primal Proto-Whelp Scales collected
+    .mob Primal Proto-Whelp
+    .noskyriding
+step
+    #label Primal Proto-drakesH
+    >>Kill |cRXP_ENEMY_Primal Proto-Drakes|r.
+    .complete 65453,1 --10/10 Primal Proto-drakes slain
+    .mob Primal Proto-Drake
+    .noskyriding
+step
+    .goto 2022,76.61,33.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleidea Rivergleam|r.
+    .turnin 65452 >>Turn in Explorers in Peril
+    .accept 69910 >>Accept Where is Wrathion?
+    .target Naleidea Rivergleam
+    .noskyriding
+step
+    #completewith next
+    #label TalkToSendraxInquire
+    #hidewindow
+    .goto 2022,76.58,33.66,0,0
+    .complete 69910,1 --1/1 Inquire after the missing dragons
+    .noskyriding
+step
+    #completewith TalkToSendraxInquire
+    .goto 2022,76.58,33.66
+    .gossipoption 55636 >>Talk to |cRXP_FRIENDLY_Sendrax|r. --(Quest) Why aren't the dragons here to meet us?
+    .timer 22,Roleplay Duration
+    .target Sendrax
+    .noskyriding
+step
+    #requires TalkToSendraxInquire
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scalecommander Cindrethresh|r and |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
+    .turnin 65453 >>Turn in Primal Pests
+    .goto 2022,76.28,33.02
+    .target +Scalecommander Cindrethresh
+    .noskyriding
+step
+    .goto 2022,75.94,33.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss Magor|r.
+    .turnin 65451 >>Turn in Practice Materials
+    .target Boss Magor
+    .noskyriding
+step
+    .goto 2022,76.41,34.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haephesta|r
+    .accept 70148 >>Accept Without Purpose << Evoker
+    .target Haephesta
+    .noskyriding
+step
+    #title |cFFFCDC00Follow the Arrow|r
+    .goto 2022,76.58,33.66
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 69910,1  --1/1 Inquire after the missing dragons
+    .noskyriding
+step
+    .goto 2022,76.58,33.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .turnin 69910 >>Turn in Where is Wrathion?
+    .accept 69911 >>Accept Excuse the Mess
+    .target Sendrax
+    .noskyriding
+step
+    .goto 2022,76.33,35.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Fastrasz|r.
+    .complete 69911,1 --1/1 Speak with Ambassador Fastrasz
+	.target Ambassador Fastrasz
+    .skipgossipid 55674
+    .noskyriding
+step
+    .goto 2022,76.28,35.62
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r
+    .complete 69911,2 --1/1 Embassy Visitor Log signed
+    .skipgossipid 55746
+    .skipgossipid 55747
+    .skipgossipid 55767
+    .skipgossipid 55768
+    .noskyriding
+step
+    .goto 2022,75.61,34.17
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Alexstrasza's Welcome stone|r.
+    .complete 69911,3 --1/1 Welcome Message read
+    .noskyriding
+step
+    .goto 2022,78.43,31.80
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Brazier of Kinship|r.
+    .complete 69911,4 --1/1 Brazier of Kinship relit
+    .noskyriding
+step
+    .goto 2022,76.58,33.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .turnin 69911 >>Turn in Excuse the Mess
+    .accept 69912 >>Accept My First Real Emergency!
+	.target Sendrax
+    .noskyriding
+step
+    #completewith next
+    #hidewindow
+    .goto 2022,76.58,33.66
+    .gossipoption 55637 >>Talk to |cRXP_FRIENDLY_Sendrax|r.
+    .timer 33,Roleplay Duration
+    .noskyriding
+step
+    .goto 2022,76.22,34.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .complete 69912,1 --1/1 Signal flare sent
+    .skipgossipid 55637
+    .noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r and |cRXP_FRIENDLY_Majordomo Selistra|r.
+    .turnin 69912 >>Turn in My First Real Emergency!
+    .goto 2022,76.18,34.50
+	.target +Wrathion
+    .accept 69914 >>Accept The Djaradin Have Awoken
+    .goto 2022,76.22,34.53
+	.target +Majordomo Selistra
+    .noskyriding
+step
+    .goto 2022,76.22,34.53
+    >>Wait for the roleplay
+    .complete 69914,1 --1/1 Orders received from Majordomo Selistra
+    .skipgossipid 55872
+    .noskyriding
+step
+    .goto 2022,76.26,34.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .turnin 69914 >>Turn in The Djaradin Have Awoken
+	.target Sendrax
+    .noskyriding
+step
+    .goto 2022,76.26,34.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r then immediately turn in the next quests.
+    .accept 65760 >>Accept Reporting for Duty
+	.target Sendrax
+    .noskyriding
+step
+    >>Follow the arrow
+    .goto 2022,75.28,36.20,20,0
+    .goto 2022,73.20,35.96,20,0
+    .goto 2022,72.29,36.65,20,0
+    .goto 2022,71.25,40.67
+    .complete 65760,1 --1/1 Follow Sendrax to the outpost
+    .target Sendrax
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Lethanak|r.
+    .goto 2022,71.20,40.77
+    .turnin 65760 >>Turn in Reporting for Duty
+    .accept 65990 >>Accept Deliver Whelps From Evil
+    .accept 65989 >>Accept Invader Djaradin
+	.target Commander Lethanak
+	.noskyriding
+step
+    #completewith WhimperingWhelplingsSaved
+    .goto 2022,70.38,44.91,0,0
+    >>Focus on killing |cRXP_ENEMY_Qalashi Scavengers|r.
+    .complete 65989,1 --6/6 Djaradin slain
+    .mob Qalashi Scavenger
+    .mob Qalashi Djaradin
+	.noskyriding
+step
+    .goto 2022,71.36,44.65
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
+    .complete 65990,1,1 --1/4 Whimpering Whelplings saved
+	.target Whimpering Whelping
+	.noskyriding
+step
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
+    .goto 2022,70.97,46.21,10,0
+    .goto 2022,70.87,46.77,10,0
+    .goto 2022,71.12,46.98,10,0
+    .goto 2022,70.97,46.63
+    .complete 65990,1,2 --2/4 Whimpering Whelplings saved
+	.target Whimpering Whelpling
+	.noskyriding
+step
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
+    .goto 2022,69.86,45.3
+    .complete 65990,1,3 --3/4 Whimpering Whelplings saved
+	.target Whimpering Whelpling
+	.noskyriding
+step
+    #label WhimperingWhelplingsSaved
+    >>Save the |cRXP_FRIENDLY_Whimpering Whelpling|r.
+    .goto 2022,69.38,43.26
+    .complete 65990,1 --4/4 Whimpering Whelplings saved
+	.target Whimpering Whelpling
+	.noskyriding
+step
+    .goto 2022,70.38,44.91
+    >>Focus on killing |cRXP_ENEMY_Qalashi Scavengers|r.
+    .complete 65989,1 --6/6 Djaradin slain
+    .mob Qalashi Scavenger
+    .mob Qalashi Djaradin
+	.noskyriding
+step
+    #requires WakingShoreInvaderDjaradin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Lethanak|r.
+    .goto 2022,71.20,40.77
+    .turnin 65989 >>Turn in Invader Djaradin
+    .turnin 65990 >>Turn in Deliver Whelps From Evil
+    .accept 65991 >>Accept Time for a Reckoning
+	.target Commander Lethanak
+	.noskyriding
+step
+    #completewith WakingShoresKilljoyBlacktalinObsidian
+    >>Kill |cRXP_ENEMY_Djaradin|r around the camp. 
+    *|cRXP_WARN_You can also kill Dragonhunter Igordan multiple times|r.
+    .goto 2022,62.76,34.50,0,0
+    .accept 65994 >>Accept Djaradin Djustice (Bonus Objective)
+    .complete 65994,1 --Djaradin camp invaded (100%)
+    .mob Qalashi Scoundrel
+    .mob Qalashi Ragetamer
+    .mob Qalashi Skirmisher
+    .mob Qalashi Flameshatter
+    .mob Qalashi Flamemuzzler
+	.noskyriding
+step
+    #label WakingShoreTimeForReckoning
+    >>Climb the tower and wait for |cRXP_FRIENDLY_Wrathion|r.
+    .goto 2022,68.84,40.29,35,0
+    .goto 2022,68.12,36.87,20,0
+    .goto 2022,66.59,34.58
+    .complete 65991,1 --1/1 Wrathion met at Scalecracker Keep
+	.noskyriding
+step
+    .goto 2022,66.36,35.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .turnin 65991 >>Turn in Time for a Reckoning
+    .accept 65993 >>Accept Killjoy
+    .accept 65992 >>Accept Blacktalon Intel
+	.target Wrathion
+	.noskyriding
+step
+    #completewith WakingShoreDragonHunderIgordan
+    .goto 2022,65.65,35.16,20 >>Jump down
+	.noskyriding
+step
+    #label WakingShoreDragonHunderIgordan
+    .goto 2022,64.26,33.05
+    >>Kill |cRXP_ENEMY_Dragonhunter Igordan|r.
+    .accept 66956 >>Accept Dragonhunter Igordan (Elite Objective)
+    .complete 66956,1 --1/1 Dragonhunter Igordan slain
+    .mob Dragonhunter Igordan
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Right|r.
+    .goto 2022,65.09,29.35
+    .complete 65992,3 --1/1 Right consulted
+	.target Right
+    .skipgossipid 55298
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Left
+    .goto 2022,64.11,30.33,30,0
+    .goto 2022,63.43,28.87
+    .complete 65992,2 --1/1 Left consulted
+	.target Left
+    .skipgossipid 55297
+	.noskyriding
+step
+    >>Kill |cRXP_ENEMY_Meatgrinder Sotok|r. Loot him for the |T237451:0|t[|cRXP_LOOT_Qualashi Plans|r].
+    .goto 2022,62.96,29.43
+    .complete 65993,1 --1/1 Meatgrinder Sotok slain
+    .collect 193874,1,65995,1
+    .accept 65995 >>Accept The Obsidian Citadel
+	.mob Meatgrinder Sotok
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talonstalker Kavia|r.
+    .goto 2022,64.58,30.57,30,0
+    .goto 2022,64.41,33.29,30,0
+    .goto 2022,63.03,33.34
+    .skipgossipid 55335
+    .complete 65992,1 --1/1 Talonstalker Kavia consulted
+	.target Talonstalker Kavia
+	.noskyriding
+step
+    #label WakingShoresKilljoyBlacktalinObsidian
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb the stairs .Talk to |cRXP_FRIENDLY_Wrathion|r.
+    .goto 2022,62.62,32.67,24,0
+    .goto 2022,62.65,33.17
+    .turnin 65993 >>Turn in Killjoy
+    .turnin 65992 >>Turn in Blacktalon Intel
+    .turnin 65995 >>Turn in The Obsidian Citadel
+	.target Wrathion
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Majordomo Selistra
+    .goto 2022,62.76,33.11
+    .accept 65996 >>Accept Veteran Reinforcements
+	.noskyriding
+step
+    #loop
+    .goto 2022,62.17,34.69,40,0
+    .goto 2022,64.25,33.15,40,0
+    .goto 2022,66.00,36.88,40,0
+    .goto 2022,64.25,33.15,40,0
+    >>Kill |cRXP_ENEMY_Djaradin|r around the camp. 
+    *|cRXP_WARN_You can also kill Dragonhunter Igordan multiple times|r.
+    .accept 65994 >>Accept Djaradin Djustice (Bonus Objective)
+    .complete 65994,1 --Djaradin camp invaded (100%)
+    .mob Dragonhunter Igordan
+    .mob Qalashi Scoundrel
+    .mob Qalashi Ragetamer
+    .mob Qalashi Skirmisher
+    .mob Qalashi Flameshatter
+    .mob Qalashi Flamemuzzler
+    .mob Qalashi Metalshaper
+	.noskyriding
+step
+    #requires WakingShoreDjaradinDjustice
+    #completewith next
+    +|cRXP_WARN_Reminder: You can keybind the 'Active Items'|r.
+    +|cRXP_WARN_How to Keybind:|r Escape -> Options -> Keybindings -> RestedXP Guides -> Select and Bind Active Button 1,2,3 and 4
+	.noskyriding
+step
+    #requires WakingShoreDjaradinDjustice
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
+    .use 193917
+    .goto 2022,60.99,35.63
+    .complete 65996,1,1 --1/4 Injured drakonids healed
+    .target Injured Drakonid
+	.noskyriding
+step
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
+    .use 193917
+    .goto 2022,61.11,36.77
+    .complete 65996,1,2 --2/4 Injured drakonids healed
+    .target Injured Drakonid
+	.noskyriding
+step
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
+    .use 193917
+    .goto 2022,59.04,34.84
+    .complete 65996,1,3 --3/4 Injured drakonids healed
+    .target Injured Drakonid
+	.noskyriding
+step
+    >>Use the |T967530:0:0|t[Rejuvenating Draught] on |cRXP_FRIENDLY_Injured Drakonids|r.
+    *Use a heal spell instead if possible
+    .use 193917
+    .goto 2022,56.64,34.77
+    .complete 65996,1 --4/4 Injured drakonids healed
+    .target Injured Drakonid
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Azkra|r.
+    .goto 2022,54.99,30.76
+    .turnin 65996 >>Turn in Veteran Reinforcements
+    .accept 65997 >>Accept Chasing Sendrax
+	.target Caretaker Azkra
+	.noskyriding
+step
+    .goto 2022,54.99,30.77
+    >>|cRXP_WARN_Follow the arrow|r.
+    .complete 65996,2 --1/1 Meet Sendrax at the Conservatory Outpost
+	.target Sendrax
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .goto 2022,55.18,24.95
+    .complete 65997,1 --1/1 Sendrax found
+	.target Sendrax
+    .skipgossipid 55225
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .goto 2022,55.18,24.95
+    .turnin 65997 >>Turn in Chasing Sendrax
+    .accept 65998 >>Accept Future of the Flights
+    .accept 65999 >>Accept Red in Tooth and Claw
+	.target Sendrax
+	.noskyriding
+step
+    .goto 2022,55.26,24.69
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r.
+    .accept 66000 >>Accept Library of Alexstrasza
+	.noskyriding
+step
+    #completewith FiravaRekindler
+    >>Kill |cRXP_ENEMY_Primalists/Revenants/Taraseks|r while doing the other objectives.
+    .goto 2022,56.37,22.32,0,0
+    .complete 65999,1 --15/15 Primalist forces slain
+    .mob Primal Revenant
+    .mob Tarasek Elementalist
+    .mob Molten Elementalist
+    .mob Unleashed Lavaburst
+    .mob Swelling Fire Elemental
+	.noskyriding
+step
+    #completewith WakingShoreFutureoftheFlight
+    >>Kill |cRXP_ENEMY_Firava the Rekindler|r when you see her (patrolling in the area)
+    .goto 2022,56.97,25.28,0,0
+    .complete 70648,1 --1/1 Firava the Rekindler slain
+    .mob Firava the Rekindler
+	.noskyriding
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r.
+    .goto 2022,53.47,21.99
+    .complete 66000,1,1 --1/4 Books saved
+	.noskyriding
+step
+    .goto 2022,54.12,22.01
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
+    .complete 65998,1 --1/1 Infused dragon eggs found
+    .complete 65998,2,3 --3/9 Infused Ruby Whelpling slain
+    .mob Infused Ruby Whelpling
+	.noskyriding
+step
+    .goto 2022,55.16,22.71
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
+    .complete 65998,2,6 --6/9 Infused Ruby Whelpling slain
+    .mob Infused Ruby Whelpling
+	.noskyriding
+step
+    .goto 2022,54.89,21.36
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
+    .complete 65998,2 --9/9 Infused Ruby Whelpling slain
+    .mob Infused Ruby Whelpling
+	.noskyriding
+step
+    .goto 2022,54.62,20.36
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r |cRXP_WARN_inside the tower|r.
+    .complete 66000,1,2 --2/4 Books saved
+	.noskyriding
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r |cRXP_WARN_inside the tower on the second floor|r.
+    .goto 2022,55.08,20.77,10,0
+    .goto 2022,55.04,20.3,5,0
+    .goto 2022,54.6,20.62
+    .complete 66000,1,3 --4/4 Books saved
+	.noskyriding
+step
+    #label WakingShoreFutureoftheFlight
+    .goto 2022,55.16,22.73
+    >>Break the eggs and kill the |cRXP_ENEMY_Infused Ruby Whelplings|r.
+    .complete 65998,2 --9/9 Infused Ruby Whelpling slain
+    .mob Infused Ruby Whelpling
+	.noskyriding
+step
+    #label FiravaRekindler
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_book|r.
+    .goto 2022,57.00,23.64
+    .complete 66000,1,4 --1/4 Books saved
+	.noskyriding
+step
+    #loop
+    .goto 2022,57.41,23.37,40,0
+    .goto 2022,53.58,22.58,40,0
+    .goto 2022,55.42,20.71,40,0
+    >>Kill |cRXP_ENEMY_Primalists/Revenants/Taraseks|r while doing the other objectives.
+    .complete 65999,1 --15/15 Primalist forces slain
+    .mob Primal Revenant
+    .mob Tarasek Elementalist
+    .mob Molten Elementalist
+    .mob Unleashed Lavaburst
+    .mob Swelling Fire Elemental
+	.noskyriding
+step
+    #label WakingShoreDontTurnIn1
+    #completewith WakingShoreRedInToothAndClawLibraryofAlexstrasza
+    .goto 2022,56.24,22.14,10 >>|cRXP_WARN_DON'T TURN IN THE QUESTS|r until you're at the waypoint location.
+	.noskyriding
+step
+    #requires WakingShoreRedInToothAndClaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Sendrax next to you.
+    .goto 2022,56.24,22.14
+    .turnin 65998 >>Turn in Library of Alexstrasza
+	.noskyriding
+step
+    #label WakingShoreRedInToothAndClawLibraryofAlexstrasza
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r next to you.
+    .goto 2022,56.24,22.14
+    .turnin 65999 >>Turn in Red in Tooth and Claw
+    .turnin 66000 >>Turn in Library of Alexstrasza
+    .accept 66001 >>Accept A Last Hope
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sendrax|r.
+    .goto 2022,56.24,22.06
+    .skipgossip
+    .timer 16,Roleplay Duration
+    .complete 66001,1 --1/1 Meet Sendrax by the ritual site
+	.noskyriding
+step
+    >>Wait for the roleplay
+    .goto 2022,56.92,21.62
+    .complete 65998,1 --1/1 Infused dragon eggs found
+	.noskyriding
+step
+    .itemcount 132516,1
+    #completewith next
+    .cooldown item,132516,>0,1
+    .cast 202844 >>Use |T1405809:0|t[Gunshoes] |cRXP_WARN_right before clicking on the egg|r.
+	.noskyriding
+step
+    >>Interact with the egg
+    .goto 2022,56.92,21.61
+    .complete 66001,2 --1/1 Pick up the Infused Dragon Egg
+	.noskyriding
+step
+    >>|cRXP_WARN_Using any ability will drop the egg|r.
+    .goto 2022,55.21,26.27,30,0
+    .goto 2022,54.99,30.77
+    .complete 66001,3 --1/1 Carry the egg to safety
+    .timer 18,Roleplay Duration
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Majordomo Selistra|r.
+    .goto 2022,55.10,31.04
+    .skipgossip 1
+    .turnin 66001 >>Turn in A Last Hope
+    .accept 66114 >>Accept For the Benefit of the Queen
+	.target Majordomo Selistra
+	.noskyriding
+step
+    .goto 2022,55.10,31.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Majordomo Selistra|r.
+    .skipgossipid 54941
+    .timer 67,Ride to the Ruby Lifeshrine
+    .complete 66114,1 --1/1 Ride with Majordomo Selistra to the Ruby Lifeshrine
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexstraza the Life-Binder|r.
+    .goto 2022,62.34,73.02
+    .skipgossip 187290,1
+    .complete 66114,2 --1/1 Show Queen Alexstrasza the infused egg
+	.target Alexstraza the Life-Binder
+	.noskyriding
+step
+    .goto 2022,62.34,73.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexstrasza the Life-Binder|r.
+    .turnin 66114 >>Turn in For the Benefit of the Queen
+    .accept 68795 >>Accept Dragonriding
+	.target Alexstraza the Life-Binder
+	.noskyriding
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
+    .goto 2022,59.92,69.98,40,0
+    .goto 2022,58.37,67.12
+    .skipgossipid 55643
+    .timer 26,Roleplay Duration
+    .complete 68795,1 --1/1 Speak to Lord Andestrasz about Dragonriding
+	.target Lord Andestrasz
+	.noskyriding
+step
+    .goto 2022,57.66,66.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r.
+    .turnin 68795 >>Turn in Dragonriding
+	.target Lord Andestrasz
+	.noskyriding
 ]])
 --Blood Elf: Sunstrider Isle
 RXPGuides.RegisterGuide([[
