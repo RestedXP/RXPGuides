@@ -1564,13 +1564,13 @@ function addon.ProcessGuideTable(guide)
                     secondLabel = stopAt
                     break
                 end
-                if not firstLabel then
-                    addon.comms.PrettyDebug("Include not found: %s - %s//%s", startAt or "", guide.group, guide.name)
-                end
-                if not secondLabel then
-                    addon.comms.PrettyDebug("Include not found: %s - %s//%s", stopAt or "", guide.group, guide.name)
-                end
             end
+        end
+        if not firstLabel then
+            addon.comms.PrettyDebug("Include not found: %s - %s//%s", startAt or "", guide.group, guide.name)
+        end
+        if not secondLabel then
+            addon.comms.PrettyDebug("Include not found: %s - %s//%s", stopAt or "", guide.group, guide.name)
         end
     end
     IncludeGuide(guide)
