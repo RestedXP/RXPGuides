@@ -1499,8 +1499,8 @@ function addon.ProcessGuideTable(guide)
         for n, step in ipairs(guide.steps) do
             local isShown = addon.IsStepShown(step)
             if isShown and startAt and (step.label == startAt or startAt == step.stepId) then
-                startAt = nil
                 firstLabel = startAt
+                startAt = nil
             end
             if isShown and not startAt then
                 if step.inlcude and step.include:sub(1,1) == "*" then
@@ -1562,14 +1562,16 @@ function addon.ProcessGuideTable(guide)
                 IncludeGuide(iStep)
                 if stopAt and (iStep.label == stopAt or stopAt == iStep.stepId) then
                     secondLabel = stopAt
+                    stopAt = nil
                     break
                 end
             end
         end
-        if not firstLabel then
+
+        if startAt then
             addon.comms.PrettyDebug("Include not found: %s - %s//%s", startAt or "", guide.group, guide.name)
         end
-        if not secondLabel then
+        if stopAt then
             addon.comms.PrettyDebug("Include not found: %s - %s//%s", stopAt or "", guide.group, guide.name)
         end
     end
