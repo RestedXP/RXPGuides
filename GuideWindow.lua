@@ -1494,10 +1494,13 @@ function addon.ProcessGuideTable(guide)
     end
     local lastTip
     function ProcessSteps(guide,startAt,stopAt,isInclude)
+        local firstLabel = true
+        local secondLabel = true
         for n, step in ipairs(guide.steps) do
             local isShown = addon.IsStepShown(step)
             if isShown and startAt and (step.label == startAt or startAt == step.stepId) then
                 startAt = nil
+                firstLabel = startAt
             end
             if isShown and not startAt then
                 if step.inlcude and step.include:sub(1,1) == "*" then
@@ -1558,7 +1561,14 @@ function addon.ProcessGuideTable(guide)
                 end
                 IncludeGuide(iStep)
                 if stopAt and (iStep.label == stopAt or stopAt == iStep.stepId) then
+                    secondLabel = stopAt
                     break
+                end
+                if not firstLabel then
+                    addon.comms.PrettyDebug("Include not found: %s - %s//%s", startAt or "", guide.group, guide.name)
+                end
+                if not secondLabel then
+                    addon.comms.PrettyDebug("Include not found: %s - %s//%s", stopAt or "", guide.group, guide.name)
                 end
             end
         end
