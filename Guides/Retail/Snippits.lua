@@ -615,7 +615,6 @@ step << Alliance
 --    .subzoneskip 37,1
 --    .isOnQuest 7905
 --     .dmf
-step << Horde
 step
     .goto 407,52.78,28.82,20,0
     .goto 407,52.99,38.99,20,0

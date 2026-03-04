@@ -404,7 +404,7 @@ step
 step
     .isQuestAvailable 89105
     .goto 2413,65.73,50.2
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Primal Essence Shard|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Primal Essence Shard|r on the mushroom.
     .turnin 89105 >>Enchanting Knowledge Treasure
     .train 471006,3
 step
