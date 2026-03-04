@@ -223,13 +223,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Lady Jaina Proudmoore
-step
-    .isQuestAvailable 55122
-    #label HousingSelect
-    +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
-    *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
-    .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
-    #veteran
+-- step
+--     .isQuestAvailable 55122
+--     #label HousingSelect
+--     +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
+--     *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
+--     .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
+--     #veteran
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
