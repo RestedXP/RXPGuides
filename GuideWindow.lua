@@ -1580,9 +1580,9 @@ function addon.ProcessGuideTable(guide)
     return currentGuide
 end
 
-function addon:FetchGuide(guide,arg2)
+function addon:FetchGuide(guide,arg2,arg3)
     if type(guide) == "string" then
-        return addon:FetchGuide(addon.GetGuideTable(guide,arg2))
+        return addon:FetchGuide(addon.GetGuideTable(guide,arg2),nil,arg3)
     elseif guide and not guide.steps then
         --print('ok3',guide.key)
         local key = guide.key
@@ -1623,8 +1623,20 @@ function addon:FetchGuide(guide,arg2)
         else
             --print(guide.name,guide.group)
             --GG = guide
-            addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
-            return
+            local grp, name, g
+            if type(guide) == "table" then
+                grp, name = guide.group, guide.name
+            else
+                grp,name = guide,arg2
+            end
+            if not arg3 and addon.groupAlias[grp] then
+                g = addon:FetchGuide(addon.groupAlias[grp],name,true)
+            end
+            if not g then
+                addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
+                return
+            end
+            guide = g
         end
     end
     if type(guide) == "table" then

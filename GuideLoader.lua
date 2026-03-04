@@ -1107,7 +1107,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     return guide,nil,metadata
 end
 
-
+addon.groupAlias = {}
 function addon.GroupOverride(guide,arg2)
     local function SwapGroup(grp,subgrp)
         local prefix = ""
@@ -1161,8 +1161,9 @@ function addon.GroupOverride(guide,arg2)
         --if true then  return end
             local group,swap
             group, guide.subgroup,swap = SwapGroup(guide.group,guide.subgroup)
-            guide.group = group
             if swap then
+                addon.groupAlias[guide.group] = group
+                guide.group = group
                 guide.next = guide.next and guide.next:gsub("[^;]-\\","")
             end
             --print(group,'//',guide.subgroup)
