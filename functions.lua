@@ -37,7 +37,10 @@ addon.GetFactionInfoByID = _G.GetFactionInfoByID or function(factionID)
 end
 
 if not (UnitAura and UnitBuff and UnitDebuff) then
-    UnitAura = function(unitToken, index, filter)
+    addon.UnitAura = function(unitToken, index, filter)
+        if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+            return
+        end
         local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
         if not auraData then
             return nil;
@@ -45,7 +48,10 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
 
         return AuraUtil.UnpackAuraData(auraData);
     end
-    UnitBuff = function(unitToken, index, filter)
+    addon.UnitBuff = function(unitToken, index, filter)
+        if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+            return
+        end
         local auraData = C_UnitAuras.GetBuffDataByIndex(unitToken, index, filter);
         if not auraData then
             return nil;
@@ -53,7 +59,10 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
 
         return AuraUtil.UnpackAuraData(auraData);
     end
-    UnitDebuff = function(unitToken, index, filter)
+    addon.UnitDebuff = function(unitToken, index, filter)
+        if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+            return
+        end
         local auraData = C_UnitAuras.GetDebuffDataByIndex(unitToken, index, filter);
         if not auraData then
             return nil;
@@ -63,6 +72,10 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
     end
     addon.UnitBuff = UnitBuff
 end
+
+local UnitAura = addon.UnitAura or _G.UnitAura
+local UnitBuff = addon.UnitBuff or _G.UnitBuff
+local UnitDebuff = addon.UnitDebuff or _G.UnitDebuff
 
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
@@ -7482,6 +7495,9 @@ function addon.functions.aura(self, ...)
     local element = self.element
     local step = element.step
     local event, target = ...
+    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        return
+    end
     if (target == "player" or event ~= "UNIT_AURA") and step.active then
         local buffFound = false
         local partialMatch = false

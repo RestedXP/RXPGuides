@@ -63,14 +63,17 @@ if addon.gameVersion < 20000 then
     QUEST_LOG_SIZE = 20
 end
 ]]
-
+local xpbonus = 1
 local function GetXPMods()
     if addon.player.season == 2 then
-        return 1.5
+        xpbonus = 1.5
+        return xpbonus
     elseif addon.gameVersion < 40000 then
-        return addon.GetXPBonuses(false,80)
+        xpbonus = addon.GetXPBonuses(false,80) or xpbonus
+        return xpbonus
     else
-        return addon.GetXPBonuses(true,85)
+        xpbonus = addon.GetXPBonuses(true,85) or xpbonus
+        return xpbonus
     end
 end
 

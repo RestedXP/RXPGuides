@@ -3759,6 +3759,9 @@ local tooltipTimer = 0
 local playerLevelCheck = 0
 
 function addon.GetXPBonuses(ignoreBuffs,playerLevel)
+    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        return
+    end
     local calculatedRate = not ignoreBuffs and CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
 
     local GetInventoryItemLink = GetInventoryItemLink
@@ -3893,7 +3896,9 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
 end
 
 function addon.settings:DetectXPRate(softUpdate)
-    if not addon.settings.profile.enableAutomaticXpRate then
+    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        return
+    elseif not addon.settings.profile.enableAutomaticXpRate then
         return
     elseif addon.gameVersion < 20000 then
         local season = addon.GetSeason() or CheckBuff(362859) and 1
