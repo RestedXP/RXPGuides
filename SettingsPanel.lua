@@ -3897,6 +3897,9 @@ end
 
 function addon.settings:DetectXPRate(softUpdate)
     if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        C_Timer.After(5, function()
+            addon.settings:DetectXPRate(softUpdate)
+        end)
         return
     elseif not addon.settings.profile.enableAutomaticXpRate then
         return
