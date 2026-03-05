@@ -532,4 +532,22 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lost Voidstorm Satchel|r
     .turnin 89146 >>Skinning Knowledge Treasure
     .train 471014,3
+step
+    .isQuestAvailable 89134
+    .goto 2413,67.99,49.81
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Expeditious Pylon|r
+    .turnin 89136 >>Engineering Knowledge Treasure
+    .train 471007,3
+step
+    .isQuestAvailable 89134
+    .goto 2444,28.93,39.01
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Miniaturized Transport Skiff|r
+    .turnin 89134 >>Engineering Knowledge Treasure
+    .train 471007,3
+step
+    .isQuestAvailable 89137
+    .goto 2444,54.13,51.03
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ethereal Stormwrench|r
+    .turnin 89137 >>Engineering Knowledge Treasure
+    .train 471007,3
 ]])
