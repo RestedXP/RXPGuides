@@ -70,7 +70,6 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
 
         return AuraUtil.UnpackAuraData(auraData);
     end
-    addon.UnitBuff = UnitBuff
 end
 
 local UnitAura = addon.UnitAura or _G.UnitAura
