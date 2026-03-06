@@ -147,22 +147,10 @@ step
     .turnin 89139 >>Engineering Knowledge Treasure
     .train 471007,3
 step
-    .isQuestAvailable 89139
-    .goto 2393,51.21,57.26
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_What To Do When Nothing Works|r
-    .turnin 89139 >>Engineering Knowledge Treasure
-    .train 471007,3
-step
     .isQuestAvailable 89127
     .goto 2393,55.45,47.82
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Vintage Soul Gem|r.
     .turnin 89127 >>Jewelcrafting Knowledge Treasure
-    .train 471011,3
-step
-    .isQuestAvailable 89124
-    .goto 2393,28.62,46.4
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dual-Function Magnifiers|r.
-    .turnin 89124 >>Jewelcrafting Knowledge Treasure
     .train 471011,3
 step
     .isQuestAvailable 89124
