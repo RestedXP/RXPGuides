@@ -39,6 +39,13 @@ step
     .turnin 89117 >>Alchemy Knowledge Treasure
     .train 471003,3
 step
+    .isQuestAvailable 89111
+    .goto 2393,45.07,44.75
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Vial of Eversong Oddities Treasure|r
+    *|cRXP_WARN_If you can't see it, get an invite from a player in silvermoon it might fix it|r
+    .turnin 89111 >>Alchemy Knowledge Treasure
+    .train 471003,3
+step
     .isQuestAvailable 89073
     .goto 2393,49.11,75.86
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Songwriter's Pen|r
@@ -111,6 +118,12 @@ step
     .turnin 89069 >>Inscription Knowledge Treasure
     .train 471010,3
 step
+    .isQuestAvailable 89072
+    .goto 2395,39.28,45.44
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Half-Baked Techniques|r
+    .turnin 89072 >>Inscription Knowledge Treasure
+    .train 471010,3
+step
     .isQuestAvailable 89173
     .goto 2395,48.4,76.26
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Thalassian Skinning Knife|r
@@ -164,6 +177,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Lost Voidstorm Satchel|r
     .turnin 89146 >>Mining Knowledge Treasure
     .train 471013,3
+step
+    .isQuestAvailable 89101
+    .goto 2395,40.2,61.22
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Enchanted Sunfire Silk|r
+    .turnin 89101 >>Enchanting Knowledge Treasure
+    .train 471006,3
 step
     .isQuestAvailable 89107
     .goto 2395,63.5,32.6
