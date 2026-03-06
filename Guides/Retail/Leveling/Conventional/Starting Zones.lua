@@ -426,7 +426,7 @@ step
 step
     #completewith Quilboar Shadow Magic
     #hidewindow
-    .goto 1409,58.87,63.00,85 >>On the Way to |cRXP_ENEMY_Geolord Grek'og|r.
+    .goto 1409,58.87,63.00,85 >>Kill |cRXP_ENEMY_Geolord Grek'og|r.
 step
     #requires Quilboar Shadow Magic
     #loop
@@ -21900,7 +21900,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-90)|r Default
 #name a) Exile's Reach Horde
-#displayname |cFF1EFF001|r - Exile's Reach 
+#displayname |cFF1EFF001|r - Exile's Reach
 #next b1) BfA Intro
 
 
@@ -23112,7 +23112,7 @@ step
 	.noskyriding
 step
     #completewith WakingShoresKilljoyBlacktalinObsidian
-    >>Kill |cRXP_ENEMY_Djaradin|r around the camp. 
+    >>Kill |cRXP_ENEMY_Djaradin|r around the camp.
     *|cRXP_WARN_You can also kill Dragonhunter Igordan multiple times|r.
     .goto 2022,62.76,34.50,0,0
     .accept 65994 >>Accept Djaradin Djustice (Bonus Objective)
@@ -23204,7 +23204,7 @@ step
     .goto 2022,64.25,33.15,40,0
     .goto 2022,66.00,36.88,40,0
     .goto 2022,64.25,33.15,40,0
-    >>Kill |cRXP_ENEMY_Djaradin|r around the camp. 
+    >>Kill |cRXP_ENEMY_Djaradin|r around the camp.
     *|cRXP_WARN_You can also kill Dragonhunter Igordan multiple times|r.
     .accept 65994 >>Accept Djaradin Djustice (Bonus Objective)
     .complete 65994,1 --Djaradin camp invaded (100%)
