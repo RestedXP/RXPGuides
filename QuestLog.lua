@@ -394,9 +394,8 @@ local function SetItemTooltip(tooltip, tooltipInfo)
     end
 end
 
-if _G.TooltipDataProcessor then
-    _G.TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item,
-                                               SetItemTooltip)
+if addon.game == "RETAIL" then
+    _G.TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, SetItemTooltip)
 else
     _G.GameTooltip:HookScript("OnTooltipSetItem", SetItemTooltip)
 end
