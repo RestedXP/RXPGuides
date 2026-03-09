@@ -1582,7 +1582,24 @@ end
 
 function addon:FetchGuide(guide,arg2,arg3)
     if type(guide) == "string" then
-        return addon:FetchGuide(addon.GetGuideTable(guide,arg2),nil,arg3)
+            local grp, name = guide,arg2
+            local g = addon:FetchGuide(addon.GetGuideTable(grp,name),nil,arg3)
+            if g then return g end
+            if arg3 then return end
+            local newGrp
+            local newName
+            if addon.groupAlias[grp] then
+                newGrp = addon.groupAlias[grp]
+                g = addon:FetchGuide(addon.GetGuideTable(newGrp,name),nil,true)
+            end
+            newName = name:gsub("^(%d)-(%d%d?)", addon.affix)
+            if not g and newName ~= name then
+                g = addon:FetchGuide(addon.GetGuideTable(grp,newName),nil,true)
+                if not g and newGrp then
+                    g = addon:FetchGuide(addon.GetGuideTable(newGrp,newName),nil,true)
+                end
+            end
+            return g
     elseif guide and not guide.steps then
         --print('ok3',guide.key)
         local key = guide.key
@@ -1623,20 +1640,8 @@ function addon:FetchGuide(guide,arg2,arg3)
         else
             --print(guide.name,guide.group)
             --GG = guide
-            local grp, name, g
-            if type(guide) == "table" then
-                grp, name = guide.group, guide.name
-            else
-                grp,name = guide,arg2
-            end
-            if not arg3 and addon.groupAlias[grp] then
-                g = addon:FetchGuide(addon.groupAlias[grp],name,true)
-            end
-            if not g then
-                addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
-                return
-            end
-            guide = g
+            addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
+            return
         end
     end
     if type(guide) == "table" then
