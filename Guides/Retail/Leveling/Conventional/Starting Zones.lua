@@ -24523,14 +24523,12 @@ step
     .mob Felstalker
 step
     #completewith next
+    #ignorecorpse
     .goto 2,14.96,46.80,-1
     .goto 461,48.47,70.89,-1
+    .goto 461,48.49,70.88,-1
     .deathskip >>Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << !Hunter !Warlock
     .deathskip >>|cfff78300Set your pet to passive|r. Pull as many mobs as you can, then die and respawn at the Spirit Healer. Die near the waypoint or around the mouth of the cave << Hunter/Warlock
-step
-    #hidewindow
-    #completewith next
-    .goto 461,48.45,70.92,20 >>Follow the Arrow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Galgar|r, |cRXP_FRIENDLY_Zureetha Fargaze|r, and |cRXP_FRIENDLY_Foreman Thazz'ril|r.
     .turnin 25130 >>Turn in Back to the Den
@@ -24560,46 +24558,10 @@ step
     .target Zureetha Fargaze
     .target Foreman Thazz'ril
 step << Troll
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Troll
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Troll
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Troll
-    #include a) Horde Legion Intro
--- step << Troll
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Troll
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step << Troll
---     #include RestedXP Speed Leveling\a) DMF
+    .goto 1,55.38,73.31
+    .fly Orgrimmar >>Fly to Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Handler Marnlek|r.
+    .target Handler Marnlek
 ]])
 --Orc: Echo Isles
 RXPGuides.RegisterGuide([[
@@ -25299,46 +25261,10 @@ step
 	.isQuestTurnedIn 25035
     .target Morakki
 step << Orc
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Orc
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Orc
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Orc
-    #include a) Horde Legion Intro
--- step << Orc
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Orc
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step << Orc
---     #include RestedXP Speed Leveling\a) DMF
+    .goto 1,55.38,73.31
+    .fly Orgrimmar >>Fly to Orgrimmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Handler Marnlek|r.
+    .target Handler Marnlek
 ]])
 --Tauren: Camp Narache
 RXPGuides.RegisterGuide([[
@@ -26018,71 +25944,27 @@ step
     .goto 7,48.34,53.09
     .turnin 11129 >>Turn in Kyle's Gone Missing!
     .target Ahab Wheathoof
--- step
---     #requires FlyToThunderbluffB
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
---     .goto 7,47.44,58.64
---     .fly Thunder Bluff >>Fly to Thunder Bluff
---     .target Tak
--- step
---     #completewith next
---     +|cRXP_WARN_There are three ways to Orgrimmar.|r
---     *1) Use the Character Stuck Feature
---     *2) Use the |T237388:0|t[Scouting Map: Walking Kalimdor with the Earthmother] toy and fly to Orgrimmar
---     *3) Follow the arrow and take the Zeppelin to Orgrimmar (very slow)
---     .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>Character Stuck Explanation Link
--- step
---     .goto 88,42.81,39.13,10,0
---     .goto 88,39.41,38.33,8,0
---     .goto 88,28.19,23.46,50,0
---     .goto 88,15.27,25.72
---     .zone 85 >>Take the zeppelin
 step
-    .zoneskip 7,1
-    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r.
+    .goto 7,47.44,58.64
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Tak
+step
+    #completewith next
+    +|cRXP_WARN_There are three ways to Orgrimmar.|r
+    *1) Use the Character Stuck Feature
+    *2) Use the |T237388:0|t[Scouting Map: Walking Kalimdor with the Earthmother] toy and fly to Orgrimmar
+    *3) Follow the arrow and take the Zeppelin to Orgrimmar (very slow)
+    *4) Use the Neighbourhood teleport
+    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>Character Stuck Explanation Video
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>Neighbourhood Explanation Video
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    #include a) Horde Legion Intro
--- step
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
+    .goto 88,42.81,39.13,10,0
+    .goto 88,39.41,38.33,8,0
+    .goto 88,28.19,23.46,50,0
+    .goto 88,15.27,25.72
+    .zone 85 >>Take the zeppelin
 ]])
 --Undead: Deathknell
 RXPGuides.RegisterGuide([[
@@ -26902,55 +26784,9 @@ step
     .turnin 25005 >>Turn in Speak with Sevren
     .turnin 24982 >>Turn in The New Forsaken
     .target Magistrate Sevren
--- step
---     .goto 18,60.74,58.67
---     .zone 85 >>Click on the |cRXP_PICK_Portal to Orgrimmar|r.
 step
-    .zoneskip 18,1
-    .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
-    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    #include a) Horde Legion Intro
--- step
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
+    .goto 18,60.74,58.67
+    .zone 85 >>Click on the |cRXP_PICK_Portal to Orgrimmar|r.
 ]])
 --Goblin: Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
@@ -28435,47 +28271,6 @@ step
     .goto 85,48.5,70.8
     .turnin 25267 >>Turn in Message for Saurfang
     .target Saurfang
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    #include a) Horde Legion Intro
--- step
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
 ]])
 --HighmountainTauren: Highmountain
 RXPGuides.RegisterGuide([[
