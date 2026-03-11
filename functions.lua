@@ -97,7 +97,7 @@ addon.functions.__index = addon.functions
 local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
-events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW"}
+events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW","CHAT_MSG_LOOT"}
 events.collectmultiple = events.collect
 events.destroy = events.collect
 events.buy = events.collect
@@ -2906,9 +2906,21 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     local name = addon.GetItemName(id)
     local step = element.step
     local numRequired = element.qty
-    local event = ...
+    local event,msg = ...
     local isComplete
+    if event == "CHAT_MSG_LOOT" and C_Item and C_Item.GetItemInfo then
+        local lootId = tonumber(msg:match("item:(%d+):"))
+        if lootId == id then
+            local itemType = select(6,C_Item.GetItemInfo(lootId))
 
+            if itemType and (itemType == "Quest" or
+               itemType == LOOT_JOURNAL_LEGENDARIES_SOURCE_QUEST) then
+                element.collected = true
+            end
+        else
+            return
+        end
+    end
     if addon.settings.profile.debug then
         element.tooltip = id
     end
@@ -2927,6 +2939,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
                     break
                 end
             end
+        end
+        if count == 0 and element.collected then
+            count = 1
         end
         return count
     end
