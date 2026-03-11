@@ -1153,25 +1153,24 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raintotem|r
     .accept 833 >>Accept A Sacred Burial
     .target Lorekeeper Raintotem
-step << Warrior
-    #season 2
-    #completewith RiteofWisdom
-    >>Kill |cRXP_ENEMY_Bristleback Interlopers|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
-    .collect 206994,1 ---Severed Quilboar Head (1)
-    .mob Bristleback Interloper
-    .train 403475,1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Bristleback Interlopers|r
     .complete 833,1 --Bristleback Interloper (8)
     .mob Bristleback Interloper
 step
-    #label RiteofWisdom
     .goto Mulgore,61.45,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ancestral Spirit|r
     .turnin 773 >>Turn in Rite of Wisdom
-    .accept 775 >>Accept Journey into Thunder Bluff << Hunter/Druid
+    .accept 775 >>Accept Journey into Thunder Bluff
     .target Ancestral Spirit
+    .dungeon RFC !Hunter !Druid
+step << !Hunter !Druid
+    .goto Mulgore,61.45,21.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ancestral Spirit|r
+    .turnin 773 >>Turn in Rite of Wisdom
+    .target Ancestral Spirit
+    .dungeon !RFC
 step
     #loop
 	.goto Mulgore,59.85,25.62,0
@@ -1655,6 +1654,13 @@ step
     .turnin 6361 >>Turn in A Bundle of Hides
     .accept 6362 >>Accept Ride to Thunder Bluff
     .target Devrak
+    .dungeon RFC !Hunter !Druid
+step << !Hunter !Druid
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .turnin 6361 >>Turn in A Bundle of Hides
+    .target Devrak
+    .dungeon !RFC
 step
     #completewith RFCTB
     .goto The Barrens,51.50,30.34
@@ -1663,12 +1669,13 @@ step
     .target Devrak
     .zoneskip Thunder Bluff
     .dungeon RFC !Hunter !Druid
-step << Hunter/Druid
+step
     .goto Thunder Bluff,45.6,55.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
     .turnin 6362 >>Turn in Ride to Thunder Bluff
     .accept 6363 >>Accept Tal the Wind Rider Master
     .target Ahanu
+    .dungeon RFC !Hunter !Druid
 step << Druid
     .goto Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
@@ -1676,11 +1683,13 @@ step << Druid
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 5932
-step << Hunter/Druid
+step
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
     .target Cairne Bloodhoof
+    .isOnQuest 775
+    .dungeon RFC !Hunter !Druid
 step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holt|r
@@ -1763,47 +1772,53 @@ step
     .accept 5723 >>Accept Testing an Enemy's Strength
     .target Rahauro
     .dungeon RFC
-step << Druid/Hunter
+step
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Turn in Tal the Wind Rider Master
     .accept 6364 >>Accept Return to Jahan
     .target Tal
-step << Druid/Hunter
+    .dungeon RFC !Hunter !Druid
+step
     #ah
     .goto Thunder Bluff,44.43,43.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mooranta|r
     >>|cRXP_WARN_This will unlock an easy quest. If you already have 2 professions, skip this step|r
     .train 8613 >>Train |T134366:0|t[Skinning]
     .target Mooranta
-step << Druid/Hunter
+    .dungeon RFC !Hunter !Druid
+step
     #ah
     .goto Thunder Bluff,44.39,44.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veren|r
     .accept 768 >> Accept Gathering Leather
     .target Veren Tallstrider
     .skill skinning,1,1
-step << Druid/Hunter
+    .dungeon RFC !Hunter !Druid
+step
     #ah
     .goto Thunder Bluff,40.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
     .collect 2318,12,768,1 >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[Light Leather] |cRXP_BUY_from the Auction House|r
     .target Auctioneer Stampi
     .skill skinning,1,1
-step << Druid/Hunter
+    .dungeon RFC !Hunter !Druid
+step
     #ah
     .goto Thunder Bluff,44.39,44.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veren|r
     .turnin 768 >> Turn in Gathering Leather
     .target Veren Tallstrider
     .skill skinning,1,1
-step << Hunter
+    .dungeon RFC !Hunter !Druid
+step << !Druid
     #completewith ReturntoJahan
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to the Crossroads
     .target Tal
     .zoneskip The Barrens
+    .dungeon RFC !Hunter !Druid
 step << Druid
     #completewith next
     .goto Thunder Bluff,47.00,49.82
@@ -1840,12 +1855,14 @@ step << Druid
     .fly Crossroads >>Fly to the Crossroads
     .target Tal
     .zoneskip The Barrens
-step << Hunter/Druid
+step
     #label ReturntoJahan
     .goto The Barrens,51.2,29.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan|r
     .turnin 6364 >>Turn in Return to Jahan
     .target Jahan Hawkwing
+    .isOnQuest 6364
+    .dungeon RFC !Hunter !Druid
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
@@ -2440,10 +2457,10 @@ step << !Orc !Troll
     .target Doras
 step
     #label Admiralorders1
-    .goto Orgrimmar,32.29,35.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
+    .goto Orgrimmar,34.37,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'Jin|r
     .turnin 831 >>Turn in The Admiral's Orders
-    .target Nazgrel
+    .target Vol'Jin
 step << Shaman
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r

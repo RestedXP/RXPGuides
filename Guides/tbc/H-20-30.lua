@@ -6848,8 +6848,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyse|r
     .fly Camp Taurajo >> Fly to Camp Taurajo
     .target Nyse
-    .zoneskip Thousand Needles
-    .zoneskip The Barrens
+    .zoneskip Thousand Needles,1
 step
     #label OreSampleTI
     .goto The Barrens,45.10,57.70
