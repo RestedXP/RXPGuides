@@ -571,7 +571,7 @@ step << Hunter
     .train 3044 >> Train |T132218:0|t[Arcane Shot]
     .train 1130 >> Train |T132212:0|t[Hunter's Mark]
     .target Acteon
-step << Shaman/Warrior
+step << Shaman
     .goto Azuremyst Isle,49.579,53.107
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nabek|r
     >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick]
@@ -579,7 +579,7 @@ step << Shaman/Warrior
     .target Nabek
     .money <0.0480
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
-step << Shaman/Warrior
+step << Shaman
     #sticky
     .equip 16,2495 >> |cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
     .use 2495
@@ -597,6 +597,19 @@ step << Paladin
     .equip 16,2493 >> |cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
     .use 2493
     .itemcount 2493,1
+step << Warrior
+    .goto Azuremyst Isle,49.579,53.107
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nabek|r
+    >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it|r
+    .collect 2488,1 --Collect Gladius (1)
+    .target Nabek
+    .money <0.0536
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Warrior
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior/Paladin
     .goto Azuremyst Isle,48.957,51.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dulvi|r
