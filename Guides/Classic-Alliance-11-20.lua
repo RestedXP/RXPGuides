@@ -983,6 +983,7 @@ step
     .unitscan Rabid Thistle Bear
     .use 7586
 step
+    #label FurlbogCamp
     .goto Darkshore,38.90,53.59
     >>Run toward the edge of the Furbolg Camp
     .complete 984,1 -- Find a corrupt furbolg camp
@@ -1008,6 +1009,7 @@ step << NightElf
     .goto 1439,36.091,51.501,60,0
     .xp 11+7300 >> Grind to 7300+/8800xp
 step
+    #label invisThistle
     #optional
     #requires RabidThistle
 --XXREQ Placeholder invis step until multiple requires per step
@@ -2782,6 +2784,7 @@ step << Druid
     >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
+    #label CaveMushrooms
     .goto Darkshore,55.45,36.23,12,0
     .goto Darkshore,55.70,36.30,12,0
     .goto Darkshore,55.89,35.40,12,0
@@ -2929,8 +2932,10 @@ step
 step << NightElf !Druid
     .goto 1439,36.767,44.285
     #season 0
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
     .accept 6343 >> Accept Return to Nessa
+    .isQuestAvailable 6343
     .target Laird
 step
     #optional
@@ -2953,6 +2958,7 @@ step
 step
     #optional
     #season 0
+    #label End
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -3612,6 +3618,7 @@ step
 step
     #xprate <1.5
     #season 0
+    #label BeachedTurnins
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -3800,6 +3807,7 @@ step << Hunter
     >>Make sure your HS cooldown is <10 min
     >>Skip this step if the area is too crowded
 step
+    #label LateStalkerFangs
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #loop
@@ -3944,6 +3952,7 @@ step
     .mob Giant Foreststrider
 step
     #xprate <1.59
+    #label NorthStalkerPelts
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r
@@ -10042,25 +10051,28 @@ step
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
+    #optional
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Turn in Mathystra Relics
     .target Onu
-    .isQuestComplete 731 --Only shows if Prospector was already escorted
+    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
 step
+    #optional
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
     >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
     >>|cRXP_WARN_This is a timed quest, you have to escort him all the way to ashenvale in 20 minutes|r
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
-    .isQuestComplete 731 --Only shows if Prospector was already escorted
+    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
 step
+    #optional
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
-    .isQuestComplete 731 --Only shows if Prospector was already escorted
+    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
 step
     #sticky
     #label prospector
