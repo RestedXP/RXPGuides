@@ -100,7 +100,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r
     .turnin 9829 >> Turn in Khadgar
     .accept 9831 >> Accept Entry Into Karazhan
     .target Khadgar
@@ -119,7 +119,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r
     .turnin 9831 >> Turn in Entry Into Karazhan
     .accept 9832 >> Accept The Second and Third Fragments
     .target Khadgar
@@ -146,7 +146,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r
     .turnin 9832 >> Turn in The Second and Third Fragments
     .accept 9836 >> Accept The Master's Touch
     .target Khadgar
@@ -172,7 +172,7 @@ step
     .zone Shattrath City >> Travel to Shattrath
 step
     .goto Shattrath City,54.751,44.322
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar's Servant|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khadgar|r
     .turnin 9837 >> Turn in Return to Khadgar
     .accept 9838 >> Accept The Violet Eye
     .target Khadgar
