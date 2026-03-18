@@ -10255,6 +10255,7 @@ step
     .complete 5321,1 -- Horn of Awakening (1)
     .itemcount 13536,<1 --Horn of Awakening
 step
+    #label AshenStart
     #completewith tower
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
