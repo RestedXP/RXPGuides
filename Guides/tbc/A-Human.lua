@@ -1005,7 +1005,6 @@ step << Warrior
     .xp <8,1
 step
     #label CandlesEnd
-    #requires GoldtoothRune << Warrior/Priest --Season 2
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 60 >> Turn in Kobold Candles
@@ -1152,7 +1151,6 @@ step << Warrior/Paladin/Rogue
     .train 2018,3
 step
     #optional
-    #requires MurlocRune << Warrior/Rogue --Season 2
     #completewith JasperlodeExplore
     .goto Elwynn Forest,61.654,53.608,15 >> Enter the Jasperlode Mine
 step
@@ -2710,10 +2708,12 @@ step << Warlock
     .goto Loch Modan,27.33,56.70
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .mob +Stonesplinter Scout
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
-    .mob Stonesplinter Trogg
-    .mob Stonesplinter Scout
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
 step << Warlock
     #completewith TroggT
     .money >0.7150
