@@ -173,6 +173,7 @@ function addon.SetupGuideWindow()
 
     RXPFrame.UpdateScrollBar()
 
+    addon.modular:CreateCurrentStepFrame(addon.player.name)
 end
 
 RXPFrame:SetScript("OnShow", addon.PLAYER_ENTERING_WORLD)
@@ -1080,6 +1081,13 @@ function CurrentStepFrame.UpdateText()
     local guide = addon.currentGuide
     if not guide then return end
 
+    if addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures then
+        addon.modular:UpdateCurrentStepFrame(activeSteps, addon.player.name)
+
+        -- TODO, uncomment to prevent parallelism
+        -- return
+    end
+
     -- StepScroll(n)
     local totalHeight, frameHeight = 0, 0
     local c, e, h, spacing = 0, 0, 0, 0
@@ -1233,10 +1241,6 @@ function CurrentStepFrame.UpdateText()
     end
 
     CurrentStepFrame:SetHeight(totalHeight - 5)
-
-    if addon.settings.profile.enableBetaFeatures then
-        addon.modular:UpdateCurrentStepFrame(activeSteps, addon.player.name)
-    end
 end
 
 BottomFrame:SetPoint("TOPLEFT", RXPFrame, 3, -3)
@@ -2505,14 +2509,27 @@ end
 
 addon.modular = {}
 function addon.modular:CreateCurrentStepFrame(player)
+    if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
+        return
+    end
+
     player = player or addon.player.name
 
+    if addon.enabledFrames["currentStepFrame" .. player] then
+        return addon.enabledFrames["currentStepFrame" .. player]
+    end
+
     --Step frame needs one main frame then X stickies or completewith
+    print("CreateCurrentStepFrame" .. player)
 
     local stepFrame = AceGUI:Create("RXPModularCurrentStep")
 
     stepFrame.player = player
     stepFrame.IsFeatureEnabled = function()
+        if not addon.settings.profile.enableV2CurrentStepFrame then
+            return false, false
+        end
+
         if stepFrame.player == addon.player.name then
             return true, false
         end
@@ -2520,13 +2537,24 @@ function addon.modular:CreateCurrentStepFrame(player)
         --TODO check if player is in group
     end
 
-    addon.enabledFrames["stepFrame" .. player] = stepFrame
+    addon.enabledFrames["currentStepFrame" .. player] = stepFrame
+    stepFrame:Show()
 end
 
 function addon.modular:UpdateCurrentStepFrame(payload, player)
+    if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
+        return
+    end
+
+    -- print("UpdateCurrentStepFrame")
+
     payload = payload or RXPFrame.activeSteps
 
     player = player or addon.player.name
+
+    -- TODO integrate into other operations
+
+
 
     -- Reference CurrentStepFrame.UpdateText()
     -- Ensure both people have the guide?
