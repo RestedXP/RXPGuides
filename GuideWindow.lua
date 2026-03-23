@@ -5,6 +5,7 @@ local _, class = UnitClass("player")
 local _G = _G
 local fmt,tinsert = string.format, table.insert
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
+local AceGUI = LibStub("AceGUI-3.0")
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -1232,6 +1233,10 @@ function CurrentStepFrame.UpdateText()
     end
 
     CurrentStepFrame:SetHeight(totalHeight - 5)
+
+    if addon.settings.profile.enableBetaFeatures then
+        addon.modular:UpdateCurrentStepFrame(activeSteps, addon.player.name)
+    end
 end
 
 BottomFrame:SetPoint("TOPLEFT", RXPFrame, 3, -3)
@@ -2496,4 +2501,34 @@ function addon.UpdateGuideFontSize()
 
     GuideName.text:SetFont(addon.font, size + 2, "")
     Footer.text:SetFont(addon.font, size, "")
+end
+
+addon.modular = {}
+function addon.modular:CreateCurrentStepFrame(player)
+    player = player or addon.player.name
+
+    --Step frame needs one main frame then X stickies or completewith
+
+    local stepFrame = AceGUI:Create("RXPModularCurrentStep")
+
+    stepFrame.player = player
+    stepFrame.IsFeatureEnabled = function()
+        if stepFrame.player == addon.player.name then
+            return true, false
+        end
+
+        --TODO check if player is in group
+    end
+
+    addon.enabledFrames["stepFrame" .. player] = stepFrame
+end
+
+function addon.modular:UpdateCurrentStepFrame(payload, player)
+    payload = payload or RXPFrame.activeSteps
+
+    player = player or addon.player.name
+
+    -- Reference CurrentStepFrame.UpdateText()
+    -- Ensure both people have the guide?
+
 end
