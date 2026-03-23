@@ -3164,6 +3164,19 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    enableV2CurrentStepFrame = {
+                        name = L("Enable V2 UI - CurrentStep"), -- TODO locale
+                        -- desc = L"",
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.7,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        hidden = isNotAdvanced
+                    },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
