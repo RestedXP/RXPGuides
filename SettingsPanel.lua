@@ -55,7 +55,9 @@ local ProcessBuffer
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
-addon.settings.enabledBetaFeatures = {}
+addon.settings.enabledBetaFeatures = {
+    ["Modular Step Frame"] = "Use modular currentStep frame", --GuideWindow/addon.modular
+}
 
 if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
