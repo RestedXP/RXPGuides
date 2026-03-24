@@ -2520,9 +2520,11 @@ function addon.modular:CreateCurrentStepFrame(player)
     end
 
     --Step frame needs one main frame then X stickies or completewith
-    print("CreateCurrentStepFrame" .. player)
+    print("CreateCurrentStepFrame: " .. player)
 
-    local stepFrame = AceGUI:Create("RXPModularCurrentStep")
+    local stepFrame = AceGUI:Create("RXPV2CurrentStep")
+    stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
+    stepFrame:SetTitle("Step " .. player)
 
     stepFrame.player = player
     stepFrame.IsFeatureEnabled = function()
