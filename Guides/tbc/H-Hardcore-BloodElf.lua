@@ -2146,7 +2146,7 @@ step << !Troll
     .accept 9484 >> Accept Taming the Beast << BloodElf Hunter
     .target Lieutenant Dawnrunner
     --TODO: Beta check if 8476 can be accepted without having 9359 for non blood elves
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_and|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
@@ -2158,7 +2158,7 @@ step << !Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 --VV Paelarin doesn't talk to Trolls
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
@@ -2166,7 +2166,7 @@ step << !Troll Hunter
     .target Paelarin
     .money <0.0500 << Orc/Troll
     .money <0.0480 << BloodElf
-step << !Troll Hunter
+step << Hunter !Troll
     #optional
     #completewith Otembe
     +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
@@ -2393,7 +2393,7 @@ step << Undead/BloodElf
     #completewith MagiApp
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cRXP_WARN_and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_from|r |cRXP_FRIENDLY_Paelarin|r
@@ -2403,7 +2403,7 @@ step << !Troll Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << !Troll Hunter
+step << Hunter !Troll
     #optional
     #completewith HunterTrain
     +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
@@ -2557,7 +2557,7 @@ step << Undead/BloodElf
     #completewith Spire
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cRXP_WARN_and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_from|r |cRXP_FRIENDLY_Paelarin|r
@@ -2567,7 +2567,7 @@ step << !Troll Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << !Troll Hunter
+step << Hunter !Troll
     #optional
     #completewith HunterTrain
     +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
@@ -3675,7 +3675,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krenn'an|r
     .accept 9274 >>Accept Spirits of the Drowned
     .target Ranger Krenn'an
-step
+step << !Mage
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heron|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
@@ -3690,7 +3690,7 @@ step
     .money <0.0540 << Paladin
     .isOnQuest 9158
     .xp >15,1
-step
+step << !Mage
     #optional
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heron|r
@@ -4669,6 +4669,7 @@ step
     .goto Ghostlands,73.81,37.97,60,0
     .goto Ghostlands,76.46,28.25,60,0
     >>Kill |cRXP_ENEMY_Ghostclaw Lynxes|r
+    >>|cRXP_ENEMY_Ghostclaw Lynxes|r |cRXP_WARN_share spawns with |cRXP_ENEMY_Vampiric Mistbats|r. Kill them too if there aren't enough |cRXP_ENEMY_Ghostclaw Lynxes|r around|r
     .complete 9158,1 --Kill Ghostclaw Lynx (x10)
     .mob Ghostclaw Lynx
 step

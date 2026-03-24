@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 13-18 The Barrens
 #subgroup RestedXP Horde 1-30
-#defaultfor Shaman/Warrior
+#defaultfor Shaman
 #next 18-23 Stonetalon/The Barrens
 
 step << Tauren Shaman
@@ -1985,7 +1985,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 18-23 Stonetalon/The Barrens
 #subgroup RestedXP Horde 1-30
-#defaultfor Shaman/Warrior
+#defaultfor Shaman
 #next 23-25 Hillsbrad Foothills
 
 step
@@ -2824,7 +2824,7 @@ step << Rogue
 step << Rogue
     .goto Thunder Bluff,38.95,64.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3137,200,6562,1 --Deadly Throwing Axe (200)
+    .collect 25875,1,6562,1 --Deadly Throwing Axe (200)
     .target Kuruk
 step
     #completewith ZamahTurnin
@@ -4494,7 +4494,7 @@ step << Hunter
 step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
+    .collect 25875,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
     >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]

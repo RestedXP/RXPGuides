@@ -449,8 +449,8 @@ RXPGuides.RegisterGuide([[
 #version 7
 #subgroup RestedXP Horde 1-30
 #defaultfor Tauren
-#next 10-12 Eversong Woods << !Warrior !Shaman
-#next 10-13 Mulgore << Warrior/Shaman
+#next 10-12 Eversong Woods << !Shaman
+#next 10-13 Mulgore << Shaman
 
 step
     #softcore
@@ -1847,7 +1847,7 @@ step
     .turnin 6362 >>Turn in Ride to Thunder Bluff
     .accept 6363 >>Accept Tal the Wind Rider Master
     .target Ahanu
-step << Warrior/Shaman
+step << Shaman
     .goto Thunder Bluff,37.8,59.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
     .accept 744 >>Accept Preparation for Ceremony
@@ -1886,37 +1886,37 @@ step
     .accept 5723 >>Accept Testing an Enemy's Strength
     .target Rahauro
     .dungeon RFC
-step << Warrior/Shaman
+step << Shaman
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Turn in Tal the Wind Rider Master
     .accept 6364 >>Accept Return to Jahan
     .target Tal
-step << !Warrior !Shaman
+step << !Shaman
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
     .target Cairne Bloodhoof
-step << Warrior/Shaman
+step << Shaman
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
     .accept 776 >>Accept Rites of the Earthmother
     .target Cairne Bloodhoof
-step << !Warrior !Shaman
+step << !Shaman
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .turnin 6363 >>Turn in Tal the Wind Rider Master
+    .accept 6364 >>Accept Return to Jahan
+    .target Tal
+step << !Shaman
     #completewith HidesTurnIn
     .hs >> Hearth to The Crossroads
     .cooldown item,6948,>0
     .use 6948
     .bindlocation 380,1
     .subzoneskip 380
-step << !Warrior !Shaman
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .turnin 6363 >>Turn in Tal the Wind Rider Master
-    .accept 6364 >>Accept Return to Jahan
-    .target Tal
-step << !Warrior !Shaman
+step << !Shaman
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -1925,32 +1925,80 @@ step << !Warrior !Shaman
     .zoneskip The Barrens
     .cooldown item,6948,<0
     .subzoneskip 380
-step << !Warrior !Shaman
+step << !Shaman
     #label HidesTurnIn
     .goto The Barrens,51.1,29.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan|r
     .turnin 6364 >>Turn in Return to Jahan
     .target Jahan Hawkwing
-step << !Shaman !Warrior
+step << !Shaman
     #completewith ZeptoUC1
     +|cRXP_WARN_Abandon any leftover quests you have|r
-step << !Shaman !Warrior
+step << !Shaman
     #completewith next
     .zone Durotar >>Travel to Durotar
-step << !Shaman !Warrior
+step << !Shaman
     #label ZeptoUC1
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
-step << !Shaman !Warrior
+step << Warrior
+    #optional
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
+    #optional
+    .abandon 1498 >>Abandon Path of Defense
+    .isOnQuest 1498
+step << Warrior
+    .goto Tirisfal Glades,61.85,52.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
+    .trainer >> Train your class spells
+    .accept 1818 >> Accept Speak with Dillinger
+    .target Austil de Mon
+    .isQuestAvailable 1498
+step << Warrior
+    .goto Tirisfal Glades,61.71,52.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
+    .home >> Set your Hearthstone to Brill
+    .target Innkeeper Renee
+    .bindlocation 2119
+step << Warrior
+    .goto Tirisfal Glades,58.19,51.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .turnin 1818 >> Turn in Speak with Dillinger
+    .accept 1819 >> Accept Ulag the Cleaver
+    .target Deathguard Dillinger
+    .isQuestAvailable 1498
+step << Warrior
+    .goto Tirisfal Glades,59.16,48.51
+    >>|cRXP_WARN_Click on the skull on the ground. This will summon|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Kill him|r
+    .complete 1819,1 --Ulag the Cleaver (1)
+    .mob Ulag the Cleaver
+    .isOnQuest 1819
+step << Warrior
+    .goto Tirisfal Glades,58.19,51.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .turnin 1819 >> Turn in Ulag the Cleaver
+    .accept 1820 >> Accept Speak with Coleman
+    .target Deathguard Dillinger
+    .isQuestComplete 1819
+step << Warrior
+    #label WarriorClassQ
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
+    .turnin 1820 >>Turn in Speak with Coleman
+    .target Coleman Farthing
+    .isOnQuest 1820
+step << !Shaman
     #completewith PorttoSilvermoon
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
-step << !Shaman !Warrior
+step << !Shaman
     #completewith PorttoSilvermoon
     .goto Undercity,62.0,11.3,18 >>Go up the stairs here
-step << !Shaman !Warrior
+step << !Shaman
     #label PorttoSilvermoon
     .goto Undercity,54.9,11.3
     .zone Silvermoon City >>Use the |cRXP_PICK_Orb of Translocation|r
@@ -1971,7 +2019,7 @@ RXPGuides.RegisterGuide([[
 #name 10-13 Mulgore
 #version 7
 #subgroup RestedXP Horde 1-30
-#defaultfor Tauren
+#defaultfor Tauren Shaman
 #next 13-18 The Barrens
 
 step

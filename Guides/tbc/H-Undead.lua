@@ -7,8 +7,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #subgroup RestedXP Horde 1-30
 #defaultfor Scourge
-#next 6-10 Eversong Woods << !Warrior
-#next 6-13 Durotar << Warrior
+#next 6-10 Eversong Woods
 
 
 step << !Undead
@@ -628,8 +627,8 @@ step
     .target Executor Zygand
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
-    .collect 3131,200,8475,1 --Weighted Throwing Axe (200)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    .collect 29007,1,8475,1 --Weighted Throwing Axe (200)
     .target Mrs. Winters
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
@@ -651,9 +650,9 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Claws
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
-    .use 3131
-    .itemcount 3131,1
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
+    .use 29007
+    .itemcount 29007,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Rogue
@@ -733,9 +732,9 @@ step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
     .turnin 8 >>Turn in A Rogue's Deal
-    .home << Set your Hearthstone to Brill << Priest
+    .home >> Set your Hearthstone to Brill << Priest/Warrior
     .target Innkeeper Renee
-    .bindlocation 159 << Priest
+    .bindlocation 159 << Priest/Warrior
 step << Priest
     .goto Tirisfal Glades,61.99,52.19,6,0
     .goto Tirisfal Glades,61.76,52.31,6,0
@@ -812,48 +811,57 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r upstairs
     .turnin 5650 >> Turn in Garments of Darkness
     .target Dark Cleric Beryl
+step << Warlock
+    #completewith UCHome << Warlock
+    #completewith PorttoSilvermoon << !Warlock
+    .goto Tirisfal Glades,61.80,65.06,20,0
+    .zone Undercity >> Enter Undercity
+    .zoneskip Eversong Woods
+step << Warlock
+    #completewith UCHome
+    .goto Undercity,66.11,26.81,20,0
+    .goto Undercity,66.07,37.02,20,0
+    .goto Undercity,67.74,37.96,20 >>Take the elevator down into the Undercity
+step << Warlock
+    #label UCHome
+    .goto Undercity,67.74,37.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
+    .home >> Set your Hearthstone to Undercity
+    .target Innkeeper Norman
+    .bindlocation 1497
+step << Warlock
+    #completewith PorttoSilvermoon
+    .goto Undercity,66.07,37.02,20,0
+    .goto Undercity,66.11,26.81,20 >>Take the elevator back up
 step
-    #completewith next
-    .goto Tirisfal Glades,61.75,52.72,8,0
-    .goto Tirisfal Glades,61.58,52.99,8 >>Exit the Inn
-step << !Warrior
-    #completewith next
-    .goto Undercity,65.87,1.48,15,0
-    .goto Undercity,65.82,5.44,15,0
-    .goto Undercity,62.76,11.02,12,0
+    #label PorttoSilvermoon
+    .goto Undercity,65.87,1.48,15,0 << !Warlock
+    .goto Undercity,65.82,5.44,15,0 << !Warlock
+    .goto Undercity,62.76,11.02,12,0 << !Warlock
     .goto Undercity,54.67,11.25
     .zone Silvermoon City >> Take the Orb of Translocation to Silvermoon City
-step << !Warrior
+    .zoneskip Eversong Woods
+step
     #completewith next
     .goto Silvermoon City,62.89,31.20,20,0
     .goto Silvermoon City,75.63,58.34,20,0
     .goto Silvermoon City,73.22,59.91,20,0
     .goto Eversong Woods,56.43,49.91
     .zone Eversong Woods >>Exit Silvermoon
-step << !Warrior
+step
     #label SilvermoonFP
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gloaming|r
     .fp Silvermoon >> Get the Silvermoon City flight path
     .target Skymistress Gloaming
     .isQuestAvailable 8463
-step << !Warrior
+step
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaela|r
     .accept 8475 >> Accept The Dead Scar
     .target Ranger Jaela
-step << !Warrior
+step
     .goto Eversong Woods,46.68,49.10,40 >>Travel to Falconwing Square
     .isQuestAvailable 8463
-step << Warrior
-    .goto Tirisfal Glades,61.06,58.86,12,0
-    .goto Tirisfal Glades,61.51,59.01,10,0
-    .goto Tirisfal Glades,61.27,59.22,8,0
-    .goto Tirisfal Glades,61.13,58.84,8,0
-    .goto Tirisfal Glades,61.38,58.71,8,0
-    .goto Tirisfal Glades,61.34,59.17,8,0
-    .goto Tirisfal Glades,60.51,58.69,-1
-    .goto Tirisfal Glades,60.94,46.35,-1
-    >>Go up the Zeppelin Tower
-    .zone Durotar >>Take the Zeppelin to Durotar
+
 ]])
