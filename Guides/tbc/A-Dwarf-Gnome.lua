@@ -45,7 +45,7 @@ step << Warrior/Warlock
     .vendor >> Vendor Trash
     .target Grundel Harkin
     .train 6673,1 << Warrior
-    .train 348.1 << Warlock
+    .train 348,1 << Warlock
 step << Warrior
     .goto 1426,28.831,67.238
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r inside
