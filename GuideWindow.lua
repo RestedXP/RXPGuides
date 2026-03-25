@@ -2526,6 +2526,12 @@ function addon.modular:CreateCurrentStepFrame(player)
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
     stepFrame:SetTitle(fmt(L("Step %d"), 1))
 
+    stepFrame.scrollContainer = AceGUI:Create("ScrollFrame")
+    stepFrame.scrollContainer:SetFullWidth(true)
+    stepFrame.scrollContainer:SetFullHeight(true)
+    stepFrame.scrollContainer:SetLayout("Flow")
+    stepFrame:AddChild(stepFrame.scrollContainer)
+
     stepFrame.player = player
     stepFrame.IsFeatureEnabled = function()
         if not addon.settings.profile.enableV2CurrentStepFrame then
