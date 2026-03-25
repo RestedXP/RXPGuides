@@ -3075,12 +3075,23 @@ step
     .accept 281 >> Accept Reclaiming Goods
     .target Karl Boran
 step
-    .goto Wetlands,8.509,55.697
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
-    .turnin 469 >> Turn in Daily Delivery
-    .turnin 484 >> Turn in Young Crocolisk Skins
-    .accept 471 >> Accept Apprentice's Duties
+    .goto Wetlands,8.6,55.8
     .target James Halloran
+    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 469 >> Turn in Daily Delivery
+    .isOnQuest 469
+step
+    .goto Wetlands,8.6,55.8
+    .target James Halloran
+    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 484 >> Turn in Young Crocolisk Skins
+    .isOnQuest 484
+step
+    .goto Wetlands,8.6,55.8
+    .target James Halloran
+    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    .accept 471 >> Accept Apprentice's Duties
+    .isQuestTurnedIn 484
 step
     .goto Wetlands,10.89,59.66
     .target First Mate Fitzsimmons
@@ -3300,6 +3311,7 @@ step
     .complete 943,1 --1/1 Stone of Relu
     .mob Mottled Razormaw
     .mob Mottled Scytheclaw
+    .isOnQuest 943
 step
     .goto Wetlands,38.17,50.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
@@ -3381,6 +3393,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
     .turnin 471 >>Turn in Apprentice's Duties
     .target James Halloran
+    .isQuestComplete 471
 step
     .goto Wetlands,15.984,23.111,25,0
     .goto Wetlands,15.44,23.60
