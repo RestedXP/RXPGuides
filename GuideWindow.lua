@@ -2524,7 +2524,7 @@ function addon.modular:CreateCurrentStepFrame(player)
 
     local stepFrame = AceGUI:Create("RXPV2CurrentStep")
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
-    stepFrame:SetTitle("Step " .. player)
+    stepFrame:SetTitle(fmt(L("Step %d"), 1))
 
     stepFrame.player = player
     stepFrame.IsFeatureEnabled = function()
