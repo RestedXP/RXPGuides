@@ -28,10 +28,6 @@ function addon.ui.v2:RegisterRXPV2CurrentStep()
     --[[-----------------------------------------------------------------------------
     Scripts
     -------------------------------------------------------------------------------]]
-    local function Button_OnClick(frame)
-        frame.obj:Hide()
-    end
-
     local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
 
     local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
@@ -60,8 +56,8 @@ function addon.ui.v2:RegisterRXPV2CurrentStep()
     end
 
     --[[-----------------------------------------------------------------------------
-Methods
--------------------------------------------------------------------------------]]
+    Methods
+    -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
             this.frame:SetParent(addon.RXPFrame)
@@ -145,16 +141,8 @@ Methods
     }
 
     --[[-----------------------------------------------------------------------------
-Constructor
--------------------------------------------------------------------------------]]
-    local FrameBackdrop = {
-        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
-        edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-        tile = true,
-        tileSize = 16,
-        edgeSize = 16,
-        insets = {left = 3, right = 3, top = 5, bottom = 3}
-    }
+    Constructor
+    -------------------------------------------------------------------------------]]
 
     local function Constructor()
         local frame = CreateFrame("Frame", nil, addon.RXPFrame, "BackdropTemplate")
@@ -164,8 +152,8 @@ Constructor
         frame:SetMovable(true) -- TODO only allow for not-player
         frame:SetResizable(true)
         frame:SetFrameStrata(addon.RXPFrame:GetFrameStrata())
-        frame:SetFrameLevel(100) -- Lots of room to draw under it
-        frame:SetBackdrop(FrameBackdrop)
+        frame:SetFrameLevel(100)
+        frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
         frame:SetBackdropColor(unpack(addon.colors.background))
 
         if frame.SetResizeBounds then -- WoW 10.0
@@ -178,20 +166,23 @@ Constructor
         frame:SetScript("OnHide", Frame_OnClose)
         frame:SetScript("OnMouseDown", Frame_OnMouseDown)
 
-        local title = CreateFrame("Frame", nil, frame)
-        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+        local title = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
+        title:ClearBackdrop()
+        title:SetBackdrop(addon.RXPFrame.backdrop.edge)
+        title:SetBackdropColor(unpack(addon.colors.background))
+        title:EnableMouse(true)
+        title:SetScript("OnMouseDown", Title_OnMouseDown)
+        title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()
-        titletext:SetPoint("CENTER", title, 0, 0)
+        titletext:SetPoint("CENTER", title, 2, 1)
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(addon.activeTheme.textColor))
         titletext:SetFontObject(_G.GameFontNormalSmall)
         titletext:SetFont(addon.font, addon.settings.profile.guideFontSize - 1, "")
-        titletext:EnableMouse(true)
-        titletext:SetScript("OnMouseDown", Title_OnMouseDown)
-        titletext:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
 
         local sizer = CreateFrame("Button", nil, frame)
 
