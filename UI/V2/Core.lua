@@ -145,7 +145,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStep()
     -------------------------------------------------------------------------------]]
 
     local function Constructor()
-        local frame = CreateFrame("Frame", nil, addon.RXPFrame, "BackdropTemplate")
+        local frame = CreateFrame("Frame", nil, addon.RXPFrame, BackdropTemplateMixin and "BackdropTemplate")
         frame:Hide()
 
         frame:EnableMouse(true)
@@ -166,7 +166,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStep()
         frame:SetScript("OnHide", Frame_OnClose)
         frame:SetScript("OnMouseDown", Frame_OnMouseDown)
 
-        local title = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+        local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
         title:ClearBackdrop()
         title:SetBackdrop(addon.RXPFrame.backdrop.edge)
@@ -196,9 +196,12 @@ function addon.ui.v2:RegisterRXPV2CurrentStep()
         sizer:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
 
         -- Container Support
-        local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", 17, -27)
-        content:SetPoint("BOTTOMRIGHT", -17, 40)
+        local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        content:SetPoint("TOPLEFT", 6, -4)
+        content:SetPoint("BOTTOMRIGHT", -4, 6)
+        -- content:ClearBackdrop()
+        -- content:SetBackdrop(addon.RXPFrame.backdrop.bottom)
+        -- content:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
 
         local widget = {
             localstatus = {},
