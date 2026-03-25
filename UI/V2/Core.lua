@@ -15,14 +15,16 @@ function addon.ui.v2:Initialize()
     -- Locales.lua loads after this file is included
     L = addon.locale.Get
 
-    self:RegisterRXPV2CurrentStep()
+    self:RegisterRXPV2CurrentStepFrame()
+    self:RegisterRXPV2CurrentStepItem()
+    self:RegisterRXPV2CurrentStepPadding()
 end
 
-function addon.ui.v2:RegisterRXPV2CurrentStep()
+function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2CurrentStep", 1
+    local Type, Version = "RXPV2CurrentStepFrame", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -213,6 +215,140 @@ function addon.ui.v2:RegisterRXPV2CurrentStep()
             type = Type
         }
         for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+
+end
+
+function addon.ui.v2.RegisterRXPV2CurrentStepItem()
+    local Type, Version = "RXPV2CurrentStepItem", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    -- WoW APIs
+    local CreateFrame, UIParent = CreateFrame, UIParent
+
+    --[[-----------------------------------------------------------------------------
+    Methods
+    -------------------------------------------------------------------------------]]
+    local methods = {
+        ["OnAcquire"] = function(self)
+            self:SetWidth(200)
+            self:SetHeight(42)
+            self:SetText(nil)
+        end,
+
+        -- ["OnRelease"] = nil,
+
+        ["SetText"] = function(self, label)
+            self.text:SetText(label)
+        end,
+    }
+
+    --[[-----------------------------------------------------------------------------
+    Constructor
+    -------------------------------------------------------------------------------]]
+    local function Constructor()
+        local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+
+        frame:EnableMouse(true)
+        -- frame:SetScript("OnEnter", Control_OnEnter)
+        -- frame:SetScript("OnLeave", Control_OnLeave)
+        -- frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
+        -- frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
+
+        local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+        text:SetJustifyH("LEFT")
+        text:SetHeight(18)
+        text:SetPoint("LEFT")
+        -- text:SetTextColor(addon.colors.text)
+
+        local frameBackdrop = {
+	        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
+            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+            tile = true, tileSize = 16, edgeSize = 16,
+            insets = { left = 3, right = 3, top = 5, bottom = 3 }
+        }
+
+        frame:SetBackdrop(frameBackdrop)
+        frame:SetBackdropColor(30 / 255, 30 / 255, 30 / 255, 1)
+        frame:SetBackdropBorderColor(112 / 255, 112 / 255, 112 / 255)
+
+        local widget = {
+            text      = text,
+            frame     = frame,
+            type      = Type
+        }
+
+        for method, func in pairs(methods) do
+            widget[method] = func
+        end
+
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+
+end
+
+function addon.ui.v2.RegisterRXPV2CurrentStepPadding()
+    local Type, Version = "RXPV2CurrentStepPadding", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    -- WoW APIs
+    local CreateFrame, UIParent = CreateFrame, UIParent
+
+    --[[-----------------------------------------------------------------------------
+    Methods
+    -------------------------------------------------------------------------------]]
+    local methods = {
+        ["OnAcquire"] = function(self)
+            self:SetWidth(200)
+            self.fixedHeight = 52 -- 48 + 4
+            self:SetHeight(self.fixedHeight)
+        end,
+
+        -- ["OnRelease"] = nil,
+
+        ["LayoutFinished"] = function(self, width, height)
+            if self.noAutoHeight then return end
+            self:SetHeight(self.fixedHeight)
+        end,
+
+        ["OnWidthSet"] = function(self, width)
+            local content = self.content
+            content:SetWidth(width)
+            content.width = width
+        end,
+
+        ["OnHeightSet"] = function(self, height)
+            self.content:SetHeight(self.fixedHeight)
+        end
+    }
+
+    --[[-----------------------------------------------------------------------------
+    Constructor
+    -------------------------------------------------------------------------------]]
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:SetFrameStrata("MEDIUM")
+
+        --Container Support
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetPoint("TOPLEFT", 2, 0)
+        content:SetPoint("BOTTOMRIGHT", 2, 0)
+
+        local widget = {
+            frame        = frame,
+            content      = content,
+            type         = Type,
+            noAutoHeight = true
+        }
+        for method, func in pairs(methods) do
+            widget[method] = func
+        end
 
         return AceGUI:RegisterAsContainer(widget)
     end

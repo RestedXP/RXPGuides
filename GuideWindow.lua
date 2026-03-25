@@ -2519,12 +2519,15 @@ function addon.modular:CreateCurrentStepFrame(player)
         return addon.enabledFrames["currentStepFrame" .. player]
     end
 
-    --Step frame needs one main frame then X stickies or completewith
-    print("CreateCurrentStepFrame: " .. player)
-
-    local stepFrame = AceGUI:Create("RXPV2CurrentStep")
+    local stepFrame = AceGUI:Create("RXPV2CurrentStepFrame")
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
-    stepFrame:SetTitle(fmt(L("Step %d"), 1))
+
+    if player == addon.player.name then
+        -- TODO hide
+        stepFrame:SetTitle(player)
+    else
+        stepFrame:SetTitle(player)
+    end
 
     stepFrame.scrollContainer = AceGUI:Create("ScrollFrame")
     stepFrame.scrollContainer:SetFullWidth(true)
@@ -2547,6 +2550,8 @@ function addon.modular:CreateCurrentStepFrame(player)
 
     addon.enabledFrames["currentStepFrame" .. player] = stepFrame
     stepFrame:Show()
+
+    return stepFrame
 end
 
 function addon.modular:UpdateCurrentStepFrame(payload, player)
@@ -2554,14 +2559,167 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
         return
     end
 
-    -- print("UpdateCurrentStepFrame")
-
     payload = payload or RXPFrame.activeSteps
 
     player = player or addon.player.name
+    RXPD = payload
 
-    -- TODO integrate into other operations
+    local playerStepFrame = addon.enabledFrames["currentStepFrame" .. player]
 
+    if not playerStepFrame then
+        playerStepFrame = self:CreateCurrentStepFrame(player)
+    end
+
+    if not playerStepFrame then return end
+
+    playerStepFrame.scrollContainer:ReleaseChildren()
+
+    local c, e, h, spacing = 0, 0, 0, 0
+    local anchor = 0
+    -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
+    local loopStepIndex, stepframe, elementFrame, icon
+    local paddingWrapper
+
+    for _, step in ipairs(activeSteps) do
+
+        loopStepIndex = step.index
+        c = c + 1
+        stepframe = step.active and AceGUI:Create("RXPV2CurrentStepItem") or nil
+
+        if stepframe then
+            -- paddingWrapper = AceGUI:Create("RXPV2CurrentStepPadding")
+
+            -- paddingWrapper:SetFullWidth(true)
+            -- paddingWrapper:SetHeight(52)
+
+            -- if not step.tip then
+            --     stepframe:ClearAllPoints()
+
+            --     if anchor < 1 then
+            --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
+            --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
+            --     else
+            --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[anchor],
+            --                         "BOTTOMLEFT", 0, -5)
+            --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor],
+            --                         "BOTTOMRIGHT", 0, -5)
+            --     end
+
+            --     stepframe:SetMovable(false)
+            --     anchor = c
+            -- end
+
+            local stepItem = AceGUI:Create("RXPV2CurrentStepItem")
+            stepItem:SetFullWidth(true)
+            stepItem:SetText(step.title or (fmt(L("Step %d"), loopStepIndex)))
+
+            -- paddingWrapper:AddChild(stepItem)
+            -- playerStepFrame.scrollContainer:AddChild(paddingWrapper)
+            playerStepFrame.scrollContainer:AddChild(stepItem)
+
+            e = 0
+
+            --TODO enable
+            for j, element in ipairs({} or step.elements or {}) do
+                e = j
+                elementFrame = stepframe.elements[e]
+
+                if elementFrame then
+                    elementFrame:Show()
+
+                    spacing = 0
+                    if not IsFrameShown(elementFrame,step) then
+                        elementFrame:SetAlpha(0)
+                        elementFrame.button:Hide()
+                        elementFrame:SetHeight(1)
+                        spacing = 1
+                    elseif element.text then
+                        elementFrame:SetAlpha(1)
+
+                        elementFrame.button:ClearAllPoints()
+                        elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1)
+
+                        elementFrame.text:ClearAllPoints()
+                        elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
+                                                "TOPRIGHT", 11, -1)
+                        elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
+
+                         -- Prevent text from overwritten with " ", could be stale text
+                        if element.text ~= ' ' then
+                            elementFrame.text:SetText(addon.ReplaceNpcIds(L(element.text)))
+                        else
+                            element.requestFromServer = true
+                        end
+
+                        -- local diffx,diffy = elementFrame.text:GetWidth() - GuideName:GetWidth(),elementFrame.text:GetHeight() - GuideName:GetHeight()
+                        if elementFrame.text:GetWidth() > GuideName:GetWidth() + 600 then
+                            elementFrame:EnableMouse(false)
+                            elementFrame.button:EnableMouse(false)
+                        else
+                            elementFrame:EnableMouse(true)
+                            elementFrame.button:EnableMouse(true)
+                        end
+
+                        elementFrame.icon:ClearAllPoints()
+                        elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button,
+                                                "TOPRIGHT", 0, -1)
+
+                        if element.textOnly then
+                            elementFrame.button:SetChecked(true)
+                            elementFrame.button:Hide()
+                            element.completed = true
+                        else
+                            elementFrame.button:Show()
+                        end
+
+                    else
+                        elementFrame:SetAlpha(0)
+                        elementFrame.button:Hide()
+                        elementFrame:SetHeight(1)
+                        element.completed = true
+                        spacing = 1
+                    end
+
+                    elementFrame:ClearAllPoints()
+
+                    if e == 1 then
+                        elementFrame:SetPoint("TOPLEFT", stepframe, 0, -10 + spacing)
+                        elementFrame:SetPoint("TOPRIGHT", stepframe, 0,
+                                            -10 + spacing)
+                    else
+                        elementFrame:SetPoint("TOPLEFT", stepframe.elements[e - 1],
+                                            "BOTTOMLEFT", 0, 0 + spacing)
+                        elementFrame:SetPoint("TOPRIGHT", stepframe.elements[e - 1],
+                                            "BOTTOMRIGHT", 0, 0 + spacing)
+                    end
+
+                    if element.tag and element.text then
+                        icon = element.icon or addon.icons[element.tag] or ""
+                        elementFrame.icon:SetText(icon)
+                        elementFrame.icon:Show()
+                    else
+                        elementFrame.icon:Hide()
+                    end
+
+                end
+
+            end
+
+            -- if IsFrameShown(stepframe,step) then
+            --     if stepframe:GetWidth() > GuideName:GetWidth() + 600 then
+            --         stepframe:EnableMouse(false)
+            --     else
+            --         stepframe:EnableMouse(true)
+            --     end
+            --     stepframe:SetAlpha(1)
+            -- else
+            --     stepframe:SetAlpha(0)
+            --     stepframe:EnableMouse(false)
+            -- end
+        end
+    end
+
+    playerStepFrame.scrollContainer:DoLayout()
 
 
     -- Reference CurrentStepFrame.UpdateText()
