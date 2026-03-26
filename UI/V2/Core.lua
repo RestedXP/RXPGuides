@@ -17,7 +17,6 @@ function addon.ui.v2:Initialize()
 
     self:RegisterRXPV2CurrentStepFrame()
     self:RegisterRXPV2CurrentStepItem()
-    self:RegisterRXPV2CurrentStepPadding()
 end
 
 function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
@@ -234,16 +233,29 @@ function addon.ui.v2.RegisterRXPV2CurrentStepItem()
     Methods
     -------------------------------------------------------------------------------]]
     local methods = {
-        ["OnAcquire"] = function(self)
-            self:SetWidth(200)
-            self:SetHeight(42)
-            self:SetText(nil)
+        ["OnAcquire"] = function(this)
+            this:SetWidth(200)
+            this:SetHeight(42)
+            this:SetTitle(nil)
+            this:SetText(nil)
         end,
 
         -- ["OnRelease"] = nil,
 
-        ["SetText"] = function(self, label)
-            self.text:SetText(label)
+        ["SetTitle"] = function(this, title)
+            this.titletext:SetText(title)
+            if title == "" then
+                this.titletext:SetAlpha(0)
+                this.title:SetSize(10, 17)
+            else
+                this.title:SetAlpha(1)
+                this.titletext:SetText(title)
+                this.title:SetSize(this.titletext:GetStringWidth() + 10, 17)
+            end
+        end,
+
+        ["SetText"] = function(this, label)
+            this.text:SetText(label)
         end,
     }
 
@@ -258,13 +270,6 @@ function addon.ui.v2.RegisterRXPV2CurrentStepItem()
         -- frame:SetScript("OnLeave", Control_OnLeave)
         -- frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
         -- frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
-
-        local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-        text:SetJustifyH("LEFT")
-        text:SetHeight(18)
-        text:SetPoint("LEFT")
-        -- text:SetTextColor(addon.colors.text)
-
         local frameBackdrop = {
 	        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
             edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
@@ -276,7 +281,33 @@ function addon.ui.v2.RegisterRXPV2CurrentStepItem()
         frame:SetBackdropColor(30 / 255, 30 / 255, 30 / 255, 1)
         frame:SetBackdropBorderColor(112 / 255, 112 / 255, 112 / 255)
 
+        local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
+        title:ClearBackdrop()
+        title:SetBackdrop(addon.RXPFrame.backdrop.edge)
+        title:SetBackdropColor(unpack(addon.colors.background))
+        -- title:EnableMouse(true)
+        -- title:SetScript("OnMouseDown", Title_OnMouseDown)
+        -- title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
+
+        local titletext = title:CreateFontString(nil, "OVERLAY")
+        titletext:ClearAllPoints()
+        titletext:SetPoint("CENTER", title, 2, 1)
+        titletext:SetJustifyH("CENTER")
+        titletext:SetJustifyV("MIDDLE")
+        titletext:SetTextColor(unpack(addon.activeTheme.textColor))
+        titletext:SetFontObject(_G.GameFontNormalSmall)
+        titletext:SetFont(addon.font, addon.settings.profile.guideFontSize - 1, "")
+
+        local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+        text:SetJustifyH("LEFT")
+        text:SetHeight(18)
+        text:SetPoint("LEFT")
+        -- text:SetTextColor(addon.colors.text)
+
         local widget = {
+            title     = title,
+            titletext = titletext,
             text      = text,
             frame     = frame,
             type      = Type

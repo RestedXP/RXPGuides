@@ -2611,7 +2611,8 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
 
             local stepItem = AceGUI:Create("RXPV2CurrentStepItem")
             stepItem:SetFullWidth(true)
-            stepItem:SetText(step.title or (fmt(L("Step %d"), loopStepIndex)))
+            stepItem:SetTitle(step.title or (fmt(L("Step %d"), loopStepIndex)))
+            stepItem:SetText("Foo bazz")
 
             -- paddingWrapper:AddChild(stepItem)
             -- playerStepFrame.scrollContainer:AddChild(paddingWrapper)
