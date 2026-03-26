@@ -734,7 +734,7 @@ step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r
     .turnin 8 >>交任务《 前往熔光镇》 潜行者的交易
-    .home << Set your Hearthstone to Brill << Priest
+    .home >> Set your Hearthstone to Brill << Priest
     .target 旅店老板瑞尼
     .bindlocation 159 << Priest
 step << Priest

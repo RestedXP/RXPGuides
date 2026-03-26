@@ -696,7 +696,7 @@ step
     .goto Tirisfal Glades,61.71,52.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renee|r
     .turnin 8 >>Turn in A Rogue's Deal
-    .home << Set your Hearthstone to Brill << Priest tbc
+    .home >> Set your Hearthstone to Brill << Priest tbc
     .vendor >>Vendor Trash << Warrior
     .isQuestAvailable 8463 << Warrior
 step << Warrior

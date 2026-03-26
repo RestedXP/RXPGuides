@@ -2176,6 +2176,12 @@ step
     .collect 22776,1,9067,1 --Collect Springpaw Appetizers
     .target Zalene Firstlight
     .isOnQuest 9067
+step << Mage/Priest/Warlock
+    .goto Eversong Woods,60.41,62.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalene|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r
+    .collect 1179,20,8476,1 --Ice Cold Milk (20)
+    .target Zalene Firstlight
 step
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
@@ -2518,27 +2524,12 @@ step
     .accept 8894 >> Accept Cleaning up the Grounds
     .target Groundskeeper Wyllithen
 step
-    #loop
-	.goto Eversong Woods,69.15,50.56,0
-	.goto Eversong Woods,69.15,50.56,40,0
-	.goto Eversong Woods,70.02,50.62,40,0
-	.goto Eversong Woods,70.58,48.16,40,0
-	.goto Eversong Woods,69.97,46.28,40,0
-	.goto Eversong Woods,69.50,44.69,40,0
-	.goto Eversong Woods,68.29,43.31,40,0
-	.goto Eversong Woods,67.61,45.28,40,0
-	.goto Eversong Woods,67.13,48.48,40,0
-	.goto Eversong Woods,69.01,48.22,40,0
+    #completewith DeactivationComplete
     >>Kill |cRXP_ENEMY_Mana Serpents|r and |cRXP_ENEMY_Ether Fiends|r
     .complete 8894,1 --Kill Mana Serpent (x6)
     .mob +Mana Serpent
     .complete 8894,2 --Kill Ether Fiend (x6)
     .mob +Ether Fiend
-step
-    .goto Eversong Woods,68.71,46.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wyllithen|r
-    .turnin 8894 >> Turn in Cleaning up the Grounds
-    .target Groundskeeper Wyllithen
 step
     #completewith next
     .goto Eversong Woods,68.95,51.95
@@ -2579,9 +2570,32 @@ step
     >>|cRXP_WARN_Do NOT click the |cRXP_PICK_Orb of Translocation|r yet|r
     .complete 8889,3 --Third Power Source Deactivated (x1)
 step
+    #label DeactivationComplete
     .goto Eversong Woods,69.61,53.47
     .cast 26572 >>Click the |cRXP_PICK_Orb of Translocation|r to teleport back down
     .isOnQuest 8889
+step
+    #loop
+	.goto Eversong Woods,69.15,50.56,0
+	.goto Eversong Woods,69.15,50.56,40,0
+	.goto Eversong Woods,70.02,50.62,40,0
+	.goto Eversong Woods,70.58,48.16,40,0
+	.goto Eversong Woods,69.97,46.28,40,0
+	.goto Eversong Woods,69.50,44.69,40,0
+	.goto Eversong Woods,68.29,43.31,40,0
+	.goto Eversong Woods,67.61,45.28,40,0
+	.goto Eversong Woods,67.13,48.48,40,0
+	.goto Eversong Woods,69.01,48.22,40,0
+    >>Kill |cRXP_ENEMY_Mana Serpents|r and |cRXP_ENEMY_Ether Fiends|r
+    .complete 8894,1 --Kill Mana Serpent (x6)
+    .mob +Mana Serpent
+    .complete 8894,2 --Kill Ether Fiend (x6)
+    .mob +Ether Fiend
+step
+    .goto Eversong Woods,68.71,46.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wyllithen|r
+    .turnin 8894 >> Turn in Cleaning up the Grounds
+    .target Groundskeeper Wyllithen
 step << Mage
     #loop
 	.goto Eversong Woods,69.15,50.56,0
@@ -2689,7 +2703,7 @@ step << Mage
     .turnin 9403 >>Turn in The Purest Water
     .accept 9404 >>Accept Recently Living
     .target Instructor Antheol
-step << !Warlock
+step << !BloodElf/!Warlock
     #completewith SMtraining01
     .goto Eversong Woods,56.51,49.61,25,0
     .goto Silvermoon City,73.39,59.65
@@ -2722,6 +2736,43 @@ step
     .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
     .target Vinemaster Suntouched
     .isOnQuest 9067
+step << Priest/Mage
+    #completewith SMTraining3
+    .goto Silvermoon City,75.95,52.92,30,0
+    .goto Silvermoon City,62.89,31.26,30,0
+    .goto Silvermoon City,57.45,24.46,15,0
+    .goto Silvermoon City,55.31,24.96,15,0 << Priest
+    .goto Silvermoon City,57.21,21.25,15,0 << Mage
+    .goto Silvermoon City,55.38,26.76,12 >> Travel toward |cRXP_FRIENDLY_Lotheolan|r << Priest
+    .goto Silvermoon City,57.16,18.85,12 >> Travel toward |cRXP_FRIENDLY_Zaedana|r << Mage
+step << Priest
+    #optional
+    .goto Silvermoon City,55.38,26.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
+    .train 592 >> Train your class spells
+    .target Lotheolan
+	.xp <12,1
+	.xp >14,1
+step << Priest
+    .goto Silvermoon City,55.38,26.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
+    .train 598 >> Train your class spells
+    .target Lotheolan
+	.xp <14,1
+step << Mage
+    #optional
+    .goto Silvermoon City,57.16,18.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
+    .train 145 >> Train your class spells
+    .target Zaedana
+	.xp <12,1
+	.xp >14,1
+step << Mage
+    .goto Silvermoon City,57.16,18.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
+    .train 1449 >> Train your class spells
+    .target Zaedana
+	.xp <14,1
 step << !BloodElf Hunter
     #completewith next
     .goto Silvermoon City,73.39,59.65,30,0
@@ -2741,38 +2792,20 @@ step << Priest/Mage
     .goto Silvermoon City,55.38,26.76,12 >> Travel toward |cRXP_FRIENDLY_Lotheolan|r << Priest
     .goto Silvermoon City,57.16,18.85,12 >> Travel toward |cRXP_FRIENDLY_Zaedana|r << Mage
     .cooldown item,6948,<0
-step << Priest
+step << Orc Warlock/Undead Warlock
     #optional
-    .goto Silvermoon City,55.38,26.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
-    .train 1244 >> Train your class spells
-    .target Lotheolan
-    .cooldown item,6948,<0
-	.xp <12,1
-	.xp >14,1
-step << Priest
-    .goto Silvermoon City,55.38,26.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
-    .train 8122 >> Train your class spells
-    .target Lotheolan
-    .cooldown item,6948,<0
-	.xp <14,1
-step << Mage
-    #optional
-    .goto Silvermoon City,57.16,18.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
-    .train 145 >> Train your class spells
-    .target Zaedana
-    .cooldown item,6948,<0
-	.xp <12,1
-	.xp >14,1
-step << Mage
-    .goto Silvermoon City,57.16,18.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
-    .train 1460 >> Train your class spells
-    .target Zaedana
-    .cooldown item,6948,<0
-	.xp <14,1
+    .goto Silvermoon City,74.39,47.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
+    .train 705 >> Train your class spells
+    .target Talionia
+    .xp <12,1
+    .xp >14,1
+step << Orc Warlock/Undead Warlock
+    .goto Silvermoon City,74.39,47.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
+    .train 6222 >> Train your class spells
+    .target Talionia
+    .xp <14,1
 step << Rogue
     #completewith Zelanis
     .goto Silvermoon City,73.39,59.65,30,0
@@ -3097,7 +3130,7 @@ step << BloodElf Hunter
 step
     #optional
     #label SMtraining01
-step << BloodElf !Hunter !Warlock/Undead !Warlock/!Orc !Warrior
+step << BloodElf !Hunter !Warlock/Undead !Warlock !Warrior/Orc !Warrior !Warlock !Hunter/Troll !Warrior !Hunter/!Tauren
     #completewith Defending
     .hs >> Hearth to Falconwing Square
     .cooldown item,6948,>0
@@ -3122,73 +3155,11 @@ step << Rogue
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
     .zoneskip Silvermoon City
-step << !Warlock
+step << !BloodElf/!Warlock
     #completewith SGrove
     .goto Eversong Woods,56.43,49.91
     .zone Eversong Woods >>Exit Silvermoon
-    .cooldown item,6948,<0 << Undead/BloodElf
-step << Mage/Priest/Undead Warlock/Orc Warlock
-    #completewith next
-    .goto Eversong Woods,47.79,47.35,8,0
-    .goto Eversong Woods,47.86,47.76,8 >> Go inside the Inn
-    .cooldown item,6948,>0
-	.xp <12,1
-step << Mage/Priest/Undead Warlock/Orc Warlock
-    #completewith FalconPMTrain2
-    .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >> Go upstairs
-    .cooldown item,6948,>0
-	.xp <12,1
-step << Priest
-    #optional
-    .goto Eversong Woods,47.85,47.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ponaris|r upstairs
-    .train 1244 >>Train your class spells
-    .target Ponaris
-    .cooldown item,6948,>0
-	.xp <12,1
-    .xp >14,1
-step << Priest
-    #label FalconPMTrain2
-    .goto Eversong Woods,47.85,47.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ponaris|r upstairs
-    .train 8122 >>Train your class spells
-    .target Ponaris
-    .cooldown item,6948,>0
-	.xp <14,1
-step << Mage
-    #optional
-    .goto Eversong Woods,48.04,48.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garridel|r upstairs
-    .train 7300 >>Train your class spells
-    .target Garridel
-    .cooldown item,6948,>0
-	.xp <12,1
-    .xp >14,1
-step << Mage
-    #label FalconPMTrain2
-    .goto Eversong Woods,48.04,48.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garridel|r upstairs
-    .train 145 >>Train your class spells
-    .target Garridel
-    .cooldown item,6948,>0
-	.xp <14,1
-step << Undead Warlock/Orc Warlock
-    #optional
-    .goto Eversong Woods,48.23,47.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celoenus|r upstairs
-    .train 705 >>Train your class spells
-    .target Celoenus
-    .cooldown item,6948,>0
-    .xp <12,1
-    .xp >14,1
-step << Undead Warlock/Orc Warlock
-    .goto Eversong Woods,48.23,47.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celoenus|r upstairs
-    .train 6222 >>Train your class spells
-    .target Celoenus
-    .cooldown item,6948,>0
-    .xp <14,1
+    .cooldown item,6948,<0 << BloodElf !Hunter !Warlock/Undead !Warlock !Warrior/Orc !Warrior !Warlock !Hunter/Troll !Warrior !Hunter/!Tauren
 step
     #loop
     .goto Eversong Woods,46.63,63.83,0
@@ -3492,7 +3463,7 @@ step << BloodElf
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwing|r
     .turnin 9130 >> Turn in Goods from Silvermoon City
-    .accept 9133 >> Accept Fly to Silvermoon City << Warlock/Priest
+    .accept 9133 >> Accept Fly to Silvermoon City << Warlock/Priest/Mage
     .target Skymaster Sunwing
 step << BloodElf Warlock
     #completewith RuneOS
@@ -4051,7 +4022,7 @@ step << Hunter
     .target Provisioner Vredigar
     .itemStat 8,LEVEL,<15
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
-step << Rogue/Shaman/Hunter
+step << Rogue/Shaman/Hunter/Druid
     .goto Ghostlands,47.71,32.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vredigar|r
     >>|cRXP_BUY_Buy the|r |T132538:0|t[Bogwalker Boots] |cRXP_BUY_from him|r
@@ -4318,7 +4289,7 @@ step << Warrior
     .zone Silvermoon City >> Take the |cRXP_PICK_Orb of Translocation|r to Silvermoon City
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
-step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock !Rogue
+step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock
     #completewith SMTraining2
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwing|r
@@ -4334,12 +4305,20 @@ step << Rogue
     #optional
     .abandon 9491 >> Abandon Greed
 step << Rogue
-    #completewith next
+    #completewith RogueTrain2
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,76.55,52.05,20,0
     .goto Silvermoon City,79.70,52.16,20 >>Travel toward |cRXP_FRIENDLY_Zelanis|r
     .xp <16,1
 step << Rogue
+    .goto Silvermoon City,79.70,52.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
+    .train 1758 >>Train your class spells
+    .target Zelanis
+    .xp <14,1
+    .xp >16,1
+step << Rogue
+    #label RogueTrain2
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
     .accept 10372 >> Accept A Discreet Inquiry
@@ -4354,7 +4333,6 @@ step << Rogue
     .zone Undercity >>Take the |cRXP_PICK_Orb of Translocation|r to Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .xp <16,1
 step << Rogue
     #completewith Scimitars
     .goto Undercity,59.81,11.33,20,0
@@ -4365,7 +4343,6 @@ step << Rogue
     .goto Undercity,60.07,47.70,10 >>Take the lift down to the Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .xp <16,1
 step << !Undead Rogue
     #optional
     .goto Undercity,63.25,48.56
@@ -4377,7 +4354,6 @@ step << !Undead Rogue
     .money <0.7250 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .xp <16,1
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
@@ -4388,7 +4364,6 @@ step << !Undead Rogue
     .money <0.3625 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .xp <16,1
 step << Rogue
     #optional
     .goto Undercity,61.15,40.88
@@ -4401,7 +4376,6 @@ step << Rogue
     .money <0.7250 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .xp <16,1
 step << Rogue
     #label Scimitars
     .goto Undercity,61.15,40.88
@@ -4414,13 +4388,11 @@ step << Rogue
     .money <0.3625 << Undead/BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .xp <16,1
 step << Rogue
     #completewith Clearing
     .hs >> Hearth to Tranquillien
     .zoneskip Ghostlands
     .cooldown item,6948,>0
-    .xp <16,1
     .bindlocation 3488,1
     .subzoneskip 3488
 step << Rogue
@@ -4435,14 +4407,12 @@ step << Rogue
     .zoneskip Silvermoon City
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
-    .xp <16,1
 step << Rogue
     .goto Undercity,54.67,11.25
     .zone Silvermoon City >> Take the |cRXP_PICK_Orb of Translocation|r to Silvermoon City
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
-    .xp <16,1
 step << Mage
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antheol|r
@@ -4460,7 +4430,7 @@ step << !BloodElf Warlock
     .goto Eversong Woods,56.51,49.61,25,0
     .goto Silvermoon City,73.39,59.65
     .zone Silvermoon City >>Enter Silvermoon
-step << BloodElf Priest
+step << BloodElf Priest/BloodElf Mage
     .goto Silvermoon City,69.27,77.00,8,0
     .goto Silvermoon City,68.13,74.07,8,0
     .goto Silvermoon City,66.56,73.29,8,0
@@ -4470,7 +4440,6 @@ step << BloodElf Priest
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
     .target Sathren Azuredawn
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
 step << Priest
     #ah
     .goto Silvermoon City,60.65,63.45,15,0
@@ -4481,9 +4450,6 @@ step << Priest
     .collect 11288,1,9281,1 --Greater Magic Wand
     .target Vynna
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
-step << BloodElf Priest
-    #optional
-    .abandon 9133 >> Abandon Fly to Silvermoon City
 step << Priest/Mage
     #completewith SMTraining2
     .goto Silvermoon City,75.95,52.92,30,0
@@ -4538,7 +4504,7 @@ step << BloodElf Priest
     #completewith next
     .goto Eversong Woods,56.52,49.83
     .zone Eversong Woods >> Exit Silvermoon
-step << BloodElf Priest
+step << BloodElf Priest/BloodElf Mage
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gloaming|r
     .turnin 9134 >> Turn in Skymistress Gloaming
@@ -4624,7 +4590,7 @@ step
     .money <0.2000 << Paladin
     .xp <15,1
     .xp >30,1
-step << BloodElf Priest
+step << BloodElf Priest/BloodElf Mage
     .goto Ghostlands,47.34,29.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lymel|r
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
@@ -4644,7 +4610,8 @@ step
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Risen Hungerers|r |cRXP_WARN_cast|r |T132278:0|t[Blood Leech] |cRXP_WARN_(10 damage lifesteal)|r
     .complete 9155,1 --Kill Risen Hungerer (x10)
     .complete 9155,2 --Kill Gangled Cannibal (x10)
-    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .collect 22641,10,9216,1 --Rotting Hearts (10)
+    .disablecheckbox
     .mob Risen Hungerer
     .mob Gangled Cannibal
 step
@@ -4847,7 +4814,8 @@ step
     >>Kill |cRXP_ENEMY_Spindleweb Lurkers|r. Loot them for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful of their|r |T136016:0|t[Poison]
     .complete 9159,2 --Kill Spindleweb Lurker (x8)
-    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
+    .disablecheckbox
     .mob Spindleweb Lurker
     .itemcount 22644,<5
 step
@@ -4987,7 +4955,8 @@ step
     .mob +Risen Hungerer
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .mob +Gangled Cannibal
-    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .collect 22641,10,9216,1 --Rotting Hearts (10)
+    .disablecheckbox
 step
     #completewith TranqVisit3
     .subzone 3488 >> Travel to Tranquillien
@@ -5221,11 +5190,6 @@ step
     #completewith Clearing
     #optional
     .destroy 22580 >>|cRXP_WARN_Destroy|r |T134137:0|t[Crystallized Mana Essence] |cRXP_WARN_as it's no longer needed for anything|r
-step
-    #optional
-    .xp 16 >>Grind until you are level 16 now if you wish
-    >>|cRXP_WARN_This will allow you to train level 16 skills in Silvermoon momentarily|r << !Druid
-    >>|cRXP_WARN_This will allow you to train level 16 skills momentarily|r << Druid
 step << Druid
 	#completewith DruidTrain2
 	.cast 18960 >> Cast Teleport: Moonglade
@@ -5624,14 +5588,12 @@ step << !Shaman !Warrior !Rogue
     .zoneskip Ghostlands
     .cooldown item,6948,>0 << !Druid
     .bindlocation 3488,1
-    .subzoneskip 3488
 step << !Shaman !Warrior !Druid
     #completewith Clearing
     .goto Eversong Woods,56.52,49.83
     .zone Eversong Woods >> Exit Silvermoon
     .zoneskip Ghostlands
     .cooldown item,6948,<0
-    .subzoneskip 3488
 step << !Shaman !Warrior !Druid
     #completewith Clearing
     .goto Eversong Woods,54.37,50.73
@@ -5640,7 +5602,6 @@ step << !Shaman !Warrior !Druid
     .target Skymistress Gloaming
     .cooldown item,6948,<0
     .zoneskip Ghostlands
-    .subzoneskip 3488
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eralan|r
@@ -5707,7 +5668,7 @@ step
     >>|cRXP_WARN_He patrols around, his path is marked on your map|r
     .complete 9156,2 --Luzran's Head (1)
     .mob Luzran
-step
+step << skip
     #completewith SpireT01
     >>Kill |cRXP_ENEMY_Risen Stalkers|r. Loot them for their |cRXP_LOOT_Rotting Hearts|r
     >>Kill |cRXP_ENEMY_Dreadbone Sentinels|r and |cRXP_ENEMY_Deathcage Sorcerers|r. Loot them for their |cRXP_LOOT_Spinal Dust|r
@@ -5731,13 +5692,14 @@ step
     .mob Knucklerot
 step
     #completewith SpireT
-    .goto Ghostlands,34.06,57.57,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,18.75,60.74,50,0
+    --.goto Ghostlands,34.06,57.57,50,0
+    --.goto Ghostlands,30.77,60.23,50,0
+    --.goto Ghostlands,28.23,58.65,50,0
+    --.goto Ghostlands,23.38,59.90,50,0
+    --.goto Ghostlands,18.75,60.74,50,0
     >>Kill |cRXP_ENEMY_Greater Spindlewebs|r and |cRXP_ENEMY_Ghostclaw Ravagers|r. Loot |cRXP_ENEMY_Greater Spindlewebs|r for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    >>|cRXP_WARN_Don't focus on this now, you'll complete it later|r
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
@@ -5746,13 +5708,14 @@ step
     .isQuestAvailable 9171
 step
     #completewith SpireT
-    .goto Ghostlands,34.06,57.57,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,18.75,60.74,50,0
+    --.goto Ghostlands,34.06,57.57,50,0
+    --.goto Ghostlands,30.77,60.23,50,0
+    --.goto Ghostlands,28.23,58.65,50,0
+    --.goto Ghostlands,23.38,59.90,50,0
+    --.goto Ghostlands,18.75,60.74,50,0
     >>Kill |cRXP_ENEMY_Greater Spindlewebs|r and |cRXP_ENEMY_Ghostclaw Ravagers|r
     >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    >>|cRXP_WARN_Don't focus on this now, you'll complete it later|r
     .complete 9281,1 --Kill Greater Spindleweb (x10)
     .mob +Greater Spindleweb
     .complete 9281,2 --Kill Ghostclaw Ravager (x10)
@@ -5808,37 +5771,6 @@ step
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
     .accept 9175 >> Accept The Lady's Necklace
     .use 22597
-step
-    #loop
-    .goto Ghostlands,34.06,57.57,0
-    .goto Ghostlands,18.75,60.74,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,34.06,57.57,50,0
-    >>Kill |cRXP_ENEMY_Greater Spindlewebs|r and |cRXP_ENEMY_Ghostclaw Ravagers|r. Loot |cRXP_ENEMY_Greater Spindlewebs|r for their |cRXP_LOOT_Spider Legs|r
-    >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
-    .complete 9281,1 --Kill Greater Spindleweb (x10)
-    .mob +Greater Spindleweb
-    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .mob +Ghostclaw Ravager
-    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
-    .isQuestAvailable 9171
-step
-    #loop
-    .goto Ghostlands,18.75,60.74,0
-    .goto Ghostlands,18.75,60.74,50,0
-    .goto Ghostlands,23.38,59.90,50,0
-    .goto Ghostlands,28.23,58.65,50,0
-    .goto Ghostlands,30.77,60.23,50,0
-    .goto Ghostlands,34.06,57.57,50,0
-    >>Kill |cRXP_ENEMY_Greater Spindlewebs|r and |cRXP_ENEMY_Ghostclaw Ravagers|r
-    >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
-    .complete 9281,1 --Kill Greater Spindleweb (x10)
-    .mob +Greater Spindleweb
-    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
-    .mob +Ghostclaw Ravager
-    .isQuestTurnedIn 9171
 step
     #completewith next
     .line Ghostlands,40.58,48.42,40.76,47.73,41.84,46.91,41.49,45.52,39.69,46.64,39.27,47.41,37.53,49.81,36.15,51.63,35.26,52.16,33.69,52.57,31.89,54.85,30.16,55.32,27.71,55.36,25.79,55.11,24.53,53.16,23.79,51.34,22.22,48.11,21.93,46.53,22.05,44.27,22.14,42.83,22.10,40.09,22.66,38.42,23.67,37.62,26.79,37.49,27.94,38.01,29.05,37.85,30.25,36.63,29.87,34.81,28.71,32.15,27.57,29.23,27.23,27.55,27.12,26.04,29.25,24.14,29.70,23.11,29.26,21.07,28.41,19.25,27.56,17.58,25.60,16.40,25.31,15.03
@@ -5912,58 +5844,54 @@ step
     #softcore
     #completewith WindrunnerV
     .deathskip >> Die and respawn at the Spirit Healer
-    .train 1758,1 << !BloodElf Rogue
-    .train 1460,1 << Mage
+    .train 6761,1 << Rogue
+    .train 2120,1 << Mage
     .train 5118,1 << Hunter wotlk
     .train 13795,1 << Hunter tbc
-    .train 8122,1 << Priest
+    .train 8102,1 << Priest
     .train 6222,1 << Warlock
     .train 647,1 << Paladin tbc
     .train 62124,1 << Paladin wotlk
-    .isOnQuest 9461 << BloodElf Rogue
 step
     #completewith WindrunnerV
     .hs >> Hearth to Tranquillien
     .cooldown item,6948,>0
-    .train 1758,3 << !BloodElf Rogue
-    .train 1460,3 << Mage
+    .train 6761,3 << Rogue
+    .train 2120,3 << Mage
     .train 5118,3 << Hunter wotlk
     .train 13795,3 << Hunter tbc
-    .train 8122,3 << Priest
+    .train 8102,3 << Priest
     .train 6222,3 << Warlock
     .train 647,3 << Paladin tbc
     .train 62124,3 << Paladin wotlk
-    .isOnQuest 10372 << BloodElf Rogue
     .bindlocation 3488,1
     .subzoneskip 3488
 step
     #completewith WindrunnerV
     .subzone 3488 >>Travel to Tranquillien
     .cooldown item,6948,<0
-    .train 1758,3 << !BloodElf Rogue
-    .train 1460,3 << Mage
+    .train 6761,3 << Rogue
+    .train 2120,3 << Mage
     .train 5118,3 << Hunter wotlk
     .train 13795,3 << Hunter tbc
-    .train 8122,3 << Priest
+    .train 8102,3 << Priest
     .train 6222,3 << Warlock
     .train 647,3 << Paladin tbc
     .train 62124,3 << Paladin wotlk
-    .isOnQuest 10372 << BloodElf Rogue
 step
     #completewith WindrunnerV
     .cast 7840 >> |cRXP_WARN_Use the|r |T134754:0|t[Swim Speed Potion] |cRXP_WARN_in the water to swim back faster|r
     .use 6372
     .itemcount 6372,1
     .cooldown item,6948,<0
-    .train 1758,3 << !BloodElf Rogue
-    .train 1460,3 << Mage
+    .train 6761,3 << Rogue
+    .train 2120,3 << Mage
     .train 5118,3 << Hunter wotlk
     .train 13795,3 << Hunter tbc
-    .train 8122,3 << Priest
+    .train 8102,3 << Priest
     .train 6222,3 << Warlock
     .train 647,3 << Paladin tbc
     .train 62124,3 << Paladin wotlk
-    .isOnQuest 10372 << BloodElf Rogue
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to  |cRXP_FRIENDLY_Mouldier|r and |cRXP_FRIENDLY_Vandril|r
     .accept 9171 >> Accept Culinary Crunch
@@ -5989,6 +5917,7 @@ step
     .goto Ghostlands,48.43,30.93
     .itemcount 22644,5
     .isQuestAvailable 9171
+    .addquestitem 22644,9171
     .cooldown item,6948,<0
 step
     #label WindrunnerV
@@ -6016,16 +5945,20 @@ step
     .accept 9180 >> Accept Journey to Undercity << BloodElf
     .target +High Executor Mavren
     .goto Ghostlands,44.77,32.44
+step
+    #optional
+    .xp 16 >>Grind to level 16
 step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
     #completewith next
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwing|r
     .fly Silvermoon >> Fly to Silvermoon City
     .target Skymaster Sunwing
-    .train 1460,1 << Mage
+    .train 6761,1 << Rogue
+    .train 2120,1 << Mage
     .train 5118,1 << Hunter wotlk
     .train 13795,1 << Hunter tbc
-    .train 8122,1 << Priest
+    .train 8102,1 << Priest
     .train 6222,1 << Warlock
     .train 647,1 << Paladin tbc
     .train 62124,1 << Paladin wotlk
@@ -6035,10 +5968,11 @@ step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
     .goto Eversong Woods,56.51,49.61,25,0
     .goto Silvermoon City,73.39,59.65
     .zone Silvermoon City >>Enter Silvermoon
-    .train 1460,1 << Mage
+    .train 6761,1 << Rogue
+    .train 2120,1 << Mage
     .train 5118,1 << Hunter wotlk
     .train 13795,1 << Hunter tbc
-    .train 8122,1 << Priest
+    .train 8102,1 << Priest
     .train 6222,1 << Warlock
     .train 647,1 << Paladin tbc
     .train 62124,1 << Paladin wotlk
@@ -6061,13 +5995,6 @@ step << Rogue
     .train 1804 >>Train your class spells
     .target Zelanis
     .train 1804,1
-    .xp <16,1
-step << Rogue
-    .goto Silvermoon City,79.70,52.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
-    .turnin 9618 >> Turn in Return the Reports << BloodElf
-    .accept 10372 >> Accept A Discreet Inquiry
-    .target Zelanis
 step << Rogue
     #completewith Scimitars2
     .goto Silvermoon City,62.89,31.26,30,0
@@ -6157,17 +6084,6 @@ step << Rogue
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
-step << Priest
-    #ah
-    .goto Silvermoon City,60.65,63.45,15,0
-    .goto Silvermoon City,65.92,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vynna|r
-    >>|cRXP_BUY_Buy a|r |T135144:0|t[Greater Magic Wand] |cRXP_BUY_from the AH if it's cheap|r
-    >>|cRXP_WARN_If they're all too expensive, skip this step|r
-    .collect 11288,1,9281,1 --Greater Magic Wand
-    .target Vynna
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
-    .train 8122,1
 step << Priest/Mage
     #completewith SMTraining4
     .goto Silvermoon City,75.95,52.92,30,0
@@ -6183,21 +6099,22 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
     .train 8102 >> Train your class spells
     .target Lotheolan
-	.xp <16,1
-	.xp >18,1
-step << Priest
-    .goto Silvermoon City,55.38,26.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheolan|r
-    .train 970 >> Train your class spells
-    .target Lotheolan
-    .train 8102,1
-	.xp <18,1
 step << Mage
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaedana|r
-    .train 3140 >> Train your class spells
+    .train 2120 >> Train your class spells
     .target Zaedana
-	.xp <18,1
+step << Priest
+    #ah
+    .goto Silvermoon City,60.65,63.45,15,0
+    .goto Silvermoon City,65.92,53.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vynna|r
+    >>|cRXP_BUY_Buy a|r |T135144:0|t[Greater Magic Wand] |cRXP_BUY_from the AH if it's cheap|r
+    >>|cRXP_WARN_If they're all too expensive, skip this step|r
+    .collect 11288,1,9281,1 --Greater Magic Wand
+    .target Vynna
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
+    .Silvermoon City,1
 step << Hunter
     #completewith next
     .goto Silvermoon City,83.52,48.68,30,0
@@ -6234,13 +6151,6 @@ step << Hunter
     .train 5118 >>Train your class spells << wotlk
     .target Zandine
 	.xp <16,1
-	.xp >18,1
-step << Hunter
-    .goto Silvermoon City,84.71,28.05
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zandine|r
-    .train 14318 >> Train your class spells
-    .target Zandine
-	.xp <18,1
 step << Hunter
     .goto Silvermoon City,86.24,35.45
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celana|r
@@ -6251,6 +6161,7 @@ step << Hunter
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
+    .Silvermoon City,1
 step << Warlock
     #completewith SMTraining4
     .goto Silvermoon City,73.39,59.65,30,0
@@ -6266,15 +6177,6 @@ step << Warlock TBC
     .collect 16357,1,9220,1 --Collect Grimoire of Consume Shadows (x1)
     .target Torian
     .train 20381,1
-    .train 17767,1
-step << Warlock TBC
-    #optional
-    .goto Silvermoon City,73.97,44.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torian|r
-    >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Consume Shadows] |cRXP_BUY_from him|r
-    .collect 16357,1,9220,1 --Collect Grimoire of Consume Shadows (x1)
-    .target Torian
-    .train 17767,1
 step << Warlock TBC
     #optional
     .goto Silvermoon City,73.97,44.77
@@ -6285,44 +6187,16 @@ step << Warlock TBC
     .train 20381,1
 step << Warlock TBC
     #optional
-    +Use the |T133738:0|t[Grimoire of Sacrifice] and the |T133738:0|t[Grimoire of Consume Shadows]
-    .collect 16351,1,9220,1 --Collect Grimoire of Sacrifice (x1)
-    .collect 16357,1,9220,1 --Collect Grimoire of Consume Shadows (x1)
-    .use 16351
-    .use 16357
-    .itemcount 16351,1
-    .itemcount 16357,1
-    .train 20381,1
-    .train 17767,1
-    .xp <18,1
-step << Warlock TBC
-    #optional
     +Use the |T133738:0|t[Grimoire of Sacrifice]
     .use 16351
     .itemcount 16351,1
     .train 20381,1
-    .xp <16,1
-step << Warlock TBC
-    #optional
-    +Use the |T133738:0|t[Grimoire of Consume Shadows]
-    .use 16357
-    .itemcount 16357,1
-    .train 17767,1
-    .xp <18,1
 step << Warlock
     #optional
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
     .train 6222 >> Train your class spells
     .target Talionia
-    .xp <14,1
-    .xp >18,1
-step << Warlock
-    .goto Silvermoon City,74.39,47.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talionia|r
-    .train 1014 >> Train your class spells
-    .target Talionia
-    .xp <18,1
 step << Paladin
     #completewith next
     .goto Silvermoon City,82.03,68.36,25,0
@@ -6336,17 +6210,6 @@ step << Paladin
     .turnin 9685 >>Turn in Redeeming the Dead
     .target Knight-Lord Bloodvalor
 step << Paladin
-    #optional
-    .goto Silvermoon City,91.19,36.94,-1
-    .goto Silvermoon City,91.14,38.10,-1
-	>>|cRXP_WARN_Jump onto one of the benches below to avoid walking up the stairs|r
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ithelis|r or |cRXP_FRIENDLY_Osselan|r
-    .train 647 >>Train your class spells
-	.target Ithelis
-	.target Osselan
-    .xp <14,1
-    .xp >16,1
-step << Paladin
     .goto Silvermoon City,91.19,36.94,-1
     .goto Silvermoon City,91.14,38.10,-1
 	>>|cRXP_WARN_Jump onto one of the benches below to avoid walking up the stairs|r
@@ -6355,7 +6218,6 @@ step << Paladin
     .train 62124 >>Train your class spells << wotlk
 	.target Ithelis
 	.target Osselan
-	.xp <16,1
 step
     #optional
     #label SMTraining4
@@ -6713,6 +6575,74 @@ RXPGuides.RegisterGuide([[
 #subgroup RestedXP Horde 1-30
 #next 20-23 Stonetalon/The Barrens
 
+step << Paladin/Warrior
+    .goto Ghostlands,47.71,32.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vredigar|r
+    >>|cRXP_BUY_Buy the|r |T132492:0|t[Tranquillien Defender's Girdle] |cRXP_BUY_from him|r
+    .collect 28162,1,9276,1 --Collect Tranquillien Defender's Girdle (1)
+    .target Provisioner Vredigar
+    .itemStat 7,LEVEL,<11
+    .reputation 922,honored,<0,1
+step << Paladin/Warrior
+    #optional
+    #completewith Enclave2
+    +|cRXP_WARN_Equip the|r |T132492:0|t[Tranquillien Defender's Girdle]
+    .use 28162
+    .itemcount 28162,1
+    .itemStat 7,LEVEL,<11
+step << Rogue/Hunter/Druid/Shaman
+    .goto Ghostlands,47.71,32.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vredigar|r
+    >>|cRXP_BUY_Buy the|r |T132498:0|t[Batskin Belt] |cRXP_BUY_from him|r
+    .collect 28158,1,9276,1 --Collect Batskin Belt (1)
+    .target Provisioner Vredigar
+    .reputation 922,honored,<0,1
+    .itemStat 7,LEVEL,<11
+step << Rogue/Hunter/Druid/Shaman
+    #optional
+    #completewith Enclave2
+    +|cRXP_WARN_Equip the|r |T132498:0|t[Batskin Belt]
+    .use 28158
+    .itemcount 28158,1
+    .itemStat 7,LEVEL,<11
+step << Mage/Warlock/Priest
+    .goto Ghostlands,47.71,32.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vredigar|r
+    >>|cRXP_BUY_Buy the|r |T132660:0|t[Apothecary's Robe] |cRXP_BUY_from him|r
+    .collect 22986,1,9220,1 --Collect Apothecary's Robe (1)
+    .target Provisioner Vredigar
+    .reputation 922,revered,<0,1
+    .itemStat 5,QUALITY,<7
+    .itemStat 5,LEVEL,<15
+    .isQuestAvailable 9151 << !Paladin/!wotlk
+step << Rogue/Hunter/Druid/Shaman
+    .goto Ghostlands,47.71,32.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vredigar|r
+    >>|cRXP_BUY_Buy the|r |T132716:0|t[Deathstalker's Vest] |cRXP_BUY_from him|r
+    .collect 22987,1,9220,1 --Collect Deathstalker's Vest (1)
+    .target Provisioner Vredigar
+    .reputation 922,revered,<0,1
+    .itemStat 5,QUALITY,<7
+    .itemStat 5,LEVEL,<15
+    .isQuestAvailable 9151 << !Paladin/!wotlk
+step << Mage/Warlock/Priest
+    #optional
+    #completewith StoneOL
+    +|cRXP_WARN_Equip the|r |T132660:0|t[Apothecary's Robe]
+    .use 22986
+    .itemcount 22986,1
+    .itemStat 5,QUALITY,<7
+    .itemStat 5,LEVEL,<15
+    .isQuestAvailable 9151 << !Paladin/!wotlk
+step << Rogue/Hunter/Druid/Shaman
+    #optional
+    #completewith StoneOL
+    +|cRXP_WARN_Equip the|r |T132716:0|t[Deathstalker's Vest]
+    .use 22987
+    .itemcount 22987,1
+    .itemStat 5,QUALITY,<7
+    .itemStat 5,LEVEL,<15
+    .isQuestAvailable 9151 << !Paladin/!wotlk
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eralan|r
@@ -6727,7 +6657,7 @@ step << Rogue
     .target Eralan
     .isQuestTurnedIn 10372
 step << Rogue wotlk
-    #completewith Clearing
+    #completewith Enclave2
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Buy|r |T132273:0|t[Instant Poison] |cRXP_BUY_from her|r
@@ -6776,7 +6706,7 @@ step << Rogue
 step << Rogue
     #optional
     #label Eralan3
-    #completewith Clearing
+    #completewith Enclave2
     +|cRXP_WARN_Equip the|r |T135427:0|t[Throat Piercers] and |T135344:0|t[Sinister Scimitar]
     .use 29584
     .use 29583
@@ -6790,7 +6720,7 @@ step << Rogue
 step << Rogue
     #optional
     #requires Eralan3
-    #completewith Clearing
+    #completewith Enclave2
     +|cRXP_WARN_Equip the|r |T135344:0|t[Sinister Scimitar]
     .use 29583
     .itemcount 29583,1
@@ -6799,7 +6729,7 @@ step << Rogue
 step << Rogue
     #optional
     #requires Eralan3
-    #completewith Clearing
+    #completewith Enclave2
     +|cRXP_WARN_Equip the|r |T135427:0|t[Throat Piercers]
     .use 29584
     .itemcount 29584,1
@@ -7012,7 +6942,7 @@ step
 step
     .goto Ghostlands,62.93,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilatha|r to begin the escort
-    .accept 9212 >> Accept Escape from the Catacombs
+    .accept 9212,1 >> Accept Escape from the Catacombs
     .target Ranger Lilatha
 step
     #completewith TrollR
@@ -7052,6 +6982,7 @@ step
     .goto Ghostlands,71.09,32.01,40,0
     .goto Ghostlands,72.24,30.10
     .complete 9212,1 --Escort Ranger Lilatha back to the Farstrider Enclave
+    .target Ranger Lilatha
 step << Rogue
     #label TrollR
     #loop
@@ -7156,6 +7087,15 @@ step << Rogue
     .cooldown item,6948,>0
     .bindlocation 3488,1
     .subzoneskip 3488
+step << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valwyn|r and |cRXP_FRIENDLY_Maltendis|r
+    .turnin 9193 >> Turn in Investigate the Amani Catacombs
+    .target +Advisor Valwyn
+    .goto Ghostlands,45.17,32.37,10,0
+    .goto Ghostlands,44.84,32.81
+    .turnin 9199 >> Turn in Troll Juju
+    .target +Deathstalker Maltendis
+    .goto Ghostlands,44.74,32.28
 step << Rogue wotlk
     #completewith Truth
     .goto Ghostlands,47.20,34.31
@@ -7371,6 +7311,7 @@ step
     >>Click the |cRXP_PICK_Smoked Meat Rack|r
     .complete 9275,2 --Poison the Smoked Meat Rack (x1)
 step
+    #completewith KelGash
     #loop
 	.goto Ghostlands,61.16,75.58,0
 	.goto Ghostlands,61.16,75.58,50,0
@@ -7390,6 +7331,7 @@ step
 	.goto Ghostlands,65.42,66.39,50,0
 	.goto Ghostlands,64.66,64.07,50,0
     .xp 18 >> Grind to level 18
+    >>|cRXP_WARN_Hitting 18 is needed in order to solo kill |cRXP_ENEMY_Kel'gash the Wicked|r. You can skip this if you can find a group instead|r
 step
     #completewith next
     .goto Ghostlands,65.29,79.31,12,0
@@ -7903,6 +7845,37 @@ step
     >>Loot the |cRXP_PICK_Worn Chest|r inside for the |cRXP_LOOT_Stone|r
     .complete 9176,2 --Collect Stone of Light (x1)
 step
+    #loop
+    .goto Ghostlands,34.06,57.57,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57,50,0
+    >>Kill |cRXP_ENEMY_Greater Spindlewebs|r and |cRXP_ENEMY_Ghostclaw Ravagers|r. Loot |cRXP_ENEMY_Greater Spindlewebs|r for their |cRXP_LOOT_Spider Legs|r
+    >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .mob +Greater Spindleweb
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .mob +Ghostclaw Ravager
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
+    .isQuestAvailable 9171
+step
+    #loop
+    .goto Ghostlands,18.75,60.74,0
+    .goto Ghostlands,18.75,60.74,50,0
+    .goto Ghostlands,23.38,59.90,50,0
+    .goto Ghostlands,28.23,58.65,50,0
+    .goto Ghostlands,30.77,60.23,50,0
+    .goto Ghostlands,34.06,57.57,50,0
+    >>Kill |cRXP_ENEMY_Greater Spindlewebs|r and |cRXP_ENEMY_Ghostclaw Ravagers|r
+    >>|cRXP_WARN_Be careful as these mobs may be difficult due to the level difference|r << Rogue
+    .complete 9281,1 --Kill Greater Spindleweb (x10)
+    .mob +Greater Spindleweb
+    .complete 9281,2 --Kill Ghostclaw Ravager (x10)
+    .mob +Ghostclaw Ravager
+    .isQuestTurnedIn 9171
+step
     #label Hearts
     #completewith next
     >>Kill |cRXP_ENEMY_Risen Stalkers|r. Loot them for their |cRXP_LOOT_Rotting Hearts|r
@@ -7930,9 +7903,9 @@ step << Paladin/Druid/Shaman
     .goto Ghostlands,39.61,79.82,40,0
     .goto Ghostlands,36.41,87.05,40,0
     >>Kill |cRXP_ENEMY_Eyes of Dar'Khan|r, |cRXP_ENEMY_Nerubis Centurions|r, and |cRXP_ENEMY_Wailers|r
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable). Cast|r |T135949:0|t[Purify] |cRXP_WARN_to remove it|r << Paladin
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable). Cast|r |T136067:0|t[Cure Poison] |cRXP_WARN_to remove it|r << Druid
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable). Cast|r |T136067:0|t[Cure Toxins] |cRXP_WARN_to remove it|r << Shaman
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable). Cast|r |T135949:0|t[Purify] |cRXP_WARN_to remove it|r << Paladin
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable). Cast|r |T136067:0|t[Cure Poison] |cRXP_WARN_to remove it|r << Druid
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable). Cast|r |T136067:0|t[Cure Toxins] |cRXP_WARN_to remove it|r << Shaman
     .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .mob +Eye of Dar'Khan
     .complete 9220,2 --Kill Nerubis Centurion (x6)
@@ -7955,7 +7928,7 @@ step
     .goto Ghostlands,39.61,79.82,40,0
     .goto Ghostlands,36.41,87.05,40,0
     >>Kill |cRXP_ENEMY_Eyes of Dar'Khan|r, |cRXP_ENEMY_Nerubis Centurions|r, and |cRXP_ENEMY_Wailers|r
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable)|r
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable)|r
     .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .mob +Eye of Dar'Khan
     .complete 9220,2 --Kill Nerubis Centurion (x6)
@@ -7978,9 +7951,9 @@ step
     >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_and|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Paladin
-    .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
-    .collect 4538,10,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
-    .collect 4538,10,9281,1 << Paladin --Snapvine Watermelon (10)
+    .collect 1205,20,9170,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
+    .collect 4538,20,9170,1 << !Priest !Mage !Warlock !Druid !Paladin --Snapvine Watermelon (10)
+    .collect 4538,20,9170,1 << Paladin --Snapvine Watermelon (10)
     .target Innkeeper Kalarin
     .money <0.1000 << !Paladin
     .money <0.2000 << Paladin
@@ -8432,6 +8405,7 @@ step
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .mob Borgoth the Bloodletter
 step
+    #completewith next
     .goto Ghostlands,32.25,82.18,10,0
     .goto Ghostlands,32.80,82.45,10,0
     .goto Ghostlands,32.65,83.15,8 >>Go inside the central Ziggurat. Kill all the |cRXP_ENEMY_Eyes of Dar'Khan|r and |cRXP_ENEMY_Deatholme Necromancers|r inside

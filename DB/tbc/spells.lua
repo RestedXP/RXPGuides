@@ -914,7 +914,8 @@ s["ROGUE"] = {
         1758 -- sinister strike r3
     },
     [16] = {
-        6761 -- eviscerate r3
+        6761, -- eviscerate r3
+        1804 --pick lock
     },
     [20] = {
         1785 -- stealth r2
@@ -1181,7 +1182,6 @@ s["MAGE"] = {
     [4] = {
         1459, -- Arcane Intellect
         116, -- frostbolt
-        5504 -- Conjure water
     },
     [6] = {
         2136, -- fire blast
@@ -1189,7 +1189,7 @@ s["MAGE"] = {
         587 -- conjure food
     },
     [8] = {
-        205, -- frostbolt r2
+        --205, -- frostbolt r2
         118 -- polymorph
     },
     [10] = {
@@ -1200,13 +1200,14 @@ s["MAGE"] = {
     [12] = {
         597, -- conjure food
         145, -- fireball r3
-        130 -- slow fall
+        130, -- slow fall
+        604 -- dampen magic
     },
     [14] = {
         1449, -- arcane explosion
         1460, -- arcane intellect
         2137, -- fire blast
-        837 -- frostbolt
+        --837 -- frostbolt
     },
     [16] = {
         2120 -- flamestrike
@@ -1220,7 +1221,7 @@ s["MAGE"] = {
         10, -- blizzard
         5506, -- conure water r3
         12051, -- evocation
-        7103, -- frost armor r3
+        7101, -- frost armor r3
         7322, -- frostbolt r4
         1463, -- mana shield
         12824, -- polymorph r2

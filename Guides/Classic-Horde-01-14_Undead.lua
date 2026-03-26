@@ -897,8 +897,7 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
-    .bindlocation 159
-    .subzoneskip 159,1
+    .bindlocation 2119
 step
     #xprate >1.49
     .goto Tirisfal Glades,61.89,52.73
@@ -6629,8 +6628,7 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
-    .bindlocation 159
-    .subzoneskip 159,1
+    .bindlocation 2119
 step
     #xprate >1.49
     .goto Tirisfal Glades,61.89,52.73

@@ -1587,7 +1587,7 @@ step
     .goto Durotar,56.31,73.8,8 >> Enter the big hut
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
@@ -1679,7 +1679,7 @@ step << Hunter
 step << Rogue
     #optional
     #completewith Bonfire
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -1955,7 +1955,7 @@ step << Rogue
     #xprate <1.5
     #optional
     #completewith TravelToTiragarde
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -2511,7 +2511,7 @@ step << Troll Warrior
 step << Rogue
     #optional
     #completewith Toolboxes
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -8529,7 +8529,7 @@ step
     .goto Durotar,56.31,73.8,8 >> Enter the big hut
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
@@ -8622,7 +8622,7 @@ step << Hunter
 step << Rogue
     #optional
     #completewith Bonfire
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -9318,7 +9318,7 @@ step << Troll Warrior
 step << Rogue
     #optional
     #completewith Toolboxes
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
