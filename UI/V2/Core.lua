@@ -168,7 +168,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
         frame:SetScript("OnMouseDown", Frame_OnMouseDown)
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
+        title:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -7, 5)
         title:ClearBackdrop()
         title:SetBackdrop(addon.RXPFrame.backdrop.edge)
         title:SetBackdropColor(unpack(addon.colors.background))
