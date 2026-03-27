@@ -2569,7 +2569,7 @@ function addon.modular:EncodePlayerActiveSteps(payload)
         -- Copy all top-level not-tables
 		for k, v in pairs(step) do
 			if type(v) ~= "table" then
-                trimmedStep[v] = step.v
+                trimmedStep[k] = v
 			end
 		end
 
