@@ -2606,7 +2606,6 @@ function addon.modular:DecodePlayerActiveSteps(encodedPayload)
         return deserialized
 end
 
-local updatedOnce = false
 function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
         return
@@ -2632,17 +2631,9 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
 
     if not playerStepFrame then return end
 
+    RXPD = incomingPayload
     if playerStepFrame.data.encodedPayload == encodedPayload then
-        if updatedOnce then -- TODO figure out n=1 empty frames but n=2 works
-            print("Skipping update")
-            return
-        else
-            updatedOnce = true
-            print("Updating once")
-        end
-    else
-        print("Updating frame")
-        RXPD = incomingPayload
+        return
     end
 
     playerStepFrame.scrollContainer:ReleaseChildren()
@@ -2794,11 +2785,19 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
             --     stepframe:EnableMouse(false)
             -- end
         end
+
+        -- If any text didn't load, keep looping
+        --  TODO exclude steps without text
+        if not step.text then
+            playerStepFrame.data.reload = true
+        end
     end
 
-    playerStepFrame.scrollContainer:DoLayout()
-
-    playerStepFrame.data.encodedPayload = encodedPayload
+    if playerStepFrame.data.reload then
+        playerStepFrame.data.reload = false
+    else
+        playerStepFrame.data.encodedPayload = encodedPayload
+    end
 
     -- Ensure both people have the guide?
 end
