@@ -2585,22 +2585,7 @@ function addon.modular:EncodePlayerActiveSteps(payload)
     return LibDeflate:EncodeForWoWChatChannel(LibDeflate:CompressDeflate(addon.comms:Serialize(trimmedPayload)))
 end
 
-function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
-    if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
-        return
-    end
-
-    RXPD = incomingPayload
-
-    player = player or addon.player.name
-    local payload, encodedPayload
-
-    -- Player comes from activeSteps, whereas not-player comes over chat channels
-    if player == addon.player.name then
-        payload = incomingPayload or RXPFrame.activeSteps
-        encodedPayload = self:EncodePlayerActiveSteps(payload)
-    else
-        encodedPayload = incomingPayload
+function addon.modular:DecodePlayerActiveSteps(encodedPayload)
 
         local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
 
@@ -2618,9 +2603,26 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
             return
         end
 
-        payload = deserialized
+        return deserialized
+end
+
+local updatedOnce = false
+function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
+    if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
+        return
     end
 
+    player = player or addon.player.name
+    local payload, encodedPayload
+
+    -- Player comes from activeSteps, whereas not-player comes over chat channels
+    if player == addon.player.name then
+        payload = incomingPayload or RXPFrame.activeSteps
+        encodedPayload = self:EncodePlayerActiveSteps(payload)
+    else
+        payload = self:DecodePlayerActiveSteps(incomingPayload)
+        encodedPayload = incomingPayload
+    end
 
     local playerStepFrame = addon.enabledFrames["currentStepFrame" .. player]
 
@@ -2631,12 +2633,18 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
     if not playerStepFrame then return end
 
     if playerStepFrame.data.encodedPayload == encodedPayload then
-        print("Skipping update")
+        if updatedOnce then -- TODO figure out n=1 empty frames but n=2 works
+            print("Skipping update")
+            return
+        else
+            updatedOnce = true
+            print("Updating once")
+        end
     else
         print("Updating frame")
+        RXPD = incomingPayload
     end
 
-    -- TODO check if payload == lastPayload
     playerStepFrame.scrollContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
