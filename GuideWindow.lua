@@ -6,6 +6,7 @@ local _G = _G
 local fmt,tinsert = string.format, table.insert
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 local AceGUI = LibStub("AceGUI-3.0")
+local LibDeflate = LibStub("LibDeflate")
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -1156,8 +1157,7 @@ function CurrentStepFrame.UpdateText()
                             element.requestFromServer = true
                         end
 
-                        h = math.ceil(elementFrame.text:GetStringHeight() *
-                                                1.1) + 1
+                        h = math.ceil(elementFrame.text:GetStringHeight() * 1.1) + 1
                         -- print('sh:',h)
                         elementFrame:SetHeight(h)
                         frameHeight = frameHeight + h
@@ -2522,6 +2522,9 @@ function addon.modular:CreateCurrentStepFrame(player)
     local stepFrame = AceGUI:Create("RXPV2CurrentStepFrame")
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
 
+    --TODO save frame position
+    stepFrame:SetWidth(300)
+
     if player == addon.player.name then
         -- TODO hide
         stepFrame:SetTitle(player)
@@ -2535,8 +2538,8 @@ function addon.modular:CreateCurrentStepFrame(player)
     stepFrame.scrollContainer:SetLayout("Flow")
     stepFrame:AddChild(stepFrame.scrollContainer)
 
-    stepFrame.player = player
-    stepFrame.IsFeatureEnabled = function()
+    stepFrame.data.player = player
+    stepFrame.data.IsFeatureEnabled = function()
         if not addon.settings.profile.enableV2CurrentStepFrame then
             return false, false
         end
@@ -2554,15 +2557,70 @@ function addon.modular:CreateCurrentStepFrame(player)
     return stepFrame
 end
 
-function addon.modular:UpdateCurrentStepFrame(payload, player)
+function addon.modular:EncodePlayerActiveSteps(payload)
+    local trimmedPayload = {}
+
+    local trimmedStep
+    -- Only encode values that matter for sharing, activeSteps includes multiple stack overflowing reference loopbacks
+    for _, step in ipairs(payload) do
+
+        trimmedStep = { }
+
+        -- Copy all top-level not-tables
+		for k, v in pairs(step) do
+			if type(v) ~= "table" then
+                trimmedStep[v] = step.v
+			end
+		end
+
+        -- TODO process elements for state data
+        --  For now, step.text is adequate
+        for j, element in ipairs({} or step.elements or {}) do
+
+        end
+
+        tinsert(trimmedPayload, trimmedStep)
+    end
+
+    return LibDeflate:EncodeForWoWChatChannel(LibDeflate:CompressDeflate(addon.comms:Serialize(trimmedPayload)))
+end
+
+function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
 
-    payload = payload or RXPFrame.activeSteps
+    RXPD = incomingPayload
 
     player = player or addon.player.name
-    RXPD = payload
+    local payload, encodedPayload
+
+    -- Player comes from activeSteps, whereas not-player comes over chat channels
+    if player == addon.player.name then
+        payload = incomingPayload or RXPFrame.activeSteps
+        encodedPayload = self:EncodePlayerActiveSteps(payload)
+    else
+        encodedPayload = incomingPayload
+
+        local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
+
+        if not decoded then
+            -- addon.comms.PrettyPrint(L"Invalid data")
+            return
+        end
+
+        local decompressed = LibDeflate:DecompressDeflate(decoded)
+
+        local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
+
+        if not deserializeResult then
+            -- addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
+            return
+        end
+
+        payload = deserialized
+    end
+
 
     local playerStepFrame = addon.enabledFrames["currentStepFrame" .. player]
 
@@ -2572,26 +2630,29 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
 
     if not playerStepFrame then return end
 
+    if playerStepFrame.data.encodedPayload == encodedPayload then
+        print("Skipping update")
+    else
+        print("Updating frame")
+    end
+
+    -- TODO check if payload == lastPayload
     playerStepFrame.scrollContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     local loopStepIndex, stepframe, elementFrame, icon
-    local paddingWrapper
 
-    for _, step in ipairs(activeSteps) do
+    local stepItem, subStepItem
+
+    for _, step in ipairs(payload) do
 
         loopStepIndex = step.index
         c = c + 1
         stepframe = step.active and AceGUI:Create("RXPV2CurrentStepItem") or nil
 
         if stepframe then
-            -- paddingWrapper = AceGUI:Create("RXPV2CurrentStepPadding")
-
-            -- paddingWrapper:SetFullWidth(true)
-            -- paddingWrapper:SetHeight(52)
-
             -- if not step.tip then
             --     stepframe:ClearAllPoints()
 
@@ -2599,24 +2660,36 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
             --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
             --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
             --     else
-            --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[anchor],
-            --                         "BOTTOMLEFT", 0, -5)
-            --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor],
-            --                         "BOTTOMRIGHT", 0, -5)
+            --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[anchor],"BOTTOMLEFT", 0, -5)
+            --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor], "BOTTOMRIGHT", 0, -5)
             --     end
 
             --     stepframe:SetMovable(false)
             --     anchor = c
             -- end
 
-            local stepItem = AceGUI:Create("RXPV2CurrentStepItem")
+            stepItem = AceGUI:Create("RXPV2CurrentStepItem")
+            -- stepItem = AceGUI:Create("InlineGroup")
+            -- stepItem = AceGUI:Create("SimpleGroup")
             stepItem:SetFullWidth(true)
+            -- stepItem:SetLayout("Flow")
             stepItem:SetTitle(step.title or (fmt(L("Step %d"), loopStepIndex)))
-            stepItem:SetText("Foo bazz")
 
-            -- paddingWrapper:AddChild(stepItem)
-            -- playerStepFrame.scrollContainer:AddChild(paddingWrapper)
+            -- step.text is entire rendered step, no interactability
+            --   Display for non-current players
+            if player ~= addon.player.name or true then
+
+                subStepItem = AceGUI:Create("Label")
+                subStepItem:SetText(step.text)
+                subStepItem:SetFullHeight(true)
+                subStepItem:SetFullWidth(true)
+
+                stepItem:AddChild(subStepItem)
+            end
+
             playerStepFrame.scrollContainer:AddChild(stepItem)
+
+            -- TODO Find stickies first
 
             e = 0
 
@@ -2641,8 +2714,7 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
                         elementFrame.button:SetPoint("TOPLEFT", elementFrame, 6, -1)
 
                         elementFrame.text:ClearAllPoints()
-                        elementFrame.text:SetPoint("TOPLEFT", elementFrame.button,
-                                                "TOPRIGHT", 11, -1)
+                        elementFrame.text:SetPoint("TOPLEFT", elementFrame.button, "TOPRIGHT", 11, -1)
                         elementFrame.text:SetPoint("RIGHT", stepframe, -5, 0)
 
                          -- Prevent text from overwritten with " ", could be stale text
@@ -2662,8 +2734,7 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
                         end
 
                         elementFrame.icon:ClearAllPoints()
-                        elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button,
-                                                "TOPRIGHT", 0, -1)
+                        elementFrame.icon:SetPoint("TOPLEFT", elementFrame.button, "TOPRIGHT", 0, -1)
 
                         if element.textOnly then
                             elementFrame.button:SetChecked(true)
@@ -2685,13 +2756,10 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
 
                     if e == 1 then
                         elementFrame:SetPoint("TOPLEFT", stepframe, 0, -10 + spacing)
-                        elementFrame:SetPoint("TOPRIGHT", stepframe, 0,
-                                            -10 + spacing)
+                        elementFrame:SetPoint("TOPRIGHT", stepframe, 0, -10 + spacing)
                     else
-                        elementFrame:SetPoint("TOPLEFT", stepframe.elements[e - 1],
-                                            "BOTTOMLEFT", 0, 0 + spacing)
-                        elementFrame:SetPoint("TOPRIGHT", stepframe.elements[e - 1],
-                                            "BOTTOMRIGHT", 0, 0 + spacing)
+                        elementFrame:SetPoint("TOPLEFT", stepframe.elements[e - 1], "BOTTOMLEFT", 0, 0 + spacing)
+                        elementFrame:SetPoint("TOPRIGHT", stepframe.elements[e - 1], "BOTTOMRIGHT", 0, 0 + spacing)
                     end
 
                     if element.tag and element.text then
@@ -2722,8 +2790,7 @@ function addon.modular:UpdateCurrentStepFrame(payload, player)
 
     playerStepFrame.scrollContainer:DoLayout()
 
+    playerStepFrame.data.encodedPayload = encodedPayload
 
-    -- Reference CurrentStepFrame.UpdateText()
     -- Ensure both people have the guide?
-
 end

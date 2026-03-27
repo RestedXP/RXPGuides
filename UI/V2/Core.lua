@@ -68,6 +68,12 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             this:ApplyStatus()
             this:Show()
             this:EnableResize(true)
+
+            this.data = {
+                encodedPayload = nil,
+                player = nil,
+                IsFeatureEnabled = nil
+            }
         end,
 
         ["OnRelease"] = function(this)
@@ -168,7 +174,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
         frame:SetScript("OnMouseDown", Frame_OnMouseDown)
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        title:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -7, 5)
+        title:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -20, 6)
         title:ClearBackdrop()
         title:SetBackdrop(addon.RXPFrame.backdrop.edge)
         title:SetBackdropColor(unpack(addon.colors.background))
@@ -183,7 +189,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(addon.activeTheme.textColor))
         titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(addon.font, addon.settings.profile.guideFontSize - 1, "")
+        titletext:SetFont(addon.font, addon.settings.profile.guideFontSize + 1, "")
 
         local sizer = CreateFrame("Button", nil, frame)
 
@@ -211,7 +217,13 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             sizer = sizer,
             content = content,
             frame = frame,
-            type = Type
+            type = Type,
+
+            data = {
+                encodedPayload = nil,
+                player = nil,
+                IsFeatureEnabled = nil
+            }
         }
         for method, func in pairs(methods) do widget[method] = func end
 
@@ -222,7 +234,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
 
 end
 
-function addon.ui.v2.RegisterRXPV2CurrentStepItem()
+function addon.ui.v2:RegisterRXPV2CurrentStepItem()
     local Type, Version = "RXPV2CurrentStepItem", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
@@ -234,10 +246,9 @@ function addon.ui.v2.RegisterRXPV2CurrentStepItem()
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
-            this:SetWidth(200)
-            this:SetHeight(42)
+            this:SetWidth(300)
+            this:SetHeight(100)
             this:SetTitle(nil)
-            this:SetText(nil)
         end,
 
         -- ["OnRelease"] = nil,
@@ -254,32 +265,46 @@ function addon.ui.v2.RegisterRXPV2CurrentStepItem()
             end
         end,
 
-        ["SetText"] = function(this, label)
-            this.text:SetText(label)
+        ["LayoutFinished"] = function(this, width, height)
+            if this.noAutoHeight then return end
+            this:SetHeight((height or 0) + 40)
         end,
+
+        ["OnWidthSet"] = function(this, width)
+            local content = this.content
+            local contentwidth = width - 20
+            if contentwidth < 0 then
+                contentwidth = 0
+            end
+            content:SetWidth(contentwidth)
+            content.width = contentwidth
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            local content = this.content
+            local contentheight = height - 20
+            if contentheight < 0 then
+                contentheight = 0
+            end
+            content:SetHeight(contentheight)
+            content.height = contentheight
+        end
     }
 
     --[[-----------------------------------------------------------------------------
     Constructor
     -------------------------------------------------------------------------------]]
     local function Constructor()
-        local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+        local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 
-        frame:EnableMouse(true)
+        -- frame:EnableMouse(true)
         -- frame:SetScript("OnEnter", Control_OnEnter)
         -- frame:SetScript("OnLeave", Control_OnLeave)
         -- frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
         -- frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
-        local frameBackdrop = {
-	        bgFile = "Interface\\LFGFrame\\UI-LFG-BlueBG",
-            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-            tile = true, tileSize = 16, edgeSize = 16,
-            insets = { left = 3, right = 3, top = 5, bottom = 3 }
-        }
 
-        frame:SetBackdrop(frameBackdrop)
-        frame:SetBackdropColor(30 / 255, 30 / 255, 30 / 255, 1)
-        frame:SetBackdropBorderColor(112 / 255, 112 / 255, 112 / 255)
+        frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
+        frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
@@ -299,25 +324,31 @@ function addon.ui.v2.RegisterRXPV2CurrentStepItem()
         titletext:SetFontObject(_G.GameFontNormalSmall)
         titletext:SetFont(addon.font, addon.settings.profile.guideFontSize - 1, "")
 
-        local text = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-        text:SetJustifyH("LEFT")
-        text:SetHeight(18)
-        text:SetPoint("LEFT")
-        -- text:SetTextColor(addon.colors.text)
+        -- local border = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+        -- border:SetPoint("TOPLEFT", 0, 0)
+        -- border:SetPoint("BOTTOMRIGHT", 0, 0)
+        -- border:SetBackdrop(PaneBackdrop)
+        -- border:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
+        -- border:SetBackdropBorderColor(unpack(addon.colors.bottomFrameBG))
+
+        --Container Support
+        local content = CreateFrame("Frame", nil, frame)
+        content:SetPoint("TOPLEFT", 10, -10)
+        content:SetPoint("BOTTOMRIGHT", -10, 10)
 
         local widget = {
             title     = title,
             titletext = titletext,
-            text      = text,
+            content   = content,
             frame     = frame,
-            type      = Type
+            type      = Type,
         }
 
         for method, func in pairs(methods) do
             widget[method] = func
         end
 
-        return AceGUI:RegisterAsWidget(widget)
+        return AceGUI:RegisterAsContainer(widget)
     end
 
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
