@@ -2532,6 +2532,7 @@ function addon.modular:CreateCurrentStepFrame(player)
         stepFrame:SetTitle(player)
     end
 
+    -- TODO stylize ScrollFrame
     stepFrame.scrollContainer = AceGUI:Create("ScrollFrame")
     stepFrame.scrollContainer:SetFullWidth(true)
     stepFrame.scrollContainer:SetFullHeight(true)

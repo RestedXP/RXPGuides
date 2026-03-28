@@ -267,7 +267,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepItem()
 
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
-            this:SetHeight((height or 0) + 40)
+            this:SetHeight((height or 0) + 20)
         end,
 
         ["OnWidthSet"] = function(this, width)
@@ -303,8 +303,10 @@ function addon.ui.v2:RegisterRXPV2CurrentStepItem()
         -- frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
         -- frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
 
+        -- frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
+        -- frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
         frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
+        frame:SetBackdropColor(unpack(addon.colors.background))
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
@@ -333,8 +335,8 @@ function addon.ui.v2:RegisterRXPV2CurrentStepItem()
 
         --Container Support
         local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", 10, -10)
-        content:SetPoint("BOTTOMRIGHT", -10, 10)
+        content:SetPoint("TOPLEFT", 6, -10)
+        content:SetPoint("BOTTOMRIGHT", -6, 6)
 
         local widget = {
             title     = title,
