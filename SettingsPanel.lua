@@ -4386,7 +4386,7 @@ function addon.settings:LoadFramePositions()
         if p.framePositions[frameName] then
             for i = 1, frame:GetNumPoints() or 0 do
                 point, relativeToName, relativePoint, offsetX, offsetYOrNil =
-                    unpack(p.framePositions[frameName][i])
+                    unpack(p.framePositions[frameName][i] or {})
 
                 frame:ClearAllPoints()
                 result, reason = pcall(frame.SetPoint, frame, point,
