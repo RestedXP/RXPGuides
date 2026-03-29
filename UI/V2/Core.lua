@@ -79,6 +79,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
         ["OnRelease"] = function(this)
             this.status = nil
             wipe(this.localstatus)
+            wipe(this.data)
         end,
 
         ["OnWidthSet"] = function(this, width)
