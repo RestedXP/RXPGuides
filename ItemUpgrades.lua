@@ -1586,14 +1586,14 @@ function addon.itemUpgrades.Test()
 
     addon.itemUpgrades.testItems = {}
     for _, itemID in pairs(testData[addon.game][addon.player.class]) do
-        -- print('----- ' .. itemID)
+        print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
 
         if itemData then addon.itemUpgrades.testItems[itemData.itemID] = itemData end
 
         if addon.settings.profile.debug and itemData then
             for key, value in pairs(itemData) do -- print('  ', key, value) end
-            -- print('  stats:')
+            print('  stats:')
             for key, value in pairs(itemData.stats) do -- print('  - ', key, value) end
         end
     end
