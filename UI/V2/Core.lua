@@ -90,6 +90,10 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             content.width = contentwidth
         end,
 
+        ["GetWidth"] = function(this)
+            return this.content.width
+        end,
+
         ["OnHeightSet"] = function(this, height)
             local content = this.content
             local contentheight = height - 57
