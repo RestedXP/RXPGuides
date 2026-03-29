@@ -218,7 +218,7 @@ local CLASS_MAP = {
         }
     },
     ["SHAMAN"] = {
-        ["Slot"] = {{["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND}},
+        ["Slot"] = {["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND},
         ["ArmorType"] = {
             [ItemArmorSubclass.Shield] = true,
             [ItemArmorSubclass.Leather] = true,
@@ -400,6 +400,203 @@ local SPEC_MAP = {
     ["WARLOCK"] = {[1] = "Affliction", [2] = "Demonology", [3] = "Destruction"},
     ["DRUID"] = {[1] = "Balance", [2] = "Feral Combat", [4] = "Restoration"},
     ["DEATHKNIGHT"] = {[1] = "Blood", [2] = "Frost", [4] = "Unholy"}
+}
+
+local FALLBACK_WEIGHTS = {
+    WARLOCK = {
+        Affliction = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.30,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.68,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+        Destruction = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.30,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.70,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+        Demonology = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.25,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.71,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+    },
+
+    MAGE = {
+        Arcane = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.35,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.69,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+        Fire = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.35,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.45,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+        Frost = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.35,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.47,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+    },
+
+    SHAMAN = {
+        Elemental = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.30,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 1.00,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+            ITEM_MOD_POWER_REGEN0_SHORT = 0.25,
+        },
+        Restoration = {
+            ITEM_MOD_SPELL_HEALING_DONE = 1.00,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+            ITEM_MOD_POWER_REGEN0_SHORT = 0.45,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.71,
+        },
+        Enhancement = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.20,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 1.05,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.72,
+        },
+    },
+
+    PRIEST = {
+        Holy = {
+            ITEM_MOD_SPELL_HEALING_DONE = 1.00,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+            ITEM_MOD_POWER_REGEN0_SHORT = 0.60,
+            ITEM_MOD_SPIRIT_SHORT = 0.65,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 1.12,
+        },
+        Discipline = {
+            ITEM_MOD_SPELL_HEALING_DONE = 1.00,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+            ITEM_MOD_POWER_REGEN0_SHORT = 0.89,
+            ITEM_MOD_SPIRIT_SHORT = 0.55,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.82,
+        },
+        Shadow = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.30,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.82,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+    },
+
+    DRUID = {
+        Balance = {
+            ITEM_MOD_HIT_SPELL_RATING_SHORT = 1.30,
+            ITEM_MOD_SPELL_POWER = 1.00,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.96,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+        },
+        Restoration = {
+            ITEM_MOD_SPELL_HEALING_DONE = 1.00,
+            ITEM_MOD_SPIRIT_SHORT = 0.80,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+            ITEM_MOD_POWER_REGEN0_SHORT = 1.25,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.68,
+        },
+        ["Feral Combat"] = {
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.78,
+            ITEM_MOD_CRIT_RATING_SHORT = 1.00,
+            ITEM_MOD_HIT_RATING_SHORT = 0.90,
+        },
+    },
+
+    HUNTER = {
+        ["Beast Mastery"] = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.25,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.49,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.76,
+        },
+        Marksmanship = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.20,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 1.00,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.75,
+        },
+        Survival = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.20,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.71,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.81,
+        },
+    },
+
+    ROGUE = {
+        Combat = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.25,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.87,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.83,
+        },
+        Assassination = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.20,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 1.52,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.83,
+        },
+        Subtlety = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.15,
+            ITEM_MOD_AGILITY_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 1.59,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.65,
+        },
+    },
+
+    WARRIOR = {
+        Fury = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.25,
+            ITEM_MOD_STRENGTH_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.65,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.89,
+        },
+        Arms = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.15,
+            ITEM_MOD_STRENGTH_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.72,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.86,
+        },
+        Protection = {
+            ITEM_MOD_STAMINA_SHORT = 1.00,
+            ITEM_MOD_DEFENSE_SKILL_RATING_SHORT = 0.90,
+            ITEM_MOD_DODGE_RATING_SHORT = 0.70,
+            ITEM_MOD_PARRY_RATING_SHORT = 0.65,
+            ITEM_MOD_STRENGTH_SHORT = 2.05,
+        },
+    },
+
+    PALADIN = {
+        Retribution = {
+            ITEM_MOD_HIT_RATING_SHORT = 1.20,
+            ITEM_MOD_STRENGTH_SHORT = 1.00,
+            ITEM_MOD_ATTACK_POWER_SHORT = 0.77,
+            ITEM_MOD_CRIT_RATING_SHORT = 0.72,
+        },
+        Holy = {
+            ITEM_MOD_SPELL_HEALING_DONE = 1.00,
+            ITEM_MOD_INTELLECT_SHORT = 1.00,
+            ITEM_MOD_POWER_REGEN0_SHORT = 0.86,
+            ITEM_MOD_CRIT_SPELL_RATING_SHORT = 0.97,
+        },
+        Protection = {
+            ITEM_MOD_STAMINA_SHORT = 1.00,
+            ITEM_MOD_DEFENSE_SKILL_RATING_SHORT = 0.95,
+            ITEM_MOD_DODGE_RATING_SHORT = 0.70,
+            ITEM_MOD_PARRY_RATING_SHORT = 0.65,
+            ITEM_MOD_STRENGTH_SHORT = 2.60,
+        },
+    },
 }
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
@@ -594,20 +791,31 @@ local function TooltipSetItem(tooltip, ...)
 end
 
 function addon.itemUpgrades:UpdateSlotMap()
+    session.equippableSlots = {}
+    for k, v in pairs(CLASS_MAP["All"]["Slot"]) do
+        session.equippableSlots[k] = v
+    end
 
-    session.equippableSlots = CLASS_MAP["All"]["Slot"]
     for k, v in pairs(CLASS_MAP[addon.player.class]["Slot"]) do
         if type(v) == "function" then v = v() end
         session.equippableSlots[k] = v
     end
 
-    session.equippableArmor = CLASS_MAP["All"]["ArmorType"]
+    session.equippableArmor = {}
+    for k, v in pairs(CLASS_MAP["All"]["ArmorType"]) do
+        session.equippableArmor[k] = v
+    end
+
     for k, v in pairs(CLASS_MAP[addon.player.class]["ArmorType"]) do
         if type(v) == "function" then v = v() end
         session.equippableArmor[k] = v
     end
 
-    session.equippableWeapons = CLASS_MAP["All"]["WeaponType"]
+    session.equippableWeapons = {}
+    for k, v in pairs(CLASS_MAP["All"]["WeaponType"]) do
+        session.equippableWeapons[k] = v
+    end
+
     for k, v in pairs(CLASS_MAP[addon.player.class]["WeaponType"]) do
         if type(v) == "function" then v = v() end
         session.equippableWeapons[k] = v
@@ -615,49 +823,61 @@ function addon.itemUpgrades:UpdateSlotMap()
 end
 
 function addon.itemUpgrades:Setup()
-    -- Toggle functionality off
-    if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips then return end
+    addon.settings.profile.enableItemUpgrades = true
+    addon.settings.profile.enableTips = true
+    addon.settings.profile.enableItemUpgradesAH = true
 
-    if UnitLevel("player") == GetMaxPlayerLevel() then return end
+    -- print("RXP: forced enableItemUpgrades =", tostring(addon.settings.profile.enableItemUpgrades))
+    -- print("RXP: forced enableTips =", tostring(addon.settings.profile.enableTips))
+    -- print("RXP: forced enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH))
 
     self:UpdateSlotMap()
-    if not self:LoadStatWeights() then return end
-    if not self:ActivateSpecWeights() then return end
+    -- print("RXP: UpdateSlotMap done")
+
+    local loaded = self:LoadStatWeights()
+    -- print("RXP: LoadStatWeights() =", tostring(loaded), "specWeights empty =", tostring(next(session.specWeights) == nil))
+
+    local activated = self:ActivateSpecWeights()
+    -- print("RXP: ActivateSpecWeights() =", tostring(activated), "itemUpgradeSpec =", tostring(addon.settings.profile.itemUpgradeSpec))
+
     session.itemCache = {}
 
     -- Only register events and hookScript once
-    if session.isInitialized then return end
+    if session.isInitialized then
+        -- print("RXP: already initialized, calling AH:Setup again")
+        if self.AH and self.AH.Setup then
+            self.AH:Setup()
+        end
+        return
+    end
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
 
     local lookup
-    -- Only load stats coming from GSheet
-    for key, _ in pairs(session.activeStatWeights) do
-        -- print("Checking", key)
+    for key, _ in pairs(session.activeStatWeights or {}) do
         lookup = KeyToRegex(key)
         if lookup then
-            -- print("Match loaded", lookup)
             session.statsRegexes[key] = lookup
         end
-
     end
 
-    -- Add out-of-band (aka hackery) stat parsing
-    for key, regex in pairs(OUT_OF_BAND_KEYS) do session.statsRegexes[key] = regex end
+    for key, regex in pairs(OUT_OF_BAND_KEYS) do
+        session.statsRegexes[key] = regex
+    end
 
-    -- Inventory
     GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
-
-    -- Vendor?
     ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
-
-    -- Enable AH
     ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
-    -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
 
     session.isInitialized = true
+    -- print("RXP: calling self.AH:Setup()")
 
-    self.AH:Setup()
+    if self.AH and self.AH.Setup then
+        self.AH:Setup()
+        -- print("RXP: AH setup finished")
+    else
+        -- print("RXP: AH module missing")
+    end
 end
 
 -- Reset cache on levelup
@@ -668,53 +888,46 @@ function addon.itemUpgrades:PLAYER_LEVEL_UP()
 end
 
 function addon.itemUpgrades:LoadStatWeights()
-    if not addon.statWeights then return end
+    if not addon.statWeights then addon.statWeights = {} end
 
     local newWeights = {}
-
     local guideMode = addon.settings.profile.hardcore and "HARDCORE" or "SPEEDRUN"
-
-    -- TODO chance this doesn't evaluate properly on PLAYER_LEVEL_UP event
     local playerLevel = UnitLevel("player")
 
     for dbTitle, data in pairs(addon.statWeights) do
         if data.MAX_LEVEL <= data.MIN_LEVEL then
-            addon.comms.PrettyPrint("Invalid min (%s) and max %s level for for %s", data.MIN_LEVEL, data.MAX_LEVEL,
-                                    dbTitle)
+            addon.comms.PrettyPrint("Invalid min (%s) and max %s level for for %s", data.MIN_LEVEL, data.MAX_LEVEL, dbTitle)
         end
 
-        if strupper(data.Class) == addon.player.class and strupper(data.Kind) == guideMode and playerLevel >=
-            data.MIN_LEVEL and playerLevel <= data.MAX_LEVEL then
+        if strupper(data.Class) == addon.player.class and strupper(data.Kind) == guideMode and
+           playerLevel >= data.MIN_LEVEL and playerLevel <= data.MAX_LEVEL then
             newWeights[data.Spec or data.Class] = data
-
-            -- print("Loaded statWeights", data.Title)
-            -- print("Loaded statWeights, level:", playerLevel, data.MIN_LEVEL, data.MAX_LEVEL)
         end
     end
 
     for spec, data in pairs(newWeights) do
         for kind, value in pairs(data) do
-            -- Optimization: remove all 0 stats
-
             if tonumber(value) and value == 0 then
-                -- print("Removed", spec .. ':' .. kind)
                 data[kind] = nil
-            end
-        end
-
-        -- SoD
-        if addon.player.season == 3 and data['ITEM_MOD_SPIRIT_SHORT'] then
-            if addon.player.class == "PRIEST" then
-                data['ITEM_MOD_SPIRIT_SHORT'] = data['ITEM_MOD_SPIRIT_SHORT'] * 0.75
-            else
-                data['ITEM_MOD_SPIRIT_SHORT'] = data['ITEM_MOD_SPIRIT_SHORT'] * 0.5
             end
         end
     end
 
     session.specWeights = newWeights
 
-    return session.specWeights ~= nil
+    if next(session.specWeights) == nil then
+        local classWeights = FALLBACK_WEIGHTS[addon.player.class]
+        if classWeights then
+            for specName, weights in pairs(classWeights) do
+                session.specWeights[specName] = weights
+            end
+            -- print("RXP: injected fallback weights for", addon.player.class)
+        else
+            -- print("RXP: no fallback weights for", addon.player.class)
+        end
+    end
+
+    return next(session.specWeights) ~= nil
 end
 
 local function getSpec()
@@ -1379,9 +1592,9 @@ function addon.itemUpgrades.Test()
         if itemData then addon.itemUpgrades.testItems[itemData.itemID] = itemData end
 
         if addon.settings.profile.debug and itemData then
-            for key, value in pairs(itemData) do print('  ', key, value) end
+            for key, value in pairs(itemData) do -- print('  ', key, value) end
             print('  stats:')
-            for key, value in pairs(itemData.stats) do print('  - ', key, value) end
+            for key, value in pairs(itemData.stats) do -- print('  - ', key, value) end
         end
     end
 end
@@ -1394,6 +1607,7 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuct
 local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
 
 local ahSession = {
+    scanStopped = false,
     isInitialized = false,
     infoItemsReceived = {}, -- takes itemID, not itemLinks
 
@@ -1413,24 +1627,33 @@ local ahSession = {
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
-    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then return end
+    -- print("RXP AH: enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH), "game =", tostring(addon.game))
 
-    if ahSession.isInitialized then return end
+    if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then
+        -- print("RXP AH: blocked before init")
+        return
+    end
+
+    if ahSession.isInitialized then
+        -- print("RXP AH: already initialized")
+        return
+    end
 
     self:RegisterEvent("AUCTION_HOUSE_SHOW")
     self:RegisterEvent("AUCTION_HOUSE_CLOSED")
-
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
-
     ahSession.isInitialized = true
+    -- print("RXP AH: initialized successfully")
 end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW() self:CreateEmbeddedGui() end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
-
-    -- Reset session
+    ahSession.scanStopped = true
+    ahSession.mode = nil
+    ahSession.scanData = {}
+    ahSession.selectedRow = nil
     ahSession.sentQuery = false
     ahSession.scanPage = 0
     ahSession.scanResults = 0
@@ -1454,33 +1677,22 @@ end
 function addon.itemUpgrades.AH:SearchForSelectedItem() return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData) end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
+    self:StopScan()
     if not itemData.Name then return end
-
     if not _G.AuctionFrame:IsShown() then return end
-
-    -- print("SearchForBuyoutItem", itemData.itemLink)
-
     if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
-
     _G.BrowseName:SetText('"' .. itemData.Name .. '"')
-
     if itemData.ItemLevel then
         _G.BrowseMinLevel:SetText(itemData.ItemLevel)
         _G.BrowseMaxLevel:SetText(itemData.ItemLevel)
     end
-
-    -- Sort to make item very likely on first page
-    -- sortTable, sortColumn, oppositeOrder
-    _G.AuctionFrame_SetSort("list", "bid", false);
+    _G.AuctionFrame_SetSort("list", "bid", false)
     _G.AuctionFrameTab1:Click()
-
-    -- Pre-populates UI, so let user retry if server overloaded
     if CanSendAuctionQuery() then
-        session.sentQuery = true
+        ahSession.mode = "lookup"
+        ahSession.sentQuery = true
         _G.AuctionFrameBrowse_Search()
     end
-
-    -- Results get processed async by AUCTION_ITEM_LIST_UPDATE
 end
 
 function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
@@ -1531,38 +1743,39 @@ end
 -- Scrolling, initial population
 -- Blizzard's standard auction house view overcomes this problem by reacting to AUCTION_ITEM_LIST_UPDATE and re-querying the items.
 function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
-    -- TODO prevent overwriting/blocking full scan
     if ahSession.selectedRow and ahSession.selectedRow.nodeData then
         self:FindItemAuction(ahSession.selectedRow.nodeData)
     end
 
     if not ahSession.sentQuery then return end
 
-    local resultCount, totalAuctions = GetNumAuctionItems("list")
-    ahSession.scanStatus.totalAuctions = totalAuctions
-    -- print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
-
-    ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
-
-    if resultCount == 0 or totalAuctions == 0 then
+    if ahSession.mode == "lookup" then
         ahSession.sentQuery = false
-        ahSession.scanPage = 0
+        ahSession.mode = nil
+        return
+    end
 
+    local resultCount, totalAuctions = GetNumAuctionItems("list")
+    ahSession.scanStatus.totalAuctions = totalAuctions or 0
+
+    if ahSession.displayFrame and ahSession.displayFrame.scanButton then
+        ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
+    end
+
+    -- No results: move to next category or finish
+    if resultCount == 0 or totalAuctions == 0 then
+        self:StopScan()
         if ahSession.scanType == AuctionFilterButtons["Armor"] then
-            ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
-
+            ahSession.scanType = AuctionFilterButtons["Weapons"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_WEAPONS
+            ahSession.scanStopped = false
             self:Scan()
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
             self:Analyze()
-            ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
-            _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
-
             self:DisplayEmbeddedResults()
         end
-
         return
     end
 
@@ -1571,64 +1784,98 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
+        name, texture, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
+            GetAuctionItemInfo("list", i)
 
-        -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, texture, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ = GetAuctionItemInfo("list", i)
-
-        -- TODO if not hasAllInfo
-        if ahSession.scanData[itemLink] then
-            if buyoutPrice < ahSession.scanData[itemLink].lowestPrice then
-                ahSession.scanData[itemLink].lowestPrice = buyoutPrice
+        if itemLink and itemID and buyoutPrice and buyoutPrice > 0 then
+            if ahSession.scanData[itemLink] then
+                if buyoutPrice < ahSession.scanData[itemLink].lowestPrice then
+                    ahSession.scanData[itemLink].lowestPrice = buyoutPrice
+                end
+            else
+                ahSession.scanData[itemLink] = {
+                    name = name,
+                    lowestPrice = buyoutPrice,
+                    itemID = itemID,
+                    level = level,
+                    scanType = ahSession.scanType,
+                    itemIcon = texture
+                }
             end
-        else
-            ahSession.scanData[itemLink] = {
-                name = name,
-                lowestPrice = buyoutPrice,
-                itemID = itemID,
-                level = level,
-                scanType = ahSession.scanType, -- TODO propagate scanType for proper filters
-                itemIcon = texture
-            }
         end
-
-        -- print("scan", itemLink, itemID, hasAllInfo, buyoutPrice)
     end
 
     ahSession.sentQuery = false
-
     ahSession.scanPage = ahSession.scanPage + 1
-
     ahSession.scanResults = ahSession.scanResults + resultCount
 
-    if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 then
-        local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 1) * 100
+    if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 and _G.RXP_IU_AH_Title then
+        local percentage = math.min(100, addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 2) * 100)
+        _G.RXP_IU_AH_Title:SetText(
+            fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage)
+        )
+    end
 
-        _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
+    local pageSize = NUM_AUCTION_ITEMS_PER_PAGE or 50
+    local reachedEnd = (resultCount < pageSize) or (ahSession.scanResults >= ahSession.scanStatus.totalAuctions)
+
+    if reachedEnd then
+        self:StopScan()
+        if ahSession.scanType == AuctionFilterButtons["Armor"] then
+            ahSession.scanType = AuctionFilterButtons["Weapons"]
+            ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_WEAPONS
+            ahSession.scanStopped = false
+            self:Scan()
+        else
+            ahSession.scanType = AuctionFilterButtons["Armor"]
+            ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
+            self:Analyze()
+            self:DisplayEmbeddedResults()
+        end
+        return
     end
 
     self:Scan()
 end
 
+function addon.itemUpgrades.AH:StopScan()
+    ahSession.scanStopped = true
+    ahSession.sentQuery = false
+    ahSession.mode = nil
+    ahSession.scanPage = 0
+    ahSession.scanResults = 0
+    if ahSession.displayFrame and ahSession.displayFrame.scanButton then
+        ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
+    end
+    if _G.RXP_IU_AH_Title and ahSession.scanStatus.baseTitle then
+        _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
+    end
+end
+
 function addon.itemUpgrades.AH:Scan()
-    -- Prevent double calls
+    if ahSession.scanStopped then return end
     if ahSession.sentQuery then return end
-    if not AuctionCategories then return end -- AH frame isn't loaded yet
-
-    -- TODO use better queueing
-    -- TODO abort on multiple retries
+    if not AuctionCategories then return end
     if not CanSendAuctionQuery() then
-        -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
-
-        C_Timer.After(0.35, function() self:Scan() end)
+        C_Timer.After(0.35, function()
+            if ahSession.scanStopped then return end
+            self:Scan()
+        end)
         return
     end
-    -- print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
-
+    ahSession.mode = "scan"
     ahSession.sentQuery = true
-
-    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
-                      AuctionCategories[ahSession.scanType].filters)
+    QueryAuctionItems(
+        "",
+        addon.player.level - 5,
+        addon.player.level,
+        ahSession.scanPage,
+        true,
+        Enum.ItemQuality.Uncommon,
+        false,
+        false,
+        AuctionCategories[ahSession.scanType].filters
+    )
 end
 
 local function calculate(itemLink, scanData)
@@ -1907,17 +2154,33 @@ local function CustomFactory(factory, node)
 end
 
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
-    if ahSession.displayFrame then return end
+    -- print("RXP AH: CreateEmbeddedGui() called")
+    -- print("RXP AH: player =", UnitName("player"), "level =", UnitLevel("player"))
+
+    if ahSession.displayFrame then
+        -- print("RXP AH: displayFrame already exists")
+        return
+    end
 
     local attachment = _G.AuctionFrame
-    if not attachment then return end
+    -- print("RXP AH: AuctionFrame =", tostring(attachment))
+    if not attachment then
+        -- print("RXP AH: AuctionFrame missing")
+        return
+    end
 
     ahSession.displayFrame = _G["RXP_IU_AH_Frame"]
-    if not ahSession.displayFrame then return end
+    -- print("RXP AH: RXP_IU_AH_Frame =", tostring(ahSession.displayFrame))
+    if not ahSession.displayFrame then
+        -- print("RXP AH: embedded frame missing")
+        return
+    end
 
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
     ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
+
+    -- print("RXP AH: creating tab button")
 
     ahSession.scanStatus.baseTitle = fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER)
     _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
@@ -1952,7 +2215,18 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
     ahSession.displayFrame.scanButton:SetScript("OnClick", function()
-        ahSession.displayFrame.DataProvider:Flush()
+        addon.itemUpgrades.AH:StopScan()
+
+        ahSession.scanStopped = false
+        ahSession.scanData = {}
+        ahSession.scanType = AuctionFilterButtons["Armor"]
+        ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
+        ahSession.selectedRow = nil
+
+        if ahSession.displayFrame and ahSession.displayFrame.DataProvider then
+            ahSession.displayFrame.DataProvider:Flush()
+        end
+
         addon.itemUpgrades.AH:Scan()
     end)
 
@@ -2003,6 +2277,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
+        -- print("RXP AH: tab button created", tostring(tabButton), "index =", tostring(index))
 end
 
 StaticPopupDialogs["RXPNoUpgradesFound"] = {
