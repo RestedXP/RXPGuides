@@ -897,17 +897,24 @@ s["ROGUE"] = {
     [6] = {
         1776, -- gouge
         1757, -- sinister strike r2
-        3127 -- parry
+        3127, -- parry
+        129, --First Aid
+        164 --Blacksmithing
     },
     [8] = {
         5277, -- evasion
+        129, --First Aid
         6760 -- eviscerate r2
     },
     [10] = {
         5171, -- slice and dice
+    	186, --mining
         2983 -- sprint
     },
     [12] = {
+        186, --mining
+        3276, --Heavy Linen Bandage
+        3274, --Journeyman First Aid
         1766 -- kick
     },
     [14] = {

@@ -5917,7 +5917,6 @@ step
     .goto Ghostlands,48.43,30.93
     .itemcount 22644,5
     .isQuestAvailable 9171
-    .addquestitem 22644,9171
     .cooldown item,6948,<0
 step
     #label WindrunnerV
@@ -7960,6 +7959,15 @@ step
     .cooldown item,6948,>0
     .xp <15,1
     .xp >30,1
+step
+    .goto Ghostlands,48.43,30.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mouldier|r
+    .accept 9171 >> Accept Culinary Crunch
+    .turnin 9171 >> Turn in Culinary Crunch
+    .target Master Chef Mouldier
+    .itemcount 22644,5
+    .isQuestAvailable 9171
+    .addquestitem 22644,9171
 step
     #completewith Aminel
     .goto Ghostlands,48.91,31.13,12,0
