@@ -2586,6 +2586,7 @@ function addon.modular:EncodePlayerActiveSteps(payload)
     return LibDeflate:EncodeForWoWChatChannel(LibDeflate:CompressDeflate(addon.comms:Serialize(trimmedPayload)))
 end
 
+-- Not-player encodedPayload gets deserialized upstream in OnCommReceived
 function addon.modular:DecodePlayerActiveSteps(encodedPayload)
 
         local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
@@ -2605,6 +2606,12 @@ function addon.modular:DecodePlayerActiveSteps(encodedPayload)
         end
 
         return deserialized
+end
+
+function addon.modular:HandleStepBroadcast(obj, sender)
+    local encodedPayload = self:DecodePlayerActiveSteps(obj.encodedPayload)
+
+    addon.modular:UpdateCurrentStepFrame(encodedPayload, sender)
 end
 
 function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)

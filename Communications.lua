@@ -249,7 +249,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
     elseif obj.command == 'STEP' then
-        addon.modular:UpdateCurrentStepFrame(obj, sender)
+        addon.modular:HandleStepBroadcast(obj, sender)
     end
 
 end
