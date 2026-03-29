@@ -239,6 +239,7 @@ local settingsDBDefaults = {
         questPrioIndex = {},
         -- Grouping
         shareQuests = false,
+        shareCurrentStep = false,
     }
 }
 
@@ -1090,6 +1091,7 @@ function addon.settings:CreateAceOptionsPanel()
                             p.showUnusedGuides = true
 
                             p.shareQuests = true
+                            p.shareCurrentStep = true
 
                             p.enableLevelUpAnnounceGroup = true
                             p.enableFlyStepAnnouncements = true
@@ -2335,6 +2337,13 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.2
+                    },
+                    shareCurrentStep = {
+                        name = fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")),
+                        -- desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.3
                     }
                 }
             },

@@ -248,6 +248,8 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
     elseif obj.command == 'REPLY' then
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
+    elseif obj.command == 'STEP' then
+        addon.modular:UpdateCurrentStepFrame(obj, sender)
     end
 
 end
@@ -797,4 +799,19 @@ function addon.comms.grouping:UpdateParty()
             markerIndex = markerIndex + 1
         end
     end
+end
+
+function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+    if not addon.settings.profile.shareCurrentStep then return end
+    if not addon.comms.state.group.hasRXP then return end
+
+    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
+
+    local data = {
+        command = "STEP",
+        activeSteps = encodedPayload
+    }
+
+    local sz = self:Serialize(data)
+    self:SendCommMessage(self._commPrefix, sz, "PARTY")
 end

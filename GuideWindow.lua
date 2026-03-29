@@ -2507,7 +2507,7 @@ function addon.UpdateGuideFontSize()
     Footer.text:SetFont(addon.font, size, "")
 end
 
-addon.modular = {}
+addon.modular = addon.modular or {}
 function addon.modular:CreateCurrentStepFrame(player)
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
         return
@@ -2800,6 +2800,7 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
         playerStepFrame.data.reload = false
     else
         playerStepFrame.data.encodedPayload = encodedPayload
+        addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
     end
 
     -- Ensure both people have the guide?
