@@ -2540,7 +2540,7 @@ function addon.modular:CreateCurrentStepFrame(player)
     stepFrame:AddChild(stepFrame.scrollContainer)
 
     stepFrame.data.player = player
-    stepFrame.data.IsFeatureEnabled = function()
+    stepFrame.IsFeatureEnabled = function()
         if not addon.settings.profile.enableV2CurrentStepFrame then
             return false, false
         end
@@ -2635,6 +2635,8 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
     RXPD = incomingPayload
     if playerStepFrame.data.encodedPayload == encodedPayload then
         return
+    else
+        print("Updating frame")
     end
 
     playerStepFrame.scrollContainer:ReleaseChildren()

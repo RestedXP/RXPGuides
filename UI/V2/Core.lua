@@ -68,11 +68,11 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             this:ApplyStatus()
             this:Show()
             this:EnableResize(true)
+            this.IsFeatureEnabled = function() return true, false end
 
             this.data = {
                 encodedPayload = nil,
                 player = nil,
-                IsFeatureEnabled = nil
             }
         end,
 
