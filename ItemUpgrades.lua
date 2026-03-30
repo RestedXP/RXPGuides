@@ -827,24 +827,24 @@ function addon.itemUpgrades:Setup()
     addon.settings.profile.enableTips = true
     addon.settings.profile.enableItemUpgradesAH = true
 
-    -- print("RXP: forced enableItemUpgrades =", tostring(addon.settings.profile.enableItemUpgrades))
-    -- print("RXP: forced enableTips =", tostring(addon.settings.profile.enableTips))
-    -- print("RXP: forced enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH))
+    print("RXP: forced enableItemUpgrades =", tostring(addon.settings.profile.enableItemUpgrades))
+    print("RXP: forced enableTips =", tostring(addon.settings.profile.enableTips))
+    print("RXP: forced enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH))
 
     self:UpdateSlotMap()
-    -- print("RXP: UpdateSlotMap done")
+    print("RXP: UpdateSlotMap done")
 
     local loaded = self:LoadStatWeights()
-    -- print("RXP: LoadStatWeights() =", tostring(loaded), "specWeights empty =", tostring(next(session.specWeights) == nil))
+    print("RXP: LoadStatWeights() =", tostring(loaded), "specWeights empty =", tostring(next(session.specWeights) == nil))
 
     local activated = self:ActivateSpecWeights()
-    -- print("RXP: ActivateSpecWeights() =", tostring(activated), "itemUpgradeSpec =", tostring(addon.settings.profile.itemUpgradeSpec))
+    print("RXP: ActivateSpecWeights() =", tostring(activated), "itemUpgradeSpec =", tostring(addon.settings.profile.itemUpgradeSpec))
 
     session.itemCache = {}
 
     -- Only register events and hookScript once
     if session.isInitialized then
-        -- print("RXP: already initialized, calling AH:Setup again")
+        print("RXP: already initialized, calling AH:Setup again")
         if self.AH and self.AH.Setup then
             self.AH:Setup()
         end
@@ -870,13 +870,13 @@ function addon.itemUpgrades:Setup()
     ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
 
     session.isInitialized = true
-    -- print("RXP: calling self.AH:Setup()")
+    print("RXP: calling self.AH:Setup()")
 
     if self.AH and self.AH.Setup then
         self.AH:Setup()
-        -- print("RXP: AH setup finished")
+        print("RXP: AH setup finished")
     else
-        -- print("RXP: AH module missing")
+        print("RXP: AH module missing")
     end
 end
 
@@ -921,9 +921,9 @@ function addon.itemUpgrades:LoadStatWeights()
             for specName, weights in pairs(classWeights) do
                 session.specWeights[specName] = weights
             end
-            -- print("RXP: injected fallback weights for", addon.player.class)
+            print("RXP: injected fallback weights for", addon.player.class)
         else
-            -- print("RXP: no fallback weights for", addon.player.class)
+            print("RXP: no fallback weights for", addon.player.class)
         end
     end
 
@@ -1592,9 +1592,9 @@ function addon.itemUpgrades.Test()
         if itemData then addon.itemUpgrades.testItems[itemData.itemID] = itemData end
 
         if addon.settings.profile.debug and itemData then
-            for key, value in pairs(itemData) do -- print('  ', key, value) end
+            for key, value in pairs(itemData) do print('  ', key, value) end
             print('  stats:')
-            for key, value in pairs(itemData.stats) do -- print('  - ', key, value) end
+            for key, value in pairs(itemData.stats) do print('  - ', key, value) end
         end
     end
 end
@@ -1627,15 +1627,15 @@ local ahSession = {
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
-    -- print("RXP AH: enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH), "game =", tostring(addon.game))
+    print("RXP AH: enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH), "game =", tostring(addon.game))
 
     if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then
-        -- print("RXP AH: blocked before init")
+        print("RXP AH: blocked before init")
         return
     end
 
     if ahSession.isInitialized then
-        -- print("RXP AH: already initialized")
+        print("RXP AH: already initialized")
         return
     end
 
@@ -1644,7 +1644,7 @@ function addon.itemUpgrades.AH:Setup()
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
     ahSession.isInitialized = true
-    -- print("RXP AH: initialized successfully")
+    print("RXP AH: initialized successfully")
 end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW() self:CreateEmbeddedGui() end
@@ -2154,25 +2154,25 @@ local function CustomFactory(factory, node)
 end
 
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
-    -- print("RXP AH: CreateEmbeddedGui() called")
-    -- print("RXP AH: player =", UnitName("player"), "level =", UnitLevel("player"))
+    print("RXP AH: CreateEmbeddedGui() called")
+    print("RXP AH: player =", UnitName("player"), "level =", UnitLevel("player"))
 
     if ahSession.displayFrame then
-        -- print("RXP AH: displayFrame already exists")
+        print("RXP AH: displayFrame already exists")
         return
     end
 
     local attachment = _G.AuctionFrame
-    -- print("RXP AH: AuctionFrame =", tostring(attachment))
+    print("RXP AH: AuctionFrame =", tostring(attachment))
     if not attachment then
-        -- print("RXP AH: AuctionFrame missing")
+        print("RXP AH: AuctionFrame missing")
         return
     end
 
     ahSession.displayFrame = _G["RXP_IU_AH_Frame"]
-    -- print("RXP AH: RXP_IU_AH_Frame =", tostring(ahSession.displayFrame))
+    print("RXP AH: RXP_IU_AH_Frame =", tostring(ahSession.displayFrame))
     if not ahSession.displayFrame then
-        -- print("RXP AH: embedded frame missing")
+        print("RXP AH: embedded frame missing")
         return
     end
 
@@ -2180,7 +2180,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
     ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
 
-    -- print("RXP AH: creating tab button")
+    print("RXP AH: creating tab button")
 
     ahSession.scanStatus.baseTitle = fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER)
     _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
@@ -2277,7 +2277,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
-        -- print("RXP AH: tab button created", tostring(tabButton), "index =", tostring(index))
+        print("RXP AH: tab button created", tostring(tabButton), "index =", tostring(index))
 end
 
 StaticPopupDialogs["RXPNoUpgradesFound"] = {
