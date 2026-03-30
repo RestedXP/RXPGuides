@@ -249,6 +249,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
     elseif obj.command == 'STEP' then
+        print("Processing STEP from", sender)
         addon.modular:HandleStepBroadcast(obj, sender)
     end
 
@@ -809,9 +810,9 @@ function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
 
     local data = {
         command = "STEP",
-        activeSteps = encodedPayload
+        encodedPayload = encodedPayload
     }
 
-    local sz = self:Serialize(data)
-    self:SendCommMessage(self._commPrefix, sz, "PARTY")
+    local sz = addon.comms:Serialize(data)
+    addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "PARTY")
 end

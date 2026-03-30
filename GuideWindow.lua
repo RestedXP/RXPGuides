@@ -174,7 +174,7 @@ function addon.SetupGuideWindow()
 
     RXPFrame.UpdateScrollBar()
 
-    addon.modular:CreateCurrentStepFrame(addon.player.name)
+    addon.modular:GetCurrentStepFrame(addon.player.name)
 end
 
 RXPFrame:SetScript("OnShow", addon.PLAYER_ENTERING_WORLD)
@@ -2508,22 +2508,18 @@ function addon.UpdateGuideFontSize()
 end
 
 addon.modular = addon.modular or {}
-function addon.modular:CreateCurrentStepFrame(player)
+function addon.modular:GetCurrentStepFrame(player)
+    if addon.enabledFrames["RXPStepFrame" .. player] then
+        return addon.enabledFrames["RXPStepFrame" .. player]
+    end
+
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
 
-    player = player or addon.player.name
-
-    if addon.enabledFrames["currentStepFrame" .. player] then
-        return addon.enabledFrames["currentStepFrame" .. player]
-    end
-
     local stepFrame = AceGUI:Create("RXPV2CurrentStepFrame")
+    stepFrame:ClearAllPoints()
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
-
-    --TODO save frame position
-    stepFrame:SetWidth(300)
 
     if player == addon.player.name then
         -- TODO hide
@@ -2549,10 +2545,12 @@ function addon.modular:CreateCurrentStepFrame(player)
             return true, false
         end
 
+        return true, false
         --TODO check if player is in group
     end
 
-    addon.enabledFrames["currentStepFrame" .. player] = stepFrame
+    _G["RXPStepFrame" .. player] = stepFrame
+    addon.enabledFrames["RXPStepFrame" .. player] = stepFrame
     stepFrame:Show()
 
     return stepFrame
@@ -2589,29 +2587,30 @@ end
 -- Not-player encodedPayload gets deserialized upstream in OnCommReceived
 function addon.modular:DecodePlayerActiveSteps(encodedPayload)
 
-        local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
+    -- if not encodedPayload then return end
 
-        if not decoded then
-            -- addon.comms.PrettyPrint(L"Invalid data")
-            return
-        end
+    local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
 
-        local decompressed = LibDeflate:DecompressDeflate(decoded)
+    if not decoded then
+        -- addon.comms.PrettyPrint(L"Invalid data")
+        return
+    end
 
-        local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
+    local decompressed = LibDeflate:DecompressDeflate(decoded)
 
-        if not deserializeResult then
-            -- addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
-            return
-        end
+    local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
 
-        return deserialized
+    if not deserializeResult then
+        -- addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
+        return
+    end
+
+    return deserialized
 end
 
 function addon.modular:HandleStepBroadcast(obj, sender)
-    local encodedPayload = self:DecodePlayerActiveSteps(obj.encodedPayload)
-
-    addon.modular:UpdateCurrentStepFrame(encodedPayload, sender)
+    -- TODO Ensure both people have the guide
+    addon.modular:UpdateCurrentStepFrame(obj.encodedPayload, sender)
 end
 
 function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
@@ -2619,31 +2618,27 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
         return
     end
 
-    player = player or addon.player.name
-    local payload, encodedPayload
+    local steps, encodedPayload
 
     -- Player comes from activeSteps, whereas not-player comes over chat channels
+    -- Processing until the end is required for player, even if frame disabled
+    -- TODO break out player broadcast logic
     if player == addon.player.name then
-        payload = incomingPayload or RXPFrame.activeSteps
-        encodedPayload = self:EncodePlayerActiveSteps(payload)
+        steps = incomingPayload
+        encodedPayload = self:EncodePlayerActiveSteps(incomingPayload)
     else
-        payload = self:DecodePlayerActiveSteps(incomingPayload)
+        steps = self:DecodePlayerActiveSteps(incomingPayload)
         encodedPayload = incomingPayload
     end
 
-    local playerStepFrame = addon.enabledFrames["currentStepFrame" .. player]
-
-    if not playerStepFrame then
-        playerStepFrame = self:CreateCurrentStepFrame(player)
-    end
+    local playerStepFrame = self:GetCurrentStepFrame(player)
 
     if not playerStepFrame then return end
 
-    RXPD = incomingPayload
     if playerStepFrame.data.encodedPayload == encodedPayload then
         return
     else
-        print("Updating frame")
+        print("Updating frame", player)
     end
 
     playerStepFrame.scrollContainer:ReleaseChildren()
@@ -2655,7 +2650,7 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
 
     local stepItem, subStepItem
 
-    for _, step in ipairs(payload) do
+    for _, step in ipairs(steps) do
 
         loopStepIndex = step.index
         c = c + 1
@@ -2794,12 +2789,12 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
             --     stepframe:SetAlpha(0)
             --     stepframe:EnableMouse(false)
             -- end
-        end
 
-        -- If any text didn't load, keep looping
-        --  TODO exclude steps without text
-        if not step.text then
-            playerStepFrame.data.reload = true
+            -- If any text didn't load, keep looping
+            --  TODO exclude steps without text
+            if not step.text then
+                playerStepFrame.data.reload = true
+            end
         end
     end
 
@@ -2809,6 +2804,4 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
         playerStepFrame.data.encodedPayload = encodedPayload
         addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
     end
-
-    -- Ensure both people have the guide?
 end
