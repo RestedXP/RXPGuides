@@ -2550,26 +2550,33 @@ end
 function addon.modular:EncodePlayerActiveSteps(payload)
     local trimmedPayload = {}
 
-    local trimmedStep
+    local trimmedStep, encodeStep
     -- Only encode values that matter for sharing, activeSteps includes multiple stack overflowing reference loopbacks
     for _, step in ipairs(payload) do
+        encodeStep = true
 
-        trimmedStep = { }
-
-        -- Copy all top-level not-tables
-		for k, v in pairs(step) do
-			if type(v) ~= "table" then
-                trimmedStep[k] = v
-			end
-		end
-
-        -- TODO process elements for state data
-        --  For now, step.text is adequate
-        for j, element in ipairs({} or step.elements or {}) do
-
+        if step.hiddentext then
+            encodeStep = false
         end
 
-        tinsert(trimmedPayload, trimmedStep)
+        if encodeStep then
+            trimmedStep = { }
+
+            -- Copy all top-level not-tables
+            for k, v in pairs(step) do
+                if type(v) ~= "table" then
+                    trimmedStep[k] = v
+                end
+            end
+
+            -- TODO process elements for state data
+            --  For now, step.text is adequate
+            for j, element in ipairs({} or step.elements or {}) do
+
+            end
+
+            tinsert(trimmedPayload, trimmedStep)
+        end
     end
 
     return LibDeflate:EncodeForWoWChatChannel(LibDeflate:CompressDeflate(addon.comms:Serialize(trimmedPayload)))
@@ -2639,15 +2646,21 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     local loopStepIndex, stepframe, elementFrame, icon
 
-    local stepItem, subStepItem
+    local stepItem, subStepItem, displayStep
 
     for _, step in ipairs(steps) do
+        displayStep = step.active
+
+        -- TODO combine logic with EncodePlayerActiveSteps
+        if step.hiddentext then
+            displayStep = false
+        end
 
         loopStepIndex = step.index
         c = c + 1
-        stepframe = step.active and AceGUI:Create("RXPV2CurrentStepItem") or nil
+        stepframe = AceGUI:Create("RXPV2CurrentStepItem")
 
-        if stepframe then
+        if stepframe and displayStep then
             -- if not step.tip then
             --     stepframe:ClearAllPoints()
 
