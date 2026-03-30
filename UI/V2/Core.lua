@@ -61,7 +61,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
-            this.frame:SetParent(addon.RXPFrame)
+            this.frame:SetParent(UIParent)
             this.frame:SetFrameStrata("MEDIUM")
             this.frame:SetFrameLevel(100)
             this:SetTitle()
@@ -166,13 +166,13 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
     -------------------------------------------------------------------------------]]
 
     local function Constructor()
-        local frame = CreateFrame("Frame", nil, addon.RXPFrame, BackdropTemplateMixin and "BackdropTemplate")
+        local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
         frame:Hide()
 
         frame:EnableMouse(true)
         frame:SetMovable(true) -- TODO only allow for not-player
         frame:SetResizable(true)
-        frame:SetFrameStrata(addon.RXPFrame:GetFrameStrata())
+        frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
         frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
         frame:SetBackdropColor(unpack(addon.colors.background))
