@@ -2537,16 +2537,7 @@ function addon.modular:GetCurrentStepFrame(player)
 
     stepFrame.data.player = player
     stepFrame.IsFeatureEnabled = function()
-        if not addon.settings.profile.enableV2CurrentStepFrame then
-            return false, false
-        end
-
-        if stepFrame.player == addon.player.name then
-            return true, false
-        end
-
-        return true, false
-        --TODO check if player is in group
+        return not addon.settings.profile.enableV2CurrentStepFrame, false
     end
 
     _G["RXPStepFrame" .. player] = stepFrame
