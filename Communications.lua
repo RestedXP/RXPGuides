@@ -109,6 +109,11 @@ function addon.comms:GROUP_FORMED()
         self:AnnounceSelf("ANNOUNCE")
 
         addon.comms.grouping:UpdateParty()
+
+        if addon.RXPFrame.activeSteps then
+            local encodedPayload = addon.modular:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
+            addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+        end
     end)
 end
 
@@ -116,10 +121,21 @@ function addon.comms:GROUP_LEFT()
     self.state.rxpGroupDetected = false
 
     addon.comms.grouping:UpdateParty()
+
+    --- TODO release ActiveSteps party frame
 end
 
 function addon.comms:GROUP_ROSTER_UPDATE()
     addon.comms.grouping:UpdateParty()
+
+    C_Timer.After(5 + mrand(5), function()
+        if addon.RXPFrame.activeSteps then
+            if addon.RXPFrame.activeSteps then
+                local encodedPayload = addon.modular:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
+                addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+            end
+        end
+    end)
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -803,7 +819,7 @@ function addon.comms.grouping:UpdateParty()
 end
 
 function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
-    if not addon.settings.profile.shareCurrentStep then return end
+    if not addon.settings.profile.shareActiveSteps then return end
     if not addon.comms.state.group.hasRXP then return end
 
     if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
