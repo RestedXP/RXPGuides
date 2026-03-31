@@ -2522,18 +2522,17 @@ function addon.modular:GetCurrentStepFrame(player)
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
 
     if player == addon.player.name then
-        -- TODO hide
-        stepFrame:SetTitle(player)
+        stepFrame:SetTitle(nil)
     else
         stepFrame:SetTitle(player)
     end
 
     -- TODO stylize ScrollFrame
-    stepFrame.scrollContainer = AceGUI:Create("ScrollFrame")
-    stepFrame.scrollContainer:SetFullWidth(true)
-    stepFrame.scrollContainer:SetFullHeight(true)
-    stepFrame.scrollContainer:SetLayout("Flow")
-    stepFrame:AddChild(stepFrame.scrollContainer)
+    stepFrame.data.scrollContainer = AceGUI:Create("ScrollFrame")
+    stepFrame.data.scrollContainer:SetFullWidth(true)
+    stepFrame.data.scrollContainer:SetFullHeight(true)
+    stepFrame.data.scrollContainer:SetLayout("Flow")
+    stepFrame:AddChild(stepFrame.data.scrollContainer)
 
     stepFrame.data.player = player
     stepFrame.IsFeatureEnabled = function()
@@ -2639,7 +2638,7 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
         print("Updating frame", player)
     end
 
-    playerStepFrame.scrollContainer:ReleaseChildren()
+    playerStepFrame.data.scrollContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
@@ -2695,7 +2694,7 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
                 stepItem:AddChild(subStepItem)
             end
 
-            playerStepFrame.scrollContainer:AddChild(stepItem)
+            playerStepFrame.data.scrollContainer:AddChild(stepItem)
 
             -- TODO Find stickies first
 
@@ -2808,4 +2807,14 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
         playerStepFrame.data.encodedPayload = encodedPayload
         addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
     end
+end
+
+-- TODO
+function addon.modular:HideUnusedActiveStepFrames()
+    if not (addon.comms.state and addon.comms.state.group) then return end
+
+    -- Loop over frames, nice
+    -- for playerName, _ in pairs(addon.comms.state.group.members) do
+    --     tinsert(partyNames, playerName)
+    -- end
 end
