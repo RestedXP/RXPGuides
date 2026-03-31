@@ -2508,9 +2508,15 @@ function addon.UpdateGuideFontSize()
 end
 
 addon.v2 = addon.v2 or {}
+addon.v2.state = {
+    player = {},
+}
+
 function addon.v2:GetCurrentStepFrame(player)
-    if addon.enabledFrames["RXPStepFrame" .. player] then
-        return addon.enabledFrames["RXPStepFrame" .. player]
+    addon.v2.state.player[player] = addon.v2.state.player[player] or {}
+
+    if addon.v2.state.player[player].activeStepFrame then
+        return addon.v2.state.player[player].activeStepFrame
     end
 
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
@@ -2518,25 +2524,28 @@ function addon.v2:GetCurrentStepFrame(player)
     end
 
     local stepFrame = AceGUI:Create("RXPV2CurrentStepFrame")
+    addon.v2.state.player[player].activeStepFrame = stepFrame
+
     stepFrame:ClearAllPoints()
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
+
+    -- TODO stylize ScrollFrame
+    local scrollContainer = AceGUI:Create("ScrollFrame")
+    addon.v2.state.player[player].scrollContainer = scrollContainer
+
+    scrollContainer:SetFullWidth(true)
+    scrollContainer:SetFullHeight(true)
+    scrollContainer:SetLayout("Flow")
+    stepFrame:AddChild(scrollContainer)
+
+    stepFrame.IsFeatureEnabled = function()
+        return addon.settings.profile.enableV2CurrentStepFrame, false
+    end
 
     if player == addon.player.name then
         stepFrame:SetTitle(nil)
     else
         stepFrame:SetTitle(player)
-    end
-
-    -- TODO stylize ScrollFrame
-    stepFrame.data.scrollContainer = AceGUI:Create("ScrollFrame")
-    stepFrame.data.scrollContainer:SetFullWidth(true)
-    stepFrame.data.scrollContainer:SetFullHeight(true)
-    stepFrame.data.scrollContainer:SetLayout("Flow")
-    stepFrame:AddChild(stepFrame.data.scrollContainer)
-
-    stepFrame.data.player = player
-    stepFrame.IsFeatureEnabled = function()
-        return addon.settings.profile.enableV2CurrentStepFrame, false
     end
 
     _G["RXPStepFrame" .. player] = stepFrame
@@ -2632,13 +2641,13 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
 
     if not playerStepFrame then return end
 
-    if playerStepFrame.data.encodedPayload == encodedPayload then
+    if addon.v2.state.player[player].encodedPayload == encodedPayload then
         return
     else
         print("Updating frame", player)
     end
 
-    playerStepFrame.data.scrollContainer:ReleaseChildren()
+    addon.v2.state.player[player].scrollContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
@@ -2694,7 +2703,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
                 stepItem:AddChild(subStepItem)
             end
 
-            playerStepFrame.data.scrollContainer:AddChild(stepItem)
+            addon.v2.state.player[player].scrollContainer:AddChild(stepItem)
 
             -- TODO Find stickies first
 
@@ -2796,15 +2805,15 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
             -- If any text didn't load, keep looping
             --  TODO exclude steps without text
             if not step.text then
-                playerStepFrame.data.reload = true
+                self.state.player[player].reload = true
             end
         end
     end
 
-    if playerStepFrame.data.reload then
-        playerStepFrame.data.reload = false
+    if self.state.player[player].reload then
+        self.state.player[player].reload = false
     else
-        playerStepFrame.data.encodedPayload = encodedPayload
+        self.state.player[player].encodedPayload = encodedPayload
         addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
     end
 end

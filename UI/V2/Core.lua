@@ -77,18 +77,11 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             this:Show()
             this:EnableResize(true)
             this.IsFeatureEnabled = function() return true, false end
-
-            this.data = {
-                encodedPayload = nil,
-                player = nil,
-                scrollContainer = nil,
-            }
         end,
 
         ["OnRelease"] = function(this)
             this.status = nil
             wipe(this.localstatus)
-            wipe(this.data)
         end,
 
         ["OnWidthSet"] = function(this, width)
