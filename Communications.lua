@@ -263,7 +263,6 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
     elseif obj.command == 'STEP' then
-        print("Processing STEP from", sender)
         addon.v2:HandleStepBroadcast(obj, sender)
     end
 
