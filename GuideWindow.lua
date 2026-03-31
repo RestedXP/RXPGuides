@@ -174,7 +174,7 @@ function addon.SetupGuideWindow()
 
     RXPFrame.UpdateScrollBar()
 
-    addon.modular:GetCurrentStepFrame(addon.player.name)
+    addon.v2:GetCurrentStepFrame(addon.player.name)
 end
 
 RXPFrame:SetScript("OnShow", addon.PLAYER_ENTERING_WORLD)
@@ -1083,7 +1083,7 @@ function CurrentStepFrame.UpdateText()
     if not guide then return end
 
     if addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures then
-        addon.modular:UpdateCurrentStepFrame(activeSteps, addon.player.name)
+        addon.v2:UpdateCurrentStepFrame(activeSteps, addon.player.name)
 
         -- TODO, uncomment to prevent parallelism
         -- return
@@ -2507,8 +2507,8 @@ function addon.UpdateGuideFontSize()
     Footer.text:SetFont(addon.font, size, "")
 end
 
-addon.modular = addon.modular or {}
-function addon.modular:GetCurrentStepFrame(player)
+addon.v2 = addon.v2 or {}
+function addon.v2:GetCurrentStepFrame(player)
     if addon.enabledFrames["RXPStepFrame" .. player] then
         return addon.enabledFrames["RXPStepFrame" .. player]
     end
@@ -2546,7 +2546,7 @@ function addon.modular:GetCurrentStepFrame(player)
     return stepFrame
 end
 
-function addon.modular:EncodePlayerActiveSteps(payload)
+function addon.v2:EncodePlayerActiveSteps(payload)
     local trimmedPayload = {}
 
     local trimmedStep, encodeStep
@@ -2582,14 +2582,14 @@ function addon.modular:EncodePlayerActiveSteps(payload)
 end
 
 -- Not-player encodedPayload gets deserialized upstream in OnCommReceived
-function addon.modular:DecodePlayerActiveSteps(encodedPayload)
+function addon.v2:DecodePlayerActiveSteps(encodedPayload)
 
     -- if not encodedPayload then return end
 
     local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
 
     if not decoded then
-        -- addon.comms.PrettyPrint(L"Invalid data")
+        addon.comms.PrettyPrint(L"Invalid data")
         return
     end
 
@@ -2598,19 +2598,19 @@ function addon.modular:DecodePlayerActiveSteps(encodedPayload)
     local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
 
     if not deserializeResult then
-        -- addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
+        addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
         return
     end
 
     return deserialized
 end
 
-function addon.modular:HandleStepBroadcast(obj, sender)
+function addon.v2:HandleStepBroadcast(obj, sender)
     -- TODO Ensure both people have the guide
-    addon.modular:UpdateCurrentStepFrame(obj.encodedPayload, sender)
+    addon.v2:UpdateCurrentStepFrame(obj.encodedPayload, sender)
 end
 
-function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
+function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
@@ -2810,7 +2810,7 @@ function addon.modular:UpdateCurrentStepFrame(incomingPayload, player)
 end
 
 -- TODO
-function addon.modular:HideUnusedActiveStepFrames()
+function addon.v2:HideUnusedActiveStepFrames()
     if not (addon.comms.state and addon.comms.state.group) then return end
 
     -- Loop over frames, nice

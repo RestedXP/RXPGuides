@@ -111,7 +111,7 @@ function addon.comms:GROUP_FORMED()
         addon.comms.grouping:UpdateParty()
 
         if addon.RXPFrame.activeSteps then
-            local encodedPayload = addon.modular:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
+            local encodedPayload = addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
             addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
         end
     end)
@@ -131,7 +131,7 @@ function addon.comms:GROUP_ROSTER_UPDATE()
     C_Timer.After(5 + mrand(5), function()
         if addon.RXPFrame.activeSteps then
             if addon.RXPFrame.activeSteps then
-                local encodedPayload = addon.modular:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
+                local encodedPayload = addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
                 addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
             end
         end
@@ -266,7 +266,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         -- Don't respond on REPLY
     elseif obj.command == 'STEP' then
         print("Processing STEP from", sender)
-        addon.modular:HandleStepBroadcast(obj, sender)
+        addon.v2:HandleStepBroadcast(obj, sender)
     end
 
 end
