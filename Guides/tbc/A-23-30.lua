@@ -2668,7 +2668,7 @@ step << Rogue skip
     .collect 2520,1
     .collect 2526,1
     >>Skip this step if you can find a better weapon at the Auction House
-step << Hunter/Warrior/Paladin/Shaman/Rogue
+step << Hunter/Warrior/Paladin/Shaman/Rogue skip
 	.goto Ironforge,61.34,89.25
 	.train 197 >> Train 2H Axes << !Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue
