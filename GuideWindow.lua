@@ -2652,7 +2652,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
     -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
-    local loopStepIndex, stepframe, elementFrame, icon
+    local loopStepIndex, elementFrame, icon
 
     local stepItem, subStepItem, displayStep
 
@@ -2666,9 +2666,10 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
 
         loopStepIndex = step.index
         c = c + 1
-        stepframe = AceGUI:Create("RXPV2CurrentStepItem")
 
-        if stepframe and displayStep then
+        if displayStep then
+            stepItem = AceGUI:Create("RXPV2CurrentStepItem")
+
             -- if not step.tip then
             --     stepframe:ClearAllPoints()
 
@@ -2684,11 +2685,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
             --     anchor = c
             -- end
 
-            stepItem = AceGUI:Create("RXPV2CurrentStepItem")
-            -- stepItem = AceGUI:Create("InlineGroup")
-            -- stepItem = AceGUI:Create("SimpleGroup")
             stepItem:SetFullWidth(true)
-            -- stepItem:SetLayout("Flow")
             stepItem:SetTitle(step.title or (fmt(L("Step %d"), loopStepIndex)))
 
             -- step.text is entire rendered step, no interactability
@@ -2703,7 +2700,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
                 stepItem:AddChild(subStepItem)
             end
 
-            addon.v2.state.player[player].scrollContainer:AddChild(stepItem)
+            self.state.player[player].scrollContainer:AddChild(stepItem)
 
             -- TODO Find stickies first
 
