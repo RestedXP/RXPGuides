@@ -236,12 +236,6 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             content = content,
             frame = frame,
             type = Type,
-
-            data = {
-                encodedPayload = nil,
-                player = nil,
-                IsFeatureEnabled = nil
-            }
         }
         for method, func in pairs(methods) do widget[method] = func end
 
