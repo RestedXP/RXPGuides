@@ -2513,10 +2513,10 @@ addon.v2.state = {
 }
 
 function addon.v2:GetCurrentStepFrame(player)
-    addon.v2.state.player[player] = addon.v2.state.player[player] or {}
+    self.state.player[player] = self.state.player[player] or {}
 
-    if addon.v2.state.player[player].activeStepFrame then
-        return addon.v2.state.player[player].activeStepFrame
+    if self.state.player[player].activeStepFrame then
+        return self.state.player[player].activeStepFrame
     end
 
     if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
@@ -2524,14 +2524,14 @@ function addon.v2:GetCurrentStepFrame(player)
     end
 
     local stepFrame = AceGUI:Create("RXPV2CurrentStepFrame")
-    addon.v2.state.player[player].activeStepFrame = stepFrame
+    self.state.player[player].activeStepFrame = stepFrame
 
     stepFrame:ClearAllPoints()
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
 
     -- TODO stylize ScrollFrame
     local scrollContainer = AceGUI:Create("ScrollFrame")
-    addon.v2.state.player[player].scrollContainer = scrollContainer
+    self.state.player[player].scrollContainer = scrollContainer
 
     scrollContainer:SetFullWidth(true)
     scrollContainer:SetFullHeight(true)
@@ -2641,13 +2641,13 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
 
     if not playerStepFrame then return end
 
-    if addon.v2.state.player[player].encodedPayload == encodedPayload then
+    if self.state.player[player].encodedPayload == encodedPayload then
         return
     else
         print("Updating frame", player)
     end
 
-    addon.v2.state.player[player].scrollContainer:ReleaseChildren()
+    self.state.player[player].scrollContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
@@ -2811,7 +2811,9 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
         self.state.player[player].reload = false
     else
         self.state.player[player].encodedPayload = encodedPayload
-        addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+        if player == addon.player.name then
+            addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+        end
     end
 end
 
