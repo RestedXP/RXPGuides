@@ -130,10 +130,8 @@ function addon.comms:GROUP_ROSTER_UPDATE()
 
     C_Timer.After(5 + mrand(5), function()
         if addon.RXPFrame.activeSteps then
-            if addon.RXPFrame.activeSteps then
-                local encodedPayload = addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
-                addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
-            end
+            local encodedPayload = addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
+            addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
         end
     end)
 end
