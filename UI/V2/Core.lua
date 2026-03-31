@@ -33,7 +33,15 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
 
     local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
 
-    local function Frame_OnMouseDown(frame) AceGUI:ClearFocus() end
+    local function Frame_OnMouseDown(frame)
+        frame:StartMoving()
+        AceGUI:ClearFocus()
+    end
+
+    local function Frame_OnMouseUp(frame)
+        frame:StopMovingOrSizing()
+        AceGUI:ClearFocus()
+    end
 
     local function Title_OnMouseDown(frame)
         frame:GetParent():StartMoving()
@@ -73,6 +81,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
             this.data = {
                 encodedPayload = nil,
                 player = nil,
+                scrollContainer = nil,
             }
         end,
 
@@ -113,13 +122,14 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
 
         ["SetTitle"] = function(this, title)
             this.titletext:SetText(title)
-            if title == "" then
-                this.titletext:SetAlpha(0)
+            if title == "" or not title then
+                this.title:Hide()
                 this.title:SetSize(10, 17)
             else
                 this.title:SetAlpha(1)
                 this.titletext:SetText(title)
                 this.title:SetSize(this.titletext:GetStringWidth() + 10, 17)
+                this.title:Show()
             end
         end,
 
@@ -186,6 +196,7 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
         frame:SetScript("OnShow", Frame_OnShow)
         frame:SetScript("OnHide", Frame_OnClose)
         frame:SetScript("OnMouseDown", Frame_OnMouseDown)
+        frame:SetScript("OnMouseUp", Frame_OnMouseUp)
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         title:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -20, 6)
