@@ -2647,6 +2647,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
         print("Updating frame", player)
     end
 
+    -- TODO check stepids and only release and rebuild if a new stepid exists
     self.state.player[player].scrollContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
