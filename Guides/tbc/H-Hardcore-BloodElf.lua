@@ -2138,6 +2138,12 @@ step
     .collect 22776,1,9067,1 --Collect Springpaw Appetizers
     .target Zalene Firstlight
     .isOnQuest 9067
+step << Mage/Priest/Warlock
+    .goto Eversong Woods,60.41,62.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zalene|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r
+    .collect 1179,20,8476,1 --Ice Cold Milk (20)
+    .target Zalene Firstlight
 step << !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
@@ -2146,7 +2152,7 @@ step << !Troll
     .accept 9484 >> Accept Taming the Beast << BloodElf Hunter
     .target Lieutenant Dawnrunner
     --TODO: Beta check if 8476 can be accepted without having 9359 for non blood elves
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_and|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
@@ -2158,7 +2164,7 @@ step << !Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 --VV Paelarin doesn't talk to Trolls
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
@@ -2166,7 +2172,7 @@ step << !Troll Hunter
     .target Paelarin
     .money <0.0500 << Orc/Troll
     .money <0.0480 << BloodElf
-step << !Troll Hunter
+step << Hunter !Troll
     #optional
     #completewith Otembe
     +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
@@ -2393,7 +2399,7 @@ step << Undead/BloodElf
     #completewith MagiApp
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cRXP_WARN_and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_from|r |cRXP_FRIENDLY_Paelarin|r
@@ -2403,7 +2409,7 @@ step << !Troll Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << !Troll Hunter
+step << Hunter !Troll
     #optional
     #completewith HunterTrain
     +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
@@ -2448,27 +2454,12 @@ step
     .accept 8894 >> Accept Cleaning up the Grounds
     .target Groundskeeper Wyllithen
 step
-    #loop
-	.goto Eversong Woods,69.15,50.56,0
-	.goto Eversong Woods,69.15,50.56,40,0
-	.goto Eversong Woods,70.02,50.62,40,0
-	.goto Eversong Woods,70.58,48.16,40,0
-	.goto Eversong Woods,69.97,46.28,40,0
-	.goto Eversong Woods,69.50,44.69,40,0
-	.goto Eversong Woods,68.29,43.31,40,0
-	.goto Eversong Woods,67.61,45.28,40,0
-	.goto Eversong Woods,67.13,48.48,40,0
-	.goto Eversong Woods,69.01,48.22,40,0
+    #completewith DeactivationComplete
     >>Kill |cRXP_ENEMY_Mana Serpents|r and |cRXP_ENEMY_Ether Fiends|r
     .complete 8894,1 --Kill Mana Serpent (x6)
     .mob +Mana Serpent
     .complete 8894,2 --Kill Ether Fiend (x6)
     .mob +Ether Fiend
-step
-    .goto Eversong Woods,68.71,46.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wyllithen|r
-    .turnin 8894 >> Turn in Cleaning up the Grounds
-    .target Groundskeeper Wyllithen
 step
     #completewith next
     .goto Eversong Woods,68.95,51.95
@@ -2509,9 +2500,32 @@ step
     >>|cRXP_WARN_Do NOT click the |cRXP_PICK_Orb of Translocation|r yet|r
     .complete 8889,3 --Third Power Source Deactivated (x1)
 step
+    #label DeactivationComplete
     .goto Eversong Woods,69.61,53.47
     .cast 26572 >>Click the |cRXP_PICK_Orb of Translocation|r to teleport back down
     .isOnQuest 8889
+step
+    #loop
+	.goto Eversong Woods,69.15,50.56,0
+	.goto Eversong Woods,69.15,50.56,40,0
+	.goto Eversong Woods,70.02,50.62,40,0
+	.goto Eversong Woods,70.58,48.16,40,0
+	.goto Eversong Woods,69.97,46.28,40,0
+	.goto Eversong Woods,69.50,44.69,40,0
+	.goto Eversong Woods,68.29,43.31,40,0
+	.goto Eversong Woods,67.61,45.28,40,0
+	.goto Eversong Woods,67.13,48.48,40,0
+	.goto Eversong Woods,69.01,48.22,40,0
+    >>Kill |cRXP_ENEMY_Mana Serpents|r and |cRXP_ENEMY_Ether Fiends|r
+    .complete 8894,1 --Kill Mana Serpent (x6)
+    .mob +Mana Serpent
+    .complete 8894,2 --Kill Ether Fiend (x6)
+    .mob +Ether Fiend
+step
+    .goto Eversong Woods,68.71,46.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wyllithen|r
+    .turnin 8894 >> Turn in Cleaning up the Grounds
+    .target Groundskeeper Wyllithen
 step << skip --!BloodElf/!Warlock
     #loop
 	.goto Eversong Woods,69.15,50.56,0
@@ -2557,7 +2571,7 @@ step << Undead/BloodElf
     #completewith Spire
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] |cRXP_WARN_and|r |T132798:0|t[Suntouched Special Reserve] << Warlock
     +|cRXP_WARN_Remember to NOT sell your|r |T133974:0|t[Springpaw Appetizers] << !Warlock
-step << !Troll Hunter
+step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Laminated Recurve Bow] |cRXP_BUY_from|r |cRXP_FRIENDLY_Paelarin|r
@@ -2567,7 +2581,7 @@ step << !Troll Hunter
     .money <0.1664 << BloodElf
     .itemStat 16,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
-step << !Troll Hunter
+step << Hunter !Troll
     #optional
     #completewith HunterTrain
     +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
@@ -3675,7 +3689,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krenn'an|r
     .accept 9274 >>Accept Spirits of the Drowned
     .target Ranger Krenn'an
-step
+step << !Mage
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heron|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Priest/Mage/Warlock/Druid
@@ -3690,7 +3704,7 @@ step
     .money <0.0540 << Paladin
     .isOnQuest 9158
     .xp >15,1
-step
+step << !Mage
     #optional
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heron|r
@@ -4669,6 +4683,7 @@ step
     .goto Ghostlands,73.81,37.97,60,0
     .goto Ghostlands,76.46,28.25,60,0
     >>Kill |cRXP_ENEMY_Ghostclaw Lynxes|r
+    >>|cRXP_ENEMY_Ghostclaw Lynxes|r |cRXP_WARN_share spawns with |cRXP_ENEMY_Vampiric Mistbats|r. Kill them too if there aren't enough |cRXP_ENEMY_Ghostclaw Lynxes|r around|r
     .complete 9158,1 --Kill Ghostclaw Lynx (x10)
     .mob Ghostclaw Lynx
 step
@@ -4778,7 +4793,8 @@ step
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Risen Hungerers|r |cRXP_WARN_cast|r |T132278:0|t[Blood Leech] |cRXP_WARN_(10 damage lifesteal)|r
     .complete 9155,1 --Kill Risen Hungerer (x10)
     .complete 9155,2 --Kill Gangled Cannibal (x10)
-    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .collect 22641,10,9216,1 --Rotting Hearts (10)
+    .disablecheckbox
     .mob Risen Hungerer
     .mob Gangled Cannibal
 step
@@ -4801,7 +4817,8 @@ step
     >>Kill |cRXP_ENEMY_Spindleweb Lurkers|r. Loot them for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful of their|r |T136016:0|t[Poison]
     .complete 9159,2 --Kill Spindleweb Lurker (x8)
-    .collect 22644,5,9171,1,-1 --Collect Crunchy Spider Leg (x5)
+    .collect 22644,5,9171,1 --Collect Crunchy Spider Leg (x5)
+    .disablecheckbox
     .mob Spindleweb Lurker
     .itemcount 22644,<5
 step
@@ -5091,7 +5108,8 @@ step
     .mob +Risen Hungerer
     .complete 9155,2 --Kill Gangled Cannibal (x10)
     .mob +Gangled Cannibal
-    .collect 22641,10,9216,1,-1 --Rotting Hearts (10)
+    .collect 22641,10,9216,1 --Rotting Hearts (10)
+    .disablecheckbox
 step
     #completewith TranqVisit3
     .subzone 3488 >> Travel to Tranquillien
@@ -5126,6 +5144,7 @@ step
     .target +Master Chef Mouldier
     .goto Ghostlands,48.43,30.93
     .itemcount 22644,5
+    .addquestitem 22644,9171
     .isQuestAvailable 9171
 step
     .goto Ghostlands,46.08,28.33,10,0
@@ -5506,7 +5525,7 @@ step
 step
     .goto Ghostlands,62.93,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilatha|r to begin the escort
-    .accept 9212 >> Accept Escape from the Catacombs
+    .accept 9212,1 >> Accept Escape from the Catacombs
     .target Ranger Lilatha
 step
     #completewith TrollR
@@ -5546,6 +5565,7 @@ step
     .goto Ghostlands,71.09,32.01,40,0
     .goto Ghostlands,72.24,30.10
     .complete 9212,1 --Escort Ranger Lilatha back to the Farstrider Enclave
+    .target Ranger Lilatha
 step << Rogue
     #label TrollR
     #loop
@@ -6430,9 +6450,9 @@ step << Paladin/Druid/Shaman
     .goto Ghostlands,39.61,79.82,40,0
     .goto Ghostlands,36.41,87.05,40,0
     >>Kill |cRXP_ENEMY_Eyes of Dar'Khan|r, |cRXP_ENEMY_Nerubis Centurions|r, and |cRXP_ENEMY_Wailers|r
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable). Cast|r |T135949:0|t[Purify] |cRXP_WARN_to remove it|r << Paladin
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable). Cast|r |T136067:0|t[Cure Poison] |cRXP_WARN_to remove it|r << Druid
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable). Cast|r |T136067:0|t[Cure Toxins] |cRXP_WARN_to remove it|r << Shaman
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable). Cast|r |T135949:0|t[Purify] |cRXP_WARN_to remove it|r << Paladin
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable). Cast|r |T136067:0|t[Cure Poison] |cRXP_WARN_to remove it|r << Druid
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable). Cast|r |T136067:0|t[Cure Toxins] |cRXP_WARN_to remove it|r << Shaman
     .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .mob +Eye of Dar'Khan
     .complete 9220,2 --Kill Nerubis Centurion (x6)
@@ -6454,7 +6474,7 @@ step
     .goto Ghostlands,39.61,79.82,40,0
     .goto Ghostlands,36.41,87.05,40,0
     >>Kill |cRXP_ENEMY_Eyes of Dar'Khan|r, |cRXP_ENEMY_Nerubis Centurions|r, and |cRXP_ENEMY_Wailers|r
-    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 5 seconds (stackable)|r
+    >>|cRXP_WARN_Be careful of the|r |cRXP_ENEMY_Nerubis Centurions|r's |T136067:0|t[Deadly Poison] |cRXP_WARN_as it deals 31 damage every 10 seconds (stackable)|r
     .complete 9220,1 --Kill Eye of Dar'Khan (x5)
     .mob +Eye of Dar'Khan
     .complete 9220,2 --Kill Nerubis Centurion (x6)
@@ -6945,6 +6965,7 @@ step
     .complete 9170,2 --Kill Borgoth the Bloodletter (x1)
     .mob Borgoth the Bloodletter
 step
+    #completewith next
     .goto Ghostlands,32.25,82.18,10,0
     .goto Ghostlands,32.80,82.45,10,0
     .goto Ghostlands,32.65,83.15,8 >>Go inside the central Ziggurat. Kill all the |cRXP_ENEMY_Eyes of Dar'Khan|r and |cRXP_ENEMY_Deatholme Necromancers|r inside

@@ -743,8 +743,7 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
-    .bindlocation 159
-    .subzoneskip 159,1
+    .bindlocation 2119
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor

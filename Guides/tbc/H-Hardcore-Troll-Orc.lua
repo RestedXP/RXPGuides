@@ -1007,8 +1007,8 @@ step
     .goto Durotar,56.31,73.8,8 >> Enter the big hut
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
-    .collect 3131,200,786,1 --Weighted Throwing Axe (200)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    .collect 29007,1,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
@@ -1104,9 +1104,9 @@ step << Hunter
 step << Rogue
     #optional
     #completewith Bonfire
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
-    .use 3131
-    .itemcount 3131,1
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
+    .use 29007
+    .itemcount 29007,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman
@@ -1275,9 +1275,9 @@ step << Hunter
 step << Rogue
     #optional
     #completewith RazorHill1
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
-    .use 3131
-    .itemcount 3131,1
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
+    .use 29007
+    .itemcount 29007,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman
@@ -1481,9 +1481,9 @@ step << Troll Warrior
 step << Rogue
     #optional
     #completewith TiragardeArrive
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
-    .use 3131
-    .itemcount 3131,1
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
+    .use 29007
+    .itemcount 29007,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman
@@ -1642,6 +1642,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Turn in In Favor of Spirituality
     .accept 5648 >> Accept Garments of Spirituality
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -1894,9 +1895,9 @@ step << Troll Warrior
 step << Rogue
     #optional
     #completewith Tools
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
-    .use 3131
-    .itemcount 3131,1
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
+    .use 29007
+    .itemcount 29007,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Shaman

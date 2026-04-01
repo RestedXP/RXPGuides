@@ -1587,7 +1587,7 @@ step
     .goto Durotar,56.31,73.8,8 >> Enter the big hut
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
@@ -1679,7 +1679,7 @@ step << Hunter
 step << Rogue
     #optional
     #completewith Bonfire
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -1955,7 +1955,7 @@ step << Rogue
     #xprate <1.5
     #optional
     #completewith TravelToTiragarde
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -2511,7 +2511,7 @@ step << Troll Warrior
 step << Rogue
     #optional
     #completewith Toolboxes
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -2651,6 +2651,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Turn in In Favor of Spirituality
     .accept 5648 >> Accept Garments of Spirituality
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -5311,6 +5312,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
     .accept 1478 >> Accept Halgar's Summons
     .target Ageron Kargal
+    .isQuestAvailable 1504
 step << Undead Rogue
     .goto Tirisfal Glades,61.75,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r inside the inn
@@ -5664,6 +5666,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
     .turnin 1478 >> Turn in Halgar's Summons
     .accept 1473 >> Accept Creature of the Void
+    .isQuestAvailable 1504
 step << Mage
     #optional
     .abandon 1883 >> Abandon Speak with Un'thuwa, otherwise you won't be able to accept the upcoming quest
@@ -5839,6 +5842,7 @@ step << Warlock
     .goto Tirisfal Glades,51.06,67.57
     >>Loot |cRXP_PICK_Perrine's Chest|r for |T133733:0|t[Egalin's Grimoire]
     .complete 1473,1 --Egalin's Grimoire (1)
+    .isQuestAvailable 1504
 step
     #optional
     #label ScarletCrusade1
@@ -5864,6 +5868,7 @@ step << Warlock
     .goto Tirisfal Glades,51.06,67.57
     >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
     .complete 1473,1 --Egalin's Grimoire (1)
+    .isQuestAvailable 1504
 step << Warlock
     #completewith next
     .goto Undercity,16.51,42.76,35,0
@@ -5881,6 +5886,7 @@ step << Warlock
     .turnin 1473 >> Turn in Creature of the Void
     .accept 1471 >> Accept The Binding
     .target Carendin Halgar
+    .isQuestAvailable 1504
 step << Warlock
     #completewith next
     .goto Undercity,86.64,27.10
@@ -5892,11 +5898,13 @@ step << Warlock
     .complete 1471,1 --Kill Summoned Voidwalker (1)
     .mob Summoned Voidwalker
     .use 6284
+    .isQuestAvailable 1504
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
     .turnin 1471 >>Turn in The Binding
     .target Carendin Halgar
+    .isQuestAvailable 1504
 step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
@@ -8529,7 +8537,7 @@ step
     .goto Durotar,56.31,73.8,8 >> Enter the big hut
 step << Rogue
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T135421:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
@@ -8622,7 +8630,7 @@ step << Hunter
 step << Rogue
     #optional
     #completewith Bonfire
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -9318,7 +9326,7 @@ step << Troll Warrior
 step << Rogue
     #optional
     #completewith Toolboxes
-    +|cRXP_WARN_Equip the|r |T135421:0|t[Weighted Throwing Axe]
+    +|cRXP_WARN_Equip the|r |T132414:0|t[Weighted Throwing Axe]
     .use 3131
     .itemcount 3131,1
     .itemStat 18,QUALITY,<7
@@ -9405,6 +9413,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Turn in In Favor of Spirituality
     .accept 5648 >> Accept Garments of Spirituality
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46

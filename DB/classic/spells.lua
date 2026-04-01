@@ -834,21 +834,22 @@ s["ROGUE"] = {
         --1776, -- gouge
         1757, -- sinister strike r2
         --1784 -- stealth
-        3273 --First Aid
+        129, --First Aid
+        164 --Blacksmithing
     },
     [8] = {
         1776, -- gouge
         6760, -- eviscerate r2
         5277, -- evasion
-        3273, --first aid
+        129, --First Aid
         1784 -- stealth
     },
     [10] = {
-            5277, -- evasion
+        5277, -- evasion
         1424, -- dual wield
         2983, -- sprint
         201, --1h Swords
-	    2575 --mining
+	    186 --mining
         --6452 -- Anti-venom(FA)
 
     },
@@ -862,20 +863,26 @@ s["ROGUE"] = {
     [14] = {
         3128, -- parry
         1758, -- sinister strike r3
-        --1766, -- kick
+        1766, -- kick
         5171, -- slice and dice
-        198 --1h Maces
+        3276, --Heavy Linen Bandage
+        3274 --Journeyman First Aid
         --703, -- garrote
     },
     [16] = {
         6761, -- eviscerate r3
+        1804, --pick lock
         5167, -- pick pocket
-        198 --1h Maces
+        198, --1h Maces
+        3276, --Heavy Linen Bandage
+        3274 --Journeyman First Aid
     },
     [20] = {
         5167, -- pick pocket
         1804, -- Pick Lock
-        1785 -- stealth r2
+        1785, -- stealth r2
+        6452, -- Anti-venom(FA)
+        3277 --Wool Bandage
         --1943, -- rupture
         --8676 -- ambush
     },
@@ -888,11 +895,14 @@ s["ROGUE"] = {
     },
     [24] = {
         6762, -- eviscerate r4
-        3420,  -- crippling poison r1
-        2836 --detect traps
+        3420, -- crippling poison r1
+        2836, --detect traps
+        1943, --Rupture
+        3278 --Heavy Wool Bandage
     },
     [26] = {
         --1767 -- kick r2
+        3278 --Heavy Wool Bandage
     },
     [28] = {
         8687, -- instant poison 2

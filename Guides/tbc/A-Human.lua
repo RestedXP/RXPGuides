@@ -1748,7 +1748,7 @@ step << Warrior/Rogue
     .goto Elwynn Forest,25.9,93.9
 step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    >>|cRXP_WARN_Choose the|r |T134583:0|t[|cRXP_FRIENDLY_Stormwind Guard Leggings|r] |cRXP_WARN_as your reward. You will get a 2H Mace very soon|r
+    >>|cRXP_WARN_Choose the|r |T134583:0|t[|cRXP_FRIENDLY_Stormwind Guard Leggings|r] |cRXP_WARN_as your reward. You will get a 2H Mace very soon|r << Warrior
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 176 >> Turn in Wanted: "Hogger"
