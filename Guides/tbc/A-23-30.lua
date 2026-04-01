@@ -4797,11 +4797,15 @@ step << Human Paladin
     .turnin 1787 >>Turn in The Tome of Divinity
     .target Gazin Tenorm
     .accept 1788 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1788 >>Turn in The Tome of Divinity << Human
+    .target Duthorian Rall
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
     .goto StormwindClassic,38.82,31.27,10,0 << !Human
     .goto StormwindClassic,38.67,32.82
-    .turnin 1788 >>Turn in The Tome of Divinity << Human
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
