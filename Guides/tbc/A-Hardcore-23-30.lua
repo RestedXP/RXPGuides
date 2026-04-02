@@ -782,10 +782,10 @@ step << Draenei/NightElf
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
 step
-    #completewith next
+    #completewith RRQuests
     .goto 1429/0,395.900,-9114.200,80 >> Exit Stormwind
 step
-    #completewith next
+    #completewith RRQuests
     .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower
 step
     .goto Elwynn Forest,65.22,69.71
@@ -1017,9 +1017,9 @@ step
     >>|cRXP_ENEMY_Skeletal Warriors|r |cRXP_WARN_apply|r |T132316:0|t[Hamstring]
     >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
+    .mob +Skeletal Warrior
     .complete 56,2 -- Skeletal Mage slain (6)
-    .mob Skeletal Warrior
-    .mob Skeletal Mage
+    .mob +Skeletal Mage
 step
     .goto Duskwood,79.73,70.64,30,0
     .goto Duskwood,80.98,71.65
@@ -1039,9 +1039,9 @@ step
     >>|cRXP_ENEMY_Skeletal Warriors|r |cRXP_WARN_apply|r |T132316:0|t[Hamstring]
     >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
+    .mob +Skeletal Warrior
     .complete 56,2 -- Skeletal Mage slain (6)
-    .mob Skeletal Warrior
-    .mob Skeletal Mage
+    .mob +Skeletal Mage
 step
     #completewith Level25
     >>Kill |cRXP_ENEMY_Spiders|r in Duskwood. Loot them for their |cRXP_LOOT_Gooey Spider Legs|r
@@ -1904,7 +1904,11 @@ step
     .complete 57,2 -- Skeletal Horror slain (15)
     .mob +Skeletal Horror
     .complete 156,1 -- Rot Blossom (8)
+    .mob +Skeletal Fiend
+    .mob +Skeletal Horror
     .complete 101,3 --10/10 Skeleton Finger
+    .mob +Skeletal Fiend
+    .mob +Skeletal Horror
 step
     .goto Duskwood,7.78,34.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
