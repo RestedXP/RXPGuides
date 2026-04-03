@@ -3087,26 +3087,40 @@ step
 step
     .goto Wetlands,8.6,55.8
     .target James Halloran
-    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
     .turnin 469 >> Turn in Daily Delivery
     .isOnQuest 469
 step
     .goto Wetlands,8.6,55.8
     .target James Halloran
-    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
     .turnin 484 >> Turn in Young Crocolisk Skins
     .isOnQuest 484
 step
     .goto Wetlands,8.6,55.8
     .target James Halloran
-    >>Talk to |cRXP_FRIENDLY_James Halloran|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
     .accept 471 >> Accept Apprentice's Duties
     .isQuestTurnedIn 484
 step
+    #optional
     .goto Wetlands,10.89,59.66
     .target First Mate Fitzsimmons
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
-    .accept 289 >> Accept The Cursed Crew
+    .accept 288 >> Accept The Third Fleet
+step
+    #optional
+    .goto Wetlands,10.69,60.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r
+    >>|cRXP_BUY_Buy a|r |T132792:0|t[Flagon of Dwarven Honeymead]
+    .complete 288,1 -- Flagon of Dwarven Honeymead (1)
+    .target Innkeeper Helbrek
+step
+    .goto Wetlands,10.69,60.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r
+    .target Innkeeper Helbrek
+    .home >> Set your Hearthstone to Menethil Harbor
+    .bindlocation 2104
 step
     .goto Wetlands,10.585,60.592
     .target Glorin Steelbrow
@@ -3114,11 +3128,16 @@ step
     .turnin 270 >> Turn in The Doomed Fleet
     .accept 321 >> Accept Lightforge Iron
 step
-    .goto Wetlands,10.69,60.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r
-    .target Innkeeper Helbrek
-    .home >> Set your Hearthstone to Menethil Harbor
-    .bindlocation 2104
+    #optional
+    .goto Wetlands,10.89,59.66
+    .target First Mate Fitzsimmons
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
+    .turnin 288 >> Turn in The Third Fleet
+step
+    .goto Wetlands,10.89,59.66
+    .target First Mate Fitzsimmons
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
+    .accept 289 >> Accept The Cursed Crew
 step
     .goto Wetlands,11.796,57.991
     .target Sida
@@ -3130,9 +3149,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
 step
+    .isQuestTurnedIn 464
     .goto Wetlands,9.861,57.486
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r upstairs
-    .turnin 464 >> Turn in War Banners
     .accept 465 >> Accept Nek'rosh's Gambit
     .target Captain Stoutfist
 step
@@ -3437,11 +3456,18 @@ step
     .mob Fen Creeper
     .isOnQuest 275
 step
+    .isOnQuest 464
     .goto Wetlands,47.45,47.01
     >>Click the |cRXP_PICK_Dragonmaw Catapult|r
     .turnin 465 >>Turn in Nek'rosh's Gambit
     .accept 474 >>Accept Defeat Nek'rosh
 step
+    .isQuestTurnedIn 464
+    .goto Wetlands,47.45,47.01
+    >>Click the |cRXP_PICK_Dragonmaw Catapult|r
+    .accept 474 >>Accept Defeat Nek'rosh
+step
+    .isOnQuest 474
     .goto Wetlands,53.459,54.663
     >>Kill |cRXP_ENEMY_Chieftain Nek'rosh|r. Loot him for his |cRXP_LOOT_Head|r
     .complete 474,1 --1/1 Nek'rosh's Head
@@ -4754,6 +4780,15 @@ step
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
     .target Elling Trias
+step
+#ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Southshore soon
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>10 |T134026:0|t[Turtle Meat]
+    .collect 3712,10,555,1
+    .target Auctioneer Jaxon
 step << !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Newton Burnside|r
     .goto Stormwind City,57.00,72.88
@@ -4848,15 +4883,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Count Remington Ridgewell|r
     .accept 543 >>Accept The Perenolde Tiara
     .target Count Remington Ridgewell
-step
-#ah
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Southshore soon
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
-    >>10 |T134026:0|t[Turtle Meat]
-    .collect 3712,10,555,1
-    .target Auctioneer Jaxon
 step << Druid
     #completewith DruidMount
 	.cast 18960 >> |cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
