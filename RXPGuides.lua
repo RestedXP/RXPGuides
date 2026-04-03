@@ -1959,6 +1959,9 @@ function addon.GAToggle()
     if RXPCData and addon.farmGuides > 0 then
         RXPCData.GA = not RXPCData.GA
         addon.RenderFrame()
+    else
+        RXPCData.GA = false
+        addon.RenderFrame()
     end
 end
 
