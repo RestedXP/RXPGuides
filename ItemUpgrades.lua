@@ -22,6 +22,9 @@ local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemW
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
+--Note: added variable for item level diff
+addon.itemUpgrades.levelDiff = 15
+
 local session = {
     isInitialized = false,
 
@@ -1049,9 +1052,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return itemData
     end
 
+    --NOTE: changed level higher for testing
     if addon.game == "CLASSIC" then
         -- Classic: itemLevel is generally 5 levels highter than required
-        if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
+        if itemMinLevel > addon.player.level + addon.itemUpgrades.levelDiff or itemLevel > addon.player.level + addon.itemUpgrades.levelDiff + 5 then return end
     else
         if itemMinLevel > addon.player.level + 5 then return end
     end
@@ -1406,6 +1410,8 @@ local ahSession = {
     scanStatus = {
         scanType = _G.AUCTION_CATEGORY_ARMOR
     },
+    --S: added
+    toCancel = false,
 
     selectedRow = nil
 }
@@ -1617,9 +1623,18 @@ function addon.itemUpgrades.AH:Scan()
     -- TODO use better queueing
     -- TODO abort on multiple retries
     if not CanSendAuctionQuery() then
-        -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
+        --print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
 
-        C_Timer.After(0.35, function() self:Scan() end)
+        --C_Timer.After(0.35, function() self:Scan() end)
+        C_Timer.After(0.35, function ()
+            if not ahSession.toCancel then
+                self:Scan()
+            else
+                ahSession.toCancel = false
+                ahSession.displayFrame.cancelButton:Disable()
+                ahSession.sentQuery = false
+            end
+        end)
         return
     end
     -- print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
@@ -1627,7 +1642,9 @@ function addon.itemUpgrades.AH:Scan()
     ahSession.sentQuery = true
 
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
+    --S QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
+    --               AuctionCategories[ahSession.scanType].filters)
+    QueryAuctionItems("", 1, addon.player.level + 40, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
                       AuctionCategories[ahSession.scanType].filters)
 end
 
@@ -1953,7 +1970,20 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     ahSession.displayFrame.scanButton:SetScript("OnClick", function()
         ahSession.displayFrame.DataProvider:Flush()
+        ahSession.displayFrame.cancelButton:Enable()
         addon.itemUpgrades.AH:Scan()
+    end)
+
+    --[[ Cancel search button ]]
+    ahSession.displayFrame.cancelButton = _G.RXP_IU_AH_CancelSearchButton
+
+    ahSession.displayFrame.cancelButton:Disable()
+
+    ahSession.displayFrame.cancelButton:SetScript("OnClick", function ()
+        --S TODO: finish this
+        print("here")
+        ahSession.toCancel = true
+        self:Disalbe()
     end)
 
     _G.RXP_IU_AH_BuyButton:Disable()
