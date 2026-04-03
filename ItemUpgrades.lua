@@ -1412,6 +1412,7 @@ local ahSession = {
     },
     --S: added
     toCancel = false,
+    isScanning = false,
 
     selectedRow = nil
 }
@@ -1442,6 +1443,8 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
     ahSession.scanResults = 0
     ahSession.scanType = AuctionFilterButtons["Armor"]
     ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
+    ahSession.toCancel = false
+    ahSession.isScanning = false
 end
 
 -- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
@@ -1548,7 +1551,8 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanStatus.totalAuctions = totalAuctions
     -- print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
 
-    ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
+    --S: ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
+    ahSession.displayFrame.scanButton:SetText("Cancel")
 
     if resultCount == 0 or totalAuctions == 0 then
         ahSession.sentQuery = false
@@ -1616,14 +1620,15 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 end
 
 function addon.itemUpgrades.AH:Scan()
+    ahSession.isScanning = true
     -- Prevent double calls
-    if ahSession.sentQuery then return end
-    if not AuctionCategories then return end -- AH frame isn't loaded yet
+    if ahSession.sentQuery then ahSession.isScanning = false; return end
+    if not AuctionCategories then ahSession.isScanning = false; return end -- AH frame isn't loaded yet
 
     -- TODO use better queueing
     -- TODO abort on multiple retries
     if not CanSendAuctionQuery() then
-        --print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
+        print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
 
         --C_Timer.After(0.35, function() self:Scan() end)
         C_Timer.After(0.35, function ()
@@ -1631,8 +1636,9 @@ function addon.itemUpgrades.AH:Scan()
                 self:Scan()
             else
                 ahSession.toCancel = false
-                ahSession.displayFrame.cancelButton:Disable()
                 ahSession.sentQuery = false
+                ahSession.isScanning = false
+                ahSession.displayFrame.scanButton:SetText("Search")
             end
         end)
         return
@@ -1640,12 +1646,15 @@ function addon.itemUpgrades.AH:Scan()
     -- print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
 
     ahSession.sentQuery = true
-
+    
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
     --S QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
     --               AuctionCategories[ahSession.scanType].filters)
+ 
     QueryAuctionItems("", 1, addon.player.level + 40, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
                       AuctionCategories[ahSession.scanType].filters)
+
+    ahSession.isScanning = false
 end
 
 local function calculate(itemLink, scanData)
@@ -1970,21 +1979,24 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     ahSession.displayFrame.scanButton:SetScript("OnClick", function()
         ahSession.displayFrame.DataProvider:Flush()
-        ahSession.displayFrame.cancelButton:Enable()
-        addon.itemUpgrades.AH:Scan()
+        --ahSession.displayFrame.cancelButton:Enable()
+        if not ahSession.isScanning then
+            addon.itemUpgrades.AH:Scan()
+        else
+            --S TODO: add delay after succesfull scan
+            ahSession.toCancel = true
+        end
     end)
 
     --[[ Cancel search button ]]
-    ahSession.displayFrame.cancelButton = _G.RXP_IU_AH_CancelSearchButton
+--[[     ahSession.displayFrame.cancelButton = _G.RXP_IU_AH_CancelSearchButton
 
     ahSession.displayFrame.cancelButton:Disable()
 
     ahSession.displayFrame.cancelButton:SetScript("OnClick", function ()
-        --S TODO: finish this
-        print("here")
         ahSession.toCancel = true
         self:Disalbe()
-    end)
+    end) ]]
 
     _G.RXP_IU_AH_BuyButton:Disable()
 
