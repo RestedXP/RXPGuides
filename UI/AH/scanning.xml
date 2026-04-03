@@ -411,10 +411,28 @@
                     </OnClick>
                 </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_SearchButton" inherits="UIPanelButtonTemplate" text="SEARCH">
+            <!--S: my button -->
+            <Button name="RXP_IU_AH_CancelSearchButton" inherits="UIPanelButtonTemplate" text="Cancel search">
                 <Size x="80" y="22"/>
                 <Anchors>
                     <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyButton" relativePoint="LEFT"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BORDER">
+                        <Texture file="Interface\FrameGeneral\UI-Frame">
+                            <Size x="13" y="25"/>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativePoint="TOPLEFT" x="5" y="1"/>
+                            </Anchors>
+                            <TexCoords left="0.00781250" right="0.10937500" top="0.75781250" bottom="0.95312500"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Button>
+            <Button name="RXP_IU_AH_SearchButton" inherits="UIPanelButtonTemplate" text="SEARCH">
+                <Size x="80" y="22"/>
+                <Anchors>
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CancelSearchButton" relativePoint="LEFT"/>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">
