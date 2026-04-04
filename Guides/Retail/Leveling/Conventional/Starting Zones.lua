@@ -8836,13 +8836,14 @@ step
     .accept 90960 >>Accept My Story, My Legacy
     .target Hagar
 step
+    #arrowtext Click the |cRXP_PICK_Stone|r\n|cRXP_WARN_(very large range)|r
     .goto 2413,33.62,28.24
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r |cRXP_WARN_from a distance|r.
     .complete 90960,1 --1/1 Legacy Stone of True Self inspected
 step
     #completewith next
     #label Forgotten Song
-    >>Move to the next Stone.
+    >>Move to the waypoint location.
     .complete 90960,2 --1/1 Vision of True Self concluded
 step
     #completewith Forgotten Song
@@ -8852,19 +8853,21 @@ step
     .target Forgotten Song
 step
     #requires Forgotten Song
-    .goto 2413,33.21,27.7,10,0
-    .goto 2413,33.25,27.4
-    >>Move to the next Stone.
+    #arrowtext Move to the waypoint location
+    .goto 2413,33.18,27.8
+    >>Move to the waypoint location.
     .complete 90960,2 --1/1 Vision of True Self concluded
     .skipgossipid 134378
 step
+    #arrowtext Click the |cRXP_PICK_Stone|r\n|cRXP_WARN_(very large range)|r
     .goto 2413,33.25,27.4
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r |cRXP_WARN_from a distance|r.
     .complete 90960,3 --1/1 Legacy Stone of True Calling inspected
     .timer 10,RP
 step
-    .goto 2413,32.36,27.37
-    >>Move to the next Stone.
+    .goto 2413,32.16,27.15
+    #arrowtext Move to the waypoint location
+    >>Move to the next waypoint location.
     .complete 90960,4 --1/1 Vision of True Calling concluded
 step
     #completewith next
@@ -8874,10 +8877,11 @@ step
 step
     #completewith Legacy Stone
     .goto 2413,32.39,27.38
-    .cast 1258333 >>Click on the |cRXP_PICK_Stone|r.
+    #arrowtext Click the |cRXP_PICK_Stone|r\n|cRXP_WARN_(large range)|r
+    .cast 1258333 >>Click on the |cRXP_PICK_Stone|r |cRXP_WARN_from a distance|r.
+    .timer 8.5,RP
 step
     #requires Legacy Stone
-    .goto 2413,32.13,27.12,10,0
     .goto 2413,31.92,27.39
     >>Move to the Questgiver.
     .complete 90960,5 --1/1 Legacy Stone of the Goddess Guidance inspected
@@ -8888,8 +8892,9 @@ step
     .skipgossipid 134388
     .target Hagar
 step
+    #arrowtext Click the |cRXP_PICK_Stone|r\n|cRXP_WARN_(large range)|r
     .goto 2413,31.87,27.52
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stone|r|cRXP_WARN_from a distance|r.
     .complete 90960,7 --1/1 Legacy Stone painted
 step
     .goto 2413,31.90,27.39
