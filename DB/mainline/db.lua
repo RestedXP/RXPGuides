@@ -51,7 +51,8 @@ local defaultGuideList = {
     ["Vulpera"] = "RestedXP Speed Leveling\\a) Vulpera Intro", -- changed from duplicate 85 (org)
     [672]  = "RestedXP Speed Leveling\\a) DH Intro",
     [627] = "RestedXP Legion Remix\\a) Intro",
-    [2451] = "RestedXP Speed Leveling\\a) Arathi Highlands Returning Player"
+    [2451] = "RestedXP Speed Leveling\\a) Arathi Highlands Returning Player",
+    [2413] = "RestedXP Speed Leveling\\a) Haranir Intro",
 }
 
 do
