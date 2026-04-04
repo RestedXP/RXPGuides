@@ -7217,6 +7217,37 @@ function addon.functions.collectcurrency(self, ...)
     end
 end
 
+function addon.functions.multiboxtext(self,text)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        local name = guide.name
+        local group = guide.group
+        return {rawtext = text, textOnly = true}
+    end
+    local element = self.element
+    if addon.settings.profile.multibox then
+        element.text = element.rawtext
+    else
+        element.text = nil
+    end
+end
+
+function addon.functions.singleboxtext(self,text)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        local name = guide.name
+        local group = guide.group
+        return {rawtext = text, textOnly = true}
+    end
+    local element = self.element
+    if not addon.settings.profile.multibox then
+        element.text = element.rawtext
+    else
+        element.text = nil
+    end
+end
+
+
 function addon.functions.multibox(self)
     if type(self) == "string" then
         local guide = addon.guide or addon.currentGuide
