@@ -30,9 +30,10 @@ local defaultGuideList = {
     [425]  = "RestedXP Speed Leveling\\ab) Northshire Valley",
     [30]   = "RestedXP Speed Leveling\\ab) New Tinkertown",
     [468]  = "RestedXP Speed Leveling\\ab) Ammen Vale",
-    [202]  = "RestedXP Speed Leveling\\a) Worgen Intro",
-    [378]  = "RestedXP Speed Leveling\\b) Pandaren Intro",
+    [202]  = "RestedXP Speed Leveling\\ab) Worgen Intro",
+    [378]  = "RestedXP Speed Leveling\\a) Pandaren Intro",
     [2373] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
+    [2109] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
     [971]  = "RestedXP Speed Leveling\\a) VoidElf Intro",
     [940]  = "RestedXP Speed Leveling\\a) LightforgedDraenei Intro",
     [2322] = "RestedXP Speed Leveling\\a) EarthenDwarf Intro",
@@ -54,6 +55,7 @@ local defaultGuideList = {
     [627] = "RestedXP Legion Remix\\a) Intro",
     [2451] = "RestedXP Speed Leveling\\a) Arathi Highlands Returning Player",
     [2413] = "RestedXP Speed Leveling\\a) Haranir Intro",
+    [427]  = "RestedXP Speed Leveling\\ab) Dwarf Coldridge Vallley",
 }
 
 
