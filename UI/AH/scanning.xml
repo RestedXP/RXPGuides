@@ -414,7 +414,6 @@
             <Button name="RXP_IU_AH_SearchButton" inherits="UIPanelButtonTemplate" text="SEARCH">
                 <Size x="80" y="22"/>
                 <Anchors>
-                    <!-- <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CancelSearchButton" relativePoint="LEFT"/> -->
                     <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyButton" relativePoint="LEFT"/>
                 </Anchors>
                 <Layers>
