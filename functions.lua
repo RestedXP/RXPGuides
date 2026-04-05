@@ -42,7 +42,7 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
             return
         end
         local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
-        if not auraData then
+        if not auraData or type(auraData) ~= "table" then
             return nil;
         end
 
@@ -53,7 +53,7 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
             return
         end
         local auraData = C_UnitAuras.GetBuffDataByIndex(unitToken, index, filter);
-        if not auraData then
+        if not auraData or type(auraData) ~= "table" then
             return nil;
         end
 
@@ -64,7 +64,7 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
             return
         end
         local auraData = C_UnitAuras.GetDebuffDataByIndex(unitToken, index, filter);
-        if not auraData then
+        if not auraData or type(auraData) ~= "table" then
             return nil;
         end
 
@@ -6475,12 +6475,15 @@ end
 
 
 function addon.functions.ironchain()
+    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        return
+    end
     local id
-    local UnitAura = _G.UnitAura
+    local UnitAura = addon.UnitAura or _G.UnitAura
     if not UnitAura then
         UnitAura = function(unitToken, index, filter)
             local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
-            if not auraData then
+            if not auraData or type(auraData) ~= "table" then
                 return nil;
             end
 
@@ -6488,7 +6491,9 @@ function addon.functions.ironchain()
 	    end
     end
     for i = 1, 5 do
-        _, id = UnitAura("vehicle", i)
+        local ok, _, auraId = pcall(function() return UnitAura("vehicle", i) end)
+        if not ok then return end
+        id = auraId
         if id == 133273 then return true end
     end
 end
@@ -6538,13 +6543,17 @@ function addon.functions.wptimer(self)
 end
 
 function addon.functions.wpbuff(self)
+    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        return not self.state
+    end
     if self.buff == nil then
         self.buff = tonumber(self.args)
         self.state = self.buff and self.buff > 0
         self.buff = self.buff and math.abs(self.buff)
     end
     for i = 1, 32 do
-        local _, _, _, _, _, _, _, _, _, id = UnitAura("player", i)
+        local ok, _, _, _, _, _, _, _, _, _, id = pcall(function() return UnitAura("player", i) end)
+        if not ok then return not self.state end
         if id == self.buff then return self.state end
     end
     return not self.state

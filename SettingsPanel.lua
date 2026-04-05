@@ -3740,11 +3740,15 @@ function addon.settings.ToggleActive()
 end
 
 local function CheckBuff(buffId)
-    local UnitBuff = _G.UnitBuff or addon.UnitBuff
-    local id = 0
+    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        return
+    end
+    local UnitBuff = addon.UnitBuff or _G.UnitBuff
+    if not UnitBuff then return end
     local i = 1
-    while id do
-        id = select(10, UnitBuff("player", i))
+    while true do
+        local ok, id = pcall(function() return select(10, UnitBuff("player", i)) end)
+        if not ok or not id then return end
         if id == buffId then return true end
         i = i + 1
     end
@@ -3781,7 +3785,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         local warModeBonus = (C_PvP.IsWarModeActive() or CheckBuff(282559) or CheckBuff(269083) or CheckBuff(289954)) and C_PvP.GetWarModeRewardBonus() or 0
         local warbandBuff = C_UnitAuras.GetPlayerAuraBySpellID(430191)
         --1,2: xp buff, 3: max level
-        local warbandBonus = warbandBuff and warbandBuff.points[1] or 0
+        local warbandBonus = warbandBuff and warbandBuff.points and type(warbandBuff.points) == "table" and warbandBuff.points[1] or 0
         local function AchComplete(id)
             local _, _, _, completed = GetAchievementInfo(id)
             return completed
@@ -3806,7 +3810,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
             end
         end
         local legionRemix = C_UnitAuras.GetPlayerAuraBySpellID(1232454)
-        legionRemix = legionRemix and legionRemix.points[10] or 0
+        legionRemix = legionRemix and legionRemix.points and type(legionRemix.points) == "table" and legionRemix.points[10] or 0
         calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus + legionRemix)/100
         return calculatedRate
     elseif addon.game == "WOTLK" then
