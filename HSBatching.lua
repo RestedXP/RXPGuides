@@ -5,6 +5,7 @@ local _, addon = ...
 local HSframe = CreateFrame("Frame");
 local currentFPS = GetCVar("maxfps")
 local HSstart = 0
+local barLabel = "Hearthstone"
 local batchingWindow = 0.006
 local bindConfirmation = string.gsub(CONFIRM_BINDER,"%%s",".-")
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
@@ -18,13 +19,19 @@ else
     ConfirmBinder = _G.ConfirmBinder
 end
 
+local function StopHSTimer()
+    HSframe:SetScript("OnUpdate", nil)
+    SetCVar("maxfps", currentFPS)
+    HSstart = 0
+    addon.isCastingHS = false
+    addon.StopTimer(barLabel)
+end
+
 local function SwitchBindLocation()
     if GetTime() - HSstart > 10 - batchingWindow then
         ConfirmBinder()
-        HSframe:SetScript("OnUpdate", nil)
-        SetCVar("maxfps", currentFPS)
-        HSstart = 0
-        --print('bind-ok')
+        StopHSTimer()
+        -- print('bind-ok')
     elseif GetFramerate() < 20 then
         SetCVar("maxfps", currentFPS)
     end
@@ -54,10 +61,22 @@ local function StartHSTimer()
         if bind:find(bindConfirmation) then
             SetCVar("maxfps", "300")
             addon.isCastingHS = 0.5
-            addon.StartTimer(10-batchingWindow,"Hearthstone")
+            addon.StartTimer(10-batchingWindow, barLabel)
         end
     end
 end
+
+HSframe:SetScript("OnEvent", function(self, event, ...)
+    if event == "UNIT_SPELLCAST_INTERRUPTED" then
+        local unitTarget, _, spellID = ...
+        -- Player interrupted Hearthstone cast
+        if unitTarget == "player" and spellID == 8690 then
+            StopHSTimer()
+        end
+    end
+end)
+
+HSframe:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
 
 if _G.C_Container and _G.C_Container.UseContainerItem then -- DF+
     hooksecurefunc(C_Container, "UseContainerItem", function(...)
