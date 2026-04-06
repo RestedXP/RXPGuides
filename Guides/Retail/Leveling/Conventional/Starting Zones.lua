@@ -279,7 +279,7 @@ step
     #label expedition survivors
     .goto 1409,58.36,74.47
     #title |cFFFCDC00Follow the Arrow|r
-    >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .complete 54952,1 --1/1 Travel north to find any expedition survivors
     .use 649
     .target Alaria
@@ -6305,6 +6305,8 @@ step
     #completewith Accept A New Fate
     +test
     .usespell 1231411
+    .use 77272 --Sugarcane
+    .use 73241 -- bag
     .use 73214 --initiates-wristwraps
     .use 73216 --initiates-armguards
     .use 131901 --initiates-cuffs
@@ -6391,12 +6393,10 @@ step
     .use 74600 --healers-wristwraps
     .use 74602 --ritual-breastplate
     .use 74601 --ceremonial-leggings
-
 step
     #completewith Lesson of the Sandy Fist
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
-    *This is especially faster for Pandaren, since their starting zone keeps you until level 17 and does not allow mounting and skyriding.
+    *This is especially fast for Pandaren, since their starting zone lasts until level 17 and does not allow mounting or skyriding.
 step
     .goto 378,56.67,18.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
@@ -6569,7 +6569,7 @@ step
     .goto 378,58.49,19.46,15,0
     .goto 378,58.69,17.77,15,0
     .goto 378,57.83,16.51,15,0
-    >>Kill the |cRXP_ENEMY_Training Targets|r.
+    >>Kill |cRXP_ENEMY_Training Targets|r.
     .complete 29406,1 --5/5 Training Targets destroyed
 	.mob Training Target
 step
@@ -6645,7 +6645,7 @@ step
 	.target Master Shang Xi
 step
 	#completewith Lesson of the Burning Scroll
-    .goto 378,59.97,19.3,5 >>|cRXP_WARN_Jump downstairs|r.
+    .goto 378,59.97,19.3,5 >>|cRXP_WARN_Drop down|r.
 step
     #requires Lesson of the Burning Scroll
     .goto 378,59.67,19.11
@@ -6655,6 +6655,7 @@ step
 	.target Master Shang Xi
 step
     .goto 378,67.77,22.77
+    -- .goto 378,65.97,22.8
     >>Defeat |cRXP_ENEMY_Jaomin Ro|r.
     *|cRXP_WARN_While fighting, move him to the bridge’s peak for a quick turn-in|r.
     .complete 29409,1 --1/1 Defeat Jaomin Ro
@@ -6722,7 +6723,7 @@ step << !Hunter
 	.target Merchant Lorvo
 step << !Hunter
     #completewith Aysa of the Tushui
-    .goto 378,55.09,32.83,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,55.09,32.83,60 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step << !Hunter
     #requires Aysa of the Tushui
     .goto 378,55.09,32.83
@@ -6861,7 +6862,7 @@ step << !Hunter
 	.target Ji Firepaw
 step << !Hunter
     #completewith Ji of the Huojin1
-    .goto 378,50.24,21.26,80 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,50.24,21.26,80 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step << !Hunter
     #requires Ji of the Huojin1
     .goto 378,50.24,21.26
@@ -6919,7 +6920,7 @@ step
     .complete 29418,1,1 --5/5 Dry Dogwood Root
 step
     #completewith Dry Dogwood Root
-    .goto 378,48.4,29.47,50 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,48.4,29.47,50 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Dry Dogwood Root
     #completewith Living Air 2
@@ -6975,7 +6976,7 @@ step
 	.target Master Shang Xi
 step
     #completewith Fanning the Flames
-    .goto 378,50.24,21.26,80 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,50.24,21.26,80 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Fanning the Flames
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r and |cRXP_FRIENDLY_Shang Xi|r.
@@ -6989,7 +6990,7 @@ step
 step
     #completewith next
     #label Spirit's Guardian
-    .goto 378,49.54,21.47,5,0
+    .goto 378,49.54,21.47,10,0
     .goto 378,46.27,23.51,30,0
     .goto 378,44.49,24.06,15,0
     .goto 378,42.23,24.79,20,0
@@ -7102,7 +7103,7 @@ step
     .goto 378,51.75,36.4,15,0
     .goto 378,50.35,39.21,15,0
     .goto 378,51.54,40.27,15,0
-    .goto 378,51.41,46.40,50 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,51.41,46.40,50 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Travel to Spirit of Fire
     .goto 378,51.41,46.40
@@ -7117,6 +7118,7 @@ step
 step
     #completewith next
     #label PandaHerbalism
+    #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whittler Dewei|r.
     .train 2366 >>Train |T4620675:0|t[Herbalism]
     .target Whittler Dewei
@@ -7138,13 +7140,14 @@ step
     .train 2366 >>Train |T4620675:0|t[Herbalism]
     .target Whittler Dewei
 step
+    #requires PandaHerbalism
     #completewith PandaHerbalism2
     .goto 378,63.12,41.44,180 >>Leave the Temple Grounds
 step
     #requires PandaHerbalism2
     .goto 378,63.12,41.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whittler Dewei|r.
-    .train 2366 >>Train |T134418:0|t[Herbalism].
+    .train 2366 >>Train |T4620675:0|t[Herbalism].
     .skipgossipid 41947
     .skipgossipid 38871
     .skipgossipid 38919
@@ -7398,12 +7401,13 @@ step
     .accept 29679 >>Accept A New Friend
 	.target Aysa Cloudsinger
 step
-    >>Stand |cRXP_WARN_directly on the bubbling water|r that |cRXP_FRIENDLY_Shu|r creates.
+    .goto 378,79.04,37.81,30,0
+    >>Stand in the center |cRXP_WARN_of the bubbling water|r before it erupts.
     .complete 29679,1,4 --5/5 Play with the Spirit of Water
 	.target Shu
 step
-    >>Stand |cRXP_WARN_directly on the bubbling water|r that |cRXP_FRIENDLY_Shu|r creates.
-    *On the final launch, Use |T132294:0|t[Disengage] toward the questgiver.  << Hunter
+    >>Stand in the center |cRXP_WARN_of the bubbling water|r before it erupts.
+    *On the final launch, Use |T132294:0|t[Disengage] midair toward the questgiver.  << Hunter
     *On the final launch, Use |T135736:0|t[Blink] early to shorten your airtime. << Mage
     .complete 29679,1 --5/5 Play with the Spirit of Water
 	.target Shu
@@ -7427,7 +7431,7 @@ step
 step
     #completewith Source of Our Livelihood
     #title |cFFFCDC00Ignore the Cart|r
-    .goto 378,68.89,64.98,90 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,68.89,64.98,90 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Source of Our Livelihood
     .goto 378,68.89,64.98
@@ -7519,8 +7523,7 @@ step
     .complete 29768,1 --1/1 Dai-Lo Recess Mallet
 step
 	#loop
-    .goto 378,62.22,77.28,10,0
-    .goto 378,62.69,76.95,10,0
+    .goto 378,62.22,77.28,15,0
     .goto 378,63.09,77.12,10,0
     .goto 378,63.65,77.4,10,0
     .goto 378,63.31,79.1,10,0
@@ -7602,9 +7605,31 @@ step
     #completewith Shen-zin Su
     #title |cFFFCDC00Ignore the Cart|r
     .goto 378,51.59,48.32,150 >>Travel to the Temple of Five Dawns.
-    *or Hearthstone |cRXP_WARN_to the Temple of Five Dawns|r.
+    .cooldown item,6948,<0,1
 step
     #requires Shen-zin Su
+    .goto 378,51.59,48.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
+    .accept 29776 >>Accept Morning Breeze Village
+	.timer 20,Morning Breeze Village RP
+	.target Master Shang Xi
+    .cooldown item,6948,<0,1
+step
+    #completewith next
+    #label Shen-zin Su2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
+    .accept 29776 >>Accept Morning Breeze Village
+	.disablecheckbox
+	.target Master Shang Xi
+step
+    #completewith Shen-zin Su2
+    .hs >>Hearth to Temple of Five Dawns
+    .cooldown item,6948,>0,1
+    .use 6948
+step
+    #requires Shen-zin Su2
     .goto 378,51.59,48.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
     .turnin 29775 >>Turn in The Spirit and Body of Shen-zin Su
@@ -7721,7 +7746,7 @@ step
     .complete 29779,1 --20/20 Fe-Feng Hozen slain
 step
     #completewith Ruk-Ruk slain
-    .goto 378,20.94,34.43,100 >>Go over the small mountain and Follow the Arrow.
+    .goto 378,20.94,34.43,135 >>Go over the small mountain and Follow the Arrow.
 step
     #requires Ruk-Ruk slain
     #completewith next
@@ -7777,9 +7802,10 @@ step
 step
     .goto 378,26.42,33.68
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Jade Pillar|r.
+    *|cRXP_WARN_Ignore |cRXP_ENEMY_Hozens|r when possible|r
     .accept 29782 >>Accept Stronger Than Bone
+    .target Jade Pillar
 step
-    #requires Stronger Than Bone
     .goto 378,29.90,39.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jojo Ironbrow|r.
     .turnin 29782 >>Turn in Stronger Than Bone
@@ -7803,7 +7829,7 @@ step
 	.target Aysa Cloudsinger
 step
     #completewith Balanced Perspective
-    #title |cFFFCDC00Don't Fall|r
+    #arrowtext |cFFFCDC00If you fall|r \n |cRXP_WARN_return to shore and try again|r 
     .goto 378,30.57,37.49,10,0
     .goto 378,31.09,36.82,10,0
     .goto 378,32.19,36.35,5,0
@@ -7832,7 +7858,7 @@ step
     .goto 378,28.66,62.78,15,0
     .goto 378,28,64.26,15,0
     .goto 378,24.65,69.80,150 >>Swim to the Shore and wait infront of the Temple.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *>>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .timer 30,RP
 step
     #requires Locate Dafeng
@@ -7856,7 +7882,7 @@ step
     #label Zhao-Ren slain
     .goto 378,28.12,63.81,15,0
     >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him.
-    *Use any ranged abilities while moving |cRXP_WARN_if you can|r.
+    *Use any ranged abilities while moving (|cRXP_WARN_if able(class-dependent)|r.
     *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r.
     *Push him |cRXP_WARN_below 25%|r during this to chain the stun and finish him.
     *If he gets back up, |cRXP_WARN_repeat the process|r.
@@ -7876,11 +7902,12 @@ step
     .goto 378,29.78,58.95,5,0
     .goto 378,29.54,60.75,5,0
     >>Circle |cRXP_ENEMY_Zhao-Ren|r |cRXP_WARN_counter-clockwise|r and fire the launchers at him.
-    *Use any ranged abilities while moving |cRXP_WARN_if you can|r.
+    *Use any ranged abilities while moving (|cRXP_WARN_if able(class-dependent)|r.
     *|cRXP_WARN_At 75%|r, he becomes stunned and |cRXP_WARN_takes extra damage|r.
     *Push him |cRXP_WARN_below 25%|r during this to chain the stun and finish him.
     *If he gets back up, |cRXP_WARN_repeat the process|r.
     .complete 29786,1 --1/1 Zhao-Ren slain
+    .timer 6.5,RP
 	.mob Zhao-Ren
 step
     .goto 378,29.98,60.38
@@ -7900,19 +7927,19 @@ step
 	.target Guardian of the Elders
 step
     #completewith Guardian of the Elders
-    .goto 378,22.70,52.80,100 >>Travel |cRXP_WARN_to The Elders' Path|r.
+    .goto 378,22.70,52.80,100 >>Travel to Elders' Path.
 step
     #requires Guardian of the Elders
     .goto 378,22.70,52.80
-	>>Kill the |cRXP_ENEMY_Guardian of the Elders|r.
+	>>Kill the |cRXP_ENEMY_Guardian of the Elders|r
     .complete 29787,1 --1/1 Guardian of the Elders slain
-	.timer 22,RP
+	.timer 20.5,RP
 	.target Guardian of the Elders
 step
     #completewith next
     #label Passing
     .goto 378,21.37,52.69,15,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r |cRXP_WARN_after the roleplay|r.
     .turnin 29787 >>Turn in Worthy of Passing
     .accept 29788 >>Accept Unwelcome Nature
     .disablecheckbox
@@ -7926,7 +7953,7 @@ step
 step
     #requires Passing
     .goto 378,19.46,51.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Shang Xi|r |cRXP_WARN_after the roleplay|r.
     .turnin 29787 >>Turn in Worthy of Passing
     .accept 29788 >>Accept Unwelcome Nature
     .accept 29789 >>Accept Small, But Significant
@@ -7979,13 +8006,15 @@ step
     .complete 29790,1 --1/1 Listen to Master Shang Xi
 step
     #completewith Listen to Master Shang Xi
+    #arrowtext Wait at arrow's location
     .goto 378,17.28,50.76
 	.cast 108034 >>Eat |T571818:0|t[Small Sugarcane Stalk] (10s buff)
     .timer 10,Food Buff
 	.itemcount 77272,1
     .use 77272
 step
-    .goto 378,17.28,50.76
+    #arrowtext Wait at arrow's location
+    .goto 378,17.28,50.75
     #requires Listen to Master Shang Xi
     >>|cRXP_WARN_Wait at the arrow location for the roleplay to finish|r.
     .complete 29790,1 --1/1 Listen to Master Shang Xi
@@ -8067,7 +8096,7 @@ step
     #label Pei-Wu Forest Gate
     .goto 378,51.42,63.15,15,0
     .goto 378,50.76,65.2,15,0
-    >>Jump from the mountain and onto the Wall.
+    >>Jump on the Gate and wait behind it.
     .complete 29792,2 --1/1 Open the Pei-Wu Forest Gate
 step
     #completewith Pei-Wu Forest Gate
@@ -8075,6 +8104,7 @@ step
     .timer 31.5,RP
 step
     #requires Pei-Wu Forest Gate
+    #arrowtext Don't go further than the arrow indicates
     .goto 378,50.07,66.5,15,0
     .goto 378,50.57,68.19,10,0
     .goto 378,51.63,70.04,15,0
@@ -8111,15 +8141,15 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r.
+    >>Kill |cRXP_ENEMY_Tigers|r.
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bamboo|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bamboo|r
     .complete 29795,1 --10/10 Broken Bamboo Stalk
 	.mob Pei-Wu Tiger
 step
     #label Tigers
-    >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r.
+    >>Kill |cRXP_ENEMY_Tigers|r.
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wei Palerage|r and |cRXP_FRIENDLY_Korga Strongmane|r.
@@ -8143,7 +8173,7 @@ step
 	.target Ji Firepaw
 step
     #completewith the Wreck
-    .goto 378,36.32,72.36,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,36.32,72.36,100 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires the Wreck
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makael Bay|r and |cRXP_FRIENDLY_Ji Firepaw|r.
@@ -8203,7 +8233,7 @@ step
 	.target Jojo Ironbrow
 step
     #completewith Medical Supplies
-    .goto 378,42.21,86.54,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 378,42.21,86.54,100 >>Kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Medical Supplies
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delora Lionheart|r and |cRXP_FRIENDLY_Jojo Ironbrow|r.
@@ -8227,7 +8257,7 @@ step
 step
     #completewith next
     #label Sailor1
-    >>Return them to the Camp
+    >>Return them to the camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
     .target Delora Lionheart
 step
@@ -8251,15 +8281,16 @@ step
     .target Injured Sailor
 step
     #requires Sailor1
+    #arrowtext |cRXP_WARN_Return him to the camp|r
     .goto 378,42.22,86.53
-    >>Return him to the Camp
+    >>Return him to the camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
     .target Delora Lionheart
 step
     #requires Sailor1
     #completewith next
     #label Sailor2
-    >>Return him to the Camp
+    >>Return him to the camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
     .target Delora Lionheart
 step
@@ -8283,8 +8314,9 @@ step
     .target Injured Sailor
 step
     #requires Sailor2
+    #arrowtext |cRXP_WARN_Return him to the camp|r
     .goto 378,42.22,86.53
-    >>Return him to the Camp
+    >>Return him to the camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
     .target Delora Lionheart
 step
@@ -8340,6 +8372,7 @@ step
     #requires Sailor3
     #label 3/3 Injured Sailors
     .goto 378,42.22,86.53
+    #arrowtext |cRXP_WARN_Return him to the camp|r
     >>Return them to the Camp
     .complete 29794,1,3 --3/3 Injured Sailors rescued
     .target Delora Lionheart
@@ -8354,16 +8387,16 @@ step
 	.target Delora Lionheart
 	.target Jojo Ironbrow
 step
+    #arrowtext |cRXP_WARN_Dodge Deep Sea Smash|r
     .goto 378,36.50,84.23
-    >>Kill |cRXP_ENEMY_Vordraka, The Deep Sea Nightmare|r.
-    >>|cRXP_WARN_Dodge his Deep Sea Smash|r.
-    *Kill |cRXP_ENEMY_Deepscale Aggressors|r when they spawn.
+    >>Kill |cRXP_ENEMY_Vordraka, The Deep Sea Nightmare|r and his |cRXP_ENEMY_minions|r.
+    *|cRXP_WARN_Dodge Deep Sea Smash|r.
     .complete 29798,1 --1/1 Vordraka, the Deep Sea Nightmare slain
 	.mob Vordraka, The Deep Sea Nightmare
     .mob Deepscale Aggressor
 step
     .goto 378,36.50,84.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_after a short roleplay|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r |cRXP_WARN_after the roleplay|r.
     .turnin 29798 >>Turn in An Ancient Evil
     .accept 30767 >>Accept Risking It All
     .skipgossipid 32291
@@ -8408,7 +8441,7 @@ step
 	.target Ji Firepaw
 step
     .goto 378,38.77,86.32
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r |cRXP_WARN_after the roleplay|r.
     .accept 29800 >>Accept New Allies
 	.target Ji Firepaw
 step
@@ -8442,12 +8475,21 @@ step
 step
     #hidewindow
     .countdown 2 >>Follow the Arrow
-step << Alliance
+step 
+    .zoneskip 84,1
     .goto 84,74.19,91.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 31450 >>Turn in A New Fate
 	.accept 30987 >>Accept Joining the Alliance
 	.target Aysa Cloudsinger
+-- step 
+--     .goto 84,74.19,91.98,-1
+--     .goto 1,45.58,12.61,-1
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r or |cRXP_FRIENDLY_Ji Firepaw|r.
+--     .turnin 31450 >>Turn in A New Fate
+-- 	.acceptmutliple 30987,31012 >>Accept Joining the Alliance or Horde
+-- 	.target Aysa Cloudsinger
+--     .target Ji Firepaw
 step << Alliance
     #completewith next
     #label Joining the Alliance
@@ -8500,7 +8542,8 @@ step << Alliance
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
-step << Horde
+step
+    .zoneskip 1,1
     .goto 1,45.58,12.61
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ji Firepaw|r.
     .turnin 31450 >>Turn in A New Fate
@@ -9471,7 +9514,7 @@ step
 step
     #completewith Urgent Delivery!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step
     .xp >10,1
     .goto 468,61.21,29.63
@@ -9620,7 +9663,7 @@ step
 step
     .xp >10,1
     #completewith Botanical Legwork1
-    .goto 468,49.66,37.15,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 468,49.66,37.15,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Botanical Legwork1
@@ -9641,7 +9684,7 @@ step
 step
     .xp >10,1
     #completewith Corrupted Flower1
-    .goto 468,40.88,43.2,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 468,40.88,43.2,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
@@ -9693,7 +9736,7 @@ step
 step
     .xp >10,1
     #completewith Botanical Legwork2
-    .goto 468,49.78,37.47,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 468,49.78,37.47,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
@@ -9926,7 +9969,7 @@ step
 step
     .xp >10,1
     #completewith Neutralizing Agent
-    .goto 468,46.91,64.16,30 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 468,46.91,64.16,30 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
@@ -9948,7 +9991,7 @@ step
     .xp >10,1
     #completewith The Missing Scout
     .goto 468,46.74,67.31,10,0
-    .goto 468,33.91,69.36,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 468,33.91,69.36,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires The Missing Scout
@@ -10145,7 +10188,7 @@ step
     #completewith Word from Azure Watch
     .goto 468,31.66,51.82,30,0
     .goto 468,25.6,53.55,15,0
-    .goto 97,64.5,54.04,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 97,64.5,54.04,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Volatile Mutation
     .mob Vale Moth
 step
@@ -10525,7 +10568,7 @@ step
 step
     .isQuestComplete 9454
     #completewith The Great Moongraze Hunt
-    .goto 97,49.78,51.94,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 97,49.78,51.94,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #xprate 1-1.10
     .isQuestComplete 9454
@@ -11239,7 +11282,7 @@ step
     .goto 97,47.2,43.22,40,0
     .goto 97,48.27,48.51,40,0
     .goto 97,47.17,50.46,60 >>Make your way around the mountain to the quest giver.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Above130Backup x5
     #xprate >1.30
@@ -11570,7 +11613,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .zoneskip 103
     .goto 97,49.71,49.1,90 >>Make your way around the mountain to the flight path.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #xprate <1.25
     #requires Under125 x1
@@ -11732,7 +11775,7 @@ step
     .xp >10,1
     #completewith Aid for the Wounded
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step
     .xp >10,1
     .goto 427,67.28,41.62
@@ -11806,7 +11849,7 @@ step
     .xp >10,1
     #completewith Aid for the Wounded
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 427,65.58,42.27,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 427,65.58,42.27,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Aid for the Wounded
@@ -11839,7 +11882,7 @@ step
     .xp >10,1
     #completewith Lockdown in Anvilmar
     .goto 427,61.7,22.06,20 >>Enter Anvilmar
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Lockdown in Anvilmar
@@ -12068,7 +12111,7 @@ step
     .xp >10,1
     #completewith Make Hay While the Sun Shines
     .goto 427,61.46,22.63,20 >>Enter Anvilmar
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Make Hay While the Sun Shines
@@ -12111,7 +12154,7 @@ step
     #requires Whitebeard Needs Ye
     #completewith Whitebeard Needs Ye2
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 427,43.03,62.66,80 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 427,43.03,62.66,80 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Whitebeard Needs Ye2
@@ -12236,7 +12279,7 @@ step
 step
     .xp >10,1
     #completewith A Refugee's Quandary
-    .goto 427,41.83,63.2,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 427,41.83,63.2,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires A Refugee's Quandary
@@ -12310,7 +12353,7 @@ step
     #completewith Grik'nir the Cold
     #title |cFFFCDC00Enter Cave|r
     .goto 428,52.39,13.39,120 >>Enter the Cave
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Frostmane Troll Whelp
 step
     .xp >10,1
@@ -12387,7 +12430,7 @@ step
     #completewith Ice and Fire
     #title |cFFFCDC00Leave Cave|r
     .goto 427,42.72,62.23,155 >>Exit the Cave
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Ice and Fire
@@ -12407,7 +12450,7 @@ step
 step
     .xp >10,1
     #completewith Trip to Ironforge
-    .goto 427,86.95,44.49,90 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 427,86.95,44.49,90 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Trip to Ironforge
@@ -12448,7 +12491,7 @@ step
 step
     .xp >10,1
     #completewith Follow that Gyro-Copter!
-    .goto 427,70.39,43.94,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 427,70.39,43.94,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Follow that Gyro-Copter!
@@ -12597,7 +12640,7 @@ step
     .xp >10,1
     #completewith Withdraw to the Loading Room!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step
     .xp >10,1
     .goto 30,34.101,32.243
@@ -12646,7 +12689,7 @@ step
 step
     .xp >10,1
     #completewith Carvo Blastbolt
-    .goto 30,50.14,31.93,20 >>If you |cRXP_WARN_can’t|r mount, Kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 30,50.14,31.93,20 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Carvo Blastbolt
@@ -12689,7 +12732,7 @@ step
     .xp >10,1
     #completewith Withdraw to the Loading Room!
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 30,53.063,82.341,30 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 30,53.063,82.341,30 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Withdraw to the Loading Room!
@@ -13022,7 +13065,7 @@ step
     .xp >10,1
     #completewith Turn in Dealing with the Fallout
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 469,38.38,39.94,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 469,38.38,39.94,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Turn in Dealing with the Fallout
@@ -13094,7 +13137,7 @@ step
     .xp >10,1
     #completewith Missing in Action
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 469,37.11,65.54,40 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 469,37.11,65.54,40 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Missing in Action
@@ -13192,7 +13235,7 @@ step
     #requires Boss Bruggor
     #completewith Detonate trogg tunnel
     #title |cFFFCDC00Follow the Arrow|r
-    .goto 470,27.47,52.08,30 >>Kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 470,27.47,52.08,30 >>kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Detonate trogg tunnel
@@ -13235,7 +13278,7 @@ step
     #completewith Finishin' the Job
     #title |cFFFCDC00Exit Cave|r
     .goto 469,34.42,66.18,30 >>Exit the Frostmane Hold Cave.
-    *Kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     *|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r.
 step
     .xp >10,1
@@ -13264,7 +13307,7 @@ step
     .xp >10,1
     #title |cFFFCDC00Follow the Arrow|r
     #completewith in One More Thing
-    .goto 469,38.84,33.15,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 469,38.84,33.15,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires in One More Thing
@@ -13290,7 +13333,7 @@ step
 step
     .xp >10,1
     #completewith Repaired Mechano-Tanks destroyed
-    .goto 469,52.77,23.59,70 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 469,52.77,23.59,70 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Repaired Mechano-Tanks destroyed
@@ -13343,7 +13386,7 @@ step
 step
     .xp >10,1
     #completewith Crushcog's Minions killed2
-    .goto 469,38.96,33.09,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 469,38.96,33.09,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Crushcog's Minions killed
@@ -13427,7 +13470,7 @@ step
 step
     .xp >10,1
     #completewith Bound for Kharanos
-    .goto 27,49.85,45.08,30 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 27,49.85,45.08,30 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Bound for Kharanos
@@ -14199,7 +14242,7 @@ step
 step
     .xp >10,1
     #completewith Ultrasafe Personnel Launcher
-    .goto 27,56.83,47.11,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 27,56.83,47.11,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Ultrasafe Personnel Launcher
@@ -14369,7 +14412,7 @@ step
 step
     .xp >10,1
     #completewith Hand at the Ranch
-    .goto 27,70.41,48.91,150 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 27,70.41,48.91,150 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Hand at the Ranch
@@ -14794,7 +14837,7 @@ step
     .xp >10,1
     #completewith Beating Them Back!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step
     .xp >10,1
     .goto 425,33.18,53.23
@@ -15122,14 +15165,14 @@ step
 step
     .xp >10,1
     #completewith Vineyard Fire extinguished
-    .goto 425,49.53,76.72,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 425,49.53,76.72,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Blackrock Worg
     .mob Blackrock Spy
 -- step << Hunter
 --     .xp >10,1
 --     #completewith Vineyard Fire extinguished
 --     .goto 425,40.24,64.95,20,0
---     .goto 425,49.53,76.72,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+--     .goto 425,49.53,76.72,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 --     .cast 1515 >>Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Blackrock Worg|r to tame it.
 --     .usespell 1515
 --     .mob Blackrock Worg
@@ -15181,7 +15224,7 @@ step
 step
     .xp >10,1
     #completewith Ending the Invasion!1
-    .goto 425,33.38,54.67,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 425,33.38,54.67,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Blackrock Worg
     .mob Blackrock Spy
 step
@@ -15207,7 +15250,7 @@ step
 step
     .xp >10,1
     #completewith Kurtok the Slayer
-    .goto 425,64.97,48.38,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 425,64.97,48.38,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Blackrock Worg
     .mob Blackrock Spy
     .mob Blackrock Invader
@@ -15233,7 +15276,7 @@ step
 step
     .xp >10,1
     #completewith Ending the Invasion!2
-    .goto 425,33.92,53.68,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 425,33.92,53.68,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Blackrock Worg
     .mob Blackrock Spy
     .mob Blackrock Invader
@@ -15364,7 +15407,7 @@ step
 step
     .xp >10,1
     #completewith Marshal Dughan
-    .goto 37,41.715,64.636,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 37,41.715,64.636,100 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .isOnQuest 54
     .mob Mangy Wolf
     .mob Cutpurse
@@ -15580,7 +15623,7 @@ step
 step
     .xp >10,1
     #completewith Julia Stevens
-    .goto 37,41.66,83.67,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 37,41.66,83.67,60 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .use 57395
     .mob Stonetusk Boar
     .mob Kobold Tunneler
@@ -15638,7 +15681,7 @@ step
     #completewith Large Candle
     .goto 37,39.04,82.48,15,0
     .goto 38,41.16,83.55,5 >>Enter the Mine.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .use 57395
 step
     .xp >10,1
@@ -15758,7 +15801,7 @@ step
 step
     .xp >10,1
     #completewith Hogger
-    .goto 37,24.66,74.88,150 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 37,24.66,74.88,150 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Riverpaw Runt
     .mob Stonetusk Boar
 step
@@ -15837,7 +15880,7 @@ step
 step
     .xp >10,1
     #completewith Riverpaw Gnoll Bounty
-    .goto 37,24.27,74.66,150 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 37,24.27,74.66,150 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Riverpaw Runt
     .mob Stonetusk Boar
     .mob Riverpaw Outrunner
@@ -16473,7 +16516,7 @@ step
 step
     #completewith Balance of Nature
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step
     .xp >10,1
     .goto 460,45.54,74.7
@@ -16520,7 +16563,7 @@ step
     #completewith Fel Moss
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,36.55,79.72,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
 step
@@ -16571,7 +16614,7 @@ step
     #completewith Demonic Thieves
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,45.96,73.38,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
@@ -16656,7 +16699,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,40.68,42.49,20,0
     .goto 58,45.06,84.11,20 >>Enter the |cRXP_WARN_Cave|r.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
@@ -16755,7 +16798,7 @@ step << !Hunter
     #completewith Filled Crystal Phial
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,49.97,34.37,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
@@ -16767,7 +16810,7 @@ step << Hunter
     .goto 460,49.97,34.37
     *|cRXP_WARN_Drag|r |T132161:0|t[Call Pet] |cRXP_WARN_and|r |T132179:0|t[Pet Utility] |cRXP_WARN_onto your Action Bars|r.
     .cast 1515 >>Use |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Mangy Nightsaber|r to tame it.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .usespell 1515
     .mob Mangy Nightsaber
 step
@@ -16792,7 +16835,7 @@ step
     #completewith Crown of Azeroth
     #title |cFFFCDC00Follow the Arrow|r
     .goto 460,42.49,50.49,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
@@ -16877,7 +16920,7 @@ step
     .goto 57,60.35,45.81,10,0
     .goto 57,60.35,45.81,10,0
     .goto 460,54.7,84.79,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Young Nightsaber
     .mob Young Thistle Boar
     .mob Grell
@@ -16964,7 +17007,7 @@ step
     #completewith Zenn's Bidding
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,59.56,49.09,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     .xp >10,1
     #requires Zenn's Bidding
@@ -17007,7 +17050,7 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,59.1,49.97,10,0
     .goto 57,55.84,50.39,40 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 	.mob Nightsaber Fang
 	.mob Strigid Owl Feather
 	.mob Webwood Spider
@@ -17181,7 +17224,7 @@ step
     #completewith Turn in Seek Redemption!
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,59.51,49.25,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Webwood Lurker
     .mob Strigid Owl
     .mob Nightsaber
@@ -17205,7 +17248,7 @@ step
     #completewith Filled Jade Phial
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,62.03,50.54,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Webwood Lurker
     .mob Strigid Owl
     .mob Nightsaber
@@ -17340,7 +17383,7 @@ step
     #completewith Head to the Objective
     #title |cFFFCDC00Follow the Arrow|r
     .goto 57,57.6,62.74,60 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Webwood Lurker
     .mob Strigid Owl
     .mob Nightsaber
@@ -17366,7 +17409,7 @@ step
     .goto 57,58.05,62.22,10,0
     .goto 57,58.65,62.06,10,0
     .goto 57,59.9,59.88,80 >>Head to the Objective.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .mob Timberling
 step
     .xp >10,1
@@ -17456,7 +17499,7 @@ step
     .goto 59,77.79,86.06,20,0
     .goto 59,77.77,80.67,20,0
     .goto 59,43.59,53.44,120 >>Enter the Cave
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .use 46716
     .mob Strigid Owl
     .mob Nightsaber
@@ -17644,7 +17687,7 @@ step
     .goto 57,59.35,48.04,20,0
     .goto 57,65.05,46.72,20,0
     .goto 57,67.26,46.83,90 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r near |cRXP_ENEMY_Ferocitas the Dream Eater|r; move on if it isn't there.
-    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    *If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
     .unitscan Ferocitas the Dream Eater
     .mob Ferocitas the Dream Eater
     .mob Strigid Owl
@@ -18222,7 +18265,7 @@ step
 step
     #completewith Market Homes1
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
     *This is especially faster for Worgen, since their starting zone keeps you until level 17 and does not allow skyriding.
 step
     .goto 202,59.130,23.865
@@ -18405,7 +18448,7 @@ step
     .target Gwen Armstead
 step
     #completewith Royal Orders
-    .goto 202,70.77,55.02,65 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_mobs|r while traveling |cRXP_WARN_if possible|r.
+    .goto 202,70.77,55.02,65 >>If you |cRXP_WARN_can’t|r mount, kill |cRXP_ENEMY_monsters|r while traveling (|cRXP_WARN_if able(class-dependent)|r.
 step
     #requires Royal Orders
     .goto 202,70.77,55.02
@@ -23284,7 +23327,7 @@ step
     .zoneskip 1727
     #completewith SunstriderIsleFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step
     #optional
     .zoneskip 1727,1
@@ -24022,7 +24065,7 @@ step << Orc
     .zoneskip 1727
     #completewith DurotarFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step << Orc
     #optional
     .zoneskip 1727,1
@@ -24393,7 +24436,7 @@ step << Troll
     .zoneskip 1727
     #completewith EchoIslesFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step << Troll
     #optional
     .zoneskip 1727,1
@@ -25088,7 +25131,7 @@ step << Tauren
     .zoneskip 1727
     #completewith MulgoreFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step << Tauren
     #optional
     .zoneskip 1727,1
@@ -25789,7 +25832,7 @@ step << Undead
     .zoneskip 1727
     #completewith TirisfalFistQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step << Undead
     #optional
     .zoneskip 1727,1
@@ -26609,7 +26652,7 @@ step << Goblin
     .zoneskip 1727
     #completewith KezanFirstQuestCheck
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-    *After getting off the boat, choose the housing option to receive an instant boost to level 10.(Starting with Midnight Launch)
+
 step << Goblin
     #optional
     .zoneskip 1727,1
