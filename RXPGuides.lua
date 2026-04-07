@@ -1159,6 +1159,7 @@ function addon:OnInitialize()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
     RXPCData.exploredZones = RXPCData.exploredZones or {}
+    RXPCData.craftedItems = RXPCData.craftedItems or {}
 
     local realm = _G.GetRealmName()
     RXPData.realmData = RXPData.realmData or {}
