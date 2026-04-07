@@ -1672,11 +1672,9 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries)
     ahSession.sentQuery = true
     
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    --S QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
-    --               AuctionCategories[ahSession.scanType].filters)
+    QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
+                   AuctionCategories[ahSession.scanType].filters)
  
-    QueryAuctionItems("", 1, addon.player.level + 40, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
-                      AuctionCategories[ahSession.scanType].filters)
 
     ahSession.isScanning = false
 end
