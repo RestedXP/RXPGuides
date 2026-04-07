@@ -3841,10 +3841,6 @@ step
     .dungeon GNOMER
 step
     #optional
-    .abandon 1013 >>Abandon The Book of Ur
-    .dungeon SFK
-step
-    #optional
     .abandon 1014 >>Abandon Arugal Must Die
     .dungeon SFK
 step
