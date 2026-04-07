@@ -1,7 +1,7 @@
 local addonName, addon = ...
 local L = addon.locale.Get
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "VANILLA") then print("a") return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
 
 -- Localize globals
 local _G = _G
@@ -30,27 +30,6 @@ local materialsToSeachBySegments = {
             "Copper bar",
         }
     }
-}
-
-local recipes = {
-    ["Rough Sharpening Stone"] = {
-        trainingCost = 0,
-        materials = {
-            {
-                ["name"] = "Rough Stone",
-                amount = 1,
-            },
-        },
-    },
-    ["Copper Braces"] = {
-        trainingCost = 0,
-        materials = {
-            {
-                ["name"] = "Copper Bar",
-                amount = 2
-            },
-        },
-    },
 }
 
 -- Saved variables and session
