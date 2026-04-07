@@ -22,8 +22,6 @@ local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemW
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
---Note: added variable for item level diff
-addon.itemUpgrades.levelDiff = 15
 
 local session = {
     isInitialized = false,
@@ -1052,10 +1050,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return itemData
     end
 
-    --NOTE: changed level higher for testing
     if addon.game == "CLASSIC" then
         -- Classic: itemLevel is generally 5 levels highter than required
-        if itemMinLevel > addon.player.level + addon.itemUpgrades.levelDiff or itemLevel > addon.player.level + addon.itemUpgrades.levelDiff + 5 then return end
+        if itemMinLevel > addon.player.level + 5 or itemLevel > addon.player.level + 10 then return end
     else
         if itemMinLevel > addon.player.level + 5 then return end
     end
@@ -1626,7 +1623,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanResults = ahSession.scanResults + resultCount
 
     if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 then
-        local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 1) * 100
+        local percentage = addon.Round(ahSession.scanStatus.totalAuctions / ahSession.scanResults, 1) * 100
 
         _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
     end
