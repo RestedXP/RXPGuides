@@ -1572,6 +1572,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
         if ahSession.scanType == AuctionFilterButtons["Armor"] then
             ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
+            ahSession.scanResults = 0
 
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_WEAPONS
             self:Scan(0)
@@ -1623,7 +1624,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanResults = ahSession.scanResults + resultCount
 
     if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 then
-        local percentage = addon.Round(ahSession.scanStatus.totalAuctions / ahSession.scanResults, 1) * 100
+        local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 2) * 100
 
         _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
     end
