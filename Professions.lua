@@ -8,7 +8,7 @@ local _G = _G
 local fmt = string.format
 local tcount, tinsert, twipe = table.count, table.insert, table.wipe
 local pairs, ipars, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
-local max, abs = math.max, math.abs
+local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 
@@ -22,24 +22,35 @@ local eventsToRegister = {
     "AUCTION_ITEM_LIST_UPDATE",
 }
 
---[[ 
-{
-    {
-        segmentEndLevel = number
-        items = {}
-    }
-}
-]]
 local materialsToSeachBySegments = {
     {
         segmentEndLevel = 9,
         material = {
             "Rough stone",
-            "Copper Bracers",
-            "Copper Chain Pants",
-            "Rough Copper Vest"
+            "Copper bar",
         }
     }
+}
+
+local recipes = {
+    ["Rough Sharpening Stone"] = {
+        trainingCost = 0,
+        materials = {
+            {
+                ["name"] = "Rough Stone",
+                amount = 1,
+            },
+        },
+    },
+    ["Copper Braces"] = {
+        trainingCost = 0,
+        materials = {
+            {
+                ["name"] = "Copper Bar",
+                amount = 2
+            },
+        },
+    },
 }
 
 -- Saved variables and session
@@ -83,6 +94,10 @@ function addon.professions.AH:Setup()
     profSession.isInitialized = true
 end
 
+--local functions
+
+
+--Events
 function addon.professions.AH:AUCTION_HOUSE_SHOW()
 end
 
@@ -93,7 +108,7 @@ function addon.professions.AH:AUCTION_HOUSE_DISABLED()
 end
 
 function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
-    print("GET_ITEM_INFO_RECEIVED")
+    --print("GET_ITEM_INFO_RECEIVED")
 end
 
 function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
@@ -111,18 +126,25 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
         return
     end
 
-    local name, count, buyoutPrice, itemId, hasAllInfo, itemLink
+    local name, count, buyoutPrice, owner, itemId, hasAllInfo, itemLink
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
+        name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
 
-        tinsert(profSession.foundItems, {
-            itemId = itemId,
-            name = name,
-            count = count,
-            price = buyoutPrice,
-        })
+        --Check if itemId already exists
+        if not profSession.foundItems[itemId] then profSession.foundItems[itemId] = {} end
+        --TODO: Why do some auctions not have a byout??????
+        if buyoutPrice > 0 then
+            tinsert(profSession.foundItems[itemId], {
+                name = name,
+                count = count,
+                price = buyoutPrice,
+                pricePerItem = ceil(buyoutPrice / count),
+                owner = owner,
+                itemLink = itemLink
+            })
+        end
     end
 
     profSession.sentQuery = false
@@ -131,6 +153,7 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
     self:Scan(profSession.materials[1].material[profSession.materialIndex])
 end
 
+--Scan function
 function addon.professions.AH:Scan(itemName)
     print("scanning - ", itemName)
     if profSession.sentQuery then return end
@@ -151,25 +174,42 @@ addon.professions.AH:Setup()
 
 
 
+
+--Slash commands
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
     profSession.currentItemName = "Rough Stone"
-    -- addon.professions.AH:Scan("Rough Stone")
     addon.professions.AH:Scan(profSession.materials[1].material[profSession.materialIndex])
 end
 
 SLASH_pnt1 = '/pnt'
 SlashCmdList['pnt'] = function()
-    print(tcount(profSession.foundItems))
+    local minimum = {}
+    local minItem = {}
+    local minPrice
     for k, v in pairs(profSession.foundItems) do
+        print("===" .. tostring(k) .. "===")
+        minPrice = huge
+        minItem = {}
+        for i, itemInfo in ipars(v) do
+            --print(tostring(i)..":", itemInfo.name, itemInfo.count, itemInfo.pricePerItem, itemInfo.owner)
+            if itemInfo.pricePerItem < minPrice then
+                minPrice = itemInfo.pricePerItem
+                --print("min: ", minPrice)
+                minItem.name = itemInfo.name
+                minItem.pricePerItem = minPrice
+                minItem.owner = itemInfo.owner
+            end
+        end
+        tinsert(minimum, minItem)
+    end
+    --Print mimimums
+    print("==========")
+    for _, v in pairs(minimum) do
+        print(v.name, v.pricePerItem, v.owner)
     end
 end
-
-
-
-
-
 
 
 print("done loading professions")
