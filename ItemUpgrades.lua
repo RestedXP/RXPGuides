@@ -1647,7 +1647,7 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries)
 
     ahSession.isScanning = true
     -- Prevent double calls
-    if ahSession.sentQuery then ahSession.isScanning = false; return end
+    if ahSession.sentQuery then ahSession.isScanning = false return end
     if not AuctionCategories then ahSession.isScanning = false; return end -- AH frame isn't loaded yet
 
     -- TODO use better queueing
