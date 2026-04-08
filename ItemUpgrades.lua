@@ -1564,7 +1564,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanStatus.totalAuctions = totalAuctions
     -- print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
 
-    ahSession.displayFrame.scanButton:SetText("Cancel")
+    ahSession.displayFrame.scanButton:SetText(_G.CANCEL)
 
     if resultCount == 0 or totalAuctions == 0 then
         ahSession.sentQuery = false
@@ -1648,7 +1648,7 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries)
     ahSession.isScanning = true
     -- Prevent double calls
     if ahSession.sentQuery then ahSession.isScanning = false return end
-    if not AuctionCategories then ahSession.isScanning = false; return end -- AH frame isn't loaded yet
+    if not AuctionCategories then ahSession.isScanning = false return end -- AH frame isn't loaded yet
 
     -- TODO use better queueing
     -- TODO abort on multiple retries
@@ -2070,11 +2070,13 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
-    if ahSession.isCanceled then 
-        local newTitle = "Search canceled"
-        if ahSession.bestAnalysis ~= nil then newTitle = newTitle .. " - showing cached results" end
-        _G.RXP_IU_AH_Title:SetText(newTitle)
+    if ahSession.isCanceled and ahSession.bestAnalysis ~= nil then
+        _G.RXP_IU_AH_Title:SetText("Search canceled - showing cached results")
+    elseif ahSession.isCanceled then
+        _G.RXP_IU_AH_Title:SetText("Search canceled")
     end
+   
+    if not ahSession.bestAnalysis then return end
     
     local blockData
     local n = 0
