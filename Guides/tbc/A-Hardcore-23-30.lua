@@ -3463,6 +3463,8 @@ step
     .target Pelturas Whitemoon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .accept 1035 >> Accept Fallen Sky Lake
+    .isQuestAvailable 1035
+    .isQuestTurnedIn 1034
 step
     #completewith ShamefulWaste
     .goto Ashenvale,34.41,47.98
@@ -3620,6 +3622,7 @@ step
     >>Kill the |cRXP_ENEMY_Shadethicket Oracle|r. Loot it for the |cRXP_LOOT_Fallen Moonstone|r
     .complete 1035,1
     .mob Shadethicket Oracle
+    .isOnQuest 1035
 step
     #requires slimes
     .goto Ashenvale,69.73,86.62,0
@@ -3736,6 +3739,7 @@ step
     .target Pelturas Whitemoon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1035 >> Turn in Fallen Sky Lake
+    .isQuestComplete 1035
 step
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
