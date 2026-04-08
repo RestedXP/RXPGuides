@@ -32,6 +32,27 @@ local materialsToSeachBySegments = {
     }
 }
 
+local recipes = {
+    ["Rough Sharpening Stone"] = {
+        trainingCost = 0,
+        materials = {
+            {
+                ["name"] = "Rough Stone",
+                amount = 1,
+            },
+        },
+    },
+    ["Copper Braces"] = {
+        trainingCost = 0,
+        materials = {
+            {
+                ["name"] = "Copper Bar",
+                amount = 2
+            },
+        },
+    },
+}
+
 -- Saved variables and session
 local profSession = {
     isInitialized = false,
