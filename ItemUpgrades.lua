@@ -1629,6 +1629,17 @@ local ahSession = {
 }
 
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
+local QueueResultRefresh
+
+local function AHLog(msg, ...)
+    local text = fmt(msg, ...)
+
+    if DEFAULT_CHAT_FRAME and DEFAULT_CHAT_FRAME.AddMessage then
+        DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99RXP AH|r " .. text)
+    else
+        print("RXP AH " .. text)
+    end
+end
 
 local function CountTableEntries(t)
     local count = 0
@@ -1640,38 +1651,34 @@ end
 
 local function PrintAHDebugSummary(stage, renderedCount)
     local s = ahSession.lastAnalyzeSummary or {}
-    print(
-        fmt(
-            "RXP AH DBG [%s]: scanned=%d pending=%d analyzed=%d ratios=%d noComparisons=%d zeroWeight=%d rendered=%d awaiting=%s spec=%s",
-            stage,
-            s.scanDataCount or 0,
-            s.pendingCount or 0,
-            s.analyzedCount or 0,
-            s.ratioCount or 0,
-            s.noComparisonCount or 0,
-            s.zeroWeightCount or 0,
-            renderedCount or 0,
-            tostring(ahSession.awaitingItemData),
-            tostring(addon.settings.profile.itemUpgradeSpec)
-        )
+    AHLog(
+        "DBG [%s]: scanned=%d pending=%d analyzed=%d ratios=%d noComparisons=%d zeroWeight=%d rendered=%d awaiting=%s spec=%s",
+        stage,
+        s.scanDataCount or 0,
+        s.pendingCount or 0,
+        s.analyzedCount or 0,
+        s.ratioCount or 0,
+        s.noComparisonCount or 0,
+        s.zeroWeightCount or 0,
+        renderedCount or 0,
+        tostring(ahSession.awaitingItemData),
+        tostring(addon.settings.profile.itemUpgradeSpec)
     )
 
     if renderedCount == 0 then
         local sampleCount = 0
         for itemLink, scanData in pairs(ahSession.scanData or {}) do
             sampleCount = sampleCount + 1
-            print(
-                fmt(
-                    "RXP AH DBG sample %d: name=%s id=%s equip=%s weight=%s ratio=%s comparisons=%s link=%s",
-                    sampleCount,
-                    tostring(scanData.name),
-                    tostring(scanData.itemID),
-                    tostring(scanData.itemEquipLoc),
-                    tostring(scanData.totalWeight),
-                    tostring(scanData.ratio),
-                    tostring(scanData.comparisons and #scanData.comparisons or 0),
-                    tostring(itemLink)
-                )
+            AHLog(
+                "DBG sample %d: name=%s id=%s equip=%s weight=%s ratio=%s comparisons=%s link=%s",
+                sampleCount,
+                tostring(scanData.name),
+                tostring(scanData.itemID),
+                tostring(scanData.itemEquipLoc),
+                tostring(scanData.totalWeight),
+                tostring(scanData.ratio),
+                tostring(scanData.comparisons and #scanData.comparisons or 0),
+                tostring(itemLink)
             )
 
             if sampleCount >= 5 then
@@ -1681,7 +1688,30 @@ local function PrintAHDebugSummary(stage, renderedCount)
     end
 end
 
-local function QueueResultRefresh()
+local function FinalizeScan(stage)
+    local ok, pendingOrError = pcall(function()
+        local pendingCount = addon.itemUpgrades.AH:Analyze()
+        addon.itemUpgrades.AH:DisplayEmbeddedResults()
+        return pendingCount
+    end)
+
+    if not ok then
+        AHLog("ERR [%s]: %s", stage, tostring(pendingOrError))
+        return
+    end
+
+    if pendingOrError and pendingOrError > 0 then
+        QueueResultRefresh()
+    end
+end
+
+local function FinalizeScanAsync(stage)
+    C_Timer.After(0, function()
+        FinalizeScan(stage)
+    end)
+end
+
+QueueResultRefresh = function()
     if ahSession.refreshQueued then return end
 
     ahSession.refreshQueued = true
@@ -1695,8 +1725,16 @@ local function QueueResultRefresh()
 
         if not (_G.AuctionFrame and _G.AuctionFrame:IsShown()) then return end
 
-        local pendingCount = addon.itemUpgrades.AH:Analyze()
-        addon.itemUpgrades.AH:DisplayEmbeddedResults()
+        local ok, pendingCount = pcall(function()
+            local pending = addon.itemUpgrades.AH:Analyze()
+            addon.itemUpgrades.AH:DisplayEmbeddedResults()
+            return pending
+        end)
+
+        if not ok then
+            AHLog("ERR [refresh]: %s", tostring(pendingCount))
+            return
+        end
 
         if pendingCount and pendingCount > 0 then
             ahSession.refreshAttempts = ahSession.refreshAttempts + 1
@@ -1869,8 +1907,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
-            if self:Analyze() > 0 then QueueResultRefresh() end
-            self:DisplayEmbeddedResults()
+            FinalizeScanAsync("empty-result-page")
         end
         return
     end
@@ -1925,8 +1962,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
-            if self:Analyze() > 0 then QueueResultRefresh() end
-            self:DisplayEmbeddedResults()
+            FinalizeScanAsync("reached-end")
         end
         return
     end
@@ -2491,6 +2527,15 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             -- print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
     end
+
+    if ahSession.displayFrame and ahSession.displayFrame.ScrollBox and ahSession.displayFrame.ScrollBox.FullUpdate then
+        if ScrollBoxConstants and ScrollBoxConstants.UpdateImmediately then
+            ahSession.displayFrame.ScrollBox:FullUpdate(ScrollBoxConstants.UpdateImmediately)
+        else
+            ahSession.displayFrame.ScrollBox:FullUpdate()
+        end
+    end
+
     PrintAHDebugSummary("display", n)
     if n == 0 and not ahSession.awaitingItemData then _G.StaticPopup_Show("RXPNoUpgradesFound") end
 end
