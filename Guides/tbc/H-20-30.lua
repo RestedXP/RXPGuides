@@ -66,7 +66,7 @@ step << !Troll Mage
     .goto Orgrimmar,46.75,63.84,6,0
     .goto Orgrimmar,45.12,63.88,10 >>Travel up the tower toward |cRXP_FRIENDLY_Doras|r
     .zoneskip Durotar
-step << !Shaman !Warrior !Troll !Orc
+step << !Shaman !Troll !Orc
     #completewith OrgFP
     #requires MageRune1 << Mage
     .goto Orgrimmar,49.59,94.74,30,0
@@ -82,13 +82,13 @@ step << !Shaman !Warrior !Troll !Orc
     .goto Orgrimmar,46.59,64.54,6,0
     .goto Orgrimmar,46.75,63.84,6,0
     .goto Orgrimmar,45.12,63.88,10 >>Travel up the tower toward |cRXP_FRIENDLY_Doras|r
-step << !Shaman !Warrior !Troll !Orc
+step << !Shaman !Troll !Orc
     #label OrgFP
     .goto Orgrimmar,45.12,63.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
-step << !Shaman !Warrior
+step << !Shaman
     .goto Orgrimmar,31.62,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
@@ -2518,7 +2518,7 @@ step << !Mage
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
-    .dungeon SFK << !Shaman !Warrior
+    .dungeon SFK << !Shaman
 step << !Mage
     #completewith JourneytoHillsbrad
     .goto Undercity,66.09,20.06,35,0
@@ -2527,7 +2527,7 @@ step << !Mage
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
-    .dungeon SFK << !Shaman !Warrior
+    .dungeon SFK << !Shaman
 step << Mage
     #completewith JourneytoHillsbrad
     .cast 3563 >>Cast |T135766:0|t[Teleport: Undercity]
@@ -2559,7 +2559,7 @@ step
     .goto Tirisfal Glades,51.10,71.53,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Silverpine Forest
-    .dungeon SFK << !Shaman !Warrior !Mage
+    .dungeon SFK << !Shaman !Mage
 step
     #completewith next
     .goto Silverpine Forest,66.69,5.09,80,0
@@ -2602,7 +2602,7 @@ step
     .turnin 3301 >> Turn in Mura Runetotem
     .target Mura Runetotem
     .isOnQuest 3301
-    .dungeon WC << !Warrior !Shaman
+    .dungeon WC << !Shaman
 step
     #label JourneytoHillsbrad
     .goto Silverpine Forest,44.18,42.68
@@ -3841,10 +3841,6 @@ step
     .dungeon GNOMER
 step
     #optional
-    .abandon 1013 >>Abandon The Book of Ur
-    .dungeon SFK
-step
-    #optional
     .abandon 1014 >>Abandon Arugal Must Die
     .dungeon SFK
 step
@@ -4002,13 +3998,14 @@ step << Hunter
     .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
     .mob Elder Ashenvale Bear
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
-    .xp >26,1 --Ghostpaw Alphas are lvl 27-28
+    .xp >27,1 --Ghostpaw Alphas are lvl 27-28
 step << Hunter
     .goto Ashenvale,73.38,61.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Qeeju|r
     .stable >> Abandon the |cRXP_ENEMY_Elder Ashenvale Bear|r or |cRXP_ENEMY_Ghostpaw Alpha|r and retrieve your regular pet
     .target Qeeju
     .zoneskip Ashenvale,1
+    .train 16830,3
 step << BloodElf
     #optional
     .goto Ashenvale,71.10,68.12

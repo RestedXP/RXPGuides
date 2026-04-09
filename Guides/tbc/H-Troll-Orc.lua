@@ -985,7 +985,7 @@ step << !Shaman !Hunter
 step << Rogue
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
-    .collect 29007,1,786,1 --Weighted Throwing Axe (200)
+    .collect 29007,1,791,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
@@ -993,14 +993,14 @@ step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (20)
-    .collect 159,20,786,1
+    .collect 159,20,791,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (10)
-    .collect 159,10,786,1
+    .collect 159,10,791,1
     .target K'waii
     .money <0.0050
 step << Rogue
@@ -1013,7 +1013,7 @@ step << Rogue
 step << Rogue
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
-    .collect 2494,1,786,1 --Collect Stiletto (1)
+    .collect 2494,1,791,1 --Collect Stiletto (1)
     .target Trayexir
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -1028,7 +1028,7 @@ step << Orc Warrior
 step << Orc Warrior
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T132401:0|t[large Axe] |cRXP_BUY_from him|r
-    .collect 2491,1,786,1 --Collect Large Axe (1)
+    .collect 2491,1,791,1 --Collect Large Axe (1)
     .target Trayexir
     .money <0.0484
     .itemStat 16,QUALITY,<7
@@ -1043,7 +1043,7 @@ step << Troll Warrior
 step << Troll Warrior
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from him|r
-    .collect 2490,1,786,1 --Collect Tomahawk (1)
+    .collect 2490,1,791,1 --Collect Tomahawk (1)
     .target Trayexir
     .money <0.0540
     .itemStat 16,QUALITY,<7
@@ -1159,6 +1159,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Turn in In Favor of Spirituality
     .accept 5648 >> Accept Garments of Spirituality
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
@@ -2386,6 +2387,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> Turn in In Favor of Spirituality
     .accept 5648 >> Accept Garments of Spirituality
+    .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46

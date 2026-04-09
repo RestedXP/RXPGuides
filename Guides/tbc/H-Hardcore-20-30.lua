@@ -3849,10 +3849,6 @@ step
     .bindlocation 1638,1
 step
     #optional
-    .abandon 1013 >>Abandon The Book of Ur
-    .dungeon SFK
-step
-    #optional
     .abandon 1014 >>Abandon Arugal Must Die
     .dungeon SFK
 step
@@ -4878,13 +4874,14 @@ step << Hunter
     .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Elder Ashenvale Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 4)]
     .mob Elder Ashenvale Bear
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
-    .xp >26,1 --Ghostpaw Alphas are lvl 27-28
+    .xp >27,1 --Ghostpaw Alphas are lvl 27-28
 step << Hunter
     .goto Ashenvale,73.38,61.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Qeeju|r
     .stable >> Abandon the |cRXP_ENEMY_Elder Ashenvale Bear|r or |cRXP_ENEMY_Ghostpaw Alpha|r and retrieve your regular pet
     .target Qeeju
     .zoneskip Ashenvale,1
+    .train 16830,3
 step << BloodElf
     #optional
     .goto Ashenvale,71.10,68.12

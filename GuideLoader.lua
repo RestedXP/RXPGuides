@@ -1053,7 +1053,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     guide.group = guide.group or groupOrContent
     groupOrContent = addon.GroupOverride(guide) or groupOrContent
 
-    if addon.game == "TBC" and guide.classic and not groupOrContent:find("TBC") and groupOrContent:sub(1,1) ~= "+" then
+    if addon.game == "TBC" and guide.classic and not guide.wotlk and not groupOrContent:find("TBC") and groupOrContent:sub(1,1) ~= "+" then
         if guide.subgroup then
             local range = guide.subgroup:match("( %d+%-%d+)$")
             if range then

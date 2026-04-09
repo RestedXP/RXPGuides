@@ -782,10 +782,10 @@ step << Draenei/NightElf
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
 step
-    #completewith next
+    #completewith RRQuests
     .goto 1429/0,395.900,-9114.200,80 >> Exit Stormwind
 step
-    #completewith next
+    #completewith RRQuests
     .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower
 step
     .goto Elwynn Forest,65.22,69.71
@@ -1017,9 +1017,9 @@ step
     >>|cRXP_ENEMY_Skeletal Warriors|r |cRXP_WARN_apply|r |T132316:0|t[Hamstring]
     >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
+    .mob +Skeletal Warrior
     .complete 56,2 -- Skeletal Mage slain (6)
-    .mob Skeletal Warrior
-    .mob Skeletal Mage
+    .mob +Skeletal Mage
 step
     .goto Duskwood,79.73,70.64,30,0
     .goto Duskwood,80.98,71.65
@@ -1039,9 +1039,9 @@ step
     >>|cRXP_ENEMY_Skeletal Warriors|r |cRXP_WARN_apply|r |T132316:0|t[Hamstring]
     >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
+    .mob +Skeletal Warrior
     .complete 56,2 -- Skeletal Mage slain (6)
-    .mob Skeletal Warrior
-    .mob Skeletal Mage
+    .mob +Skeletal Mage
 step
     #completewith Level25
     >>Kill |cRXP_ENEMY_Spiders|r in Duskwood. Loot them for their |cRXP_LOOT_Gooey Spider Legs|r
@@ -1904,7 +1904,11 @@ step
     .complete 57,2 -- Skeletal Horror slain (15)
     .mob +Skeletal Horror
     .complete 156,1 -- Rot Blossom (8)
+    .mob +Skeletal Fiend
+    .mob +Skeletal Horror
     .complete 101,3 --10/10 Skeleton Finger
+    .mob +Skeletal Fiend
+    .mob +Skeletal Horror
 step
     .goto Duskwood,7.78,34.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
@@ -3459,6 +3463,8 @@ step
     .target Pelturas Whitemoon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .accept 1035 >> Accept Fallen Sky Lake
+    .isQuestAvailable 1035
+    .isQuestTurnedIn 1034
 step
     #completewith ShamefulWaste
     .goto Ashenvale,34.41,47.98
@@ -3616,6 +3622,7 @@ step
     >>Kill the |cRXP_ENEMY_Shadethicket Oracle|r. Loot it for the |cRXP_LOOT_Fallen Moonstone|r
     .complete 1035,1
     .mob Shadethicket Oracle
+    .isOnQuest 1035
 step
     #requires slimes
     .goto Ashenvale,69.73,86.62,0
@@ -3732,6 +3739,7 @@ step
     .target Pelturas Whitemoon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1035 >> Turn in Fallen Sky Lake
+    .isQuestComplete 1035
 step
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
@@ -4874,6 +4882,15 @@ step
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
     .target Elling Trias
+step
+#ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Southshore soon
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>10 |T134026:0|t[Turtle Meat]
+    .collect 3712,10,555,1
+    .target Auctioneer Jaxon
 step << !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Newton Burnside|r
     .goto Stormwind City,57.00,72.88
@@ -4957,15 +4974,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Count Remington Ridgewell|r
     .accept 543 >>Accept The Perenolde Tiara
     .target Count Remington Ridgewell
-step
-#ah
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Southshore soon
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
-    >>10 |T134026:0|t[Turtle Meat]
-    .collect 3712,10,555,1
-    .target Auctioneer Jaxon
 step << Druid
     #completewith DruidMount
 	.cast 18960 >> |cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]

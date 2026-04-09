@@ -5917,7 +5917,6 @@ step
     .goto Ghostlands,48.43,30.93
     .itemcount 22644,5
     .isQuestAvailable 9171
-    .addquestitem 22644,9171
     .cooldown item,6948,<0
 step
     #label WindrunnerV
@@ -6114,7 +6113,7 @@ step << Priest
     .collect 11288,1,9281,1 --Greater Magic Wand
     .target Vynna
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
-    .Silvermoon City,1
+    .zoneskip Silvermoon City,1
 step << Hunter
     #completewith next
     .goto Silvermoon City,83.52,48.68,30,0
@@ -6161,7 +6160,7 @@ step << Hunter
     .money <0.3812 << Troll/Orc
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.7
-    .Silvermoon City,1
+    .zoneskip Silvermoon City,1
 step << Warlock
     #completewith SMTraining4
     .goto Silvermoon City,73.39,59.65,30,0
@@ -7960,6 +7959,15 @@ step
     .cooldown item,6948,>0
     .xp <15,1
     .xp >30,1
+step
+    .goto Ghostlands,48.43,30.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mouldier|r
+    .accept 9171 >> Accept Culinary Crunch
+    .turnin 9171 >> Turn in Culinary Crunch
+    .target Master Chef Mouldier
+    .itemcount 22644,5
+    .isQuestAvailable 9171
+    .addquestitem 22644,9171
 step
     #completewith Aminel
     .goto Ghostlands,48.91,31.13,12,0

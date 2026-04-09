@@ -834,22 +834,22 @@ s["ROGUE"] = {
         --1776, -- gouge
         1757, -- sinister strike r2
         --1784 -- stealth
-        3273, --First Aid
-        2018 --Blacksmithing
+        129, --First Aid
+        164 --Blacksmithing
     },
     [8] = {
         1776, -- gouge
         6760, -- eviscerate r2
         5277, -- evasion
-        3273, --first aid
+        129, --First Aid
         1784 -- stealth
     },
     [10] = {
-            5277, -- evasion
+        5277, -- evasion
         1424, -- dual wield
         2983, -- sprint
         201, --1h Swords
-	    2575 --mining
+	    186 --mining
         --6452 -- Anti-venom(FA)
 
     },
@@ -897,10 +897,12 @@ s["ROGUE"] = {
         6762, -- eviscerate r4
         3420, -- crippling poison r1
         2836, --detect traps
-        1943 --Rupture
+        1943, --Rupture
+        3278 --Heavy Wool Bandage
     },
     [26] = {
         --1767 -- kick r2
+        3278 --Heavy Wool Bandage
     },
     [28] = {
         8687, -- instant poison 2

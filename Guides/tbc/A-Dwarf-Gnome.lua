@@ -2911,7 +2911,6 @@ step
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
     .accept 62 >> Accept The Fargodeep Mine
-    .accept 239 >> Accept Westbrook Garrison Needs Help!
     .target Marshal Dughan
 step
     .goto Elwynn Forest,43.318,65.705
@@ -2963,11 +2962,6 @@ step
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 176 >> Accept Wanted: "Hogger"
     .goto Elwynn Forest,24.548,74.672
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
-    .goto Elwynn Forest,24.234,74.450
-    .target Deputy Rainer
 step
     .isOnQuest 176
     .goto Elwynn Forest,27.0,86.7,70,0
