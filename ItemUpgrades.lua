@@ -1920,7 +1920,11 @@ end
 
 local function calculate(itemLink, scanData)
     if scanData.lowestPrice <= 0 then return end
-    local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
+    local itemData = addon.itemUpgrades:GetItemData(itemLink)
+
+    if not itemData and scanData.itemID then
+        itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
+    end
 
     -- Should only have queried usable items, so not intentionally nil
     if not itemData then
