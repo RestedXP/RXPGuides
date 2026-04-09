@@ -2537,7 +2537,10 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 
     PrintAHDebugSummary("display", n)
-    if n == 0 and not ahSession.awaitingItemData then _G.StaticPopup_Show("RXPNoUpgradesFound") end
+    if n == 0 and not ahSession.awaitingItemData then
+        AHLog("No upgrades have been found")
+        _G.StaticPopup_Show("RXPNoUpgradesFound")
+    end
 end
 
 -- Update icons to Brandung mockup
