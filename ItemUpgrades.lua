@@ -1630,6 +1630,57 @@ local ahSession = {
 
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
+local function CountTableEntries(t)
+    local count = 0
+    for _ in pairs(t or {}) do
+        count = count + 1
+    end
+    return count
+end
+
+local function PrintAHDebugSummary(stage, renderedCount)
+    local s = ahSession.lastAnalyzeSummary or {}
+    print(
+        fmt(
+            "RXP AH DBG [%s]: scanned=%d pending=%d analyzed=%d ratios=%d noComparisons=%d zeroWeight=%d rendered=%d awaiting=%s spec=%s",
+            stage,
+            s.scanDataCount or 0,
+            s.pendingCount or 0,
+            s.analyzedCount or 0,
+            s.ratioCount or 0,
+            s.noComparisonCount or 0,
+            s.zeroWeightCount or 0,
+            renderedCount or 0,
+            tostring(ahSession.awaitingItemData),
+            tostring(addon.settings.profile.itemUpgradeSpec)
+        )
+    )
+
+    if renderedCount == 0 then
+        local sampleCount = 0
+        for itemLink, scanData in pairs(ahSession.scanData or {}) do
+            sampleCount = sampleCount + 1
+            print(
+                fmt(
+                    "RXP AH DBG sample %d: name=%s id=%s equip=%s weight=%s ratio=%s comparisons=%s link=%s",
+                    sampleCount,
+                    tostring(scanData.name),
+                    tostring(scanData.itemID),
+                    tostring(scanData.itemEquipLoc),
+                    tostring(scanData.totalWeight),
+                    tostring(scanData.ratio),
+                    tostring(scanData.comparisons and #scanData.comparisons or 0),
+                    tostring(itemLink)
+                )
+            )
+
+            if sampleCount >= 5 then
+                break
+            end
+        end
+    end
+end
+
 local function QueueResultRefresh()
     if ahSession.refreshQueued then return end
 
@@ -1705,6 +1756,11 @@ function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
 
     -- If item queried, it's probably applicable to ItemUpgrades, so build and cache
     -- TODO ensure no infinite loop
+    for itemLink, scanData in pairs(ahSession.scanData or {}) do
+        if scanData.itemID == itemID then
+            addon.itemUpgrades:GetItemData(itemLink)
+        end
+    end
     addon.itemUpgrades:GetItemData("item:" .. itemID)
     ahSession.infoItemsReceived[itemID] = true
 
@@ -2038,9 +2094,31 @@ function addon.itemUpgrades.AH:Analyze()
 
     local bAS
     local pendingCount = 0
+    local summary = {
+        scanDataCount = CountTableEntries(ahSession.scanData),
+        analyzedCount = 0,
+        pendingCount = 0,
+        ratioCount = 0,
+        noComparisonCount = 0,
+        zeroWeightCount = 0
+    }
 
     for itemLink, scanData in pairs(ahSession.scanData) do
         if calculate(itemLink, scanData) then
+            summary.analyzedCount = summary.analyzedCount + 1
+
+            if scanData.totalWeight == 0 then
+                summary.zeroWeightCount = summary.zeroWeightCount + 1
+            end
+
+            if not scanData.comparisons or #scanData.comparisons == 0 then
+                summary.noComparisonCount = summary.noComparisonCount + 1
+            end
+
+            if scanData.ratio and scanData.ratio > 0 then
+                summary.ratioCount = summary.ratioCount + 1
+            end
+
             bAS = ahSession.bestAnalysis[scanData.itemEquipLoc]
             -- print("Analyze", itemLink, "weightPerCopper",
             --      scanData.weightPerCopper, "relativeWPC",
@@ -2051,6 +2129,8 @@ function addon.itemUpgrades.AH:Analyze()
         end
     end
 
+    summary.pendingCount = pendingCount
+    ahSession.lastAnalyzeSummary = summary
     ahSession.awaitingItemData = pendingCount > 0
     return pendingCount
 end
@@ -2362,7 +2442,10 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
         if data.budget.itemLink or data.best.itemLink then
             n = n + 1
             -- print("DisplayEmbeddedResults:", data.slotName, "processing upgrades")
-            blockData = {['Name'] = data.slotName}
+            blockData = {
+                ['Name'] = data.slotName,
+                Template = "RXP_IU_AH_ItemBlock"
+            }
 
             -- Best upgrade
             if data.best.itemLink then
@@ -2408,6 +2491,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             -- print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
     end
+    PrintAHDebugSummary("display", n)
     if n == 0 and not ahSession.awaitingItemData then _G.StaticPopup_Show("RXPNoUpgradesFound") end
 end
 
