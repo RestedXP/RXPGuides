@@ -2019,7 +2019,7 @@ local function calculate(itemLink, scanData)
     end
 
     -- Should only have queried usable items, so not intentionally nil
-    if not itemData then
+    if not itemData or itemData.totalWeight == nil or itemData.itemEquipLoc == nil then
         ahSession.pendingItemIDs[scanData.itemID] = true
         -- print("itemData nil", itemLink)
         return false
@@ -2143,7 +2143,7 @@ function addon.itemUpgrades.AH:Analyze()
         if calculate(itemLink, scanData) then
             summary.analyzedCount = summary.analyzedCount + 1
 
-            if scanData.totalWeight == 0 then
+            if scanData.totalWeight == nil or scanData.totalWeight == 0 then
                 summary.zeroWeightCount = summary.zeroWeightCount + 1
             end
 
