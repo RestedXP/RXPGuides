@@ -1620,11 +1620,43 @@ local ahSession = {
     scanStatus = {
         scanType = _G.AUCTION_CATEGORY_ARMOR
     },
+    pendingItemIDs = {},
+    awaitingItemData = false,
+    refreshQueued = false,
+    refreshAttempts = 0,
 
     selectedRow = nil
 }
 
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
+
+local function QueueResultRefresh()
+    if ahSession.refreshQueued then return end
+
+    ahSession.refreshQueued = true
+    C_Timer.After(0.2, function()
+        ahSession.refreshQueued = false
+
+        if not ahSession.awaitingItemData then
+            ahSession.refreshAttempts = 0
+            return
+        end
+
+        if not (_G.AuctionFrame and _G.AuctionFrame:IsShown()) then return end
+
+        local pendingCount = addon.itemUpgrades.AH:Analyze()
+        addon.itemUpgrades.AH:DisplayEmbeddedResults()
+
+        if pendingCount and pendingCount > 0 then
+            ahSession.refreshAttempts = ahSession.refreshAttempts + 1
+            if ahSession.refreshAttempts < 20 then
+                QueueResultRefresh()
+            end
+        else
+            ahSession.refreshAttempts = 0
+        end
+    end)
+end
 
 function addon.itemUpgrades.AH:Setup()
     print("RXP AH: enableItemUpgradesAH =", tostring(addon.settings.profile.enableItemUpgradesAH), "game =", tostring(addon.game))
@@ -1654,6 +1686,10 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
     ahSession.mode = nil
     ahSession.scanData = {}
     ahSession.selectedRow = nil
+    ahSession.pendingItemIDs = {}
+    ahSession.awaitingItemData = false
+    ahSession.refreshQueued = false
+    ahSession.refreshAttempts = 0
     ahSession.sentQuery = false
     ahSession.scanPage = 0
     ahSession.scanResults = 0
@@ -1671,6 +1707,10 @@ function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
     -- TODO ensure no infinite loop
     addon.itemUpgrades:GetItemData("item:" .. itemID)
     ahSession.infoItemsReceived[itemID] = true
+
+    if ahSession.pendingItemIDs[itemID] or ahSession.awaitingItemData then
+        QueueResultRefresh()
+    end
 end
 
 -- Helper function for scanning.xml RXP_IU_AH_BuyButton:OnClick
@@ -1773,7 +1813,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
-            self:Analyze()
+            if self:Analyze() > 0 then QueueResultRefresh() end
             self:DisplayEmbeddedResults()
         end
         return
@@ -1829,7 +1869,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
-            self:Analyze()
+            if self:Analyze() > 0 then QueueResultRefresh() end
             self:DisplayEmbeddedResults()
         end
         return
@@ -1884,9 +1924,12 @@ local function calculate(itemLink, scanData)
 
     -- Should only have queried usable items, so not intentionally nil
     if not itemData then
+        ahSession.pendingItemIDs[scanData.itemID] = true
         -- print("itemData nil", itemLink)
-        return
+        return false
     end
+
+    ahSession.pendingItemIDs[scanData.itemID] = nil
 
     scanData.totalWeight = itemData.totalWeight
     scanData.weightPerCopper = itemData.totalWeight / scanData.lowestPrice
@@ -1924,6 +1967,7 @@ local function calculate(itemLink, scanData)
     scanData.ratio = highestRatio
     scanData.relativeWeightPerCopper = highestRWPC
     scanData.weightIncrease = hightestWeightIncrease
+    return true
 end
 
 local function analyzeSlotUpgrade(scanData, itemLink, bAS)
@@ -1977,6 +2021,7 @@ end
 
 function addon.itemUpgrades.AH:Analyze()
     ahSession.bestAnalysis = {}
+    ahSession.awaitingItemData = false
 
     -- We already know all of this is usable, so just care about slots
     for invEquipType, _ in pairs(session.equippableSlots) do
@@ -1988,16 +2033,22 @@ function addon.itemUpgrades.AH:Analyze()
     end
 
     local bAS
+    local pendingCount = 0
 
     for itemLink, scanData in pairs(ahSession.scanData) do
-        calculate(itemLink, scanData)
-
-        bAS = ahSession.bestAnalysis[scanData.itemEquipLoc]
-        -- print("Analyze", itemLink, "weightPerCopper",
-        --      scanData.weightPerCopper, "relativeWPC",
-        --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
-        analyzeSlotUpgrade(scanData, itemLink, bAS)
+        if calculate(itemLink, scanData) then
+            bAS = ahSession.bestAnalysis[scanData.itemEquipLoc]
+            -- print("Analyze", itemLink, "weightPerCopper",
+            --      scanData.weightPerCopper, "relativeWPC",
+            --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
+            analyzeSlotUpgrade(scanData, itemLink, bAS)
+        else
+            pendingCount = pendingCount + 1
+        end
     end
+
+    ahSession.awaitingItemData = pendingCount > 0
+    return pendingCount
 end
 
 -- TODO get parent frame names instead
@@ -2219,6 +2270,10 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
         ahSession.scanStopped = false
         ahSession.scanData = {}
+        ahSession.pendingItemIDs = {}
+        ahSession.awaitingItemData = false
+        ahSession.refreshQueued = false
+        ahSession.refreshAttempts = 0
         ahSession.scanType = AuctionFilterButtons["Armor"]
         ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
         ahSession.selectedRow = nil
@@ -2293,6 +2348,10 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
 
+    if ahSession.displayFrame and ahSession.displayFrame.DataProvider then
+        ahSession.displayFrame.DataProvider:Flush()
+    end
+
     local blockData
     local n = 0
     for itemEquipLoc, data in pairs(ahSession.bestAnalysis) do
@@ -2345,7 +2404,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             -- print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
     end
-    if n == 0 then _G.StaticPopup_Show("RXPNoUpgradesFound") end
+    if n == 0 and not ahSession.awaitingItemData then _G.StaticPopup_Show("RXPNoUpgradesFound") end
 end
 
 -- Update icons to Brandung mockup
