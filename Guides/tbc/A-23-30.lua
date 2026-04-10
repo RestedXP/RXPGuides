@@ -1134,6 +1134,7 @@ step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
     .turnin 2282 >> Turn in Alther's Mill
     .target Lucius
+    .isQuestComplete 2282
 step
     .goto Redridge Mountains,26.75,46.43
     >>Click the |cRXP_PICK_Wanted Poster|r
