@@ -43,7 +43,7 @@ step << Hunter
     .goto Teldrassil,59.8,34.1
     .xp 4-610 >> Grind en route until you are 610xp away from level 4 (790/1400)
 step << Hunter
-    #xprate >1.3
+    #xprate >1.49
     .goto Teldrassil,59.8,34.1
     .xp 4-755 >> Grind until you are 755xp away from level 4 (645/1400)
 step << Hunter
@@ -140,7 +140,7 @@ step << Hunter
     #xprate <1.5
     .xp 4-40
 step << Hunter
-    #xprate >1.3
+    #xprate >1.49
     .xp 4-50
 step << Hunter
     .goto Teldrassil,57.80,40.97,25,0
@@ -373,7 +373,7 @@ step
     .accept 932 >> Accept Twisted Hatred
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step
-    #xprate >1.3
+    #xprate >1.49
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
@@ -936,7 +936,7 @@ step << Warrior/Rogue
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Byancie
 step
-    #xprate >1.3
+    #xprate >1.49
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
@@ -1044,14 +1044,14 @@ step
     .xp 10-1420 >>Grind until you are 1420xp away from level 10 (5080/6500) << !Druid !Rogue
     .xp 10-2340 >>Grind until you are 2340xp away from level 10 (4160/6500) << Rogue
 step
-    #xprate >1.3
+    #xprate >1.49
     .goto Teldrassil,38.6,58.0
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob Webwood Lurker
     .mob Webwood Venomfang
 step
-	#xprate >1.3
+	#xprate >1.49
 	.xp 10-3300 << !Druid
 	.xp 10-640 << Druid
 step << !Rogue
@@ -1369,13 +1369,13 @@ step
     >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
     .turnin 938 >> Turn in Mist
 step
-    #xprate >1.3 << !Hunter
+    #xprate >1.49 << !Hunter
     .goto Teldrassil,38.32,34.36
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 937 >> Accept The Enchanted Glade
 step
-    #xprate >1.3 << !Hunter
+    #xprate >1.49 << !Hunter
     #completewith harpies2
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
     >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
@@ -1387,14 +1387,14 @@ step
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
 step
-    #xprate >1.3 << !Hunter
+    #xprate >1.49 << !Hunter
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest. Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
     .target Mist
 step
-    #xprate >1.3 << !Hunter
+    #xprate >1.49 << !Hunter
 	#label harpies2
     .goto Teldrassil,38.32,34.36
     .target Sentinel Arynia Cloudsbreak
@@ -1402,7 +1402,7 @@ step
     >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
     .turnin 938 >> Turn in Mist
 step
-    #xprate >1.3 << !Hunter
+    #xprate >1.49 << !Hunter
     .goto Teldrassil,33.619,29.819
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
     >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
@@ -1414,7 +1414,7 @@ step
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
 step
-    #xprate >1.3 << !Hunter
+    #xprate >1.49 << !Hunter
     .goto Teldrassil,38.32,34.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
