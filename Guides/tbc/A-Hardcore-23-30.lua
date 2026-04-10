@@ -904,6 +904,7 @@ step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
     .turnin 2282 >> Turn in Alther's Mill
     .target Lucius
+    .isQuestComplete 2282
 step
     .goto Redridge Mountains,26.75,46.43
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -2938,10 +2939,22 @@ step
     .target Harlo Barnaby
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
+step 
+    .goto Wetlands,10.0,56.8
+    .target Valstag Ironjaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r
+    .accept 473 >> Accept Report to Captain Stoutfist
+    .isQuestAvailable 473
 step
     #completewith next
     .goto Wetlands,10.28,56.334,20,0
     .goto Wetlands,9.742,57.866,15 >> Travel upstairs in Menethil Keep
+step 
+    .goto Wetlands,9.86,57.48
+    .target Captain Stoutfist
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 473 >> Turn in Report to Captain Stoutfist
+    .isOnQuest 473
 step
     .goto Wetlands,9.861,57.486
     .target Captain Stoutfist
@@ -3195,6 +3208,7 @@ step
     .complete 943,1 --1/1 Stone of Relu
     .mob Mottled Razormaw
     .mob Mottled Scytheclaw
+    .isOnQuest 943
 step
     .goto Wetlands,38.17,50.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
@@ -3471,6 +3485,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fly Forest Song >> Fly to Forest Song
     .target Daelyshia
+    .subzoneskip 2358 --Forest Song
 step
     .goto 1440/1,-3149.800,2899.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gnarl|r
@@ -3764,6 +3779,25 @@ step
 	>>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
 	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
     .zoneskip Wetlands
+    .bindlocation 2104,1 --HS in Menethil
+step
+    #optional
+    #completewith next
+    .subzone 415 >>Return to Astranaar
+step
+    #optional
+    .goto Ashenvale,34.41,47.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
+    .fly Darkshore >> Fly to Darkshore
+    .target Daelyshia
+    .zoneskip Darkshore
+    .bindlocation 2104 --HS not in Menethil
+step
+    #optional
+    .goto Darkshore,32.44,43.71
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
+    .zone Wetlands >> Take the boat to Menethil Harbor
+    .bindlocation 2104 --HS not in Menethil
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3925,11 +3959,10 @@ step << Mage
     #completewith KingsTribute
     .zone Ironforge >> |cRXP_WARN_Cast|r |T135757:0|t[Teleport: Ironforge]
 step << Mage
-    .goto Stormwind City,36.87,81.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea|r
+    .goto Ironforge,27.18,8.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r
     .trainer >> Train your class spells
-    .target Elsharin
-	.target Jennea Cannon
+    .target Dink
 step << Shaman
     .goto Ironforge,55.436,28.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Javad|r

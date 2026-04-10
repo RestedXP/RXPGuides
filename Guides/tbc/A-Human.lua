@@ -8,8 +8,8 @@ RXPGuides.RegisterGuide([[
 #name 1-11 Elwynn Forest
 #subgroup RestedXP Alliance 1-20
 #defaultfor Human
-#next 12-14 Loch Modan << Warlock
-#next 11-12 Loch Modan << !Warlock
+#next 12-14 Loch Modan;12-14 Darkshore << Warlock
+#next 11-12 Loch Modan;12-14 Darkshore << !Warlock
 
 step << !Human
     #sticky
@@ -2202,6 +2202,7 @@ step << Warrior
     .goto Ironforge,61.177,89.508
     .target +Buliwyf Stonehand
 step << Warrior
+#xprate <1.5
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
@@ -2212,6 +2213,7 @@ step << Warrior
 --XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
 --XX (WARR ONLY): 90 1638, 90 1639, 210 1640, 420 1665
 step << Warrior
+#xprate <1.5
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from her|r
@@ -2220,6 +2222,7 @@ step << Warrior
     .xp >10+7405,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Warrior
+#xprate <1.5
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
@@ -2229,6 +2232,7 @@ step << Warrior
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 --XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
 step << Warrior
+#xprate <1.5
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from her|r
@@ -2269,6 +2273,7 @@ step
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
 step
+#xprate <1.5
 #ah
     #optional
     .goto 1455,33.225,64.648,0
@@ -2290,18 +2295,93 @@ step
     .target Auctioneer Buckler
     .zoneskip Ironforge,1
 step
+#xprate >1.49
+    .goto Ironforge,60.072,36.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl Riknussun|r
+    .target Daryl Riknussun
+    .train 2550 >> Train |T133971:0|t[Cooking]
+step << Warrior/Paladin/Rogue
+#xprate >1.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geofram Bouldertoe|r downstairs in the building
+    .goto Ironforge,51.8,29.5,15,0
+    .goto Ironforge,49.6,28.2,12,0
+    .goto Ironforge,49.9,26.3
+    .train 2575 >>Train |T134708:0|t[Mining]
+    .target Geofram Bouldertoe
+    .train 2018,3 --Blacksmithing
+step << Warrior/Paladin/Rogue
+#xprate >1.49
+    #optional
+    .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
+    .usespell 2580
+    .train 2575,3 --Mining Trained
+step
+#xprate >1.49
+#ah
+    #sticky
+    #optional
+    .goto 1455,33.225,64.648,0
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+    .skill cooking,<1,1 --XX Shows if cooking skill is 1 or above
+step
+#xprate >1.49
+#ah
+    #sticky
+    #optional
+    .goto 1455,33.225,64.648,0
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|T133912:0|t[Darkshore Grouper]
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+    .train 2550,1 -- skips if cooking is trained (Apprentice)
+    .train 3102,1 -- skips if cooking is trained (Journeyman)
+
+--
+--
+
+step
+#xprate <1.5
     .goto Ironforge,18.14,51.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
     .home >> Set your Hearthstone to Ironforge
     .target Innkeeper Firebrew
     .bindlocation 1537
 step
+#xprate <1.5
     #optional
     #completewith Dirt
     .goto 1426,53.47,35.02
     >>Exit Ironforge
     .zone Dun Morogh >> Travel to Dun Morogh
 step
+#xprate <1.5
     #optional
     #label Dirt
     #completewith Rudra
@@ -2309,6 +2389,7 @@ step
     .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
     .isQuestAvailable 314
 step
+#xprate <1.5
     #completewith next
     #requires Dirt
     .goto 1426,62.778,54.591,0
@@ -2318,6 +2399,7 @@ step
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .mob Vagash
 step << Warrior/Rogue
+#xprate <1.5
     #optional
     #requires Dirt
     #completewith VagashEnd
@@ -2327,12 +2409,14 @@ step << Warrior/Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
     .xp <11,1
 step
+#xprate <1.5
     #label Rudra
     .goto Dun Morogh,63.082,49.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .accept 314 >> Accept Protecting the Herd
     .target Rudra Amberstill
 step
+#xprate <1.5
     #label VagashEnd
     .goto 1426,62.778,54.591,0
     .goto 1426,62.094,47.154,40,0
@@ -2346,11 +2430,13 @@ step
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
+#xprate <1.5
     .goto Dun Morogh,63.082,49.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .turnin 314 >> Turn in Protecting the Herd
     .target Rudra Amberstill
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Senator Mehr Stonehallow|r and |cFF00FF25Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
     .target +Senator Mehr Stonehallow
@@ -2359,18 +2445,21 @@ step
     .goto Dun Morogh,69.084,56.330
     .target +Foreman Stonebrow
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dank Drizzlecut|r
     .goto Dun Morogh,69.324,55.456
     .train 2575 >>Train |T134708:0|t[Mining]
     .target Dank Drizzlecut
     .train 2018,3 --Blacksmithing
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     #optional
     #completewith QuarryEnd
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
     .usespell 2580
     .train 2575,3 --Mining Trained
 step
+#xprate <1.5
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
     .goto Dun Morogh,70.7,56.4
@@ -2380,6 +2469,7 @@ step
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob +Rockjaw Bonesnapper
 step
+#xprate <1.5
     #label QuarryEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
@@ -2389,41 +2479,200 @@ step
     .goto Dun Morogh,68.671,55.969
     .target +Senator Mehr Stonehallow
 step << !Warrior !Rogue !Paladin
+#xprate <1.5
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
     .vendor >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r
     .target Kazan Mogosh
     .xp >15,1
 step
+#xprate <1.5
     .goto Dun Morogh,68.379,54.492
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Cook Ghilm|r
     .train 2550 >> Train |T133971:0|t[Cooking]
     .target Cook Ghilm
 step
+#xprate <1.5
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.892,39.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
     .target Pilot Hammerfoot
 step
+#xprate <1.5
     .goto Dun Morogh,79.672,36.171
     >>Click the |cRXP_PICK_Dwarven Corpse|r on the ground
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
 step
+#xprate <1.5
     .goto Dun Morogh,78.97,37.14
     >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
 step
+#xprate <1.5
     .goto Dun Morogh,83.892,39.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .turnin 417,1 >> Turn in A Pilot's Revenge << Rogue
     .turnin 417 >> Turn in A Pilot's Revenge << !Rogue
     .target Pilot Hammerfoot
 step
+#xprate <1.5
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
     .zoneskip Loch Modan
+
+--
+--
+
+step
+#xprate >1.49
+    .goto 1426,53.042,35.383
+    .zone Dun Morogh >> Exit Ironforge
+step
+#xprate >1.49
+    #completewith next
+    .goto Dun Morogh,30.9,33.1,20 >> Travel to the Dun Morogh -> Wetlands deathskip spot
+step
+#xprate >1.49
+    .goto Dun Morogh,31.51,29.99,20,0
+    .goto Dun Morogh,32.4,29.1,20 >> Continue following through the mountain to the deathskip location
+step
+#xprate >1.49
+    .goto Dun Morogh,33.0,27.2,20,0
+    .goto Dun Morogh,33.0,25.2,20,0
+    .goto Wetlands,11.727,43.306
+    .deathskip >> Run straight off the edge to the north and drop down. Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step
+#xprate >1.49
+    #completewith next
+    .goto Wetlands,11.95,50.24,80 >> Swim to shore toward Menethil Harbor
+    .subzoneskip 150 --Menethil Harbor
+step
+#xprate >1.49
+    .goto Wetlands,10.4,56.0,15,0
+    .goto Wetlands,10.1,56.9,15,0
+    .goto Wetlands,10.6,57.2,15,0
+    .goto 1437,10.760,56.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r on the bottom floor of the barracks
+    .vendor 1448 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
+	.target Neal Allen
+    .bronzetube
+    .money <0.08
+step
+#xprate >1.49
+    #optional
+    #completewith next
+    .goto 1437,10.233,56.201,15 >> Exit Menethil Keep
+    .subzoneskip 2103,1 --Menethil Keep
+step
+#xprate >1.49
+    .goto Wetlands,9.49,59.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r outside
+    .fp Wetlands >> Get the Wetlands flight path
+    .target Shellei Brondir
+step
+#xprate >1.49
+    .goto Wetlands,7.95,56.38
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r inside
+    .vendor 1453 >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from him (if they're up)|r
+    .target Dewin Shimmerdawn
+step
+#xprate >1.49
+    #completewith DarkshoreBoat
+    .goto Wetlands,7.10,57.96,30,0
+    .goto Wetlands,4.61,57.26,15 >> Travel to the dock for the boat to Auberdine
+    .zoneskip Darkshore
+step
+#xprate >1.49
+    #optional
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 -- shows if cooking is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step
+#xprate >1.49
+    #optional
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 -- shows if cooking is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step
+#xprate >1.49
+    #optional
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 -- shows if cooking is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step
+#xprate >1.49
+    #optional
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 -- shows if cooking is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step
+#xprate >1.49
+    #optional
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 -- shows if cooking is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step
+#xprate >1.49
+    #optional
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 -- shows if cooking is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step
+#xprate >1.49
+    #optional
+    .goto 1437,4.370,56.762
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore|r
+    .zone Darkshore >> Take the boat to Darkshore
+    .skill firstaid,75,1 -- shows if firstaid is <75
+    .skill firstaid,<1,1 -- shows if firstaid is >1
+step
+#xprate >1.49
+    #label DarkshoreBoat
+    .goto 1437,4.370,56.762
+    .zone Darkshore >> Take the boat to Darkshore
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2432,6 +2681,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP TBC Guide (A)
 << Alliance
+#xprate <1.5
 #name 11-12 Loch Modan << !Warlock
 #name 12-14 Loch Modan << Warlock
 #subgroup RestedXP Alliance 1-20
@@ -3047,6 +3297,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP TBC Guide (A)
 << Alliance Warlock
+#xprate <1.5
 #name 14-14 Darkshore
 #subgroup RestedXP Alliance 1-20
 #defaultfor Human Warlock
