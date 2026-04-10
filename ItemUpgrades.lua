@@ -1407,7 +1407,7 @@ local ahSession = {
     scanStatus = {
         scanType = _G.AUCTION_CATEGORY_ARMOR
     },
-    
+
     toCancel = false,
     isCanceled = false,
     isScanning = false,
@@ -1425,7 +1425,6 @@ local function resetSession()
     ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
     ahSession.toCancel = false
     ahSession.isScanning = false
-    ahSession.sentQuery = false
     --print("reset finished")
 end
 
@@ -1541,6 +1540,7 @@ function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
         -- If next button is enabled, and we're down here; then auction not found
         -- Additionally, the next page button is disabled on final page, so no need to track count
         _G.BrowseNextPageButton:Click()
+        print("click")
         return self:FindItemAuction(itemData, true)
     else
         -- If next page not enabled, and we're here; then no results at all

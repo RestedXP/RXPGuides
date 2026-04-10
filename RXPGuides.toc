@@ -60,6 +60,7 @@ Guides/Talents/tbc.xml [AllowLoadGameType tbc]
 Guides/Talents/classic.xml [AllowLoadGameType vanilla]
 
 ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,cata]
+Professions.lua [AllowLoadGameType vanilla,tbc]
 
 CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,tbc,wrath]
 Professions.lua [AllowLoadGameType vanilla,tbc]
