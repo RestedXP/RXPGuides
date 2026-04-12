@@ -25,9 +25,20 @@ local eventsToRegister = {
 
 }
 
+--[[ 
+segments = {
+    [1] = {
+        "recepieName1",
+        "recepieName2",
+        "...",
+        "recepieName3",
+    }
+}
+]]
+
 local professions = {
-    ["Smithing"] = {
-        recepies = {
+    ["Blacksmithing"] = {
+        recipes = {
             ["Arcanite Skeleton Key"] = {
                 trainable = true,
                 orange = 1,
@@ -1796,18 +1807,20 @@ local professions = {
             },
         },
         segments = {
-
+            [5] = {
+                "Rough Copper Vest",
+                "Rough Sharpening Stone",
+                "Copper Bracers",
+                "Copper Chain Pants",
+            },
+            [10] = {
+                "Arcanite Skeleton Key",
+                "Rough Copper Vest",
+                "Rough Sharpening Stone",
+                "Copper Bracers",
+                "Copper Chain Pants",
+            },
         },
-    }
-}
-
-local materialsToSeachBySegments = {
-    {
-        segmentEndLevel = 9,
-        material = {
-            "Rough stone",
-            "Copper bar",
-        }
     }
 }
 
@@ -1836,14 +1849,14 @@ local recipes = {
 local profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
-    materials = materialsToSeachBySegments,
-    materialIndex = 0,
     foundItems = {},
-
+    
     currentPage = 0,
     currentItemName = "",
-
-    materialsToScan = {},
+    
+    materialsToScan = {}, --ipairs
+    recipesToConsider = {}, --pairs
+    materialIndex = 0,
 
     sentQuery = false,
     isScanning = false,
@@ -1857,6 +1870,8 @@ function profSession:Reset()
     self.isScanning = false
     self.currentItemName = ""
     self.materialIndex = 1
+    self.recipesToConsider = {}
+    self.materialsToScan = {}
 end
 
 addon.professions.AH = addon:NewModule("ProfessionsAH", "AceEvent-3.0")
@@ -1876,7 +1891,41 @@ end
 
 --local functions
 
---Filter out grey skills
+--Gather what recipes to consider based on segment
+--minSegment = minimumSkillLevel
+--maxSegment = maximumSkillLevel
+local function gatherRecipesBySegment(professionName, minSegment, maxSegment)
+    profSession.recipesToConsider = {}
+
+    --TODO: check if ipairs work normally
+    for segmentLevel, recipesInSegment in pairs(professions[professionName].segments) do
+        if segmentLevel >= minSegment and segmentLevel <= maxSegment then
+            for _, recipe in ipairs(recipesInSegment) do
+                if not profSession.recipesToConsider[recipe] then
+                    profSession.recipesToConsider[recipe] = true
+                end
+            end
+        end
+    end
+end
+
+--Gather what materials to scan based on gatheredRecipes in a given profession
+local function gatherMaterialsToScan(professionName)
+    profSession.materialsToScan = {}
+    --We create a local table first for easier lookup
+    local lookup = {}
+    for recipeName, _ in pairs(profSession.recipesToConsider) do
+        for material, _ in pairs(professions[professionName].recipes[recipeName].materials) do
+            if not lookup[material] then
+                lookup[material] = true
+            end
+        end
+    end
+    --Repopulate the correct table
+    for k, _ in pairs(lookup) do
+        tinsert(profSession.materialsToScan, k)
+    end
+end
 
 
 --Events
@@ -1890,7 +1939,7 @@ function addon.professions.AH:AUCTION_HOUSE_DISABLED()
 end
 
 function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
-    --print("GET_ITEM_INFO_RECEIVED")
+    print("GET_ITEM_INFO_RECEIVED")
 end
 
 function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
@@ -1902,8 +1951,8 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
         profSession.sentQuery = false
         profSession.currentPage = 0
         profSession.materialIndex = profSession.materialIndex + 1
-        if profSession.materialIndex <= #profSession.materials[1].material then
-            self:Scan(profSession.materials[1].material[profSession.materialIndex])
+        if profSession.materialIndex <= #profSession.materialsToScan then
+            self:Scan(profSession.materialsToScan[profSession.materialIndex])
         end
         return
     end
@@ -1932,7 +1981,7 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
     profSession.sentQuery = false
     profSession.currentPage = profSession.currentPage + 1
 
-    self:Scan(profSession.materials[1].material[profSession.materialIndex])
+    self:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
 --Scan function
@@ -1959,8 +2008,17 @@ addon.professions.AH:Setup()
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    profSession.currentItemName = "Rough Stone"
-    addon.professions.AH:Scan(profSession.materials[1].material[profSession.materialIndex])
+    -- profSession.currentItemName = "Rough Stone"
+    -- addon.professions.AH:Scan(profSession.materials[1].material[profSession.materialIndex])
+    local professionName = "Blacksmithing"
+    local minSegment = 1
+    local maxSegment = 9
+    gatherRecipesBySegment(professionName, minSegment, maxSegment)
+    if tcount(profSession.recipesToConsider) == 0 then return end
+    gatherMaterialsToScan(professionName)
+    if #profSession.materialsToScan == 0 then return end
+    profSession.materialIndex = 1
+    addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
 --Find minimum
@@ -1969,11 +2027,13 @@ SlashCmdList['pnt'] = function()
     local minimum = {}
     local minItem = {}
     local minPrice
+    local c = 1
     for k, v in pairs(profSession.foundItems) do
         print("===" .. tostring(k) .. "===")
         minPrice = huge
         minItem = {}
         for i, itemInfo in ipars(v) do
+            c = c + 1
             --print(tostring(i)..":", itemInfo.name, itemInfo.count, itemInfo.pricePerItem, itemInfo.owner)
             if itemInfo.pricePerItem < minPrice then
                 minPrice = itemInfo.pricePerItem
@@ -1985,6 +2045,7 @@ SlashCmdList['pnt'] = function()
         end
         tinsert(minimum, minItem)
     end
+    print("c=", c)
     --Print mimimums
     print("==========")
     for _, v in pairs(minimum) do
@@ -1995,9 +2056,19 @@ end
 --Testing
 SLASH_tst1 = '/tst'
 SlashCmdList['tst'] = function()
-    local prof1, prof2, _, _, _ = GetProfessions()
-    local name = 
-    materialsToScan()
+    local professionName = "Blacksmithing"
+    local minSegment = 1
+    local maxSegment = 9
+    print("==========")
+    gatherRecipesBySegment(professionName, minSegment, maxSegment)
+    for k, _ in pairs(profSession.recipesToConsider) do
+        print(k)
+    end
+    print("==========")
+    gatherMaterialsToScan(professionName)
+    for k, _ in pairs(profSession.materialsToScan) do
+        print(k)
+    end
 end
 
 
