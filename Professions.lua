@@ -22,7 +22,6 @@ local eventsToRegister = {
     "GET_ITEM_INFO_RECEIVED",
     "AUCTION_ITEM_LIST_UPDATE",
 
-
 }
 
 --[[ 
@@ -1814,7 +1813,7 @@ local professions = {
                 "Copper Chain Pants",
             },
             [10] = {
-                "Arcanite Skeleton Key",
+                -- "Arcanite Skeleton Key",
                 "Rough Copper Vest",
                 "Rough Sharpening Stone",
                 "Copper Bracers",
@@ -1856,7 +1855,7 @@ local profSession = {
     
     materialsToScan = {}, --ipairs
     recipesToConsider = {}, --pairs
-    materialIndex = 0,
+    materialIndex = 1,
 
     sentQuery = false,
     isScanning = false,
@@ -1897,7 +1896,6 @@ end
 local function gatherRecipesBySegment(professionName, minSegment, maxSegment)
     profSession.recipesToConsider = {}
 
-    --TODO: check if ipairs work normally
     for segmentLevel, recipesInSegment in pairs(professions[professionName].segments) do
         if segmentLevel >= minSegment and segmentLevel <= maxSegment then
             for _, recipe in ipairs(recipesInSegment) do
@@ -1965,7 +1963,7 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
 
         --Check if itemId already exists
         if not profSession.foundItems[itemId] then profSession.foundItems[itemId] = {} end
-        --TODO: Why do some auctions not have a byout??????
+        --TODO: Why do some auctions not have a buyout??????
         if buyoutPrice > 0 then
             tinsert(profSession.foundItems[itemId], {
                 name = name,
