@@ -1813,7 +1813,6 @@ local professions = {
                 "Copper Chain Pants",
             },
             [10] = {
-                -- "Arcanite Skeleton Key",
                 "Rough Copper Vest",
                 "Rough Sharpening Stone",
                 "Copper Bracers",
