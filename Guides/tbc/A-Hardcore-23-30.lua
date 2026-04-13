@@ -4114,18 +4114,23 @@ step
     >>|cRXP_FRIENDLY_Thomas|r |cRXP_WARN_walks around through the Cathedral|r
     .accept 1274 >> Accept The Missing Diplomat
     .target Thomas
+    .isNotOnQuest 1274
+    .isQuestAvailable 1274
 step
     #label CleansingtheEye
     .goto Stormwind City,39.60,27.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archbishop Benedictus|r
     .turnin 293 >> Turn in Cleansing the Eye
     .target Archbishop Benedictus
+    .isOnQuest 293
 step
     .goto Stormwind City,38.72,25.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas|r
     >>|cRXP_FRIENDLY_Thomas|r |cRXP_WARN_walks around through the Cathedral|r
     .accept 1274 >> Accept The Missing Diplomat
     .target Thomas
+    .isNotOnQuest 1274
+    .isQuestAvailable 1274
 step << Mage
     .goto Stormwind City,51.75,12.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
@@ -4256,6 +4261,38 @@ step
     .home >> Set your Hearthstone to Duskwood
     .target Innkeeper Trelayne
     --xx nosubzone. check on ptr
+step
+    #optional
+    .goto Duskwood,73.59,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    .turnin 57 >> Turn in The Night Watch
+    .target Commander Althea Ebonlocke
+    .isQuestComplete 57
+step
+    #optional
+    .isQuestComplete 228
+    .goto Duskwood,73.59,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .turnin 228 >> Turn in Mor'Ladim
+    .accept 229 >> Accept The Daughter Who Lived
+    .target Commander Althea Ebonlocke
+step
+    #optional
+    .isQuestTurnedIn 228
+    .goto Duskwood,73.59,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .accept 229 >> Accept The Daughter Who Lived
+    .target Commander Althea Ebonlocke
+step
+    #optional
+    .isQuestTurnedIn 228
+    .goto Duskwood,74.54,46.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Ladimore|r
+    >>|cRXP_FRIENDLY_Watcher Ladimore|r |cRXP_WARN_patrols around in Darkshire|r
+    .turnin 229 >> Turn in The Daughter Who Lived
+    .accept 231 >> Accept A Daughter's Love
+    .target Watcher Ladimore
 step
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
