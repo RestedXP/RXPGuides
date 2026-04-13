@@ -7,9 +7,9 @@ local locale = GetLocale()
 
 if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
-local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch, tcount = string.format, table.insert, ipairs,
+local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch, tcount, huge = string.format, table.insert, ipairs,
                                                                                   pairs, next, type, wipe, tonumber,
-                                                                                  strlower, string.match, table.count
+                                                                                  strlower, string.match, table.count, math.huge
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
@@ -1634,7 +1634,7 @@ end
 
 function addon.itemUpgrades.AH:Scan(retries, maxRetries)
     --prevent on default 10 retries
-    maxRetries = maxRetries or 10
+    maxRetries = maxRetries or huge
     if retries >= maxRetries then
         --print("aborting")
         resetSession()
