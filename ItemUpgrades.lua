@@ -1656,7 +1656,7 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries)
     if not CanSendAuctionQuery() then
         --print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
 
-        C_Timer.After(0.35, function ()
+        C_Timer.After(0.5, function ()
             if not ahSession.toCancel then
                 self:Scan(retries + 1, maxRetries)
             else
@@ -1675,7 +1675,6 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries)
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
     QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
                    AuctionCategories[ahSession.scanType].filters)
- 
 
     ahSession.isScanning = false
 end
@@ -2002,6 +2001,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     ahSession.displayFrame.scanButton:SetScript("OnClick", function()
         ahSession.displayFrame.DataProvider:Flush()
+        ahSession.timer = debugprofilestart()
         if not ahSession.isScanning then
             ahSession.isCanceled = false
             addon.itemUpgrades.AH:Scan(0)
