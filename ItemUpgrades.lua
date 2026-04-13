@@ -1633,7 +1633,6 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 end
 
 function addon.itemUpgrades.AH:Scan(retries, maxRetries)
-    --prevent on default 10 retries
     maxRetries = maxRetries or huge
     if retries >= maxRetries then
         --print("aborting")
