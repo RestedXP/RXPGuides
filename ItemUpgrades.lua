@@ -1426,6 +1426,7 @@ local function resetSession()
     ahSession.toCancel = false
     ahSession.isScanning = false
     ahSession.sentQuery = false
+    ahSession.scanStatus.totalAuctions = 0
     --print("reset finished")
 end
 
@@ -2069,6 +2070,7 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
+    resetSession()
     if not _G.AuctionFrame:IsShown() then return end
     if ahSession.isCanceled and ahSession.bestAnalysis ~= nil then
         _G.RXP_IU_AH_Title:SetText("Search canceled - showing cached results")
