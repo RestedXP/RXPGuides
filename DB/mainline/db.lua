@@ -22,16 +22,18 @@ addon.professionID = {
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
+local faction = UnitFactionGroup("player")
 
 local defaultGuideList = {
-    [3455] = "RestedXP Speed Leveling\\a) Exile's Reach",
+    [3455] = "RestedXP Speed Leveling\\a) Exile's Reach "..faction,
     [460]  = "RestedXP Speed Leveling\\ab) Shadowglen",
     [425]  = "RestedXP Speed Leveling\\ab) Northshire Valley",
     [30]   = "RestedXP Speed Leveling\\ab) New Tinkertown",
     [468]  = "RestedXP Speed Leveling\\ab) Ammen Vale",
-    [202]  = "RestedXP Speed Leveling\\a) Worgen Intro",
-    [378]  = "RestedXP Speed Leveling\\b) Pandaren Intro",
+    [202]  = "RestedXP Speed Leveling\\ab) Worgen Intro",
+    [378]  = "RestedXP Speed Leveling\\a) Pandaren Intro",
     [2373] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
+    [2109] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
     [971]  = "RestedXP Speed Leveling\\a) VoidElf Intro",
     [940]  = "RestedXP Speed Leveling\\a) LightforgedDraenei Intro",
     [2322] = "RestedXP Speed Leveling\\a) EarthenDwarf Intro",
@@ -51,17 +53,11 @@ local defaultGuideList = {
     ["Vulpera"] = "RestedXP Speed Leveling\\a) Vulpera Intro", -- changed from duplicate 85 (org)
     [672]  = "RestedXP Speed Leveling\\a) DH Intro",
     [627] = "RestedXP Legion Remix\\a) Intro",
-    [2451] = "RestedXP Speed Leveling\\a) Arathi Highlands Returning Player"
+    [2451] = "RestedXP Speed Leveling\\a) Arathi Highlands Returning Player",
+    [2413] = "RestedXP Speed Leveling\\a) Haranir Intro",
+    [427]  = "RestedXP Speed Leveling\\ab) Dwarf Coldridge Vallley",
 }
 
-do
-    local faction = UnitFactionGroup("player")
-    if faction == "Alliance" then
-        defaultGuideList[3445] = "RestedXP Speed Leveling\\a) Exile's Reach Alliance"
-    elseif faction == "Horde" then
-        defaultGuideList[3445] = "RestedXP Speed Leveling\\a) Exile's Reach Horde"
-    end
-end
 
 function addon.GetDefaultGuide()
     local played
@@ -78,11 +74,13 @@ function addon.GetDefaultGuide()
     if not played then
         C_Timer.After(5,addon.LoadDefaultGuide)
     elseif played < 120 or zone == 2451 then
-        local exilesreach = C_Map.GetAreaInfo(3455)
+        local northsea = C_Map.GetAreaInfo(3455)
+        local exilesreach = C_Map.GetAreaInfo(10424)
         local default
         if zone then
             default = defaultGuideList[zone]
-        elseif GetSubZoneText() == exilesreach or GetZoneText() == exilesreach then
+        end
+        if not default and (GetSubZoneText() == northsea or GetZoneText() == exilesreach) then
             default = defaultGuideList[3455]
         end
         return default or defaultGuideList[addon.player.race]
