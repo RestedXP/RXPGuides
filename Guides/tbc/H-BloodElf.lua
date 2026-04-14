@@ -3941,7 +3941,7 @@ step
 	.goto Ghostlands,62.86,11.04,30,0
     .xp 13+9280 >>Grind to 9280+/11000xp
     .isQuestComplete 9315
-    .isQuesNotComplete 9404 << Mage
+    .isQuestNotComplete 9404 << Mage
 step
     #loop
 	.goto Ghostlands,59.47,12.43,0
@@ -3961,7 +3961,7 @@ step
 	.goto Ghostlands,62.86,11.04,30,0
     .xp 13+10160 >>Grind to 10160+/11000xp
     .isQuestNotComplete 9315
-    .isQuesNotComplete 9404 << Mage
+    .isQuestNotComplete 9404 << Mage
 step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #softcore
     #completewith SuncrownTurnin

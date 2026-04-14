@@ -3172,12 +3172,23 @@ step
     .goto Durotar,55.95,73.93
     .target +Vel'rin Fang
 step
+    #xprate >1.49
+    #loop
+	.goto Durotar,43.30,37.32,0
+	.goto Durotar,44.45,39.74,30,0
+	.goto Durotar,44.49,37.47,30,0
+	.goto Durotar,43.30,37.32,30,0
+	.goto Durotar,41.70,37.09,30,0
+	.goto Durotar,41.64,38.27,30,0
+	.goto Durotar,41.94,40.46,30,0
+	.goto Durotar,43.30,40.40,30,0
+    .xp 9+4400 >>Grind to 4400+/6500xp
+step
     #hardcore
     #optional
     #label RazorHill1
     #completewith RazorHill3
     .subzone 362 >>Travel to Razor Hill
-    .cooldown item,6948,<0
 step
     #softcore
     #optional
@@ -3185,14 +3196,6 @@ step
     #completewith RazorHill3
     .goto Durotar,54.53,58.69
     .deathskip >>Travel to the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .cooldown item,6948,<0
-step
-    #completewith RazorHill3
-    .hs >> Hearth to Razor Hill
-    .use 6948
-    .subzoneskip 362
-    .bindlocation 362,1
-    .cooldown item,6948,>2,1
 step
     #label RazorHill3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
@@ -3203,6 +3206,7 @@ step
     .target +Cook Torka
     .goto Durotar,51.12,42.46
 step
+    #xprate <1.5
     #loop
     .goto Durotar,50.21,50.78,0
     .goto Durotar,50.21,50.78,30,0
@@ -3221,6 +3225,7 @@ step
     .complete 837,2 --Razormane Scout (4)
     .mob +Razormane Scout
 step
+    #xprate <1.5
     #loop
 	.goto Durotar,44.45,39.74,0
 	.goto Durotar,44.45,39.74,30,0
@@ -3248,31 +3253,23 @@ step
 	.goto Durotar,43.30,40.40,30,0
     .xp 9+5870 >>Grind to 5870+/6500xp
 step
-    #xprate >1.49
-    #loop
-	.goto Durotar,43.30,37.32,0
-	.goto Durotar,44.45,39.74,30,0
-	.goto Durotar,44.49,37.47,30,0
-	.goto Durotar,43.30,37.32,30,0
-	.goto Durotar,41.70,37.09,30,0
-	.goto Durotar,41.64,38.27,30,0
-	.goto Durotar,41.94,40.46,30,0
-	.goto Durotar,43.30,40.40,30,0
-    .xp 9+5555 >>Grind to 5555+/6500xp
-step
+    #xprate <1.5
     #softcore
     #completewith next
     .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+    #xprate <1.5
     #hardcore
     #completewith next
     .subzone 362 >>Travel to Razor Hill
 step
+    #xprate <1.5
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
     .target Gar'Thok
 step
+    #xprate <1.5
     #loop
 	.goto Durotar,41.94,40.46,0
 	.goto Durotar,44.45,39.74,30,0
@@ -3725,6 +3722,43 @@ step
     .accept 840 >>Accept Conscript of the Horde
     .target Takrin Pathseeker
 step
+    #xprate >1.49
+    #loop
+    .goto Durotar,50.21,50.78,0
+    .goto Durotar,50.21,50.78,30,0
+    .goto Durotar,50.18,49.23,30,0
+    .goto Durotar,49.48,49.14,30,0
+    .goto Durotar,49.32,48.18,30,0
+    .goto Durotar,48.81,49.00,30,0
+    .goto Durotar,48.49,49.29,30,0
+    .goto Durotar,47.58,49.62,30,0
+    .goto Durotar,47.06,49.53,30,0
+    .goto Durotar,46.90,48.11,30,0
+    .goto Durotar,49.22,48.96,30,0
+    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
+    .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
+    .complete 837,2 --Razormane Scout (4)
+    .mob +Razormane Scout
+    .isOnQuest 837
+step
+    #xprate >1.49
+    #loop
+	.goto Durotar,44.45,39.74,0
+	.goto Durotar,44.45,39.74,30,0
+	.goto Durotar,44.49,37.47,30,0
+	.goto Durotar,43.30,37.32,30,0
+	.goto Durotar,41.70,37.09,30,0
+	.goto Durotar,41.64,38.27,30,0
+	.goto Durotar,41.94,40.46,30,0
+	.goto Durotar,43.30,40.40,30,0
+    >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
+    .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
+    .complete 837,4 --Razormane Battleguard (4)
+    .mob +Razormane Battleguard
+    .isOnQuest 837
+step
     #completewith next
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
     .zoneskip The Barrens
@@ -3785,6 +3819,7 @@ step << !Tauren
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
 step << !Tauren
+    #xprate <1.5
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
@@ -3792,13 +3827,13 @@ step << !Tauren
     .target Devrak
     .subzoneskip 380,1
 step << Orc/Troll
+    #xprate <1.5
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
-    .zoneskip Orgrimmar
 step << !Tauren
     #label Xroads1
     .goto The Barrens,51.44,30.15
@@ -3807,16 +3842,19 @@ step << !Tauren
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .target Apothecary Helbrim
 step << !Tauren
+    #xprate <1.5
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
+    #xprate <1.5
     .goto The Barrens,45.06,22.54
     >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
+    #xprate <1.5
     #loop
     .goto The Barrens,45.2,23.3,0
     .goto The Barrens,45.2,23.3,40,0
@@ -3828,15 +3866,18 @@ step << !Tauren
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
+    #xprate <1.5
     #hardcore
     #completewith PoolsTurnin
     .goto The Barrens,52.34,29.27,150,0
     .subzone 380 >> Travel to The Crossroads
 step << !Tauren
+    #xprate <1.5
     #softcore
     #completewith PoolsTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Tauren
+    #xprate <1.5
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
@@ -3847,11 +3888,13 @@ step << !Tauren
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
 step
+    #xprate <1.5
     #sticky
     #completewith ZamahTurnin
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 20-30 minutes after pick-up|r
     .isOnQuest 853
 step << !Tauren
+    #xprate <1.5
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barg|r
     >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_BUY_him|r
@@ -3859,32 +3902,38 @@ step << !Tauren
     .target Jark
     .money <0.05
 step << !Tauren
+    #xprate <1.5
     #label PoolsTurnin
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
-    .turnin 870 >> Turn in The Forgotten Pools
+    .turnin 870 >>Turn in The Forgotten Pools
     .accept 877 >>Accept The Stagnant Oasis
     .target Tonga Runetotem
 step << Warrior/Shaman
+    #xprate <1.5
     #softcore
     #completewith next
     .goto The Barrens,49.75,49.54
     .subzone 378 >>Travel south down the road toward Camp Taurajo
     >>|cRXP_WARN_Once you are at the waypoint arrow (or further south of it), die and respawn at the|r |cRXP_FRIENDLY_Spirit Healer|r
 step << Warrior/Shaman
+    #xprate <1.5
     #hardcore
     #completewith next
     .goto The Barrens,47.44,56.48,70,0
     .subzone 378 >>Travel south down the road toward Camp Taurajo
 step << Warrior/Shaman
+    #xprate <1.5
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
     .target Omusa Thunderhorn
 step << Warrior/Shaman
+    #xprate <1.5
     #completewith next
     .zone Mulgore >>Travel to Mulgore
 step << Warrior/Shaman
+    #xprate <1.5
     #loop
     .goto Mulgore,55.14,60.65,0
     .goto Mulgore,51.50,59.23,50,0
@@ -3898,25 +3947,30 @@ step << Warrior/Shaman
     .accept 749 >>Accept The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step << !Tauren
+    #xprate <1.5
     #completewith next
     .subzone 222 >>Travel to Bloodhoof Village
 step << !Tauren
+    #xprate <1.5
     .goto Mulgore,48.2,53.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
     .accept 11129 >>Accept Kyle's Gone Missing!
     .target Ahab Wheathoof
 step << !Tauren
+    #xprate <1.5
     #completewith RavagedCaravanTI
     >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
     .mob Elder Plainstrider
 step << !Tauren
+    #xprate <1.5
     .goto Mulgore,53.74,48.17
     >>Click the |cRXP_PICK_Sealed Supply Crate|r
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << !Tauren
+    #xprate <1.5
     #label RavagedCaravanTI
     #loop
     .goto Mulgore,55.14,60.65,0
@@ -3932,6 +3986,7 @@ step << !Tauren
     .accept 765 >> Accept Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
 step << !Tauren
+    #xprate <1.5
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
@@ -3939,6 +3994,7 @@ step << !Tauren
     .complete 764,2 --Venture Co. Supervisor (6)
     .mob +Venture Co. Supervisor
 step << !Tauren
+    #xprate <1.5
     #label Fizsprocket1
     .goto Mulgore,64.95,43.33
     >>Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
@@ -3946,6 +4002,7 @@ step << !Tauren
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
 step << !Tauren
+    #xprate <1.5
     #label VentureCoKills
     #loop
 	.goto Mulgore,61.35,47.55,0
@@ -3962,12 +4019,14 @@ step << !Tauren
     .complete 764,2 --Venture Co. Supervisor (6)
     .mob +Venture Co. Supervisor
 step << !Tauren
+    #xprate <1.5
     #completewith next
     >>Kill a |cRXP_ENEMY_Plainstrider|r. Loot it for |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
     .collect 33009,1,11129,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
     .mob Elder Plainstrider
 step << !Tauren
+    #xprate <1.5
     #loop
     .goto Mulgore,55.14,60.65,0
     .goto Mulgore,51.50,59.23,50,0
@@ -3983,6 +4042,7 @@ step << !Tauren
     .turnin 765 >>Turn in Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
 step << !Tauren
+    #xprate <1.5
     #loop
     .goto Mulgore,52.42,64.24,0
     .goto Mulgore,52.42,64.24,70,0
@@ -3995,6 +4055,7 @@ step << !Tauren
     .mob Adult Plainstrider
     .mob Elder Plainstrider
 step << !Tauren
+    #xprate <1.5
     #loop
     .goto Mulgore,47.3,56.9,0
     .goto Mulgore,47.3,56.9,30,0
@@ -4007,45 +4068,54 @@ step << !Tauren
     .unitscan Kyle the Frenzied
     --TODO: Test beta, bugged on pserver
 step << !Tauren
+    #xprate <1.5
     .goto Mulgore,48.2,53.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
     .turnin 11129 >>Turn in Kyle's Gone Missing!
     .target Ahab Wheathoof
 step << !Tauren
+    #xprate <1.5
     #completewith TBFP
     .goto Thunder Bluff,31.86,66.67,30,0
     .goto Thunder Bluff,36.17,62.76,20 >>Take the lift up to Thunder Bluff
 step << !Tauren !Paladin !Shaman
+    #xprate <1.5
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
     .target Ansekhwa
 step << Paladin/Shaman
+    #xprate <1.5
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train 2h Maces
     .target Ansekhwa
     .money <0.1
 step << !Tauren
+    #xprate <1.5
     #completewith next
     .goto Thunder Bluff,45.6,52.0,15 >>Go up the tower
 step << !Tauren
+    #xprate <1.5
     #label TBFP
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fp Thunder Bluff >>Get the Thunder Bluff Flight Path
 	.target Tal
 step << !Tauren
+    #xprate <1.5
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >>Travel to the Spirit Rise and enter the pools of vision
 step << !Tauren
+    #xprate <1.5
     #label ZamahTurnin
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
     .target Apothecary Zamah
 step << !Tauren
+    #xprate <1.5
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .accept 5722 >>Accept Searching for the Lost Satchel
@@ -4060,12 +4130,26 @@ step << !Tauren
     .bindlocation 362,1
     .cooldown item,6948,>0
 step << !Tauren
+    #xprate <1.5
     #completewith LostPickup
     .hs >>Grind outside Thunder Bluff until your hearthstone is back up, then hearthstone to Razor Hill
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
     .cooldown item,6948,<0
+step << !Tauren
+    #xprate >1.49
+    #completewith LostPickup
+    .subzone 362 >>Travel to Razor Hill
+    .bindlocation 362,1
+    .cooldown item,6948,<0
+step
+    #xprate >1.49
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 837 >>Turn in Encroachment
+    .target Gar'Thok
+    .isQuestComplete 837
 step
     #label LostPickup
     .goto Durotar,43.11,30.24
