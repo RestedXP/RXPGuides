@@ -6,7 +6,7 @@ if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
 -- Localize globals
 local _G = _G
 local fmt = string.format
-local tcount, tinsert, twipe = table.count, table.insert, table.wipe
+local tcount, tinsert, twipe, tsort = table.count, table.insert, table.wipe, table.sort
 local pairs, ipars, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
 local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
@@ -2081,7 +2081,7 @@ local professions = {
 local profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
-    foundItems = {},
+    foundItems = {}, --pairs
     
     currentPage = 0,
     currentItemName = "",
@@ -2092,7 +2092,6 @@ local profSession = {
 
     sentQuery = false,
     isScanning = false,
-
 }
 
 function profSession:Reset()
@@ -2122,6 +2121,54 @@ function addon.professions.AH:Setup()
 end
 
 --local functions
+
+--Sets RXPCData.professions
+local function gatherPlayerProfessionInfo()
+    local prof1, prof2, archeology, fishing, cooking = GetProfessions()
+    --name, icon, skillLevel, maxSkillLevel, numAbilities, spelloffset, skillLine, 
+    --skillModifier, specializationIndex, specializationOffset = GetProfessionInfo(index)
+    if prof1 then
+        local name, _, skillLevel, _, _, _, _, _, _, _ = GetProfessionInfo(prof1)
+        RXPCData.professions.profession1 = {
+            name = name,
+            skillLevel = skillLevel,
+        }
+    end
+    if prof2 then
+        local name, _, skillLevel, _, _, _, _, _, _, _ = GetProfessionInfo(prof2)
+        RXPCData.professions.profession2 = {
+            name = name,
+            skillLevel = skillLevel,
+        }
+    end
+end
+
+--Sort all materials by price
+local function sortMaterialsByPrice()
+    for itemID, items in pairs(profSession.foundItems) do
+        tsort(items, function (a, b)
+            return a.pricePerItem < b.pricePerItem
+        end)
+    end
+end
+
+--Calculate what skill segments to look into
+--Ussumes segments by 75
+local function calculateSegmentRange(professionSkillLevel)
+    local minimum = floor(professionSkillLevel / 75) * 75 + 1
+    local maximum = ceil(professionSkillLevel / 75) * 75
+    return minimum, maximum
+end
+
+
+--Removes grey recipes
+local function removeGreyRecipes(professionName, professionSkillLevel)
+    for recipe, _ in pairs(profSession.recipesToConsider) do
+        if professions[professionName].recipes[recipe].grey <= professionSkillLevel then
+            profSession.recipesToConsider[recipe] = nil --TODO: efficient, but test if safe!
+        end
+    end
+end
 
 --Gather what recipes to consider based on segment
 --minSegment = minimumSkillLevel
@@ -2196,7 +2243,6 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
 
         --Check if itemId already exists
         if not profSession.foundItems[itemId] then profSession.foundItems[itemId] = {} end
-        --TODO: Why do some auctions not have a buyout??????
         if buyoutPrice > 0 then
             tinsert(profSession.foundItems[itemId], {
                 name = name,
@@ -2240,10 +2286,12 @@ SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
     local professionName = "Blacksmithing"
+    local professionSkillLevel = 26
     local minSegment = 1
     local maxSegment = 30
     gatherRecipesBySegment(professionName, minSegment, maxSegment)
     if tcount(profSession.recipesToConsider) == 0 then return end
+    removeGreyRecipes(professionName, professionSkillLevel)
     gatherMaterialsToScan(professionName)
     if #profSession.materialsToScan == 0 then return end
     profSession.materialIndex = 1
@@ -2286,50 +2334,75 @@ SlashCmdList['pnt'] = function()
     end
 end
 
+
+SLASH_rst1 = '/rst'
+SlashCmdList['rst'] = function()
+    profSession:Reset()
+end
+
+
 --Testing
 --[[ 
 local variables and functions
 for testing purposes
 ]]
-local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
 
+
+local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
+    if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
+    if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
+    if prof1Name then
+        RXPCData.professions.profession1.name = prof1Name
+        RXPCData.professions.profession1.skillLevel = prof1Lvl
+    end
+    if prof2Name then
+        RXPCData.professions.profession2.name = prof2Name
+        RXPCData.professions.profession2.skillLevel = prof2Lvl
+    end
 end
 
+SLASH_set1 = '/set'
+SlashCmdList['set'] = function()
+    setPlayerData("Blacksmithing", 25)
+end
 
 
 SLASH_tst1 = '/tst'
 SlashCmdList['tst'] = function()
-    local professionName = "Blacksmithing"
-    local minSegment = 1
-    local maxSegment = 49
+    setPlayerData("Blacksmithing", 1)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel)
     print("==========")
-    gatherRecipesBySegment(professionName, minSegment, maxSegment)
+    gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
+    removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     for k, _ in pairs(profSession.recipesToConsider) do
         print(k)
     end
     print("==========")
-    gatherMaterialsToScan(professionName)
+    gatherMaterialsToScan(RXPCData.professions.profession1.name)
     for k, v in ipairs(profSession.materialsToScan) do
         print(v)
     end
 end
 
 
+SLASH_qtst1 = '/qtst'
+SlashCmdList['qtst'] = function()
+    --print(calculateSegmentRange(RXPCData.professions.profession1.skillLevel))
+    sortMaterialsByPrice()
+    for itemID, items in pairs(profSession.foundItems) do
+        print(itemID, ":")
+        for _, item in ipairs(items) do
+            print(item.name, item.pricePerItem, item.owner)
+        end
+        print("==========")
+    end
+end
+
+
+
 print("done loading professions")
 
 
 --[[ Notes
-RXPCData.professions = {
-    [1] = {
-        name,
-        skillLevel,
-        maxSkillLevel,
-    },
-    [2] = {
-        name,
-        skillLevel,
-        maxskillLevel,
-    },
-}
 
 ]]
