@@ -1770,8 +1770,9 @@ step
 step
     #completewith next
     #label Eye
-    >>|cRXP_WARN_Face the forge|r and use |T136158:0|t(1) until you’re close enough for it to channel a beam then wait for it to finish.
-    *Use |T136187:0|t(2) to distract the Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
+    >>|cRXP_WARN_Face the forge|r and use |T136158:0|t(1) |cRXP_WARN_(from far way)|r until it begins channeling a beam. Let it finish.
+    *Move closer to the building |cRXP_WARN_if needed|r.
+    *Use |T136119:0|t(2) to distract Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
     .complete 12641,1 --1/1 New Avalon Forge Analyzed
 step
     #completewith Eye
@@ -1782,32 +1783,33 @@ step
 step
     #requires Eye
     #completewith Crimson Flame Analyzed
-    +|cRXP_WARN_The arrow cannot be displayed while you are controlling the eye|r.
+    +|cRXP_WARN_The arrow cannot be displayed while controlling the eye|r.
+    *Each building is marked on your map, with a red arrow nearby.
 step
     #requires Eye
-    #title |cFFFCDC00Face the Forge|r
-    >>|cRXP_WARN_Face the forge|r and use |T136158:0|t(1) |cRXP_WARN_from far away|r for it to channel a beam then wait for it to finish.
-    *Use |T136187:0|t(2) to distract the Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
+    >>|cRXP_WARN_Face the forge|r and use |T136158:0|t(1) |cRXP_WARN_(from far way)|r until it begins channeling a beam. Let it finish.
+    *Move closer to the building |cRXP_WARN_if needed|r.
+    *Use |T136119:0|t(2) to distract Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
     .complete 12641,1 --1/1 New Avalon Forge Analyzed
 step
-    #title |cFFFCDC00Face the Castle|r
-    >>|cRXP_WARN_Face the Castle|r and use |T136158:0|t(1) |cRXP_WARN_from far away|r for it to channel a beam then wait for it to finish.
-    *Use |T136187:0|t(2) to distract the Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
+    >>|cRXP_WARN_Face the Castle|r and use |T136158:0|t(1) |cRXP_WARN_(from far way)|r until it begins channeling a beam. Let it finish.
+    *Move closer to the building |cRXP_WARN_if needed|r.
+    *Use |T136119:0|t(2) to distract Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
     .complete 12641,3 --1/1 Scarlet Hold Analyzed
 step
-    #title |cFFFCDC00Face the Town Hall|r
-    >>|cRXP_WARN_Face the Town Hall|r and use |T136158:0|t(1) |cRXP_WARN_from far away|r for it to channel a beam then wait for it to finish.
-    *Use |T136187:0|t(2) to distract the Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
+    >>|cRXP_WARN_Face the Town Hall|r and use |T136158:0|t(1) |cRXP_WARN_(from far way)|r until it begins channeling a beam. Let it finish.
+    *Move closer to the building |cRXP_WARN_if needed|r.
+    *Use |T136119:0|t(2) to distract Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
     .complete 12641,2 --1/1 New Avalon Town Hall Analyzed
 step
     #label Crimson Flame Analyzed
-    #title |cFFFCDC00Face the Chapel|r
-    >>|cRXP_WARN_Face the Chapel|r and use |T136158:0|t(1) |cRXP_WARN_from far away|r for it to channel a beam then wait for it to finish.
-    *Use |T136187:0|t(2) to distract the Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
+    >>|cRXP_WARN_Face the chapel|r and use |T136158:0|t(1) |cRXP_WARN_(from far way)|r until it begins channeling a beam. Let it finish.
+    *Move closer to the building |cRXP_WARN_if needed|r.
+    *Use |T136119:0|t(2) to distract Knights and |T136177:0|t(3) to hide from them |cRXP_WARN_if needed|r.
     .complete 12641,4 --1/1 Chapel of the Crimson Flame Analyzed
 step
     .goto 124,51.34,35.22
-    *Press |T136190:0|t(4) to exit the Eyeball.
+    *Press |T136190:0|t(4) to exit the Eye.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r.
     .turnin 12641 >>Turn in Death Comes From On High
     .accept 12657 >>Accept The Might Of The Scourge
@@ -11730,7 +11732,6 @@ step
     .turnin 10324 >>Turn in The Great Moongraze Hunt
     .target Acteon
 ]])
---Dwarf: Coldridge Valley
 --Dwarf: Coldridge Valley
 RXPGuides.RegisterGuide([[
 #retail
