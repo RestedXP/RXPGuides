@@ -1806,41 +1806,275 @@ local professions = {
             },
         },
         segments = {
-            [5] = {
+            --Each recipe appears only once, at the start of its level
+            [1] = {
                 "Rough Copper Vest",
                 "Rough Sharpening Stone",
                 "Copper Bracers",
                 "Copper Chain Pants",
             },
-            [10] = {
-                "Rough Copper Vest",
-                "Rough Sharpening Stone",
-                "Copper Bracers",
-                "Copper Chain Pants",
+            [15] = {
+                "Copper Mace",
+            },
+            [20] = {
+                "Copper Axe",
+                "Copper Chain Boots",
+            },
+            [30] = {
+                "Copper Claymore",
+                "Copper Dagger",
+                "Rough Grinding Stone",
+                "Copper Shortsword",
+            },
+            [35] = {
+                "Copper Battle Axe",
+                "Copper Chain Belt",
+                "Copper Chain Vest",
+            },
+            [40] = {
+                "Runed Copper Gauntlets",
+            },
+            [45] = {
+                "Runed Copper Pants"
+            },
+            [60] = {
+                "Gemmed Copper Gauntlets",
+            },
+            [65] = {
+                "Coarse Sharpening Stone",
+                "Heavy Copper Maul",
+            },
+            [70] = {
+                "Runed Copper Belt",
+                "Thick War Axe",
+            },
+            [75] = {
+                "Coarse Grinding Stone",
+            },
+            [80] = {
+                "Runed Copper Breastplate",
+            },
+            [90] = {
+                "Runed Copper Bracers",
+            },
+            [95] = {
+                "Rough Bronze Boots",
+                "Heavy Copper Broadsword",
+            },
+            [100] = {
+                "Silver Skeleton Key",
+                "Silver Rod",
+                "Ironforge Breastplate",
+            },
+            [105] = {
+                "Big Bronze Knife",
+                "Rough Bronze Leggings",
+            },
+            [110] = {
+                "Bronze Mace",
+                "Pearl-handled Dagger",
+                "Rough Bronze Shoulders",
+            },
+            [115] = {
+                "Bronze Axe",
+            },
+            [120] = {
+                "Bronze Shortsword",
+                "Patterned Bronze Bracers",
+            },
+            [125] = {
+                "Heavy Sharpening Stone",
+                "Heavy Grinding Stone",
+                "Bronze Warhammer",
+                "Deadly Bronze Poniard",
+                "Silvered Bronze Shoulders",
+            },
+            [130] = {
+                "Bronze Greatsword",
+                "Heavy Bronze Mace",
+                "Silvered Bronze Boots",
+                "Silvered Bronze Breastplate",
+            },
+            [135] = {
+                "Bronze Battle Axe",
+                "Silvered Bronze Gauntlets",
+            },
+            [140] = {
+                "Iridescent Hammer",
+            },
+            [145] = {
+                "Shining Silver Breastplate",
+                "Green Iron Boots",
+                "Mighty Iron Hammer",
+            },
+            [150] = {
+                "Iron Buckle",
+                "Golden Skeleton Key",
+                "Golden Rod",
+                "Green Iron Gauntlets",
+                "Iron Shield Spike",
+            },
+            [155] = {
+                "Green Iron Leggings",
+                "Silvered Bronze Leggings",
+                "Solid Iron Maul",
+            },
+            [160] = {
+                "Barbaric Iron Shoulders",
+                "Green Iron Shoulders",
+                "Hardened Iron Shortsword",
+            },
+            [165] = {
+                "Green Iron Bracers",
+                "Iron Counterweight",
+            },
+            [170] = {
+                "Green Iron Helm",
+                "Golden Iron Destroyer",
+                "Golden Scale Leggings",
+            },
+            [175] = {
+                "Barbaric Iron Helm",
+                "Golden Scale Shoulders",
+                "Jade Serpentblade",
+            },
+            [180] = {
+                "Glinting Steel Dagger",
+                "Green Iron Hauberk",
+                "Barbaric Iron Boots",
+                "Moonsteel Broadsword",
+            },
+            [185] = {
+                "Golden Scale Bracers",
+                "Barbaric Iron Gloves",
+                "Massive Iron Axe",
+                "Polished Steel Boots",
+            },
+            [190] = {
+                "Edge of Winter",
+                "Golden Scale Coif",
+                "Searing Golden Blade",
+                "Steel Weapon Chain",
+            },
+            [195] = {
+                "Golden Scale Cuirass",
+            },
+            [200] = {
+                "Solid Grinding Stone",
+                "Solid Sharpening Stone",
+                "Truesilver Skeleton Key",
+                "Truesilver Rod",
+                "Steel Breastplate",
+                "Frost Tiger Blade",
+                "Golden Scale Boots",
+                "Inlaid Mithril Cylinder",
+                "Shadow Crescent Axe",
+            },
+            [205] = {
+                "Heavy Mithril Gauntlet",
+                "Heavy Mithril Shoulder",
+                "Golden Scale Gauntlets",
+            },
+            [210] = {
+                "Mithril Scale Pants",
+                "Heavy Mithril Axe",
+                "Heavy Mithril Pants",
+            },
+            [215] = {
+                "Steel Plate Helm",
+                "Mithril Scale Bracers",
+                "Mithril Shield Spike",
+            },
+            [220] = {
+                "Ornate Mithril Gloves",
+                "Ornate Mithril Pants",
+                "Blue Glittering Axe",
+            },
+            [225] = {
+                "Ornate Mithril Shoulders",
+                "Wicked Mithril Blade",
+            },
+            [230] = {
+                "Heavy Mithril Breastplate",
+                "Mithril Coif",
+                "Big Black Mace",
+                "Orcish War Leggings",
+            },
+            [235] = {
+                "Heavy Mithril Boots",
+                "The Shatterer",
+                "Mithril Scale Shoulders",
+                "Mithril Spurs",
+            },
+            [240] = {
+                "Ornate Mithril Breastplate",
+                "Dazzling Mithril Rapier",
+            },
+            [245] = {
+                "Truesilver Breastplate",
+                "Phantom Blade",
+                "Heavy Mithril Helm",
+                "Ornate Mithril Boots",
+                "Ornate Mithril Helm",
+                "Runed Mithril Hammer",
+            },
+            [250] = {
+                "Dense Grinding Stone",
+                "Dense Sharpening Stone",
+                "Blight",
+                "Thorium Armor",
+                "Thorium Belt",
+            },
+            [255] = {
+                "Thorium Bracers",
+                "Ebon Shiv",
+            },
+            [260] = {
+                "Truesilver Champion",
+                "Radiant Belt",
+            },
+            [265] = {
+                "Dark Iron Pulverizer",
+                "Imperial Plate Belt",
+                "Imperial Plate Shoulders",
+            },
+            [270] = {
+                "Dark Iron Mail",
+                "Imperial Plate Bracers",
+                "Radiant Breastplate",
+            },
+            [275] = {
+                "Arcanite Skeleton Key",
+                "Dark Iron Sunderer",
+                "Thorium Shield Spike",
+                "Ornate Thorium Handaxe",
+            },
+            [280] = {
+                "Dark Iron Shoulders",
+                "Thorium Boots",
+                "Thorium Helm",
+                "Blazing Rapier",
+                "Enchanted Battlehammer",
+                "Huge Thorium Battleaxe",
+            },
+            [285] = {
+                "Dark Iron Plate",
+                "Radiant Gloves",
+            },
+            [290] = {
+                "Fiery Plate Gauntlets",
+                "Heavy Timbermaw Belt",
+                "Radiant Boots",
+                "Volcanic Hammer",
+            },
+            [295] = {
+                "Imperial Plate Boots",
+                "Imperial Plate Helm",
+                "Radiant Circlet",
+                "Storm Gauntlets",
             },
         },
     }
-}
-
-local recipes = {
-    ["Rough Sharpening Stone"] = {
-        trainingCost = 0,
-        materials = {
-            {
-                ["name"] = "Rough Stone",
-                amount = 1,
-            },
-        },
-    },
-    ["Copper Braces"] = {
-        trainingCost = 0,
-        materials = {
-            {
-                ["name"] = "Copper Bar",
-                amount = 2
-            },
-        },
-    },
 }
 
 -- Saved variables and session
@@ -1936,7 +2170,7 @@ function addon.professions.AH:AUCTION_HOUSE_DISABLED()
 end
 
 function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
-    print("GET_ITEM_INFO_RECEIVED")
+    --print("GET_ITEM_INFO_RECEIVED")
 end
 
 function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
@@ -2005,11 +2239,9 @@ addon.professions.AH:Setup()
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    -- profSession.currentItemName = "Rough Stone"
-    -- addon.professions.AH:Scan(profSession.materials[1].material[profSession.materialIndex])
     local professionName = "Blacksmithing"
     local minSegment = 1
-    local maxSegment = 9
+    local maxSegment = 30
     gatherRecipesBySegment(professionName, minSegment, maxSegment)
     if tcount(profSession.recipesToConsider) == 0 then return end
     gatherMaterialsToScan(professionName)
@@ -2025,6 +2257,10 @@ SlashCmdList['pnt'] = function()
     local minItem = {}
     local minPrice
     local c = 1
+    print("Recipes considered:")
+    for k, v in pairs(profSession.recipesToConsider) do
+        print(k)
+    end
     for k, v in pairs(profSession.foundItems) do
         print("===" .. tostring(k) .. "===")
         minPrice = huge
@@ -2051,11 +2287,21 @@ SlashCmdList['pnt'] = function()
 end
 
 --Testing
+--[[ 
+local variables and functions
+for testing purposes
+]]
+local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
+
+end
+
+
+
 SLASH_tst1 = '/tst'
 SlashCmdList['tst'] = function()
     local professionName = "Blacksmithing"
     local minSegment = 1
-    local maxSegment = 9
+    local maxSegment = 49
     print("==========")
     gatherRecipesBySegment(professionName, minSegment, maxSegment)
     for k, _ in pairs(profSession.recipesToConsider) do
@@ -2063,8 +2309,8 @@ SlashCmdList['tst'] = function()
     end
     print("==========")
     gatherMaterialsToScan(professionName)
-    for k, _ in pairs(profSession.materialsToScan) do
-        print(k)
+    for k, v in ipairs(profSession.materialsToScan) do
+        print(v)
     end
 end
 
