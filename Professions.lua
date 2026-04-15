@@ -5,7 +5,7 @@ if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
 
 -- Localize globals
 local _G = _G
-local fmt = string.format
+local len, fmt, lower = string.len, string.format, string.lower
 local tcount, tinsert, twipe, tsort = table.count, table.insert, table.wipe, table.sort
 local pairs, ipars, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
 local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, math.huge
@@ -14,8 +14,18 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuct
 local GetProfessions, GetProfessionInfo = _G.GetProfessions, _G.GetProfessionInfo
 
 
+--local helper functions
+local function formatMoney(money)
+    if money > 10000 then
+        return fmt("%dg %ds %dc", money / 10000, (money % 10000) / 100, money % 100)
+    elseif money > 100 then
+        return fmt("%ds %dc", money / 100, money % 100)
+    end
+    return fmt("%dc", money)
+end
+
 --local enums
-local eventsToRegister = {
+local EVENTS_TO_REGISTER = {
     "AUCTION_HOUSE_SHOW",
     "AUCTION_HOUSE_CLOSED",
     "AUCTION_HOUSE_DISABLED",
@@ -24,20 +34,10 @@ local eventsToRegister = {
 
 }
 
---[[ 
-segments = {
-    [1] = {
-        "recepieName1",
-        "recepieName2",
-        "...",
-        "recepieName3",
-    }
-}
-]]
 
-local professions = {
-    ["Blacksmithing"] = {
-        recipes = {
+local PROFESSIONS = {
+    ["blacksmithing"] = {
+        RECIPES = {
             ["Arcanite Skeleton Key"] = {
                 trainable = true,
                 orange = 1,
@@ -1805,7 +1805,7 @@ local professions = {
                 },
             },
         },
-        segments = {
+        SEGMENTS = {
             --Each recipe appears only once, at the start of its level
             [1] = {
                 "Rough Copper Vest",
@@ -2082,12 +2082,12 @@ local profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
     foundItems = {}, --pairs
-    
+
     currentPage = 0,
     currentItemName = "",
-    
+
     materialsToScan = {}, --ipairs
-    recipesToConsider = {}, --pairs
+    recipesToConsider = {}, --pairs [recipeName] = recipePrice
     materialIndex = 1,
 
     sentQuery = false,
@@ -2113,7 +2113,7 @@ function addon.professions.AH:Setup()
     if profSession.isInitialized then return end
 
     --Register events
-    for _, event in ipairs(eventsToRegister) do
+    for _, event in ipairs(EVENTS_TO_REGISTER) do
         self:RegisterEvent(event)
     end
 
@@ -2143,9 +2143,14 @@ local function gatherPlayerProfessionInfo()
     end
 end
 
---Sort all materials by price
-local function sortMaterialsByPrice()
-    for itemID, items in pairs(profSession.foundItems) do
+--Sets RXPCData.professions.money
+local function gatherPlayerMoneyInfo()
+    
+end
+
+--Sort all found items by price
+local function sortItemsByPrice()
+    for _, items in pairs(profSession.foundItems) do
         tsort(items, function (a, b)
             return a.pricePerItem < b.pricePerItem
         end)
@@ -2153,10 +2158,10 @@ local function sortMaterialsByPrice()
 end
 
 --Calculate what skill segments to look into
---Ussumes segments by 75
-local function calculateSegmentRange(professionSkillLevel)
-    local minimum = floor(professionSkillLevel / 75) * 75 + 1
-    local maximum = ceil(professionSkillLevel / 75) * 75
+--Segment step: eg. 75: 1-75, 75-150, ...
+local function calculateSegmentRange(professionSkillLevel, segmentStep)
+    local minimum = floor(professionSkillLevel / segmentStep) * segmentStep + 1
+    local maximum = ceil(professionSkillLevel / segmentStep) * segmentStep
     return minimum, maximum
 end
 
@@ -2164,7 +2169,7 @@ end
 --Removes grey recipes
 local function removeGreyRecipes(professionName, professionSkillLevel)
     for recipe, _ in pairs(profSession.recipesToConsider) do
-        if professions[professionName].recipes[recipe].grey <= professionSkillLevel then
+        if PROFESSIONS[professionName].RECIPES[recipe].grey <= professionSkillLevel then
             profSession.recipesToConsider[recipe] = nil --TODO: efficient, but test if safe!
         end
     end
@@ -2176,11 +2181,11 @@ end
 local function gatherRecipesBySegment(professionName, minSegment, maxSegment)
     profSession.recipesToConsider = {}
 
-    for segmentLevel, recipesInSegment in pairs(professions[professionName].segments) do
+    for segmentLevel, recipesInSegment in pairs(PROFESSIONS[professionName].SEGMENTS) do
         if segmentLevel >= minSegment and segmentLevel <= maxSegment then
             for _, recipe in ipairs(recipesInSegment) do
                 if not profSession.recipesToConsider[recipe] then
-                    profSession.recipesToConsider[recipe] = true
+                    profSession.recipesToConsider[recipe] = huge
                 end
             end
         end
@@ -2193,7 +2198,7 @@ local function gatherMaterialsToScan(professionName)
     --We create a local table first for easier lookup
     local lookup = {}
     for recipeName, _ in pairs(profSession.recipesToConsider) do
-        for material, _ in pairs(professions[professionName].recipes[recipeName].materials) do
+        for material, _ in pairs(PROFESSIONS[professionName].RECIPES[recipeName].materials) do
             if not lookup[material] then
                 lookup[material] = true
             end
@@ -2202,6 +2207,32 @@ local function gatherMaterialsToScan(professionName)
     --Repopulate the correct table
     for k, _ in pairs(lookup) do
         tinsert(profSession.materialsToScan, k)
+    end
+end
+
+--Calculate value of each recipe
+--There might be a better way of doing this (more money wise optimal)
+local function calculateRecipePrice(professionName)
+    local totalPrice, remaining, i
+    for recipe, _ in pairs(profSession.recipesToConsider) do
+        totalPrice = 0
+        print("recipe = ", recipe)
+        for materialName, materialCount in pairs(PROFESSIONS[professionName].RECIPES[recipe].materials) do
+            remaining =  materialCount
+            i = 1
+            print(materialName)
+            print("r=", remaining)
+            while remaining > 0 do
+                totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * profSession.foundItems[materialName][i].count
+                remaining = remaining - profSession.foundItems[materialName][i].count
+                print(remaining)
+                i = i + 1
+            end
+            print("current price  = ", totalPrice)
+        end
+        print("total price = " , totalPrice)
+        print("-------")
+        profSession.recipesToConsider[recipe] = totalPrice
     end
 end
 
@@ -2242,10 +2273,12 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
         name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
 
         --Check if itemId already exists
-        if not profSession.foundItems[itemId] then profSession.foundItems[itemId] = {} end
+        --if not profSession.foundItems[itemId] then profSession.foundItems[itemId] = {} end
+        if not profSession.foundItems[name] then profSession.foundItems[name] = {} end
         if buyoutPrice > 0 then
-            tinsert(profSession.foundItems[itemId], {
-                name = name,
+            --tinsert(profSession.foundItems[itemId], {
+            tinsert(profSession.foundItems[name], {
+                --name = name,
                 count = count,
                 price = buyoutPrice,
                 pricePerItem = ceil(buyoutPrice / count),
@@ -2274,25 +2307,43 @@ function addon.professions.AH:Scan(itemName)
 
     profSession.sentQuery = true
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems(itemName, nil, nil, profSession.currentPage, false, nil, false, false, nil)
+    QueryAuctionItems(itemName, nil, nil, profSession.currentPage, false, nil, false, true, nil) --TODO: check if usable should be true, exactMatch should be true by testing
 end
 
 --Init setup
 addon.professions.AH:Setup()
 
 
+--Testing
+--[[ 
+local variables and functions
+for testing purposes
+]]
+
+local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
+    if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
+    if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
+    if prof1Name then
+        RXPCData.professions.profession1.name = lower(prof1Name)
+        RXPCData.professions.profession1.skillLevel = prof1Lvl
+    end
+    if prof2Name then
+        RXPCData.professions.profession2.name = lower(prof2Name)
+        RXPCData.professions.profession2.skillLevel = prof2Lvl
+    end
+end
+
+
 --Slash commands
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    local professionName = "Blacksmithing"
-    local professionSkillLevel = 26
-    local minSegment = 1
-    local maxSegment = 30
-    gatherRecipesBySegment(professionName, minSegment, maxSegment)
+    setPlayerData("Blacksmithing", 40)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
+    gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     if tcount(profSession.recipesToConsider) == 0 then return end
-    removeGreyRecipes(professionName, professionSkillLevel)
-    gatherMaterialsToScan(professionName)
+    removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+    gatherMaterialsToScan(RXPCData.professions.profession1.name)
     if #profSession.materialsToScan == 0 then return end
     profSession.materialIndex = 1
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
@@ -2313,7 +2364,7 @@ SlashCmdList['pnt'] = function()
         print("===" .. tostring(k) .. "===")
         minPrice = huge
         minItem = {}
-        for i, itemInfo in ipars(v) do
+        for _, itemInfo in ipars(v) do
             c = c + 1
             --print(tostring(i)..":", itemInfo.name, itemInfo.count, itemInfo.pricePerItem, itemInfo.owner)
             if itemInfo.pricePerItem < minPrice then
@@ -2340,27 +2391,6 @@ SlashCmdList['rst'] = function()
     profSession:Reset()
 end
 
-
---Testing
---[[ 
-local variables and functions
-for testing purposes
-]]
-
-
-local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
-    if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
-    if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
-    if prof1Name then
-        RXPCData.professions.profession1.name = prof1Name
-        RXPCData.professions.profession1.skillLevel = prof1Lvl
-    end
-    if prof2Name then
-        RXPCData.professions.profession2.name = prof2Name
-        RXPCData.professions.profession2.skillLevel = prof2Lvl
-    end
-end
-
 SLASH_set1 = '/set'
 SlashCmdList['set'] = function()
     setPlayerData("Blacksmithing", 25)
@@ -2370,7 +2400,7 @@ end
 SLASH_tst1 = '/tst'
 SlashCmdList['tst'] = function()
     setPlayerData("Blacksmithing", 1)
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
     print("==========")
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
@@ -2379,8 +2409,13 @@ SlashCmdList['tst'] = function()
     end
     print("==========")
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
-    for k, v in ipairs(profSession.materialsToScan) do
+    for _, v in ipairs(profSession.materialsToScan) do
         print(v)
+    end
+    print("==========")
+    calculateRecipePrice(RXPCData.professions.profession1.name)
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
+       print(recipeName, ": ", formatMoney(recipePrice))
     end
 end
 
@@ -2388,14 +2423,21 @@ end
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function()
     --print(calculateSegmentRange(RXPCData.professions.profession1.skillLevel))
-    sortMaterialsByPrice()
-    for itemID, items in pairs(profSession.foundItems) do
-        print(itemID, ":")
-        for _, item in ipairs(items) do
-            print(item.name, item.pricePerItem, item.owner)
-        end
-        print("==========")
-    end
+
+    -- sortItemsByPrice()
+    -- for itemID, items in pairs(profSession.foundItems) do
+    --     print(itemID, ":")
+    --     for _, item in ipairs(items) do
+    --         print(item.name, item.pricePerItem, item.owner)
+    --     end
+    --     print("==========")
+    -- end
+
+    -- for itemID, items in pairs(profSession.foundItems) do
+    --     for k, v in pairs(profSession.foundItems[itemID][1]) do
+    --         print(k, "->", v)
+    --     end
+    -- end
 end
 
 
