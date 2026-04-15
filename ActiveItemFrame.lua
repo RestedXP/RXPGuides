@@ -348,25 +348,27 @@ function addon.UpdateItemFrame(itemFrame)
 
     if InCombatLockdown() then return end
 
-    if not RXPTELEPORTTO and C_Housing then
-        local a = CreateFrame("Button", "RXPTELEPORTTO", nil, "SecureActionButtonTemplate")
-        a:SetSize(1,1)
-        a:SetAttribute("useOnKeyDown", false)
-        a:SetScript("PostClick", nil)
-        a:RegisterForClicks("AnyDown", "AnyUp")
-        a:SetAttribute("type", "teleporthome")
-        a:SetAttribute("house-neighborhood-guid", addon.player.neighborhoodGUID)
-        a:SetAttribute("house-guid", addon.player.houseGUID)
-        a:SetAttribute("house-plot-id", addon.player.plotID)
-    end
+    if addon.player.houseGUID then
+        if not RXPTELEPORTTO then
+            local a = CreateFrame("Button", "RXPTELEPORTTO", nil, "SecureActionButtonTemplate")
+            a:SetSize(1,1)
+            a:SetAttribute("useOnKeyDown", false)
+            a:SetScript("PostClick", nil)
+            a:RegisterForClicks("AnyDown", "AnyUp")
+            a:SetAttribute("type", "teleporthome")
+            a:SetAttribute("house-neighborhood-guid", addon.player.neighborhoodGUID)
+            a:SetAttribute("house-guid", addon.player.houseGUID)
+            a:SetAttribute("house-plot-id", addon.player.plotID)
+        end
 
-    if not RXPTELEPORTHOME and C_Housing then
-        local a = CreateFrame("Button", "RXPTELEPORTHOME", nil, "SecureActionButtonTemplate")
-        a:SetSize(1,1)
-        a:SetAttribute("useOnKeyDown", false)
-        a:SetScript("PostClick", nil)
-        a:RegisterForClicks("AnyDown", "AnyUp")
-        a:SetAttribute("type", "returnhome")
+        if not RXPTELEPORTHOME then
+            local a = CreateFrame("Button", "RXPTELEPORTHOME", nil, "SecureActionButtonTemplate")
+            a:SetSize(1,1)
+            a:SetAttribute("useOnKeyDown", false)
+            a:SetScript("PostClick", nil)
+            a:RegisterForClicks("AnyDown", "AnyUp")
+            a:SetAttribute("type", "returnhome")
+        end
     end
 
     local buttonList = itemFrame.buttonList

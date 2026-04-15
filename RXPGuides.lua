@@ -1292,7 +1292,7 @@ function addon:OnEnable()
         self:RegisterEvent("TOYS_UPDATED")
     end
 
-    if C_Housing then
+    if C_EventUtils and C_EventUtils.IsEventValid("PLAYER_HOUSE_LIST_UPDATED") then
         self:RegisterEvent("PLAYER_HOUSE_LIST_UPDATED")
         function addon:PLAYER_HOUSE_LIST_UPDATED(_,houseInfo)
             addon.player.plotID = houseInfo.plotID
