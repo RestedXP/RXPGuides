@@ -1292,6 +1292,16 @@ function addon:OnEnable()
         self:RegisterEvent("TOYS_UPDATED")
     end
 
+    if C_Housing then
+        self:RegisterEvent("PLAYER_HOUSE_LIST_UPDATED")
+        function addon:PLAYER_HOUSE_LIST_UPDATED(_,houseInfo)
+            addon.player.plotID = houseInfo.plotID
+            addon.player.houseGUID = houseInfo.houseGUID
+            addon.player.neighborhoodGUID = houseInfo.neighborhoodGUID
+        end
+        C_Housing.GetPlayerOwnedHouses()
+    end
+
     -- self:RegisterEvent("QUEST_LOG_UPDATE")
 
     questFrame:RegisterEvent("QUEST_COMPLETE")
