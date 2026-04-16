@@ -7409,6 +7409,13 @@ step << Rogue
     .train 6762 >>Train your class spells << wotlk
     .target Zelanis
     .xp <24,1
+step << Rogue
+    #optional
+    .goto Silvermoon City,79.70,52.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zelanis|r
+    >>|cRXP_WARN_Make sure you've trained|r |T132282:0|t[Ambush] |cRXP_WARN_and|r |T132302:0|t[Rupture] |cRXP_WARN_for a quest later|r << tbc
+    .accept 10794 >>Accept Rogues of the Shattered Hand
+    .target Zelanis
 step << Rogue wotlk
     .goto Silvermoon City,80.47,51.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darlia|r
