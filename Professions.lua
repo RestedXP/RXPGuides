@@ -12,6 +12,7 @@ local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, m
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 local GetProfessions, GetProfessionInfo = _G.GetProfessions, _G.GetProfessionInfo
+local GetMoney = _G.GetMoney
 
 
 --local helper functions
@@ -2145,7 +2146,7 @@ end
 
 --Sets RXPCData.professions.money
 local function gatherPlayerMoneyInfo()
-    
+    RXPCData.professions.money = GetMoney()
 end
 
 --Sort all found items by price
@@ -2433,11 +2434,6 @@ SlashCmdList['qtst'] = function()
     --     print("==========")
     -- end
 
-    -- for itemID, items in pairs(profSession.foundItems) do
-    --     for k, v in pairs(profSession.foundItems[itemID][1]) do
-    --         print(k, "->", v)
-    --     end
-    -- end
 end
 
 
