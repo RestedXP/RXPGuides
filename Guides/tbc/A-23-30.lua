@@ -948,14 +948,21 @@ step << Warlock
     .mob Summoned Incubus
     .isQuestTurnedIn 65602
 step << Warlock
-    #completewith next
+    #completewith TheBinding
     +|cRXP_WARN_You may now use either the|r |T136220:0|t[Succubus] |cRXP_WARN_or|r |T136221:0|t[Voidwalker] |cRXP_WARN_as your pet|r
     >>|cRXP_WARN_The|r |T136220:0|t[Succubus] |cRXP_WARN_deals significant damage whereas the|r |T136221:0|t[Voidwalker] |cRXP_WARN_provides more survivability|r
 step << Warlock
+    .isOnQuest 1739
     .goto Stormwind City,25.25,78.55
     .target Gakin the Darkbinder
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 1739 >> Turn in The Binding
+step << Warlock
+    #label TheBinding
+    .isOnQuest 65603
+    .goto Stormwind City,25.25,78.55
+    .target Gakin the Darkbinder
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 65603 >> Turn in The Binding
 step << Mage
     #completewith next
