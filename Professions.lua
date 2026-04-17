@@ -4340,31 +4340,73 @@ end
 
 --Calculate value of each recipe
 --There might be a better way of doing this (more money wise optimal)
+--[[ 
+General idea:
+- We go through all recipes we want to consider
+  and through all materials needed for the given recipe.
+  If the material is to be bought from a vendor we just calculate the value
+  If the material is to be bought from AH we find n cheapest, where n is the number of material needed for the recipe
+  If the material is to be bought from AH and its not available, we put math.huge value
+  If the material is another recipe we just calculate its value. (Not yet implemented to check if its in the inventory)
+
+The problem arises if one recipe is dependant of another recipe that is yet to be evluated.
+We fix this by iterating over this procedure until all recipes are evaluted.
+This unfortunately makes our algorithm worst case O(n^2)
+]]
 local function calculateRecipePrice(professionName)
-    local totalPrice, remaining, i
-    for recipe, _ in pairs(profSession.recipesToConsider) do
-        totalPrice = 0
-        print("recipe = ", recipe)
-        for materialName, materialTable in pairs(PROFESSIONS[professionName].RECIPES[recipe].materials) do
-            if materialTable.fromVendor then
-                totalPrice = totalPrice + (PROFESSIONS[professionName].VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
-            else
-                remaining =  materialTable.count
-                i = 1
-                print(materialName)
-                print("r=", remaining)
-                while remaining > 0 do
-                    totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * profSession.foundItems[materialName][i].count
-                    remaining = remaining - profSession.foundItems[materialName][i].count
-                    print(remaining)
-                    i = i + 1
+    local totalPrice, remaining, i, materialNotFound
+    -- check whether we evaluated all the recipes
+    local recipeCount = tcount(profSession.recipesToConsider)
+    while recipeCount > 0 do
+        for recipe, _ in pairs(profSession.recipesToConsider) do
+            --Evaluate only if its not already evaluted
+            materialNotFound = false
+            if profSession.recipesToConsider[recipe] == huge then
+                totalPrice = 0
+                for materialName, materialTable in pairs(PROFESSIONS[professionName].RECIPES[recipe].materials) do
+                    --If it is another recipe
+                    if PROFESSIONS[professionName].RECIPES[materialName] then
+                        --print("compund recipe = ", recipe, " | ", materialName)
+                        --If not yet calculated
+                        if profSession.recipesToConsider[materialName] == huge then
+                            totalPrice = huge
+                        else
+                            totalPrice = totalPrice + profSession.recipesToConsider[materialName] --TODO: what if its huge!
+                        end
+                    --If its from a vendor
+                    elseif materialTable.fromVendor then
+                        totalPrice = totalPrice + (PROFESSIONS[professionName].VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
+                    else --If from AH
+                        --If there isn't any in the AH
+                        if not profSession.foundItems[materialName] then
+                            --profSession.foundItems = huge
+                            totalPrice = huge
+                            materialNotFound = true
+                        else
+                            remaining =  materialTable.count
+                            i = 1
+                            while remaining > 0 do
+                                totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * profSession.foundItems[materialName][i].count
+                                remaining = remaining - profSession.foundItems[materialName][i].count
+                                --print(remaining)
+                                i = i + 1
+                            end
+                        end
+                    end
+                end
+                profSession.recipesToConsider[recipe] = totalPrice
+                --Check if its evluated (= not huge) and if so mark it as evaluated
+                if profSession.recipesToConsider[recipe] ~= huge then
+                    recipeCount = recipeCount - 1
+                else
+                    --Check if there is no needed material in AH and remove it
+                    if materialNotFound then
+                        profSession.recipesToConsider[recipe] = nil
+                        recipeCount = recipeCount - 1
+                    end
                 end
             end
-            print("current price  = ", totalPrice)
         end
-        print("total price = " , totalPrice)
-        print("-------")
-        profSession.recipesToConsider[recipe] = totalPrice
     end
 end
 
@@ -4444,6 +4486,11 @@ end
 
 --Init setup
 addon.professions.AH:Setup()
+
+
+
+--GUI
+
 
 
 --Testing
@@ -4541,13 +4588,17 @@ SlashCmdList['tst'] = function()
     end
     print("==========")
     --gatherMaterialsToScan(RXPCData.professions.profession1.name)
-    for _, v in ipairs(profSession.materialsToScan) do
-        print(v)
-    end
+    --for _, v in ipairs(profSession.materialsToScan) do
+    --    print(v)
+    --end
     print("==========")
     calculateRecipePrice(RXPCData.professions.profession1.name)
     for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
-       print(recipeName, ": ", formatMoney(recipePrice))
+        if recipeName == huge then
+            print(recipeName, ": huge")
+        else
+            print(recipeName, ": ", formatMoney(recipePrice))
+        end
     end
 end
 
@@ -4564,7 +4615,6 @@ SlashCmdList['qtst'] = function()
     --     end
     --     print("==========")
     -- end
-
 end
 
 
