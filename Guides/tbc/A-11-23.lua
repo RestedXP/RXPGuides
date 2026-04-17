@@ -7,7 +7,8 @@ RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 12-14 Darkshore
 #displayname 10-14 Darkshore << Dwarf Hunter
-#displayname 11-14 Darkshore << !Human
+#displayname 11-14 Darkshore << !Human !Mage
+#displayname 12-14 Darkshore << Gnome Mage
 #subgroup RestedXP Alliance 1-20
 #defaultfor !Draenei !Warlock
 #next 14-20 Bloodmyst
