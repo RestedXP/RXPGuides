@@ -1050,9 +1050,18 @@ step
 step
     .goto Thunder Bluff,61.53,80.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .turnin 1130 >> Turn in Melor Sends Word
     .accept 1131 >> Accept Steelsnap
     .target Melor Stonehoof
     --TODO: Beta check if this quest can't be accepted without doing 1130 first
+    .isOnQuest 1130
+step
+    #optional
+    .goto Thunder Bluff,61.53,80.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .accept 1131 >> Accept Steelsnap
+    .target Melor Stonehoof
+    .isQuestAvailable 1131
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
@@ -2724,6 +2733,7 @@ step << BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duskingdawn|r
     .turnin 9425 >> Turn in Report to Tarren Mill
     .target Advisor Duskingdawn
+    .isOnQuest 9425
 step
     .goto Hillsbrad Foothills,62.64,20.76
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -4946,6 +4956,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .accept 879 >> Accept Betrayal from Within
     .target Mangletooth
+    .isQuestTurnedIn 5052
 step << Warrior
     .goto The Barrens,44.67,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruga Ragetotem|r inside the building
@@ -5075,6 +5086,7 @@ step
     >>|cRXP_ENEMY_Kuz|r |cRXP_WARN_patrols around slightly|r
     .complete 879,1 --Kuz's Skull (1)
     .unitscan Kuz
+    .isOnQuest 879
 step
     #label Lok
     .goto The Barrens,40.31,80.70,20,0
@@ -5082,6 +5094,7 @@ step
     >>Kill |cRXP_ENEMY_Lok Orcbane|r. Loot him for |cRXP_LOOT_Lok's Skull|r
     .complete 879,3 --Lok's Skull (1)
     .mob Lok Orcbane
+    .isOnQuest 879
 step
     #completewith NakSkull
     >>Kill |cRXP_ENEMY_Razormane Stalkers|r and |cRXP_ENEMY_Razormane Pathfinders|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
@@ -5114,6 +5127,7 @@ step
     >>Kill |cRXP_ENEMY_Nak|r. Loot him for |cRXP_LOOT_Nak's Skull|r
     .complete 879,2 --Nak's Skull (1)
     .mob Nak
+    .isOnQuest 879
 step
     #label Backstabber
     #loop
@@ -6334,6 +6348,13 @@ step
     .turnin 879 >> Turn in Betrayal from Within
     .accept 906 >> Accept Betrayal from Within
     .target Mangletooth
+    .isOnQuest 879
+step
+    .goto The Barrens,44.54,59.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
+    .accept 906 >> Accept Betrayal from Within
+    .target Mangletooth
+    .isQuestTurnedIn 879
 step
     .goto The Barrens,45.10,57.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack|r
@@ -6888,6 +6909,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 906 >> Turn in Betrayal from Within
     .target Thork
+    .isOnQuest 906
 step
     #label SwarmGrows
     .goto The Barrens,51.10,29.60
