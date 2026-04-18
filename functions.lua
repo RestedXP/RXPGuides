@@ -4134,6 +4134,37 @@ function addon.functions.areapoiexists(self, text, zone, ...)
     end
 end
 
+function addon.functions.areapoiguide(self, text, zone, id, guide)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = addon.GetMapId(zone) or tonumber(zone)
+        local idNum = tonumber(id)
+        if not (idNum and element.zone) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid PoI ID or map ID\n" .. self)
+        end
+        element.ids = { idNum }
+        if text and text ~= "" then element.text = text end
+        element.guide = guide
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local exists = false
+    local zoneId = element.zone
+    for _,id in pairs(element.ids) do
+        if zoneId and id and C_AreaPoiInfo.GetAreaPOIInfo(zoneId, id) then
+            exists = true
+        end
+    end
+
+    local step = element.step
+    if step.active and exists and not addon.isHidden then
+        addon.functions:next(element.guide)
+    end
+end
+
 events.questcount = events.complete
 function addon.functions.questcount(self, text, count, ...)
     if type(self) == "string" then
