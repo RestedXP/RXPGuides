@@ -7,7 +7,8 @@ RXPGuides.RegisterGuide([[
 << Alliance !Warlock
 #name 12-14 Darkshore
 #displayname 10-14 Darkshore << Dwarf Hunter
-#displayname 11-14 Darkshore << !Human
+#displayname 11-14 Darkshore << !Human !Mage
+#displayname 12-14 Darkshore << Gnome Mage
 #subgroup RestedXP Alliance 1-20
 #defaultfor !Draenei !Warlock
 #next 14-20 Bloodmyst
@@ -25,11 +26,13 @@ step << !NightElf
     .vendor 1448 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 	.target Neal Allen
     .money <0.08 << !Hunter
+    .zoneskip Darkshore
 step << !NightElf
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r inside
     .vendor 1453 >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from him (if they're up)|r
     .target Dewin Shimmerdawn
+    .zoneskip Darkshore
 step << !NightElf
     #completewith DarkshoreBoat
     .goto Wetlands,7.10,57.96,30,0

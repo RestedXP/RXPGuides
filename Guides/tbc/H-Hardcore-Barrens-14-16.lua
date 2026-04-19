@@ -1249,7 +1249,7 @@ step << Tauren Hunter
 step << Troll Warrior/Tauren Warrior/Undead Warrior
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
-    .train 172 >>Train Two-Handed Axes
+    .train 197 >>Train Two-Handed Axes
     .train 227 >>Train Staves
     .target Hanashi
 step << Hunter

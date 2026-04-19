@@ -1433,7 +1433,7 @@ step
     .goto The Barrens,46.08,40.68,50,0
     .goto The Barrens,45.71,40.56,50,0
     >>Find & kill |cRXP_ENEMY_Hezrul Bloodmark|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_He patrols around the lake|r
+    >>|cRXP_ENEMY_Hezrul|r |cRXP_WARN_patrols around the lake|r
     .complete 852,1 --Hezrul's Head
     .unitscan Hezrul Bloodmark
     .isQuestTurnedIn 851
@@ -2852,6 +2852,9 @@ step
 step
     #optional
     .abandon 959 >>Abandon Trouble at the Docks
+step
+    #optional
+    .abandon 1491 >>Abandon Smart Drinks
 
 
 ]])
@@ -3847,10 +3850,6 @@ step
     .use 6948
     .zoneskip Thunder Bluff
     .bindlocation 1638,1
-step
-    #optional
-    .abandon 1013 >>Abandon The Book of Ur
-    .dungeon SFK
 step
     #optional
     .abandon 1014 >>Abandon Arugal Must Die

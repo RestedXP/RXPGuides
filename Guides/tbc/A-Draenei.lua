@@ -1498,7 +1498,7 @@ RXPGuides.RegisterGuide([[
 #name 12-20 Bloodmyst (Draenei)
 #subgroup RestedXP Alliance 1-20
 #defaultfor Draenei
-#next 20-21 Darkshore (Draenei)
+#next 20-21 Darkshore (Draenei);21-23 Ashenvale (Draenei)
 
 step
     .goto Bloodmyst Isle,63.426,88.787
@@ -4021,6 +4021,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP TBC Guide (A)
 << Alliance
+#xprate <1.5
 #name 20-21 Darkshore (Draenei)
 #subgroup RestedXP Alliance 20-32
 #defaultfor Draenei
@@ -4426,10 +4427,42 @@ RXPGuides.RegisterGuide([[
 #next 23-24 Wetlands
 
 step
+#xprate >1.49
+    .isOnQuest 9633
+    .goto Darkshore,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+	.turnin 9633 >> Turn in The Way to Auberdine
+    .accept 10752 >> Accept Onward to Ashenvale
+    .target Thundris Windweaver
+    .zoneskip Darkshore,1
+step
+#xprate >1.49
+    .goto Darkshore,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .accept 10752 >> Accept Onward to Ashenvale
+    .target Thundris Windweaver
+    .zoneskip Darkshore,1
+step
+#xprate >1.49
+.dungeon BFD
+    .goto Darkshore,38.327,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    >>|cRXP_WARN_If you cannot accept this quest, skip this step|r
+    .accept 1275 >> Accept Researching the Corruption
+    .target Gershala Nightwhisper
+    .zoneskip Darkshore,1
+step
+#xprate >1.49
+    .goto Darkshore,36.336,45.574
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
+    .fp Auberdine >> Get the Auberdine flight path
+    .target Caylais Moonfeather
+    .zoneskip Darkshore,1
+step
     .goto Ashenvale,28.929,14.485
     .zone Ashenvale >> Travel south to Ashenvale
 step
-    #label tower
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
@@ -4441,6 +4474,7 @@ step
     .goto Ashenvale,26.43,38.59
     .accept 1010 >> Accept Bathran's Hair
 step
+#xprate <1.5
     .goto Ashenvale,31.25,30.70
     >>Kill |cRXP_ENEMY_Dark Strand Cultists|r, |cRXP_ENEMY_Dark Strand Adepts|r, |cRXP_ENEMY_Dark Strand Enforcers|r and |cRXP_ENEMY_Dark Strand Excavators|r. Loot them for the |cRXP_LOOT_Glowing Soul Gem|r
     .complete 970,1
@@ -4463,6 +4497,7 @@ step
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
 step
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
@@ -4784,10 +4819,12 @@ step
     >>|cRXP_WARN_Their spawn locations are scattered throughout the island|r
     .complete 1034,1
 step
+#xprate <1.5
     #completewith next
     .goto Ashenvale,31.67,64.24,15 >> Head to the base of the mountain
     .goto Ashenvale,31.21,61.60,15 >>Run straight north while climbing the mountain
 step
+#xprate <1.5
     .goto Ashenvale,27.40,63.03,70,0
     .goto Ashenvale,25.27,60.68
     >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r. Loot him for his |cRXP_LOOT_Tome|r
@@ -4795,6 +4832,7 @@ step
     .complete 973,1
     .mob Ilkrud Magthrull
 step
+#xprate <1.5
     #optional
     .isQuestComplete 945
 	.goto Ashenvale,27.4,61.7,80,0
@@ -4804,6 +4842,7 @@ step
     .turnin 945 >> Turn in Therylune's Escape
 	.target Therysil
 step
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .goto Ashenvale,26.19,38.69
     .turnin 973 >> Turn in The Tower of Althalaxx
@@ -5011,6 +5050,7 @@ step
     .target Daelyshia
     .zoneskip Ashenvale,1
 step
+#xprate <1.5
     .goto Darkshore,37.70,43.39
     .target Sentinel Glynda Nal'Shea
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
@@ -5018,6 +5058,7 @@ step
     .isQuestComplete 4740
 step
 .dungeon BFD
+#xprate <1.5
     #label AbsentMinded
     .goto Darkshore,37.44,41.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
@@ -5026,6 +5067,7 @@ step
     .target Archaeologist Hollee
 step
 .dungeon !BFD
+#xprate <1.5
     #label AbsentMinded
     .goto Darkshore,37.44,41.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
@@ -5040,8 +5082,8 @@ step
     .turnin 1275 >> Turn in Researching the Corruption
     .target Gershala Nightwhisper
 step
-.dungeon BFD
-    .isOnQuest 1199,1200
+.dungeon BFD << !Hunter
+    .isOnQuest 1199,1200 << !Hunter
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
@@ -5052,7 +5094,7 @@ step << !Hunter
     .zone Teldrassil >> Take the boat to Teldrassil
     .zoneskip Darnassus
 step
-.dungeon BFD
+.dungeon BFD << !Hunter
     #optional
     #completewith ExitDarn
     .goto Teldrassil,55.95,89.88
@@ -5063,34 +5105,38 @@ step << !Hunter
     #completewith ExitDarn
     .goto Teldrassil,55.95,89.88
     .zone Darnassus >> Take the purple portal into Darnassus
+step
+#xprate <1.5
+    .isOnQuest 741
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+	.target Chief Archaeologist Greywhisker
+    .goto Teldrassil,23.70,64.51
+    .turnin 741 >> Turn in The Absent Minded Prospector
+    .accept 942 >> Accept The Absent Minded Prospector
+step
+#xprate <1.5
+    .isQuestTurnedIn 741
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+	.target Chief Archaeologist Greywhisker
+    .goto Teldrassil,23.70,64.51
+    .accept 942 >> Accept The Absent Minded Prospector
 step << Priest
-    .goto Darnassus,37.90,82.74
+    .goto 1457,37.903,82.753
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
     .trainer >> Train your class spells
     .target Jandria
-step << !Hunter
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
-	.target Chief Archaeologist Greywhisker
-    .goto Teldrassil,23.70,64.51
-    .turnin 741 >> Turn in The Absent Minded Prospector
-    .accept 942 >> Accept The Absent Minded Prospector
-step << Hunter
-.dungeon BFD
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
-	.target Chief Archaeologist Greywhisker
-    .goto Teldrassil,23.70,64.51
-    .turnin 741 >> Turn in The Absent Minded Prospector
-    .accept 942 >> Accept The Absent Minded Prospector
 step << Warrior
     .goto Darnassus,58.945,35.336
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnath Bladesinger|r
     .trainer >> Train your class spells
     .target Darnath Bladesinger
+    .zoneskip Darnassus,1
 step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .goto Darnassus,57.56,46.72
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
+    .zoneskip Darnassus,1
 step
 .dungeon BFD
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Guard Manados|r up stairs
@@ -5105,23 +5151,24 @@ step
     .goto Darnassus,56.167,24.395 -- Dawnwatcher Selgorm
     .target Dawnwatcher Selgorm
     .isQuestComplete 1200
-step << !Hunter
-    #label ExitDarn
-    .goto Darnassus,29.466,41.405
-    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
-    .zoneskip Darkshore
 step << Hunter
-.dungeon BFD
+    .goto Darnassus,40.38,8.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .trainer >> Train your class spells
+    .target Jocaste
+    .zoneskip Darnassus,1
+step
     #label ExitDarn
     .goto Darnassus,29.466,41.405
     .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
-    .zoneskip Darkshore
+    .zoneskip Darnassus,1
 step
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fly Darkshore >> Fly to Darkshore
     .target Vesprystus
     .zoneskip Darkshore
+    .zoneskip Wetlands
 step
     .goto Darkshore,32.44,43.71
     .zone Wetlands >> Take the boat to Menethil Harbor

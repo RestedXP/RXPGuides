@@ -2227,6 +2227,97 @@ function addon.functions.pin(self, ...)
     UpdateInstanceData(self,...)
 end
 
+function addon.functions.ingamewaypoint(self, ...)
+    -- creates a map pin without an waypoint arrow
+    if type(self) == "string" then
+        local element = {}
+        --element.tag = "goto"
+        local text, zone, x, y, tooltip = ...
+        if zone then
+            lastZone = zone
+        else
+            zone = lastZone
+        end
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            element.fixedMapID = true
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+            end
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.zx = zx*100
+                element.zy = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.zx , element.zy = addon.GetMapInfo(zone,x,y)
+        end
+        if not (element.zx and element.zy and element.zone) then
+            return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ": Invalid coordinates or map name\n" .. self)
+        end
+        if not subzone then
+        element.wx, element.wy, element.instance =
+            HBD:GetWorldCoordinatesFromZone(element.zx / 100, element.zy / 100,
+                                            element.zone)
+
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
+                element.zx = zx * 100
+                element.zy = zy * 100
+                element.zone = zone
+            end
+        end
+        element.zx = element.zx/100
+        element.zy = element.zy/100
+        element.wx,element.wy = nil,nil
+        element.parent = true
+        element.text = text
+        element.textOnly = true
+        return element
+    end
+
+    UpdateInstanceData(self,...)
+    local element = self.element
+    local mapID = element.zone
+    local active= element.step.active
+
+    if active and C_Map.CanSetUserWaypointOnMap(mapID) then
+        local point = UiMapPoint.CreateFromCoordinates(mapID, element.zx, element.zy)
+        C_Map.SetUserWaypoint(point)
+        C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+        element.waypointSet = true
+        addon.currentWaypoint = element.wpId
+        local pos = C_Map.GetUserWaypointPositionForMap(mapID)
+        element.zx = pos.x
+        element.zy = pos.y
+    end
+
+    if (not active or element.parent and (element.parent.completed or element.parent.skip)) and element.waypointSet == true then
+        local pos = C_Map.GetUserWaypointPositionForMap(mapID)
+        element.waypointSet = false
+        --print(pos.x,element.zx,pos.y,element.zy)
+        if pos and pos.x == element.zx and pos.y == element.zy then
+            C_Map.ClearUserWaypoint()
+        end
+    end
+end
+
+
 events.treasure = "QUEST_LOG_UPDATE"
 function addon.functions.treasure(self, text, zone, x, y, id)
     if type(self) == "string" then
@@ -4040,6 +4131,37 @@ function addon.functions.areapoiexists(self, text, zone, ...)
         addon.updateSteps = true
     elseif step.active and not step.completed then
         element.tooltipText = nil
+    end
+end
+
+function addon.functions.areapoiguide(self, text, zone, id, guide)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = addon.GetMapId(zone) or tonumber(zone)
+        local idNum = tonumber(id)
+        if not (idNum and element.zone) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid PoI ID or map ID\n" .. self)
+        end
+        element.ids = { idNum }
+        if text and text ~= "" then element.text = text end
+        element.guide = guide
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local exists = false
+    local zoneId = element.zone
+    for _,id in pairs(element.ids) do
+        if zoneId and id and C_AreaPoiInfo.GetAreaPOIInfo(zoneId, id) then
+            exists = true
+        end
+    end
+
+    local step = element.step
+    if step.active and exists and not addon.isHidden then
+        addon.functions:next(element.guide)
     end
 end
 
@@ -7216,6 +7338,37 @@ function addon.functions.collectcurrency(self, ...)
         addon.SetElementIncomplete(self)
     end
 end
+
+function addon.functions.multiboxtext(self,text)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        local name = guide.name
+        local group = guide.group
+        return {rawtext = text, textOnly = true}
+    end
+    local element = self.element
+    if addon.settings.profile.multibox then
+        element.text = element.rawtext
+    else
+        element.text = nil
+    end
+end
+
+function addon.functions.singleboxtext(self,text)
+    if type(self) == "string" then
+        local guide = addon.guide or addon.currentGuide
+        local name = guide.name
+        local group = guide.group
+        return {rawtext = text, textOnly = true}
+    end
+    local element = self.element
+    if not addon.settings.profile.multibox then
+        element.text = element.rawtext
+    else
+        element.text = nil
+    end
+end
+
 
 function addon.functions.multibox(self)
     if type(self) == "string" then

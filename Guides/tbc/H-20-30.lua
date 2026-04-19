@@ -66,7 +66,7 @@ step << !Troll Mage
     .goto Orgrimmar,46.75,63.84,6,0
     .goto Orgrimmar,45.12,63.88,10 >>Travel up the tower toward |cRXP_FRIENDLY_Doras|r
     .zoneskip Durotar
-step << !Shaman !Warrior !Troll !Orc
+step << !Shaman !Troll !Orc
     #completewith OrgFP
     #requires MageRune1 << Mage
     .goto Orgrimmar,49.59,94.74,30,0
@@ -82,13 +82,13 @@ step << !Shaman !Warrior !Troll !Orc
     .goto Orgrimmar,46.59,64.54,6,0
     .goto Orgrimmar,46.75,63.84,6,0
     .goto Orgrimmar,45.12,63.88,10 >>Travel up the tower toward |cRXP_FRIENDLY_Doras|r
-step << !Shaman !Warrior !Troll !Orc
+step << !Shaman !Troll !Orc
     #label OrgFP
     .goto Orgrimmar,45.12,63.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
-step << !Shaman !Warrior
+step << !Shaman
     .goto Orgrimmar,31.62,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
@@ -1050,9 +1050,18 @@ step
 step
     .goto Thunder Bluff,61.53,80.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .turnin 1130 >> Turn in Melor Sends Word
     .accept 1131 >> Accept Steelsnap
     .target Melor Stonehoof
     --TODO: Beta check if this quest can't be accepted without doing 1130 first
+    .isOnQuest 1130
+step
+    #optional
+    .goto Thunder Bluff,61.53,80.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .accept 1131 >> Accept Steelsnap
+    .target Melor Stonehoof
+    .isQuestAvailable 1131
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
@@ -2518,7 +2527,7 @@ step << !Mage
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
-    .dungeon SFK << !Shaman !Warrior
+    .dungeon SFK << !Shaman
 step << !Mage
     #completewith JourneytoHillsbrad
     .goto Undercity,66.09,20.06,35,0
@@ -2527,7 +2536,7 @@ step << !Mage
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
-    .dungeon SFK << !Shaman !Warrior
+    .dungeon SFK << !Shaman
 step << Mage
     #completewith JourneytoHillsbrad
     .cast 3563 >>Cast |T135766:0|t[Teleport: Undercity]
@@ -2559,7 +2568,7 @@ step
     .goto Tirisfal Glades,51.10,71.53,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Silverpine Forest
-    .dungeon SFK << !Shaman !Warrior !Mage
+    .dungeon SFK << !Shaman !Mage
 step
     #completewith next
     .goto Silverpine Forest,66.69,5.09,80,0
@@ -2602,7 +2611,7 @@ step
     .turnin 3301 >> Turn in Mura Runetotem
     .target Mura Runetotem
     .isOnQuest 3301
-    .dungeon WC << !Warrior !Shaman
+    .dungeon WC << !Shaman
 step
     #label JourneytoHillsbrad
     .goto Silverpine Forest,44.18,42.68
@@ -2724,6 +2733,7 @@ step << BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duskingdawn|r
     .turnin 9425 >> Turn in Report to Tarren Mill
     .target Advisor Duskingdawn
+    .isOnQuest 9425
 step
     .goto Hillsbrad Foothills,62.64,20.76
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -3841,10 +3851,6 @@ step
     .dungeon GNOMER
 step
     #optional
-    .abandon 1013 >>Abandon The Book of Ur
-    .dungeon SFK
-step
-    #optional
     .abandon 1014 >>Abandon Arugal Must Die
     .dungeon SFK
 step
@@ -4950,6 +4956,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .accept 879 >> Accept Betrayal from Within
     .target Mangletooth
+    .isQuestTurnedIn 5052
 step << Warrior
     .goto The Barrens,44.67,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruga Ragetotem|r inside the building
@@ -5079,6 +5086,7 @@ step
     >>|cRXP_ENEMY_Kuz|r |cRXP_WARN_patrols around slightly|r
     .complete 879,1 --Kuz's Skull (1)
     .unitscan Kuz
+    .isOnQuest 879
 step
     #label Lok
     .goto The Barrens,40.31,80.70,20,0
@@ -5086,6 +5094,7 @@ step
     >>Kill |cRXP_ENEMY_Lok Orcbane|r. Loot him for |cRXP_LOOT_Lok's Skull|r
     .complete 879,3 --Lok's Skull (1)
     .mob Lok Orcbane
+    .isOnQuest 879
 step
     #completewith NakSkull
     >>Kill |cRXP_ENEMY_Razormane Stalkers|r and |cRXP_ENEMY_Razormane Pathfinders|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
@@ -5118,6 +5127,7 @@ step
     >>Kill |cRXP_ENEMY_Nak|r. Loot him for |cRXP_LOOT_Nak's Skull|r
     .complete 879,2 --Nak's Skull (1)
     .mob Nak
+    .isOnQuest 879
 step
     #label Backstabber
     #loop
@@ -6338,6 +6348,13 @@ step
     .turnin 879 >> Turn in Betrayal from Within
     .accept 906 >> Accept Betrayal from Within
     .target Mangletooth
+    .isOnQuest 879
+step
+    .goto The Barrens,44.54,59.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
+    .accept 906 >> Accept Betrayal from Within
+    .target Mangletooth
+    .isQuestTurnedIn 879
 step
     .goto The Barrens,45.10,57.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack|r
@@ -6892,6 +6909,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 906 >> Turn in Betrayal from Within
     .target Thork
+    .isOnQuest 906
 step
     #label SwarmGrows
     .goto The Barrens,51.10,29.60

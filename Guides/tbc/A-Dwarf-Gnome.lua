@@ -132,12 +132,14 @@ step
     .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
     .target Sten Stoutarm
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .goto Dun Morogh,29.709,71.255
     .accept 170 >> Accept A New Threat
     .target Balir Frosthammer
 --Warlock Imp quest
 step << Warlock
+#xprate <1.5
     #completewith next
     .goto 1426,30.146,74.521,0
     .goto 1426,28.322,77.854,0
@@ -198,6 +200,7 @@ step << Warlock
     .target Alamar Grimm
 --XX Warlock Imp Quest End. Return to normal
 step
+#xprate <1.5
     #completewith Rockjaw << !Paladin !Warlock !Hunter
     #completewith Talin << Paladin/Warlock/Hunter
     .goto 1426,27.096,72.545,0
@@ -248,6 +251,7 @@ step
     .turnin 183 >> Turn in The Boar Hunter
     .target Talin Keeneye
 step << Paladin/Warlock/Hunter
+#xprate <1.5
     .goto 1426,27.858,76.482,0
     .goto 1426,30.727,76.831,0
     .goto 1426,29.280,75.500,0
@@ -347,6 +351,7 @@ step << Paladin/Warlock/Hunter
     .goto 1426,28.792,68.804,12 >> Exit Anvilmar
     .subzoneskip 77,1
 step << Paladin/Warlock/Hunter
+#xprate <1.5
     .goto Dun Morogh,29.709,71.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
@@ -358,6 +363,7 @@ step << Warlock
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
 step << !Paladin !Warlock !Hunter
+#xprate <1.5
     #sticky
     #label TroggEnd
     .goto 1426,24.193,77.305,0
@@ -531,6 +537,7 @@ step << !Paladin !Warlock !Hunter
     .turnin 3365 >> Turn in Bring Back the Mug
     .target Nori Pridedrift
 step << !Paladin !Warlock !Hunter
+#xprate <1.5
     .goto Dun Morogh,29.709,71.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
@@ -795,10 +802,13 @@ step
     >>|cRXP_WARN_Don't kill any |cRXP_ENEMY_Young Black Bears|r en-route|r
     .accept 317 >> Accept Stocking Jetsteam
     .goto Dun Morogh,49.426,48.410
-    .target +Pilot Bellowfiz
+    .target Pilot Bellowfiz
+step
+#xprate <1.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .accept 313 >> Accept The Grizzled Den
     .goto Dun Morogh,49.622,48.612
-    .target +Pilot Stonegear
+    .target Pilot Stonegear
 step << Warrior/Paladin/Rogue
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r and |cRXP_FRIENDLY_Loslor Rudge|r
@@ -971,12 +981,14 @@ step
     .target Ragnar Thunderbrew
     .isQuestComplete 384
 step
+#xprate <1.5
     #optional
     #completewith next
     .goto 1426,42.982,54.755
     .subzone 136 >> Travel to The Grizzled Den
     .isOnQuest 313
 step
+#xprate <1.5
     #optional << Warrior/Paladin/Rogue
     #loop
     .goto 1426,42.982,54.755,0
@@ -995,6 +1007,7 @@ step
     .mob Young Wendigo
     .train 2018,3 << Warrior/Paladin/Rogue --Blacksmithing Trained
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     #loop
     .goto 1426,42.982,54.755,0
     .goto 1426,41.918,54.053,0
@@ -1078,6 +1091,7 @@ step << Warrior/Paladin/Rogue
     .accept 318 >> Accept Evershine
     .target Pilot Bellowfiz
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
@@ -1599,6 +1613,7 @@ step
     .accept 287 >> Accept Frostmane Hold
     .target Senir Whitebeard
 step << !Rogue !Warrior !Paladin
+#xprate <1.5
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
@@ -1611,6 +1626,7 @@ step
     .turnin 320,3 >> Turn in Return to Bellowfiz << Rogue
     .target Pilot Bellowfiz
 step
+#xprate <1.5
     .goto Dun Morogh,46.005,48.637,10,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r inside
@@ -1673,6 +1689,7 @@ step
     .goto Dun Morogh,30.186,45.531
     .target +Marleth Barleybrew
 step
+#xprate <1.5
     #loop
     .goto 1426,26.653,43.844,0
     .goto 1426,24.601,40.790,0
@@ -1746,6 +1763,7 @@ step
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Thamner Pol
 step
+#xprate <1.5
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r inside
@@ -2093,6 +2111,12 @@ step << !Rogue !Warrior !Warlock
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
     .mob +Stonesplinter Trogg
     .mob +Stonesplinter Scout
+step << Mage
+#xprate >1.49
+    .goto Loch Modan,26.67,56.94
+    .xp 12-3675 >> Grind until you are 3675xp away from level 12
+    .mob Stonesplinter Trogg
+    .mob Stonesplinter Scout
 step << !Rogue !Warrior !Warlock
     #optional
     #completewith next
@@ -2116,6 +2140,7 @@ step
     .goto 1432,34.405,48.276
     .subzone 144 >> Travel to Thelsamar
 step
+#xprate <1.5
     #sticky
     #label StouttoKadrell
     .waypoint Loch Modan,36.72,41.97,15,0
@@ -2130,6 +2155,23 @@ step
     .turnin 414 >> Turn in Stout to Kadrell
     .accept 416 >> Accept Rat Catching << Mage/Warlock
     .accept 1339 >> Accept Mountaineer Stormpike's Task << Mage/Rogue/Warrior/Warlock
+    .target Mountaineer Kadrell
+step
+#xprate >1.49
+    #sticky
+    #label StouttoKadrell
+    .waypoint Loch Modan,36.72,41.97,15,0
+    .waypoint Loch Modan,37.24,43.19,15,0
+    .waypoint Loch Modan,37.33,45.63,15,0
+    .waypoint Loch Modan,36.77,46.20,15,0
+    .waypoint Loch Modan,35.19,46.88,15,0
+    .waypoint Loch Modan,32.67,49.71,20,0
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
+    .turnin 414 >> Turn in Stout to Kadrell
+    .accept 416 >> Accept Rat Catching << Warlock
+    .accept 1339 >> Accept Mountaineer Stormpike's Task << Rogue/Warrior/Warlock
     .target Mountaineer Kadrell
 step
     #optional
@@ -2169,6 +2211,7 @@ step << Mage/Rogue/Warrior/Warlock
     .target Innkeeper Hearthstove
     .bindlocation 2101
 step << Mage/Warlock
+#xprate <1.5 << !Warlock
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .accept 418 >> Accept Thelsamar Blood Sausages
@@ -2210,6 +2253,7 @@ step
     #optional
     #requires StouttoKadrell
 step << Mage/Warlock
+#xprate <1.5 << !Warlock
     #optional
     #completewith Algaz
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -2225,12 +2269,14 @@ step << Mage/Warlock
     .isOnQuest 418
     .subzoneskip 925 --Algaz Station
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #optional
     #label Algaz
     #completewith Stormpike1
     .goto 1432,23.490,18.008
     .subzone 925 >>Travel to Algaz Station
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #optional
     #requires Algaz
     #completewith Stormpike1
@@ -2240,6 +2286,7 @@ step << Mage/Rogue/Warrior/Warlock
     .target Gothor Brumn
     .isOnQuest 1339
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #label Stormpike1
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
@@ -2248,6 +2295,7 @@ step << Mage/Rogue/Warrior/Warlock
     .accept 307 >> Accept Filthy Paws << Mage/Warlock
     .target Mountaineer Stormpike
 step << Mage
+#xprate <1.5
     #optional
     #completewith ESSM
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -2262,6 +2310,7 @@ step << Mage
     .subzoneskip 149 --Silver Stream Mine
     .isQuestAvailable 418
 step << Mage
+#xprate <1.5
     #completewith MinersGear
     #optional
     #loop
@@ -2281,16 +2330,19 @@ step << Mage
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
 step << Mage
+#xprate <1.5
     #label ESSM
     #completewith next
     .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
 step << Mage
+#xprate <1.5
     #label MinersGear
     .goto Loch Modan,35.93,22.55
     >>Open the |cRXP_PICK_Miners' League Crates|r. Loot them for the |cRXP_LOOT_Miners' Gear|r
     >>|cRXP_WARN_The |cRXP_PICK_Miners' League Crates|r can be found all throughout the Mine|r
     .complete 307,1 -- Miners' Gear (4)
 step << Mage
+#xprate <1.5
     #optional
     #completewith FilthyMountaineer
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -2303,6 +2355,7 @@ step << Mage
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob +Forest Lurker
 step << Mage
+#xprate <1.5
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
@@ -2321,18 +2374,21 @@ step << Mage
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
 step << Mage
+#xprate <1.5
     #completewith next
     .goto Loch Modan,24.134,18.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gothor Brumn|r
     .vendor >>|cRXP_WARN_Vendor and repair if needed|r
     .target Gothor Brumn
 step << Mage
+#xprate <1.5
     #label FilthyMountaineer
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
     .target Mountaineer Stormpike
 step << Mage
+#xprate <1.5
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
@@ -2384,10 +2440,12 @@ step << Rogue/Warrior
     .money >0.3000 << Rogue
     .money >0.1000 << Warrior
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #completewith FlytoIF
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 144
 step << Mage
+#xprate <1.5
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto Loch Modan,36.72,41.97,15,0
     .goto Loch Modan,37.24,43.19,15,0
@@ -2401,6 +2459,7 @@ step << Mage
     .target Mountaineer Kadrell
     .turnin 416 >> Turn in Rat Catching
 step << Mage
+#xprate <1.5
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
@@ -2908,16 +2967,19 @@ step
     .goto Elwynn Forest,42.105,65.927
     .subzone 87 >> Travel to Goldshire
 step
+#xprate <1.5
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
 step
+#xprate <1.5
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .accept 60 >> Accept Kobold Candles
     .target William Pestle
 step
+#xprate <1.5
     #label GoldshireQuests
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
@@ -2925,10 +2987,18 @@ step
     .accept 40 >> Accept A Fishy Peril
     .target Remy "Two Times"
 step
+#xprate >1.49
+    #label GoldshireQuests
+    .goto Elwynn Forest,42.140,67.254
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
+    .accept 40 >> Accept A Fishy Peril
+    .target Remy "Two Times"
+step
     #optional
     #sticky
     .abandon 109 >> Abandon Report to Gryan Stoutmantle
 step
+#xprate <1.5
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>|cRXP_WARN_Some mobs may turn gray during this quest. Still finish it as you need to complete this quest to unlock the follow up's|r
@@ -2937,11 +3007,13 @@ step
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
+#xprate <1.5
     .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
     >>|cRXP_WARN_Enter and explore Fargodeep Mine|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
+#xprate <1.5
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3,25,0
@@ -2993,6 +3065,7 @@ step
     #completewith HoggerTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+#xprate <1.5
     #optional
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -3006,6 +3079,7 @@ step
     .target Marshal Dughan
     .isOnQuest 123
 step
+#xprate <1.5
     #label HoggerTurnin
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -3017,6 +3091,29 @@ step
     .accept 76 >> Accept The Jasperlode Mine
     .target Marshal Dughan
 step
+#xprate >1.49
+    #optional
+    .goto Elwynn Forest,42.105,65.927
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    >>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick] |cRXP_WARN_reward from Hogger|r
+    .turnin 176 >> Turn in Wanted: "Hogger"
+    .turnin 123 >> Turn in The Collector
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+    .target Marshal Dughan
+    .isOnQuest 123
+step
+#xprate >1.49
+    #label HoggerTurnin
+    .goto Elwynn Forest,42.105,65.927
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    >>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick] |cRXP_WARN_reward from Hogger|r
+    .turnin 176 >> Turn in Wanted: "Hogger"
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+    .target Marshal Dughan
+step
+#xprate <1.5
     #optional
     .isQuestTurnedIn 123
     .goto Elwynn Forest,42.105,65.927
@@ -3024,12 +3121,14 @@ step
     .accept 147 >> Accept Manhunt
     .target Marshal Dughan
 step
+#xprate <1.5
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 70|r
     .turnin 47 >> Turn in Gold Dust Exchange
     .target Remy "Two Times"
 step
+#xprate <1.5
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 60 >> Turn in Kobold Candles
@@ -3055,10 +3154,12 @@ step
     .target Innkeeper Farley
     .subzoneskip 87,1
 step
+#xprate <1.5
     #optional
     #completewith next
     .goto Elwynn Forest,61.654,53.608,15 >> Enter the Jasperlode Mine
 step
+#xprate <1.5
     #label JasperlodeExplore
     .goto Elwynn Forest,61.20,51.46,15,0
     .goto Elwynn Forest,60.72,50.85,15,0
@@ -3066,11 +3167,13 @@ step
     >>Follow the path through middle to explore Jasperlode Mine
     .complete 76,1 --Scout through the Jasperlode Mine
 step
+#xprate <1.5
     #optional
     #completewith Find
     .goto 1429,61.820,53.871,15 >> Exit Jasperlode Mine
     .subzoneskip 54,1
 step
+#xprate <1.5
     #optional
     #completewith Find
     +|cRXP_WARN_Kite a |cRXP_ENEMY_Young Forest Bear|r toward|r |cRXP_FRIENDLY_Guard Thomas|r
@@ -3078,6 +3181,7 @@ step
     >>|cRXP_WARN_Make sure to deal 51%+ damage to get credit|r
     .mob Young Forest Bear
 step
+#xprate <1.5
     #label Find
     .goto Elwynn Forest,73.973,72.179
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
@@ -3086,6 +3190,14 @@ step
     .accept 52 >> Accept Protect the Frontier
     .target Guard Thomas
 step
+#xprate >1.49
+    #label Find
+    .goto Elwynn Forest,73.973,72.179
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 35 >> Turn in Further Concerns
+    .target Guard Thomas
+step
+#xprate <1.5
     #completewith AcceptBundle
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
@@ -3094,17 +3206,20 @@ step
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
 step
+#xprate <1.5
     .goto Elwynn Forest,72.656,60.334
     >>Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
+#xprate <1.5
     #label AcceptBundle
     .goto Elwynn Forest,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .accept 5545 >> Accept A Bundle of Trouble
     .target Supervisor Raelen
 step
+#xprate <1.5
     #optional
     .goto Elwynn Forest,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
@@ -3112,6 +3227,7 @@ step
     .target Rallic Finn
     .subzoneskip 88,1
 step
+#xprate <1.5
     #completewith Prowlers
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
@@ -3121,6 +3237,7 @@ step
     .mob +Young Forest Bear
     .subzoneskip 86 --Stone Cairn Lake
 step
+#xprate <1.5
     #completewith next
     .goto Elwynn Forest,80.48,55.18,0
     .goto Elwynn Forest,80.15,60.03,0
@@ -3128,6 +3245,7 @@ step
     >>Loot the |cRXP_LOOT_Bundles of Wood|r on the ground at the base of the trees
     .complete 5545,1 -- Bundle of Wood (8)
 step
+#xprate <1.5
     #label Prowlers
     .goto Elwynn Forest,79.80,55.50
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
@@ -3136,6 +3254,7 @@ step
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step
+#xprate <1.5
     #completewith BundleOT
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
@@ -3144,6 +3263,7 @@ step
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
 step
+#xprate <1.5
     #loop
     .goto Elwynn Forest,80.48,55.18,0
     .goto Elwynn Forest,80.15,60.03,0
@@ -3169,17 +3289,20 @@ step
     >>Loot the |cRXP_LOOT_Bundles of Wood|r on the ground at the base of the trees
     .complete 5545,1 -- Bundle of Wood (8)
 step
+#xprate <1.5
     #label BundleOT
     .goto Elwynn Forest,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .turnin 5545 >> Turn in A Bundle of Trouble
     .target Supervisor Raelen
 step
+#xprate <1.5
     .goto Elwynn Forest,79.457,68.789
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .accept 83 >> Accept Red Linen Goods
     .target Sara Timberlain
 step
+#xprate <1.5
     #loop
     .goto 1429,77.499,74.518,0
     .goto 1429,80.496,78.223,0
@@ -3197,6 +3320,7 @@ step
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
 step
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .target Guard Thomas
     .goto Elwynn Forest,73.973,72.179
@@ -3204,12 +3328,14 @@ step
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
 step
+#xprate <1.5
     #completewith PrincessCollar
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .mob Defias Bandit
     .isOnQuest 83
 step << Warlock
+#xprate <1.5
     .isOnQuest 147
     .goto Elwynn Forest,71.10,80.66
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
@@ -3236,6 +3362,7 @@ step
     .complete 88,1
     .mob Princess
 step
+#xprate <1.5
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
     .goto Elwynn Forest,70.5,77.6,60,0
     .goto Elwynn Forest,68.1,77.5,60,0
@@ -3254,6 +3381,7 @@ step
     .mob Defias Bandit
     .isOnQuest 83
 step
+#xprate <1.5
     .goto Elwynn Forest,79.457,68.789
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 83 >> Turn in Red Linen Goods
@@ -3299,6 +3427,7 @@ step
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
 step
+#xprate <1.5
     .goto StormwindClassic,56.201,64.585
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61,1 >> Turn in Shipment to Stormwind
@@ -3443,6 +3572,7 @@ step
     .goto Elwynn Forest,42.105,65.927
     .subzone 87 >> Travel to Goldshire
 step << Warlock
+#xprate <1.5
     #optional
     .isOnQuest 147
     .goto Elwynn Forest,42.105,65.927
@@ -3452,6 +3582,7 @@ step << Warlock
     .turnin 39 >> Turn in Deliver Thomas' Report
     .turnin 76 >> Turn in The Jasperlode Mine
 step << Warlock
+#xprate <1.5
     #label GoldshireTurnins
     .goto Elwynn Forest,42.105,65.927
     .target Marshal Dughan
@@ -3696,8 +3827,15 @@ step
     .mob +Stonesplinter Trogg
     .mob +Stonesplinter Scout
 step
+#xprate <1.5
     .goto Loch Modan,26.67,56.94
     .xp 14-1800 >>Grind until you are 1800xp away from level 14 (9200/11000)
+    .mob Stonesplinter Trogg
+    .mob Stonesplinter Scout
+step
+#xprate >1.49
+    .goto Loch Modan,26.67,56.94
+    .xp 14-2700 >>Grind until you are 2700xp away from level 14 (8300/11000)
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
 step
@@ -4111,10 +4249,13 @@ step
     >>|cRXP_WARN_Don't kill any |cRXP_ENEMY_Young Black Bears|r en-route|r
     .accept 317 >> Accept Stocking Jetsteam
     .goto Dun Morogh,49.426,48.410
-    .target +Pilot Bellowfiz
+    .target Pilot Bellowfiz
+step
+#xprate <1.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .accept 313 >> Accept The Grizzled Den
     .goto Dun Morogh,49.622,48.612
-    .target +Pilot Stonegear
+    .target Pilot Stonegear
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r and |cRXP_FRIENDLY_Loslor Rudge|r
     .turnin 400 >> Turn in Tools for Steelgrill
@@ -4223,6 +4364,7 @@ step
     .itemcount 2509,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.94
 step
+#xprate <1.5
     #loop
     .goto 1426,42.982,54.755,0
     .goto 1426,41.918,54.053,0
@@ -4498,6 +4640,7 @@ step
     .accept 287 >> Accept Frostmane Hold
     .target Senir Whitebeard
 step
+#xprate <1.5
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
@@ -4645,6 +4788,7 @@ step
     #completewith ShimmerweedCollect
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .target Razzle Sprysprocket
     .goto Dun Morogh,46.005,48.637,10,0
@@ -4727,6 +4871,7 @@ step
     .goto Dun Morogh,30.186,45.531
     .turnin 311 >> Turn in Return to Marleth
 step
+#xprate <1.5
     #loop
     .goto 1426,26.653,43.844,0
     .goto 1426,24.601,40.790,0
@@ -4795,6 +4940,7 @@ step
     .accept 291 >> Accept The Reports
     .target Senir Whitebeard
 step
+#xprate <1.5
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r inside

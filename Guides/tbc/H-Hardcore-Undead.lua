@@ -550,6 +550,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arren|r
     .turnin 381 >> Turn in The Scarlet Crusade
     .accept 382 >> Accept The Red Messenger
+    .target Executor Arren
 step
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r

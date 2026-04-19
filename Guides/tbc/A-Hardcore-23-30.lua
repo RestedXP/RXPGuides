@@ -782,10 +782,10 @@ step << Draenei/NightElf
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
 step
-    #completewith next
+    #completewith RRQuests
     .goto 1429/0,395.900,-9114.200,80 >> Exit Stormwind
 step
-    #completewith next
+    #completewith RRQuests
     .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower
 step
     .goto Elwynn Forest,65.22,69.71
@@ -904,6 +904,7 @@ step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
     .turnin 2282 >> Turn in Alther's Mill
     .target Lucius
+    .isQuestComplete 2282
 step
     .goto Redridge Mountains,26.75,46.43
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -1017,9 +1018,9 @@ step
     >>|cRXP_ENEMY_Skeletal Warriors|r |cRXP_WARN_apply|r |T132316:0|t[Hamstring]
     >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
+    .mob +Skeletal Warrior
     .complete 56,2 -- Skeletal Mage slain (6)
-    .mob Skeletal Warrior
-    .mob Skeletal Mage
+    .mob +Skeletal Mage
 step
     .goto Duskwood,79.73,70.64,30,0
     .goto Duskwood,80.98,71.65
@@ -1039,9 +1040,9 @@ step
     >>|cRXP_ENEMY_Skeletal Warriors|r |cRXP_WARN_apply|r |T132316:0|t[Hamstring]
     >>|cRXP_ENEMY_Skeletal Mages|r |cRXP_WARN_cast|r |T135846:0|t[Frostbolt] |cRXP_WARN_and also snare with|r |T135843:0|t[Frost Armor]
     .complete 56,1 -- Skeletal Warrior slain (8)
+    .mob +Skeletal Warrior
     .complete 56,2 -- Skeletal Mage slain (6)
-    .mob Skeletal Warrior
-    .mob Skeletal Mage
+    .mob +Skeletal Mage
 step
     #completewith Level25
     >>Kill |cRXP_ENEMY_Spiders|r in Duskwood. Loot them for their |cRXP_LOOT_Gooey Spider Legs|r
@@ -1904,7 +1905,11 @@ step
     .complete 57,2 -- Skeletal Horror slain (15)
     .mob +Skeletal Horror
     .complete 156,1 -- Rot Blossom (8)
+    .mob +Skeletal Fiend
+    .mob +Skeletal Horror
     .complete 101,3 --10/10 Skeleton Finger
+    .mob +Skeletal Fiend
+    .mob +Skeletal Horror
 step
     .goto Duskwood,7.78,34.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
@@ -2934,10 +2939,22 @@ step
     .target Harlo Barnaby
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
+step 
+    .goto Wetlands,10.0,56.8
+    .target Valstag Ironjaw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r
+    .accept 473 >> Accept Report to Captain Stoutfist
+    .isQuestAvailable 473
 step
     #completewith next
     .goto Wetlands,10.28,56.334,20,0
     .goto Wetlands,9.742,57.866,15 >> Travel upstairs in Menethil Keep
+step 
+    .goto Wetlands,9.86,57.48
+    .target Captain Stoutfist
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r
+    .turnin 473 >> Turn in Report to Captain Stoutfist
+    .isOnQuest 473
 step
     .goto Wetlands,9.861,57.486
     .target Captain Stoutfist
@@ -3191,6 +3208,7 @@ step
     .complete 943,1 --1/1 Stone of Relu
     .mob Mottled Razormaw
     .mob Mottled Scytheclaw
+    .isOnQuest 943
 step
     .goto Wetlands,38.17,50.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
@@ -3459,12 +3477,15 @@ step
     .target Pelturas Whitemoon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .accept 1035 >> Accept Fallen Sky Lake
+    .isQuestAvailable 1035
+    .isQuestTurnedIn 1034
 step
     #completewith ShamefulWaste
     .goto Ashenvale,34.41,47.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fly Forest Song >> Fly to Forest Song
     .target Daelyshia
+    .subzoneskip 2358 --Forest Song
 step
     .goto 1440/1,-3149.800,2899.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gnarl|r
@@ -3616,6 +3637,7 @@ step
     >>Kill the |cRXP_ENEMY_Shadethicket Oracle|r. Loot it for the |cRXP_LOOT_Fallen Moonstone|r
     .complete 1035,1
     .mob Shadethicket Oracle
+    .isOnQuest 1035
 step
     #requires slimes
     .goto Ashenvale,69.73,86.62,0
@@ -3732,6 +3754,7 @@ step
     .target Pelturas Whitemoon
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1035 >> Turn in Fallen Sky Lake
+    .isQuestComplete 1035
 step
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
@@ -3756,6 +3779,25 @@ step
 	>>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
 	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
     .zoneskip Wetlands
+    .bindlocation 2104,1 --HS in Menethil
+step
+    #optional
+    #completewith next
+    .subzone 415 >>Return to Astranaar
+step
+    #optional
+    .goto Ashenvale,34.41,47.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
+    .fly Darkshore >> Fly to Darkshore
+    .target Daelyshia
+    .zoneskip Darkshore
+    .bindlocation 2104 --HS not in Menethil
+step
+    #optional
+    .goto Darkshore,32.44,43.71
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
+    .zone Wetlands >> Take the boat to Menethil Harbor
+    .bindlocation 2104 --HS not in Menethil
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3917,11 +3959,10 @@ step << Mage
     #completewith KingsTribute
     .zone Ironforge >> |cRXP_WARN_Cast|r |T135757:0|t[Teleport: Ironforge]
 step << Mage
-    .goto Stormwind City,36.87,81.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea|r
+    .goto Ironforge,27.18,8.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r
     .trainer >> Train your class spells
-    .target Elsharin
-	.target Jennea Cannon
+    .target Dink
 step << Shaman
     .goto Ironforge,55.436,28.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farseer Javad|r
@@ -4073,18 +4114,23 @@ step
     >>|cRXP_FRIENDLY_Thomas|r |cRXP_WARN_walks around through the Cathedral|r
     .accept 1274 >> Accept The Missing Diplomat
     .target Thomas
+    .isNotOnQuest 1274
+    .isQuestAvailable 1274
 step
     #label CleansingtheEye
     .goto Stormwind City,39.60,27.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archbishop Benedictus|r
     .turnin 293 >> Turn in Cleansing the Eye
     .target Archbishop Benedictus
+    .isOnQuest 293
 step
     .goto Stormwind City,38.72,25.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas|r
     >>|cRXP_FRIENDLY_Thomas|r |cRXP_WARN_walks around through the Cathedral|r
     .accept 1274 >> Accept The Missing Diplomat
     .target Thomas
+    .isNotOnQuest 1274
+    .isQuestAvailable 1274
 step << Mage
     .goto Stormwind City,51.75,12.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
@@ -4215,6 +4261,38 @@ step
     .home >> Set your Hearthstone to Duskwood
     .target Innkeeper Trelayne
     --xx nosubzone. check on ptr
+step
+    #optional
+    .goto Duskwood,73.59,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    .turnin 57 >> Turn in The Night Watch
+    .target Commander Althea Ebonlocke
+    .isQuestComplete 57
+step
+    #optional
+    .isQuestComplete 228
+    .goto Duskwood,73.59,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .turnin 228 >> Turn in Mor'Ladim
+    .accept 229 >> Accept The Daughter Who Lived
+    .target Commander Althea Ebonlocke
+step
+    #optional
+    .isQuestTurnedIn 228
+    .goto Duskwood,73.59,46.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .accept 229 >> Accept The Daughter Who Lived
+    .target Commander Althea Ebonlocke
+step
+    #optional
+    .isQuestTurnedIn 228
+    .goto Duskwood,74.54,46.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Ladimore|r
+    >>|cRXP_FRIENDLY_Watcher Ladimore|r |cRXP_WARN_patrols around in Darkshire|r
+    .turnin 229 >> Turn in The Daughter Who Lived
+    .accept 231 >> Accept A Daughter's Love
+    .target Watcher Ladimore
 step
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
@@ -4874,6 +4952,15 @@ step
     .turnin 1247 >> Turn in The Missing Diplomat
     .accept 1248 >> Accept The Missing Diplomat
     .target Elling Trias
+step
+#ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Southshore soon
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>10 |T134026:0|t[Turtle Meat]
+    .collect 3712,10,555,1
+    .target Auctioneer Jaxon
 step << !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Newton Burnside|r
     .goto Stormwind City,57.00,72.88
@@ -4957,15 +5044,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Count Remington Ridgewell|r
     .accept 543 >>Accept The Perenolde Tiara
     .target Count Remington Ridgewell
-step
-#ah
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Southshore soon
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
-    >>10 |T134026:0|t[Turtle Meat]
-    .collect 3712,10,555,1
-    .target Auctioneer Jaxon
 step << Druid
     #completewith DruidMount
 	.cast 18960 >> |cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]

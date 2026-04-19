@@ -39,8 +39,13 @@ step
 	.goto Teldrassil,59.924,42.474
     .target +Melithar Staghelm
 step << Hunter
+    #xprate <1.5
     .goto Teldrassil,59.8,34.1
     .xp 4-610 >> Grind en route until you are 610xp away from level 4 (790/1400)
+step << Hunter
+    #xprate >1.49
+    .goto Teldrassil,59.8,34.1
+    .xp 4-755 >> Grind until you are 755xp away from level 4 (645/1400)
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
@@ -132,7 +137,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .accept 916 >> Accept Webwood Venom
 step << Hunter
+    #xprate <1.5
     .xp 4-40
+step << Hunter
+    #xprate >1.49
+    .xp 4-50
 step << Hunter
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.659,40.449
@@ -357,10 +366,18 @@ step << Rogue
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
     .target Aldia
 step
+    #xprate <1.5
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 932 >> Accept Twisted Hatred
+    .accept 2438 >> Accept The Emerald Dreamcatcher
+step
+    #xprate >1.49
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
+    .accept 932 >> Accept Twisted Hatred << !Hunter
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
     .goto Teldrassil,55.890,59.205
@@ -822,7 +839,14 @@ step
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
-step
+step << Hunter
+    #xprate <1.5
+    .goto Teldrassil,51.2,50.6
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
+    .complete 932,1 --Collect Melenas' Head (x1)
+    .unitscan Lord Melenas
+step << !Hunter
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
@@ -832,12 +856,20 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 258,1
 step << !Druid
+    #xprate <1.5
+    #optional
     .goto Teldrassil,56.142,61.714
     .target Corithras Moonrage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
     .accept 933 >> Accept Crown of the Earth
+step << !Druid
+    .goto Teldrassil,56.142,61.714
+    .target Corithras Moonrage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
+    .turnin 929 >> Turn in Crown of the Earth
 step
+    #xprate <1.5
 	#completewith spiderLegs
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
     >>|cRXP_WARN_You need these for a later quest|r
@@ -845,21 +877,26 @@ step
     .mob Webwood Lurker
     .mob Webwood Venomfang
 step
+    #xprate <1.5
     #completewith next
     .goto Teldrassil,42.61,76.18,50 >> Travel to southwestern Teldrassil
 step
+    #xprate <1.5
 	.goto Teldrassil,42.61,76.18
 	>>Click the |cRXP_PICK_Strange Fruited Plant|r
 	.accept 930 >> Accept The Glowing Fruit
 step
+    #xprate <1.5
     #completewith next
     .goto Teldrassil,42.41,67.07,50 >> Travel to the Pools of Arlithrien
 step
+    #xprate <1.5
 	#label spiderLegs
 	.goto Teldrassil,42.41,67.07
     .use 5621 >>|cRXP_WARN_Use the|r |T134765:0|t[Tourmaline Phial] |cRXP_WARN_at the Pools of Arlithrien moonwell|r
 	.complete 933,1
 step
+    #xprate <1.5
     .goto Teldrassil,44.69,70.52,40,0
     .goto Teldrassil,44.88,73.83
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
@@ -867,21 +904,31 @@ step
     .mob Webwood Lurker
     .mob Webwood Venomfang
 step
+    #xprate <1.5
 	#completewith next
     .goto Teldrassil,43.50,68.42
     .deathskip >> Die and respawn at the Dolanaar graveyard, make sure to die east of the moonwell, otherwise you might end up in Darnassus
 step
+    #xprate <1.5
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 933 >> Turn in Crown of the Earth
     .target Corithras Moonrage
     .accept 7383 >> Accept Crown of the Earth
 step
+    .itemcount 5465,7
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
     .train 2550 >>Train |T133971:0|t[Cooking]
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
+    .target Zarrin
+step
+    #optional
+    .isQuestTurnedIn 4161
+    .goto Teldrassil,57.121,61.296
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
+    .train 2550 >>Train |T133971:0|t[Cooking]
     .target Zarrin
 step << Warrior/Rogue
     .goto Teldrassil,55.29,56.82
@@ -889,6 +936,14 @@ step << Warrior/Rogue
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Byancie
 step
+    #xprate >1.49
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
+    .turnin 932 >> Turn in Twisted Hatred << !Hunter
+    .turnin 2459 >> Turn in Ferocitas the Dream Eater
+step
+    #xprate <1.5
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
@@ -918,18 +973,22 @@ step << Druid
     .turnin 487 >> Turn in The Road to Darnassus
     .target Moon Priestess Amara
 step
+    #xprate <1.5
     #completewith next
     .goto Teldrassil,38.32,34.36,50 >> Travel to The Oracle Glade
 step
+    #xprate <1.5
     .goto Teldrassil,38.32,34.36
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 937 >> Accept The Enchanted Glade
 step
+    #xprate <1.5
     .goto Teldrassil,38.43,34.03
     .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial] |cRXP_WARN_at The Oracle Glade moonwell|r
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 step
+    #xprate <1.5
     #completewith harpies
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
     >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
@@ -941,16 +1000,19 @@ step
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
 step
+    #xprate <1.5
     .goto Teldrassil,34.61,28.79
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >> Accept The Shimmering Frond
 step
+    #xprate <1.5
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest. Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
     .target Mist
 step
+    #xprate <1.5
 	#label harpies
     .goto Teldrassil,38.32,34.36
     .target Sentinel Arynia Cloudsbreak
@@ -958,6 +1020,7 @@ step
     >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
     .turnin 938 >> Turn in Mist
 step
+    #xprate <1.5
     .goto Teldrassil,33.619,29.819
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
     >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
@@ -969,15 +1032,28 @@ step
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
 step
+    #xprate <1.5
     .goto Teldrassil,38.32,34.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
 step
+    #xprate <1.5
     .xp 10-760 >>Grind until you are 760xp away from level 10 (5740/6500) << Druid
     .xp 10-1420 >>Grind until you are 1420xp away from level 10 (5080/6500) << !Druid !Rogue
     .xp 10-2340 >>Grind until you are 2340xp away from level 10 (4160/6500) << Rogue
+step
+    #xprate >1.49
+    .goto Teldrassil,38.6,58.0
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+step
+	#xprate >1.49
+	.xp 10-3300 << !Druid
+	.xp 10-640 << Druid
 step << !Rogue
     .goto Teldrassil,39.6,35.5
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -988,6 +1064,7 @@ step << !Rogue
     .target Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << !Rogue
+    #xprate <1.5
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
     .turnin 940 >> Turn in Teldrassil
@@ -1042,6 +1119,7 @@ step << !Rogue
     #completewith next
     .subzone 186 >> Return to Dolanaar
 step << !Rogue
+    #xprate <1.5
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 7383 >> Turn in Crown of the Earth
@@ -1076,12 +1154,14 @@ step << Hunter
     .target Dazalar
     .accept 6101 >> Accept Taming the Beast
 step << !Rogue
+    #xprate <1.5
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 931 >> Turn in The Shimmering Frond
     .turnin 930 >> Turn in The Glowing Fruit
 step << !Rogue
+    #xprate <1.5
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
@@ -1141,12 +1221,14 @@ step << Rogue
     .hs >> Hearth to Dolanaar
     .bindlocation 186,1
 step << Rogue
+    #xprate <1.5
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 7383 >> Turn in Crown of the Earth
     .target Corithras Moonrage
     .accept 935 >> Accept Crown of the Earth
 step << Rogue
+    #xprate <1.5
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
@@ -1192,11 +1274,18 @@ step << Rogue
     .target Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << Rogue
+    #xprate <1.5
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
     .turnin 940 >> Turn in Teldrassil
     .turnin 935 >> Turn in Crown of the Earth
     .accept 952 >> Accept Grove of the Ancients
+    .target Arch Druid Fandral Staghelm
+step << Rogue
+    .goto Darnassus,34.96,9.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
+    .turnin 940 >> Turn in Teldrassil
+    .turnin -935 >> Turn in Crown of the Earth
     .target Arch Druid Fandral Staghelm
 step << Rogue
     .goto Darnassus,31.21,17.72,8,0
@@ -1261,6 +1350,11 @@ step << Rogue
     >>|cRXP_WARN_Avoid fighting |cRXP_ENEMY_Sethir the Ancient|r. Let him walk passed you, then|r |T132320:0|t[Stealth] |cRXP_WARN_and|r |T133644:0|t[Pick Pocket] |cRXP_WARN_when you're behind him|r
     .complete 2242,1
     .mob Sethir the Ancient
+
+
+
+
+
 step
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
@@ -1274,6 +1368,58 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
     .turnin 938 >> Turn in Mist
+step
+    #xprate >1.49 << !Hunter
+    .goto Teldrassil,38.32,34.36
+    .target Sentinel Arynia Cloudsbreak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    .accept 937 >> Accept The Enchanted Glade
+step
+    #xprate >1.49 << !Hunter
+    #completewith harpies2
+    >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
+    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    .complete 937,1 --Collect Bloodfeather Belt (x6)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+step
+    #xprate >1.49 << !Hunter
+    .goto Teldrassil,31.54,31.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
+    >>|cRXP_WARN_This will start an escort quest. Skip this quest if the NPC is not there|r
+    .accept 938 >> Accept Mist
+    .target Mist
+step
+    #xprate >1.49 << !Hunter
+	#label harpies2
+    .goto Teldrassil,38.32,34.36
+    .target Sentinel Arynia Cloudsbreak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
+    .turnin 938 >> Turn in Mist
+step
+    #xprate >1.49 << !Hunter
+    .goto Teldrassil,33.619,29.819
+    >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
+    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    .complete 937,1 --Collect Bloodfeather Belt (x6)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+step
+    #xprate >1.49 << !Hunter
+    .goto Teldrassil,38.32,34.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    .turnin 937 >> Turn in The Enchanted Glade
+    .target Sentinel Arynia Cloudsbreak
+    .accept 940 >> Accept Teldrassil
 step
 	#completewith next
     .deathskip >>Die and respawn at the Darnassus graveyard

@@ -112,11 +112,13 @@ step << Warrior
     .target Archibald Kava
     .money >0.1
 step << Warrior
-    #label Training1
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dannal|r
     .train 6673 >>Train |T132333:0|t[Battle Shout]
     .target Dannal Stern
+step
+    #optional
+    #label Training1
 step << Warlock
     #requires Piercing
     #loop
@@ -281,6 +283,7 @@ step
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
+    #xprate <1.5
     #optional
     #loop
     .goto Tirisfal Glades,31.82,61.48,0
@@ -296,7 +299,25 @@ step
     .xp 3+940 >>Grind to 940+/1400xp << Warrior/Rogue
     .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
-    .mob Wretched Zombie
+    .mob Wretched Ghoul
+step
+    #xprate >1.49
+    #optional
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .xp 3+710 >>Grind to 710+/1400xp << Warrior/Rogue
+    .xp 3+770 >>Grind to 770+/1400xp << !Warrior !Rogue
+    .mob Mindless Zombie
+    .mob Wretched Ghoul
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.25,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
@@ -355,6 +376,7 @@ step << Mage
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Isabella
 step
+    #xprate <1.5
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r and |cRXP_FRIENDLY_Executor Arren|r
     .accept 3902 >> Accept Scavenging Deathknell
@@ -362,6 +384,13 @@ step
     .target +Deathguard Saltain
     .accept 380 >> Accept Night Web's Hollow
     .goto Tirisfal Glades,32.15,66.01
+    .target +Executor Arren
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,32.15,66.01
+    .goto Tirisfal Glades,31.35,66.21,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r
+    .accept 380 >> Accept Night Web's Hollow
     .target +Executor Arren
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.42,65.66
@@ -401,6 +430,7 @@ step << Rogue
     .turnin 3096 >> Turn in Encrypted Scroll
     .target David Trias
 step
+    #xprate <1.5
     #loop
 	.goto Tirisfal Glades,32.37,64.37,0
 	.goto Tirisfal Glades,32.37,64.37,12,0
@@ -465,14 +495,15 @@ step
     .mob Night Web Spider
 step
     #softcore
-    #completewith Scavenging
+    #completewith NightWebH
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r or run back to Deathknell
     .target Spirit Healer
 step
     #hardcore
-    #completewith Scavenging
+    #completewith NightWebH
     .goto Tirisfal Glades,31.61,65.62,80 >>Return to Deathknell
 step
+    #xprate <1.5
     #label Scavenging
     .goto Tirisfal Glades,31.61,65.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltain|r
@@ -562,6 +593,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arren|r
     .turnin 381 >> Turn in The Scarlet Crusade
     .accept 382 >> Accept The Red Messenger
+    .target Executor Arren
 step
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r
@@ -580,6 +612,7 @@ step
     .accept 383 >> Accept Vital Intelligence
     .target Executor Arren
 step
+    #xprate <1.5
     #loop
     .goto Tirisfal Glades,37.51,62.99,0
     .goto Tirisfal Glades,34.08,59.51,40,0
@@ -606,6 +639,34 @@ step
 	.goto Tirisfal Glades,36.93,68.16,25,0
 	.goto Tirisfal Glades,36.13,68.74,25,0
     .xp 5+2350 >>Grind to 2350+/2800xp
+step
+    #xprate >1.49
+    #loop
+    .goto Tirisfal Glades,37.51,62.99,0
+    .goto Tirisfal Glades,34.08,59.51,40,0
+    .goto Tirisfal Glades,35.34,56.55,40,0
+    .goto Tirisfal Glades,36.83,56.85,40,0
+    .goto Tirisfal Glades,37.76,59.38,40,0
+    .goto Tirisfal Glades,37.51,62.99,40,0
+	.goto Tirisfal Glades,36.13,68.74,25,0
+	.goto Tirisfal Glades,36.46,69.49,25,0
+	.goto Tirisfal Glades,36.85,70.02,25,0
+	.goto Tirisfal Glades,37.42,69.58,25,0
+	.goto Tirisfal Glades,38.05,69.79,25,0
+	.goto Tirisfal Glades,37.91,69.22,25,0
+	.goto Tirisfal Glades,38.03,68.77,25,0
+	.goto Tirisfal Glades,38.49,68.28,25,0
+	.goto Tirisfal Glades,38.72,67.07,25,0
+	.goto Tirisfal Glades,38.59,66.25,25,0
+	.goto Tirisfal Glades,38.65,65.07,25,0
+	.goto Tirisfal Glades,37.62,65.36,25,0
+	.goto Tirisfal Glades,36.93,65.38,25,0
+	.goto Tirisfal Glades,36.51,65.42,25,0
+	.goto Tirisfal Glades,36.85,66.59,25,0
+	.goto Tirisfal Glades,37.45,67.95,25,0
+	.goto Tirisfal Glades,36.93,68.16,25,0
+	.goto Tirisfal Glades,36.13,68.74,25,0
+    .xp 5+2125 >>Grind to 2125+/2800xp
 step
     .goto Tirisfal Glades,38.24,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calvin|r
