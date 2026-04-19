@@ -3113,7 +3113,7 @@ step << Druid
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
-    .complete 30,1 -- Complete the Trial of the Lake
+    .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
     .goto Moonglade,36.52,40.10
@@ -3327,6 +3327,7 @@ step
     >>|cRXP_WARN_He has a long respawn timer. Skip this step if you cannot find him|r
     .complete 959,1 --99-Year-Old Port (1)
     .mob Mad Magglish
+    .isOnQuest 959
 step
     #xprate >1.49
     #optional
@@ -3373,6 +3374,7 @@ step
     >>|cRXP_WARN_He has a long respawn timer. Skip this step if you cannot find him|r
     .complete 959,1 --99-Year-Old Port (1)
     .mob Mad Magglish
+    .isOnQuest 959
     .dungeon WC
 step
     .goto Kalimdor,51.89,54.77,20,0
@@ -4210,22 +4212,6 @@ step
     .goto Kalimdor,44.34,35.11,20,0
     >>Loot |cRXP_LOOT_Sapphire of Aku'Mai|r from the wall
     .complete 6563,1 --Sapphire of Aku'Mai (20
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 step
     #xprate >1.49
     #completewith next
@@ -4248,6 +4234,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
     .turnin 1095 >>Turn in Further Instructions
     .target Ziz Fizziks
+    .dungeon BFD
+step
+    #xprate >1.49
+    #sticky
+    #completewith EnterBFD
+    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps
     .dungeon BFD
 step
     #xprate >1.49
@@ -4281,12 +4273,6 @@ step
     .accept 6563 >>Accept The Essence of Aku'Mai
     .accept 6921 >>Accept Amongst The Ruins
     .target Je'neu Sancrea
-    .dungeon BFD
-step
-    #xprate >1.49
-    #sticky
-    #completewith EnterBFD
-    .subzone 2797,2 >> Now you should be looking for a group to BlackFathom Deeps
     .dungeon BFD
 step
     #xprate >1.49

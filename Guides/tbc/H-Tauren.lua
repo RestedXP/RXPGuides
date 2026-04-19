@@ -2256,6 +2256,14 @@ step << !Shaman
     +|cRXP_WARN_Abandon any leftover quests you have|r
 step << !Shaman
     #completewith next
+    .subzone 392 >>Travel to Ratchet
+step << !Shaman
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fp Ratchet >> Get the Ratchet flight path
+    .target Bragok
+step << !Shaman
+    #completewith next
     .zone Durotar >>Travel to Durotar
 step << !Shaman
     #label ZeptoUC1
