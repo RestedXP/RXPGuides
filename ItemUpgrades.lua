@@ -7,9 +7,9 @@ local locale = GetLocale()
 
 if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
-local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch = string.format, table.insert, ipairs,
+local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower, smatch, tcount, huge = string.format, table.insert, ipairs,
                                                                                   pairs, next, type, wipe, tonumber,
-                                                                                  strlower, string.match
+                                                                                  strlower, string.match, table.count, math.huge
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
@@ -21,6 +21,7 @@ local GetInventoryItemLink = _G.GetInventoryItemLink
 local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemWeaponSubclass
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
+
 
 local session = {
     isInitialized = false,
@@ -1406,9 +1407,29 @@ local ahSession = {
     scanStatus = {
         scanType = _G.AUCTION_CATEGORY_ARMOR
     },
+    
+    toCancel = false,
+    isCanceled = false,
+    isScanning = false,
 
     selectedRow = nil
 }
+
+local function resetSession()
+    if not ahSession.isInitialized then return end
+
+    ahSession.sentQuery = false
+    ahSession.scanPage = 0
+    ahSession.scanResults = 0
+    ahSession.scanType = AuctionFilterButtons["Armor"]
+    ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
+    ahSession.toCancel = false
+    ahSession.isScanning = false
+    ahSession.sentQuery = false
+    ahSession.scanStatus.totalAuctions = 0
+    --print("reset finished")
+end
+
 
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
@@ -1426,16 +1447,18 @@ function addon.itemUpgrades.AH:Setup()
     ahSession.isInitialized = true
 end
 
-function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW() self:CreateEmbeddedGui() end
+function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
+    self:CreateEmbeddedGui()
+    ahSession.isCanceled = false
+    --print("isScanning, sentQuery, toCancel", ahSession.isScanning, ahSession.sentQuery, ahSession.toCancel)
+end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
-
     -- Reset session
-    ahSession.sentQuery = false
-    ahSession.scanPage = 0
-    ahSession.scanResults = 0
-    ahSession.scanType = AuctionFilterButtons["Armor"]
-    ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
+    resetSession()
+    ahSession.isCanceled = true
+    ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
+    _G.RXP_IU_AH_Title:SetText(ahSession.scanStatus.baseTitle)
 end
 
 -- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
@@ -1542,7 +1565,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanStatus.totalAuctions = totalAuctions
     -- print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
 
-    ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
+    ahSession.displayFrame.scanButton:SetText(_G.CANCEL)
 
     if resultCount == 0 or totalAuctions == 0 then
         ahSession.sentQuery = false
@@ -1550,9 +1573,10 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
         if ahSession.scanType == AuctionFilterButtons["Armor"] then
             ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
+            ahSession.scanResults = 0
 
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_WEAPONS
-            self:Scan()
+            self:Scan(0)
         else
             ahSession.scanType = AuctionFilterButtons["Armor"]
             ahSession.scanStatus.scanType = _G.AUCTION_CATEGORY_ARMOR
@@ -1601,34 +1625,58 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanResults = ahSession.scanResults + resultCount
 
     if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 then
-        local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 1) * 100
+        local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 2) * 100
 
         _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
     end
 
-    self:Scan()
+    self:Scan(0)
 end
 
-function addon.itemUpgrades.AH:Scan()
+function addon.itemUpgrades.AH:Scan(retries, maxRetries)
+    maxRetries = maxRetries or huge
+    if retries >= maxRetries then
+        --print("aborting")
+        resetSession()
+        ahSession.isCanceled = true
+        ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
+        addon.itemUpgrades.AH:DisplayEmbeddedResults() --TODO: message when its this case
+        return
+    end
+
+    if ahSession.isCanceled then return end
+
+    ahSession.isScanning = true
     -- Prevent double calls
-    if ahSession.sentQuery then return end
-    if not AuctionCategories then return end -- AH frame isn't loaded yet
+    if ahSession.sentQuery then ahSession.isScanning = false return end
+    if not AuctionCategories then ahSession.isScanning = false return end -- AH frame isn't loaded yet
 
     -- TODO use better queueing
     -- TODO abort on multiple retries
     if not CanSendAuctionQuery() then
-        -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
+        --print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
 
-        C_Timer.After(0.35, function() self:Scan() end)
+        C_Timer.After(0.5, function ()
+            if not ahSession.toCancel then
+                self:Scan(retries + 1, maxRetries)
+            else
+                resetSession()
+                ahSession.isCanceled = true
+                ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
+                addon.itemUpgrades.AH:DisplayEmbeddedResults()
+            end
+        end)
         return
     end
     -- print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
 
     ahSession.sentQuery = true
-
+    
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
     QueryAuctionItems("", addon.player.level - 5, addon.player.level, ahSession.scanPage, true, Enum.ItemQuality.Uncommon, false, false,
-                      AuctionCategories[ahSession.scanType].filters)
+                   AuctionCategories[ahSession.scanType].filters)
+
+    ahSession.isScanning = false
 end
 
 local function calculate(itemLink, scanData)
@@ -1953,7 +2001,13 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     ahSession.displayFrame.scanButton:SetScript("OnClick", function()
         ahSession.displayFrame.DataProvider:Flush()
-        addon.itemUpgrades.AH:Scan()
+        ahSession.timer = debugprofilestart()
+        if not ahSession.isScanning then
+            ahSession.isCanceled = false
+            addon.itemUpgrades.AH:Scan(0)
+        else
+            ahSession.toCancel = true
+        end
     end)
 
     _G.RXP_IU_AH_BuyButton:Disable()
@@ -2016,8 +2070,16 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
+    resetSession()
     if not _G.AuctionFrame:IsShown() then return end
-
+    if ahSession.isCanceled and ahSession.bestAnalysis ~= nil then
+        _G.RXP_IU_AH_Title:SetText("Search canceled - showing cached results")
+    elseif ahSession.isCanceled then
+        _G.RXP_IU_AH_Title:SetText("Search canceled")
+    end
+   
+    if not ahSession.bestAnalysis then return end
+    
     local blockData
     local n = 0
     for itemEquipLoc, data in pairs(ahSession.bestAnalysis) do
