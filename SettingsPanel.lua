@@ -1166,11 +1166,31 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 4.7
                     },
+                    v2UIHeader = {
+                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2),
+                        type = "header",
+                        width = "full",
+                        order = 5.0,
+                        hidden = isNotAdvanced,
+                    },
+                    enableV2CurrentStepFrame = {
+                        name = fmt("%s %s %s", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
+                        -- desc = L"",
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        hidden = isNotAdvanced
+                    },
                     inventoryHeader = {
                         name = _G.INVENTORY_TOOLTIP,
                         type = "header",
                         width = "full",
-                        order = 4.8,
+                        order = 6.1,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     showJunkIcon = {
@@ -1178,7 +1198,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.81,
+                        order = 6.11,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     autoDiscardItems = {
@@ -1186,7 +1206,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically attempts to discard the cheapest junk item from your bags if your inventory is full"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.83,
+                        order = 6.12,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     rightClickJunk = {
@@ -1194,14 +1214,14 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Allows you to toggle items as junk by clicking on it with CTRL+RightClick or ALT+RightClick"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.84,
+                        order = 6.13,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     rightClickMod = {
                         name = L("Right Click Modifier"), -- TODO locale
                         type = "select",
                         width = optionsWidth*0.6,
-                        order = 4.85,
+                        order = 6.14,
                         get = function()
                             return
                                 self.profile.rightClickMod or 1
@@ -1221,7 +1241,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically sell all gray items and all other items that you set as junk"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.86,
+                        order = 6.15,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     maxSoulShards = {
@@ -1235,16 +1255,15 @@ function addon.settings:CreateAceOptionsPanel()
                         pattern = "^%d+$",
                         usage = L"You must input an integer number",
                         width = optionsWidth * 0.7,
-                        order = 4.875,
+                        order = 6.16,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
                     },
-
                     sellKeybind = {
                         name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
                         desc = L("Click to set a keybind"),
                         type = "keybinding",
                         width = optionsWidth * 1.25,
-                        order = 4.87,
+                        order = 6.17,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                         get = function()
                             local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
@@ -1283,7 +1302,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "header",
                         width = "full",
-                        order = 5.0,
+                        order = 7.0,
                         hidden = addon.gameVersion >= 50000,
                     },
                     enableTalentGuides = {
@@ -1291,7 +1310,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Enable Talents Guides"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 7.2,
                         disabled = function()
                             return not (addon.talents and
                                        addon.talents:IsSupported())
@@ -1308,7 +1327,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Enable Talent Previews"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 5.3,
+                        order = 7.3,
                         disabled = function()
                             return not (addon.talents and
                                        addon.settings.profile.enableTalentGuides and
@@ -1321,7 +1340,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Highlight or list levels for each talent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.5,
+                        order = 7.5,
                         disabled = function()
                             return not (addon.talents and
                                        addon.settings.profile.enableTalentGuides and
@@ -1334,7 +1353,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Sets maximum number of talents to layout"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.6,
+                        order = 7.6,
                         min = 1,
                         max = addon.talents and addon.talents.maxLevel or 1,
                         step = 1,
@@ -3172,19 +3191,6 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
                         end
-                    },
-                    enableV2CurrentStepFrame = {
-                        name = L("Enable V2 UI - CurrentStep"), -- TODO locale
-                        -- desc = L"",
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 3.7,
-                        confirm = requiresReload,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            _G.ReloadUI()
-                        end,
-                        hidden = isNotAdvanced
                     },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
