@@ -4386,10 +4386,10 @@ local function calculateRecipePrice(professionName)
                     if PROFESSIONS[professionName].RECIPES[materialName] then
                         --print("compund recipe = ", recipe, " | ", materialName)
                         --If not yet calculated
-                        if profSession.recipesToConsider[materialName] == huge then
+                        if not profSession.recipesToConsider[materialName] or profSession.recipesToConsider[materialName] == huge then
                             totalPrice = huge
                         else
-                            totalPrice = totalPrice + profSession.recipesToConsider[materialName] --TODO: what if its huge!
+                            totalPrice = totalPrice + profSession.recipesToConsider[materialName]
                         end
                     --If its from a vendor
                     elseif materialTable.fromVendor then
@@ -4428,7 +4428,56 @@ local function calculateRecipePrice(professionName)
     end
 end
 
+--Sort recipes from cheapest to most expensive
+local function sortRecipesByCheapest()
+    local sortedRecipes = {}
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
+        sortedRecipes[#sortedRecipes+1] = {recipeName, recipePrice}
+    end
+    tsort(sortedRecipes, function (a, b)
+        return a[2] < b[2]
+    end)
+    return sortedRecipes
+end
 
+--Calculate number of items needed for skillup per recipe
+local function calculateNumberOfItemsPerRecipe(professionName)
+    local numberOfItemsPerRecipe = {} --["recipe name"] = number of items
+    local multiplier = 0 -- 0 For grey by default; should never happen
+    local skillLevel = RXPCData.professions.profession1.skillLevel
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
+        if skillLevel < PROFESSIONS[professionName].RECIPES[recipeName].orange then
+            multiplier = 1
+        elseif skillLevel < PROFESSIONS[professionName].RECIPES[recipeName].yellow then
+            multiplier = 1.01 * (select(2, calculateSegmentRange(professionName, segmentRange)) - skillLevel) --TODO: maybe use another function for this
+        end
+        numberOfItemsPerRecipe[recipeName] = ceil(multiplier)
+    end
+    return numberOfItemsPerRecipe
+end
+
+--Calculates full cost of the recipe taking everything in account
+-- ((mats - sell) * multiplier + training cost + recipe cost) / castTime
+local function calculateFullCost(professionName)
+    local numberOfItemsPerRecipe = calculateNumberOfItemsPerRecipe(RXPCData.professions.profession1.name)
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
+        profSession.recipesToConsider[recipeName] = ((profSession.recipesToConsider[recipeName] - PROFESSIONS[professionName].RECIPES[recipeName].sellPrice) * numberOfItemsPerRecipe[recipeName] + PROFESSIONS[professionName].RECIPES[recipeName].trainingCost + PROFESSIONS[professionName].RECIPES[recipeName].recipeCost) / PROFESSIONS[professionName].RECIPES[recipeName].castTime
+    end
+end
+
+--[[ 
+General idea:
+--Go over the cheapest recipe and buy as much as we can.
+--Once we cannot do it, go to next.
+--Repeat until done or no more money or no more recipes
+]]
+local function buyoutItems(professionName)
+    local _, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel)
+    local skillLevelsToEarn = maxSegment - RXPCData.professions.profession1.skillLevel
+    local sortedRecipes = sortItemsByPrice() --index = {"name", value}
+    local totalCost = 0
+    --TODO: finish
+end
 
 
 --Events
@@ -4619,6 +4668,7 @@ scanButtonFrame:SetScript("OnClick", function (self)
     if not profSession.ahIsShowing then
         ahNotShowingMessageFrame:Show()
     else
+        guiFrame.printText:SetText("")
         fullScan()
     end
 end)
@@ -4758,6 +4808,8 @@ SlashCmdList['qtst'] = function()
     --     end
     --     print("==========")
     -- end
+
+    --sortRecipesByCheapest()
 end
 
 
