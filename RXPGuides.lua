@@ -1293,12 +1293,12 @@ function addon:OnEnable()
     end
 
     if addon.gameVersion >= 100000 and C_EventUtils and C_EventUtils.IsEventValid("PLAYER_HOUSE_LIST_UPDATED") then
-        self:RegisterEvent("PLAYER_HOUSE_LIST_UPDATED")
         function addon:PLAYER_HOUSE_LIST_UPDATED(_,houseInfo)
             addon.player.plotID = houseInfo.plotID
             addon.player.houseGUID = houseInfo.houseGUID
             addon.player.neighborhoodGUID = houseInfo.neighborhoodGUID
         end
+        self:RegisterEvent("PLAYER_HOUSE_LIST_UPDATED")
         C_Housing.GetPlayerOwnedHouses()
     end
 
