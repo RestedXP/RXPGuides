@@ -4206,6 +4206,8 @@ local PROFESSIONS = {
 }
 
 -- Saved variables and session
+local segmentRange = 75 --TODO: store in RXPData / addon.settings or somewhere better
+
 local profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
@@ -4218,6 +4220,7 @@ local profSession = {
     recipesToConsider = {}, --pairs [recipeName] = recipePrice
     materialIndex = 1,
 
+    ahIsShowing = false,
     sentQuery = false,
     isScanning = false,
 }
@@ -4271,6 +4274,20 @@ local function gatherPlayerProfessionInfo()
     end
 end
 
+--Sets player data
+local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
+    if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
+    if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
+    if prof1Name then
+        RXPCData.professions.profession1.name = lower(prof1Name)
+        RXPCData.professions.profession1.skillLevel = prof1Lvl
+    end
+    if prof2Name then
+        RXPCData.professions.profession2.name = lower(prof2Name)
+        RXPCData.professions.profession2.skillLevel = prof2Lvl
+    end
+end
+
 --Sets RXPCData.professions.money
 local function gatherPlayerMoneyInfo()
     RXPCData.professions.money = GetMoney()
@@ -4290,6 +4307,7 @@ end
 local function calculateSegmentRange(professionSkillLevel, segmentStep)
     local minimum = floor(professionSkillLevel / segmentStep) * segmentStep + 1
     local maximum = ceil(professionSkillLevel / segmentStep) * segmentStep
+    if maximum > 300 then maximum = 300 end
     return minimum, maximum
 end
 
@@ -4411,14 +4429,21 @@ local function calculateRecipePrice(professionName)
 end
 
 
+
+
 --Events
 function addon.professions.AH:AUCTION_HOUSE_SHOW()
+    if profSession.isInitialized then
+        profSession.ahIsShowing = true
+    end
 end
 
 function addon.professions.AH:AUCTION_HOUSE_CLOSED()
+    profSession.ahIsShowing = false
 end
 
 function addon.professions.AH:AUCTION_HOUSE_DISABLED()
+    profSession.ahIsShowing = false
 end
 
 function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
@@ -4484,12 +4509,143 @@ function addon.professions.AH:Scan(itemName)
     QueryAuctionItems(itemName, nil, nil, profSession.currentPage, false, nil, false, true, nil) --TODO: check if usable should be true, exactMatch should be true by testing
 end
 
+
+
+--Full scan function - For testing purposes only -- Scans first profession
+local function fullScan()
+    profSession:Reset()
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
+    gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
+    if tcount(profSession.recipesToConsider) == 0 then return end
+    removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+    gatherMaterialsToScan(RXPCData.professions.profession1.name)
+    if #profSession.materialsToScan == 0 then return end
+    profSession.materialIndex = 1
+    addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
+end
+
 --Init setup
 addon.professions.AH:Setup()
 
 
-
 --GUI
+local guiFrame = CreateFrame("Frame", "ProfessionsFrame", UIParent, "BasicFrameTemplateWithInset")
+guiFrame:SetSize(500, 700)
+guiFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
+guiFrame.TitleBg:SetHeight(30)
+guiFrame.title = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+guiFrame.title:SetPoint("CENTER", guiFrame.TitleBg, "CENTER", 0, 6)
+guiFrame.title:SetText("Professions guide")
+guiFrame:EnableMouse(true)
+guiFrame:SetMovable(true)
+guiFrame:RegisterForDrag("LeftButton")
+guiFrame:SetScript("OnDragStart", function (self)
+    self:StartMoving()
+end)
+guiFrame:SetScript("OnDragStop", function (self)
+    self:StopMovingOrSizing()
+end)
+
+SLASH_prof1 = '/prof'
+SlashCmdList['prof'] = function()
+    if not guiFrame:IsShown() then
+        guiFrame:Show()
+    end
+end
+
+guiFrame.descriptionText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+guiFrame.descriptionText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -30)
+guiFrame.descriptionText:SetText("Skill level sets players skill level in Blacksmithing.\nSegment range sets in what segments \nto split the profession (eg. 1-75, 76-150, ...).\nSet parameters sets slider parameters.\nScan Auction House scans the auction house \nfor necessary materials.\nPrint scan results prints the results.")
+
+
+local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
+selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
+selectSkillLevelFrame:SetSize(300, 20)
+selectSkillLevelFrame:SetMinMaxValues(5, 300)
+selectSkillLevelFrame:SetValue(20)
+selectSkillLevelFrame:SetValueStep(1)
+selectSkillLevelFrame:SetObeyStepOnDrag(true)
+selectSkillLevelFrame.Text:SetText("Select Skill level (" .. selectSkillLevelFrame:GetValue() .. ")")
+selectSkillLevelFrame:SetScript("OnValueChanged", function (self, value, userInput)
+    self:SetValue(value)
+    self.Text:SetText("Select Skill level  (" .. self:GetValue() .. ")")
+end)
+
+local selectSegmentFrame = CreateFrame("Slider", "SelectSegmentFrame", guiFrame, "UISliderTemplateWithLabels")
+selectSegmentFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -180)
+selectSegmentFrame:SetSize(300, 20)
+selectSegmentFrame:SetMinMaxValues(5, 300)
+selectSegmentFrame:SetValue(75)
+selectSegmentFrame:SetValueStep(5)
+selectSegmentFrame:SetObeyStepOnDrag(true)
+selectSegmentFrame.Text:SetText("Segment Range (" .. selectSegmentFrame:GetValue() .. ")")
+selectSegmentFrame:SetScript("OnValueChanged", function (self, value, userInput)
+    self:SetValue(value)
+    self.Text:SetText("Segment Range (" .. self:GetValue() .. ")")
+end)
+
+local setButtonFrame = CreateFrame("Button", "SetButtonFrame", guiFrame, "UIPanelButtonTemplate")
+setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -210)
+setButtonFrame:SetSize(100, 40)
+setButtonFrame:SetText("Set parameters")
+setButtonFrame:RegisterForClicks("LeftButtonUp")
+setButtonFrame:SetScript("OnClick", function (self)
+    setPlayerData("Blacksmithing", selectSkillLevelFrame:GetValue())
+    segmentRange = selectSegmentFrame:GetValue()
+end)
+
+local ahNotShowingMessageFrame = CreateFrame("MessageFrame", "ahNotShowingMessageFrame", UIParent)
+ahNotShowingMessageFrame:SetPoint("TOP")
+ahNotShowingMessageFrame:SetSize(200, 200)
+ahNotShowingMessageFrame:SetFont("fonts/arialn.ttf", 20, "")
+ahNotShowingMessageFrame:AddMessage("AH must be open to scan!", 1, 0, 0)
+ahNotShowingMessageFrame:Hide()
+ahNotShowingMessageFrame:RegisterEvent("AUCTION_HOUSE_SHOW")
+ahNotShowingMessageFrame:SetScript("OnEvent", function (self, event)
+    if event == "AUCTION_HOUSE_SHOW" then
+        ahNotShowingMessageFrame:Hide()
+    end
+end)
+
+local scanButtonFrame = CreateFrame("Button", "ScanButtonFrame", setButtonFrame, "UIPanelButtonTemplate")
+scanButtonFrame:SetPoint("LEFT", setButtonFrame, "RIGHT")
+scanButtonFrame:SetSize(200, 40)
+scanButtonFrame:SetText("Scan Auction House")
+scanButtonFrame:RegisterForClicks("LeftButtonUp")
+scanButtonFrame:SetScript("OnClick", function (self)
+    if not profSession.isInitialized then
+        error("Profession session not initialized", 2)
+    end
+    if not profSession.ahIsShowing then
+        ahNotShowingMessageFrame:Show()
+    else
+        fullScan()
+    end
+end)
+
+guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+guiFrame.printText:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
+local textToPrint = ""
+
+
+local printButtonFrame = CreateFrame("Button", "printButtonFrame", scanButtonFrame, "UIPanelButtonTemplate")
+printButtonFrame:SetPoint("LEFT", scanButtonFrame, "RIGHT")
+printButtonFrame:SetSize(120, 40)
+printButtonFrame:SetText("Print scan results")
+printButtonFrame:RegisterForClicks("LeftButtonUp")
+printButtonFrame:SetScript("OnClick", function (self)
+    textToPrint = ""
+    calculateRecipePrice(RXPCData.professions.profession1.name)
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
+        if recipeName == huge then
+            textToPrint = textToPrint .. recipeName .. ": huge\n"
+        else
+            textToPrint = textToPrint .. recipeName .. ": " .. formatMoney(recipePrice) .. "\n"
+        end
+    end
+    textToPrint = textToPrint .. "==========\n"
+    guiFrame.printText:SetText(textToPrint)
+end)
 
 
 
@@ -4499,25 +4655,12 @@ local variables and functions
 for testing purposes
 ]]
 
-local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
-    if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
-    if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
-    if prof1Name then
-        RXPCData.professions.profession1.name = lower(prof1Name)
-        RXPCData.professions.profession1.skillLevel = prof1Lvl
-    end
-    if prof2Name then
-        RXPCData.professions.profession2.name = lower(prof2Name)
-        RXPCData.professions.profession2.skillLevel = prof2Lvl
-    end
-end
-
 
 --Slash commands
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    setPlayerData("Blacksmithing", 40)
+    --setPlayerData("Blacksmithing", 40)
     local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     if tcount(profSession.recipesToConsider) == 0 then return end
@@ -4575,7 +4718,7 @@ SlashCmdList['set'] = function()
     setPlayerData("Blacksmithing", 25)
 end
 
-
+--Testing
 SLASH_tst1 = '/tst'
 SlashCmdList['tst'] = function()
     setPlayerData("Blacksmithing", 1)
@@ -4602,7 +4745,7 @@ SlashCmdList['tst'] = function()
     end
 end
 
-
+--Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function()
     --print(calculateSegmentRange(RXPCData.professions.profession1.skillLevel))
