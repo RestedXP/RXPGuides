@@ -4,13 +4,14 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 7
 #group RestedXP TBC Guide (A)
-<< Alliance !Warlock
+<< Alliance
+#xprate >1.49 << Human Warlock
 #name 12-14 Darkshore
 #displayname 10-14 Darkshore << Dwarf Hunter
 #displayname 11-14 Darkshore << !Human !Mage
 #displayname 12-14 Darkshore << Gnome Mage
 #subgroup RestedXP Alliance 1-20
-#defaultfor !Draenei !Warlock
+#defaultfor !Draenei
 #next 14-20 Bloodmyst
 
 step << !NightElf
@@ -298,6 +299,7 @@ step
     .accept 4681 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
 step
+#xprate <1.5
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .accept 963 >> Accept For Love Eternal
@@ -324,10 +326,17 @@ step << !Dwarf/!Hunter
     .accept 4811 >> Accept The Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
+#xprate <1.5
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2118 >> Turn in Plagued Lands
     .accept 2138 >> Accept Cleansing of the Infected
+    .target Tharnariun Treetender
+step
+#xprate >1.49
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2118 >> Turn in Plagued Lands
     .target Tharnariun Treetender
 step
     .goto 1439,39.373,43.483
@@ -335,10 +344,18 @@ step
     .turnin 984 >> Turn in How Big a Threat?
     .target Terenthis
 step
+#xprate <1.5
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
+    .accept 4761 >> Accept Thundris Windweaver
+    .target Terenthis
+step
+#xprate >1.49
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .turnin 984 >> Turn in How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
     .target Terenthis
 step
@@ -351,12 +368,21 @@ step
     .itemcount 5469,5 -- Strider Meat (5)
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step
+#xprate <1.5
     .goto 1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
     .accept 954 >> Accept Bashal'Aran
     .accept 958 >> Accept Tools of the Highborne
+    .target Thundris Windweaver
+step
+#xprate >1.49
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4761 >> Turn in Thundris Windweaver
+    .accept 4762 >> Accept The Cliffspring River
+    .accept 954 >> Accept Bashal'Aran
     .target Thundris Windweaver
 step
     #optional
@@ -471,6 +497,14 @@ step
     .mob Deth'ryll Satyr
     .isOnQuest 956
 step
+#xprate >1.49
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 956 >> Turn in Bashal'Aran
+    .target Asterion
+    .isQuestComplete 956
+step
+#xprate <1.5
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
@@ -478,15 +512,18 @@ step
     .target Asterion
     .isQuestComplete 956
 step
+#xprate <1.5
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     .accept 957 >> Accept Bashal'Aran
     .target Asterion
     .isQuestTurnedIn 956
 step
+#xprate <1.5
     #optional
     .abandon 956 >> Abandon Bashal'Aran
 step << !Draenei
+#xprate <1.5
     .goto 1439,53.4,28.8,0
     .goto 1439,54.8,22.8,0
     .goto 1439,44.6,24.8,0
@@ -534,6 +571,9 @@ step
     .cooldown item,6948,>2,1
     .bindlocation 442,1
     .subzoneskip 442
+step
+    #completewith next
+    .subzone 442 >> Return to Auberdine
 step << Dwarf Hunter
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
@@ -617,6 +657,7 @@ step << !Dwarf/!Hunter
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
+#xprate <1.5
     #sticky
     #label Anaya
     .goto 1439,42.017,58.866,0 --NE spawn
@@ -640,6 +681,7 @@ step
     .unitscan Anaya Dawnrunner
     .isOnQuest 963
 step
+#xprate <1.5
     #sticky
     #label Relics
     .goto 1439,42.670,57.390,0
@@ -663,39 +705,47 @@ step
     .mob Wailing Highborne
     .isOnQuest 958
 step
+#xprate <1.5
     .goto 1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >> Accept The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
+#xprate <1.5
     .goto 1439,42.652,63.145
     >>Click the |cRXP_PICK_The Fall of Ameth'Aran|r
     .complete 953,2 --Read The Fall of Ameth'Aran (1)
     .isOnQuest 953
 step
+#xprate <1.5
     .goto 1439,42.373,61.815
     >>Click the |cRXP_PICK_Ancient Flame|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
     .isOnQuest 957
 step
+#xprate <1.5
     .goto Darkshore,43.30,58.70
     >>Click the |cRXP_PICK_The Lay of Ameth'Aran|r
     .complete 953,1 --Read The Lay of Ameth'Aran (1)
     .isOnQuest 953
 step
+#xprate <1.5
     #optional
     #requires Relics
 --XXREQ Placeholder invis step until multiple requires per step
 step
+#xprate <1.5
     #optional
     #requires Anaya
 --XXREQ Placeholder invis step until multiple requires per step
 step
+#xprate <1.5
     .goto 1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
+#xprate <1.5
     #sticky
     #label bears1A
     #loop
@@ -710,14 +760,17 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
+#xprate <1.5
     .goto 1439,37.105,62.167
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4722 >> Accept Beached Sea Turtle
 step << Draenei
+#xprate <1.5
     .goto 1439/1,579.500,5240.300
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4728 >>Accept Beached Sea Creature
 step
+#xprate <1.5
     #requires bears1A
     #loop
     .goto 1439,39.899,54.745,0
@@ -737,27 +790,32 @@ step
     .complete 985,2 -- Blackwood Windtalker (5)
     .mob +Blackwood Windtalker
 step
+#xprate <1.5
     #completewith DarkshoreEnd
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 442 -- auberdine
     .subzoneskip 446 -- bashal'aran
 step << !Draenei
+#xprate <1.5
     .isQuestComplete 957
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
     .target Asterion
 step
+#xprate <1.5
     #label FinalAuber
     #completewith DarkshoreEnd
     .subzone 442 >> Travel to Auberdine
 step
+#xprate <1.5
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
     .target Tharnariun Treetender
     .isQuestComplete 2138
 step
+#xprate <1.5
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 985 >> Turn in How Big a Threat?
@@ -772,6 +830,7 @@ step
     .itemcount 5469,5 -- Strider Meat (5)
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step
+#xprate <1.5
     .goto 1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 958 >> Turn in Tools of the Highborne
@@ -787,6 +846,7 @@ step << Dwarf Hunter
     .turnin 4811 >> Turn in The Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
+#xprate <1.5
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -796,6 +856,7 @@ step
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4722
 step
+#xprate <1.5
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     >>|cRXP_WARN_You may need to wait out his RP if someone else just turned in|r
