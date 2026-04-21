@@ -897,7 +897,7 @@ RXPGuides.RegisterGuide([[
 #name 14-20 Bloodmyst
 #subgroup RestedXP Alliance 1-20
 #defaultfor !Draenei
-#next 20-21 Darkshore << !Warlock
+#next 20-21 Darkshore;21-23 Ashenvale << !Warlock
 #next 20-23 Darkshore/Ashenvale << Warlock
 
 step << Druid
@@ -3393,6 +3393,66 @@ step
     .fly Darkshore >> Fly to Darkshore
     .target Vesprystus
     .zoneskip Darkshore
+--
+step << !Warlock
+#xprate >1.49
+    #optional
+    .isOnQuest 3765
+    .goto Darkshore,38.327,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    .turnin 3765 >> Turn in The Corruption Abroad
+    .target Gershala Nightwhisper
+step << !Warlock
+#xprate >1.49
+.dungeon BFD
+    .goto Darkshore,38.327,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    >>|cRXP_WARN_If you cannot accept this quest, skip this step|r
+    .accept 1275 >> Accept Researching the Corruption
+    .target Gershala Nightwhisper
+step << !Warlock
+#xprate >1.49
+    .isOnQuest 9633
+    .goto Darkshore,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+	.turnin 9633 >> Turn in The Way to Auberdine
+    .accept 10752 >> Accept Onward to Ashenvale
+    .target Thundris Windweaver
+step << !Warlock
+#xprate >1.49
+    .goto Darkshore,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .accept 10752 >> Accept Onward to Ashenvale
+    .target Thundris Windweaver
+step << !Warlock
+#xprate >1.49
+    .goto Darkshore,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+step << !Warlock
+#xprate >1.49
+    #completewith next
+    .goto 1439,35.724,83.696,50 >> Travel to Southern Darkshore
+step << !Warlock
+#xprate >1.49
+    .goto 1439,35.724,83.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|cRXP_WARN_This will begin an escort. You may have to wait for him to respawn or for others to finish the escort|r
+    .turnin 729 >> Turn in The Absent Minded Prospector
+    .accept 731,1 >> Accept The Absent Minded Prospector
+    .target Prospector Remtravel
+step << !Warlock
+#xprate >1.49
+    .isOnQuest 731
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
+    .complete 731,1
+    .target Prospector Remtravel
+step << !Warlock
+#xprate >1.49
+    .isOnQuest 967,10752,945,4740,994,731
+    .zone Ashenvale >> Travel south to Ashenvale
+    .goto Ashenvale,29.7,13.6
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3401,6 +3461,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP TBC Guide (A)
 << Alliance !Warlock
+#xprate <1.5
 #name 20-21 Darkshore
 #subgroup RestedXP Alliance 20-32
 #defaultfor !Draenei
@@ -4015,6 +4076,7 @@ RXPGuides.RegisterGuide([[
 #next 23-24 Wetlands
 
 step
+#xprate <1.5
     .goto Ashenvale,26.19,38.69
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
@@ -4026,6 +4088,7 @@ step
     .accept 1010 >> Accept Bathran's Hair
 	.target Orendil Broadleaf
 step
+#xprate <1.5
     .isOnQuest 970
     .goto Ashenvale,31.25,30.70
     >>Kill |cRXP_ENEMY_Dark Strand Cultists|r, |cRXP_ENEMY_Dark Strand Adepts|r, |cRXP_ENEMY_Dark Strand Enforcers|r and |cRXP_ENEMY_Dark Strand Excavators|r. Loot them for the |cRXP_LOOT_Glowing Soul Gem|r
@@ -4070,6 +4133,7 @@ step
     .accept 1020 >> Accept Orendil's Cure
     .target Orendil Broadleaf
 step
+#xprate <1.5
     .isQuestComplete 970
     .goto Ashenvale,26.19,38.69
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -4077,6 +4141,7 @@ step
     .accept 973 >> Accept The Tower of Althalaxx
 	.target Delgren the Purifier
 step
+#xprate <1.5
     .isQuestTurnedIn 970
     .goto Ashenvale,26.19,38.69
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -4374,10 +4439,12 @@ step
     >>|cRXP_WARN_Their spawn locations are scattered throughout the island|r
     .complete 1034,1
 step
+#xprate <1.5
     #completewith ToA973
     .goto Ashenvale,31.67,64.24,15 >> Head to the base of the mountain
     .goto Ashenvale,31.21,61.60,15 >>Run straight north while climbing the mountain
 step
+#xprate <1.5
     .isOnQuest 973
     .goto Ashenvale,27.40,63.03,70,0
     .goto Ashenvale,25.27,60.68
@@ -4395,6 +4462,7 @@ step
     .turnin 945 >> Turn in Therylune's Escape
 	.target Therysil
 step
+#xprate <1.5
     #label ToA973
     .isQuestComplete 973
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
@@ -4621,12 +4689,14 @@ step
     .fly Auberdine >> Fly to Darkshore
     .target Daelyshia
 step
+#xprate <1.5
     #optional
     .isQuestComplete 1138
     .goto Darkshore,36.096,44.931
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
 step
+#xprate <1.5
     .isQuestComplete 4740
     .goto Darkshore,37.70,43.39
     .target Sentinel Glynda Nal'Shea
@@ -4640,6 +4710,7 @@ step
     .turnin 1275 >> Turn in Researching the Corruption
     .target Gershala Nightwhisper
 step
+#xprate <1.5
     .isOnQuest 994
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
@@ -4801,6 +4872,7 @@ step
     .zone Darkshore>> Ghetto Hearth to Darkshore. To do this, enter The Stockades, then copy paste the link below into chat. Wait out the 1 minute countdown
     .link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> CLICK HERE
 step
+#xprate <1.5
     .goto Darkshore,37.219,44.227
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 4740 >> Accept WANTED: Murkdeep!
@@ -4836,6 +4908,7 @@ step
     .accept 1275 >> Accept Researching the Corruption
     .target Gershala Nightwhisper
 step
+#xprate <1.5
     .goto 1439,35.429,76.566,0
     .goto 1439,35.429,76.566,60,0
     .goto Darkshore,36.64,76.53
@@ -5164,10 +5237,17 @@ step
     #completewith TRoS
     .subzone 415 >> Travel to Astranaar
 step
+#xprate <1.5
     .goto Ashenvale,36.61,49.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1023 >> Turn in Raene's Cleansing
     .accept 1025 >> Accept An Aggressive Defense
+    .target Raene Wolfrunner
+step
+#xprate >1.49
+    .goto Ashenvale,36.61,49.58
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .turnin 1023 >> Turn in Raene's Cleansing
     .target Raene Wolfrunner
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
@@ -5175,6 +5255,7 @@ step
     .goto Ashenvale,34.67,48.83
     .turnin 1008 >> Turn in The Zoram Strand
 step
+    #label TRoS
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
 	.target Pelturas Whitemoon
     .goto Ashenvale,37.36,51.79
@@ -5184,6 +5265,7 @@ step
     #sticky
     .destroy 5505 >> Destroy |T133741:0|t[Teronis' Journal]. You no longer need it
 step
+#xprate <1.5
     #loop
     .goto Ashenvale,50.08,59.94,0
     .goto Ashenvale,53.75,63.49,0
@@ -5203,11 +5285,13 @@ step
     .complete 1025,1 -- Foulweald Den Watcher slain
     .mob +Foulweald Den Watcher
 step
+#xprate <1.5
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .accept 1016 >> Accept Elemental Bracers
     .target Sentinel Velene Starstrike
 step
+#xprate <1.5
     #loop
     .goto Ashenvale,44.78,70.07,0
     .goto Ashenvale,48.90,70.05,0
@@ -5219,9 +5303,11 @@ step
     .collect 12220,5,1016,1
     .mob Befouled Water Elemental
 step
+#xprate <1.5
     .use 5456 >> |cRXP_WARN_Use the|r |T134943:0|t[Divining Scroll] |cRXP_WARN_to create the|r |T134938:0|t[Divined Scroll]
     .complete 1016,1 -- Divined Scroll
 step
+#xprate <1.5
     .goto Ashenvale,49.79,67.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .turnin 1016 >> Turn in Elemental Bracers
@@ -5234,18 +5320,21 @@ step
     .goto The Barrens,48.98,5.42,35,0
     .zone The Barrens >> Travel to The Barrens. Follow the Arrow to avoid |cRXP_ENEMY_Barrens Guards|r
 step
+#xprate <1.5
     #completewith next
     .goto The Barrens,48.73,14.86,20,0
     .goto The Barrens,48.53,16.51,15,0
     .goto The Barrens,48.16,18.52,6,0
     .goto The Barrens,47.96,18.82,5 >> Ascend Dreadmist Peak. Follow the Arrow to the top
 step
+#xprate <1.5
     .goto The Barrens,48.22,19.15
     >>Kill |cRXP_ENEMY_Sarilus Foulborne|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_The surrounding |cRXP_ENEMY_Burning Blade|r are only level 10-12|r
     .complete 1017,1 -- Sarilus Foulborne's Head (1)
     .mob Sarilus Foulborne
 step
+#xprate <1.5
 .dungeon !WC
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -5490,10 +5579,18 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
 .dungeon !WC
+#xprate <1.5
     .goto Ashenvale,36.61,49.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1054 >> Turn in Culling the Threat
     .turnin 1025 >> Turn in An Aggressive Defense
+    .target Raene Wolfrunner
+step
+.dungeon !WC
+#xprate >1.49
+    .goto Ashenvale,36.61,49.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .turnin 1054 >> Turn in Culling the Threat
     .target Raene Wolfrunner
 step
 .dungeon WC
@@ -5508,6 +5605,7 @@ step
     .fly Auberdine >> Fly to Darkshore
     .target Daelyshia
 step
+#xprate <1.5
     .isQuestComplete 4740
     .goto Darkshore,37.70,43.39
     .target Sentinel Glynda Nal'Shea
