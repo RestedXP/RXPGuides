@@ -1450,7 +1450,6 @@ end
 function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
     self:CreateEmbeddedGui()
     ahSession.isCanceled = false
-    --print("isScanning, sentQuery, toCancel", ahSession.isScanning, ahSession.sentQuery, ahSession.toCancel)
 end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
@@ -1640,7 +1639,7 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries)
         resetSession()
         ahSession.isCanceled = true
         ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
-        addon.itemUpgrades.AH:DisplayEmbeddedResults() --TODO: message when its this case
+        addon.itemUpgrades.AH:DisplayEmbeddedResults()
         return
     end
 
@@ -2073,9 +2072,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     resetSession()
     if not _G.AuctionFrame:IsShown() then return end
     if ahSession.isCanceled and ahSession.bestAnalysis ~= nil then
-        _G.RXP_IU_AH_Title:SetText("Search canceled - showing cached results")
+        _G.RXP_IU_AH_Title:SetText("Search cancelled - showing cached results")
     elseif ahSession.isCanceled then
-        _G.RXP_IU_AH_Title:SetText("Search canceled")
+        _G.RXP_IU_AH_Title:SetText("Search cancelled")
     end
    
     if not ahSession.bestAnalysis then return end
