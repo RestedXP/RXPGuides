@@ -4377,12 +4377,12 @@ step
     #xprate <1.5
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Travel to Zoram''gar Outpost
+    .subzone 2897 >>Travel to Zoram'gar Outpost
 step
     #xprate >1.49
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Travel to Zoram''gar Outpost
+    .subzone 2897 >>Travel to Zoram'gar Outpost
     .dungeon BFD
 step
     #xprate <1.5

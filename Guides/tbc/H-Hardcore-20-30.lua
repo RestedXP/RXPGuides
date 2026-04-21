@@ -2233,7 +2233,7 @@ step
 step
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Travel to Zoram''gar Outpost
+    .subzone 2897 >>Travel to Zoram'gar Outpost
 step
     .goto Ashenvale,12.22,34.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r
@@ -2280,7 +2280,7 @@ step
     #label ZoramTurnins
 step
     #completewith Zoram2
-    .subzone 2897 >>Travel to Zoram''gar Outpost
+    .subzone 2897 >>Travel to Zoram'gar Outpost
 step
     .goto Ashenvale,12.22,34.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r

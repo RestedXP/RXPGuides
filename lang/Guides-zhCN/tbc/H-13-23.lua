@@ -3638,7 +3638,7 @@ step
     .complete 6563,1 --Sapphire of Aku'Mai (20)
 step
     #completewith next
-    .subzone 2897 >>前往暴风城大教堂内，与 Zoram''gar Outpost
+    .subzone 2897 >>前往暴风城大教堂内，与 Zoram'gar Outpost
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战歌信使|r 和 |cRXP_FRIENDLY_玛鲁凯|r
     .turnin 6641 >>交任务《 前往熔光镇》 鞭笞者沃尔沙

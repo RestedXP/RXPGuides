@@ -5277,6 +5277,7 @@ step << skip --Orc Rogue/Troll Rogue
 step
     #completewith next
     .zone Tirisfal Glades >>Exit Undercity
+    .zoneskip Undercity,1
 step
     #completewith DeliverytoSPF
     .goto Tirisfal Glades,61.52,53.20,80 >> Travel to Brill
