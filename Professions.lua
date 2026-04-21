@@ -16,6 +16,8 @@ local GetMoney = _G.GetMoney
 
 
 --local helper functions
+
+--Formats money to x g y s z c
 local function formatMoney(money)
     if money > 10000 then
         return fmt("%dg %ds %dc", money / 10000, (money % 10000) / 100, money % 100)
@@ -23,6 +25,19 @@ local function formatMoney(money)
         return fmt("%ds %dc", money / 100, money % 100)
     end
     return fmt("%dc", money)
+end
+
+--Sorts an associative array by value.
+--Assumes the value has "<" operator implementation
+local function sortAssociativeArrayByValue(map)
+    local sorted = {}
+    for k, v in pairs(map) do
+        sorted[#sorted+1] = {k, v}
+    end
+    tsort(sorted, function (a, b)
+        return a[2] < b[2]
+    end)
+    return sorted
 end
 
 --local enums
@@ -44,7 +59,7 @@ local PROFESSIONS = {
                 orange = 275,
                 yellow = 280,
                 grey = 285,
-                rainingCost = 100,
+                trainingCost = 100,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 12.5,
@@ -64,7 +79,7 @@ local PROFESSIONS = {
                 orange = 180,
                 yellow = 205,
                 grey = 230,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 37,
@@ -92,7 +107,7 @@ local PROFESSIONS = {
                 orange = 185,
                 yellow = 210,
                 grey = 235,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 27.11,
@@ -116,7 +131,7 @@ local PROFESSIONS = {
                 orange = 175,
                 yellow = 200,
                 grey = 225,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 33.37,
@@ -140,7 +155,7 @@ local PROFESSIONS = {
                 orange = 160,
                 yellow = 185,
                 grey = 210,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 25,
@@ -168,7 +183,7 @@ local PROFESSIONS = {
                 orange = 230,
                 yellow = 255,
                 grey = 280,
-                rainingCost = 150,
+                trainingCost = 150,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 172.91,
@@ -200,7 +215,7 @@ local PROFESSIONS = {
                 orange = 105,
                 yellow = 135,
                 grey = 165,
-                rainingCost = 6,
+                trainingCost = 6,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 14.26,
@@ -232,7 +247,7 @@ local PROFESSIONS = {
                 orange = 280,
                 yellow = 305,
                 grey = 330,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 386.48,
@@ -264,7 +279,7 @@ local PROFESSIONS = {
                 orange = 250,
                 yellow = 275,
                 grey = 300,
-                rainingCost = 135,
+                trainingCost = 135,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 338.57,
@@ -296,7 +311,7 @@ local PROFESSIONS = {
                 orange = 220,
                 yellow = 245,
                 grey = 270,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 146.59,
@@ -324,7 +339,7 @@ local PROFESSIONS = {
                 orange = 115,
                 yellow = 145,
                 grey = 175,
-                rainingCost = 2,
+                trainingCost = 2,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 12.69,
@@ -348,7 +363,7 @@ local PROFESSIONS = {
                 orange = 135,
                 yellow = 165,
                 grey = 195,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 24.35,
@@ -372,7 +387,7 @@ local PROFESSIONS = {
                 orange = 130,
                 yellow = 160,
                 grey = 190,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 22.05,
@@ -396,7 +411,7 @@ local PROFESSIONS = {
                 orange = 110,
                 yellow = 140,
                 grey = 170,
-                rainingCost = 2,
+                trainingCost = 2,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 11.19,
@@ -420,7 +435,7 @@ local PROFESSIONS = {
                 orange = 120,
                 yellow = 150,
                 grey = 180,
-                rainingCost = 2,
+                trainingCost = 2,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 14.39,
@@ -444,7 +459,7 @@ local PROFESSIONS = {
                 orange = 125,
                 yellow = 155,
                 grey = 185,
-                rainingCost = 2.5,
+                trainingCost = 2.5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 19.44,
@@ -468,7 +483,7 @@ local PROFESSIONS = {
                 orange = 75,
                 yellow = 75,
                 grey = 100,
-                rainingCost = 2.5,
+                trainingCost = 2.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.1,
@@ -484,7 +499,7 @@ local PROFESSIONS = {
                 orange = 65,
                 yellow = 65,
                 grey = 80,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.1,
@@ -500,7 +515,7 @@ local PROFESSIONS = {
                 orange = 20,
                 yellow = 60,
                 grey = 100,
-                rainingCost = 0.5,
+                trainingCost = 0.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 1.09,
@@ -524,7 +539,7 @@ local PROFESSIONS = {
                 orange = 35,
                 yellow = 75,
                 grey = 115,
-                rainingCost = 2.5,
+                trainingCost = 2.5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 6.13,
@@ -556,7 +571,7 @@ local PROFESSIONS = {
                 orange = 1,
                 yellow = 20,
                 grey = 60,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.17,
@@ -572,7 +587,7 @@ local PROFESSIONS = {
                 orange = 35,
                 yellow = 75,
                 grey = 115,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 0.56,
@@ -588,7 +603,7 @@ local PROFESSIONS = {
                 orange = 20,
                 yellow = 60,
                 grey = 100,
-                rainingCost = 0.5,
+                trainingCost = 0.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.49,
@@ -604,7 +619,7 @@ local PROFESSIONS = {
                 orange = 1,
                 yellow = 50,
                 grey = 90,
-                rainingCost = 0.5,
+                trainingCost = 0.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.67,
@@ -620,7 +635,7 @@ local PROFESSIONS = {
                 orange = 35,
                 yellow = 75,
                 grey = 115,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 1.42,
@@ -644,7 +659,7 @@ local PROFESSIONS = {
                 orange = 30,
                 yellow = 70,
                 grey = 110,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 2.41,
@@ -672,7 +687,7 @@ local PROFESSIONS = {
                 orange = 30,
                 yellow = 70,
                 grey = 110,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 1.94,
@@ -700,7 +715,7 @@ local PROFESSIONS = {
                 orange = 15,
                 yellow = 55,
                 grey = 95,
-                rainingCost = 0.5,
+                trainingCost = 0.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 1.06,
@@ -724,7 +739,7 @@ local PROFESSIONS = {
                 orange = 25,
                 yellow = 65,
                 grey = 105,
-                rainingCost = 0.5,
+                trainingCost = 0.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 1.1,
@@ -748,7 +763,7 @@ local PROFESSIONS = {
                 orange = 270,
                 yellow = 290,
                 grey = 310,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 192.55,
@@ -768,7 +783,7 @@ local PROFESSIONS = {
                 orange = 285,
                 yellow = 305,
                 grey = 325,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 194.28,
@@ -788,7 +803,7 @@ local PROFESSIONS = {
                 orange = 265,
                 yellow = 285,
                 grey = 305,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 457.6,
@@ -808,7 +823,7 @@ local PROFESSIONS = {
                 orange = 280,
                 yellow = 300,
                 grey = 320,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 107.76,
@@ -828,7 +843,7 @@ local PROFESSIONS = {
                 orange = 275,
                 yellow = 295,
                 grey = 315,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 512.25,
@@ -848,7 +863,7 @@ local PROFESSIONS = {
                 orange = 240,
                 yellow = 265,
                 grey = 290,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 200.92,
@@ -884,7 +899,7 @@ local PROFESSIONS = {
                 orange = 125,
                 yellow = 155,
                 grey = 185,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 27.31,
@@ -920,7 +935,7 @@ local PROFESSIONS = {
                 orange = 250,
                 yellow = 255,
                 grey = 260,
-                rainingCost = 100,
+                trainingCost = 100,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 2,
@@ -936,7 +951,7 @@ local PROFESSIONS = {
                 orange = 250,
                 yellow = 255,
                 grey = 260,
-                rainingCost = 100,
+                trainingCost = 100,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 0.75,
@@ -952,7 +967,7 @@ local PROFESSIONS = {
                 orange = 255,
                 yellow = 280,
                 grey = 305,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 100,
                 castTime = 60,
                 sellPrice = 248.92,
@@ -984,7 +999,7 @@ local PROFESSIONS = {
                 orange = 190,
                 yellow = 215,
                 grey = 240,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 91.78,
@@ -1016,7 +1031,7 @@ local PROFESSIONS = {
                 orange = 280,
                 yellow = 305,
                 grey = 330,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 481.24,
@@ -1048,7 +1063,7 @@ local PROFESSIONS = {
                 orange = 290,
                 yellow = 310,
                 grey = 330,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 89.19,
@@ -1076,7 +1091,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 225,
                 grey = 250,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 141.2,
@@ -1112,7 +1127,7 @@ local PROFESSIONS = {
                 orange = 60,
                 yellow = 100,
                 grey = 140,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 2.16,
@@ -1136,7 +1151,7 @@ local PROFESSIONS = {
                 orange = 180,
                 yellow = 205,
                 grey = 230,
-                rainingCost = 75,
+                trainingCost = 75,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 80.72,
@@ -1168,7 +1183,7 @@ local PROFESSIONS = {
                 orange = 170,
                 yellow = 195,
                 grey = 220,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 83.6,
@@ -1204,7 +1219,7 @@ local PROFESSIONS = {
                 orange = 150,
                 yellow = 155,
                 grey = 160,
-                rainingCost = 2.5,
+                trainingCost = 2.5,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 5,
@@ -1224,7 +1239,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 225,
                 grey = 250,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 49.77,
@@ -1252,7 +1267,7 @@ local PROFESSIONS = {
                 orange = 185,
                 yellow = 210,
                 grey = 235,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 16.49,
@@ -1272,7 +1287,7 @@ local PROFESSIONS = {
                 orange = 190,
                 yellow = 215,
                 grey = 240,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 44,
                 castTime = 45,
                 sellPrice = 44.05,
@@ -1296,7 +1311,7 @@ local PROFESSIONS = {
                 orange = 195,
                 yellow = 220,
                 grey = 245,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 65.58,
@@ -1324,7 +1339,7 @@ local PROFESSIONS = {
                 orange = 205,
                 yellow = 225,
                 grey = 245,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 36.89,
@@ -1352,7 +1367,7 @@ local PROFESSIONS = {
                 orange = 170,
                 yellow = 195,
                 grey = 220,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 38.82,
@@ -1376,7 +1391,7 @@ local PROFESSIONS = {
                 orange = 175,
                 yellow = 200,
                 grey = 225,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 31.06,
@@ -1400,7 +1415,7 @@ local PROFESSIONS = {
                 orange = 150,
                 yellow = 150,
                 grey = 170,
-                rainingCost = 2.5,
+                trainingCost = 2.5,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 3,
@@ -1420,7 +1435,7 @@ local PROFESSIONS = {
                 orange = 145,
                 yellow = 175,
                 grey = 205,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 17.67,
@@ -1448,7 +1463,7 @@ local PROFESSIONS = {
                 orange = 165,
                 yellow = 190,
                 grey = 215,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 11.06,
@@ -1468,7 +1483,7 @@ local PROFESSIONS = {
                 orange = 150,
                 yellow = 180,
                 grey = 210,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 12.95,
@@ -1496,7 +1511,7 @@ local PROFESSIONS = {
                 orange = 180,
                 yellow = 205,
                 grey = 230,
-                rainingCost = 75,
+                trainingCost = 75,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 56.58,
@@ -1528,7 +1543,7 @@ local PROFESSIONS = {
                 orange = 170,
                 yellow = 195,
                 grey = 220,
-                rainingCost = 12.5,
+                trainingCost = 12.5,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 30.53,
@@ -1552,7 +1567,7 @@ local PROFESSIONS = {
                 orange = 155,
                 yellow = 180,
                 grey = 205,
-                rainingCost = 50,
+                trainingCost = 50,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 29.06,
@@ -1576,7 +1591,7 @@ local PROFESSIONS = {
                 orange = 160,
                 yellow = 185,
                 grey = 210,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 25.71,
@@ -1600,7 +1615,7 @@ local PROFESSIONS = {
                 orange = 160,
                 yellow = 185,
                 grey = 210,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 30,
                 castTime = 45,
                 sellPrice = 54.68,
@@ -1632,7 +1647,7 @@ local PROFESSIONS = {
                 orange = 130,
                 yellow = 160,
                 grey = 190,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 27.41,
@@ -1668,7 +1683,7 @@ local PROFESSIONS = {
                 orange = 95,
                 yellow = 135,
                 grey = 175,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 14.98,
@@ -1696,7 +1711,7 @@ local PROFESSIONS = {
                 orange = 65,
                 yellow = 105,
                 grey = 145,
-                rainingCost = 3,
+                trainingCost = 3,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 5.95,
@@ -1720,7 +1735,7 @@ local PROFESSIONS = {
                 orange = 125,
                 yellow = 125,
                 grey = 150,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 1,
@@ -1736,7 +1751,7 @@ local PROFESSIONS = {
                 orange = 210,
                 yellow = 230,
                 grey = 260,
-                rainingCost = 100,
+                trainingCost = 100,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 125.2,
@@ -1764,7 +1779,7 @@ local PROFESSIONS = {
                 orange = 235,
                 yellow = 255,
                 grey = 275,
-                rainingCost = 200,
+                trainingCost = 200,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 57.69,
@@ -1784,7 +1799,7 @@ local PROFESSIONS = {
                 orange = 230,
                 yellow = 250,
                 grey = 270,
-                rainingCost = 150,
+                trainingCost = 150,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 70.45,
@@ -1800,7 +1815,7 @@ local PROFESSIONS = {
                 orange = 205,
                 yellow = 225,
                 grey = 245,
-                rainingCost = 50,
+                trainingCost = 50,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 24.76,
@@ -1820,7 +1835,7 @@ local PROFESSIONS = {
                 orange = 245,
                 yellow = 255,
                 grey = 275,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 57.9,
@@ -1840,7 +1855,7 @@ local PROFESSIONS = {
                 orange = 210,
                 yellow = 230,
                 grey = 250,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 53.87,
@@ -1860,7 +1875,7 @@ local PROFESSIONS = {
                 orange = 205,
                 yellow = 225,
                 grey = 245,
-                rainingCost = 50,
+                trainingCost = 50,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 37.01,
@@ -1880,7 +1895,7 @@ local PROFESSIONS = {
                 orange = 125,
                 yellow = 125,
                 grey = 140,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.4,
@@ -1896,7 +1911,7 @@ local PROFESSIONS = {
                 orange = 290,
                 yellow = 310,
                 grey = 330,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 220,
                 castTime = 60,
                 sellPrice = 132.91,
@@ -1920,7 +1935,7 @@ local PROFESSIONS = {
                 orange = 280,
                 yellow = 305,
                 grey = 330,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 200,
                 castTime = 60,
                 sellPrice = 399.49,
@@ -1944,7 +1959,7 @@ local PROFESSIONS = {
                 orange = 265,
                 yellow = 285,
                 grey = 305,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 55.33,
@@ -1968,7 +1983,7 @@ local PROFESSIONS = {
                 orange = 295,
                 yellow = 315,
                 grey = 335,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 120.62,
@@ -1992,7 +2007,7 @@ local PROFESSIONS = {
                 orange = 270,
                 yellow = 290,
                 grey = 310,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 60.44,
@@ -2012,7 +2027,7 @@ local PROFESSIONS = {
                 orange = 295,
                 yellow = 315,
                 grey = 335,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 121.06,
@@ -2032,7 +2047,7 @@ local PROFESSIONS = {
                 orange = 265,
                 yellow = 285,
                 grey = 305,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 86.46,
@@ -2056,7 +2071,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 225,
                 grey = 250,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 3,
                 sellPrice = 10,
@@ -2080,7 +2095,7 @@ local PROFESSIONS = {
                 orange = 140,
                 yellow = 170,
                 grey = 200,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 36.93,
@@ -2112,7 +2127,7 @@ local PROFESSIONS = {
                 orange = 150,
                 yellow = 150,
                 grey = 155,
-                rainingCost = 2.5,
+                trainingCost = 2.5,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 1,
@@ -2128,7 +2143,7 @@ local PROFESSIONS = {
                 orange = 165,
                 yellow = 190,
                 grey = 215,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 5,
@@ -2152,7 +2167,7 @@ local PROFESSIONS = {
                 orange = 150,
                 yellow = 180,
                 grey = 210,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 2.5,
@@ -2172,7 +2187,7 @@ local PROFESSIONS = {
                 orange = 100,
                 yellow = 140,
                 grey = 180,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 8.71,
@@ -2196,7 +2211,7 @@ local PROFESSIONS = {
                 orange = 175,
                 yellow = 200,
                 grey = 225,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 73.04,
@@ -2228,7 +2243,7 @@ local PROFESSIONS = {
                 orange = 185,
                 yellow = 210,
                 grey = 235,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 44,
                 castTime = 45,
                 sellPrice = 112.48,
@@ -2260,7 +2275,7 @@ local PROFESSIONS = {
                 orange = 145,
                 yellow = 175,
                 grey = 205,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 45.52,
@@ -2296,7 +2311,7 @@ local PROFESSIONS = {
                 orange = 230,
                 yellow = 250,
                 grey = 270,
-                rainingCost = 150,
+                trainingCost = 150,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 79.55,
@@ -2316,7 +2331,7 @@ local PROFESSIONS = {
                 orange = 215,
                 yellow = 235,
                 grey = 255,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 60,
                 castTime = 60,
                 sellPrice = 41.03,
@@ -2336,7 +2351,7 @@ local PROFESSIONS = {
                 orange = 210,
                 yellow = 230,
                 grey = 250,
-                rainingCost = 50,
+                trainingCost = 50,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 80.53,
@@ -2352,7 +2367,7 @@ local PROFESSIONS = {
                 orange = 235,
                 yellow = 255,
                 grey = 275,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 86.61,
@@ -2376,7 +2391,7 @@ local PROFESSIONS = {
                 orange = 215,
                 yellow = 235,
                 grey = 255,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 2.5,
@@ -2400,7 +2415,7 @@ local PROFESSIONS = {
                 orange = 235,
                 yellow = 255,
                 grey = 275,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 2.5,
@@ -2420,7 +2435,7 @@ local PROFESSIONS = {
                 orange = 180,
                 yellow = 205,
                 grey = 230,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 44,
                 castTime = 45,
                 sellPrice = 101.53,
@@ -2452,7 +2467,7 @@ local PROFESSIONS = {
                 orange = 230,
                 yellow = 250,
                 grey = 270,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 77.39,
@@ -2472,7 +2487,7 @@ local PROFESSIONS = {
                 orange = 245,
                 yellow = 265,
                 grey = 285,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 67.39,
@@ -2504,7 +2519,7 @@ local PROFESSIONS = {
                 orange = 240,
                 yellow = 260,
                 grey = 280,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 83.68,
@@ -2532,7 +2547,7 @@ local PROFESSIONS = {
                 orange = 220,
                 yellow = 240,
                 grey = 260,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 29.87,
@@ -2560,7 +2575,7 @@ local PROFESSIONS = {
                 orange = 245,
                 yellow = 265,
                 grey = 285,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 67.63,
@@ -2588,7 +2603,7 @@ local PROFESSIONS = {
                 orange = 220,
                 yellow = 240,
                 grey = 260,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 59.52,
@@ -2616,7 +2631,7 @@ local PROFESSIONS = {
                 orange = 225,
                 yellow = 245,
                 grey = 265,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 48.57,
@@ -2640,7 +2655,7 @@ local PROFESSIONS = {
                 orange = 275,
                 yellow = 300,
                 grey = 325,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 160,
                 castTime = 60,
                 sellPrice = 330.79,
@@ -2668,7 +2683,7 @@ local PROFESSIONS = {
                 orange = 120,
                 yellow = 150,
                 grey = 180,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 8.07,
@@ -2688,7 +2703,7 @@ local PROFESSIONS = {
                 orange = 110,
                 yellow = 140,
                 grey = 170,
-                rainingCost = 8,
+                trainingCost = 8,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 21.07,
@@ -2716,7 +2731,7 @@ local PROFESSIONS = {
                 orange = 245,
                 yellow = 270,
                 grey = 295,
-                rainingCost = 135,
+                trainingCost = 135,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 255.08,
@@ -2756,7 +2771,7 @@ local PROFESSIONS = {
                 orange = 185,
                 yellow = 210,
                 grey = 235,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 39.37,
@@ -2784,7 +2799,7 @@ local PROFESSIONS = {
                 orange = 260,
                 yellow = 280,
                 grey = 300,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 75.95,
@@ -2804,7 +2819,7 @@ local PROFESSIONS = {
                 orange = 290,
                 yellow = 310,
                 grey = 330,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 164.21,
@@ -2824,7 +2839,7 @@ local PROFESSIONS = {
                 orange = 270,
                 yellow = 290,
                 grey = 310,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 170.03,
@@ -2848,7 +2863,7 @@ local PROFESSIONS = {
                 orange = 295,
                 yellow = 315,
                 grey = 335,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 170.34,
@@ -2868,7 +2883,7 @@ local PROFESSIONS = {
                 orange = 285,
                 yellow = 305,
                 grey = 325,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 102.42,
@@ -2888,7 +2903,7 @@ local PROFESSIONS = {
                 orange = 95,
                 yellow = 125,
                 grey = 155,
-                rainingCost = 2,
+                trainingCost = 2,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 2.95,
@@ -2908,7 +2923,7 @@ local PROFESSIONS = {
                 orange = 105,
                 yellow = 145,
                 grey = 175,
-                rainingCost = 3,
+                trainingCost = 3,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 9.62,
@@ -2924,7 +2939,7 @@ local PROFESSIONS = {
                 orange = 110,
                 yellow = 140,
                 grey = 170,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 5.32,
@@ -2948,7 +2963,7 @@ local PROFESSIONS = {
                 orange = 1,
                 yellow = 15,
                 grey = 55,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.32,
@@ -2964,7 +2979,7 @@ local PROFESSIONS = {
                 orange = 25,
                 yellow = 45,
                 grey = 85,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.05,
@@ -2980,7 +2995,7 @@ local PROFESSIONS = {
                 orange = 1,
                 yellow = 15,
                 grey = 55,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.03,
@@ -2996,7 +3011,7 @@ local PROFESSIONS = {
                 orange = 70,
                 yellow = 110,
                 grey = 150,
-                rainingCost = 2,
+                trainingCost = 2,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 1.98,
@@ -3012,7 +3027,7 @@ local PROFESSIONS = {
                 orange = 90,
                 yellow = 115,
                 grey = 140,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 2.25,
@@ -3032,7 +3047,7 @@ local PROFESSIONS = {
                 orange = 80,
                 yellow = 120,
                 grey = 160,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 6.3,
@@ -3056,7 +3071,7 @@ local PROFESSIONS = {
                 orange = 40,
                 yellow = 80,
                 grey = 120,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 0.71,
@@ -3076,7 +3091,7 @@ local PROFESSIONS = {
                 orange = 45,
                 yellow = 85,
                 grey = 125,
-                rainingCost = 2,
+                trainingCost = 2,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 2.99,
@@ -3100,7 +3115,7 @@ local PROFESSIONS = {
                 orange = 245,
                 yellow = 270,
                 grey = 295,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 216.6,
@@ -3128,7 +3143,7 @@ local PROFESSIONS = {
                 orange = 190,
                 yellow = 215,
                 grey = 240,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 103.95,
@@ -3156,7 +3171,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 225,
                 grey = 250,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 142.21,
@@ -3192,7 +3207,7 @@ local PROFESSIONS = {
                 orange = 145,
                 yellow = 175,
                 grey = 205,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 29.35,
@@ -3224,7 +3239,7 @@ local PROFESSIONS = {
                 orange = 100,
                 yellow = 105,
                 grey = 110,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 1.25,
@@ -3244,7 +3259,7 @@ local PROFESSIONS = {
                 orange = 100,
                 yellow = 100,
                 grey = 120,
-                rainingCost = 1,
+                trainingCost = 1,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 1,
@@ -3264,7 +3279,7 @@ local PROFESSIONS = {
                 orange = 130,
                 yellow = 160,
                 grey = 190,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 13.17,
@@ -3288,7 +3303,7 @@ local PROFESSIONS = {
                 orange = 130,
                 yellow = 160,
                 grey = 190,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 18.31,
@@ -3316,7 +3331,7 @@ local PROFESSIONS = {
                 orange = 135,
                 yellow = 165,
                 grey = 195,
-                rainingCost = 10,
+                trainingCost = 10,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 9.65,
@@ -3340,7 +3355,7 @@ local PROFESSIONS = {
                 orange = 155,
                 yellow = 180,
                 grey = 205,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 28.42,
@@ -3364,7 +3379,7 @@ local PROFESSIONS = {
                 orange = 125,
                 yellow = 155,
                 grey = 185,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 12.84,
@@ -3388,7 +3403,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 200,
                 grey = 210,
-                rainingCost = 25,
+                trainingCost = 25,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 2,
@@ -3404,7 +3419,7 @@ local PROFESSIONS = {
                 orange = 155,
                 yellow = 180,
                 grey = 205,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 30,
                 castTime = 45,
                 sellPrice = 62.58,
@@ -3436,7 +3451,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 200,
                 grey = 210,
-                rainingCost = 25,
+                trainingCost = 25,
                 recipeCost = 0,
                 castTime = 5.125,
                 sellPrice = 0.4,
@@ -3452,7 +3467,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 225,
                 grey = 250,
-                rainingCost = 25,
+                trainingCost = 25,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 64.88,
@@ -3472,7 +3487,7 @@ local PROFESSIONS = {
                 orange = 215,
                 yellow = 235,
                 grey = 255,
-                rainingCost = 50,
+                trainingCost = 50,
                 recipeCost = 0,
                 castTime = 45,
                 sellPrice = 23.77,
@@ -3492,7 +3507,7 @@ local PROFESSIONS = {
                 orange = 190,
                 yellow = 215,
                 grey = 240,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 25,
                 sellPrice = 15,
@@ -3516,7 +3531,7 @@ local PROFESSIONS = {
                 orange = 295,
                 yellow = 315,
                 grey = 335,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 400,
                 castTime = 60,
                 sellPrice = 140.99,
@@ -3544,7 +3559,7 @@ local PROFESSIONS = {
                 orange = 235,
                 yellow = 260,
                 grey = 285,
-                rainingCost = 135,
+                trainingCost = 135,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 231.59,
@@ -3584,7 +3599,7 @@ local PROFESSIONS = {
                 orange = 70,
                 yellow = 110,
                 grey = 150,
-                rainingCost = 5,
+                trainingCost = 5,
                 recipeCost = 0,
                 castTime = 12.5,
                 sellPrice = 9.37,
@@ -3616,7 +3631,7 @@ local PROFESSIONS = {
                 orange = 250,
                 yellow = 270,
                 grey = 290,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 92.39,
@@ -3640,7 +3655,7 @@ local PROFESSIONS = {
                 orange = 250,
                 yellow = 270,
                 grey = 290,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 46.36,
@@ -3660,7 +3675,7 @@ local PROFESSIONS = {
                 orange = 280,
                 yellow = 300,
                 grey = 320,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 103.36,
@@ -3684,7 +3699,7 @@ local PROFESSIONS = {
                 orange = 255,
                 yellow = 275,
                 grey = 295,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 49.98,
@@ -3704,7 +3719,7 @@ local PROFESSIONS = {
                 orange = 280,
                 yellow = 300,
                 grey = 320,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 103.72,
@@ -3728,7 +3743,7 @@ local PROFESSIONS = {
                 orange = 275,
                 yellow = 295,
                 grey = 315,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 5,
@@ -3752,7 +3767,7 @@ local PROFESSIONS = {
                 orange = 245,
                 yellow = 265,
                 grey = 285,
-                rainingCost = 90,
+                trainingCost = 90,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 108.99,
@@ -3784,7 +3799,7 @@ local PROFESSIONS = {
                 orange = 260,
                 yellow = 285,
                 grey = 310,
-                rainingCost = 135,
+                trainingCost = 135,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 385.48,
@@ -3820,7 +3835,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 205,
                 grey = 210,
-                rainingCost = 25,
+                trainingCost = 25,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 10,
@@ -3840,7 +3855,7 @@ local PROFESSIONS = {
                 orange = 200,
                 yellow = 200,
                 grey = 220,
-                rainingCost = 25,
+                trainingCost = 25,
                 recipeCost = 0,
                 castTime = 8,
                 sellPrice = 6.25,
@@ -3860,7 +3875,7 @@ local PROFESSIONS = {
                 orange = 290,
                 yellow = 315,
                 grey = 340,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 392.55,
@@ -3888,7 +3903,7 @@ local PROFESSIONS = {
                 orange = 225,
                 yellow = 250,
                 grey = 275,
-                rainingCost = 0,
+                trainingCost = 0,
                 recipeCost = 0,
                 castTime = 60,
                 sellPrice = 158.91,
@@ -4369,24 +4384,29 @@ General idea:
 
 The problem arises if one recipe is dependant of another recipe that is yet to be evluated.
 We fix this by iterating over this procedure until all recipes are evaluted.
-This unfortunately makes our algorithm worst case O(n^2)
+This unfortunately makes our algorithm's worst case O(n^2)
 ]]
 local function calculateRecipePrice(professionName)
-    local totalPrice, remaining, i, materialNotFound
-    -- check whether we evaluated all the recipes
+    local totalPrice, remaining, i, materialNotFound, impossibleToCraft
+    -- Check whether we evaluated all the recipes
     local recipeCount = tcount(profSession.recipesToConsider)
     while recipeCount > 0 do
         for recipe, _ in pairs(profSession.recipesToConsider) do
             --Evaluate only if its not already evaluted
             materialNotFound = false
+            impossibleToCraft = false
             if profSession.recipesToConsider[recipe] == huge then
                 totalPrice = 0
                 for materialName, materialTable in pairs(PROFESSIONS[professionName].RECIPES[recipe].materials) do
                     --If it is another recipe
                     if PROFESSIONS[professionName].RECIPES[materialName] then
                         --print("compund recipe = ", recipe, " | ", materialName)
+                        --If determined impossible to calculate
+                        if not profSession.recipesToConsider[materialName] then
+                            totalPrice = huge
+                            impossibleToCraft = true
                         --If not yet calculated
-                        if not profSession.recipesToConsider[materialName] or profSession.recipesToConsider[materialName] == huge then
+                        elseif profSession.recipesToConsider[materialName] == huge then
                             totalPrice = huge
                         else
                             totalPrice = totalPrice + profSession.recipesToConsider[materialName]
@@ -4396,18 +4416,22 @@ local function calculateRecipePrice(professionName)
                         totalPrice = totalPrice + (PROFESSIONS[professionName].VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
                     else --If from AH
                         --If there isn't any in the AH
-                        if not profSession.foundItems[materialName] then
-                            --profSession.foundItems = huge
+                        if not profSession.foundItems[materialName] or select(1, tcount(profSession.foundItems[materialName])) == 0 then
                             totalPrice = huge
                             materialNotFound = true
                         else
                             remaining =  materialTable.count
                             i = 1
-                            while remaining > 0 do
+                            while profSession.foundItems[materialName] ~= nil and remaining > 0 and i <= #profSession.foundItems[materialName] and remaining <= #profSession.foundItems[materialName] do --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
                                 totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * profSession.foundItems[materialName][i].count
                                 remaining = remaining - profSession.foundItems[materialName][i].count
                                 --print(remaining)
                                 i = i + 1
+                            end
+                            --Check if not enough
+                            if remaining > 0 then
+                                totalPrice = huge
+                                materialNotFound = true
                             end
                         end
                     end
@@ -4417,8 +4441,9 @@ local function calculateRecipePrice(professionName)
                 if profSession.recipesToConsider[recipe] ~= huge then
                     recipeCount = recipeCount - 1
                 else
-                    --Check if there is no needed material in AH and remove it
-                    if materialNotFound then
+                    --Check if there is no(t enough) material(s) in AH and remove it
+                    if materialNotFound or impossibleToCraft then
+                        --If so, remove it from the list
                         profSession.recipesToConsider[recipe] = nil
                         recipeCount = recipeCount - 1
                     end
@@ -4428,28 +4453,15 @@ local function calculateRecipePrice(professionName)
     end
 end
 
---Sort recipes from cheapest to most expensive
-local function sortRecipesByCheapest()
-    local sortedRecipes = {}
-    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
-        sortedRecipes[#sortedRecipes+1] = {recipeName, recipePrice}
-    end
-    tsort(sortedRecipes, function (a, b)
-        return a[2] < b[2]
-    end)
-    return sortedRecipes
-end
-
 --Calculate number of items needed for skillup per recipe
-local function calculateNumberOfItemsPerRecipe(professionName)
+local function calculateNumberOfItemsPerRecipe(professionName, skillLevel)
     local numberOfItemsPerRecipe = {} --["recipe name"] = number of items
     local multiplier = 0 -- 0 For grey by default; should never happen
-    local skillLevel = RXPCData.professions.profession1.skillLevel
     for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
         if skillLevel < PROFESSIONS[professionName].RECIPES[recipeName].orange then
             multiplier = 1
         elseif skillLevel < PROFESSIONS[professionName].RECIPES[recipeName].yellow then
-            multiplier = 1.01 * (select(2, calculateSegmentRange(professionName, segmentRange)) - skillLevel) --TODO: maybe use another function for this
+            multiplier = 1.01 * (select(2, calculateSegmentRange(skillLevel, segmentRange)) - skillLevel) --TODO: maybe use another function for this
         end
         numberOfItemsPerRecipe[recipeName] = ceil(multiplier)
     end
@@ -4457,12 +4469,21 @@ local function calculateNumberOfItemsPerRecipe(professionName)
 end
 
 --Calculates full cost of the recipe taking everything in account
--- ((mats - sell) * multiplier + training cost + recipe cost) / castTime
-local function calculateFullCost(professionName)
-    local numberOfItemsPerRecipe = calculateNumberOfItemsPerRecipe(RXPCData.professions.profession1.name)
+-- (mats - sell) * multiplier + training cost + recipe cost
+local function calculateFullCost(professionName, skillLevel)
+    local numberOfItemsPerRecipe = calculateNumberOfItemsPerRecipe(professionName, skillLevel)
     for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
-        profSession.recipesToConsider[recipeName] = ((profSession.recipesToConsider[recipeName] - PROFESSIONS[professionName].RECIPES[recipeName].sellPrice) * numberOfItemsPerRecipe[recipeName] + PROFESSIONS[professionName].RECIPES[recipeName].trainingCost + PROFESSIONS[professionName].RECIPES[recipeName].recipeCost) / PROFESSIONS[professionName].RECIPES[recipeName].castTime
+        profSession.recipesToConsider[recipeName] = ((recipePrice - PROFESSIONS[professionName].RECIPES[recipeName].sellPrice) * numberOfItemsPerRecipe[recipeName] + PROFESSIONS[professionName].RECIPES[recipeName].trainingCost + PROFESSIONS[professionName].RECIPES[recipeName].recipeCost)
     end
+end
+
+--Calculate flux density [T^-1Skill^-1Money]
+local function calculateFullCostFluxDensity(professionName, skillLevel)
+    local fluxDensity = {}
+    for recipeName, recipePrice in pairs(professionName.recipesToConsider) do
+        fluxDensity[recipeName] = ceil(recipePrice / PROFESSIONS[professionName].RECIPES[recipeName].castTime)
+    end
+    return fluxDensity
 end
 
 --[[ 
@@ -4471,12 +4492,50 @@ General idea:
 --Once we cannot do it, go to next.
 --Repeat until done or no more money or no more recipes
 ]]
-local function buyoutItems(professionName)
-    local _, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel)
-    local skillLevelsToEarn = maxSegment - RXPCData.professions.profession1.skillLevel
-    local sortedRecipes = sortItemsByPrice() --index = {"name", value}
+local function buyoutItems(professionName, skillLevel)
+    local _, maxSegment = calculateSegmentRange(skillLevel)
+    local skillLevelsToEarn = maxSegment - skillLevel
+    sortItemsByPrice()
+
+    calculateRecipePrice(professionName)
+    calculateFullCost(professionName, skillLevel)
+    local sortedRecipes = sortAssociativeArrayByValue(profSession.recipesToConsider)
+
+    local str = "" --print string 
     local totalCost = 0
-    --TODO: finish
+    local materialsGathered = {} --[materialName] = materialCount
+    local skillLevelsEarned = 0
+    local i = 1 --counter for sorted recipes
+    local recipeName, recipeCost
+    local bought, materialCount
+    local canBuy
+    while skillLevelsEarned < skillLevelsToEarn do
+        recipeName, recipeCost = sortedRecipes[i][1], sortedRecipes[i][2]
+        canBuy = true
+        --Check if we can buy/gather materials for the recipe
+        for materialName, materialTable in pairs(PROFESSIONS[professionName].RECIPES[recipeName].materials) do
+            --If its not from vendor
+            if not materialTable.fromVendor then
+                materialCount = materialTable.count
+                bought = 0
+                --Check if we have it already --TODO: maybe we have it from crafting. Need to account for this as well later on.
+                if materialsGathered[materialName] ~= nil then
+                    --Use as many as we can
+                    bought = min(materialCount, materialsGathered[materialName])
+                    materialsGathered[materialName] = max(0, materialsGathered[materialName] - materialCount)
+                end
+                --Check if we need to buy more
+                while bought < materialCount do
+                    --Check if any remaining
+                    if not profSession.foundItems[materialName] then
+                       canBuy = false
+                       --TODO: now we should return the bought materials
+                    else
+                    end
+                end
+            end
+        end
+    end
 end
 
 
@@ -4521,12 +4580,9 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
         name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
 
         --Check if itemId already exists
-        --if not profSession.foundItems[itemId] then profSession.foundItems[itemId] = {} end
         if not profSession.foundItems[name] then profSession.foundItems[name] = {} end
         if buyoutPrice > 0 then
-            --tinsert(profSession.foundItems[itemId], {
             tinsert(profSession.foundItems[name], {
-                --name = name,
                 count = count,
                 price = buyoutPrice,
                 pricePerItem = ceil(buyoutPrice / count),
@@ -4578,125 +4634,137 @@ addon.professions.AH:Setup()
 
 
 --GUI
-local guiFrame = CreateFrame("Frame", "ProfessionsFrame", UIParent, "BasicFrameTemplateWithInset")
-guiFrame:SetSize(500, 700)
-guiFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
-guiFrame.TitleBg:SetHeight(30)
-guiFrame.title = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-guiFrame.title:SetPoint("CENTER", guiFrame.TitleBg, "CENTER", 0, 6)
-guiFrame.title:SetText("Professions guide")
-guiFrame:EnableMouse(true)
-guiFrame:SetMovable(true)
-guiFrame:RegisterForDrag("LeftButton")
-guiFrame:SetScript("OnDragStart", function (self)
-    self:StartMoving()
-end)
-guiFrame:SetScript("OnDragStop", function (self)
-    self:StopMovingOrSizing()
-end)
+local printed = false --last minute variable for a gui bugfix, will be properly resolved
+local function createGUI()
+    local guiFrame = CreateFrame("Frame", "ProfessionsFrame", UIParent, "BasicFrameTemplateWithInset")
+    guiFrame:SetSize(500, 700)
+    guiFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
+    guiFrame.TitleBg:SetHeight(30)
+    guiFrame.title = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    guiFrame.title:SetPoint("CENTER", guiFrame.TitleBg, "CENTER", 0, 6)
+    guiFrame.title:SetText("Professions guide")
+    guiFrame:EnableMouse(true)
+    guiFrame:SetMovable(true)
+    guiFrame:RegisterForDrag("LeftButton")
+    guiFrame:SetScript("OnDragStart", function (self)
+        self:StartMoving()
+    end)
+    guiFrame:SetScript("OnDragStop", function (self)
+        self:StopMovingOrSizing()
+    end)
 
-SLASH_prof1 = '/prof'
-SlashCmdList['prof'] = function()
-    if not guiFrame:IsShown() then
-        guiFrame:Show()
+
+    guiFrame.descriptionText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.descriptionText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -30)
+    guiFrame.descriptionText:SetText("Skill level sets players skill level in Blacksmithing.\nSegment range sets in what segments \nto split the profession (eg. 1-75, 76-150, ...).\nSet parameters sets slider's current parameters.\nScan Auction House scans the auction house \nfor necessary materials.\nPrint scan results prints the results. Values are per recipe per skill-up.")
+
+
+    local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
+    selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
+    selectSkillLevelFrame:SetSize(300, 20)
+    selectSkillLevelFrame:SetMinMaxValues(5, 300)
+    selectSkillLevelFrame:SetValue(20)
+    selectSkillLevelFrame:SetValueStep(1)
+    selectSkillLevelFrame:SetObeyStepOnDrag(true)
+    selectSkillLevelFrame.Text:SetText("Select Skill level (" .. selectSkillLevelFrame:GetValue() .. ")")
+    selectSkillLevelFrame:SetScript("OnValueChanged", function (self, value, userInput)
+        self:SetValue(value)
+        self.Text:SetText("Select Skill level  (" .. self:GetValue() .. ")")
+    end)
+
+    local selectSegmentFrame = CreateFrame("Slider", "SelectSegmentFrame", guiFrame, "UISliderTemplateWithLabels")
+    selectSegmentFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -180)
+    selectSegmentFrame:SetSize(300, 20)
+    selectSegmentFrame:SetMinMaxValues(5, 300)
+    selectSegmentFrame:SetValue(75)
+    selectSegmentFrame:SetValueStep(5)
+    selectSegmentFrame:SetObeyStepOnDrag(true)
+    selectSegmentFrame.Text:SetText("Segment Range (" .. selectSegmentFrame:GetValue() .. ")")
+    selectSegmentFrame:SetScript("OnValueChanged", function (self, value, userInput)
+        self:SetValue(value)
+        self.Text:SetText("Segment Range (" .. self:GetValue() .. ")")
+    end)
+
+    local setButtonFrame = CreateFrame("Button", "SetButtonFrame", guiFrame, "UIPanelButtonTemplate")
+    setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -210)
+    setButtonFrame:SetSize(100, 40)
+    setButtonFrame:SetText("Set parameters")
+    setButtonFrame:RegisterForClicks("LeftButtonUp")
+    setButtonFrame:SetScript("OnClick", function (self)
+        setPlayerData("Blacksmithing", selectSkillLevelFrame:GetValue())
+        segmentRange = selectSegmentFrame:GetValue()
+    end)
+
+    local ahNotShowingMessageFrame = CreateFrame("MessageFrame", "ahNotShowingMessageFrame", UIParent)
+    ahNotShowingMessageFrame:SetPoint("TOP")
+    ahNotShowingMessageFrame:SetSize(200, 200)
+    ahNotShowingMessageFrame:SetFont("fonts/arialn.ttf", 20, "")
+    ahNotShowingMessageFrame:AddMessage("AH must be open to scan!", 1, 0, 0)
+    ahNotShowingMessageFrame:Hide()
+    ahNotShowingMessageFrame:RegisterEvent("AUCTION_HOUSE_SHOW")
+    ahNotShowingMessageFrame:SetScript("OnEvent", function (self, event)
+        if event == "AUCTION_HOUSE_SHOW" then
+            ahNotShowingMessageFrame:Hide()
+        end
+    end)
+
+    local scanButtonFrame = CreateFrame("Button", "ScanButtonFrame", setButtonFrame, "UIPanelButtonTemplate")
+    scanButtonFrame:SetPoint("LEFT", setButtonFrame, "RIGHT")
+    scanButtonFrame:SetSize(200, 40)
+    scanButtonFrame:SetText("Scan Auction House")
+    scanButtonFrame:RegisterForClicks("LeftButtonUp")
+    scanButtonFrame:SetScript("OnClick", function (self)
+        printed = false
+        if not profSession.isInitialized then
+            error("Profession session not initialized", 2)
+        end
+        if not profSession.ahIsShowing then
+            ahNotShowingMessageFrame:Show()
+        else
+            guiFrame.printText:SetText("")
+            fullScan()
+        end
+    end)
+
+    guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.printText:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
+    local textToPrint = ""
+
+
+    local printButtonFrame = CreateFrame("Button", "printButtonFrame", scanButtonFrame, "UIPanelButtonTemplate")
+    printButtonFrame:SetPoint("LEFT", scanButtonFrame, "RIGHT")
+    printButtonFrame:SetSize(120, 40)
+    printButtonFrame:SetText("Print scan results")
+    printButtonFrame:RegisterForClicks("LeftButtonUp")
+    printButtonFrame:SetScript("OnClick", function (self)
+        textToPrint = ""
+        if not printed then
+            calculateRecipePrice(RXPCData.professions.profession1.name)
+            calculateFullCost(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+        end
+        local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
+        for _, v in ipairs(sorted) do
+            textToPrint = textToPrint .. v[1] .. ": "
+            if v[2] == huge then
+                textToPrint = textToPrint .. "huge\n"
+            else
+                textToPrint = textToPrint .. formatMoney(ceil(v[2] / (select(2, calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)) - RXPCData.professions.profession1.skillLevel))) .. "\n"
+            end
+        end
+        textToPrint = textToPrint .. "==========\n"
+        guiFrame.printText:SetText(textToPrint)
+        printed = true
+    end)
+
+    SLASH_prof1 = '/prof'
+    SlashCmdList['prof'] = function()
+        if not guiFrame:IsShown() then
+            guiFrame:Show()
+        end
     end
 end
 
-guiFrame.descriptionText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-guiFrame.descriptionText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -30)
-guiFrame.descriptionText:SetText("Skill level sets players skill level in Blacksmithing.\nSegment range sets in what segments \nto split the profession (eg. 1-75, 76-150, ...).\nSet parameters sets slider parameters.\nScan Auction House scans the auction house \nfor necessary materials.\nPrint scan results prints the results.")
-
-
-local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
-selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
-selectSkillLevelFrame:SetSize(300, 20)
-selectSkillLevelFrame:SetMinMaxValues(5, 300)
-selectSkillLevelFrame:SetValue(20)
-selectSkillLevelFrame:SetValueStep(1)
-selectSkillLevelFrame:SetObeyStepOnDrag(true)
-selectSkillLevelFrame.Text:SetText("Select Skill level (" .. selectSkillLevelFrame:GetValue() .. ")")
-selectSkillLevelFrame:SetScript("OnValueChanged", function (self, value, userInput)
-    self:SetValue(value)
-    self.Text:SetText("Select Skill level  (" .. self:GetValue() .. ")")
-end)
-
-local selectSegmentFrame = CreateFrame("Slider", "SelectSegmentFrame", guiFrame, "UISliderTemplateWithLabels")
-selectSegmentFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -180)
-selectSegmentFrame:SetSize(300, 20)
-selectSegmentFrame:SetMinMaxValues(5, 300)
-selectSegmentFrame:SetValue(75)
-selectSegmentFrame:SetValueStep(5)
-selectSegmentFrame:SetObeyStepOnDrag(true)
-selectSegmentFrame.Text:SetText("Segment Range (" .. selectSegmentFrame:GetValue() .. ")")
-selectSegmentFrame:SetScript("OnValueChanged", function (self, value, userInput)
-    self:SetValue(value)
-    self.Text:SetText("Segment Range (" .. self:GetValue() .. ")")
-end)
-
-local setButtonFrame = CreateFrame("Button", "SetButtonFrame", guiFrame, "UIPanelButtonTemplate")
-setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -210)
-setButtonFrame:SetSize(100, 40)
-setButtonFrame:SetText("Set parameters")
-setButtonFrame:RegisterForClicks("LeftButtonUp")
-setButtonFrame:SetScript("OnClick", function (self)
-    setPlayerData("Blacksmithing", selectSkillLevelFrame:GetValue())
-    segmentRange = selectSegmentFrame:GetValue()
-end)
-
-local ahNotShowingMessageFrame = CreateFrame("MessageFrame", "ahNotShowingMessageFrame", UIParent)
-ahNotShowingMessageFrame:SetPoint("TOP")
-ahNotShowingMessageFrame:SetSize(200, 200)
-ahNotShowingMessageFrame:SetFont("fonts/arialn.ttf", 20, "")
-ahNotShowingMessageFrame:AddMessage("AH must be open to scan!", 1, 0, 0)
-ahNotShowingMessageFrame:Hide()
-ahNotShowingMessageFrame:RegisterEvent("AUCTION_HOUSE_SHOW")
-ahNotShowingMessageFrame:SetScript("OnEvent", function (self, event)
-    if event == "AUCTION_HOUSE_SHOW" then
-        ahNotShowingMessageFrame:Hide()
-    end
-end)
-
-local scanButtonFrame = CreateFrame("Button", "ScanButtonFrame", setButtonFrame, "UIPanelButtonTemplate")
-scanButtonFrame:SetPoint("LEFT", setButtonFrame, "RIGHT")
-scanButtonFrame:SetSize(200, 40)
-scanButtonFrame:SetText("Scan Auction House")
-scanButtonFrame:RegisterForClicks("LeftButtonUp")
-scanButtonFrame:SetScript("OnClick", function (self)
-    if not profSession.isInitialized then
-        error("Profession session not initialized", 2)
-    end
-    if not profSession.ahIsShowing then
-        ahNotShowingMessageFrame:Show()
-    else
-        guiFrame.printText:SetText("")
-        fullScan()
-    end
-end)
-
-guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-guiFrame.printText:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
-local textToPrint = ""
-
-
-local printButtonFrame = CreateFrame("Button", "printButtonFrame", scanButtonFrame, "UIPanelButtonTemplate")
-printButtonFrame:SetPoint("LEFT", scanButtonFrame, "RIGHT")
-printButtonFrame:SetSize(120, 40)
-printButtonFrame:SetText("Print scan results")
-printButtonFrame:RegisterForClicks("LeftButtonUp")
-printButtonFrame:SetScript("OnClick", function (self)
-    textToPrint = ""
-    calculateRecipePrice(RXPCData.professions.profession1.name)
-    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
-        if recipeName == huge then
-            textToPrint = textToPrint .. recipeName .. ": huge\n"
-        else
-            textToPrint = textToPrint .. recipeName .. ": " .. formatMoney(recipePrice) .. "\n"
-        end
-    end
-    textToPrint = textToPrint .. "==========\n"
-    guiFrame.printText:SetText(textToPrint)
-end)
-
+createGUI()
 
 
 --Testing
@@ -4707,6 +4775,7 @@ for testing purposes
 
 
 --Slash commands
+
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
@@ -4765,7 +4834,7 @@ end
 
 SLASH_set1 = '/set'
 SlashCmdList['set'] = function()
-    setPlayerData("Blacksmithing", 25)
+    setPlayerData("Blacksmithing", 75)
 end
 
 --Testing
@@ -4810,6 +4879,16 @@ SlashCmdList['qtst'] = function()
     -- end
 
     --sortRecipesByCheapest()
+
+    -- calculateFullCost(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+    -- local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
+    -- for _, v in ipairs(sorted) do
+    --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
+    -- end
+
+    local a = 80478
+    print(a)
+    print(formatMoney(a))
 end
 
 
