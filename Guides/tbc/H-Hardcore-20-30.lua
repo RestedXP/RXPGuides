@@ -7702,6 +7702,7 @@ step << Shaman
     .turnin 972 >>Turn in Water Sapta
 	.collect 6637,1 --Water Sapta (1)
     .target Islen Waterseer
+    .itemcount 6637,<1
 step << Warrior
     #completewith next
     .goto The Barrens,65.09,47.81,90,0

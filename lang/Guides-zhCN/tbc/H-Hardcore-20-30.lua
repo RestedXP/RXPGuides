@@ -7433,6 +7433,7 @@ step << Shaman
     .turnin 972 >>交任务《 前往熔光镇》 水之灵契
 	.collect 6637,1 --Water Sapta (1)
     .target 水之先知伊斯伦
+    .itemcount 6637,<1
 step
     #optional << !Warrior !Shaman
     .goto The Barrens,65.84,43.86
