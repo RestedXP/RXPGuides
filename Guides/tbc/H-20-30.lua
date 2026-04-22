@@ -5630,7 +5630,7 @@ step
     .bindlocation 1638
     .isQuestAvailable 1131,4821,4841,1149
 step
-    #completewith next
+    #completewith PRMAtraining
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step
@@ -5690,6 +5690,9 @@ step << Mage
     .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff]
     .target Birgitte Cranston
     .xp <30,1
+step << Mage/Priest
+    #optional
+    #label PRMAtraining
 step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
@@ -6310,17 +6313,24 @@ step
     .goto Thousand Needles,46.00,50.80
     >>Click on the |cRXP_FRIENDLY_Wanted Poster|r
     .accept 5147 >> Accept Wanted - Arnak Grimtotem
-step
+step 
+    #optional
     .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau|r
     .turnin 1196 >> Turn in The Sacred Flame
-    .accept 1197 >> Accept The Sacred Flame
     .target Rau Cliffrunner
 step
     .goto Thousand Needles,45.70,50.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longhorn|r
     .turnin 4542 >> Turn in Message to Freewind Post
     .accept 4841 >> Accept Pacify the Centaur
+    .target Cliffwatcher Longhorn
+    .maxlevel 30
+step
+    #optional
+    .goto Thousand Needles,45.70,50.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longhorn|r
+    .turnin 4542 >> Turn in Message to Freewind Post
     .target Cliffwatcher Longhorn
 step
     .goto Thousand Needles,45.15,50.78
@@ -6365,6 +6375,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elu|r
     .accept 4767 >> Accept Wind Rider
     .target Elu
+    .maxlevel 30
 step
     .goto Thousand Needles,45.14,49.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyse|r
@@ -6382,10 +6393,12 @@ step
     .mob +Galak Wrangler
     .complete 4841,3 --Kill Galak Windchaser (x6)
     .mob +Galak Windchaser
+    .isOnQuest 4841
 step
     #label Splithoofcave
     #completewith Clovenhoof
     .goto Thousand Needles,44.12,37.22,20 >>Enter the cave
+    .isOnQuest 1197
 step
     #requires Splithoofcave
     #completewith Clovenhoof
@@ -6393,6 +6406,7 @@ step
     .goto Thousand Needles,43.14,35.19,12,0
     .goto Thousand Needles,42.11,34.54,12,0
     .goto Thousand Needles,42.01,31.47,20 >>Travel toward the |cRXP_PICK_Ancient Brazier|r
+    .isOnQuest 1197
 step
     #requires Splithoofcave
     #label Clovenhoof
@@ -6401,6 +6415,7 @@ step
     >>|cRXP_WARN_Be careful! The brazier is defended by two level 30|r |cRXP_ENEMY_Galak Flame Guards|r
     .complete 1197,1 --Collect Cloven Hoof (x1)
     .mob Galak Flame Guard
+    .isOnQuest 1197
 step
     #completewith next
     .goto Thousand Needles,38.46,32.60,0
@@ -6444,6 +6459,7 @@ step
     .mob +Galak Wrangler
     .complete 4841,3 --Kill Galak Windchaser (x6)
     .mob +Galak Windchaser
+    .isOnQuest 4841
 step
     #completewith next
     .goto Thousand Needles,54.57,44.36,12,0
@@ -6496,7 +6512,7 @@ step
     >>|cRXP_WARN_It has 3 different spawn locations. They are marked on the map|r
     .complete 4821,1 --Collect Alien Egg (x1)
 step
-    #completewith next
+    #completewith Freewind2
     .goto Thousand Needles,46.73,48.27,30 >> Travel to Freewind Post's Elevators
 step
     .goto Thousand Needles,45.70,50.66
@@ -6504,6 +6520,14 @@ step
     .turnin 4841 >> Turn in Pacify the Centaur
     .accept 5064 >> Accept Grimtotem Spying
     .target Cliffwatcher Longhorn
+    .isQuestComplete 4841
+step
+    #optional
+    .goto Thousand Needles,45.70,50.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longhorn|r
+    .accept 5064 >> Accept Grimtotem Spying
+    .target Cliffwatcher Longhorn
+    .isQuestTurnedIn 4841
 step
     .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau|r
@@ -6534,6 +6558,7 @@ step << Hunter
     .target Starn
     .subzoneskip 484,1
 step
+    #label Freewind2
     .goto Thousand Needles,45.15,50.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Montarr|r
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134937:0|t[Scrolls] |cRXP_BUY_from him if they're up|r << !Warrior
@@ -6581,6 +6606,7 @@ step
     .goto Thousand Needles,14.04,32.37,12,0
     .goto Thousand Needles,14.04,32.37,20 >>Travel toward Highperch
     .subzoneskip 482
+    .isOnQuest 4767
 step
     #requires HighPerchArrive
     #completewith Paoka1
@@ -6590,11 +6616,13 @@ step
     .goto Thousand Needles,14.92,39.63,15,0
     .goto Thousand Needles,16.46,41.09,25,0
     .goto Thousand Needles,17.89,40.57,20 >>Run up the path. Travel toward |cRXP_FRIENDLY_Pao'ka|r
+    .isOnQuest 4767
 step
     #requires HighPerchArrive
     #completewith PaokaEscort
     >>Loot |cRXP_LOOT_Highperch Wyvern Eggs|r on the ground
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
+    .isOnQuest 4767
 step
     #requires HighPerchArrive
     #label Paoka1
@@ -6604,6 +6632,7 @@ step
     .accept 4770,1 >> Accept Homeward Bound
     .target Pao'ka Swiftmountain
     .unitscan Heartrazor
+    .isOnQuest 4767
 step
     #requires HighPerchArrive
     #label PaokaEscort
@@ -6612,6 +6641,8 @@ step
     >>|cRXP_WARN_Escort|r |cRXP_FRIENDLY_Pao'ka|r
     >>|cRXP_WARN_Three Highperch Wyverns will spawn once |cRXP_FRIENDLY_Pao'ka|r reaches the middle of Highperch. You only need to aggro the eastern one and the others will disappear|r
     .complete 4770,1 --Escort Pao'ka from Highperch
+    .target Pao'ka
+    .isOnQuest 4767
 step
     #requires HighPerchArrive
     #loop
@@ -6623,6 +6654,7 @@ step
     .goto Thousand Needles,13.91,39.11,50,0
     >>Loot |cRXP_LOOT_Highperch Wyvern Eggs|r on the ground
     .complete 4767,1 --Collect Highperch Wyvern Egg (x10)
+    .isOnQuest 4767
 step
     #completewith Messenger
     .line Thousand Needles,14.34,30.13,15.08,31.63,15.67,31.56,16.59,30.34,17.19,29.60,17.82,27.50,18.48,26.74,18.64,25.90,18.68,24.68,18.57,24.07,18.11,23.65,17.66,22.98,17.24,22.32,17.54,21.49,17.87,20.78,17.96,20.18,17.66,19.46,17.28,18.93,16.70,18.61,16.20,18.53,15.69,18.65,14.49,20.04,12.89,19.97,11.88,20.90,11.50,21.61,11.20,22.29,11.16,23.21,11.49,24.07,11.55,24.44,11.91,25.02,13.01,26.31,13.36,26.97,13.75,28.54,14.34,30.13
@@ -6665,6 +6697,14 @@ step
     .turnin 4865 >> Turn in Serpent Wild
     .accept 5062 >> Accept Sacred Fire
     .turnin 4770 >> Turn in Homeward Bound
+    .target Motega Firemane
+    .isQuestComplete 4770
+step
+    #optional
+    .goto Thousand Needles,21.54,32.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motega|r
+    .turnin 4865 >> Turn in Serpent Wild
+    .accept 5062 >> Accept Sacred Fire
     .target Motega Firemane
 step
     .goto Thousand Needles,21.43,32.55
@@ -6844,6 +6884,7 @@ step
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Boiling Elementals|r |cRXP_WARN_cast|r |T132156:0|t[Steam Jet]|cRXP_WARN_, reducing your chance to hit by 30% for 10 seconds|r << Warrior/Rogue/Shaman/Druid
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Scalding Elementals|r |cRXP_WARN_cast|r |T135807:0|t[Scald]|cRXP_WARN_, instantly dealing 150 fire damage and stunning you for 4 seconds|r
     .complete 5062,1 --Collect Incendia Agave (x10)
+    .maxlevel 31
 step
     #completewith HSTB
     .hs >> Hearth to Thunder Bluff
@@ -6942,8 +6983,14 @@ step
     .goto Thunder Bluff,69.88,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha|r
     .turnin 5062 >> Turn in Sacred Fire
+    .target Magatha Grimtotem
+    .isQuestComplete 5062
+step
+    .goto Thunder Bluff,69.88,30.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha|r
     .accept 5088 >> Accept Arikara
     .target Magatha Grimtotem
+    .isQuestTurnedIn 5062
 step << Druid
     #optional
     .goto Thunder Bluff,76.79,31.81
@@ -6968,6 +7015,10 @@ step << Druid
     .xp <32,1
 step << Priest
     #optional
+    #completewith PRMAtraining2
+    .goto Thunder Bluff,28.14,32.97,40,0
+    .goto Thunder Bluff,28.51,28.95,10 >>Travel to the Spirit Rise and enter the pools of vision
+step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
     .train 8104 >> Train your class spells
@@ -6983,7 +7034,6 @@ step << Priest
     .xp <30,1
     .xp >32,1
 step << Priest
-    #optional
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
     .train 6077 >> Train your class spells
@@ -7017,6 +7067,9 @@ step << Mage
     .train 3566 >> Train |T135765:0|t[Teleport: Thunder Bluff]
     .target Birgitte Cranston
     .xp <30,1
+step << Mage/Priest
+    #optional
+    #label PRMAtraining2
 step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
@@ -7333,6 +7386,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elu|r
     .turnin 4767 >> Turn in Wind Rider
     .target Elu
+    .isQuestComplete 4767
 step << Hunter
     .goto Thousand Needles,44.89,50.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Starn|r
@@ -7388,6 +7442,7 @@ step
     .accept 1151 >> Accept Test of Strength
     .target Dorn Plainstalker
     .isQuestTurnedIn 1150
+    .maxlevel 31
 step
     #loop
     .goto Thousand Needles,36.10,55.02,0
@@ -7414,6 +7469,7 @@ step
 step
     .goto Thousand Needles,31.47,36.71,30 >> Head to Darkcloud Pinnacle
     .isOnQuest 5064,5147,4904
+    .maxlevel 31
 step
     #completewith next
     .goto Thousand Needles,33.08,35.33,20,0
@@ -7424,24 +7480,29 @@ step
     .goto Thousand Needles,34.87,31.76,20,0
     .goto Thousand Needles,34.15,35.77,20,0
     .goto Thousand Needles,33.32,36.24,20 >> Travel up Darkcloud Pinnacle
+    .maxlevel 31
 step
     .goto Thousand Needles,31.79,32.58
     >>Open the |cRXP_PICK_Document Chest|r on top of the plataeu. Loot it for |cRXP_LOOT_Secret Note #1|r
     .complete 5064,1 --Secret Note #1 (1)
+    .maxlevel 31
 step
     .goto Thousand Needles,33.80,39.90
     >>Open the |cRXP_PICK_Document Chest|r inside the big tent. Loot it for |cRXP_LOOT_Secret Note #1|r
     .complete 5064,2 --Secret Note #2 (1)
+    .maxlevel 31
 step
     .goto Thousand Needles,39.20,41.60
     >>Open the |cRXP_PICK_Document Chest|r inside the tent on the eastern plateau. Loot it for |cRXP_LOOT_Secret Note #1|r
     .complete 5064,3 --Secret Note #3 (1)
+    .maxlevel 31
 step
     #completewith next
     .goto Thousand Needles,35.68,39.25,20,0
     .goto Thousand Needles,34.32,35.74,20,0
     .goto Thousand Needles,35.56,30.94,20,0
     .goto Thousand Needles,36.97,31.97,20 >> Travel toward the |cRXP_PICK_Bonfire|r on the northern/eastern plateau
+.maxlevel 31
 step
     >>Clear the |cRXP_ENEMY_Grimtotems|r and then light the |cRXP_PICK_Bonfire|r
 	>>Kill |cRXP_ENEMY_Arikara|r. Loot her for her |cRXP_LOOT_Skin|r
@@ -7449,17 +7510,20 @@ step
     .complete 5088,2 --Incendia Powder (1)
     .complete 5088,1 --Arikara Serpent Skin (2)
     .mob Arikara
+    .maxlevel 31
 step
     .goto Thousand Needles,38.00,26.80
     >>Kill |cRXP_ENEMY_Arnak Grimtotem|r. Loot him for his |cRXP_LOOT_Hoof|r
     .complete 5147,1 --Arnak's Hoof (1)
     .mob Arnak Grimtotem
+    .maxlevel 31
 step
     .goto Thousand Needles,38.00,26.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lakota|r
     >>|cRXP_WARN_This will start an escort|r
     .accept 4904,1 >> Accept Free at Last
     .target Lakota Windsong
+    .maxlevel 31
 step
     #label LakoteEscort
     .goto Thousand Needles,38.96,29.46,20,0
@@ -7479,11 +7543,13 @@ step
 	>>|cRXP_WARN_Be careful as this quest is HARD. Don't be afraid to escape by running behind you and failing the escort|r
     .complete 4904,1 --Escort Lakota Windsong from the Darkcloud Pinnacle. (1)
     .target Lakota Windsong
+    .maxlevel 31
 step
     .goto Thousand Needles,21.54,32.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Motega|r
     .turnin 5088 >> Turn in Arikara
     .target Motega Firemane
+    .isQuestComplete 5088
 step
     .goto Thousand Needles,21.25,32.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kanati|r
@@ -7558,6 +7624,22 @@ step
     .turnin 5064 >> Turn in Grimtotem Spying
     .turnin 5147 >> Turn in Wanted - Arnak Grimtotem
     .target Cliffwatcher Longhorn
+    .isQuestComplete 5064
+    .isQuestComplete 5147
+step
+    #optional
+    .goto Thousand Needles,45.70,50.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longhorn|r
+    .turnin 5064 >> Turn in Grimtotem Spying
+    .target Cliffwatcher Longhorn
+    .isQuestComplete 5064
+step
+    #optional
+    .goto Thousand Needles,45.70,50.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Longhorn|r
+    .turnin 5147 >> Turn in Wanted - Arnak Grimtotem
+    .target Cliffwatcher Longhorn
+    .isQuestComplete 5147
 step
     .goto Thousand Needles,46.00,51.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalia|r
