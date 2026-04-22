@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #version 7
 #group RestedXP TBC Guide (A)
 << Alliance
+#xprate <1.5
 #name 23-24 Wetlands
 #subgroup RestedXP Alliance 20-32
 #next 24-27 Redridge/Duskwood
