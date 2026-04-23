@@ -7,6 +7,7 @@ local fmt, smatch, strsub, tinsert, srep, mmax, abs = string.format, string.matc
 local UnitLevel, GetRealZoneText, IsInGroup, tonumber, GetTime, GetServerTime, UnitXP = UnitLevel, GetRealZoneText,
                                                                                         IsInGroup, tonumber, GetTime,
                                                                                         GetServerTime, UnitXP
+local issecretvalue = issecretvalue or function() return false end
 
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
@@ -206,6 +207,7 @@ function addon.tracker:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
     -- Exclude "You gain 360 experience" from quest turnin, doubles up on mob kill
     -- TODO use _G.COMBATLOG_XPGAIN_FIRSTPERSON or _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED
     -- TODO won't track zhCN
+    if issecretvalue(text) then return end
     if 'You' == strsub(text, 0, #'You') then return end
 
     local xpGained = tonumber(smatch(text, "%d+"))
