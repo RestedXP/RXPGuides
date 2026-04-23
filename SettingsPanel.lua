@@ -1174,7 +1174,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = isNotAdvanced,
                     },
                     enableV2CurrentStepFrame = {
-                        name = fmt("%s %s %s", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
+                        name = fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
                         -- desc = L"",
                         type = "toggle",
                         width = optionsWidth,
@@ -2362,7 +2362,8 @@ function addon.settings:CreateAceOptionsPanel()
                         -- desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.3
+                        order = 3.3,
+                        hidden = isNotAdvanced
                     }
                 }
             },
@@ -3192,18 +3193,59 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    activeStepsV2Header = {
+                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")),
+                        type = "header",
+                        width = "full",
+                        order = 4.0,
+                        hidden = isNotAdvanced
+                    },
+                    activeStepsV2WindowScale = {
+                        name = L("Window Scale"),
+                        -- desc = L"Scale of the Main Window, use alt+left click on the main window to resize it",
+                        type = "range",
+                        width = optionsWidth,
+                        order = 4.1,
+                        min = 0.2,
+                        max = 2,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            -- addon.RXPFrame:SetScale(value)
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2CurrentStepFrame
+                        end
+                    },
+                    activeStepsV2HideBackground = {
+                        name = fmt("%s %s", _G.HIDE, _G.BACKGROUND),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2CurrentStepFrame
+                        end
+                    },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 3.9
+                        order = 5.0
                     },
                     arrowScale = {
                         name = L("Arrow Scale"),
                         desc = L("Scale of the Waypoint Arrow"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.92,
+                        order = 5.1,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
@@ -3218,7 +3260,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Size of the waypoint arrow text"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.93,
+                        order = 5.2,
                         min = 5,
                         max = 20,
                         step = 1,
@@ -3230,7 +3272,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetArrowPosition = {
                         name = L("Reset Arrow Position"), -- TODO locale
-                        order = 3.94,
+                        order = 5.3,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -3241,14 +3283,14 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Active Items"),
                         type = "header",
                         width = "full",
-                        order = 4.0
+                        order = 6.0
                     },
                     activeItemsScale = {
                         name = L("Active Item Scale"), -- TODO locale
                         desc = L("Scale of the Active Item frame"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.1,
+                        order = 6.1,
                         min = 0.8,
                         max = 3,
                         step = 0.05,
@@ -3263,7 +3305,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.2,
+                        order = 6.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if addon.activeItemFrame then
@@ -3273,7 +3315,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetItemPosition = {
                         name = L("Reset Window Position"), -- TODO locale
-                        order = 4.21,
+                        order = 6.21,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -3284,13 +3326,13 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
                         width = "full",
-                        order = 5.1
+                        order = 7.1
                     },
                     hideMiniMapPins = {
                         name = L("Hide Mini Map Pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 7.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -3302,7 +3344,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"Show a targeting circle around active map pins",
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.3,
+                        order = 7.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -3313,7 +3355,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Number of map pins shown on the world map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.4,
+                        order = 7.4,
                         min = 0,
                         max = 20,
                         step = 1,
@@ -3327,7 +3369,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.5,
+                        order = 7.5,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -3343,7 +3385,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.6,
+                        order = 7.6,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -3363,7 +3405,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",
                         type = "range",
                         width = optionsWidth,
-                        order = 5.7,
+                        order = 7.7,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -3378,7 +3420,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"The opacity of the black circles on the map and mini map",
                         type = "range",
                         width = optionsWidth,
-                        order = 5.8,
+                        order = 7.8,
                         min = 0,
                         max = 1,
                         step = 0.05,

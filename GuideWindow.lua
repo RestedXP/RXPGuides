@@ -2530,13 +2530,21 @@ function addon.v2:GetCurrentStepFrame(player)
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
 
     -- TODO stylize ScrollFrame
-    local scrollContainer = AceGUI:Create("ScrollFrame")
+    local scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
     self.state.player[player].scrollContainer = scrollContainer
 
     scrollContainer:SetFullWidth(true)
     scrollContainer:SetFullHeight(true)
     scrollContainer:SetLayout("Flow")
     stepFrame:AddChild(scrollContainer)
+
+    -- scrollContainer:FixScroll(true)
+    -- scrollContainer.scrollframe:SetScript(
+    --     "OnScrollRangeChanged",
+    --     function(frame)
+    --     frame.obj:DoLayout()
+    --     end
+    -- )
 
     stepFrame.IsFeatureEnabled = function()
         return addon.settings.profile.enableV2CurrentStepFrame, false
@@ -2553,6 +2561,28 @@ function addon.v2:GetCurrentStepFrame(player)
     stepFrame:Show()
 
     return stepFrame
+end
+
+-- TODO loop into theme changes
+function addon.v2:UpdateActiveStepTheme()
+    local f
+
+    for _, data in pairs(self.state.player) do
+        f = data.activeStepFrame
+
+        if f then
+            -- First update theme for parent and all children
+            f:UpdateTheme({
+                showBackground = not addon.settings.profile.activeStepsV2HideBackground,
+                updateChildren = true
+            })
+
+            -- Then update background for parent only
+            -- f:UpdateTheme({
+            --     showBackground = not addon.settings.profile.activeStepsV2HideBackground,
+            -- })
+        end
+    end
 end
 
 function addon.v2:EncodePlayerActiveSteps(payload)
