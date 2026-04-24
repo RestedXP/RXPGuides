@@ -11,7 +11,7 @@ local pairs, ipars, next, type, tostring, tonumber = pairs, ipairs, next, type, 
 local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
-local GetProfessions, GetProfessionInfo = _G.GetProfessions, _G.GetProfessionInfo
+local GetNumPrimaryProfessions, GetProfessionInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo --GetProfessions is not used in classics
 local GetMoney = _G.GetMoney
 
 
@@ -48,10 +48,41 @@ local EVENTS_TO_REGISTER = {
     "GET_ITEM_INFO_RECEIVED",
     "AUCTION_ITEM_LIST_UPDATE",
 
+    "TRADE_SKILL_SHOW", --Opening the tradeskill window
+    "TRADE_SKILL_CLOSE", --Closing the tradeskill window
+    "TRADE_SKILL_UPDATE", --Learning skill?, Minimizing categories in tradeskill window
+    "UPDATE_TRADESKILL_RECAST", --Started crafting
+    "ITEM_PUSH", --Item added to inventory?
+    "BAG_NEW_ITEMS_UPDATED", --item added to inventory?
+    "BAG_UPDATE_COOLDOWN",
+    "UNIT_INVENTORY_CHANGED",
+    "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
+    "SKILL_LINES_CHANGED" --Learning/unlearning, journeyman -> master
 }
 
 
 local PROFESSIONS = {
+    VENDOR_ITEMS = {
+        ["Empty Vial"] = 0.20,
+        ["Leaded Vial"] = 2.00,
+        ["Crystal Vial"] = 25.00,
+        ["Imbued Vial"] = 40.00,
+        ["Coarse Thread"] =	0.10,
+        ["Fine Thread"] = 1.00,
+        ["Silken Thread"] =	5.00,
+        ["Heavy Silken Thread"] = 20.00,
+        ["Rune Thread"] = 50.00,
+        ["Weak Flux"] =	1.00,
+        ["Strong Flux"] = 20.00,
+        ["Salt"] = 0.50,
+        ["Simple Wood"] = 0.38,
+        ["Star Wood"] =	45.00,
+        ["Soothing Spices"] = 1.60,
+        ["Mild Spices"] = 0.10,
+        ["Hot Spices"] = 0.40,
+        ["Bleach"] = 0.26,
+        ["Green Dye"] =	1.12,
+    },
     ["blacksmithing"] = {
         RECIPES = {
             ["Arcanite Skeleton Key"] = {
@@ -4196,27 +4227,3418 @@ local PROFESSIONS = {
                 "Storm Gauntlets",
             },
         },
-        VENDOR_ITEMS = {
-            ["Empty Vial"] = 0.20,
-            ["Leaded Vial"] = 2.00,
-            ["Crystal Vial"] = 25.00,
-            ["Imbued Vial"] = 40.00,
-            ["Coarse Thread"] =	0.10,
-            ["Fine Thread"] = 1.00,
-            ["Silken Thread"] =	5.00,
-            ["Heavy Silken Thread"] = 20.00,
-            ["Rune Thread"] = 50.00,
-            ["Weak Flux"] =	1.00,
-            ["Strong Flux"] = 20.00,
-            ["Salt"] = 0.50,
-            ["Simple Wood"] = 0.38,
-            ["Star Wood"] =	45.00,
-            ["Soothing Spices"] = 1.60,
-            ["Mild Spices"] = 0.10,
-            ["Hot Spices"] = 0.40,
-            ["Bleach"] = 0.26,
-            ["Green Dye"] =	1.12,
-        }
+    },
+    ["leatherworking"] = {
+        RECIPES = {
+            ["Barbaric Belt"] = {
+                trainable = false,
+                orange = 200,
+                yellow = 220,
+                grey = 240,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 28.04,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Coarse Gorilla Hair "] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Great Rage Potion"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Iron Buckle"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Barbaric Bracers"] = {
+                trainable = false,
+                orange = 155,
+                yellow = 175,
+                grey = 195,
+                rainingCost = 0,
+                recipeCost = 20,
+                castTime = 25,
+                sellPrice = 15.89,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Small Lustrous Pearl"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Raptor Hide"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Large Fang"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Barbaric Gloves"] = {
+                trainable = false,
+                orange = 150,
+                yellow = 170,
+                grey = 190,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 10.71,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Large Fang"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Barbaric Harness"] = {
+                trainable = true,
+                orange = 190,
+                yellow = 210,
+                grey = 230,
+                rainingCost = 18,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 27.38,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Iron Buckle"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Barbaric Leggings"] = {
+                trainable = false,
+                orange = 170,
+                yellow = 190,
+                grey = 210,
+                rainingCost = 0,
+                recipeCost = 6.5,
+                castTime = 45,
+                sellPrice = 31.51,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Moss Agate"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Barbaric Shoulders"] = {
+                trainable = true,
+                orange = 175,
+                yellow = 195,
+                grey = 215,
+                rainingCost = 10.8,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 26.09,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Big Voodoo Cloak"] = {
+                trainable = false,
+                orange = 240,
+                yellow = 260,
+                grey = 280,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 63.23,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Flask of Big Mojo"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Big Voodoo Mask"] = {
+                trainable = false,
+                orange = 220,
+                yellow = 240,
+                grey = 260,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 53.5,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Flask of Mojo"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Big Voodoo Pants"] = {
+                trainable = false,
+                orange = 240,
+                yellow = 260,
+                grey = 280,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 90.22,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Flask of Big Mojo"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Big Voodoo Robe"] = {
+                trainable = false,
+                orange = 215,
+                yellow = 235,
+                grey = 255,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 72.75,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Flask of Mojo"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Black Whelp Cloak"] = {
+                trainable = false,
+                orange = 100,
+                yellow = 125,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 6.5,
+                castTime = 12.5,
+                sellPrice = 5.19,
+                materials = {
+                    ["Black Whelp Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Medium Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Black Whelp Tunic"] = {
+                trainable = false,
+                orange = 100,
+                yellow = 125,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 14,
+                castTime = 12.5,
+                sellPrice = 7.43,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Black Whelp Scale"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Chimeric Boots"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 295,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 115.3,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Chimera Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Chimeric Gloves"] = {
+                trainable = false,
+                orange = 265,
+                yellow = 285,
+                grey = 305,
+                rainingCost = 0,
+                recipeCost = 120,
+                castTime = 60,
+                sellPrice = 68.67,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Chimera Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Chimeric Leggings"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 300,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 162.33,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Chimera Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Chimeric Vest"] = {
+                trainable = false,
+                orange = 290,
+                yellow = 310,
+                grey = 330,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 184.49,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Chimera Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Comfortable Leather Hat"] = {
+                trainable = false,
+                orange = 200,
+                yellow = 220,
+                grey = 240,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 41.31,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cured Heavy Hide"] = {
+                trainable = true,
+                orange = 150,
+                yellow = 160,
+                grey = 170,
+                rainingCost = 5,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 2.25,
+                materials = {
+                    ["Heavy Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Salt"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cured Light Hide"] = {
+                trainable = true,
+                orange = 35,
+                yellow = 55,
+                grey = 75,
+                rainingCost = 0.5,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 1.1,
+                materials = {
+                    ["Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Salt"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cured Medium Hide"] = {
+                trainable = true,
+                orange = 100,
+                yellow = 115,
+                grey = 130,
+                rainingCost = 2,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 2,
+                materials = {
+                    ["Medium Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Salt"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Belt"] = {
+                trainable = true,
+                orange = 125,
+                yellow = 150,
+                grey = 175,
+                rainingCost = 4,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 7.03,
+                materials = {
+                    ["Fine Leather Belt"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Cured Medium Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Boots"] = {
+                trainable = true,
+                orange = 100,
+                yellow = 125,
+                grey = 150,
+                rainingCost = 3.5,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 3.07,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Cloak"] = {
+                trainable = true,
+                orange = 110,
+                yellow = 135,
+                grey = 160,
+                rainingCost = 3.5,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 4.08,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Gloves"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 155,
+                grey = 180,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 7.91,
+                materials = {
+                    ["Fine Leather Gloves"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Cured Medium Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Pants"] = {
+                trainable = true,
+                orange = 115,
+                yellow = 140,
+                grey = 165,
+                rainingCost = 4,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 10.89,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Shoulders"] = {
+                trainable = false,
+                orange = 140,
+                yellow = 165,
+                grey = 190,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 14.57,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Elixir of Lesser Agility"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Leather Tunic"] = {
+                trainable = false,
+                orange = 100,
+                yellow = 125,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 6.89,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Deviate Scale Cloak"] = {
+                trainable = false,
+                orange = 90,
+                yellow = 120,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 5.5,
+                castTime = 12.5,
+                sellPrice = 4.13,
+                materials = {
+                    ["Deviate Scale"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Deviate Scale Gloves"] = {
+                trainable = false,
+                orange = 105,
+                yellow = 130,
+                grey = 155,
+                rainingCost = 0,
+                recipeCost = 15,
+                castTime = 25,
+                sellPrice = 4.2,
+                materials = {
+                    ["Perfect Deviate Scale"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Deviate Scale"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dusky Belt"] = {
+                trainable = true,
+                orange = 195,
+                yellow = 215,
+                grey = 235,
+                rainingCost = 22.5,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 25.87,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Bolt of Silk Cloth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Iron Buckle"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Dusky Boots"] = {
+                trainable = false,
+                orange = 200,
+                yellow = 220,
+                grey = 240,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 42.37,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Shadowcat Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Shadow Oil"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dusky Bracers"] = {
+                trainable = true,
+                orange = 185,
+                yellow = 205,
+                grey = 225,
+                rainingCost = 18,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 21.46,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 16,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dusky Leather Armor"] = {
+                trainable = true,
+                orange = 175,
+                yellow = 195,
+                grey = 215,
+                rainingCost = 13.5,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 37.6,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Shadow Oil"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dusky Leather Leggings"] = {
+                trainable = false,
+                orange = 165,
+                yellow = 185,
+                grey = 205,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 30.97,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Earthen Leather Shoulders"] = {
+                trainable = false,
+                orange = 135,
+                yellow = 160,
+                grey = 185,
+                rainingCost = 0,
+                recipeCost = 20,
+                castTime = 25,
+                sellPrice = 13.06,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Elemental Earth"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Embossed Leather Boots"] = {
+                trainable = true,
+                orange = 55,
+                yellow = 85,
+                grey = 115,
+                rainingCost = 1,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 2.68,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 5,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Embossed Leather Cloak"] = {
+                trainable = true,
+                orange = 60,
+                yellow = 90,
+                grey = 120,
+                rainingCost = 1,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 1.12,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Embossed Leather Gloves"] = {
+                trainable = true,
+                orange = 55,
+                yellow = 85,
+                grey = 115,
+                rainingCost = 1.5,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 0.71,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Embossed Leather Pants"] = {
+                trainable = true,
+                orange = 75,
+                yellow = 105,
+                grey = 135,
+                rainingCost = 2,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 3.47,
+                materials = {
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Embossed Leather Vest"] = {
+                trainable = true,
+                orange = 40,
+                yellow = 70,
+                grey = 100,
+                rainingCost = 1,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 1.92,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Fine Leather Belt"] = {
+                trainable = true,
+                orange = 80,
+                yellow = 110,
+                grey = 140,
+                rainingCost = 3,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 1.25,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Fine Leather Boots"] = {
+                trainable = false,
+                orange = 90,
+                yellow = 120,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 2.43,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 7,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Fine Leather Cloak"] = {
+                trainable = true,
+                orange = 85,
+                yellow = 105,
+                grey = 135,
+                rainingCost = 2.5,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 2.67,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Fine Leather Gloves"] = {
+                trainable = false,
+                orange = 75,
+                yellow = 105,
+                grey = 135,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 1.81,
+                materials = {
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Fine Leather Pants"] = {
+                trainable = false,
+                orange = 105,
+                yellow = 130,
+                grey = 155,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 8.29,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Fine Leather Tunic"] = {
+                trainable = true,
+                orange = 85,
+                yellow = 115,
+                grey = 145,
+                rainingCost = 3.5,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 4.61,
+                materials = {
+                    ["Cured Light Hide"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Fletcher's Gloves"] = {
+                trainable = true,
+                orange = 125,
+                yellow = 150,
+                grey = 175,
+                rainingCost = 5,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 6.9,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Long Tail Feather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frost Leather Cloak"] = {
+                trainable = true,
+                orange = 180,
+                yellow = 200,
+                grey = 220,
+                rainingCost = 18,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 22.69,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Elemental Earth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Elemental Water"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostsaber Boots"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 295,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 160,
+                castTime = 60,
+                sellPrice = 114.43,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Frostsaber Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostsaber Gloves"] = {
+                trainable = false,
+                orange = 295,
+                yellow = 315,
+                grey = 335,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 98.04,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Frostsaber Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostsaber Leggings"] = {
+                trainable = false,
+                orange = 285,
+                yellow = 305,
+                grey = 325,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 170.12,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Frostsaber Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Gem-studded Leather Belt"] = {
+                trainable = false,
+                orange = 185,
+                yellow = 205,
+                grey = 225,
+                rainingCost = 0,
+                recipeCost = 30,
+                castTime = 60,
+                sellPrice = 26.52,
+                materials = {
+                    ["Cured Heavy Hide"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Iridescent Pearl"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Jade"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Citrine"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Gloves of the Greatfather"] = {
+                trainable = false,
+                orange = 190,
+                yellow = 210,
+                grey = 230,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 22.68,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Elemental Earth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Green Leather Armor"] = {
+                trainable = false,
+                orange = 155,
+                yellow = 175,
+                grey = 195,
+                rainingCost = 0,
+                recipeCost = 20,
+                castTime = 45,
+                sellPrice = 23.66,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 9,
+                        fromVendor = false,
+                    },
+                    ["Green Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Green Leather Belt"] = {
+                trainable = true,
+                orange = 160,
+                yellow = 180,
+                grey = 200,
+                rainingCost = 9,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 13.11,
+                materials = {
+                    ["Cured Heavy Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Green Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Iron Buckle"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Green Leather Bracers"] = {
+                trainable = true,
+                orange = 180,
+                yellow = 200,
+                grey = 220,
+                rainingCost = 10.8,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 19.34,
+                materials = {
+                    ["Cured Heavy Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Green Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Green Whelp Armor"] = {
+                trainable = false,
+                orange = 175,
+                yellow = 195,
+                grey = 215,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 37.73,
+                materials = {
+                    ["Green Whelp Scale"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Green Whelp Bracers"] = {
+                trainable = false,
+                orange = 190,
+                yellow = 210,
+                grey = 230,
+                rainingCost = 0,
+                recipeCost = 28,
+                castTime = 45,
+                sellPrice = 23.87,
+                materials = {
+                    ["Green Whelp Scale"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Guardian Belt"] = {
+                trainable = false,
+                orange = 170,
+                yellow = 190,
+                grey = 210,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 15.92,
+                materials = {
+                    ["Cured Heavy Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Iron Buckle"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Guardian Cloak"] = {
+                trainable = false,
+                orange = 185,
+                yellow = 205,
+                grey = 225,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 25.36,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Bolt of Silk Cloth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Guardian Gloves"] = {
+                trainable = true,
+                orange = 190,
+                yellow = 210,
+                grey = 230,
+                rainingCost = 21.6,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 13.74,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Guardian Leather Bracers"] = {
+                trainable = false,
+                orange = 195,
+                yellow = 215,
+                grey = 235,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 25.59,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Guardian Pants"] = {
+                trainable = true,
+                orange = 160,
+                yellow = 180,
+                grey = 200,
+                rainingCost = 10,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 27.94,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Bolt of Silk Cloth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Handstitched Leather Belt"] = {
+                trainable = true,
+                orange = 25,
+                yellow = 55,
+                grey = 85,
+                rainingCost = 0.75,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.34,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Handstitched Leather Cloak"] = {
+                trainable = true,
+                orange = 1,
+                yellow = 40,
+                grey = 70,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.34,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Handstitched Leather Pants"] = {
+                trainable = true,
+                orange = 15,
+                yellow = 45,
+                grey = 75,
+                rainingCost = 0.5,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.71,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Handstitched Leather Vest"] = {
+                trainable = true,
+                orange = 1,
+                yellow = 40,
+                grey = 70,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.4,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Armor Kit"] = {
+                trainable = true,
+                orange = 150,
+                yellow = 170,
+                grey = 190,
+                rainingCost = 7.5,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 6.5,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Earthen Gloves"] = {
+                trainable = false,
+                orange = 145,
+                yellow = 170,
+                grey = 195,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 9.78,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Elemental Earth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Leather"] = {
+                trainable = true,
+                orange = 150,
+                yellow = 150,
+                grey = 160,
+                rainingCost = 10,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 1.5,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Heavy Leather Ball"] = {
+                trainable = false,
+                orange = 150,
+                yellow = 150,
+                grey = 160,
+                rainingCost = 0,
+                recipeCost = 20,
+                castTime = 8,
+                sellPrice = 0.05,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Scorpid Belt"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 300,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 103.75,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Scorpid Scale"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Scorpid Bracers"] = {
+                trainable = false,
+                orange = 255,
+                yellow = 275,
+                grey = 295,
+                rainingCost = 0,
+                recipeCost = 120,
+                castTime = 60,
+                sellPrice = 76.15,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heavy Scorpid Scale"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Scorpid Gauntlets"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 295,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 96.49,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Scorpid Scale"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Scorpid Helm"] = {
+                trainable = false,
+                orange = 295,
+                yellow = 315,
+                grey = 335,
+                rainingCost = 0,
+                recipeCost = 250,
+                castTime = 60,
+                sellPrice = 182.3,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Heavy Scorpid Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Cured Rugged Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Scorpid Leggings"] = {
+                trainable = false,
+                orange = 285,
+                yellow = 305,
+                grey = 325,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 217.6,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Heavy Scorpid Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Heavy Scorpid Vest"] = {
+                trainable = false,
+                orange = 265,
+                yellow = 285,
+                grey = 305,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 166.04,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Scorpid Scale"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Herbalist's Gloves"] = {
+                trainable = false,
+                orange = 135,
+                yellow = 160,
+                grey = 185,
+                rainingCost = 0,
+                recipeCost = 18,
+                castTime = 25,
+                sellPrice = 8.61,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Kingsblood"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Hillman's Belt"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 145,
+                grey = 170,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 7.05,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Elixir of Wisdom"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Hillman's Cloak"] = {
+                trainable = true,
+                orange = 150,
+                yellow = 170,
+                grey = 190,
+                rainingCost = 6,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 10.27,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Hillman's Leather Gloves"] = {
+                trainable = true,
+                orange = 145,
+                yellow = 170,
+                grey = 195,
+                rainingCost = 5,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 10.49,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Hillman's Leather Vest"] = {
+                trainable = false,
+                orange = 100,
+                yellow = 125,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 7.23,
+                materials = {
+                    ["Fine Leather Tunic"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Hillman's Shoulders"] = {
+                trainable = true,
+                orange = 130,
+                yellow = 155,
+                grey = 180,
+                rainingCost = 5,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 11.99,
+                materials = {
+                    ["Cured Medium Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Medium Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Kodo Hide Bag"] = {
+                trainable = false,
+                orange = 40,
+                yellow = 70,
+                grey = 100,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 2.5,
+                materials = {
+                    ["Thin Kodo Leather"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Light Armor Kit"] = {
+                trainable = true,
+                orange = 1,
+                yellow = 30,
+                grey = 60,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.15,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Light Leather"] = {
+                trainable = true,
+                orange = 1,
+                yellow = 20,
+                grey = 40,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.15,
+                materials = {
+                    ["Ruined Leather Scraps"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Light Leather Bracers"] = {
+                trainable = true,
+                orange = 70,
+                yellow = 100,
+                grey = 130,
+                rainingCost = 1.5,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.84,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Light Leather Pants"] = {
+                trainable = true,
+                orange = 95,
+                yellow = 125,
+                grey = 155,
+                rainingCost = 4,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 5.99,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Light Leather Quiver"] = {
+                trainable = true,
+                orange = 30,
+                yellow = 60,
+                grey = 90,
+                rainingCost = 1,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.25,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Medium Armor Kit"] = {
+                trainable = true,
+                orange = 100,
+                yellow = 115,
+                grey = 130,
+                rainingCost = 2.5,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 2,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Medium Leather"] = {
+                trainable = true,
+                orange = 100,
+                yellow = 100,
+                grey = 110,
+                rainingCost = 5,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 0.5,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Moonglow Vest"] = {
+                trainable = false,
+                orange = 90,
+                yellow = 115,
+                grey = 145,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 5.45,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                    ["Small Lustrous Pearl"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Murloc Scale Belt"] = {
+                trainable = false,
+                orange = 90,
+                yellow = 120,
+                grey = 150,
+                rainingCost = 0,
+                recipeCost = 5.5,
+                castTime = 8,
+                sellPrice = 2.6,
+                materials = {
+                    ["Slimy Murloc Scale"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Murloc Scale Breastplate"] = {
+                trainable = false,
+                orange = 95,
+                yellow = 125,
+                grey = 155,
+                rainingCost = 0,
+                recipeCost = 6,
+                castTime = 12.5,
+                sellPrice = 6.01,
+                materials = {
+                    ["Slimy Murloc Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Light Leather"] = {
+                        count = 8,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Nightscape Boots"] = {
+                trainable = true,
+                orange = 235,
+                yellow = 255,
+                grey = 275,
+                rainingCost = 45,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 71.58,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 16,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Nightscape Headband"] = {
+                trainable = true,
+                orange = 205,
+                yellow = 225,
+                grey = 245,
+                rainingCost = 27,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 44.95,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Nightscape Pants"] = {
+                trainable = true,
+                orange = 230,
+                yellow = 250,
+                grey = 270,
+                rainingCost = 40,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 87.08,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Nightscape Tunic"] = {
+                trainable = true,
+                orange = 205,
+                yellow = 225,
+                grey = 245,
+                rainingCost = 27,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 59.71,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 7,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Nimble Leather Gloves"] = {
+                trainable = true,
+                orange = 120,
+                yellow = 145,
+                grey = 170,
+                rainingCost = 5,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 5.88,
+                materials = {
+                    ["Elixir of Minor Agility"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Medium Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Pilferer's Gloves"] = {
+                trainable = false,
+                orange = 140,
+                yellow = 165,
+                grey = 190,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 8.85,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Lucky Charm"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Raptor Hide Belt"] = {
+                trainable = false,
+                orange = 165,
+                yellow = 185,
+                grey = 205,
+                rainingCost = 0,
+                recipeCost = 25,
+                castTime = 45,
+                sellPrice = 15.53,
+                materials = {
+                    ["Raptor Hide"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Raptor Hide Harness"] = {
+                trainable = false,
+                orange = 165,
+                yellow = 185,
+                grey = 205,
+                rainingCost = 0,
+                recipeCost = 25,
+                castTime = 45,
+                sellPrice = 30.96,
+                materials = {
+                    ["Raptor Hide"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Red Whelp Gloves"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 145,
+                grey = 170,
+                rainingCost = 0,
+                recipeCost = 16,
+                castTime = 12.5,
+                sellPrice = 5.86,
+                materials = {
+                    ["Red Whelp Scale"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Medium Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Rugged Armor Kit"] = {
+                trainable = true,
+                orange = 250,
+                yellow = 250,
+                grey = 270,
+                rainingCost = 50,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 10,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Rugged Leather Pants"] = {
+                trainable = false,
+                orange = 35,
+                yellow = 65,
+                grey = 95,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 1.62,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 5,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runic Leather Belt"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 300,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 83.68,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Runecloth"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runic Leather Bracers"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 295,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 76.56,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Black Pearl"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runic Leather Gauntlets"] = {
+                trainable = false,
+                orange = 270,
+                yellow = 290,
+                grey = 310,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 71.95,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runic Leather Headband"] = {
+                trainable = false,
+                orange = 290,
+                yellow = 310,
+                grey = 330,
+                rainingCost = 0,
+                recipeCost = 220,
+                castTime = 60,
+                sellPrice = 141.55,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Runecloth"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Small Leather Ammo Pouch"] = {
+                trainable = true,
+                orange = 30,
+                yellow = 60,
+                grey = 90,
+                rainingCost = 1,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 0.25,
+                materials = {
+                    ["Light Leather"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Coarse Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Swift Boots"] = {
+                trainable = false,
+                orange = 200,
+                yellow = 220,
+                grey = 240,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 42.53,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Swiftness Potion"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Thick Spider's Silk"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Thick Armor Kit"] = {
+                trainable = true,
+                orange = 200,
+                yellow = 220,
+                grey = 240,
+                rainingCost = 18,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 10,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Thick Leather"] = {
+                trainable = true,
+                orange = 200,
+                yellow = 200,
+                grey = 205,
+                rainingCost = 40,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 3,
+                materials = {
+                    ["Heavy Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Thick Murloc Armor"] = {
+                trainable = false,
+                orange = 170,
+                yellow = 190,
+                grey = 210,
+                rainingCost = 0,
+                recipeCost = 6.5,
+                castTime = 45,
+                sellPrice = 32.11,
+                materials = {
+                    ["Thick Murloc Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Cured Heavy Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tough Scorpid Boots"] = {
+                trainable = false,
+                orange = 235,
+                yellow = 255,
+                grey = 275,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 83.75,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Scorpid Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 6,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tough Scorpid Bracers"] = {
+                trainable = false,
+                orange = 220,
+                yellow = 240,
+                grey = 260,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 43.46,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Scorpid Scale"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tough Scorpid Breastplate"] = {
+                trainable = false,
+                orange = 220,
+                yellow = 240,
+                grey = 260,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 86.28,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Scorpid Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tough Scorpid Helm"] = {
+                trainable = false,
+                orange = 250,
+                yellow = 270,
+                grey = 290,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 102.72,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Scorpid Scale"] = {
+                        count = 20,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tough Scorpid Leggings"] = {
+                trainable = false,
+                orange = 245,
+                yellow = 265,
+                grey = 285,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 127.04,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Scorpid Scale"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tough Scorpid Shoulders"] = {
+                trainable = false,
+                orange = 240,
+                yellow = 260,
+                grey = 280,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 89.78,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Scorpid Scale"] = {
+                        count = 16,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Toughened Leather Armor"] = {
+                trainable = true,
+                orange = 120,
+                yellow = 145,
+                grey = 170,
+                rainingCost = 4.5,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 7.43,
+                materials = {
+                    ["Medium Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Cured Light Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Turtle Scale Breastplate"] = {
+                trainable = true,
+                orange = 210,
+                yellow = 230,
+                grey = 250,
+                rainingCost = 30,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 75.67,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Turtle Scale"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Volcanic Breastplate"] = {
+                trainable = false,
+                orange = 285,
+                yellow = 305,
+                grey = 325,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 172.75,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Essence of Fire"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Essence of Earth"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Volcanic Leggings"] = {
+                trainable = false,
+                orange = 270,
+                yellow = 290,
+                grey = 310,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 145.59,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Essence of Fire"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Core of Earth"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Wicked Leather Bracers"] = {
+                trainable = false,
+                orange = 265,
+                yellow = 285,
+                grey = 305,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 73.11,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Wicked Leather Gauntlets"] = {
+                trainable = false,
+                orange = 260,
+                yellow = 280,
+                grey = 300,
+                rainingCost = 0,
+                recipeCost = 120,
+                castTime = 60,
+                sellPrice = 68.72,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Wicked Leather Headband"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 300,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 131.53,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Wicked Leather Pants"] = {
+                trainable = false,
+                orange = 290,
+                yellow = 310,
+                grey = 330,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 178.92,
+                materials = {
+                    ["Rugged Leather"] = {
+                        count = 16,
+                        fromVendor = false,
+                    },
+                    ["Cured Rugged Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Wild Leather Boots"] = {
+                trainable = false,
+                orange = 245,
+                yellow = 265,
+                grey = 285,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 81.5,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 14,
+                        fromVendor = false,
+                    },
+                    ["Wildvine"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Cured Thick Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Wild Leather Cloak"] = {
+                trainable = false,
+                orange = 250,
+                yellow = 270,
+                grey = 290,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 90.17,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 16,
+                        fromVendor = false,
+                    },
+                    ["Wildvine"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Cured Thick Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Wild Leather Helmet"] = {
+                trainable = false,
+                orange = 225,
+                yellow = 245,
+                grey = 265,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 62.3,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Wildvine"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Cured Thick Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Wild Leather Leggings"] = {
+                trainable = false,
+                orange = 250,
+                yellow = 270,
+                grey = 290,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 115.85,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 16,
+                        fromVendor = false,
+                    },
+                    ["Wildvine"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Cured Thick Hide"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Wild Leather Shoulders"] = {
+                trainable = false,
+                orange = 220,
+                yellow = 240,
+                grey = 260,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 55.37,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 10,
+                        fromVendor = false,
+                    },
+                    ["Wildvine"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Cured Thick Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Wild Leather Vest"] = {
+                trainable = false,
+                orange = 225,
+                yellow = 245,
+                grey = 265,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 80.02,
+                materials = {
+                    ["Thick Leather"] = {
+                        count = 12,
+                        fromVendor = false,
+                    },
+                    ["Wildvine"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Cured Thick Hide"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+        },
+        SEGMENTS = {
+            [1] = {
+                "Light Leather",
+                "Light Armor Kit",
+                "Handstitched Leather Cloak",
+                "Handstitched Leather Vest",
+            },
+            [15] = {
+                "Handstitched Leather Pants",
+            },
+            [25] = {
+                "Handstitched Leather Belt",
+            },
+            [30] = {
+                "Light Leather Quiver",
+                "Small Leather Ammo Pouch",
+            },
+            [35] = {
+                "Cured Light Hide",
+                "Rugged Leather Pants",
+            },
+            [40] = {
+                "Embossed Leather Vest",
+                "Kodo Hide Bag",
+            },
+            [55] = {
+                "Embossed Leather Boots",
+                "Embossed Leather Gloves",
+            },
+            [60] = {
+                "Embossed Leather Cloak",
+            },
+            [75] = {
+                "Embossed Leather Pants",
+                "Fine Leather Gloves",
+            },
+            [80] = {
+                "Fine Leather Belt",
+            },
+            [85] = {
+                "Light Leather Bracers",
+                "Fine Leather Cloak",
+                "Fine Leather Tunic",
+            },
+            [90] = {
+                "Moonglow Vest",
+                "Deviate Scale Cloak",
+                "Fine Leather Boots",
+                "Murloc Scale Belt",
+            },
+            [95] = {
+                "Light Leather Pants",
+                "Murloc Scale Breastplate",
+            },
+            [100] = {
+                "Medium Leather",
+                "Cured Medium Hide",
+                "Medium Armor Kit",
+                "Black Whelp Cloak",
+                "Black Whelp Tunic",
+                "Dark Leather Tunic",
+                "Hillman's Leather Vest",
+            },
+            [105] = {
+                "Deviate Scale Gloves",
+                "Fine Leather Pants",
+            },
+            [115] = {
+                "Dark Leather Pants",
+                "Dark Leather Boots",
+            },
+            [120] = {
+                "Nimble Leather Gloves",
+                "Toughened Leather Armor",
+                "Hillman's Belt",
+                "Red Whelp Gloves",
+                "Dark Leather Gloves",
+            },
+            [125] = {
+                "Dark Leather Cloak",
+                "Dark Leather Belt",
+                "Fletcher's Gloves",
+            },
+            [130] = {
+                "Hillman's Shoulders",
+            },
+            [135] = {
+                "Earthen Leather Shoulders",
+                "Herbalist's Gloves",
+            },
+            [140] = {
+                "Dark Leather Shoulders",
+                "Pilferer's Gloves",
+            },
+            [145] = {
+                "Hillman's Leather Gloves",
+                "Heavy Earthen Gloves",
+            },
+            [150] = {
+                "Heavy Leather",
+                "Cured Heavy Hide",
+                "Heavy Armor Kit",
+                "Hillman's Cloak",
+                "Heavy Leather Ball",
+                "Barbaric Gloves",
+            },
+            [155] = {
+                "Barbaric Bracers",
+                "Green Leather Armor",
+            },
+            [160] = {
+                "Green Leather Belt",
+                "Guardian Pants",
+            },
+            [165] = {
+                "Dusky Leather Leggings",
+                "Raptor Hide Belt",
+                "Raptor Hide Harness",
+            },
+            [170] = {
+                "Barbaric Leggings",
+                "Guardian Belt",
+                "Thick Murloc Armor",
+            },
+            [175] = {
+                "Barbaric Shoulders",
+                "Dusky Leather Armor",
+                "Green Whelp Armor",
+            },
+            [180] = {
+                "Frost Leather Cloak",
+                "Green Leather Bracers",
+            },
+            [185] = {
+                "Dusky Bracers",
+                "Gem-studded Leather Belt",
+                "Guardian Cloak",
+            },
+            [190] = {
+                "Barbaric Harness",
+                "Guardian Gloves",
+                "Gloves of the Greatfather",
+                "Green Whelp Bracers",
+            },
+            [195] = {
+                "Dusky Belt",
+                "Guardian Leather Bracers",
+            },
+            [200] = {
+                "Thick Armor Kit",
+                "Thick Leather",
+                "Swift Boots",
+                "Barbaric Belt",
+                "Comfortable Leather Hat",
+                "Dusky Boots",
+            },
+            [205] = {
+                "Nightscape Headband",
+                "Nightscape Tunic",
+            },
+            [210] = {
+                "Turtle Scale Breastplate",
+            },
+            [215] = {
+                "Big Voodoo Robe",
+            },
+            [220] = {
+                "Big Voodoo Mask",
+                "Tough Scorpid Bracers",
+                "Tough Scorpid Breastplate",
+                "Wild Leather Shoulders",
+            },
+            [225] = {
+                "Wild Leather Helmet",
+                "Wild Leather Vest",
+            },
+            [230] = {
+                "Nightscape Pants",
+            },
+            [235] = {
+                "Tough Scorpid Boots",
+            },
+            [240] = {
+                "Big Voodoo Cloak",
+                "Big Voodoo Pants",
+                "Tough Scorpid Shoulders",
+            },
+            [245] = {
+                "Tough Scorpid Leggings",
+                "Wild Leather Boots",
+            },
+            [250] = {
+                "Rugged Armor Kit",
+                "Nightscape Boots",
+                "Tough Scorpid Helm",
+                "Wild Leather Cloak",
+                "Wild Leather Leggings",
+            },
+            [255] = {
+                "Heavy Scorpid Bracers",
+            },
+            [260] = {
+                "Wicked Leather Gauntlets",
+            },
+            [265] = {
+                "Chimeric Gloves",
+                "Heavy Scorpid Vest",
+                "Wicked Leather Bracers",
+            },
+            [270] = {
+                "Volcanic Leggings",
+                "Runic Leather Gauntlets",
+            },
+            [275] = {
+                "Chimeric Boots",
+                "Frostsaber Boots",
+                "Heavy Scorpid Gauntlets",
+                "Runic Leather Bracers",
+            },
+            [280] = {
+                "Chimeric Leggings",
+                "Heavy Scorpid Belt",
+                "Runic Leather Belt",
+                "Wicked Leather Headband",
+            },
+            [285] = {
+                "Frostsaber Leggings",
+                "Heavy Scorpid Leggings",
+                "Volcanic Breastplate",
+            },
+            [290] = {
+                "Chimeric Vest",
+                "Runic Leather Headband",
+                "Wicked Leather Pants",
+            },
+            [295] = {
+                "Frostsaber Gloves",
+                "Heavy Scorpid Helm",
+            },
+        },
     }
 }
 
@@ -4270,11 +7692,14 @@ end
 
 --Sets RXPCData.professions
 local function gatherPlayerProfessionInfo()
-    local prof1, prof2, archeology, fishing, cooking = GetProfessions()
+    local prof1, prof2, archeology, fishing, cooking = GetNumPrimaryProfessions()
+    print(prof1)
+    print(prof2)
     --name, icon, skillLevel, maxSkillLevel, numAbilities, spelloffset, skillLine, 
     --skillModifier, specializationIndex, specializationOffset = GetProfessionInfo(index)
     if prof1 then
         local name, _, skillLevel, _, _, _, _, _, _, _ = GetProfessionInfo(prof1)
+        print(name, skillLevel)
         RXPCData.professions.profession1 = {
             name = name,
             skillLevel = skillLevel,
@@ -4413,7 +7838,7 @@ local function calculateRecipePrice(professionName)
                         end
                     --If its from a vendor
                     elseif materialTable.fromVendor then
-                        totalPrice = totalPrice + (PROFESSIONS[professionName].VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
+                        totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
                     else --If from AH
                         --If there isn't any in the AH
                         if not profSession.foundItems[materialName] or select(1, tcount(profSession.foundItems[materialName])) == 0 then
@@ -4598,6 +8023,46 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
     self:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
+function addon.professions.AH:TRADE_SKILL_SHOW()
+end
+
+function addon.professions.AH:TRADE_SKILL_CLOSE()
+end
+
+function addon.professions.AH:TRADE_SKILL_UPDATE()
+end
+
+function addon.professions.AH:UPDATE_TRADESKILL_RECAST()
+end
+
+function addon.professions.AH:ITEM_PUSH(bagSlot, iconFileID)
+end
+
+function addon.professions.AH:BAG_NEW_ITEMS_UPDATED()
+end
+
+function addon.professions.AH:BAG_UPDATE_COOLDOWN()
+end
+
+function addon.professions.AH:UNIT_INVENTORY_CHANGED(unitTokenVariant)
+end
+
+function addon.professions.AH:TRADE_SKILL_DETAILS_UPDATE(...)
+    print("DETAILS_UPDATE")
+    local args = {...}
+    for index, value in ipairs(args) do
+        print(index, ": ", value)
+    end
+    print("==========")
+end
+
+function addon.professions.AH:SKILL_LINES_CHANGED()
+    --print("skill lines changed")
+end
+
+
+
+
 --Scan function
 function addon.professions.AH:Scan(itemName)
     --print("scanning - ", itemName)
@@ -4631,6 +8096,7 @@ end
 
 --Init setup
 addon.professions.AH:Setup()
+-- gatherPlayerProfessionInfo() --fails because RXPCData is not yet initialized
 
 
 --GUI
@@ -4762,6 +8228,8 @@ local function createGUI()
             guiFrame:Show()
         end
     end
+
+    guiFrame:Hide()
 end
 
 createGUI()
@@ -4775,6 +8243,16 @@ for testing purposes
 
 
 --Slash commands
+
+SLASH_clear1 = '/clear'
+SlashCmdList['clear'] = function()
+    _G["ChatFrame1"]:Clear()
+end
+
+SLASH_cls1 = '/cls'
+SlashCmdList['cls'] = function()
+    _G["ChatFrame1"]:Clear()
+end
 
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
@@ -4886,9 +8364,16 @@ SlashCmdList['qtst'] = function()
     --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
     -- end
 
-    local a = 80478
-    print(a)
-    print(formatMoney(a))
+    gatherPlayerProfessionInfo()
+    print(tcount(RXPCData.professions.profession1))
+    print(tcount(RXPCData.professions.profession2))
+    for k, v in pairs(RXPCData.professions.profession1) do
+        print("a")
+        print(k, " -> ", v)
+    end
+    for k, v in pairs(RXPCData.professions.profession2) do
+        print(k, " -> ", v)
+    end
 end
 
 
