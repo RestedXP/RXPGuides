@@ -1243,6 +1243,9 @@ function addon:OnInitialize()
     if addon.itemUpgrades then
         addon.itemUpgrades:Setup()
     end
+    if addon.professions then
+        addon.professions:Setup()
+    end
 
     if addon.player.season == 2 then
         addon.settings.profile.phase = 6

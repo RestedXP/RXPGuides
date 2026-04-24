@@ -11,9 +11,28 @@ local pairs, ipars, next, type, tostring, tonumber = pairs, ipairs, next, type, 
 local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
-local GetNumPrimaryProfessions, GetProfessionInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo --GetProfessions is not used in classics
+local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
 local GetMoney = _G.GetMoney
 
+addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0") --TODO: maybe change thne name
+
+--Session
+local EVENTS_TO_REGISTER = {
+    "TRADE_SKILL_SHOW", --Opening the tradeskill window
+    "TRADE_SKILL_CLOSE", --Closing the tradeskill window
+    "TRADE_SKILL_UPDATE", --Learning skill?, Minimizing categories in tradeskill window
+    "UPDATE_TRADESKILL_RECAST", --Started crafting
+    "ITEM_PUSH", --Item added to inventory?
+    "BAG_NEW_ITEMS_UPDATED", --item added to inventory?
+    "BAG_UPDATE_COOLDOWN",
+    "UNIT_INVENTORY_CHANGED",
+    "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
+    "SKILL_LINES_CHANGED" --Learning/unlearning, journeyman -> master
+}
+
+local session = {
+    isInitialized = false,
+}
 
 --local helper functions
 
@@ -41,23 +60,12 @@ local function sortAssociativeArrayByValue(map)
 end
 
 --local enums
-local EVENTS_TO_REGISTER = {
+local EVENTS_TO_REGISTER_AH = {
     "AUCTION_HOUSE_SHOW",
     "AUCTION_HOUSE_CLOSED",
     "AUCTION_HOUSE_DISABLED",
     "GET_ITEM_INFO_RECEIVED",
     "AUCTION_ITEM_LIST_UPDATE",
-
-    "TRADE_SKILL_SHOW", --Opening the tradeskill window
-    "TRADE_SKILL_CLOSE", --Closing the tradeskill window
-    "TRADE_SKILL_UPDATE", --Learning skill?, Minimizing categories in tradeskill window
-    "UPDATE_TRADESKILL_RECAST", --Started crafting
-    "ITEM_PUSH", --Item added to inventory?
-    "BAG_NEW_ITEMS_UPDATED", --item added to inventory?
-    "BAG_UPDATE_COOLDOWN",
-    "UNIT_INVENTORY_CHANGED",
-    "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
-    "SKILL_LINES_CHANGED" --Learning/unlearning, journeyman -> master
 }
 
 
@@ -7681,7 +7689,7 @@ function addon.professions.AH:Setup()
     if profSession.isInitialized then return end
 
     --Register events
-    for _, event in ipairs(EVENTS_TO_REGISTER) do
+    for _, event in ipairs(EVENTS_TO_REGISTER_AH) do
         self:RegisterEvent(event)
     end
 
@@ -7692,21 +7700,23 @@ end
 
 --Sets RXPCData.professions
 local function gatherPlayerProfessionInfo()
+    --TODO: localize using skillLine 
     local prof1, prof2, archeology, fishing, cooking = GetNumPrimaryProfessions()
     print(prof1)
     print(prof2)
     --name, icon, skillLevel, maxSkillLevel, numAbilities, spelloffset, skillLine, 
-    --skillModifier, specializationIndex, specializationOffset = GetProfessionInfo(index)
+    --skillModifier, specializationIndex, specializationOffset,
+    --skillLineName = GetProfessionInfo(index)
     if prof1 then
-        local name, _, skillLevel, _, _, _, _, _, _, _ = GetProfessionInfo(prof1)
-        print(name, skillLevel)
+        local name, _, skillLevel, _, _, _, skillLine, _, _, _, _ = GetProfessionInfo(prof1)
+        print(name, skillLevel, skillLine)
         RXPCData.professions.profession1 = {
             name = name,
             skillLevel = skillLevel,
         }
     end
     if prof2 then
-        local name, _, skillLevel, _, _, _, _, _, _, _ = GetProfessionInfo(prof2)
+        local name, _, skillLevel, _, _, _, skillLine, _, _, _, _ = GetProfessionInfo(prof2)
         RXPCData.professions.profession2 = {
             name = name,
             skillLevel = skillLevel,
@@ -8023,31 +8033,31 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
     self:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
-function addon.professions.AH:TRADE_SKILL_SHOW()
+function addon.professions:TRADE_SKILL_SHOW()
 end
 
-function addon.professions.AH:TRADE_SKILL_CLOSE()
+function addon.professions:TRADE_SKILL_CLOSE()
 end
 
-function addon.professions.AH:TRADE_SKILL_UPDATE()
+function addon.professions:TRADE_SKILL_UPDATE()
 end
 
-function addon.professions.AH:UPDATE_TRADESKILL_RECAST()
+function addon.professions:UPDATE_TRADESKILL_RECAST()
 end
 
-function addon.professions.AH:ITEM_PUSH(bagSlot, iconFileID)
+function addon.professions:ITEM_PUSH(bagSlot, iconFileID)
 end
 
-function addon.professions.AH:BAG_NEW_ITEMS_UPDATED()
+function addon.professions:BAG_NEW_ITEMS_UPDATED()
 end
 
-function addon.professions.AH:BAG_UPDATE_COOLDOWN()
+function addon.professions:BAG_UPDATE_COOLDOWN()
 end
 
-function addon.professions.AH:UNIT_INVENTORY_CHANGED(unitTokenVariant)
+function addon.professions:UNIT_INVENTORY_CHANGED(unitTokenVariant)
 end
 
-function addon.professions.AH:TRADE_SKILL_DETAILS_UPDATE(...)
+function addon.professions:TRADE_SKILL_DETAILS_UPDATE(...)
     print("DETAILS_UPDATE")
     local args = {...}
     for index, value in ipairs(args) do
@@ -8056,7 +8066,7 @@ function addon.professions.AH:TRADE_SKILL_DETAILS_UPDATE(...)
     print("==========")
 end
 
-function addon.professions.AH:SKILL_LINES_CHANGED()
+function addon.professions:SKILL_LINES_CHANGED()
     --print("skill lines changed")
 end
 
@@ -8094,10 +8104,24 @@ local function fullScan()
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
---Init setup
-addon.professions.AH:Setup()
--- gatherPlayerProfessionInfo() --fails because RXPCData is not yet initialized
+--Setup
+function addon.professions:Setup()
+    --TODO: add toggle on/off functionality
 
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
+    if session.isInitialized == true then return end
+
+    for _, event in ipairs(EVENTS_TO_REGISTER) do
+        self:RegisterEvent(event)
+    end
+
+    session.isInitialized = true
+    self.AH:Setup()
+
+    gatherPlayerProfessionInfo()
+end
+
+--addon.professions:Setup()
 
 --GUI
 local printed = false --last minute variable for a gui bugfix, will be properly resolved
