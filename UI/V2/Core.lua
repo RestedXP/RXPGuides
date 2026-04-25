@@ -27,16 +27,32 @@ local function updateTheme(this, payload)
     if not payload then return end
 
     print("Updating", this.type)
+
+    this.theme = this.theme or {
+        edge = addon.RXPFrame.backdrop.edge,
+        backgroundColor = addon.colors.background
+    }
+
+    if payload.edge then
+        this.theme.edge = payload.edge
+    end
+
+    if payload.backgroundColor then
+        this.theme.backgroundColor = payload.backgroundColor
+    end
+
     if payload.showBackground ~= nil and this.frame.SetBackdrop then
         if payload.showBackground then
-            this.frame:SetBackdrop(payload.edge or addon.RXPFrame.backdrop.edge)
-            this.frame:SetBackdropColor(unpack(payload.background or addon.colors.background))
+            this.frame:SetBackdrop(this.theme.edge)
+            this.frame:SetBackdropColor(unpack(this.theme.backgroundColor))
         else
             this.frame:ClearBackdrop()
         end
     end
 
     if payload.updateChildren then
+        -- Do not recursively changes child backgrounds, only main frame should be trimmed
+        payload.showBackground = nil
         for _, child in pairs(this.children or {}) do
             if child.UpdateTheme then
                 child:UpdateTheme(payload)
