@@ -1625,8 +1625,11 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
     if ahSession.scanStatus.totalAuctions > 0 and ahSession.scanResults > 0 then
         local percentage = addon.Round(ahSession.scanResults / ahSession.scanStatus.totalAuctions, 2) * 100
-
-        _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
+        if percentage < 10 then
+            _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%1d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
+        else
+            _G.RXP_IU_AH_Title:SetText(fmt("%s - %s (%02d%%)", ahSession.scanStatus.baseTitle, ahSession.scanStatus.scanType, percentage))
+        end
     end
 
     self:Scan(0)
@@ -2072,13 +2075,13 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     resetSession()
     if not _G.AuctionFrame:IsShown() then return end
     if ahSession.isCanceled and ahSession.bestAnalysis ~= nil then
-        _G.RXP_IU_AH_Title:SetText("Search cancelled - showing cached results")
+        _G.RXP_IU_AH_Title:SetText(fmt("%s %s - %s %s", _G.SEARCH, _G.SPELL_DURATION_UNTIL_CANCELLED:match("^%S+%s+(%S+)"), _G.AVAILABLE, _G.KBASE_SEARCH_RESULTS))
     elseif ahSession.isCanceled then
-        _G.RXP_IU_AH_Title:SetText("Search cancelled")
+        _G.RXP_IU_AH_Title:SetText(fmt("%s %s", _G.SEARCH, _G.SPELL_DURATION_UNTIL_CANCELLED:match("^%S+%s+(%S+)")))
     end
-   
+
     if not ahSession.bestAnalysis then return end
-    
+
     local blockData
     local n = 0
     for itemEquipLoc, data in pairs(ahSession.bestAnalysis) do
