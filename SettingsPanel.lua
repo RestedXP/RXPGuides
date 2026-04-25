@@ -3206,13 +3206,13 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "range",
                         width = optionsWidth,
                         order = 4.1,
-                        min = 0.2,
+                        min = 0.5,
                         max = 2,
                         step = 0.05,
                         isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            -- addon.RXPFrame:SetScale(value)
+                            addon.v2:UpdateActiveStepTheme()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()

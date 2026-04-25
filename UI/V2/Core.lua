@@ -30,8 +30,17 @@ local function updateTheme(this, payload)
 
     this.theme = this.theme or {
         edge = addon.RXPFrame.backdrop.edge,
-        backgroundColor = addon.colors.background
+        backgroundColor = addon.colors.background,
+        scale = 1
     }
+
+    if payload.scale then
+        this.theme.scale = payload.scale
+    end
+
+    if this.SetScale then
+        this:SetScale(this.theme.scale)
+    end
 
     if payload.edge then
         this.theme.edge = payload.edge
@@ -51,8 +60,10 @@ local function updateTheme(this, payload)
     end
 
     if payload.updateChildren then
-        -- Do not recursively changes child backgrounds, only main frame should be trimmed
+        -- Do not recursively changes some child properties
         payload.showBackground = nil
+        payload.scale = nil
+
         for _, child in pairs(this.children or {}) do
             if child.UpdateTheme then
                 child:UpdateTheme(payload)
@@ -220,7 +231,7 @@ function addon.ui.v2:RegisterRXPV2ScrollBar()
         scrollframe:SetScript("OnMouseWheel", ScrollFrame_OnMouseWheel)
         scrollframe:SetScript("OnSizeChanged", ScrollFrame_OnSizeChanged)
 
-        local scrollbar = CreateFrame("Slider", ("AceConfigDialogScrollFrame%dScrollBar"):format(num), scrollframe,
+        local scrollbar = CreateFrame("Slider", ("RXPV2ScrollFrame%dScrollBar"):format(num), scrollframe,
                                       "UIPanelScrollBarTemplate")
         scrollbar:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 4, -16)
         scrollbar:SetPoint("BOTTOMLEFT", scrollframe, "BOTTOMRIGHT", 4, 16)
@@ -341,6 +352,10 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
         ["SetSize"] = function(this, width, height)
             this:SetWidth(width)
             this:SetHeight(height)
+        end,
+
+        ["SetScale"] = function(this, scale)
+            this.frame:SetScale(scale)
         end,
 
         ["OnHeightSet"] = function(this, height)
@@ -510,6 +525,10 @@ function addon.ui.v2:RegisterRXPV2CurrentStepItem()
                 this.titletext:SetText(title)
                 this.title:SetSize(this.titletext:GetStringWidth() + 10, 17)
             end
+        end,
+
+        ["SetScale"] = function(this, scale)
+            this.frame:SetScale(scale)
         end,
 
         ["LayoutFinished"] = function(this, width, height)

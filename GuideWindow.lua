@@ -2561,7 +2561,8 @@ function addon.v2:GetCurrentStepFrame(player)
 
     stepFrame:UpdateTheme({
         showBackground = not addon.settings.profile.activeStepsV2HideBackground,
-        updateChildren = true
+        updateChildren = true,
+        scale = addon.settings.profile.activeStepsV2WindowScale,
     })
     stepFrame:Show()
 
@@ -2576,16 +2577,11 @@ function addon.v2:UpdateActiveStepTheme()
         f = data.activeStepFrame
 
         if f then
-            -- First update theme for parent and all children
             f:UpdateTheme({
                 showBackground = not addon.settings.profile.activeStepsV2HideBackground,
-                updateChildren = true
+                updateChildren = true,
+                scale = addon.settings.profile.activeStepsV2WindowScale,
             })
-
-            -- Then update background for parent only
-            -- f:UpdateTheme({
-            --     showBackground = not addon.settings.profile.activeStepsV2HideBackground,
-            -- })
         end
     end
 end
