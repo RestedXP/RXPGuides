@@ -2569,7 +2569,6 @@ function addon.v2:GetCurrentStepFrame(player)
     return stepFrame
 end
 
--- TODO loop into theme changes
 function addon.v2:UpdateActiveStepTheme()
     local f
 
@@ -2577,7 +2576,6 @@ function addon.v2:UpdateActiveStepTheme()
         f = data.activeStepFrame
 
         if f then
-
             f:UpdateTheme({
                 showBackground = not addon.settings.profile.activeStepsV2HideBackground,
                 updateChildren = true,
