@@ -2577,10 +2577,15 @@ function addon.v2:UpdateActiveStepTheme()
         f = data.activeStepFrame
 
         if f then
+
             f:UpdateTheme({
                 showBackground = not addon.settings.profile.activeStepsV2HideBackground,
                 updateChildren = true,
                 scale = addon.settings.profile.activeStepsV2WindowScale,
+
+                -- Only changes for live reloads, initial creation uses these values
+                edge = addon.RXPFrame.backdrop.edge,
+                backgroundColor = addon.colors.background,
             })
         end
     end

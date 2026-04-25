@@ -2760,6 +2760,7 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
+                                addon.v2:UpdateActiveStepTheme()
                             end
                         end,
                         values = function()
