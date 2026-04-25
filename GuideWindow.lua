@@ -2558,6 +2558,11 @@ function addon.v2:GetCurrentStepFrame(player)
 
     _G["RXPStepFrame" .. player] = stepFrame
     addon.enabledFrames["RXPStepFrame" .. player] = stepFrame
+
+    stepFrame:UpdateTheme({
+        showBackground = not addon.settings.profile.activeStepsV2HideBackground,
+        updateChildren = true
+    })
     stepFrame:Show()
 
     return stepFrame
