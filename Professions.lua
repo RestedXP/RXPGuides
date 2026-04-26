@@ -12,6 +12,7 @@ local max, abs, floor, ceil, huge = math.max, math.abs, math.floor, math.ceil, m
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
+local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetMoney = _G.GetMoney
 
 addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0") --TODO: maybe change thne name
@@ -27,7 +28,10 @@ local EVENTS_TO_REGISTER = {
     "BAG_UPDATE_COOLDOWN",
     "UNIT_INVENTORY_CHANGED",
     "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
-    "SKILL_LINES_CHANGED" --Learning/unlearning, journeyman -> master
+    "SKILL_LINES_CHANGED", --Learning/unlearning, journeyman -> master
+
+    "CHAT_MSG_LOOT", --"You create [Rough sharpening stone]. ..."
+    "CHAT_MSG_SKILL", --"Your skill in Blacksmithing has increased to 5 ..."
 }
 
 local session = {
@@ -44,6 +48,30 @@ local function formatMoney(money)
         return fmt("%ds %dc", money / 100, money % 100)
     end
     return fmt("%dc", money)
+end
+
+--Serializes RXPCData.professions to string for debugging purposes
+local function serializeProfessions()
+    if next(RXPCData.professions.profession1) and next(RXPCData.professions.profession2) then
+        return fmt("%s: %d/%d\n%s: %d/%d",
+                    RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, RXPCData.professions.profession1.skillMaxLevel,
+                    RXPCData.professions.profession2.name, RXPCData.professions.profession2.skillLevel, RXPCData.professions.profession2.skillMaxLevel)
+    elseif next(RXPCData.professions.profession1) then
+        return fmt("%s: %d/%d", RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, RXPCData.professions.profession1.skillMaxLevel)
+    elseif next(RXPCData.professions.profession2) then
+        return fmt("%s: %d/%d", RXPCData.professions.profession2.name, RXPCData.professions.profession2.skillLevel, RXPCData.professions.profession2.skillMaxLevel)
+    end
+    return ""
+end
+
+--Serializes RXPCData.craftedItems to string for debugging purposes
+local function serializeCraftedItems()
+    local str = "crafted items = {\n"
+    for itemName, itemCount in pairs(RXPCData.craftedItems) do
+        str = str .. itemName .. ": " .. tostring(itemCount) .. "\n"
+    end
+    str = str .. "}"
+    return str
 end
 
 --Sorts an associative array by value.
@@ -66,6 +94,21 @@ local EVENTS_TO_REGISTER_AH = {
     "AUCTION_HOUSE_DISABLED",
     "GET_ITEM_INFO_RECEIVED",
     "AUCTION_ITEM_LIST_UPDATE",
+}
+
+local PROFESSION_NAMES = { --TODO: MAKE THIS LOCALIZE FRIENDLY!
+    ["Alchemy"] = true,
+    ["Blacksmithing"] = true,
+    ["Enchanting"] = true,
+    ["Engineering"] = true,
+    ["Herbalism"] = true,
+    ["Leatherworking"] = true,
+    ["Mining"] = true,
+    ["Skinning"] = true,
+    ["Tailoring"] = true,
+    ["Cooking"] = true,
+    ["First Aid"] = true,
+    ["Fishing"] = true,
 }
 
 
@@ -7647,7 +7690,1818 @@ local PROFESSIONS = {
                 "Heavy Scorpid Helm",
             },
         },
-    }
+    },
+    ["tailoring"] = { --TODO: finish tailoring
+        RECIPES = { --TODO: add recipes from 1-145
+            ["Admiral's Hat"] = {
+                trainable = false,
+                orange = 240,
+                yellow = 255,
+                grey = 285,
+                rainingCost = 0,
+                recipeCost = 70,
+                castTime = 60,
+                sellPrice = 60.7,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Long Elegant Feather"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Azure Silk Cloak"] = {
+                trainable = false,
+                orange = 175,
+                yellow = 195,
+                grey = 225,
+                rainingCost = 0,
+                recipeCost = 15,
+                castTime = 45,
+                sellPrice = 22.4,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Blue Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Azure Silk Hood"] = {
+                trainable = true,
+                orange = 145,
+                yellow = 155,
+                grey = 165,
+                rainingCost = 6,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 7.45,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Blue Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Black Mageweave Gloves"] = {
+                trainable = true,
+                orange = 215,
+                yellow = 230,
+                grey = 260,
+                rainingCost = 45,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 28.59,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Black Mageweave Leggings"] = {
+                trainable = true,
+                orange = 205,
+                yellow = 220,
+                grey = 250,
+                rainingCost = 36,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 48.32,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Black Mageweave Shoulders"] = {
+                trainable = true,
+                orange = 230,
+                yellow = 245,
+                grey = 275,
+                rainingCost = 60,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 54.79,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Black Silk Pack"] = {
+                trainable = false,
+                orange = 185,
+                yellow = 205,
+                grey = 235,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 40,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Blackmageweave Leggings"] = {
+                trainable = true,
+                orange = 205,
+                yellow = 220,
+                grey = 250,
+                rainingCost = 36,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 48.32,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Bolt of Mageweave"] = {
+                trainable = true,
+                orange = 175,
+                yellow = 180,
+                grey = 185,
+                rainingCost = 10,
+                recipeCost = 0,
+                castTime = 8,
+                sellPrice = 12.5,
+                materials = {
+                    ["Mageweave Cloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Bolt of Runecloth"] = {
+                trainable = true,
+                orange = 250,
+                yellow = 255,
+                grey = 260,
+                rainingCost = 100,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 20,
+                materials = {
+                    ["Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Bright Yellow Shirt"] = {
+                trainable = false,
+                orange = 135,
+                yellow = 145,
+                grey = 155,
+                rainingCost = 0,
+                recipeCost = 8,
+                castTime = 12.5,
+                sellPrice = 5,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Yellow Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Brightcloth Cloak"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 97.16,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Gold Bar"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Brightcloth Gloves"] = {
+                trainable = false,
+                orange = 270,
+                yellow = 285,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 60.66,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Gold Bar"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Gold Bar"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Brightcloth Pants"] = {
+                trainable = false,
+                orange = 290,
+                yellow = 305,
+                grey = 335,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 154.84,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Gold Bar"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Brightcloth Robe"] = {
+                trainable = false,
+                orange = 270,
+                yellow = 285,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 120.89,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Gold Bar"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cindercloth Cloak"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 95.03,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Essence of Fire"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cindercloth Gloves"] = {
+                trainable = false,
+                orange = 270,
+                yellow = 285,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 59.55,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heart of Fire"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cindercloth Pants"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 295,
+                grey = 325,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 134.8,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Essence of Fire"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Cindercloth Vest"] = {
+                trainable = false,
+                orange = 260,
+                yellow = 275,
+                grey = 305,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 105.61,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Heart of Fire"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Colorful Kit"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 145,
+                grey = 180,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 5.125,
+                sellPrice = 9.35,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Crimson Silk Pantaloons"] = {
+                trainable = true,
+                orange = 195,
+                yellow = 215,
+                grey = 235,
+                rainingCost = 27,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 24.3,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Crimson Silk Vest"] = {
+                trainable = true,
+                orange = 185,
+                yellow = 205,
+                grey = 225,
+                rainingCost = 22.5,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 20.52,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Dark Silk Shirt"] = {
+                trainable = false,
+                orange = 155,
+                yellow = 165,
+                grey = 175,
+                rainingCost = 0,
+                recipeCost = 11,
+                castTime = 25,
+                sellPrice = 12,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Gray Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Earthen Vest"] = {
+                trainable = true,
+                orange = 170,
+                yellow = 190,
+                grey = 220,
+                rainingCost = 8.1,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 26.96,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Elemental Earth"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Enchanted Runecloth Bag"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 200,
+                castTime = 60,
+                sellPrice = 100,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Greater Eternal Essence"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Felcloth Boots"] = {
+                trainable = false,
+                orange = 285,
+                yellow = 300,
+                grey = 330,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 111.12,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Felcloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rugged Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Felcloth Hood"] = {
+                trainable = false,
+                orange = 290,
+                yellow = 305,
+                grey = 335,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 107.75,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Felcloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Felcloth Pants"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 160,
+                castTime = 60,
+                sellPrice = 131.4,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Felcloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Formal White Shirt"] = {
+                trainable = true,
+                orange = 170,
+                yellow = 180,
+                grey = 190,
+                rainingCost = 4.5,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 5.5,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Bleach"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostweave Gloves"] = {
+                trainable = false,
+                orange = 265,
+                yellow = 280,
+                grey = 310,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 54.71,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Essence of Water"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostweave Pants"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 295,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 134.36,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Essence of Water"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostweave Robe"] = {
+                trainable = false,
+                orange = 255,
+                yellow = 270,
+                grey = 300,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 96.65,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Globe of Water"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Frostweave Tunic"] = {
+                trainable = false,
+                orange = 255,
+                yellow = 270,
+                grey = 300,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 97.02,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Globe of Water"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Ghostweave Belt"] = {
+                trainable = false,
+                orange = 265,
+                yellow = 280,
+                grey = 310,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 57.63,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Ghost Dye"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Ghostweave Gloves"] = {
+                trainable = false,
+                orange = 270,
+                yellow = 285,
+                grey = 315,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 60.87,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Ghost Dye"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Ghostweave Pants"] = {
+                trainable = false,
+                orange = 290,
+                yellow = 305,
+                grey = 335,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 143.74,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Ghost Dye"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Ghostweave Vest"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 128.59,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Ghost Dye"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Gloves of Meditation"] = {
+                trainable = true,
+                orange = 130,
+                yellow = 150,
+                grey = 180,
+                rainingCost = 7.5,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 6.1,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                    ["Elixir of Wisdom"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Greater Adept's Robe"] = {
+                trainable = false,
+                orange = 115,
+                yellow = 140,
+                grey = 175,
+                rainingCost = 0,
+                recipeCost = 8,
+                castTime = 25,
+                sellPrice = 8.84,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Icy Cloak"] = {
+                trainable = false,
+                orange = 200,
+                yellow = 220,
+                grey = 250,
+                rainingCost = 0,
+                recipeCost = 15,
+                castTime = 45,
+                sellPrice = 37.88,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Frost Oil"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Thick Spider's Silk"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                },
+            },
+            ["Lavender Mageweave Shirt"] = {
+                trainable = false,
+                orange = 230,
+                yellow = 235,
+                grey = 245,
+                rainingCost = 0,
+                recipeCost = 40,
+                castTime = 45,
+                sellPrice = 30,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Purple Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Mageweave Bag"] = {
+                trainable = true,
+                orange = 225,
+                yellow = 249,
+                grey = 270,
+                rainingCost = 45,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 25,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Orange Mageweave Shirt"] = {
+                trainable = true,
+                orange = 215,
+                yellow = 220,
+                grey = 230,
+                rainingCost = 22.5,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 15,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Orange Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Phoenix Gloves"] = {
+                trainable = false,
+                orange = 125,
+                yellow = 150,
+                grey = 185,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 5.26,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Iridescent Pearl"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                    ["Bleach"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Phoenix Pants"] = {
+                trainable = false,
+                orange = 125,
+                yellow = 150,
+                grey = 185,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 10.76,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Iridescent Pearl"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Red Mageweave Bag"] = {
+                trainable = true,
+                orange = 235,
+                yellow = 250,
+                grey = 280,
+                rainingCost = 65,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 25,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Red Mageweave Headband"] = {
+                trainable = false,
+                orange = 240,
+                yellow = 255,
+                grey = 285,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 60.75,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Red Mageweave Vest"] = {
+                trainable = false,
+                orange = 215,
+                yellow = 230,
+                grey = 260,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 57.99,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Red Woolen Bag"] = {
+                trainable = false,
+                orange = 115,
+                yellow = 140,
+                grey = 175,
+                rainingCost = 0,
+                recipeCost = 5,
+                castTime = 25,
+                sellPrice = 7,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Red Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Reinforced Woolen Shoulders"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 145,
+                grey = 180,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 4.25,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Medium Leather"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Robe of Power"] = {
+                trainable = true,
+                orange = 190,
+                yellow = 210,
+                grey = 240,
+                rainingCost = 9,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 47,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Elemental Earth"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Elemental Water"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Elemental Fire"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Elemental Air"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Belt"] = {
+                trainable = true,
+                orange = 255,
+                yellow = 270,
+                grey = 300,
+                rainingCost = 100,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 51.12,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Boots"] = {
+                trainable = false,
+                orange = 280,
+                yellow = 295,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 200,
+                castTime = 60,
+                sellPrice = 95.53,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Rugged Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Cloak"] = {
+                trainable = false,
+                orange = 265,
+                yellow = 280,
+                grey = 310,
+                rainingCost = 0,
+                recipeCost = 120,
+                castTime = 60,
+                sellPrice = 87.41,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Gloves"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 160,
+                castTime = 60,
+                sellPrice = 66.17,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rugged Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Headband"] = {
+                trainable = false,
+                orange = 295,
+                yellow = 310,
+                grey = 340,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 113.58,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Pants"] = {
+                trainable = false,
+                orange = 285,
+                yellow = 300,
+                grey = 330,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 135.55,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Robe"] = {
+                trainable = false,
+                orange = 260,
+                yellow = 275,
+                grey = 305,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 109.17,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Runecloth Tunic"] = {
+                trainable = false,
+                orange = 260,
+                yellow = 275,
+                grey = 305,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 108.78,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Ironweb Spider Silk"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Shadoweave Mask"] = {
+                trainable = false,
+                orange = 245,
+                yellow = 260,
+                grey = 290,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 67.9,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 2,
+                        fromVendor = false,
+                    },
+                    ["Shadow Silk"] = {
+                        count = 8,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Silk Headband"] = {
+                trainable = true,
+                orange = 160,
+                yellow = 170,
+                grey = 180,
+                rainingCost = 6.75,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 9.99,
+                materials = {
+                    ["Bolt of Silk Cloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Fine Thread"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Simple Black Dress"] = {
+                trainable = true,
+                orange = 235,
+                yellow = 240,
+                grey = 250,
+                rainingCost = 50,
+                recipeCost = 0,
+                castTime = 25,
+                sellPrice = 44.99,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Black Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Bleach"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Star Belt"] = {
+                trainable = false,
+                orange = 200,
+                yellow = 220,
+                grey = 250,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 45,
+                sellPrice = 21.2,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Heavy Leather"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Citrine"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Iron Buckle"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Stylish Blue Shirt"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 145,
+                grey = 180,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 2.5,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Blue Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Stylish Green Shirt"] = {
+                trainable = false,
+                orange = 120,
+                yellow = 145,
+                grey = 180,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 2.5,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 4,
+                        fromVendor = false,
+                    },
+                    ["Green Dye"] = {
+                        count = 2,
+                        fromVendor = true,
+                    },
+                    ["Gray Dye"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Tuxedo Jacket"] = {
+                trainable = false,
+                orange = 250,
+                yellow = 265,
+                grey = 295,
+                rainingCost = 0,
+                recipeCost = 50,
+                castTime = 45,
+                sellPrice = 17.41,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 5,
+                        fromVendor = false,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 3,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["White Bandit Mask"] = {
+                trainable = false,
+                orange = 215,
+                yellow = 220,
+                grey = 230,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 43.65,
+                materials = {
+                    ["Bolt of Mageweave"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Bleach"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                    ["Heavy Silken Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["White Woolen Dress"] = {
+                trainable = true,
+                orange = 110,
+                yellow = 135,
+                grey = 170,
+                rainingCost = 2.5,
+                recipeCost = 0,
+                castTime = 12.5,
+                sellPrice = 4.66,
+                materials = {
+                    ["Bolt of Woolen Cloth"] = {
+                        count = 3,
+                        fromVendor = false,
+                    },
+                    ["Bleach"] = {
+                        count = 4,
+                        fromVendor = true,
+                    },
+                    ["Fine Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+            ["Wizardweave Leggings"] = {
+                trainable = false,
+                orange = 275,
+                yellow = 290,
+                grey = 320,
+                rainingCost = 0,
+                recipeCost = 0,
+                castTime = 60,
+                sellPrice = 124.41,
+                materials = {
+                    ["Bolt of Runecloth"] = {
+                        count = 6,
+                        fromVendor = false,
+                    },
+                    ["Dream Dust"] = {
+                        count = 1,
+                        fromVendor = false,
+                    },
+                    ["Rune Thread"] = {
+                        count = 1,
+                        fromVendor = true,
+                    },
+                },
+            },
+        },
+        SEGMENTS = { --TODO: add recipes from 1-145
+            [110] = {
+                "White Woolen Dress",
+            },
+            [115] = {
+                "Red Woolen Bag",
+                "Greater Adept's Robe",
+            },
+            [120] = {
+                "Stylish Green Shirt",
+                "Stylish Blue Shirt",
+                "Reinforced Woolen Shoulders",
+                "Colorful Kit",
+            },
+            [125] = {
+                "Phoenix Pants",
+                "Phoenix Gloves",
+            },
+            [130] = {
+                "Gloves of Meditation",
+            },
+            [135] = {
+                "Bright Yellow Shirt",
+            },
+            [145] = {
+                "Azure Silk Hood",
+            },
+            [155] = {
+                "Dark Silk Shirt",
+            },
+            [160] = {
+                "Silk Headband",
+            },
+            [170] = {
+                "Formal White Shirt",
+                "Earthen Vest",
+            },
+            [175] = {
+                "Bolt of Mageweave",
+                "Azure Silk Cloak",
+            },
+            [185] = {
+                "Crimson Silk Vest",
+                "Black Silk Pack",
+            },
+            [190] = {
+                "Robe of Power", --TODO: Stillow: Should most likeley not be considered
+            },
+            [195] = {
+                "Crimson Silk Pantaloons", --TODO: there is some forcing to be done with this recipe
+            },
+            [200] = {
+                "Icy Cloak",
+                "Star Belt",
+            },
+            [205] = {
+                "Black Mageweave Leggings",
+                "Blackmageweave Leggings",
+            },
+            [215] = {
+                "Orange Mageweave Shirt",
+                "White Bandit Mask",
+                "Red Mageweave Vest",
+                "Black Mageweave Gloves",
+            },
+            [225] = {
+                "Mageweave Bag",
+            },
+            [230] = {
+                "Black Mageweave Shoulders",
+                "Lavender Mageweave Shirt",
+            },
+            [235] = {
+                "Simple Black Dress",
+                "Red Mageweave Bag",
+            },
+            [240] = {
+                "Admiral's Hat",
+                "Red Mageweave Headband",
+            },
+            [245] = {
+                "Shadoweave Mask",
+            },
+            [250] = {
+                "Bolt of Runecloth",
+                "Tuxedo Jacket",
+            },
+            [255] = {
+                "Runecloth Belt",
+                "Frostweave Robe",
+                "Frostweave Tunic",
+            },
+            [260] = {
+                "Cindercloth Vest",
+                "Runecloth Robe",
+                "Runecloth Tunic",
+            },
+            [265] = {
+                "Ghostweave Belt",
+                "Frostweave Gloves",
+                "Runecloth Cloak",
+            },
+            [270] = {
+                "Ghostweave Gloves",
+                "Cindercloth Gloves",
+                "Brightcloth Gloves",
+                "Brightcloth Robe",
+            },
+            [275] = {
+                "Brightcloth Cloak",
+                "Cindercloth Cloak",
+                "Enchanted Runecloth Bag",
+                "Felcloth Pants",
+                "Ghostweave Vest",
+                "Runecloth Gloves",
+                "Wizardweave Leggings",
+            },
+            [280] = {
+                "Cindercloth Pants",
+                "Frostweave Pants",
+                "Runecloth Boots",
+            },
+            [285] = {
+                "Felcloth Boots",
+                "Runecloth Pants",
+            },
+            [290] = {
+                "Brightcloth Pants",
+                "Felcloth Hood",
+                "Ghostweave Pants",
+            },
+            [295] = {
+                "Runecloth Headband",
+            },
+        },
+    },
 }
 
 -- Saved variables and session
@@ -7700,27 +9554,30 @@ end
 
 --Sets RXPCData.professions
 local function gatherPlayerProfessionInfo()
-    --TODO: localize using skillLine 
-    local prof1, prof2, archeology, fishing, cooking = GetNumPrimaryProfessions()
-    print(prof1)
-    print(prof2)
-    --name, icon, skillLevel, maxSkillLevel, numAbilities, spelloffset, skillLine, 
-    --skillModifier, specializationIndex, specializationOffset,
-    --skillLineName = GetProfessionInfo(index)
-    if prof1 then
-        local name, _, skillLevel, _, _, _, skillLine, _, _, _, _ = GetProfessionInfo(prof1)
-        print(name, skillLevel, skillLine)
-        RXPCData.professions.profession1 = {
-            name = name,
-            skillLevel = skillLevel,
-        }
-    end
-    if prof2 then
-        local name, _, skillLevel, _, _, _, skillLine, _, _, _, _ = GetProfessionInfo(prof2)
-        RXPCData.professions.profession2 = {
-            name = name,
-            skillLevel = skillLevel,
-        }
+    --skillName, header, isExpanded, skillRank, numTempPoints, skillModifier,
+    --skillMaxRank, isAbandonable, stepCost, rankCost, minLevel, skillCostType,
+    --skillDescription = GetSkillLineInfo(index)
+    local skillName, isHeader, skillRank, skillMaxRank
+    local foundFirst = false
+    for i = 1, GetNumSkillLines() do
+        skillName, isHeader, _, skillRank, _, _, skillMaxRank, _, _, _, _, _, _ = GetSkillLineInfo(i)     
+        if skillName and not isHeader and PROFESSION_NAMES[skillName] then
+            --TODO:be sure that in the future code RXPCData.prof1 and RXPCData.prof2 does not get mixed up, because this way we don't really know what is the 'primary' and what is the 'secondary' profession.
+            if not foundFirst then
+                RXPCData.professions.profession1 = {
+                    name = lower(skillName),
+                    skillLevel = skillRank,
+                    skillMaxLevel = skillMaxRank,
+                }
+                foundFirst = true
+            else
+                RXPCData.professions.profession2 = {
+                    name = lower(skillName),
+                    skillLevel = skillRank,
+                    skillMaxLevel = skillMaxRank,
+                }
+            end
+        end
     end
 end
 
@@ -7915,11 +9772,21 @@ end
 --Calculate flux density [T^-1Skill^-1Money]
 local function calculateFullCostFluxDensity(professionName, skillLevel)
     local fluxDensity = {}
-    for recipeName, recipePrice in pairs(professionName.recipesToConsider) do
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
         fluxDensity[recipeName] = ceil(recipePrice / PROFESSIONS[professionName].RECIPES[recipeName].castTime)
     end
     return fluxDensity
 end
+
+--Calculate cost efficiency [T^-1Money^-1Skill]
+local function calculateFullCostEfficiency(professionName, skillLevel)
+    local costEfficiency = {}
+    for recipeName, recipePrice in pairs(profSession.recipesToConsider) do
+        costEfficiency[recipeName] = addon.Round(1 / (recipePrice * PROFESSIONS[professionName].RECIPES[recipeName].castTime), 2)
+    end
+    return costEfficiency
+end
+
 
 --[[ 
 General idea:
@@ -8040,6 +9907,7 @@ function addon.professions:TRADE_SKILL_CLOSE()
 end
 
 function addon.professions:TRADE_SKILL_UPDATE()
+
 end
 
 function addon.professions:UPDATE_TRADESKILL_RECAST()
@@ -8070,6 +9938,25 @@ function addon.professions:SKILL_LINES_CHANGED()
     --print("skill lines changed")
 end
 
+--Updates crafted items list
+function addon.professions:CHAT_MSG_LOOT(_, text) --TODO: watch out for localization
+    local itemName = text:match("%[(.*)%]")
+    if not RXPCData.craftedItems[itemName] then RXPCData.craftedItems[itemName] = 0 end
+    RXPCData.craftedItems[itemName] = RXPCData.craftedItems[itemName] + 1
+end
+
+--Updates skill level
+function addon.professions:CHAT_MSG_SKILL(_, text) --TODO: watch out for localization
+    local newSkillLevel = tonumber(text:match("%d+"))
+    local prof1Name, prof2Name = RXPCData.professions.profession1.name, RXPCData.professions.profession2.name
+    if text:lower():find(prof1Name) then
+        RXPCData.professions.profession1.skillLevel = newSkillLevel
+    elseif text:lower():find(prof2Name) then
+        RXPCData.professions.profession2.skillLevel = newSkillLevel
+    else
+        error("Profession leveled: " .. text .. "\nIs not among: {" .. prof1Name .. ", " .. prof2Name .. "}", 2)
+    end
+end
 
 
 
@@ -8121,7 +10008,6 @@ function addon.professions:Setup()
     gatherPlayerProfessionInfo()
 end
 
---addon.professions:Setup()
 
 --GUI
 local printed = false --last minute variable for a gui bugfix, will be properly resolved
@@ -8388,16 +10274,7 @@ SlashCmdList['qtst'] = function()
     --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
     -- end
 
-    gatherPlayerProfessionInfo()
-    print(tcount(RXPCData.professions.profession1))
-    print(tcount(RXPCData.professions.profession2))
-    for k, v in pairs(RXPCData.professions.profession1) do
-        print("a")
-        print(k, " -> ", v)
-    end
-    for k, v in pairs(RXPCData.professions.profession2) do
-        print(k, " -> ", v)
-    end
+    print(serializeCraftedItems())
 end
 
 
@@ -8406,6 +10283,6 @@ print("done loading professions")
 
 
 --[[ Notes
-
+    merchant show
 
 ]]
