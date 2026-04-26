@@ -26,7 +26,7 @@ end
 local function updateTheme(this, payload)
     if not payload then return end
 
-    print("Updating", this.type)
+    -- print("Updating", this.type)
 
     this.theme = this.theme or {
         edge = addon.RXPFrame.backdrop.edge,
@@ -50,13 +50,20 @@ local function updateTheme(this, payload)
         this.theme.backgroundColor = payload.backgroundColor
     end
 
-    if payload.showBackground ~= nil and this.frame.SetBackdrop then
-        if payload.showBackground then
+    if this.frame.SetBackdrop then
+        -- Update theme first
+        if this.frame:GetBackdrop() ~= nil or payload.showBackground then
             this.frame:SetBackdrop(this.theme.edge)
             this.frame:SetBackdropColor(unpack(this.theme.backgroundColor))
-        else
+        end
+
+        if payload.showBackground == false then
             this.frame:ClearBackdrop()
         end
+    end
+
+    if this.UpdateSubTheme then
+        this:UpdateSubTheme(payload)
     end
 
     if payload.updateChildren then
@@ -553,6 +560,15 @@ function addon.ui.v2:RegisterRXPV2CurrentStepItem()
         end,
 
         ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function (this, payload)
+            if not payload then return end
+
+            -- print("UpdateSubTheme", this.type)
+
+            this.title:SetBackdrop(this.theme.edge)
+            this.title:SetBackdropColor(unpack(this.theme.backgroundColor))
+        end
     }
 
     --[[-----------------------------------------------------------------------------
