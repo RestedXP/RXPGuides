@@ -165,10 +165,15 @@ step
 	+|cRXP_WARN_Make sure you kill & loot mobs between each tower for|r |T133724:0|t[Bone Fragments]
     .collect 22526,30,91261 --Bone Fragments
 step
+    .goto Western Plaguelands,42.28,66.05
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
+    .complete 5098,2 --Tower Two marked (1)
+step
     #label TowerOne
     .goto Western Plaguelands,40.15,71.50
-    .use 12815 >>Use your |T135432:0|t[Beacon Torch] on the outside corner of the tower's doorway
-	>>|cRXP_WARN_Do not engage the elite inside|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,1 --Tower One marked (1)
 step
     .goto Western Plaguelands,39.46,66.76
@@ -177,8 +182,8 @@ step
 	.target Chromie
 step
     .goto Western Plaguelands,44.24,63.06
-    .use 12815 >>Use your |T135432:0|t[Beacon Torch] on the outside corner of the tower's doorway
-	>>|cRXP_WARN_Do not engage the elite inside|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,3 --Tower Three marked (1)
 step
     .goto Western Plaguelands,45.8,63.3
@@ -188,8 +193,8 @@ step
 	.mob Temporal Parasite
 step
     .goto Western Plaguelands,46.73,71.14
-    .use 12815 >>Use your |T135432:0|t[Beacon Torch] on the outside corner of the tower's doorway
-	>>|cRXP_WARN_Do not engage the elite inside|r
+    .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,4 --Tower Four marked (1)
 step
     .goto Western Plaguelands,46.04,52.33
@@ -304,8 +309,11 @@ step
     >>|cRXP_WARN_Be mindful that mobs have no Z axis range. They can hit you from the bottom of the tower if they're directly below you|r
     .complete 6025,1 --Overlook Hearthglen from a high vantage point (1)
 step
+    #completewith next
+    .subzone 192 >>Exit Hearthglen
+step
     .goto Western Plaguelands,51.92,28.06
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave Hearthglen, then talk to |cRXP_FRIENDLY_Kirsta|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirsta|r
     .turnin 6025 >>Turn in Unfinished Business
 	.target Kirsta Deepshadow
 step
@@ -368,7 +376,7 @@ step
 	.goto Western Plaguelands,43.40,64.40,50,0
 	.goto Western Plaguelands,45.80,65.80,50,0
 	>>Kill all |cRXP_ENEMY_Skeletons|r in Andorhal. Loot them for their |cRXP_LOOT_Fragments|r
-	>>|cRXP_ENEMY_Skeletal Executioners|r |cRXP_WARN_can execute|r
+	>>|cRXP_ENEMY_Skeletal Executioners|r |cRXP_WARN_can|r |T135358:0|t[Execute] |cRXP_WARN_if your health drops <20%|r
     .complete 964,1 --Skeletal Fragments (15)
 	.mob Skeletal Executioner
 	.mob Skeletal Acolyte
