@@ -4424,7 +4424,7 @@ RXPGuides.RegisterGuide([[
 #name 21-23 Ashenvale (Draenei)
 #subgroup RestedXP Alliance 20-32
 #defaultfor Draenei
-#next 23-24 Wetlands
+#next 23-24 Wetlands;24-27 Redridge/Duskwood
 
 step
 #xprate >1.49
@@ -5172,4 +5172,192 @@ step
 step
     .goto Darkshore,32.44,43.71
     .zone Wetlands >> Take the boat to Menethil Harbor
+--
+step
+#xprate >1.49
+.dungeon SFK
+    #completewith BTcheck
+    +|cRXP_WARN_Begin looking for a Shadowfang Keep group. You will soon head to Silverpine Forest to run Shadowfang Keep|r
+step
+#xprate >1.49
+    .goto Wetlands,7.95,56.38
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
+    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
+    .target Dewin Shimmerdawn
+    .zoneskip Wetlands,1
+step << Draenei
+#xprate >1.49
+    .goto Wetlands,9.490,59.693
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
+    .target Shellei Brondir
+    .zoneskip Wetlands,1
+step
+#xprate >1.49
+    .goto Wetlands,10.89,59.66
+    .target First Mate Fitzsimmons
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
+    .accept 288 >> Accept The Third Fleet
+step
+#xprate >1.49
+    .goto Wetlands,10.69,60.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r
+    .home >> Set your Hearthstone to Menethil Harbor
+    .target Innkeeper Helbrek
+    .bindlocation 2104
+step
+#xprate >1.49
+    .goto Wetlands,10.69,60.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r
+    >>|cRXP_BUY_Buy a|r |T132792:0|t[Flagon of Dwarven Honeymead]
+    .complete 288,1 -- Flagon of Dwarven Honeymead (1)
+    .target Innkeeper Helbrek
+step
+#xprate >1.49
+    .isQuestComplete 942
+    #completewith next
+    .goto Wetlands,10.368,61.016,8 >> Travel upstairs towards |cRXP_FRIENDLY_Archaeologist Flagongut|r
+step
+#xprate >1.49
+    .isQuestComplete 942
+    .goto Wetlands,10.843,60.435
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Flagongut|r upstairs
+    .target Archaeologist Flagongut
+    .turnin 942 >> Turn in The Absent Minded Prospector
+step
+#xprate >1.49
+    .goto Wetlands,10.89,59.66
+    .target First Mate Fitzsimmons
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r
+    .turnin 288 >> Turn in The Third Fleet
+step
+#xprate >1.49
+    #label BTcheck
+    .goto Wetlands,10.4,56.0,25,0
+    .goto Wetlands,10.1,56.9,25,0
+    .goto Wetlands,10.6,57.2,25,0
+    .goto Wetlands,10.761,56.737
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
+    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
+	.target Neal Allen
+    .bronzetube
+step
+#xprate >1.49
+.dungeon SFK
+    #completewith next
+    .goto Wetlands,30.8,31.0,0
+    .goto Wetlands,37.8,29.6,0
+    .goto Wetlands,43.0,33.2,0
+    .zone Arathi Highlands >> Grind |cRXP_ENEMY_Mosshides Gnolls|r while looking for a group for Shadowfang Keep
+step
+#xprate >1.49
+.dungeon SFK
+    .goto Arathi Highlands,43.01,55.00,90,0
+    .goto Arathi Highlands,25.45,46.95,90,0
+    .goto Arathi Highlands,21.29,30.24,70,0
+    .goto Hillsbrad Foothills,49.338,52.272
+    >>There are no quests for Shadowfang Keep. You will have to run from Wetlands to Silverpine Forest. Ensure you stay on the road while running through Arathi Highlands, and watchout for the |cRXP_ENEMY_Forsaken Courier|r
+    >>|cRXP_WARN_You don't need to get the Arathi Highlands flight path yet|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .fp Southshore >> Get the Southshore Flight Path
+    .target Cedrik Prose
+    .target Darla Harris
+    .unitscan Forsaken Courier
+step
+#xprate >1.49
+.dungeon SFK
+    .goto Hillsbrad Foothills,14.77,46.72,0
+    .goto Silverpine Forest,44.96,67.92,0
+    .goto Hillsbrad Foothills,14.77,46.72,100,0
+    .goto Silverpine Forest,47.19,69.78,100,0
+    .goto Silverpine Forest,44.712,67.769
+    .subzone 209,2 >> Enter Shadowfang Keep
+step
+#xprate >1.49
+.dungeon SFK
+    +There are no quests for Shadowfang Keep
+    >>Clear Shadowfang Keep. Leave when you are finished
+    .zoneskip 209,1
+step
+#xprate >1.49
+.dungeon SFK
+	.goto Wetlands,63.9,78.6
+	.hs >> Hearth to Menethil Harbor
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+    .subzoneskip 150
+    .subzoneskip 2103
+    .subzoneskip 2104
+    .zoneskip Loch Modan
+step << !Draenei
+#xprate >1.49
+    .goto Wetlands,9.490,59.693
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
+    .fly Stormwind >> Fly to Stormwind City
+    .target Shellei Brondir
+    .zoneskip Stormwind City
+    .zoneskip Redridge Mountains
+    .zoneskip Duskwood
+step << Draenei
+#xprate >1.49
+    .goto Wetlands,53.74,70.33,30,0
+    .goto Wetlands,48.17,67.49,30,0
+    .goto Loch Modan,25.11,8.99,20 >>|cRXP_WARN_Travel through the Dun Algaz tunnel to Loch Modan|r
+    .zoneskip Loch Modan --Completes if you run to Loch
+step << skip --logout skip Draenei
+#xprate >1.49
+	#completewith next
+	.goto Wetlands,63.9,78.6
+    >>Head to the cave at the base of the dam in eastern Wetlands
+	.zone Loch Modan >> Logout on top of the mushrooms at the back of the cave.
+    >>When you log back in, this will teleport you to Thelsamar
+	.link https://www.youtube.com/watch?v=21CuGto26Mk >> |cRXP_WARN_CLICK HERE for a reference|r
+step << Draenei
+#xprate >1.49
+    .goto Loch Modan,33.938,50.954
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .target Thorgrum Borrelson
+step << Draenei
+#xprate >1.49
+	.goto Loch Modan,22.6,70.2,80,0
+	.goto Loch Modan,19.85,63.04,40,0
+	.goto Dun Morogh,86.2,47.0
+    >>|cRXP_WARN_Begin taking off your gear as you run to Dun Morogh|r
+    .deathskip >> Agro the |cRXP_ENEMY_Scarred Crag Boars|r to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r once you are in Dun Morogh
+    .mob Scarred Crag Boar
+step << skip --logout skip Draenei
+#xprate >1.49
+	>>Go inside the South-eastern Trogg cave. Perform a logout skip
+    .goto Dun Morogh,70.63,56.70,60,0
+    .goto Dun Morogh,70.60,54.86
+	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> |cRXP_WARN_CLICK HERE for a reference|r
+	.zone Ironforge >> Logout Skip or travel to Ironforge
+step << Draenei
+#xprate >1.49
+    .goto Dun Morogh,50.084,49.420
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loslor Rudge|r
+    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Loslor Rudge|r doesn't have one|r
+	.target Loslor Rudge
+    .bronzetube
+step << Draenei
+#xprate >1.49
+    .goto Dun Morogh,52.94,35.22,0
+    .goto Dun Morogh,52.94,35.22,50,0
+    .goto Ironforge,19.24,80.76
+    .zone Ironforge >> Travel to Ironforge
+step << Draenei
+#xprate >1.49
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
+step << Draenei
+#xprate >1.49
+    .goto Ironforge,76.61,51.28,0
+    .goto Ironforge,76.61,51.28,10,0
+    .zone Stormwind City >> Take the tram to Stormwind
 ]])

@@ -2788,7 +2788,7 @@ step << Druid
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
-    .complete 30,1 -- Complete the Trial of the Lake
+    .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
     .goto Moonglade,36.52,40.10
@@ -3638,7 +3638,7 @@ step
     .complete 6563,1 --Sapphire of Aku'Mai (20)
 step
     #completewith next
-    .subzone 2897 >>前往暴风城大教堂内，与 Zoram''gar Outpost
+    .subzone 2897 >>前往暴风城大教堂内，与 Zoram'gar Outpost
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战歌信使|r 和 |cRXP_FRIENDLY_玛鲁凯|r
     .turnin 6641 >>交任务《 前往熔光镇》 鞭笞者沃尔沙

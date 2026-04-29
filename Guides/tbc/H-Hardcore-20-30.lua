@@ -2233,7 +2233,7 @@ step
 step
     #optional
     #completewith ZoramTurnins
-    .subzone 2897 >>Travel to Zoram''gar Outpost
+    .subzone 2897 >>Travel to Zoram'gar Outpost
 step
     .goto Ashenvale,12.22,34.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r
@@ -2280,7 +2280,7 @@ step
     #label ZoramTurnins
 step
     #completewith Zoram2
-    .subzone 2897 >>Travel to Zoram''gar Outpost
+    .subzone 2897 >>Travel to Zoram'gar Outpost
 step
     .goto Ashenvale,12.22,34.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r
@@ -2333,7 +2333,7 @@ step << Druid
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
-    .complete 30,1 -- Complete the Trial of the Lake
+    .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
     .goto Moonglade,36.52,40.10
@@ -6094,7 +6094,8 @@ step
     .target Rau Cliffrunner
     .group
     .maxlevel 30
-step
+step 
+     #optional
     .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau|r
     .turnin 1196 >> Turn in The Sacred Flame
@@ -7702,6 +7703,7 @@ step << Shaman
     .turnin 972 >>Turn in Water Sapta
 	.collect 6637,1 --Water Sapta (1)
     .target Islen Waterseer
+    .itemcount 6637,<1
 step << Warrior
     #completewith next
     .goto The Barrens,65.09,47.81,90,0

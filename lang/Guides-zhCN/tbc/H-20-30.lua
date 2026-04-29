@@ -1821,7 +1821,7 @@ step << Druid
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
-    .complete 30,1 -- Complete the Trial of the Lake
+    .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
     .goto Moonglade,36.52,40.10
@@ -7026,6 +7026,7 @@ step << Shaman
     .turnin 972 >>交任务水之灵契
 	.collect 6637,1 --Water Sapta (1)
     .target 水之先知伊斯伦
+    .itemcount 6637,<1
 step
     #optional << !Warrior !Shaman
     .goto The Barrens,65.84,43.86
