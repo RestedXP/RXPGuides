@@ -239,7 +239,7 @@ function addon.ui.v2:RegisterRXPV2ScrollBar()
         scrollframe:SetScript("OnSizeChanged", ScrollFrame_OnSizeChanged)
 
         local scrollbar = CreateFrame("Slider", ("RXPV2ScrollFrame%dScrollBar"):format(num), scrollframe,
-                                      "UIPanelScrollBarTemplate")
+                                      "RXPV2ScrollBarTemplate")
         scrollbar:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 4, -16)
         scrollbar:SetPoint("BOTTOMLEFT", scrollframe, "BOTTOMRIGHT", 4, 16)
         scrollbar:SetMinMaxValues(0, 1000)
@@ -247,6 +247,7 @@ function addon.ui.v2:RegisterRXPV2ScrollBar()
         scrollbar:SetValue(0)
         scrollbar:SetWidth(16)
         scrollbar:Hide()
+        RXPD2 = scrollbar
         -- set the script as the last step, so it doesn't fire yet
         scrollbar:SetScript("OnValueChanged", ScrollBar_OnScrollValueChanged)
 
