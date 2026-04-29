@@ -30,6 +30,7 @@ local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local NewTicker = C_Timer.NewTicker
+local GetMoney = _G.GetMoney
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -1161,6 +1162,7 @@ function addon:OnInitialize()
     RXPCData.exploredZones = RXPCData.exploredZones or {}
     RXPCData.craftedItems = RXPCData.craftedItems or {}
     RXPCData.professions = RXPCData.professions or {}
+    RXPCData.money = 0
 
     local realm = _G.GetRealmName()
     RXPData.realmData = RXPData.realmData or {}
@@ -1231,6 +1233,7 @@ function addon:OnInitialize()
     if addon.professions then
         addon.professions:Setup()
     end
+    RXPCData.money = GetMoney()
 
     if addon.player.season == 2 then
         addon.settings.profile.phase = 6
