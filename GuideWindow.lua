@@ -174,7 +174,7 @@ function addon.SetupGuideWindow()
 
     RXPFrame.UpdateScrollBar()
 
-    addon.v2:GetCurrentStepFrame(addon.player.name)
+    addon.v2:GetActiveStepsFrame(addon.player.name)
 end
 
 RXPFrame:SetScript("OnShow", addon.PLAYER_ENTERING_WORLD)
@@ -1082,8 +1082,8 @@ function CurrentStepFrame.UpdateText()
     local guide = addon.currentGuide
     if not guide then return end
 
-    if addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures then
-        addon.v2:UpdateCurrentStepFrame(activeSteps, addon.player.name)
+    if addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures then
+        addon.v2:UpdateActiveStepsFrame(activeSteps, addon.player.name)
 
         -- TODO, uncomment to prevent parallelism
         -- return
@@ -2512,18 +2512,18 @@ addon.v2.state = {
     player = {},
 }
 
-function addon.v2:GetCurrentStepFrame(player)
+function addon.v2:GetActiveStepsFrame(player)
     self.state.player[player] = self.state.player[player] or {}
 
     if self.state.player[player].activeStepFrame then
         return self.state.player[player].activeStepFrame
     end
 
-    if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
+    if not (addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
 
-    local stepFrame = AceGUI:Create("RXPV2CurrentStepFrame")
+    local stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
     self.state.player[player].activeStepFrame = stepFrame
 
     stepFrame:ClearAllPoints()
@@ -2547,7 +2547,7 @@ function addon.v2:GetCurrentStepFrame(player)
     -- )
 
     stepFrame.IsFeatureEnabled = function()
-        return addon.settings.profile.enableV2CurrentStepFrame, false
+        return addon.settings.profile.enableV2ActiveStepsFrame, false
     end
 
     if player == addon.player.name then
@@ -2650,11 +2650,11 @@ end
 
 function addon.v2:HandleStepBroadcast(obj, sender)
     -- TODO Ensure both people have the guide
-    addon.v2:UpdateCurrentStepFrame(obj.encodedPayload, sender)
+    addon.v2:UpdateActiveStepsFrame(obj.encodedPayload, sender)
 end
 
-function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
-    if not (addon.settings.profile.enableV2CurrentStepFrame and addon.settings.profile.enableBetaFeatures) then
+function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
+    if not (addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
 
@@ -2671,7 +2671,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
         encodedPayload = incomingPayload
     end
 
-    local playerStepFrame = self:GetCurrentStepFrame(player)
+    local playerStepFrame = self:GetActiveStepsFrame(player)
 
     if not playerStepFrame then return end
 
@@ -2703,7 +2703,7 @@ function addon.v2:UpdateCurrentStepFrame(incomingPayload, player)
         c = c + 1
 
         if displayStep then
-            stepItem = AceGUI:Create("RXPV2CurrentStepItem")
+            stepItem = AceGUI:Create("RXPV2ActiveStepItem")
 
             -- if not step.tip then
             --     stepframe:ClearAllPoints()

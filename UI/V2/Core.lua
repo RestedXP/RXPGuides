@@ -19,8 +19,8 @@ function addon.ui.v2:Initialize()
     L = addon.locale.Get
 
     self:RegisterRXPV2ScrollBar()
-    self:RegisterRXPV2CurrentStepFrame()
-    self:RegisterRXPV2CurrentStepItem()
+    self:RegisterRXPV2ActiveStepsFrame()
+    self:RegisterRXPV2ActiveStepItem()
 end
 
 local function updateTheme(this, payload)
@@ -280,11 +280,11 @@ function addon.ui.v2:RegisterRXPV2ScrollBar()
 
 end
 
-function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
+function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2CurrentStepFrame", 1
+    local Type, Version = "RXPV2ActiveStepsFrame", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -507,8 +507,8 @@ function addon.ui.v2:RegisterRXPV2CurrentStepFrame()
 
 end
 
-function addon.ui.v2:RegisterRXPV2CurrentStepItem()
-    local Type, Version = "RXPV2CurrentStepItem", 1
+function addon.ui.v2:RegisterRXPV2ActiveStepItem()
+    local Type, Version = "RXPV2ActiveStepItem", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------

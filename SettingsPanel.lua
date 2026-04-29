@@ -1173,7 +1173,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.0,
                         hidden = isNotAdvanced,
                     },
-                    enableV2CurrentStepFrame = {
+                    enableV2ActiveStepsFrame = {
                         name = fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
                         -- desc = L"",
                         type = "toggle",
@@ -3217,7 +3217,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not self.profile.enableV2CurrentStepFrame
+                            return not self.profile.enableV2ActiveStepsFrame
                         end
                     },
                     activeStepsV2HideBackground = {
@@ -3232,7 +3232,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not self.profile.enableV2CurrentStepFrame
+                            return not self.profile.enableV2ActiveStepsFrame
                         end
                     },
                     arrowHeader = {
