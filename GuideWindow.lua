@@ -2561,8 +2561,8 @@ function addon.v2:GetActiveStepsFrame(player)
         return addon.settings.profile.enableV2ActiveStepsFrame, false
     end
 
-    _G["RXPStepFrame" .. player] = stepFrame
-    addon.enabledFrames["RXPStepFrame" .. player] = stepFrame
+    _G["RXPActiveStepsFrame" .. player] = stepFrame
+    addon.enabledFrames["RXPActiveStepsFrame" .. player] = stepFrame
 
     stepFrame:UpdateTheme({
         showBackground = not addon.settings.profile.activeStepsV2HideBackground,
