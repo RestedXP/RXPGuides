@@ -2524,45 +2524,49 @@ function addon.v2:GetActiveStepsFrame(player)
     end
 
     local stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
+
     self.state.player[player].activeStepFrame = stepFrame
 
     stepFrame:ClearAllPoints()
-    stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
 
     local scrollContainer
     if player == addon.player.name then
+        print("ActiveSteps, player")
+        if addon.settings.profile.anchorOrientation == "bottom" then
+            stepFrame:SetPoint("TOP", addon.RXPFrame, "BOTTOM", 0, 0)
+        else
+            stepFrame:SetPoint("BOTTOM", addon.RXPFrame.GuideName, "TOP", 0, 0)
+        end
+
         stepFrame:SetTitle(nil)
-        stepFrame:EnableResize(false)
-        -- TODO make self ActiveStep not resizeable
+        stepFrame:SetEditable(false)
+        stepFrame:SetLayout("Fill")
+
         scrollContainer = AceGUI:Create("SimpleGroup")
     else
+        stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
         stepFrame:SetTitle(player)
-        stepFrame:EnableResize(true)
+        stepFrame:SetEditable(true)
+
         -- Only use scroll container for party ActiveSteps
         scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
+        scrollContainer:SetLayout("Flow")
     end
 
-    self.state.player[player].scrollContainer = scrollContainer
+    _G["RXPActiveStepsFrame" .. player] = stepFrame
+    addon.enabledFrames["RXPActiveStepsFrame" .. player] = stepFrame
 
     scrollContainer:SetFullWidth(true)
     scrollContainer:SetFullHeight(true)
-    scrollContainer:SetLayout("Flow")
-    stepFrame:AddChild(scrollContainer)
 
-    -- scrollContainer:FixScroll(true)
-    -- scrollContainer.scrollframe:SetScript(
-    --     "OnScrollRangeChanged",
-    --     function(frame)
-    --     frame.obj:DoLayout()
-    --     end
-    -- )
+    self.state.player[player].scrollContainer = scrollContainer
+
+    stepFrame:AddChild(scrollContainer)
 
     stepFrame.IsFeatureEnabled = function()
         return addon.settings.profile.enableV2ActiveStepsFrame, false
     end
 
-    _G["RXPActiveStepsFrame" .. player] = stepFrame
-    addon.enabledFrames["RXPActiveStepsFrame" .. player] = stepFrame
 
     stepFrame:UpdateTheme({
         showBackground = not addon.settings.profile.activeStepsV2HideBackground,

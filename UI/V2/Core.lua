@@ -295,16 +295,28 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
 
     local function Frame_OnMouseDown(frame)
+        if not frame:IsMovable() then
+            return
+        end
+
         frame:StartMoving()
         AceGUI:ClearFocus()
     end
 
     local function Frame_OnMouseUp(frame)
+        if not frame:IsMovable() then
+            return
+        end
+
         frame:StopMovingOrSizing()
         AceGUI:ClearFocus()
     end
 
     local function Title_OnMouseDown(frame)
+        if not frame:GetParent():IsMovable() then
+            return
+        end
+
         frame:GetParent():StartMoving()
         AceGUI:ClearFocus()
     end
@@ -345,7 +357,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             this:SetTitle()
             this:ApplyStatus()
             this:Show()
-            this:EnableResize(true)
+            this:SetEditable(true)
             this.IsFeatureEnabled = function() return true, false end
         end,
 
@@ -410,14 +422,18 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             end
         end,
 
-        ["EnableResize"] = function(this, resizeable)
-            this.frame:SetResizable(resizeable or false)
+        ["SetEditable"] = function(this, editable)
+            this.frame:SetResizable(editable or false)
 
-            if resizeable then
+            if editable then
                 this.sizer:Show()
             else
                 this.sizer:Hide()
             end
+
+            this.frame:SetMovable(editable or false)
+
+            this.savePosition = editable
         end,
 
         -- called to set an external table to store status in
