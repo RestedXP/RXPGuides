@@ -240,6 +240,9 @@ local settingsDBDefaults = {
         -- Grouping
         shareQuests = false,
         shareActiveSteps = false,
+
+        --V2 UI
+        activeStepsV2WindowScale = 1.0
     }
 }
 
