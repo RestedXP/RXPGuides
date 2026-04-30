@@ -2531,11 +2531,13 @@ function addon.v2:GetActiveStepsFrame(player)
 
     local scrollContainer
     if player == addon.player.name then
-        print("ActiveSteps, player")
-        if addon.settings.profile.anchorOrientation == "bottom" then
-            stepFrame:SetPoint("TOP", addon.RXPFrame, "BOTTOM", 0, 0)
+        -- Temporarily during parallel work
+        if addon.settings.profile.anchorOrientation == "bottom" or addon.settings.profile.debug then
+            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", 0, 0)
+            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", 0, 0)
         else
-            stepFrame:SetPoint("BOTTOM", addon.RXPFrame.GuideName, "TOP", 0, 0)
+            stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", 0, 0)
+            stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", 0, 0)
         end
 
         stepFrame:SetTitle(nil)
