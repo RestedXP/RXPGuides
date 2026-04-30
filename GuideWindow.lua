@@ -2523,14 +2523,12 @@ function addon.v2:GetActiveStepsFrame(player)
         return
     end
 
-    local stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
-
-    self.state.player[player].activeStepFrame = stepFrame
-
-    stepFrame:ClearAllPoints()
-
+    local stepFrame
     local childContainer
     if player == addon.player.name then
+        stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
+        stepFrame:ClearAllPoints()
+
         -- Temporarily during parallel work
         if addon.settings.profile.anchorOrientation == "bottom" or addon.settings.profile.debug then
             stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", 0, 0)
@@ -2540,35 +2538,35 @@ function addon.v2:GetActiveStepsFrame(player)
             stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", 0, 0)
         end
 
-        stepFrame:SetTitle(nil)
-        stepFrame:SetEditable(false)
+        stepFrame:SetLayout("Flow")
+        childContainer = stepFrame
+    else
+        stepFrame = AceGUI:Create("RXPV2ActivePartyStepsFrame")
+        stepFrame:ClearAllPoints()
         stepFrame:SetLayout("Fill")
 
-        childContainer = AceGUI:Create("SimpleGroup")
-    else
         stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
         stepFrame:SetTitle(player)
-        stepFrame:SetEditable(true)
 
         -- Only use scroll container for party ActiveSteps
         childContainer = AceGUI:Create("RXPV2ScrollFrame")
         childContainer:SetLayout("Flow")
+        childContainer:SetFullWidth(true)
+        childContainer:SetFullHeight(true)
+
+        stepFrame:AddChild(childContainer)
     end
+
+    self.state.player[player].activeStepFrame = stepFrame
 
     _G["RXPActiveStepsFrame" .. player] = stepFrame
     addon.enabledFrames["RXPActiveStepsFrame" .. player] = stepFrame
 
-    childContainer:SetFullWidth(true)
-    childContainer:SetFullHeight(true)
-
     self.state.player[player].childContainer = childContainer
-
-    stepFrame:AddChild(childContainer)
 
     stepFrame.IsFeatureEnabled = function()
         return addon.settings.profile.enableV2ActiveStepsFrame, false
     end
-
 
     stepFrame:UpdateTheme({
         showBackground = not addon.settings.profile.activeStepsV2HideBackground,

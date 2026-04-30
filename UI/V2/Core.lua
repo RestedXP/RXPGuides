@@ -299,10 +299,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
-            this.frame:SetParent(UIParent)
-            this.frame:SetFrameStrata("MEDIUM")
-            this.frame:SetFrameLevel(100)
-            this:ApplyStatus()
             this:Show()
             this.IsFeatureEnabled = function() return true, false end
 
@@ -310,42 +306,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             this.savePosition = false
         end,
 
-        ["OnRelease"] = function(this)
-            this.status = nil
-            wipe(this.localstatus)
-        end,
-
-        ["OnWidthSet"] = function(this, width)
-            local content = this.content
-            local contentwidth = width - 34
-            if contentwidth < 0 then contentwidth = 0 end
-            content:SetWidth(contentwidth)
-            content.width = contentwidth
-        end,
-
-        ["GetWidth"] = function(this) return this.content.width end,
-
-        ["GetHeight"] = function(this)
-            print("GetHeight", this.content.height, this.frame:GetHeight())
-            return this.content.height
-        end,
-
-        ["SetSize"] = function(this, width, height)
-            print("SetSize", width, height)
-            this:SetWidth(width)
-            this:SetHeight(height)
-        end,
-
         ["SetScale"] = function(this, scale)
             this.frame:SetScale(scale)
-        end,
-
-        ["OnHeightSet"] = function(this, height)
-            local content = this.content
-            local contentheight = height - 57
-            if contentheight < 0 then contentheight = 0 end
-            content:SetHeight(contentheight)
-            content.height = contentheight
         end,
 
         ["UpdateTheme"] = updateTheme,
@@ -362,25 +324,15 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             end
         end,
 
-        -- called to set an external table to store status in
-        ["SetStatusTable"] = function(this, status)
-            assert(type(status) == "table")
-            this.status = status
-            this:ApplyStatus()
+        ["LayoutFinished"] = function(this, width, height)
+            if this.noAutoHeight then return end
+            this:SetHeight((height + 10) or 0)
         end,
 
-        ["ApplyStatus"] = function(this)
-            local status = this.status or this.localstatus
-            local frame = this.frame
-            this:SetWidth(status.width or 225)
-            this:SetHeight(status.height or 105)
-            frame:ClearAllPoints()
-            if status.top and status.left then
-                frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
-                frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
-            else
-                frame:SetPoint("CENTER")
-            end
+        ["OnHeightSet"] = function(this, height)
+            local content = this.content
+            content:SetHeight(height)
+            content.height = height
         end
     }
 
@@ -389,7 +341,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     -------------------------------------------------------------------------------]]
 
     local function Constructor()
-        local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+        local frame = CreateFrame("Frame", nil, addon.RXPFrame or UIParent, BackdropTemplateMixin and "BackdropTemplate")
         frame:Hide()
 
         frame:EnableMouse(true)
@@ -411,7 +363,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         content:SetPoint("BOTTOMRIGHT", -4, 6)
 
         local widget = {
-            localstatus = {},
             content = content,
             frame = frame,
             type = Type
