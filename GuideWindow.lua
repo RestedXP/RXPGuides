@@ -2529,8 +2529,19 @@ function addon.v2:GetActiveStepsFrame(player)
     stepFrame:ClearAllPoints()
     stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
 
-    -- TODO stylize ScrollFrame
-    local scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
+    local scrollContainer
+    if player == addon.player.name then
+        stepFrame:SetTitle(nil)
+
+        -- TODO make self ActiveStep not resizeable
+        scrollContainer = AceGUI:Create("SimpleGroup")
+    else
+        stepFrame:SetTitle(player)
+
+        -- Only use scroll container for party ActiveSteps
+        scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
+    end
+
     self.state.player[player].scrollContainer = scrollContainer
 
     scrollContainer:SetFullWidth(true)
@@ -2548,12 +2559,6 @@ function addon.v2:GetActiveStepsFrame(player)
 
     stepFrame.IsFeatureEnabled = function()
         return addon.settings.profile.enableV2ActiveStepsFrame, false
-    end
-
-    if player == addon.player.name then
-        stepFrame:SetTitle(nil)
-    else
-        stepFrame:SetTitle(player)
     end
 
     _G["RXPStepFrame" .. player] = stepFrame
