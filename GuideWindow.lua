@@ -2529,7 +2529,7 @@ function addon.v2:GetActiveStepsFrame(player)
 
     stepFrame:ClearAllPoints()
 
-    local scrollContainer
+    local childContainer
     if player == addon.player.name then
         -- Temporarily during parallel work
         if addon.settings.profile.anchorOrientation == "bottom" or addon.settings.profile.debug then
@@ -2544,26 +2544,26 @@ function addon.v2:GetActiveStepsFrame(player)
         stepFrame:SetEditable(false)
         stepFrame:SetLayout("Fill")
 
-        scrollContainer = AceGUI:Create("SimpleGroup")
+        childContainer = AceGUI:Create("SimpleGroup")
     else
         stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
         stepFrame:SetTitle(player)
         stepFrame:SetEditable(true)
 
         -- Only use scroll container for party ActiveSteps
-        scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
-        scrollContainer:SetLayout("Flow")
+        childContainer = AceGUI:Create("RXPV2ScrollFrame")
+        childContainer:SetLayout("Flow")
     end
 
     _G["RXPActiveStepsFrame" .. player] = stepFrame
     addon.enabledFrames["RXPActiveStepsFrame" .. player] = stepFrame
 
-    scrollContainer:SetFullWidth(true)
-    scrollContainer:SetFullHeight(true)
+    childContainer:SetFullWidth(true)
+    childContainer:SetFullHeight(true)
 
-    self.state.player[player].scrollContainer = scrollContainer
+    self.state.player[player].childContainer = childContainer
 
-    stepFrame:AddChild(scrollContainer)
+    stepFrame:AddChild(childContainer)
 
     stepFrame.IsFeatureEnabled = function()
         return addon.settings.profile.enableV2ActiveStepsFrame, false
@@ -2693,7 +2693,7 @@ function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
     end
 
     -- TODO check stepids and only release and rebuild if a new stepid exists
-    self.state.player[player].scrollContainer:ReleaseChildren()
+    self.state.player[player].childContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
     local anchor = 0
@@ -2746,7 +2746,7 @@ function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
                 stepItem:AddChild(subStepItem)
             end
 
-            self.state.player[player].scrollContainer:AddChild(stepItem)
+            self.state.player[player].childContainer:AddChild(stepItem)
 
             -- TODO Find stickies first
 
