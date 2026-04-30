@@ -4399,24 +4399,26 @@ function addon.settings:SaveFramePositions()
           offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        addon.settings.profile.frameSizes[frameName] = {
-            frame:GetWidth(), frame:GetHeight()
-        }
-
-        addon.settings.profile.framePositions[frameName] = {}
-
-        for i = 1, frame:GetNumPoints() or 0 do
-            point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY, offsetYOrNil =
-                frame:GetPoint(i)
-
-            if type(relativeToFrameOrPoint) == "table" then
-                relativeToFrameOrPoint = relativeToFrameOrPoint:GetName()
-            end
-
-            addon.settings.profile.framePositions[frameName][i] = {
-                point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
-                offsetYOrNil
+        if frame.savePosition ~= false then
+            addon.settings.profile.frameSizes[frameName] = {
+                frame:GetWidth(), frame:GetHeight()
             }
+
+            addon.settings.profile.framePositions[frameName] = {}
+
+            for i = 1, frame:GetNumPoints() or 0 do
+                point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY, offsetYOrNil =
+                    frame:GetPoint(i)
+
+                if type(relativeToFrameOrPoint) == "table" then
+                    relativeToFrameOrPoint = relativeToFrameOrPoint:GetName()
+                end
+
+                addon.settings.profile.framePositions[frameName][i] = {
+                    point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
+                    offsetYOrNil
+                }
+            end
         end
     end
 
@@ -4428,27 +4430,29 @@ function addon.settings:LoadFramePositions()
     local p = addon.settings.profile
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        -- Wipe alpha frame data
-        -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
-        if p.framePositions[frameName] and p.framePositions[frameName][1] and
-            type(p.framePositions[frameName][1]) ~= "table" then
-            p.framePositions[frameName] = nil
-        end
-
-        if p.framePositions[frameName] then
-            for i = 1, frame:GetNumPoints() or 0 do
-                point, relativeToName, relativePoint, offsetX, offsetYOrNil =
-                    unpack(p.framePositions[frameName][i] or {})
-
-                frame:ClearAllPoints()
-                result, reason = pcall(frame.SetPoint, frame, point,
-                                       relativeToName, relativePoint, offsetX,
-                                       offsetYOrNil)
+        if frame.savePosition ~= false and p ~= nil then
+            -- Wipe alpha frame data
+            -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
+            if p.framePositions[frameName] and p.framePositions[frameName][1] and
+                type(p.framePositions[frameName][1]) ~= "table" then
+                p.framePositions[frameName] = nil
             end
-        end
 
-        if p.frameSizes[frameName] then
-            frame:SetSize(unpack(p.frameSizes[frameName]))
+            if p.framePositions[frameName] then
+                for i = 1, frame:GetNumPoints() or 0 do
+                    point, relativeToName, relativePoint, offsetX, offsetYOrNil =
+                        unpack(p.framePositions[frameName][i] or {})
+
+                    frame:ClearAllPoints()
+                    result, reason = pcall(frame.SetPoint, frame, point,
+                                        relativeToName, relativePoint, offsetX,
+                                        offsetYOrNil)
+                end
+            end
+
+            if p.frameSizes[frameName] then
+                frame:SetSize(unpack(p.frameSizes[frameName]))
+            end
         end
     end
 
