@@ -311,6 +311,11 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
     local function MoverSizer_OnMouseUp(mover)
         local frame = mover:GetParent()
+
+        if not frame:IsResizable() then
+            return
+        end
+
         frame:StopMovingOrSizing()
         local this = frame.obj
         local status = this.status or this.localstatus
@@ -321,6 +326,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     end
 
     local function Sizer_OnMouseDown(frame)
+        if not frame:GetParent():IsResizable() then
+            return
+        end
+
         frame:GetParent():StartSizing("BOTTOMRIGHT")
         AceGUI:ClearFocus()
     end
@@ -401,7 +410,15 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             end
         end,
 
-        ["EnableResize"] = function(this, state) this.frame:SetResizable(state or false) end,
+        ["EnableResize"] = function(this, resizeable)
+            this.frame:SetResizable(resizeable or false)
+
+            if resizeable then
+                this.sizer:Show()
+            else
+                this.sizer:Hide()
+            end
+        end,
 
         -- called to set an external table to store status in
         ["SetStatusTable"] = function(this, status)

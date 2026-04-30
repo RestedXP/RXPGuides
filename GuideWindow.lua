@@ -2532,12 +2532,12 @@ function addon.v2:GetActiveStepsFrame(player)
     local scrollContainer
     if player == addon.player.name then
         stepFrame:SetTitle(nil)
-
+        stepFrame:EnableResize(false)
         -- TODO make self ActiveStep not resizeable
         scrollContainer = AceGUI:Create("SimpleGroup")
     else
         stepFrame:SetTitle(player)
-
+        stepFrame:EnableResize(true)
         -- Only use scroll container for party ActiveSteps
         scrollContainer = AceGUI:Create("RXPV2ScrollFrame")
     end
