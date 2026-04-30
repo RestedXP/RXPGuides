@@ -20,6 +20,7 @@ function addon.ui.v2:Initialize()
 
     self:RegisterRXPV2ScrollFrame()
     self:RegisterRXPV2ActiveStepsFrame()
+    self:RegisterRXPV2ActivePartyStepsFrame()
     self:RegisterRXPV2ActiveStepItem()
 end
 
