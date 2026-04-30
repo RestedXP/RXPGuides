@@ -294,40 +294,168 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
     local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
 
-    local function Frame_OnMouseDown(frame)
-        if not frame:IsMovable() then
-            return
-        end
+    --[[-----------------------------------------------------------------------------
+    Methods
+    -------------------------------------------------------------------------------]]
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.frame:SetParent(UIParent)
+            this.frame:SetFrameStrata("MEDIUM")
+            this.frame:SetFrameLevel(100)
+            this:ApplyStatus()
+            this:Show()
+            this.IsFeatureEnabled = function() return true, false end
 
+            -- Do not SaveFramePositions / LoadFramePositions
+            this.savePosition = false
+        end,
+
+        ["OnRelease"] = function(this)
+            this.status = nil
+            wipe(this.localstatus)
+        end,
+
+        ["OnWidthSet"] = function(this, width)
+            local content = this.content
+            local contentwidth = width - 34
+            if contentwidth < 0 then contentwidth = 0 end
+            content:SetWidth(contentwidth)
+            content.width = contentwidth
+        end,
+
+        ["GetWidth"] = function(this) return this.content.width end,
+
+        ["GetHeight"] = function(this)
+            print("GetHeight", this.content.height, this.frame:GetHeight())
+            return this.content.height
+        end,
+
+        ["SetSize"] = function(this, width, height)
+            print("SetSize", width, height)
+            this:SetWidth(width)
+            this:SetHeight(height)
+        end,
+
+        ["SetScale"] = function(this, scale)
+            this.frame:SetScale(scale)
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            local content = this.content
+            local contentheight = height - 57
+            if contentheight < 0 then contentheight = 0 end
+            content:SetHeight(contentheight)
+            content.height = contentheight
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["Hide"] = function(this) this.frame:Hide() end,
+
+        ["Show"] = function(this) this.frame:Show() end,
+
+        ["SetShown"] = function(this)
+            if this.frame:IsShown() then
+                this.frame:Hide()
+            else
+                this.frame:Show()
+            end
+        end,
+
+        -- called to set an external table to store status in
+        ["SetStatusTable"] = function(this, status)
+            assert(type(status) == "table")
+            this.status = status
+            this:ApplyStatus()
+        end,
+
+        ["ApplyStatus"] = function(this)
+            local status = this.status or this.localstatus
+            local frame = this.frame
+            this:SetWidth(status.width or 225)
+            this:SetHeight(status.height or 105)
+            frame:ClearAllPoints()
+            if status.top and status.left then
+                frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
+                frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
+            else
+                frame:SetPoint("CENTER")
+            end
+        end
+    }
+
+    --[[-----------------------------------------------------------------------------
+    Constructor
+    -------------------------------------------------------------------------------]]
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+        frame:Hide()
+
+        frame:EnableMouse(true)
+        frame:SetMovable(false)
+        frame:SetResizable(false)
+        frame:SetToplevel(true)
+
+        frame:SetFrameStrata("BACKGROUND")
+        frame:SetFrameLevel(100)
+        frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
+        frame:SetBackdropColor(unpack(addon.colors.background))
+
+        frame:SetScript("OnShow", Frame_OnShow)
+        frame:SetScript("OnHide", Frame_OnClose)
+
+        -- Container Support
+        local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        content:SetPoint("TOPLEFT", 6, -4)
+        content:SetPoint("BOTTOMRIGHT", -4, 6)
+
+        local widget = {
+            localstatus = {},
+            content = content,
+            frame = frame,
+            type = Type
+        }
+        for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+
+end
+
+function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
+    --[[-----------------------------------------------------------------------------
+    Frame Container
+    -------------------------------------------------------------------------------]]
+    local Type, Version = "RXPV2ActivePartyStepsFrame", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    --[[-----------------------------------------------------------------------------
+    Scripts
+    -------------------------------------------------------------------------------]]
+    local function Frame_OnShow(frame) frame.obj:Fire("OnShow") end
+
+    local function Frame_OnClose(frame) frame.obj:Fire("OnClose") end
+
+    local function Frame_OnMouseDown(frame)
         frame:StartMoving()
         AceGUI:ClearFocus()
     end
 
     local function Frame_OnMouseUp(frame)
-        if not frame:IsMovable() then
-            return
-        end
-
         frame:StopMovingOrSizing()
         AceGUI:ClearFocus()
     end
 
     local function Title_OnMouseDown(frame)
-        if not frame:GetParent():IsMovable() then
-            return
-        end
-
         frame:GetParent():StartMoving()
         AceGUI:ClearFocus()
     end
 
     local function MoverSizer_OnMouseUp(mover)
         local frame = mover:GetParent()
-
-        if not frame:IsResizable() then
-            return
-        end
-
         frame:StopMovingOrSizing()
         local this = frame.obj
         local status = this.status or this.localstatus
@@ -338,10 +466,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     end
 
     local function Sizer_OnMouseDown(frame)
-        if not frame:GetParent():IsResizable() then
-            return
-        end
-
         frame:GetParent():StartSizing("BOTTOMRIGHT")
         AceGUI:ClearFocus()
     end
@@ -357,7 +481,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             this:SetTitle()
             this:ApplyStatus()
             this:Show()
-            this:SetEditable(true)
             this.IsFeatureEnabled = function() return true, false end
         end,
 
@@ -397,15 +520,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         ["SetTitle"] = function(this, title)
             this.titletext:SetText(title)
-            if title == "" or not title then
-                this.title:Hide()
-                this.title:SetSize(10, 17)
-            else
-                this.title:SetAlpha(1)
-                this.titletext:SetText(title)
-                this.title:SetSize(this.titletext:GetStringWidth() + 10, 17)
-                this.title:Show()
-            end
+            this.title:SetSize(this.titletext:GetStringWidth() + 10, 17)
+            this.title:Show()
         end,
 
         ["UpdateTheme"] = updateTheme,
@@ -422,20 +538,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             end
         end,
 
-        ["SetEditable"] = function(this, editable)
-            this.frame:SetResizable(editable or false)
-
-            if editable then
-                this.sizer:Show()
-            else
-                this.sizer:Hide()
-            end
-
-            this.frame:SetMovable(editable or false)
-
-            this.savePosition = editable
-        end,
-
         -- called to set an external table to store status in
         ["SetStatusTable"] = function(this, status)
             assert(type(status) == "table")
@@ -446,8 +548,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         ["ApplyStatus"] = function(this)
             local status = this.status or this.localstatus
             local frame = this.frame
-            this:SetWidth(status.width or 220)
-            this:SetHeight(status.height or 100)
+
+            this:SetWidth(status.width or 225)
+            this:SetHeight(status.height or 105)
             frame:ClearAllPoints()
             if status.top and status.left then
                 frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
@@ -467,7 +570,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:Hide()
 
         frame:EnableMouse(true)
-        frame:SetMovable(true) -- TODO only allow for not-player
+        frame:SetMovable(true)
         frame:SetResizable(true)
         frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
