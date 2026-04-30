@@ -18,7 +18,7 @@ function addon.ui.v2:Initialize()
     -- Locales.lua loads after this file is included
     L = addon.locale.Get
 
-    self:RegisterRXPV2ScrollBar()
+    self:RegisterRXPV2ScrollFrame()
     self:RegisterRXPV2ActiveStepsFrame()
     self:RegisterRXPV2ActiveStepItem()
 end
@@ -79,7 +79,7 @@ local function updateTheme(this, payload)
     end
 end
 
-function addon.ui.v2:RegisterRXPV2ScrollBar()
+function addon.ui.v2:RegisterRXPV2ScrollFrame()
     --[[-----------------------------------------------------------------------------
     ScrollFrame Container
     Plain container that scrolls its content and doesn't grow in height.
