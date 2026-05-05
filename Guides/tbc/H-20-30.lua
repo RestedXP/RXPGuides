@@ -1318,7 +1318,6 @@ step
     .turnin 1130 >> Turn in Melor Sends Word
     .accept 1131 >> Accept Steelsnap
     .target Melor Stonehoof
-    --TODO: Beta check if this quest can't be accepted without doing 1130 first
     .isOnQuest 1130
 step
     #label Steelsnap1

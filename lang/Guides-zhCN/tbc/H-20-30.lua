@@ -1010,7 +1010,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .accept 1131 >>接受任务钢齿土狼
     .target 梅洛·石蹄
-    --TODO: Beta check if this quest can't be accepted without doing 1130 first
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌瑞克|r 对话

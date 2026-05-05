@@ -1134,7 +1134,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
     .accept 1131 >> Accept Steelsnap
     .target Melor Stonehoof
-    --TODO: Beta check if this quest can't be accepted without doing 1130 first
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
@@ -3930,6 +3929,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 1067 >> Turn in Return to Thunder Bluff
     .target Apothecary Zamah
+    .isOnQuest 1067
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
@@ -4000,6 +4000,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .accept 879 >> Accept Betrayal from Within
     .target Mangletooth
+    .isQuestTurnedIn 5052
 step
     #completewith CampTHS2
     +|cRXP_WARN_Use your remaining|r |T134128:0|t[Blood Shards] |cRXP_WARN_to get|r |T136104:0|t[Razorhide] |cRXP_WARN_and other buffs|r << !Mage !Druid
@@ -4088,6 +4089,7 @@ step
     .goto The Barrens,42.91,69.86,60,0
 	>>Loot the |cRXP_PICK_Silithid Mounds|r for |cRXP_LOOT_Silithid Eggs|r
 	.complete 868,1 --Silithid Egg (12)
+    .isOnQuest 868
 step << Shaman
     #completewith next
     .goto The Barrens,44.76,74.79,45,0
@@ -4183,6 +4185,7 @@ step
     >>|cRXP_ENEMY_Kuz|r |cRXP_WARN_patrols around slightly|r
     .complete 879,1 --Kuz's Skull (1)
     .unitscan Kuz
+    .isOnQuest 879
 step
     #label Lok
     .goto The Barrens,40.31,80.70,20,0
@@ -4190,6 +4193,7 @@ step
     >>Kill |cRXP_ENEMY_Lok Orcbane|r. Loot him for |cRXP_LOOT_Lok's Skull|r
     .complete 879,3 --Lok's Skull (1)
     .mob Lok Orcbane
+    .isOnQuest 879
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Razormane Stalkers|r and |cRXP_ENEMY_Razormane Pathfinders|r. Loot them for a |T135640:0|t[|cRXP_LOOT_Razormane Backstabber|r]
@@ -4221,6 +4225,7 @@ step
     >>Kill |cRXP_ENEMY_Nak|r. Loot him for |cRXP_LOOT_Nak's Skull|r
     .complete 879,2 --Nak's Skull (1)
     .mob Nak
+    .isOnQuest 879
 step
     #label Backstabber
     #loop
@@ -4485,8 +4490,16 @@ step
     .turnin 879 >> Turn in Betrayal from Within
     .accept 906 >> Accept Betrayal from Within
     .target Mangletooth
+    .isOnQuest 879
 step
-    #completewith next
+    #optional
+    .goto The Barrens,44.54,59.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
+    .accept 906 >> Accept Betrayal from Within
+    .target Mangletooth
+    .isQuestTurnedIn 879
+step
+    #completewith XroadsEnd
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fly Crossroads >>Fly to The Crossroads
@@ -4497,11 +4510,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 906 >> Turn in Betrayal from Within
     .target Thork
+    .isOnQuest 906
 step
     .goto The Barrens,51.07,29.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
     .turnin 868 >> Turn in Egg Hunt
     .target Korran
+    .isOnQuest 868
 step
     #completewith IshaAwak
     #optional
@@ -4519,6 +4534,8 @@ step << Rogue
     .vendor >>|cRXP_BUY_Stock up on|r |T134387:0|t[Flash Powder] |cRXP_BUY_and supplies for|r |T132273:0|t[Instant Poison]
     .target Hula'mahi
     .subzoneskip 380,1
+step
+    #label XroadsEnd --hidden step for #completewith
 step << Hunter
     #completewith next
     .goto The Barrens,51.50,30.34
@@ -5682,7 +5699,7 @@ RXPGuides.RegisterGuide([[
 #name 29-31 Thousand Needles
 #version 7
 #subgroup RXP TBC Survival Guide 1-30
-#next 31-33 Hillsbrad/Arathi part 1
+#next RXP TBC Survival Guide (H)\31-33 Hillsbrad/Arathi part 1
 
 step << Shaman/Warrior
     #ah
@@ -5746,6 +5763,14 @@ step
     .turnin 1195 >> Turn in The Sacred Flame
     .accept 1196 >> Accept The Sacred Flame
     .target Zangen Stonehoof
+    .isOnQuest 1195
+step
+    #optional
+    .goto Thunder Bluff,54.90,51.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
+    .accept 1196 >> Accept The Sacred Flame
+    .target Zangen Stonehoof
+    .isQuestTurnedIn 1195
 step << Druid
     .goto Thunder Bluff,76.79,31.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kym|r
@@ -5769,6 +5794,14 @@ step << Druid
     .target Kym Wildmane
     .xp <30,1
 step
+    .goto Thunder Bluff,61.53,80.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .turnin 1130 >> Turn in Melor Sends Word
+    .accept 1131 >> Accept Steelsnap
+    .target Melor Stonehoof
+    .isOnQuest 1130
+step
+    #optional
     .goto Thunder Bluff,61.53,80.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
     .accept 1131 >>Accept Steelsnap
@@ -5977,6 +6010,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack|r
     .accept 1153 >> Accept A New Ore Sample
     .target Tatternack Steelforge
+    .isQuestTurnedIn 893
 step
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
@@ -5996,6 +6030,17 @@ step << Druid/Shaman/Hunter
     .train 783,3 << Druid --Travel form
     .train 2645,3 << Shaman --Ghost Wolf
     .train 5118,3 << Hunter -- Cheetah
+step << Shaman
+    #completewith next
+    .goto The Barrens,43.84,77.28,25,0
+    .goto The Barrens,43.62,77.29,25,0
+    .goto The Barrens,43.42,77.41,15 >>Travel toward |cRXP_FRIENDLY_Brine|r
+step << Shaman
+    .goto The Barrens,43.42,77.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brine|r
+    .turnin 1534 >>Turn in Call of Water
+    .accept 220 >>Accept Call of Water
+    .target Brine
 step
     #completewith next
     .goto The Barrens,48.63,84.49,110 >>Travel to Bael Modan
@@ -6094,6 +6139,7 @@ step
     .target Rau Cliffrunner
     .group
     .maxlevel 30
+    .isOnQuest 1196
 step 
      #optional
     .goto Thousand Needles,46.10,51.60
@@ -6283,6 +6329,7 @@ step
     >>Kill |cRXP_ENEMY_Gravelsnout Surveyors|r, |cRXP_ENEMY_Gravelsnout Diggers|r, and |cRXP_ENEMY_Gibblesnik|r (if he's up). Loot them for an |cRXP_LOOT_Ore Sample|r
     .complete 1153,1 --Unrefined Ore Sample (1)
     .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
+    .isOnQuest 1153
 step
     #completewith next
     .goto Thousand Needles,56.36,50.39,20,0
@@ -7467,6 +7514,7 @@ step
     >>Kill |cRXP_ENEMY_Gravelsnout Surveyors|r, |cRXP_ENEMY_Gravelsnout Diggers|r, and |cRXP_ENEMY_Gibblesnik|r (if he's up). Loot them for an |cRXP_LOOT_Ore Sample|r
     .complete 1153,1 --Unrefined Ore Sample (1)
     .unitscan Gravelsnout Digger;Gravelsnout Surveyor;Gibblesnik
+    .isOnQuest 1153
 step
     #optional
     .goto Thousand Needles,43.12,36.86
@@ -7589,6 +7637,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tatternack|r
     .turnin 1153 >> Turn in A New Ore Sample
     .target Tatternack Steelforge
+    .isOnQuest 1153
 step << Tauren
     #optional
     #completewith next
