@@ -104,7 +104,7 @@ step
 step
     .goto Tirisfal Glades,83.29,72.34
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mickey|r
-    .accept 5901 >>Turn in A Plague Upon Thee
+    .accept 5901 >>Accept A Plague Upon Thee
 	.target Mickey Levine
 step
     #completewith next
