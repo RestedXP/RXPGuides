@@ -263,7 +263,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
     elseif obj.command == 'STEP' then
-        addon.v2:HandleStepBroadcast(obj, sender)
+        addon.v2.events:Trigger("UpdateActiveSteps", obj.encodedPayload, sender)
     end
 
 end

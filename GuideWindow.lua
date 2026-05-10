@@ -2658,11 +2658,6 @@ function addon.v2:DecodePlayerActiveSteps(encodedPayload)
     return deserialized
 end
 
-function addon.v2:HandleStepBroadcast(obj, sender)
-    -- TODO Ensure both people have the guide
-    addon.v2:UpdateActiveStepsFrame(obj.encodedPayload, sender)
-end
-
 function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
     if not (addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures) then
         return
