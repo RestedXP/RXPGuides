@@ -1240,6 +1240,8 @@ function addon:OnInitialize()
     addon.arrowFrame.text:SetFont(addon.font,
                                   addon.settings.profile.arrowText, "OUTLINE")
     addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
+
+    addon.v2:Setup()
 end
 
 function addon:OnEnable()
@@ -2221,3 +2223,31 @@ function addon.stepLogic.ProfessionCheck(step)
 end
 
 RXP = addon -- debug purposes
+
+addon.v2 = addon.v2 or {}
+function addon.v2:Setup()
+    addon.v2.events:Setup()
+end
+
+addon.v2.events = addon:NewModule("V2Events", "AceEvent-3.0")
+addon.v2.events.messagePrefix = "RXPGuidesV2_"
+function addon.v2.events:Setup()
+    addon.v2.events:Register("UpdateActiveSteps")
+end
+
+function addon.v2.events:Register(key)
+    if not key then return end
+    addon.comms.PrettyDebug("addon.v2.events:Register", key)
+    -- self:RegisterMessage("GatherMate2NodeAdded", "ScheduleUpdate")
+    self:RegisterMessage(addon.v2.events.messagePrefix .. key, key)
+end
+
+function addon.v2.events:Trigger(key, ...)
+    if not key then return end
+
+    self:SendMessage(addon.v2.events.messagePrefix .. key, ...)
+end
+
+function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
+    addon.v2:UpdateActiveStepsFrame(activeSteps, name)
+end

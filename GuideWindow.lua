@@ -1083,7 +1083,8 @@ function CurrentStepFrame.UpdateText()
     if not guide then return end
 
     if addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures then
-        addon.v2:UpdateActiveStepsFrame(activeSteps, addon.player.name)
+        -- TODO throttle, maybe moot when more conversion to v2.events
+        addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
 
         -- TODO, uncomment to prevent parallelism
         -- return
