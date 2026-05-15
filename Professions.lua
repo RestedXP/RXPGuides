@@ -120,6 +120,29 @@ local function sortSelectedRecipesBy(selectedRecipes, option, order)
     end)
 end
 
+--Auxilliary function to the one below it. Should never be called directly
+local function deepCopyTableAUX(tbl, visited)
+    visited = visited or {}
+    --Base cases
+    if tbl == nil then return nil end
+    if visited[tbl] then return visited[tbl] end
+
+    local copy = {}
+    visited[tbl] = copy
+    for k, v in pairs(tbl) do
+        copy[deepCopyTableAUX(k, visited)] = deepCopyTableAUX(v, visited)
+    end
+    return copy
+end
+
+--Creates a deep copy of a table recursively, based on a graph oriented approach
+local function deepCopyTable(tbl)
+    if type(tbl) ~= "table" then return nil end
+    return deepCopyTableAUX(tbl, {})
+end
+
+
+
 
 --local enums
 local EVENTS_TO_REGISTER_AH = {
@@ -16934,12 +16957,12 @@ local function calculateRecipeRawPrice(professionName)
     -- Check whether we evaluated all the recipes
     local recipeCount = tcount(profSession.recipesToConsider)
     while recipeCount > 0 do
-        for recipe, _ in pairs(profSession.recipesToConsider) do
+        for recipe, recipePrice in pairs(profSession.recipesToConsider) do
             --print("considering to calculate: ", recipe)
             --Evaluate only if its not already evaluted
             materialNotFound = false
             impossibleToCraft = false
-            if profSession.recipesToConsider[recipe] == huge then
+            if recipePrice == huge then
                 --print("calculating: ", recipe)
                 totalPrice = 0
                 for materialName, materialTable in pairs(PROFESSIONS[professionName].RECIPES[recipe].materials) do
@@ -16967,7 +16990,7 @@ local function calculateRecipeRawPrice(professionName)
                         else
                             remaining = materialTable.count
                             i = 1
-                            while profSession.foundItems[materialName] ~= nil and remaining > 0 and i <= #profSession.foundItems[materialName] and remaining <= #profSession.foundItems[materialName] do --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
+                            while profSession.foundItems[materialName] ~= nil and remaining > 0 and i <= #profSession.foundItems[materialName] and remaining <= #profSession.foundItems[materialName] do --TODO:remaining <= #profSession.foundItems[materialName] should not exist??? --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
                                 totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * profSession.foundItems[materialName][i].count
                                 remaining = remaining - profSession.foundItems[materialName][i].count
                                 i = i + 1
@@ -16989,7 +17012,7 @@ local function calculateRecipeRawPrice(professionName)
                     if materialNotFound or impossibleToCraft then
                         --If so, remove it from the list
                         print("impossible")
-                        profSession.recipesToConsider[recipe] = nil
+                        profSession.recipesToConsider[recipe] = nil --We are still in the for loop, be mindful if this is correct
                         recipeCount = recipeCount - 1
                     end
                 end
@@ -17079,7 +17102,7 @@ local function isCompoundRecipe(professionName, recipeName)
 end
 
 --Checks if a given material(or reipce) is a part of the given recipe
-local function isPartofTheRecipe(professionName, targetMaterialName, targetRecipe)
+local function isPartOfTheRecipe(professionName, targetMaterialName, targetRecipe)
     local isPart = false
     for materialName, _ in pairs(PROFESSIONS[professionName].RECIPES[targetRecipe].materials) do
         if not isPart then
@@ -17165,7 +17188,7 @@ local function calculateRecipeFreePrice(professionName)
 end
 
 
---[[ 
+--[[
 General idea:
 0) Create an empty set of actual recipes to craft
 1) Calculate raw value of each recipe
@@ -17186,7 +17209,8 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
     local haveMoney = true --If we do not have the money for the nth recipe, we do not have money for any subsequent one
     local materialsToBuyKnapsack = {} --pairs{[name] = count}
     local recipesToCraftKnapsack = {} --pairs{[name] = count}
-    while #sortedRecipesByPrice > 0 do
+    local skillLevelsToGain = segmentMaxLevel - skillLevel
+    while #sortedRecipesByPrice > 0 and skillLevelsToGain > 0 and haveMoney do
         local canCreateIthRecipe = true
         local recipeName = sortedRecipesByPrice[1][1]
         local recipePrice = sortedRecipesByPrice[1][2]
@@ -17198,17 +17222,18 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
                 local saveMoneyBeforeRecipe = money
                 local tempMaterialsToBuy = {}
                 local canCreateRecipe = true --wheter there are enough materials overall; We assume we can
-                local saveRecipesToCraftKnapsack = recipesToCraftKnapsack --We save this if we use something from it but they later find out it is impossible to craft
-                for materialName, materialTable in pairs(recipeTable) do
+                --local saveRecipesToCraftKnapsack = recipesToCraftKnapsack --TODO: Deep Copy --We save this if we use something from it but they later find out it is impossible to craft
+                local saveRecipesToCraftKnapsack = deepCopyTable(recipesToCraftKnapsack) --We save this if we use something from it but they later find out it is impossible to craft
+                for materialName, materialTable in pairs(recipeTable.materials) do
                     --Check if we can create the recipe
                     if canCreateRecipe then
                         --Check if material is another recipe
-                        if PROFESSIONS[professionName].RECIPES[materialName] then
+                        if PROFESSIONS[professionName].RECIPES[materialName] then --TODO check how much is needed
                             --It is
                             --Check if there is some in Knapsack
-                            if recipesToCraftKnapsack[materialName] then --and recipesToCraftKnapsack[materialName] > 0 then --No need for this becuse the 2 row below
+                            if recipesToCraftKnapsack[materialName] and recipesToCraftKnapsack[materialName] >= materialTable.count then --and recipesToCraftKnapsack[materialName] > 0 then --No need for this becuse the 2 row below
                                 --Remove from knapsack
-                                recipesToCraftKnapsack[materialName] = recipesToCraftKnapsack[materialName] - 1
+                                recipesToCraftKnapsack[materialName] = recipesToCraftKnapsack[materialName] - materialTable.count
                                 if recipesToCraftKnapsack[materialName] == 0 then
                                     recipesToCraftKnapsack[materialName] = nil
                                 end
@@ -17245,10 +17270,12 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
                 --Check finally if we can create the recipe
                 if canCreateRecipe then
                     --add everything to knapsack and update accordingly
-                    for materialName, materialCount in tempMaterialsToBuy do
+                    for materialName, materialCount in pairs(tempMaterialsToBuy) do
                         materialsToBuyKnapsack[materialName] = (materialsToBuyKnapsack[materialName] or 0) + materialCount
                     end
                     recipesToCraftKnapsack[recipeName] = (recipesToCraftKnapsack[recipeName] or 0) + 1
+                    --Update skill level. TODO: Here we assume 100% chance of skillUp. Think if this is the appropriate point to add more logic to this or postpone it for later
+                    skillLevelsToGain = skillLevelsToGain + 1
                 else --We cannot craft the recipe
                     canCreateIthRecipe = false
                     money = saveMoneyBeforeRecipe --return all money we have "spent"
@@ -17269,14 +17296,16 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
                 profSession.recipesToConsider[recipeName] = nil
                 --Recalculate all other recipes counting this as free
                 for rn, rp in pairs(profSession.recipesToConsider) do
-                    if isPartofTheRecipe(professionName, recipeName, rn) then
-                        profSession.recipesToConsider[rn] = profSession.recipesToConsider[rn] - recipePrice
+                    if isPartOfTheRecipe(professionName, recipeName, rn) then
+                        profSession.recipesToConsider[rn] = rp - recipePrice
                     end
                 end
                 --Sort the prices again --TODO:Check if this is safe
                 sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider)
             end
         end
+        --TODO: Check if we are done.
+        --TODO: check if we have leveled enough.
     end
     --Finish up
     return recipesToCraftKnapsack, materialsToBuyKnapsack
@@ -17454,8 +17483,6 @@ end
 function addon.professions:PLAYER_MONEY(...)
     RXPCData.money = GetMoney()
 end
-
-
 
 --Scan function
 function addon.professions.AH:Scan(itemName)
@@ -17783,8 +17810,7 @@ SlashCmdList['qtst'] = function()
     -- for _, v in ipairs(sorted) do
     --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
     -- end
-    setPlayerData("Blacksmithing", 40)
-    print(calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75))
+
 end
 
 
