@@ -126,6 +126,7 @@ local function deepCopyTableAUX(tbl, visited)
     --Base cases
     if tbl == nil then return nil end
     if visited[tbl] then return visited[tbl] end
+    if type(tbl) ~= "table" then return tbl end
 
     local copy = {}
     visited[tbl] = copy
@@ -141,7 +142,40 @@ local function deepCopyTable(tbl)
     return deepCopyTableAUX(tbl, {})
 end
 
+--Auxilliary function to the one below it. Should never be called directly
+local function printTableAUX(tbl, indent, str, printed)
+    printed = printed or {}
+    if type(tbl) ~= "table" then printed[tbl] = true print(tbl) return end
+    if printed[tbl] then return end
 
+    local strIndent = ""
+    for i = 1, indent do
+        strIndent = strIndent .. "\t"
+    end
+
+    str = str or ""
+    str = str .. strIndent
+    for k, v in pairs(tbl) do
+        str = str .. tostring(k)
+        if type(v) == "table" then
+            str = str .. "{\n"
+            printTableAUX(v, indent + 1, str)
+            str = str .. "\n" .. strIndent .. "}" .. "\n"
+        else
+            printed[v] = true
+            str = str .. " = " .. tostring(v) .. "\n"
+        end
+    end
+    printed[tbl] = true
+    print(str)
+end
+
+--Prints table recursively
+local function printTable(tbl)
+    if type(tbl) ~= "table" then print(tostring(tbl)) return end
+
+    printTableAUX(tbl, 0, "", {})
+end
 
 
 --local enums
@@ -16991,7 +17025,7 @@ local function calculateRecipeRawPrice(professionName)
                             remaining = materialTable.count
                             i = 1
                             while profSession.foundItems[materialName] ~= nil and remaining > 0 and i <= #profSession.foundItems[materialName] and remaining <= #profSession.foundItems[materialName] do --TODO:remaining <= #profSession.foundItems[materialName] should not exist??? --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
-                                totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * profSession.foundItems[materialName][i].count
+                                totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * materialTable.count
                                 remaining = remaining - profSession.foundItems[materialName][i].count
                                 i = i + 1
                             end
@@ -17259,13 +17293,15 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
                                 if foundItemDetails.count >= materialTable.count - addedMaterials then
                                     money = money - foundItemDetails.price
                                     tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + (materialTable.count - addedMaterials)
-                                    backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + foundItemDetails.count
+                                    backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
                                     addedMaterials = materialTable.count
-                                    tremove(profSession.foundItems[materialName], 1)
+                                    --tremove(profSession.foundItems[materialName], 1)
                                 else
                                     addedMaterials = addedMaterials + foundItemDetails.count
                                     money = money - foundItemDetails.price
                                     tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + foundItemDetails.count
+                                    backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
+                                    --tremove(profSession.foundItems[materialName], 1)
                                 end
                                 tremove(profSession.foundItems[materialName], 1)
                             end
@@ -17325,11 +17361,10 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
                 sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider)
             end
         end
-        --TODO: Check if we are done.
-        --TODO: check if we have leveled enough.
     end
     --Finish up
-    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack
+    RXPCData.professions.money = money --TODO: delete once we implement actual buying (and then move this logic to that function)
+    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained
 end
 
 --[[ 
@@ -17724,51 +17759,41 @@ end
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    setPlayerData("Blacksmithing", 40)
+    setPlayerData("Blacksmithing", 76)
+    RXPCData.professions.money = 10000
     local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
-    if tcount(profSession.recipesToConsider) == 0 then return end
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
-    if #profSession.materialsToScan == 0 then return end
     profSession.materialIndex = 1
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
---Find minimum
+
 SLASH_pnt1 = '/pnt'
 SlashCmdList['pnt'] = function()
-    local minimum = {}
-    local minItem = {}
-    local minPrice
-    local c = 1
-    print("Recipes considered:")
-    for k, v in pairs(profSession.recipesToConsider) do
-        print(k)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
+    local recipesToCraft, materialsToBuy, backPack, skillLevelsGained = gatherRecipesToBuyGreedy(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, maxSegment, RXPCData.professions.money)
+    print("====Recipe costs====")
+    local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
+    for i, v in ipars(sorted) do
+        print(tostring(v[1]) .. ": " .. tostring(v[2]))
     end
-    for k, v in pairs(profSession.foundItems) do
-        print("===" .. tostring(k) .. "===")
-        minPrice = huge
-        minItem = {}
-        for _, itemInfo in ipars(v) do
-            c = c + 1
-            --print(tostring(i)..":", itemInfo.name, itemInfo.count, itemInfo.pricePerItem, itemInfo.owner)
-            if itemInfo.pricePerItem < minPrice then
-                minPrice = itemInfo.pricePerItem
-                --print("min: ", minPrice)
-                minItem.name = itemInfo.name
-                minItem.pricePerItem = minPrice
-                minItem.owner = itemInfo.owner
-            end
-        end
-        tinsert(minimum, minItem)
+    print("====To craft====")
+    for k, v in pairs(recipesToCraft) do
+        print(tostring(k) .. " -> " .. tostring(v))
     end
-    print("c=", c)
-    --Print mimimums
-    print("==========")
-    for _, v in pairs(minimum) do
-        print(v.name, v.pricePerItem, v.owner)
+    print("====To buy====")
+    for k, v in pairs(materialsToBuy) do
+        print(tostring(k) .. " -> " .. tostring(v))
     end
+    print("====Leftovers====")
+    for k, v in pairs(backPack) do
+        print(tostring(k) .. " -> " .. tostring(v))
+    end
+    print("===After calc===")
+    print("Money: ", RXPCData.professions.money)
+    print("Skill level reached: ", (RXPCData.professions.profession1.skillLevel + skillLevelsGained))
 end
 
 
@@ -17831,6 +17856,8 @@ SlashCmdList['qtst'] = function()
     -- for _, v in ipairs(sorted) do
     --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
     -- end
+
+    
 
 end
 
