@@ -16893,10 +16893,12 @@ local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
     if prof1Name then
         RXPCData.professions.profession1.name = lower(prof1Name)
         RXPCData.professions.profession1.skillLevel = prof1Lvl
+        RXPCData.professions.profession1.skillMaxLevel = 300 --TODO: Rework this
     end
     if prof2Name then
         RXPCData.professions.profession2.name = lower(prof2Name)
         RXPCData.professions.profession2.skillLevel = prof2Lvl
+        RXPCData.professions.profession2.skillMaxLevel = 300 --TODO: Rework this
     end
 end
 
@@ -16925,7 +16927,6 @@ local function calculateSegmentRange(professionSkillLevel, segmentStep)
     if maximum > 300 then maximum = 300 end
     return minimum, maximum
 end
-
 
 --Removes grey recipes
 local function removeGreyRecipes(professionName, professionSkillLevel)
@@ -17561,20 +17562,39 @@ end
 --Full scan function - For testing purposes only -- Scans first profession
 local function fullScan()
     profSession:Reset()
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
-    if tcount(profSession.recipesToConsider) == 0 then return end
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
-    if #profSession.materialsToScan == 0 then return end
-    print("==========")
-    print("Recipes considered:")
-    for k, v in pairs(profSession.recipesToConsider) do
-        print(k)
-    end
-    print("==========")
     profSession.materialIndex = 1
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
+end
+
+--Stringifies results form Greedy algorthim - For testing purposes only
+local function greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained)
+    local str = ""
+    str = "====Recipe costs====\n"
+    local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
+    for i, v in ipars(sorted) do
+        str = str .. tostring(v[1]) .. ": " .. tostring(v[2]) .. "\n"
+    end
+    str = str .. "====To craft====\n" 
+    for k, v in pairs(recipesToCraft) do
+        str = str .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+    end
+    str = str .. "====To buy====\n"
+    for k, v in pairs(materialsToBuy) do
+        str = str .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+    end
+    str = str .. "====Leftovers====\n"
+    for k, v in pairs(backPack) do
+        str = str .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+    end
+    str = str .. "===After calc===\n"
+    str = str .. "Money: " .. tostring(RXPCData.professions.money) .. "\n"
+    str = str .. "Skill level reached: " .. tostring((RXPCData.professions.profession1.skillLevel + skillLevelsGained))
+
+    return str
 end
 
 --Setup
@@ -17604,7 +17624,7 @@ local function createGUI()
     guiFrame.TitleBg:SetHeight(30)
     guiFrame.title = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     guiFrame.title:SetPoint("CENTER", guiFrame.TitleBg, "CENTER", 0, 6)
-    guiFrame.title:SetText("Professions guide")
+    guiFrame.title:SetText("Professions guide - Debugging screen")
     guiFrame:EnableMouse(true)
     guiFrame:SetMovable(true)
     guiFrame:RegisterForDrag("LeftButton")
@@ -17615,11 +17635,107 @@ local function createGUI()
         self:StopMovingOrSizing()
     end)
 
-
     guiFrame.descriptionText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     guiFrame.descriptionText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -30)
-    guiFrame.descriptionText:SetText("Skill level sets players skill level in Blacksmithing.\nSegment range sets in what segments \nto split the profession (eg. 1-75, 76-150, ...).\nSet parameters sets slider's current parameters.\nScan Auction House scans the auction house \nfor necessary materials.\nPrint scan results prints the results. Values are per recipe per skill-up.")
+    guiFrame.descriptionText:SetText("Select profession:")
 
+    local function createCheckButton(parent, displayname)
+        local checkButton = CreateFrame("CheckButton", nil, parent, "UIRadioButtonTemplate");
+        return checkButton;
+    end
+
+    local blacksmithingButton = createCheckButton(guiFrame, "Blacksmithing")
+    local leatherworkingButton = createCheckButton(guiFrame, "Leatherworking")
+    local tailoringButton = createCheckButton(guiFrame, "Tailoring")
+    local alchemyButton = createCheckButton(guiFrame, "Alchemy")
+    local enchantingButton = createCheckButton(guiFrame, "Enchanting")
+    local engineeringButton = createCheckButton(guiFrame, "Engineering")
+    local testButton = createCheckButton(guiFrame, "Test")
+
+    guiFrame.blacksmithingText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.blacksmithingText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -60)
+    guiFrame.blacksmithingText:SetText("Blacksmithing")
+    blacksmithingButton:SetSize(20, 20)
+    blacksmithingButton:SetPoint("LEFT", guiFrame.blacksmithingText, "RIGHT", 10, 0)
+
+    guiFrame.leatherworkingText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.leatherworkingText:SetPoint("LEFT", blacksmithingButton, "RIGHT", 10, 0)
+    guiFrame.leatherworkingText:SetText("Leatherworking")
+    leatherworkingButton:SetSize(20, 20)
+    leatherworkingButton:SetPoint("LEFT", guiFrame.leatherworkingText, "RIGHT", 10, 0)
+
+    guiFrame.tailoringText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.tailoringText:SetPoint("LEFT", leatherworkingButton, "RIGHT", 10, 0)
+    guiFrame.tailoringText:SetText("Tailoring")
+    tailoringButton:SetSize(20, 20)
+    tailoringButton:SetPoint("LEFT", guiFrame.tailoringText, "RIGHT", 10, 0)
+
+    guiFrame.alchemyText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.alchemyText:SetPoint("LEFT", tailoringButton, "RIGHT", 10, 0)
+    guiFrame.alchemyText:SetText("Alchemy")
+    alchemyButton:SetSize(20, 20)
+    alchemyButton:SetPoint("LEFT", guiFrame.alchemyText, "RIGHT", 10, 0)
+
+    guiFrame.enchantingText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.enchantingText:SetPoint("TOPLEFT", guiFrame.blacksmithingText, "BOTTOMLEFT", 0, -10)
+    guiFrame.enchantingText:SetText("Enchanting")
+    enchantingButton:SetSize(20, 20)
+    enchantingButton:SetPoint("CENTER", blacksmithingButton, "CENTER", 0, -22)
+
+    guiFrame.engineeringText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.engineeringText:SetPoint("TOPLEFT", guiFrame.leatherworkingText, "BOTTOMLEFT", 0, -10)
+    guiFrame.engineeringText:SetText("Engineering")
+    engineeringButton:SetSize(20, 20)
+    engineeringButton:SetPoint("CENTER", leatherworkingButton, "CENTER", 0, -22)
+
+    guiFrame.testText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.testText:SetPoint("TOPLEFT", guiFrame.tailoringText, "BOTTOMLEFT", 0, -10)
+    guiFrame.testText:SetText("Test")
+    testButton:SetSize(20, 20)
+    testButton:SetPoint("CENTER", tailoringButton, "CENTER", 0, -22)
+
+    local function onRadioButtonPress(self)
+        blacksmithingButton:SetChecked(false)
+        leatherworkingButton:SetChecked(false)
+        tailoringButton:SetChecked(false)
+        alchemyButton:SetChecked(false)
+        enchantingButton:SetChecked(false)
+        engineeringButton:SetChecked(false)
+        testButton:SetChecked(false)
+
+        self:SetChecked(true)
+    end
+
+    blacksmithingButton:SetScript("OnClick", onRadioButtonPress)
+    leatherworkingButton:SetScript("OnClick", onRadioButtonPress)
+    tailoringButton:SetScript("OnClick", onRadioButtonPress)
+    alchemyButton:SetScript("OnClick", onRadioButtonPress)
+    enchantingButton:SetScript("OnClick", onRadioButtonPress)
+    engineeringButton:SetScript("OnClick", onRadioButtonPress)
+    testButton:SetScript("OnClick", onRadioButtonPress)
+
+    guiFrame.moneyText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.moneyText:SetPoint("TOPLEFT", guiFrame.enchantingText, "BOTTOMLEFT", 0, -10)
+    guiFrame.moneyText:SetText("Money:")
+
+    local moneyEditBox = CreateFrame("EditBox", "moneyEditBoxFrame", guiFrame, "InputBoxTemplate")
+    moneyEditBox:SetSize(50, 20)
+    moneyEditBox:SetPoint("LEFT", guiFrame.moneyText, "RIGHT", 10, 0)
+    moneyEditBox:SetNumeric(true)
+
+    guiFrame.moneyTextCopper = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.moneyTextCopper:SetPoint("LEFT", moneyEditBox, "RIGHT", 10, 0)
+    guiFrame.moneyTextCopper:SetText("in copper")
+
+    moneyEditBox:SetScript("OnEditFocusLost", function (self)
+        self:EnableKeyboard(false)
+    end)
+    moneyEditBox:SetScript("OnEnter", function (self)
+        self:EnableKeyboard(true)
+    end)
+    moneyEditBox:SetScript("OnEnterPressed", function (self)
+        self:EnableKeyboard(false)
+    end)
 
     local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
     selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
@@ -17653,8 +17769,17 @@ local function createGUI()
     setButtonFrame:SetText("Set parameters")
     setButtonFrame:RegisterForClicks("LeftButtonUp")
     setButtonFrame:SetScript("OnClick", function (self)
-        setPlayerData("Blacksmithing", selectSkillLevelFrame:GetValue())
+        local professionName = ""
+        if blacksmithingButton:GetChecked() then professionName = "Blacksmithing"
+        elseif leatherworkingButton:GetChecked() then professionName = "Leatherworking"
+        elseif tailoringButton:GetChecked() then professionName = "Tailoring"
+        elseif alchemyButton:GetChecked() then professionName = "Alchemy"
+        elseif enchantingButton:GetChecked() then professionName = "Enchanting"
+        elseif engineeringButton:GetChecked() then professionName = "Engineering"
+        else professionName = "Test" end
+        setPlayerData(professionName, selectSkillLevelFrame:GetValue())
         segmentRange = selectSegmentFrame:GetValue()
+        RXPCData.professions.money = tonumber(moneyEditBox:GetText())
     end)
 
     local ahNotShowingMessageFrame = CreateFrame("MessageFrame", "ahNotShowingMessageFrame", UIParent)
@@ -17700,19 +17825,17 @@ local function createGUI()
     printButtonFrame:RegisterForClicks("LeftButtonUp")
     printButtonFrame:SetScript("OnClick", function (self)
         textToPrint = ""
+        local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained
+            local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
         if not printed then
-            calculateRecipeRawPrice(RXPCData.professions.profession1.name)
-            calculateFullCost(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained =
+            gatherRecipesToBuyGreedy(
+            RXPCData.professions.profession1.name,
+            RXPCData.professions.profession1.skillLevel,
+            maxSegment, RXPCData.professions.money
+            )
         end
-        local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
-        for _, v in ipairs(sorted) do
-            textToPrint = textToPrint .. v[1] .. ": "
-            if v[2] == huge then
-                textToPrint = textToPrint .. "huge\n"
-            else
-                textToPrint = textToPrint .. formatMoney(ceil(v[2] / (select(2, calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)) - RXPCData.professions.profession1.skillLevel))) .. "\n"
-            end
-        end
+        textToPrint = greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained)
         textToPrint = textToPrint .. "==========\n"
         guiFrame.printText:SetText(textToPrint)
         printed = true
@@ -17857,7 +17980,10 @@ SlashCmdList['qtst'] = function()
     --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
     -- end
 
-    
+    for k, v in pairs(RXPCData.professions.profession1) do
+        print(tostring(k) .. " -> " .. tostring(v))
+    end
+    print(RXPCData.professions.money)
 
 end
 
