@@ -17248,6 +17248,7 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
     local backpackKnapsack = {} --pairs{[name] = count} --Backpack containing items that we bought this session
     local skillLevelsToGain = segmentMaxLevel - skillLevel
     local skillLevelsGained = 0
+    local moneySpent = money
     while #sortedRecipesByPrice > 0 and skillLevelsToGain > 0 and haveMoney do
         local canCreateIthRecipe = true
         local recipeCreated = false
@@ -17365,7 +17366,8 @@ local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLe
     end
     --Finish up
     RXPCData.professions.money = money --TODO: delete once we implement actual buying (and then move this logic to that function)
-    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained
+    moneySpent = moneySpent - money
+    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
 end
 
 --[[ 
@@ -17562,7 +17564,7 @@ end
 --Full scan function - For testing purposes only -- Scans first profession
 local function fullScan()
     profSession:Reset()
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -17571,7 +17573,7 @@ local function fullScan()
 end
 
 --Stringifies results form Greedy algorthim - For testing purposes only
-local function greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained)
+local function greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent)
     local str = ""
     str = "====Recipe costs====\n"
     local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
@@ -17592,7 +17594,8 @@ local function greedyToString(recipesToCraft, materialsToBuy, backPack, skillLev
     end
     str = str .. "===After calc===\n"
     str = str .. "Money: " .. tostring(RXPCData.professions.money) .. "\n"
-    str = str .. "Skill level reached: " .. tostring((RXPCData.professions.profession1.skillLevel + skillLevelsGained))
+    str = str .. "Money spent: " .. tostring(moneySpent) .. "\n"
+    str = str .. "Skill level reached: " .. tostring((RXPCData.professions.profession1.skillLevel + skillLevelsGained)) .. "\n"
 
     return str
 end
@@ -17740,7 +17743,7 @@ local function createGUI()
     local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
     selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
     selectSkillLevelFrame:SetSize(300, 20)
-    selectSkillLevelFrame:SetMinMaxValues(5, 300)
+    selectSkillLevelFrame:SetMinMaxValues(1, 300)
     selectSkillLevelFrame:SetValue(20)
     selectSkillLevelFrame:SetValueStep(1)
     selectSkillLevelFrame:SetObeyStepOnDrag(true)
@@ -17779,6 +17782,7 @@ local function createGUI()
         else professionName = "Test" end
         setPlayerData(professionName, selectSkillLevelFrame:GetValue())
         segmentRange = selectSegmentFrame:GetValue()
+        print("Segment range", segmentRange)
         RXPCData.professions.money = tonumber(moneyEditBox:GetText())
     end)
 
@@ -17795,6 +17799,10 @@ local function createGUI()
         end
     end)
 
+    local resultTextFrame = CreateFrame("ScrollFrame", "scrollTextFrame", guiFrame, "UIPanelScrollFrameTemplate")
+    resultTextFrame:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
+    resultTextFrame:SetSize(400, 400)
+
     local scanButtonFrame = CreateFrame("Button", "ScanButtonFrame", setButtonFrame, "UIPanelButtonTemplate")
     scanButtonFrame:SetPoint("LEFT", setButtonFrame, "RIGHT")
     scanButtonFrame:SetSize(200, 40)
@@ -17808,13 +17816,18 @@ local function createGUI()
         if not profSession.ahIsShowing then
             ahNotShowingMessageFrame:Show()
         else
-            guiFrame.printText:SetText("")
+            guiFrame.printText.Text:SetText("")
             fullScan()
         end
     end)
 
-    guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    --guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.printText = CreateFrame("Frame")
+    guiFrame.printText.Text = guiFrame.printText:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.printText.Text:SetPoint("TOPLEFT", guiFrame.printText, "TOPLEFT", 10, -10)
     guiFrame.printText:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
+    guiFrame.printText:SetSize(resultTextFrame:GetWidth(), resultTextFrame:GetHeight() * 2)
+    resultTextFrame:SetScrollChild(guiFrame.printText)
     local textToPrint = ""
 
 
@@ -17825,19 +17838,20 @@ local function createGUI()
     printButtonFrame:RegisterForClicks("LeftButtonUp")
     printButtonFrame:SetScript("OnClick", function (self)
         textToPrint = ""
-        local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained
-            local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
+        local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
+            local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
         if not printed then
-            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained =
+            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
             gatherRecipesToBuyGreedy(
             RXPCData.professions.profession1.name,
             RXPCData.professions.profession1.skillLevel,
             maxSegment, RXPCData.professions.money
             )
+            textToPrint = greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent)
+            textToPrint = textToPrint .. "==========\n"
+            --guiFrame.printText:SetText(textToPrint)
+            guiFrame.printText.Text:SetText(textToPrint)
         end
-        textToPrint = greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained)
-        textToPrint = textToPrint .. "==========\n"
-        guiFrame.printText:SetText(textToPrint)
         printed = true
     end)
 
@@ -17882,9 +17896,9 @@ end
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    setPlayerData("Blacksmithing", 76)
+    setPlayerData("Blacksmithing", 1)
     RXPCData.professions.money = 10000
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -17895,8 +17909,8 @@ end
 
 SLASH_pnt1 = '/pnt'
 SlashCmdList['pnt'] = function()
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, 75)
-    local recipesToCraft, materialsToBuy, backPack, skillLevelsGained = gatherRecipesToBuyGreedy(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, maxSegment, RXPCData.professions.money)
+    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
+    local recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent = gatherRecipesToBuyGreedy(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, maxSegment, RXPCData.professions.money)
     print("====Recipe costs====")
     local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
     for i, v in ipars(sorted) do
@@ -17916,6 +17930,7 @@ SlashCmdList['pnt'] = function()
     end
     print("===After calc===")
     print("Money: ", RXPCData.professions.money)
+    print("Money spent: ", moneySpent)
     print("Skill level reached: ", (RXPCData.professions.profession1.skillLevel + skillLevelsGained))
 end
 
@@ -17980,10 +17995,9 @@ SlashCmdList['qtst'] = function()
     --     print(v[1], ": ", formatMoney(ceil(v[2] / segmentRange)))
     -- end
 
-    for k, v in pairs(RXPCData.professions.profession1) do
-        print(tostring(k) .. " -> " .. tostring(v))
-    end
+    print(serializeProfessions())
     print(RXPCData.professions.money)
+    print(segmentRange)
 
 end
 
