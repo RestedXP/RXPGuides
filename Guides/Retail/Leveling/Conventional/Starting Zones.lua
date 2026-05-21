@@ -8875,6 +8875,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Harronir
 
@@ -9178,6 +9179,7 @@ RXPGuides.RegisterGuide([[
 #name a) Hall of Awakening: Skip
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
+#internal
 
 << EarthenDwarf
 
