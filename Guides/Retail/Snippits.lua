@@ -1,5 +1,5 @@
 --DawnBreakerTeleport
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 3
@@ -1101,7 +1101,7 @@ step << Alliance
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
---Housing Alliance 
+--Housing Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 4

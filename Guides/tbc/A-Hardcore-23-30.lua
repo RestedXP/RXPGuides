@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -2939,7 +2939,7 @@ step
     .target Harlo Barnaby
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
-step 
+step
     .goto Wetlands,10.0,56.8
     .target Valstag Ironjaw
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r
@@ -2949,7 +2949,7 @@ step
     #completewith next
     .goto Wetlands,10.28,56.334,20,0
     .goto Wetlands,9.742,57.866,15 >> Travel upstairs in Menethil Keep
-step 
+step
     .goto Wetlands,9.86,57.48
     .target Captain Stoutfist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r

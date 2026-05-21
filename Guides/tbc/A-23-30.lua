@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -2691,7 +2691,7 @@ step << skip
     .collect 2526,1
     >>Skip this step if you can find a better weapon at the Auction House
 step << skip
---Hunter/Warrior/Paladin/Shaman/Rogue 
+--Hunter/Warrior/Paladin/Shaman/Rogue
 	.goto Ironforge,61.34,89.25
 	.train 197 >> Train 2H Axes << !Rogue
 	.train 266 >> Train Guns << Hunter/Warrior/Rogue

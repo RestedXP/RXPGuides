@@ -3,7 +3,7 @@
 -- =================================
 --group RestedXP Speed Leveling
 --LEVEL 1-10
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
@@ -7831,7 +7831,7 @@ step
 	.target Aysa Cloudsinger
 step
     #completewith Balanced Perspective
-    #arrowtext |cFFFCDC00If you fall|r \n |cRXP_WARN_return to shore and try again|r 
+    #arrowtext |cFFFCDC00If you fall|r \n |cRXP_WARN_return to shore and try again|r
     .goto 378,30.57,37.49,10,0
     .goto 378,31.09,36.82,10,0
     .goto 378,32.19,36.35,5,0
@@ -8477,14 +8477,14 @@ step
 step
     #hidewindow
     .countdown 2 >>Follow the Arrow
-step 
+step
     .zoneskip 84,1
     .goto 84,74.19,91.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 31450 >>Turn in A New Fate
 	.accept 30987 >>Accept Joining the Alliance
 	.target Aysa Cloudsinger
--- step 
+-- step
 --     .goto 84,74.19,91.98,-1
 --     .goto 1,45.58,12.61,-1
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r or |cRXP_FRIENDLY_Ji Firepaw|r.
@@ -8593,7 +8593,7 @@ RXPGuides.RegisterGuide([[
 << Harronir
 
 step
-    #completewith 
+    #completewith
     .collecttoy 253629,3
     +|cRXP_WARN_Switch to the Alt Leveling Guide instead:|r
     .clicknext RestedXP Midnight\cab) Eversong Woods Route 4 (A) >>CLICK HERE FOR GUIDE << Alliance
