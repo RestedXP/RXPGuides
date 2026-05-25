@@ -2237,15 +2237,15 @@ end
 
 function addon.v2.events:Register(key)
     if not key then return end
-    addon.comms.PrettyDebug("addon.v2.events:Register", key)
+    addon.comms.PrettyDebug("addon.v2.events:Register %s", key)
     -- self:RegisterMessage("GatherMate2NodeAdded", "ScheduleUpdate")
-    self:RegisterMessage(addon.v2.events.messagePrefix .. key, key)
+    self:RegisterMessage(self.messagePrefix .. key, key)
 end
 
 function addon.v2.events:Trigger(key, ...)
     if not key then return end
 
-    self:SendMessage(addon.v2.events.messagePrefix .. key, ...)
+    self:SendMessage(self.messagePrefix .. key, ...)
 end
 
 function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
