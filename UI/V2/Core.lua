@@ -27,7 +27,9 @@ end
 local function updateTheme(this, payload)
     if not payload then return end
 
-    -- print("Updating", this.type)
+    -- TODO integrate v2 modularity
+    if true then return end
+    print("updateTheme", this.type)
 
     this.theme = this.theme or {
         edge = addon.RXPFrame.backdrop.edge,
@@ -350,10 +352,14 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetResizable(false)
         frame:SetToplevel(true)
 
+        local theme = addon.v2:GetTheme()
+
         frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
-        frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        frame:SetBackdropColor(unpack(addon.colors.background))
+        -- frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
+        -- frame:SetBackdropColor(unpack(addon.colors.background))
+        frame:SetBackdrop(theme.edges.activeSteps or theme.edges.common)
+        frame:SetBackdropColor(unpack(theme.backgroundColors.activeSteps or theme.backgroundColors.common))
 
         frame:SetScript("OnShow", Frame_OnShow)
         frame:SetScript("OnHide", Frame_OnClose)
@@ -526,8 +532,11 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         frame:SetResizable(true)
         frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
-        frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        frame:SetBackdropColor(unpack(addon.colors.background))
+
+        local theme = addon.v2:GetTheme()
+
+        frame:SetBackdrop(theme.edges.activePartySteps or theme.edges.common)
+        frame:SetBackdropColor(unpack(theme.backgroundColors.activePartySteps or theme.backgroundColors.common))
 
         if frame.SetResizeBounds then -- WoW 10.0
             frame:SetResizeBounds(220, 40)
@@ -543,8 +552,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         title:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -20, 6)
         title:ClearBackdrop()
-        title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        title:SetBackdropColor(unpack(addon.colors.background))
+        title:SetBackdrop(theme.edges.activePartySteps or theme.edges.common)
+        title:SetBackdropColor(unpack(theme.backgroundColors.activePartySteps or theme.backgroundColors.common))
         title:EnableMouse(true)
         title:SetScript("OnMouseDown", Title_OnMouseDown)
         title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
@@ -554,9 +563,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         titletext:SetPoint("CENTER", title, 2, 1)
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
-        titletext:SetTextColor(unpack(addon.activeTheme.textColor))
+        titletext:SetTextColor(unpack(theme.textColor.activePartySteps or theme.textColor.common))
         titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(addon.font, addon.settings.profile.guideFontSize + 1, "")
+        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
 
         local sizer = CreateFrame("Button", nil, frame)
 
@@ -653,10 +662,11 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         ["UpdateSubTheme"] = function (this, payload)
             if not payload then return end
 
-            -- print("UpdateSubTheme", this.type)
+            -- TODO v2 themeify
+            print("UpdateSubTheme", this.type)
 
             this.title:SetBackdrop(this.theme.edge)
-            this.title:SetBackdropColor(unpack(this.theme.backgroundColor))
+            this.title:SetBackdropColor(unpack(this.theme.backgroundColorsColor))
         end
     }
 
@@ -674,14 +684,15 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         -- frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
         -- frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
-        frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        frame:SetBackdropColor(unpack(addon.colors.background))
+        local theme = addon.v2:GetTheme()
+        frame:SetBackdrop(theme.edges.activePartyStepItem or theme.edges.common)
+        frame:SetBackdropColor(unpack(theme.backgroundColors.activePartyStepItem or theme.backgroundColors.common))
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
         title:ClearBackdrop()
-        title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        title:SetBackdropColor(unpack(addon.colors.background))
+        title:SetBackdrop(theme.edges.activePartyStepItem or theme.edges.common)
+        title:SetBackdropColor(unpack(theme.backgroundColors.activePartyStepItem or theme.backgroundColors.common))
         -- title:EnableMouse(true)
         -- title:SetScript("OnMouseDown", Title_OnMouseDown)
         -- title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
@@ -691,9 +702,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         titletext:SetPoint("CENTER", title, 2, 1)
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
-        titletext:SetTextColor(unpack(addon.activeTheme.textColor))
+        titletext:SetTextColor(unpack(theme.textColor.activePartyStepItem or theme.textColor.common))
         titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(addon.font, addon.settings.profile.guideFontSize - 1, "")
+        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
 
         -- local border = CreateFrame("Frame", nil, frame, "BackdropTemplate")
         -- border:SetPoint("TOPLEFT", 0, 0)

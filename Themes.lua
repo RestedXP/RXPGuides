@@ -251,3 +251,57 @@ function addon:ImportCustomThemes()
 
     wipe(_G.RXPGuides_Themes)
 end
+
+addon.v2 = addon.v2 or {}
+addon.v2.themes = {}
+
+addon.v2.themes['v2'] = {
+    author = "RestedXP",
+    displayName = "v2",
+    font = _G.GameFontNormal:GetFont(),
+
+    backgroundColors = {
+        common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
+        activeStepItem = {26 / 255, 28 / 255, 48 / 255, 0.2},
+    },
+
+    edges = {
+        common = {
+            bgFile = "Interface/BUTTONS/WHITE8X8",
+            edgeFile = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+            tile = true,
+            edgeSize = 8,
+            tileSize = 8,
+            insets = {left = 4, right = 2, top = 2, bottom = 4}
+        },
+    },
+
+    textColor = {
+        common = {1, 1, 1},
+        activePartySteps = {24 / 255, 210 / 255, 255 / 255},
+        activePartyStepItem = {24 / 255, 210 / 255, 255 / 255}
+    },
+
+    -- v1 RXP Blue
+
+    -- applicable = function() return not RXPCData.GA end,
+    -- bgTextures = {edge = "Interface/BUTTONS/WHITE8X8", bottom = "Interface/BUTTONS/WHITE8X8"},
+    -- bottomFrameBG = {18 / 255, 18 / 255, 40 / 255, 1},
+    -- bottomFrameHighlight = {54 / 255, 62 / 255, 109 / 255, 1},
+    -- mapPins = {206 / 210, 123 / 210, 1, 1},
+    -- texturePath = "Interface/AddOns/" .. addonName .. "/Textures/",
+    -- tooltip = "|cFFCE7BFF", -- AARRGGBB
+    -- edges = {
+    --     edge = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
+    --     guideName = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders"
+    -- }
+}
+
+addon.v2.themes['Default'] = addon.v2.themes['v2']
+addon.v2.themes['Default'].displayName = _G.DEFAULT
+
+function addon.v2:GetTheme()
+    self.activeTheme = self.themes['v2']
+
+    return self.activeTheme
+end
