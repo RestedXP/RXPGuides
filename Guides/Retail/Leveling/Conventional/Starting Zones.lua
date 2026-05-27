@@ -12844,11 +12844,11 @@ step << Gnome Warrior
     #completewith next
     #label in The Future of Gnomeregan
     .goto 469,39.71,37.3,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Seargent Steamcrank|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r.
     .turnin 26203 >>Turn in The Future of Gnomeregan
     .accept 26425 >>Accept Meet the High Tinker
     .disablecheckbox
-    .target Drill Seargent Steamcrank
+    .target Drill Sergeant Steamcrank
 step << Gnome Warrior
     .xp >10,1
     #hidewindow
@@ -12858,10 +12858,10 @@ step << Gnome Warrior
     .xp >10,1
     #requires in The Future of Gnomeregan
     .goto 469,40.68,35.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Seargent Steamcrank|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r.
     .turnin 26203 >>Turn in The Future of Gnomeregan
     .accept 26425 >>Accept Meet the High Tinker
-    .target Drill Seargent Steamcrank
+    .target Drill Sergeant Steamcrank
 step << Gnome Monk
     .xp >10,1
     .goto 469,40.086,35.614
@@ -17557,7 +17557,7 @@ step
     .goto 59,31.01,60.8,10,0
     .goto 59,26.74,47.21,5,0
     .goto 59,23.34,46.51,5,0
-    .goto 59,20.76,43.33,8 >>Check for the |cRXP_PICK_Chest|r along the way, then jump up to |cRXP_ENEMY_Malenas|r.
+    .goto 59,20.76,43.33,8 >>Check for the |cRXP_PICK_Chest|r along the way, then jump up to |cRXP_ENEMY_Melenas|r.
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r; move on if it isn't there.
     *|cRXP_WARN_(1x quest XP)|r.
     .subzoneskip 258,1
@@ -18840,7 +18840,7 @@ step
 step
     #completewith next
     #title |cFFFCDC00Heads Up|r
-    +|cRXP_WARN_After saving |cRXP_FRIENDLY_Krennas|r|r;
+    +|cRXP_WARN_After saving |cRXP_FRIENDLY_Krennan|r|r;
     *Use the macro in the "Active Items Frame" to dismount and run to the questgiver.
     *|cRXP_WARN_Do NOT use the macro before the rescue|r.
 step
@@ -19955,7 +19955,7 @@ step
     .target Queen Mia Greymane
 step
     #completewith Greymane Manor
-    .goto 181,62.10,49.64,30 >>Enter the Graymane Manor
+    .goto 181,62.10,49.64,30 >>Enter the Greymane Manor
 step
     #requires Greymane Manor
     #label Greymane Manor2
@@ -20306,21 +20306,21 @@ step
     #label The Blackwald
     .goto 179,60.44,91.18,5,0
     .goto 179,61.05,90.43,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r |cRXP_WARN_in the house|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r |cRXP_WARN_in the house|r.
     .turnin 24578 >>Turn in The Blackwald
     .accept 24616 >>Accept Losing Your Tail
     .disablecheckbox
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith The Blackwald
     .goto 179,63.35,82.91,100 >>Follow the Arrow
 step
     #requires The Blackwald
     .goto 179,63.35,82.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r |cRXP_WARN_in the house|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r |cRXP_WARN_in the house|r.
     .turnin 24578 >>Turn in The Blackwald
     .accept 24616 >>Accept Losing Your Tail
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith next
     #label Dark Scout1
@@ -20359,21 +20359,21 @@ step
     .goto 179,62.45,82.62,5,0
     .goto 179,62.57,82.35,5,0
     .goto 179,63,82.41,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r.
     .turnin 24616 >>Turn in Losing Your Tail
     .accept 24617 >>Accept Tal'doren, the Wild Home
     .disablecheckbox
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith Losing Your Tail
     .goto 179,63.35,82.9,15 >>Ascend the mountain.
 step
     #requires Losing Your Tail
     .goto 179,63.35,82.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r.
     .turnin 24616 >>Turn in Losing Your Tail
     .accept 24617 >>Accept Tal'doren, the Wild Home
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith next
     #label Tal'doren, the Wild Home
@@ -20789,7 +20789,7 @@ step
     #completewith next
     #label Valov the Mad1
     .goto 179,73.53,28.75,10,0
-    >>Kill |cRXP_ENEMY_Valov the Mad|r.
+    >>Kill |cRXP_ENEMY_Valnov the Mad|r.
     .complete 24676,3 --Valnov the Mad slain (1)
     .mob Valnov the Mad
 step
@@ -20800,7 +20800,7 @@ step
     #requires Valov the Mad1
     #label Valov the Mad2
     .goto 179,74.16,27.43
-    >>Kill |cRXP_ENEMY_Valov the Mad|r.
+    >>Kill |cRXP_ENEMY_Valnov the Mad|r.
     .complete 24676,3 --Valnov the Mad slain (1)
     .mob Valnov the Mad
 step
@@ -23828,7 +23828,7 @@ step
     .mob Rotlimb Marauder
     .mob Darkwraith
 step
-    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Maurauders|r|r.
+    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Marauders|r|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
     .goto 94,54.28,70.98
     .turnin 9254 >>Turn in The Wayward Apprentice
@@ -23872,7 +23872,7 @@ step << Warlock/Hunter
 step
     #completewith next
     .goto 94,51.47,70.39
-    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Maraudurs are really good at killing you
+    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Marauders are really good at killing you
 step
     .goto 94,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sareyn|r.
@@ -23957,7 +23957,7 @@ step
     #completewith IncriminatingDocumentsA
     #label IncriminatingDocumentsB
     .goto 94,51.47,70.39
-    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Maraudurs are really good at killing you
+    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Marauders are really good at killing you
 step
     #requires IncriminatingDocumentsB
     #completewith IncriminatingDocumentsA
@@ -25962,7 +25962,7 @@ step
     .goto 465,54.14,43.99,15,0
     .goto 465,53.74,51.00,10,0
     .goto 465,47.58,48.29,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darneli to pick up the corpse before clicking on the next one|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darnell to pick up the corpse before clicking on the next one|r.
     .complete 26800,1 --6/6 Scarlet Corpses gathered
     .target Scarlet Corpse
 step
@@ -26018,7 +26018,7 @@ step
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
     .goto 465,49.41,21.94,25,0
-    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r around you. Loot them for the |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] and |T134360:0|t[|cRXP_LOOT_Duskbat Wings|r].
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Scavengers|r around you. Loot them for the |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] and |T134360:0|t[|cRXP_LOOT_Duskbat Wings|r].
     .complete 26802,1 --4/4 Scavenger Paw
     .complete 26802,2 --4/4 Duskbat Wing
     .mob Mangy Duskbat
@@ -26063,7 +26063,7 @@ step
     .target Darnell
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r.
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
     .mob Robrain Magus
@@ -26074,7 +26074,7 @@ step
     .mob Marshal Redpath
 step
     .goto 465,74.1,66.0
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r.
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r.
     *|cRXP_WARN_NOTE:|r Focus undeads that are already fighting.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
@@ -26299,10 +26299,10 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
     .complete 25038,1 --3/3 Gloom Weed
 step
-    >>Kill the |cRXP_ENEMY_Ravaged Corpses|r and |cRXP_ENEMY_Rotten Dead|r. Loot them for the |T1:0|t[|cRXP_LOOT_Putric Claw|r].
+    >>Kill the |cRXP_ENEMY_Ravaged Corpses|r and |cRXP_ENEMY_Rotting Dead|r. Loot them for the |T1:0|t[|cRXP_LOOT_Putric Claw|r].
     .complete 25090,1 --7/7 Putrid Claw
     .mob Ravaged Corpse
-    .mob Rotten Dead
+    .mob Rotting Dead
 step
     #label GordosTaskA
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
@@ -26807,7 +26807,7 @@ step
     .complete 14070,3 --1/1 Jack the Hammer beaten down
     .mob Jack the Hammer
 step
-    >>Attack |cRXP_ENEMY_Frankei Gearslipper|r.
+    >>Attack |cRXP_ENEMY_Frankie Gearslipper|r.
     .goto 194,36.84,69.95
     .complete 14070,2 --1/1 Frankie Gearslipper beaten down
     .mob Frankey Gearslipper
@@ -27341,7 +27341,7 @@ step
     .accept 14238 >>Accept Infrared = Infradead
     .target Kilag Gorefang
 step
-    >>Use |T133149:0|t[Infraread Heat Focals] and kill |cRXP_ENEMY_SI:7 Assassins|r.
+    >>Use |T133149:0|t[Infrared Heat Focals] and kill |cRXP_ENEMY_SI:7 Assassins|r.
     .use 49611
     .goto 174,31.67,65.81
     .complete 14238,1 --10/10 SI:7 Assassin slain
@@ -27359,7 +27359,7 @@ step
     .accept 14241 >>Accept Get to the Gyrochoppa!
     .target Scout Brax
 step
-    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochopper Pilots|r. Loot them for the [|cRXP_LOOT_Gyrochoppa Keys|r].
+    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochoppa Pilot|r. Loot them for the [|cRXP_LOOT_Gyrochoppa Keys|r].
     .goto 174,23.23,67.50
     .complete 14241,1 --1/1 Gyrochoppa Keys
     .mob SI:7 Operative
@@ -27457,7 +27457,7 @@ step
     .use 132516
     .itemcount 132516,1
 step
-    >>Use the |T236997:0|t[Wild Cluster Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
+    >>Use the |T236997:0|t[Wild Clucker Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
     .use 50232
     .goto 174,49.64,63.45,30,0
     .goto 174,50.25,65.80,20,0
@@ -27718,7 +27718,7 @@ step
     .goto 174,56.67,44.26,15,0
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r, |cRXP_FRIENDLY_Assistant Greedy|r, and |cRXP_FRIENDLY_Coach Crosscheck|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r, |cRXP_FRIENDLY_Assistant Greely|r, and |cRXP_FRIENDLY_Coach Crosscheck|r.
     .turnin 24945 >>Turn in Three Little Pygmies
     .goto 174,51.85,47.20
     .turnin 24946 >>Turn in Rockin' Powder
@@ -27727,7 +27727,7 @@ step
     .accept 24952 >>Accept Rocket Boot Boost
     .goto 174,51.8,47.1
     .target Foreman Dampwick
-    .target Assistant Greedy
+    .target Assistant Greely
     .target Coach Crosscheck
 step
     >>Use the |T133029:0|t[Rockin' Powder Infused Rocket Boots]
