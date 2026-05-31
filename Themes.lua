@@ -262,7 +262,10 @@ addon.v2.themes['v2'] = {
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
+        activeSteps = {10 / 255, 11 / 255, 24 / 255, 0.82},
+        activePartySteps = {10 / 255, 11 / 255, 24 / 255, 0.82},
         activeStepItem = {26 / 255, 28 / 255, 48 / 255, 0.2},
+        activePartyStepItem = {26 / 255, 28 / 255, 48 / 255, 0.95},
     },
 
     edges = {
