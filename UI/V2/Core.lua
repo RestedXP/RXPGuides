@@ -82,6 +82,25 @@ local function updateTheme(this, payload)
     end
 end
 
+
+function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha)
+    if frame.rxpShadow then return frame.rxpShadow end
+
+    xOffset = xOffset or 0
+    yOffset = yOffset or 0
+    alpha = alpha or 0.55
+
+    local shadow = CreateFrame("Frame", nil, frame, "ShadowOverlayTemplate")
+    shadow:SetPoint("TOPLEFT", frame, "TOPLEFT", xOffset - 2, yOffset + 2)
+    shadow:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", xOffset + 2, yOffset - 2)
+    shadow:SetAlpha(alpha)
+    shadow:SetFrameLevel(max(frame:GetFrameLevel() - 1, 0))
+
+    frame.rxpShadow = shadow
+    return shadow
+end
+
+
 function addon.ui.v2:RegisterRXPV2ScrollFrame()
     --[[-----------------------------------------------------------------------------
     ScrollFrame Container
@@ -329,7 +348,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
-            this:SetHeight((height + 10) or 0)
+            this:SetHeight((height + 18) or 0)
         end,
 
         ["OnHeightSet"] = function(this, height)
@@ -360,14 +379,15 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         -- frame:SetBackdropColor(unpack(addon.colors.background))
         frame:SetBackdrop(theme.edges.activeSteps or theme.edges.common)
         frame:SetBackdropColor(unpack(theme.backgroundColors.activeSteps or theme.backgroundColors.common))
+        self:AddFrameShadow(frame)
 
         frame:SetScript("OnShow", Frame_OnShow)
         frame:SetScript("OnHide", Frame_OnClose)
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        content:SetPoint("TOPLEFT", 6, -4)
-        content:SetPoint("BOTTOMRIGHT", -4, 6)
+        content:SetPoint("TOPLEFT", 6, -14)
+        content:SetPoint("BOTTOMRIGHT", -6, 4)
 
         local widget = {
             content = content,
@@ -449,7 +469,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["OnWidthSet"] = function(this, width)
             local content = this.content
-            local contentwidth = width - 34
+            local contentwidth = width - 32
             if contentwidth < 0 then contentwidth = 0 end
             content:SetWidth(contentwidth)
             content.width = contentwidth
@@ -470,7 +490,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["OnHeightSet"] = function(this, height)
             local content = this.content
-            local contentheight = height - 57
+            local contentheight = height - 63
             if contentheight < 0 then contentheight = 0 end
             content:SetHeight(contentheight)
             content.height = contentheight
@@ -537,6 +557,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         frame:SetBackdrop(theme.edges.activePartySteps or theme.edges.common)
         frame:SetBackdropColor(unpack(theme.backgroundColors.activePartySteps or theme.backgroundColors.common))
+        self:AddFrameShadow(frame)
 
         if frame.SetResizeBounds then -- WoW 10.0
             frame:SetResizeBounds(220, 40)
@@ -580,8 +601,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        content:SetPoint("TOPLEFT", 6, -4)
-        content:SetPoint("BOTTOMRIGHT", -4, 6)
+        content:SetPoint("TOPLEFT", 6, -14)
+        content:SetPoint("BOTTOMRIGHT", -6, 4)
         -- content:ClearBackdrop()
         -- content:SetBackdrop(addon.RXPFrame.backdrop.bottom)
         -- content:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
@@ -689,7 +710,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         frame:SetBackdropColor(unpack(theme.backgroundColors.activePartyStepItem or theme.backgroundColors.common))
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 5)
+        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, 11)
         title:ClearBackdrop()
         title:SetBackdrop(theme.edges.activePartyStepItem or theme.edges.common)
         title:SetBackdropColor(unpack(theme.backgroundColors.activePartyStepItem or theme.backgroundColors.common))
