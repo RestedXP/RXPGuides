@@ -264,24 +264,47 @@ addon.v2.themes['v2'] = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
         activeSteps = {10 / 255, 11 / 255, 24 / 255, 0.82},
         activePartySteps = {10 / 255, 11 / 255, 24 / 255, 0.82},
-        activeStepItem = {26 / 255, 28 / 255, 48 / 255, 0.2},
-        activePartyStepItem = {26 / 255, 28 / 255, 48 / 255, 0.95},
+        activeStepItem = {21 / 255, 23 / 255, 42 / 255, 0.97},
+        activePartyStepItem = {21 / 255, 23 / 255, 42 / 255, 0.97},
+    },
+
+    shadows = {
+        outer = {size = 2, alpha = 0.35, xOffset = 0, yOffset = 0},
+        stepItem = {size = 2, alpha = 0.55, xOffset = 0, yOffset = 0},
+    },
+
+    borderColors = {
+        common = {55 / 255, 62 / 255, 109 / 255, 1},
+        activeSteps = {55 / 255, 62 / 255, 109 / 255, 1},
+        activePartySteps = {55 / 255, 62 / 255, 109 / 255, 1},
+        activeStepItem = {43 / 255, 50 / 255, 101 / 255, 1},
+        activePartyStepItem = {43 / 255, 50 / 255, 101 / 255, 1},
+    },
+
+    layout = {
+        outerPadding = {left = 6, right = 6, top = 14, bottom = 4},
+        stepItemPadding = {left = 4, right = 6, top = 10, bottom = 2},
+        stepItemMargin = {bottom = 14},
+        stepBadge = {x = 4, y = 10, height = 15, horizontalPadding = 6},
+        partyTitle = {right = -20, y = 6, height = 17, horizontalPadding = 10},
     },
 
     edges = {
         common = {
             bgFile = "Interface/BUTTONS/WHITE8X8",
-            edgeFile = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
-            tile = true,
-            edgeSize = 8,
-            tileSize = 8,
-            insets = {left = 4, right = 2, top = 2, bottom = 4}
+            edgeFile = "Interface/BUTTONS/WHITE8X8",
+            tile = false,
+            edgeSize = 1,
+            tileSize = 1,
+            insets = {left = 1, right = 1, top = 1, bottom = 1}
         },
     },
 
     textColor = {
         common = {1, 1, 1},
         activePartySteps = {24 / 255, 210 / 255, 255 / 255},
+        activeStepItem = {1, 1, 1},
+        activeStepBadge = {24 / 255, 210 / 255, 255 / 255},
         activePartyStepItem = {24 / 255, 210 / 255, 255 / 255}
     },
 
