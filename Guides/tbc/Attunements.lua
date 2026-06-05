@@ -883,7 +883,7 @@ step
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akama|r
     .turnin 10707 >> Turn in The Ata'mal Terrace
-    .accept 10708 >> Accept Akama's Promise
+    .accept 11052 >> Accept Akama's Promise
 	.target Akama
 step
     #completewith next
@@ -891,7 +891,7 @@ step
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_A'dal|r
-    .turnin 10708 >> Turn in Akama's Promise
+    .turnin 11052 >> Turn in Akama's Promise
 	.target A'dal
 step
     #completewith next
