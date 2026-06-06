@@ -16427,8 +16427,8 @@ addon.professions.vah = {}
 addon.professions.vah.VIRTUAL_AH = {
     ["Material A"] = {
         [1] = {
-            count = 100,
-            buyoutPrice = 100,
+            count = 10000,
+            buyoutPrice = 10000,
         },
     },
 }
