@@ -684,7 +684,7 @@ local function calculatePercent(professionName, recipeName, skillLevel)
     local recipe = PROFESSIONS[professionName].RECIPES[recipeName]
     local grey = recipe.grey
     local yellow = recipe.yellow
-    local percent = ((grey - skillLevel) / (grey - yellow))
+    local percent = (1.0 * (grey - skillLevel) / (grey - yellow))
     return percent
 end
 
@@ -712,6 +712,7 @@ local function gatherRecipesToBuyGreedy2(professionName, skillLevel, segmentMaxL
         if money >= recipePrice then
             --We have money 
             local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
+            print(percent,"%")
             howManyToMake = (percent > 0) and ceil(1 / percent) or 0
             if howManyToMake > 1 then print(howManyToMake, " | ", recipeName)
             elseif howManyToMake == 0 then canCreateIthRecipe = false end
@@ -784,9 +785,6 @@ local function gatherRecipesToBuyGreedy2(professionName, skillLevel, segmentMaxL
                     end
                     craftedRecipes[recipeName] = (craftedRecipes[recipeName] or 0) + 1
                     recipesToCraftKnapsack[recipeName] = (recipesToCraftKnapsack[recipeName] or 0) + 1
-                    --Update skill level. TODO: Here we assume 100% chance of skillUp. Think if this is the appropriate point to add more logic to this or postpone it for later
-                    --skillLevelsToGain = skillLevelsToGain - 1
-                    --skillLevelsGained = skillLevelsGained + 1
                 else --We cannot craft the recipe
                     canCreateIthRecipe = false
                     money = saveMoneyBeforeRecipe --return all money we have "spent"
@@ -1186,7 +1184,7 @@ local function createGUI()
     local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
     selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
     selectSkillLevelFrame:SetSize(300, 20)
-    selectSkillLevelFrame:SetMinMaxValues(1, 300)
+    selectSkillLevelFrame:SetMinMaxValues(0, 300)
     selectSkillLevelFrame:SetValue(20)
     selectSkillLevelFrame:SetValueStep(1)
     selectSkillLevelFrame:SetObeyStepOnDrag(true)
@@ -1388,9 +1386,8 @@ SlashCmdList['rst'] = function()
 end
 
 SLASH_set1 = '/set'
-SlashCmdList['set'] = function()
-    setPlayerData("Test", 1)
-    segmentRange = 5
+SlashCmdList['set'] = function(args)
+    segmentRange = tonumber(args)
 end
 
 --Testing
