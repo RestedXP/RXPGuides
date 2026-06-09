@@ -6,13 +6,9 @@ addon.professions.profSession = addon.professions.profSession or {}
 
 -- Localize globals
 local _G = _G
-local pairs, ipairs, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
+local pairs, ipairs = pairs, ipairs
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
-local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
-local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
-local GetItemNameByID = _G.C_Item.GetItemNameByID
-local GetMoney = _G.GetMoney
 
 -- Local renaming
 local profSession = addon.professions.profSession
@@ -81,8 +77,6 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
         name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
 
-        --Check if itemId already exists
-        --if not profSession.foundItems[name] then profSession.foundItems[name] = {} end
         profSession.foundItems[name] = profSession.foundItems[name] or {}
         if buyoutPrice > 0 then
             tinsert(profSession.foundItems[name], {
