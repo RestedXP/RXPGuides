@@ -63,7 +63,9 @@ ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,cata]
 
 
 Professions\Professions.lua
-Professions\locale\professionsLocale.lua
-Professions\DB\professionsDB.lua
+Professions\locale\ProfessionsLocale.lua
+Professions\AH\ProfessionsAH.lua
+Professions\DB\ProfessionsDB.lua
+Professions\GUI\ProfessionsGUI.lua
 
 CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,tbc,wrath]

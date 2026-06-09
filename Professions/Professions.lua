@@ -7,7 +7,7 @@ if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
 local _G = _G
 local len, fmt, lower = string.len, string.format, string.lower
 local tcount, tinsert, twipe, tsort, tremove = table.count, table.insert, table.wipe, table.sort, table.remove
-local pairs, ipars, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
+local pairs, ipairs, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
 local max, min, abs, floor, ceil, huge = math.max, math.min, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
@@ -142,21 +142,10 @@ local function deepCopyTable(tbl)
 end
 
 
---local enums
-local EVENTS_TO_REGISTER_AH = {
-    "AUCTION_HOUSE_SHOW",
-    "AUCTION_HOUSE_CLOSED",
-    "AUCTION_HOUSE_DISABLED",
-    "GET_ITEM_INFO_RECEIVED",
-    "AUCTION_ITEM_LIST_UPDATE",
-}
-
--- Saved variables and session
-local segmentRange = 75 --TODO: store in RXPData / addon.settings or somewhere better
-
 addon.professions.profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
+    segmentRange = 75, --TODO: maybe store in RXPData / RXPCData / addon.settings or somewhere better if user can chage it
     foundItems = {}, --pairs
 
     currentPage = 0,
@@ -182,26 +171,12 @@ function addon.professions.profSession:Reset()
     self.materialsToScan = {}
 end
 
-addon.professions.AH = addon:NewModule("ProfessionsAH", "AceEvent-3.0")
-
-function addon.professions.AH:Setup()
-    --TODO: add to setting enable/disable
-    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
-    if addon.professions.profSession.isInitialized then return end
-
-    --Register events
-    for _, event in ipairs(EVENTS_TO_REGISTER_AH) do
-        self:RegisterEvent(event)
-    end
-
-    addon.professions.profSession.isInitialized = true
-end
-
 --local renaming
 --we do this as to not have addon.professions.etc every time
 local profSession = addon.professions.profSession
 local PROFESSIONS = addon.professions.PROFESSIONS
 local vah = addon.professions.vah
+local GUI = addon.professions.GUI
 
 --local functions
 
@@ -234,35 +209,9 @@ local function gatherPlayerProfessionInfo()
     end
 end
 
---Sets player data
-local function setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
-    if prof1Name then
-        RXPCData.professions.profession1.name = lower(prof1Name)
-        RXPCData.professions.profession1.skillLevel = prof1Lvl
-        RXPCData.professions.profession1.skillMaxLevel = 300 --TODO: Rework this
-    end
-    if prof2Name then
-        RXPCData.professions.profession2.name = lower(prof2Name)
-        RXPCData.professions.profession2.skillLevel = prof2Lvl
-        RXPCData.professions.profession2.skillMaxLevel = 300 --TODO: Rework this
-    end
-end
-
 --Sets RXPCData.professions.money
 local function gatherPlayerMoneyInfo()
     RXPCData.professions.money = GetMoney()
-end
-
---Calculate what skill segments to look into
---Segment step: eg. 75: 1-75, 75-150, ...
-local function calculateSegmentRange(professionSkillLevel, segmentStep)
-    local minimum = floor(professionSkillLevel / segmentStep) * segmentStep + 1
-    local maximum = ceil(professionSkillLevel / segmentStep) * segmentStep
-    if maximum < minimum then
-        maximum = maximum + segmentStep
-    end
-    if maximum > 300 then maximum = 300 end
-    return minimum, maximum
 end
 
 --Removes grey recipes
@@ -521,6 +470,14 @@ local function calculateRecipeFreePrice(professionName)
     end
 end
 
+--Calculates recipe craft chance percentage
+local function calculatePercent(professionName, recipeName, skillLevel)
+    local recipe = PROFESSIONS[professionName].RECIPES[recipeName]
+    local grey = recipe.grey
+    local yellow = recipe.yellow
+    local percent = (1.0 * (grey - skillLevel) / (grey - yellow))
+    return percent
+end
 
 --[[
 General idea:
@@ -532,164 +489,7 @@ General idea:
 TODO: move locals out from loop
 TODO: check for money a little better
 ]]
-local function gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLevel, money)
-    --Calcualte raw value of each considered recipes
-    calculateRecipeRawPrice(professionName)
-    --Get all neccessary info about considered recipes
-    local recipesConsidered = {}
-    for recipeName, recipeCost in pairs(profSession.recipesToConsider) do
-        recipesConsidered[recipeName] = PROFESSIONS[professionName].RECIPES[recipeName]
-    end
-    local sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider) -- ipairs{"name", price}
-    local haveMoney = true --If we do not have the money for the nth recipe, we do not have money for any subsequent one
-    local materialsToBuyKnapsack = {} --pairs{[name] = count}
-    local craftedRecipes = {} --pairs{[name] = count} --We take from this knapsack when we need it for another recipe
-    local recipesToCraftKnapsack = {} --pairs{[name] = count} --This is the one that stores all necessary crafts
-    local backpackKnapsack = {} --pairs{[name] = count} --Backpack containing items that we bought this session
-    local skillLevelsToGain = segmentMaxLevel - skillLevel
-    local skillLevelsGained = 0
-    local moneySpent = money
-    while #sortedRecipesByPrice > 0 and skillLevelsToGain > 0 and haveMoney do
-        local canCreateIthRecipe = true
-        local recipeCreated = false
-        local recipeName = sortedRecipesByPrice[1][1]
-        local recipePrice = sortedRecipesByPrice[1][2]
-        local recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
-        --Check if we have money
-        if money >= recipePrice then
-            --We have money 
-            do --Add greedily
-                local saveMoneyBeforeRecipe = money
-                local tempMaterialsToBuy = {}
-                local canCreateRecipe = true --wheter there are enough materials overall; We assume we can
-                local saveCraftedRecipes = deepCopyTable(craftedRecipes) --We save this if we use something from it but they later find out it is impossible to craft
-                local saveBackpackKnapsack = deepCopyTable(backpackKnapsack)
-                for materialName, materialTable in pairs(recipeTable.materials) do
-                    --Check if we can create the recipe
-                    if canCreateRecipe then
-                        --Check if material is another recipe
-                        if PROFESSIONS[professionName].RECIPES[materialName] then --TODO check how much is needed
-                            --It is
-                            --Check if there is some in Knapsack
-                            if craftedRecipes[materialName] and craftedRecipes[materialName] >= materialTable.count then --and recipesToCraftKnapsack[materialName] > 0 then --No need for this becuse the 2 row below
-                                --Remove from knapsack
-                                craftedRecipes[materialName] = craftedRecipes[materialName] - materialTable.count
-                                if craftedRecipes[materialName] == 0 then
-                                    craftedRecipes[materialName] = nil
-                                end
-                            else
-                                canCreateRecipe = false
-                            end
-                        --Check if its a vendor item
-                        elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            --Skip; we don't have to worry about this here
-                        else --It's not another recipe/vendor item
-                            local addedMaterials = 0
-                            --Check if we have some leftovers in backpack
-                            if backpackKnapsack[materialName] then --and backpackKnapsack[materialName] > 0 then --We don't need it because of the code below
-                                addedMaterials = min(backpackKnapsack[materialName], materialTable.count)
-                                backpackKnapsack[materialName] = backpackKnapsack[materialName] - addedMaterials
-                                if backpackKnapsack[materialName] <= 0 then -- <= 0 for safety; should never be below 0
-                                    backpackKnapsack[materialName] = nil
-                                end
-                            end
-                            while addedMaterials < materialTable.count and #profSession.foundItems[materialName] > 0 and haveMoney do
-                                local foundItemDetails = profSession.foundItems[materialName][1]
-                                if foundItemDetails.count >= materialTable.count - addedMaterials then
-                                    money = money - foundItemDetails.price
-                                    tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + (materialTable.count - addedMaterials)
-                                    backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
-                                    addedMaterials = materialTable.count
-                                    --tremove(profSession.foundItems[materialName], 1)
-                                else
-                                    addedMaterials = addedMaterials + foundItemDetails.count
-                                    money = money - foundItemDetails.price
-                                    tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + foundItemDetails.count
-                                    backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
-                                    --tremove(profSession.foundItems[materialName], 1)
-                                end
-                                --Check if we truly have enough money
-                                if money < 0 then
-                                    haveMoney = false
-                                    canCreateIthRecipe = false
-                                    canCreateRecipe = false
-                                else
-                                    tremove(profSession.foundItems[materialName], 1)
-                                end
-                            end
-                            --Check if it is completed
-                            if addedMaterials >= materialTable.count then -->= for safety reasons only; It should always be at most ==
-                                --Everything is good. --Not reversed with 'not' because its easier to read this way
-                            else --Not enough materials so we cannot create the recipe
-                                canCreateRecipe = false
-                            end
-                        end
-                    end
-                end
-                --Check finally if we can create the recipe
-                if canCreateRecipe then
-                    recipeCreated = true
-                    --add everything to knapsack and update accordingly
-                    for materialName, materialCount in pairs(tempMaterialsToBuy) do
-                        materialsToBuyKnapsack[materialName] = (materialsToBuyKnapsack[materialName] or 0) + materialCount
-                    end
-                    craftedRecipes[recipeName] = (craftedRecipes[recipeName] or 0) + 1
-                    recipesToCraftKnapsack[recipeName] = (recipesToCraftKnapsack[recipeName] or 0) + 1
-                    --Update skill level. TODO: Here we assume 100% chance of skillUp. Think if this is the appropriate point to add more logic to this or postpone it for later
-                    skillLevelsToGain = skillLevelsToGain - 1
-                    skillLevelsGained = skillLevelsGained + 1
-                else --We cannot craft the recipe
-                    canCreateIthRecipe = false
-                    money = saveMoneyBeforeRecipe --return all money we have "spent"
-                    craftedRecipes = saveCraftedRecipes --return all materials we have "spent"
-                    backpackKnapsack = saveBackpackKnapsack
-                end
-            end
-        else -- We don't have enough money; abort
-            haveMoney = false
-        end
-        --Check if the skillUp will move the recipe into grey area
-        if recipeCreated then
-            if PROFESSIONS[professionName].RECIPES[recipeName].grey <= skillLevel + skillLevelsGained then
-                canCreateIthRecipe = false
-            end
-        end
-        --Check if we have to move to another recipe
-        if not canCreateIthRecipe then
-            --i = i + 1
-            --Remove from sorted
-            tremove(sortedRecipesByPrice, 1)
-            --Check if we created any and is part of another recipe
-            if craftedRecipes[recipeName] and isPartOfAnyRecipe(professionName, recipeName) then
-                --Remove from pool of considered recipes
-                profSession.recipesToConsider[recipeName] = nil
-                --Recalculate all other recipes counting this as free
-                for rn, rp in pairs(profSession.recipesToConsider) do
-                    if isPartOfTheRecipe(professionName, recipeName, rn) then
-                        profSession.recipesToConsider[rn] = rp - recipePrice
-                    end
-                end
-                --Sort the prices again --TODO:Check if this is safe
-                sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider)
-            end
-        end
-    end
-    --Finish up
-    RXPCData.professions.money = money --TODO: delete once we implement actual buying (and then move this logic to that function)
-    moneySpent = moneySpent - money
-    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
-end
-
-local function calculatePercent(professionName, recipeName, skillLevel)
-    local recipe = PROFESSIONS[professionName].RECIPES[recipeName]
-    local grey = recipe.grey
-    local yellow = recipe.yellow
-    local percent = (1.0 * (grey - skillLevel) / (grey - yellow))
-    return percent
-end
-
---Experimental
-local function gatherRecipesToBuyGreedy2(professionName, skillLevel, segmentMaxLevel, money)
+function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, segmentMaxLevel, money)
     --Calcualte raw value of each considered recipes
     calculateRecipeRawPrice(professionName)
     local sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider) -- ipairs{"name", price}
@@ -832,65 +632,6 @@ end
 
 
 --Events
-function addon.professions.AH:AUCTION_HOUSE_SHOW()
-    if profSession.isInitialized then
-        profSession.ahIsShowing = true
-    end
-end
-
-function addon.professions.AH:AUCTION_HOUSE_CLOSED()
-    profSession.ahIsShowing = false
-end
-
-function addon.professions.AH:AUCTION_HOUSE_DISABLED()
-    profSession.ahIsShowing = false
-end
-
-function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
-    --print("GET_ITEM_INFO_RECEIVED")
-end
-
-function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
-    if not profSession.sentQuery then return end
-
-    local resultCount, totalAuctions = GetNumAuctionItems("list")
-    print(resultCount, totalAuctions)
-    if resultCount == 0 or totalAuctions == 0 then
-        profSession.sentQuery = false
-        profSession.currentPage = 0
-        profSession.materialIndex = profSession.materialIndex + 1
-        if profSession.materialIndex <= #profSession.materialsToScan then
-            self:Scan(profSession.materialsToScan[profSession.materialIndex])
-        end
-        return
-    end
-
-    local name, count, buyoutPrice, owner, itemId, hasAllInfo, itemLink
-    for i = 1, resultCount do
-        itemLink = GetAuctionItemLink("list", i)
-        -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
-
-        --Check if itemId already exists
-        --if not profSession.foundItems[name] then profSession.foundItems[name] = {} end
-        profSession.foundItems[name] = profSession.foundItems[name] or {}
-        if buyoutPrice > 0 then
-            tinsert(profSession.foundItems[name], {
-                count = count,
-                price = buyoutPrice,
-                pricePerItem = ceil(buyoutPrice / count),
-                owner = owner,
-                itemLink = itemLink
-            })
-        end
-    end
-
-    profSession.sentQuery = false
-    profSession.currentPage = profSession.currentPage + 1
-
-    self:Scan(profSession.materialsToScan[profSession.materialIndex])
-end
-
 function addon.professions:TRADE_SKILL_SHOW()
 end
 
@@ -952,28 +693,39 @@ function addon.professions:PLAYER_MONEY(...)
     RXPCData.money = GetMoney()
 end
 
---Scan function
-function addon.professions.AH:Scan(itemName)
-    --print("scanning - ", itemName)
-    if profSession.sentQuery then return end
-    if not CanSendAuctionQuery() then
-        C_Timer.After(0.35, function ()
-            self:Scan(itemName)
-        end)
-        return
-    end
+-- Functions
 
-    profSession.sentQuery = true
-    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems(itemName, nil, nil, profSession.currentPage, false, nil, false, true, nil) --TODO: check if usable should be true, exactMatch should be true by testing
+--Calculate what skill segments to look into
+--Segment step: eg. 75: 1-75, 75-150, ...
+function addon.professions.calculateSegmentRange(professionSkillLevel, segmentStep)
+    local minimum = floor(professionSkillLevel / segmentStep) * segmentStep + 1
+    local maximum = ceil(professionSkillLevel / segmentStep) * segmentStep
+    if maximum < minimum then
+        maximum = maximum + segmentStep
+    end
+    if maximum > 300 then maximum = 300 end
+    return minimum, maximum
+end
+
+--Sets player data
+function addon.professions.setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lvl)
+    if prof1Name then
+        RXPCData.professions.profession1.name = lower(prof1Name)
+        RXPCData.professions.profession1.skillLevel = prof1Lvl
+        RXPCData.professions.profession1.skillMaxLevel = 300 --TODO: Rework this
+    end
+    if prof2Name then
+        RXPCData.professions.profession2.name = lower(prof2Name)
+        RXPCData.professions.profession2.skillLevel = prof2Lvl
+        RXPCData.professions.profession2.skillMaxLevel = 300 --TODO: Rework this
+    end
 end
 
 
-
 --Full scan function - For testing purposes only -- Scans first profession
-local function fullScan()
+function addon.professions:fullScan()
     profSession:Reset()
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
+    local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -981,10 +733,10 @@ local function fullScan()
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
 end
 
---A scan function for 'test' proffesion
-local function testScan()
+--A scan function for 'test' profession
+function addon.professions:testScan()
     profSession:Reset()
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
+    local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -1007,13 +759,12 @@ local function testScan()
     print("Scan done")
 end
 
-
 --Stringifies results form Greedy algorthim - For testing purposes only
-local function greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent)
+function addon.professions.greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent)
     local str = ""
     str = "====Recipe costs====\n"
     local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
-    for i, v in ipars(sorted) do
+    for i, v in ipairs(sorted) do
         str = str .. tostring(v[1]) .. ": " .. formatMoney(v[2]) .. "\n"
     end
     str = str .. "====To craft====\n" 
@@ -1050,267 +801,16 @@ function addon.professions:Setup()
     session.isInitialized = true
     self.AH:Setup()
 
-    --We need to "re-delcare" these things here in order to hook them properly. Last time was just for the 'lineter'
+    --We need to "re-delcare" these things here in order to hook them properly. Last time was just for the 'linter'
     PROFESSIONS = addon.professions.PROFESSIONS
     profSession = addon.professions.profSession
     vah = addon.professions.vah
+    GUI = addon.professions.GUI
 
     gatherPlayerProfessionInfo()
+    GUI.createGUI()
 end
 
-
---GUI
-local printed = false --last minute variable for a gui bugfix, will be properly resolved
-local function createGUI()
-    local guiFrame = CreateFrame("Frame", "ProfessionsFrame", UIParent, "BasicFrameTemplateWithInset")
-    guiFrame:SetSize(500, 700)
-    guiFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
-    guiFrame.TitleBg:SetHeight(30)
-    guiFrame.title = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    guiFrame.title:SetPoint("CENTER", guiFrame.TitleBg, "CENTER", 0, 6)
-    guiFrame.title:SetText("Professions guide - Debugging screen")
-    guiFrame:EnableMouse(true)
-    guiFrame:SetMovable(true)
-    guiFrame:RegisterForDrag("LeftButton")
-    guiFrame:SetScript("OnDragStart", function (self)
-        self:StartMoving()
-    end)
-    guiFrame:SetScript("OnDragStop", function (self)
-        self:StopMovingOrSizing()
-    end)
-
-    guiFrame.descriptionText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.descriptionText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -30)
-    guiFrame.descriptionText:SetText("Select profession:")
-
-    local function createCheckButton(parent, displayname)
-        local checkButton = CreateFrame("CheckButton", nil, parent, "UIRadioButtonTemplate");
-        return checkButton;
-    end
-
-    local blacksmithingButton = createCheckButton(guiFrame, "Blacksmithing")
-    local leatherworkingButton = createCheckButton(guiFrame, "Leatherworking")
-    local tailoringButton = createCheckButton(guiFrame, "Tailoring")
-    local alchemyButton = createCheckButton(guiFrame, "Alchemy")
-    local enchantingButton = createCheckButton(guiFrame, "Enchanting")
-    local engineeringButton = createCheckButton(guiFrame, "Engineering")
-    local testButton = createCheckButton(guiFrame, "Test")
-
-    guiFrame.blacksmithingText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.blacksmithingText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -60)
-    guiFrame.blacksmithingText:SetText("Blacksmithing")
-    blacksmithingButton:SetSize(20, 20)
-    blacksmithingButton:SetPoint("LEFT", guiFrame.blacksmithingText, "RIGHT", 10, 0)
-
-    guiFrame.leatherworkingText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.leatherworkingText:SetPoint("LEFT", blacksmithingButton, "RIGHT", 10, 0)
-    guiFrame.leatherworkingText:SetText("Leatherworking")
-    leatherworkingButton:SetSize(20, 20)
-    leatherworkingButton:SetPoint("LEFT", guiFrame.leatherworkingText, "RIGHT", 10, 0)
-
-    guiFrame.tailoringText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.tailoringText:SetPoint("LEFT", leatherworkingButton, "RIGHT", 10, 0)
-    guiFrame.tailoringText:SetText("Tailoring")
-    tailoringButton:SetSize(20, 20)
-    tailoringButton:SetPoint("LEFT", guiFrame.tailoringText, "RIGHT", 10, 0)
-
-    guiFrame.alchemyText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.alchemyText:SetPoint("LEFT", tailoringButton, "RIGHT", 10, 0)
-    guiFrame.alchemyText:SetText("Alchemy")
-    alchemyButton:SetSize(20, 20)
-    alchemyButton:SetPoint("LEFT", guiFrame.alchemyText, "RIGHT", 10, 0)
-
-    guiFrame.enchantingText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.enchantingText:SetPoint("TOPLEFT", guiFrame.blacksmithingText, "BOTTOMLEFT", 0, -10)
-    guiFrame.enchantingText:SetText("Enchanting")
-    enchantingButton:SetSize(20, 20)
-    enchantingButton:SetPoint("CENTER", blacksmithingButton, "CENTER", 0, -22)
-
-    guiFrame.engineeringText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.engineeringText:SetPoint("TOPLEFT", guiFrame.leatherworkingText, "BOTTOMLEFT", 0, -10)
-    guiFrame.engineeringText:SetText("Engineering")
-    engineeringButton:SetSize(20, 20)
-    engineeringButton:SetPoint("CENTER", leatherworkingButton, "CENTER", 0, -22)
-
-    guiFrame.testText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.testText:SetPoint("TOPLEFT", guiFrame.tailoringText, "BOTTOMLEFT", 0, -10)
-    guiFrame.testText:SetText("Test")
-    testButton:SetSize(20, 20)
-    testButton:SetPoint("CENTER", tailoringButton, "CENTER", 0, -22)
-
-    local function onRadioButtonPress(self)
-        blacksmithingButton:SetChecked(false)
-        leatherworkingButton:SetChecked(false)
-        tailoringButton:SetChecked(false)
-        alchemyButton:SetChecked(false)
-        enchantingButton:SetChecked(false)
-        engineeringButton:SetChecked(false)
-        testButton:SetChecked(false)
-
-        self:SetChecked(true)
-    end
-
-    blacksmithingButton:SetScript("OnClick", onRadioButtonPress)
-    leatherworkingButton:SetScript("OnClick", onRadioButtonPress)
-    tailoringButton:SetScript("OnClick", onRadioButtonPress)
-    alchemyButton:SetScript("OnClick", onRadioButtonPress)
-    enchantingButton:SetScript("OnClick", onRadioButtonPress)
-    engineeringButton:SetScript("OnClick", onRadioButtonPress)
-    testButton:SetScript("OnClick", onRadioButtonPress)
-
-    guiFrame.moneyText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.moneyText:SetPoint("TOPLEFT", guiFrame.enchantingText, "BOTTOMLEFT", 0, -10)
-    guiFrame.moneyText:SetText("Money:")
-
-    local moneyEditBox = CreateFrame("EditBox", "moneyEditBoxFrame", guiFrame, "InputBoxTemplate")
-    moneyEditBox:SetSize(50, 20)
-    moneyEditBox:SetPoint("LEFT", guiFrame.moneyText, "RIGHT", 10, 0)
-    moneyEditBox:SetNumeric(true)
-
-    guiFrame.moneyTextCopper = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.moneyTextCopper:SetPoint("LEFT", moneyEditBox, "RIGHT", 10, 0)
-    guiFrame.moneyTextCopper:SetText("in copper")
-
-    moneyEditBox:SetScript("OnEditFocusLost", function (self)
-        self:EnableKeyboard(false)
-    end)
-    moneyEditBox:SetScript("OnEnter", function (self)
-        self:EnableKeyboard(true)
-    end)
-    moneyEditBox:SetScript("OnEnterPressed", function (self)
-        self:EnableKeyboard(false)
-    end)
-
-    local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
-    selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
-    selectSkillLevelFrame:SetSize(300, 20)
-    selectSkillLevelFrame:SetMinMaxValues(0, 300)
-    selectSkillLevelFrame:SetValue(20)
-    selectSkillLevelFrame:SetValueStep(1)
-    selectSkillLevelFrame:SetObeyStepOnDrag(true)
-    selectSkillLevelFrame.Text:SetText("Select Skill level (" .. selectSkillLevelFrame:GetValue() .. ")")
-    selectSkillLevelFrame:SetScript("OnValueChanged", function (self, value, userInput)
-        self:SetValue(value)
-        self.Text:SetText("Select Skill level  (" .. self:GetValue() .. ")")
-    end)
-
-    local selectSegmentFrame = CreateFrame("Slider", "SelectSegmentFrame", guiFrame, "UISliderTemplateWithLabels")
-    selectSegmentFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -180)
-    selectSegmentFrame:SetSize(300, 20)
-    selectSegmentFrame:SetMinMaxValues(5, 300)
-    selectSegmentFrame:SetValue(75)
-    selectSegmentFrame:SetValueStep(5)
-    selectSegmentFrame:SetObeyStepOnDrag(true)
-    selectSegmentFrame.Text:SetText("Segment Range (" .. selectSegmentFrame:GetValue() .. ")")
-    selectSegmentFrame:SetScript("OnValueChanged", function (self, value, userInput)
-        self:SetValue(value)
-        self.Text:SetText("Segment Range (" .. self:GetValue() .. ")")
-    end)
-
-    local setButtonFrame = CreateFrame("Button", "SetButtonFrame", guiFrame, "UIPanelButtonTemplate")
-    setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -210)
-    setButtonFrame:SetSize(100, 40)
-    setButtonFrame:SetText("Set parameters")
-    setButtonFrame:RegisterForClicks("LeftButtonUp")
-    setButtonFrame:SetScript("OnClick", function (self)
-        local professionName = ""
-        if blacksmithingButton:GetChecked() then professionName = "Blacksmithing"
-        elseif leatherworkingButton:GetChecked() then professionName = "Leatherworking"
-        elseif tailoringButton:GetChecked() then professionName = "Tailoring"
-        elseif alchemyButton:GetChecked() then professionName = "Alchemy"
-        elseif enchantingButton:GetChecked() then professionName = "Enchanting"
-        elseif engineeringButton:GetChecked() then professionName = "Engineering"
-        elseif testButton:GetChecked() then professionName = "Testing" end
-        setPlayerData(professionName, selectSkillLevelFrame:GetValue())
-        segmentRange = selectSegmentFrame:GetValue()
-        print("Segment range", segmentRange)
-        RXPCData.professions.money = tonumber(moneyEditBox:GetText())
-    end)
-
-    local ahNotShowingMessageFrame = CreateFrame("MessageFrame", "ahNotShowingMessageFrame", UIParent)
-    ahNotShowingMessageFrame:SetPoint("TOP")
-    ahNotShowingMessageFrame:SetSize(200, 200)
-    ahNotShowingMessageFrame:SetFont("fonts/arialn.ttf", 20, "")
-    ahNotShowingMessageFrame:AddMessage("AH must be open to scan!", 1, 0, 0)
-    ahNotShowingMessageFrame:Hide()
-    ahNotShowingMessageFrame:RegisterEvent("AUCTION_HOUSE_SHOW")
-    ahNotShowingMessageFrame:SetScript("OnEvent", function (self, event)
-        if event == "AUCTION_HOUSE_SHOW" then
-            ahNotShowingMessageFrame:Hide()
-        end
-    end)
-
-    local resultTextFrame = CreateFrame("ScrollFrame", "scrollTextFrame", guiFrame, "UIPanelScrollFrameTemplate")
-    resultTextFrame:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
-    resultTextFrame:SetSize(400, 400)
-
-    local scanButtonFrame = CreateFrame("Button", "ScanButtonFrame", setButtonFrame, "UIPanelButtonTemplate")
-    scanButtonFrame:SetPoint("LEFT", setButtonFrame, "RIGHT")
-    scanButtonFrame:SetSize(200, 40)
-    scanButtonFrame:SetText("Scan Auction House")
-    scanButtonFrame:RegisterForClicks("LeftButtonUp")
-    scanButtonFrame:SetScript("OnClick", function (self)
-        printed = false
-        if not profSession.isInitialized then
-            error("Profession session not initialized", 2)
-        end
-        if not profSession.ahIsShowing then
-            ahNotShowingMessageFrame:Show()
-        else
-            guiFrame.printText.Text:SetText("")
-            if RXPCData.professions.profession1.name ~= "testing" then
-                fullScan()
-            else
-                testScan()
-            end
-        end
-    end)
-
-    --guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.printText = CreateFrame("Frame")
-    guiFrame.printText.Text = guiFrame.printText:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.printText.Text:SetPoint("TOPLEFT", guiFrame.printText, "TOPLEFT", 10, -10)
-    guiFrame.printText:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
-    guiFrame.printText:SetSize(resultTextFrame:GetWidth(), resultTextFrame:GetHeight() * 2)
-    resultTextFrame:SetScrollChild(guiFrame.printText)
-    local textToPrint = ""
-
-
-    local printButtonFrame = CreateFrame("Button", "printButtonFrame", scanButtonFrame, "UIPanelButtonTemplate")
-    printButtonFrame:SetPoint("LEFT", scanButtonFrame, "RIGHT")
-    printButtonFrame:SetSize(120, 40)
-    printButtonFrame:SetText("Print scan results")
-    printButtonFrame:RegisterForClicks("LeftButtonUp")
-    printButtonFrame:SetScript("OnClick", function (self)
-        textToPrint = ""
-        local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
-        local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
-        if not printed then
-            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
-            gatherRecipesToBuyGreedy2(
-            RXPCData.professions.profession1.name,
-            RXPCData.professions.profession1.skillLevel,
-            maxSegment, RXPCData.professions.money
-            )
-            textToPrint = greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent)
-            textToPrint = textToPrint .. "==========\n"
-            --guiFrame.printText:SetText(textToPrint)
-            guiFrame.printText.Text:SetText(textToPrint)
-        end
-        printed = true
-    end)
-
-    SLASH_prof1 = '/prof'
-    SlashCmdList['prof'] = function()
-        if not guiFrame:IsShown() then
-            guiFrame:Show()
-        end
-    end
-
-    --guiFrame:Hide()
-end
-
-createGUI()
 
 
 --Testing
@@ -1341,9 +841,9 @@ end
 SLASH_scan1 = '/scan'
 SlashCmdList['scan'] = function()
     profSession:Reset()
-    setPlayerData("Blacksmithing", 1)
+    addon.professions.setPlayerData("Blacksmithing", 1)
     RXPCData.professions.money = 10000
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
+    local minSegment, maxSegment = addon.professions.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -1354,11 +854,11 @@ end
 
 SLASH_pnt1 = '/pnt'
 SlashCmdList['pnt'] = function()
-    local minSegment, maxSegment = calculateSegmentRange(RXPCData.professions.profession1.skillLevel, segmentRange)
-    local recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent = gatherRecipesToBuyGreedy(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, maxSegment, RXPCData.professions.money)
+    local minSegment, maxSegment = addon.professions.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
+    local recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent = addon.professions.gatherRecipesToBuyGreedy(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, maxSegment, RXPCData.professions.money)
     print("====Recipe costs====")
     local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
-    for i, v in ipars(sorted) do
+    for i, v in ipairs(sorted) do
         print(tostring(v[1]) .. ": " .. tostring(v[2]))
     end
     print("====To craft====")
@@ -1387,7 +887,7 @@ end
 
 SLASH_set1 = '/set'
 SlashCmdList['set'] = function(args)
-    segmentRange = tonumber(args)
+    profSession.segmentRange = tonumber(args)
 end
 
 --Testing
