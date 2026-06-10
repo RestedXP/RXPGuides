@@ -237,7 +237,7 @@ function addon.professions.GUI.createGUI()
         local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
         if not printed then
             recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
-            aProf.gatherRecipesToBuyGreedy(
+            aProf.gatherRecipesToBuyGreedyPercentage(
             RXPCData.professions.profession1.name,
             RXPCData.professions.profession1.skillLevel,
             maxSegment, RXPCData.professions.money
