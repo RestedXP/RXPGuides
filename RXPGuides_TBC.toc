@@ -45,3 +45,4 @@ Talents.lua
 Guides/Talents/tbc.xml
 
 ItemUpgrades.lua
+Professions.lua
