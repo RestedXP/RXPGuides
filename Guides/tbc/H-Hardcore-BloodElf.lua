@@ -239,18 +239,7 @@ step << Warlock
     >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_BUY_from her|r
     .collect 16321,1,8327,1 --Grimoire of Blood Pact (1)
     .target Yasmine Teli'Larien
-step << Warlock
-    #optional
-    #completewith Measures
-	.cast 20397 >> |cRXP_WARN_Use your|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_WARN_once you are level 4|r
-	.use 16321
-    .xp >4,1
-step << Warlock
-    #optional
-    #completewith Measures
-	.cast 20397 >> |cRXP_WARN_Use your|r |T133738:0|t[Grimoire of Blood Pact]
-	.use 16321
-    .xp <4,1
+    .train 6307,1 --Blood Pact (Rank 1)
 step
     #label Collars
     #loop
@@ -855,6 +844,7 @@ step << Warlock
     .collect 16302,1,8491,1 --Grimoire of Firebolt Rank 2
     .target Daestra
 	.xp <8,1
+    .train 7799,1
 step << Rogue
     .goto Eversong Woods,48.34,45.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larenis|r
@@ -1171,6 +1161,7 @@ step << Warlock
     >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_BUY_from her|r
     .collect 16302,1,8491,1 --Grimoire of Firebolt Rank 2
     .target Daestra
+    .train 7799,1
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geron|r

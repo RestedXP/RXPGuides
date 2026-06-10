@@ -906,11 +906,7 @@ step << Warlock
     .vendor >>Vendor Trash
     .target Hraug
     .money <0.03
-step << Warlock
-    #completewith Leave
-    .train 20397 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Blood Pact]
-    .itemcount 16321,1
-    .use 16321
+    .train 6307,1 --Blood Pact (Rank 1)
 step << Shaman
     #completewith CallOE1
     #label Shrine
@@ -1612,18 +1608,13 @@ step << Warlock
     .target Dhugru Gorelust
     .xp <8,1
 step << Warlock
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,784,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
     .xp <8,1
-step << Warlock
-    #completewith Tools
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
-    .xp <8,1
+    .train 7799,1
 step << Hunter
     .goto Durotar,51.85,43.49
     >>Go inside the bunker

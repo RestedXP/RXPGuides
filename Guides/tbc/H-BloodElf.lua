@@ -244,18 +244,7 @@ step << Warlock
     >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_BUY_from her|r
     .collect 16321,1,8327,1 --Grimoire of Blood Pact (1)
     .target Yasmine Teli'Larien
-step << Warlock
-    #optional
-    #completewith Measures
-	.cast 20397 >> |cRXP_WARN_Use your|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_WARN_once you are level 4|r
-	.use 16321
-    .xp >4,1
-step << Warlock
-    #optional
-    #completewith Measures
-	.cast 20397 >> |cRXP_WARN_Use your|r |T133738:0|t[Grimoire of Blood Pact]
-	.use 16321
-    .xp <4,1
+    .train 6307,1 --Blood Pact (Rank 1)
 step
     #label Collars
     #loop
@@ -650,8 +639,8 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Eversong Woods
 #displayname 8-11 Eversong Woods << Orc Warrior/Troll Warrior
-#displayname 7-11 Eversong Woods << Orc !Warrior !Hunter/Troll !Warrior !Hunter
-#defaultfor BloodElf/Undead/Orc !Hunter !Shaman/Troll !Hunter !Shaman
+#displayname 7-11 Eversong Woods << Orc !Warrior !Hunter !Warlock/Troll !Warrior !Hunter
+#defaultfor BloodElf/Undead/Orc !Hunter !Shaman !Warlock/Troll !Hunter !Shaman
 #version 7
 #subgroup RestedXP Horde 1-30
 #next 10-12 Eversong Woods
@@ -895,6 +884,7 @@ step << Warlock
     .collect 16302,1,8491,1 --Grimoire of Firebolt Rank 2
     .target Daestra
 	.xp <8,1
+    .train 7799,1
 step << Rogue/Warrior
     .goto Eversong Woods,48.34,45.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larenis|r
@@ -1266,6 +1256,7 @@ step << Warlock
     >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_BUY_from her|r
     .collect 16302,1,8491,1 --Grimoire of Firebolt Rank 2
     .target Daestra
+    .train 7799,1
 step << Undead Warrior/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geron|r
@@ -1720,7 +1711,7 @@ step << Warrior/Undead Warlock/Orc Warlock
 step << Warrior
     #completewith WarriorClassQ
     .hs >> Hearth to Brill
-    .bindlocation 159
+    .bindlocation 159,1
     .zoneskip Tirisfal Glades
 step << Warrior
     #optional
@@ -1821,17 +1812,17 @@ step << Orc Warrior
     .itemcount 1196,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #completewith VoidWalkerComplete
     .hs >>Hearth to Undercity
-    .bindlocation 1497
+    .bindlocation 1497,1
     .zoneskip Undercity
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
     .accept 1473 >>Accept Creature of the Void
     .target Carendin Halgar
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #optional
     .goto Undercity,88.91,15.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
@@ -1839,23 +1830,23 @@ step << Undead Warlock/Orc Warlock
     .target Richard Kerwin
     .xp <10,1
     .xp >12,1
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     .goto Undercity,88.91,15.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
     .train 705 >> Train your class spells
     .target Richard Kerwin
     .xp <12,1
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #completewith next
     .goto Tirisfal Glades,61.75,64.96
     .zone Tirisfal Glades >> Exit Undercity
     .isOnQuest 1473
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     .goto Tirisfal Glades,51.44,67.69,15,0
     .goto Tirisfal Glades,51.06,67.57
     >>Loot the |cRXP_PICK_Creature of the Void Chest|r on the ground
     .complete 1473,1 --Creature of the Void (1)
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #completewith next
     .goto Undercity,66.16,1.05,20,0
     .goto Undercity,66.08,18.24,30,0
@@ -1864,7 +1855,7 @@ step << Undead Warlock/Orc Warlock
     .goto Undercity,71.31,44.16,10,0
     .goto Undercity,72.99,44.19,10 >>Take the lift down to the Undercity
     .isOnQuest 1473
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #completewith next
     .goto Undercity,71.90,40.45,15,0
     .goto Undercity,68.15,40.83,10,0
@@ -1872,13 +1863,13 @@ step << Undead Warlock/Orc Warlock
     .goto Undercity,79.60,42.63,30,0
     .goto Undercity,85.04,25.97,40 >>Travel toward |cRXP_FRIENDLY_Carendin|r
     .isOnQuest 1473
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
     .turnin 1473 >>Turn in Creature of the Void
     .accept 1471 >>Accept The Binding
     .target Carendin Halgar
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #completewith next
     .goto Undercity,86.64,27.10
     .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Runes of Summoning] |cRXP_WARN_at the Summoning Circle|r
@@ -1895,12 +1886,12 @@ step << Undead Warlock/Orc Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
     .turnin 1471 >>Turn in The Binding
     .target Carendin Halgar
-step << Warrior/Undead Warlock/Orc Warlock
+step << Warrior/Undead Warlock
     #label ExitUC
     #completewith ExitSVM
     .goto Undercity,54.67,11.25
     .zone Silvermoon City >> Take the |cRXP_PICK_Orb of Translocation|r to Silvermoon City
-step << Warrior/Undead Warlock/Orc Warlock
+step << Warrior/Undead Warlock
     #xprate <1.5
     .goto Silvermoon City,79.50,58.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Suntouched|r
@@ -1908,12 +1899,12 @@ step << Warrior/Undead Warlock/Orc Warlock
     .collect 22775,1,9067,1 --Suntouched Special Reserve (1)
     .target Vinemaster Suntouched
     .isOnQuest 9067
-step << Warrior/Undead Warlock/Orc Warlock
+step << Warrior/Undead Warlock
     #label ExitSVM
     #completewith next
     .goto Eversong Woods,56.43,49.91
     .zone Eversong Woods >>Exit Silvermoon
-step << Warrior/Undead Warlock/Orc Warlock
+step << Warrior/Undead Warlock
     #xprate <1.5
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antheol|r
@@ -2229,7 +2220,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #defaultfor !Shaman
 #name 10-12 Eversong Woods
-#displayname 11-13 Eversong Woods << Orc/Troll !Hunter
+#displayname 11-13 Eversong Woods << Orc !Hunter !Warlock/Troll !Hunter 
 #version 7
 #subgroup RestedXP Horde 1-30
 #next 12-16 Ghostlands
@@ -2245,14 +2236,14 @@ step << Orc Hunter/Troll Hunter
     .train 202 >>Train 2h Swords
     .target Ileda
     .money <0.1000
-step << Orc Hunter/Troll Hunter/Tauren
+step << Orc Hunter/Troll Hunter/Orc Warlock/Tauren
     #completewith next
     .goto Silvermoon City,62.89,31.20,20,0 << !Orc/!Hunter !Troll/!Hunter
     .goto Silvermoon City,75.63,58.34,20,0 << !Orc/!Hunter !Troll/!Hunter
     .goto Silvermoon City,73.22,59.91,20,0 << !Orc/!Hunter !Troll/!Hunter
     .goto Eversong Woods,56.43,49.91
     .zone Eversong Woods >>Exit Silvermoon
-step << Orc Hunter/Troll Hunter/Tauren
+step << Orc Hunter/Troll Hunter/Orc Warlock/Tauren
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gloaming|r
     .fp Silvermoon >> Get the Silvermoon City flight path
@@ -2272,6 +2263,9 @@ step << Troll Mage
     .turnin 9402 >>Turn in Fetch!
     .accept 9403 >>Accept The Purest Water
     .target Instructor Antheol
+step
+    #completewith Farstrider1
+    .subzone 3464 >>Travel to Farstrider Retreat
 step
     #optional
     #completewith next
@@ -2301,7 +2295,6 @@ step
     .accept 8476 >>Accept Amani Encroachment
     .accept 9484 >>Accept Taming the Beast << BloodElf Hunter
     .target Lieutenant Dawnrunner
-    --TODO: Beta check if 8476 can be accepted without having 9359 for non blood elves
 step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
@@ -2313,7 +2306,6 @@ step << Hunter !Troll
     .money <0.2144 << BloodElf
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
---VV Paelarin doesn't talk to Trolls
 step << Hunter !Troll
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Paelarin|r
@@ -2331,6 +2323,7 @@ step << Hunter !Troll
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.5
 step
+    #label Farstrider1
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arathel|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]. You'll get |T136248:0|t[Mining] later which will allow you to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 1 hour) << Paladin/BloodElf Rogue/Undead Rogue
@@ -3527,7 +3520,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP TBC Guide (H)
 << Horde
 #name 12-16 Ghostlands
-#displayname 13-16 Ghostlands << Orc !Hunter/Troll !Hunter
+#displayname 13-16 Ghostlands << Orc !Hunter !Warlock/Troll !Hunter
 #defaultfor !Shaman
 #version 7
 #subgroup RestedXP Horde 1-30
@@ -4427,11 +4420,6 @@ step << Rogue
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6 << tbc
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
-step
-    .goto Ghostlands,47.67,34.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzithen|r
-    .accept 9149 >> Accept The Plagued Coast
-    .target Apothecary Renzithen
 step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzithen|r, |cRXP_FRIENDLY_Rathiel|r, |cRXP_FRIENDLY_Valwyn|r, |cRXP_FRIENDLY_Dame|r, |cRXP_FRIENDLY_Maltendis|r, and |cRXP_FRIENDLY_Darenis|r
     .accept 9149 >> Accept The Plagued Coast
@@ -4476,7 +4464,7 @@ step << Rogue
 step << Warrior
     #completewith BrillTrain2
     .hs >> Hearth to Brill
-    .bindlocation 159
+    .bindlocation 159,1
     .zoneskip Tirisfal Glades
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55

@@ -8175,7 +8175,7 @@ function addon.GetChoiceId()
     local choices = C_PlayerChoice.GetCurrentPlayerChoiceInfo()
     if choices and choices.options then
         for _,t in pairs(choices.options) do
-            addon.comms.PrettyPrint(t.header..":",t.choiceArtID)
+            addon.comms.PrettyPrint(t.header..":"..t.choiceArtID)
         end
         return
     end

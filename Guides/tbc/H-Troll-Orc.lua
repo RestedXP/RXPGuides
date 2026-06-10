@@ -5,13 +5,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP TBC Guide (H)
 << Horde
 #name 1-6 Durotar
-#displayname 1-7 Durotar << Orc !Warrior !Hunter !Shaman/Troll !Warrior !Hunter !Shaman
+#displayname 1-7 Durotar << Orc !Warrior !Hunter !Shaman !Warlock/Troll !Warrior !Hunter !Shaman
 #displayname 1-8 Durotar << Orc Warrior/Troll Warrior
 #version 7
 #subgroup RestedXP Horde 1-30
 #defaultfor Orc/Troll
-#next 6-10 Eversong Woods << !Shaman !Hunter
-#next 6-10 Durotar << Shaman/Hunter
+#next 6-10 Eversong Woods << !Shaman !Hunter !Warlock
+#next 6-10 Durotar << Shaman/Hunter/Warlock
 
 step << !Orc !Troll
     #completewith next
@@ -550,7 +550,6 @@ step
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.1 << Rogue/Warrior
     .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman
     .itemcount 2512,<600 << Hunter
 step
@@ -882,7 +881,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.03
 step
     #label BurningBladeTurnin
     .goto Durotar,42.85,69.15
@@ -991,7 +989,14 @@ step << Warlock
     .goto Durotar,41.52,68.36,12,0
     .goto Durotar,41.24,68.16,12,0
     .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
+    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r and |cRXP_FRIENDLY_Hraug|r
+    .money <0.01
+step << Warlock
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
+    .train 695 >>Train |T136197:0|t[Shadow Bolt]
+    .target Nartok
+    .money <0.01
 step << Warlock
     #label Hraug3
     .goto Durotar,40.56,68.44
@@ -1000,12 +1005,7 @@ step << Warlock
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>Vendor Trash
     .target Hraug
-    .money <0.03
-step << Warlock
-    #completewith Leave
-    .train 20397 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Blood Pact]
-    .itemcount 16321,1
-    .use 16321
+    .money <0.01
 step << Shaman
     #completewith CallOE1
     #label Shrine
@@ -1051,21 +1051,21 @@ step
     .goto Durotar,49.02,69.13,20,0
     .goto Durotar,49.90,68.43,25 >>Exit the Valley of Trials
     .isOnQuest 805
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     .goto Durotar,52.06,68.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ukor|r
     .accept 2161 >>Accept A Peon's Burden
     .target Ukor
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #completewith next
     .subzone 367 >>Travel to Sen'Jin Village
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     .goto Durotar,55.94,74.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gadrin|r
     .turnin 805 >>Turn in Report to Sen'jin Village
     .accept 823 >>Accept Report to Orgnil
     .target Master Gadrin
-step << !Shaman !Hunter
+step << Rogue/Warrior
     #completewith next
     .goto Durotar,56.16,74.43,8,0
     .goto Durotar,56.31,73.8,8 >> Enter the big hut
@@ -1173,18 +1173,18 @@ step << Mage
     .train 143 >> Train |T135812:0|t[Fireball]
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Un'Thuwa
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #hardcore
     #label RazorHill1
     #completewith next
     .subzone 362 >>Travel to Razor Hill
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #softcore
     #label RazorHill1
     #completewith next
     .goto Durotar,54.53,58.69
-    .deathskip >>Travel to the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << !Shaman !Hunter
+    .deathskip >>Travel to the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 823 >>Turn in Report to Orgnil
@@ -1193,13 +1193,13 @@ step << !Shaman !Hunter
     .accept 784 >>Accept Vanquish the Betrayers
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate >1.49 << !Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r
     .turnin 823 >>Turn in Report to Orgnil
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -1207,7 +1207,7 @@ step << !Shaman !Hunter
     .goto Durotar,50.20,42.30,12,0
     .goto Durotar,49.96,40.96,12,0
     .goto Durotar,49.67,40.42,10 >>Travel toward the tower
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #completewith next
     .goto Durotar,49.75,40.38,6,0
@@ -1217,7 +1217,7 @@ step << !Shaman !Hunter
     .goto Durotar,49.78,40.34,6,0
     .goto Durotar,49.79,39.96,6,0
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
@@ -1241,7 +1241,7 @@ step << Warrior/Rogue/Paladin
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
@@ -1282,19 +1282,19 @@ step << Warrior/Rogue/Paladin
     .collect 2862,1,784,1
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #label TiragardeArrive
     .goto Durotar,57.26,54.69,60,0
     .subzone 372 >>Travel to Tiragarde Keep
     .isOnQuest 784
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #sticky
     #completewith AgedEnvelope
     +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Watch Commander Zalaphil|r |cRXP_WARN_is up, as he is a level 9 rare. You may have to use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have one|r
     .unitscan Watch Commander Zalaphil
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #completewith Benedict
     #requires TiragardeArrive
@@ -1302,7 +1302,7 @@ step << !Shaman !Hunter
     .goto Durotar,59.64,58.44,8,0
     .goto Durotar,59.55,57.89,8,0
     .goto Durotar,59.29,57.89,8 >> Move toward the second floor of the keep
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #completewith AgedEnvelope
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
@@ -1311,7 +1311,7 @@ step << !Shaman !Hunter
     .complete 784,2 --Kul Tiras Marine (8)
     .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -1319,7 +1319,7 @@ step << !Shaman !Hunter
     .complete 784,3 --Lieutenant Benedict (1)
     .collect 4882,1,830 --Collect Benedict's Key (1)
     .mob Lieutenant Benedict
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #label AgedEnvelope
     .goto Durotar,59.87,57.87,5,0
@@ -1334,7 +1334,7 @@ step << !Shaman !Hunter
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #loop
     .goto Durotar,58.99,58.30,0
@@ -1354,7 +1354,7 @@ step << !Shaman !Hunter
     .mob +Kul Tiras Marine
     .mob +Kul Tiras Sailor
     .itemcount 4870,<8 --Canvas Scraps (<8)
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #optional
     #loop
@@ -1371,7 +1371,7 @@ step << !Shaman !Hunter
     .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
     .mob +Kul Tiras Marine
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #optional
     #label ScrapsFinished
@@ -1388,18 +1388,18 @@ step << !Shaman !Hunter
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #softcore
     #completewith next
     .goto Durotar,57.90,57.57
     .deathskip >> Die at the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #hardcore
     #completewith next
     .goto Durotar,52.38,43.77,120 >> Travel to Razor Hill
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
@@ -1407,7 +1407,7 @@ step << !Shaman !Hunter
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .target Gar'thok
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -1415,7 +1415,7 @@ step << !Shaman !Hunter
     .goto Durotar,50.20,42.30,12,0
     .goto Durotar,49.96,40.96,12,0
     .goto Durotar,49.67,40.42,10 >>Travel toward the tower
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #completewith next
     .goto Durotar,49.75,40.38,6,0
@@ -1425,7 +1425,7 @@ step << !Shaman !Hunter
     .goto Durotar,49.78,40.34,6,0
     .goto Durotar,49.79,39.96,6,0
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
@@ -1533,48 +1533,6 @@ step << Troll Warrior
     .itemcount 2490,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
-step << Warrior
-    .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
-    .train 284 >> Train your class spells
-    .target Tarshaw Jaggedscar
-    .xp <8,1
-step << Warlock
-    #xprate <1.5
-    .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .train 1120 >> Train your class spells
-    .target Dhugru Gorelust
-    .xp <8,1
-step << Warlock
-    #xprate <1.5
-    #completewith next
-    .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
-    .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
-    .target Kitha
-    .money <0.01
-    .xp <8,1
-step << Warlock
-    #xprate <1.5
-    #completewith WindsinDes
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
-    .xp <8,1
-step << Rogue
-    #xprate <1.5
-    .goto Durotar,51.98,43.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >> Train your class spells
-    .target Kaplak
-    .xp <8,1
-step << Priest
-    #xprate <1.5
-    .goto Durotar,54.26,42.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .train 139 >> Train your class spells
-    .target Tai'jin
-    .xp <8,1
 step << Rogue/Warrior
     #xprate <1.5
     .goto Durotar,54.17,41.93
@@ -1582,7 +1540,7 @@ step << Rogue/Warrior
     .train 3273 >>Train |T135966:0|t[First Aid]
     .money <0.01
     .target Rawrk
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5
     .goto Durotar,54.39,42.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jark|r
@@ -1590,7 +1548,7 @@ step << !Shaman !Hunter
     .collect 4496,1,825,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #label WindsinDes
     .goto Durotar,46.37,22.94
@@ -1598,7 +1556,7 @@ step << !Shaman !Hunter
     .accept 834 >>Accept Winds in the Desert
     .target Rezlak
     .maxlevel 7
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #loop
     .goto Durotar,49.70,21.90,0
@@ -1616,14 +1574,14 @@ step << !Shaman !Hunter
     >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
     .turnin 834 >>Turn in Winds in the Desert
     .target Rezlak
     .isQuestComplete 834
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
@@ -1758,30 +1716,30 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .train 284 >>Train your class spells
     .target Austil de Mon
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #completewith PorttoSilvermoon
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
-step << Warlock
+step << skip -- Warlock
     #completewith next
     .goto Undercity,66.11,26.81,20,0
     .goto Undercity,66.07,37.02,20,0
     .goto Undercity,67.74,37.96,20 >>Take the elevator down into the Undercity
-step << Warlock
+step << skip -- Warlock
     .goto Undercity,67.74,37.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
     .home >> Set your Hearthstone to Undercity
     .target Innkeeper Norman
     .bindlocation 1497
-step << Warlock
+step << skip -- Warlock
     #completewith next
     .goto Undercity,66.07,37.02,20,0
     .goto Undercity,66.11,26.81,20 >>Take the elevator back up
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #completewith PorttoSilvermoon
     .goto Undercity,62.0,11.3,18 >>Go up the stairs here
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #label PorttoSilvermoon
     .goto Undercity,54.9,11.3
     .zone Silvermoon City >>Use the |cRXP_PICK_Orb of Translocation|r
@@ -1792,26 +1750,26 @@ step << Paladin
     .trainer >>Train your class spells
 	.target Ithelis
 	.target Osselan
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #completewith next
     .goto Silvermoon City,62.89,31.20,20,0
     .goto Silvermoon City,75.63,58.34,20,0
     .goto Silvermoon City,73.22,59.91,20,0
     .goto Eversong Woods,56.43,49.91
     .zone Eversong Woods >>Exit Silvermoon
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     #label SilvermoonFP
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gloaming|r
     .fp Silvermoon >> Get the Silvermoon City flight path
     .target Skymistress Gloaming
     .isQuestAvailable 8463
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaela|r
     .accept 8475 >> Accept The Dead Scar
     .target Ranger Jaela
-step << !Shaman !Hunter
+step << !Shaman !Hunter !Warlock
     .goto Eversong Woods,46.68,49.10,40 >>Travel to Falconwing Square
     .isQuestAvailable 8463
 
@@ -1825,7 +1783,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Durotar
 #version 7
 #subgroup RestedXP Horde 1-30
-#defaultfor Orc Hunter/Orc Shaman/Troll Hunter/Troll Shaman
+#defaultfor Orc Hunter/Orc Shaman/Troll Hunter/Troll Shaman/Orc Warlock
 #next 10-13 Durotar << Shaman
 #next 10-12 Eversong Woods << !Shaman
 
@@ -2271,7 +2229,7 @@ step
     #label RazorHill1
     #completewith next
     .goto Durotar,54.53,58.69
-    .deathskip >>Travel to the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Travel to the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
@@ -2531,18 +2489,13 @@ step << Warlock
     .target Dhugru Gorelust
     .xp <8,1
 step << Warlock
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,784,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
     .xp <8,1
-step << Warlock
-    #completewith Tools
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
-    .xp <8,1
+    .train 7799,1
 step << Hunter
     .goto Durotar,51.85,43.49
     >>Go inside the bunker
@@ -2726,7 +2679,7 @@ step
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
-    .accept 831 >>Accept The Admiral's Orders << Shaman
+    .accept 831 >>Accept The Admiral's Orders
     .accept 837 >>Accept Encroachment
     .target Gar'thok
 step
@@ -2913,16 +2866,12 @@ step << Warlock
     .train 1120 >> Train your class spells
     .target Dhugru Gorelust
 step << Warlock
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
-step << Warlock
-    #completewith Tools
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
+    .train 7799,1
 step << Hunter
     .goto Durotar,51.85,43.49
     >>Go inside the bunker
@@ -3195,7 +3144,7 @@ step
     #label RazorHill1
     #completewith RazorHill3
     .goto Durotar,54.53,58.69
-    .deathskip >>Travel to the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >>Travel to the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #label RazorHill3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
@@ -3299,15 +3248,12 @@ step << Warlock
     .train 1120 >>Train your class spells
     .target Dhugru Gorelust
 step << Warlock
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,1501,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
-step << Warlock
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
+    .train 7799,1
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r

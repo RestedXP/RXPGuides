@@ -505,6 +505,7 @@ local function ProcessSpells(names, rank)
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
     local entries = {race, addon.player.class}
+    local hcserver = C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()
     for _, entry in pairs(entries) do
         if addon.defaultSpellList[entry] then
             for spellLvl, spells in pairs(addon.defaultSpellList[entry]) do
@@ -516,8 +517,7 @@ local function ProcessSpells(names, rank)
                             spellRequest[spellId] = true
                         end
                         if names and rank and
-                            not (addon.settings.profile.hardcore and
-                                addon.HCSpellList and addon.HCSpellList[spellId]) then
+                        not (hcserver and addon.HCSpellList and addon.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
                             local sRank = GetSpellSubtext(spellId)
