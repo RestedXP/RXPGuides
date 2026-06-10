@@ -1455,6 +1455,7 @@ step << Warlock
     .vendor >>Vendor Trash
     .target Hraug
     .money <0.03
+    .train 6307,1 --Blood Pact (Rank 1)
 step << Warlock
     #season 2
     .goto Durotar,40.65,68.52
@@ -1485,11 +1486,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 695 >> Train |T136197:0|t[Shadow Bolt]
     .target Nartok
-step << Warlock
-    #completewith Leave
-    .train 20397 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Blood Pact]
-    .itemcount 16321,1
-    .use 16321
 step << Shaman
     #completewith CallOE1
     #label Shrine
@@ -2625,16 +2621,12 @@ step << Warlock
     .train 1120 >> Train your class spells
     .target Dhugru Gorelust
 step << Warlock
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
-step << Warlock
-    #completewith Tools
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
+    .train 7799,1
 step << Hunter
     .goto Durotar,51.85,43.49
     >>Go inside the bunker
@@ -3089,16 +3081,12 @@ step << Warlock
     .target Dhugru Gorelust
 step << Warlock
     #xprate >1.49
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
-step << Warlock
-    #xprate >1.49
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
+    .train 7799,1
 step << Priest
     #xprate >1.49
     .goto Durotar,54.26,42.93
@@ -3743,16 +3731,12 @@ step << Warlock
     .target Dhugru Gorelust
 step << Warlock
     #xprate <1.5
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
-step << Warlock
-    #xprate <1.5
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
+    .train 7799,1
 step << Priest
     #xprate <1.5
     .goto Durotar,54.26,42.93
@@ -8406,6 +8390,7 @@ step << Warlock
     .vendor >>Vendor Trash
     .target Hraug
     .money <0.03
+    .train 6307,1 --Blood Pact (Rank 1)
 step << Warlock
     #season 2
     .goto Durotar,40.65,68.52
@@ -8436,11 +8421,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 695 >> Train |T136197:0|t[Shadow Bolt]
     .target Nartok
-step << Warlock
-    #completewith Leave
-    .train 20397 >> Use the |T133738:0|t[Grimoire of Blood Pact]
-    .itemcount 16321,1
-    .use 16321
 step << Shaman
     #completewith CallOE1
     #label Shrine
@@ -9464,16 +9444,12 @@ step << Warlock
     .target Dhugru Gorelust
 step << Warlock
     #xprate >1.49
-    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
-step << Warlock
-    #xprate >1.49
-    .train 20270 >> |cRXP_WARN_Use the|r |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .use 16302
+    .train 7799,1
 step << Priest
     #xprate >1.49
     .goto Durotar,54.26,42.93
