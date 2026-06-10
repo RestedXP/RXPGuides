@@ -10501,6 +10501,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 973 >> Turn in The Tower of Althalaxx
 step
+    #label HCHunterEnd --hidden step for #include
+step
     #xprate <1.59
     #sticky
     #completewith StatuetteStart
