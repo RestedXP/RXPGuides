@@ -275,7 +275,6 @@ C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
 C_Spell.RequestLoadSpellData(1809) -- lockpicking
 
-addon.base = {66,78,71,101,116,73,110,102,111}
 
 addon.dungeonStats = {
     ["Alliance"] = {

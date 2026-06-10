@@ -601,7 +601,7 @@ function addon.guideImporter:CheckBattleNet()
     if not RXPData.cache and now - self.lastBNetQuery > 5 then
         addon.comms.PrettyDebug("Battle.net not cached, querying")
         self.lastBNetQuery = now
-        _, RXPData.cache = _G[addon.DeserializeTable(addon.base)]()
+        _, RXPData.cache = BNGetInfo()
     end
 
     return RXPData.cache
