@@ -637,7 +637,8 @@ function addon.professions.gatherRecipesToBuyGreedyMoney(professionName, skillLe
                             end
                         --Check if its a vendor item
                         elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            --Skip; we don't have to worry about this here
+                            money = money - ((PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count)
+                            tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + materialTable.count
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
@@ -819,7 +820,8 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
                             end
                         --Check if its a vendor item
                         elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            --Skip; we don't have to worry about this here
+                            money = money - ((PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count)
+                            tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + materialTable.count
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
@@ -993,7 +995,8 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
                             end
                         --Check if its a vendor item
                         elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            --Skip; we don't have to worry about this here
+                            money = money - ((PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count)
+                            tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + materialTable.count
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
