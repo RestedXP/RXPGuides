@@ -6,7 +6,7 @@ addon.professions = addon.professions or {}
 --Professions DB
 addon.professions.PROFESSIONS = {
     VENDOR_ITEMS = {
-        ["Empty Vial"] = 0.20,
+        ["Empty Vial"] = 0.04,
         ["Leaded Vial"] = 2.00,
         ["Crystal Vial"] = 25.00,
         ["Imbued Vial"] = 40.00,
