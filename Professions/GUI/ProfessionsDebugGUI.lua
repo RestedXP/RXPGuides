@@ -10,7 +10,7 @@ local profSession = aProf.profSession
 addon.professions.GUI = {}
 
 --Groups many radio buttons to one press
----...: All other radio buttons to group together
+---...: All radio buttons to group together
 local function groupRadioButtons(...)
     local args = {...}
     for _, radioButton in ipairs(args) do

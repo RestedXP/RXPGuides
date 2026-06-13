@@ -224,6 +224,16 @@ local function removeGreyRecipes(professionName, professionSkillLevel)
     end
 end
 
+--Removes non-trainable recipes
+local function removeNonTrainable(professionName)
+    for recipe, _ in pairs(profSession.recipesToConsider) do
+        if not PROFESSIONS[professionName].RECIPES[recipe].trainable then
+            profSession.recipesToConsider[recipe] = nil --TODO: efficient, but test if safe!
+        end
+    end
+end
+
+
 --Gather what recipes to consider based on segment
 --minSegment = minimumSkillLevel
 --maxSegment = maximumSkillLevel
@@ -911,7 +921,6 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
     return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
 end
 
-
 --TODO: Implement this
 function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(professionName, skillLevel, segmentMaxLevel, money)
     --Calcualte raw value of each considered recipes
@@ -1183,6 +1192,7 @@ function addon.professions:fullScan()
     local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+    removeNonTrainable(RXPCData.professions.profession1.name)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
     profSession.materialIndex = 1
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
