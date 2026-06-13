@@ -9,6 +9,20 @@ local profSession = aProf.profSession
 
 addon.professions.GUI = {}
 
+--Groups many radio buttons to one press
+---...: All other radio buttons to group together
+local function groupRadioButtons(...)
+    local args = {...}
+    for _, radioButton in ipairs(args) do
+        radioButton:SetScript("OnClick", function(self)
+            for _, otherRadioButton in ipairs(args) do
+                otherRadioButton:SetChecked(false)
+            end
+            self:SetChecked(true)
+        end)
+    end
+end
+
 --GUI
 local printed = false --last minute variable for a gui bugfix, will be properly resolved
 function addon.professions.GUI.createGUI()
@@ -88,25 +102,7 @@ function addon.professions.GUI.createGUI()
     testButton:SetSize(20, 20)
     testButton:SetPoint("CENTER", tailoringButton, "CENTER", 0, -22)
 
-    local function onRadioButtonPress(self)
-        blacksmithingButton:SetChecked(false)
-        leatherworkingButton:SetChecked(false)
-        tailoringButton:SetChecked(false)
-        alchemyButton:SetChecked(false)
-        enchantingButton:SetChecked(false)
-        engineeringButton:SetChecked(false)
-        testButton:SetChecked(false)
-
-        self:SetChecked(true)
-    end
-
-    blacksmithingButton:SetScript("OnClick", onRadioButtonPress)
-    leatherworkingButton:SetScript("OnClick", onRadioButtonPress)
-    tailoringButton:SetScript("OnClick", onRadioButtonPress)
-    alchemyButton:SetScript("OnClick", onRadioButtonPress)
-    enchantingButton:SetScript("OnClick", onRadioButtonPress)
-    engineeringButton:SetScript("OnClick", onRadioButtonPress)
-    testButton:SetScript("OnClick", onRadioButtonPress)
+    groupRadioButtons(blacksmithingButton, leatherworkingButton, tailoringButton, alchemyButton, enchantingButton, engineeringButton, testButton)
 
     guiFrame.moneyText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     guiFrame.moneyText:SetPoint("TOPLEFT", guiFrame.enchantingText, "BOTTOMLEFT", 0, -10)
@@ -134,7 +130,7 @@ function addon.professions.GUI.createGUI()
     local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
     selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
     selectSkillLevelFrame:SetSize(300, 20)
-    selectSkillLevelFrame:SetMinMaxValues(0, 300)
+    selectSkillLevelFrame:SetMinMaxValues(1, 300)
     selectSkillLevelFrame:SetValue(20)
     selectSkillLevelFrame:SetValueStep(1)
     selectSkillLevelFrame:SetObeyStepOnDrag(true)
@@ -157,8 +153,36 @@ function addon.professions.GUI.createGUI()
         self.Text:SetText("Segment Range (" .. self:GetValue() .. ")")
     end)
 
+    guiFrame.methodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.methodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -220)
+    guiFrame.methodText:SetText("Select greed method:")
+
+    local moneyGreedyMethod = createCheckButton(guiFrame, "Money")
+    local percentageGreedyMethod = createCheckButton(guiFrame, "Percentage")
+    local moneyAndPercentageGreedyMethod = createCheckButton(guiFrame, "Money & Percentage")
+
+    guiFrame.moneyGreedyMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.moneyGreedyMethodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -250)
+    guiFrame.moneyGreedyMethodText:SetText("Money")
+    moneyGreedyMethod:SetSize(20, 20)
+    moneyGreedyMethod:SetPoint("LEFT", guiFrame.moneyGreedyMethodText, "RIGHT", 10, 0)
+
+    guiFrame.percentageGreedyMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.percentageGreedyMethodText:SetPoint("LEFT", moneyGreedyMethod, "RIGHT", 10, 0)
+    guiFrame.percentageGreedyMethodText:SetText("Percentage")
+    percentageGreedyMethod:SetSize(20, 20)
+    percentageGreedyMethod:SetPoint("LEFT", guiFrame.percentageGreedyMethodText, "RIGHT", 10, 0)
+
+    guiFrame.moneyAndPercentageMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.moneyAndPercentageMethodText:SetPoint("LEFT", percentageGreedyMethod, "RIGHT", 10, 0)
+    guiFrame.moneyAndPercentageMethodText:SetText("Money & Percentage")
+    moneyAndPercentageGreedyMethod:SetSize(20, 20)
+    moneyAndPercentageGreedyMethod:SetPoint("LEFT", guiFrame.moneyAndPercentageMethodText, "RIGHT", 10, 0)
+
+    groupRadioButtons(moneyGreedyMethod, percentageGreedyMethod, moneyAndPercentageGreedyMethod)
+
     local setButtonFrame = CreateFrame("Button", "SetButtonFrame", guiFrame, "UIPanelButtonTemplate")
-    setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -210)
+    setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -280)
     setButtonFrame:SetSize(100, 40)
     setButtonFrame:SetText("Set parameters")
     setButtonFrame:RegisterForClicks("LeftButtonUp")
@@ -233,18 +257,41 @@ function addon.professions.GUI.createGUI()
     printButtonFrame:RegisterForClicks("LeftButtonUp")
     printButtonFrame:SetScript("OnClick", function (self)
         textToPrint = ""
+        --Get method type: 1 - money | 2 - percentage | 3 - mone and percentage
+        local method = 1 --money by defualt
+        if moneyGreedyMethod:GetChecked() then method = 1
+        elseif percentageGreedyMethod:GetChecked() then method = 2
+        elseif moneyAndPercentageGreedyMethod:GetChecked() then method = 3
+        end
+
         local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
         local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
         if not printed then
-            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
-            aProf.gatherRecipesToBuyGreedyPercentage(
-            RXPCData.professions.profession1.name,
-            RXPCData.professions.profession1.skillLevel,
-            maxSegment, RXPCData.professions.money
-            )
+            --Use selected method
+            if method == 1 then
+                recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
+                aProf.gatherRecipesToBuyGreedyMoney(
+                    RXPCData.professions.profession1.name,
+                    RXPCData.professions.profession1.skillLevel,
+                    maxSegment, RXPCData.professions.money
+                )
+            elseif method == 2 then
+                recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
+                aProf.gatherRecipesToBuyGreedyPercentage(
+                    RXPCData.professions.profession1.name,
+                    RXPCData.professions.profession1.skillLevel,
+                    maxSegment, RXPCData.professions.money
+                )
+            else -- 3
+                recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
+                aProf.gatherRecipesToBuyGreedyMoneyAndPercentage(
+                    RXPCData.professions.profession1.name,
+                    RXPCData.professions.profession1.skillLevel,
+                    maxSegment, RXPCData.professions.money
+                )
+            end
             textToPrint = aProf.greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent)
             textToPrint = textToPrint .. "==========\n"
-            --guiFrame.printText:SetText(textToPrint)
             guiFrame.printText.Text:SetText(textToPrint)
         end
         printed = true
