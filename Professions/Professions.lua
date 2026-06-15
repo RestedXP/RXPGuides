@@ -6,7 +6,7 @@ if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
 -- Localize globals
 local _G = _G
 local len, fmt, lower = string.len, string.format, string.lower
-local tcount, tinsert, twipe, tsort, tremove = table.count, table.insert, table.wipe, table.sort, table.remove
+local tcount, tinsert, twipe, tsort, tremove, tconcat = table.count, table.insert, table.wipe, table.sort, table.remove, table.concat
 local pairs, ipairs, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
 local max, min, abs, floor, ceil, huge = math.max, math.min, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
@@ -54,6 +54,38 @@ local function formatMoney(money)
     return fmt("%dc", money)
 end
 
+--TODO: Maybe change to table approach
+--Faster way to concat strings
+--Assumes allways builder .. "string"
+--InitialString may be empty
+local function stringBuilder(initialString)
+    local self = {
+        t = {initialString}
+    }
+
+    function self:append(str)
+        self.t[#self.t+1] = str
+        return self
+    end
+
+    function self:build()
+        return tconcat(self.t)
+    end
+
+    function self:flush()
+        self.t = {}
+    end
+
+    function self:isEmpty()
+        return #self.t > 0
+    end
+
+    return setmetatable(self, {__concat = function (a, b)
+        a.t[#a.t+1] = b
+        return a
+    end})
+end
+
 --Serializes RXPCData.professions to string for debugging purposes
 local function serializeProfessions()
     if next(RXPCData.professions.profession1) and next(RXPCData.professions.profession2) then
@@ -76,6 +108,19 @@ local function serializeCraftedItems()
     end
     str = str .. "}"
     return str
+end
+
+--Serializes foundItems for debugging purposes
+local function serializeFoundItems()
+    local sb = stringBuilder("Found items:\n")
+    for itemName, items in pairs(addon.professions.profSession.foundItems) do
+        sb:append(itemName):append(" | count = "):append(#items):append(" | ")
+        for _, itemTable in ipairs(items) do
+            sb:append(tostring(itemTable.count)):append(" @ "):append(formatMoney(itemTable.pricePerItem)):append("| ")
+        end
+        sb:append("\n")
+    end
+    return sb:build()
 end
 
 --Sorts an associative array by value.
@@ -146,7 +191,7 @@ addon.professions.profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
     segmentRange = 75, --TODO: maybe store in RXPData / RXPCData / addon.settings or somewhere better if user can chage it
-    foundItems = {}, --pairs --table of 'rows' in AH per item
+    foundItems = {}, --pairs --table of 'rows' in AH per item --pairs of ipairs
     itemAveragePrice = {}, --pairs [itemName] = averagePrice
 
     currentPage = 0,
@@ -1364,13 +1409,9 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function()
-    calculateRecipeRawPrice(RXPCData.professions.profession1.name)
-    for itemName, itemTables in pairs(profSession.foundItems) do
-        print(itemName, ":")
-        for i, itemTable in ipairs(itemTables) do
-            print(i, ": ", itemTable.price, " | ", itemTable.count, " | ", itemTable.pricePerItem)
-        end
-    end
+    
+    local str = serializeFoundItems()
+    print(str)
 end
 
 
