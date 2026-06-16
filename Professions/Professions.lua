@@ -111,14 +111,17 @@ local function serializeCraftedItems()
 end
 
 --Serializes foundItems for debugging purposes
+--Optionally shoulc call calculateMaterialAveragePrice first to display that info as well
 local function serializeFoundItems()
     local sb = stringBuilder("Found items:\n")
+    local avg
     for itemName, items in pairs(addon.professions.profSession.foundItems) do
-        sb:append(itemName):append(" | count = "):append(#items):append(" | ")
+        avg = addon.professions.profSession.itemAveragePrice[itemName] and formatMoney(ceil(addon.professions.profSession.itemAveragePrice[itemName])) or "N/A"
+        sb:append(itemName):append(" | count = "):append(#items):append("| avg = "):append(avg):append("\n")
         for _, itemTable in ipairs(items) do
             sb:append(tostring(itemTable.count)):append(" @ "):append(formatMoney(itemTable.pricePerItem)):append("| ")
         end
-        sb:append("\n")
+        sb:append("=====\n")
     end
     return sb:build()
 end
@@ -318,12 +321,15 @@ end
 --Must be called after a scan is done
 local function calculateMaterialAveragePrice()
     local average = 0.0
+    local count = 0
     for itemName, itemTables in pairs(profSession.foundItems) do
         average = 0.0
+        count = 0
         for i, itemTable in ipairs(itemTables) do
-            average = average + itemTable.pricePerItem
+            average = average + itemTable.price
+            count = count + itemTable.count
         end
-        profSession.itemAveragePrice[itemName] = average / #itemTables
+        profSession.itemAveragePrice[itemName] = average / count
     end
 end
 
@@ -1403,15 +1409,16 @@ end
 --Testing
 SLASH_tst1 = '/tst'
 SlashCmdList['tst'] = function()
-    addon.professions:fullScan()
+    --addon.professions:fullScan()
+
 end
 
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function()
-    
+    calculateMaterialAveragePrice()
     local str = serializeFoundItems()
-    print(str)
+    GUI.guiFrame.printText.Text:SetText(str)
 end
 
 
