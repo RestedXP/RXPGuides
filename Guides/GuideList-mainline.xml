@@ -15,6 +15,7 @@
     <!-- Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>  -->
     <!-- Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>  -->
     <!-- <Script file="Guides/Retail/Endgame/War Within/Visions of a Shadowed Sun.lua"/> -->
+    <Script file="Guides/Retail/Endgame/Midnight/Storylines.Lua"/>
 
     <!-- COLLECTABLES -->
     <Script file="Guides/Retail/Collectables/Skyriding Glyphs.Lua"/>
