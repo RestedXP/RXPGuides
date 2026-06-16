@@ -700,7 +700,6 @@ end
 
 invUpdate:SetScript("OnEvent",inventoryManager.BagHandler)
 
-
 local initialized
 function inventoryManager.InitializeBags()
     if initialized and next(junkIcons) then return end
@@ -720,7 +719,6 @@ end
 hooksecurefunc('ContainerFrameItemButton_OnEnter',function(self)
     print(self:GetName(),self:GetParent():GetID(),self:GetID())
 end)]]
-
 
 local function ProcessJunk(sellWares,override)
     local isMerchant = sellWares and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 and (inventoryManager.IsMerchantAutomationEnabled() or override)
@@ -773,8 +771,13 @@ local function ProcessJunk(sellWares,override)
 end
 inventoryManager.ProcessJunk = ProcessJunk
 
+function inventoryManager.ResetJunk()
+    RXPCData.discardPile = {}
+    inventoryManager.UpdateAllBags()
+    addon:SendEvent("RXP_JUNK")
+end
+
 function inventoryManager.GetNetWorth()
     local inventory = ProcessJunk()
     return GetMoney() + inventory
 end
-
