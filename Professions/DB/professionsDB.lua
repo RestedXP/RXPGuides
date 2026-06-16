@@ -5,26 +5,68 @@ addon.professions = addon.professions or {}
 
 --Professions DB
 addon.professions.PROFESSIONS = {
-    VENDOR_ITEMS = {
-        ["Empty Vial"] = 0.04,
-        ["Leaded Vial"] = 2.00,
-        ["Crystal Vial"] = 25.00,
-        ["Imbued Vial"] = 40.00,
-        ["Coarse Thread"] =	0.10,
-        ["Fine Thread"] = 1.00,
-        ["Silken Thread"] =	5.00,
-        ["Heavy Silken Thread"] = 20.00,
-        ["Rune Thread"] = 50.00,
-        ["Weak Flux"] =	1.00,
-        ["Strong Flux"] = 20.00,
-        ["Salt"] = 0.50,
-        ["Simple Wood"] = 0.38,
-        ["Star Wood"] =	45.00,
-        ["Soothing Spices"] = 1.60,
-        ["Mild Spices"] = 0.10,
-        ["Hot Spices"] = 0.40,
-        ["Bleach"] = 0.26,
-        ["Green Dye"] =	1.12,
+    VENDOR_ITEMS = { --TODO: Update everywhere where we used the old system!!!!
+        ["Empty Vial"] = {
+            price = 0.20,
+            count = 5,
+        },
+        ["Leaded Vial"] = {
+            price = 2.00,
+            count = 5,
+        },
+        ["Crystal Vial"] = {
+            price = 25.00,
+            count = 5,
+        },
+        ["Imbued Vial"] = {
+            price = 40.00,
+            count = 5,
+        },
+        ["Coarse Thread"] =	{
+            price = 0.10,
+        },
+        ["Fine Thread"] = {
+            price = 1.00,
+        },
+        ["Silken Thread"] =	{
+            price = 5.00,
+        },
+        ["Heavy Silken Thread"] = {
+            price = 20.00,
+        },
+        ["Rune Thread"] = {
+            price = 50.00,
+        },
+        ["Weak Flux"] =	{
+            price = 1.00,
+        },
+        ["Strong Flux"] = {
+            price = 20.00,
+        },
+        ["Salt"] = {
+            price = 0.50,
+        },
+        ["Simple Wood"] = {
+            price = 0.38,
+        },
+        ["Star Wood"] =	{
+            price = 45.00,
+        },
+        ["Soothing Spices"] = {
+            price = 1.60,
+        },
+        ["Mild Spices"] = {
+            price = 0.10,
+        },
+        ["Hot Spices"] = {
+            price = 0.40,
+        },
+        ["Bleach"] = {
+            price = 0.26,
+        },
+        ["Green Dye"] =	{
+            price = 1.12,
+        },
     },
     ["blacksmithing"] = {
         RECIPES = {
