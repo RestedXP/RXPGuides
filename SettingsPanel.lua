@@ -1234,7 +1234,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.875,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
                     },
-
                     sellKeybind = {
                         name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
                         desc = L("Click to set a keybind"),
@@ -1267,6 +1266,20 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                             SetBinding(key,c)
                         end
+                    },
+                    resetDiscardItems = {
+                        name = L("Reset Junk List"),
+                        desc = L("Click to reset the discard list for this character"),
+                        order = 4.88,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.inventoryManager.ResetJunk()
+                        end,
+                        confirm = function()
+                            return L("This action will unmark all junk items.\nAre you sure?")
+                        end,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     talentsHeader = {
                         name = function()
