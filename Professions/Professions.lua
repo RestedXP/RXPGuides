@@ -379,7 +379,7 @@ local function calculateRecipeRawPrice(professionName)
                     elseif materialTable.fromVendor then
                         --Check if already impossible
                         if not totalPrice == huge then
-                            totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
+                            totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100) * materialTable.count --Vendor prices are in silvers
                         end
                     else --If from AH
                         --If there isn't any in the AH
@@ -452,7 +452,7 @@ local function calculateRecipeRawPriceAveragePrice(professionName)
                     elseif materialTable.fromVendor then
                         --Check if already impossible
                         if not totalPrice == huge then
-                            totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
+                            totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100) * materialTable.count --Vendor prices are in silvers
                         end
                     else --If from AH
                         --If there isn't any in the AH
@@ -578,7 +578,7 @@ local function calculateRecipeFreePrice(professionName)
                         totalPrice = totalPrice
                     --If its from a vendor
                     elseif materialTable.fromVendor then
-                        totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count --Vendor prices are in silvers
+                        totalPrice = totalPrice + (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100) * materialTable.count --Vendor prices are in silvers
                     else --If from AH
                         --If there isn't any in the AH
                         if not profSession.foundItems[materialName] or select(1, tcount(profSession.foundItems[materialName])) == 0 then
@@ -698,8 +698,27 @@ function addon.professions.gatherRecipesToBuyGreedyMoney(professionName, skillLe
                             end
                         --Check if its a vendor item
                         elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            money = money - ((PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count)
-                            tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + materialTable.count
+                            local addedMaterials = 0
+                            --Check if there is some in backpack
+                            if backpackKnapsack[materialName] then
+                                addedMaterials = min(backpackKnapsack[materialName], materialTable.count)
+                                backpackKnapsack[materialName] = max(backpackKnapsack[materialName] - materialTable.count, 0)
+                                if backpackKnapsack[materialName] <= 0 then -- <= 0 for safety; it should never be below 0
+                                    backpackKnapsack[materialName] = nil
+                                end
+                            end
+                            --Keep buying until enough
+                            while addedMaterials < materialTable.count do
+                                money = money - (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100)
+                                addedMaterials = addedMaterials + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                            end
+                            --Check if we have enough money for this
+                            if money < 0 then
+                                canCreateRecipe = false
+                                canCreateIthRecipe = false --We dont need this here logically, but for safety reasons
+                            end
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
@@ -881,8 +900,27 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
                             end
                         --Check if its a vendor item
                         elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            money = money - ((PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count)
-                            tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + materialTable.count
+                            local addedMaterials = 0
+                            --Check if there is some in backpack
+                            if backpackKnapsack[materialName] then
+                                addedMaterials = min(backpackKnapsack[materialName], materialTable.count)
+                                backpackKnapsack[materialName] = max(backpackKnapsack[materialName] - materialTable.count, 0)
+                                if backpackKnapsack[materialName] <= 0 then -- <= 0 for safety; it should never be below 0
+                                    backpackKnapsack[materialName] = nil
+                                end
+                            end
+                            --Keep buying until enough
+                            while addedMaterials < materialTable.count do
+                                money = money - (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100)
+                                addedMaterials = addedMaterials + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                            end
+                            --Check if we have enough money for this
+                            if money < 0 then
+                                canCreateRecipe = false
+                                canCreateIthRecipe = false --We dont need this here logically, but for safety reasons
+                            end
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
@@ -1055,8 +1093,27 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
                             end
                         --Check if its a vendor item
                         elseif PROFESSIONS.VENDOR_ITEMS[materialName] then
-                            money = money - ((PROFESSIONS.VENDOR_ITEMS[materialName] * 100) * materialTable.count)
-                            tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + materialTable.count
+                            local addedMaterials = 0
+                            --Check if there is some in backpack
+                            if backpackKnapsack[materialName] then
+                                addedMaterials = min(backpackKnapsack[materialName], materialTable.count)
+                                backpackKnapsack[materialName] = max(backpackKnapsack[materialName] - materialTable.count, 0)
+                                if backpackKnapsack[materialName] <= 0 then -- <= 0 for safety; it should never be below 0
+                                    backpackKnapsack[materialName] = nil
+                                end
+                            end
+                            --Keep buying until enough
+                            while addedMaterials < materialTable.count do
+                                money = money - (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100)
+                                addedMaterials = addedMaterials + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                            end
+                            --Check if we have enough money for this
+                            if money < 0 then
+                                canCreateRecipe = false
+                                canCreateIthRecipe = false --We dont need this here logically, but for safety reasons
+                            end
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
