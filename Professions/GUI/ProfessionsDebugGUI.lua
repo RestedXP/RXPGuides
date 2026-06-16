@@ -26,7 +26,9 @@ end
 --GUI
 local printed = false --last minute variable for a gui bugfix, will be properly resolved
 function addon.professions.GUI.createGUI()
-    local guiFrame = CreateFrame("Frame", "ProfessionsFrame", UIParent, "BasicFrameTemplateWithInset")
+    --Not local so I can access it from other files
+    aProf.GUI.guiFrame = CreateFrame("Frame", "ProfessionsFrame", UIParent, "BasicFrameTemplateWithInset")
+    local guiFrame = aProf.GUI.guiFrame --Localized for ease of access
     guiFrame:SetSize(500, 700)
     guiFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
     guiFrame.TitleBg:SetHeight(30)
@@ -197,7 +199,6 @@ function addon.professions.GUI.createGUI()
         elseif testButton:GetChecked() then professionName = "Testing" end
         aProf.setPlayerData(professionName, selectSkillLevelFrame:GetValue())
         profSession.segmentRange = selectSegmentFrame:GetValue()
-        print("Segment range", profSession.segmentRange)
         RXPCData.professions.money = tonumber(moneyEditBox:GetText())
     end)
 
@@ -216,7 +217,7 @@ function addon.professions.GUI.createGUI()
 
     local resultTextFrame = CreateFrame("ScrollFrame", "scrollTextFrame", guiFrame, "UIPanelScrollFrameTemplate")
     resultTextFrame:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
-    resultTextFrame:SetSize(400, 400)
+    resultTextFrame:SetSize(400, 300)
 
     local scanButtonFrame = CreateFrame("Button", "ScanButtonFrame", setButtonFrame, "UIPanelButtonTemplate")
     scanButtonFrame:SetPoint("LEFT", setButtonFrame, "RIGHT")
@@ -240,12 +241,13 @@ function addon.professions.GUI.createGUI()
         end
     end)
 
-    --guiFrame.printText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     guiFrame.printText = CreateFrame("Frame")
     guiFrame.printText.Text = guiFrame.printText:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     guiFrame.printText.Text:SetPoint("TOPLEFT", guiFrame.printText, "TOPLEFT", 10, -10)
-    guiFrame.printText:SetPoint("TOPLEFT", setButtonFrame, "BOTTOMLEFT", 0, -10)
-    guiFrame.printText:SetSize(resultTextFrame:GetWidth(), resultTextFrame:GetHeight() * 2)
+    guiFrame.printText.Text:SetWidth(resultTextFrame:GetWidth() - 20)
+    guiFrame.printText.Text:SetNonSpaceWrap(true)
+    guiFrame.printText:SetPoint("TOPLEFT", resultTextFrame, "BOTTOMLEFT", 0, -10)
+    guiFrame.printText:SetSize(resultTextFrame:GetWidth(), resultTextFrame:GetHeight())
     resultTextFrame:SetScrollChild(guiFrame.printText)
     local textToPrint = ""
 
