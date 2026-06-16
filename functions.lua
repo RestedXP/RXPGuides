@@ -3748,7 +3748,7 @@ end
 function addon.functions.money(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, money = ...
+        local text, money, useNetWorth = ...
         local prefix = money:sub(1, 1)
         if prefix == "<" then
             element.greaterThan = false
@@ -3767,12 +3767,19 @@ function addon.functions.money(self, ...)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid arguments\n" .. self)
         end
+        element.useNetWorth = useNetWorth == "1"
         element.textOnly = true
         if text and text ~= "" then element.text = text end
         return element
     end
     if not self.element.step.active then return end
-    if GetMoney() >= self.element.money then
+    local money
+    if self.element.useNetWorth and addon.inventoryManager then
+        money = addon.inventoryManager.GetNetWorth()
+    else
+        money = GetMoney()
+    end
+    if money >= self.element.money then
         self.element.step.completed = self.element.greaterThan
     else
         self.element.step.completed = not (self.element.greaterThan)
