@@ -105,6 +105,7 @@ events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE", "MERCHANT_SHOW","CHA
 events.collectmultiple = events.collect
 events.destroy = events.collect
 events.buy = events.collect
+events.buyAll = events.buy
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = {"QUEST_TURNED_IN","QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 if C_EventUtils and C_EventUtils.IsEventValid("STOP_MOVIE") then
@@ -5453,6 +5454,17 @@ function addon.functions.bronzetube(self, text, rev)
     end
 end
 
+function addon.functions.buyAll(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = addon.functions.buy(self, ...)
+        if type(element) == "table" then
+            element.ignoreCurrent = true
+        end
+        return element
+    end
+    return addon.functions.buy(self, ...)
+end
+
 function addon.functions.buy(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -5479,8 +5491,10 @@ function addon.functions.buy(self, ...)
     if not (step.active and event and event ~= "WindowUpdate") then return end
 
     local id = element.id
-    local count = GetItemCount(id)
-    local total = element.qty - count
+    local total = element.qty
+    if not element.ignoreCurrent then
+        total = total - GetItemCount(id)
+    end
     local objIndex = element.objIndex
     local questId = element.questId
 
