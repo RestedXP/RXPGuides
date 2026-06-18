@@ -128,6 +128,9 @@ function addon.professions.GUI.createGUI()
     moneyEditBox:SetScript("OnEnterPressed", function (self)
         self:EnableKeyboard(false)
     end)
+    moneyEditBox:SetScript("OnEscapePressed", function (self)
+        self:ClearFocus()
+    end)
 
     local selectSkillLevelFrame = CreateFrame("Slider", "selectSkillLevelFrame", guiFrame, "UISliderTemplateWithLabels")
     selectSkillLevelFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -150)
@@ -241,7 +244,11 @@ function addon.professions.GUI.createGUI()
         end
     end)
 
-    guiFrame.printText = CreateFrame("Frame")
+    guiFrame.printText = CreateFrame("EditBox")
+    guiFrame.printText:SetEnabled(false)
+    guiFrame.printText:SetMultiLine(true)
+    guiFrame.printText:SetAutoFocus(false)
+    guiFrame.printText:SetFontObject("GameFontNormal")
     guiFrame.printText.Text = guiFrame.printText:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     guiFrame.printText.Text:SetPoint("TOPLEFT", guiFrame.printText, "TOPLEFT", 10, -10)
     guiFrame.printText.Text:SetWidth(resultTextFrame:GetWidth() - 20)
@@ -249,6 +256,10 @@ function addon.professions.GUI.createGUI()
     guiFrame.printText:SetPoint("TOPLEFT", resultTextFrame, "BOTTOMLEFT", 0, -10)
     guiFrame.printText:SetSize(resultTextFrame:GetWidth(), resultTextFrame:GetHeight())
     resultTextFrame:SetScrollChild(guiFrame.printText)
+    guiFrame.printText:SetScript("OnEscapePressed", function (self)
+        self:ClearFocus()
+        self:SetEnabled(false)
+    end)
     local textToPrint = ""
 
 

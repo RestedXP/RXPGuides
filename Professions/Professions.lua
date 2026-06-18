@@ -112,7 +112,7 @@ local function serializeCraftedItems()
 end
 
 --Serializes foundItems for debugging purposes
---Optionally shoulc call calculateMaterialAveragePrice first to display that info as well
+--Optionally should call calculateMaterialAveragePrice first to display that info as well
 local function serializeFoundItems()
     local sb = stringBuilder("Found items:\n")
     local avg
@@ -133,9 +133,11 @@ local function foundItemsToLuaTable()
     for itemName, itemTables in pairs(addon.professions.profSession.foundItems) do
         sb:append("\t[\""):append(itemName):append("\"] = {\n")
         for _, itemTable in ipairs(itemTables) do
-            sb:append("\t\tcount = "):append(itemTable.count):append(",\n")
-            sb:append("\t\tprice = "):append(itemTable.price):append(",\n")
-            sb:append("\t\tpricePeritem = "):append(itemTable.pricePerItem):append(",\n")
+            sb:append("\t\t{\n")
+            sb:append("\t\t\tcount = "):append(itemTable.count):append(",\n")
+            sb:append("\t\t\tprice = "):append(itemTable.price):append(",\n")
+            sb:append("\t\t\tpricePeritem = "):append(itemTable.pricePerItem):append(",\n")
+            sb:append("\t\t},\n")
         end
         sb:append("\t},\n")
     end
@@ -149,10 +151,14 @@ local function foundItemsToJSONObject()
     local sb = stringBuilder("{\n")
     for itemName, itemTables in pairs(addon.professions.profSession.foundItems) do
         sb:append("\t\""):append(itemName):append("\" : {\n")
+        local i = 1
         for _, itemTable in ipairs(itemTables) do
-            sb:append("\t\tcount : "):append(itemTable.count):append(",\n")
-            sb:append("\t\tprice : "):append(itemTable.price):append(",\n")
-            sb:append("\t\tpricePeritem = "):append(itemTable.pricePerItem):append(",\n")
+            sb:append("\t\t\""):append(tostring(i)):append("\":{\n")
+            sb:append("\t\t\t\"count\" : "):append(itemTable.count):append(",\n")
+            sb:append("\t\t\t\"price\" : "):append(itemTable.price):append(",\n")
+            sb:append("\t\t\t\"pricePeritem\" : "):append(itemTable.pricePerItem):append("\n")
+            sb:append("\t\t},\n")
+            i = i + 1
         end
         sb:append("\t},\n")
     end
@@ -165,15 +171,17 @@ end
 --1 -> Lua Table (default)
 --2 -> JSON Object
 local function exportFoundItems(option)
-    local date = tostring(date("%m/%d/%y %H:%M:%S"))
-    local sb = stringBuilder("---"):append(date):append("-----\n")
+    local currentDate = tostring(date("%m/%d/%y %H:%M:%S"))
+    local sb = stringBuilder("---"):append(currentDate):append("-----\n")
     local converted
     if option == 2 then
         converted = foundItemsToJSONObject()
     else
         converted = foundItemsToLuaTable()
     end
-    CopyToClipboard(sb:build())
+    sb:append(converted)
+
+    return sb:build()
 end
 
 
@@ -1528,6 +1536,18 @@ SlashCmdList['qtst'] = function()
     local str = serializeFoundItems()
     GUI.guiFrame.printText.Text:SetText(str)
 end
+
+--Export
+SLASH_export1 = '/export'
+SlashCmdList['export'] = function(option)
+    if not option then option = 1 else option = tonumber(option) end
+
+    GUI.guiFrame.printText:SetEnabled(true)
+    GUI.guiFrame.printText:SetText(exportFoundItems(option))
+    GUI.guiFrame.printText:SetFocus()
+    GUI.guiFrame.printText:HighlightText()
+end
+
 
 
 print("done loading professions")

@@ -16481,6 +16481,9 @@ addon.professions.PROFESSIONS = {
 
 -- Virtual AH 
 addon.professions.vah = {}
+
+
+
 addon.professions.vah.VIRTUAL_AH = {
     ["Material A"] = {
         [1] = {
