@@ -84,7 +84,7 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
                 price = buyoutPrice,
                 pricePerItem = ceil(buyoutPrice / count),
                 owner = owner,
-                itemLink = itemLink
+                itemLink = itemLink,
             })
         end
     end
