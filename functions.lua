@@ -5498,9 +5498,14 @@ function addon.functions.buy(self, ...)
             local link = GetMerchantItemLink(i)
             local itemID = link and tonumber(link:match("item:(%d+)"))
             if itemID then
-                local name, _, _, quantity = GetMerchantItemInfo(i)
+                -- numAvailable is -1 when unlimited and at least 0 until window is closed (if present)
+                local name, _, _, quantity, numAvailable = GetMerchantItemInfo(i)
 
                 if itemID == id or name == id then
+                    if numAvailable ~= -1 then
+                        total = math.min(total, numAvailable)
+                    end
+
                     addon.comms.PrettyPrint("Buying " .. name .. " x" .. total) -- ok
                     local stack = select(8, GetItemInfo(id))
                     if quantity then
