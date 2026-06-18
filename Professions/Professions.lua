@@ -14,6 +14,7 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuct
 local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
 local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetItemNameByID = _G.C_Item.GetItemNameByID
+local date, CopyToClipboard = date, CopyToClipboard
 local GetMoney = _G.GetMoney
 
 addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0") --TODO: maybe change the name
@@ -125,6 +126,57 @@ local function serializeFoundItems()
     end
     return sb:build()
 end
+
+--Converts foundItems to Lua table text
+local function foundItemsToLuaTable()
+    local sb = stringBuilder("{\n")
+    for itemName, itemTables in pairs(addon.professions.profSession.foundItems) do
+        sb:append("\t[\""):append(itemName):append("\"] = {\n")
+        for _, itemTable in ipairs(itemTables) do
+            sb:append("\t\tcount = "):append(itemTable.count):append(",\n")
+            sb:append("\t\tprice = "):append(itemTable.price):append(",\n")
+            sb:append("\t\tpricePeritem = "):append(itemTable.pricePerItem):append(",\n")
+        end
+        sb:append("\t},\n")
+    end
+    sb:append("}")
+
+    return sb:build()
+end
+
+--Converts foundItems to JSON Object
+local function foundItemsToJSONObject()
+    local sb = stringBuilder("{\n")
+    for itemName, itemTables in pairs(addon.professions.profSession.foundItems) do
+        sb:append("\t\""):append(itemName):append("\" : {\n")
+        for _, itemTable in ipairs(itemTables) do
+            sb:append("\t\tcount : "):append(itemTable.count):append(",\n")
+            sb:append("\t\tprice : "):append(itemTable.price):append(",\n")
+            sb:append("\t\tpricePeritem = "):append(itemTable.pricePerItem):append(",\n")
+        end
+        sb:append("\t},\n")
+    end
+    sb:append("}")
+
+    return sb:build()
+end
+
+--Exports foundItems to clipboard in given format
+--1 -> Lua Table (default)
+--2 -> JSON Object
+local function exportFoundItems(option)
+    local date = tostring(date("%m/%d/%y %H:%M:%S"))
+    local sb = stringBuilder("---"):append(date):append("-----\n")
+    local converted
+    if option == 2 then
+        converted = foundItemsToJSONObject()
+    else
+        converted = foundItemsToLuaTable()
+    end
+    CopyToClipboard(sb:build())
+end
+
+
 
 --Sorts an associative array by value.
 --Assumes the value has "<" operator implementation
@@ -280,7 +332,6 @@ local function removeNonTrainable(professionName)
         end
     end
 end
-
 
 --Gather what recipes to consider based on segment
 --minSegment = minimumSkillLevel
@@ -1041,17 +1092,17 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
                 --While its not the last in the list remove and pass on to one that is 100%.
                 --If no such exists go back to the current cheapest
                 local isLast = false
-                local isHunderdPercent = false
+                local isHunderedPercent = false
                 local i = 2
                 local newPercent
-                while not isHunderdPercent and not isLast do
+                while not isHunderedPercent and not isLast do
                     --Go to next recipe and recalculate if its 100%
                     if sortedRecipesByPrice[i] then
                         local newRecipeName = sortedRecipesByPrice[i][1]
                         newPercent = calculatePercent(professionName, newRecipeName, skillLevel + skillLevelsGained)
                         --Check if its 100%
                         if newPercent >= 1.0 then
-                            isHunderdPercent = true
+                            isHunderedPercent = true
                         else -- It's not, continue on
                             i = i + 1
                         end

@@ -5,7 +5,7 @@ addon.professions = addon.professions or {}
 
 --Professions DB
 addon.professions.PROFESSIONS = {
-    VENDOR_ITEMS = { --TODO: Update everywhere where we used the old system!!!!
+    VENDOR_ITEMS = {
         ["Empty Vial"] = {
             price = 0.20,
             count = 5,
@@ -24,48 +24,63 @@ addon.professions.PROFESSIONS = {
         },
         ["Coarse Thread"] =	{
             price = 0.10,
+            count = 1,
         },
         ["Fine Thread"] = {
             price = 1.00,
+            count = 1,
         },
         ["Silken Thread"] =	{
             price = 5.00,
+            count = 1,
         },
         ["Heavy Silken Thread"] = {
             price = 20.00,
+            count = 1,
         },
         ["Rune Thread"] = {
             price = 50.00,
+            count = 1,
         },
         ["Weak Flux"] =	{
             price = 1.00,
+            count = 1,
         },
         ["Strong Flux"] = {
             price = 20.00,
+            count = 1,
         },
         ["Salt"] = {
             price = 0.50,
+            count = 1,
         },
         ["Simple Wood"] = {
             price = 0.38,
+            count = 1,
         },
         ["Star Wood"] =	{
             price = 45.00,
+            count = 1,
         },
         ["Soothing Spices"] = {
             price = 1.60,
+            count = 1,
         },
         ["Mild Spices"] = {
             price = 0.10,
+            count = 1,
         },
         ["Hot Spices"] = {
             price = 0.40,
+            count = 1,
         },
         ["Bleach"] = {
             price = 0.26,
+            count = 1,
         },
         ["Green Dye"] =	{
             price = 1.12,
+            count = 1,
         },
     },
     ["blacksmithing"] = {
