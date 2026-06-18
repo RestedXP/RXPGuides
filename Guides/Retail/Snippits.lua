@@ -1285,6 +1285,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
 #next a) Order Hall Death Knight Part 1
+#internal
 
 << DeathKnight
 
@@ -1513,6 +1514,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
 #next a) Order Hall Death Knight Part 1
+#internal
 
 << DeathKnight
 
@@ -1713,6 +1715,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next a) Order Hall Death Knight Part 1
+#internal
 
 << DeathKnight
 
@@ -1993,6 +1996,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
 #next ac) Order Hall Death Knight Part 2
+#internal
 
 << DeathKnight
 
@@ -2008,6 +2012,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Death Knight Part 2
+#internal
 
 << DeathKnight
 
@@ -2023,6 +2028,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next ac) Order Hall Death Knight Part 2
+#internal
+
 
 << DeathKnight
 
@@ -2040,6 +2047,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Death Knight
 #chapter
+#internal
 
 << DeathKnight
 
@@ -2118,6 +2126,7 @@ RXPGuides.RegisterGuide([[}
 #name a) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next a) Order Hall Demon Hunter Part 1
+#internal
 
 << DemonHunter
 
@@ -2408,6 +2417,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next a) Order Hall Demon Hunter Part 1
+#internal
 
 << DemonHunter
 
@@ -2711,6 +2721,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter Part 2
+#internal
 
 << DemonHunter
 
@@ -2726,6 +2737,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter Part 2
+#internal
 
 << DemonHunter
 
@@ -2743,6 +2755,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Demon Hunter
 #chapter
+#internal
 
 << DemonHunter
 
@@ -2824,6 +2837,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -3201,6 +3215,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -3504,6 +3519,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -3872,6 +3888,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -4275,6 +4292,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4290,6 +4308,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4305,6 +4324,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4320,6 +4340,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4337,6 +4358,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Druid
 #chapter
+#internal
 
 << Druid
 
@@ -4413,6 +4435,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
 #next a) Order Hall Hunter Part 1
+#internal
 
 << Hunter
 
@@ -4778,6 +4801,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
 #next a) Order Hall Hunter Part 1
+#internal
 
 << Hunter
 
@@ -5036,6 +5060,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
 #next a) Order Hall Hunter Part 1
+#internal
 
 << Hunter
 
@@ -5323,6 +5348,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
 #next ac) Order Hall Hunter Part 2
+#internal
 
 << Hunter
 
@@ -5338,6 +5364,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
 #next ac) Order Hall Hunter Part 2
+#internal
 
 << Hunter
 
@@ -5353,6 +5380,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
 #next ac) Order Hall Hunter Part 2
+#internal
 
 << Hunter
 
@@ -5370,6 +5398,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Hunter
 #chapter
+#internal
 
 << Hunter
 
@@ -5446,6 +5475,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
 #next a) Order Hall Mage Part 1
+#internal
 
 << Mage
 
@@ -5841,6 +5871,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
 #next a) Order Hall Mage Part 1
+#internal
 
 << Mage
 
@@ -6171,6 +6202,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
 #next a) Order Hall Mage Part 1
+#internal
 
 << Mage
 
@@ -6722,6 +6754,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
 #next ac) Order Hall Mage Part 2
+#internal
 
 << Mage
 
@@ -6737,6 +6770,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
 #next ac) Order Hall Mage Part 2
+#internal
 
 << Mage
 
@@ -6752,6 +6786,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Mage Part 2
+#internal
 
 << Mage
 
@@ -6769,6 +6804,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Mage
 #chapter
+#internal
 
 << Mage
 
@@ -6847,6 +6883,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Brewmaster
 #displayname Artifact Weapon: Brewmaster
 #next a) Order Hall Monk Part 1
+#internal
 
 << Monk
 
@@ -7296,6 +7333,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Mistweaver
 #displayname Artifact Weapon: Mistweaver
 #next a) Order Hall Monk Part 1
+#internal
 
 << Monk
 
@@ -7552,6 +7590,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Windwalker
 #next a) Order Hall Monk Part 1
+#internal
 
 << Monk
 
@@ -7974,6 +8013,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Brewmaster
 #displayname Artifact Weapon: Brewmaster
 #next ac) Order Hall Monk Part 2
+#internal
 
 << Monk
 
@@ -7990,6 +8030,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Mistweaver
 #next ac) Order Hall Monk Part 2
+#internal
 
 << Monk
 
@@ -8006,6 +8047,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Windwalker
 #next ac) Order Hall Monk Part 2
+#internal
 
 << Monk
 
@@ -8023,6 +8065,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Monk
 #chapter
+#internal
 
 << Monk
 
@@ -8107,6 +8150,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next a) Order Hall Paladin Part 1
+#internal
 
 << Paladin
 
@@ -8549,6 +8593,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Paladin Protection
 #displayname Artifact Weapon: Protection
 #next a) Order Hall Paladin Part 1
+#internal
 
 << Paladin
 
@@ -9005,6 +9050,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next a) Order Hall Paladin Part 1
+#internal
 
 << Paladin
 
@@ -9381,6 +9427,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Paladin Part 2
+#internal
 
 << Paladin
 
@@ -9396,6 +9443,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Paladin Protection
 #displayname Artifact Weapon: Paladin Protection
 #next ac) Order Hall Paladin Part 2
+#internal
 
 << Paladin
 
@@ -9411,6 +9459,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next ac) Order Hall Paladin Part 2
+#internal
 
 << Paladin
 
@@ -9428,6 +9477,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Paladin
 #chapter
+#internal
 
 << Paladin
 
@@ -9498,6 +9548,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
 #next a) Order Hall Priest Part 1
+#internal
 
 << Priest
 
@@ -9869,6 +9920,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
 #next a) Order Hall Priest Part 1
+#internal
 
 << Priest
 
@@ -10114,6 +10166,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
 #next a) Order Hall Priest Part 1
+#internal
 
 << Priest
 
@@ -10348,6 +10401,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
 #next ac) Order Hall Priest Part 2
+#internal
 
 << Priest
 
@@ -10363,6 +10417,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Priest Part 2
+#internal
 
 << Priest
 
@@ -10378,6 +10433,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
 #next ac) Order Hall Priest Part 2
+#internal
 
 << Priest
 
@@ -10395,6 +10451,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Priest
 #chapter
+#internal
 
 << Priest
 
@@ -10471,6 +10528,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
 #next a) Order Hall Rogue Part 1
+#internal
 
 << Rogue
 
@@ -11019,6 +11077,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
 #next a) Order Hall Rogue Part 1
+#internal
 
 << Rogue
 
@@ -11332,6 +11391,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
 #next a) Order Hall Rogue Part 1
+#internal
 
 << Rogue
 
@@ -11816,6 +11876,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
 #next ac) Order Hall Rogue Part 2
+#internal
 
 << Rogue
 
@@ -11831,6 +11892,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
 #next ac) Order Hall Rogue Part 2
+#internal
 
 << Rogue
 
@@ -11846,6 +11908,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
 #next ac) Order Hall Rogue Part 2
+#internal
 
 << Rogue
 
@@ -11863,6 +11926,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Rogue
 #chapter
+#internal
 
 << Rogue
 
@@ -11946,6 +12010,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
 #next a) Order Hall Shaman Part 1
+#internal
 
 << Shaman
 
@@ -12282,6 +12347,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
 #next a) Order Hall Shaman Part 1
+#internal
 
 << Shaman
 
@@ -12574,6 +12640,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
 #next a) Order Hall Shaman Part 1
+#internal
 
 << Shaman
 
@@ -12817,6 +12884,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
 #next ac) Order Hall Shaman Part 2
+#internal
 
 << Shaman
 
@@ -12832,6 +12900,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
 #next ac) Order Hall Shaman Part 2
+#internal
 
 << Shaman
 
@@ -12847,6 +12916,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Shaman Part 2
+#internal
 
 << Shaman
 
@@ -12864,6 +12934,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Shaman
 #chapter
+#internal
 
 << Shaman
 
@@ -12939,6 +13010,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
 #next a) Order Hall Warlock Part 1
+#internal
 
 << Warlock
 
@@ -13255,6 +13327,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next a) Order Hall Warlock Part 1
+#internal
 
 << Warlock
 
@@ -13519,6 +13592,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
 #next a) Order Hall Warlock Part 1
+#internal
 
 << Warlock
 
@@ -13833,6 +13907,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
 #next ac) Order Hall Warlock Part 2
+#internal
 
 << Warlock
 
@@ -13848,6 +13923,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next ac) Order Hall Warlock Part 2
+#internal
 
 << Warlock
 
@@ -13863,6 +13939,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
 #next ac) Order Hall Warlock Part 2
+#internal
 
 << Warlock
 
@@ -13880,6 +13957,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Warlock
 #chapter
+#internal
 
 << Warlock
 
@@ -13961,6 +14039,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next a) Order Hall Campaign Intro
+#internal
 
 << Warrior
 
@@ -14216,6 +14295,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next a) Order Hall Campaign Intro
+#internal
 
 << Warrior
 
@@ -14487,6 +14567,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next a) Order Hall Campaign Intro
+#internal
 
 << Warrior
 
@@ -14735,6 +14816,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next ac) Order Hall Warrior Part 2
+#internal
 
 << Warrior
 
@@ -14750,6 +14832,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next ac) Order Hall Warrior Part 2
+#internal
 
 << Warrior
 
@@ -14765,6 +14848,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Warrior Part 2
+#internal
 
 << Warrior
 
@@ -14782,6 +14866,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Warrior
 #chapter
+#internal
 
 << Warrior
 

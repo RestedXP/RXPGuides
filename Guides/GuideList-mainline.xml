@@ -6,14 +6,14 @@
     <!-- LEVELING -->
     <Script file="Guides/Retail/Leveling/Conventional/Starting Zones.lua"/>
     <!-- <Script file="Guides/Retail/Leveling/Conventional/Darkmoon Faire.lua"/> -->
-    <Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Dailies.lua"/>
-    <Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Jade Forest.lua"/>
+    <!-- Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Dailies.lua"/> -->
+    <!-- Script file="Guides/Retail/Leveling/Remix/Mists of Pandaria/Jade Forest.lua"/>  -->
     <!-- <Script file="Guides/Retail/Leveling/Remix/Legion/"/> -->
-    <Script file="Guides/Retail/Leveling/Remix/Legion/Introduction.lua"/>
+    <!-- Script file="Guides/Retail/Leveling/Remix/Legion/Introduction.lua"/>  -->
 
     <!-- END GAME -->
-    <Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>
-    <Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>
+    <!-- Script file="Guides/Retail/Endgame/War Within/Storylines.Lua"/>  -->
+    <!-- Script file="Guides/Retail/Endgame/War Within/The War Within Campaign.Lua"/>  -->
     <!-- <Script file="Guides/Retail/Endgame/War Within/Visions of a Shadowed Sun.lua"/> -->
 
     <!-- COLLECTABLES -->
