@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Allied Races
 #name a) UNLOCKING
 #displayname Unlocking
-#chapters a) Void Elf Unlock 1;a) Lightforged Draenei Unlock 1;a) DarkIronDwarf Unlock 1;a) KulTiran Unlock 1;a) Mechagnome Unlock 1;a) Void Elf DH << Alliance
+#chapters a) Void Elf Unlock 1;a) Lightforged Draenei Unlock 1;a) DarkIronDwarf Unlock 1;a) KulTiran Unlock 1;a) Mechagnome Unlock 1;a) Void Elf DH;a) Earthen Unlock 1 << Alliance
 #chapters a) Nightborne Unlock 1;a) Highmountain Tauren Unlock 1;a) Maghar Orc Unlock 1;a) Zandalari Troll Unlock 1;a) Vulpera Unlock 1 << Horde
 ]])
 
@@ -3334,13 +3334,1058 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Miscellaneous
-#name a) Earth
-#displayname |cFF00CCFF5|r - Vulpera
-#next a) Earth
+#name a) Earthen Unlock 1
+#displayname |cFF00CCFF6|r - Earthen Dwarf
 #chapter
-#internal
 
-+PH
+step
+    #include RestedXP Speed Leveling\a) The War Within Recap
+
+-- Tools
+
+
+step
+    #completewith next
+    .goto 2214,43.98,33.68,10,0 >> Enter the House
+step
+    .goto 2214,44.08,33.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kittrin|r |cRXP_WARN_inside the house|r.
+    .accept 78562 >>Accept Discarded and Broken
+    .target Machinist Kittrin
+step
+    #completewith next
+    .goto 2214,43.98,33.74,10 >>Leave the House
+step
+    .goto 2214,45.90,36.64
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Machinist's Wrench|r.
+    .complete 78562,3 --1/1 Machinist's Wrench
+step
+    .goto 2214,48.31,34.11
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Machinist's Calipers|r.
+    .complete 78562,2 --1/1 Machinist's Calipers
+step
+    .goto 2214,42.52,29.38
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Machinist's Gauge|r.
+    .complete 78562,1 --1/1 Machinist's Gauge
+step
+    #completewith next
+    .goto 2214,43.98,33.68,10,0 >> Enter the House
+step
+    .goto 2214,44.08,33.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kittrin|r.
+    .turnin 78562 >>Turn in Discarded and Broken
+    .target Machinist Kittrin
+    .accept 78563 >>Accept The Weight of a World
+step
+    #completewith next
+    .goto 2214,43.98,33.74,10 >>Leave the House
+step
+    .goto 2214,40.47,31.48
+    >>Kill |cRXP_ENEMY_Oath-Eater|r. Loot it for |T135261:0|t[|cRXP_LOOT_Machinist's Calibrated Weight|r].
+    .complete 78563,1 --1/1 Machinist's Calibrated Weight
+    .mob Oath-Eater
+step
+    #completewith next
+    .goto 2214,43.98,33.68,10,0 >> Enter the House
+step
+    .goto 2214,44.08,33.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kittrin|r.
+    .turnin 78563 >>Turn in The Weight of a World
+    .target Machinist Kittrin
+    .accept 78564 >>Accept Reforged Purpose
+step
+    .goto 2214,44.08,33.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kittrin|r.
+    .complete 78564,1 --1/1 Speak with Kittrin
+    .target Kitt
+    .skipgossipid 120147
+step
+    #loop
+    .goto 2214,44.20,33.42,5,0
+    .goto 2214,44.06,33.48,5,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Spattered Charcoal|r.
+    .complete 78564,2 --Spattered Charcoal kicked (100%)
+    .complete 78564,3 --1/1 All tools repaired
+    .target Spattered Charcoal
+step
+    .goto 2214,44.08,33.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Machinist Kittrin|r.
+    .turnin 78564 >>Turn in Reforged Purpose
+    .target Machinist Kittrin
+
+
+
+-- Merrix
+
+step
+    #label BehindClosedDoorsA
+    .goto 2339,62.71,21.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldra|r.
+    .accept 80207 >>Accept How Scandalous!
+    .target Aldra
+step
+    #label BehindClosedDoorsB
+    #title |cFFFCDC00Follow the Arrow|r.
+    .goto 2339,49.90,49.34
+    .complete 80207,1 --1/1 Disturbance investigated near the Forgegrounds
+step
+    .goto 2339,49.90,49.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Kragad|r.
+    .turnin 80207 >>Turn in How Scandalous!
+    .accept 79521 >>Accept Seizing Evidence
+    .target Peacekeeper Kragad
+step
+    .goto 2339,51.38,51.26
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shipment Crates|r.
+    .complete 79521,1 --3/3 Seized Shipment
+step
+    .goto 2339,49.90,49.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Kragad|r.
+    .turnin 79521 >>Turn in Seizing Evidence
+    .accept 79522 >>Accept Withheld Information
+    .target Peacekeeper Kragad
+step
+    #title Worker interrogated (3/5)
+    .goto 2339,49.83,48.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Line Workers|r.
+    .complete 79522,1,3 --3/5 Line Workers interrogated
+    .target Line Worker
+step
+    #title Worker interrogated (5/5)
+    .goto 2339,48.99,49.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Line Workers|r.
+    .complete 79522,1 --5/5 Line Workers interrogated
+    .target Line Worker
+step
+    .goto 2339,49.90,49.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Kragad|r.
+    .turnin 79522 >>Turn in Withheld Information
+    .accept 79523 >>Accept Something Hidden
+    .target Peacekeeper Kragad
+step
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bundle of Receipts|r, |cRXP_PICK_Bag of Glowing Shards|r, |cRXP_PICK_Infused Underclay|r and |cRXP_PICK_Nerubian Silk Ropes|r.
+    .complete 79523,2 --4/4 Evidence gathered
+step
+    .goto 2339,51.38,51.26
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_False-Bottomed Crates|r. Kill the |cRXP_ENEMY_Disturbed Mudspawns|r.
+    .complete 79523,1 --3/3 Crates smashed
+    .mob Disturbed Mudspawn
+step
+    .goto 2339,51.38,51.26
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Bundle of Receipts|r, |cRXP_PICK_Bag of Glowing Shards|r, |cRXP_PICK_Infused Underclay|r and |cRXP_PICK_Nerubian Silk Ropes|r.
+    .complete 79523,2 --4/4 Evidence gathered
+step
+    #label BehindClosedDoorsC
+    .goto 2339,49.90,49.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Kragad|r.
+    .turnin 79523 >>Turn in Something Hidden
+    .target Peacekeeper Kragad
+step
+    .goto 2339,49.90,49.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Kragad|r.
+    .accept 79525 >>Accept Report to the Councilward
+    .target Peacekeeper Kragad
+step
+    .goto 2214,43.34,32.66
+    .achievementComplete 19559,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saradi|r |cRXP_WARN_in The Ringing Deeps|r.
+    .accept 79542 >>Accept The Councilward's Summons
+    .target Saradi
+step
+    #completewith next
+    #label FindMerrixRiseA
+    .goto 2339,56.84,10.16,0,0
+    .complete 79525,1 --1/1 Find Merrix at the Councilward's Rise
+step
+    #title Enter House
+    #completewith FindMerrixRiseA
+    .goto 2339,55.78,7.16,8 >>Enter the House
+step
+    #requires FindMerrixRiseA
+    #title |cFFFCDC00Follow the Arrow|r.
+    .goto 2339,55.62,6.1
+    .complete 79525,1 --1/1 Find Merrix at the Councilward's Rise
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Open Ledger|r.
+    .goto 2339,55.62,6.08
+    .complete 79525,2 --1/1 Merrix's desk approached
+step
+    .goto 2339,55.62,6.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Open Ledger|r.
+    .turnin 79525 >>Turn in Report to the Councilward
+    .target Open Ledger
+step
+    >>Complete this Campaign Quest to continue the Storyline.
+    .turnin 79354 >>Turn in The Machine Speakers
+step
+    -- .isQuestComplete 79354 previous requisite
+    .isQuestComplete 78837
+    #completewith next
+    .zone 2214 >> Go to Ringing Deeps
+step
+    -- .isQuestComplete 79354 previous requisite
+    .isQuestComplete 78837
+    .goto 2214,43.34,32.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saradi|r.
+    .accept 79542 >>Accept The Councilward's Summons
+    .target Saradi
+step
+    -- .isQuestComplete 79354 previous requisite
+    .isQuestComplete 78837
+    #completewith next
+    .zone 2339 >> Go to Dornogal
+step
+    .goto 2339,55.22,6.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .complete 79542,1 --1/1 Meet Merrix at the Councilward's Rise
+    .skipgossipid 121397
+step
+    .goto 2339,55.22,6.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .turnin 79542 >>Turn in The Councilward's Summons
+    .target Merrix
+    .accept 79543 >>Accept Dornogal's Benefactor
+step
+    #title Leave the House
+    .goto 2339,55.79,8.02,10 >>Leave the House
+step
+    #title Enter the House
+    .goto 2339,32.74,25.26,10 >>Enter the House
+step
+    .goto 2339,32.10,24.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .complete 79543,1 --1/1 Spa Supplies delivered
+    .skipgossipid 121217
+    .target Merrix
+step
+    #title Leave the House
+    .goto 2339,33.14,25.81,10 >>Leave the House
+step
+    .goto 2339,58.47,62.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gostrof|r.
+    .complete 79543,2 --1/1 Country Supplies delivered
+    .skipgossipid 121218
+    .target Gostrof
+step
+    .goto 2339,52.30,52.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trader Harthan|r.
+    .complete 79543,3 --1/1 Care Package delivered
+    .skipgossipid 121219
+    .target Trader Harthan
+step
+    .goto 2339,52.30,52.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trader Harthan|r.
+    .complete 79543,4 --1/1 Speak to Harthan
+    .skipgossipid 123491
+    .target Trader Harthan
+step
+    .goto 2339,49.34,26.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .turnin 79543 >>Turn in Dornogal's Benefactor
+    .target Merrix
+    .accept 79544 >>Accept Security Through Trade
+step
+    .goto 2339,55.62,50.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bevrusi|r.
+    .complete 79544,1 --1/1 Speak to Bevrusi
+    .skipgossipid 121407
+    .target Bevrusi
+step
+    .goto 2339,55.62,50.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bevrusi|r.
+    .target Bevrusi
+    .complete 79544,2 --1/1 See what Bevrusi will trade
+    .skipgossipid 121412
+step
+    .goto 2339,55.62,50.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bevrusi|r.
+    .turnin 79544 >>Turn in Security Through Trade
+    .target Bevrusi
+    .accept 79545 >>Accept The Market Reeve of the Forgegrounds
+step
+    .goto 2339,45.18,48.74
+    #title |cFFFCDC00Follow the Arrow|r.
+    .complete 79545,1 --1/1 Vokgret approached
+step
+    #title Enter the House
+    .goto 2339,45.22,47.21,10 >> Enter the House
+step
+    .goto 2339,44.72,46.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ronesh|r.
+    .complete 79545,2 --1/1 Cinderbrew acquired
+    .buy 219961,1
+    .skipgossipid 121503
+    .target Ronesh
+step
+    #title Leave the House
+    .goto 2339,45.48,47.71,10 >> Leave the House
+step
+    .goto 2339,45.07,48.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vokgret|r.
+    .complete 79545,3 --1/1 Cinderbrew brought to Vokgret
+    .complete 79545,4 --1/1 Ask about obtaining a Vial of Liquid Opal
+    .target Vokgret
+    .skipgossipid 121505
+    .skipgossipid 121506
+    .skipgossipid 121504
+step
+    #title Enter the House
+    .goto 2339,48.03,72.68,10 >>Enter the House
+step
+    .goto 2339,48.33,73.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loldren|r.
+    .complete 79545,5 --1/1 Speak to Loldren
+    .target Loldren
+    .skipgossipid 121507
+step
+    .goto 2339,48.28,73.19
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scroll|r.
+    .complete 79545,6 --1/1 Bills of purchase signed
+    .complete 79545,7 --1/1 Loldren's Market Audit
+    .skipgossipid 121512
+    .skipgossipid 121509
+    .skipgossipid 121517
+    .skipgossipid 121521
+step
+    #title Leave the House
+    .goto 2339,47.92,71.85,10 >>Leave the House
+step
+    #title Enter the House
+    .goto 2339,49.99,72.71,10 >>Enter the House
+step
+    .goto 2339,49.59,73.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nernabel|r.
+    .complete 79545,8 --1/1 Speak to Nernabel
+    .skipgossipid 121452
+    .skipgossipid 121528
+    .target Nernabel
+step
+    #title Leave the House
+    .goto 2339,50.09,71.78,10 >>Leave the House
+step
+    #title Enter the House
+    .goto 2339,51.03,63.59,10 >>Enter the House
+step
+    .goto 2339,50.44,63.79
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Core|r.
+    .complete 79545,9 --1/1 Sizzling Magma Core
+    .mob Enraged Magma Fury
+step
+    #title Leave the House
+    .goto 2339,51.36,64.59,10 >>Leave the House
+step
+    #title Enter the House
+    .goto 2339,49.91,72.82,10 >>Enter the House
+step
+    .goto 2339,49.58,73.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nernabel|r.
+    .complete 79545,10 --1/1 Nernabel's signature acquired
+    .skipgossipid 121547
+step
+    #title Leave the House
+    .goto 2339,49.98,71.66,10 >>Leave the House
+step
+    .goto 2339,45.05,48.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vokgret|r.
+    .turnin 79545 >>Turn in The Market Reeve of the Forgegrounds
+    .target Vokgret
+    .accept 79176 >>Accept Opals and Runes
+step
+    .goto 2339,55.61,50.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bevrusi|r.
+    .complete 79176,1 --1/1 Trade for the Speakeasy Passrune
+    .buy 217414
+    .skipgossipid 122742
+    .target Bevrusi
+step
+    .goto 2339,60.51,33.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .turnin 79176 >>Turn in Opals and Runes
+    .target Merrix
+    .accept 79546 >>Accept The Machine Speakeasy
+step
+    #title Enter the House
+    .goto 2339,61.86,35.06,10 >>Enter the House
+step
+    .goto 2339,62.93,36.7,10,0
+    .goto 2339,63.98,38.29,10,0
+    .goto 2339,62.37,40.28
+    #title |cFFFCDC00Follow the Arrow|r.
+    .complete 79546,1 --1/1 Meet Merrix in the tunnels
+step
+    .goto 2339,62.37,40.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Speakeasy Runeguard|r.
+    .complete 79546,2 --1/1 Speakeasy opened
+    .skipgossipid 121576
+    .target Speakeasy Runeguard
+step
+    #completewith next
+    .goto 2339,62.04,37.66
+    .gossipoption 121577 >>Talk to |cRXP_FRIENDLY_Obstorn|r.
+    .timer 2,RP
+    .target Obstorn
+step
+    .goto 2339,62.04,37.66
+    >>Kill |cRXP_ENEMY_Obstorn|r.
+    .complete 79546,3 --1/1 Obstorn confronted
+    .mob Obstorn
+step
+    .goto 2339,62.09,38.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .turnin 79546 >>Turn in The Machine Speakeasy
+    .target Merrix
+step
+    #title Leave the House
+    .goto 2339,62.23,40.06,10,0
+    .goto 2339,64.09,38.42,10,0
+    .goto 2339,61.38,34.38,10 >> Leave the House
+step
+    .goto 2339,45.90,47.17
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Angrily-Scrawled Poster|r.
+    .accept 79526 >>Accept Sedition
+    .target Angrily-Scrawled Poster
+step
+    #title Enter the House
+    .goto 2339,55.79,7.23,10 >> Enter the House
+step
+    .goto 2339,55.61,5.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .turnin 79526 >>Turn in Sedition
+    .target Merrix
+    .accept 79527 >>Accept Damage Mitigation
+    .accept 79528 >>Accept Dispelling Rumors
+step
+    #title Leave the House
+    .goto 2339,55.79,8.03,10 >> Leave the House
+step
+    #completewith Seditious Posters
+    >>Interact with |cRXP_FRIENDLY_Murmuring Peacekeeper|r defeat |cRXP_ENEMY_Murmuring Peacekeepers|r if they attack.
+    .complete 79528,1 --6/6 Murmuring Peacekeepers dispersed
+    .target Murmuring Peacekeeper
+    .mob Murmuring Peacekeeper
+step
+    .goto 2339,55.67,16.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,1 --8/8 Seditious Posters torn down
+step
+    .goto 2339,55.23,19.46
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,2 --8/8 Seditious Posters torn down
+step
+    .goto 2339,49.22,27.15
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,3 --8/8 Seditious Posters torn down
+step
+    .goto 2339,49.7,34.07
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,4 --8/8 Seditious Posters torn down
+step
+    .goto 2339,54.06,36.32
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,5 --8/8 Seditious Posters torn down
+step
+    .goto 2339,56.45,28.49
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,6 --8/8 Seditious Posters torn down
+step
+    .goto 2339,55.95,25.59
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,7 --8/8 Seditious Posters torn down
+step
+    #label Seditious Posters
+    .goto 2339,60.67,20.95
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Poster|r.
+    .complete 79527,1,8 --8/8 Seditious Posters torn down
+step
+    #loop
+    .goto 2339,60.13,26.35,30,0
+    .goto 2339,53.31,33.84,30,0
+    .goto 2339,46.99,36.62,30,0
+    .goto 2339,44.86,33.89,30,0
+    .goto 2339,43.18,36.6,30,0
+    .goto 2339,38.08,40.28,30,0
+    .goto 2339,33.27,29.78,30,0
+    .goto 2339,34.7,24.99,30,0
+    .goto 2339,54.51,21.42,30,0
+    >>Interact with |cRXP_FRIENDLY_Murmuring Peacekeeper|r and kill |cRXP_ENEMY_Murmuring Peacekeepers|r if they fight back.
+    .complete 79528,1 --6/6 Murmuring Peacekeepers dispersed
+    .target Murmuring Peacekeeper
+    .mob Murmuring Peacekeeper
+step
+    #title Enter the House
+    .goto 2339,55.77,7.3,10 >> Enter the House
+step
+    .goto 2339,55.60,5.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrix|r.
+    .turnin 79527 >>Turn in Damage Mitigation
+    .target Merrix
+    .turnin 79528 >>Turn in Dispelling Rumors
+    .accept 79529 >>Accept Forcing My Hand
+step
+    #completewith next
+    .goto 2339,55.11,6.38
+    .cast 3365 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bundled Cloak|r.
+step
+    .goto 2339,55.61,5.6
+    >>Interact with |cRXP_FRIENDLY_Merrix|r.
+    .complete 79529,1 --1/1 Cloak handed to Merrix
+    .target Merrix
+step
+    #completewith next
+    .goto 2339,56.38,5.95
+    .cast 461749 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Accessory Chest|r.
+step
+    .goto 2339,55.61,5.6
+    >>Interact with |cRXP_FRIENDLY_Merrix|r.
+    .complete 79529,2 --1/1 Gloves handed to Merrix
+    .target Merrix
+step
+    #completewith next
+    .goto 2339,55.36,5.61
+    .cast 441008 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gilded Knuckles|r.
+step
+    .goto 2339,55.61,5.6
+    >>Interact with |cRXP_FRIENDLY_Merrix|r.
+    .complete 79529,3 --1/1 Weapons handed to Merrix
+    .target Merrix
+step
+    #completewith next
+    .goto 2339,55.86,6.67
+    .cast 3365 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Titan Devices|r.
+step
+    .goto 2339,55.61,5.6
+    >>Interact with |cRXP_FRIENDLY_Merrix|r.
+    .complete 79529,4 --1/1 Titan Device brought to Merrix
+    .target Merrix
+step
+    .goto 2339,55.61,5.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Steelvein|r.
+    .turnin 79529 >>Turn in Forcing My Hand
+    .target Steelvein
+    .accept 79530 >>Accept Bad Business
+step
+    #title Leave the House
+    .goto 2339,55.79,8.21,10 >>Leave the House
+step
+    #completewith next
+    .goto 2339,37.78,57.12,40,0
+    .goto 2339,38.87,59.91,40,0
+    .goto 2339,48.28,59.91,40,0
+    .goto 2339,50.24,64.24,40,0
+    .goto 2339,50.11,72.3,40,0
+    .zone 2214 >>Go to Ringing Deeps
+step
+    .goto 2214,35.47,31.55,40,0
+    .goto 2214,35.66,29.78,40,0
+    .goto 2214,37.94,28.39,40,0
+    .goto 2214,38.63,23.94
+    #title |cFFFCDC00Follow the Arrow|r.
+    .complete 79530,1 --1/1 Regroup with Steelvein in the Ringing Deeps
+step
+    .isOnQuest 79530
+    .goto 2214,38.06,24.12
+    .gossipoption 121524 >>Talk to |cRXP_FRIENDLY_Overseer Ardgrin|r.
+    .timer 12,RP
+    .target Overseer Ardgrin
+step
+    .goto 2214,38.10,23.93
+    >>Kill |cRXP_ENEMY_Sparking Haulbot|r.
+    .complete 79530,2 --1/1 Overseer Ardgrin confronted
+    .timer 10,RP
+    .mob Sparking Haulbot
+step
+    .goto 2214,38.32,23.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Steelvein|r.
+    .turnin 79530 >>Turn in Bad Business
+    .target Steelvein
+
+-- Rise
+
+step
+    .goto 2248,55.75,56.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .accept 81661 >>Accept To Mourning Rise
+    .target Urtago
+step
+    #label CandleKoboldsStart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r and |cRXP_FRIENDLY_Korgran|r.
+    .turnin 81661 >>Turn in To Mourning Rise
+    .goto 2248,57.47,42.94
+    .target +Urtago
+    .accept 78743 >>Accept Before I Depart
+    .goto 2248,57.45,42.96
+    .target +Korgran
+step
+    #label RememberMeEarthenA
+    .goto 2248,61.70,41.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 78743 >>Turn in Before I Depart
+    .accept 78744 >>Accept Honor Their Memories
+    .target Urtago
+step
+    #completewith PreciousGemPlaced
+    >>Kill the |cRXP_ENEMY_Kobolds|r in the area.
+    .complete 78744,4 --Kobold Infestation dealt with (100%)
+    .mob Candlelit Pebblemaker
+    .mob Candlelit Desecrator
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Earthen Figurine|r.
+    .goto 2248,62.01,41.77
+    .complete 78744,2 --1/1 Earthen Figurine placed
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Deck of Cards|r.
+    .goto 2248,62.11,41.39
+    .complete 78744,1 --1/1 Deck of Cards placed
+step
+    #label PreciousGemPlaced
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Precious Gem|r.
+    .goto 2248,62.52,40.95
+    .complete 78744,3 --1/1 Precious Gem placed
+step
+    #loop
+    .goto 2248,62.86,41.20,28,0
+    .goto 2248,62.00,41.67,28,0
+    .goto 2248,62.40,40.83,28,0
+    >>Kill the |cRXP_ENEMY_Candlelit Pebblemakers|r and |cRXP_ENEMY_Candlelit Desecrator|r in the area.
+    .complete 78744,4 --Kobold Infestation dealt with (100%)
+    .mob Candlelit Pebblemaker
+    .mob Candlelit Desecrator
+step
+    .goto 2248,61.70,41.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 78744 >>Turn in Honor Their Memories
+    .accept 78745 >>Accept You No Take Plunder!
+    .accept 78746 >>Accept Laws Apply to All
+    .target Urtago
+step
+    #completewith EarthenBolongings
+    >>Kill the |cRXP_ENEMY_Kobolds|r in the area.
+    .complete 78746,1 --12/12 Kobold Invader slain
+    .mob Candlelit Hexthrower
+    .mob Candlelit Boomer
+    .mob Candlelit Lootsnatcher
+step
+    #title Earthen Belongings (1/3)
+    .goto 2248,62.70,44.33
+    >>|cRXP_ENEMY_[NOT SHARED]|r |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pile of Earthen Belongings|r.
+    .complete 78745,1,1 --1/3 Earthn Belongings
+step
+    #title Earthen Belongings (2/3)
+    .goto 2248,63.19,43.34
+    >>|cRXP_ENEMY_[NOT SHARED]|r |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pile of Earthen Belongings|r.
+    .complete 78745,1,2 --2/3 Earthn Belongings
+step
+    #label EarthenBolongings
+    #title Earthen Belongings (3/3)
+    .goto 2248,63.86,42.33
+    >>|cRXP_ENEMY_[NOT SHARED]|r |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Pile of Earthen Belongings|r.
+    .complete 78745,1 --3/3 Earthn Belongings
+step
+    #loop
+    .goto 2248,64.15,41.44,35,0
+    .goto 2248,62.85,41.79,30,0
+    .goto 2248,62.70,44.12,35,0
+    .goto 2248,63.33,42.52,30,0
+    >>Kill the |cRXP_ENEMY_Kobolds|r in the area.
+    .complete 78746,1 --12/12 Kobold Invader slain
+    .mob Candlelit Hexthrower
+    .mob Candlelit Boomer
+    .mob Candlelit Lootsnatcher
+step
+    .goto 2248,63.31,42.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 78745 >>Turn in You No Take Plunder!
+    .turnin 78746 >>Turn in You No Take Plunder!
+    .accept 78747 >>Accept The Great Collapse
+    .accept 78748 >>Accept Cutting the Wick
+    .target Urtago
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Hairless the Menace|r.
+    .complete 78748,1 --1/1 Hairless the Menace Slain
+    .mob Hairless the Menace
+step
+    #title Tunnels Destroyed (1/3)
+    .goto 2248,64.19,42.95
+    >>Use the |T4203197:0|t[Explosive Sticks] and aim it at the |cRXP_PICK_Kobold Tunnel|r.
+    .complete 78747,1,1 --1/3 Kobold Tunnels destroyed
+    .use 211435
+step
+    .goto 2248,64.71,42.51
+    >>Kill |cRXP_ENEMY_Hairless the Menace|r.
+    .complete 78748,1 --1/1 Hairless the Menace Slain
+    .mob Hairless the Menace
+step
+    .goto 2248,64.36,44.09
+    >>Kill |cRXP_ENEMY_Workmaster Earwax|r.
+    .complete 78748,2 --1/1 Workmaster Earwax Slain
+    .mob Workmaster Earwax
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Workmaster Nast|r.
+    .complete 78748,3 --1/1 Workmaster Nast Slain
+    .mob Workmaster Nast
+step
+    #title Tunnels Destroyed (2/3)
+    .goto 2248,63.54,44.35
+    >>Use the |T4203197:0|t[Explosive Sticks] and aim it at the |cRXP_PICK_Kobold Tunnel|r.
+    .complete 78747,1,2 --2/3 Kobold Tunnels destroyed
+    .use 211435
+step
+    .goto 2248,63.26,45.05
+    >>Kill |cRXP_ENEMY_Workmaster Nast|r.
+    .complete 78748,3 --1/1 Workmaster Nast Slain
+    .mob Workmaster Nast
+step
+    #title Tunnels Destroyed (3/3)
+    .goto 2248,62.85,44.78
+    >>Use the |T4203197:0|t[Explosive Sticks] and aim it at the |cRXP_PICK_Kobold Tunnel|r.
+    .complete 78747,1 --3/3 Kobold Tunnels destroyed
+    .use 211435
+step
+    #label RememberMeEarthenB
+    .goto 2248,63.30,42.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 78747 >>Turn in The Great Collapse
+    .turnin 78748 >>Turn in Cutting the Wick
+    .target Urtago
+step
+    #label RememberMeEarthenC
+    .goto 2248,63.30,42.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .accept 78749 >>Accept Who Runs this Fine Establishment?
+    .target Urtago
+step
+    #completewith next
+    #label GrandHeisterBokkSlain
+    .goto 2248,62.40,38.56,0,0
+    >>Kill |cRXP_ENEMY_Grand-Heister Bokk|r.
+    .complete 78749,1 --1/1 Grand-Heister Bokk slain
+    .mob Grand-Heister Bokk
+step
+    #title Enter Cave
+    #completewith GrandHeisterBokkSlain
+    .isOnQuest 78749
+    .goto 2248,62.48,39.18,10 >>Enter the cave
+step
+    #requires GrandHeisterBokkSlain
+    .goto 2248,62.40,38.56
+    >>Kill |cRXP_ENEMY_Grand-Heister Bokk|r.
+    .complete 78749,1 --1/1 Grand-Heister Bokk slain
+    .mob Grand-Heister Bokk
+step
+    .goto 2248,62.46,39.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .complete 78749,2 --1/1 Talk to Urtago
+    .target Urtago
+    .skipgossipid 120867
+step
+    #label RememberMeEarthenD
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r and |cRXP_FRIENDLY_Korgran|r.
+    .turnin 78749 >>Turn in Who Runs this Fine Establishment?
+    .goto 2248,57.47,42.94
+    .target +Urtago
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r and |cRXP_FRIENDLY_Korgran|r.
+    .accept 79335 >>Accept One More Tradition
+    .goto 2248,57.45,42.96
+    .target +Korgran
+step
+    #completewith ChargedCore
+    #hidewindow
+    #loop
+    .goto 2248,58.45,42.13,40,0
+    .goto 2248,59.58,41.23,35,0
+    .goto 2248,58.88,39.68,35,0
+    .goto 2248,59.91,38.90,40,0
+    .goto 2248,61.10,44.60,40,0
+    .goto 2248,59.42,44.43,37,0
+    +1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Scavenging Stormfangs|r and |cRXP_ENEMY_Great Stormfangs|r. Loot them for the |T340336:0|t[|cRXP_LOOT_Charged Core|r].
+    .complete 79335,1 --5/5 Charged Core
+    .mob Scavenging Stormfang
+    .mob Great Stormfang
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Veins of Ore|r.
+    .complete 79335,2 --5/5 Clumps of ore
+step
+    #label ChargedCore
+    >>Kill |cRXP_ENEMY_Scavenging Stormfangs|r and |cRXP_ENEMY_Great Stormfangs|r. Loot them for the |T340336:0|t[|cRXP_LOOT_Charged Core|r].
+    .complete 79335,1 --5/5 Charged Core
+    .mob Scavenging Stormfang
+step
+    #completewith next
+    #label OneMoreTradition
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .turnin 79335 >>Turn in One More Tradition
+    .accept 79336 >>Accept The Forging of Memories
+    .target Korgran
+step
+    #title Enter House
+    #completewith OneMoreTradition
+    .goto 2248,57.38,42.90,8 >>Enter the house
+step
+    #requires OneMoreTradition
+    .goto 2248,57.06,42.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .turnin 79335 >>Turn in One More Tradition
+    .accept 79336 >>Accept The Forging of Memories
+    .target Korgran
+step
+    .goto 2248,57.06,42.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .complete 79336,1 --1/1 Speak with Korgran to start forging the lantern
+    .target Korgran
+    .skipgossipid 120605
+step
+    #completewith LanternCompleted
+    #label LanternForged
+    >>Complete the Lantern
+    .complete 79336,2 --1/1 Lantern Forged
+    .skipgossipid 120605
+step
+    #title Ingredient (1/6)
+    #completewith LanternForged
+    #label LanternIngredientA
+    .goto 2248,57.04,42.33
+    .cast 417168 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ore Barrel|r |cRXP_WARN_when he requests the next ingredient|r.
+    .timer 12,Next Ingredient Estimation
+step
+    #title Ingredient (2/6)
+    #requires LanternIngredientA
+    #completewith LanternForged
+    #label LanternIngredientB
+    .goto 2248,56.99,42.52
+    .cast 417167 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Charged Core|r |cRXP_WARN_when he requests the next ingredient|r.
+    .timer 12,Next Ingredient Estimation
+step
+    #title Ingredient (3/6)
+    #requires LanternIngredientB
+    #completewith LanternForged
+    #label LanternIngredientC
+    .goto 2248,57.13,42.50
+    .cast 417163 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_A Pile of Coals|r |cRXP_WARN_when he requests the next ingredient|r.
+    .timer 12,Next Ingredient Estimation
+step
+    #title Ingredient (4/6)
+    #requires LanternIngredientC
+    #completewith LanternForged
+    #label LanternIngredientD
+    .goto 2248,57.06,42.49
+    >>Listen to |cRXP_FRIENDLY_Korgran|r.
+    *- "Would you toss me some of that |cRXP_WARN_ore|r, please?" -> |cRXP_PICK_Ore Barrel|r.
+    *- "Would you please hand me a |cRXP_WARN_charged core|r.? -> |cRXP_PICK_Charged Core|r.
+    *- "We need more heat! Toos in some |cRXP_WARN_coals|r|r. -> |cRXP_PICK_A Pile of Coals|r.
+    .cast 281581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the correct ingredient |cRXP_WARN_when he requests the next ingredient|r.!
+    .timer 12,Next Ingredient Estimation
+step
+    #title Ingredient (5/6)
+    #requires LanternIngredientD
+    #completewith LanternForged
+    #label LanternIngredientE
+    .goto 2248,57.06,42.49
+    >>Listen to |cRXP_FRIENDLY_Korgran|r.
+    *- "Would you toss me some of that |cRXP_WARN_ore|r, please?" -> |cRXP_PICK_Ore Barrel|r.
+    *- "Would you please hand me a |cRXP_WARN_charged core|r.? -> |cRXP_PICK_Charged Core|r.
+    *- "We need more heat! Toos in some |cRXP_WARN_coals|r|r. -> |cRXP_PICK_A Pile of Coals|r.
+    .cast 281581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the correct ingredient |cRXP_WARN_when he requests the next ingredient|r.!
+    .timer 12,Next Ingredient Estimation
+step
+    #title Ingredient (6/6)
+    #requires LanternIngredientE
+    #completewith LanternForged
+    #label LanternCompleted
+    .goto 2248,57.06,42.49
+    >>Listen to |cRXP_FRIENDLY_Korgran|r.
+    *- "Would you toss me some of that |cRXP_WARN_ore|r, please?" -> |cRXP_PICK_Ore Barrel|r.
+    *- "Would you please hand me a |cRXP_WARN_charged core|r.? -> |cRXP_PICK_Charged Core|r.
+    *- "We need more heat! Toos in some |cRXP_WARN_coals|r|r. -> |cRXP_PICK_A Pile of Coals|r.
+    .cast 281581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the correct ingredient |cRXP_WARN_when he requests the next ingredient|r.!
+    .timer 3,Done!
+step
+    #requires LanternForged
+    .goto 2248,57.06,42.49
+    >>Complete the Lantern
+    .complete 79336,2 --1/1 Lantern Forged
+    .skipgossipid 120605
+step
+    --TODO: Fix roleplay duration
+    .goto 2248,57.06,42.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .turnin 79336 >>Turn in The Forging of Memories
+    .accept 79337 >>Accept The Last Journey
+    .timer 35,Roleplay Duration
+    .target Korgran
+step
+    .goto 2248,57.47,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 79337 >>Turn in The Last Journey
+    .accept 79338 >>Accept The Lost Earthen
+    .target Urtago
+step
+    #title |cFFFCDC00Follow the Arrow|r.
+    .goto 2248,61.00,43.89
+    .complete 79338,1 --1/1 Meet with Urtago
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Korgran's Lantern|r.
+    .goto 2248,61.36,43.70
+    .complete 79338,2 --1/1 Find Korgran
+step
+    #completewith next
+    #label SpeakToKorgranA
+    --TODO: Change to gossipoption to fix waypoint
+    .goto 2248,61.00,43.89,0,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .complete 79338,3 --1/1 Speak to Korgran
+    .target Korgran
+step
+    #completewith SpeakToKorgranA
+    .goto 2248,61.38,43.70
+    .skipgossipid 120893
+    .gossipoption 120892 >>Talk to |cRXP_FRIENDLY_Korgran|r.
+    .timer 22,Roleplay Duration
+    .target Korgran
+step
+    #requires SpeakToKorgranA
+    --TODO: Change to gossipoption to fix waypoint
+    .goto 2248,61.00,43.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .complete 79338,3 --1/1 Speak to Korgran
+    .target Korgran
+    .skipgossipid 120893
+    .skipgossipid 120892
+step
+    .goto 2248,61.00,43.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 79338 >>Turn in The Lost Earthen
+    .accept 79339 >>Accept A Change of Tradition
+    .target Urtago
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .goto 2248,69.82,56.77
+    .turnin 79339 >>Turn in A Change of Tradition
+    .accept 79341 >>Accept Cleansing Ashes
+    .accept 79340 >>Accept Tools of Declaration
+    .target Urtago
+step
+    #completewith AshenfoldCollected
+    >>Kill |cRXP_ENEMY_Shalehorn Impalers|r. Loot them for the |T4635273:0|t[|cRXP_LOOT_Pristine Horn|r].
+    .complete 79340,1 --4/4 Pristine Horn
+    .mob Shalehorn Impaler
+step
+    #title Ashenfold Collected (1/6)
+    .goto 2248,68.56,54.09
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ashenfold|r.
+    *|cRXP_WARN_If you don't follow the exact route then the waypoints will be wrong|r.
+    .complete 79341,1,1 --1/6 Ashenfold collected
+step
+    #title Ashenfold Collected (2/6)
+    .goto 2248,67.98,53.71
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ashenfold|r.
+    *|cRXP_WARN_If you don't follow the exact route then the waypoints will be wrong|r.
+    .complete 79341,1,2 --2/6 Ashenfold collected
+step
+    #title Ashenfold Collected (3/6)
+    .goto 2248,67.84,54.04
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ashenfold|r.
+    *|cRXP_WARN_If you don't follow the exact route then the waypoints will be wrong|r.
+    .complete 79341,1,3 --3/6 Ashenfold collected
+step
+    #title Ashenfold Collected (4/6)
+    .goto 2248,67.40,53.34
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ashenfold|r.
+    *|cRXP_WARN_If you don't follow the exact route then the waypoints will be wrong|r.
+    .complete 79341,1,4 --4/6 Ashenfold collected
+step
+    #title Ashenfold Collected (5/6)
+    .goto 2248,67.37,54.35
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ashenfold|r.
+    *|cRXP_WARN_If you don't follow the exact route then the waypoints will be wrong|r.
+    .complete 79341,1,5 --5/6 Ashenfold collected
+step
+    #label AshenfoldCollected
+    #title Ashenfold Collected (6/6)
+    .goto 2248,67.16,54.82
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ashenfold|r.
+    *|cRXP_WARN_If you don't follow the exact route then the waypoints will be wrong|r.
+    .complete 79341,1 --6/6 Ashenfold collected
+step
+    #loop
+    .goto 2248,65.71,55.02,40,0
+    .goto 2248,66.40,58.92,40,0
+    .goto 2248,67.93,53.40,40,0
+    >>Kill |cRXP_ENEMY_Shalehorn Impalers|r. Loot them for the |T4635273:0|t[|cRXP_LOOT_Pristine Horn|r].
+    .complete 79340,1 --4/4 Pristine Horn
+    .mob Shalehorn Impaler
+step
+    .goto 2248,69.82,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 79340 >>Turn in Cleansing Ashes
+    .turnin 79341 >>Turn in Cleansing Ashes
+    .accept 79342 >>Accept As He Departs
+    .target Urtago
+step
+    .goto 2248,69.84,56.79
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Incense|r.
+    .complete 79342,1 --1/1 Incense placed
+step
+    --TODO: Fix timer
+    .goto 2248,69.85,56.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korgran|r.
+    .complete 79342,2 --1/1 Give the horn to Korgran
+    .target Korgran
+    .skipgossipid 120638
+    .timer 14,Roleplay Duration
+step
+    >>Wait for the roleplay
+    .goto 2248,69.82,56.77
+    .complete 79342,3 --1/1 Ceremony concluded
+step
+    --TODO: Fix timer
+    .goto 2248,69.82,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 79342 >>Turn in As He Departs
+    .timer 30,Roleplay Duration
+    .target Urtago
+step
+    .goto 2248,69.89,57.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r after the roleplay.
+    .accept 82895 >>Accept The Weight of Duty
+    .target Urtago
+step
+    .goto 2248,57.30,42.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago at Fallside Outpost|r.
+    .complete 82895,1 --1/1 Speak to Urtago at Fallside Outpost
+    .target Urtago at Fallside Outpost
+    .skipgossipid 122723
+step
+    #title |TInterface/cursor/crosshair/interact.blp:20|tClick on |cFFDB2EEFNew Placard|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_New Placard|r.
+    .goto 2248,57.36,42.53
+    .complete 82895,2 --1/1 New placard collected
+step
+    #title |TInterface/cursor/crosshair/interact.blp:20|tClick on |cFFDB2EEFForge Tongs|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Forge Tongs|r.
+    .goto 2248,57.23,42.79
+    .complete 82895,3 --1/1 Placard heated
+step
+    #title |TInterface/cursor/crosshair/interact.blp:20|tClick on |cFFDB2EEFQuenching Oil|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Quenching Oil|r.
+    .goto 2248,57.37,43.05
+    .complete 82895,4 --1/1 Placard quenched
+step
+    #title |TInterface/cursor/crosshair/interact.blp:20|tClick on |cFFDB2EEFTempered Placard|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tempered Placard|r.
+    .goto 2248,57.06,43.49
+    .complete 82895,5 --1/1 Tempered Placard carved
+step
+    .goto 2248,57.18,43.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urtago|r.
+    .turnin 82895 >>Turn in The Weight of Duty
+    .target Urtago
 ]])
 
 -- ============================================================
