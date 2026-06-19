@@ -14,7 +14,7 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuct
 local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
 local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetItemNameByID = _G.C_Item.GetItemNameByID
-local date, CopyToClipboard = date, CopyToClipboard
+local date = _G.date
 local GetMoney = _G.GetMoney
 
 addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0") --TODO: maybe change the name
@@ -172,7 +172,7 @@ end
 --2 -> JSON Object
 local function exportFoundItems(option)
     local currentDate = tostring(date("%m/%d/%y %H:%M:%S"))
-    local sb = stringBuilder("---"):append(currentDate):append("-----\n")
+    local sb = stringBuilder("---"):append(currentDate):append(" "):append(tostring(RXPCData.professions.profession1.name)):append("---\n")
     local converted
     if option == 2 then
         converted = foundItemsToJSONObject()
@@ -183,8 +183,6 @@ local function exportFoundItems(option)
 
     return sb:build()
 end
-
-
 
 --Sorts an associative array by value.
 --Assumes the value has "<" operator implementation
@@ -384,7 +382,7 @@ local function calculateMaterialAveragePrice()
     for itemName, itemTables in pairs(profSession.foundItems) do
         average = 0.0
         count = 0
-        for i, itemTable in ipairs(itemTables) do
+        for _, itemTable in ipairs(itemTables) do
             average = average + itemTable.price
             count = count + itemTable.count
         end
@@ -481,6 +479,7 @@ end
 
 --TODO: Finish
 local function calculateRecipeRawPriceAveragePrice(professionName)
+    calculateMaterialAveragePrice()
     local totalPrice, remaining, i, materialNotFound, impossibleToCraft
     -- Check whether we evaluated all the recipes
     local recipeCount = tcount(profSession.recipesToConsider)
@@ -515,15 +514,15 @@ local function calculateRecipeRawPriceAveragePrice(professionName)
                         end
                     else --If from AH
                         --If there isn't any in the AH
-                        if not profSession.foundItems[materialName] or select(1, tcount(profSession.foundItems[materialName])) == 0 then
+                        if not profSession.itemAveragePrice[materialName] or select(1, tcount(profSession.itemAveragePrice[materialName])) == 0 then
                             totalPrice = huge
                             materialNotFound = true
                         else
                             remaining = materialTable.count
                             i = 1
-                            while profSession.foundItems[materialName] ~= nil and remaining > 0 and i <= #profSession.foundItems[materialName] and remaining <= #profSession.foundItems[materialName] do --TODO:remaining <= #profSession.foundItems[materialName] should not exist??? --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
-                                totalPrice = totalPrice + profSession.foundItems[materialName][i].pricePerItem * materialTable.count --TODO: here
-                                remaining = remaining - profSession.foundItems[materialName][i].count
+                            while profSession.itemAveragePrice[materialName] ~= nil and remaining > 0 and i <= #profSession.itemAveragePrice[materialName] and remaining <= #profSession.itemAveragePrice[materialName] do --TODO:remaining <= #profSession.itemAveragePrice[materialName] should not exist??? --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
+                                totalPrice = totalPrice + profSession.itemAveragePrice[materialName][i].pricePerItem * materialTable.count --TODO: here
+                                remaining = remaining - profSession.itemAveragePrice[materialName][i].count
                                 i = i + 1
                             end
                             --Check if not enough
@@ -542,7 +541,7 @@ local function calculateRecipeRawPriceAveragePrice(professionName)
                     --Check if there is no(t enough) material(s) in AH and remove it
                     if materialNotFound or impossibleToCraft then
                         --If so, remove it from the list
-                        print("impossible")
+                        print("impossible: ", recipe)
                         profSession.recipesToConsider[recipe] = nil --We are still in the for loop, be mindful if this is correct
                         recipeCount = recipeCount - 1
                     end
@@ -1207,6 +1206,7 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
                         end
                     end
                 end
+                --TODO: Check if next recipe is cheaper
                 --Check finally if we can create the recipe
                 if canCreateRecipe then
                     recipeCreated = true
@@ -1532,9 +1532,18 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function()
-    calculateMaterialAveragePrice()
-    local str = serializeFoundItems()
-    GUI.guiFrame.printText.Text:SetText(str)
+    calculateRecipeRawPrice(RXPCData.professions.profession1.name)
+    --TODO:FINISH THIS
+    calculateRecipeRawPriceAveragePrice()
+    local sortedArr = sortAssociativeArrayByValue(profSession.recipesToConsider)
+    print("Found items:")
+    for name, price in pairs(profSession.recipesToConsider) do
+        print(name, " -> ", price)
+    end
+    print("==========")
+    for i, v in ipairs(sortedArr) do
+        print(v[1], " -> ", v[2])
+    end
 end
 
 --Export
