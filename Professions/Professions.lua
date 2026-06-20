@@ -103,12 +103,12 @@ end
 
 --Serializes RXPCData.craftedItems to string for debugging purposes
 local function serializeCraftedItems()
-    local str = "crafted items = {\n"
+    local sb = stringBuilder("crafted items = {\n")
     for itemName, itemCount in pairs(RXPCData.craftedItems) do
-        str = str .. itemName .. ": " .. tostring(itemCount) .. "\n"
+        sb:append(itemName):append(": "):append(tostring(itemCount)):append("\n")
     end
-    str = str .. "}"
-    return str
+    sb:append("}")
+    return sb:build()
 end
 
 --Serializes foundItems for debugging purposes
@@ -269,6 +269,7 @@ addon.professions.profSession = {
 
 function addon.professions.profSession:Reset()
     self.foundItems = {}
+    self.itemAveragePrice = {}
     self.currentPage = 0
     self.sentQuery = false
     self.isScanning = false
@@ -696,6 +697,26 @@ local function applyPercentageBonus(percentage, bonus)
 end
 
 
+--Helper functions for main logic
+
+--Gets recipes from sorted recipes by price
+--Returns recipeName, recipePrice, recipeTable
+local function getRecipeInfoFromSortedRecipesByPrice(professionName, sortedRecipesByPrice)
+    local recipeName = sortedRecipesByPrice[1][1]
+    local recipePrice = sortedRecipesByPrice[1][2]
+    local recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
+    return recipeName, recipePrice, recipeTable
+end
+
+--Calculates how many recipes it should make based on chances
+--Returns an interger
+local function calculateHowManyToMake(professionName, recipeName, skillLevel)
+    local percent = calculatePercent(professionName, recipeName, skillLevel)
+    local howManyToMake = (percent > 0) and ceil(1 / percent) or 0
+    return howManyToMake
+end
+
+
 --[[
 General idea:
 0) Create an empty set of actual recipes to craft
@@ -721,14 +742,11 @@ function addon.professions.gatherRecipesToBuyGreedyMoney(professionName, skillLe
     while #sortedRecipesByPrice > 0 and skillLevelsToGain > 0 and haveMoney do
         local canCreateIthRecipe = true
         local recipeCreated = false
-        local recipeName = sortedRecipesByPrice[1][1]
-        local recipePrice = sortedRecipesByPrice[1][2]
-        local recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
+        local recipeName, recipePrice, recipeTable = getRecipeInfoFromSortedRecipesByPrice(professionName, sortedRecipesByPrice)
         --Check if we have money
         if money >= recipePrice then
             --We have money 
-            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
-            howManyToMake = (percent > 0) and ceil(1 / percent) or 0
+            howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
             end
@@ -891,14 +909,11 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
     while #sortedRecipesByPrice > 0 and skillLevelsToGain > 0 and haveMoney do
         local canCreateIthRecipe = true
         local recipeCreated = false
-        local recipeName = sortedRecipesByPrice[1][1]
-        local recipePrice = sortedRecipesByPrice[1][2]
-        local recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
+        local recipeName, recipePrice, recipeTable = getRecipeInfoFromSortedRecipesByPrice(professionName, sortedRecipesByPrice)
         --Check if we have money
         if money >= recipePrice then
             --We have money 
-            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
-            howManyToMake = (percent > 0) and ceil(1 / percent) or 0
+            howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
             elseif howManyToMake > 1 then --Move to next 100%
@@ -1085,14 +1100,11 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
     while #sortedRecipesByPrice > 0 and skillLevelsToGain > 0 and haveMoney do
         local canCreateIthRecipe = true
         local recipeCreated = false
-        local recipeName = sortedRecipesByPrice[1][1]
-        local recipePrice = sortedRecipesByPrice[1][2]
-        local recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
+        local recipeName, recipePrice, recipeTable = getRecipeInfoFromSortedRecipesByPrice(professionName, sortedRecipesByPrice)
         --Check if we have money
         if money >= recipePrice then
             --We have money 
-            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
-            howManyToMake = (percent > 0) and ceil(1 / percent) or 0
+            howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
             elseif howManyToMake > 1 then --Move to next 100%
@@ -1393,30 +1405,29 @@ end
 
 --Stringifies results form Greedy algorthim - For testing purposes only
 function addon.professions.greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent)
-    local str = ""
-    str = "====Recipe costs====\n"
+    local sb = stringBuilder("====Recipe costs====\n")
     local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
-    for i, v in ipairs(sorted) do
-        str = str .. tostring(v[1]) .. ": " .. formatMoney(v[2]) .. "\n"
+    for _, v in ipairs(sorted) do
+        sb:append(tostring(v[1])):append(": "):append(formatMoney(v[2])):append("\n")
     end
-    str = str .. "====To craft====\n" 
+    sb:append("====To craft====\n")
     for k, v in pairs(recipesToCraft) do
-        str = str .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+        sb:append(tostring(k)):append(" -> "):append(tostring(v)):append("\n")
     end
-    str = str .. "====To buy====\n"
+    sb:append("====To buy====\n")
     for k, v in pairs(materialsToBuy) do
-        str = str .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+        sb:append(tostring(k)):append(" -> "):append(tostring(v)):append("\n")
     end
-    str = str .. "====Leftovers====\n"
+    sb:append("====Leftovers====\n")
     for k, v in pairs(backPack) do
-        str = str .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+        sb:append(tostring(k)):append(" -> "):append(tostring(v)):append("\n")
     end
-    str = str .. "===After calc===\n"
-    str = str .. "Money: " .. formatMoney(RXPCData.professions.money) .. "\n"
-    str = str .. "Money spent: " .. formatMoney(moneySpent) .. "\n"
-    str = str .. "Skill level reached: " .. tostring((RXPCData.professions.profession1.skillLevel + skillLevelsGained)) .. "\n"
+    sb:append("===After calc===\n")
+    sb:append("Money: "):append(formatMoney(RXPCData.professions.money)):append("\n")
+    sb:append("Money spent: "):append(formatMoney(moneySpent)):append("\n")
+    sb:append("Skill level reached: "):append(tostring((RXPCData.professions.profession1.skillLevel + skillLevelsGained))):append("\n")
 
-    return str
+    return sb:build()
 end
 
 --Setup
