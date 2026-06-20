@@ -136,7 +136,7 @@ local function foundItemsToLuaTable()
             sb:append("\t\t{\n")
             sb:append("\t\t\tcount = "):append(itemTable.count):append(",\n")
             sb:append("\t\t\tprice = "):append(itemTable.price):append(",\n")
-            sb:append("\t\t\tpricePeritem = "):append(itemTable.pricePerItem):append(",\n")
+            sb:append("\t\t\tpricePerItem = "):append(itemTable.pricePerItem):append(",\n")
             sb:append("\t\t},\n")
         end
         sb:append("\t},\n")
@@ -1393,8 +1393,8 @@ function addon.professions:testScan()
                 for i = 1, #ahMaterialTable do
                     tinsert(profSession.foundItems[materialName], {
                         count = ahMaterialTable[i].count,
-                        price = ahMaterialTable[i].buyoutPrice,
-                        pricePerItem = ceil(ahMaterialTable[i].count / ahMaterialTable[i].buyoutPrice),
+                        price = ahMaterialTable[i].price,
+                        pricePerItem = ahMaterialTable[i].pricePerItem
                     })
                 end
             end

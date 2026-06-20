@@ -16452,45 +16452,1127 @@ addon.professions.PROFESSIONS = {
             },
         },
     },
-    ["testing"] = {
-        RECIPES = {
-            ["Recipe A"] = {
-                trainable = true,
-                orange = 1,
-                yellow = 2,
-                grey = 75,
-                trainingCost = 0,
-                recipeCost = 0,
-                castTime = 5.0,
-                sellPrice = 0,
-                materials = {
-                    ["Material A"] = {
-                        count = 1,
-                        fromVendor = false,
-                    },
-                },
-            },
-        },
-        SEGMENTS = {
-            [1] = {
-                "Recipe A",
-            },
-        },
-    },
+    ["testing"] = {}
 }
+addon.professions.PROFESSIONS["testing"] = addon.professions.PROFESSIONS["alchemy"]
 
 -- Virtual AH 
 addon.professions.vah = {}
 
-
-
-addon.professions.vah.VIRTUAL_AH = {
-    ["Material A"] = {
-        [1] = {
-            count = 10000,
-            buyoutPrice = 10000,
-        },
-    },
+addon.professions.vah.VIRTUAL_AH = ---06/20/26 21:37:50 alchemy---
+{
+	["Silverleaf"] = {
+		{
+			count = 1,
+			price = 26,
+			pricePerItem = 26,
+		},
+		{
+			count = 1,
+			price = 26,
+			pricePerItem = 26,
+		},
+		{
+			count = 1,
+			price = 26,
+			pricePerItem = 26,
+		},
+		{
+			count = 1,
+			price = 26,
+			pricePerItem = 26,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 9,
+			price = 180,
+			pricePerItem = 20,
+		},
+		{
+			count = 11,
+			price = 253,
+			pricePerItem = 23,
+		},
+		{
+			count = 14,
+			price = 294,
+			pricePerItem = 21,
+		},
+		{
+			count = 15,
+			price = 300,
+			pricePerItem = 20,
+		},
+		{
+			count = 16,
+			price = 352,
+			pricePerItem = 22,
+		},
+		{
+			count = 20,
+			price = 360,
+			pricePerItem = 18,
+		},
+		{
+			count = 20,
+			price = 360,
+			pricePerItem = 18,
+		},
+		{
+			count = 20,
+			price = 380,
+			pricePerItem = 19,
+		},
+		{
+			count = 20,
+			price = 380,
+			pricePerItem = 19,
+		},
+		{
+			count = 20,
+			price = 380,
+			pricePerItem = 19,
+		},
+		{
+			count = 20,
+			price = 480,
+			pricePerItem = 24,
+		},
+		{
+			count = 20,
+			price = 500,
+			pricePerItem = 25,
+		},
+		{
+			count = 20,
+			price = 500,
+			pricePerItem = 25,
+		},
+		{
+			count = 20,
+			price = 500,
+			pricePerItem = 25,
+		},
+		{
+			count = 18,
+			price = 500,
+			pricePerItem = 28,
+		},
+		{
+			count = 20,
+			price = 580,
+			pricePerItem = 29,
+		},
+		{
+			count = 20,
+			price = 600,
+			pricePerItem = 30,
+		},
+		{
+			count = 20,
+			price = 600,
+			pricePerItem = 30,
+		},
+		{
+			count = 20,
+			price = 1200,
+			pricePerItem = 60,
+		},
+		{
+			count = 20,
+			price = 1200,
+			pricePerItem = 60,
+		},
+	},
+	["Earthroot"] = {
+		{
+			count = 1,
+			price = 127,
+			pricePerItem = 127,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 169,
+			pricePerItem = 169,
+		},
+		{
+			count = 1,
+			price = 170,
+			pricePerItem = 170,
+		},
+		{
+			count = 1,
+			price = 174,
+			pricePerItem = 174,
+		},
+		{
+			count = 9,
+			price = 1314,
+			pricePerItem = 146,
+		},
+		{
+			count = 3,
+			price = 1344,
+			pricePerItem = 448,
+		},
+		{
+			count = 11,
+			price = 1400,
+			pricePerItem = 128,
+		},
+		{
+			count = 9,
+			price = 1521,
+			pricePerItem = 169,
+		},
+		{
+			count = 4,
+			price = 1796,
+			pricePerItem = 449,
+		},
+		{
+			count = 14,
+			price = 2000,
+			pricePerItem = 143,
+		},
+		{
+			count = 5,
+			price = 2500,
+			pricePerItem = 500,
+		},
+		{
+			count = 20,
+			price = 2700,
+			pricePerItem = 135,
+		},
+		{
+			count = 19,
+			price = 2812,
+			pricePerItem = 148,
+		},
+		{
+			count = 20,
+			price = 2959,
+			pricePerItem = 148,
+		},
+		{
+			count = 20,
+			price = 3380,
+			pricePerItem = 169,
+		},
+	},
+	["Peacebloom"] = {
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 27,
+			pricePerItem = 27,
+		},
+		{
+			count = 1,
+			price = 28,
+			pricePerItem = 28,
+		},
+		{
+			count = 3,
+			price = 69,
+			pricePerItem = 23,
+		},
+		{
+			count = 4,
+			price = 100,
+			pricePerItem = 25,
+		},
+		{
+			count = 6,
+			price = 125,
+			pricePerItem = 21,
+		},
+		{
+			count = 8,
+			price = 130,
+			pricePerItem = 17,
+		},
+		{
+			count = 8,
+			price = 168,
+			pricePerItem = 21,
+		},
+		{
+			count = 9,
+			price = 198,
+			pricePerItem = 22,
+		},
+		{
+			count = 9,
+			price = 216,
+			pricePerItem = 24,
+		},
+		{
+			count = 20,
+			price = 380,
+			pricePerItem = 19,
+		},
+		{
+			count = 20,
+			price = 400,
+			pricePerItem = 20,
+		},
+		{
+			count = 20,
+			price = 600,
+			pricePerItem = 30,
+		},
+		{
+			count = 20,
+			price = 600,
+			pricePerItem = 30,
+		},
+		{
+			count = 14,
+			price = 1100,
+			pricePerItem = 79,
+		},
+		{
+			count = 20,
+			price = 1200,
+			pricePerItem = 60,
+		},
+		{
+			count = 20,
+			price = 1200,
+			pricePerItem = 60,
+		},
+		{
+			count = 20,
+			price = 1200,
+			pricePerItem = 60,
+		},
+	},
+	["Mageroyal"] = {
+		{
+			count = 1,
+			price = 21,
+			pricePerItem = 21,
+		},
+		{
+			count = 1,
+			price = 21,
+			pricePerItem = 21,
+		},
+		{
+			count = 1,
+			price = 21,
+			pricePerItem = 21,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 1,
+			price = 36,
+			pricePerItem = 36,
+		},
+		{
+			count = 2,
+			price = 40,
+			pricePerItem = 20,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 6,
+			price = 132,
+			pricePerItem = 22,
+		},
+		{
+			count = 6,
+			price = 138,
+			pricePerItem = 23,
+		},
+		{
+			count = 10,
+			price = 220,
+			pricePerItem = 22,
+		},
+		{
+			count = 10,
+			price = 230,
+			pricePerItem = 23,
+		},
+		{
+			count = 10,
+			price = 230,
+			pricePerItem = 23,
+		},
+		{
+			count = 16,
+			price = 2504,
+			pricePerItem = 157,
+		},
+		{
+			count = 20,
+			price = 3000,
+			pricePerItem = 150,
+		},
+		{
+			count = 20,
+			price = 3000,
+			pricePerItem = 150,
+		},
+		{
+			count = 20,
+			price = 3000,
+			pricePerItem = 150,
+		},
+		{
+			count = 20,
+			price = 3000,
+			pricePerItem = 150,
+		},
+	},
+	["Briarthorn"] = {
+		{
+			count = 1,
+			price = 1998,
+			pricePerItem = 1998,
+		},
+		{
+			count = 1,
+			price = 1998,
+			pricePerItem = 1998,
+		},
+		{
+			count = 1,
+			price = 1998,
+			pricePerItem = 1998,
+		},
+		{
+			count = 1,
+			price = 1998,
+			pricePerItem = 1998,
+		},
+		{
+			count = 1,
+			price = 1998,
+			pricePerItem = 1998,
+		},
+		{
+			count = 1,
+			price = 1999,
+			pricePerItem = 1999,
+		},
+		{
+			count = 1,
+			price = 2000,
+			pricePerItem = 2000,
+		},
+		{
+			count = 20,
+			price = 49800,
+			pricePerItem = 2490,
+		},
+		{
+			count = 20,
+			price = 49999,
+			pricePerItem = 2500,
+		},
+	},
+	["Minor Healing Potion"] = {
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 55,
+			pricePerItem = 55,
+		},
+		{
+			count = 1,
+			price = 57,
+			pricePerItem = 57,
+		},
+		{
+			count = 1,
+			price = 57,
+			pricePerItem = 57,
+		},
+		{
+			count = 1,
+			price = 57,
+			pricePerItem = 57,
+		},
+		{
+			count = 1,
+			price = 57,
+			pricePerItem = 57,
+		},
+		{
+			count = 1,
+			price = 57,
+			pricePerItem = 57,
+		},
+		{
+			count = 1,
+			price = 60,
+			pricePerItem = 60,
+		},
+		{
+			count = 2,
+			price = 122,
+			pricePerItem = 61,
+		},
+		{
+			count = 2,
+			price = 124,
+			pricePerItem = 62,
+		},
+		{
+			count = 3,
+			price = 177,
+			pricePerItem = 59,
+		},
+		{
+			count = 3,
+			price = 198,
+			pricePerItem = 66,
+		},
+		{
+			count = 3,
+			price = 200,
+			pricePerItem = 67,
+		},
+		{
+			count = 4,
+			price = 232,
+			pricePerItem = 58,
+		},
+		{
+			count = 3,
+			price = 246,
+			pricePerItem = 82,
+		},
+		{
+			count = 5,
+			price = 290,
+			pricePerItem = 58,
+		},
+		{
+			count = 5,
+			price = 315,
+			pricePerItem = 63,
+		},
+		{
+			count = 5,
+			price = 315,
+			pricePerItem = 63,
+		},
+		{
+			count = 5,
+			price = 315,
+			pricePerItem = 63,
+		},
+		{
+			count = 5,
+			price = 320,
+			pricePerItem = 64,
+		},
+		{
+			count = 5,
+			price = 330,
+			pricePerItem = 66,
+		},
+		{
+			count = 5,
+			price = 330,
+			pricePerItem = 66,
+		},
+		{
+			count = 5,
+			price = 333,
+			pricePerItem = 67,
+		},
+	},
 }
 
 function addon.professions.vah.virtualScan(itemName)
