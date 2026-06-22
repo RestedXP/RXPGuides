@@ -1,5 +1,5 @@
-## Interface: 11508, 110205, 50502, 120001, 110207
-## Interface-Mists: 50502
+## Interface: 11508, 50504, 120100, 120005, 120007
+## Interface-Mists: 50504
 ## Interface-TBC: 20505
 ## Interface-Classic: 11508
 ## Title: RestedXP Guides
