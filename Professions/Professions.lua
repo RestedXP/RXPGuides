@@ -14,6 +14,7 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuct
 local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
 local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetItemNameByID = _G.C_Item.GetItemNameByID
+local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
 local date = _G.date
 local GetMoney = _G.GetMoney
 
@@ -317,6 +318,19 @@ local function gatherPlayerProfessionInfo()
     end
 end
 
+--Sets RXPCData.faction
+local function gatherPlayerFactionInfo()
+    local name
+    for i = 1, GetNumFactions() do
+        name = GetFactionInfo(i)
+        if name == "Alliance" then
+            RXPCData.professions.faction = "Alliance"
+        elseif name == "Horde" then
+            RXPCData.professions.faction = "Horde"
+        end
+    end
+end
+
 --Sets RXPCData.professions.money
 local function gatherPlayerMoneyInfo()
     RXPCData.professions.money = GetMoney()
@@ -335,6 +349,18 @@ end
 local function removeNonTrainable(professionName)
     for recipe, _ in pairs(profSession.recipesToConsider) do
         if not PROFESSIONS[professionName].RECIPES[recipe].trainable then
+            profSession.recipesToConsider[recipe] = nil --TODO: efficient, but test if safe!
+        end
+    end
+end
+
+--Remove non-faction recipes
+local function removeNonFactionProfessions(professionName)
+    local playerFaction = RXPCData.professions.faction:lower()
+    local faction
+    for recipe, _ in pairs(profSession.recipesToConsider) do
+        faction = PROFESSIONS[professionName].RECIPES[recipe].faction
+        if faction ~= "neutral" and faction ~= playerFaction then
             profSession.recipesToConsider[recipe] = nil --TODO: efficient, but test if safe!
         end
     end
@@ -1451,6 +1477,8 @@ function addon.professions:Setup()
     GUI = addon.professions.GUI
 
     gatherPlayerProfessionInfo()
+    gatherPlayerFactionInfo()
+    gatherPlayerMoneyInfo()
     GUI.createGUI()
 end
 
@@ -1543,18 +1571,7 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function()
-    calculateRecipeRawPrice(RXPCData.professions.profession1.name)
-    --TODO:FINISH THIS
-    calculateRecipeRawPriceAveragePrice()
-    local sortedArr = sortAssociativeArrayByValue(profSession.recipesToConsider)
-    print("Found items:")
-    for name, price in pairs(profSession.recipesToConsider) do
-        print(name, " -> ", price)
-    end
-    print("==========")
-    for i, v in ipairs(sortedArr) do
-        print(v[1], " -> ", v[2])
-    end
+    print(RXPCData.professions.faction)
 end
 
 --Export
