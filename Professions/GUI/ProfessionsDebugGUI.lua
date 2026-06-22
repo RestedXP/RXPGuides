@@ -49,8 +49,8 @@ function addon.professions.GUI.createGUI()
     guiFrame.descriptionText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -30)
     guiFrame.descriptionText:SetText("Select profession:")
 
-    local function createCheckButton(parent, displayname)
-        local checkButton = CreateFrame("CheckButton", nil, parent, "UIRadioButtonTemplate");
+    local function createCheckButton(parent, name)
+        local checkButton = CreateFrame("CheckButton", name, parent, "UIRadioButtonTemplate");
         return checkButton;
     end
 
@@ -158,8 +158,29 @@ function addon.professions.GUI.createGUI()
         self.Text:SetText("Segment Range (" .. self:GetValue() .. ")")
     end)
 
+    guiFrame.calculateMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.calculateMethodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -220)
+    guiFrame.calculateMethodText:SetText("Select calculation method:")
+
+    local minimumPriceMethod = createCheckButton(guiFrame, "Minimum price")
+    local averagePriceMethod = createCheckButton(guiFrame, "Average price")
+
+    guiFrame.minimumPriceMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.minimumPriceMethodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -250)
+    guiFrame.minimumPriceMethodText:SetText("Minimum price")
+    minimumPriceMethod:SetSize(20, 20)
+    minimumPriceMethod:SetPoint("LEFT", guiFrame.minimumPriceMethodText, "RIGHT", 10, 0)
+
+    guiFrame.averagePriceMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    guiFrame.averagePriceMethodText:SetPoint("LEFT", minimumPriceMethod, "RIGHT", 10, 0)
+    guiFrame.averagePriceMethodText:SetText("Average price")
+    averagePriceMethod:SetSize(20, 20)
+    averagePriceMethod:SetPoint("LEFT", guiFrame.averagePriceMethodText, "RIGHT", 10, 0)
+
+    groupRadioButtons(minimumPriceMethod, averagePriceMethod)
+
     guiFrame.methodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.methodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -220)
+    guiFrame.methodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -280)
     guiFrame.methodText:SetText("Select greed method:")
 
     local moneyGreedyMethod = createCheckButton(guiFrame, "Money")
@@ -167,7 +188,7 @@ function addon.professions.GUI.createGUI()
     local moneyAndPercentageGreedyMethod = createCheckButton(guiFrame, "Money & Percentage")
 
     guiFrame.moneyGreedyMethodText = guiFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    guiFrame.moneyGreedyMethodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -250)
+    guiFrame.moneyGreedyMethodText:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 10, -310)
     guiFrame.moneyGreedyMethodText:SetText("Money")
     moneyGreedyMethod:SetSize(20, 20)
     moneyGreedyMethod:SetPoint("LEFT", guiFrame.moneyGreedyMethodText, "RIGHT", 10, 0)
@@ -187,7 +208,7 @@ function addon.professions.GUI.createGUI()
     groupRadioButtons(moneyGreedyMethod, percentageGreedyMethod, moneyAndPercentageGreedyMethod)
 
     local setButtonFrame = CreateFrame("Button", "SetButtonFrame", guiFrame, "UIPanelButtonTemplate")
-    setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -280)
+    setButtonFrame:SetPoint("TOPLEFT", guiFrame, "TOPLEFT", 20, -330)
     setButtonFrame:SetSize(100, 40)
     setButtonFrame:SetText("Set parameters")
     setButtonFrame:RegisterForClicks("LeftButtonUp")
@@ -271,25 +292,35 @@ function addon.professions.GUI.createGUI()
     printButtonFrame:RegisterForClicks("LeftButtonUp")
     printButtonFrame:SetScript("OnClick", function (self)
         textToPrint = ""
-        --Get method type: 1 - money | 2 - percentage | 3 - mone and percentage
-        local method = 1 --money by defualt
-        if moneyGreedyMethod:GetChecked() then method = 1
-        elseif percentageGreedyMethod:GetChecked() then method = 2
-        elseif moneyAndPercentageGreedyMethod:GetChecked() then method = 3
+
+        --Get calculation method type: 1 - minimum | 2 - average
+        local calculationMethod = 1 -- minimum by default
+        if minimumPriceMethod:GetChecked() then calculationMethod = 1
+        elseif averagePriceMethod:GetChecked() then calculationMethod = 2
+        end
+
+        --Get greed method type: 1 - money | 2 - percentage | 3 - mone and percentage
+        local greedMethod = 1 --money by defualt
+        if moneyGreedyMethod:GetChecked() then greedMethod = 1
+        elseif percentageGreedyMethod:GetChecked() then greedMethod = 2
+        elseif moneyAndPercentageGreedyMethod:GetChecked() then greedMethod = 3
         end
 
         local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
         local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
         if not printed then
-            --Use selected method
-            if method == 1 then
+            --Calculate prices
+            aProf.calculateRecipePrice(RXPCData.professions.profession1.name, calculationMethod)
+
+            --Use selected methods
+            if greedMethod == 1 then
                 recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
                 aProf.gatherRecipesToBuyGreedyMoney(
                     RXPCData.professions.profession1.name,
                     RXPCData.professions.profession1.skillLevel,
                     maxSegment, RXPCData.professions.money
                 )
-            elseif method == 2 then
+            elseif greedMethod == 2 then
                 recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
                 aProf.gatherRecipesToBuyGreedyPercentage(
                     RXPCData.professions.profession1.name,

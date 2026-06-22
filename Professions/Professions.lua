@@ -417,8 +417,7 @@ local function calculateMaterialAveragePrice()
     end
 end
 
---Calculate raw value of each recipe and sets it in profSession.recipesToConsider
---There might be a better way of doing this (more money wise optimal)
+--Calculate minimum price of each recipe and sets it in profSession.recipesToConsider
 --[[ 
 General idea:
 - We go through all recipes we want to consider
@@ -431,8 +430,11 @@ General idea:
 The problem arises if one recipe is dependant of another recipe that is yet to be evluated.
 We fix this by iterating over this procedure until all recipes are evaluted.
 This unfortunately makes our algorithm's worst case O(n^2)
+
+The downside of this approach is that the minimum price might
+vary very much from the actual prices when created in bulk
 ]]
-local function calculateRecipeRawPrice(professionName)
+local function calculateRecipeMinimumPrice(professionName)
     local totalPrice, remaining, i, materialNotFound, impossibleToCraft
     -- Check whether we evaluated all the recipes
     local recipeCount = tcount(profSession.recipesToConsider)
@@ -504,8 +506,15 @@ local function calculateRecipeRawPrice(professionName)
     end
 end
 
---TODO: Finish
-local function calculateRecipeRawPriceAveragePrice(professionName)
+-- Calulcates the average price of each recipe and sets it in profSession.recipesToConsider
+--[[
+Function is akin to calculateRecipeMinimumPrice, only instead of using the cheapest
+resources, it calculates by using the average item price.
+
+The downside of this approache is that the average price
+might be skewed by some low or high items in the AH
+]]
+local function calculateRecipeAveragePrice(professionName)
     calculateMaterialAveragePrice()
     local totalPrice, remaining, i, materialNotFound, impossibleToCraft
     -- Check whether we evaluated all the recipes
@@ -541,22 +550,11 @@ local function calculateRecipeRawPriceAveragePrice(professionName)
                         end
                     else --If from AH
                         --If there isn't any in the AH
-                        if not profSession.itemAveragePrice[materialName] or select(1, tcount(profSession.itemAveragePrice[materialName])) == 0 then
+                        if not profSession.itemAveragePrice[materialName] then
                             totalPrice = huge
                             materialNotFound = true
                         else
-                            remaining = materialTable.count
-                            i = 1
-                            while profSession.itemAveragePrice[materialName] ~= nil and remaining > 0 and i <= #profSession.itemAveragePrice[materialName] and remaining <= #profSession.itemAveragePrice[materialName] do --TODO:remaining <= #profSession.itemAveragePrice[materialName] should not exist??? --TODO: better check for. maybe calculate how many in general there are materials of 'materialName'
-                                totalPrice = totalPrice + profSession.itemAveragePrice[materialName][i].pricePerItem * materialTable.count --TODO: here
-                                remaining = remaining - profSession.itemAveragePrice[materialName][i].count
-                                i = i + 1
-                            end
-                            --Check if not enough
-                            if remaining > 0 then
-                                totalPrice = huge
-                                materialNotFound = true
-                            end
+                            totalPrice = totalPrice + profSession.itemAveragePrice[materialName]
                         end
                     end
                 end
@@ -575,6 +573,23 @@ local function calculateRecipeRawPriceAveragePrice(professionName)
                 end
             end
         end
+    end
+end
+
+--Chooses which calculation method to use.
+--[[
+1 - Minimum price
+2 - Average price
+default - Minimum price
+]]
+function addon.professions.calculateRecipePrice(professionName, option)
+    option = option or 1
+    if type(option) ~= "number" then option = 1 end
+
+    if option == 1 then
+        calculateRecipeMinimumPrice(professionName)
+    elseif option == 2 then
+        calculateRecipeAveragePrice(professionName)
     end
 end
 
@@ -744,6 +759,7 @@ end
 
 
 --[[
+Assumes one calculation method has been envoked (profSession.recipesToConsider is populated)
 General idea:
 0) Create an empty set of actual recipes to craft
 1) Calculate raw value of each recipe
@@ -754,7 +770,7 @@ TODO: move locals out from loop
 ]]
 function addon.professions.gatherRecipesToBuyGreedyMoney(professionName, skillLevel, segmentMaxLevel, money)
     --Calcualte raw value of each considered recipes
-    calculateRecipeRawPrice(professionName)
+    --calculateRecipeMinimumPrice(professionName) --Removed because it's not part of the logic
     local sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider) -- ipairs{"name", price}
     local haveMoney = true --If we do not have the money for the nth recipe, we do not have money for any subsequent one
     local materialsToBuyKnapsack = {} --pairs{[name] = count}
@@ -911,6 +927,7 @@ function addon.professions.gatherRecipesToBuyGreedyMoney(professionName, skillLe
 end
 
 --[[
+Assumes one calculation method has been envoked (profSession.recipesToConsider is populated)
 General idea:
 0) Create an empty set of actual recipes to craft
 1) Calculate raw value of each recipe
@@ -921,7 +938,7 @@ TODO: move locals out from loop
 ]]
 function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, skillLevel, segmentMaxLevel, money)
     --Calcualte raw value of each considered recipes
-    calculateRecipeRawPrice(professionName)
+    --calculateRecipeMinimumPrice(professionName) --Removed because it's not part of the logic
     local sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider) -- ipairs{"name", price}
     local haveMoney = true --If we do not have the money for the nth recipe, we do not have money for any subsequent one
     local materialsToBuyKnapsack = {} --pairs{[name] = count}
@@ -1109,10 +1126,20 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
     return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
 end
 
+--[[
+Assumes one calculation method has been envoked (profSession.recipesToConsider is populated)
+General idea:
+0) Create an empty set of actual recipes to craft
+1) Calculate raw value of each recipe
+2) Sort selected recipes by price
+3) Add cheapest one in greedily, but only ones that are 100%, and if it is cheaper then the next's average price
+4) If added recipe is part of a recipe, recalculate considered recipes
+TODO: move locals out from loop
+]]
 --TODO: Implement this
 function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(professionName, skillLevel, segmentMaxLevel, money)
     --Calcualte raw value of each considered recipes
-    calculateRecipeRawPrice(professionName)
+    --calculateRecipeMinimumPrice(professionName) --Removed because it's not part of the logic
     local sortedRecipesByPrice = sortAssociativeArrayByValue(profSession.recipesToConsider) -- ipairs{"name", price}
     local haveMoney = true --If we do not have the money for the nth recipe, we do not have money for any subsequent one
     local materialsToBuyKnapsack = {} --pairs{[name] = count}
@@ -1391,6 +1418,8 @@ function addon.professions.setPlayerData(prof1Name, prof1Lvl, prof2Name, prof2Lv
 end
 
 
+--Prepare necessary stuff for scan
+
 --Full scan function - For testing purposes only -- Scans first profession
 function addon.professions:fullScan()
     profSession:Reset()
@@ -1570,14 +1599,15 @@ end
 
 --Quick testing
 SLASH_qtst1 = '/qtst'
-SlashCmdList['qtst'] = function()
-    print(RXPCData.professions.faction)
+SlashCmdList['qtst'] = function(item)
+    print(item, ": ", #profSession.foundItems[item])
 end
 
 --Export
 SLASH_export1 = '/export'
 SlashCmdList['export'] = function(option)
     if not option then option = 1 else option = tonumber(option) end
+    calculateMaterialAveragePrice()
 
     GUI.guiFrame.printText:SetEnabled(true)
     GUI.guiFrame.printText:SetText(exportFoundItems(option))
