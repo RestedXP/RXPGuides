@@ -956,6 +956,7 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
         --Check if we have money
         if money >= recipePrice then
             --We have money 
+            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
             howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
@@ -1157,6 +1158,7 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
         --Check if we have money
         if money >= recipePrice then
             --We have money 
+            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
             howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
