@@ -301,7 +301,7 @@ step
 step
     #requires RitualizedArcanaA
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grand Magister Rommath|r
-    .goto 2659,44.92,60.96,10,0
+    .goto 2649,44.92,60.96,10,0
     .goto 2649,59.74,10.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grand Magister Rommath|r.
     .turnin 96441 >>Turn in Seeking Knowledge Week 2 of 5: Ritualized Arcana
