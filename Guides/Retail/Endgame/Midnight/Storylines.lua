@@ -269,8 +269,21 @@ step
     .accept 96441 >>Accept Seeking Knowledge Week 2 of 5: Ritualized Arcana
     .target Magister Rommath
 step
+    #completewith Week2of5A
+    #hidewindow
+    .areapoiexists 2395,8615
+    .goto 2395,37.57,65.26
+    +1
+step
+    #completewith Week2of5A
+    #hidewindow
+    .areapoiexists 2437,8614
+    .goto 2437,29.58,77.95
+    +1
+step
+    #label Week2of5A
     >>Complete Rituals. Loot the |cRXP_ENEMY_elites|r for |T4226155:0|t[Ritualized Arcana].
-    *|cRXP_WARN_Note:|r You can look all eight arcana in one ritual (at least in the one in Zul'Aman)
+    *|cRXP_WARN_Note:|r You can loot all eight arcana in one ritual (at least in the one in Zul'Aman)
     .complete 96441,1 --1/1 Ritual Sites disrupted
     .complete 96441,2 --8/8 Ritualized Arcana
 step
