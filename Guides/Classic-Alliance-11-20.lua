@@ -10422,12 +10422,16 @@ step
     .goto Ashenvale,36.61,49.58
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
+step
+    #label HCHunterNoHS --hidden step for #include
 step << !Dwarf/!Hunter
     #xprate <1.59
     .goto Ashenvale,36.99,49.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
     .home >> Set your Hearthstone to Astranaar
     .target Innkeeper Kimlya
+step
+    #label HCHunterNoHSStart --hidden step for #include
 step
     #xprate <1.59
     .goto Ashenvale,36.6,49.8
