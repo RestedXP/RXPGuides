@@ -5,9 +5,9 @@ if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
 
 -- Localize globals
 local _G = _G
-local len, fmt, lower = string.len, string.format, string.lower
+local len, fmt, lower, find, match, gmatch = string.len, string.format, string.lower, string.find, string.match, string.gmatch
 local tcount, tinsert, twipe, tsort, tremove, tconcat = table.count, table.insert, table.wipe, table.sort, table.remove, table.concat
-local pairs, ipairs, next, type, tostring, tonumber = pairs, ipairs, next, type, tostring, tonumber
+local pairs, ipairs, next, type, tostring, tonumber, error, unpack = pairs, ipairs, next, type, tostring, tonumber, error, unpack
 local max, min, abs, floor, ceil, huge = math.max, math.min, math.abs, math.floor, math.ceil, math.huge
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
@@ -17,6 +17,7 @@ local GetItemNameByID = _G.C_Item.GetItemNameByID
 local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
 local date = _G.date
 local GetMoney = _G.GetMoney
+
 
 addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0") --TODO: maybe change the name
 
@@ -45,16 +46,6 @@ local session = {
 }
 
 --local helper functions
-
---Formats money to xg ys zc
-local function formatMoney(money)
-    if money > 10000 then
-        return fmt("%dg %ds %dc", money / 10000, (money % 10000) / 100, money % 100)
-    elseif money > 100 then
-        return fmt("%ds %dc", money / 100, money % 100)
-    end
-    return fmt("%dc", money)
-end
 
 --TODO: Maybe change to table approach
 --Faster way to concat strings
@@ -88,6 +79,156 @@ local function stringBuilder(initialString)
     end})
 end
 
+--Splits arguments for slash commands to emulate ... var args
+local function varArgs(message)
+    local args = {}
+    for arg in message:gmatch("%S+") do
+        args[#args+1] = arg
+    end
+    return unpack(args)
+end
+
+--Prints the (global) data
+local function pnt(...)
+    local args = {...}
+    local arg
+    local dots
+    for i = 1, #args do
+        arg = args[i]
+        if find(arg, "%.") then
+            dots = nil
+            for dot in gmatch(arg, "[^%.]+") do
+                if not dots then
+                    dots = _G[dot]
+                else
+                    dots = dots[dot]
+                end
+            end
+            print(dots)
+        elseif _G[arg] then
+            print("global: ", _G[arg])
+        else
+            print(arg)
+        end
+    end
+end
+
+--Sorts an associative array by value.
+--Assumes the value has "<" operator implementation
+local function sortAssociativeArrayByValue(map)
+    local sorted = {}
+    for k, v in pairs(map) do
+        sorted[#sorted+1] = {k, v}
+    end
+    tsort(sorted, function (a, b)
+        return a[2] < b[2]
+    end)
+    return sorted
+end
+
+--Formats money to xg ys zc
+local function formatMoney(money)
+    if money > 10000 then
+        return fmt("%dg %ds %dc", money / 10000, (money % 10000) / 100, money % 100)
+    elseif money > 100 then
+        return fmt("%ds %dc", money / 100, money % 100)
+    end
+    return fmt("%dc", money)
+end
+
+--Validates that RXPCData.professions.profession1 and RXPCData.professions.profession2 are set up correctly
+local function validatePlayerProfessions(level)
+    level = level or 0
+
+    --Profession 1
+    if not RXPCData.professions then
+        error("RXPCData.professions is not initialized", level + 1)
+    elseif not RXPCData.professions.profession1 then
+        error("RXPCData.professions.profession1 is not initialized", level + 1)
+    elseif not RXPCData.professions.profession1.name then
+        error("RXPCData.professions.profession1.name is not initialized", level + 1)
+    elseif type(RXPCData.professions.profession1.name) ~= "string" then
+        error("RXPCData.professions.profession1.name is of type '" .. type(RXPCData.professions.profession1.name) .. "' but 'string' expected", level + 1)
+    elseif not addon.professions.locale.PROFESSION_NAMES[RXPCData.professions.profession1.name] then
+        error("RXPCData.professions.profession1.name is '" .. RXPCData.professions.profession1.name .. "' which is not a valid profession", level + 1)
+    elseif not RXPCData.professions.profession1.skillLevel then
+        error("RXPCData.professions.profession1.skillLevel is not initialized", level + 1)
+    elseif type(RXPCData.professions.profession1.skillLevel) ~= "number" then
+        error("RXPCData.professions.profession1.skillLevel is of type '" .. type(RXPCData.professions.profession1.skillLevel) .. "' but 'number' expected", level + 1)
+    elseif RXPCData.professions.profession1.skillLevel < 1 or RXPCData.professions.profession1.skillLevel > 300 then
+        error("RXPCData.professions.profession1.skillLevel " .. tostring(RXPCData.professions.profession1.skillLevel) .. " out of bounds for [1, 300]", level + 1)
+    elseif not RXPCData.professions.profession1.skillMaxLevel then
+        error("RXPCData.professions.profession1.skillMaxLevel is not initialized", level + 1)
+    elseif type(RXPCData.professions.profession1.skillMaxLevel) ~= "number" then
+        error("RXPCData.professions.profession1.skillMaxLevel is of type '" .. type(RXPCData.professions.profession1.skillMaxLevel) .. "' but 'number' expected", level + 1)
+    elseif RXPCData.professions.profession1.skillMaxLevel ~= 300 then
+        error("RXPCData.professions.profession1.skillLevel " .. tostring(RXPCData.professions.profession1.skillLevel) .. " but 300 expected", level + 1)
+    end
+
+    --Profession 2
+    if RXPCData.professions.profession2 then
+        if not RXPCData.professions.profession2 then
+            error("RXPCData.professions.profession2 is not initialized", level + 1)
+        elseif not RXPCData.professions.profession2.name then
+            error("RXPCData.professions.profession2.name is not initialized", level + 1)
+        elseif type(RXPCData.professions.profession2.name) ~= "string" then
+            error("RXPCData.professions.profession2.name is of type '" .. type(RXPCData.professions.profession2.name) .. "' but 'string' expected", level + 1)
+        elseif not addon.professions.locale.PROFESSION_NAMES[RXPCData.professions.profession2.name] then
+            error("RXPCData.professions.profession2.name is '" .. RXPCData.professions.profession2.name .. "' which is not a valid profession", level + 1)
+        elseif not RXPCData.professions.profession2.skillLevel then
+            error("RXPCData.professions.profession2.skillLevel is not initialized", level + 1)
+        elseif type(RXPCData.professions.profession2.skillLevel) ~= "number" then
+            error("RXPCData.professions.profession2.skillLevel is of type '" .. type(RXPCData.professions.profession2.skillLevel) .. "' but 'number' expected", level + 1)
+        elseif RXPCData.professions.profession2.skillLevel < 1 or RXPCData.professions.profession2.skillLevel > 300 then
+            error("RXPCData.professions.profession2.skillLevel " .. tostring(RXPCData.professions.profession2.skillLevel) .. " out of bounds for [1, 300]", level + 1)
+        elseif not RXPCData.professions.profession2.skillMaxLevel then
+            error("RXPCData.professions.profession2.skillMaxLevel is not initialized", level + 1)
+        elseif type(RXPCData.professions.profession2.skillMaxLevel) ~= "number" then
+            error("RXPCData.professions.profession2.skillMaxLevel is of type '" .. type(RXPCData.professions.profession2.skillMaxLevel) .. "' but 'number' expected", level + 1)
+        elseif RXPCData.professions.profession2.skillMaxLevel ~= 300 then
+            error("RXPCData.professions.profession2.skillLevel " .. tostring(RXPCData.professions.profession2.skillLevel) .. " but 300 expected", level + 1)
+        end
+    end
+end
+
+--Validates that RXPCData.profession.faction is "Horde" | "Alliance"
+--Throws error with given level, where level corresponds to level in 'error' **numerically** (default 0)
+--TODO: Check if level + 1 is correct
+local function validatePlayerFaction(level)
+    level = level or 0
+    if not RXPCData.professions then
+        error("RXPCData.professions is not initialized", level + 1)
+    elseif not RXPCData.professions.faction then
+        error("RXPCData.professions.faction is not initialized", level + 1)
+    elseif type(RXPCData.professions.faction) ~= "string" then
+        error("RXPCData.professions.faction is of type '" .. type(RXPCData.professions.faction) .. "' but 'string' expected", level + 1)
+    elseif lower(RXPCData.professions.faction) ~= "alliance" and lower(RXPCData.professions.faction) ~= "horde" then
+        error("RXPCData.professions.faction is '" .. RXPCData.professions.faction .. "' which is not 'Alliance' nor 'Horde'", level + 1)
+    end
+end
+
+--Auxilliary function to the one below it. Should never be called directly
+local function deepCopyTableAUX(tbl, visited)
+    visited = visited or {}
+    --Base cases
+    if tbl == nil then return nil end
+    if visited[tbl] then return visited[tbl] end
+    if type(tbl) ~= "table" then return tbl end
+
+    local copy = {}
+    visited[tbl] = copy
+    for k, v in pairs(tbl) do
+        copy[deepCopyTableAUX(k, visited)] = deepCopyTableAUX(v, visited)
+    end
+    return copy
+end
+
+--Creates a deep copy of a table recursively, based on a graph oriented approach
+local function deepCopyTable(tbl)
+    if type(tbl) ~= "table" then return nil end
+    return deepCopyTableAUX(tbl, {})
+end
+
 --Serializes RXPCData.professions to string for debugging purposes
 local function serializeProfessions()
     if next(RXPCData.professions.profession1) and next(RXPCData.professions.profession2) then
@@ -104,6 +245,8 @@ end
 
 --Serializes RXPCData.craftedItems to string for debugging purposes
 local function serializeCraftedItems()
+    if not RXPCData.craftedItems then return end
+
     local sb = stringBuilder("crafted items = {\n")
     for itemName, itemCount in pairs(RXPCData.craftedItems) do
         sb:append(itemName):append(": "):append(tostring(itemCount)):append("\n")
@@ -185,19 +328,6 @@ local function exportFoundItems(option)
     return sb:build()
 end
 
---Sorts an associative array by value.
---Assumes the value has "<" operator implementation
-local function sortAssociativeArrayByValue(map)
-    local sorted = {}
-    for k, v in pairs(map) do
-        sorted[#sorted+1] = {k, v}
-    end
-    tsort(sorted, function (a, b)
-        return a[2] < b[2]
-    end)
-    return sorted
-end
-
 --[[
 Sorts collected recipies by options and order
 Options:
@@ -224,28 +354,6 @@ local function sortSelectedRecipesBy(selectedRecipes, option, order)
             return a[2][option] > b[2][option]
         end
     end)
-end
-
---Auxilliary function to the one below it. Should never be called directly
-local function deepCopyTableAUX(tbl, visited)
-    visited = visited or {}
-    --Base cases
-    if tbl == nil then return nil end
-    if visited[tbl] then return visited[tbl] end
-    if type(tbl) ~= "table" then return tbl end
-
-    local copy = {}
-    visited[tbl] = copy
-    for k, v in pairs(tbl) do
-        copy[deepCopyTableAUX(k, visited)] = deepCopyTableAUX(v, visited)
-    end
-    return copy
-end
-
---Creates a deep copy of a table recursively, based on a graph oriented approach
-local function deepCopyTable(tbl)
-    if type(tbl) ~= "table" then return nil end
-    return deepCopyTableAUX(tbl, {})
 end
 
 
@@ -282,15 +390,19 @@ end
 
 --local renaming
 --we do this as to not have addon.professions.etc every time
+--TODO: maybe add for RXPCData.professions as well?
 local profSession = addon.professions.profSession
 local PROFESSIONS = addon.professions.PROFESSIONS
 local vah = addon.professions.vah
 local GUI = addon.professions.GUI
+local locale = addon.professions.locale
 
 --local functions
 
 --Sets RXPCData.professions
 local function gatherPlayerProfessionInfo()
+    if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
+    if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
     --skillName, header, isExpanded, skillRank, numTempPoints, skillModifier,
     --skillMaxRank, isAbandonable, stepCost, rankCost, minLevel, skillCostType,
     --skillDescription = GetSkillLineInfo(index)
@@ -320,6 +432,8 @@ end
 
 --Sets RXPCData.faction
 local function gatherPlayerFactionInfo()
+    if not RXPCData.professions then RXPCData.professions = {} end
+
     local name
     for i = 1, GetNumFactions() do
         name = GetFactionInfo(i)
@@ -333,6 +447,8 @@ end
 
 --Sets RXPCData.professions.money
 local function gatherPlayerMoneyInfo()
+    if not RXPCData.professions then RXPCData.professions = {} end
+
     RXPCData.professions.money = GetMoney()
 end
 
@@ -356,7 +472,9 @@ end
 
 --Remove non-faction recipes
 local function removeNonFactionProfessions(professionName)
-    local playerFaction = RXPCData.professions.faction:lower()
+    validatePlayerFaction(2)
+
+    local playerFaction = lower(RXPCData.professions.faction)
     local faction
     for recipe, _ in pairs(profSession.recipesToConsider) do
         faction = PROFESSIONS[professionName].RECIPES[recipe].faction
@@ -956,7 +1074,6 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
         --Check if we have money
         if money >= recipePrice then
             --We have money 
-            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
             howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
@@ -991,7 +1108,7 @@ function addon.professions.gatherRecipesToBuyGreedyPercentage(professionName, sk
                 recipeName = sortedRecipesByPrice[1][1]
                 recipePrice = sortedRecipesByPrice[1][2]
                 recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
-                howManyToMake = (newPercent > 0) and ceil(1 / percent) or 0 -- We need to recalculate because if its the last one its not 100% guaranteed
+                howManyToMake = (newPercent > 0) and ceil(1 / newPercent) or 0 -- We need to recalculate because if its the last one its not 100% guaranteed
             end
             while howManyToMake > 0 and canCreateIthRecipe do --Add greedily
                 local saveMoneyBeforeRecipe = money
@@ -1158,7 +1275,6 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
         --Check if we have money
         if money >= recipePrice then
             --We have money 
-            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
             howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
             if howManyToMake == 0 then
                 canCreateIthRecipe = false
@@ -1192,7 +1308,7 @@ function addon.professions.gatherRecipesToBuyGreedyMoneyAndPercentage(profession
                 recipeName = sortedRecipesByPrice[1][1]
                 recipePrice = sortedRecipesByPrice[1][2]
                 recipeTable = PROFESSIONS[professionName].RECIPES[recipeName]
-                howManyToMake = (newPercent > 0) and ceil(1 / percent) or 0 -- We need to recalculate because if its the last one its not 100% guaranteed
+                howManyToMake = (newPercent > 0) and ceil(1 / newPercent) or 0 -- We need to recalculate because if its the last one its not 100% guaranteed
             end
             while howManyToMake > 0 and canCreateIthRecipe do --Add greedily
                 local saveMoneyBeforeRecipe = money
@@ -1369,20 +1485,26 @@ end
 
 --Updates crafted items list
 function addon.professions:CHAT_MSG_LOOT(_, text)
-    local itemName = text:match("%[(.*)%]")
+    local itemName = match(text, "%[(.*)%]")
     if not RXPCData.craftedItems[itemName] then RXPCData.craftedItems[itemName] = 0 end
     RXPCData.craftedItems[itemName] = RXPCData.craftedItems[itemName] + 1
 end
 
 --Updates skill level
+--TODO: Make a better check whether chat_msg_skill is related to professions or not!
 function addon.professions:CHAT_MSG_SKILL(_, text)
-    local newSkillLevel = tonumber(text:match("%d+"))
+    if RXPCData.professions == nil or RXPCData.professions.profession1 == nil or RXPCData.professions.profession1.name == nil
+        or RXPCData.professions.profession2 == nil or RXPCData.professions.profession2.name == nil then
+        return
+    end
+
+    local newSkillLevel = tonumber(match(text, "%d+"))
     local prof1Name, prof2Name = RXPCData.professions.profession1.name, RXPCData.professions.profession2.name
-    if text:lower():find(prof1Name) then
+    if find(lower(text), prof1Name) then
         RXPCData.professions.profession1.skillLevel = newSkillLevel
-    elseif text:lower():find(prof2Name) then
+    elseif find(lower(text), prof2Name) then
         RXPCData.professions.profession2.skillLevel = newSkillLevel
-    else
+    else --TODO: check if we even have to send an error here
         error("Profession leveled: " .. text .. "\nIs not among: {" .. prof1Name .. ", " .. prof2Name .. "}", 2)
     end
 end
@@ -1429,6 +1551,7 @@ function addon.professions:fullScan()
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     removeNonTrainable(RXPCData.professions.profession1.name)
+    removeNonFactionProfessions(RXPCData.professions.profession1.name)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
     profSession.materialIndex = 1
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
@@ -1506,6 +1629,7 @@ function addon.professions:Setup()
     profSession = addon.professions.profSession
     vah = addon.professions.vah
     GUI = addon.professions.GUI
+    locale = addon.professions.locale
 
     gatherPlayerProfessionInfo()
     gatherPlayerFactionInfo()
@@ -1555,30 +1679,13 @@ end
 
 
 SLASH_pnt1 = '/pnt'
-SlashCmdList['pnt'] = function()
-    local minSegment, maxSegment = addon.professions.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
-    local recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent = addon.professions.gatherRecipesToBuyGreedyMoney(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, maxSegment, RXPCData.professions.money)
-    print("====Recipe costs====")
-    local sorted = sortAssociativeArrayByValue(profSession.recipesToConsider)
-    for i, v in ipairs(sorted) do
-        print(tostring(v[1]) .. ": " .. tostring(v[2]))
-    end
-    print("====To craft====")
-    for k, v in pairs(recipesToCraft) do
-        print(tostring(k) .. " -> " .. tostring(v))
-    end
-    print("====To buy====")
-    for k, v in pairs(materialsToBuy) do
-        print(tostring(k) .. " -> " .. tostring(v))
-    end
-    print("====Leftovers====")
-    for k, v in pairs(backPack) do
-        print(tostring(k) .. " -> " .. tostring(v))
-    end
-    print("===After calc===")
-    print("Money: ", RXPCData.professions.money)
-    print("Money spent: ", moneySpent)
-    print("Skill level reached: ", (RXPCData.professions.profession1.skillLevel + skillLevelsGained))
+SlashCmdList['pnt'] = function(args)
+    pnt(varArgs(args))
+end
+
+SLASH_print1 = '/print'
+SlashCmdList['print'] = function(args)
+    pnt(varArgs(args))
 end
 
 
@@ -1602,7 +1709,7 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function(item)
-    print(item, ": ", #profSession.foundItems[item])
+    print(RXPCData.professions.profession1.name)
 end
 
 --Export
