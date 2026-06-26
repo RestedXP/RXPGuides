@@ -976,6 +976,9 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                     -- print(game,guide[game],guide.name)
                     skipGuide = "#0"
                 end
+                --debug purposes
+                addon.lastGuideName = guide.name
+                addon.lastGuideGroup = guide.group
             end
             if skipGuide then
                 guide.version = tonumber(guide.version) or 0
