@@ -2529,14 +2529,19 @@ function addon.v2:GetActiveStepsFrame(player)
     if player == addon.player.name then
         stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
         stepFrame:ClearAllPoints()
+        local theme = addon.v2:GetTheme()
+        local edge = (theme.edges and (theme.edges.activeSteps or theme.edges.common)) or {}
+        local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
+        local leftInset = (edge.edgeSize or 4) + (frameInset.left or 0)
+        local rightInset = (edge.edgeSize or 4) + (frameInset.right or 0)
 
         -- Temporarily during parallel work
         if addon.settings.profile.anchorOrientation == "bottom" or addon.settings.profile.debug then
-            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", 0, 0)
-            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", 0, 0)
+            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset, 0)
+            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset, 0)
         else
-            stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", 0, 0)
-            stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", 0, 0)
+            stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
+            stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
         end
 
         stepFrame:SetLayout("Flow")
@@ -2570,7 +2575,7 @@ function addon.v2:GetActiveStepsFrame(player)
     end
 
     stepFrame:UpdateTheme({
-        showBackground = not addon.settings.profile.activeStepsV2HideBackground,
+        hideBackground = addon.settings.profile.activeStepsV2HideBackground,
         updateChildren = true,
         scale = addon.settings.profile.activeStepsV2WindowScale,
     })
@@ -2587,13 +2592,9 @@ function addon.v2:UpdateActiveStepTheme()
 
         if f then
             f:UpdateTheme({
-                showBackground = not addon.settings.profile.activeStepsV2HideBackground,
+                hideBackground = addon.settings.profile.activeStepsV2HideBackground,
                 updateChildren = true,
                 scale = addon.settings.profile.activeStepsV2WindowScale,
-
-                -- Only changes for live reloads, initial creation uses these values
-                edge = addon.RXPFrame.backdrop.edge,
-                backgroundColor = addon.colors.background,
             })
         end
     end

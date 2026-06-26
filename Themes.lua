@@ -262,41 +262,49 @@ addon.v2.themes['v2'] = {
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
-        activeSteps = {10 / 255, 11 / 255, 24 / 255, 0.82},
-        activePartySteps = {10 / 255, 11 / 255, 24 / 255, 0.82},
-        activeStepItem = {21 / 255, 23 / 255, 42 / 255, 0.97},
-        activePartyStepItem = {21 / 255, 23 / 255, 42 / 255, 0.97},
+        activeSteps = {11 / 255, 12 / 255, 26 / 255, 0.95},
+        activePartySteps = {11 / 255, 12 / 255, 26 / 255, 0.95},
+        activeStepItem = {20 / 255, 22 / 255, 39 / 255, 0.98},
     },
 
     shadows = {
-        outer = {size = 2, alpha = 0.35, xOffset = 0, yOffset = 0},
-        stepItem = {size = 2, alpha = 0.55, xOffset = 0, yOffset = 0},
+        outer = {
+            size = 4,
+            alpha = 0.52,
+            xOffset = 0,
+            yOffset = 0,
+        },
+        stepItem = {
+            size = 2,
+            alpha = 0.45,
+            xOffset = 0,
+            yOffset = 0,
+        },
     },
 
     borderColors = {
-        common = {55 / 255, 62 / 255, 109 / 255, 1},
-        activeSteps = {55 / 255, 62 / 255, 109 / 255, 1},
-        activePartySteps = {55 / 255, 62 / 255, 109 / 255, 1},
-        activeStepItem = {43 / 255, 50 / 255, 101 / 255, 1},
-        activePartyStepItem = {43 / 255, 50 / 255, 101 / 255, 1},
+        common = {1, 1, 1, 1},
     },
 
     layout = {
-        outerPadding = {left = 6, right = 6, top = 14, bottom = 4},
-        stepItemPadding = {left = 4, right = 6, top = 10, bottom = 2},
-        stepItemMargin = {bottom = 14},
-        stepBadge = {x = 4, y = 10, height = 15, horizontalPadding = 6},
+        outerPadding = {left = 8, right = 8, top = 12, bottom = 0},
+        stepItemPadding = {left = 4, right = 6, top = 6, bottom = 2},
+        stepItemMargin = {bottom = 10},
+        stepBadge = {x = 4, y = 10, height = 16, horizontalPadding = 8},
+        activeStepFrameInset = {left = 12, right = 12},
         partyTitle = {right = -20, y = 6, height = 17, horizontalPadding = 10},
     },
 
     edges = {
         common = {
-            bgFile = "Interface/BUTTONS/WHITE8X8",
-            edgeFile = "Interface/BUTTONS/WHITE8X8",
-            tile = false,
+            edgeFile = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-borders-v2",
             edgeSize = 1,
-            tileSize = 1,
-            insets = {left = 1, right = 1, top = 1, bottom = 1}
+            texCoords = {
+                top = {0, 0.25, 0, 1},
+                bottom = {0.25, 0.5, 0, 1},
+                left = {0.5, 0.75, 0, 1},
+                right = {0.75, 1, 0, 1},
+            },
         },
     },
 
@@ -305,22 +313,7 @@ addon.v2.themes['v2'] = {
         activePartySteps = {24 / 255, 210 / 255, 255 / 255},
         activeStepItem = {1, 1, 1},
         activeStepBadge = {24 / 255, 210 / 255, 255 / 255},
-        activePartyStepItem = {24 / 255, 210 / 255, 255 / 255}
-    },
-
-    -- v1 RXP Blue
-
-    -- applicable = function() return not RXPCData.GA end,
-    -- bgTextures = {edge = "Interface/BUTTONS/WHITE8X8", bottom = "Interface/BUTTONS/WHITE8X8"},
-    -- bottomFrameBG = {18 / 255, 18 / 255, 40 / 255, 1},
-    -- bottomFrameHighlight = {54 / 255, 62 / 255, 109 / 255, 1},
-    -- mapPins = {206 / 210, 123 / 210, 1, 1},
-    -- texturePath = "Interface/AddOns/" .. addonName .. "/Textures/",
-    -- tooltip = "|cFFCE7BFF", -- AARRGGBB
-    -- edges = {
-    --     edge = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders",
-    --     guideName = "Interface/AddOns/" .. addonName .. "/Textures/rxp-borders"
-    -- }
+    }
 }
 
 addon.v2.themes['Default'] = addon.v2.themes['v2']

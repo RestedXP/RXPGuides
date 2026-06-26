@@ -27,56 +27,16 @@ end
 local function updateTheme(this, payload)
     if not payload then return end
 
-    -- TODO integrate v2 modularity
-    if true then return end
-    print("updateTheme", this.type)
-
-    this.theme = this.theme or {
-        edge = addon.RXPFrame.backdrop.edge,
-        backgroundColor = addon.colors.background,
-        scale = 1
-    }
-
-    if payload.scale then
-        this.theme.scale = payload.scale
-    end
-
-    if this.SetScale then
-        this:SetScale(this.theme.scale)
-    end
-
-    if payload.edge then
-        this.theme.edge = payload.edge
-    end
-
-    if payload.backgroundColor then
-        this.theme.backgroundColor = payload.backgroundColor
-    end
-
-    if this.frame.SetBackdrop then
-        -- Update theme first
-        if this.frame:GetBackdrop() ~= nil or payload.showBackground then
-            this.frame:SetBackdrop(this.theme.edge)
-            this.frame:SetBackdropColor(unpack(this.theme.backgroundColor))
-        end
-
-        if payload.showBackground == false then
-            this.frame:ClearBackdrop()
-        end
-    end
+    if payload.scale and this.SetScale then this:SetScale(payload.scale) end
 
     if this.UpdateSubTheme then
         this:UpdateSubTheme(payload)
     end
 
     if payload.updateChildren then
-        -- Do not recursively changes some child properties
-        payload.showBackground = nil
-        payload.scale = nil
-
         for _, child in pairs(this.children or {}) do
             if child.UpdateTheme then
-                child:UpdateTheme(payload)
+                child:UpdateTheme({updateChildren = true})
             end
         end
     end
@@ -89,13 +49,81 @@ local function getLayout(name)
     return layout[name] or {}
 end
 
-local function setBackdrop(frame, edge, backgroundColor, borderColor)
-    frame:SetBackdrop(edge)
-    frame:SetBackdropColor(unpack(backgroundColor))
+local function setBackdropChromeShown(frame, shown)
+    if frame.rxpBackground then frame.rxpBackground:SetShown(shown) end
+    if frame.rxpBorder then frame.rxpBorder:SetShown(shown) end
+end
 
-    if frame.SetBackdropBorderColor then
-        frame:SetBackdropBorderColor(unpack(borderColor or backgroundColor))
+local function setTextureGroupColor(group, color)
+    for _, texture in ipairs(group.textures) do
+        texture:SetVertexColor(unpack(color))
     end
+end
+
+local function setBackdrop(frame, edge, backgroundColor, borderColor)
+    local path = edge.edgeFile
+    local size = edge.edgeSize
+    local texCoords = edge.texCoords
+
+    local function setBorderTexture(texture, key)
+        texture:SetTexture(path)
+        texture:SetTexCoord(unpack(texCoords[key]))
+    end
+
+    if not frame.rxpBackground then
+        local background = CreateFrame("Frame", nil, frame)
+        background:SetAllPoints(frame)
+        background:SetFrameLevel(frame:GetFrameLevel())
+        local fill = background:CreateTexture(nil, "BACKGROUND")
+        fill:SetTexture("Interface/BUTTONS/WHITE8X8")
+        fill:SetAllPoints(background)
+        background.textures = {fill}
+
+        frame.rxpBackground = background
+    end
+
+    setTextureGroupColor(frame.rxpBackground, backgroundColor)
+
+    if frame.rxpBorder then
+        setTextureGroupColor(frame.rxpBorder, borderColor)
+        return
+    end
+
+    local border = CreateFrame("Frame", nil, frame)
+    border:SetAllPoints(frame)
+    border:SetFrameLevel(frame:GetFrameLevel() + 1)
+    border.textures = {}
+
+    local top = border:CreateTexture(nil, "BORDER")
+    setBorderTexture(top, "top")
+    top:SetPoint("TOPLEFT")
+    top:SetPoint("TOPRIGHT")
+    top:SetHeight(size)
+    table.insert(border.textures, top)
+
+    local bottom = border:CreateTexture(nil, "BORDER")
+    setBorderTexture(bottom, "bottom")
+    bottom:SetPoint("BOTTOMLEFT")
+    bottom:SetPoint("BOTTOMRIGHT")
+    bottom:SetHeight(size)
+    table.insert(border.textures, bottom)
+
+    local left = border:CreateTexture(nil, "BORDER")
+    setBorderTexture(left, "left")
+    left:SetPoint("TOPLEFT")
+    left:SetPoint("BOTTOMLEFT")
+    left:SetWidth(size)
+    table.insert(border.textures, left)
+
+    local right = border:CreateTexture(nil, "BORDER")
+    setBorderTexture(right, "right")
+    right:SetPoint("TOPRIGHT")
+    right:SetPoint("BOTTOMRIGHT")
+    right:SetWidth(size)
+    table.insert(border.textures, right)
+
+    setTextureGroupColor(border, borderColor)
+    frame.rxpBorder = border
 end
 
 function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size, shadowKey)
@@ -108,22 +136,45 @@ function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size, shadow
     yOffset = yOffset or shadowTheme.yOffset or 0
     alpha = alpha or shadowTheme.alpha or 0.55
     size = size or shadowTheme.size or 2
+    if alpha <= 0 or size <= 0 then return end
 
-    local shadow = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+    local shadow = CreateFrame("Frame", nil, frame)
     shadow:SetPoint("TOPLEFT", frame, "TOPLEFT", xOffset - size, yOffset + size)
     shadow:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", xOffset + size, yOffset - size)
     shadow:SetFrameLevel(max(frame:GetFrameLevel() - 1, 0))
-    shadow:SetBackdrop({
-        edgeFile = shadowTheme.edgeFile or addon.GetTexture("rxp-borders") or
-                   ("Interface/AddOns/" .. addonName .. "/Textures/rxp-borders"),
-        tile = false,
-        edgeSize = shadowTheme.edgeSize or size,
-        tileSize = shadowTheme.edgeSize or size,
-        insets = {left = 0, right = 0, top = 0, bottom = 0}
-    })
+    shadow:SetAlpha(alpha)
 
-    if shadow.SetBackdropBorderColor then
-        shadow:SetBackdropBorderColor(0, 0, 0, alpha)
+    local function createShadowTexture()
+        local texture = shadow:CreateTexture(nil, "BACKGROUND")
+        texture:SetTexture("Interface/BUTTONS/WHITE8X8")
+        texture:SetVertexColor(0, 0, 0, 1)
+        return texture
+    end
+
+    local top = createShadowTexture()
+    top:SetPoint("TOPLEFT", shadow, "TOPLEFT", size, 0)
+    top:SetPoint("TOPRIGHT", shadow, "TOPRIGHT", -size, 0)
+    top:SetHeight(size)
+
+    local bottom = createShadowTexture()
+    bottom:SetPoint("BOTTOMLEFT", shadow, "BOTTOMLEFT", size, 0)
+    bottom:SetPoint("BOTTOMRIGHT", shadow, "BOTTOMRIGHT", -size, 0)
+    bottom:SetHeight(size)
+
+    local left = createShadowTexture()
+    left:SetPoint("TOPLEFT", shadow, "TOPLEFT", 0, -size)
+    left:SetPoint("BOTTOMLEFT", shadow, "BOTTOMLEFT", 0, size)
+    left:SetWidth(size)
+
+    local right = createShadowTexture()
+    right:SetPoint("TOPRIGHT", shadow, "TOPRIGHT", 0, -size)
+    right:SetPoint("BOTTOMRIGHT", shadow, "BOTTOMRIGHT", 0, size)
+    right:SetWidth(size)
+
+    for _, point in ipairs({"TOPLEFT", "TOPRIGHT", "BOTTOMLEFT", "BOTTOMRIGHT"}) do
+        local corner = createShadowTexture()
+        corner:SetPoint(point)
+        corner:SetSize(size, size)
     end
 
     frame.rxpShadow = shadow
@@ -364,6 +415,17 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         ["UpdateTheme"] = updateTheme,
 
+        ["UpdateSubTheme"] = function(this, payload)
+            if not payload or payload.hideBackground == nil then return end
+
+            local shown = not payload.hideBackground
+            setBackdropChromeShown(this.frame, shown)
+
+            if this.frame.rxpShadow then
+                this.frame.rxpShadow:SetShown(shown)
+            end
+        end,
+
         ["Hide"] = function(this) this.frame:Hide() end,
 
         ["Show"] = function(this) this.frame:Show() end,
@@ -379,7 +441,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
             local padding = getLayout("outerPadding")
-            this:SetHeight((height or 0) + (padding.top or 14) + (padding.bottom or 4))
+            this:SetHeight((height or 0) + (padding.top or 12) + (padding.bottom or 0))
         end,
 
         ["OnHeightSet"] = function(this, height)
@@ -406,8 +468,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
-        -- frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        -- frame:SetBackdropColor(unpack(addon.colors.background))
         setBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
                     theme.backgroundColors.activeSteps or theme.backgroundColors.common,
                     theme.borderColors.activeSteps or theme.borderColors.common)
@@ -419,8 +479,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         local padding = theme.layout and theme.layout.outerPadding or {}
-        content:SetPoint("TOPLEFT", padding.left or 6, -(padding.top or 14))
-        content:SetPoint("BOTTOMRIGHT", -(padding.right or 6), padding.bottom or 4)
+        content:SetPoint("TOPLEFT", padding.left or 8, -(padding.top or 12))
+        content:SetPoint("BOTTOMRIGHT", -(padding.right or 8), padding.bottom or 0)
 
         local widget = {
             content = content,
@@ -503,7 +563,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         ["OnWidthSet"] = function(this, width)
             local content = this.content
             local padding = getLayout("outerPadding")
-            local contentwidth = width - (padding.left or 6) - (padding.right or 6) - 20
+            local contentwidth = width - (padding.left or 8) - (padding.right or 8) - 20
             if contentwidth < 0 then contentwidth = 0 end
             content:SetWidth(contentwidth)
             content.width = contentwidth
@@ -526,7 +586,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local content = this.content
             local padding = getLayout("outerPadding")
             local title = getLayout("partyTitle")
-            local contentheight = height - (padding.top or 14) - (padding.bottom or 4) - (title.height or 17) - 28
+            local contentheight = height - (padding.top or 12) - (padding.bottom or 0) - (title.height or 17) - 28
             if contentheight < 0 then contentheight = 0 end
             content:SetHeight(contentheight)
             content.height = contentheight
@@ -642,8 +702,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         local padding = theme.layout and theme.layout.outerPadding or {}
-        content:SetPoint("TOPLEFT", padding.left or 6, -(padding.top or 14))
-        content:SetPoint("BOTTOMRIGHT", -(padding.right or 6), padding.bottom or 4)
+        content:SetPoint("TOPLEFT", padding.left or 8, -(padding.top or 12))
+        content:SetPoint("BOTTOMRIGHT", -(padding.right or 8), padding.bottom or 0)
         -- content:ClearBackdrop()
         -- content:SetBackdrop(addon.RXPFrame.backdrop.bottom)
         -- content:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
@@ -687,12 +747,12 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this.titletext:SetText(title)
             if title == "" then
                 this.titletext:SetAlpha(0)
-                this.title:SetSize(layout.horizontalPadding or 6, layout.height or 15)
+                this.title:SetSize(layout.horizontalPadding or 8, layout.height or 16)
             else
                 this.title:SetAlpha(1)
                 this.titletext:SetText(title)
-                this.title:SetSize(this.titletext:GetStringWidth() + (layout.horizontalPadding or 6),
-                                   layout.height or 15)
+                this.title:SetSize(this.titletext:GetStringWidth() + (layout.horizontalPadding or 8),
+                                   layout.height or 16)
             end
         end,
 
@@ -704,8 +764,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             if this.noAutoHeight then return end
             local padding = getLayout("stepItemPadding")
             local margin = getLayout("stepItemMargin")
-            this:SetHeight((height or 0) + (padding.top or 10) + (padding.bottom or 2) +
-                           (margin.bottom or 14))
+            this:SetHeight((height or 0) + (padding.top or 6) + (padding.bottom or 2) +
+                           (margin.bottom or 10))
         end,
 
         ["OnWidthSet"] = function(this, width)
@@ -721,8 +781,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local content = this.content
             local padding = getLayout("stepItemPadding")
             local margin = getLayout("stepItemMargin")
-            local contentheight = height - (padding.top or 10) - (padding.bottom or 2) -
-                                  (margin.bottom or 14)
+            local contentheight = height - (padding.top or 6) - (padding.bottom or 2) -
+                                  (margin.bottom or 10)
             if contentheight < 0 then contentheight = 0 end
             content:SetHeight(contentheight)
             content.height = contentheight
@@ -733,13 +793,16 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         ["UpdateSubTheme"] = function (this, payload)
             if not payload then return end
 
-            -- TODO v2 themeify
-            print("UpdateSubTheme", this.type)
+            local theme = addon.v2:GetTheme()
+            local itemEdge = theme.edges.activeStepItem or theme.edges.common
+            local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
+            local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+            local badgeEdge = theme.edges.activeStepBadge or itemEdge
+            local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
+            local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
 
-            this.card:SetBackdrop(this.theme.edge)
-            this.card:SetBackdropColor(unpack(this.theme.backgroundColorsColor))
-            this.title:SetBackdrop(this.theme.edge)
-            this.title:SetBackdropColor(unpack(this.theme.backgroundColorsColor))
+            setBackdrop(this.card, itemEdge, itemBackground, itemBorder)
+            setBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
         end
     }
 
@@ -762,13 +825,16 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
         local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
         local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
+        local badgeEdge = theme.edges.activeStepBadge or itemEdge
+        local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
+        local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
         local badgeTextColor = theme.textColor.activeStepBadge or itemTextColor
 
         local margin = theme.layout and theme.layout.stepItemMargin or {}
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
-        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, margin.bottom or 14)
+        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, margin.bottom or 10)
         setBackdrop(card, itemEdge, itemBackground, itemBorder)
         addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
 
@@ -777,7 +843,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local badgeLayout = theme.layout and theme.layout.stepBadge or {}
         title:SetPoint("TOPLEFT", card, "TOPLEFT", badgeLayout.x or 4, badgeLayout.y or 10)
         title:ClearBackdrop()
-        setBackdrop(title, itemEdge, itemBackground, itemBorder)
+        setBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
         -- title:EnableMouse(true)
         -- title:SetScript("OnMouseDown", Title_OnMouseDown)
         -- title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
@@ -788,6 +854,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(badgeTextColor))
+        titletext:SetShadowColor(24 / 255, 210 / 255, 255 / 255, 0.7)
+        titletext:SetShadowOffset(0, 0)
         titletext:SetFontObject(_G.GameFontNormalSmall)
         titletext:SetFont(theme.font, addon.settings.profile.guideFontSize - 2, "OUTLINE")
 
@@ -801,7 +869,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         -- Container Support
         local content = CreateFrame("Frame", nil, card)
         local padding = theme.layout and theme.layout.stepItemPadding or {}
-        content:SetPoint("TOPLEFT", padding.left or 4, -(padding.top or 10))
+        content:SetPoint("TOPLEFT", padding.left or 4, -(padding.top or 6))
         content:SetPoint("BOTTOMRIGHT", -(padding.right or 6), padding.bottom or 2)
 
         local widget = {card = card, title = title, titletext = titletext, content = content, frame = frame, type = Type}

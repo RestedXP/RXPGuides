@@ -2231,6 +2231,7 @@ end
 
 addon.v2.events = addon:NewModule("V2Events", "AceEvent-3.0")
 addon.v2.events.messagePrefix = "RXPGuidesV2_"
+
 function addon.v2.events:Setup()
     addon.v2.events:Register("UpdateActiveSteps")
 end
@@ -2238,7 +2239,6 @@ end
 function addon.v2.events:Register(key)
     if not key then return end
     addon.comms.PrettyDebug("addon.v2.events:Register %s", key)
-    -- self:RegisterMessage("GatherMate2NodeAdded", "ScheduleUpdate")
     self:RegisterMessage(self.messagePrefix .. key, key)
 end
 
