@@ -422,11 +422,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
 #next 14-16 Darkshore
+
 step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .accept 488 >> Accept Zenn's Bidding
+step
+    #label HCHunterStart --hidden step for #include
 step
     #sticky
     #completewith DenlansEarth
@@ -749,6 +752,8 @@ step
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 488 >> Turn in Zenn's Bidding
+step
+    #label HCHunterEnd --hidden step for #include
 step
     #xprate < 1.5
     .goto Teldrassil,60.7,54.4
@@ -1675,6 +1680,13 @@ step
     >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors] |cRXP_WARN_quest before heading west|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
+step
+    .goto Teldrassil,41.7,41.8
+	>>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for their |cRXP_LOOT_Tumors|r
+    .complete 923,1 --Collect Mossy Tumor (x5)
+    .mob Elder Timberling
+    .mob Timberling Trampler
+    .mob Timberling Mire Beast
 step
     .goto Teldrassil,38.3,34.3
     .target Sentinel Arynia Cloudsbreak
