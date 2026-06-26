@@ -441,7 +441,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
             local padding = getLayout("outerPadding")
-            this:SetHeight((height or 0) + (padding.top or 12) + (padding.bottom or 0))
+            local margin = getLayout("stepItemMargin")
+            local bottomPadding = addon.v2:GetTheme().layout.activeStepsBottomPadding or 6
+            this:SetHeight((height or 0) + (padding.top or 12) + (padding.bottom or 0) -
+                           (margin.bottom or 10) + bottomPadding)
         end,
 
         ["OnHeightSet"] = function(this, height)

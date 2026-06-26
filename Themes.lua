@@ -269,14 +269,14 @@ addon.v2.themes['v2'] = {
 
     shadows = {
         outer = {
-            size = 4,
-            alpha = 0.52,
+            size = 2,
+            alpha = 0.4,
             xOffset = 0,
             yOffset = 0,
         },
         stepItem = {
-            size = 2,
-            alpha = 0.45,
+            size = 1,
+            alpha = 0.35,
             xOffset = 0,
             yOffset = 0,
         },
@@ -290,8 +290,9 @@ addon.v2.themes['v2'] = {
         outerPadding = {left = 8, right = 8, top = 12, bottom = 0},
         stepItemPadding = {left = 4, right = 6, top = 6, bottom = 2},
         stepItemMargin = {bottom = 10},
+        activeStepsBottomPadding = 6,
         stepBadge = {x = 4, y = 10, height = 16, horizontalPadding = 8},
-        activeStepFrameInset = {left = 12, right = 12},
+        activeStepFrameInset = {left = 7, right = 7},
         partyTitle = {right = -20, y = 6, height = 17, horizontalPadding = 10},
     },
 
