@@ -2574,8 +2574,15 @@ function addon.v2:GetActiveStepsFrame(player)
         return addon.settings.profile.enableV2ActiveStepsFrame, false
     end
 
+    local hideBackground
+    if player == addon.player.name then
+        hideBackground = addon.settings.profile.activeStepsV2HideBackground
+    else
+        hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
+    end
+
     stepFrame:UpdateTheme({
-        hideBackground = addon.settings.profile.activeStepsV2HideBackground,
+        hideBackground = hideBackground,
         updateChildren = true,
         scale = addon.settings.profile.activeStepsV2WindowScale,
     })
@@ -2585,14 +2592,20 @@ function addon.v2:GetActiveStepsFrame(player)
 end
 
 function addon.v2:UpdateActiveStepTheme()
-    local f
+    local f, hideBackground
 
-    for _, data in pairs(self.state.player) do
+    for player, data in pairs(self.state.player) do
         f = data.activeStepFrame
 
         if f then
+            if player == addon.player.name then
+                hideBackground = addon.settings.profile.activeStepsV2HideBackground
+            else
+                hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
+            end
+
             f:UpdateTheme({
-                hideBackground = addon.settings.profile.activeStepsV2HideBackground,
+                hideBackground = hideBackground,
                 updateChildren = true,
                 scale = addon.settings.profile.activeStepsV2WindowScale,
             })

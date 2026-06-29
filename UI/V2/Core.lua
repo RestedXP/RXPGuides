@@ -54,6 +54,26 @@ local function setBackdropChromeShown(frame, shown)
     if frame.rxpBorder then frame.rxpBorder:SetShown(shown) end
 end
 
+local function updateFrameChrome(this, payload)
+    if not payload or payload.hideBackground == nil then return end
+
+    local shown = not payload.hideBackground
+    setBackdropChromeShown(this.frame, shown)
+
+    if this.frame.rxpShadow then this.frame.rxpShadow:SetShown(shown) end
+end
+
+local function updatePartyFrameChrome(this, payload)
+    if not payload or payload.hideBackground == nil then return end
+
+    updateFrameChrome(this, payload)
+
+    local shown = not payload.hideBackground
+    this.closebutton:SetShown(shown)
+    this.footer:SetShown(shown)
+    this.sizer:SetShown(shown)
+end
+
 local function setTextureGroupColor(group, color)
     for _, texture in ipairs(group.textures) do
         texture:SetVertexColor(unpack(color))
@@ -189,6 +209,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     -------------------------------------------------------------------------------]]
     local Type, Version = "RXPV2ScrollFrame", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+    local contentTopPadding = 11
 
     --[[-----------------------------------------------------------------------------
     Support functions
@@ -237,8 +258,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                 offset = floor((height - viewheight) / 1000.0 * value)
             end
             this.content:ClearAllPoints()
-            this.content:SetPoint("TOPLEFT", 0, offset)
-            this.content:SetPoint("TOPRIGHT", 0, offset)
+            this.content:SetPoint("TOPLEFT", 0, offset - contentTopPadding)
+            this.content:SetPoint("TOPRIGHT", 0, offset - contentTopPadding)
             status.offset = offset
             status.scrollvalue = value
         end,
@@ -290,8 +311,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                 this:SetScroll(value)
                 if value < 1000 then
                     this.content:ClearAllPoints()
-                    this.content:SetPoint("TOPLEFT", 0, offset)
-                    this.content:SetPoint("TOPRIGHT", 0, offset)
+                    this.content:SetPoint("TOPLEFT", 0, offset - contentTopPadding)
+                    this.content:SetPoint("TOPRIGHT", 0, offset - contentTopPadding)
                     status.offset = offset
                 end
             end
@@ -343,12 +364,13 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         local scrollbar = CreateFrame("Slider", ("RXPV2ScrollFrame%dScrollBar"):format(num), scrollframe,
                                       "RXPV2ScrollBarTemplate")
-        scrollbar:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 0, -20)
-        scrollbar:SetPoint("BOTTOMLEFT", scrollframe, "BOTTOMRIGHT", 0, 20)
+        scrollbar:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 12, -24)
+        scrollbar:SetPoint("BOTTOMLEFT", scrollframe, "BOTTOMRIGHT", 12, 20)
         scrollbar:SetMinMaxValues(0, 1000)
         scrollbar:SetValueStep(1)
         scrollbar:SetValue(0)
         scrollbar:SetWidth(16)
+        scrollbar:SetScale(getLayout("partyScrollbar").scale or 0.75)
         scrollbar:Hide()
 
         -- set the script as the last step, so it doesn't fire yet
@@ -360,8 +382,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, scrollframe)
-        content:SetPoint("TOPLEFT")
-        content:SetPoint("TOPRIGHT")
+        content:SetPoint("TOPLEFT", 0, -contentTopPadding)
+        content:SetPoint("TOPRIGHT", 0, -contentTopPadding)
         content:SetHeight(400)
         scrollframe:SetScrollChild(content)
 
@@ -415,16 +437,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = function(this, payload)
-            if not payload or payload.hideBackground == nil then return end
-
-            local shown = not payload.hideBackground
-            setBackdropChromeShown(this.frame, shown)
-
-            if this.frame.rxpShadow then
-                this.frame.rxpShadow:SetShown(shown)
-            end
-        end,
+        ["UpdateSubTheme"] = updateFrameChrome,
 
         ["Hide"] = function(this) this.frame:Hide() end,
 
@@ -565,8 +578,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["OnWidthSet"] = function(this, width)
             local content = this.content
-            local padding = getLayout("outerPadding")
-            local contentwidth = width - (padding.left or 8) - (padding.right or 8) - 20
+            local layout = getLayout("partyContent")
+            local contentwidth = width - (layout.left or 6) - (layout.right or 6)
             if contentwidth < 0 then contentwidth = 0 end
             content:SetWidth(contentwidth)
             content.width = contentwidth
@@ -587,9 +600,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["OnHeightSet"] = function(this, height)
             local content = this.content
-            local padding = getLayout("outerPadding")
-            local title = getLayout("partyTitle")
-            local contentheight = height - (padding.top or 12) - (padding.bottom or 0) - (title.height or 17) - 28
+            local layout = getLayout("partyContent")
+            local contentheight = height - (layout.top or 7) - (layout.bottom or 14)
             if contentheight < 0 then contentheight = 0 end
             content:SetHeight(contentheight)
             content.height = contentheight
@@ -603,6 +615,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         end,
 
         ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = updatePartyFrameChrome,
 
         ["Hide"] = function(this) this.frame:Hide() end,
 
@@ -626,9 +640,13 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         ["ApplyStatus"] = function(this)
             local status = this.status or this.localstatus
             local frame = this.frame
+            local layout = getLayout("partyFrame")
+            local minWidth = layout.minWidth or 265
+            local minHeight = layout.minHeight or 105
+            local defaultWidth = layout.defaultWidth or 265
 
-            this:SetWidth(status.width or 225)
-            this:SetHeight(status.height or 105)
+            this:SetWidth(max(status.width or defaultWidth, minWidth))
+            this:SetHeight(max(status.height or minHeight, minHeight))
             frame:ClearAllPoints()
             if status.top and status.left then
                 frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
@@ -660,10 +678,13 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     theme.borderColors.activePartySteps or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
+        local frameLayout = theme.layout and theme.layout.partyFrame or {}
+        local minWidth = frameLayout.minWidth or 265
+        local minHeight = frameLayout.minHeight or 105
         if frame.SetResizeBounds then -- WoW 10.0
-            frame:SetResizeBounds(220, 40)
+            frame:SetResizeBounds(minWidth, minHeight)
         else
-            frame:SetMinResize(220, 40)
+            frame:SetMinResize(minWidth, minHeight)
         end
         frame:SetToplevel(true)
         frame:SetScript("OnShow", Frame_OnShow)
@@ -673,10 +694,11 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         local titleLayout = theme.layout and theme.layout.partyTitle or {}
-        title:SetPoint("TOPRIGHT", frame, "TOPRIGHT", titleLayout.right or -20, titleLayout.y or 6)
+        title:SetFrameLevel(frame:GetFrameLevel() + 2)
+        title:SetPoint("TOPLEFT", frame, "TOPLEFT", titleLayout.left or 12, titleLayout.y or 6)
         title:ClearBackdrop()
         setBackdrop(title, theme.edges.activePartySteps or theme.edges.common,
-                    theme.backgroundColors.activePartySteps or theme.backgroundColors.common,
+                    theme.backgroundColors.activePartyTitle or theme.backgroundColors.activePartySteps,
                     theme.borderColors.activePartySteps or theme.borderColors.common)
         title:EnableMouse(true)
         title:SetScript("OnMouseDown", Title_OnMouseDown)
@@ -684,18 +706,47 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()
-        titletext:SetPoint("CENTER", title, 2, 1)
+        titletext:SetPoint("CENTER", title, 0, 1)
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(theme.textColor.activePartySteps or theme.textColor.common))
         titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
+        titletext:SetFont(theme.font,
+                          addon.settings.profile.guideFontSize + (titleLayout.fontSizeOffset or -2), "")
+
+        local closebutton = CreateFrame("Button", nil, frame)
+        closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
+        closebutton:SetSize(16, 16)
+        closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 4, 8)
+        closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
+        closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
+        closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:SetScript("OnClick", function() frame.obj:Hide() end)
+
+        local footerLayout = theme.layout and theme.layout.partyFooter or {}
+        local footer = CreateFrame("Frame", nil, frame)
+        footer:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 1, 1)
+        footer:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -1, 1)
+        footer:SetHeight(footerLayout.height or 12)
+        footer:SetFrameLevel(frame:GetFrameLevel() + 1)
+
+        local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
+        footerBackground:SetAllPoints()
+        local footerColor = theme.backgroundColors.activePartyFooter or
+                                theme.backgroundColors.activePartySteps
+        footerBackground:SetColorTexture(unpack(footerColor))
+
+        local footertext = footer:CreateFontString(nil, "OVERLAY")
+        footertext:SetPoint("CENTER", footer, 0, 0)
+        footertext:SetTextColor(0.65, 0.65, 0.7)
+        footertext:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+        footertext:SetText("RestedXP: Active Party Steps")
 
         local sizer = CreateFrame("Button", nil, frame)
 
-        sizer:SetFrameLevel(frame:GetFrameLevel() + 1)
-        sizer:SetSize(12, 12)
-        sizer:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 3)
+        sizer:SetFrameLevel(footer:GetFrameLevel() + 2)
+        sizer:SetSize(10, 10)
+        sizer:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
         sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
         sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
         sizer:EnableMouse(true)
@@ -704,9 +755,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        local padding = theme.layout and theme.layout.outerPadding or {}
-        content:SetPoint("TOPLEFT", padding.left or 8, -(padding.top or 12))
-        content:SetPoint("BOTTOMRIGHT", -(padding.right or 8), padding.bottom or 0)
+        local contentLayout = theme.layout and theme.layout.partyContent or {}
+        content:SetPoint("TOPLEFT", contentLayout.left or 6, -(contentLayout.top or 7))
+        content:SetPoint("BOTTOMRIGHT", -(contentLayout.right or 6), contentLayout.bottom or 14)
         -- content:ClearBackdrop()
         -- content:SetBackdrop(addon.RXPFrame.backdrop.bottom)
         -- content:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
@@ -715,6 +766,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             localstatus = {},
             title = title,
             titletext = titletext,
+            closebutton = closebutton,
+            footer = footer,
+            footertext = footertext,
             sizer = sizer,
             content = content,
             frame = frame,

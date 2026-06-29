@@ -3238,6 +3238,21 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableV2ActiveStepsFrame
                         end
                     },
+                    activePartyStepsV2HideBackground = {
+                        name = fmt("%s %s %s", _G.HIDE, _G.PARTY, _G.BACKGROUND),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActiveStepsFrame
+                        end
+                    },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
