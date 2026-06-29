@@ -222,7 +222,7 @@ function addon.professions.GUI.createGUI()
         elseif engineeringButton:GetChecked() then professionName = "Engineering"
         elseif testButton:GetChecked() then professionName = "Testing" end
         aProf.setPlayerData(professionName, selectSkillLevelFrame:GetValue())
-        profSession.segmentRange = selectSegmentFrame:GetValue()
+        RXPCData.professions.segmentRange = selectSegmentFrame:GetValue()
         RXPCData.professions.money = tonumber(moneyEditBox:GetText())
     end)
 
@@ -307,7 +307,7 @@ function addon.professions.GUI.createGUI()
         end
 
         local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
-        local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
+        local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
         if not printed then
             --Calculate prices
             aProf.calculateRecipePrice(RXPCData.professions.profession1.name, calculationMethod)

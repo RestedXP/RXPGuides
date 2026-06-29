@@ -360,7 +360,6 @@ end
 addon.professions.profSession = {
     isInitialized = false,
     auctionFilterButtons = {"Trade Goods"},
-    segmentRange = 75, --TODO: maybe store in RXPData / RXPCData / addon.settings or somewhere better if user can chage it
     foundItems = {}, --pairs --table of 'rows' in AH per item --pairs of ipairs
     itemAveragePrice = {}, --pairs [itemName] = averagePrice
 
@@ -1547,7 +1546,7 @@ end
 --Full scan function - For testing purposes only -- Scans first profession
 function addon.professions:fullScan()
     profSession:Reset()
-    local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
+    local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     removeNonTrainable(RXPCData.professions.profession1.name)
@@ -1560,7 +1559,7 @@ end
 --A scan function for 'test' profession
 function addon.professions:testScan()
     profSession:Reset()
-    local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
+    local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -1620,8 +1619,8 @@ function addon.professions:Setup()
     for _, event in ipairs(EVENTS_TO_REGISTER) do
         self:RegisterEvent(event)
     end
+    addon.professions.RXPCData.professions.segmentRange = RXPCData.professions.segmentRange or 75
 
-    session.isInitialized = true
     self.AH:Setup()
 
     --We need to "re-delcare" these things here in order to hook them properly. Last time was just for the 'linter'
@@ -1635,6 +1634,7 @@ function addon.professions:Setup()
     gatherPlayerFactionInfo()
     gatherPlayerMoneyInfo()
     GUI.createGUI()
+    session.isInitialized = true
 end
 
 
@@ -1669,7 +1669,7 @@ SlashCmdList['scan'] = function()
     profSession:Reset()
     addon.professions.setPlayerData("Blacksmithing", 1)
     RXPCData.professions.money = 10000
-    local minSegment, maxSegment = addon.professions.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, profSession.segmentRange)
+    local minSegment, maxSegment = addon.professions.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
@@ -1696,7 +1696,7 @@ end
 
 SLASH_set1 = '/set'
 SlashCmdList['set'] = function(args)
-    profSession.segmentRange = tonumber(args)
+    RXPCData.professions.segmentRange = tonumber(args)
 end
 
 --Testing
