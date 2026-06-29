@@ -2691,6 +2691,22 @@ function addon.settings:CreateAceOptionsPanel()
                                        addon.player.level == addon.player.maxlevel
                         end
                     },
+                    disableUpgradeTooltip = {
+                        name = L("Disable Tooltips"), -- TODO locale
+                        --desc = L("Displays upgrade information on items"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 5.6,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades and
+                                       self.profile.enableQuestChoiceRecommendation) or
+                                       addon.player.level == addon.player.maxlevel
+                        end
+                    },
                     enableItemUpgradesAH = {
                         name = fmt("%s %s", _G.ENABLE,
                                    _G.MINIMAP_TRACKING_AUCTIONEER),
