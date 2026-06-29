@@ -6041,9 +6041,9 @@ addon.professions.PROFESSIONS = {
                         count = 7,
                         fromVendor = false,
                     },
-                    ["Light Leather"] = {
+                    ["Coarse Thread"] = {
                         count = 2,
-                        fromVendor = false,
+                        fromVendor = true,
                     },
                 },
             },
@@ -9202,9 +9202,9 @@ addon.professions.PROFESSIONS = {
                         count = 2,
                         fromVendor = false,
                     },
-                    ["Gold Bar"] = {
+                    ["Rune Thread"] = {
                         count = 1,
-                        fromVendor = false,
+                        fromVendor = true,
                     },
                 },
             },
@@ -16655,7 +16655,7 @@ addon.professions.PROFESSIONS = {
                 grey = 270,
                 trainingCost = 50,
                 recipeCost = 0,
-                spellId = Runecloth,
+                spellId = 23070,
                 location = "trainer",
                 faction = "neutral",
                 soulbound = false,
