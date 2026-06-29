@@ -1350,11 +1350,6 @@ step << Rogue
     >>|cRXP_WARN_Avoid fighting |cRXP_ENEMY_Sethir the Ancient|r. Let him walk passed you, then|r |T132320:0|t[Stealth] |cRXP_WARN_and|r |T133644:0|t[Pick Pocket] |cRXP_WARN_when you're behind him|r
     .complete 2242,1
     .mob Sethir the Ancient
-
-
-
-
-
 step
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
@@ -1362,11 +1357,16 @@ step
     .accept 938 >> Accept Mist
     .target Mist
 step
+    .isOnQuest 938
+    .goto Teldrassil,38.32,34.36
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Mist|r to|r |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    .complete 938,1
+step
+    .isQuestComplete 938
 	#label harpies
     .goto Teldrassil,38.32,34.36
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
-    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 9 minutes of accepting|r
     .turnin 938 >> Turn in Mist
 step
     #xprate >1.49 << !Hunter
@@ -1615,6 +1615,7 @@ step << Hunter
     .trainer >>Train your pet spells
     .target Silvaria
 step << !Rogue
+    .isOnQuest 935
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
     .turnin 935 >> Turn in Crown of the Earth
