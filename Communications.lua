@@ -121,12 +121,12 @@ function addon.comms:GROUP_LEFT()
     self.state.rxpGroupDetected = false
 
     addon.comms.grouping:UpdateParty()
-
-    --- TODO release ActiveSteps party frame
+    addon.v2:HideUnusedActiveStepFrames()
 end
 
 function addon.comms:GROUP_ROSTER_UPDATE()
     addon.comms.grouping:UpdateParty()
+    addon.v2:HideUnusedActiveStepFrames()
 
     C_Timer.After(5 + mrand(5), function()
         if addon.RXPFrame.activeSteps then

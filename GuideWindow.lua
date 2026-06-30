@@ -2945,12 +2945,22 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     end
 end
 
--- TODO
 function addon.v2:HideUnusedActiveStepFrames()
-    if not (addon.comms.state and addon.comms.state.group) then return end
+    local group = addon.comms.state and addon.comms.state.group
+    local members = group and group.members or {}
+    local frameName
 
-    -- Loop over frames, nice
-    -- for playerName, _ in pairs(addon.comms.state.group.members) do
-    --     tinsert(partyNames, playerName)
-    -- end
+    for player, data in pairs(self.state.player) do
+        if player ~= addon.player.name and not members[player] then
+            frameName = "RXPActiveStepsFrame" .. player
+
+            if data.activeStepFrame then
+                AceGUI:Release(data.activeStepFrame)
+            end
+
+            addon.enabledFrames[frameName] = nil
+            _G[frameName] = nil
+            self.state.player[player] = nil
+        end
+    end
 end
