@@ -53,6 +53,7 @@ function addon.comms:Setup()
     self:RegisterEvent("GROUP_LEFT")
     self:RegisterEvent("GROUP_ROSTER_UPDATE")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("PLAYER_REGEN_ENABLED")
 
     self:RegisterComm(self._commPrefix)
 
@@ -121,12 +122,12 @@ function addon.comms:GROUP_LEFT()
     self.state.rxpGroupDetected = false
 
     addon.comms.grouping:UpdateParty()
-    addon.v2:HideUnusedActiveStepFrames()
+    self:QueueActiveStepFrameCleanup()
 end
 
 function addon.comms:GROUP_ROSTER_UPDATE()
     addon.comms.grouping:UpdateParty()
-    addon.v2:HideUnusedActiveStepFrames()
+    self:QueueActiveStepFrameCleanup()
 
     C_Timer.After(5 + mrand(5), function()
         if addon.RXPFrame.activeSteps then
@@ -134,6 +135,25 @@ function addon.comms:GROUP_ROSTER_UPDATE()
             addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
         end
     end)
+end
+
+function addon.comms:QueueActiveStepFrameCleanup()
+    self.activeStepFrameCleanupPending = true
+
+    if not InCombatLockdown() then
+        self:ProcessActiveStepFrameCleanup()
+    end
+end
+
+function addon.comms:ProcessActiveStepFrameCleanup()
+    if not self.activeStepFrameCleanupPending or InCombatLockdown() then return end
+
+    self.activeStepFrameCleanupPending = nil
+    addon.v2:HideUnusedActiveStepFrames()
+end
+
+function addon.comms:PLAYER_REGEN_ENABLED()
+    self:ProcessActiveStepFrameCleanup()
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
