@@ -15,6 +15,7 @@ local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPr
 local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetItemNameByID = _G.C_Item.GetItemNameByID
 local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
+local GetContainerItemInfo = _G.C_Container.GetContainerItemInfo
 local date = _G.date
 local GetMoney = _G.GetMoney
 
@@ -34,6 +35,7 @@ local EVENTS_TO_REGISTER = {
     "UNIT_INVENTORY_CHANGED",
     "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
     "SKILL_LINES_CHANGED", --Learning/unlearning, journeyman -> master
+    "ITEM_LOCKED", --Locking the item in bagSlot (when selling to a vendor for example)
 
     "CHAT_MSG_LOOT",
     "CHAT_MSG_SKILL",
@@ -1671,6 +1673,11 @@ function addon.professions:UPDATE_TRADESKILL_RECAST()
 end
 
 function addon.professions:ITEM_PUSH(bagSlot, iconFileID)
+end
+
+function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
+    local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
+    --TODO: access player invetory DB and remove the sold item from it
 end
 
 function addon.professions:BAG_NEW_ITEMS_UPDATED()
