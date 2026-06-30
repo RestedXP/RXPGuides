@@ -618,6 +618,8 @@ local function calculateRecipeMinimumPrice(professionName)
                         recipeCount = recipeCount - 1
                     end
                 end
+            else
+                recipeCount = recipeCount - 1
             end
         end
     end
@@ -688,6 +690,8 @@ local function calculateRecipeAveragePrice(professionName)
                         recipeCount = recipeCount - 1
                     end
                 end
+            else
+                recipeCount = recipeCount - 1
             end
         end
     end
@@ -695,9 +699,8 @@ end
 
 --Chooses which calculation method to use.
 --[[
-1 - Minimum price
+1 - Minimum price (default)
 2 - Average price
-default - Minimum price
 ]]
 function addon.professions.calculateRecipePrice(professionName, option)
     option = option or 1

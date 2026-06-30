@@ -354,6 +354,7 @@ function addon.professions.GUI.createGUI()
     moneyEditBox:SetNumber(1000000)
     minimumPriceMethod:SetChecked(true)
     moneyGreedyMethod:SetChecked(true)
+    alchemyButton:SetChecked(true)
 
     --guiFrame:Hide()
 end
