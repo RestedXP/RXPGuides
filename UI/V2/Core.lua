@@ -22,6 +22,7 @@ function addon.ui.v2:Initialize()
     self:RegisterRXPV2ActiveStepsFrame()
     self:RegisterRXPV2ActivePartyStepsFrame()
     self:RegisterRXPV2ActiveStepItem()
+    self:RegisterRXPV2ActivePartyStepItem()
 end
 
 local function updateTheme(this, payload)
@@ -922,6 +923,145 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         -- border:SetBackdrop(PaneBackdrop)
         -- border:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
         -- border:SetBackdropBorderColor(unpack(addon.colors.bottomFrameBG))
+
+        -- Container Support
+        local content = CreateFrame("Frame", nil, card)
+        local padding = theme.layout and theme.layout.stepItemPadding or {}
+        content:SetPoint("TOPLEFT", padding.left or 4, -(padding.top or 6))
+        content:SetPoint("BOTTOMRIGHT", -(padding.right or 6), padding.bottom or 2)
+
+        local widget = {card = card, title = title, titletext = titletext, content = content, frame = frame, type = Type}
+
+        for method, func in pairs(methods) do widget[method] = func end
+
+        return AceGUI:RegisterAsContainer(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+
+end
+
+function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
+    local Type, Version = "RXPV2ActivePartyStepItem", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    --[[-----------------------------------------------------------------------------
+    Methods
+    -------------------------------------------------------------------------------]]
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this:SetWidth(300)
+            this:SetHeight(100)
+            this:SetTitle(nil)
+        end,
+
+        -- ["OnRelease"] = nil,
+
+        ["SetTitle"] = function(this, title)
+            local layout = getLayout("stepBadge")
+            this.titletext:SetText(title)
+            if title == "" then
+                this.titletext:SetAlpha(0)
+                this.title:SetSize(layout.horizontalPadding or 8, layout.height or 16)
+            else
+                this.title:SetAlpha(1)
+                this.titletext:SetText(title)
+                this.title:SetSize(this.titletext:GetStringWidth() + (layout.horizontalPadding or 8),
+                                   layout.height or 16)
+            end
+        end,
+
+        ["SetScale"] = function(this, scale)
+            this.frame:SetScale(scale)
+        end,
+
+        ["LayoutFinished"] = function(this, width, height)
+            if this.noAutoHeight then return end
+            local padding = getLayout("stepItemPadding")
+            local margin = getLayout("stepItemMargin")
+            this:SetHeight((height or 0) + (padding.top or 6) + (padding.bottom or 2) +
+                           (margin.bottom or 10))
+        end,
+
+        ["OnWidthSet"] = function(this, width)
+            local content = this.content
+            local padding = getLayout("stepItemPadding")
+            local contentwidth = width - (padding.left or 4) - (padding.right or 6)
+            if contentwidth < 0 then contentwidth = 0 end
+            content:SetWidth(contentwidth)
+            content.width = contentwidth
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            local content = this.content
+            local padding = getLayout("stepItemPadding")
+            local margin = getLayout("stepItemMargin")
+            local contentheight = height - (padding.top or 6) - (padding.bottom or 2) -
+                                  (margin.bottom or 10)
+            if contentheight < 0 then contentheight = 0 end
+            content:SetHeight(contentheight)
+            content.height = contentheight
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function (this, payload)
+            if not payload then return end
+
+            local theme = addon.v2:GetTheme()
+            local itemEdge = theme.edges.activeStepItem or theme.edges.common
+            local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
+            local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+            local badgeEdge = theme.edges.activeStepBadge or itemEdge
+            local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
+            local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
+
+            setBackdrop(this.card, itemEdge, itemBackground, itemBorder)
+            setBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
+        end
+    }
+
+    --[[-----------------------------------------------------------------------------
+    Constructor
+    -------------------------------------------------------------------------------]]
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
+
+        local theme = addon.v2:GetTheme()
+        local itemEdge = theme.edges.activeStepItem or theme.edges.common
+        local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
+        local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+        local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
+        local badgeEdge = theme.edges.activeStepBadge or itemEdge
+        local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
+        local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
+        local badgeTextColor = theme.textColor.activeStepBadge or itemTextColor
+
+        local margin = theme.layout and theme.layout.stepItemMargin or {}
+
+        local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, margin.bottom or 10)
+        setBackdrop(card, itemEdge, itemBackground, itemBorder)
+        addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
+
+        local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
+        title:SetFrameLevel(card:GetFrameLevel() + 2)
+        local badgeLayout = theme.layout and theme.layout.stepBadge or {}
+        title:SetPoint("TOPLEFT", card, "TOPLEFT", badgeLayout.x or 4, badgeLayout.y or 10)
+        title:ClearBackdrop()
+        setBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
+
+        local titletext = title:CreateFontString(nil, "OVERLAY")
+        titletext:ClearAllPoints()
+        titletext:SetPoint("CENTER", title, 0, 1)
+        titletext:SetJustifyH("CENTER")
+        titletext:SetJustifyV("MIDDLE")
+        titletext:SetTextColor(unpack(badgeTextColor))
+        titletext:SetShadowColor(24 / 255, 210 / 255, 255 / 255, 0.7)
+        titletext:SetShadowOffset(0, 0)
+        titletext:SetFontObject(_G.GameFontNormalSmall)
+        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize - 2, "OUTLINE")
 
         -- Container Support
         local content = CreateFrame("Frame", nil, card)

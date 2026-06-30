@@ -237,11 +237,15 @@ local settingsDBDefaults = {
         frameSizes = {},
         questPrio = {},
         questPrioIndex = {},
+
         -- Grouping
         shareQuests = false,
-        shareActiveSteps = false,
 
-        --V2 UI
+        -- Grouping/V2
+        activePartyStepsV2WindowScale = 1.0,
+        shareActiveSteps = true,
+
+        -- V2 UI
         activeStepsV2WindowScale = 1.0
     }
 }
@@ -2360,12 +2364,61 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.2
                     },
+                    activePartyStepsV2Header = {
+                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")),
+                        type = "header",
+                        width = "full",
+                        order = 4.0,
+                        hidden = isNotAdvanced
+                    },
+                    enableV2ActivePartyStepsFrame = {
+                        name = fmt("%s %s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, _G.PARTY, L("Step ")),
+                        -- desc = L"",
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.1,
+                        hidden = isNotAdvanced
+                    },
+                    activePartyStepsV2WindowScale = {
+                        name = L("Window Scale"),
+                        -- desc = L"Scale of the Main Window, use alt+left click on the main window to resize it",
+                        type = "range",
+                        width = optionsWidth,
+                        order = 4.2,
+                        min = 0.5,
+                        max = 2,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActivePartyStepsFrame
+                        end
+                    },
+                    activePartyStepsV2HideBackground = {
+                        name = fmt("%s %s %s", _G.HIDE, _G.PARTY, _G.BACKGROUND),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActivePartyStepsFrame
+                        end
+                    },
                     shareActiveSteps = {
                         name = fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")),
                         -- desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 3.3,
+                        order = 4.4,
                         hidden = isNotAdvanced
                     }
                 }
@@ -3229,21 +3282,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.2,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.v2:UpdateActiveStepTheme()
-                        end,
-                        hidden = isNotAdvanced,
-                        disabled = function()
-                            return not self.profile.enableV2ActiveStepsFrame
-                        end
-                    },
-                    activePartyStepsV2HideBackground = {
-                        name = fmt("%s %s %s", _G.HIDE, _G.PARTY, _G.BACKGROUND),
-                        desc = L("Make background transparent"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 4.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.v2:UpdateActiveStepTheme()

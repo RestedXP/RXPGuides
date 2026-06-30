@@ -2520,7 +2520,15 @@ function addon.v2:GetActiveStepsFrame(player)
         return self.state.player[player].activeStepFrame
     end
 
-    if not (addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures) then
+    if not addon.settings.profile.enableBetaFeatures then
+        return
+    end
+
+    if player == addon.player.name and not addon.settings.profile.enableV2ActiveStepsFrame then
+        return
+    end
+
+    if player ~= addon.player.name and not addon.settings.profile.enableV2ActivePartyStepsFrame then
         return
     end
 
@@ -2546,6 +2554,10 @@ function addon.v2:GetActiveStepsFrame(player)
 
         stepFrame:SetLayout("Flow")
         childContainer = stepFrame
+
+        stepFrame.IsFeatureEnabled = function()
+            return addon.settings.profile.enableV2ActiveStepsFrame, false
+        end
     else
         stepFrame = AceGUI:Create("RXPV2ActivePartyStepsFrame")
         stepFrame:ClearAllPoints()
@@ -2561,6 +2573,10 @@ function addon.v2:GetActiveStepsFrame(player)
         childContainer:SetFullHeight(true)
 
         stepFrame:AddChild(childContainer)
+
+        stepFrame.IsFeatureEnabled = function()
+            return addon.settings.profile.enableV2ActivePartyStepsFrame, false
+        end
     end
 
     self.state.player[player].activeStepFrame = stepFrame
@@ -2570,21 +2586,20 @@ function addon.v2:GetActiveStepsFrame(player)
 
     self.state.player[player].childContainer = childContainer
 
-    stepFrame.IsFeatureEnabled = function()
-        return addon.settings.profile.enableV2ActiveStepsFrame, false
-    end
 
-    local hideBackground
+    local hideBackground, scaleSetting
     if player == addon.player.name then
         hideBackground = addon.settings.profile.activeStepsV2HideBackground
+        scaleSetting = addon.settings.profile.activeStepsV2WindowScale
     else
         hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
+        scaleSetting = addon.settings.profile.activePartyStepsV2WindowScale
     end
 
     stepFrame:UpdateTheme({
         hideBackground = hideBackground,
         updateChildren = true,
-        scale = addon.settings.profile.activeStepsV2WindowScale,
+        scale = scaleSetting,
     })
     stepFrame:Show()
 
@@ -2592,7 +2607,7 @@ function addon.v2:GetActiveStepsFrame(player)
 end
 
 function addon.v2:UpdateActiveStepTheme()
-    local f, hideBackground
+    local f, hideBackground, scaleSetting
 
     for player, data in pairs(self.state.player) do
         f = data.activeStepFrame
@@ -2600,14 +2615,16 @@ function addon.v2:UpdateActiveStepTheme()
         if f then
             if player == addon.player.name then
                 hideBackground = addon.settings.profile.activeStepsV2HideBackground
+                scaleSetting = addon.settings.profile.activeStepsV2WindowScale
             else
                 hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
+                scaleSetting = addon.settings.profile.activePartyStepsV2WindowScale
             end
 
             f:UpdateTheme({
                 hideBackground = hideBackground,
                 updateChildren = true,
-                scale = addon.settings.profile.activeStepsV2WindowScale,
+                scale = scaleSetting,
             })
         end
     end
@@ -2672,40 +2689,32 @@ function addon.v2:DecodePlayerActiveSteps(encodedPayload)
     return deserialized
 end
 
-function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
+function addon.v2:UpdateActiveStepsFrame(steps)
     if not (addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
 
-    local steps, encodedPayload
+    local player = addon.player.name
 
     -- Player comes from activeSteps, whereas not-player comes over chat channels
     -- Processing until the end is required for player, even if frame disabled
-    -- TODO break out player broadcast logic
-    if player == addon.player.name then
-        steps = incomingPayload
-        encodedPayload = self:EncodePlayerActiveSteps(incomingPayload)
-    else
-        steps = self:DecodePlayerActiveSteps(incomingPayload)
-        encodedPayload = incomingPayload
-    end
+    local encodedPayload = self:EncodePlayerActiveSteps(steps)
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
     if not playerStepFrame then return end
+    local playerState = self.state.player[player]
 
-    if self.state.player[player].encodedPayload == encodedPayload then
+    if playerState.encodedPayload == encodedPayload then
         return
     else
-        print("Updating frame", player)
+        print("Updating Player frame")
     end
 
     -- TODO check stepids and only release and rebuild if a new stepid exists
-    self.state.player[player].childContainer:ReleaseChildren()
+    playerState.childContainer:ReleaseChildren()
 
     local c, e, h, spacing = 0, 0, 0, 0
-    local anchor = 0
-    -- local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
     local loopStepIndex, elementFrame, icon
 
     local stepItem, subStepItem, displayStep
@@ -2724,26 +2733,12 @@ function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
         if displayStep then
             stepItem = AceGUI:Create("RXPV2ActiveStepItem")
 
-            -- if not step.tip then
-            --     stepframe:ClearAllPoints()
-
-            --     if anchor < 1 then
-            --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
-            --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
-            --     else
-            --         stepframe:SetPoint("TOPLEFT", CurrentStepFrame.framePool[anchor],"BOTTOMLEFT", 0, -5)
-            --         stepframe:SetPoint("TOPRIGHT", CurrentStepFrame.framePool[anchor], "BOTTOMRIGHT", 0, -5)
-            --     end
-
-            --     stepframe:SetMovable(false)
-            --     anchor = c
-            -- end
-
             stepItem:SetFullWidth(true)
             stepItem:SetTitle(step.title or (fmt(L("Step %d"), loopStepIndex)))
 
             -- step.text is entire rendered step, no interactability
             --   Display for non-current players
+            -- TODO interactable block
             if player ~= addon.player.name or true then
 
                 subStepItem = AceGUI:Create("Label")
@@ -2754,7 +2749,7 @@ function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
                 stepItem:AddChild(subStepItem)
             end
 
-            self.state.player[player].childContainer:AddChild(stepItem)
+            playerState.childContainer:AddChild(stepItem)
 
             -- TODO Find stickies first
 
@@ -2856,6 +2851,73 @@ function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
             -- If any text didn't load, keep looping
             --  TODO exclude steps without text
             if not step.text then
+                playerState.reload = true
+            end
+        end
+    end
+
+    if playerState.reload then
+        playerState.reload = false
+    else
+        playerState.encodedPayload = encodedPayload
+
+        addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+    end
+end
+
+function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
+    if not (addon.settings.profile.enableV2ActivePartyStepsFrame and addon.settings.profile.enableBetaFeatures) then
+        return
+    end
+
+    local steps = self:DecodePlayerActiveSteps(encodedPayload)
+
+    local playerStepFrame = self:GetActiveStepsFrame(player)
+
+    if not playerStepFrame then return end
+
+    if self.state.player[player].encodedPayload == encodedPayload then
+        return
+    else
+        print("Updating frame", player)
+    end
+
+    -- TODO check stepids and only release and rebuild if a new stepid exists
+    self.state.player[player].childContainer:ReleaseChildren()
+
+    local loopStepIndex, stepItem, subStepItem, displayStep
+
+    for _, step in ipairs(steps) do
+        displayStep = step.active
+
+        -- TODO combine logic with EncodePlayerActiveSteps
+        if step.hiddentext then
+            displayStep = false
+        end
+
+        loopStepIndex = step.index
+
+        if displayStep then
+            stepItem = AceGUI:Create("RXPV2ActivePartyStepItem")
+
+            stepItem:SetFullWidth(true)
+            stepItem:SetTitle(step.title or (fmt(L("Step %d"), loopStepIndex)))
+
+            -- step.text is entire rendered step, no interactability
+            --   Display for non-current players
+
+            subStepItem = AceGUI:Create("Label")
+            subStepItem:SetText(step.text)
+            subStepItem:SetFullHeight(true)
+            subStepItem:SetFullWidth(true)
+
+            stepItem:AddChild(subStepItem)
+
+            self.state.player[player].childContainer:AddChild(stepItem)
+
+            -- If any text didn't load, keep looping
+            --  TODO exclude steps without text
+            if not step.text then
                 self.state.player[player].reload = true
             end
         end
@@ -2865,9 +2927,6 @@ function addon.v2:UpdateActiveStepsFrame(incomingPayload, player)
         self.state.player[player].reload = false
     else
         self.state.player[player].encodedPayload = encodedPayload
-        if player == addon.player.name then
-            addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
-        end
     end
 end
 

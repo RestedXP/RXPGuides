@@ -2249,5 +2249,10 @@ function addon.v2.events:Trigger(key, ...)
 end
 
 function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
-    addon.v2:UpdateActiveStepsFrame(activeSteps, name)
+    if name == addon.player.name then
+        addon.v2:UpdateActiveStepsFrame(activeSteps)
+        return
+    end
+
+    addon.v2:UpdateActivePartyStepsFrame(activeSteps, name)
 end
