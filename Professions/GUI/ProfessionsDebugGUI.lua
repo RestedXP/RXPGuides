@@ -292,6 +292,7 @@ function addon.professions.GUI.createGUI()
     printButtonFrame:RegisterForClicks("LeftButtonUp")
     printButtonFrame:SetScript("OnClick", function (self)
         textToPrint = ""
+        guiFrame.printText.Text:SetText("")
 
         --Get calculation method type: 1 - minimum | 2 - average
         local calculationMethod = 1 -- minimum by default
@@ -308,7 +309,7 @@ function addon.professions.GUI.createGUI()
 
         local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
         local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
-        if not printed then
+        if true then--not printed then
             --Calculate prices
             aProf.calculateRecipePrice(RXPCData.professions.profession1.name, calculationMethod)
 
@@ -322,7 +323,7 @@ function addon.professions.GUI.createGUI()
                 )
             elseif greedMethod == 2 then
                 recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
-                aProf.gatherRecipesToBuyGreedyPercentage(
+                aProf.gatherRecipesToBuyGreedy(
                     RXPCData.professions.profession1.name,
                     RXPCData.professions.profession1.skillLevel,
                     maxSegment, RXPCData.professions.money
@@ -348,6 +349,11 @@ function addon.professions.GUI.createGUI()
             guiFrame:Show()
         end
     end
+
+    --Setup
+    moneyEditBox:SetNumber(1000000)
+    minimumPriceMethod:SetChecked(true)
+    moneyGreedyMethod:SetChecked(true)
 
     --guiFrame:Hide()
 end
