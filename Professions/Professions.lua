@@ -1519,8 +1519,10 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                 local saveMoneyBeforeRecipe = money
                 local tempMaterialsToBuy = {}
                 local canCreateRecipe = true --wheter there are enough materials overall; We assume we can
-                local saveCraftedRecipes = deepCopyTable(craftedRecipes) --We save this if we use something from it but they later find out it is impossible to craft
-                local saveBackpackKnapsack = deepCopyTable(backpackKnapsack)
+                --Create temp new tables to add to main ones once we are don with recipe creation
+                local newBackpackKnapsack = {}
+                local removedCraftedRecipes = {}
+                local removedBackpackKnapsack = {}
                 for materialName, materialTable in pairs(recipeTable.materials) do
                     --Check if we can create the recipe
                     if canCreateRecipe then
@@ -1528,12 +1530,9 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                         if PROFESSIONS[professionName].RECIPES[materialName] then --TODO check how much is needed
                             --It is
                             --Check if there is some in Knapsack
-                            if craftedRecipes[materialName] and craftedRecipes[materialName] >= materialTable.count then --and recipesToCraftKnapsack[materialName] > 0 then --No need for this becuse the 2 row below
-                                --Remove from knapsack
-                                craftedRecipes[materialName] = craftedRecipes[materialName] - materialTable.count
-                                if craftedRecipes[materialName] == 0 then
-                                    craftedRecipes[materialName] = nil
-                                end
+                            if craftedRecipes[materialName] and craftedRecipes[materialName] - (removedCraftedRecipes[materialName] or 0) >= materialTable.count then --and recipesToCraftKnapsack[materialName] > 0 then --No need for this becuse the 2 row below
+                                --Add to removed table
+                                removedCraftedRecipes[materialName] = (removedCraftedRecipes[materialName] or 0) + materialTable.count
                             else
                                 canCreateRecipe = false
                             end
@@ -1542,18 +1541,17 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             local addedMaterials = 0
                             --Check if there is some in backpack
                             if backpackKnapsack[materialName] then
-                                addedMaterials = min(backpackKnapsack[materialName], materialTable.count)
-                                backpackKnapsack[materialName] = max(backpackKnapsack[materialName] - materialTable.count, 0)
-                                if backpackKnapsack[materialName] <= 0 then -- <= 0 for safety; it should never be below 0
-                                    backpackKnapsack[materialName] = nil
-                                end
+                                addedMaterials = min(backpackKnapsack[materialName] - (removedBackpackKnapsack[materialName] or 0), materialTable.count)
+                                addedMaterials = max(0, addedMaterials)
+                                --Add to removed table
+                                removedBackpackKnapsack[materialName] = (removedBackpackKnapsack[materialName] or 0) + addedMaterials
                             end
                             --Keep buying until enough
-                            while addedMaterials < materialTable.count do
+                            while addedMaterials < materialTable.count do --TODO: maybe it should be only if instead of while
                                 money = money - (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100)
                                 addedMaterials = addedMaterials + PROFESSIONS.VENDOR_ITEMS[materialName].count
                                 tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
-                                backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
+                                newBackpackKnapsack[materialName] = (newBackpackKnapsack[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
                             end
                             --Check if we have enough money for this
                             if money < 0 then
@@ -1564,17 +1562,15 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             local addedMaterials = 0
                             --Check if we have some leftovers in backpack
                             if backpackKnapsack[materialName] then --and backpackKnapsack[materialName] > 0 then --We don't need it because of the code below
-                                addedMaterials = min(backpackKnapsack[materialName], materialTable.count)
-                                backpackKnapsack[materialName] = backpackKnapsack[materialName] - addedMaterials
-                                if backpackKnapsack[materialName] <= 0 then -- <= 0 for safety; should never be below 0
-                                    backpackKnapsack[materialName] = nil
-                                end
+                                addedMaterials = min(backpackKnapsack[materialName] - (removedBackpackKnapsack[materialName] or 0), materialTable.count)
+                                addedMaterials = max(0, addedMaterials)
+                                removedBackpackKnapsack[materialName] = (removedBackpackKnapsack[materialName] or 0) + addedMaterials
                             end
                             while addedMaterials < materialTable.count and foundItems and #foundItems[materialName] > 0 and haveMoney do
                                 local foundItemDetails = foundItems[materialName][1]
                                 money = money - foundItemDetails.price
                                 tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + foundItemDetails.count
-                                backpackKnapsack[materialName] = (backpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
+                                newBackpackKnapsack[materialName] = (newBackpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
                                 addedMaterials = addedMaterials + foundItemDetails.count
                                 --Check if we actually have money for this
                                 if money < 0 then --We cannot
@@ -1583,7 +1579,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                                     haveMoney = false
                                 else
                                     if foundItems then --Superficial test to see foundItems is not null
-                                        tremove(foundItems[materialName], 1) --TODO: Why do we remove this here? Maybe we can still use it somewhere else
+                                        tremove(foundItems[materialName], 1)
                                     end
                                 end
                             end
@@ -1607,11 +1603,22 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                     end
                     craftedRecipes[recipeName] = (craftedRecipes[recipeName] or 0) + 1
                     recipesToCraftKnapsack[recipeName] = (recipesToCraftKnapsack[recipeName] or 0) + 1
+                    --These should never be nil; not nil check here with 'or 0' is for safety reasons only
+                    for rn, rc in pairs(removedCraftedRecipes) do
+                        craftedRecipes[rn] = max(0, (craftedRecipes[rn] or 0) - rc)
+                        if craftedRecipes[rn] == 0 then
+                            craftedRecipes[rn] = nil
+                        end
+                    end
+                    for rn, rc in pairs(newBackpackKnapsack) do
+                        backpackKnapsack[rn] = (backpackKnapsack[rn] or 0) + rc --Here we do ned to check for nil, though
+                    end
+                    for rn, rc in pairs(removedBackpackKnapsack) do
+                        backpackKnapsack[rn] = max(0, (backpackKnapsack[rn] or 0) - rc)
+                    end
                 else --We cannot craft the recipe
                     canCreateIthRecipe = false
                     money = saveMoneyBeforeRecipe --return all money we have "spent"
-                    craftedRecipes = saveCraftedRecipes --return all materials we have "spent"
-                    backpackKnapsack = saveBackpackKnapsack
                 end
             end
         else -- We don't have enough money; abort
