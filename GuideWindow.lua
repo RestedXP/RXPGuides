@@ -1082,7 +1082,7 @@ function CurrentStepFrame.UpdateText()
     local guide = addon.currentGuide
     if not guide then return end
 
-    if addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures then
+    if addon.settings.profile.enableBetaFeatures then
         -- TODO throttle, maybe moot when more conversion to v2.events
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
 
@@ -2538,15 +2538,14 @@ function addon.v2:GetActiveStepsFrame(player)
         stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
         stepFrame:ClearAllPoints()
         local theme = addon.v2:GetTheme()
-        local edge = (theme.edges and (theme.edges.activeSteps or theme.edges.common)) or {}
         local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
-        local leftInset = (edge.edgeSize or 4) + (frameInset.left or 0)
-        local rightInset = (edge.edgeSize or 4) + (frameInset.right or 0)
+        local leftInset = frameInset.left or 0
+        local rightInset = frameInset.right or 0
 
         -- Temporarily during parallel work
         if addon.settings.profile.anchorOrientation == "bottom" or addon.settings.profile.debug then
-            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset, 0)
-            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset, 0)
+            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
+            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
         else
             stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
             stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
@@ -2690,20 +2689,38 @@ function addon.v2:DecodePlayerActiveSteps(encodedPayload)
 end
 
 function addon.v2:UpdateActiveStepsFrame(steps)
-    if not (addon.settings.profile.enableV2ActiveStepsFrame and addon.settings.profile.enableBetaFeatures) then
+    if not addon.settings.profile.enableBetaFeatures then
         return
     end
 
     local player = addon.player.name
+    self.state.player[player] = self.state.player[player] or {}
+    local playerState = self.state.player[player]
 
     -- Player comes from activeSteps, whereas not-player comes over chat channels
-    -- Processing until the end is required for player, even if frame disabled
+    -- Encoding and broadcasting are independent of the local player frame.
     local encodedPayload = self:EncodePlayerActiveSteps(steps)
+    local payloadReady = true
+
+    for _, step in ipairs(steps) do
+        if step.active and not step.hiddentext and not step.text then
+            payloadReady = false
+            break
+        end
+    end
+
+    if payloadReady and playerState.broadcastPayload ~= encodedPayload then
+        playerState.broadcastPayload = encodedPayload
+        addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+    end
+
+    if not addon.settings.profile.enableV2ActiveStepsFrame then
+        return
+    end
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
     if not playerStepFrame then return end
-    local playerState = self.state.player[player]
 
     if playerState.encodedPayload == encodedPayload then
         return
@@ -2860,8 +2877,6 @@ function addon.v2:UpdateActiveStepsFrame(steps)
         playerState.reload = false
     else
         playerState.encodedPayload = encodedPayload
-
-        addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
     end
 end
 
