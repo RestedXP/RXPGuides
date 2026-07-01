@@ -991,10 +991,10 @@ step
     .turnin 61,1 >> Turn in Shipment to Stormwind
     .target Morgan Pestle
 step
-    .goto StormwindClassic,52.62,65.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allison|r
-    .home >> Set your Hearthstone to Stormwind City
-    .target Innkeeper Allison
+    .goto Stormwind City,55.46,65.26
+    >>Talk to |cRXP_FRIENDLY_Keldric|r
+    .vendor 1257 >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him (if they're up)|r
+    .target Keldric Boucher
 step << skip
     #completewith next
     .goto Stormwind City,51.68,59.86,8,0
@@ -1014,21 +1014,6 @@ step << skip
 step << skip
     #completewith next
     .goto Stormwind City,36.30,82.90,6 >>Go through the green portal
-step << skip
-    #completewith next
-    .goto Stormwind City,42.07,79.44,30,0
-    .goto Stormwind City,45.12,75.37,30,0
-    .goto Stormwind City,44.33,70.20,30,0
-    .goto Stormwind City,46.20,67.09,30,0
-    .goto Stormwind City,49.44,63.25,30,0
-    .goto Stormwind City,52.20,61.49,30,0
-    .goto Stormwind City,55.46,65.26,10 >>Travel toward |cRXP_FRIENDLY_Keldric|r
-step
-    .goto Stormwind City,55.46,65.26
-    >>Talk to |cRXP_FRIENDLY_Keldric|r through the wall
-    >>|cRXP_WARN_NOTE: To do this, bind "Interact with Target" under Gameplay -> Controls in the Options menu|r
-    .vendor 1257 >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him (if they're up)|r
-    .target Keldric Boucher
 step
     #completewith next
     .goto StormwindClassic,57.32,59.15,10,0
