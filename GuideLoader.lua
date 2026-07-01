@@ -243,15 +243,6 @@ function addon.RemoveGuide(guideKey)
     return true
 end
 
-function addon.DeserializeTable(tbl)
-    local t = {}
-    for k, v in pairs(tbl) do
-        if type(v) == "number" then v = strchar(v) end
-        tinsert(t, v)
-    end
-    return table.concat(t)
-end
-
 local function CheckDataIntegrity(str, h1, mode)
     if h1 then
         if mode == 58 then
@@ -401,7 +392,7 @@ end
 local cachedData = {}
 function addon.ReadCacheData(mode)
     if not cachedData.base then
-        local base = select(2, _G[addon.DeserializeTable(addon.base)]())
+        local base = select(2, BNGetInfo())
         if not base then
             cachedData.base = RXPData.cache
         else

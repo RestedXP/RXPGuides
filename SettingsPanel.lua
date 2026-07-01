@@ -595,7 +595,7 @@ function addon.settings:CreateImportOptionsPanel()
         if not RXPData.cache and GetTime() - importCache.lastBNetQuery > 5 then
             addon.comms.PrettyDebug("Battle.net not cached, querying")
             importCache.lastBNetQuery = GetTime()
-            _, RXPData.cache = _G[addon.DeserializeTable(addon.base)]()
+            _, RXPData.cache = BNGetInfo()
         end
 
         return not RXPData.cache
