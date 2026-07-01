@@ -7604,7 +7604,7 @@ step << !Rogue
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.1 << Rogue/Warrior
+    .money >0.01 << Rogue/Warrior
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
 step << !Rogue
     #xprate >1.49
