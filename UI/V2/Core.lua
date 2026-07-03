@@ -1203,7 +1203,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()
-        titletext:SetPoint("CENTER", title, 0, 1)
+        titletext:SetPoint("CENTER", title, 0, 0)
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(badgeTextColor))
