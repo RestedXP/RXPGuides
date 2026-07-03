@@ -438,6 +438,7 @@ L["Adjusts the guide routes to match increased xp rate bonuses"] = ""
 L["Notice: Changing experience rates beyond 1x may cause some chapters to become hidden and certain steps may automatically skip as you out level them"] = ""
 L["Skip overleveled steps"] = ""
 L["Skip steps you're overleveled for"] = ""
+L["Skip step"] = ""
 L["Warning: Changing this setting mid-guide may cause quest pre-requisite failures.\nGuides were optimized for experience, disabling this option will result in a disjointed guide steps."] = ""
 L["Show Group Quests"] = ""
 L["Guides that support this feature:\n"] = ""
@@ -862,4 +863,3 @@ L["Active Friendly Target Button %d"] = ""
 L["Active Enemy Target Button %d"] = ""
 
 -- UI\V2\Core.lua file
-

@@ -213,6 +213,7 @@ L["Checks for heirlooms and experience buffs"] = "Checks for heirlooms and exper
 L["Experience rates"] = "Experience rates"
 L["Skip overleveled steps"] = "Skip overleveled steps"
 L["Skip steps you're overleveled for"] = "Skip steps you're overleveled for"
+L["Skip step"] = "Skip step"
 L["Show Group Quests"] = "Show Group Quests"
 L["Solo Self Found Mode"] = "Solo Self Found Mode"
 L["Northrend Loremaster"] = "Northrend Loremaster"
