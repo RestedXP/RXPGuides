@@ -785,8 +785,191 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 end
 
 function addon.ui.v2:RegisterRXPV2ActiveStepItem()
-    local Type, Version = "RXPV2ActiveStepItem", 1
+    local Type, Version = "RXPV2ActiveStepItem", 2
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local transparent = {0, 0, 0, 0}
+    local updateElementCheckbox
+
+    local function releaseElementRow(row)
+        row.element = nil
+        row.button:SetChecked(false)
+        row.button.rxpHovered = nil
+        updateElementCheckbox(row.button)
+        if _G.GameTooltip:GetOwner() == row.button.rxpHoverFrame then
+            _G.GameTooltip:Hide()
+        end
+        row:Hide()
+    end
+
+    local function layoutElements(this)
+        local rows = this.elementRows
+        local rowCount = this.activeElementRows or 0
+        if not rows or rowCount == 0 then return end
+
+        local elementLayout = getLayout("activeStepElement")
+        local width = this.content:GetWidth()
+        if not width or width <= 0 then return end
+
+        local row, element, hasButton, hasIcon, textLeft, rowHeight
+        local checkboxLeft = elementLayout.checkboxLeft or 3
+        local checkboxSize = elementLayout.checkboxSize or 14
+        local textGap = elementLayout.textGap or 8
+        local height = 0
+        for rowIndex = 1, rowCount do
+            row = rows[rowIndex]
+            element = row.element
+            hasButton = not element.textOnly
+            hasIcon = row.icon:IsShown()
+            if hasIcon then
+                textLeft = checkboxLeft + checkboxSize + (elementLayout.iconLeftGap or 5) +
+                           (elementLayout.iconWidth or 14) + (elementLayout.iconGap or 6)
+            else
+                textLeft = hasButton and (checkboxLeft + checkboxSize + textGap) or
+                           (elementLayout.textOnlyLeft or 31)
+            end
+
+            row:SetWidth(width)
+            row.text:SetWidth(max(0, width - textLeft))
+
+            rowHeight = max(elementLayout.minHeight or 18,
+                            math.ceil(row.text:GetStringHeight() * 1.05) + 1)
+            row:SetHeight(rowHeight)
+            row.layoutHeight = rowHeight
+            row:ClearAllPoints()
+            row:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, -height)
+            row:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, -height)
+            height = height + rowHeight
+        end
+
+        local padding = getLayout("activeStepItemPadding")
+        local margin = getLayout("activeStepItemMargin")
+        this:SetHeight(height + (padding.top or 6) + (padding.bottom or 2) +
+                       (margin.bottom or 10))
+    end
+
+    updateElementCheckbox = function(button, force)
+        local theme = addon.v2:GetTheme()
+        local checked = not not button:GetChecked()
+        local hovered = not not button.rxpHovered
+        if not force and button.rxpChecked == checked and
+            button.rxpHoverState == hovered and button.rxpCheckboxTheme == theme then
+            return
+        end
+
+        button.rxpChecked = checked
+        button.rxpHoverState = hovered
+        button.rxpCheckboxTheme = theme
+
+        local background = not hovered and checked and
+                           theme.backgroundColors.activeStepCheckboxChecked or
+                           theme.backgroundColors.activeStepCheckbox
+        local border = not hovered and checked and
+                       theme.borderColors.activeStepCheckboxChecked or
+                       theme.borderColors.activeStepCheckbox
+
+        setBackdrop(button, theme.edges.common, background, border)
+        button.rxpBackground:SetShown(not hovered)
+        button.rxpBorder:SetShown(not hovered)
+        button.rxpCheckShort:SetShown(checked and not hovered)
+        button.rxpCheckLong:SetShown(checked and not hovered)
+
+        setBackdrop(button.rxpHoverFrame, theme.edges.common, transparent,
+                    theme.borderColors.activeStepCheckbox)
+        button.rxpHoverFrame:SetShown(hovered)
+    end
+
+    local function elementCheckboxPostClick(button)
+        updateElementCheckbox(button)
+    end
+
+    local function elementCheckboxOnEnter(button)
+        button.rxpHovered = true
+        updateElementCheckbox(button)
+
+        if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+        _G.GameTooltip:SetOwner(button.rxpHoverFrame, "ANCHOR_NONE")
+        _G.GameTooltip:ClearAllPoints()
+        _G.GameTooltip:SetPoint("BOTTOM", button.rxpHoverFrame, "TOP", 0, 6)
+        _G.GameTooltip:ClearLines()
+        _G.GameTooltip:AddLine(L("Skip step"), 1, 1, 1)
+        local element = button:GetParent().element
+        if addon.settings.profile.debug and element and element.tooltip then
+            _G.GameTooltip:AddLine(tostring(element.tooltip), 0.65, 0.7, 0.9)
+        end
+        _G.GameTooltip:Show()
+    end
+
+    local function elementCheckboxOnLeave(button)
+        button.rxpHovered = nil
+        updateElementCheckbox(button)
+
+        if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() then
+            _G.GameTooltip:Hide()
+        end
+    end
+
+    local function createElementRow(this)
+        local elementLayout = getLayout("activeStepElement")
+        local row = CreateFrame("Frame", nil, this.content)
+
+        local button = CreateFrame("CheckButton", nil, row,
+                                   BackdropTemplateMixin and "BackdropTemplate")
+        local checkboxSize = elementLayout.checkboxSize or 14
+        button:SetSize(checkboxSize, checkboxSize)
+        button:SetPoint("TOPLEFT", row, "TOPLEFT", elementLayout.checkboxLeft or 3, -2)
+        button:SetPushedTexture("")
+
+        local checkShort = button:CreateTexture(nil, "OVERLAY")
+        checkShort:SetColorTexture(1, 1, 1, 1)
+        checkShort:SetSize(3.5, 1.25)
+        checkShort:SetPoint("CENTER", button, "CENTER", -1.5, -0.8)
+        checkShort:SetRotation(-math.pi / 4)
+        checkShort:Hide()
+        button.rxpCheckShort = checkShort
+
+        local checkLong = button:CreateTexture(nil, "OVERLAY")
+        checkLong:SetColorTexture(1, 1, 1, 1)
+        checkLong:SetSize(6, 1.25)
+        checkLong:SetPoint("CENTER", button, "CENTER", 1, -0.1)
+        checkLong:SetRotation(math.pi / 4)
+        checkLong:Hide()
+        button.rxpCheckLong = checkLong
+
+        local hoverFrame = CreateFrame("Frame", nil, button)
+        hoverFrame:SetSize(checkboxSize, checkboxSize)
+        hoverFrame:SetPoint("CENTER", button, "CENTER")
+        hoverFrame:SetFrameLevel(button:GetFrameLevel() + 2)
+        hoverFrame:EnableMouse(false)
+        button.rxpHoverFrame = hoverFrame
+
+        local skipIcon = hoverFrame:CreateTexture(nil, "OVERLAY")
+        local hoverIconInset = elementLayout.checkboxHoverIconInset or 2
+        skipIcon:SetPoint("TOPLEFT", hoverFrame, "TOPLEFT", hoverIconInset, -hoverIconInset)
+        skipIcon:SetPoint("BOTTOMRIGHT", hoverFrame, "BOTTOMRIGHT", -hoverIconInset, hoverIconInset)
+        skipIcon:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-skip-step-hover")
+
+        updateElementCheckbox(button)
+        button:SetScript("OnEnter", elementCheckboxOnEnter)
+        button:SetScript("OnLeave", elementCheckboxOnLeave)
+        button:SetScript("PostClick", addon.ActiveStepElementPostClick)
+        button:HookScript("PostClick", elementCheckboxPostClick)
+        row.button = button
+
+        local icon = row:CreateFontString(nil, "OVERLAY")
+        icon:SetFontObject(_G.GameFontNormalSmall)
+        icon:SetPoint("TOPLEFT", button, "TOPRIGHT", elementLayout.iconLeftGap or 5, -1)
+        row.icon = icon
+
+        local text = row:CreateFontString(nil, "OVERLAY")
+        text:SetJustifyH("LEFT")
+        text:SetJustifyV("MIDDLE")
+        text:SetWordWrap(true)
+        text:SetPoint("TOPLEFT", button, "TOPRIGHT", elementLayout.textGap or 8, -1)
+        row.text = text
+
+        return row
+    end
 
     --[[-----------------------------------------------------------------------------
     Methods
@@ -796,12 +979,25 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this:SetWidth(300)
             this:SetHeight(100)
             this:SetTitle(nil)
+            this.elementRows = this.elementRows or {}
+            this.activeElementRows = 0
+            this.noAutoHeight = false
         end,
 
-        -- ["OnRelease"] = nil,
+        ["OnRelease"] = function(this)
+            local rows = this.elementRows or {}
+            local row
+            for rowIndex = 1, #rows do
+                row = rows[rowIndex]
+                releaseElementRow(row)
+            end
+            this.activeElementRows = 0
+            this.noAutoHeight = false
+            this.stepTextLabel = nil
+        end,
 
         ["SetTitle"] = function(this, title)
-            local layout = getLayout("stepBadge")
+            local layout = getLayout("activeStepBadge")
             this.titletext:SetText(title)
             if title == "" then
                 this.titletext:SetAlpha(0)
@@ -818,27 +1014,108 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this.frame:SetScale(scale)
         end,
 
+        ["SetElements"] = function(this, step)
+            local rows = this.elementRows
+            local previousCount = this.activeElementRows or 0
+            local row, element
+
+            local theme = addon.v2:GetTheme()
+            local textColor = theme.textColor.activeStepItem or theme.textColor.common
+            local elementLayout = getLayout("activeStepElement")
+            local visibleCount = 0
+
+            local elements = step.elements or {}
+            for elementIndex = 1, #elements do
+                element = elements[elementIndex]
+                if element.text then
+                    visibleCount = visibleCount + 1
+                    row = rows[visibleCount]
+                    if not row then
+                        row = createElementRow(this)
+                        rows[visibleCount] = row
+                    end
+
+                    row.element = element
+                    row.text:SetTextColor(unpack(textColor))
+                    row.text:SetFont(
+                        theme.font,
+                        addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
+                        "")
+                    if element.text ~= " " then
+                        row.text:SetText(addon.ReplaceNpcIds(L(element.text)))
+                    else
+                        row.text:SetText("")
+                    end
+
+                    if element.tag and element.text then
+                        row.icon:SetText(element.icon or addon.icons[element.tag] or "")
+                        row.icon:Show()
+                    else
+                        row.icon:Hide()
+                    end
+
+                    row.text:ClearAllPoints()
+                    if row.icon:IsShown() then
+                        row.text:SetPoint("TOPLEFT", row.icon, "TOPRIGHT",
+                                          elementLayout.iconGap or 6, 0)
+                    elseif element.textOnly then
+                        row.text:SetPoint("TOPLEFT", row, "TOPLEFT",
+                                          elementLayout.textOnlyLeft or 31, -1)
+                    else
+                        row.text:SetPoint("TOPLEFT", row.button, "TOPRIGHT",
+                                          elementLayout.textGap or 8, -1)
+                    end
+
+                    row.button:SetChecked(element.completed or element.skip or element.textOnly)
+                    row.button:SetShown(not element.textOnly)
+                    row:Show()
+                end
+            end
+
+            for rowIndex = visibleCount + 1, previousCount do
+                releaseElementRow(rows[rowIndex])
+            end
+
+            this.activeElementRows = visibleCount
+            this.noAutoHeight = visibleCount > 0
+            this:RefreshElements()
+            layoutElements(this)
+            return visibleCount
+        end,
+
+        ["RefreshElements"] = function(this)
+            local row, element
+            for rowIndex = 1, this.activeElementRows or 0 do
+                row = this.elementRows[rowIndex]
+                element = row.element
+                row.button:SetChecked(
+                    element.completed or element.skip or element.textOnly)
+                updateElementCheckbox(row.button)
+            end
+        end,
+
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
-            local padding = getLayout("stepItemPadding")
-            local margin = getLayout("stepItemMargin")
+            local padding = getLayout("activeStepItemPadding")
+            local margin = getLayout("activeStepItemMargin")
             this:SetHeight((height or 0) + (padding.top or 6) + (padding.bottom or 2) +
                            (margin.bottom or 10))
         end,
 
         ["OnWidthSet"] = function(this, width)
             local content = this.content
-            local padding = getLayout("stepItemPadding")
+            local padding = getLayout("activeStepItemPadding")
             local contentwidth = width - (padding.left or 4) - (padding.right or 6)
             if contentwidth < 0 then contentwidth = 0 end
             content:SetWidth(contentwidth)
             content.width = contentwidth
+            layoutElements(this)
         end,
 
         ["OnHeightSet"] = function(this, height)
             local content = this.content
-            local padding = getLayout("stepItemPadding")
-            local margin = getLayout("stepItemMargin")
+            local padding = getLayout("activeStepItemPadding")
+            local margin = getLayout("activeStepItemMargin")
             local contentheight = height - (padding.top or 6) - (padding.bottom or 2) -
                                   (margin.bottom or 10)
             if contentheight < 0 then contentheight = 0 end
@@ -861,6 +1138,20 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
             setBackdrop(this.card, itemEdge, itemBackground, itemBorder)
             setBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
+
+            local textColor = theme.textColor.activeStepItem or theme.textColor.common
+            local elementLayout = getLayout("activeStepElement")
+            local row
+            for rowIndex = 1, this.activeElementRows or 0 do
+                row = this.elementRows[rowIndex]
+                row.text:SetTextColor(unpack(textColor))
+                row.text:SetFont(
+                    theme.font,
+                    addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
+                    "")
+                updateElementCheckbox(row.button, true)
+            end
+            layoutElements(this)
         end
     }
 
@@ -888,7 +1179,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
         local badgeTextColor = theme.textColor.activeStepBadge or itemTextColor
 
-        local margin = theme.layout and theme.layout.stepItemMargin or {}
+        local margin = theme.layout and theme.layout.activeStepItemMargin or {}
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
@@ -898,7 +1189,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
-        local badgeLayout = theme.layout and theme.layout.stepBadge or {}
+        local badgeLayout = theme.layout and theme.layout.activeStepBadge or {}
         title:SetPoint("TOPLEFT", card, "TOPLEFT", badgeLayout.x or 4, badgeLayout.y or 10)
         title:ClearBackdrop()
         setBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
@@ -915,7 +1206,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         titletext:SetShadowColor(24 / 255, 210 / 255, 255 / 255, 0.7)
         titletext:SetShadowOffset(0, 0)
         titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(theme.font, addon.settings.profile.guideFontSize - 2, "OUTLINE")
+        titletext:SetFont(
+            theme.font,
+            addon.settings.profile.guideFontSize + (badgeLayout.fontSizeOffset or -3),
+            "OUTLINE")
 
         -- local border = CreateFrame("Frame", nil, frame, "BackdropTemplate")
         -- border:SetPoint("TOPLEFT", 0, 0)
@@ -926,7 +1220,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, card)
-        local padding = theme.layout and theme.layout.stepItemPadding or {}
+        local padding = theme.layout and theme.layout.activeStepItemPadding or {}
         content:SetPoint("TOPLEFT", padding.left or 4, -(padding.top or 6))
         content:SetPoint("BOTTOMRIGHT", -(padding.right or 6), padding.bottom or 2)
 
@@ -955,7 +1249,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             this:SetTitle(nil)
         end,
 
-        -- ["OnRelease"] = nil,
+        ["OnRelease"] = function(this)
+            this.stepTextLabel = nil
+        end,
 
         ["SetTitle"] = function(this, title)
             local layout = getLayout("stepBadge")
