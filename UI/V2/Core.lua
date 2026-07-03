@@ -1003,6 +1003,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 this.titletext:SetAlpha(0)
                 this.title:SetSize(layout.horizontalPadding or 8, layout.height or 16)
             else
+                this.titletext:SetAlpha(1)
                 this.title:SetAlpha(1)
                 this.titletext:SetText(title)
                 this.title:SetSize(this.titletext:GetStringWidth() + (layout.horizontalPadding or 8),
