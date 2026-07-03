@@ -1017,7 +1017,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         ["SetElements"] = function(this, step)
             local rows = this.elementRows
             local previousCount = this.activeElementRows or 0
-            local row, element
+            local row, element, previousElement
 
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.activeStepItem or theme.textColor.common
@@ -1027,7 +1027,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local elements = step.elements or {}
             for elementIndex = 1, #elements do
                 element = elements[elementIndex]
-                if element.text then
+                if element.text or element.requestFromServer then
                     visibleCount = visibleCount + 1
                     row = rows[visibleCount]
                     if not row then
@@ -1035,19 +1035,22 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         rows[visibleCount] = row
                     end
 
+                    previousElement = row.element
                     row.element = element
                     row.text:SetTextColor(unpack(textColor))
                     row.text:SetFont(
                         theme.font,
                         addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
                         "")
-                    if element.text ~= " " then
+                    if element.text and element.text ~= " " then
                         row.text:SetText(addon.ReplaceNpcIds(L(element.text)))
-                    else
+                    elseif not element.requestFromServer then
                         row.text:SetText("")
+                    elseif previousElement ~= element then
+                        row.text:SetText(" ")
                     end
 
-                    if element.tag and element.text then
+                    if element.tag and (element.text or element.requestFromServer) then
                         row.icon:SetText(element.icon or addon.icons[element.tag] or "")
                         row.icon:Show()
                     else

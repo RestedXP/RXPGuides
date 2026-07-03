@@ -2751,10 +2751,13 @@ local function UpdatePlayerActiveStepItem(stepItem, step)
             label = AceGUI:Create("Label")
             label:SetFullHeight(true)
             label:SetFullWidth(true)
+            label:SetText(" ")
             stepItem:AddChild(label)
             stepItem.stepTextLabel = label
         end
-        label:SetText(step.text)
+        if step.text then
+            label:SetText(step.text)
+        end
         label.frame:Show()
     elseif stepItem.stepTextLabel then
         for childIndex = 1, #stepItem.children do
@@ -2776,10 +2779,13 @@ local function UpdatePartyActiveStepItem(stepItem, step)
         label = AceGUI:Create("Label")
         label:SetFullHeight(true)
         label:SetFullWidth(true)
+        label:SetText(" ")
         stepItem:AddChild(label)
         stepItem.stepTextLabel = label
     end
-    label:SetText(step.text)
+    if step.text then
+        label:SetText(step.text)
+    end
 end
 
 function addon.v2:UpdateActiveStepsFrame(steps)
@@ -2796,11 +2802,21 @@ function addon.v2:UpdateActiveStepsFrame(steps)
     -- Encoding and broadcasting are independent of the local player frame.
     local encodedPayload = self:EncodePlayerActiveSteps(steps)
     local payloadReady = true
+    local renderReady = true
 
     for _, step in ipairs(steps) do
         if step.active and not step.hiddentext and not step.text then
             payloadReady = false
-            break
+            local hasElementText = false
+            for _, element in ipairs(step.elements or {}) do
+                if element.text then
+                    hasElementText = true
+                    break
+                end
+            end
+            if not hasElementText then
+                renderReady = false
+            end
         end
     end
 
@@ -2813,37 +2829,21 @@ function addon.v2:UpdateActiveStepsFrame(steps)
         return
     end
 
+    if not renderReady then
+        for _, stepItem in ipairs(playerState.activeStepItems) do
+            stepItem:RefreshElements()
+        end
+        return
+    end
+
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
     if not playerStepFrame then return end
 
-    local activeStepItems = playerState.activeStepItems
-    local stepItem
-    for itemIndex = 1, #activeStepItems do
-        stepItem = activeStepItems[itemIndex]
-        stepItem:RefreshElements()
-    end
-
-    if playerState.encodedPayload == encodedPayload then
-        return
-    else
-        print("Updating Player frame")
-    end
-
-    for _, step in ipairs(steps) do
-        if step.active and not step.hiddentext and not step.text then
-            playerState.reload = true
-        end
-    end
-
     ReconcileActiveStepItems(
         playerState, steps, "RXPV2ActiveStepItem", UpdatePlayerActiveStepItem)
 
-    if playerState.reload then
-        playerState.reload = false
-    else
-        playerState.encodedPayload = encodedPayload
-    end
+    playerState.encodedPayload = encodedPayload
 end
 
 function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
@@ -2852,33 +2852,30 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     end
 
     local steps = self:DecodePlayerActiveSteps(encodedPayload)
+    if not steps then return end
+
+    local payloadReady = true
+
+    for _, step in ipairs(steps) do
+        if step.active and not step.hiddentext and not step.text then
+            payloadReady = false
+            break
+        end
+    end
+
+    if not payloadReady then return end
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
     if not playerStepFrame then return end
 
-    if self.state.player[player].encodedPayload == encodedPayload then
-        return
-    else
-        print("Updating frame", player)
-    end
-
     local playerState = self.state.player[player]
-
-    for _, step in ipairs(steps) do
-        if step.active and not step.hiddentext and not step.text then
-            playerState.reload = true
-        end
-    end
+    if playerState.encodedPayload == encodedPayload then return end
 
     ReconcileActiveStepItems(
         playerState, steps, "RXPV2ActivePartyStepItem", UpdatePartyActiveStepItem)
 
-    if playerState.reload then
-        playerState.reload = false
-    else
-        playerState.encodedPayload = encodedPayload
-    end
+    playerState.encodedPayload = encodedPayload
 end
 
 function addon.v2:HideUnusedActiveStepFrames()
