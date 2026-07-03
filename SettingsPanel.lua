@@ -246,7 +246,8 @@ local settingsDBDefaults = {
         shareActiveSteps = true,
 
         -- V2 UI
-        activeStepsV2WindowScale = 1.0
+        activeStepsV2WindowScale = 1.0,
+        activeStepsV2HideBackground = true,
     }
 }
 
