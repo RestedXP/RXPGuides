@@ -355,6 +355,7 @@ L["Development"] = ""
 
 -- SettingsPanel.lua file
 
+L["Display Quest Link"] = ""
 L["Migrating %s = %s"] = ""
 L["Character profile (%s) already migrated"] = ""
 L["Please restart your game client and try again"] = ""

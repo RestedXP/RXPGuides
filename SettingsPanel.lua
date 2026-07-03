@@ -248,6 +248,7 @@ local settingsDBDefaults = {
         -- V2 UI
         activeStepsV2WindowScale = 1.0,
         activeStepsV2HideBackground = true,
+        activeStepsV2RenderQuestName = true,
     }
 }
 
@@ -1193,6 +1194,21 @@ function addon.settings:CreateAceOptionsPanel()
                             _G.ReloadUI()
                         end,
                         hidden = isNotAdvanced
+                    },
+                    activeStepsV2RenderQuestName = {
+                        name = L("Display Quest Link"),
+                        -- desc = L("Display rendered quest name and tooltip"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActiveStepsFrame
+                        end
                     },
                     inventoryHeader = {
                         name = _G.INVENTORY_TOOLTIP,

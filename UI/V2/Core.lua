@@ -792,6 +792,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
     local updateElementCheckbox
 
     local function releaseElementRow(row)
+        if _G.GameTooltip:GetOwner() == row then
+            _G.GameTooltip:Hide()
+        end
+        row.text:SetText("")
         row.element = nil
         row.button:SetChecked(false)
         row.button.rxpHovered = nil
@@ -909,9 +913,52 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         end
     end
 
+    local function elementTextOnHyperlinkClick(_, link, text, button)
+        _G.SetItemRef(link, text, button)
+    end
+
+    local function elementTextOnHyperlinkEnter(row, link)
+        if row:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+        _G.GameTooltip:SetOwner(row, "ANCHOR_CURSOR")
+        _G.GameTooltip:SetHyperlink(link)
+    end
+
+    local function elementTextOnHyperlinkLeave(row)
+        if not row:IsForbidden() and not _G.GameTooltip:IsForbidden() and
+            _G.GameTooltip:GetOwner() == row then
+            _G.GameTooltip:Hide()
+        end
+    end
+
+    local function updateElementRowText(row, element, resetPending)
+        if element.text and element.text ~= " " then
+            local questAction
+            if addon.settings.profile.activeStepsV2RenderQuestName then
+                questAction = element.tag == "accept" and _G.ACCEPT or
+                              element.tag == "turnin" and _G.TURN_IN_QUEST
+            end
+            if questAction and element.title and element.title ~= "" and
+                HaveQuestData(element.questId) then
+                row.text:SetText(format(
+                    "%s |cffffff00|Hquest:%d|h[%s]|h|r",
+                    questAction, element.questId, element.title))
+            else
+                row.text:SetText(addon.ReplaceNpcIds(L(element.text)))
+            end
+        elseif not element.requestFromServer then
+            row.text:SetText("")
+        elseif resetPending then
+            row.text:SetText(" ")
+        end
+    end
+
     local function createElementRow(this)
         local elementLayout = getLayout("activeStepElement")
         local row = CreateFrame("Frame", nil, this.content)
+        row:SetHyperlinksEnabled(true)
+        row:SetScript("OnHyperlinkClick", elementTextOnHyperlinkClick)
+        row:SetScript("OnHyperlinkEnter", elementTextOnHyperlinkEnter)
+        row:SetScript("OnHyperlinkLeave", elementTextOnHyperlinkLeave)
 
         local button = CreateFrame("CheckButton", nil, row,
                                    BackdropTemplateMixin and "BackdropTemplate")
@@ -1043,13 +1090,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         theme.font,
                         addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
                         "")
-                    if element.text and element.text ~= " " then
-                        row.text:SetText(addon.ReplaceNpcIds(L(element.text)))
-                    elseif not element.requestFromServer then
-                        row.text:SetText("")
-                    elseif previousElement ~= element then
-                        row.text:SetText(" ")
-                    end
+                    updateElementRowText(row, element, previousElement ~= element)
 
                     if element.tag and (element.text or element.requestFromServer) then
                         row.icon:SetText(element.icon or addon.icons[element.tag] or "")
@@ -1083,7 +1124,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this.activeElementRows = visibleCount
             this.noAutoHeight = visibleCount > 0
             this:RefreshElements()
-            layoutElements(this)
             return visibleCount
         end,
 
@@ -1095,7 +1135,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 row.button:SetChecked(
                     element.completed or element.skip or element.textOnly)
                 updateElementCheckbox(row.button)
+                updateElementRowText(row, element)
             end
+            layoutElements(this)
         end,
 
         ["LayoutFinished"] = function(this, width, height)
@@ -1154,6 +1196,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                     addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
                     "")
                 updateElementCheckbox(row.button, true)
+                updateElementRowText(row, row.element)
             end
             layoutElements(this)
         end
